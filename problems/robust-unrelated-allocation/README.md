@@ -2,7 +2,7 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Robust additive utility at least `\max\0,(1-eps)FOPT-u\`. |
+| **Guarantee** | Robust additive utility at least `max(0, (1 - eps) F OPT - u)`. |
 | **Complexity** | `Gamma(1/eps)^c poly(H)` |
 | **Model** | A common actual player basis across explicit scenarios, scenario-adaptive integer assignments, unrelated values, and common setup vector. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |

@@ -2,7 +2,7 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | The stated `\lceil K^*/d\rceil` robust unit guarantee. |
+| **Guarantee** | The stated `ceil(K_star / d)` robust unit guarantee. |
 | **Complexity** | `A^c poly(H)`, with whole-ground conversion `(2-1/A)^(q+o(q)) poly(H)`. |
 | **Model** | One common actual player basis across explicit scenarios; aggregate minimal unit-failure certificates have the stated width bound. This is more general than the separate width-two Fibonacci gate. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |

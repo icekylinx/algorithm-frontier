@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Exact robust positivity gate under width-two minimal obstructions. |
-| **Complexity** | `phi^c poly(H)` for the bounded certificate; whole-ground conversion is `(2-1/A)^(q+o(q)) poly(H)` with `A=\max\phi,A_d\`, giving base `((5-\sqrt 5)/2)^(q+o(q))` in the width-two case. |
+| **Complexity** | `phi^c poly(H)` for the bounded certificate; whole-ground conversion is `(2 - 1/A)^(q + o(q)) poly(H)` with `A = max(phi, A_d)`, giving base `((5 - sqrt(5)) / 2)^(q + o(q))` in the width-two case. |
 | **Model** | One common actual player basis across explicit scenarios; all inclusion-minimal one-unit obstructions have width at most two. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

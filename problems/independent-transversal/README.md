@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Returns an independent transversal or an explicit domination/constellation obstruction under the stated partition and graph model. |
-| **Complexity** | `P\min\exp(O(q)),(q+1)^O(eps^(-1)log(2+r/eps))\ poly(b_eps+log P)`. |
+| **Complexity** | `min(P * exp(O(q)), (q + 1)^(O(eps^(-1) * log(2 + r/eps))) * poly(b_eps + log P))`. |
 | **Model** | Independent transversal input model, lifetime and blocker interfaces in the proof. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

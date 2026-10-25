@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Factor `2+\eta`, with exact factor-two boundary cases only where proved. |
-| **Complexity** | `Gamma((2+\eta)/\eta)^k poly(H)` under the derived-corank condition. |
+| **Guarantee** | Factor `2 + eta`, with exact factor-two boundary cases only where proved. |
+| **Complexity** | `Gamma((2 + eta) / eta)^k * poly(H)` under the derived-corank condition. |
 | **Model** | Original player matroid basis, arbitrary integral recipient polymatroids by value type, one exact budget where the budget extension is cited separately. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

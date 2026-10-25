@@ -2,7 +2,7 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Each selected player receives at least `\max\0,(1-eps)OPT-u_p\`. |
+| **Guarantee** | Each selected player receives at least `max(0, (1 - eps) OPT - u_p)`. |
 | **Complexity** | `Gamma(1/eps)^c poly(H)` |
 | **Model** | Player-dependent values, recipient polymatroids, a selected original player basis; additive guarantee only. No unsupported multiplicative claim is made. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
