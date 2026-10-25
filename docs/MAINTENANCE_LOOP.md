@@ -17,6 +17,12 @@ The repository is maintained incrementally. Each pass should leave a small, revi
 - Let the machine check use manifest metadata to catch accidental corruption,
   but keep hashes out of the reader-facing summary.
 - Reject a child checkpoint whose parent or file inventory does not match.
+- If the material is explicitly a rough or external-review draft, ingest it as
+  a source-only checkpoint: add a `Status: draft` marker, leave it out of
+  `problems/`, and record its family hints and next review actions in the
+  optional `draft_sources` registry section. Run
+  [`tools/check_draft_sources.py`](../tools/check_draft_sources.py) before any
+  card is promoted.
 
 ## 3. Classify the result
 
@@ -32,7 +38,7 @@ Use prose-first complexity on GitHub-facing pages. Keep time, space, update, que
 
 ## 6. Verify and publish
 
-Run structural validation, the display-notation check, the result-card schema check, the finite Subset Sum and reduction replays, incremental-source verification, review-registry validation, reviewed-link validation, and `git diff --check`. Proof, algorithm, and source review lanes can run in parallel; a result moves forward only when its open issues and finite-check boundary are recorded. Commit a coherent batch, push to `main`, inspect the workflow result, then record the commit in [`HISTORY.md`](../HISTORY.md).
+Run structural validation, the display-notation check, the result-card schema check, the finite Subset Sum and reduction replays, incremental-source verification, draft-source validation, review-registry validation, reviewed-link validation, and `git diff --check`. Proof, algorithm, and source review lanes can run in parallel; a result moves forward only when its open issues and finite-check boundary are recorded. Commit a coherent batch, push to `main`, inspect the workflow result, then record the commit in [`HISTORY.md`](../HISTORY.md).
 
 No scheduled job is installed. The loop is re-entered during an active maintenance pass or after a new Library checkpoint is discovered, with the next review trigger recorded in the registry.
 

@@ -10,6 +10,7 @@ A source-linked catalogue of deterministic algorithms, exact and approximation s
 - [Problem families](docs/FAMILIES.md) — the primary index.
 - [Contents](CONTENTS.md) — every curated record.
 - [Review registry](reviews/README.md) — proof, algorithm, source, and finite-check status.
+- [Checkpoint X drafts](sources/checkpoint-x/) — source-only research drafts grouped in the family index.
 - [Complexity conventions](docs/COMPLEXITY.md) — shared parameter names and claim boundaries.
 
 ## Catalogue at a glance

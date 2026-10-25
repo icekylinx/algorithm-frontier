@@ -86,3 +86,34 @@ Records whose primary contribution is a query barrier, obstruction, or robustnes
 ## Record contract
 
 Each directory contains a concise `README.md`. A proof map, verification material, and source map are included when the record has reached that review stage. The [review registry](../reviews/README.md) records proof, algorithm, source, and finite-check status. Imported manuscripts remain under `sources/`.
+
+## Incoming draft checkpoint X
+
+The following source files are grouped by family for review. They remain
+source-only and carry a draft marker; they are not promoted problem records.
+
+### Matching and graph optimisation
+
+- [Single-failure arborescences and matroid intersection](../sources/checkpoint-x/01_exact_single_failure_arborescences_and_matroid_intersection.md)
+- [Valuated matroid intersection](../sources/checkpoint-x/09_valuated_matroid_intersection.md)
+
+### Subset Sum
+
+- [Deterministic Subset Sum increment](../sources/checkpoint-x/02_deterministic_subset_sum_increment.md)
+
+### Dynamic graphs and topological certificates
+
+- [Correlated-fault boundary and persistence sparsifiers](../sources/checkpoint-x/03_correlated_fault_boundary_and_persistence_sparsifiers.md)
+- [Coloured graph and vertex-failure certificates](../sources/checkpoint-x/05_colored_graph_and_vertex_failure_certificates.md)
+
+### Allocation and matroid systems
+
+- [Represented matroid failure summaries](../sources/checkpoint-x/04_sharp_represented_matroid_failure_summaries.md)
+- [Arbitrary matroid and submodular failure summaries](../sources/checkpoint-x/06_arbitrary_matroid_and_submodular_failure_summaries.md)
+- [Represented resource-packing transfer](../sources/checkpoint-x/07_represented_resource_packing_transfer.md)
+
+### Numeric targets and quota systems
+
+- [Boolean linear-optimization compiler](../sources/checkpoint-x/08_boolean_linear_optimization_compiler.md)
+
+The draft payloads have non-promoted review cards: [single-failure preservers](../problems/exact-failure-preservers-x-draft/), [faster Subset Sum increment](../problems/subset-sum-fast-deterministic-x-draft/), [persistent-homology certificates](../problems/persistence-failure-certificates-x-draft/), [graph color-failure certificates](../problems/graph-color-failure-certificates-x-draft/), [matroid failure summaries](../problems/matroid-failure-summaries-x-draft/), [packing and matching summaries](../problems/packing-matching-summaries-x-draft/), and [Boolean linear compiler](../problems/boolean-linear-compiler-x-draft/). These cards remain outside the stable family lists until the three review roles sign off.

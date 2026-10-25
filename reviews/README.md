@@ -20,6 +20,22 @@ A result is promoted only when its README, proof map, source map, and review ent
 | `needs-follow-up` | A material issue remains before the card can be treated as a stable headline result. |
 | `archival` | The record is preserved for provenance but is not a current headline result. |
 
+## Draft source status
+
+An incoming checkpoint may be committed before its claims are ready for a
+curated result card. Such material is kept once, under `sources/`, and is
+marked `Status: draft` in its source README (and, when present, in its machine
+manifest). A draft source has no promoted `problems/` card, no headline tier,
+and no implied proof, algorithm, source, or finite-certificate approval. The
+review queue records the family placement and the next checks; it does not copy
+the manuscript into a second review file.
+
+The optional top-level `draft_sources` section of `reviews/registry.json`
+contains only source paths, maturity, family hints, and open review actions.
+`tools/check_draft_sources.py` checks the marker and manifest payload paths on
+every workflow run. Promotion is a separate edit that must add a result card,
+source map, proof/algorithm review, and any finite replay needed by the claim.
+
 The registry records the boundary between **internal mathematical review**, **finite certificate replay**, and **formal verification**. Unless a formal proof assistant artifact is named, the last category is `not-claimed`. Manifest metadata is used by automation only; it is not a second copy of a source.
 
 The grouped backlogs cover every supporting card: legacy graph/flow transfers,

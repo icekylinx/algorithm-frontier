@@ -36,6 +36,8 @@ jobs:
         run: python3 tools/verify_rational_certificates.py
       - name: Verify incremental source hashes
         run: python3 tools/verify_incremental_sources.py
+      - name: Validate source-only draft checkpoints
+        run: python3 tools/check_draft_sources.py
       - name: Check patch whitespace
         run: git diff --check HEAD^ HEAD
       - name: Validate review registry

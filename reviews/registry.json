@@ -10,6 +10,38 @@
       "source_review"
     ]
   },
+  "draft_sources": [
+    {
+      "id": "checkpoint-x",
+      "path": "sources/checkpoint-x",
+      "status": "draft",
+      "maturity": "source-only; no promoted result card",
+      "family_hints": [
+        "matching and graph optimisation",
+        "Subset Sum",
+        "dynamic graphs and topological certificates",
+        "allocation and matroid systems",
+        "numeric targets and quota systems"
+      ],
+      "payloads": [
+        "sources/checkpoint-x/01_exact_single_failure_arborescences_and_matroid_intersection.md",
+        "sources/checkpoint-x/02_deterministic_subset_sum_increment.md",
+        "sources/checkpoint-x/03_correlated_fault_boundary_and_persistence_sparsifiers.md",
+        "sources/checkpoint-x/04_sharp_represented_matroid_failure_summaries.md",
+        "sources/checkpoint-x/05_colored_graph_and_vertex_failure_certificates.md",
+        "sources/checkpoint-x/06_arbitrary_matroid_and_submodular_failure_summaries.md",
+        "sources/checkpoint-x/07_represented_resource_packing_transfer.md",
+        "sources/checkpoint-x/08_boolean_linear_optimization_compiler.md",
+        "sources/checkpoint-x/09_valuated_matroid_intersection.md"
+      ],
+      "review_backlog": "reviews/backlog/checkpoint-x-drafts.md",
+      "open_actions": [
+        "Complete proof, algorithm, and source review for every payload before creating a result card.",
+        "Keep representation, rank, failure, filtration, and backend parameters separate.",
+        "Add finite checks only for explicitly bounded identities; formal verification remains not-claimed."
+      ]
+    }
+  ],
   "records": [
     {
       "id": "low-space-subset-sum",

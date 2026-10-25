@@ -1,0 +1,98 @@
+{
+  "checkpoint": "X",
+  "status": "draft",
+  "maturity": "source-only; non-promoted draft cards only",
+  "scope": "Incremental English research drafts for external review; no inherited manuscript or prior archive",
+  "snapshot_date_utc": "2026-10-25",
+  "language": "English",
+  "source_archive": {
+    "filename": "checkpoint_X_incremental_drafts_2026-10-25.zip",
+    "bytes": 76990,
+    "sha256": "936c57d419d86f7be58c8a92e67936dee138e64a6c1eb72e8fe3fba2f4e27b87"
+  },
+  "repository_reference": {
+    "name": "icekylinx/algorithm-frontier",
+    "commit": "37b31138bf102a83d9efb2cbe44437eec45ae3c2"
+  },
+  "parent": {
+    "checkpoint": "not declared in archive",
+    "note": "README identifies repository commit and subsequent W/X notes; no parent ZIP hash was supplied"
+  },
+  "mathematical_status": "Rough proof and algorithm drafts for external review; no formal verification, exhaustive priority clearance, or external peer review",
+  "payload": [
+    {
+      "file": "01_exact_single_failure_arborescences_and_matroid_intersection.md",
+      "bytes": 31313,
+      "sha256": "3812ed10260c48a66084806481f11f3b4c89be375bb1689ecbe6e9f15ef6b20a",
+      "role": "original archive payload"
+    },
+    {
+      "file": "02_deterministic_subset_sum_increment.md",
+      "bytes": 16868,
+      "sha256": "dc37c5f1cbe0447fc4580899383a018b704e60e124e14cbdce51adf07f6fa68b",
+      "role": "original archive payload"
+    },
+    {
+      "file": "03_correlated_fault_boundary_and_persistence_sparsifiers.md",
+      "bytes": 21431,
+      "sha256": "a72372f63d7480dc94a4e03f4ee925f6ff7ec9b07d95233a0ca1aeb760b34226",
+      "role": "original archive payload"
+    },
+    {
+      "file": "04_sharp_represented_matroid_failure_summaries.md",
+      "bytes": 21690,
+      "sha256": "a90e41fd3e45c9cb9683b22d99ba8ad7b290d157d076ef5308c8da7b2c8a6279",
+      "role": "original archive payload"
+    },
+    {
+      "file": "05_colored_graph_and_vertex_failure_certificates.md",
+      "bytes": 25444,
+      "sha256": "eb56e96bce9a29cecf4109bae64a338118386bf04a060c13f5d04851622490cf",
+      "role": "original archive payload"
+    },
+    {
+      "file": "06_arbitrary_matroid_and_submodular_failure_summaries.md",
+      "bytes": 19501,
+      "sha256": "8df4380d605b7d027e05a28bee45b9e52572def219e055f8baafdb71497e2dba",
+      "role": "original archive payload"
+    },
+    {
+      "file": "07_represented_resource_packing_transfer.md",
+      "bytes": 14458,
+      "sha256": "e33939c9dcd91b187adce2be854cddcde6f313da328478d9c896129407224823",
+      "role": "original archive payload"
+    },
+    {
+      "file": "08_boolean_linear_optimization_compiler.md",
+      "bytes": 15120,
+      "sha256": "c0a1c15e051b6ac322e810600bcf90e1203ce53b347652a04408ce0298a044bd",
+      "role": "original archive payload"
+    },
+    {
+      "file": "09_valuated_matroid_intersection.md",
+      "bytes": 14376,
+      "sha256": "d5ac242812da78c59d5327ba7e54f3c33fe90c71eb01f4ab8c2000b8d64db5e4",
+      "role": "original archive payload"
+    },
+    {
+      "file": "README.md",
+      "bytes": 8281,
+      "sha256": "d5673c49147fee336913cc6b59d3bc9dd0cd8ae8a274b3d6a18fa8bfdde5f7ca",
+      "role": "original archive payload"
+    }
+  ],
+  "derived_files": [
+    "README_INCREMENT_X.md",
+    "CHECKPOINT_X_INCREMENT.md",
+    "MANIFEST.json"
+  ],
+  "exclusions": [
+    "previous checkpoint files",
+    "internal review logs",
+    "source downloads",
+    "Lean",
+    "PDF",
+    "executables",
+    "test bundles"
+  ]
+}
