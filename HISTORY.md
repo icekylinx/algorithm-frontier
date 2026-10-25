@@ -1,5 +1,10 @@
 # History
 
+## 2026-10-26 — Repository consolidation
+
+- Removed the generated overview PDF and its LaTeX build files. The Markdown results catalogue is the maintained entry point.
+- Began a complete manuscript and theorem audit, including the latest 38-paper increment.
+
 This is an append-only curation log. It records repository organization and presentation changes; it does not replace the source manifests or the mathematical review notes.
 
 ## 2026-10-25 — complete checkpoint X review pass

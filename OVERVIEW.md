@@ -1,6 +1,6 @@
 # Featured results
 
-[Download the overview PDF](overview.pdf) for a compact academic-style catalogue of problem statements, parameters, and complexity bounds.
+This overview introduces the problem statements, parameters, and complexity bounds. The [complete catalogue](CONTENTS.md) links each result to its proof and supporting material.
 
 The repository is indexed by [problem family](docs/FAMILIES.md). Use [Contents](CONTENTS.md) for every curated record and the [review registry](reviews/README.md) for proof, algorithm, source, and finite-check status.
 

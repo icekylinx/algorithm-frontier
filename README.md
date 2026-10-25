@@ -6,7 +6,7 @@ A source-linked catalogue of deterministic algorithms, exact and approximation s
 
 ## Start here
 
-- [Overview PDF](overview.pdf) — compact problem statements, parameters, and complexity bounds.
+- [Results overview](OVERVIEW.md) — problem statements, parameters, and complexity bounds.
 - [Problem families](docs/FAMILIES.md) — the primary index.
 - [Contents](CONTENTS.md) — every curated record.
 - [Review registry](reviews/README.md) — proof, algorithm, source, and finite-check status.

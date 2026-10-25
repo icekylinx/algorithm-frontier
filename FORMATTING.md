@@ -8,7 +8,7 @@ The repository has two presentation layers:
 ## Mathematical display
 
 - Use fenced code blocks for executable snippets.
-- Use readable prose and labelled rows for complexity on display-first pages. Exact symbolic forms belong in `overview.pdf`, proof maps, source maps, and imported manuscripts.
+- Use readable prose and labelled rows for complexity on display-first pages. Exact symbolic forms belong in proof manuscripts and their supporting material.
 - Keep compact code spans only in dense machine-oriented maps such as `CONTENTS.md` and `docs/COMPLEXITY.md`; they should not dominate the homepage or headline cards.
 - Do not add TeX math delimiters to a display-first page.
 - Keep one bound per table cell and label time, space, update, query, and approximation resources separately.
