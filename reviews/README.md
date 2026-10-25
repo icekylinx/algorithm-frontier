@@ -21,3 +21,8 @@ A result is promoted only when its README, proof map, source map, and review ent
 | `archival` | The record is preserved for provenance but is not a current headline result. |
 
 The registry records the boundary between **internal mathematical review**, **finite certificate replay**, and **formal verification**. Unless a formal proof assistant artifact is named, the last category is `not-claimed`. Manifest metadata is used by automation only; it is not a second copy of a source.
+
+The grouped backlogs cover every supporting card: legacy graph/flow transfers,
+scheduling profiles, allocation and robust-flow records, and matching
+certificate constructions. A headline report is used only when a result has a
+separate current frontier or checkpoint family.

@@ -10,7 +10,7 @@
 | **Model and representation** | Player-dependent rational values, integral recipient polymatroids, optional basis selection, one exact budget, and the paid joint-role selector. |
 | **Lower-bound scope** | No lower bound is claimed; the factor is an upper bound under the exact selector interface. |
 | **Scope** | The factor is whole-ground and does not assume a heavy-support or price-diversity promise. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). |
 | **Source** | [Joint-role near-two theorem](../../sources/checkpoint-p/unrelated_values_joint_role_near_two_allocation.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

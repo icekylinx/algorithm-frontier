@@ -10,7 +10,7 @@
 | **Model and representation** | Directed rational capacitated network, splittable flows, exact setup/routing budgets, and the minimum-setup restriction oracle specified above. |
 | **Lower-bound scope** | No lower bound is claimed; the result is an upper bound conditional on the exact setup optimizer. |
 | **Boundary** | An ordinary restriction selector without minimum-setup optimization does not satisfy the theorem's interface. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). |
 | **Source** | [Shared setup/routing-budget theorem](../../sources/checkpoint-o/shared_setup_routing_budget_corank_flow.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

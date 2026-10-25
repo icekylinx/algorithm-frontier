@@ -2,20 +2,21 @@
 
 - **Last reviewed:** `2026-10-25`
 - **Status:** `needs-follow-up`
-- **Records:** many-size workload scheduling, six-profile three-halves scheduling, and per-machine two-time scheduling.
+- **Records:** activated-machine scheduling, arbitrary-processing scheduling, commitment scheduling, many-size workload scheduling, two-size scheduling, per-machine two-time scheduling, processing-bucket tradeoff, and six-profile three-halves scheduling.
 
 ## Scope
 
 This pass replaces compact complexity-only cards with explicit guarantees,
-objectives, parameters, model boundaries, and output contracts. It checks that
-the many-size additive term, the six-profile enumeration, and the per-machine
-two-time assumption are not silently conflated.
+objectives, parameters, model boundaries, and output contracts. It keeps
+accuracy schemes, commitment reductions, bucket curves, two-size endpoints,
+many-size additive terms, six-profile enumeration, and per-machine two-time
+assumptions separate.
 
 ## Proof review boundary
 
-The proof maps retain the original checkpoint notes and audit dependencies.
-A full line-by-line proof review of the profile coverage, integral recovery,
-and additive-term accounting remains open. Finite audit notes are not formal
+The proof maps retain the checkpoint notes and audit dependencies. A full
+line-by-line proof review of profile coverage, integral recovery, and
+additive-term accounting remains open. Finite audit notes are not formal
 verification.
 
 ## Algorithm review boundary

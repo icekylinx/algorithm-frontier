@@ -2,7 +2,7 @@
 
 - **Last reviewed:** `2026-10-25`
 - **Status:** `needs-follow-up`
-- **Records:** recipient polymatroid allocation, arbitrary-value allocation, intrinsic-value near-two allocation, explicit-item matroid union, recipient-matroid configuration, robust scenario flow, shared-setup flow, robust unrelated allocation, robust width-two allocation, two-scenario hardness, bounded robust certificates, and allocation lower bounds.
+- **Records:** recipient polymatroid allocation, arbitrary-value allocation, one-value exact-two allocation, compulsory two-value exact-two allocation, intrinsic-value near-two allocation, explicit-item matroid union, recipient-matroid configuration, unrelated-value additive allocation, unrelated values with a joint role, whole-ground transfers, robust scenario flow, shared-setup flow, robust unrelated allocation, robust width-two allocation, two-scenario hardness, bounded robust certificates, and allocation lower bounds.
 
 ## Scope
 

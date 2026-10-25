@@ -11,7 +11,7 @@
 | **Lower-bound scope** | The W[1]-hardness is conditional on the named parameterization and does not imply a whole-ground exponential lower bound. |
 | **Scope** | The reduction distinguishes robust optimum `1` from `0`; it does not claim a whole-ground exponential lower bound or hardness for relaxed budgets. |
 | **Complexity consequence** | Under `FPT != W[1]`, no algorithm with running time `F(c) poly(H)` can guarantee a finite multiplicative approximation for the exact-admission problem in this model. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). |
 | **Source** | [Two-scenario unit-budget obstruction](../../sources/checkpoint-q/two_scenario_unit_budget_corank_obstruction.md). |
 
 **Finite reduction check.** [`tools/verify_finite_reductions.py`](../../tools/verify_finite_reductions.py) exhaustively checks the budget equivalence on small integer instances; it does not prove the hardness theorem.

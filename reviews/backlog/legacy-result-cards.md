@@ -2,7 +2,7 @@
 
 - **Last reviewed:** `2026-10-25`
 - **Status:** `needs-follow-up`
-- **Records:** incremental SCC, dynamic MSF, selected flow, min-cost flow, degree-constrained subgraphs, and five scheduling/profile records.
+- **Records:** incremental SCC, dynamic MSF, selected flow, min-cost flow, and degree-constrained subgraphs.
 
 ## Scope
 

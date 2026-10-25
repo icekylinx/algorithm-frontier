@@ -10,7 +10,7 @@
 | **Model and representation** | Explicit hypergraph with parallel hyperedge identities allowed; the strong Haxell promise is the incidence condition stated in the lower-bound-scope row. |
 | **Lower-bound scope** | No lower bound is claimed; the result is a certifying upper-bound algorithm under the displayed promise. |
 | **Scope** | Under `tau(E_S) >= Delta r^2 |S|` for every `S`, the algorithm necessarily returns a left-perfect matching; otherwise a certificate need not prove impossibility of all matchings. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [matching-certificate review](../../reviews/backlog/matching-certificate-records.md). |
 | **Source** | [Explicit strong-Haxell theorem](../../sources/checkpoint-o/explicit_hypergraph_matching_branching_improvement.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

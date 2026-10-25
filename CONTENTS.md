@@ -8,7 +8,7 @@ This is the canonical catalogue of the curated result records. Browse by [proble
 |---|---|---|
 | Numeric targets | [Numeric-target frontier](problems/numeric-target-frontier/) | Target magnitude, support geometry, and exact/approximate regimes |
 | Quota systems | [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/) | Prefix, laminar, sparse, and ground-kernel parameters |
-| Subset Sum | [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/) | Exact witness time exponent `E < 0.4964618056` |
+| Subset Sum | [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/) | Exact witness time exponent below 0.4964618056 |
 | Subset Sum | [Low-space deterministic Subset Sum](problems/subset-sum-low-space-deterministic/) | Time exponent and explicit writable-space exponent |
 | Dynamic graphs | [Dynamic APSP](problems/apsp-frontier/) | Update work versus distance stretch |
 | Matching | [General-graph matching](problems/general-matching/) | Exact cardinality under the stated backend |

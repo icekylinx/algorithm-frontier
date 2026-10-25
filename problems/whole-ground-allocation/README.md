@@ -10,7 +10,7 @@
 | **Model and representation** | The row-specific allocation, scheduling, and flow models are retained separately; numerical counts are binary encoded. |
 | **Lower-bound scope** | No joint lower bound is claimed for the transfer table. |
 | **Scope** | The transfer preserves each row's own comparator and constraints; it does not merge allocation, scheduling, and flow claims into one theorem. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). |
 | **Source** | [Global exponential transfer manuscript](../../sources/checkpoint-o/global_exponential_allocation_flow_transfers.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

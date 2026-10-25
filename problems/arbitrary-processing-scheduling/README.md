@@ -9,7 +9,7 @@
 | **Parameters** | `q` is the physical-machine count; `epsilon` is rational accuracy; `H_epsilon` includes its full encoding; `n_j=f_j(P)` are mandatory type totals; `C` is the exact assignment-cost budget; `ell_pj` and `a_pj` are arbitrary nonnegative rational processing times and assignment costs. |
 | **Model and representation** | Arbitrary nonnegative rational processing times, integral recipient polymatroids, mandatory original bases, eligibility masks, and one exact assignment-cost budget. |
 | **Lower-bound scope** | No lower bound is claimed. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [backlog review](../../reviews/backlog/legacy-result-cards.md) and [review registry](../../reviews/README.md). |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [scheduling-profile review](../../reviews/backlog/scheduling-profile-records.md) and [review registry](../../reviews/README.md). |
 | **Source** | [Arbitrary-processing profile source](../../sources/checkpoint-q/arbitrary_processing_profile_approximation_scheme.md) and the verification paths in `sources.md`. |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

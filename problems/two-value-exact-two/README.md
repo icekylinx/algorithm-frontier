@@ -9,7 +9,7 @@
 | **Parameters** | `q` is the compulsory-player count; `h_C` is the budget-aware large-recipient rank; `0<u<a` are the two intrinsic values; `C` is the assignment-cost budget; `H` includes all binary data and paid oracle work. |
 | **Model and representation** | Integral recipient polymatroids with two value classes, compulsory players, and binary counts; one exact budget is preserved. |
 | **Lower-bound scope** | The corresponding strict-below-two recipient-oracle barrier is scoped to the named oracle model; no explicit-input hardness claim is added here. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). |
 | **Source** | [Two-value exact-two theorem](../../sources/checkpoint-o/two_value_arbitrary_cost_exact_two_allocation.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

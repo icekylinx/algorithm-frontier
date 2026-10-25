@@ -9,7 +9,7 @@
 | **Parameters** | `q` is the physical-machine count; `epsilon` is rational accuracy; `H_epsilon` includes all input bits, rank interfaces, and the full encoding of epsilon; `n_j=f_j(P)` are mandatory type totals; `C` is the scalar assignment/setup budget; `ell_pj`, `c_pj`, and `sigma_p` are the rational processing times, assignment costs, and setup fees. |
 | **Model and representation** | Machine-dependent processing times, integral job polymatroids, an activated actual machine basis, and the initialization/assignment-cost contract in the source. |
 | **Lower-bound scope** | No lower bound is claimed. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [backlog review](../../reviews/backlog/legacy-result-cards.md) and [review registry](../../reviews/README.md). |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [scheduling-profile review](../../reviews/backlog/scheduling-profile-records.md) and [review registry](../../reviews/README.md). |
 | **Source** | [Activated-machine scheduling source](../../sources/checkpoint-q/activated_machine_profile_scheduling.md) and the verification paths in `sources.md`. |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

@@ -10,7 +10,7 @@
 | **Model and representation** | Integral recipient polymatroids and an actual original player-matroid basis; counts and costs are binary encoded. |
 | **Lower-bound scope** | No new lower bound is claimed; the factor-two row is an upper bound in the stated oracle model. |
 | **Boundary** | The `c=0` fixed-basis case is solvable exactly in polynomial oracle time; rank zero is handled separately. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). |
 | **Source** | [Budgeted one-value theorem](../../sources/checkpoint-o/one_value_exact_budget_corank_two_allocation.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

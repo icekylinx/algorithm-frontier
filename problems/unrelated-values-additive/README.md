@@ -10,7 +10,7 @@
 | **Model and representation** | Integral recipient polymatroids, nonnegative player-dependent values, and an actual original player-matroid basis; unused resources are allowed. |
 | **Lower-bound scope** | No lower bound is claimed; the guarantee is additive and comparator-specific. |
 | **Scope** | This is an additive guarantee. It does not imply a constant multiplicative approximation for unrelated values without a small-unit hypothesis. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). |
 | **Source** | [Corank additive allocation theorem](../../sources/checkpoint-o/unrelated_values_corank_additive_allocation.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

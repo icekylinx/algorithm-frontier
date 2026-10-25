@@ -264,6 +264,25 @@
       "reports": [
         "reviews/backlog/allocation-robustness.md"
       ]
+    },
+    {
+      "id": "matching-certificate-backlog",
+      "path": "problems",
+      "tier": "B",
+      "status": "needs-follow-up",
+      "last_reviewed": "2026-10-25",
+      "proof_review": "reviews/backlog/matching-certificate-records.md",
+      "algorithm_review": "reviews/backlog/matching-certificate-records.md",
+      "source_review": "reviews/backlog/matching-certificate-records.md",
+      "finite_checks": [],
+      "formal_verification": "not-claimed",
+      "open_issues": [
+        "Check the partition-relative and strong-Haxell promises line by line against their source payloads.",
+        "Add a finite certificate replay before promoting either card to a stable headline."
+      ],
+      "reports": [
+        "reviews/backlog/matching-certificate-records.md"
+      ]
     }
   ]
 }

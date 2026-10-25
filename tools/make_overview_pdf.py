@@ -79,7 +79,7 @@ doc = SimpleDocTemplate(str(OUT), pagesize=A4, rightMargin=16*mm, leftMargin=16*
 story = []
 
 # Cover: academic title and compact catalogue metadata.
-story += [Spacer(1, 26*mm), P("Algorithm Frontier", "TitleAcademic"), P("A curated catalogue of exact algorithms, approximation schemes, dynamic graph data structures, and lower-bound boundaries", "Subtitle")]
+story += [Spacer(1, 26*mm), P("Algorithm Frontier", "TitleAcademic"), P("A curated catalogue of exact algorithms, approximation schemes, dynamic graph data structures, and lower-bound results", "Subtitle")]
 cover = Table([
     [P("Scope", "TableCellBold"), P("Deterministic, source-linked records with explicit model and parameter boundaries.", "TableCell")],
     [P("Organization", "TableCellBold"), P("Problem families first; each family is a mathematical object rather than a maintenance queue.", "TableCell")],
