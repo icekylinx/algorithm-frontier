@@ -7,6 +7,7 @@ This page is the short reading path for the repository. The complete catalogue i
 | Problem | Why it is featured | Displayed bound or boundary |
 |---|---|---|
 | [Numeric-target frontier](problems/numeric-target-frontier/) | Newest R/S checkpoint family; combines exact target algorithms, support geometry, and lower-bound boundaries. | R: `2^(O((T + 1) log(T + 2)) * poly(H))`; S: `2^(O(T log(2 + Q/T)) * poly(H))` |
+| [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/) | T/U extension: ordered prefix quotas, laminar completion, sparse overlap, and deterministic ground kernels. | T/U: `2^O(B)`, `2^O(B log(B + 2))`, `2^O(B^2)`, and sparse `2^O(Delta B0 log(Delta B0 B + 2))` |
 | [Faster Subset Sum](problems/subset-sum-fast-deterministic/) | A central exact exponential-time record with an explicit exponent. | `C + poly(n, L) * 2^(E n)`, `E < 0.4964618056` |
 | [Low-space Subset Sum](problems/subset-sum-low-space-deterministic/) | Separates a space-sensitive algorithm from the faster-time record. | Time `poly(n, L) * 2^(n/2)`; space `poly(n, L) * 2^(E_S n)` |
 | [General-graph matching](problems/general-matching/) | Exact matching with a conditional fast backend contract. | `O(n + m) + (m_s + 1) exp(O((log(m_s + 2))^(4/5) * (log log(m_s + 4))^(1/5)))` |

@@ -33,10 +33,11 @@ Run structural validation, the display-notation check, incremental-source verifi
 
 ## 7. Re-audit
 
-After a workflow failure, a new checkpoint, or a material correction, reopen the affected result card and its source map. Review links, parent hashes, complexity fields, and priority placement. Keep an explicit backlog in the next history entry when follow-up work remains.
+After a workflow failure, a new checkpoint, or a material correction, reopen the affected result card and its source map. Review links, parent hashes, complexity fields, and priority placement. Keep an explicit backlog in the next history entry when follow-up work remains. T/U are now imported; their first curation pass is the weighted-prefix and sparse-quota record.
 
 ## Current backlog
 
+- Review the T/U weighted-prefix and sparse-quota record against the next checkpoint.
 - Migrate the remaining legacy problem cards from raw TeX to portable code-span complexity.
 - Add a machine-readable result index after the display schema stabilizes.
 - Add targeted source-to-card link checks for each new checkpoint family.

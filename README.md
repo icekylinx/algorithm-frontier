@@ -28,6 +28,7 @@ A source-linked catalogue of deterministic algorithms, exact and approximation s
 | [Dynamic spanners](problems/dynamic-spanners/) | 4/5 and 5/6 recourse regimes | `exp(O(U^(4/5) / h^(1/5)))` and `exp(O(U^(5/6) / h^(1/6)))` | Tracked-terminal and full-horizon scopes |
 | [Incremental SSSP](problems/incremental-sssp/) | Distance estimates and simple paths | `O(n + m) + (n + m) exp(O(U^(4/5) / h^(1/5) + sqrt(U) * (h + log(1/eps))))` | Incremental directed graphs |
 | [Numeric-target frontier](problems/numeric-target-frontier/) | Exact target decisions, optimization, and support-sensitive bounds | R: `2^(O((T + 1) log(T + 2)) * poly(H))`; S: `2^(O(T log(2 + Q/T)) * poly(H))` | Incremental R/S checkpoints |
+| [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/) | Exact ordered, laminar, and sparse-quota results with deterministic kernel reductions | T/U: from `2^O(B)` and `2^O(B log(B + 2))` to sparse `2^O(Delta B0 log(Delta B0 B + 2))` | Incremental T/U checkpoints |
 
 ## Record layout
 

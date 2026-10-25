@@ -4,11 +4,13 @@ The repository is public and is maintained as a source-linked research index. Pu
 
 ## Checkpoint storage
 
-Checkpoint O is the complete baseline. P and Q retain only byte-level increments after their parent, together with current summaries and manifests. Checkpoints R and S follow the same rule:
+Checkpoint O is the complete baseline. P and Q retain only byte-level increments after their parent, together with current summaries and manifests. Checkpoints R, S, T, and U follow the same rule:
 
 - R is an increment since Q;
 - S is an increment since R;
-- S does not copy R's payload and names R through its parent archive hash;
+- T is an increment since S;
+- U is an increment since T;
+- Each child does not copy the parent payload and names the parent through its archive hash;
 - each increment keeps its own README, checkpoint summary, and machine-readable manifest.
 
 The original complete archives remain represented by SHA-256 entries in `provenance/archive-manifest.json`; binary archives are not committed. `provenance/checkpoint-files.json` and the per-increment manifests verify retained source bytes.

@@ -18,3 +18,10 @@ Migrate the remaining legacy problem cards, inspect the first workflow result af
 
 - Converted all curated problem result cards to portable code-span complexity notation.
 - Added a display-notation check that excludes source manuscripts and detailed proof maps by design.
+
+
+## 2026-10-25 — T/U checkpoint intake
+
+- Imported T and U as parent-linked increments after validating archive hashes and payload manifests.
+- Added the weighted-prefix, laminar, and sparse-quota Tier A extension record.
+- Kept T/U separate from the R/S numeric-target card because the parameter geometry and kernel guarantees differ.

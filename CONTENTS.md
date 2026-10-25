@@ -7,6 +7,7 @@ This is the canonical map of the repository. The short reading path is [`OVERVIE
 | Record | Role | Displayed complexity or boundary |
 |---|---|---|
 | [Numeric-target frontier](problems/numeric-target-frontier/) | Tier A: newest R/S incremental family | R: `2^(O((T + 1) log(T + 2)) * poly(H))`; S: `2^(O(T log(2 + Q/T)) * poly(H))` |
+| [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/) | Tier A: newest T/U extension | T/U: `2^O(B)`, `2^O(B log(B + 2))`, `2^O(B^2)`, and sparse `2^O(Delta B0 log(Delta B0 B + 2))` |
 | [Faster Subset Sum](problems/subset-sum-fast-deterministic/) | Tier A: exact exponential-time record | `C + poly(n, L) * 2^(E n)`, `E < 0.4964618056` |
 | [Low-space Subset Sum](problems/subset-sum-low-space-deterministic/) | Tier A: explicit space-sensitive record | Time `poly(n, L) * 2^(n/2)`; space `poly(n, L) * 2^(E_S n)` |
 | [General-graph matching](problems/general-matching/) | Tier A: exact matching backend composition | Conditional fast backend; see record for full bound |
@@ -66,6 +67,7 @@ This is the canonical map of the repository. The short reading path is [`OVERVIE
 | [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/) | Fast exact signed-binary witness |
 | [Low-space deterministic Subset Sum](problems/subset-sum-low-space-deterministic/) | Exact witness with a separate space bound |
 | [Numeric-target frontier](problems/numeric-target-frontier/) | R/S target and support-sensitive checkpoint family |
+| [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/) | T/U ordered, laminar, sparse, and deterministic-kernel checkpoint family |
 
 ## Robustness and lower bounds
 

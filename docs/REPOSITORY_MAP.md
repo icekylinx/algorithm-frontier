@@ -10,7 +10,7 @@ The repository separates public result records from imported source material.
 | `problems/<name>/` | One curation record: README, proof map, verification notes, and exact source map. |
 | `sources/checkpoint-o/` | Complete baseline source snapshot. |
 | `sources/checkpoint-p/`, `sources/checkpoint-q/` | Incremental source checkpoints retained by byte identity. |
-| `sources/checkpoint-r/`, `sources/checkpoint-s/` | New R and S incremental research payloads; S names R as its parent. |
+| `sources/checkpoint-r/`, `sources/checkpoint-s/`, `sources/checkpoint-t/`, `sources/checkpoint-u/` | Incremental research payloads; each child names its parent archive and SHA-256. |
 | `provenance/` | Archive hashes, checkpoint manifests, delta accounting, and source-file identity. |
 | `tools/` | Structural, delimiter, and incremental-source checks. |
 | `.github/workflows/` | Reproducible repository checks for pushes and pull requests. |
