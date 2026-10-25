@@ -166,6 +166,11 @@
       "archive": "deterministic_related_problems_increment_20261025_S.zip",
       "sha256": "0aa96b8c60ff9f866df6cc1cfbae1764a9d016e0351eb1944be343b1d41912ed",
       "bytes": 83739
+    },
+    {
+      "archive": "deterministic_related_problems_increment_20261025_T.zip",
+      "sha256": "ce5d4260f803c4872e9065ebba8c0c5275087412e78d180dd2c384556f02b0e0",
+      "bytes": 79861
     }
   ]
 }

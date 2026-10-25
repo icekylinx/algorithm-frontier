@@ -1,0 +1,83 @@
+{
+  "checkpoint": "T",
+  "scope": "Increment only relative to S; no inherited manuscript or prior archive",
+  "snapshot_utc": "2026-10-25 12:25:38 UTC",
+  "language": "English",
+  "parent": {
+    "filename": "deterministic_related_problems_increment_20261025_S.zip",
+    "sha256": "0aa96b8c60ff9f866df6cc1cfbae1764a9d016e0351eb1944be343b1d41912ed"
+  },
+  "mathematical_status": "Complete proofs with full internal mathematical review; not formal verification or external peer review",
+  "payload": [
+    {
+      "file": "CHECKPOINT_T_INCREMENT.md",
+      "bytes": 13474,
+      "sha256": "6a916d4fdbf7ab87df74bd02ce804e5dcef4d57ce68cf52386516665bfa0dbf7"
+    },
+    {
+      "file": "README_INCREMENT_T.md",
+      "bytes": 2634,
+      "sha256": "89f860e0db1d2a57147ffc47f8c6f64609c3868a7d57221b67d5e693e0adfe7e"
+    },
+    {
+      "file": "exact_weighted_prefix_quotas_max_target.md",
+      "bytes": 17801,
+      "sha256": "237685985f3a482750323aefbde435b277245bf41ba9811ed7f1329debbef717"
+    },
+    {
+      "file": "few_weight_families_prefix_target_scheme.md",
+      "bytes": 26650,
+      "sha256": "76c99a15dcb288921ce032325d439ebd7b48b5ebead87dd521ea5bf35d037b1d"
+    },
+    {
+      "file": "few_weight_prefix_joint_lower_bounds.md",
+      "bytes": 15924,
+      "sha256": "69b0c49f25392ac396d5781aa115a0f260e332b17a3fb6f79e54824b378dc871"
+    },
+    {
+      "file": "incremental_primary_baselines_T.md",
+      "bytes": 8602,
+      "sha256": "611c48d9f043d99f508ca2d057f912a5dc496fffc6ac5b78931e94347d750ad2"
+    },
+    {
+      "file": "laminar_common_weight_root_cap_fpt.md",
+      "bytes": 26193,
+      "sha256": "98ce530d6cb201cfb96f7bc998f923d0253a89637efaf7f7b92c178d1ca05b4e"
+    },
+    {
+      "file": "laminar_valuated_zero_completion_fpt.md",
+      "bytes": 24561,
+      "sha256": "9cfe932659e048c16ed09b3d30d9527f8e1650de2dcae8bed974a2718f4f200f"
+    },
+    {
+      "file": "row_dependent_full_prefix_target_boundary.md",
+      "bytes": 7197,
+      "sha256": "f553dbec50a89aa903b1393939c2dc0c6b6e73444428fe1c0cca33c02de9dbb0"
+    },
+    {
+      "file": "two_order_weighted_prefix_target_classification.md",
+      "bytes": 24915,
+      "sha256": "bb2b47c767e03d0af5ec629fb40a7cee433a0b9fb1a578ecd3517f9a5b92caef"
+    },
+    {
+      "file": "uniform_zero_scalar_laminar_extension.md",
+      "bytes": 7591,
+      "sha256": "283ab88e90315584711e24fd8dc28b9f7a39a78c9f9a607bd2032e6c835eb46c"
+    },
+    {
+      "file": "weighted_prefix_support_budget_tradeoffs.md",
+      "bytes": 16000,
+      "sha256": "86d4784ba6cc6a901b388aa2a3dd3fb51d9a67a0fcb50c9458193d3dc485fe45"
+    }
+  ],
+  "exclusions": [
+    "previous checkpoint files",
+    "internal review logs",
+    "source downloads",
+    "Lean",
+    "PDF",
+    "executables",
+    "test bundles",
+    "prospective sparse-row theorem"
+  ]
+}
