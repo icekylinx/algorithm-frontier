@@ -156,6 +156,11 @@
       "archive": "deterministic_matching_and_frozen_sssp_checkpoint_20261025_A.zip",
       "sha256": "ae9dd6163bfcebab185b1fbdf7a0b9931d3fa631cd7c65d22843307987a0827b",
       "bytes": 800340
+    },
+    {
+      "archive": "deterministic_related_problems_increment_20261025_R.zip",
+      "sha256": "c5a0cacff1e0ab9283da4e6214d7f80ced7fc46cc3b15e5700dc9098bf7e3bf4",
+      "bytes": 110748
     }
   ]
 }

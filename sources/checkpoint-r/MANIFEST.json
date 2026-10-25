@@ -1,0 +1,96 @@
+{
+  "checkpoint": "R",
+  "type": "increment_only",
+  "snapshot_utc": "2026-10-25 11:45:05 UTC",
+  "parent_checkpoint": "Q",
+  "parent_sha256": "8ff7b58aafa78cf67747fcd58433f98d8968a11d03ee61c3041497b3b7fc96e5",
+  "research_files": 17,
+  "contents": "English mathematical proofs and primary-source notes; no Lean, PDF, code, or test bundle",
+  "files": [
+    {
+      "name": "CHECKPOINT_R_INCREMENT.md",
+      "bytes": 7806,
+      "sha256": "4b896b5cac9506b0e9251d51779f45bdbee97be9d3289c276cf8856197c2fea1"
+    },
+    {
+      "name": "README_INCREMENT_R.md",
+      "bytes": 1945,
+      "sha256": "35aedb2f9ece8659c1438f243bab175dabdad56e447e4c9f12add6a3acc81fde"
+    },
+    {
+      "name": "single_matroid_accuracy_primary_baselines.md",
+      "bytes": 6085,
+      "sha256": "c06f13616b619622a757bd313f664326a3dafb20cec94b49ce92cbd4fc7b2dc1"
+    },
+    {
+      "name": "numeric_target_primary_baselines.md",
+      "bytes": 4264,
+      "sha256": "273af2518cd499f75d796c1189bea10ac2fc7f75646782dd46254e37ece06fe6"
+    },
+    {
+      "name": "seven_variant_single_matroid_profile_scheme.md",
+      "bytes": 25716,
+      "sha256": "2009941fe1dd7aa1aba40ee5d044f39f92b95025466d8c226ddb81a81b9d3b42"
+    },
+    {
+      "name": "refined_single_matroid_accuracy_constants.md",
+      "bytes": 13567,
+      "sha256": "62455c3aee4d67bffde08b225b1860a54596ed9e14771fcd69d8d38c6a6227ee"
+    },
+    {
+      "name": "single_matroid_accuracy_lower_bound_audit.md",
+      "bytes": 9339,
+      "sha256": "3f724ab1fc8d1e45e3c1f58f7550c371b8101708ce886c7df183dfa1a980ec1a"
+    },
+    {
+      "name": "global_polymatroid_profile_transfers.md",
+      "bytes": 28514,
+      "sha256": "eea841537b39739f32a6995268ea0d9483064f9d0c541a4c9ce2e69a495ce938"
+    },
+    {
+      "name": "mandatory_base_fair_allocation_passive_lift.md",
+      "bytes": 19783,
+      "sha256": "3c7c94530b5e7496dbf53d123f39dcc406358e60fa9bf723be6667918c2004ae"
+    },
+    {
+      "name": "global_robust_profile_composition.md",
+      "bytes": 9705,
+      "sha256": "f412c34f6a0e24fbc90ed240d39300cffa94a268e42ec2c7a09b33a43badcd1a"
+    },
+    {
+      "name": "exact_numeric_target_single_matroid_scheme.md",
+      "bytes": 14671,
+      "sha256": "48063ade8173d01549441c56ceacaf7f894dcd0b40ec09b722d53909a4d683d9"
+    },
+    {
+      "name": "block_global_exact_numeric_target_schemes.md",
+      "bytes": 19369,
+      "sha256": "47e6117086d885c3d6b9bd44e57e8a4e2f3b55b3c4dfd89cea0b362e3d777abc"
+    },
+    {
+      "name": "fixed_dimensional_mixed_numeric_targets.md",
+      "bytes": 19750,
+      "sha256": "82678902fec0dfbaa04bfdf2e94ab65ec1ea7cf0cfc78d51b5354773451d08e6"
+    },
+    {
+      "name": "variable_dimension_total_target_classification.md",
+      "bytes": 15957,
+      "sha256": "4262b449dc60c312d5c5e429c0f1890d1cc5ad076d9f24310c8a8d8cf91236b2"
+    },
+    {
+      "name": "mixed_target_cover_chain_compression.md",
+      "bytes": 12586,
+      "sha256": "4cb4eafb29ffbe747e96d0d49207deabcc71e6de361712d77f5e8fcdf916e854"
+    },
+    {
+      "name": "compressed_nonlinear_marginal_band_transfers.md",
+      "bytes": 31933,
+      "sha256": "23c68ac94fbb1644eafbc191df99de043dcee344c255b1fb9eba38f34265e3ad"
+    },
+    {
+      "name": "aligned_nonlinear_mixed_numeric_targets.md",
+      "bytes": 22491,
+      "sha256": "139b8da20b27a5e4ac87f3680cf357894a8945c06fa725051cb06a116a6f4126"
+    }
+  ]
+}
