@@ -6,7 +6,7 @@ This module proves the positive-deficiency top representation used in
 the general low-space bound. Its support counting, fixed-layer
 trace inequality, canonical projections, balanced-cell families, and
 original-key generators are the complete constructions in
-[the manuscript](../../../proof.md), Sections II.1–II.2 and II.5–II.7.
+[the manuscript](../../../problems/subset-sum-low-space-deterministic/proof.md), Sections II.1–II.2 and II.5–II.7.
 The code construction is strengthened in [LINEAR_COVERS.md](LINEAR_COVERS.md).
 All logarithms have base two.
 

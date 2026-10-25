@@ -1,35 +1,45 @@
-# Featured algorithm index
+# Featured results
 
-This page is the short reading path for the repository. The complete catalogue is in [`CONTENTS.md`](CONTENTS.md). Each linked record separates guarantee, objective, time, space, parameters, representation, lower-bound type, and review status.
+[Download the overview PDF](overview.pdf) for the visual catalogue, headline cards, explicit parameter definitions, review vocabulary, and checkpoint lineage.
 
-## Headline records
+This page is the short reading path. [`CONTENTS.md`](CONTENTS.md) is the complete machine-readable map; each linked record contains the exact source paths and review boundary.
 
-| Problem | Why it is featured | Displayed bound or boundary |
-|---|---|---|
-| [Numeric-target frontier](problems/numeric-target-frontier/) | Newest R/S checkpoint family; combines exact target algorithms, support geometry, and lower-bound boundaries. | R: `2^(O((T + 1) log(T + 2)) * poly(H))`; S: `2^(O(T log(2 + Q/T)) * poly(H))` |
-| [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/) | T/U extension: ordered prefix quotas, laminar completion, sparse overlap, and deterministic ground kernels. | T/U: `2^O(B)`, `2^O(B log(B + 2))`, `2^O(B^2)`, and sparse `2^O(Delta B0 log(Delta B0 B + 2))` |
-| [Faster Subset Sum](problems/subset-sum-fast-deterministic/) | A central exact exponential-time record with an explicit exponent. | `C + poly(n, L) * 2^(E n)`, `E < 0.4964618056` |
-| [Low-space Subset Sum](problems/subset-sum-low-space-deterministic/) | Separates a space-sensitive algorithm from the faster-time record. | Time `poly(n, L) * 2^(n/2)`; space `poly(n, L) * 2^(E_S n)` |
-| [General-graph matching](problems/general-matching/) | Exact matching with a conditional fast backend contract. | `O(n + m) + (m_s + 1) exp(O((log(m_s + 2))^(4/5) * (log log(m_s + 4))^(1/5)))` |
-| [Dynamic graph frontier](problems/apsp-frontier/) | Collects update/stretch tradeoffs rather than one scalar optimum. | Multiple parameterized update/stretch points |
-| [Allocation and scheduling boundaries](problems/allocation-lower-bounds/) | Keeps oracle barriers and approximation endpoints visible beside algorithms. | Model-specific query and factor barriers |
+## Headline cards
 
-## How to read the catalogue
+### Numeric-target frontier
 
-1. Start with a headline record and inspect its `README.md` result card.
-2. Follow `proof.md` for the claim decomposition and `sources.md` for exact provenance.
-3. Check `verify/` before treating a claim as formally verified or implementation-ready.
-4. Use [`docs/PRIORITY.md`](docs/PRIORITY.md) to distinguish headline results, supporting extensions, boundary records, and archival source material.
+The R/S family separates numeric target magnitude from support geometry. It contains exact target decisions, exact scalar optimization, fixed-dimensional variants, support-sensitive refinements, and separate oracle versus readable-program lower-bound statements.
 
-## Presentation rule
+[Open the R/S record](problems/numeric-target-frontier/) · [Open its review report](reviews/headline/numeric-target-frontier.md)
 
-The index uses plain-text complexity in code spans: `exp(...)`, `poly(...)`, `2^(...)`, `eps`, and `OPT`. This is intentional. It keeps GitHub rendering stable and makes copied tables readable in terminals, diffs, and search results. Original source notation is preserved under `sources/`.
+### Weighted-prefix and sparse-quota frontier
 
-## Neighbouring families
+The T/U family covers common-order prefix quotas, several shared weight families, laminar root caps, sparse mixed quotas, sharp frequency-one lower bounds, and deterministic ground reductions. The kernel outputs are listed separately from end-to-end algorithm times.
 
-- **Graph algorithms:** matching, dynamic APSP, dynamic spanners, incremental SSSP/SCC, and decremental strong forests.
-- **Allocation and flow:** selected flow, robust scenarios, setup budgets, polymatroids, matroid configurations, and lower bounds.
-- **Scheduling:** activated machines, commitments, processing buckets, two-size/two-time models, and profile endpoints.
-- **Robustness and barriers:** bounded certificates, unrelated values, width-two obstructions, and two-scenario hardness.
+[Open the T/U record](problems/weighted-prefix-quota-frontier/) · [Open its review report](reviews/headline/weighted-prefix-quota-frontier.md)
 
-For every directory, the repository preserves the same compact record contract. The [repository map](docs/REPOSITORY_MAP.md) explains the source and checkpoint layout.
+### Faster Subset Sum
+
+An exact indexed-witness algorithm for arbitrary signed binary inputs. The record states the input count, full binary encoding length, exact witness output, time exponent, and the fact that no space exponent is claimed for this algorithm.
+
+[Open the fast-time record](problems/subset-sum-fast-deterministic/) · [Open its review report](reviews/headline/faster-subset-sum.md)
+
+### Low-space Subset Sum
+
+A separate exact indexed-witness algorithm. Its card gives the full binary input length, bit-operation model, writable-bit space meaning, exact space exponent, and the distinction from the faster-time algorithm.
+
+[Open the low-space record](problems/subset-sum-low-space-deterministic/) · [Open its review report](reviews/headline/low-space-subset-sum.md)
+
+### Graph frontiers
+
+Matching, dynamic APSP, dynamic spanners, incremental SSSP/SCC, and related records retain separate update, stretch, recourse, path-reporting, and backend assumptions instead of collapsing them into one number.
+
+[Open the graph catalogue](CONTENTS.md#graph-algorithms-and-matching) · [Open the graph review report](reviews/headline/dynamic-graph-frontier.md)
+
+## How to read a result
+
+1. Read the result card for the guarantee and objective/output.
+2. Check the separate time and space rows and the local parameter definitions.
+3. Follow the proof map and review report before treating a claim as algorithmically complete.
+4. Inspect the source map and checkpoint manifest for exact provenance.
+5. Treat finite certificate replay as evidence for a proof component, not as formal verification of the full arbitrary-input algorithm.

@@ -2,7 +2,7 @@
 
 Author: Yilin Liu. Assistance: OpenAI Codex, including GPT-6 Astra.
 
-The final trace-mass consequence uses the inequality proved in [the manuscript](../../../proof.md), Sections II.2.1–II.2.2. The translate-cover theorem and its construction below are independent of that premise.
+The final trace-mass consequence uses the inequality proved in [the manuscript](../../../problems/subset-sum-low-space-deterministic/proof.md), Sections II.2.1–II.2.2. The translate-cover theorem and its construction below are independent of that premise.
 
 Let $V=\mathbb F_2^c$, let $\varnothing\ne G\subseteq V$, and suppose membership in $G$ takes deterministic time $Q$ and workspace $W$. Write $N=2^c$ and $\alpha=|G|/N$. There is a deterministic algorithm returning a basis for a subspace $H\le V$ such that
 

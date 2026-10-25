@@ -190,5 +190,5 @@ accepted ranges and the target; membership filtering charges all raw
 masks and retains the chosen configuration in every witness.
 
 Support-four relation certificates and bounded annihilator signatures
-are sufficient triggers recorded in [FRONTIER.md](../FRONTIER.md).
+are sufficient triggers recorded in [FRONTIER.md](frontier.md).
 The general theorem does not assume that two such blocks always exist.

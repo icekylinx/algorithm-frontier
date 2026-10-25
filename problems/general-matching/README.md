@@ -1,16 +1,20 @@
 # Exact general-graph matching
 
-| Item | Result |
+This is a Tier A conditional algorithm record for exact maximum-cardinality matching in arbitrary undirected graphs.
+
+| Field | Curated statement |
 |---|---|
-| **Guarantee** | Exact maximum-cardinality matching in arbitrary undirected graphs with original edge identifiers. |
-| **Complexity** | `O(n+m)+(m_s+1)exp(O((log(m_s+2))^(4/5)(loglog(m_s+4))^(1/5)))`, conditional on the named backend contract. |
-| **Model** | Arbitrary undirected graphs, loops/parallel records cleaned with original edge identifiers; exact output. The fast bound assumes the named external primitives and raw-backend Contract R. |
-| **Status** | internally reviewed research; no formal verification or external peer review. |
+| **Guarantee** | Returns an exact maximum-cardinality matching while preserving the original identifier of every selected edge. |
+| **Objective and output** | Maximize the number of matched edges and return the selected edge identifiers after loops and parallel records have been normalized. |
+| **Time** | Linear input normalization plus the backend-dependent term: one plus the retained edge count, multiplied by an exponential-of-polylogarithmic factor with leading powers four-fifths and one-fifth. A separate uniform m to the power 1 plus o of 1 assembly is retained as a comparison point. |
+| **Space** | Polynomial in the actual graph and backend inventory; normalization does not require losing physical edge identifiers. |
+| **Parameters** | **n** is the vertex count; **m** is the input edge-record count; **m_s** is the retained edge count after normalization; loops and parallel lifetimes are handled by the source contract. |
+| **Model and representation** | Arbitrary undirected graphs, exact output, and the named raw-backend Contract R plus external primitives. The conditional backend assumptions are part of the claim. |
+| **Lower-bound scope** | This card records a conditional upper bound and backend boundary. It does not claim a new unconditional matching lower bound. |
+| **Review status** | Internal proof, algorithm, and source review is tracked in the [headline review report](../../reviews/headline/dynamic-graph-frontier.md). Finite audit notes are evidence for the stated composition; they are not formal verification. |
 
-The complete proof map, verification pointers, and exact source paths are
-listed below. The original proof source is preserved without mathematical
-rewriting.
+Read the [proof map](proof.md), [source map](sources.md), and [complete index](../../CONTENTS.md) for the backend contract and audit trail.
 
-**Source.** [`sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md`](../../sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md) and the verification paths in `sources.md`.
+**Source.** [Quantitative matching composition](../../sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md).
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

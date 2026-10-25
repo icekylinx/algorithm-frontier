@@ -26,3 +26,7 @@ jobs:
         run: python3 tools/check_latex_delimiters.py
       - name: Verify incremental source hashes
         run: python3 tools/verify_incremental_sources.py
+      - name: Validate review registry
+        run: python3 tools/validate_reviews.py
+      - name: Check reviewed internal links
+        run: python3 tools/check_internal_links.py

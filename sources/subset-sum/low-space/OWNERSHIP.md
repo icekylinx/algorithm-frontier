@@ -4,7 +4,7 @@ Author: Yilin Liu. Assistance: OpenAI Codex, including GPT-6 Astra.
 
 All logarithms are binary, and $O^*$ suppresses polynomial factors in the coordinate count and the binary input length. The layout arity used below is the fixed integer four.
 
-The inherited strict-extraction, local trace/contrast, prime/cover and ordered-stream interfaces are proved in [the manuscript](../../../proof.md), Sections II.1, II.2, II.4–II.7. The new combinatorial constructions and their cost bounds are proved below.
+The inherited strict-extraction, local trace/contrast, prime/cover and ordered-stream interfaces are proved in [the manuscript](../../../problems/subset-sum-low-space-deterministic/proof.md), Sections II.1, II.2, II.4–II.7. The new combinatorial constructions and their cost bounds are proved below.
 
 The structural result applies to arbitrary indexed integer weights on a top core of size $a$, with $N$ distinct subset sums and deficiency $d=a-\log N$. For the dense branch, use $a=.9m+O(1)$, $p=1/20$, and $d/a\le17/2000+O(1/m)$. It supplies complete representations, owner lists, exact compatibility checking and actual-profile allocation with these bounds:
 

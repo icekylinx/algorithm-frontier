@@ -15,10 +15,10 @@ $$
 The exact exponent is $E_S=18261635770550353/10^{17}=.18261635770550353$. The received $137/750$ bound is also implied. The argument covers arbitrary
 signed binary weights, repeated and zero values, exact YES/NO decisions,
 and indexed witnesses. Its ownership, biased-top, scalar and preparation
-proofs are curated in [structural/](structural/THEOREM.md).
-Review status is recorded in [CURRENT_REVIEW.md](CURRENT_REVIEW.md).
+proofs are curated in [THEOREM.md](THEOREM.md).
+Review status is recorded in [current-review.md](current-review.md).
 
-The [manuscript](../../proof.md) now integrates the same exact bound
+The [manuscript](../../../problems/subset-sum-low-space-deterministic/proof.md) now integrates the same exact bound
 and complete proof. Part I's theorem and research record are unchanged.
 Later structural branches and failed routes remain research records.
 
@@ -38,7 +38,7 @@ following algorithms, certificates, and limits of proposed arguments.
 | Positive uniform-slice coupling | A largest-fiber coupling proves a slice Renyi bound. The aggregate cross-layer low-noise inequality remains a separate question. |
 | Measured owner and energy certificates | Exact relation data can certify quota-image density for a particular input and permit a fixed owner. Their predicates are explicit; they are not universal deficiency estimates. |
 
-See [STRUCTURAL_BRANCHES.md](STRUCTURAL_BRANCHES.md) for the algorithms
+See [frontier.md](frontier.md) for the algorithms
 and their measured premises. A common-scale clustered-support branch
 remains useful when supports have gaps and a small interval cover;
 it is not discarded merely because the individual-range branch has
@@ -158,4 +158,4 @@ the two coefficients and five rational regions. The accepted proof
 shortenings are the common retained-quarter lemma, one owner root
 with three quadratics, a decreasing tiny-cap estimate, active-only
 containers, and elementary cyclic tensor layouts. Their proofs are in
-[SIMPLIFICATIONS.md](structural/SIMPLIFICATIONS.md).
+[SIMPLIFICATIONS.md](SIMPLIFICATIONS.md).

@@ -1,19 +1,20 @@
 # Weighted-prefix, laminar, and sparse-quota frontier
 
-| Item | Result |
+This is a Tier A record for ordered prefix geometry, laminar root caps, sparse mixed quotas, and deterministic ground kernels. It is kept separate from the numeric-target/support-pattern family because its controlling parameters are different.
+
+| Field | Curated statement |
 |---|---|
-| **Priority** | Tier A headline extension: the newest T/U family, presented separately from the R/S numeric-target/support-pattern record. |
-| **Guarantee** | Exact deterministic target feasibility and signed-scalar optimization for ordered quota systems, bounded-family weights, laminar root caps, sparse mixed quotas, and several deterministic ground-kernel reductions. |
-| **Objective** | Optional independent vectors or mandatory original totals, with exact feasibility or exact optimization under the model named by each source. |
-| **Time** | T: one order `2^O(B) * poly(H)`, two orders `2^O(B log(B + 2)) * poly(H)`, `p` weight families `2^O(p B log(p + 2)) * poly(H)`, and laminar root cap `2^O(B^2 log(B + 1)) * poly(H)`. U: sparse mixed quotas `2^O(Delta B0 log(Delta B0 B + 2)) * poly(H)` and a laminar refinement `2^O(B^2) * poly(H)`. |
-| **Space** | Uniform polynomial binary workspace for the stated oracle or readable-program model; no unit expansion of binary caps. |
-| **Parameters** | `B` is a maximum target or root cap, `B0` is the distinguished root cap, `Delta` bounds positive nonroot incidences per column, `p` counts shared weight families, and `H` includes complete binary input and paid polynomial primitive work. Kernel records use their local `k`, `d`, or `delta` parameters. |
-| **Representation** | One global integral polymatroid or an explicitly represented matroid family, with the exact rank/profit interface and root-charge or support restrictions stated in the source. |
-| **Lower bound** | T gives one-order, two-order, support-budget, multi-family, row-dependent, and laminar boundary statements. U gives a sharp frequency-one disjoint-row lower bound and deterministic ground-kernel boundaries. Oracle-query and readable-program ETH consequences remain separate. |
-| **Status** | Complete manuscript-level internal mathematical review is recorded in T/U; no formal verification or external peer review is claimed. |
+| **Guarantee** | Exact deterministic target feasibility and signed-scalar optimization for ordered quota systems, bounded-family weights, laminar caps, sparse mixed quotas, and the named deterministic kernel reductions. |
+| **Objective and output** | Each row states whether vectors are optional independent choices or mandatory original totals, then returns exact feasibility or an exact scalar optimum under that contract. |
+| **End-to-end algorithms** | T retains one-order, two-order, multi-family, and laminar-cap algorithms. U retains sparse mixed-quota and laminar algorithms. Their complexity factors are reported against the binary caps rather than an expanded unit instance. |
+| **Deterministic kernel outputs** | Separate ground-kernel rows retain sparse packing of order k to the power 2-delta-plus-1, coverable-matroid kernels of size k times d factorial times the d-th power of k times one plus the sum of the g-values, transversal kernels of order k to the power 2-d-plus-1, and graph-matching kernels of order k to the fourth power (or k to the fifth power for parallel-edge handling). |
+| **Space** | Uniform polynomial binary workspace in the stated oracle or readable-program model. No binary cap is expanded into unit capacity. |
+| **Parameters and assumptions** | **B** is the maximum target or root cap; **B0** is the distinguished root cap; **Delta** is at least 1 and bounds positive nonroot incidences per column; **p** counts shared weight families; **H** includes the full binary input and paid polynomial primitive work. The common coordinate order is shared across rows. A root cap is imposed by **B0**, the maximum cap is **B**, positive root charge is required where stated, and coordinates that are zero at the root are zero in every other row. The original completion oracle is retained. |
+| **Lower-bound scope** | T records one-order, two-order, support-budget, multi-family, row-dependent, and laminar boundaries. U adds the frequency-one disjoint-row lower bound of 2 to the power Omega of B log B and separate deterministic ground-kernel boundaries. Oracle-query and readable-program ETH consequences remain distinct. |
+| **Review status** | Internal proof, algorithm, and source review is tracked in the [headline review report](../../reviews/headline/weighted-prefix-quota-frontier.md). Finite replay checks are evidence for the listed statements; they are not formal verification. |
 
-The family is split from R/S because its main organizing parameters are ordered prefix geometry, laminar structure, positive root charge, and deterministic ground reduction. The T/U sources are increment-only and retain their exact parent archive hashes.
+Read the [proof map](proof.md), [source map](sources.md), [complexity guide](../../docs/COMPLEXITY.md), and [complete index](../../CONTENTS.md) for the detailed rows and provenance.
 
-See the [complexity guide](../../docs/COMPLEXITY.md), [complete index](../../CONTENTS.md), [proof map](proof.md), and [source map](sources.md).
+**Sources.** [Checkpoint T](../../sources/checkpoint-t/CHECKPOINT_T_INCREMENT.md) and [Checkpoint U](../../sources/checkpoint-u/CHECKPOINT_U_INCREMENT.md).
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

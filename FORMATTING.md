@@ -8,7 +8,8 @@ The repository has two presentation layers:
 ## Mathematical display
 
 - Use fenced code blocks for executable snippets.
-- Use code spans for displayed complexity on GitHub-facing pages: `2^(...)`, `exp(...)`, `poly(...)`, `eps`, `OPT`, and `Gamma(...)`.
+- Use readable prose and labelled rows for complexity on display-first pages. Exact symbolic forms belong in `overview.pdf`, proof maps, source maps, and imported manuscripts.
+- Keep compact code spans only in dense machine-oriented maps such as `CONTENTS.md` and `docs/COMPLEXITY.md`; they should not dominate the homepage or headline cards.
 - Do not add TeX math delimiters to a display-first page.
 - Keep one bound per table cell and label time, space, update, query, and approximation resources separately.
 - Preserve source notation inside `sources/`; display normalization is not a mathematical edit to imported text.

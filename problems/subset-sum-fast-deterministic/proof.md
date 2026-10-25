@@ -1,38 +1,26 @@
-# Proof map: Faster deterministic Subset Sum
+# Proof map: faster deterministic Subset Sum
 
-A uniform deterministic exact algorithm for arbitrary signed binary Subset Sum inputs, including repeated, zero, and negative weights, with indexed witness recovery.
+This page gives the public claim contract for the faster-time Subset Sum
+algorithm and points to the preserved proof source.
 
-**Headline bound.** The bit running time is
+## Theorem contract
 
-$$
-C+\mathrm{poly}(n,L)2^{En},
-\qquad E=\frac{149809813343531}{301754962128739}<0.4964618056.
-$$
+- **Input:** arbitrary signed binary weights and a signed binary target.
+- **Output:** exact YES/NO decision and indexed witness recovery on YES.
+- **Time:** polynomial preprocessing plus polynomial work times two to the
+  power of `E n`, with `E = 149809813343531 / 301754962128739`.
+- **Space:** no independent exponent is asserted.
+- **Parameters:** `n` counts weights, `L` is total binary input length, and
+  `C` denotes the fixed polynomial preprocessing term in the source theorem.
 
-No space exponent is claimed for this algorithm.
+## Source and review boundary
 
-**Model and scope.** The input is an arbitrary signed binary instance with total encoding length L. The theorem decides feasibility exactly and returns an indexed binary witness on YES instances.
+The complete argument remains in [combined-proof.md](../../sources/subset-sum/combined-proof.md).
+The repository review distinguishes proof structure, algorithmic cost
+accounting, source/provenance checks, and finite replay. A finite replay is
+not formal verification of the full arbitrary-input algorithm.
 
-## Complete proof source
+See the [headline review](../../reviews/headline/faster-subset-sum.md) and the
+[subset-sum review directory](../../sources/subset-sum/reviews/).
 
-[`sources/subset-sum/combined-proof.md`](../../sources/subset-sum/combined-proof.md)
-
-The imported source text is preserved under `sources/subset-sum/`. This proof
-map organizes the result and does not combine it with the other Subset Sum
-algorithm.
-
-## Verification sources
-
-- `sources/subset-sum/fast-time/frontier.md`
-- `sources/subset-sum/reviews/PROOF_REVIEW.md`
-- `sources/subset-sum/verification/check_profile.py`
-- `sources/subset-sum/verification/check_fast_costs.py`
-- `sources/subset-sum/verification/verify_proof.py`
-
-
----
-
-**Curated by:** Yilin Liu  
-**Signature:** GPT-6 Astra Pro  
-**Date:** 2026-10-25  
-**Status:** internally reviewed research; no formal verification or external peer review.
+**Attribution.** Yilin Liu · GPT-6 Astra Pro

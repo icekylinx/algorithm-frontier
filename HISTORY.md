@@ -25,3 +25,11 @@ Migrate the remaining legacy problem cards, inspect the first workflow result af
 - Imported T and U as parent-linked increments after validating archive hashes and payload manifests.
 - Added the weighted-prefix, laminar, and sparse-quota Tier A extension record.
 - Kept T/U separate from the R/S numeric-target card because the parameter geometry and kernel guarantees differ.
+
+## 2026-10-25 — review and presentation pass
+
+- Replaced the homepage and headline cards with prose-first result surfaces and added the root `overview.pdf` reading layer.
+- Added explicit parameter, representation, lower-bound, and review-status rows for the R/S, T/U, Subset Sum, matching, APSP, spanner, and incremental SSSP records.
+- Added a review registry that separates proof review, algorithm review, source review, finite certificate replay, and formal-verification status.
+- Repaired the reviewed low-space source links and expanded the numeric-target source map to every R/S payload file.
+- Added CI checks for the review registry and reviewed internal links.

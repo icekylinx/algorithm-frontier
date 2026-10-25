@@ -3,7 +3,7 @@
 Author: Yilin Liu. Assistance: OpenAI Codex, including GPT-6 Astra.
 
 This module records the construction now integrated into the
-[complete manuscript](../../../proof.md). Its proof modules retain a
+[complete manuscript](../../../problems/subset-sum-low-space-deterministic/proof.md). Its proof modules retain a
 separate development record; the paper itself includes every required
 foundation and replacement lemma.
 

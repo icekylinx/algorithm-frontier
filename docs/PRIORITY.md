@@ -15,6 +15,6 @@ A result may move toward Tier A only when its model, comparator, parameters, add
 
 ## Display consequences
 
-Tier A and Tier B records use the compact result-card template and portable code-span complexity. Tier C cards lead with the boundary and assumption. Tier D pages prioritize provenance and byte identity over presentation.
+Tier A and Tier B records use the compact result-card template and prose-first complexity rows. Tier C cards lead with the boundary and assumption. Tier D pages prioritize provenance and byte identity over presentation.
 
 The tier is recorded in a problem README when the distinction affects reading order. The underlying source remains discoverable from `sources.md` and the canonical contents map.

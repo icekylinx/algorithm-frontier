@@ -84,4 +84,4 @@ unchanged. No Git staging, commit, or publication was performed.
 
 ## Subsequent manuscript integration
 
-The complete proof and publication files were synchronized on 24 October 2026 to the exact exponent .18261635770550353. At that integration checkpoint Part I was byte-identical; later copyediting adjusted prose in both parts while retaining Part I's mathematical argument. The current paper review is [PROOF_REVIEW.md](../../docs/PROOF_REVIEW.md), and its source/package record is rounds/20261024-structural/MANUSCRIPT.json. The initial freeze above is a historical ingestion boundary.
+The complete proof and publication files were synchronized on 24 October 2026 to the exact exponent .18261635770550353. At that integration checkpoint Part I was byte-identical; later copyediting adjusted prose in both parts while retaining Part I's mathematical argument. The current paper review is [PROOF_REVIEW.md](../reviews/PROOF_REVIEW.md), and its source/package record is rounds/20261024-structural/MANUSCRIPT.json. The initial freeze above is a historical ingestion boundary.

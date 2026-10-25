@@ -1,21 +1,21 @@
 # Numeric-target and support-sensitive frontier
 
-| Item | Result |
+This is a Tier A record for exact target feasibility, scalar optimization, and support-sensitive refinements in a globally coupled integral polymatroid.
+
+| Field | Curated statement |
 |---|---|
-| **Priority** | Tier A headline record: the newest incremental family and the main place to read the target/support tradeoff. |
-| **Guarantee** | Exact target decision and exact scalar optimization for one globally coupled integral polymatroid, plus deterministic approximation and support-sensitive refinements. |
-| **Objective** | Upper, equality, or covering target rows with one signed scalar MIN/MAX; approximation records state direction separately. |
-| **Time** | Arbitrary rows: `2^(O((T + 1) log(T + 2)) * poly(H))`. Fixed `d` rows: `exp(O_d((T + 1)^(d / (d + 1))) * poly(H))`. Support-sensitive S bound: `2^(O(T log(2 + Q/T)) * poly(H))` for `T > 0` after preprocessing. |
-| **Space** | Polynomial binary workspace in the stated oracle or readable-program model; no unit expansion of binary counts. |
-| **Parameters** | `T` is the numeric target sum, `Q` is the number of distinct nonempty eligible-column support patterns, `d` is fixed row dimension, and `H` includes binary input and paid polynomial primitive work. |
-| **Representation** | R and S cover independent regions or original-total bases of one arbitrary integral polymatroid. Mandatory totals, exact budgets, and representation boundaries are stated per source. |
-| **Lower bound** | R gives matching-order rank-oracle boundaries. S adds a two-parameter query classification and separate deterministic-ETH consequences for readable rank programs/circuits. These are not lower bounds for every explicit matroid class or ordinary graph matching. |
-| **Status** | Internal full mathematical review is recorded in the checkpoints; no formal verification or external peer review is claimed. |
+| **Guarantee** | Exact target decision and exact scalar optimization, with deterministic approximation and support-sensitive variants. |
+| **Objective and output** | Upper-target, equality-target, and covering rows return an exact decision or an exact signed scalar optimum. Approximation rows state their direction and accuracy separately. |
+| **Time** | The arbitrary-row envelope is exponential in the target budget times a polynomial factor. Fixed row dimension gives the sharper stretched-exponential envelope. The support-sensitive row replaces the arity restriction with the number of distinct eligible-column support patterns. |
+| **Space** | Polynomial binary workspace in the named rank-oracle or readable-program model. Binary counts are never expanded into unit-size arrays. |
+| **Parameters** | **T** is the numeric target budget; **Q** is the number of distinct nonempty eligible-column support patterns; **d** is fixed row dimension; **H** covers the complete binary input and paid polynomial primitive work; **epsilon** is the approximation accuracy. |
+| **Approximation refinement** | For the stated target family, the reviewed accuracy factor is one over epsilon times exp of 141 divided by 50 epsilon plus 7, multiplied by a polynomial in H-epsilon. Single-matroid rows also retain separate square-root-of-T and square-root-of-OPT variants. |
+| **Representation** | R and S cover independent regions or original-total bases of one arbitrary integral polymatroid. The source for each row names mandatory totals, exact budgets, and the rank representation. |
+| **Lower-bound scope** | R records matching-order rank-oracle boundaries. S records a two-parameter query classification and separate deterministic-ETH consequences for readable rank programs or circuits. These claims do not automatically transfer to explicit matroids or ordinary graph matching. |
+| **Review status** | Internal proof, algorithm, and source review is tracked in the [headline review report](../../reviews/headline/numeric-target-frontier.md). Finite replay checks are evidence for the listed statements; they are not formal verification. |
 
-The central distinction is between the numeric budget `T` and the support geometry `Q`. S removes an arity restriction: a column may meet many rows while its support pattern is counted once. The budget envelope and geometry-sensitive refinements are therefore displayed separately.
+Read the [proof map](proof.md), [source map](sources.md), [complexity guide](../../docs/COMPLEXITY.md), and [complete index](../../CONTENTS.md) for the detailed rows and provenance.
 
-See the [complexity guide](../../docs/COMPLEXITY.md), [complete index](../../CONTENTS.md), [proof map](proof.md), and [source map](sources.md).
-
-**Sources.** [`sources/checkpoint-r/CHECKPOINT_R_INCREMENT.md`](../../sources/checkpoint-r/CHECKPOINT_R_INCREMENT.md) and [`sources/checkpoint-s/CHECKPOINT_S_INCREMENT.md`](../../sources/checkpoint-s/CHECKPOINT_S_INCREMENT.md).
+**Sources.** [Checkpoint R](../../sources/checkpoint-r/CHECKPOINT_R_INCREMENT.md) and [Checkpoint S](../../sources/checkpoint-s/CHECKPOINT_S_INCREMENT.md).
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

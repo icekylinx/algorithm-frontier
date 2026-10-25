@@ -25,7 +25,7 @@ Promote only the smallest useful curation layer: a display-first README, a proof
 
 ## 5. Normalize presentation
 
-Use portable code-span complexity on GitHub-facing pages. Keep time, space, update, query, approximation, and lower-bound fields separate. Reserve TeX and long derivations for source manuscripts and checkpoint records.
+Use prose-first complexity on GitHub-facing pages. Keep time, space, update, query, approximation, and lower-bound fields separate. Reserve exact symbolic notation, TeX, and long derivations for the PDF overview, proof maps, source manuscripts, and checkpoint records.
 
 ## 6. Verify and publish
 
@@ -38,7 +38,7 @@ After a workflow failure, a new checkpoint, or a material correction, reopen the
 ## Current backlog
 
 - Review the T/U weighted-prefix and sparse-quota record against the next checkpoint.
-- Migrate the remaining legacy problem cards from raw TeX to portable code-span complexity.
+- Migrate the remaining legacy problem cards from raw TeX or dense code spans to the prose-first result-card schema.
 - Add a machine-readable result index after the display schema stabilizes.
 - Add targeted source-to-card link checks for each new checkpoint family.
 - Review whether any Tier B record should be promoted after the next related checkpoint.

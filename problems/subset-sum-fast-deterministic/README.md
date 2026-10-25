@@ -1,17 +1,19 @@
 # Faster deterministic Subset Sum
 
-| Item | Result |
+| Field | Curated result |
 |---|---|
-| **Guarantee** | Exact witness recovery for arbitrary signed binary Subset Sum. |
-| **Complexity** | `C+poly(n,L)2^(En)` with `E<0.4964618056`. |
-| **Space** | No space exponent is claimed for this algorithm. |
-| **Model** | The input is an arbitrary signed binary instance with total encoding length L. The theorem decides feasibility exactly and returns an indexed binary witness on YES instances. |
-| **Status** | internally reviewed research; no formal verification or external peer review. |
+| **Priority** | Tier A: headline time bound |
+| **Guarantee** | Exact YES/NO decision and an indexed witness for arbitrary signed binary Subset Sum instances. |
+| **Objective and output** | Decide whether a subset reaches the target; on YES, return the selected input indices. Repeated, zero, and negative weights are allowed. |
+| **Time** | A polynomial additive term plus polynomial work times two to the power of `E n`, where `E = 149809813343531 / 301754962128739`, approximately `0.4964618056`. |
+| **Space** | No separate space exponent is claimed for this record. |
+| **Parameters** | `n` is the number of weights. `L` is the full binary encoding length. `C` is the fixed polynomial preprocessing term used by the source theorem. `E` is the exact time exponent. |
+| **Representation** | Uniform deterministic bit algorithm over arbitrary signed binary inputs, with exact decision and indexed witness recovery. |
+| **Lower-bound type** | No lower bound is claimed by this record. |
+| **Review status** | Proof, algorithm, and source reviews are tracked in the [review report](../../reviews/headline/faster-subset-sum.md). Finite checks are evidence for proof components, not formal verification. |
+| **Sources** | [Subset Sum proof source](../../sources/subset-sum/combined-proof.md), the [proof map](proof.md), and [verification/review notes](../../sources/subset-sum/reviews/). |
 
-The complete proof map, verification pointers, and exact source paths are
-listed below. The original proof source is preserved without mathematical
-rewriting.
-
-**Source.** [`sources/subset-sum/combined-proof.md`](../../sources/subset-sum/combined-proof.md); verification scripts and reviews are listed in `sources.md`.
+This is a separate time-focused record. It should not be combined with the
+low-space card to infer a simultaneous time and writable-space guarantee.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

@@ -4,7 +4,7 @@ This is the canonical display convention for Algorithm Frontier. Every curated r
 
 ## Display notation
 
-GitHub-facing pages use plain text inside code spans. The notation is intentionally portable:
+Display-first pages use plain language for time, space, update, query, and approximation rows. Compact tokens remain available for dense indexes and exact source-linked tables; they are not the homepage presentation.
 
 | Display | Meaning |
 |---|---|
@@ -19,7 +19,7 @@ GitHub-facing pages use plain text inside code spans. The notation is intentiona
 | `OPT` | Original integer optimum under the exact model and comparator named by the record. |
 | `r, q, c` | Common rank, explicit ground size, and corank-style parameters; each record defines local use. |
 
-Use `2^(...)`, `exp(...)`, `poly(...)`, `Gamma(...)`, `sqrt(...)`, and `binom(...)` rather than TeX commands in curated pages. Keep source notation unchanged in imported manuscripts.
+Use words such as “exponential in”, “polynomial work”, and “square-root dependence” in headline cards. Use exact tokens such as `2^(...)`, `exp(...)`, `poly(...)`, `Gamma(...)`, `sqrt(...)`, and `binom(...)` only where a compact index or exact comparison benefits from them. Keep source notation unchanged in imported manuscripts.
 
 ## Required result-card fields
 

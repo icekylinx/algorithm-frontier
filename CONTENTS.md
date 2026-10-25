@@ -84,8 +84,9 @@ This is the canonical map of the repository. The short reading path is [`OVERVIE
 - [`docs/COMPLEXITY.md`](docs/COMPLEXITY.md) — shared parameters and portable display notation.
 - [`docs/PRIORITY.md`](docs/PRIORITY.md) — presentation and maintenance tiers.
 - [`docs/MAINTENANCE_LOOP.md`](docs/MAINTENANCE_LOOP.md) — incremental discovery and review workflow.
+- [`reviews/README.md`](reviews/README.md) — proof, algorithm, source, and finite-check review registry.
 - [`docs/REPOSITORY_MAP.md`](docs/REPOSITORY_MAP.md) — source, provenance, and tool layout.
 - [`HISTORY.md`](HISTORY.md) — append-only public curation log.
 - [`MAINTENANCE.md`](MAINTENANCE.md) — release policy and required checks.
 
-GitHub-facing pages use plain-text complexity inside code spans. Imported manuscripts and checkpoint payloads preserve their original notation under `sources/`.
+The homepage and headline cards use prose-first complexity rows. Dense indexes may retain compact notation, while imported manuscripts and checkpoint payloads preserve their original notation under `sources/`.
