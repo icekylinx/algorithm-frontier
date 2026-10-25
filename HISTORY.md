@@ -10,6 +10,7 @@ This is an append-only curation log. It records repository organization and pres
 - Added proof-review notes for the arborescence, boundary, colored-graph, and valuated-intersection payloads; kept every X claim source-only and marked formal verification as not-claimed.
 - Added an exhaustive finite replay for the seven-element non-Fano obstruction and extended the X Subset Sum rational ledger check. Both checks are evidence only.
 - The source import is [`bffbeb2`](https://github.com/icekylinx/algorithm-frontier/commit/bffbeb2cbbdaa31fadedadc0d83f952464b636e5); the family-card and review-map pass is [`ac434c0`](https://github.com/icekylinx/algorithm-frontier/commit/ac434c07f78eeff01c537ace7ed4138ba12d35b4).
+- The verification/PDF appendix is [`052995d`](https://github.com/icekylinx/algorithm-frontier/commit/052995d195e8d2787928ec8970ecc2f5f5ebfda5); the follow-up fixed source-path validation and restored the full 293,751-byte PDF blob in [`b1cf61f`](https://github.com/icekylinx/algorithm-frontier/commit/b1cf61fc103b43ec35d68fee07ff9d6c872d9bec). The resulting Actions run is [green](https://github.com/icekylinx/algorithm-frontier/actions/runs/40245182998).
 
 ## 2026-10-25 — LaTeX overview and checkpoint X intake
 
