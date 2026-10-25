@@ -41,9 +41,11 @@ protocol is in [`PROTOCOL.md`](PROTOCOL.md).
 - **Negative result:** a lower bound or obstruction with its exact model; it is
   not an algorithmic guarantee.
 
-The full latest supplied source snapshot is preserved under
-`sources/checkpoint-o/`; the general-matching manuscript package is under
-`sources/matching-manuscript/`. `provenance/archive-manifest.json` records the
+The supplied allocation snapshot P is preserved under `sources/checkpoint-p/` and
+governs allocation-specific claims. Checkpoint O remains under
+`sources/checkpoint-o/` as the authoritative cumulative source for flow,
+scheduling, and graph-transfer claims. The general-matching manuscript package
+is under `sources/matching-manuscript/`. `provenance/archive-manifest.json` records the
 SHA-256 hashes of all original archives in the input directory.
 
 ## License boundary
