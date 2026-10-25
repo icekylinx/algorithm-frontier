@@ -1,6 +1,6 @@
 # Verification pointer
 
-**Original audit source:** [`sources/checkpoint-q/robust_unit_positive_allocation_four_audit.md`](../../../sources/checkpoint-q/robust_unit_positive_allocation_four_audit.md)
+**Original audit source:** [`sources/checkpoint-p/robust_unit_positive_allocation_four_audit.md`](../../../sources/checkpoint-p/robust_unit_positive_allocation_four_audit.md)
 
 The unchanged checkpoint audit is retained at the linked source path. This file keeps the problem directory compact and records its role in the curated result.
 
