@@ -34,6 +34,8 @@ oracle time for a computable function f. A direct reverse-deletion implementatio
 
 The combinatorial size proof is short and independent of the construction. The FPT construction uses an elementary separating family followed by repeated reduction and a bounded final search. Its parameter dependence is intentionally not optimized here.
 
+Before construction, one may clip `h` to the number `L` of distinct labels and `d` to the largest actual label-set size; rank is always at most `|E|`. The oracle statement treats one independence-oracle call as one unit of cost. It does not assume a linear representation, a field, or a bit-level encoding for oracle answers. Label relabeling, palette enumeration, and bookkeeping use `f(r,h,d)*|E|^{O(1)}` ordinary word operations, with label and pool indices stored in `O(log(|E|+L+dh*log(L+2)))` bits. Thus the theorem gives an FPT oracle-query/time bound, not a polynomial-space bit-kernel claim.
+
 ## 2. A circuit-blocking set-pair lemma
 
 For every e in a matroid ground set H, let A_e and B_e be disjoint subsets of some auxiliary label universe. Suppose
@@ -188,6 +190,8 @@ up to polynomial bookkeeping. The resulting X has at most T elements and at most
 failure sets. Its entire cost is a function of r,h,d. Transitivity of (7) makes the resulting rank profile identical to that of the original instance, and Theorem 1 gives the exact final bound r binomial(h+d,d). This proves Theorem 2.
 
 No minimum-cardinality optimization is claimed: the final summary is inclusion-minimal and has the sharp worst-case upper bound, but it need not be globally smallest for its particular input.
+
+**Query interface after preprocessing.** For a rank query F, scan the retained H and run greedy augmentation on `H_F`; this returns a surviving basis of size `r_M(E_F)` using at most `|H|` independence-oracle calls and `O(|H|)` stored element IDs. For the submodular extension, evaluate `f(H_F)` directly with the value oracle; a greedy scan can also return a value-increasing certificate using at most `|H|` value queries. These are query costs on the retained summary and do not turn the construction into a uniform-polynomial bit algorithm.
 
 ## 7. Boundaries and open algorithmic question
 

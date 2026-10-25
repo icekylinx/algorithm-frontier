@@ -39,6 +39,8 @@ and O(N D^2) field operations for its Gaussian-elimination stage, in addition to
 
 The bound r binomial(h+d,d) is worst-case exact even for zero-cost partition matroids represented over every field. It is also exact for graphic matroids of multigraphs.
 
+**Query interface.** Store H in the fixed cost/tie order. Given a failure set F, scan H, reject an element when its at most d labels intersect F, and run ordinary greedy independence tests on the surviving original columns. This returns the canonical minimum-cost basis (or any requested prefix) using `O(|H|(d+h+r^2))` elementary word/field operations and at most `|H|` rank tests, plus the output size. This query bound is separate from the preprocessing bound and is stated only for the represented original matroid.
+
 **Scope.** This is a represented-matroid theorem. It does not assert the same construction for a matroid given only by an independence oracle, and it does not handle an arbitrary nonadditive valuation on bases. The cost is a fixed linear objective on elements. The labels, representation, and costs do not change between queries.
 
 ## 2. Polynomial features that recognize label survival
@@ -212,6 +214,23 @@ If q<L+1, let s be the least positive integer with q^s at least L+1. Then q^s<q(
 This avoids invoking an unqualified deterministic polynomial-in-log(q) irreducible-polynomial construction in a regime where it would require additional assumptions. When q is large, no extension is needed; when an extension is needed, enumeration is polynomial in the explicitly present label universe.
 
 For a more general abstract arithmetic field, the theorem can be stated after providing a field extension with L+1 distinct effectively available scalars. The concrete bit-complexity claim above is limited to rational and explicit finite-field representations.
+
+### 5.4 Bit accounting and output representation
+
+Let `b_in` be the maximum bit length of a rational representation entry, a cost, or an input label identifier. Before elimination, clear denominators row by row. A conservative bound on the resulting integer matrix entry length is
+
+```text
+B_mat = O(N*b_in + h*d*log(L + 2) + h*log(d + 2) + log(N + D + 2)).
+```
+
+After the dimension gate, `D < N`. The `N*b_in` term allows for a common row denominator; it is deliberately conservative. If `M(k)` denotes the bit cost of multiplying `k`-bit integers, fraction-free elimination then uses
+
+```text
+O(N*D^2) arithmetic operations and
+\widetilde O(N*D^2*M(D*B_mat + D*log(D + 2))) bit operations,
+```
+
+plus the original rank-compression, feature-generation, and cost-sorting costs. This is a conservative bound; the theorem only needs that it is polynomial in the explicit input length and `D`. For an explicit finite field `F_{q^s}`, let `B_K = s*ceil(log_2 q)` be the bit representation length of one field element. Replacing `M(...)` by the chosen field-arithmetic cost gives `O(N*D^2*poly(B_K))` bit operations. The retained summary stores original element identifiers; the lifted matrix and elimination workspace are auxiliary and are not part of the `|H|` output bound.
 
 ## 6. Universal completion and mergeability
 

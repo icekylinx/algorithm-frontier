@@ -127,8 +127,8 @@ For an incidence difference Delta=C_e minus R_i, write
 \]
 
 padding unused coefficients with zeros. Let Phi(Delta) be all monomials of
-total degree at most h in b_1,...,b_d, including 1. The feature dimension is
-q=binomial(h+d,d).
+total degree at most h in b_1,...,b_d, including 1. Write
+Q=binomial(h+d,d) for the feature dimension.
 
 For a failed-label set F_0, the polynomial
 
@@ -160,7 +160,7 @@ For column e, make an r-block vector w_e. Its block at i in I is
 
 when A_ie is nonzero, and is zero otherwise. Scan columns in the fixed order
 and keep exactly the columns that increase the lifted span. The retained
-columns form a basis in a space of dimension rq, and every omitted column is
+columns form a basis in a space of dimension rQ, and every omitted column is
 a linear combination of earlier retained columns.
 
 For query F_0, multiply block i's evaluation under ell_F by
@@ -210,12 +210,13 @@ The signs in the simplicial boundary are just the entries A_tau,sigma in
 span at every filtration threshold.
 
 The lower chain groups of H_t-F_0 and K_t-F_0 are identical in dimensions at
-most p-1, as are their lower boundary maps. In degree p-1 their cycle spaces
-are therefore identical, and the image of partial_p is identical by the
-lemma. Hence their homology quotients are identical. In lower degrees even
-the adjacent chain maps are unchanged. Since all these identifications use
-the same lower-chain coordinates, every square induced by an inclusion of
-states commutes. This proves equality of persistence modules.
+most p-1, with the same coordinate bases and the same lower boundary maps. In
+degree p-1 their cycle spaces are therefore identical, and the image of
+partial_p is identical by the lemma. Hence their homology quotients are
+identical. In lower degrees even the adjacent chain maps are unchanged. Since
+all these identifications use the same lower-chain coordinates, every square
+induced by an inclusion of states commutes. This proves equality of
+persistence modules.
 
 The same naturality proves two optional extensions without increasing B:
 
@@ -249,20 +250,23 @@ the minimum homological-cut problem.
 
 ## 4. Uniform construction and representation details
 
-Clip h to the number of actual labels. Compute r by exact linear algebra and
-compute q only up to the threshold ceil(N/r). If r=0 return no top columns.
-If rq>=N return every original top column. Otherwise rq<N, and only then
-enumerate the features and the lift. All incidence differences are explicit;
-their polynomial coefficients and all q monomials can be generated in
-polynomial time. Standard elimination uses O(N(rq)^2) field operations after
+Clip h to the number of actual labels. Compute r by exact linear algebra. If
+r=0 return no top columns. Otherwise compute the feature dimension
+Q=binomial(h+d,d) only up to the threshold ceil(N/r). If rQ>=N return every
+original top column. Otherwise rQ<N, and only then enumerate the features and
+the lift.
+All incidence differences are explicit; their polynomial coefficients and all
+Q monomials can be generated in
+polynomial time. Standard elimination uses O(N(rQ)^2) field operations after
 feature construction and row selection. The latter costs are paid
 separately and are polynomial in the explicit input and generated features.
 This is a uniform polynomial algorithm even when h,d,p are input parameters.
 
 Over Q, choose x_lambda in {1,...,L}. Coefficients in (T7)--(T9) have
 polynomial bit length, and exact fraction-free elimination gives polynomial
-bit complexity. Over F_q, if q>=L+1 no extension is needed. Otherwise choose
-the smallest s with q^s>=L+1. Then q^s<q(L+1)<(L+1)^2. Enumerating monic
+bit complexity. Over a finite field of size Q_F, if Q_F>=L+1 no extension is
+needed. Otherwise choose the smallest s with Q_F^s>=L+1. Then
+Q_F^s<Q_F(L+1)<(L+1)^2. Enumerating monic
 degree-s polynomials and testing irreducibility constructs a suitable
 extension deterministically in time polynomial in the explicitly present L.
 Original ranks are unchanged by extending scalars. Equality of spans of the
@@ -366,10 +370,11 @@ min(sigma). The first k-1 vertices have distinct singleton colors. Partition
 the remaining vertices into the remaining ell-k+1 nonempty color classes.
 These assignments are possible because k<=ell<=n.
 
-For each j<=k, fail the singleton colors of 1,...,j-1. At time j, the top
-simplices that have appeared are exactly the remaining simplices containing
-j. Each has a unique facet not containing j, so their boundary columns are
-independent. They span the boundary space of the full remaining complete
+For each j<=k, fail the singleton colors of 1,...,j-1. At time j, the
+surviving top simplices that have appeared are exactly the p-simplices on the
+remaining vertices whose minimum vertex is j (equivalently, the remaining
+simplices containing j). Each has a unique facet not containing j, so their
+boundary columns are independent. They span the boundary space of the full remaining complete
 complex: this is the usual cone basis. Thus omitting any of these top
 simplices changes H_{p-1} at this allowed state. Taking the union over j<=k
 forces every top simplex meeting {1,...,k}, namely exactly E(n,p,k) simplices.
@@ -401,8 +406,10 @@ these a nonconstant coefficients, including the constant monomial 1. Let
 \]
 
 Each failure query is a linear functional on psi whose evaluation is zero
-exactly at failed vertices. Compress to s independent coordinate functions
-on V and use the stacked contraction construction above. It gives
+exactly at failed vertices. Choose s independent coordinate functions spanning
+all coordinates of the feature vectors psi(v); every query functional then has
+an equivalent linear form in these s coordinates. Use the stacked contraction
+construction above. It gives
 
 \[
        |B|\le\min\left\{N,sr,
@@ -410,11 +417,12 @@ on V and use the stacked contraction construction above. It gives
  \tag{T22}
 \]
 
-The common-kernel proof is unchanged. For the sr bound a coordinate function
+The common-kernel proof is unchanged. For the sr bound, a coordinate function
 w(v) may vanish on some vertices. Replace it by w(v)+z over F(z). The
-weighted boundary block then has rank r by the diagonal factorization.
-Every (r+1)-minor is the zero polynomial in z, hence is still zero at z=0.
-The original block has rank at most r. Stacking s such blocks proves (T22).
+corresponding weighted boundary block then has rank r by the diagonal
+factorization. Every (r+1)-minor is the zero polynomial in z, hence is still
+zero at z=0, so the original block has rank at most r. Stacking the s blocks
+proves (T22).
 This is an actual feature-rank refinement; exact fixed-n sharpness is only
 asserted above for the one-color model.
 

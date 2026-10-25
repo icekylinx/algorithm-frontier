@@ -201,6 +201,24 @@ Use the rational or explicit finite-field construction from the companion draft 
 
 This draft does not assert an oracle implementation for a nonrepresented resource matroid, a binary-owner compression theorem, arbitrary positive recosting, or a runtime for optimizing over an unspecified later extension. It proves a uniform-polynomial preprocessing restriction and its pointwise exact replacement guarantee. Query-specific algorithmic improvements may use the existing W–QK interface when its hypotheses are satisfied.
 
+### 7.1 Bit accounting and output representation
+
+Let `D` denote the product dimension in (2) before taking the minimum with `|E|`. The dimension gate is applied using saturated integer arithmetic, so no tensor or exterior-coordinate list is materialized when `D >= |E|`. In the rational model, let `b_in` bound the bit length of resource entries, costs, and explicitly listed universe/label identifiers, and let `U'` be the padded packing-universe size. After row-wise denominator clearing, a conservative bound for one lifted matrix entry is
+
+```text
+B_mat = O(|E|*b_in + p*log(U' + 2)
+                      + sum_j h_j*d_j*log(L_j + 2)
+                      + log(|E| + D + 2)),
+```
+
+where `L_j` is the number of labels in system `j`. Exterior coordinates are determinants of `p` by `p` Vandermonde submatrices, and the label factors are the coefficient monomials from the failure-lift construction. Fraction-free elimination therefore uses `O(|E|*D^2)` arithmetic operations and, with integer multiplication cost `M`, at most
+
+```text
+\widetilde O(|E|*D^2*M(D*B_mat + D*log(D + 2)))
+```
+
+bit operations, plus polynomial preprocessing for padding, determinant coordinates, feature generation, rank compression, and exact cost sorting. For an explicit finite-field representation, replace `B_mat` by the field-element representation length and the multiplication cost by the chosen field-arithmetic cost. The bound counts original item IDs in the output separately from the auxiliary tensor/elimination workspace.
+
 ## 8. Attribution and review focus
 
 The exterior packing feature is classical representative-family machinery: repeated universe vectors force a zero wedge, and a weighted basis keeps a nonworse witness for every annihilating linear functional. Relevant primary antecedents are:

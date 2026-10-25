@@ -1,23 +1,23 @@
-# Checkpoint X — source-only draft increment
+# Checkpoint X — complete source-only draft increment
 
 **Status: draft.** **Curation: source-only; no stable result card.**
 
-Checkpoint X contains nine English mathematical research drafts plus the archive README. They are preserved as an incremental source import. The archive did not include a manifest, previous checkpoint bodies, PDFs, code, tests, or internal review logs; `MANIFEST.json` records the supplied ZIP identity and derived repository metadata without inventing a parent archive hash.
+The complete uploaded X archive contains 38 numbered mathematical payloads plus its README. The repository keeps them under one source tree, updates revised drafts in place, and does not duplicate an earlier manuscript as a backup. The proof/algorithm pass also tightened payloads `01`, `03`, `04`, `05`, `06`, `07`, `08`, and `09` in place; the manifest retains both upload and current hashes. The family index records the review order.
 
-## Inventory
+## Inventory and gates
 
-| # | Family | Payload | Review boundary |
-|---:|---|---|---|
-| 01 | Exact sensitivity preservation | `01_exact_single_failure_arborescences_and_matroid_intersection.md` | Verify compressed exchange graph, cycle-to-replacement lemma, directed preserver reduction, and arborescence preprocessing/space accounting. |
-| 02 | Subset Sum | `02_deterministic_subset_sum_increment.md` | Recompute every contact inequality and outer cost line against the pinned fast-time proof; do not combine with low-space guarantees. |
-| 03 | Boundary and persistence certificates | `03_correlated_fault_boundary_and_persistence_sparsifiers.md` | Check feature lift, simultaneous query/filtration statement, field dependence, and sharpness scope. |
-| 04 | Matroid failure summaries | `04_sharp_represented_matroid_failure_summaries.md` | Check polynomial feature dimension, field gate, prefix-span equality, and graph reduction; represented input is essential. |
-| 05 | Boundary and graph certificates | `05_colored_graph_and_vertex_failure_certificates.md` | Check color/list/mixed-failure quantifiers, MSF prefix claim, rank envelopes, and lower-bound model. |
-| 06 | Matroid failure summaries | `06_arbitrary_matroid_and_submodular_failure_summaries.md` | Check set-pair circuit inequality and FPT construction; rank-only scope does not preserve arbitrary costs. |
-| 07 | Packing and matching summaries | `07_represented_resource_packing_transfer.md` | Check unknown-extension quantifier, product dimension, original edge IDs, and represented-resource comparison. |
-| 08 | Boolean linear optimisation | `08_boolean_linear_optimization_compiler.md` | Check interval catalogue exactness, slack-bit parameter, backend contract, and optimization reduction. |
-| 09 | Exact sensitivity preservation | `09_valuated_matroid_intersection.md` | Check valued convex decomposition, exchange matching, minimum-hop cycle, and fixed-rank limitation. |
+| Range | Family group | Review gate |
+|---:|---|---|
+| 01, 09–16 | Exact sensitivity, flow, matching, and compilers | Recheck exchange/residual reductions, failure quantifiers, oracle calls, output-sensitive reporting, and exact arithmetic. |
+| 02 | Subset Sum | Recompute the rational contact inequalities, outer ledger, witness contract, and the distinction from the low-space theorem. |
+| 03–08 | Boundary, graph, matroid, packing, and Boolean compiler | Separate represented, arbitrary-oracle, field, filtration, and backend assumptions. |
+| 17–19, 26 | Spectral, regression, seminorm, and graded lifts | Check label-degree dimension, rank/field dependence, uniform probability, and constructive versus existential status. |
+| 20, 30–32, 35–38 | Group, affine, metric, quotient-rank, separation, and obstruction results | Check finite-group model, compact input access, exact-rational oracle, transitivity, and the stated barrier scope. |
+| 21–25, 34 | Quantum and stabilizer blocks | Keep locality, local dimension, commutation, factorization, and Hilbert-space representation assumptions explicit. |
+| 27–29 | Adaptive quotient, cuts, and whole blocks | Check exact decoding, error allocation, whole-item semantics, and lower-bound regime. |
+
+The numbered source files are linked from [`README_INCREMENT_X.md`](README_INCREMENT_X.md) and [`MANIFEST.json`](MANIFEST.json). The non-promoted family cards in `problems/` summarize only the current review boundary; they do not certify the source proofs.
 
 ## Provenance and status
 
-The archive README cites `algorithm-frontier` commit `37b31138bf102a83d9efb2cbe44437eec45ae3c2` and attributes the material to Yilin Liu and GPT-6 Astra Pro. No broader priority claim is made. All nine payloads remain drafts pending proof, algorithm, and source reviews; finite checks, if later added, are evidence only and are not formal verification.
+The upload is `checkpoint_X_incremental_drafts_2026-10-25(1).zip`. The supplied README references the repository snapshot `37b31138bf102a83d9efb2cbe44437eec45ae3c2`. No parent checkpoint hash was supplied. All payloads remain drafts pending proof, algorithm, and source review; formal verification and external peer review are not claimed.

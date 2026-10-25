@@ -17,7 +17,7 @@ In particular, a directed graph on \(n\) vertices, a designated root, and arbitr
 
 Dey--Kavitha (May 2026), Theorem 1.1, construct \(O(n^{3/2})\)-arc preservers with approximation factor two; their Section 5 explicitly asks whether sparse exact preservers exist. Subject to independent review of the reduction, (D1) gives an affirmative answer with the same size exponent and exact objective value. The reporting oracle additionally improves their \(O(n^{3/2})\) query bound to \(O(n)\), while preprocessing is within logarithmic factors of their \(O(mn+n^2\log n)\) bound.
 
-Space counts records containing an original element ID, a pointer, or an exact cost; this is a word-space bound when those objects fit in words. Arithmetic-operation bounds treat comparisons and additions of exact costs as unit operations. For rational input, the exact representations used below have polynomial bit length, so the construction also has polynomial bit complexity, without asserting that an arbitrary rational cost fits in a machine word. A no-failure query simply reports the stored baseline optimum.
+Space counts records containing an original element ID, a pointer, or an exact cost; this is a word-space bound when those objects fit in words. Arithmetic-operation bounds treat comparisons and additions of exact costs as unit operations. For a bit-complexity statement, let \(\beta\) bound the bit length of input costs and of every finite value returned by an independence/optimization oracle; the exact rational operations below then have polynomial bit complexity in the explicit input size and \(\beta\). No machine-word bound for arbitrary rational costs is intended. A no-failure query simply reports the stored baseline optimum.
 
 ## 2. A compressed exchange graph
 
@@ -129,7 +129,7 @@ At this point the argument establishes existence within the cycle's labels. An a
 
 ### From a replacement to a cycle
 
-Let \(J\) be any size-\(k\) common independent set avoiding \(f\). The standard basis-exchange matching lemma gives, separately in each matroid, a perfect matching between \(B\setminus J\) and \(J\setminus B\), using feasible single-element exchanges. Orient the first matching from \(B\setminus J\) to \(J\setminus B\), and the second in reverse. Their union decomposes into vertex-disjoint alternating directed cycles, one containing \(f\).
+Let \(J\) be any size-\(k\) common independent set avoiding \(f\). The standard basis-exchange matching lemma gives, separately in each matroid, a perfect matching between \(B\setminus J\) and \(J\setminus B\), using feasible single-element exchanges. Write \(a_i(e)\) for the element of \(B\setminus J\) matched to \(e\in J\setminus B\) by the matching for \(M_i\). For every outside element \(e\), form the directed arc \(a_1(e)\to a_2(e)\) and label it by \(e\). Since both \(e\mapsto a_i(e)\) are bijections, these arcs form a permutation of \(B\setminus J\), and therefore decompose into vertex-disjoint directed cycles, one containing \(f\).
 
 Compress each outside element on one of these cycles to an arc on \(B\). Before minimizing arc labels as in (D2), each cycle's length is its added cost minus removed cost. Each such length is nonnegative by the same tangent-direction argument as above. Their sum is \(w(J)-w(B)\). The cycle containing \(f\) therefore has length at most that sum. Replacing each of its labels by the stored minimum-cost candidate can only decrease its length and gives a cycle of \(D\). Consequently
 
@@ -176,7 +176,7 @@ The direction of this pair excludes a trivial zero-length split arc. A simple pa
 \tag{D14}
 \]
 
-There are \(2k\) vertices and at most \(k\) finite demands. For reporting, give each compressed arc the lexicographic length \((\ell(a,b),1)\), and each split arc length \((0,0)\). We minimize weight first and the number of compressed arcs second. Every directed cycle has nonnegative first coordinate and strictly positive second coordinate. Thus every shortest walk is simple, and a shortest demand path yields exactly the minimum-weight, minimum-hop cycle used above. Standard shortest-path potentials over these lexicographically ordered pairs give nonnegative reduced lengths and preserve each demand's minimizers. All arithmetic consists of rational primary coordinates and integer secondary coordinates.
+There are \(2k\) vertices and at most \(k\) finite demands. For reporting, give each compressed arc the lexicographic length \((\ell(a,b),1)\), and each split arc length \((0,0)\). We minimize weight first and the number of compressed arcs second. Every directed cycle has nonnegative first coordinate and strictly positive second coordinate. Thus every shortest walk is simple, and a shortest demand path yields exactly the minimum-weight, minimum-hop cycle used above. The primary arc lengths may be negative; when a shortest-path implementation requires nonnegative reduced lengths, compute a Bellman--Ford potential from a super-source (there is no negative directed cycle) and apply the usual reduced-cost transformation while retaining the ordered-pair tie coordinate. All arithmetic consists of rational primary coordinates and integer secondary coordinates.
 
 The directed weighted pairwise distance-preserver theorem of Coppersmith--Elkin, restated and given a simplified proof by Bodwin, provides a distance preserver \(Q\) with
 
@@ -189,7 +189,7 @@ The elementary construction below applies verbatim to lexicographic lengths, so 
 
 ### Deterministic construction of the distance preserver
 
-The standard hitting argument can be made deterministic without a logarithmic size loss. In a phase with \(p\) remaining demands on \(N\) vertices, fix simple shortest paths and set \(L=\lceil N/\sqrt p\rceil\). Include every path of at most \(L\) arcs. For the others, greedily select vertices meeting the largest number of still-unhit paths. At most \(\lceil N/L\rceil\) selections hit a constant fraction: after each selection the unhit count falls by a factor at most \(1-L/N\). Include shortest-path in- and out-trees at the selected vertices. This phase costs \(O(pL+N^2/L)=O(N\sqrt p)\) arcs and satisfies at least a constant fraction of all remaining demands. Repeat; the geometric sum of \(\sqrt p\) gives \(O(N\sqrt{p_0})\). This is the slack-to-complete construction in Bodwin's proof, with greedy coverage replacing sampling.
+The standard hitting argument can be made deterministic without a logarithmic size loss. In a phase with \(p\) remaining demands on \(N\) vertices, fix one lexicographically shortest simple path for each demand using a deterministic predecessor tie-break, and set \(L=\lceil N/\sqrt p\rceil\). Include every path of at most \(L\) arcs. For the others, greedily select vertices meeting the largest number of still-unhit paths. At most \(\lceil N/L\rceil\) selections hit a constant fraction: after each selection the unhit count falls by a factor at most \(1-L/N\). Include shortest-path in- and out-trees at the selected vertices. This phase costs \(O(pL+N^2/L)=O(N\sqrt p)\) arcs and satisfies at least a constant fraction of all remaining demands. Repeat; the geometric sum of \(\sqrt p\) gives \(O(N\sqrt{p_0})\). This is the slack-to-complete construction in Bodwin's proof, with greedy coverage replacing sampling.
 
 ### Path reporting within the same space bound
 
@@ -201,7 +201,7 @@ The phase's stored lists and tree records total \(O(pL+N^2/L)\); summing over ph
 
 For general independence-oracle matroids, the compressed graph can be built after \(B\) is known using \(O(|E|k)\) independence tests and \(O(|E|k^2)\) elementary processing: for each outside element, list its feasible exchanges in each matroid, and update all eligible ordered pairs. Distance computations and the deterministic sparsifier construction on the \(O(k)\)-vertex graph take polynomial time; dense shortest-path routines give an additional conservative \(O(k^3)\) arithmetic-operation bound. Rational arithmetic has polynomial bit complexity. A standard weighted matroid-intersection algorithm supplies \(B\).
 
-For rooted arborescences, remove arcs entering the root. Take \(M_1\) to be the graphic matroid of the underlying undirected multigraph, keeping opposite arcs as different elements. Take \(M_2\) to be the partition matroid allowing at most one incoming arc at each nonroot vertex. Their common independent sets of size \(n-1\) are exactly the root-spanning arborescences.
+For rooted arborescences, remove arcs entering the root. Take \(M_1\) to be the graphic matroid of the underlying undirected multigraph, keeping opposite arcs as different elements. Take \(M_2\) to be the partition matroid allowing at most one incoming arc at each nonroot vertex. A common independent set of size \(n-1\) is an undirected forest with \(n-1\) edges and therefore gives exactly one incoming arc at every nonroot vertex. A component not containing the root would then have indegree at least one at every vertex and hence contain a directed cycle, contradicting the underlying forest. Thus these common bases are exactly the root-spanning arborescences.
 
 ### A sparse auxiliary exchange graph for arborescences
 
@@ -284,13 +284,48 @@ The lower reduction already uses two partition matroids. Thus the general weight
 \tag{D19}
 \]
 
-along an infinite family, already for nonnegative weighted bipartite perfect matching. The inherited distance lower bound is not new. This reduction does not establish the same lower bound for arborescences.
+along an infinite family, already for nonnegative weighted bipartite perfect matching. The inherited distance lower bound is not new. This particular assignment reduction concerns two partition matroids; the next independent reduction establishes the arborescence counterpart.
+
+### Arborescences also inherit the distance-preserver lower bound
+
+Bodwin--Grandoni--Parter--Vassilevska Williams (2017), Lemmas 4.5--4.6, already prove that exact one-failure preservation of a single directed weighted \(s\)-to-\(t\) distance has, up to constant factors and vertex rescaling, the same worst-case size as preserving \(\Theta(N)\) ordinary directed weighted demand pairs. That replacement-path equivalence is a classical antecedent to the equivalence above.
+
+There is a particularly simple transfer from their problem to arborescences. Given a nonnegative weighted directed graph \(G\) and distinct vertices \(s,t\), delete arcs leaving \(t\) and add a zero-cost arc \(t\to v\) for every \(v\notin\{s,t\}\). Root this graph \(A\) at \(s\). Deleting the old outgoing arcs of \(t\) changes no simple \(s\)-to-\(t\) path. For any failure set \(F\) of other original arcs, every rooted spanning arborescence contains an \(s\)-to-\(t\) path, so its cost is at least \(\operatorname{dist}_{G-F}(s,t)\). Conversely, a shortest simple \(s\)-to-\(t\) path, together with the zero arcs \(t\to v\) for vertices outside that path, is a spanning arborescence of exactly that cost. Consequently
+
+\[
+          \operatorname{OPT}_{A-F}(\text{arborescence})
+                  =\operatorname{dist}_{G-F}(s,t),
+\]
+
+with equality of infeasibility as well.
+
+An exact arborescence preserver must therefore retain, after every such failure, an \(s\)-to-\(t\) path of the original optimum distance. Its root-to-\(t\) tree path uses none of the added completion arcs. Thus the classical one-failure directed distance lower bound gives an \(\Omega(n^{4/3})\) lower bound for exact one-failure arborescence preservers, already in simple directed graphs with nonnegative rational costs. Together with the \(O(\operatorname{DP}(O(n),O(n)))\) upper reduction, the arborescence size-exponent question is equivalent to the same directed pairwise distance-preserver question. This transfers an existing distance lower bound; it does not improve that bound.
 
 ### Two failures already force quadratically many matching edges
 
 Take \(K_{r,r}\), put cost zero on its diagonal edges and cost one on every off-diagonal edge. The no-failure optimum is the unique all-diagonal perfect matching. If diagonal edges \(i_Li_R\) and \(j_Lj_R\) fail, the optimum has cost two and uniquely uses \(i_Lj_R,j_Li_R\), together with all other diagonals. Any cost-two matching must be precisely this transposition: at least the two failed diagonal positions must move, and two off-diagonal edges in a permutation form a two-cycle.
 
-Varying \(i,j\) forces all \(r(r-1)\) off-diagonal edges into an exact two-failure preserver; the no-failure query forces all diagonals. Every one of the \(r^2\) original edges is therefore necessary. This rules out an \(o(r^2)\) universal bound for two-matroid intersection with two failures. It is a matching example, not an arborescence lower bound, and it is a retained-subgraph claim rather than an encoding-size claim.
+Varying \(i,j\) forces all \(r(r-1)\) off-diagonal edges into an exact two-failure preserver; the no-failure query forces all diagonals. Every one of the \(r^2\) original edges is therefore necessary. This rules out an \(o(r^2)\) universal bound for two-matroid intersection with two failures. This particular example proves a retained-subgraph lower bound for matching. A separate arborescence example follows.
+
+### Two failures force quadratic size for arborescences as well
+
+The zero-cost completion transfer works for any original failure set. It therefore also transfers the quadratic two-failure weighted replacement-path lower bound of Bodwin--Grandoni--Parter--Vassilevska Williams, Theorem 4.4. For clarity, the following directed instance gives the complete argument.
+
+Take zero-cost directed paths \(s=s_0\to s_1\to\cdots\to s_L\) and \(t_L\to t_{L-1}\to\cdots\to t_0=t\). Add \(x_0,\ldots,x_{L-1}\) and \(y_0,\ldots,y_{L-1}\). The arcs \(s_i\to x_i\) and \(y_j\to t_j\) have costs \(K(L-i)\) and \(K(L-j)\); include every \(x_i\to y_j\) at cost one. On failing \(s_i\to s_{i+1}\) and \(t_{j+1}\to t_j\), a surviving \(s\)-to-\(t\) path can choose only cross indices \(a\le i\) and \(b\le j\). Its cost is \(K(2L-a-b)+1\), uniquely minimized at \(a=i,b=j\). Thus each one of the \(L^2\) cross arcs is required by a query. The zero-cost completion from \(t\) makes this an arborescence instance on \(4L+2\) vertices with the same exact optimum for every query. Every exact two-arc-failure arborescence preserver requires \(\Omega(n^2)\) arcs.
+
+The same construction also gives a quadratic *bit-space* lower bound for arbitrary exact cost oracles with two failures. Give cross arc \(x_i\to y_j\) cost \(1+b_{ij}\), with independently chosen \(b_{ij}\in\{0,1\}\), and set \(K=3\). The prescribed cross arc remains uniquely cheapest, and the query answer is \(3(2L-i-j)+1+b_{ij}\). All \(L^2\) bits can be recovered from the query answers. This is the arborescence transfer of the classical replacement-path incompressibility argument, not a new distance-oracle lower bound.
+
+The same topology gives a stronger retained-subgraph boundary for approximation. Fix any finite multiplicative factor \(\alpha\ge1\), choose an integer \(A>\alpha\), put cost zero on the two backbones and all spokes, and give cross arc \(x_i\to y_j\) cost
+
+\[
+                              A^{\,2L-i-j}.
+\]
+
+Under the same pair of failures indexed by \(i,j\), every reachable cross has indices \(a\le i,b\le j\). The corner \((i,j)\) has optimum cost \(A^{2L-i-j}\), while every other reachable cross costs at least \(A\) times as much. Hence every \(\alpha\)-approximate surviving \(s\)-to-\(t\) path must use this particular cross arc. After zero-cost completion from \(t\), any \(\alpha\)-approximate arborescence must also contain it, because its root-to-\(t\) path costs no more than the whole arborescence. Varying the two failures again forces all \(L^2=\Omega(n^2)\) cross arcs.
+
+Thus **for every fixed factor \(\alpha\ge1\), two edge failures preclude a universally subquadratic-size multiplicative-approximation arborescence preserver**. This uses nonnegative integer costs with exponential aspect ratio, but only \(O(n\log A)\) bits per cost; it is not asserted for polynomially bounded aspect ratio. The preceding exact lower bounds already use polynomially bounded costs.
+
+A variant also rules out subquadratic-bit *self-contained deterministic approximate cost oracles*, with no access to the original input during queries. Independently choose bits \(b_{ij}\) and set cross cost \(A^{2L-i-j+b_{ij}}\). For the query indexed by \(i,j\), write \(w_{ij}=A^{2L-i-j}\). The corner costs \(w_{ij}A^{b_{ij}}\), while every other reachable cross costs at least \(Aw_{ij}\). Hence the optimum is exactly \(w_{ij}\) if \(b_{ij}=0\), and \(Aw_{ij}\) if \(b_{ij}=1\). Any answer satisfying \(\mathrm{OPT}\le\widehat c\le\alpha\mathrm{OPT}\) distinguishes these cases because \(A>\alpha\). The \(2^{L^2}\) bit matrices therefore require distinct oracle states, proving \(\Omega(n^2)\) bits. This does not rely on requiring a retained subgraph. The topology and transfer are explicit; priority for this multiplicative-distance formulation has not been established.
 
 ### Cardinality alone has a linear certificate
 
@@ -303,6 +338,8 @@ Huang--Sellier, *Robust Sparsification for Matroid Intersection with Application
 Choudhary--Kumar--Saggi (September 2026) give randomized algebraic sensitivity oracles for linear-matroid and graph optimization problems under multiple updates. The present oracle is deterministic, covers arbitrary oracle matroids, and also supplies a retained subinstance of original elements, while its failure scope is only one deletion. Banerjee--Gupta--Raman--Saurabh (CSR 2022) preserve unweighted matching cardinality under faults; the exact weighted objective here is a different requirement.
 
 The new candidate is the rank-size reduction from exact single-failure two-matroid intersection to ordinary directed pairwise distance preservation, its output-sensitive reporting form, and its consequence for exact arborescence preservers and oracles. It does not claim a new pairwise distance-preserver bound or a new weighted matroid-intersection algorithm.
+
+The reduction pattern has the explicit classical antecedent of Bodwin--Grandoni--Parter--Vassilevska Williams (2017), who relate weighted directed single-pair replacement paths to ordinary pairwise distance preservation. The additional step here is the exchange-cycle reduction for arbitrary two-matroid intersection and the resulting exact arborescence theorem, together with the lower-bound transfers above.
 
 Agarwala--Alekseev--Vinciguerra (ITCS 2026), Lemma 30, state a closely related minimum exchange-cycle characterization for flipping one element's membership under a unique optimum. Sections 3--4 above prove the support-and-value statement directly from the integral common-base polytope, initially permit repeated compressed labels, and require no unique optimum. The added minimum-hop argument then proves distinctness and valid explicit update rather than assuming them.
 
@@ -322,3 +359,5 @@ The earlier correlated-color reachability direction has a different boundary: Pa
 9. Keerti Choudhary, Amit Kumar, Lakshay Saggi. *Sensitivity Oracles for Matroid Packing, Matroid Covering, and Matching Problems with Applications*. arXiv:2609.01283v1, 1 September 2026. https://arxiv.org/pdf/2609.01283
 
 10. Chien-Chung Huang, François Sellier. *Robust Sparsification for Matroid Intersection with Applications*. SODA 2024, 2916--2940, DOI 10.1137/1.9781611977912.104; Mathematics of Operations Research 51(3), 2643--2666, 2026, DOI 10.1287/moor.2024.0562. Full preprint, Theorems 4, 8, 9: https://arxiv.org/pdf/2310.16827
+
+11. Greg Bodwin, Fabrizio Grandoni, Merav Parter, Virginia Vassilevska Williams. *Preserving Distances in Very Faulty Graphs*. ICALP 2017; arXiv:1703.10293v1. Lemmas 4.5--4.6 give the directed weighted one-failure single-pair equivalence; Theorem 4.4 gives the two-failure quadratic preserver and oracle lower bounds. https://arxiv.org/pdf/1703.10293

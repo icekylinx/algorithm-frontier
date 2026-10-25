@@ -127,6 +127,18 @@ This is the standard extremal construction already given after Theorem 1 in Sork
 
 Now both vertices and edges have one color from the same palette. A failed color removes its vertices and all edges carrying that color. The total number of failed colors is at most \(h\).
 
+The lifted block below depends on the edge as well as on the endpoint, so it
+uses the following direct extension of Section 2. For an oriented edge \(uv\),
+let its block at \(u\) be \(x_{u,e}\), its block at \(v\) be
+\(-x_{v,e}\), and suppose a query functional \(L_F\) evaluates these blocks
+to the survival factors of the opposite endpoint and of the edge. Multiplying
+the \(u\)-block by the survival factor of \(u\), and the \(v\)-block by that
+of \(v\), sends the lifted column to a nonzero scalar times the ordinary
+incidence column exactly when the edge survives, and to zero otherwise. The
+same prefix-span argument as in Section 2 applies to the greedy basis of this
+edge-dependent matrix. Its row count is \(n\) times the block dimension; no
+vertex-only vector \(z_v\) is assumed in this variant.
+
 For each endpoint/edge pair define the monic quadratic
 
 \[
@@ -155,7 +167,8 @@ is a linear functional \(L_F\) of the feature vector, because it is a polynomial
 \tag{G14}
 \]
 
-This is nonzero precisely for a surviving edge. The ordered-basis argument therefore gives an exact weighted certificate with at most
+This is nonzero precisely for a surviving edge. The edge-dependent activation
+argument above therefore gives an exact weighted certificate with at most
 
 \[
                           n\binom{h+2}{2}
@@ -177,7 +190,11 @@ If the occurring vertex vectors span \(t\) dimensions, this supplies
 \tag{G16}
 \]
 
-independent dependencies. The kernel consists exactly of symmetric trilinear forms on the quotient by the vertex-vector span. Thus (G15) can be reduced by (G16), componentwise. In particular, with at least \(h+1\) distinct vertex colors the bound is
+independent row dependencies. The map from symmetric trilinear forms to these
+row dependencies has kernel consisting of forms on the quotient by the
+vertex-vector span; an arbitrary sparse input graph may have additional row
+dependencies. Thus (G15) can be reduced by (G16), componentwise. In
+particular, with at least \(h+1\) distinct vertex colors the bound is
 
 \[
              n\binom{h+2}{2}-\binom{h+3}{3}.
@@ -190,7 +207,12 @@ No exact optimum for all mixed instances is asserted.
 
 Let \(q=h+2\) core vertices have colors \(1,\ldots,q\), and let all other vertices have color 0. For every outer vertex and pair \(a<b\) in \([q]\), put an edge to core \(a\) with edge color \(b\). Add the core clique, with edge color 0. Give all edges unit weight.
 
-For a fixed pair \(a<b\), fail every color of \([q]\setminus\{a,b\}\). Each outer vertex now has exactly its edge indexed by \(\{a,b\}\), attached to core \(a\); core \(b\) connects only through the core edge \(ab\). The surviving graph is a tree. Every original edge is compulsory under one of these queries.
+For a fixed pair \(a<b\), fail every color of \([q]\setminus\{a,b\}\). Each
+outer vertex now has exactly its edge indexed by \(\{a,b\}\), attached to
+core \(a\); the surviving core clique may still contain cycles, but every
+outer vertex has degree one. Hence that surviving outer edge is compulsory
+for connectivity. Every original edge is compulsory under one of these
+queries.
 
 Therefore these multigraphs need
 
@@ -300,7 +322,16 @@ To see the containment, a surviving edge of \(T_0\) increased the rank of its or
 \tag{G27}
 \]
 
-Use the deterministic fully dynamic MSF structure of Holm--de Lichtenberg--Thorup, with \(O(\log^4 n)\) amortized update time and its explicit maintained forest. Initialize the full graph. For each color, delete the edges of \(D_c\), record the current forest edges outside \(T_0\), and restore the same edges. Track the current non-\(T_0\) forest in a dictionary using the structure's reported forest insertions and deletions; the standard maintained-forest implementation exposes these exchanges. Only the dictionary at a completed color-deletion batch is enumerated. Intermediate forests are not added to the output.
+Use the deterministic fully dynamic MSF structure of Holm--de Lichtenberg--
+Thorup, with \(O(\log^4 n)\) amortized update time and an implementation
+interface that reports the forest exchanges. Initialize the full graph. For
+each color, delete the edges of \(D_c\), record the current forest edges
+outside \(T_0\), and restore the same edges. Track the current non-\(T_0\)
+forest in a dictionary using the reported forest insertions and deletions.
+Only the dictionary at a completed color-deletion batch is enumerated.
+Intermediate forests are not added to the output. If a chosen dynamic MSF
+implementation exposes only the maintained forest and not exchange events,
+the same corollary requires an explicit augmentation to report those events.
 
 There are \(m+2A\) original edge updates including initialization, and the total enumeration work is \(O(ar)\) by (G27), rather than one full forest per color. Parallel edges can be handled with a priority queue for each endpoint pair: a change of its cheapest surviving edge induces at most a constant number of simple-graph MSF updates and \(O(\log(m+2))\) additional work. IDs break all weight ties permanently.
 

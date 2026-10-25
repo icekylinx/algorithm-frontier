@@ -1,70 +1,151 @@
 # Checkpoint X — incremental TCS research drafts
 
-English rough drafts for external review. Attribution: Yilin Liu and GPT-6 Astra Pro.
+English mathematical drafts for external review. Attribution: **Yilin Liu and GPT-6 Astra Pro**.
 
-This bundle contains new material from the current continuation. The reference repository is [Algorithm Frontier](https://github.com/icekylinx/algorithm-frontier), inspected at commit `37b31138bf102a83d9efb2cbe44437eec45ae3c2`. The repository itself was not modified. The original general-matching exponent 4/5 is not being revisited.
+This archive contains the current continuation's increment relative to [Algorithm Frontier](https://github.com/icekylinx/algorithm-frontier), inspected at commit `37b31138bf102a83d9efb2cbe44437eec45ae3c2`. The repository itself was not modified. The original general-matching 4/5 exponent is not being revisited. The files are rough proof-bearing drafts, with primary references and explicit computational models; priority and publication-level review remain open.
 
-## Suggested reading order
+## Newest general-case results
 
-### 1. Exact single-failure optimization in directed graphs and matroid intersection
+### New: optimal whole-group constraints, including nonabelian affine constraints
 
-The main new candidate is an exact sensitivity preserver for the minimum-cost common independent set of two arbitrary matroids. For a prescribed feasible cardinality k, it retains O(k^(3/2)) original elements. A reporting structure of the same number of word records returns an exact optimal size-k solution after any one element failure in O(k) time, without further matroid-oracle calls. Combining cardinalities r and r−1 handles minimum-cost maximum-cardinality solutions and rank drops.
+The new main draft `30_optimal_whole_subgroup_constraints.md` proves an existential O(log(2|G|)/epsilon^2) support theorem for arbitrary weighted subgroup-complement predicates on any finite group G. Each retained original predicate keeps one coefficient, even when it represents an entire block of linear or modular checks. The proof establishes a hereditary one-sided Gaussian mass bound by a stationary coset process and Slepian comparison, then supplies a Gaussian version of the Reis--Rothvoss hereditary-section symmetrization argument. The constant dilation in partial coloring and the full multistage error budget are included.
 
-For arbitrary directed graphs this gives an exact minimum-cost spanning-arborescence preserver with O(n^(3/2)) original arcs, deterministic preprocessing in soft-O(mn) arithmetic operations, and O(n) time to report a surviving optimal arborescence. The polynomial bit cost of rational arithmetic is additional to these arithmetic-operation counts. The word space includes original element identifiers and exact numerical quantities where needed.
+The affine companion `31_affine_constraints_over_arbitrary_finite_groups.md` extends the theorem to complements of arbitrary subgroup cosets, without normality or a common feasible assignment. A standard hidden-shift wreath construction places every coset in the same group of size 2|G|^2; the new contribution is the simultaneous sparsification transfer. Consequently arbitrary-arity group-derived Mal'tsev constraints on n variables over any finite group A have O((1+n log|A|)/epsilon^2) whole-constraint support. Arbitrary-center nearest-codeword objectives for subgroup codes C have O(log(2|C|)/epsilon^2) retained coordinates. The joint support order is necessary in the stated accuracy regime already for binary cut codes.
 
-The reduction uses a compressed exchange graph, integrality of the common-base polytope, minimum-cost minimum-hop cycles, and the classical directed pairwise distance-preserver bound. The path-reporting variant stores short paths and shortest-path trees with multiplicity; the space statement is not inferred merely from the size of their union.
+The strongest applicable group baseline identified here is the entropy consequence of Quanrud (SODA 2024): use f(S)=log_2[G:intersection_{e in S} H_e], whose positive marginals are at least one, and apply ordinary repeated sparsification. This gives O(r log(2r/epsilon)/epsilon^2), with r<=log_2|G|, in the real value-oracle model. The new support theorem removes that remaining logarithm in the worst-case group-size parameter. The broader arbitrary-set-system comparator of Brakensiek--Guruswami--Putterman (ICALP 2026) has overhead log^2(2d/epsilon)[log log(4d/epsilon)]^2 in chain length d; it is credited but is not the strongest applicable group bound. The new group theorem does not claim to dominate a chain-length bound on every instance whose d is unusually small.
 
-The direct public comparator is Dey–Kavitha, *Low-Cost Arborescence Under Edge Faults*, May 2026, Theorem 1.1 and Section 5: O(n^(3/2)) arcs for factor-two approximation, with sparse exact preservation explicitly posed as an open problem. This is a claim of a new proof-bearing draft answering that question, subject to the external review requested by the user. A broader priority claim is not assumed.
+The optimal support proof gives a randomized construction polynomial in an explicitly listed query table. It does not give compact polynomial time. `33_exact_separation_for_compact_codes.md` proves that exact membership in the specific partial-coloring body is coNP-complete already for binary linear checks of arity at most two. This identifies a limitation of that implementation route, not an impossibility theorem for all efficient optimal-support constructions.
 
-The same draft includes an equivalence with directed distance preservation for linearly many demands in the general two-matroid/bipartite matching setting, an inherited lower bound, and a simple quadratic obstruction for **two** failures. Those lower bounds are not automatically lower bounds for rooted arborescences.
+The newest quantum companion `34_arbitrary_dimension_whole_stabilizer_blocks.md` handles whole Weyl stabilizer blocks with arbitrary, heterogeneous local dimensions q_j. With total Hilbert dimension D=product_j q_j, it gives existential O(log(2D)/epsilon^2) support and a compact randomized polynomial-bit construction with O(log(2D) log(log(2D)/epsilon)/epsilon^2) support, without factoring any dimension or constructing Hilbert-space matrices. The physical commuting spectrum is a character torsor of size dividing D; scalar phase relations are included in the exact order oracle. A new multilevel construction for q=2^k forces Omega(n log q/epsilon^2) original checks, matching the joint support order. The earlier prime-specific compact bound remains useful and can be smaller when the prime grows.
 
-A companion draft extends the O(k^(3/2)) retained-size and O(k) reporting guarantee to the sum of two arbitrary rank-k valuated matroids, with value-oracle preprocessing. It proves the needed joint convex-decomposition and valued exchange-matching lemmas. This is a fixed-rank, fixed-valuation, single-original-element-failure theorem; smaller-rank objectives and correlated failures are not inferred from it.
+The classical companion `36_affine_modular_blocks_and_sharp_modulus_dependence.md` gives the same sharp order for arbitrary affine modular blocks 1[A_e x != b_e mod q], with arbitrary arity and arbitrary many equations per item. If H is the subgroup generated by all augmented rows and r=log_2|H|, the support bounds are O(r/epsilon^2) existentially and O(r log(2r/epsilon)/epsilon^2) in compact randomized polynomial bit time without factoring. The coarse bound is r<=(n+1)log_2q. Mixed row moduli are included by an exact least-common-multiple conversion. The power-of-two lower family has actual r=(n-1)log_2q and needs Omega(r/epsilon^2) original items, even with homogeneous two-variable scalar checks. Its weights and coefficients have O(log q) bits.
 
-### 2. A strict deterministic Subset Sum exponent improvement
+The implementation ingredient is `35_rational_quotient_ranks_from_weak_oracles.md`. It proves that a normalized monotone submodular function with every positive marginal at least one, total rank at most R, and deterministic weak value access has an exact rational surrogate of rank at most 4R with identical closures and quotients. The transform phi(t)=t-t^2/(4R) creates a quantitative submodularity slack; canonical closure keys preserve the zero-slack equalities exactly during rounding. Values have a common denominator O(R). Logarithmic subgroup orders admit a faster integer-key specialization. This closes the finite-precision issue without silently requiring exact comparisons of logarithms or integer factorization.
 
-The current closed increment changes actual recursive/direct circuit families in the repository's fast-time framework. Its full-input exponent is
+`32_transitive_metrics_and_group_alignment.md` supplies a further geometric extension. On N points, sums of Hilbertian metrics preserved item by item by one common transitive action have O(log(2N)/epsilon^2) whole-metric support. A doubled representation over the wreath group handles arbitrary two-anchor losses ||u_e - rho_e(g)v_e||, even when no exact common alignment exists. For coordinate permutations in dimension d this gives O(d log(d+1)/epsilon^2) whole paired observations, compared with O(d^2/epsilon^2) from the direct general-seminorm lift. Whole matrix-pair relabeling losses and affine-XOR norm blocks are included. This is a precise comparison with the checked general backend; global priority among every specialized alignment formulation is not asserted.
 
-    149809813343531 / 301825962128739 ≈ 0.4963450204447026...
+Classical Bernstein transforms further include supplied bounded nonlinear losses such as sqrt(1-exp(-r^2/sigma^2)) and r/sqrt(sigma^2+r^2), with no change in the support order. The group/coset and metric results can optionally preserve the total input weight exactly. Itemwise transitivity is essential: transitivity only of the sum has a linear-in-N counterexample. Squared Euclidean loss and general nonabelian Cayley spectral sparsification do not follow from the metric theorem.
 
-compared with the repository baseline
+The further companion `37_hilbert_metric_sums_with_few_orbits.md` permits a common action with k orbits of sizes N_j, rather than requiring transitivity. Its new support branch is O(log(2 k! product_j N_j)/epsilon^2), at most O(k log N/epsilon^2), and its randomized construction works directly on the original N^2 distance table. The large tuple completion is only used in the proof. The existing ordinary-seminorm theorem also gives the separate O(N/epsilon^2) existential branch. Localized parity metrics supply an Omega(k log(N/k)/epsilon^2) lower family in the stated regime.
 
-    149809813343531 / 301754962128739 = 0.496461805587...
+The unfinished field-independent/general-set-system Gaussian frontier is kept separate. `38_non_fano_obstruction_to_fixed_amplitude_bound.md` gives an exact seven-element non-Fano counterexample to one proposed stronger fixed-amplitude sign bound: 15/128 instead of 1/8. This does not refute a Gaussian exp(-O(rank)) bound, and no optimal O(chain length/epsilon^2) theorem for arbitrary set systems is claimed.
 
-The theorem is incremental: it relies on the repository's circuit compiler, representation reduction, and complete cost accounting. It keeps the same uniform bit-algorithm interpretation for arbitrary signed binary inputs, indexed witness recovery, and a finite input-independent startup constant. It does not combine the fast-time bound with the separate low-space bound. The draft specifies the new parameter families, contact inequalities, full piecewise profile, and every outer cost line.
+### A. Arbitrary finite-group Cayley sparsifiers: log^4 becomes log^3
 
-### 3. Correlated failures in boundary matrices and persistent homology
+For an arbitrary finite group G, including nonabelian groups, an arbitrarily weighted Cayley graph admits a spectral sparsifier using
 
-An incidence-sensitive lift gives a restriction of at most
+    O(min{m, epsilon^(-2) log^3(2|G|)})
 
-    r * binomial(h + a + b, a + b)
+original generator items. Preprocessing is deterministic polynomial time in the explicit group/action size, the rational input bit length, and inverse accuracy. The support has no input weight-ratio dependence. A separate randomized implementation uses group operations and subset-product dictionaries without dense group-size matrices. It does not run in time polynomial in log|G| for succinct groups.
 
-top-dimensional simplices, where r is boundary-matrix rank, each vertex has at most a failure labels, and each top simplex has at most b additional labels. All failures of at most h labels and all prefixes of one fixed filtration are handled by the same restriction. The entire lower skeleton is retained. Boundary spaces, homology in lower dimensions, and the associated persistent modules are preserved over a specified field.
+Two proof steps account for the improvement. First, sort a subset of generators by their current weights before applying the ordered-subset-product collision argument; the first differing generator is expressed using only heavier generators. Second, a PSD family with an alpha-redundant item in every k-element subfamily under **every positive rescaling** has total normalized operator importance at most 4(k−1)/alpha. One nonuniform random experiment proves this directly, avoiding integration over importance levels. For group generators this gives O(log^2|G|) total importance. The abstract k/alpha dependence has a matching diagonal-matrix example up to constants.
 
-For one vertex color and no top-cell labels, the sharper envelope is
+BKLM, SODA 2026, gives the checked general-group log^4 bound; its weighted version has an additional dyadic weight-aspect factor. BKMT, July 2026, explicitly records that general-group baseline and proves the stronger optimal log|G| bound for **abelian** groups. That abelian theorem is not being surpassed here. The draft also gives common-weight correlated-generator-failure summaries and directed Cayley **cut** corollaries, with all probability and model distinctions stated.
 
-    min{N, k*r, binomial(n,p+1) − binomial(n−k,p+1)},
-    k = min{h+1, number of colors}.
+Read `20_arbitrary_group_cayley_sparsification.md` first for this result.
 
-The fixed-n envelope and the leading general binomial coefficient have matching constructions in the stated original-cell model. Ordinary no-failure spanning forests, exterior-rank identities, and the exact ordinary-vertex graph bound are attributed to their existing sources. The proposed increments concern correlated failures and their simultaneous query/filtration interpretation.
+### B. Arbitrary-locality positive Pauli Hamiltonians: linear support
 
-### 4. Sharp binomial summaries for matroids, graphs, packing, and submodular information
+For every n-qubit Hamiltonian
 
-For an explicitly represented rank-r matroid with at most d failure labels per item, a deterministic uniform polynomial-time construction retains at most
+    H = sum_e w_e (I − P_e),  w_e >= 0,
 
-    min{|E|, r * binomial(h+d,d)}
+where each P_e is any Hermitian signed Pauli string, the new draft gives O(n/epsilon^2) original-term support, and a compact-input randomized polynomial-time construction with explicit support O((n+1) log((n+2)/epsilon)/epsilon^2). Locality may be n; no fixed-locality constant is hidden. The exact linear bound uses the slower optimal code construction, polynomial in 2^n. The efficient construction is polynomial in n, the supplied term count, and input bit length. Its current backend is Quanrud quotient sparsification with an adaptive resparsification wrapper; the older KPS code construction is also credited. Both can preserve the total coefficient exactly.
 
-items while preserving every surviving prefix span in a fixed cost order. Consequently it preserves exact minimum-cost bases, including rank drops. The binomial bound is sharp. In edge-colored graphs, d=1 gives (h+1)r edges, removing the logarithmic size loss in the polynomial construction quoted by Petruschka–Sapir–Tzalik's April 2026 connectivity-labeling paper.
+The proof repeatedly peels balanced portions of anticommuting pairs. Their sum has a uniform spectral lower bound proportional to its total coefficient weight, so coefficient sampling suffices. The remainder is one commuting family and becomes an affine binary code after stabilizer elimination and one homogenizing coordinate. The two summaries are added on the original term identities. The joint O(n/epsilon^2) dependence is necessary when n is at least a constant times epsilon^(-2), already for commuting two-local clauses corresponding to a complete bipartite graph. This lower bound is inherited from classical cut sparsification.
 
-The separate vertex-color lift yields O(hn) edges for arbitrary correlated vertex-color classes, with sharper rank envelopes, and O(h^2 n) for mixed one-vertex-color/one-edge-color failures. Color lists are allowed in the broader parameterized statement. Existing spanner constructions already imply weighted-prefix/MSF preservation when processed in weight order; that capability alone is not claimed as new.
+BBP, May 2026, already obtains near-linear support for **fixed-locality** positive Pauli Hamiltonians. Its reduction uses locality-dependent pattern and partite decompositions. The proposed change eliminates that locality dependence. This is not a theorem for every unshifted Hamiltonian or every positive quantum operator. The separate all-deletion extension has larger support and does not silently reuse the ordinary peeling argument after one partner is deleted.
 
-Without a linear representation, the exact r*binomial(h+d,d) size bound still holds for **rank-only** summaries of arbitrary matroids. The supplied construction is deterministic FPT in r+h+d, rather than unrestricted polynomial time. A circuit-blocking permutation inequality extends to monotone submodular functions and gives a sharp bound on total worst-case marginal sensitivity. The associated entropy corollary is stated with exact correlated-erasure semantics. The arbitrary-oracle weighted binomial bound is not inferred from this unweighted argument.
+Read `21_arbitrary_locality_pauli_sparsification.md`.
 
-The packing note gives a represented-resource improvement through a tensor/exterior representative construction. Its representation assumption must be retained when comparing with the previous arbitrary-oracle bounds. The Boolean linear optimization compiler is a secondary consequence of a supplied Subset Sum backend, with earlier interval-shrinking work explicitly credited; it is not a new best bound for unrestricted high-dimensional integer programming.
+The companion `22_arbitrary_locality_prime_qudit_checks.md` extends this decomposition to individual generalized-Pauli eigenvalue-check projectors on prime-dimensional qudits. For arbitrary locality and weights, it gives O((n+1) log p / epsilon^2) original-check support and a compact-input randomized polynomial-time construction with O((n+1)[log p + log((n+2)/epsilon)]/epsilon^2) support. Noncommuting check projectors have overlap p^(-1/2), so balanced peeling retains an absolute gap. The commuting part is an affine F_p code. A projective-line averaging argument transfers the optimal abelian Cayley support back to whole original checks. The exact-support construction is exponential in n log p; the efficient construction now uses the quotient backend; the weighted finite-field code algorithm remains a credited alternative. These are check-projector penalties, not arbitrary qudit cosine penalties or arbitrary positive operators.
 
-## Baseline scope
+The newer whole-block draft `23_arbitrary_locality_stabilizer_block_sparsification.md` permits each original penalty to be the complement of a stabilizer-code accepting subspace, specified by arbitrarily many commuting checks. It retains whole original blocks with the same explicit compact-time support order O((n+1)[log p + log((n+2)/epsilon)]/epsilon^2), independent of internal block rank and locality. The constant-overlap pair argument survives at the block level; the residual is a finite-field block-query instance for an integer polymatroid rank oracle. The classical quotient theorem is an imported ingredient, not a new ordinary hedgegraph result.
 
-The current OpenAI public catalogue was checked at repository HEAD `1581d4cbdd69a0faf34b2089614fe2a814316a6a`, using its [overview](https://github.com/openai/math/blob/main/overview.tex) and the relevant entries. The catalogue check did not locate an arborescence/fault-preserver entry. This is a bounded catalogue check, not a review of all manuscripts.
+`24_arbitrary_dimension_weyl_checks.md` removes the prime restriction for individual Weyl eigenvalue checks. It gives compact polynomial-time soft-O((n+1) log^2(2q)/epsilon^2) support for every integer local dimension q, without factoring q. Hermite normal form produces a small commuting-generator over-parameterization, so no field-basis assumption is imposed on a composite-modulus module.
 
-OpenAI catalogue entry 138 states a randomized O(2^(0.49n)) Subset Sum algorithm. The deterministic exponent above is numerically larger than 0.49 and is not advertised as beating that randomized running time. The improvement claimed here is over the pinned deterministic repository baseline. Entry 114 concerns approximate counting of common integer polymatroid bases and is a different task from exact sensitivity preservation.
+`25_commuting_surrogates_and_stabilizer_energy_witnesses.md` gives a separate optimization consequence. A compactly computed commuting basis contains a stabilizer state of energy at most (2+sqrt(2)) times the minimum energy of any positive-Pauli Hamiltonian. Optimizing in that basis is a classical affine-XOR problem, solvable by 2^n enumeration and polynomial space, not a polynomial-time ground-state algorithm. For prime-p single eigenvalue checks, the factor becomes 2(1+p^(-1/2)) and the enumeration takes p^n time.
 
-The individual drafts give primary references and distinguish inherited ingredients from proposed contributions. They are intended for mathematical review and organization, with no claim of formal verification or exhaustive priority clearance. No old checkpoint bodies, proof-assistant files, PDFs, experimental programs, or internal review logs are bundled.
+### C. All-scenario correlated-failure spectra, with sharp failure exponents
+
+A graded exterior incidence lift handles a matrix A of rank r with original row labels R_i and column labels S_j satisfying
+
+    A_ij != 0 => R_i subset S_j, |S_j minus R_i| <= k, |S_j| <= q.
+
+Its dimension is r times sum_{a<=k} binomial(D,a), where a random RIP label code has D roughly (q/epsilon)(h+q) log L, capped at L. Original basis rows are selected before lifting. The feature of an incidence contains only its missing labels; query decoding appends the row labels. Gram determinants normalize every column. The scalar grade handles repeated colors and empty label differences. One PSD sparsification then works for every h-label deletion with the same original items and the same weights.
+
+For arbitrary weighted graphs, with at most a labels per vertex and b additional labels per edge, this yields
+
+    O_{a,b}(min{m, r h^(a+b) log^(a+b)(2L) / epsilon^(a+b+2)})
+
+edges for fixed a,b. A failed color class may have unbounded size. The lower construction requires
+
+    Omega(n binomial(h+a+b,a+b) / epsilon^2)
+
+edges in the stated regime n sufficiently large relative to the displayed factor. Thus the h exponent is sharp up to logarithms for fixed label degrees and accuracy. One vertex color gives near-O(nh) support at fixed accuracy.
+
+For simplicial boundaries, a facet incidence introduces at most one distinct color, even when colors repeat within a simplex. Hence k=1, the lift is r(D+1), and the top-simplex count is linear in h up to logarithms for fixed dimension. The lower skeleton is retained; the guarantee concerns the up-Laplacian and the corresponding lower-degree real homology, not top homology or every filtration threshold.
+
+The random-code bound is Monte Carlo. Explicit deterministic coherence codes give a weaker quadratic-h dimension. The sharp displayed support invokes the standard polynomial-arithmetic PSD sparsification theorem; an explicitly described polynomial-bit implementation incurs the stated additional logarithm. No efficient optimal-dimensional deterministic RIP construction is assumed.
+
+Read `18_correlated_vertex_and_edge_failure_spectral_graphs.md`, `19_graded_incidence_and_simplicial_spectral_sparsification.md`, and `17_label_vector_spectral_and_norm_lifts.md`.
+
+### D. Regression and norm consequences with explicit tradeoffs
+
+The generic label-vector draft extends beyond PSD sums: Gaussian integration transfers an ordinary lifted l_p embedding to all correlated failures, with an explicit l_1 theorem and black-box statements for other fixed p. A fixed-background extension preserves effective dimension through a twirling/concavity inequality.
+
+For convexly constrained and nonnegatively convexly regularized least squares, a separate elementary optimization lemma converts embedding error eta into solution error eta^2/(1−eta^2). This gives an inverse-epsilon weak-coreset bound using the importance-pool construction, and a linear-h inverse-epsilon^(3/2) alternative using the label-vector lift. Both cover a supplied response subspace, later convex constraints and penalties, and a regularization path above a fixed base value. These are correlated-deletion transfers; ordinary weak regression, ridge leverage, and Lewis sampling are credited antecedents.
+
+Read `15_weak_convex_regression_under_correlated_failures.md`, with the two spectral companions.
+
+### E. Correlated-failure cuts: exact polynomial decoding removes the accuracy loss
+
+`28_exact_label_cut_and_matroid_quotient_sparsification.md` now gives one fixed weighted edge subset preserving all cuts after every h-label failure, with
+
+    D = (n - components) binomial(h+a+b,a+b),
+    support = O(min{m, D log(2D/epsilon) / epsilon^2}),
+
+for at most a labels per vertex and b extra labels per edge. One vertex color gives O(n(h+1) log(2n(h+1)/epsilon)/epsilon^2), compared with the preceding spectral lift's extra inverse-epsilon factor. This is a cut guarantee; the spectral bound remains separately valid.
+
+The decoder is exact: homogenized degree-k label polynomials have dimension binomial(h+k,k), a normalized annihilator polynomial is zero exactly on failed labels, and each decoded column is a common nonzero scalar multiple of its original column when it survives. Every fault/subspace query is therefore one ordinary quotient query on the fixed lift. There is no union bound over scenarios and no query-dependent output reweighting.
+
+The same draft proves a cut-specific lower bound Omega(n binomial(h+a+b,a+b)/epsilon^2) in the stated sufficiently-large-n regime. A Khintchine argument first proves the complete-bipartite cut lower, and complement-label failures isolate many such edge blocks. Both the failure exponent and the inverse-square accuracy dependence are necessary up to the logarithm.
+
+The backend note `27_adaptive_quotient_resparsification.md` accounts for adaptive resparsification of Quanrud's theorem: small early error budgets and square-root support shrinkage remove the ambient ground-set logarithm while keeping a summable total error and failure probability. It gives O(r log(2r/epsilon)/epsilon^2) support for weighted quotient queries. This is recorded as an explicit consequence of the public theorem, without a separate priority claim for resparsification.
+
+The whole-item companion `29_exact_label_whole_blocks_and_hyperedges.md` extends the same decoder to represented subspaces. It preserves atomic colored hyperedge cuts and crossing-once partition values with failure degree a(t-1)+b for maximum arity t, and supplies a matching joint failure/accuracy lower construction. Whole hedges with at most d item labels use rank at most n times binomial(h+d,d), independent of the number of components inside a hedge. For globally commuting stabilizer-check blocks, the same classical compiler gives all-state spectral preservation after correlated clause deletions with D=(n+1) binomial(h+d,d). Differently labeled copies of a commuting two-local family give a matching Omega(n binomial(h+d,d)/epsilon^2) original-item lower bound. This latter theorem retains the global commutation assumption.
+
+### F. Arbitrary seminorm sums under correlated failures
+
+`26_arbitrary_seminorms_under_correlated_failures.md` extends Gaussian decoding to arbitrary whole-block seminorms, including supplied normed regression blocks, symmetric submodular sums via their Lovasz extensions, and hypergraph/hedge cut seminorms. The September 2026 optimal ordinary-seminorm theorem gives existential O(rK/epsilon^2) support on a label-feature space of dimension K. The constructive alternative uses the older JLLS theorem with its additional logarithms and an explicit roundedness/evaluation contract for the lifted total. The optimal existential bound is not reported as an arbitrary-oracle polynomial-time algorithm.
+
+## Other proved increments in this continuation
+
+| Problem | Draft bound and model | Main qualification |
+|---|---|---|
+| Exact single-failure minimum-cost arborescence | O(n^(3/2)) original arcs/records; deterministic soft-O(mn) arithmetic preprocessing; O(n) full output | Checked Dey–Kavitha 2026 comparator has the same retained order for factor-two approximation and poses sparse exact preservation as open. |
+| Exact single-failure weighted two-matroid intersection | O(k^(3/2)) original elements/records; O(k) full report after oracle preprocessing | Arbitrary two matroids, fixed feasible cardinality. Two consecutive ranks cover maximum-cardinality rank drops. |
+| Two valuated matroids | Same retained/reporting orders | Fixed rank and fixed valuations; no smaller-rank objective is inferred. |
+| Exact minimum-cost flow | O(n^(3/2) lambda^(1/4)), hence O(n^(7/4)); deterministic soft-O(mn) preprocessing | Simple directed graph, unit capacities, nonnegative costs. O(n) change output; O(n sqrt(lambda)) full output. |
+| Minimum-cost internally vertex-disjoint paths | O(n^(3/2)) retained size, O(n) full report | One original arc or internal-vertex failure; fixed terminals. |
+| Deterministic Subset Sum | Exponent 158153814247997/318927986919134 = .4958919277538907... | Increment over pinned deterministic .496461805587...; relies on repository compiler. No simultaneous low-space bound is claimed. |
+| Unweighted arbitrary two-matroid intersection | At most 3r original elements after one failure | Independence oracles are still needed for optimization; not an oracle-free encoding of arbitrary matroids. |
+| General unweighted graph matching | At most 4mu+2 edges for one edge failure; 6mu+2 for edge OR vertex | Secondary explicit-constant/support lemma: He 2026 plus CSR 2022 already implies the O(mu) asymptotic order. |
+| Represented matroid correlated failures | Sharp r binomial(h+d,d) prefix-span/cost certificate | Uniform deterministic polynomial construction; representation assumption retained. |
+| Arbitrary-oracle matroid rank and submodular value | Sharp binomial size in the stated rank/value model | Supplied general construction is FPT, not unrestricted polynomial time; arbitrary weighted-oracle extension is not inferred. |
+| Exact boundary spaces and persistence | r binomial(h+a+b,a+b) top cells, sharper one-color envelopes | A specified field and one fixed filtration; full lower skeleton retained. |
+| One-element price sensitivity | O(N+r sqrt(min{N,r^2})) records, O(r) full report | Classical weight sensitivity and condensed border graphs are credited; the compact-reporting priority needs further comparison. |
+
+The minimum-cost flow support bound, ordinary pair-distance preservers, interval shrinking, and representative-family machinery are inherited ingredients, not independent new discoveries. The individual files identify what is actually changed.
+
+## Baseline and review scope
+
+The OpenAI public catalogue was checked at HEAD `1581d4cbdd69a0faf34b2089614fe2a814316a6a`, using its overview and relevant entries. It did not reveal an arborescence/fault-preserver or Cayley-sparsification entry in the bounded catalogue check. This is not a review of every manuscript.
+
+OpenAI catalogue entry 138 states randomized O(2^(.49n)) Subset Sum. Our deterministic .4958919 exponent is numerically larger than .49; the improvement is over the pinned deterministic repository baseline. Entry 114 is approximate counting of common integer polymatroid bases, a different task. The actual July 2026 public abelian-Cayley paper separately acknowledges ChatGPT-5.5-Plus work on its volume argument; its stronger abelian result is credited both as a baseline and as an ingredient of the optimal-code Pauli corollary.
+
+The September 2026 optimal seminorm/Minkowski-sum paper also explicitly credits discussions with ChatGPT 5.5-Pro and 5.6-Sol for its main result. Its optimal ordinary bound is an OAI-assisted baseline and an ingredient of the new correlated-failure transfer; it is not claimed here as a new ordinary result.
+
+Recent broader antecedents include KPS's July 2026 real-valued-code sparsification theory and In–Li–Woodruff–Wu's ICML 2025 Bernoulli-separation/sensitivity construction. No first-universal-sparsification or first-Bernoulli-separation claim is made. The weak-versus-uniform failure-probability distinction in Oko–Sakaue–Tanigawa Section 7.8.2 is recorded explicitly.
+
+These drafts have undergone independent mathematical checks within the collaboration, but are not formally verified or externally peer reviewed. They contain complete proof arguments for the proposed increments and explicit boundaries for unfinished directions. The archive deliberately excludes old checkpoint bodies, backups, programs, experiment logs, proof-assistant files, and PDFs.

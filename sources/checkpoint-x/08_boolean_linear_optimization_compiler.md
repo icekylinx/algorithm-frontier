@@ -132,6 +132,8 @@ For each tuple of catalogue members and chunks, we now have a pure signed equali
 \tag{B11}
 \]
 
+The catalogue construction, chunk enumeration, and radix-packing arithmetic take `poly(L)` bit operations per tuple. Every packed instance has `N<=n+B` variables and an encoding length `L'=poly(L)`; the polynomial factor in the backend contract is therefore absorbed into the displayed `poly(L)`. Only one packed instance and one backend workspace are live at a time. The branch count in (B11), rather than an unlisted factor depending on the number of original rows, is the complete exponential accounting.
+
 ## 4. Packing signed equalities without adding variables
 
 Suppose a branch has equalities `c_j^T y=t_j`, for `j=0,...,r-1`, and `y` has `N<=n+B` Boolean coordinates. Set

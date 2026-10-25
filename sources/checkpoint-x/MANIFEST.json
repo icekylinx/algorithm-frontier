@@ -1,14 +1,15 @@
 {
   "checkpoint": "X",
   "status": "draft",
-  "maturity": "source-only; non-promoted draft cards only",
-  "scope": "Incremental English research drafts for external review; no inherited manuscript or prior archive",
+  "maturity": "source-only; family-level non-promoted draft cards only",
+  "scope": "Complete uploaded incremental English research drafts for external review; revised payloads are maintained in one source tree and curation edits are recorded without backup copies.",
   "snapshot_date_utc": "2026-10-25",
   "language": "English",
   "source_archive": {
-    "filename": "checkpoint_X_incremental_drafts_2026-10-25.zip",
-    "bytes": 76990,
-    "sha256": "936c57d419d86f7be58c8a92e67936dee138e64a6c1eb72e8fe3fba2f4e27b87"
+    "filename": "checkpoint_X_incremental_drafts_2026-10-25(1).zip",
+    "bytes": 297808,
+    "sha256": "b919a944b612747f6b7f2b00f800212f329745fad6ddf7529f63a5a904eacd78",
+    "payload_root": "checkpoint_X/"
   },
   "repository_reference": {
     "name": "icekylinx/algorithm-frontier",
@@ -16,69 +17,360 @@
   },
   "parent": {
     "checkpoint": "not declared in archive",
-    "note": "README identifies repository commit and subsequent W/X notes; no parent ZIP hash was supplied"
+    "note": "The supplied README identifies the repository snapshot and subsequent X notes; no parent ZIP hash was supplied."
   },
-  "mathematical_status": "Rough proof and algorithm drafts for external review; no formal verification, exhaustive priority clearance, or external peer review",
+  "mathematical_status": "Research drafts for proof, algorithm, and source review; no formal verification, exhaustive priority clearance, or external peer review.",
   "payload": [
     {
       "file": "01_exact_single_failure_arborescences_and_matroid_intersection.md",
-      "bytes": 31313,
-      "sha256": "3812ed10260c48a66084806481f11f3b4c89be375bb1689ecbe6e9f15ef6b20a",
-      "role": "original archive payload"
+      "archive_bytes": 38009,
+      "archive_sha256": "a0ccd4ac5cc4fcbe3efffe61dbbd8ddcbf2cf42857d91f6ae1faa10dd8405a68",
+      "current_bytes": 38866,
+      "current_sha256": "9a568f5fd935576359716cf8af42843f38e60cfca65c3fd89d8b368b364cdf7e",
+      "edited_in_place": true,
+      "role": "archive payload"
     },
     {
       "file": "02_deterministic_subset_sum_increment.md",
-      "bytes": 16868,
-      "sha256": "dc37c5f1cbe0447fc4580899383a018b704e60e124e14cbdce51adf07f6fa68b",
-      "role": "original archive payload"
+      "archive_bytes": 22143,
+      "archive_sha256": "77a2ee16a011acb9eb4eb2f3a39d407594ae807549de63332f0c41d10bd42ca6",
+      "current_bytes": 22143,
+      "current_sha256": "77a2ee16a011acb9eb4eb2f3a39d407594ae807549de63332f0c41d10bd42ca6",
+      "edited_in_place": false,
+      "role": "archive payload"
     },
     {
       "file": "03_correlated_fault_boundary_and_persistence_sparsifiers.md",
-      "bytes": 21431,
-      "sha256": "a72372f63d7480dc94a4e03f4ee925f6ff7ec9b07d95233a0ca1aeb760b34226",
-      "role": "original archive payload"
+      "archive_bytes": 21431,
+      "archive_sha256": "a72372f63d7480dc94a4e03f4ee925f6ff7ec9b07d95233a0ca1aeb760b34226",
+      "current_bytes": 21780,
+      "current_sha256": "efe9bed7dbb7b026d70bf357aa2a36294c6fd5c1ebc8e4468258f3a924e93b87",
+      "edited_in_place": true,
+      "role": "archive payload"
     },
     {
       "file": "04_sharp_represented_matroid_failure_summaries.md",
-      "bytes": 21690,
-      "sha256": "a90e41fd3e45c9cb9683b22d99ba8ad7b290d157d076ef5308c8da7b2c8a6279",
-      "role": "original archive payload"
+      "archive_bytes": 21690,
+      "archive_sha256": "a90e41fd3e45c9cb9683b22d99ba8ad7b290d157d076ef5308c8da7b2c8a6279",
+      "current_bytes": 23483,
+      "current_sha256": "3efb9e055920e5e221701a6619f85c513d3e0ce035c811f0658e730713602b10",
+      "edited_in_place": true,
+      "role": "archive payload"
     },
     {
       "file": "05_colored_graph_and_vertex_failure_certificates.md",
-      "bytes": 25444,
-      "sha256": "eb56e96bce9a29cecf4109bae64a338118386bf04a060c13f5d04851622490cf",
-      "role": "original archive payload"
+      "archive_bytes": 25444,
+      "archive_sha256": "eb56e96bce9a29cecf4109bae64a338118386bf04a060c13f5d04851622490cf",
+      "current_bytes": 26576,
+      "current_sha256": "712729d9ce45ad680e48fb80e4e513d3de14442d2f8a9ea00575fb93835b8df6",
+      "edited_in_place": true,
+      "role": "archive payload"
     },
     {
       "file": "06_arbitrary_matroid_and_submodular_failure_summaries.md",
-      "bytes": 19501,
-      "sha256": "8df4380d605b7d027e05a28bee45b9e52572def219e055f8baafdb71497e2dba",
-      "role": "original archive payload"
+      "archive_bytes": 19501,
+      "archive_sha256": "8df4380d605b7d027e05a28bee45b9e52572def219e055f8baafdb71497e2dba",
+      "current_bytes": 20648,
+      "current_sha256": "e5c0f627e7727334200f0190f87f6a1fca6958b44489f4ee1517ffe05f3e91bb",
+      "edited_in_place": true,
+      "role": "archive payload"
     },
     {
       "file": "07_represented_resource_packing_transfer.md",
-      "bytes": 14458,
-      "sha256": "e33939c9dcd91b187adce2be854cddcde6f313da328478d9c896129407224823",
-      "role": "original archive payload"
+      "archive_bytes": 14458,
+      "archive_sha256": "e33939c9dcd91b187adce2be854cddcde6f313da328478d9c896129407224823",
+      "current_bytes": 15975,
+      "current_sha256": "283fc63c232aecb76ddd4e0a78799d895aceff20e08a40ad78e0e8454c9bde55",
+      "edited_in_place": true,
+      "role": "archive payload"
     },
     {
       "file": "08_boolean_linear_optimization_compiler.md",
-      "bytes": 15120,
-      "sha256": "c0a1c15e051b6ac322e810600bcf90e1203ce53b347652a04408ce0298a044bd",
-      "role": "original archive payload"
+      "archive_bytes": 15120,
+      "archive_sha256": "c0a1c15e051b6ac322e810600bcf90e1203ce53b347652a04408ce0298a044bd",
+      "current_bytes": 15629,
+      "current_sha256": "aed52ae66b69806ace3a9c6964cddc56fc239f606d87e9844abe59b835adf837",
+      "edited_in_place": true,
+      "role": "archive payload"
     },
     {
       "file": "09_valuated_matroid_intersection.md",
-      "bytes": 14376,
-      "sha256": "d5ac242812da78c59d5327ba7e54f3c33fe90c71eb01f4ab8c2000b8d64db5e4",
-      "role": "original archive payload"
+      "archive_bytes": 14376,
+      "archive_sha256": "d5ac242812da78c59d5327ba7e54f3c33fe90c71eb01f4ab8c2000b8d64db5e4",
+      "current_bytes": 15310,
+      "current_sha256": "09144e601a7eb1bc9aca8c8571f59a5a1a2038663e50229958f08bc4d56ca645",
+      "edited_in_place": true,
+      "role": "archive payload"
+    },
+    {
+      "file": "10_exact_min_cost_flow_and_vertex_disjoint_paths.md",
+      "archive_bytes": 18917,
+      "archive_sha256": "79927b0375d96416f35ae7046fd181621a0007c9349efd9c00e19f00e0ecd041",
+      "current_bytes": 18917,
+      "current_sha256": "79927b0375d96416f35ae7046fd181621a0007c9349efd9c00e19f00e0ecd041",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "11_correlated_failure_spectral_and_regression_summaries.md",
+      "archive_bytes": 25370,
+      "archive_sha256": "ebbd4271299e28be3f884c8cc261398740366b9af555659f7f8655dc48458800",
+      "current_bytes": 25370,
+      "current_sha256": "ebbd4271299e28be3f884c8cc261398740366b9af555659f7f8655dc48458800",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "12_linear_single_fault_general_matching.md",
+      "archive_bytes": 20551,
+      "archive_sha256": "44a02bfaefe1de1835b8d597bb0d35cfd5137b237b8949aa95e36aceee066a3c",
+      "current_bytes": 20551,
+      "current_sha256": "44a02bfaefe1de1835b8d597bb0d35cfd5137b237b8949aa95e36aceee066a3c",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "13_linear_unweighted_two_matroid_certificate.md",
+      "archive_bytes": 8975,
+      "archive_sha256": "797a7ca14fe603e60eaf4172805b3a74b35e17c37993759abc55b6d34dc2f8f4",
+      "current_bytes": 8975,
+      "current_sha256": "797a7ca14fe603e60eaf4172805b3a74b35e17c37993759abc55b6d34dc2f8f4",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "14_general_nonnegative_sensitivity_compiler.md",
+      "archive_bytes": 9486,
+      "archive_sha256": "1eb7b90ac0df2f61d5b0e86cff59ca3175c51b43ff42f675fb299da3ba1ee098",
+      "current_bytes": 9486,
+      "current_sha256": "1eb7b90ac0df2f61d5b0e86cff59ca3175c51b43ff42f675fb299da3ba1ee098",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "15_weak_convex_regression_under_correlated_failures.md",
+      "archive_bytes": 12430,
+      "archive_sha256": "3b7b4a8c919251517b36f624afe759090e2703314c90daefd47b2b9b61cc21e1",
+      "current_bytes": 12430,
+      "current_sha256": "3b7b4a8c919251517b36f624afe759090e2703314c90daefd47b2b9b61cc21e1",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "16_compact_one_element_price_sensitivity.md",
+      "archive_bytes": 11754,
+      "archive_sha256": "04f5c02c0161be73369afc7cdd755bb21b53810869e7c9dddf54529474e76eda",
+      "current_bytes": 11754,
+      "current_sha256": "04f5c02c0161be73369afc7cdd755bb21b53810869e7c9dddf54529474e76eda",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "17_label_vector_spectral_and_norm_lifts.md",
+      "archive_bytes": 28059,
+      "archive_sha256": "10d1c086a7d9e856e96a6149494983baf689ea6951773376b52120d255e1e754",
+      "current_bytes": 28059,
+      "current_sha256": "10d1c086a7d9e856e96a6149494983baf689ea6951773376b52120d255e1e754",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "18_correlated_vertex_and_edge_failure_spectral_graphs.md",
+      "archive_bytes": 21021,
+      "archive_sha256": "c85e17941dcbeb868146aa3a0985ece372adbf394627c981657a2309c12a6fa6",
+      "current_bytes": 21021,
+      "current_sha256": "c85e17941dcbeb868146aa3a0985ece372adbf394627c981657a2309c12a6fa6",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "19_graded_incidence_and_simplicial_spectral_sparsification.md",
+      "archive_bytes": 21894,
+      "archive_sha256": "e41f6b0455da7d8c689f69203c7abf91251cb310492eea572e79d9695ea019db",
+      "current_bytes": 21894,
+      "current_sha256": "e41f6b0455da7d8c689f69203c7abf91251cb310492eea572e79d9695ea019db",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "20_arbitrary_group_cayley_sparsification.md",
+      "archive_bytes": 28760,
+      "archive_sha256": "fbf54cfd8bb43b3bb6dc4f2fff6de3539a9e43f30cce70d6123174615cdfed20",
+      "current_bytes": 28760,
+      "current_sha256": "fbf54cfd8bb43b3bb6dc4f2fff6de3539a9e43f30cce70d6123174615cdfed20",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "21_arbitrary_locality_pauli_sparsification.md",
+      "archive_bytes": 25338,
+      "archive_sha256": "37b0b6c16837d5e65bef56dd9a18e631718ba613d61c61656eb3c9a2a8d2cca0",
+      "current_bytes": 25338,
+      "current_sha256": "37b0b6c16837d5e65bef56dd9a18e631718ba613d61c61656eb3c9a2a8d2cca0",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "22_arbitrary_locality_prime_qudit_checks.md",
+      "archive_bytes": 16061,
+      "archive_sha256": "a2781862cb2c9aaa3433051ca4415549f1ab553479061bc10afdf19a653a3df0",
+      "current_bytes": 16061,
+      "current_sha256": "a2781862cb2c9aaa3433051ca4415549f1ab553479061bc10afdf19a653a3df0",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "23_arbitrary_locality_stabilizer_block_sparsification.md",
+      "archive_bytes": 21324,
+      "archive_sha256": "ee965144c19124f9b0f22c6123c2ee9be1886cfc4db50421d559c6ba3e323a30",
+      "current_bytes": 21324,
+      "current_sha256": "ee965144c19124f9b0f22c6123c2ee9be1886cfc4db50421d559c6ba3e323a30",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "24_arbitrary_dimension_weyl_checks.md",
+      "archive_bytes": 16092,
+      "archive_sha256": "2d0767d07eb0eac367663d00883bf4fbf530e810920c0df82b8a7ab1bd9a5d94",
+      "current_bytes": 16092,
+      "current_sha256": "2d0767d07eb0eac367663d00883bf4fbf530e810920c0df82b8a7ab1bd9a5d94",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "25_commuting_surrogates_and_stabilizer_energy_witnesses.md",
+      "archive_bytes": 17717,
+      "archive_sha256": "a5e8deeb4b23ad20ff147f1c5dafa398f51f2b32cd27875cd493277ac2bb52b7",
+      "current_bytes": 17717,
+      "current_sha256": "a5e8deeb4b23ad20ff147f1c5dafa398f51f2b32cd27875cd493277ac2bb52b7",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "26_arbitrary_seminorms_under_correlated_failures.md",
+      "archive_bytes": 14060,
+      "archive_sha256": "1598a3fd7c2e8da6a36907fed70cf215f93775ea2fa1b8cdf719ea551f711c35",
+      "current_bytes": 14060,
+      "current_sha256": "1598a3fd7c2e8da6a36907fed70cf215f93775ea2fa1b8cdf719ea551f711c35",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "27_adaptive_quotient_resparsification.md",
+      "archive_bytes": 10973,
+      "archive_sha256": "764fb073191552ca7f83fbbf3ee049aec68cb082a318e5d8392e18d90489db0f",
+      "current_bytes": 10973,
+      "current_sha256": "764fb073191552ca7f83fbbf3ee049aec68cb082a318e5d8392e18d90489db0f",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "28_exact_label_cut_and_matroid_quotient_sparsification.md",
+      "archive_bytes": 13047,
+      "archive_sha256": "5aa3c4d035e9d54e9a0d6d11ca67438af57f41cf2d06d7f9f69532c6a2a69095",
+      "current_bytes": 13047,
+      "current_sha256": "5aa3c4d035e9d54e9a0d6d11ca67438af57f41cf2d06d7f9f69532c6a2a69095",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "29_exact_label_whole_blocks_and_hyperedges.md",
+      "archive_bytes": 18362,
+      "archive_sha256": "58658010a652a91a46084939496ec22a22be1b2bf60f2899cef9f5895ecfcc09",
+      "current_bytes": 18362,
+      "current_sha256": "58658010a652a91a46084939496ec22a22be1b2bf60f2899cef9f5895ecfcc09",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "30_optimal_whole_subgroup_constraints.md",
+      "archive_bytes": 28113,
+      "archive_sha256": "029265b51d146275e229eb45e86a9025ebfdff50fa178d3fb703eca424ee53f8",
+      "current_bytes": 28113,
+      "current_sha256": "029265b51d146275e229eb45e86a9025ebfdff50fa178d3fb703eca424ee53f8",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "31_affine_constraints_over_arbitrary_finite_groups.md",
+      "archive_bytes": 19809,
+      "archive_sha256": "057964887d440317062c3e553e951fec8f61e575b34688f9e809ee8dbe0cfe38",
+      "current_bytes": 19809,
+      "current_sha256": "057964887d440317062c3e553e951fec8f61e575b34688f9e809ee8dbe0cfe38",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "32_transitive_metrics_and_group_alignment.md",
+      "archive_bytes": 24770,
+      "archive_sha256": "b2bb9fd11067bdcc78a85d22a63bf94cfb53545acbb8681f8a410f0425a53285",
+      "current_bytes": 24770,
+      "current_sha256": "b2bb9fd11067bdcc78a85d22a63bf94cfb53545acbb8681f8a410f0425a53285",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "33_exact_separation_for_compact_codes.md",
+      "archive_bytes": 6362,
+      "archive_sha256": "05ceb746e46d8c1471839b4034324b9ae5feb9b51ca6c66e60e5ed2c225520c6",
+      "current_bytes": 6362,
+      "current_sha256": "05ceb746e46d8c1471839b4034324b9ae5feb9b51ca6c66e60e5ed2c225520c6",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "34_arbitrary_dimension_whole_stabilizer_blocks.md",
+      "archive_bytes": 21393,
+      "archive_sha256": "d9e2c2d5a11282abb601c9ab0482e68d7296ac107caba62861546c316de0123a",
+      "current_bytes": 21393,
+      "current_sha256": "d9e2c2d5a11282abb601c9ab0482e68d7296ac107caba62861546c316de0123a",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "35_rational_quotient_ranks_from_weak_oracles.md",
+      "archive_bytes": 12830,
+      "archive_sha256": "e2f3b2b2685573ab415f0eacadcb5fbd732323bfbd48d63223e2144c0d98938d",
+      "current_bytes": 12830,
+      "current_sha256": "e2f3b2b2685573ab415f0eacadcb5fbd732323bfbd48d63223e2144c0d98938d",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "36_affine_modular_blocks_and_sharp_modulus_dependence.md",
+      "archive_bytes": 16275,
+      "archive_sha256": "15f933a02f324657dd025aba541ea0111dfac307a946317b87fcd9e5d4ee2785",
+      "current_bytes": 16275,
+      "current_sha256": "15f933a02f324657dd025aba541ea0111dfac307a946317b87fcd9e5d4ee2785",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "37_hilbert_metric_sums_with_few_orbits.md",
+      "archive_bytes": 9465,
+      "archive_sha256": "dfe9f9cb4aec787b6e6f4a04a6c3fc74549a27ef2c87fac4a0bf83b0db2d01d5",
+      "current_bytes": 9465,
+      "current_sha256": "dfe9f9cb4aec787b6e6f4a04a6c3fc74549a27ef2c87fac4a0bf83b0db2d01d5",
+      "edited_in_place": false,
+      "role": "archive payload"
+    },
+    {
+      "file": "38_non_fano_obstruction_to_fixed_amplitude_bound.md",
+      "archive_bytes": 5212,
+      "archive_sha256": "c3f0efc5cd9edb355f6359279d1df261d660cfd558e143baa225caf7942404e3",
+      "current_bytes": 5212,
+      "current_sha256": "c3f0efc5cd9edb355f6359279d1df261d660cfd558e143baa225caf7942404e3",
+      "edited_in_place": false,
+      "role": "archive payload"
     },
     {
       "file": "README.md",
-      "bytes": 8281,
-      "sha256": "d5673c49147fee336913cc6b59d3bc9dd0cd8ae8a274b3d6a18fa8bfdde5f7ca",
-      "role": "original archive payload"
+      "archive_bytes": 25925,
+      "archive_sha256": "6f6f38c8c5f00f4432afd4dbf539476b622f805e4bea55d49611ca452cca50ee",
+      "current_bytes": 25925,
+      "current_sha256": "6f6f38c8c5f00f4432afd4dbf539476b622f805e4bea55d49611ca452cca50ee",
+      "edited_in_place": false,
+      "role": "archive README"
     }
   ],
   "derived_files": [

@@ -179,7 +179,7 @@ The two directions mirror the ordinary companion, with Lemmas 1 and 2 replacing 
 
 **Cycle to replacement.** Decompose x from Section 5 by Lemma 1. Its zero coordinates force every used common basis to lie in B plus the distinct labels of C. Its coordinates equal to one force inclusion of B outside V(C). For f in V(C), its coordinate 1-epsilon makes the total coefficient of common bases avoiding f exactly epsilon. Every common basis has nonnegative gap above Omega(B). By (V5), the average gap over bases avoiding f is at most ell(C), so one such basis has gap at most ell(C).
 
-**Replacement to cycle.** Given any common basis J avoiding f, apply Lemma 2 separately to omega_1 and omega_2. The two exchange matchings decompose into alternating cycles, one containing f. Their total valued arc cost is at most Omega(J)-Omega(B). Each cycle has nonnegative cost by the same convex-combination argument, so the f-cycle costs at most that gap. Choosing the stored minimum-cost labels of (V4) only decreases its cost. This proves the reverse inequality in (V6), including the infeasibility convention.
+**Replacement to cycle.** Given any common basis J avoiding f, apply Lemma 2 separately to omega_1 and omega_2. For each outside element e in J minus B, let a_1(e) and a_2(e) be its matched B-elements in the two matchings, and form the arc a_1(e) to a_2(e) labeled by e. These arcs decompose into permutation cycles, one containing f. Their total valued arc cost is at most Omega(J)-Omega(B). Each cycle has nonnegative cost by the same convex-combination argument, so the f-cycle costs at most that gap. Choosing the stored minimum-cost labels of (V4) only decreases its cost. This proves the reverse inequality in (V6), including the infeasibility convention.
 
 **Lemma 3 (literal minimum-hop update).** Among cycles of minimum length delta_f through f, choose one C with the fewest arcs t. Then its outside labels are all distinct and
 
@@ -205,7 +205,7 @@ Split each a into a-minus and a-plus, add the zero split arc a-minus to a-plus, 
 
 Use lexicographic arc weights consisting of the original valued length followed by a secondary hop count: one on labeled exchange arcs and zero on split arcs. Every directed cycle has nonnegative primary cost and strictly positive secondary cost. Hence a lexicographically shortest path is simple, and the demanded paths represent minimum-length, minimum-hop cycles through f.
 
-Apply the directed weighted O(N_graph sqrt(p))-edge distance-preserver construction, with the deterministic phased hitting implementation in the ordinary companion. It consists of explicit short demand paths and shortest-path in-trees and out-trees for O(sqrt(k)) chosen hubs across all phases, plus O(k) demand records. The total representation has O(k^{3/2}) arcs/records. Lexicographic weights are handled by exact ordered-pair arithmetic, or by a sufficiently small rational perturbation; no randomness is required.
+Apply the directed weighted O(N_graph sqrt(p))-edge distance-preserver construction, with the deterministic phased hitting implementation in the ordinary companion. It consists of explicit short demand paths and shortest-path in-trees and out-trees for O(sqrt(k)) chosen hubs across all phases, plus O(k) demand records. The total representation has O(k^{3/2}) arcs/records. Lexicographic weights are handled by exact ordered-pair arithmetic; no perturbation is needed and no randomness is required.
 
 For a demand served by a hub lying on one of its lexicographically shortest paths, concatenate its stored shortest path into the hub and the stored shortest path out of the hub. The concatenation has exactly the required lexicographic distance. It cannot repeat a vertex: deleting the resulting directed cycle would strictly decrease its lexicographic length. Thus it reports at most O(k) arcs. An explicitly stored short path is reported directly.
 
@@ -219,10 +219,26 @@ Iwamasa and Takazawa, *Optimal matroid bases with intersection constraints: Valu
 O(Nk^2\gamma+Nk\log N),
 \]
 
-where gamma is the time needed to evaluate a valuation. This supplies the initial optimum B. The same paper explicitly uses the fact that minimizing bases of a valuated matroid form an ordinary matroid. Primary full text: https://arxiv.org/pdf/2003.02424 .
+where gamma is the time needed to evaluate a valuation. For bit complexity,
+let \(\beta\) bound the bit length of every finite value returned by either
+oracle; comparisons and additions are then charged in the explicit input size
+and \(\beta\). This supplies the initial optimum B. The same paper explicitly uses the
+fact that minimizing bases of a valuated matroid form an ordinary matroid.
+Primary full text: https://arxiv.org/pdf/2003.02424 .
 
-After B is known, the gamma_i tables use O(Nk) valuation evaluations, and the minimum-label compressed arcs can be formed by O(Nk^2) arithmetic comparisons. Dense shortest-path processing and the deterministic path-reporting preserver fit within a conservative additional O(k^3) arithmetic-operation bound. Rational arithmetic has polynomial bit complexity under the usual finite-value-oracle model.
+After B is known, the gamma_i tables use O(Nk) valuation evaluations, and the minimum-label compressed arcs can be formed by O(Nk^2) arithmetic comparisons. Dense shortest-path processing and the deterministic path-reporting preserver fit within a conservative additional O(k^3) arithmetic-operation bound. For a bit-model statement, let beta_val bound the bit length of every finite valuation returned by the oracle (and beta_in bound input labels); the exact rational operations then have polynomial bit complexity in the explicit input size, beta_val, and beta_in. An oracle-call count alone does not claim a polynomial bound on returned-value length.
 
-The underlying valuated matroid intersection and cycle criteria are classical; see Kazuo Murota, *Valuated Matroid Intersection I: Optimality Criteria*, SIAM J. Discrete Math. 9 (1996), 545-561, DOI 10.1137/S0895480195279994, and Part II, DOI 10.1137/S0895480195280009. The directed distance-preserver ingredient is the Coppersmith-Elkin theorem restated as Theorem 3 of Greg Bodwin, *A Note on Distance-Preserving Graph Sparsification*, https://arxiv.org/pdf/2001.07741 .
+The underlying valuated matroid intersection and cycle criteria are classical;
+see Kazuo Murota, *Valuated Matroid Intersection I: Optimality Criteria*,
+SIAM J. Discrete Math. 9 (1996), 545-561, DOI
+10.1137/S0895480195279994, and Part II, DOI 10.1137/S0895480195280009. The
+directed distance-preserver ingredient should be applied with its stated
+weight assumptions: the compressed graph may have negative arcs even though
+every directed cycle has nonnegative primary value. If the cited theorem
+requires nonnegative edge lengths, first compute a Bellman--Ford potential from
+a super-source and use reduced costs, retaining the exact ordered-pair tie
+coordinate. The cited source is the Coppersmith-Elkin theorem restated as
+Theorem 3 of Greg Bodwin, *A Note on Distance-Preserving Graph Sparsification*,
+https://arxiv.org/pdf/2001.07741 .
 
 The claimed incremental step is the transfer of the companion's sparse **single-failure support and path-reporting guarantee** to arbitrary pairs of valuated matroids. It is not a claim to have introduced valuated matroid intersection, its initial-matroid property, or its exchange-cycle framework. The restriction preserves the two fixed input valuations under one original element deletion; arbitrary later valuations, arbitrary contexts, and simultaneous multi-element or correlated-label failures are outside this statement.
