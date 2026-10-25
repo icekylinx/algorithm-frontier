@@ -17,3 +17,9 @@ The original complete archives remain represented by SHA-256 entries in `provena
 - Parent: Q archive `8ff7b58aafa78cf67747fcd58433f98d8968a11d03ee61c3041497b3b7fc96e5`.
 - R archive: `deterministic_related_problems_increment_20261025_R.zip`, SHA-256 `c5a0cacff1e0ab9283da4e6214d7f80ced7fc46cc3b15e5700dc9098bf7e3bf4`, 110,748 bytes.
 - Retained payload: 17 files; no Lean, PDF, executable, or test bundle.
+
+## S increment
+
+- Parent: R archive `c5a0cacff1e0ab9283da4e6214d7f80ced7fc46cc3b15e5700dc9098bf7e3bf4`.
+- S archive: `deterministic_related_problems_increment_20261025_S.zip`, SHA-256 `0aa96b8c60ff9f866df6cc1cfbae1764a9d016e0351eb1944be343b1d41912ed`, 83,739 bytes.
+- Retained payload: 14 files; increment-only since R; no Lean, PDF, executable, or test bundle.

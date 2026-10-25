@@ -1,0 +1,89 @@
+{
+  "checkpoint": "S",
+  "snapshot_utc": "2026-10-25 12:01:32 UTC",
+  "scope": "increment_only_since_R",
+  "parent_archive": "deterministic_related_problems_increment_20261025_R.zip",
+  "parent_sha256": "c5a0cacff1e0ab9283da4e6214d7f80ced7fc46cc3b15e5700dc9098bf7e3bf4",
+  "inherited_payload_files": 0,
+  "review_scope": "All theorem manuscripts received root and separate full internal mathematical reviews; no formal verification or external peer review is implied.",
+  "exclusions": [
+    "prior checkpoint payloads",
+    "Lean",
+    "PDF",
+    "executables",
+    "test bundles",
+    "duplicate internal audit logs"
+  ],
+  "files": [
+    {
+      "name": "CHECKPOINT_S_INCREMENT.md",
+      "bytes": 12380,
+      "sha256": "cfdb13153fba7eb493723d3238f195b61140fc22504ba277cac0f590deda14a4"
+    },
+    {
+      "name": "README_INCREMENT_S.md",
+      "bytes": 3607,
+      "sha256": "e51e410652e77d021b7c5c5aa5b0c68a893dff0d860838fb89acc9a39e4d3b07"
+    },
+    {
+      "name": "incremental_primary_baselines_S.md",
+      "bytes": 7349,
+      "sha256": "f09528a6a89cca8bcda475f3c3f693a2d8312fa54bbac2ed833aa7b36c36bcab"
+    },
+    {
+      "name": "unrestricted_support_pattern_numeric_targets.md",
+      "bytes": 24681,
+      "sha256": "9d3293e22ce7cafb7d9962d00075ba6654a2201dab05e52ba360615cab90b678"
+    },
+    {
+      "name": "support_pattern_budget_complexity_classification.md",
+      "bytes": 13449,
+      "sha256": "1a6b4739977370f983c4a3a09dc666b0064f8415b8d4f7a974cd8dcf92202052"
+    },
+    {
+      "name": "one_support_pattern_target_lower_bounds.md",
+      "bytes": 11767,
+      "sha256": "dfbb8540c0f31d9d0e138d243bfd6a937a67e99a1cddeec79a09b3db0727bdab"
+    },
+    {
+      "name": "support_sensitive_partition_potential_and_star_targets.md",
+      "bytes": 17599,
+      "sha256": "7c5d0cc38b7eec4a502f045edff25ef952efff49d5db0bd9a81dd074b800007f"
+    },
+    {
+      "name": "column_support_numeric_target_dichotomy.md",
+      "bytes": 16281,
+      "sha256": "86e9747772dc707f62b917f88cfb6bc6e0035458558a19607bd4f771400751c2"
+    },
+    {
+      "name": "row_overlap_density_numeric_target_refinement.md",
+      "bytes": 17032,
+      "sha256": "aafc93839d1ae6ab55b0a89e5c4929d67ac5e127255fb1fdae53c038f9d4bbbf"
+    },
+    {
+      "name": "component_sensitive_numeric_target_catalogues.md",
+      "bytes": 13246,
+      "sha256": "181922d5d056ba3f43e848223386b0794aaba58ddc6090610149b55b39f3c4aa"
+    },
+    {
+      "name": "conditional_lower_bound_encoded_target_matroids.md",
+      "bytes": 9848,
+      "sha256": "60c7b33e3ca378186184586a50c35a3765e38ce93ab58fdaf22c97a28d8d4101"
+    },
+    {
+      "name": "fixed_dimension_encoded_matroid_eth_lower.md",
+      "bytes": 19046,
+      "sha256": "d0a4547ed817958673075e85747fd846b8c5b7df6ea4152abdde10a374db0723"
+    },
+    {
+      "name": "encoded_overlap_density_eth_lower_bound.md",
+      "bytes": 13746,
+      "sha256": "85e56702ce38c63286c8dca941c71fc095606a1c3e7068274c8d3c7f8560f999"
+    },
+    {
+      "name": "aligned_nonlinear_overlap_density_transfer.md",
+      "bytes": 13010,
+      "sha256": "aa475b54167d004692d25127c79ffd4270a17d692f7eb4b06738674b5754d988"
+    }
+  ]
+}
