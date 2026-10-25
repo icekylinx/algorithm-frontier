@@ -1,0 +1,285 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=25mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,tabularx,array}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\definecolor{ink}{HTML}{202938}
+\definecolor{linkblue}{HTML}{1D4F7A}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  urlcolor=linkblue,
+  citecolor=linkblue,
+  pdftitle={Algorithm Frontier: A Curated Catalogue},
+  pdfauthor={Algorithm Frontier}
+}
+\color{ink}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlist{nosep,leftmargin=1.3em}
+\setlist[description]{style=multiline,leftmargin=28mm,labelindent=0pt}
+\renewcommand{\arraystretch}{1.18}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\newcommand{\repo}[2]{\href{https://github.com/icekylinx/algorithm-frontier/#1}{#2}}
+\newcommand{\poly}{\operatorname{poly}}
+\newcommand{\eps}{\varepsilon}
+
+\newtheoremstyle{recordstyle}
+  {0.65em}{0.65em}{\itshape}{}{}{\bfseries}{.5em}{\thmname{#1}\thmnote{ (#3)}}
+\theoremstyle{recordstyle}
+\newtheorem*{record}{Curated record}
+
+\title{\vspace{-1.2em}\textbf{Algorithm Frontier}\\[0.25em]
+  \large A curated catalogue of exact algorithms, tradeoffs, and conditional frontiers}
+\author{\normalsize Source-linked research catalogue}
+\date{26 October 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+This catalogue collects exact algorithms, approximation schemes, dynamic graph
+data structures, and lower-bound records in a common notation.  The entries are
+organized by problem family.  Each statement names its input model, output
+contract, controlling parameters, and the resource bound that is actually
+claimed; incomparable time--space or update--stretch points remain separate.
+The repository cards and source maps linked below are the authoritative detailed
+records.  This document is a compact mathematical index, rather than a proof
+of any result.
+\end{abstract}
+
+\section{Scope and notation}
+The input-size symbol $H$ denotes the complete binary encoding together with
+the polynomial work charged to the stated oracle or primitive.  Polynomial
+factors in $H$ are suppressed only when the displayed exponential term is the
+point of the record.  The following symbols recur throughout the catalogue:
+
+\begin{center}
+\begin{tabularx}{0.96\linewidth}{@{}P{18mm}Y P{18mm}Y@{}}
+\toprule
+Symbol & Meaning & Symbol & Meaning\\
+\midrule
+$n,m$ & vertices and edge records & $L$ & binary length of a subset-sum instance\\
+$T,Q$ & target budget and support-pattern count & $B,B_0$ & maximum and root quota caps\\
+$\Delta,p$ & nonroot incidence and shared-family counts & $U,h$ & logarithmic history and hierarchy scales\\
+$r,q,c$ & selected rank, item count, and rejected count & $\eps$ & rational approximation accuracy\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+A bound on time, writable space, output length, or update work is labelled
+explicitly.  A conditional row includes the backend or oracle contract in its
+statement.  Lower-bound scope is recorded separately from an upper bound.
+
+\section{Subset Sum}
+Both records solve signed binary Subset Sum exactly and return an indexed
+witness on YES instances.  Repeated, zero, and negative weights are part of the
+input model; $n$ counts weights and $L$ counts the complete encoding.
+
+\begin{record}[faster deterministic point]
+For a target $t$, decide whether some subset of the $n$ weights sums to $t$ and
+return its original indices.  The reviewed time envelope is
+\[
+  \poly(L) + \poly(n,L)\,2^{En}, \qquad
+  E=\frac{149809813343531}{301754962128739}
+    \approx 0.4964618056.
+\]
+No separate space exponent is claimed.  This point is therefore a time record,
+not a simultaneous time--space guarantee.  See the
+\repo{problems/subset-sum-fast-deterministic/}{faster-time card} and its
+\repo{sources/subset-sum/}{source map}.
+\end{record}
+
+\begin{record}[deterministic low-space point]
+The same exact decision and indexed-witness task has
+\[
+  \begin{aligned}
+    \text{time}&=\poly(L)\,2^{n/2}, &
+    \text{writable space}&=\poly(L)\,2^{E_Sn},\\[-0.15em]
+    E_S&=\frac{18261635770550353}{10^{17}}
+      =0.18261635770550353.
+  \end{aligned}
+\]
+Read-only input storage is excluded from the writable-space row.  The exact
+space exponent supersedes the weaker $137/750$ presentation.  See the
+\repo{problems/subset-sum-low-space-deterministic/}{low-space card}.
+\end{record}
+
+\section{Numeric targets and quota systems}
+These families separate global target budgets from ordered or sparse quota
+geometry.  Binary caps are parameters; they are not expanded into unit-sized
+copies.
+
+\subsection{Target and support-sensitive polymatroids}
+The numeric-target record gives exact target feasibility and scalar optimization,
+with approximation and support-sensitive refinements.  In the arbitrary-target
+row the envelope is exponential in $T$; fixed row dimension $d$ yields a sharper
+stretched-exponential row, and $Q$ distinct eligible-column support patterns
+replace an arity restriction in the support-sensitive row.  The common forms
+include
+\[
+  2^{O((T+1)\log(T+2))}\,\poly(H) \quad\text{(arbitrary target)},
+  \qquad
+  2^{O(T\log(2+Q/T))}\,\poly(H) \quad\text{(support-sensitive row)}.
+\]
+Each approximation statement carries its own $\eps$ dependence; the source
+does not identify approximation with exact decision.  The complete parameter
+contract and the two rank-oracle lower-bound scopes are in the
+\repo{problems/numeric-target-frontier/}{numeric-target card}.
+
+\subsection{Weighted prefixes, laminar caps, and sparse quotas}
+For the ordered quota family, $B$ is the largest target/root cap, $B_0$ is a
+distinguished root cap, $\Delta\geq 1$ bounds positive nonroot incidences per
+column, and $p$ counts shared weight families.  The reviewed end-to-end rows
+include
+\[
+\begin{array}{rcl@{\qquad}rcl}
+\text{one order} &:& 2^{O(B)}\poly(H),
+&\text{two orders} &:& 2^{O(B\log(B+2))}\poly(H),\\
+\text{$p$ families} &:& 2^{O(pB\log(p+2))}\poly(H),
+&\text{laminar root} &:& 2^{O(B^2\log(B+1))}\poly(H).
+\end{array}
+\]
+Sparse mixed quotas retain a separate support-sensitive bound, with the
+incidence and root-cap dependence written in the card rather than hidden in
+the polynomial factor.  Ground-kernel outputs (packing, coverable-matroid,
+transversal, and matching kernels) are separate rows with their own parameter
+and output contracts.  See the
+\repo{problems/weighted-prefix-quota-frontier/}{weighted-prefix card}.
+
+\section{Dynamic graph algorithms}
+The dynamic records preserve the distinction between amortized update work,
+stretch, recourse, and query cost.  Here $N$ is a polynomial history cap,
+$U=\log N+O(1)$, and $h=\log(U+O(1))$.
+
+\subsection{All-pairs distances and spanners}
+For fully dynamic APSP, the equalized point has amortized update work and metric
+stretch of the form
+\[
+  \exp\!\bigl(O(U^{4/5}h^{1/5})\bigr),
+  \qquad \text{query time}=\poly(U).
+\]
+For every fixed positive constant $C$, the second point trades these terms as
+\[
+  \text{update}=\exp\!\bigl(O(U^{3/4}h^{(C+1)/4})\bigr),
+  \qquad
+  \text{stretch}=\exp\!\bigl(O(U/h^C)\bigr).
+\]
+These are incomparable upper-bound points; neither is asserted to be optimal.
+The \repo{problems/apsp-frontier/}{APSP card} defines $n,m$ and the positive
+polynomial-range edge-length model.
+
+Dynamic spanners retain two constructions because their recourse contracts
+differ.  With $m_0$ initial edges and $I,D$ insertions and deletions, the
+tracked-terminal row uses an $\exp(O(U^{4/5}h^{1/5}))$ envelope, while the
+full-horizon row uses $\exp(O(U^{5/6}h^{1/6}))$.  The latter bounds output
+recourse independently of the cumulative insertion count; the former tracks
+terminal changes throughout the declared history.  See the
+\repo{problems/dynamic-spanners/}{spanner card}.
+
+\subsection{Incremental shortest paths and connectivity}
+The incremental directed SSSP record is conditional on a frozen detector and
+retirement interface.  It returns a simple path with original edge identifiers,
+and its total work is
+\[
+ O(n+m)+(n+m)\exp\!\left(O\!\left(\log E(N)+
+ \sqrt{U\bigl(h+\log(1/\eps)\bigr)}\right)\right),
+\]
+where the candidate backend has $\log E(N)=O(U^{4/5}h^{1/5})$ and
+$0<\eps\leq 1/2$.  Incremental SCC, decremental strong-forest, and dynamic
+MSF cards keep their own update model and certificate assumptions; they are
+indexed from the \repo{docs/FAMILIES.md}{family guide}.
+
+\section{Matching and graph optimisation}
+Exact general-graph matching is a conditional composition.  For $m_s$ retained
+edge records after normalization, its backend-dependent time is
+\[
+ O(n+m)+(m_s+1)\exp\!\left(O\!\left((\log(m_s+2))^{4/5}
+ (\log\log(m_s+4))^{1/5}\right)\right).
+\]
+The output preserves original edge identifiers, including parallel lifetimes.
+The \repo{problems/general-matching/}{matching card} states the raw-backend
+contract; no new unconditional matching lower bound is claimed.
+
+Degree-constrained subgraphs transfer the same backend to $f$-factors,
+interval degree bounds, and cardinality optimization in an explicit loopless
+multigraph.  Static and threshold min-cost flow use integral capacities, costs,
+and divergence with binary encoding; their raw-cycle lifetime interface yields
+\[
+ O((N+1)E(S)^4\poly(\log S)),
+ \qquad E(S)=\exp\!\left(O((\log S)^{4/5}
+ (\log\log(S+4))^{1/5})\right).
+\]
+Full-flow output is charged separately.  See the
+\repo{problems/degree-constrained-subgraphs/}{degree card} and
+\repo{problems/min-cost-flow/}{flow card}.
+
+\section{Allocation, robust flow, and scheduling}
+The remaining records preserve scenario, selector, and binary-count parameters
+because these contracts change the theorem.  Selected splittable flow chooses
+$r$ of $q$ commodities, rejects $c=q-r$, and returns a common rate at least
+$(1-\eps)$ times optimum.  Its selector base is raised to $c$:
+\[
+  \Gamma(1/\eps)^c\,\poly(H),
+\]
+with the selector, routing budgets, and rational-data model stated separately
+in the \repo{problems/selected-flow/}{selected-flow card}.  Adaptive robust flow
+uses one common selected set and scenario-specific routings; the explicit
+scenario list is part of $H$ and exact full-rate admission hardness is kept
+separate.
+
+For arbitrary recipient polymatroids, the principal allocation ratio is
+\[
+ d=4-\frac{3}{r},\qquad \text{value}\geq \frac{\mathrm{OPT}}{d},
+ \qquad \text{time}=2^{O(r)}\poly(H),
+\]
+with an optional $d+\eta$ refinement.  Two-size scheduling has distinct
+corank and large-unit branches: factors $3/2$ and $5/3$, respectively, with
+times $2^{O(c)}\poly(H)$ and $2^{O(h)}\poly(H)$.  These regimes are not merged.
+The \repo{problems/recipient-polymatroid/}{allocation card} and
+\repo{problems/two-size-scheduling/}{scheduling card} give the exact oracle,
+decomposition, and lower-bound assumptions.
+
+\section{Provenance}
+Every displayed row points to a problem card containing its hypotheses, proof
+map, source map, and review status.  The compact index is
+\repo{CONTENTS.md}{CONTENTS.md}; family boundaries and the complete card list
+are in \repo{docs/FAMILIES.md}{docs/FAMILIES.md}.  Finite enumeration and
+rational-certificate checks are adjunct evidence for selected proof components;
+they do not replace a proof of an asymptotic algorithm.
+
+\begin{thebibliography}{9}
+\bibitem{catalogue}
+Algorithm Frontier repository, \url{https://github.com/icekylinx/algorithm-frontier/}.
+
+\bibitem{families}
+Algorithm Frontier, ``Problem families and result cards,''
+\repo{docs/FAMILIES.md}{docs/FAMILIES.md}.
+
+\bibitem{complexity}
+Algorithm Frontier, ``Complexity notation and parameter policy,''
+\repo{docs/COMPLEXITY.md}{docs/COMPLEXITY.md}.
+
+\bibitem{checks}
+Algorithm Frontier, verification scripts and finite certificates,
+\repo{tools/}{tools/}.
+\end{thebibliography}
+
+\vfill
+\begin{center}
+\footnotesize\textit{The repository cards are authoritative for hypotheses,
+proof details, and revisions.}
+\end{center}
+
+\end{document}
