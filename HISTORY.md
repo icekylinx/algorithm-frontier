@@ -54,3 +54,7 @@ Migrate the remaining legacy problem cards, inspect the first workflow result af
 
 - Corrected the APSP tradeoff card to match the source's equalized and fixed-constant amortized curves, query scope, and non-constant-stretch boundary.
 - Expanded the R/S, T/U, and low-space proof maps with direct links to every promoted payload and proof component.
+
+## 2026-10-25 — review-scope synchronization
+
+- Extended the allocation/robustness backlog and dynamic-graph review scope to cover the newly migrated supporting cards without changing imported source bytes.

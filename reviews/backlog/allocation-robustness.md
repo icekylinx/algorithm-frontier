@@ -2,7 +2,7 @@
 
 - **Last reviewed:** `2026-10-25`
 - **Status:** `needs-follow-up`
-- **Records:** recipient polymatroid allocation, arbitrary-value allocation, robust scenario flow, robust width-two allocation, bounded robust certificates, and allocation lower bounds.
+- **Records:** recipient polymatroid allocation, arbitrary-value allocation, intrinsic-value near-two allocation, explicit-item matroid union, recipient-matroid configuration, robust scenario flow, robust unrelated allocation, robust width-two allocation, bounded robust certificates, and allocation lower bounds.
 
 ## Scope
 
@@ -15,7 +15,9 @@ not alter imported mathematics.
 
 The cards now expose the critical proof gates: selected rank and corank,
 common versus scenario-adaptive choices, exact assignment or routing budgets,
-certificate width, and oracle versus explicit-input boundaries. A complete
+certificate width, and oracle versus explicit-input boundaries. The intrinsic-value,
+explicit-item, recipient-matroid configuration, and robust-unrelated cards keep
+their distinct comparators and common-basis assumptions visible. A complete
 line-by-line proof review remains open, especially for approximation profile
 counts, robust scenario separation, and whole-ground conversions.
 

@@ -7,7 +7,7 @@
 
 ## Scope
 
-This review covers dynamic spanner records and the adjacent matching, APSP, and incremental SSSP cards. The headline card must keep tracked-terminal and full-horizon regimes separate.
+This review covers dynamic spanner records and the adjacent matching, APSP, incremental SSSP, and decremental strong-forest transfer cards. The headline card must keep tracked-terminal and full-horizon regimes separate.
 
 ## Proof review
 
