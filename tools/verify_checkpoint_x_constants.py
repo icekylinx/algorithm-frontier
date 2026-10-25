@@ -14,8 +14,12 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "sources/checkpoint-x/02_deterministic_subset_sum_increment.md"
 CARD = ROOT / "problems/subset-sum-fast-deterministic-x-draft/README.md"
 OLD = Fraction(149809813343531, 301754962128739)
-NEW = Fraction(149809813343531, 301825962128739)
-EXPECTED_DECIMAL = 0.4963450204447026
+NEW = Fraction(158153814247997, 318927986919134)
+D_U = Fraction(58153814247997, 10**14)
+G_L = Fraction(131017921157, 10**13)
+MU = Fraction(50000000000000, 159463993459567)
+D0 = Fraction(1, 50)
+EXPECTED_DECIMAL = 0.4958919277538907
 
 
 def fail(message: str) -> None:
@@ -39,10 +43,24 @@ def main() -> int:
         fail("decimal expansion does not match the exact new fraction")
     if abs(float(OLD) - 0.496461805587) > 1e-12:
         fail("pinned old decimal sanity check failed")
+
+    # The new ledger states E_new = mu(1 + D_U) = 1/2 - mu*g_L.
+    # Check those identities exactly and make sure the displayed gate values
+    # are on the claimed side of the fixed constraints.
+    for marker in (str(D_U.numerator), str(G_L.numerator), str(MU.numerator)):
+        if marker not in source_text:
+            fail(f"ledger marker {marker} is missing from the source draft")
+    if MU * (1 + D_U) != NEW:
+        fail("mu(1 + D_U) does not equal the displayed new exponent")
+    if Fraction(1, 2) - MU * G_L != NEW:
+        fail("1/2 - mu*g_L does not equal the displayed new exponent")
+    if not (3 * MU < 1 and G_L < D0):
+        fail("dictionary-fitting inequalities fail")
+
     print(
         "checkpoint-X rational constant check passed: "
         f"new={NEW.numerator}/{NEW.denominator}={float(NEW):.16f} "
-        f"< old={OLD.numerator}/{OLD.denominator}"
+        f"< old={OLD.numerator}/{OLD.denominator}; ledger identities exact"
     )
     return 0
 

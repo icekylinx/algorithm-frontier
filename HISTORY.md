@@ -2,6 +2,15 @@
 
 This is an append-only curation log. It records repository organization and presentation changes; it does not replace the source manifests or the mathematical review notes.
 
+## 2026-10-25 — complete checkpoint X review pass
+
+- Replaced the earlier nine-payload X intake with the complete upload: 38 numbered drafts plus the archive README, maintained in one source tree and grouped by mathematical family.
+- Updated `01` and `02` in place, added payloads `10`–`38`, and directly tightened proof, oracle, bit-complexity, and output-accounting details in the reviewed X files. The manifest records both upload hashes and current hashes after curation edits.
+- Added six family-level non-promoted cards covering exact sensitivity, correlated spectral/regression summaries, finite-group and metric constraints, quantum/stabilizer blocks, label/block cuts, and separation/obstruction boundaries.
+- Added proof-review notes for the arborescence, boundary, colored-graph, and valuated-intersection payloads; kept every X claim source-only and marked formal verification as not-claimed.
+- Added an exhaustive finite replay for the seven-element non-Fano obstruction and extended the X Subset Sum rational ledger check. Both checks are evidence only.
+- The source import is [`bffbeb2`](https://github.com/icekylinx/algorithm-frontier/commit/bffbeb2cbbdaa31fadedadc0d83f952464b636e5); the family-card and review-map pass is [`ac434c0`](https://github.com/icekylinx/algorithm-frontier/commit/ac434c07f78eeff01c537ace7ed4138ba12d35b4).
+
 ## 2026-10-25 — LaTeX overview and checkpoint X intake
 
 - Replaced the generated overview with a reproducible four-page LaTeX article: `tools/overview.tex` is the source, `tools/make_overview_pdf.py` is the temporary-build compiler, and `overview.pdf` is the checked-in reading map.
