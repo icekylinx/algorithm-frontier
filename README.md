@@ -2,55 +2,36 @@
 
 A source-linked catalogue of deterministic algorithms, exact and approximation schemes, dynamic graph results, and lower-bound records.
 
-[![Curation checks](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml/badge.svg)](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml)
-[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Curation checks](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml/badge.svg)](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
 ## Start here
 
-- [Download the overview PDF](overview.pdf) for the visual reading map, headline cards, parameter comparison, review vocabulary, and checkpoint lineage.
-- [Contents](CONTENTS.md) for the complete catalogue.
-- [Featured results](OVERVIEW.md) for the short reading path.
-- [Review registry](reviews/README.md) for proof, algorithm, source, and finite-check review status.
-- [Complexity guide](docs/COMPLEXITY.md) for shared parameters and claim boundaries.
-- [Maintenance loop](docs/MAINTENANCE_LOOP.md) for the ongoing discovery and re-audit process.
+- [Overview PDF](overview.pdf) — compact problem statements, parameters, and complexity bounds.
+- [Problem families](docs/FAMILIES.md) — the primary index.
+- [Contents](CONTENTS.md) — every curated record.
+- [Review registry](reviews/README.md) — proof, algorithm, source, and finite-check status.
+- [Complexity conventions](docs/COMPLEXITY.md) — shared parameter names and claim boundaries.
 
-## At a glance
+## Catalogue at a glance
 
-| Record | Contribution | Reading path |
+| Family | Representative records | Main comparison axis |
 |---|---|---|
-| Numeric-target frontier | Exact target decisions, scalar optimization, support geometry, and encoded lower-bound boundaries. | [R/S record](problems/numeric-target-frontier/) |
-| Weighted-prefix and sparse-quota frontier | Ordered prefix quotas, laminar completion, sparse overlap, and deterministic ground kernels. | [T/U record](problems/weighted-prefix-quota-frontier/) |
-| Faster Subset Sum | Exact indexed witnesses for signed binary inputs with a sub-half exponential time exponent. | [Fast-time record](problems/subset-sum-fast-deterministic/) |
-| Low-space Subset Sum | Exact indexed witnesses with a separate explicit writable-space exponent. | [Low-space record](problems/subset-sum-low-space-deterministic/) |
-| Graph frontiers | Exact matching and dynamic update/stretch/recourse tradeoffs under their named models. | [Graph records](CONTENTS.md#graph-algorithms-and-matching) |
-| Allocation and scheduling | Source-linked approximation schemes, exact endpoints, robustness records, and barriers. | [Allocation and scheduling](CONTENTS.md#allocation-flow-and-polymatroids) |
+| **Subset Sum** | [Faster](problems/subset-sum-fast-deterministic/), [low-space](problems/subset-sum-low-space-deterministic/) | Exact witness time and writable space |
+| **Numeric targets and quotas** | [Numeric-target](problems/numeric-target-frontier/), [weighted-prefix](problems/weighted-prefix-quota-frontier/) | Target, support, order, and quota geometry |
+| **Dynamic graphs** | [APSP](problems/apsp-frontier/), [spanners](problems/dynamic-spanners/), [SSSP](problems/incremental-sssp/) | Update work, stretch, recourse, and query time |
+| **Matching and graph optimisation** | [Matching](problems/general-matching/), [degree constraints](problems/degree-constrained-subgraphs/), [min-cost flow](problems/min-cost-flow/) | Exact objective and backend assumptions |
+| **Allocation and matroids** | [Recipient polymatroids](problems/recipient-polymatroid/), [item matroid union](problems/item-matroid-union/) | Comparator, rank, value model, and accuracy |
+| **Robust allocation and flow** | [Robust flow](problems/robust-scenario-flow/), [bounded certificates](problems/robust-bounded-certificates/) | Scenario coupling and certificate width |
+| **Scheduling** | [Many-size](problems/many-size-scheduling/), [two-size](problems/two-size-scheduling/), [six-profile](problems/six-profile-three-halves/) | Makespan factor and profile/rank parameter |
+| **Lower bounds** | [Oracle barriers](problems/allocation-lower-bounds/) | Query model, obstruction, and scope |
 
-The landing page is intentionally short. Exact parameter values, assumptions, lower-bound scopes, and proof status live in the result cards, the overview PDF, and the review reports.
-
-## Reading order
-
-| Tier | Role | Where to start |
-|---|---|---|
-| **A** | Headline frontier records and the newest parameter boundaries. | Numeric-target, weighted-prefix, faster Subset Sum, low-space Subset Sum, matching, and APSP. |
-| **B** | Supporting constructions and reusable dynamic, flow, allocation, or scheduling extensions. | The graph, flow, allocation, and scheduling sections in [`CONTENTS.md`](CONTENTS.md). |
-| **C** | Lower bounds, barriers, robustness limits, and endpoint records. | The robustness and lower-bound section in [`CONTENTS.md`](CONTENTS.md). |
-| **D** | Imported manuscripts, checkpoint archives, manifests, licenses, and historical snapshots. | [`sources/`](sources/) and the linked provenance pages. |
-
-The tier controls reading order and maintenance attention. It does not rank mathematical truth or replace the model and review fields on an individual record.
+The family index is deliberately separate from the review status: records in one family can have different proof or source maturity.
 
 ## Record contract
 
-Each curated problem keeps a compact, auditable contract:
+Each curated result exposes its guarantee before the supporting detail. A card states the problem and output, model, time, space, parameter definitions, comparator or lower-bound scope, and review status. Proof maps and exact source maps are linked from the card; imported manuscripts remain under `sources/`.
 
-- `README.md` — result card with guarantee, objective/output, time, space, parameters, representation, lower-bound type, review status, and sources;
-- `proof.md` — proof map and claim boundaries;
-- `verify/` — focused audits or executable-check pointers;
-- `sources.md` — exact provenance and attribution;
-- `reviews/` — independent proof, algorithm, and source review reports when the record is in the active review queue.
-
-Imported manuscripts stay under `sources/`. Checkpoint increments keep their original filenames and live in separate directories so parent links, archive hashes, review scope, and supersession status remain auditable.
-
-GitHub-facing cards use readable prose. Detailed symbolic formulas remain in the PDF overview and source manuscripts, where the notation can be preserved without making the landing page hard to scan.
+The maintenance loop is documented in [`docs/MAINTENANCE_LOOP.md`](docs/MAINTENANCE_LOOP.md). It has no scheduled job: a new checkpoint or an active review pass reopens the queue, and every change is checked before it reaches `main`.
 
 ## Citation
 

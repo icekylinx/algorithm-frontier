@@ -1,45 +1,25 @@
 # Featured results
 
-[Download the overview PDF](overview.pdf) for the visual catalogue, headline cards, explicit parameter definitions, review vocabulary, and checkpoint lineage.
+[Download the overview PDF](overview.pdf) for a compact academic-style catalogue of problem statements, parameters, and complexity bounds.
 
-This page is the short reading path. [`CONTENTS.md`](CONTENTS.md) is the complete machine-readable map; each linked record contains the exact source paths and review boundary.
+The repository is indexed by [problem family](docs/FAMILIES.md). Use [Contents](CONTENTS.md) for every curated record and the [review registry](reviews/README.md) for proof, algorithm, source, and finite-check status.
 
-## Headline cards
+## Headline records
 
-### Numeric-target frontier
+| Family | Record | What the card fixes explicitly |
+|---|---|---|
+| Subset Sum | [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/) | Signed binary input, target, witness, bit length, time exponent, and no claimed space exponent |
+| Subset Sum | [Low-space deterministic Subset Sum](problems/subset-sum-low-space-deterministic/) | Signed binary input, target, witness, time exponent, writable-space exponent, and model |
+| Numeric targets | [Numeric-target frontier](problems/numeric-target-frontier/) | Target magnitude, support budget, accuracy, representation, and lower-bound scope |
+| Quota systems | [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/) | Prefix order, weight-family count, laminar depth, sparse support, and kernel versus end-to-end cost |
+| Dynamic graphs | [Dynamic APSP](problems/apsp-frontier/) | Update regime, stretch, query time, graph-size parameters, and backend assumptions |
+| Matching | [General-graph matching](problems/general-matching/) | Exact objective, graph representation, and conditional backend boundary |
 
-The R/S family separates numeric target magnitude from support geometry. It contains exact target decisions, exact scalar optimization, fixed-dimensional variants, support-sensitive refinements, and separate oracle versus readable-program lower-bound statements.
+## Reading a card
 
-[Open the R/S record](problems/numeric-target-frontier/) · [Open its review report](reviews/headline/numeric-target-frontier.md)
+1. Read the problem and output model.
+2. Read time and space as separate rows, including every parameter.
+3. Check the proof map and review report for claim boundaries.
+4. Follow the source map to the exact checkpoint payload.
 
-### Weighted-prefix and sparse-quota frontier
-
-The T/U family covers common-order prefix quotas, several shared weight families, laminar root caps, sparse mixed quotas, sharp frequency-one lower bounds, and deterministic ground reductions. The kernel outputs are listed separately from end-to-end algorithm times.
-
-[Open the T/U record](problems/weighted-prefix-quota-frontier/) · [Open its review report](reviews/headline/weighted-prefix-quota-frontier.md)
-
-### Faster Subset Sum
-
-An exact indexed-witness algorithm for arbitrary signed binary inputs. The record states the input count, full binary encoding length, exact witness output, time exponent, and the fact that no space exponent is claimed for this algorithm.
-
-[Open the fast-time record](problems/subset-sum-fast-deterministic/) · [Open its review report](reviews/headline/faster-subset-sum.md)
-
-### Low-space Subset Sum
-
-A separate exact indexed-witness algorithm. Its card gives the full binary input length, bit-operation model, writable-bit space meaning, exact space exponent, and the distinction from the faster-time algorithm.
-
-[Open the low-space record](problems/subset-sum-low-space-deterministic/) · [Open its review report](reviews/headline/low-space-subset-sum.md)
-
-### Graph frontiers
-
-Matching, dynamic APSP, dynamic spanners, incremental SSSP/SCC, and related records retain separate update, stretch, recourse, path-reporting, and backend assumptions instead of collapsing them into one number.
-
-[Open the graph catalogue](CONTENTS.md#graph-algorithms-and-matching) · [Open the graph review report](reviews/headline/dynamic-graph-frontier.md)
-
-## How to read a result
-
-1. Read the result card for the guarantee and objective/output.
-2. Check the separate time and space rows and the local parameter definitions.
-3. Follow the proof map and review report before treating a claim as algorithmically complete.
-4. Inspect the source map and checkpoint manifest for exact provenance.
-5. Treat finite certificate replay as evidence for a proof component, not as formal verification of the full arbitrary-input algorithm.
+Finite certificate replay supports a stated proof component; it is not a formal verification of an arbitrary-input theorem.

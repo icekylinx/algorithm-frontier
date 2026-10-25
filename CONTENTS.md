@@ -1,92 +1,89 @@
 # Contents
 
-This is the canonical map of the repository. The short reading path is [`OVERVIEW.md`](OVERVIEW.md); this page keeps the full catalogue visible and gives each family a stable entry point.
+This is the canonical catalogue of the curated result records. Browse by [problem family](docs/FAMILIES.md); the [overview](OVERVIEW.md) gives the short reading path and the [review registry](reviews/README.md) gives claim status.
 
 ## Headline records
 
-| Record | Role | Displayed complexity or boundary |
+| Family | Record | Main quantity shown on the card |
 |---|---|---|
-| [Numeric-target frontier](problems/numeric-target-frontier/) | Tier A: newest R/S incremental family | R: `2^(O((T + 1) log(T + 2)) * poly(H))`; S: `2^(O(T log(2 + Q/T)) * poly(H))` |
-| [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/) | Tier A: newest T/U extension | T/U: `2^O(B)`, `2^O(B log(B + 2))`, `2^O(B^2)`, and sparse `2^O(Delta B0 log(Delta B0 B + 2))` |
-| [Faster Subset Sum](problems/subset-sum-fast-deterministic/) | Tier A: exact exponential-time record | `C + poly(n, L) * 2^(E n)`, `E < 0.4964618056` |
-| [Low-space Subset Sum](problems/subset-sum-low-space-deterministic/) | Tier A: explicit space-sensitive record | Time `poly(n, L) * 2^(n/2)`; space `poly(n, L) * 2^(E_S n)` |
-| [General-graph matching](problems/general-matching/) | Tier A: exact matching backend composition | Conditional fast backend; see record for full bound |
-| [Dynamic APSP](problems/apsp-frontier/) | Tier A: update/stretch frontier | Multiple Pareto points |
+| Numeric targets | [Numeric-target frontier](problems/numeric-target-frontier/) | Target magnitude, support geometry, and exact/approximate regimes |
+| Quota systems | [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/) | Prefix, laminar, sparse, and ground-kernel parameters |
+| Subset Sum | [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/) | Exact witness time exponent `E < 0.4964618056` |
+| Subset Sum | [Low-space deterministic Subset Sum](problems/subset-sum-low-space-deterministic/) | Time exponent and explicit writable-space exponent |
+| Dynamic graphs | [Dynamic APSP](problems/apsp-frontier/) | Update work versus distance stretch |
+| Matching | [General-graph matching](problems/general-matching/) | Exact cardinality under the stated backend |
 
-## Graph algorithms and matching
+## Subset Sum
 
-| Record | Role |
-|---|---|
-| [General matching](problems/general-matching/) | Exact arbitrary-graph matching with a conditional backend |
-| [Dynamic APSP](problems/apsp-frontier/) | Fully dynamic all-pairs shortest paths tradeoffs |
-| [Dynamic spanners](problems/dynamic-spanners/) | Dynamic spanner recourse regimes |
-| [Incremental SSSP](problems/incremental-sssp/) | Incremental directed single-source shortest paths |
-| [Incremental SCC](problems/incremental-scc/) | Incremental strongly connected components |
-| [Dynamic MSF](problems/dynamic-msf/) | Dynamic minimum spanning forest baseline |
-| [Decremental strong forest](problems/decremental-strong-forest/) | Decremental strong-forest and Gomory–Hu transfer |
-| [Strong Haxell matching](problems/strong-haxell-matching/) | Matching or checkable hitting-set certificate |
-| [Independent transversal](problems/independent-transversal/) | Certified transversal or obstruction |
+- [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/)
+- [Low-space deterministic Subset Sum](problems/subset-sum-low-space-deterministic/)
 
-## Allocation, flow, and polymatroids
+## Numeric targets and quota systems
 
-| Record | Role |
-|---|---|
-| [Selected flow](problems/selected-flow/) | Selected splittable concurrent flow |
-| [Robust scenario flow](problems/robust-scenario-flow/) | Scenario-wise robust routing |
-| [Shared-setup flow](problems/shared-setup-flow/) | Flow with an exact shared setup budget |
-| [Min-cost flow](problems/min-cost-flow/) | Exact flow witness and backend transfer |
-| [Degree-constrained subgraphs](problems/degree-constrained-subgraphs/) | f-factor, interval, and cardinality reductions |
-| [Arbitrary-value allocation](problems/arbitrary-value-allocation-scheme/) | Optional actual-basis allocation scheme |
-| [Recipient polymatroids](problems/recipient-polymatroid/) | Integral recipient polymatroid approximation |
-| [Recipient-matroid configuration](problems/recipient-matroid-configuration/) | Coupled recipient configuration model |
-| [Item matroid union](problems/item-matroid-union/) | Explicit-item matroid-union model |
-| [One-value exact-two allocation](problems/one-value-exact-two/) | One-value exact-two endpoint |
-| [Two-value exact-two allocation](problems/two-value-exact-two/) | Compulsory two-value endpoint |
-| [Intrinsic values near two](problems/intrinsic-values-near-two/) | Derived-corank approximation near factor two |
-| [Whole-ground allocation](problems/whole-ground-allocation/) | Whole-ground and fixed-`R` tradeoffs |
-| [Unrelated-value additive allocation](problems/unrelated-values-additive/) | Player-wise additive guarantee |
-| [Unrelated values with joint role](problems/unrelated-values-joint-role/) | Joint role and setup budget |
+- [Numeric-target frontier](problems/numeric-target-frontier/)
+- [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/)
 
-## Scheduling and profile tradeoffs
+## Dynamic graphs
 
-| Record | Role |
-|---|---|
-| [Activated-machine scheduling](problems/activated-machine-scheduling/) | Activated-machine profile basis |
-| [Arbitrary-processing scheduling](problems/arbitrary-processing-scheduling/) | Mandatory-job processing profile |
-| [Commitment scheduling](problems/commitment-scheduling/) | Bottleneck commitment bound |
-| [Many-size scheduling](problems/many-size-scheduling/) | Compressed-rank many-size profile |
-| [Two-size scheduling](problems/two-size-scheduling/) | Two-size exact endpoint and tradeoff |
-| [Per-machine two-time scheduling](problems/two-time-scheduling/) | Machine-specific two-time model |
-| [Processing-bucket tradeoff](problems/processing-bucket-tradeoff/) | Bucket-dependent approximation endpoints |
-| [Six-profile scheduling](problems/six-profile-three-halves/) | Exact 3/2 profile endpoint |
+- [Dynamic APSP](problems/apsp-frontier/)
+- [Dynamic spanners](problems/dynamic-spanners/)
+- [Incremental SSSP](problems/incremental-sssp/)
+- [Incremental SCC](problems/incremental-scc/)
+- [Dynamic minimum spanning forest](problems/dynamic-msf/)
+- [Decremental strong forest and Gomory--Hu transfer](problems/decremental-strong-forest/)
 
-## Subset Sum and numeric targets
+## Matching and graph optimisation
 
-| Record | Role |
-|---|---|
-| [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/) | Fast exact signed-binary witness |
-| [Low-space deterministic Subset Sum](problems/subset-sum-low-space-deterministic/) | Exact witness with a separate space bound |
-| [Numeric-target frontier](problems/numeric-target-frontier/) | R/S target and support-sensitive checkpoint family |
-| [Weighted-prefix and sparse-quota frontier](problems/weighted-prefix-quota-frontier/) | T/U ordered, laminar, sparse, and deterministic-kernel checkpoint family |
+- [General-graph matching](problems/general-matching/)
+- [Strong Haxell hypergraph matching](problems/strong-haxell-matching/)
+- [Independent transversal](problems/independent-transversal/)
+- [Degree-constrained subgraphs](problems/degree-constrained-subgraphs/)
+- [Static and threshold min-cost flow](problems/min-cost-flow/)
 
-## Robustness and lower bounds
+## Allocation and matroid systems
 
-| Record | Role |
-|---|---|
-| [Allocation lower bounds](problems/allocation-lower-bounds/) | Hidden-rank oracle barriers |
-| [Robust bounded certificates](problems/robust-bounded-certificates/) | Bounded failure-certificate robustness |
-| [Robust unrelated allocation](problems/robust-unrelated-allocation/) | Additive robust utility |
-| [Robust width-two allocation](problems/robust-width-two-allocation/) | Width-two positivity gate |
-| [Two-scenario robust allocation hardness](problems/robust-two-scenario-hardness/) | Explicit two-scenario hardness boundary |
+- [Arbitrary-value allocation](problems/arbitrary-value-allocation-scheme/)
+- [Recipient polymatroids](problems/recipient-polymatroid/)
+- [Recipient-matroid configuration](problems/recipient-matroid-configuration/)
+- [Explicit-item matroid union](problems/item-matroid-union/)
+- [One-value exact-factor-two allocation](problems/one-value-exact-two/)
+- [Compulsory two-value exact-factor-two allocation](problems/two-value-exact-two/)
+- [Intrinsic values near factor two](problems/intrinsic-values-near-two/)
+- [Unrelated-value additive allocation](problems/unrelated-values-additive/)
+- [Unrelated values with a joint role](problems/unrelated-values-joint-role/)
+- [Whole-ground allocation and scheduling transfers](problems/whole-ground-allocation/)
+- [Selected splittable concurrent flow](problems/selected-flow/)
 
-## Source and review surfaces
+## Robust allocation and flow
 
-- [`docs/COMPLEXITY.md`](docs/COMPLEXITY.md) — shared parameters and portable display notation.
-- [`docs/PRIORITY.md`](docs/PRIORITY.md) — presentation and maintenance tiers.
-- [`docs/MAINTENANCE_LOOP.md`](docs/MAINTENANCE_LOOP.md) — incremental discovery and review workflow.
-- [`reviews/README.md`](reviews/README.md) — proof, algorithm, source, and finite-check review registry.
-- [`docs/REPOSITORY_MAP.md`](docs/REPOSITORY_MAP.md) — source, provenance, and tool layout.
-- [`HISTORY.md`](HISTORY.md) — append-only public curation log.
-- [`MAINTENANCE.md`](MAINTENANCE.md) — release policy and required checks.
+- [Robust selected flow](problems/robust-scenario-flow/)
+- [Selected flow with shared setup](problems/shared-setup-flow/)
+- [Robust bounded certificates](problems/robust-bounded-certificates/)
+- [Robust unrelated allocation](problems/robust-unrelated-allocation/)
+- [Robust width-two allocation](problems/robust-width-two-allocation/)
+- [Two-scenario robust allocation hardness](problems/robust-two-scenario-hardness/)
 
-The homepage and headline cards use prose-first complexity rows. Dense indexes may retain compact notation, while imported manuscripts and checkpoint payloads preserve their original notation under `sources/`.
+## Scheduling
+
+- [Activated-machine scheduling](problems/activated-machine-scheduling/)
+- [Arbitrary-processing scheduling](problems/arbitrary-processing-scheduling/)
+- [Commitment scheduling](problems/commitment-scheduling/)
+- [Many-size workload scheduling](problems/many-size-scheduling/)
+- [Two-size makespan scheduling](problems/two-size-scheduling/)
+- [Per-machine two-time scheduling](problems/two-time-scheduling/)
+- [Processing-bucket tradeoff](problems/processing-bucket-tradeoff/)
+- [Six-profile three-halves scheduling](problems/six-profile-three-halves/)
+
+## Lower bounds and barriers
+
+- [Allocation and scheduling oracle barriers](problems/allocation-lower-bounds/)
+
+## Review and provenance
+
+- [Review registry](reviews/README.md)
+- [Complexity conventions](docs/COMPLEXITY.md)
+- [Priority and display rules](docs/PRIORITY.md)
+- [Repository map](docs/REPOSITORY_MAP.md)
+- [Maintenance loop](docs/MAINTENANCE_LOOP.md)
+- [History](HISTORY.md)
+- [Source manifests](sources/)

@@ -1,12 +1,10 @@
 # Curated problems
 
-Every completed problem directory follows this contract:
+The catalogue is organised by [problem family](../docs/FAMILIES.md). Each result directory is a compact record with the same core fields:
 
-1. `README.md` — guarantee, objective, complexity, space, parameters, model, lower-bound type, and status;
-2. `proof.md` — concise proof map with the complete source link;
-3. `verify/` — at least two independent/root audits or executable checks;
-4. `sources.md` — exact source map, parent checkpoint links, and attribution footer.
+- `README.md`: problem, output, model, guarantee, time, space, parameters, comparator, and claim status;
+- `proof.md`: a short proof map when the record has one;
+- `verify/`: executable or finite checks when available;
+- `sources.md`: exact source paths, checkpoint provenance, and attribution.
 
-A result is not promoted merely because it has a better number. The model, comparator, parameter, assumptions, representation, and additive terms must match. Older same-scope claims stay in the preserved checkpoint snapshots or an explicit historical module.
-
-The complete catalog is [CONTENTS.md](../CONTENTS.md); the short reading path is [OVERVIEW.md](../OVERVIEW.md). The shared notation and display rules are in [`docs/COMPLEXITY.md`](../docs/COMPLEXITY.md) and [`FORMATTING.md`](../FORMATTING.md).
+A numerical bound is compared only after its model, parameterisation, representation, assumptions, and comparator have been matched. The [review registry](../reviews/README.md) records which parts have received proof, algorithm, source, and finite-check review.
