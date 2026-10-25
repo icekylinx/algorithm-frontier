@@ -1,0 +1,2915 @@
+{
+  "generated": "2026-10-25",
+  "files": [
+    {
+      "checkpoint": "o",
+      "path": "CHECKPOINT_L_SUMMARY.md",
+      "sha256": "5de2a207c3abc537fd509e86742651aa686249d818fafc014394bfcb526622ea",
+      "bytes": 20043
+    },
+    {
+      "checkpoint": "o",
+      "path": "CHECKPOINT_M_SUMMARY.md",
+      "sha256": "b1effd4e32d042423964d7f91d326cd481892e8b9652938c2cd76ee982e163b5",
+      "bytes": 12936
+    },
+    {
+      "checkpoint": "o",
+      "path": "CHECKPOINT_N_SUMMARY.md",
+      "sha256": "e7698931b2b7997399cb478cf205bbc95d32fc2b93b0eadad1bcf5a66ed2616b",
+      "bytes": 20628
+    },
+    {
+      "checkpoint": "o",
+      "path": "CHECKPOINT_O_SUMMARY.md",
+      "sha256": "a2584f64f9343c0c4bbf196c0af7a8b6586abb04ff189cfe4202177cbad52f0e",
+      "bytes": 15557
+    },
+    {
+      "checkpoint": "o",
+      "path": "MANIFEST.md",
+      "sha256": "244bb9d8e2c588a552cfcc6121bc2babf8103e1d48140b5b1d504fe24d42f617",
+      "bytes": 48528
+    },
+    {
+      "checkpoint": "o",
+      "path": "README.md",
+      "sha256": "9ab9a5b2efb8bf6c1be7790ca27e8f466f600a07c44375a7f8b0fe318ec8abfe",
+      "bytes": 91929
+    },
+    {
+      "checkpoint": "o",
+      "path": "adaptive_residual_budget_corank_gap.md",
+      "sha256": "60ae0e4696437b1796277a4561961a1a7226238998b22ee3533d9d6fbe51c854",
+      "bytes": 10336
+    },
+    {
+      "checkpoint": "o",
+      "path": "adaptive_residual_budget_corank_independent_audit.md",
+      "sha256": "4b4ebdbda71c0a4fc035917a819efe76c9c44912d4526314dcc67c468910a9c1",
+      "bytes": 9032
+    },
+    {
+      "checkpoint": "o",
+      "path": "adaptive_residual_budget_independent_audit.md",
+      "sha256": "ce52d3e0cb8b51559c2cd12b6f7405a199241efb974af776e3d722d51b9ed932",
+      "bytes": 5698
+    },
+    {
+      "checkpoint": "o",
+      "path": "allocation_forestification_and_pivot_accounting.md",
+      "sha256": "d1b8fe25cecb19b02f410576b55d78a1cd9f78d67bfa59266772e53658e90931",
+      "bytes": 10022
+    },
+    {
+      "checkpoint": "o",
+      "path": "any_source_directed_tree_epoch_obstruction.md",
+      "sha256": "2670f8aef0c6525e37d495d8215f75fc86ea8925e076b29653207cf964a24df6",
+      "bytes": 21107
+    },
+    {
+      "checkpoint": "o",
+      "path": "any_source_fixed_tree_matching_independent_audit.md",
+      "sha256": "a53e59a44cd484fdd1f8f1bbf2aaa4777f5698186ef25bc5eae3a6ea11a524bd",
+      "bytes": 14292
+    },
+    {
+      "checkpoint": "o",
+      "path": "any_source_fixed_tree_matching_interface.md",
+      "sha256": "060b7f489dca5f0d34e2898cbbabd32d85b4ef7f870304ed7d0f6879d5879256",
+      "bytes": 21512
+    },
+    {
+      "checkpoint": "o",
+      "path": "any_source_fixed_tree_matching_root_audit.md",
+      "sha256": "f70f6cbf6ee3348e27c0523e3c325f4219dba881145e9703ab7e82819f301902",
+      "bytes": 10091
+    },
+    {
+      "checkpoint": "o",
+      "path": "approximate_available_bundle_oracle_allocation.md",
+      "sha256": "b5c3f37b87be53390735d901b40feae0af94f31e0e3e6bed8ea5fc610d2cc8af",
+      "bytes": 13979
+    },
+    {
+      "checkpoint": "o",
+      "path": "approximate_available_bundle_oracle_independent_audit.md",
+      "sha256": "b8d84ad4522875d8abb6cd9eda60f13c98639d6fda4039ae25a18b21b02c4837",
+      "bytes": 4460
+    },
+    {
+      "checkpoint": "o",
+      "path": "apsp_public_parameter_and_query_audit.md",
+      "sha256": "8f201e6ee61050266512af01475b160f3d04e842fc9b2ffbeb42213d12d935f4",
+      "bytes": 13942
+    },
+    {
+      "checkpoint": "o",
+      "path": "apsp_time_stretch_tradeoff.md",
+      "sha256": "217328ebada16e5bd413bf6a86c94b1dfe3253d2859dbcb261a9155ca966839d",
+      "bytes": 19091
+    },
+    {
+      "checkpoint": "o",
+      "path": "apsp_tradeoff_independent_audit.md",
+      "sha256": "d087f83d9cb563f48479e247b83f6d183dfd8646e6bc9d1bbd46d328b61eff39",
+      "bytes": 20853
+    },
+    {
+      "checkpoint": "o",
+      "path": "arbitrary_cost_residual_budget_near_two_allocation.md",
+      "sha256": "6fd28274fc112cb6d1fe32841669aff892be5ea2ad245dee92e79be058ca5937",
+      "bytes": 18346
+    },
+    {
+      "checkpoint": "o",
+      "path": "arbitrary_cost_residual_budget_near_two_independent_audit.md",
+      "sha256": "0f02fc997262ce79a3aa0c7576a81f1d71c70d19ea71c807b0bd961da6c0a02f",
+      "bytes": 10253
+    },
+    {
+      "checkpoint": "o",
+      "path": "arbitrary_cost_residual_budget_second_audit.md",
+      "sha256": "c6a74c5cc50591d1cd83ef2d26f056fa5698e05d4350a359e5c24024f556005c",
+      "bytes": 11011
+    },
+    {
+      "checkpoint": "o",
+      "path": "bidirected_potential_compatible_forest_matching_interface.md",
+      "sha256": "fc95f2f38d55add3983ce91ee9f0e461307c10ff02c8d69cdea397188062e8c4",
+      "bytes": 14272
+    },
+    {
+      "checkpoint": "o",
+      "path": "bidirected_potential_forest_independent_audit.md",
+      "sha256": "289b5b0fb2a342e4c47ddd990f67383930be16ed1ab263bf754bda515af1a388",
+      "bytes": 9328
+    },
+    {
+      "checkpoint": "o",
+      "path": "bidirected_potential_forest_root_audit.md",
+      "sha256": "7bcf07048dcfb761b15dc33ad20f3fd038056964fc0a4782040b54f152774560",
+      "bytes": 8179
+    },
+    {
+      "checkpoint": "o",
+      "path": "binary_resource_capacities_compressed_current_blocker.md",
+      "sha256": "d8aa31e4883815a90abea7e4804f6f75d96cf29fb1df4e6df2609ebf9067cb1d",
+      "bytes": 14194
+    },
+    {
+      "checkpoint": "o",
+      "path": "binary_resource_capacities_independent_audit.md",
+      "sha256": "9bc3e190d2bb40a7d4a4edbce3324a065e944e3a3397279d3bfdad521acd5d89",
+      "bytes": 10763
+    },
+    {
+      "checkpoint": "o",
+      "path": "bounded_interface_witness_pattern_independent_audit.md",
+      "sha256": "44ff345ca85fbca2e8764d995799bffbe99e1eba7e2be342bde8af0432789176",
+      "bytes": 12374
+    },
+    {
+      "checkpoint": "o",
+      "path": "bounded_interface_witness_pattern_updates.md",
+      "sha256": "b906ab2196d4a48119b4ebc4ab6726b71f586a4c41020744cd849de62e5ac36d",
+      "bytes": 14462
+    },
+    {
+      "checkpoint": "o",
+      "path": "certified_layer_flat_oracle_connection_audit.md",
+      "sha256": "e071d41ff565205f7627f29b43f9aa19cd483b0033de7900bdc6916bedd4ec47",
+      "bytes": 9154
+    },
+    {
+      "checkpoint": "o",
+      "path": "certified_layer_outer_independent_audit.md",
+      "sha256": "2511740f78b3b64e2b5d6ce6c14e7dcd97b578caab0cbbe85248d4c927e9f950",
+      "bytes": 24112
+    },
+    {
+      "checkpoint": "o",
+      "path": "certified_layers_root_independent_audit.md",
+      "sha256": "7b5a5201890e8190e944c16a49492b53fdfb1773abdfb10ff58c227835bb6464",
+      "bytes": 16711
+    },
+    {
+      "checkpoint": "o",
+      "path": "certified_no_superpose_haxell_path_routing.md",
+      "sha256": "10f15d8e2e80e4ed9ab4933f676a2dc61a122211aaee02925949921cb3866450",
+      "bytes": 31339
+    },
+    {
+      "checkpoint": "o",
+      "path": "checkpoint_H_eligibility_threshold_erratum.md",
+      "sha256": "d3aa11c07a48ffdc7bdb85e538ff33f1458613a4b73370b9a2b573fbdd971f8b",
+      "bytes": 3060
+    },
+    {
+      "checkpoint": "o",
+      "path": "clipped_reporting_independent_audit.md",
+      "sha256": "fa82ce750367832a798278deff4f40966b43e463dc623593bd0780fb445122ce",
+      "bytes": 7047
+    },
+    {
+      "checkpoint": "o",
+      "path": "clipped_walk_queries_and_dynamic_spanner.md",
+      "sha256": "98424e96ff2901415215be2917532cb123a5c8cfff9c82be27559a434f1468d8",
+      "bytes": 21685
+    },
+    {
+      "checkpoint": "o",
+      "path": "coarse_directed_paths_for_slack_matching.md",
+      "sha256": "a10cdae856c90f66590fc25e02339c2f74748c2a1b5dac3f48a5ce96ca009d58",
+      "bytes": 5944
+    },
+    {
+      "checkpoint": "o",
+      "path": "colored_core_pool_root_audit.md",
+      "sha256": "0cf68dc32ea35aa5dbf0c3b4a18112d9fb4cef78c0f8b0854be12d6686f92cc5",
+      "bytes": 12290
+    },
+    {
+      "checkpoint": "o",
+      "path": "committed_machine_scheduling_independent_audit.md",
+      "sha256": "13b6c4f5b48c1a598e59ad23b4b67d1930eabd1f66de3321872dadd9ab7f8b63",
+      "bytes": 7117
+    },
+    {
+      "checkpoint": "o",
+      "path": "complete_unrestricted_forest_client_independent_audit.md",
+      "sha256": "3d268b135f4d7fe551d6b5b6cbe4b9bec55e5a2f15b3c0f0be1a570b56f5ca45",
+      "bytes": 7501
+    },
+    {
+      "checkpoint": "o",
+      "path": "complete_unrestricted_forest_client_third_audit.md",
+      "sha256": "fed353bca6018337827b79ca4d57ba638f136bb7323e43817cfb3afb7961cb09",
+      "bytes": 5352
+    },
+    {
+      "checkpoint": "o",
+      "path": "complete_unrestricted_forest_one_sided_client.md",
+      "sha256": "67a2eb594ddb67ee8c5ae4cdd3609489d2cf78a0a62aec9fbd3f1580749be23d",
+      "bytes": 15427
+    },
+    {
+      "checkpoint": "o",
+      "path": "compressed_large_slots_corank_independent_audit.md",
+      "sha256": "abecb8662707b947a3fd1c930e3512d9d22e8021f0a6e1babb64b6fd466f0472",
+      "bytes": 8984
+    },
+    {
+      "checkpoint": "o",
+      "path": "compressed_large_slots_corank_makespan.md",
+      "sha256": "b8f28297e3e7ed1a7ec0363217a9d43fba3831831d3b945125ee70c309e77460",
+      "bytes": 20244
+    },
+    {
+      "checkpoint": "o",
+      "path": "compressed_large_slots_corank_root_audit.md",
+      "sha256": "bfb17a1744559cf31c6e57e224303820b02ee1b3e64ad88b7ce0431683a4e2b7",
+      "bytes": 7657
+    },
+    {
+      "checkpoint": "o",
+      "path": "compressed_large_slots_corank_second_audit.md",
+      "sha256": "12b7b0b9b0dbaac98a07ad987c8dc88264ce4ab8042a31bf940f757ba59fd563",
+      "bytes": 8153
+    },
+    {
+      "checkpoint": "o",
+      "path": "compressed_steiner_pool_independent_audit.md",
+      "sha256": "0316bde148f70b9f90d21ba36c5f959666dda5bee2d6855495ce2e9d84ac6ee9",
+      "bytes": 20166
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_arbitrary_value_additive_allocation.md",
+      "sha256": "07087a3aab38f05ebab8cf680dfac7db22129abac552d9ecd58a3fdceeec2409",
+      "bytes": 17929
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_arbitrary_value_additive_independent_audit.md",
+      "sha256": "4d1729fb9a189d5716942a6d77115576571befb8e1b8f936fa3177552d970dd0",
+      "bytes": 9355
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_arbitrary_value_additive_second_audit.md",
+      "sha256": "07e1915d307f7ad306911ea802dede36d29d66778c1b7ba330a1d7dbc15d302b",
+      "bytes": 6905
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_batch_allocation_scheduling_root_audit.md",
+      "sha256": "2f830123fccf2dda049a7e4fb782f5cb0a309de9ad4dfb6dbb0e47df71a33a0a",
+      "bytes": 11435
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_degree_bounded_common_bases.md",
+      "sha256": "a71443a1c20c8bad8ea810159309fdeb66fcb70a1d546a0e888c1851b99c607a",
+      "bytes": 11760
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_packing_and_common_bases_independent_audit.md",
+      "sha256": "eaa6520991e9954885c6f6d7bc5ecdcd67f072eeed0350e48faf636de5119f51",
+      "bytes": 8510
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_packing_and_cost_common_bases_independent_audit.md",
+      "sha256": "e4b365de0c339e5245a9c6732703e6ae4ec790c8d03dad37eafe8bf64bf39bf5",
+      "bytes": 11894
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_packing_selection_oracle_extension.md",
+      "sha256": "b2988023ae89ad10ad6e865147c96ea3e5cf500e24f4819dd586e2804fa0b911",
+      "bytes": 8006
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_public_and_oai_baseline_recheck.md",
+      "sha256": "0f71ac8735c38c16704098c2fbd1cac607b9827bfc848d300a6de33d7e095a10",
+      "bytes": 4632
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_quota_and_three_halves_independent_audit.md",
+      "sha256": "5e3de4f4a20eda3d86428270bfdc34a35cb665f6067c5b02d11dda02f2989b4a",
+      "bytes": 15138
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_quota_batch_and_scheduling_second_audit.md",
+      "sha256": "9a100e7a8c41738a5f28a56c69df2a2495d03ff5125eeec57824ffb2cbd192ec",
+      "bytes": 7948
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_weighted_prefix_free_batching.md",
+      "sha256": "1a4ae94dd4c934e5355c5a2a82c633b6d170a83fca58a92ad50376c4545937d7",
+      "bytes": 11572
+    },
+    {
+      "checkpoint": "o",
+      "path": "corank_weighted_prefix_free_independent_audit.md",
+      "sha256": "bfd983c4d959acc229c07a1bf6d5a2d307bc0d4abf5d6dbf2ae60f09c5fe9a9a",
+      "bytes": 9348
+    },
+    {
+      "checkpoint": "o",
+      "path": "critical_unit_global_free_pool_root_audit.md",
+      "sha256": "f6b358f5228cc972aa6dfef37ac8ff116d87566191d63cd39744c0a63f576771",
+      "bytes": 2625
+    },
+    {
+      "checkpoint": "o",
+      "path": "critical_unit_quota_global_free_pool.md",
+      "sha256": "87b201564a43c7d73221f5860b21c66ffb9f2e06e492c6a56a616cc10a724f5b",
+      "bytes": 7939
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/README.md",
+      "sha256": "9b5eb26780a08dbca48315a5b8cddfef01776bc75d179c0e2a979f9be6b56515",
+      "bytes": 19343
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/algorithm_outline_and_proof_map.md",
+      "sha256": "4b05f9dc5da94ca24a312144de493c265885f9b994dd68fc572dfae3df90a799",
+      "bytes": 8581
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/alias_geometric_raw_bridge.md",
+      "sha256": "8932d1c9837b365568815c116d69a69bc4d8c53b719f458e60b53e2b1296b083",
+      "bytes": 15314
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/ambient_bulk_deactivation_obstruction.md",
+      "sha256": "6e40514d69cc93e623bc1bf21412a96452a98bd989055af64412735b90b47f8f",
+      "bytes": 11011
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/ambient_congestion_and_parameter_scope.md",
+      "sha256": "fccdb4e4a74c2c483f5956d6af4065c1a21a84c6d3c4d53cd0ae4ee012b6c8e4",
+      "bytes": 4468
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/amortized_native_split_feedback.md",
+      "sha256": "6d99322b3c366f788f01f94902c7f799aa16ec9fa892684eb1d169d0f4847bbd",
+      "bytes": 11252
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/amortized_static_base_distance_sparsifier.md",
+      "sha256": "3263d47cd5872464afbf74d24b49b429dd4a2842e5d7969ffd4ba73d36f6b514",
+      "bytes": 26632
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/an_weighted_finite_bit_adapter.md",
+      "sha256": "dea27a031e175019eab803986d7a32a0f6807a0411a3d01b8c347325c44b3446",
+      "bytes": 19719
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/backend_exponent_balance.md",
+      "sha256": "05d0a54119064c74a53c6286d870b86c54c62a997b621b4699c04dd28c2ab06e",
+      "bytes": 15924
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/balanced_forest_pair_oracle.md",
+      "sha256": "a4cf6f4d22fa707e3a4e69ca9cd0eba94dc60c6080b3829b5ce7794c0aad729c",
+      "bytes": 8556
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/balanced_two_boundary_hierarchy.md",
+      "sha256": "9dd65347781cc06e6efe4a362ab005ed155a3d8b4aef6f1a42af3965aa17872d",
+      "bytes": 6760
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/binary_ledger_hierarchy_and_decoupled_parameters.md",
+      "sha256": "4d4c56929218dfd406cf8c68cc9eee5ac354c5fa6054cfae9ce75ee1e9fbbb9c",
+      "bytes": 17653
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/central_greedy_recoursing_under_splits.md",
+      "sha256": "d52f61b84d3b36fff2f4e1e552ef34759085e950a12752605b23d46d39796c85",
+      "bytes": 9181
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/chs_hierarchy_and_load_boundaries.md",
+      "sha256": "ba77d5f34ec038580edc1c435ab0cb065c6a85fa1c434340cfb3ca176523a4dd",
+      "bytes": 6496
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/chuzhoy_parter_2026_interface_boundary.md",
+      "sha256": "65aa9eda44beff56130ed1013fd4de93207e3537c4769645cc3daf209f88d41b",
+      "bytes": 5942
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/classical_matching_optimality_verifier.md",
+      "sha256": "c608f44ac0ef6c70cd13a8adf7ddfb7d020c4b441bf2ca46b9b3225f89ea223d",
+      "bytes": 4134
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/compressed_fractional_path_extraction.md",
+      "sha256": "a1f55e88cb73b06d095ea5b5c179709c5219a5cc5ddd9b0a9024f1229cc6d90e",
+      "bytes": 4118
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/conditional_full_router_from_shufflers.md",
+      "sha256": "d73f8b2f186bc4da4c09a55b645b985d87e60c4b54217446a4b3b50c1e8b3313",
+      "bytes": 18859
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/conditional_matching_6_7_composition.md",
+      "sha256": "820bbdfd8b6d81c4184f179cb15b01c54e639b16c0c815e9de514d3f94658877",
+      "bytes": 21598
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/congested_greedy_support_and_dynamic_boundary.md",
+      "sha256": "89c0e4750d02f144559624d235624eb1db6f506b22e347971e77a80502d8f3da",
+      "bytes": 18930
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/conservative_priced_parameter_refinement.md",
+      "sha256": "6d18ebe31265548def3db75dbfa8f0a9ceb6c4870e29770b625cab889d665142",
+      "bytes": 10552
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/constant_degree_steiner_bridge.md",
+      "sha256": "aafec29b1c820fc20059a4c2c43106e50cd1076f4f0d2ccde356cea536c6dcb1",
+      "bytes": 30467
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/constant_depth_deterministic_backend.md",
+      "sha256": "98f004f1e651af08a903c8958881addcbbe659316b26d1ebe3757316fd7b0247",
+      "bytes": 27044
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/constant_depth_distance_oracle_backend.md",
+      "sha256": "871339f24d28384ec29fc31f00e0af10b66c55ca68bca763f77abb5440e74c06",
+      "bytes": 20591
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/current_results_and_frontier.md",
+      "sha256": "fc857705e4704aed6a92175931eb896b1e5dfcb878ca90b813d6878e78526b21",
+      "bytes": 17973
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/decoupled_numerical_client.md",
+      "sha256": "b5602f21f7ef8d6a13ea1e0bc8eb47d504cddf0ebdf3f6590c58c0102119be84",
+      "bytes": 13093
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/degree_split_token_routing_interface.md",
+      "sha256": "41ef8857f7e5e84888222609c4c5636b38bfeb60795b0f54e45a2b1082446ab4",
+      "bytes": 10439
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/demand_route_notifications_and_local_work.md",
+      "sha256": "208763d0c28822155a3b12d74d6155b57db3099d214871f2d2626d7ec0ecdf4a",
+      "bytes": 22625
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/deterministic_local_tight_discovery.md",
+      "sha256": "6b116e6bb4998f844a2881666d7dea73b7224c914ae123c62ebc31f625563c2d",
+      "bytes": 13601
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/deterministic_maximum_matching_verifier.md",
+      "sha256": "d598b7c385ce1768c31d380febb31bbc621dc6c50317b80d397bf8cfedc0e6d7",
+      "bytes": 3538
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/deterministic_phase_cost_and_guards.md",
+      "sha256": "2872df921f9fe2371d9bab63c5d80d38878fc531f66a801ca16b0fff5dee7e45",
+      "bytes": 12843
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/deterministic_symbolic_shortest_path_ties.md",
+      "sha256": "0cab7dd3469043aff6634e882c7dc9bbc7b8aeba2e01541796e63d50fa85ba6c",
+      "bytes": 13954
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/deterministic_token_routing_by_thresholds.md",
+      "sha256": "d11d9e986166cce582397099ae246de2314da69928f712de1a93800441635759",
+      "bytes": 12440
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/deterministic_uniformization_by_optimality_check.md",
+      "sha256": "96c19a77d3d7636840904883d7817c2ca3bf491df53c41208eaf46a949600f51",
+      "bytes": 12927
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/deterministic_weighted_path_selection.md",
+      "sha256": "ef9a36915ad70785d7eb124f28a0fa493868c742c419d43d02f26fe730b3a396",
+      "bytes": 12703
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/disconnected_component_backend_wrapper.md",
+      "sha256": "4b6d1fa098f05fa8951df32d05373d44e905de2fee87551ea89e1a939eb58415",
+      "bytes": 33459
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/disconnected_routing_components.md",
+      "sha256": "4bba37337238cb95a4a55036aab82b184288fcc09f8175f3ad3f9b70c694f1e6",
+      "bytes": 11849
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/distance_backend_general_matching_integration.md",
+      "sha256": "e4b5d666eb2933e27e671af1848a6597de7c79a083b56be18a49368b2b6cde2d",
+      "bytes": 42623
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/distance_degree_reset_candidate.md",
+      "sha256": "663de96e8c3517d8f88d7bc9c35f2de13c25ddb9e9d506e6f9b09c2334757074",
+      "bytes": 39344
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/distance_oracle_raw_lift.md",
+      "sha256": "0c028aa799dab8f54da16fef07d62a8d71f3e15aecd4a59bb1d81d9fa2e7558e",
+      "bytes": 20753
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/dynamic_integral_allocation_theorem.md",
+      "sha256": "1dd17f21e8b40d6436a5dc722d76e7ade0576d6bd1eb41a055a10530ebe89afe",
+      "bytes": 10781
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/explicit_virtual_cut_balance_wrapper.md",
+      "sha256": "bf3cfbfab46b89171d946197e77554c34e2083428fa599d3a3814c3e26e1b737",
+      "bytes": 12353
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/factor_critical_contractions.md",
+      "sha256": "064d599924e0d8d36a1ef9ceaf77e1b136c091da24710122bf1916ab67694c49",
+      "bytes": 8467
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/fresh_general_matching_client_interfaces.md",
+      "sha256": "1595866cb820c6142b1f4adac98fe7854528753981a346f99c42f364e77af560",
+      "bytes": 19516
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/general_graph_gap_reduction.md",
+      "sha256": "8fd08bd2084d5551877e2d9934827d6ced7a300129513899501083224101bcf6",
+      "bytes": 10489
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/growing_depth_aspect_exploration.md",
+      "sha256": "879d169cf3ae932cfa8b8ca06700cda9e1ee28e098bd429488f9229ddb7f7606",
+      "bytes": 34794
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/growing_parameter_matching_cost.md",
+      "sha256": "61080ac71aaf5bf8aadc9f343cf33c40f308a7d23b30a1b29c35eb2fafe7a361",
+      "bytes": 22088
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/half_matching_entropy_progress.md",
+      "sha256": "cebad983841d0c6f848b1586c7b74325739525116b4051bdcedb11150042d091",
+      "bytes": 7600
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/hhl_shared_path_dag_and_conditional_tradeoff.md",
+      "sha256": "cc7bc54fad8ff112fdb6a92a3aba51e1d9ccd049a4ae2c31bec2ef5faedc1569",
+      "bytes": 15983
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/hht_literal_sequence_and_parameter_boundary.md",
+      "sha256": "3cda6ca6828462622432320ae53967be4f2174457fb921ff4eef14947d9a5c2e",
+      "bytes": 11522
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/hrg_routing_from_rounded_covers.md",
+      "sha256": "c6f4902a91cdde18bc06908d5cba248343af63f824853dbc387b6617918502ae",
+      "bytes": 12409
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/hypercube_port_adapter.md",
+      "sha256": "dc3dbfc1198b75fbf38aabe040ffb03dc3c89a41e1675ed0f4ea0e7a5effa767",
+      "bytes": 7411
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/hypercube_weighted_witness.md",
+      "sha256": "feef64732b17c2bccc672fa4bc0c276b4d4afd36dc82b2e3064f68bab76909f6",
+      "bytes": 7742
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/initial_route_projection_updates.md",
+      "sha256": "355fe774989de961cf5b811a3e9bbb7fc00c60bff9cc496b9332408d749a34b6",
+      "bytes": 10727
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/ledger_algebra_and_phase_budget.md",
+      "sha256": "639fa0e75fe3319ffc66b8c6673e16a925e0eed595794c943630ac0c041ba67a",
+      "bytes": 11663
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/length_free_ambient_static_sparsifier.md",
+      "sha256": "2cd571f0fa36b726ed7b382c6ff789e8c42eb195051ce5f3087f3a6d0ec0b513",
+      "bytes": 14146
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/linear_parameter_static_sparsifier.md",
+      "sha256": "bfde31042abc1b531ca43fbf0daa6f05862e197fa1afb615e551310f8385b209",
+      "bytes": 9182
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/linear_router_backend_balance.md",
+      "sha256": "4463c05a6183ce5d01c826c81e94bd971662c92df82fe3751f94ad836b4adc80",
+      "bytes": 3825
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/local_exact_projection_from_priced_steps.md",
+      "sha256": "a0ea0cd646fa9bc925f2b6dd057c1d85a7306d83ac7e1272634f419f8a6c5956",
+      "bytes": 25992
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/local_length_aspect_preservation.md",
+      "sha256": "346f5694b2fc6ddcf4ba4d15cc0640b5e3c834ded68e8bd548a548c0b6eb55f0",
+      "bytes": 29333
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/local_metric_growth_without_root_pools.md",
+      "sha256": "b026f752d832fe8353607d482a5a3df81c9d6837022a89cc0d844a0c41fa64cb",
+      "bytes": 10605
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/logarithmic_client_quality_obstruction.md",
+      "sha256": "f6625d0e88631b7c9359a796d28fa4dee4a14c6ee2053307ab160915d388fb67",
+      "bytes": 16557
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/master_hierarchy_209_210_exploration.md",
+      "sha256": "47a723230fbb8863d3c7c7018ea21e703303f25704e5a6a6cf3b60c105455e15",
+      "bytes": 12442
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/matching_size_kernel_corollary.md",
+      "sha256": "f4136e6530361600a3a3dd59402e4bd09175a8bd282d3e3a2583321322d1e9bf",
+      "bytes": 4069
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/near_feasible_rounding_and_exact_projection.md",
+      "sha256": "cedae91bcbc4f8bcbe082b373fe7cc28d78980b2f038db7db5203f2199db27dc",
+      "bytes": 23206
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/nonuniform_fractional_path_selection.md",
+      "sha256": "386a96a6c5b07489496e0cf7ab3a90e4865f32a8009513c8a99ec4f9efa66b3e",
+      "bytes": 8366
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/normalized_projected_route_composition.md",
+      "sha256": "6c5d4d39cb2415c12c06033f37d6522212491702e7746d427f69e9cc372ffae6",
+      "bytes": 9050
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/normalized_route_cycle_comparison.md",
+      "sha256": "00e6e195139704935b282af7a80c9a4b60a039dff6025dff75ab1b2604877d12",
+      "bytes": 13123
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/numerical_backend_choices.md",
+      "sha256": "e79fc091021194a8e76fc03f2b6475edb0ab29c5af3e3d375b585b9c8ece98c5",
+      "bytes": 16588
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/numerical_backend_lifetime_and_loops.md",
+      "sha256": "01999178dee5663089d6d6d322d3ea8ba131a1371bfe61c3f95ae5c435baecc4",
+      "bytes": 12962
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/oai_baseline_and_imports.md",
+      "sha256": "c1b74f3d537886c12cc0b7b20681e2571771f59ff36b33149f7e9c9d099eeb88",
+      "bytes": 9860
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/parameterized_expander_path_and_degree_bands.md",
+      "sha256": "14107b744f2514977780e43c32636d01aaa7b5a217e08277b0d425d1d1f469b4",
+      "bytes": 15695
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/persistent_carrier_general_matching.md",
+      "sha256": "054fda5e00613f85456a4066275e1f341e4f11e9767ed0da706392b7ee4556ca",
+      "bytes": 16991
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/persistent_integral_ledger_carrier.md",
+      "sha256": "2f840ceb1104c9bbbbb6e8ec42f175b03239343149ff2942c27ff638716dcae3",
+      "bytes": 24895
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/polynomial_bit_stretch_stable_forest_integration.md",
+      "sha256": "f95bb519e9a7ce1590fb4ee87b0507e09bbf298c63459bd77a0e70e1efea00d6",
+      "bytes": 17183
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/polynomial_energy_cut_player.md",
+      "sha256": "60209908ed38966d3e6b1457799682c2c1f1ee1e7b28743a4a8a9009a1aefda9",
+      "bytes": 13643
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/portal_alias_api_reconstruction.md",
+      "sha256": "5f2a23fc4f80147d35f0b31eda8eebd0adabac219e1220d3525d47c070ef4868",
+      "bytes": 31603
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/post_four_fifths_quantitative_targets.md",
+      "sha256": "d5dad0cfbdbd3e8ff26d5d219ed2b6e39f1b8e1588785e53d98833224e7f3cd0",
+      "bytes": 4938
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/potential_bypass_limits_in_matching_clients.md",
+      "sha256": "999386a6d310041ccece6a792d6dc5092d865207addf2058acd212c6a39a0282",
+      "bytes": 13300
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/priced_logarithmic_steps_from_raw_cycles.md",
+      "sha256": "92a0eba5c06d8915f9f0cd02fab203a42dc24ea375f6db7eefa812ec39295960",
+      "bytes": 30594
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/projected_central_provenance_congestion_obstruction.md",
+      "sha256": "8da9b556ee26146049b4b0bf9d368eaadf1e5c71f0e50480227e56593a7ac4fa",
+      "bytes": 15912
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/public_baselines.md",
+      "sha256": "1575efa527b97e743d3f03bbfe77832e8c0345f408a675f3c54fa827bae16c25",
+      "bytes": 10892
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/quantitative_exact_flow_dependency.md",
+      "sha256": "b35908c1248ba8892fdff67ca96492792be1fa3263b17a7932469c1b8458d57d",
+      "bytes": 7510
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/quantitative_matching_14_15_composition.md",
+      "sha256": "3de4a7af427af520dcb8be1369346e42c2c3b8bb7959b93776509eae78f8e2ed",
+      "bytes": 24294
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/quantitative_matching_167_168_composition.md",
+      "sha256": "c4a60c9f06cd13823eb4189173bcd4e2c8b92422acf34e3b9661f8cb46029258",
+      "bytes": 20377
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/quantitative_matching_209_210_composition.md",
+      "sha256": "203a9250f8ba635781699f314bba5c3674ced427b30954a72dbe97a4069bea97",
+      "bytes": 19376
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/quantitative_matching_4_5_composition.md",
+      "sha256": "bfd55c3dfdc2792084a43d0723a7871fee9af23cfdf739d62222242f7bb70797",
+      "bytes": 24928
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/quantitative_matching_5_6_composition.md",
+      "sha256": "7d05d60503285e697205716d41bd5af51f88593b0094c036a63f28d2bd729333",
+      "bytes": 25048
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/recent_routing_primitive_frontier.md",
+      "sha256": "20d4467a2bc2257a0956517b06355b96fa7418b2a6a2a3175017b9912c3e9e2c",
+      "bytes": 10812
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/recursive_cycle_quality_obstruction.md",
+      "sha256": "0b1bbfdb3abfb1502dbc0d96921015d312dc045e83137289f3dd3a9cec593450",
+      "bytes": 19870
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/repair_window_depth_tradeoff.md",
+      "sha256": "d1374b8a314c6ac2ad2a0031d2f24a1269b4f29af57591b90da1bf50a8b52e8a",
+      "bytes": 7731
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/separated_static_sparsifier_parameters.md",
+      "sha256": "08fbbb86dd2bde5945e88d2b7fc6170fc6788587e08857e8279826b4ee8ac5a9",
+      "bytes": 29696
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/sequential_expander_routing_tradeoff.md",
+      "sha256": "45f9997ca9003f7cda526aded69d40dc47122ded43321a6ffc58ecfc51b92b09",
+      "bytes": 15500
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/sequential_fresh_cut_matching_adapter.md",
+      "sha256": "c8798b6a5df07e041c96e5491f3820dd42968393d06cd83a1687f419aca29fe7",
+      "bytes": 12380
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/sequential_leaf_routing_and_chs_work.md",
+      "sha256": "5f0ed5313590afddb622bfbc5384b6b23343f195432152850b2c9e04d270a3aa",
+      "bytes": 10031
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/sequential_short_path_matching.md",
+      "sha256": "81895f57205e7c6ab98ec940b59d2310fdd91002511462f45f3713c0cece0583",
+      "bytes": 17149
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/sharp_log_parameter_portfolio.md",
+      "sha256": "c28445a6403c6b10799b8b0b2f607a270fed6fb4adb080c3ea1fe8b92ed57889",
+      "bytes": 22518
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/short_period_static_spanner_base.md",
+      "sha256": "18e0beb670ee20e73701eb4b039968c3bc4b4e2a8c92dcd5fbdff237442a3c30",
+      "bytes": 11318
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/small_graph_ratio_solver.md",
+      "sha256": "c63c033c508ed5505340164481221ad13faa06ca64beca6c2cb29f84d6495d5c",
+      "bytes": 5175
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/snc_provenance_from_vertex_maps.md",
+      "sha256": "a8ad5438ada139bce7b534d0c4b01a11bbdf3a005bece583544d2c4df26e3ec1",
+      "bytes": 13774
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/static_pair_exchange.md",
+      "sha256": "a282ae4490a7414f5bdcefaa89acb020a3737c3df76a9ae7bc6c07c951a6c3a3",
+      "bytes": 10783
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/tight_blocks_via_forest_pruning.md",
+      "sha256": "e2c9c6471a433eeb2213ca4991b1ec0d3925482f24595a48c047b6f5ce7993b2",
+      "bytes": 9414
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/uniform_general_maximum_matching.md",
+      "sha256": "cf0c35e94a934df6bc725d121ad2dd6f033563a41936d815f5a87049ff89b5bb",
+      "bytes": 13061
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/uniform_source_interfaces_for_4_5.md",
+      "sha256": "02c311a3b52a0d02a5ad983f4dad1b68e4dc8a2fabfcfe738142fb738f36ea90",
+      "bytes": 24483
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/virtual_expander_hierarchy_reconstruction.md",
+      "sha256": "cef78cd68fcf0cc416a1751d0337b9050001e1873d51f7ee0b35094bf284040c",
+      "bytes": 33741
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/virtual_merge_expansion_obstruction.md",
+      "sha256": "4bbc337d86825ce062386810f7f75fa36fb089268b47e1e8f730f30923391104",
+      "bytes": 7465
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_checkpoint/weighted_spanner_packing_width_boundary.md",
+      "sha256": "1bce32645d8f005792d9892a673f7b3c02f5373c0b3a40f57d74f50e8972ded3",
+      "bytes": 7468
+    },
+    {
+      "checkpoint": "o",
+      "path": "current_public_version_and_dependency_recheck.md",
+      "sha256": "8719d71ab5acfd6dffc885c663be562ef7b137607445b9f0e5b5ef012e27124e",
+      "bytes": 9880
+    },
+    {
+      "checkpoint": "o",
+      "path": "decremental_choice_recourse_lemma.md",
+      "sha256": "62c96fdd3b275ed8d09c037fb62eac543254127c35d15c79ccf9379ca7916273",
+      "bytes": 9312
+    },
+    {
+      "checkpoint": "o",
+      "path": "degree_constrained_subgraph_independent_audit.md",
+      "sha256": "dcd3ef0b86d63130b8390a26061758e6d96430404a4778fea08fc4a0fb4aaa0d",
+      "bytes": 4250
+    },
+    {
+      "checkpoint": "o",
+      "path": "destructive_apsp_independent_audit.md",
+      "sha256": "2066c672cfea3e424e29833a22148975a5abb6ca8240837d064e84588910c99c",
+      "bytes": 13629
+    },
+    {
+      "checkpoint": "o",
+      "path": "destructive_apsp_path_support_extractor.md",
+      "sha256": "3d4e53d796e3e6e22ab44206a0f3df5b663a9fe43d3c2584be07da383d1e6abf",
+      "bytes": 27617
+    },
+    {
+      "checkpoint": "o",
+      "path": "deterministic_fixed_k_tree_mincut_adapter.md",
+      "sha256": "860a737bbe61e4a01f4a2454699f1fd744298c9002f33609f26265f3b3f44d4c",
+      "bytes": 22003
+    },
+    {
+      "checkpoint": "o",
+      "path": "direct_spanner_budget_and_recourse_obstructions.md",
+      "sha256": "155e491e34e3142610af1d68ae73caff70376b8a64e8c8bb32ff8004113b3861",
+      "bytes": 6525
+    },
+    {
+      "checkpoint": "o",
+      "path": "dynamic_marked_forest_short_path_union.md",
+      "sha256": "1008b0fd6a71077b0aced8c2c80cade6511c4330ab3464092a07b34e189be202",
+      "bytes": 11606
+    },
+    {
+      "checkpoint": "o",
+      "path": "dynamic_msf_formal_pruning_substitution_audit.md",
+      "sha256": "54a9674f238d26ff728d154d8c3eaa8e84b6cb5dff6d30cafc741c1f25a4b8d2",
+      "bytes": 14552
+    },
+    {
+      "checkpoint": "o",
+      "path": "dynamic_msf_public_baseline_root_audit.md",
+      "sha256": "0298292a6b0bb04f8b36521add33b50be7b6f770af94c199a3e2c93a5a2ef826",
+      "bytes": 10056
+    },
+    {
+      "checkpoint": "o",
+      "path": "dynamic_msf_public_two_thirds_baseline.md",
+      "sha256": "d4b291b4acbd0963dbc64c44afc4285ccbb2bd49284b79602238135cd45b63d3",
+      "bytes": 12603
+    },
+    {
+      "checkpoint": "o",
+      "path": "dynamic_spanner_krampl_2026_baseline_audit.md",
+      "sha256": "efc294e07a50754faac7b7f3b3471afcf25694af17be8848b3a0f06b73fa16c6",
+      "bytes": 7706
+    },
+    {
+      "checkpoint": "o",
+      "path": "dynamic_spanner_public_baseline_audit.md",
+      "sha256": "d0133896591b4326cbbbba148ad8587f773c27166ca06878d991a253807ce33a",
+      "bytes": 15597
+    },
+    {
+      "checkpoint": "o",
+      "path": "edge_disjoint_spanning_expander_packing_corollary.md",
+      "sha256": "2e48eb2da90eb52b839eb74cda4d3fe00313b6d0d146b55255069d61eff71046",
+      "bytes": 10270
+    },
+    {
+      "checkpoint": "o",
+      "path": "exact_flow_acceptance_and_reductions.md",
+      "sha256": "0bbe1f16a3138ee407232c04cf5b47407964c6a62998d06515be4c87217c3050",
+      "bytes": 8780
+    },
+    {
+      "checkpoint": "o",
+      "path": "exact_multi_budget_flow_hitting_set_reduction.md",
+      "sha256": "811ce6c3b1d2fc671a26cdaad6fc7327da2edfad8438fdc184bd6f8edcffad22",
+      "bytes": 5704
+    },
+    {
+      "checkpoint": "o",
+      "path": "explicit_hypergraph_matching_branching_improvement.md",
+      "sha256": "ad48cd544056ca1b095147868de4298d0be4b449a98f7ee611d1bbc292a3b8bb",
+      "bytes": 19220
+    },
+    {
+      "checkpoint": "o",
+      "path": "factor_four_recipient_polymatroid_public_comparison.md",
+      "sha256": "b79bf6614825f9d5096ddbed8042d3ca7ec71df3dccd8d8701df877e31a1892a",
+      "bytes": 6564
+    },
+    {
+      "checkpoint": "o",
+      "path": "fat_deficiency_parameter_allocation.md",
+      "sha256": "ee151039359b6c8b00447c2d34bd4dc2124239f1adfdc691894957db4be8a6b3",
+      "bytes": 11391
+    },
+    {
+      "checkpoint": "o",
+      "path": "fat_deficiency_parameter_independent_audit.md",
+      "sha256": "506b84e7bb2a06f7eec3e1f53504ff11027b857473524d947fdae933b1c8b744",
+      "bytes": 5026
+    },
+    {
+      "checkpoint": "o",
+      "path": "fat_deficiency_parameter_second_audit.md",
+      "sha256": "9ec3e443e6f1541d4586c053a18ab09fc2c9e6a96c1dc771e9fc7735ec96b92b",
+      "bytes": 6122
+    },
+    {
+      "checkpoint": "o",
+      "path": "feedback_edge_client_independent_audit.md",
+      "sha256": "844f161762a916c2569ddced847f3758242ac249fabd53a234bd79eeca9d02f2",
+      "bytes": 8479
+    },
+    {
+      "checkpoint": "o",
+      "path": "feedback_edge_one_sided_client.md",
+      "sha256": "9a7c08844ee1e5c883e22fe79d8cafbf8f94cc748fe2391e40cb6d1d5c294157",
+      "bytes": 15039
+    },
+    {
+      "checkpoint": "o",
+      "path": "feedback_edge_one_sided_client_independent_audit.md",
+      "sha256": "04245f41135ea079a4ac1726031f51cdf82afa26d46500474a68f9de4a11804b",
+      "bytes": 7493
+    },
+    {
+      "checkpoint": "o",
+      "path": "finite_mwu_and_li_skeleton_independent_audit.md",
+      "sha256": "fb9e9be9ba0e72f4abcf837f8b456f4e0ea74bca1a260aeacebfe20b1e6f7c12",
+      "bytes": 16631
+    },
+    {
+      "checkpoint": "o",
+      "path": "fixed_certificate_branching_count_independent_audit.md",
+      "sha256": "8a4e1da26a0a48681c40c2631ad9ec58d29058c1cf5887e061fdb46250510614",
+      "bytes": 20565
+    },
+    {
+      "checkpoint": "o",
+      "path": "fixed_hitting_certificates_under_graph_updates.md",
+      "sha256": "136e707166847d9d6814f0c8161acba529c815ac766d8080b316c5dead4b5dc4",
+      "bytes": 5503
+    },
+    {
+      "checkpoint": "o",
+      "path": "fixed_k_global_max_leaf_independent_audit.md",
+      "sha256": "c0f60a885fe2cedea1e84131a8cc18d56ed253be4a4bbdddc8e14853ec82da54",
+      "bytes": 13195
+    },
+    {
+      "checkpoint": "o",
+      "path": "fixed_k_global_max_third_audit.md",
+      "sha256": "d374ae93bf399c74284e829e3fee0a1d9c0eb5b0ee43858b76b3a904d661ec81",
+      "bytes": 13944
+    },
+    {
+      "checkpoint": "o",
+      "path": "fixed_k_tree_mincut_source_interface_audit.md",
+      "sha256": "7162609c50b1076f9c7f43cbebf18a4f9660f0be6383eb15e97c0cd6ac206b08",
+      "bytes": 9741
+    },
+    {
+      "checkpoint": "o",
+      "path": "fixed_potential_tight_dag_repair_lemma.md",
+      "sha256": "b3b8cec53c7e238306d9f31119465bd9f090dc60cd31f9f402605888d0c335d9",
+      "bytes": 10176
+    },
+    {
+      "checkpoint": "o",
+      "path": "forced_forestification_motion_after_strong_step.md",
+      "sha256": "70cd22cce791918f41802f53faceefbb67caef6390377423d15307ae3eb5ca0a",
+      "bytes": 9142
+    },
+    {
+      "checkpoint": "o",
+      "path": "forest_pivots_and_bounded_witness_root_audit.md",
+      "sha256": "2d143fa976577f56aed8441fb5be530e62d11188781ef4e988965e06c13f0692",
+      "bytes": 9609
+    },
+    {
+      "checkpoint": "o",
+      "path": "frozen_barrier_detector_independent_audit.md",
+      "sha256": "c453030039b44ee1825690dc899f36a447cd735fbf7a2070469f6b5972e10a4e",
+      "bytes": 15992
+    },
+    {
+      "checkpoint": "o",
+      "path": "frozen_barrier_distance_detector.md",
+      "sha256": "9a920db5a8dcf221071850bff84826ae7ee763e52df69b2496c70ea84bc07fbd",
+      "bytes": 23846
+    },
+    {
+      "checkpoint": "o",
+      "path": "frozen_detector_incremental_sssp.md",
+      "sha256": "609b22479f9e832ec47e38b9407abb234c0a9e99656d36d6a050fc70e9e3508a",
+      "bytes": 29033
+    },
+    {
+      "checkpoint": "o",
+      "path": "frozen_sssp_outer_independent_audit.md",
+      "sha256": "07edcf97f9d8ed63b68b171970853d7b1103e17ea7a0a4c14df635d33ef6e360",
+      "bytes": 12784
+    },
+    {
+      "checkpoint": "o",
+      "path": "full_residual_configuration_gap_two.md",
+      "sha256": "b5a47bbad376e493ea34e6c70bf09e9434375c98f66271c3d2bf3ceeacd1420b",
+      "bytes": 5762
+    },
+    {
+      "checkpoint": "o",
+      "path": "full_residual_configuration_gap_two_independent_audit.md",
+      "sha256": "4bb5a521957be98a706843d831a3accc8a9a9cf802b7bdf0b768286ffbc8106d",
+      "bytes": 4952
+    },
+    {
+      "checkpoint": "o",
+      "path": "fully_dynamic_apsp_time_stretch_curve.md",
+      "sha256": "f3d63b3d79c1b5cc57bd3e14ba4cec6fe50329513dc4ccaf6dfa28e418bc2846",
+      "bytes": 8625
+    },
+    {
+      "checkpoint": "o",
+      "path": "fully_dynamic_spanner_five_sixths.md",
+      "sha256": "6726aff63289dacfc27bd4e0ce2c28c7598a039ec1ae6b2ae04855e84ebbc195",
+      "bytes": 22320
+    },
+    {
+      "checkpoint": "o",
+      "path": "fully_dynamic_spanner_independent_audit.md",
+      "sha256": "efdfa0cf877e2f777fdfac77738de199db85c9db86a700c1c4e1b465f70c9ad2",
+      "bytes": 10499
+    },
+    {
+      "checkpoint": "o",
+      "path": "fully_dynamic_spanner_root_audit.md",
+      "sha256": "9abbbdd34e729b52907560680d76e67574e0712ff18a078b16dcab2aa6d41e18",
+      "bytes": 11861
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_degree_constrained_subgraphs.md",
+      "sha256": "1e38e4c20e7fe7eebb37b95101123cce1f387aee8052df06671363265b955f49",
+      "bytes": 14136
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_recipient_polymatroid_independent_audit.md",
+      "sha256": "58a6b85d2540b1d316711e3c982fc6145ed356f8de2515be9a573309390b1447",
+      "bytes": 10205
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_recipient_polymatroid_integer_optimum_transfer.md",
+      "sha256": "b2279161325f98231cc6567a581f81ed1b1a8b085d6f3695c464a2a1bde45843",
+      "bytes": 21052
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_recipient_polymatroid_prefix_four_independent_audit.md",
+      "sha256": "0fe9b4791b6382f3f10d20ea1ab0444c794dfb7759ab3da336f2c646c6f78d5c",
+      "bytes": 10088
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_recipient_polymatroid_prefix_four_transfer.md",
+      "sha256": "812a40243d1d532ac1c275e4209de07efb9a6520f2c76aed0ab2a33666fe2a99",
+      "bytes": 14806
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_recipient_polymatroid_root_audit.md",
+      "sha256": "44296f002a89221454237e6839b125822cdcef539b89239c1d05e8fd08d1e977",
+      "bytes": 11238
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_all_remaining_blockers.md",
+      "sha256": "79f1eba65ec8c61cb54e503b96537fa4da5148b815e13baeaf9e92edf25b161f",
+      "bytes": 19576
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_all_remaining_blockers_exchange_audit.md",
+      "sha256": "daab922a53d7b7027625def1a4422373a2842f60654529500ff6836f25e10e01",
+      "bytes": 14350
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_all_remaining_root_audit.md",
+      "sha256": "f1bf0697d9293a19e07d538cbeea3f4a13798f345fb710bf551a46d0195d4cb5",
+      "bytes": 10748
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_all_remaining_source_audit.md",
+      "sha256": "1799619a671dba8e31dde7bf7d8b36f0ec0c5b8166d8d7e49863af70e776f2c0",
+      "bytes": 11437
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_birth_saving_current_cover_obstruction.md",
+      "sha256": "25de435187b1da844f92ef76e12f8224ed3491d4a4695d08153751be3d7ed769",
+      "bytes": 6431
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_matroid_public_parameter_comparison.md",
+      "sha256": "190cfdfff74d9d0d3e304c944aeb01e2727153e8fe68b55dc821cbfb442ca9e9",
+      "bytes": 9992
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_matroid_subset_reservations.md",
+      "sha256": "5a5a18574607dfb1bcd75c55934116a5cad4f8faf708ff2786f3f77f2e9b38aa",
+      "bytes": 20443
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_prefix_additivity_four_candidate.md",
+      "sha256": "931f94cad3fb58d0b899ae4ae36bf6ae9650215e1f5c3056a30415491e6fa055",
+      "bytes": 21953
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_prefix_additivity_independent_audit.md",
+      "sha256": "a78d964d753e9201fa5ede730e2ac3a9a8c5c12a6a4925de9fef9eabfa74dba8",
+      "bytes": 8152
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_prefix_additivity_root_audit.md",
+      "sha256": "02bbda625fec15e1b2ad24d6500f938db9ee1e6a013c7c39fc6e2af806484aeb",
+      "bytes": 9532
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_relevant_blocker_addendum.md",
+      "sha256": "5a50c0fe07dd8c4460af77659594e657c8d3449dcd4f9eb58feacd4a58eb4da8",
+      "bytes": 5507
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_relevant_blocker_source_audit.md",
+      "sha256": "4aedc29030b8d91e1179a9db57affa375a7c5fbf5be9c4ea33617a4533514345",
+      "bytes": 3621
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_subset_reservations_second_audit.md",
+      "sha256": "384919ef80a700ca2420417c91f708a2e1f4d312dda0c16244fc53ddf4d57813",
+      "bytes": 7145
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_resource_subset_reservations_source_audit.md",
+      "sha256": "e43edc2ff607839d6ffd30de30b8a4c4ac6b0a3705039d2a9a01cd292e1aefba",
+      "bytes": 9117
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_value_allocation_heavy_cover_near_two.md",
+      "sha256": "dc1649ba3a3c1e39c63dc510776fb33b498b42b50e9216ccedc3900bb75a61ea",
+      "bytes": 15146
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_value_exact_two_corank_gate.md",
+      "sha256": "e5a00907b6e26c427113f4ce66f7152da337f144dca98256c35ff4452cf08075",
+      "bytes": 9392
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_value_exact_two_corank_independent_audit.md",
+      "sha256": "cc5706ac20a78b39457624a346aef0776ec05369c8e18e35d6525685cc0a79d9",
+      "bytes": 9450
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_value_heavy_cover_near_two_independent_audit.md",
+      "sha256": "5614d1e4d21295c91a82f28345f61a36ee2d76b63616020f97cc65e3e8c853be",
+      "bytes": 9782
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_value_matroid_selection_near_two.md",
+      "sha256": "92f9e78e993d869b99249e5c4004f98e8059da13c6ee1447ef65c1e30a005400",
+      "bytes": 17728
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_value_matroid_selection_near_two_independent_audit.md",
+      "sha256": "f2683a3b34111781c0b84eac9cc3f829e69808a5698dd48245f066c11bb39a76",
+      "bytes": 8038
+    },
+    {
+      "checkpoint": "o",
+      "path": "general_value_near_two_root_audit.md",
+      "sha256": "419682e5acb29cf64a3c6341e512148a00498929330a39fa26a043dc050b7882",
+      "bytes": 9472
+    },
+    {
+      "checkpoint": "o",
+      "path": "global_exponential_allocation_flow_independent_audit.md",
+      "sha256": "b4f0779b4a8b197ad4e81de7392892361b4b8709179333784c6a316c26e17349",
+      "bytes": 20126
+    },
+    {
+      "checkpoint": "o",
+      "path": "global_exponential_allocation_flow_transfers.md",
+      "sha256": "9f5384997502eea0a78811f3ea1047a4f2c338245c04da660dff2d9a0887921f",
+      "bytes": 30241
+    },
+    {
+      "checkpoint": "o",
+      "path": "global_gap_corank_profile_bound.md",
+      "sha256": "8b4e21294b711bbc713413d1a89ac2e2eed9d3b9b991960e3d17647086194e5a",
+      "bytes": 6608
+    },
+    {
+      "checkpoint": "o",
+      "path": "global_gap_corank_profile_independent_audit.md",
+      "sha256": "c8736c4e1cb82496bc9387498986bb7d562acbc702933964d1197ee3f8d2a2cc",
+      "bytes": 7240
+    },
+    {
+      "checkpoint": "o",
+      "path": "gomory_hu_adapter_independent_audit.md",
+      "sha256": "974a914e9300b6fa9c5e48560da162b40e546e7fc0fa252c8a0c0e914f9e5fcc",
+      "bytes": 10621
+    },
+    {
+      "checkpoint": "o",
+      "path": "gomory_hu_external_factors_except_fixed_k.md",
+      "sha256": "f2b413d9c4534ea64a766328727a1eef754b183f43373393c8af3d54ff613425",
+      "bytes": 9191
+    },
+    {
+      "checkpoint": "o",
+      "path": "gomory_hu_seven_eighths_dependency_audit.md",
+      "sha256": "6f679a0cce7a65a88cccefa0faff7a41ae23f7d8e1a895303ae467b6aa315a85",
+      "bytes": 32920
+    },
+    {
+      "checkpoint": "o",
+      "path": "grouped_choice_router_bridge.md",
+      "sha256": "a3c72532c9a9539eb2f95d7ef76798f75ad1033014a7238a488c2ce147367b68",
+      "bytes": 10119
+    },
+    {
+      "checkpoint": "o",
+      "path": "heavy_allocation_threshold_hall_obstruction.md",
+      "sha256": "77c39e5585bb702f7f0dc67756be89360e41fd59c8d3eca372a5191d874691a8",
+      "bytes": 5902
+    },
+    {
+      "checkpoint": "o",
+      "path": "implicit_minimal_bundle_transversal_oracle.md",
+      "sha256": "c0db92e9a98b63219ce60edf397f049a0cb314d439e5478d109fd90d7962a93b",
+      "bytes": 20688
+    },
+    {
+      "checkpoint": "o",
+      "path": "implicit_minimal_bundle_transversal_root_audit.md",
+      "sha256": "4c56c6d09d38cdd3c3eaa1aa7354b18e80bc1891210addcddc755f9c307b290b",
+      "bytes": 5390
+    },
+    {
+      "checkpoint": "o",
+      "path": "independent_transversal_current_blocker_growth.md",
+      "sha256": "f350ef63023316155816d50dfa2fb60be603c7a8e71c8ec882f2f487d1e39d68",
+      "bytes": 20291
+    },
+    {
+      "checkpoint": "o",
+      "path": "independent_transversal_current_blocker_independent_audit.md",
+      "sha256": "6a7f9e0fb2d7d2570e27cddb887bdcd67fdf19df80a39c853fa19fac8fcbbd1a",
+      "bytes": 13291
+    },
+    {
+      "checkpoint": "o",
+      "path": "independent_transversal_current_blocker_root_audit.md",
+      "sha256": "f1fb3b75ffd6255d14f603a54f9825a25304c1da915e25cdd4ac2d413db4fdc6",
+      "bytes": 14438
+    },
+    {
+      "checkpoint": "o",
+      "path": "independent_transversal_elementary_exponential_fallback.md",
+      "sha256": "fe38facd602e4c135c5f930da530b90fa776a91fba6d0d2c4808c71a3c61cc43",
+      "bytes": 5860
+    },
+    {
+      "checkpoint": "o",
+      "path": "independent_transversal_input_linear_iteration_implementation.md",
+      "sha256": "d30ebf91242e1e59a181b1d27533fe1193571bbc2bf921eb95430c0af52cbeaf",
+      "bytes": 7067
+    },
+    {
+      "checkpoint": "o",
+      "path": "independent_transversal_public_uniform_baseline_audit.md",
+      "sha256": "09ff232c6148cc0889f1feacba745064e3b16654ce954b84b1b311670c0ba4ab",
+      "bytes": 9685
+    },
+    {
+      "checkpoint": "o",
+      "path": "item_matroid_allocation_public_scope_audit.md",
+      "sha256": "51b70bc57cf6d0aac4000856be9b0cc1da66fb59c27ff9f948a35793c1d64434",
+      "bytes": 23351
+    },
+    {
+      "checkpoint": "o",
+      "path": "joint_owner_layer_batching_gate.md",
+      "sha256": "56bdc6cd089eeafbd2aa9e3cc3e212b249f0cb5c7bfa039a34c6d971979bacce",
+      "bytes": 10498
+    },
+    {
+      "checkpoint": "o",
+      "path": "joint_owner_sharp_quality_addendum.md",
+      "sha256": "be4cf02e787d97417c6d66ebd953091b00d3c3654f93c2507d8cdb901a87f1c4",
+      "bytes": 5075
+    },
+    {
+      "checkpoint": "o",
+      "path": "joint_owner_sharp_quality_independent_audit.md",
+      "sha256": "95501f92dfb857acec7a38809e78bb3b60b6c0285eadb71ec4a1f20d8183ce68",
+      "bytes": 2245
+    },
+    {
+      "checkpoint": "o",
+      "path": "laminar_and_symmetric_counts_root_audit.md",
+      "sha256": "02a6347ccab43ad04bf7fe4d07dacd0f46c3a2f070f3b5af444759eade534ac4",
+      "bytes": 7014
+    },
+    {
+      "checkpoint": "o",
+      "path": "laminar_resource_current_blocker_reservations.md",
+      "sha256": "d300e77d22fcaf9f71fb4814d8e8f3278e3a3b441da78d1123884522aca65d7b",
+      "bytes": 21884
+    },
+    {
+      "checkpoint": "o",
+      "path": "laminar_resource_public_comparison.md",
+      "sha256": "75bd0638918cfadb266894b8bfda83cfa6b41074aecac247cdcc2e6d48da32bd",
+      "bytes": 8255
+    },
+    {
+      "checkpoint": "o",
+      "path": "laminar_resource_reservations_independent_audit.md",
+      "sha256": "70cf296abb5217d2ae3b56a9e6c753c32c94e59851ebc3252e09ef82e2cf0704",
+      "bytes": 12480
+    },
+    {
+      "checkpoint": "o",
+      "path": "laminar_resource_reservations_source_second_audit.md",
+      "sha256": "319a8a17161fcf5e2289d3b0d1064169d465c3406e08cf90a4a29477d25612b1",
+      "bytes": 9645
+    },
+    {
+      "checkpoint": "o",
+      "path": "literal_top_ledger_serial_routes_and_semantic_scope.md",
+      "sha256": "34e3cffbce4c580edfce94f99c4bd8fa4b57a2ab2f56ef6b68b21cb10b7ed1e3",
+      "bytes": 10881
+    },
+    {
+      "checkpoint": "o",
+      "path": "local_capacity_approximation_root_audit.md",
+      "sha256": "4677b32c22f1d9c74d8a84bd075a1ec78163bfc39140fc6ac9a266ce00557513",
+      "bytes": 9462
+    },
+    {
+      "checkpoint": "o",
+      "path": "local_eligibility_and_safe_contraction_root_audit.md",
+      "sha256": "9b17ba8e12324f6f5c0ccb2aff3921ef206d31777e8627aded49aa587743acba",
+      "bytes": 8388
+    },
+    {
+      "checkpoint": "o",
+      "path": "log_barrier_incremental_scc.md",
+      "sha256": "2fb5a465a173b673c05dd71af60cdedced87b81b40264105ef77da0212524570",
+      "bytes": 18474
+    },
+    {
+      "checkpoint": "o",
+      "path": "log_barrier_scc_independent_audit.md",
+      "sha256": "d0f76343a0b00d74d1f431b1c89e2aa37f3e745424023d01f2e1de6ee0d2c6a2",
+      "bytes": 8065
+    },
+    {
+      "checkpoint": "o",
+      "path": "machine_eligibility_padding_and_collision_independent_audit.md",
+      "sha256": "406920d17d77dc2495c4192189b14dc6da2b00ef39a9c3bd852e0d6e0b1ed946",
+      "bytes": 12672
+    },
+    {
+      "checkpoint": "o",
+      "path": "machine_eligibility_padding_and_collision_makespan_draft.md",
+      "sha256": "67cc3ccae4052239c9861c4632dfee92152dd1ef92ff21cead522daad1fc1e89",
+      "bytes": 19436
+    },
+    {
+      "checkpoint": "o",
+      "path": "many_small_sizes_private_slack_deficiency.md",
+      "sha256": "680365f5d448a1cf106dd22bede34d2f616617117d29fdbec607f0fe90f2e7c6",
+      "bytes": 10941
+    },
+    {
+      "checkpoint": "o",
+      "path": "many_small_sizes_workload_independent_audit.md",
+      "sha256": "b46c926c51eb53b8ec9172c13b9f96c8fa39b3711d544683b515a69a20910479",
+      "bytes": 7931
+    },
+    {
+      "checkpoint": "o",
+      "path": "many_small_sizes_workload_makespan_transfer.md",
+      "sha256": "c5588b74bd429c4e74fe85d230639715bb9cdd93c1c84cf2784d6c1a78ad8d12",
+      "bytes": 12028
+    },
+    {
+      "checkpoint": "o",
+      "path": "many_small_sizes_workload_second_audit.md",
+      "sha256": "be8687af6a14285d1d03903a33b8882221651c0a0247343cbb4738b1f90a14a8",
+      "bytes": 10779
+    },
+    {
+      "checkpoint": "o",
+      "path": "marked_steiner_compression_root_audit.md",
+      "sha256": "714150f974b457ce3a8746f8a82516ea3a15e867211062be0b9c1c9ff521318f",
+      "bytes": 7937
+    },
+    {
+      "checkpoint": "o",
+      "path": "matching_optimization.md",
+      "sha256": "4c8c1a89a42a53f42e9ab4667af5dd930c27c4d46424f952d8340ed34162aeba",
+      "bytes": 17631
+    },
+    {
+      "checkpoint": "o",
+      "path": "matching_semantic_oracle_and_contact_reserve.md",
+      "sha256": "80c1df87cafd3a6c3d80ffe705b9b6146e4a24e08210fbadd95bda485da9b9c2",
+      "bytes": 17111
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_allocation_current_blocker_independent_audit.md",
+      "sha256": "ec6038a4bb2bf801ed5fe9d8620d6c0e171365f096b53be1e9f6ce6eae781243",
+      "bytes": 14050
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_allocation_current_blocker_quasipolynomial.md",
+      "sha256": "738af73f06622835bd8bac2a5c08cdfda099613b2015a8a73b89fd26b6774ad3",
+      "bytes": 22262
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_allocation_current_blocker_root_audit.md",
+      "sha256": "1b5bcd31309a56ad669649834ee417cf24c0c7dd45ee81f860e7f553b0f0e3c3",
+      "bytes": 7846
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_allocation_current_blocker_second_audit.md",
+      "sha256": "db2065e7ec9f31e5206dc4df8ef55f2256c8e842669b772f1ca01e956505c4b3",
+      "bytes": 18805
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_allocation_public_comparison_and_version_audit.md",
+      "sha256": "d086d2e9d731cdf5825271874778cf5ce73c1741b59b7f3e784258022bd18fcc",
+      "bytes": 22897
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_allocation_sharp_star_rank_quality.md",
+      "sha256": "4ef22269f5950fd19804e9a262ec3cbb26b5dbf0c04c9394298f8ab336480f47",
+      "bytes": 14429
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_quality_and_union_root_audit.md",
+      "sha256": "e59a07255579606bd8986a8744e32fb1c65df2dfe88c60360ae9d508049cd3c9",
+      "bytes": 9221
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_sharp_star_and_union_independent_audit.md",
+      "sha256": "b40aa72dfc810673318e2dc856ee9b606a7f83316f901a8f85d68f7f9d7f7ca8",
+      "bytes": 12257
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_union_configuration_lp_addendum.md",
+      "sha256": "cbfe09f9d14b5d01e3d83024ce5c77da8c2603c188f0eff8dd3794d980a293b4",
+      "bytes": 8800
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_union_fat_reduction_second_audit.md",
+      "sha256": "6f1f319034f671ad29e64ead94668281bea5d9f90b9c9974d10879b0f8816d73",
+      "bytes": 8916
+    },
+    {
+      "checkpoint": "o",
+      "path": "matroid_union_fat_resource_allocation.md",
+      "sha256": "122b45ad44923a5bd2d910c2cc2b150af5b8afa612030b9172d37dda58e1959d",
+      "bytes": 15020
+    },
+    {
+      "checkpoint": "o",
+      "path": "moving_box_log_barrier_flow.md",
+      "sha256": "ff960786a4216dfc7b1abbf623e3c2f1d562e41006c690143568a459e1666af9",
+      "bytes": 28576
+    },
+    {
+      "checkpoint": "o",
+      "path": "moving_box_log_barrier_independent_audit.md",
+      "sha256": "08e8d91016540afd671a6e538f5c23f3ef18d459fefdf5b04eb3f4ad7b4aa4ac",
+      "bytes": 11951
+    },
+    {
+      "checkpoint": "o",
+      "path": "moving_pad_min_cost_flow_audit.md",
+      "sha256": "46762cd970b1a103cbf8c9d2f51ad3c2773f39f8eddfd45c50e2ebd9d712593b",
+      "bytes": 16503
+    },
+    {
+      "checkpoint": "o",
+      "path": "multiresource_choice_majorant_and_cascade.md",
+      "sha256": "ea462659d37427a42f1b6d646450d8c737b6d6dd78ac7cb54f34fa1f685062f9",
+      "bytes": 13821
+    },
+    {
+      "checkpoint": "o",
+      "path": "multisource_rooted_approximate_ball_forest.md",
+      "sha256": "6cf107ce443348ebd6e2e62c8666b280bbeb547a483154ebef27e2bbb87d78ce",
+      "bytes": 11355
+    },
+    {
+      "checkpoint": "o",
+      "path": "near_equal_large_sizes_bottleneck_independent_audit.md",
+      "sha256": "02a665267ce80857755176d6782edef3b334b3f8c04bbfd7882e4837fc5d0889",
+      "bytes": 9937
+    },
+    {
+      "checkpoint": "o",
+      "path": "near_equal_large_sizes_bottleneck_makespan_draft.md",
+      "sha256": "8da9df207d12fe5bd0616a546862df1425f465d9fea94afdbe273688ba749fbb",
+      "bytes": 16995
+    },
+    {
+      "checkpoint": "o",
+      "path": "near_equal_large_sizes_bottleneck_root_audit.md",
+      "sha256": "e8427980039e51bdde8ccb01c89861ebcb04473224259e83940cbb79599dbf70",
+      "bytes": 5578
+    },
+    {
+      "checkpoint": "o",
+      "path": "near_two_refined_parameter_zero_oracle_barrier.md",
+      "sha256": "1105ca005404a1d145ea24bf8d8d851730c4ddd68a4dbb562b9fd88775da38c5",
+      "bytes": 8014
+    },
+    {
+      "checkpoint": "o",
+      "path": "non_tight_receiver_and_batch_repairs_root_audit.md",
+      "sha256": "31ff54821f3000fe21fc83499f45c94431991c7e904ebe81600c255ab5fb7005",
+      "bytes": 6453
+    },
+    {
+      "checkpoint": "o",
+      "path": "non_tight_receiver_matching_obstruction.md",
+      "sha256": "1561ee49435df567f946c6cb84f1ed37c64c0746ab65fe35ea06f2087a692c55",
+      "bytes": 14403
+    },
+    {
+      "checkpoint": "o",
+      "path": "nonuniform_parameter_budget_frontiers.md",
+      "sha256": "a0e6c263e112f4f318fa8090d47975ee30bd7cfc4c0f7476e8af875b0f4b0ed8",
+      "bytes": 11111
+    },
+    {
+      "checkpoint": "o",
+      "path": "nonuniform_parameter_budget_independent_audit.md",
+      "sha256": "e2fc7624eb0b23eb55bdc4b9d60efc2ad86894eeca5db624202f9fe5a2027975",
+      "bytes": 3917
+    },
+    {
+      "checkpoint": "o",
+      "path": "normalized_bin_potential_batch_repairs.md",
+      "sha256": "749d1fdaa7cba810cebef4fd8e4d89b39474775d5fd5ac0768818d187794611c",
+      "bytes": 12910
+    },
+    {
+      "checkpoint": "o",
+      "path": "one_value_exact_budget_corank_independent_audit.md",
+      "sha256": "2712b0b513501c0b8c4b28355910c601d268bcda686ae7c807fa07faabe05dd4",
+      "bytes": 9940
+    },
+    {
+      "checkpoint": "o",
+      "path": "one_value_exact_budget_corank_two_allocation.md",
+      "sha256": "5df0c73e4956f71a6136ac06d16e7bf18e2594da69164b94cf8b26216687abfd",
+      "bytes": 17357
+    },
+    {
+      "checkpoint": "o",
+      "path": "one_value_exact_budget_corank_two_independent_audit.md",
+      "sha256": "1d0571ebe458684508d0ab0019950c747b60b9073d6c7a2a47a6738012b52a22",
+      "bytes": 4455
+    },
+    {
+      "checkpoint": "o",
+      "path": "optional_active_machine_basis_independent_audit.md",
+      "sha256": "0ebf1bee9e7b5cb595602008f4af285d4a026655dc4e7aeff6d190e272e73d34",
+      "bytes": 3988
+    },
+    {
+      "checkpoint": "o",
+      "path": "optional_active_machine_basis_oracle_obstruction.md",
+      "sha256": "c60a433afdcc39a617bf36a7b9c742f82dfe96ee418a586d065d7b3bdfbc950b",
+      "bytes": 11429
+    },
+    {
+      "checkpoint": "o",
+      "path": "ordinary_santa_2026_announced_baseline_clarification.md",
+      "sha256": "140c00487d82f3bfcb834f7b25b86d86496c699e8081c0cd558b1995f9de9dc1",
+      "bytes": 6079
+    },
+    {
+      "checkpoint": "o",
+      "path": "player_local_downward_closed_allocation_extension.md",
+      "sha256": "3e2bea2ca511329f07ba74c7bcf18befe19bb5596a63884e38ad47f34ba21aab",
+      "bytes": 13987
+    },
+    {
+      "checkpoint": "o",
+      "path": "polynomial_bit_raw_backend_extension.md",
+      "sha256": "d2bb4b5c7d926173e7dfd0fb132c42f11b3413081c5792ce3f0534aca7cc5be2",
+      "bytes": 8896
+    },
+    {
+      "checkpoint": "o",
+      "path": "polynomial_space_global_gap_conversion.md",
+      "sha256": "fb425ab0096521495e48a4e2347f810aaf98e92b51fd7580d12e2f983f944039",
+      "bytes": 12590
+    },
+    {
+      "checkpoint": "o",
+      "path": "polynomial_space_global_gap_independent_audit.md",
+      "sha256": "2fb7a9cdaeedca61689c3a537e7d6e19ca40ee9fb1f602d4f3c8f7b5d70cd81e",
+      "bytes": 8929
+    },
+    {
+      "checkpoint": "o",
+      "path": "polynomial_space_global_gap_second_audit.md",
+      "sha256": "08801308ca3d3be4e02acde4d74b94596a5e5161577b8578634bdb14a58678d6",
+      "bytes": 13071
+    },
+    {
+      "checkpoint": "o",
+      "path": "potential_compatible_dynamic_forest_independent_audit.md",
+      "sha256": "3e6a6cd112f3d32ca0ef7b69aae52a9a806c269fa6ddbcb74f0fcca8be633006",
+      "bytes": 10236
+    },
+    {
+      "checkpoint": "o",
+      "path": "potential_compatible_dynamic_forest_matching_interface.md",
+      "sha256": "18e9a72c879f23f2b19bb1df11b47bb0901b2e82b7dafc42e314772435b1aeb7",
+      "bytes": 19384
+    },
+    {
+      "checkpoint": "o",
+      "path": "potential_compatible_dynamic_forest_root_audit.md",
+      "sha256": "76ad5e9f234e2be1ae49a5b40de22f2136fb66de7e5347dfe013f02c0bbe964a",
+      "bytes": 10753
+    },
+    {
+      "checkpoint": "o",
+      "path": "prefix_core_adversarial_collapse_audit.md",
+      "sha256": "5fa4ad7d7fbe9bacef6ac634371ad0357dc52064c9c5c94b84e0d1fe03fb6c54",
+      "bytes": 21299
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_apsp_joint_retuning_audit.md",
+      "sha256": "5500d35d5f6f7db977e546c1399b8290161f935cfdf39654559b532eaed669db",
+      "bytes": 36249
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_apsp_joint_retuning_independent_audit.md",
+      "sha256": "09274b77fa109a6915d3d4925c6fbf235b5063466191bb108c871460c2b14cb7",
+      "bytes": 13737
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_dual_reoptimization.md",
+      "sha256": "92e57c8362ced81e7613d499d35fa769aee81ea04a5780065efa1047e7ffd67c",
+      "bytes": 12664
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_dual_uniform_wrapper_audit.md",
+      "sha256": "8c612d543b64723151dde3d30d9e73dde27c2d13bcb37c365edcfc427b051827",
+      "bytes": 13864
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_forest_direct_vertex_inventory.md",
+      "sha256": "485ef68bd2f895960a3addd4f30a6b2ba5f16ffb6dee037615eb51b9f1e7bece",
+      "bytes": 12373
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_haxell_weighted_reanalysis_audit.md",
+      "sha256": "f15e0cb5cdd47aea4189204ed315f09f2199489a621b315d653dbaf97e28a5b9",
+      "bytes": 10635
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_hypergraph_algorithm_weighted_reanalysis.md",
+      "sha256": "c2c8dc24b45557a8643445f329e16540719f9d0d7d9774c2525fe265db702abf",
+      "bytes": 10738
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_kmg_degree_recourse_independent_audit.md",
+      "sha256": "5da88fd38dcf4285fb713f22c0d3e9d8e50eacdd59c9ada41ce59ef9f3ab410d",
+      "bytes": 5226
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_matroid_repeated_owner_interface_gap.md",
+      "sha256": "e9cba687cf8aa5a7b499dfd31173a3826e448487cb62e99e56f00aea7c3eb611",
+      "bytes": 9897
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_strong_forest_joint_retuning_audit.md",
+      "sha256": "4e2dbd276f9cc63aec9346cf59f929fe02593f165d630a7ba308dea9c85a4212",
+      "bytes": 23082
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_strong_forest_marks_anchor_focused_audit.md",
+      "sha256": "76f1b344132f8a9234ed0aeabd02986ff10584c7f6a215398520811e53652451",
+      "bytes": 15758
+    },
+    {
+      "checkpoint": "o",
+      "path": "public_strong_forest_retuning_baseline.md",
+      "sha256": "6d486fd6a20bf47f3da724a4aa3beaa913b96dfff2bb56809804f123ca944621",
+      "bytes": 8507
+    },
+    {
+      "checkpoint": "o",
+      "path": "rank_sensitive_layer_count.md",
+      "sha256": "6a32fe21bab6f0d667d0800ad0749fb059e6bf7bc6ae16528405c5ee2723d79a",
+      "bytes": 16269
+    },
+    {
+      "checkpoint": "o",
+      "path": "rational_comparator_gap_independent_audit.md",
+      "sha256": "b913fab9586bb918cf5ff9b0b017a80e9ee0138067e0c70e45cec45c243e6582",
+      "bytes": 10167
+    },
+    {
+      "checkpoint": "o",
+      "path": "rational_comparator_gap_optimization.md",
+      "sha256": "dbdde6fe7cc4c58f7c130df272ddf070177d9229af2200985c33273213e29686",
+      "bytes": 10083
+    },
+    {
+      "checkpoint": "o",
+      "path": "raw_cycle_to_frozen_detector_bridge.md",
+      "sha256": "4e18eb2d547c41159463896d82d83df9c1c1a5d28d4f5161079b32b486a37f7b",
+      "bytes": 16040
+    },
+    {
+      "checkpoint": "o",
+      "path": "recipient_polymatroid_aggregate_configuration_gap.md",
+      "sha256": "100589fad8f66cc3ba548f85290833c103fd2261f4bc121ef9acd8a62f6dcc15",
+      "bytes": 5149
+    },
+    {
+      "checkpoint": "o",
+      "path": "recipient_polymatroid_below_two_oracle_barrier.md",
+      "sha256": "22cdf576483c14ec68992cb1e0b7f0efdc9df5cb48a544fa54c6ab62367fec25",
+      "bytes": 9409
+    },
+    {
+      "checkpoint": "o",
+      "path": "recipient_polymatroid_oracle_barrier_independent_audit.md",
+      "sha256": "5151fd8ab96a9c3e452ebe2e291d71bc8436c8831d37890441fe14632ff0a1a8",
+      "bytes": 4829
+    },
+    {
+      "checkpoint": "o",
+      "path": "recipient_polymatroid_residual_configuration_independent_audit.md",
+      "sha256": "f5aac19d40d830b9f8f1a0257953075afbb60d5a3bc2dd5e6ed15ae4924cc3dd",
+      "bytes": 7830
+    },
+    {
+      "checkpoint": "o",
+      "path": "recipient_polymatroid_residual_configuration_relaxation.md",
+      "sha256": "da488df5a6bf85ab00d9b11e34b40d80cc608e1477a14c846d086aa30e87085b",
+      "bytes": 15066
+    },
+    {
+      "checkpoint": "o",
+      "path": "recipient_polymatroid_subset_cut_compression.md",
+      "sha256": "e25b374efa36892fb2589cf8b5f0663da0b915a64e6a1c871a30b8fb3da0b903",
+      "bytes": 9023
+    },
+    {
+      "checkpoint": "o",
+      "path": "recipient_polymatroid_subset_cut_independent_audit.md",
+      "sha256": "68bc64b39666386c110d5377a13b03f881d8b1e54aebe59ad0c72db4590eb04a",
+      "bytes": 5521
+    },
+    {
+      "checkpoint": "o",
+      "path": "residual_configuration_bounded_support_xp_independent_audit.md",
+      "sha256": "ecf8e2c7d06d316d0fc7db7c3fb3d0210965aaa0f2e5b0e7d61348a0be932f20",
+      "bytes": 12775
+    },
+    {
+      "checkpoint": "o",
+      "path": "residual_configuration_bounded_support_xp_solver.md",
+      "sha256": "a62041df6fe44bd96f442c945fdbd9080caba6fc80be492cd0097bde02ad6ab7",
+      "bytes": 21578
+    },
+    {
+      "checkpoint": "o",
+      "path": "residual_configuration_box_pricing_and_weak_solver.md",
+      "sha256": "a91e503dbfc83fa39f3287fc0edad70e10ab5037a202d745ee91a3e20fedf19c",
+      "bytes": 19247
+    },
+    {
+      "checkpoint": "o",
+      "path": "residual_configuration_root_audit.md",
+      "sha256": "5c7c3f391437a1ce8a6b8f79c416c9088f18261ee549502a280cf03d0a96df2a",
+      "bytes": 8171
+    },
+    {
+      "checkpoint": "o",
+      "path": "residual_configuration_weak_solver_independent_audit.md",
+      "sha256": "c11e61ed25786584f81c2a4fbdbd163250b056395e30586c3204e6380a50c497",
+      "bytes": 12209
+    },
+    {
+      "checkpoint": "o",
+      "path": "residual_configuration_weak_solver_root_audit.md",
+      "sha256": "f20999a54d8365bcb4c962b95e1224ec0dbda24ecfbe8b5c61e4df36796f10b9",
+      "bytes": 5968
+    },
+    {
+      "checkpoint": "o",
+      "path": "residual_configuration_xp_solver_root_audit.md",
+      "sha256": "6eab4bd90a5a5ed454ac360ee15f666f02d0931c378989adc2e6bdafea2d1b51",
+      "bytes": 7126
+    },
+    {
+      "checkpoint": "o",
+      "path": "resource_matroid_current_blocker_transfer_obstructions.md",
+      "sha256": "2e76531c84fabc620f5b615895d8771b61af18caaea4975e626625c91c8420a2",
+      "bytes": 10492
+    },
+    {
+      "checkpoint": "o",
+      "path": "robust_scenario_selected_flow_corank.md",
+      "sha256": "0034ca98daa8a238e1d892c1462577deccfe43ccd3a10bb1a340329198372906",
+      "bytes": 13628
+    },
+    {
+      "checkpoint": "o",
+      "path": "robust_selected_flow_and_hitting_set_independent_audit.md",
+      "sha256": "87040c32613b52f1843d8fc453af82dc4ac8956c736d03760d5fc82ad2384e4c",
+      "bytes": 7381
+    },
+    {
+      "checkpoint": "o",
+      "path": "root_only_sp_tree_epoch_counterexample.md",
+      "sha256": "a29a6d05121b90795efd597af3bfa63650799f963f6190511aa5f2dfe02c501f",
+      "bytes": 16505
+    },
+    {
+      "checkpoint": "o",
+      "path": "root_only_sp_tree_epoch_root_audit.md",
+      "sha256": "1d1e9eac640742b1da8d09d4e564c0ec56e819313d41be5d602d8c9ee7f1bf42",
+      "bytes": 7851
+    },
+    {
+      "checkpoint": "o",
+      "path": "safe_machine_contraction_independent_audit.md",
+      "sha256": "568b04aa5c9b06b931e1fbf06701a116dc828185a9fc7e6f022affa7d108192f",
+      "bytes": 10818
+    },
+    {
+      "checkpoint": "o",
+      "path": "safe_machine_contraction_rank_kernel_draft.md",
+      "sha256": "fe9dfdf244cb4937811e56bf43512c427c3386bbb22dac49be1d90099926dae9",
+      "bytes": 13455
+    },
+    {
+      "checkpoint": "o",
+      "path": "same_stretch_apsp_comparison_and_root_audit.md",
+      "sha256": "7ce9cb3de579227ff564457ba4402b892bc651588c324b95e4345d29af1d4f19",
+      "bytes": 9521
+    },
+    {
+      "checkpoint": "o",
+      "path": "santa_claus_constellation_transfer_audit.md",
+      "sha256": "f1ceea6b86b4289657f3144e8bdaf8a89ea20bde04d17750adc2a03c98ac8971",
+      "bytes": 12930
+    },
+    {
+      "checkpoint": "o",
+      "path": "scaled_recipient_matroids_binary_configuration_transfer.md",
+      "sha256": "d2d41e06e2264ffb2b7090100f3e57ad2796a0d66fd78e6593a107139d1cc746",
+      "bytes": 11650
+    },
+    {
+      "checkpoint": "o",
+      "path": "scaled_recipient_matroids_configuration_independent_audit.md",
+      "sha256": "8fa48896e8ad64ca83c3fc4816cee17f476fc2026c0694afcf000c526f56af89",
+      "bytes": 6994
+    },
+    {
+      "checkpoint": "o",
+      "path": "scaled_recipient_matroids_configuration_second_audit.md",
+      "sha256": "b0249dd96c5d3fa046d089b904e59f37ccdba2295eef550bd5527139f39dcfeb",
+      "bytes": 7457
+    },
+    {
+      "checkpoint": "o",
+      "path": "scheduling_bottleneck_commitment_independent_audit.md",
+      "sha256": "a1d24ee78fc2a4fe7bdad4e9efa239cfe897ab20b94bb977a8ff799e0eac387d",
+      "bytes": 10000
+    },
+    {
+      "checkpoint": "o",
+      "path": "scheduling_bottleneck_commitment_rank_reduction.md",
+      "sha256": "ee54ce4f511d36512d3a82818b96004a982c64eb91cd9187afd0e1597429e8d6",
+      "bytes": 11207
+    },
+    {
+      "checkpoint": "o",
+      "path": "scheduling_bottleneck_commitment_second_audit.md",
+      "sha256": "dc713d09d1a3b585786d768b83c46d1170cb5b17bb1346e5f97679d2c5d5731a",
+      "bytes": 7777
+    },
+    {
+      "checkpoint": "o",
+      "path": "selected_flow_and_global_conversion_root_audit.md",
+      "sha256": "9ad2130552a1852de0d0827a8429ad3313f9a33000174b19782706e00d16f1bb",
+      "bytes": 12317
+    },
+    {
+      "checkpoint": "o",
+      "path": "selected_multicommodity_flow_corank_scheme.md",
+      "sha256": "06f88b039acd108a0962913cd39e18d2eba6a30bb5fe0bd0e05d608ac7522bf8",
+      "bytes": 24027
+    },
+    {
+      "checkpoint": "o",
+      "path": "selected_multicommodity_flow_independent_audit.md",
+      "sha256": "34099465bb16567052a3c4d59e8b0254170fa9da2c6107c0c39a866728dcaf9d",
+      "bytes": 11029
+    },
+    {
+      "checkpoint": "o",
+      "path": "separated_metric_forest_and_strong_sssp.md",
+      "sha256": "2c380dad454fc0d03730731f65def969fc0d479a4f7c50bbf3cf8df505c53476",
+      "bytes": 37348
+    },
+    {
+      "checkpoint": "o",
+      "path": "separated_metric_forest_independent_audit.md",
+      "sha256": "7508b36ad0f6908b21d077286007e091ce96115c13971037efd87718cb6e9a3e",
+      "bytes": 20063
+    },
+    {
+      "checkpoint": "o",
+      "path": "shared_setup_routing_budget_corank_flow.md",
+      "sha256": "a13ab8ce4d5538ea0d68619a127fb1df1417958710e8198abae96efa0ab48e9f",
+      "bytes": 17278
+    },
+    {
+      "checkpoint": "o",
+      "path": "shared_setup_routing_budget_independent_audit.md",
+      "sha256": "b3513174f057054a1fcba0595815a3dd085bce1004f8874fce55da9d0afbb415",
+      "bytes": 12448
+    },
+    {
+      "checkpoint": "o",
+      "path": "shared_setup_routing_budget_second_audit.md",
+      "sha256": "854dacb80f5624aa50107731c53b577fa4c27c7c111bd49edbd7e15837e76244",
+      "bytes": 8287
+    },
+    {
+      "checkpoint": "o",
+      "path": "simple_path_reporting_from_tree_segments.md",
+      "sha256": "65ed4d99661d5a742cd2876b07424e89a6e9a90b70acd3fe829e88b16a5423a8",
+      "bytes": 14458
+    },
+    {
+      "checkpoint": "o",
+      "path": "six_sevenths_strong_forest_and_gomory_hu_checkpoint.md",
+      "sha256": "54e5a50538292f98dc2dfab157f6eead26e54406152482e6236bba82b43471e8",
+      "bytes": 12941
+    },
+    {
+      "checkpoint": "o",
+      "path": "slack_only_one_sided_matching_client.md",
+      "sha256": "84f414b13d447bc194ba2d86ee8fc43f2d30794e13dd8ce9d2505bca6e8438cc",
+      "bytes": 20609
+    },
+    {
+      "checkpoint": "o",
+      "path": "slack_potential_semantic_certificate.md",
+      "sha256": "534362113f0b59f39e286ade9c03e000ed5beceb7f3f8618d6f02cf79a633223",
+      "bytes": 11289
+    },
+    {
+      "checkpoint": "o",
+      "path": "small_local_detector_exact_solver.md",
+      "sha256": "c28726d8f7af0f3526a4254a01ecd4c3def47e723c6aed1b6bc13a40a1d3dbf3",
+      "bytes": 9704
+    },
+    {
+      "checkpoint": "o",
+      "path": "steiner_colored_pool_strong_forest_candidate.md",
+      "sha256": "b0050ed225f3a09fdf8ee93eef349cfe82352d2b7306ac79c54c0f50dd65eaf2",
+      "bytes": 30184
+    },
+    {
+      "checkpoint": "o",
+      "path": "steiner_pool_metric_inventory_focused_audit.md",
+      "sha256": "66653c4a52248ddb3dd41b2932c59ae9ed48661ffea9053b10588e50eff16706",
+      "bytes": 19137
+    },
+    {
+      "checkpoint": "o",
+      "path": "steiner_pool_no_reset_strong_forest.md",
+      "sha256": "da85fc8c3310fa3bc2c3fba02aa20632a47e5d02245222e07ad1f9e020f1b68b",
+      "bytes": 26345
+    },
+    {
+      "checkpoint": "o",
+      "path": "strong_forest_mechanism_comparison.md",
+      "sha256": "de61626794e46609b8b1697cf767f588f5e77677ca705ac3b6054cb3a5f9bc57",
+      "bytes": 12579
+    },
+    {
+      "checkpoint": "o",
+      "path": "strong_haxell_public_frontier_audit.md",
+      "sha256": "5a2d3d43e8ecfa2b470b250b1768a46c9429f00fc707847b4bc933decf98fb51",
+      "bytes": 9542
+    },
+    {
+      "checkpoint": "o",
+      "path": "subset_cut_compression_root_audit.md",
+      "sha256": "d779372ef73844069caced25d430a7d3f4d7ceec1c9283735d6e734cf7afb98d",
+      "bytes": 4316
+    },
+    {
+      "checkpoint": "o",
+      "path": "tight_dag_and_directed_epoch_independent_audit.md",
+      "sha256": "a6f8b1dc7b7b7f133d127db2545ca9a466a3f8c6d3a726cc19f1b34ca5c24d50",
+      "bytes": 7471
+    },
+    {
+      "checkpoint": "o",
+      "path": "topological_order_transpose_interface_gap.md",
+      "sha256": "c701a02e217e30691445884f4e825337f12e16b9adfb24a83abed352ddcae82a",
+      "bytes": 6875
+    },
+    {
+      "checkpoint": "o",
+      "path": "tracked_terminal_flat_spanner_four_fifths.md",
+      "sha256": "893ab97eafffc3ad88bb0a06195847f88a155e1bc7e56e823da496a12c843726",
+      "bytes": 27225
+    },
+    {
+      "checkpoint": "o",
+      "path": "tracked_terminal_flat_spanner_independent_audit.md",
+      "sha256": "86b88e9af0c522910f66fb12232ab46e8a1603b23577549d804a574fc4c12647",
+      "bytes": 12374
+    },
+    {
+      "checkpoint": "o",
+      "path": "tracked_terminal_flat_spanner_root_audit.md",
+      "sha256": "9b2adca9ff4fac61368dbba9ab28e5e9264f9b7086f3faae05c633dc3308ab40",
+      "bytes": 12806
+    },
+    {
+      "checkpoint": "o",
+      "path": "tracked_terminal_spanner_public_flat_comparator_audit.md",
+      "sha256": "ddb520dcd888ce3557315ccbe22a5a71a4b821e99de5383d5adc52e7c3583422",
+      "bytes": 9355
+    },
+    {
+      "checkpoint": "o",
+      "path": "transfer_public_baselines.md",
+      "sha256": "a7f7140da1ef199699ba2ed6092e806f0a09c6ba3dd0cd6ce4a1be7d3822e93d",
+      "bytes": 26959
+    },
+    {
+      "checkpoint": "o",
+      "path": "transversal_log_rank_signature_boundary.md",
+      "sha256": "7cd260e4c5c4fc76558c609e17391ec3c6a8d4db34c4b7e5b0c6d8f895f9593b",
+      "bytes": 9744
+    },
+    {
+      "checkpoint": "o",
+      "path": "two_size_makespan_corank_three_halves_transfer.md",
+      "sha256": "9c022ce61cdd8c1e4c11564e3cb874ea792997acb64d504c7c342cb1a33ad488",
+      "bytes": 12846
+    },
+    {
+      "checkpoint": "o",
+      "path": "two_size_makespan_few_large_jobs_transfer.md",
+      "sha256": "4890d3bab16df6d2382505943f96f5b8dc6bbebe0a96d14e131688c0ea752485",
+      "bytes": 10598
+    },
+    {
+      "checkpoint": "o",
+      "path": "two_size_makespan_large_rank_independent_audit.md",
+      "sha256": "3e5d92424b797941be94bb8b81ec666a243afb07f39d109738015c9786eebc81",
+      "bytes": 7189
+    },
+    {
+      "checkpoint": "o",
+      "path": "two_size_makespan_private_slack_deficiency.md",
+      "sha256": "312d5b27e6358e6b206a35b918ba8dd7d0982125ef549e1276ac647e977f59e8",
+      "bytes": 17571
+    },
+    {
+      "checkpoint": "o",
+      "path": "two_size_makespan_private_slack_independent_audit.md",
+      "sha256": "f98a482b9561d3d1f53d78bb0356207632d53d939384969e505b0cb0372eb2c3",
+      "bytes": 6229
+    },
+    {
+      "checkpoint": "o",
+      "path": "two_size_private_slack_root_audit.md",
+      "sha256": "6dc133a8a626034d3758b2cd765a34836d7d6380592ec4d3d60920236c30185d",
+      "bytes": 5299
+    },
+    {
+      "checkpoint": "o",
+      "path": "two_value_allocation_large_cover_two_transfer.md",
+      "sha256": "48cd0a49d189205134a7e191a71e06e91564cc76a729eeda04c787e3627200aa",
+      "bytes": 14434
+    },
+    {
+      "checkpoint": "o",
+      "path": "two_value_arbitrary_cost_exact_two_allocation.md",
+      "sha256": "8f78f4a973124ca51ce6074446a8bdcc7f5fb6fd2f00b4b5438e66b44a4b246b",
+      "bytes": 15620
+    },
+    {
+      "checkpoint": "o",
+      "path": "two_value_arbitrary_cost_exact_two_independent_audit.md",
+      "sha256": "8bfa18a191918d00087279785a795bba3a766cee57becae70e921cf752e1290d",
+      "bytes": 14172
+    },
+    {
+      "checkpoint": "o",
+      "path": "two_value_large_cover_factor_two_independent_audit.md",
+      "sha256": "4290db18ffc1a8a538953d7a7a42f193944923dd8fa4143e1b129d04bcffcb8f",
+      "bytes": 11851
+    },
+    {
+      "checkpoint": "o",
+      "path": "type_symmetric_binary_allocation_independent_audit.md",
+      "sha256": "e58a0de63ef363e8fdf25f55f9ae89dcbabbdcb482d5c7fc983fba4224236310",
+      "bytes": 7073
+    },
+    {
+      "checkpoint": "o",
+      "path": "type_symmetric_downward_closed_binary_allocation.md",
+      "sha256": "02dd80b4772cb83cc990713d82fbd04db441c70beae8655ec4b3799f86476113",
+      "bytes": 14471
+    },
+    {
+      "checkpoint": "o",
+      "path": "unit_quota_corank_batch_branching_improvement.md",
+      "sha256": "ff9c52c048d9f7d73e2d5dd231228e88fc9c79a1629b24b776bda93fb4a5fa98",
+      "bytes": 6948
+    },
+    {
+      "checkpoint": "o",
+      "path": "unit_quota_corank_gap_branching.md",
+      "sha256": "4858303f0cddfcaa8e611dcd57688b1fa18571dad003e4adb511ba6876c0f897",
+      "bytes": 13685
+    },
+    {
+      "checkpoint": "o",
+      "path": "unit_quota_makespan_and_oracle_root_audit.md",
+      "sha256": "33b10ac41b37ad108a403abe995b78c5dfc5c4a56dbb04f4804821d7837f20a1",
+      "bytes": 11185
+    },
+    {
+      "checkpoint": "o",
+      "path": "unit_quota_three_transfer_and_discrete_time_gate.md",
+      "sha256": "1e82fd148367742bc0ab1edf408dec36b46bb3d99bb1265c8a06124f74996d83",
+      "bytes": 16147
+    },
+    {
+      "checkpoint": "o",
+      "path": "unrelated_values_and_exact_budget_root_audit.md",
+      "sha256": "a967735fa5bd586a393657a4c173ff128b3b77e0b6aed2478b87cf1b4638b63b",
+      "bytes": 10144
+    },
+    {
+      "checkpoint": "o",
+      "path": "unrelated_values_corank_additive_allocation.md",
+      "sha256": "b75add5d535e57dc3c78129225ba256ef4cc796a26f0299fbfa972389274d42f",
+      "bytes": 18800
+    },
+    {
+      "checkpoint": "o",
+      "path": "unrelated_values_corank_independent_audit.md",
+      "sha256": "5dc670e2b7fc9c2339e76644f7db5de962a828c4606bb2736d4cce1c48abcccc",
+      "bytes": 12884
+    },
+    {
+      "checkpoint": "o",
+      "path": "unrelated_values_exact_budget_additive_allocation.md",
+      "sha256": "db483fd052430027294d8bf98a81b077ed191ae766331babf67c9f1b87b2294c",
+      "bytes": 17087
+    },
+    {
+      "checkpoint": "o",
+      "path": "unrelated_values_exact_budget_independent_audit.md",
+      "sha256": "0284f0dc6e9e56cf8f6aa4e1b2bf6e8be7f5d3f5f8a0ced223007e069821034a",
+      "bytes": 12880
+    },
+    {
+      "checkpoint": "o",
+      "path": "unrestricted_budget_allocation_root_audit.md",
+      "sha256": "52c4419aea76229e6ae5fed998e51776a0d348455addeab3cbbe715053e14161",
+      "bytes": 10614
+    },
+    {
+      "checkpoint": "o",
+      "path": "weak_haxell_current_blocker_growth.md",
+      "sha256": "fe11a81edabec09fdaa8dd98d5a680c5c725fda654de003055a7c2aa36b89341",
+      "bytes": 14718
+    },
+    {
+      "checkpoint": "o",
+      "path": "weak_haxell_current_blocker_independent_audit.md",
+      "sha256": "7e874fe893be766fece0068b82c579b412fffd4220b945fb3a1d95a3986f413c",
+      "bytes": 5928
+    },
+    {
+      "checkpoint": "o",
+      "path": "weak_haxell_current_blocker_root_audit.md",
+      "sha256": "8ff3802c41cf5e5eb8fd596116cea4883ed3b18c41b27d6a1690714feca7523c",
+      "bytes": 9613
+    },
+    {
+      "checkpoint": "o",
+      "path": "weak_haxell_public_parameter_comparison.md",
+      "sha256": "b380b09797e5f12459144c6de977ab513b684cc0c17139957a8c9e575fc622db",
+      "bytes": 6689
+    },
+    {
+      "checkpoint": "o",
+      "path": "weak_haxell_uniform_lifetime_analysis.md",
+      "sha256": "8a4a477c843b26429afa5e4694a7e44f39dc0ae45283bf4afdcd5d77a27cf5f6",
+      "bytes": 16650
+    },
+    {
+      "checkpoint": "o",
+      "path": "weighted_corank_packing_primary_comparison.md",
+      "sha256": "e8916b1717eb1953b01679037bdf83de9f36635e1b3feabdd55d5830eb4f761e",
+      "bytes": 8570
+    },
+    {
+      "checkpoint": "o",
+      "path": "weighted_corank_packing_root_audit.md",
+      "sha256": "a29797853e80f78e64f0710fce1292ba9d1227ac312c738aae6a9ab2c97add89",
+      "bytes": 8989
+    },
+    {
+      "checkpoint": "p",
+      "path": "CHECKPOINT_P_SUMMARY.md",
+      "sha256": "c32b6fa7e4f8666757f217a5551133924582d4fe9f1e27d09201380e62cfcc1f",
+      "bytes": 11974
+    },
+    {
+      "checkpoint": "p",
+      "path": "MANIFEST.md",
+      "sha256": "5d4322d856bce1df00388192b68f13fe6bf62c4069dba0300c7ca583daf18df0",
+      "bytes": 53581
+    },
+    {
+      "checkpoint": "p",
+      "path": "README.md",
+      "sha256": "2b0ce958861a0060de9d61ebeafadbfd11c61c427a9287591cb3c0569cf388d9",
+      "bytes": 93380
+    },
+    {
+      "checkpoint": "p",
+      "path": "attained_set_sparse_separator_gap.md",
+      "sha256": "e35f8b61d462b6bfb4b90c4138d0f49216db82ca37522f3b9f72d0c9ea16cedb",
+      "bytes": 10912
+    },
+    {
+      "checkpoint": "p",
+      "path": "attained_set_sparse_separator_transfer_audit.md",
+      "sha256": "0d6c7a2ef23f98b7bfb5a8ac006d63b7d062774097d2e6f2eea1322237c3db94",
+      "bytes": 8604
+    },
+    {
+      "checkpoint": "p",
+      "path": "current_checkpoint/README.md",
+      "sha256": "9b5eb26780a08dbca48315a5b8cddfef01776bc75d179c0e2a979f9be6b56515",
+      "bytes": 19343
+    },
+    {
+      "checkpoint": "p",
+      "path": "exact_two_global_enumeration_unrelated_allocation.md",
+      "sha256": "7a4f94303e3cdae473cf9e221114796d97b02028640aab48ff52b29c3f174559",
+      "bytes": 5021
+    },
+    {
+      "checkpoint": "p",
+      "path": "exact_two_global_unrelated_transfer_audit.md",
+      "sha256": "99aa6aa67320c7f7223c7f8bff53c5f5a00768629f7d77bd2b32429a058f0d01",
+      "bytes": 5091
+    },
+    {
+      "checkpoint": "p",
+      "path": "integer_quota_approximation_time_tradeoffs.md",
+      "sha256": "a5e87ff0311d5a16e08cc42b5a2b733fd799391908063213607e1678b2f8e505",
+      "bytes": 19247
+    },
+    {
+      "checkpoint": "p",
+      "path": "integer_quota_tradeoffs_independent_audit.md",
+      "sha256": "a6ef7d55e1081f3aaf432d9af0472a4feb6d3b1dd90144742142fefd72fcd1b1",
+      "bytes": 9547
+    },
+    {
+      "checkpoint": "p",
+      "path": "multiple_exact_assignment_budgets_independent_audit.md",
+      "sha256": "7ac3087f633e50b547fc92c5e77736d95a4e92dfcc377e0c451aa720ff621013",
+      "bytes": 5944
+    },
+    {
+      "checkpoint": "p",
+      "path": "multiple_exact_assignment_budgets_obstruction.md",
+      "sha256": "d03b946fd3d45208a8e40ca045f2c68700c44444c3fb709486ad3030de29170d",
+      "bytes": 8846
+    },
+    {
+      "checkpoint": "p",
+      "path": "one_value_shared_setup_assignment_budget_tradeoff.md",
+      "sha256": "1063cf0deced92d32e6d0a1283fed7455e5b142c76acc9f98e9c5ea42e09adc2",
+      "bytes": 11275
+    },
+    {
+      "checkpoint": "p",
+      "path": "one_value_shared_setup_budget_transfer_audit.md",
+      "sha256": "807524c550cf804183ae13790511f5de2adcf44aa40d4505709f40463e61290b",
+      "bytes": 7267
+    },
+    {
+      "checkpoint": "p",
+      "path": "robust_unit_allocation_additive_and_promised_two.md",
+      "sha256": "905a931fd47d95373f2ab4bb4ef02ef1e55d83e49362b0ce0b431e1672615f39",
+      "bytes": 13096
+    },
+    {
+      "checkpoint": "p",
+      "path": "robust_unit_allocation_corank_obstruction.md",
+      "sha256": "6bd16a2337999ec0b8513ad41e4712da4002483895a07369d7b2b7bde0398999",
+      "bytes": 8241
+    },
+    {
+      "checkpoint": "p",
+      "path": "robust_unit_allocation_polymatroid_audit.md",
+      "sha256": "34371eb21468fe5541a61478ae7e19536c882eb512b33a6f70a8dc593286b84f",
+      "bytes": 7446
+    },
+    {
+      "checkpoint": "p",
+      "path": "robust_unit_positive_allocation_four_audit.md",
+      "sha256": "9bf6c26881a850ae1d540d7a3a6413442c8d8624c759925fb5c3085859dcb1a4",
+      "bytes": 5377
+    },
+    {
+      "checkpoint": "p",
+      "path": "unrelated_allocation_primary_baselines.md",
+      "sha256": "fb3ee7c703dc2ad92827da72e61b2dff301fdfd718ccae6b755b5c3bcd618136",
+      "bytes": 8441
+    },
+    {
+      "checkpoint": "p",
+      "path": "unrelated_allocation_shared_setup_budget.md",
+      "sha256": "e4d9e7c7c9a2ef969b9458c437b1328adbe98e9e2cd59fcfd40228381bf32a2d",
+      "bytes": 16171
+    },
+    {
+      "checkpoint": "p",
+      "path": "unrelated_allocation_shared_setup_polymatroid_audit.md",
+      "sha256": "e0f04e002baed96b618f5904265c0211d1b3a783d570ba012c797371bcf1dba7",
+      "bytes": 15604
+    },
+    {
+      "checkpoint": "p",
+      "path": "unrelated_allocation_shared_setup_second_audit.md",
+      "sha256": "48b358493e3655ea3b1546f62c30262c0d59fd7938bbbdf637f7cb6ccb652588",
+      "bytes": 10671
+    },
+    {
+      "checkpoint": "p",
+      "path": "unrelated_joint_role_and_setup_root_audit.md",
+      "sha256": "b7f5f3d669b5081ce1d158eb6dc6960f4a7f1e77bd128e9e5fe93216fffc4f59",
+      "bytes": 12571
+    },
+    {
+      "checkpoint": "p",
+      "path": "unrelated_two_value_integer_tradeoffs.md",
+      "sha256": "af1810e2c03742c86bec5e7f732997f30067ad9dc7f2d4168f94011aeea64137",
+      "bytes": 9307
+    },
+    {
+      "checkpoint": "p",
+      "path": "unrelated_two_value_tradeoffs_independent_audit.md",
+      "sha256": "6a8afacaec88a6c7ad09f5b8cee6b3952b11850363f5b833cee3ae0b770025e4",
+      "bytes": 5638
+    },
+    {
+      "checkpoint": "p",
+      "path": "unrelated_values_joint_role_independent_audit.md",
+      "sha256": "4347336e77933756e454a77382ef104a5b668a099aaab0e8769330a7bf1a7324",
+      "bytes": 12999
+    },
+    {
+      "checkpoint": "p",
+      "path": "unrelated_values_joint_role_near_two_allocation.md",
+      "sha256": "02a3d1b7ea2fab9643bb55c3cbd088b52c8a149e6f077e69ed469acfb526fa59",
+      "bytes": 30215
+    },
+    {
+      "checkpoint": "p",
+      "path": "unrelated_values_joint_role_second_audit.md",
+      "sha256": "3d45fda2c2ff03d15e5e394701350f0446c46a2de2f15936ea573f4335244c3d",
+      "bytes": 18463
+    },
+    {
+      "checkpoint": "q",
+      "path": "CHECKPOINT_Q_SUMMARY.md",
+      "sha256": "380ed8c584070aad5c75504f1c625dd819525d979f66d720c7b22f4350a7c333",
+      "bytes": 12619
+    },
+    {
+      "checkpoint": "q",
+      "path": "MANIFEST.md",
+      "sha256": "986a45903166238f727e7949fce92b0dec60dada5b9504f4970cae085149d92d",
+      "bytes": 57162
+    },
+    {
+      "checkpoint": "q",
+      "path": "README.md",
+      "sha256": "354e6aacae449c56a3e8b2b55a31501dfe0df45005ae4007ba01c3cb5cc22601",
+      "bytes": 94981
+    },
+    {
+      "checkpoint": "q",
+      "path": "activated_machine_profile_allocation_four_audit.md",
+      "sha256": "2f71bfefccda24dcabdf9afb4b8a735801038634b43fab22a4326a26f4db52b8",
+      "bytes": 7304
+    },
+    {
+      "checkpoint": "q",
+      "path": "activated_machine_profile_scheduling.md",
+      "sha256": "60109c83395dc2a4642ad02e360f77f27680a1c2ec368cfd8cf612d6d45860e2",
+      "bytes": 6672
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_accuracy_and_robust_root_audit.md",
+      "sha256": "0aab91b61218bb5237d92efb430bb51832b1a8eea51235557d448d86cf0bb1da",
+      "bytes": 13835
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_processing_bucket_scheduling.md",
+      "sha256": "ed955380a30f94c26775720ed0105c9d1c3bb84bcef4e6bc3e6004ba2b4859a0",
+      "bytes": 12280
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_processing_profile_approximation_scheme.md",
+      "sha256": "d9cbc278bd7fe565cd2ddd2677d923b233d0ec3c2066a676edcb9a8351f67bde",
+      "bytes": 20188
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_processing_profile_polymatroid_audit.md",
+      "sha256": "b4c7a49a0ff2ca9fa5be533f4077e7c854edc26e8a0c9d830fa9bcc51a1b755a",
+      "bytes": 13032
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_processing_profile_transfer_audit.md",
+      "sha256": "a45af75bfcb9dc59f5c38e3b18777140708f28caabef4e5c63391f05067859a0",
+      "bytes": 9778
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_processing_scheduling_allocation_four_audit.md",
+      "sha256": "529cf8b547f501dc5b9ff1aae6c83c9d3664605e8f586babc3b6ec151c4d4ec6",
+      "bytes": 10402
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_processing_scheduling_transfer_audit.md",
+      "sha256": "5a6295e67f1664c4e5272948811270d2281788d750ce4f340a2e181bc16fcd6a",
+      "bytes": 8533
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_processing_seven_profile_polymatroid_audit.md",
+      "sha256": "0271bbb70972d6b53a9d6ec97eb0aac6075a353a694da4b4789b170045470730",
+      "bytes": 8990
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_processing_seven_profile_three_halves.md",
+      "sha256": "c0ca9e6f7e4809d6058b2d66fed2d4a1ea07455b96a4ae2a8b62d9e5512da8df",
+      "bytes": 12112
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_processing_six_profile_polymatroid_audit.md",
+      "sha256": "e856042a8a3eb43f07d4b295c47e0b2ebb1c3d5d5d181aa25352e5b8b1400c80",
+      "bytes": 6605
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_processing_six_profile_three_halves.md",
+      "sha256": "f26b4ce2ae3e5ad1535b3d878ec126b666ec2535b72ab09060f6c7cae469303f",
+      "bytes": 10128
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_value_profile_allocation_approximation_scheme.md",
+      "sha256": "feb0f757d3da43de90a2c0d9ea6b5cd42fe0b30f27d984310b99ecdb3506744e",
+      "bytes": 18348
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_value_profile_polymatroid_audit.md",
+      "sha256": "838018354b156a60866cbcd212ce7edc2a6f7eb947aa282e6bb279bd69b25cf3",
+      "bytes": 15020
+    },
+    {
+      "checkpoint": "q",
+      "path": "arbitrary_value_profile_transfer_audit.md",
+      "sha256": "1b2c420397d5c608f897b023346dd46f080b558cefb0eb4ecbb924d12a4fd29e",
+      "bytes": 10242
+    },
+    {
+      "checkpoint": "q",
+      "path": "current_checkpoint/README.md",
+      "sha256": "9b5eb26780a08dbca48315a5b8cddfef01776bc75d179c0e2a979f9be6b56515",
+      "bytes": 19343
+    },
+    {
+      "checkpoint": "q",
+      "path": "per_machine_two_time_costed_scheduling.md",
+      "sha256": "e9885e964be2e3b681fd684084576e91d57f27d43ef9baf01a5311f48ce185e1",
+      "bytes": 11903
+    },
+    {
+      "checkpoint": "q",
+      "path": "per_machine_two_time_polymatroid_audit.md",
+      "sha256": "7faf2479b684a1c5027065dc479c0b8c987a4abfc8f6b1b6a1c54551e56540e7",
+      "bytes": 10430
+    },
+    {
+      "checkpoint": "q",
+      "path": "robust_unit_allocation_whole_ground_oracle_barrier.md",
+      "sha256": "7703d4b1d6c08a30b823fb524407ebb11523ba4fd63e00da1f9332a12863c429",
+      "bytes": 13656
+    },
+    {
+      "checkpoint": "q",
+      "path": "robust_unit_bounded_certificate_exact_tradeoffs.md",
+      "sha256": "cc9e7c640a72c603722fbfad545c23eb64b46dd71b35dcf8c5030fecbbf74e7a",
+      "bytes": 24111
+    },
+    {
+      "checkpoint": "q",
+      "path": "robust_unit_bounded_certificate_transfer_audit.md",
+      "sha256": "56606b9cbd9b2ee91093b9de7de0136cecdcf0c47c9f3e40463fa0331ca82c43",
+      "bytes": 8752
+    },
+    {
+      "checkpoint": "q",
+      "path": "robust_unit_width_two_fibonacci_gate.md",
+      "sha256": "2cd659016136835ecb82856a4d125cc78ea78560a138663c851fc19f71a864cb",
+      "bytes": 11602
+    },
+    {
+      "checkpoint": "q",
+      "path": "robust_unit_width_two_fibonacci_transfer_audit.md",
+      "sha256": "af56fe63b3dd6e95ca0d605ee5bbd88aed8e76b3ddf3b843f864031586d2a66a",
+      "bytes": 6749
+    },
+    {
+      "checkpoint": "q",
+      "path": "robust_unrelated_common_role_obstructions.md",
+      "sha256": "ef4b60b396710c4865ec2c8d4e8066b1abce6ee4999650bd13aec76bcf3efe55",
+      "bytes": 10739
+    },
+    {
+      "checkpoint": "q",
+      "path": "robust_unrelated_common_role_transfer_audit.md",
+      "sha256": "94be8a3bf163f76948dc1285db760c7211aff643a5d62c7479d3d2b1d2958b68",
+      "bytes": 6086
+    },
+    {
+      "checkpoint": "q",
+      "path": "robust_unrelated_common_setup_additive.md",
+      "sha256": "382816396a76424e723826b6e35eeb9e47c99f64fa236614ad31b918c62d146f",
+      "bytes": 16658
+    },
+    {
+      "checkpoint": "q",
+      "path": "robust_unrelated_common_setup_transfer_audit.md",
+      "sha256": "3cd195dba36ff37d19848441a9ac0b56517f6ab622d64dd0fcd530e65e8d8c59",
+      "bytes": 8151
+    },
+    {
+      "checkpoint": "q",
+      "path": "robust_whole_ground_oracle_allocation_four_audit.md",
+      "sha256": "a64637969b94f9f7f998d9b828a13a6925deddeed2eae595fd78ca7fbc085df3",
+      "bytes": 8187
+    },
+    {
+      "checkpoint": "q",
+      "path": "scheduling_and_profile_primary_baselines.md",
+      "sha256": "b38cd5bcc6edb50dd2efdb5c1366b45dddeb63743f2022cafd5aea9022618fa9",
+      "bytes": 9471
+    },
+    {
+      "checkpoint": "q",
+      "path": "two_scenario_unit_budget_corank_obstruction.md",
+      "sha256": "594217ef3052618c12b7690635a438c87d854892feae4c527f0807c075e1d60f",
+      "bytes": 4877
+    },
+    {
+      "checkpoint": "q",
+      "path": "two_scenario_unit_budget_polymatroid_audit.md",
+      "sha256": "a80929c7969095ee22117fa7334c9f78fc9d4ddfbd2a3b78824b08e69d26600e",
+      "bytes": 5684
+    },
+    {
+      "checkpoint": "q",
+      "path": "unrelated_two_size_costed_scheduling_tradeoff.md",
+      "sha256": "a18bf9c3b78f5e7cbe59d20af9ca55beb6bdd073b5a1989c3055d0b3c3a52dbd",
+      "bytes": 18904
+    },
+    {
+      "checkpoint": "q",
+      "path": "unrelated_two_size_scheduling_polymatroid_audit.md",
+      "sha256": "26633a70b7e1186fa9dc54332d5bc43f47d3260c2ef01577afef90a6abb910c1",
+      "bytes": 14678
+    }
+  ]
+}
