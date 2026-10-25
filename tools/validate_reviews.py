@@ -78,7 +78,7 @@ def main() -> int:
             fail(f"{draft_id}: maturity must state source-only")
         source_dir = relative_path(draft["path"], f"{draft_id}.path")
         if not source_dir.is_dir():
-            fail(f"{draft_id}: source path does not exist: {draft["path"]}")
+            fail(f"{draft_id}: source path does not exist: {draft['path']}")
         for field in ("family_hints", "payloads", "open_actions"):
             values = draft[field]
             if not isinstance(values, list) or not values or not all(isinstance(x, str) and x.strip() for x in values):
