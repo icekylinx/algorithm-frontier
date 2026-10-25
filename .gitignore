@@ -1,0 +1,4 @@
+# Original binary checkpoints remain outside the curated text tree.
+*.zip
+.DS_Store
+__pycache__/

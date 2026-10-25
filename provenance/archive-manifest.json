@@ -1,0 +1,156 @@
+{
+  "generated": "2026-10-25",
+  "source": "original top-level archives",
+  "archives": [
+    {
+      "archive": "deterministic_allocation_transfers_checkpoint_20261025_K.zip",
+      "sha256": "e70819e0a0fbe668f40e4640b0ef4c8ea7a37c7b5a8985947cc7cc64376fe4d4",
+      "bytes": 1847705
+    },
+    {
+      "archive": "deterministic_allocation_transfers_checkpoint_20261025_L.zip",
+      "sha256": "8357263b4835e89d08fe43653dbd36964629333c63b4bbb5ca1d8fef06916cc7",
+      "bytes": 2042364
+    },
+    {
+      "archive": "deterministic_allocation_transfers_checkpoint_20261025_M.zip",
+      "sha256": "0eb9352e59d9c828e04337b8657bfe8caa4a765c7bcf580fa3fdebfea0be3a71",
+      "bytes": 2125574
+    },
+    {
+      "archive": "deterministic_allocation_transfers_checkpoint_20261025_N.zip",
+      "sha256": "3c5dffbe92cfbb3bedfb53d51429fad03666ace2283b5304037aeb107744101a",
+      "bytes": 2277215
+    },
+    {
+      "archive": "deterministic_allocation_transfers_checkpoint_20261025_O.zip",
+      "sha256": "7402c4a73a3f0773052540418183687036651105bd7ada7f5d156d6934e58cad",
+      "bytes": 2454066
+    },
+    {
+      "archive": "deterministic_allocation_transfers_checkpoint_20261025_P.zip",
+      "sha256": "82b63f2835e890f985fa80a047f0dd502eeb1a767aa6b3ecffc4b3252d42fe77",
+      "bytes": 2578371
+    },
+    {
+      "archive": "deterministic_general_graph_transfers_checkpoint_20261025_B.zip",
+      "sha256": "7227aab080b2a072cad32f13418c645e5f2fef86d4b5127b237550c83f6528ed",
+      "bytes": 946953
+    },
+    {
+      "archive": "deterministic_general_graph_transfers_checkpoint_20261025_C.zip",
+      "sha256": "8c7c98754b7a996f1e6b8ba47bbc0f0e9f0d8d576e5cb574d71fc08dd4c710db",
+      "bytes": 992280
+    },
+    {
+      "archive": "deterministic_general_graph_transfers_checkpoint_20261025_D.zip",
+      "sha256": "364cb519e2ec9257013569fe76e55068551b2be34aa029357ea1ee146cdcaf95",
+      "bytes": 1071510
+    },
+    {
+      "archive": "deterministic_general_graph_transfers_checkpoint_20261025_E.zip",
+      "sha256": "7585a498412a479a5787c28a268fe0528bdfb516cafdb5b38220870438d5babe",
+      "bytes": 1232031
+    },
+    {
+      "archive": "deterministic_general_graph_transfers_checkpoint_20261025_F.zip",
+      "sha256": "d2e00d21f62a1028991b3d00b3e516c876b6ac26ab2da6a70c41b821a285b476",
+      "bytes": 1286355
+    },
+    {
+      "archive": "deterministic_general_graph_transfers_checkpoint_20261025_G.zip",
+      "sha256": "a2271e5ba0255b21fc42e8d229e13cc3494bc89b912584cb5a347d36acc29d8a",
+      "bytes": 1350144
+    },
+    {
+      "archive": "deterministic_general_graph_transfers_checkpoint_20261025_H.zip",
+      "sha256": "6dfbffc3a00fcbbbab03e1eef0f6c043ed6dd814ad5ce9d88ba5d32eaf65204c",
+      "bytes": 1422884
+    },
+    {
+      "archive": "deterministic_general_graph_transfers_checkpoint_20261025_I.zip",
+      "sha256": "182d109c08acdfc89e074b1c4e55e720ac52013b2e69b82aac0ebb77456d189b",
+      "bytes": 1610412
+    },
+    {
+      "archive": "deterministic_general_graph_transfers_checkpoint_20261025_J.zip",
+      "sha256": "484bab215ab09d735a8f145b274dc4788eb099725709d3b51d3a388b9f79931d",
+      "bytes": 1781841
+    },
+    {
+      "archive": "deterministic_general_matching_constructive_checkpoint_20261024.zip",
+      "sha256": "b5e1340b16c8eeb6933853d180ae7e7e23abbffc17fc5860e572182abd7f9beb",
+      "bytes": 217340
+    },
+    {
+      "archive": "deterministic_general_matching_degree_reset_checkpoint_20261024.zip",
+      "sha256": "9135d48fd9f872168354890cec5dc3d9f28c92224cd5b87e3b2e0573c6163c96",
+      "bytes": 379544
+    },
+    {
+      "archive": "deterministic_general_matching_direct_checkpoint_20261024.zip",
+      "sha256": "f5e89ebbc8c527d651048ffcaf3a1087a1a9084df6bbca7cbb15bbfdbda5827a",
+      "bytes": 137698
+    },
+    {
+      "archive": "deterministic_general_matching_five_sixths_checkpoint_20261024.zip",
+      "sha256": "6564c771cb3be6cc56137da1e80d8981d6d432b38449e0bb3ddfca48e7f6c90d",
+      "bytes": 473493
+    },
+    {
+      "archive": "deterministic_general_matching_fixed_epsilon_checkpoint_20261024.zip",
+      "sha256": "52a44dd1744b23047f546f01232853b9a649694ff98fa35b9bff89054072aeb4",
+      "bytes": 174986
+    },
+    {
+      "archive": "deterministic_general_matching_four_fifths_checkpoint_20261024.zip",
+      "sha256": "87b78c2f1043a46b12858aa9ec8a2f8491e54c2c4747916c981093148b963351",
+      "bytes": 547474
+    },
+    {
+      "archive": "deterministic_general_matching_four_fifths_revised_checkpoint_20261024.zip",
+      "sha256": "38948821aea2570e3dbd0bf15e66ce7e4e513c62b156a5bee40c7a07dbc5df6d",
+      "bytes": 693339
+    },
+    {
+      "archive": "deterministic_general_matching_interim_20261024.zip",
+      "sha256": "f7b2d360b6cef8fa225cf4b646e2ca278e3d23ab09db040d6e39a971e9474ebb",
+      "bytes": 31305
+    },
+    {
+      "archive": "deterministic_general_matching_length_checkpoint_20261024.zip",
+      "sha256": "15c823a0ff8a89c683baaac3aa558c0beaf79ad55a36b3075949675b4ed22d1b",
+      "bytes": 312627
+    },
+    {
+      "archive": "deterministic_general_matching_manuscript_20261025.zip",
+      "sha256": "f67b7878e5264f9a2e5b36152eb5c5e47b5d738bd43f9a4d8bdd2f669d792729",
+      "bytes": 40986
+    },
+    {
+      "archive": "deterministic_general_matching_n_one_third_checkpoint_20261024.zip",
+      "sha256": "806ec51b5cf1c1e3f8621d6af40e4f8da3111a32659f2ae1c3920d8eb3f0d120",
+      "bytes": 77580
+    },
+    {
+      "archive": "deterministic_general_matching_quantitative_checkpoint_20261024.zip",
+      "sha256": "0a615fcab00aa949cc5ebcd569e9ed5fe18c55c1bd6fb0d81aecd14a9e02e47a",
+      "bytes": 262000
+    },
+    {
+      "archive": "deterministic_general_matching_six_sevenths_checkpoint_20261024.zip",
+      "sha256": "dd1d4f96437c02b5a2aae965dc396ce707d967b2c9279de4a8d717d21ddaa3e9",
+      "bytes": 435926
+    },
+    {
+      "archive": "deterministic_general_matching_uniform_checkpoint_20261024.zip",
+      "sha256": "fb90ff8513326b921873446ca744968ff9f93148883e74a24c59155e8819e5eb",
+      "bytes": 206744
+    },
+    {
+      "archive": "deterministic_matching_and_frozen_sssp_checkpoint_20261025_A.zip",
+      "sha256": "ae9dd6163bfcebab185b1fbdf7a0b9931d3fa631cd7c65d22843307987a0827b",
+      "bytes": 800340
+    }
+  ]
+}
