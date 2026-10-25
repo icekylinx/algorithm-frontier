@@ -39,3 +39,9 @@ Migrate the remaining legacy problem cards, inspect the first workflow result af
 - Added a reading-order table that makes Tier A through Tier D roles visible from the homepage.
 - Extended the result-card schema to incremental SCC, dynamic MSF, selected flow, min-cost flow, degree-constrained subgraphs, and five scheduling/profile records.
 - Added a backlog review report for those migrated cards and registered the matching, APSP, and incremental SSSP cards under the dynamic-graph review surface.
+
+## 2026-10-25 — third review pass
+
+- Added prose-first cards and backlog reviews for scheduling profiles and allocation/robustness records.
+- Expanded the registry to eleven review surfaces, including explicit finite-check paths and a stronger check that every recorded path exists.
+- Added a CI whitespace gate and documented the no-schedule, checkpoint-triggered maintenance loop.

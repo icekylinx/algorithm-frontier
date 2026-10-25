@@ -29,7 +29,9 @@ Use prose-first complexity on GitHub-facing pages. Keep time, space, update, que
 
 ## 6. Verify and publish
 
-Run structural validation, the display-notation check, incremental-source verification, and `git diff --check`. Commit a coherent batch, push to `main`, inspect the workflow result, then record the commit in [`HISTORY.md`](../HISTORY.md).
+Run structural validation, the display-notation check, incremental-source verification, review-registry validation, reviewed-link validation, and `git diff --check`. Proof, algorithm, and source review lanes can run in parallel; a result moves forward only when its open issues and finite-check boundary are recorded. Commit a coherent batch, push to `main`, inspect the workflow result, then record the commit in [`HISTORY.md`](../HISTORY.md).
+
+No scheduled job is installed. The loop is re-entered during an active maintenance pass or after a new Library checkpoint is discovered, with the next review trigger recorded in the registry.
 
 ## 7. Re-audit
 

@@ -211,6 +211,54 @@
       "reports": [
         "reviews/backlog/legacy-result-cards.md"
       ]
+    },
+    {
+      "id": "scheduling-profile-backlog",
+      "path": "problems",
+      "tier": "B",
+      "status": "needs-follow-up",
+      "last_reviewed": "2026-10-25",
+      "proof_review": "reviews/backlog/scheduling-profile-records.md",
+      "algorithm_review": "reviews/backlog/scheduling-profile-records.md",
+      "source_review": "reviews/backlog/scheduling-profile-records.md",
+      "finite_checks": [
+        "problems/many-size-scheduling/verify/many_small_sizes_workload_independent_audit.md",
+        "problems/six-profile-three-halves/verify/arbitrary_processing_six_profile_polymatroid_audit.md",
+        "problems/two-time-scheduling/verify/per_machine_two_time_polymatroid_audit.md"
+      ],
+      "formal_verification": "not-claimed",
+      "open_issues": [
+        "Complete independent proof reviews for the three profile records.",
+        "Audit every additive factor and the source-defined profile functions.",
+        "Reopen when a checkpoint changes the processing model or assignment-budget contract."
+      ],
+      "reports": [
+        "reviews/backlog/scheduling-profile-records.md"
+      ]
+    },
+    {
+      "id": "allocation-robustness-backlog",
+      "path": "problems",
+      "tier": "B",
+      "status": "needs-follow-up",
+      "last_reviewed": "2026-10-25",
+      "proof_review": "reviews/backlog/allocation-robustness.md",
+      "algorithm_review": "reviews/backlog/allocation-robustness.md",
+      "source_review": "reviews/backlog/allocation-robustness.md",
+      "finite_checks": [
+        "problems/recipient-polymatroid/verify/general_recipient_polymatroid_prefix_four_independent_audit.md",
+        "problems/robust-scenario-flow/verify/robust_selected_flow_and_hitting_set_independent_audit.md",
+        "problems/allocation-lower-bounds/verify/recipient_polymatroid_oracle_barrier_independent_audit.md"
+      ],
+      "formal_verification": "not-claimed",
+      "open_issues": [
+        "Complete independent proof reviews for each record.",
+        "Keep scenario-adaptive routing separate from common selected-set assumptions.",
+        "Do not convert oracle or promise-boundary records into explicit-input algorithm claims."
+      ],
+      "reports": [
+        "reviews/backlog/allocation-robustness.md"
+      ]
     }
   ]
 }

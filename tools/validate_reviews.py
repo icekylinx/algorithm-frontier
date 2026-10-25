@@ -101,8 +101,13 @@ def main() -> int:
                 fail(f"{record_id}: missing report: {report}")
             if not str(path.relative_to(ROOT)).startswith("reviews/"):
                 fail(f"{record_id}: reports must live under reviews/")
-        if not isinstance(record["finite_checks"], list):
+        finite_checks = record["finite_checks"]
+        if not isinstance(finite_checks, list):
             fail(f"{record_id}: finite_checks must be an array")
+        for check in finite_checks:
+            check_path = relative_path(check, f"{record_id}.finite_checks[]")
+            if not check_path.exists():
+                fail(f"{record_id}: missing finite check: {check}")
         if not isinstance(record["open_issues"], list) or not all(isinstance(x, str) and x.strip() for x in record["open_issues"]):
             fail(f"{record_id}: open_issues must be a non-empty-string array")
         if not isinstance(record["formal_verification"], str):

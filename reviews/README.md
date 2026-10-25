@@ -9,7 +9,7 @@ This directory records the current review state of the curated result cards. It 
 - **Source review** checks provenance, checkpoint lineage, attribution, and whether the card points to the exact payload that supports it.
 - **Finite checks** record executable identities, hash checks, or replayable certificates. They are useful evidence, but they are not formal verification of the full algorithm or proof.
 
-A result is promoted only when its README, proof map, source map, and review entry agree about the same model and parameters. The registry is machine-checked by [`tools/validate_reviews.py`](../tools/validate_reviews.py). Relative Markdown links in the curated layer and the low-space source tree are checked by [`tools/check_internal_links.py`](../tools/check_internal_links.py).
+A result is promoted only when its README, proof map, source map, and review entry agree about the same model and parameters. The registry is machine-checked by [`tools/validate_reviews.py`](../tools/validate_reviews.py), including the existence of every recorded finite-check path. Relative Markdown links in the curated layer and the low-space source tree are checked by [`tools/check_internal_links.py`](../tools/check_internal_links.py).
 
 ## Status vocabulary
 

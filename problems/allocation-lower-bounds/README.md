@@ -1,16 +1,18 @@
 # Allocation and scheduling oracle barriers
 
-| Item | Result |
+This is a boundary record for value-oracle lower bounds and configuration
+obstructions.
+
+| Field | Curated statement |
 |---|---|
-| **Guarantee** | Strictly below factor 2 allocation and strictly below 3/2 two-size scheduling are blocked in the stated oracle models. |
-| **Complexity** | Oracle lower-bound regime with `binom(q, q/2)-1` queries in the balanced hidden-rank model. |
-| **Model** | Full rank-value-oracle models and the exact aggregate configuration relaxations named in each source; no explicit-input hardness or optimal-base claim is inferred. |
-| **Status** | internally reviewed research; no formal verification or external peer review. |
-
-The complete proof map, verification pointers, and exact source paths are
-listed below. The original proof source is preserved without mathematical
-rewriting.
-
-**Source.** [`sources/checkpoint-o/recipient_polymatroid_below_two_oracle_barrier.md`](../../sources/checkpoint-o/recipient_polymatroid_below_two_oracle_barrier.md) and the verification paths named in `sources.md`.
+| **Guarantee** | In the stated hidden-rank value-oracle models, strictly below factor two allocation and strictly below factor three-halves two-size scheduling are blocked by the named query barriers. |
+| **Objective and output** | Distinguish what an oracle transcript can identify from what a configuration relaxation can represent; the record outputs a lower-bound or gap statement rather than an allocation algorithm. |
+| **Time or query bound** | The balanced hidden-rank construction requires the binomial number of rank-oracle queries stated by the source, minus one in the adversarial transcript. Configuration gaps retain their own parameterized bases. |
+| **Space** | Not an algorithmic resource claim; the record is a query lower bound and representation boundary. |
+| **Parameters** | `q` is the potential-player count; `r` is the hidden basis rank; the corank parameter is used in the scheduling transfer; the oracle query count and approximation factor are model-specific. |
+| **Model and representation** | Full rank-value-oracle models and the exact aggregate configuration relaxations named by each source. No explicit-input hardness or universal optimal-base claim is inferred. |
+| **Lower-bound scope** | This page is itself a lower-bound record. Oracle-query, configuration-gap, deterministic-ETH, and explicit-input claims remain separate and are never merged. |
+| **Review status** | Internal display and model review; proof and scope follow-up remains in the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). Finite audits are not formal verification. |
+| **Source** | [Recipient-polymatroid oracle barrier](../../sources/checkpoint-o/recipient_polymatroid_below_two_oracle_barrier.md), its [proof map](proof.md), and `verify/`. |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro
