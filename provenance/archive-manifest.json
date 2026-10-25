@@ -33,6 +33,11 @@
       "bytes": 2578371
     },
     {
+      "archive": "deterministic_allocation_transfers_checkpoint_20261025_Q.zip",
+      "sha256": "8ff7b58aafa78cf67747fcd58433f98d8968a11d03ee61c3041497b3b7fc96e5",
+      "bytes": 2752104
+    },
+    {
       "archive": "deterministic_general_graph_transfers_checkpoint_20261025_B.zip",
       "sha256": "7227aab080b2a072cad32f13418c645e5f2fef86d4b5127b237550c83f6528ed",
       "bytes": 946953
