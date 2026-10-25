@@ -1,18 +1,16 @@
 # Processing-bucket scheduling tradeoff
 
-**Current curated result**
+| Item | Result |
+|---|---|
+| **Guarantee** | The profile curve includes 5/3, 11/7, and the approach to 3/2. |
+| **Complexity** | $$ (k+1)^q\,\mathrm{poly}(H+k) $$ with $$\gamma_k=(3\cdot2^k-1)/(2^{k+1}-1)$$. |
+| **Model** | Arbitrary processing profiles and the exact mandatory-job, budget, and profile assumptions in Q. This parameterized curve is not collapsed into the Q PTAS or six-profile theorem. |
+| **Status** | internally reviewed research; no formal verification or external peer review. |
 
-A separate Pareto curve for arbitrary processing profiles, complementing the Q accuracy scheme and six-profile endpoint.
+The complete proof map, verification pointers, and exact source paths are
+listed below. The original proof source is preserved without mathematical
+rewriting.
 
-**Headline bound.** For gamma_k=(3*2^k-1)/(2^(k+1)-1), time is (k+1)^q poly(H+k): k=1 gives 5/3 in 2^q, k=2 gives 11/7 in 3^q, and the curve approaches 3/2 with the stated epsilon tradeoff.
+**Source.** `sources/checkpoint-q/arbitrary_processing_bucket_scheduling.md` and the verification paths in `sources.md`.
 
-**Model and scope.** Arbitrary processing profiles and the exact mandatory-job, budget, and profile assumptions in Q. This parameterized curve is not collapsed into the Q PTAS or six-profile theorem.
-
-**Proof and verification.** The complete original proof remains in [`sources/checkpoint-q/arbitrary_processing_bucket_scheduling.md`](../../sources/checkpoint-q/arbitrary_processing_bucket_scheduling.md). The files in `verify/` are short pointers to unchanged audit notes. This directory records the exact scope and avoids duplicating checkpoint text.
-
----
-
-**Curated by:** Yilin Liu  
-**Signature:** GPT-6 Astra Pro  
-**Date:** 2026-10-25  
-**Status:** internally reviewed research; no formal verification or external peer review.
+**Attribution.** Yilin Liu · GPT-6 Astra Pro

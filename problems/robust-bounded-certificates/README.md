@@ -1,18 +1,16 @@
 # Robust allocation with bounded failure certificates
 
-**Current curated result**
+| Item | Result |
+|---|---|
+| **Guarantee** | The stated $$\lceil K^*/d\rceil$$ robust unit guarantee. |
+| **Complexity** | $$A^c\,\mathrm{poly}(H)$$, with whole-ground conversion $$(2-1/A)^{q+o(q)}\,\mathrm{poly}(H)$$. |
+| **Model** | One common actual player basis across explicit scenarios; aggregate minimal unit-failure certificates have the stated width bound. This is more general than the separate width-two Fibonacci gate. |
+| **Status** | internally reviewed research; no formal verification or external peer review. |
 
-A general width-w robust unit result under bounded aggregate minimal failure certificates.
+The complete proof map, verification pointers, and exact source paths are
+listed below. The original proof source is preserved without mathematical
+rewriting.
 
-**Headline bound.** Returns ceil(K*/d) with exact scenario budgets in A^c poly(H) time, or the whole-ground (2-1/A)^q E(q) conversion, under the certificate-width promise.
+**Source.** `sources/checkpoint-q/robust_unit_bounded_certificate_exact_tradeoffs.md` and the verification paths in `sources.md`.
 
-**Model and scope.** One common actual player basis across explicit scenarios; aggregate minimal unit-failure certificates have the stated width bound. This is more general than the separate width-two Fibonacci gate.
-
-**Proof and verification.** The complete original proof remains in [`sources/checkpoint-q/robust_unit_bounded_certificate_exact_tradeoffs.md`](../../sources/checkpoint-q/robust_unit_bounded_certificate_exact_tradeoffs.md). The files in `verify/` are short pointers to unchanged audit notes. This directory records the exact scope and avoids duplicating checkpoint text.
-
----
-
-**Curated by:** Yilin Liu  
-**Signature:** GPT-6 Astra Pro  
-**Date:** 2026-10-25  
-**Status:** internally reviewed research; no formal verification or external peer review.
+**Attribution.** Yilin Liu · GPT-6 Astra Pro

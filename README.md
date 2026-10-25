@@ -1,83 +1,53 @@
 # Algorithm Frontier
 
-**Stable repository:** `algorithm-frontier`  
-**Attribution:** Yilin Liu  · **AI contribution identifier:** GPT-6 Astra Pro  
-**License:** Apache License 2.0  
-**Citation rules:** [`PROTOCOL.md`](PROTOCOL.md) · [`CITATION.cff`](CITATION.cff)
+**Attribution:** Yilin Liu · **AI contribution identifier:** GPT-6 Astra Pro
+**License:** Apache License 2.0
+**Citation:** [`PROTOCOL.md`](PROTOCOL.md) · [`CITATION.cff`](CITATION.cff)
 
-This repository curates the strongest supported result for each distinct
-problem found in the supplied `aaa` research archives. Each problem has a
-stable directory with:
-
-- `README.md`: exact model, headline bound, parameter, and status;
-- `proof.md`: proof map and the assumptions needed for the bound;
-- `verify/`: several independent or root audit notes;
-- `sources/`: the source-note paths used for the curation.
-
-“Strongest” means the best non-dominated guarantee **within the same stated
-model and parameter scope**. Incomparable parameterizations remain separate.
-Superseded bounds are moved to `history/` or retained only in provenance; they
-are not presented as current results. Conditional constructions say exactly
-which external primitive or internal contract is assumed.
+Algorithm Frontier presents exact algorithms, approximation schemes, dynamic
+graph algorithms, and their proof and verification records. Each problem has a
+compact README, a proof map, and several verification entries. The complete
+mathematical source is linked from the problem directory.
 
 ## Main results
 
-The current headline results are listed here before the detailed frontier:
+| Problem | Main guarantee | Complexity or resource bound | Scope |
+|---|---|---|---|
+| [Deterministic general-graph maximum matching](problems/general-matching/) | Exact maximum-cardinality matching | $$O(n+m)+(m_s+1)\exp(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5}))$$ | Conditional backend contract; arbitrary undirected graphs |
+| [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/) | Exact indexed witness | $$C+\mathrm{poly}(n,L)2^{En}$$, $$E<0.4964618056$$ | Arbitrary signed binary integers |
+| [Deterministic low-space Subset Sum](problems/subset-sum-low-space-deterministic/) | Exact indexed witness | Time $$\mathrm{poly}(n,L)2^{n/2}$$; space $$\mathrm{poly}(n,L)2^{E_Sn}$$, $$E_S<0.1826163578$$ | Same input model; separate algorithm |
+| [Selected splittable flow](problems/selected-flow/) | Rate at least $$(1-\varepsilon)\mathrm{OPT}$$ | $$\Gamma(1/\varepsilon)^c\,\mathrm{poly}(H)$$ | Exact routing capacities and selection constraints |
+| [Static and threshold min-cost flow](problems/min-cost-flow/) | Exact flow and witness recovery | Conditional raw-backend bound with the stated $$E^4$$ numerical term | Static and fixed-threshold clients |
+| [Arbitrary-value allocation](problems/arbitrary-value-allocation-scheme/) | Value at least $$(1-\varepsilon)\mathrm{OPT}$$ | $$\binom{q}{r}\exp(O(r/\varepsilon))\,\mathrm{poly}(H_\varepsilon)$$ | Optional player basis and exact shared budget |
+| [Recipient-polymatroid allocation](problems/recipient-polymatroid/) | Factor $$4-3/r$$ versus integer OPT | $$2^{O(r)}\,\mathrm{poly}(H)$$ | Integral recipient polymatroids |
+| [Arbitrary processing-time scheduling](problems/arbitrary-processing-scheduling/) | Makespan at most $$(1+\varepsilon)\mathrm{OPT}$$ | $$2^{O(q/\varepsilon)}\,\mathrm{poly}(H_\varepsilon)$$ | Mandatory jobs and exact budget |
+| [Exact 3/2 scheduling](problems/six-profile-three-halves/) | Makespan at most $$3\mathrm{OPT}/2$$ | $$6^q\,\mathrm{poly}(H)$$ | Six-profile endpoint |
+| [Dynamic APSP](problems/apsp-frontier/) | Pareto update/stretch tradeoffs | Multiple exponential update/stretch points | Fully dynamic graph model |
+| [Dynamic spanners](problems/dynamic-spanners/) | 4/5 and 5/6 recourse regimes | Amortized, with different recourse contracts | Tracked-terminal and full-horizon scopes |
+| [Incremental SSSP and SCC](problems/incremental-sssp/) | Distance/path reporting and exact SCC labels | Conditional 4/5-style envelopes | Incremental directed graphs |
+| [Strong forest and Gomory-Hu transfer](problems/decremental-strong-forest/) | Decremental forest transfer | $$O(n+m)+(m+1)E_6(n+m)$$ | Conditional reduction contract |
+| [Strong Haxell matching](problems/strong-haxell-matching/) | Hypergraph matching or certificate | Rank-sensitive exponential bound | Strong-Haxell model |
 
-- [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/) uses
-  $$C+\operatorname{poly}(n,L)2^{En}$$ with
-  $$E<0.4964618056$$ for arbitrary signed binary inputs.
-- [Deterministic low-space Subset Sum](problems/subset-sum-low-space-deterministic/)
-  uses time $$\operatorname{poly}(n,L)2^{n/2}$$ and writable bits
-  $$\operatorname{poly}(n,L)2^{E_Sn}$$ with $$E_S<0.1826163578$$.
-- [Arbitrary-value allocation](problems/arbitrary-value-allocation-scheme/) gives
-  value at least $$(1-\varepsilon)\operatorname{OPT}$$ under the Q model and
-  exact shared budget.
-- [Recipient-polymatroid allocation](problems/recipient-polymatroid/) gives
-  factor $$4-3/r$$ against integer OPT in its stated scope.
-- [Scheduling](problems/six-profile-three-halves/) retains exact $$3/2$$ endpoints
-  and [arbitrary-accuracy schemes](problems/arbitrary-processing-scheduling/).
-- [Selected flow](problems/selected-flow/) gives rate at least
-  $$(1-\varepsilon)\operatorname{OPT}$$ in the stated Gamma-based corank time.
-- [General matching](problems/general-matching/) retains the conditional explicit
-  4/5-style quantitative composition; dynamic graph and hypergraph frontiers are
-  listed in [`OVERVIEW.md`](OVERVIEW.md).
+The [full algorithm index](OVERVIEW.md) lists the remaining allocation,
+scheduling, flow, dynamic graph, and lower-bound modules.
+
+## Problem record format
+
+Each problem directory contains:
+
+- `README.md`: guarantee, complexity, space, model, and status table;
+- `proof.md`: concise proof map with the complete source link;
+- `verify/`: audit notes, source comparisons, or executable-check pointers;
+- `sources.md`: exact provenance paths.
+
+The authored curation layer uses `$$ ... $$` for displayed mathematics. Original
+source files are preserved under `sources/` and retain their own notation and
+license boundaries.
 
 ## Citation
 
 > Yilin Liu and GPT-6 Astra Pro. *Algorithm Frontier*, version 2026.10.25
 > (2026). Apache License 2.0.
 
-For a particular result, cite the repository record and the problem path, for
-example `problems/general-matching/`. Keep the attribution names exactly as
-written, link the canonical license URL, and state whether the cited files were
-changed. Adapted versions must retain the Apache-2.0 license and applicable NOTICE files. The full stable
-protocol is in [`PROTOCOL.md`](PROTOCOL.md).
-
-## Status vocabulary
-
-- **Reviewed research:** root and independent audits are present; this is not a
-  claim of peer review or formal machine verification.
-- **Conditional:** the theorem explicitly assumes named external primitives or
-  an internal implementation contract.
-- **Historical:** retained for traceability but superseded in the same scope.
-- **Negative result:** a lower bound or obstruction with its exact model; it is
-  not an algorithmic guarantee.
-
-The supplied allocation snapshot Q is preserved under `sources/checkpoint-q/` and
-governs the new arbitrary-accuracy allocation and scheduling claims. P is
-preserved under `sources/checkpoint-p/` for its prior allocation frontier.
-Checkpoint O remains under `sources/checkpoint-o/` as the authoritative
-cumulative source for flow, scheduling, and graph-transfer claims not superseded
-by Q. The general-matching manuscript package
-is under `sources/matching-manuscript/`. The imported Subset Sum source record is under
-`sources/subset-sum/`, with its local Apache-2.0 and NOTICE boundary.
-`provenance/archive-manifest.json` records the
-SHA-256 hashes of all original archives in the input directory.
-
-## License boundary
-
-Original curation material is Apache-2.0. Imported source records may contain
-third-party material under different terms; follow their local attribution,
-license, and NOTICE statements. The license does not grant patent, trademark,
-privacy, or other rights that are not held by the licensor.
+Preserve the attribution, cite the problem path and commit, indicate changes,
+and retain the applicable Apache-2.0 and NOTICE files. See [`PROTOCOL.md`](PROTOCOL.md).

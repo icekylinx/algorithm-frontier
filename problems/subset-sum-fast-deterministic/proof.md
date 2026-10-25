@@ -5,7 +5,7 @@ A uniform deterministic exact algorithm for arbitrary signed binary Subset Sum i
 **Headline bound.** The bit running time is
 
 $$
-C+\operatorname{poly}(n,L)2^{En},
+C+\mathrm{poly}(n,L)2^{En},
 \qquad E=\frac{149809813343531}{301754962128739}<0.4964618056.
 $$
 

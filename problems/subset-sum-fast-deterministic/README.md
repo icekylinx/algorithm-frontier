@@ -1,31 +1,17 @@
 # Faster deterministic Subset Sum
 
-**Current curated result**
+| Item | Result |
+|---|---|
+| **Guarantee** | Exact witness recovery for arbitrary signed binary Subset Sum. |
+| **Complexity** | $$C+\mathrm{poly}(n,L)2^{En}$$ with $$E<0.4964618056$$. |
+| **Space** | No space exponent is claimed for this algorithm. |
+| **Model** | The input is an arbitrary signed binary instance with total encoding length L. The theorem decides feasibility exactly and returns an indexed binary witness on YES instances. |
+| **Status** | internally reviewed research; no formal verification or external peer review. |
 
-A uniform deterministic exact algorithm for arbitrary signed binary Subset Sum inputs, including repeated, zero, and negative weights, with indexed witness recovery.
+The complete proof map, verification pointers, and exact source paths are
+listed below. The original proof source is preserved without mathematical
+rewriting.
 
-**Headline bound.** The bit running time is
+**Source.** `sources/subset-sum/combined-proof.md`; verification scripts and reviews are listed in `sources.md`.
 
-$$
-C+\operatorname{poly}(n,L)2^{En},
-\qquad E=\frac{149809813343531}{301754962128739}<0.4964618056.
-$$
-
-No space exponent is claimed for this algorithm.
-
-**Model and scope.** The input is an arbitrary signed binary instance with total encoding length L. The theorem decides feasibility exactly and returns an indexed binary witness on YES instances.
-
-**Proof and verification.** The complete imported proof is preserved at the
-source path in `proof.md`. `verify/` contains source-linked audit and program
-pointers. The faster-time and low-space guarantees are separate executions.
-
-**Source boundary.** The imported subset-sum source project is Apache-2.0 with
-its original NOTICE and third-party attributions retained in
-`sources/subset-sum/licenses/`.
-
----
-
-**Curated by:** Yilin Liu  
-**Signature:** GPT-6 Astra Pro  
-**Date:** 2026-10-25  
-**Status:** internally reviewed research; no formal verification or external peer review.
+**Attribution.** Yilin Liu · GPT-6 Astra Pro

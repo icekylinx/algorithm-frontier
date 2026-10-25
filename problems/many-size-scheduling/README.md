@@ -1,20 +1,16 @@
 # Many-size workload scheduling
 
-**Current curated result**
+| Item | Result |
+|---|---|
+| **Guarantee** | The additive bound $$\max\{\max\{3/2,2-1/D\}\mathrm{OPT}+u,a+\lambda_k\}$$. |
+| **Complexity** | Compressed-rank time $$\Gamma(1/\varepsilon)^k\,\mathrm{poly}(H)$$ under the stated profile condition. |
+| **Model** | Many smaller sizes, large-unit profile and workload polymatroid assumptions in the proof. |
+| **Status** | internally reviewed research; no formal verification or external peer review. |
 
-An arbitrary-size workload construction with an additive smaller-job term.
-
-**Headline bound.** max{max(3/2,2-1/D)OPT+u, a+lambda_k} under the stated compressed rank/commitment conditions; additive u is retained.
-
-**Model and scope.** Many smaller sizes, large-unit profile and workload polymatroid assumptions in the proof.
-
-**Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
+The complete proof map, verification pointers, and exact source paths are
+listed below. The original proof source is preserved without mathematical
+rewriting.
 
 **Source.** `sources/checkpoint-o/many_small_sizes_workload_makespan_transfer.md` and the verification paths in `sources.md`.
 
----
-
-**Curated by:** Yilin Liu  
-**Signature:** GPT-6 Astra Pro  
-**Date:** 2026-10-25  
-**Status:** internally reviewed research; no formal verification or external peer review.
+**Attribution.** Yilin Liu · GPT-6 Astra Pro

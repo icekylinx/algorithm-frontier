@@ -10,7 +10,7 @@ checkpoint note. The source is unchanged.
 **Audit outline:**
 - # Independent audit of the fully dynamic APSP time--stretch curve
 - ## 1. Proof dependencies that were actually checked
-- ## 2. The query does not perform a hidden \(k\)-sized search
+- ## 2. The query does not perform a hidden $$k$$-sized search
 - ### Metric correctness and the reset scales
 - ## 3. Stable roots and disconnected instances
 - ## 4. Arbitrary degree: current incidence, atomic edits, and lifetime counts

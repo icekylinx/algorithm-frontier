@@ -15,7 +15,7 @@ checkpoint note. The source is unchanged.
 - ### Local cutoff and fallback
 - ### Loopless degree bands and weighted witnesses
 
-**Audit excerpt:** **Audit date:** 25 October 2026.   **Object:** `public_apsp_joint_retuning_audit.md`, including its conservative \(q^2rh\) small-instance work allowance and its explicit work-budget substitution for the public batching scheduler.
+**Audit excerpt:** **Audit date:** 25 October 2026.   **Object:** `public_apsp_joint_retuning_audit.md`, including its conservative $$q^2rh$$ small-instance work allowance and its explicit work-budget substitution for the public batching scheduler.
 
 
 ---

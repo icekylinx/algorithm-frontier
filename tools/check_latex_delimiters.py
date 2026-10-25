@@ -14,6 +14,10 @@ for p in paths:
     text=p.read_text(errors='replace')
     if text.count('$$') % 2:
         errors.append(f'{p}: unmatched $$ delimiter')
+    if '\\operatorname' in text:
+        errors.append(f'{p}: unsupported \\operatorname macro; use \\mathrm instead')
+    if '\\(' in text or '\\)' in text or '\\[' in text or '\\]' in text:
+        errors.append(f'{p}: inline or bracket TeX delimiters are not allowed; use $$ ... $$')
 if errors:
     print('LATEX DELIMITER CHECK FAILED')
     print('\n'.join(errors)); sys.exit(1)

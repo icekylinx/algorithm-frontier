@@ -5,9 +5,9 @@ A separate uniform deterministic exact algorithm for the same arbitrary signed b
 **Headline bound.** The bit running time and writable-bit space are
 
 $$
-\operatorname{poly}(n,L)2^{n/2}
+\mathrm{poly}(n,L)2^{n/2}
 \quad\text{and}\quad
-\operatorname{poly}(n,L)2^{E_Sn},
+\mathrm{poly}(n,L)2^{E_Sn},
 \qquad E_S=\frac{18261635770550353}{10^{17}}<0.1826163578.
 $$
 
