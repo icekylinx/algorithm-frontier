@@ -1,39 +1,28 @@
-# Creating the GitHub repository privately
+# Publishing and maintenance
 
-Create the remote as **Private** first. The local repository is already named
-`algorithm-frontier` and has a `main` branch.
+`algorithm-frontier` is a public GitHub repository. The public branch is `main`; all public claims must remain source-linked and must preserve their license boundaries.
 
-## With GitHub CLI
+## Before pushing
 
-After installing `gh` and signing in:
-
-```bash
-gh auth login
-gh repo create algorithm-frontier --private --source . --remote origin --push
-```
-
-Run that command from this repository directory. It creates the private remote,
-adds `origin`, and pushes the current commits. Later batches use:
+Run:
 
 ```bash
-git add .
-git commit -m "Curate <problem area>"
-git push
+python3 tools/validate_curation.py
+python3 tools/check_latex_delimiters.py
+python3 tools/verify_incremental_sources.py
+git diff --check
 ```
 
-## With the GitHub website
+GitHub Actions repeats these checks for pushes and pull requests through `.github/workflows/curation.yml`.
 
-1. On GitHub choose **New repository**.
-2. Set the name to `algorithm-frontier`, choose **Private**, and do not add a
-   README, license, or `.gitignore` because they already exist locally.
-3. Copy the SSH or HTTPS remote URL and run:
+## Adding a checkpoint
 
-```bash
-git remote add origin <REMOTE-URL>
-git push -u origin main
-```
+1. Keep the archive hash and the original checkpoint manifest.
+2. Add the increment under `sources/checkpoint-<letter>/` without flattening its payload.
+3. Record the parent checkpoint, parent archive hash, exclusions, and review scope.
+4. Update the provenance manifests and delta summary.
+5. Link the checkpoint from the relevant complexity or problem index.
 
-Keep the repository private while the remaining modules are being curated.
-Before making it public, review the source-license boundaries, remove or mark
-superseded material according to `MAINTENANCE.md`, and check that every public
-claim has a proof and verify set.
+## Public release discipline
+
+Keep imported manuscripts, notices, and licenses in their source boundary. A curated README may summarize a result, but it must not silently strengthen the source claim. Use the commit SHA in citations and identify any changed curation layer.
