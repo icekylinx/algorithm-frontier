@@ -12,6 +12,8 @@ if not (ROOT / "CITATION.cff").is_file(): errors.append("missing CITATION.cff")
 for d in sorted(p for p in problems.iterdir() if p.is_dir() and p.name != "__pycache__"):
     for name in ("README.md", "proof.md", "sources.md"):
         if not (d / name).is_file(): errors.append(f"{d}: missing {name}")
+    if d.name.startswith("subset-sum-") and not (d / "NOTICE.md").is_file():
+        errors.append(f"{d}: missing imported-source NOTICE.md")
     for record in (d / "README.md", d / "proof.md", d / "sources.md"):
         if record.is_file():
             text = record.read_text(errors="replace")

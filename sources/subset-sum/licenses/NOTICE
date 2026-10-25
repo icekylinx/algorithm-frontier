@@ -1,0 +1,43 @@
+A deterministic Subset Sum bound: manuscript, certificates, and research notes
+
+Author of continuation work: Yilin Liu (repository handle: icekylinx)
+Assistance: OpenAI Codex, including GPT-6 Astra
+Copyright 2026 Yilin Liu (icekylinx) for new continuation code and presentation.
+
+This repository includes a curated, unmodified subset of Swapnil Jain's
+subsetsum-derand repository, pinned at commit
+1daaf519f567dd7a65a00692b08b4ff54b252d24. Its original Apache-2.0 LICENSE,
+NOTICE, proof attributions, and source metadata remain under
+baseline/agents/derandomization/subsetsum-derand-main/.
+
+The pinned exact landscape checker gen_stage4_cells.py is retained without
+modification. The self-contained verifier adapts its Gibbs/chord checker,
+uses rational tangent selection, and derives logarithm bounds independently.
+The adaptation retains its original copyright and license notice.
+
+The retained OpenAI manuscript sources are pinned by
+baseline/sources/openai_commit_metadata.json. Their original Apache-2.0
+license is retained at baseline/sources/openai_LICENSE.txt.
+
+The project builds on the mathematical work of Lixi Ye and Baitian Li,
+Josh Alman and Baitian Li, and the other authors identified in the retained
+source notes and baseline/sources/PROVENANCE.md. Research descriptions
+distinguish self-contained proofs, attributed constructions, numerical
+certificates, finite witness tests, and unresolved steps in other routes.
+
+The round-specific schedule searches, certificate replays, and curation
+tools are local continuation work. No original third-party attribution is
+replaced by this notice. The full upstream Lean snapshot and historical
+packages are kept outside the active repository in verified local archives.
+
+The combined manuscript gives two separate deterministic algorithms.
+Its faster-time construction continues the attributed partial-matching
+and deterministic representation framework. Its low-space construction
+uses the representation layout, modular-stream viewpoint, and separator
+entropy calculation of OpenAI's September 26, 2026 low-space preprint as
+starting points. The manuscript proves the deterministic extraction,
+prime families, shared covers, interval processing, and resource bounds
+used by the new low-space result. The source preprint itself is randomized.
+Greedy multi-prime selection through an implicit counting oracle is
+credited to Jin, Park, Saha, and Xu, ICALP 2026. These sources are distinct
+from the assistance acknowledgment and do not certify the new theorems.

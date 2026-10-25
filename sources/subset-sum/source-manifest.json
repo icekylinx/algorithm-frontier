@@ -1,0 +1,185 @@
+{
+  "source_project": "subset-sum",
+  "records": [
+    {
+      "path": "README.md",
+      "sha256": "1d1253130768324b35d8ac1794f88cd4f10ae1558a6612408968accc1274ba76",
+      "bytes": 1112
+    },
+    {
+      "path": "combined-proof.md",
+      "sha256": "103cd2ebbc35bdb4475fe8c982bd86db4be6da788f61712e48bf70ae0f00fb64",
+      "bytes": 213872
+    },
+    {
+      "path": "fast-time/frontier.md",
+      "sha256": "da169bf48275c980d5747c00aa709d342855c561fe063e53b2eff46dc4aa9ce2",
+      "bytes": 12042
+    },
+    {
+      "path": "licenses/AUTHORS.md",
+      "sha256": "43973fbd2b586a79f2ae2c6d8e2985f576969cdc1fc2dab193ff70a2d3bc0d8c",
+      "bytes": 566
+    },
+    {
+      "path": "licenses/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "path": "licenses/NOTICE",
+      "sha256": "307e4053d737ed31d8bc7e49a2c5a1021e63b05c951ba713a13fe61a05408a78",
+      "bytes": 2518
+    },
+    {
+      "path": "licenses/STATUS.json",
+      "sha256": "c974b69fdda6a3455041c52b97d1d412be7c58efcef93e4a4dea943c096fde98",
+      "bytes": 8293
+    },
+    {
+      "path": "low-space/BIASED_TOP.md",
+      "sha256": "df277b29cf72ab5d80fd40bdee4cec8d110f2c54a4c394aa9cc89c32bedd439a",
+      "bytes": 9580
+    },
+    {
+      "path": "low-space/LINEAR_COVERS.md",
+      "sha256": "2dffbca9df512e4dc0a7f9b235b49a9a416110b588d4ffefc715152e5cc16f1c",
+      "bytes": 4699
+    },
+    {
+      "path": "low-space/OWNERSHIP.md",
+      "sha256": "ba92d6d7e30195b518671c1e81162627322e27bc6104be35662224708a8d7a26",
+      "bytes": 21916
+    },
+    {
+      "path": "low-space/RANGE_BRANCH.md",
+      "sha256": "ed405760d84a75c8bd493ad6e374a82efd792439de992e8220de87ef09930672",
+      "bytes": 8287
+    },
+    {
+      "path": "low-space/RESOURCES.md",
+      "sha256": "bc549a3c6032e721e4690080a3e1dbc833d66412f8080186d59194e1372a12a2",
+      "bytes": 17712
+    },
+    {
+      "path": "low-space/REVIEW.md",
+      "sha256": "31a61479527be9c639ce9ca8b27d493a654a759567d0ae739c02ae13e77369d8",
+      "bytes": 3527
+    },
+    {
+      "path": "low-space/SIMPLIFICATIONS.md",
+      "sha256": "6290cfa802f63a89d6fe4a09d1355008da2bb35c177d2d38d19e33027f9579e4",
+      "bytes": 5684
+    },
+    {
+      "path": "low-space/THEOREM.md",
+      "sha256": "d29b454517915424f422166804ee4677d19a9e2d40317481350e3e0fa41e74bf",
+      "bytes": 13925
+    },
+    {
+      "path": "low-space/current-review.md",
+      "sha256": "32acea0c952452ec514904be94f55fbfd4a291c473b851213bef61b8c585ddff",
+      "bytes": 4786
+    },
+    {
+      "path": "low-space/frontier.md",
+      "sha256": "c7fc565d58b67667629c2b726aa4fbd5727a2637ecdf1f2cc01e84f3907e5756",
+      "bytes": 8078
+    },
+    {
+      "path": "reviews/PROOF_REVIEW.md",
+      "sha256": "1f54027ab793b1cbff6f63407531e78c39afb26ca5c2fa7f1fabb81d548ae0e5",
+      "bytes": 4591
+    },
+    {
+      "path": "reviews/PUBLIC_RESULTS_REVIEW.md",
+      "sha256": "3de627fe0d38448bb1741af4205e91ffb6bfeb9bf02f7e8a87345ccd16bb2228",
+      "bytes": 6038
+    },
+    {
+      "path": "reviews/RESEARCH_MAP.md",
+      "sha256": "d1d9dd5a1d12668be5f947fc6de99479db96a744aaafca7131fb3dee61553411",
+      "bytes": 8534
+    },
+    {
+      "path": "source-commit.txt",
+      "sha256": "6757f10a584b25dde23f3235a6538199883da1348e7788bb79673504fb9afbbf",
+      "bytes": 41
+    },
+    {
+      "path": "verification/check_curated.py",
+      "sha256": "71366e8a909fde381901ea78f145ffec049d7093fac6c56ec74827c314e9090f",
+      "bytes": 4242
+    },
+    {
+      "path": "verification/check_energy.py",
+      "sha256": "0d6e7cb07c87a09ef9b9ad70dfb587eff8202cdf0ef96170a686698b7c8f33c6",
+      "bytes": 3568
+    },
+    {
+      "path": "verification/check_fast_costs.py",
+      "sha256": "3e519907da3524bafabc7b3a31567cf526d307b02c482cc08abdda05ba4e5811",
+      "bytes": 4028
+    },
+    {
+      "path": "verification/check_profile.py",
+      "sha256": "f5cad4cba5392d718c8aa6b0d8fb29861b89012cfbc01cc33681d2c07f8a2e0d",
+      "bytes": 2883
+    },
+    {
+      "path": "verification/check_range_identities.py",
+      "sha256": "5de378d313c49d31b9bd4adf600b82e25b957e73139ea8606530ac08fa83f364",
+      "bytes": 6503
+    },
+    {
+      "path": "verification/check_resources.py",
+      "sha256": "6932c80d9f4201eeb4380212b6dde1363704d13820eb20d1645db27c9ba60129",
+      "bytes": 17098
+    },
+    {
+      "path": "verification/check_structural.py",
+      "sha256": "a7c53631a1593fd2240ae5b229f82f96fae984beec574142a2792a5611b55668",
+      "bytes": 7515
+    },
+    {
+      "path": "verification/verify_proof.py",
+      "sha256": "201a1e3a262875c165404f80465a8562e9142b117d6107523048087fd27be734",
+      "bytes": 27204
+    },
+    {
+      "path": "verification/verify_schedule.py",
+      "sha256": "1ea6dd1271ebbdcc7f722b3f48161d81478c8ce7a2f702b00547d961a6c2dbf6",
+      "bytes": 6563
+    },
+    {
+      "external_source": "../subset-sum/paper/subset-sum.pdf",
+      "sha256": "bdeb95400d450f64cfc27ebbae255718b9a6a26607d0c1375091a4c7b3a4a431",
+      "bytes": 444360,
+      "converted_into": "combined-proof.md and modular Markdown sources"
+    },
+    {
+      "external_source": "../subset-sum/subset-sum-overview.pdf",
+      "sha256": "d2e6d730a0b5d55c5dafd33051c989844de2cfe66751bf51a496e67bfd7ce994",
+      "bytes": 33378,
+      "converted_into": "combined-proof.md and modular Markdown sources"
+    },
+    {
+      "external_source": "../subset-sum/paper/main.tex",
+      "sha256": "ff77ed5a42d72a79197b6881a35cf7982457667b21d88bf5a1eeaea61689945a",
+      "bytes": 215534,
+      "converted_into": "combined-proof.md and modular Markdown sources"
+    },
+    {
+      "external_source": "../subset-sum/paper/overview.tex",
+      "sha256": "b3b6df60babde8457256d3f793853735a4bd1588f0cbc047f15ec127038e6b74",
+      "bytes": 5602,
+      "converted_into": "combined-proof.md and modular Markdown sources"
+    },
+    {
+      "external_source": "../subset-sum/paper/arxiv-source.tar.gz",
+      "sha256": "3f90fe2a4ce9e66f2537669071e84c8c512d20ddae03eb831762e6e3d131fe7e",
+      "bytes": 86577,
+      "converted_into": "combined-proof.md and modular Markdown sources"
+    }
+  ]
+}

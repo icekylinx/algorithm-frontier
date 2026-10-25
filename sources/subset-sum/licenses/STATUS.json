@@ -1,0 +1,171 @@
+{
+  "updated_utc": "2026-10-24T01:14:49+00:00",
+  "title": "A deterministic Subset Sum bound",
+  "author": "Yilin Liu",
+  "repository_handle": "icekylinx",
+  "assistance": "OpenAI Codex, including GPT-6 Astra",
+  "current_round": "rounds/20261024-structural",
+  "proof": "proof.md",
+  "input_scope": "Arbitrary signed integers, repeated and zero weights, arbitrary full binary encoding length L; no density or distribution promise.",
+  "cost_model": "Bit operations and writable bits, with polynomial factors in n and full encoding length L.",
+  "algorithms": {
+    "faster_deterministic": {
+      "time_exponent_exact": "149809813343531/301754962128739",
+      "time_exponent_upper": "0.4964618056",
+      "time": "C + poly(n,L) 2^(E n)",
+      "startup_constant": "Finite and independent of the input; no useful numerical size bound is provided.",
+      "space_exponent_claimed": null,
+      "randomized": false,
+      "witness_recovery": true,
+      "review_status": "INTERNAL_MATHEMATICAL_REVIEW_AND_EXACT_FINITE_CERTIFICATE_PASSED"
+    },
+    "low_space_deterministic": {
+      "time": "poly(n,L) 2^(n/2)",
+      "time_exponent": "1/2",
+      "space": "poly(n,L) 2^(E_S n)",
+      "space_exponent": "18261635770550353/100000000000000000",
+      "space_exponent_decimal": "0.18261635770550353",
+      "randomized": false,
+      "witness_recovery": true,
+      "review_status": "INTEGRATED_SELF_CONTAINED_PROOF_AND_EXACT_CERTIFICATES_PASSED",
+      "space_exponent_upper_decimal": "0.1826163578"
+    }
+  },
+  "separate_algorithms": true,
+  "simultaneous_fast_time_and_low_space_claimed": false,
+  "current_finite_checks": {
+    "command": "make verify-current",
+    "scripts": [
+      "rounds/20261023-joint/check_profile.py",
+      "rounds/20261023-joint/check_fast_costs.py",
+      "rounds/20261024-structural/check_resources.py",
+      "rounds/20261024-structural/check_structural.py",
+      "rounds/20261023-joint/check_energy.py"
+    ],
+    "scope": "Finite numerical certificates and selected exact identities, not a complete solver or formal verification.",
+    "final_joint_run": "PASS: current finite certificates and source-bound profile checked during publication integration.",
+    "completed_checks": {
+      "fast_cost_ledger": "PASS",
+      "space_resource_quadratics": "PASS: two exact roots, five biased polygons, tight capacity/fallback, complete construction and state ledger.",
+      "energy_identities": "PASS: 132 cases and 1056 output comparisons",
+      "circuit_profile": "PASS: all 18 continuous contacts reconstructed, including 204538 new-contact leaves; all 76 scalar comparisons passed.",
+      "ownership_and_linear_covers": "PASS: exact association, weighted owner covers, prefix scores, cube covers and cyclic tensor layouts."
+    },
+    "default_profile_mode": "Cached continuous-contact/source integrity plus freshly recomputed scalar comparisons; full reconstruction uses make verify-current-full."
+  },
+  "historical_verification": {
+    "round": "rounds/20261023-r2",
+    "exponent": "0.4985829",
+    "commands": [
+      "make verify",
+      "make check",
+      "make proof"
+    ],
+    "verifier": "tools/verify_proof.py",
+    "scope": "Earlier schedule only; these commands do not certify the current joint manuscript.",
+    "certificate": "rounds/20261023-r2/exact_design_schedule.json",
+    "final_workflow_run": "PASS: make check, 14 disposable-copy workflow checks."
+  },
+  "lean": {
+    "local_toolchain": "leanprover/lean4:v4.34.0",
+    "scope": "Historical stored rational comparisons only.",
+    "current_theorems_formalized": false,
+    "new_toolchain_installed": false
+  },
+  "paper": {
+    "title": "A deterministic Subset Sum bound",
+    "author": "Yilin Liu",
+    "combined_manuscript": true,
+    "pdf": "paper/subset-sum.pdf",
+    "source": "paper/main.tex",
+    "bibliography": "paper/references.bib",
+    "source_archive": "paper/arxiv-source.tar.gz",
+    "submission_metadata": "paper/submission-metadata.txt",
+    "submission_guide": "docs/ARXIV_SUBMISSION.md",
+    "mathematical_review": "docs/PROOF_REVIEW.md",
+    "public_results_review": "docs/PUBLIC_RESULTS_REVIEW.md",
+    "build_status": "PASS",
+    "arxiv_submitted": false,
+    "pages": 75,
+    "proof_sha256": "103cd2ebbc35bdb4475fe8c982bd86db4be6da788f61712e48bf70ae0f00fb64",
+    "local_engine": "Tectonic 0.17.0; existing cached installation",
+    "display_math_consistency": "PASS: all 368 Markdown displays equal generated LaTeX blocks; 291 consecutive equation labels.",
+    "source_archive_checks": "PASS: all five expected members, no PDF or verifier, source bytes matched.",
+    "structure": "Shared Sections 1–2; Part I I.1–I.5; Part II II.1–II.9; equations 1–291.",
+    "numbering": "Equations 1–291; independent Part I/II section numbering.",
+    "editorial_revision": "Both parts received a language and pagination pass with consistent upward-rounded ten-place exponent bounds. Part I retains its mathematical argument; Part II integrates the tighter structural theorem and complete proof. The time bound remains uniformly half-exponential.",
+    "current_review": "rounds/20261024-structural/MANUSCRIPT.json",
+    "pdf_sha256": "bdeb95400d450f64cfc27ebbae255718b9a6a26607d0c1375091a4c7b3a4a431",
+    "source_archive_sha256": "3f90fe2a4ce9e66f2537669071e84c8c512d20ddae03eb831762e6e3d131fe7e"
+  },
+  "external_peer_review_claimed": false,
+  "full_algorithm_implemented": false,
+  "full_algorithm_formalized": false,
+  "full_openai_049_derandomized": false,
+  "archive_policy": "docs/ARCHIVES.md",
+  "source_originals_moved_to_verified_archives": true,
+  "historical_data_preserved": true,
+  "latest_research_review": {
+    "source": "research/part-I/RECEIVED.json",
+    "record": "research/part-I/FRONTIER.md",
+    "accepted_exponent_unchanged": true,
+    "main_chain_source_files_unchanged": [
+      1,
+      19,
+      29,
+      30
+    ],
+    "new_closed_interface": "Colored total wires to uniform endpoint profiles under the large-seed and transitivity hypotheses of note 97."
+  },
+  "latest_part_II_review": {
+    "source": "research/part-II/structural/RECEIVED.json",
+    "record": "research/part-II/FRONTIER.md",
+    "review": "rounds/20261024-structural/REVIEW.json",
+    "manuscript_frozen": false,
+    "uniform_time_exponent_unchanged": "1/2",
+    "integrated_into_manuscript": true
+  },
+  "current_research_round": "rounds/20261024-structural",
+  "research_theorems": {
+    "deterministic_low_space": {
+      "status": "INTERNAL_REVIEW_AND_EXACT_CERTIFICATES_PASSED",
+      "updated_utc": "2026-10-24T00:00:10.142272+00:00",
+      "time_exponent": "1/2",
+      "space_exponent": "18261635770550353/100000000000000000",
+      "space_exponent_decimal": "0.18261635770550353",
+      "design_capacity": "137/250",
+      "capacity": "54784907311651059/100000000000000000",
+      "fallback_threshold": "20215092688348941/100000000000000000",
+      "paper_and_proof_frozen": false,
+      "source": "research/part-II/structural/RECEIVED.json",
+      "finite_checks": [
+        "rounds/20261024-structural/check_resources.py",
+        "rounds/20261024-structural/check_structural.py",
+        "rounds/20261024-structural/check_range_identities.py"
+      ],
+      "simplifications": [
+        "Retained quarter layers for top and strict locals",
+        "One owner root and three rational quadratics",
+        "One decreasing-cap endpoint root",
+        "Active-range assignment bounds",
+        "Elementary four-cell cyclic tensorization"
+      ],
+      "scope": "Internal mathematical review and finite certificates; not external review, full formalization, a practical solver, or a proof of optimality.",
+      "proof": "research/part-II/structural/THEOREM.md",
+      "resources": "research/part-II/structural/RESOURCES.md",
+      "full_formalization": false,
+      "optimality_claimed": false,
+      "integrated_into_manuscript": true,
+      "manuscript": "proof.md",
+      "space_exponent_upper_decimal": "0.1826163578"
+    }
+  },
+  "repository_cleanup": {
+    "archived_ignored_files": 48,
+    "archived_bytes": 772051,
+    "baseline_original_files_preserved": 287,
+    "current_command": "make verify-all",
+    "publication_files_unchanged_during_research_ingestion": true,
+    "subsequent_paper_update_utc": "2026-10-24T01:14:49+00:00"
+  }
+}

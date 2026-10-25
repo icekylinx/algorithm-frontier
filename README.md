@@ -2,7 +2,7 @@
 
 **Stable repository:** `algorithm-frontier`  
 **Attribution:** Yilin Liu  · **AI contribution identifier:** GPT-6 Astra Pro  
-**License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)  
+**License:** Apache License 2.0  
 **Citation rules:** [`PROTOCOL.md`](PROTOCOL.md) · [`CITATION.cff`](CITATION.cff)
 
 This repository curates the strongest supported result for each distinct
@@ -20,15 +20,38 @@ Superseded bounds are moved to `history/` or retained only in provenance; they
 are not presented as current results. Conditional constructions say exactly
 which external primitive or internal contract is assumed.
 
+## Main results
+
+The current headline results are listed here before the detailed frontier:
+
+- [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/) uses
+  $$C+\operatorname{poly}(n,L)2^{En}$$ with
+  $$E<0.4964618056$$ for arbitrary signed binary inputs.
+- [Deterministic low-space Subset Sum](problems/subset-sum-low-space-deterministic/)
+  uses time $$\operatorname{poly}(n,L)2^{n/2}$$ and writable bits
+  $$\operatorname{poly}(n,L)2^{E_Sn}$$ with $$E_S<0.1826163578$$.
+- [Arbitrary-value allocation](problems/arbitrary-value-allocation-scheme/) gives
+  value at least $$(1-\varepsilon)\operatorname{OPT}$$ under the Q model and
+  exact shared budget.
+- [Recipient-polymatroid allocation](problems/recipient-polymatroid/) gives
+  factor $$4-3/r$$ against integer OPT in its stated scope.
+- [Scheduling](problems/six-profile-three-halves/) retains exact $$3/2$$ endpoints
+  and [arbitrary-accuracy schemes](problems/arbitrary-processing-scheduling/).
+- [Selected flow](problems/selected-flow/) gives rate at least
+  $$(1-\varepsilon)\operatorname{OPT}$$ in the stated Gamma-based corank time.
+- [General matching](problems/general-matching/) retains the conditional explicit
+  4/5-style quantitative composition; dynamic graph and hypergraph frontiers are
+  listed in [`OVERVIEW.md`](OVERVIEW.md).
+
 ## Citation
 
 > Yilin Liu and GPT-6 Astra Pro. *Algorithm Frontier*, version 2026.10.25
-> (2026). CC BY-SA 4.0.
+> (2026). Apache License 2.0.
 
 For a particular result, cite the repository record and the problem path, for
 example `problems/general-matching/`. Keep the attribution names exactly as
 written, link the canonical license URL, and state whether the cited files were
-changed. Adapted versions must remain under CC BY-SA 4.0. The full stable
+changed. Adapted versions must retain the Apache-2.0 license and applicable NOTICE files. The full stable
 protocol is in [`PROTOCOL.md`](PROTOCOL.md).
 
 ## Status vocabulary
@@ -52,7 +75,7 @@ SHA-256 hashes of all original archives in the input directory.
 
 ## License boundary
 
-Original curation material is CC BY-SA 4.0. Source notes may contain quoted or
-third-party material under different terms; follow their local attribution and
-license statements. The license does not grant patent, trademark, privacy, or
-other rights that are not held by the licensor.
+Original curation material is Apache-2.0. Imported source records may contain
+third-party material under different terms; follow their local attribution,
+license, and NOTICE statements. The license does not grant patent, trademark,
+privacy, or other rights that are not held by the licensor.

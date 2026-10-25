@@ -9,17 +9,19 @@ Every citation, quotation, redistribution, or adaptation must retain:
 - **Attribution:** Yilin Liu
 - **AI contribution identifier:** GPT-6 Astra Pro
 - **Repository:** Algorithm Frontier (`algorithm-frontier`)
-- **License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **License:** Apache License 2.0
 
-A citation must link the canonical license URL and identify the version or
-commit used. If files are changed, the citing work must say that changes were
-made. Adapted material must use CC BY-SA 4.0 or a Creative Commons compatible
-share-alike license; no additional restriction may be added.
+A citation must identify the version or commit used. If files are changed, the
+citing work should say that changes were made and must preserve the applicable
+copyright, license, and NOTICE statements. The source directory of an imported
+algorithm may carry additional licenses and notices; those files govern the
+imported material's original boundary.
 
 ## Recommended citation
 
 > Yilin Liu and GPT-6 Astra Pro. *Algorithm Frontier*, version 2026.10.25
-> (2026). CC BY-SA 4.0. Cite the relevant `problems/<name>/` path as well.
+> (2026). Apache License 2.0. Cite the relevant `problems/<name>/` path and
+> commit as well.
 
 For later releases, preserve the original version in citations to an older
 result. A later release may add or correct material, but must not rewrite the
@@ -28,8 +30,9 @@ and verification notes so that a citation remains auditable after curation.
 
 ## Meaning of “verify”
 
-`verify/` files are mathematical audit notes and source comparisons. They are
-not a claim of formal machine verification, peer review, or implementation
-certification. A conditional result must name every external primitive or
-internal contract it assumes. An output verifier proves the returned object's
-validity; it does not independently prove a fast running-time claim.
+`verify/` files are mathematical audit notes, source pointers, or executable
+checks. They are not a claim of formal machine verification, peer review, or
+implementation certification. A conditional result must name every external
+primitive or internal contract it assumes. An output verifier proves the
+returned object's validity; it does not independently prove a fast running-time
+claim.

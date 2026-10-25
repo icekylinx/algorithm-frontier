@@ -22,5 +22,7 @@ A claim can replace an older claim only when all of these are explicit:
 - proof and independent/root audits available;
 - old claim marked historical or superseded in the curation index.
 
-Run `python3 tools/validate_curation.py` before each commit. The script checks
-structure and attribution; it does not prove mathematics.
+Run `python3 tools/validate_curation.py`, `python3 tools/check_latex_delimiters.py`,
+and `python3 tools/verify_incremental_sources.py` before each commit. These
+checks cover structure, attribution, display delimiters, and source hashes;
+they do not prove mathematics.

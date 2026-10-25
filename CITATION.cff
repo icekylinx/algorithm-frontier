@@ -9,7 +9,7 @@ authors:
     affiliation: "Independent research"
   - name: "GPT-6 Astra Pro"
     affiliation: "AI research contribution"
-license: CC-BY-SA-4.0
+license: Apache-2.0
 keywords:
   - algorithms
   - combinatorial optimization
@@ -29,4 +29,4 @@ preferred-citation:
     - name: "GPT-6 Astra Pro"
   year: 2026
   version: "2026.10.25"
-  license: CC-BY-SA-4.0
+  license: Apache-2.0
