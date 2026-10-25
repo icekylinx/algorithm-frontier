@@ -70,7 +70,9 @@ preserved under `sources/checkpoint-p/` for its prior allocation frontier.
 Checkpoint O remains under `sources/checkpoint-o/` as the authoritative
 cumulative source for flow, scheduling, and graph-transfer claims not superseded
 by Q. The general-matching manuscript package
-is under `sources/matching-manuscript/`. `provenance/archive-manifest.json` records the
+is under `sources/matching-manuscript/`. The imported Subset Sum source record is under
+`sources/subset-sum/`, with its local Apache-2.0 and NOTICE boundary.
+`provenance/archive-manifest.json` records the
 SHA-256 hashes of all original archives in the input directory.
 
 ## License boundary

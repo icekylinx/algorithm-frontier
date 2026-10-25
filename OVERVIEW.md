@@ -13,6 +13,8 @@ listed below as separate, parameter-sensitive modules.
 
 | Problem | Current result | Main limitation or status |
 |---|---|---|
+| [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/) | Time exponent E < 0.4964618056 with exact witness recovery | Separate fast-time algorithm; no space exponent claimed |
+| [Deterministic low-space Subset Sum](problems/subset-sum-low-space-deterministic/) | Time exponent 1/2 and writable-space exponent E_S < 0.1826163578 | Separate low-space algorithm; not combined with fast-time guarantee |
 | [Whole-ground allocation](problems/whole-ground-allocation/) | Exact factor 2 for one-value and compulsory two-value rows; fixed-R intrinsic-value tradeoff; base 50/27 in the q+o(q) sense | Exponential-time whole-ground conversion; exact model matters |
 | [One-value exact two](problems/one-value-exact-two/) | Exact factor 2 in (27/4)^c poly(H) | Corank-parameterized scope |
 | [Two-value exact two](problems/two-value-exact-two/) | Exact factor 2 for compulsory two-value allocation | Large-cover/corank parameter; one exact budget |
@@ -36,10 +38,9 @@ listed below as separate, parameter-sensitive modules.
 | [Two-scenario robust hardness](problems/robust-two-scenario-hardness/) | W[1]-hardness for exact admission via k-SUM | Negative result with corank c=k |
 | [Allocation lower bounds](problems/allocation-lower-bounds/) | Oracle barriers below 2 and below 3/2; configuration gaps | Negative results; no explicit-input hardness inferred |
 
-Graph, matching, scheduling, dynamic data-structure, and hypergraph modules are
-being added in later commits. Their source notes are already preserved in the
-O/P snapshots, but they are not treated as curated current results until their
-own README, proof, and verify sets exist.
+Graph, matching, scheduling, dynamic data-structure, hypergraph, and Subset Sum
+modules are now promoted only when their own README, proof, verify, and source
+map are complete. Their original source notes remain in the checkpoint trees.
 
 ## Source precedence
 
@@ -48,8 +49,10 @@ own README, proof, and verify sets exist.
   graph-transfer claims.
 - `sources/matching-manuscript/` is the separate general-matching manuscript
   package.
+- `sources/subset-sum/` contains the converted Markdown source record and
+  third-party license boundary for the two imported Subset Sum algorithms.
 - `provenance/archive-manifest.json` records every original archive hash,
-  including the newly added P archive.
+  including P and Q.
 
 ## Review status
 
