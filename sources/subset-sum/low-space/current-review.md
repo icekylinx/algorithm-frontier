@@ -23,9 +23,9 @@ this ingestion performs no paper build.
 
 | Item | Scope | Review record |
 |---|---|---|
-| General tight low-space theorem | Deterministic exact Subset Sum on arbitrary signed binary inputs, time exponent 1/2, space exponent .18261635770550353 | structural/REVIEW.md |
-| Two individually short normalized ranges | Complete detectable-input branch with unrelated scales and an arbitrary third block; space exponent 1/6 at half-exponential time | STRUCTURAL_BRANCHES.md |
-| Relation spans, factors and core searches | Paid structural algorithms returning exact measured certificates | STRUCTURAL_BRANCHES.md |
+| General tight low-space theorem | Deterministic exact Subset Sum on arbitrary signed binary inputs, time exponent 1/2, space exponent .18261635770550353 | REVIEW.md |
+| Two individually short normalized ranges | Complete detectable-input branch with unrelated scales and an arbitrary third block; space exponent 1/6 at half-exponential time | frontier.md |
+| Relation spans, factors and core searches | Paid structural algorithms returning exact measured certificates | frontier.md |
 | Global low-noise and joint-split objectives | Open existence statements or explicitly conditional transfers | FRONTIER.md |
 
 Component review and finite scalar replay are recorded with the new
@@ -84,4 +84,4 @@ unchanged. No Git staging, commit, or publication was performed.
 
 ## Subsequent manuscript integration
 
-The complete proof and publication files were synchronized on 24 October 2026 to the exact exponent .18261635770550353. At that integration checkpoint Part I was byte-identical; later copyediting adjusted prose in both parts while retaining Part I's mathematical argument. The current paper review is [PROOF_REVIEW.md](../reviews/PROOF_REVIEW.md), and its source/package record is rounds/20261024-structural/MANUSCRIPT.json. The initial freeze above is a historical ingestion boundary.
+The complete proof and publication files were synchronized on 24 October 2026 to the exact exponent .18261635770550353. At that integration checkpoint Part I was byte-identical; later copyediting adjusted prose in both parts while retaining Part I's mathematical argument. The current paper review is [PROOF_REVIEW.md](../reviews/PROOF_REVIEW.md), and its source/package receipt is retained in the source manifest. The initial freeze above is a historical ingestion boundary.

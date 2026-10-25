@@ -49,3 +49,8 @@ Migrate the remaining legacy problem cards, inspect the first workflow result af
 ## 2026-10-25 — workflow repair
 
 - The first whitespace-gate run exposed the checkout depth assumption; the workflow now fetches two commits before running `git diff --check`.
+
+## 2026-10-25 — deep cost and proof review
+
+- Corrected the APSP tradeoff card to match the source's equalized and fixed-constant amortized curves, query scope, and non-constant-stretch boundary.
+- Expanded the R/S, T/U, and low-space proof maps with direct links to every promoted payload and proof component.

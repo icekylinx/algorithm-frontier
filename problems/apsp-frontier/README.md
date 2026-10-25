@@ -6,15 +6,15 @@ This is a Tier A record of incomparable fully dynamic all-pairs shortest-path tr
 |---|---|
 | **Guarantee** | Maintains approximate all-pairs distances under fully dynamic updates with the stretch stated by each row. |
 | **Objective and output** | Trade update work against distance stretch; answer distance queries in polylogarithmic time under the audited hierarchy interface. |
-| **Tradeoff A** | Amortized update factor with leading exponent eleven-fourteenths in the master logarithm, paired with stretch whose leading exponent is six-sevenths times the hierarchy parameter **h**. |
-| **Tradeoff B** | Amortized update factor with leading exponent three-fourths and a square-root dependence on **h**, paired with stretch of order the master parameter divided by **h**. |
+| **Tradeoff A** | Equalized point: amortized update work and metric stretch are both exponential in the four-fifths power of **U** times the one-fifth power of **h**; distance queries take polynomial time in **U**. |
+| **Tradeoff B** | For any fixed positive constant **C**, update work is exponential in the three-fourths power of **U** times the explicit factor **h** to the power `(C + 1) / 4`, while metric stretch is exponential in **U** divided by **h** to the power **C**; queries remain polynomial in **U**. |
 | **Space** | Actual-size hierarchy storage and query structures, charged to the graph inventory and update history; no master-cap padding is materialized. |
-| **Parameters** | **n** is the fixed vertex count; **m** is the current edge count; **N** is the declared polynomial history cap; **U** is log of N plus a constant; **h** is log of U plus a constant. Local depth and branching parameters are rounded as specified in the source. |
+| **Parameters** | **n** is the fixed vertex count; **m** is the current edge count; **N** is the declared polynomial history cap; **U** is log of N plus a constant; **h** is log of U plus a constant. **C** is the fixed stretch-tuning constant in Tradeoff B. Local depth and branching parameters are rounded as specified in the source. |
 | **Model and representation** | Fully dynamic weighted-graph distance oracle with the source’s update encoding, positive polynomial-range lengths, and amortized maintenance. |
 | **Lower-bound scope** | The record is an upper-bound frontier and comparison map. It does not assert that either point is globally optimal. |
 | **Review status** | Internal proof, algorithm, and source review is tracked in the [headline review report](../../reviews/headline/dynamic-graph-frontier.md). Finite audit notes are evidence for the listed tradeoffs; they are not formal verification. |
 
-Read the [proof map](proof.md), [source map](sources.md), and [complexity guide](../../docs/COMPLEXITY.md) for the exact symbolic forms and comparison points.
+Read the [proof map](proof.md), [source map](sources.md), and [complexity guide](../../docs/COMPLEXITY.md) for the exact symbolic forms, the amortized-update scope, and the comparison points. The source does not claim worst-case update time or a constant/polylogarithmic stretch point for Tradeoff B.
 
 **Source.** [APSP time/stretch curve](../../sources/checkpoint-o/fully_dynamic_apsp_time_stretch_curve.md).
 

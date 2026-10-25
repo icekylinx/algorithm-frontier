@@ -18,10 +18,7 @@ for arbitrary signed binary inputs.
 
 ## Proof components
 
-The imported proof is split into ownership, linear-cover, biased-top, range,
-resource, and simplification components. Each component is linked from the
-[low-space source tree](../../sources/subset-sum/low-space/), while this page
-records the public theorem contract and its claim boundary.
+The imported proof is split into [ownership](../../sources/subset-sum/low-space/OWNERSHIP.md), [linear-cover](../../sources/subset-sum/low-space/LINEAR_COVERS.md), [biased-top](../../sources/subset-sum/low-space/BIASED_TOP.md), [range](../../sources/subset-sum/low-space/RANGE_BRANCH.md), [resource](../../sources/subset-sum/low-space/RESOURCES.md), and [simplification](../../sources/subset-sum/low-space/SIMPLIFICATIONS.md) components. The complete theorem statement is preserved in [THEOREM.md](../../sources/subset-sum/low-space/THEOREM.md), while this page records the public theorem contract and its claim boundary.
 
 ## Verification boundary
 
