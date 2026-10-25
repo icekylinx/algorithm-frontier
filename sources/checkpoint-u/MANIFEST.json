@@ -1,0 +1,79 @@
+{
+  "checkpoint": "U",
+  "scope": "Increment only relative to T; no inherited manuscript or prior archive",
+  "snapshot_utc": "2026-10-25 12:46:47 UTC",
+  "language": "English",
+  "parent": {
+    "filename": "deterministic_related_problems_increment_20261025_T.zip",
+    "sha256": "ce5d4260f803c4872e9065ebba8c0c5275087412e78d180dd2c384556f02b0e0"
+  },
+  "mathematical_status": "Complete proofs with full internal mathematical review; not formal verification or external peer review",
+  "unchanged_parent_markdown_files": 12,
+  "payload": [
+    {
+      "file": "CHECKPOINT_U_INCREMENT.md",
+      "bytes": 11186,
+      "sha256": "016c372fd49381c1392ca266f2ab162e4c87336e99dcff047caacf2356841f2e"
+    },
+    {
+      "file": "README_INCREMENT_U.md",
+      "bytes": 3659,
+      "sha256": "22fb8f3d66a3eda4997d172fc7171e156b47804c8d6f9922bbbd8c5f5f175e84"
+    },
+    {
+      "file": "bounded_frequency_root_cap_valuated_fpt.md",
+      "bytes": 27389,
+      "sha256": "81a54cd8721bb655c28cc3c1234fbe33304f19c3abd405fa0b6a51c591948692"
+    },
+    {
+      "file": "deterministic_coverable_matroid_sunflower_kernel.md",
+      "bytes": 13353,
+      "sha256": "5ec0cff68590ee61ba6845235812a1d083d5fb2519004083b7e02f198edb413a"
+    },
+    {
+      "file": "deterministic_sparse_packing_oracle_kernel.md",
+      "bytes": 22308,
+      "sha256": "5e6b53fd418a601dcf14ff91229dfca81c892c78a7b9c33630231186aafc784f"
+    },
+    {
+      "file": "deterministic_transversal_matroid_kernel_transfer.md",
+      "bytes": 12941,
+      "sha256": "21bc37e1b2d99eb0d89abda877ea49b4f11da861879da9e8bcc698f4173333df"
+    },
+    {
+      "file": "disjoint_row_root_target_sharp_lower.md",
+      "bytes": 10832,
+      "sha256": "d7053de7dec514db0eb899686170c5323135dac17e7ada3ea7d77a85b14fd0dd"
+    },
+    {
+      "file": "incremental_primary_baselines_U.md",
+      "bytes": 9840,
+      "sha256": "15dc9d9a263d2b6f8098919fb7eaba71044dcea9886299ceb76304d7ab005b81"
+    },
+    {
+      "file": "laminar_universal_coloring_quadratic_exponent.md",
+      "bytes": 20541,
+      "sha256": "05905ddee8f8a683d254ca60fbca9de1df7883d8dc1c4d24fcf7309be5ca7d78"
+    },
+    {
+      "file": "sparse_root_quota_hash_profile_algorithm.md",
+      "bytes": 19219,
+      "sha256": "9636af803736453d6f89a148c777b16e70c98dcc2fe8054597e6e122673c0bee"
+    },
+    {
+      "file": "valuated_sparse_quota_sunflower_kernel.md",
+      "bytes": 31600,
+      "sha256": "27a7a689e3bfba569d7fc13f7786d07c67fc9a047d656192295f9f580e89aee4"
+    }
+  ],
+  "exclusions": [
+    "previous checkpoint files",
+    "internal review logs",
+    "source downloads",
+    "Lean",
+    "PDF",
+    "executables",
+    "test bundles",
+    "prospective next-increment theorems"
+  ]
+}

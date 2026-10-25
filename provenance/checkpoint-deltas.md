@@ -29,3 +29,9 @@ The original complete archives remain represented by SHA-256 entries in `provena
 - Parent: S archive `0aa96b8c60ff9f866df6cc1cfbae1764a9d016e0351eb1944be343b1d41912ed`.
 - T archive: `deterministic_related_problems_increment_20261025_T.zip`, SHA-256 `ce5d4260f803c4872e9065ebba8c0c5275087412e78d180dd2c384556f02b0e0`, 79,861 bytes.
 - Retained payload: 12 files; increment-only since S; no Lean, PDF, executable, or test bundle.
+
+## U increment
+
+- Parent: T archive `ce5d4260f803c4872e9065ebba8c0c5275087412e78d180dd2c384556f02b0e0`.
+- U archive: `deterministic_related_problems_increment_20261025_U.zip`, SHA-256 `677507376668d4762dfa47a99693dccfeb3869908cb709d69fa0e5440fd2aadd`, 76,875 bytes.
+- Retained payload: 11 files; increment-only since T; 12 unchanged parent markdown files are declared in the manifest; no Lean, PDF, executable, or test bundle.
