@@ -37,3 +37,5 @@ The source-only import deliberately does not modify the prior checkpoint bodies,
 2. Algorithm pass: charge preprocessing, query, output, and exact-arithmetic costs separately; record all dimension gates and fixed-order assumptions.
 3. Source pass: re-open every primary comparator and replace bounded-search language with exact citations only where the source supports it.
 4. Verification pass: add small finite checks only for identities with a clear exhaustive domain; record them as evidence, never as formal verification.
+
+The current finite evidence includes `tools/verify_checkpoint_x_constants.py`, which checks only the exact Subset Sum exponent arithmetic and its strict comparison with the pinned baseline.
