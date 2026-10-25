@@ -12,7 +12,7 @@ Corank-parameterized selected flow with exact capacities, routing budgets, and r
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/selected_multicommodity_flow_corank_scheme.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/selected_multicommodity_flow_corank_scheme.md` and the verification paths named in `sources.md`.
 
 ---
 

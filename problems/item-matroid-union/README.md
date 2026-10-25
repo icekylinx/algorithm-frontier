@@ -12,7 +12,7 @@ The explicit liked-item/player-matroid model with sharp factor-four-minus-three-
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/matroid_union_fat_resource_allocation.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/matroid_union_fat_resource_allocation.md` and the verification paths named in `sources.md`.
 
 ---
 

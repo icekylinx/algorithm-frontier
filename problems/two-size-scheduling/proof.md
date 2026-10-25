@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/two_size_makespan_corank_three_halves_transfer.md`
+**Original source:** `sources/checkpoint-o/two_size_makespan_corank_three_halves_transfer.md`
 
 # A three-halves algorithm for two-size polymatroid scheduling in the corank parameter
 

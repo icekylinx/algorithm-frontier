@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/weak_haxell_public_parameter_comparison.md`
+**Curated source path:** `sources/checkpoint-o/weak_haxell_public_parameter_comparison.md`
 
 The source audit follows.
 

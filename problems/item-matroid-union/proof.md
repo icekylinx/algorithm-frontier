@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/matroid_union_fat_resource_allocation.md`
+**Original source:** `sources/checkpoint-o/matroid_union_fat_resource_allocation.md`
 
 # Matroid union removes the largest-item penalty
 

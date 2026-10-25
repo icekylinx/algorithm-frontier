@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/fully_dynamic_apsp_time_stretch_curve.md`
+**Original source:** `sources/checkpoint-o/fully_dynamic_apsp_time_stretch_curve.md`
 
 # A lower update-time curve for fully dynamic approximate APSP
 

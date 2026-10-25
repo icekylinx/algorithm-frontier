@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/matroid_union_fat_reduction_second_audit.md`
+**Curated source path:** `sources/checkpoint-o/matroid_union_fat_reduction_second_audit.md`
 
 The source audit follows.
 

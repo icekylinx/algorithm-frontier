@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-p/one_value_exact_budget_corank_two_allocation.md`
-- `sources/checkpoint-p/one_value_exact_budget_corank_two_independent_audit.md`
-- `sources/checkpoint-p/arbitrary_cost_residual_budget_second_audit.md`
-- `sources/checkpoint-p/corank_batch_allocation_scheduling_root_audit.md`
+- `sources/checkpoint-o/one_value_exact_budget_corank_two_allocation.md`
+- `sources/checkpoint-o/one_value_exact_budget_corank_two_independent_audit.md`
+- `sources/checkpoint-o/arbitrary_cost_residual_budget_second_audit.md`
+- `sources/checkpoint-o/corank_batch_allocation_scheduling_root_audit.md`
 
 
 ---

@@ -12,7 +12,7 @@ The current factor-four-minus-three-over-r integer-optimum guarantee for arbitra
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/general_recipient_polymatroid_prefix_four_transfer.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/general_recipient_polymatroid_prefix_four_transfer.md` and the verification paths named in `sources.md`.
 
 ---
 

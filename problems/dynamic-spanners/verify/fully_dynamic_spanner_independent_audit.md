@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/fully_dynamic_spanner_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/fully_dynamic_spanner_independent_audit.md`
 
 The source audit follows.
 

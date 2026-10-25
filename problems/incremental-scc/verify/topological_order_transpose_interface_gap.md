@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/topological_order_transpose_interface_gap.md`
+**Curated source path:** `sources/checkpoint-o/topological_order_transpose_interface_gap.md`
 
 The source audit follows.
 

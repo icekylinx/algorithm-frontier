@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/recipient_polymatroid_oracle_barrier_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/recipient_polymatroid_oracle_barrier_independent_audit.md`
 
 The source audit follows.
 

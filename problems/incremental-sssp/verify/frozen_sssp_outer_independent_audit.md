@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/frozen_sssp_outer_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/frozen_sssp_outer_independent_audit.md`
 
 The source audit follows.
 

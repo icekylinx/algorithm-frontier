@@ -10,7 +10,7 @@ A commitment/rank-reduction tradeoff for arbitrary-size scheduling.
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/scheduling_bottleneck_commitment_rank_reduction.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/scheduling_bottleneck_commitment_rank_reduction.md` and the verification paths in `sources.md`.
 
 ---
 

@@ -12,7 +12,7 @@ Exact factor 2 for one-value allocation and compulsory two-value allocation, plu
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/global_exponential_allocation_flow_transfers.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/global_exponential_allocation_flow_transfers.md` and the verification paths named in `sources.md`.
 
 ---
 

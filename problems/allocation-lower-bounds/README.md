@@ -12,7 +12,7 @@ Value-oracle lower bounds and configuration-gap obstructions delimiting the posi
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/recipient_polymatroid_below_two_oracle_barrier.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/recipient_polymatroid_below_two_oracle_barrier.md` and the verification paths named in `sources.md`.
 
 ---
 

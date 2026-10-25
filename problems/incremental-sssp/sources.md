@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-q/frozen_detector_incremental_sssp.md`
-- `sources/checkpoint-q/frozen_sssp_outer_independent_audit.md`
-- `sources/checkpoint-q/frozen_barrier_detector_independent_audit.md`
-- `sources/checkpoint-q/simple_path_reporting_from_tree_segments.md`
+- `sources/checkpoint-o/frozen_detector_incremental_sssp.md`
+- `sources/checkpoint-o/frozen_sssp_outer_independent_audit.md`
+- `sources/checkpoint-o/frozen_barrier_detector_independent_audit.md`
+- `sources/checkpoint-o/simple_path_reporting_from_tree_segments.md`
 
 
 ---

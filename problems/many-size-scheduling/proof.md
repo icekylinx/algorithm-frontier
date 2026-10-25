@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/many_small_sizes_workload_makespan_transfer.md`
+**Original source:** `sources/checkpoint-o/many_small_sizes_workload_makespan_transfer.md`
 
 # Arbitrary small sizes through workload aggregation and per-machine rounding
 

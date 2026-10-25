@@ -12,7 +12,7 @@ Player-dependent values with a precise additive guarantee and a one-budget exten
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/unrelated_values_corank_additive_allocation.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/unrelated_values_corank_additive_allocation.md` and the verification paths named in `sources.md`.
 
 ---
 

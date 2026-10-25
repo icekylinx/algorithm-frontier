@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/global_exponential_allocation_flow_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/global_exponential_allocation_flow_independent_audit.md`
 
 The source audit follows.
 

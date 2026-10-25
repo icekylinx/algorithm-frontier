@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/moving_box_log_barrier_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/moving_box_log_barrier_independent_audit.md`
 
 The source audit follows.
 

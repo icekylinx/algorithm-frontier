@@ -1,7 +1,10 @@
 # Curation and release policy
 
 The repository is intentionally staged. A new checkpoint is first copied into
-`sources/` and recorded in `provenance/archive-manifest.json`. Then one problem
+`sources/` and recorded in `provenance/archive-manifest.json`. Checkpoint storage
+is incremental: O is the complete baseline, P stores only P minus O, and Q stores
+only Q minus P (with each current summary/README/manifest retained). The exact
+byte-level counts are in `provenance/checkpoint-deltas.md`. Then one problem
 at a time is promoted under `problems/`. Each promotion is a separate commit
 with a complete README/proof/verify set.
 

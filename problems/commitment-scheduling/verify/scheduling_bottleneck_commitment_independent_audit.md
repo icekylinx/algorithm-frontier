@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/scheduling_bottleneck_commitment_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/scheduling_bottleneck_commitment_independent_audit.md`
 
 The source audit follows.
 

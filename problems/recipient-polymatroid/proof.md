@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/general_recipient_polymatroid_prefix_four_transfer.md`
+**Original source:** `sources/checkpoint-o/general_recipient_polymatroid_prefix_four_transfer.md`
 
 # Prefix normalization gives factor four for arbitrary recipient polymatroids
 

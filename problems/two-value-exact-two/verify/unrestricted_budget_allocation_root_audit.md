@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/unrestricted_budget_allocation_root_audit.md`
+**Curated source path:** `sources/checkpoint-o/unrestricted_budget_allocation_root_audit.md`
 
 The source audit follows.
 

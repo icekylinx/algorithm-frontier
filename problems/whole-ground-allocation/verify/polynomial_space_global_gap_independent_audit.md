@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/polynomial_space_global_gap_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/polynomial_space_global_gap_independent_audit.md`
 
 The source audit follows.
 

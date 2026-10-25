@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/dynamic_msf_formal_pruning_substitution_audit.md`
+**Curated source path:** `sources/checkpoint-o/dynamic_msf_formal_pruning_substitution_audit.md`
 
 The source audit follows.
 

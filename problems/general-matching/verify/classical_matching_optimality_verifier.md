@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/current_checkpoint/classical_matching_optimality_verifier.md`
+**Curated source path:** `sources/checkpoint-o/current_checkpoint/classical_matching_optimality_verifier.md`
 
 The source audit follows.
 

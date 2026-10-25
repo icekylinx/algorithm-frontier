@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/general_value_matroid_selection_near_two_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/general_value_matroid_selection_near_two_independent_audit.md`
 
 The source audit follows.
 

@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/near_equal_large_sizes_bottleneck_root_audit.md`
+**Curated source path:** `sources/checkpoint-o/near_equal_large_sizes_bottleneck_root_audit.md`
 
 The source audit follows.
 

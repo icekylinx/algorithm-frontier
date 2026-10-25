@@ -10,7 +10,7 @@ Two incomparable dynamic-spanner scopes are retained because their recourse guar
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/tracked_terminal_flat_spanner_four_fifths.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/tracked_terminal_flat_spanner_four_fifths.md` and the verification paths in `sources.md`.
 
 ---
 

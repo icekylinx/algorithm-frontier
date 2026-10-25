@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/unrelated_values_and_exact_budget_root_audit.md`
+**Curated source path:** `sources/checkpoint-o/unrelated_values_and_exact_budget_root_audit.md`
 
 The source audit follows.
 

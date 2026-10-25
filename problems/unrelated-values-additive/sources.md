@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-p/unrelated_values_corank_additive_allocation.md`
-- `sources/checkpoint-p/unrelated_values_corank_independent_audit.md`
-- `sources/checkpoint-p/unrelated_values_exact_budget_independent_audit.md`
-- `sources/checkpoint-p/unrelated_values_and_exact_budget_root_audit.md`
+- `sources/checkpoint-o/unrelated_values_corank_additive_allocation.md`
+- `sources/checkpoint-o/unrelated_values_corank_independent_audit.md`
+- `sources/checkpoint-o/unrelated_values_exact_budget_independent_audit.md`
+- `sources/checkpoint-o/unrelated_values_and_exact_budget_root_audit.md`
 
 
 ---

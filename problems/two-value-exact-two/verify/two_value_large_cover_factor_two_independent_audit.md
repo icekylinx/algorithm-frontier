@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/two_value_large_cover_factor_two_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/two_value_large_cover_factor_two_independent_audit.md`
 
 The source audit follows.
 

@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/one_value_exact_budget_corank_two_allocation.md`
+**Original source:** `sources/checkpoint-o/one_value_exact_budget_corank_two_allocation.md`
 
 # Exact factor two for one-value allocation with arbitrary assignment costs
 

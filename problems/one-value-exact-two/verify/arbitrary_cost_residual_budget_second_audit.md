@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/arbitrary_cost_residual_budget_second_audit.md`
+**Curated source path:** `sources/checkpoint-o/arbitrary_cost_residual_budget_second_audit.md`
 
 The source audit follows.
 

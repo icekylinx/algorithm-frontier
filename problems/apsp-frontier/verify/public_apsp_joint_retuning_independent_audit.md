@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/public_apsp_joint_retuning_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/public_apsp_joint_retuning_independent_audit.md`
 
 The source audit follows.
 

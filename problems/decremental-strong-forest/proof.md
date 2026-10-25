@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/six_sevenths_strong_forest_and_gomory_hu_checkpoint.md`
+**Original source:** `sources/checkpoint-o/six_sevenths_strong_forest_and_gomory_hu_checkpoint.md`
 
 # Checkpoint E: a six-sevenths strong forest and exact Gomory--Hu consequence
 

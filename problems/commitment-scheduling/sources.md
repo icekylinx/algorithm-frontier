@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-q/scheduling_bottleneck_commitment_rank_reduction.md`
-- `sources/checkpoint-q/scheduling_bottleneck_commitment_independent_audit.md`
-- `sources/checkpoint-q/scheduling_bottleneck_commitment_second_audit.md`
-- `sources/checkpoint-q/committed_machine_scheduling_independent_audit.md`
+- `sources/checkpoint-o/scheduling_bottleneck_commitment_rank_reduction.md`
+- `sources/checkpoint-o/scheduling_bottleneck_commitment_independent_audit.md`
+- `sources/checkpoint-o/scheduling_bottleneck_commitment_second_audit.md`
+- `sources/checkpoint-o/committed_machine_scheduling_independent_audit.md`
 
 
 ---

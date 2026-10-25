@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/two_size_makespan_few_large_jobs_transfer.md`
+**Curated source path:** `sources/checkpoint-o/two_size_makespan_few_large_jobs_transfer.md`
 
 The source audit follows.
 

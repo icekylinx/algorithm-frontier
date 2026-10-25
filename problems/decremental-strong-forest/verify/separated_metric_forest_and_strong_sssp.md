@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/separated_metric_forest_and_strong_sssp.md`
+**Curated source path:** `sources/checkpoint-o/separated_metric_forest_and_strong_sssp.md`
 
 The source audit follows.
 

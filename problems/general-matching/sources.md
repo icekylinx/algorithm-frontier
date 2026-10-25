@@ -1,10 +1,10 @@
 # Source map
 
-- `sources/checkpoint-q/current_checkpoint/quantitative_matching_4_5_composition.md`
-- `sources/checkpoint-q/current_checkpoint/current_results_and_frontier.md`
-- `sources/checkpoint-q/current_checkpoint/deterministic_maximum_matching_verifier.md`
-- `sources/checkpoint-q/current_checkpoint/classical_matching_optimality_verifier.md`
-- `sources/checkpoint-q/current_checkpoint/matching_size_kernel_corollary.md`
+- `sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md`
+- `sources/checkpoint-o/current_checkpoint/current_results_and_frontier.md`
+- `sources/checkpoint-o/current_checkpoint/deterministic_maximum_matching_verifier.md`
+- `sources/checkpoint-o/current_checkpoint/classical_matching_optimality_verifier.md`
+- `sources/checkpoint-o/current_checkpoint/matching_size_kernel_corollary.md`
 
 
 ---

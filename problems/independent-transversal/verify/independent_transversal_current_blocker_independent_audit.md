@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/independent_transversal_current_blocker_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/independent_transversal_current_blocker_independent_audit.md`
 
 The source audit follows.
 

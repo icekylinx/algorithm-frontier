@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/rational_comparator_gap_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/rational_comparator_gap_independent_audit.md`
 
 The source audit follows.
 

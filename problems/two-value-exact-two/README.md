@@ -12,7 +12,7 @@ Exact factor two for compulsory players with two intrinsic values and arbitrary 
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/two_value_arbitrary_cost_exact_two_allocation.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/two_value_arbitrary_cost_exact_two_allocation.md` and the verification paths named in `sources.md`.
 
 ---
 

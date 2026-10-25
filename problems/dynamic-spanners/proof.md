@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/tracked_terminal_flat_spanner_four_fifths.md`
+**Original source:** `sources/checkpoint-o/tracked_terminal_flat_spanner_four_fifths.md`
 
 # A direct dynamic spanner from tracked terminal forests
 

@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/recipient_polymatroid_aggregate_configuration_gap.md`
+**Curated source path:** `sources/checkpoint-o/recipient_polymatroid_aggregate_configuration_gap.md`
 
 The source audit follows.
 

@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-p/matroid_union_fat_resource_allocation.md`
-- `sources/checkpoint-p/matroid_sharp_star_and_union_independent_audit.md`
-- `sources/checkpoint-p/matroid_union_fat_reduction_second_audit.md`
-- `sources/checkpoint-p/matroid_quality_and_union_root_audit.md`
+- `sources/checkpoint-o/matroid_union_fat_resource_allocation.md`
+- `sources/checkpoint-o/matroid_sharp_star_and_union_independent_audit.md`
+- `sources/checkpoint-o/matroid_union_fat_reduction_second_audit.md`
+- `sources/checkpoint-o/matroid_quality_and_union_root_audit.md`
 
 
 ---

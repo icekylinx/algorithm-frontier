@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/near_two_refined_parameter_zero_oracle_barrier.md`
+**Curated source path:** `sources/checkpoint-o/near_two_refined_parameter_zero_oracle_barrier.md`
 
 The source audit follows.
 

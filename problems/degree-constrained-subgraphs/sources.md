@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-q/general_degree_constrained_subgraphs.md`
-- `sources/checkpoint-q/degree_constrained_subgraph_independent_audit.md`
-- `sources/checkpoint-q/current_checkpoint/quantitative_matching_4_5_composition.md`
-- `sources/checkpoint-q/current_checkpoint/deterministic_maximum_matching_verifier.md`
+- `sources/checkpoint-o/general_degree_constrained_subgraphs.md`
+- `sources/checkpoint-o/degree_constrained_subgraph_independent_audit.md`
+- `sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md`
+- `sources/checkpoint-o/current_checkpoint/deterministic_maximum_matching_verifier.md`
 
 
 ---

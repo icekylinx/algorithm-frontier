@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/matroid_quality_and_union_root_audit.md`
+**Curated source path:** `sources/checkpoint-o/matroid_quality_and_union_root_audit.md`
 
 The source audit follows.
 

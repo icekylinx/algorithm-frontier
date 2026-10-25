@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/selected_multicommodity_flow_corank_scheme.md`
+**Original source:** `sources/checkpoint-o/selected_multicommodity_flow_corank_scheme.md`
 
 # Near-optimal concurrent flow with few rejected commodities and exact selection constraints
 

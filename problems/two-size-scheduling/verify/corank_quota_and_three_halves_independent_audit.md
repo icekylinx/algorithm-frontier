@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/corank_quota_and_three_halves_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/corank_quota_and_three_halves_independent_audit.md`
 
 The source audit follows.
 

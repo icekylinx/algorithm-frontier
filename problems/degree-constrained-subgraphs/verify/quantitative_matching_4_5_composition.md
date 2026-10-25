@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/current_checkpoint/quantitative_matching_4_5_composition.md`
+**Curated source path:** `sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md`
 
 The source audit follows.
 

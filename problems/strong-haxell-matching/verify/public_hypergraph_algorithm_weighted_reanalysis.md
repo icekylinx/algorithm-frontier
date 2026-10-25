@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/public_hypergraph_algorithm_weighted_reanalysis.md`
+**Curated source path:** `sources/checkpoint-o/public_hypergraph_algorithm_weighted_reanalysis.md`
 
 The source audit follows.
 

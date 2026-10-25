@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/two_value_arbitrary_cost_exact_two_allocation.md`
+**Original source:** `sources/checkpoint-o/two_value_arbitrary_cost_exact_two_allocation.md`
 
 # Exact two for compulsory two-value allocation with arbitrary assignment costs
 

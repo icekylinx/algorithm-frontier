@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/same_stretch_apsp_comparison_and_root_audit.md`
+**Curated source path:** `sources/checkpoint-o/same_stretch_apsp_comparison_and_root_audit.md`
 
 The source audit follows.
 

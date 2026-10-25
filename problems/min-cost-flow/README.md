@@ -10,7 +10,7 @@ An exact static min-cost flow/threshold feasibility construction with witness re
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/moving_box_log_barrier_flow.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/moving_box_log_barrier_flow.md` and the verification paths in `sources.md`.
 
 ---
 

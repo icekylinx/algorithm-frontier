@@ -12,7 +12,7 @@ Selected flow with one shared setup/routing budget and an attaining minimum-setu
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/shared_setup_routing_budget_corank_flow.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/shared_setup_routing_budget_corank_flow.md` and the verification paths named in `sources.md`.
 
 ---
 

@@ -12,7 +12,7 @@ The selected-flow guarantee with adaptive routing in every explicit scenario.
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/robust_scenario_selected_flow_corank.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/robust_scenario_selected_flow_corank.md` and the verification paths named in `sources.md`.
 
 ---
 

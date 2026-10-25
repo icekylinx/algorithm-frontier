@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/frozen_detector_incremental_sssp.md`
+**Original source:** `sources/checkpoint-o/frozen_detector_incremental_sssp.md`
 
 # Incremental directed SSSP from the frozen-barrier detector
 

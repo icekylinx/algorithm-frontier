@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/corank_batch_allocation_scheduling_root_audit.md`
+**Curated source path:** `sources/checkpoint-o/corank_batch_allocation_scheduling_root_audit.md`
 
 The source audit follows.
 

@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/gomory_hu_external_factors_except_fixed_k.md`
+**Curated source path:** `sources/checkpoint-o/gomory_hu_external_factors_except_fixed_k.md`
 
 The source audit follows.
 

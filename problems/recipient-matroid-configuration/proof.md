@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/general_resource_prefix_additivity_four_candidate.md`
+**Original source:** `sources/checkpoint-o/general_resource_prefix_additivity_four_candidate.md`
 
 # Prefix rank additivity and eager release for resource matroids
 

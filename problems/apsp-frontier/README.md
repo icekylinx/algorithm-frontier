@@ -10,7 +10,7 @@ A Pareto set of fully dynamic APSP update/stretch points.
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/fully_dynamic_apsp_time_stretch_curve.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/fully_dynamic_apsp_time_stretch_curve.md` and the verification paths in `sources.md`.
 
 ---
 

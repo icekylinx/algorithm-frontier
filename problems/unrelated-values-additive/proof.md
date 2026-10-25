@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/unrelated_values_corank_additive_allocation.md`
+**Original source:** `sources/checkpoint-o/unrelated_values_corank_additive_allocation.md`
 
 # Corank additive allocation with player-dependent values
 

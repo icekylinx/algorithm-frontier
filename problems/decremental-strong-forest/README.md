@@ -10,7 +10,7 @@ A strong decremental forest construction substituted into a public Gomory-Hu red
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/six_sevenths_strong_forest_and_gomory_hu_checkpoint.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/six_sevenths_strong_forest_and_gomory_hu_checkpoint.md` and the verification paths in `sources.md`.
 
 ---
 

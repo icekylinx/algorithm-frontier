@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/dynamic_msf_public_two_thirds_baseline.md`
+**Original source:** `sources/checkpoint-o/dynamic_msf_public_two_thirds_baseline.md`
 
 # A public 2/3 worst-case MSF baseline and the new reduction's audit boundary
 

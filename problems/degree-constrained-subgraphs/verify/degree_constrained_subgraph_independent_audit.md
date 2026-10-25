@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/degree_constrained_subgraph_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/degree_constrained_subgraph_independent_audit.md`
 
 The source audit follows.
 

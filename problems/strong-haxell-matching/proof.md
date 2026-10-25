@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/explicit_hypergraph_matching_branching_improvement.md`
+**Original source:** `sources/checkpoint-o/explicit_hypergraph_matching_branching_improvement.md`
 
 # A faster certifying algorithm for explicit hypergraph matching under strong Haxell conditions
 

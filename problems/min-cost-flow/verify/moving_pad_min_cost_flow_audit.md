@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/moving_pad_min_cost_flow_audit.md`
+**Curated source path:** `sources/checkpoint-o/moving_pad_min_cost_flow_audit.md`
 
 The source audit follows.
 

@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/gomory_hu_adapter_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/gomory_hu_adapter_independent_audit.md`
 
 The source audit follows.
 

@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/current_checkpoint/current_results_and_frontier.md`
+**Curated source path:** `sources/checkpoint-o/current_checkpoint/current_results_and_frontier.md`
 
 The source audit follows.
 

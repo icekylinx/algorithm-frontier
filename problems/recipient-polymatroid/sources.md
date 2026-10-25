@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-p/general_recipient_polymatroid_prefix_four_transfer.md`
-- `sources/checkpoint-p/general_recipient_polymatroid_root_audit.md`
-- `sources/checkpoint-p/general_recipient_polymatroid_prefix_four_independent_audit.md`
-- `sources/checkpoint-p/recipient_polymatroid_aggregate_configuration_gap.md`
+- `sources/checkpoint-o/general_recipient_polymatroid_prefix_four_transfer.md`
+- `sources/checkpoint-o/general_recipient_polymatroid_root_audit.md`
+- `sources/checkpoint-o/general_recipient_polymatroid_prefix_four_independent_audit.md`
+- `sources/checkpoint-o/recipient_polymatroid_aggregate_configuration_gap.md`
 
 
 ---

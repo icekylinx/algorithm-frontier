@@ -10,7 +10,7 @@ An explicit strong-Haxell hypergraph matching construction.
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/explicit_hypergraph_matching_branching_improvement.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/explicit_hypergraph_matching_branching_improvement.md` and the verification paths in `sources.md`.
 
 ---
 

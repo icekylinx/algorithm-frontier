@@ -12,7 +12,7 @@ Corank-parameterized exact factor-two allocation with arbitrary assignment costs
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/one_value_exact_budget_corank_two_allocation.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/one_value_exact_budget_corank_two_allocation.md` and the verification paths named in `sources.md`.
 
 ---
 

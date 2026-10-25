@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/general_resource_prefix_additivity_root_audit.md`
+**Curated source path:** `sources/checkpoint-o/general_resource_prefix_additivity_root_audit.md`
 
 The source audit follows.
 

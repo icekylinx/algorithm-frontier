@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/selected_multicommodity_flow_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/selected_multicommodity_flow_independent_audit.md`
 
 The source audit follows.
 

@@ -10,7 +10,7 @@ A current-blocker growth analysis for independent transversals.
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/independent_transversal_current_blocker_growth.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/independent_transversal_current_blocker_growth.md` and the verification paths in `sources.md`.
 
 ---
 

@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/robust_selected_flow_and_hitting_set_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/robust_selected_flow_and_hitting_set_independent_audit.md`
 
 The source audit follows.
 

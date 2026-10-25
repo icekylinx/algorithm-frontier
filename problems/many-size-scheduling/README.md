@@ -10,7 +10,7 @@ An arbitrary-size workload construction with an additive smaller-job term.
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/many_small_sizes_workload_makespan_transfer.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/many_small_sizes_workload_makespan_transfer.md` and the verification paths in `sources.md`.
 
 ---
 

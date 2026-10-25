@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/full_residual_configuration_gap_two_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/full_residual_configuration_gap_two_independent_audit.md`
 
 The source audit follows.
 

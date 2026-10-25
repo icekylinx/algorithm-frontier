@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/current_checkpoint/quantitative_matching_4_5_composition.md`
+**Original source:** `sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md`
 
 # A 4/5 research composition from sequential expander routing
 

@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/two_size_makespan_large_rank_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/two_size_makespan_large_rank_independent_audit.md`
 
 The source audit follows.
 

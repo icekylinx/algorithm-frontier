@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-p/general_resource_prefix_additivity_four_candidate.md`
-- `sources/checkpoint-p/general_resource_prefix_additivity_root_audit.md`
-- `sources/checkpoint-p/general_resource_prefix_additivity_independent_audit.md`
-- `sources/checkpoint-p/general_resource_matroid_public_parameter_comparison.md`
+- `sources/checkpoint-o/general_resource_prefix_additivity_four_candidate.md`
+- `sources/checkpoint-o/general_resource_prefix_additivity_root_audit.md`
+- `sources/checkpoint-o/general_resource_prefix_additivity_independent_audit.md`
+- `sources/checkpoint-o/general_resource_matroid_public_parameter_comparison.md`
 
 
 ---

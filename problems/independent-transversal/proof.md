@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/independent_transversal_current_blocker_growth.md`
+**Original source:** `sources/checkpoint-o/independent_transversal_current_blocker_growth.md`
 
 # Current blocker growth for independent transversals
 

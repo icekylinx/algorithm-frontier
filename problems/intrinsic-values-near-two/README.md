@@ -12,7 +12,7 @@ General common intrinsic values with a derived-corank near-two guarantee and an 
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/general_value_allocation_heavy_cover_near_two.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/general_value_allocation_heavy_cover_near_two.md` and the verification paths named in `sources.md`.
 
 ---
 

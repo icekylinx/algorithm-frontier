@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/simple_path_reporting_from_tree_segments.md`
+**Curated source path:** `sources/checkpoint-o/simple_path_reporting_from_tree_segments.md`
 
 The source audit follows.
 

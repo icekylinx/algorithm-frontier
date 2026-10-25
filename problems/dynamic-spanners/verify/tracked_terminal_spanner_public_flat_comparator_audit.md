@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/tracked_terminal_spanner_public_flat_comparator_audit.md`
+**Curated source path:** `sources/checkpoint-o/tracked_terminal_spanner_public_flat_comparator_audit.md`
 
 The source audit follows.
 

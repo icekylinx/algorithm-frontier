@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/transfer_public_baselines.md`
+**Curated source path:** `sources/checkpoint-o/transfer_public_baselines.md`
 
 The source audit follows.
 

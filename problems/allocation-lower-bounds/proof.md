@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/recipient_polymatroid_below_two_oracle_barrier.md`
+**Original source:** `sources/checkpoint-o/recipient_polymatroid_below_two_oracle_barrier.md`
 
 # A value-oracle barrier below factor two for rank-parameterized allocation
 

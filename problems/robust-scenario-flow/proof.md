@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/robust_scenario_selected_flow_corank.md`
+**Original source:** `sources/checkpoint-o/robust_scenario_selected_flow_corank.md`
 
 # Adaptive selected flow under explicit network scenarios
 

@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/strong_haxell_public_frontier_audit.md`
+**Curated source path:** `sources/checkpoint-o/strong_haxell_public_frontier_audit.md`
 
 The source audit follows.
 

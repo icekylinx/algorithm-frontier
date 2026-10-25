@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/selected_flow_and_global_conversion_root_audit.md`
+**Curated source path:** `sources/checkpoint-o/selected_flow_and_global_conversion_root_audit.md`
 
 The source audit follows.
 

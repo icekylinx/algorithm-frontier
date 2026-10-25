@@ -10,7 +10,7 @@ A frozen-detector client for incremental directed SSSP with explicit simple-path
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/frozen_detector_incremental_sssp.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/frozen_detector_incremental_sssp.md` and the verification paths in `sources.md`.
 
 ---
 

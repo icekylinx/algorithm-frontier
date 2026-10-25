@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/shared_setup_routing_budget_second_audit.md`
+**Curated source path:** `sources/checkpoint-o/shared_setup_routing_budget_second_audit.md`
 
 The source audit follows.
 

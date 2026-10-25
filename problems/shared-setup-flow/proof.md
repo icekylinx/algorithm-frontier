@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/shared_setup_routing_budget_corank_flow.md`
+**Original source:** `sources/checkpoint-o/shared_setup_routing_budget_corank_flow.md`
 
 # Selected concurrent flow with one shared setup and routing budget
 

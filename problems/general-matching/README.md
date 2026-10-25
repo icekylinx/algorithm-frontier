@@ -10,7 +10,7 @@ A conditional deterministic exact maximum-cardinality matching composition for a
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/current_checkpoint/quantitative_matching_4_5_composition.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md` and the verification paths in `sources.md`.
 
 ---
 

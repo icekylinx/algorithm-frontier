@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-p/one_value_exact_budget_corank_two_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/one_value_exact_budget_corank_two_independent_audit.md`
 
 The source audit follows.
 

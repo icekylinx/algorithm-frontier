@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-q/six_sevenths_strong_forest_and_gomory_hu_checkpoint.md`
-- `sources/checkpoint-q/separated_metric_forest_and_strong_sssp.md`
-- `sources/checkpoint-q/gomory_hu_adapter_independent_audit.md`
-- `sources/checkpoint-q/gomory_hu_external_factors_except_fixed_k.md`
+- `sources/checkpoint-o/six_sevenths_strong_forest_and_gomory_hu_checkpoint.md`
+- `sources/checkpoint-o/separated_metric_forest_and_strong_sssp.md`
+- `sources/checkpoint-o/gomory_hu_adapter_independent_audit.md`
+- `sources/checkpoint-o/gomory_hu_external_factors_except_fixed_k.md`
 
 
 ---

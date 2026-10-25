@@ -12,7 +12,7 @@ A separate factor-four-minus-three-over-r result against the coupled configurati
 
 **Supersession rule.** Older bounds with the same model are not repeated here. Incomparable parameters or comparators remain separate problem directories.
 
-**Source.** `sources/checkpoint-p/general_resource_prefix_additivity_four_candidate.md` and the verification paths named in `sources.md`.
+**Source.** `sources/checkpoint-o/general_resource_prefix_additivity_four_candidate.md` and the verification paths named in `sources.md`.
 
 ---
 

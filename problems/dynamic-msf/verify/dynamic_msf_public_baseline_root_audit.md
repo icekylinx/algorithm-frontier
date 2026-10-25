@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/dynamic_msf_public_baseline_root_audit.md`
+**Curated source path:** `sources/checkpoint-o/dynamic_msf_public_baseline_root_audit.md`
 
 The source audit follows.
 

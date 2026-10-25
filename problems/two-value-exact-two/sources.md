@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-p/two_value_arbitrary_cost_exact_two_allocation.md`
-- `sources/checkpoint-p/two_value_arbitrary_cost_exact_two_independent_audit.md`
-- `sources/checkpoint-p/two_value_large_cover_factor_two_independent_audit.md`
-- `sources/checkpoint-p/unrestricted_budget_allocation_root_audit.md`
+- `sources/checkpoint-o/two_value_arbitrary_cost_exact_two_allocation.md`
+- `sources/checkpoint-o/two_value_arbitrary_cost_exact_two_independent_audit.md`
+- `sources/checkpoint-o/two_value_large_cover_factor_two_independent_audit.md`
+- `sources/checkpoint-o/unrestricted_budget_allocation_root_audit.md`
 
 
 ---

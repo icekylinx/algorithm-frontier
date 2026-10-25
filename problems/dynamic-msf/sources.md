@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-q/dynamic_msf_public_two_thirds_baseline.md`
-- `sources/checkpoint-q/dynamic_msf_formal_pruning_substitution_audit.md`
-- `sources/checkpoint-q/dynamic_msf_public_baseline_root_audit.md`
-- `sources/checkpoint-q/dynamic_spanner_public_baseline_audit.md`
+- `sources/checkpoint-o/dynamic_msf_public_two_thirds_baseline.md`
+- `sources/checkpoint-o/dynamic_msf_formal_pruning_substitution_audit.md`
+- `sources/checkpoint-o/dynamic_msf_public_baseline_root_audit.md`
+- `sources/checkpoint-o/dynamic_spanner_public_baseline_audit.md`
 
 
 ---

@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/exact_flow_acceptance_and_reductions.md`
+**Curated source path:** `sources/checkpoint-o/exact_flow_acceptance_and_reductions.md`
 
 The source audit follows.
 

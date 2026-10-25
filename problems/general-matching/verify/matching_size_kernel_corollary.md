@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/current_checkpoint/matching_size_kernel_corollary.md`
+**Curated source path:** `sources/checkpoint-o/current_checkpoint/matching_size_kernel_corollary.md`
 
 The source audit follows.
 

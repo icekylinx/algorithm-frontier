@@ -10,7 +10,7 @@ The strongest two-size scheduling regimes are retained by parameter: global/cora
 
 **Proof and verification.** `proof.md` is the selected proof note. `verify/` contains independent/root audits or a second incomparable source note. These are internal mathematical reviews, not formal verification or external peer review.
 
-**Source.** `sources/checkpoint-q/two_size_makespan_corank_three_halves_transfer.md` and the verification paths in `sources.md`.
+**Source.** `sources/checkpoint-o/two_size_makespan_corank_three_halves_transfer.md` and the verification paths in `sources.md`.
 
 ---
 

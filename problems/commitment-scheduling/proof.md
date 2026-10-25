@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/scheduling_bottleneck_commitment_rank_reduction.md`
+**Original source:** `sources/checkpoint-o/scheduling_bottleneck_commitment_rank_reduction.md`
 
 # Scheduling by bottleneck commitments and a reduced search rank
 

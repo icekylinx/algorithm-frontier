@@ -1,9 +1,9 @@
 # Source map
 
-- `sources/checkpoint-q/log_barrier_incremental_scc.md`
-- `sources/checkpoint-q/log_barrier_scc_independent_audit.md`
-- `sources/checkpoint-q/transfer_public_baselines.md`
-- `sources/checkpoint-q/topological_order_transpose_interface_gap.md`
+- `sources/checkpoint-o/log_barrier_incremental_scc.md`
+- `sources/checkpoint-o/log_barrier_scc_independent_audit.md`
+- `sources/checkpoint-o/transfer_public_baselines.md`
+- `sources/checkpoint-o/topological_order_transpose_interface_gap.md`
 
 
 ---

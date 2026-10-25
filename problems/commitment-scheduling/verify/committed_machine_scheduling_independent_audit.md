@@ -1,6 +1,6 @@
 # Verification note
 
-**Curated source path:** `sources/checkpoint-q/committed_machine_scheduling_independent_audit.md`
+**Curated source path:** `sources/checkpoint-o/committed_machine_scheduling_independent_audit.md`
 
 The source audit follows.
 

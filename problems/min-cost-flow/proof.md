@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-q/moving_box_log_barrier_flow.md`
+**Original source:** `sources/checkpoint-o/moving_box_log_barrier_flow.md`
 
 # A moving-box logarithmic client for exact minimum-cost flow
 

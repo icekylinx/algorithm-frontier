@@ -2,7 +2,7 @@
 
 This file is the curated proof record for the result in `README.md`. The original source note follows.
 
-**Original source:** `sources/checkpoint-p/general_value_allocation_heavy_cover_near_two.md`
+**Original source:** `sources/checkpoint-o/general_value_allocation_heavy_cover_near_two.md`
 
 # General-value allocation approaching factor two in the heavy-cover parameter
 
