@@ -10,10 +10,13 @@ The repository is maintained incrementally. Each pass should leave a small, revi
 
 ## 2. Ingest and identify
 
-- Copy known user uploads into the local working area without rewriting their payload.
-- Record archive SHA-256, parent archive SHA-256, checkpoint letter, file count, and exclusions.
-- Preserve original filenames and internal links under `sources/checkpoint-<letter>/`.
-- Reject a child checkpoint whose parent hash or file inventory does not match.
+- Read the uploaded manifest and parent link before promoting a checkpoint.
+- Keep one source tree with its original filenames and internal links under
+  `sources/checkpoint-<letter>/`; do not create a review-side backup of the
+  manuscript.
+- Let the machine check use manifest metadata to catch accidental corruption,
+  but keep hashes out of the reader-facing summary.
+- Reject a child checkpoint whose parent or file inventory does not match.
 
 ## 3. Classify the result
 
@@ -29,13 +32,13 @@ Use prose-first complexity on GitHub-facing pages. Keep time, space, update, que
 
 ## 6. Verify and publish
 
-Run structural validation, the display-notation check, incremental-source verification, review-registry validation, reviewed-link validation, and `git diff --check`. Proof, algorithm, and source review lanes can run in parallel; a result moves forward only when its open issues and finite-check boundary are recorded. Commit a coherent batch, push to `main`, inspect the workflow result, then record the commit in [`HISTORY.md`](../HISTORY.md).
+Run structural validation, the display-notation check, the result-card schema check, the finite Subset Sum and reduction replays, incremental-source verification, review-registry validation, reviewed-link validation, and `git diff --check`. Proof, algorithm, and source review lanes can run in parallel; a result moves forward only when its open issues and finite-check boundary are recorded. Commit a coherent batch, push to `main`, inspect the workflow result, then record the commit in [`HISTORY.md`](../HISTORY.md).
 
 No scheduled job is installed. The loop is re-entered during an active maintenance pass or after a new Library checkpoint is discovered, with the next review trigger recorded in the registry.
 
 ## 7. Re-audit
 
-After a workflow failure, a new checkpoint, or a material correction, reopen the affected result card and its source map. Review links, parent hashes, complexity fields, and priority placement. Keep an explicit backlog in the next history entry when follow-up work remains. T/U are now imported; their first curation pass is the weighted-prefix and sparse-quota record.
+After a workflow failure, a new checkpoint, or a material correction, reopen the affected result card and its source map. Review links, parent links, complexity fields, and priority placement. Keep an explicit backlog in the next history entry when follow-up work remains. T/U are now imported; their first curation pass is the weighted-prefix and sparse-quota record.
 
 ## Current backlog
 

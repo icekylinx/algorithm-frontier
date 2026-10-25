@@ -43,7 +43,7 @@ This map lists every imported file in the R and S checkpoint directories. The ma
 - [`sources/checkpoint-s/support_sensitive_partition_potential_and_star_targets.md`](../../sources/checkpoint-s/support_sensitive_partition_potential_and_star_targets.md)
 - [`sources/checkpoint-s/unrestricted_support_pattern_numeric_targets.md`](../../sources/checkpoint-s/unrestricted_support_pattern_numeric_targets.md)
 
-S is an increment-only child of R. Its manifest records the parent archive SHA-256 and the files intentionally excluded from the payload.
+S is an increment-only child of R. Its manifest records the parent link and the files intentionally excluded from the payload.
 
 **Attribution:** Yilin Liu  \
 **AI contribution identifier:** GPT-6 Astra Pro

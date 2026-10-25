@@ -18,8 +18,7 @@
 - `sources/checkpoint-t/weighted_prefix_support_budget_tradeoffs.md`
 
 Parent archive: `deterministic_related_problems_increment_20261025_S.zip`  
-Parent SHA-256: `0aa96b8c60ff9f866df6cc1cfbae1764a9d016e0351eb1944be343b1d41912ed`  
-T archive SHA-256: `ce5d4260f803c4872e9065ebba8c0c5275087412e78d180dd2c384556f02b0e0`
+The checkpoint manifest records the parent link and payload inventory.
 
 ## Checkpoint U
 
@@ -38,7 +37,6 @@ T archive SHA-256: `ce5d4260f803c4872e9065ebba8c0c5275087412e78d180dd2c384556f02
 - `sources/checkpoint-u/valuated_sparse_quota_sunflower_kernel.md`
 
 Parent archive: `deterministic_related_problems_increment_20261025_T.zip`  
-Parent SHA-256: `ce5d4260f803c4872e9065ebba8c0c5275087412e78d180dd2c384556f02b0e0`  
-U archive SHA-256: `677507376668d4762dfa47a99693dccfeb3869908cb709d69fa0e5440fd2aadd`
+The checkpoint manifest records the parent link and payload inventory.
 
 **Attribution:** Yilin Liu · GPT-6 Astra Pro

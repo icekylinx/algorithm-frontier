@@ -4,7 +4,7 @@
 |---|---|
 | **Guarantee** | Exact strongly connected component labels after every settled directed-edge insertion. |
 | **Objective and output** | Maintain one explicit component label per original vertex. The record does not include a topological ordering of the quotient or a path witness. |
-| **Update time** | Total work is linear in the vertex and inserted-edge inventory, multiplied by a fixed power of the raw backend factor and a polynomial in the logarithmic master parameter. The candidate backend has the four-fifths hierarchy exponent shown in the source. |
+| **Time** | Total work `(n+m) E(N)^{O(1)} poly(U)` under the raw minimum-ratio-cycle interface, with `U=log(N+4)` and candidate `E(N)=exp(O(U^(4/5)(log U)^(1/5)))`; this is total incremental work, not a worst-case per-insertion claim. |
 | **Space** | Polynomial in the maintained graph, label inventory, and raw-backend state; the client does not expand binary caps into unit arrays. |
 | **Parameters** | `n` is the original vertex count; `m` bounds inserted edge records; `N` is the power-of-two master cap; `U` is its logarithmic scale. Parallel edges and self-loops are allowed. |
 | **Model and representation** | Conditional incremental directed graph client using the named raw minimum-ratio-cycle interface, explicit endpoint retargeting, edge retirement, and exact component-label updates. |

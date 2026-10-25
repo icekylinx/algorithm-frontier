@@ -4,7 +4,7 @@
 |---|---|
 | **Guarantee** | Maintains an exact minimum spanning forest in a fully dynamic weighted graph under the stated deterministic reduction. |
 | **Objective and output** | Preserve the minimum spanning forest after each settled update; the source charges the update certificate and the forest reconstruction separately. |
-| **Update time** | Worst-case work per update is exponential in the two-thirds power of the logarithmic master parameter times the one-third power of its iterated logarithm. This is a derived public baseline, not a claim that one source states the complete composition alone. |
+| **Time** | Worst-case per-update work is `exp(O(U^(2/3) h^(1/3)))`, with `U=log(N+4)` and `h=log(U+4)`. This is a derived public baseline, not a single-source theorem statement. |
 | **Space** | Actual weighted-edge inventory, hierarchy certificates, retired records, and pruning state; no master-cap padding is materialized. |
 | **Parameters** | `n` is the vertex count; `m` is the current edge count; `N` bounds lifetime edge records; `U` is log of `N` plus a constant; `h` is log of `U` plus a constant. |
 | **Model and representation** | Deterministic fully dynamic weighted multigraph, with the public decomposition, pruning, contraction, and child-forest certificate interfaces named by the source. |

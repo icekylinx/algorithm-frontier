@@ -1,16 +1,16 @@
-# Unrelated values with joint role and setup budget
+# Unrelated values with a joint role and setup budget
 
-| Item | Result |
+| Field | Curated statement |
 |---|---|
-| **Guarantee** | Factor `2R/(R-1)` under the exact joint selector and budget model. |
-| **Complexity** | `Gamma(R)^q poly(H)` in the joint-role parameterization. |
-| **Model** | Optional player selection, player-dependent values, one exact assignment budget plus shared setup/routing budget, and the P joint-role selector. |
-| **Status** | internally reviewed research; no formal verification or external peer review. |
-
-The complete proof map, verification pointers, and exact source paths are
-listed below. The original proof source is preserved without mathematical
-rewriting.
-
-**Source.** [`sources/checkpoint-p/unrelated_values_joint_role_near_two_allocation.md`](../../sources/checkpoint-p/unrelated_values_joint_role_near_two_allocation.md) and the verification paths named in `sources.md`.
+| **Guarantee** | For fixed rational `R>1`, returns a legal integral allocation with minimum utility at least `(1-1/R) OPT / 2`; choosing `R=(2+eta)/eta` gives factor `2+eta`. |
+| **Objective and output** | Maximize minimum player-dependent utility with optional player selection, one exact assignment/setup budget, and the joint-role selector; output selected players and allocations. |
+| **Model and representation** | Player-dependent rational values, integral recipient polymatroids, optional basis selection, one exact budget, and the paid joint-role selector. |
+| **Lower-bound scope** | No lower bound is claimed; the factor is an upper bound under the exact selector interface. |
+| **Time** | `B(R)^q * 2^(O(q log log(q+2)/log(q+2))) * poly(H)`, where `B(R)=2-1/Gamma(R)` and `Gamma(R)=R^R/(R-1)^(R-1)`. |
+| **Space** | Polynomial in the complete binary input and paid joint-role, rank, LP, and rounding state. |
+| **Parameters** | `q` is the nonloop player ground; `R>1` is the rational accuracy parameter; `Gamma(R)` and `B(R)` are as above; `H` includes values, costs, setup fees, ranks, and selector descriptions. |
+| **Scope** | The factor is whole-ground and does not assume a heavy-support or price-diversity promise. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. |
+| **Source** | [Joint-role near-two theorem](../../sources/checkpoint-p/unrelated_values_joint_role_near_two_allocation.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

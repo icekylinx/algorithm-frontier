@@ -10,12 +10,12 @@ This is a Tier A record for exact target feasibility, scalar optimization, and s
 | **Space** | Polynomial binary workspace in the named rank-oracle or readable-program model. Binary counts are never expanded into unit-size arrays. |
 | **Parameters** | **T** is the numeric target budget; **Q** is the number of distinct nonempty eligible-column support patterns; **d** is fixed row dimension; **H** covers the complete binary input and paid polynomial primitive work; **epsilon** is the approximation accuracy. |
 | **Approximation refinement** | For the stated target family, the reviewed accuracy factor is one over epsilon times exp of 141 divided by 50 epsilon plus 7, multiplied by polynomial work in the encoded input and the supplied accuracy. Single-matroid rows also retain separate square-root-of-T and square-root-of-OPT variants. |
-| **Representation** | R and S cover independent regions or original-total bases of one arbitrary integral polymatroid. The source for each row names mandatory totals, exact budgets, and the rank representation. |
+| **Model and representation** | One arbitrary integral polymatroid with rank-oracle or readable-program access; each row keeps its own mandatory/optional contract. |
 | **Lower-bound scope** | R records matching-order rank-oracle boundaries. S records a two-parameter query classification and separate deterministic-ETH consequences for readable rank programs or circuits. These claims do not automatically transfer to explicit matroids or ordinary graph matching. |
 | **Review status** | Internal proof, algorithm, and source review is tracked in the [headline review report](../../reviews/headline/numeric-target-frontier.md). Finite replay checks are evidence for the listed statements; they are not formal verification. |
 
 Read the [proof map](proof.md), [source map](sources.md), [complexity guide](../../docs/COMPLEXITY.md), and [complete index](../../CONTENTS.md) for the detailed rows and provenance.
 
-**Sources.** [Checkpoint R](../../sources/checkpoint-r/CHECKPOINT_R_INCREMENT.md) and [Checkpoint S](../../sources/checkpoint-s/CHECKPOINT_S_INCREMENT.md).
+| **Source** | [Checkpoint R](../../sources/checkpoint-r/CHECKPOINT_R_INCREMENT.md) and [Checkpoint S](../../sources/checkpoint-s/CHECKPOINT_S_INCREMENT.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

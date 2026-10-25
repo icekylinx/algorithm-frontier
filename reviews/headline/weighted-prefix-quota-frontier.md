@@ -23,9 +23,9 @@ This review covers the T/U increments for ordered prefix quotas, laminar complet
 
 ## Source review
 
-- **Checked:** T is parent-linked to S and U is parent-linked to T; manifests preserve payload names, byte counts, and hashes.
+- **Checked:** T is parent-linked to S and U is parent-linked to T; manifests enumerate the payloads used by the card.
 - **Evidence:** `sources/checkpoint-t/MANIFEST.json` and `sources/checkpoint-u/MANIFEST.json`.
-- **Open issue:** Re-audit parent and payload hashes after every new increment.
+- **Open issue:** Re-audit the parent link and payload inventory after every new increment.
 
 ## Finite checks
 

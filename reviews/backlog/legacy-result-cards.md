@@ -45,7 +45,7 @@ card and this report.
 ## Formal-verification boundary
 
 `not-claimed`. The repository has no proof-assistant formalization for these
-records. Finite certificate replay and source-hash validation are evidence for
+records. Finite certificate replay and manifest validation are evidence for
 specific checks only.
 
 ## Next review trigger

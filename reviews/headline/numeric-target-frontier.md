@@ -23,7 +23,7 @@ This review covers the R/S numeric-target catalogue: exact target decisions, sca
 
 ## Source review
 
-- **Checked:** R and S are chained increments with manifest hashes and parent references. The source map should enumerate all payload files, not only representative manuscripts.
+- **Checked:** R and S are chained increments with parent references and complete payload inventories. The source map enumerates all payload files, not only representative manuscripts.
 - **Evidence:** `sources/checkpoint-r/`, `sources/checkpoint-s/`, and their manifests.
 - **Open issue:** Reconcile any new R/S payload with the registry before promotion.
 

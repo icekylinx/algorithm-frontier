@@ -58,3 +58,10 @@ Migrate the remaining legacy problem cards, inspect the first workflow result af
 ## 2026-10-25 — review-scope synchronization
 
 - Extended the allocation/robustness backlog and dynamic-graph review scope to cover the newly migrated supporting cards without changing imported source bytes.
+
+## 2026-10-25 — family index and finite verification pass
+
+- Reorganized the public index around mathematical families, with Subset Sum, numeric targets and quotas, graph algorithms, matching, allocation, robust flow, scheduling, and lower-bound entry points.
+- Rebuilt `overview.pdf` as a compact academic reading map with problem statements, explicit parameters, and separate time/space rows.
+- Normalized all 41 curated cards to one display schema and removed redundant review prose that duplicated source material.
+- Added exact-rational constant checks, exhaustive small Subset Sum contract replay, and a finite two-scenario reduction replay to the curation workflow.

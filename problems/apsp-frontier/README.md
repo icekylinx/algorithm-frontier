@@ -5,7 +5,8 @@ This is a Tier A record of incomparable fully dynamic all-pairs shortest-path tr
 | Field | Curated statement |
 |---|---|
 | **Guarantee** | Maintains approximate all-pairs distances under fully dynamic updates with the stretch stated by each row. |
-| **Objective and output** | Trade update work against distance stretch; answer distance queries in polylogarithmic time under the audited hierarchy interface. |
+| **Objective and output** | Trade amortized update work against distance stretch and return approximate distances for every queried pair. |
+| **Time** | Equalized row: amortized update work `exp(O(U^(4/5) h^(1/5)))`; fixed-`C` row: `exp(O(U^(3/4) h^((C+1)/4)))`; queries are polynomial in `U`. |
 | **Tradeoff A** | Equalized point: amortized update work and metric stretch are both exponential in the four-fifths power of **U** times the one-fifth power of **h**; distance queries take polynomial time in **U**. |
 | **Tradeoff B** | For any fixed positive constant **C**, update work is exponential in the three-fourths power of **U** times the explicit factor **h** to the power `(C + 1) / 4`, while metric stretch is exponential in **U** divided by **h** to the power **C**; queries remain polynomial in **U**. |
 | **Space** | Actual-size hierarchy storage and query structures, charged to the graph inventory and update history; no master-cap padding is materialized. |
@@ -16,6 +17,6 @@ This is a Tier A record of incomparable fully dynamic all-pairs shortest-path tr
 
 Read the [proof map](proof.md), [source map](sources.md), and [complexity guide](../../docs/COMPLEXITY.md) for the exact symbolic forms, the amortized-update scope, and the comparison points. The source does not claim worst-case update time or a constant/polylogarithmic stretch point for Tradeoff B.
 
-**Source.** [APSP time/stretch curve](../../sources/checkpoint-o/fully_dynamic_apsp_time_stretch_curve.md).
+| **Source** | [APSP time/stretch curve](../../sources/checkpoint-o/fully_dynamic_apsp_time_stretch_curve.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

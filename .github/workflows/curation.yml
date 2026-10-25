@@ -26,6 +26,14 @@ jobs:
         run: python3 tools/validate_curation.py
       - name: Check LaTeX delimiters
         run: python3 tools/check_latex_delimiters.py
+      - name: Check result-card schema
+        run: python3 tools/check_card_schema.py
+      - name: Replay finite Subset Sum contract
+        run: python3 tools/verify_subset_sum_certificates.py
+      - name: Replay finite two-scenario reduction
+        run: python3 tools/verify_finite_reductions.py
+      - name: Check promoted rational constants
+        run: python3 tools/verify_rational_certificates.py
       - name: Verify incremental source hashes
         run: python3 tools/verify_incremental_sources.py
       - name: Check patch whitespace

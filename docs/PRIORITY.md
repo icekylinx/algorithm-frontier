@@ -7,7 +7,7 @@ Priority controls reading order and maintenance attention. It is not a ranking o
 | **A — headline** | First-page results that define the current frontier or introduce a new parameter/representation boundary. | Numeric-target R/S, weighted-prefix and sparse-quota T/U, faster Subset Sum, low-space Subset Sum, general matching, dynamic APSP. | Keep the result card, proof map, source map, and focused audits synchronized. Review after every related checkpoint. |
 | **B — supporting extension** | Strong constructive, transfer, or model-specific extensions that explain how a headline result is reused. | Flow, polymatroid, allocation, scheduling, dynamic spanner, and SCC records. | Update when a shared backend, parameter glossary, or model assumption changes. |
 | **C — boundary and negative record** | Lower bounds, barriers, hardness, robustness limits, and endpoint tradeoffs. | Oracle barriers, robust width-two records, two-scenario hardness, profile endpoints. | Preserve the exact model and assumption; never collapse an oracle boundary into a universal lower bound. |
-| **D — archive and provenance** | Imported manuscripts, checkpoint increments, manifests, licenses, and historical snapshots. | `sources/`, `provenance/`, and superseded records. | Preserve bytes and hashes; change only metadata or an explicit correction record. |
+| **D — archive and provenance** | Imported manuscripts, checkpoint increments, manifests, licenses, and historical snapshots. | `sources/`, `provenance/`, and superseded records. | Keep one source copy and its machine manifest; change only metadata or an explicit correction record. |
 
 ## Promotion criteria
 

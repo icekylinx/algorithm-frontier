@@ -4,7 +4,7 @@
 |---|---|
 | **Guarantee** | Finds an exact feasible degree-constrained edge subset, or correctly reports that none exists, in the stated reduction scope. |
 | **Objective and output** | Supports f-factors, interval degree bounds, and cardinality optimization; outputs original edge identifiers and treats each parallel edge record as a separate selectable item. |
-| **Time** | Linear graph work plus the edge-record inventory multiplied by the four-fifths logarithmic backend factor, under the general-matching reduction contract. |
+| **Time** | `O(n+m) + (m+1) exp(O((log(m+2))^(4/5) (log log(m+4))^(1/5)))`. |
 | **Space** | Polynomial in the explicit graph and reduction state; binary degree bounds are not expanded into unit copies. |
 | **Parameters** | `n` is the vertex count; `m` is the explicit edge-record count; `g(v)` and `f(v)` are lower and upper degree bounds. |
 | **Model and representation** | Loopless undirected multigraph with capacity one per edge record. The card does not extend the result to arbitrary weighted or binary-multiplicity variants. |

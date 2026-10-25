@@ -1,16 +1,15 @@
-# Compulsory two-value exact-factor-two allocation
+# Compulsory two-value allocation with exact factor two
 
-| Item | Result |
+| Field | Curated statement |
 |---|---|
-| **Guarantee** | Exact factor 2 for compulsory two-value allocation. |
-| **Complexity** | `(27/4)^(h_C) poly(H)` |
-| **Model** | All players compulsory, two intrinsic values, arbitrary integral recipient polymatroids, one exact assignment-cost budget. |
-| **Status** | internally reviewed research; no formal verification or external peer review. |
-
-The complete proof map, verification pointers, and exact source paths are
-listed below. The original proof source is preserved without mathematical
-rewriting.
-
-**Source.** [`sources/checkpoint-o/two_value_arbitrary_cost_exact_two_allocation.md`](../../sources/checkpoint-o/two_value_arbitrary_cost_exact_two_allocation.md) and the verification paths named in `sources.md`.
+| **Guarantee** | Returns an integral allocation giving every compulsory player utility at least `OPT/2`, while preserving the assignment budget exactly. |
+| **Objective and output** | Maximize the minimum utility when every player is compulsory and unit values are `u` or `a` with `0<u<a`; output all recipient count vectors. |
+| **Model and representation** | Integral recipient polymatroids with two value classes, compulsory players, and binary counts; one exact budget is preserved. |
+| **Time** | `(27/4)^(h_C) poly(H)`, where `h_C` is the maximum number of distinct large-unit recipients affordable under the exact budget. |
+| **Space** | Polynomial in the complete encoded instance and paid matroid/intersection state. |
+| **Parameters** | `q` is the compulsory-player count; `h_C` is the budget-aware large-recipient rank; `0<u<a` are the two intrinsic values; `C` is the assignment-cost budget; `H` includes all binary data and paid oracle work. |
+| **Lower-bound scope** | The corresponding strict-below-two recipient-oracle barrier is scoped to the named oracle model; no explicit-input hardness claim is added here. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. |
+| **Source** | [Two-value exact-two theorem](../../sources/checkpoint-o/two_value_arbitrary_cost_exact_two_allocation.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro
