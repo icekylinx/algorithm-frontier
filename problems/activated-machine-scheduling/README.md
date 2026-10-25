@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Makespan at most $$(1+\varepsilon)\mathrm{OPT}$$. |
-| **Complexity** | $$2^{O(q/\varepsilon)}\,\mathrm{poly}(H_\varepsilon)$$ |
+| **Guarantee** | Makespan at most `(1+eps)OPT`. |
+| **Complexity** | `2^(O(q/eps)) poly(H_eps)` |
 | **Model** | Activated actual machine basis, mandatory original jobs, machine-dependent processing, integral polymatroid constraints, and the initialization test in Q. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

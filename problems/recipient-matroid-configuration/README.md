@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Factor $$4-3/r$$ against the coupled configuration LP. |
-| **Complexity** | $$2^{O(r)}\,\mathrm{poly}(H)$$ or the stated rank-quasipolynomial alternative. |
+| **Guarantee** | Factor `4-3/r` against the coupled configuration LP. |
+| **Complexity** | `2^(O(r)) poly(H)` or the stated rank-quasipolynomial alternative. |
 | **Model** | Arbitrary recipient matroids, one service per player-resource pair, selected player basis, and the explicit coupled configuration comparator. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

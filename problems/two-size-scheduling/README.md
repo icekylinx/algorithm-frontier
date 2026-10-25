@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Exact makespan factor 3/2 in the corank branch and factor 5/3 in the large-unit branch. |
-| **Complexity** | $$ (27/4)^c\,\mathrm{poly}(H)$$ for the corank branch and $$2^{O(h)}\,\mathrm{poly}(H)$$ for the large-unit branch. |
+| **Complexity** | `(27/4)^c poly(H)` for the corank branch and `2^(O(h)) poly(H)` for the large-unit branch. |
 | **Model** | Arbitrary integral job polymatroids with two sizes; q/c/h are different parameters and no one regime is silently substituted for another. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

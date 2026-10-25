@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Dynamic minimum spanning forest baseline. |
-| **Complexity** | $$\exp(O(U^{2/3}h^{1/3}))$$ worst-case work per update. |
+| **Complexity** | `exp(O(U^(2/3)h^(1/3)))` worst-case work per update. |
 | **Model** | The public dynamic MSF model and all pruning assumptions in the source. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

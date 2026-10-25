@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Rate at least $$(1-\varepsilon)\mathrm{OPT}$$ in every explicit scenario. |
-| **Complexity** | $$\Gamma(1/\varepsilon)^c\,\mathrm{poly}(H)$$ |
+| **Guarantee** | Rate at least `(1-eps)OPT` in every explicit scenario. |
+| **Complexity** | `Gamma(1/eps)^c poly(H)` |
 | **Model** | A common selected set, explicit scenarios, scenario-dependent routes, exact capacities and the stated routing constraints. Exact full-rate admission hardness is a separate negative result. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

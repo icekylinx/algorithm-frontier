@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Returns either a matching covering every vertex of A or a directly checkable hitting-set obstruction. |
-| **Complexity** | $$O(|A|+|B|)+p\exp(O(U\log(2+s)/s))$$. |
+| **Complexity** | `O(|A|+|B|)+pexp(O(Ulog(2+s)/s))`. |
 | **Model** | Strong Haxell hypergraph input and the precise matching promise in the source; this is separate from general graph matching. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

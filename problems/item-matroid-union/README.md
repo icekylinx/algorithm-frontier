@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Factor $$4-3/r$$ versus integer OPT in the explicit-item model. |
-| **Complexity** | $$2^{O(r)}\,\mathrm{poly}(H)$$ or the stated rank-quasipolynomial alternative. |
+| **Guarantee** | Factor `4-3/r` versus integer OPT in the explicit-item model. |
+| **Complexity** | `2^(O(r)) poly(H)` or the stated rank-quasipolynomial alternative. |
 | **Model** | Explicit items, arbitrary intrinsic item values, player matroid selection, and the matroid-union resource construction. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

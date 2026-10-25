@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Exact maximum-cardinality matching in arbitrary undirected graphs with original edge identifiers. |
-| **Complexity** | $$O(n+m)+(m_s+1)\exp(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5}))$$, conditional on the named backend contract. |
+| **Complexity** | `O(n+m)+(m_s+1)exp(O((log(m_s+2))^(4/5)(loglog(m_s+4))^(1/5)))`, conditional on the named backend contract. |
 | **Model** | Arbitrary undirected graphs, loops/parallel records cleaned with original edge identifiers; exact output. The fast bound assumes the named external primitives and raw-backend Contract R. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

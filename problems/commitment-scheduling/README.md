@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | The stated $$\min\{2\mathrm{OPT},\max\{\beta(D)\mathrm{OPT}+u,a+\lambda_k\}\}$$ makespan bound. |
-| **Complexity** | $$2^{O(k)}\,\mathrm{poly}(H)$$ under the selected commitment parameter. |
+| **Guarantee** | The stated `\min\2OPT,\max\\beta(D)OPT+u,a+\lambda_k\\` makespan bound. |
+| **Complexity** | `2^(O(k)) poly(H)` under the selected commitment parameter. |
 | **Model** | The selectable independent commitment, workload bottleneck, and target-cap branches in the proof. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

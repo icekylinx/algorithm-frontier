@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Exact makespan factor 3/2 for the per-machine two-time model. |
-| **Complexity** | $$ (50/27)^q E(q)\,\mathrm{poly}(H)$$ |
+| **Complexity** | `(50/27)^q E(q) poly(H)` |
 | **Model** | Each machine has its own two positive processing times; this is not a global two-value assumption. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

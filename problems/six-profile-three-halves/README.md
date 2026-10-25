@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Exact makespan at most $$3\mathrm{OPT}/2$$. |
-| **Complexity** | $$6^q\,\mathrm{poly}(H)$$ |
+| **Guarantee** | Exact makespan at most `3OPT/2`. |
+| **Complexity** | `6^q poly(H)` |
 | **Model** | Arbitrary processing profiles with mandatory original job totals and the exact budget accounting stated in Q. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

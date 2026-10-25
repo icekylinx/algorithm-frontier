@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Factor $$4-3/r$$ versus integer OPT. |
-| **Complexity** | $$2^{O(r)}\,\mathrm{poly}(H)$$ or the stated rank-quasipolynomial alternative. |
+| **Guarantee** | Factor `4-3/r` versus integer OPT. |
+| **Complexity** | `2^(O(r)) poly(H)` or the stated rank-quasipolynomial alternative. |
 | **Model** | Common intrinsic values, arbitrary integral recipient polymatroids, an arbitrary selected player-matroid basis, binary counts and exact availability. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

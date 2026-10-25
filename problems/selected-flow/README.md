@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Rate at least $$(1-\varepsilon)\mathrm{OPT}$$ with exact routing constraints. |
-| **Complexity** | $$\Gamma(1/\varepsilon)^c\,\mathrm{poly}(H)$$ |
+| **Guarantee** | Rate at least `(1-eps)OPT` with exact routing constraints. |
+| **Complexity** | `Gamma(1/eps)^c poly(H)` |
 | **Model** | Directed or undirected splittable concurrent flow; restriction-selectable exact r-set, explicit nonnegative routing budgets, and rational input as specified. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

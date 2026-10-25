@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Incomparable update/stretch tradeoffs are retained. |
-| **Complexity** | Update $$\exp(O(U^{11/14}))$$ with stretch $$\exp(O(U^{6/7}h))$$, or update $$\exp(O(U^{3/4}h^{1/2}))$$ with stretch $$\exp(O(U/h))$$. |
+| **Complexity** | Update `exp(O(U^(11/14)))` with stretch `exp(O(U^(6/7)h))`, or update `exp(O(U^(3/4)h^(1/2)))` with stretch `exp(O(U/h))`. |
 | **Model** | The graph update model, stretch definition, and parameter h/U restrictions in the source. No single point is advertised as globally best. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Exact factor 2 for compulsory two-value allocation. |
-| **Complexity** | $$ (27/4)^{h_C}\,\mathrm{poly}(H)$$ |
+| **Complexity** | `(27/4)^(h_C) poly(H)` |
 | **Model** | All players compulsory, two intrinsic values, arbitrary integral recipient polymatroids, one exact assignment-cost budget. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

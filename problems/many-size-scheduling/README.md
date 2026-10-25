@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | The additive bound $$\max\{\max\{3/2,2-1/D\}\mathrm{OPT}+u,a+\lambda_k\}$$. |
-| **Complexity** | Compressed-rank time $$\Gamma(1/\varepsilon)^k\,\mathrm{poly}(H)$$ under the stated profile condition. |
+| **Guarantee** | The additive bound `\max\\max\3/2,2-1/D\OPT+u,a+\lambda_k\`. |
+| **Complexity** | Compressed-rank time `Gamma(1/eps)^k poly(H)` under the stated profile condition. |
 | **Model** | Many smaller sizes, large-unit profile and workload polymatroid assumptions in the proof. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

@@ -13,3 +13,8 @@ This is an append-only curation log. It records repository organization and pres
 ### Next review
 
 Migrate the remaining legacy problem cards, inspect the first workflow result after the R/S import, and reassess priority tiers when the next checkpoint arrives.
+
+## 2026-10-25 — display migration
+
+- Converted all curated problem result cards to portable code-span complexity notation.
+- Added a display-notation check that excludes source manuscripts and detailed proof maps by design.

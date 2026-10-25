@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Robust additive utility at least $$\max\{0,(1-\varepsilon)F\mathrm{OPT}-u\}$$. |
-| **Complexity** | $$\Gamma(1/\varepsilon)^c\,\mathrm{poly}(H)$$ |
+| **Guarantee** | Robust additive utility at least `\max\0,(1-eps)FOPT-u\`. |
+| **Complexity** | `Gamma(1/eps)^c poly(H)` |
 | **Model** | A common actual player basis across explicit scenarios, scenario-adaptive integer assignments, unrelated values, and common setup vector. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

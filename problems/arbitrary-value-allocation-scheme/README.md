@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Value at least $$(1-\varepsilon)\mathrm{OPT}$$. |
-| **Complexity** | $$\binom{q}{r}\exp(O(r/\varepsilon))\,\mathrm{poly}(H_\varepsilon)$$ |
+| **Guarantee** | Value at least `(1-eps)OPT`. |
+| **Complexity** | `binom(q, r)exp(O(r/eps)) poly(H_eps)` |
 | **Model** | Optional actual player basis, arbitrary player-dependent values, integral recipient-polymatroid constraints, binary multiplicities, and one shared setup/assignment budget. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

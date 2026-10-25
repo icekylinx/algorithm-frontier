@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | A negative exact-admission boundary via k-SUM. |
-| **Complexity** | W[1]-hard for exact admission with corank $$c=k$$ in the stated two-scenario model. |
+| **Complexity** | W[1]-hard for exact admission with corank `c=k` in the stated two-scenario model. |
 | **Model** | The explicit two-scenario unit-budget polymatroid model and parameterization in Q. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

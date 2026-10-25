@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Dynamic spanner stretch and recourse guarantees. |
-| **Complexity** | Tracked-terminal scope: $$\exp(O(U^{4/5}h^{1/5}))$$ stretch, work, and recourse envelope; full-horizon low-recourse scope: $$\exp(O(U^{5/6}h^{1/6}))$$ stretch/work, with output recourse $$ (n+D)\exp(O(U^{5/6}h^{1/6}))$$. |
+| **Complexity** | Tracked-terminal scope: `exp(O(U^(4/5)h^(1/5)))` stretch, work, and recourse envelope; full-horizon low-recourse scope: `exp(O(U^(5/6)h^(1/6)))` stretch/work, with output recourse `(n+D)exp(O(U^(5/6)h^(1/6)))`. |
 | **Model** | Use the exact terminal/recourse model in the selected source; do not compare the two ratios while dropping their different recourse assumptions. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

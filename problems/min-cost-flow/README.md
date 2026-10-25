@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Exact static min-cost flow and fixed-threshold witness recovery. |
-| **Complexity** | $$O(n+m)+(m+1)\exp(O((\log(m+2))^{4/5}(\log\log(m+4))^{1/5}))$$, conditional on the raw backend; the proof also records the explicit $$E^4$$ numerical term. |
+| **Complexity** | `O(n+m)+(m+1)exp(O((log(m+2))^(4/5)(loglog(m+4))^(1/5)))`, conditional on the raw backend; the proof also records the explicit `E^4` numerical term. |
 | **Model** | Static exact min-cost flow and fixed-threshold crossing with the explicit feasibility and numerical interfaces in the proof. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

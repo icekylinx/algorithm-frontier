@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Exact degree-constrained output in the stated reduction scope. |
-| **Complexity** | $$O(n+m)+(m+1)\exp(O((\log(m+2))^{4/5}(\log\log(m+4))^{1/5}))$$ under the reduction contract. |
+| **Complexity** | `O(n+m)+(m+1)exp(O((log(m+2))^(4/5)(loglog(m+4))^(1/5)))` under the reduction contract. |
 | **Model** | The exact degree bounds, input representation, and reduction restrictions in the source; do not extend to arbitrary weighted or binary-multiplicity variants. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Incremental directed SSSP with simple-path reporting. |
-| **Complexity** | $$O(n+m)+(n+m)\exp(O(U^{4/5}h^{1/5}+\sqrt{U(h+\log(1/\varepsilon))}))$$ under the stated backend; reporting a path of k edges costs $$O((k+1)\,\mathrm{poly}(\log N))$$. |
+| **Complexity** | `O(n+m)+(n+m)exp(O(U^(4/5)h^(1/5)+sqrt(U(h+log(1/eps)))))` under the stated backend; reporting a path of k edges costs `O((k+1) poly(log N))`. |
 | **Model** | Nonnegative incremental directed weights, epsilon<=1/2 and log(1/epsilon)<=cU as stated; candidate raw backend and simple-path reporting contract. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

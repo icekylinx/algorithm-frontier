@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Makespan at most $$(1+\varepsilon)\mathrm{OPT}$$. |
-| **Complexity** | $$2^{O(q/\varepsilon)}\,\mathrm{poly}(H_\varepsilon)$$ |
+| **Guarantee** | Makespan at most `(1+eps)OPT`. |
+| **Complexity** | `2^(O(q/eps)) poly(H_eps)` |
 | **Model** | Every original job base is mandatory; processing times and job polymatroid constraints are arbitrary as specified in Q. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

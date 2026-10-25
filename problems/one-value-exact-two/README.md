@@ -3,7 +3,7 @@
 | Item | Result |
 |---|---|
 | **Guarantee** | Exact factor 2 for one-value allocation with one exact budget. |
-| **Complexity** | $$ (27/4)^c\,\mathrm{poly}(H)$$ |
+| **Complexity** | `(27/4)^c poly(H)` |
 | **Model** | One common unit value, arbitrary integral recipient polymatroids, an original player-matroid basis, arbitrary assignment costs, one exact budget. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

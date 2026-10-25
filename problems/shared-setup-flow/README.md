@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Rate at least $$(1-\varepsilon)\mathrm{OPT}$$ with exact shared budget. |
-| **Complexity** | $$\Gamma(1/\varepsilon)^c\,\mathrm{poly}(H)$$ |
+| **Guarantee** | Rate at least `(1-eps)OPT` with exact shared budget. |
+| **Complexity** | `Gamma(1/eps)^c poly(H)` |
 | **Model** | Selected splittable flow, setup fees, one shared setup/routing budget, and an exact minimum-setup attaining restriction oracle. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 

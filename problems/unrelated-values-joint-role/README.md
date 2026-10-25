@@ -2,8 +2,8 @@
 
 | Item | Result |
 |---|---|
-| **Guarantee** | Factor $$2R/(R-1)$$ under the exact joint selector and budget model. |
-| **Complexity** | $$\Gamma(R)^q\,\mathrm{poly}(H)$$ in the joint-role parameterization. |
+| **Guarantee** | Factor `2R/(R-1)` under the exact joint selector and budget model. |
+| **Complexity** | `Gamma(R)^q poly(H)` in the joint-role parameterization. |
 | **Model** | Optional player selection, player-dependent values, one exact assignment budget plus shared setup/routing budget, and the P joint-role selector. |
 | **Status** | internally reviewed research; no formal verification or external peer review. |
 
