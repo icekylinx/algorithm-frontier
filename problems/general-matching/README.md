@@ -12,9 +12,9 @@ This is a Tier A conditional algorithm record for exact maximum-cardinality matc
 | **Model and representation** | Arbitrary undirected graphs, exact output, and the named raw-backend Contract R plus external primitives. The conditional backend assumptions are part of the claim. |
 | **Lower-bound scope** | This card records a conditional upper bound and backend boundary. It does not claim a new unconditional matching lower bound. |
 | **Review status** | Internal proof, algorithm, and source review is tracked in the [headline review report](../../reviews/headline/dynamic-graph-frontier.md). Finite audit notes are evidence for the stated composition; they are not formal verification. |
+| **Source** | [Quantitative matching composition](../../sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md). |
 
 Read the [proof map](proof.md), [source map](sources.md), and [complete index](../../CONTENTS.md) for the backend contract and audit trail.
 
-| **Source** | [Quantitative matching composition](../../sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

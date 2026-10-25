@@ -65,3 +65,8 @@ Migrate the remaining legacy problem cards, inspect the first workflow result af
 - Rebuilt `overview.pdf` as a compact academic reading map with problem statements, explicit parameters, and separate time/space rows.
 - Normalized all 41 curated cards to one display schema and removed redundant review prose that duplicated source material.
 - Added exact-rational constant checks, exhaustive small Subset Sum contract replay, and a finite two-scenario reduction replay to the curation workflow.
+
+## 2026-10-25 — card layout normalization
+
+- Reordered the required result-card rows into one stable sequence: objective, time, space, parameters, model, lower-bound scope, review status, and source.
+- Tightened the schema checker to reject both duplicate fields and future row-order drift.

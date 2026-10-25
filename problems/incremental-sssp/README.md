@@ -12,9 +12,9 @@ This is a Tier A conditional record for incremental directed shortest paths with
 | **Model and representation** | Nonnegative incremental directed weights, positive polynomial-range root lengths, parallel edges allowed, and the frozen-detector raw interface with exact retirement and callback accounting. |
 | **Lower-bound scope** | This is a conditional upper-bound candidate. It is not an unconditional published theorem and carries no new lower-bound claim. |
 | **Review status** | Internal proof, algorithm, and source review is tracked in the [headline review report](../../reviews/headline/dynamic-graph-frontier.md). Finite detector and path audits are evidence for the composition; they are not formal verification. |
+| **Source** | [Frozen-detector incremental SSSP](../../sources/checkpoint-o/frozen_detector_incremental_sssp.md). |
 
 Read the [proof map](proof.md), [source map](sources.md), and [complexity guide](../../docs/COMPLEXITY.md) for the exact accuracy and backend hypotheses.
 
-| **Source** | [Frozen-detector incremental SSSP](../../sources/checkpoint-o/frozen_detector_incremental_sssp.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

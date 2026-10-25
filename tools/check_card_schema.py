@@ -30,12 +30,17 @@ def main() -> None:
         raise SystemExit("no problem cards found")
     for path in cards:
         text = path.read_text(encoding="utf-8")
+        positions: list[int] = []
         for label in REQUIRED:
             count = len(re.findall(r"\*\*" + re.escape(label) + r"\*\*", text))
             if count == 0:
                 errors.append(f"{path}: missing **{label}**")
             elif count > 1:
                 errors.append(f"{path}: duplicate **{label}** ({count})")
+            else:
+                positions.append(text.index(f"**{label}**"))
+        if len(positions) == len(REQUIRED) and positions != sorted(positions):
+            errors.append(f"{path}: required fields are out of order")
     if errors:
         raise SystemExit("card schema check failed:\n" + "\n".join(errors))
     print(f"card schema check passed ({len(cards)} cards)")

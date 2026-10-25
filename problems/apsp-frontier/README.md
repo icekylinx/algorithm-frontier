@@ -14,9 +14,9 @@ This is a Tier A record of incomparable fully dynamic all-pairs shortest-path tr
 | **Model and representation** | Fully dynamic weighted-graph distance oracle with the source’s update encoding, positive polynomial-range lengths, and amortized maintenance. |
 | **Lower-bound scope** | The record is an upper-bound frontier and comparison map. It does not assert that either point is globally optimal. |
 | **Review status** | Internal proof, algorithm, and source review is tracked in the [headline review report](../../reviews/headline/dynamic-graph-frontier.md). Finite audit notes are evidence for the listed tradeoffs; they are not formal verification. |
+| **Source** | [APSP time/stretch curve](../../sources/checkpoint-o/fully_dynamic_apsp_time_stretch_curve.md). |
 
 Read the [proof map](proof.md), [source map](sources.md), and [complexity guide](../../docs/COMPLEXITY.md) for the exact symbolic forms, the amortized-update scope, and the comparison points. The source does not claim worst-case update time or a constant/polylogarithmic stretch point for Tradeoff B.
 
-| **Source** | [APSP time/stretch curve](../../sources/checkpoint-o/fully_dynamic_apsp_time_stretch_curve.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro
