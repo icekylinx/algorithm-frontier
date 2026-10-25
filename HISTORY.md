@@ -2,6 +2,17 @@
 
 This is an append-only curation log. It records repository organization and presentation changes; it does not replace the source manifests or the mathematical review notes.
 
+## 2026-10-25 — LaTeX overview and checkpoint X intake
+
+- Replaced the generated overview with a reproducible four-page LaTeX article: `tools/overview.tex` is the source, `tools/make_overview_pdf.py` is the temporary-build compiler, and `overview.pdf` is the checked-in reading map.
+- Imported checkpoint X as nine source payloads with an explicit draft manifest, family index, and proof/algorithm/source backlog. The payloads remain source-only; seven non-promoted draft cards expose their guarantees and review obligations without entering the stable catalogue.
+- Added draft-source validation to CI and extended the review registry to distinguish draft intake from promoted result records.
+- Published commits [`72e5459`](https://github.com/icekylinx/algorithm-frontier/commit/72e545947cf815d3e7e733563b390e411ec86092), [`ded564d`](https://github.com/icekylinx/algorithm-frontier/commit/ded564d50608f12bb9732c9cced32ecdf52b0576), [`28c3bb6`](https://github.com/icekylinx/algorithm-frontier/commit/28c3bb64b5a05a48b503b41f21cd49dc750be0ae), and [`fc25012`](https://github.com/icekylinx/algorithm-frontier/commit/fc2501290fe2c3f1946d5ef87aae23e853e13081); the final curation run is [green](https://github.com/icekylinx/algorithm-frontier/actions/runs/40214220579).
+
+### Next review
+
+Review checkpoint X payloads family by family. Promote a draft only after proof, algorithm, and source reports agree on its model, parameters, comparator, and lower-bound scope.
+
 ## 2026-10-25
 
 - Reorganized the public reading path around `README.md`, `OVERVIEW.md`, and canonical `CONTENTS.md`.
