@@ -5,7 +5,8 @@ The repository separates public result records from imported source material.
 | Path | Purpose |
 |---|---|
 | `README.md` | Display-first landing page with featured results and navigation. |
-| `OVERVIEW.md` | Complete index of curated problem modules. |
+| `OVERVIEW.md` | Short reading path for headline records. |
+| `CONTENTS.md` | Canonical complete catalogue of all curated modules. |
 | `problems/<name>/` | One curation record: README, proof map, verification notes, and exact source map. |
 | `sources/checkpoint-o/` | Complete baseline source snapshot. |
 | `sources/checkpoint-p/`, `sources/checkpoint-q/` | Incremental source checkpoints retained by byte identity. |

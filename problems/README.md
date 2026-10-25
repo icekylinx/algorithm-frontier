@@ -9,4 +9,4 @@ Every completed problem directory follows this contract:
 
 A result is not promoted merely because it has a better number. The model, comparator, parameter, assumptions, representation, and additive terms must match. Older same-scope claims stay in the preserved checkpoint snapshots or an explicit historical module.
 
-The complete catalog is [OVERVIEW.md](../OVERVIEW.md). The shared notation and display rules are in [`docs/COMPLEXITY.md`](../docs/COMPLEXITY.md) and [`FORMATTING.md`](../FORMATTING.md).
+The complete catalog is [CONTENTS.md](../CONTENTS.md); the short reading path is [OVERVIEW.md](../OVERVIEW.md). The shared notation and display rules are in [`docs/COMPLEXITY.md`](../docs/COMPLEXITY.md) and [`FORMATTING.md`](../FORMATTING.md).
