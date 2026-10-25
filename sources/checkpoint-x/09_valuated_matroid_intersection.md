@@ -219,14 +219,20 @@ Iwamasa and Takazawa, *Optimal matroid bases with intersection constraints: Valu
 O(Nk^2\gamma+Nk\log N),
 \]
 
-where gamma is the time needed to evaluate a valuation. For bit complexity,
-let \(\beta\) bound the bit length of every finite value returned by either
-oracle; comparisons and additions are then charged in the explicit input size
-and \(\beta\). This supplies the initial optimum B. The same paper explicitly uses the
-fact that minimizing bases of a valuated matroid form an ordinary matroid.
+where gamma is the time needed to evaluate a valuation. For a bit-model
+statement, let beta_val bound the bit length of every finite valuation returned
+by the oracle and beta_in bound input labels; the exact rational operations
+then have polynomial bit complexity in the explicit input size, beta_val, and
+beta_in. This supplies the initial optimum B. The same paper explicitly uses
+the fact that minimizing bases of a valuated matroid form an ordinary matroid.
 Primary full text: https://arxiv.org/pdf/2003.02424 .
 
-After B is known, the gamma_i tables use O(Nk) valuation evaluations, and the minimum-label compressed arcs can be formed by O(Nk^2) arithmetic comparisons. Dense shortest-path processing and the deterministic path-reporting preserver fit within a conservative additional O(k^3) arithmetic-operation bound. For a bit-model statement, let beta_val bound the bit length of every finite valuation returned by the oracle (and beta_in bound input labels); the exact rational operations then have polynomial bit complexity in the explicit input size, beta_val, and beta_in. An oracle-call count alone does not claim a polynomial bound on returned-value length.
+After B is known, the gamma_i tables use O(Nk) valuation evaluations, and the
+minimum-label compressed arcs can be formed by O(Nk^2) arithmetic comparisons.
+Dense shortest-path processing and the deterministic path-reporting preserver
+fit within a conservative additional O(k^3) arithmetic-operation bound. An
+oracle-call count alone does not claim a polynomial bound on returned-value
+length.
 
 The underlying valuated matroid intersection and cycle criteria are classical;
 see Kazuo Murota, *Valuated Matroid Intersection I: Optimality Criteria*,
