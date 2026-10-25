@@ -27,6 +27,17 @@ A source-linked catalogue of deterministic algorithms, exact and approximation s
 
 The landing page is intentionally short. Exact parameter values, assumptions, lower-bound scopes, and proof status live in the result cards, the overview PDF, and the review reports.
 
+## Reading order
+
+| Tier | Role | Where to start |
+|---|---|---|
+| **A** | Headline frontier records and the newest parameter boundaries. | Numeric-target, weighted-prefix, faster Subset Sum, low-space Subset Sum, matching, and APSP. |
+| **B** | Supporting constructions and reusable dynamic, flow, allocation, or scheduling extensions. | The graph, flow, allocation, and scheduling sections in [`CONTENTS.md`](CONTENTS.md). |
+| **C** | Lower bounds, barriers, robustness limits, and endpoint records. | The robustness and lower-bound section in [`CONTENTS.md`](CONTENTS.md). |
+| **D** | Imported manuscripts, checkpoint archives, manifests, licenses, and historical snapshots. | [`sources/`](sources/) and the linked provenance pages. |
+
+The tier controls reading order and maintenance attention. It does not rank mathematical truth or replace the model and review fields on an individual record.
+
 ## Record contract
 
 Each curated problem keeps a compact, auditable contract:

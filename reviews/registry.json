@@ -4,7 +4,11 @@
   "review_policy": {
     "finite_checks_are_formal_verification": false,
     "default_formal_verification_status": "not-claimed",
-    "required_roles": ["proof_review", "algorithm_review", "source_review"]
+    "required_roles": [
+      "proof_review",
+      "algorithm_review",
+      "source_review"
+    ]
   },
   "records": [
     {
@@ -16,10 +20,19 @@
       "proof_review": "reviews/headline/low-space-subset-sum.md",
       "algorithm_review": "reviews/headline/low-space-subset-sum.md",
       "source_review": "reviews/headline/low-space-subset-sum.md",
-      "finite_checks": ["sources/subset-sum/verification/check_range_identities.py", "sources/subset-sum/verification/check_resources.py", "sources/subset-sum/verification/verify_proof.py"],
+      "finite_checks": [
+        "sources/subset-sum/verification/check_range_identities.py",
+        "sources/subset-sum/verification/check_resources.py",
+        "sources/subset-sum/verification/verify_proof.py"
+      ],
       "formal_verification": "not-claimed",
-      "open_issues": ["A full formalization in a proof assistant is not part of this repository.", "Recheck the exact writable-space exponent if the source theorem or machine model changes."],
-      "reports": ["reviews/headline/low-space-subset-sum.md"]
+      "open_issues": [
+        "A full formalization in a proof assistant is not part of this repository.",
+        "Recheck the exact writable-space exponent if the source theorem or machine model changes."
+      ],
+      "reports": [
+        "reviews/headline/low-space-subset-sum.md"
+      ]
     },
     {
       "id": "faster-subset-sum",
@@ -30,10 +43,18 @@
       "proof_review": "reviews/headline/faster-subset-sum.md",
       "algorithm_review": "reviews/headline/faster-subset-sum.md",
       "source_review": "reviews/headline/faster-subset-sum.md",
-      "finite_checks": ["sources/subset-sum/verification/check_fast_costs.py", "sources/subset-sum/verification/check_profile.py"],
+      "finite_checks": [
+        "sources/subset-sum/verification/check_fast_costs.py",
+        "sources/subset-sum/verification/check_profile.py"
+      ],
       "formal_verification": "not-claimed",
-      "open_issues": ["The headline card claims no space exponent; the source model should be revisited if a space bound is later promoted.", "Recheck the rational exponent when the source checkpoint is superseded."],
-      "reports": ["reviews/headline/faster-subset-sum.md"]
+      "open_issues": [
+        "The headline card claims no space exponent; the source model should be revisited if a space bound is later promoted.",
+        "Recheck the rational exponent when the source checkpoint is superseded."
+      ],
+      "reports": [
+        "reviews/headline/faster-subset-sum.md"
+      ]
     },
     {
       "id": "numeric-target-frontier",
@@ -44,10 +65,18 @@
       "proof_review": "reviews/headline/numeric-target-frontier.md",
       "algorithm_review": "reviews/headline/numeric-target-frontier.md",
       "source_review": "reviews/headline/numeric-target-frontier.md",
-      "finite_checks": ["problems/numeric-target-frontier/verify/complexity_scope.md", "problems/numeric-target-frontier/verify/lower_bound_scope.md"],
+      "finite_checks": [
+        "problems/numeric-target-frontier/verify/complexity_scope.md",
+        "problems/numeric-target-frontier/verify/lower_bound_scope.md"
+      ],
       "formal_verification": "not-claimed",
-      "open_issues": ["Keep oracle, readable-program, and deterministic-ETH lower-bound scopes separate.", "Reconcile the refined accuracy constant and the single-matroid square-root variants with every promoted source payload."],
-      "reports": ["reviews/headline/numeric-target-frontier.md"]
+      "open_issues": [
+        "Keep oracle, readable-program, and deterministic-ETH lower-bound scopes separate.",
+        "Reconcile the refined accuracy constant and the single-matroid square-root variants with every promoted source payload."
+      ],
+      "reports": [
+        "reviews/headline/numeric-target-frontier.md"
+      ]
     },
     {
       "id": "weighted-prefix-quota-frontier",
@@ -58,10 +87,18 @@
       "proof_review": "reviews/headline/weighted-prefix-quota-frontier.md",
       "algorithm_review": "reviews/headline/weighted-prefix-quota-frontier.md",
       "source_review": "reviews/headline/weighted-prefix-quota-frontier.md",
-      "finite_checks": ["problems/weighted-prefix-quota-frontier/verify/kernel_scope.md", "problems/weighted-prefix-quota-frontier/verify/lower_bound.md"],
+      "finite_checks": [
+        "problems/weighted-prefix-quota-frontier/verify/kernel_scope.md",
+        "problems/weighted-prefix-quota-frontier/verify/lower_bound.md"
+      ],
       "formal_verification": "not-claimed",
-      "open_issues": ["Keep end-to-end algorithms distinct from deterministic kernel outputs.", "Recheck root-cap, common-coordinate, and positive-root-charge assumptions after the next checkpoint."],
-      "reports": ["reviews/headline/weighted-prefix-quota-frontier.md"]
+      "open_issues": [
+        "Keep end-to-end algorithms distinct from deterministic kernel outputs.",
+        "Recheck root-cap, common-coordinate, and positive-root-charge assumptions after the next checkpoint."
+      ],
+      "reports": [
+        "reviews/headline/weighted-prefix-quota-frontier.md"
+      ]
     },
     {
       "id": "dynamic-graph-frontier",
@@ -72,10 +109,108 @@
       "proof_review": "reviews/headline/dynamic-graph-frontier.md",
       "algorithm_review": "reviews/headline/dynamic-graph-frontier.md",
       "source_review": "reviews/headline/dynamic-graph-frontier.md",
-      "finite_checks": ["problems/dynamic-spanners/verify/tracked_terminal_flat_spanner_independent_audit.md", "problems/dynamic-spanners/verify/fully_dynamic_spanner_independent_audit.md"],
+      "finite_checks": [
+        "problems/dynamic-spanners/verify/tracked_terminal_flat_spanner_independent_audit.md",
+        "problems/dynamic-spanners/verify/fully_dynamic_spanner_independent_audit.md"
+      ],
       "formal_verification": "not-claimed",
-      "open_issues": ["Keep tracked-terminal and full-horizon regimes in separate rows.", "Recheck update, stretch, recourse, and path-reporting parameters when the graph source is refreshed."],
-      "reports": ["reviews/headline/dynamic-graph-frontier.md"]
+      "open_issues": [
+        "Keep tracked-terminal and full-horizon regimes in separate rows.",
+        "Recheck update, stretch, recourse, and path-reporting parameters when the graph source is refreshed."
+      ],
+      "reports": [
+        "reviews/headline/dynamic-graph-frontier.md"
+      ]
+    },
+    {
+      "id": "general-matching",
+      "path": "problems/general-matching",
+      "tier": "A",
+      "status": "conditional",
+      "last_reviewed": "2026-10-25",
+      "proof_review": "reviews/headline/dynamic-graph-frontier.md",
+      "algorithm_review": "reviews/headline/dynamic-graph-frontier.md",
+      "source_review": "reviews/headline/dynamic-graph-frontier.md",
+      "finite_checks": [
+        "problems/general-matching/verify/deterministic_maximum_matching_verifier.md",
+        "problems/general-matching/verify/matching_size_kernel_corollary.md"
+      ],
+      "formal_verification": "not-claimed",
+      "open_issues": [
+        "Keep the raw backend contract and edge-identifier reconstruction explicit.",
+        "Recheck the retained-edge parameter when the matching source is refreshed."
+      ],
+      "reports": [
+        "reviews/headline/dynamic-graph-frontier.md"
+      ]
+    },
+    {
+      "id": "apsp-frontier",
+      "path": "problems/apsp-frontier",
+      "tier": "A",
+      "status": "conditional",
+      "last_reviewed": "2026-10-25",
+      "proof_review": "reviews/headline/dynamic-graph-frontier.md",
+      "algorithm_review": "reviews/headline/dynamic-graph-frontier.md",
+      "source_review": "reviews/headline/dynamic-graph-frontier.md",
+      "finite_checks": [
+        "problems/apsp-frontier/verify/apsp_tradeoff_independent_audit.md",
+        "problems/apsp-frontier/verify/same_stretch_apsp_comparison_and_root_audit.md"
+      ],
+      "formal_verification": "not-claimed",
+      "open_issues": [
+        "Keep the two update/stretch points as incomparable rows.",
+        "Recheck the U and h hierarchy definitions when the APSP source is updated."
+      ],
+      "reports": [
+        "reviews/headline/dynamic-graph-frontier.md"
+      ]
+    },
+    {
+      "id": "incremental-sssp",
+      "path": "problems/incremental-sssp",
+      "tier": "B",
+      "status": "conditional",
+      "last_reviewed": "2026-10-25",
+      "proof_review": "reviews/headline/dynamic-graph-frontier.md",
+      "algorithm_review": "reviews/headline/dynamic-graph-frontier.md",
+      "source_review": "reviews/headline/dynamic-graph-frontier.md",
+      "finite_checks": [
+        "problems/incremental-sssp/verify/frozen_barrier_detector_independent_audit.md",
+        "problems/incremental-sssp/verify/simple_path_reporting_from_tree_segments.md"
+      ],
+      "formal_verification": "not-claimed",
+      "open_issues": [
+        "Keep detector assumptions separate from the end-to-end path-reporting cost.",
+        "Recheck epsilon, N, U, h, and k definitions after a new SSSP checkpoint."
+      ],
+      "reports": [
+        "reviews/headline/dynamic-graph-frontier.md"
+      ]
+    },
+    {
+      "id": "legacy-result-card-backlog",
+      "path": "problems",
+      "tier": "B",
+      "status": "needs-follow-up",
+      "last_reviewed": "2026-10-25",
+      "proof_review": "reviews/backlog/legacy-result-cards.md",
+      "algorithm_review": "reviews/backlog/legacy-result-cards.md",
+      "source_review": "reviews/backlog/legacy-result-cards.md",
+      "finite_checks": [
+        "problems/incremental-scc/verify/log_barrier_scc_independent_audit.md",
+        "problems/dynamic-msf/verify/dynamic_msf_public_baseline_root_audit.md",
+        "problems/selected-flow/verify/selected_multicommodity_flow_independent_audit.md"
+      ],
+      "formal_verification": "not-claimed",
+      "open_issues": [
+        "Complete independent proof reviews for each migrated card.",
+        "Audit every backend composition and additive complexity term before promoting a card to a stable headline.",
+        "Reopen on any checkpoint, model, comparator, or output-interface change."
+      ],
+      "reports": [
+        "reviews/backlog/legacy-result-cards.md"
+      ]
     }
   ]
 }

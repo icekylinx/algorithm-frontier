@@ -33,3 +33,9 @@ Migrate the remaining legacy problem cards, inspect the first workflow result af
 - Added a review registry that separates proof review, algorithm review, source review, finite certificate replay, and formal-verification status.
 - Repaired the reviewed low-space source links and expanded the numeric-target source map to every R/S payload file.
 - Added CI checks for the review registry and reviewed internal links.
+
+## 2026-10-25 — second review pass
+
+- Added a reading-order table that makes Tier A through Tier D roles visible from the homepage.
+- Extended the result-card schema to incremental SCC, dynamic MSF, selected flow, min-cost flow, degree-constrained subgraphs, and five scheduling/profile records.
+- Added a backlog review report for those migrated cards and registered the matching, APSP, and incremental SSSP cards under the dynamic-graph review surface.

@@ -1,16 +1,15 @@
 # Two-size makespan scheduling
 
-| Item | Result |
+| Field | Curated statement |
 |---|---|
-| **Guarantee** | Exact makespan factor 3/2 in the corank branch and factor 5/3 in the large-unit branch. |
-| **Complexity** | `(27/4)^c poly(H)` for the corank branch and `2^(O(h)) poly(H)` for the large-unit branch. |
-| **Model** | Arbitrary integral job polymatroids with two sizes; q/c/h are different parameters and no one regime is silently substituted for another. |
-| **Status** | internally reviewed research; no formal verification or external peer review. |
-
-The complete proof map, verification pointers, and exact source paths are
-listed below. The original proof source is preserved without mathematical
-rewriting.
-
-**Source.** [`sources/checkpoint-o/two_size_makespan_corank_three_halves_transfer.md`](../../sources/checkpoint-o/two_size_makespan_corank_three_halves_transfer.md) and the verification paths in `sources.md`.
+| **Guarantee** | The corank branch gives an exact factor three-halves schedule; the separate large-unit branch gives factor five-thirds. These are distinct parameter regimes. |
+| **Objective and output** | Minimize makespan for two positive job sizes and output integral bases for both aggregate job polymatroids, decomposed back to original assignments. |
+| **Time** | In the corank branch, exponential in the number of surplus eligible large-job positions, times polynomial work. The large-unit construction has its own exponential parameter and is not silently merged. |
+| **Space** | Polynomial in the complete binary input and the selected branch state; binary job counts are not expanded. |
+| **Parameters** | `q` is the machine count; `h` and `s` are aggregate large- and small-job ranks; `r_b` is the Boolean-cap rank; `c` counts surplus eligible large-job positions; `u` and `a` are the two job sizes. |
+| **Model and representation** | Arbitrary integral job polymatroids with two positive sizes, binary-encoded ranks, and the standard integral decomposition primitive. The Boolean-rank failure case is handled separately. |
+| **Lower-bound scope** | The corank branch retains its matching strict-below-three-halves obstruction in the full value-oracle model; no broader lower bound is claimed. |
+| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [backlog review](../../reviews/backlog/legacy-result-cards.md) and [review registry](../../reviews/README.md). |
+| **Source** | [Two-size corank source](../../sources/checkpoint-o/two_size_makespan_corank_three_halves_transfer.md) and the verification paths in `sources.md`. |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

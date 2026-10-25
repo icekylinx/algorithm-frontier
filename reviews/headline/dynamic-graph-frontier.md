@@ -1,17 +1,17 @@
 # Review: Dynamic graph frontier
 
-- **Record:** [`problems/dynamic-spanners`](../../problems/dynamic-spanners/)
+- **Records:** [`dynamic-spanners`](../../problems/dynamic-spanners/), [`general-matching`](../../problems/general-matching/), [`apsp-frontier`](../../problems/apsp-frontier/), and [`incremental-sssp`](../../problems/incremental-sssp/)
 - **Tier:** `B`
 - **Last reviewed:** `2026-10-25`
 - **Status:** `conditional`
 
 ## Scope
 
-This review covers dynamic spanner records and their adjacent dynamic-graph comparisons. The headline card must keep tracked-terminal and full-horizon regimes separate.
+This review covers dynamic spanner records and the adjacent matching, APSP, and incremental SSSP cards. The headline card must keep tracked-terminal and full-horizon regimes separate.
 
 ## Proof review
 
-- **Checked:** The proof maps identify the update model, graph size, horizon, stretch, and recourse/path-reporting obligations for each regime.
+- **Checked:** The proof maps identify the update model, graph size, horizon, stretch, recourse, backend, and path-reporting obligations for each regime.
 - **Evidence:** The dynamic-spanners proof and verification notes.
 - **Open issue:** A comparison is not a theorem transfer when it changes terminal coverage, horizon, or whether paths are explicitly reported.
 
@@ -23,7 +23,7 @@ This review covers dynamic spanner records and their adjacent dynamic-graph comp
 
 ## Source review
 
-- **Checked:** The current graph payload has independent audits for tracked-terminal and fully dynamic regimes.
+- **Checked:** The graph payload has independent audits for tracked-terminal and fully dynamic regimes; adjacent matching, APSP, and SSSP cards retain their own source and backend boundaries.
 - **Evidence:** The verification files linked from the dynamic-spanners record.
 - **Open issue:** Preserve exact source attribution and checkpoint identity when graph records are refreshed.
 
