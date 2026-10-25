@@ -45,3 +45,7 @@ Migrate the remaining legacy problem cards, inspect the first workflow result af
 - Added prose-first cards and backlog reviews for scheduling profiles and allocation/robustness records.
 - Expanded the registry to eleven review surfaces, including explicit finite-check paths and a stronger check that every recorded path exists.
 - Added a CI whitespace gate and documented the no-schedule, checkpoint-triggered maintenance loop.
+
+## 2026-10-25 — workflow repair
+
+- The first whitespace-gate run exposed the checkout depth assumption; the workflow now fetches two commits before running `git diff --check`.
