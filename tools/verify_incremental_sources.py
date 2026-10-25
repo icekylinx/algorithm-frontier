@@ -53,7 +53,7 @@ for checkpoint, expected in specs.items():
             errors.append(f"wrong parent checkpoint for R: {manifest.get('parent_checkpoint')}")
     else:
         parent = manifest.get("parent_archive") or manifest.get("parent", {}).get("filename")
-        if manifest.get("parent", {}).get("filename") and parent != expected["parent_archive"]:
+        if parent != expected["parent_archive"]:
             errors.append(f"wrong parent archive for {checkpoint.upper()}: {parent}")
         if checkpoint == "s" and manifest.get("scope") != "increment_only_since_R":
             errors.append("S manifest does not declare increment_only_since_R")
