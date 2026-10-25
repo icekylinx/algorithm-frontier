@@ -11,6 +11,6 @@ The complete proof map, verification pointers, and exact source paths are
 listed below. The original proof source is preserved without mathematical
 rewriting.
 
-**Source.** `sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md` and the verification paths in `sources.md`.
+**Source.** [`sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md`](../../sources/checkpoint-o/current_checkpoint/quantitative_matching_4_5_composition.md) and the verification paths in `sources.md`.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

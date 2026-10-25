@@ -11,6 +11,6 @@ The complete proof map, verification pointers, and exact source paths are
 listed below. The original proof source is preserved without mathematical
 rewriting.
 
-**Source.** `sources/checkpoint-p/unrelated_values_joint_role_near_two_allocation.md` and the verification paths named in `sources.md`.
+**Source.** [`sources/checkpoint-p/unrelated_values_joint_role_near_two_allocation.md`](../../sources/checkpoint-p/unrelated_values_joint_role_near_two_allocation.md) and the verification paths named in `sources.md`.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

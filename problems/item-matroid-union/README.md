@@ -11,6 +11,6 @@ The complete proof map, verification pointers, and exact source paths are
 listed below. The original proof source is preserved without mathematical
 rewriting.
 
-**Source.** `sources/checkpoint-o/matroid_union_fat_resource_allocation.md` and the verification paths named in `sources.md`.
+**Source.** [`sources/checkpoint-o/matroid_union_fat_resource_allocation.md`](../../sources/checkpoint-o/matroid_union_fat_resource_allocation.md) and the verification paths named in `sources.md`.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

@@ -23,10 +23,11 @@ mathematical source is linked from the problem directory.
 | [Arbitrary processing-time scheduling](problems/arbitrary-processing-scheduling/) | Makespan at most $$(1+\varepsilon)\mathrm{OPT}$$ | $$2^{O(q/\varepsilon)}\,\mathrm{poly}(H_\varepsilon)$$ | Mandatory jobs and exact budget |
 | [Exact 3/2 scheduling](problems/six-profile-three-halves/) | Makespan at most $$3\mathrm{OPT}/2$$ | $$6^q\,\mathrm{poly}(H)$$ | Six-profile endpoint |
 | [Dynamic APSP](problems/apsp-frontier/) | Pareto update/stretch tradeoffs | Multiple exponential update/stretch points | Fully dynamic graph model |
-| [Dynamic spanners](problems/dynamic-spanners/) | 4/5 and 5/6 recourse regimes | Amortized, with different recourse contracts | Tracked-terminal and full-horizon scopes |
-| [Incremental SSSP and SCC](problems/incremental-sssp/) | Distance/path reporting and exact SCC labels | Conditional 4/5-style envelopes | Incremental directed graphs |
+| [Dynamic spanners](problems/dynamic-spanners/) | 4/5 and 5/6 recourse regimes | Stretch/work $$\exp(O(U^{4/5}h^{1/5}))$$ and $$\exp(O(U^{5/6}h^{1/6}))$$ | Tracked-terminal and full-horizon scopes |
+| [Incremental SSSP](problems/incremental-sssp/) | Distance estimates and simple-path reporting | $$O(n+m)+(n+m)\exp(O(U^{4/5}h^{1/5}+\sqrt{U(h+\log(1/\varepsilon))}))$$ | Incremental directed graphs |
+| [Incremental SCC](problems/incremental-scc/) | Exact component labels | $$ (n+m)E(N)^{O(1)}\,\mathrm{poly}(U)$$ with the stated subpolynomial backend | Incremental directed graphs |
 | [Strong forest and Gomory-Hu transfer](problems/decremental-strong-forest/) | Decremental forest transfer | $$O(n+m)+(m+1)E_6(n+m)$$ | Conditional reduction contract |
-| [Strong Haxell matching](problems/strong-haxell-matching/) | Hypergraph matching or certificate | Rank-sensitive exponential bound | Strong-Haxell model |
+| [Strong Haxell matching](problems/strong-haxell-matching/) | Matching or checkable hitting-set certificate | $$O(|A|+|B|)+p\exp(O(U\log(2+s)/s))$$ | Strong-Haxell model |
 
 The [full algorithm index](OVERVIEW.md) lists the remaining allocation,
 scheduling, flow, dynamic graph, and lower-bound modules.

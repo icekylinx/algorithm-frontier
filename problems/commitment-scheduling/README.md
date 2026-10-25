@@ -11,6 +11,6 @@ The complete proof map, verification pointers, and exact source paths are
 listed below. The original proof source is preserved without mathematical
 rewriting.
 
-**Source.** `sources/checkpoint-o/scheduling_bottleneck_commitment_rank_reduction.md` and the verification paths in `sources.md`.
+**Source.** [`sources/checkpoint-o/scheduling_bottleneck_commitment_rank_reduction.md`](../../sources/checkpoint-o/scheduling_bottleneck_commitment_rank_reduction.md) and the verification paths in `sources.md`.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

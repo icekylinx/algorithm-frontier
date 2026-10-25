@@ -11,6 +11,6 @@ The complete proof map, verification pointers, and exact source paths are
 listed below. The original proof source is preserved without mathematical
 rewriting.
 
-**Source.** `sources/checkpoint-o/many_small_sizes_workload_makespan_transfer.md` and the verification paths in `sources.md`.
+**Source.** [`sources/checkpoint-o/many_small_sizes_workload_makespan_transfer.md`](../../sources/checkpoint-o/many_small_sizes_workload_makespan_transfer.md) and the verification paths in `sources.md`.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

@@ -12,6 +12,6 @@ The complete proof map, verification pointers, and exact source paths are
 listed below. The original proof source is preserved without mathematical
 rewriting.
 
-**Source.** `sources/subset-sum/combined-proof.md`; verification scripts and reviews are listed in `sources.md`.
+**Source.** [`sources/subset-sum/combined-proof.md`](../../sources/subset-sum/combined-proof.md); verification scripts and reviews are listed in `sources.md`.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

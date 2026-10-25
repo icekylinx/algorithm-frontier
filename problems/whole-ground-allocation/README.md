@@ -11,6 +11,6 @@ The complete proof map, verification pointers, and exact source paths are
 listed below. The original proof source is preserved without mathematical
 rewriting.
 
-**Source.** `sources/checkpoint-o/global_exponential_allocation_flow_transfers.md` and the verification paths named in `sources.md`.
+**Source.** [`sources/checkpoint-o/global_exponential_allocation_flow_transfers.md`](../../sources/checkpoint-o/global_exponential_allocation_flow_transfers.md) and the verification paths named in `sources.md`.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro
