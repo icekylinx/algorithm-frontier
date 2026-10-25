@@ -12,6 +12,6 @@
 | **Model and representation** | Exact homogeneous polynomial label features, quotient/rank backends, colored cuts, hyperedges, hedges, represented blocks, and globally commuting stabilizer blocks as stated. |
 | **Lower-bound scope** | Cut and whole-block lower constructions are conditional on their incidence and size regimes; they do not apply to arbitrary sparsifiers or positive operators. |
 | **Review status** | Proof, algorithm, and source review are pending; formal verification is not claimed. |
-| **Source** | Payloads `27`, `28`, and `29` in `sources/checkpoint-x/`. |
+| **Source** | Payloads `27`, `28`, and `29` in the checkpoint-X source tree. |
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

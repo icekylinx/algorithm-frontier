@@ -12,6 +12,6 @@
 | **Model and representation** | Separate models: two independence-oracle matroids; fixed-rank valuated matroids; directed nonnegative-cost unit-capacity flow/arborescence; loopless general graphs; and matroid-intersection price changes. One failure/change is allowed. |
 | **Lower-bound scope** | Inherited distance-preserver and matching obstructions are model-specific. Two-failure quadratic statements and arborescence lower bounds are not merged. |
 | **Review status** | Proof, algorithm, and source review are pending; formal verification is not claimed. |
-| **Source** | Payloads `01`, `09`, `10`, `12`, `13`, `14`, and `16` in `sources/checkpoint-x/`. |
+| **Source** | Payloads `01`, `09`, `10`, `12`, `13`, `14`, and `16` in the checkpoint-X source tree. |
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

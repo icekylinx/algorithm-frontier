@@ -12,6 +12,6 @@
 | **Model and representation** | Binary partial-coloring membership for payload 33 and the finite non-Fano sign-cone model for payload 38. |
 | **Lower-bound scope** | coNP-completeness is a barrier for one separation route; `15/128` versus `1/8` refutes one conjectured inequality only. |
 | **Review status** | Proof, algorithm, and source review are pending; formal verification is not claimed. |
-| **Source** | Payloads `33` and `38` in `sources/checkpoint-x/`. |
+| **Source** | Payloads `33` and `38` in the checkpoint-X source tree. |
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

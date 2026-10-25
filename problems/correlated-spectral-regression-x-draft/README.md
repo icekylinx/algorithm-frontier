@@ -12,6 +12,6 @@
 | **Model and representation** | Correlated label failures with a fixed filtration/query family; finite-field or real PSD models; weak convex regression with supplied response/penalty structure; arbitrary seminorms only with the stated evaluation or existence contract. |
 | **Lower-bound scope** | Lower examples are model-specific and do not transfer automatically across spectral, cut, regression, and seminorm objectives. |
 | **Review status** | Proof, algorithm, and source review are pending; formal verification is not claimed. |
-| **Source** | Payloads `03`, `11`, `15`, `17`, `18`, `19`, and `26` in `sources/checkpoint-x/`. |
+| **Source** | Payloads `03`, `11`, `15`, `17`, `18`, `19`, and `26` in the checkpoint-X source tree. |
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

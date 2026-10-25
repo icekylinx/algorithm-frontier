@@ -12,6 +12,6 @@
 | **Model and representation** | Groups may be nonabelian and cosets need not be normal. Metric rows require itemwise action or the stated few-orbit completion. Modular rows use `Z_q` without factoring assumptions. |
 | **Lower-bound scope** | The coNP result and non-Fano calculation are barriers for specified models, not general sparsification lower bounds. |
 | **Review status** | Proof, algorithm, and source review are pending; formal verification is not claimed. |
-| **Source** | Payloads `20`, `30`, `31`, `32`, `33`, `35`, `36`, `37`, and `38` in `sources/checkpoint-x/`. |
+| **Source** | Payloads `20`, `30`, `31`, `32`, `33`, `35`, `36`, `37`, and `38` in the checkpoint-X source tree. |
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

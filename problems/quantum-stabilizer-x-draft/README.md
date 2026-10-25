@@ -12,6 +12,6 @@
 | **Model and representation** | Positive Pauli/Weyl terms, commuting stabilizer blocks, or affine finite-field projectors exactly as stated. Whole blocks remain atomic. |
 | **Lower-bound scope** | Cut-code and block lower families apply only in their stated commuting or homogeneous regimes; no general quantum complexity lower bound is asserted. |
 | **Review status** | Proof, algorithm, and source review are pending; formal verification is not claimed. |
-| **Source** | Payloads `21`, `22`, `23`, `24`, `25`, and `34` in `sources/checkpoint-x/`. |
+| **Source** | Payloads `21`, `22`, `23`, `24`, `25`, and `34` in the checkpoint-X source tree. |
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.
