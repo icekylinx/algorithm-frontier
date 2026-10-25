@@ -31,6 +31,9 @@ listed below as separate, parameter-sensitive modules.
 | [Six-profile 3/2 scheduling](problems/six-profile-three-halves/) | Exact 3/2 endpoint in 6^q poly(H) for the arbitrary processing profile endpoint | Six-profile endpoint; base not claimed optimal |
 | [Robust width-two allocation](problems/robust-width-two-allocation/) | Fibonacci-base phi^c exact positivity gate | Width-two obstruction promise; explicit violation returned outside promise |
 | [Robust unrelated allocation](problems/robust-unrelated-allocation/) | Additive robust (1-epsilon)FOPT-u guarantee with exact scenario budgets | Additive result; may return zero on unit obstruction |
+| [Processing-bucket tradeoff](problems/processing-bucket-tradeoff/) | gamma_k curve: 5/3, 11/7, and approach to 3/2 | Parameterized profile frontier |
+| [Robust bounded certificates](problems/robust-bounded-certificates/) | ceil(K*/d) under width-w aggregate certificate promise | Exact scenario budgets; promise is explicit |
+| [Two-scenario robust hardness](problems/robust-two-scenario-hardness/) | W[1]-hardness for exact admission via k-SUM | Negative result with corank c=k |
 | [Allocation lower bounds](problems/allocation-lower-bounds/) | Oracle barriers below 2 and below 3/2; configuration gaps | Negative results; no explicit-input hardness inferred |
 
 Graph, matching, scheduling, dynamic data-structure, and hypergraph modules are
