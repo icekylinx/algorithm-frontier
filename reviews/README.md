@@ -30,6 +30,14 @@ Theorem 1.1: unconditional sparse deterministic reductions for prescribed degree
 
 ## Components ready for review
 
+### [Faster deterministic Subset Sum](../problems/subset-sum-fast-deterministic/)
+
+The refined parameter and compiler-allowance update in Part II, Sections 6–7: the retyped initial difference-table bound, exact reflected-profile budget, and all nine outer cost rates. The new scalar tuple was independently recalculated against the existing compiler lemmas.
+
+**Conditions and remaining work.** The arbitrary-input signed-circuit compiler and witness reduction remain mathematical manuscript proofs; the numerical certificates do not formalize them. The deterministic startup constant is finite and input-independent but has no practical numerical bound.
+
+[Proof](../problems/subset-sum-fast-deterministic/proof.md) · [Dependencies](../problems/subset-sum-fast-deterministic/sources.md) · [Evidence](../problems/subset-sum-fast-deterministic/verify/README.md) · Reviewed 2026-10-26
+
 ### [Deterministic general-graph maximum matching](../problems/general-matching/)
 
 The unconditional input reductions in Section 3: the sharp c-neighbor kernel, componentwise composition, the native mixed-failure kernel in the companion, and the subcubic reduction with its decoder.
@@ -42,7 +50,6 @@ The unconditional input reductions in Section 3: the sharp c-neighbor kernel, co
 
 These families have not yet received a scoped readiness entry in this registry. Their existing statements retain their own assumptions.
 
-- [Faster deterministic Subset Sum](../problems/subset-sum-fast-deterministic/)
 - [Low-space deterministic Subset Sum](../problems/subset-sum-low-space-deterministic/)
 - [Numeric targets and support patterns](../problems/numeric-target-frontier/)
 - [Prefix, laminar and sparse quotas](../problems/weighted-prefix-quota-frontier/)

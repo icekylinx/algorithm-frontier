@@ -4,7 +4,7 @@
 
 ## Abstract
 
-We give an exact deterministic algorithm for Subset Sum on arbitrary signed binary integers, with indexed witness recovery. The refined running time is $C+\mathrm{poly}(n,L)2^{En}$, where $E=158153814247997/318927986919134<0.495892$ and $C$ is finite and independent of the input. Part I develops the signed-circuit compiler and reduction. Part II proves the trace and type refinement, and its continuous-domain checker certifies all 44 contact branches with exact rational arithmetic. A separate scalar checker reconstructs the reflected profile and the complete outer cost ledger. The refined theorem uses this new certificate directly; the older numerical menu is retained only as background with its explicit premise. No simultaneous space exponent is asserted for this algorithm.
+We give an exact deterministic algorithm for Subset Sum on arbitrary signed binary integers, with indexed witness recovery. The refined running time is $C+\mathrm{poly}(n,L)2^{En}$, where $E=158153814247997/318928754919134<0.495891$ and $C$ is finite and independent of the input. Part I develops the signed-circuit compiler and reduction. Part II proves the trace and type refinement, and its continuous-domain checker certifies all 44 contact branches with exact rational arithmetic. A separate scalar checker reconstructs the reflected profile and the complete outer cost ledger. The refined theorem uses this new certificate directly; the older numerical menu is retained only as background with its explicit premise. No simultaneous space exponent is asserted for this algorithm.
 
 ## Theorem and proof structure
 
@@ -12,7 +12,7 @@ We give an exact deterministic algorithm for Subset Sum on arbitrary signed bina
 
 $$
 C+\mathrm{poly}(n,L)2^{En},\qquad
-E=\frac{158153814247997}{318927986919134}.
+E=\frac{158153814247997}{318928754919134}.
 $$
 
 Here $C$ is the finite input-independent cost of constructing fixed circuit data, with no practical numerical bound claimed. All polynomial degrees are fixed and the complexity counts deterministic bit operations. The composition proof is Part II, Sections 2–7. The continuous-domain contact certificate in Part II, Section 4, and the scalar certificate in Section 9 discharge their separate numerical requirements. The circuit compiler and witness reduction are established by the mathematical arguments in the manuscript; the numerical programs are not a machine-checked formalization of those arguments.
@@ -2445,12 +2445,12 @@ The change below gives
 
 $$
 \boxed{E_{\rm new}=
- \frac{158153814247997}{318927986919134}
- =.4958919277538907\ldots < .495892.}
+ \frac{158153814247997}{318928754919134}
+ =.4958907336157183\ldots < .495891.}
  \tag{XSS1}
 $$
 
-The exponent decreases by approximately `.0005698778` per input coordinate.
+The exponent decreases by approximately `.0005710720` per input coordinate.
 This result applies to arbitrary signed binary integers, with no promise
 on density, multiplicities, target, or the existence of a solution.
 
@@ -2920,7 +2920,7 @@ $$
 Then the complete scalar inequality is
 
 $$
-\boxed{U+V+K\Theta^2\le S,\qquad S=.41113.}
+\boxed{U+V+K\Theta^2\le S,\qquad S=.4111243.}
  \tag{XSS22}
 $$
 
@@ -2946,7 +2946,7 @@ junctions. Their maximum is
 $$
 \frac{7169585626176460495449293952290503}
  {17438976000000000000000000000000000}
- =.4111242326485489\ldots < .41113,
+ =.4111242326485489\ldots < .4111243,
  \tag{XSS24}
 $$
 
@@ -2954,8 +2954,8 @@ attained at `tau=291/580` and its reflection `289/580`. The rational
 margin is
 
 $$
-\frac{100576703539504550706047709497}
- {17438976000000000000000000000000000}>5.7\cdot10^{-6}.
+\frac{1174540339504550706047709497}
+ {17438976000000000000000000000000000}>6.7\cdot10^{-8}.
 $$
 
 The numerical values of `S` for different matching types are not directly
@@ -3008,10 +3008,17 @@ and for fitting query ones and zeros into the corresponding row symbols.
 Both the description overhead `2 log_2(k+1)/k` and the new padding factor
 `1+1000/k` have the same limiting behavior required by the compiler.
 
-Keep the core-fraction grid size `1000`. Its quadratic interpolation loss
-is now at most `(1296/875)/(4*1000^2)<3.71*10^{-7}`, below the earlier
-allowance. Increase the fixed seed and amplification depth as necessary
-to retain the complete compilation allowance `zeta=10^{-6}`. Every exact
+Use core-fraction grid size `10000`. Its quadratic interpolation loss
+is at most `(1296/875)/(4*10000^2)<3.71*10^{-9}`. Set the complete
+compilation allowance to `zeta=10^{-8}`: allocate less than
+`2.5*10^{-9}` to the stored-template error, less than `2.5*10^{-9}`
+to count descriptions and dummy-padding inflation, and less than
+`5*10^{-9}` to interpolation including its padding factor. Choose the
+fixed microblock length first, then the common amplification depth,
+large enough for these bounds. The interpolation has a strict reserve,
+so these choices exist by Sections I.2.13–I.2.16. Increasing these fixed
+data enlarges the finite startup constant; no practical startup bound
+is asserted. Every exact
 cover, aggregation identity, grouping restriction, and stored finite
 adjacency list remains valid. Dovetailing over these finite data and
 checking exact integer matrix equality gives a terminating uniform
@@ -3047,6 +3054,22 @@ $$
 
 The canonical support bound, expectation identity, and `K/T` ratio are
 the same binomial/entropy identities at these new rational arguments.
+The initial difference table in the energy oracle also needs its own
+retyping check. It has at most
+$\sum_{j\le 2sM+O(1)}\binom Mj2^j$ entries. Since $2s<2/3$,
+its exponent is at most $h(2s)+2s$; exact entropy enclosures give
+
+$$
+h(2s)+2s<1.135451<1.444238<1+h(s)-s=\alpha.
+$$
+
+Thus it fits the same energy-transform budget. The stronger baseline
+comparison $h(2s)+2s<1$ is not required and does not hold at these
+refined types. The channel-three contraction bound still applies because
+$s<1/3$. The scalar certificate checks these two domains, every outer
+lookup's containment condition, the dummy-padding inequalities, and the
+new compiler grid allowance.
+
 In particular,
 
 $$
@@ -3068,7 +3091,7 @@ $$
  D_{\rm can}&\le D_U=\frac{58153814247997}{10^{14}},\\
  \alpha&\le\alpha_U=\frac{144423881164287}{10^{14}},\\
  \eta&\le\eta_U=\frac{231078058989}{5\cdot10^{13}},\\
- g_*&\ge g_L=\frac{131017921157}{10^{13}}.
+ g_*&\ge g_L=\frac{131056321157}{10^{13}}.
  \end{aligned}
  \tag{XSS29}
 $$
@@ -3077,7 +3100,7 @@ Keep the dictionary-deficiency threshold `d_0=1/50`. Choose
 
 $$
 \mu=\frac1{2(1+D_U+g_L)}
- =\frac{50000000000000}{159463993459567},
+ =\frac{50000000000000}{159464377459567},
 $$
 
 $$
@@ -3090,7 +3113,7 @@ binding input-dependent rates are exactly
 
 $$
 \mu(1+D_U)=\frac12-\mu g_L
- =\frac{158153814247997}{318927986919134}=E_{\rm new}.
+ =\frac{158153814247997}{318928754919134}=E_{\rm new}.
  \tag{XSS31}
 $$
 
@@ -3101,13 +3124,13 @@ upward:
 |---|---:|
 | Retained signed-circuit incidences and witness recovery | `E_new` |
 | Canonical outputs and complete residue-cover state | `E_new` |
-| All candidate-modulus energy evaluations | `<.463410854` |
-| Selectors and shared witness preprocessing | `<.321270508` |
-| Repeated prefix lookups | `<.328990608` |
-| Repeated outside lookups | `<.352393990` |
-| Direct cyclic convolution and common shifts | `<.372403143` |
-| High-deficiency dictionary matching | `<.493728992` |
-| Dictionary and canonical-layer preparation | `<.313550407` |
+| All candidate-modulus energy evaluations | `<.463409738` |
+| Selectors and shared witness preprocessing | `<.321269734` |
+| Repeated prefix lookups | `<.328989816` |
+| Repeated outside lookups | `<.352394346` |
+| Direct cyclic convolution and common shifts | `<.372402246` |
+| High-deficiency dictionary matching | `<.493729007` |
+| Dictionary and canonical-layer preparation | `<.313549652` |
 
 These are exact substitutions into, respectively, the full existing
 input-cost expressions

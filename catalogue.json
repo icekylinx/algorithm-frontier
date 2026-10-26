@@ -9,7 +9,7 @@
           "id": "subset-sum-fast-deterministic",
           "title": "Faster deterministic Subset Sum",
           "result": "Exact decision and indexed witness",
-          "quantity": "$C+\\mathrm{poly}(n,L)2^{0.495891928n}$; exact rational exponent on the card",
+          "quantity": "$C+\\mathrm{poly}(n,L)2^{0.495890734n}$; exact rational exponent on the card",
           "scope": "Exact rational certification of all 44 continuous contact branches; C is finite input-independent circuit precomputation; combinatorial compiler and bit-cost proofs are in the manuscript",
           "randomness": "Deterministic exact algorithm in the uniform bit model, including indexed-witness recovery and input-independent deterministic circuit construction; no probability of error."
         },

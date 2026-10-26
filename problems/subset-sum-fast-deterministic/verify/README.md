@@ -161,11 +161,18 @@ contacts therefore bound that same family's profile by their chord.
 The scalar checker reconstructs the eligible lower envelope, adjoins its
 reflected breakpoints, retains both one-sided values, and checks 104 exact
 endpoint comparisons for the quadratic compensation inequality. It also
-checks the entropy constants and all outer operation costs at
+checks the refined type constraints, the initial difference-table size,
+the fixed compiler grid, and all outer operation costs at
 
 $$
-E=\frac{158153814247997}{318927986919134}.
+E=\frac{158153814247997}{318928754919134}.
 $$
+
+The reflected contact budget is `S=.4111243`, and the compiler allowance
+is `10^-8` on a fixed core-fraction grid of size `10000`. These smaller
+allowances use the strict margin of the existing contact certificate;
+they do not change its menu, acceptance kernel or saved receipt. The
+scalar checker recomputes every affected outer rate.
 
 The proof still supplies the exact signed identities, finite circuit
 existence, fixed-data compiler, integer-key reduction, bit-cost accounting,

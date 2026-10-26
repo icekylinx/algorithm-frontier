@@ -1,5 +1,20 @@
 # History
 
+## 2026-10-26 — A tighter certified deterministic Subset Sum exponent
+
+- Tightened the same proven contact envelope to S=0.4111243 and the fixed
+  compiler allowance to 10^-8, using a 10000-point core grid. The exponent
+  becomes 158153814247997/318928754919134, approximately 0.495890733616.
+  All nine outer cost rates were independently recomputed.
+- Proved the refined initial difference-table bound against the actual
+  transform exponent; the stronger old bound below one is not valid at the
+  refined type and is no longer silently inherited.
+- Replaced the source link list with a dependency-by-dependency proof chain,
+  including uniform fixed-data construction and the limits of numerical
+  certification. The fixed startup constant may grow and remains impractical.
+- Corrected the proof index so a publication batch lists only manuscripts
+  actually included in that commit.
+
 ## 2026-10-26 — Scoped review readiness and exact graph reductions
 
 - Ordered the homepage highlights as deterministic general-graph matching,

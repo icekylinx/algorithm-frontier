@@ -150,15 +150,51 @@ def scalar_profile():
     expected_max=F(7169585626176460495449293952290503,17438976000000000000000000000000000)
     require(maximum==expected_max,'reflected quadratic maximum')
     require(len(candidates)==104,'complete one-sided comparison count')
-    require(maximum < F('.41113'),'quadratic contact budget')
+    require(maximum < F('.4111243'),'quadratic contact budget')
     return {'comparisons':len(candidates),'breakpoints':[str(x) for x in actual],
-            'quadratic_maximum':str(maximum),'margin':str(F('.41113')-maximum),
+            'quadratic_maximum':str(maximum),'margin':str(F('.4111243')-maximum),
             'maximizers':sorted({str(x) for value,x,_ in candidates if value==maximum})}
+
+
+def retyping_contract():
+    """Check the finite obligations changed by the refined circuit types.
+
+    The input difference tensor is indexed by at most 2sM nonzero symbols.
+    Its exponent need not be below one; it only needs to fit the alpha
+    exponent of the subsequent pruned contractions.  This distinction
+    matters at s=.14, unlike the older s=.11 parameter setting.
+    """
+    s,t,a,b=F('.14'),F('.45'),F('.065'),F('.075')
+    require(a+b==s and 0<a<t and 0<b<1-t,'valid refined matching types')
+    require(s<F(1,5) and s<F(1,3) and 2*s<F(2,3),
+            'core fitting and pruned-tensor entropy domains')
+    require(add(H(F(1),s),H(s,a))[1]<1,'raw query universe below the binary cube')
+    initial=add(H(F(1),2*s),(2*s,2*s))
+    alpha=add(H(F(1),s),(1-s,1-s))
+    require(initial[1]<alpha[0],'initial difference table fits the energy-transform budget')
+    require(initial[1]<F('1.135451') and alpha[0]>F('1.444238'),
+            'displayed initial-table and transform bounds')
+    for rho,gamma,_ in CONTACTS:
+        beta=a+F(rho)*(s-a)
+        require(beta<min(t,1-t),'outer lookup fits both row symbols')
+        if gamma!='direct':
+            require(beta-s<=F(gamma)*beta,'first inner lookup contains every query')
+    padding=1000
+    require(a*padding>=12 and b*padding>=12 and
+            (t-a)*padding>=24 and (1-t-b)*padding>=24,
+            'three-count dummy padding')
+    grid=10000
+    interpolation=F(1296,875)/(4*grid*grid)
+    require(interpolation<F(5,10**9),'refined compiler interpolation allowance')
+    return {'initial_difference_table_upper':'1.135451',
+            'energy_transform_lower':'1.444238',
+            'core_fraction_grid':grid,'compiler_allowance':'1/100000000',
+            'quadratic_interpolation_loss':str(interpolation)}
 
 
 def ledger():
     s,t,a,b=F('.14'),F('.45'),F('.065'),F('.075')
-    S,zeta,d0=F('.41113'),F(1,10**6),F(1,50)
+    S,zeta,d0=F('.4111243'),F(1,10**8),F(1,50)
     u=t-a+b
     typed=add(H(1-u,a),H(u,b))
     eta=add((F(1),F(1)),scale(F(-1),H(F(1),u)))
@@ -169,13 +205,13 @@ def ledger():
     D_U=F(58153814247997,10**14)
     alpha_U=F(144423881164287,10**14)
     eta_U=F(231078058989,5*10**13)
-    g_L=F(131017921157,10**13)
+    g_L=F(131056321157,10**13)
     for condition,name in [(typed[1]<=D_U,'typed width'),(alpha[1]<=alpha_U,'energy transform'),
                            (eta[1]<=eta_U,'rounding loss'),(gain[0]>=g_L,'gain')]:
         require(condition,name+' entropy bound')
     mu=1/(2*(1+D_U+g_L))
-    E=F(158153814247997,318927986919134)
-    require(mu==F(50000000000000,159463993459567),'dictionary fraction')
+    E=F(158153814247997,318928754919134)
+    require(mu==F(50000000000000,159464377459567),'dictionary fraction')
     require(mu*(1+D_U)==F(1,2)-mu*g_L==E,'balanced exact exponent')
     require(3*mu<1 and g_L<d0,'dictionary fitting and deficiency threshold')
     require(H(F(1),F(1,5))[1]<1-d0,'canonical layer density gate')
@@ -191,7 +227,7 @@ def ledger():
         'dictionary_preparation':mu,
     }
     require(all(x<=E for x in rates.values()),'complete outer cost domination')
-    require(E<F(149809813343531,301754962128739),'strict time improvement')
+    require(E<F(158153814247997,318927986919134),'strict improvement over the preceding refined exponent')
     return {'exponent':str(E),'dictionary_fraction':str(mu),
             'operation_rates':{key:str(value) for key,value in rates.items()}}
 
@@ -201,7 +237,7 @@ def main():
     parser.add_argument('--output',type=Path)
     args=parser.parse_args()
     result={'status':'PASS','scope':'Exact entropy bounds, 104 reflected-profile comparisons, and all outer rates; continuous contacts and circuit construction are separate premises.',
-            'profile':scalar_profile(),'ledger':ledger()}
+            'profile':scalar_profile(),'retyping':retyping_contract(),'ledger':ledger()}
     if args.output:
         args.output.parent.mkdir(parents=True,exist_ok=True)
         args.output.write_text(json.dumps(result,indent=2)+'\n')

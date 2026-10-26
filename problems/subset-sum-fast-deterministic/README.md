@@ -10,7 +10,7 @@ Deterministic exact algorithm in the uniform bit model, including indexed-witnes
 
 **Time**
 
-$C+\mathrm{poly}(n,L)2^{En}$, where $E=158153814247997/318927986919134\approx0.4958919277538907<0.495892$.
+$C+\mathrm{poly}(n,L)2^{En}$, where $E=158153814247997/318928754919134\approx0.4958907336157183<0.495891$.
 
 **Space**
 
@@ -30,7 +30,11 @@ No lower bound is claimed.
 
 **Review status**
 
-Mathematical proof with computer-assisted numerical certification: all 44 continuous-domain branches pass exact rational verification, followed by 104 reflected-profile comparisons and the complete outer cost ledger. The circuit and reduction arguments are mathematical proofs; no machine-checked formalization is claimed.
+**Ready for review in the stated scope.** The refined parameter and compiler-allowance update in Part II, Sections 6–7: the retyped initial difference-table bound, exact reflected-profile budget, and all nine outer cost rates. The new scalar tuple was independently recalculated against the existing compiler lemmas.
+
+**Conditions and remaining work.** The arbitrary-input signed-circuit compiler and witness reduction remain mathematical manuscript proofs; the numerical certificates do not formalize them. The deterministic startup constant is finite and input-independent but has no practical numerical bound.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

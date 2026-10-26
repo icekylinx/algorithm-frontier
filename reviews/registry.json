@@ -19,13 +19,21 @@
         },
         {
           "path": "tools/verify_subset_sum_scalars.py",
-          "scope": "Exact entropy enclosures, 104 one-sided scalar comparisons for the reflected contact-chord profile, and the complete outer cost ledger. This is separate from continuous contact verification."
+          "scope": "Exact entropy enclosures, 104 one-sided reflected-profile comparisons, refined type/dummy-padding and initial-table inequalities, the 10000-point fixed core grid allowance, and all nine outer cost rates at E=158153814247997/318928754919134. Separate from continuous contact verification."
         },
         {
           "path": "problems/subset-sum-fast-deterministic/verify/check_energy.py",
           "scope": "132 rank-three energy-tensor cases and 1,056 output comparisons against independent binary endpoint enumeration in dimensions one through four; not the complete Subset Sum solver."
         }
-      ]
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The refined parameter and compiler-allowance update in Part II, Sections 6–7: the retyped initial difference-table bound, exact reflected-profile budget, and all nine outer cost rates. The new scalar tuple was independently recalculated against the existing compiler lemmas.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The arbitrary-input signed-circuit compiler and witness reduction remain mathematical manuscript proofs; the numerical certificates do not formalize them. The deterministic startup constant is finite and input-independent but has no practical numerical bound."
+        ]
+      }
     },
     {
       "id": "subset-sum-low-space-deterministic",

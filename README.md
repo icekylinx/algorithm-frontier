@@ -35,7 +35,7 @@ Exact decision and indexed witness.
 **Quantitative result.**
 
 $$
-C+\mathrm{poly}(n,L)2^{0.495891928n}
+C+\mathrm{poly}(n,L)2^{0.495890734n}
 $$
 
 Exact rational exponent on the card.
