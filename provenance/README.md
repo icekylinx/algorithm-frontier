@@ -1,7 +1,7 @@
 # Sources, attribution and canonical paths
 
-The mathematical manuscripts are maintained in `problems/</BT> and
-`manuscripts/</BT>. This directory records their origin and preserves imported
+The mathematical manuscripts are maintained in `problems/` and
+`manuscripts/`. This directory records their origin and preserves imported
 license boundaries. There is one current copy of each retained manuscript.
 
 ## Records
@@ -31,17 +31,17 @@ Each entry has one of three dispositions.
   wrapper or other redundant artifact was removed after its substantive
   content and dependencies were considered.
 
-The `source_revision_sha256</BT> field fingerprints the source bytes at the
+The `source_revision_sha256` field fingerprints the source bytes at the
 consolidation step. Some of those bytes already include mathematical edits.
 It is neither an original-upload fingerprint nor a promise that the current
 canonical file will never change. Original-import hashes remain in their
 respective manifests; commits identify later revisions.
 
-The additional `retired_canonical_paths</BT> map records later consolidation
+The additional `retired_canonical_paths` map records later consolidation
 within the semantic manuscript tree. These superseded paths must be absent;
 their retained destination identifies the integrated mathematical content.
 
-`python3 tools/check_provenance.py</BT> checks unique original paths, valid
+`python3 tools/check_provenance.py` checks unique original paths, valid
 dispositions, retained target existence and required license boundaries.
 It does not compare edited manuscripts with historical hashes or certify
 their mathematical claims.

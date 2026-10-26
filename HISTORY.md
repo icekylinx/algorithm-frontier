@@ -1,5 +1,18 @@
 # History
 
+## 2026-10-26 — Self-contained arithmetic for the short-range algorithm
+
+- Replaced the short-range Subset Sum theorem's fast-integer-multiplication
+  import with a complete elementary fixed-point convolution proof. Rational
+  root construction, rounding errors and bit-space bounds are explicit.
+- Proved the shared-directory nested residue stream and signed normalization
+  constructively. Added independent finite checks for full decisions, original
+  indexed witnesses, interval reporting, and the exact convolution algorithm.
+- Made the bounded one-bit loss in the general low-space deficiency proxy
+  explicit in its resource ledger; the asymptotic exponents do not change.
+- Repaired the remaining malformed inline-code closers in navigation and
+  provenance notes.
+
 ## 2026-10-26 — A tighter certified deterministic Subset Sum exponent
 
 - Tightened the same proven contact envelope to S=0.4111243 and the fixed

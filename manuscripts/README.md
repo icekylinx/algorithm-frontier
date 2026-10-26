@@ -2,7 +2,7 @@
 
 These manuscripts supply lemmas, interfaces and scoped counterexamples used
 by several result families. Start from the relevant
-[result card](../README.md#results) and its `sources.md</BT>; the
+[result card](../README.md#results) and its `sources.md`; the
 [complete proof index](../CONTENTS.md#shared-manuscripts) lists every shared
 manuscript.
 

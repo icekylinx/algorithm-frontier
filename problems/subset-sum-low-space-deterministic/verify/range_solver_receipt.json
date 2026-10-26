@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checks": {
+    "nested_streams": 90,
+    "interval_queries": 795,
+    "solver_instances": 110,
+    "targets": 7292,
+    "small": 1026,
+    "large_segmented": 1981,
+    "large_packed": 4285,
+    "yes": 1561,
+    "no": 5731
+  },
+  "scope": "Full finite short-range solver, indexed witnesses, nested residue streams and interval queries; exhaustive comparison. The asymptotic convolution and arbitrary-input resource bounds remain manuscript proofs."
+}

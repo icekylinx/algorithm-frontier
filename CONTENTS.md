@@ -12,6 +12,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/subset-sum-low-space-deterministic/README.md) · [Main proof](problems/subset-sum-low-space-deterministic/proof.md) · [Sources](problems/subset-sum-low-space-deterministic/sources.md) · [Verification](problems/subset-sum-low-space-deterministic/verify/README.md)
 
+- [Exact Boolean convolution with elementary bit arithmetic](problems/subset-sum-low-space-deterministic/convolution.md)
 - [Two short normalized ranges at arbitrary lattice scales](problems/subset-sum-low-space-deterministic/range-branch.md)
 
 ## Numeric targets and quota geometry

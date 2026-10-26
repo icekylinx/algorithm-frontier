@@ -38,6 +38,14 @@ The refined parameter and compiler-allowance update in Part II, Sections 6–7: 
 
 [Proof](../problems/subset-sum-fast-deterministic/proof.md) · [Dependencies](../problems/subset-sum-fast-deterministic/sources.md) · [Evidence](../problems/subset-sum-fast-deterministic/verify/README.md) · Reviewed 2026-10-26
 
+### [Low-space deterministic Subset Sum](../problems/subset-sum-low-space-deterministic/)
+
+The two-short-range theorem, including signed-input normalization, nested residue streams, indexed witnesses, and the self-contained exact Boolean convolution lemma. The general low-space ledger now explicitly charges the one-bit deficiency-proxy loss.
+
+**Conditions and remaining work.** The stronger n/6 space exponent requires the supplied three-block partition and its two short normalized ranges. The general 0.18261635770550353-space theorem is a separate algorithm; finite range tests do not verify its full storage schedule.
+
+[Proof](../problems/subset-sum-low-space-deterministic/proof.md) · [Dependencies](../problems/subset-sum-low-space-deterministic/sources.md) · [Evidence](../problems/subset-sum-low-space-deterministic/verify/README.md) · Reviewed 2026-10-26
+
 ### [Deterministic general-graph maximum matching](../problems/general-matching/)
 
 The unconditional input reductions in Section 3: the sharp c-neighbor kernel, componentwise composition, the native mixed-failure kernel in the companion, and the subcubic reduction with its decoder.
@@ -50,7 +58,6 @@ The unconditional input reductions in Section 3: the sharp c-neighbor kernel, co
 
 These families have not yet received a scoped readiness entry in this registry. Their existing statements retain their own assumptions.
 
-- [Low-space deterministic Subset Sum](../problems/subset-sum-low-space-deterministic/)
 - [Numeric targets and support patterns](../problems/numeric-target-frontier/)
 - [Prefix, laminar and sparse quotas](../problems/weighted-prefix-quota-frontier/)
 - [Static and threshold min-cost flow](../problems/min-cost-flow/)
@@ -109,7 +116,9 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/general-matching/verify/check_reductions.py](../problems/general-matching/verify/check_reductions.py)
 - [problems/group-metric-constraints/verify/check_quotient_rounding.py](../problems/group-metric-constraints/verify/check_quotient_rounding.py)
 - [problems/subset-sum-fast-deterministic/verify/check_energy.py](../problems/subset-sum-fast-deterministic/verify/check_energy.py)
+- [problems/subset-sum-low-space-deterministic/verify/check_exact_convolution.py](../problems/subset-sum-low-space-deterministic/verify/check_exact_convolution.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_range_identities.py](../problems/subset-sum-low-space-deterministic/verify/check_range_identities.py)
+- [problems/subset-sum-low-space-deterministic/verify/check_range_solver.py](../problems/subset-sum-low-space-deterministic/verify/check_range_solver.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_resources.py](../problems/subset-sum-low-space-deterministic/verify/check_resources.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_structural.py](../problems/subset-sum-low-space-deterministic/verify/check_structural.py)
 - [tools/verify_finite_reductions.py](../tools/verify_finite_reductions.py)

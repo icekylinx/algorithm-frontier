@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "checks": {
+    "convolutions": 488,
+    "coefficients": 6413,
+    "transform_lengths": 6
+  },
+  "scope": "Exact fixed-point radix-two FFT with rationally constructed roots, compared with independent integer coefficient summation. Arbitrary-length error and resource bounds are mathematical lemmas, not inferred from these finite cases."
+}

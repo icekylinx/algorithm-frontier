@@ -1295,15 +1295,17 @@ $$
 \tag{203}
 $$
 
-Since $d_j\ge x_0m$ and $d\le m\beta(x_0,\rho)$, the central
-incidence excess is at most
+The integer proxies satisfy $d_j\ge x_0m-1$ and
+$d\le m\beta(x_0,\rho)$. Thus the central incidence excess per
+coordinate is at most $I+1/m$, where
 
 $$
 I=\tfrac12\tau_0\rho+\phi_0\beta(x_0,\rho)-x_0.
 \tag{204}
 $$
 
-Section II.8 proves $I<-1/1250$ on the active
+The additional one bit in the unnormalized exponent is a factor of two,
+included in the polynomial factor. Section II.8 proves $I<-1/1250$ on the active
 positive-deficiency interval. This margin pays fixed-grid projection
 errors. The code rate is paid once in each outer solve, in its
 preparation, and in every top-dependent residue cover; two outer
@@ -2234,7 +2236,18 @@ calls separately from the output-dependent restart products.
 
 Normalize the three full blocks to size $m$. Let $x_0$ be the least
 full-block deficiency proxy and let $x\ge x_0$ be either local proxy;
-each side is analyzed at its own $x$. Use the potential $\beta$ of
+each side is analyzed at its own $x$. More precisely, for actual
+deficiency $d_j=m-\log_2N_j$, use
+$x_j=(m-\lfloor\log_2N_j\rfloor)/m$, so
+$x_jm-1<d_j\le x_jm$. A positive deficiency term may therefore
+use the proxy as an upper bound; a saving $-d_j$ becomes at most
+$-x_jm+1$. Every displayed normalized ledger below suppresses this
+bounded one-bit correction inside its polynomial factor. Extraction
+uses monotonicity of $\beta$ for the upper proxy, while ambient support
+and restart savings retain the one-bit allowance. The strict margins
+and exact incidence estimates are consequently unchanged.
+
+Use the potential $\beta$ of
 Section II.1, with $P_*=23/26$ and $\alpha_*=52/75$. Fix
 
 $$

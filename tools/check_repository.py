@@ -66,6 +66,14 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
             ("problems/subset-sum-low-space-deterministic/verify/check_range_identities.py",),
         ),
         Check(
+            "Short-range Subset Sum decisions and indexed witnesses",
+            ("problems/subset-sum-low-space-deterministic/verify/check_range_solver.py",),
+        ),
+        Check(
+            "Elementary exact fixed-point convolution",
+            ("problems/subset-sum-low-space-deterministic/verify/check_exact_convolution.py",),
+        ),
+        Check(
             "Fast Subset Sum energy tensor identities",
             ("problems/subset-sum-fast-deterministic/verify/check_energy.py",),
         ),

@@ -27,6 +27,22 @@ $n=3m+O(1)$. There is no restriction on $g_A/g_B$ or the third
 block's range. This is a detectable input class, separate from the
 general $0.18261635770550353$ writable-space theorem.
 
+The partition and positive lattice scales are part of the input contract.
+They can be checked by exact divisibility and summation. For a block with
+weights $w_i$, complementing its negative coordinates gives
+
+$$
+w(S)=\sum_{w_i<0}w_i+
+ g\sum_i\frac{|w_i|}{g}\,1_{i\in S\mathbin\triangle D_-},
+\qquad D_-=\{i:w_i<0\}.
+$$
+
+Thus one may take the gcd of the nonzero absolute weights as the scale
+(scale one for an all-zero block) and
+$W=\sum_i|w_i|/g$. No modulus is factored or expanded into a table of
+its own size. Original indices, including repeated and zero weights,
+are retained throughout.
+
 ## 1. Exact quotient coordinates
 
 Let $g=\gcd(g_A,g_B)$, $\alpha=g_A/g$, and $\beta=g_B/g$.
@@ -52,16 +68,21 @@ quotients are rejected against the actual nonnegative quotient ranges.
 ## 2. Charged primitives
 
 Two Boolean arrays of length at most $C$ can be convolved exactly
-in $O^*(C)$ bit time and space. Pack entries into fields of width
-$\lceil\log_2(C+1)\rceil$; coefficients are at most $C$, so fields
-do not carry into one another. Quasi-linear deterministic integer
-multiplication supplies the stated cost. Packing and unpacking are
-linear bit-field passes. Store one mask per occupied slot; a single
-$O(C)$ scan recovers a witness after a positive coefficient is found.
-The required multiplication theorem is David Harvey and Joris van der
-Hoeven, *Integer multiplication in time O(n log n)*, Annals of
-Mathematics 193 (2021), 563–617,
-[doi:10.4007/annals.2021.193.2.4](https://doi.org/10.4007/annals.2021.193.2.4).
+in $O^*(C)$ bit time and space by the
+[elementary convolution lemma](convolution.md). It proves a deterministic
+fixed-point transform, including rational construction of its roots,
+rounding error below $1/4$ and the cost of schoolbook arithmetic on
+$O(\log C)$-bit words. No fast multiplication theorem is needed.
+Store the integer coefficients in an array and one mask per occupied
+input slot. A single $O(C)$ scan recovers a witness after a positive
+coefficient is found.
+
+One may choose the least integer capacity satisfying the required square
+bound, by exact integer square root. Its bit length is $O(n+L)$.
+Choosing this capacity also proves the stated bounds for any larger
+$C$, by monotonicity; the algorithm need not allocate an unnecessarily
+large user-specified capacity. Thus the convolution's logarithmic factors
+are included in the fixed polynomial in $n,L$.
 
 A raw block congruence-and-interval query costs $O^*(\sqrt N+J)$
 time and $O^*(\sqrt N)$ space. Store its two half lists, sort the
@@ -70,15 +91,33 @@ residue slice and translated interval for each first-list record.
 $J$ counts all reported mask occurrences, including equal sums.
 The modulus length is never an allocation size.
 
-For nested moduli $Q_1\mid Q_2$, all raw masks can also be streamed
-in $(w\bmod Q_1,w\bmod Q_2,w)$ order in $O^*(N)$ time and
-$O^*(\sqrt N)$ space. Sort the second half list in this order.
-Adding a fixed first-half value rotates its primary groups and then
-its secondary groups, preserving actual order within a full residue
-group. Binary-search the two cut positions. Each first-half record
-defines a sorted row with constant wrap state; a heap merges the
-rows. Only nonempty groups are visited, and no right list is copied
-per row. Signed weights and an affine offset preserve this proof.
+For nested positive moduli $Q_1\mid Q_2$, all raw masks can also be
+streamed in $(w\bmod Q_1,w\bmod Q_2,w)$ order in $O^*(N)$ time and
+$O^*(\sqrt N)$ space. Here is an explicit construction of this
+primitive. Sort the second half list by those three keys and an occurrence
+identifier. Record the nonempty primary groups, and within each primary
+group record its nonempty secondary groups. The entire directory is
+linear in that half list.
+
+For a first-half sum $x$ and fixed affine offset $d$, set $s=x+d$.
+Adding $s$ rotates the primary residues, with cut at $(-s)\bmod Q_1$.
+Within the current primary group it rotates the secondary residues,
+with cut at $(-s)\bmod Q_2$. Binary search locates each cut in the
+shared directory. The divisibility $Q_1\mid Q_2$ ensures that a
+secondary group stays inside one shifted primary group. Actual weights
+within a secondary group retain their order. A row therefore needs only
+its current primary group, secondary group, occurrence position and wrap
+counters. It visits only nonempty groups and emits every right-list
+occurrence once. A heap holding one head per first-half record merges
+these sorted rows. Group transitions and heap work cost a polynomial
+factor per emitted occurrence; no right list or directory is copied per
+row. Signed weights and arbitrarily large moduli change only the bit
+length of the keys.
+
+The large-scale case below applies the same primitive to the scaled
+normalized A weights, obtaining $(\alpha x\bmod\beta,x)$ order because
+$\alpha>0$, and to the affine D weights $z=t-w_D$. Their actual order
+and original mask identifiers are retained.
 
 ## 3. Both reduced scales at most C
 
@@ -171,7 +210,8 @@ indexed witness. Finite exhaustion gives the exact NO decision.
 At most two raw stream states, one A class, one B batch, and one
 convolution are live. Their state is $O^*(C+\sqrt N)$, including
 witness masks, heap directories, and polynomial-bit moduli and keys.
-Convolution integers have $O(C\log C)$ bits, already charged.
+The convolution's root and transform arrays use $C\,\mathrm{poly}(\log(C+2))$
+bits, already charged.
 
 Dropping $C^2\ge N$ retains the more precise time bound
 
@@ -190,5 +230,26 @@ accepted ranges and the target; membership filtering charges all raw
 masks and retains the chosen configuration in every witness.
 
 The theorem is conditional on the supplied three-block partition and its two normalized range bounds. It does not assert that arbitrary instances admit such a partition.
+
+## 6. Executable evidence
+
+The [range-identity check](verify/check_range_identities.py) verifies the
+quotient formulas, ambient batches and packed coefficient identities.
+The separate [reference solver check](verify/check_range_solver.py)
+implements the two scale regimes, the shared-directory nested stream,
+closed-interval queries, lazy convolution activation and restoration of
+indexed witnesses. It compares every tested decision with independent
+exhaustive mask enumeration, including negative and repeated weights,
+zero and empty blocks, nontrivial gcds, unequal block sizes and lattice
+scales of more than 80 bits.
+
+This is finite evidence for the full control flow. Its packed-product
+convolution is exact, while the asymptotic algorithm can use the
+elementary transform above. The separate
+[fixed-point transform check](verify/check_exact_convolution.py) constructs
+all roots by rational arithmetic and compares its coefficients with direct
+summation. These checks do not replace the arbitrary-length error and
+resource proofs. The [source map](sources.md#short-range-theorem-arithmetic-proof)
+records the discharged arithmetic dependency.
 
 **Curated by:** Yilin Liu and GPT-6 Astra Pro.

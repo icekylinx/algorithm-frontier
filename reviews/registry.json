@@ -52,8 +52,24 @@
         {
           "path": "problems/subset-sum-low-space-deterministic/verify/check_range_identities.py",
           "scope": "592 configurations, 34,808 quotient identities, 23,566 batch-incidence bounds and 340 exact packed convolutions; finite identities, not an arbitrary-input solver."
+        },
+        {
+          "path": "problems/subset-sum-low-space-deterministic/verify/check_range_solver.py",
+          "scope": "110 signed input triples and 7292 targets with original indexed witnesses against exhaustive enumeration, 90 nested-residue streams and 795 interval queries. Exercises both scale regimes, repeated/zero/negative values and more-than-80-bit scales; not a certification of Python multiplication complexity."
+        },
+        {
+          "path": "problems/subset-sum-low-space-deterministic/verify/check_exact_convolution.py",
+          "scope": "488 Boolean-array pairs and 6413 coefficients at six transform lengths. Integer fixed-point FFT roots are constructed by exact rational arithmetic, and outputs are compared with independent direct summation; the arbitrary-length error/time/space proof is in convolution.md."
         }
-      ]
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The two-short-range theorem, including signed-input normalization, nested residue streams, indexed witnesses, and the self-contained exact Boolean convolution lemma. The general low-space ledger now explicitly charges the one-bit deficiency-proxy loss.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The stronger n/6 space exponent requires the supplied three-block partition and its two short normalized ranges. The general 0.18261635770550353-space theorem is a separate algorithm; finite range tests do not verify its full storage schedule."
+        ]
+      }
     },
     {
       "id": "numeric-target-frontier",
