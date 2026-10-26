@@ -1,5 +1,27 @@
 # History
 
+## 2026-10-26 — Constructive failure summaries and smaller sparse restrictions
+
+- Replaced separating-family dependencies in the arbitrary-matroid and
+  integral-submodular construction with a complete deterministic failure-
+  witness search. A retained-prefix pass followed by reverse deletion now
+  gives the sharp rank size with linear input dependence for fixed parameters.
+- Proved the sharp weighted one-label-failure endpoint for arbitrary oracles.
+  Added a self-contained FPT construction of the unique minimum fixed-order
+  prefix summary at the existing W–LF size factor, with explicit oracle counts.
+- Supplied a 13-item rank-four nonrepresentable obstruction, independently
+  enumerated its optimum bases, and amplified it to every failure budget at
+  least two. The sharp represented weighted bound cannot hold for arbitrary
+  oracle matroids; rank-only and one-failure results remain valid.
+- Transferred the constructions to sparse packing: exact unweighted support
+  kappa*binomial(delta*kappa,delta), and at most exp(delta)*kappa^(delta+1)
+  items for arbitrary signed profits, with deterministic FPT preprocessing.
+  Original-context replacement, capacity-sensitive budgets, and the separate
+  uniform polynomial sunflower tradeoff are explicit.
+- Reduced the necessary laminar lower rows from the previous quadratic
+  accounting to at most the root budget B by telescoping positive charges.
+  Added five exact finite checkers and scoped review invitations.
+
 ## 2026-10-26 — Self-contained arithmetic for the short-range algorithm
 
 - Replaced the short-range Subset Sum theorem's fast-integer-multiplication

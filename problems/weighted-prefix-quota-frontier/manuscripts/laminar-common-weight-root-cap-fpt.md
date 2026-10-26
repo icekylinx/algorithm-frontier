@@ -66,10 +66,27 @@ $$
 
 The root is retained, with its strongest bound. This does **not** bound the number of upper nodes. For example, arbitrarily many disjoint upper-one blocks may occur below a root of capacity two. The proof below never enumerates one occupancy choice per such block.
 
-For positive lower bounds, discard an ancestor lower row if a descendant has a lower bound at least as large. Along any remaining inclusion chain, lower targets strictly decrease downwards and lie in $\{1,\ldots,B\}$. The inclusion-minimal remaining lower sets are disjoint. If the sum of their lower bounds exceeds $B$, reject. Otherwise there are at most $B$ such leaves, and every retained lower node lies on a path of length at most $B$ to one of them. Consequently
+For lower bounds, use the inclusion forest of the lower-row sets, with a
+dummy root of lower bound zero. At each node $A$, let its children be the
+maximal proper lower-row subsets, and compute bottom-up
 
 $$
-m_-:=\#\{\text{retained lower rows}\}\le B^2.
+q_A=\max\left\{l_A,\sum_{C\text{ child of }A}q_C\right\}.
+$$
+
+The children are disjoint. Hence every feasible nonnegative mass vector
+has mass at least $q_A$ in $A$, by induction. Reject if the dummy-root
+value exceeds $B$. A row $A$ is redundant whenever
+$l_A\le\sum_Cq_C$, because the children's constraints imply it. Delete
+exactly those redundant lower rows; retained descendants still imply the
+same $q_A$ by induction, so all original lower constraints are preserved.
+
+Every retained node has a positive integer charge
+$q_A-\sum_Cq_C\ge1$; every deleted node has charge zero. Summing these
+charges telescopes to the dummy-root value, at most $B$. Consequently
+
+$$
+m_-:=\#\{\text{retained lower rows}\}\le B.
 \tag{LM6}
 $$
 
@@ -187,7 +204,7 @@ One may obtain the same restricted tests from private copies in the joint-repres
 For each positive copy, record its weight, its membership pattern in the retained lower family, and, in the mandatory case, whether it is a loop of $Q$. Form candidate classes with identical records. There are at most
 
 $$
-G\le2B(B^2+1)
+G\le2B(B+1)
 \tag{LM17}
 $$
 
@@ -255,7 +272,7 @@ Consequently any feasible solution can be converted into one supported on the un
 The total number of emitted positions, including any duplicates, is at most
 
 $$
-K\le2B(B^2+1)\sum_{j=0}^{3B-3}(B+2)^j
+K\le2B(B+1)\sum_{j=0}^{3B-3}(B+2)^j
                   =2^{O(B\log(B+1))}.
 \tag{LM22}
 $$

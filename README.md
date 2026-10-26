@@ -44,19 +44,19 @@ Exact rational exponent on the card.
 
 ### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
 
-Represented fixed-cost prefixes; oracle rank and integer-submodular value preservation.
+Sharp represented cost-prefix and oracle-rank summaries; weighted oracle endpoint and obstruction.
 
-**Randomness.** Deterministic: represented weighted-prefix elimination, oracle-rank FPT/XP constructions and integer-submodular value-summary construction. Random label orderings occur only in the size-bound proof, not in these algorithms.
+**Randomness.** Deterministic exact constructions. Random permutations and Bernoulli failures appear only in output-size proofs; no query sampling or probability of error.
 
 **Quantitative result.**
 
-Rank: $r\binom{h+d}{d}$.
+Represented prefixes and oracle rank: $r\binom{h+d}{d}$.
 
-Integral submodular range $R$: $R\binom{h+d}{d}$.
+Integral range $R$: $R\binom{h+d}{d}$.
 
-Sharp marginal/entropy inequality.
+Sharp one-failure weighted oracle size $(d+1)r$.
 
-**Model and scope.** Support capped by original ground size; uniform polynomial represented construction; parameterized oracle construction; rank-only oracle model has no weighted-prefix claim.
+**Model and scope.** Uniform polynomial represented construction; explicit oracle FPT construction with linear input dependence for fixed parameters. General weighted oracle prefixes have the larger W–LF bound; a 13-item nonrepresentable example rules out the sharp binomial bound from two failures onward.
 
 ## Results
 

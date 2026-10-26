@@ -8,6 +8,44 @@ Each element of a rank-$r$ matroid has at most $d$ failure labels. A query fails
 
 **Theorem 2 (arbitrary oracle, rank).** Every inclusion-minimal restriction preserving all surviving ranks has at most $rC$ elements. One can construct such a restriction in deterministic $f(r,h,d)N^{O(1)}$ independence-oracle time. Direct failure enumeration is an XP alternative. The final deletion step preserves rank and feasibility, without an arbitrary-cost-prefix claim.
 
+The explicit construction uses at most
+$N(N+1)\sum_{i=0}^{h}(dr)^i$ independence queries. It needs no linear
+representation or separating-family construction.
+Section 4.2 improves this to a linear dependence on $N$ for fixed
+$r,h,d$ by first constructing a bounded weighted-prefix summary.
+
+**Theorem 3 (one failed label, arbitrary oracle and fixed cost).** For
+$h=1$, the sharp weighted-prefix guarantee also holds for arbitrary
+independence-oracle matroids: at most $(d+1)r$ elements, constructed with
+at most $(1+dr)N$ independence queries in uniform polynomial time. The
+same weighted oracle bound with $h\ge2$ is false in general, as follows.
+
+**Theorem 4 (weighted representation boundary).** For every $h\ge2$
+there is a rank-four arbitrary-oracle matroid, with one label per element,
+whose exact minimum-cost surviving bases force $4(h+1)+1$ retained
+elements. Thus the weighted bound $r\binom{h+d}{d}$ cannot extend to
+all oracle matroids even at $d=1$. Section 6 gives the construction.
+
+**Theorem 5 (arbitrary-budget weighted oracle construction).** Put
+
+$$
+\Gamma(h,d)=
+\begin{cases}
+(h+d)^{h+d}/(h^h d^d),&h,d>0,\\
+1,&hd=0,
+\end{cases}
+\qquad K=\min\{N,\lfloor r\Gamma(h,d)\rfloor\}.
+$$
+
+The unique minimum restriction preserving every surviving prefix of
+one fixed order has at most $K$ elements. It can be constructed
+deterministically with at most
+$N(K+1)\sum_{i=0}^{h}(dr)^i$ independence queries, after sorting.
+The size factor is the existing project W–LF bound; the new construction
+uses explicit bounded-depth witness searches on retained prefixes.
+Its proof and distinction from the sharp represented bound are in the
+[weighted oracle construction](manuscripts/weighted-oracle-prefix-fpt-construction.md).
+
 ## 2. Proof of the represented theorem
 
 Choose distinct field points $a_0,a_\lambda$, with $a_0$ never failing. For element $e$, define
@@ -44,11 +82,69 @@ For tightness, use $r$ parallel classes. In each class, create one element for e
 
 ## 4. Fixed-parameter construction
 
-Encode the current labels as low-degree polynomials over a prime field of size $q=O(dh\log(L+1)+1)$. Some evaluation separates any disjoint own-label set of size at most $d$ from a failed-label set of size at most $h$: their pairwise-difference product is nonzero and has degree below $q$.
+To decide whether a current element $e$ can be deleted, search for at most
+$h$ failed labels avoiding $\Lambda(e)$ under which $e$ becomes a coloop.
+At a search node, let $Y$ be the surviving restriction and compute a basis
+$B$ of $Y-e$. If $B+e$ is independent, the labels already failed are a
+valid witness. Otherwise $B$ spans $e$. Any remaining successful failure
+must hit a label of $B$: if all of $B$ survives, it still spans $e$.
+Branch on every label in $\Lambda(B)\setminus\Lambda(e)$, delete its entire
+class, and decrease the remaining budget. Return no witness when the
+budget is exhausted or every child fails. Induction on the budget proves
+completeness, with at most $dr$ children per node.
 
-For each evaluation and each palette of at most $d$ field values, retain a basis of the pool whose label images all lie in that palette. The union has size at most $rq(q+1)^d$. A separating pool contains any protected survivor and no failed item, so the union spans every survivor after every query. This property composes through repeated restrictions.
+Process the original elements once, deleting $e$ exactly when the search
+finds no witness. Every deletion preserves all ranks. A witness that keeps
+$e$ remains valid after later deletions, because taking a subset cannot
+make $e$ enter its closure. The result is inclusion-minimal, so Section 3
+gives size $rC$. Each search uses at most $\sum_{i=0}^{h}(dr)^i$ nodes and
+at most $N+1$ independence queries per node, proving Theorem 2 with the
+explicit bound above. Rank is part of the parameter.
 
-On a current ground of size $s$, the bound is $B(\log(s+2))^{d+1}$, with $B$ depending only on $r,h,d$. Above an effective parameter-only threshold it is at most $s/2$. Repeat to that threshold, then run exact reverse deletion enumerating all bounded-ground failure sets. The result proves Theorem 2. The rank is part of the parameter.
+### 4.1 Sharp weighted oracle construction for one failure
+
+Let $B_0$ be the canonical greedy basis in one fixed total cost order.
+For every label $\lambda$ occurring on $B_0$, compute the canonical basis
+$B_\lambda$ after that label fails. Retain their union with $B_0$.
+A surviving element accepted by the original greedy scan remains accepted
+after deletions: its earlier set has only shrunk. Thus, writing
+$D_\lambda$ for the failed class, $B_0\setminus D_\lambda\subseteq B_\lambda$.
+Since $|B_\lambda|\le r$,
+
+$$
+|B_\lambda\setminus B_0|\le|B_0\cap D_\lambda|,
+\qquad
+\left|B_0\cup\bigcup_\lambda B_\lambda\right|
+ \le r+\sum_{e\in B_0}|\Lambda(e)|\le(d+1)r.
+$$
+
+A failed label missing $B_0$ leaves that entire canonical basis unchanged.
+Every other query has its canonical basis included in the retained union.
+Canonical greedy basis elements in each prefix span that prefix, so this
+containment preserves every prefix rank, including prefixes within ties.
+At most $dr+1$ greedy scans give the construction cost. The lower example
+of Section 3 with $h=1$ proves sharpness. This proves Theorem 3, including
+signed costs and rank drops.
+
+### 4.2 Linear input dependence for the sharp rank construction
+
+First apply Theorem 5 using the input order; no cost sorting is needed.
+Its output $Q$ has at most $K$ items and preserves every surviving rank.
+Run the reverse deletion of Section 4 only on $Q$. The final restriction
+still preserves the ranks of the original ground and has the sharp
+size $rC$. The total number of independence queries is at most
+
+$$
+(N+K)(K+1)\sum_{i=0}^{h}(dr)^i.
+$$
+
+The first pass only scans the current retained prefix inside each witness
+search; the final pass only scans $Q$. Thus this bound requires no hidden
+rescans of the original $N$ items. Sparse lists of original item IDs give
+$O((d+1)(N+K)(K+1)\sum_{i=0}^{h}(dr)^i)$ ordinary bookkeeping
+operations after explicit label indexing. For fixed $r,h,d$ the oracle
+query count is linear in $N$. The direct quadratic construction remains
+a transparent alternative with the same sharp output bound.
 
 ## 5. Submodular and entropy consequences
 
@@ -58,7 +154,7 @@ $$
 $$
 Indeed, order selected elements by their last own-label. Earlier selected elements lie in $H_e-e$, so diminishing returns gives marginal at least $\delta_e$. Sum the marginals and take expectations.
 
-If $f$ is integer-valued with range $R=f(E)-f(\varnothing)$, an inclusion-minimal exact failure-value summary has at most $RC$ items. Replace each pool basis by a value-increasing subset to obtain the analogous fixed-parameter construction. Without integrality, the valid cardinality-free conclusion is
+If $f$ is integer-valued with range $R=f(E)-f(\varnothing)$, an inclusion-minimal exact failure-value summary has at most $RC$ items. The witness search extends directly: a positive current marginal for $e$ is a witness. Otherwise greedily form $B\subseteq Y-e$ with $f(B)=f(Y-e)=f(Y)$ and $|B|\le R$. Since $f(B+e)=f(B)$, any failure preserving $B$ keeps the marginal of $e$ zero by diminishing returns. Branch on the at most $dR$ labels on $B$ that avoid $e$. The same induction and reverse deletion use $O(N(N+1)\sum_{i=0}^{h}(dR)^i)$ value queries. Without integrality, the valid cardinality-free conclusion is
 $$
 \sum_e\max_{\substack{|F|\le h\\\Lambda(e)\cap F=\varnothing}}
  [f(E_F)-f(E_F-e)]\le C R.
@@ -70,8 +166,46 @@ $$
 $$
 Copies of independent variables indexed by the $d$-subsets attain equality.
 
+The [ordered value-summary construction](manuscripts/weighted-oracle-prefix-fpt-construction.md#7-integral-submodular-prefix-values)
+also permits the two-stage improvement above. With
+$K_f=\min\{N,\lfloor R\Gamma(h,d)\rfloor\}$, first form that
+prefix summary, then apply value-preserving reverse deletion to it.
+This retains at most $RC$ items with
+$O((N+K_f)(K_f+1)\sum_{i=0}^{h}(dR)^i)$ value queries.
+The numerical range $R$ is a parameter; this is not a bound polynomial
+in the binary length of $R$.
+
+## 6. The weighted boundary is an explicit obstruction
+
+Start with a rank-four matroid on eight classes: every four-set is a basis
+except $\{0,1,2,3\}$, $\{0,1,4,5\}$, $\{0,1,6,7\}$,
+$\{2,3,4,5\}$ and $\{2,3,6,7\}$. Different forbidden sets intersect
+in at most two elements, so among two or more one-element exchanges
+sharing a three-set at most one is forbidden. This proves basis exchange.
+
+The [explicit 13-item parallel extension](manuscripts/weighted-oracle-two-failure-obstruction.md#3-the-13-ordered-colored-items)
+assigns one of four labels and cost $2^{i-1}$ to item $i$. Its six
+two-label-failure optima are unique and their union is all 13 elements.
+Each omitted element therefore destroys some exact minimum-cost value,
+although $r\binom31=12$. The full table and its short greedy traces
+are in the linked proof; the exact checker separately enumerates every
+surviving basis and optimum.
+
+For any $h\ge2$, prepend $h-2$ copies of an underlying four-element
+basis, each with its own new single label and earlier costs. Every item
+in block $j$ is forced after the earlier block labels fail. Each original
+item is forced after all block labels and its two original witness labels
+fail. There are $4(h-2)+13=4(h+1)+1$ forced elements and the rank stays
+four. All allowed failures still leave a basis. Direct sums give
+$r(h+1)+r/4$ for $r$ divisible by four. This proves Theorem 4.
+
+The represented lift is unaffected; the underlying eight-class matroid is
+not representable over any field, as proved in the obstruction manuscript.
+The rank-only theorem is also unaffected: the same 13-item example has a
+nine-item restriction preserving every required surviving rank.
+
 ## Complete proofs
 
-[Represented lift and field construction](manuscripts/sharp-represented-matroid-failure-summaries.md); [arbitrary-matroid and submodular proofs](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md).
+[Represented lift and field construction](manuscripts/sharp-represented-matroid-failure-summaries.md); [arbitrary-matroid and submodular proofs](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md); [weighted oracle FPT construction](manuscripts/weighted-oracle-prefix-fpt-construction.md); [weighted two-failure obstruction](manuscripts/weighted-oracle-two-failure-obstruction.md).
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

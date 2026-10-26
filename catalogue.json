@@ -40,7 +40,7 @@
           "title": "Prefix, laminar and sparse quotas",
           "result": "Exact quota algorithms and deterministic original-ground kernels",
           "quantity": "One order $2^{O(B)}$; two orders $2^{O(B\\log(B+2))}$; $p$ weight families $2^{O(pB\\log(p+2))}$; laminar $2^{O(B^2)}$",
-          "scope": "Also support/family tradeoffs, sparse quotas, coverable/transversal kernels, and edge-matroid matching kernels",
+          "scope": "Also deterministic sparse-packing restrictions of $O_\\delta(\\kappa^{\\delta+1})$ original items for arbitrary signed profits with FPT preprocessing; exact unweighted binomial size; laminar lower preprocessing retains at most B rows. The uniform polynomial sunflower construction remains a separate tradeoff.",
           "randomness": "Deterministic exact algorithms and deterministic original-ground reductions in the stated exact oracle model; universal colorings are explicitly enumerated rather than sampled."
         }
       ]
@@ -146,10 +146,10 @@
         {
           "id": "matroid-failure-summaries",
           "title": "Matroid and submodular failure summaries",
-          "result": "Represented fixed-cost prefixes; oracle rank and integer-submodular value preservation",
-          "quantity": "Rank: $r\\binom{h+d}{d}$; integral submodular range $R$: $R\\binom{h+d}{d}$; sharp marginal/entropy inequality",
-          "scope": "Support capped by original ground size; uniform polynomial represented construction; parameterized oracle construction; rank-only oracle model has no weighted-prefix claim",
-          "randomness": "Deterministic: represented weighted-prefix elimination, oracle-rank FPT/XP constructions and integer-submodular value-summary construction. Random label orderings occur only in the size-bound proof, not in these algorithms."
+          "result": "Sharp represented cost-prefix and oracle-rank summaries; weighted oracle endpoint and obstruction",
+          "quantity": "Represented prefixes and oracle rank: $r\\binom{h+d}{d}$; integral range $R$: $R\\binom{h+d}{d}$; sharp one-failure weighted oracle size $(d+1)r$",
+          "scope": "Uniform polynomial represented construction; explicit oracle FPT construction with linear input dependence for fixed parameters. General weighted oracle prefixes have the larger W–LF bound; a 13-item nonrepresentable example rules out the sharp binomial bound from two failures onward.",
+          "randomness": "Deterministic exact constructions. Random permutations and Bernoulli failures appear only in output-size proofs; no query sampling or probability of error."
         },
         {
           "id": "graph-color-failure-certificates",

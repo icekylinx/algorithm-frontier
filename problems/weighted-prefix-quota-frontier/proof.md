@@ -24,6 +24,24 @@ The following reductions return a retained ground with the original oracle and w
 | Graph matching with a matroid on edges | $O(k^4)$ for a simple graph; $O(k^5)$ with parallel edges | [Graph corollaries](manuscripts/deterministic-sparse-packing-oracle-kernel.md) |
 | Sparse numeric quotas with valuated completion | Parameter-bounded positive capacity; original zero-coordinate completion retained | [Coefficient-consistent sunflower proof](manuscripts/valuated-sparse-quota-sunflower-kernel.md) |
 
+There is also a sharper retained-size tradeoff with **fixed-parameter
+preprocessing**. For unweighted sparse packing with an arbitrary item
+matroid, at most $k\binom{\delta k}{\delta}$ original items suffice
+for single replacements against every original feasible context, and this
+bound is exact in the worst case. Construction takes
+$2^{O(\delta k\log(\delta k+2))}\mathrm{poly}(H)$ oracle time.
+With $q$ fixed profit values, multiply the support by at most $q$;
+every replacement can preserve its profit exactly. With arbitrary many
+signed profit values, an ordered failure-summary construction instead
+retains at most $e^\delta k^{\delta+1}$ items and gives no-worse-profit
+replacements, with the same FPT parameter dependence. The exact
+binomial lower bound also proves that this exponent is optimal for the
+original-context replacement requirement at fixed $\delta$.
+A capacity-sensitive saturated-row budget improves these bounds.
+These claims and the distinct polynomial-time weighted endpoint for
+budget one are proved in
+[Sharp sparse-packing restrictions](manuscripts/sharp-sparse-packing-fpt-restrictions.md).
+
 The lower bounds distinguish rank queries from computation with an explicitly readable rank program. In particular, [disjoint nonroot equality rows](manuscripts/disjoint-row-root-target-sharp-lower.md) already force $2^{\Omega(B\log(B+2))}$ rank queries at frequency one; [row-dependent weights](manuscripts/row-dependent-full-prefix-target-boundary.md) cross a separate W[2]-hard boundary. The laminar theorem below has a $2^{\Omega(B)}$ oracle lower bound and does not close that exponent gap.
 
 ## Main theorem: the quadratic laminar exponent
@@ -72,7 +90,17 @@ An optional resource can be converted to a full base by one new zero-weight, zer
 
 Remove positive coordinates individually prohibited by an upper row, and perform the safe upper/lower dominance reductions. The retained upper capacities are positive integers that strictly increase up a containing chain. Their depth $D$ is therefore at most $B$. The number $m$ of upper rows may be arbitrarily large.
 
-Retained positive lower targets strictly decrease down a containing chain. Their minimal sets are disjoint; if their targets sum to more than $B$, reject. Otherwise at most $B$ leaves and depth at most $B$ imply at most $B^2$ retained lower nodes and at most $B^2+1$ lower-membership patterns.
+Lower rows admit a stronger aggregate reduction. On their inclusion forest,
+with a dummy root of lower bound zero, compute
+$q_A=\max\{l_A,\sum_{C\text{ child of }A}q_C\}$ bottom-up.
+The disjoint children force mass at least their aggregate demand; reject
+if the dummy-root demand exceeds $B$. Delete a row when
+$l_A\le\sum_Cq_C$, since retained descendants already imply it.
+Each retained row contributes a positive integer
+$q_A-\sum_Cq_C$; these contributions telescope to at most $B$.
+Thus at most $B$ lower rows and $B+1$ lower-membership patterns remain.
+This equivalence uses only nonnegative mass and laminarity. Its complete
+proof is in [the laminar preparation lemma](manuscripts/laminar-common-weight-root-cap-fpt.md#2-safe-preparation-and-the-two-dominance-reductions).
 
 Write $P$ for positive-weight coordinates and $Z$ for zero-weight coordinates after preparation, including disposal if applicable. A positive coordinate $e$ needs at most
 
@@ -84,7 +112,7 @@ $$
 unit copies. Their explicit ground, when constructed, is $U=\dot\bigcup_{e\in P}U_e$. Copies inherit their owner's weight, scalar, and numeric memberships. A class $T\subseteq U$ fixes the positive weight and the full retained lower-membership pattern. There are at most
 
 $$
-G\le B(B^2+1)
+G\le B(B+1)
 \tag{LC5}
 $$
 
@@ -348,6 +376,12 @@ The completed-cost valuated oracle is the accepted VZ dependency; its public wei
 
 The proved gain is the replacement of VZ's $2^{O(B\log B)}$-size recursive candidate catalogue by $2^{O(B)}\mathrm{poly}(B,\log m)$ emitted positions. Its $B$-set recovery reduces the exponent from $B^2\log B$ to $B^2$. This does not close the gap to the existing $2^{\Omega(B)}$ lower bound, nor assert an optimal exponent or publication priority.
 
-No frozen T proof is edited. The complete new coloring, replacement, time and space arguments have undergone independent internal review. This is not formal verification or external peer review.
+The aggregate lower-row reduction is replayed by the
+[finite laminar checker](verify/check_laminar_reduction.py). The separate
+[packing checker](verify/check_sharp_packing.py) tests the sharp
+failure-summary transfer, the arbitrary-profit prefix transfer, and the
+forcing examples. These finite checks do
+not certify the arbitrary-size valuated completion or coloring arguments;
+their scope is recorded in the [verification note](verify/README.md).
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

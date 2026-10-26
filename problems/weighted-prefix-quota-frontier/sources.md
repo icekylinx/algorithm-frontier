@@ -6,6 +6,7 @@
 - [Exact sparse numeric quotas with a root cap and arbitrary completion costs](manuscripts/bounded-frequency-root-cap-valuated-fpt.md)
 - [Deterministic sunflower kernels for several coverable matroids](manuscripts/deterministic-coverable-matroid-sunflower-kernel.md)
 - [Deterministic sparse packing kernels with an oracle matroid](manuscripts/deterministic-sparse-packing-oracle-kernel.md)
+- [Sharp sparse-packing restrictions with deterministic FPT preprocessing](manuscripts/sharp-sparse-packing-fpt-restrictions.md)
 - [Deterministic kernels with explicitly represented transversal matroids](manuscripts/deterministic-transversal-matroid-kernel-transfer.md)
 - [Sharp root-target lower bounds with disjoint weighted quota rows](manuscripts/disjoint-row-root-target-sharp-lower.md)
 - [Exact weighted prefix quotas parameterized by the largest target](manuscripts/exact-weighted-prefix-quotas-max-target.md)
@@ -32,6 +33,8 @@ part of each use; an interface analysis does not supply an omitted backend.
 - [A total-target ETH lower bound for explicitly encoded rank matroids](../numeric-target-frontier/manuscripts/conditional-lower-bound-encoded-target-matroids.md)
 - [An encoded ETH tradeoff across row-overlap densities](../numeric-target-frontier/manuscripts/encoded-overlap-density-eth-lower-bound.md)
 - [Covering-row chain compression for exact mixed numeric targets](../numeric-target-frontier/manuscripts/mixed-target-cover-chain-compression.md)
+- [Sharp arbitrary-matroid failure summaries](../matroid-failure-summaries/proof.md): exact binomial rank summaries, deterministic deletion-witness search, and the one-label fixed-cost-prefix endpoint used by the sharp packing transfer.
+- [Deterministic weighted oracle prefix construction](../matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md): the existing Bernoulli support factor with complete FPT witness search on retained prefixes; supplies the arbitrary-profit $O_\delta(k^{\delta+1})$ packing restriction.
 - [Sources, attribution and canonical paths](../../provenance/README.md)
 
 ## Primary references

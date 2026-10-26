@@ -83,6 +83,11 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check("Finite sensitivity certificates", ("tools/verify_sensitivity_certificates.py",)),
         Check("Matching kernels and subcubic reduction", ("problems/general-matching/verify/check_reductions.py",)),
         Check("Degree-interval and cardinality reductions", ("problems/degree-constrained-subgraphs/verify/check_reductions.py",)),
+        Check("Matroid rank, one-failure weighted and value summaries", ("problems/matroid-failure-summaries/verify/check_summaries.py",)),
+        Check("Nonrepresentable weighted-oracle obstruction", ("problems/matroid-failure-summaries/verify/check_weighted_obstruction.py",)),
+        Check("Weighted oracle retained-prefix construction", ("problems/matroid-failure-summaries/verify/check_weighted_prefix.py",)),
+        Check("Sharp sparse-packing original-context restrictions", ("problems/weighted-prefix-quota-frontier/verify/check_sharp_packing.py",)),
+        Check("Aggregate laminar lower-row reduction", ("problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py",)),
         Check(
             "Composite-group quotient rounding",
             ("problems/group-metric-constraints/verify/check_quotient_rounding.py",),

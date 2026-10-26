@@ -63,6 +63,24 @@ At $k=0$, return the empty set. At $\delta=0$, one truncated greedy scan returns
 
 The polynomial construction time is uniform when the explicit frequency $\delta$ is part of the input. Only the output-size bound has exponent depending on $\delta$. The proof below gives a safe $O(n^3+n)$ independence-oracle query bound, in addition to polynomial explicit-set processing; no effort is made to optimize this implementation constant.
 
+**Capacity-sensitive refinement.** If $h$ is any computable upper bound on
+the number of packing rows saturated by a feasible context of at most
+$k-1$ items, replace $\delta(k-1)+1$ in SK4--SK5 by $h+1$.
+One can take $h$ to be the floor of the sum of the largest $k-1$ item
+loads $\sum_{j\in\sigma(e)}1/b_j$, clipped to the number of rows, after
+zero-capacity preparation. Section 6 only uses the number of saturated
+rows, so its proof applies with exactly $h+1$ layers. The explicit load
+proof appears in [the sharp FPT restriction](sharp-sparse-packing-fpt-restrictions.md#3-saturated-row-accounting-and-the-replacement-proof).
+
+That companion also proves the different deterministic tradeoff
+$k\binom{\delta k}{\delta}=O_\delta(k^{\delta+1})$ retained items for
+unweighted original-context replacement, with
+$2^{O(\delta k\log(\delta k+2))}n^{O(1)}$ preprocessing. An ordered
+failure-summary variant gives at most $e^\delta k^{\delta+1}$ items
+for arbitrary signed profits with the same FPT parameter dependence.
+The exponential construction time keeps both variants distinct from the
+uniformly polynomial arbitrary-profit theorem here.
+
 ## 2. Original-context replacement and composition
 
 It is useful to state the local invariant before giving the reduction. For a current candidate set $T\subseteq E$, a reduction $T\mapsto R_T\subseteq T$ has the external-context property if

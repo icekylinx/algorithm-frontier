@@ -83,7 +83,24 @@
       "path": "problems/weighted-prefix-quota-frontier",
       "evidence_note": "problems/weighted-prefix-quota-frontier/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/weighted-prefix-quota-frontier/verify/check_sharp_packing.py",
+          "scope": "205824 packing/profit instances on all 68 labeled four-element matroids; 1485696 equal-profit and 1485696 no-worse-profit original-context replacements; capacity-sensitive budgets, one-failure endpoint, and explicit forcing examples."
+        },
+        {
+          "path": "problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py",
+          "scope": "21658 lower assignments and 696490 mass comparisons on five laminar topologies; exact lower-row equivalence and telescoping charges giving at most B retained lower rows."
+        }
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The sharp sparse-packing FPT restriction, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and the aggregate laminar reduction to at most B lower rows.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The smaller sparse ground uses explicit FPT preprocessing; it is distinct from the uniform polynomial sunflower tradeoff. These checks do not verify the family’s general valuated completion, universal-coloring construction or lower-bound literature. Original oracles and weights remain available after restriction."
+        ]
+      }
     },
     {
       "id": "general-matching",
@@ -203,7 +220,28 @@
       "path": "problems/matroid-failure-summaries",
       "evidence_note": "problems/matroid-failure-summaries/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/matroid-failure-summaries/verify/check_summaries.py",
+          "scope": "All 92 labeled matroids on at most four elements, exact rank-summary and one-failure weighted-prefix comparisons, integral-coverage value summaries, necessity witnesses and sharp lower examples. The optional --full-labels sweep expands the label assignments."
+        },
+        {
+          "path": "problems/matroid-failure-summaries/verify/check_weighted_obstruction.py",
+          "scope": "Independent basis exchange, full rank table, surviving optimum enumeration, all 13 forced items and amplifications for the explicit nonrepresentable weighted-oracle obstruction."
+        },
+        {
+          "path": "problems/matroid-failure-summaries/verify/check_weighted_prefix.py",
+          "scope": "Original-prefix rank and exact canonical-basis-union comparisons for 86340 small-matroid instances, plus 130 nonrepresentable cases; necessity witnesses, query bounds and Bernoulli events including failures above the budget. Integral-submodular prefix corollary is proved separately."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "Main Theorems 1–5: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure weighted endpoint; explicit weighted obstruction; deterministic arbitrary-budget prefix construction. The two-stage rank construction has linear input dependence for fixed parameters.",
+        "date": "2026-10-26",
+        "conditions": [
+          "Oracle results require the stated independence or value oracle; they bound retained original items, not an encoding of an arbitrary oracle. The exact general weighted-oracle optimum size beyond one failure is not determined. Finite programs complement the written proofs and do not constitute formal verification."
+        ]
+      }
     },
     {
       "id": "graph-color-failure-certificates",

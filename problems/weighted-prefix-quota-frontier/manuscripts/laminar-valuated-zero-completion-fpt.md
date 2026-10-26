@@ -57,12 +57,20 @@ This is an integral polymatroid rank. An optional vector $x$ extends to its tota
 
 Hence it is enough to solve the resulting full-base problem. Write $P$ for its positive-weight coordinates and $Z$ for all zero-weight coordinates, including disposal if present. The scalar coefficients on $Z$ are unrestricted. Below $F$ denotes this prepared rank and its full rank is $R$.
 
-The two dominance reductions from LM are unchanged. Retained upper capacities strictly increase up an inclusion chain, so their depth $D$ is at most $B$. For lower rows, an ancestor is redundant if a descendant has a no-smaller lower target. The remaining positive lower targets strictly decrease down each inclusion chain. Their minimal sets are disjoint; reject if the sum of those lower bounds exceeds $B$. Otherwise at most $B$ such leaves and depth at most $B$ give at most $B^2$ retained lower rows.
+Use the dominance reductions from LM. Retained upper capacities strictly
+increase up an inclusion chain, so their depth $D$ is at most $B$. For
+lower rows, aggregate demands bottom-up as
+$q_A=\max\{l_A,\sum_{C\text{ child of }A}q_C\}$ and reject when the
+dummy-root demand exceeds $B$. Delete a lower row if its target is at
+most the aggregate child demand. Every retained lower node then has a
+positive integer charge $q_A-\sum_Cq_C$, and these charges telescope to
+at most $B$. Thus at most $B$ lower rows remain; the full equivalence and
+charge proof are in LM, Section 2.
 
-There are thus at most $B^2+1$ distinct lower-membership patterns. Candidates will be classified by their common positive weight and this membership pattern. This gives at most
+There are thus at most $B+1$ distinct lower-membership patterns. Candidates will be classified by their common positive weight and this membership pattern. This gives at most
 
 $$
-G\le B(B^2+1)
+G\le B(B+1)
 \tag{VZ5}
 $$
 
@@ -145,7 +153,7 @@ Repeatedly replace any selected copy outside the union of emitted candidates. Ea
 For $1\le k\le B$, the emitted-position count satisfies
 
 $$
-K_k\le B(B^2+1)\,k\sum_{j=0}^{k-1}(kD)^j
+K_k\le B(B+1)\,k\sum_{j=0}^{k-1}(kD)^j
                      =2^{O(B\log(B+1))}.
 \tag{VZ12}
 $$

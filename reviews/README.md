@@ -28,6 +28,14 @@ Theorem 1.1: unconditional sparse deterministic reductions for prescribed degree
 
 [Proof](../problems/degree-constrained-subgraphs/proof.md) · [Dependencies](../problems/degree-constrained-subgraphs/sources.md) · [Evidence](../problems/degree-constrained-subgraphs/verify/README.md) · Reviewed 2026-10-26
 
+### [Matroid and submodular failure summaries](../problems/matroid-failure-summaries/)
+
+Main Theorems 1–5: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure weighted endpoint; explicit weighted obstruction; deterministic arbitrary-budget prefix construction. The two-stage rank construction has linear input dependence for fixed parameters.
+
+**Conditions and remaining work.** Oracle results require the stated independence or value oracle; they bound retained original items, not an encoding of an arbitrary oracle. The exact general weighted-oracle optimum size beyond one failure is not determined. Finite programs complement the written proofs and do not constitute formal verification.
+
+[Proof](../problems/matroid-failure-summaries/proof.md) · [Dependencies](../problems/matroid-failure-summaries/sources.md) · [Evidence](../problems/matroid-failure-summaries/verify/README.md) · Reviewed 2026-10-26
+
 ## Components ready for review
 
 ### [Faster deterministic Subset Sum](../problems/subset-sum-fast-deterministic/)
@@ -46,6 +54,14 @@ The two-short-range theorem, including signed-input normalization, nested residu
 
 [Proof](../problems/subset-sum-low-space-deterministic/proof.md) · [Dependencies](../problems/subset-sum-low-space-deterministic/sources.md) · [Evidence](../problems/subset-sum-low-space-deterministic/verify/README.md) · Reviewed 2026-10-26
 
+### [Prefix, laminar and sparse quotas](../problems/weighted-prefix-quota-frontier/)
+
+The sharp sparse-packing FPT restriction, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and the aggregate laminar reduction to at most B lower rows.
+
+**Conditions and remaining work.** The smaller sparse ground uses explicit FPT preprocessing; it is distinct from the uniform polynomial sunflower tradeoff. These checks do not verify the family’s general valuated completion, universal-coloring construction or lower-bound literature. Original oracles and weights remain available after restriction.
+
+[Proof](../problems/weighted-prefix-quota-frontier/proof.md) · [Dependencies](../problems/weighted-prefix-quota-frontier/sources.md) · [Evidence](../problems/weighted-prefix-quota-frontier/verify/README.md) · Reviewed 2026-10-26
+
 ### [Deterministic general-graph maximum matching](../problems/general-matching/)
 
 The unconditional input reductions in Section 3: the sharp c-neighbor kernel, componentwise composition, the native mixed-failure kernel in the companion, and the subcubic reduction with its decoder.
@@ -59,7 +75,6 @@ The unconditional input reductions in Section 3: the sharp c-neighbor kernel, co
 These families have not yet received a scoped readiness entry in this registry. Their existing statements retain their own assumptions.
 
 - [Numeric targets and support patterns](../problems/numeric-target-frontier/)
-- [Prefix, laminar and sparse quotas](../problems/weighted-prefix-quota-frontier/)
 - [Static and threshold min-cost flow](../problems/min-cost-flow/)
 - [Incremental strongly connected components](../problems/incremental-scc/)
 - [Incremental directed SSSP](../problems/incremental-sssp/)
@@ -69,7 +84,6 @@ These families have not yet received a scoped readiness entry in this registry. 
 - [Strong forests and Gomory–Hu trees](../problems/decremental-strong-forest/)
 - [Single-failure optimum preservers](../problems/exact-failure-preservers/)
 - [Flow, matching and price sensitivity](../problems/exact-flow-sensitivity/)
-- [Matroid and submodular failure summaries](../problems/matroid-failure-summaries/)
 - [Colored and vertex-failure graph certificates](../problems/graph-color-failure-certificates/)
 - [Resource-constrained packing summaries](../problems/packing-matching-summaries/)
 - [Persistent-homology failure certificates](../problems/persistence-failure-certificates/)
@@ -115,12 +129,17 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/degree-constrained-subgraphs/verify/check_reductions.py](../problems/degree-constrained-subgraphs/verify/check_reductions.py)
 - [problems/general-matching/verify/check_reductions.py](../problems/general-matching/verify/check_reductions.py)
 - [problems/group-metric-constraints/verify/check_quotient_rounding.py](../problems/group-metric-constraints/verify/check_quotient_rounding.py)
+- [problems/matroid-failure-summaries/verify/check_summaries.py](../problems/matroid-failure-summaries/verify/check_summaries.py)
+- [problems/matroid-failure-summaries/verify/check_weighted_obstruction.py](../problems/matroid-failure-summaries/verify/check_weighted_obstruction.py)
+- [problems/matroid-failure-summaries/verify/check_weighted_prefix.py](../problems/matroid-failure-summaries/verify/check_weighted_prefix.py)
 - [problems/subset-sum-fast-deterministic/verify/check_energy.py](../problems/subset-sum-fast-deterministic/verify/check_energy.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_exact_convolution.py](../problems/subset-sum-low-space-deterministic/verify/check_exact_convolution.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_range_identities.py](../problems/subset-sum-low-space-deterministic/verify/check_range_identities.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_range_solver.py](../problems/subset-sum-low-space-deterministic/verify/check_range_solver.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_resources.py](../problems/subset-sum-low-space-deterministic/verify/check_resources.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_structural.py](../problems/subset-sum-low-space-deterministic/verify/check_structural.py)
+- [problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py](../problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py)
+- [problems/weighted-prefix-quota-frontier/verify/check_sharp_packing.py](../problems/weighted-prefix-quota-frontier/verify/check_sharp_packing.py)
 - [tools/verify_finite_reductions.py](../tools/verify_finite_reductions.py)
 - [tools/verify_non_fano.py](../tools/verify_non_fano.py)
 - [tools/verify_profile_certificates.py](../tools/verify_profile_certificates.py)

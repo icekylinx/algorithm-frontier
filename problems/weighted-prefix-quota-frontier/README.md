@@ -32,7 +32,11 @@ Oracle-query and readable-program ETH bounds are stated separately. Frequency-on
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The sharp sparse-packing FPT restriction, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and the aggregate laminar reduction to at most B lower rows.
+
+**Conditions and remaining work.** The smaller sparse ground uses explicit FPT preprocessing; it is distinct from the uniform polynomial sunflower tradeoff. These checks do not verify the family’s general valuated completion, universal-coloring construction or lower-bound literature. Original oracles and weights remain available after restriction.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
@@ -99,5 +103,50 @@ $O(k^4)$ for simple graphs; $O(k^5)$ with parallel edges
 Parameter-bounded positive capacity with all original zero-coordinate completion and signed costs retained
 
 Each reduction preserves replacements against feasible contexts in the original instance. A small retained ground is not a parameter-only bit encoding of an arbitrary oracle.
+
+## Sharper retained size with FPT preprocessing
+
+The [sharp packing theorem](manuscripts/sharp-sparse-packing-fpt-restrictions.md)
+gives a different time/size tradeoff for one arbitrary item matroid.
+
+**Unweighted sparse packing**
+
+At most $k\binom{\delta k}{\delta}=O_\delta(k^{\delta+1})$ original
+items, with deterministic
+$2^{O(\delta k\log(\delta k+2))}\mathrm{poly}(H)$ preprocessing.
+This size is worst-case exact for single replacement against every
+original feasible context. With $q$ fixed profit values, multiply the
+support by at most $q$ to preserve profits exactly.
+
+**Arbitrary signed profits**
+
+At most $e^\delta k^{\delta+1}$ original items with no-worse-profit
+replacements, independent of the number of profit values. The deterministic
+preprocessing has the same FPT parameter dependence. The exponent is
+optimal for original-context replacement at each fixed $\delta$; the
+displayed constant is not claimed optimal.
+
+**Matching with an arbitrary edge matroid**
+
+Retain at most $k\binom{2k}{2}$ edges for unweighted replacement, or
+$e^2k^3$ for arbitrary signed profits, including parallel records.
+Both use $2^{O(k\log(k+2))}\mathrm{poly}(H)$ oracle time. This
+preprocessing is exponential in $k$; the polynomial-time reduction above
+has a larger retained ground.
+
+**Larger packing capacities**
+
+If every feasible context saturates at most $h$ rows, the unweighted
+support becomes $k\binom{h+\delta}{\delta}$; arbitrary profits use
+$k\Gamma(h,\delta)$ with the explicit Bernoulli factor in the theorem.
+The theorem gives a polynomially computable inverse-capacity load bound
+on $h$. When $h\le1$, arbitrary signed
+profits admit at most $(\delta+1)k$ retained items with uniform
+polynomial preprocessing.
+
+For common-weight laminar quotas, aggregate lower demands also reduce
+the lower-row system to at most $B$ rows and $B+1$ membership patterns.
+This improves preprocessing and catalogue factors while leaving the
+stated quadratic exponential upper bound unchanged.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

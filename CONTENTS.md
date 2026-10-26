@@ -65,6 +65,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Exact common-weight laminar quotas under a root cap](problems/weighted-prefix-quota-frontier/manuscripts/laminar-common-weight-root-cap-fpt.md)
 - [Exact laminar quotas with arbitrary zero-weight completion costs](problems/weighted-prefix-quota-frontier/manuscripts/laminar-valuated-zero-completion-fpt.md)
 - [Row-dependent weights defeat the largest-prefix-target parameter](problems/weighted-prefix-quota-frontier/manuscripts/row-dependent-full-prefix-target-boundary.md)
+- [Sharp deterministic restrictions for sparse packing with an oracle matroid](problems/weighted-prefix-quota-frontier/manuscripts/sharp-sparse-packing-fpt-restrictions.md)
 - [A direct hash-and-profile algorithm for sparse exact root-bounded quotas](problems/weighted-prefix-quota-frontier/manuscripts/sparse-root-quota-hash-profile-algorithm.md)
 - [Two weighted coordinate orders: a sharp largest-target classification](problems/weighted-prefix-quota-frontier/manuscripts/two-order-weighted-prefix-target-classification.md)
 - [Uniform scalar coefficients on optional zero-weight coordinates](problems/weighted-prefix-quota-frontier/manuscripts/uniform-zero-scalar-laminar-extension.md)
@@ -133,6 +134,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Exact binomial fault summaries for arbitrary matroids](problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md)
 - [A sharp polynomial-time restriction for overlapping label failures in represented matroids](problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md)
+- [Deterministic FPT construction of weighted oracle failure summaries](problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md)
+- [Weighted oracle summaries exceed the binomial bound from two failures onward](problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md)
 
 ### [Colored and vertex-failure graph certificates](problems/graph-color-failure-certificates/)
 

@@ -1,6 +1,6 @@
 # Exact binomial fault summaries for arbitrary matroids
 
-**Abstract.** A circuit-blocking set-pair inequality gives the sharp binomial bound for rank-preserving summaries of arbitrary oracle matroids under correlated label failures. A separating-family reduction yields fixed-parameter preprocessing. The same argument extends to integer-valued monotone submodular functions and to sharp real-valued marginal and entropy inequalities. Cost-prefix preservation requires the separate represented-matroid construction.
+**Abstract.** A circuit-blocking set-pair inequality gives the sharp binomial bound for rank-preserving summaries of arbitrary oracle matroids under correlated label failures. A direct failure-witness branching algorithm gives explicit fixed-parameter preprocessing. For one label failure, a separate weighted construction attains the sharp bound in uniform polynomial oracle time. The same argument extends to integer-valued monotone submodular functions and to sharp real-valued marginal and entropy inequalities. For two or more label failures, an explicit counterexample rules out the same sharp weighted bound for arbitrary matroids. A separate FPT construction preserves all weighted prefixes with the larger existing W–LF factor.
 
 ## 1. Model and result
 
@@ -32,9 +32,9 @@ $$
 
 oracle time for a computable function f. A direct reverse-deletion implementation instead uses |E|^{O(h)} oracle time. The FPT statement includes r in the parameter; it is not a uniform polynomial-time construction when r,h,d are unrestricted inputs.
 
-The combinatorial size proof is short and independent of the construction. The FPT construction uses an elementary separating family followed by repeated reduction and a bounded final search. Its parameter dependence is intentionally not optimized here.
+The combinatorial size proof is short and independent of the construction. The FPT construction uses a complete bounded-depth failure-witness search at each reverse-deletion step, with at most N(N+1) sum_{i=0}^h (dr)^i independence queries; Sections 5 and 6 give the full algorithm and count.
 
-Before construction, one may clip `h` to the number `L` of distinct labels and `d` to the largest actual label-set size; rank is always at most `|E|`. The oracle statement treats one independence-oracle call as one unit of cost. It does not assume a linear representation, a field, or a bit-level encoding for oracle answers. Label relabeling, palette enumeration, and bookkeeping use `f(r,h,d)*|E|^{O(1)}` ordinary word operations, with label and pool indices stored in `O(log(|E|+L+dh*log(L+2)))` bits. Thus the theorem gives an FPT oracle-query/time bound, not a polynomial-space bit-kernel claim.
+Before construction, one may clip `h` to the number `L` of distinct labels and `d` to the largest actual label-set size; rank is always at most `|E|`. The oracle statement treats one independence-oracle call as one unit of cost. It does not assume a linear representation, a field, or a bit-level encoding for oracle answers. Label indexing, basis scans and bounded-depth branching use `f(r,h,d)*|E|^{O(1)}` ordinary operations on explicit input identifiers. Thus the theorem gives an FPT oracle-query/time bound, not a polynomial-space bit-kernel claim.
 
 ## 2. A circuit-blocking set-pair lemma
 
@@ -114,92 +114,209 @@ $$
 
 independence queries, up to bookkeeping and with h clipped at L. It is polynomial for each fixed h, but this expression alone is not an FPT bound in h.
 
-## 5. An elementary separating reduction
+## 5. A deterministic failure-witness search
 
-Assume h,d are positive; if either is zero, an ordinary basis solves the problem. Let the current ground set X have s elements, and relabel its L at most ds occurring labels as the integers 0 through L-1. If L=0, again an ordinary basis suffices.
-
-Choose a prime
-
-$$
-q>dh\lceil\log_2(L+1)\rceil,
-\qquad
-q=O\bigl(dh\log(L+1)+1\bigr).
-$$
-
-This can be done deterministically by trial division; Bertrand's postulate supplies the displayed size bound. Encode each label lambda by its base-q digits as a polynomial P_lambda(T) over the prime field F_q, of degree at most ceil(log_q(L+1))-1. Distinct labels give distinct polynomials.
-
-For each t in F_q, let chi_t(lambda)=P_lambda(t). If A,B are disjoint label sets with |A| at most d and |B| at most h, the nonzero polynomial
+The construction needs only independence queries. It does not require a
+linear representation, a prime-field construction, or a separating family.
+For a current restriction X and a protected element e in X, we decide whether
+there is a set F of at most h labels, disjoint from Lambda(e), for which
 
 $$
-\prod_{a\in A,\,b\in B}(P_a(T)-P_b(T))
+e\notin\mathrm{cl}_M((X-e)_F). \tag{6}
 $$
 
-has degree less than q. Thus some t has chi_t(A) disjoint from chi_t(B). If A or B is empty, separation is automatic.
+Such an F is exactly a witness that deleting e would change a required
+surviving rank. A search state consists of the labels F_0 already failed,
+the surviving set Y=X_{F_0} containing e, and the remaining budget t.
 
-For every t and every palette P contained in F_q with |P| at most d, form
+1. Compute a basis B of M restricted to Y-e by greedy augmentation.
+2. If B+e is independent, return F_0. It satisfies (6), since B spans Y-e.
+3. If t=0, return `NONE`.
+4. For each label lambda occurring on B but not on e, recurse after deleting
+   every element carrying lambda and replacing t by t-1. Return the first
+   witness found, or `NONE` if every child returns `NONE`.
 
-$$
-X_{t,P}=\{e\in X: \chi_t(\Lambda(e))\subseteq P\}
-$$
+All scans and branches use the original element and label order. In
+particular, this is an exact deterministic search. An already failed label
+cannot occur on B, so each child spends its budget on a new label. Labels
+on e are excluded in every branch, and e therefore remains present.
 
-and retain any greedy basis of M restricted to X_{t,P}. Let R be their union. Then
+**Lemma 5.1 (complete branching).** The search returns a witness if and only
+if a witness extending F_0 by at most t labels exists.
 
-$$
-|R|\le r q\sum_{i=0}^{\min(d,q)}\binom qi
-\le r q(q+1)^d. \tag{6}
-$$
+**Proof.** A returned witness is valid by the independence test in step 2.
+Suppose step 2 fails, so e is in the closure of B. Let F' be any remaining
+failure set that makes e leave the closure of the surviving Y-e. If F' were
+disjoint from the labels of B, all of B would survive and would still span
+e, a contradiction. Thus F' contains a label lambda on B. A valid witness
+does not fail e, so lambda is not on e. The child for lambda exists, and
+F'-{lambda} is a witness extension in that child. Induction on t proves
+completeness, with t=0 immediate. QED.
 
-For an allowed failure set F and a surviving e in X_F, choose t separating Lambda(e) from F intersect the current label universe, and choose P=chi_t(Lambda(e)). This pool contains e and contains no failed elements. Its retained basis therefore spans e using elements of R_F. It follows that
-
-$$
-\mathrm{cl}_M(R_F)=\mathrm{cl}_M(X_F) \tag{7}
-$$
-
-for every query F. Importantly, the failure labels outside the current instance do nothing, so (7) composes through repeated restrictions even when the hash maps are rebuilt between rounds.
-
-If every pool basis is computed in the same fixed cost order, the same argument proves equality of all surviving cost-prefix spans. Thus this preliminary reduction can preserve costs. Only the final inclusion-minimal rank-preserving deletion step is unweighted.
-
-## 6. Removing the input-size dependence and proving FPT construction
-
-There is a computable A=A(h,d) such that the q in the preceding reduction is at most A log_2(s+2). With k=d+1 and B=r(2A)^k, (6) gives
-
-$$
-|R|\le B\,[\log_2(s+2)]^k. \tag{8}
-$$
-
-Choose a computable threshold T=T(r,h,d) such that
+Put
 
 $$
-B[\log_2(s+2)]^k\le s/2 \qquad\text{for every }s>T. \tag{9}
+S(a,h)=\sum_{i=0}^{h}a^i,
+\qquad 0^0=1.
 $$
 
-For fixed B,k such a threshold exists because a fixed power of log(s) is o(s). It is effective: after the function s/[log_2(s+2)]^k becomes increasing, double s until (9) first holds. One can replace this by an unnecessarily large explicit elementary bound if desired.
+There are at most dr branch labels at every node and at most h levels.
+One test uses at most S(dr,h) nodes, at most (|X|+1)S(dr,h)
+independence queries, and O((d+1)|X|S(dr,h)) ordinary bookkeeping
+operations after the explicit labels have been indexed. No failure set
+over the full label universe is enumerated. If e is a loop, it can be
+deleted immediately; this optional shortcut does not affect the proof.
 
-Repeatedly apply the separating reduction whenever s>T. Each application halves s and preserves every failure rank profile, so there are at most O(log |E|) rounds. Each round scans s elements for at most q(q+1)^d pools. Since every fixed power of log(s+2) is at most g(d) times s for a computable g, the total number of oracle calls over all rounds is at most
+## 6. Sharp construction and explicit parameter dependence
+
+Start with X=E. Process its original elements once in a fixed order. For
+each still-present e, run the search in Section 5 from (X,e,emptyset,h).
+Delete e exactly when the answer is `NONE`.
+
+**Theorem 6.1 (explicit oracle construction).** The resulting restriction H
+preserves every allowed surviving rank and has at most
 
 $$
-f_1(h,d)\,|E|^2,
+\min\left\{N,r\binom{h+d}{d}\right\}
 $$
 
-up to polynomial bookkeeping. The resulting X has at most T elements and at most dT occurring labels. Run the direct reverse-deletion procedure only on this bounded instance, enumerating at most
+elements. Its construction uses at most
 
 $$
-\sum_{i=0}^{h}\binom{dT}{i}
+N(N+1)S(dr,h) \tag{7}
 $$
 
-failure sets. Its entire cost is a function of r,h,d. Transitivity of (7) makes the resulting rank profile identical to that of the original instance, and Theorem 1 gives the exact final bound r binomial(h+d,d). This proves Theorem 2.
+independence queries, in addition to at most N queries for an initial rank
+computation if desired. Its ordinary bookkeeping cost is
+O((d+1)N^2 S(dr,h)), with polynomial bit cost for explicit label identifiers.
+In particular, the parameter dependence can be written as
+(dr+1)^{O(h)} times a polynomial in the full input length.
 
-No minimum-cardinality optimization is claimed: the final summary is inclusion-minimal and has the sharp worst-case upper bound, but it need not be globally smallest for its particular input.
+**Proof.** By Lemma 5.1, every deletion preserves all surviving ranks.
+Whenever e is retained, save its witness F_e. It makes e a coloop in
+the current surviving restriction. Later deletions of other elements
+cannot make e enter their closure, so the same witness remains valid
+in the final H. Thus H is inclusion-minimal. Theorem 1 gives the sharp
+size bound. There are at most N witness searches; the per-search count
+in Section 5 gives (7). QED.
 
-**Query interface after preprocessing.** For a rank query F, scan the retained H and run greedy augmentation on `H_F`; this returns a surviving basis of size `r_M(E_F)` using at most `|H|` independence-oracle calls and `O(|H|)` stored element IDs. For the submodular extension, evaluate `f(H_F)` directly with the value oracle; a greedy scan can also return a value-increasing certificate using at most `|H|` value queries. These are query costs on the retained summary and do not turn the construction into a uniform-polynomial bit algorithm.
+One may return H immediately if its size already meets the stated bound,
+but the one-pass version additionally supplies a necessity witness for
+every retained element. It does not optimize the cardinality of H on an
+individual instance. Depth-first traversal needs only the current
+restriction, a stack of at most h failure labels, and basis/work arrays;
+storing a copy of each active restriction uses O((h+1)N) element IDs.
 
-## 7. Boundaries and open algorithmic question
+For fixed d and rank r=k, with failure budget h=O_d(k), (7) is
 
-The argument establishing (4) uses that e is a coloop of the **entire surviving restriction**. Under the weighted, cost-ordered LF rule, one only knows that e lies outside the span of cheaper surviving elements. In a selected circuit, the element with the last own-label in the random order need not be the most expensive element. Consequently, that weaker witness is insufficient for the proof in Section 2. Extending the exact binomial bound to arbitrary-oracle fixed-cost prefix summaries remains open in this note.
+$$
+2^{O_d(k\log(k+2))}N^2.
+$$
 
-For explicitly represented matroids, the companion polynomial-feature lift already constructs a fixed-cost summary of size r binomial(h+d,d) in uniform polynomial time. Here the exact rank-only size is generalized to all matroids, while the construction is only FPT when r+h+d is the parameter, or XP in h by direct enumeration. A uniform polynomial construction attaining (2) for arbitrary independence-oracle matroids, already for d=1, is not established here.
+This explicit construction replaces the earlier separating-pool and
+repeated-halving proof of computable fixed-parameter preprocessing.
 
-The known W[2]-hardness of a generic colored failure-witness problem is not used as a lower bound on constructing an arbitrary valid summary.
+### 6.1 Linear dependence on the explicit ground size
+
+The [retained-prefix construction](weighted-oracle-prefix-fpt-construction.md)
+first produces a rank-preserving restriction of size at most
+$K=\min\{N,\lfloor r\Gamma(h,d)\rfloor\}$, where
+$\Gamma(h,d)=(h+d)^{h+d}/(h^h d^d)$ for positive $h,d$ and one otherwise.
+Use the input order; no cost sorting is needed for this rank-only application.
+The construction uses at most $N(K+1)S(dr,h)$ independence queries and
+never scans discarded input items inside a witness search. Apply the
+reverse deletion above to only those $K$ items. This gives the same sharp
+$r\binom{h+d}{d}$ output bound with at most
+
+$$
+(N+K)(K+1)S(dr,h)
+$$
+
+independence queries. For fixed rank, failure budget and label degree,
+this is linear in $N$. Explicit label indexing and sparse-list bookkeeping
+are charged separately as in the linked construction. The first phase
+preserves every prefix and has the larger W–LF size; the last phase may
+discard cost-prefix information and is justified only for final ranks.
+
+**Query interface after preprocessing.** Given F, filter H and run greedy
+augmentation on H_F. This returns a surviving basis using at most |H|
+independence queries, plus label filtering and output. For the submodular
+extension below, one value query to f(H_F) returns the exact surviving
+value. These are oracle bounds; no bit encoding of an arbitrary oracle
+is supplied by the summary.
+
+## 7. Weighted oracle summaries for one label failure
+
+There is a sharp weighted result without a linear representation when
+h=1. Fix a total order refining the signed element costs. Let B_0 be the
+canonical greedy basis of E. For each label lambda occurring on B_0,
+compute the canonical basis B_lambda after deleting all elements carrying
+lambda, and retain
+
+$$
+H=B_0\cup\bigcup_{\lambda\in\Lambda(B_0)}B_\lambda.
+$$
+
+**Theorem 7.1 (one-failure weighted oracle summary).** H preserves every
+surviving prefix rank and contains the canonical minimum-cost basis after
+zero or one label failure. It is computed in deterministic uniform
+polynomial time with at most (1+dr)N independence queries, and
+
+$$
+|H|\le\min\{N,(d+1)r\}. \tag{8}
+$$
+
+**Proof.** A greedy-accepted element e lies outside the closure of all
+earlier elements. Deleting elements while retaining e can only shrink
+that earlier set. Consequently every surviving element of B_0 remains
+in the canonical basis B_lambda. Since its rank is at most r,
+
+$$
+|B_\lambda\setminus B_0|
+ \le |\{e\in B_0:\lambda\in\Lambda(e)\}|.
+$$
+
+Summing over the at most dr relevant labels gives
+
+$$
+|H|\le r+\sum_{e\in B_0}|\Lambda(e)|\le(d+1)r.
+$$
+
+If a failed label does not occur on B_0, that entire basis survives and
+the same stability argument shows that it remains the canonical basis.
+All other one-label queries have their canonical basis explicitly included
+in H. At every prefix of a fixed greedy scan, the accepted basis elements
+span that prefix. Hence containment of the canonical basis proves equality
+of every surviving prefix rank as well. The query and construction costs
+follow from ordinary greedy augmentation. QED.
+
+The bound is exact by the rank-one direct-sum construction in Section 3
+with h=1. Signed costs, tied costs with a fixed tie order, loops, and rank
+drops require no additional assumption. This resolves the weighted
+oracle case for one failed label; it is separate from the rank-only
+reverse-deletion algorithm of Section 6.
+
+### Boundary for two or more failures
+
+The argument establishing (4) requires a coloop witness in the **entire
+surviving restriction**. A cost-prefix witness only makes e independent of
+earlier surviving elements. In a selected circuit, the element with the
+last own-label need not be the last element in cost order, so that weaker
+witness does not prove (4). The proposed sharp weighted-prefix extension is false in general once h is
+at least two: the [explicit weighted oracle obstruction](weighted-oracle-two-failure-obstruction.md)
+uses rank four and one label per item, yet forces 4(h+1)+1 elements.
+The h=2 instance has only 13 items and four labels. Its all-h extension
+and direct sums are proved in the companion.
+
+For explicitly represented matroids, the companion polynomial-feature
+lift attains r binomial(h+d,d) with full fixed-cost preservation and
+uniform polynomial preprocessing for every h. For arbitrary oracles,
+Section 6 gives the sharp **rank-only** summary with explicit FPT work,
+while Theorem 7.1 gives the sharp **weighted** summary when h=1.
+No uniform polynomial sharp rank-summary algorithm for unrestricted h,d,r
+is established. The known hardness of a generic colored failure-witness
+problem with a smaller parameter set is not used as a lower bound on
+these constructions.
 
 ## 8. Antecedents and comparison to public results
 
@@ -251,9 +368,9 @@ f(H_F)=f(E_F)\quad\text{for all }|F|\le h,
 |H|\le R\binom{h+d}{d}. \tag{11}
 $$
 
-Every inclusion-minimal exact summary satisfies this size bound. Given a value oracle, the elementary separating reduction and final bounded search construct one in deterministic f_2(R,h,d)|E|^{O(1)} oracle time. The parameter includes the numerical range R, not only its bit length.
+Every inclusion-minimal exact summary satisfies this size bound. Given a value oracle, the failure-witness search below constructs one using O(N(N+1) sum_{i=0}^h (dR)^i) value queries, where N=|E|. The parameter includes the numerical range R, not only its bit length.
 
-To prove the size statement, choose an inclusion-minimal H and for each e a failure witness F_e where deleting e strictly reduces value. Integrality gives delta_e at least 1, so (10) proves (11). For the constructive statement, replace each pool's matroid basis by the subset obtained by scanning the pool and keeping an element precisely when it increases the current f-value. Zero marginal gains remain zero as the retained set grows; the final subset has the full pool value, and every retained item increases it by at least one. Hence each pool retains at most R elements. All separator, halving, and bounded-search arguments continue unchanged.
+To prove the size statement, choose an inclusion-minimal H and for each e a failure witness F_e where deleting e strictly reduces value. Integrality gives delta_e at least 1, so (10) proves (11). For construction, test each deletion with the same witness search as in Section 5. At a surviving state Y containing the protected e, return the current failed labels if f(Y)>f(Y-e). Otherwise greedily form B contained in Y-e with f(B)=f(Y-e), keeping an element exactly when its marginal is positive. Diminishing returns ensures that every skipped zero marginal stays zero, and integrality bounds |B| by R. Now f(B)=f(Y-e)=f(Y), so monotonicity gives f(B+e)=f(B). If a remaining failure misses all labels on B, then B survives; diminishing returns forces the marginal of e in that surviving restriction to be zero. Every positive-marginal witness must therefore hit a label on B that is not on e. Branch on those at most dR labels. Induction proves completeness. A positive marginal witness remains positive when other surviving elements are deleted, by diminishing returns. Therefore the same one-pass deletion gives an inclusion-minimal summary. Each search node uses at most |Y|+2 value queries, proving the stated count. The numerical range R, rather than its bit length, controls the branching factor.
 
 The bound is already tight for coverage functions: use one feature for each of R classes in the lower-bound construction, and let an element cover exactly its class feature. The function counts covered features. Conversely, integrality or a positive marginal-gap assumption is needed for a cardinality consequence: a modular function giving each of N items weight 1/N has total value 1, but its value-preserving restriction must contain all N items even with no failures.
 
@@ -265,7 +382,7 @@ $$
 
 for every context B. Indeed, the zero marginal gain from adjoining E_F to H_F cannot increase after adjoining B, by submodularity. Thus (11) simultaneously preserves the exact value after correlated failures and arbitrary later augmentation, provided the later function restricts to the original f.
 
-This extension concerns exact saturation/value preservation. It does not claim a smaller general-purpose coreset for constrained submodular maximization or minimum-cost submodular cover, and does not close the arbitrary-matroid weighted-prefix gap in Section 7. Priority of (10) and its precise fault-summary application should be checked separately; the proof is self-contained.
+This extension concerns exact saturation/value preservation. It does not claim a smaller general-purpose coreset for constrained submodular maximization or minimum-cost submodular cover, and does not supply weighted-prefix preservation for h at least two, which is ruled out at the same sharp size by the obstruction in Section 7. Priority of (10) and its precise fault-summary application should be checked separately; the proof is self-contained.
 
 ### A sharp real-valued total-sensitivity consequence
 
