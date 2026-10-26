@@ -16,7 +16,10 @@ contain longer derivations and shared interfaces.
    state exactly which finite or analytic claim it certifies. Missing modules,
    receipts or oracle implementations are unresolved dependencies.
 4. Update the concise entry in `catalogue.json`, then regenerate both public
-   indexes with `python3 tools/build_catalogue.py`.
+   indexes with `python3 tools/build_catalogue.py`. When a proof package is
+   ready for review, record its exact scope, date and remaining conditions in
+   `reviews/registry.json`, then run `python3 tools/build_reviews.py`. Use
+   partial readiness when only named components of a family have been checked.
 5. Run `python3 tools/check_repository.py`. Run the full continuous-domain
    Subset Sum certificate separately when changing its acceptance kernel,
    contact menu or circuit parameters.

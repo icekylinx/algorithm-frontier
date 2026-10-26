@@ -4,6 +4,36 @@
 
 - [Exact degree-constrained subgraphs from the general matching backend](proof.md)
 
+## What is proved and what is imported
+
+**Self-contained reduction.** Theorem 1.1 and Sections 2–5 construct
+the sparse selector, prove both directions of the perfect-matching
+equivalence, handle interval bounds and parity, and encode exact/ranged
+cardinality. The permutation-network routing proof is included. No
+randomization or external numerical backend is used by these reductions.
+The [finite checker](verify/check_reductions.py) tests the actual small
+gadgets with independent exact methods.
+
+**Classical reduction provenance.** The prescribed-degree selector is
+the split-network form of Section 10 of the
+[OpenAI matching manuscript](https://github.com/openai/math/blob/main/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/10-f-factors.tex).
+The interval, parity and cardinality gadgets are elementary extensions;
+no publication-priority claim is made for them.
+
+**Conditional quantitative input.** Only the fast running-time corollary
+uses [the general-matching theorem](../general-matching/proof.md),
+including its Section 2 external primitives and Section 11.6 Contract R.
+Replacing that solver by any correct exact matching algorithm preserves
+the reductions' correctness and changes their running time accordingly.
+An arbitrary unsuccessful attempt to find a perfect matching cannot
+serve as a NO certificate; the supplied matching must be maximum.
+
+**Public comparator.** Gabow's
+[*Maximum Cardinality f-Matching in Time O(n^(2/3)m)*](https://arxiv.org/abs/2311.14236v1)
+states the separate deterministic simple-graph and multigraph bounds
+quoted in Section 7. It supplies a benchmark, not an assumption needed
+to prove the gadgets or a fast implementation of Contract R.
+
 ## Linked mathematical dependencies
 
 These manuscripts contain the interfaces, auxiliary arguments or source

@@ -6,7 +6,7 @@ Finds an exact feasible degree-constrained edge subset, or correctly reports tha
 
 **Objective and output**
 
-Supports f-factors, interval degree bounds, and cardinality optimization; outputs original edge identifiers and treats each parallel edge record as a separate selectable item.
+Supports f-factors, interval degree bounds, exact or ranged cardinality constraints, and cardinality optimization; outputs original edge identifiers and treats each parallel edge record as a separate selectable item.
 
 **Randomness**
 
@@ -14,7 +14,7 @@ Deterministic reductions conditional on the deterministic matching backend, incl
 
 **Time**
 
-Conditional on the matching backend Contract R: $O(n+m)+(m+1)\exp\!\left(O((\log(m+2))^{4/5}(\log\log(m+4))^{1/5})\right)$.
+The unconditional reduction constructs an $O(m\log(m+2))$-size simple subcubic graph and uses one exact matching call for feasibility, including exact/ranged cardinality, or $O(\log(m+2))$ calls for optimization. Conditional on the matching backend Contract R, total time is $O(n+m)+(m+1)\exp\!\left(O((\log(m+2))^{4/5}(\log\log(m+4))^{1/5})\right)$.
 
 **Space**
 
@@ -34,7 +34,11 @@ No new lower bound is claimed; this is a deterministic transfer from the matchin
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** Theorem 1.1: unconditional sparse deterministic reductions for prescribed degrees, degree intervals, and exact or ranged cardinality, with both extension and decoding directions. Cardinality feasibility uses one exact matching call.
+
+**Conditions and remaining work.** The displayed fast running time requires the conditional general-matching backend, including Contract R. Any correct exact maximum-matching solver suffices for the unconditional reduction theorem.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

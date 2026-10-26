@@ -88,18 +88,38 @@ All external statements are assumed correct, as stipulated for this manuscript. 
 
 Remove loops, keep one original identifier per unordered nonloop pair, and remove isolated vertices. The empty case returns immediately. Let the remaining simple graph have $v_0\leq2m_s$ vertices.
 
-For the optional kernel, take a greedy maximal matching $M_0$, set $C=V(M_0)$, $c=|C|$, and $I=V(G)\setminus C$. Maximality makes $I$ independent. Keep every $C$-$C$ edge and, for each $u\in C$, at most $c+1$ distinct neighbors in $I$. Call the retained graph $H$, after removing its isolated vertices.
+For the optional kernel, take a greedy maximal matching $M_0$, set $C=V(M_0)$, $c=|C|$, and $I=V(G)\setminus C$. Maximality makes $I$ independent. Keep every $C$-$C$ edge and, for each $u\in C$, exactly $\min\{c,|N(u)\cap I|\}$ distinct neighbors in $I$, using original edge order. Call the retained graph $H$, after removing its isolated vertices. This construction and Lemma 3.1 are independent of the numerical backend.
 
 **Lemma 3.1.** The kernel is constructed in linear time and satisfies
 
 $$
 \nu(H)=\nu(G),\qquad
- m_H\leq\min\left\{m_s,\binom c2+c(c+1)\right\},\qquad
+ m_H\leq\min\left\{m_s,\binom c2+c^2\right\},\qquad
  c\leq2\nu(G).
  \tag{2}
 $$
 
-**Proof.** The endpoints of a maximal matching form a vertex cover, so every matching has at most $c$ edges. If a maximum matching uses an omitted edge $uv$, with $u\in C$ and $v\in I$, then $u$ has $c+1$ retained neighbors in $I$. At most $c$ vertices of $I$ are matched. Replace $uv$ by an edge from $u$ to an unused retained neighbor. Each replacement decreases the number of omitted edges and preserves cardinality. Hence some maximum matching lies in $H$. The reverse inequality follows from $H\subseteq G$. Finally $c=2|M_0|\leq2\nu(G)$. The edge and work bounds follow directly from the construction. ∎
+**Proof.** The endpoints of a maximal matching form a vertex cover, so every matching has at most $c$ edges. If a maximum matching uses an omitted edge $uv$, with $u\in C$ and $v\in I$, then $u$ has $c$ retained neighbors in $I$. Remove $uv$ temporarily. At most $c-1$ vertices of $I$ are now matched, so one of those retained neighbors is free. Match $u$ to that neighbor. Each replacement decreases the number of omitted edges and preserves cardinality. Hence some maximum matching lies in $H$. The reverse inequality follows from $H\subseteq G$. Finally $c=2|M_0|\leq2\nu(G)$. The edge and work bounds follow directly from the construction. ∎
+
+The cutoff $c$ is sharp for arbitrary local neighbor choices. For even $c\geq2$, take the complete bipartite graph on $C$ and an independent set $I$, both of size $c$, and add a perfect matching inside $C$. The added matching may be the initial maximal matching. If every cover vertex keeps the same $c-1$ vertices of $I$, then the retained graph has only $2c-1$ nonisolated vertices and matching number $c-1$, whereas the original matching number is $c$.
+
+**Corollary 3.1a (componentwise refinement).** Let $G_1,\ldots,G_a$ be the nonempty connected components of the cleaned graph, and let $m_i$ and $\nu_i$ be their edge counts and matching numbers. In one $O(n+m)$ scan, construct the kernels separately, with retained sizes
+
+$$
+h_i\leq\min\left\{m_i,\binom{c_i}{2}+c_i^2\right\}
+       =O(\min\{m_i,\nu_i^2\}).
+$$
+
+Under the same hypotheses as Theorem 1.1, the solve time refines to
+
+$$
+O(n+m)+\sum_{i=1}^{a}(h_i+1)
+ \exp\!\left[O\!\left(
+   (\log(h_i+2))^{4/5}(\log\log(h_i+4))^{1/5}
+ \right)\right].
+$$
+
+**Proof.** Connected components and all greedy matchings are computed in total linear work. Apply Lemma 3.1 in each component and invoke the same uniform program on each retained graph. Maximum matching is additive over connected components; the union of the decoded outputs is therefore maximum. Every nonempty component has at least one retained edge, so component overhead and final output are included. Constants are shared by all calls. ∎
 
 All subsequent workers and verifiers use the same cleaned graph or the same kernel. Original identifiers remain passive labels until the winner is translated once.
 

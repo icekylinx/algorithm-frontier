@@ -51,10 +51,10 @@
       "records": [
         {
           "id": "general-matching",
-          "title": "Maximum-cardinality matching",
+          "title": "Deterministic general-graph maximum matching",
           "result": "Exact matching with original edge identifiers",
-          "quantity": "$O(n+m)+(m_s+1)\\mathcal E_{4/5}$; optional $m_H=O(\\nu(G)^2)$ kernel",
-          "scope": "Conditional on raw-backend Contract R and the named external primitives",
+          "quantity": "$O(n+m)+(m_s+1)\\exp(O((\\log(m_s+2))^{4/5}(\\log\\log(m_s+4))^{1/5}))$; optional $m_H=O(\\nu(G)^2)$ kernel",
+          "scope": "Conditional on raw-backend Contract R and the named deterministic primitives; m_s counts distinct nonloop edges. The preprocessing kernel and its componentwise refinement are unconditional",
           "randomness": "Deterministic conditional composition, requiring deterministic external primitives and a deterministic implementation of Contract R."
         },
         {
@@ -62,7 +62,7 @@
           "title": "Degree-constrained subgraphs",
           "result": "Exact factors, interval degrees and cardinality optimization",
           "quantity": "$O(n+m)+(m+1)\\mathcal E_{4/5}$",
-          "scope": "Loopless multigraph; capacity one per explicit edge record; conditional matching backend",
+          "scope": "Unconditional deterministic sparse reductions on loopless multigraphs, with capacity one per explicit edge record; exact or ranged cardinality uses one matching call. Fast running time conditional on Contract R",
           "randomness": "Deterministic reductions conditional on the deterministic matching backend, including Contract R and its external primitives."
         },
         {
@@ -645,8 +645,8 @@
     }
   ],
   "featured": [
+    "general-matching",
     "subset-sum-fast-deterministic",
-    "numeric-target-frontier",
     "matroid-failure-summaries"
   ]
 }

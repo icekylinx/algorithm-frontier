@@ -1,10 +1,8 @@
-# Verification evidence
+# Review status and verification evidence
 
-Every result family has one evidence note linked below. The machine-readable
-[registry](registry.json) records the exact executable coverage for each family.
-A manuscript proof, a finite computation and a proof-assistant derivation are
-different forms of evidence. No proof-assistant verification or external peer
-review is claimed.
+Readiness applies to the precise scope below. **Ready for review** means that the stated manuscript package has been checked for its theorem, proof, computational model and declared dependencies. **Partial readiness** identifies completed components of a larger family. Other manuscripts remain available with review pending. None of these labels claims external peer review or proof-assistant verification.
+
+The machine-readable [registry](registry.json) is the source of these statuses and of each executable check's mathematical scope.
 
 ## Run the checks
 
@@ -12,148 +10,110 @@ review is claimed.
 python3 tools/check_repository.py
 ```
 
-The default command checks all canonical paths, source mappings, result-card
-fields, mathematical delimiters and generated indexes. It then runs the
-exact mathematical checks, validates the full-contact receipt's source/menu
-binding, and freshly recomputes the rho=1.7 and direct contact branches.
-It uses the Python standard library and modifies no files.
-
-To recompute all 44 continuous contact branches:
+The default suite checks repository structure and every registered executable used by the canonical runner. For Subset Sum it validates the saved full-contact receipt's source/menu binding and freshly replays the rho=1.7 and direct branches. To replay all 44 contact branches:
 
 ```sh
 python3 tools/check_repository.py --full-contacts --jobs 4
 ```
 
-The full replay is substantially more expensive than the default run.
-Receipt binding validates provenance and coverage metadata; only recomputation
-establishes the inequalities again. The acceptance kernel's coverage argument
-is in the [Subset Sum evidence note](../problems/subset-sum-fast-deterministic/verify/README.md).
-The same full mode is available through the repository-check workflow's
-manual dispatch. Pushes and pull requests use the default suite.
+Receipt binding establishes provenance and coverage metadata; only recomputation re-establishes the inequalities. The full mode is also available through manual dispatch of the repository workflow. The [contact evidence note](../problems/subset-sum-fast-deterministic/verify/README.md) states the analytic coverage argument.
+
+## Ready for review
+
+### [Degree-constrained subgraphs](../problems/degree-constrained-subgraphs/)
+
+Theorem 1.1: unconditional sparse deterministic reductions for prescribed degrees, degree intervals, and exact or ranged cardinality, with both extension and decoding directions. Cardinality feasibility uses one exact matching call.
+
+**Conditions and remaining work.** The displayed fast running time requires the conditional general-matching backend, including Contract R. Any correct exact maximum-matching solver suffices for the unconditional reduction theorem.
+
+[Proof](../problems/degree-constrained-subgraphs/proof.md) · [Dependencies](../problems/degree-constrained-subgraphs/sources.md) · [Evidence](../problems/degree-constrained-subgraphs/verify/README.md) · Reviewed 2026-10-26
+
+## Components ready for review
+
+### [Deterministic general-graph maximum matching](../problems/general-matching/)
+
+The unconditional input reductions in Section 3: the sharp c-neighbor kernel, componentwise composition, the native mixed-failure kernel in the companion, and the subcubic reduction with its decoder.
+
+**Conditions and remaining work.** The four-fifths running-time theorem remains conditional on Contract R and the deterministic primitives listed in sources.md. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope.
+
+[Proof](../problems/general-matching/proof.md) · [Dependencies](../problems/general-matching/sources.md) · [Evidence](../problems/general-matching/verify/README.md) · Reviewed 2026-10-26
+
+## Review pending
+
+These families have not yet received a scoped readiness entry in this registry. Their existing statements retain their own assumptions.
+
+- [Faster deterministic Subset Sum](../problems/subset-sum-fast-deterministic/)
+- [Low-space deterministic Subset Sum](../problems/subset-sum-low-space-deterministic/)
+- [Numeric targets and support patterns](../problems/numeric-target-frontier/)
+- [Prefix, laminar and sparse quotas](../problems/weighted-prefix-quota-frontier/)
+- [Static and threshold min-cost flow](../problems/min-cost-flow/)
+- [Incremental strongly connected components](../problems/incremental-scc/)
+- [Incremental directed SSSP](../problems/incremental-sssp/)
+- [Fully dynamic APSP](../problems/apsp-frontier/)
+- [Dynamic spanners](../problems/dynamic-spanners/)
+- [Dynamic minimum spanning forest](../problems/dynamic-msf/)
+- [Strong forests and Gomory–Hu trees](../problems/decremental-strong-forest/)
+- [Single-failure optimum preservers](../problems/exact-failure-preservers/)
+- [Flow, matching and price sensitivity](../problems/exact-flow-sensitivity/)
+- [Matroid and submodular failure summaries](../problems/matroid-failure-summaries/)
+- [Colored and vertex-failure graph certificates](../problems/graph-color-failure-certificates/)
+- [Resource-constrained packing summaries](../problems/packing-matching-summaries/)
+- [Persistent-homology failure certificates](../problems/persistence-failure-certificates/)
+- [Boolean linear optimization compiler](../problems/boolean-linear-compiler/)
+- [Correlated spectral, regression and seminorm summaries](../problems/correlated-spectral-regression/)
+- [Label and whole-block cut sparsification](../problems/label-block-cut/)
+- [Finite groups, affine constraints and metrics](../problems/group-metric-constraints/)
+- [Pauli, qudit and stabilizer blocks](../problems/quantum-stabilizer/)
+- [Exact-separation and non-Fano boundaries](../problems/obstruction-boundaries/)
+- [Arbitrary-value allocation scheme](../problems/arbitrary-value-allocation-scheme/)
+- [Recipient polymatroids](../problems/recipient-polymatroid/)
+- [Recipient-matroid configuration](../problems/recipient-matroid-configuration/)
+- [Explicit-item matroid union](../problems/item-matroid-union/)
+- [One-value allocation](../problems/one-value-exact-two/)
+- [Intrinsic two-value allocation](../problems/two-value-exact-two/)
+- [Intrinsic values near factor two](../problems/intrinsic-values-near-two/)
+- [Unrelated-value additive allocation](../problems/unrelated-values-additive/)
+- [Unrelated values with a joint role](../problems/unrelated-values-joint-role/)
+- [Whole-ground selection and transfers](../problems/whole-ground-allocation/)
+- [Selected concurrent flow](../problems/selected-flow/)
+- [Flow with shared setup budget](../problems/shared-setup-flow/)
+- [Robust selected flow](../problems/robust-scenario-flow/)
+- [Robust unrelated allocation](../problems/robust-unrelated-allocation/)
+- [Robust bounded-width certificates](../problems/robust-bounded-certificates/)
+- [Width-two robust unit allocation](../problems/robust-width-two-allocation/)
+- [Two-scenario hardness](../problems/robust-two-scenario-hardness/)
+- [Arbitrary-processing scheme](../problems/arbitrary-processing-scheduling/)
+- [Activated-machine scheduling](../problems/activated-machine-scheduling/)
+- [Six-profile scheduling](../problems/six-profile-three-halves/)
+- [Processing-bucket tradeoff](../problems/processing-bucket-tradeoff/)
+- [Two-size scheduling](../problems/two-size-scheduling/)
+- [Per-machine two-time scheduling](../problems/two-time-scheduling/)
+- [Many-size workload scheduling](../problems/many-size-scheduling/)
+- [Commitment scheduling](../problems/commitment-scheduling/)
+- [Hypergraph matching and expander routing](../problems/strong-haxell-matching/)
+- [Independent transversals](../problems/independent-transversal/)
+- [Allocation and scheduling barriers](../problems/allocation-lower-bounds/)
 
 ## Executable evidence
 
-| Program | Checked mathematical component |
-|---|---|
-| [Continuous contacts](../tools/verify_subset_sum_contacts.py) | Exact interval coverage and acceptance for all 44 refined Subset Sum branches |
-| [Scalar composition](../tools/verify_subset_sum_scalars.py) | Entropy enclosures, reflected contact profile and outer exponent ledger |
-| [Energy tensors](../problems/subset-sum-fast-deterministic/verify/check_energy.py) | 132 finite cases and 1,056 independently enumerated outputs |
-| [Space resources](../problems/subset-sum-low-space-deterministic/verify/check_resources.py) | Exact rational low-space resource envelope |
-| [Structural identities](../problems/subset-sum-low-space-deterministic/verify/check_structural.py) | Finite ownership, covers, completions and layouts |
-| [Range identities](../problems/subset-sum-low-space-deterministic/verify/check_range_identities.py) | Residues, batches and exact packed convolution |
-| [Profiles and quotas](../tools/verify_profile_certificates.py) | 11,107 quota cases, 91 bucket identities and 915 load multisets |
-| [Two-scenario reduction](../tools/verify_finite_reductions.py) | 26,568,384 exact target comparisons on the declared small integer domain |
-| [Sensitivity mechanisms](../tools/verify_sensitivity_certificates.py) | Signed interval catalogue and exact exchange repairs on partition-matroid instances |
-| [Quotient rounding](../problems/group-metric-constraints/verify/check_quotient_rounding.py) | 64 subsets and 4,096 ordered pairs over six blocks in the stated finite group |
-| [Non-Fano obstruction](../tools/verify_non_fano.py) | 13 supports and all 128 sign vectors of the explicit counterexample |
+Each linked program documents its checked identities or finite domain. The per-result evidence notes and registry distinguish direct evidence from a shared prerequisite; a passing finite check does not establish an arbitrary-input asymptotic theorem.
 
-These checks certify their stated identities or domains. They do not implement
-every algorithm in the catalogue, discharge unnamed oracle contracts, or turn
-support-size theorems into construction-time bounds.
+- [problems/degree-constrained-subgraphs/verify/check_reductions.py](../problems/degree-constrained-subgraphs/verify/check_reductions.py)
+- [problems/general-matching/verify/check_reductions.py](../problems/general-matching/verify/check_reductions.py)
+- [problems/group-metric-constraints/verify/check_quotient_rounding.py](../problems/group-metric-constraints/verify/check_quotient_rounding.py)
+- [problems/subset-sum-fast-deterministic/verify/check_energy.py](../problems/subset-sum-fast-deterministic/verify/check_energy.py)
+- [problems/subset-sum-low-space-deterministic/verify/check_range_identities.py](../problems/subset-sum-low-space-deterministic/verify/check_range_identities.py)
+- [problems/subset-sum-low-space-deterministic/verify/check_resources.py](../problems/subset-sum-low-space-deterministic/verify/check_resources.py)
+- [problems/subset-sum-low-space-deterministic/verify/check_structural.py](../problems/subset-sum-low-space-deterministic/verify/check_structural.py)
+- [tools/verify_finite_reductions.py](../tools/verify_finite_reductions.py)
+- [tools/verify_non_fano.py](../tools/verify_non_fano.py)
+- [tools/verify_profile_certificates.py](../tools/verify_profile_certificates.py)
+- [tools/verify_sensitivity_certificates.py](../tools/verify_sensitivity_certificates.py)
+- [tools/verify_subset_sum_contacts.py](../tools/verify_subset_sum_contacts.py)
+- [tools/verify_subset_sum_scalars.py](../tools/verify_subset_sum_scalars.py)
 
-## Evidence by result
+## Maintaining a status
 
-### Subset Sum
+Set a readiness scope only after checking the corresponding proof, algorithm, representation, randomness and source requirements. Name unresolved backend contracts beside the scope. Update `registry.json`, then run `python3 tools/build_reviews.py`; this synchronizes these entries with the reviewed problem cards. A changed theorem or dependency requires a new scope assessment.
 
-| Result and evidence note | Executable coverage |
-|---|---|
-| [Faster deterministic Subset Sum](../problems/subset-sum-fast-deterministic/verify/README.md) | [verify_subset_sum_contacts](../tools/verify_subset_sum_contacts.py), [verify_subset_sum_scalars](../tools/verify_subset_sum_scalars.py), [check_energy](../problems/subset-sum-fast-deterministic/verify/check_energy.py) |
-| [Low-space deterministic Subset Sum](../problems/subset-sum-low-space-deterministic/verify/README.md) | [check_resources](../problems/subset-sum-low-space-deterministic/verify/check_resources.py), [check_structural](../problems/subset-sum-low-space-deterministic/verify/check_structural.py), [check_range_identities](../problems/subset-sum-low-space-deterministic/verify/check_range_identities.py) |
-
-### Numeric targets and quota geometry
-
-| Result and evidence note | Executable coverage |
-|---|---|
-| [Numeric targets and support patterns](../problems/numeric-target-frontier/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Prefix, laminar and sparse quotas](../problems/weighted-prefix-quota-frontier/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-
-### Graph algorithms
-
-| Result and evidence note | Executable coverage |
-|---|---|
-| [Maximum-cardinality matching](../problems/general-matching/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Degree-constrained subgraphs](../problems/degree-constrained-subgraphs/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Static and threshold min-cost flow](../problems/min-cost-flow/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Incremental strongly connected components](../problems/incremental-scc/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Incremental directed SSSP](../problems/incremental-sssp/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Fully dynamic APSP](../problems/apsp-frontier/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Dynamic spanners](../problems/dynamic-spanners/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Dynamic minimum spanning forest](../problems/dynamic-msf/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Strong forests and Gomory–Hu trees](../problems/decremental-strong-forest/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-
-### Exact failures, persistence and compilation
-
-| Result and evidence note | Executable coverage |
-|---|---|
-| [Single-failure optimum preservers](../problems/exact-failure-preservers/verify/README.md) | [verify_sensitivity_certificates](../tools/verify_sensitivity_certificates.py) |
-| [Flow, matching and price sensitivity](../problems/exact-flow-sensitivity/verify/README.md) | [verify_sensitivity_certificates](../tools/verify_sensitivity_certificates.py) |
-| [Matroid and submodular failure summaries](../problems/matroid-failure-summaries/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Colored and vertex-failure graph certificates](../problems/graph-color-failure-certificates/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Resource-constrained packing summaries](../problems/packing-matching-summaries/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Persistent-homology failure certificates](../problems/persistence-failure-certificates/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Boolean linear optimization compiler](../problems/boolean-linear-compiler/verify/README.md) | [verify_sensitivity_certificates](../tools/verify_sensitivity_certificates.py) |
-
-### Spectral, group and quantum sparsification
-
-| Result and evidence note | Executable coverage |
-|---|---|
-| [Correlated spectral, regression and seminorm summaries](../problems/correlated-spectral-regression/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Label and whole-block cut sparsification](../problems/label-block-cut/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Finite groups, affine constraints and metrics](../problems/group-metric-constraints/verify/README.md) | [check_quotient_rounding](../problems/group-metric-constraints/verify/check_quotient_rounding.py) |
-| [Pauli, qudit and stabilizer blocks](../problems/quantum-stabilizer/verify/README.md) | [check_quotient_rounding](../problems/group-metric-constraints/verify/check_quotient_rounding.py) |
-| [Exact-separation and non-Fano boundaries](../problems/obstruction-boundaries/verify/README.md) | [verify_non_fano](../tools/verify_non_fano.py) |
-
-### Allocation and resource matroids
-
-| Result and evidence note | Executable coverage |
-|---|---|
-| [Arbitrary-value allocation scheme](../problems/arbitrary-value-allocation-scheme/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Recipient polymatroids](../problems/recipient-polymatroid/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Recipient-matroid configuration](../problems/recipient-matroid-configuration/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Explicit-item matroid union](../problems/item-matroid-union/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [One-value allocation](../problems/one-value-exact-two/verify/README.md) | [verify_profile_certificates](../tools/verify_profile_certificates.py) |
-| [Intrinsic two-value allocation](../problems/two-value-exact-two/verify/README.md) | [verify_profile_certificates](../tools/verify_profile_certificates.py) |
-| [Intrinsic values near factor two](../problems/intrinsic-values-near-two/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Unrelated-value additive allocation](../problems/unrelated-values-additive/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Unrelated values with a joint role](../problems/unrelated-values-joint-role/verify/README.md) | [verify_profile_certificates](../tools/verify_profile_certificates.py) |
-| [Whole-ground selection and transfers](../problems/whole-ground-allocation/verify/README.md) | [verify_profile_certificates](../tools/verify_profile_certificates.py) |
-
-### Selected flow and robust allocation
-
-| Result and evidence note | Executable coverage |
-|---|---|
-| [Selected concurrent flow](../problems/selected-flow/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Flow with shared setup budget](../problems/shared-setup-flow/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Robust selected flow](../problems/robust-scenario-flow/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Robust unrelated allocation](../problems/robust-unrelated-allocation/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Robust bounded-width certificates](../problems/robust-bounded-certificates/verify/README.md) | [verify_profile_certificates](../tools/verify_profile_certificates.py) |
-| [Width-two robust unit allocation](../problems/robust-width-two-allocation/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Two-scenario hardness](../problems/robust-two-scenario-hardness/verify/README.md) | [verify_finite_reductions](../tools/verify_finite_reductions.py) |
-
-### Scheduling
-
-| Result and evidence note | Executable coverage |
-|---|---|
-| [Arbitrary-processing scheme](../problems/arbitrary-processing-scheduling/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Activated-machine scheduling](../problems/activated-machine-scheduling/verify/README.md) | [verify_profile_certificates](../tools/verify_profile_certificates.py) |
-| [Six-profile scheduling](../problems/six-profile-three-halves/verify/README.md) | [verify_profile_certificates](../tools/verify_profile_certificates.py) |
-| [Processing-bucket tradeoff](../problems/processing-bucket-tradeoff/verify/README.md) | [verify_profile_certificates](../tools/verify_profile_certificates.py) |
-| [Two-size scheduling](../problems/two-size-scheduling/verify/README.md) | [verify_profile_certificates](../tools/verify_profile_certificates.py) |
-| [Per-machine two-time scheduling](../problems/two-time-scheduling/verify/README.md) | [verify_profile_certificates](../tools/verify_profile_certificates.py) |
-| [Many-size workload scheduling](../problems/many-size-scheduling/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Commitment scheduling](../problems/commitment-scheduling/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-
-### Matching certificates and oracle barriers
-
-| Result and evidence note | Executable coverage |
-|---|---|
-| [Hypergraph matching and expander routing](../problems/strong-haxell-matching/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Independent transversals](../problems/independent-transversal/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-| [Allocation and scheduling barriers](../problems/allocation-lower-bounds/verify/README.md) | Manuscript arguments; no dedicated executable certificate |
-
-## Maintaining evidence
-
-When changing a theorem, update its evidence note and registry scope as well
-as its statement and proof. Preserve the distinction between a shared finite
-component and a check of the whole result. See [Contributing](../CONTRIBUTING.md)
-and [import provenance](../provenance/README.md).
+See [Contributing](../CONTRIBUTING.md) for the manuscript workflow and [provenance](../provenance/README.md) for imported source identities.

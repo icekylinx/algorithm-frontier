@@ -46,6 +46,7 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
     suite = [
         Check("Canonical problem structure", ("tools/validate_curation.py",)),
         Check("Evidence registry", ("tools/validate_reviews.py",)),
+        Check("Scoped review statuses", ("tools/build_reviews.py", "--check")),
         Check("Import provenance and canonical targets", ("tools/check_provenance.py",)),
         Check("Internal links", ("tools/check_internal_links.py",)),
         Check("Result-card schema", ("tools/check_card_schema.py",)),
@@ -72,6 +73,8 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check("Scheduling quotas, buckets and six-profile coverage", ("tools/verify_profile_certificates.py",)),
         Check("Finite two-scenario hardness reduction", ("tools/verify_finite_reductions.py",)),
         Check("Finite sensitivity certificates", ("tools/verify_sensitivity_certificates.py",)),
+        Check("Matching kernels and subcubic reduction", ("problems/general-matching/verify/check_reductions.py",)),
+        Check("Degree-interval and cardinality reductions", ("problems/degree-constrained-subgraphs/verify/check_reductions.py",)),
         Check(
             "Composite-group quotient rounding",
             ("problems/group-metric-constraints/verify/check_quotient_rounding.py",),

@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "last_updated": "2026-10-26",
   "policy": {
     "executable_evidence_has_explicit_scope": true,
@@ -66,14 +66,40 @@
       "path": "problems/general-matching",
       "evidence_note": "problems/general-matching/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/general-matching/verify/check_reductions.py",
+          "scope": "Exhaustive small-graph kernel, subcubic matching-decoder, and native mixed edge/vertex-failure cases; does not implement or validate Contract R."
+        }
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The unconditional input reductions in Section 3: the sharp c-neighbor kernel, componentwise composition, the native mixed-failure kernel in the companion, and the subcubic reduction with its decoder.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The four-fifths running-time theorem remains conditional on Contract R and the deterministic primitives listed in sources.md. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope."
+        ]
+      }
     },
     {
       "id": "degree-constrained-subgraphs",
       "path": "problems/degree-constrained-subgraphs",
       "evidence_note": "problems/degree-constrained-subgraphs/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/degree-constrained-subgraphs/verify/check_reductions.py",
+          "scope": "Finite permutation-selector, interval-degree multigraph, and exact/ranged-cardinality reductions against exhaustive original subsets; not a matching-backend verifier."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "Theorem 1.1: unconditional sparse deterministic reductions for prescribed degrees, degree intervals, and exact or ranged cardinality, with both extension and decoding directions. Cardinality feasibility uses one exact matching call.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The displayed fast running time requires the conditional general-matching backend, including Contract R. Any correct exact maximum-matching solver suffices for the unconditional reduction theorem."
+        ]
+      }
     },
     {
       "id": "min-cost-flow",

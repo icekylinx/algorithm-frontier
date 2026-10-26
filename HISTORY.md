@@ -1,5 +1,20 @@
 # History
 
+## 2026-10-26 — Scoped review readiness and exact graph reductions
+
+- Ordered the homepage highlights as deterministic general-graph matching,
+  faster deterministic Subset Sum, and sharp correlated-failure summaries.
+  The matching backend conditions remain visible in its headline.
+- Tightened the matching kernel cutoff from c+1 to c neighbors and proved
+  its sharpness, componentwise cost refinement, and a c+f-neighbor kernel
+  for native mixed edge/vertex failures on a fixed simple graph.
+- Isolated the unconditional sparse degree-factor reduction and added exact
+  and ranged cardinality with one feasibility call. Added independent finite
+  checks for kernels, decoders, selectors, and cardinality gadgets.
+- Introduced synchronized, scope-specific review statuses. A completed local
+  proof does not promote an unresolved backend implementation; the evidence
+  registry states remaining conditions beside each review invitation.
+
 ## 2026-10-26 — Compact problem index
 
 - Reduced the homepage to three representative results and a complete grouped

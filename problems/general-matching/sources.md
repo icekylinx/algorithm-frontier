@@ -4,6 +4,45 @@
 
 - [Deterministic Exact General Matching through Persistent Integral Carriers and Normalized Routing](proof.md)
 
+## Dependency status
+
+**Unconditional local reductions.** Lemmas 3.1–3.2 prove the exact
+matching-size kernel, its componentwise form and the subcubic gadget.
+The companion's [mixed-failure theorem](../../manuscripts/graph-backends/matching-size-kernel-corollary.md#4-one-kernel-for-mixed-vertex-and-edge-failures)
+extends exact preservation to every mixture of at most $f$ native
+vertex/edge failures in a fixed simple graph. These reductions need no
+external matching algorithm, random sampling or raw-cycle interface.
+The [finite reduction checker](verify/check_reductions.py)
+tests their small instances independently of the proposed backend.
+
+**Explicit unresolved implementation hypothesis.** [Contract R](proof.md#116-explicit-raw-backend-realization-contract)
+is required for the four-fifths logarithmic overhead. Its five clauses
+specify raw geometric quality, chronological construction/recourse,
+occurrence retirement, finite-bit weighted-tree realization, and uniform
+executable bounds. This is an internal realization requirement, not a
+published theorem supplied by any one reference below.
+
+**Imported matching framework.** Section 2.2 imports the OpenAI
+matching-state identities, bounded objectives and localized exchange/lock
+interfaces. The current proof changes the integral carrier, optimum-gap
+driver, numerical parameters and recovery. It does not re-prove every
+inherited state invariant.
+
+**Imported data structures and geometry.** The dynamic-forest operations
+of AHLT, the bounded-volume one-edge-out discovery of CHHIP, the
+stable-forest geometry of KMPG/CKL/AN, and the balanced-cut and
+hierarchy primitives of CGLNPS/CS/CHS/KMPS retain their source hypotheses.
+In particular, a real-arithmetic weighted-tree theorem alone does not
+discharge the finite-bit realization clause of Contract R.
+
+**Independent acceptance.** The single augmenting-path search in
+[the verifier interface](../../manuscripts/graph-backends/deterministic-maximum-matching-verifier.md)
+is based on Mehlhorn–Nobahari's account of Gabow's algorithm,
+[arXiv:2603.22909v2](https://arxiv.org/html/2603.22909v2), Sections 2.3 and 4.
+It certifies the optimality of an accepted output. It supplies neither
+the proposed backend nor its time bound. The classical fallback gives
+termination independently of the favorable fast branch.
+
 ## Linked mathematical dependencies
 
 These manuscripts contain the interfaces, auxiliary arguments or source

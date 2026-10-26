@@ -10,6 +10,22 @@ Algorithms and proofs in combinatorial optimization, dynamic graphs, and sparsif
 
 Three entry points into the manuscripts. Full parameter ranges and the current review status are on the linked problem pages.
 
+### [Deterministic general-graph maximum matching](problems/general-matching/)
+
+Exact matching with original edge identifiers.
+
+**Randomness.** Deterministic conditional composition, requiring deterministic external primitives and a deterministic implementation of Contract R.
+
+**Quantitative result.**
+
+$$
+O(n+m)+(m_s+1)\exp(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5}))
+$$
+
+Optional $m_H=O(\nu(G)^2)$ kernel.
+
+**Model and scope.** Conditional on raw-backend Contract R and the named deterministic primitives; m_s counts distinct nonloop edges. The preprocessing kernel and its componentwise refinement are unconditional.
+
 ### [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/)
 
 Exact decision and indexed witness.
@@ -25,24 +41,6 @@ $$
 Exact rational exponent on the card.
 
 **Model and scope.** Exact rational certification of all 44 continuous contact branches; C is finite input-independent circuit precomputation; combinatorial compiler and bit-cost proofs are in the manuscript.
-
-### [Numeric targets and support patterns](problems/numeric-target-frontier/)
-
-Exact mixed targets and signed-scalar optimization.
-
-**Randomness.** Deterministic upper algorithms in the stated exact rank/optimization-oracle model. The success-probability-2/3 randomized statement is an oracle lower bound, not a randomized upper algorithm.
-
-**Quantitative result.**
-
-$$
-2^{O(T\log(2+\min\{Q/T,T\}))}
-$$
-
-Fixed dimension $\exp(O_d((T+1)^{d/(d+1)}))$.
-
-One-target decision $2^{O(\sqrt{T+1})}$.
-
-**Model and scope.** $T,Q>0$ in the first formula; zero cases are polynomial. Also unequal targets, overlap/components, stars, seven accuracy schemes and aligned nonlinear transfers.
 
 ### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
 
@@ -76,7 +74,7 @@ Browse by problem. Each link opens its statement and proof; conditional algorith
 
 ### Graph algorithms
 
-- [Maximum-cardinality matching](problems/general-matching/)
+- [Deterministic general-graph maximum matching](problems/general-matching/)
 - [Degree-constrained subgraphs](problems/degree-constrained-subgraphs/)
 - [Static and threshold min-cost flow](problems/min-cost-flow/)
 - [Incremental strongly connected components](problems/incremental-scc/)

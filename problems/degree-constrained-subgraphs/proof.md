@@ -1,6 +1,6 @@
 # Exact degree-constrained subgraphs from the general matching backend
 
-**25 October 2026. Deterministic corollaries, with explicit reductions.**
+**Deterministic reduction theorem; conditional fast algorithm.**
 
 This note records a second class of transfers that stays within arbitrary
 undirected general graphs. These are consequences of the conditional general-matching theorem, not a new improvement to its four-fifths exponent. The prescribed
@@ -16,7 +16,21 @@ explicit edge records. Distinct parallel edges may be selected separately,
 but each individual record may be selected at most once. All outputs are
 edge subsets with original identifiers.
 
-The deterministic running-time bound is
+**Theorem 1.1 (exact sparse reduction).** Given integral degree intervals
+$0\leq g(v)\leq f(v)\leq d_v$ and an optional integral cardinality interval
+$K_{\min}\leq |X|\leq K_{\max}$, one can construct a simple subcubic
+graph with $O(m\log(m+2))$ vertices and edges such that its perfect
+matchings decode to exactly the feasible original edge subsets. Every
+feasible original subset has a perfect-matching extension. Construction
+and decoding take $O(n+m\log(m+2))$ time, with one call to an exact
+maximum-cardinality matching solver. This reduction is unconditional and
+deterministic. Optimizing cardinality needs $O(\log(m+2))$ calls to the
+same solver. Invalid bounds and the edgeless case are handled in the
+initial scan; the size statement concerns nonempty inputs. Sections 2–5
+prove the theorem.
+
+After substituting the conditional general-matching backend, the
+deterministic running-time bound is
 
 $$
 O(n+m)+(m+1)\exp O\!\left(
@@ -27,6 +41,8 @@ It applies to:
 
 * finding an `f`-factor, or correctly deciding that none exists;
 * finding a subgraph with `g(v)<=degree(v)<=f(v)` at every vertex;
+* imposing an exact number of selected edges, or any prescribed interval
+  of permitted cardinalities, in the same single feasibility call;
 * maximizing or minimizing the number of selected edges subject to these
   interval-degree constraints;
 * in particular, maximum-cardinality `b`-matching with capacity one per
@@ -214,8 +230,27 @@ $$
 \deg(a)=F-2|E_{\rm original,selected}|.                \tag{3}
 $$
 
-Thus existence of an original interval-degree subgraph with at least
-`K` edges is exactly existence of a factor with hub interval
+It follows that a cardinality interval
+$K_{\min}\leq |E_{\rm original,selected}|\leq K_{\max}$ is encoded
+exactly by the hub interval
+
+$$
+\max\{0,F-2K_{\max}\}\leq\deg(a)
+        \leq\min\{D,F-2K_{\min}\}.
+\tag{3a}
+$$
+
+Intersect the requested cardinality interval with $[0,m]$ first;
+reject if that intersection or (3a) is empty. The original vertices
+have singleton degree intervals $[f(v),f(v)]$. Applying Section 4 once
+to this augmented interval instance and then Section 2 proves both
+directions of the reduction: equation (3) translates its hub degree
+back to the exact requested cardinality condition. No search over
+cardinalities is needed for a feasibility query. In particular,
+$K_{\min}=K_{\max}=K$ imposes exactly $K$ selected original records.
+The total explicit edge count of both augmentations is $O(m+1)$.
+
+Existence with at least `K` edges is the special case
 
 $$
 0\leq\deg(a)\leq\min\{D,F-2K\}.                     \tag{4}

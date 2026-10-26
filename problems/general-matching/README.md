@@ -40,7 +40,11 @@ This card records a conditional upper bound and backend boundary. It does not cl
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The unconditional input reductions in Section 3: the sharp c-neighbor kernel, componentwise composition, the native mixed-failure kernel in the companion, and the subcubic reduction with its decoder.
+
+**Conditions and remaining work.** The four-fifths running-time theorem remains conditional on Contract R and the deterministic primitives listed in sources.md. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
@@ -55,6 +59,17 @@ m_H\le\min\{m_s,O(\nu(G)^2)\}.
 $$
 
 The second term of the running time may use $m_H$ in place of $m_s$, while input reading and normalization still cost $O(n+m)$. Original edge identifiers are restored after the exact solution is obtained.
+
+For a computed vertex cover of size $c$, the explicit edge bound is
+$m_H\leq\min\{m_s,\binom c2+c^2\}$. Processing connected components
+separately replaces the solve term by the sum of the corresponding
+component costs; no matching-size estimate is supplied as input.
+
+For a fixed simple graph, the [mixed-failure extension](../../manuscripts/graph-backends/matching-size-kernel-corollary.md#4-one-kernel-for-mixed-vertex-and-edge-failures)
+retains at most $\binom c2+c(c+f)$ edges and simultaneously preserves
+the exact matching number after every mixture of at most $f$ native
+vertex/edge deletions. This is an unconditional deterministic kernel;
+each query still needs a matching solver.
 
 Read the [proof](proof.md), [source map](sources.md), and [complete index](../../CONTENTS.md) for the backend contract and audit trail.
 

@@ -12,6 +12,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/subset-sum-low-space-deterministic/README.md) · [Main proof](problems/subset-sum-low-space-deterministic/proof.md) · [Sources](problems/subset-sum-low-space-deterministic/sources.md) · [Verification](problems/subset-sum-low-space-deterministic/verify/README.md)
 
+- [Exact Boolean convolution with elementary bit arithmetic](problems/subset-sum-low-space-deterministic/convolution.md)
 - [Two short normalized ranges at arbitrary lattice scales](problems/subset-sum-low-space-deterministic/range-branch.md)
 
 ## Numeric targets and quota geometry
@@ -64,6 +65,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Exact common-weight laminar quotas under a root cap](problems/weighted-prefix-quota-frontier/manuscripts/laminar-common-weight-root-cap-fpt.md)
 - [Exact laminar quotas with arbitrary zero-weight completion costs](problems/weighted-prefix-quota-frontier/manuscripts/laminar-valuated-zero-completion-fpt.md)
 - [Row-dependent weights defeat the largest-prefix-target parameter](problems/weighted-prefix-quota-frontier/manuscripts/row-dependent-full-prefix-target-boundary.md)
+- [Sharp deterministic restrictions for sparse packing with an oracle matroid](problems/weighted-prefix-quota-frontier/manuscripts/sharp-sparse-packing-fpt-restrictions.md)
 - [A direct hash-and-profile algorithm for sparse exact root-bounded quotas](problems/weighted-prefix-quota-frontier/manuscripts/sparse-root-quota-hash-profile-algorithm.md)
 - [Two weighted coordinate orders: a sharp largest-target classification](problems/weighted-prefix-quota-frontier/manuscripts/two-order-weighted-prefix-target-classification.md)
 - [Uniform scalar coefficients on optional zero-weight coordinates](problems/weighted-prefix-quota-frontier/manuscripts/uniform-zero-scalar-laminar-extension.md)
@@ -72,7 +74,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 ## Graph algorithms
 
-### [Maximum-cardinality matching](problems/general-matching/)
+### [Deterministic general-graph maximum matching](problems/general-matching/)
 
 [Statement](problems/general-matching/README.md) · [Main proof](problems/general-matching/proof.md) · [Sources](problems/general-matching/sources.md) · [Verification](problems/general-matching/verify/README.md)
 
