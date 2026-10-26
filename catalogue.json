@@ -643,5 +643,10 @@
       "scope": "Coordinate-box local families and binary capacities; $s=2(r-1)$ gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding",
       "randomness": "Deterministic rational ellipsoid optimization, exact-budget profit-scaling dynamic programming and finite primal LP extraction."
     }
+  ],
+  "featured": [
+    "subset-sum-fast-deterministic",
+    "numeric-target-frontier",
+    "matroid-failure-summaries"
   ]
 }

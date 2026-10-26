@@ -12,7 +12,7 @@ contain longer derivations and shared interfaces.
 2. Update `README.md` in that problem directory. Keep the required fields:
    objective/output, time, space, parameters, model/representation,
    lower-bound scope, review status and source.
-3. Update its `sources.md</BT> dependency map and `verify/README.md</BT>. An executable check must
+3. Update its `sources.md` dependency map and `verify/README.md`. An executable check must
    state exactly which finite or analytic claim it certifies. Missing modules,
    receipts or oracle implementations are unresolved dependencies.
 4. Update the concise entry in `catalogue.json`, then regenerate both public
@@ -57,11 +57,12 @@ Use `\mathrm{poly}`, `\mathrm{rank}` and similar upright names in place of
 tags after inner `aligned` or `split` environments. Code fences are for code,
 input formats and exact commands; a `math` fence is also supported by GitHub.
 
-The homepage and problem cards use stacked entries with visible model and
-scope conditions. The nine standard card labels each introduce a separate
+The homepage contains a small selection of results and the complete problem
+index. Full statements and model conditions belong on the problem cards. The nine standard card labels each introduce a separate
 paragraph. Every method states its [randomness contract](docs/RANDOMNESS.md),
 including confidence and backend assumptions when relevant. `catalogue.json`
-owns the **Randomness** paragraphs synchronized with the homepage. Keep small
+owns the **Randomness** paragraphs synchronized with the selected homepage
+entries and all problem cards. Keep small
 comparison tables in technical manuscripts only when
 their contents fit comfortably. Use `\lvert` and `\rvert` for mathematical
 vertical bars in such tables.

@@ -89,7 +89,7 @@ size must not be substituted for construction-time bounds.
 
 ## Evidence
 
-Each problem's `verify/README.md</BT> distinguishes its manuscript proof from
+Each problem's `verify/README.md` distinguishes its manuscript proof from
 available executable evidence. Exact finite checks establish the reported
 identities on their stated domains. A continuous-domain certificate additionally
 needs a coverage argument and sound interval bounds. Neither form alone is a

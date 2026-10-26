@@ -1,5 +1,15 @@
 # History
 
+## 2026-10-26 — Compact problem index
+
+- Reduced the homepage to three representative results and a complete grouped
+  index of the 53 problem families. Detailed statements remain on each problem
+  page; the 18 supporting results now have a dedicated proof-index section.
+- Kept the selected results and all randomness paragraphs generated from the
+  same catalogue, preserving model qualifications and deterministic scope.
+- Repaired stray inline-code closing markers in the maintenance and complexity
+  guides and corrected the evidence-note reading path.
+
 ## 2026-10-26 — Readable result pages and portable mathematics
 
 - Replaced the homepage's four-column result tables with grouped, full-width

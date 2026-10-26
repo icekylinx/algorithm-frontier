@@ -1,6 +1,6 @@
 # Complete proof index
 
-Every current problem manuscript and shared dependency is listed below. The [README](README.md) compares the results; this index provides the complete reading path without duplicate checkpoint copies.
+Every current problem manuscript and shared dependency is listed below. The [README](README.md) gives selected results and a compact problem index; this page provides the complete reading path without duplicate checkpoint copies.
 
 ## Subset Sum
 
@@ -360,6 +360,268 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Two integrality gaps for recipient-polymatroid configuration relaxations](problems/allocation-lower-bounds/configuration-gaps.md)
 - [The factor-two oracle obstruction persists at refined parameter zero](problems/allocation-lower-bounds/refined-parameter-barrier.md)
+
+## Supporting results
+
+These entries extend the problem families with additional algorithms, structural results, and scoped boundaries. Their linked manuscripts state the full models and assumptions.
+
+### [Grouped choices under resource deletions](manuscripts/graph-backends/decremental-choice-recourse-lemma.md)
+
+One live representative per group with bounded prefix recourse.
+
+**Randomness.** Deterministic representative-maintenance rule, valid against an adaptive deletion order; the recourse bound does not assert near-linear total augmenting-path search time.
+
+**Quantitative result.**
+
+$O((M\log R+Q)\log(M+2))$ representative changes.
+
+**Model and scope.** M groups, R resources and Q adaptive deletions; augmenting-path discovery work is separate.
+
+### [Nonuniform sparse route rounding](manuscripts/graph-backends/nonuniform-fractional-path-selection.md)
+
+Choose one supplied candidate per group while controlling every resource load.
+
+**Randomness.** Deterministic sparse rounding by conditional averaging and guarded finite arithmetic. Candidate probabilities are mathematical weights; the implementation does not sample choices.
+
+**Quantitative result.**
+
+Load:
+
+$$
+\le2\mu_x+B\log(8(\lvert X\rvert+1))
+$$
+
+$S\mathrm{poly}(\log S,b)$ bit work.
+
+**Model and scope.** Explicit sparse occurrences, rational masses and weights; B bounds one weighted occurrence contribution.
+
+### [Short path inventories from a shared DAG](manuscripts/graph-backends/compressed-fractional-path-extraction.md)
+
+Retain at least half of the unit commodities on short candidate routes.
+
+**Randomness.** Deterministic extraction from a supplied exact shared DAG and rational flow records. The upstream flow-oracle construction and its randomness are outside this lemma.
+
+**Quantitative result.**
+
+$O(Z+P)$ arithmetic operations.
+
+Route length $\le4H$ and fractional load at most doubled.
+
+**Model and scope.** Supplied DAG and rational masses with total weighted length at most MH; explicit expansion is output-charged.
+
+### [Bounded-width lazy path client](manuscripts/graph-backends/bounded-interface-witness-pattern-updates.md)
+
+Complete static numerical client with implicit physical-path updates.
+
+**Randomness.** Deterministic finite-interface numerical client with a supplied edge-partition/separator hierarchy; hierarchy-construction work is additional.
+
+**Quantitative result.**
+
+Time:
+
+$$
+(m+\nu)\exp(O(b^2))h\mathrm{polylog}S
+$$
+
+Space $(m+\nu)\exp(O(b^2))$.
+
+**Model and scope.** Supplied fixed edge-partition hierarchy of height h and boundary b; decomposition-input work is additional.
+
+### [Forest-support numerical client](manuscripts/graph-backends/complete-unrestricted-forest-one-sided-client.md)
+
+Complete threshold search with unrestricted receiving directions.
+
+**Randomness.** Deterministic numerical client under the stated ambient-support forest and finite-word contracts, using exact directed tree dynamic programming and lazy path updates.
+
+**Quantitative result.**
+
+$(m+\nu)\mathrm{polylog}S$ total fixed-ledger work.
+
+**Model and scope.** The entire ambient allocation support is a forest, with the stated polynomial-range guards.
+
+### [Feedback-edge numerical client](manuscripts/graph-backends/feedback-edge-one-sided-client.md)
+
+Complete threshold search with k nonforest incidences.
+
+**Randomness.** Deterministic numerical client under the stated feedback-edge and finite-word contracts, using exact forest queries and a small Dijkstra computation.
+
+**Quantitative result.**
+
+$(m+\nu(k+1))\mathrm{polylog}S$ total work.
+
+$(k+1)\mathrm{polylog}S$ per query/update plus events.
+
+**Model and scope.** Fixed polynomial-range ledger; parameterized support theorem does not improve arbitrary-graph matching time.
+
+### [Weak-Haxell certifying matching](manuscripts/matching-and-routing/weak-haxell-current-blocker-growth.md)
+
+Left-perfect matching or an explicit violated hitting-set condition.
+
+**Randomness.** Deterministic certifying augmenting search on the explicit hypergraph; it returns a matching or the stated hitting-set certificate.
+
+**Quantitative result.**
+
+$$
+P(n+1)^{O((r/\epsilon)\log(2+r/\epsilon))}\mathrm{poly}(b_\epsilon+\log P)
+$$
+
+**Model and scope.** Whole-edge rank $r\ge2$, $0<\epsilon<1$; matching under $\tau(E_S)>(2r-3+\epsilon)(\lvert S\rvert-1)$.
+
+### [Sparse-separator corank refinement](manuscripts/allocation-and-scheduling/attained-set-sparse-separator-gap.md)
+
+Smaller extension and whole-ground bases when the returned separator is sparse.
+
+**Randomness.** Deterministic certificate enumeration, relative to the paid exact separator, selection and recovery interfaces. Bernoulli probabilities are used only to count branches.
+
+**Quantitative result.**
+
+$$
+\beta(R,w)^c
+$$
+
+$\beta(2,3)=(1+\sqrt5)/2$, $\beta(3,4)=1+\sqrt2$.
+
+**Model and scope.** Actual separator width w; matching global bases $(5-\sqrt5)/2$ and $3-\sqrt2$ use the forced-omission wrapper.
+
+### [Whole-ground robust allocation barrier](manuscripts/allocation-and-scheduling/robust-unit-allocation-whole-ground-oracle-barrier.md)
+
+Every finite multiplicative guarantee requires near-exhaustive rank queries.
+
+**Randomness.** Lower bounds: the self-contained q-scenario oracle proof concerns deterministic algorithms; the attributed two-scenario consequence also excludes bounded-error randomized algorithms.
+
+**Quantitative result.**
+
+At least $q^{-1}\binom qr-1$ deterministic queries.
+
+$2^{q-O(\log q)}$ for balanced rank.
+
+**Model and scope.** $2\le r<q$; q explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication.
+
+### [Implicit minimal-bundle transversals](manuscripts/matching-and-routing/implicit-minimal-bundle-transversal-oracle.md)
+
+Disjoint minimal bundles or an explicit domination/constellation certificate.
+
+**Randomness.** Deterministic implicit construction using fixed-order resource scans and the stated exact bundle operations.
+
+**Quantitative result.**
+
+$$
+P(q+1)^{O(\epsilon^{-1}\log(2+q/\epsilon))}\mathrm{poly}(b+b_\epsilon+\log P)
+$$
+
+**Model and scope.** No configuration enumeration or arbitrary-neighbour oracle; certificate class sets retain their distinct meanings.
+
+### [Global free pool at the critical quota](manuscripts/allocation-and-scheduling/critical-unit-quota-global-free-pool.md)
+
+Globally resource-free owners cover the current player-rank deficit.
+
+**Randomness.** Structural rank lemma and deterministic paid search acceleration with exact availability. No improved global running-time bound is asserted.
+
+**Quantitative result.**
+
+$r_M(F)\ge r-k$ when the full quota is $t=3b-2$ and each current record has b units.
+
+**Model and scope.** Fully normalized prefix invariant; eligible free owners admit a paid exchange; no faster critical-quota runtime follows.
+
+### [Jointly independent layer owners](manuscripts/allocation-and-scheduling/joint-owner-sharp-quality-addendum.md)
+
+Within-layer joint independence retains the sharp availability-dependent quality.
+
+**Randomness.** Structural guarantee for deterministic current-blocker search, conditional on an availability oracle satisfying its certified factor on every call.
+
+**Quantitative result.**
+
+Factor $\lambda^{-1}+3-3/r+\eta$ with the original rank-exponential or relaxed rank-quasipolynomial time.
+
+**Model and scope.** The stated current-blocker and paid availability model; joint independence alone does not supply a polynomial batching theorem.
+
+### [Explicit laminar reservation interface](manuscripts/allocation-and-scheduling/laminar-resource-current-blocker-reservations.md)
+
+Token reservations and antichain compact certificates for recipient constraints.
+
+**Randomness.** Deterministic explicit-token reservations and fixed-order current-blocker search for the supplied laminar matroids.
+
+**Quantitative result.**
+
+No laminar-depth factor in the resource value certificate.
+
+**Model and scope.** Includes the stated local-family interfaces; its older base-model approximation is subsumed by the main recipient-polymatroid theorem.
+
+### [Persistent path-hitting certificates](manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md)
+
+One shared update set preserves all historical path-hitting certificates.
+
+**Randomness.** Deterministic structural certificate transfer from supplied historical hitting sets; it does not establish a complete fully dynamic matching or disjoint-path algorithm.
+
+**Quantitative result.**
+
+$C\cup I$ hits current short paths.
+
+Size at most $\lvert C\rvert+\lvert I\rvert$.
+
+**Model and scope.** Deletions and length increases are safe; inserted/decreased edge lifetimes enter I; selected-path and layer repair are separate.
+
+### [Fixed-potential tight-DAG repairs](manuscripts/graph-backends/fixed-potential-tight-dag-repair-lemma.md)
+
+Maintain old-label shortest-path forests on tight-reachable vertices.
+
+**Randomness.** Deterministic reachability and parent-repair algorithm within one supplied fixed-potential interval; no global bound across potential refreshes is established.
+
+**Quantitative result.**
+
+$O(m+\nu)$ total graph work and supplied forest edits per fixed-potential interval.
+
+**Model and scope.** No ledger births or label changes inside the interval; potential-refresh work is outside the bound.
+
+### [Slack-only directed matching reduction](manuscripts/graph-backends/slack-only-one-sided-matching-client.md)
+
+Constant-ratio comparison and a finite-word static threshold oracle.
+
+**Randomness.** Deterministic mathematical reduction and exact static threshold oracle. The required fast dynamic interface has not been constructed, so no complete faster dynamic algorithm is classified.
+
+**Quantitative result.**
+
+Directed nonnegative SSSP reduction with monotone prices and a charged repricing budget.
+
+**Model and scope.** The dynamic path-reporting/update provider remains a separate unproved interface; no improved general-matching exponent.
+
+### [Residual-capacity configuration comparator](manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md)
+
+Integral allocation with factor $4-3/r$ against the strengthened residual-capacity configuration LP.
+
+**Randomness.** Deterministic current-blocker allocation relative to the stronger LP. A supplied factor-lambda availability oracle must meet its certified guarantee on every call.
+
+**Quantitative result.**
+
+$$
+2^{O(r)}\mathrm{poly}(H)
+$$
+
+The stated rank-quasipolynomial alternative allows additive accuracy in the factor.
+
+**Model and scope.** Arbitrary binary recipient polymatroids and exact local availability; certified factor-$\lambda$ availability changes the ratio to $\lambda^{-1}+3-3/r$. The algorithm does not solve the LP.
+
+### [Fractional optimization of residual configuration relaxations](manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md)
+
+A feasible fractional configuration point at target at least $(1-\epsilon)\mathrm{OPT}_{\mathrm{LP}}$.
+
+**Randomness.** Deterministic rational ellipsoid optimization, exact-budget profit-scaling dynamic programming and finite primal LP extraction.
+
+**Quantitative result.**
+
+Full LP:
+
+$$
+2^{O(q)}\mathrm{poly}(H,\epsilon^{-1})
+$$
+
+Support-s cuts:
+
+$$
+(q+1)^{O(s+1)}\mathrm{poly}(H,\epsilon^{-1})
+$$
+
+**Model and scope.** Coordinate-box local families and binary capacities; $s=2(r-1)$ gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding.
 
 ## Shared manuscripts
 

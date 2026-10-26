@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the complete results catalogue and canonical manuscript index.
+"""Build the compact homepage and complete canonical manuscript index.
 
 catalogue.json owns concise summaries; problem manuscripts own mathematics.
 --check verifies exact coverage and current generated indexes, not proofs.
@@ -36,6 +36,11 @@ def read_catalogue() -> dict:
     actual = {p.parent.name for p in (ROOT / "problems").glob("*/README.md")}
     if set(ids) != actual:
         raise ValueError(f"omitted={sorted(actual-set(ids))}; missing={sorted(set(ids)-actual)}")
+    featured = data.get("featured", [])
+    if len(featured) > 4 or len(featured) != len(set(featured)):
+        raise ValueError("feature at most four distinct result families")
+    if set(featured) - set(ids):
+        raise ValueError("featured result missing from the problem catalogue")
     for g in groups:
         for r in g["records"]:
             if set(r) != {"id", "title", "result", "quantity", "scope", "randomness"}:
@@ -135,55 +140,50 @@ def render_readme(data: dict) -> str:
     count = sum(len(g["records"]) for g in groups)
     out = [
         "# Algorithm Frontier", "",
-        "Research manuscripts on deterministic algorithms, combinatorial optimization, "
-        "dynamic graphs, and sparsification. The catalogue below lists every result "
-        "family; each entry opens a precise statement, complete proofs, and its "
-        "computational assumptions.", "",
+        "Algorithms and proofs in combinatorial optimization, dynamic graphs, "
+        "and sparsification. Each problem page gives the theorem, complexity, "
+        "randomness, dependencies, and verification evidence.", "",
         "[![Repository checks](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml/badge.svg)]"
         "(https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml) "
         "[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)", "",
-        f"**{count} result families · {len(supporting)} supporting results** · [Complete proof index](CONTENTS.md) · "
-        "[Complexity conventions](docs/COMPLEXITY.md) · [Verification evidence](reviews/README.md) · "
+        f"**{count} problem families · {len(supporting)} supporting results** · [Proof index](CONTENTS.md) · "
+        "[Review and verification](reviews/README.md) · "
         "[Citation](CITATION.cff)", "",
+        "## Selected results", "",
+        "Three entry points into the manuscripts. Full parameter ranges and "
+        "the current review status are on the linked problem pages.", "",
+    ]
+    by_id = {r["id"]: r for g in groups for r in g["records"]}
+    for problem_id in data.get("featured", []):
+        record = by_id[problem_id]
+        out += render_record(record, f"problems/{problem_id}/", level=3)
+    out += [
         "## Results", "",
-        *[f"- [{g['title']}](#{anchor(g['title'])})" for g in groups],
-        "- [Supporting results](#supporting-results)", "",
-        "A displayed conditional composition includes its named backend hypotheses. "
-        "Oracle bounds, explicit-input algorithms, support sizes, query costs, and "
-        "existence theorems keep their distinct meanings. Exact rational constants "
-        "and complete parameter ranges are stated on the linked cards.", "",
-        "Every entry states its [randomness contract](docs/RANDOMNESS.md): "
-        "deterministic, Monte Carlo, Las Vegas, or a separately identified "
-        "existence theorem, structural result or lower bound. A supplied "
-        "randomized backend must retain its own confidence and adversary assumptions.", "",
+        "Browse by problem. Each link opens its statement and proof; "
+        "conditional algorithms retain their named backend assumptions. "
+        "[Computational models](docs/COMPLEXITY.md) and "
+        "[randomness contracts](docs/RANDOMNESS.md) explain how to compare bounds.", "",
     ]
     for g in groups:
-        out += [f"### {g['title']}", "", g["note"], ""]
+        out += [f"### {g['title']}", ""]
         for r in g["records"]:
-            out += render_record(r, f"problems/{r['id']}/")
+            out.append(f"- [{r['title']}](problems/{r['id']}/)")
+        out.append("")
     if supporting:
-        out += ["## Supporting results", "",
-                "These additional algorithms, structural lemmas and scoped boundaries "
-                "have their own complete manuscripts. Further refinements are listed "
-                "with their parent result in the [proof index](CONTENTS.md).", ""]
-        for record in supporting:
-            out += render_record(record, record["path"], level=3)
+        out += ["### Supporting results", "",
+                f"The [complete index](CONTENTS.md#supporting-results) also lists {len(supporting)} "
+                "supporting algorithms, structural theorems, and scoped lower bounds. "
+                "[Shared manuscripts](CONTENTS.md#shared-manuscripts) collect reusable proofs "
+                "and backend interfaces.", ""]
     out += [
         "## Reading and verification", "",
-        "Start with a result card, then read its `proof.md`. Longer derivations are "
-        "linked as companion manuscripts. Shared graph interfaces, allocation "
-        "lemmas, and explicit obstruction constructions are indexed in "
-        "[Contents](CONTENTS.md#shared-manuscripts). The source map names the "
-        "dependencies used by that result.", "",
-        "Each `verify/README.md` explains the available evidence and its limits. "
-        "Exact finite certificates check specified identities, finite examples, "
-        "or certified domains; they do not by themselves establish every "
-        "asymptotic theorem. The repository does not claim proof-assistant "
-        "verification or external peer review.", "",
-        "The [maintenance guide](CONTRIBUTING.md) gives the single local check "
-        "command and the rules for updating statements, proof dependencies, "
-        "and this generated catalogue.", "",
-        "## Citation and attribution", "",
+        "Within each problem: `README.md` → `proof.md` → `sources.md` → "
+        "`verify/README.md`. The [review registry](reviews/README.md) distinguishes "
+        "manuscript review from executable checks and identifies their exact scope.", "",
+        "```sh", "python3 tools/check_repository.py", "```", "",
+        "See [Contributing](CONTRIBUTING.md) for the full verification mode and "
+        "maintenance conventions. No external peer review or proof-assistant "
+        "verification is claimed.", "",
         "Yilin Liu and GPT-6 Astra Pro. *Algorithm Frontier* (2026). "
         "Cite the relevant problem path and commit; the [citation protocol](PROTOCOL.md) "
         "and [import provenance](provenance/README.md) retain the applicable "
@@ -192,10 +192,11 @@ def render_readme(data: dict) -> str:
     return "\n".join(out)
 
 
-def render_contents(groups: list[dict]) -> str:
+def render_contents(data: dict) -> str:
+    groups = data["groups"]
     out = ["# Complete proof index", "",
            "Every current problem manuscript and shared dependency is listed below. "
-           "The [README](README.md) compares the results; this index provides the "
+           "The [README](README.md) gives selected results and a compact problem index; this page provides the "
            "complete reading path without duplicate checkpoint copies.", ""]
     for group in groups:
         out += [f"## {group['title']}", ""]
@@ -214,6 +215,12 @@ def render_contents(groups: list[dict]) -> str:
                 out.append(f"- [{title(path)}]({path.relative_to(ROOT).as_posix()})")
             if companions:
                 out.append("")
+    out += ["## Supporting results", "",
+            "These entries extend the problem families with additional algorithms, "
+            "structural results, and scoped boundaries. Their linked manuscripts "
+            "state the full models and assumptions.", ""]
+    for record in data.get("supporting_results", []):
+        out += render_record(record, record["path"], level=3)
     out += ["## Shared manuscripts", "",
             "These proofs and scoped interface analyses are used across problem records. "
             "An obstruction concerns the precise mechanism stated in its manuscript, "
@@ -247,7 +254,7 @@ def main() -> int:
         return 1
     stale = []
     groups = data["groups"]
-    for name, content in {"README.md": render_readme(data), "CONTENTS.md": render_contents(groups)}.items():
+    for name, content in {"README.md": render_readme(data), "CONTENTS.md": render_contents(data)}.items():
         path = ROOT / name
         if args.check:
             if not path.is_file() or path.read_text(encoding="utf-8") != content:
