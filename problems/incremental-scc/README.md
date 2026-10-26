@@ -10,7 +10,7 @@ Maintain one explicit component label per original vertex. The record does not i
 
 **Randomness**
 
-Deterministic conditional composition using the deterministic raw-cycle backend and exact nonzero-base, flow-maintenance and retirement interfaces; no randomized error allowance is stated.
+Deterministic label-history construction and conditional SCC maintenance. The latter requires deterministic cycle search, exact flow maintenance and edge retirement under adaptive updates.
 
 **Time**
 
@@ -34,10 +34,23 @@ No lower bound is claimed.
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The small-to-large persistent label history, historical equality queries, and first-coalescence queries in O(1+log log(n+2)) time via a binary search on the shared suffix.
+
+**Conditions and remaining work.** The history layer assumes correct monotone component merges and permanently retired label identities. The faster SCC update algorithm still requires the cycle-search, exact flow and edge-retirement operations listed in sources.md.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
 [Complete theorem and proof](proof.md), [dependencies and primary sources](sources.md).
+
+## Historical component queries
+
+The same small-to-large labels store $`O(n\log(n+2))`$ historical records.
+They answer SCC equality at a past settled update in
+$`O(1+\log\log(n+2))`$ time and first coalescence in
+$`O(1+\log\log(n+2))`$ time. The latter binary-searches their common
+label suffix, as proved in Corollary 9.1. These representation
+bounds are unconditional once the exact merge sequence is supplied.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

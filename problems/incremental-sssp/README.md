@@ -12,7 +12,7 @@ For every reachable vertex, the estimate is between the true distance and one pl
 
 **Randomness**
 
-Deterministic conditional composition; its raw-cycle and retirement backend is explicitly required to be deterministic and to support adaptive updates.
+Deterministic path-reporting and integer zero-length reductions. The faster distance maintenance requires the deterministic cycle-search and edge-retirement guarantees listed in the source map.
 
 **Time**
 
@@ -28,7 +28,7 @@ Actual root vertices, inserted edges, and auxiliary copies over their lifetimes,
 
 **Model and representation**
 
-Positive integer root lengths in a polynomial range, parallel edges allowed, and the frozen-detector raw interface with exact retirement and callback accounting.
+Nonnegative integer root lengths in a polynomial range and parallel edges are allowed. The positive-length theorem extends to zero lengths by the fixed perturbation and exact flooring in Section 10.1. Arbitrary real or negative lengths are outside this statement. The frozen-detector raw interface must support exact retirement and callback accounting.
 
 **Lower-bound scope**
 
@@ -36,7 +36,11 @@ This is an upper bound under the explicitly stated backend interfaces. It is not
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The clipped-tree intersection and loop-removal reporting construction, including zero-length edges; the nonnegative-integer perturbation reduction and its accuracy/bit accounting.
+
+**Conditions and remaining work.** The fast distance-maintenance theorem still requires the explicitly stated detector, cycle-search and edge-retirement data structures. The finite path tests do not validate their update time.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

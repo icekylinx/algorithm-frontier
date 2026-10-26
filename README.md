@@ -12,19 +12,21 @@ Three entry points into the manuscripts. Full parameter ranges and the current r
 
 ### [Deterministic general-graph maximum matching](problems/general-matching/)
 
-Exact matching with original edge identifiers.
+Executable exact solver, independent certificates and a faster conditional research theorem.
 
-**Randomness.** Deterministic conditional composition, requiring deterministic external primitives and a deterministic implementation of Contract R.
+**Randomness.** Deterministic executable solver and certificate verification. The faster research composition additionally requires the deterministic cycle-search implementation and named published primitives in the source map.
 
 **Quantitative result.**
+
+Executable $`O(n+m\log(m+2)+\sum_i k_i^3)`$ including certificates.
+
+Conditional research bound:
 
 ```math
 O(n+m)+(m_s+1)\exp(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5}))
 ```
 
-Optional $`m_H=O(\nu(G)^2)`$ kernel.
-
-**Model and scope.** Conditional on raw-backend Contract R and the named deterministic primitives; m_s counts distinct nonloop edges. The preprocessing kernel and its componentwise refinement are unconditional.
+**Model and scope.** The reference solver uses only the Python standard library; k_i counts retained kernel vertices in component i. The faster research bound still requires an unimplemented deterministic cycle-search and edge-retirement data structure. Its precise operations and published prerequisites are listed with the proof.
 
 ### [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/)
 

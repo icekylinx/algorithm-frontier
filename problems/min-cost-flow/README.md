@@ -10,7 +10,7 @@ Decide whether the integral demand can be routed under capacities and a cost thr
 
 **Randomness**
 
-Deterministic exact numerical client conditional on the stated deterministic raw-cycle/lifetime backend, including its guarantees for adaptive polynomial-length histories.
+Deterministic exact numerical reductions. The fast dynamic bound requires the stated deterministic cycle-search, flow-maintenance and edge-retirement data structures for adaptive polynomial-length histories.
 
 **Time**
 
@@ -22,7 +22,7 @@ Polynomial binary storage for actual edge records and numerical state; stored va
 
 **Parameters**
 
-$`N`$ bounds edge records over their lifetime; $`n`$ and $`m`$ count vertices and current edges; $`S`$ is the declared power-of-two numerical cap; capacities, costs, demands, and threshold are binary encoded.
+$`N`$ bounds edge records over their lifetime, including the artificial initialization arcs; lazy initialization keeps their number linear in original edge births. $`n`$ and $`m`$ count vertices and current edges; $`S`$ is the declared power-of-two numerical cap, including the fixed full-stream artificial penalty. Capacities, costs, demands, and threshold are binary encoded.
 
 **Model and representation**
 
@@ -34,7 +34,11 @@ No lower bound is claimed. The upper bound is conditional on the raw-cycle and l
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The exact affine integral-recovery proof and reference checks; artificial-edge penalties, fixed-threshold accounting, and initialization that safely defers currently infeasible prefixes.
+
+**Conditions and remaining work.** The faster numerical client still needs deterministic cycle search, dynamic flow maintenance and edge retirement with the stated lifetime and bit bounds. A NO answer at an early insertion prefix is not permanent infeasibility.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

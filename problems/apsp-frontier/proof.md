@@ -33,6 +33,12 @@ The hierarchy uses actual local inventories, returns upper distance estimates, a
 
 Here `W` is initialization plus total update work, `gamma` is stretch, and `P` includes child inventories and encoded child edits. A query follows one pair of pivot handles per level, ending in an exact table lookup, and costs `O(d poly(U))`. The shrink condition is `x>=C log P` for a sufficiently large fixed constant. The construction and the chronological accounting for initial credit are supplied by the [separated metric hierarchy](../../manuscripts/graph-backends/separated-metric-forest-and-strong-sssp.md). Equations (1)–(2), including the query interface, are the hypotheses of this composition theorem; they are not inferred from a distance-stretch guarantee alone.
 
+The deterministic contract is required on histories chosen adaptively
+from earlier answers. A numerical query reads the settled hierarchy;
+its stated cost is charged separately from update work. Neither a
+randomized oblivious-history oracle nor an interface that silently
+rebuilds on a query supplies these premises.
+
 ## 2. General time–stretch theorem
 
 **Theorem 2.1.** Under the preceding hierarchy contract, let `t=t(U)` satisfy `t->infinity` and `t^2h=o(U)`. There is a deterministic fully dynamic distance oracle with
@@ -117,3 +123,36 @@ The constant two is absorbed in the stretch factors above. This numerical distan
 The oracle stores hierarchy records and exact base tables. It does not explicitly update an all-pairs matrix. All work in (3) includes late child edits paid from initialization credit and all actual base tables. Extracting a represented walk is charged to that walk; this theorem makes no simple-path reporting claim measured solely by a shorter loop-erased output. The separate incremental SSSP theorem supplies its own path-reporting proof.
 
 The theorem is conditional on the named hierarchy primitives. Internal mathematical review and finite parameter calculations do not constitute a proof-assistant formalization.
+
+## 6. Nonnegative integer lengths at the displayed frontier points
+
+**Corollary 6.1.** Every explicit row of the table in Section 3 extends
+to nonnegative integer lengths in $`[0,N^c]`$, with the same asymptotic
+work and query bounds, at most a constant additional stretch factor,
+and exact zero-distance answers.
+
+**Proof.** Let $`R_0`$ be the least power of two at least $`N`$ and run
+the positive-length algorithm on $`L_e=R_0^3\ell_e+1`$.
+These integers lie in the predeclared enlarged polynomial range
+$`[1,8N^{c+3}+1]`$. Let $`G(N)`$ be an explicit uniform upper bound
+on the complete oracle's stretch for that range, including the root
+degree adapter and all settled states. For each displayed row,
+$`G(N)=N^{o(1)}`$, so $`G(N)\leq N`$ eventually. If that explicit
+bound exceeds $`N`$, use the exact algorithm; this affects only
+finitely many master sizes.
+
+Otherwise return the floor of the estimate divided by $`R_0^3`$.
+A true zero distance has a simple zero-cost path of fewer than $`n`$
+edges, so the unfloored estimate is at most
+$`G(N)n/R_0^3\leq1/N<1`$. Its floor is zero. A positive finite
+integer distance $`d`$ lies below the floored estimate, which is at
+most $`G(N)(d+n/R_0^3)\leq2G(N)d`$. Infinity is unchanged.
+The fixed perturbation adds only $`O(\log N)`$ length bits and no
+update records. This is the numerical reduction in
+[Zero-length edge adapters, Section 2](../../manuscripts/graph-backends/nonnegative-integer-distance-adapters.md). ∎
+
+For the general parameter family, the same corollary follows under
+the additional condition $`t^4h=o(U)`$. The theorem's weaker
+$`t^2h=o(U)`$ hypothesis alone does not imply subpolynomial stretch
+or justify this fixed polynomial perturbation. The corollary supplies
+numerical answers only, with no new simple-path reporting guarantee.

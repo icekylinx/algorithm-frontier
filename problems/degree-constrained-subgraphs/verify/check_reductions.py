@@ -148,7 +148,8 @@ def original_subsets(n, edges):
 
 
 def main():
-    assert __debug__, "run without -O"
+    if not __debug__:
+        raise SystemExit("This checker requires assertions; run Python without -O.")
     selector_cases = interval_cases = cardinality_cases = 0
     for s in (1, 2, 4):
         network = permutation_network(s)

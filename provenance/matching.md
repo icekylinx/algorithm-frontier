@@ -45,9 +45,22 @@ Source archive SHA-256:
 
 ## Logical scope
 
-The external results are accepted at the interfaces listed in manuscript Section 2.
+The [source map](../problems/general-matching/sources.md) identifies each
+published theorem and the operation for which it is used.
 
-The manuscript's main statement is a conditional composition theorem. In addition to those external inputs, it assumes Contract R in Section 11.6: the complete implementation of raw geometric comparison, chronological recourse, occurrence forests and retirement, finite-bit tree realization, and uniform executable bounds. Contract R is an internal construction dependency retained from the supplied research snapshot. Accepting external papers alone does not automatically discharge it.
+The faster research statement remains a conditional composition theorem.
+Section 11.6 requires a deterministic data structure that actually performs
+cycle comparisons, repairs changing routes, tracks and retires edge copies,
+and realizes its forests with the stated bit and update bounds. This
+implementation has not been supplied. The named published results do not
+by themselves provide those additional operations. The requirement is
+stated explicitly in the theorem and is separate from its proved local
+reductions.
+
+The [executable reference solver](../problems/general-matching/reference/README.md)
+has its own ordinary polynomial bound and uses only Python's standard
+library. Its independently checked optimality certificates do not assume
+the faster research data structure.
 
 The carrier normalization, balanced selected-tree argument, factor-critical Hall argument, kernel and decoder, preserved-debt algebra, arbitrary-gap implication, exact rounding, entropy increment, weighted-selection potential, feedback potential, coupled recurrence, and final parameter balance are explicitly developed in the main file. The larger hierarchy and raw-backend implementation arguments are presented as compressed module assemblies, with the latter's remaining realization premise visible in the theorem statement.
 

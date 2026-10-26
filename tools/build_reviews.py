@@ -45,7 +45,7 @@ def render_registry(data: dict, catalogue: dict) -> str:
         'The default suite checks repository structure and every registered '
         'executable used by the canonical runner. For Subset Sum it validates '
         'the saved full-contact receipt\'s source/menu binding and freshly replays '
-        'the rho=1.7 and direct branches. To replay all 44 contact branches:', '',
+        'the rho=1.7 and direct branches. To replay the complete contact menu:', '',
         '```sh', 'python3 tools/check_repository.py --full-contacts --jobs 4', '```', '',
         'Receipt binding establishes provenance and coverage metadata; only '
         'recomputation re-establishes the inequalities. The full mode is also '
@@ -85,7 +85,7 @@ def render_registry(data: dict, catalogue: dict) -> str:
     out += ['', '## Maintaining a status', '',
             'Set a readiness scope only after checking the corresponding proof, '
             'algorithm, representation, randomness and source requirements. Name '
-            'unresolved backend contracts beside the scope. Update `registry.json`, '
+            'required data structures or unproved implementation steps beside the scope. Update `registry.json`, '
             'then run `python3 tools/build_reviews.py`; this synchronizes these '
             'entries with the reviewed problem cards. A changed theorem or '
             'dependency requires a new scope assessment.', '',

@@ -22,9 +22,15 @@ no publication-priority claim is made for them.
 
 **Conditional quantitative input.** Only the fast running-time corollary
 uses [the general-matching theorem](../general-matching/proof.md),
-including its Section 2 external primitives and Section 11.6 Contract R.
+including its Section 2 published primitives and Section 11.6 requirements
+for a deterministic cycle-search implementation.
 Replacing that solver by any correct exact matching algorithm preserves
 the reductions' correctness and changes their running time accordingly.
+The repository now supplies one such
+[unconditional reference solver](../general-matching/reference/README.md)
+with original edge IDs and an independently verified optimality certificate.
+The full sparse degree-constrained gadget construction is still a
+mathematical reduction, separately exercised by its finite checker.
 An arbitrary unsuccessful attempt to find a perfect matching cannot
 serve as a NO certificate; the supplied matching must be maximum.
 
@@ -32,7 +38,7 @@ serve as a NO certificate; the supplied matching must be maximum.
 [*Maximum Cardinality f-Matching in Time O(n^(2/3)m)*](https://arxiv.org/abs/2311.14236v1)
 states the separate deterministic simple-graph and multigraph bounds
 quoted in Section 7. It supplies a benchmark, not an assumption needed
-to prove the gadgets or a fast implementation of Contract R.
+to prove the gadgets or to implement the faster cycle-search machinery.
 
 ## Linked mathematical dependencies
 

@@ -1,5 +1,32 @@
 # History
 
+## 2026-10-26 — Executable matching, explicit graph dependencies and rendering
+
+- Added a deterministic general-graph matching reference implementation with
+  original edge identifiers, componentwise kernels and independent
+  optimality verification. Its simultaneous failed-search forest constructs
+  a tight odd-component certificate in quadratic additional work, so the
+  complete solver with certificates retains its cubic bound.
+- Replaced opaque cycle-search labels with the required operations, named
+  primary theorems and the exact remaining implementation gap. Proved the
+  detector's difference-constraints potential lemma locally.
+- Improved persistent component first-coalescence queries to
+  O(1+log log(n+2)) using the common suffix of permanently retired labels.
+  Added exact checks for those histories, clipped-tree path reporting,
+  affine flow recovery and safe deferred prefix initialization.
+- Added nonnegative-integer distance, flat-forest and spanner adapters,
+  with exact zero handling and explicit transformed numerical ranges.
+  Separated the native forest's vertex cost from Gomory–Hu preprocessing.
+- Checked the public weighted MSF composition against the precise
+  decomposition, pruning and recursive reduction theorems. Added elementary
+  exchange proofs and a literal connectivity adapter for isolated vertices.
+- Protected every maintained mathematical expression from Markdown escaping.
+  The formatting snapshot passed 32 repository checks and all 27,820
+  expressions compiled under MathJax 3.2.2. Thirteen regressions cover
+  escaping, adjacent expressions, list indentation, code fences and table
+  pipes. GitHub's actual matching and Subset Sum proof pages subsequently
+  rendered without the previously observed delimiter errors.
+
 ## 2026-10-26 — Constructive failure summaries and smaller sparse restrictions
 
 - Replaced separating-family dependencies in the arbitrary-matroid and
@@ -8,7 +35,7 @@
   gives the sharp rank size with linear input dependence for fixed parameters.
 - Proved the sharp weighted one-label-failure endpoint for arbitrary oracles.
   Added a self-contained FPT construction of the unique minimum fixed-order
-  prefix summary at the existing W–LF size factor, with explicit oracle counts.
+  prefix summary at the existing Bernoulli failure size factor, with explicit oracle counts.
 - Supplied a 13-item rank-four nonrepresentable obstruction, independently
   enumerated its optimum bases, and amplified it to every failure budget at
   least two. The sharp represented weighted bound cannot hold for arbitrary
@@ -105,7 +132,7 @@
 - Consolidated the checkpoint trees into semantic manuscript paths, integrated superseded source copies, removed redundant review pointers and broken verification wrappers, and retained imported licenses and canonical provenance mappings.
 - Preserved results that were absent from the old display, including the two-short-range Subset Sum branch, slot-surplus scheduling, optional-player intrinsic allocation, safe machine contraction, eligibility/collision refinements, exact-two parameter boundaries, and expander packing.
 - Corrected allocation and scheduling scope and accounting: activated-basis enumeration, bucket bases, fixed-integer two-time parameters, exact fractional comparators, full original resource totals, and the separation between compulsory and optional players.
-- Clarified graph backend assumptions, positive-length SSSP scope, the five-point APSP tradeoff, separate spanner recourse regimes, and the derived public MSF baseline. General matching retains its explicit Contract R condition.
+- Clarified graph backend assumptions, positive-length SSSP scope, the five-point APSP tradeoff, separate spanner recourse regimes, and the derived public MSF baseline. General matching retains its explicit the deterministic cycle-search implementation requirement condition.
 - Formalized the laminar quadratic bound and the numeric-target budget classification; retained distinctions between oracle-query and explicit-input lower bounds, kernel size and construction time, and weighted versus rank-only interfaces.
 - Reconstructed a self-contained exact continuous-domain Subset Sum checker. Its full refined menu passed all 44 branches with 188,227 accepted leaves. A separate exact scalar checker verifies 104 one-sided profile comparisons and the outer exponent ledger.
 - Added scoped profile, sensitivity and quotient-rounding checks, retained the substantive low-space and energy certificates, and accelerated the exhaustive two-scenario reduction check without changing its finite coverage.

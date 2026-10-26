@@ -90,6 +90,10 @@ a longer walk first. This is an output bound up to polynomial
 logarithmic factors, rather than the literal linear path-query bound
 in the published source theorem.
 
+Section 10.1 extends the same bound to **nonnegative integer** root
+lengths. It uses a fixed positive perturbation and exact flooring;
+the assertion does not extend to arbitrary real or negative lengths.
+
 ## 2. The single-lifetime detector interface
 
 Here is precisely the interface imported from the companion note.
@@ -576,6 +580,10 @@ an unreachable query returns the exact unreachable indication.
 
 ### 10.1 Nonnegative integer lengths
 
+**Corollary 10.1.** Under the same deterministic raw interface and
+accuracy range, the maintained integer estimates and output-sensitive
+simple-path guarantee extend to root lengths in $`[0,N^{c_0}]`$.
+
 The distance and simple-path bounds also extend to root weights in
 $`[0,N^{c_0}]`$, with no dynamic SCC or zero-length degree gadget.
 Choose a fixed dyadic number
@@ -588,6 +596,12 @@ lengths by $`\delta^{-1}`$. The resulting root lengths are positive
 integers, and their range is still polynomial in $`N`$ in the
 accuracy regime stated in Section 1. Run the main algorithm on these
 lengths with internal accuracy $`\varepsilon/8`$.
+The unspecified sufficiently small constant $`c_*`$ is chosen with
+slack for this fixed accuracy factor: the internal bound on
+$`\log(1/\varepsilon)`$ increases by only an additive constant.
+Finitely many smaller master sizes use the direct exact solver.
+The choice of $`\delta`$ and the final flooring are exact dyadic
+operations; the perturbation is fixed for the whole insertion stream.
 
 An originally finite positive distance is an integer at least one.
 It has a simple shortest path with fewer than $`n`$ edges, so its
@@ -652,6 +666,15 @@ sound restriction of future flow directions. The companion detector
 note proves the residual-demand, comparison-flow, and LOW-certificate
 statements needed for that assertion. An independent audit must still
 accept those proofs and the exact raw interface.
+
+The tree-intersection index, segment-level loop removal, and integer
+perturbation are separate local arguments and are ready for review.
+The [independent checker](verify/check_path_reporting.py) compares the
+index with explicit path intersections on every labeled tree rooted at vertex zero on
+subsets of four vertices, tests short walk segmentations, and includes a
+long discarded path whose output enumeration visits only its two
+surviving edges. These finite checks neither execute nor certify the
+frozen detector or its raw backend.
 
 The outer proof here explicitly pays births, changing degree demands,
 edges inserted after promotion, all reset constructions, all scale

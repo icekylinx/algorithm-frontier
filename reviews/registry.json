@@ -110,15 +110,23 @@
       "checks": [
         {
           "path": "problems/general-matching/verify/check_reductions.py",
-          "scope": "Exhaustive small-graph kernel, subcubic matching-decoder, and native mixed edge/vertex-failure cases; does not implement or validate Contract R."
+          "scope": "Exhaustive small-graph kernel, subcubic matching-decoder and native mixed edge/vertex-failure cases; these are independent of the unimplemented fast cycle-search data structure."
+        },
+        {
+          "path": "problems/general-matching/verify/check_reference.py",
+          "scope": "All 33,868 simple graphs through six vertices against an independent subset oracle, in kernel and full modes; native loops/parallel records, larger special and seeded instances, malformed certificates and CLI behavior. Each certified result is checked by the separate verifier."
+        },
+        {
+          "path": "problems/general-matching/verify/check_certificate_search.py",
+          "scope": "All 33,868 simple graphs through six vertices plus 500 seeded larger graphs. The actual production simultaneous failed-search routine is compared with an independent deletion-defined exposable set, factor-critical block invariants and tight barriers; two nonmaximum inputs are rejected."
         }
       ],
       "review": {
         "status": "partial",
-        "scope": "The unconditional input reductions in Section 3: the sharp c-neighbor kernel, componentwise composition, the native mixed-failure kernel in the companion, and the subcubic reduction with its decoder.",
+        "scope": "The executable cubic solver with optimality certificates and its independent verifier; the self-contained quadratic certificate-extraction proof; the unconditional sharp c-neighbor and mixed-failure kernels, componentwise composition, and subcubic reduction with its decoder.",
         "date": "2026-10-26",
         "conditions": [
-          "The four-fifths running-time theorem remains conditional on Contract R and the deterministic primitives listed in sources.md. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope."
+          "The four-fifths research running time still requires the cycle-search implementation and named published prerequisites in sources.md. The executable solver has its separately proved cubic bound. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope."
         ]
       }
     },
@@ -138,7 +146,7 @@
         "scope": "Theorem 1.1: unconditional sparse deterministic reductions for prescribed degrees, degree intervals, and exact or ranged cardinality, with both extension and decoding directions. Cardinality feasibility uses one exact matching call.",
         "date": "2026-10-26",
         "conditions": [
-          "The displayed fast running time requires the conditional general-matching backend, including Contract R. Any correct exact maximum-matching solver suffices for the unconditional reduction theorem."
+          "The displayed fast running time requires the faster conditional general-matching implementation. Any correct exact maximum-matching solver, including the standard-library reference solver, suffices for the unconditional reduction theorem."
         ]
       }
     },
@@ -147,49 +155,120 @@
       "path": "problems/min-cost-flow",
       "evidence_note": "problems/min-cost-flow/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/min-cost-flow/verify/check_recovery.py",
+          "scope": "2,437 exact rational affine rounding/recovery cases and 12,243 threshold-prefix cases, including 5,058 deferred initializations and 1,090 NO-to-YES transitions. This is finite evidence for recovery and initialization, not the fast dynamic cycle-search implementation."
+        }
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The exact affine integral-recovery proof and reference checks; artificial-edge penalties, fixed-threshold accounting, and initialization that safely defers currently infeasible prefixes.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The faster numerical client still needs deterministic cycle search, dynamic flow maintenance and edge retirement with the stated lifetime and bit bounds. A NO answer at an early insertion prefix is not permanent infeasibility."
+        ]
+      }
     },
     {
       "id": "incremental-scc",
       "path": "problems/incremental-scc",
       "evidence_note": "problems/incremental-scc/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/incremental-scc/verify/check_label_history.py",
+          "scope": "2,419 small-to-large merge/batching histories on at most five vertices, 193,340 historical-equality queries and 59,214 first-coalescence queries. Checks the common-suffix label invariant and logarithmic search in each vertex history; does not compute SCC updates."
+        }
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The small-to-large persistent label history, historical equality queries, and first-coalescence queries in O(1+log log(n+2)) time via a binary search on the shared suffix.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The history layer assumes correct monotone component merges and permanently retired label identities. The faster SCC update algorithm still requires the cycle-search, exact flow and edge-retirement operations listed in sources.md."
+        ]
+      }
     },
     {
       "id": "incremental-sssp",
       "path": "problems/incremental-sssp",
       "evidence_note": "problems/incremental-sssp/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/incremental-sssp/verify/check_path_reporting.py",
+          "scope": "29 labeled tree versions rooted at vertex zero on subsets of four vertices; 41,209 clipped-path intersection queries, 1,107 nonnegative-walk segmentation cases, and output-sensitive reporting on a 10,002-edge walk. Finite path mechanisms, not the complete dynamic SSSP algorithm."
+        }
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The clipped-tree intersection and loop-removal reporting construction, including zero-length edges; the nonnegative-integer perturbation reduction and its accuracy/bit accounting.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The fast distance-maintenance theorem still requires the explicitly stated detector, cycle-search and edge-retirement data structures. The finite path tests do not validate their update time."
+        ]
+      }
     },
     {
       "id": "apsp-frontier",
       "path": "problems/apsp-frontier",
       "evidence_note": "problems/apsp-frontier/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [],
+      "review": {
+        "status": "partial",
+        "scope": "The five explicit parameter substitutions and the nonnegative-integer distance adapter, including exact zero answers, transformed length range, and the required uniform stretch bound.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The positive-distance hierarchy remains an explicit prerequisite. For the general parameter family, the zero-length extension additionally needs t^4 h=o(U); t^2 h=o(U) alone is insufficient. Only numerical distance output is claimed."
+        ]
+      }
     },
     {
       "id": "dynamic-spanners",
       "path": "problems/dynamic-spanners",
       "evidence_note": "problems/dynamic-spanners/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [],
+      "review": {
+        "status": "partial",
+        "scope": "The separate zero-edge class, dyadic positive-weight wrapper, and their initialization, update and recourse accounting for both displayed regimes.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The underlying unweighted hierarchy and forest algorithms remain explicit prerequisites. Output guarantees apply after each complete external update and retain the provider’s adaptive-history requirements."
+        ]
+      }
     },
     {
       "id": "dynamic-msf",
       "path": "problems/dynamic-msf",
       "evidence_note": "problems/dynamic-msf/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [],
+      "review": {
+        "status": "partial",
+        "scope": "The formal weighted MSF certificate and pruning substitution: local exchange/contraction proofs, literal connectivity adapter, finite pruning horizons, deterministic decomposition parameters and the NSW recursive cost calculation.",
+        "date": "2026-10-26",
+        "conditions": [
+          "This is a derived public baseline using Chuzhoy–Gao–Li–Nanongkai–Peng–Saranurak Corollary 6.1, Meierhans–Probst Gutenberg–Saranurak Theorem 6.4, and Nanongkai–Saranurak–Wulff-Nilsen Theorem 7.1 and Section 9. It is not an executable implementation or a consequence of the research matching router."
+        ]
+      }
     },
     {
       "id": "decremental-strong-forest",
       "path": "problems/decremental-strong-forest",
       "evidence_note": "problems/decremental-strong-forest/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [],
+      "review": {
+        "status": "partial",
+        "scope": "The nonnegative-integer flat-forest adapter and zero-capacity Gomory–Hu preprocessing, with native-forest and cut-tree input costs stated separately.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The faster forest and exact-flow constructions retain the data-structure assumptions in sources.md. The local reductions do not supply those implementations or an additional simple-path reporting interface."
+        ]
+      }
     },
     {
       "id": "exact-failure-preservers",

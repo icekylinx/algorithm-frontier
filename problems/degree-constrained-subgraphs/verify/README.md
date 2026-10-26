@@ -28,7 +28,7 @@ checks of the specified gadgets, not a substitute for the general proof.
 The proof gives the sparse-selector and interval-degree reductions,
 including parity, original-edge recovery and cardinality optimization. Its
 fast running-time corollary inherits the matching backend and its explicitly
-stated Contract R condition. The reduction does not independently establish
+stated cycle-search implementation requirements. The reduction does not independently establish
 that backend.
 
 Cap normalization, loop/parallel-edge conventions and actual output length

@@ -1,6 +1,9 @@
 # Exact general-graph matching
 
-This is a conditional composition theorem for exact maximum-cardinality matching in arbitrary undirected graphs.
+An executable deterministic solver returns exact maximum-cardinality
+matchings in arbitrary undirected graphs using only Python's standard
+library. A separate research theorem gives a faster bound conditional on
+the explicitly required cycle-search implementation.
 
 **Guarantee**
 
@@ -12,11 +15,23 @@ Maximize the number of matched edges and return the selected edge identifiers af
 
 **Randomness**
 
-Deterministic conditional composition, requiring deterministic external primitives and a deterministic implementation of Contract R.
+Deterministic executable solver and certificate verification. The faster research composition additionally requires the deterministic cycle-search implementation and named published primitives in the source map.
 
 **Time**
 
-Under Contract R,
+The [implemented reference solver](reference/README.md) takes
+
+```math
+O\!\left(n+m\log(m+2)+\sum_i k_i^3\right),
+```
+
+where $`k_i`$ is the retained kernel vertex count in component $`i`$.
+Optional optimality-certificate generation has the same cubic bound,
+with $`O(\sum_i k_i^2)`$ additional extraction work; independent verification takes
+$`O(n+m\log(m+2))`$.
+
+The faster research bound requires the
+[cycle-search implementation specified in Section 11.6](proof.md#116-explicit-raw-backend-realization-contract):
 
 ```math
 O(n+m)+(m_s+1)\exp\!\left(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5})\right).
@@ -24,31 +39,43 @@ O(n+m)+(m_s+1)\exp\!\left(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5})\right).
 
 **Space**
 
-Polynomial in the actual graph and backend inventory; normalization does not require losing physical edge identifiers.
+$`O(n+m)`$ records for the reference solver and its optional certificate,
+plus actual ID-label bytes. The research composition uses polynomial space
+in its graph and cycle-search inventory.
 
 **Parameters**
 
-**n** is the vertex count; **m** is the input edge-record count; **m_s** is the retained edge count after normalization; loops and parallel lifetimes are handled by the source contract.
+**n** is the vertex count; **m** is the input edge-record count; **m_s** is
+the number of distinct nonloop edges. **k_i** counts nonisolated vertices
+of the actual retained kernel in normalized component **i**.
 
 **Model and representation**
 
-Arbitrary undirected graphs, exact output, and the named raw-backend Contract R plus external primitives. The conditional backend assumptions are part of the claim.
+Arbitrary undirected graphs, including loops, parallel records and isolated
+vertices; original selected edge IDs are returned. The reference code is
+standalone. Its documented word-operation bounds additionally charge long
+ID comparisons and serialization. The faster theorem requires the named
+published primitives and the still-unimplemented cycle-search, repair and
+edge-lifetime operations in Section 11.6.
 
 **Lower-bound scope**
 
-This card records a conditional upper bound and backend boundary. It does not claim a new unconditional matching lower bound.
+This card records an unconditional polynomial implementation and a
+conditional faster upper bound. No new matching lower bound is claimed.
 
 **Review status**
 
-**Ready for review in the stated scope.** The unconditional input reductions in Section 3: the sharp c-neighbor kernel, componentwise composition, the native mixed-failure kernel in the companion, and the subcubic reduction with its decoder.
+**Ready for review in the stated scope.** The executable cubic solver with optimality certificates and its independent verifier; the self-contained quadratic certificate-extraction proof; the unconditional sharp c-neighbor and mixed-failure kernels, componentwise composition, and subcubic reduction with its decoder.
 
-**Conditions and remaining work.** The four-fifths running-time theorem remains conditional on Contract R and the deterministic primitives listed in sources.md. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope.
+**Conditions and remaining work.** The four-fifths research running time still requires the cycle-search implementation and named published prerequisites in sources.md. The executable solver has its separately proved cubic bound. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
-[Complete theorem and proof](proof.md), [dependencies and primary sources](sources.md).
+[Executable solver and example](reference/README.md),
+[complete research theorem and proof](proof.md),
+[dependencies and primary sources](sources.md).
 
 ## Matching-size refinement
 
@@ -58,7 +85,10 @@ Let $`\nu(G)`$ be the maximum matching size. The exact-preserving kernel in the 
 m_H\le\min\{m_s,O(\nu(G)^2)\}.
 ```
 
-The second term of the running time may use $`m_H`$ in place of $`m_s`$, while input reading and normalization still cost $`O(n+m)`$. Original edge identifiers are restored after the exact solution is obtained.
+The second term of the conditional research bound may use $`m_H`$ in
+place of $`m_s`$, while its word-RAM radix normalization costs
+$`O(n+m)`$. The Python reference uses comparison sorting and charges its
+separate $`m\log(m+2)`$ term. Both restore original selected edge IDs.
 
 For a computed vertex cover of size $`c`$, the explicit edge bound is
 $`m_H\leq\min\{m_s,\binom c2+c^2\}`$. Processing connected components

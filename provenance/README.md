@@ -12,7 +12,7 @@ license boundaries. There is one current copy of each retained manuscript.
 | [Archive manifest](archive-manifest.json) | The supplied archive inventory and archive-level fingerprints |
 | [Checkpoint file manifest](checkpoint-files.json) | The original checkpoint payload inventory and recorded hashes |
 | [Import manifests](imports/) | Additional numerical, quota and sparsification increments, plus the Subset Sum source snapshot |
-| [Matching provenance](matching.md) | The matching manuscript's source-to-section map and the precise remaining Contract R dependency |
+| [Matching provenance](matching.md) | The matching manuscript's source-to-section map and the precise remaining the deterministic cycle-search implementation requirement dependency |
 | [Subset Sum source manifest](imports/subset-sum/source-manifest.json) | The imported Subset Sum material and source-project revision |
 
 The original pre-consolidation tree is available in repository history at

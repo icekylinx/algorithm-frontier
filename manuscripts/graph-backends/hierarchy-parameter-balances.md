@@ -6,7 +6,7 @@
 ```
 The proof varies the number of HRG levels, the reduction parameter, and the port capacity together. It relies on the explicit uniform realization hypothesis of [the master-size recurrence](growing-depth-metric-recurrence.md), including legal dynamic transactions and literal traversal certificates. The algebra below does not establish that complete implementation.
 
-The [separate outer composition](quantitative-matching-209-210-composition.md) uses additional matching-client hypotheses. The current stronger [main matching theorem](../../problems/general-matching/proof.md) retains Contract R; this parameter specialization does not remove that contract.
+The [separate outer composition](quantitative-matching-209-210-composition.md) uses additional matching-client hypotheses. The current stronger [main matching theorem](../../problems/general-matching/proof.md) retains the explicit cycle-search implementation requirements; this parameter specialization leaves them unresolved.
 
 The numerical primitive imports remain the constant-degree sparse
 neighborhood cover and the legal dynamic spanner of

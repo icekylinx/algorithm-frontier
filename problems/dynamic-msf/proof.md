@@ -3,8 +3,8 @@
 **Theorem and proof.** All algorithmic conclusions use the explicitly stated interfaces and computational models.
 
 The formal interface proof is
-[dynamic msf formal pruning substitution audit](../../manuscripts/graph-backends/dynamic-msf-formal-pruning-substitution-audit.md), independently checked
-in [Formal pruning substitution in the public NSW MSF framework](../../manuscripts/graph-backends/dynamic-msf-formal-pruning-substitution-audit.md). The bound below is derived from the named public results. It uses NSW's actual
+[Formal pruning substitution in the public NSW MSF framework](../../manuscripts/graph-backends/dynamic-msf-formal-pruning-substitution-audit.md).
+The bound below is derived from the named public results. It uses NSW's actual
 weighted certificate and formal worst-case reduction. CGLN's informal
 residual-connectivity sketch, read in isolation, would not suffice.
 
@@ -23,9 +23,23 @@ needed to obtain this quantitative point. The derivation below is
 new accounting of these sources; it is not claimed to be a displayed
 theorem in any one of them.
 
-## 1. Primary sources and current versions
+Use a fixed vertex set and a declared master cap $`N`$ covering its
+size, the initial edge inventory and the subsequent edge-update
+records. Edge insertions and deletions may depend on all previous
+answers. Parallel edges have distinct immutable IDs, loops can be
+discarded, and a weight replacement is a deletion followed by an
+insertion. All tuning parameters use this one cap.
 
-The following official sources were reopened during this audit.
+The initial construction costs
+$`(n+m_0)\exp O(U^{2/3}h^{1/3})`$, conservatively including the
+initial MSF and sorting. Each settled update publishes changes to the
+maintained exact forest. Enumerating the entire current forest is an
+additional output-size operation; it is not part of the per-update
+claim.
+
+## 1. Primary sources and their roles
+
+The proof uses the following pinned source versions.
 
 | Source | Exact role |
 |---|---|
@@ -35,11 +49,11 @@ The following official sources were reopened during this audit.
 | [MPG, arXiv:2510.08297v1](https://arxiv.org/html/2510.08297v1), Sections 3.5--3.7 | New connectivity framework; its deamortization discussion is brief |
 | [MPGY, arXiv:2610.00491v1](https://arxiv.org/html/2610.00491v1), Sections 3, 4, and 6 | Recent randomized polylogarithmic worst-case MSF/2-edge-connectivity result with static decomposition as its only randomized ingredient |
 
-The arXiv histories of 2504.00544, 2510.08297, and 2610.00491 each
-show only the listed v1 as of the audit date. The latest randomized
-result does not itself assert deterministic polylogarithmic worst-case
-MSF. Deterministic polylogarithmic **amortized** MSF is a different,
-classical guarantee and is not improved by (1).
+Only the first three rows enter the derivation. The later two rows
+are comparisons and can be removed without changing (1). A randomized
+polylogarithmic worst-case result does not itself establish a
+deterministic bound. Deterministic polylogarithmic **amortized** MSF
+is a different, classical guarantee and is not improved by (1).
 
 ## 2. The formal public reduction separates pruning from decomposition
 
@@ -204,6 +218,17 @@ $`O(U^{1/3}h^{2/3})`$, smaller than (6). Hence (7) proves (1),
 using the named public worst-case reduction throughout. Exact MSF
 edge changes are the output of that reduction. The result also
 supports connectivity queries through the maintained forest.
+
+For completeness, the normalized preprocessing recurrence has a
+constant branching factor at each of $`O(U/\log\gamma)`$ levels,
+and additive $`\mathrm{poly}(\gamma,U)`$ work per actual initial
+record. Hence its factor is at most
+$`\mathrm{poly}(\gamma,U)\exp O(U/\log\gamma)`$,
+absorbed by the same $`\exp O(U^{2/3}h^{1/3})`$ envelope.
+This pays the initial construction stated above. Deterministic
+worst-case dynamic-forest primitives support connectivity queries in
+polynomial logarithmic time; an amortized-only replacement for those
+primitives would require a separate deamortization argument.
 
 For arbitrary tied weights, use deterministic lexicographic ordering
 by weight and immutable edge identity. This selects one exact MSF

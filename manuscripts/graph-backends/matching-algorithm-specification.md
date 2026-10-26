@@ -1,6 +1,6 @@
 # A matching algorithm from explicit backend contracts
 
-This mathematical algorithm specification gives the input preparation, gap-phase driver and update transactions for exact general matching. Each subroutine retains the stated correctness, cost and lifetime contracts. The [main theorem](../../problems/general-matching/proof.md) supplies the complete composition proof and explicitly retains Contract R for the fast backend.
+This mathematical algorithm specification gives the input preparation, gap-phase driver and update transactions for exact general matching. Each subroutine retains the stated correctness, cost and lifetime contracts. The [main theorem](../../problems/general-matching/proof.md) supplies the complete composition proof and explicitly retains the required deterministic cycle-search implementation as a hypothesis for the faster bound.
 
 ## 1. One input preparation
 

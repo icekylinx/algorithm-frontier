@@ -10,4 +10,17 @@ weighted hierarchy and published changes are separate proof obligations.
 The source/version comparisons are preserved in the dependency manuscripts.
 No executable implementation of the full dynamic MSF framework is included.
 
+The local pruning adapter and explicit source-parameter substitution
+are ready for review. The formal note includes direct proofs of the
+edge-addition and contraction facts used in the weighted certificate.
+This does not replace that certificate with the insufficient shortcut
+consisting only of an initial MSF and edges incident to pruned vertices.
+
+The source check retains the finite MGS horizon, actual-size CGLNPS
+parameter cutoff, complete initial construction and deterministic
+worst-case forest primitives. Adaptive histories introduce no random
+failure assumption. Initial construction and full forest enumeration
+are charged separately from a single update. No matching raw-backend
+assumption is used here.
+
 Read the [main proof](../proof.md) with its [source map](../sources.md). Repository checks validate links, mathematical syntax and catalogue coverage; they do not certify the asymptotic theorem. No proof-assistant verification or external peer review is claimed.

@@ -9,7 +9,7 @@ the decoder inequality for every matching of every resulting gadget.
 Mixed native vertex/edge failures of budgets one and two are also checked
 on all graphs through four vertices, in both fixed edge orders.
 
-This finite evidence does not prove the general lemmas or Contract R.
+This finite evidence does not prove the general lemmas or the faster cycle-search implementation.
 Requires only the Python standard library; run with assertions enabled.
 """
 from __future__ import annotations
@@ -145,7 +145,8 @@ def decode(n: int, original_edges: list[tuple[int, int]]):
 
 
 def main() -> None:
-    assert __debug__, "run without -O"
+    if not __debug__:
+        raise SystemExit("This checker requires assertions; run Python without -O.")
     kernel_cases = gadget_cases = decoder_cases = mixed_failure_cases = 0
     for n in range(7):
         possible = list(combinations(range(n), 2))
@@ -208,7 +209,7 @@ def main() -> None:
     print(f"Subcubic gadget: {gadget_cases} graphs, all graphs through n=4.")
     print(f"Decoder: all {decoder_cases} gadget matchings; 3 sharp-cutoff examples.")
     print(f"Mixed vertex/edge faults: {mixed_failure_cases} cases; 4 sharp-cutoff examples.")
-    print("PASS: finite reductions only; no Contract R or fast-backend claim.")
+    print("PASS: finite reductions only; no fast cycle-search implementation claim.")
 
 
 if __name__ == "__main__":

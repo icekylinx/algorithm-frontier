@@ -2,7 +2,7 @@
 
 **Abstract.** We prove a local metric transformation with length-bit increment $`\log_2 k+O(\log U)`$ per outer recursion. It contracts only true-null edges of the immediate flat map, retains original integer lengths on real edges, and uses a small integral port scale. Frozen gradient gauges remain separate and may have larger bit length. Under the complete uniform dynamic realization specified in Section 7, the transformation yields the conditional backend exponent $`167/168`$.
 
-This metric argument does not establish every dynamic geometry and lifetime interface required by a full solver. Those remain explicit here and in Contract R of [the current main matching proof](../../problems/general-matching/proof.md).
+This metric argument does not establish every dynamic geometry and lifetime interface required by a full solver. Those remain explicit here and in the cycle-search implementation requirements of [the current main matching proof](../../problems/general-matching/proof.md).
 
 The constructive published imports are the constant-degree sparse
 neighborhood cover and the legal dynamic spanner of

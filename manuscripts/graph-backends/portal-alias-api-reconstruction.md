@@ -2,7 +2,7 @@
 
 **Abstract.** We prove a portal-maintenance reduction under the explicit low-recourse spanner interface below. Shortening a routed edge is represented by inserting an immutable parallel alias. Fixed ancestor targets and immutable endpoint origins control both cumulative master degree and child recourse, including tree exchanges that retain off-tree edges.
 
-The local theorem is about one portal period. A complete recursive raw-cycle implementation additionally needs the [Steiner lift](constant-degree-steiner-bridge.md), [disconnected-component accounting](disconnected-routing-components.md), and [lifetime transactions](numerical-backend-lifetime-and-loops.md). The current matching theorem retains the complete realization obligation as [Contract R](../../problems/general-matching/proof.md); this local reduction does not discharge it.
+The local theorem is about one portal period. A complete recursive raw-cycle implementation additionally needs the [Steiner lift](constant-degree-steiner-bridge.md), [disconnected-component accounting](disconnected-routing-components.md), and [lifetime transactions](numerical-backend-lifetime-and-loops.md). The current matching theorem retains the complete realization obligation as [explicit deterministic cycle-search implementation requirements](../../problems/general-matching/proof.md); this local reduction does not discharge it.
 
 ## 1. Scope and the imported spanner API
 

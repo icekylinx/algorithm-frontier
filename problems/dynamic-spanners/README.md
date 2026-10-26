@@ -8,7 +8,7 @@ Maintains a spanner of an arbitrary-degree undirected graph with the stated stre
 
 **Objective and output**
 
-Maintain a sparse spanner and report its current edge set after settled updates.
+Maintain an explicit sparse spanner after settled updates and report its edge changes. Enumerating the complete current set additionally costs its output size.
 
 **Randomness**
 
@@ -28,7 +28,7 @@ The current spanner has the fixed vertex count multiplied by the chosen stretch 
 
 **Model and representation**
 
-Unweighted undirected graphs, with distinct identifiers for parallel edge lifetimes and settled external updates. Both constructions have amortized bounds. Self-loops are discarded.
+Unweighted or nonnegative polynomial-range integer-weighted undirected graphs, with distinct identifiers for parallel edge lifetimes and settled external updates. Weighted instances use positive dyadic classes and one unweighted zero-edge class. Both constructions have amortized bounds. Self-loops are discarded.
 
 **Lower-bound scope**
 
@@ -36,7 +36,11 @@ This page records two upper-bound constructions and their incomparable recourse 
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The separate zero-edge class, dyadic positive-weight wrapper, and their initialization, update and recourse accounting for both displayed regimes.
+
+**Conditions and remaining work.** The underlying unweighted hierarchy and forest algorithms remain explicit prerequisites. Output guarantees apply after each complete external update and retain the provider’s adaptive-history requirements.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
@@ -46,25 +50,11 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 Write $`M=n+m_0+I+D`$ and $`E_a=\exp(O(U^a h^{1-a}))`$.
 
-**Tracked original terminals**
+**Tracked original terminals.** Stretch $`E_{4/5}`$, current edges
+$`nE_{4/5}`$, total work $`ME_{4/5}`$, and total output recourse $`ME_{4/5}`$.
 
-**Stretch.** $`E_{4/5}`$
-
-**Current edges.** $`nE_{4/5}`$
-
-**Total work.** $`ME_{4/5}`$
-
-**Total output recourse.** $`ME_{4/5}`$
-
-**Full-horizon construction**
-
-**Stretch.** $`E_{5/6}`$
-
-**Current edges.** $`nE_{5/6}`$
-
-**Total work.** $`ME_{5/6}`$
-
-**Total output recourse.** $`(n+D)E_{5/6}`$
+**Full-horizon construction.** Stretch $`E_{5/6}`$, current edges
+$`nE_{5/6}`$, total work $`ME_{5/6}`$, and total output recourse $`(n+D)E_{5/6}`$.
 
 Both conclusions depend on the named flat-forest hierarchy. The full-horizon construction removes cumulative insertions from output recourse, so neither construction dominates the other in every displayed quantity.
 

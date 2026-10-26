@@ -77,6 +77,37 @@ preprocessing recurrence explicitly pays this work.
 
 ## 3. Why these conditions suffice for weighted MSF correctness
 
+### 3.1 Two elementary MSF facts, with proofs
+
+Fix a strict total order on edges, using weight and immutable edge ID.
+If an edge $`e`$ is outside the unique MSF of a graph $`X`$, its endpoints
+are joined in that MSF by a path of edges preceding $`e`$ in the order.
+Otherwise exchanging a later path edge for $`e`$ would improve the
+lexicographically selected minimum forest. Conversely, any edge with
+such a strictly earlier alternative path is rejected by Kruskal's
+algorithm.
+
+This proves two facts needed by the certificate. First, after adding
+arbitrary extra edges $`D`$, every old excluded edge still has its old
+earlier path. Hence
+$`\mathrm{MSF}(X\cup D)\subseteq\mathrm{MSF}(X)\cup D`$.
+Second, under any fixed vertex contraction, that earlier path projects
+to a walk of earlier edges. If $`e`$ becomes a loop it is discarded;
+otherwise deleting repetitions gives an earlier alternative path in
+the quotient. Thus every surviving quotient MSF edge was already an
+MSF edge before contraction. The quotient need not preserve degrees
+or identify only adjacent vertices for this argument.
+
+A surviving edge of the initial MSF also remains safe under arbitrary
+edge deletions and increases to the weights of other edges, provided
+its own ordered weight is unchanged. It is the first edge across its
+initial fundamental cut; deleting or increasing competitors cannot
+destroy that property. This is the protection used for the block-tree
+edges in Section 5. The claim is not that all initial MSF edges remain
+safe when their own weights are increased.
+
+### 3.2 Applying the facts to the weighted certificate
+
 Keep NSW's MSF hierarchy and its reweighted graph. The needed
 structural invariant is that, after every deletion set, every
 child-cluster MSF is a subset of the parent-cluster MSF. This is
@@ -334,6 +365,14 @@ including the background rebuild cost already present in (8).
 Distinct ranks can be obtained by fixed edge-ID tie breaking;
 each private decremental rebuild sorts its actual edge weights.
 All additional ranks and thresholds have polynomially many bits.
+
+The ordinary dynamic-forest operations here use deterministic
+worst-case balanced structures, as in NSW Lemma 2.5; choosing an
+amortized-only path structure would not establish the claimed
+worst-case bound. The small compressed-graph MSF routines are those
+of NSW Lemmas 2.6–2.7. Neither these routines nor the deterministic
+decomposition and pruning replacements require a random seed or an
+oblivious update sequence.
 
 Finally choose $`r=\Theta((U/h)^{1/3})`$ and
 $`\log\gamma=\Theta(U/r+r^2h+h)`$ with a sufficiently

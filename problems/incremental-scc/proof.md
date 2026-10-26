@@ -395,11 +395,50 @@ vertices' lists for their last labels at or before $`t`$. Equality
 is exactly the SCC relation at that time. This costs
 $`O(\log\log(n+2))`$ per historical query and uses
 $`O(n\log(n+2))`$ label-history space and writes, already within
-the explicit labeling account. Since SCC membership is monotone,
-binary search over past times also finds the first coalescence time
-within $`O(\log(m+2)\log\log(n+2))`$ query work. This is an
-optional consequence of the label representation, not a new
-topological-order or path-reporting guarantee.
+the explicit labeling account.
+
+**Corollary 9.1 (first coalescence from a common label suffix).** The first
+settled update at which two vertices belonged to one SCC, or the fact
+that they have not yet coalesced, can be returned in
+$`O(1+\log\log(n+2))`$ time. The query uses direct array comparisons,
+with no search through all update times or nested historical lookups.
+
+**Proof.** If the vertices are equal, return time zero. If their current
+labels differ, they have never coalesced. Otherwise write their stored
+histories as $`(t_i,a_i)`$ and $`(s_j,b_j)`$ in increasing time.
+
+A representative label belongs to exactly one current block. When that
+block loses its label in a merge, the label is retired permanently; it
+is never assigned to a later block. Consequently, if both histories
+contain a label $`x`$, their time intervals carrying $`x`$ overlap. At the
+later of the two starting times they are in the same block. They remain
+together thereafter and have exactly the same subsequent settled label
+changes. It follows that the shared labels form one identical suffix
+of the two history lists. Coalescing several internal merges into one
+settled record does not alter this fact: once together, both vertices
+have the same final label at each future external update.
+
+Let $`q`$ be the length of that common suffix. The predicate
+$`a_{p-1-k}=b_{r-1-k}`$, for offsets $`k=0,\ldots,\min\{p,r\}-1`$
+from the two final entries, is true exactly for $`k<q`$. Binary-search
+the largest matching offset using constant-time label comparisons.
+The first common label starts at times $`t_{p-q}`$ and $`s_{r-q}`$,
+so the first coalescence time is
+
+```math
+\max\{t_{p-q},s_{r-q}\},
+```
+
+where $`p,r`$ are the list lengths and indices start at zero.
+Each list has $`O(\log(n+2))`$ entries, so the binary search takes
+$`O(1+\log\log(n+2))`$ comparisons. A final maximum takes constant
+time. The same proof covers initial nonsingleton blocks when their
+initial labels have time zero. ∎
+
+This is an unconditional consequence of any exact merge-only partition
+maintained by the specified small-to-large labels. The fast SCC update
+bound still has its raw-backend premises. A topological order and
+within-component path reporting are separate output contracts.
 
 ## 10. Novelty comparison and the topological-order boundary
 

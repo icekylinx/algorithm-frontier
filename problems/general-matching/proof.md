@@ -2,7 +2,11 @@
 
 **Yilin Liu · GPT-6 Astra Pro**
 
-**Theorem-and-proof manuscript.** The quantitative algorithm is conditional on the explicitly stated primitive interfaces and Contract R.
+**Theorem-and-proof manuscript.** The faster quantitative algorithm is
+conditional on the explicitly stated published primitives and the
+required deterministic cycle-search implementation in Section 11.6.
+An unconditional polynomial-time [reference implementation](reference/README.md)
+is available separately.
 
 ## Abstract
 
@@ -33,7 +37,36 @@ The central contributions are as follows.
 4. **Sequential routing and normalized ambient sparsification.** We give explicit finite local procedures, a virtual hierarchy with one physical root map, and a scatter–meet–reverse query induction. The static provider has structural quality $`\log\Gamma=O((p+r)\log U)`$, while its larger construction factor remains local work.
 5. **A complete quantitative composition.** We retain selected-edge recourse, late initial update credit, occurrence pools, finite arithmetic, and the full recursive quality product. Their simultaneous balance gives (1).
 
-The proof separates the matching reduction, the geometric module interfaces, and the quantitative composition. Contract R in Section 11.6 is an explicit hypothesis of Theorem 1.1. Each use of that contract is identified before its cost is substituted. The output verifier establishes correctness of an accepted matching; the interface hypotheses and resource analysis establish the conditional running-time bound.
+The proof separates the matching reduction, the geometric module interfaces,
+and the quantitative composition. The cycle-search implementation requirements
+in Section 11.6 are hypotheses of Theorem 1.1. They are not an implemented
+module or a theorem established by a single published paper. Each use is
+identified before its cost is substituted. Output verification establishes
+optimality of an accepted matching; it does not establish the faster time bound.
+
+### 1.1 Unconditional executable companion
+
+The [standard-library reference solver](reference/README.md) implements
+the normalization, connected-component decomposition and exact kernel of
+Section 3.1, followed by a classical deterministic Edmonds blossom search.
+If $`k_i`$ is the actual retained vertex count in component $`i`$, its time is
+
+```math
+O\!\left(n+m\log(m+2)+\sum_i k_i^3\right).
+```
+
+It returns the original selected edge IDs and uses $`O(n+m)`$ records,
+with actual label bytes and comparison costs charged separately. Its
+optional certificate mode has the same cubic bound, with
+$`O(\sum_i k_i^2)`$ additional extraction work.
+A [separate verifier](reference/verify_certificate.py) checks exact kernel
+preservation and a Tutte–Berge upper bound using graph scans and comparison
+sorting, without calling a matching algorithm. The reference documentation
+proves that acceptance certifies maximum cardinality. Its
+[self-contained extraction proof](reference/certificate-proof.md) derives a
+tight odd-component barrier from one exhausted alternating forest;
+classical blossom search supplies the initial maximum matching. None of
+Section 11.6's cycle-search requirements is needed by this implementation.
 
 ## 2. Model, notation, and inherited primitives
 
@@ -609,7 +642,7 @@ Q=\exp O(ph+\log\phi^{-1}).
  \tag{33}
 ```
 
-The polynomial degrees and constants are independent of $`p`$. The geometric hierarchy uses the module interfaces from [CS, CHS] and Contract R. The following subsections specify these interfaces and prove the sequential replacement and cost bounds used in the composition.
+The polynomial degrees and constants are independent of $`p`$. The geometric hierarchy uses the module interfaces from [CS, CHS] and the implementation requirements of Section 11.6. The following subsections specify these interfaces and prove the sequential replacement and cost bounds used in the composition.
 
 ### 9.1 Incidence ports and actual-size recursion
 
@@ -1149,11 +1182,17 @@ The complete initial future-path occurrence inventory has size and total edge co
 $`O(\log(m'+2)+\log(k+2)+b_*+\log(U+2))=\mathrm{poly}(U)`$
 forests. This count includes the length aspect. Temporary spectral, moment, or portal arithmetic is charged locally and is not exported as a stored numerical label.
 
-### 11.6 Explicit raw-backend realization contract
+<a id="116-explicit-raw-backend-realization-contract"></a>
+
+### 11.6 Required deterministic cycle-search implementation
 
 The following is the precise internal realization hypothesis used in Theorem 1.1. It states more than an ordinary distance oracle or a net-norm cycle oracle.
 
-**Contract R.** There is a fixed finite deterministic implementation of the stable-core, normalized repair, degree-reset, and flat-lift assembly above such that:
+**Unresolved implementation hypothesis.** A fixed finite deterministic
+implementation must maintain the graph hierarchy, repair it after updates,
+control its degrees, and represent the reported circulations by signed
+physical-edge and forest-path pieces. Its length certificate counts every
+traversal before cancellation. The following five requirements must all hold:
 
 1. **Geometric comparison.** The local distance-to-cycle decomposition is valid on its actual degree-three multigraphs. The one-level loss is bounded by a fixed power of $`\Gamma^{K_{\mathrm r}}U`$; complete recursion gives (69), with numerator identities and literal traversal certificates as in (56) and (65).
 2. **Construction and recourse.** For every chronological prefix and the first attempted batch, actual local work, selected support/degree, published child edits, and initial credit satisfy (61)–(67). Old loop lifetimes, native splits, and disconnected small components obey Section 11.1.
@@ -1161,7 +1200,26 @@ The following is the precise internal realization hypothesis used in Theorem 1.1
 4. **Finite arithmetic.** The weighted original-edge tree realization satisfies (70); its exported labels satisfy (71)–(72). All temporary and stored arithmetic, explicit paths, dictionaries, and private resident records are charged. Root prices fit the fixed master envelope of Section 8.
 5. **Uniform executable bounds.** Fixed, enumerable cap constants suffice for all these claims uniformly in $`U,p,r,K_{\mathrm r},k`$. Actual-size base cases and finite guards are implemented, and initialization is proportional to actual inventory.
 
-The carrier, rounding, entropy, weighted selection, degree-feedback, recurrence solution, and parameter balance in this manuscript do not require assuming their own running-time conclusions. Contract R isolates the full backend implementation and geometric realization that the supplied checkpoint asserts. It is not identified with any unmodified published complete dynamic theorem. Under this contract, (67) and (69) give the cap in the next section, and hence the interface (19)–(20).
+The carrier, rounding, entropy, weighted selection, degree-feedback,
+recurrence solution and parameter balance have separate local arguments.
+Those arguments do not supply a complete executable implementation satisfying
+these five requirements. Equations (67) and (69) yield the next section's
+cap only if all five hold.
+
+For the exact published boundary, Kyng–Meierhans–Probst Gutenberg–Sulser,
+[*A Simpler and Faster Min-Cost Flow Solver via Min-Ratio Cycles from Distance
+Oracles*, arXiv:2609.23852v1](https://arxiv.org/html/2609.23852v1),
+Theorems 4.4–4.5, provides a deterministic hierarchy at its own
+$`\exp(O(\log^{20/21}m\log\log m))`$ scale. Its Definition 5.1 inserts
+edges with zero flow; it does not specify retirement of a positive frozen
+flow. Its Lemma 5.4, as printed, gives a path-length inequality in the
+opposite direction from the upper certificate needed here. The required
+direction is that the reported physical traversal sum is at most the
+charged length certificate. The accompanying source discussion and the
+[local lift argument](../../manuscripts/graph-backends/distance-oracle-raw-lift.md)
+must be checked at that stronger interface. Neither the printed lemma
+alone nor the published parameter choice establishes the four-fifths
+time bound. The [source map](sources.md) identifies the remaining imports.
 
 ## 12. Parameter balance and one finite program
 
@@ -1228,7 +1286,7 @@ Since $`t^5h\leq U`$, all logarithmic overhead charges are $`O(U/t)`$. Moreover
 $`\log P_{\mathrm b}/x=O(1/t+t^2h/U)=o(1)`$, so the child size factor $`P_{\mathrm b}/k\leq k^{-1/2}`$ eventually; $`d_*`$ has fixed slack. On a nonbase graph $`\log m'\geq x-O(1)`$, and
 $`b_*/x^2=O(t^3/U)=o(1)`$, satisfying the stored-label aspect guard. Smaller instances use their direct charged base solver.
 
-Thus, under Contract R, a fixed sufficiently large pair $`(c_C,c_E)`$ gives the computable complete cap
+Thus, assuming the implementation specified in Section 11.6, a fixed sufficiently large pair $`(c_C,c_E)`$ gives the computable complete cap
 
 ```math
 E_*=2^{c_E x},\qquad
@@ -1244,7 +1302,7 @@ To obtain one program without numerical advice about sufficiently large constant
 
 Each worker checks degree, size, history, prefix-recourse, depth, label, and work caps before using a result. A cap violation suspends the worker, and an overlong path is never truncated. Before any candidate is accepted, validate its edge list and run one independent deterministic augmenting-path search [Gabow] on the shared compact graph. No augmenting path certifies maximum cardinality. Verification and candidate materialization are charged inside that worker's instruction share.
 
-This arrangement always terminates and returns a correct answer: the classical worker receives positive share and supplies one, while no accepted candidate fails the augmenting-path criterion. Under the external interfaces and Contract R, some fixed tuple is favorable for every sufficiently large input. Its scheduling penalty is constant, its finite-word simulation overhead is polynomial in $`s`$, and its verified completion is bounded by (31). Any finite collection of exceptional input sizes is absorbed into a uniform constant.
+This arrangement always terminates and returns a correct answer: the classical worker receives positive share and supplies one, while no accepted candidate fails the augmenting-path criterion. Under the external interfaces and the implementation requirements of Section 11.6, some fixed tuple is favorable for every sufficiently large input. Its scheduling penalty is constant, its finite-word simulation overhead is polynomial in $`s`$, and its verified completion is bounded by (31). Any finite collection of exceptional input sizes is absorbed into a uniform constant.
 
 The classical worker also bounds total pretermination instructions and allocated records by a fixed polynomial in the compact instance size, up to scheduler overhead. Addresses and live scheduling indices therefore need only $`O(s)`$ bits. This justifies the charged word simulation used by the persistent memory and the portfolio.
 

@@ -17,7 +17,7 @@ Deterministic conditional composition; the strong forest and exact Gomory-Hu tra
 
 **Time**
 
-Both the native decremental forest and the exact Gomory–Hu application have total work $`O(n+m)+(m+1)E_{6/7}`$ under their stated interfaces, where $`E_{6/7}=\exp(O(U^{6/7}h^{1/7}))`$.
+The native decremental forest has total work $`(n+m)E_{6/7}`$. The separately preprocessed exact Gomory–Hu application has total work $`O(n+m)+(m+1)E_{6/7}`$ under its additional interfaces, where $`E_{6/7}=\exp(O(U^{6/7}h^{1/7}))`$.
 
 **Space**
 
@@ -29,7 +29,7 @@ $`n`$ is the vertex count; $`m`$ is the lifetime edge inventory; $`k`$ is the fi
 
 **Model and representation**
 
-The forest uses a fixed bounded-degree native graph. The Gomory–Hu application accepts arbitrary-degree undirected multigraphs with positive polynomial-range integer nonloop capacities and uses the fixed-parameter reduction and named forest/flow interfaces.
+The forest uses a fixed bounded-degree native graph, now allowing nonnegative polynomial-range integer lengths by the fixed perturbation in Section 14.1. Its flat projection may repeat physical edges. The Gomory–Hu application accepts arbitrary-degree undirected multigraphs with nonnegative polynomial-range integer capacities; zero-capacity edges and loops are removed in one scan. It retains the fixed-parameter reduction and named forest/flow interfaces.
 
 **Lower-bound scope**
 
@@ -37,7 +37,11 @@ No lower bound is claimed. The page does not claim an independently implemented 
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The nonnegative-integer flat-forest adapter and zero-capacity Gomory–Hu preprocessing, with native-forest and cut-tree input costs stated separately.
+
+**Conditions and remaining work.** The faster forest and exact-flow constructions retain the data-structure assumptions in sources.md. The local reductions do not supply those implementations or an additional simple-path reporting interface.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

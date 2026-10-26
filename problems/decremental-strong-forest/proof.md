@@ -1,6 +1,9 @@
 # Strong forests from uncontracted Steiner cores, without recursive degree resets
 
-**Theorem and proof.** All algorithmic conclusions use the explicitly stated interfaces and computational models.
+**Conditional composition theorem.** The static provider, native
+selected-record transcript and outer cover interfaces remain named
+premises. Local forest lifting and parameter accounting do not by
+themselves implement those providers.
 
 The construction uses native child identities that are subsets of parent identities. The earlier bounded-degree variant in [steiner colored pool strong forest candidate](../../manuscripts/graph-backends/steiner-colored-pool-strong-forest-candidate.md)
 is optional; its source vertex-deletion adapter is not needed here.
@@ -15,6 +18,8 @@ Lengths are positive polynomial-range integers, history is polynomially
 bounded by $`N`$, and accuracy is constant or inverse polynomial in
 $`U`$. A Gomory--Hu consequence additionally uses the separately
 audited application reduction.
+Section 14.1 extends the forest guarantee to nonnegative integer
+lengths without an extra dynamic connectivity or SCC primitive.
 
 ## 1. Retained provider and three separate bounds
 
@@ -371,9 +376,10 @@ Every vertex in a cover's birth set belongs to that ball at birth.
 Hence even historical birth-cover ghosts have at most
 $`\Delta_{\rm cover}`$ cover owners. This is the literal
 historical overlap guarantee, not an assumption about present
-membership. The local source text is
-`sources/dynamic_shortest_paths_toolbox.txt`, Definition 5.2,
-printed pages 46--47.
+membership. The primary reference is
+[KMG, arXiv:2311.06402v1, Definition 5.2](https://arxiv.org/abs/2311.06402v1),
+printed pages 46–47. Its clause (3) is a historical overlap bound;
+a bound only on present cover membership would not suffice here.
 
 All full unused pools remain charged for these ghosts. A ghost
 has no real path to another active cover vertex, so it cannot
@@ -545,10 +551,39 @@ would give $`7/8`$. That is an ablation with a new construction,
 not an already public strong-forest interface. Improved public
 baselines are recorded separately.
 
-## 15. Completed audit scope
+### 14.1 Nonnegative integer lengths with the same forest guarantee
 
-The source compression lemma and old outer-copy accounting have
-independent proofs. The root and two independent reviews checked:
+For root lengths in $`[0,N^c]`$, fix an accuracy target
+$`0<\varepsilon\leq1/2`$ (a smaller target suffices if the requested
+accuracy is larger). Choose a fixed dyadic
+$`\delta\in(\varepsilon/(128N),\varepsilon/(64N)]`$ and run the
+positive-length construction with internal accuracy $`\varepsilon/8`$
+on $`L_e=\delta^{-1}\ell_e+1`$. Constant or inverse-polylogarithmic
+accuracy keeps this length range polynomial in $`N`$. Store the original
+length on every published real edge copy, alongside the internal
+perturbed length. Typed nulls retain their null type and zero length.
+
+A finite original distance $`d`$ has a simple shortest path of fewer
+than $`n`$ edges, so its perturbed distance is at most $`d+n\delta`$.
+For integer $`d\geq1`$, the published forest path has original cost
+at most $`(1+\varepsilon/8)(d+n\delta)<(1+\varepsilon)d`$.
+For $`d=0`$, that cost is a nonnegative integer below
+$`(1+\varepsilon/8)n\delta<1`$, and is therefore exactly zero.
+This argument counts repeated physical occurrences in a projected
+forest path; dropping each occurrence's perturbation only lowers cost.
+
+The forest topology, flat maps, occurrence bounds and edge recourse
+are unchanged. Maintaining two lengths costs constant additional work
+per actual record, and the extra length bits fit the same polynomial
+logarithmic arithmetic allowance. The perturbation is fixed for the
+whole decremental history. The complete local reduction is
+[Zero-length edge adapters, Section 1](../../manuscripts/graph-backends/nonnegative-integer-distance-adapters.md).
+It makes no additional simple-path reporting claim for the forest's
+possibly repeated physical projection.
+
+## 15. Local proof and dependency boundary
+
+The linked local reviews address the following mathematical obligations:
 
 1. active-root inventory and explicit small-component activation,
    including an anchor promotion that causes no physical cut;
@@ -573,20 +608,26 @@ The second focused review is
 [steiner pool metric inventory focused audit](../../manuscripts/graph-backends/steiner-pool-metric-inventory-focused-audit.md), including its
 final comparison with this main proof. The exact application and
 current comparison are recorded in
-[six sevenths strong forest and gomory hu checkpoint](proof.md).
+Sections 14 and 16 of this primary proof. These internal review
+documents do not remove the retained provider hypotheses or constitute
+independent external certification.
 
 
-## 15. Exact deterministic Gomory--Hu trees
+## 16. Exact deterministic Gomory--Hu trees
 
 For an arbitrary undirected graph, including parallel edges and
-disconnected components, with positive polynomial-range integer
-capacities on nonloop edges, the audited deterministic reduction
-now gives an exact cut-equivalent tree in
+disconnected components, with nonnegative polynomial-range integer
+capacities on nonloop edges, the deterministic reduction gives an exact
+cut-equivalent tree under the stated forest, exact-flow, skeleton and
+fixed-parameter guide-tree interfaces, in
 ```math
 O(n+m)+(m+1)E_6(n+m).
 ```
-Loops are irrelevant to cuts and may be removed. Component trees
-can be joined by zero-weight tree edges. Thus for every pair of
+Loops and zero-capacity edges contribute nothing to a cut and are
+removed in the initial $`O(n+m)`$ scan. Apply the positive-capacity
+reduction to each nontrivial component of the remaining support.
+Their component trees can be joined by zero-weight tree edges.
+Thus for every pair of
 original vertices, the minimum edge weight on their tree path
 equals their exact minimum-cut value, including zero across
 different connected components.
@@ -617,7 +658,6 @@ therefore introduces no new larger term.
 This is a substitution of a fully specified strong forest,
 not a claim that faster static maximum flow alone yields the
 Gomory--Hu improvement. The relevant existing application notes are
-[gomory-hu-seven-eighths-dependency-audit.md](../../manuscripts/graph-backends/gomory-hu-seven-eighths-dependency-audit.md),
 [A quantified Gomory--Hu transfer of the strong forest](../../manuscripts/graph-backends/gomory-hu-seven-eighths-dependency-audit.md),
 [finite-mwu-and-li-skeleton-independent-audit.md](../../manuscripts/graph-backends/finite-mwu-and-li-skeleton-independent-audit.md),
 [gomory-hu-external-factors-except-fixed-k.md](../../manuscripts/graph-backends/gomory-hu-external-factors-except-fixed-k.md),

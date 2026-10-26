@@ -78,6 +78,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/general-matching/README.md) · [Main proof](problems/general-matching/proof.md) · [Sources](problems/general-matching/sources.md) · [Verification](problems/general-matching/verify/README.md)
 
+- [A quadratic extraction of a matching optimality certificate](problems/general-matching/reference/certificate-proof.md)
+
 ### [Degree-constrained subgraphs](problems/degree-constrained-subgraphs/)
 
 [Statement](problems/degree-constrained-subgraphs/README.md) · [Main proof](problems/degree-constrained-subgraphs/proof.md) · [Sources](problems/degree-constrained-subgraphs/sources.md) · [Verification](problems/degree-constrained-subgraphs/verify/README.md)
@@ -772,6 +774,7 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [A source-rooted strengthening of the approximate-ball forest](manuscripts/graph-backends/multisource-rooted-approximate-ball-forest.md)
 - [Exact flow and local projection by rounding near-feasible circulations](manuscripts/graph-backends/near-feasible-rounding-and-exact-projection.md)
 - [Root audit: non-tight receivers and payable potential repairs](manuscripts/graph-backends/non-tight-receiver-and-batch-repairs-root-audit.md)
+- [Zero-length edges in integer distance and spanner interfaces](manuscripts/graph-backends/nonnegative-integer-distance-adapters.md)
 - [Sparse deterministic selection from nonuniform fractional routes](manuscripts/graph-backends/nonuniform-fractional-path-selection.md)
 - [Nonuniform parameter budgets for the current hierarchy](manuscripts/graph-backends/nonuniform-parameter-budget-frontiers.md)
 - [A payable batch criterion for matching-potential repairs](manuscripts/graph-backends/normalized-bin-potential-batch-repairs.md)

@@ -2,7 +2,7 @@
 
 **Abstract.** We prove a radius-specific cover reduction for arbitrary positive rational input lengths and a conditional growing-depth recurrence bound. The cover reduction exposes only polynomial-range integer lengths to the imported constant-degree primitive. For the recursive backend, explicit depth-independent recurrence and lifetime hypotheses imply a factor with logarithmic exponent $`335/336`$.
 
-The metric lemma and recurrence solution are mathematical results below. Complete realization of the required dynamic geometry, provenance, and retirement interfaces remains a hypothesis; a fixed-depth subpolynomial bound is not substituted for a uniform growing-depth proof. The [current matching theorem](../../problems/general-matching/proof.md) separately retains its complete raw-backend realization as Contract R.
+The metric lemma and recurrence solution are mathematical results below. Complete realization of the required dynamic geometry, provenance, and retirement interfaces remains a hypothesis; a fixed-depth subpolynomial bound is not substituted for a uniform growing-depth proof. The [current matching theorem](../../problems/general-matching/proof.md) separately retains complete deterministic cycle-search realization as an explicit hypothesis.
 
 ## 1. Source interfaces and the aspect constraint
 

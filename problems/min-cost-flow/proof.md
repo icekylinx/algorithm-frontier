@@ -8,15 +8,19 @@ monotone expansion of the capacity box. In particular, it does not need
 to evaluate fractional powers or to assume that the matching theorem
 itself is a minimum-cost-flow oracle.
 
-The imported algorithmic boundary is the complete raw-cycle and lifetime
-interface proved in the previous checkpoint. As with that construction,
-this remains a research proof, rather than an independently certified
-implementation. The quantitative conclusion depends on that boundary,
-not on the ability to check the final answer.
+The quantitative conclusion is conditional on the complete raw-cycle,
+initialization and lifetime interface stated in Section 1. Its proposed
+realization includes the unresolved [deterministic cycle-search implementation requirements](../general-matching/proof.md#116-explicit-raw-backend-realization-contract).
+The exact recovery and artificial-arc reductions below are proved
+separately; they do not establish that fast backend or its running time.
 
 ## 1. Statement and input conventions
 
 Let an oriented multigraph have at most N edge records over its lifetime.
+When Section 12 supplies initialization, N also counts its fixed
+artificial records. The lazy initialization rule there keeps their
+number O(m), where m bounds original edge births. The initial
+O(n+m_initial) input scan is charged separately.
 Parallel arcs, directed loops, arbitrary vertex degrees, and disconnected
 graphs are permitted. Each arc has an integer capacity u_e >= 0 and an
 integer cost c_e. The divergence vector d is integral. Original edge IDs
@@ -62,7 +66,7 @@ images, and retirement callbacks retain old metadata. Dormant copies
 remain counted. The numerical client maintains signed and absolute
 motion on all copies and retirement buckets.
 
-This is the interface of the following previous-checkpoint notes:
+The detailed interface specifications are in the following manuscripts:
 
 * [quantitative matching 4 5 composition](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md),
   Sections 1--7, for the raw backend cap;
@@ -504,20 +508,41 @@ linear scan.
 
 ## 12. Arbitrary demands and initial feasibility
 
-First remove isolated zero-demand vertices after an O(n+m) input scan.
-If the demand sum is nonzero, or if an isolated vertex has nonzero
-demand, the instance is infeasible. A vertex demand whose absolute value
-exceeds the sum of its incident capacities is also an immediate
-infeasibility certificate.
+The demand sum must be zero; otherwise no insertion can make the fixed
+demand vector feasible. For a static instance, an isolated vertex with
+nonzero demand, or an absolute demand exceeding its total incident
+capacity, is an immediate infeasibility certificate. Isolated zero-demand
+vertices can be omitted after the input scan.
 
-For the remaining instance add a hub r. With the convention that d_v is
+For an incremental stream, these incidence checks certify only a
+**current NO**. A later insertion may make the demand feasible. Retain
+every vertex name and demand, including those of initially isolated
+vertices. Maintain the incident-capacity sums and the count of
+nonzero-demand vertices failing this necessary test. Until that count
+first becomes zero, answer NO after each insertion and store the actual
+original edges. Insertions only increase those sums, so initialization
+is delayed at most once. When the count becomes zero, initialize the
+augmented problem on all currently incident vertices and seed it with
+the actual current graph. At that moment every nonzero-demand vertex
+is incident to an original edge, so at most twice the number of actual
+original edges require artificial arcs.
+
+This preliminary rule costs one input scan and constant-many integer
+updates per insertion. It preserves N=O(m), including all artificial
+records, without allocating an expanded numerical instance on a large
+unconnected demand universe. Zero-demand vertices need no numerical
+records until an insertion activates them; all activations are charged
+to actual vertex/edge records.
+
+For the retained instance add a hub r. With the convention that d_v is
 net inflow, add an artificial arc r->v of capacity d_v when d_v>0,
 and an artificial arc v->r of capacity -d_v when d_v<0. Put |d_v| flow
 on it. Give every original arc flow zero. This is an explicit integral
 flow with divergence d at the original vertices and zero at r.
 
-Let B_orig=sum_original |c_e|u_e, and give every artificial arc the
-same positive integer cost P_art=4B_orig+1 (or any larger integer).
+Let B_orig=sum_original |c_e|u_e. For a static instance, give every
+artificial arc the same positive integer cost P_art=4B_orig+1 (or any
+larger integer).
 The augmented graph has O(m+n_active) records and polynomially bounded
 data when the original data are polynomially bounded.
 
@@ -528,11 +553,26 @@ Therefore the augmented optimum uses no artificial flow exactly when
 the original problem is feasible. If it does, its restriction is an
 optimal original flow.
 
-For an incremental fixed-threshold problem with F<=B_orig, a YES
-augmented witness automatically has zero artificial flow. One may use
-a fixed bound on the final original data when choosing P_art. Thresholds
-outside the original possible objective range are handled by a
-feasibility query or by their immediate comparison meaning.
+For an incremental fixed-threshold problem, let B_star be a declared
+upper bound on sum_original |c_e|u_e over the entire stream, and choose
+
+    P_art = 2 B_star + |F| + 1.
+
+All artificial arc costs stay fixed during the run. Every integral
+augmented flow using a positive artificial amount then has cost at least
+P_art-B_star>F. Thus an augmented threshold witness has zero artificial
+flow, and the augmented YES/NO answer is exactly the original threshold
+answer after every insertion. This includes F outside the original
+possible objective range and initially infeasible demand instances.
+The numerical cap S must include this declared penalty, all fixed
+demands and the initial artificial flow. It changes only by a fixed
+power when all stream data have the stated polynomial bounds.
+
+For example, with two initially isolated vertices of demands -1 and +1,
+the preliminary rule returns a current NO. A capacity-one, zero-cost
+arc from the first vertex to the second triggers initialization, after
+which threshold F=0 is feasible. Rejecting the stream permanently at
+its empty initial graph would lose this valid transition.
 
 If initial padded cost already meets the target, perform the exact
 recovery and check immediately; there is no need to evaluate log z.
@@ -560,7 +600,7 @@ perfect-feasibility promise on the input. Maximum flow and capacitated
 bipartite min-cost flow are standard direct specializations.
 
 The incremental threshold algorithm has the same total exponent with N
-equal to the total original record bound, on the fixed correct backend
+equal to the total augmented record bound, on the fixed correct backend
 parameter choice. Unknown final N can be handled by ordinary doubling
 and complete restarts on the current graph, retaining already found YES
 witnesses. Such restarts add only the usual geometric-series overhead.

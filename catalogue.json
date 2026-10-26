@@ -47,62 +47,62 @@
     },
     {
       "title": "Graph algorithms",
-      "note": "Use each result’s declared graph cap N, with $U=\\log(N+4)$, $h=\\log(U+4)$ and $\\mathcal E_a=\\exp(O(U^ah^{1-a}))$. The flow entry instead displays its numerical cap S explicitly. Conditional compositions retain their named hierarchy, raw-cycle and lifetime interfaces; the MSF entry is a derived public baseline.",
+      "note": "Use each result’s declared graph cap N, with $U=\\log(N+4)$, $h=\\log(U+4)$ and $\\mathcal E_a=\\exp(O(U^ah^{1-a}))$. The flow entry displays its numerical cap S explicitly. Conditional bounds require the data structures and update guarantees listed in the source maps; the MSF entry combines named published theorems.",
       "records": [
         {
           "id": "general-matching",
           "title": "Deterministic general-graph maximum matching",
-          "result": "Exact matching with original edge identifiers",
-          "quantity": "$O(n+m)+(m_s+1)\\exp(O((\\log(m_s+2))^{4/5}(\\log\\log(m_s+4))^{1/5}))$; optional $m_H=O(\\nu(G)^2)$ kernel",
-          "scope": "Conditional on raw-backend Contract R and the named deterministic primitives; m_s counts distinct nonloop edges. The preprocessing kernel and its componentwise refinement are unconditional",
-          "randomness": "Deterministic conditional composition, requiring deterministic external primitives and a deterministic implementation of Contract R."
+          "result": "Executable exact solver, independent certificates and a faster conditional research theorem",
+          "quantity": "Executable $O(n+m\\log(m+2)+\\sum_i k_i^3)$ including certificates; conditional research bound $O(n+m)+(m_s+1)\\exp(O((\\log(m_s+2))^{4/5}(\\log\\log(m_s+4))^{1/5}))$",
+          "scope": "The reference solver uses only the Python standard library; k_i counts retained kernel vertices in component i. The faster research bound still requires an unimplemented deterministic cycle-search and edge-retirement data structure. Its precise operations and published prerequisites are listed with the proof.",
+          "randomness": "Deterministic executable solver and certificate verification. The faster research composition additionally requires the deterministic cycle-search implementation and named published primitives in the source map."
         },
         {
           "id": "degree-constrained-subgraphs",
           "title": "Degree-constrained subgraphs",
           "result": "Exact factors, interval degrees and cardinality optimization",
           "quantity": "$O(n+m)+(m+1)\\mathcal E_{4/5}$",
-          "scope": "Unconditional deterministic sparse reductions on loopless multigraphs, with capacity one per explicit edge record; exact or ranged cardinality uses one matching call. Fast running time conditional on Contract R",
-          "randomness": "Deterministic reductions conditional on the deterministic matching backend, including Contract R and its external primitives."
+          "scope": "Unconditional deterministic sparse reductions on loopless multigraphs, with capacity one per explicit edge record; exact or ranged cardinality uses one matching call. The displayed fast time requires the faster conditional matching implementation.",
+          "randomness": "Deterministic reductions using any correct deterministic exact matching solver. The faster bound additionally requires the cycle-search implementation and published prerequisites of the matching theorem."
         },
         {
           "id": "min-cost-flow",
           "title": "Static and threshold min-cost flow",
           "result": "Exact integral optimum or threshold witness",
           "quantity": "$O((N+1)E(S)^4\\mathrm{polylog}S)$, $E(S)=\\exp(O((\\log S)^{4/5}(\\log\\log(S+4))^{1/5}))$",
-          "scope": "Conditional raw-cycle lifetime and initialization interfaces; numerical cap S; full-flow output charged separately",
-          "randomness": "Deterministic exact numerical client conditional on the stated deterministic raw-cycle/lifetime backend, including its guarantees for adaptive polynomial-length histories."
+          "scope": "Conditional deterministic cycle search, edge retirement and initialization; numerical cap S; exact affine integral recovery and prefix-safe deferred initialization are proved locally. Full-flow output is charged separately.",
+          "randomness": "Deterministic exact numerical reductions. The fast dynamic bound requires the stated deterministic cycle-search, flow-maintenance and edge-retirement data structures for adaptive polynomial-length histories."
         },
         {
           "id": "incremental-scc",
           "title": "Incremental strongly connected components",
           "result": "Exact component labels",
           "quantity": "Total $(n+m)\\mathcal E_{4/5}^{O(1)}\\mathrm{poly}(U)$",
-          "scope": "Conditional raw-cycle/retirement interface; total insertion work; component labels only",
-          "randomness": "Deterministic conditional composition using the deterministic raw-cycle backend and exact nonzero-base, flow-maintenance and retirement interfaces; no randomized error allowance is stated."
+          "scope": "The fast update bound requires the stated cycle-search and edge-retirement data structures. A separate component-label history answers first-coalescence queries in $O(1+\\log\\log(n+2))$ time after $O(n\\log(n+2))$ label changes.",
+          "randomness": "Deterministic label-history construction and conditional SCC maintenance. The latter requires deterministic cycle search, exact flow maintenance and edge retirement under adaptive updates."
         },
         {
           "id": "incremental-sssp",
           "title": "Incremental directed SSSP",
           "result": "$(1+\\epsilon)$ distances and simple paths",
           "quantity": "Total $(n+m)\\exp(O(U^{4/5}h^{1/5}+\\sqrt{U(h+\\log(1/\\epsilon))}))$",
-          "scope": "Conditional detector/retirement interface; positive polynomial-range lengths; $0<\\epsilon\\le1/2$, $\\log(1/\\epsilon)=O(U)$; $k$-edge output costs $(k+1)\\mathrm{poly}(U)$",
-          "randomness": "Deterministic conditional composition; its raw-cycle and retirement backend is explicitly required to be deterministic and to support adaptive updates."
+          "scope": "Conditional distance detector and edge-retirement data structures; nonnegative polynomial-range integer lengths; $0<\\epsilon\\le1/2$, $\\log(1/\\epsilon)=O(U)$; a k-edge simple path costs $(k+1)\\mathrm{poly}(U)$ to report.",
+          "randomness": "Deterministic path-reporting and integer zero-length reductions. The faster distance maintenance requires the deterministic cycle-search and edge-retirement guarantees listed in the source map."
         },
         {
           "id": "apsp-frontier",
           "title": "Fully dynamic APSP",
           "result": "A family of update/stretch tradeoffs",
           "quantity": "Amortized factor $\\exp(O(U/t+t^3h))$; stretch $\\exp(O(t^4h))$; query $\\mathrm{poly}(U)$",
-          "scope": "Conditional metric hierarchy; $t\\to\\infty$, $t^2h=o(U)$; positive polynomial-range lengths; five explicit parameter points",
-          "randomness": "Deterministic conditional composition under the normalized deterministic metric-hierarchy contract, including its construction, update and query interfaces."
+          "scope": "Conditional metric data structures; $t\\to\\infty$, $t^2h=o(U)$. All five explicit points allow nonnegative polynomial-range integer lengths; the general zero-length extension additionally requires $t^4h=o(U)$ and an explicit uniform stretch bound.",
+          "randomness": "Deterministic conditional composition using the metric hierarchy, construction/update guarantees and uniform numerical bounds listed in the source map."
         },
         {
           "id": "dynamic-spanners",
           "title": "Dynamic spanners",
           "result": "Two distinct stretch/recourse regimes",
           "quantity": "Tracked terminals $\\mathcal E_{4/5}$; full-horizon $\\mathcal E_{5/6}$ with recourse $(n+D)\\mathcal E_{5/6}$",
-          "scope": "Conditional hierarchy interfaces; unweighted graph; amortized work includes initial inventory, insertions and deletions",
+          "scope": "Conditional hierarchy and forest data structures. The unweighted results extend to nonnegative polynomial-range integer weights using dyadic positive classes and a separate zero-edge class; initialization, insertions, deletions and settled output recourse are charged.",
           "randomness": "Both displayed spanner constructions are deterministic conditional on the stated deterministic hierarchy and forest interfaces. Randomized public baselines are comparisons only."
         },
         {
@@ -117,8 +117,8 @@
           "id": "decremental-strong-forest",
           "title": "Strong forests and Gomory–Hu trees",
           "result": "Decremental strong forest; exact cut-equivalent tree",
-          "quantity": "$O(n+m)+(m+1)\\mathcal E_{6/7}$",
-          "scope": "Conditional forest/flow interfaces; bounded-degree native forest; arbitrary-degree cut-tree transfer with positive polynomial-range integer capacities",
+          "quantity": "Native forest $(n+m)\\mathcal E_{6/7}$; cut-equivalent tree $O(n+m)+(m+1)\\mathcal E_{6/7}$",
+          "scope": "Conditional forest and exact-flow data structures; bounded-degree native forest with nonnegative integer lengths. The arbitrary-degree Gomory–Hu transfer allows nonnegative polynomial-range integer capacities and separately charges isolated vertices.",
           "randomness": "Deterministic conditional composition; the strong forest and exact Gomory-Hu transfer require the named deterministic hierarchy, flow, skeleton and guide-tree interfaces."
         }
       ]

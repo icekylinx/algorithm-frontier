@@ -71,7 +71,7 @@ q^{1+O(1/a)+o_a(1)}
 ```
 time, with an absolute coefficient in $`O(1/a)`$. Its numerical parameters must be computed by finite arithmetic from $`a`$ and the input size. Neither a branch-dependent asymptotic constant nor an unknown exceptional-size cutoff is executable advice.
 
-Theorem 1 then gives one deterministic $`q^{1+o(1)}`$ matching algorithm. For the carrier construction, the required fast-branch statement includes the complete raw-cycle realization, persistent ledger operations, exact projection, and phase accounting. The [current matching proof](../../problems/general-matching/proof.md), particularly its explicit Contract R, records that dependency. This uniformization theorem does not discharge it.
+Theorem 1 then gives one deterministic $`q^{1+o(1)}`$ matching algorithm. For the carrier construction, the required fast-branch statement includes the complete raw-cycle realization, persistent ledger operations, exact projection, and phase accounting. The [current matching proof](../../problems/general-matching/proof.md), particularly its explicit cycle-search implementation requirements, records that dependency. This uniformization theorem does not discharge it.
 
 A flaw in every fast branch would leave the fallback's exactness and polynomial termination intact, but would invalidate the improved running-time conclusion.
 

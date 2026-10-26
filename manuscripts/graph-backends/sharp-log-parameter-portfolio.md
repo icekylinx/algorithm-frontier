@@ -9,7 +9,7 @@ O(n+m)+(m_s+1)\exp\!\left[
 ```
 The parameter balance is proved explicitly. Its improved logarithmic factor comes from selecting one favorable fixed tuple of constants through a verified portfolio, without an additional slowly growing coefficient.
 
-The numerical realization remains a hypothesis. The current stronger [main matching theorem](../../problems/general-matching/proof.md) retains Contract R; neither the fixed-tuple argument nor final output verification proves that contract.
+The numerical realization remains a hypothesis. The current stronger [main matching theorem](../../problems/general-matching/proof.md) retains the explicit cycle-search implementation hypothesis; the fixed-tuple argument and final output verification leave it unresolved.
 
 The quantifier used here is a *fixed constant tuple*, chosen by a uniform
 program through exhaustive interleaving. A favorable tuple is the same

@@ -1,13 +1,14 @@
 # A direct dynamic spanner from tracked terminal forests
 
-**Theorem and proof.** All algorithmic conclusions use the explicitly stated interfaces and computational models.
+**Conditional composition theorems.** The two spanner constructions
+require the deterministic metric and forest interfaces stated below.
+Local observer and batching arguments do not implement those providers.
 
 This note constructs a deterministic fully dynamic spanner with explicit
 four-fifths overhead, by using the already maintained flat witness
 forests of the numerical APSP hierarchy. Its output recourse depends
 on insertions as well as deletions. It therefore complements, rather
-than supersedes, the five-sixths low-recourse construction in
-[fully dynamic spanner five sixths](proof.md).
+than supersedes, the five-sixths low-recourse construction in Part II.
 
 The bound, for an arbitrary-degree unweighted undirected
 graph on `n` fixed vertices, is
@@ -29,6 +30,13 @@ over a polynomially bounded history, `N` is its declared master cap,
 edges have distinct identifiers. Self-loops can be ignored. Queries
 and the output see settled external updates. No worst-case update
 claim or recourse bound independent of `I` is made.
+
+Histories may be chosen adaptively from previous published outputs,
+provided the deterministic providers satisfy their stated contracts on
+that same history. All physical lifetimes and generated records count
+toward their announced caps. The maintained output is an explicit edge
+set; enumerating its entire current contents costs an additional
+$`\Omega(|E(H_{\rm out})|)`$ output operations when requested.
 
 The construction does not union every edge in every allocated flat
 forest. Such a union can depend on the `Theta(m)` native port vertices
@@ -88,8 +96,7 @@ for in working storage and maintenance.
 
 The explicit proof of these families, their pointwise occurrence,
 and their full maintenance is
-[destructive apsp path support extractor](../../manuscripts/graph-backends/destructive-apsp-path-support-extractor.md), Sections 2--2.2, with
-[Destructive path-support extraction from the APSP hierarchy](../../manuscripts/graph-backends/destructive-apsp-path-support-extractor.md). The extra local exact family
+[Destructive path-support extraction from the APSP hierarchy](../../manuscripts/graph-backends/destructive-apsp-path-support-extractor.md), Sections 2--2.2. The extra local exact family
 in item 4 has the same `k^{O(1)} poly(U)` bound. Its generic lift
 recurrence is `G_parent <= P(G_child+1)`, and each local family is
 lifted once from its birth level. The factor `k^{O(1)}` is not
@@ -558,7 +565,15 @@ factors and a factor two in stretch. Clipped root caps and caches
 refer to each unweighted class, not to the numerical magnitude of
 its original edge weights.
 
-## 9. Proof dependencies and completed audits
+Nonnegative integer lengths use one additional **unweighted zero-edge
+class**. Its published edges retain original zero lengths, so it
+preserves the current zero-cost connected components by actual paths.
+Zero-edge deletions are processed before publication. Summing its work
+and recourse with the positive dyadic classes changes only polynomial
+logarithmic factors. The full argument is in
+[Zero-length edge adapters, Section 3](../../manuscripts/graph-backends/nonnegative-integer-distance-adapters.md).
+
+## 9. Proof dependencies and review scope
 
 The numerical hierarchy, normalized static provider, local source
 families, and arbitrary-forest lift are retained research imports.
@@ -567,25 +582,26 @@ observer, its root mark inventory, and the short compressed-path
 union. The local compression proof is separately written in
 [dynamic marked forest short path union](../../manuscripts/graph-backends/dynamic-marked-forest-short-path-union.md).
 
-The full tracking, canonical-handle, source-family, and update-count
-interfaces have passed the independent audit in
-[A direct dynamic spanner from tracked terminal forests](proof.md) and the root
-audit in [A direct dynamic spanner from tracked terminal forests](proof.md). The separate
-public-provider comparison is checked in the focused audit named
-above. These are internal mathematical reviews of a research proof
-assembly, not formal verification, external review, or performance
-measurements. No claim about exact matching or insertion-independent
-recourse follows from the four-fifths spanner point.
+The local tracking and compression arguments specify what the provider
+must expose: stable canonical handles, source-tree lifetimes, typed
+nulls, physical-edge maps, and a chronological update transcript with
+initial credit. A distance-only approximation oracle supplies none of
+these obligations automatically. The separate public-provider
+comparison is in the focused audit named above. The linked notes record
+internal mathematical reviews only. No end-to-end implementation, formal verification
+or performance measurement is claimed. The four-fifths construction
+does not establish insertion-independent recourse or an exact matching
+bound.
 
 
 ---
 
 ## Part II. A deletion-sensitive recourse theorem
 
-# A fully dynamic spanner with explicit five-sixths overhead
+### A fully dynamic spanner with explicit five-sixths overhead
 
-**Research proof assembly, 25 October 2026. Root and independent
-mathematical audits of the full-horizon construction completed.**
+**Conditional full-horizon composition.** This part gives the exact
+batching and lifetime accounting under its single-instance contract.
 
 This note supplies the full update horizon for the clipped-walk spanner
 transfer. It reconstructs the batching argument in the published version
@@ -613,7 +629,8 @@ Here `m_0` is the actual initial number of edges, `I,D` count subsequent
 insertions and deletions, `N` is a declared polynomial history cap,
 `U=log(N+4)`, and `h=log(U+4)`. The vertex set is fixed with size `n`.
 Lengths are unweighted, or positive polynomial-range integers handled
-by separate unweighted length classes. Edge IDs distinguish physical
+by separate unweighted length classes. Nonnegative integer lengths
+add the zero-edge class described in Part I, Section 8. Edge IDs distinguish physical
 lifetimes and parallel edges. Self-loops are irrelevant and discarded.
 All displayed guarantees hold after complete external updates; time
 is amortized, not worst case.
@@ -873,6 +890,10 @@ each dyadic length class. The final union has twice the unweighted
 stretch and a polynomial-logarithmic factor in the other quantities.
 Clipping occurs in each unweighted class graph. It never enumerates
 `Gamma` times the numerical value of a large original edge weight.
+An additional unweighted instance for zero-length edges preserves
+their current connected components by zero-cost output paths. Its
+local deletion count is included in $`D`$; summing (F14) over all
+classes gives $`(O(n\log N)+D)\exp O(U^{5/6}h^{1/6})`$.
 
 ## 6. Quantitative substitution
 
@@ -934,9 +955,9 @@ positive root degree adapters. It changes `U` by only a fixed constant
 factor. This is a bound on actual records, not padded instances.
 
 Equations (F13), (F14), and (F18) prove conclusion (F1), with the
-explicitly retained research-provider imports. The completed audits are
-[A direct dynamic spanner from tracked terminal forests](proof.md) and
-[A direct dynamic spanner from tracked terminal forests](proof.md).
+explicitly retained research-provider imports. They establish the
+conditional batching implication, including actual seeding and
+retirement costs; they do not certify the numerical provider.
 
 ## 7. Public comparison at the same output guarantees
 
@@ -1109,12 +1130,12 @@ remain attached to any final novelty summary. This note establishes
 a comparison with the explicitly reconstructed public composition;
 it does not claim to have optimized every public spanner framework.
 
-The provider, no-reset native hierarchy, positive length/bits, and
-small-component interfaces are named imports from this research
-checkpoint. The clipped reporting and batching calculations above
-are newly assembled here. Their completed independent and root audits
-are linked after (F18). This is an internally audited research proof
-assembly, not a formal or externally reviewed verification.
+The provider, no-reset native hierarchy, positive internal lengths,
+finite-bit operations and small-component interfaces remain named
+imports. Sections 1–6 give the clipped-reporting and batching
+implication, with initialization and output recourse included. The
+result remains conditional on those imports; no executable dynamic
+provider or externally certified implementation is supplied here.
 
 
 ---

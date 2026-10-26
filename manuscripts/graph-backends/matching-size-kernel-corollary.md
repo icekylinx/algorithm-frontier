@@ -101,7 +101,7 @@ edge IDs back once, after acceptance.
 The uniform instruction scheduler and its independent acceptance check
 are already charged in Section 12 of the main theorem. Cleanup, greedy
 construction, kernelization and final translation are charged once in
-$`O(n+m)`$. No correctness or running-time property of Contract R follows
+$`O(n+m)`$. No correctness or running-time property of the required cycle-search implementation follows
 from kernelization itself.
 
 If nu=0, the greedy scan finds no nonloop edge and returns the empty

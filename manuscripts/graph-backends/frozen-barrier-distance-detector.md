@@ -84,7 +84,7 @@ For current positive weights $`w`$ and signed gradient $`g`$, the
 interface must do one of the following after settlement:
 
 * certify that every circulation has ratio greater than $`-1/4`$; or
-* return a circulation $`z`$, together with an explicit raw forest-path
+* return a circulation $`z`$, together with an explicit unit-signed raw forest-path
   representation and its positive raw weighted length $`R`$, such that
   $`\|Wz\|_1\leq R`$, $`g^Tz\leq-\beta R`$, and the representation
   can be applied at a dyadic scale $`\eta`$ with
@@ -293,10 +293,41 @@ P\leq(1+5\alpha)F,\qquad r\leq6\alpha F.
 
 ## 5. LOW still certifies all unreported vertices
 
-By the circulation/gradient duality used in Liu25 Lemma 3.7, a sound
-LOW statement yields a potential $`\pi`$ on the active graph satisfying
-$`|g-B\pi|\leq w/4`$. This uses one consistent incidence convention;
-the absolute value in the printed *negative-ratio premise* is not used.
+The required potential follows from the following elementary argument;
+no external circulation-duality theorem is needed here. Orient each
+active edge $`e=(u,v)`$ and define $`(B\pi)_e=\pi(v)-\pi(u)`$.
+
+**Lemma 5.1 (circulation bound implies a vertex potential).** For positive
+weights $`w_e`$ and $`\tau\geq0`$, suppose every signed circulation
+$`z`$ satisfies $`g^Tz\geq-\tau\sum_e w_e|z_e|`$. Then there is a
+vertex potential $`\pi`$ with
+
+```math
+|g_e-(\pi(v)-\pi(u))|\leq\tau w_e
+\qquad\text{for every active edge }e=(u,v).
+```
+
+**Proof.** Replace each edge by two directed constraint arcs: $`u\to v`$
+has length $`g_e+\tau w_e`$ and $`v\to u`$ has length
+$`-g_e+\tau w_e`$. A negative directed closed walk would project to a
+signed circulation $`z`$. If $`L`$ is its sum of positive weights,
+counting all traversals before cancellation, its length is
+$`g^Tz+\tau L`$ and $`\sum_e w_e|z_e|\leq L`$. Hence a negative
+length would give $`g^Tz+\tau\sum_e w_e|z_e|<0`$, contradicting the
+hypothesis. This also excludes a negative loop.
+
+Add a new source with zero-length arcs to every vertex. There are no
+negative closed walks, so finite shortest-path distances exist: removing
+closed subwalks never increases a path length. Let $`\pi`$ be these
+distances. The two arc inequalities give
+$`g_e-\tau w_e\leq\pi(v)-\pi(u)\leq g_e+\tau w_e`$, as required.
+Conversely, summing the potential inequalities against any circulation
+gives the assumed circulation bound because the vertex-potential term
+telescopes. Thus the implication is exact. ∎
+
+Apply the lemma with $`\tau=1/4`$ to a sound LOW statement. The
+shortest paths above prove existence only; the detector does not compute
+them or charge an unstated fast shortest-path subroutine.
 
 Set $`\phi=(r/(AM))\pi`$ and normalize $`\phi(s)=0`$. On every
 ordinary edge and every remaining auxiliary edge,
@@ -509,8 +540,12 @@ $`O(U)`$ bits. The exact evaluation of a power at exponent $`p`$
 can use $`O(U^2)`$-bit temporary integers; their polynomial bit cost
 is paid locally and is not an exported edge-label magnitude.
 
-The raw backend supplies at most $`E^{O(1)}`$ signed pieces in a flat
-forest of at most $`M E^{O(1)}`$ records. With polynomially bounded
+The raw backend supplies at most $`E^{O(1)}`$ **unit signed** physical-edge
+or forest-path pieces in a flat forest of at most $`M E^{O(1)}`$ records.
+Each piece contributes coefficients $`+1`$ or $`-1`$ along its traversals,
+as explicitly required by the [cycle-to-detector interface](raw-cycle-to-frozen-detector-bridge.md#1-imported-contract-and-master-sizes).
+An arbitrary rational-coefficient circulation would not justify the common
+flow grid below. With polynomially bounded
 root integer prices, its complete raw integer denominator satisfies
 $`1\leq V\leq N^{C_V}`$ for one fixed constant $`C_V`$. The usual
 degree-three port lift puts zero gradient and sufficiently negligible
