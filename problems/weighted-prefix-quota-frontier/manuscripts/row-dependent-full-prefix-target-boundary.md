@@ -18,10 +18,10 @@ Start from parameterized k-SetCover: a finite nonempty universe U, an explicitly
 
 The nontrivial reduction may assume
 
-$$
+```math
 1\le k\le n.
  \tag{RW1}
-$$
+```
 
 The excluded cases are polynomially decidable. An empty universe is a YES instance. With k=0, a nonempty universe is a NO instance. If n<k, the answer is determined by whether the union of all n sets covers U. If a many-one reduction must output a quota instance in these cases, use a constant YES or NO instance: one ground element and a rank-one uniform matroid, one full-prefix row of target two, and coefficient two for YES or one for NO. These constant outputs preserve a parameter bound depending only on k.
 
@@ -31,28 +31,28 @@ One may also preprocess an uncovered universe element as an immediate NO, but th
 
 Create one resource coordinate for each input set. Use the rank-k uniform matroid M on this n-element ground, with explicit rank
 
-$$
+```math
 r_M(A)=\min\{k,|A|\}.
  \tag{RW2}
-$$
+```
 
 Give the ground any one linear order. For each universe element u, introduce a row on its full prefix E, with coefficients
 
-$$
+```math
 a_{u,S}=1+\mathbf1[u\in S]\in\{1,2\},
        \qquad
              \sum_{S\in E}a_{u,S}x_S\ge k+1.
  \tag{RW3}
-$$
+```
 
 Set the scalar objective to zero. No other numeric constraint is imposed. In particular the bound on the number of chosen sets comes from the uniform resource, not from an extra scalar side condition.
 
 Every column is positive in every row. Because U is nonempty, all columns have the same nonempty support U. The parameter values are therefore
 
-$$
+```math
 Q=1,\qquad B=k+1.
  \tag{RW4}
-$$
+```
 
 The resource is fully explicit and easily evaluated. The matrix has n times |U| entries from a two-element alphabet, and all targets have O(log(k+1)) bits. Its size and construction time are polynomial in the explicit SetCover input.
 
@@ -60,19 +60,19 @@ The resource is fully explicit and easily evaluated. The matrix has n times |U| 
 
 An integer vector in P(M) is the indicator of a subset I of sets, with |I|<=k. In row u its value is
 
-$$
+```math
 \sum_{S\in I}a_{u,S}
            =|I|+|\{S\in I:u\in S\}|.
  \tag{RW5}
-$$
+```
 
 If I satisfies RW3, then for every u,
 
-$$
+```math
 |\{S\in I:u\in S\}|
                        \ge k+1-|I|\ge1.
  \tag{RW6}
-$$
+```
 
 Thus the selected family I is a cover using at most k sets.
 
@@ -80,12 +80,12 @@ Conversely, suppose I_0 is a cover with |I_0|<=k. Since n>=k, extend it by arbit
 
 Consequently
 
-$$
+```math
 \text{SetCover has a cover of size at most k}
  \quad\Longleftrightarrow\quad
  \text{RW3 is feasible over the integer points of P(M)}.
  \tag{RW7}
-$$
+```
 
 The integrality qualifier matters: this is not a claim that fractional feasibility solves SetCover.
 
@@ -95,10 +95,10 @@ The forward construction in Section 3 already produces exactly k selected coordi
 
 The reduction maps k to B=k+1 on every nontrivial instance. Exact k-SetCover is W[2]-hard, so exact feasibility in either quota formulation is W[2]-hard parameterized by B. In particular, unless FPT=W[2], there is no algorithm with running time
 
-$$
+```math
 f(B)\mathrm{poly}(H)
  \tag{RW8}
-$$
+```
 
 for any computable f on this row-dependent-weight class. Since rank(M)=k and Q=1, adding the uniform rank and support-pattern count to the parameter does not remove this conclusion.
 

@@ -3,8 +3,10 @@
 
 Only mathematical spans are changed. Inline code, ordinary code fences and
 HTML comments stay byte-for-byte intact. The transformations preserve values
-and statements: upright operator names use ``\\mathrm``, transitional display
-delimiters become dollar delimiters, and inline math stays on one physical line.
+and statements: upright operator names use ``\\mathrm``, displays use fenced
+``math`` blocks, and inline formulas use GitHub's dollar/backtick syntax.
+These protected forms keep Markdown from consuming TeX backslashes, braces,
+alignment separators and underscore pairs before MathJax sees the expression.
 Run without arguments to normalize Markdown and catalogue.json; use --check
 to report stale notation without writing any files. Requires only Python.
 """
@@ -15,6 +17,7 @@ import json
 from pathlib import Path
 import re
 import sys
+import textwrap
 
 ROOT = Path(__file__).resolve().parents[1]
 FENCE = re.compile(r"(?m)^ {0,3}(`{3,}|~{3,})([^\n]*)(?:\n|$)")
@@ -59,7 +62,7 @@ def normalize_body(body: str) -> str:
     return body
 
 
-def normalize_markdown(text: str) -> str:
+def normalize_markdown(text: str, *, github_safe: bool = True) -> str:
     """Normalize rendered mathematics while preserving code and comments."""
     output: list[str] = []
     index = 0
@@ -105,7 +108,21 @@ def normalize_markdown(text: str) -> str:
             if position < len(text):
                 body = normalize_body(text[index + len(opener):position])
                 if opener in {"$$", r"\["}:
-                    if opener == r"\[":
+                    if github_safe:
+                        line_start = text.rfind("\n", 0, index) + 1
+                        prefix = text[line_start:index]
+                        indent = prefix if not prefix.strip() else ""
+                        # A fence in a list keeps the opener's indentation on
+                        # every body line and the closing marker. TeX ignores
+                        # these common leading spaces.
+                        body = textwrap.dedent(body).strip()
+                        lead = "" if not prefix.strip() else "\n\n"
+                        following = text[position + len(closer):].split("\n", 1)[0]
+                        tail = "\n\n" if following.strip() else ""
+                        output.append(lead + "```math\n" +
+                                      "\n".join(indent + line for line in body.splitlines()) +
+                                      "\n" + indent + "```" + tail)
+                    elif opener == r"\[":
                         # Transitional delimiters may occur next to prose.
                         prefix = "" if not output or output[-1].endswith("\n") else "\n"
                         output.append(prefix + "$$\n" + body.strip() + "\n$$\n")
@@ -114,7 +131,8 @@ def normalize_markdown(text: str) -> str:
                 else:
                     # GitHub's inline renderer should never depend on a line join.
                     body = re.sub(r"\s*\n\s*", " ", body)
-                    output.append(("$`" + body + "`$") if opener == "$`" else "$" + body + "$")
+                    output.append(("$`" + body + "`$") if github_safe or opener == "$`"
+                                  else "$" + body + "$")
                 index = position + len(closer)
                 continue
         if text[index] == "\\":
@@ -129,7 +147,9 @@ def normalize_markdown(text: str) -> str:
 def normalize_catalogue(text: str) -> str:
     def walk(value: object) -> object:
         if isinstance(value, str):
-            return normalize_markdown(value)
+            # Catalogue strings are renderer-independent inputs. Their
+            # generator protects formulas after it lays out the paragraphs.
+            return normalize_markdown(value, github_safe=False)
         if isinstance(value, list):
             return [walk(item) for item in value]
         if isinstance(value, dict):

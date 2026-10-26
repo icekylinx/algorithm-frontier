@@ -1,28 +1,28 @@
 # A seven-element obstruction to an exact conditional-sign cone bound
 
-**Abstract.** We give a rank-three, seven-column representation over $\mathbb F_3$ and a positive amplitude vector for which the probability of satisfying every one-sided query inequality under independent uniform signs is exactly $15/128$. The example refutes the proposed universal fixed-amplitude lower bound $2^{-r}$. Its proof enumerates all query supports and all minimal invalid positive supports. The result concerns conditional signs and does not assert a sparsification lower bound or a failure of Gaussian cone bounds.
+**Abstract.** We give a rank-three, seven-column representation over $`\mathbb F_3`$ and a positive amplitude vector for which the probability of satisfying every one-sided query inequality under independent uniform signs is exactly $`15/128`$. The example refutes the proposed universal fixed-amplitude lower bound $`2^{-r}`$. Its proof enumerates all query supports and all minimal invalid positive supports. The result concerns conditional signs and does not assert a sparsification lower bound or a failure of Gaussian cone bounds.
 
 ## 1. Fixed-amplitude sign-cone inequality
 
-For a rank-$r$ matrix $A$ over a finite field, consider its binary query supports
-$$
+For a rank-$`r`$ matrix $`A`$ over a finite field, consider its binary query supports
+```math
 b_e(x)=\mathbf1[(xA)_e\ne0].
-$$
-One might hope that for every fixed positive amplitude vector $a$,
-$$
+```
+One might hope that for every fixed positive amplitude vector $`a`$,
+```math
 \Pr_{\sigma\in\{-1,1\}^m}
  \left[\sum_e a_e\sigma_e b_e(x)\le0
        \quad\text{for all }x\right]\ge 2^{-r}.
  \tag{1}
-$$
+```
 The probability is over independent uniform signs only. In a Gaussian proof, this would be the stronger assertion obtained by conditioning on every coordinate's absolute value.
 
-Equation (1) is false for $r=3$, $m=7$, over $\mathbb F_3$.
+Equation (1) is false for $`r=3`$, $`m=7`$, over $`\mathbb F_3`$.
 
 ## 2. Exact counterexample
 
 Take
-$$
+```math
 A=
  \begin{pmatrix}
  1&0&0&1&1&0&1\\
@@ -32,86 +32,86 @@ A=
  \qquad
  a=(6,5,3,5,5,5,6).
  \tag{2}
-$$
+```
 The first three columns form a basis. The represented rank-three matroid is the usual non-Fano configuration.
 
-For a sign vector, let $P=\{e:\sigma_e=1\}$. The inequality for a query support $Q$ is equivalent to
-$$
+For a sign vector, let $`P=\{e:\sigma_e=1\}`$. The inequality for a query support $`Q`$ is equivalent to
+```math
 \sum_{e\in P\cap Q}a_e
  \le \frac12\sum_{e\in Q}a_e.
  \tag{3}
-$$
-The nonempty supports of the ternary row space are exactly the following thirteen sets. Each nonzero scalar multiple has the same support, so these account for all $26$ nonzero queries.
+```
+The nonempty supports of the ternary row space are exactly the following thirteen sets. Each nonzero scalar multiple has the same support, so these account for all $`26`$ nonzero queries.
 
-| $Q$ | $\sum_{e\in Q}a_e$ |
+| $`Q`$ | $`\sum_{e\in Q}a_e`$ |
 |---|---:|
-| $3567$ | $19$ |
-| $2467$ | $21$ |
-| $2345$ | $18$ |
-| $1457$ | $22$ |
-| $1346$ | $19$ |
-| $1256$ | $21$ |
-| $12367$ | $25$ |
-| $12357$ | $25$ |
-| $12347$ | $25$ |
-| $234567$ | $29$ |
-| $134567$ | $30$ |
-| $124567$ | $32$ |
-| $123456$ | $29$ |
+| $`3567`$ | $`19`$ |
+| $`2467`$ | $`21`$ |
+| $`2345`$ | $`18`$ |
+| $`1457`$ | $`22`$ |
+| $`1346`$ | $`19`$ |
+| $`1256`$ | $`21`$ |
+| $`12367`$ | $`25`$ |
+| $`12357`$ | $`25`$ |
+| $`12347`$ | $`25`$ |
+| $`234567`$ | $`29`$ |
+| $`134567`$ | $`30`$ |
+| $`124567`$ | $`32`$ |
+| $`123456`$ | $`29`$ |
 
-Here $3567$, for example, denotes $\{3,5,6,7\}$.
+Here $`3567`$, for example, denotes $`\{3,5,6,7\}`$.
 
-**Proposition 1.** Exactly fifteen positive supports $P$ satisfy (3) for every row of the table:
-$$
+**Proposition 1.** Exactly fifteen positive supports $`P`$ satisfy (3) for every row of the table:
+```math
 \varnothing;\qquad
  \{i\}\ (i=1,\ldots,7);\qquad
  \{3,i\}\ (i\ne3);\qquad
  \{2,6\}.
  \tag{4}
-$$
+```
 Consequently, the probability in (1) is
-$$
+```math
 \frac{15}{128}<\frac18=2^{-3}.
  \tag{5}
-$$
+```
 
-**Proof.** The empty set and all singletons satisfy (3). For a pair containing $3$, its positive weight is at most $3+6=9$. Every support containing $3$ has total weight at least $18$; a support omitting $3$ meets the pair in at most one element, of weight at most $6$. Thus all six such pairs are valid. The pair $26$ has positive weight $10$; the smallest supports containing both elements have total weight $21$, and supports meeting the pair only once cause no problem. This proves validity of all fifteen sets in (4).
+**Proof.** The empty set and all singletons satisfy (3). For a pair containing $`3`$, its positive weight is at most $`3+6=9`$. Every support containing $`3`$ has total weight at least $`18`$; a support omitting $`3`$ meets the pair in at most one element, of weight at most $`6`$. Thus all six such pairs are valid. The pair $`26`$ has positive weight $`10`$; the smallest supports containing both elements have total weight $`21`$, and supports meeting the pair only once cause no problem. This proves validity of all fifteen sets in (4).
 
-Every other pair is invalid. The following witnesses list $Q$ and the strictly positive quantity
-$$
+Every other pair is invalid. The following witnesses list $`Q`$ and the strictly positive quantity
+```math
 2\sum_{e\in P\cap Q}a_e-\sum_{e\in Q}a_e.
-$$
+```
 
-| Invalid pair $P$ | Witness $Q$ | Violation |
+| Invalid pair $`P`$ | Witness $`Q`$ | Violation |
 |---|---|---:|
-| $12$ | $1256$ | $1$ |
-| $14$ | $1346$ | $3$ |
-| $15$ | $1256$ | $1$ |
-| $16$ | $1346$ | $3$ |
-| $17$ | $1457$ | $2$ |
-| $24$ | $2345$ | $2$ |
-| $25$ | $2345$ | $2$ |
-| $27$ | $2467$ | $1$ |
-| $45$ | $2345$ | $2$ |
-| $46$ | $1346$ | $1$ |
-| $47$ | $2467$ | $1$ |
-| $56$ | $3567$ | $1$ |
-| $57$ | $3567$ | $3$ |
-| $67$ | $3567$ | $3$ |
+| $`12`$ | $`1256`$ | $`1`$ |
+| $`14`$ | $`1346`$ | $`3`$ |
+| $`15`$ | $`1256`$ | $`1`$ |
+| $`16`$ | $`1346`$ | $`3`$ |
+| $`17`$ | $`1457`$ | $`2`$ |
+| $`24`$ | $`2345`$ | $`2`$ |
+| $`25`$ | $`2345`$ | $`2`$ |
+| $`27`$ | $`2467`$ | $`1`$ |
+| $`45`$ | $`2345`$ | $`2`$ |
+| $`46`$ | $`1346`$ | $`1`$ |
+| $`47`$ | $`2467`$ | $`1`$ |
+| $`56`$ | $`3567`$ | $`1`$ |
+| $`57`$ | $`3567`$ | $`3`$ |
+| $`67`$ | $`3567`$ | $`3`$ |
 
-Because every amplitude is positive, any set containing one of these invalid pairs is also invalid. The graph of valid pairs is the star centered at $3$, with the additional edge $26$. Its only triangle is $236$. That triangle is invalid as well: for $Q=12367$, its positive weight is $5+3+5=13>25/2$. No larger clique exists. This excludes every remaining positive support and proves the proposition. $\square$
+Because every amplitude is positive, any set containing one of these invalid pairs is also invalid. The graph of valid pairs is the star centered at $`3`$, with the additional edge $`26`$. Its only triangle is $`236`$. That triangle is invalid as well: for $`Q=12367`$, its positive weight is $`5+3+5=13>25/2`$. No larger clique exists. This excludes every remaining positive support and proves the proposition. $`\square`$
 
 ## 3. Direct sums and Gaussian scope
 
-The union-closure chain length of this query-support family is exactly three. Indeed, the union of the supports of a set of queries depends only on their linear span, so a strict union chain can be generated by at most three linearly independent queries. The three coordinate queries attain three strict increases. Thus (5) also refutes the corresponding exact $2^{-d}$ fixed-amplitude assertion for general binary set systems of union-closure chain length $d$.
+The union-closure chain length of this query-support family is exactly three. Indeed, the union of the supports of a set of queries depends only on their linear span, so a strict union chain can be generated by at most three linearly independent queries. The three coordinate queries attain three strict increases. Thus (5) also refutes the corresponding exact $`2^{-d}`$ fixed-amplitude assertion for general binary set systems of union-closure chain length $`d`$.
 
-Taking direct sums of $k$ independent copies gives rank $3k$ and a conditional-sign probability exactly $(15/128)^k$. This rules out the constant $1$ in the exponent $2^{-r}$ for that stronger formulation. It remains an exponential function of rank, so it does not refute the weaker type of estimate needed by the Gaussian-section sparsification method.
+Taking direct sums of $`k`$ independent copies gives rank $`3k`$ and a conditional-sign probability exactly $`(15/128)^k`$. This rules out the constant $`1`$ in the exponent $`2^{-r}`$ for that stronger formulation. It remains an exponential function of rank, so it does not refute the weaker type of estimate needed by the Gaussian-section sparsification method.
 
 In particular, no claim about the following Gaussian probability follows merely from this example:
-$$
+```math
 \Pr_{\xi\sim N(0,I)}
  \left[\sum_e w_e\xi_e b_e(x)\le0
        \quad\text{for all }x\right].
  \tag{6}
-$$
-Gaussian averaging changes the amplitude distribution. A field-independent hereditary lower bound $\exp(-Cr)$ for (6) would still be sufficient for an $O(r/\epsilon^2)$ support theorem through the companion Gaussian symmetrizer. The counterexample therefore establishes precisely the failure of the fixed-amplitude constant in (1).
+```
+Gaussian averaging changes the amplitude distribution. A field-independent hereditary lower bound $`\exp(-Cr)`$ for (6) would still be sufficient for an $`O(r/\epsilon^2)`$ support theorem through the companion Gaussian symmetrizer. The counterexample therefore establishes precisely the failure of the fixed-amplitude constant in (1).

@@ -18,19 +18,19 @@ Deterministic compiler with a supplied deterministic indexed-witness Subset Sum 
 
 **Time**
 
-$T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q-(1-\alpha)B}$, $0\le B\le Q$. Branch count is at most $\left(\prod_i p_i\right)2^{Q-B}$, not necessarily equal to that bound.
+$`T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q-(1-\alpha)B}`$, $`0\le B\le Q`$. Branch count is at most $`\left(\prod_i p_i\right)2^{Q-B}`$, not necessarily equal to that bound.
 
 **Space**
 
-If the same backend has writable space $\mathrm{poly}(L')2^{\sigma N}$, then $S_B\le\mathrm{poly}(L)2^{\sigma(n+B)}$. No space bound is inferred from a time-only backend.
+If the same backend has writable space $`\mathrm{poly}(L')2^{\sigma N}`$, then $`S_B\le\mathrm{poly}(L)2^{\sigma(n+B)}`$. No space bound is inferred from a time-only backend.
 
 **Parameters**
 
-$s_i$ is row support; $W_i=u_i-\ell_i$; $\kappa_i=\min\{W_i+1,5s_i+1\}$; $q_i=\lceil\log_2\kappa_i\rceil$; $Q=\sum_iq_i$. Catalogue sizes satisfy $p_i\le4\lceil\log_2(W_i+1)\rceil+1$, with $p_i=1$ when $W_i\le5s_i$. $L$ is full binary input length.
+$`s_i`$ is row support; $`W_i=u_i-\ell_i`$; $`\kappa_i=\min\{W_i+1,5s_i+1\}`$; $`q_i=\lceil\log_2\kappa_i\rceil`$; $`Q=\sum_iq_i`$. Catalogue sizes satisfy $`p_i\le4\lceil\log_2(W_i+1)\rceil+1`$, with $`p_i=1`$ when $`W_i\le5s_i`$. $`L`$ is full binary input length.
 
 **Model and representation**
 
-Boolean variables; signed binary coefficients, endpoints, and objectives; a deterministic Subset Sum backend with the stated indexed-witness contract. Exact equalities affect $L$ but contribute no slack parameter.
+Boolean variables; signed binary coefficients, endpoints, and objectives; a deterministic Subset Sum backend with the stated indexed-witness contract. Exact equalities affect $`L`$ but contribute no slack parameter.
 
 **Lower-bound scope**
 
@@ -46,33 +46,33 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 ## Results
 
-**$B=0$**
+**$`B=0`$**
 
-**Time.** $\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q}$
+**Time.** $`\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q}`$
 
-**Writable space, when supplied by the backend.** $\mathrm{poly}(L)2^{\sigma n}$
+**Writable space, when supplied by the backend.** $`\mathrm{poly}(L)2^{\sigma n}`$
 
-**Any $0\le B\le Q$**
+**Any $`0\le B\le Q`$**
 
-**Time.** $\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q-(1-\alpha)B}$
+**Time.** $`\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q-(1-\alpha)B}`$
 
-**Writable space, when supplied by the backend.** $\mathrm{poly}(L)2^{\sigma(n+B)}$
+**Writable space, when supplied by the backend.** $`\mathrm{poly}(L)2^{\sigma(n+B)}`$
 
-**$B=Q$**
+**$`B=Q`$**
 
-**Time.** $\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha(n+Q)}$
+**Time.** $`\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha(n+Q)}`$
 
-**Writable space, when supplied by the backend.** $\mathrm{poly}(L)2^{\sigma(n+Q)}$
+**Writable space, when supplied by the backend.** $`\mathrm{poly}(L)2^{\sigma(n+Q)}`$
 
 **Fixed number of interval constraints**
 
-**Time.** $\mathrm{poly}(L)2^{\alpha n}$
+**Time.** $`\mathrm{poly}(L)2^{\alpha n}`$
 
-**Writable space, when supplied by the backend.** $\mathrm{poly}(L)2^{\sigma n}$
+**Writable space, when supplied by the backend.** $`\mathrm{poly}(L)2^{\sigma n}`$
 
-**Meet-in-the-middle / low-space backend $\alpha=1/2$**
+**Meet-in-the-middle / low-space backend $`\alpha=1/2`$**
 
-**Time.** $\mathrm{poly}(L)\left(\prod_i p_i\right)2^{n/2+Q-B/2}$
+**Time.** $`\mathrm{poly}(L)\left(\prod_i p_i\right)2^{n/2+Q-B/2}`$
 
 **Writable space, when supplied by the backend.** Use the space contract of the selected backend
 

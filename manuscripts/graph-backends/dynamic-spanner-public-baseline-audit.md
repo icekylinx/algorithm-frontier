@@ -48,9 +48,9 @@ its amortized update cost, and `beta` for numerical-query overhead.
 KMZ's actual implementation asks for a path only when its stored upper
 distance estimate is at most
 
-$$
+```math
 R=2\gamma\log n.
-$$
+```
 
 Consequently an interface returning a simple path in
 `O((R+1) beta)` time for an accepted estimate suffices. The stronger
@@ -61,10 +61,10 @@ APSP definition for unrelated clients.
 
 For at most `m >= n` insertions and at most `n` deletions, the bound is
 
-$$
+```math
 T=O\bigl(m\gamma\beta\log n+
                n\gamma\alpha\log n\bigr),             \tag{1}
-$$
+```
 
 with stretch `2 gamma log n`, size `O(n gamma log n)`, and total
 recourse `O(n gamma log n)`. For the last assertion use published
@@ -81,9 +81,9 @@ For polynomial-length histories under a declared master `N`, set
 `U=log(N+4)` and `h=log(U+4)`. At the already audited common stretch
 scale
 
-$$
+```math
 a=U^{5/7}h^{2/7},
-$$
+```
 
 the project has the following comparison of certified upper envelopes:
 
@@ -125,10 +125,10 @@ maintenance is included in its fixed-polynomial local work allowance.
 For its positive binary-port adapter, let `H_i=poly(U)` be the
 per-boundary scaling of real edge lengths, and write
 
-$$
+```math
 \sigma_j=\prod_{i\le j} H_i
                        \le \exp O(dh).
-$$
+```
 
 Connectors have positive integral length. Their image in the previous
 physical graph can be empty, but they are still charged as native
@@ -143,9 +143,9 @@ the legs entering at intermediate levels. Positivity bounds the
 number of native edge occurrences at that level by the same quantity.
 Enumerating all levels and then erasing cycles consequently costs
 
-$$
+```math
 (Q+1)\exp O(dh)\mathrm{poly}(U).  \tag{2}
-$$
+```
 
 In the public `6/7` point, `dh=O(U^(1/7)h^(6/7))=o(a)`. Thus the
 extra factor in (2) does not change either exponent in Section 2.
@@ -165,10 +165,10 @@ forest lift into the public baseline.
 
 CP Theorem 1.1 permits
 
-$$
+```math
 512\le k\le (\log n)^{1/49},\qquad
              1/k\le\delta\le1/400,
-$$
+```
 
 and supplies stretch `poly(k) 2^(O(delta^-6))`, size
 `O(n^(1+O(1/k)))`, worst-case update cost `n^(O(delta))`, and
@@ -177,13 +177,13 @@ recourse `n^(O(1/k))`.
 At the fastest displayed asymptotic parameter choice,
 `k=Theta((log n)^(1/49))` and `delta=Theta(1/k)`, these give
 
-$$
+```math
 \begin{split}
  \log(\text{update envelope})&=O((\log n)^{48/49}),\\
  \log(\text{size}/n)&=O((\log n)^{48/49}),\\
  \log(\text{stretch})&=O((\log n)^{6/49}+\log\log n).
 \end{split}                                                    \tag{3}
-$$
+```
 
 This is a different tradeoff: much smaller stretch, and a larger
 certified time and size envelope. A substitution such as
@@ -261,11 +261,11 @@ an APSP core has update log-cost `B` and approximation log `A`, and
 the outer batching shrink is `K=exp(z)`, its audited quantitative
 ledger is
 
-$$
+```math
 Z=O\bigl(B+z+(U/z)(A+h)\bigr),\qquad
   \log(\text{stretch}),\ \log(\text{size}/n)
         =O\bigl((U/z)(A+h)\bigr),                       \tag{4}
-$$
+```
 
 using `kappa=Theta(U)` and at least one actual outer layer. The
 initialization clocks and current-inventory implementation are proved

@@ -12,21 +12,21 @@ Let the explicit ground have size q, selected cardinality s=q-c>=1, and let
 the forced-omission gap routine cost at most A^(c-|Z|) poly(H), with A>1.
 Write
 
-$$
+```math
 E(q)=2^{O(q\log\log(q+2)/\log(q+2))}.
 \tag{P1}
-$$
+```
 
 The block construction returns the same relaxed guarantee in time
 
-$$
+```math
 E(q)\,\Psi_A(q,c)\mathrm{poly}(H),
  \qquad
  \Psi_A(q,c)=\inf_{x\ge0}
        \left(\frac{A}{1+x}\right)^c
        \left(1+\frac{x}{A}\right)^q,
 \tag{P2}
-$$
+```
 
 and polynomial space. In addition, the original corank routine can be run
 directly. Thus one may retain the smaller of its A^c bound and P2; this
@@ -37,23 +37,23 @@ avoids paying the block overhead in the small-corank regime.
 For one block of size n and omitted count p, the accepted construction
 chooses k minimizing
 
-$$
+```math
 T_{n,p}(k)=\frac{\binom nk}{\binom pk}A^{p-k},
                        \qquad 0\le k\le p.
 \tag{P3}
-$$
+```
 
 For any x>=0, define weights
 
-$$
+```math
 w_k(x)=\frac{\binom pk x^k}{(1+x)^p}.
 \tag{P4}
-$$
+```
 
 They sum to one. At x=0 the distribution is concentrated on k=0, so no
 ambiguous zero power is needed. Cancellation gives
 
-$$
+```math
 \begin{aligned}
  \sum_{k=0}^p w_k(x)T_{n,p}(k)
  &=\left(\frac{A}{1+x}\right)^p
@@ -62,7 +62,7 @@ $$
        \left(1+\frac{x}{A}\right)^n.
  \end{aligned}
 \tag{P5}
-$$
+```
 
 The minimum in P3 is at most this average for every x. In particular the
 algorithm need not know, approximate, or use x when choosing its local k.
@@ -76,12 +76,12 @@ greedy covers have size at most (n_i+2) binom(n_i,k_i)/binom(p_i,k_i).
 Applying P5 to every block, with the same arbitrary x, shows that the total
 cost of all Cartesian-product choices in this profile is at most
 
-$$
+```math
 (\ell+2)^m
  \left(\frac{A}{1+x}\right)^c
  \left(1+\frac{x}{A}\right)^q\mathrm{poly}(H).
 \tag{P6}
-$$
+```
 
 Multiplying by the at most (ell+1)^m profiles and minimizing over x proves
 P2. This is a bound on the actual same algorithm: the selected local k_i
@@ -96,29 +96,29 @@ unchanged because neither the local tables nor the iterators change.
 
 For 0<=c<q, let
 
-$$
+```math
 L(x)=c\log A-c\log(1+x)+q\log(1+x/A).
 \tag{P7}
-$$
+```
 
 Its derivative has the sign of
 
-$$
+```math
 q(1+x)-c(A+x)=(q-Ac)+(q-c)x.
 \tag{P8}
-$$
+```
 
 If Ac<=q, the objective is nondecreasing for x>=0 and the minimum is at
 x=0. If Ac>q, it decreases up to and increases after
 
-$$
+```math
 x^*=\frac{Ac-q}{q-c}>0.
 \tag{P9}
-$$
+```
 
 Consequently
 
-$$
+```math
 \Psi_A(q,c)=
  \begin{cases}
  A^c,& Ac\le q,\\[3pt]
@@ -127,7 +127,7 @@ $$
        \left(1-\frac1A\right)^{q-c},& Ac>q.
  \end{cases}
 \tag{P10}
-$$
+```
 
 The two expressions coincide at Ac=q. For c=0 the first expression is one;
 the unforced zero-deficit routine already gives polynomial time without a
@@ -144,13 +144,13 @@ to analyze an algorithm that already makes the exact local comparisons P3.
 
 For rho=c/q, define binary entropy
 
-$$
+```math
 H_2(\rho)=-\rho\log_2\rho-(1-\rho)\log_2(1-\rho),
-$$
+```
 
 with the usual continuous endpoint convention. Equation P10 is exactly
 
-$$
+```math
 \Psi_A(q,c)=2^{qf_A(\rho)},\qquad
  f_A(\rho)=
  \begin{cases}
@@ -158,7 +158,7 @@ $$
  H_2(\rho)+(1-\rho)\log_2(1-1/A),&1/A\le\rho<1.
  \end{cases}
 \tag{P11}
-$$
+```
 
 This entropy expression is a closed-form rewriting of an exact real
 upper bound. It is not a replacement of an integer binomial coefficient by
@@ -168,11 +168,11 @@ The function is linear up to 1/A and then concave. The two derivatives at
 1/A agree and equal log_2 A. In the second interval the derivative vanishes
 at
 
-$$
+```math
 \rho^*=\frac{A}{2A-1},
                  \qquad f_A(\rho^*)=\log_2(2-1/A).
 \tag{P12}
-$$
+```
 
 Thus the whole-ground bound is the maximum of the corank-sensitive curve,
 as expected. For the exact-half quota constant A=27/4, the transition is at
@@ -183,11 +183,11 @@ For A=4 the corresponding points are 1/4 and 4/7, with base 7/4.
 
 The available guarantees can be combined as
 
-$$
+```math
 \min\left\{A^c,\ E(q)\Psi_A(q,c),\,
              \binom qc\right\}\mathrm{poly}(H),
 \tag{P13}
-$$
+```
 
 provided the last term is implemented by enumerating all c-element forced
 omission sets and invoking the accepted zero-deficit gap routine. Every

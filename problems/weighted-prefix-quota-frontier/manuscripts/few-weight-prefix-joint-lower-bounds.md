@@ -4,20 +4,20 @@
 
 The upper theorem in [few-weight-families-prefix-target-scheme.md](few-weight-families-prefix-target-scheme.md) gives
 
-$$
+```math
 2^{O(pB\log(p+2))}\mathrm{poly}(H)
  \tag{FJ1}
-$$
+```
 
 time and uniform polynomial binary space for one common coordinate order, p nonnegative integer weight families, largest target B, one global integral polymatroid, and exact signed scalar optimization.
 
 The present separate increment strengthens that manuscript's two endpoint obstructions. For **every even p>=4 and every integer B>=1**, there is an ordinary matroid rank-oracle family with exactly those parameters and candidate count
 
-$$
+```math
 N=((p-1)!!)^{B}
                        =2^{\Theta(pB\log(p+2))}.
  \tag{FJ2}
-$$
+```
 
 Exact feasibility requires at least N/3 worst-case rank queries for randomized algorithms with success probability at least two thirds on every instance. All scalar coefficients may be zero, all family weights are zero or one, and the explicit non-oracle data have polynomial size in p and B. Both mandatory bases and optional integer independent sets are covered.
 
@@ -27,37 +27,37 @@ A separate uniform rank-program/circuit reduction gives an ETH exclusion along e
 
 Fix even p>=4 and B>=1. Form B disjoint labeled copies of K_p. The ground has one coordinate (b,e) for every block b in [B] and edge e in its copy, so
 
-$$
+```math
 n=B\binom p2,
                     \qquad r=Bp/2.
  \tag{FJ3}
-$$
+```
 
 Give the ground one order listing entire blocks consecutively; the order inside each block is arbitrary and fixed. For each vertex label i in [p], use the weight family
 
-$$
+```math
 w^i_{(b,e)}=\mathbf1[i\in e].
  \tag{FJ4}
-$$
+```
 
 The same vector is used for all prefixes assigned to family i. Vertex labels are reused across blocks, rather than creating a new family for each block. These p vectors are genuinely distinct, as the incidence patterns of different vertices in K_p differ.
 
 At the end of block j impose, in every family i, the equality
 
-$$
+```math
 \sum_{b\le j}\sum_{e\in E(K_p)}w^i_{(b,e)}x_{(b,e)}=j,
                 \qquad i\in[p],\quad j\in[B].
  \tag{FJ5}
-$$
+```
 
 The largest target is exactly B. There are pB rows, all on prefixes of the same coordinate order. The target sum is pB(B+1)/2; the maximum, rather than this sum, is the parameter in FJ1. Every family coefficient belongs to {0,1}.
 
 For a subset of the edge ground, subtracting consecutive equalities in FJ5 gives degree one at every vertex label in each individual block. Hence the equality-feasible subsets are exactly the products of one perfect matching in each block. Write this family as H. It has
 
-$$
+```math
 |H|=((p-1)!!)^{B}=N.
  \tag{FJ6}
-$$
+```
 
 Every member has precisely p/2 edges per block and therefore total cardinality r. This cardinality follows from the equality rows themselves; no extra cardinality row, target, or scalar budget is introduced. It will make the optional and mandatory formulations equivalent on the lower construction.
 
@@ -79,7 +79,7 @@ The rank is indeed r. Begin with a product of perfect matchings and, in its firs
 
 The reference and hidden rank oracles differ only on A. Their complete rank rules are
 
-$$
+```math
 \mathrm{rank}(S)=
  \begin{cases}
  |S|,&|S|<r,\\
@@ -89,7 +89,7 @@ $$
  r,&|S|=r,\ S\in H\text{ and permitted}.
  \end{cases}
  \tag{FJ7}
-$$
+```
 
 The above-rank case is valid because a set larger than r contains two adjacent r-subsets, at least one of which lies outside any forbidden subfamily of H. This also shows why a general rank query outside the hidden point supplies no extra information in the singleton-hidden construction.
 
@@ -101,24 +101,24 @@ The reference quota instance is infeasible. With one hidden candidate A permitte
 
 Consider the balanced distribution giving probability one half to the reference and one half to a uniformly chosen hidden instance. Follow a deterministic algorithm's reference transcript. At most D queries can equal D candidate sets, and all unqueried hidden inputs give the same transcript as the reference. Its success probability is at most
 
-$$
+```math
 \frac12+\frac{D}{2N}.
  \tag{FJ8}
-$$
+```
 
 Averaging over internal random coins preserves this estimate for an algorithm with at most D worst-case queries. Success at least two thirds on every instance therefore implies
 
-$$
+```math
 D\ge N/3.
  \tag{FJ9}
-$$
+```
 
 Elementary double-factorial bounds give, uniformly for even p>=4,
 
-$$
+```math
 \log_2((p-1)!!)=\Theta(p\log_2(p+2)).
  \tag{FJ10}
-$$
+```
 
 For example, when p>=8 at least floor(p/4)>=p/8 factors are at least p/2. This gives a lower bound (p/16)log_2 p. The finite cases p=4,6 satisfy an adjusted absolute constant. The upper bound follows by using at most p/2 factors each at most p. Combining FJ6, FJ9 and FJ10 gives the joint exponent in FJ2, with constants independent of p and B. The explicit N/3 formula also covers small constant cases without asymptotic conventions.
 
@@ -132,38 +132,38 @@ Use deterministic ETH in its variable-count form: 3-SAT on nu variables has no d
 
 Given a 3-CNF formula phi on nu>=1 variables, choose an admissible even p>=4 and define
 
-$$
+```math
 A_p=(p-1)!!,
  \qquad a_p=\lfloor\log_2 A_p\rfloor,
  \qquad 1\le a_p\le2\nu,
  \qquad B=\left\lceil\frac{\nu}{a_p}\right\rceil.
  \tag{FJ11}
-$$
+```
 
 The reduction is uniform and polynomial-time for any such p supplied to it, or chosen by a polynomial-time rule. Its admissibility is checked using exact integer products and binary length; real logarithm computation is unnecessary. In particular p=4 is always an admissible choice. Larger admissible choices and intermediate choices give the calibrated joint regimes.
 
 The ceiling gives
 
-$$
+```math
 \nu\le B a_p<\nu+a_p\le3\nu.
  \tag{FJ12}
-$$
+```
 
 Since log_2 A_p>=1, its integer floor is within a constant factor of it. By FJ10,
 
-$$
+```math
 a_p=\Theta(p\log(p+2)),
               \qquad pB\log(p+2)=\Theta(\nu),
  \tag{FJ13}
-$$
+```
 
 uniformly over every admissible choice of p. Moreover
 
-$$
+```math
 \log_2(A_p^B)<B(a_p+1)
                          \le2B a_p\le6\nu.
  \tag{FJ14}
-$$
+```
 
 All product ranks therefore fit in O(nu) bits. The simple inequality A_p>=2^{p/2-1} implies p<=2(a_p+1)<=4nu+2, and B<=nu. Thus the entire explicit ground, weight table, prefix-row list and parameter computation are polynomial in the formula size. The stronger relation in FJ13 also bounds pB by O(nu).
 
@@ -173,21 +173,21 @@ This is a calibrated-family statement: B is chosen by FJ11 in the encoded reduct
 
 At an ordered set of m remaining vertices, m even, take its smallest vertex and order its possible partners increasingly. Each partner choice leaves exactly A_(m-2)=(m-3)!! residual matchings. If the chosen partner has zero-based index j, set
 
-$$
+```math
 \mathrm{rank}_m(M)
        =j A_{m-2}
          +\mathrm{rank}_{m-2}(M\text{ after removing that edge}).
  \tag{FJ15}
-$$
+```
 
 Use A_0=1 and empty matching rank zero. Induction on m proves a bijection from the A_p block matchings to integers 0,...,A_p-1. Ranking and inverse ranking use polynomially many operations on the bounded-length integers.
 
 For a product of B block matchings with ranks j_1,...,j_B, use the mixed-radix rank
 
-$$
+```math
 J=\sum_{b=1}^B j_b A_p^{b-1}.
  \tag{FJ16}
-$$
+```
 
 This is a bijection from H to 0,...,A_p^B-1. Recognition of H, its product rank, and its inverse all take polynomial time. They do not enumerate H. Equation FJ14 bounds all arithmetic sizes.
 
@@ -201,10 +201,10 @@ The rank decoder implements FJ7. Below rank, above rank and on nonmatching rank-
 
 The prefix equalities are feasible if and only if an accepted product matching exists, which is equivalent to satisfiability of phi. Together with FJ13, this proves that a uniform exact algorithm with running time
 
-$$
+```math
 2^{o(pB\log(p+2))}\mathrm{poly}(H)
  \tag{FJ17}
-$$
+```
 
 on all these encoded-rank inputs would contradict deterministic ETH. The same reduction for a bounded-error randomized algorithm requires randomized ETH to exclude the resulting randomized subexponential SAT algorithm.
 
@@ -214,17 +214,17 @@ The representation is a promised valid rank program or rank circuit, not an arbi
 
 Let P>=1 and L>=1 be upper budgets on the number of families and the largest target, respectively. FW1 immediately gives the monotone upper envelope
 
-$$
+```math
 2^{O(PL\log(P+2))}\mathrm{poly}(H).
  \tag{FJ18}
-$$
+```
 
 For P>=4, choose p=2 floor(P/2) and B=L in the oracle construction. Then p<=P and p>=3P/4. Also log(p+2) is within an absolute constant factor of log(P+2). Hence this budget class contains polynomial-size oracle instances requiring
 
-$$
+```math
 2^{\Omega(PL\log(P+2))}
  \tag{FJ19}
-$$
+```
 
 queries as the budget expression grows. No padding to an exact odd family count is necessary.
 

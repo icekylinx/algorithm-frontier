@@ -20,9 +20,9 @@ The present exact prefix result does not settle a constant-discrepancy conjectur
 
 Huang and Ward, *FPT-Algorithms for the ell-Matchoid Problem with a Coverage Objective*, Definition 3.1, Algorithm 1, and Theorem 3.6, give oracle joint representatives using highest-weight candidates and independent closure tests. Their stated size bound has the form
 
-$$
+```math
 \Gamma_{\ell,k}=\sum_{j=0}^{(k-1)\ell}\ell^j.
-$$
+```
 
 The definition permits a candidate subset and signed real element weights. These statements and the associated closure-path proof were checked directly.
 
@@ -30,11 +30,11 @@ The definition permits a candidate subset and signed real element weights. These
 
 <https://www.di.ens.fr/~cchuang/work/matchoid.pdf>
 
-The basic laminar proof adapts this recursion, keeping the actual sum d of test ranks instead of the coarser product bound. Its candidate count is $\sum_{j=0}^{d}\ell^j$. It is a total-rank refinement and an application, not a new general representative-set paradigm.
+The basic laminar proof adapts this recursion, keeping the actual sum d of test ranks instead of the coarser product bound. Its candidate count is $`\sum_{j=0}^{d}\ell^j`$. It is a total-rank refinement and an application, not a new general representative-set paradigm.
 
-For precision, there is also a formal way to invoke the published theorem after the new blocker reduction. Give each independent test set private copies in its own auxiliary matroid, parallel to the corresponding candidate elements. A protected context then has size at most d+1. Applying the published theorem gives $\Gamma_{\ell,d+1}$, with depth d ell. In the laminar application ell is O(B) and d is O(B). This would give a $2^{O(B^2\log B)}$ catalogue and a weaker derived $2^{O(B^3\log B)}$ algorithm after selecting B candidates.
+For precision, there is also a formal way to invoke the published theorem after the new blocker reduction. Give each independent test set private copies in its own auxiliary matroid, parallel to the corresponding candidate elements. A protected context then has size at most d+1. Applying the published theorem gives $`\Gamma_{\ell,d+1}`$, with depth d ell. In the laminar application ell is O(B) and d is O(B). This would give a $`2^{O(B^2\log B)}`$ catalogue and a weaker derived $`2^{O(B^3\log B)}`$ algorithm after selecting B candidates.
 
-That last deduction is our inference using the proved laminar blocker structure; it is not a theorem about weighted quotas stated in the source. Tracking the actual total ranks directly yields the smaller $2^{O(B^2\log B)}$ running time in LM.
+That last deduction is our inference using the proved laminar blocker structure; it is not a theorem about weighted quotas stated in the source. Tracking the actual total ranks directly yields the smaller $`2^{O(B^2\log B)}`$ running time in LM.
 
 ## 3. The 2026 reachable kernels do not directly solve the weighted-quota model
 

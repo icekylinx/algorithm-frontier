@@ -32,22 +32,22 @@ heavy support; the algorithm does not enlarge an optimum's support.
 
 For a fixed integer d>=2 put
 
-$$
+```math
 R_d=\frac{d+1}{d-1},\qquad
  A_d=\Gamma(R_d),\qquad B_d=2-1/A_d,
       \qquad\Gamma(R)=\frac{R^R}{(R-1)^{R-1}}.
  \tag{UQ1}
-$$
+```
 
 **Theorem UQ.** A deterministic algorithm returns an integer allocation
 of value at least OPT/d and actual cost at most C, in either
 
-$$
+```math
 A_d^{\nu_C}\mathrm{poly}(H)
  \quad\text{or}\quad
  B_d^q\,2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H),
  \tag{UQ2}
-$$
+```
 
 using polynomial workspace. H counts all original numerical bits and
 the paid polynomial oracle work. No binary resource supply is expanded.
@@ -59,10 +59,10 @@ or exclude every integer full-T allocation.
 
 If
 
-$$
+```math
 T\ge\frac d{d-1}a,
  \tag{UQ3}
-$$
+```
 
 solve the original full-player fractional allocation LP at utility T,
 retaining all shared original resource constraints and the exact
@@ -80,19 +80,19 @@ is used for every 1<=K<=d; it is not a claim of full-K feasibility.
 
 The remaining case has K>=d+1 and T<d*a/(d-1)<=d*a. Define
 
-$$
+```math
 b=\lceil K/d\rceil.
  \tag{UQ4}
-$$
+```
 
 For K=jd+s, with j>=1 and 1<=s<=d, one has b=j+1 and
 
-$$
+```math
 \frac K{K-b}
               =\frac{jd+s}{j(d-1)+s-1}
               \le\frac{d+1}{d-1}=R_d.
  \tag{UQ5}
-$$
+```
 
 The last bound is attained at K=d+1. This is the quota calculation
 proved in [Faster global time for coarser integer-quota approximation](../whole-ground-allocation/integer-quotas.md).

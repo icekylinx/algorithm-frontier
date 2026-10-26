@@ -31,8 +31,8 @@ Source archive SHA-256:
 
 ## Incorporated technical refinements
 
-- Weak cut-or-expander success retains a $1-\beta$ fraction of its current input, with $\beta=1/1000$; strong-wrapper coverage and exact root coverage are accounted for separately.
-- Continuing abstract games use cut sparsity at most $1/8$, and repeated matching occurrences retain distinct edge identifiers.
+- Weak cut-or-expander success retains a $`1-\beta`$ fraction of its current input, with $`\beta=1/1000`$; strong-wrapper coverage and exact root coverage are accounted for separately.
+- Continuing abstract games use cut sparsity at most $`1/8`$, and repeated matching occurrences retain distinct edge identifiers.
 - The virtual root has one physical embedding. Child paths enter it by literal graph inclusion before that map is applied.
 - Both witness-routing directions pay their full host-size-times-load query volume.
 - Hypercube weighted witnesses carry their explicit polynomial-logarithmic degree and inventory multipliers.

@@ -11,10 +11,10 @@ oracle, and let its rank be r. Let J be a set of indivisible resources, with pos
 values v_j and explicit liking sets L_p contained in J. A resource has
 the same value to every player who likes it. Write
 
-$$
+```math
 u=\max_{j\in J}v_j,
  \qquad \mathcal P=q+|J|+\sum_p|L_p|+2.
-$$
+```
 
 Zero-value resources may be removed. The case of rank zero is vacuous.
 If the resource set is empty, take u=0 and use the same failure
@@ -23,23 +23,23 @@ certificate below whenever a positive target is requested.
 The public fractional relaxation Q(T) has variables x_p and y_pj,
 with x in the matroid base polytope, and
 
-$$
+```math
 \sum_{j\in L_p}v_jy_{pj}\ge T x_p,
  \qquad
  \sum_{p:j\in L_p}y_{pj}\le1,
  \qquad
  0\le y_{pj}\le x_p.
  \tag{M1}
-$$
+```
 
 For T>u and rational
 
-$$
+```math
 0<\varepsilon<\frac{1-u/T}{3},
  \qquad
  B=\frac{T-u}{3}-\varepsilon T>0,
  \tag{M2}
-$$
+```
 
 the deterministic algorithm described here returns either:
 
@@ -52,14 +52,14 @@ solution is not needed as an algorithmic input. With b denoting the
 total bit length of the rational numerical input, the time and number
 of independence-oracle calls are bounded by
 
-$$
+```math
 \boxed{
  \mathcal P\,\min\!\left\{2^{O(r)},
             (r+1)^{O(\varepsilon^{-1}\log(r+1))}\right\}
              \mathrm{poly}(b+\log\mathcal P).
  }
  \tag{M3}
-$$
+```
 
 Polynomial factors in r are absorbed in the displayed exponent. The
 time bound assumes unit-cost oracle calls; otherwise multiply their
@@ -72,11 +72,11 @@ algorithm, not an assumption that a separate fallback is free.
 One may also set epsilon to zero and obtain the exact additive
 boundary B=(T-u)/3 in time and oracle calls
 
-$$
+```math
 \boxed{\mathcal P\,2^{O(r)}
                  \mathrm{poly}(b+\log\mathcal P).}
  \tag{M3a}
-$$
+```
 
 This version uses the same operations and tests completed layers for
 at least one blocker; it does not claim quasipolynomial time at the
@@ -138,11 +138,11 @@ described free-center cascade.
    has at least one blocker. In particular |X_i|<=|Y_i|.
 4. A selected bundle in layer i has an owner in
 
-$$
+```math
 U_i=P\setminus\mathrm{cl}\bigl(I\setminus
                  \mathrm{owners}(Y_{<i})\bigr).
  \tag{M4}
-$$
+```
 
 Here closure is matroid closure and Y_<i is the union of the earlier
 blocking sets. The criterion is individual eligibility of an owner.
@@ -153,10 +153,10 @@ For a completed layer i, also require maximality: there is no
 inclusion-minimal B-bundle belonging to a player in U_i that is
 disjoint from all resources in
 
-$$
+```math
 F_i=R(X_{\le i}\cup Y_{\le i}).
  \tag{M5}
-$$
+```
 
 R denotes the resource union. The proof below shows that an exchange
 preserves this maximality in all lower layers that it retains.
@@ -232,19 +232,19 @@ Consider the case p not in I. For every h<=j, the fundamental circuit
 contains no owner from Y_<h, by the earliest-layer choice. It is
 therefore a circuit in
 
-$$
+```math
 (I\setminus\mathrm{owners}(Y_{<h}))\cup\{p\}.
-$$
+```
 
 The independent set inside parentheses contains owner(y). Replacing
 owner(y) by p is a basis exchange inside its span. Consequently
 
-$$
+```math
 \mathrm{cl}(I'\setminus\mathrm{owners}(Y'_{<h}))
  =\mathrm{cl}(I\setminus\mathrm{owners}(Y_{<h}))
  \quad (h\le j).
  \tag{M6}
-$$
+```
 
 The earlier blocking sets are unchanged. In the case p in I, the
 independent owner set is unchanged and (M6) is immediate.
@@ -270,10 +270,10 @@ representative after a swap.
 
 Let i be a completed maximal layer. Put
 
-$$
+```math
 a=|X_{\le i}|,\quad t=|Y_{\le i}|,
  \quad w=1+|Y_{<i}|.
-$$
+```
 
 Each selected bundle has value less than B+u. A matching blocker
 intersects its unique selected owner. Removing one resource in that
@@ -282,10 +282,10 @@ so the blocker's resources outside its selected owner have value
 strictly less than B. Summing over the resource-disjoint selected
 bundles and matching bundles gives
 
-$$
+```math
 v(F_i)<(B+u)a+Bt\le(2B+u)t,
  \tag{M7}
-$$
+```
 
 when t>0. If t=0, F_i is empty and its value is zero. The inequality
 a<=t uses current nonempty blocker sets, not their historical sizes.
@@ -300,17 +300,17 @@ Assume for this paragraph that (M1) has a feasible solution. The set
 I minus owners(Y_<i) is independent of size k-|Y_<i|. Its closure is
 a flat of that rank. Since x is in the base polytope,
 
-$$
+```math
 x(U_i)\ge r-k+|Y_{<i}|\ge 1+|Y_{<i}|=w.
  \tag{M8}
-$$
+```
 
 Maximality of layer i says that for every p in U_i,
 
-$$
+```math
 v(L_p\setminus F_i)<B.
  \tag{M9}
-$$
+```
 
 Otherwise those available resources contain a minimal B-bundle. The
 constraints y_pj<=x_p then imply that the fractional value assigned to
@@ -318,41 +318,41 @@ p from outside F_i is less than B x_p whenever x_p>0. Summing the
 remaining required value over U_i and using the unit resource capacities
 gives
 
-$$
+```math
 v(F_i)\ge (T-B)x(U_i)\ge(T-B)w.
  \tag{M10}
-$$
+```
 
 The weak inequality is sufficient; one can obtain a strict inequality
 because x(U_i)>0. We do not need that refinement.
 
 Write A=2B+u. By (M2), A<T and
 
-$$
+```math
 (T-B)-A=3\varepsilon T.
-$$
+```
 
 If |Y_i|<=epsilon w, then
 
-$$
+```math
 t=w-1+|Y_i|\le(1+\varepsilon)w-1,
-$$
+```
 
 and (M7) gives
 
-$$
+```math
 v(F_i)\le A((1+\varepsilon)w-1)<(T-B)w.
  \tag{M11}
-$$
+```
 
 Indeed the difference of the coefficients on w is
 3epsilon T-epsilon A>2epsilon T. This contradicts (M10).
 Therefore every completed layer in a feasible instance has
 
-$$
+```math
 \boxed{|Y_i|>\varepsilon(1+|Y_{<i}|).}
  \tag{M12}
-$$
+```
 
 This is a statement about the current matching blockers after all
 earlier exchanges and the required last-layer refresh.
@@ -364,10 +364,10 @@ fails (M12), return its independent set
 J_0=I minus owners(Y_<i), its closure flat, and the explicit resource
 set F_i. Verify (M9) for every player outside that flat and verify
 
-$$
+```math
 v(F_i)<(T-B)(r-|J_0|).
  \tag{M13}
-$$
+```
 
 The calculation above guarantees (M13), including the empty-layer
 case. These two facts contradict (M1) by the same rank and capacity
@@ -380,17 +380,17 @@ Whenever a maximal layer passes (M12), append a new empty last layer
 and start building it. Since the blocking sets are disjoint subsets of
 M, (M12) implies
 
-$$
+```math
 1+|Y_{\le i}|>(1+\varepsilon)(1+|Y_{<i}|).
-$$
+```
 
 Thus the number of completed layers is at most
 
-$$
+```math
 L=\left\lceil\frac{\log(r+1)}{\log(1+\varepsilon)}\right\rceil
    =O(\varepsilon^{-1}\log(r+1)).
  \tag{M14}
-$$
+```
 
 During construction there is at most one additional unfinished last
 layer. A collapse or a refresh never increases the number of layers.
@@ -400,10 +400,10 @@ layer is checked again after its refresh.
 
 For the current stack use the integer signature
 
-$$
+```math
 (-|X_1|,|Y_1|,\ldots,-|X_\ell|,|Y_\ell|,\infty).
  \tag{M15}
-$$
+```
 
 Every nonterminal change strictly decreases this vector in ordinary
 lexicographic order:
@@ -426,11 +426,11 @@ one selected center can be free, but its count has not increased; the
 same r bound holds until the cascade is processed. Together with the
 temporary length bound L+1, the number of signatures is at most
 
-$$
+```math
 (2r+3)^{2L+3}
   =(r+1)^{O(\varepsilon^{-1}\log(r+1))}.
  \tag{M16}
-$$
+```
 
 No signature repeats. There are at most r successful augmentation
 phases. This proves the quasipolynomial part of the bound. It does
@@ -441,10 +441,10 @@ revised public matroid allocation paper.
 
 At every microstate, including a free-center cascade,
 
-$$
+```math
 \sum_i|X_i|\le k<r,\qquad \sum_i|Y_i|\le k<r.
  \tag{M17}
-$$
+```
 
 Before a free exchange all stored centers are blocked. A newly found
 free candidate is not stored in X. Every step of a subsequent cascade
@@ -460,11 +460,11 @@ length is at most k+1, at most r. For fixed length ell, the number
 of nonnegative count lists with total at most r is
 binomial(r+ell,ell). Counting the two lists independently gives at most
 
-$$
+```math
 \sum_{\ell=0}^{r}\binom{r+\ell}{\ell}^2
        \le(r+1)2^{4r}=2^{O(r)}
  \tag{M18}
-$$
+```
 
 possible signatures. This overcounts many impossible states, which
 is harmless. Multiplying by r phases and polynomial work per event
@@ -477,10 +477,10 @@ and freshness invariants are unchanged. Now A=2B+u=T-B. If a completed
 maximal layer has Y_i empty, then t=w-1, and (M7), including its empty
 case, gives
 
-$$
+```math
 v(F_i)\le A(w-1)<Aw\le(T-B)(r-|J_0|).
  \tag{M19}
-$$
+```
 
 This is the same explicit failure certificate. Every passing layer
 has at least one blocker, so the composition count (M18) still applies.
@@ -536,10 +536,10 @@ matroid of players matchable to one large resource. In the public
 compact relaxation, the fractional large-resource assignment has
 player marginal a, and the small assignments z satisfy
 
-$$
+```math
 v(z_p)\ge T(1-a_p),\qquad z_{pj}\le1-a_p,
  \qquad\sum_pz_{pj}\le1.
-$$
+```
 
 Extend a coordinatewise to a base vector a' of N. Scale each player's
 small assignments by (1-a'_p)/(1-a_p), treating a_p=1 separately as
@@ -550,9 +550,9 @@ The new algorithm allocates small resources to a dual basis, and its
 complement can be matched to distinct large resources. The guaranteed
 value per player is therefore
 
-$$
+```math
 \min\{\theta,(1-\theta)/3-\varepsilon\}T.
-$$
+```
 
 Choosing theta=(1-3epsilon)/4 gives (1-3epsilon)T/4. The compact LP
 may be supplied or solved in polynomial time. This proves a

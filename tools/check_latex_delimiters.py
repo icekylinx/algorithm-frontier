@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Check Markdown math syntax and common GitHub rendering failures.
 
-Maintained Markdown uses GitHub dollar math or fenced math blocks.
+Maintained Markdown uses protected GitHub dollar/backtick inline math and
+fenced math blocks. Bare dollar math is rejected because Markdown may strip
+TeX backslashes before MathJax sees the expression.
 Code spans and ordinary fenced code are excluded from math checks. TeX grouping
 braces are checked inside math; ordinary parentheses/brackets are not, because
 half-open intervals and one-sided delimiters are valid mathematical notation.
@@ -123,12 +125,12 @@ def check_text(text: str, *, controls_only: bool = False) -> list[tuple[int, str
                 )
                 index = closing.end() if closing else run.end()
                 continue
-            delimiters = (("$$", "$$"), (r"\(", r"\)"), (r"\[", r"\]"), ("$", "$"))
+            delimiters = (("$$", "$$"), ("$`", "`$"), (r"\(", r"\)"), (r"\[", r"\]"), ("$", "$"))
             found = next((pair for pair in delimiters if content.startswith(pair[0], index)), None)
             if found:
                 left, right = found
-                if left in {r"\(", r"\["}:
-                    error(index, "use GitHub dollar delimiters for rendered mathematics")
+                if left != "$`":
+                    error(index, "use protected $`...`$ inline math or a fenced math block")
                 opening = (left, right, index, index + len(left))
                 index += len(left)
                 continue
@@ -142,8 +144,12 @@ def check_text(text: str, *, controls_only: bool = False) -> list[tuple[int, str
         else:
             left, right, start, body_start = opening
             if content.startswith(right, index):
-                check_braces(content[body_start:index], body_start)
-                if left == "$" and "\n" in content[body_start:index]:
+                body = content[body_start:index]
+                check_braces(body, body_start)
+                line_start = content.rfind("\n", 0, start) + 1
+                if content[line_start:start].lstrip().startswith("|") and "|" in body:
+                    error(start, "literal pipe inside table mathematics; use \\lvert, \\rvert, \\mid or \\Vert")
+                if left in {"$", "$`"} and "\n" in content[body_start:index]:
                     error(start, "inline mathematics crosses a line; join it or use a display")
                 opening = None
                 index += len(right)

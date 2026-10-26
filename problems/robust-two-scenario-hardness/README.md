@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Exact positive service on a common player basis is W[1]-hard in corank $c$, even with two scenarios and free Boolean recipient resources.
+Exact positive service on a common player basis is W[1]-hard in corank $`c`$, even with two scenarios and free Boolean recipient resources.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic parameter-preserving reduction from bounded-integer k-SUM. The sta
 
 **Time**
 
-The reduction is polynomial and preserves the parameter as $c=k$. Under $\mathrm{FPT}\ne\mathrm{W}[1]$, no $F(c)\mathrm{poly}(H)$ finite-factor algorithm exists for this exact-budget positivity model.
+The reduction is polynomial and preserves the parameter as $`c=k`$. Under $`\mathrm{FPT}\ne\mathrm{W}[1]`$, no $`F(c)\mathrm{poly}(H)`$ finite-factor algorithm exists for this exact-budget positivity model.
 
 **Space**
 
@@ -22,7 +22,7 @@ A polynomial-size explicit reduction; no algorithmic workspace upper bound is cl
 
 **Parameters**
 
-$q$ is the player count; $r=q-k$ is the selected uniform-matroid rank; $A=\sum_i a_i$; $L=A+1$. The two budgets are $C_1=A-T$ and $C_2=rL-A+T$.
+$`q`$ is the player count; $`r=q-k`$ is the selected uniform-matroid rank; $`A=\sum_i a_i`$; $`L=A+1`$. The two budgets are $`C_1=A-T`$ and $`C_2=rL-A+T`$.
 
 **Model and representation**
 

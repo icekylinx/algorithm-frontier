@@ -33,20 +33,20 @@ For a threshold theta>0, types with v_j>=theta are heavy and types
 with v_j<theta are light. Fix rational 0<epsilon<1 and an integer
 support budget K>=0, clipped to r. Define
 
-$$
+```math
 \theta^*={(1-\epsilon)\mathrm{OPT}_C\over2},
                   \qquad \Gamma(R)={R^R\over(R-1)^{R-1}}\le eR.
  \tag{R1}
-$$
+```
 
 **Theorem R.** A deterministic algorithm always returns a genuine
 M-basis and an integer allocation of cost at most C. Its time is
 
-$$
+```math
 \Gamma(1/\epsilon)^{c+K}
                                           \mathrm{poly}(H),
  \tag{R2}
-$$
+```
 
 and its workspace is polynomial. If OPT_C>0 and some integer
 optimal allocation has at most K selected recipients of heavy
@@ -56,11 +56,11 @@ at threshold zero.
 
 In particular, choosing epsilon=eta/(2+eta) gives factor 2+eta in
 
-$$
+```math
 \Gamma\!\left({2+\eta\over\eta}\right)^{c+K}
                                     \mathrm{poly}(H).
  \tag{R3}
-$$
+```
 
 The computed heavy Boolean rank being at most K is a sufficient
 condition. Section 11 gives the stronger computable sufficient
@@ -103,10 +103,10 @@ uniform polynomial bit length.
 
 If Q' subseteq Q, its permitted completions are a subfamily, so
 
-$$
+```math
 h_k(Q')\ge h_k(Q).
  \tag{R4}
-$$
+```
 
 This monotonicity is useful, but the proof below uses the stronger
 explicit comparison with a fixed promised heavy assignment.
@@ -115,17 +115,17 @@ explicit comparison with a fixed promised heavy assignment.
 
 For every D>=0 define
 
-$$
+```math
 \mathcal X_s(D)=\{(x_j)_{j\in J_s}:x_j\in P(f_j),\quad
                    \sum_{p,j\in J_s}c_{pj}x_j(p)\le D\},
  \tag{R5}
-$$
+```
 
-$$
+```math
 \mathcal U_s(D)=\{z\ge0:\exists x\in\mathcal X_s(D),\quad
                   z_p\le\sum_{j\in J_s}v_jx_j(p)\quad(p\in P)\}.
  \tag{R6}
-$$
+```
 
 This is a compact convex downward rational region. It has the
 exact nonnegative packing separator proved in
@@ -151,10 +151,10 @@ M-basis split I* union F*, with |I*|=r-k, a feasible one-heavy-unit
 assignment H* to F*, and a fractional light allocation x* giving
 each player in I* utility at least t, such that
 
-$$
+```math
 c(x^*)+c(H^*)\le C.
  \tag{R7}
-$$
+```
 
 The light counts can be discarded outside I*. Starting from Q=P,
 compute h_k(Q). If no pair exists or h_k(Q)>C, fail this node.
@@ -183,11 +183,11 @@ not justify adding it to a light allocation charged against D_Q.
 Suppose the pair I*,H*,x* in (R7) has I* subseteq Q. It remains
 an eligible completion in the definition of h_k(Q). Hence
 
-$$
+```math
 h_k(Q)\le c(H^*),\qquad
              c(x^*)\le C-c(H^*)\le C-h_k(Q)=D_Q.
  \tag{R8}
-$$
+```
 
 Thus the node cannot fail its completion check, and its full
 target t*1_(I*) belongs to the *current* region U_s(D_Q).
@@ -195,11 +195,11 @@ Every nonnegative row returned at this node is valid for that
 full target. If the row is a·z<=U and is violated by b*1_Q,
 then the omitted set Q\I* has exactly |Q|-(r-k) elements and
 
-$$
+```math
 a(Q\setminus I^*)\ge a(Q)-U/t
                       >\left(1-{b\over t}\right)a(Q).
  \tag{R9}
-$$
+```
 
 The same layer-cake argument therefore supplies a first-crossing
 prefix certificate contained in Q\I*. Deleting that certificate
@@ -217,11 +217,11 @@ on t/(t-b), not on the row values or on which admissible region
 supplied them. The same polynomial-bit row and polynomial selector
 cost bounds hold uniformly. The gap routine therefore runs in
 
-$$
+```math
 \Gamma\!\left({t\over t-b}\right)^{c+k}
                                           \mathrm{poly}(H)
  \tag{R10}
-$$
+```
 
 time and polynomial space, including unpromised inputs and all
 failed completion calls. The zero-light-rank case k=r is tested
@@ -240,10 +240,10 @@ genuine, not a mixture of player bases.
 This joint benchmark is downward in T by trimming light allocations.
 At a positive grid query T, run the adaptive gap with
 
-$$
+```math
 t=T,\qquad b=(1-\epsilon)T.
  \tag{R11}
-$$
+```
 
 A failure puts T strictly above X; a success returns the weaker
 light service together with its costed heavy completion. The
@@ -291,10 +291,10 @@ so the two resource allocations combine without capacity overlap.
 Their total actual cost is at most C. The selected original basis
 is I union rec(H), with minimum utility at least
 
-$$
+```math
 \min\{a_H,b-u_L\}.
  \tag{R12}
-$$
+```
 
 Only nonnegative assignment costs are claimed; discarding counts
 must not increase cost. A second independent hard assignment
@@ -328,12 +328,12 @@ basis or buys a replacement completion at an unaccounted cost.
 
 The comparator split puts equality on the heavy side, so
 
-$$
+```math
 u_L<\theta^*\le a_H,
         \qquad (1-\epsilon)\mathrm{OPT}_C-u_L
                                =2\theta^*-u_L>\theta^*.
  \tag{R13}
-$$
+```
 
 Equation (R12), or the pure-heavy branch, proves the factor.
 The number of distinct value splits is polynomial. For each,
@@ -387,10 +387,10 @@ For any budget-feasible original optimum, dropping to one unit
 per selected heavy recipient gives such an affordable assignment.
 Its heavy support is therefore at most h_C(theta). Consequently
 
-$$
+```math
 h_C(\theta^*)\le K
  \tag{R14}
-$$
+```
 
 is a computable sufficient parameter condition for the theorem.
 It is no weaker than using the uncosted maximum common rank of

@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Selects one permitted commodity set and routes it in every explicit scenario at common rate at least $(1-\varepsilon)\mathrm{OPT}$.
+Selects one permitted commodity set and routes it in every explicit scenario at common rate at least $`(1-\varepsilon)\mathrm{OPT}`$.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic for the explicit scenario list, with a paid exact selector. Scenar
 
 **Time**
 
-$\Gamma(1/\varepsilon)^c\mathrm{poly}(H)$; for fixed rational $\varepsilon$, the whole-ground alternative is $\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)$.
+$`\Gamma(1/\varepsilon)^c\mathrm{poly}(H)`$; for fixed rational $`\varepsilon`$, the whole-ground alternative is $`\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)`$.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the full explicit scenario description, rational witnesses, select
 
 **Parameters**
 
-$q$ is the commodity count; $r$ is the selected cardinality; $c=q-r$; $0<\varepsilon<1$ is rational. $\Gamma(R)=R^R/(R-1)^{R-1}$ and $E(q)=2^{O(q\log\log(q+2)/\log(q+2))}$. Scenario count and routing-budget rows are charged in $H$.
+$`q`$ is the commodity count; $`r`$ is the selected cardinality; $`c=q-r`$; $`0<\varepsilon<1`$ is rational. $`\Gamma(R)=R^R/(R-1)^{R-1}`$ and $`E(q)=2^{O(q\log\log(q+2)/\log(q+2))}`$. Scenario count and routing-budget rows are charged in $`H`$.
 
 **Model and representation**
 

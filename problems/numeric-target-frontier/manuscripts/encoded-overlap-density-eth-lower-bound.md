@@ -23,69 +23,69 @@ This representation is broader than an explicit matrix, graph, or laminar family
 
 Let `phi` have `nu>=1` variables. Choose an even integer `b>=4`, and put
 
-$$
+```math
 A_b=(b-1)!!,
 \qquad
 p_b=\lfloor\log_2 A_b\rfloor,
 \qquad
 L=\left\lceil\frac{\nu}{p_b}\right\rceil.
 \tag{ED1}
-$$
+```
 
 The positive integer `p_b` is obtained from the binary length of `A_b`; no real logarithm is needed by the construction. We use choices satisfying
 
-$$
+```math
 1\le p_b\le2\nu.
 \tag{ED2}
-$$
+```
 
 Build `L` disjoint labeled complete graphs of order `b`. Their vertex count, edge count, and intended matroid rank are
 
-$$
+```math
 T=bL,
 \qquad
 m=L\binom b2=\frac{T(b-1)}2,
 \qquad
 r=T/2.
 \tag{ED3}
-$$
+```
 
 The vertex count will be the total numeric target, and `m` will be precisely the row-interaction edge count.
 
 Elementary product estimates imply, uniformly for even `b>=4`,
 
-$$
+```math
 p_b=\Theta(b\log(b+2)).
 \tag{ED4}
-$$
+```
 
 For example, at least `floor(b/4)` factors in `(b-1)(b-3)...1` are at least `b/2`, while every factor is at most `b`. Taking a floor loses only a constant factor because `log_2 A_b>=1`.
 
 The ceiling in ED1 gives
 
-$$
+```math
 \nu\le Lp_b<\nu+p_b\le3\nu.
 \tag{ED5}
-$$
+```
 
 Consequently,
 
-$$
+```math
 T\log\left(2+\frac mT\right)
 =bL\log\left(\frac{b+3}{2}\right)
 =\Theta(Lp_b)
 =\Theta(\nu),
 \tag{ED6}
-$$
+```
 
 with constants independent of the admissible choice of `b`. In particular, `T=O(nu)` and `m=O(nu^2)`.
 
 All quantities in ED1 can be computed by ordinary integer multiplication and binary-length inspection. Stored matching counts have polynomial bit length. More specifically,
 
-$$
+```math
 \log_2(A_b^L)<L(p_b+1)\le2Lp_b\le6\nu.
 \tag{ED7}
-$$
+```
 
 Thus even the complete product of matching counts needs only `O(nu)` bits.
 
@@ -93,27 +93,27 @@ Thus even the complete product of matching counts needs only `O(nu)` bits.
 
 At an ordered set of `t` remaining vertices, with `t` even, take its smallest vertex. Order its `t-1` possible partners increasingly. Every fixed partner leaves exactly
 
-$$
+```math
 A_{t-2}=(t-3)!!
 \tag{ED8}
-$$
+```
 
 matchings of the remaining vertices. If a given matching chooses the partner at zero-based index `j`, define its rank recursively by
 
-$$
+```math
 \mathrm{rank}_t(M)=j A_{t-2}
  +\mathrm{rank}_{t-2}(M\text{ on the remaining vertices}).
 \tag{ED9}
-$$
+```
 
 Use the empty matching rank zero and `A_0=1`. This is a bijection from the `A_b` clique matchings to the integers `0,...,A_b-1`. Its inverse divides a proposed rank by `A_{t-2}`, uses the quotient to choose the partner, and recurses with the remainder. Both ranking and unranking use only polynomially many operations on polynomial-length integers. No enumeration of matchings is performed.
 
 Given a perfect matching of the disjoint union, let its clique ranks be `j_1,...,j_L`. Give it the product rank
 
-$$
+```math
 J=\sum_{i=1}^L j_i A_b^{i-1}.
 \tag{ED10}
-$$
+```
 
 This is a bijection between all perfect matchings of the union and the integers `0,...,A_b^L-1`. The mixed-radix inverse is polynomial-time for the same reason. Recognition of a perfect matching is also polynomial: each vertex must have degree exactly one in the queried edge subset.
 
@@ -146,12 +146,12 @@ For every vertex, create the row counting selected incident edges and give it ta
 
 With equality rows, a feasible base is a perfect matching. It is a base of `M_phi` exactly when its rank decodes to a satisfying assignment. All assignments appear among the first `2^nu` product ranks. Thus
 
-$$
+```math
 \text{the target instance is feasible}
 \quad\Longleftrightarrow\quad
 \phi\text{ is satisfiable}.
 \tag{ED11}
-$$
+```
 
 The same reduction works for the following variants.
 
@@ -167,10 +167,10 @@ The coefficient matrix has at most `T*m=O(nu^3)` entries. The ground, targets, a
 
 For any polynomial-time computable admissible choice `b=b(nu)` satisfying ED2, the reduction obeys ED6 with universal constant factors. A deterministic target solver with uniform time
 
-$$
+```math
 2^{o\left(T\log\left(2+m/T\right)\right)}\mathrm{poly}(H)
 \tag{ED12}
-$$
+```
 
 on these encoded instances would consequently solve 3-SAT in `2^{o(nu)} poly(|phi|)` time, contradicting deterministic ETH.
 
@@ -182,10 +182,10 @@ The range includes the following regimes.
 
 **One dense clique.** Choose the smallest even `b>=4` with `A_b>=2^nu`. Then `p_b>=nu`, so `L=1` and `T=b`. Minimality gives
 
-$$
+```math
 A_b<(b-1)2^\nu
 \tag{ED13}
-$$
+```
 
 apart from harmless constant initial cases. Thus `p_b<=nu+log_2(b-1)`, which satisfies ED2 for all sufficiently large `nu`. Also `b log b=Theta(nu)`. This yields `m=T(T-1)/2` and rules out `2^{o(T log T)} poly(H)` on the dense encoded family.
 

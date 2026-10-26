@@ -22,11 +22,11 @@ P(f_j). Unused units are allowed. Each selected player p has a nonnegative
 rational setup fee sigma_p; each assigned type-player unit has a
 nonnegative rational cost c_pj. The shared budget is
 
-$$
+```math
 \sigma(I)+\sum_{p,j}c_{pj}x_j(p)\le C,
        \qquad \sigma(I)=\sum_{p\in I}\sigma_p,\quad C\ge0,
 \tag{SU1}
-$$
+```
 
 where I must be a genuine M-basis. Counts outside I may be discarded.
 The objective is the minimum unit count on I, multiplied by v.
@@ -38,25 +38,25 @@ Let K* be the integer optimum minimum count on budget-feasible bases.
 
 For a fixed integer d>=2 define
 
-$$
+```math
 R_d=\frac{d+1}{d-1},\qquad
  A_d=\Gamma(R_d),\quad
  \Gamma(R)=\frac{R^R}{(R-1)^{R-1}},\qquad
  B_d=2-1/A_d.
 \tag{SU2}
-$$
+```
 
 **Theorem SU.** On every zero-feasible instance, deterministic algorithms
 return a genuine M-basis and an integer allocation satisfying SU1 with
 at least ceil(K*/d) units per selected player, using either
 
-$$
+```math
 A_d^c\mathrm{poly}(H)
  \quad\text{or}\quad
  B_d^q\,
  2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
 \tag{SU3}
-$$
+```
 
 time and polynomial workspace. H includes all encoded setup fees,
 assignment costs, capacities and the paid polynomial oracle work.
@@ -71,11 +71,11 @@ case is returned separately with the usual empty-selection convention.
 
 At an allowed player ground Q, compute
 
-$$
+```math
 h(Q)=\min\{\sigma(I):I\subseteq Q,
                                       \ I\text{ is an M-basis}\}.
 \tag{SU4}
-$$
+```
 
 If no such basis exists, reject the node. Otherwise return an attaining
 basis I_Q and its cost. This is ordinary minimum-weight matroid basis
@@ -92,12 +92,12 @@ with a protected full witness.
 
 For D>=0, use the original fixed resource data to define
 
-$$
+```math
 U(D)=\left\{z\ge0:\ \exists x_j\in P(f_j),\quad
        \sum_jx_j(p)\ge z_p\ (p\in P),\quad
        \sum_{p,j}c_{pj}x_j(p)\le D\right\}.
 \tag{SU5}
-$$
+```
 
 This is the compact downward budgeted count region from
 [Exact factor two for one-value allocation with arbitrary assignment costs](proof.md). Exact fractional
@@ -120,32 +120,32 @@ assignment cost is at most h(Q)+D_Q=C.
 Suppose a basis I* has an integer or fractional K-unit allocation x*
 with sigma(I*)+c(x*)<=C. Drop counts outside I*. At any Q containing I*,
 
-$$
+```math
 h(Q)\le\sigma(I^*),\qquad
  c(x^*)\le C-\sigma(I^*)\le C-h(Q)=D_Q.
 \tag{SU6}
-$$
+```
 
 Thus the stronger K*1_(I*) belongs to the current residual region, and
 neither the rank nor the budget gate rejects this protected node. A
 nonnegative row a*z<=U violated by b*1_Q therefore gives
 
-$$
+```math
 a(Q\setminus I^*)\ge a(Q)-U/K
                        >(1-b/K)a(Q).
 \tag{SU7}
-$$
+```
 
 The weighted first-crossing omission routine has a child contained in
 Q\I*. Deleting that certificate preserves the same I*, and SU6 applies
 again. The accepted adaptive residual-budget proof consequently gives
 a gap routine of all-input time
 
-$$
+```math
 \Gamma\!\left(\frac{K}{K-b}\right)^{c-|Z|}
                                       \mathrm{poly}(H)
 \tag{SU8}
-$$
+```
 
 after any forced omitted seed Z. Every failed restriction, budget gate,
 separator and recursion child is included. Successful outputs retain an
@@ -177,10 +177,10 @@ Make one element for every eligible player-type pair (p,j). Intersect
 the parallel extension of M with the direct sum of the types' Boolean
 recipient matroids, and require cardinality r. Assign pair weight
 
-$$
+```math
 w_{pj}=\sigma_p+c_{pj}.
 \tag{SU9}
-$$
+```
 
 The parallel player matroid forces distinct owners forming a genuine
 M-basis. The resource matroids make their one-unit assignment feasible.
@@ -205,10 +205,10 @@ selection-cost constraint or unsupported third matroid is introduced.
 For K>=d+1 use SU8 with b=ceil(K/d). The verified integer-quota identity
 from [Faster global time for coarser integer-quota approximation](../whole-ground-allocation/integer-quotas.md) gives
 
-$$
+```math
 \frac{K}{K-b}\le R_d.
 \tag{SU10}
-$$
+```
 
 Hence every such forced-omission call costs at most
 A_d^(c-|Z|) poly(H), with exact integer recovery from Section 5. Every
@@ -219,11 +219,11 @@ every success provides ceil(K/d) units at actual shared cost at most C.
 After the zero-feasibility check of Section 1, initialize the legal
 minimum-setup basis with zero counts. A hard external upper target is
 
-$$
+```math
 U_0+1,\qquad
                 U_0=\left\lfloor\frac{\sum_jf_j(P)}r\right\rfloor.
 \tag{SU11}
-$$
+```
 
 Run one-sided integer maximization, saving actual outputs on success
 and reducing the upper endpoint only on full-target failure. At

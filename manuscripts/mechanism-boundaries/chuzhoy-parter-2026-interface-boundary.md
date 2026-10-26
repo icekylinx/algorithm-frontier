@@ -11,20 +11,20 @@ Theorem 1.3 maintains a deterministic subgraph on a fixed vertex set,
 initially with no edges and remaining simple, under at most n^2 edge
 updates. Its parameter range is
 
-$$
+```math
 512\le k\le(\log n)^{1/49},\qquad
 1/k\le\delta<1/400,\qquad \Delta\ge n^{20/k}.
-$$
+```
 
 Corollary 9.6 adds length buckets and states
 
-$$
+```math
 \begin{aligned}
 |E(H)|&\le n^{1+O(1/k)}\Delta(1+\log L),\\
 d&=k^{19}2^{O(\delta^{-6})},\\
 \eta&\le n^{O(1/k)}\max\{\Delta_{\max}(G)/\Delta,1\}.
 \end{aligned}
-$$
+```
 
 Here eta is NATIVE EDGE congestion. Update time is n^{O(delta)};
 selected-edge recourse is n^{O(1/k)}. The embedding in Lemma 9.4 is
@@ -44,16 +44,16 @@ The distinction above has an exact mathematical consequence. Suppose
 J is a projected graph, each of whose genuine edges e has an explicit
 ambient walk pi(e). Define its ambient occurrence load at z by
 
-$$
+```math
 C_0(z)=\sum_{e\in E(J)}\mathrm{occ}_z(\pi(e)),
  \qquad C_0=\max_z C_0(z).
-$$
+```
 
 Suppose a chosen subgraph H is equipped with paths Q(e) routing all
 J edges and having native edge congestion at most eta. Composing walks
 gives only
 
-$$
+```math
 \begin{aligned}
  C_{\rm comp}(z)
  &\le\sum_{f\in E(H)}
@@ -61,7 +61,7 @@ $$
  &\le\eta\sum_{f\in E(H)}\mathrm{occ}_z(\pi(f))
  \le\eta C_0(z).
 \end{aligned}                                                    \tag{1}
-$$
+```
 
 Repeated route occurrences are counted with multiplicity. Loop erasure
 can only decrease this upper bound; it does not establish a smaller
@@ -71,10 +71,10 @@ Substituting the source's eta into (1) gives a product involving
 Delta_max(J), C_0, and the density parameter Delta. It does not give the
 current static primitive's additive form
 
-$$
+```math
 \Gamma\bigl(C_0+\Delta_{\max}(J)\bigr)
                                                                \tag{2}
-$$
+```
 
 at its stated sparse-support size. Setting Delta at least the entire
 native maximum degree removes one multiplier from (1), but also raises
@@ -116,10 +116,10 @@ internal static construction or by an unrelated support-graph query.
 Put u=log n. The positive expressions entering the published bounds
 include delta u and u/k. Throughout their permitted parameter range,
 
-$$
+```math
 u/k\ge u^{48/49},\qquad
                    \delta u\ge u/k.                           \tag{3}
-$$
+```
 
 Consequently optimizing THESE GUARANTEED EXPRESSIONS cannot certify
 an overhead exp(O(u^(4/5) polylog u)), even before paying for any missing

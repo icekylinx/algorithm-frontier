@@ -22,10 +22,10 @@ sizes and normalized monotone integral job-polymatroid ranks on P.
 The assignment of each type must be an integer base of its rank.
 Aggregate all types of maximum size a into f_b, and put
 
-$$
+```math
 h=f_b(P).
  \tag{S1}
-$$
+```
 
 The remaining types j have sizes 0<p_j<=u<a and ranks f_j.
 Set u=0 if that family is empty. Aggregation of equal-sized types
@@ -36,19 +36,19 @@ additional machine constraints coupling different types.
 For a nonnegative target T, define the per-machine largest-job
 slot capacities and their total by
 
-$$
+```math
 s_p(T)=\min\{f_b(\{p\}),\lfloor T/a\rfloor\},
                \qquad N(T)=\sum_p s_p(T).
  \tag{S2}
-$$
+```
 
 At any feasible makespan, the large assignment is a base bounded
 by s(T), so N(T)>=h. Define its slot surplus by
 
-$$
+```math
 c_{\rm slot}(T)=N(T)-h.
  \tag{S3}
-$$
+```
 
 For infeasible small targets this expression can be negative; it
 is only interpreted as a corank after the large box retains rank h.
@@ -60,26 +60,26 @@ Gamma(R)=R^R/(R-1)^(R-1) for R>1.
 
 **Theorem S.** There is a deterministic algorithm with runtime
 
-$$
+```math
 \Gamma(1/\epsilon)^k\mathrm{poly}(H)
                      \le(e/\epsilon)^k\mathrm{poly}(H)
  \tag{S4}
-$$
+```
 
 and polynomial workspace which always produces a schedule of
 makespan at most OPT+a. Whenever
 
-$$
+```math
 c_{\rm slot}(\mathrm{OPT})\le k,
  \tag{S5}
-$$
+```
 
 its output also satisfies
 
-$$
+```math
 C_{\max}\le(1+\epsilon)\mathrm{OPT}+u.
  \tag{S6}
-$$
+```
 
 Thus it obtains the smaller of these two bounds under (S5).
 H includes the physical input, the encodings of epsilon and k,
@@ -113,10 +113,10 @@ integer multiple of g. Its bit length is polynomial, for example
 by using the reciprocal product of the original denominators.
 Every integral schedule load and OPT lies on the g-grid. Let
 
-$$
+```math
 V=ah+\sum_jp_j f_j(P)
  \tag{S7}
-$$
+```
 
 be the total job workload. Any choice of integer bases has every
 machine load at most V, so V is a genuine feasible upper makespan
@@ -124,11 +124,11 @@ on this grid.
 
 Write 1-epsilon=B/A with integers A>B>=1, and put
 
-$$
+```math
 \Delta=g/A,\qquad m_j=p_j/\Delta,\qquad
  t=a/\Delta,\qquad b=(1-\epsilon)t.
  \tag{S8}
-$$
+```
 
 Every m_j, t and b is a positive integer. In particular, if a/g=L
 then t=AL and b=BL, so the quota gap has exactly
@@ -139,10 +139,10 @@ t/(t-b)=1/epsilon. No numerical rounding of the quotas is used.
 Fix a positive g-grid target T that meets the budget predicate.
 First calculate s=s(T). The rank under the large-job box is
 
-$$
+```math
 h_s=\min_{R\subseteq P}\{f_b(R)+s(P\setminus R)\}.
  \tag{S9}
-$$
+```
 
 If h_s<h, no original target-T schedule exists: every such
 schedule would supply a large base inside that box. Otherwise the
@@ -150,28 +150,28 @@ large box retains rank h, and c=N(T)-h is nonnegative and at most k.
 
 Form the integral smaller-workload rank
 
-$$
+```math
 F(R)=\sum_jm_j f_j(R),
              \qquad C=T/\Delta\in\mathbb Z_{\ge0}.
  \tag{S10}
-$$
+```
 
 Cap it coordinatewise at C, with rank
 
-$$
+```math
 G(R)=\min_{D\subseteq R}\{F(D)+C|R\setminus D|\}.
  \tag{S11}
-$$
+```
 
 If G(P)<F(P), the target is infeasible: the smaller workload of
 any original target schedule would be a base of F inside the cap.
 Otherwise G(P)=F(P). Form once, on the full physical machine set,
 the complement dual
 
-$$
+```math
 f_T(R)=C|R|+G(P\setminus R)-F(P).
  \tag{S12}
-$$
+```
 
 It is normalized, integral, monotone and submodular. Monotonicity
 uses the coordinate cap C on G. Its singleton ranks are at most C,
@@ -188,10 +188,10 @@ base, with x*<=s. Its smaller-workload vector w* is an integer
 base of F and obeys w*<=C*1. Hence w* belongs to B(G), and the
 dual base y*=C*1-w* satisfies
 
-$$
+```math
 y^*_p\ge t x^*_p.
  \tag{S13}
-$$
+```
 
 This follows from a*x*_p+Delta*w*_p<=T. By downward closure,
 t*x* belongs to P(f_T).
@@ -202,10 +202,10 @@ its vector of owner counts is independent in P(f_b). Its rank is
 h by (S9), on N(T) slots, with corank c. The lifted resource
 rank on a slot subset Z is
 
-$$
+```math
 \widetilde f_T(Z)=f_T(\mathrm{owners}(Z)).
  \tag{S14}
-$$
+```
 
 This is an integral polymatroid rank. For a selected slot basis
 with owner counts x, t units on each selected slot are feasible
@@ -226,17 +226,17 @@ with t*x* in P(f_T).
 
 At a node, test whether the box n retains large rank h using
 
-$$
+```math
 H(n)=\min_{R\subseteq P}\{f_b(R)+n(P\setminus R)\}.
  \tag{S15}
-$$
+```
 
 If not, report FAILURE. Otherwise put d=n(P)-h>=0 and minimize
 
-$$
+```math
 f_T(R)-b n(R)
  \tag{S16}
-$$
+```
 
 over physical machine subsets R. This is submodular minimization
 on q elements, irrespective of the number of slots.
@@ -251,10 +251,10 @@ If a negative minimizer R is returned, machines with n_p=0 may
 be removed from R without increasing the objective, since f_T
 is monotone. Put
 
-$$
+```math
 m=n(R),\qquad \ell=m-\left\lfloor f_T(R)/t\right\rfloor.
  \tag{S17}
-$$
+```
 
 The violation f_T(R)<bm and nonnegativity give 1<=ell<=m.
 Every promised x* satisfies t*x*(R)<=f_T(R), so the unselected
@@ -264,10 +264,10 @@ Thus ell>d is a sound failure, tested before enumeration.
 Otherwise enumerate every integer deletion pattern z supported
 on R with
 
-$$
+```math
 0\le z_p\le n_p,\qquad z(R)=\ell.
  \tag{S18}
-$$
+```
 
 Recurse with n-z, returning the first successful x. If all attempts
 fail, report FAILURE. Each pattern is counted even when its rank
@@ -288,10 +288,10 @@ is required.
 
 Write R_0=t/(t-b)=1/epsilon. At a deficient node,
 
-$$
+```math
 \ell\ge m-f_T(R)/t>m/R_0.
  \tag{S19}
-$$
+```
 
 Every pattern in (S18) can be injected into an ell-subset of m
 conceptual slots by choosing the first z_p slots of each owner.
@@ -302,10 +302,10 @@ d-ell, including a child whose box rank falls below h.
 
 The same induction as for the batch theorem gives at most
 
-$$
+```math
 (c+1)\Gamma(1/\epsilon)^c
  \tag{S20}
-$$
+```
 
 attempted computation nodes. The ell>d guard keeps this bound
 valid on every unpromised input. It is not a promise-only
@@ -317,11 +317,11 @@ choices would not suffice in this branch. One implementation
 orders the owners and keeps the remaining total ell'. For each
 next coordinate, its permitted interval is
 
-$$
+```math
 \max\{0,\ell'-\text{sum of later capacities}\}
         \ \le z_p\le\ \min\{n_p,\ell'\}.
  \tag{S21}
-$$
+```
 
 Every partial choice in this interval has a completion because
 integer interval capacities realize every intermediate total.
@@ -340,10 +340,10 @@ If c>=q^2, a stack of depth c would not establish polynomial
 space in the original bit encoding. Instead enumerate integer
 vectors z with
 
-$$
+```math
 0\le z_p\le\min\{s_p,c\},\qquad z(P)=c.
  \tag{S22}
-$$
+```
 
 For each, put x=s-z. Then x(P)=N(T)-c=h. Test whether x belongs
 to P(f_b) and b*x belongs to P(f_T), by physical-ground
@@ -360,20 +360,20 @@ any promise.
 Even the rectangular enumeration, including tuples whose total is
 not c, has at most (c+1)^q candidates. For q>=1 and c>=q^2,
 
-$$
+```math
 (c+1)^q\le e^c.
  \tag{S23}
-$$
+```
 
 Indeed, c-q log(c+1) is increasing for c>=q^2. At c=q^2 it
 equals q[q-log(q^2+1)], which is nonnegative: the function
 x-log(x^2+1) is increasing for x>=1 and is positive at x=1.
 Since epsilon<=1/2, monotonicity of Gamma gives
 
-$$
+```math
 e^c\le4^c\le\Gamma(1/\epsilon)^c.
  \tag{S24}
-$$
+```
 
 Thus this branch fits the same target runtime. Its iterator stores
 only q binary counters, even if c is numerically enormous. All
@@ -391,52 +391,52 @@ Let x be the returned integer large base, with x<=s and b*x in
 P(f_T). Extend b*x to an integer base y of f_T on the full
 physical machine set. Its singleton bounds imply y<=C*1, so
 
-$$
+```math
 w=C\mathbf1-y
  \tag{S25}
-$$
+```
 
 is a nonnegative integer base of G. Since G(P)=F(P), it is also
 a base of F.
 
 **Lemma 1 (binary workload decomposition).** If
-$w\in B(F)\cap\mathbb Z^P$, where $F=\sum_jm_jf_j$ and the positive
-integers $m_j$ are binary encoded, then in polynomial oracle time one
-can find integral $z_j\in B(m_jf_j)$ with $\sum_jz_j=w$.
+$`w\in B(F)\cap\mathbb Z^P`$, where $`F=\sum_jm_jf_j`$ and the positive
+integers $`m_j`$ are binary encoded, then in polynomial oracle time one
+can find integral $`z_j\in B(m_jf_j)`$ with $`\sum_jz_j=w`$.
 
-**Proof.** On the explicit pair ground $E=P\times J$, use the two
+**Proof.** On the explicit pair ground $`E=P\times J`$, use the two
 integral ranks
-$$
+```math
 \mathcal A(S)=\sum_jm_jf_j(S_j),\qquad
  \mathcal B(S)=\sum_{p:S\cap(\{p\}\times J)\ne\varnothing}w_p.
  \tag{S25a}
-$$
-For $R=\bigcap_jS_j$, one has
-$$
+```
+For $`R=\bigcap_jS_j`$, one has
+```math
 \mathcal B(E\setminus S)=w(P)-w(R),\qquad
  \mathcal A(S)\ge F(R)\ge w(R).
-$$
+```
 The integral polymatroid-intersection min-max theorem therefore gives
-a common integer vector of total $w(P)=F(P)$. The typewise caps and
+a common integer vector of total $`w(P)=F(P)`$. The typewise caps and
 the per-machine caps each sum to this total, so every one is attained:
-its components satisfy $z_j(P)=m_jf_j(P)$ and
-$\sum_jz_j(p)=w_p$. This proves the lemma. The pair ground has
-$q|J|$ coordinates; no multiplier is expanded into copies.
-$\square$
+its components satisfy $`z_j(P)=m_jf_j(P)`$ and
+$`\sum_jz_j(p)=w_p`$. This proves the lemma. The pair ground has
+$`q|J|`$ coordinates; no multiplier is expanded into copies.
+$`\square`$
 
-Divide $z_j$ by $m_j$. This gives fractional original bases
-with per-machine smaller workload exactly $\Delta w_p$.
+Divide $`z_j`$ by $`m_j`$. This gives fractional original bases
+with per-machine smaller workload exactly $`\Delta w_p`$.
 Apply the [per-machine upper-prefix rounding lemma](../many-size-scheduling/proof.md#2-the-per-machine-form-of-the-public-rounding-lemma):
 it preserves every original type total and increases each smaller
-load by at most $u$. The proof constructs one chain polymatroid
+load by at most $`u`$. The proof constructs one chain polymatroid
 for every machine and intersects their direct sum with the original
 type product on its full-total face. Thus it does not round types
-independently. The largest-size base $x$ is retained and decomposed
+independently. The largest-size base $`x`$ is retained and decomposed
 among its original equal-sized types without changing machine loads.
 
 At each machine p, the resulting total load is at most
 
-$$
+```math
 \begin{split}
  a x_p+\Delta w_p+u
     &=T+a x_p-\Delta y_p+u\\
@@ -445,7 +445,7 @@ $$
     &\le(1+\epsilon)T+u.
  \end{split}
  \tag{S26}
-$$
+```
 
 The last step uses x_p<=s_p(T)<=floor(T/a), so a*x_p<=T.
 There may be many largest units on this machine. The estimate
@@ -462,10 +462,10 @@ No success is asserted to certify feasibility at T itself.
 The function N(T) is nondecreasing in T. On the original g-grid
 between zero and V, compute the largest target T_cap satisfying
 
-$$
+```math
 N(T_{\rm cap})\le h+k.
  \tag{S27}
-$$
+```
 
 Binary search for this endpoint uses only the integer formula (S2)
 and has polynomial bit complexity. Zero satisfies this predicate,
@@ -521,11 +521,11 @@ If u<=epsilon OPT, the strong bound becomes
 (1+2epsilon)OPT. More explicitly, for rational 0<eta<=1, taking
 epsilon=eta/2 gives factor 1+eta under
 
-$$
+```math
 u\le(\eta/2)\mathrm{OPT},
                  \qquad c_{\rm slot}(\mathrm{OPT})\le k,
  \tag{S28}
-$$
+```
 
 with time Gamma(2/eta)^k poly(H), at most
 (2e/eta)^k poly(H). This is an explicit small-unit consequence;

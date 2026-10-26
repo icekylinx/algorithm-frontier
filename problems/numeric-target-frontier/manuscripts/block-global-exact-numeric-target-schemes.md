@@ -9,11 +9,11 @@ one exact shared setup-plus-assignment budget.
 For an integer target T, exact target feasibility and an actual integer
 witness can be found in
 
-$$
+```math
 \binom qr\exp\bigl(O(r\sqrt{T+1})\bigr)
                      \mathrm{poly}(H+\log(T+1))
        \tag{BQ1}
-$$
+```
 
 time and polynomial binary space. Here an actual rank-r basis of a
 selection matroid chooses the participating blocks from q candidates.
@@ -43,16 +43,16 @@ Coordinate e has nonnegative rational assignment cost c_e. Selecting
 p incurs nonnegative rational setup cost sigma_p. The one exact
 combined budget is
 
-$$
+```math
 \sigma(B)+c x\le C.                  \tag{BQ2}
-$$
+```
 
 In fair allocation, each coordinate has a nonnegative INTEGER value
 v_e, and the objective is
 
-$$
+```math
 \max\min_{p\in B}\sum_{e\in E_p}v_e x_e.   \tag{BQ3}
-$$
+```
 
 There are two distinct feasible resource families:
 
@@ -104,10 +104,10 @@ D_1,...,D_m with prescribed nonnegative integer counts h_1,...,h_m.
 Let N=sum_i h_i. The constraints x(D_i)<=h_i define an integral
 partition-count polymatroid K_h, with rank
 
-$$
+```math
 K_h(S)=\sum_{i:S\cap D_i\ne\varnothing}h_i.
                  \tag{BQ4}
-$$
+```
 
 Intersect it with the current resource polymatroid. The total is at
 most N. If the intersection cannot attain N, the exact profile is
@@ -136,19 +136,19 @@ At a block, group coordinates with the same positive integer
 auxiliary value a. There is at most one group for each occupied
 positive value. For an integer bound U, a profile satisfies
 
-$$
+```math
 \sum_{a>0}a h_a\le U.                \tag{BQ5}
-$$
+```
 
 It injects into an integer partition of total at most U. For U>=1,
 the elementary cumulative partition bound is
 
-$$
+```math
 \#\{h:\text{BQ5}\}
    \le e^{tU}\prod_{j\ge1}(1-e^{-tj})^{-1}
    \le\exp(tU+2/t).
  \tag{BQ6}
-$$
+```
 
 Set t=1/sqrt(U) to obtain exp(3sqrt(U)). When U=0 there is one
 all-zero positive profile. The product is an analysis device only.
@@ -173,17 +173,17 @@ Discard zero-value coordinates; this is legitimate here because
 resources are optional and assignment costs are nonnegative.
 Credit every remaining coordinate with
 
-$$
+```math
 a_e=\min\{v_e,T\}.                \tag{BQ7}
-$$
+```
 
 At each selected block enumerate counts by its occupied credited
 value classes such that
 
-$$
+```math
 T\le\sum_{a>0}a h_{p,a}\le2T-1.
                     \tag{BQ8}
-$$
+```
 
 Generate through the upper bound 2T-1 and filter the lower bound
 at completion. Let N be the total prescribed positive count over
@@ -214,9 +214,9 @@ retain its original full allowed rank R and the actual costs.
 Replace each allowed coordinate e by active and passive copies,
 both carrying true cost c_e, with shared resource rank
 
-$$
+```math
 F^{\uparrow}(S)=F(\pi(S)).           \tag{BQ9}
-$$
+```
 
 For every nonnegative copy vector z, its aggregate
 x_e=z_(e^a)+z_(e^p) is independent exactly when z is independent
@@ -232,9 +232,9 @@ under BQ8. Let N be their global total count. If N>R, reject.
 Put ALL zero-credited coordinates, across every selected block,
 in one global zero group. Prescribe its count to be
 
-$$
+```math
 h_0=R-N.                     \tag{BQ10}
-$$
+```
 
 The positive group caps and this one zero-group cap sum to R.
 Apply Section 3 to the lifted resource at total R. Thus each
@@ -268,9 +268,9 @@ processing times above T, and reject any loss of original rank R.
 At each selected machine enumerate exact positive processing-class
 counts with
 
-$$
+```math
 \sum_{a>0}a h_{p,a}\le T.             \tag{BQ11}
-$$
+```
 
 Let N be the total positive count. Reject N>R. All zero-time
 coordinates, across all selected machines, form one zero group
@@ -295,19 +295,19 @@ For either fair-allocation model, at T>=1 each selected block
 has at most exp(3sqrt(2T-1)) profiles. Thus the exact target time
 is at most
 
-$$
+```math
 \binom qr\exp\bigl(3r\sqrt{2T-1}\bigr)
                      \mathrm{poly}(H+\log(T+1)).
        \tag{BQ12}
-$$
+```
 
 For scheduling at T>=1 it is at most
 
-$$
+```math
 \binom qr\exp\bigl(3r\sqrt T\bigr)
                      \mathrm{poly}(H+\log(T+1)).
        \tag{BQ13}
-$$
+```
 
 Zero targets and original feasibility cost binomial(q,r)*poly(H).
 These bounds include failed selected bases, rank checks, every
@@ -337,9 +337,9 @@ integer utility and load lies on this grid.
 
 Let
 
-$$
+```math
 B_*={\mathrm{OPT}}/{g}.            \tag{BQ14}
-$$
+```
 
 It is an integer on an originally feasible instance. If no positive
 coefficient exists, the initializer has exact objective zero.
@@ -363,10 +363,10 @@ so the number and encoding length of the target calls are
 polynomial in the original binary input. Consequently exact
 optimization has time
 
-$$
+```math
 \binom qr\exp\bigl(O(r\sqrt{B_*+1})\bigr)
                           \mathrm{poly}(H),              \tag{BQ15}
-$$
+```
 
 and polynomial binary space. More explicitly, for B_*>=1 the
 fairness exponent in BQ12 is at most 6r sqrt(B_*), and the

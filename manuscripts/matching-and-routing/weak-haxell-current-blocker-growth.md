@@ -12,18 +12,18 @@ it pays for collapses, including immediately collapsing new layers.
 
 The resulting deterministic uniform running time is
 
-$$
+```math
 P\,(n+1)^{\,O((r/\epsilon)\log(2+r/\epsilon))}
        \mathrm{poly}(b_\epsilon+\log P),           \tag{1}
-$$
+```
 
 for an explicit `r`-uniform bipartite hypergraph, under the sufficient
 condition
 
-$$
+```math
 \tau(E_S)>(2r-3+\epsilon)(|S|-1),\qquad 0<\epsilon<1.
                                                                \tag{2}
-$$
+```
 
 Here `r` is whole-edge size, `n` is the number of left vertices,
 `P` is total explicit incidence and vertex-list volume plus two, and
@@ -43,19 +43,19 @@ are given in full below.
 
 Keep the public parameters
 
-$$
+```math
 \mu=\frac{\epsilon^2}{10r^2},\quad
  Q=\lceil1/\mu\rceil,\quad
  \delta_X=\frac{\epsilon}{5r^2}.
-$$
+```
 
 For a live layer `i`, let `W_i=|Y_<i|`, including the unmatched
 dummy root in `Y_0`. Its lower prefix is fixed throughout its
 lifetime. The companion proof establishes, at **every** birth,
 
-$$
+```math
 |X_i|>\delta_X W_i.                    \tag{3}
-$$
+```
 
 This includes a new layer that immediately collapses. Selected sets
 only grow while their layer is alive, so (3) persists.
@@ -63,10 +63,10 @@ only grow while their layer is alive, so (3) persists.
 The new assertion concerns a different quantity and a different time:
 at every main-loop boundary, every surviving positive layer obeys
 
-$$
+```math
 |Y_i|>\delta_Y W_i,
              \qquad \delta_Y=\frac{\epsilon}{10r}.      \tag{4}
-$$
+```
 
 It is the **current** `Y_i`, after any previous collapse and extension,
 not its birth value. Equation (4) will follow anew from current
@@ -80,9 +80,9 @@ For each live layer `j`, record the output
 If adopted, it equals the current layer immediately after adoption.
 If rejected, writing `E_j=Xhat_j minus X_j` gives
 
-$$
+```math
 |E_j|<\mu|X_j|.                  \tag{5}
-$$
+```
 
 Until the next direct-child collapse, the selected set `X_j` and its
 current matching blockers `Y_j` are unchanged. That next collapse
@@ -98,33 +98,33 @@ edges and their then-blockers. Those then-blockers may no longer be
 in the current matching, but their resource sets are retained as
 fixed ghosts. Set
 
-$$
+```math
 C_j=B(\widehat X_j\cup\widehat Y_j).
-$$
+```
 
 Each extra selected edge and its then-blockers contributes at most
 `(r-1)^2` additional resources. Consequently
 
-$$
+```math
 |C_j|\le |B(X_j\cup Y_j)|+\mu(r-1)^2|X_j|.             \tag{6}
-$$
+```
 
 The current matching blockers are pairwise disjoint, and each meets
 exactly one selected edge. Counting at least one distinct overlap
 resource for each blocker gives
 
-$$
+```math
 |B(X_j\cup Y_j)|\le(r-1)|X_j|+(r-2)|Y_j|.             \tag{7}
-$$
+```
 
 At a main-loop boundary, current noncollapsibility gives
 `|X_j|<=|Y_j|/(1-mu)`. Combining (6)--(7) yields
 
-$$
+```math
 |C_j|\le(a+\eta)|Y_j|,\qquad
  a=2r-3,\quad
  \eta=\frac{\mu r(r-1)}{1-\mu}.                         \tag{8}
-$$
+```
 
 This is precisely the conversion from historical candidate size to
 the **current** blocker count that the argument needs. Both terms
@@ -136,10 +136,10 @@ Let `F_j` be the active left vertices with degree `Q` in the
 recorded candidate. Since `|Xhat_j|<=(1+mu)|X_j|` and
 `1/Q<=mu`,
 
-$$
+```math
 |F_j|\le f|Y_j|,\qquad
                 f=\frac{\mu(1+\mu)}{1-\mu}.            \tag{9}
-$$
+```
 
 For an active left vertex outside `F_j`, every incident hyperedge
 meets the lower forbidden prefix or `C_j`. This is the fixed
@@ -152,57 +152,57 @@ the statement includes all input edges.
 Fix any positive layer `i` at a main-loop boundary. Look only at
 the prefix through `i`, and put
 
-$$
+```math
 W=|Y_{<i}|,\qquad Y=|Y_i|.
-$$
+```
 
 The `W` active left identities for this prefix are those represented
 by the dummy root and the matching blockers below `i`. They are
 distinct. Remove every candidate-full set `F_j` for `1<=j<=i`
 from them and call the result `S`. Let
 
-$$
+```math
 C=\bigcup_{j=1}^i C_j.
-$$
+```
 
 All lower forbidden supports are covered by earlier `C_j`, so `C`
 hits all of `E_S`. Equations (8)--(9) give
 
-$$
+```math
 |C|\le(a+\eta)(W-1+Y),
  \qquad |S|\ge W-f(W-1+Y).                              \tag{10}
-$$
+```
 
 Here the `-1` removes only the dummy root, which has no right support.
 All quantities `Y_j` in this sum are current matching-blocker counts.
 
 Since `r>=2`, `epsilon<1`, and `mu<=1/40`,
 
-$$
+```math
 \eta\le\frac4{39}\epsilon^2,
  \qquad
  (a+\epsilon)f
      \le\frac{41}{780}\epsilon^2.
-$$
+```
 
 For the second bound use `(r-1)/r^2<=1/4`. Therefore
 
-$$
+```math
 \eta+(a+\epsilon)f
           \le\frac{121}{780}\epsilon^2
           <\epsilon/5.                                 \tag{11}
-$$
+```
 
 Suppose first `W>=2` and, contrary to (4),
 `Y<=epsilon W/(10r)`. Then
 
-$$
+```math
 \frac{Y}{W-1}\le\frac{\epsilon}{5r}.
-$$
+```
 
 Using (10)--(11),
 
-$$
+```math
 \begin{split}
  |C|+(a+\epsilon)f(W-1+Y)
   &\le(a+\epsilon/5)(W-1+Y)\\
@@ -210,15 +210,15 @@ $$
   &\le(a+31\epsilon/50)(W-1)\\
   &<(a+\epsilon)(W-1).
 \end{split}                                               \tag{12}
-$$
+```
 
 In the third line use `a<=2r` and
 `epsilon^2/(25r)<=epsilon/50`. Combining (12) with the
 lower bound for `|S|` proves
 
-$$
+```math
 |C|<(a+\epsilon)(|S|-1).          \tag{13}
-$$
+```
 
 The set `S` is nonempty: from (9), `f<=41/1560`, and under
 the assumed upper bound on `Y`, at most `(41/1560)(21/20)W`
@@ -241,17 +241,17 @@ resets. For a layer with fixed `W`, its selected count starts above
 `delta_X W` and never exceeds `QW`. Each adoption increases it by
 `1+mu`. Thus its children split into at most
 
-$$
+```math
 J=1+O(\mu^{-1}\log(Q/\delta_X))
-$$
+```
 
 epochs. In each epoch, successive child prefix sizes decrease
 geometrically with ratio at most `1-tau`, where
 
-$$
+```math
 \tau=\mu\delta_X/Q
                \ge\epsilon^5/(1000r^6).                \tag{14}
-$$
+```
 
 Indeed a collapsing child has more than `mu|X_child|` unblocked
 selected edges and at most `Q` per active left identity. It swaps
@@ -263,24 +263,24 @@ noncollapsible layer.
 At every child birth, however, its parent is a current noncollapsible
 layer at a main-loop boundary. The new (4) gives
 
-$$
+```math
 W_{child}\ge(1+\delta_Y)W_{parent}.     \tag{15}
-$$
+```
 
 Set
 
-$$
+```math
 \lambda=C\delta_Y^{-1}\log(2+r/\epsilon)
                   =O((r/\epsilon)\log(2+r/\epsilon)).   \tag{16}
-$$
+```
 
 The logarithms of `J` and `1/tau` are only
 `O(log(2+r/epsilon))`. A sufficiently large absolute `C` makes
 
-$$
+```math
 J\frac{(1+\delta_Y)^{-\lambda}}
               {1-(1-\tau)^\lambda}\le\tfrac12.         \tag{17}
-$$
+```
 
 Use the same weight `W^(-lambda)` for every born layer. In a
 finite execution prefix, each epoch's child weights are summed in
@@ -310,33 +310,33 @@ are nondecreasing because the original birth-selected inequality is
 also unchanged. But the current-blocker bound now limits the number
 of positive layers to
 
-$$
+```math
 L=O(\delta_Y^{-1}\log(n+1)).
-$$
+```
 
 Keep the source's logarithmic base `b=1/(1-mu^3)`. Its largest
 finite coordinate is at most
 
-$$
+```math
 H=O\!\left(\mu^{-3}
        [L\log(1/\delta_X)+L\mu+\log(n+1)]\right).
-$$
+```
 
 Fixed signs and at most `2L` nondecreasing nonnegative integer
 absolute coordinates give at most
 
-$$
+```math
 (2L+1){\lceil H\rceil+2\lceil L\rceil+1
                   \choose 2\lceil L\rceil+1}
-$$
+```
 
 signatures, with harmless ceiling adjustments. Its logarithm is
 
-$$
+```math
 O\!\left(L\log(2+H/L)\right)
    =O\!\left((r/\epsilon)\log(2+r/\epsilon)
                       \log(n+1)\right).
-$$
+```
 
 This count remains valid when the displayed upper bound `L` exceeds
 `n`; it is simply an overcount. The cases `n<=1` are handled

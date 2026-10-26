@@ -22,11 +22,11 @@ in P(f_j), unused units are allowed, and type-player values v_pj and
 assignment costs c_pj are arbitrary nonnegative rationals. Player p has
 nonnegative setup fee sigma_p. The returned solution must satisfy
 
-$$
+```math
 \sum_{p\in B}\sigma_p+
  \sum_{p\in B,j}c_{pj}x_j(p)\le C.
  \tag{SD1}
-$$
+```
 
 The objective is the minimum original utility over B. Write OPT for its
 integer optimum, c=q-r, and H for the full binary input and the paid
@@ -42,23 +42,23 @@ convention.
 
 **Theorem SD.** For every fixed rational R>1, put
 
-$$
+```math
 \alpha=1-1/R,\qquad
  \Gamma(R)=\frac{R^R}{(R-1)^{R-1}},\qquad
  B(R)=2-1/\Gamma(R).
  \tag{SD2}
-$$
+```
 
 For every feasible original instance, a deterministic algorithm returns
 an actual M-basis and an integer allocation of value at least
 alpha*OPT/2, respecting SD1 exactly, in
 
-$$
+```math
 B(R)^q\,
  2^{O(q\log\log(q+2)/\log(q+2))}
  \mathrm{poly}(H)
  \tag{SD3}
-$$
+```
 
 time and polynomial workspace. No intrinsic-value, support-size or
 price-diversity assumption is required. For fixed rational eta>0,
@@ -72,10 +72,10 @@ Add an auxiliary resource with recipient rank M*, the dual of M.
 Its fractional count vector is y in P(M*). Write
 S_sigma=sum_(p in P) sigma_p. The internal affine budget is
 
-$$
+```math
 \sum_{p,j}c_{pj}x_j(p)+S_\sigma-\sum_p\sigma_p y_p\le C.
  \tag{SD4}
-$$
+```
 
 Thus a dummy unit at p has auxiliary linear cost -sigma_p. Its total
 utility in the light service objective is zero. This is not the
@@ -86,16 +86,16 @@ protected original optimum directly.
 An integer dummy vector has entries zero or one. If its support is D,
 then D is M*-independent and the dual rank identity implies
 
-$$
+```math
 r_M(P\setminus D)=r.
  \tag{SD5}
-$$
+```
 
 Hence the dummy-free players contain an original M-basis B. For any
 integer point satisfying SD4, restricting its real allocations to B
 gives
 
-$$
+```math
 \begin{aligned}
  \sum_{p\in B}\sigma_p+\sum_{p\in B,j}c_{pj}x_j(p)
  &\le \sum_{p\notin D}\sigma_p+\sum_{p,j}c_{pj}x_j(p)\\
@@ -103,7 +103,7 @@ $$
  \le C.
  \end{aligned}
  \tag{SD6}
-$$
+```
 
 The inequalities use nonnegativity of the original fees and assignment
 costs. The internal negative dummy coefficients are not discarded
@@ -120,17 +120,17 @@ by the finitely many positive pair values. Equality belongs to heavy.
 
 At Q subseteq P, use the original real-resource masks
 
-$$
+```math
 A_j(Q)=\{p\in Q:0<v_{pj}<\theta\}
           \cup\{p\notin Q:v_{pj}\ge\theta\},\qquad
  f_j^Q(S)=f_j(S\cap A_j(Q)).
  \tag{SD7}
-$$
+```
 
 Crucially, do not restrict the dummy resource to P\Q. It remains
 available on all P. Let X_Q contain all fractional x,y satisfying
 
-$$
+```math
 \begin{aligned}
  x_j&\in P(f_j^Q),\qquad y\in P(M^*),\\
  y_p+\sum_jx_j(p)&=1 &&(p\notin Q),\\
@@ -138,17 +138,17 @@ $$
      &\le C-S_\sigma.
  \end{aligned}
  \tag{SD8}
-$$
+```
 
 Outside Q a player has exactly one unit in total, either real heavy
 or dummy, fractionally. At a player in Q the dummy may coexist with
 light real counts, but contributes zero light utility. Define
 
-$$
+```math
 U_Q=\{z\in\mathbb R_+^Q:\exists(x,y)\in X_Q,\,
                  z_p\le\sum_jv_{pj}x_j(p)\ (p\in Q)\}.
  \tag{SD9}
-$$
+```
 
 Test X_Q for emptiness first. If nonempty, U_Q is compact, convex,
 contains zero and is downward in its service coordinates. The right
@@ -175,11 +175,11 @@ complement D*=P\B* to the canonical dummy vector 1_(D*); it already
 is an M*-basis. Let F* subseteq B* consist of the selected players
 who originally receive at least one heavy pair, and let
 
-$$
+```math
 I^*=B^*\setminus F^*,\qquad
  k=|P\setminus I^*|=c+|F^*|.
  \tag{SD10}
-$$
+```
 
 Keep every original allocation on I*, keep one original heavy unit
 at each member of F*, and keep the dummy vector on all D*.
@@ -190,18 +190,18 @@ All real retained pairs satisfy SD7. Every player outside Q is
 either in F* or D*, so it still has exactly one real heavy or dummy
 unit. The dummy credit in SD4 is unchanged:
 
-$$
+```math
 S_\sigma-\sum_{p\in D^*}\sigma_p=\sum_{p\in B^*}\sigma_p.
  \tag{SD11}
-$$
+```
 
 Only nonnegative real assignment costs have been discarded. Therefore
 SD8 remains feasible, and the original full utility on I* survives:
 
-$$
+```math
 \mathrm{OPT}\,1_{I^*}\in U_Q.
  \tag{SD12}
-$$
+```
 
 This is the reason the dummy must remain available inside Q.
 Deleting a dummy on an unselected player there would remove its
@@ -224,12 +224,12 @@ implies t*1_I in U_Q.
 
 Query b*1_Q with b=alpha*t. When a nonnegative row separates it,
 
-$$
+```math
 t\,a(I)\le U<b\,a(Q)
  \quad\Longrightarrow\quad
  a(Q\setminus I)>\frac1R a(Q).
  \tag{SD13}
-$$
+```
 
 The weighted first-crossing certificates therefore include a deletion
 inside Q\I. Repeating the surviving-witness argument after each such
@@ -268,11 +268,11 @@ light utility at least b-u_L. At p outside Q, use any nonnegative
 ordering of its allowed real heavy types and dummy. The full-prefix
 count-floor guarantee gives
 
-$$
+```math
 y'_p+\sum_jx'_j(p)\ge
                        \left\lfloor y_p+\sum_jx_j(p)\right\rfloor=1.
  \tag{SD14}
-$$
+```
 
 Both the light utility and SD14 hold at the same integer
 cost-preserving point. Masked real ranks prevent forbidden pairs
@@ -286,10 +286,10 @@ the light utility is at least b-u_L. Restrict original resources
 to B. Equation SD6 proves the exact original combined budget, and
 the achieved minimum utility is at least
 
-$$
+```math
 \min\{a_H,b-u_L\}.
  \tag{SD15}
-$$
+```
 
 It is unnecessary to trim the auxiliary heavy counts to one before
 extracting B. Such a trim must not arbitrarily remove a negative-cost

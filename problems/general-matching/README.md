@@ -18,9 +18,9 @@ Deterministic conditional composition, requiring deterministic external primitiv
 
 Under Contract R,
 
-$$
+```math
 O(n+m)+(m_s+1)\exp\!\left(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5})\right).
-$$
+```
 
 **Space**
 
@@ -52,22 +52,22 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 ## Matching-size refinement
 
-Let $\nu(G)$ be the maximum matching size. The exact-preserving kernel in the proof retains
+Let $`\nu(G)`$ be the maximum matching size. The exact-preserving kernel in the proof retains
 
-$$
+```math
 m_H\le\min\{m_s,O(\nu(G)^2)\}.
-$$
+```
 
-The second term of the running time may use $m_H$ in place of $m_s$, while input reading and normalization still cost $O(n+m)$. Original edge identifiers are restored after the exact solution is obtained.
+The second term of the running time may use $`m_H`$ in place of $`m_s`$, while input reading and normalization still cost $`O(n+m)`$. Original edge identifiers are restored after the exact solution is obtained.
 
-For a computed vertex cover of size $c$, the explicit edge bound is
-$m_H\leq\min\{m_s,\binom c2+c^2\}$. Processing connected components
+For a computed vertex cover of size $`c`$, the explicit edge bound is
+$`m_H\leq\min\{m_s,\binom c2+c^2\}`$. Processing connected components
 separately replaces the solve term by the sum of the corresponding
 component costs; no matching-size estimate is supplied as input.
 
 For a fixed simple graph, the [mixed-failure extension](../../manuscripts/graph-backends/matching-size-kernel-corollary.md#4-one-kernel-for-mixed-vertex-and-edge-failures)
-retains at most $\binom c2+c(c+f)$ edges and simultaneously preserves
-the exact matching number after every mixture of at most $f$ native
+retains at most $`\binom c2+c(c+f)`$ edges and simultaneously preserves
+the exact matching number after every mixture of at most $`f`$ native
 vertex/edge deletions. This is an unconditional deterministic kernel;
 each query still needs a matching solver.
 

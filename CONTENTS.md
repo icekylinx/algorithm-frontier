@@ -377,7 +377,7 @@ One live representative per group with bounded prefix recourse.
 
 **Quantitative result.**
 
-$O((M\log R+Q)\log(M+2))$ representative changes.
+$`O((M\log R+Q)\log(M+2))`$ representative changes.
 
 **Model and scope.** M groups, R resources and Q adaptive deletions; augmenting-path discovery work is separate.
 
@@ -391,11 +391,11 @@ Choose one supplied candidate per group while controlling every resource load.
 
 Load:
 
-$$
+```math
 \le2\mu_x+B\log(8(\lvert X\rvert+1))
-$$
+```
 
-$S\mathrm{poly}(\log S,b)$ bit work.
+$`S\mathrm{poly}(\log S,b)`$ bit work.
 
 **Model and scope.** Explicit sparse occurrences, rational masses and weights; B bounds one weighted occurrence contribution.
 
@@ -407,9 +407,9 @@ Retain at least half of the unit commodities on short candidate routes.
 
 **Quantitative result.**
 
-$O(Z+P)$ arithmetic operations.
+$`O(Z+P)`$ arithmetic operations.
 
-Route length $\le4H$ and fractional load at most doubled.
+Route length $`\le4H`$ and fractional load at most doubled.
 
 **Model and scope.** Supplied DAG and rational masses with total weighted length at most MH; explicit expansion is output-charged.
 
@@ -423,11 +423,11 @@ Complete static numerical client with implicit physical-path updates.
 
 Time:
 
-$$
+```math
 (m+\nu)\exp(O(b^2))h\mathrm{polylog}S
-$$
+```
 
-Space $(m+\nu)\exp(O(b^2))$.
+Space $`(m+\nu)\exp(O(b^2))`$.
 
 **Model and scope.** Supplied fixed edge-partition hierarchy of height h and boundary b; decomposition-input work is additional.
 
@@ -439,7 +439,7 @@ Complete threshold search with unrestricted receiving directions.
 
 **Quantitative result.**
 
-$(m+\nu)\mathrm{polylog}S$ total fixed-ledger work.
+$`(m+\nu)\mathrm{polylog}S`$ total fixed-ledger work.
 
 **Model and scope.** The entire ambient allocation support is a forest, with the stated polynomial-range guards.
 
@@ -451,9 +451,9 @@ Complete threshold search with k nonforest incidences.
 
 **Quantitative result.**
 
-$(m+\nu(k+1))\mathrm{polylog}S$ total work.
+$`(m+\nu(k+1))\mathrm{polylog}S`$ total work.
 
-$(k+1)\mathrm{polylog}S$ per query/update plus events.
+$`(k+1)\mathrm{polylog}S`$ per query/update plus events.
 
 **Model and scope.** Fixed polynomial-range ledger; parameterized support theorem does not improve arbitrary-graph matching time.
 
@@ -465,11 +465,11 @@ Left-perfect matching or an explicit violated hitting-set condition.
 
 **Quantitative result.**
 
-$$
+```math
 P(n+1)^{O((r/\epsilon)\log(2+r/\epsilon))}\mathrm{poly}(b_\epsilon+\log P)
-$$
+```
 
-**Model and scope.** Whole-edge rank $r\ge2$, $0<\epsilon<1$; matching under $\tau(E_S)>(2r-3+\epsilon)(\lvert S\rvert-1)$.
+**Model and scope.** Whole-edge rank $`r\ge2`$, $`0<\epsilon<1`$; matching under $`\tau(E_S)>(2r-3+\epsilon)(\lvert S\rvert-1)`$.
 
 ### [Sparse-separator corank refinement](manuscripts/allocation-and-scheduling/attained-set-sparse-separator-gap.md)
 
@@ -479,13 +479,13 @@ Smaller extension and whole-ground bases when the returned separator is sparse.
 
 **Quantitative result.**
 
-$$
+```math
 \beta(R,w)^c
-$$
+```
 
-$\beta(2,3)=(1+\sqrt5)/2$, $\beta(3,4)=1+\sqrt2$.
+$`\beta(2,3)=(1+\sqrt5)/2`$, $`\beta(3,4)=1+\sqrt2`$.
 
-**Model and scope.** Actual separator width w; matching global bases $(5-\sqrt5)/2$ and $3-\sqrt2$ use the forced-omission wrapper.
+**Model and scope.** Actual separator width w; matching global bases $`(5-\sqrt5)/2`$ and $`3-\sqrt2`$ use the forced-omission wrapper.
 
 ### [Whole-ground robust allocation barrier](manuscripts/allocation-and-scheduling/robust-unit-allocation-whole-ground-oracle-barrier.md)
 
@@ -495,11 +495,11 @@ Every finite multiplicative guarantee requires near-exhaustive rank queries.
 
 **Quantitative result.**
 
-At least $q^{-1}\binom qr-1$ deterministic queries.
+At least $`q^{-1}\binom qr-1`$ deterministic queries.
 
-$2^{q-O(\log q)}$ for balanced rank.
+$`2^{q-O(\log q)}`$ for balanced rank.
 
-**Model and scope.** $2\le r<q$; q explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication.
+**Model and scope.** $`2\le r<q`$; q explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication.
 
 ### [Implicit minimal-bundle transversals](manuscripts/matching-and-routing/implicit-minimal-bundle-transversal-oracle.md)
 
@@ -509,9 +509,9 @@ Disjoint minimal bundles or an explicit domination/constellation certificate.
 
 **Quantitative result.**
 
-$$
+```math
 P(q+1)^{O(\epsilon^{-1}\log(2+q/\epsilon))}\mathrm{poly}(b+b_\epsilon+\log P)
-$$
+```
 
 **Model and scope.** No configuration enumeration or arbitrary-neighbour oracle; certificate class sets retain their distinct meanings.
 
@@ -523,7 +523,7 @@ Globally resource-free owners cover the current player-rank deficit.
 
 **Quantitative result.**
 
-$r_M(F)\ge r-k$ when the full quota is $t=3b-2$ and each current record has b units.
+$`r_M(F)\ge r-k`$ when the full quota is $`t=3b-2`$ and each current record has b units.
 
 **Model and scope.** Fully normalized prefix invariant; eligible free owners admit a paid exchange; no faster critical-quota runtime follows.
 
@@ -535,7 +535,7 @@ Within-layer joint independence retains the sharp availability-dependent quality
 
 **Quantitative result.**
 
-Factor $\lambda^{-1}+3-3/r+\eta$ with the original rank-exponential or relaxed rank-quasipolynomial time.
+Factor $`\lambda^{-1}+3-3/r+\eta`$ with the original rank-exponential or relaxed rank-quasipolynomial time.
 
 **Model and scope.** The stated current-blocker and paid availability model; joint independence alone does not supply a polynomial batching theorem.
 
@@ -559,9 +559,9 @@ One shared update set preserves all historical path-hitting certificates.
 
 **Quantitative result.**
 
-$C\cup I$ hits current short paths.
+$`C\cup I`$ hits current short paths.
 
-Size at most $\lvert C\rvert+\lvert I\rvert$.
+Size at most $`\lvert C\rvert+\lvert I\rvert`$.
 
 **Model and scope.** Deletions and length increases are safe; inserted/decreased edge lifetimes enter I; selected-path and layer repair are separate.
 
@@ -573,7 +573,7 @@ Maintain old-label shortest-path forests on tight-reachable vertices.
 
 **Quantitative result.**
 
-$O(m+\nu)$ total graph work and supplied forest edits per fixed-potential interval.
+$`O(m+\nu)`$ total graph work and supplied forest edits per fixed-potential interval.
 
 **Model and scope.** No ledger births or label changes inside the interval; potential-refresh work is outside the bound.
 
@@ -591,23 +591,23 @@ Directed nonnegative SSSP reduction with monotone prices and a charged repricing
 
 ### [Residual-capacity configuration comparator](manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md)
 
-Integral allocation with factor $4-3/r$ against the strengthened residual-capacity configuration LP.
+Integral allocation with factor $`4-3/r`$ against the strengthened residual-capacity configuration LP.
 
 **Randomness.** Deterministic current-blocker allocation relative to the stronger LP. A supplied factor-lambda availability oracle must meet its certified guarantee on every call.
 
 **Quantitative result.**
 
-$$
+```math
 2^{O(r)}\mathrm{poly}(H)
-$$
+```
 
 The stated rank-quasipolynomial alternative allows additive accuracy in the factor.
 
-**Model and scope.** Arbitrary binary recipient polymatroids and exact local availability; certified factor-$\lambda$ availability changes the ratio to $\lambda^{-1}+3-3/r$. The algorithm does not solve the LP.
+**Model and scope.** Arbitrary binary recipient polymatroids and exact local availability; certified factor-$`\lambda`$ availability changes the ratio to $`\lambda^{-1}+3-3/r`$. The algorithm does not solve the LP.
 
 ### [Fractional optimization of residual configuration relaxations](manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md)
 
-A feasible fractional configuration point at target at least $(1-\epsilon)\mathrm{OPT}_{\mathrm{LP}}$.
+A feasible fractional configuration point at target at least $`(1-\epsilon)\mathrm{OPT}_{\mathrm{LP}}`$.
 
 **Randomness.** Deterministic rational ellipsoid optimization, exact-budget profit-scaling dynamic programming and finite primal LP extraction.
 
@@ -615,17 +615,17 @@ A feasible fractional configuration point at target at least $(1-\epsilon)\mathr
 
 Full LP:
 
-$$
+```math
 2^{O(q)}\mathrm{poly}(H,\epsilon^{-1})
-$$
+```
 
 Support-s cuts:
 
-$$
+```math
 (q+1)^{O(s+1)}\mathrm{poly}(H,\epsilon^{-1})
-$$
+```
 
-**Model and scope.** Coordinate-box local families and binary capacities; $s=2(r-1)$ gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding.
+**Model and scope.** Coordinate-box local families and binary capacities; $`s=2(r-1)`$ gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding.
 
 ## Shared manuscripts
 

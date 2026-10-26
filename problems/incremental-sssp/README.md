@@ -16,7 +16,7 @@ Deterministic conditional composition; its raw-cycle and retirement backend is e
 
 **Time**
 
-Total work $O(n+m)+(n+m)\exp\!\left(O(\log E(N)+\sqrt{U(h+\log(1/\epsilon))})\right)$, with $\log E(N)=O(U^{4/5}h^{1/5})$; conditional on the raw detector and retirement interface.
+Total work $`O(n+m)+(n+m)\exp\!\left(O(\log E(N)+\sqrt{U(h+\log(1/\epsilon))})\right)`$, with $`\log E(N)=O(U^{4/5}h^{1/5})`$; conditional on the raw detector and retirement interface.
 
 **Space**
 
@@ -24,7 +24,7 @@ Actual root vertices, inserted edges, and auxiliary copies over their lifetimes,
 
 **Parameters**
 
-**N** is the power-of-two cap; **U=log N**; **h=log(U+4)**; $0<\epsilon\le1/2$ with $\log(1/\epsilon)\le c_*U$; $E(N)$ is the raw-backend factor; **k** is the number of returned path edges.
+**N** is the power-of-two cap; **U=log N**; **h=log(U+4)**; $`0<\epsilon\le1/2`$ with $`\log(1/\epsilon)\le c_*U`$; $`E(N)`$ is the raw-backend factor; **k** is the number of returned path edges.
 
 **Model and representation**
 

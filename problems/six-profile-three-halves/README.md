@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns an integer schedule with makespan at most $3\mathrm{OPT}/2$ while preserving every original job total and the exact assignment-cost budget.
+Returns an integer schedule with makespan at most $`3\mathrm{OPT}/2`$ while preserving every original job total and the exact assignment-cost budget.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic enumeration of six profiles per machine and exact cost-preserving 
 
 **Time**
 
-$6^q\mathrm{poly}(H)$, with six profiles per physical machine.
+$`6^q\mathrm{poly}(H)`$, with six profiles per physical machine.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$q$ is the physical-machine count. $H$ includes original processing times, costs, binary job totals, recipient-rank descriptions, and paid profile, LP, intersection, and rounding work.
+$`q`$ is the physical-machine count. $`H`$ includes original processing times, costs, binary job totals, recipient-rank descriptions, and paid profile, LP, intersection, and rounding work.
 
 **Model and representation**
 

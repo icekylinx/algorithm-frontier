@@ -10,28 +10,28 @@ as input, enumeration of configurations, or solution of that LP.
 Let the original player matroid M have rank r>=1. For each player p
 and target T>=0, let
 
-$$
+```math
 \mathcal C_p(T)=\{C\subseteq L_p:\ v(C)\ge T\}.
-$$
+```
 
 The player-matroid configuration LP has nonnegative variables
 `z_pC`, for C in this finite but possibly exponential family, and
 player variables
 
-$$
+```math
 \begin{split}
  x_p&=\sum_{C\in\mathcal C_p(T)}z_{pC},\\
  x&\in P_{\mathcal B(M)},\\
  \sum_{p,C:\ j\in C}z_{pC}&\le1\qquad(j\text{ a resource}).
  \end{split}
  \tag{C1}
-$$
+```
 
 For the threshold and algorithm of the union note, put
 
-$$
+```math
 d_r=4-3/r,\qquad\theta=1/d_r.
-$$
+```
 
 The fixed-target algorithm returns either a basis allocation worth
 at least T/d_r, or a certificate that (C1) is infeasible. Its time
@@ -51,18 +51,18 @@ Classify a resource as fat when its value is at least theta T, and
 let N be the transversal matroid of players matchable to distinct
 liked fat resources. Set
 
-$$
+```math
 U=M^*\vee N.
-$$
+```
 
 Assume (C1) is feasible, only for the following existence proof.
 For each player define its fat-configuration mass and small mass by
 
-$$
+```math
 f_p=\sum_{C:\ C\text{ contains a fat resource}}z_{pC},
  \qquad h_p=x_p-f_p.
  \tag{C2}
-$$
+```
 
 From every fat configuration select one contained fat resource,
 using any fixed rule. Assign its whole configuration weight to that
@@ -72,25 +72,25 @@ selecting one item from a configuration cannot increase any resource
 load beyond (C1). By the integral bipartite matching polytope, its
 player degree vector satisfies
 
-$$
+```math
 f\in P_{\mathcal I(N)}.
  \tag{C3}
-$$
+```
 
 For a small resource j let
 
-$$
+```math
 a_{pj}=\sum_{C:\ C\text{ has no fat resource},\ j\in C}z_{pC}.
-$$
+```
 
 Then
 
-$$
+```math
 0\le a_{pj}\le h_p,\qquad
  \sum_p a_{pj}\le1,\qquad
  \sum_jv_ja_{pj}\ge T h_p.
  \tag{C4}
-$$
+```
 
 The individual bound by h_p is essential. It follows because these
 resource marginals use only the all-small configurations of p.
@@ -101,9 +101,9 @@ justify this step after the split.
 
 The complementary player vector
 
-$$
+```math
 d=\mathbf1-x
-$$
+```
 
 lies in the base polytope of M*. Let `z=d+f`. Coordinatewise,
 `0<=z<=1`, because f<=x. Moreover z lies in the independent-set
@@ -113,12 +113,12 @@ For completeness, the last implication follows directly from the
 matroid-union rank formula. For every player set A and every Y
 contained in A,
 
-$$
+```math
 \begin{split}
  z(A)&=z(A\setminus Y)+d(Y)+f(Y)\\
      &\le |A\setminus Y|+r_{M^*}(Y)+r_N(Y).
  \end{split}
-$$
+```
 
 Minimizing over Y gives `z(A)<=r_U(A)`. Together with
 nonnegativity, these are the independent-set polytope constraints.
@@ -131,17 +131,17 @@ base-polytope point. One existence proof writes it as a convex
 combination of independent-set indicators, extends each independent
 set to a basis, and keeps the same coefficients. Thus there is
 
-$$
+```math
 z'\in P_{\mathcal B(U)},\qquad z'\ge z.
-$$
+```
 
 Its complement satisfies
 
-$$
+```math
 x'=\mathbf1-z'\in P_{\mathcal B(U^*)},\qquad
                    0\le x'\le\mathbf1-z=x-f=h.
  \tag{C5}
-$$
+```
 
 No such fractional point has to be computed by the allocation
 algorithm. The public base-domination fact is also stated in
@@ -154,28 +154,28 @@ paid in the main union note; see also
 
 For h_p>0 set
 
-$$
+```math
 y'_{pj}=(x'_p/h_p)a_{pj},
-$$
+```
 
 and set all these coordinates to zero when h_p=0. This latter case
 also has x'_p=0. Equations (C4)--(C5) give
 
-$$
+```math
 0\le y'_{pj}\le x'_p,\qquad
  \sum_p y'_{pj}\le1,\qquad
  \sum_jv_jy'_{pj}\ge T x'_p.
-$$
+```
 
 Therefore
 
-$$
+```math
 \boxed{\quad
  \text{configuration LP (C1) feasible}
        \quad\Longrightarrow\quad Q_{U^*}(T)\ne\varnothing.
  \quad}
  \tag{C6}
-$$
+```
 
 The inner algorithm's explicit certificate that the right side is
 infeasible consequently certifies infeasibility of (C1). A verifier
@@ -206,9 +206,9 @@ belongs to `Delta Z`.
 
 Also
 
-$$
+```math
 rT_{\rm conf}\le V,
-$$
+```
 
 where V is the sum of all resource values: sum the configuration
 values against their weights and then apply the resource capacities.

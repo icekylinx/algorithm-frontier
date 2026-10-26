@@ -4,45 +4,45 @@ The algorithm maintains rank additivity for every ordered center prefix,
 including prefixes ending inside a layer, and immediately processes a
 stored center when its designated blockers become redundant.
 
-**Theorem 1.** Let $M$ have rank $r\ge1$. For arbitrary recipient
+**Theorem 1.** Let $`M`$ have rank $`r\ge1`$. For arbitrary recipient
 matroids, a deterministic algorithm returns an allocation with minimum
-utility at least $T_{\rm conf}/d$, where $T_{\rm conf}$ is the
+utility at least $`T_{\rm conf}/d`$, where $`T_{\rm conf}`$ is the
 coupled configuration optimum and
-$$
+```math
 d=4-\frac3r.
-$$
-Its time is $2^{O(r)}\mathrm{poly}(H)$ and its space is
-polynomial. For any positive rational $\eta$, factor $d+\eta$ is
+```
+Its time is $`2^{O(r)}\mathrm{poly}(H)`$ and its space is
+polynomial. For any positive rational $`\eta`$, factor $`d+\eta`$ is
 obtained in
-$$
+```math
 \mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.
  \tag{P1}
-$$
-With a certified factor-$\lambda$ local availability oracle, replace
-$d$ by $\lambda^{-1}+3-3/r$. Input and oracle costs, including
-all rational accuracy bits, are paid in $H$.
+```
+With a certified factor-$`\lambda`$ local availability oracle, replace
+$`d`$ by $`\lambda^{-1}+3-3/r`$. Input and oracle costs, including
+all rational accuracy bits, are paid in $`H`$.
 
 ## 1. Model, comparator, and player-side operations
 
-There is an explicit player set $P$, a player-selection matroid $M$,
-and resources $j$ of common intrinsic value $v_j\ge0$. Resource $j$
+There is an explicit player set $`P`$, a player-selection matroid $`M`$,
+and resources $`j`$ of common intrinsic value $`v_j\ge0`$. Resource $`j`$
 may serve exactly the player sets independent in its supplied recipient
-matroid $R_j$; a player receives at most one service from each resource.
-The output selects an actual $M$-basis and gives its players feasible
+matroid $`R_j`$; a player receives at most one service from each resource.
+The output selects an actual $`M`$-basis and gives its players feasible
 resource bundles. Unused capacity is allowed.
 
-Optionally each player has a downward-closed family $\mathcal F_p$
+Optionally each player has a downward-closed family $`\mathcal F_p`$
 of allowed resource subsets. On an available resource list, its paid
-oracle returns a feasible bundle of value at least $\lambda$ times
+oracle returns a feasible bundle of value at least $`\lambda`$ times
 the best available feasible bundle. Unrestricted availability has
-$\lambda=1$.
+$`\lambda=1`$.
 
-At target $T$, let $\mathcal C_p(T)=\{C\in\mathcal F_p:v(C)\ge T\}$,
+At target $`T`$, let $`\mathcal C_p(T)=\{C\in\mathcal F_p:v(C)\ge T\}`$,
 including only individually permitted services. The coupled
-configuration relaxation has nonnegative variables $z_{pC}$ and
+configuration relaxation has nonnegative variables $`z_{pC}`$ and
 constraints
-$$
+```math
 \begin{aligned}
  x_p&=\sum_{C\in\mathcal C_p(T)}z_{pC},&
  x&\in B(M),\\
@@ -50,15 +50,15 @@ $$
  y_{\cdot j}&\in P(R_j).
  \end{aligned}
  \tag{P0}
-$$
-Its largest feasible target is $T_{\rm conf}$. Configurations may
+```
+Its largest feasible target is $`T_{\rm conf}`$. Configurations may
 be exponentially numerous. They and a feasible fractional point are
 not part of the input, and the algorithm does not solve this LP.
 They are used only to prove the soundness of its obstruction
 certificate. The implied small-resource relaxation has
-$0\le y_{pj}\le x_p$ and $\sum_jv_jy_{pj}\ge Tx_p$;
+$`0\le y_{pj}\le x_p`$ and $`\sum_jv_jy_{pj}\ge Tx_p`$;
 with local families it also retains their row perspective
-$y_p\in x_p\mathrm{conv}\{\mathbf1_C:C\in\mathcal F_p\}$.
+$`y_p\in x_p\mathrm{conv}\{\mathbf1_C:C\in\mathcal F_p\}`$.
 
 We use the earliest fundamental-circuit exchange, last-layer refresh,
 and bounded integer signature from
@@ -66,8 +66,8 @@ and bounded integer signature from
 and its
 [player-side invariant proof](../../manuscripts/allocation-and-scheduling/matroid-allocation-current-blocker-quasipolynomial.md).
 The resource invariants and normalization needed for this extension
-are established below. Let $B>0$ be the desired bundle threshold and
-let $u$ be the largest retained resource value, or zero if none.
+are established below. Let $`B>0`$ be the desired bundle threshold and
+let $`u`$ be the largest retained resource value, or zero if none.
 Zero-valued resources are discarded. Rank zero is the empty allocation;
 target zero is attained by any player basis with empty bundles.
 
@@ -84,7 +84,7 @@ remaining centers, and never inserts a center before a retained center.
 
 For an ordered prefix S of centers and a resource j, define
 
-$$
+```math
 \begin{split}
  Y(S)&=\bigcup_{c\in S}D(c),\\
  X_j(S)&=\{p(c):c\in S,\ j\in c\},\\
@@ -93,7 +93,7 @@ $$
  U_j(S)&=M_j\setminus Y_j(S).
  \end{split}
  \tag{P2}
-$$
+```
 
 Here M_j is the actual current matching's recipient set. The
 distinctness invariant is retained: selected occurrences using j have
@@ -102,10 +102,10 @@ two services to the same player-resource pair.
 
 At layer i, player eligibility is
 
-$$
+```math
 p\notin\mathrm{cl}_M(I\setminus\mathrm{owners}(Y_{<i})).
  \tag{P3}
-$$
+```
 
 Use the **one-at-a-time earliest-layer player circuit exchange**.
 For a free owner outside cl_M(I), augment. For an already matched owner,
@@ -123,11 +123,11 @@ In addition to universal reservations, maintain two prefix statements.
 
 For every actual subset Z of selected centers and every resource j,
 
-$$
+```math
 (M_j\setminus\mathrm{owners}(D(Z)))
         \mathbin{\dot\cup}X_j(Z)\in\mathcal I(R_j).
  \tag{P4}
-$$
+```
 
 This remains an inductively maintained theorem. The algorithm does not
 enumerate Z.
@@ -136,11 +136,11 @@ enumerate Z.
 
 For every ordered prefix S and every resource j, require
 
-$$
+```math
 r_j(W_j(S)\cup U_j(S))
              =r_j(W_j(S))+|U_j(S)|.
  \tag{P5}
-$$
+```
 
 Equivalently, the currently unmarked matching recipients are independent
 after contracting the flat spanned by the selected-plus-marked prefix.
@@ -152,10 +152,10 @@ exactly independence of the actual matching recipient set M_j.
 For a retained center c, let S^-_c be the centers strictly preceding it.
 For every resource j in c, require
 
-$$
+```math
 p(c)\notin\mathrm{cl}_{R_j}(W_j(S^-_c)).
  \tag{P6}
-$$
+```
 
 This is a current invariant, not a stored numerical birth charge. It is
 true when c is chosen. Afterwards, the preceding center records remain
@@ -168,10 +168,10 @@ and does not enter any old group. Consequently (P6) persists literally.
 
 During a last-layer scan, use the accepted availability test
 
-$$
+```math
 p\notin\mathrm{cl}_{R_j}(X_j\cup Y_j),
  \tag{P7}
-$$
+```
 
 where X,Y are the entire current center/blocker prefix. Find a feasible
 minimal B-bundle c from available resources, using the exact or certified
@@ -179,18 +179,18 @@ approximate local oracle and subsequent ordinary minimality pruning.
 
 Call a resource j used by c **problematic** when
 
-$$
+```math
 p\in\mathrm{cl}_{R_j}(X_j\cup M_j).
  \tag{P8}
-$$
+```
 
 Designate the following records:
 
-$$
+```math
 D(c)=\bigcup_{j\in c:\ (P8)}
        \{b:\ b\text{ is a current matching record outside }Y,\ j\in b\}.
  \tag{P9}
-$$
+```
 
 Every designated blocker shares a problematic resource with c. If D(c)
 is nonempty, append c with that group. Otherwise process c as a fresh
@@ -224,11 +224,11 @@ If D(c) is empty, no used resource can be problematic. Otherwise (P9)
 would contain a matching record, unless U were empty; in that latter
 case (P8) would contradict (P7). Therefore a fresh free candidate satisfies
 
-$$
+```math
 p\notin\mathrm{cl}_{R_j}(M_j\cup X_j)
                          \quad(j\in c).
  \tag{P10}
-$$
+```
 
 This stronger form of freedom will pay for preservation of (P5).
 
@@ -236,35 +236,35 @@ This stronger form of freedom will pay for preservation of (P5).
 
 For a stored center c, let S=S^-_c followed by c. For j in c, put
 
-$$
+```math
 V_j=W_j(S^-_c)\cup
            \{p(b):b\in D(c),\ j\in b\}.
  \tag{P11}
-$$
+```
 
 Suppose
 
-$$
+```math
 p(c)\notin\mathrm{cl}_{R_j}(V_j)
                           \quad\hbox{for every }j\in c.
  \tag{P12}
-$$
+```
 
 Then c is **strongly free relative to the earlier centers**:
 
-$$
+```math
 p(c)\notin\mathrm{cl}_{R_j}(M_j\cup X_j(S^-_c))
                              \quad(j\in c).
  \tag{P13}
-$$
+```
 
 Indeed, by (P5) for S, the remaining unmarked set U_j(S) is independent
 over V_j plus p(c). Hence
 
-$$
+```math
 r_j(V_j\cup\{p(c)\}\cup U_j(S))
        =r_j(V_j)+1+|U_j(S)|.
-$$
+```
 
 The rank without p(c) is at most r_j(V_j)+|U_j(S)|. This strict rank
 increase proves (P13), because V_j union U_j(S) equals
@@ -278,11 +278,11 @@ contains matching records. When it fails, there is a used resource j
 at which the owner is spanned by the preceding prefix and the current
 group's services. In particular, for D(c)={b}, there is a resource with
 
-$$
+```math
 p(c)\in\mathrm{cl}_{R_j}
                (W_j(S^-_c)\cup\{p(b)\}),\qquad j\in b.
  \tag{P14}
-$$
+```
 
 The final membership j in b is forced by (P6): without that service,
 V_j would equal the earlier W_j and could not span p(c).
@@ -363,10 +363,10 @@ release from layer i, its entire old layer is discarded because h<i.
 At layer h, X_h is unchanged and Y_h loses exactly the outgoing matching
 record. Thus the same signature
 
-$$
+```math
 (-|X_1|,|Y_1|,\ldots,-|X_\ell|,|Y_\ell|,\infty)
  \tag{P15}
-$$
+```
 
 strictly decreases. A successful augmentation ends the phase. A
 nonaugmenting normalization exchange strictly lowers the index of the
@@ -392,10 +392,10 @@ rank-quasipolynomial depth and signature count also apply.
 
 At a normalized completed prefix, define the same cover
 
-$$
+```math
 \Phi=\sum_j v_j r_j(X_j\cup Y_j).
  \tag{P16}
-$$
+```
 
 Telescope this rank over the ordered center prefixes. Put a=min(u,B).
 Every current blocker still shares a resource with its assigned center,
@@ -414,10 +414,10 @@ then prevents that blocker from containing any resource of value at
 least B. Thus c and all its blockers have value below B+a. Their rank
 increment is at most the sum of those service values, giving
 
-$$
+```math
 \Delta\Phi_c<(t+1)(B+a)\le t(2B+a).
  \tag{P17}
-$$
+```
 
 The last inequality is (t-1)B>=a, valid for t>=2 and a<=B.
 
@@ -428,60 +428,60 @@ the rank increment saves at least v_j compared with separately counting
 both service occurrences. At every other resource, cardinality remains
 an upper bound. Minimality of b implies v(b)-v_j<B, hence
 
-$$
+```math
 \Delta\Phi_c\le v(c)+v(b)-v_j<2B+a.
  \tag{P18}
-$$
+```
 
 This saving uses the **current ordered prefix**. It is not the invalid
 claim that a dependency charge established at birth survives unchanged.
 The groups partition Y and the increments telescope, giving
 
-$$
+```math
 \Phi\le C(B,u)|Y|,\qquad
  C(B,u)=\max\{u,\ 2B+\min(u,B)\}.
  \tag{P19}
-$$
+```
 
 In particular, for u<=B,
 
-$$
+```math
 C(B,u)=2B+u.
  \tag{P20}
-$$
+```
 
 **Lemma 2 (fractional lower cover).** At a completed failed available
-scan, a feasible compact point at target $T$ implies
-$$
+scan, a feasible compact point at target $`T`$ implies
+```math
 \Phi>(T-B/\lambda)w,\qquad B\le\lambda T,
  \tag{P20a}
-$$
-where $w=r-k+|Y_{<i}|$.
+```
+where $`w=r-k+|Y_{<i}|`$.
 
-**Proof.** Let $J_0=I\setminus\mathrm{owners}(Y_{<i})$ and
-$E=P\setminus\mathrm{cl}_M(J_0)$. Because $x\in B(M)$,
-$x(E)\ge r-r_M(J_0)=w$. For resource $j$, an unavailable player
-lies in $\mathrm{cl}_{R_j}(X_j\cup Y_j)$. Its total fractional
+**Proof.** Let $`J_0=I\setminus\mathrm{owners}(Y_{<i})`$ and
+$`E=P\setminus\mathrm{cl}_M(J_0)`$. Because $`x\in B(M)`$,
+$`x(E)\ge r-r_M(J_0)=w`$. For resource $`j`$, an unavailable player
+lies in $`\mathrm{cl}_{R_j}(X_j\cup Y_j)`$. Its total fractional
 receiving mass is at most the rank of that closure, so the total
-unavailable value is at most $\Phi$.
+unavailable value is at most $`\Phi`$.
 
-For an eligible player with $x_p>0$, restrict each configuration
+For an eligible player with $`x_p>0`$, restrict each configuration
 in its row perspective to its available resources. Downward closure
 keeps these restricted bundles feasible. The complete failed
-factor-$\lambda$ scan says that every such available bundle has
-value strictly below $B/\lambda$. Hence its available fractional
-value is strictly below $Bx_p/\lambda$, whereas total fractional
-value is at least $Tx_p$. Summing the unavailable value over $E$
+factor-$`\lambda`$ scan says that every such available bundle has
+value strictly below $`B/\lambda`$. Hence its available fractional
+value is strictly below $`Bx_p/\lambda`$, whereas total fractional
+value is at least $`Tx_p`$. Summing the unavailable value over $`E`$
 gives
-$\Phi>(T-B/\lambda)x(E)\ge(T-B/\lambda)w$.
-At least one positive $x_p$ occurs because $w>0$, so the
-strictness is preserved. $\square$ Write tau=1/lambda and rho=(r-1)/r. The sufficient exact
+$`\Phi>(T-B/\lambda)x(E)\ge(T-B/\lambda)w`$.
+At least one positive $`x_p`$ occurs because $`w>0`$, so the
+strictness is preserved. $`\square`$ Write tau=1/lambda and rho=(r-1)/r. The sufficient exact
 boundary condition is therefore
 
-$$
+```math
 \tau B+\rho C(B,u)\le T.
  \tag{P21}
-$$
+```
 
 If a newly completed layer has no blocker, its entire cover uses only
 the preceding s blockers, and s/w<=rho. Inequality (P21) contradicts
@@ -490,10 +490,10 @@ the strict lower cover, yielding a sound infeasibility certificate.
 For positive gap Delta=T-tau B-rho C(B,u)>0, a completed layer with
 y<=gamma w contradicts the lower cover whenever
 
-$$
+```math
 \gamma\le\min\{1/2,\Delta/(2C(B,u))\}.
  \tag{P22}
-$$
+```
 
 Thus all continuing completed layers have multiplicative current growth.
 Earlier growth tests remain true below the next earliest exchange layer,
@@ -504,10 +504,10 @@ since their records and eligibility flats do not change.
 Use the accepted fat-resource matroid-union and dual-complement wrapper,
 with
 
-$$
+```math
 d=\tau+3\rho,\qquad B_0=T/d,
  \tag{P23}
-$$
+```
 
 and declare v_j>=B_0 fat. For each fat resource, restrict its recipient
 matroid to players whose singleton service is locally feasible. The
@@ -519,10 +519,10 @@ coupled configuration LP is feasible.
 
 At B=B_0, (P20) gives C(B_0,u)<=3B_0, so
 
-$$
+```math
 \tau B_0+\rho_{r'}C(B_0,u)
                             \le(\tau+3\rho)B_0=T.
-$$
+```
 
 The exact-boundary signature count gives factor d in rank-exponential
 time. The fat and small allocations combine exactly as in the accepted
@@ -533,20 +533,20 @@ For eta>0 set eta_0=min{eta,1}, keep the fat threshold B_0 and take
 B=T/(d+eta_0). This delivers at least the requested factor d+eta.
 Because d>=1, one has B>=B_0/2. Since u<B_0,
 
-$$
+```math
 C(B,u)\le\max\{B_0,3B\}=\overline C=3B,\qquad
  T-\tau B-\rho\overline C
                          =T-dB=\eta_0 B.
  \tag{P24}
-$$
+```
 
 Consequently
 
-$$
+```math
 \frac{T-\tau B-\rho\overline C}{\overline C}
                   =\tfrac13\min\{\eta,1\}.
  \tag{P25}
-$$
+```
 
 Hence gamma=min{eta,1}/16 safely satisfies the positive-gap growth
 condition. The rank exponent is uniform in lambda; the cost of obtaining
@@ -554,20 +554,20 @@ its approximate oracle is still paid. This proves the claimed time (P1)
 and the corresponding lambda version.
 
 For completeness, the configuration reduction is as follows. Let
-$f_p$ be the mass of configurations containing a large service and
-$h_p=x_p-f_p$. Choose one large service from each such configuration.
+$`f_p`$ be the mass of configurations containing a large service and
+$`h_p=x_p-f_p`$. Choose one large service from each such configuration.
 Its typewise recipient marginals are dominated by the original feasible
-columns; their sum $f\le x\le\mathbf1$ therefore belongs to the
-independent polytope of the large-service union $N$. With
-$U=M^*\vee N$, the vector $\mathbf1-x+f$ is $U$-independent by
-the matroid-union rank formula. Extend it fractionally to a $U$-base.
-The complementary vector $x'\in B(U^*)$ satisfies $0\le x'\le h$.
+columns; their sum $`f\le x\le\mathbf1`$ therefore belongs to the
+independent polytope of the large-service union $`N`$. With
+$`U=M^*\vee N`$, the vector $`\mathbf1-x+f`$ is $`U`$-independent by
+the matroid-union rank formula. Extend it fractionally to a $`U`$-base.
+The complementary vector $`x'\in B(U^*)`$ satisfies $`0\le x'\le h`$.
 
-All-small configurations have recipient marginals $a_{pj}\le h_p$
-and utility at least $Th_p$. Multiplying the entire row by
-$x'_p/h_p$ (zero when $h_p=0$) preserves every recipient-polytope
+All-small configurations have recipient marginals $`a_{pj}\le h_p`$
+and utility at least $`Th_p`$. Multiplying the entire row by
+$`x'_p/h_p`$ (zero when $`h_p=0`$) preserves every recipient-polytope
 constraint and every local row perspective, and gives small utility
-at least $Tx'_p$. Thus a feasible original configuration target
+at least $`Tx'_p`$. Thus a feasible original configuration target
 supplies the small-resource compact promise used in Lemma 2.
 This is the same fractional union calculation proved explicitly in
 [the configuration reduction](../item-matroid-union/configuration-comparator.md),
@@ -576,11 +576,11 @@ capacities. None of these fractional witnesses is computed.
 
 A common rational grid of the resource values contains every
 configuration value and hence the attained largest feasible target.
-An upper bound is $V=\sum_jv_jr_{R_j}(P)$. A grid search initialized
-at zero and an external upper point above $V$ saves actual
+An upper bound is $`V=\sum_jv_jr_{R_j}(P)`$. A grid search initialized
+at zero and an external upper point above $`V`$ saves actual
 allocations on success and lowers the upper endpoint only on a
 sound full-target failure. Adjacent endpoints imply that the saved
-nominal target is at least $T_{\rm conf}$, even if successes are
+nominal target is at least $`T_{\rm conf}`$, even if successes are
 not monotone. The number of trials and all numerical encodings are
 polynomial.
 

@@ -6,29 +6,29 @@
 
 Let M be a matroid on a finite explicitly listed ground set E, with rank r. Each element e has a set Lambda(e) of at most d labels. A query F consists of at most h labels and deletes every element whose label set intersects F. Write
 
-$$
+```math
 X_F=\{e\in X: \Lambda(e)\cap F=\varnothing\}
-$$
+```
 
 for X contained in E. We seek a single restriction H contained in E such that
 
-$$
+```math
 r_M(H_F)=r_M(E_F)\qquad\text{for every }|F|\le h. \tag{1}
-$$
+```
 
 **Theorem 1 (sharp size).** Every inclusion-minimal H satisfying (1) obeys
 
-$$
+```math
 \boxed{|H|\le r\binom{h+d}{d}.} \tag{2}
-$$
+```
 
 This bound is best possible, even for a direct sum of rank-one represented matroids. In particular, for one label per element, an exact (h+1)r bound holds for arbitrary matroids, not just represented ones.
 
 **Theorem 2 (constructivity).** Given an independence oracle, a restriction satisfying (1) and (2) can be found deterministically in
 
-$$
+```math
 f(r,h,d)\,|E|^{O(1)}
-$$
+```
 
 oracle time for a computable function f. A direct reverse-deletion implementation instead uses |E|^{O(h)} oracle time. The FPT statement includes r in the parameter; it is not a uniform polynomial-time construction when r,h,d are unrestricted inputs.
 
@@ -40,21 +40,21 @@ Before construction, one may clip `h` to the number `L` of distinct labels and `
 
 For every e in a matroid ground set H, let A_e and B_e be disjoint subsets of some auxiliary label universe. Suppose
 
-$$
+```math
 e\notin\mathrm{cl}_M\bigl(\{f\in H-e:A_f\cap B_e=\varnothing\}\bigr). \tag{3}
-$$
+```
 
 Equivalently, deleting all elements whose A-set meets B_e makes e a coloop. Then
 
-$$
+```math
 \boxed{\sum_{e\in H}\binom{|A_e|+|B_e|}{|A_e|}^{-1}\le r_M(H).} \tag{4}
-$$
+```
 
 **Proof.** Order the finite auxiliary label universe uniformly at random. Select e if every label in A_e occurs before every label in B_e. The probability of this event is exactly
 
-$$
+```math
 \binom{|A_e|+|B_e|}{|A_e|}^{-1};
-$$
+```
 
 the event is automatic when either set is empty, agreeing with this formula.
 
@@ -68,23 +68,23 @@ For rank one, (3) gives the ordinary strong cross-intersection condition between
 
 Start with an inclusion-minimal H satisfying (1); existence is immediate because E itself satisfies (1). For each e in H, minimality gives a failure set F_e of at most h labels such that H-e does not satisfy (1). Since H does satisfy it, this says
 
-$$
+```math
 r_M((H-e)_{F_e})<r_M(H_{F_e}). \tag{5}
-$$
+```
 
 Necessarily Lambda(e) is disjoint from F_e, and (5) says that e is a coloop of M restricted to H_{F_e}. Apply (4) with A_e=Lambda(e) and B_e=F_e. Since |A_e| is at most d and |B_e| is at most h,
 
-$$
+```math
 \binom{|A_e|+|B_e|}{|A_e|}\le\binom{d+h}{d}.
-$$
+```
 
 Therefore
 
-$$
+```math
 \frac{|H|}{\binom{h+d}{d}}
 \le\sum_{e\in H}\binom{|A_e|+|B_e|}{|A_e|}^{-1}
 \le r_M(H)\le r.
-$$
+```
 
 This proves (2). The nonuniform inequality (4) can also retain information about the actual element label degrees and witness sizes instead of replacing both by worst-case bounds.
 
@@ -100,17 +100,17 @@ Because H_F is contained in E_F, rank equality implies equality of their origina
 
 List the L labels actually occurring in E. Repeatedly remove e whenever
 
-$$
+```math
 r_M((H-e)_F)=r_M(H_F)
-$$
+```
 
 for every F contained in this label universe with |F| at most h. Each rank computation uses at most |E| independence queries by greedy augmentation. A single pass through the elements suffices: if e has a witness making it a coloop when tested, later deletions that keep e cannot destroy that coloop property. A safe implementation can also repeat to a fixed point.
 
 The resulting H is inclusion-minimal and therefore satisfies (2). This straightforward method uses at most
 
-$$
+```math
 O\!\left(|E|^2\sum_{i=0}^{h}\binom{L}{i}\right)
-$$
+```
 
 independence queries, up to bookkeeping and with h clipped at L. It is polynomial for each fixed h, but this expression alone is not an FPT bound in h.
 
@@ -121,9 +121,9 @@ linear representation, a prime-field construction, or a separating family.
 For a current restriction X and a protected element e in X, we decide whether
 there is a set F of at most h labels, disjoint from Lambda(e), for which
 
-$$
+```math
 e\notin\mathrm{cl}_M((X-e)_F). \tag{6}
-$$
+```
 
 Such an F is exactly a witness that deleting e would change a required
 surviving rank. A search state consists of the labels F_0 already failed,
@@ -155,10 +155,10 @@ completeness, with t=0 immediate. QED.
 
 Put
 
-$$
+```math
 S(a,h)=\sum_{i=0}^{h}a^i,
 \qquad 0^0=1.
-$$
+```
 
 There are at most dr branch labels at every node and at most h levels.
 One test uses at most S(dr,h) nodes, at most (|X|+1)S(dr,h)
@@ -176,15 +176,15 @@ Delete e exactly when the answer is `NONE`.
 **Theorem 6.1 (explicit oracle construction).** The resulting restriction H
 preserves every allowed surviving rank and has at most
 
-$$
+```math
 \min\left\{N,r\binom{h+d}{d}\right\}
-$$
+```
 
 elements. Its construction uses at most
 
-$$
+```math
 N(N+1)S(dr,h) \tag{7}
-$$
+```
 
 independence queries, in addition to at most N queries for an initial rank
 computation if desired. Its ordinary bookkeeping cost is
@@ -209,9 +209,9 @@ storing a copy of each active restriction uses O((h+1)N) element IDs.
 
 For fixed d and rank r=k, with failure budget h=O_d(k), (7) is
 
-$$
+```math
 2^{O_d(k\log(k+2))}N^2.
-$$
+```
 
 This explicit construction replaces the earlier separating-pool and
 repeated-halving proof of computable fixed-parameter preprocessing.
@@ -220,20 +220,20 @@ repeated-halving proof of computable fixed-parameter preprocessing.
 
 The [retained-prefix construction](weighted-oracle-prefix-fpt-construction.md)
 first produces a rank-preserving restriction of size at most
-$K=\min\{N,\lfloor r\Gamma(h,d)\rfloor\}$, where
-$\Gamma(h,d)=(h+d)^{h+d}/(h^h d^d)$ for positive $h,d$ and one otherwise.
+$`K=\min\{N,\lfloor r\Gamma(h,d)\rfloor\}`$, where
+$`\Gamma(h,d)=(h+d)^{h+d}/(h^h d^d)`$ for positive $`h,d`$ and one otherwise.
 Use the input order; no cost sorting is needed for this rank-only application.
-The construction uses at most $N(K+1)S(dr,h)$ independence queries and
+The construction uses at most $`N(K+1)S(dr,h)`$ independence queries and
 never scans discarded input items inside a witness search. Apply the
-reverse deletion above to only those $K$ items. This gives the same sharp
-$r\binom{h+d}{d}$ output bound with at most
+reverse deletion above to only those $`K`$ items. This gives the same sharp
+$`r\binom{h+d}{d}`$ output bound with at most
 
-$$
+```math
 (N+K)(K+1)S(dr,h)
-$$
+```
 
 independence queries. For fixed rank, failure budget and label degree,
-this is linear in $N$. Explicit label indexing and sparse-list bookkeeping
+this is linear in $`N`$. Explicit label indexing and sparse-list bookkeeping
 are charged separately as in the linked construction. The first phase
 preserves every prefix and has the larger W–LF size; the last phase may
 discard cost-prefix information and is justified only for final ranks.
@@ -253,34 +253,34 @@ canonical greedy basis of E. For each label lambda occurring on B_0,
 compute the canonical basis B_lambda after deleting all elements carrying
 lambda, and retain
 
-$$
+```math
 H=B_0\cup\bigcup_{\lambda\in\Lambda(B_0)}B_\lambda.
-$$
+```
 
 **Theorem 7.1 (one-failure weighted oracle summary).** H preserves every
 surviving prefix rank and contains the canonical minimum-cost basis after
 zero or one label failure. It is computed in deterministic uniform
 polynomial time with at most (1+dr)N independence queries, and
 
-$$
+```math
 |H|\le\min\{N,(d+1)r\}. \tag{8}
-$$
+```
 
 **Proof.** A greedy-accepted element e lies outside the closure of all
 earlier elements. Deleting elements while retaining e can only shrink
 that earlier set. Consequently every surviving element of B_0 remains
 in the canonical basis B_lambda. Since its rank is at most r,
 
-$$
+```math
 |B_\lambda\setminus B_0|
  \le |\{e\in B_0:\lambda\in\Lambda(e)\}|.
-$$
+```
 
 Summing over the at most dr relevant labels gives
 
-$$
+```math
 |H|\le r+\sum_{e\in B_0}|\Lambda(e)|\le(d+1)r.
-$$
+```
 
 If a failed label does not occur on B_0, that entire basis survives and
 the same stability argument shows that it remains the canonical basis.
@@ -334,39 +334,39 @@ The permutation proof has a more general form that does not use matroid exchange
 
 **Theorem 3 (submodular set-pair inequality).** Let f be a finite real-valued monotone submodular function on a finite ground set H. Give each e disjoint auxiliary label sets A_e and B_e, and write
 
-$$
+```math
 H_e=\{x\in H:A_x\cap B_e=\varnothing\},
 \qquad
 \delta_e=f(H_e)-f(H_e-e).
-$$
+```
 
 Then
 
-$$
+```math
 \boxed{
 \sum_{e\in H}
 \frac{\delta_e}{\binom{|A_e|+|B_e|}{|A_e|}}
 \le f(H)-f(\varnothing).
 } \tag{10}
-$$
+```
 
 Here disjointness ensures e belongs to H_e. All delta_e are nonnegative by monotonicity. The matroidal inequality (4) is the special case f=r_M and delta_e=1.
 
 **Proof.** Randomly order the labels and select e when all A_e-labels precede all B_e-labels, exactly as before. Order the selected elements by the position of their last A-label, in nondecreasing order, with the empty A-set first. Fix a selected e. Every label of every earlier selected element has position at most the last A_e-label, while every B_e-label has a strictly larger position. Thus all earlier selected elements lie in H_e-e. Diminishing returns gives
 
-$$
+```math
 f(J_{<e}+e)-f(J_{<e})\ge f(H_e)-f(H_e-e)=\delta_e.
-$$
+```
 
 Summing over selected elements yields sum_{e in J} delta_e at most f(J)-f(emptyset), hence at most f(H)-f(emptyset). Taking expectations proves (10). Empty A-sets and empty B-sets obey the same argument with the stated ordering convention. QED.
 
 **Corollary 4 (exact integral-submodular failure-value summary).** Let f be integer-valued and monotone submodular on E, and let R=f(E)-f(emptyset). Under the same at-most-d-labels-per-element and at-most-h-failures model, there is a restriction H with
 
-$$
+```math
 f(H_F)=f(E_F)\quad\text{for all }|F|\le h,
 \qquad
 |H|\le R\binom{h+d}{d}. \tag{11}
-$$
+```
 
 Every inclusion-minimal exact summary satisfies this size bound. Given a value oracle, the failure-witness search below constructs one using O(N(N+1) sum_{i=0}^h (dR)^i) value queries, where N=|E|. The parameter includes the numerical range R, not only its bit length.
 
@@ -376,9 +376,9 @@ The bound is already tight for coverage functions: use one feature for each of R
 
 There is also a universal-context interpretation. If g is any monotone submodular extension of f to additional elements B, then
 
-$$
+```math
 g(H_F\cup B)=g(E_F\cup B)
-$$
+```
 
 for every context B. Indeed, the zero marginal gain from adjoining E_F to H_F cannot increase after adjoining B, by submodularity. Thus (11) simultaneously preserves the exact value after correlated failures and arbitrary later augmentation, provided the later function restricts to the original f.
 
@@ -388,30 +388,30 @@ This extension concerns exact saturation/value preservation. It does not claim a
 
 For any real-valued monotone submodular f, define the maximum final marginal of e after allowed failures by
 
-$$
+```math
 \sigma_e=\max_{\substack{|F|\le h\\\Lambda(e)\cap F=\varnothing}}
 \bigl[f(E_F)-f(E_F-e)\bigr].
-$$
+```
 
 There is no minimum-marginal or integrality assumption in the following sharp inequality:
 
-$$
+```math
 \boxed{\sum_{e\in E}\sigma_e\le
 \binom{h+d}{d}\,[f(E)-f(\varnothing)].} \tag{12}
-$$
+```
 
 Indeed, choose a maximizing failure witness separately for each e and apply (10), followed by the worst-case reciprocal-binomial bound. This controls the sum of the individual worst marginal losses, even though different items may attain their maxima under different correlated failure queries.
 
 For a concrete information-theoretic specialization, let X_e be jointly distributed discrete random variables with finite joint Shannon entropy, and put f(S)=H(X_S). Then
 
-$$
+```math
 \boxed{
 \sum_{e\in E}
 \max_{\substack{|F|\le h\\\Lambda(e)\cap F=\varnothing}}
 H\bigl(X_e\mid X_{E_F-e}\bigr)
 \le\binom{h+d}{d}\,H(X_E).
 } \tag{13}
-$$
+```
 
 Thus the aggregate of the worst residual uncertainties of individual surviving variables under correlated erasures is bounded by the exact binomial multiplier of the original joint entropy. These are conditional entropies given **all other surviving variables**, not cost/time-prefix conditionings.
 

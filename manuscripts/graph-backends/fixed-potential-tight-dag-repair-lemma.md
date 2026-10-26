@@ -25,18 +25,18 @@ registers, and receiver tightness.
 Normalize the artificial source label to zero. For incidence `(r,d)`, the
 receiving arc `r -> d` has length zero, the donor arc `d -> r` has length
 
-$$
+```math
 c_e=\left\lceil H/(4\ell_e)\right\rceil\ge1,
-$$
+```
 
 and the artificial source has an arc to bin `d` of length `A-sigma_d`,
 where
 
-$$
+```math
 \sigma_d=\left\lfloor\frac{3H}{4s_d}\right\rfloor,
  \qquad
  \tau_d=\left\lceil\frac{5H}{4s_d}\right\rceil.
-$$
+```
 
 The fixed integer labels `D` are feasible for all of these current arcs.
 Call an arc `u -> v` **tight** when `D(v)=D(u)+length(u,v)`.
@@ -83,20 +83,20 @@ can only increase; a nontight source arc cannot become tight there.
 
 At a terminal `b`, acceptance gives
 
-$$
+```math
 D(b)<A-\tau_b.
-$$
+```
 
 Write `alpha=1/s_b` before the step. The accepted step satisfies
 `eta alpha <= 1/256`, so its new reciprocal is at most
 `alpha/(1-1/256)`. Consequently
 
-$$
+```math
 \tau_b-\sigma_b^{\rm new}
  \ge
  H\alpha\left(\frac54-\frac{3/4}{1-1/256}\right)
  =\frac{169}{340}H\alpha>0.
-$$
+```
 
 The new source arc is therefore strictly slack. This also shows that an
 initially tight source arc cannot be used as a terminal before it has
@@ -140,9 +140,9 @@ edge is tight, so the forest meets the numerical interface's requirements.
 At most a constant number of ordinary cuts/links accompany each removed
 parent record. The total supplied ordinary-edit count is
 
-$$
+```math
 P=O(m+\nu).
-$$
+```
 
 This bound counts the repairs emitted by this particular parent
 maintainer. It does not absorb arbitrary additional caller-requested
@@ -152,9 +152,9 @@ Scanning the initial graph, maintaining reachability, and detecting lost
 tightness from the `O(J)` endpoint updates and `R` register notifications
 costs
 
-$$
+```math
 O(m+\nu+J+R)
-$$
+```
 
 bounded-word operations, apart from the polynomial-logarithmic numerical
 and dynamic-forest operations already charged by the interface.
@@ -183,36 +183,36 @@ tight-parent information.
 
 Let `R_bin` be the currently tight-reachable bins, and set
 
-$$
+```math
 \pi_b=(A-D(b))/H,
  \qquad
  E_R=\sum_{b\in R_{\rm bin}}(s_b\pi_b-5/4)_+.
-$$
+```
 
 For every reachable bin `b`, let `a` be the first bin on its maintained
 source-tree path. The source arc to `a` is tight, and every following arc
 is tight. Therefore
 
-$$
+```math
 D(a)=A-\sigma_a,
  \qquad
  \bar L_T(a,b)=D(b)-D(a).
-$$
+```
 
 The score of that ordinary root-to-`b` path is exactly
 
-$$
+```math
 \sigma_a-\tau_b-\bar L_T(a,b)
  =A-D(b)-\tau_b=H\pi_b-\tau_b.
-$$
+```
 
 If the compatible forest search returns EMPTY, this value is nonpositive
 for every reachable `b`. Since `tau_b <= 5H/(4s_b)+1`,
 
-$$
+```math
 E_R\le\frac{\sum_{b\in R_{\rm bin}}s_b}{H}
  \le\frac{T_{\rm slack}}H\le N
-$$
+```
 
 under the imported rounding budget. An EMPTY result is different from a
 guard failure; the argument uses the actual absence of a positive scored

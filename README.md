@@ -18,11 +18,11 @@ Exact matching with original edge identifiers.
 
 **Quantitative result.**
 
-$$
+```math
 O(n+m)+(m_s+1)\exp(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5}))
-$$
+```
 
-Optional $m_H=O(\nu(G)^2)$ kernel.
+Optional $`m_H=O(\nu(G)^2)`$ kernel.
 
 **Model and scope.** Conditional on raw-backend Contract R and the named deterministic primitives; m_s counts distinct nonloop edges. The preprocessing kernel and its componentwise refinement are unconditional.
 
@@ -34,9 +34,9 @@ Exact decision and indexed witness.
 
 **Quantitative result.**
 
-$$
+```math
 C+\mathrm{poly}(n,L)2^{0.495890734n}
-$$
+```
 
 Exact rational exponent on the card.
 
@@ -50,11 +50,11 @@ Sharp represented cost-prefix and oracle-rank summaries; weighted oracle endpoin
 
 **Quantitative result.**
 
-Represented prefixes and oracle rank: $r\binom{h+d}{d}$.
+Represented prefixes and oracle rank: $`r\binom{h+d}{d}`$.
 
-Integral range $R$: $R\binom{h+d}{d}$.
+Integral range $`R`$: $`R\binom{h+d}{d}`$.
 
-Sharp one-failure weighted oracle size $(d+1)r$.
+Sharp one-failure weighted oracle size $`(d+1)r`$.
 
 **Model and scope.** Uniform polynomial represented construction; explicit oracle FPT construction with linear input dependence for fixed parameters. General weighted oracle prefixes have the larger W–LF bound; a 13-item nonrepresentable example rules out the sharp binomial bound from two failures onward.
 

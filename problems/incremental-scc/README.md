@@ -14,7 +14,7 @@ Deterministic conditional composition using the deterministic raw-cycle backend 
 
 **Time**
 
-Total work $(n+m)E(N)^{O(1)}\mathrm{poly}(U)$ under the raw minimum-ratio-cycle interface, with $U=\log(N+4)$ and $E(N)=\exp(O(U^{4/5}(\log U)^{1/5}))$; this is total incremental work, not a worst-case per-insertion claim.
+Total work $`(n+m)E(N)^{O(1)}\mathrm{poly}(U)`$ under the raw minimum-ratio-cycle interface, with $`U=\log(N+4)`$ and $`E(N)=\exp(O(U^{4/5}(\log U)^{1/5}))`$; this is total incremental work, not a worst-case per-insertion claim.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the maintained graph, label inventory, and raw-backend state; the 
 
 **Parameters**
 
-$n$ is the original vertex count; $m$ bounds inserted edge records; $N$ is the power-of-two master cap; $U$ is its logarithmic scale. Parallel edges and self-loops are allowed.
+$`n`$ is the original vertex count; $`m`$ bounds inserted edge records; $`N`$ is the power-of-two master cap; $`U`$ is its logarithmic scale. Parallel edges and self-loops are allowed.
 
 **Model and representation**
 

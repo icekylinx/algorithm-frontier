@@ -11,20 +11,20 @@ not a polynomial-time improvement for general unrelated scheduling.
 Let P be q>=1 machines. Each type j has a normalized monotone integral
 submodular recipient rank f_j, with mandatory original count
 
-$$
+```math
 n_j=f_j(P),\qquad N=\sum_jn_j.
  \tag{AB1}
-$$
+```
 
 A schedule has integer x_j in B(f_j). Each eligible pair (p,j) has
 arbitrary nonnegative rational processing time ell_pj and assignment
 cost c_pj. A supplied additional eligibility mask never reduces n_j.
 The budget is
 
-$$
+```math
 \sum_{p,j}c_{pj}x_j(p)\le C,\qquad C\ge0.
  \tag{AB2}
-$$
+```
 
 OPT is the minimum maximum machine load over these schedules. H
 includes binary data and paid polynomial rank, SFM, LP and intersection
@@ -32,19 +32,19 @@ work. No unit of a binary count is expanded.
 
 For integer k>=0 define
 
-$$
+```math
 \gamma_k=\frac{3\cdot2^k-1}{2^{k+1}-1}=\frac32+\frac1{2(2^{k+1}-1)}.
  \tag{AB3}
-$$
+```
 
 **Theorem AB.** A deterministic algorithm either detects infeasibility
 even without a load bound, or returns a legal schedule of makespan at
 most gamma_k*OPT, with all original totals and the budget exact, in
 
-$$
+```math
 (k+1)^q\mathrm{poly}(H+k)\text{ time},\qquad \mathrm{poly}(H+k)\text{ space}.
  \tag{AB4}
-$$
+```
 
 | k | Approximation | Exponential time factor |
 | --- | --- | --- |
@@ -57,10 +57,10 @@ $$
 For rational epsilon>0, choosing k with the last term of AB3 at most
 epsilon gives factor 3/2+epsilon in
 
-$$
+```math
 \bigl[O(1+\log(1+\varepsilon^{-1}))\bigr]^q\mathrm{poly}(H_\varepsilon).
  \tag{AB5}
-$$
+```
 
 where H_epsilon=H+size(epsilon) includes the complete binary numerator
 and denominator of the supplied rational accuracy. A rational close
@@ -75,10 +75,10 @@ Use one coordinate per eligible machine-type pair. The direct sum of
 the resource polymatroids is integral. After any pair mask, type j has
 rank at most n_j, but we still require
 
-$$
+```math
 \sum_{p,j}x_j(p)=N.
  \tag{AB6}
-$$
+```
 
 Thus every type attains its own original n_j. One type cannot compensate
 for another type's missing mandatory units.
@@ -96,18 +96,18 @@ All rank and cap values are kept in binary.
 For one machine group G, order pair coordinates e_1,...,e_m by
 nonincreasing time v_1>=...>=v_m>=0. Given a fractional x, put
 
-$$
+```math
 X_h=\sum_{i\le h}x(e_i),\qquad U_h=\lceil X_h\rceil.
  \tag{AB7}
-$$
+```
 
 The integer prefix caps x'(e_1,...,e_h)<=U_h, including the full
 prefix, define an integral chain polymatroid. Its explicit rank is
 
-$$
+```math
 r_G(S)=\max\{U_h:e_h\in S\},\qquad r_G(\varnothing)=0.
  \tag{AB8}
-$$
+```
 
 The U_h are nondecreasing. If h is the largest index in S, the prefix
 cap bounds its count by U_h; conversely prefix sets are among the rank
@@ -116,7 +116,7 @@ and submodular, with a polynomial rank oracle and no slot expansion.
 
 With v_(m+1)=0, summation by parts gives
 
-$$
+```math
 \begin{aligned}
  \sum_iv_ix'(e_i)
  &=\sum_h(v_h-v_{h+1})x'(\{e_1,\ldots,e_h\})\\
@@ -124,7 +124,7 @@ $$
  &\le\sum_iv_ix(e_i)+v_1.
  \end{aligned}
  \tag{AB9}
-$$
+```
 
 Empty groups contribute zero. Zero processing times also cause no
 problem: their coefficient differences vanish, while AB6 still
@@ -135,18 +135,18 @@ groups will be combined in one machine direct sum.
 
 Fix T>0 and k>=1. Write D=2^(k+1)-1 and set
 
-$$
+```math
 \ell_i=\frac{2^k+2^i-1}{2^{k+1}-1},\qquad 0\le i\le k.
  \tag{AB10}
-$$
+```
 
 These O(k)-bit rationals satisfy
 
-$$
+```math
 \frac12<\ell_0=\gamma_k-1<\ell_1<\cdots<\ell_k=1,\qquad
  \ell_i+2(1-\ell_{i-1})=\gamma_k\quad(1\le i\le k).
  \tag{AB11}
-$$
+```
 
 Give each machine one label in {0,1,...,k}.
 
@@ -186,19 +186,19 @@ to it and to the single resource direct sum at total N.
 The full-total minimum-cost primitive returns integer x' with all
 original totals and cost at most C. By AB9, label-zero load is at most
 
-$$
+```math
 T+\ell_0T=\gamma_kT.
  \tag{AB12}
-$$
+```
 
 At a label-i machine the big contribution is at most l_i*T. The small
 fractional load and maximum allowed small processing time are each at
 most (1-l_(i-1))*T. Its integral total load is therefore at most
 
-$$
+```math
 [\ell_i+2(1-\ell_{i-1})]T=\gamma_kT.
  \tag{AB13}
-$$
+```
 
 No lower bound of one on big count is required: an empty big group
 only improves load. All jobs are rounded jointly, no resource is

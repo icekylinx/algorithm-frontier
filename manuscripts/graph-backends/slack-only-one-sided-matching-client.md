@@ -19,26 +19,26 @@ old symmetric raw-cycle backend to the new asymmetric charge.
 
 At a fixed structural state, the top variables satisfy
 
-$$
+```math
 \sum_{e\ni r}x_e=L,
  \qquad \sum_{e\ni d}x_e+s_d=L+p_d-Cw_d.
-$$
+```
 
 For the first, conservative formulation, retain `x_e>0` and `s_d>0`, with
 the existing tiny padding and guarded magnitude ranges. Change the objective
 to
 
-$$
+```math
 \Phi(s)=\sum_d\log s_d.
-$$
+```
 
 For a logical circulation direction `h`, use the asymmetric charge
 
-$$
+```math
 \mathcal C_f(h)=
        \sum_{e\text{ allocation}}\frac{(-h_e)_+}{x_e}
        +\sum_d\frac{|h_{s_d}|}{s_d}.
-$$
+```
 
 The numerator is `G_f(h)=sum_d h_(s_d)/s_d`. Increasing an allocation is
 uncharged, while decreasing it is charged against its available value. Both
@@ -59,12 +59,12 @@ row incidences, hence at most `3N`: each decreased coordinate contributes at
 most one because the alternative remains nonnegative. Writing these two
 quantities as `Q_s` and `Q_x`, respectively,
 
-$$
+```math
 \frac{G_f(h)}{\mathcal C_f(h)}
      =\frac{P-Q_s}{P+Q_s+Q_x}
      \ge\frac{P-N}{P+4N}
      >\frac{11}{16}>\frac12.
-$$
+```
 
 No allocation logarithm is used in this calculation. The gap-to-direction
 proof therefore survives the changed objective with an absolute margin.
@@ -82,15 +82,15 @@ For an explicit signed walk representation, charge every donor traversal
 before cancellation, and every slack traversal in either direction. Let `V`
 be this raw charge and `G` its exact slack numerator. Suppose
 
-$$
+```math
 G\ge\rho V>0.
-$$
+```
 
 Choose a common step `eta` so that
 
-$$
+```math
 \rho/128\le\eta V\le\rho/64.
-$$
+```
 
 Every negative partial motion on an allocation coordinate is at most
 `eta V` times that coordinate's starting value. Every absolute partial slack
@@ -109,13 +109,13 @@ Only slacks contribute curvature. Put
 `u_d=eta h_(s_d)/s_d` and `z=eta V<=rho/64`. Then
 `sum_d |u_d|<=z`, and Taylor's inequality gives
 
-$$
+```math
 \Phi(s+\eta h_s)-\Phi(s)
   \ge \eta G-
              \frac{\sum_d u_d^2}{2(1-z)^2}
   \ge \rho z-\frac{z^2}{2(1-z)^2}
   =\Omega(\rho^2).
-$$
+```
 
 Thus a constant-ratio directed answer would give constant progress, while an
 inverse-subpolynomial ratio gives the familiar quadratic dependence on that
@@ -127,23 +127,23 @@ logarithms for safety or progress.
 Construct the residual directed graph on rows, bins, and an auxiliary vertex
 `z`. For each allocation incidence `e=(r,d)`, create
 
-$$
+```math
 \begin{array}{c|c|c}
  \text{arc}&\text{charge}&\text{gradient}\\\hline
  r\to d&0&0\\
  d\to r&1/x_e&0.
  \end{array}
-$$
+```
 
 For every slack create
 
-$$
+```math
 \begin{array}{c|c|c}
  z\to d&\alpha_d&+\alpha_d\\
  d\to z&\alpha_d&-\alpha_d,
  \end{array}
  \qquad\alpha_d=1/s_d.
-$$
+```
 
 Every feasible direction is represented by a nonnegative directed
 circulation in this graph with exactly its one-sided charge. Canceling a
@@ -156,10 +156,10 @@ Let `dist_x(a,b)` be directed distance in the ordinary row/bin graph, with
 donor costs `1/x_e` and receiver costs zero. The best positive cycle through
 bins `a,b` has ratio
 
-$$
+```math
 \frac{\alpha_a-\alpha_b}
              {\alpha_a+\alpha_b+\mathrm{dist}_x(a,b)}.
-$$
+```
 
 Its action transfers allocation along an alternating path from `a` to `b`,
 increases `s_a`, and decreases `s_b`. Positive gain means `s_a<s_b`: it
@@ -175,33 +175,33 @@ optimization problem.
 
 Fix `0<beta<1`, for example `beta=1/4`. Choose
 
-$$
+```math
 A\ge(1-\beta)\max_d\alpha_d.
-$$
+```
 
 In a new directed graph, scale ordinary donor costs by `beta`, keep receiving
 costs zero, and add a new source `z_*` with an arc to every bin `d` of cost
 
-$$
+```math
 A-(1-\beta)\alpha_d.
-$$
+```
 
 All weights are nonnegative. Do not add any return arcs to `z_*`. Let `D(d)`
 be the shortest distances from this source. A cycle of one-sided ratio
 strictly greater than `beta` exists if and only if some bin `b` satisfies
 
-$$
+```math
 D(b)<A-(1+\beta)\alpha_b.
-$$
+```
 
 Indeed a source path begins at one bin `a` and has cost
 `A-(1-beta)alpha_a + beta dist_x(a,b)`. Comparing it with the threshold is
 exactly the inequality
 
-$$
+```math
 \alpha_a-\alpha_b
           >\beta(\alpha_a+\alpha_b+\mathrm{dist}_x(a,b)).
-$$
+```
 
 An ordinary static Dijkstra computation and path reconstruction therefore
 give a complete deterministic threshold oracle in `O((m+n)log(n+2))`
@@ -225,9 +225,9 @@ before the step. Transfer a positive amount `eta` along its ordinary path,
 increase `s_a` by `eta`, and decrease `s_b` by `eta`. Assume every relative
 slack change and donor decrease is at most a small `z`, with
 
-$$
+```math
 z\le1/64,\qquad\beta=1/4.
-$$
+```
 
 Keep the source offset `A` fixed. After this step, all old labels remain
 feasible lower distance labels for the new nonnegative graph. Consequently
@@ -255,16 +255,16 @@ The increase in `s_a` decreases `alpha_a`. The corresponding source-arc cost
 The decrease in `s_b` increases `alpha_b`. However the acceptance inequality
 gives the old source arc to `b` a strict margin over its old distance:
 
-$$
+```math
 [A-(1-\beta)\alpha_b]-D(b)>2\beta\alpha_b.
-$$
+```
 
 The drop in that arc's cost after the step is at most
 
-$$
+```math
 (1-\beta)\alpha_b\frac{z}{1-z}
                          <2\beta\alpha_b.
-$$
+```
 
 It therefore remains at least `D(b)`. This is the only source-arc decrease.
 
@@ -296,35 +296,35 @@ Fix one sufficiently large polynomial integer scale `H` throughout the
 structurally unchanged numerical interval. Use the guarded slack range to
 ensure
 
-$$
+```math
 H\min_d\alpha_d\ge8(N+2).
-$$
+```
 
 For each allocation and slack, compute the conservative integers
 
-$$
+```math
 c_e=\left\lceil\frac{H}{4x_e}\right\rceil,
  \qquad \sigma_d=\left\lfloor\frac{3H}{4s_d}\right\rfloor,
  \qquad \tau_d=\left\lceil\frac{5H}{4s_d}\right\rceil.
-$$
+```
 
 Receiving arcs still have length zero. Give donor arcs length `c_e`, and
 give the artificial source arc to bin `d` length `A-sigma_d`, where integer
 `A>=max_d sigma_d`. Run exact integer Dijkstra and accept an endpoint `b`
 precisely when
 
-$$
+```math
 D_{\rm int}(b)<A-\tau_b.
-$$
+```
 
 If the returned source path begins at `a`, this strict inequality implies
 
-$$
+```math
 \frac34H\alpha_a-\frac54H\alpha_b
        \ge\sigma_a-\tau_b
        >\sum_{e\text{ donor on path}}c_e
        \ge\frac H4\mathrm{len}_x(a\leadsto b).
-$$
+```
 
 Thus every accepted path has true one-sided ratio greater than `1/4`.
 There is no false acceptance caused by rounding.
@@ -344,17 +344,17 @@ tight on the exact integer shortest path. At the starting bin the source
 cost increases. At the terminal bin, the old acceptance gives source-arc
 margin greater than
 
-$$
+```math
 \tau_b-\sigma_b\ge H\alpha_b/2.
-$$
+```
 
 For a relative slack decrease at most `z<=1/64`, the source-cost decrease is
 at most
 
-$$
+```math
 \frac34H\alpha_b\frac{z}{1-z}+1
                                   <H\alpha_b/2.
-$$
+```
 
 Hence every old integer label remains feasible after the update. True
 positive-ratio acceptance also guarantees that the maximum true slack
@@ -392,20 +392,20 @@ explicit coordinate births, deletions, or settings.
 For `A_ext` explicitly edited allocation records and `J` numerical steps,
 this gives an aggregate variation bound
 
-$$
+```math
 O((N+A_{\rm ext})\log S+\sum_{j=1}^J z_j).
-$$
+```
 
 A register reset only after a relative `tau` change can consequently occur
 at most this quantity times `O(1/tau)`, provided resets use the actual new
 value and the usual hysteresis. For `z_j=Theta(rho)` and `tau=Theta(rho)`,
 the count is
 
-$$
+```math
 O\left(
                          J+\frac{(N+A_{\rm ext})\log S}{\rho}
                        \right).
-$$
+```
 
 This bound is an event-count argument. It does not by itself discover which
 implicitly updated coordinates cross their thresholds. A new one-sided
@@ -475,8 +475,8 @@ that potential throughout a monotone fixed-tree epoch. The note explicitly
 leaves the epoch refresh count open.
 
 [coarse-directed-paths-for-slack-matching.md](coarse-directed-paths-for-slack-matching.md) gives a second refinement:
-dyadic slack-price buckets turn a directed factor-$\Gamma$ path provider
-into a direction of ratio at least $1/(8+6\Gamma)$. This relaxes the
+dyadic slack-price buckets turn a directed factor-$`\Gamma`$ path provider
+into a direction of ratio at least $`1/(8+6\Gamma)`$. This relaxes the
 required distance accuracy, while leaving dynamic path reporting and
 potential-compatible receiving arcs as separate unproved obligations.
 

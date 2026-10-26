@@ -28,11 +28,11 @@ light-role set I subseteq P, fix Q=I in SD7--SD9. Keep the
 zero-service dual-matroid dummy on all positions, including I.
 Solve the exact rational LP
 
-$$
+```math
 \max t\quad\text{subject to }(x,y)\in X_I,\quad t\ge0,\quad
            \sum_j v_{pj}x_j(p)\ge t\quad(p\in I).
  \tag{X2-1}
-$$
+```
 
 An infeasible role LP is skipped. A feasible one has a finite maximum:
 I is nonempty, real resource ranks are bounded and dummy service is
@@ -45,10 +45,10 @@ to its optimizing joint point. Extract an actual original M-basis
 from the integer dummy-free players. The actual original setup and
 assignment cost is at most C, and its value is at least
 
-$$
+```math
 \min\{a_H,t-u_L\}.
  \tag{X2-2}
-$$
+```
 
 Only legal integer original solutions are recorded. Their actual
 minimum utility is computed exactly, and the best is returned.
@@ -91,11 +91,11 @@ case uses polynomial exact LP, rank-oracle, intersection, rounding
 and basis-extraction work. Cases are streamed, keeping only one
 current workspace and the best actual allocation. Total time is
 
-$$
+```math
 2^q\mathrm{poly}(H),
  \qquad\text{space }\mathrm{poly}(H).
  \tag{X2-3}
-$$
+```
 
 For any fixed rational eta>0, the accepted gap/global-cover
 construction instead gives factor 2+eta in

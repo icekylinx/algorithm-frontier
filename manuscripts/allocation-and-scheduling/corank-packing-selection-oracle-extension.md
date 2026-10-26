@@ -20,11 +20,11 @@ The resource system has a possibly implicit family A of subsets of
 P and nonnegative rational capacities u_A for A in A. Its packing
 region is
 
-$$
+```math
 \mathcal P(u)=\{z\in\mathbb R_{\ge0}^{P}:
                               z(A)\le u_A\text{ for every }A\in\mathcal A\}.
  \tag{E1}
-$$
+```
 
 Assume a polynomial **packing separation oracle** on the queried
 vectors: it either certifies feasibility or returns a violated row
@@ -54,19 +54,19 @@ I subseteq Q; downward closure makes b*1_I feasible.
 
 If the separator returns A, put S=A intersect Q, m=|S|, and
 
-$$
+```math
 \ell=m-\left\lfloor\frac{u_A}{t}\right\rfloor.
  \tag{E2}
-$$
+```
 
 The violated inequality is u_A<bm. Nonnegative capacities and t>b
 imply 1<=ell<=m. Every promised I* contained in Q has
 
-$$
+```math
 t|I^*\cap S|=t|I^*\cap A|\le u_A,
                        \qquad |S\setminus I^*|\ge\ell.
  \tag{E3}
-$$
+```
 
 If ell>d, failure is sound. Otherwise enumerate all ell-subsets D
 of S and recurse on Q\D. One enumerated D is contained in
@@ -76,10 +76,10 @@ promised input cannot fail and that every returned set is valid.
 
 For R=t/(t-b)>1, the strict violation gives
 
-$$
+```math
 \ell\ge m-u_A/t>m/R.
  \tag{E4}
-$$
+```
 
 Therefore binom(m,ell)<=Gamma(R)^ell, with
 Gamma(R)=R^R/(R-1)^(R-1). Every attempted deletion subset is counted
@@ -90,12 +90,12 @@ The full augmented computation tree has at most
 **Theorem E.** The rational t-versus-b promise problem has a
 deterministic algorithm of running time
 
-$$
+```math
 \Gamma\!\left(\frac{t}{t-b}\right)^c
                                       \mathrm{poly}(H)
                 \le\left(\frac{et}{t-b}\right)^c\mathrm{poly}(H),
  \tag{E5}
-$$
+```
 
 using polynomial workspace. It either returns the requested b-unit
 set or certifies absence of a t-unit set. For r=0, the selector first
@@ -113,38 +113,38 @@ branching calculation avoids that issue.
 
 Suppose the desired integral selection is I in B with
 
-$$
+```math
 |I\cap A|\le u_A
                                 \quad\text{for every }A\in\mathcal A.
  \tag{E6}
-$$
+```
 
 Fix rational epsilon>0. Inflate the capacities to
 u'_A=(1+epsilon)u_A, and run Theorem E with
 
-$$
+```math
 t=1+\epsilon,\qquad b=1.
  \tag{E7}
-$$
+```
 
 Any set satisfying (E6) satisfies the stronger promise
 (1+epsilon)*1_I in P(u'). A successful output satisfies
 
-$$
+```math
 |I\cap A|\le(1+\epsilon)u_A
                                       \quad\text{for every }A\in\mathcal A.
  \tag{E8}
-$$
+```
 
 A failure proves that no set satisfies the original capacities.
 The running time is
 
-$$
+```math
 \left(\frac{e(1+\epsilon)}{\epsilon}\right)^c
                         \mathrm{poly}(H)
                  =\bigl(O(1+\epsilon^{-1})\bigr)^c\mathrm{poly}(H).
  \tag{E9}
-$$
+```
 
 Here H includes the bit representation of epsilon, not its numerical
 inverse. The explicit exponential factor contains the full

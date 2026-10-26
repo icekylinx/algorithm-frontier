@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns an independent transversal, or a class set $S$, a total dominating set $D$, and a constellation $K$ with $V(K)\subseteq D$, $\lvert D\rvert<(2+\varepsilon)(\lvert S\rvert-1)$, and $\lvert D\setminus V(K)\rvert<\varepsilon(\lvert S\rvert-1)$.
+Returns an independent transversal, or a class set $`S`$, a total dominating set $`D`$, and a constellation $`K`$ with $`V(K)\subseteq D`$, $`\lvert D\rvert<(2+\varepsilon)(\lvert S\rvert-1)`$, and $`\lvert D\setminus V(K)\rvert<\varepsilon(\lvert S\rvert-1)`$.
 
 **Objective and output**
 
@@ -14,9 +14,9 @@ Deterministic certifying construction, including the elementary exponential fall
 
 **Time**
 
-$$
+```math
 P\min\{\exp(O(q)),(q+1)^{O(\varepsilon^{-1}\log(2+r/\varepsilon))}\}\mathrm{poly}(b_\varepsilon+\log P).
-$$
+```
 
 **Space**
 
@@ -24,11 +24,11 @@ Polynomial in the explicit graph, partition, and current blocker state.
 
 **Parameters**
 
-$q$ is the number of nonempty classes; $r\ge2$ bounds independent neighbours in distinct classes; $0<\varepsilon<1$ is rational; $P=\lvert V\rvert+\lvert E\rvert+q+2$; $b_\varepsilon=\mathrm{size}(\varepsilon)$.
+$`q`$ is the number of nonempty classes; $`r\ge2`$ bounds independent neighbours in distinct classes; $`0<\varepsilon<1`$ is rational; $`P=\lvert V\rvert+\lvert E\rvert+q+2`$; $`b_\varepsilon=\mathrm{size}(\varepsilon)`$.
 
 **Model and representation**
 
-A finite loopless graph with a given vertex partition and no vertex having $r$ independent neighbours in distinct classes. The constellation is induced after deleting edges within classes.
+A finite loopless graph with a given vertex partition and no vertex having $`r`$ independent neighbours in distinct classes. The constellation is induced after deleting edges within classes.
 
 **Lower-bound scope**
 

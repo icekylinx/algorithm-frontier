@@ -10,7 +10,7 @@ Deterministic exact algorithm in the uniform bit model, including indexed-witnes
 
 **Time**
 
-$C+\mathrm{poly}(n,L)2^{En}$, where $E=158153814247997/318928754919134\approx0.4958907336157183<0.495891$.
+$`C+\mathrm{poly}(n,L)2^{En}`$, where $`E=158153814247997/318928754919134\approx0.4958907336157183<0.495891`$.
 
 **Space**
 
@@ -18,7 +18,7 @@ No separate writable-space exponent is asserted for this algorithm.
 
 **Parameters**
 
-$n$ is the item count; $L$ is the complete binary input length; $C$ is a finite input-independent circuit-construction cost, with no practical bound claimed.
+$`n`$ is the item count; $`L`$ is the complete binary input length; $`C`$ is a finite input-independent circuit-construction cost, with no practical bound claimed.
 
 **Model and representation**
 
@@ -51,7 +51,7 @@ The [verification note](verify/README.md) explains the acceptance proof,
 the exact scopes of the three programs, and the [full-run receipt](verify/receipt.json).
 
 The older baseline exponent
-$149809813343531/301754962128739<0.4964618056$ is retained as a background
+$`149809813343531/301754962128739<0.4964618056`$ is retained as a background
 conditional composition with its own historical contact premise. The refined
 theorem above uses the newly reconstructed menu directly and does not depend
 on an older contact receipt.

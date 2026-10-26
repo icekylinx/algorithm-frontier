@@ -2,9 +2,9 @@
 
 **Baseline audit and quantitative derivation, 25 October 2026.** The literal deterministic bound in van den Brand et al., arXiv:2407.10830v1, is
 
-$$
+```math
 m\exp O((\log m)^{5/6}\log\log m).
-$$
+```
 
 However, the construction contains independent parameters that its displayed final specialization sets separately. Keeping construction work distinct from output quality gives a plausible, and substantially stronger, **four-fifths reparameterization of that same public framework**. Consequently, a new raw-cycle route to static minimum-cost flow at four fifths must not be advertised as outperforming every result derivable from the public methods until this reparameterization has been resolved.
 
@@ -20,35 +20,35 @@ Use these primary sources:
 
 Set
 
-$$
+```math
 U=\log(m+4),\qquad h=\log(U+4).
-$$
+```
 
 The CGLNPS source has a uniform integer parameter `p`. Its output quality is governed by
 
-$$
+```math
 a=O(ph),                                                   \tag{1}
-$$
+```
 
 whereas its construction work has logarithm
 
-$$
+```math
 f=O(U/p+p^2h).                                             \tag{2}
-$$
+```
 
 In particular, Theorem 5.1 / Corollary 5.2 gives an `exp(O(ph))` approximation with time
 
-$$
+```math
 m\exp O(U/p+p^2h)/\theta^2.
-$$
+```
 
 The distinction is explicit: the source's faster low-conductance theorem in its introduction has a different, quadratic quality parameter, but Section 5's slower algorithm has linear-in-`p` logarithmic quality. The latter is exactly the regime used in the 2024 dual-flow paper's Section 4.4. That section refers to "Theorem 5.3" of the second arXiv version; the relevant witness result in the retrieved version is **Lemma 5.3**.
 
 Lemma 5.3 returns either a sparse cut or a spanning witness of expansion `1/log^{O(p)} n`, with a controlled fake-edge set and congestion `O(Delta log n/theta)`. Its time is
 
-$$
+```math
 \widetilde O(n^{1+O(1/p)}\log^{O(p^2)}n+n\Delta^2/\theta).
-$$
+```
 
 Thus this is an actual general-graph cut/witness interface, rather than a routing algorithm that assumes its host is already an expander.
 
@@ -56,10 +56,10 @@ Thus this is an actual general-graph cut/witness interface, rather than a routin
 
 The parameter-sensitive form of the derandomization in Section 4.4 is the following:
 
-$$
+```math
 \log c_0,\log c_1=O(ph),\qquad
  T_{\rm dec}\leq m\exp O(U/p+p^2h+ph)/\theta^{C},             \tag{3}
-$$
+```
 
 for an absolute constant `C`, preserving the refining partition, monotone cut-set, vertex-split, and self-loop interfaces of Theorem 4.7. The printed specialization has `p` of order `U^(1/3)` and `C=4` after its capacitated reduction.
 
@@ -73,44 +73,44 @@ The separate [public-dual-uniform-wrapper-audit.md](public-dual-uniform-wrapper-
 
 Let
 
-$$
+```math
 \theta=\exp(-s),\qquad s\geq 2\log(2c_1)+O(h).             \tag{4}
-$$
+```
 
 At each hierarchy level, total cut capacity shrinks by `2 c1 theta`. Thus, for polynomially bounded original capacities, the number of expander-hierarchy levels is
 
-$$
+```math
 k=O\!\left(\frac{U}{s-\log(2c_1)}+1\right)
    =O(U/s+1).                                              \tag{5}
-$$
+```
 
 To avoid a normalization ambiguity, use expansion `theta/c0` and boundary factor
 
-$$
+```math
 \beta=2c_0c_1.
-$$
+```
 
 Then `beta (theta/c0)=2 c1 theta`, and the required boundary self-loop multiplier is `1/(4c1 theta)` when the boundary-link parameter is two. This is a safe explicit normalization of the parameters underlying Section 4.2. Absorbing `c0` into `beta` changes its logarithm by only `O(ph)`.
 
 Theorem 4.15 bounds the tree-cut quality by
 
-$$
+```math
 Q_{\rm dec}\leq O((2\beta)^{O(k)}c_0/\theta).
-$$
+```
 
 Therefore
 
-$$
+```math
 \log Q_{\rm dec}
    =O\!\left(s+ph+\frac{Uph}{s}\right).                    \tag{6}
-$$
+```
 
 The construction and total maintenance work are instead
 
-$$
+```math
 T_{\rm dec-tree}
  \leq m\exp O(U/p+p^2h+ph+s),                              \tag{7}
-$$
+```
 
 after absorbing the polynomial number of hierarchy levels and the fixed power of `theta^-1` into the exponent.
 
@@ -122,32 +122,32 @@ The source's proof of Theorem 4.11 explicitly gives a tree of `~O(m)` vertices a
 
 Use an independent integer `L` for the fully dynamic batching depth of Section 4.3. A level rebuilds after `m_i` updates and has a core of `O(m_{i-1})` edges, where
 
-$$
+```math
 m_{i-1}/m_i=\exp O(U/L).
-$$
+```
 
 The source's Claim 4.22 charges one decremental initialization and lifetime to each such core period. Substituting (7), the total work is bounded by
 
-$$
+```math
 m\exp O\!\left(U/L+U/p+p^2h+ph+s\right).                 \tag{8}
-$$
+```
 
 There is **no `L(U/p+p^2h)` term** in this charge. It would incorrectly propagate computation time as an exported edit count. The source's displayed computation is
 
-$$
+```math
 m_{i-1} F_{\rm dec}\frac m{m_i}
    =m\,F_{\rm dec}\,\exp O(U/L)
-$$
+```
 
 per level, followed by summing the polynomially many levels. The published paragraph contains a typo in one final value assigned to `L_max`; the literal preceding product is the expression relevant here.
 
 The tree-cut quality does multiply over levels:
 
-$$
+```math
 Q_{\rm full}\leq(C Q_{\rm dec})^{O(L)},\qquad
  \log Q_{\rm full}
   =O\!\left(Ls+Lph+\frac{LUph}{s}\right).                 \tag{9}
-$$
+```
 
 The directed layer graph for change detection has depth `L+1`, local branching `poly(U)`, and at most the same update volume as (8), times fixed polynomial factors. Its tree-cover enumeration therefore adds `exp O(Lh)`, already bounded by the `Lph` term for `p>=1`. The unchanged Section 5 data structure and Section 6 numerical reduction incur only fixed polynomial losses in the work, quality, and detection factors.
 
@@ -155,14 +155,14 @@ The directed layer graph for change detection has depth `L+1`, local branching `
 
 Choose, with harmless integer rounding and sufficiently large fixed constants,
 
-$$
+```math
 t=(U/h)^{1/5},\qquad p=\Theta(t),\qquad L=\Theta(t),
  \qquad s=\Theta(t^3h).                                   \tag{10}
-$$
+```
 
 Then `U=Theta(t^5 h)` and the principal terms are
 
-$$
+```math
 \begin{array}{c|c}
  \text{term}&\text{order}\\ \hline
  U/p& t^4h\\
@@ -173,14 +173,14 @@ $$
  LUph/s& t^4h\\
  Lph& t^2h.
  \end{array}
-$$
+```
 
 Condition (4) holds with ample slack because `s/(ph)=Theta(t^2)`. The decremental expander hierarchy has `k=O(t^2)` levels, so it is still polylogarithmic. Both (8) and (9), and the detection factor, fit
 
-$$
+```math
 \exp O(t^4h)
   =\exp O(U^{4/5}h^{1/5}).                               \tag{11}
-$$
+```
 
 Notice that the decremental provider now deliberately spends more time than its own quality factor: its work exponent is `t^4h`, while its quality exponent is only `t^3h`. Optimizing the decremental provider in isolation would set these two exponents equal and recover the weaker final `5/6` specialization. The later fully dynamic client benefits from the unequal pair.
 
@@ -190,29 +190,29 @@ Small core graphs must use their actual size. Clip the local CGLNPS recursion pa
 
 This is only an algebraic statement about the displayed model. If a logarithmic budget `A` pays (8)--(9), then
 
-$$
+```math
 p\gtrsim U/A,\qquad L\gtrsim U/A.
-$$
+```
 
 For every positive `s`,
 
-$$
+```math
 s+Uph/s\geq 2\sqrt{Uph}.
-$$
+```
 
 Consequently
 
-$$
+```math
 A\gtrsim L\sqrt{Uph}
    \gtrsim \frac U A\sqrt{\frac{U^2h}{A}}
    =\frac{U^2\sqrt h}{A^{3/2}}.
-$$
+```
 
 Thus
 
-$$
+```math
 A^5\gtrsim U^4h,
-$$
+```
 
 matching (11). Improving only the `p^2h` work term to `ph` does not improve this balance. Improving the static output-quality tradeoff, the fully dynamic quality composition, or its rebuild accounting would be a different mechanism.
 
@@ -220,9 +220,9 @@ matching (11). Improving only the `p^2h` work term to `ph` does not improve this
 
 Conditional on the uniform source interface (3), the public dual framework supports deterministic
 
-$$
+```math
 (m+Q)\exp O((\log m)^{4/5}(\log\log m)^{1/5})
-$$
+```
 
 fully dynamic tree-cut maintenance and the same logarithmic overhead for its min-ratio-cut and decremental threshold-flow consequences, under their original numeric and update-model assumptions. Static exact minimum-cost flow is included. The literal published statements remain `5/6`; the `4/5` expression here is a reoptimized consequence, not a quotation of a published theorem.
 

@@ -6,9 +6,9 @@
 algorithm for arbitrary signed binary input, including indexed witnesses.
 Its current exponent is
 
-$$
+```math
 E=\frac{158153814247997}{318928754919134}<0.495891.
-$$
+```
 
 Its running time includes a finite input-independent circuit search. The
 argument does not assume that this search is practical, or that fixed

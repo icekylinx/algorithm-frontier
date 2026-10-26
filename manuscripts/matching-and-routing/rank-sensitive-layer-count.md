@@ -20,21 +20,21 @@ Use the common explicit-hypergraph convention: `q=|A|` left
 vertices, at most `r` right vertices per edge, input volume
 `p=sum_e |e|`, and degree cap `Delta>=4`. Write
 
-$$
+```math
 U=\log(p+4),\quad h=\log(U+4),\quad s=\log\Delta,
  \qquad
  a=\min\{\log(2+s),\log(2+\log(r+2))\}.
  \tag{1}
-$$
+```
 
 After the standard trivial checks, `Delta r^2<=p`, so
 `s<=U`. Assume either the strong condition
 
-$$
+```math
 \tau(E_S)\ge\Delta r^2 |S|
                     \quad(S\subseteq A),
  \tag{2}
-$$
+```
 
 or use the explicit growth-test/certificate alternative of the
 no-superposition algorithm. In the latter case the count applies
@@ -42,19 +42,19 @@ until a violation is returned.
 
 The number of layer builds is at most
 
-$$
+```math
 O\!\left(\min\{\log(q+1),\,1+s/a\}\right)
         \exp O\!\left(\frac{a\log(q+1)}s\right).
  \tag{3}
-$$
+```
 
 Consequently the explicit implementation takes
 
-$$
+```math
 O(|A|+|B|)+p\exp O\!\left(
              h+\frac{a\log(q+1)}s\right)
  \tag{4}
-$$
+```
 
 time. The original source's operations have the same bound under
 (2); successful superpositions add only a constant number of
@@ -63,18 +63,18 @@ the explicitly tested implementation.
 
 For constant rank, (3) specializes to
 
-$$
+```math
 O\!\left(\min\{\log(q+1),1+\log\Delta\}\right)
       \exp O\!\left(\frac{\log(q+1)}{\log\Delta}\right).
  \tag{5}
-$$
+```
 
 In particular, for `Delta>=p^epsilon`, this gives
 
-$$
+```math
 O(|A|+|B|)+p\log(p+4)\exp O(1/\epsilon)
  \tag{6}
-$$
+```
 
 for constant `r`. The constants in this expression are uniform
 in `epsilon`; its feasible parameter range is inherited from
@@ -86,16 +86,16 @@ Fix a positive-index layer instance `i`, and let
 `W=|Y_<i|>0`. This lower prefix remains fixed during the
 layer's lifetime. The selected edges obey their cap, so
 
-$$
+```math
 |X_i|\le\Delta|Y_{i-1}|\le\Delta W.
-$$
+```
 
 Every selected edge has at most `r` matching blockers, hence
 
-$$
+```math
 |Y_i|\le r\Delta W.
  \tag{7}
-$$
+```
 
 In the no-superposition algorithm, `Y_i` only decreases. In
 the public algorithm, (7) holds at the start of each epoch and
@@ -104,11 +104,11 @@ throughout the epoch; an adopted superposition starts a new one.
 A direct child is born only when the parent is noncollapsible.
 The growth and noncollapse inequalities give
 
-$$
+```math
 z=W+|Y_i|\ge\kappa W,
  \qquad\kappa=1+9\Delta/100.
  \tag{8}
-$$
+```
 
 Within one epoch, the prefix sizes of successive children
 satisfy `z_(j+1)<=rho z_j`, where `rho=.99`. This follows
@@ -116,25 +116,25 @@ from the child's swap: it removes at least one percent of
 the then-current `W+|Y_i|`. Therefore all child birth sizes
 in the epoch lie in the interval
 
-$$
+```math
 [\kappa W,(1+r\Delta)W].
-$$
+```
 
 The ratio of its endpoints is bounded independently of `Delta`:
 
-$$
+```math
 \frac{1+r\Delta}{1+9\Delta/100}
                    \le\frac{100r}{9}<12r.
  \tag{9}
-$$
+```
 
 An epoch consequently has at most
 
-$$
+```math
 L_r=2+\left\lceil\frac{\log(12r)}{-\log\rho}\right\rceil
         =O(\log(r+2))
  \tag{10}
-$$
+```
 
 created children. The possible last living child is included:
 the argument applies to the list of births already present in
@@ -151,29 +151,29 @@ least `1.1`. Thus a positive-index instance has at most
 
 Choose
 
-$$
+```math
 \lambda_r=\frac{\log(2J L_r)}{\log\kappa}.
  \tag{11}
-$$
+```
 
 Give the parent instance weight `W^(-lambda_r)`. Every
 child has prefix size at least `kappa W` by (8), so
 
-$$
+```math
 \sum_{child} W_{child}^{-\lambda_r}
        \le J L_r\kappa^{-\lambda_r} W^{-\lambda_r}
        =\tfrac12W^{-\lambda_r}.
  \tag{12}
-$$
+```
 
 For `Delta>=4`, one has `log kappa=Theta(log Delta)`;
 for example `kappa>=Delta^(1/5)`. Equation (10) therefore
 implies
 
-$$
+```math
 \lambda_r=\Theta\!\left(
                    \frac{\log(2+\log(r+2))}s\right).
-$$
+```
 
 Independently, the rank-free geometric-series proof supplies
 `lambda_u=C log(2+s)/s` with the same one-half child-weight
@@ -181,10 +181,10 @@ contraction, including `J=26` epochs, for an absolute constant
 `C`. Take `lambda=min{lambda_r,lambda_u}` and use the
 corresponding proof. Thus
 
-$$
+```math
 \lambda=\Theta(a/s).
  \tag{13}
-$$
+```
 
 The weights are analysis objects only. No real arithmetic or
 evaluation of powers is required by the algorithm.
@@ -196,11 +196,11 @@ positive unmatched counts. These counts decrease by a factor
 at most `rho` between children. They are at least one, so
 their weights sum to at most
 
-$$
+```math
 \min\left\{O(\log(q+1)),\frac1{1-\rho^\lambda}\right\}
        =O\!\left(\min\{\log(q+1),1+1/\lambda\}\right).
  \tag{14}
-$$
+```
 
 The first bound uses the number of root children and the fact
 that every weight is at most one. The second reverses their
@@ -247,53 +247,53 @@ exclusive advantage of a different explicit-hypergraph algorithm.
 
 There is a useful separate endpoint that does not require layers. If
 
-$$
+```math
 \Delta r>q-1,
  \tag{14a}
-$$
+```
 
 scan the incident edge lists of the left vertices one at a time, and
 choose any edge avoiding the right resources already used by the
 matching. Before the last choice, those resources number at most
-$r(q-1)<\Delta r^2$. The singleton case of (2) guarantees a
+$`r(q-1)<\Delta r^2`$. The singleton case of (2) guarantees a
 permitted edge. Every edge list is scanned at most once, so this takes
-$O(|A|+|B|+p)$ time. Without the promise, a failed left vertex and
+$`O(|A|+|B|+p)`$ time. Without the promise, a failed left vertex and
 the matching's current right resources are an immediate singleton
 strong-Haxell violation certificate.
 
 One should first test whether
-$|B_{\rm used}|<\Delta r^2q$, in which case all left vertices
+$`|B_{\rm used}|<\Delta r^2q`$, in which case all left vertices
 and all used right resources are a valid violation. If that test
-passes and $\Delta^2r^3\ge |B_{\rm used}|$, then
+passes and $`\Delta^2r^3\ge |B_{\rm used}|`$, then
 
-$$
+```math
 q\le\frac{|B_{\rm used}|}{\Delta r^2}
    \le\Delta r,
-$$
+```
 
-so (14a) holds. The direct input condition $q\le\Delta r$ already
+so (14a) holds. The direct input condition $`q\le\Delta r`$ already
 suffices, without the resource-count inference. Since
-$|B_{\rm used}|\le p$, the more convenient condition
-$\Delta^2r^3\ge p$, and in particular
-$\Delta\ge\sqrt p$, also suffices for this elementary linear-time
+$`|B_{\rm used}|\le p`$, the more convenient condition
+$`\Delta^2r^3\ge p`$, and in particular
+$`\Delta\ge\sqrt p`$, also suffices for this elementary linear-time
 certifying endpoint.
 
 Another elementary preprocessing observation applies throughout the
 parameter range. Scan all left vertices greedily once, producing a
-maximal matching $M$ and the uncovered left set $U_0$. Every edge
-incident to $U_0$ meets $B(M)$, because the matching only grew
+maximal matching $`M`$ and the uncovered left set $`U_0`$. Every edge
+incident to $`U_0`$ meets $`B(M)`$, because the matching only grew
 after a failed scan. Under (2),
 
-$$
+```math
 \Delta r^2|U_0|
    \le\tau(E_{U_0})\le |B(M)|\le r|M|,
  \qquad
  |U_0|\le\frac{q}{\Delta r+1}.
  \tag{14b}
-$$
+```
 
-Without the promise, if $|B(M)|<\Delta r^2|U_0|$, then
-$(U_0,B(M))$ is itself a valid strong-Haxell violation. This gives
+Without the promise, if $`|B(M)|<\Delta r^2|U_0|`$, then
+$`(U_0,B(M))`$ is itself a valid strong-Haxell violation. This gives
 a useful small uncovered set, but does not automatically solve that
 set recursively: its available edges may still meet the existing
 matching. An augmenting or reassignment argument is still needed.
@@ -307,35 +307,35 @@ example is not an obstruction for this or every other algorithm.
 ### Rank one already has a stronger classical phase bound
 
 When `r=1`, the hypergraph is a bipartite graph, and (2) is simply
-$|N(S)|\ge\Delta|S|$. In this case use the classical
+$`|N(S)|\ge\Delta|S|`$. In this case use the classical
 [Hopcroft--Karp algorithm](https://doi.org/10.1137/0202019) and its
 linear-time phases of maximal collections of shortest augmenting paths.
 
 For any nonperfect matching, start alternating BFS from an unmatched
-left vertex. If the currently reachable left set $S_j$ has no free
-right neighbor, every vertex of $N(S_j)$ is matched and its distinct
+left vertex. If the currently reachable left set $`S_j`$ has no free
+right neighbor, every vertex of $`N(S_j)`$ is matched and its distinct
 left mate is reachable in the next step. A matched edge incident to an
 already reached left vertex only gives a mate that was already reached,
 so it does not invalidate this counting. Therefore
 
-$$
+```math
 |S_{j+1}|\ge|N(S_j)|\ge\Delta|S_j|.
-$$
+```
 
-Since there are only $q$ left vertices, an augmenting path has length
-$O(1+\log(q+1)/\log\Delta)$. The shortest augmenting length
+Since there are only $`q`$ left vertices, an augmenting path has length
+$`O(1+\log(q+1)/\log\Delta)`$. The shortest augmenting length
 strictly increases after a Hopcroft--Karp phase, so the total time is
 
-$$
+```math
 O(|A|+|B|)+O\!\left(p\left(1+
                        \frac{\log(q+1)}{\log\Delta}\right)\right).
  \tag{14c}
-$$
+```
 
-In particular this is $O(p(1+1/\epsilon))$, plus input reading,
-when $\Delta\ge p^\epsilon$. The new layer analysis is not a
+In particular this is $`O(p(1+1/\epsilon))`$, plus input reading,
+when $`\Delta\ge p^\epsilon`$. The new layer analysis is not a
 speed improvement in this graph case. Its nontrivial constant-rank
-comparison concerns $r\ge2$ outside the elementary greedy regime.
+comparison concerns $`r\ge2`$ outside the elementary greedy regime.
 
 ## 6. Why scanning only active incidences does not eliminate the root logarithm
 
@@ -354,26 +354,26 @@ create original right resources
 `1<=t<=4Delta j`, introduce a distinct private right resource
 `b_(j,t)` and the hyperedge
 
-$$
+```math
 \{a_j,x_t,b_{j,t}\}.
-$$
+```
 
 For `a_1`, include all hyperedges
 
-$$
+```math
 \{a_1,x_u,x_v\},
              \qquad1\le u<v\le4\Delta+1.
-$$
+```
 
 Every edge has exactly two right vertices and total size three.
 There are no duplicate hyperedges. The input volume is
 
-$$
+```math
 p=3\binom{4\Delta+1}{2}
        +3\sum_{j=2}^q4\Delta j
        =\Theta(\Delta^2+\Delta q^2)=\Theta(q^6).
  \tag{15}
-$$
+```
 
 It is dominated by the edges incident to `a_1`.
 
@@ -385,10 +385,10 @@ of size `4Delta J` in the right coordinates. Thus any hitting
 set has at least that size. Taking all original resources
 `x_1,...,x_(4Delta J)` hits every edge for `S`, proving
 
-$$
+```math
 \tau(E_S)=4\Delta J
                          \ge4\Delta|S|.
-$$
+```
 
 Hence (2) holds with `r=2`. Also `Delta` is a fixed
 polynomial of `p`; for example `Delta>=p^(1/3)` for all
@@ -420,10 +420,10 @@ have `c>=4Delta j_0`. Otherwise, each of those `L-j_0`
 vertices had more than `Delta` available original resources
 and accepted its full quota. This would give
 
-$$
+```math
 c\ge(L-j_0)\Delta\ge5L\Delta/6
         >4j_0\Delta,
-$$
+```
 
 a contradiction. Any previously processed higher-index active
 vertices only increase `c` and cannot invalidate this argument.

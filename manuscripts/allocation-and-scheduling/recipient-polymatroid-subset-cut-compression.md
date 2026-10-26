@@ -27,21 +27,21 @@ included in that solver extension.
 Fix one integral recipient polymatroid f on player set P. For a subset
 S, write
 
-$$
+```math
 m_p(S)=f(S\cup\{p\})-f(S),
  \tag{C1}
-$$
+```
 
 which is zero for p in S. For the configuration variables mu_pn of
 the original relaxation, its subset cut is
 
-$$
+```math
 \boxed{
  \sum_p\sum_n\mu_{pn}\bigl(n_j-m_p(S)\bigr)_+\le f(S)
                   \quad(S\subseteq P).
  }
  \tag{C2}
-$$
+```
 
 There is one such family for each resource j, using that resource's
 rank f_j and the corresponding configuration coordinate n_j.
@@ -52,17 +52,17 @@ Let n be any feasible integral recipient vector. Put
 A={p:n_p>m_p(S)}. Polymatroid feasibility, monotonicity and diminishing
 returns give
 
-$$
+```math
 n(A)\le f(A)\le f(S\cup A)
                  \le f(S)+\sum_{p\in A}m_p(S).
-$$
+```
 
 Subtract the last sum to obtain
 
-$$
+```math
 \sum_p(n_p-m_p(S))_+\le f(S).
  \tag{C3}
-$$
+```
 
 An integer allocation on a selected player basis satisfies (C2) by
 putting mass one on its selected configurations and zero on other
@@ -74,21 +74,21 @@ representation or any approximation algorithm.
 
 For an arbitrary real feasible vector z in P(f), define
 
-$$
+```math
 a_p(z)=\min_{T\ni p}\{f(T)-z(T)\},\qquad
  F(z)=\sum_{p,n}\mu_{pn}(n_j-a_p(z))_+-z(P).
  \tag{C4}
-$$
+```
 
 For integer z, F(z)<=0 is the preceding note's residual-capacity cut.
 For the equivalence proof we may evaluate the same formula on the
 whole real polymatroid. Every summand is convex, since
 
-$$
+```math
 (n_j-a_p(z))_+
  =\max\left\{0,\max_{T\ni p}\bigl(n_j-f(T)+z(T)\bigr)\right\}
  \tag{C5}
-$$
+```
 
 is a maximum of affine functions of z. All mu coefficients are
 nonnegative, and subtracting z(P) is affine. Therefore F is convex.
@@ -103,10 +103,10 @@ assume any integrality or capacity expansion of the configuration point.
 Polymatroid vertices are obtained by the greedy construction on an
 ordered subset A=(p_1,...,p_s): with A_i={p_1,...,p_i}, set
 
-$$
+```math
 z_{p_i}=f(A_i)-f(A_{i-1}),\qquad z_p=0\ (p\notin A).
  \tag{C6}
-$$
+```
 
 The resulting vector is integral, feasible and has sum f(A). These
 greedy vectors contain every vertex: maximizing any linear objective
@@ -118,11 +118,11 @@ In the natural matroid, a vector (C6) is a basis of the union E_A of
 all player-copy blocks in A. It therefore spans E_A. Its residual
 individual capacities depend only on A, not on its greedy order:
 
-$$
+```math
 a_p(z)=r(E_A\cup E_p)-r(E_A)
                     =f(A\cup\{p\})-f(A)=m_p(A).
  \tag{C7}
-$$
+```
 
 Its right side z(P) is f(A). The residual inequality for this vertex
 is exactly the subset cut (C2) indexed by A.
@@ -147,22 +147,22 @@ Conversely, the greedy basis for a subset A of size at most s has
 at most s nonzero coordinates. Its residual cut belongs to that
 bounded-support family. Thus
 
-$$
+```math
 \boxed{\begin{array}{c}
  \text{all feasible reserved-count cuts with support at most }s\\
  \Longleftrightarrow\\
  \text{all subset cuts (C2) with }|S|\le s.
  \end{array}}
  \tag{C8}
-$$
+```
 
 The algorithm requires only s=2(r-1) at completed normalized states.
 There are consequently at most
 
-$$
+```math
 \sum_{i=0}^{\min\{q,2r-2\}}\binom qi
  \tag{C9}
-$$
+```
 
 cuts per resource in this sufficient relaxation. The earlier
 factor-four and positive-error rank-quasipolynomial guarantees apply
@@ -188,11 +188,11 @@ cut family in 2^q times polynomial explicit-support work. Enumerating
 only subsets of size at most s separates the bounded-support family
 in
 
-$$
+```math
 \left(\sum_{i=0}^{\min(q,s)}\binom qi\right)
        \mathrm{poly}(H,\text{explicit configuration support}).
  \tag{C10}
-$$
+```
 
 For s=2(r-1), this is q^{O(r)} and is independent of numerical
 capacity magnitudes except for their binary arithmetic. This is an

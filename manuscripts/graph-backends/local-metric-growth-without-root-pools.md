@@ -53,9 +53,9 @@ retain their original lengths and gradients.
 Consequently every edge of each resulting tree-cycle graph `J_i` has
 length at most
 
-$$
+```math
 \widehat L_i=\max\{L_i,2\}.         \tag{1}
-$$
+```
 
 The source passage for the paired-edge identity is Chen, Kyng, Liu,
 Meierhans and Probst Gutenberg,
@@ -74,11 +74,11 @@ All portals are terminals of the maintained geometric Steiner forest.
 
 The geometric construction maintains
 
-$$
+```math
 K=(K_0\text{ with retired initial edges suppressed})
           \cup\{\text{current noninitial tree edges}\},
                                                                \tag{2}
-$$
+```
 
 where `K_0` is the compressed Steiner forest of `T_0` on the current
 terminal set. Before a tree edge is edited, both its endpoints are
@@ -97,9 +97,9 @@ Hence, for an absolute constant `c_K`, every current geometric tree
 edge is the compression of at most `c_K k` current parent tree edges.
 Its stored length is their actual sum, so it is at most
 
-$$
+```math
 c_K k\widehat L_i.              \tag{3}
-$$
+```
 
 Retained spanner aliases are coalesced into one central edge for each
 original off-tree edge lifetime. That central edge retains its original
@@ -117,11 +117,11 @@ Let each geometric vertex have a fixed binary port tree with at most
 `C` leaves. A passage between two ports uses at most `2 ceil(log_2 C)`
 connector edges. Set
 
-$$
+```math
 H=2^{\left\lceil\log_2\!\bigl(
         \max\{2,4\lceil\log_2 C\rceil\}\bigr)\right\rceil}.
                                                                \tag{4}
-$$
+```
 
 Multiply the length and gradient of every nonfiber geometric edge by
 this same `H`, and give fiber connectors length one and gradient zero.
@@ -130,10 +130,10 @@ All child lengths remain positive integers.
 A geometric circulation lifts through the fibers with added connector
 length at most
 
-$$
+```math
 2\lceil\log_2 C\rceil\sum_e|d_e|
        \le H\sum_e\ell_e|d_e|,
-$$
+```
 
 because every geometric edge has length at least one. The expanded
 length is at most twice its scaled geometric length, while its
@@ -150,9 +150,9 @@ part of the inequality just proved.
 
 Equations (1)--(4) give the local recurrence
 
-$$
+```math
 L_{i+1}\le c_K k H\max\{L_i,2\}.                           \tag{5}
-$$
+```
 
 The scales affect lengths and gradients together. Every returned
 certificate must divide **both** quantities by `H` on this lift.
@@ -163,10 +163,10 @@ Let `2^U` be the common master bound and assume
 `L_0<=2^(c_0 U)` for fixed `c_0`. Use the same `k` and `C` throughout
 the recursion, with
 
-$$
+```math
 \log_2 H=O(\log U),\qquad
  U^\eta\le\log_2 k=O(U)
-$$
+```
 
 for one fixed `eta>0`. Suppose the size-shrink argument independently
 bounds depth by `d<=c_d U/log_2 k+c_d`, with absolute `c_d`.
@@ -175,7 +175,7 @@ common master parameter and depth bounds.
 
 Iterating (5),
 
-$$
+```math
 \begin{split}
  \log_2\max\{L_i,2\}
  &\le(c_0+1)U
@@ -183,7 +183,7 @@ $$
  &=O_{c_0}(U),\qquad 0\le i\le d.
 \end{split}
 \tag{6}
-$$
+```
 
 Indeed `d log k=O(U)`, while
 `d log H=O(U log U/log k)=o(U)`. The hidden constants are independent
@@ -214,9 +214,9 @@ the existing frozen-gradient gauges. A gauge subtracts endpoint
 potentials formed by a parent tree-path sum. Even with `O(U)` length
 bits, its gradients can obey only the conservative recurrence
 
-$$
+```math
 B_{g,i+1}\le B_{g,i}+O(U),
-$$
+```
 
 including the common scale (4). Hence `B_g=O(U(d+1))` is allowed.
 This does not enter the cover radius or `gamma_diam`, which depend
@@ -234,18 +234,18 @@ not have zero gauged gradient in an intermediate representation.
 With SNC exponent `p=41/42` and (6), the aspect term is `O(U/kappa)`
 instead of `O(U d/kappa)`. Set
 
-$$
+```math
 \beta=83/84,\quad \alpha=167/168,\quad
  \kappa\asymp U^{1/84}/\log U,
-$$
+```
 
 and use `log k=Theta(U^alpha)`, `log C=Theta(U^beta)` and
 `log A=Theta(U^beta(log U)^2)`. Then both the tree-family logarithm
 and aspect-routing logarithm are `O(U^beta log U)`, and
 
-$$
+```math
 \beta+1-\alpha=\alpha.
-$$
+```
 
 Thus the previously established depth-independent recurrences would
 give common factor `exp(O(U^(167/168)(log U)^2))`. This last statement

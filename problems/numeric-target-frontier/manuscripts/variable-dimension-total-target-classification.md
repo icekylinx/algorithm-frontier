@@ -14,24 +14,24 @@ binary. Original eligibility restrictions are allowed.
 
 There are d explicitly listed linear target rows
 
-$$
+```math
 a^j x\ \rho_j\ T_j,\qquad j=1,\ldots,d,
        \quad \rho_j\in\{\le,=,\ge\},
        \quad a^j_e,T_j\in\mathbb Z_{\ge0}.
  \tag{VT1}
-$$
+```
 
 Rows may overlap arbitrarily, and d is unrestricted. Set
 T=sum_j T_j. Given an arbitrary rational scalar objective c,
 one can detect infeasibility and compute its exact minimum or
 maximum over the integer feasible family in
 
-$$
+```math
 \boxed{
   2^{O((T+1)\log(T+2))}\mathrm{poly}(H)
  }
  \tag{VT2}
-$$
+```
 
 time and polynomial binary workspace, uniformly in d.
 Here H is the complete binary encoding, with polynomially
@@ -42,10 +42,10 @@ rank R is materialized.
 The order T log T is necessary in the rank-oracle model:
 for infinitely many T, exact feasibility already requires
 
-$$
+```math
 2^{\Omega(T\log T)}
  \tag{VT3}
-$$
+```
 
 rank queries. This lower bound holds for bounded-error randomized
 decision with success at least 2/3, and already for ordinary
@@ -85,10 +85,10 @@ in the legitimate optional-to-base representation.
 All surviving rows have positive integer targets. Their
 number d' satisfies
 
-$$
+```math
 d'\le T.
  \tag{VT4}
-$$
+```
 
 If none survives, optimize c on the original-total masked
 base in polynomial time. This includes T=0 without a
@@ -98,22 +98,22 @@ Let C be the surviving covering rows, and put s=|C|.
 For an upper or equality row the auxiliary upper cap is
 U_j=T_j; for a covering row it is U_j=2T_j-1. Thus
 
-$$
+```math
 U=\sum_jU_j\le2T,\qquad s\le T.
  \tag{VT5}
-$$
+```
 
 ## 3. Common-order stopping prefixes need only chain copies
 
 Enumerate the s! permutations pi of the covering rows.
 For one permutation define the decreasing chain of subsets
 
-$$
+```math
 S_0=C,\qquad
  S_i=C\setminus\{\pi(1),\ldots,\pi(i)\},
                       \quad i=1,\ldots,s.
  \tag{VT6}
-$$
+```
 
 For each eligible original coordinate e, create s+1 copies
 (e,i), one per S_i. Their shared resource rank is
@@ -140,10 +140,10 @@ For each covering row, cap its values at T_j and stop at
 the first unit where its prefix sum reaches T_j. Such a
 stopping position exists. Its auxiliary sum W_j satisfies
 
-$$
+```math
 T_j\le W_j\le2T_j-1.
  \tag{VT7}
-$$
+```
 
 Zero-valued units within a prefix cause no difficulty.
 Sort the covering rows by stopping position, breaking ties
@@ -176,12 +176,12 @@ For a fixed chain, group coordinates by their complete
 auxiliary vector b in Z^{d'}_{\ge0}. Enumerate nonnegative
 integer counts h_b for the occupied nonzero vectors, with
 
-$$
+```math
 m=\sum_{b\ne0}h_b\le R,\qquad
        W_j=\sum_{b\ne0}b_j h_b\le U_j
                           \quad\hbox{for every }j.
  \tag{VT8}
-$$
+```
 
 Set the one global zero-vector count to h_0=R-m.
 At a completed profile, require W_j<=T_j for an upper
@@ -228,12 +228,12 @@ profiles cannot have the same image.
 
 Writing Bell for the number of set partitions gives
 
-$$
+```math
 \#\{\text{profiles satisfying VT8}\}
                  \le \mathrm{Bell}(U+1)
                  \le (U+1)^{U+1}.
  \tag{VT9}
-$$
+```
 
 The last inequality follows by encoding a set partition
 by the function sending each token to the least-labeled
@@ -248,13 +248,13 @@ among the current chain's explicit coordinates. When
 the next vector is b, its count is bounded during
 generation by
 
-$$
+```math
 \min\left\{R-m,\
        \min_{j:b_j>0}
          \left\lfloor\frac{U_j-W_j}{b_j}\right\rfloor
        \right\}.
  \tag{VT10}
-$$
+```
 
 This componentwise pruning is necessary for applying
 VT9 to the entire traversal. A bound only on the total
@@ -271,12 +271,12 @@ infeasible input instances are charged.
 
 The resulting explicit bound is
 
-$$
+```math
 s!\,(U+1)^{U+1}\mathrm{poly}(H)
         \le
           2^{O((T+1)\log(T+2))}\mathrm{poly}(H).
  \tag{VT11}
-$$
+```
 
 For one permutation the ground has at most
 (d+1)(|E|+1) coordinates, each with at most d
@@ -309,11 +309,11 @@ Let H be the family of all perfect matchings of this
 complete graph, regarded only as r-element subsets
 of E. There are
 
-$$
+```math
 N=(d-1)!!
                       =2^{\Theta(d\log d)}
  \tag{VT12}
-$$
+```
 
 such sets. The recurrence follows by choosing the
 partner of one vertex and recursing. For an elementary

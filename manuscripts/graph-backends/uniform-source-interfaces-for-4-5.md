@@ -17,12 +17,12 @@ directly into those complete old theorems would be invalid.
 
 Use the notation of the main composition:
 
-$$
+```math
 h=\lceil\log_2(U+4)\rceil,\quad
  t=\max\{2,\lfloor(U/h)^{1/5}\rfloor\},\quad
  p=r=t,\quad K=t^2,\quad x=\lceil U/t\rceil,\quad k=2^x.
  \tag{1}
-$$
+```
 
 Here p controls the explicit sequential routing construction, r controls
 the deterministic balanced-cut primitive, K is the number of touched-set
@@ -36,11 +36,11 @@ An actual local graph has resident size m, including its counted isolated
 slots and within-period history, and positive integral lengths of at most
 b_* bits. With the declared depth bound d_*,
 
-$$
+```math
 d_*=\lceil8U/x\rceil+10,
  \qquad b_*=(c_0+100)U(d_*+1)=O(Ut).
  \tag{2}
-$$
+```
 
 The master bound U is used for counters, caps and integer arithmetic. It
 does not authorize initializing a graph with 2^U vertices when its actual
@@ -58,11 +58,11 @@ construction for centers. The final count actually derived in that appendix
 is sufficient here, without relying on its tighter displayed logarithmic
 factor. On a constant-degree graph, for an integer b, the safe interface is
 
-$$
+```math
 |A|=O((n/b)\log^2(n+2)),\qquad
  |B(v,A)|\le b,\qquad |C(v,A)|\le2b,
  \tag{3}
-$$
+```
 
 with actual work O(nb polylog(n+2)). Components smaller than b receive one
 local center, as specified in the disconnected-component wrapper.
@@ -74,10 +74,10 @@ contained in its initial list. The sum of inverse-cluster sizes is at most
 nb. If V_i consists of vertices whose clusters are still larger than 2b,
 and |V_i|>n/b, put
 
-$$
+```math
 b_i=\lfloor b|V_i|/n\rfloor.
  \tag{4}
-$$
+```
 
 For each initial nearest-vertex list retain its first b_i members in V_i,
 when there are that many, and hit all these sublists. This adds at most
@@ -189,11 +189,11 @@ paths. Its cardinality and explicitly enumerated total edge count are
 m k^{O(1)} poly(U); every path length is at most
 k^{O(1)} poly(U) 2^{b_*}. Weighted halving therefore needs
 
-$$
+```math
 O(\log(m+2)+\log(k+2)+b_*+\log(U+2))
                        =\mathrm{poly}(U)
  \tag{5}
-$$
+```
 
 forests. KMPG's original O(log m) display uses polynomial aspect ratio;
 (5) is the actual bound used here. It remains a fixed polynomial, so it
@@ -248,11 +248,11 @@ Write Delta_native=k poly(U). At a repair, projected degree and preliminary
 ambient congestion are both O(C_old+Delta_native). The normalized static
 provider gives
 
-$$
+```math
 L_{j+1}\le c\Gamma L_j,\qquad
  C_{j+1}\le c\Gamma(C_j+\Delta_{\rm native}).
  \tag{6}
-$$
+```
 
 Thus L_K<=Gamma^{O(K)} and
 C_K<=k poly(U) Gamma^{O(K)}. Full route lists, inverse occurrence lists,
@@ -266,12 +266,12 @@ change a selected edge's gradient or create a recursive input edge.
 The integer scheduling ratio is rho=2^{ceil(8U/K)}. The elementary repair
 proof yields selected degree/encoded recourse with
 
-$$
+```math
 \log R=O(U/K+\log\Gamma+\log U),
  \qquad
  W=k^{O(1)}\rho^{O(1)}F^{O(1)}\Gamma^{O(K)}\mathrm{poly}(U)
  \tag{7}
-$$
+```
 
 for local work. Fixed powers in W include possible moved-incidence scans.
 They do not multiply the child-update recurrence. Late spending of initial
@@ -296,11 +296,11 @@ The table concerns the current 4/5 path, not every historical alternative.
 
 The current static provider has
 
-$$
+```math
 \log\Gamma=O((p+r)h),\qquad
  \log F=O(U/p+U/r+r^2h+(p+r)h).
  \tag{8}
-$$
+```
 
 The r^2 term is construction work. It is not inserted into selected size,
 congestion or per-level quality. Conversely the complete quality loss
@@ -321,11 +321,11 @@ evaluate an old fixed-a asymptotic theorem at a growing value of a. It proves
 the priced-step inequalities using the directly supplied master cap E.
 The actual assumptions are
 
-$$
+```math
 q<1/100,\quad q\ge S^{-1},\quad D\le S^2,
  \quad E\le D/4,\quad 1/(4D)>2q,
  \tag{9}
-$$
+```
 
 plus the stated argument, precision, history and lifetime guards. With
 D and q from the table, these hold eventually for every favorable fixed

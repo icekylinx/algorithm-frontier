@@ -17,7 +17,7 @@ Deterministic conditional composition; the strong forest and exact Gomory-Hu tra
 
 **Time**
 
-Both the native decremental forest and the exact Gomory–Hu application have total work $O(n+m)+(m+1)E_{6/7}$ under their stated interfaces, where $E_{6/7}=\exp(O(U^{6/7}h^{1/7}))$.
+Both the native decremental forest and the exact Gomory–Hu application have total work $`O(n+m)+(m+1)E_{6/7}`$ under their stated interfaces, where $`E_{6/7}=\exp(O(U^{6/7}h^{1/7}))`$.
 
 **Space**
 
@@ -25,7 +25,7 @@ Polynomial in the maintained graph, forest certificates, and reduction state; no
 
 **Parameters**
 
-$n$ is the vertex count; $m$ is the lifetime edge inventory; $k$ is the fixed reduction parameter; $U$ is the master logarithmic scale; $h$ is the iterated logarithmic scale used by the forest envelope.
+$`n`$ is the vertex count; $`m`$ is the lifetime edge inventory; $`k`$ is the fixed reduction parameter; $`U`$ is the master logarithmic scale; $`h`$ is the iterated logarithmic scale used by the forest envelope.
 
 **Model and representation**
 
@@ -47,6 +47,6 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 The returned tree uses the original vertices. For every pair, the minimum edge weight along its tree path equals the exact minimum-cut value. Disconnected component trees are joined by zero-weight edges; graph loops do not affect cuts.
 
-The reduction charges actual-size degree expansion, finite-precision multiplicative weights, the skeleton, fixed-$k$ guide families, contractions, and all flow calls. Their $5/6$ and $4/5$ overhead scales are absorbed by the stated $6/7$ factor. This is an application of the complete strong-forest contract, including occurrence and retirement accounting.
+The reduction charges actual-size degree expansion, finite-precision multiplicative weights, the skeleton, fixed-$`k`$ guide families, contractions, and all flow calls. Their $`5/6`$ and $`4/5`$ overhead scales are absorbed by the stated $`6/7`$ factor. This is an application of the complete strong-forest contract, including occurrence and retirement accounting.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

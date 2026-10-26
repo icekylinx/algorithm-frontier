@@ -1,6 +1,6 @@
 # Near-equal large job sizes with a bottleneck rank budget
 
-The endpoints $a_-$ and $a_+$ are the actual extrema of the positive-rank large types. This convention is required by the target infeasibility check and the exact rational grid.
+The endpoints $`a_-`$ and $`a_+`$ are the actual extrema of the positive-rank large types. This convention is required by the target infeasibility check and the exact rational grid.
 
 This extends the workload scheduling transfer to several different
 large sizes. It also gives an unconditional rank-budget guarantee:
@@ -21,11 +21,11 @@ polymatroid rank f_j on the q machines P. A legal schedule chooses
 an integer base x_j of every f_j. Drop zero-rank types. Fix a nonempty
 set of the largest job types, called the large band, such that
 
-$$
+```math
 a_-\le p_j\le a_+\quad(j\text{ large}),
  \qquad p_j\le u<a_-\quad(j\text{ smaller}).
  \tag{H1}
-$$
+```
 
 The smaller band may contain arbitrarily many different values.
 If it is empty, take u=0 and its workload rank zero. The endpoints
@@ -33,11 +33,11 @@ a_- and a_+ are, by definition, the minimum and maximum sizes among
 the positive-rank large types, rather than loose interval bounds.
 Thus both endpoints are attained original job sizes. Define
 
-$$
+```math
 R=a_+/a_-,\qquad f_b=\sum_{j\text{ large}}f_j,
         \qquad h=f_b(P)>0.
  \tag{H2}
-$$
+```
 
 The useful near-equal regime is 1<=R<2. In this regime a target
 T<2a_- can contain at most one large unit on any machine, whereas
@@ -49,11 +49,11 @@ Let M be the unit-box cap of P(f_b). First check whether r_M(P)=h.
 If it fails, every schedule has two large units on some machine,
 so OPT>=2a_-. The ordinary additive algorithm then already gives
 
-$$
+```math
 C_{\max}\le\mathrm{OPT}+a_+
                          \le(1+R/2)\mathrm{OPT}.
  \tag{H3}
-$$
+```
 
 Thus the rank-budget construction below is needed only when M has
 rank h. In particular h<=q in every branch using the unit core.
@@ -63,12 +63,12 @@ rank h. In particular h<=q in every branch using the unit core.
 For each machine define its maximum permitted smaller workload and
 maximum possible large-unit size by
 
-$$
+```math
 W_p=\sum_{j\text{ smaller}}p_j f_j(\{p\}),
  \qquad
  a_p=\max\{p_j:j\text{ large},\ f_j(\{p\})\ge1\}.
  \tag{H4}
-$$
+```
 
 Take a_p=0 on a machine that is a loop of M. Such a machine is never
 chosen for a large unit. Put C_p=W_p+a_p. Every legal final schedule
@@ -79,11 +79,11 @@ integer component obeys x_j(p)<=f_j({p}).
 For an integer budget 0<=k<=h, choose an M-independent set F_0 of
 size h-k minimizing its maximum C_p, and let
 
-$$
+```math
 B_k=\min_{F_0\in\mathcal I(M),\ |F_0|=h-k}
                          \max_{p\in F_0} C_p.
  \tag{H5}
-$$
+```
 
 Use maximum over the empty set equal to zero, so B_h=0. The selected
 F_0 and B_k are found by sorting C_p and applying matroid greedy.
@@ -105,30 +105,30 @@ large-type assignments are recovered after the final M-basis is known.
 
 Fix 1<=k<=h and a rational D>=D_k:=3-2/k. Define
 
-$$
+```math
 \beta(D,R)=\max\left\{1+R/2,
                                       2-\frac1{DR}\right\}.
  \tag{H6}
-$$
+```
 
 The resulting schedule satisfies
 
-$$
+```math
 \boxed{\quad
              C_{\max}\le
                  \max\{\beta(D,R)\,\mathrm{OPT}+u,\ B_k\}.
  \quad}
  \tag{H7}
-$$
+```
 
 At D=D_k the deterministic runtime is 2^{O(k)}poly(H). At
 D=D_k+eta, for rational 0<eta<=1, it is
 
-$$
+```math
 \mathrm{poly}(H)
  \min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\}.
  \tag{H8}
-$$
+```
 
 The choice D=3+eta also has the bound (H8), since its excess over
 D_k is at least eta. H includes all input and numerical bits,
@@ -148,11 +148,11 @@ large-job positions.
 Let g=1/Q divide every original job size. For D=A/B in positive
 integer terms, take Delta=g/A. Then
 
-$$
+```math
 K=a_-/\Delta,\qquad b=K/D,
        \qquad m_j=p_j/\Delta\quad(j\text{ smaller})
  \tag{H9}
-$$
+```
 
 are integers, with K,b positive. Use targets on the Delta-grid and
 set c=T/Delta. The smaller-workload rank is
@@ -167,10 +167,10 @@ is Boolean and has total h. On each such recipient p, its actual
 large job has size at least a_-, so its smaller workload is at most
 T-a_-. The complement in the dual rank
 
-$$
+```math
 f(S)=c|S|+G(P\setminus S)-G(P)
  \tag{H10}
-$$
+```
 
 therefore supplies at least K dual workload units on every member
 of I*. The variation between the large sizes causes no loss in this
@@ -191,10 +191,10 @@ basis.
 
 Run the unit algorithm with quota b. Its strict condition is
 
-$$
+```math
 D_k b<K+1+(k-1)/k.
  \tag{H11}
-$$
+```
 
 Since D b=K and D>=D_k, this condition holds. If D=D_k+eta,
 the slack is eta*b+1+(k-1)/k, whose ratio to the cover coefficient
@@ -235,11 +235,11 @@ then obey:
 
 For a hard target, T>=a_+ and a_+-a_-/D>=0. Therefore
 
-$$
+```math
 T+a_+-a_-/D
                     \le\left(2-\frac1{DR}\right)T.
  \tag{H12}
-$$
+```
 
 For an easy target T>=2a_-, round all jobs directly to load at most
 T+a_+<=(1+R/2)T. Combining these cases gives the fixed-target bound
@@ -273,11 +273,11 @@ provides a feasible fractional smaller allocation. Decompose 1_F0
 into original large bases. On F_0 the final load is at most B_0;
 elsewhere it is at most OPT+u. Hence
 
-$$
+```math
 C_{\max}\le\max\{\mathrm{OPT}+u,B_0\}
                         \quad\text{in polynomial time}.
  \tag{H13}
-$$
+```
 
 One can obtain this endpoint by a polynomial-bit workload target
 search or the standard assignment LP. It does not invoke a rank-zero
@@ -296,29 +296,29 @@ bottleneck term is active at the unknown OPT.
 Take D=3+eta and suppose R<=1+tau with 0<=tau<1. The hard coefficient
 satisfies
 
-$$
+```math
 2-\frac1{(3+\eta)(1+\tau)}
    \le\frac53+\frac\eta9+\frac\tau3.
  \tag{H14}
-$$
+```
 
 The easy coefficient obeys
 1+(1+tau)/2<=5/3+tau/3 for tau<=1. Hence
 
-$$
+```math
 \beta(3+\eta,R)
                        \le\frac53+\frac\eta9+\frac\tau3.
  \tag{H15}
-$$
+```
 
 In particular, for k=h and u<=epsilon OPT, the algorithm returns
 an integral schedule of ratio at most
 
-$$
+```math
 \frac53+\frac\eta9
                                     +\frac\tau3+\epsilon
  \tag{H16}
-$$
+```
 
 in rank-quasipolynomial time in h. For a smaller k, the same statement
 holds whenever B_k is at most that bound times OPT; otherwise (H7)

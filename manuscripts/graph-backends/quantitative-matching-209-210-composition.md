@@ -22,13 +22,13 @@ If `m_s=0`, return the empty matching immediately; below assume
 Subject to the component constructions listed below, there is a single
 computable deterministic maximum-matching algorithm with time
 
-$$
+```math
 \boxed{\quad
  O(n+m)+(m_s+1)\exp\!\left(
  O\left((\log(m_s+2))^{209/210}
           (\log\log(m_s+4))^3\right)\right).
  \quad}                                                     \tag{1}
-$$
+```
 
 The hidden constant is absolute. The graph need not be connected,
 bipartite, sparse relative to its original vertex count, or of even
@@ -58,21 +58,21 @@ For the subcubic matching graph, choose one `S=2^s` with `N<=S<2N`.
 Use the same `S` in every phase. Invoke every numerical hierarchy with
 master logarithmic parameter
 
-$$
+```math
 U=2s,\qquad S_b=2^U=S^2.
-$$
+```
 
 All its recursive instances use this same master. Put
 
-$$
+```math
 p=41/42,\quad \alpha=209/210,\quad
  t=1/70,\quad \beta=104/105,\quad
  L_U=\lceil\log_2(U+4)\rceil.
-$$
+```
 
 The hierarchy parameters are
 
-$$
+```math
 \begin{split}
  k&=2^{\lceil U^\alpha\rceil},\\
  \Gamma&=2^{\lceil U^p\rceil L_U^2},\\
@@ -80,7 +80,7 @@ $$
  C_{\rm port}&=2^{\lceil U^\beta\rceil},\\
  A&=2^{\lceil U^\beta\rceil L_U^2}.
  \end{split}                                                \tag{2}
-$$
+```
 
 Integer roots and integer division give an equivalent executable
 rounding of these formulas. The port parameter in (2) is used at
@@ -90,10 +90,10 @@ the latter is not retained in a subsidiary geometric expansion.
 This replacement preserves the degree requirement. The hierarchy's
 degree lemma bounds the relevant tree-cycle degree by
 
-$$
+```math
 4\kappa(\gamma_{\rm HRG}+1)+2\gamma_{\rm HRG}+3,
  \qquad \gamma_{\rm HRG}=2\Gamma.
-$$
+```
 
 Its logarithm is `O(U^(41/42)L_U^2+log U)=o(U^beta)`. Thus the
 fixed-capacity binary port trees suffice eventually. Their creation,
@@ -102,19 +102,19 @@ retained null fibers and deletion cost contribute fixed powers of
 larger capacity. Conversely, keeping the old exponent would be invalid
 for this balance: since
 
-$$
+```math
 \frac{167}{168}-\frac{104}{105}=\frac1{280},
-$$
+```
 
 the old port logarithm exceeds `log A` by a factor of order
 `U^(1/280)/L_U^2`, which tends to infinity.
 
 The balancing identities
 
-$$
+```math
 p+t=\beta,\qquad 2-\alpha-t=\beta,\qquad
  \beta+1-\alpha=\alpha                                  \tag{3}
-$$
+```
 
 control the three different effects. The explicit HRG family has
 logarithm `O(U^beta L_U)`. The aspect-dependent routing loss has the
@@ -126,9 +126,9 @@ depth is `O(U^(1/210))`.
 The hierarchy proves, using its depth-independent input-lifetime pool
 and child-recourse recurrences, the common factor
 
-$$
+```math
 E(s)=\exp\bigl(O(s^{209/210}(\log(s+4))^2)\bigr).          \tag{4}
-$$
+```
 
 Precisely the following full interface is required here:
 
@@ -157,18 +157,18 @@ client sequences meeting the stated deterministic interface.
 
 Let
 
-$$
+```math
 T_s=\lceil\log_2(s+4)\rceil,\qquad
  a=\left\lfloor\frac{\lfloor s^{1/210}\rfloor}{T_s^3}\right\rfloor.
-$$
+```
 
 Suspend the fast candidate before division by `a` unless `a>=1000`.
 Define
 
-$$
+```math
 C=a+1,\quad v=\lceil s/a\rceil,\quad B=2^v,\quad
  q=B^{-100},\quad D_*=B^{10},                              \tag{5}
-$$
+```
 
 and keep `delta=S^-1000`, `epsilon=S^-3000`, `H=S^100`.
 The matching floor parameter `C` in (5) is distinct from the numerical
@@ -176,18 +176,18 @@ port capacity `C_port` in (2).
 
 For sufficiently large `s`,
 
-$$
+```math
 v=\Theta(s^{209/210}(\log s)^3),\qquad
  a^2=o(v),\qquad a=o(v),\qquad v=o(s).                     \tag{6}
-$$
+```
 
 The logarithm of (4) is `o(v)`. Therefore `D_*` eventually dominates
 the backend factor, occurrence count and inverse quality with any
 fixed constant slack. Also
 
-$$
+```math
 (4D_*)^{-1}>2q.                                          \tag{7}
-$$
+```
 
 This is the acceptance margin needed by the raw priced-step client.
 One must use this master cap; the local expression `M^(10/a)` is
@@ -196,9 +196,9 @@ not substituted into the growing-parameter proof.
 Keep periods `b_j=B^(a-j)`, so `S<=b_0<2^aS`. Round
 `16(R+B)` to `M=2^u` with `u` divisible by `2a^2`. Then
 
-$$
+```math
 16(R+B)\le M<16(R+B)2^{2a^2}.                             \tag{8}
-$$
+```
 
 Neither `2^a` nor `2^(2a^2)` is treated as constant. Both fit the
 allowance in (6).
@@ -207,18 +207,18 @@ The top lifetime bound is `R_top=SB`. Actual topology births and
 retargetings are `O(aS log S)` and fit it eventually. At a reset
 to integral level `j>1`, the parent-debt argument gives
 
-$$
+```math
 P\le(C+2)b_{j-1}\le(C+2)b_1
    <(a+3)2^a S/B.                                         \tag{9}
-$$
+```
 
 The local proof uses `R=8192(P+1)` or an absolute larger constant.
 Equation (9) implies `R+B<=S` eventually. Equation (8) therefore
 gives `M<=S^2` for both local and top instances, since
 
-$$
+```math
 \log_2 M_{\rm top}\le s+v+2a^2+O(1)<2s.                  \tag{10}
-$$
+```
 
 This proves the size hypothesis used with master `U=2s`. The actual
 root prices have `O(s)` bits regardless of local `M`: all capacities,
@@ -242,10 +242,10 @@ their backend repricings are a separate category. They number
 The backend costs, returned-list raw sums including LOW answers,
 point reads, retirement transfers and dynamic-tree operations give
 
-$$
+```math
 T_{\rm price}\le(M+Q)D_*^2\mathrm{poly}(s).
                                                                \tag{11}
-$$
+```
 
 Every polynomial here has an absolute degree. Explicit client settings
 are charged once; their acknowledgments are not recursively treated
@@ -256,16 +256,16 @@ A local threshold test has `O(P+1)` represented records and objective
 range and insertion/lock loss `O((P+1)s)`, with absolute constants.
 Consequently
 
-$$
+```math
 J_{\rm loc}=O((P+1)B^{200}s),\qquad
  Q_{\rm loc}\le(P+1+D_*J_{\rm loc})\mathrm{poly}(s).
-$$
+```
 
 Substitution into (8) and (11) gives numerical work
 
-$$
+```math
 (P+B)2^{2a^2}B^{230}\mathrm{poly}(s).                \tag{12}
-$$
+```
 
 The local graph, optimistic boundary capacities, locked threshold
 test, exact union-flow recovery and `O(P)` changed support remain
@@ -277,37 +277,37 @@ van den Brand et al.,
 [arXiv:2309.16629v1](https://arxiv.org/abs/2309.16629v1), has the
 proof-level rate derived in the quantitative flow note:
 
-$$
+```math
 Z\exp(O((\log Z)^{17/18}\log\log(Z+4)))
        \mathrm{poly}(\text{input bits}).
-$$
+```
 
 Capacity-digit reduction handles `O(s)`-bit capacities on a small
 graph without changing the inner flow algorithm. Charge size `Z+B`,
 not `S`. The crucial exponent gap is exactly
 
-$$
+```math
 \frac{209}{210}-\frac{17}{18}=\frac{16}{315}>0.
                                                                \tag{13}
-$$
+```
 
 Thus the static factor is at most `B` eventually, including the
 polynomial arithmetic and scaling overhead. There are `O(s)`
 threshold tests. By (6), (12) and (13), the entire exact local
 projection has the conservative bound
 
-$$
+```math
 T_{\rm proj}\le(P+B)B^{250}.                              \tag{14}
-$$
+```
 
 ## 5. Phase and driver costs
 
 For target gain `1<=K<=N`, take
 
-$$
+```math
 L=\lceil10000 C N/K\rceil,\qquad
  g_*=\max\{1,\lfloor K/(100C)\rfloor\}.
-$$
+```
 
 If `K>=100C`, then `Lg_*<=101N`; otherwise `g_*=1` and
 `L<=10001CN`. Thus `Lg_*=O(aN)` with an absolute constant.
@@ -321,9 +321,9 @@ to their actual support.
 The top objective has `O(S)` coordinates, `O(s)` logarithmic width
 per coordinate and total structural loss `O(aSs^2)`. Therefore
 
-$$
+```math
 J_{\rm top}=O(aS B^{200}s^2).
-$$
+```
 
 The client performs constantly many local responses per genuine
 notification. A bin residual is read as `y=s-p+Cw`, so no moving
@@ -332,14 +332,14 @@ bound total top numerical work by `SB^240` eventually.
 
 Let `tau=O(aS)` be total ticks. The level-`j>1` reset charge is
 
-$$
+```math
 \begin{split}
  \sum_{j=2}^{a}\frac{\tau}{b_j}
        [(C+2)b_{j-1}+B]
  &\le\tau[(a-1)(C+2)B+2B]\\
  &=O(a^3SB).
  \end{split}                                                \tag{15}
-$$
+```
 
 The parent-debt bound (9) remains true for a large `L`-tick gain:
 selecting level `j` means no coarser boundary was crossed. There
@@ -351,9 +351,9 @@ their total, including fresh carriers, is at most `SB^3` eventually.
 Including initialization, final materialization and a first final
 attempt, one phase therefore costs at most
 
-$$
+```math
 T_{\rm phase}\le SB^{300}.                                \tag{16}
-$$
+```
 
 The optimum-gap driver needs `O(a(1+log(N+1)))` phases. With upper
 bound `U_gap` on the remaining improvement, it takes
@@ -362,10 +362,10 @@ bound `U_gap` on the remaining improvement, it takes
 that range each success gains at least one. The same `a,S` are
 used throughout. Hence
 
-$$
+```math
 T_{\rm fast}\le SB^{320}
    =S\exp(O(s^{209/210}(\log s)^3)).                        \tag{17}
-$$
+```
 
 The no-stall proof uses a comparison matching with `K` additional
 edges. It does not require a perfect matching or that the initial
@@ -376,10 +376,10 @@ general-graph inputs and on phases ending in a valid LOW.
 
 Use the same fixed guards
 
-$$
+```math
 S\ge2^{100},\quad 100000C\le S^{1/20},\quad
  B\le S^{1/20},\quad q\ge S^{-1},\quad D_*\le S^2.
-$$
+```
 
 They all hold eventually by (6). Retain caps `S^20` on main actions
 and threshold iterations and `S^100` on an engine's external requests.
@@ -398,11 +398,11 @@ The price calculations thus remain in the absolute polynomial range.
 The represented raw list has at most `O(M D_*^2)=S^{2+o(1)}`
 traversals, below `S^20`. The existing estimates
 
-$$
+```math
 V/H\le S^{1044},\qquad
  \mu\ge S^{-1045}/400,\qquad
  \theta\ge S^{-1030}
-$$
+```
 
 remain valid and keep both exact dyadic choices above
 `epsilon=S^-3000`. Signed bases, live and dormant copy increments,

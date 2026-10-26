@@ -16,9 +16,9 @@ The mechanism is a truncated DFS, followed by reversal of the DFS heavy path and
 
 Let `D` be the bins, `A` the rows, and `mu:A -> D` an injection using a row incidence. Each row has at most three incidences. For nonempty `X subset D`, put
 
-$$
+```math
 A(X)=\{r:N(r)\subseteq X\},\qquad h(X)=|X|-|A(X)|.
-$$
+```
 
 Assume the settled state has `h(X)>=1`. Assume every tight set, meaning `h(X)=1`, has `|X|<=L`; OAI in fact supplies the stronger physical-weight bound `w(X)<=L`.
 
@@ -68,16 +68,16 @@ The real sink is reachable from `q`: otherwise the nonempty reachable bins would
 
 For a tight set `X` containing `i,j`, exactly `|X|-1` bins of `X` are occupied by captive rows; let `b` be its remaining bin. The vertex set
 
-$$
+```math
 S_X=\{q\}\cup\{d_{\rm in}:d\in X\}
        \cup\{d_{\rm out}:d\in X\setminus\{b\}\}
-$$
+```
 
 has exactly one outgoing arc, the split edge of `b`. Its induced edges number at most
 
-$$
+```math
 4+(|X|-1)+6(|X|-1)\le 7|X|+4.
-$$
+```
 
 Any minimal one-edge-out component contained in this set has no greater volume. Therefore the published primitive must discover a source-side one-cut once `Delta >= 7|X|+4`.
 
@@ -87,9 +87,9 @@ A generic one-edge-out procedure has no designated forbidden sink. If run on the
 
 Fix the largest trial budget `Delta_max`, at most a fixed constant times `L`. Append a directed chain
 
-$$
+```math
 t=z_0\longrightarrow z_1\longrightarrow\cdots\longrightarrow z_T
-$$
+```
 
 with **two parallel arcs per link**, where `T > 2 Delta_max + 1`. Generate this chain lazily, so a trial costs only its exploration budget.
 
@@ -196,12 +196,12 @@ O(L polylog N). The balanced-tree exchange then costs another
 O(L polylog N) and is consumed immediately by one gain. Thus a
 structural transcript with tight witnesses X_1,...,X_c and G such
 gain actions has pair work
-$$
+```math
 O\!\left(
    \left[\sum_{\nu=1}^{c}(|X_\nu|-1)+LG\right]
    \mathrm{polylog}N
  \right).
-$$
+```
 This count does not assume that every failed small-budget trial
 corresponds to a distinct structural event. All trials of one query
 are already summed geometrically. It also does not claim this

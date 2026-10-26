@@ -32,11 +32,11 @@ player-selection matroid in the original problem.
 
 Let N be the Boolean-cap matroid of the large recipient polymatroid:
 
-$$
+```math
 P(N)=P(f_b)\cap[0,1]^P,
               \qquad \nu=\mathrm{rank}(N).
  \tag{F1}
-$$
+```
 
 Thus nu is the maximum number of distinct players that can each
 receive one large unit. It is at most q and at most the total number
@@ -45,11 +45,11 @@ f_b(P) of large units, but it can be much smaller than either.
 **Theorem F.** The integer max-min allocation optimum OPT has a
 deterministic factor-two approximation in
 
-$$
+```math
 (27/4)^{\nu}\mathrm{poly}(\mathcal H)
                         =2^{O(\nu)}\mathrm{poly}(\mathcal H)
  \tag{F2}
-$$
+```
 
 time and polynomial workspace. Here mathcal H pays all original
 input bits, rank-value and independence queries, deterministic
@@ -69,10 +69,10 @@ type remains, the optimum is zero. If only one value v remains,
 aggregate its recipient ranks into f. A target of k integer units
 per player is feasible exactly when
 
-$$
+```math
 k\,\mathbf1_P\in P(f).
  \tag{F3}
-$$
+```
 
 This is tested by minimizing f(S)-k|S|. Binary search over
 0<=k<=floor(f(P)/q) finds the exact integer optimum. Extend the
@@ -96,10 +96,10 @@ For each resource type, set z_j(p)=f_j({p}). The coordinate bound
 z_j dominates every feasible recipient vector. Its complement dual
 has rank
 
-$$
+```math
 g_j(S)=z_j(S)+f_j(P\setminus S)-f_j(P).
  \tag{F4}
-$$
+```
 
 For a fractional original base x_j, y_j=z_j-x_j is a fractional
 g_j-base. Apply upper rounding to these dual bases, using the
@@ -124,11 +124,11 @@ The upper-rounding primitive has a separate proof in
 
 Fix a target T with
 
-$$
+```math
 0<T\le2a,
                    \qquad K=\lceil T/u\rceil.
  \tag{F5}
-$$
+```
 
 Suppose an integer all-player allocation attaining T exists. Let
 R be the set of players receiving at least one large unit in that
@@ -136,19 +136,19 @@ allocation. Its aggregate large count vector dominates 1_R, so
 1_R belongs to P(f_b) and R is independent in N. Extend R to an
 N-basis F. Its complement
 
-$$
+```math
 I^*=P\setminus F
  \tag{F6}
-$$
+```
 
 is a basis of the dual player matroid M=N*. Since F contains R,
 every member of I* had no large unit in the fixed optimum. Its
 small count is at least K. Downward closure therefore gives
 
-$$
+```math
 K\mathbf1_{I^*}\in P(f_s).
  \tag{F7}
-$$
+```
 
 This is an integer promise on the same small recipient polymatroid.
 It does not require solving a configuration LP. The player matroid
@@ -169,10 +169,10 @@ call is made on a rank-zero player matroid.
 Otherwise M=N* has positive rank. Invoke the gap theorem in
 [unit-quota-corank-gap-branching.md](unit-quota-corank-gap-branching.md) with target K and output
 
-$$
+```math
 b=\lceil K/2\rceil.
  \tag{F8}
-$$
+```
 
 For K>=2 one has b<K and K/(K-b)<=3, so its time is
 (27/4)^nu poly(mathcal H), using the batched deficient-set
@@ -190,12 +190,12 @@ f_s and f_b. Extend them to bases and decompose to original resource
 types if required. The extra units do not decrease any value.
 Every player receives value at least
 
-$$
+```math
 \min\{a,bu\}
           \ge\min\{T/2,Ku/2\}
           \ge T/2.
  \tag{F9}
-$$
+```
 
 The large value need not be a multiple of u, and b u need not be
 at most a. The displayed minimum handles both orders. There is
@@ -215,10 +215,10 @@ For T>2a, test fractional all-player feasibility at value T.
 Infeasibility proves that the integer target is infeasible. If it
 is feasible, the additive rounding lemma gives integer value
 
-$$
+```math
 T-a>T/2.
  \tag{F10}
-$$
+```
 
 At T=2a either branch is valid; we use the hard-target branch as
 specified in (F5). Together, Sections 5--6 give a one-sided target
@@ -238,10 +238,10 @@ Write a=A gamma and u=U gamma for positive integers A,U and a
 positive rational gamma of polynomial bit length. Every integer
 allocation value is a multiple of gamma, so OPT is too. Let
 
-$$
+```math
 V=a f_b(P)+u f_s(P).
  \tag{F11}
-$$
+```
 
 The minimum player value is at most V; this deliberately loose
 upper bound suffices. Start with lower target zero and any legal
@@ -270,12 +270,12 @@ expands a large numerical supply into unit copies.
 Fix q>r>=1, put c=q-r, and let P have q players. Use small unit
 value one with the hidden recipient rank
 
-$$
+```math
 f_A(S)=\min\{2|S|,2r\}
           -\mathbf1[|S|=r]+\mathbf1[S=A],
                       \qquad |A|=r.
  \tag{F12}
-$$
+```
 
 Use large value two and the uniform recipient matroid U_(c,q).
 Its Boolean large-cover parameter is nu=c, and it has no coloops
@@ -302,10 +302,10 @@ The small rank oracle differs from its symmetric reference at
 exactly the one hidden query A. The usual deterministic transcript
 argument therefore requires at least
 
-$$
+```math
 \binom qr-1=\binom q\nu-1
  \tag{F13}
-$$
+```
 
 queries. For any proposed runtime F(nu) q^C with a fixed polynomial
 degree C, fix an integer nu>C and let q grow. The rank values have

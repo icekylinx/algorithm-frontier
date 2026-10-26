@@ -52,6 +52,7 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check("Result-card schema", ("tools/check_card_schema.py",)),
         Check("Mathematical delimiters", ("tools/check_latex_delimiters.py",)),
         Check("Portable mathematical notation", ("tools/normalize_math.py", "--check")),
+        Check("GitHub math formatting regressions", ("tools/check_math_formatting.py",)),
         Check("Generated result and proof catalogues", ("tools/build_catalogue.py", "--check")),
         Check(
             "Low-space Subset Sum resource certificate",

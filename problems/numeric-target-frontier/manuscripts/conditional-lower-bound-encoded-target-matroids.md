@@ -9,10 +9,10 @@ Assuming deterministic ETH, no deterministic algorithm solves the
 stated mixed-target problem on all polynomial-size rank-circuit
 matroids in
 
-$$
+```math
 2^{o(T\log(T+2))}\mathrm{poly}(H),
 \tag{ET1}
-$$
+```
 
 where `T` is the total numeric target and `H` includes the explicit
 rank-circuit description. The lower bound already uses binary row
@@ -50,10 +50,10 @@ than a matrix representation of a linear matroid.
 Given a 3-CNF formula `phi` with `N` variables, choose the
 smallest even integer `d>=4` such that
 
-$$
+```math
 L_d=(d-1)!!\ge2^N.
 \tag{ET2}
-$$
+```
 
 Let the ground be all unordered pairs of `[d]`, and let
 `r=d/2`. The number of perfect matchings on this ground is
@@ -63,10 +63,10 @@ smallest remaining vertex, giving `L_d=(d-1)L_{d-2}`.
 Elementary product bounds give
 `log L_d=Theta(d log d)`. Minimality in ET2 therefore implies
 
-$$
+```math
 d\log d=\Theta(N)
 \tag{ET3}
-$$
+```
 
 for growing `N`. The constant-size initial cases are harmless.
 Computing the first such `d` uses polynomially many binary
@@ -82,10 +82,10 @@ smallest vertex in increasing order. Each partner choice has
 exactly `(m-3)!!` residual matchings. If the chosen partner has
 zero-based index `j`, the rank is
 
-$$
+```math
 j(m-3)!!+\text{rank of the residual matching}.
 \tag{ET4}
-$$
+```
 
 Use the empty matching rank zero and `(-1)!!=1`. This is a
 bijection between the perfect matchings and integers
@@ -95,10 +95,10 @@ There is no enumeration of all matchings.
 
 Decode a matching `A` into the `N` assignment bits of
 
-$$
+```math
 \mathrm{rank}(A)\bmod 2^N.
 \tag{ET5}
-$$
+```
 
 This map is surjective: the first `2^N` ranks already supply
 all assignments. Evaluating `phi` on a decoded assignment
@@ -151,22 +151,22 @@ For every vertex `j` create its incidence row on the edge
 ground, with target one. There are `d` rows, all with binary
 coefficients, and
 
-$$
+```math
 T=d.
 \tag{ET6}
-$$
+```
 
 A base satisfying equality in every row is a perfect matching.
 Such a matching is a basis of `M_phi` precisely when its
 decoded assignment satisfies `phi`. Surjectivity of ET5
 therefore gives
 
-$$
+```math
 \phi\text{ is satisfiable}
  \quad\Longleftrightarrow\quad
  \text{the target instance is feasible}.
 \tag{ET7}
-$$
+```
 
 The same equivalence holds for pure covering rows over either
 independent sets or bases: total endpoint incidence is at most

@@ -6,9 +6,9 @@ Audit date: 24 October 2026. Scope: explicit maximum-cardinality matching in an 
 
 The strongest unrestricted deterministic bound verified in this search is the Goldberg–Karzanov refinement
 
-$$
+```math
 O\!\left(m\sqrt n\,\frac{\log(n^2/m)}{\log n}\right),
-$$
+```
 
 under the usual nontrivial-input convention `n = O(m)`. Read and remove isolates in `O(n+m)` time to apply this to arbitrary adjacency-list inputs. The simpler classical benchmark is `O(m sqrt(n))`, achieved by the Micali–Vazirani, Gabow–Tarjan, and Gabow frameworks. At fixed polynomial densities `m = Theta(n^a)`, `1 <= a < 2`, the exponent is `a+1/2`; at density `Theta(n^2)` the refinement gives `O(n^(5/2)/log n)`. Thus a claimed `n^(5/2)` deterministic dense algorithm or a logarithmic improvement cannot be called a new polynomial-exponent breakthrough.
 

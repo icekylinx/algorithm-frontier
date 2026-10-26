@@ -15,10 +15,10 @@ with `n>=2` vertices, `m` physical edge identities, minimum
 degree `delta>0`, and conductance at least `phi>0`. Parallel
 edges count with multiplicity in degrees and cuts. Fix
 
-$$
+```math
 N=32(n+m+4),\qquad U=\log N,
  \qquad s=\log\Delta,
-$$
+```
 
 where `Delta>=4` is an integer. Use a valid dyadic conductance
 lower bound `phi>=1/(4m)`, as justified in Section 9 of
@@ -30,37 +30,37 @@ Assume the destructive distance interface has stretch at most
 `(n+m+q) exp O(B)` on `q` indexed pairs. For a desired integer
 `K>=1`, suppose
 
-$$
+```math
 \boxed{\quad
        \phi^3\delta
           \ge C K\Delta\Gamma^2\log^2N
        \quad}
  \tag{1}
-$$
+```
 
 for a sufficiently large absolute constant `C`. Then one can
 deterministically construct `K` subgraphs
 
-$$
+```math
 G_i=(V,E_i),\quad i=1,\ldots,K,
-$$
+```
 
 whose edge sets are pairwise disjoint subsets of `E`, and each
 of which is spanning, connected, and satisfies
 
-$$
+```math
 \Phi(G_i)\ge
                   c\,\frac{\phi}{\Gamma\log N}
  \tag{2}
-$$
+```
 
 for an absolute constant `c>0`. The total time is
 
-$$
+```math
 (n+m)\exp O\!\left(B+
                   U\frac{\log(2+s)}s\right).
  \tag{3}
-$$
+```
 
 The subgraphs are given explicitly using original edge identities.
 Their total number of edges is at most `m`. Each has at most
@@ -79,11 +79,11 @@ For every integer `n>1`, it deterministically constructs, in
 `O(n)` time, an `n`-vertex graph `X` of maximum degree at
 most nine and constant edge expansion `alpha_0>0`:
 
-$$
+```math
 |\partial_X S|\ge\alpha_0\min\{|S|,|V\setminus S|\}
        \quad\text{for every nontrivial }S\subset V.
  \tag{4}
-$$
+```
 
 Its vertex set is identified with `V`. This is an exact-size
 construction, so no square-sized family or unaccounted padding
@@ -104,10 +104,10 @@ For every auxiliary edge identity `e={u,v}` in `X` and every
 copy index `i in {1,...,K}`, create one demand identity `(i,e)`
 with endpoints `(u,v)`. There are
 
-$$
+```math
 q=K|E(X)|\le9nK/2
  \tag{5}
-$$
+```
 
 demands. At each original vertex there are at most `9K`
 demand endpoints. Duplicate endpoint pairs are distinct indexed
@@ -118,11 +118,11 @@ Route **all these demands in one call** to the theorem of
 [routing.md](routing.md), with endpoint
 load `k=9K` and comparison length
 
-$$
+```math
 h_0=\left\lceil32\log(2N)/\phi\right\rceil,
  \qquad R=\lceil\Gamma h_0\rceil.
  \tag{6}
-$$
+```
 
 The factor nine and the absolute constants in (6) are absorbed
 in `C` in (1). The routing theorem returns a simple path
@@ -148,19 +148,19 @@ the original graph, with one global edge-disjointness guarantee.
 Fix a copy `i` and a nontrivial cut. Let `T` be its side with
 at most `n/2` vertices, and put
 
-$$
+```math
 b=|\partial_{G_i}T|.
-$$
+```
 
 Each auxiliary edge crossing `T` is represented by a path
 crossing this cut. These paths are edge-disjoint, so their
 crossings use distinct physical boundary edges. Consequently,
 
-$$
+```math
 b\ge|\partial_X T|
                     \ge\alpha_0|T|.
  \tag{7}
-$$
+```
 
 To control the degree volume of `T` in `G_i`, divide its
 represented paths into two relevant types. There are at most
@@ -172,22 +172,22 @@ bounds the number of these latter paths by `b/2`.
 Each represented path contributes at most twice its length,
 hence at most `2R`, to `vol_(G_i)(T)`. Thus
 
-$$
+```math
 \mathrm{vol}_{G_i}(T)
        \le2R\left(9|T|+b/2\right)
        \le\left(18/\alpha_0+1\right)Rb,
  \tag{8}
-$$
+```
 
 where the last inequality uses (7). The smaller of the two
 `G_i` degree volumes is at most the volume of this cardinality
 smaller side `T`, even if it is not the volume smaller side.
 Therefore the conductance of this cut is at least
 
-$$
+```math
 \frac{\alpha_0}{(18+\alpha_0)R}.
  \tag{9}
-$$
+```
 
 Taking the minimum over cuts proves (2). The proof explicitly
 accounts for paths whose endpoints are both outside the chosen
@@ -203,11 +203,11 @@ Because `phi<=1`, `Delta>=4`, and `Gamma>=1`, condition
 (1), with a large enough constant, implies `K<=delta`.
 Hence
 
-$$
+```math
 nK\le n\delta\le2m,
  \qquad q\le9m.
  \tag{10}
-$$
+```
 
 Thus the master `N=32(n+m+4)` covers `n+m+q+4` as
 required by the routing theorem. The `O(n)` auxiliary
@@ -233,32 +233,32 @@ used original edge.
 
 The hierarchy in [apsp frontier proof](../apsp-frontier/proof.md) supplies
 
-$$
+```math
 B=O(U/t+t^3h),\qquad \log\Gamma=O(t^4h),
  \qquad h=\log(U+4).
-$$
+```
 
 Choose an integer power-of-two `Delta` with
 `s=log Delta=Theta(t log(t+2))`. Then the outer term in
 (3) is `O(U/t)`. Any integer `K>=1` satisfying
 
-$$
+```math
 \phi^3\delta/K
           \ge\log^2N\,\exp O(t^4h)
  \tag{11}
-$$
+```
 
 can be packed in time
 
-$$
+```math
 (n+m)\exp O(U/t+t^3h),
-$$
+```
 
 and every output graph has conductance at least
 
-$$
+```math
 \frac{\phi}{\log N}\exp(-O(t^4h)).
-$$
+```
 
 In particular, the previously audited parameter choices give:
 

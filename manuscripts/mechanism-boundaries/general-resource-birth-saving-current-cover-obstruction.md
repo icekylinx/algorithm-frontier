@@ -5,9 +5,9 @@
 This note examines a proposed refinement of conservative completion.
 For a candidate c with owner p, call a used resource j problematic when
 
-$$
+```math
 p\in\mathrm{cl}_{R_j}(X_j\cup M_j).
-$$
+```
 
 Only at those resources, mark all unmarked matching records using j.
 The implicit all-subsets proof still works: at a problematic resource the
@@ -25,9 +25,9 @@ Take threshold B=10 and give every resource value v=9. Every two-resource
 bundle is minimal above B. The player matroid is the partition matroid
 with three blocks
 
-$$
+```math
 \{b_1,q\},\quad\{b_2\},\quad\{p\},
-$$
+```
 
 each of capacity one. Its rank is r=3. Thus b1 and q are parallel, while
 b2 and p supply the two other independent directions.
@@ -35,18 +35,18 @@ b2 and p supply the two other independent directions.
 There is a resource j with recipient matroid U_(2,3) on
 {b1,b2,p}; q is a loop for j. There are also private resources
 
-$$
+```math
 k_p\text{ for }p,\quad \ell_1\text{ for }b_1,\quad
  \ell_2\text{ for }b_2,\quad a_q,b_q\text{ for }q.
-$$
+```
 
 Each private resource has a rank-one recipient matroid with only its
 named player nonloop. The only liked bundles above B are respectively
 
-$$
+```math
 C_p=\{j,k_p\},\quad M_1=\{j,\ell_1\},\quad
  M_2=\{j,\ell_2\},\quad C_q=\{a_q,b_q\}.
-$$
+```
 
 Initially the matching contains M1 and M2. Its owners {b1,b2} are
 independent, and resource j serves two players legally.
@@ -87,9 +87,9 @@ matroid is a particularly simple rank-three partition matroid.
 At birth, the resource-j set {p,b1,b2} has rank two. The current cover
 is then
 
-$$
+```math
 \Phi_{\rm birth}=2v+v+v+v=5v=45,
-$$
+```
 
 where the last three terms are kp, ell1 and ell2. There are two blockers.
 The shared dependence at j supplies a saving relative to counting all
@@ -99,17 +99,17 @@ After the exchange, the current selected/blocker resource-j set is
 {p,b2}. It is independent and has rank two. Only kp and ell2 contribute
 private resources to this cover. Therefore
 
-$$
+```math
 \Phi_{\rm current}=2v+v+v=4v=36.
-$$
+```
 
 There is now one blocker. In particular
 
-$$
+```math
 \Phi_{\rm current}=36>3B=30
  \quad\text{and}\quad
  \Phi_{\rm current}=36>2B+u=29.
-$$
+```
 
 The coarse coefficient actually proved in the accepted construction is
 2(B+u)=38, so this state does not contradict that theorem. The sharper

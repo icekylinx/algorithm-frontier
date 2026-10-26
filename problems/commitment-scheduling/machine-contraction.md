@@ -25,10 +25,10 @@ Zero-size or zero-rank types can be handled separately and removed.
 For a set F of already removed machines, define the residual
 singleton load of a machine p outside F by
 
-$$
+```math
 c_p(F)=\sum_j p_j\bigl[f_j(F\cup\{p\})-f_j(F)\bigr].
  \tag{S1}
-$$
+```
 
 This is the load of assigning to p the entire currently available
 singleton marginal of every type. It is computed directly from
@@ -37,12 +37,12 @@ outside, c_p(F) never increases, by submodularity of every f_j.
 
 Fix a nonempty distinguished set of large job types. Define
 
-$$
+```math
 h=\sum_{j\text{ large}}f_j(P),\qquad
  \kappa(F)=\sum_{j\text{ large}}
                     [f_j(P)-f_j(F)].
  \tag{S2}
-$$
+```
 
 The preprocessing itself does not require a size gap or a common
 large size. Such assumptions enter only through whichever residual
@@ -53,11 +53,11 @@ assignment-cost budget in this model.
 
 Start with F empty. When a machine p is absorbed, assign
 
-$$
+```math
 x_j(p)=f_j(F\cup\{p\})-f_j(F)
                          \quad\text{for every type }j,
  \tag{S3}
-$$
+```
 
 and replace F by F union {p}. The assigned counts are nonnegative
 integers, and their actual load is exactly c_p(F) with F before
@@ -69,10 +69,10 @@ along the absorption order. On the final F they form a base of
 the restricted polymatroid f_j|F. In particular, their total count
 is f_j(F). The residual job rank on Q=P\F is
 
-$$
+```math
 f_j^F(S)=f_j(F\cup S)-f_j(F),\qquad S\subseteq Q.
  \tag{S4}
-$$
+```
 
 This is an integral polymatroid with total rank f_j(P)-f_j(F).
 There is no requirement that F be independent in a player matroid
@@ -84,14 +84,14 @@ Let a be any base of f|F and let b be any base of f/F on Q.
 For a subset A of P, put U=A intersection F and V=A intersection Q.
 Then
 
-$$
+```math
 \begin{split}
  a(U)+b(V)
  &\le f(U)+f(F\cup V)-f(F)\\
  &\le f(U\cup V)=f(A).
  \end{split}
  \tag{S5}
-$$
+```
 
 The second step is submodularity for F and U union V. The total
 count is f(F)+f(P)-f(F)=f(P). Thus a union b is a full base of f.
@@ -112,17 +112,17 @@ integer base z on Q=P\F with z<=x|Q coordinatewise.
 
 Write g=f/F. For every A subset of Q, original feasibility gives
 
-$$
+```math
 x(Q\setminus A)=f(P)-x(F\cup A)
                      \ge f(P)-f(F\cup A).
-$$
+```
 
 Consequently
 
-$$
+```math
 g(A)+x(Q\setminus A)\ge f(P)-f(F)=g(Q).
  \tag{S6}
-$$
+```
 
 The maximum total of an independent vector in P(g) bounded by x|Q
 is `min_A[g(A)+x(Q\A)]`, which equals g(Q) by (S6) and A=Q.
@@ -142,10 +142,10 @@ to each type. At every remaining machine, every residual type count
 can be chosen no greater than its original count. All sizes are
 nonnegative. Therefore the residual instance satisfies
 
-$$
+```math
 \mathrm{OPT}_F\le\mathrm{OPT}.
  \tag{S7}
-$$
+```
 
 The committed greedy bases need not agree with the original optimum
 on F. Lemma (S5) ensures that they still combine with the dominated
@@ -168,10 +168,10 @@ the roles proves equality of the final sets.
 
 The same induction shows monotonicity:
 
-$$
+```math
 B\le B'\quad\Longrightarrow\quad F^*(B)\subseteq F^*(B').
  \tag{S8}
-$$
+```
 
 This is an exact statement for the specified greedy full-marginal
 absorption rule. Other feasible preassignments could split type
@@ -184,11 +184,11 @@ Construct a full order p1,...,pq by repeatedly choosing a machine
 of minimum current c_p(F), with deterministic tie breaking. Let
 Fi={p1,...,pi}, let l_i=c_(p_i)(F_(i-1)), and set
 
-$$
+```math
 B_i=\max_{1\le t\le i}l_t,\qquad B_0=0,
              \kappa_i=\kappa(F_i).
  \tag{S9}
-$$
+```
 
 The individual l_i can decrease after an absorption. The prefix
 bottleneck B_i is the quantity that is nondecreasing.
@@ -211,11 +211,11 @@ possible sets F.
 
 For an integer budget k>=0, define
 
-$$
+```math
 \beta_k=\min\{B\ge0:
              \kappa(F^*(B))\le k\}.
  \tag{S10}
-$$
+```
 
 For k>=h this is zero. For k<h, take the first greedy prefix Fi
 with kappa_i<=k; then beta_k=B_i. Extend through every further
@@ -246,11 +246,11 @@ guarantee
 where alpha_F>=0 and e_F>=0 are its stated parameters. Equations
 (S5) and (S7) give the actual combined schedule bound
 
-$$
+```math
 \boxed{C_{\max}\le
           \max\{\beta_k,\ \alpha_F\mathrm{OPT}+e_F\}.}
  \tag{S11}
-$$
+```
 
 The residual algorithm receives the explicit contracted ranks (S4),
 with one original rank query per contracted query. Singleton ranks
@@ -270,12 +270,12 @@ Suppose all distinguished large types have the same size a, and
 all remaining sizes are at most u<a. Then the [workload scheduling theorem](../many-size-scheduling/proof.md)
 on the contracted instance gives, for rational 0<eta<=1,
 
-$$
+```math
 C_{\max}\le
   \max\left\{\beta_k,
         \left(2-{1\over3+\eta}\right)\mathrm{OPT}+u\right\}
  \tag{S12}
-$$
+```
 
 in
 

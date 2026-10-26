@@ -36,28 +36,28 @@ For target T, let C_p(T) be the finite family of local feasible integer
 count vectors n in F_p with v dot n>=T. A configuration variable mu_pn
 is nonnegative. Define
 
-$$
+```math
 x_p=\sum_{n\in C_p(T)}\mu_{pn},\qquad
  y_{pj}=\sum_{n\in C_p(T)}\mu_{pn}n_j.
  \tag{L1}
-$$
+```
 
 The ordinary aggregate constraints are
 
-$$
+```math
 x\in P_{\mathcal B(M)},\qquad
  y_{\cdot j}\in P(f_j)\quad\text{for every }j.
  \tag{L2}
-$$
+```
 
 For an arbitrary integral feasible reserved vector z in P(f_j), define
 its individual residual capacity at player p by
 
-$$
+```math
 a_{pj}(z)=\max\{a\in\mathbb Z_{\ge0}:z+a e_p\in P(f_j)\}
           =\min_{S\ni p}\{f_j(S)-z(S)\}.
  \tag{L3}
-$$
+```
 
 The last equality follows by checking exactly the rank inequalities
 containing p. All terms are integral and nonnegative because z is
@@ -67,13 +67,13 @@ with p forced into the set.
 
 Add, for every resource j and every such z, the inequality
 
-$$
+```math
 \boxed{
  \sum_p\sum_{n\in C_p(T)}\mu_{pn}\bigl(n_j-a_{pj}(z)\bigr)_+
                   \le z(P).
  }
  \tag{L4}
-$$
+```
 
 Here (u)_+=max(u,0). For a fixed z, (L4) is a linear inequality in
 the configuration variables, with nonnegative integer coefficients.
@@ -96,12 +96,12 @@ has at least |N|-|Z| elements.
 The block-count vector h of H satisfies 0<=h<=n. Because Z union H
 is independent, h_p<=a_p(z) for every p. It follows that
 
-$$
+```math
 \sum_p(n_p-a_p(z))_+
        \le\sum_p(n_p-h_p)
        \le |Z|=z(P).
  \tag{L5}
-$$
+```
 
 The same conclusion follows from the earlier contraction-and-box loss
 lemma: a subvector h of n can be placed in the contraction by Z while
@@ -120,20 +120,20 @@ The actual algorithm reserves W_j, the union of current selected and
 designated matching service copies. It need not be independent. Its
 rank is R_j, and the algorithm's available count is
 
-$$
+```math
 A_{pj}=r_j(W_j\cup E_{pj})-r_j(W_j).
  \tag{L6}
-$$
+```
 
 Choose any basis Z_j of W_j and let z^j be its block counts. Then
 z^j is integral and belongs to P(f_j), and z^j(P)=R_j. Since Z_j spans
 W_j,
 
-$$
+```math
 a_{pj}(z^j)=r_j(Z_j\cup E_{pj})-r_j(Z_j)=A_{pj}
                     \quad\text{for every }p.
  \tag{L7}
-$$
+```
 
 Therefore (L4), for this feasible z^j, has exactly the residual
 capacities used in the algorithm and right side r_j(W_j). It is not
@@ -153,10 +153,10 @@ At a completed failed search state, let E=P minus cl_M(J) be its
 eligible players and w=r-r_M(J)>0. For every original count
 configuration n of player p, truncate it coordinatewise to
 
-$$
+```math
 n'_j=\min(n_j,A_{pj}).
  \tag{L8}
-$$
+```
 
 It remains in F_p by downward closure and satisfies the actual
 availability box. If the unchanged-state available oracle returned
@@ -166,27 +166,27 @@ value strictly below tau B.
 
 For x_p>0, mixing configurations gives retained expected value
 
-$$
+```math
 H_p=\sum_n\mu_{pn}\sum_jv_j\min(n_j,A_{pj})<\tau Bx_p.
  \tag{L9}
-$$
+```
 
 The original configurations have value at least T, so their expected
 value is at least Tx_p. Their exact lost value is
 
-$$
+```math
 \sum_jv_j\sum_n\mu_{pn}(n_j-A_{pj})_+.
-$$
+```
 
 Apply (L4) using (L7), sum over j with weights v_j, and use
 nonnegativity to restrict the left side to eligible players. Since
 x(E)>=w and there is positive eligible mass,
 
-$$
+```math
 \boxed{\Phi=\sum_jv_jr_j(W_j)>(T-\tau B)w}
                        \qquad(T\ge\tau B).
  \tag{L10}
-$$
+```
 
 This is the exact strict lower-cover interface required by the
 prefix-normalized local search. Its upper cover, all-subsets
@@ -201,17 +201,17 @@ unit, select one such unit. Let f^j_p be its one-service marginal of
 fat type j and let f_p=sum_j f^j_p. Then f^j<=y_.j and f<=x<=1.
 By down-closure,
 
-$$
+```math
 f^j\in P(f_j)\cap[0,1]^P.
-$$
+```
 
 This is the independent-set polytope of the Boolean restriction
 matroid N_j, whose rank is
 
-$$
+```math
 r_{N_j}(S)=\min_{A\subseteq S}\{f_j(A)+|S\setminus A|\}.
  \tag{L11}
-$$
+```
 
 Locally infeasible singleton recipients are excluded by matroid
 restriction. The selected fat marginal is automatically supported on
@@ -244,9 +244,9 @@ into a basis of M. No new coupling constraint is lost in this step.
 
 The lower cover (L10) and the proved current upper cover give
 
-$$
+```math
 \Phi\le\max\{u,2B+\min(u,B)\}|Y|,
-$$
+```
 
 with sufficient condition tau B+rho max{u,2B+min(u,B)}<=T.
 Use B0=T/(tau+3rho), classify fat units at B0, and use the same
@@ -254,18 +254,18 @@ exact or positive-error search parameters as in the prefix theorem.
 It follows that the deterministic approximation factor against the
 residual-capacity configuration optimum is
 
-$$
+```math
 d=\tau+3-3/r\quad\text{in }2^{O(r)}\mathrm{poly}(H),
  \tag{L12}
-$$
+```
 
 or d+eta, for positive rational eta, in
 
-$$
+```math
 \mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.
  \tag{L13}
-$$
+```
 
 All the binary encoding, finite-grid target search, deterministic
 submodular-minimization, local-oracle and polynomial-space qualifications
@@ -306,18 +306,18 @@ Suppose f=c r_R for one supplied type, c>0. For a feasible reserve z
 write a_p for its residual capacity. The independently audited scaled
 matroid loss lemma gives, for every y/c in P_I(R),
 
-$$
+```math
 \sum_p(1-a_p/c)y_p\le z(P).
  \tag{L14}
-$$
+```
 
 Every local count n satisfies 0<=n_j<=c at a nonloop. For every such
 integer n_j and 0<=a_p<=c,
 
-$$
+```math
 (n_j-a_p)_+\le(1-a_p/c)n_j.
  \tag{L15}
-$$
+```
 
 If n_j<=a_p this is immediate. Otherwise it is equivalent to
 a_p n_j/c<=a_p, which follows from n_j<=c. Loop coordinates have
@@ -338,10 +338,10 @@ mass 1/D, reserve z=(D+1)e_a at any one player a. This is feasible,
 and z(P)=D+1. Its residual capacities are a_a=0 and a_p=1 for p!=a.
 The left side of (L4) is
 
-$$
+```math
 \frac{D+1}{D}+(q-1)\frac{D}{D}
                          =q+\frac1D>D+1.
-$$
+```
 
 Thus even a support-one residual cut rejects the aggregate gap point.
 This does not mean all fractional points are integral; it demonstrates
@@ -378,50 +378,50 @@ prefix algorithm. No exhaustive publication-priority claim is made.
 ## 11. Integer quotas against the residual-capacity comparator
 
 **Corollary.** Consider the unit-value model of the exact prefix-quota
-algorithm, with integer configuration target $t$ and requested integer
-output quota $1\le b\le t$. Suppose the residual-capacity configuration relaxation
-(L1)--(L4) is feasible at target $t$. In every normalized state in which
+algorithm, with integer configuration target $`t`$ and requested integer
+output quota $`1\le b\le t`$. Suppose the residual-capacity configuration relaxation
+(L1)--(L4) is feasible at target $`t`$. In every normalized state in which
 the exact available-count scan fails for all eligible players, its resource
 cover satisfies
 
-$$
+```math
 \Phi\ge(t-b+1)w,
 \qquad w=r-r_M(J)>0.
 \tag{L16}
-$$
+```
 
 Consequently the proved unit-quota algorithm may use this relaxation as
 its comparator under the same quota and growth conditions as its original
 prefix theorem. This transfer does not assert polynomial-time optimization
 of the relaxation.
 
-**Proof.** Let $E=P\setminus\mathrm{cl}_M(J)$ be the eligible set.
-Clip a configuration $n\in C_p(t)$ at the actual residual capacities
-$a_{pj}(z^j)$ from (L7). The clipped count vector remains in the player's
+**Proof.** Let $`E=P\setminus\mathrm{cl}_M(J)`$ be the eligible set.
+Clip a configuration $`n\in C_p(t)`$ at the actual residual capacities
+$`a_{pj}(z^j)`$ from (L7). The clipped count vector remains in the player's
 downward-closed local family. A failed exact scan implies that its total
-integer count is at most $b-1$; otherwise it contains an available
-$b$-unit bundle. Since the original configuration has at least $t$ units,
-its lost count is at least $t-b+1$.
+integer count is at most $`b-1`$; otherwise it contains an available
+$`b`$-unit bundle. Since the original configuration has at least $`t`$ units,
+its lost count is at least $`t-b+1`$.
 
 Averaging over configurations gives lost mass at least
-$(t-b+1)x_p$ for each $p\in E$. Summing the corresponding residual cuts
+$`(t-b+1)x_p`$ for each $`p\in E`$. Summing the corresponding residual cuts
 over resource types bounds that lost mass by their total reserved rank
-$\Phi$. The player-base constraint gives
-$x(E)\ge r-r_M(J)=w$. Therefore
+$`\Phi`$. The player-base constraint gives
+$`x(E)\ge r-r_M(J)=w`$. Therefore
 
-$$
+```math
 \Phi
 \ge\sum_{p\in E}\sum_{n\in C_p(t)}
        \mu_{pn}\sum_j(n_j-a_{pj}(z^j))_+
 \ge(t-b+1)x(E)
 \ge(t-b+1)w.
-$$
+```
 
 This is precisely the lower-cover input to the integer quota proof.
-The normalized upper-cover coefficient remains $2b-1$, and the
+The normalized upper-cover coefficient remains $`2b-1`$, and the
 fractional fat reduction preserves all residual cuts by Section 5.
 Thus the original exact rank-exponential factor-three quota guarantee
 inherits the stronger comparator. In particular, the critical
-$t=4$, $b=2$ quasipolynomial growth boundary is unchanged: (L16) is
+$`t=4`$, $`b=2`$ quasipolynomial growth boundary is unchanged: (L16) is
 non-strict and does not supply an additional uniform growth margin.
-$\square$
+$`\square`$

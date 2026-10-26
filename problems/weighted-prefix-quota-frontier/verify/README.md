@@ -51,7 +51,7 @@ aggregate-reduced inequalities on five laminar topologies, every lower
 assignment through root cap three, and every nonnegative integral mass
 vector under the cap. It covers 21,658 lower assignments and 696,490 mass
 comparisons, and separately tests the telescoping charge identity giving
-at most $B$ retained lower rows.
+at most $`B`$ retained lower rows.
 
 These checks support the new local mechanisms. They do not verify all
 asymptotic oracles, the universal-coloring family, the weighted Rado

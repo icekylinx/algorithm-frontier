@@ -21,15 +21,15 @@ Let S>=2 include all group/choice/resource headers and all supplied
 occurrences, and let b bound the bit size of each input scalar,
 including rational weights/masses/B and encoded integer counts.
 Let B>0 be any rational upper bound on every w_g a_{gjx}. Define
-$$
+```math
 \mu_x=\sum_g\sum_j p_{gj}w_g a_{gjx}.        \tag{1}
-$$
+```
 There is a deterministic algorithm choosing one j(g) per group with
-$$
+```math
 \sum_g w_g a_{g,j(g),x}
           \leq 2\mu_x+B\log(8(|X|+1))
                           \quad\hbox{for every }x.           \tag{2}
-$$
+```
 Its work is S times a fixed polynomial in log(S+2) and b, charging
 ordinary multiword arithmetic. Only the supplied sparse incidences
 are scanned. Zero-weight groups can choose an arbitrary positive-mass
@@ -39,36 +39,36 @@ the result is trivial.
 ## 2. Exact positive potential
 
 Put u_{gjx}=w_ga_{gjx}/B, so 0<=u_{gjx}<=1, and
-$$
+```math
 E_{gx}=\sum_jp_{gj}\exp(u_{gjx}),\qquad
  z_x=\mu_x/B .
-$$
+```
 For a partial choice define
-$$
+```math
 W_x=\exp\!\left(\sum_{g\ {\rm fixed}}u_{g,j(g),x}-2z_x\right)
                     \prod_{g\ {\rm unfixed}}E_{gx}.           \tag{3}
-$$
+```
 Since exp(u)<=1+(e-1)u for 0<=u<=1,
-$$
+```math
 \prod_gE_{gx}\leq\exp((e-1)z_x),\qquad
                          W_x^{\rm initial}\leq1.             \tag{4}
-$$
+```
 Thus the initial sum of (3) is at most |X|.
 
 When fixing g, a candidate j gives
-$$
+```math
 W_x^{\rm new}=W_x E_{gx}^{-1}\exp(u_{gjx}).
-$$
+```
 The terms independent of j are a common baseline. Compare only the
 nonnegative sparse scores
-$$
+```math
 T_j=\sum_{x:a_{gjx}>0}(W_x/E_{gx})(\exp(u_{gjx})-1).          \tag{5}
-$$
+```
 Their p-weighted average satisfies
-$$
+```math
 \sum_jp_{gj}T_j
        =\sum_x W_x(1-E_{gx}^{-1})\leq\sum_xW_x.              \tag{6}
-$$
+```
 An exact minimum score cannot increase sum_x W_x. After all choices,
 W_x=exp((chosen load at x-2mu_x)/B), so even the bound
 B log(|X|) would follow under exact real arithmetic. The slack in
@@ -84,13 +84,13 @@ incidences still require division by E_{gx}.
 ## 3. Avoid exact rational normalization
 
 Compute
-$$
+```math
 E_{gx}=1+
    \frac{\sum_j\alpha_{gj}(\exp(u_{gjx})-1)}
         {\sum_j\alpha_{gj}},\qquad
  z_x=\sum_g
    \frac{\sum_j\alpha_{gj}u_{gjx}}{\sum_j\alpha_{gj}}.         \tag{7}
-$$
+```
 All numerators and denominators in (7) are positive sums, without
 cancellation. A group total can be approximated by floating addition
 of its input masses; no exact sum with a product of unrelated
@@ -99,9 +99,9 @@ uses the true ratios, while the algorithm approximates (7) with
 explicit relative or absolute error as appropriate.
 
 For u>0 evaluate exp(u)-1 as the positive series
-$$
+```math
 u(1+u/2!+u^2/3!+\cdots).
-$$
+```
 Because u<=1, O(log(S+2)) terms with guarded rounding suffice for
 relative error S^{-c}, with a fixed sufficiently large c.
 This remains true when u or an alpha is tiny: their binary exponents

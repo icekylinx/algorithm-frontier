@@ -14,7 +14,7 @@ Deterministic derived public baseline using deterministic decomposition and prun
 
 **Time**
 
-Worst-case per-update work is $\exp(O(U^{2/3}h^{1/3}))$, with $U=\log(N+4)$ and $h=\log(U+4)$. This is a derived public baseline, not a single-source theorem statement.
+Worst-case per-update work is $`\exp(O(U^{2/3}h^{1/3}))`$, with $`U=\log(N+4)`$ and $`h=\log(U+4)`$. This is a derived public baseline, not a single-source theorem statement.
 
 **Space**
 
@@ -22,7 +22,7 @@ Actual weighted-edge inventory, hierarchy certificates, retired records, and pru
 
 **Parameters**
 
-$n$ is the vertex count; $m$ is the current edge count; $N$ bounds lifetime edge records; $U$ is log of $N$ plus a constant; $h$ is log of $U$ plus a constant.
+$`n`$ is the vertex count; $`m`$ is the current edge count; $`N`$ bounds lifetime edge records; $`U`$ is log of $`N`$ plus a constant; $`h`$ is log of $`U`$ plus a constant.
 
 **Model and representation**
 

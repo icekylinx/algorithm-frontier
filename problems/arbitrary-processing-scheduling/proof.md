@@ -9,11 +9,11 @@ approximation factor 1+epsilon.
 
 The complete deterministic running time is
 
-$$
+```math
 2^{O(q/\epsilon)}
               \mathrm{poly}(H_\epsilon)
  \tag{PS1}
-$$
+```
 
 for 0<epsilon<=1, where q is the number of physical machines.
 Space is polynomial in the full binary input encoding, including
@@ -26,10 +26,10 @@ No individual job identity or resource-unit expansion is used.
 Let P consist of q>=1 machines. For every type j, the normalized
 monotone integral submodular rank f_j has mandatory original count
 
-$$
+```math
 n_j=f_j(P),\qquad N=\sum_j n_j.
  \tag{PS2}
-$$
+```
 
 An integer schedule consists of x_j in B(f_j). Each eligible pair
 (p,j) has arbitrary nonnegative rational processing time ell_(p,j)
@@ -37,10 +37,10 @@ and nonnegative rational assignment cost a_(p,j). Additional
 eligibility restrictions are allowed, but never reduce n_j. The
 original cost budget C>=0 requires
 
-$$
+```math
 \sum_{p,j}a_{p,j}x_j(p)\le C.
  \tag{PS3}
-$$
+```
 
 Every type base remains mandatory, and the objective is to minimize
 the maximum load over all physical machines. Denote this integer
@@ -60,24 +60,24 @@ It obeys PS1 and uses polynomial space in H_epsilon.
 
 For an explicit state-count bound, put
 
-$$
+```math
 \delta=\epsilon/2,\qquad
  K=\lfloor1/\delta\rfloor,\qquad
  B=\left\lceil\frac{1-\delta}{\delta^2}\right\rceil,\qquad
  C_\epsilon=\binom{B+K}{K}.
  \tag{PS4}
-$$
+```
 
 The time is bounded by either of the following simultaneous upper
 bounds on this same algorithm:
 
-$$
+```math
 C_\epsilon^q\mathrm{poly}(H_\epsilon),
  \qquad
  \exp\bigl(3q(K+1)\bigr)
        \mathrm{poly}(H_\epsilon).
  \tag{PS5}
-$$
+```
 
 The second bound proves PS1. The first is a direct finite-composition
 bound and does not depend on an asymptotic partition formula.
@@ -98,10 +98,10 @@ contains the possible fractional resource allocations.
 After any mask, the available rank of type j is at most n_j.
 Retain the original total requirement
 
-$$
+```math
 \sum_{p,j}x_j(p)=N.
  \tag{PS6}
-$$
+```
 
 Since every type is individually capped by n_j, equality in PS6
 forces each type to attain its own original n_j. Missing units
@@ -130,10 +130,10 @@ independent costs on the same integer allocation.
 For a group of coordinates on one machine, sort processing times
 v_1>=...>=v_m>=0. Given fractional x, set
 
-$$
+```math
 X_h=\sum_{i\le h}x_i,\qquad U_h=\lceil X_h\rceil.
  \tag{PS7}
-$$
+```
 
 The caps x'({1,...,h})<=U_h define an integral chain polymatroid.
 Its rank on a nonempty coordinate set S is max{U_h:h in S}; the
@@ -143,7 +143,7 @@ to the prefix caps, so no implicit slot construction is needed.
 
 With v_(m+1)=0, summation by parts gives
 
-$$
+```math
 \begin{aligned}
  \sum_i v_i x'_i
    &=\sum_h(v_h-v_{h+1})x'(\{1,\ldots,h\})\\
@@ -151,7 +151,7 @@ $$
    &\le\sum_i v_i x_i+v_1.
  \end{aligned}
  \tag{PS8}
-$$
+```
 
 Thus one small group incurs at most its largest processing time
 in added load. Empty groups contribute zero. Zero-time coordinates
@@ -167,22 +167,22 @@ ell_(p,j)<=delta*T.
 Normalize a big processing time by T. Partition (delta,1] into
 B half-open intervals
 
-$$
+```math
 (\lambda_i,\mu_i],\qquad
  \lambda_i=\delta+i\delta^2,\qquad
  \mu_i=\min\{1,\delta+(i+1)\delta^2\},
  \quad 0\le i<B.
  \tag{PS9}
-$$
+```
 
 These intervals are disjoint and cover exactly (delta,1].
 Their widths are positive and at most delta^2. For a normalized
 big time t=ell_(p,j)/T, its unique index is
 
-$$
+```math
 i=\left\lceil\frac{t-\delta}{\delta^2}\right\rceil-1.
  \tag{PS10}
-$$
+```
 
 Thus a time exactly equal to an internal upper endpoint belongs
 to the preceding bin. A time exactly delta*T is small. A time
@@ -202,11 +202,11 @@ time and bit space in H_epsilon and the target bit length.
 For a machine p, a profile consists of nonnegative integers h_(p,i)
 for its occupied big bins, satisfying
 
-$$
+```math
 \sum_i h_{p,i}\le K,\qquad
        L_p=\sum_i\lambda_i h_{p,i}\le1.
  \tag{PS11}
-$$
+```
 
 Absent bins have cap zero. A profile is a vector of upper bounds,
 not a choice of actual job identities.
@@ -251,7 +251,7 @@ and cost at most C.
 
 The integral big load on machine p is bounded by
 
-$$
+```math
 \begin{aligned}
  \sum_i \mu_i T\,h_{p,i}
    &\le T\sum_i(\lambda_i+\delta^2)h_{p,i}\\
@@ -259,7 +259,7 @@ $$
    &\le T L_p+\delta T.
  \end{aligned}
  \tag{PS12}
-$$
+```
 
 This only uses upper caps. If rounding uses fewer big units than
 the profile permits, its big load is smaller; there is no missing
@@ -269,11 +269,11 @@ The fractional small load is at most (1-L_p)T and the largest
 permitted small time is at most delta*T. By PS8 its integer load is
 at most (1-L_p)T+delta*T. Adding this to PS12 yields
 
-$$
+```math
 \mathrm{load}_{x'}(p)
                     \le(1+2\delta)T=(1+\epsilon)T.
  \tag{PS13}
-$$
+```
 
 All types are rounded jointly, including types that are big on one
 machine and small on another. No recipient polymatroid is duplicated,
@@ -312,13 +312,13 @@ depth-first enumerator stores the current binary count vector,
 the partial count s and the rational partial lower load L.
 At the next bin of lower endpoint lambda>0, enumerate exactly
 
-$$
+```math
 0\le h\le
              \min\left\{K-s,\
                     \left\lfloor\frac{1-L}{\lambda}\right\rfloor
                  \right\}.
  \tag{PS14}
-$$
+```
 
 Update s and L and recurse. Every generated partial state satisfies
 both monotone inequalities in PS11 and can be completed by assigning
@@ -354,33 +354,33 @@ epsilon, without an accuracy-sized table.
 First, ignore the weighted inequality L<=1 and include all B bins.
 The number of nonnegative count vectors with sum at most K is
 
-$$
+```math
 \binom{B+K}{K}=C_\epsilon.
  \tag{PS15}
-$$
+```
 
 Every occupied-bin valid profile is one such vector, with zeros
 in absent bins. This proves the first bound in PS5.
 
 For the stronger bound, let
 
-$$
+```math
 n=\lfloor\delta^{-2}\rfloor.
-$$
+```
 
 Since K=floor(1/delta), we have n<(K+1)^2. Moreover
 
-$$
+```math
 \lambda_i=\delta+i\delta^2
                       \ge\delta^2(K+i).
-$$
+```
 
 Therefore every valid profile satisfies
 
-$$
+```math
 \sum_i(K+i)h_i\le n.
  \tag{PS16}
-$$
+```
 
 Its count vector injects into an integer partition of total at most n:
 use h_i parts of size K+i. Different indices give different positive
@@ -391,21 +391,21 @@ Here is a self-contained upper bound on the number p_(<=n) of all
 integer partitions of total at most n. For any t>0, the convergent
 partition generating function gives
 
-$$
+```math
 p_{\le n}
        \le \exp(tn)\prod_{j\ge1}(1-\exp(-tj))^{-1}.
  \tag{PS17}
-$$
+```
 
 Indeed each partition of weight at most n contributes at least
 exp(-tn) to the product. The logarithm of the product equals
 
-$$
+```math
 \sum_{\ell\ge1}\frac{1}{\ell(\exp(t\ell)-1)}
        \le\frac1t\sum_{\ell\ge1}\frac1{\ell^2}
        \le\frac2t.
  \tag{PS18}
-$$
+```
 
 The first inequality uses exp(y)-1>=y. For the last, bound the first
 term by one and the remaining decreasing sum by the integral of
@@ -414,10 +414,10 @@ so their interchange is valid.
 
 Choose t=1/(K+1). Because n<(K+1)^2, PS17--PS18 give
 
-$$
+```math
 p_{\le n}\le\exp(3(K+1)).
  \tag{PS19}
-$$
+```
 
 This is an analysis-only bound; the algorithm neither evaluates
 an infinite product nor computes partition tables. Combined with

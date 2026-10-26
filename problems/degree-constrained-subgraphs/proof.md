@@ -17,14 +17,14 @@ but each individual record may be selected at most once. All outputs are
 edge subsets with original identifiers.
 
 **Theorem 1.1 (exact sparse reduction).** Given integral degree intervals
-$0\leq g(v)\leq f(v)\leq d_v$ and an optional integral cardinality interval
-$K_{\min}\leq |X|\leq K_{\max}$, one can construct a simple subcubic
-graph with $O(m\log(m+2))$ vertices and edges such that its perfect
+$`0\leq g(v)\leq f(v)\leq d_v`$ and an optional integral cardinality interval
+$`K_{\min}\leq |X|\leq K_{\max}`$, one can construct a simple subcubic
+graph with $`O(m\log(m+2))`$ vertices and edges such that its perfect
 matchings decode to exactly the feasible original edge subsets. Every
 feasible original subset has a perfect-matching extension. Construction
-and decoding take $O(n+m\log(m+2))$ time, with one call to an exact
+and decoding take $`O(n+m\log(m+2))`$ time, with one call to an exact
 maximum-cardinality matching solver. This reduction is unconditional and
-deterministic. Optimizing cardinality needs $O(\log(m+2))$ calls to the
+deterministic. Optimizing cardinality needs $`O(\log(m+2))`$ calls to the
 same solver. Invalid bounds and the edgeless case are handled in the
 initial scan; the size statement concerns nonempty inputs. Sections 2–5
 prove the theorem.
@@ -32,10 +32,10 @@ prove the theorem.
 After substituting the conditional general-matching backend, the
 deterministic running-time bound is
 
-$$
+```math
 O(n+m)+(m+1)\exp O\!\left(
  (\log(m+2))^{4/5}(\log\log(m+4))^{1/5}\right) .          \tag{1}
-$$
+```
 
 It applies to:
 
@@ -134,10 +134,10 @@ cross edges, these choices cover every vertex exactly once.
 
 Since `s_v<2d_v` for `d_v>0` and `sum_v d_v=2m`, the graph has
 
-$$
+```math
 O\!\left(m+\sum_v d_v\log(d_v+2)\right)
  =O(m\log(m+2))                                        \tag{2}
-$$
+```
 
 vertices and edges. Construction and decoding have this bound after the
 initial `O(n+m)` scan. A maximum matching of the gadget is perfect exactly
@@ -177,9 +177,9 @@ included to identify the exact sparse selector being used.
 
 Suppose `0<=g(v)<=f(v)<=d_v`. Let
 
-$$
+```math
 D=\sum_v(f(v)-g(v)),\qquad F=\sum_v f(v).
-$$
+```
 
 Create a new hub `a`. For every `v`, add exactly `f(v)-g(v)` distinct
 parallel edges between `v` and `a`. Prescribe degree `f(v)` at each
@@ -191,9 +191,9 @@ Let `A` be the smallest integer at least `D` with `A==F (mod 2)`, so
 `floor(A/2)` disjoint pairs of new vertices `(p_i,q_i)`, each prescribed
 degree one, and the triangle edges
 
-$$
+```math
 a p_i,\quad p_i q_i,\quad q_i a.
-$$
+```
 
 Each triangle can contribute either zero to the hub degree by selecting
 `p_i q_i`, or two by selecting both incident hub edges. There are no loops.
@@ -226,42 +226,42 @@ there are `f(v)-g(v)` dummy edges from each vertex to a new hub `a`.
 Give the hub an **interval** of permitted degrees instead of fixing it.
 For every factor of this augmented interval-degree instance,
 
-$$
+```math
 \deg(a)=F-2|E_{\rm original,selected}|.                \tag{3}
-$$
+```
 
 It follows that a cardinality interval
-$K_{\min}\leq |E_{\rm original,selected}|\leq K_{\max}$ is encoded
+$`K_{\min}\leq |E_{\rm original,selected}|\leq K_{\max}`$ is encoded
 exactly by the hub interval
 
-$$
+```math
 \max\{0,F-2K_{\max}\}\leq\deg(a)
         \leq\min\{D,F-2K_{\min}\}.
 \tag{3a}
-$$
+```
 
-Intersect the requested cardinality interval with $[0,m]$ first;
+Intersect the requested cardinality interval with $`[0,m]`$ first;
 reject if that intersection or (3a) is empty. The original vertices
-have singleton degree intervals $[f(v),f(v)]$. Applying Section 4 once
+have singleton degree intervals $`[f(v),f(v)]`$. Applying Section 4 once
 to this augmented interval instance and then Section 2 proves both
 directions of the reduction: equation (3) translates its hub degree
 back to the exact requested cardinality condition. No search over
 cardinalities is needed for a feasibility query. In particular,
-$K_{\min}=K_{\max}=K$ imposes exactly $K$ selected original records.
-The total explicit edge count of both augmentations is $O(m+1)$.
+$`K_{\min}=K_{\max}=K`$ imposes exactly $`K`$ selected original records.
+The total explicit edge count of both augmentations is $`O(m+1)`$.
 
 Existence with at least `K` edges is the special case
 
-$$
+```math
 0\leq\deg(a)\leq\min\{D,F-2K\}.                     \tag{4}
-$$
+```
 
 A negative upper endpoint means immediate rejection. Existence with at
 most `K` edges is similarly represented by
 
-$$
+```math
 \max\{0,F-2K\}\leq\deg(a)\leq D,                     \tag{5}
-$$
+```
 
 rejecting an empty interval. The prescribed degrees at original vertices
 are ordinary singleton intervals. Apply Section 4 to this augmented
@@ -286,10 +286,10 @@ corollary even if the originally supplied upper bounds exceed all degrees.
 
 Write
 
-$$
+```math
 E(x)=\exp O\!\left((\log(x+2))^{4/5}
                     (\log\log(x+4))^{1/5}\right).
-$$
+```
 
 Every reduced matching instance has size `O(m log(m+2))`. Consequently
 its matching time, the logarithmic number of optimization calls, and all

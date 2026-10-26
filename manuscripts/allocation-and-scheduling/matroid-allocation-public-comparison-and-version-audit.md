@@ -9,10 +9,10 @@ algorithmic interface has not been closed in this audit.
 
 The initial accepted new construction has value
 
-$$
+```math
 (T-u)/3-\varepsilon T,
  \qquad u=\max_jv_j,
-$$
+```
 
 for the player-basis relaxation `Q(T)`, with quasipolynomial running
 time for fixed positive epsilon. The coefficient one third is not a
@@ -24,9 +24,9 @@ The subsequent audited refinement is recorded in
 [matroid-allocation-sharp-star-rank-quality.md](matroid-allocation-sharp-star-rank-quality.md). If the player matroid
 has rank r, write rho=(r-1)/r and
 
-$$
+```math
 C(B,u)=\max\{u,2B+\min(u,B)\}.
-$$
+```
 
 Every positive B satisfying `B+rho C(B,u)<=T` is attained in
 `mathcal P 2^{O(r)} poly(b+log mathcal P)` time, with an explicit
@@ -43,12 +43,12 @@ In Davies--Rothvoss--Zhang (DRZ), a matroid is given on the player set.
 One must select a basis and give those players disjoint sets of liked
 resources. Resource values are player-independent. The relaxation is
 
-$$
+```math
 x\in P_{\mathcal B(\mathcal M)},\qquad
  \sum_j v_j y_{pj}\ge Tx_p,\qquad
  \sum_p y_{pj}\le1,\qquad 0\le y_{pj}\le x_p.
  \tag{1}
-$$
+```
 
 This is exactly the model of the new construction. The condition
 `y_pj<=x_p` is used in its infeasibility proof. A guarantee against the
@@ -101,7 +101,7 @@ Section 4, and is separate from the following exact calculations.
 Normalize `delta=u/T`. Write the free parameters in DRZ Lemmas 8--12
 as `alpha`, `beta`, and `kappa`, with
 
-$$
+```math
 \begin{split}
  \mu&=\frac{1-\alpha-\delta-(\alpha+\delta)
                     (\beta/(\alpha-\beta)+\kappa)}{1+\delta},\\
@@ -110,28 +110,28 @@ $$
                     {\beta+\delta+\kappa(\alpha-\beta)}.
  \end{split}
  \tag{2}
-$$
+```
 
 For `0<=delta<1` and `0<eta<(1-delta)^2/4`, set
 
-$$
+```math
 \alpha=\frac{1-\delta}{2},\qquad
  \beta=\alpha^2-\eta,\qquad
  d=\alpha-\beta,\qquad
  \kappa=\frac{\eta}{2d(1-\alpha)}.
  \tag{3}
-$$
+```
 
 Substitution gives
 
-$$
+```math
 \mu=\frac{\eta}{2d(1+\delta)}=\frac\kappa2,
  \qquad
  \phi=\frac d{1-\alpha},
  \qquad
  c_{\rm grow}=\frac{2\eta}{(1+\delta)^3-4\delta\eta}.
  \tag{4}
-$$
+```
 
 All three are positive. For example, the domain implies
 `mu>=eta`, `kappa>=2eta`, `phi>=alpha>sqrt(eta)`, and
@@ -144,13 +144,13 @@ free-edge branch supplies a swappable fraction `phi mu`; its inner
 collapse branch supplies `kappa c_grow`. These need not be as large
 as `c_grow` itself. A safe common parameter is
 
-$$
+```math
 c_* =\min\{c_{\rm grow},\phi\mu,\kappa c_{\rm grow},1/4\},
  \qquad
  \gamma=\frac{1}{2\bigl(\lceil\log(2/c_*)/
                                   \log(1+c_*)\rceil+1\bigr)}.
  \tag{5}
-$$
+```
 
 The same concentration proof then has both its required growth and
 fraction hypotheses. Conservatively, `c_*=Omega(eta^2)` and gamma
@@ -161,10 +161,10 @@ is supplied correctly.
 
 The resulting candidate value would be
 
-$$
+```math
 \left(\frac{(1-u/T)^2}{4}-\eta\right)T.
  \tag{6}
-$$
+```
 
 In the limit of negligible largest resource it approaches `T/4`,
 instead of the displayed `T/5`. At zero slack, it exceeds the
@@ -202,10 +202,10 @@ A later free candidate can also be owned by `p`, while using
 different resources. The printed choice conditions allow it to
 replace `y`, retaining the earlier adding layer. Now
 
-$$
+```math
 S=\{s_0,p\},\qquad M=\{\text{new bundle of }p\},
  \qquad B_1=\varnothing,
-$$
+```
 
 and the old adding bundle of `p` has become free. Applying Algorithm
 2 to this old layer can select `C'={s0}` and `D'={p}`. The printed
@@ -295,10 +295,10 @@ Theorem 1 and Section 4](https://arxiv.org/pdf/1701.03263v2)
 give an approximation scheme with parameter the number K of player
 valuation types, with time
 
-$$
+```math
 2^{O(K\log(2+K)\,\zeta^{-1}\log^4(2+1/\zeta))}
        +\mathrm{poly}(|I|).
-$$
+```
 
 In particular, K is at most the total number of players. This also
 explains the parameterized approximation scheme noted by Grandoni in
@@ -332,10 +332,10 @@ The large-resource transversal-matroid reduction in DRZ Section 3
 does apply to the new theorem. If resources at most `theta T` are
 small, its two allocation alternatives have value at least
 
-$$
+```math
 \min\{\theta,(1-\theta)/3-\varepsilon\}T.
  \tag{7}
-$$
+```
 
 Setting `theta=(1-3epsilon)/4` gives `(1-3epsilon)T/4`.
 The proof that the compact Santa Claus LP induces (1) for the dual
@@ -364,9 +364,9 @@ original player matroid M. For fat resources at threshold theta T,
 let N be the player transversal matroid supplied by those resources,
 and use the derived player matroid
 
-$$
+```math
 (M^*\vee N)^*.
-$$
+```
 
 Its rank is at most rank(M)=r. An original integral basis allocation
 at target T supplies an integral feasible small-resource solution
@@ -415,10 +415,10 @@ Section 4; it is not presented as a newly repaired proof of DRZ.
 For the new exact row take theta=1/d_r. Every small item has value
 u<theta T, and the auxiliary rank r' is at most r. Hence
 
-$$
+```math
 \theta T+\rho_{r'}(2\theta T+u)
  \le\theta T(1+3\rho_r)=T.
-$$
+```
 
 The inner exact solver supplies value theta T, as do the fat items.
 The positive-error row uses epsilon=1/d_r-1/(d_r+eta), whose inverse

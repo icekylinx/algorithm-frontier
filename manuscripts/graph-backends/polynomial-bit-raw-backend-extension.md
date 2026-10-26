@@ -25,9 +25,9 @@ master logarithm. The root graph and the entire guarded structural history
 have size at most `2^(c_size U)` for a fixed size exponent. Admit positive
 integer root lengths and signed integer root gradients with bit width
 
-$$
+```math
 b_0\le c_b(U+1)^a.                 \tag{1}
-$$
+```
 
 The fully dynamic raw-cycle construction has a computable favorable
 constant tuple for which initialization per actual record, amortized
@@ -35,9 +35,9 @@ updates and queries, complete exposed forest logs, current occurrence
 multiplicity, returned piece count, and inverse raw approximation quality
 are all at most
 
-$$
+```math
 E_a(U)=\exp O_a\!\left(U^{4/5}(\log(U+2))^{1/5}\right).     \tag{2}
-$$
+```
 
 Its numerical root sums have `poly_a(U)` bits. In particular, the
 extension does not replace the structural logarithm `U` by `b_0` in (2).
@@ -51,20 +51,20 @@ after seeing the instance.
 
 Retain the structural choices
 
-$$
+```math
 h=\lceil\log_2(U+4)\rceil,\quad
  t=\max\{2,\lfloor(U/h)^{1/5}\rfloor\},\quad
  p=r=t,\quad K=t^2,\quad x=\lceil U/t\rceil,\quad k=2^x,
-$$
+```
 
 and `d_* = ceil(8U/x)+10`. Under the existing record-size guard, an
 original-edge spanning tree gives the exact core-length formula
 
-$$
+```math
 \ell_{\mathrm{core}}(e)
        =2\sum_{j\le O(\log^2 n)} (\ell_e+P_j),
  \qquad P_j\le 2nL,
-$$
+```
 
 where `L` is the largest parent length admitted during this instance.
 The port expansion multiplies real lengths and gradients by a dyadic
@@ -72,16 +72,16 @@ integer whose logarithm is `O(log U)`. Frozen potential corrections are
 sums of at most `n` admitted parent gradients. Consequently, with a fixed
 constant `c_*` determined only by the structural size convention,
 
-$$
+```math
 b_{\ell,i+1}\le b_{\ell,i}+c_*U,
  \qquad b_{g,i+1}\le b_{g,i}+c_*U.                           \tag{3}
-$$
+```
 
 Declare before initialization
 
-$$
+```math
 b_*=b_0+c_*U(d_*+1)+c_*U.                \tag{4}
-$$
+```
 
 Equation (3) proves the label guard conditional only on the record-size
 guard. It does not use the low-stretch approximation factor or running
@@ -131,15 +131,15 @@ a quasipolynomial aspect ratio, not a combinatorial condition used by the
 replacement static-base repair construction. At a nonbase instance,
 `log m_local >= x-O(1)`. Choose once and for all an integer
 
-$$
+```math
 q_a>\tfrac54\max\{a,6/5\}.                    \tag{5}
-$$
+```
 
 The replacement check
 
-$$
+```math
 b_*\le(\log m_{\rm local})^{q_a}   \tag{6}
-$$
+```
 
 then holds eventually. For the flow case `a=2`, the concrete choice
 `q_a=3` suffices. This change is justified by the five explicit cost
@@ -151,7 +151,7 @@ outside its advertised range. Tiny instances use the exact base routine.
 Write `poly_a(U)` for fixed polynomial factors whose degree may depend
 on the fixed input-width exponent `a`. The same local envelopes hold:
 
-$$
+```math
 \begin{split}
  \log\Gamma&=O((p+r)h),\\
  \log F&=O(U/p+U/r+r^2h+(p+r)h),\\
@@ -159,19 +159,19 @@ $$
  W&=k^{O(1)}\rho_{\rm sched}^{O(1)}F^{O(1)}
                               \Gamma^{O(K)}\mathrm{poly}_a(U).
 \end{split}                                                 \tag{7}
-$$
+```
 
 The larger bit count does not add an extra factor `k` to a propagated
 child log. Complete lifetime retirement, actual central-edge provenance,
 degree feedback, and the initial child credit remain as before. Thus
 
-$$
+```math
 \begin{split}
  G_d&\le P(G_{d-1}+1),\\
  J_d&\le W+P(G_{d-1}+1)+(P/k)(J_{d-1}+T_{d-1}),\\
  T_d&\le O(kW+kP(G_{d-1}+1))+O(P)(J_{d-1}+T_{d-1})
 \end{split}                                                 \tag{8}
-$$
+```
 
 close using `J_d+T_d/k`. The added low-stretch and bucket factors
 contribute at most `O_a(d log U)` to the quality exponent. Even if a
@@ -180,10 +180,10 @@ extra term is only `O_a(dK log U)`.
 
 For the parameters above,
 
-$$
+```math
 dK\log U=O(t^3h),\qquad
  dK(p+r)h=O(t^4h)\le O(U/t)=O(x).                            \tag{9}
-$$
+```
 
 All remaining exponent terms are the previous `O(x)` terms. Equation
 (2) follows. One first proves (3)--(4) under the size guard, then uses

@@ -24,25 +24,25 @@ Consider a fully normalized state of the prefix algorithm.
 For each resource j, let W_j=X_j union Y_j be its reserved copy set,
 and U_j=M_j minus Y_j the unmarked matching copies. Define
 
-$$
+```math
 \Phi=\sum_j r_j(W_j),\qquad
  \Psi=\sum_j r_j(M_j\cup X_j).
-$$
+```
 
 Prefix rank additivity for the full selected prefix gives
 
-$$
+```math
 \Psi=\Phi+\sum_j|U_j|
                      =\Phi+b(k-|Y|).
  \tag{F1}
-$$
+```
 
 The equal-unit current cover is Phi<=(2b-1)|Y|. Hence
 
-$$
+```math
 \boxed{\Psi\le bk+(b-1)|Y|\le(2b-1)k.}
  \tag{F2}
-$$
+```
 
 This is stronger than merely counting all b(k+|X|) service units of
 M union X. It uses the current prefix invariant, not a birth charge.
@@ -63,12 +63,12 @@ Every such player has available optimum at most b-1, so it loses at
 least d units when restricted to these capacities. At most Psi units
 can be lost in total. Therefore
 
-$$
+```math
 |I^*\setminus F|\le\left\lfloor\frac\Psi d\right\rfloor,
  \qquad
  r_M(F)\ge r-\left\lfloor\frac\Psi d\right\rfloor.
  \tag{F3}
-$$
+```
 
 The same rank conclusion holds against the residual-capacity
 configuration relaxation: its cuts applied to bases of M_j union X_j
@@ -79,10 +79,10 @@ cover this application too.
 At the critical integer target t=3b-2, one has d=2b-1. Combining
 (F2)--(F3) yields
 
-$$
+```math
 r_M(F)\ge r-k.
  \tag{F4}
-$$
+```
 
 In particular, for t=4 and b=2 there is always a globally strongly
 free candidate while k<r. Its owner need not lie outside the current
@@ -120,16 +120,16 @@ d units. This implies Psi>=d(r-u_0).
 
 At the critical target, (F2) can be rewritten as
 
-$$
+```math
 \Psi\le(2b-1)k-(b-1)u_0.
-$$
+```
 
 Writing delta=r-k>0, these inequalities contradict each other whenever
 
-$$
+```math
 u_0<(2-1/b)\,\delta.
  \tag{F5}
-$$
+```
 
 Thus (F5) guarantees either augmentation or the safe marked exchange
 in Section 3. For b=2 and delta=1, zero or one unmarked matching

@@ -21,10 +21,10 @@ Their aggregate integral polymatroid ranks are f_s and f_b. A legal
 schedule consists of integer bases x_s in B(f_s) and x_b in B(f_b),
 with machine load
 
-$$
+```math
 u x_s(p)+a x_b(p).
  \tag{D1}
-$$
+```
 
 Write h=f_b(P) and s=f_s(P). The counts, numerical ranks, and job
 sizes are binary encoded. Aggregating individually supplied job
@@ -34,20 +34,20 @@ standard integral polymatroid decomposition primitive.
 
 Let M_b be the Boolean-cap matroid with independence polytope
 
-$$
+```math
 P(f_b)\cap[0,1]^P.
  \tag{D2}
-$$
+```
 
 Its rank queries use the integral box formula and paid deterministic
 submodular minimization. Put r_b=rank(M_b) and let P^+ be its
 nonloop set. Equivalently, p belongs to P^+ exactly when f_b({p})>=1.
 If r_b=h, define
 
-$$
+```math
 c=|P^+|-h.
  \tag{D3}
-$$
+```
 
 In ordinary restricted assignment, h is the number of larger jobs,
 and P^+ contains all machines eligible for at least one such job.
@@ -59,11 +59,11 @@ oracle time. If r_b<h, a factor-3/2 schedule is found in polynomial
 oracle time. Otherwise a deterministic factor-3/2 schedule is found
 in
 
-$$
+```math
 (27/4)^c\mathrm{poly}(H)
                          =2^{O(c)}\mathrm{poly}(H)
  \tag{D4}
-$$
+```
 
 time and polynomial workspace. Here H includes all original input
 bits and paid deterministic optimization, decomposition and
@@ -83,10 +83,10 @@ Suppose h>0 but r_b<h. Every integer base of f_b must then put at
 least two large units on some machine: otherwise it would be an
 independent zero-one vector of M_b of size h. Consequently
 
-$$
+```math
 \mathrm{OPT}\ge2a.
  \tag{D5}
-$$
+```
 
 The standard fractional assignment relaxation is polynomially
 optimizable for job polymatroids. Its additive rounding theorem
@@ -112,10 +112,10 @@ load at most T+a<=3T/2.
 
 The remaining case is
 
-$$
+```math
 a\le T<2a.
  \tag{D6}
-$$
+```
 
 A target-T schedule then gives exactly one large unit to each
 member of an h-element M_b-basis and no large units elsewhere.
@@ -124,19 +124,19 @@ on T.
 
 Let
 
-$$
+```math
 C=\lfloor T/u\rfloor,\qquad
        P(g)=P(f_s)\cap[0,C]^P.
  \tag{D7}
-$$
+```
 
 For every S subseteq P its rank is
 
-$$
+```math
 g(S)=\min_{A\subseteq S}
                                \{f_s(A)+C|S\setminus A|\}.
  \tag{D8}
-$$
+```
 
 If g(P)<s, fail: a target-T small-job assignment would be a base
 of the original rank s inside this box. Otherwise g(P)=s.
@@ -144,10 +144,10 @@ of the original rank s inside this box. Otherwise g(P)=s.
 Form the dual recipient polymatroid on the **full original machine
 set P**:
 
-$$
+```math
 f_T(S)=C|S|+g(P\setminus S)-s.
  \tag{D9}
-$$
+```
 
 This function is normalized, monotone, integral and submodular.
 Monotonicity follows because each marginal of g is at most C. Its
@@ -163,43 +163,43 @@ set.
 
 Define the positive workload deficit and integer quota
 
-$$
+```math
 \delta_T=a+Cu-T,
  \qquad
  K=\left\lceil\frac{\delta_T}{u}\right\rceil
      =C-\left\lfloor\frac{T-a}{u}\right\rfloor.
  \tag{D10}
-$$
+```
 
 Since T-u<Cu<=T and 0<u<a<=T,
 
-$$
+```math
 0<a-u<\delta_T\le a\le T,
                     \qquad 1\le K\le C.
  \tag{D11}
-$$
+```
 
 Suppose a target-T schedule exists. Let I* be its large-job recipient
 basis, and set y*=C*1-x_s*. This is an integer base of f_T. For every
 p in I*,
 
-$$
+```math
 a+u x_s^*(p)\le T
        \quad\Longrightarrow\quad
     y^*(p)\ge\delta_T/u
        \quad\Longrightarrow\quad y^*(p)\ge K.
  \tag{D12}
-$$
+```
 
 Downward closure gives K*1_(I*) in P(f_T|P^+). Hence a feasible
 target supplies exactly the stronger promise needed by Theorem C.
 
 Use output quota
 
-$$
+```math
 b=\lceil K/2\rceil.
  \tag{D13}
-$$
+```
 
 For K>=2, b<K and K/(K-b)<=3. The corank algorithm therefore returns
 an M_b-basis I with b*1_I resource independent, or soundly certifies
@@ -213,10 +213,10 @@ corank c. Use the batch algorithm, which deletes an entire required
 omission set at each branch. Its total computation-node count,
 including candidate deletions rejected by rank tests, is at most
 
-$$
+```math
 (c+1)(27/4)^c,
  \tag{D14}
-$$
+```
 
 with an immediate polynomial exit when c=0. Target-specific deletion
 of players with f_T({p})<K can only improve this parameter; any
@@ -234,11 +234,11 @@ binary arithmetic, and preserves y(p)>=b on every p in I.
 
 Set
 
-$$
+```math
 x_b=1_I,
                  \qquad x_s=C*1-y.
  \tag{D15}
-$$
+```
 
 The small vector is nonnegative because every dual coordinate is
 at most C. Base duality proves x_s in B(g), and the retained-rank
@@ -250,7 +250,7 @@ does not change any machine's total load.
 An unselected machine has small load at most Cu<=T. A selected
 machine has load
 
-$$
+```math
 \begin{aligned}
  a+u x_s(p)
    &\le a+Cu-bu\\
@@ -259,7 +259,7 @@ $$
    &\le\tfrac32T.
  \end{aligned}
  \tag{D16}
-$$
+```
 
 The penultimate inequality follows from b>=K/2 and Ku>=delta_T.
 All small counts are integral, so there is no additional small-job
@@ -276,10 +276,10 @@ multiple of gamma.
 
 An explicit grid upper target is
 
-$$
+```math
 T_{\rm hi}=ah+us.
  \tag{D17}
-$$
+```
 
 Any pair of integer bases is a feasible schedule, and its maximum
 load is at most the total workload ah+us. Thus T_hi is genuinely

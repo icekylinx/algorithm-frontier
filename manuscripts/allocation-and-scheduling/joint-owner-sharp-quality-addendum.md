@@ -15,11 +15,11 @@ J_i=I minus the earlier blocker owners. Every stored center is
 blocked, so a<=y. Exact common-item ownership and minimal bundles
 give
 
-$$
+```math
 v(F)\le C(s+y),\qquad
  C=\max\{u,2B+\min(u,B)\}.
  \tag{1}
-$$
+```
 
 Suppose an available-bundle oracle has factor lambda, and every
 eligible call at this unchanged completed state returns value below
@@ -27,10 +27,10 @@ B. Write tau=1/lambda and L=T-tau B>=0. The eligible players are
 outside cl(J_i union A_i). Their fractional base mass is at least
 w-a. Whenever w-a>0, the strict perspective argument gives
 
-$$
+```math
 v(F)>L(w-a).
  \tag{2}
-$$
+```
 
 The local-family, approximate-scan and compressed-capacity adapters
 do not change this inequality when their respective available
@@ -39,27 +39,27 @@ independence is asserted across different layers.
 
 Since s<=k<r, one has s/w<=rho=(r-1)/r. Put
 
-$$
+```math
 \Delta=L-\rho C.
  \tag{3}
-$$
+```
 
 If Delta>0, choose
 
-$$
+```math
 \gamma=\min\{1/2,\Delta/[2(C+L)]\}.
  \tag{4}
-$$
+```
 
 At a proposed failed growth test y<=gamma w, a<=y gives w-a>0.
 Comparing (2) with (1), their lower-minus-upper bounds are at least
 
-$$
+```math
 \bigl[L(1-\gamma)-C(\rho+\gamma)\bigr]w
        =[\Delta-\gamma(C+L)]w
        \ge\Delta w/2>0.
  \tag{5}
-$$
+```
 
 Thus every feasible completed layer has y>gamma w. A failed test
 is a valid infeasibility certificate with eligibility base
@@ -83,10 +83,10 @@ same finite rank-composition signature proves termination in
 
 Consequently the entire exact sharp condition
 
-$$
+```math
 \tau B+\rho C(B,u)\le T
  \tag{6}
-$$
+```
 
 survives the per-layer joint-owner restriction. The value curve is
 the same one as in the approximate-oracle manuscript, including its
@@ -100,23 +100,23 @@ Let d=tau+3rho, B_0=T/d and B=T/(d+eta). Use the same fat
 threshold B_0 and derived dual-union matroid. Its rank is at most
 r. On its small items, Cbar=2B+B_0 bounds C, and
 
-$$
+```math
 \Delta_0=L-\rho\overline C
           =(\tau+2\rho)(B_0-B),\qquad
  \delta=\Delta_0/\overline C
           \ge\min\{\eta,1\}/8.
  \tag{7}
-$$
+```
 
 Set a_0=min{eta,1}. Since L=rho Cbar+Delta_0,
 
-$$
+```math
 \frac{\Delta_0}{2(\overline C+L)}
    =\frac{\delta}{2(1+\rho+\delta)}
    \ge\frac{a_0}{32+2a_0}
    \ge\frac{a_0}{34}.
  \tag{8}
-$$
+```
 
 Thus gamma=a_0/64 is a safe uniform choice in (4), also when the
 actual derived rank and actual star coefficient are smaller. No
@@ -124,16 +124,16 @@ extra lambda^-1 enters the rank exponent.
 
 The joint-owner variant therefore gives factor
 
-$$
+```math
 \lambda^{-1}+3-3/r+\eta
-$$
+```
 
 in a paid polynomial and oracle multiplier times
 
-$$
+```math
 \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.
  \tag{9}
-$$
+```
 
 At eta=0 use the exact rank-exponential branch. The same
 configuration-LP comparator and one-sided target search are inherited

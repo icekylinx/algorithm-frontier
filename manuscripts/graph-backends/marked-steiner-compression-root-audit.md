@@ -8,34 +8,34 @@ separate obligations.
 
 ## 1. Interface and exact object
 
-Let $F$ be a forest of an actual native graph. Within one generation,
+Let $`F`$ be a forest of an actual native graph. Within one generation,
 its edges only disappear and new vertices enter as isolated vertices.
-Each living edge has a fixed positive integer length. Let $Z$ be a
+Each living edge has a fixed positive integer length. Let $`Z`$ be a
 changing set of marked vertices, maintained with reference counts.
-Different reasons for marking the same vertex count once in $Z$.
+Different reasons for marking the same vertex count once in $`Z`$.
 
-For each component containing marks, let $S$ be the minimal subtree
+For each component containing marks, let $`S`$ be the minimal subtree
 spanning those marks. For one mark it is a single vertex; for no marks
 it is empty. Its compressed representation retains every marked
-vertex and every unmarked vertex of degree at least three in $S$.
+vertex and every unmarked vertex of degree at least three in $`S`$.
 Maximal paths between retained vertices are represented by single
 virtual edges. Their lengths are the sums of their physical edge
-lengths in $F$. They retain physical endpoint identities and a
+lengths in $`F`$. They retain physical endpoint identities and a
 dynamic-tree path handle.
 
 The virtual edges have pairwise disjoint physical edge interiors
 within this one forest. A physical vertex internal to a virtual edge
 is internal to exactly one such edge. Retained vertices may be shared
 endpoints of several virtual edges. The number of retained vertices
-and virtual edges is $O(|Z|)$, summed over marked components.
-Each retained vertex has virtual degree at most its degree in $F$.
+and virtual edges is $`O(|Z|)`$, summed over marked components.
+Each retained vertex has virtual degree at most its degree in $`F`$.
 
 These statements follow directly from suppressing unmarked degree-two
 vertices in a tree. No metric approximation is introduced.
 
 ## 2. Required ordinary dynamic-tree operations
 
-Use an ordinary dynamic-tree representation of the full forest $F$,
+Use an ordinary dynamic-tree representation of the full forest $`F`$,
 and a component aggregate that can return any marked vertex in a
 component. The operations needed here are:
 
@@ -55,8 +55,8 @@ An Euler-tour forest with a marked-vertex aggregate provides the
 component operation. The two structures process the same physical
 cuts and mark changes. All these operations take polynomial
 logarithmic time and actual linear storage. The vertex bit is one
-exactly on the current minimal marked subtree $S$; physical edges
-outside $S$ carry a null virtual-edge identifier.
+exactly on the current minimal marked subtree $`S`$; physical edges
+outside $`S`$ carry a null virtual-edge identifier.
 
 Only the virtual representation is reported to the caller. Lazy
 updates to a long physical path are not reported as changes to all
@@ -66,22 +66,22 @@ its internal vertices or edges.
 
 If the component has no other mark, create its one marked virtual
 vertex and set its active bit. Otherwise obtain any old marked
-vertex $t$. The path from the new mark $v$ to $t$ first meets
-the old subtree $S$ at a unique vertex $w$.
+vertex $`t`$. The path from the new mark $`v`$ to $`t`$ first meets
+the old subtree $`S`$ at a unique vertex $`w`$.
 
-Find $w$ by the first-active-vertex query on that path. This does
-not require a nearest-mark computation. If $w$ is internal to a
-virtual edge, split that virtual edge at $w$, using its stored
+Find $`w`$ by the first-active-vertex query on that path. This does
+not require a nearest-mark computation. If $`w`$ is internal to a
+virtual edge, split that virtual edge at $`w`$, using its stored
 identifier. Explicit records distinguish retained virtual vertices.
-For an internal $w$, the first physical edge of $w\leadsto t$
+For an internal $`w`$, the first physical edge of $`w\leadsto t`$
 has the required identifier; this path is nonempty because the
-old mark $t$ is retained. If $v\ne w$, add the virtual edge for $v\leadsto w$.
+old mark $`t`$ is retained. If $`v\ne w`$, add the virtual edge for $`v\leadsto w`$.
 Set the bits and identifiers along the affected physical paths by
-lazy path assignment. If $v=w$, it is enough to mark or split at
+lazy path assignment. If $`v=w`$, it is enough to mark or split at
 that existing vertex.
 
 At most a fixed constant number of virtual vertices and edges
-change. The union of $S$ and $v\leadsto w$ is exactly the new
+change. The union of $`S`$ and $`v\leadsto w`$ is exactly the new
 minimal marked subtree, proving correctness.
 
 ## 4. Deleting one mark
@@ -93,8 +93,8 @@ its two virtual edges. A vertex of higher degree remains a
 branching vertex.
 
 If the old mark has degree one, remove its virtual edge to the next
-retained vertex $w$. Clear active bits on that path except at
-$w$, and clear the removed edge identifiers. If $w$ is now an
+retained vertex $`w`$. Clear active bits on that path except at
+$`w`$, and clear the removed edge identifiers. If $`w`$ is now an
 unmarked degree-two vertex, suppress it. No further pruning chain
 of virtual vertices is possible: before the deletion every
 unmarked retained vertex had degree at least three, and only this
@@ -111,7 +111,7 @@ designated root of a detached component can subsequently be added
 as a mark by Section 3.
 
 Otherwise the deleted edge lies on a unique virtual path
-$u\leadsto v$. Remove that virtual edge. On each side, discard
+$`u\leadsto v`$. Remove that virtual edge. On each side, discard
 the now-unused tail between the cut location and its old virtual
 endpoint. Both old endpoints have marks somewhere on their
 remaining sides: each was either marked itself or an unmarked
@@ -126,7 +126,7 @@ This is the minimal marked subtree in each resulting component.
 The physical cut therefore creates only constantly many virtual
 record changes and path operations.
 
-The special cases in which the cut is adjacent to $u$ or $v$
+The special cases in which the cut is adjacent to $`u`$ or $`v`$
 have an empty tail and require no extra operation. A batch of
 physical cuts is processed sequentially. Marking its newly
 designated roots is charged separately and explicitly.
@@ -138,8 +138,8 @@ be built by pruning unmarked leaves and traversing the surviving
 forest. This costs linear time in the actual initial forest.
 Initialize its path data structures from that same inventory.
 
-Afterward, $q$ physical cuts and changes of marked status take
-polynomial logarithmic time per event and report $O(q)$ virtual
+Afterward, $`q`$ physical cuts and changes of marked status take
+polynomial logarithmic time per event and report $`O(q)`$ virtual
 edge/node edits. New isolated vertices are charged when they are
 created. A generation replacement pays for its actual old and
 new forest inventories.

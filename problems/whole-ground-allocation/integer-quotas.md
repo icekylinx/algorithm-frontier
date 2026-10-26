@@ -19,21 +19,21 @@ and exact-three-halves results.
 
 Fix an integer d>=2 and define
 
-$$
+```math
 R_d=\frac{d+1}{d-1},\qquad
  A_d=\Gamma(R_d)=\frac{R_d^{R_d}}{(R_d-1)^{R_d-1}},\qquad
  B_d=2-\frac1{A_d}.
 \tag{QT1}
-$$
+```
 
 For a supplied admissible base A, write
 
-$$
+```math
 \mathcal T_A(q,H)=
  (2-1/A)^q
  2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
 \tag{QT2}
-$$
+```
 
 The ground is explicit, and H includes its size, all original rational
 bits, and the paid polynomial oracle, LP, intersection, and decomposition
@@ -70,10 +70,10 @@ player-basis selection.
 
 For every positive integer full target K use
 
-$$
+```math
 b=\left\lceil\frac Kd\right\rceil.
 \tag{QT3}
-$$
+```
 
 For 1<=K<=d, b=1. These cases will use exact one-unit feasibility,
 not the positive-gap recursion.
@@ -81,14 +81,14 @@ not the positive-gap recursion.
 For K>=d+1, write uniquely K=jd+s with j>=1 and 1<=s<=d. Then
 b=j+1 and
 
-$$
+```math
 \frac K{K-b}
  =\frac{jd+s}{j(d-1)+s-1}
  \le\frac{jd+1}{j(d-1)}
  =\frac d{d-1}+\frac1{j(d-1)}
  \le\frac{d+1}{d-1}=R_d.
 \tag{QT4}
-$$
+```
 
 The first inequality follows because increasing s adds the same
 positive amount to numerator and denominator, and the numerator is
@@ -143,10 +143,10 @@ omissions Z, it survives whenever its selected basis avoids Z. The
 remaining omission deficit is c-|Z|, and QT4 bounds the complete
 extension cost by
 
-$$
+```math
 A_d^{c-|Z|}\mathrm{poly}(H).
 \tag{QT5}
-$$
+```
 
 This includes unpromised targets and failed selectors.
 
@@ -166,10 +166,10 @@ Every failure excludes the full queried K, while every success supplies
 ceil(K/d) units. At adjacent integer endpoints the saved nominal target
 L is at least K*, so the output has at least
 
-$$
+```math
 \left\lceil\frac{K^*}{d}\right\rceil
 \tag{QT6}
-$$
+```
 
 units per selected player. This argument needs no monotonicity of
 successes. Zero optimum and missing resources use the zero allocation.
@@ -181,12 +181,12 @@ exactly polynomially solvable by the quota intersection.
 model admits QT6, exact assignment budget, and polynomial space in
 either
 
-$$
+```math
 A_d^c\mathrm{poly}(H)
  \quad\text{or}\quad
  \mathcal T_{A_d}(q,H)
 \tag{QT7}
-$$
+```
 
 time. The global bound follows by applying the accepted block wrapper
 to QT5 for every positive-gap target. Dovetailing retains the smaller
@@ -215,11 +215,11 @@ retained pair costs at most C and k<=h_C.
 Whenever I* is contained in Q, including after any forced omission
 avoided by I*, the unchanged H* remains a feasible completion. Thus
 
-$$
+```math
 h_k(Q)\le c(H^*),\qquad
  c(x_s^*)\le C-c(H^*)\le C-h_k(Q).
 \tag{QT8}
-$$
+```
 
 The original full-K small allocation remains feasible in every current
 region along the surviving branch. This supplies exactly the adaptive
@@ -252,11 +252,11 @@ For high targets the fixed-player fractional allocation LP and
 cost-preserving lower rounding lose at most the largest unit a.
 They already provide the desired weak guarantee whenever
 
-$$
+```math
 T\ge\frac{d}{d-1}a,
        \qquad T-a\ge\frac Td.
 \tag{QT9}
-$$
+```
 
 LP infeasibility soundly excludes the integer target. A feasible LP
 is rounded with the accepted free-disposal and full-total dual-cost
@@ -286,12 +286,12 @@ and empty heavy or small classes are therefore covered.
 exact factor d, one exact assignment budget, and polynomial space in
 either
 
-$$
+```math
 A_d^{h_C}\mathrm{poly}(H)
  \quad\text{or}\quad
  \mathcal T_{A_d}(q,H)
 \tag{QT10}
-$$
+```
 
 time. The second bound is unconditional in h_C. The support-cardinality
 loop has only q+1 possibilities, and every hard extension uses the
@@ -310,7 +310,7 @@ nonloop large-position ground P^+ is explicit.
 
 At a hard target a<=T<2a, retain the original definitions
 
-$$
+```math
 \begin{aligned}
  C_T&=\lfloor T/u\rfloor,
    &P(g_T)&=P(f_s)\cap[0,C_T]^P,\\
@@ -318,17 +318,17 @@ $$
    &K_T&=C_T-\left\lfloor\frac{T-a}{u}\right\rfloor.
  \end{aligned}
 \tag{QT11}
-$$
+```
 
 The retained-rank test g_T(P)=f_s(P) precedes dualization. The dual
 is formed on all physical machines. A full target supplies K_T units
 of this dual resource to a large-job M_b-basis, with
 
-$$
+```math
 \delta_T=a+C_Tu-T,\qquad
                   0<\delta_T\le a,\qquad K_Tu\ge\delta_T.
 \tag{QT12}
-$$
+```
 
 Set b_T=ceil(K_T/d). For K_T<=d, solve exact one-unit feasibility by
 intersecting the large-position player matroid and the Boolean cap of
@@ -343,7 +343,7 @@ complete it to an integer F_T-base y. Then x_b=1_I and x_s=C_T*1-y
 are full original large and small bases. A machine in I has load at
 most
 
-$$
+```math
 \begin{aligned}
  a+C_Tu-b_Tu
  &=T+\delta_T-b_Tu\\
@@ -351,7 +351,7 @@ $$
  \le\left(2-\frac1d\right)T.
  \end{aligned}
 \tag{QT13}
-$$
+```
 
 The inequality uses b_Tu>=K_Tu/d>=delta_T/d and a<=T. Machines
 outside I have load at most T. This bound applies to the small-quota
@@ -369,12 +369,12 @@ minimization search give a final schedule of makespan at most
 **Corollary QT-C.** In the nontrivial rank-retained branch, scheduling
 has approximation factor 2-1/d and polynomial space in either
 
-$$
+```math
 A_d^c\mathrm{poly}(H)
  \quad\text{or}\quad
  \mathcal T_{A_d}(|P^+|,H).
 \tag{QT14}
-$$
+```
 
 The other branches are polynomial. Since |P^+| is at most the number
 of physical machines, this is also a whole-machine bound. It is not
@@ -408,12 +408,12 @@ the numeric input d is not charged as polynomial work.
 For the fixed-deficit applications, the accepted profile refinement
 also gives
 
-$$
+```math
 \min\left\{A_d^c,
        E(q)\Psi_{A_d}(q,c),\binom qc\right\}
                       \mathrm{poly}(H),
 \tag{QT15}
-$$
+```
 
 with the definitions of [The exact corank-sensitive time curve of the block gap conversion](../../manuscripts/allocation-and-scheduling/global-gap-corank-profile-bound.md). In
 compulsory two-value allocation it may be applied separately to every

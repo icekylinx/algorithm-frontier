@@ -3,10 +3,10 @@
 For coordinate-box players, the residual configuration relaxation with
 reserve support at most s can be approximately optimized in
 
-$$
+```math
 (q+1)^{O(s+1)}\mathrm{poly}(H,\epsilon^{-1}).
  \tag{X1}
-$$
+```
 
 Here q is the number of potential players, all recipient capacities
 remain binary encoded, and the output is a fractional configuration
@@ -37,11 +37,11 @@ resource type j has an integral normalized monotone submodular rank
 f_j and a common nonnegative rational unit value v_j. Player p has
 the coordinate-box local family
 
-$$
+```math
 0\le n_j\le F_{pj}\le f_j(\{p\}),
              \qquad n_j\in\mathbb Z.
  \tag{X2}
-$$
+```
 
 All quotas and ranks are binary encoded. Rank zero is handled separately
 by the empty allocation. Assume rational 0<epsilon<=1/2; a requested
@@ -52,20 +52,20 @@ of P. Put m=sum_j |A_j|. The target-T LP has a nonnegative weight
 mu_pn for every local configuration n with v dot n>=T. Its aggregates
 are
 
-$$
+```math
 x_p=\sum_n\mu_{pn},\qquad
           y_{pj}=\sum_n\mu_{pn}n_j.
  \tag{X3}
-$$
+```
 
 Require x in the base polytope B(M) and each y_.j in P(f_j). For each
 retained pair (j,S), impose the residual subset cut
 
-$$
+```math
 \sum_{p,n}\mu_{pn}\bigl(n_j-m_{pj}(S)\bigr)_+\le f_j(S),
  \qquad m_{pj}(S)=f_j(S\cup\{p\})-f_j(S).
  \tag{X4}
-$$
+```
 
 All aggregate resource inequalities remain part of the model, whether
 or not they are implied by the retained cut family. Taking every
@@ -81,11 +81,11 @@ Its runtime is polynomial in H, m and epsilon^(-1).
 
 Put d=q+qt, where t is the number of resource types, and define
 
-$$
+```math
 K=B(M)\times\prod_j P(f_j)
                     \subseteq\mathbb R^d.
  \tag{X5}
-$$
+```
 
 This is a nonempty bounded integral polytope. For arbitrary signed
 rational weights alpha in R^d, an integral vertex maximizing alpha
@@ -114,34 +114,34 @@ right sides f_j(S) of these cuts.
 
 The target relaxation is equivalently
 
-$$
+```math
 \sum_c\mu_c e(c)\in K,\qquad
               \sum_c\mu_c h(c)\le b,\qquad\mu\ge0.
  \tag{X6}
-$$
+```
 
 For any finite set C of configuration columns and finite set V of
 vertices of K, define the explicit finite primal
 
-$$
+```math
 \begin{split}
        \sum_{c\in C}\mu_c e(c)&=\sum_{v\in V}\lambda_v v,\\
        \sum_{c\in C}\mu_c h(c)&\le b,\\
        \sum_{v\in V}\lambda_v&=1,\qquad\mu,\lambda\ge0.
  \end{split}
  \tag{X7}
-$$
+```
 
 This primal is infeasible exactly when there are a signed vector
 alpha in R^d and a nonnegative vector zeta in R^m satisfying
 
-$$
+```math
 \begin{split}
        \alpha\cdot e(c)+\zeta\cdot h(c)&\ge0\quad(c\in C),\\
        \alpha\cdot v+\zeta\cdot b&\le-1\quad(v\in V).
  \end{split}
  \tag{X8}
-$$
+```
 
 To check this version of Farkas' lemma, include a free multiplier omega
 for sum_v lambda_v=1. The configuration columns require
@@ -155,29 +155,29 @@ For the full set of K vertices and all target-T configurations,
 (X8) is the exact target-T Farkas system. Its soundness can also be
 seen directly: a feasible configuration point would give
 
-$$
+```math
 0\le\sum_c\mu_c(\alpha\cdot e(c)+\zeta\cdot h(c))
    \le\alpha\cdot\sum_c\mu_c e(c)+\zeta\cdot b\le-1.
-$$
+```
 
 ## 4. Signed linear prices still yield convex local pricing
 
 Write alpha_p for its player-coordinate entry and nu_pj for its
 count-coordinate entry. A configuration-column violation has the form
 
-$$
+```math
 G_p(n)<w_p,\qquad w_p=-\alpha_p,
-$$
+```
 
 where
 
-$$
+```math
 G_p(n)=\sum_j\left[
        \nu_{pj}n_j+
        \sum_{S\in A_j}\zeta_{jS}
                (n_j-m_{pj}(S))_+\right].
  \tag{X9}
-$$
+```
 
 The linear coefficient nu_pj can have either sign. All hinge prices
 zeta_jS remain nonnegative. Consequently the marginal unit costs
@@ -205,11 +205,11 @@ Profit scaling returns an exact-budget remaining solution whose
 value is at least (1-epsilon) of the best remaining value. Together
 with the forced prefix, its total value is at least
 
-$$
+```math
 V_0+(1-\epsilon)\mathrm{OPT}_{rem}
                \ge(1-\epsilon)(V_0+\mathrm{OPT}_{rem}).
  \tag{X10}
-$$
+```
 
 Every original feasible solution may be augmented to include the
 nonpositive prefixes, so V0+OPT_rem is the original optimum under
@@ -225,10 +225,10 @@ in (X9). Every integer configuration cost lies on the grid
 Dcost^(-1) Z. For any rational threshold w_p, including a nonpositive
 one, define
 
-$$
+```math
 C_p={\lceil Dcost\,w_p\rceil-1\over Dcost}.
  \tag{X11}
-$$
+```
 
 This is the largest cost-grid point strictly below w_p. It can be
 negative; Section 4 handles that case by comparing it with G0.
@@ -250,27 +250,27 @@ comparisons have polynomial bit length in the pricing input.
 Split alpha=alpha^+-alpha^- with both parts nonnegative. The dual
 variable
 
-$$
+```math
 \beta=(\alpha^+,\alpha^-,\zeta)
                      \in\mathbb R_{\ge0}^{D},
                   \qquad D=2d+m
  \tag{X12}
-$$
+```
 
 has only nonnegative coordinates. The two normal vectors in (X8) are
 
-$$
+```math
 a_c=(e(c),-e(c),h(c)),
              \qquad b_v=(v,-v,b).
  \tag{X13}
-$$
+```
 
 Thus its conditions are beta dot a_c>=0 and beta dot b_v<=-1.
 Take an integer coefficient bound
 
-$$
+```math
 B\ge\max\{1,r,\max_j f_j(P)\}.
-$$
+```
 
 Every entry of a_c and b_v is an integer of absolute value at most
 B. This includes every possible configuration and every integral
@@ -282,11 +282,11 @@ is pointed. It has a vertex specified by D independent active
 equations with integer coefficients bounded by B and right sides
 zero or -1. Cramer's rule gives a witness beta0 satisfying
 
-$$
+```math
 0\le\beta_{0i}\le
                     U_0=(DB+1)^{D+1}.
  \tag{X14}
-$$
+```
 
 The bound is uniform over every finite pair (C,V), every target,
 and every choice of configurations within the boxes. Its logarithm
@@ -303,14 +303,14 @@ coordinate remain one. The latter pairs cancel exactly.
 
 For a configuration column and an aggregate vertex,
 
-$$
+```math
 \begin{split}
      \theta\cdot a_c&=1+\sum_{i=1}^{m}h_i(c)\ge1,\\
      \theta\cdot b_v&=r+\sum_{i=1}^{m}b_i
                             \le(D+1)B.
  \end{split}
  \tag{X15}
-$$
+```
 
 The second identity uses that every player component of v is a
 basis indicator and sums to r. This is the required replacement
@@ -320,12 +320,12 @@ this conclusion; here the displayed structure does.
 
 Set
 
-$$
+```math
 \gamma={1\over4(D+1)B},\qquad
  \delta={\gamma\over2DB},\qquad
  \beta_*=2\beta_0+\gamma\theta.
  \tag{X16}
-$$
+```
 
 For every finite infeasible primal (X7), beta_* has slack at least
 gamma in every column inequality and coordinate lower bound, slack
@@ -334,12 +334,12 @@ from each coordinate upper bound 4U0. Since all column and vertex
 norms are at most DB, the entire radius-delta Euclidean ball about
 beta_* belongs to
 
-$$
+```math
 Q_{C,V}=\{0\le\beta\le4U_0:
               \beta\cdot a_c\ge0\ (c\in C),\quad
               \beta\cdot b_v\le-1\ (v\in V)\}.
  \tag{X17}
-$$
+```
 
 This ball is uniform over both finite families. In particular it
 remains valid when only some vertices of K have been generated.
@@ -396,13 +396,13 @@ Every configuration in C has value at least T'.
 
 The weak feasibility outcome is consequently
 
-$$
+```math
 \boxed{\begin{array}{l}
    \text{a sound certificate that target }T\text{ is infeasible, or}\\
    \text{an explicit feasible configuration point at }(1-\epsilon)T.
  \end{array}}
  \tag{X18}
-$$
+```
 
 Keeping only generated configurations would not suffice for this
 extraction argument unless a separate implicit-polytope LP routine
@@ -449,20 +449,20 @@ The number of target trials is polynomial in the input bit length.
 
 For all |S|<=s, the number of residual cuts is
 
-$$
+```math
 m=t\sum_{i=0}^{\min\{s,q\}}{q\choose i}.
  \tag{X19}
-$$
+```
 
 Substitution into the polynomial-in-m algorithm proves (X1). It is
 also bounded by 2^{O(q)}poly(H,epsilon^(-1)). The full family recovers
 the fully strengthened LP in singly exponential q time, while
 s=2(r-1) gives
 
-$$
+```math
 (q+1)^{O(r)}\mathrm{poly}(H,\epsilon^{-1})
  \tag{X20}
-$$
+```
 
 for the weaker support-restricted LP that already suffices for the
 rank-r factor-four allocation theorem. The latter comparator is
@@ -494,11 +494,11 @@ proof are unchanged.
 
 Use the common rational grid of all v_pj and the upper bound
 
-$$
+```math
 \mathrm{OPT}_{LP}\le
                     \sum_j f_j(P)\max_p v_{pj}.
  \tag{X21}
-$$
+```
 
 Indeed, total expected configuration value is at least rT, while
 the aggregate resource constraints bound it by the displayed sum.

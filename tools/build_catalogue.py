@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 import re
 import sys
+from normalize_math import normalize_markdown
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -189,7 +190,7 @@ def render_readme(data: dict) -> str:
         "and [import provenance](provenance/README.md) retain the applicable "
         "licenses and notices.", "",
     ]
-    return "\n".join(out)
+    return normalize_markdown("\n".join(out))
 
 
 def render_contents(data: dict) -> str:
@@ -240,7 +241,7 @@ def render_contents(data: dict) -> str:
             "- [Randomness contracts](docs/RANDOMNESS.md)",
             "- [Maintenance and validation](CONTRIBUTING.md)",
             "- [Change history](HISTORY.md)", ""]
-    return "\n".join(out)
+    return normalize_markdown("\n".join(out))
 
 
 def main() -> int:
@@ -267,7 +268,7 @@ def main() -> int:
         for record in group["records"]:
             path = ROOT / "problems" / record["id"] / "README.md"
             before = path.read_text(encoding="utf-8")
-            block = "**Randomness**\n\n" + record["randomness"] + "\n\n"
+            block = normalize_markdown("**Randomness**\n\n" + record["randomness"] + "\n\n")
             if re.search(r"(?m)^\*\*Randomness\*\*$", before):
                 after = re.sub(r"(?ms)^\*\*Randomness\*\*\n\n.*?(?=^\*\*Time\*\*$)",
                                lambda _: block, before, count=1)

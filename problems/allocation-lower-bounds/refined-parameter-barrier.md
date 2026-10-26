@@ -4,10 +4,10 @@
 Fix any positive rational eta. Define the heavy threshold using the
 same convention as the near-two algorithms:
 
-$$
+```math
 \theta={\mathrm{OPT}\over2+\eta}.
  \tag{Z1}
-$$
+```
 
 In the arbitrary-player theorem, the parameter is the loop-deleted
 corank of `K=(M* vee N_theta)*`. In the compulsory-player theorem,
@@ -27,12 +27,12 @@ factor two or determine an optimal exponential running-time base.
 Choose an integer r>=2, let q=2r, and let P be a q-element player set.
 For each hidden r-set A, define
 
-$$
+```math
 f_0(S)=\min\{2|S|,2r\}-{\bf1}_{|S|=r},
  \qquad
  f_A(S)=f_0(S)+{\bf1}_{S=A}.
  \tag{Z2}
-$$
+```
 
 These are the same hidden ranks as in
 [A value-oracle barrier below factor two for rank-parameterized allocation](proof.md). Here their relevant
@@ -58,10 +58,10 @@ nonnegative. Thus f_A is an integral polymatroid rank.
 
 Its total rank is 2r. For every S subseteq P,
 
-$$
+```math
 f_A(S)\ge|S|.
  \tag{Z3}
-$$
+```
 
 For |S|<r this follows from 2|S|, for |S|=r from 2r-1>=r, and
 for |S|>r from 2r>=|S|. Hence the all-ones vector on P is already
@@ -70,11 +70,11 @@ on P.
 
 On the other hand, for any r-set I,
 
-$$
+```math
 2\mathbf1_I\in P(f_A)
                                \quad\Longleftrightarrow\quad I=A.
  \tag{Z4}
-$$
+```
 
 If I is not A, its own rank inequality rejects the total 2r because
 f_A(I)=2r-1. If I=A, every subset inequality holds: the requested
@@ -93,11 +93,11 @@ unit is heavy. Equation (Z3) makes its Boolean matroid N_theta free
 on all q players. In particular, M and N_theta have a common basis,
 and their common-independent-set maximum is r. Consequently
 
-$$
+```math
 K=(M^*\vee N_\theta)^*\text{ has rank }0,
                  \qquad c(\theta)=0.
  \tag{Z5}
-$$
+```
 
 Any approximation factor alpha<2 must return a selected M-basis whose
 minimum integer value is at least `2/alpha>1`. Each selected player
@@ -124,10 +124,10 @@ resource alone already admits `1_P` by (Z3), so their aggregate
 Boolean matroid N_theta is free. It has rank q and every player
 is a coloop. The refined parameter is therefore
 
-$$
+```math
 \gamma(\theta)=q-q=0.
  \tag{Z6}
-$$
+```
 
 Suppose an alpha<2 algorithm returns value at least two at every
 player. At most r players receive a large unit, because that
@@ -158,10 +158,10 @@ would have to return the same output for both, but the preceding
 sections show that any alpha<2-valid output identifies a unique hidden
 set. Therefore some promised instance forces at least
 
-$$
+```math
 {2r\choose r}-1
  \tag{Z7}
-$$
+```
 
 queries to the hidden recipient rank oracle.
 

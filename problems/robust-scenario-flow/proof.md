@@ -6,11 +6,11 @@ scenario. Each scenario has its own adaptive routing. All of its
 capacities and all explicitly listed nonnegative routing budgets
 are respected exactly. The deterministic time is
 
-$$
+```math
 \Gamma(1/\epsilon)^c\mathrm{poly}(H),
        \qquad \Gamma(R)=\frac{R^R}{(R-1)^{R-1}},
  \tag{S1}
-$$
+```
 
 with polynomial space and common service at least
 (1-epsilon)OPT. H includes the total explicit scenario description.
@@ -69,11 +69,11 @@ and routing budgets. The single-scenario proof in
 U_omega is bounded, convex and downward closed. It also gives an
 exact polynomial separator returning a globally valid row
 
-$$
+```math
 \sum_{i\in P}a_i z_i\le h,
                          \qquad a_i\ge0,\quad h\ge0,
  \tag{S2}
-$$
+```
 
 of polynomial binary length, whenever the queried z is outside
 U_omega. The row follows from normalized arc-potential Farkas
@@ -81,10 +81,10 @@ certificates, including a nonnegative multiplier for every budget.
 
 The robust service region is exactly
 
-$$
+```math
 U=\bigcap_{\omega\in\Omega}U_\omega.
  \tag{S3}
-$$
+```
 
 It contains zero and is bounded, convex and downward closed. To
 separate a nonnegative query z, check the scenarios in a fixed
@@ -118,12 +118,12 @@ constraints in the total explicit input. It is nonempty at zero.
 A uniform finite upper bound is obtained from any one scenario
 omega_0:
 
-$$
+```math
 V=\max_{i\in P}
           \frac{\sum_{e\text{ out of }s_i^{\omega_0}}u_e^{\omega_0}}
                {d_i^{\omega_0}}.
  \tag{S4}
-$$
+```
 
 For an undirected network, use the sum of incident physical edge
 capacities. Every common rate on a nonempty I is at most V.
@@ -205,13 +205,13 @@ restriction selector is trivial and its corank is exactly c=k.
 Use pairwise distinct terminals s_i,t_i for each i in P and two
 additional vertices x,y. The common directed topology contains
 
-$$
+```math
 s_i\longrightarrow t_i,\qquad
       s_i\longrightarrow x,\qquad
       y\longrightarrow t_i\quad(i\in P),
       \qquad x\longrightarrow y.
  \tag{S5}
-$$
+```
 
 All commodities have demand scale one. There are no routing costs
 or routing budgets. For each S in A create one scenario with
@@ -237,10 +237,10 @@ entire flow on the central bottleneck.
 For a selected set I, routing all selected commodities at unit rate
 is consequently feasible in that scenario exactly when
 
-$$
+```math
 |I\cap S|\le |S|-1.
  \tag{S6}
-$$
+```
 
 Necessity follows from the central capacity. Sufficiency follows
 by using the private arcs outside S and the specified three-arc

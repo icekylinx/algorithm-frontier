@@ -22,38 +22,38 @@ the gradient of its previous version.
 
 ## 1. A route map at a settled state
 
-Let $G=(V,E)$ be the current immediate graph, with an orientation
-for every edge ID, lengths $\ell_e>0$, and gradients $g_e$.
-Let $H\subseteq G$ retain the original labels and provenance of
-its selected edges. For every input edge $e=(u,v)$, let $R(e)$
-be an explicitly oriented walk in $H$ from the CURRENT native
-vertex $u$ to the CURRENT native vertex $v$. Assume
-$$
+Let $`G=(V,E)`$ be the current immediate graph, with an orientation
+for every edge ID, lengths $`\ell_e>0`$, and gradients $`g_e`$.
+Let $`H\subseteq G`$ retain the original labels and provenance of
+its selected edges. For every input edge $`e=(u,v)`$, let $`R(e)`$
+be an explicitly oriented walk in $`H`$ from the CURRENT native
+vertex $`u`$ to the CURRENT native vertex $`v`$. Assume
+```math
 \ell_{\rm raw}(R(e))\leq\delta\ell_e,
                    \qquad \delta\geq1.
  \tag{1}
-$$
+```
 Lengths count every occurrence in a walk. If the routine uses
 length buckets, their fixed within-bucket ratio is included in
-$\delta$.
+$`\delta`$.
 
-Write $B$ for the incidence matrix. Extending $R$ linearly
+Write $`B`$ for the incidence matrix. Extending $`R`$ linearly
 to edge vectors gives
-$$
+```math
 B R(e)=B e.
  \tag{2}
-$$
-Consequently $R(c)$ is a circulation whenever $Bc=0$.
+```
+Consequently $`R(c)`$ is a circulation whenever $`Bc=0`$.
 Define the local correction
-$$
+```math
 d_e=e-R(e).
  \tag{3}
-$$
-It is a circulation in $G$, even when $R(e)$ repeats edges,
-contains $e$, or has been changed by geometric normalization.
+```
+It is a circulation in $`G`$, even when $`R(e)`$ repeats edges,
+contains $`e`$, or has been changed by geometric normalization.
 
 One may keep (3) for every input edge, including selected edges.
-Alternatively, for comparison set $R(e)=e$ on selected edges
+Alternatively, for comparison set $`R(e)=e`$ on selected edges
 and keep corrections only for nonselected edges. Identity routes
 have stretch one. Either convention is valid; it is unnecessary
 to reinterpret a selected edge's physical identity as its
@@ -61,46 +61,46 @@ possibly nonidentity demand route.
 
 ## 2. Exact decomposition and weighted denominator charge
 
-For every circulation $c\in\mathbb R^E$,
-$$
+For every circulation $`c\in\mathbb R^E`$,
+```math
 c=\sum_{e\in E}c_e\bigl(e-R(e)\bigr)+R(c).
  \tag{4}
-$$
+```
 This is an algebraic identity for the CURRENT route table.
 It does not compare gradients of old and new tables. Taking
 the gradient gives the exact equality
-$$
+```math
 g^\top c
                =\sum_e c_e g^\top d_e+g^\top R(c).
  \tag{5}
-$$
+```
 
-Orient each term $c_ed_e$ according to the sign of $c_e$.
+Orient each term $`c_ed_e`$ according to the sign of $`c_e`$.
 Its net weighted norm is at most
-$$
+```math
 |c_e|\bigl(\ell_e+\ell_{\rm raw}(R(e))\bigr).
  \tag{6}
-$$
-The net weighted norm of $R(c)$ is at most
-$\sum_e|c_e|\ell_{\rm raw}(R(e))$. Hence the sum of positive
+```
+The net weighted norm of $`R(c)`$ is at most
+$`\sum_e|c_e|\ell_{\rm raw}(R(e))`$. Hence the sum of positive
 denominator charges in (4) is at most
-$$
+```math
 \begin{aligned}
  &\sum_e|c_e|\bigl(\ell_e+\ell_{\rm raw}(R(e))\bigr)
                   +\sum_e|c_e|\ell_{\rm raw}(R(e))\\
  &\hspace{35mm}\leq(1+2\delta)\sum_e\ell_e|c_e|.
  \end{aligned}
  \tag{7}
-$$
-If $-g^\top c/\|Lc\|_1=\beta>0$, weighted averaging implies
-that either some oriented correction $d_e$ or the circulation
-$R(c)$ in $H$ has negative gradient divided by weighted
+```
+If $`-g^\top c/\|Lc\|_1=\beta>0`$, weighted averaging implies
+that either some oriented correction $`d_e`$ or the circulation
+$`R(c)`$ in $`H`$ has negative gradient divided by weighted
 norm at least
-$$
+```math
 \frac{\beta}{1+2\delta}.
  \tag{8}
-$$
-Thus $3\delta$ is a safe loss.
+```
+Thus $`3\delta`$ is a safe loss.
 
 The proof works for arbitrary comparator circulations and
 arbitrary signed coefficients. It does not assume that the
@@ -136,22 +136,22 @@ if the new route no longer uses it.
 The selected edge itself retains its own input gradient and
 length. Its gradient is not replaced by the sum along the
 normalized walk. Equation (3) therefore retains exactly the
-gradient discrepancy. More explicitly, if an old table $R_0$
-is replaced by $R_1$, then
-$$
+gradient discrepancy. More explicitly, if an old table $`R_0`$
+is replaced by $`R_1`$, then
+```math
 e-R_1(e)=(e-R_0(e))+(R_0(e)-R_1(e)).
  \tag{9}
-$$
+```
 The circulation erased by normalization is included in the new
 correction. It need not be retained as an additional independent
 candidate.
 
-For example, let $e=uv$ have an old route $u,a,v$, and suppose
-both projected anchors are $a$. The preliminary projected loop
-is $a,u,e,v,a$, which may normalize to the empty route at $a$.
-Restoring the exterior prefixes gives $R_{\rm new}(e)=(u,a,v)$.
+For example, let $`e=uv`$ have an old route $`u,a,v`$, and suppose
+both projected anchors are $`a`$. The preliminary projected loop
+is $`a,u,e,v,a`$, which may normalize to the empty route at $`a`$.
+Restoring the exterior prefixes gives $`R_{\rm new}(e)=(u,a,v)`$.
 The local correction is still the complete triangle
-$e-(u,a,v)$, with its exact possibly nonzero gradient.
+$`e-(u,a,v)`$, with its exact possibly nonzero gradient.
 
 ## 4. The immediate-identity requirement
 
@@ -162,16 +162,16 @@ Likewise local coefficient cancellation uses actual immediate
 edge IDs, preserving distinct parallel IDs.
 
 This is essential for frozen-gauge aliases. Consider distinct
-native vertices $a_i$, $\mathrm{star}(a)$, and $a_j$
-which all map to the same physical root $a$. The open path
-$$
+native vertices $`a_i`$, $`\mathrm{star}(a)`$, and $`a_j`$
+which all map to the same physical root $`a`$. The open path
+```math
 a_i\longrightarrow\mathrm{star}(a)
                               \longrightarrow a_j
  \tag{10}
-$$
+```
 has no physical traversal, but its native boundary is
-$a_j-a_i$, not zero. With frozen potentials $p_i,p_j$,
-its stored gradient can be $p_i(a)-p_j(a)\ne0$.
+$`a_j-a_i`$, not zero. With frozen potentials $`p_i,p_j`$,
+its stored gradient can be $`p_i(a)-p_j(a)\ne0`$.
 Erasing it merely because its physical images coincide would
 break (2) and the gradient identities.
 
@@ -192,36 +192,36 @@ normalized demand routes do not change the parent graph,
 ASZ paths, stable core forests, or their fixed stretch labels.
 Apply (4)--(8) to the resulting current core circulation.
 The established vertex-stage loss is followed by the edge-stage
-loss $3\delta$, exactly as in the existing hierarchy proof.
+loss $`3\delta`$, exactly as in the existing hierarchy proof.
 
-For a parent edge $e=(u,v)$ and a stable forest $F_i$, the
+For a parent edge $`e=(u,v)`$ and a stable forest $`F_i`$, the
 frozen potential satisfies
-$$
+```math
 g(f)+p_i(\mathrm{tail}f)
                          -p_i(\mathrm{head}f)=0
                  \quad(f\in F_i).
  \tag{11}
-$$
+```
 The native core label is
-$g_i(e)=g(e)+p_i(u)-p_i(v)$. If its current roots are
-$a=r_i(u)$, $b=r_i(v)$, the selected child record has
-$$
+$`g_i(e)=g(e)+p_i(u)-p_i(v)`$. If its current roots are
+$`a=r_i(u)`$, $`b=r_i(v)`$, the selected child record has
+```math
 \widehat g_i(e)
                 =g_i(e)-p_i(a)+p_i(b).
  \tag{12}
-$$
+```
 This is exactly the gradient of
-$$
+```math
 F_i[a,u]\oplus e\oplus F_i[v,b].
  \tag{13}
-$$
+```
 For a same-root edge, cancel its common forest leg inside that
 one tree and use the simple fundamental cycle. Its stored core
 length dominates the raw length of this representation.
 
 Equations (11)--(13) depend on the selected edge's original
 parent edge lifetime, forest index, and root IDs. They do not
-depend on a demand route $R(f)$. Normalization therefore
+depend on a demand route $`R(f)`$. Normalization therefore
 does not modify a child edge label, physical provenance, or
 root-pool map. The zero-alias potential adjustment makes the
 star gradients zero before contraction while preserving
@@ -281,11 +281,11 @@ Dormant copies and all signed/absolute counter transfers retain
 the existing numerical lifetime discipline.
 
 The normalized projected recurrence bounds current route
-length and congestion by $\Gamma^{O(K)}$ and
-$k\mathrm{poly}(U)\Gamma^{O(K)}$, respectively.
+length and congestion by $`\Gamma^{O(K)}`$ and
+$`k\mathrm{poly}(U)\Gamma^{O(K)}`$, respectively.
 The inverse-list scans, explicit local correction decomposition,
 and optional physical expansion therefore fit the same local
-$k^{O(1)}F^{O(1)}\Gamma^{O(K)}\mathrm{poly}(U)$
+$`k^{O(1)}F^{O(1)}\Gamma^{O(K)}\mathrm{poly}(U)`$
 work envelope. They do not create a demand-specific exported
 forest or a new recursive selected edge. The smaller selected
 transcript still depends only on original selected core IDs and

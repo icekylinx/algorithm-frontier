@@ -27,11 +27,11 @@ the same in every scenario, and C_omega>=0 the scenario budget.
 Select one actual M-basis I. Scenario allocations x^omega may
 differ, but all budgets must satisfy
 
-$$
+```math
 \sigma(I)+\sum_{p\in I,j}a_{\omega,p,j}x^\omega_j(p)
                    \le C_\omega\qquad(\omega\in\Omega).
 \tag{RA1}
-$$
+```
 
 The objective is the minimum utility over all pairs (omega,p)
 with p in I. Let OPT be its integer optimum. Define FOPT by
@@ -42,12 +42,12 @@ with the scenario.
 
 Put
 
-$$
+```math
 u_{\omega,p}=\max\bigl(\{v_{\omega,p,j}:
                       f_{\omega,j}(\{p\})\ge1\}\cup\{0\}\bigr),
  \qquad u=\max_{\omega,p}u_{\omega,p}.
 \tag{RA2}
-$$
+```
 
 Only original zero-singleton coordinates are irrelevant to this
 maximum. A positive-cost pair is not removed just because one
@@ -58,38 +58,38 @@ work.
 
 For 0<epsilon<1 set
 
-$$
+```math
 R=1/\varepsilon,\quad \alpha=1-\varepsilon,\quad
  A=\Gamma(R)=\frac{R^R}{(R-1)^{R-1}},\quad\beta=2-1/A.
 \tag{RA3}
-$$
+```
 
 **Theorem RA.** Feasibility of the original zero-utility problem
 is decidable in polynomial time. On every feasible instance, a
 deterministic algorithm returns one actual M-basis I and explicit
 integer scenario allocations satisfying RA1 exactly, with
 
-$$
+```math
 \sum_jv_{\omega,p,j}x^\omega_j(p)
       \ge \max\{0,\alpha\mathrm{FOPT}-u_{\omega,p}\}
                    \qquad(\omega\in\Omega,\ p\in I).
 \tag{RA4}
-$$
+```
 
 It uses polynomial workspace and either time
 
-$$
+```math
 A^c\mathrm{poly}(H)
 \tag{RA5}
-$$
+```
 
 or, for fixed rational epsilon, time
 
-$$
+```math
 \beta^q\,
   2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
 \tag{RA6}
-$$
+```
 
 The polynomial factors include accuracy and rational-query encoding.
 For varying binary accuracy, the global construction may use the
@@ -106,10 +106,10 @@ of scenarios affects H, not the exponential parameter.
 Compute a minimum-sigma M-basis I_0 by weighted matroid optimization.
 Write h_0=sigma(I_0). A feasible common basis exists if and only if
 
-$$
+```math
 h_0\le\min_\omega C_\omega.
 \tag{RA7}
-$$
+```
 
 Necessity follows because every basis costs at least h_0 and real
 assignment costs are nonnegative. Sufficiency follows by assigning
@@ -128,7 +128,7 @@ zero allocations is already sufficient.
 
 For a residual budget B>=0, let
 
-$$
+```math
 \begin{split}
  U_{\omega,B}=\{z\ge0:\ &\exists x_j\in P(f_{\omega,j}),\quad
              \sum_{p,j}a_{\omega,p,j}x_j(p)\le B,\\
@@ -136,7 +136,7 @@ $$
                                       \quad(p\in P)\}.
  \end{split}
 \tag{RA8}
-$$
+```
 
 This is a compact convex downward region containing zero. It is
 monotone in B. Exact membership and polynomial-bit reconstruction
@@ -147,10 +147,10 @@ optimize the support for a>=0 using the scenario's resource and
 cost LP, then optimize a normalized support-gap problem with
 a(P)=1. If a query is outside U_(omega,B), this returns
 
-$$
+```math
 a\cdot z'\le w,\qquad a\ge0,\quad w\ge0,
 \tag{RA9}
-$$
+```
 
 strictly violated by the query. If the exact support gap is
 nonpositive, reconstruct a fractional allocation for the query.
@@ -174,18 +174,18 @@ At a node with allowed player set Q, compute an actual minimum-
 sigma M-basis I_Q contained in Q, or reject if M restricted to Q
 has rank less than r. Put
 
-$$
+```math
 h(Q)=\sigma(I_Q).
 \tag{RA10}
-$$
+```
 
 Reject if h(Q)>C_omega for any scenario. Otherwise define
 
-$$
+```math
 U_Q=\bigcap_{\omega\in\Omega}
                            U_{\omega,C_\omega-h(Q)}.
 \tag{RA11}
-$$
+```
 
 Membership is tested in all scenarios. If one rejects, its row
 RA9 is a valid separating row for U_Q. If all accept, retain or
@@ -210,27 +210,27 @@ Fix a genuine common basis I* and fractional scenario allocations
 providing full service t and satisfying RA1. Suppose I* is still
 contained in Q. Minimum setup gives
 
-$$
+```math
 h(Q)\le\sigma(I^*),\qquad
              C_\omega-h(Q)\ge C_\omega-\sigma(I^*)\ge0.
 \tag{RA12}
-$$
+```
 
 The original scenario allocation for I* is therefore feasible in
 every current residual region. Hence
 
-$$
+```math
 t\,1_{I^*}\in U_Q.
 \tag{RA13}
-$$
+```
 
 If b*1_Q violates a returned row a*z<=w, then
 
-$$
+```math
 t\,a(I^*)\le w<b\,a(Q),\qquad
         a(Q\setminus I^*)>\varepsilon a(Q)=a(Q)/R.
 \tag{RA14}
-$$
+```
 
 The weighted first-crossing enumeration supplies a deletion
 certificate wholly inside Q\\I*. Delete those players and repeat.
@@ -257,10 +257,10 @@ The deficit at Q is d=|Q|-r. The first-crossing certificate family
 has the same Kraft-type inequality and deterministic enumeration
 bound as in [Single-exponential corank time for weighted packing through first-violation prefixes](../whole-ground-allocation/selection.md):
 
-$$
+```math
 \sum_D\Gamma(R)^{-|D|}\le1.
 \tag{RA15}
-$$
+```
 
 All rank tests, minimum-setup computations, scenario separators,
 failed candidates and reconstruction work have a uniform polynomial
@@ -282,7 +282,7 @@ Let F be the fixed nonempty family of M-bases I satisfying
 sigma(I)<=min_omega C_omega. For any specified I in F, optimize
 the exact LP
 
-$$
+```math
 \begin{array}{ll}
  \text{maximize}&\lambda,\\
  \text{subject to}&x^\omega_j\in P(f_{\omega,j})\quad(\omega,j),\\
@@ -294,15 +294,15 @@ $$
  &0\le\lambda\le V,
  \end{array}
 \tag{RA16}
-$$
+```
 
 where
 
-$$
+```math
 V=\min_\omega\sum_j
                      (\max_p v_{\omega,p,j})f_{\omega,j}(P).
 \tag{RA17}
-$$
+```
 
 The LP is bounded and nonempty, since zero counts are feasible.
 Its optimum lambda_I is computable in polynomial oracle time,
@@ -325,10 +325,10 @@ After rowwise denominator clearing, entries are bounded by
 W=2^((n+2)L). A safe denominator bound for every optimum lambda_I
 is
 
-$$
+```math
 D=n!W^n.
 \tag{RA18}
-$$
+```
 
 It has polynomial bit length; exponentially many rank rows do not
 change the number of active rows needed at a vertex. Zero-fixed
@@ -343,10 +343,10 @@ At adjacent endpoints the saved lower target is greater than
 FOPT-delta. Reoptimize RA16 on the saved basis. Rational separation
 of denominators at most D then gives
 
-$$
+```math
 \lambda_I\ge\alpha\mathrm{FOPT}.
 \tag{RA19}
-$$
+```
 
 The number of calls and all query encodings are polynomial in H
 and the accuracy encoding. In particular, no positive fractional
@@ -364,11 +364,11 @@ polymatroid-intersection face. Maximizing the scenario's cost on
 the complement face returns original integer assignments of no
 greater cost and utility at least
 
-$$
+```math
 \lambda_I-u_{\omega,p}
                                            \quad(p\in I).
 \tag{RA20}
-$$
+```
 
 Discard disposal and all real counts outside I. Nonnegative
 original costs make that safe; selected utilities do not change.

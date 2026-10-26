@@ -32,34 +32,34 @@ After coalescing multiple IDs from one origin within one group, the
 lemma in [decremental-choice-recourse-lemma.md](decremental-choice-recourse-lemma.md) applies directly. It
 maintains one representative per live group with prefix recourse
 
-$$
+```math
 O((M\log R+Q)\log(M+2)),
  \tag{1}
-$$
+```
 
-where $M$ is the initial group count, $R$ the origin universe,
-and $Q$ the number of origin touches in the prefix. A disappeared
+where $`M`$ is the initial group count, $`R`$ the origin universe,
+and $`Q`$ the number of origin touches in the prefix. A disappeared
 representative can remain a live native edge elsewhere; its departure
 from this selected role is still counted.
 
-This is useful when $M$ is already at the permitted sparse-child
+This is useful when $`M`$ is already at the permitted sparse-child
 scale. It is not permissible to create one group per original demand
-and then call $M$ a sparse credit. It is also not permissible to
+and then call $`M`$ a sparse credit. It is also not permissible to
 ignore the new endpoint pairs created by an origin touch.
 
 ## 2. Discovery work is a separate bound
 
-Let $I$ be the initial group--origin incidence inventory. The
+Let $`I`$ be the initial group--origin incidence inventory. The
 dyadic loads and capacity changes in the one-resource lemma take
-$\widetilde O(I)$ bookkeeping time. Its short alternating path
-has $O(\log M)$ changes, but a naive search can examine all
-$I$ incidences. The direct implementation therefore has only the
+$`\widetilde O(I)`$ bookkeeping time. Its short alternating path
+has $`O(\log M)`$ changes, but a naive search can examine all
+$`I`$ incidences. The direct implementation therefore has only the
 conservative total bound
 
-$$
+```math
 \widetilde O\bigl(I(1+M\log R+Q)\bigr),
  \tag{2}
-$$
+```
 
 besides the already bounded representative changes. Formula (2) is
 not a useful near-linear router bound in general.
@@ -79,104 +79,104 @@ congestion.
 
 ### 3.1 A legal short initial route table
 
-Let $n=2^b$. Use a $b$-dimensional hypercube with vertices
-$x_1,\ldots,x_n$. Attach a row terminal $w_i$ and a column
-terminal $a_i$ to $x_i$. Add a further vertex $z$, together
-with the edges $zw_i$ and $za_i$, for every $i$.
+Let $`n=2^b`$. Use a $`b`$-dimensional hypercube with vertices
+$`x_1,\ldots,x_n`$. Attach a row terminal $`w_i`$ and a column
+terminal $`a_i`$ to $`x_i`$. Add a further vertex $`z`$, together
+with the edges $`zw_i`$ and $`za_i`$, for every $`i`$.
 These edges and the hypercube form the initial selected base.
 
 Add all native demand edges
 
-$$
+```math
 e_{ij}=w_i a_j,
                   \qquad i,j\in[n].
  \tag{3}
-$$
+```
 
 The native graph is simple and loopless. The base has
-$O(n\log n)$ edges, the native graph has $\Theta(n^2)$
-edges, and its maximum native degree is at most $2n+O(\log n)$.
+$`O(n\log n)`$ edges, the native graph has $`\Theta(n^2)`$
+edges, and its maximum native degree is at most $`2n+O(\log n)`$.
 
-For $i\ne j$, route $e_{ij}$ through
-$w_i,x_i$, then the hypercube path fixing differing coordinates
-in a fixed order, and finally $x_j,a_j$. For $i=j$, instead
+For $`i\ne j`$, route $`e_{ij}`$ through
+$`w_i,x_i`$, then the hypercube path fixing differing coordinates
+in a fixed order, and finally $`x_j,a_j`$. For $`i=j`$, instead
 use the route
 
-$$
+```math
 w_i-z-a_i.
  \tag{4}
-$$
+```
 
 Base edges use their identity routes. Every route has length at most
-$b+2$. Every row or column terminal appears only at a route's
-endpoint. At any fixed coordinate stage, at most $n$ ordered
+$`b+2`$. Every row or column terminal appears only at a route's
+endpoint. At any fixed coordinate stage, at most $`n`$ ordered
 pairs have a specified hypercube vertex as their current position:
 the already fixed coordinates specify destination bits, and the
 remaining coordinates specify source bits. Summing over stages shows
 that every hypercube vertex has occurrence congestion
-$O(n\log n)$. The vertex $z$ is used by just the $n$
+$`O(n\log n)`$. The vertex $`z`$ is used by just the $`n`$
 diagonal demand routes, plus its identity base-edge routes.
 
 Thus the initial table has
 
-$$
+```math
 \Lambda=O(\log n),\qquad C_0=O(n\log n),\qquad
  \Delta=O(n).
  \tag{5}
-$$
+```
 
-For example, $k=\Theta(n)$ and $\Gamma=\Theta(\log n)$
-fit the intended scales $C_0\leq k\Gamma$ and
-$|E(\text{base})|=O((m/k)\Gamma)$.
+For example, $`k=\Theta(n)`$ and $`\Gamma=\Theta(\log n)`$
+fit the intended scales $`C_0\leq k\Gamma`$ and
+$`|E(\text{base})|=O((m/k)\Gamma)`$.
 
 ### 3.2 Native splits create the parallel groups
 
 For each column terminal, make an actual native split
 
-$$
+```math
 a_j\longmapsto a_j^B,a_j^D.
-$$
+```
 
-Its two base incidences stay at $a_j^B$; all demand edges move
-to $a_j^D$. Both descendants are touched. No other column
+Its two base incidences stay at $`a_j^B`$; all demand edges move
+to $`a_j^D`$. Both descendants are touched. No other column
 terminal was internal to an initial demand route. Consequently every
-$e_{ij}$ has projected endpoints
+$`e_{ij}`$ has projected endpoints
 
-$$
+```math
 a_j^B,a_j^D.
  \tag{6}
-$$
+```
 
-There are exactly $n$ parallel groups, each with $n$ row-origin
+There are exactly $`n`$ parallel groups, each with $`n`$ row-origin
 options. This is the old-bundle configuration from Section 1, obtained
 from a low-congestion route table rather than from a congested star.
 
 ### 3.3 A balanced assignment with large physical congestion
 
-Choose the representative of group $j$ to be $e_{jj}$.
+Choose the representative of group $`j`$ to be $`e_{jj}`$.
 Every row origin is selected exactly once. With uniform options the
 one-resource fractional load of each origin is one, so this choice
 even satisfies capacities two.
 
 The preliminary current physical image of this representative is
 
-$$
+```math
 a_j^B-z-w_j-a_j^D,
  \tag{7}
-$$
+```
 
-where the last edge is the selected native central ID $e_{jj}$.
-Represent every projected edge of group $j$ by that representative.
-Each of the $n$ original demands in the group then traverses (7),
+where the last edge is the selected native central ID $`e_{jj}`$.
+Represent every projected edge of group $`j`$ by that representative.
+Each of the $`n`$ original demands in the group then traverses (7),
 in addition to its own exterior initial prefix. For every off-diagonal
-demand the exterior prefix avoids $z$, so at least $n(n-1)$
-current demand routes genuinely use $z$. Cancellation or deleting
+demand the exterior prefix avoids $`z`$, so at least $`n(n-1)`$
+current demand routes genuinely use $`z`$. Cancellation or deleting
 the diagonal routes does not remove this count.
 
-The selected support has only $n$ central IDs, and its origin
+The selected support has only $`n`$ central IDs, and its origin
 loads are perfectly balanced. Its ambient vertex-occurrence
-congestion is nevertheless $\Omega(n^2)$, rather than the
-$k\mathrm{polylog}n$ scale of (5).
+congestion is nevertheless $`\Omega(n^2)`$, rather than the
+$`k\mathrm{polylog}n`$ scale of (5).
 
 This is not a lower bound against all possible representative choices:
 other choices can avoid the diagonal paths. It proves that the
@@ -192,7 +192,7 @@ Fine--Kaplan--Stemmer,
 already consider a group choosing one hyperedge of resources; deleting
 any resource invalidates every option containing it. Their randomized
 resampling algorithm has adaptive recourse
-$O((M+Q)\log N)$ and deletion time $O(\Delta\log N)$,
+$`O((M+Q)\log N)`$ and deletion time $`O(\Delta\log N)`$,
 under the stated lower bound on option probabilities. This closely
 matches the multiple-resource choice shape, but supplies neither a
 deterministic implementation nor a prescribed instantaneous ambient

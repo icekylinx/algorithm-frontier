@@ -62,10 +62,10 @@ normalized local repair.
 For every nonbase owner restore maximum degree three at its child.
 With the global upper bounds
 
-$$
+```math
 g_0=C U^{2/3}h,\qquad
  q=C(U/K+g_0+h),\qquad P=e^q,
-$$
+```
 
 Theorem 3.1 provides at most `P` child edits per owner edit,
 `O(PM/k)` initial child inventory for owner size `M`, local work
@@ -79,27 +79,27 @@ As `x>>q`, the nominal logarithmic size decreases by
 `x-O(q)` per level. Thus the full hierarchy has
 `d=O(U/x)` levels. Its total initialization/update ledger gives
 
-$$
+```math
 B_{\rm public}=O(x+K^2g_0+dq),\qquad
  a_{\rm public}=O(dKg_0+dh).
-$$
+```
 
 Take
 
-$$
+```math
 x=C_xU^{59/63},\qquad
  K=\lfloor U^{8/63}\rfloor,\qquad
  d=O(U^{4/63}).
-$$
+```
 
 Then `q=O(U^(55/63))`, while `g_0` and its logarithmic factors
 are smaller. The individual close terms are
 
-$$
+```math
 dq=O(U^{59/63}),\quad
  K^2g_0=O(U^{58/63}h)=o(U^{59/63}),\quad
  dKg_0=O(U^{54/63}h)=O(U^{6/7}h).
-$$
+```
 
 The hidden metric constants only change the absolute constant in the
 last `O` bound. A constant factor at every degree reduction adds
@@ -111,12 +111,12 @@ assertion that the numerical hidden stretch constant is identical.
 
 Terminate at `log M<=x`. At every nonbase owner,
 
-$$
+```math
 \frac{K\log\log M}{(\log M)^{1/6}}
  \le O\left(
  U^{8/63-59/378}h\right)
  =O(U^{-11/378}h)=o(1).
-$$
+```
 
 Therefore the actual-size local range in KMG Theorem 3.1 holds all
 the way to the base. Its exact base costs `exp O(x)` per edit and
@@ -152,22 +152,22 @@ update exponent larger than every `U^b` for fixed `b<1`.
 Theorem 4.7 and its Section 4.4 recursion give, for global shrink
 `k=e^x`, depth allowance `D`, and repair parameter `K`,
 
-$$
+```math
 \log\gamma_{RC}=O(U/K+h),
-$$
+```
 
-$$
+```math
 B_{\rm KMZ}=O\left(x+D^2(U/K+h)+K^2a+h\right),
  \tag{K1}
-$$
+```
 
 where `a` is a common upper bound on the logarithm of all recursive
 distance approximation factors. Its approximation recurrence is
 
-$$
+```math
 a\le C h(CK)^{D}.
  \tag{K2}
-$$
+```
 
 The quadratic depth charge in (K1) retains the original growing-degree
 analysis; no checkpoint degree-reset improvement is needed. Constant
@@ -177,36 +177,36 @@ already covered logarithmic terms.
 Choose a sufficiently small fixed `eta>0` and a sufficiently large
 fixed `C_x`, and put
 
-$$
+```math
 D=\left\lfloor\eta h/\log(h+4)\right\rfloor,
  \qquad K=D^3,\qquad x=C_x U/D.
-$$
+```
 
 The source shrink condition
 `D log gamma_RC=o(x)` holds. With these choices, the actual depth is
 at most `D` for all sufficiently large `N`. Also,
 
-$$
+```math
 \log\bigl(h(CK)^D\bigr)
  =3\eta h+o(h).
-$$
+```
 
 For any fixed desired `0<a_0<1`, choose `eta<a_0/4`. Then the
 approximation log bound can be made at most `U^(a_0)` for all
 sufficiently large `N`. Moreover,
 
-$$
+```math
 D^2 U/K=U/D,
  \qquad K^2U^{a_0}=o(U/D),
  \qquad D^2h=o(U/D).
-$$
+```
 
 Consequently this original public recursion certifies
 
-$$
+```math
 \boxed{\quad B_{\rm KMZ}=O(U\log(h+4)/h),\qquad
                  \log\gamma\le U^{a_0},\quad}
-$$
+```
 
 with `O(D)` numerical query steps and amortized updates. Its local
 restriction `K=O((log n_local)^(1/3))` holds above the exact base:
@@ -266,9 +266,9 @@ initialization costs at most `N exp O(B(log N))` and is charged to
 the preceding completed block of `N` operations. Hence the whole
 history has total cost
 
-$$
+```math
 (\text{initial inventory}+Q)\exp O(B(\log N)),
-$$
+```
 
 up to changing absolute constants. Restarting is a deterministic
 reversible maintenance operation; it does not restrict how the

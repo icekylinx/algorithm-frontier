@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 import re
 import sys
+from normalize_math import normalize_markdown
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,7 +25,7 @@ def status_paragraph(record: dict) -> str:
         parts.append('**Conditions and remaining work.** ' + ' '.join(review['conditions']))
     parts.append('The [verification note](verify/README.md) identifies executable coverage. '
                  'This status does not claim external peer review or proof-assistant verification.')
-    return '\n\n'.join(parts)
+    return normalize_markdown('\n\n'.join(parts))
 
 
 def render_registry(data: dict, catalogue: dict) -> str:
@@ -90,7 +91,7 @@ def render_registry(data: dict, catalogue: dict) -> str:
             'dependency requires a new scope assessment.', '',
             'See [Contributing](../CONTRIBUTING.md) for the manuscript workflow and '
             '[provenance](../provenance/README.md) for imported source identities.', '']
-    return '\n'.join(out)
+    return normalize_markdown('\n'.join(out))
 
 
 def main() -> int:

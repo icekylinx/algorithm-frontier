@@ -41,9 +41,9 @@ Its denominator `V` sums the physical lengths of **all traversals before
 cancellation**. If the maximum absolute circulation ratio is `OPT>0`,
 the returned object has `V>0` and
 
-$$
+```math
 |\gamma^T c|/V\geq \mathrm{OPT}/R.                 \tag{1}
-$$
+```
 
 The actual oriented numerator is computed from the same retained edge
 lifetimes. Only physically empty images are null. A real loop or an edge
@@ -56,10 +56,10 @@ numerical master to `S=N^C` for one sufficiently large fixed integer `C`.
 All exponents below are fixed once the input weight envelope and primitive
 constants are fixed. This change preserves
 
-$$
+```math
 \exp O\bigl((\log S)^{4/5}(\log\log S)^{1/5}\bigr)
  =\exp O\bigl(U^{4/5}(\log(U+4))^{1/5}\bigr).
-$$
+```
 
 No local detector is padded to size `N` or `S`; these are precision and
 parameter masters. Work and inventory still scale with its actual local
@@ -69,9 +69,9 @@ allowance `M`.
 
 For every logical coordinate use the existing representation
 
-$$
+```math
 f_e=\mathrm{base}_e+\sum_{q\mapsto e}h_q.       \tag{2}
-$$
+```
 
 The sum includes every live and dormant occurrence. The registers `h_q`
 are maintained by signed path additions; independent absolute-motion
@@ -104,24 +104,24 @@ Use the notation of the detector: its gap is `r=P-(1-alpha)F>0`, its
 gradient is `g=AM c_cost/r-w`, and `w` is the positive magnitude of the
 derivative of the coordinate barrier. Let
 
-$$
+```math
 \beta=1/(256R),\qquad \xi=\beta/10^5.
-$$
+```
 
 Increasing the fixed envelope to a power of two makes this numerical
 choice dyadic. Maintain an anchor `rhat` and coordinate anchors such that
 
-$$
+```math
 |r/rhat-1|\leq\xi,\qquad
  |what_e/w_e-1|\leq\xi.                              \tag{3}
-$$
+```
 
 At the anchors define `ghat=AM c_cost/rhat-what`. If `kappa=r/rhat`,
 then the cost terms cancel exactly:
 
-$$
+```math
 \widehat g-\kappa g=\kappa w-\widehat w.             \tag{4}
-$$
+```
 
 Thus `|ghat-kappa g|<=2 xi w`, regardless of the magnitude or cancellation
 of the individual cost-gradient terms. This is why an additive
@@ -129,10 +129,10 @@ coordinate bound on `g` relative to `w` is unnecessary.
 
 For a coordinate anchor it suffices to maintain
 
-$$
+```math
 \widehat w_e |f_e-\widehat f_e|
  \leq \xi/(C(p+1)),                                 \tag{5}
-$$
+```
 
 for a large absolute `C`. For the ordinary logarithm this is stronger
 than necessary. For the auxiliary branch below one,
@@ -150,16 +150,16 @@ The detector's potential and slack guards imply polynomial bounds in `N`
 on `w`, `1/w`, `|g|`, coordinate values, and `1/r`. Fix one common scale
 `H=N^C_H`, large enough that for all logical edges
 
-$$
+```math
 H w_e\geq N^3/\beta
-$$
+```
 
 and that rounding errors are below `xi w_e`. Export
 
-$$
+```math
 \ell_e=\lceil H\widehat w_e\rceil,\qquad
  \gamma_e=\mathrm{round}(H\widehat g_e).          \tag{6}
-$$
+```
 
 The integers have `O(U)` bits. The degree-three lift replaces each logical
 vertex by a private path of ports, with length-one, zero-gradient
@@ -167,9 +167,9 @@ connectors. A logical circulation `d` lifts by routing its incidence
 imbalances along the paths. If there are `P_0=O(M)` port records, its
 connector length is at most
 
-$$
+```math
 2P_0\sum_e|d_e|.                                    \tag{7}
-$$
+```
 
 The scale choice makes (7) negligible relative to `H sum w_e|d_e|`.
 Thus if the true logical circulation ratio is at most `-1/4`, the
@@ -181,9 +181,9 @@ answer, and uses the full connector cost of that direction.
 Orient a raw answer so that `T=-gamma^T c>=0`. Return LOW only if the
 backend supplies no positive certificate or its valid certificate has
 
-$$
+```math
 T/V<1/(16R).                                        \tag{8}
-$$
+```
 
 Equation (1) and the preceding `1/5` comparison prove that (8) is
 impossible if any true logical circulation has ratio at most `-1/4`.
@@ -194,17 +194,17 @@ invalid representation is never interpreted as LOW.
 For an accepted answer, (4)--(6), cancellation only in signed sums,
 and the raw length bound give
 
-$$
+```math
 -g^T c\geq 7\beta V/H.                              \tag{9}
-$$
+```
 
 The true weighted absolute motion of the full raw traversal list is
 at most `2V/H`. Define the certified raw denominator for the numerical
 step to be
 
-$$
+```math
 R_{\rm raw}=2V/H.
-$$
+```
 
 Then (9) implies `g^T c<=-3 beta R_raw`. In particular it supplies the
 weaker `-beta R_raw` descent guarantee used in the detector. There is
@@ -214,10 +214,10 @@ no reliance on the norm of the projected circulation after cancellation.
 
 Choose a power of two `eta` by integer comparisons so that
 
-$$
+```math
 \frac{\beta}{C_1p}\leq\eta R_{\rm raw}
  \leq\frac{2\beta}{C_1p}.                            \tag{10}
-$$
+```
 
 Such a power of two always exists. The output contains unit signed
 pieces, so `eta c` is an exact common-grid circulation. Every partial
@@ -280,9 +280,9 @@ ports for a retained edge identity.
 
 The detector proves a total of
 
-$$
+```math
 T=O(Mp\beta^{-2}U)
-$$
+```
 
 accepted steps. Their total raw weighted motion is `O(T beta/p)`.
 Use the old absolute-drift scheme with per-copy threshold smaller than
@@ -298,10 +298,10 @@ lifetime contract.
 
 Full repricing is also bounded. For an accepted negative-gradient step,
 
-$$
+```math
 AM\,\Delta r/r=g^T h+w^T h\leq\|Wh\|_1
                   =O(\beta/p).
-$$
+```
 
 Positive logarithmic gap variation due to numerical steps is at most
 `O(T beta/(Mp))`; auxiliary births add `O(U)`. Since the gap remains
@@ -313,9 +313,9 @@ logical coordinates, with its actual occurrence work included.
 
 The entire detector lifetime therefore costs
 
-$$
+```math
 M R^{O(1)}\mathrm{poly}(U).                    \tag{11}
-$$
+```
 
 This factor is computational work. It is not included in `AM` and is
 not multiplied into the potential charge for a retired barrier. The

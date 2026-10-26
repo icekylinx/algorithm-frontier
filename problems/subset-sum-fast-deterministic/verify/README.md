@@ -23,17 +23,17 @@ those arguments are given in the [proof](../proof.md).
 Let `Q=2^128` and `D=10^14`. For a positive rational `x`, the checker finds
 integers `k` and a rational `v` with `x=2^k v` and `1<=v<2`. With
 
-$$
+```math
 q=\frac{v-1}{v+1}\in[0,1/3],
 \qquad
 \ln v=2\sum_{j=0}^{31}\frac{q^{2j+1}}{2j+1}+R,
-$$
+```
 
 the tail satisfies
 
-$$
+```math
 0\le R\le\frac{2q^{65}}{65(1-q^2)}.
-$$
+```
 
 Every power, product and division in this calculation uses integer floors
 and ceilings on the `1/Q` grid. The same calculation encloses `ln 2`.
@@ -41,15 +41,15 @@ Since `ln v>=0` and `ln 2>0`, division by the opposite positive endpoint
 gives a valid enclosure for `log_2 v`. Adding `k` exactly and rounding
 outward yields integers `l,u` such that
 
-$$
+```math
 l/D\le\log_2x\le u/D.
-$$
+```
 
 For `0<=y<=c`, entropy lower bounds use
 
-$$
+```math
 H(c,y)=-y\log_2(y/c)-(c-y)\log_2((c-y)/c),
-$$
+```
 
 with continuous endpoint value zero. Taking the upper logarithm endpoints
 therefore gives a rational lower entropy bound. No floating-point logarithm
@@ -60,18 +60,18 @@ can accept a comparison.
 The fixed types are `a=.065`, `b=.075`, `s=.14`, `t=.45`. Write
 `beta=a+rho(m-a)` and `c=gamma beta`. The direct branch begins with
 
-$$
+```math
 m\in[a,s],\qquad z\in[a,\beta(s)],
-$$
+```
 
 and enforces the necessary inequalities `z>=m`, `z<=beta`.
 
 For the push branch, eliminating the first color from
 
-$$
+```math
 \max\{\beta-z,c-m,0\}\le w_1
 \le\min\{\beta-m,c/2\}
-$$
+```
 
 adds the necessary inequalities `m>=c/2` and `z>=beta-c/2`.
 The eliminated color is bounded in the acceptance calculation, rather than
@@ -80,13 +80,13 @@ sampled.
 For the recursive branch, let `v=w_1-c/2`. The initial interval
 `v in [0,c(s)/2]` contains the full feasible range. The checker enforces
 
-$$
+```math
 v\ge0,\qquad
 v\ge\beta-z-c/2,\qquad
 v\ge c/2-m,\qquad
 v\le c/2,\qquad
 v\le\beta-m-c/2.
-$$
+```
 
 All these restrictions are affine in `(m,z,v)`. For a constraint
 `a_0+sum_i a_i x_i>=0`, compute its maximum on the current rational box
@@ -107,9 +107,9 @@ covers the original continuous domain, including all boundary points.
 
 For every rational `p in (0,1)`, the Gibbs inequality gives
 
-$$
+```math
 H(c,y)\le-y\log_2p-(c-y)\log_2(1-p).
-$$
+```
 
 The checker proposes `p` as a multiple of `10^-12`, clamped to
 `[10^-9,1-10^-9]`, and uses the exact outward logarithm bounds above.
@@ -164,9 +164,9 @@ endpoint comparisons for the quadratic compensation inequality. It also
 checks the refined type constraints, the initial difference-table size,
 the fixed compiler grid, and all outer operation costs at
 
-$$
+```math
 E=\frac{158153814247997}{318928754919134}.
-$$
+```
 
 The reflected contact budget is `S=.4111243`, and the compiler allowance
 is `10^-8` on a fixed core-fraction grid of size `10000`. These smaller
@@ -192,9 +192,9 @@ of all 44 branches: 188,227 accepted nonempty leaves, 376,414 subdivision
 nodes, two empty recursive domains, and maximum subdivision depth 29.
 The smallest exact acceptance margin is
 
-$$
+```math
 \frac{136285389119}{128000000000000000000}>10^{-9}.
-$$
+```
 
 The proof's contact table gives the individual leaf counts. They are the
 counts from this reconstructed run; no historical receipt or reported count

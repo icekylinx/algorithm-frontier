@@ -35,8 +35,8 @@ establish universal theorems by exhaustive testing.
 
 ## What the written proofs establish
 
-The represented theorem uses all monomials of degree at most $h$ in the
-$d$ label-polynomial coefficients, of dimension $\binom{h+d}{d}$.
+The represented theorem uses all monomials of degree at most $`h`$ in the
+$`d`$ label-polynomial coefficients, of dimension $`\binom{h+d}{d}`$.
 A query functional annihilates exactly the failed items. Applying it to
 the greedy relation with earlier retained columns proves every surviving
 prefix span, including ties, signed costs and rank drops. The dimension
@@ -62,7 +62,7 @@ the unweighted rank theorem intact. It is a support-size obstruction,
 not an oracle-query hardness statement.
 
 For integral submodular functions, value-spanning sets replace bases in
-the same witness search. The parameter $R=f(E)-f(\varnothing)$ is the
+the same witness search. The parameter $`R=f(E)-f(\varnothing)`$ is the
 numerical range, not its bit length. Coverage examples exercise the
 reverse-deletion construction; the general ordered-value corollary is
 proved in the manuscript and is outside the executable checker scope.

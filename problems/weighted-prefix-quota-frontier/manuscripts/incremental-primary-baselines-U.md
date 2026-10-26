@@ -6,17 +6,17 @@ This note records directly checked primary antecedents and the limits of the com
 
 ## 1. Reachable kernels: determinism versus output size
 
-Huang, Kakimura, Kobayashi and Terao, *Polynomial Kernels with Reachability for Weighted d-Matroid Intersection*, arXiv:2603.17345v1, is the closest checked kernel comparator. Its Theorems 1–3 and Corollary 2 give randomized small grounds for partition, coverable, and explicitly represented transversal systems. Theorem 5 treats matching with an edge matroid. Theorem 6 gives a deterministic $k^2(g(k)+1)$ ground for one arbitrary and one coverable matroid. Section 7 states deterministic single exchangeability; Lemma 2 supplies the greedy replacement property.
+Huang, Kakimura, Kobayashi and Terao, *Polynomial Kernels with Reachability for Weighted d-Matroid Intersection*, arXiv:2603.17345v1, is the closest checked kernel comparator. Its Theorems 1–3 and Corollary 2 give randomized small grounds for partition, coverable, and explicitly represented transversal systems. Theorem 5 treats matching with an edge matroid. Theorem 6 gives a deterministic $`k^2(g(k)+1)`$ ground for one arbitrary and one coverable matroid. Section 7 states deterministic single exchangeability; Lemma 2 supplies the greedy replacement property.
 
 <https://arxiv.org/html/2603.17345v1>
 
-Translated into **one arbitrary matroid plus $d$ additional matroids**, its partition/transversal size is $\widetilde O(k^{d+1})$, and its coverable size is $\widetilde O(k\prod_i g_i(k))$. The graph-matching size is $\widetilde O(k^3)$. These degrees are smaller than U's deterministic bounds. The one-additional-coverable endpoint of CK equals its deterministic bound. No improvement of that endpoint is claimed.
+Translated into **one arbitrary matroid plus $`d`$ additional matroids**, its partition/transversal size is $`\widetilde O(k^{d+1})`$, and its coverable size is $`\widetilde O(k\prod_i g_i(k))`$. The graph-matching size is $`\widetilde O(k^3)`$. These degrees are smaller than U's deterministic bounds. The one-additional-coverable endpoint of CK equals its deterministic bound. No improvement of that endpoint is claimed.
 
 TR explicitly credits the same source's Section 4 matching-witness lift. Its own neighborhood-truncation and threshold argument establishes the stated uniform implementation. Nonunit partition capacities are already included by the public result and are not a new scope distinction on their own.
 
 ## 2. The layer and sunflower antecedents
 
-Fomin, Golovach, Korhonen and Saurabh, *Stability in Graphs with Matroid Constraints*, SWAT 2024, Theorem 4, takes disjoint greedy independent layers and uses a bounded-conflict argument to obtain a $k^2D$-vertex reduction on conflict graphs of maximum degree $D$.
+Fomin, Golovach, Korhonen and Saurabh, *Stability in Graphs with Matroid Constraints*, SWAT 2024, Theorem 4, takes disjoint greedy independent layers and uses a bounded-conflict argument to obtain a $`k^2D`$-vertex reduction on conflict graphs of maximum degree $`D`$.
 
 <https://drops.dagstuhl.de/storage/00lipics/lipics-vol294-swat2024/LIPIcs.SWAT.2024.22/LIPIcs.SWAT.2024.22.pdf>
 
@@ -40,7 +40,7 @@ Van Bevern, Tsidulko and Zschoche, *Representative families for matroid intersec
 
 <https://arxiv.org/html/1806.11527v4>
 
-A direct standard-framework deduction for unit-capacity packing hashes the resources touched by a size-$k$ solution, enumerates disjoint slot color patterns, and intersects the resource matroid with the slot partition matroid. This already yields a deterministic $2^{O((\Delta+1)k\log((\Delta+1)k+2))}$ exact endpoint. Consequently neither that order for matroid-constrained matching nor color coding itself is claimed new in BF or HP.
+A direct standard-framework deduction for unit-capacity packing hashes the resources touched by a size-$`k`$ solution, enumerates disjoint slot color patterns, and intersects the resource matroid with the slot partition matroid. This already yields a deterministic $`2^{O((\Delta+1)k\log((\Delta+1)k+2))}`$ exact endpoint. Consequently neither that order for matroid-constrained matching nor color coding itself is claimed new in BF or HP.
 
 The full sparse model proved here additionally handles unequal nonnegative integer coefficients, mixed exact and lower targets, binary polymatroid counts, original-total completion, and arbitrary signed cost on quota-free coordinates. Its two complete proofs are stated with those precise interfaces. VS adds polynomial-time positive-capacity preprocessing to the same model.
 

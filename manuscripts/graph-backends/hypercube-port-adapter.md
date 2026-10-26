@@ -29,19 +29,19 @@ The other a_v-d_v fiber vertices have no external edge.
 
 The graph P has
 
-$$
+```math
 |V(P)|=\sum_v a_v\leq4m,\qquad
  |E(P)|=m+\frac12\sum_v a_v\log_2(a_v)
                           =O(m\log(m+2)).
  \tag{1}
-$$
+```
 
 Every port has at most one external edge, and
 
-$$
+```math
 \Delta(P)\leq B:=1+\lceil\log_2(2m+1)\rceil.
  \tag{2}
-$$
+```
 
 The graph is simple even if G has parallel edges: different original
 edge IDs use different real incidence ports, and fiber edges stay
@@ -59,10 +59,10 @@ rounding of each actual incidence count is the only enlargement.
 For the q-dimensional cube Q_q and every subset S, its internal
 edge boundary is at least
 
-$$
+```math
 \min\{|S|,2^q-|S|\}.
  \tag{3}
-$$
+```
 
 Here is an induction requiring no explicit-expander theorem.
 By complementation assume |S|<=2^{q-1}, and write its intersections
@@ -71,11 +71,11 @@ H=2^{q-1}, a=|S_0|, b=|S_1|, and exchange halves if needed
 so a>=b. The edges joining the halves contribute
 |S_0 triangle S_1|>=a-b. The induction hypothesis gives
 
-$$
+```math
 |\partial S|\geq
         \min(a,H-a)+\min(b,H-b)+(a-b).
  \tag{4}
-$$
+```
 
 If a<=H/2, then b<=H/2, and the right-hand side is at least
 a+b. Otherwise b<=H-a<=H/2, and the right-hand side is
@@ -92,41 +92,41 @@ Equation (3), summed over fibers, gives at least z INTERNAL crossing
 edges. The rounded original cut is some vertex set A in G.
 Since d_v>=a_v/2,
 
-$$
+```math
 \min\{\mathrm{vol}_G(A),
                \mathrm{vol}_G(\overline A)\}
        \geq \frac12\min\{|T|,|V(P)\setminus T|\}
        \geq \frac12(w-z).
  \tag{5}
-$$
+```
 
 This inequality is still valid if T or its complement is empty:
 then w-z<=0. Original conductance and the fact that changing a
 port's side changes at most one external crossing imply
 
-$$
+```math
 \begin{aligned}
  |\partial_{\rm external} S|
    &\geq \frac{\phi}{2}(w-z)-z\\
    &=\frac{\phi}{2}w-(1+\phi/2)z.
  \end{aligned}
  \tag{6}
-$$
+```
 
 If z>=phi w/8, the internal edges already suffice. Otherwise (6)
 is at least 5phi w/16, because phi<=1. In either case,
 
-$$
+```math
 |\partial_P S|\geq\phi w/8.
  \tag{7}
-$$
+```
 
 The smaller port volume is at most B w by (2). Therefore
 
-$$
+```math
 \Phi(P)\geq\frac{\phi}{8B}.
  \tag{8}
-$$
+```
 
 We use conductance only after excluding the empty or full cut,
 as usual. P has no isolated vertex: a one-vertex fiber has its
@@ -161,12 +161,12 @@ the actual inventories have size at most 2^{O(U)}, and
 h=ceil(log_2(U+4)). Equations (1), (2), and (8) change the relevant
 input bounds only by
 
-$$
+```math
 m_P=O(mU),\qquad
         \Delta(P)=O(U),\qquad
         \log(\Phi(P)^{-1})\leq\log(\phi^{-1})+O(h).
  \tag{9}
-$$
+```
 
 The recursive virtual-hierarchy proof already allows an arbitrary
 stated host degree at its root. Its local short-path, spectral,
@@ -186,7 +186,7 @@ vertex counts and are unaffected except for fixed constants.
 Applying that general-degree proof to P, the preprocessing and
 query bounds remain
 
-$$
+```math
 \begin{aligned}
  P_{\rm work}&\leq
        m\exp O(U/p+ph+\log\phi^{-1})\mathrm{poly}(U),\\
@@ -194,7 +194,7 @@ $$
  Q_{\rm work}&\leq mD Q_{\rm quality}\mathrm{poly}(U).
  \end{aligned}
  \tag{10}
-$$
+```
 
 The extra O(U) host-edge volume, O(U) maximum degree, and O(h)
 inverse-conductance logarithm are all included in (10).

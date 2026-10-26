@@ -13,8 +13,8 @@ resource-matroid algorithm or the accepted player-local/binary-capacity
 extensions.
 
 The target model has common intrinsic resource values. Resource
-$j$ may be supplied to a receiving-player set independent in its
-own matroid $R_j$, or to an integer vector in its own polymatroid.
+$`j`$ may be supplied to a receiving-player set independent in its
+own matroid $`R_j`$, or to an integer vector in its own polymatroid.
 The physical-unit algorithm instead has one owner of every individual
 item. The distinction matters even when every resource matroid in an
 example is a small uniform matroid.
@@ -24,8 +24,8 @@ example is a small uniform matroid.
 Bamas, Lindermayr, Megow, Rohwedder and Schloeter,
 *Santa Claus meets Makespan and Matroids: Algorithms and Reductions*,
 [arXiv:2307.08453v1](https://arxiv.org/abs/2307.08453v1),
-Theorem 4, gives polynomial-time $8+\varepsilon$ for general
-resource matroids/polymatroids and $4+\varepsilon$ for two values.
+Theorem 4, gives polynomial-time $`8+\varepsilon`$ for general
+resource matroids/polymatroids and $`4+\varepsilon`$ for two values.
 Their Section 4 uses a matroid and a polymatroid on the player ground
 set, truncated polymatroid contraction, and explicit reservations
 across recursive calls. It does not replace resource intersections by
@@ -48,21 +48,21 @@ does not, by itself, establish either resource-side fact above.
 
 Consider a rank-two linear resource matroid with elements
 
-$$
+```math
 a=e_1,\qquad b=e_2,\qquad p=q=e_1+e_2.
  \tag{R1}
-$$
+```
 
-The current receiving set $\{a,b\}$ is independent. Individually
-one may replace $a$ by $p$, and one may replace $b$ by
-$q$. The selected old blockers are distinct. Nevertheless the
-joint replacement $\{p,q\}$ is dependent.
+The current receiving set $`\{a,b\}`$ is independent. Individually
+one may replace $`a`$ by $`p`$, and one may replace $`b`$ by
+$`q`$. The selected old blockers are distinct. Nevertheless the
+joint replacement $`\{p,q\}`$ is dependent.
 
 Thus assigning each pending candidate a legal old circuit element,
 even with distinct choices, does not supply simultaneous capacity.
 The issue is not special to a difficult oracle matroid: this example
-also has a transversal representation. Give $p,q$ access only
-to one slot, and give $a,b$ access to either of two slots. A
+also has a transversal representation. Give $`p,q`$ access only
+to one slot, and give $`a,b`$ access to either of two slots. A
 single fixed slot assignment exposes their common conflict; two
 independently rerouted assignments can conceal it.
 
@@ -71,11 +71,11 @@ does not rule out maintaining a joint reservation or a consistent
 slot representation.
 
 Nor can an arbitrary resource matroid safely be replaced by the
-bipartite graph of exchanges with one fixed basis. For rank $k$,
-let that basis be $e_1,\ldots,e_k$, and let arbitrarily many
-other elements all equal $e_1+\cdots+e_k$. Each such element
+bipartite graph of exchanges with one fixed basis. For rank $`k`$,
+let that basis be $`e_1,\ldots,e_k`$, and let arbitrarily many
+other elements all equal $`e_1+\cdots+e_k`$. Each such element
 can replace every basis vector, so the basis-exchange bipartite graph
-can match $k$ of them to distinct slots. Their true matroid rank
+can match $`k`$ of them to distinct slots. Their true matroid rank
 is only one. Thus this proposed slot representation can overstate
 simultaneously usable receiving capacity by an unbounded factor.
 
@@ -86,97 +86,97 @@ earliest player exchange can break the retained resource invariant.
 
 ### 3.1 Players, values, and a feasible target allocation
 
-There are four players $a,b,x,p$. Their selection matroid is
-the direct sum of singleton nonloops $a,x$ and one rank-one
-parallel class $\{b,p\}$. Its rank is three. In vector form
-use three independent directions for $a,b,x$, and set $p=b$.
+There are four players $`a,b,x,p`$. Their selection matroid is
+the direct sum of singleton nonloops $`a,x`$ and one rank-one
+parallel class $`\{b,p\}`$. Its rank is three. In vector form
+use three independent directions for $`a,b,x`$, and set $`p=b`$.
 
 Every resource has intrinsic value one and can be supplied at most
 once to a receiving player. The resource constraints are:
 
 | Resource | Eligible receiving players | Resource matroid |
 |---|---|---|
-| $j$ | $a,x,p$ | uniform rank two |
-| $k$ | $b,x$ | uniform rank one |
-| $a'$ | $a$ | one singleton |
-| $b'$, $b''$ | $b$ | separate singletons |
-| $\ell$ | $p$ | one singleton |
+| $`j`$ | $`a,x,p`$ | uniform rank two |
+| $`k`$ | $`b,x`$ | uniform rank one |
+| $`a'`$ | $`a`$ | one singleton |
+| $`b'`$, $`b''`$ | $`b`$ | separate singletons |
+| $`\ell`$ | $`p`$ | one singleton |
 
-Take bundle target $B=2$. The original instance really has a
+Take bundle target $`B=2`$. The original instance really has a
 feasible basis allocation at this target:
 
-$$
+```math
 a:\{j,a'\},\qquad b:\{b',b''\},\qquad x:\{j,k\}.
  \tag{R2}
-$$
+```
 
-Resource $j$ supplies two players, resource $k$ one, and
-the basis $\{a,b,x\}$ has rank three. Hence the example does
+Resource $`j`$ supplies two players, resource $`k`$ one, and
+the basis $`\{a,b,x\}`$ has rank three. Hence the example does
 not rely on an infeasible target promise.
 
 ### 3.2 A legal partial matching and first selected center
 
 Consider the partial allocation
 
-$$
+```math
 M_a=\{j,a'\},\qquad M_b=\{k,b'\},\qquad I=\{a,b\}.
  \tag{R3}
-$$
+```
 
 Both bundles are minimal above two; they can be inserted successively
 from the empty matching by free rank-increasing choices. The unused
-private item $b''$ does not affect their legality.
+private item $`b''`$ does not affect their legality.
 
 Select the center
 
-$$
+```math
 X_1(x)=\{j,k\}.
  \tag{R4}
-$$
+```
 
-At resource $j$, adding $x$ to the current receiver $a$
+At resource $`j`$, adding $`x`$ to the current receiver $`a`$
 is feasible, so that resource has no actual matching blocker of this
-center. At resource $k$, player $b$ is its unique blocker.
+center. At resource $`k`$, player $`b`$ is its unique blocker.
 Consequently the naive resource-circuit version records
-$Y_1=\{M_b\}$. The player $x$ is eligible because
-$x\notin\mathrm{cl}(I)$.
+$`Y_1=\{M_b\}`$. The player $`x`$ is eligible because
+$`x\notin\mathrm{cl}(I)`$.
 
 Suppose the naive forbidden test at each resource excludes the span
 of the receiving players of selected centers and current blockers.
 This is the natural attempt to replace forbidden physical items by
 resource flats. The first layer can be completed under that test:
-its only player eligible outside $\mathrm{cl}(I)$ is
-$x$, and its selected resources are unavailable to another copy
+its only player eligible outside $`\mathrm{cl}(I)`$ is
+$`x`$, and its selected resources are unavailable to another copy
 of its own candidate.
 
 ### 3.3 A free later center and its forced earliest exchange
 
-At the next layer, remove the earlier blocker owner $b$ from
-the eligibility base. Then $J_2=\{a\}$, so $p$ is
+At the next layer, remove the earlier blocker owner $`b`$ from
+the eligibility base. Then $`J_2=\{a\}`$, so $`p`$ is
 eligible. Consider
 
-$$
+```math
 X_2(p)=\{j,\ell\}.
  \tag{R5}
-$$
+```
 
-At resource $j$, the earlier selected receiver set is only
-$\{x\}$; the matching blocker $b$ receives no $j$.
-In the uniform rank-two resource matroid, $p$ is outside the
-span of $\{x\}$. The private resource $\ell$ is also
+At resource $`j`$, the earlier selected receiver set is only
+$`\{x\}`$; the matching blocker $`b`$ receives no $`j`$.
+In the uniform rank-two resource matroid, $`p`$ is outside the
+span of $`\{x\}`$. The private resource $`\ell`$ is also
 available. Thus (R5) passes the proposed resource-flat forbidden test.
 
 It is also free relative to the actual current matching: assigning
-$j$ to $a,p$ is feasible, and $\ell$ is unused.
-The player fundamental circuit is exactly $\{b,p\}$, so the
-earliest exchange removes $M_b$ from layer one and inserts
-$X_2(p)$. The new matching receiver set at $j$ is
-$\{a,p\}$.
+$`j`$ to $`a,p`$ is feasible, and $`\ell`$ is unused.
+The player fundamental circuit is exactly $`\{b,p\}`$, so the
+earliest exchange removes $`M_b`$ from layer one and inserts
+$`X_2(p)`$. The new matching receiver set at $`j`$ is
+$`\{a,p\}`$.
 
-The recorded blocker of $X_1(x)$ has disappeared, and its old
-resource $k$ is now free. But $x$ can no longer be added
-at resource $j$: $\{a,p,x\}$ has size three in a
-rank-two uniform matroid. Therefore $X_1(x)$ has acquired a
+The recorded blocker of $`X_1(x)`$ has disappeared, and its old
+resource $`k`$ is now free. But $`x`$ can no longer be added
+at resource $`j`$: $`\{a,p,x\}`$ has size three in a
+rank-two uniform matroid. Therefore $`X_1(x)`$ has acquired a
 new blocker at a resource that was previously free for it.
 
 The physical-item free-cascade rule would regard its last recorded
@@ -197,9 +197,9 @@ Forbidding an entire resource type after its first selected use would
 reject (R5), but it discards arbitrarily large remaining capacity in
 general. It is not an implementation of the same value certificate.
 
-In a fixed two-slot representation of resource $j$, allocation
-$M_a$ uses one slot and selected center $X_1(x)$ reserves
-the other. Then $X_2(p)$ cannot both avoid the selected slot
+In a fixed two-slot representation of resource $`j`$, allocation
+$`M_a`$ uses one slot and selected center $`X_1(x)`$ reserves
+the other. Then $`X_2(p)`$ cannot both avoid the selected slot
 and be free against the actual matching. This is exactly why the
 proved explicit-transversal and binary-capacity adapters remain sound:
 their physical identities or cells retain that joint reservation.
@@ -228,7 +228,7 @@ Any such repair still needs all of the following proofs:
 The public Bamas et al. recursion explicitly contracts bounded
 capacity for pending and blocking sets, which addresses precisely
 this sort of interaction. Its correctness does not follow from the
-simpler physical-item invariant, and its printed $8+\varepsilon$
+simpler physical-item invariant, and its printed $`8+\varepsilon`$
 general-value bound is not improved by the examples or arguments in
 this note.
 

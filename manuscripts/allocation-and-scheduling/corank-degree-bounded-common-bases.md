@@ -18,14 +18,14 @@ set P, given by independence or rank oracles. Let w_p be rational
 costs. Let A_i subseteq P and u_i>=0 be rational upper capacities,
 initially given as an explicit list. The original problem is
 
-$$
+```math
 \begin{array}{ll}
  \text{minimize}&w(I)=\sum_{p\in I}w_p,\\
  \text{subject to}&I\text{ is a basis of both }M_1\text{ and }M_2,\\
                   &|I\cap A_i|\le u_i\quad\text{for every }i.
  \end{array}
  \tag{G1}
-$$
+```
 
 Its optimum, when feasible, is OPT. Put c=q-r. Elements known to
 belong to no common basis may be removed first, reducing q and c;
@@ -36,22 +36,22 @@ paid oracle costs.
 **Theorem G.** For any rational epsilon>0, if (G1) is feasible,
 there is a deterministic algorithm returning a common basis I with
 
-$$
+```math
 w(I)\le\mathrm{OPT},\qquad
              |I\cap A_i|\le(1+\epsilon)u_i
                                       \quad\text{for every }i,
  \tag{G2}
-$$
+```
 
 in time
 
-$$
+```math
 \Gamma\!\left(\frac{1+\epsilon}{\epsilon}\right)^c
                                 \mathrm{poly}(H)
        \le\left(\frac{e(1+\epsilon)}{\epsilon}\right)^c
                                 \mathrm{poly}(H),
  \tag{G3}
-$$
+```
 
 and polynomial workspace. Here Gamma(R)=R^R/(R-1)^(R-1), and H
 includes the bit encoding of epsilon. If the original problem is
@@ -74,11 +74,11 @@ with these shifted nonnegative costs in the algorithm.
 
 Fix a rational threshold W>=0, and define
 
-$$
+```math
 \mathcal B_W=\{I:\ I\text{ is a common basis of }M_1,M_2,
                                                    \ w(I)\le W\}.
  \tag{G4}
-$$
+```
 
 This is a fixed-cardinality family. On a restricted ground Q,
 weighted matroid intersection finds a minimum-cost common
@@ -101,11 +101,11 @@ The result is a one-sided target procedure:
 If a violated augmented row is A_i, the branching algorithm uses
 S=A_i intersect Q and
 
-$$
+```math
 \ell=|S|-\left\lfloor\frac{(1+\epsilon)u_i}{1+\epsilon}\right\rfloor
                          =|S|-\lfloor u_i\rfloor.
  \tag{G5}
-$$
+```
 
 Any original-capacity witness must omit at least ell elements of S.
 The violation |S|>(1+epsilon)u_i implies
@@ -124,10 +124,10 @@ cost, and OPT when finite, lies on this grid.
 
 Use the explicit upper threshold
 
-$$
+```math
 W_{\rm hi}=\sum_{p\in P}w_p.
  \tag{G6}
-$$
+```
 
 All common bases have cost at most W_hi. Call the target procedure
 there. A failure proves that (G1) is infeasible. A success supplies
@@ -159,11 +159,11 @@ with succinct rational violated rows, as specified in Theorem E.
 For example, keep two matroids exact and let additional matroids
 N_1,...,N_k on possibly overlapping subsets P_j impose rows
 
-$$
+```math
 |I\cap S|\le r_{N_j}(S)
                                  \quad(S\subseteq P_j).
  \tag{G7}
-$$
+```
 
 Each augmented family is separated by minimizing
 (1+epsilon)r_(N_j)(S)-|Q intersect S|. Deterministic submodular
@@ -171,10 +171,10 @@ minimization performs this in polynomial time. The output is an
 exact common basis of M_1,M_2 and satisfies, for every j and every
 S subseteq P_j,
 
-$$
+```math
 |I\cap S|\le(1+\epsilon)r_{N_j}(S).
  \tag{G8}
-$$
+```
 
 The cost is at most the optimum common basis satisfying all these
 constraints exactly. The number and overlaps of these additional
@@ -193,10 +193,10 @@ Suppose the explicit upper capacities are nonnegative integers
 bounded by U_max. There is a direct exact algorithm, with preserved
 minimum cost, in
 
-$$
+```math
 (U_{\max}+1)^c\mathrm{poly}(H).
  \tag{G10}
-$$
+```
 
 To prove this, retain the cost-threshold restriction selector of
 Section 2 and use the original capacities without inflation. If
@@ -224,10 +224,10 @@ derivation of exactness, recorded next.
 If the explicit upper capacities are nonnegative integers bounded
 by an integer U_max, take epsilon=1/(U_max+1). Then
 
-$$
+```math
 u_i\le(1+\epsilon)u_i<u_i+1.
  \tag{G9}
-$$
+```
 
 The integer output must therefore satisfy |I intersect A_i|<=u_i
 exactly. Theorem G alone gives the weaker

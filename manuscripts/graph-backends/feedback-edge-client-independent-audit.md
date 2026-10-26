@@ -41,17 +41,17 @@ forest has other retained branching vertices.
 
 The tree queries give
 
-$$
+```math
 I_T(v)=\max_a\{\sigma_a-\bar L_T(a,v)\},\qquad
  O_T(v)=\max_b\{-\tau_b-\bar L_T(v,b)\}.
-$$
+```
 
 For A at least every source price, the artificial source length
 `A-I_T(v)` is nonnegative. An exit at v is positive precisely when
 
-$$
+```math
 \mathrm{dist}(v)<A+O_T(v).
-$$
+```
 
 Indeed the corresponding score is
 `I_T(s)-L_core(s,v)+O_T(v)`, for the chosen entry s. A positive
@@ -95,10 +95,10 @@ For a chord, only its endpoint vertices can intersect a tree path.
 For two tree paths in the same T, projection of c onto T[a,b] is
 at hop index
 
-$$
+```math
 [\mathrm{hop}(a,b)+\mathrm{hop}(a,c)
         -\mathrm{hop}(b,c)]/2.
-$$
+```
 
 The projections of the second path's endpoints delimit its
 intersection when distinct. If they coincide at z, the intersection

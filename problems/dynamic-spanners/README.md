@@ -16,7 +16,7 @@ Both displayed spanner constructions are deterministic conditional on the stated
 
 **Time**
 
-Tracked-terminal construction: total initialization/update work $(n+m_0+I+D)\exp(O(U^{4/5}h^{1/5}))$; full-horizon construction: $(n+m_0+I+D)\exp(O(U^{5/6}h^{1/6}))$.
+Tracked-terminal construction: total initialization/update work $`(n+m_0+I+D)\exp(O(U^{4/5}h^{1/5}))`$; full-horizon construction: $`(n+m_0+I+D)\exp(O(U^{5/6}h^{1/6}))`$.
 
 **Space**
 
@@ -44,27 +44,27 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 ## Two recourse regimes
 
-Write $M=n+m_0+I+D$ and $E_a=\exp(O(U^a h^{1-a}))$.
+Write $`M=n+m_0+I+D`$ and $`E_a=\exp(O(U^a h^{1-a}))`$.
 
 **Tracked original terminals**
 
-**Stretch.** $E_{4/5}$
+**Stretch.** $`E_{4/5}`$
 
-**Current edges.** $nE_{4/5}$
+**Current edges.** $`nE_{4/5}`$
 
-**Total work.** $ME_{4/5}$
+**Total work.** $`ME_{4/5}`$
 
-**Total output recourse.** $ME_{4/5}$
+**Total output recourse.** $`ME_{4/5}`$
 
 **Full-horizon construction**
 
-**Stretch.** $E_{5/6}$
+**Stretch.** $`E_{5/6}`$
 
-**Current edges.** $nE_{5/6}$
+**Current edges.** $`nE_{5/6}`$
 
-**Total work.** $ME_{5/6}$
+**Total work.** $`ME_{5/6}`$
 
-**Total output recourse.** $(n+D)E_{5/6}$
+**Total output recourse.** $`(n+D)E_{5/6}`$
 
 Both conclusions depend on the named flat-forest hierarchy. The full-horizon construction removes cumulative insertions from output recourse, so neither construction dominates the other in every displayed quantity.
 

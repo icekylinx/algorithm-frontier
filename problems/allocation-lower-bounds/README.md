@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Deterministic factors strictly below $2$ for allocation and strictly below $3/2$ for two-size scheduling require $\binom{q}{r}-1$ recipient-rank queries on the hidden-set instances. Separate configuration constructions give a gap approaching $r$ for the aggregate LP and an exact gap $2$ for the full residual LP.
+Deterministic factors strictly below $`2`$ for allocation and strictly below $`3/2`$ for two-size scheduling require $`\binom{q}{r}-1`$ recipient-rank queries on the hidden-set instances. Separate configuration constructions give a gap approaching $`r`$ for the aggregate LP and an exact gap $`2`$ for the full residual LP.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Lower bounds for deterministic rank-query algorithms, together with explicit int
 
 **Time**
 
-The query lower bound is $\binom{q}{r}-1$. On balanced instances it is $2^{q-O(\log q)}$. The refined heavy-cover parameter can equal zero throughout the allocation lower-bound family.
+The query lower bound is $`\binom{q}{r}-1`$. On balanced instances it is $`2^{q-O(\log q)}`$. The refined heavy-cover parameter can equal zero throughout the allocation lower-bound family.
 
 **Space**
 
@@ -22,11 +22,11 @@ No running-time or workspace upper bound is asserted by a lower-bound constructi
 
 **Parameters**
 
-$q>r\ge1$ are the hidden ground size and rank. The refined-parameter construction uses $q=2r$. The residual-LP gap uses $r\ge3$.
+$`q>r\ge1`$ are the hidden ground size and rank. The refined-parameter construction uses $`q=2r`$. The residual-LP gap uses $`r\ge3`$.
 
 **Model and representation**
 
-Full rank-value oracles for the query lower bounds; explicit cardinality rank formulas for the two configuration gaps. The heavy threshold for the refined-parameter barrier is $\mathrm{OPT}/(2+\eta)$ with fixed $\eta>0$.
+Full rank-value oracles for the query lower bounds; explicit cardinality rank formulas for the two configuration gaps. The heavy threshold for the refined-parameter barrier is $`\mathrm{OPT}/(2+\eta)`$ with fixed $`\eta>0`$.
 
 **Lower-bound scope**
 

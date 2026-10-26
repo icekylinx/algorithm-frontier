@@ -10,11 +10,11 @@ matroids.
 For every fixed positive dimension d, ETH rules out exact nonnegative
 numeric-target algorithms with running time
 
-$$
+```math
 2^{o(T^{d/(d+1)})}\mathrm{poly}(H),
                   \qquad T=\sum_{j=1}^d T_j,
  \tag{FE1}
-$$
+```
 
 already for d equality rows on ordinary matroid bases. All rank queries
 in the constructed input family are answered in polynomial time by a
@@ -26,11 +26,11 @@ For each of the seven nontrivial single-matroid optimization variants
 with one exact scalar side constraint, ETH also rules out approximation
 schemes with running time
 
-$$
+```math
 2^{o(\varepsilon^{-1/2})}
                          \mathrm{poly}(H_\varepsilon).
  \tag{FE2}
-$$
+```
 
 The maximizing guarantee is (1-epsilon)OPT (or OPT/(1+epsilon)); the
 minimizing guarantee is (1+epsilon)OPT. Side constraints remain exact.
@@ -49,10 +49,10 @@ to randomized ETH is used.
 Fix d. Given a 3-CNF formula phi on N variables, choose an even integer
 k and put
 
-$$
+```math
 E=[k]^d,\qquad n=k^d,\qquad r=n/2.
  \tag{FE3}
-$$
+```
 
 Every element is its distinct vector label u=(u_1,...,u_d). Order E
 lexicographically as e_1,...,e_n. Since k is even, n and r are integers.
@@ -60,22 +60,22 @@ lexicographically as e_1,...,e_n. Since k is even, n and r are integers.
 Among all r-subsets of E, choose a most populous class with the same
 vector sum alpha:
 
-$$
+```math
 \mathcal H_\alpha=
        \left\{S\subseteq E:|S|=r,\ \sum_{u\in S}u=\alpha\right\},
                     \qquad L=|\mathcal H_\alpha|.
  \tag{FE4}
-$$
+```
 
 Each component sum is an integer between zero and rk. There are at
 most (rk+1)^d possible sums. The central binomial coefficient satisfies
 binomial(n,n/2)>=2^n/(n+1), and hence
 
-$$
+```math
 L\ge \frac{2^n}{(n+1)(rk+1)^d}
                        =2^{n-O_d(\log n)}.
  \tag{FE5}
-$$
+```
 
 Choose the smallest even k with k^d>=4N, after padding N to a fixed
 constant depending only on d if necessary. Then n=Theta_d(N).
@@ -97,22 +97,22 @@ would require u=v. This property holds for every subfamily of H_alpha.
 The compiler can compute alpha without enumerating the r-subsets.
 For i=1,...,n+1, cardinality h and a vector beta, define
 
-$$
+```math
 D_i(h,\beta)=
    \#\left\{S\subseteq\{e_i,\ldots,e_n\}:
            |S|=h,\ \sum_{u\in S}u=\beta\right\}.
  \tag{FE6}
-$$
+```
 
 Use h in {0,...,r} and every component of beta in {0,...,rk}.
 Entries outside these ranges are zero. The recurrence is
 
-$$
+```math
 D_i(h,\beta)=D_{i+1}(h,\beta)
                      +D_{i+1}(h-1,\beta-e_i),
  \quad D_{n+1}(0,0)=1,
  \tag{FE7}
-$$
+```
 
 with every other final entry zero. The table contains at most
 (n+1)(r+1)(rk+1)^d entries. For fixed d this is polynomial in n.
@@ -122,20 +122,20 @@ chooses a maximum D_1(r,beta), with a fixed tie rule, as alpha and L.
 Order the characteristic strings of H_alpha lexicographically with
 0<1. A candidate S in H_alpha has a zero-based index
 
-$$
+```math
 \mathrm{idx}(S)\in\{0,\ldots,L-1\}.
  \tag{FE8}
-$$
+```
 
 This index is computable using the same suffix table. Scan positions
 i=1,...,n, maintaining the number h and vector sum beta already
 chosen in earlier positions, initially both zero. If e_i is absent
 from S, continue. If e_i is present, add
 
-$$
+```math
 D_{i+1}(r-h,\alpha-\beta)
  \tag{FE9}
-$$
+```
 
 to the index, and then increment h and beta by 1 and e_i. FE9 counts
 exactly the completions whose prefix agrees so far but puts 0 at i,
@@ -154,10 +154,10 @@ has polynomial size as well.
 
 Interpret the integer
 
-$$
+```math
 a(S)=\mathrm{idx}(S)\bmod 2^N
  \tag{FE10}
-$$
+```
 
 as an N-bit assignment, using a fixed bit order. This map from H_alpha
 onto the Boolean assignments is surjective: L>=2^N, so every index
@@ -166,11 +166,11 @@ of an O(n)-bit number.
 
 Define the accepted subfamily
 
-$$
+```math
 \mathcal A_\phi=
               \{S\in\mathcal H_\alpha:\phi(a(S))=\mathrm{true}\}.
  \tag{FE11}
-$$
+```
 
 It is nonempty exactly when phi is satisfiable. Testing membership
 in A_phi is polynomial-time: compute one candidate's index and
@@ -182,13 +182,13 @@ the program does not search over the assignments.
 
 Let M_phi have the following independent sets:
 
-$$
+```math
 \mathcal I_\phi=
     \{S:|S|<r\}\ \cup\
     \{S:|S|=r,\ S\notin\mathcal H_\alpha\}\ \cup\
                                      \mathcal A_\phi.
  \tag{FE12}
-$$
+```
 
 No set larger than r is independent. This is a rank-r matroid for
 every formula phi, including an unsatisfiable one.
@@ -208,7 +208,7 @@ in H_alpha. Thus the rank does not depend on satisfiability.
 
 The full rank of any query set S is
 
-$$
+```math
 r_\phi(S)=
  \begin{cases}
  |S|,&|S|<r,\\
@@ -218,7 +218,7 @@ r_\phi(S)=
  r-1,&\text{otherwise}.
  \end{cases}
  \tag{FE13}
-$$
+```
 
 For |S|>r, the preceding exchange-neighbor argument gives a contained
 basis independently of phi. For a forbidden r-set every (r-1)-subset
@@ -238,11 +238,11 @@ program and data, not merely make black-box calls.
 Give element u coefficient a^j_u=u_j in row j and set T_j=alpha_j.
 Ask for a basis of M_phi satisfying
 
-$$
+```math
 \sum_{u\in S}u_j=\alpha_j,
                            \qquad j=1,\ldots,d.
  \tag{FE14}
-$$
+```
 
 Such a basis must belong to H_alpha and hence to A_phi. Conversely
 every member of A_phi is a basis satisfying all these equalities.
@@ -254,20 +254,20 @@ The parameter size is controlled in both directions. Each coordinate
 label 1,...,k occurs k^{d-1} times. Among r=n/2 elements, the smallest
 possible sum in a fixed coordinate is
 
-$$
+```math
 k^{d-1}\sum_{i=1}^{k/2}i=\frac{n(k+2)}8\ge\frac{nk}8.
  \tag{FE15}
-$$
+```
 
 The largest is at most rk=nk/2. Therefore
 
-$$
+```math
 \frac{dnk}8\le T=\sum_j\alpha_j\le\frac{dnk}2,
  \qquad
  T=\Theta_d(n^{1+1/d})=\Theta_d(N^{1+1/d}),
  \quad T^{d/(d+1)}=\Theta_d(N).
  \tag{FE16}
-$$
+```
 
 The explicit d-by-n coefficient matrix, targets, ground, formula data
 and rank routine have total encoding H=poly_d(N+|phi|). Constructing
@@ -324,10 +324,10 @@ compiler gives M_phi on n=Theta(N) elements.
 Since L>=2^N>=2, alpha is strictly between the unique minimum and
 maximum sums of an r-subset. In particular,
 
-$$
+```math
 \frac{r(r+1)}2<\alpha<\frac{r(2n-r+1)}2,
  \tag{FE17}
-$$
+```
 
 after the fixed small-input range is removed. Consequently the
 minimum-sum and maximum-sum r-subsets are bases of every M_phi.
@@ -353,12 +353,12 @@ The allowed zero coefficient v_1=0 in the third row causes no issue.
 
 For independent sets, the three bounds are respectively
 
-$$
+```math
 w(S)+|S|\le\alpha+r,\qquad
  (n+1)|S|-w(S)\le r(n+1)-\alpha,\qquad
  w(S)-|S|\ge\alpha-r.
  \tag{FE18}
-$$
+```
 
 Equality in each requires |S|=r and w(S)=alpha. For bases, cardinality
 r is automatic and the remaining four bounds follow directly from
@@ -377,10 +377,10 @@ alpha-r>=r(r-1)/2 and
 r(n+1)-alpha>=r(r+1)/2, while the other bounds are immediate.
 Choose the explicitly computable rational accuracy
 
-$$
+```math
 \varepsilon=\frac1{2B}.
  \tag{FE19}
-$$
+```
 
 On a satisfiable MAX instance, a (1-epsilon) solution has integer
 value at least B-1/2 and therefore exactly B. The convention
@@ -393,11 +393,11 @@ Run the approximation algorithm and compare its returned feasible
 solution's exact objective with B. This decides phi. The numeric
 data and the accuracy have polynomial encoding, and
 
-$$
+```math
 \varepsilon^{-1/2}=\sqrt{2B}
                               =\Theta(n)=\Theta(N).
  \tag{FE20}
-$$
+```
 
 Thus FE2 would give a deterministic 2^{o(N)} poly(|phi|) SAT
 algorithm, contradicting ETH. The same reduction applies to each

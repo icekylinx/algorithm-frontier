@@ -9,21 +9,21 @@ below. The no-reset version avoids requiring a public recursive
 provider to support ending private terminal lifetimes inside a period.
 
 The simultaneous forest occurrence bound is independent of the large
-selected-record factor $P$. The source work and child-record transcript
-still pay $P$. This separation supports the strong-forest
-$6/7$ point. The public comparison is the newly derived $8/9$ bound,
-not the older $10/11$ reconstruction. Nothing here improves the general
-matching $4/5$ exponent.
+selected-record factor $`P`$. The source work and child-record transcript
+still pay $`P`$. This separation supports the strong-forest
+$`6/7`$ point. The public comparison is the newly derived $`8/9`$ bound,
+not the older $`10/11`$ reconstruction. Nothing here improves the general
+matching $`4/5`$ exponent.
 
 ## 1. Physical provenance and the active mark inventory
 
 Each stable core forest is a cut-only subforest of the current native
 parent graph, with fixed positive edge lengths during a physical edge
-lifetime. There are polynomially many cores and length buckets in $U$.
+lifetime. There are polynomially many cores and length buckets in $`U`$.
 Selected edges retain their original native edge identities.
 
 Repeated selection by repair layers is deduplicated before publication.
-Thus a physical vertex of native degree $\Delta$ has at most $\Delta$
+Thus a physical vertex of native degree $`\Delta`$ has at most $`\Delta`$
 selected incidences in one core, even if its contracted core root has
 large selected degree. This is an explicit implementation property:
 [amortized-static-base-distance-sparsifier.md](amortized-static-base-distance-sparsifier.md),
@@ -33,7 +33,7 @@ The same source note, Section 5 and its equation (16), explicitly counts
 changed selected endpoint/root records by native splits, membership
 changes, and births. Marking the current core root of a selected endpoint
 therefore uses the actual transcript. It does not require scanning every
-native edge after a forest cut. The initial allowance $O(mP/k)$ must
+native edge after a forest cut. The initial allowance $`O(mP/k)`$ must
 remain available when it is spent later.
 
 Initially small disconnected components need the actual-inventory
@@ -82,14 +82,14 @@ path as recourse.
 
 In one core, restore every selected real edge at its original physical
 endpoints and include the compressed marked forest. A physical vertex
-has at most $\Delta$ selected incidences and $\Delta$ virtual
-incidences. Over $b=\mathrm{poly}(U)$ cores, the uncontracted
-graph $J$ has maximum degree at most $2b\Delta$.
+has at most $`\Delta`$ selected incidences and $`\Delta`$ virtual
+incidences. Over $`b=\mathrm{poly}(U)`$ cores, the uncontracted
+graph $`J`$ has maximum degree at most $`2b\Delta`$.
 
 A physical edge belongs to at most one virtual path and one selected
 real copy per core. A physical vertex is either internal to one virtual
-path or a retained endpoint of at most $\Delta$ paths. Consequently
-vertex and edge overlap are polynomial in $U,\Delta$. This is a
+path or a retained endpoint of at most $`\Delta`$ paths. Consequently
+vertex and edge overlap are polynomial in $`U,\Delta`$. This is a
 pointwise overlap bound, not an average.
 
 Exposed junctions with the same physical parent identity are identified.
@@ -97,8 +97,8 @@ There is no closure under hidden intersections with every other core.
 Such closure is unnecessary and would require an additional size and
 update proof.
 
-Every edge of $J$ is an actual physical parent path, so distances in
-$J$ dominate physical distances. Conversely, each old selected
+Every edge of $`J`$ is an actual physical parent path, so distances in
+$`J`$ dominate physical distances. Conversely, each old selected
 contracted core edge can be expanded into its two root legs and its
 uncontracted physical edge. Both roots and both physical endpoints are
 marked. Their root legs are contained in the compressed subtree, and
@@ -107,10 +107,10 @@ the reverse metric comparison on logical pivots.
 
 ## 4. The direct vertex bound also controls a fixed edge's copies
 
-Let $C$ bound all incoming forest nodes at one native child vertex,
-including isolated and unused nodes. Fix a nonloop child edge $uv$.
-All forest occurrences of this one edge identity lie on at most $2C$
-nodes. They form a subgraph of a forest, hence number at most $2C-1$.
+Let $`C`$ bound all incoming forest nodes at one native child vertex,
+including isolated and unused nodes. Fix a nonloop child edge $`uv`$.
+All forest occurrences of this one edge identity lie on at most $`2C`$
+nodes. They form a subgraph of a forest, hence number at most $`2C-1`$.
 
 Parallel native edges do not invalidate this argument: it fixes one
 identity. Two parallel occurrences joining the same two forest nodes
@@ -124,16 +124,16 @@ edge, without any factor from ports or aliases.
 ## 5. Base edge colors times occurrence slots
 
 Properly edge-color the current compressed forest with
-$2\Delta-1$ colors. Each new virtual edge encounters at most
-$2\Delta-2$ blocked colors at its endpoints. Give it any free color.
+$`2\Delta-1`$ colors. Each new virtual edge encounters at most
+$`2\Delta-2`$ blocked colors at its endpoints. Give it any free color.
 A deletion frees a color, and a split or merge only colors its constantly
 many new edges. Existing virtual edges need not be recolored.
 
 Give the occurrences of one virtual edge different slots from
-$\{1,\ldots,2C\}$. Its pool label is the pair consisting of the base
-edge color and this occurrence slot. There are $O(\Delta C)$ pools
+$`\{1,\ldots,2C\}`$. Its pool label is the pair consisting of the base
+edge color and this occurrence slot. There are $`O(\Delta C)`$ pools
 per core. At native degree three this specializes to five colors and
-$2C$ slots, or at most $10C$ pools.
+$`2C`$ slots, or at most $`10C`$ pools.
 
 If two virtual edges use one pool, their base colors agree, so they have
 no common retained endpoint. Their physical paths have no common
@@ -141,9 +141,9 @@ internal vertex by compression. Thus all selected paths in one pool are
 vertex-disjoint.
 
 Free-slot lists give small index work per incoming forest record.
-Searching the base palette costs $O(\Delta)$ only per virtual graph
-edit. There is no need to search a palette of size $C$ for every one
-of $C$ new occurrences. In particular, no $C^2$ work or copy count
+Searching the base palette costs $`O(\Delta)`$ only per virtual graph
+edit. There is no need to search a palette of size $`C`$ for every one
+of $`C`$ new occurrences. In particular, no $`C^2`$ work or copy count
 is hidden in the coloring.
 
 ## 6. One key cut per unused virtual path is sufficient
@@ -194,37 +194,37 @@ The bounded-degree original root permits the final quotient separately.
 
 ## 8. All unused pool nodes are counted
 
-One core has $O(\Delta C)$ full copies. Every physical parent vertex
+One core has $`O(\Delta C)`$ full copies. Every physical parent vertex
 appears once in each copy, whether used, dangling, or isolated.
 Across all cores this contributes
-$C\mathrm{poly}(U,\Delta)$ node occurrences.
+$`C\mathrm{poly}(U,\Delta)`$ node occurrences.
 
 In the no-reset representation the child vertex names are a subset of
 the parent native names. A dedicated representative for an incoming
-node therefore adds at most $C$ nodes at one physical parent name.
-Selected-real edge copies obey the $2C-1$ bound per child identity
+node therefore adds at most $`C`$ nodes at one physical parent name.
+Selected-real edge copies obey the $`2C-1`$ bound per child identity
 and only polynomially many core identities use a given physical edge.
-Thus a fixed polynomial $Q$ gives
+Thus a fixed polynomial $`Q`$ gives
 
-$$
+```math
 C_{\rm parent}
    \le Q(U)\mathrm{poly}(\Delta)(C_{\rm child}+1).       \tag{1}
-$$
+```
 
-For the explicit pool scheme the dependence on $\Delta$ can be kept
-linear up to the core polynomial. The dependence on $C$ is linear.
+For the explicit pool scheme the dependence on $`\Delta`$ can be kept
+linear up to the core polynomial. The dependence on $`C`$ is linear.
 No output vertex is omitted merely because its pool is inactive.
 
 ## 9. Why no recursive degree reset simplifies lifetimes
 
 The root input can be adapted once to constant degree by the already
-audited outer adapter. At subsequent levels use $J$ directly, without
+audited outer adapter. At subsequent levels use $`J`$ directly, without
 port trees. Then
 
-$$
+```math
 \Delta_{j+1}\le Q_0(U)\Delta_j,\qquad
  \log\Delta_j=O(jh),\qquad h=\log(U+4).                      \tag{2}
-$$
+```
 
 A child vertex keeps its parent physical name. During a private period,
 retain a name after it becomes isolated rather than creating repeated
@@ -274,53 +274,53 @@ prevents a circular update dependency.
 
 One incoming forest record causes constantly many output records.
 A physical cut, virtual birth/death, or native vertex birth costs
-$C\mathrm{poly}(U,\Delta)$ pool records. These are different
-charges; multiplying both by $C$ would be an incorrect square.
+$`C\mathrm{poly}(U,\Delta)`$ pool records. These are different
+charges; multiplying both by $`C`$ would be an incorrect square.
 
 ## 11. Uniform degree dependence and recursive work
 
 The constant-degree source statements must be upgraded explicitly:
 
-$$
+```math
 P_j=P\mathrm{poly}(\Delta_j),\qquad
  W_j=W\mathrm{poly}(\Delta_j).                        \tag{3}
-$$
+```
 
 The retained public constructive primitives have fixed polynomial
-degree dependence: nearest-pivot work, core degree $O(k\Delta_j)$,
+degree dependence: nearest-pivot work, core degree $`O(k\Delta_j)`$,
 selected-degree cleanup, and conversion of selected endpoint changes
-to ordinary edits. They do not insert an exponential in $\Delta_j$
-or a new $\Delta_j$ factor into the metric loss at each repair depth.
+to ordinary edits. They do not insert an exponential in $`\Delta_j`$
+or a new $`\Delta_j`$ factor into the metric loss at each repair depth.
 The native support still contains one copy of each physical edge per
 core; root-degree growth is controlled by (2).
 
 This degree dependence was also checked directly in the primary KMG
-text. Lemma 3.5 permits arbitrary maximum degree $\Delta$, has
-$\widetilde O(k\Delta)$ update work, bounds a core component's
-incident edges by $k\Delta$, and keeps its weighted stretch factor
-polylogarithmic independently of $\Delta$. Theorem 3.8 gives the
-tree partition with upper component incidence $\Delta z$.
+text. Lemma 3.5 permits arbitrary maximum degree $`\Delta`$, has
+$`\widetilde O(k\Delta)`$ update work, bounds a core component's
+incident edges by $`k\Delta`$, and keeps its weighted stretch factor
+polylogarithmic independently of $`\Delta`$. Theorem 3.8 gives the
+tree partition with upper component incidence $`\Delta z`$.
 Theorem 3.1's proof retains explicit polynomial degree factors in
 the split-to-edit translation. In the checkpoint's repair recurrence,
 native degree appears in the initial congestion and additive native
-term, while the multiplicative stretch factor is $\Gamma$.
-Replacing three by $\Delta_j$ therefore changes a fixed polynomial
-degree factor, not the metric exponent $Kg$.
+term, while the multiplicative stretch factor is $`\Gamma`$.
+Replacing three by $`\Delta_j`$ therefore changes a fixed polynomial
+degree factor, not the metric exponent $`Kg`$.
 
 Let
-$$
+```math
 \log P=O(U/K+g+h),\qquad
  \log W=O(x+f+K^2g+\log P+h).
-$$
-The stronger normalized $Kg$ work may be used but is not needed.
-The chosen range has $x$ larger than a sufficient constant times
-$\log P+d h$, so the degree factors do not destroy shrink.
+```
+The stronger normalized $`Kg`$ work may be used but is not needed.
+The chosen range has $`x`$ larger than a sufficient constant times
+$`\log P+d h`$, so the degree factors do not destroy shrink.
 
 Initialization pays the full actual forest inventory times the
 declared occurrence capacity. The standard short-period recurrence
 must retain the child update credit after initialization:
 
-$$
+```math
 \begin{aligned}
  G_j&\le Q_j(G_{j-1}+1),\\
  J_j&\le O(W_j+Q_j(G_{j-1}+1))
@@ -328,27 +328,27 @@ $$
  T_j&\le O(kW_j+kQ_j(G_{j-1}+1))
        +O(P_j)(J_{j-1}+T_{j-1}),
 \end{aligned}                                               \tag{4}
-$$
+```
 
-where $\log Q_j=O(h+\log\Delta_j)$. A conservative polynomial
+where $`\log Q_j=O(h+\log\Delta_j)`$. A conservative polynomial
 degree factor may be absorbed into these quantities.
-Setting $Z_j=J_j+T_j/k$ solves the same recurrence without
+Setting $`Z_j=J_j+T_j/k`$ solves the same recurrence without
 restarting the static provider once per incoming forest edit.
 
 By (2),
-$$
+```math
 \sum_{j\le d}\log\Delta_j=O(d^2h).
-$$
+```
 Equations (1)--(4) therefore give
-$$
+```math
 \begin{aligned}
  c&=O(d^2h+h),\\
  B&=O(x+f+K^2g+d\log P+d^2h+h).
 \end{aligned}                                               \tag{5}
-$$
+```
 
 The static work factor enters additively in the logarithmic bound.
-The occurrence recurrence contains neither $B$, $F$, nor $P$.
+The occurrence recurrence contains neither $`B`$, $`F`$, nor $`P`$.
 The final root null quotient can spend a fixed polynomial of the
 occurrence capacity per explicit change; this stays within (5).
 
@@ -356,28 +356,28 @@ occurrence capacity per explicit change; this stays within (5).
 
 The one-level metric comparison retains the selected quality.
 The forced-anchor argument uses only pivot-pair distances and gives
-$$
+```math
 a=O(dKg+dh).
-$$
+```
 It does not require the unused pool nodes or all auxiliary vertices
 to have small diameter.
 
 The audited public outer copy recurrence uses vertex occurrence
-$e^c$, while local construction and explicit recourse are paid
-in $e^B$. Its constraint and total logarithmic bound are
-$$
+$`e^c`$, while local construction and explicit recourse are paid
+in $`e^B`$. Its constraint and total logarithmic bound are
+```math
 \begin{aligned}
  K_{\rm cov}\Lambda(a+O(h))&\le c_0U,\\
  Z&=O\bigl(B+U/\Lambda+U/K_{\rm cov}
              +\Lambda U/K_{\rm cov}+\Lambda c+h\bigr).
 \end{aligned}
-$$
+```
 
-Write $U=t^7h$. Choose
-$p=r=d=\Lambda=\Theta(t)$,
-$K=K_{\rm cov}=\Theta(t^2)$, and $x=\Theta(U/t)$.
+Write $`U=t^7h`$. Choose
+$`p=r=d=\Lambda=\Theta(t)`$,
+$`K=K_{\rm cov}=\Theta(t^2)`$, and $`x=\Theta(U/t)`$.
 Then
-$$
+```math
 \begin{array}{c|c}
 g&O(th)\\
 f&O(t^6h)\\
@@ -387,20 +387,20 @@ a&O(t^4h)\\
 c&O(t^2h)\\
 B&O(t^6h).
 \end{array}
-$$
-The degree overhead is $O(d^2h)=O(t^2h)$, well below the
-leading work term. The cover product is $O(t^7h)=O(U)$;
+```
+The degree overhead is $`O(d^2h)=O(t^2h)`$, well below the
+leading work term. The cover product is $`O(t^7h)=O(U)`$;
 small fixed outer constants satisfy its required constant. All
-outer work terms are $O(t^6h)$. Thus the checked interface
-supports the $O(U^{6/7}h^{1/7})$ logarithmic envelope.
+outer work terms are $`O(t^6h)`$. Thus the checked interface
+supports the $`O(U^{6/7}h^{1/7})`$ logarithmic envelope.
 
 The final comparison also rechecked the source wrapper's whole-tree
 initialization of small components. Different weighted calls can use
 different low-stretch spanning trees, but all share the chosen root
-$r_C$. The componentwise replica normalization and fixed-label proof
+$`r_C`$. The componentwise replica normalization and fixed-label proof
 in [disconnected-component-backend-wrapper.md](disconnected-component-backend-wrapper.md),
 Section 2, ensure that this convention does not add an uncharged
-$k$-factor to the metric stretch.
+$`k`$-factor to the metric stretch.
 
 Historical cover ghosts are covered by the literal over-all-times
 overlap clause of KMG Definition 5.2(3): every vertex in a cover's birth
@@ -415,9 +415,9 @@ Algorithm 5, Definition 3.22 and Lemma 3.21 of the [primary paper](https://arxiv
 
 The source's degree-times-edge-congestion conversion is used only
 to choose enough slots for incoming nodes at a selected root.
-With a direct node capacity $C$, only $C$ root-tree slots
+With a direct node capacity $`C`$, only $`C`$ root-tree slots
 are required. Each physical vertex lies in one rooted fiber of
-each stable forest, giving $C\mathrm{poly}(U)$ node
+each stable forest, giving $`C\mathrm{poly}(U)`$ node
 occurrences. Projected edges create no new nodes.
 
 A root cut is safe after retiring every changed projected input
@@ -427,9 +427,9 @@ merging two input marks. The input map and all physical images
 remain fixed.
 
 The original public hierarchy still has selected-degree work
-$d^2\log P$. With the public provider $g=O(qrh)$, taking
-$U=t^9h$, $q=r=d=\Lambda=t$, $K=t^3$, and
-$K_{\rm cov}=t^2$ gives the derived $8/9$ point.
+$`d^2\log P`$. With the public provider $`g=O(qrh)`$, taking
+$`U=t^9h`$, $`q=r=d=\Lambda=t`$, $`K=t^3`$, and
+$`K_{\rm cov}=t^2`$ gives the derived $`8/9`$ point.
 
 The new gain is therefore not the abstract decision to count nodes
 directly. It is the uncontracted compressed child graph, whose

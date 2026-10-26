@@ -6,9 +6,9 @@ passed the root and two independent mathematical audits. The sections
 below retain the earlier bounded-degree local formulation. Its port
 retirement requirement is specific to that optional recursive-port
 variant; it is not a dependency of the accepted implementation.
-The accepted variant colors with $O(\Delta_j)$ base colors and
-$2C$ occurrence slots, keeps one native child name per physical
-parent name, and pays $\sum_j\log\Delta_j=O(d^2h)$.
+The accepted variant colors with $`O(\Delta_j)`$ base colors and
+$`2C`$ occurrence slots, keeps one native child name per physical
+parent name, and pays $`\sum_j\log\Delta_j=O(d^2h)`$.
 
 **Working independent audit, 25 October 2026.** The local compression
 lemma is proved in [marked-steiner-compression-root-audit.md](marked-steiner-compression-root-audit.md). This
@@ -21,8 +21,8 @@ this working note.
 ## 1. Input objects and the two occurrence bounds
 
 The current parent graph has native maximum degree three. Its local
-provider maintains at most polynomially many in $U$ cut-only core
-forests $F_i$, each a subforest of the parent graph. A selected
+provider maintains at most polynomially many in $`U`$ cut-only core
+forests $`F_i`$, each a subforest of the parent graph. A selected
 core edge retains the identity of its original physical edge and
 its core. The selected graph is a subset of the core union; it is
 not an arbitrary path-replacement graph.
@@ -33,14 +33,14 @@ marked subtree. Each compressed edge denotes an exact physical path.
 Equal exposed physical vertices can be identified across cores.
 There is no closure operation on hidden intersections of different
 cores. The number of live exposed incidences at any parent vertex is
-polynomial in $U$: within one core it is bounded by the parent's
+polynomial in $`U`$: within one core it is bounded by the parent's
 native degree, and each physical selected edge occurs at most once
 per core.
 
 After the already audited positive-length degree adapter, each parent
-vertex has at most $b=\mathrm{poly}(U)$ **live** child port
+vertex has at most $`b=\mathrm{poly}(U)`$ **live** child port
 aliases. Let an incoming flat forest have both vertex occurrence and
-native-edge occurrence at most $C$. Its nodes have persistent
+native-edge occurrence at most $`C`$. Its nodes have persistent
 identifiers and fixed child-native images while alive.
 
 The two occurrence bounds must both be assumed. A forest can have
@@ -56,16 +56,16 @@ physical endpoints and whose edges are incoming occurrences of that
 core's compressed edges. Distinct occurrences are different edges
 even when they use the same compressed edge.
 
-The degree of this occurrence multigraph is at most $3bC$: every
+The degree of this occurrence multigraph is at most $`3bC`$: every
 occurrence incident at the physical vertex is incident at one of its
 live child-native aliases, and that alias has native degree at most
-three and edge occurrence at most $C$. Put $D=3bC$.
+three and edge occurrence at most $`C`$. Put $`D=3bC`$.
 
-A deterministic greedy proper edge coloring with $2D-1$ colors
-suffices. For an insertion, at most $2D-2$ colors are blocked by
+A deterministic greedy proper edge coloring with $`2D-1`$ colors
+suffices. For an insertion, at most $`2D-2`$ colors are blocked by
 the other endpoint incidences. Deletions free the assigned color;
-no existing edge is recolored. A simple scan of $O(D)$ colors is
-allowed. It is computation, not $O(D)$ reported forest edits.
+no existing edge is recolored. A simple scan of $`O(D)`$ colors is
+allowed. It is computation, not $`O(D)`$ reported forest edits.
 
 Within one color the selected compressed edges are a matching.
 Their expanded physical paths are vertex-disjoint: the compressed
@@ -74,8 +74,8 @@ endpoints, and a matching has no shared retained endpoint.
 
 This argument uses the physical endpoints, rather than the identities
 of incoming forest copies. Coloring only by copy identity would not
-prove disjointness. Conversely, coloring does not require $C^2$
-colors; its degree bound is linear in $C$.
+prove disjointness. Conversely, coloring does not require $`C^2`$
+colors; its degree bound is linear in $`C`$.
 
 ## 3. One full-forest pool per color
 
@@ -93,9 +93,9 @@ crosses an unselected compressed edge and its removed cut edge.
 Branches outside the marked subtree attach as dangling trees and
 cannot bypass a cut in a forest.
 
-For a selected occurrence corresponding to the incoming edge $xy$,
+For a selected occurrence corresponding to the incoming edge $`xy`$,
 join its two physical path endpoints to the dedicated representatives
-of $x$ and $y$, respectively, by typed true-null edges. These
+of $`x`$ and $`y`$, respectively, by typed true-null edges. These
 joins preserve physical images. Distinct occurrences of the same
 compressed edge use distinct colors and hence independent paths.
 
@@ -118,23 +118,23 @@ assembly; it must not be replaced by joining all equal-image nodes.
 
 ## 4. Count the unused pool vertices too
 
-There are $O(Cb)$ colors per core and polynomially many cores.
+There are $`O(Cb)`$ colors per core and polynomially many cores.
 Every live parent-native vertex occurs at most once in each full-core
 copy. Thus all pool vertices, including unused components and dangling
-branches, contribute $C\mathrm{poly}(U)$ occurrences.
-The dedicated representatives add at most $Cb$ at any physical
+branches, contribute $`C\mathrm{poly}(U)`$ occurrences.
+The dedicated representatives add at most $`Cb`$ at any physical
 vertex. Direct-edge and true-null incidences obey the same bound.
 
 The local recurrence is consequently
-$$
+```math
 C_{\rm parent}\le \mathrm{poly}(U)(C_{\rm child}+1).
-$$
+```
 Its initialization cost is the actual full-core inventory times
-$C\mathrm{poly}(U)$, not just the selected compressed paths.
-For $d$ recursive levels, logarithmic occurrence is $O(dh)$,
-or the weaker $O(d^2h)$ envelope after harmless assembly factors,
-where $h=\log(U+4)$. No selected-record factor
-$\exp(O(U/K))$ appears in this occurrence recurrence.
+$`C\mathrm{poly}(U)`$, not just the selected compressed paths.
+For $`d`$ recursive levels, logarithmic occurrence is $`O(dh)`$,
+or the weaker $`O(d^2h)`$ envelope after harmless assembly factors,
+where $`h=\log(U+4)`$. No selected-record factor
+$`\exp(O(U/K))`$ appears in this occurrence recurrence.
 
 ## 5. Dynamic transactions
 
@@ -143,7 +143,7 @@ each mark-status change or physical core cut. Store the old virtual
 edge endpoints and its selected default cut edge before applying
 the physical change.
 
-An affected old compressed edge has at most $C$ incoming native-edge
+An affected old compressed edge has at most $`C`$ incoming native-edge
 occurrences. Detach their endpoint joins and release their color
 assignments before changing their pool interpretation. Install new
 default cuts before restoring obsolete ones, using reference counts
@@ -159,10 +159,10 @@ also prevents an obsolete path component from linking two input
 components while the compressed representation changes.
 
 The physical cut is applied to every pool copy, costing
-$C\mathrm{poly}(U)$ edge operations. Changing a virtual default
+$`C\mathrm{poly}(U)`$ edge operations. Changing a virtual default
 cut across all colors has the same bound. A native child-forest edge
 edit changes only constantly many joins or direct edges once its
-color is found. A naive color scan costs $O(C\mathrm{poly}(U))$
+color is found. A naive color scan costs $`O(C\mathrm{poly}(U))`$
 CPU operations but does not create that many copies or reassignments.
 
 The input update and its recursive child transcript are processed as
@@ -188,7 +188,7 @@ for any later port birth. Internal provider storage may retain its
 ghost, but that ghost is outside the exposed lift and its terminal
 domain.
 
-Every such retirement costs $C\mathrm{poly}(U)$ and is charged
+Every such retirement costs $`C\mathrm{poly}(U)`$ and is charged
 as an actual graph/terminal event. It introduces no physical cut or
 long-path traversal at this point. Root-original canonical vertices
 have permanent identifiers and are not private retired ports.
@@ -202,26 +202,26 @@ invoking a public lemma with a monotone terminal-domain requirement.
 
 ## 7. Work can be larger than occurrence
 
-Let $P=\exp O(U/K+g+h)$ bound selected-record and local graph edits.
+Let $`P=\exp O(U/K+g+h)`$ bound selected-record and local graph edits.
 The child graph still pays this factor. A conservative inner work
 and explicit-recourse envelope is
-$$
+```math
 B=O\bigl(x+f+K^2g+d\log P+d^2h\bigr),
  \qquad d=O(U/x),
-$$
-using the older repair bound $K^2g$. The normalized repair can
-replace that term by $Kg$ where its stronger interface is used.
+```
+using the older repair bound $`K^2g`$. The normalized repair can
+replace that term by $`Kg`$ where its stronger interface is used.
 
-The $d^2h$ term pays the products of the level-dependent color
+The $`d^2h`$ term pays the products of the level-dependent color
 scans and copied update inventories. It is compatible with the
 linear occurrence recurrence in Section 4. There is no requirement
 that the output forest's total edit count equal its maximum
 simultaneous occurrence.
 
 The local metric exponent is unchanged:
-$$
+```math
 a=O(dKg+dh).
-$$
+```
 Every old selected core edge can be replaced by its root-to-physical
 endpoint core paths and the original physical edge. The old stretch
 label bounds that walk. Every edge in the new child graph expands

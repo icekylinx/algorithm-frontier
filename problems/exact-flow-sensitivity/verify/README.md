@@ -10,15 +10,15 @@ The shared [exchange checker](../../../tools/verify_sensitivity_certificates.py)
 python3 tools/verify_sensitivity_certificates.py
 ~~~
 
-Its minimum-hop section compares compressed exchange cycles with exhaustive optima on all subgraphs of $K_{3,3}$ under five integer cost profiles. This is finite evidence for the weighted exchange mechanism inherited by the exchange-based sensitivity arguments. It does not implement residual-flow repair, nonbipartite blossom augmentation, arbitrary matroid oracles, or a price sweep. There is no dedicated executable certificate for this family's flow, general-matching, or support-size theorems.
+Its minimum-hop section compares compressed exchange cycles with exhaustive optima on all subgraphs of $`K_{3,3}`$ under five integer cost profiles. This is finite evidence for the weighted exchange mechanism inherited by the exchange-based sensitivity arguments. It does not implement residual-flow repair, nonbipartite blossom augmentation, arbitrary matroid oracles, or a price sweep. There is no dedicated executable certificate for this family's flow, general-matching, or support-size theorems.
 
 ## Flow and support boundaries
 
-For a used unit-flow arc $u\to v$, a simple residual $u$–$v$ path cannot use the reverse of that arc. Residual cycle decomposition therefore proves the exact replacement-cost identity in the same residual graph for every failure. A lexicographic hop coordinate makes the reported residual path simple.
+For a used unit-flow arc $`u\to v`$, a simple residual $`u`$–$`v`$ path cannot use the reverse of that arc. Residual cycle decomposition therefore proves the exact replacement-cost identity in the same residual graph for every failure. A lexicographic hop coordinate makes the reported residual path simple.
 
-The acyclic $O(n\sqrt{\lambda})$ support bound assumes a simple graph and nonnegative original costs. The support-sensitive theorem has the broader hypotheses stated in its companion; the acyclic specialization does not remove those extra assumptions by implication. Reporting the full flow scans the stored baseline support and the reported change.
+The acyclic $`O(n\sqrt{\lambda})`$ support bound assumes a simple graph and nonnegative original costs. The support-sensitive theorem has the broader hypotheses stated in its companion; the acyclic specialization does not remove those extra assumptions by implication. Reporting the full flow scans the stored baseline support and the reported change.
 
-Internally vertex-disjoint paths have $O(n)$ split support. Deleting a gate represents exactly one internal-vertex failure. Structures for two consecutive values handle the possible one-unit loss of maximum flow or packing size.
+Internally vertex-disjoint paths have $`O(n)`$ split support. Deleting a gate represents exactly one internal-vertex failure. Structures for two consecutive values handle the possible one-unit loss of maximum flow or packing size.
 
 ## Matching, matroid, and price boundaries
 

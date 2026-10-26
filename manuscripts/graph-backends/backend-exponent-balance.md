@@ -214,12 +214,12 @@ starting at `u_0=U`. Write `h_i=log k_i` and let `K_i>=1` be its
 local spanner parameter. In this model a known logarithmic upper
 budget `A` must pay, up to fixed positive constant factors,
 
-$$
+```math
 \max_i h_i,\qquad
  \max_i K_i^2 u_i^{2/3}\log(u_i+2),\qquad
  \sum_i\frac{u_i}{K_i}.
  \tag{10}
-$$
+```
 
 The first quantity represents local/base shrink work. The second
 represents local spanner work, even granting the more favorable use
@@ -238,25 +238,25 @@ claimed sublinear expression and there is nothing to prove. Otherwise
 the path from `U` to `U/2` uses at least `c U/A` levels with
 `u_i>=U/2`, for a fixed `c>0`. The second expression in (10) forces
 
-$$
+```math
 K_i\le C\sqrt{\frac{A}{U^{2/3}\log U}}
-$$
+```
 
 at each of those levels. Consequently their contribution to the sum
 in (10) is at least
 
-$$
+```math
 c'\frac U A\,
        \frac{U^{4/3}(\log U)^{1/2}}{A^{1/2}}
  =c' U^{7/3}(\log U)^{1/2}A^{-3/2}.
-$$
+```
 
 Requiring the common budget to dominate this quantity gives
 
-$$
+```math
 A\ge c'' U^{14/15}(\log U)^{1/5}.
  \tag{11}
-$$
+```
 
 The uniform construction in Section 4 attains the order in (11).
 Therefore merely adapting `k_i,K_i` to each local size does not improve
@@ -275,79 +275,79 @@ cannot certify a better rate by nonuniform parameter selection alone.
 
 The new
 [separated static construction](separated-static-sparsifier-parameters.md)
-has two parameters, the cut-player depth $r$ and the expander
-path hierarchy depth $q$. With $L=\log(U+2)$, its output factor
+has two parameters, the cut-player depth $`r`$ and the expander
+path hierarchy depth $`q`$. With $`L=\log(U+2)`$, its output factor
 and local work factor are
 
-$$
+```math
 \log\Gamma=O(qrL),\qquad
  \log F=O(U/r+U/q+r^2L+qrL).
-$$
+```
 
 After the explicitly clocked short-period batching construction,
 the prospective logarithmic numerical overhead is
 
-$$
+```math
 A=O\!\left(
  x+\frac Ur+\frac Uq+r^2L+qrL+K^2qrL+
       \frac{U^2}{Kx}+\frac{UqrL}{x}
       +\frac{UKqrL}{x}\right),
  \qquad x=\log k.                                    \tag{12}
-$$
+```
 
 This formula still keeps the input-path-length congestion factor.
-It changes the older model because the large static work $F$
+It changes the older model because the large static work $`F`$
 is additive locally, while only the smaller output factor
-$\Gamma$ participates in the $K^2$ route envelope.
+$`\Gamma`$ participates in the $`K^2`$ route envelope.
 
-On the power scale put $r=U^a,q=U^b,K=U^t,x=U^z$.
-A common exponent $z$ must satisfy
-$$
+On the power scale put $`r=U^a,q=U^b,K=U^t,x=U^z`$.
+A common exponent $`z`$ must satisfy
+```math
 a,b\geq1-z,\qquad t\geq2-2z,\qquad
  z\geq a+b+2t.
-$$
-Therefore $z\geq6-6z$, or $z\geq6/7$. Equality is attained
-at $a=b=1/7,t=2/7$. The previously unused term $r^2L$
+```
+Therefore $`z\geq6-6z`$, or $`z\geq6/7`$. Equality is attained
+at $`a=b=1/7,t=2/7`$. The previously unused term $`r^2L`$
 is smaller at that point, and the output contribution to
-propagated recourse is smaller than $U/K$.
+propagated recourse is smaller than $`U/K`$.
 
 The same calculation has a finite-scale version that includes the
 leading logarithm and permits different parameters at each level.
-Suppose a known logarithmic budget $A=o(U)$ must pay the current
+Suppose a known logarithmic budget $`A=o(U)`$ must pay the current
 charged expressions. Consider the levels before the source size
-envelope drops below $U/2$. There are at least $cU/A$ such
-levels, because local shrink work gives $\log k_i\leq O(A)$.
+envelope drops below $`U/2`$. There are at least $`cU/A`$ such
+levels, because local shrink work gives $`\log k_i\leq O(A)`$.
 At each of these levels, the static work terms imply
-$$
+```math
 r_i,q_i\geq cU/A.
-$$
-The route-work term $K_i^2q_ir_i\log U\leq O(A)$ then gives
-$$
+```
+The route-work term $`K_i^2q_ir_i\log U\leq O(A)`$ then gives
+```math
 K_i\leq C\,\frac{A^{3/2}}{U(\log U)^{1/2}}.
-$$
+```
 Hence the propagated-recourse sum over these levels is at least
-$$
+```math
 c'\frac U A\cdot
        \frac{U^2(\log U)^{1/2}}{A^{3/2}}
  =c'U^3(\log U)^{1/2}A^{-5/2}.
-$$
+```
 Requiring this to fit within the same budget yields
-$$
+```math
 A\geq
           c''U^{6/7}(\log U)^{1/7}.                    \tag{13}
-$$
+```
 The uniform choices
-$$
+```math
 r,q=\Theta((U/\log U)^{1/7}),\quad
  K=\Theta((U/\log U)^{2/7}),\quad
  \log k=\Theta(U^{6/7}(\log U)^{1/7})
-$$
-attain this order in (12). Thus neither uneven $q,r$ choices
+```
+attain this order in (12). Thus neither uneven $`q,r`$ choices
 nor level-dependent parameters alone improve this particular
 envelope. Improving it requires changing at least one charged
 dependency, not merely rebalancing the displayed parameters.
 The last term of (12) is the raw-quality loss across the numerical
-hierarchy. At the displayed $6/7$ balance it is smaller than
+hierarchy. At the displayed $`6/7`$ balance it is smaller than
 the leading term, but it must be retained when changing the local
 route-cost model.
 
@@ -359,27 +359,27 @@ or general-graph matching.
 ## 7. Raw quality remains a cost if a local congestion recurrence improves
 
 Suppose, hypothetically, that a replacement static argument reduced
-the local $K^2\log\Gamma$ work term to $K\log\Gamma$, but still
-returned paths of length $\Gamma^{O(K)}$ per numerical level.
-Then it would be incorrect to remove $K^2\log\Gamma$ from the
+the local $`K^2\log\Gamma`$ work term to $`K\log\Gamma`$, but still
+returned paths of length $`\Gamma^{O(K)}`$ per numerical level.
+Then it would be incorrect to remove $`K^2\log\Gamma`$ from the
 model and ignore the remaining quality term
-$$
+```math
 (U/x)K\log\Gamma.
-$$
+```
 
-For the tunable output $\log\Gamma=\Theta(qr\log U)$, the
+For the tunable output $`\log\Gamma=\Theta(qr\log U)`$, the
 quality-aware power constraints are
-$$
+```math
 a,b\geq1-z,\qquad t\geq2-2z,\qquad
  z\geq1-z+t+a+b.
-$$
-They imply $z\geq5-5z$, hence $z\geq5/6$.
+```
+They imply $`z\geq5-5z`$, hence $`z\geq5/6`$.
 The model balance is attained by
-$$
+```math
 r,q=\Theta((U/\log U)^{1/6}),\qquad
  K=\Theta((U/\log U)^{1/3}),\qquad
  \log k=\Theta(U^{5/6}(\log U)^{1/6}).
-$$
+```
 This balance is now supplied by the separate normalized-route
 construction in [length-free-ambient-static-sparsifier.md](length-free-ambient-static-sparsifier.md) and
 [normalized-projected-route-composition.md](normalized-projected-route-composition.md). Its complete matching
@@ -391,31 +391,31 @@ q,r >= c U/A, and propagated recourse requires
 K >= c U^2/A^2 when log k <= O(A). The accumulated quality then
 requires
 
-$$
+```math
 A\geq c\frac U A Kqr\log U
    \geq c'\frac{U^5\log U}{A^5}.
-$$
+```
 
 Consequently A >= c'' U^{5/6}(log U)^{1/6} within this explicit
 uniform accounting model. This is a limitation of these charged
 expressions, not a lower bound for matching or for other routers.
 
 For comparison, if a different proposed primitive had the fixed
-output factor $\log\Gamma=\Theta(U^p\log U)$, retaining both
-propagated recourse $U/K$ and per-level quality
-$K\log\Gamma$ gives the balance
-$$
+output factor $`\log\Gamma=\Theta(U^p\log U)`$, retaining both
+propagated recourse $`U/K`$ and per-level quality
+$`K\log\Gamma`$ gives the balance
+```math
 \log E\ \geq\
        \Omega(U^{(3+p)/4}(\log U)^{1/4})
-$$
+```
 within this model, even if local construction work is smaller.
-Indeed, a budget $A$ needs $\Omega(U/A)$ levels before the
+Indeed, a budget $`A`$ needs $`\Omega(U/A)`$ levels before the
 size envelope halves, and at each level the product of the two
-charged terms is $\Omega(U^{1+p}\log U)$. Cauchy--Schwarz
+charged terms is $`\Omega(U^{1+p}\log U)`$. Cauchy--Schwarz
 on their sums gives
-$A^2\geq \Omega((U/A)^2U^{1+p}\log U)$.
-For $p=1/2$, the resulting power is $7/8$, which is larger
-than $6/7$. Thus a square-root logarithmic output factor by
+$`A^2\geq \Omega((U/A)^2U^{1+p}\log U)`$.
+For $`p=1/2`$, the resulting power is $`7/8`$, which is larger
+than $`6/7`$. Thus a square-root logarithmic output factor by
 itself is not an improvement over the current tunable
 construction. A proposed new router must be assessed with its
 whole preprocessing/output/quality interface.

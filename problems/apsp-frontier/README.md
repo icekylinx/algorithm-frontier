@@ -16,7 +16,7 @@ Deterministic conditional composition under the normalized deterministic metric-
 
 **Time**
 
-Equalized choice: amortized update work $\exp(O(U^{4/5}h^{1/5}))$; fixed-$C$ choice: $\exp(O(U^{3/4}h^{(C+1)/4}))$; queries are polynomial in $U$.
+Equalized choice: amortized update work $`\exp(O(U^{4/5}h^{1/5}))`$; fixed-$`C`$ choice: $`\exp(O(U^{3/4}h^{(C+1)/4}))`$; queries are polynomial in $`U`$.
 
 **Space**
 
@@ -44,39 +44,39 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 ## Quantitative tradeoffs
 
-Set $U=\log_2(N+4)$ and $h=\log_2(U+4)$. The general parameter choice gives work per charged input/update record
-$\exp(O(U/t+t^3h))$ and stretch $\exp(O(t^4h))$, where $t\to\infty$ and $t^2h=o(U)$.
-Distance queries cost $\mathrm{poly}(U)$.
+Set $`U=\log_2(N+4)`$ and $`h=\log_2(U+4)`$. The general parameter choice gives work per charged input/update record
+$`\exp(O(U/t+t^3h))`$ and stretch $`\exp(O(t^4h))`$, where $`t\to\infty`$ and $`t^2h=o(U)`$.
+Distance queries cost $`\mathrm{poly}(U)`$.
 
-**$t=(U/h)^{1/5}$**
+**$`t=(U/h)^{1/5}`$**
 
-**Work per charged record.** $\exp(O(U^{4/5}h^{1/5}))$
+**Work per charged record.** $`\exp(O(U^{4/5}h^{1/5}))`$
 
-**Stretch.** $\exp(O(U^{4/5}h^{1/5}))$
+**Stretch.** $`\exp(O(U^{4/5}h^{1/5}))`$
 
-**$t=U^{3/14}$**
+**$`t=U^{3/14}`$**
 
-**Work per charged record.** $\exp(O(U^{11/14}))$
+**Work per charged record.** $`\exp(O(U^{11/14}))`$
 
-**Stretch.** $\exp(O(U^{6/7}h))$
+**Stretch.** $`\exp(O(U^{6/7}h))`$
 
-**$t=(U/h)^{5/28}$**
+**$`t=(U/h)^{5/28}`$**
 
-**Work per charged record.** $\exp(O(U^{23/28}h^{5/28}))$
+**Work per charged record.** $`\exp(O(U^{23/28}h^{5/28}))`$
 
-**Stretch.** $\exp(O(U^{5/7}h^{2/7}))$
+**Stretch.** $`\exp(O(U^{5/7}h^{2/7}))`$
 
-**$t=(U/h^{C+1})^{1/4}$, fixed $C>0$**
+**$`t=(U/h^{C+1})^{1/4}`$, fixed $`C>0`$**
 
-**Work per charged record.** $\exp(O(U^{3/4}h^{(C+1)/4}))$
+**Work per charged record.** $`\exp(O(U^{3/4}h^{(C+1)/4}))`$
 
-**Stretch.** $\exp(O(U/h^C))$
+**Stretch.** $`\exp(O(U/h^C))`$
 
-**$t=(U^a/h)^{1/4}$, fixed $0<a<1$**
+**$`t=(U^a/h)^{1/4}`$, fixed $`0<a<1`$**
 
-**Work per charged record.** $\exp(O(U^{1-a/4}h^{1/4}))$
+**Work per charged record.** $`\exp(O(U^{1-a/4}h^{1/4}))`$
 
-**Stretch.** $\exp(O(U^a))$
+**Stretch.** $`\exp(O(U^a))`$
 
 Total work multiplies the displayed factor by the actual initial vertex/edge inventory plus the number of updates. The port adapter supports arbitrary original degree and accounts for every allocated native record.
 

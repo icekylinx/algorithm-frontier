@@ -20,11 +20,11 @@ The top numerical graph has one allocation coordinate `x_e` for each
 row-to-bin incidence and one slack coordinate `s_d` for each bin. At a fixed
 settled structural state,
 
-$$
+```math
 \sum_{e\ni r}x_e=L,
  \qquad \sum_{e\ni d}x_e+s_d=b_d,
  \qquad b_d=L+p_d-Cw_d.
-$$
+```
 
 All present coordinates are positive. The top objective is the sum of their
 logarithms, so the exact gradient and price are `1/f_e` on every coordinate.
@@ -42,22 +42,22 @@ alternative vector `f'` with the same row and bin equations. For
 `d=f'-f`, its positive logarithmic directional mass exceeds `12N`, whereas
 its negative mass is at most `m_log<=4N`. In particular,
 
-$$
+```math
 g^T(f'-f)>8N.
-$$
+```
 
 The negative-mass bound is elementary and exact: whenever `d_e<0`,
 `-d_e/f_e<=1` because `f'_e>=0`.
 
 Define the linearized feasible-gain quantity
 
-$$
+```math
 \mathcal G(f)=
  \max\left\{
     \sum_e\frac{f'_e-f_e}{f_e}:
     f'\ge0\text{ obeys the same row and bin equations}
           \right\}.
-$$
+```
 
 Thus a valid upper bound `Gbar<=8N` on `G(f)` is enough to certify the
 matching phase's LOW conclusion, even if the numerical graph still contains
@@ -75,51 +75,51 @@ does not, by itself, show that every matching-semantic oracle must find it.
 
 Let
 
-$$
+```math
 T=\sum_d s_d
    =L(|D|-|R|)+\sum_d p_d-C\sum_d w_d.
-$$
+```
 
 This sum is the slack-source divergence and remains fixed during a numerical
 circulation. It is updated exactly from the explicit structural ledger data.
 
 Set
 
-$$
+```math
 a_r=\max_{e\ni r}\frac1{x_e},
  \qquad b=\max_d\frac1{s_d}.
-$$
+```
 
 Every feasible alternative obeys
 
-$$
+```math
 \sum_{e\ni r}\frac{x'_e}{x_e}\le L a_r,
  \qquad \sum_d\frac{s'_d}{s_d}\le Tb.
-$$
+```
 
 Consequently
 
-$$
+```math
 \boxed{\quad
        \mathcal G(f)\le
             L\sum_r a_r+Tb-m_{\log}.
        \quad}
-$$
+```
 
 There is a separate bin-side certificate. Put
 
-$$
+```math
 c_d=\max\left\{\frac1{s_d},
                    \max_{e\ni d}\frac1{x_e}\right\}.
-$$
+```
 
 The bin equation gives
 
-$$
+```math
 \boxed{\quad
              \mathcal G(f)\le\sum_d b_d c_d-m_{\log}.
        \quad}
-$$
+```
 
 Both estimates are upper bounds, not heuristics. Taking their minimum is
 valid. They are simple feasible dual solutions for the linear transportation
@@ -140,36 +140,36 @@ component with irrelevant large slack mass in another component.
 The preceding formulas need not read current implicit values after every
 numerical step. Use the existing anchored integer prices
 
-$$
+```math
 \ell_e=\lceil H/\widehat f_e\rceil.
-$$
+```
 
 For a single logarithm the settled register condition gives
 `|f_e-fhat_e|/fhat_e<=tau`, with the existing small `tau=q/100`. Hence
 
-$$
+```math
 \frac1{f_e}
                             \le\frac{\ell_e}{H(1-\tau)}.
-$$
+```
 
 Define integer aggregates
 
-$$
+```math
 A=\sum_r\max_{e\ni r}\ell_e,
  \qquad B=\max_{d}\ell_{s_d},
  \qquad Q=\sum_d b_d
                 \max\{\ell_{s_d},\max_{e\ni d}\ell_e\}.
-$$
+```
 
 Then safe computable upper bounds are
 
-$$
+```math
 \widehat G_{\rm row}
        =\frac{LA+TB}{H(1-\tau)}-m_{\log},
  \qquad
  \widehat G_{\rm bin}
        =\frac{Q}{H(1-\tau)}-m_{\log}.
-$$
+```
 
 These aggregates use integer prices and the common dyadic ledger grid.
 They do not sum unrelated exact rational reciprocals into a denominator of
@@ -223,21 +223,21 @@ certificate or actively redistributing reserve.
 For `j=1,2`, make physical vertices `a_j,r_j,b_j,u_j,v_j`. Also make `p,q`.
 Use the following initial matching:
 
-$$
+```math
 r_1b_1,\quad r_2b_2,\quad u_1v_1,\quad u_2v_2,\quad pq.
-$$
+```
 
 The unmatched vertices are `a_1,a_2`. Add the nonmatching edges
 
-$$
+```math
 a_jr_j,\quad a_ju_j\quad(j=1,2),\qquad b_1p,\quad qb_2.
-$$
+```
 
 Every vertex has degree at most two. There is an augmenting path
 
-$$
+```math
 a_1,r_1,b_1,p,q,b_2,r_2,a_2.
-$$
+```
 
 It matches all twelve gadget vertices after augmentation, so the true gap is
 exactly one. The two `u_jv_j` branches are dead ends. One may add arbitrarily
@@ -248,9 +248,9 @@ simple, subcubic, and without isolated vertices.
 For this enlarged graph the direct driver's initial upper bound is still
 one, its phase target is `K=1`, and
 
-$$
+```math
 L=10000CN.
-$$
+```
 
 Initially each `a_j` is a singleton bin of weight one, there are no rows, and
 the remaining vertices belong to their listed matched pairs. The unique
@@ -265,16 +265,16 @@ has no distinct-bin edge forcing a competing gain or contraction. The new
 row and child bin are `r_j` and `b_j`, respectively. The literal top settings
 are
 
-$$
+```math
 x_{r_j,a_j}=C+1,\qquad x_{r_j,b_j}=L-C-1,
-$$
+```
 
 and therefore
 
-$$
+```math
 s_{a_j}=L-2C-1,
               \qquad s_{b_j}=1.
-$$
+```
 
 All these values are positive integers, so no small-coordinate padding is
 required. The child `b_j` has a contact to `p` or `q`, but its slack one is
@@ -288,10 +288,10 @@ contact-LP maximizer, with reserve `2L-4C`.
 
 For any integral ledger floor `c<=C`, one can take
 
-$$
+```math
 x^{\rm int}_{r_j,a_j}=c,
           \qquad x^{\rm int}_{r_j,b_j}=L-c.
-$$
+```
 
 Both bin residuals are at least `c`, debts are zero, and the positive support
 is a tree. This verifies simultaneous settled feasibility of every required
@@ -311,16 +311,16 @@ cardinality and fixed graph optimum still imply a true remaining gap of one.
 Now expand each dead matched pair `u_jv_j`. Its parent `a_j` remains eligible.
 The new row `u_j` has allocations
 
-$$
+```math
 x_{u_j,a_j}=C+1,
                  \qquad x_{u_j,v_j}=L-C-1.
-$$
+```
 
 The old row settings are unchanged. Thus
 
-$$
+```math
 s_{a_j}=L-3C-2,\qquad s_{b_j}=s_{v_j}=1.
-$$
+```
 
 All top debts remain zero and all slacks stay positive. The paired edge
 `pq` remains. The bins `a_j` have no further contacts to the paired
@@ -329,9 +329,9 @@ contact set is exactly `Z'={b_1,b_2}`.
 
 The continued reserve is only
 
-$$
+```math
 s_{b_1}+s_{b_2}=2.
-$$
+```
 
 No matching gain has occurred. Only four physical vertices, the two matched
 dead-end pairs, were expanded. The original augmenting path still exists, so
@@ -361,10 +361,10 @@ can still improve the evolving certificate.
 Indeed the example has a constant-size repair. After the dead expansions,
 modify only row `r_j`:
 
-$$
+```math
 x_{r_j,a_j}: C+1\longmapsto L-2C-1,
  \qquad x_{r_j,b_j}: L-C-1\longmapsto2C+1.
-$$
+```
 
 This moves `L-3C-2` units from the `b_j` incidence to the `a_j` incidence.
 Decrease `s_(a_j)` by the same amount and increase `s_(b_j)` by that amount.

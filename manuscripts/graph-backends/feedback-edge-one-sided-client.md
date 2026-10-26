@@ -13,9 +13,9 @@ forest client extends to a complete client on this graph. A query,
 a represented simple-path update, and its guard checks cost
 (k+1) polylog S, plus discovered register events. On a fixed
 polynomial-range ledger the total work is
-$$
+```math
 (m+\nu(k+1))\mathrm{polylog}S. \tag{1}
-$$
+```
 
 This is a parameterized interface. General bounded-degree allocation
 graphs can have k=Theta(nu); substituting that value does not improve
@@ -40,12 +40,12 @@ at price zero.
 
 The forest DP gives the best tree-only path score. At any ordinary
 vertex v it also supplies
-$$
+```math
 \begin{aligned}
  I_T(v)&=\max_{a\text{ bin}}\{\sigma_a-\bar L_T(a,v)\},\\
  O_T(v)&=\max_{b\text{ bin}}\{-\tau_b-\bar L_T(v,b)\}
  \end{aligned}                                                   \tag{2}
-$$
+```
 in its T component, with a maximizing bin witness. Expose(v) reads
 the relevant boundary entries without scanning the component.
 
@@ -90,9 +90,9 @@ First check the best tree-only score. If it is positive, use that path.
 
 Otherwise run Dijkstra from the core's artificial source. A terminal
 v passes when
-$$
+```math
 \mathrm{dist}(v)<A+O_T(v).       \tag{3}
-$$
+```
 This computation takes O((k+1) polylog S) bounded-word work.
 Keep a simple predecessor path and the maximizing starting and
 ending bin identities.
@@ -174,11 +174,11 @@ All tree pieces use the same current T. Two paths can be intersected
 using a constant number of hop-distance and path-selection queries.
 
 For P=T[a,b], project a vertex c onto P. Its distance from a is
-$$
+```math
 \frac{\mathrm{hop}(a,b)
                          +\mathrm{hop}(a,c)
                          -\mathrm{hop}(b,c)}2 .
-$$
+```
 Select that vertex along P by its hop index. For Q=T[c,d], let
 p,q be the projections of c,d onto P.
 
@@ -202,10 +202,10 @@ trimming transaction.
 Read the final path's donor sum from its O(k) forest pieces and
 explicit chords. Its score remains positive after trimming, so
 the standard finite-grid step
-$$
+```math
 V_{\rm up}=1/s_a+1/s_b+4\bar L(P)/H,\qquad
              1/512\le\eta V_{\rm up}\le1/256
-$$
+```
 is valid.
 
 Check all forward guard minima of those pieces and the explicit
@@ -225,9 +225,9 @@ bidirectional lazy watcher. Settle all register events and both
 endpoint price updates before the next search.
 
 The price-event bound remains
-$$
+```math
 R=O(J+(m+A_x)\log S).
-$$
+```
 One accepted simple path still has O(1) total negative allocation
 log variation; using several represented pieces does not multiply
 that quantity by k.
@@ -289,15 +289,15 @@ A_x,A_s transcript as in the complete forest client.
 
 For J steps, Q additional queries and A_T topological records,
 a conservative total bound is
-$$
+```math
 \bigl[m_0+\nu_0+(J+Q+A_T)(k+1)+A_x+A_s+R\bigr]
                               \mathrm{polylog}S.      \tag{4}
-$$
+```
 With the objective/variation accounts substituted, this is
-$$
+```math
 \bigl[m_0+\nu_0+A_x+A_s
        +(k+1)(\nu_0+A_s+A_T+Q)\bigr]\mathrm{polylog}S.
-$$
+```
 The parameter bounds the actual intermediate graph ranks as
 well as the settled ones; using cuts before insertions in a
 structural replacement batch avoids an unnecessary union-graph
@@ -311,10 +311,10 @@ the numerical path itself is installed in T by basis pivots.
 There is a simple subcubic family with linearly many feedback
 edges. Start from a bin b_0. In block i introduce rows r_i,s_i
 and bins a_i,b_i, with incidences
-$$
+```math
 r_i b_{i-1},\quad r_i a_i,\quad r_i b_i,\quad
  s_i a_i,\quad s_i b_i .
-$$
+```
 For q blocks, the graph has 4q+1 vertices, 5q edges, and cycle
 rank q. Every row has degree at most three and every bin has
 degree at most three.

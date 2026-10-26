@@ -9,7 +9,7 @@
 **Unconditional local reductions.** Lemmas 3.1–3.2 prove the exact
 matching-size kernel, its componentwise form and the subcubic gadget.
 The companion's [mixed-failure theorem](../../manuscripts/graph-backends/matching-size-kernel-corollary.md#4-one-kernel-for-mixed-vertex-and-edge-failures)
-extends exact preservation to every mixture of at most $f$ native
+extends exact preservation to every mixture of at most $`f`$ native
 vertex/edge failures in a fixed simple graph. These reductions need no
 external matching algorithm, random sampling or raw-cycle interface.
 The [finite reduction checker](verify/check_reductions.py)

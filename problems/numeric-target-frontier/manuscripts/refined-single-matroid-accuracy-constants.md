@@ -10,20 +10,20 @@ For every rational 0<epsilon<=1, all seven single-matroid variants, and
 their single integral-polymatroid versions, admit the previously proved
 approximation guarantees in time
 
-$$
+```math
 \frac1\epsilon\exp\left(\frac3\epsilon+7\right)
                    \mathrm{poly}(H_\epsilon).
  \tag{AC1}
-$$
+```
 
 An elementary sharpening of the same calculation gives the stronger bound
 
-$$
+```math
 \boxed{\frac1\epsilon
        \exp\left(\frac{141}{50\epsilon}+7\right)
                    \mathrm{poly}(H_\epsilon).}
  \tag{AC2}
-$$
+```
 
 Space is polynomial in H_epsilon. The polynomial has a fixed degree;
 there is no suppressed numerical polynomial in 1/epsilon other than the
@@ -67,9 +67,9 @@ have polynomial encoding.
 Every original integer objective is an integer multiple of g. In
 particular, if OPT>0 then OPT=m g for an integer m>=1. Define
 
-$$
+```math
 M=\frac{R\max_e v_e}{g}.             \tag{AC3}
-$$
+```
 
 This is a positive integer of polynomial bit length. It upper-bounds m
 whenever OPT>0. The zero-value disposal coordinate, if present, has no
@@ -80,11 +80,11 @@ the resource base even though they do not affect g.
 
 Generate an increasing sequence of positive integers by
 
-$$
+```math
 K_0=1,\qquad
  K_{a+1}=\max\{K_a+1,\lfloor(1+\epsilon)K_a\rfloor\}.
  \tag{AC4}
-$$
+```
 
 Use scales V_a=K_a g and stop after processing the first K_a>=M.
 There is no repeated multiplication of a rational scale whose
@@ -93,20 +93,20 @@ denominator grows. Every stored K_a is an integer.
 Let m be any integer in [1,M], and let K_a be the first term at least m.
 If a=0, m=1 and K_a=m. Otherwise K_(a-1)<m, so
 
-$$
+```math
 K_{a-1}+1\le m,
  \qquad \lfloor(1+\epsilon)K_{a-1}\rfloor
                          \le(1+\epsilon)m.
  \tag{AC5}
-$$
+```
 
 The maximum of these two quantities is at most (1+epsilon)m.
 Consequently a positive optimum has an enumerated good scale
 
-$$
+```math
 \mathrm{OPT}\le V\le(1+\epsilon)\mathrm{OPT}.
                \tag{AC6}
-$$
+```
 
 This includes grid values near zero. In particular, when K<1/epsilon,
 AC4 advances by one; it does not jump over a small positive optimum.
@@ -116,19 +116,19 @@ AC4 advances by one; it does not jump over a small positive optimum.
 There are at most ceil(2/epsilon) terms before K reaches 2/epsilon,
 because it strictly increases by at least one. Thereafter,
 
-$$
+```math
 K_{a+1}\ge\lfloor(1+\epsilon)K_a\rfloor
        \ge(1+\epsilon)K_a-1
        \ge(1+\epsilon/2)K_a.
  \tag{AC7}
-$$
+```
 
 Thus there are
 
-$$
+```math
 O\left(\epsilon^{-1}(1+\log M)\right)
        \tag{AC8}
-$$
+```
 
 scales, including the case M<2/epsilon. The logarithm of M is
 polynomially bounded by the original numeric encoding.
@@ -145,31 +145,31 @@ through H_epsilon.
 Use the original full-base dyadic construction, but replace its scales
 by AC4 and set
 
-$$
+```math
 \delta=\frac{\epsilon}{2(1+\epsilon)},\qquad
  J=\lfloor1/\delta\rfloor
    =\left\lfloor\frac2\epsilon\right\rfloor+2.
  \tag{AC9}
-$$
+```
 
 For a current scale V, forbid coordinates with v_e>V while retaining
 the original required total R. Reject a mask of rank below R. Small
 values are at most delta V. Bin the larger normalized values by
 
-$$
+```math
 (\lambda_i,\mu_i],\quad
  \lambda_i=\delta+i\delta^2,
  \mu_i=\min\{1,\delta+(i+1)\delta^2\}.
  \tag{AC10}
-$$
+```
 
 Internal endpoints belong to the preceding interval. Enumerate integer
 big-bin profiles satisfying
 
-$$
+```math
 \sum_i h_i\le J,\qquad
         \sum_i\lambda_i h_i\le1.                \tag{AC11}
-$$
+```
 
 For each profile solve the full-base LP with its EXACT big-bin counts
 and original exact side row, maximizing the true fractional objective
@@ -184,9 +184,9 @@ Replace big values by their bin lower endpoints and keep true small
 values. Exact big-bin counts bound fractional surrogate replacement
 loss by
 
-$$
+```math
 J\delta^2V\le\delta V.        \tag{AC12}
-$$
+```
 
 Apply the direct full-base lower-prefix recovery to this ordering.
 Completed big-bin prefixes have integral fractional counts, so their
@@ -195,13 +195,13 @@ delta V. The exact original side row is retained by the appropriate
 complement objective. The final original base therefore has value at
 least
 
-$$
+```math
 \mathrm{OPT}-2\delta V
  \ge\mathrm{OPT}
           -\frac{\epsilon}{1+\epsilon}(1+\epsilon)\mathrm{OPT}
  =(1-\epsilon)\mathrm{OPT}.
  \tag{AC13}
-$$
+```
 
 This proof is unaffected if the profile's fractional objective exceeds
 V. Its loss is controlled by the prescribed big counts and the largest
@@ -220,39 +220,39 @@ J=floor(1/delta)>=2. The profile lower sum is at most one.
 Since lambda_i>=delta^2(J+i), each profile injects into a partition
 having h_i parts of size J+i and total at most
 
-$$
+```math
 N=\lfloor\delta^{-2}\rfloor<(J+1)^2.
                   \tag{AC14}
-$$
+```
 
 Unlike the coarser count over all positive integer parts, every part
 in this partition is at least J. Let P_(J,N) be the number of partitions
 of total at most N with this minimum part. At t=1/J,
 
-$$
+```math
 P_{J,N}\le e^{tN}\prod_{a\ge J}(1-e^{-ta})^{-1}.
  \tag{AC15}
-$$
+```
 
 The logarithm of the product is
 
-$$
+```math
 \sum_{b\ge1}\frac{e^{-b}}{b(1-e^{-b/J})}
  \le \sum_{b\ge1}\frac{e^{-b}}b
           +J\sum_{b\ge1}\frac{e^{-b}}{b^2},
  \tag{AC16}
-$$
+```
 
 using 1/(1-e^-x)=1+1/(e^x-1)<=1+1/x. Write the two convergent
 series in AC16 as A and D. The elementary bounds A<1 and D<1/2
 give
 
-$$
+```math
 \log P_{J,N}
    <\frac{(J+1)^2}{J}+1+\frac J2
    \le\frac32J+4.
  \tag{AC17}
-$$
+```
 
 For example, A<=1/(e-1)<1. Also e>5/2 and
 D<=1/e+1/[4e(e-1)]<7/15<1/2. No evaluation of an infinite
@@ -269,38 +269,38 @@ number of MIN target calls fits the same common bound.
 The same argument can retain a better elementary bound on D.
 From the first six terms of the series for e,
 
-$$
+```math
 e>\sum_{a=0}^5\frac1{a!}=\frac{163}{60}>
                       \frac{19}{7}.
  \tag{AC18}
-$$
+```
 
 Put r=7/19. Bounding the remaining square denominators by 16 gives
 
-$$
+```math
 \begin{aligned}
  D&<r+\frac{r^2}{4}+\frac{r^3}{9}
                          +\frac{r^4}{16(1-r)}\\
   &=\frac{1618771}{3950784}<\frac{41}{100}.
  \end{aligned}
  \tag{AC19}
-$$
+```
 
 Thus the profile count satisfies
 
-$$
+```math
 \log P_{J,N}<\frac{141}{100}J+4.
                   \tag{AC20}
-$$
+```
 
 For refined MAX, J<=2/epsilon+2, so
 
-$$
+```math
 \log P_{J,N}
        <\frac{141}{50\epsilon}+\frac{141}{50}+4
        <\frac{141}{50\epsilon}+7.
  \tag{AC21}
-$$
+```
 
 The MIN count is smaller, with constant term four. Combining AC21
 with the scale and target-call accounting proves AC2. This sharper
@@ -339,20 +339,20 @@ approximation theorem.
 
 One may choose t=a/J for any fixed a>0 in AC15. Define
 
-$$
+```math
 A(a)=\sum_{b\ge1}\frac{e^{-ab}}b,\qquad
  D(a)=\sum_{b\ge1}\frac{e^{-ab}}{b^2}.
  \tag{AC22}
-$$
+```
 
 The same calculation gives
 
-$$
+```math
 \log P_{J,N}
   <\left(a+\frac{D(a)}a\right)J
             +2a+\frac aJ+A(a).
  \tag{AC23}
-$$
+```
 
 Thus further constant improvements can be certified by elementary
 bounds on these convergent series. AC2 uses a=1 and the rational
@@ -367,11 +367,11 @@ subset and zero elsewhere. Every lower endpoint is below 2/J, so
 the total lower load is at most one and the count cap J is respected.
 There are
 
-$$
+```math
 \binom{J}{\lfloor J/2\rfloor}
                     \ge\frac{2^J}{J+1}
            \tag{AC24}
-$$
+```
 
 such profiles. Occupancy can be realized by one rational input
 coordinate strictly inside each indicated bin.

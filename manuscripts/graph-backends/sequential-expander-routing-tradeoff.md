@@ -16,22 +16,22 @@ and exported record inventories have at most 2^{O(U)} entries.
 The supplied lower bound phi has polynomially many bits in U.
 
 The construction preprocesses the ACTUAL host in
-$$
+```math
 P\leq m\exp O(U/p+ph+\log\phi^{-1})\mathrm{poly}(U). \tag{1}
-$$
+```
 A query consists of an explicit ordered token list whose starts and
 destinations separately have multiplicity at most D deg_G(v) at v,
 where D >= 1 is an integer. A real load bound can be rounded up,
 at a factor of at most two. It returns one simple path per token with
-$$
+```math
 Q=\exp O(ph+\log\phi^{-1}),\qquad
  \text{length}\leq Q,\qquad
  \text{edge-occurrence congestion}\leq DQ,                  \tag{2}
-$$
+```
 and query work
-$$
+```math
 mDQ\mathrm{poly}(U).          \tag{3}
-$$
+```
 This is an mD-volume bound, including dummy tokens, not a sparse
 token-list-only bound. Preprocessing is paid once per host.
 All polynomial degrees and constants are independent of p.
@@ -74,29 +74,29 @@ is not used here. The explicit actual-size rule below replaces it.
 ## 3. Actual-size recursion and temporary precision
 
 For the ACTUAL port graph put
-$$
+```math
 v=\lceil\log_2(n+2)\rceil,\quad
  k_{\rm route}=2^{\max\{5,\lceil v/p\rceil\}},\quad
  \lambda_{\rm cap}=C_\lambda(v+1)^2.                         \tag{4}
-$$
+```
 One fixed sufficiently large constant, for example the audited
 energy-drop bound with C_lambda at least 10^7, is chosen once.
 Stop recursion when the actual host has at most
-$$
+```math
 C_{\rm leaf}k_{\rm route}^5
                                         \lambda_{\rm cap}^2 \tag{5}
-$$
+```
 vertices. This is a threshold, never a padding request.
 
 The hierarchy has depth d=O(log(n+2)/log k_route)=O(p).
 Each internal terminal set is a fixed fraction of its host, and its
 t<=k_route parts have size Theta(|X|/k_route). For fixed sufficiently
 large C_leaf, (5) supplies exactly
-$$
+```math
 \min_i|Y_i|\geq8\lambda t^2,\qquad
  n'_X=6|X|/k_{\rm route}\geq\lambda t^2,\quad
  \lambda\leq\lambda_{\rm cap}.                              \tag{6}
-$$
+```
 No k_route>=lambda requirement or CHS epsilon clipping is needed.
 
 All leaves have polynomial(k_route,v) vertices. A whole small host
@@ -170,11 +170,11 @@ vertex, and a nonempty respecting coarse cut is impossible. The
 primary root terminal set is ALL physical vertices.
 
 The provider constructs ONE root map
-$$
+```math
 f_0:H_{\rm root}\longrightarrow G^\diamond
  \quad\hbox{with length and congestion }\phi^{-O(1)}v^{O(p)}.
                                                                \tag{7}
-$$
+```
 Only the top construction level pays inverse phi; other levels pay
 polynomial v. Child query paths are first viewed as paths in H_root
 by literal inclusion. The map f_0 is then applied once.
@@ -192,9 +192,9 @@ conditional expectations of even moments, in polynomial block work.
 Exact saturation in the current virtual expander supplies genuine
 matching paths. After lambda=O(log(t+2)log(n+2)) rounds, the lazy
 symmetric matrices satisfy
-$$
+```math
 |(Q_\lambda\cdots Q_1)[i,j]-1/t|\leq1/(100t).                 \tag{8}
-$$
+```
 Here Q_a[i,j]=p^a_{ij}/(2n'_X) off the diagonal, counting actual
 matching portals. Unequal part sizes are explicitly allowed.
 
@@ -217,9 +217,9 @@ At one depth, good-node vertex sets and their induced edge sets
 are disjoint, so congestion takes their maximum. Sum over depths
 and circuit layers. The virtual union has length and congestion
 phi^{-O(1)}v^{O(p)}. Apply (7) ONCE to obtain
-$$
+```math
 A=\phi^{-O(1)}v^{O(p)}                   \tag{9}
-$$
+```
 for the entire physical primitive family. Original phi is not
 raised to the depth. Actual list construction is charged.
 
@@ -248,18 +248,18 @@ There is no same-level recursion. Every reversed trace is explicit,
 and dummy assignment is injective. Nested copying of returned traces
 has its fixed multiplicity per level in the recurrence. If V_j is
 the sum of actual vertex-count times load over invocations at depth j,
-$$
+```math
 V_0=nL,\qquad V_{j+1}\leq c(\lambda+1)^2V_j.                 \tag{10}
-$$
+```
 The same factor bounds total usage of each fixed primitive. Therefore
-$$
+```math
 \begin{aligned}
  \text{length}&\leq A(c(\lambda+1))^{d+1},\\
  \text{congestion}&\leq LA(c(\lambda+1)^2)^{d+1},\\
  \text{work}&\leq nLA(c(\lambda+1)^2)^{d+1}
                        \mathrm{poly}(\log(nL+2)).
  \end{aligned}                                               \tag{11}
-$$
+```
 This applies the flattened A once, not once per level.
 
 Sorted portal groups allow quota enumeration in
@@ -282,12 +282,12 @@ eventual physical images coincide.
 ## 7. Sequential preprocessing work
 
 The short-path and hierarchy notes give the explicit recurrence
-$$
+```math
 T(N,j)\leq v^{c_1}\sum_i T(N_i,j-1)
        +Nk_{\rm route}^{c_2}v^{c_3}
                          \mathrm{poly}(\psi_{\rm cut}^{-1}),
  \qquad\sum_iN_i\leq c_4N,                                  \tag{12}
-$$
+```
 with absolute constants. Only polynomial-v repeated-attempt costs
 multiply across recursion. The local k_route^{c_2} cost is additive
 at every host, not a multiplier on child recursion. Original phi
@@ -297,14 +297,14 @@ Shuffler and leaf preprocessing occurs afterward on retained nodes.
 Their same-depth actual edge inventories are disjoint and total
 O(npv). Polynomial local work, exact arithmetic, and explicit path
 output are bounded by
-$$
+```math
 nk_{\rm route}^{O(1)}\phi^{-O(1)}v^{O(p)}.              \tag{13}
-$$
+```
 Leaf polynomial size is used only in preprocessing, never in output
 quality. Since log k_route=O(1+v/p), this is
-$$
+```math
 n\exp O(v/p+p\log(v+2)+\log\phi^{-1}).                 \tag{14}
-$$
+```
 Use n=2m and v=O(U) to get (1). Separate expander components are
 initialized at their own actual sizes; the master bound is never
 used as an allocation size.
@@ -313,10 +313,10 @@ used as an allocation size.
 
 For a degree-band decomposition with independent parameter r,
 phi^{-1}=exp O(rh). The router has
-$$
+```math
 \log Q=O((p+r)h),\qquad
  \log(P/m)=O(U/p+(p+r)h).                                   \tag{15}
-$$
+```
 [linear-parameter-static-sparsifier.md](linear-parameter-static-sparsifier.md)
 combines this with degree-band work exp O(U/r+r^2h).
 

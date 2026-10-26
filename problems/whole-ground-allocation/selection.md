@@ -21,11 +21,11 @@ handled separately by testing whether the empty set is allowed.
 
 The packing system consists of nonnegative rational rows
 
-$$
+```math
 \sum_{p\in P}a_{ip}z_p\le u_i,
                            \qquad a_{ip}\ge0,\quad u_i\ge0.
  \tag{WP1}
-$$
+```
 
 An exact polynomial separation oracle, applied to the queried
 vectors, either certifies feasibility or returns a violated row
@@ -35,21 +35,21 @@ included in H. The rows always remain on the original ground P.
 
 Fix rational t>b>0, and put
 
-$$
+```math
 R=\frac{t}{t-b}>1,
             \qquad \Gamma(R)=\frac{R^R}{(R-1)^{R-1}}.
  \tag{WP2}
-$$
+```
 
 **Theorem WP.** A deterministic algorithm either returns I in B
 whose vector b*1_I satisfies all packing rows, or soundly reports
 that no I* in B has t*1_(I*) satisfying them. It has running time
 
-$$
+```math
 \Gamma(R)^c\mathrm{poly}(H)
                        \le(eR)^c\mathrm{poly}(H)
  \tag{WP3}
-$$
+```
 
 and polynomial workspace. These bounds hold on unpromised inputs
 as well as promised inputs.
@@ -71,27 +71,27 @@ The violated capacity satisfies u<bW, so W>0.
 If a t-feasible witness I* is contained in Q, its omitted set
 D*=Q\I* has exactly d elements and
 
-$$
+```math
 a(D^*)\ge W-u/t>W/R.
  \tag{WP4}
-$$
+```
 
 For every prefix length m, let k_m=|D* intersect [m]|. Summation by
 parts gives
 
-$$
+```math
 a(D^*)=\sum_{m=1}^{n}(a_m-a_{m+1})k_m,
        \qquad W=\sum_{m=1}^{n}(a_m-a_{m+1})m.
  \tag{WP5}
-$$
+```
 
 If k_m<=m/R held for every prefix, (WP5) would contradict (WP4).
 Therefore a promised omission set has a prefix with
 
-$$
+```math
 Rk_m>m.
  \tag{WP6}
-$$
+```
 
 Equal weights cause no issue: the corresponding differences in
 (WP5) are zero. If d=0, the nonempty required omitted weight is
@@ -103,12 +103,12 @@ A certificate is a binary word of length m<=n. Its ones mark a set
 D of omitted elements among the first m ordered positions. It has
 ell>=1 ones and satisfies
 
-$$
+```math
 R\ell>m,
  \qquad Rk_j\le j\quad\text{for every proper prefix }j<m,
  \qquad \ell\le d.
  \tag{WP7}
-$$
+```
 
 Thus it crosses the prefix-density threshold for the first time at
 its end. In particular its last bit is one. The certificates form
@@ -136,28 +136,28 @@ This is solely a counting device; the algorithm draws no random
 bits. A certificate with ell ones and z=m-ell zeros has cylinder
 probability
 
-$$
+```math
 p^\ell(1-p)^z.
-$$
+```
 
 Since its final prefix violates the threshold, z<(R-1)ell. Hence
 
-$$
+```math
 p^\ell(1-p)^z
       \ge p^\ell(1-p)^{(R-1)\ell}
       =\Gamma(R)^{-\ell}.
  \tag{WP8}
-$$
+```
 
 The cylinders associated with different certificates are disjoint,
 because their words are prefix-free. One may use the ordinary
 finite probability space of n bits; no limiting argument is
 needed. Summing their probabilities yields
 
-$$
+```math
 \sum_{D\text{ certificate}}\Gamma(R)^{-|D|}\le1.
  \tag{WP9}
-$$
+```
 
 Unlike the simpler all-prefix enumeration, this inequality does
 not pay an extra factor two in the exponential base.
@@ -167,10 +167,10 @@ not pay an extra factor two in the exponential base.
 It remains to bound enumeration itself, including branches that do
 not produce certificates. For d>=1 define the integer zero budget
 
-$$
+```math
 Z_d=\lceil(R-1)d\rceil-1\ge0.
  \tag{WP10}
-$$
+```
 
 Perform a depth-first search of binary words, with at most d ones,
 at most Z_d zeros, and length at most n. At every state, first test
@@ -195,17 +195,17 @@ different original prefixes of the same length remain different
 after completion. Consequently the number of local search states
 over all possible lengths is at most
 
-$$
+```math
 (n+1){d+Z_d\choose d}.
  \tag{WP11}
-$$
+```
 
 Since d+Z_d<Rd, the binomial entropy estimate gives
 
-$$
+```math
 {d+Z_d\choose d}\le\Gamma(R)^d.
  \tag{WP12}
-$$
+```
 
 The degenerate case Z_d=0 is included by the convention
 Gamma(1)=1 in the intermediate entropy expression. Each local
@@ -227,11 +227,11 @@ sorting, local-state processing and output handling. By
 (WP11)--(WP12), the local work is at most P(H)Gamma(R)^d. The
 remaining recursive work obeys
 
-$$
+```math
 T(d)\le P(H)\Gamma(R)^d
               +\sum_{D\text{ certificate}}T(d-|D|).
  \tag{WP13}
-$$
+```
 
 Every attempted deletion is charged in this expression, including
 children whose selector immediately reports emptiness. Such a
@@ -241,7 +241,7 @@ budget d-|D|. Thus the bound does not omit rejected candidate work.
 The base case satisfies T(0)<=P(H). Inductively use |D|>=1 and
 (WP9):
 
-$$
+```math
 \begin{aligned}
  T(d)
   &\le P(H)\Gamma(R)^d
@@ -251,7 +251,7 @@ $$
   &\le P(H)(d+1)\Gamma(R)^d.
  \end{aligned}
  \tag{WP14}
-$$
+```
 
 The factor d+1 is polynomial in the original input. This proves
 (WP3) on every instance, without assuming that a promised witness
@@ -272,19 +272,19 @@ row capacity by 1+epsilon and set t=1+epsilon, b=1. Any original
 feasible incidence vector supplies the stronger promise. The
 algorithm returns an exact selected set obeying
 
-$$
+```math
 \sum_{p\in I}a_{ip}\le(1+\epsilon)u_i
                                           \quad\text{for every row }i,
  \tag{WP15}
-$$
+```
 
 or soundly rejects original feasibility, in time
 
-$$
+```math
 \Gamma\!\left(\frac{1+\epsilon}{\epsilon}\right)^c\mathrm{poly}(H)
        \le\left(\frac{e(1+\epsilon)}{\epsilon}\right)^c\mathrm{poly}(H).
  \tag{WP16}
-$$
+```
 
 The restriction selector may include a cost threshold for common
 bases of two arbitrary matroids, implemented by weighted matroid

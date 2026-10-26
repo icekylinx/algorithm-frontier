@@ -45,12 +45,12 @@ Suppose a valid row a*z<=U, with a>=0 and U>=0, is violated by
 b*1_(L_Q). Set W=a(L_Q)>0. The protected full witness satisfies
 t*a(I*)<=U, so
 
-$$
+```math
 a(L_Q\setminus I^*)
  =a(L_Q)-a(L_Q\cap I^*)
  \ge W-U/t>W/R.
 \tag{S1}
-$$
+```
 
 Only coordinates of L_Q having positive row coefficients need be kept in
 the prefix ordering. Let their number be w_Q. Sort them by decreasing
@@ -73,10 +73,10 @@ exactly l ones. Thus every proper prefix obeys Rk<=m. The last bit is one.
 
 Define beta(R,w)>=1 by
 
-$$
+```math
 \sum_{l\ge1}N_l(R,w)\,\beta^{-l}=1.
 \tag{S2}
-$$
+```
 
 There is always the word `1`, so the sum at beta=1 is at least one.
 If that is the only word, beta=1. Otherwise the sum is continuous and
@@ -92,10 +92,10 @@ states and all comparisons with rational R are exact cross multiplications.
 
 For every finite w,
 
-$$
+```math
 \beta(R,w)<\Gamma(R).
 \tag{S3}
-$$
+```
 
 Indeed, a first-crossing word with l ones and z zeros has z<(R-1)l.
 Under Bernoulli bits of success probability 1/R, its probability is
@@ -121,10 +121,10 @@ stopping at every crossing. It enumerates exactly the certificates of
 length at most w_Q and at most d ones. Every explored prefix has an output
 descendant. Consequently its search trie has at most
 
-$$
+```math
 1+w_Q\cdot C_Q
 \tag{S4}
-$$
+```
 
 nodes, where C_Q is the number of actual output certificates. The table
 itself has polynomial size and computation time. Thus all local work is
@@ -151,19 +151,19 @@ charge for that child. With a uniform polynomial P(H), the resulting
 recurrence can be written, after increasing the entry charge by a constant,
 as
 
-$$
+```math
 T(d)\le P(H)+\sum_{1\le l\le d}N_l(R,w)T(d-l).
 \tag{S5}
-$$
+```
 
 A formal equivalent starts from
 T(d)<=P+sum_l N_l(P+T(d-l)) and applies S5 to T+P with charge 2P.
 The base d=0 has polynomial work and no children. By induction using S2,
 
-$$
+```math
 T(d)\le P(H)(d+1)\beta(R,w)^d
 \tag{S6}
-$$
+```
 
 after a harmless constant enlargement of P. In the induction step,
 d-l+1<=d and the truncated coefficient sum is at most one. The formula
@@ -192,10 +192,10 @@ displayed roots without a numerical calculation.
 
 At R=2 and width three, the words are `1` and `011`. Hence
 
-$$
+```math
 \beta(2,3)=\frac{1+\sqrt5}{2}.
 \tag{S7}
-$$
+```
 
 If the problem supplies the required forced-omission interface, the
 accepted global block wrapper also applies to any fixed beta bound
@@ -221,11 +221,11 @@ row has tested width at most three. The algorithm returns an exact common
 basis obeying all capacities inflated by at most two and the exact cost
 threshold, or soundly rejects original uninflated feasibility, in
 
-$$
+```math
 \left(\frac{1+\sqrt5}{2}\right)^c
                                       \mathrm{poly}(H)
 \tag{S8}
-$$
+```
 
 time and polynomial space. Its whole-ground counterpart has base
 (5-sqrt(5))/2. The one-sided exact-cost optimization from the existing

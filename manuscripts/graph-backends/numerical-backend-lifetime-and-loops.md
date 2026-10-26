@@ -30,22 +30,22 @@ representing a child occurrence; it does not remove the copy from the
 numerical state. All occurrence and per-edge-copy bounds include these
 copies, even when they lie in isolated forest components.
 
-For each copy $c$ of a real numerical coordinate $e$, keep two
+For each copy $`c`$ of a real numerical coordinate $`e`$, keep two
 different counters:
 
-$$
+```math
 h_c=\text{signed physical increment accumulated in that copy},
  \qquad
  A_c=\text{absolute motion since its last coordinate reset or birth}.
-$$
+```
 
-The sign of $h_c$ uses the fixed physical orientation, independently
+The sign of $`h_c`$ uses the fixed physical orientation, independently
 of the current rooting of the forest. Maintain
 
-$$
+```math
 f_e=b_e+\sum_{c\mapsto e}h_c.
  \tag{1}
-$$
+```
 
 Every exact point read or setting uses this full sum. Every coordinate
 anchor resets the absolute counter of **every** current copy, including
@@ -56,8 +56,8 @@ gradient after the coordinate's price transaction has settled.
 
 The list size is bounded by the same occurrence argument used for the
 exposed forest. These requirements cost the already charged
-$O(D)$ point operations per coordinate sweep when there are at most
-$D$ current copies. They introduce no scan of unrelated coordinates.
+$`O(D)`$ point operations per coordinate sweep when there are at most
+$`D`$ current copies. They introduce no scan of unrelated coordinates.
 
 ## 2. Retirement and refresh ordering
 
@@ -73,7 +73,7 @@ Use the following order.
    interleaved with representation maintenance.
 2. Before any old real-copy record disappears or its physical
    interpretation changes, read it and transfer **both**
-   $h_c$ to $b_e$ and $A_c$ to the absolute-motion bucket of $e$.
+   $`h_c`$ to $`b_e`$ and $`A_c`$ to the absolute-motion bucket of $`e`$.
    Remove the record from the copy list only after these transfers.
    Test the bucket, retaining a coalesced pending flag on the
    coordinate rather than on the disappearing copy.
@@ -103,11 +103,11 @@ that coordinate. A representation change may reveal old mass, but
 does not create new mass or erase a required refresh. The signed
 transfer proves (1); the separate absolute transfer preserves
 
-$$
+```math
 |f_e-\widehat f_e|
  \leq {\rm bucket}_e+\sum_{c\mapsto e}A_c.
  \tag{2}
-$$
+```
 
 The source's disjoint-motion charging argument therefore applies to
 arbitrary pool reuse and retirement.
@@ -197,43 +197,43 @@ buckets.
 
 ## 5. Positive-length input self-loops can be handled separately
 
-Let $G$ be an oriented undirected multigraph with strictly positive
-edge lengths. Let $E_{\rm loop}$ be its input self-loops and let
-$G_0=G-E_{\rm loop}$. Define
+Let $`G`$ be an oriented undirected multigraph with strictly positive
+edge lengths. Let $`E_{\rm loop}`$ be its input self-loops and let
+$`G_0=G-E_{\rm loop}`$. Define
 
-$$
+```math
 R_{\rm loop}=\max_{e\in E_{\rm loop}}\frac{|g_e|}{\ell_e},
-$$
+```
 
-with the empty maximum equal to zero. For a nonzero circulation $z$,
-split its coordinates as $z=z_0+z_{\rm loop}$. A loop has zero
+with the empty maximum equal to zero. For a nonzero circulation $`z`$,
+split its coordinates as $`z=z_0+z_{\rm loop}`$. A loop has zero
 incidence column, so both parts are circulations. The triangle
 inequality gives
 
-$$
+```math
 |g^{\mathsf T}z|
  \leq {\rm OPT}(G_0)\sum_{e\notin E_{\rm loop}}\ell_e|z_e|
       +R_{\rm loop}\sum_{e\in E_{\rm loop}}\ell_e|z_e|.
-$$
+```
 
-Each separate optimum is also available in $G$. Consequently,
+Each separate optimum is also available in $`G`$. Consequently,
 
-$$
+```math
 {\rm OPT}(G)=
              \max\{{\rm OPT}(G_0),R_{\rm loop}\}.
  \tag{3}
-$$
+```
 
 Maintain the loops in a deterministic maximum heap keyed by the exact
-ratio $|g_e|/\ell_e$, with stable edge IDs and deterministic tie
+ratio $`|g_e|/\ell_e`$, with stable edge IDs and deterministic tie
 breaking. Compare keys by cross multiplication, not floating point.
-An insertion, deletion, or price replacement costs $O(\log M)$
+An insertion, deletion, or price replacement costs $`O(\log M)`$
 heap operations with the same polynomial bit sizes as its edge data.
 
 Run the chosen routing or distance primitive on the loopless graph
-$G_0$. Compare its returned raw-certificate ratio with the best
-loop ratio, and return the better. If its quality is $\rho\leq1$,
-the resulting quality is at least $\rho\,{\rm OPT}(G)$, by (3).
+$`G_0`$. Compare its returned raw-certificate ratio with the best
+loop ratio, and return the better. If its quality is $`\rho\leq1`$,
+the resulting quality is at least $`\rho\,{\rm OPT}(G)`$, by (3).
 A selected loop is a one-edge circulation at this input level,
 oriented according to its gradient. It requires no maintained
 forest-copy pool. Its numerical update uses the source's explicit
@@ -257,7 +257,7 @@ null alias connector.
 A zero-length, zero-gradient artificial alias connector is not a
 positive-length input loop for (3). Its justified contraction or
 null treatment belongs to the corresponding gauge/lift construction,
-not to division by $\ell_e$ in the loop heap. Real coordinate
+not to division by $`\ell_e`$ in the loop heap. Real coordinate
 motion is never discarded by that operation.
 
 If a topology change turns an ordinary input edge into a loop, or

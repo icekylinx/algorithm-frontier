@@ -7,14 +7,14 @@ from a family with a polynomial restriction selector, and maximize
 their common normalized throughput. Put c=q-r. For every rational
 epsilon in (0,1), the algorithm obtains
 
-$$
+```math
 (1-\epsilon)\mathrm{OPT}
        \quad\hbox{in time}\quad
                 \Gamma(1/\epsilon)^c\mathrm{poly}(H),
        \qquad
                 \Gamma(R)=\frac{R^R}{(R-1)^{R-1}},
  \tag{F1}
-$$
+```
 
 with polynomial workspace. It preserves the selected family, all
 edge capacities, and any explicitly listed polynomial-size collection
@@ -46,12 +46,12 @@ the usual flow-conservation equations and the shared capacities
 sum_i x_ie<=u_e. Optionally impose an explicit collection of s
 nonnegative routing budgets
 
-$$
+```math
 \sum_{i,e}w_{hie}x_{ie}\le C_h
                          \quad(1\le h\le s),
                    \qquad w_{hie}\ge0,\quad C_h\ge0,
  \tag{F2}
-$$
+```
 
 for given rational per-commodity arc costs or resource charges.
 Common arc costs are a special case. Unused network capacity is
@@ -64,12 +64,12 @@ Its restriction selector, on Q subseteq P, returns a member of B
 contained in Q or correctly reports that none exists. Every call
 has paid polynomial time and encoding bounds. Define
 
-$$
+```math
 \mathrm{OPT}=\max_{I\in\mathcal B}\max\{\lambda\ge0:
        \lambda d_i\text{ can be routed simultaneously for all }i\in I
        \text{ subject to (F2) and the original capacities}\}.
  \tag{F3}
-$$
+```
 
 This comparator chooses one actual permitted set I. It does not
 fractionally average selection sets. The routing within I is
@@ -93,7 +93,7 @@ For a vector z>=0, let z_i denote the normalized service rate of
 commodity i. Define U to be the set of all such z for which there
 are nonnegative flows satisfying
 
-$$
+```math
 \begin{aligned}
  B_G x_i&=d_i z_i(\mathbf1_{s_i}-\mathbf1_{t_i})
                          &&(i\in P),\\
@@ -101,7 +101,7 @@ $$
  \sum_{i,e}w_{hie}x_{ie}&\le C_h &&(1\le h\le s).
  \end{aligned}
  \tag{F4}
-$$
+```
 
 Here B_G has +1 at an arc's tail and -1 at its head. The budget rows
 are omitted when s=0.
@@ -131,32 +131,32 @@ Choose nonnegative lengths ell_e, nonnegative budget multipliers
 kappa_h, and one real potential pi_i(v) per commodity and vertex.
 Require
 
-$$
+```math
 \pi_i(v)-\pi_i(w)\le\ell_e+\sum_h\kappa_h w_{hie}
                          \quad(e=(v,w),\ i\in P),
         \qquad
         \pi_i(s_i)-\pi_i(t_i)\ge0.
  \tag{F5}
-$$
+```
 
 Set
 
-$$
+```math
 a_i=d_i(\pi_i(s_i)-\pi_i(t_i))\ge0,
         \qquad H_0=\sum_e u_e\ell_e+\sum_h C_h\kappa_h\ge0.
  \tag{F6}
-$$
+```
 
 Every z in U satisfies the nonnegative packing inequality
 
-$$
+```math
 \sum_i a_i z_i\le H_0.
  \tag{F7}
-$$
+```
 
 Indeed, conservation and telescoping give
 
-$$
+```math
 \begin{aligned}
  \sum_i a_i z_i
    &=\sum_{i,e=(v,w)}x_{ie}(\pi_i(v)-\pi_i(w))\\
@@ -164,7 +164,7 @@ $$
    &\le\sum_e u_e\ell_e+\sum_h C_h\kappa_h.
  \end{aligned}
  \tag{F8}
-$$
+```
 
 This proof permits arbitrary nonnegative per-commodity routing
 charges and does not require integer demands, equal demands or a no-bottleneck
@@ -184,11 +184,11 @@ that infeasibility is equivalent to the existence of ell>=0,
 kappa_h>=0 and real pi_i satisfying the arc inequalities in (F5)
 and
 
-$$
+```math
 \sum_i d_i z_i(\pi_i(s_i)-\pi_i(t_i))
                      -\sum_e u_e\ell_e-\sum_h C_h\kappa_h>0.
  \tag{F9}
-$$
+```
 
 Initially Farkas imposes no sign on a commodity's terminal gap.
 If a gap is negative, replace that commodity's entire potential by
@@ -200,11 +200,11 @@ nonnegativity in (F5).
 
 Split pi into nonnegative variables pi^+ and pi^- and impose
 
-$$
+```math
 \sum_e\ell_e+\sum_h\kappa_h+
             \sum_{i,v}(\pi_i^+(v)+\pi_i^-(v))\le1.
  \tag{F10}
-$$
+```
 
 Any nonzero certificate can be scaled into this normalization
 without changing the strict sign in (F9). Conversely every feasible
@@ -239,11 +239,11 @@ The weighted prefix-free theorem applies directly to the fixed
 packing representation of U. At a target T>0 and loss parameter
 beta in (0,1), set
 
-$$
+```math
 t=T,\qquad b=(1-\beta)T,
                   \qquad R=\frac{t}{t-b}=1/\beta.
  \tag{F11}
-$$
+```
 
 It deterministically returns one of the following:
 
@@ -282,10 +282,10 @@ capacity or budget violation, in Gamma(1/beta)^c poly(H) time.
 For each commodity i, compute the maximum singleton normalized
 rate
 
-$$
+```math
 \rho_i=\max\{z_i:z_i\mathbf1_i\in U\}
  \tag{F12}
-$$
+```
 
 and retain a corresponding routing. This is a bounded single-
 commodity rational flow LP with the same routing budgets. The
@@ -302,10 +302,10 @@ loads and every budgeted charge remain at most their original bounds,
 and commodity i receives normalized rate rho_i/r. Reduce individual
 commodity flows as necessary to obtain the common rate
 
-$$
+```math
 \lambda_0=\frac{\min_{i\in I_0}\rho_i}{r}>0.
  \tag{F13}
-$$
+```
 
 Thus lambda_0 is a constructed feasible lower bound on OPT. Its
 bit length is polynomial, including when costs are large, the
@@ -340,10 +340,10 @@ coefficients and right sides. Both are polynomially bounded from
 the explicit network input. Rowwise denominator clearing followed
 by Cramer's rule gives the computable integer bound
 
-$$
+```math
 D=n_0!\left(2^{(n_0+2)L_0}\right)^{n_0}
  \tag{F14}
-$$
+```
 
 on the reduced denominator of every lambda_I. Padding smaller
 formulations by zero-fixed variables makes the common dimension
@@ -354,10 +354,10 @@ same denominator bound.
 
 Write alpha=1-epsilon=A/B in lowest terms and use the grid
 
-$$
+```math
 \delta=\frac1{2BD^2}.
  \tag{F15}
-$$
+```
 
 Start at lower target zero with any permitted set saved and at a
 grid endpoint strictly above rho_max. Run the gap routine with
@@ -370,11 +370,11 @@ Now optimize the original fixed-I flow LP of the saved set exactly.
 Its true optimum is at least alpha*L. If it were smaller than
 alpha*OPT, the two denominator bounds would force
 
-$$
+```math
 \alpha\mathrm{OPT}-\lambda_I
                     \ge\frac1{BD^2}=2\delta,
  \tag{F16}
-$$
+```
 
 whereas lambda_I>=alpha*L>alpha*OPT-alpha*delta gives a smaller
 gap than delta. This contradiction proves lambda_I>=alpha*OPT.

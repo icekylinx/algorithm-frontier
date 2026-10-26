@@ -67,12 +67,12 @@ Let the configuration-LP target be `T`, set `B=T/(23/6)`, and let every
 selected bundle be inclusion-minimal with value at least `B`.
 Resources of value at least `B` are fat. Write
 
-$$
+```math
 z(r)=\begin{cases}
  1,&v_r\ge B,\\
  \min\{1/3,(2/5)v_r/B\},&v_r<B.
  \end{cases}
-$$
+```
 
 Only resources in the proposed certificate support receive a positive
 price. The following is an elementary strengthening of the local
@@ -89,17 +89,17 @@ For a thin centre `C`, its total price is at most `2/3`. To see this,
 if it has two resources use the cap `1/3` on each. If it has `k>=3`
 resources, minimality and the least resource value imply
 
-$$
+```math
 v(C)<\frac{k}{k-1}B,
  \qquad z(C)<\frac25\frac{k}{k-1}\le\frac35.
-$$
+```
 
 Every leaf has value less than `B` outside `C`. Thus for `b>=2`,
 
-$$
+```math
 z(C\cup\text{leaves})<\frac23+\frac25 b
  \le\frac{b+1}{2}\le b.
-$$
+```
 
 For one leaf, let `a` be the smallest resource value in the two
 bundles. If `a<=B/2`, their union has value less than `2B+a`, hence
@@ -110,10 +110,10 @@ owners; it does not require three nonempty set differences.
 
 Consequently a constellation `K` made of such stars satisfies
 
-$$
+```math
 z(R(K))\le\#\mathrm{leaves}(K),
  \qquad z(R(K))\le |V(K)|/2.
-$$
+```
 
 Cross-star overlap can only decrease the price of the union, so summing
 the individual upper bounds is safe. These bounds use no rule choosing
@@ -130,22 +130,22 @@ compare with the leaves or vertices charged above?
 Use `B=26T/99` and normalized resource size `t=v_r/B`. For thin
 resources the CM Appendix C price, divided by `B`, is
 
-$$
+```math
 \psi(t)=\begin{cases}
  3t/(2+t),&0<t<1/2,\\
  3t/(3-t),&1/2\le t<3/4,\\
  1,&3/4\le t<1.
  \end{cases}
-$$
+```
 
 The precise imported local inequality is CM Claim 32:
 
-$$
+```math
 \sum_{r\in C}\psi(v_r/B)
  \le\frac32+\frac12\psi(v_a/B)
  \quad\text{for every minimal thin bundle }C
  \text{ and every }a\in C.
-$$
+```
 
 Splitting the price of a shared resource equally between its incident
 centre and leaf shows that any such star costs at most `3/2` times its
@@ -159,9 +159,9 @@ fat path from an exposed or thin-blocking player. For the entire
 reachable closure `P+` and its reachable fat resources `F+`, matching
 maximality gives
 
-$$
+```math
 |P^+|-|F^+|\ge 1+\#\{\text{thin blocking players}\}.
-$$
+```
 
 That inequality cancels the dual cost of fat resources. It is not
 provided by the ordinary independent-transversal certificate.
@@ -180,11 +180,11 @@ Fix `0<epsilon<1`, and choose an integer `W>1+2/epsilon`.
 There are players `p_0,...,p_W` and resources
 `r_1,...,r_W,g`, all of value `T`. Their desired sets are
 
-$$
+```math
 L_{p_0}=\{r_1\},\qquad
  L_{p_i}=\{r_i,r_{i+1}\}\ (1\le i<W),\qquad
  L_{p_W}=\{r_W,g\}.
-$$
+```
 
 The integral target `T` is feasible: assign `r_(i+1)` to `p_i` for
 `0<=i<W`, and give `g` to `p_W`.
@@ -192,28 +192,28 @@ The integral target `T` is feasible: assign `r_(i+1)` to `p_i` for
 In the minimal-bundle allocation graph, form one star edge for each
 `j=1,...,W` between the vertices
 
-$$
+```math
 \{r_j\}^{p_{j-1}}\quad\text{and}\quad\{r_j\}^{p_j}.
-$$
+```
 
 These `W` edges are an induced disjoint union of nontrivial stars.
 Taking the second endpoint as the leaf gives a partial independent
 transversal of `p_1,...,p_W`. Thus `K` is a constellation for all
 `W+1` classes. Set
 
-$$
+```math
 S=\{p_0,...,p_{W-1}\},\qquad D=V(K).
-$$
+```
 
 Every bundle vertex in every class of `S` has its opposite-owner
 singleton as a neighbour in `D`. Hence `D` totally dominates `S`.
 Nevertheless,
 
-$$
+```math
 |D|=2W<(2+\epsilon)(W-1)
        =(2+\epsilon)(|S|-1),
  \qquad D\setminus V(K)=\emptyset.
-$$
+```
 
 This is a fully legal independent-transversal failure certificate in an
 instance that already has an optimal integral allocation. It disproves
@@ -225,10 +225,10 @@ example immediately.
 For an actual current-blocker prefix, the same bookkeeping issue is
 visible in the identities
 
-$$
+```math
 |S|=W=1+|Y_{<i}|,
  \qquad |S_0|-1=|Y_{\le i}|=W-1+|Y_i|.
-$$
+```
 
 Integer choices of the transversal parameters can remove free selected
 vertices and candidate extras. They do not make `S=S_0` at a nonempty
@@ -239,18 +239,18 @@ current-blocker stopping layer.
 The independently checked construction works directly with DRZ's player
 matroid and compact LP
 
-$$
+```math
 x\in P_{\mathcal B(\mathcal M)},\quad
  \sum_{r\in L_p}v_r y_{pr}\ge T x_p,\quad
  \sum_p y_{pr}\le1,\quad 0\le y_{pr}\le x_p.
-$$
+```
 
 Its guarantee is
 
-$$
+```math
 B=(T-u)/3-\epsilon T,
  \qquad u=\max_r v_r,
-$$
+```
 
 in input-polynomial times
 `(q+1)^{O(epsilon^{-1} log(q+1))}` oracle time. Its earliest-circuit
@@ -267,9 +267,9 @@ algorithm and is not a new global bound for maximum matching.
 For ordinary restricted Santa Claus, separating items at `theta T`
 and using the dual of the large-item matching matroid gives the value
 
-$$
+```math
 \min\{\theta,(1-\theta)/3-\epsilon\}T.
-$$
+```
 
 Balancing the terms gives `theta=(1-3epsilon)/4`, hence a factor
 arbitrarily close to four from above. Ordinary restricted Santa Claus

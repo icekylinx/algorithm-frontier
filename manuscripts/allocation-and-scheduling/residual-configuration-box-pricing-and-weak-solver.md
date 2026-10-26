@@ -12,10 +12,10 @@ capacities when each player's local family is a coordinate box. The
 runtime proved here is single exponential in the **number q of potential
 players**, not in the selection rank r:
 
-$$
+```math
 2^{O(q)}\mathrm{poly}(H,\epsilon^{-1}).
  \tag{W1}
-$$
+```
 
 The output is a fractional configuration point attaining at least
 (1-epsilon) times the optimum of that relaxation. This is not a
@@ -47,24 +47,24 @@ The case F_pj=f_j({p}) is the unrestricted local model.
 Use all subset-marginal resource inequalities from
 [recipient-polymatroid-subset-cut-compression.md](recipient-polymatroid-subset-cut-compression.md):
 
-$$
+```math
 \sum_{p,n}\mu_{pn}\bigl(n_j-m_{pj}(S)\bigr)_+\le f_j(S),
  \qquad m_{pj}(S)=f_j(S\cup\{p\})-f_j(S).
  \tag{W2}
-$$
+```
 
 For each player-matroid subset S, include
 
-$$
+```math
 \sum_{p\in S,n}\mu_{pn}\le r_M(S),
-$$
+```
 
 and include the lower total-mass inequality
 
-$$
+```math
 -\sum_{p,n}\mu_{pn}\le-r.
  \tag{W3}
-$$
+```
 
 The player inequality for S=P supplies the matching upper total bound.
 Together with mu>=0, these are precisely the player-basis conditions.
@@ -87,12 +87,12 @@ of their resource or player constraint columns.
 A nonnegative weighting of the upper resource inequalities assigns
 player p a cost function of the form
 
-$$
+```math
 G_p(n)=\sum_j g_{pj}(n_j),\qquad
  g_{pj}(a)=\ell_{pj}a+
               \sum_h b_{pjh}(a-s_{pjh})_+,
  \tag{W4}
-$$
+```
 
 where ell and b are nonnegative rational prices and every breakpoint
 s is an integer between zero and the resource singleton bound. In
@@ -135,11 +135,11 @@ Otherwise let Pmax be the largest remaining chunk value. Every such
 chunk individually fits, so the optimum remaining profit P* is at
 least Pmax. For rational 0<epsilon<=1/2, put
 
-$$
+```math
 \Delta=\epsilon Pmax/N,
                  \widehat P_i=\lfloor P_i/\Delta\rfloor.
  \tag{W5}
-$$
+```
 
 Every rounded profit is at most N/epsilon. Dynamic programming stores
 the minimum exact rational cost for each total rounded profit and
@@ -151,22 +151,22 @@ For an optimal feasible chunk set O, rounding loses at most N Delta.
 The DP solution has rounded profit at least that of O and therefore
 actual remaining value at least
 
-$$
+```math
 P^*-N\Delta
                   \ge(1-\epsilon)P^*.
-$$
+```
 
 Adding the free chunks preserves the same multiplicative guarantee.
 Compressing the chosen units of each type to its cheapest prefix gives
 a genuine count vector, keeps its value and only lowers its cost.
 The resulting algorithm has the two properties
 
-$$
+```math
 G_p(n)\le C,\qquad
  v\cdot n\ge(1-\epsilon)
          \max\{v\cdot a:G_p(a)\le C,\ 0\le a\le F_p\}.
  \tag{W6}
-$$
+```
 
 Thus the cost budget is satisfied exactly; only the objective value
 is approximated. No iteration depends on the magnitude of F_pj.
@@ -183,20 +183,20 @@ cost coefficient in (W4). Its bit length is at most the sum of their
 denominator bit lengths. Every integer configuration cost belongs to
 the grid (1/D)Z. Set
 
-$$
+```math
 C_p={\lceil Dw_p\rceil-1\over D}.
  \tag{W7}
-$$
+```
 
 This is the largest attainable cost-grid point strictly below w_p.
 Apply (W6) at budget C_p. If its returned value is at least
 (1-epsilon)T, return that configuration. Its value and cost satisfy
 
-$$
+```math
 v\cdot n\ge(1-\epsilon)T,
                      \qquad G_p(n)<w_p.
  \tag{W8}
-$$
+```
 
 If its value is smaller, there is no configuration of value at least T
 with G_p(n)<w_p. Otherwise such a configuration would be feasible for
@@ -213,10 +213,10 @@ arithmetic with the paid encoding lengths.
 
 Let L be the number of explicit rows, and write the target-T LP as
 
-$$
+```math
 A_T\mu\le b,\qquad\mu\ge0.
  \tag{W9}
-$$
+```
 
 All columns and b have integer entries bounded in absolute value by
 some B>=1 of polynomial encoding length. The only negative row
@@ -224,20 +224,20 @@ coefficients and right side needed in our presentation are the total
 mass row (W3). By Farkas' lemma, (W9) is infeasible exactly when there
 is a nonnegative vector beta with
 
-$$
+```math
 \beta^T A_T\ge0,\qquad \beta^T b\le-1.
  \tag{W10}
-$$
+```
 
 Scaling normalizes a strictly negative certificate to beta^T b=-1.
 A basic feasible certificate is defined by at most L independent
 active equations with integer coefficients bounded by B. Cramer's
 rule therefore gives a uniform upper bound
 
-$$
+```math
 0\le\beta_i\le U_0=(LB+1)^{L+1}.
  \tag{W11}
-$$
+```
 
 The generous displayed bound suffices; its bit length is polynomial
 in L and log B. The same bound applies to **every subset of configuration
@@ -260,11 +260,11 @@ Let theta have every coordinate equal to one, except that its
 coordinate for the player upper-total row S=P is two. For every
 configuration column A_(p,n),
 
-$$
+```math
 \theta^T A_{(p,n)}\ge 2-1=1,
              \qquad \theta^T b\le(L+1)B.
  \tag{W14}
-$$
+```
 
 Indeed, the lower-total row is the only negative column entry, and
 all other entries are nonnegative. This observation holds for every
@@ -275,12 +275,12 @@ whose finite primal A_H mu<=b, mu>=0 is infeasible. By Section 5 there
 is beta_0>=0 with beta_0^T A_H>=0, beta_0^T b=-1 and beta_0<=U_0.
 Set
 
-$$
+```math
 \gamma={1\over4(L+1)B},\qquad
  \beta_* =2\beta_0+\gamma\theta,\qquad
  \delta={\gamma\over2LB}.
  \tag{W15}
-$$
+```
 
 The point beta_* has slack at least gamma in each column inequality
 and in each coordinate lower bound. Its normalization obeys
@@ -292,11 +292,11 @@ Every column coefficient vector and b has Euclidean norm at most
 LB. Consequently the entire Euclidean ball of radius delta about
 beta_* is contained in
 
-$$
+```math
 K_H=\{\beta:0\le\beta\le4U_0,\quad
               \beta^T b\le-1,\quad\beta^T A_H\ge0\}.
  \tag{W16}
-$$
+```
 
 For column and normalization rows, moving by delta changes a row
 value by at most LB delta=gamma/2. Coordinate bounds have still
@@ -342,13 +342,13 @@ Every retained column has value at least T'.
 
 The procedure therefore returns one of two correct outcomes:
 
-$$
+```math
 \boxed{\begin{array}{l}
  \text{the target-T residual configuration LP is infeasible, or}\\
  \text{an explicit feasible point for target }(1-\epsilon)T.
  \end{array}}
  \tag{W12}
-$$
+```
 
 The algorithm is allowed to return either outcome when both are true.
 It does not certify infeasibility merely because the hard target is
@@ -385,10 +385,10 @@ grid endpoints, the successful trial target is at least OPT_LP, even
 though success need not mean feasibility of that trial's hard target.
 Its saved point therefore has value at least
 
-$$
+```math
 (1-\epsilon)\mathrm{OPT}_{LP}.
  \tag{W13}
-$$
+```
 
 The number of trials is polynomial in the value encoding. This proves
 the claimed single-exponential approximate optimizer for the strengthened

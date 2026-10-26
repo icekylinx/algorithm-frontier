@@ -22,10 +22,10 @@ contains exactly one vertex of `A` and between one and `r` vertices
 of `B`. Its rank here means its number of `B` vertices. Parallel
 hyperedge identities are allowed. Write
 
-$$
+```math
 p=\sum_{e\in E}|e|,\qquad
  U=\log(p+4),\qquad s=\log\Delta,
-$$
+```
 
 where `Delta>=4` is an integer. For `S subseteq A`, let `E_S`
 denote the hyperedges whose left vertex belongs to `S`; their
@@ -41,11 +41,11 @@ returns one of the following:
 
 Its running time is
 
-$$
+```math
 O(|A|+|B|)+
  p\exp O\!\left(\frac{U\log(2+s)}s\right).
  \tag{1}
-$$
+```
 
 The nontrivial execution only needs `4<=Delta<=p`; the
 prechecks below handle larger parameters immediately. The theorem
@@ -56,11 +56,11 @@ outputs can be independently checked in
 
 Consequently, if
 
-$$
+```math
 \tau(E_S)\ge\Delta r^2 |S|
        \quad\text{for every }S\subseteq A,
  \tag{2}
-$$
+```
 
 the algorithm necessarily returns a perfect matching on the left.
 A certificate of type 2 refutes (2). It does **not** assert that a
@@ -79,10 +79,10 @@ If `Delta r^2>|B_used|` and `A` is nonempty, choose any left
 vertex `a` and return `S={a}, C=B_used`. This is already a
 strict certificate of type 2. In every remaining execution,
 
-$$
+```math
 \Delta r^2\le |B_{used}|\le p,
  \tag{3}
-$$
+```
 
 so `s<=U` and `log r<=U`. The initial cost of reading unused
 vertices is paid only once, in the leading term of (1). All
@@ -104,9 +104,9 @@ layer is `L_i=(X_i,Y_i)`, where:
 
 To build a new layer from prefix `0,...,ell`, mark as forbidden
 
-$$
+```math
 F_0=B(X_{\le\ell}\cup Y_{\le\ell}).
-$$
+```
 
 Index the matching owner of each right vertex. Scan the input
 hyperedge list once, in a fixed deterministic order. An edge is
@@ -138,11 +138,11 @@ Store two further objects:
 
 They satisfy
 
-$$
+```math
 |F|\le |X|/\Delta,\qquad B(X\cup Y)\subseteq C,
  \qquad |C|\le r^2|X|.
  \tag{4}
-$$
+```
 
 For the last inequality, an accepted right set `Q` has size at
 most `r` and touches at most `|Q|` disjoint matching edges.
@@ -158,11 +158,11 @@ input edge intersects `F_0 union C`. Its counter was never full,
 so any such edge that was not accepted must have met the forbidden
 set when scanned. That set only grows during the call. Therefore
 
-$$
+```math
 F_0\cup C\text{ hits every edge incident to an active
  left vertex outside }F.
  \tag{5}
-$$
+```
 
 This is a direct edge-list certificate. No approximation oracle
 and no shortest-path structure enter the explicit-hypergraph result.
@@ -202,43 +202,43 @@ At the beginning of a build, all old positive-index layers are
 noncollapsible. Since different nonfree selected edges have
 disjoint blocker sets,
 
-$$
+```math
 |Y_i|\ge\tfrac9{10}|X_i|.
  \tag{6}
-$$
+```
 
 ## 4. The growth test or a directly checkable violation
 
 For the just-built layer `ell+1`, put
 
-$$
+```math
 W=|Y_{\le\ell}|>0,
  \qquad T=\sum_{i=1}^{\ell+1}|X_i|.
-$$
+```
 
 If `|X_(ell+1)|>Delta W/10`, the growth test passes. Otherwise
 (6) gives
 
-$$
+```math
 T\le(\Delta/10+10/9)W.
-$$
+```
 
 Let `S` be all left identities represented in `Y_(<=ell)`,
 excluding every full-counter set `F_i`, and let
 `C=union_i C_i`. The active sets are disjoint across layers.
 Therefore
 
-$$
+```math
 |S|\ge W-T/\Delta
        \ge(9/10-10/(9\Delta))W>0.
-$$
+```
 
 For each left vertex in `S`, apply (5) in its unique layer.
 The earlier forbidden prefix is covered by earlier `C_j`,
 using (4). Hence `C` hits every input edge incident to `S`,
 and
 
-$$
+```math
 \begin{split}
  |C|&\le r^2T
       \le r^2(\Delta/10+10/9)W\\
@@ -246,17 +246,17 @@ $$
       \le\Delta r^2|S|.
  \end{split}
  \tag{7}
-$$
+```
 
 The strict inequality holds for every `Delta>=4`. Return
 this `S,C` as the violation certificate. This argument does
 not assume the strong Haxell condition. If (2) holds, the test
 always passes, so every surviving layer satisfies
 
-$$
+```math
 |X_i|>\Delta |Y_{<i}|/10.
  \tag{8}
-$$
+```
 
 The algorithm therefore has a valid, verifiable outcome on every
 input, without pretending to test all subsets in (2) in advance.
@@ -273,10 +273,10 @@ At a main-loop boundary, (6) and (8) imply
 `|Y_i|>(9Delta/100)|Y_<i|`. The sets `Y_i` use disjoint left
 vertices. Therefore the maximum number of surviving layers is
 
-$$
+```math
 D=O(U/\log\Delta)=O(U/s).
  \tag{9}
-$$
+```
 
 The currently appended layer adds at most one to the depth.
 
@@ -288,12 +288,12 @@ positive integer at most `q=|A|`. When it creates a direct child
 it is noncollapsible. By (6), (8), the child's fixed prefix size
 is therefore
 
-$$
+```math
 W_{child}=W_i+|Y_i|
        \ge\kappa W_i,
  \qquad\kappa=1+9\Delta/100.
  \tag{10}
-$$
+```
 
 When a direct child collapses, more than `|X_child|/10` of
 its edges are free. At most `Delta` share a left vertex, so
@@ -308,10 +308,10 @@ be the fixed prefix size of child `j`. Only the current top
 layer is collapsed or discarded. Thus child `j` must collapse
 before child `j+1` can be born, giving
 
-$$
+```math
 z_{j+1}\le0.99z_j.
  \tag{11}
-$$
+```
 
 Both (10) and (11) hold in every finite execution prefix,
 including its possible last living child. We do not need the
@@ -322,9 +322,9 @@ had.
 
 Let `rho=0.99` and
 
-$$
+```math
 \lambda=100\frac{\log(2+s)}s.
-$$
+```
 
 Give each positive-index layer instance weight
 `w_i=W_i^(-lambda)`. These weights are used only in the
@@ -333,12 +333,12 @@ membership tests, and the integer growth comparison. From (10),
 (11), the children of this
 instance have total weight at most
 
-$$
+```math
 \sum_{child} w_{child}
      \le\frac{\kappa^{-\lambda}}{1-\rho^\lambda}\,w_i
      \le\tfrac12w_i.
  \tag{12}
-$$
+```
 
 Indeed, reverse the geometric sequence of children: every earlier
 weight is at most `rho^lambda` times the next, and the last
@@ -359,11 +359,11 @@ child weight, so total forest weight is at most twice the sum
 of the root-child weights. Each node has weight at least
 `q^(-lambda)`. Its node count is consequently at most
 
-$$
+```math
 \frac{2q^\lambda}{1-\rho^\lambda}
        =\exp O\!\left(\frac{U\log(2+s)}s\right).
  \tag{13}
-$$
+```
 
 The logarithm of the prefactor is
 `O(log(1+1/lambda))=O(log(U+4))`, which is absorbed by the
@@ -441,9 +441,9 @@ the same promise `tau(E_S)>=Delta r^2 |S|` throughout.
 The total time includes a leading factor `p` and the one-time
 vertex-list reading cost. The first row therefore gives
 
-$$
+```math
 O(|A|+|B|)+p(\log p)^{O(1/\epsilon)}
-$$
+```
 
 for each fixed `epsilon`, with the same matching-or-violation
 certificate alternative even without a promise.

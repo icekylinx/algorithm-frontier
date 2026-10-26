@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-For rational $0<\eta\le1$, returns $C_{\max}\le\min\{2\mathrm{OPT},(2-1/(3+\eta))\mathrm{OPT}+u\}$.
+For rational $`0<\eta\le1`$, returns $`C_{\max}\le\min\{2\mathrm{OPT},(2-1/(3+\eta))\mathrm{OPT}+u\}`$.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic workload aggregation, rank-based unit search, decomposition and ad
 
 **Time**
 
-$\mathrm{poly}(H)\min\{2^{O(h)},(h+1)^{O((1+\eta^{-1})\log(h+1))}\}$.
+$`\mathrm{poly}(H)\min\{2^{O(h)},(h+1)^{O((1+\eta^{-1})\log(h+1))}\}`$.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$h$ is the total rank of the largest positive size $a$; $u=\max\{p_j:p_j<a,\ f_j(P)>0\}$, or zero if no smaller jobs exist; $\eta$ is rational. $H$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+$`h`$ is the total rank of the largest positive size $`a`$; $`u=\max\{p_j:p_j<a,\ f_j(P)>0\}`$, or zero if no smaller jobs exist; $`\eta`$ is rational. $`H`$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 

@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Converts a forced-omission extension of cost $A^{c-\lvert Z\rvert}\mathrm{poly}(H)$ into a deterministic whole-ground algorithm while preserving the original approximation, exact constraints, and comparator.
+Converts a forced-omission extension of cost $`A^{c-\lvert Z\rvert}\mathrm{poly}(H)`$ into a deterministic whole-ground algorithm while preserving the original approximation, exact constraints, and comparator.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic streamed inclusion covers and fixed-order enumeration. Bernoulli m
 
 **Time**
 
-$T_A(q,H)=(2-1/A)^q E(q)\mathrm{poly}(H)$, where fixed $A>1$ and $E(q)=2^{O(q\log\log(q+2)/\log(q+2))}$. Exact-one-half quota cases use $A=27/4$ and base $50/27$; factor-three count cases use $A=4$ and base $7/4$.
+$`T_A(q,H)=(2-1/A)^q E(q)\mathrm{poly}(H)`$, where fixed $`A>1`$ and $`E(q)=2^{O(q\log\log(q+2)/\log(q+2))}`$. Exact-one-half quota cases use $`A=27/4`$ and base $`50/27`$; factor-three count cases use $`A=4`$ and base $`7/4`$.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the explicit ground, binary input, streamed block cover, current r
 
 **Parameters**
 
-$q$ is the explicit nonloop ground; $c$ is the promised omission cardinality; $Z$ is a forced omitted seed; $A$ is a supplied admissible base. Sharp algebraic base displays use fixed rational tradeoff parameters.
+$`q`$ is the explicit nonloop ground; $`c`$ is the promised omission cardinality; $`Z`$ is a forced omitted seed; $`A`$ is a supplied admissible base. Sharp algebraic base displays use fixed rational tradeoff parameters.
 
 **Model and representation**
 
@@ -42,7 +42,7 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 ## Shared proof components
 
-**Weighted first-crossing omissions and the $\Gamma$ base**
+**Weighted first-crossing omissions and the $`\Gamma`$ base**
 
 [Selection theorem](selection.md)
 

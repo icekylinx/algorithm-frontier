@@ -14,7 +14,7 @@ Deterministic reductions conditional on the deterministic matching backend, incl
 
 **Time**
 
-The unconditional reduction constructs an $O(m\log(m+2))$-size simple subcubic graph and uses one exact matching call for feasibility, including exact/ranged cardinality, or $O(\log(m+2))$ calls for optimization. Conditional on the matching backend Contract R, total time is $O(n+m)+(m+1)\exp\!\left(O((\log(m+2))^{4/5}(\log\log(m+4))^{1/5})\right)$.
+The unconditional reduction constructs an $`O(m\log(m+2))`$-size simple subcubic graph and uses one exact matching call for feasibility, including exact/ranged cardinality, or $`O(\log(m+2))`$ calls for optimization. Conditional on the matching backend Contract R, total time is $`O(n+m)+(m+1)\exp\!\left(O((\log(m+2))^{4/5}(\log\log(m+4))^{1/5})\right)`$.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the explicit graph and reduction state; binary degree bounds are n
 
 **Parameters**
 
-$n$ is the vertex count; $m$ is the explicit edge-record count; $g(v)$ and $f(v)$ are lower and upper degree bounds.
+$`n`$ is the vertex count; $`m`$ is the explicit edge-record count; $`g(v)`$ and $`f(v)`$ are lower and upper degree bounds.
 
 **Model and representation**
 

@@ -6,7 +6,7 @@ A retained set of original top simplices preserves lower-dimensional persistence
 
 **Guarantee**
 
-At most $\min\left\{N,r\binom{h+a+b}{a+b}\right\}$ top simplices preserve every surviving boundary space at every filtration threshold, hence persistence modules in degrees at most $p-1$.
+At most $`\min\left\{N,r\binom{h+a+b}{a+b}\right\}`$ top simplices preserve every surviving boundary space at every filtration threshold, hence persistence modules in degrees at most $`p-1`$.
 
 **Objective and output**
 
@@ -18,7 +18,7 @@ Deterministic uniformly polynomial construction for the explicit complex and sup
 
 **Time**
 
-Uniform deterministic polynomial preprocessing in the explicit complex and chosen field representation. With $C=\binom{h+a+b}{a+b}$ and $rC<N$, a direct lifted elimination uses $O(N(rC)^2)$ field operations plus original row selection and feature generation.
+Uniform deterministic polynomial preprocessing in the explicit complex and chosen field representation. With $`C=\binom{h+a+b}{a+b}`$ and $`rC<N`$, a direct lifted elimination uses $`O(N(rC)^2)`$ field operations plus original row selection and feature generation.
 
 **Space**
 
@@ -26,7 +26,7 @@ The bound counts retained top simplices, not all lower faces, total encoded bits
 
 **Parameters**
 
-$N$ counts $p$-simplices; $r$ is top-boundary rank; $a$ is vertex-label degree; $b$ is additional top-simplex label degree; $h$ is failure budget; $n$ is vertex count; $\ell$ is color count.
+$`N`$ counts $`p`$-simplices; $`r`$ is top-boundary rank; $`a`$ is vertex-label degree; $`b`$ is additional top-simplex label degree; $`h`$ is failure budget; $`n`$ is vertex count; $`\ell`$ is color count.
 
 **Model and representation**
 
@@ -48,19 +48,19 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **General vertex and top labels**
 
-$\min\left\{N,r\binom{h+a+b}{a+b}\right\}$
+$`\min\left\{N,r\binom{h+a+b}{a+b}\right\}`$
 
 **One color per vertex, no extra top labels**
 
-$\min\left\{N,kr,\binom{n}{p+1}-\binom{n-k}{p+1}\right\}$, $k=\min\{h+1,\ell\}$
+$`\min\left\{N,kr,\binom{n}{p+1}-\binom{n-k}{p+1}\right\}`$, $`k=\min\{h+1,\ell\}`$
 
 **Overlapping vertex labels, no extra top labels**
 
-$\min\left\{N,sr,\binom{n}{p+1}-\binom{n-s}{p+1}\right\}$, $s=$ rank of vertex coefficient features
+$`\min\left\{N,sr,\binom{n}{p+1}-\binom{n-s}{p+1}\right\}`$, $`s=`$ rank of vertex coefficient features
 
-**Failure of labeled $s$-faces and all cofaces**
+**Failure of labeled $`s`$-faces and all cofaces**
 
-$\min\left\{N,r\binom{h+\binom{p}{s}}{\binom{p}{s}}\right\}$
+$`\min\left\{N,r\binom{h+\binom{p}{s}}{\binom{p}{s}}\right\}`$
 
 **Compatible relative homology and zigzag sequences of allowed states**
 

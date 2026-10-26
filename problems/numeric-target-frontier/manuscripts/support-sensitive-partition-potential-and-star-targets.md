@@ -4,11 +4,11 @@
 
 The support-pattern count can retain the entire pattern of unequal row targets, rather than replacing it by their sum. This note proves a dimension-uniform analytic bound, and uses it to solve a connected star family in
 
-$$
+```math
 \exp\!\left(O\!\left(k\log\left(2+\frac Bk\right)\right)\right)
  \mathrm{poly}(H).
  \tag{SP1}
-$$
+```
 
 There are k leaf rows with target one and a central row with target B. Every nonzero column touches one leaf, and can also touch the center; no center-only columns are allowed. Leaf rows are upper bounds or equalities, while the center may be an upper bound, equality, or cover. The resource is one arbitrary integral polymatroid, with optional vectors or original-total bases, and one arbitrary signed rational scalar is optimized exactly.
 
@@ -20,10 +20,10 @@ These statements retain the exact-profile integral recovery already proved in th
 
 Suppose the target instance has already been prepared on an explicit polynomial-size ground: all auxiliary coefficients are nonnegative integers, and every row j has a positive upper allowance U_j. Let the occupied nonzero coefficient vectors be grouped into classes. A profile gives each distinct vector b a nonnegative integer multiplicity h_b, subject to
 
-$$
+```math
 W_j=\sum_b b_j h_b\le U_j.
  \tag{SP2}
-$$
+```
 
 The original resource-count cap may also be imposed. It only reduces the profile family. The single zero-vector group is recovered from the original required total, and is not included in this count.
 
@@ -35,62 +35,62 @@ Write N(U,S) for the number of profiles satisfying SP2. This notation counts coe
 
 For positive real numbers t_j, define
 
-$$
+```math
 \Phi_U(t)=
  \sum_j U_jt_j+
  2\sum_{A\in S}\prod_{j\in A}\frac1{e^{t_j}-1}.
  \tag{SP3}
-$$
+```
 
 Then
 
-$$
+```math
 \boxed{\log N(U,S)\le\Phi_U(t)\quad\hbox{for every }t>0.}
  \tag{SP4}
-$$
+```
 
 Consequently the same inequality holds with the infimum of SP3 over the positive orthant. The constant two is independent of the number of rows, the support sizes, the numeric targets, and the number of occupied coefficient vectors.
 
 To prove SP4, enlarge the class catalogue to include every positive integer vector on every exact support A in S. For each fixed t>0, its weighted multiset generating function is
 
-$$
+```math
 Z(t)=
  \prod_{A\in S}\prod_{b\in\mathbb Z_{>0}^{A}}
                   (1-e^{-\sum_{j\in A}t_jb_j})^{-1}.
  \tag{SP5}
-$$
+```
 
 Every profile satisfying SP2 has weight at least exp(-sum_j U_jt_j). Expanding the product with nonnegative terms therefore gives
 
-$$
+```math
 N(U,S)\le e^{\sum_jU_jt_j}Z(t).
  \tag{SP6}
-$$
+```
 
 The logarithm of the factor for one support A is
 
-$$
+```math
 \sum_{\ell\ge1}\frac1\ell
              \prod_{j\in A}\frac1{e^{\ell t_j}-1}.
  \tag{SP7}
-$$
+```
 
 For an integer ell>=1,
 
-$$
+```math
 e^{\ell t}-1=(e^t-1)(1+e^t+\cdots+e^{(\ell-1)t})
                   \ge\ell(e^t-1).
  \tag{SP8}
-$$
+```
 
 Thus SP7 is at most
 
-$$
+```math
 \left(\sum_{\ell\ge1}\ell^{-(|A|+1)}\right)
              \prod_{j\in A}(e^{t_j}-1)^{-1}
  \le 2\prod_{j\in A}(e^{t_j}-1)^{-1}.
  \tag{SP9}
-$$
+```
 
 Here |A|>=1 and sum_ell ell^(-2)<=1+integral_1^infinity x^(-2)dx=2. These estimates also prove convergence of the products used above. Summing SP9 and using SP6 proves SP4.
 
@@ -100,11 +100,11 @@ No independence between supports or between resource blocks is asserted. The pro
 
 Use the componentwise-pruned depth-first profile enumeration from the preceding exact-target proofs. At every depth, fill all unassigned multiplicities with zero. This injects states at that depth into the upper-cap profile family. The number of occupied classes is polynomial in the explicit prepared input. Hence the entire traversal, including all final target-filter and resource failures, takes at most
 
-$$
+```math
 \exp\!\left(\inf_{t>0}\Phi_U(t)\right)
                   \mathrm{poly}(H)
  \tag{SP10}
-$$
+```
 
 time, multiplied only by the size factor of the explicit preparation. The algorithm does not need to compute a minimizing t. It is the same exact enumerator; every positive t gives a valid analysis of its running time.
 
@@ -114,11 +114,11 @@ Workspace remains polynomial whenever the prepared copied ground has polynomial 
 
 The function Phi_U is convex. Indeed,
 
-$$
+```math
 \frac{d^2}{dt^2}\bigl[-\log(e^t-1)\bigr]
                  =\frac{e^t}{(e^t-1)^2}>0.
  \tag{SP11}
-$$
+```
 
 Each positive product in SP3 is log-convex and hence convex, and the remaining summand is linear. This observation can help choose or certify useful t values, but no approximate convex solver is hidden in the exact algorithm or its complexity claim.
 
@@ -134,40 +134,40 @@ If the center is a cover, use an active/passive copy of each center-positive coo
 
 Define
 
-$$
+```math
 V=\begin{cases}
  B,&\hbox{center upper or equality},\\
  2B-1,&\hbox{center covering}.
  \end{cases}
  \tag{SP12}
-$$
+```
 
 The auxiliary caps are U_0=V and U_j=1 on leaves. There are at most k pair supports and at most k leaf-singleton supports. Set
 
-$$
+```math
 t_0=\frac{k}{V+k},
  \qquad
  t_j=\log\left(2+\frac Vk\right)\quad(j=1,\ldots,k).
  \tag{SP13}
-$$
+```
 
 Since e^t-1>=t,
 
-$$
+```math
 (e^{t_0}-1)^{-1}\le\frac{V+k}{k},
  \qquad
  (e^{t_j}-1)^{-1}=\frac{k}{V+k}.
  \tag{SP14}
-$$
+```
 
 Each pair product in SP3 is at most one, and each leaf singleton is at most one. The central linear term is Vk/(V+k)<=k. Therefore
 
-$$
+```math
 \boxed{
  \Phi_U(t)\le k\left[5+\log\left(2+\frac Vk\right)\right].
  }
  \tag{SP15}
-$$
+```
 
 This proves SP1 because V<=2B. It holds on feasible and infeasible inputs, with original binary resource capacities and exact signed scalar optimization.
 
@@ -181,10 +181,10 @@ Let k>=2 and B>=2k be integers. Create one element (j,a) for every leaf j in {1,
 
 Set the center equality target to B, every leaf equality target to one, and the resource rank to r=k. A solution meeting all equalities chooses exactly one element from every leaf. Thus its central values form an ordered composition of B into k positive parts. Let H be this family of rank-sized sets. Then
 
-$$
+```math
 |H|=\binom{B-1}{k-1}.
  \tag{SP16}
-$$
+```
 
 Distinct members of H are not one-exchange neighbors. Their full vector sums agree, and every individual element has a distinct full coefficient vector. A one-element exchange preserving that sum would have to exchange equal vectors, which is impossible for distinct elements.
 
@@ -198,11 +198,11 @@ A balanced distribution between the reference instance and a uniformly random hi
 
 For B>=2k and k>=2,
 
-$$
+```math
 \log\binom{B-1}{k-1}
        =\Theta\!\left(k\log\left(1+\frac Bk\right)\right),
  \tag{SP17}
-$$
+```
 
 with uniform absolute constants. The upper estimate is the standard binomial bound. For the lower estimate use binomial(n,h)>=(n/h)^h, with n=B-1 and h=k-1; h>=k/2 and n/h>=B/k>=2. This proves the matching order for this family.
 
@@ -212,10 +212,10 @@ The explicit ground has kB elements. Thus SP17 is an unconditional query lower b
 
 Order the positive compositions a_1+...+a_k=B lexicographically. For a prefix, let S be the remaining sum and h the number of positions remaining, including the current one. A possible current part b has
 
-$$
+```math
 \binom{S-b-1}{h-2}
  \tag{SP18}
-$$
+```
 
 completions when h>=2 and S-b>=h-1; otherwise it has zero completions. When h=1 there is exactly one legal last part, namely S.
 
@@ -227,20 +227,20 @@ The direct implementation makes at most kB binomial evaluations. Its integer len
 
 Given a 3-CNF formula phi with nu variables, choose the smallest integer k>=2 such that
 
-$$
+```math
 L_k=\binom{k^2-1}{k-1}\ge2^\nu,
  \qquad B=k^2.
  \tag{SP19}
-$$
+```
 
 Such a k can be found by polynomially many binomial evaluations. SP17 gives log L_k=Theta(k log k). Minimality, applying the same bounds at k-1, therefore gives
 
-$$
+```math
 k\log k=\Theta(\nu),\qquad
  T=k^2+k,\qquad
  \sqrt T\log(T+2)=\Theta(\nu)
  \tag{SP20}
-$$
+```
 
 for growing nu; constant-size initial inputs can be handled directly. The selected k and the ground of size k cubed are polynomial in nu.
 
@@ -254,10 +254,10 @@ An algorithm may inspect the supplied program and formula; the reduction does no
 
 Consequently deterministic ETH rules out a deterministic exact algorithm of time
 
-$$
+```math
 2^{o(\sqrt T\log(T+2))}\mathrm{poly}(H)
  \tag{SP21}
-$$
+```
 
 on this balanced connected-star family with polynomial-time rank programs. For bounded-error randomized algorithms the same reduction requires randomized ETH as a separate assumption.
 

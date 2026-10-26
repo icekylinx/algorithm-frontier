@@ -27,18 +27,18 @@ concatenation of selected child witnesses. The two child families and
 their composition records determine it without expanding its edges.
 
 For physical allocation edge e, let
-$$
+```math
 \chi_{C,j}(e)\in\{-1,0,1\}
-$$
+```
 be its signed use by witness j: +1 for receiving row-to-bin use,
 -1 for donating bin-to-row use, and zero if it is absent.
 Endpoint-price gadget edges have no primal allocation coordinate.
 
 A composition record supplies a matrix A_i for each child C_i:
-$$
+```math
 \chi_C(e)=A_i\chi_{C_i}(e)
                          \qquad(e\in C_i).                   \tag{1}
-$$
+```
 The records are not an arbitrary matrix promise. They come from the
 actual child-path concatenation. For nonempty selected paths a child
 witness cannot be used twice in one simple parent witness.
@@ -52,18 +52,18 @@ when the boundary size is bounded.
 ## 2. Group coordinates by their current signed-use vector
 
 At each node C, partition its allocation coordinates by
-$$
+```math
 \chi_C(e)=(\chi_{C,1}(e),\ldots,\chi_{C,q}(e)).
-$$
+```
 There are at most 3^q possible nonempty groups. A group may contain
 many physical edges, but they receive the same allocation change
 under every linear combination of the current witness updates.
 
 For each group store minima, with physical edge witnesses, of
-$$
+```math
 x_e-\ell_e,\qquad 2\ell_e-x_e,\qquad
  x_e-\underline x_e,\qquad \overline x_e-x_e .                \tag{2}
-$$
+```
 These are the two register and two guard buffers. Retain the zero
 signed-use group too: an edge absent from all current witnesses
 may appear in a later recomputed witness family.
@@ -79,9 +79,9 @@ to its children.
 
 To apply a transfer eta to witness j, add eta to t_(C,j).
 A group with signed-use vector chi has allocation increment
-$$
+```math
 \Delta x=\eta\chi_j .
-$$
+```
 Its first and third minima in (2) increase by Delta x, and its
 second and fourth decrease by Delta x. Thus the entire path
 update is performed in 3^q poly(q) time without reading its edges.
@@ -93,9 +93,9 @@ composition coefficients are used.
 Before splitting a node's state, inspecting a descendant coordinate,
 or replacing any witness family or composition map, push the old
 tag through the old maps:
-$$
+```math
 t_{C_i}\mathrel{+}=A_i^\mathsf{T}t_C. \tag{3}
-$$
+```
 Update each child's group minima by the corresponding dot products,
 then clear t_C. Equation (1) proves that every physical coordinate
 receives exactly its pending increment.
@@ -155,9 +155,9 @@ No new transfer is issued until the entire transaction is settled.
 
 Each reported register event, point price edit, or endpoint-price
 edit takes
-$$
+```math
 3^q\mathrm{poly}(q)\,h        \tag{4}
-$$
+```
 work. A path transfer and its guard query have no dependence
 on the physical path length.
 
@@ -223,9 +223,9 @@ No unproved bounded overlap of arbitrary route embeddings is used.
 At the root, the best selected source-to-target path is exactly
 the maximum conservative threshold score in the whole graph.
 Its endpoint bin IDs and score determine its donor cost sum:
-$$
+```math
 \bar L=\sigma_a-\tau_b-\mathrm{score}.
-$$
+```
 The ordinary physical path remains implicit.
 
 If the score is positive, the standard finite-grid step applies
@@ -240,18 +240,18 @@ accepted paths, not acyclicity of the ambient graph, and therefore
 remain valid here.
 
 For a fixed polynomial-range graph,
-$$
+```math
 J=O(\nu\log S),\qquad R=O(J+m\log S).
-$$
+```
 With q=O(b^2), the resulting total work is
-$$
+```math
 (m+\nu)\exp(O(b^2))\,h\,\mathrm{polylog}S,
                                                                \tag{5}
-$$
+```
 and the space bound is
-$$
+```math
 (m+\nu)\exp(O(b^2)).
-$$
+```
 The initialization term includes building all group records.
 These bounds are for a fixed edge-partition hierarchy and fixed
 physical support. They do not automatically maintain a new

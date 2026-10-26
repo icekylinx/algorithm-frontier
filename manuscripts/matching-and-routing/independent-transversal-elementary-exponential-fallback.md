@@ -16,17 +16,17 @@ either an independent transversal or a nonempty class set `S` and a
 constellation `K` induced in `G_S`, such that `D=V(K)` totally
 dominates `G_S` and
 
-$$
+```math
 |D|\le2(|S|-1).
-$$
+```
 
 Consequently it satisfies the full approximate certificate contract
 for every positive `epsilon`, with no excess vertices outside `K`.
 Its running time is
 
-$$
+```math
 P\exp(O(q)).
-$$
+```
 
 ## 1. The elementary operation and its stable states
 
@@ -69,16 +69,16 @@ centres as stable nontrivial stars.
 
 At a stable state write
 
-$$
+```math
 (d_1,\ldots,d_t,\infty),\qquad
                d_i=|N_M(x_i)|>0.
-$$
+```
 
 The blocker sets are disjoint subsets of `M`, so
 
-$$
+```math
 \sum_i d_i\le|M|\le q-1.
-$$
+```
 
 Appending a star replaces the terminal infinity by a positive finite
 coordinate. A swap followed by its zero-blocker cascade decreases an
@@ -121,11 +121,11 @@ run the two algorithms in alternating work budgets until one returns
 a result; both outputs have directly checkable certificates. The new
 rate becomes
 
-$$
+```math
 P\min\left\{\exp(O(q)),\,
       (q+1)^{O(\epsilon^{-1}\log(2+r/\epsilon))}\right\}
       \mathrm{poly}(b_\epsilon+\log P),
-$$
+```
 
 whereas the named derived-public layer rate has the exponent
 `O((r/epsilon) log(2+r/epsilon))` in its second term. For fixed

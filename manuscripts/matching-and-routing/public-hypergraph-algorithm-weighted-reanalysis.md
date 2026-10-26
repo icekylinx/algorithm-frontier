@@ -22,12 +22,12 @@ of a hypothetical superpose rerun in Proposition 5.7.
 Let `H=(A,B,E)` be an explicit `r`-bounded bipartite hypergraph,
 let `p=sum_e |e|`, and assume
 
-$$
+```math
 \tau(E_S)\ge\Delta r^2|S|
        \quad\text{for all }S\subseteq A,
        \qquad\Delta\ge4.
  \tag{1}
-$$
+```
 
 Use the original BHHS operations with `mu=1/10`: extend a
 layer greedily subject to its per-left cap `Delta`, collapse
@@ -37,13 +37,13 @@ increases by a factor at least `1.1`.
 
 These operations find a left-perfect matching in time
 
-$$
+```math
 O(|A|+|B|)+
  p\exp O\!\left(
        \frac{\log(p+4)\log(2+\log\Delta)}{\log\Delta}
        \right).
  \tag{2}
-$$
+```
 
 BHHS Theorem 1.5 displays the weaker rate
 `p exp O(log(p+4)/sqrt(log Delta))`. Equation (2) is a
@@ -69,10 +69,10 @@ that layer. At its creation this is the original greedy build.
 If an extension was adopted, `Xhat_i=X_i` just after adoption.
 If it was rejected, the adoption rule gives
 
-$$
+```math
 |\widehat X_i|<1.1|X_i|.
  \tag{3}
-$$
+```
 
 Until the next direct-child collapse and immediate new attempt,
 the lower prefix, `X_i`, and `Y_i` are unchanged. The actual
@@ -82,9 +82,9 @@ in the recorded candidate remain fixed input vertices.
 Let `F_i` be the active left vertices that reached degree
 `Delta` in that recorded candidate, and let
 
-$$
+```math
 C_i=B(\widehat X_i\cup\widehat Y_i).
-$$
+```
 
 The greedy build was maximal at the time it ran. Therefore every
 input edge for an active vertex outside `F_i` meets the fixed
@@ -92,12 +92,12 @@ lower forbidden prefix or `C_i`. This assertion remains true
 later, even if some recorded matching blockers are no longer in
 the current matching. Also
 
-$$
+```math
 |F_i|\le|\widehat X_i|/\Delta,
  \qquad B(X_i\cup Y_i)\subseteq C_i,
  \qquad |C_i|\le r^2|\widehat X_i|.
  \tag{4}
-$$
+```
 
 The source's actual greedy extension uses residual degree
 counters and respects the cap on the union. It is Algorithm 1,
@@ -112,38 +112,38 @@ At a main-loop boundary all old layers are noncollapsible, so
 `Delta W/10`, then, with the new layer using its own exact
 candidate,
 
-$$
+```math
 T=|X_{\ell+1}|+\sum_{i=1}^{\ell}|\widehat X_i|
       \le(\Delta/10+11/9)W.
  \tag{5}
-$$
+```
 
 Remove all full-counter sets `F_i` from the active left
 identities represented in `Y_(<=ell)`, and call the remainder
 `S`. Their active sets are disjoint across layers, so
 
-$$
+```math
 |S|\ge W-T/\Delta
        \ge(9/10-11/(9\Delta))W.
-$$
+```
 
 The union of all recorded physical `C_i` hits every edge of
 `E_S`. Earlier forbidden prefixes are already covered by
 earlier certificates, using (4). Hence
 
-$$
+```math
 \tau(E_S)\le r^2T
        \le r^2(\Delta/10+11/9)W.
-$$
+```
 
 Assumption (1) gives the opposing lower bound
 `r^2(9Delta/10-11/9)W`. It is strictly larger because
 `4Delta/5>22/9` for every `Delta>=4`. Thus
 
-$$
+```math
 |X_i|>\Delta|Y_{<i}|/10
  \tag{6}
-$$
+```
 
 at a layer's birth. Its lower prefix stays fixed while it
 survives, and its selected edge count only grows, so (6)
@@ -161,9 +161,9 @@ used.
 For one positive-index layer instance let `W=|Y_<i|`, fixed
 through its lifetime. The degree cap gives
 
-$$
+```math
 |X_i|\le\Delta|Y_{i-1}|\le\Delta W,
-$$
+```
 
 whereas (6) gives an initial count exceeding `Delta W/10`.
 Each adopted superposition increases `|X_i|` by at least the
@@ -181,11 +181,11 @@ by a factor at most `rho=.99`.
 
 At every child birth the parent is noncollapsible. By (6),
 
-$$
+```math
 W_{child}\ge\kappa W,
  \qquad\kappa=1+9\Delta/100.
  \tag{7}
-$$
+```
 
 An adopted extension can increase `Y_i` and break the geometric
 sequence, but it causes only a new epoch. There are at most the
@@ -200,10 +200,10 @@ constant `C`. Weight a positive-index layer instance by
 `W_i^(-lambda)`. In each epoch, (7) and the geometric
 child-size sequence bound the child weights by
 
-$$
+```math
 \frac{\kappa^{-\lambda}}{1-\rho^\lambda}
        W_i^{-\lambda}.
-$$
+```
 
 Over all epochs the factor is at most
 `J kappa^(-lambda)/(1-rho^lambda)`. Choose `C` large
@@ -220,9 +220,9 @@ of layer instances in any finite execution prefix bounds total
 weight by twice that quantity. Every node has weight at least
 `|A|^(-lambda)`. There are at most
 
-$$
+```math
 2|A|^\lambda/(1-\rho^\lambda)
-$$
+```
 
 created layers. As in the companion weighted proof, its
 logarithm is `O(U log(2+s)/s)`, where `U=log(p+4)`.

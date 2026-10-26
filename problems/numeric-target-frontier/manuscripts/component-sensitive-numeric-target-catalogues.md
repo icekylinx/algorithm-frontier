@@ -34,22 +34,22 @@ Let `G` be the simple row-support graph, with one vertex per surviving
 positive-target row and one edge for every positive two-row support.
 For a connected component `C`, define
 
-$$
+```math
 d_C=|C|,\qquad T_C=\sum_{j\in C}T_j,\qquad
 U_j=\begin{cases}T_j,&\rho_j\in\{\le,=\},\\
 2T_j-1,&\rho_j=\ge,\end{cases}\qquad
 U_C=\sum_{j\in C}U_j.
 \tag{CP1}
-$$
+```
 
 Let `m_C` be its number of interaction edges and `Q_C` the number of
 actual nonempty exact support patterns of copied coefficient vectors
 inside `C`. Local copying only deletes cover components, so
 
-$$
+```math
 T_C\le U_C\le2T_C,\qquad Q_C\le d_C+m_C\le T_C+m_C.
 \tag{CP2}
-$$
+```
 
 Every nonzero copied coefficient vector belongs to exactly one component.
 All zero vectors, including passive copies and disposal, are retained in
@@ -57,22 +57,22 @@ one global zero group. No corresponding decomposition of `F` is assumed.
 
 Define the anisotropic quantity and its explicit dimension constant by
 
-$$
+```math
 K_C=\max_{\varnothing\ne S\subseteq C}
        \left(\prod_{j\in S}U_j\right)^{1/(|S|+1)},
 \qquad A_d=d+2(2^d-1).
 \tag{CP3}
-$$
+```
 
 For a component with a nonempty coefficient support, put
 
-$$
+```math
 B_C=\min\left\{
  \exp(A_{d_C}K_C),\quad
  2^{U_C}\binom{Q_C+U_C}{U_C}
 \right\}.
 \tag{CP4}
-$$
+```
 
 If `Q_C=0`, put `B_C=1`: that component has only its empty nonzero
 profile, and its row filters decide whether this profile is acceptable.
@@ -80,10 +80,10 @@ profile, and its row filters decide whether this profile is acceptable.
 **Theorem.** Exact scalar optimization, including infeasibility reporting,
 takes
 
-$$
+```math
 \boxed{\left(\prod_C B_C\right)\mathrm{poly}(H)}
 \tag{CP5}
-$$
+```
 
 time and polynomial binary workspace. The polynomial factor is uniform
 in the number and sizes of the components. The exponential dependence
@@ -111,42 +111,42 @@ ordering its vector occurrences and concatenating their positive entries
 injects its weight-`w` profiles into compositions of `w`; there are at
 most `2^(w-1)` such profiles. Multiplying these bounds and summing gives
 
-$$
+```math
 P_C\le2^{U_C}\sum_h\binom{Q_C}{h}\binom{U_C}{h}
      =2^{U_C}\binom{Q_C+U_C}{U_C}.
 \tag{CP6}
-$$
+```
 
 For completeness, the other alternative has a dimension-explicit proof.
 Count instead all multisets of arbitrary nonzero vectors in
 `N^(d_C)` whose component sums are bounded by `U_j`. For positive
 analysis parameters `t_j`, the multivariate generating function gives
 
-$$
+```math
 \log P_C\le \sum_{j\in C}t_jU_j
  +\sum_{\ell\ge1}\frac1\ell
    \left[\prod_{j\in C}(1-e^{-\ell t_j})^{-1}-1\right].
 \tag{CP7}
-$$
+```
 
 Using `(1-e^(-x))^(-1)<=1+1/x`, expanding the product, and
 `sum_(ell>=1) ell^(-(|S|+1))<=2` for each nonempty `S`, we obtain
 
-$$
+```math
 \log P_C\le\sum_{j\in C}t_jU_j
       +2\sum_{\varnothing\ne S\subseteq C}
                         \prod_{j\in S}t_j^{-1}.
 \tag{CP8}
-$$
+```
 
 Set `t_j=K_C/U_j`. The first term is `d_C K_C`. By the definition of
 `K_C`, every product in the second term is at most `K_C`. There are
 `2^(d_C)-1` such products, proving
 
-$$
+```math
 P_C\le\exp(A_{d_C}K_C).
 \tag{CP9}
-$$
+```
 
 For one row this is exactly the ordinary cumulative-partition bound
 `exp(3 sqrt(U_j))`. For larger components it retains the anisotropic
@@ -164,10 +164,10 @@ Concatenate the lists of occupied nonzero vector classes from all
 components. Traverse their count multiplicities depth first, maintaining
 all component allowances and the global count cap
 
-$$
+```math
 \sum_{b\ne0}h_b\le R,
 \tag{CP10}
-$$
+```
 
 where `R` is the required total in the prepared base representation.
 The zero-vector group gets the single remainder
@@ -206,14 +206,14 @@ array. These facts prove the uniform polynomial-space claim.
 Applying the density estimate separately on each nontrivial component
 gives, with `I` the isolated rows,
 
-$$
+```math
 \exp\!\left(
  3\sum_{j\in I}\sqrt{U_j}
  +O\!\left(\sum_{C:\,d_C\ge2}
       T_C\log\left(2+\frac{m_C}{T_C}\right)\right)
 \right)\mathrm{poly}(H).
 \tag{CP11}
-$$
+```
 
 The constant in this density `O` is universal. Every component may instead
 use its explicit anisotropic alternative from CP4. Thus a large isolated
@@ -243,12 +243,12 @@ Add one isolated row with scalar labels `1,...,n`, where `n=k^2`, on
 `H_0` of rank-`r_0` subsets of these labels with the same sum `alpha`.
 Use equality target `alpha` for the isolated row. Elementary bounds give
 
-$$
+```math
 \alpha=\Theta(n^2)=\Theta(k^4),\qquad
 |H_0|\ge\frac{2^n}{(n+1)n^2}
        =\exp(\Omega(k^2)).
 \tag{CP12}
-$$
+```
 
 The ground has polynomial size in `k`; the largest class and its target
 can also be found by the ordinary cardinality/sum counting DP. The
@@ -256,22 +256,22 @@ combined target sum is `T=alpha+k=Theta(k^4)` and the total interaction
 edge count is `Theta(k^2)`. Applying the coarser total-target density
 bound gives `exp(O(T))`. In contrast CP5 gives
 
-$$
+```math
 \exp\!\left(O\left(k\log k+\sqrt\alpha\right)\right)
        \mathrm{poly}(H)
    =\exp(O(\sqrt T))\mathrm{poly}(H).
 \tag{CP13}
-$$
+```
 
 There is a matching-order oracle family with a single globally coupled
 resource. Let `H_core` be all perfect matchings of the core, and let
 
-$$
+```math
 \mathcal H=\{A_{\rm core}\mathbin{\dot\cup}A_0:
        A_{\rm core}\in H_{\rm core},\ A_0\in H_0\},
 \qquad r=k/2+r_0.
 \tag{CP14}
-$$
+```
 
 All members of this family have rank size `r` and the same full row-sum
 vector. No two are one-exchange neighbors, since every coordinate has a
@@ -287,11 +287,11 @@ constraint then forces membership in `H_0`. Thus the reference problem
 is infeasible and the hidden problem has its unique hidden feasible
 base. The size of the hidden family is
 
-$$
+```math
 |\mathcal H|=(k-1)!!\,|H_0|
       =\exp(\Theta(k\log k+k^2)).
 \tag{CP15}
-$$
+```
 
 Consequently exact decision with bounded error at most one third requires
 `|H|/3` worst-case rank queries by the balanced reference/hidden

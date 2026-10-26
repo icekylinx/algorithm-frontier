@@ -10,28 +10,28 @@ Let a matroid M on an explicit ground E of N elements be represented by columns 
 
 There is a deterministic algorithm producing H contained in E with
 
-$$
+```math
 |H|\le \min\left\{N,\;r\binom{h+d}{d}\right\}
  \tag{1}
-$$
+```
 
 such that, for every allowed F and every cost threshold a,
 
-$$
+```math
 \mathrm{span}\{v_e:e\in H,\ c(e)\le a,\ \Lambda(e)\cap F=\varnothing\}
  =
  \mathrm{span}\{v_e:e\in E,\ c(e)\le a,\ \Lambda(e)\cap F=\varnothing\}.
  \tag{2}
-$$
+```
 
 In fact the equality holds at every prefix of a fixed total order refining cost. Consequently H contains the canonical minimum-cost basis after every allowed failure set, including queries that decrease the surviving rank. It also preserves the minimum cost of an independent set of every attainable cardinality.
 
 The algorithm is uniform polynomial time in the explicit input length, including when h and d are input parameters. The straightforward nongated implementation uses a lifted dimension
 
-$$
+```math
 D=r\binom{h+d}{d}
  \tag{3}
-$$
+```
 
 and O(N D^2) field operations for its Gaussian-elimination stage, in addition to feature construction and rank compression. The gate in Section 5 avoids constructing this space when D is larger than the input ground.
 
@@ -47,62 +47,62 @@ Let L be the number of distinct labels occurring in the input. Replace h by min(
 
 Work over a field K extending the representation field and containing distinct scalars
 
-$$
+```math
 a_0,\quad a_\lambda\quad(\lambda\text{ an input label}).
-$$
+```
 
 The extra scalar a_0 represents a dummy label that never fails. How to obtain K deterministically is explained in Section 5.
 
 For each e form the monic degree-d polynomial
 
-$$
+```math
 g_e(T)=(T-a_0)^{d-|\Lambda(e)|}
           \prod_{\lambda\in\Lambda(e)}(T-a_\lambda)
        =T^d+\sum_{j=0}^{d-1}b_j(e)T^j.
  \tag{4}
-$$
+```
 
 Padding with repeated copies of the one nonfailing dummy is legitimate: every genuine label scalar differs from a_0. For a genuine label lambda,
 
-$$
+```math
 g_e(a_\lambda)=0
  \quad\Longleftrightarrow\quad
  \lambda\in\Lambda(e).
  \tag{5}
-$$
+```
 
 Let phi(e) be the vector of all monomials of total degree at most h in the d coordinates b_0(e),...,b_{d-1}(e), including the constant monomial. Its dimension is
 
-$$
+```math
 C=\#\{\alpha\in\mathbb N^d:|\alpha|\le h\}
    =\binom{h+d}{d}.
  \tag{6}
-$$
+```
 
 For a query F, define the polynomial in formal variables B_0,...,B_{d-1}
 
-$$
+```math
 Q_F(B)=\prod_{\lambda\in F}
           \left(a_\lambda^d+\sum_{j=0}^{d-1}B_j a_\lambda^j\right).
  \tag{7}
-$$
+```
 
 It has total degree at most |F| at most h. Therefore its coefficients define a linear functional ell_F on the C-dimensional feature space with
 
-$$
+```math
 \ell_F(\phi(e))=Q_F(b(e))
      =\prod_{\lambda\in F}g_e(a_\lambda).
  \tag{8}
-$$
+```
 
 The empty product is one. Since K is a field, (5) gives the exact predicate
 
-$$
+```math
 \ell_F(\phi(e))=0
  \quad\Longleftrightarrow\quad
  \Lambda(e)\cap F\ne\varnothing.
  \tag{9}
-$$
+```
 
 No failure sets are enumerated while constructing phi. The functionals ell_F are used only in the proof.
 
@@ -110,34 +110,34 @@ No failure sets are enumerated while constructing phi. The functionals ell_F are
 
 First remove dependent rows from the original representation, leaving r rows and the same column matroid. Define
 
-$$
+```math
 w_e=v_e\otimes\phi(e)\in K^{rC}.
  \tag{10}
-$$
+```
 
 Scan the elements in a fixed order nondecreasing in cost. Retain e precisely when w_e is outside the linear span of the previously retained lifted columns. Let H be the retained element IDs. Thus H is the canonical cost-ordered basis of the lifted column matroid and has at most rC elements.
 
 For every e, ordinary linear greedy supplies a relation
 
-$$
+```math
 w_e\in\mathrm{span}\{w_f:f\in H,\ f\text{ no later than }e\}.
  \tag{11}
-$$
+```
 
 Fix an arbitrary allowed query F. Apply the linear map
 
-$$
+```math
 I_r\otimes\ell_F:K^r\otimes K^C\longrightarrow K^r
  \tag{12}
-$$
+```
 
 to (11). Every failed retained element maps to zero. If e survives, its image is a nonzero scalar multiple of v_e. Dividing by that scalar shows
 
-$$
+```math
 v_e\in\mathrm{span}\{v_f:f\in H,\ f\text{ no later than }e,
                                       \ \Lambda(f)\cap F=\varnothing\}.
  \tag{13}
-$$
+```
 
 The reverse span inclusion is automatic because H is a restriction of E. Hence (2) holds, including every position inside a cost tie when the fixed total order is used.
 
@@ -157,24 +157,24 @@ To obtain a graphic example, take any tree with r edges and replace every tree e
 
 For d=1 the coefficient lift is just a Vandermonde lift. Equivalently, with color scalar a_col(e), use
 
-$$
+```math
 w_e=v_e\otimes(1,a_{\mathrm{col}(e)},\ldots,a_{\mathrm{col}(e)}^h).
  \tag{14}
-$$
+```
 
 For a failure set F the polynomial product over lambda in F of (T-a_lambda) gives the projection functional. The retained size is at most
 
-$$
+```math
 (h+1)r.
  \tag{15}
-$$
+```
 
 Apply this to an oriented incidence representation of an arbitrary undirected multigraph G. Its graphic-matroid rank is r=n-kappa(G), where kappa counts connected components including isolated vertices. The result is a deterministic polynomial-time subgraph with at most
 
-$$
+```math
 (h+1)(n-\kappa(G))
  \tag{16}
-$$
+```
 
 edges that preserves every connected component after any h edge-color failures. With arbitrary fixed signed edge costs it simultaneously contains a minimum spanning forest of every surviving graph. The guarantee is for all allowed failure sets, not a high-probability or sampled-query guarantee.
 
@@ -192,10 +192,10 @@ Otherwise D=rC<N. Now the number of lifted coordinates is smaller than the expli
 
 The coarse arithmetic cost is the cost of original rank compression, plus
 
-$$
+```math
 O\!\left(N\,[d^2+C d\log(h+2)+D^2]\right)
  \tag{17}
-$$
+```
 
 field operations for one straightforward implementation. This bound is deliberately conservative. The d=1 graph specialization has feature-generation cost O(Nh) and a Gaussian stage O(N[(h+1)r]^2) when the gate does not return the input.
 

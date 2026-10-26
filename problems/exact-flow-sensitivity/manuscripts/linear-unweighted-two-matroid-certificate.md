@@ -6,11 +6,11 @@
 
 Let M_1 and M_2 be two matroids on the same finite ground set E, supplied by independence oracles. Let r be their maximum common-independent-set cardinality. If r>0, deterministic polynomial oracle preprocessing produces a set H of at most 3r original elements such that
 
-$$
+```math
 \max\{|I|:I\subseteq H\setminus\{f\},\ I\in\mathcal I_1\cap\mathcal I_2\}
  =
  \max\{|I|:I\subseteq E\setminus\{f\},\ I\in\mathcal I_1\cap\mathcal I_2\}
-$$
+```
 
 for every f∈E, as well as for no deletion. For r=0 the empty set suffices. No linear representation is assumed.
 
@@ -20,23 +20,23 @@ This is an original-element certificate. In the oracle model, subsequent optimiz
 
 Fix a maximum common independent set B, |B|=r. Truncate each matroid to rank r. The common-base polytope
 
-$$
+```math
 P=\{x\ge0:x(S)\le r_i(S)\ (i=1,2;S\subseteq E),\ x(E)=r\}
-$$
+```
 
 is the convex hull of incidence vectors of maximum common independent sets, by the matroid intersection theorem.
 
 Let A⊆B consist of the elements f that can be avoided by another maximum common independent set B_f. These sets and A can be found with at most r ordinary matroid-intersection computations. Put k=|A| and ε=1/[2(r+1)(k+1)], and define
 
-$$
+```math
 P'=P\cap\{x_f\le1-\epsilon:f\in A\}\cap\{x(E\setminus B)\le1/2\}.
-$$
+```
 
 The convex combination (1−kε)χ_B+εΣ_{f∈A}χ_{B_f} belongs to P': every own witness supplies the needed ε deficit, and its total mass outside B is at most εkr<1/2. Thus P' is nonempty. Compute any vertex x of P'. Let S=supp(x). We prove
 
-$$
+```math
 |S|\le 2r+k.                 \tag{1}
-$$
+```
 
 Every decomposition of x into common bases uses only elements of S, since all coordinates outside S vanish. For each f∈A, x_f<1 implies that at least one base in this decomposition avoids f. Thus S contains a maximum solution after every avoidable baseline deletion. The outside-mass cap also implies x(B)≥r−1/2. Since |B|=r and every coordinate of a common-base point is at most one, each f∈B has x_f≥1/2; hence B⊆S. The output H=S therefore handles every f∉B, since B survives. If f∈B\A, the optimum drops exactly to r−1 and B−f already attains it. Equation (1) gives |H|≤2r+k≤3r.
 
@@ -46,39 +46,39 @@ The simultaneous edge and vertex interpretation in the companion matching manusc
 
 Fix either truncated matroid, with rank function ρ, and restrict every row to the positive support S. Define the family of tight subsets of S by
 
-$$
+```math
 \mathcal T=\{U\subseteq S:x(U)=\rho(U)\}.
-$$
+```
 
 The entire set S is tight: x(S)=r, while ρ(S)≤r and feasibility gives ρ(S)≥r. The empty set is tight as well. If U,V are tight, modularity of x and submodularity of ρ show that U∩V and U∪V are tight, with equality throughout the rank submodularity inequality.
 
 Take an inclusion-maximal chain
 
-$$
+```math
 \varnothing=U_0\subsetneq U_1\subsetneq\cdots\subsetneq U_t=S
-$$
+```
 
 in this finite lattice. Its successive differences D_j=U_j\U_{j−1} partition S. Because every coordinate of x on S is strictly positive,
 
-$$
+```math
 0<x(D_j)=\rho(U_j)-\rho(U_{j-1})\in\mathbb Z_{>0}.
-$$
+```
 
 Their total is r, so t≤r.
 
 Every tight set U is a union of entire blocks D_j. Indeed, the set
 
-$$
+```math
 U_{j-1}\cup(U\cap U_j)
-$$
+```
 
 is tight by lattice closure and lies between two consecutive chain members. Maximality of the chain forces it to be one endpoint, so U either contains all of D_j or none of it. Consequently the incidence vectors of tight sets lie in the t-dimensional span of the block indicators, equivalently the chain indicators.
 
 This also controls tight rows originally indexed by subsets W⊆E rather than S. If x(W)=ρ(W), let U=W∩S. Then
 
-$$
+```math
 x(U)=x(W)=\rho(W)\ge\rho(U)\ge x(U),
-$$
+```
 
 so U is tight and the restricted row is already covered by the preceding argument.
 
@@ -90,9 +90,9 @@ At a vertex of P', the active constraint normals restricted to positive coordina
 
 Nonnegativity constraints outside S impose no additional rows on R^S. The cardinality equality is already in both tight-rank row spaces. The additional possible rows come from the at most k coordinate caps and the one outside-mass cap. Their contribution to the dimension is at most k+1. Thus
 
-$$
+```math
 |S|\le(2r-1)+k+1=2r+k,
-$$
+```
 
 as asserted.
 

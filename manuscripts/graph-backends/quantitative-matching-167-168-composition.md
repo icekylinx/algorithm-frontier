@@ -20,13 +20,13 @@ Subject to the stated numerical and structural constructions, a single
 computable deterministic algorithm returns an exact maximum-cardinality
 matching in time
 
-$$
+```math
 \boxed{\quad
  O(n+m)+(m_s+1)\exp\!\left(
  O\left((\log(m_s+2))^{167/168}
           (\log\log(m_s+4))^2\right)\right).
  \quad}                                                     \tag{1}
-$$
+```
 
 The implied constant is absolute. There is no bipartiteness,
 connectedness, density, parity or perfect-matching promise.
@@ -58,9 +58,9 @@ it does not substitute into a fixed-parameter little-oh statement.
 For the subcubic matching graph, choose `S=2^s` with `N<=S<2N` and
 keep it fixed through all phases. The numerical backend uses master
 
-$$
+```math
 U=2s,\qquad S_b=2^U=S^2.           \tag{2}
-$$
+```
 
 At one recursive general-cycle input, an SNC export is a flat forest
 over that **immediate** input. Contract only forest edges explicitly
@@ -105,15 +105,15 @@ changing that theorem's prescribed edge lengths.
 
 Set
 
-$$
+```math
 p=41/42,\quad \alpha=167/168,\quad
  t=1/84,\quad \beta=83/84,\quad
  L_U=\lceil\log_2(U+4)\rceil.
-$$
+```
 
 At every recursive level use the same master parameters
 
-$$
+```math
 \begin{split}
  k&=2^{\lceil U^\alpha L_U\rceil},\\
  \Gamma&=2^{\lceil U^p\rceil L_U^2},\\
@@ -121,7 +121,7 @@ $$
  C_{\rm port}&=2^{\lceil U^\beta\rceil},\\
  A&=2^{\lceil U^\beta\rceil L_U^2}.
  \end{split}                                                \tag{3}
-$$
+```
 
 Finite integer-root and division routines compute equivalent rounded
 parameters. The geometric graph degree is bounded by a fixed
@@ -136,10 +136,10 @@ The old port exponents `104/105` and `167/168` are not retained in
 any subsidiary expansion. Likewise the old common multiplier
 `M^10` or `S_b^10` is not used. Instead, with
 
-$$
+```math
 h=\lceil\log_2 C_{\rm port}\rceil,\qquad
  H_{\rm port}=2^{\lceil\log_2(4(h+1))\rceil},              \tag{4}
-$$
+```
 
 we have `4(h+1)<=H_port<8(h+1)`. Multiply both length and gradient
 of each nonfiber geometric edge by `H_port`, and give every binary
@@ -158,16 +158,16 @@ at most `c_K k` parent edges for an absolute `c_K`. Central edges
 retain their original off-tree length, not an old spanner-alias price.
 If `L_i` is the largest input length at outer numerical level `i`,
 
-$$
+```math
 L_{i+1}\le c_K k H_{\rm port}\max\{L_i,2\}.              \tag{5}
-$$
+```
 
 With root lengths of `O(U)` bits and depth `O(U/log k)`, (5) gives
 
-$$
+```math
 B_{\rm len}=O(U),\qquad
  B_{\rm grad}=O(U\cdot\mathrm{depth})=O(U^{169/168}).       \tag{6}
-$$
+```
 
 For the first bound, sum `log k+O(log U)` per level. For the second,
 retain the existing frozen gauges: a potential or path sum adds only
@@ -195,10 +195,10 @@ choose its new local scale data with the already charged restart.
 
 The parameter identities are
 
-$$
+```math
 p+t=\beta,\qquad 1-t=\beta,\qquad
  \beta+1-\alpha=\alpha.                                  \tag{7}
-$$
+```
 
 The HRG tree-family logarithm is `O(kappa log Gamma)=O(U^beta L_U)`.
 By (6), the aspect-dependent routing logarithm is
@@ -218,9 +218,9 @@ Both `log(k^10)` and `depth log A` are `O(U^(167/168)L_U)`,
 using the last identity in (7). The same absolute recurrences
 therefore give common factor
 
-$$
+```math
 E(s)=\exp\bigl(O(s^{167/168}\log(s+4))\bigr).              \tag{8}
-$$
+```
 
 The imported interface is the full raw one: actual nominal size `M`
 initializes in `M E(s)` time, while edit/query work, complete logs,
@@ -243,17 +243,17 @@ at most a factor-two quality loss.
 
 Compute
 
-$$
+```math
 T_s=\lceil\log_2(s+4)\rceil,\qquad
  a=\left\lfloor\frac{\lfloor s^{1/168}\rfloor}{T_s^2}\right\rfloor.
-$$
+```
 
 Suspend the fast branch unless `a>=1000`. Let
 
-$$
+```math
 C=a+1,\quad v=\lceil s/a\rceil,\quad B=2^v,\quad
  q=B^{-100},\quad D_*=B^{10},                              \tag{9}
-$$
+```
 
 and retain `delta=S^-1000`, `epsilon=S^-3000`, `H_price=S^100`.
 The matching floor `C`, numerical port capacity `C_port`, port scale
@@ -261,10 +261,10 @@ The matching floor `C`, numerical port capacity `C_port`, port scale
 
 Now
 
-$$
+```math
 v=\Theta(s^{167/168}(\log s)^2),\quad
  a^2=o(v),\quad v=o(s),\quad \log E(s)=o(v).                \tag{10}
-$$
+```
 
 The computable master cap `D_*` thus dominates all required backend
 factors with fixed slack, and `(4D_*)^-1>2q` supplies the strong-
@@ -276,9 +276,9 @@ The periods `b_j=B^(a-j)` satisfy `S<=b_0<2^aS`. Rounding
 `2^(2a^2)`. Top lifetime `R_top=SB` contains its actual
 `O(aS log S)` births and retargetings. At a local reset `j>1`,
 
-$$
+```math
 P\le(C+2)b_{j-1}<(a+3)2^aS/B.
-$$
+```
 
 Therefore local `R=8192(P+1)` fits `R+B<=S` eventually, and both
 top and local rounded sizes have `M<=S^2`. This meets the backend
@@ -289,9 +289,9 @@ For `Q` externally requested engine operations and `J` accepted
 steps, internal refreshes number `O(D_*J)`. Their complete sweeps
 cost `O(D_*^2J)`. The exact priced-client categories give
 
-$$
+```math
 T_{\rm price}\le(M+Q)D_*^2\mathrm{poly}(s).           \tag{11}
-$$
+```
 
 Here `Q` excludes internal refresh/repricing transactions. Responses
 to genuine numerical-motion notifications are external requests;
@@ -309,18 +309,18 @@ For its exact static-flow checks, the fixed deterministic primitive
 has factor `exp(O(s^(17/18)log s))` after the capacity-digit reduction.
 The exact gap is
 
-$$
+```math
 \frac{167}{168}-\frac{17}{18}=\frac{25}{504}>0.             \tag{12}
-$$
+```
 
 This factor and its bit costs are at most `B` eventually. Small
 graphs are charged their size plus `B`, not `S`. Including `O(s)`
 threshold tests and exact union-flow recovery, a full projection
 costs at most
 
-$$
+```math
 T_{\rm proj}\le(P+B)B^{250}.      \tag{13}
-$$
+```
 
 Its exact changed support is still `O(P)`. The frozen parent,
 optimistic boundary, permanent locks and complete residual peel
@@ -340,11 +340,11 @@ response and sweep costs in (11) place the top client within
 
 For local resets, including large gain jumps,
 
-$$
+```math
 \sum_{j=2}^{a}\frac{\tau}{b_j}
        [(C+2)b_{j-1}+B]
  \le\tau[(a-1)(C+2)B+2B]=O(a^3SB).                        \tag{14}
-$$
+```
 
 This is an additive sum, not a product down the hierarchy. Sparse
 projection support and persistent carrier normalization are paid
@@ -359,10 +359,10 @@ phase gains a `Theta(1/a)` fraction above the small integer range.
 The smaller range takes `O(a)` further successful gains. It uses
 the same `S,a` throughout. Consequently
 
-$$
+```math
 T_{\rm candidate}\le SB^{320}
    =S\exp(O(s^{167/168}(\log s)^2)).                        \tag{15}
-$$
+```
 
 This phase proof uses comparison matchings and does not assume that
 the starting deficiency equals its target `K`. It applies on arbitrary

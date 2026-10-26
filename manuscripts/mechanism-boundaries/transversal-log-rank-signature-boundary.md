@@ -6,9 +6,9 @@ The current-blocker lemma reduces the independent-transversal layer
 depth to O(epsilon^{-1} log(q+1)). The retained public signature
 analysis still gives the exponent
 
-$$
+```math
 O(\epsilon^{-1}\log(2+r/\epsilon)).
-$$
+```
 
 This note explains two precise limitations of that proof architecture.
 It does not prove an algorithmic lower bound, and it does not rule out
@@ -39,10 +39,10 @@ that r by a constant times epsilon k.
 
 Consequently the existing estimate
 
-$$
+```math
 |D\setminus K|
        \le O(\mu r)\sum |X_i|
-$$
+```
 
 cannot be made O(epsilon) times the blocker prefix merely by taking
 mu=Theta(epsilon) independently of r. The chosen mu=Theta(epsilon/r)
@@ -51,9 +51,9 @@ is doing actual work in this proof.
 One possible new rule is to adopt whenever the extra candidate
 vertex volume
 
-$$
+```math
 |Xhat_i\setminus X_i|+|Yhat_i\setminus Y_i|
-$$
+```
 
 is a significant fraction of the current blocker count. Rejection
 would then give a rank-independent certificate loss directly.
@@ -75,10 +75,10 @@ There is a stronger counting limitation. Even with the new current-Y
 growth and all current graph invariants, the set of possible public
 signature vectors can have
 
-$$
+```math
 q^{\Omega(\epsilon^{-1}\log r)}
  \tag{1}
-$$
+```
 
 distinct elements. This is a statement about the container counted
 by the analysis, across valid inputs and reachable states of that
@@ -87,35 +87,35 @@ size. It is not a statement that one input executes all these states.
 For clarity take r>=3, mu=rho=epsilon/(100r), and
 Q=ceil(1/mu). Start with
 
-$$
+```math
 X_1=Q,\qquad Y_1=(r-1)Q,\qquad W_2=1+Y_1.
-$$
+```
 
 For each later layer, fix its blocker count by
 
-$$
+```math
 W_i=1+\sum_{j<i}Y_j,\qquad
        Y_i=\left\lceil\frac{\epsilon}{5}W_i\right\rceil.
  \tag{2}
-$$
+```
 
 Stop after L layers, and let q=1+sum_{j<=L}Y_j. Once q is
 sufficiently larger than (r^2/epsilon)^2, this gives
 
-$$
+```math
 L=\Theta(\epsilon^{-1}\log q).
-$$
+```
 
 The small integer rounding in (2) changes only constants: W_2 is
 already much larger than 1/epsilon.
 
 Independently at every layer i>=2, choose one of r-1 selected counts
 
-$$
+```math
 X_i(j)=\left\lceil\frac{jY_i}{r-1}\right\rceil,
                       \qquad j=1,\ldots,r-1.
  \tag{3}
-$$
+```
 
 These choices satisfy all the count conditions used by the current
 signature proof:
@@ -175,11 +175,11 @@ construction is not an execution-length lower bound.
 
 The negative selected coordinate at layer i is
 
-$$
+```math
 -\left\lfloor\log_b
     \frac{\rho^{-i}}{(1-\mu)^{i-1}}X_i\right\rfloor,
  \qquad b=\frac{Q}{Q-\mu\rho}.
-$$
+```
 
 Here log b=Theta(mu^3). Consecutive values in (3) differ
 multiplicatively by at least 1+c/r for an absolute c, after the

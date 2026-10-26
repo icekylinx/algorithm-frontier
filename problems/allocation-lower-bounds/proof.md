@@ -18,24 +18,24 @@ Fix integers q>r>=1 and a q-element player set P. The player matroid
 is the uniform matroid U_(r,q). There is one resource type with unit
 value one. Define
 
-$$
+```math
 f_0(S)=\min\{2|S|,2r\}-{\bf1}[|S|=r].
  \tag{O1}
-$$
+```
 
 For each hidden r-element set A, define
 
-$$
+```math
 f_A(S)=f_0(S)+{\bf1}[S=A].
  \tag{O2}
-$$
+```
 
 Both functions are normalized, monotone, integer-valued and
 submodular. For f_0, the cardinality increments are
 
-$$
+```math
 2,\ldots,2,1,1,0,\ldots,0,
-$$
+```
 
 with the initial run of twos having length r-1. These increments
 are nonincreasing and nonnegative, proving the claim.
@@ -87,10 +87,10 @@ output basis cannot be correct for both.
 Consequently a worst-case deterministic factor-alpha algorithm with
 alpha<2 requires at least
 
-$$
+```math
 {q\choose r}-1
  \tag{O3}
-$$
+```
 
 resource-oracle queries. This excludes a uniform f(r)q^c bound for
 any fixed exponent c: choose a fixed rank r>c and then let q grow.
@@ -127,10 +127,10 @@ so exactly h=r machines receive one large unit.
 Define the small-job rank function by dualizing f_A with respect to
 the all-twos vector:
 
-$$
+```math
 g_A(S)=2|S|+f_A(P\setminus S)-2r.
  \tag{O4}
-$$
+```
 
 This is normalized, monotone, integral and submodular. Submodularity
 follows from complementing a submodular function and adding a modular
@@ -141,11 +141,11 @@ singleton rank exactly two. Thus every small-job base x_s has
 
 The hidden set A supplies a schedule of makespan two:
 
-$$
+```math
 x_b={\bf1}_A,\qquad
                  x_s=2{\bf1}_{P\setminus A}.
  \tag{O5}
-$$
+```
 
 Indeed, 2*1_A is a base of P(f_A), so its complement in the
 all-twos vector is a base of P(g_A). Every machine has load exactly
@@ -194,10 +194,10 @@ For scheduling, fix c>=2, take h=q-c, and use precisely (O4)--(O5).
 The large-job matroid is U_(q-c,q), with corank c, while the small
 polymatroid has total rank
 
-$$
+```math
 g_A(P)=2q-2h=2c.
  \tag{O6}
-$$
+```
 
 The condition q>=h+2 is exactly c>=2. The optimum is still two.
 Every factor below three halves must identify the hidden h-set A,
@@ -205,10 +205,10 @@ or equivalently its hidden c-element complement. The sole exceptional
 query is that complement, and there are binom(q,c) possibilities.
 The worst-case bound is therefore
 
-$$
+```math
 \binom qc-1
  \tag{O7}
-$$
+```
 
 small-job rank-value queries. Fixing c above a proposed uniform
 polynomial exponent again rules out f(c) polynomial-ground-size

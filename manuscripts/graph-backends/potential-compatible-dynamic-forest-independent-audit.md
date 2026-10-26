@@ -16,9 +16,9 @@ and guarded finite-word arithmetic. It searches all directed bin-to-bin
 paths of an arbitrary directed forest, rather than only paths from a
 chosen root. Its work is
 
-$$
+```math
 (\nu+J+P+Q+R)\mathrm{polylog}S,
-$$
+```
 
 where `P` counts the supplied links and cuts and `R` counts numerical
 register events. Both counts must remain in the statement.
@@ -51,9 +51,9 @@ interior, because that terminal has degree one. Deleting its first and
 last edges therefore gives exactly one directed ordinary bin path, and
 the sum of its edge scores is
 
-$$
+```math
 \sigma_a-\tau_b-\sum_{e\text{ donor on }F[a,b]}\bar c_e.
-$$
+```
 
 Conversely every permitted ordinary path has this unique augmentation.
 The self-pair has negative score and cannot produce a false accepted
@@ -185,9 +185,9 @@ variation plus the bounded total log-value range and the explicitly
 charged births, deaths, and assignments. Cuts and links neither change a
 coordinate nor reset its register. Thus the previous bound
 
-$$
+```math
 R=O\bigl(J+(N+A_{\rm ext})\log S\bigr)
-$$
+```
 
 continues to hold across supplied repair sequences. This does not charge
 or bound the work of finding those repairs.

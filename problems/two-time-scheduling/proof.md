@@ -13,10 +13,10 @@ integral recipient rank f_j and mandatory count n_j=f_j(P). Put
 N=sum_j n_j. A schedule has integer x_j in B(f_j), satisfies original
 pair eligibility, and respects one budget
 
-$$
+```math
 \sum_{p,j}c_{pj}x_j(p)\le C,\qquad c_{pj}\ge0,\quad C\ge0.
  \tag{HT1}
-$$
+```
 
 Every eligible processing time ell_pj is nonnegative. On each fixed
 machine there are at most two distinct positive eligible times; when two,
@@ -26,12 +26,12 @@ OPT is the minimum makespan under these original constraints.
 H includes binary data and paid polynomial rank, SFM, LP and
 intersection work. For fixed integer d>=2 put
 
-$$
+```math
 \rho_d=2-\frac1d,\quad R_d=\frac{d+1}{d-1},\quad
  A_d=\Gamma(R_d),\quad B_d=2-\frac1{A_d},\quad
  E(q)=2^{O(q\log\log(q+2)/\log(q+2))}.
  \tag{HT2}
-$$
+```
 
 **Theorem HT.** A deterministic algorithm detects unbounded-load
 budget infeasibility or returns makespan <=rho_d*OPT in
@@ -64,7 +64,7 @@ every role-search node without changing the guarantee or exponential
 base.
 
 **Proof.** At each machine put its zero-time coordinates in a separate
-integral modular box with coordinate bound $f_j(\{p\})$. These
+integral modular box with coordinate bound $`f_j(\{p\})`$. These
 redundant singleton bounds contain every legal resource assignment.
 Take its direct sum with the positive-time machine polymatroid used
 below. Thus zero-time units consume original resource capacity and
@@ -73,7 +73,7 @@ fractional full-total witness belongs to this enlarged machine
 polymatroid, and one minimum-cost integral point recovers all original
 type totals and the exact budget. A protected full schedule survives
 each omission unchanged on zero-time pairs. No role state or additional
-exponential choice is introduced. $\square$
+exponential choice is introduced. $`\square`$
 
 Test target zero exactly by masking to zero-time pairs and minimizing
 cost with every original total still mandatory. On success return an
@@ -99,18 +99,18 @@ a_p, so its load is at most rho_d*T.
 
 Every other two-value machine has
 
-$$
+```math
 \frac{d-1}{d}T<a_p\le T.
  \tag{HT3}
-$$
+```
 
 so a full target-T schedule has at most one large unit there. Define
 
-$$
+```math
 C_p=\lfloor T/u_p\rfloor,\quad \delta_p=a_p+C_pu_p-T,\quad
  K_p=C_p-\lfloor(T-a_p)/u_p\rfloor=\lceil\delta_p/u_p\rceil.
  \tag{HT4}
-$$
+```
 
 Then 0<delta_p<=a_p<=T, 1<=K_p<=C_p, and K_p*u_p>=delta_p.
 A full schedule with one large unit has at most C_p-K_p small units;
@@ -118,19 +118,19 @@ without a large unit it has at most C_p small units.
 
 If K_p<=d, impose fixed laminar caps
 
-$$
+```math
 \text{large count}\le1,\qquad\text{positive total count}\le C_p.
  \tag{HT5}
-$$
+```
 
 Every full target schedule satisfies these caps. After recovery, a
 machine with a large unit has load at most
 
-$$
+```math
 a_p+(C_p-1)u_p=T+\delta_p-u_p
  \le T+(1-1/d)\delta_p\le\rho_dT.
  \tag{HT6}
-$$
+```
 
 because delta_p<=K_p*u_p<=d*u_p. Without a large unit its load is
 at most T. These machines need no role search. The caps give a weak
@@ -141,10 +141,10 @@ success for K_p>1, and are exact in the hard range for K_p=1.
 Let H_T contain the machines satisfying HT3 and K_p>=d+1; write
 h=|H_T|. For them put
 
-$$
+```math
 b_p=\lceil K_p/d\rceil,\qquad b_p/K_p\le 2/(d+1)=:\beta.
  \tag{HT7}
-$$
+```
 
 The inequality is the integer-quota identity proved in [the quota manuscript](../whole-ground-allocation/integer-quotas.md#2-the-integer-quota-ratio). At current
 Q subseteq H_T, allow large H_T pairs only at Q, while small pairs
@@ -155,31 +155,31 @@ X_Q is the joint fractional polytope with original masked resource
 ranks, every equality x_j(P)=n_j, HT1, all non-H_T machine constraints,
 and H_T caps
 
-$$
+```math
 \begin{aligned}
  \text{large count}_p&\le1&&(p\in Q),\\
  \text{large count}_p&=0&&(p\in H_T\setminus Q),\\
  \text{small positive count}_p&\le C_p&&(p\in H_T).
  \end{aligned}
  \tag{HT8}
-$$
+```
 
 First test X_Q for emptiness. Masked rank loss, capacity failure and
 budget failure may reject it. For nonempty X_Q define
 
-$$
+```math
 U_Q=\{z\in\mathbb R_{\ge0}^Q:\exists x\in X_Q,\quad
  z_p+\text{small positive count}_p(x)\le C_p\ (p\in Q)\}.
  \tag{HT9}
-$$
+```
 
 This region is compact, convex, downward and contains zero. Its exact
 support for nonnegative lambda is the bounded LP maximizing
 
-$$
+```math
 \sum_{p\in Q}\lambda_p(C_p-\text{small positive count}_p(x)).
  \tag{HT10}
-$$
+```
 
 Negative count coefficients in this support objective are harmless.
 The service separator has a nonnegative normal and capacity. Use
@@ -197,10 +197,10 @@ I*, the unchanged schedule belongs to X_Q: each forbidden large pair
 outside Q was unused. No job is dropped or moved and the original
 cost and every resource base are unchanged. Its spare counts prove
 
-$$
+```math
 z^*_p=K_p\ (p\in I^*),\qquad z^*_p=0\ (p\notin I^*),\qquad z^*\in U_Q.
  \tag{HT11}
-$$
+```
 
 Query b_p on every p in Q. If a nonnegative row lambda*z<=W separates
 that query, set w_p=lambda_p*K_p. By HT11 and HT7,
@@ -209,10 +209,10 @@ that query, set w_p=lambda_p*K_p. By HT11 and HT7,
 
 Therefore
 
-$$
+```math
 w(Q\setminus I^*)>(1-\beta)w(Q)=w(Q)/R_d.
  \tag{HT12}
-$$
+```
 
 This is precisely the weighted first-crossing omission inequality.
 The scaled weights have polynomial bit length, and their total is
@@ -224,10 +224,10 @@ For a fixed exact k, require |Q|>=k and start from H_T, or H_T minus
 a forced seed Z. The full all-input recursion time, including failed
 children and rank/LP gates, is
 
-$$
+```math
 A_d^{\,h-k-|Z|}\mathrm{poly}(H).
  \tag{HT13}
-$$
+```
 
 At zero deficit a protected Q=I* has the full HT11 witness and thus
 a feasible weak query. An empty-X_Q rejection cannot occur on a
@@ -253,11 +253,11 @@ integer result attains every n_j and costs no more than x.
 Empty, single-value, easy and small-quota machines have their stated
 guarantees. For p in Q, even with a large unit its load is at most
 
-$$
+```math
 a_p+(C_p-b_p)u_p=T+\delta_p-b_pu_p
  \le T+(1-1/d)\delta_p\le\rho_dT.
  \tag{HT14}
-$$
+```
 
 because b_p*u_p>=K_p*u_p/d>=delta_p/d. Without a large unit load
 only decreases. A machine in H_T minus Q has load at most T. Thus

@@ -4,11 +4,11 @@
 
 This note transfers the polynomial-failure projection to set packing with a represented resource matroid. Its most concrete consequence is an exact deterministic universal summary for general multigraph matching with
 
-$$
+```math
 r(h_e+1)\binom{2K+h_v}{2}
        =O\!\left(r(h_e+1)(K+h_v)^2\right)
  \tag{1}
-$$
+```
 
 original edges, where r is the full positive-side resource-matroid rank, K is the maximum matching size of interest, and queries may fail at most h_v vertices and h_e original edge IDs. The summary also supports arbitrary later matroid extensions supplying a quota-free background, even if the later extension is not represented. The positive resource matroid must be explicitly represented at preprocessing.
 
@@ -38,26 +38,26 @@ If K=0, return the empty positive summary and leave any background-only feasibil
 
 With a represented resource matroid, there is a deterministic restriction H contained in E of size at most
 
-$$
+```math
 \min\left\{|E|,\;
       r\binom{pK+h_v}{p}
        \prod_{j=1}^{s}\binom{h_j+d_j}{d_j}
       \right\}
  \tag{2}
-$$
+```
 
 having this original-context replacement property:
 
 For every allowed query, every feasible independent context T in M+ whose positive items form a live packing of size at most K, and every positive item e in T, there is a live retained item f in H outside T minus e such that
 
-$$
+```math
 \begin{split}
  &(T-\{e\})\cup\{f\}\text{ is independent in }M^+,\\
  &\{S_a:a\in (T\cap E)-\{e\}+\{f\}\}\text{ is a packing},\\
  &c(f)\le c(e).
  \end{split}
  \tag{3}
-$$
+```
 
 The whole background T intersect Z stays fixed. Replacing positive items outside H one at a time yields preservation of the minimum positive cost for every fixed background and every prescribed positive cardinality at most K. The guarantee also preserves feasibility and full total size.
 
@@ -71,34 +71,34 @@ Pad every packing set to exactly p elements with private dummy universe elements
 
 Set t=pK+h_v. Assign distinct field values to the enlarged packing universe and represent its elements by Vandermonde columns u_x in K^t. Every set of at most t distinct columns is independent. For an item e put
 
-$$
+```math
 a_e=\bigwedge_{x\in S_e}u_x
                    \in\bigwedge^p K^t.
  \tag{4}
-$$
+```
 
 The packing-feature dimension is binomial(t,p). A fixed ordering of universe elements determines all signs.
 
 Consider a protected e in a feasible packing and define
 
-$$
+```math
 C=V_f\cup\bigcup_{a\in(T\cap E)-\{e\}} S_a.
  \tag{5}
-$$
+```
 
 Use a set union, so duplicate occurrences of a failed universe element cause no repeated wedge factors. Then |C| is at most p(K-1)+h_v, and the protected S_e is disjoint from C. Therefore
 
-$$
+```math
 a_e\wedge\bigwedge_{x\in C}u_x\ne0.
  \tag{6}
-$$
+```
 
 Choose a coordinate functional psi on the target exterior power that is nonzero on (6), and define the linear functional
 
-$$
+```math
 L_C(a)=\psi\left(a\wedge\bigwedge_{x\in C}u_x\right).
  \tag{7}
-$$
+```
 
 It is nonzero on a_e and is zero on every a_f whose packing set meets C. It need not be nonzero on every valid replacement; only the protected nonzero value and rejection of all conflicts are needed.
 
@@ -106,30 +106,30 @@ It is nonzero on a_e and is zero on every a_f whose packing set meets C. It need
 
 For each label system j, use the coefficient construction of the companion failure-lift manuscript. It supplies a feature vector phi_j(e) of dimension binomial(h_j+d_j,d_j) and, for every allowed F_j, a linear functional ell_{F_j} such that
 
-$$
+```math
 \ell_{F_j}(\phi_j(e))=0
         \quad\Longleftrightarrow\quad
        \Lambda_j(e)\cap F_j\ne\varnothing.
  \tag{8}
-$$
+```
 
 Explicitly, choose a never-failing dummy scalar a_0, pad the label-root polynomial g_{j,e}(X) to monic degree d_j, and take all coefficient monomials of total degree at most h_j. The query functional evaluates the polynomial product over lambda in F_j of g_{j,e}(a_lambda).
 
 With a resource matroid define the lifted column
 
-$$
+```math
 z_e=v_e\otimes a_e\otimes
                        \bigotimes_{j=1}^{s}\phi_j(e).
  \tag{9}
-$$
+```
 
 Without the resource matroid, omit v_e. Keep the cost-ordered greedy basis of these lifted columns. Its cardinality obeys (2), and for every protected e it supplies a relation
 
-$$
+```math
 z_e\in\mathrm{span}
                       \{z_f:f\in H,\ c(f)\le c(e)\}.
  \tag{10}
-$$
+```
 
 Inside a cost tie, only predecessors in the fixed total order are needed when e is discarded.
 
@@ -137,10 +137,10 @@ Inside a cost tie, only predecessors in the fixed total order are needed when e 
 
 This is the main quantifier point. Let T be an independent context in an arbitrary later extension M+, and protect e in T intersect E. Define
 
-$$
+```math
 A=E\cap\mathrm{cl}_{M^+}(T-\{e\}).
  \tag{11}
-$$
+```
 
 A is a flat of the original matroid M. Indeed, M+ restricted to E is M, and closure of A in M is contained in closure of T minus e in M+, intersected with E. Moreover e does not belong to A by independence of T.
 
@@ -148,11 +148,11 @@ Because M is represented, there exists a linear functional L_A on its representa
 
 Apply
 
-$$
+```math
 L_A\otimes L_C\otimes
                         \bigotimes_j\ell_{F_j}
  \tag{12}
-$$
+```
 
 to (10). The protected left side is nonzero. Therefore at least one retained f on the right has all factors nonzero. For that f:
 
@@ -175,17 +175,17 @@ To tolerate h_e individual edge deletions, give each original edge its own label
 
 More generally, if an edge carries at most d risk labels and a query fails h labels, the size is
 
-$$
+```math
 r\binom{2K+h_v}{2}\binom{h+d}{d}.
  \tag{13}
-$$
+```
 
 Independent budgets for individual edge IDs and whole risk classes can be handled by separate feature factors. For example, single-color risk groups with at most h_c failed colors, in addition to h_e individual edge failures, give
 
-$$
+```math
 r(h_e+1)(h_c+1)\binom{2K+h_v}{2}.
  \tag{14}
-$$
+```
 
 Every formula applies to arbitrary undirected multigraphs and arbitrary signed fixed edge costs. There is no bipartiteness, bounded-degree, planarity, or bounded-color-class-size assumption. The extra resource M may be any represented matroid on the original edge IDs. The later extension/background can be arbitrary subject to preserving its restriction to those positive IDs.
 

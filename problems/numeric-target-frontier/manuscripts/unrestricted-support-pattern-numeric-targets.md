@@ -12,11 +12,11 @@ nonempty positive supports of the original eligible coefficient
 columns, after the explicit zero-target preprocessing below. For T>0,
 the new bound is
 
-$$
+```math
 \boxed{\exp\!\left(O\!\left(T\log\left(2+\frac QT\right)\right)\right)
                      \mathrm{poly}(H).}
  \tag{UP1}
-$$
+```
 
 The constant in O is independent of the row count and the maximum
 column support size. In particular Q=O(T) gives singly exponential
@@ -25,10 +25,10 @@ time even when every column touches arbitrarily many rows.
 For pure upper/equality rows there is no cover representation step,
 and the sharper explicit bound is
 
-$$
+```math
 2^T\binom{Q+T}{T}\mathrm{poly}(H).
  \tag{UP2}
-$$
+```
 
 The main new ingredient for mixed rows is a support-block prefix
 representation. It keeps at most the total covering demand in
@@ -74,11 +74,11 @@ available; they may be essential for a base or a signed scalar optimum.
 
 For a nonzero column define its positive support
 
-$$
+```math
 S_e=\{j:a^j_e>0\},\qquad
         \mathcal S=\{S_e:S_e\ne\varnothing\},\qquad Q=|\mathcal S|.
  \tag{UP3}
-$$
+```
 
 Repeated supports are counted once, even when their positive coefficient
 values differ. Q is not the number of distinct coefficient vectors, the
@@ -88,12 +88,12 @@ computable in polynomial time.
 
 Let C be the set of covering rows, s=|C|, and put
 
-$$
+```math
 T_C=\sum_{j\in C}T_j,\qquad
  U_j=\begin{cases}T_j,&j\notin C,\\2T_j-1,&j\in C,\end{cases}
  \quad U=\sum_jU_j=T+T_C-s.
  \tag{UP4}
-$$
+```
 
 Let Q_C count the patterns S meeting C. Let Q_0 count the distinct
 nonempty sets S minus C over all original patterns. Thus
@@ -113,10 +113,10 @@ allowed by L_j=V_j. Put V=sum_j V_j and let q_* be the number of
 distinct nonempty supports of its actual coefficient vectors.
 Then exact scalar optimization takes
 
-$$
+```math
 2^V\binom{q_*+V}{V}\mathrm{poly}(H_*),
  \tag{UP5}
-$$
+```
 
 with polynomial binary space. No cover-copy wrapper is applied here:
 every row already has a finite upper allowance V_j.
@@ -128,11 +128,11 @@ the vector count and the multiset, giving at most 2^w possibilities.
 If h supports are used, their positive weights summing to at most V
 have binomial(V,h) choices. Consequently the full count is at most
 
-$$
+```math
 2^V\sum_h\binom{q_*}{h}\binom Vh
                        =2^V\binom{q_*+V}{V}.
  \tag{UP6}
-$$
+```
 
 For a profile, prescribe the count of every occupied nonzero coefficient
 vector. One global zero-vector group receives the remaining count to R.
@@ -157,23 +157,23 @@ coefficient vectors. Every vector with support S contributes at least
 one unit to each row in S. Therefore the number m of nonzero vector
 occurrences in any upper-cap profile is at most
 
-$$
+```math
 \kappa=\min\left\{R,\left\lfloor
  \max\left\{\sum_{S\in\mathcal S}y_S:
           y\ge0,\ \sum_{S\ni j}y_S\le T_j\ \forall j\right\}
                                   \right\rfloor\right\}.
  \tag{UP7}
-$$
+```
 
 This is an explicit rational linear program of polynomial size. It is
 only an upper bound on the profile occurrence count; no integrality of
 this auxiliary packing polytope is assumed. The number of profiles is
 also at most
 
-$$
+```math
 \binom{M+\kappa}{\kappa}.
  \tag{UP8}
-$$
+```
 
 The same streamed generator may impose m<=kappa, so its entire traversal
 is bounded by the minimum of UP2's profile factor and UP8, with polynomial
@@ -199,11 +199,11 @@ not an expanded input representation.
 
 Use capped positive contributions
 
-$$
+```math
 \bar a^j_e=\min\{a^j_e,T_j\}
                              \quad(j\in C).
  \tag{UP9}
-$$
+```
 
 Their full sum still reaches every covering target. If a used unit has
 coefficient at least T_j it alone reaches the capped target; otherwise
@@ -211,10 +211,10 @@ all used coefficients in that row remain unchanged.
 
 During the blockwise scan, maintain the integral residual demand
 
-$$
+```math
 D_j=\max\{T_j-\text{processed capped sum in row }j,0\}.
  \tag{UP10}
-$$
+```
 
 Call a unit useful if, immediately before it, at least one incident
 covering row has positive residual demand. It reduces such a demand
@@ -222,10 +222,10 @@ by at least one because every positive capped coefficient is an integer
 at least one. The sum of residuals starts at T_C and never increases.
 Hence the number K of useful units satisfies
 
-$$
+```math
 K\le T_C.
  \tag{UP11}
-$$
+```
 
 All units in one support block have exactly the same positive incident
 cover rows. While any such row remains unfinished, the next unit is
@@ -246,10 +246,10 @@ positive occurrence among the useful units. Nonincident units are not
 counted in that ordinal. Since each preceding positive occurrence
 contributes at least one,
 
-$$
+```math
 1\le\nu_j\le T_j.
  \tag{UP12}
-$$
+```
 
 Deleting the passive tails does not change this ordinal. The capped
 contribution through that occurrence lies in [T_j,2T_j-1].
@@ -258,19 +258,19 @@ contribution through that occurrence lies in [T_j,2T_j-1].
 
 The algorithm enumerates all binary integer vectors
 
-$$
+```math
 k_S\ge0\quad(S\cap C\ne\varnothing),
                      \qquad K=\sum_Sk_S\le T_C,
  \tag{UP13}
-$$
+```
 
 and every choice nu_j in {1,...,T_j} for j in C. The number of
 such templates is at most
 
-$$
+```math
 \binom{Q_C+T_C}{T_C}\prod_{j\in C}T_j.
  \tag{UP14}
-$$
+```
 
 The useful support word is implicit: pattern S appears k_S times in
 the fixed block order. To locate row j's proposed stopping occurrence,
@@ -290,10 +290,10 @@ one boundary.
 
 There are at most
 
-$$
+```math
 J\le |\{S:k_S>0\}|+s\le Q_C+s
  \tag{UP15}
-$$
+```
 
 positive intervals. Their lengths are positive binary integers summing
 to K. Thus a template has a polynomial-size interval description even
@@ -306,10 +306,10 @@ each interval of S and one passive copy. Coordinates in zero-length
 blocks or with no covering incidence need only the passive copy.
 Let pi forget the copy label. All copies have shared resource rank
 
-$$
+```math
 F^\uparrow(Y)=F_0(\pi(Y)).
  \tag{UP16}
-$$
+```
 
 Projection preserves unions and maps intersections into intersections,
 so monotonicity and submodularity of F_0 prove that this is an integral
@@ -381,21 +381,21 @@ the number of original coordinates or coefficient values there.
 Passive copies have support S minus C, so their distinct nonempty
 supports number at most Q_0. Thus the prepared support count is
 
-$$
+```math
 q_*\le Q_0+J\le Q_0+Q_C+s.
  \tag{UP17}
-$$
+```
 
 Its sum of row upper allowances is
 
-$$
+```math
 V=U+K\le U+T_C=T+2T_C-s\le3T.
  \tag{UP18}
-$$
+```
 
 Combining UP5 and UP14 gives the explicit all-input time bound
 
-$$
+```math
 \boxed{
  \binom{Q_C+T_C}{T_C}
  \left(\prod_{j\in C}T_j\right)
@@ -404,7 +404,7 @@ $$
                       \mathrm{poly}(H).
  }
  \tag{UP19}
-$$
+```
 
 It specializes to UP2 when C is empty. For T>0, use
 Q_C,Q_0<=Q, T_C<=T, s<=T and
@@ -412,10 +412,10 @@ prod_j T_j<=exp(T_C-s). Together with
 binomial(a+b,b)<=[e(1+a/b)]^b, these inequalities show that
 the logarithm of UP19's nonpolynomial factor is
 
-$$
+```math
 O\!\left(T\log\left(2+\frac QT\right)\right),
  \tag{UP20}
-$$
+```
 
 with an absolute constant. For example the inner rank of the
 binomial estimate has b=U+T_C between T and 3T, and its other

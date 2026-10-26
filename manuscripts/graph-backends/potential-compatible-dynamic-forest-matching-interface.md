@@ -32,21 +32,21 @@ version of any_source_fixed_tree_matching_interface.md.
 For each incidence e keep its current allocation x_e and persistent
 register ell_e. In every settled state,
 
-$$
+```math
 \ell_e<x_e<2\ell_e,\qquad
  \bar c_e=\left\lceil H/(4\ell_e)\right\rceil .
  \tag{1}
-$$
+```
 
 The complete directed allocation graph contains a zero-length
 receiving arc row-to-bin and a donor arc bin-to-row of length
 bar c_e for each incidence. At bin v put
 
-$$
+```math
 \sigma_v=\left\lfloor3H/(4s_v)\right\rfloor,\qquad
  \tau_v=\left\lceil5H/(4s_v)\right\rceil .
  \tag{2}
-$$
+```
 
 There is also an artificial source with an arc of length A-sigma_v
 to every bin. H is a fixed sufficiently large power of two, and A
@@ -59,11 +59,11 @@ the exact conservative-price SPT from the preceding note, whose
 nonnegative integer distances obey that magnitude bound. Feasibility
 means, in particular,
 
-$$
+```math
 D(d)\le D(r)\le D(d)+\bar c_e,\qquad
  D(d)\le A-\sigma_d
  \tag{3}
-$$
+```
 
 for every incidence e=(r,d).
 
@@ -108,11 +108,11 @@ For bins a,b, let F[a,b] be the unique underlying forest path when
 they are connected. It is admissible only if every edge points
 from a toward b. Define
 
-$$
+```math
 \bar L_F(a,b)=\sum_{e\text{ donor on }F[a,b]}\bar c_e,\qquad
  \mathcal{Q}(a,b)=\sigma_a-\tau_b-\bar L_F(a,b).
  \tag{4}
-$$
+```
 
 The search returns a pair with maximum Q over all admissible
 ordered bin pairs. Its threshold answer is positive exactly when
@@ -124,10 +124,10 @@ than one quarter. A forest path of true ratio greater than one
 half has positive score. If nu is the number of row/bin vertices,
 one can impose
 
-$$
+```math
 H\min_d(1/s_d)\ge8(\nu+2)
  \tag{5}
-$$
+```
 
 along with the semantic rounding-error requirement. This pays at
 most nu donor ceilings and the two endpoint rounding operations.
@@ -203,18 +203,18 @@ forest; it is not expanded while recomputing a cluster.
 Suppose C_1 and C_2 meet at their common boundary v and are joined
 to form C. The internal best score is
 
-$$
+```math
 F_C=\max\{
  F_{C_1},F_{C_2},
  I_{C_1}(v)+O_{C_2}(v),
  I_{C_2}(v)+O_{C_1}(v)
  \}.
  \tag{6}
-$$
+```
 
 For a retained boundary b in C_1 other than v,
 
-$$
+```math
 \begin{aligned}
  I_C(b)&=\max\{
  I_{C_1}(b),\ I_{C_2}(v)+W_{C_1}(v,b)
@@ -224,7 +224,7 @@ $$
  \}.
 \end{aligned}
  \tag{7}
-$$
+```
 
 Use the symmetric formulas for a boundary in C_2. If v itself
 is retained, I_C(v) and O_C(v) are the respective maxima of the
@@ -232,10 +232,10 @@ two child entries.
 
 A retained boundary path that crosses from C_1 to C_2 has score
 
-$$
+```math
 W_C(b_1,b_2)=W_{C_1}(b_1,v)+W_{C_2}(v,b_2).
  \tag{8}
-$$
+```
 
 If both endpoints lie in one child, use that child's path entry;
 the other child cannot create a second path in a tree. The
@@ -301,17 +301,17 @@ to both structures before answering another external operation.
 
 For a selected donor incidence retain
 
-$$
+```math
 w_e=x_e-\ell_e,\qquad g_e=x_e-\chi_e,
  \tag{9}
-$$
+```
 
 and for a selected receiving incidence retain
 
-$$
+```math
 w_e=2\ell_e-x_e,\qquad g_e=U_e-x_e.
  \tag{10}
-$$
+```
 
 Here chi_e,U_e are the fixed guard bounds of the numerical
 interval. Along an accepted directed ordinary path, a transfer
@@ -374,16 +374,16 @@ independent authoritative copies of one allocation.
 Apply exactly the finite-grid step of the preceding interface.
 For the accepted pair, put
 
-$$
+```math
 V_{\rm up}=1/s_a+1/s_b+4\bar L_F(a,b)/H
-$$
+```
 
 and choose a guarded grid step with
 
-$$
+```math
 1/512\le\eta V_{\rm up}\le1/256.
  \tag{11}
-$$
+```
 
 Its existence on the fixed grid, constant positive increase of
 sum log s_d, and one-sided ratio guarantee use only the directed
@@ -401,11 +401,11 @@ The proof that D remains feasible also extends without change.
 * The source cost at a increases. At b, pre-step feasibility and
   acceptance imply
 
-$$
+```math
 D(b)\le D(a)+\bar L_F(a,b)
        \le A-\sigma_a+\bar L_F(a,b)<A-\tau_b .
  \tag{12}
-$$
+```
 
   The resulting source slack is more than tau_b-sigma_b, at
   least H/(2s_b), and pays the small terminal price increase
@@ -418,10 +418,10 @@ No row or bin label in D changes.
 
 The conservative semantic quantity
 
-$$
+```math
 E=\sum_d\left(s_d(A-D(d))/H-5/4\right)_+
  \tag{13}
-$$
+```
 
 therefore remains valid. Its two changed slack terms are updated
 directly. E<=5N is the same safe semantic LOW screen, under the
@@ -444,10 +444,10 @@ resets in the interval.
 After D and a compatible initial forest have been supplied,
 the total local data-structure work is
 
-$$
+```math
 (\nu+J+P+Q+R)\mathrm{polylog} S .
  \tag{14}
-$$
+```
 
 Initialization of the full ambient graph and computation of
 D are separate supplied costs. Space is linear in the ambient
@@ -471,10 +471,10 @@ plus O((N+A_ext)log S) over explicit coordinate births,
 deletions and external assignments. Consequently, across all
 such intervals,
 
-$$
+```math
 R=O\bigl(J+(N+A_{\rm ext})\log S\bigr)
  \tag{15}
-$$
+```
 
 under the same accounting convention as the fixed-tree note.
 This bound is independent of P. It pays register notifications,

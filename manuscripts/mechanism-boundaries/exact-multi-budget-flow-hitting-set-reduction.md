@@ -49,10 +49,10 @@ The selection family is the uniform matroid basis family of size
 r=q-k. Its restriction selector is elementary. For every nonempty
 input set S, impose the routing budget
 
-$$
+```math
 \sum_{i\in S} x_{i,e_i}\le |S|-1.
 \tag{H1}
-$$
+```
 
 This is a nonnegative routing-budget row in the flow model: its
 coefficient is one on each listed private commodity arc and zero
@@ -68,12 +68,12 @@ For any chosen set I of q-k commodities, a unit-rate routing must
 put exactly one unit on e_i for i in I. All other commodities can
 be assigned zero flow. Consequently H1 is equivalent to
 
-$$
+```math
 |I\cap S|\le |S|-1
        \quad\Longleftrightarrow\quad
                       (U\setminus I)\cap S\ne\varnothing.
 \tag{H2}
-$$
+```
 
 The chosen I satisfies every budget at full rate if and only if
 its complement D is a hitting set of cardinality k. Conversely,
@@ -85,10 +85,10 @@ selected private arc has unit capacity and r>=1.
 
 The flow selection corank is
 
-$$
+```math
 c=q-r=k.
 \tag{H3}
-$$
+```
 
 This is a polynomial parameter-preserving reduction. Therefore an
 exact full-rate admission algorithm with time F(c)poly(H) for this
@@ -104,10 +104,10 @@ indistinguishability lower bound for optional active machines.
 If a rejected set misses S, all |S| commodities from that set are
 selected. They can receive a common normalized rate at most
 
-$$
+```math
 1-\frac1{|S|}
 \tag{H4}
-$$
+```
 
 under its budget. This rate can approach one as |S| grows. A fixed
 loss epsilon therefore need not distinguish yes and no instances.

@@ -9,11 +9,11 @@ corank or heavy-support promise.
 
 The explicit time bound for a supplied rational A>1 is
 
-$$
+```math
 (2-1/A)^q\,
        2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
 \tag{G1}
-$$
+```
 
 For a fixed A>1 this is `(2-1/A)^(q+o(q)) poly(H)`. The space is
 polynomial if the extension routine uses polynomial space. The
@@ -51,11 +51,11 @@ targets once.
 
 For integers 0<=p<=n and 0<=k<=p define
 
-$$
+```math
 T_{n,p}(k)=
                    {\binom nk\over\binom pk}A^{p-k}.
 \tag{G2}
-$$
+```
 
 The first ratio is the fractional size of a family of k-subsets
 that covers every p-subset by containment. The power is the cost
@@ -63,23 +63,23 @@ of the remaining omissions after choosing such a k-set.
 
 **Local identity.** For every real A>1,
 
-$$
+```math
 \min_{0\le k\le p}T_{n,p}(k)
                                     \le(2-1/A)^n.
 \tag{G3}
-$$
+```
 
 To prove it, put
 
-$$
+```math
 w_k={\binom pk(A-1)^k\over A^p}.
 \tag{G4}
-$$
+```
 
 These weights are nonnegative and sum to one. Their weighted
 average of G2 is
 
-$$
+```math
 \begin{aligned}
   \sum_{k=0}^p w_k T_{n,p}(k)
       &=\sum_{k=0}^p\binom nk\left({A-1\over A}\right)^k\\
@@ -87,7 +87,7 @@ $$
         =(2-1/A)^n.
  \end{aligned}
 \tag{G5}
-$$
+```
 
 The minimum is at most this average. This proof includes p=0 and
 p=n, needs no Stirling approximation, and has no rounding factor
@@ -107,10 +107,10 @@ Every universe element belongs to exactly binom(p,k) candidates.
 There are binom(n,k) candidates, so the uniform fractional cover
 has total weight
 
-$$
+```math
 L={\binom nk\over\binom pk}\ge1.
 \tag{G6}
-$$
+```
 
 Run ordinary greedy cover with deterministic lexicographic tie
 breaking. If U uncovered p-subsets remain, summing their candidate
@@ -119,10 +119,10 @@ After t steps the remaining count is at most
 `binom(n,p)*exp(-t/L)`. Thus a covering family C_(n,p) exists and
 is constructed with
 
-$$
+```math
 |\mathcal C_{n,p}|\le(n+2)L.
 \tag{G7}
-$$
+```
 
 The loose n+2 factor covers the ceiling and the one-element-universe
 cases. If k=0, the singleton family containing the empty set is
@@ -146,11 +146,11 @@ and greedy family C_(n,p) for the block sizes needed and every
 
 Enumerate all profiles
 
-$$
+```math
 (p_1,\ldots,p_m),\qquad
               0\le p_i\le n_i,\quad\sum_i p_i=c.
 \tag{G8}
-$$
+```
 
 They represent the possible counts of a full witness's omitted
 set in the fixed blocks. There are at most `(ell+1)^m` such
@@ -189,7 +189,7 @@ At a fixed profile, all product choices have the same seed size
 sum_i k_i. Its total extension cost is bounded, up to a uniform
 polynomial factor, by
 
-$$
+```math
 \begin{aligned}
  \left(\prod_i|\mathcal C_{n_i,p_i}|\right)
                  A^{c-\sum_i k_i}
@@ -198,7 +198,7 @@ $$
    &\le(\ell+2)^m(2-1/A)^q.
  \end{aligned}
 \tag{G9}
-$$
+```
 
 The last inequality is G3 in each block, and sum_i n_i=q. This
 bound pays for every failed extension as well as every successful
@@ -208,12 +208,12 @@ is at least one.
 
 Multiplying G9 by the at most `(ell+1)^m` profiles gives
 
-$$
+```math
 [(\ell+1)(\ell+2)]^m(2-1/A)^q\mathrm{poly}(H)
    =(2-1/A)^q
      2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
 \tag{G10}
-$$
+```
 
 Precomputing every local cover is polynomial: 2^ell<=q, only
 polynomially many local instances are needed, and a direct greedy
@@ -249,19 +249,19 @@ For the accepted half-quota and adaptive budgeted count gaps one
 may uniformly take the rational constant A=Gamma(3)=27/4. G1 then
 has whole-ground base
 
-$$
+```math
 2-1/A=50/27.
 \tag{G11}
-$$
+```
 
 For a four-unit promise and two-unit output, A=Gamma(2)=4 yields
 base 7/4. For intrinsic-value factor `2R/(R-1)` with a fixed
 integer R>=2, the gap has
 
-$$
+```math
 A=\Gamma(R)={R^R\over(R-1)^{R-1}},
 \tag{G12}
-$$
+```
 
 a fixed rational number. All comparisons above are then exact
 rational comparisons. In particular R=2 gives factor four at

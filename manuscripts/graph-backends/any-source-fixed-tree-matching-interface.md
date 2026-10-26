@@ -30,27 +30,27 @@ registers from Section 2 and build an exact integer shortest-path tree
 from the artificial threshold source in their conservative price graph.
 Ordinary receiving arcs have length zero and donor arcs have length
 
-$$
+```math
 \bar c_e=\left\lceil\frac{H}{4\ell_e}\right\rceil.
  \tag{1}
-$$
+```
 
 The source arc to bin v has length A-sigma_v, where
 
-$$
+```math
 \sigma_v=\left\lfloor\frac{3H}{4s_v}\right\rfloor,
  \qquad
  \tau_v=\left\lceil\frac{5H}{4s_v}\right\rceil,
  \qquad A\ge\max_v\sigma_v.
  \tag{2}
-$$
+```
 
 H is a fixed power-of-two integer of polynomial magnitude satisfying
 
-$$
+```math
 H\min_v(1/s_v)\ge8(N+2).
  \tag{3}
-$$
+```
 
 It also satisfies (L times the number of rows plus total slack)/H
 at most N, as required by the conservative semantic certificate in
@@ -86,10 +86,10 @@ other donor edge of the maintained directed forest.
 For each live allocation coordinate retain a dyadic lower register
 ell_e satisfying
 
-$$
+```math
 \ell_e<x_e<2\ell_e.
  \tag{4}
-$$
+```
 
 Initially, and at a reset, set ell_e=3x_e/4 exactly. The two extra
 denominator bits are fixed; they do not accumulate with resets.
@@ -98,19 +98,19 @@ This keeps (4) in each settled numerical state.
 
 The maintained donor length on a donor tree incidence is
 
-$$
+```math
 \bar c_e=\left\lceil\frac{H}{4\ell_e}\right\rceil.
  \tag{5}
-$$
+```
 
 Receiving tree arcs still have length zero. The two useful inequalities
 are
 
-$$
+```math
 \frac{H}{4x_e}\le\bar c_e
        <\frac{H}{2x_e}+1.
  \tag{6}
-$$
+```
 
 Within an epoch, each tree donor allocation only decreases. Its
 register resets downwards and its maintained donor cost cannot
@@ -126,25 +126,25 @@ epochs. Rebuilding T does not reset a register that already satisfies
 
 For an ancestor bin a and descendant bin b, let
 
-$$
+```math
 \bar L(a,b)=\sum_{e\text{ donor on }T[a,b]}\bar c_e.
-$$
+```
 
 The maintained search accepts precisely when
 
-$$
+```math
 \sigma_a-\tau_b-\bar L(a,b)>0.
  \tag{7}
-$$
+```
 
 All quantities in (7) are integers. By the directions of rounding,
 
-$$
+```math
 \frac34\alpha_a-\frac54\alpha_b
        >\frac{\bar L(a,b)}H
        \ge\frac14\sum_{e\text{ donor on }T[a,b]}\frac1{x_e},
  \qquad \alpha_v=1/s_v.
-$$
+```
 
 Consequently every accepted path has true one-sided ratio greater
 than one quarter. This is a sufficient acceptance test, not a
@@ -153,17 +153,17 @@ replacement of a lower bound by an optimistic stale price.
 It also detects every path in T whose true ratio exceeds one half.
 Such a path satisfies
 
-$$
+```math
 L_x(a,b)<\alpha_a-3\alpha_b.
-$$
+```
 
 Using (6), its unrounded conservative margin is greater than
 
-$$
+```math
 \frac34\alpha_a-\frac54\alpha_b-\frac12 L_x(a,b)
           >\frac14(\alpha_a+\alpha_b).
  \tag{8}
-$$
+```
 
 The source floor, terminal ceiling and donor ceilings lose at most
 N+2 integer units. Condition (3) leaves a strict positive margin in
@@ -178,7 +178,7 @@ from each possible starting bin. Write c(v,u) for the maintained
 nonnegative integer length of a directed tree edge v to u. For every
 vertex v define
 
-$$
+```math
 \begin{aligned}
  M_v&=\max_{\substack{b\text{ a bin}\\b\in T_v}}
            \{-\tau_b-\mathrm{dist}_{\bar c}(v,b)\},\\
@@ -186,7 +186,7 @@ $$
            \{\sigma_a-\tau_b-\mathrm{dist}_{\bar c}(a,b)\}.
 \end{aligned}
 \tag{9}
-$$
+```
 
 Missing candidates have value minus infinity. A bin is its own
 descendant, but its self-pair has sigma_v-tau_v<0, so it never passes
@@ -197,36 +197,36 @@ bins.
 Choose an ordinary static heavy-light decomposition of T. Let h(v)
 be the heavy child. Put sigma_v=-infinity for a row, and define
 
-$$
+```math
 \begin{aligned}
  z_v&=\max\left\{-\tau_v\ \text{if v is a bin},\
        \max_{u\text{ light child}}\{M_u-c(v,u)\}\right\},\\
  q_v&=\max_{u\text{ light child}}F_u.
 \end{aligned}
-$$
+```
 
 For a missing heavy child use input M_h=F_h=-infinity. The recurrences
 are
 
-$$
+```math
 \begin{aligned}
  M_v&=\max\{z_v,M_h-c(v,h)\},\\
  F_v&=\max\{F_h,q_v,\sigma_v+M_v\}.
 \end{aligned}
 \tag{10}
-$$
+```
 
 These are a constant-size max-plus transformation on (M_h,F_h,0).
 Its matrix is
 
-$$
+```math
 \begin{pmatrix}
  -c(v,h)&-\infty&z_v\\
  \sigma_v-c(v,h)&0&\max\{q_v,\sigma_v+z_v\}\\
  -\infty&-\infty&0
 \end{pmatrix}.
 \tag{11}
-$$
+```
 
 At a terminal heavy-path vertex, terms depending on its absent
 child are simply disabled. Store the matrix product along each
@@ -310,19 +310,19 @@ cost belongs to rebuilding the epoch and is not claimed to be free.
 
 For an accepted pair define
 
-$$
+```math
 V_{\rm up}=\alpha_a+\alpha_b+4\bar L(a,b)/H.
  \tag{12}
-$$
+```
 
 It upper-bounds the true one-sided charge. The integer acceptance
 also gives G=alpha_a-alpha_b>V_up/4. Choose a common dyadic step
 on the guarded primal grid such that
 
-$$
+```math
 \frac1{512}\le\eta V_{\rm up}\le\frac1{256}.
  \tag{13}
-$$
+```
 
 These are beta/128 and beta/64 for beta=1/4. The existing guard
 range and a finer fixed dyadic implementation grid ensure the
@@ -349,7 +349,7 @@ Every donor and terminal slack changes by less than one part in
 term of V_up. All values remain positive. The row and bin equations
 hold exactly. The slack objective increases by an absolute constant:
 
-$$
+```math
 \begin{aligned}
  \Delta\Phi
  &=\log(1+\eta\alpha_a)+\log(1-\eta\alpha_b)\\
@@ -357,7 +357,7 @@ $$
  \ge\frac18\,\eta V_{\rm up}>0.
 \end{aligned}
 \tag{14}
-$$
+```
 
 The old D remains feasible for the current conservative integer
 threshold graph (1). On an ordinary donor, its register cost can
@@ -370,11 +370,11 @@ which D was computed; its semantic screen is derived in Section 6.1.
 The start's source cost increases. For the terminal, feasibility of
 D before the step and the conservative costs give
 
-$$
+```math
 D(b)\le D(a)+\bar L(a,b)
        \le A-\sigma_a+\bar L(a,b)<A-\tau_b.
  \tag{15}
-$$
+```
 
 Thus the old source slack at b is more than tau_b-sigma_b, at least
 H/(2s_b). The small terminal slack change in (13), including the
@@ -396,28 +396,28 @@ evolved, TREE-EMPTY and semantic LOW are separate outcomes.
 
 Put pi_v=(A-D(v))/H. Feasibility, (4)--(6), and source rounding give
 
-$$
+```math
 0\le\pi_d-\pi_r\le\frac1{2x_e}+\frac1H,\qquad
  \pi_d\ge\frac3{4s_d}-\frac1H.
  \tag{16}
-$$
+```
 
 Define the exactly maintainable dyadic quantity
 
-$$
+```math
 E=\sum_d(s_d\pi_d-5/4)_+.
  \tag{17}
-$$
+```
 
 For any feasible comparison h, let P be its positive normalized
 slack mass, Q_s its negative normalized slack mass, and Q_x its
 one-sided negative allocation charge. Conservation and (16) yield
 
-$$
+```math
 \sum_d\pi_d h_{s_d}
        =-\sum_e(\pi_d-\pi_r)h_e
        \le\frac12 Q_x+\frac{L|R_{\rm rows}|}{H}.
-$$
+```
 
 On positive slack changes the source inequality in (16) applies.
 On a negative slack change, its absolute amount is at most the
@@ -425,21 +425,21 @@ current s_d; hence its excess above 5/(4s_d) is paid by (17).
 The total positive absolute slack change is at most the fixed
 total slack T_slack. Consequently
 
-$$
+```math
 \frac34P-\frac54Q_s-\frac12Q_x
        \le E+\frac{L|R_{\rm rows}|+T_{\rm slack}}H.
  \tag{18}
-$$
+```
 
 The genuine matching comparison has P>12N, Q_s<=N and Q_x<=3N.
 The left side of (18) is therefore greater than 25N/4.
 Choose H so that the displayed rounding error is at most N.
 Then that matching comparison would force E>21N/4. In particular,
 
-$$
+```math
 E\le5N
  \tag{19}
-$$
+```
 
 is a safe semantic LOW screen for this conservative graph.
 The six-N screen proved elsewhere for a potential with donor bound
@@ -461,16 +461,16 @@ prices used by the search. Suppose its search is TREE-EMPTY.
 For any bin b, let a be the first bin on its exact source-tree
 path. That root-to-b path is among the tested ancestor paths, so
 
-$$
+```math
 D(b)=A-\sigma_a+\bar L(a,b)\ge A-\tau_b.
-$$
+```
 
 Thus pi_b<=tau_b/H<=5/(4s_b)+1/H, which gives
 
-$$
+```math
 E\le T_{\rm slack}/H\le N.
  \tag{20}
-$$
+```
 
 Fresh TREE-EMPTY therefore immediately implies semantic LOW.
 Otherwise a current passing path is available. Equivalently, a
@@ -501,11 +501,11 @@ role after a refresh.
 For one accepted numerical step, total negative log variation of
 allocations is at most
 
-$$
+```math
 2\eta\sum_{\rm donors}1/x_e
       \le2\eta V_{\rm up}=O(1).
  \tag{21}
-$$
+```
 
 Summing log x only as an accounting potential gives total positive
 variation at most total negative variation plus
@@ -514,10 +514,10 @@ or set allocation records. This is the prior one-sided variation
 lemma, now coupled to an actual threshold-discovery structure.
 Accordingly the total numerical register reset count is
 
-$$
+```math
 O(J+(N+A_{\rm ext})\log S)
  \tag{22}
-$$
+```
 
 over J accepted steps, independently of the number of epochs.
 An externally set value can reset its register directly; that is an

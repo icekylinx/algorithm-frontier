@@ -6,30 +6,30 @@
 
 Let an undirected graph have positive integer lengths in `[1,N^c]` for a fixed constant `c`. Let `M=n_0+m_0+Q` count the initial vertex and edge inventory and all elementary insertions and deletions, with `N>=M+4`. An edge-weight replacement is a deletion followed by an insertion. Parallel edge lifetimes have distinct identifiers. Write
 
-$$
+```math
 U=\log_2(N+4),\qquad h=\log_2(U+4).
-$$
+```
 
 We use the normalized metric hierarchy with the following explicit local contract. For integer parameters `p,r,K`, reduction factor `k=2^x`, and depth `d=O(U/x)`, its structural and construction factors satisfy
 
-$$
+```math
 \begin{aligned}
 g=\log\Gamma&=O((p+r)h),\\
 f=\log F&=O(U/p+U/r+r^2h+(p+r)h),\\
 \log P&=O(U/K+g+h).
 \end{aligned}
 \tag{1}
-$$
+```
 
 The hierarchy uses actual local inventories, returns upper distance estimates, and satisfies
 
-$$
+```math
 \begin{aligned}
 \log(W/M)&=O(x+f+Kg+d\log P+h),\\
 \log\gamma&=O(dKg+dh).
 \end{aligned}
 \tag{2}
-$$
+```
 
 Here `W` is initialization plus total update work, `gamma` is stretch, and `P` includes child inventories and encoded child edits. A query follows one pair of pivot handles per level, ending in an exact table lookup, and costs `O(d poly(U))`. The shrink condition is `x>=C log P` for a sufficiently large fixed constant. The construction and the chronological accounting for initial credit are supplied by the [separated metric hierarchy](../../manuscripts/graph-backends/separated-metric-forest-and-strong-sssp.md). Equations (1)–(2), including the query interface, are the hypotheses of this composition theorem; they are not inferred from a distance-stretch guarantee alone.
 
@@ -37,46 +37,46 @@ Here `W` is initialization plus total update work, `gamma` is stretch, and `P` i
 
 **Theorem 2.1.** Under the preceding hierarchy contract, let `t=t(U)` satisfy `t->infinity` and `t^2h=o(U)`. There is a deterministic fully dynamic distance oracle with
 
-$$
+```math
 W=M\exp O(U/t+t^3h),\qquad
 \gamma=\exp O(t^4h),\qquad
 T_{\rm query}=\mathrm{poly}(U).
 \tag{3}
-$$
+```
 
 After every settled external update, the returned value satisfies
 
-$$
+```math
 d_G(u,v)\le \widehat d(u,v)\le\gamma d_G(u,v).
 \tag{4}
-$$
+```
 
 Disconnected pairs return infinity and equal endpoints return zero. The work is amortized over the complete update history.
 
 **Proof.** Choose integer-rounded parameters
 
-$$
+```math
 p=r=\Theta(t),\quad K=\Theta(t^2),\quad
 x=\Theta(U/t),\quad d=O(t).
-$$
+```
 
 Enlarge the fixed multiplier in `x` when necessary. Equations (1) give
 
-$$
+```math
 g=O(th),\quad f=O(U/t+t^2h),\quad
 \log P=O(U/t^2+th+h).
-$$
+```
 
 Consequently `x/(U/t^2)=Theta(t)` and `x/(th)=Theta(U/(t^2h))` both diverge. The shrink condition holds for all sufficiently large `U`; finitely many smaller cases use an exact algorithm. Substituting in (2),
 
-$$
+```math
 \begin{aligned}
 x+f+Kg+d\log P+h
  &=O(U/t+t^2h+t^3h+U/t+t^2h+h)\\
  &=O(U/t+t^3h),\\
 dKg+dh&=O(t^4h).
 \end{aligned}
-$$
+```
 
 Rounding changes constant factors only. The per-level distance inequalities compose multiplicatively. Every local upper estimate is the length of a represented walk, so no estimate falls below the true distance. The query visits `O(t)` levels, where `t` is at most polynomial in `U`, and reads one exact base-table entry. These observations prove (3)–(4). ∎
 
@@ -104,9 +104,9 @@ For the third row, a separately derived public-hierarchy comparison has log-upda
 
 A proxy walk projects to a physical walk after connector edges are discarded. Thus its length divided by `H` is at least the physical shortest-path distance. Conversely, lift a physical shortest path. Each of its edges costs at most `O(log N)` additional connector length, while `ell_e>=1`; the chosen `H` gives
 
-$$
+```math
 d_G(u,v)\le H^{-1}d_{\rm proxy}(q_u,q_v)\le 2d_G(u,v).
-$$
+```
 
 Each incidence allocates only `O(log N)` proxy records. A physical edit causes only polynomially many logarithmic-time proxy edits. Isolated original vertices are handled directly. No size-`N` port tree is materialized for each vertex. Applying the hierarchy to the proxy and dividing estimates by `H` proves the claim. ∎
 

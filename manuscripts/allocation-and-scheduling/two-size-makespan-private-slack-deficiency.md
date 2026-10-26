@@ -26,30 +26,30 @@ For a target T with a<=T<2a, let M be the matroid whose independent
 polytope is P(f_b) intersected with the unit box. The hard branch is
 possible only when rank(M)=h. Define the integers
 
-$$
+```math
 c(T)=\lfloor T/u\rfloor,
  \qquad d(T)=\lfloor (T-a)/u\rfloor,
  \qquad K(T)=c(T)-d(T)>0.
  \tag{D1}
-$$
+```
 
 For the uniform factor-three unit quota, write
 
-$$
+```math
 b(T)=\lceil K(T)/3\rceil,
  \qquad L(T)=c(T)-b(T)
             =\left\lfloor\frac{2c(T)+d(T)}3\right\rfloor.
  \tag{D2}
-$$
+```
 
 Define the directly computable machine set and rank deficit
 
-$$
+```math
 F(T)=\{p\in P:f_s(\{p\})\le L(T)\},
  \qquad
  \delta(T)=h-r_M(F(T)).
  \tag{D3}
-$$
+```
 
 Since L(T) is nondecreasing in T, F(T) expands and delta(T) is
 nonincreasing throughout this hard interval. The matroid M does not
@@ -69,13 +69,13 @@ It lies in [a,2a], is attained, and is defined without referring to an
 unknown optimal schedule. If the Boolean rank is less than h, then
 Theta_k=2a. The main guarantee is
 
-$$
+```math
 \boxed{\quad
  C_{\max}\le\frac53\max\{\mathrm{OPT},\Theta_k\}
  \quad\text{in }2^{O(k)}\mathrm{poly}(H).
  \quad}
  \tag{D4}
-$$
+```
 
 Here H pays for all original input and numerical bits, value-oracle
 calls, deterministic submodular minimization, matroid operations and
@@ -95,27 +95,27 @@ be used at that target. Section 6 gives the precise optimization search.
 Let f be any integral polymatroid rank function on a ground set P.
 Set
 
-$$
+```math
 \sigma_p=f(P)-f(P\setminus\{p\}).
  \tag{D5}
-$$
+```
 
 Submodularity gives, for every S not containing p,
 
-$$
+```math
 f(S\cup\{p\})-f(S)\ge\sigma_p.
  \tag{D6}
-$$
+```
 
 In particular, f minus the modular function sigma is still normalized,
 monotone, integral and submodular. Every base x of P(f) has x_p>=sigma_p.
 More usefully, if F_0 is any set, y belongs to P(f restricted to
 P\\F_0), and integers z_p obey 0<=z_p<=sigma_p for p in F_0, then
 
-$$
+```math
 y+z\in P(f).
  \tag{D7}
-$$
+```
 
 To prove (D7), for any S use y(S\\F_0)<=f(S\\F_0), and add the
 members of S intersected with F_0 one at a time in (D6). This proves
@@ -138,10 +138,10 @@ Take a maximum M-independent subset F_0 of F by greedy, and put
 Q=P\\F_0. Contract F_0 in the player matroid. The contracted matroid
 M/F_0 has rank
 
-$$
+```math
 \delta=h-r_M(F).
  \tag{D8}
-$$
+```
 
 Because I* spans M, its image spans M/F_0. Hence there is a basis
 J subset of I*\\F_0 of M/F_0. Restricting the promised recipient
@@ -170,14 +170,14 @@ Boolean-cap check is similarly a genuine target infeasibility test.
 
 The dual small-job rank function is
 
-$$
+```math
 f(S)=c|S|+g_s(P\setminus S)-g_s(P).
  \tag{D9}
-$$
+```
 
 Its private marginal is particularly simple:
 
-$$
+```math
 \begin{split}
  \sigma_p
    &=f(P)-f(P\setminus\{p\})\\
@@ -185,7 +185,7 @@ $$
    &=c-\min\{c,f_s(\{p\})\}.
  \end{split}
  \tag{D10}
-$$
+```
 
 Since b>=1, the condition sigma_p>=b is exactly
 f_s({p})<=c-b. Thus the set F from the abstract private-coordinate
@@ -194,11 +194,11 @@ lemma is precisely the directly computed set (D3).
 A target-feasible schedule gives an M-basis of large-job recipients,
 and its dual small counts are at least
 
-$$
+```math
 K=c-\left\lfloor\frac{T-a}{u}\right\rfloor
    =\left\lceil\frac{a+cu-T}{u}\right\rceil
  \tag{D11}
-$$
+```
 
 on every member. This is the required K-unit promise in Section 3.
 Apply the unit theorem with b=ceil(K/3) and residual rank delta.
@@ -215,11 +215,11 @@ Put t=a+cu-T. In the hard branch 0<t<=a<=T, and K=ceil(t/u).
 Every selected large-job machine receives at least b dual units, so
 its actual load is at most
 
-$$
+```math
 a+(c-b)u=T+t-bu
                          \le T+\frac23t\le\frac53T.
  \tag{D12}
-$$
+```
 
 Other machines have load at most cu<=T. For T>=2a the public additive
 rounding branch returns load at most T+a<=3T/2. This proves the
@@ -255,10 +255,10 @@ grid, and Theta_k is an attained grid value.
 The set of targets that are both originally feasible and pass the
 cap is exactly
 
-$$
+```math
 [\max\{\mathrm{OPT},\Theta_k\},\infty).
  \tag{D13}
-$$
+```
 
 The algorithm need not recognize this set exactly. It uses the
 following one-sided target procedure:
@@ -299,19 +299,19 @@ on the same grid, clipped at 2a. This is also a polynomial-bit search.
 
 For a player rank r>=1 and integer K, the exact quota condition is
 
-$$
+```math
 (3r-2)b<rK+2r-1.
  \tag{D14}
-$$
+```
 
 Since the two sides are integers, its largest certified quota is
 
-$$
+```math
 b_r(K)=\left\lfloor
                          \frac{rK+2r-2}{3r-2}
                        \right\rfloor.
  \tag{D15}
-$$
+```
 
 For a fixed cap k>=1, use b=b_k(K), define F={p:sigma_p>=b}, and
 require delta=h-r_M(F)<=k. The unit condition for rank k implies
@@ -321,20 +321,20 @@ private-coordinate proof remains unchanged.
 
 The stronger quota gives the exact target bound
 
-$$
+```math
 \max\{T,\ a+(c-b_k(K))u\}.
  \tag{D16}
-$$
+```
 
 It also preserves cap monotonicity, because
 
-$$
+```math
 c-b_k(c-d)
  =\left\lceil
     \frac{(2k-2)c+kd-2k+2}{3k-2}
    \right\rceil,
  \tag{D17}
-$$
+```
 
 whose coefficients of c and d are nonnegative. The cap threshold for
 this stronger quota must be recomputed; it can be larger than Theta_k
@@ -345,11 +345,11 @@ k=2 it is ceil(K/2), giving a hard-target bound at most 3T/2. The easy
 branch is also at most 3T/2. Thus the corresponding strengthened cap
 gives
 
-$$
+```math
 C_{\max}\le\frac32\max\{\mathrm{OPT},\Theta^{(2)}_2\}
  \quad\text{in polynomial time},
  \tag{D18}
-$$
+```
 
 where Theta^(2)_2 denotes the cap threshold with b=ceil(K/2). This
 may apply with arbitrarily many large units; it requires residual
@@ -364,11 +364,11 @@ an impossibility theorem for the algorithm or the scheduling problem.
 At large K, put D_k=3-2/k. Equation (D15) gives
 b_k(K)>(K-1)/D_k. Hence the hard-target load is strictly below
 
-$$
+```math
 (2-1/D_k)T+u/D_k,
  \qquad 2-1/D_k=\frac{5k-4}{3k-2}.
  \tag{D19}
-$$
+```
 
 The additive u term is material at small quotas and cannot be omitted.
 
@@ -378,28 +378,28 @@ Fix 0<eta<=1. Under u<=eta T/18, the hard branch has
 K>=2(3+eta)/eta as proved in the earlier scheduling note. Use the
 output quota
 
-$$
+```math
 b=\lceil K/(3+\eta)\rceil.
  \tag{D20}
-$$
+```
 
 Define F, delta and the fixed-budget cap with this b. The relative
 growth margin is Omega(eta), so the time becomes
 
-$$
+```math
 \mathrm{poly}(H)
  \min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\}.
  \tag{D21}
-$$
+```
 
 Rank zero uses only the direct insertion. The reconstructed load is
 at most (2-1/(3+eta))T. Its cap is still monotone, because
 
-$$
+```math
 c-\lceil(c-d)/(3+\eta)\rceil
    =\left\lfloor\frac{(2+\eta)c+d}{3+\eta}\right\rfloor.
  \tag{D22}
-$$
+```
 
 For optimization, restrict targets to grid values T>=18u/eta. If
 the instance is promised to have u<=eta OPT/18, this restriction does
@@ -415,10 +415,10 @@ that larger quota. Since delta<=k, its unit-core slack is no smaller
 than the rank-k calculation. The same sufficient small-unit condition
 applies. The ratio is
 
-$$
+```math
 \max\{3/2,\ 2-1/(D_k+\eta)\}.
  \tag{D23}
-$$
+```
 
 Cap monotonicity follows from
 c-b=floor(((D_k+eta-1)c+d)/(D_k+eta)); all coefficients are

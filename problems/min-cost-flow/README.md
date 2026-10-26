@@ -14,7 +14,7 @@ Deterministic exact numerical client conditional on the stated deterministic raw
 
 **Time**
 
-$O((N+1)E(S)^4\mathrm{poly}(\log S))$ under the raw-cycle lifetime interface, where $E(S)=\exp\!\left(O((\log S)^{4/5}(\log\log(S+4))^{1/5})\right)$; explicit output of a full flow is charged separately.
+$`O((N+1)E(S)^4\mathrm{poly}(\log S))`$ under the raw-cycle lifetime interface, where $`E(S)=\exp\!\left(O((\log S)^{4/5}(\log\log(S+4))^{1/5})\right)`$; explicit output of a full flow is charged separately.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial binary storage for actual edge records and numerical state; stored va
 
 **Parameters**
 
-$N$ bounds edge records over their lifetime; $n$ and $m$ count vertices and current edges; $S$ is the declared power-of-two numerical cap; capacities, costs, demands, and threshold are binary encoded.
+$`N`$ bounds edge records over their lifetime; $`n`$ and $`m`$ count vertices and current edges; $`S`$ is the declared power-of-two numerical cap; capacities, costs, demands, and threshold are binary encoded.
 
 **Model and representation**
 

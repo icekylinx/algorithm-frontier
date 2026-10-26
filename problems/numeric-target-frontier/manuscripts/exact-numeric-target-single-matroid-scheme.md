@@ -8,10 +8,10 @@ For a nonnegative integer objective and one exact scalar side constraint,
 all seven nontrivial single-matroid variants admit exact target decision
 in
 
-$$
+```math
 2^{O(\sqrt{T+1})}\mathrm{poly}(H)
 \tag{NT1}
-$$
+```
 
 time and polynomial binary space. Here `T` is the queried integer
 objective threshold, included in the input encoding. The proof covers
@@ -29,10 +29,10 @@ vectors are either those of `P(F)` or those of `B(F)`. Original
 eligibility restrictions are given. A base must retain the original
 rank after such restrictions. The objective coefficients satisfy
 
-$$
+```math
 v_e\in\mathbb Z_{\ge0}.
 \tag{NT2}
-$$
+```
 
 There is one nonnegative rational side vector `w`, a nonnegative rational
 threshold `L`, and a chosen side relation `w*x<=L` or `w*x>=L`.
@@ -71,11 +71,11 @@ nonnegative integer auxiliary objective coefficient `a`. Enumerate
 counts `h_a` only for occupied positive groups. For a prescribed
 positive-count profile, put
 
-$$
+```math
 m=\sum_{a>0}h_a,\qquad W=\sum_{a>0}a h_a,
  \qquad h_0=R-m.
 \tag{NT3}
-$$
+```
 
 Profiles with `m>R` are rejected. The zero group contains every current
 coordinate with auxiliary value zero. It may be empty, in which case
@@ -107,24 +107,24 @@ integrality when added as a halfspace.
 
 For an integer `U>=1`, the number of nonnegative count profiles with
 
-$$
+```math
 \sum_{a>0}a h_a\le U
 \tag{NT4}
-$$
+```
 
 is at most the number of integer partitions of all weights up to `U`.
 There is one group for each distinct occupied positive coefficient,
 so the mapping to partitions is injective. Its generating-function
 bound, for any `t>0`, is
 
-$$
+```math
 \#\text{profiles}
  \le e^{tU}\prod_{j\ge1}(1-e^{-tj})^{-1},
  \qquad
  \log\prod_{j\ge1}(1-e^{-tj})^{-1}
  =\sum_{\ell\ge1}\frac1{\ell(e^{t\ell}-1)}\le\frac2t.
 \tag{NT5}
-$$
+```
 
 Taking `t=1/sqrt(U)` gives at most `exp(3 sqrt(U))` profiles.
 For `U=0` there is only the all-zero positive profile.
@@ -133,11 +133,11 @@ This is also the all-input enumeration bound. Stream the occupied
 positive values in any fixed order. At a state of current count `m`
 and weight `W`, enumerate the next value's count in the range
 
-$$
+```math
 0\le h_a\le
        \min\{R-m,\lfloor(U-W)/a\rfloor\}.
 \tag{NT6}
-$$
+```
 
 Every generated partial profile has an all-zero positive completion
 meeting the combinatorial count and weight caps. At a fixed depth,
@@ -167,10 +167,10 @@ profiles and passes its side test.
 
 This proves an exact gate in
 
-$$
+```math
 \exp(3\sqrt T)\mathrm{poly}(H)
 \tag{NT7}
-$$
+```
 
 time for `T>=1`, and polynomial time for `T=0`. The zero case is just
 the original-total side-feasibility optimization on zero-value
@@ -182,10 +182,10 @@ The target `T=0` is resolved by original feasibility. Assume `T>=1`.
 Replace each current coordinate by an active and a passive copy with
 shared rank
 
-$$
+```math
 F^{\uparrow}(S)=F(\pi(S)).
 \tag{NT8}
-$$
+```
 
 Their aggregate `x_e=z_{e^a}+z_{e^p}` is in `B(F)` exactly when the
 lifted vector is in `B(Fup)`. Both copies retain the original side
@@ -198,10 +198,10 @@ that target. In an arbitrary order of its positive capped units, mark
 only a first-reaching prefix active and mark all remaining units
 passive. The active sum is an integer `W` satisfying
 
-$$
+```math
 T\le W\le2T-1.
 \tag{NT9}
-$$
+```
 
 No original count or side contribution changes. In particular this
 operation is valid with a lower covering side row and with a mandatory
@@ -219,10 +219,10 @@ legal base of objective at least `T`. Conversely, the marking of an
 original target witness supplies a retained profile, so complete
 failure is sound. The exact target gate takes at most
 
-$$
+```math
 \exp(3\sqrt{2T-1})\mathrm{poly}(H)
 \tag{NT10}
-$$
+```
 
 time and polynomial space. In originally optional problems, project
 away only the separate free disposal coordinate after aggregation.
@@ -248,11 +248,11 @@ The number of calls is polynomial in the binary encoding since
 `OPT<=R*max(v)`. All queried targets are `O(OPT+1)`. Therefore both
 directions, and hence all seven variants, have exact optimization time
 
-$$
+```math
 2^{O(\sqrt{\mathrm{OPT}+1})}
                     \mathrm{poly}(H)
 \tag{NT11}
-$$
+```
 
 and polynomial workspace. The trivial minimum-independent-upper-budget
 case is solved by zero as usual.
@@ -286,10 +286,10 @@ decision distinguishes the hidden instance from the reference:
 the former meets the objective threshold and the latter does not.
 The same indistinguishability argument yields
 
-$$
+```math
 2^{\Omega(\sqrt T)}
 \tag{NT12}
-$$
+```
 
 worst-case rank queries. This includes randomized decision algorithms
 with success probability at least `2/3` on every instance: use the

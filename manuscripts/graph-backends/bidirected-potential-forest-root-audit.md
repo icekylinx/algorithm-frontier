@@ -15,11 +15,11 @@ opposite directions without an intervening cut, link, or register reset.
 
 For supplied labels and initial forest, the total local work remains
 
-$$
+```math
 (\nu+J+P+Q+R)\mathrm{polylog} S,
  \qquad
  R=O\bigl(J+(N+A_{\rm ext})\log S\bigr).
-$$
+```
 
 The symbols count the same numerical steps, supplied forest edits,
 additional queries, and history-wide register events as in the directed
@@ -61,11 +61,11 @@ interior reward. The negative self-pair still cannot pass the threshold.
 
 At a physical incidence, write
 
-$$
+```math
 w_D=x-\ell,\quad w_R=2\ell-x,
  \qquad
  g_D=x-\chi,\quad g_R=U-x.
-$$
+```
 
 If the incidence is used as a donor, x decreases by eta. Its donor
 buffers decrease by eta and its receiving buffers increase by eta.
@@ -124,9 +124,9 @@ individually justified by fixed-label tightness.
 
 Along any accepted available path,
 
-$$
+```math
 D(b)\le D(a)+\bar L(a,b)<A-\tau_b.
-$$
+```
 
 The same endpoint margin pays for the terminal source-price increase.
 The start's source constraint becomes more permissive. All other

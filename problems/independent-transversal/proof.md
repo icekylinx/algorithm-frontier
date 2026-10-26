@@ -21,9 +21,9 @@ no vertex has `r` independent neighbours in distinct classes, where
 `r>=2`; this is the source's partition-relative `r`-claw-free condition.
 Let `0<epsilon<1` be rational. Put
 
-$$
+```math
 P=|V(G)|+|E(G)|+q+2,
-$$
+```
 
 and let `b_epsilon` be its rational input bit length.
 
@@ -45,22 +45,22 @@ Here a constellation is a disjoint union of nontrivial stars whose
 leaves form a partial independent transversal of all but one class of
 `S_0`. These objects satisfy
 
-$$
+```math
 |D|<(2+\epsilon)(|S|-1),\qquad
  V(K)\subseteq D,\qquad
  |D\setminus V(K)|<\epsilon(|S|-1).                   \tag{I1}
-$$
+```
 
 The uniform running-time bound, using the adjacency-list implementation
 proved in
 [Input-linear scans for the independent-transversal layer primitives](../../manuscripts/matching-and-routing/independent-transversal-input-linear-iteration-implementation.md), is
 
-$$
+```math
 \boxed{\quad
  P(q+1)^{\,O(\epsilon^{-1}\log(2+r/\epsilon))}
        \mathrm{poly}(b_\epsilon+\log P).
  \quad}                                               \tag{I2}
-$$
+```
 
 The source uses a safe `O(|V|^4)` per-iteration implementation bound.
 The accompanying implementation note instead uses a single monotone
@@ -96,11 +96,11 @@ operation and zero-blocker cascade accounting is proved in
 [An elementary exponential fallback for the full transversal certificate](../../manuscripts/matching-and-routing/independent-transversal-elementary-exponential-fallback.md).
 Taking the better of the two algorithms yields the combined bound
 
-$$
+```math
 P\min\left\{\exp(O(q)),\,
       (q+1)^{O(\epsilon^{-1}\log(2+r/\epsilon))}\right\}
       \mathrm{poly}(b_\epsilon+\log P).
-$$
+```
 
 The fallback is particularly relevant for small `q` or very small
 slack. For fixed positive slack and unrestricted `r<=q+1`, the
@@ -128,10 +128,10 @@ instances are solved directly.
 
 Use the source's public operations with the following feasible values:
 
-$$
+```math
 \mu=\rho=\frac{\epsilon}{100r},\qquad
  Q=\lceil1/\mu\rceil.                                \tag{I3}
-$$
+```
 
 `Q` is the source's degree-cap parameter `U`; it is renamed to avoid
 confusion with other logarithmic parameters in this manuscript. All
@@ -145,9 +145,9 @@ at least `1-3mu-mu^2`, whereas their right-hand error terms are
 at most `mu(2r+3)` and `mu(2r+6)`, respectively. The first
 inequality has margin at least
 
-$$
+```math
 \epsilon-(2+\epsilon)(3\mu+\mu^2)-\mu(2r+3)>0,
-$$
+```
 
 and the second follows from
 `epsilon(1-3mu-mu^2)>mu(2r+6)`. The third condition
@@ -180,18 +180,18 @@ algorithm.
 At a main-loop boundary all surviving layers are noncollapsible by
 Lemma 13. Hence
 
-$$
+```math
 |X_j|\le |Y_j|/(1-\mu).              \tag{I4}
-$$
+```
 
 For every surviving `j`, retain its latest **actual** candidate
 `(Xhat_j,Yhat_j)` from its birth or a SuperposedBuild attempt.
 It has
 
-$$
+```math
 Xhat_j=X_j\mathbin{\dot\cup}E_j,
                  |E_j|\le\mu|X_j|.                   \tag{I5}
-$$
+```
 
 After an adopted attempt `E_j` is empty; after rejection the bound
 is strict. This is a fact about an executed computation.
@@ -208,9 +208,9 @@ Thus greedy maximality of every stored candidate can be used directly
 at the current boundary. In particular, no stale hypothetical rerun
 of a greedy routine is needed. New candidate blockers satisfy
 
-$$
+```math
 |Yhat_j\setminus Y_j|\le(r-1)|E_j|.                  \tag{I6}
-$$
+```
 
 Indeed `M` is independent and meets each class at most once, so a
 selected vertex has at most `r-1` neighbours in `M` by the claw
@@ -220,10 +220,10 @@ condition. The existing blockers of `X_j` are precisely `Y_j`.
 
 Fix any surviving positive layer `i` at a main-loop boundary. Set
 
-$$
+```math
 W=1+\sum_{j<i}|Y_j|,\qquad Y=|Y_i|,
  T=W-1+Y=\sum_{j\le i}|Y_j|.                          \tag{I7}
-$$
+```
 
 The `W` active classes for the prefix through `i` are the root
 class and the classes represented by `Y_1,...,Y_(i-1)`.
@@ -232,9 +232,9 @@ From them remove every class that is full in one of the corresponding
 recorded candidates, and every class containing a vertex of any
 `E_j`, `j<=i`. Call the remaining class set `S`. Define
 
-$$
+```math
 D_0=\bigcup_{j\le i}(Xhat_j\cup Yhat_j).
-$$
+```
 
 For each currently unblocked vertex of `X_1 union ... union X_i`,
 add one arbitrary neighbour to `D_0`; such a neighbour exists by
@@ -264,25 +264,25 @@ neighbourhood domination.
 
 Let
 
-$$
+```math
 \eta=\frac{\mu(r+2)}{1-\mu},\qquad
  f=\frac{\mu+(1+\mu)/Q}{1-\mu}.                       \tag{I8}
-$$
+```
 
 The candidate extras and their blockers use at most
 `r sum|E_j|` vertices. The neighbour completion adds at most
 `mu sum|X_j|` vertices. Equations (I4)--(I6) give
 
-$$
+```math
 |D|\le(2+\eta)T.                    \tag{I9}
-$$
+```
 
 Full classes number at most `sum|Xhat_j|/Q`; extra-selected
 classes number at most `sum|E_j|`. Hence
 
-$$
+```math
 |S|\ge W-fT.                 \tag{I10}
-$$
+```
 
 Let `K` be the subgraph of the working interclass graph induced by
 the current prefix's selected
@@ -303,17 +303,17 @@ is nontrivial. The leaves form an independent transversal
 of the `T` matching-representative classes. Thus `K` is a
 constellation for
 
-$$
+```math
 S_0=\{\text{root class}\}\cup A(Y_1\cup\cdots\cup Y_i),
-$$
+```
 
 and `S_0` contains `S`. It is contained in `D`. Beyond `K`,
 the current unblocked selected vertices, candidate extras and their
 new blockers, and the neighbour completion give
 
-$$
+```math
 |D\setminus V(K)|\le\eta T.        \tag{I11}
-$$
+```
 
 No factor proportional to the size of a whole class occurs in these
 bounds. The extra-selected **classes** are excluded, whereas the
@@ -324,20 +324,20 @@ one neighbour per unblocked selected vertex.
 
 With (I3), the following convenient bounds hold:
 
-$$
+```math
 \eta<\epsilon/40,\qquad f<\epsilon/90,
  \qquad \eta+(2+\epsilon)f<\epsilon/10.                \tag{I12}
-$$
+```
 
 Suppose `W>=2` and
 
-$$
+```math
 Y\le\epsilon W/10.            \tag{I13}
-$$
+```
 
 Then `T<=(1+epsilon/5)(W-1)`. From (I9)--(I12),
 
-$$
+```math
 \begin{split}
  |D|+(2+\epsilon)fT
   &\le[2+\eta+(2+\epsilon)f]T\\
@@ -345,23 +345,23 @@ $$
   &\le(2+13\epsilon/25)(W-1)\\
   &<(2+\epsilon)(W-1).
 \end{split}                                             \tag{I14}
-$$
+```
 
 Since `|S|-1>=W-1-fT`, this proves the first inequality in
 (I1). Moreover,
 
-$$
+```math
 |S|-1\ge(1-\epsilon/75)(W-1)>0,
-$$
+```
 
 so `S` is nonempty. The additional constellation requirement follows
 from
 
-$$
+```math
 |D\setminus V(K)|
     \le\frac{3\epsilon}{100}(W-1)
     <\epsilon(|S|-1).                                 \tag{I15}
-$$
+```
 
 If `W=1`, the original birth check ensures `X_i` is nonempty.
 Current noncollapsibility then forces `Y>=1`, which is larger than
@@ -371,11 +371,11 @@ certificate construction.
 We have proved the following explicit alternative at every main-loop
 boundary: either output (I1), or every surviving positive layer has
 
-$$
+```math
 |Y_i|>\frac{\epsilon}{10}
                        \left(1+\sum_{j<i}|Y_j|\right).
                                                                \tag{I16}
-$$
+```
 
 The algorithm can check (I16) for all live layers using prefix counts,
 and build the certificate only on failure. Checking just the newly
@@ -392,31 +392,31 @@ stop cannot invalidate those assertions.
 
 Equation (I16) bounds the number of positive layers by
 
-$$
+```math
 L=O(\epsilon^{-1}\log(q+1)).        \tag{I17}
-$$
+```
 
 Use the source's original base
 
-$$
+```math
 b=Q/(Q-\mu\rho).
-$$
+```
 
 Because `Q=ceil(1/mu)` and `rho=mu`, its logarithm has order
 `mu^3`, with uniform constants. Definition 17 therefore bounds the
 largest finite signature coordinate by
 
-$$
+```math
 H=O\!\left(\mu^{-3}
        [L\log(1/\rho)+L\mu+\log(q+1)]\right).        \tag{I18}
-$$
+```
 
 There are at most `2L` coordinates, their signs are fixed, and their
 absolute values are nonnegative nondecreasing integers. Counting
 lists by both their height and their length, rather than using every
 subset of the height range, gives
 
-$$
+```math
 \begin{split}
  \log\#\mathrm{signatures}
    &\le O\bigl(L\log(2+H/L)\bigr)\\
@@ -424,7 +424,7 @@ $$
                          \log(q+1)\right).
 \end{split}
 \tag{I19}
-$$
+```
 
 This is valid also when the stated upper bound `L` exceeds `q`;
 it then overcounts signatures. Instances with at most one remaining
@@ -459,10 +459,10 @@ The retained public signature proof already accounts for that event.
 For the source's displayed feasible parameters and its original
 birth-growth depth bound, a length-aware signature count gives
 
-$$
+```math
 P(q+1)^{
                    O((r/\epsilon)\log(2+r/\epsilon))}.
-$$
+```
 
 The same input implementation is used in both bounds; the source's
 original coarse `P^4` implementation is not used to disadvantage
@@ -476,11 +476,11 @@ inputs satisfying the no-small-domination promise.
 Both algorithms can also use the elementary fallback above. Thus the
 named derived-public baseline should be read as
 
-$$
+```math
 P\min\left\{\exp(O(q)),\,
       (q+1)^{O((r/\epsilon)\log(2+r/\epsilon))}\right\}
       \mathrm{poly}(b_\epsilon+\log P).
-$$
+```
 
 The full version and later-source comparison are recorded in
 [Public uniform baselines for the full independent-transversal certificate](../../manuscripts/matching-and-routing/independent-transversal-public-uniform-baseline-audit.md).

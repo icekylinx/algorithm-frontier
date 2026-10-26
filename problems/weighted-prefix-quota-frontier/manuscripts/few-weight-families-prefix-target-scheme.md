@@ -4,16 +4,16 @@
 
 One common coordinate order can support several different weight vectors without losing fixed-parameter tractability in the largest target. Let p be the number of supplied nonnegative integer weight vectors used by the prefix rows, and let B be the largest integer target. Exact mixed upper, equality and covering quotas on one global integral polymatroid admit
 
-$$
+```math
 \boxed{2^{O(pB\log(p+2))}\mathrm{poly}(H)}
  \tag{FW1}
-$$
+```
 
 time and uniform polynomial binary workspace. The scalar objective is an arbitrary signed rational functional optimized exactly. Zero entries in the weight vectors are allowed, and the exponent in FW1 does not pay a separate factor for their support patterns.
 
 The result covers optional independent vectors and original-total bases. It keeps all mandatory resource mass, shares capacity between copied coordinates, and preserves every feasible original scalar value. The resource rank may be binary-large, and the initial explicit row list need not have size bounded by p or B.
 
-Two sharp endpoint obstructions are proved here: p=1 can require $2^{\Omega(B)}$ rank queries, while B=1 can require $2^{\Omega(p\log p)}$ queries. Corresponding readable rank-program/circuit ETH exclusions hold at those endpoints. The companion [few-weight-prefix-joint-lower-bounds.md](few-weight-prefix-joint-lower-bounds.md) additionally proves the joint order $2^{\Theta(pB\log(p+2))}$ on the full even-p grid and in worst-case parameter-budget envelopes. The upper proof below is unchanged by that addendum.
+Two sharp endpoint obstructions are proved here: p=1 can require $`2^{\Omega(B)}`$ rank queries, while B=1 can require $`2^{\Omega(p\log p)}`$ queries. Corresponding readable rank-program/circuit ETH exclusions hold at those endpoints. The companion [few-weight-prefix-joint-lower-bounds.md](few-weight-prefix-joint-lower-bounds.md) additionally proves the joint order $`2^{\Theta(pB\log(p+2))}`$ on the full even-p grid and in worst-case parameter-budget envelopes. The upper proof below is unchanged by that addendum.
 
 ## 1. Input model and theorem
 
@@ -21,17 +21,17 @@ Let F be a normalized monotone integral polymatroid rank on an explicit ordered 
 
 There are p explicitly supplied weight vectors
 
-$$
+```math
 w^1,\ldots,w^p\in\mathbb Z_{\ge0}^{E}.
  \tag{FW2}
-$$
+```
 
 Every quota row chooses a family i, an endpoint t in the same coordinate order, a relation rho in {<=,=,>=}, and an integer target b>=0. Its expression is
 
-$$
+```math
 \sum_{e\le t}w^i_e x_e\ \rho\ b.
  \tag{FW3}
-$$
+```
 
 Put B=max b, with B=0 for no rows. Duplicate weight vectors can be identified and unused families removed in polynomial time; the theorem also holds using any larger supplied family count p. If each row originally lists its own vector, equality of those lists can be checked to obtain the family table.
 
@@ -53,11 +53,11 @@ For optional vectors add one disposal coordinate, of zero coefficient in every w
 
 Recheck empty-prefix tests after restriction if necessary. In each family the remaining positive targets increase strictly along the endpoints of each direction. Let u_i and ell_i be its upper and cover counts. If d is the total retained row count, then
 
-$$
+```math
 u_i\le B,\qquad \ell_i\le B,
  \qquad d=\sum_{i=1}^p(u_i+\ell_i)\le2pB.
  \tag{FW4}
-$$
+```
 
 The record lists are sublists of the explicitly given rows. Their computation never allocates an array indexed through B. No dominance rule is applied between different weight families.
 
@@ -71,10 +71,10 @@ Fix any feasible original integer base, including legitimate disposal completion
 
 For each i in C mark the whole initial unit segment through the first crossing of capped weight C_i. Let its final unit position be tau_i. This crossing exists because the prefix row with target C_i remains satisfied after integer capping. Its capped marked mass satisfies
 
-$$
+```math
 C_i\le M_i\le C_i+B-1.
  \tag{FW5}
-$$
+```
 
 Every retained cover of family i is satisfied by the marked credit. A prefix containing the cut receives all marked mass, at least C_i. A prefix ending before the cut has all its capped contributions marked. A cut inside the units of its last coordinate belongs to the first case. Marking zero-contribution units changes no credited value.
 
@@ -84,18 +84,18 @@ The marks are nested prefixes of one common unit list, even though their weight 
 
 Enumerate permutations sigma=(sigma_1,...,sigma_s) of the covering families. For a fixed permutation define
 
-$$
+```math
 A_l=C\setminus\{\sigma_1,\ldots,\sigma_l\},
                     \qquad 0\le l\le s.
  \tag{FW6}
-$$
+```
 
 Create copies (e,l) of each eligible coordinate, with the shared resource rank
 
-$$
+```math
 F^{\uparrow}(Y)=F0(\mathrm{pr}(Y)),
  \tag{FW7}
-$$
+```
 
 where pr forgets the layer. This is a normalized monotone integral polymatroid rank. Projection preserves unions and maps intersections into intersections; submodularity and monotonicity prove the rank inequality. Aggregating x_e=sum_l z_(e,l) gives exact equivalence of independent resource regions and total-R bases. Querying the full preimage of a subset proves one direction; z(Y)<=x(pr(Y)) proves the other.
 
@@ -117,10 +117,10 @@ If the marked cut is inside P_U, every marked positive unit and every passive re
 
 In every case the relevant reduced mass for one family is at most 2B-1. Summing over the families gives the global allowance
 
-$$
+```math
 W=p(2B-1).
  \tag{FW8}
-$$
+```
 
 This is a sum of one magnitude per contributing family and unit, not the entry sum over all retained prefix rows. Replication of a coefficient in many rows of the same family is counted only once. This distinction is what keeps the bound linear in B rather than in the sum of prefix targets.
 
@@ -130,22 +130,22 @@ Fix one chain. Let t_1<...<t_m be the distinct endpoints of its retained rows, s
 
 Define a base color g=(l,j) by a chain layer and an endpoint segment. There are at most
 
-$$
+```math
 D\le(s+1)m\le(p+1)d\le2p(p+1)B
  \tag{FW9}
-$$
+```
 
 such colors. This bound has no extra trailing segment: all row templates are empty after the last endpoint, and those coordinates belong to the global zero group below.
 
 For each base color g and family i, let T_i(g) be the template of its retained rows that include this segment and either are upper rows or are covers with i active in the layer. The template depends only on g. For a copied coordinate (e,l) of color g, define its collapsed vector y in nonnegative integer p-space by
 
-$$
+```math
 y_i=\begin{cases}
        v^i_e,&T_i(g)\ne\varnothing,\\
        0,&T_i(g)=\varnothing.
       \end{cases}
  \tag{FW10}
-$$
+```
 
 An actual zero weight remains a zero entry even when the corresponding template is nonempty. Given (g,y), every auxiliary row coefficient is reconstructed exactly: a row j in family i receives y_i if j belongs to T_i(g), and zero otherwise.
 
@@ -155,16 +155,16 @@ Every other coordinate belongs to an actual class (g,y) with y nonzero. The numb
 
 For the canonical representative, the relevant mass in Section 5 is precisely the sum of entries of these collapsed vectors. Thus its nonzero class profile h satisfies
 
-$$
+```math
 \sum_{g,y\ne0}\|y\|_1 h_{g,y}\le W.
  \tag{FW11}
-$$
+```
 
 Completeness is retained by this refinement of the profile classes: every actual lifted vector has its own such profile. Splitting otherwise identical full columns into different base colors cannot remove that vector from the union of profiles.
 
 ## 7. An alphabet-and-cuts bound that includes arbitrary zero entries
 
-Fix one base color and a positive total reduced weight w. A local profile is a multiset of nonzero vectors in $\mathbb Z_{\ge0}^p$ whose total l1 weight is w.
+Fix one base color and a positive total reduced weight w. A local profile is a multiset of nonzero vectors in $`\mathbb Z_{\ge0}^p`$ whose total l1 weight is w.
 
 Sort its vector occurrences lexicographically. Encode one occurrence y as a word containing y_1 copies of symbol 1, followed by y_2 copies of symbol 2, and so on. Each occurrence contributes a nonempty word. Concatenate all occurrence words and mark the cut positions between consecutive occurrences.
 
@@ -172,23 +172,23 @@ The concatenation has length w over an alphabet of p symbols. Its cuts form a su
 
 Consequently the number of local profiles of exact positive weight w is at most
 
-$$
+```math
 p^w2^{w-1}\le(2p)^w.
  \tag{FW12}
-$$
+```
 
 For weight zero only the empty nonzero-vector profile is permitted. Excluding zero vectors is essential; their unbounded multiplicities have already been moved to the one global remainder group. The length-w word is a counting device only; the algorithm never materializes it.
 
 If a complete profile uses k of the D base colors, choose them in binomial(D,k) ways. Their positive total weights summing to at most W have binomial(W,k) choices. Using FW12 and Vandermonde's identity gives
 
-$$
+```math
 \begin{aligned}
  \#\text{nonzero profiles}
  &\le(2p)^W\sum_k\binom Dk\binom Wk\\
  &=(2p)^W\binom{D+W}{W}.
  \end{aligned}
  \tag{FW13}
-$$
+```
 
 Allowing every nonzero p-vector only enlarges the actual class family. The original count cap and final quota filters can only decrease it. There is no enumeration of 2^p zero patterns in either this count or the algorithm.
 
@@ -196,10 +196,10 @@ Allowing every nonzero p-vector only enlarges the actual class family. The origi
 
 Enumerate multiplicities of actual nonzero classes with FW11 and the resource count bound sum h<=R. Set the one global zero-group count to
 
-$$
+```math
 h_0=R-\sum_{g,y\ne0}h_{g,y}.
  \tag{FW14}
-$$
+```
 
 For a complete profile reconstruct every auxiliary row total by FW10 and test its actual upper or covering inequality. Original equalities are enforced by their two halves. A profile that fails a row is rejected.
 
@@ -215,20 +215,20 @@ For each chain traverse only the actual nonzero classes. A next multiplicity is 
 
 The complete explicit bound is
 
-$$
+```math
 s!\,(2p)^W\binom{D+W}{W}\mathrm{poly}(H),
       \quad W=p(2B-1),\quad D\le2p(p+1)B.
  \tag{FW15}
-$$
+```
 
 For B>=1, W>=pB, so D/W<=2(p+1). Therefore
 
-$$
+```math
 (2p)^W\binom{D+W}{W}
        \le\bigl[2ep(2p+3)\bigr]^W,
        \qquad W\le2pB.
  \tag{FW16}
-$$
+```
 
 Also s!<=p!<=p^p. Its logarithm is absorbed by O(pB log(p+2)) because B>=1. This proves FW1 with uniform constants. At a zero actual class count there is just one nonzero profile, namely the empty one, followed by the same row and resource tests.
 
@@ -242,10 +242,10 @@ Take t consecutive four-element blocks of common weights 1,2,3,4, and impose cum
 
 A reference paving matroid forbids that family at rank and permits all smaller sets; a hidden version restores one candidate. The rank is truly 2t, the two rank oracles differ only at the candidate, and prefix feasibility is NO for the reference and uniquely YES at the hidden candidate. The balanced reference/hidden distribution gives at least
 
-$$
+```math
 2^t/3=2^{\Omega(B)}
  \tag{FW17}
-$$
+```
 
 queries for bounded-error randomized decision. Equalities force full rank also in the optional formulation. The scalar may be zero.
 
@@ -255,11 +255,11 @@ For a readable encoded endpoint, let the block choices encode the variables of a
 
 Let p>=4 be even. On the edge ground of K_p, take an arbitrary single coordinate order. Give family i the vertex-incidence weight vector
 
-$$
+```math
 w^i_e=\mathbf1[i\in e],
                          \qquad i\in[p].
  \tag{FW18}
-$$
+```
 
 These are p distinct nonnegative vectors with zero entries. For each family impose one equality of target one on the full prefix. Hence B=1. No cardinality row or larger target is added.
 
@@ -269,19 +269,19 @@ Make every subset below r independent and every r-subset outside H a reference b
 
 The reference unit-target instance is infeasible and each hidden instance has its unique hidden feasible matching. The same balanced-distribution argument gives the unconditional lower bound
 
-$$
+```math
 (p-1)!!/3=2^{\Omega(p\log p)}
  \tag{FW19}
-$$
+```
 
 on worst-case rank queries for bounded-error randomized exact feasibility. It holds for optional independent sets and bases with scalar zero and polynomial-size explicit non-oracle data. Thus FW1's p log p endpoint at B=1 is necessary.
 
 There is also a readable rank-program/circuit ETH endpoint, as established in [conditional-lower-bound-encoded-target-matroids.md](../../numeric-target-frontier/manuscripts/conditional-lower-bound-encoded-target-matroids.md). To make its calibration explicit, for a formula on nu>=1 variables choose the least even p>=4 with (p-1)!!>=2^nu. Minimality and the recursion L_p=(p-1)L_(p-2) give log L_p<nu+log(p-1), while elementary product estimates give log L_p=Theta(p log(p+2)). Since p<=2nu+2, the counts have O(nu) bits and
 
-$$
+```math
 p\log(p+2)=\Theta(\nu).
  \tag{FW20}
-$$
+```
 
 Rank a perfect matching by choosing the partner of the smallest remaining vertex in increasing order: the choice at a residual set of m vertices has (m-3)!! completions. This recursion ranks all matchings in polynomial time. Its rank modulo 2^nu supplies a surjection onto assignments. Permit a matching exactly when that assignment satisfies the formula, retaining all nonmatchings at rank and all smaller sets. Every forbidden subfamily is still nonadjacent, so the matroid promise holds for every formula. The exact rank decoder treats smaller, larger, nonmatching rank-sized, and matching rank-sized sets separately; only the last case evaluates the formula. All operations have polynomial bit complexity and can be unrolled into a polynomial-size Boolean rank circuit.
 

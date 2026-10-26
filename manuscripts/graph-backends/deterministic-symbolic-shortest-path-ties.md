@@ -9,13 +9,13 @@ not an all-pairs or dynamic shortest-path theorem.
 
 ## 1. Input and exact tie convention
 
-Let the graph have $n$ vertices and $m$ genuine ranked edge
+Let the graph have $`n`$ vertices and $`m`$ genuine ranked edge
 records. In a directed graph these are directed arc IDs. In an
 undirected graph they are genuine physical edge IDs, with the SAME
 rank used for both traversal orientations of one edge. Different
 parallel edges have different IDs.
 
-Fix an injective rank function into $\{1,\ldots,m\}$, once for
+Fix an injective rank function into $`\{1,\ldots,m\}`$, once for
 the graph and all its sources. Distinct immediate native aliases
 must remain distinct even when their eventual physical images
 coincide. A real edge is not identified with another edge or with
@@ -24,32 +24,32 @@ Every actual native graph edge, including a zero-length connector
 or an edge with null eventual physical image, receives its own
 genuine ID and rank under this convention.
 
-Lengths are nonnegative integers with at most $b$ bits, or have
+Lengths are nonnegative integers with at most $`b`$ bits, or have
 the form
-$$
+```math
 \ell_e=a_e/D,\qquad
        0\le a_e<2^b,\quad 1\le D<2^b,
  \tag{1}
-$$
+```
 on ONE declared common denominator. All true-distance computations
 can then use the integer numerators. Arbitrary unrelated per-edge
-$b$-bit denominators do not give the same arithmetic bound:
-their common denominator may have $\Theta(mb)$ bits. In that
+$`b`$-bit denominators do not give the same arithmetic bound:
+their common denominator may have $`\Theta(mb)`$ bits. In that
 case the actual common-grid encoding length must be charged.
 
-For a walk $P$, including repeated traversals, define the
+For a walk $`P`$, including repeated traversals, define the
 MATHEMATICAL additive perturbation
-$$
+```math
 \tau(P)=\sum_{e\text{ traversed in }P}
                                      2^{-\mathrm{rank}(e)}.
  \tag{2}
-$$
+```
 For undirected edges the orientation does not change this
 positive tie cost. Order walks lexicographically by
-$$
+```math
 (\ell(P),\tau(P)).
  \tag{3}
-$$
+```
 The first component has absolute priority. This does not alter
 the ordinary shortest-distance value.
 
@@ -67,12 +67,12 @@ walk is therefore a vertex-simple path.
 
 A simple path uses any genuine ranked edge at most once. Its tie
 signature is a zero-one vector. For two different such signatures,
-let $r$ be their first differing rank. The contribution $2^{-r}$
+let $`r`$ be their first differing rank. The contribution $`2^{-r}`$
 strictly exceeds the sum of every later available contribution:
-$$
+```math
 \sum_{j=r+1}^{m}2^{-j}<2^{-r}.
  \tag{4}
-$$
+```
 Thus the first differing bit determines the exact comparison;
 zero is smaller than one. Distinct finite zero-one signatures
 never have equal tie cost.
@@ -85,19 +85,19 @@ ordered endpoints. Hence every reachable ordered pair has a
 UNIQUE minimum under (3).
 
 This uniqueness is globally subpath-consistent. If a subpath of
-the selected $s$-to-$t$ path could be replaced by a cheaper
+the selected $`s`$-to-$`t`$ path could be replaced by a cheaper
 path between its endpoints, additive costs would give a cheaper
-$s$-to-$t$ walk. Removing any resulting cycles could only
+$`s`$-to-$`t`$ walk. Removing any resulting cycles could only
 decrease its cost further, a contradiction. Therefore the selected
 subpath is the path selected when its own endpoints are used as
 source and target.
 
 For an undirected graph, using one rank in BOTH orientations also
 gives reversal consistency:
-$$
+```math
 P(v,u)=P(u,v)^{\rm rev}.
  \tag{5}
-$$
+```
 If separate directed arc ranks are assigned to the two orientations
 instead, directed subpath consistency remains true but (5) need
 not hold. That alternate convention must not be used when a
@@ -106,21 +106,21 @@ distance-oracle interface needs undirected reversal consistency.
 ## 3. The exact canonical signature data structure
 
 Let
-$$
+```math
 H=\lceil\log_2\max\{1,m\}\rceil,\qquad
                               T=2^H.
-$$
+```
 Use a complete conceptual binary segment tree on positions
-$1,\ldots,T$. Positions above $m$ always remain zero.
-No full tree or length-$T$ bit array is allocated.
+$`1,\ldots,T`$. Positions above $`m`$ always remain zero.
+No full tree or length-$`T`$ bit array is allocated.
 
 There are two canonical leaf records, for bits zero and one.
-A node of height $h>0$, with child identifiers $L,R$, is
+A node of height $`h>0`$, with child identifiers $`L,R`$, is
 interned by the exact key
-$$
+```math
 (h,L,R).
  \tag{6}
-$$
+```
 Store keys in an ordinary deterministic balanced search tree.
 A successful lookup returns the already existing canonical node;
 otherwise allocate one fresh node ID and store its two child
@@ -128,10 +128,10 @@ pointers. This is exact structural interning, sometimes called
 hash-consing, but it uses no hash value, random seed, or collision
 assumption.
 
-The all-zero node of height $h$ is obtained recursively from
-two references to the all-zero node of height $h-1$.
+The all-zero node of height $`h`$ is obtained recursively from
+two references to the all-zero node of height $`h-1`$.
 Only one such node per height is necessary. Initialization uses
-$O(\log(m+2))$ nodes and dictionary operations.
+$`O(\log(m+2))`$ nodes and dictionary operations.
 
 By induction on height, two stored nodes of the same height have
 the same identifier if and only if they encode the same bit
@@ -143,13 +143,13 @@ fingerprints. Node records are immutable.
 Given a path root and an edge rank not yet present, follow the
 root-to-leaf search for that rank, replace its zero leaf by the
 one leaf, and intern the rebuilt ancestors. This changes at
-most $H+1$ nodes. The old root remains a valid persistent
+most $`H+1`$ nodes. The old root remains a valid persistent
 version.
 
-There are $O(\log(m+2))$ canonical-node updates, each implemented
-by a balanced-map operation. With $K_{\rm nodes}$ currently
+There are $`O(\log(m+2))`$ canonical-node updates, each implemented
+by a balanced-map operation. With $`K_{\rm nodes}`$ currently
 stored nodes, the word-operation cost is
-$O(\log(m+2)\log(K_{\rm nodes}+2))$.
+$`O(\log(m+2)\log(K_{\rm nodes}+2))`$.
 
 ### Comparing two signatures
 
@@ -157,7 +157,7 @@ If their root IDs are equal, the signatures are equal.
 Otherwise compare their left-child IDs. Descend left if they
 differ, and right if they agree. Repeat until the first differing
 leaf is reached. Equation (4) then determines the exact order.
-This takes $O(\log(m+2))$ node reads and ID comparisons.
+This takes $`O(\log(m+2))`$ node reads and ID comparisons.
 
 The tree is balanced by its fixed conceptual shape. No
 probabilistic balancing or data-dependent rotation of this
@@ -176,14 +176,14 @@ label stores:
 Unreachable labels are separate infinity records. The source
 starts at the zero numerator and the all-zero signature.
 
-When a vertex $u$ is settled, scan its outgoing arcs. Relax
-$u\to v$ only if $v$ is still unsettled. All vertices on
-the settled predecessor path to $u$ are already settled:
+When a vertex $`u`$ is settled, scan its outgoing arcs. Relax
+$`u\to v`$ only if $`v`$ is still unsettled. All vertices on
+the settled predecessor path to $`u`$ are already settled:
 each predecessor was settled before its label was installed,
 and every edge is strictly positive in the pair order.
-Consequently $v$ is NOT on that predecessor path.
+Consequently $`v`$ is NOT on that predecessor path.
 
-The candidate path obtained by appending $u\to v$ is therefore
+The candidate path obtained by appending $`u\to v`$ is therefore
 vertex-simple. In particular, the appended genuine edge ID
 has not already appeared in the path. Its signature update
 really is a zero-to-one change, rather than a multiset update
@@ -212,48 +212,48 @@ between different dictionaries, supplies their consistency.
 
 Each directed arc is scanned at most once from a settled tail.
 For an undirected edge there are at most two orientation scans.
-Thus there are $O(m)$ candidate attempts. Each creates at most
-$O(\log(m+2))$ canonical nodes, giving
-$$
+Thus there are $`O(m)`$ candidate attempts. Each creates at most
+$`O(\log(m+2))`$ canonical nodes, giving
+```math
 K_{\rm nodes}=O(m\log(m+2)+1)
  \tag{7}
-$$
+```
 per source, including discarded tentative labels. Canonical node
-IDs consequently use $O(\log(m+2))$ bits. There is no hidden
-$m$-bit integer arithmetic.
+IDs consequently use $`O(\log(m+2))`$ bits. There is no hidden
+$`m`$-bit integer arithmetic.
 
-After compacting the nonisolated part, at most $2m$ vertices
+After compacting the nonisolated part, at most $`2m`$ vertices
 are incident to edges; an isolated source is handled directly.
-A simple path has $O(m)$ edges, so its true-distance numerator
+A simple path has $`O(m)`$ edges, so its true-distance numerator
 uses
-$$
+```math
 O(b+\log(m+2))
  \tag{8}
-$$
+```
 bits. An ordinary binary heap makes
-$O((m+n_{\rm active})\log(n_{\rm active}+2))$ key comparisons.
+$`O((m+n_{\rm active})\log(n_{\rm active}+2))`$ key comparisons.
 A key comparison uses a comparison of (8)-bit integers, followed
-when needed by the $O(\log(m+2))$ signature comparison.
-Interning costs $O(m\log^2(m+2))$ balanced-map word operations.
+when needed by the $`O(\log(m+2))`$ signature comparison.
+Interning costs $`O(m\log^2(m+2))`$ balanced-map word operations.
 Integer addition and every map/key operation have their ordinary
 charged finite-bit costs.
 
 Thus on the compact graph the total work is
-$$
+```math
 O\bigl((m+1)\mathrm{poly}
                                   (b+\log(m+2))\bigr)
  \tag{9}
-$$
+```
 bit operations, with a fixed polynomial. Supplied isolated
-vertices require $O(n)$ additional output/bookkeeping records.
+vertices require $`O(n)`$ additional output/bookkeeping records.
 If full uncompressed input identifiers are charged bit by bit,
 their actual identifier length must also be included; one safe
 full statement is
-$$
+```math
 O\bigl((n+m+1)\mathrm{poly}
                               (b+\log(n+m+2))\bigr).
  \tag{10}
-$$
+```
 In a word-RAM representation with passive original IDs, one
 linear cleanup handles those labels and (9) is the substantive
 per-source bound. The compact numerical applications already
@@ -273,9 +273,9 @@ A actual outgoing arc records and reaches V_A vertex records before
 stopping. Its candidate-node count is O((A+1) log(m+2)), and its
 work is
 
-$$
+```math
 (A+V_A+1)\mathrm{poly}(b+\log(m+2)),
-$$
+```
 
 using the already assigned global ranks. Store tentative labels and
 visited flags in sparse dictionaries of reached IDs; do not clear an
@@ -288,17 +288,17 @@ analysis bounds A and V_A; it does not supply that exploration bound.
 ## 6. Stability under deletions
 
 Fix the genuine native IDs, their rank order, and all surviving
-true lengths. Let $P$ be the selected path in a graph $G$.
-If a subgraph $G'$ deletes no vertex or edge of $P$, then
-$P$ remains available with the same cost. Every competing
-path of $G'$ was already a path of $G$. By uniqueness in
-$G$, none can tie or beat $P$, so $P$ remains selected
-in $G'$.
+true lengths. Let $`P`$ be the selected path in a graph $`G`$.
+If a subgraph $`G'`$ deletes no vertex or edge of $`P`$, then
+$`P`$ remains available with the same cost. Every competing
+path of $`G'`$ was already a path of $`G`$. By uniqueness in
+$`G`$, none can tie or beat $`P`$, so $`P`$ remains selected
+in $`G'`$.
 
 The same reasoning permits increases of lengths only on edges
-outside $P$. It does not cover inserting new competitors,
+outside $`P`$. It does not cover inserting new competitors,
 decreasing their lengths, changing ranks, or retiring an edge
-lifetime used by $P$. Preserving only an eventual physical
+lifetime used by $`P`$. Preserving only an eventual physical
 image is insufficient: distinct native aliases and replacement
 lifetimes are distinct ranked objects.
 

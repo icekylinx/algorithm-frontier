@@ -19,15 +19,15 @@ for the maximum degree of J.
 
 For any supplied positive resource prices w_x, assign the native
 edge cost
-$$
+```math
 c_w(e)=\sum_{x\in\Pi(e)}w_x.
-$$
+```
 Suppose a deterministic weighted-spanner oracle returns a selected
 subgraph H with at most s edges and, for every e=uv, an explicit H-path
 P_e satisfying
-$$
+```math
 \sum_{f\in P_e}c_w(f)\leq\alpha c_w(e).       \tag{1}
-$$
+```
 Any desired bound on the number of native edges in P_e must be a
 separate oracle guarantee; weighted distance alone does not provide it.
 
@@ -36,40 +36,40 @@ ambient walk. With positive prices this does not increase its cost.
 Loop erasure uses immediate ambient vertex IDs, never a later
 identification of distinct aliases through their physical images.
 Let a_x be the number of resulting simple ambient paths using x. Then
-$$
+```math
 0\leq a_x\leq q,\qquad
  \sum_x w_x a_x
        \leq\alpha\sum_e c_w(e)
        \leq\alpha C_0\sum_x w_x.                           \tag{2}
-$$
+```
 Thus a weighted distance oracle gives a low-cost aggregate response.
 It does not give a bound a_x=polylog(R)(C0+Delta) for each resource.
 
 ## 2. A literal multiplicative-weights construction
 
 Start with w_x=1. After response a^(t), update
-$$
+```math
 w_x\leftarrow w_x(1+a_x^{(t)}/q).
                                                                     \tag{3}
-$$
+```
 This is a mathematical packing calculation; exact products in (3)
 would have T-dependent bit size, which a fast implementation would
 also have to address. From (2), the total weight after T responses is
 at most
-$$
+```math
 R(1+\alpha C_0/q)^T
                     \leq R\exp(T\alpha C_0/q).
-$$
+```
 For 0<=z<=1, ln(1+z)>=z ln 2. Comparing one coordinate's weight with
 the total gives
-$$
+```math
 \max_x\frac1T\sum_{t=1}^T a_x^{(t)}
        \leq\frac{\alpha C_0+q\ln R/T}{\ln 2}.             \tag{4}
-$$
+```
 For example, let D=gamma(C0+Delta) with gamma>=4 alpha, and take
-$$
+```math
 T\geq\max\{1,4q\ln R/D\}.
-$$
+```
 Then the average response has congestion below D. The union of the
 T native selected subgraphs has at most Ts selected IDs. Keep every
 candidate as a pair: its native H-path P_e and its loop-erased ambient
@@ -104,10 +104,10 @@ roots by an edge f. Let T be this tree. Add a simple D0-regular
 bipartite graph between the two leaf sets, where 4<=D0<=Q; a union
 of D0 distinct cyclic perfect matchings is an explicit choice.
 The resulting native graph J has
-$$
+```math
 n=4Q-2,\qquad q=4Q-3+D_0Q,\qquad
  \Delta=\max\{3,D_0+1\}.
-$$
+```
 Use J itself as the ambient graph, take EDGE resources X=E(J),
 and use the identity input images,
 so C0=1. At uniform resource prices, H=T is an alpha-spanner with
@@ -115,16 +115,16 @@ alpha=2h+1. Every demand path has at most alpha native edges; H has
 n-1 edges and maximum selected degree three.
 
 Nevertheless the response load on f is
-$$
+```math
 a_f=D_0Q+1.                         \tag{5}
-$$
+```
 All of these routes are already simple ambient paths, so loop
 erasure does not reduce (5). For D0 growing with Q, the input is
 also substantially denser than the selected tree. Relative to the
 desired target D=gamma(C0+Delta), (5) gives
-$$
+```math
 a_f/D=\Omega(n/\gamma).
-$$
+```
 Taking gamma to be a fixed polynomial in log n leaves a polynomial
 width. Given an otherwise valid all-price oracle whose allowed
 stretch is at least 2h+1 and whose support cap is at least n-1,

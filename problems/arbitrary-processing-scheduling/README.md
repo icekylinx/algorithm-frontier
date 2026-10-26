@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns an integer schedule of makespan at most $(1+\varepsilon)\mathrm{OPT}$, or detects infeasibility even without a load bound.
+Returns an integer schedule of makespan at most $`(1+\varepsilon)\mathrm{OPT}`$, or detects infeasibility even without a load bound.
 
 **Objective and output**
 
@@ -14,11 +14,11 @@ Deterministic profile enumeration and exact integral recovery, including the com
 
 **Time**
 
-With $\delta=\varepsilon/2$, $K=\lfloor1/\delta\rfloor$, $L=\left\lceil(1-\delta)/\delta^2\right\rceil$, and $\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}$, time is
+With $`\delta=\varepsilon/2`$, $`K=\lfloor1/\delta\rfloor`$, $`L=\left\lceil(1-\delta)/\delta^2\right\rceil`$, and $`\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}`$, time is
 
-$$
+```math
 \Pi_\varepsilon^q\mathrm{poly}(H_\varepsilon)=2^{O(q/\varepsilon)}\mathrm{poly}(H_\varepsilon).
-$$
+```
 
 **Space**
 
@@ -26,7 +26,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$q$ is the physical-machine count; $0<\varepsilon\le1$ is rational; $H_\varepsilon=H+\mathrm{size}(\varepsilon)$; all original totals $n_j=f_j(P)$ are mandatory. $H$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+$`q`$ is the physical-machine count; $`0<\varepsilon\le1`$ is rational; $`H_\varepsilon=H+\mathrm{size}(\varepsilon)`$; all original totals $`n_j=f_j(P)`$ are mandatory. $`H`$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 
@@ -49,24 +49,24 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 The [compressed slot-surplus theorem](slot-surplus.md) handles common
 processing sizes and mandatory original job-polymatroid bases, with
 arbitrary binary multiplicities and no assignment-cost budget.
-Let $a$ be the maximum size, $h$ its mandatory total, $u$ the largest
+Let $`a`$ be the maximum size, $`h`$ its mandatory total, $`u`$ the largest
 smaller size, and
 
-$s_p(T)=\min\{f_b(\{p\}),\lfloor T/a\rfloor\}$,  $c_{\mathrm{slot}}(T)=\sum_p s_p(T)-h$.
+$`s_p(T)=\min\{f_b(\{p\}),\lfloor T/a\rfloor\}`$,  $`c_{\mathrm{slot}}(T)=\sum_p s_p(T)-h`$.
 
-**$C_{\max}\le\mathrm{OPT}+a$**
+**$`C_{\max}\le\mathrm{OPT}+a`$**
 
 Always retained as a polynomial fallback
 
-**$C_{\max}\le\min\{\mathrm{OPT}+a,(1+\varepsilon)\mathrm{OPT}+u\}$**
+**$`C_{\max}\le\min\{\mathrm{OPT}+a,(1+\varepsilon)\mathrm{OPT}+u\}`$**
 
-$\Gamma(1/\varepsilon)^k\mathrm{poly}(H)$ when $c_{\mathrm{slot}}(\mathrm{OPT})\le k$, for rational $0<\varepsilon\le1/2$
+$`\Gamma(1/\varepsilon)^k\mathrm{poly}(H)`$ when $`c_{\mathrm{slot}}(\mathrm{OPT})\le k`$, for rational $`0<\varepsilon\le1/2`$
 
-**Factor $1+\eta$**
+**Factor $`1+\eta`$**
 
-$\Gamma(2/\eta)^k\mathrm{poly}(H)$ when $u\le(\eta/2)\mathrm{OPT}$ and $c_{\mathrm{slot}}(\mathrm{OPT})\le k$, for rational $0<\eta\le1$
+$`\Gamma(2/\eta)^k\mathrm{poly}(H)`$ when $`u\le(\eta/2)\mathrm{OPT}`$ and $`c_{\mathrm{slot}}(\mathrm{OPT})\le k`$, for rational $`0<\eta\le1`$
 
-Here $\Gamma(R)=R^R/(R-1)^{R-1}$. The supplied slot-surplus budget $k$
+Here $`\Gamma(R)=R^R/(R-1)^{R-1}`$. The supplied slot-surplus budget $`k`$
 can itself be binary encoded. A hybrid count enumeration guarantees
 polynomial workspace even when its numerical value exceeds the number
 of machines. This theorem does not impose at most one largest unit per

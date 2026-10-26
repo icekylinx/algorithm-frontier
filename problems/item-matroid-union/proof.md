@@ -27,10 +27,10 @@ are counted separately and obey the same asymptotic bound.
 
 Put
 
-$$
+```math
 d_r=4-3/r,\qquad \theta_r=1/d_r=\frac r{4r-3}.
  \tag{U1}
-$$
+```
 
 The deterministic construction gives:
 
@@ -39,12 +39,12 @@ The deterministic construction gives:
 * for every positive rational eta, a basis allocation of value at
   least OPT/(d_r+eta) in
 
-$$
+```math
 \mathrm{poly}(P,b+\mathrm{bits}(\eta))
  \min\!\left\{2^{O(r)},
  (r+1)^{O((1+\eta^{-1})\log(r+1))}\right\}
  \tag{U2}
-$$
+```
 
 time and oracle calls. Space is polynomial. For fixed eta this is
 quasipolynomial in rank, with polynomial dependence on the explicit
@@ -75,9 +75,9 @@ can receive distinct fat resources.
 
 Let M* be the dual of the original player matroid, and define
 
-$$
+```math
 U=M^*\vee N.                       \tag{U3}
-$$
+```
 
 This is the ordinary matroid union on the player ground set. An
 independent set of U has a disjoint decomposition D union F with
@@ -89,10 +89,10 @@ only small resources and target T in its compact relaxation. Let
 r' be the rank of U*. Since the union contains all independent
 sets of M*,
 
-$$
+```math
 r(U)\ge q-r,
  \qquad r'=q-r(U)\le r.                                    \tag{U4}
-$$
+```
 
 Thus passing to the auxiliary matroid never increases the rank
 parameter. If r'=0, there are no players needing small bundles.
@@ -110,9 +110,9 @@ The disjoint union D union F is therefore independent in U. Extend
 it to a basis B of U. Its complement S'=P_players minus B is a
 basis of U* and satisfies
 
-$$
+```math
 S'\subseteq S.                  \tag{U5}
-$$
+```
 
 Every player in S' retains its original all-small bundle, still of
 value at least T. Those bundles are disjoint. They give an integral
@@ -123,10 +123,10 @@ existence witness. The algorithm is not given that allocation, a
 configuration-LP solution, or a feasible fractional solution of the
 auxiliary instance. Its inner failure certificate is sufficient:
 
-$$
+```math
 Q_{U^*}(T)\text{ infeasible}\quad\Longrightarrow\quad
                          \mathrm{OPT}<T.                   \tag{U6}
-$$
+```
 
 No claim is made that an arbitrary feasible point of the original
 compact Q_M(T), with unrestricted resource sizes, survives this
@@ -144,31 +144,31 @@ arbitrary positive bundle threshold B<=T. Let a completed maximal
 layer have previous blocker count s, new blocker count y, and current
 matching size k<r'. Put
 
-$$
+```math
 w=r'-k+s,\qquad \rho_r=(r-1)/r.
-$$
+```
 
 Since s<=k<r'<=r,
 
-$$
+```math
 \frac{s}{w}\le\frac{r'-1}{r'}\le\rho_r.
  \tag{U7}
-$$
+```
 
 Minimal bundles and current blocker ownership give
 
-$$
+```math
 v(F)\le(2B+u)(s+y),                       \tag{U8}
-$$
+```
 
 where u is the largest small resource, with u=0 if none exist, and
 u<theta_r T. The empty
 cover is included in this weak form. Maximality and the compact
 fractional rank constraints give the strict inequality
 
-$$
+```math
 v(F)>(T-B)w                              \tag{U9}
-$$
+```
 
 whenever Q_{U*}(T) is feasible. Strictness follows because the
 available value outside F is strictly below B for each eligible
@@ -180,9 +180,9 @@ This remains valid when B=T.
 Set B=theta_r T and test completed layers for y>0. If y=0, then
 (U7)--(U8) imply
 
-$$
+```math
 v(F)\le3\theta_r T\rho_r w=(T-B)w,
-$$
+```
 
 using theta_r(1+3rho_r)=1. This contradicts (U9). Hence every
 completed layer either has a blocker or supplies an infeasibility
@@ -200,24 +200,24 @@ theorem's stronger strict cover certificate is not assumed here.
 
 Choose 0<epsilon<theta_r and use
 
-$$
+```math
 B=(\theta_r-\epsilon)T,
               \gamma=\epsilon/4.                           \tag{U10}
-$$
+```
 
 Put A=2B+u. It satisfies
 
-$$
+```math
 A<3T,\qquad B+\rho_r A\le
             T-\epsilon(1+2\rho_r)T\le T-\epsilon T.
-$$
+```
 
 If y<=gamma w, then v(F)<=A(rho_r+gamma)w, strictly less than
 (T-B)w. Thus every passing completed layer has
 
-$$
+```math
 y>\gamma w\ge\gamma(1+s).            \tag{U11}
-$$
+```
 
 Current growth, earliest-span preservation and last-layer refresh
 give depth O(epsilon^{-1} log(r'+1)). Counting all micro-signatures
@@ -227,11 +227,11 @@ the inner theorem; only the numerical growth threshold changed.
 
 For a requested ratio d_r+eta take
 
-$$
+```math
 \epsilon=\frac1{d_r}-\frac1{d_r+\eta}
           =\frac{\eta}{d_r(d_r+\eta)}.
  \tag{U12}
-$$
+```
 
 Then B=T/(d_r+eta), while every fat resource has value at least
 theta_r T>=B. Also epsilon^{-1}=O(1+eta^{-1}), proving (U2).
@@ -242,19 +242,19 @@ Suppose the inner algorithm returns a basis S'' of U* with disjoint
 small allocations, each worth at least B. Its complement B'' is a
 basis of U. Compute a disjoint matroid-union decomposition
 
-$$
+```math
 B''=D''\mathbin{\dot\cup}F'',\qquad
  D''\in\mathcal I(M^*),\quad F''\in\mathcal I(N).
-$$
+```
 
 Find a matching of F'' to distinct liked fat resources, and allocate
 those resources. Extend D'' to any basis D''' of M*. This extension
 may use players of F'' or S''. Discard their allocations if it does.
 The remaining player set
 
-$$
+```math
 I''=P_{\rm players}\setminus D'''
-$$
+```
 
 is a basis of the original M and is contained in F'' union S''.
 Every remaining player therefore already has either its small
@@ -273,9 +273,9 @@ The only supplied oracle is for the original M. Its rank on any
 subset can be computed by greedy independence queries. Dual rank
 is obtained from
 
-$$
+```math
 r_{M^*}(X)=|X|+r_M(P_{\rm players}\setminus X)-r_M(P_{\rm players}).
-$$
+```
 
 This implements dual independence queries in polynomial time.
 Independence and rank in the fat-resource transversal matroid use

@@ -25,22 +25,22 @@ Use the fixed ledger interval, bounded integer labels D and A,
 common dyadic grid, guard bounds, and persistent registers of
 the preceding forest interface. In particular,
 
-$$
+```math
 \ell_e<x_e<2\ell_e,\qquad
  \bar c_e=\left\lceil H/(4\ell_e)\right\rceil,\qquad
  \sigma_d=\left\lfloor3H/(4s_d)\right\rfloor,\quad
  \tau_d=\left\lceil5H/(4s_d)\right\rceil.
  \tag{1}
-$$
+```
 
 All labels and arithmetic have O(log S) bits. The full threshold
 graph remains feasible for the fixed D:
 
-$$
+```math
 D(d)\le D(r)\le D(d)+\bar c_e,\qquad
  D(d)\le A-\sigma_d .
  \tag{2}
-$$
+```
 
 The ordinary maintained object is now an undirected forest of
 physical incidence IDs. At most one forest edge owns any live
@@ -50,14 +50,14 @@ logical copies cannot introduce a second owner.
 For a forest incidence e=(r,d), its available scored directions
 are
 
-$$
+```math
 \begin{array}{c|c|c}
  \text{direction}&\text{availability}&\text{score}\\
  d\longrightarrow r&\text{always}&-\bar c_e\\
  r\longrightarrow d&D(r)=D(d)&0 .
  \end{array}
  \tag{3}
-$$
+```
 
 The receiver-availability flag is fixed during this D interval.
 A physical edge with two available directions is still just
@@ -98,12 +98,12 @@ change to the scored base initialization.
 All join formulas in Section 4 of the preceding note remain
 valid. In particular, for children C_1,C_2 meeting only at v,
 
-$$
+```math
 F_C=\max\{F_{C_1},F_{C_2},
           I_{C_1}(v)+O_{C_2}(v),
           I_{C_2}(v)+O_{C_1}(v)\}.
  \tag{4}
-$$
+```
 
 Each cross term uses disjoint edge sets on the two sides of v.
 It cannot create a two-cycle or revisit a physical edge. The
@@ -115,10 +115,10 @@ edges admit both directions.
 The data structure returns a maximum-score ordered bin pair
 with score
 
-$$
+```math
 \sigma_a-\tau_b-\bar L_F(a,b),
  \tag{5}
-$$
+```
 
 where bar L sums the donor costs in the actual a-to-b direction.
 Source and target gadget edges have only their indicated
@@ -139,21 +139,21 @@ edge; the point-update DP supports both cases.
 
 For every selected incidence retain both register buffers
 
-$$
+```math
 w_D=x_e-\ell_e,\qquad
         w_R=2\ell_e-x_e,
         \qquad w_D+w_R=\ell_e,
  \tag{6}
-$$
+```
 
 and both guard buffers
 
-$$
+```math
 g_D=x_e-\chi_e,\qquad
         g_R=U_e-x_e,
         \qquad g_D+g_R=U_e-\chi_e .
  \tag{7}
-$$
+```
 
 The subscripts denote physical donor and receiving directions.
 They do not denote a dynamic-tree parent or a temporary internal
@@ -193,14 +193,14 @@ different fields even if a special instance gives equal values.
 A positive tag delta means transfer in the stored p-to-q
 direction. Applying it updates
 
-$$
+```math
 \begin{array}{c|cc}
        &p\text{-to-}q&q\text{-to-}p\\ \hline
  w_{\min}&-\delta&+\delta\\
  g_{\min}&-\delta&+\delta
  \end{array}
  \tag{8}
-$$
+```
 
 and adds delta to t_C. A negative tag is the same operation
 in the reverse direction. Donor-cost sums do not change until
@@ -254,10 +254,10 @@ search. No enumeration of positive edges is needed.
 At a reported edge, recover x from either physical formula
 in (6), set ell=3x/4, and replace both directional buffers:
 
-$$
+```math
 w_D=x/4,\qquad w_R=x/2.
  \tag{9}
-$$
+```
 
 Recompute its one donor price bar c and notify:
 
@@ -293,11 +293,11 @@ was last traversed in the opposite direction.
 
 The finite-grid step rule is unchanged:
 
-$$
+```math
 V_{\rm up}=1/s_a+1/s_b+4\bar L_F(a,b)/H,\qquad
        1/512\le\eta V_{\rm up}\le1/256.
  \tag{10}
-$$
+```
 
 All directed bin-to-bin paths alternate physical donors
 and receivers at their internal rows. They therefore
@@ -321,11 +321,11 @@ graph.
 
 The endpoint-source argument is again
 
-$$
+```math
 D(b)\le D(a)+\bar L_F(a,b)
        \le A-\sigma_a+\bar L_F(a,b)<A-\tau_b.
  \tag{11}
-$$
+```
 
 This pays the terminal price increase; the start's source
 cost increases. The global maximum reciprocal does not
@@ -361,19 +361,19 @@ individual edges' earlier roles.
 The accounting potential sum log x consequently gives
 the same global reset bound
 
-$$
+```math
 R=O\bigl(J+(N+A_{\rm ext})\log S\bigr).
  \tag{12}
-$$
+```
 
 For J accepted steps, P supplied physical link/cut edits,
 and Q extra queries, local work after the initial labels
 and forest have been supplied is
 
-$$
+```math
 (\nu+J+P+Q+R)\mathrm{polylog}S .
  \tag{13}
-$$
+```
 
 This includes every selected donor-price change, including
 those caused by receiving traversals. It includes explicit

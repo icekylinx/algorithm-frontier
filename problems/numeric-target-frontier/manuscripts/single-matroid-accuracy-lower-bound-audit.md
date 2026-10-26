@@ -6,11 +6,11 @@ agent and independently checked by transfer_frontier and allocation_four.
 
 The supported conclusion is:
 
-$$
+```math
 \boxed{\text{All seven nontrivial variants require }
        2^{\Omega(\epsilon^{-1/2})}\text{ oracle queries in the worst case.}}
  \tag{LB1}
-$$
+```
 
 This is an unconditional oracle lower bound, already for matroid rank
 oracles. It does **not** establish a `2^{Omega(1/epsilon)}` lower bound.
@@ -54,25 +54,25 @@ Let `n` be even and sufficiently large, and let `k=n/2`. The ground is
 `[n]`. Among all `k`-element subsets, choose a sum `alpha` attained by
 the largest number of subsets, and define
 
-$$
+```math
 \mathcal A=\{A\subseteq[n]:|A|=k,\ \sum_{i\in A}i=\alpha\},
  \qquad N=|\mathcal A|.
  \tag{LB2}
-$$
+```
 
 There are at most `n^2` possible sums, so
 
-$$
+```math
 N\ge\binom nk/n^2=2^{n-O(\log n)}.
  \tag{LB3}
-$$
+```
 
 Every such sum satisfies
 
-$$
+```math
 k(k+1)/2\le\alpha\le k(2n-k+1)/2.
  \tag{LB4}
-$$
+```
 
 In particular `alpha=Theta(n^2)`. For large `n`, `N>1`, whereas the
 minimum and maximum sums each have a unique realizing set. Hence
@@ -127,27 +127,27 @@ budget, is solved by the empty set and is not covered by the claim.
 Here are the cardinality checks that matter for the independent-set
 rows. For the maximum upper-budget row,
 
-$$
+```math
 v(S)=w(S)+|S|\le\alpha+k.
  \tag{LB5}
-$$
+```
 
 Equality requires both `w(S)=alpha` and `|S|=k`. For the minimum
 covering row,
 
-$$
+```math
 v(S)=w(S)-|S|\ge\alpha-k,
  \tag{LB6}
-$$
+```
 
 and equality again requires both conditions. The coefficient `v_1=0`
 is permitted by the nonnegative-value model. For the maximum covering
 row,
 
-$$
+```math
 v(S)=(n+1)|S|-w(S)\le k(n+1)-\alpha,
  \tag{LB7}
-$$
+```
 
 with equality only at full cardinality and exact sum. These small
 tie-breaks avoid a large cardinality-enforcing constant.
@@ -173,10 +173,10 @@ By LB4, every displayed `B` is positive and `Theta(n^2)`. In particular
 
 For each row choose
 
-$$
+```math
 \epsilon=1/(2B).
  \tag{LB8}
-$$
+```
 
 A maximizing `(1-epsilon)` guarantee returns integer value at least
 `B-1/2`, hence at least `B`. A minimizing `(1+epsilon)` guarantee
@@ -204,9 +204,9 @@ data have length `O(n log n)`. Combining this with LB3 proves LB1 on
 an infinite sequence of accuracies. In particular, an oracle algorithm
 with time
 
-$$
+```math
 2^{o(\epsilon^{-1/2})}\mathrm{poly}(H)
-$$
+```
 
 would contradict the query bound, for each of the seven variants.
 

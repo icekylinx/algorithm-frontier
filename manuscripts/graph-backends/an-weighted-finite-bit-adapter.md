@@ -18,16 +18,16 @@ Let G be a connected undirected multigraph on n original vertices, with
 m nonloop edges and positive integral lengths 1 <= ell_e <= 2^b. Parallel
 IDs are distinct. A singleton is returned directly. Set
 
-$$
+```math
 B=b+\lceil\log_2(n+m+4)\rceil+4,\qquad H=16B.                \tag{1}
-$$
+```
 
 The adapter returns an actual spanning tree of G with total stretch
 
-$$
+```math
 \sum_{e=uv}\frac{d_T(u,v)}{\ell_e}
                        \leq m\mathrm{poly}(B),         \tag{2}
-$$
+```
 
 using (m+n) poly(B) bit operations. The polynomial degrees are fixed.
 The tree may subsequently be rooted at any prescribed original vertex.
@@ -83,9 +83,9 @@ new first-child or stigma highways.
 
 Thus
 
-$$
+```math
 d(x,t')=\Delta/2,\qquad d(x,p_r)=\Delta/2-r.                 \tag{3}
-$$
+```
 
 For the first petal the second quantity is in [Delta/4,3Delta/8]; for
 the others it is in [3Delta/8,7Delta/16]. These are the actual
@@ -130,9 +130,9 @@ the noncircular stored-label bit induction, is proved separately in
 On the current remaining graph write d_x(v)=dist(x,v). For an oriented
 edge u->v of working length ell, the ordinary private length is
 
-$$
+```math
 a(u,v)=\ell+d_x(u)-d_x(v).                 \tag{4}
-$$
+```
 
 These lengths are nonnegative. On **every** arc of the chosen target-
 to-root highway, use ell/2 instead, including beyond the eventual p_r.
@@ -144,9 +144,9 @@ has length at least z/2: an ordinary arc has ell+z, and a highway arc
 has ell/2=z/2. Telescoping along any walk from t' to its highway point
 p_k gives length at least k/2. The highway attains this bound. Therefore
 
-$$
+```math
 d_P(t',p_k)=k/2.                       \tag{5}
-$$
+```
 
 A ball of radius r/2 cannot reach a point beyond k=r. This includes
 interior points of a straddling highway edge. Prehalving beyond that
@@ -155,9 +155,9 @@ point cannot add a reachable endpoint or exit.
 The petal/ball identity also has a direct proof in this static metric.
 For 0<=k<=r, the cone based at p_k contains exactly the points v with
 
-$$
+```math
 d_G(p_k,v)+d_x(p_k)-d_x(v)\leq (r-k)/2.                 \tag{5a}
-$$
+```
 
 If v satisfies (5a), follow the highway from t' to p_k, at private
 cost k/2, and then a shortest ordinary working-metric path from p_k
@@ -209,10 +209,10 @@ is forked.
 
 For each original input edge e choose the dyadic capacity
 
-$$
+```math
 c_e=2^{-\lceil\log_2\ell_e\rceil}.
  \qquad \frac1{2\ell_e}\leq c_e\leq\frac1{\ell_e}.          \tag{6}
-$$
+```
 
 Every subdivided portion of e has this SAME capacity. Artificial pendant
 edges have capacity zero. Let ell_f be a portion's current working
@@ -224,32 +224,32 @@ portion.
 
 For a current petal W define
 
-$$
+```math
 C(W)=\sum_{f\in\partial W}c_f,\qquad
  V(W)=1+\sum_{f:\,f\text{ has an endpoint in }W}c_f\ell_f,
  \qquad \Lambda=\lceil\log_2(4m+4)\rceil.                    \tag{7}
-$$
+```
 
 Take the first inspected midpoint in [R/2,R] satisfying
 
-$$
+```math
 C(W)\leq\frac{128\Lambda}{R}V(W).    \tag{8}
-$$
+```
 
 Such an event occurs before R. Here is an independent region-growing
 proof. Write tau(v)=2*d_P(t',v). Since both private orientations of an
 edge have length at most 2*ell_f,
 
-$$
+```math
 |\tau(u)-\tau(v)|\leq4\ell_f.         \tag{9}
-$$
+```
 
 Let a_f=min(tau(u),tau(v)), z_f=|tau(u)-tau(v)|, and define the
 continuous auxiliary volume
 
-$$
+```math
 F(r)=1+\sum_f c_f\min\{\max\{r-a_f,0\},z_f\}.           \tag{10}
-$$
+```
 
 Away from events F'(r)=C(W_r), while 1 <= F(r) <= 1+4m. Integration
 over [R/2,R] supplies a point with C(W_r)/F(r) at most
@@ -302,10 +302,10 @@ after its first petal endpoint is removed, it is absent from the remaining
 graph. Subdivision preserves that mass. The added one in V is charged
 to the number of petals. Summing by depth gives total stretch
 
-$$
+```math
 O\big((m+n)\Lambda H^2\big)
                          =m\mathrm{poly}(B).           \tag{11}
-$$
+```
 
 Every original edge is charged before both endpoints could reach a
 terminal call, since such a call contains at most one original vertex.

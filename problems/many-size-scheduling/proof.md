@@ -19,11 +19,11 @@ and original-type decomposition are paid polynomial oracle operations.
 Let a be the largest positive job size with nonzero required total rank.
 Aggregate all a-sized jobs into one polymatroid f_b and put
 
-$$
+```math
 h=f_b(P),\qquad
  u=\max_{j:p_j<a,\ f_j(P)>0}p_j,
  \tag{W1}
-$$
+```
 
 with u=0 if there are no smaller jobs. Thus h counts units of the
 largest job size. The smaller jobs may have arbitrarily many different
@@ -31,25 +31,25 @@ sizes and arbitrary integral polymatroid constraints.
 
 For every rational 0<eta<=1, define
 
-$$
+```math
 \alpha_\eta=2-\frac1{3+\eta}.
  \tag{W2}
-$$
+```
 
 The deterministic construction returns an integral schedule with
 
-$$
+```math
 \boxed{\quad C_{\max}\le\alpha_\eta\,\mathrm{OPT}+u\quad}
  \tag{W3}
-$$
+```
 
 in time
 
-$$
+```math
 \mathrm{poly}(H)
  \min\{2^{O(h)},(h+1)^{O((1+\eta^{-1})\log(h+1))}\}.
  \tag{W4}
-$$
+```
 
 H pays all input bits, numeric scaling, original and derived oracles,
 deterministic submodular minimization, decomposition and rounding.
@@ -60,11 +60,11 @@ Combining with the public polynomial two-approximation gives the
 unconditional bound min{2 OPT, alpha_eta OPT+u}. Under the explicit
 size-gap condition u<=epsilon OPT, (W3) gives factor
 
-$$
+```math
 \alpha_\eta+\epsilon
                       \le\frac53+\frac\eta9+\epsilon.
  \tag{W5}
-$$
+```
 
 This is a general-many-sizes statement with an additive error or a
 stated size-gap promise. It is not an unconditional near-5/3 result
@@ -78,20 +78,20 @@ Given fractional bases x_j of integral job polymatroids, with smaller
 job sizes p_j<=u, one can compute integer bases x'_j such that for
 **each** machine p,
 
-$$
+```math
 \sum_jp_jx'_j(p)
                       \le\sum_jp_jx_j(p)+u.
  \tag{W6}
-$$
+```
 
 The printed theorem states a uniform makespan bound, but its proof
 tracks the load difference Delta_p separately on each machine. Ordering
 the job sizes and using its cumulative-ceiling construction gives
 
-$$
+```math
 \Delta_p\le\sum_j(p_j-p_{j+1})R_j\le p_1\le u,
              \qquad 0\le R_j\le1.
-$$
+```
 
 The integral solution is obtained by the stated integral polymatroid
 intersection routine. Thus (W6) is a direct consequence of the checked
@@ -110,9 +110,9 @@ One integral polymatroid is the direct sum of the original f_j.
 For each machine define `C_(p,j)=ceil(sum_(l<=j) x_l(p))`. A second
 integral polymatroid has rank
 
-$$
+```math
 B(S)=\sum_p\max\{C_{p,j}:(p,j)\in S\},
-$$
+```
 
 with empty maxima zero. Its independent polytope is exactly the set
 of nonnegative vectors satisfying the nested prefix bounds
@@ -124,11 +124,11 @@ therefore returns a common integer vector with that total, and each
 original job component is a base. Telescoping the weighted prefix
 bounds, with `p_(m+1)=0`, gives
 
-$$
+```math
 \sum_j p_j y_j(p)
  \le\sum_j(p_j-p_{j+1})C_{p,j}
  \le\sum_jp_jx_j(p)+p_1.
-$$
+```
 
 This proves (W6) independently on each machine. The pair ground set
 has only q*m elements and no numerical job-copy expansion is needed.
@@ -142,19 +142,19 @@ loads, hence OPT, lie on this grid. Target search uses T in g Z.
 
 Let
 
-$$
+```math
 L=\lceil18/\eta\rceil,
              \Delta=g/L,
              m_j=p_j/\Delta\in\mathbb Z_{>0}.
  \tag{W7}
-$$
+```
 
 Define the smaller-job workload polymatroid
 
-$$
+```math
 F(S)=\sum_{j:p_j<a}m_j f_j(S).
  \tag{W8}
-$$
+```
 
 It is integral, normalized, monotone and submodular. Its oracle simply
 evaluates the supplied ranks and a binary weighted sum. Each original
@@ -184,10 +184,10 @@ base of F under this cap, so the check is necessary.
 
 Dualize the capped workload polymatroid with respect to c*1:
 
-$$
+```math
 \bar G(S)=c|S|+G(P\setminus S)-G(P).
  \tag{W9}
-$$
+```
 
 This is an integral polymatroid with polynomial count-oracle access.
 Its bases are complements c*1-w of the capped workload bases.
@@ -197,32 +197,32 @@ Its bases are complements c*1-w of the capped workload bases.
 Suppose the target T is feasible. Its largest-unit recipients form an
 M_b-basis I. If w is its smaller-job workload base, then for p in I,
 
-$$
+```math
 a+\Delta w_p\le T=c\Delta.
-$$
+```
 
 Hence the dual base y=c*1-w supplies
 
-$$
+```math
 K=a/\Delta
  \tag{W10}
-$$
+```
 
 units to every p in I. This K is integral because a lies on the original
 grid. Since a/g>=1,
 
-$$
+```math
 K\ge L\ge18/\eta
                                 \ge2(3+\eta)/\eta.
-$$
+```
 
 Therefore the independently proved large-quota unit theorem applies
 with output
 
-$$
+```math
 b=\lceil K/(3+\eta)\rceil
  \tag{W11}
-$$
+```
 
 and a uniform Omega(eta) layer-growth parameter. It either returns an
 M_b-basis I and a dual-independent count vector y giving at least b
@@ -240,10 +240,10 @@ Extend y to an integral base of P(bar G), and put w=c*1-y. This is an
 integral base of G and, by total-rank preservation, of F. Its workload
 is at most T on all machines and at most
 
-$$
+```math
 T-b\Delta\le T-a/(3+\eta)
  \tag{W12}
-$$
+```
 
 on every machine in I.
 
@@ -252,20 +252,20 @@ using the polynomial integral polymatroid decomposition primitive.
 Set x_j=w^j/m_j. Then x_j is a **fractional** base of the original
 smaller-job polymatroid f_j, and its actual total workload on machine p is
 
-$$
+```math
 \sum_jp_jx_j(p)=\Delta w_p.
  \tag{W13}
-$$
+```
 
 Apply (W6) only to these smaller jobs. Keep the largest-size allocation
 1_I fixed and integral. On a machine in I the final load is at most
 
-$$
+```math
 a+T-a/(3+\eta)+u
        =T+(1-1/(3+\eta))a+u
        \le\alpha_\eta T+u.
  \tag{W14}
-$$
+```
 
 On other machines it is at most T+u, also within this bound. All job
 types now have integer base assignments; none of their original

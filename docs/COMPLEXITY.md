@@ -9,15 +9,15 @@ their computational models.
 
 | Symbol or convention | Meaning |
 |---|---|
-| $H$ | The complete binary input and the polynomial work charged to explicitly named oracle or optimization primitives. The local theorem specifies those primitives. |
-| $H_\varepsilon$ | $H$ plus the complete binary encoding of the supplied rational accuracy. |
-| $n,m$ | Vertices and edge records in graph problems, unless the local statement says otherwise. |
-| $N$ | A declared finite graph or numerical cap; initialization, lifetime and restart conventions belong to the theorem. |
-| $T$ | A numeric target or sum of targets, not its bit length. |
-| $Q$ | In the numeric-target family, the number of distinct nonempty eligible-column support patterns. |
-| $q,r,c$ | Typically explicit ground size, selected rank and corank. Local definitions take precedence. |
-| $\mathrm{poly}(H)$ | A polynomial in encoded input size and paid primitive work, not a polynomial in a binary-encoded numeric capacity. |
-| $O^*(f)$ | Suppresses the polynomial factors explicitly identified in that manuscript. It does not suppress a second exponential parameter. |
+| $`H`$ | The complete binary input and the polynomial work charged to explicitly named oracle or optimization primitives. The local theorem specifies those primitives. |
+| $`H_\varepsilon`$ | $`H`$ plus the complete binary encoding of the supplied rational accuracy. |
+| $`n,m`$ | Vertices and edge records in graph problems, unless the local statement says otherwise. |
+| $`N`$ | A declared finite graph or numerical cap; initialization, lifetime and restart conventions belong to the theorem. |
+| $`T`$ | A numeric target or sum of targets, not its bit length. |
+| $`Q`$ | In the numeric-target family, the number of distinct nonempty eligible-column support patterns. |
+| $`q,r,c`$ | Typically explicit ground size, selected rank and corank. Local definitions take precedence. |
+| $`\mathrm{poly}(H)`$ | A polynomial in encoded input size and paid primitive work, not a polynomial in a binary-encoded numeric capacity. |
+| $`O^*(f)`$ | Suppresses the polynomial factors explicitly identified in that manuscript. It does not suppress a second exponential parameter. |
 
 A conceptual unit expansion can prove integrality without providing a valid
 implementation on binary capacities. An executable algorithm must account for
@@ -64,11 +64,11 @@ why several bounds must remain separate.
 
 | Regime | Bound | Scope |
 |---|---|---|
-| Arbitrary overlapping rows | $2^{O((T+1)\log(T+2))}\mathrm{poly}(H)$ | The stated numeric-target oracle model |
-| Fixed row dimension $d$ | $\exp(O_d((T+1)^{d/(d+1)}))\mathrm{poly}(H)$ | Constants may depend on fixed $d$ |
-| Exact single-matroid variants | $2^{O(\sqrt T+1)}\mathrm{poly}(H)$ | Directions, original-base requirements and optimization variants are specified individually |
-| Refined accuracy schemes | $\varepsilon^{-1}\exp(141/(50\varepsilon)+7)\mathrm{poly}(H_\varepsilon)$ | The seven specified minimum/maximum schemes |
-| Two-parameter budget envelope | $2^{O(f(T,Q))}\mathrm{poly}(H)$, $f(T,Q)=T\log_2(2+\min\{Q/T,T\})$ | $T,Q>0$ after preprocessing; zero cases are polynomial |
+| Arbitrary overlapping rows | $`2^{O((T+1)\log(T+2))}\mathrm{poly}(H)`$ | The stated numeric-target oracle model |
+| Fixed row dimension $`d`$ | $`\exp(O_d((T+1)^{d/(d+1)}))\mathrm{poly}(H)`$ | Constants may depend on fixed $`d`$ |
+| Exact single-matroid variants | $`2^{O(\sqrt T+1)}\mathrm{poly}(H)`$ | Directions, original-base requirements and optimization variants are specified individually |
+| Refined accuracy schemes | $`\varepsilon^{-1}\exp(141/(50\varepsilon)+7)\mathrm{poly}(H_\varepsilon)`$ | The seven specified minimum/maximum schemes |
+| Two-parameter budget envelope | $`2^{O(f(T,Q))}\mathrm{poly}(H)`$, $`f(T,Q)=T\log_2(2+\min\{Q/T,T\})`$ | $`T,Q>0`$ after preprocessing; zero cases are polynomial |
 
 The matching-order lower bound for the last row is a worst-case statement
 under parameter upper budgets. It does not say that every instance with the

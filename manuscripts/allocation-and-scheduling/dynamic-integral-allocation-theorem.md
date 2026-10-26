@@ -12,15 +12,15 @@ vertices D. Every row has degree at most three. Give each bin a positive
 integer weight w_d and fix a positive integer L. An actual allocation x
 is nonnegative integral and has row sums
 
-$$
+```math
 \sum_{e\ni r}x_e=L.
-$$
+```
 
 At designated settled states it additionally satisfies
 
-$$
+```math
 \mathrm{load}_x(d)\le L-w_d.             \tag{1}
-$$
+```
 
 The client permits the representation to replace x by any nonnegative
 integral allocation with the same row and column margins. A point read
@@ -55,9 +55,9 @@ There is a deterministic fully persistent representation with:
 4. At every settled state, an implicit selected bin forest with one
    row-labelled edge per row, one free bin in every component C, and
 
-   $$
-w(C)<2L.                            \tag{2}
-$$
+   ```math
+   w(C)<2L.                            \tag{2}
+   ```
 
 Initialization takes O((|V(B)|+|E(B)|) polylog(S+H)), including isolated
 bins. A q-record batch takes
@@ -153,17 +153,17 @@ The top row exports less than L, since at least one retained child
 incidence is positive. If in>=0 is allocation from external rows and
 out<L is this export, then
 
-$$
+```math
 \mathrm{load}(C)=L(|C|-1)-\mathrm{out}
                                       +\mathrm{in}.
-$$
+```
 
 Summing (1) and rearranging proves
 
-$$
+```math
 w(C)\le L+\mathrm{out}
                                   -\mathrm{in}<2L.
-$$
+```
 
 This proof permits zero carrier edges. Requiring the carrier to be
 exactly the positive support would unnecessarily expose potentially

@@ -32,10 +32,10 @@ In particular, parallel physical incidences forming an undirected
 two-cycle are not allowed by this hypothesis.
 
 The exact equations are
-$$
+```math
 \sum_{e\ni r}x_e=L_r,\qquad
  \sum_{e\ni d}x_e+s_d=b_d,\qquad s_d>0.                       \tag{1}
-$$
+```
 All row totals, bin capacities, coordinates, and input parameters lie
 on the declared common dyadic grid and in a polynomial guarded range.
 Row totals are positive; an isolated zero-total row, if supplied,
@@ -45,23 +45,23 @@ Let nu bound the number of live row/bin vertices, and let S bound the
 word-scale parameters and admitted history length.
 
 The objective is only
-$$
+```math
 \Phi=\sum_d\log s_d.             \tag{2}
-$$
+```
 All receiving arcs row-to-bin have cost zero. Every donor arc
 bin-to-row has its conservative cost
-$$
+```math
 \bar c_e=\left\lceil H/(4\ell_e)\right\rceil,\qquad
                   \ell_e<x_e<2\ell_e.                       \tag{3}
-$$
+```
 Registers are initialized and reset to ell=3x/4 and persist across
 changes in traversal direction.
 
 At a bin put
-$$
+```math
 \sigma_d=\lfloor3H/(4s_d)\rfloor,\qquad
  \tau_d=\lceil5H/(4s_d)\rceil.                                \tag{4}
-$$
+```
 Choose fixed polynomial H large enough for the rounding budget
 H min_d(1/s_d)>=8(nu+2), throughout the declared range. One may also
 impose the semantic rounding bounds of the earlier notes, although
@@ -85,9 +85,9 @@ the donor score is -bar c_e and the receiver score is zero.
 Attach the two price leaves per bin, of scores +sigma_d and -tau_d.
 
 The directed cluster DP of the preceding note now maximizes
-$$
+```math
 \sigma_a-\tau_b-\bar L_F(a,b)                       \tag{5}
-$$
+```
 over every ordered bin pair in one ordinary component. Here the
 unique underlying path is always traversable, and bar L counts
 its donors in the actual a-to-b direction.
@@ -139,16 +139,16 @@ preserves total signed gain and total one-sided charge exactly.
 
 An ordinary-only cycle has zero signed slack gain. A simple cycle
 through z visits it once, and has the form
-$$
+```math
 z\to a\leadsto b\to z .
-$$
+```
 Its ordinary part is a simple bin-to-bin path; in a forest it is
 the unique underlying path. Its gain and charge are
-$$
+```math
 G=\frac1{s_a}-\frac1{s_b},\qquad
  C=\frac1{s_a}+\frac1{s_b}
        +\sum_{\text{actual donors}}\frac1{x_e}.               \tag{6}
-$$
+```
 A self-pair cannot supply a positive cycle. Nontrivial cycles
 have positive charge. Consequently a comparison with G>C/2
 would contain a cycle, hence a forest path, of ratio above one half.
@@ -160,14 +160,14 @@ a new one.
 For the genuine matching comparison, let P be positive normalized
 slack mass, Q_s negative normalized slack mass, and Q_x negative
 normalized allocation mass. Its guarantee
-$$
+```math
 P>12N,\quad Q_s\le N,\quad Q_x\le3N
-$$
+```
 implies
-$$
+```math
 \frac{G}{C}=\frac{P-Q_s}{P+Q_s+Q_x}
        >\frac{P-N}{P+4N}>\frac{11}{16}>\frac12.              \tag{7}
-$$
+```
 Thus this numerical client cannot return LOW while the settled
 matching comparison applies.
 
@@ -175,9 +175,9 @@ matching comparison applies.
 
 If an explicit or queryable dual potential is desired, define for
 every ordinary vertex v
-$$
+```math
 I(v)=\max_{a\text{ bin}}\{\sigma_a-\bar L_F(a,v)\}.           \tag{8}
-$$
+```
 The source-to-boundary entry of an expose(v) query returns this
 value and a witness in polynomial logarithmic time. The endpoint
 price leaves ensure that mutable bin prices do not cause a
@@ -186,17 +186,17 @@ high-degree update.
 Choose A>=max_a sigma_a and put D^*(v)=A-I(v). Ordinary costs are
 nonnegative. Extending a source path across one arc and erasing
 any resulting backtrack proves
-$$
+```math
 I(v)\ge I(u)-\mathrm{length}(u,v).
-$$
+```
 Also I(d)>=sigma_d at every bin. Therefore D^* is feasible for
 the complete current conservative threshold graph.
 
 At LOW, I(d)<=tau_d for every bin, whence
-$$
+```math
 \sum_d\left(s_d(A-D^*(d))/H-5/4\right)_+
        \le T_{\rm slack}/H .
-$$
+```
 With the earlier choice of H this is at most N.
 
 The potential can be left as the exact implicit query (8).
@@ -208,10 +208,10 @@ certificate of Section 3 needs no materialization at all.
 ## 5. Path update, guards, and finite-word arithmetic
 
 For a returned pair a,b, use
-$$
+```math
 V_{\rm up}=1/s_a+1/s_b+4\bar L_F(a,b)/H,\qquad
                   1/512\le\eta V_{\rm up}\le1/256.           \tag{9}
-$$
+```
 The fixed sufficiently fine primal grid contains such a step.
 Only two slack reciprocals and one integer path sum are combined,
 so the computation uses O(log S)-bit arithmetic.
@@ -226,9 +226,9 @@ decreases caused by receiving traversals.
 
 Conservation, positivity and constant objective gain use only
 (5), (6) and (9). They never used old-D tightness:
-$$
+```math
 \Delta\Phi\ge(1/8)\eta V_{\rm up}>0.
-$$
+```
 The two endpoint slacks are stored exactly and update their price
 leaves directly.
 
@@ -239,10 +239,10 @@ step keeps the global maximum reciprocal from increasing, so
 the minimum slack never decreases.
 
 For any donor on the accepted path,
-$$
+```math
 \frac1{4x_e}\le\bar c_e/H<\frac3{4s_a},
           \qquad x_e>s_a/3 .
-$$
+```
 After the small step its allocation remains above
 (255/256)s_a/3. Thus a decreasing allocation is always bounded
 below by a fixed fraction of the initial minimum slack. An
@@ -262,9 +262,9 @@ are not replaced by a free scan of a long path.
 On a fixed polynomial-range ledger, the objective has width
 O(|B| log S). Each accepted step gains an absolute constant,
 so
-$$
+```math
 J=O(|B|\log S).                 \tag{10}
-$$
+```
 The allocation log-variation argument remains valid without D.
 Every step has O(1) total negative allocation log variation.
 Telescoping sum log x bounds total positive variation by that
@@ -272,14 +272,14 @@ amount plus O(m log S).
 
 Hysteretic registers require a constant amount of absolute log
 variation between resets. Therefore
-$$
+```math
 R=O(J+m\log S).                   \tag{11}
-$$
+```
 The two dynamic trees, all path updates, guard queries, endpoint
 edits, and register notifications cost
-$$
+```math
 (m+\nu)\mathrm{polylog}S       \tag{12}
-$$
+```
 in total, including initialization and a terminal LOW query.
 Space is linear apart from ordinary dictionary overhead.
 Here m<=nu-1 in each nontrivial forest component.
@@ -317,14 +317,14 @@ The latter include all bins whose slack changes in a structural
 batch. Their total possible downward objective change is
 O((nu_0+A_s) log S); allocation births and settings contribute
 O((m_0+A_x) log S) to the variation account. Thus
-$$
+```math
 J=O((nu_0+A_s)\log S),\qquad
  R=O(J+(m_0+A_x)\log S),
-$$
+```
 and total work is
-$$
+```math
 (m_0+\nu_0+A_T+A_x+A_s)\mathrm{polylog}S. \tag{13}
-$$
+```
 
 Exact endpoint slack caches are inexpensive here: only two change
 per numerical path. Matching eligibility can therefore use the

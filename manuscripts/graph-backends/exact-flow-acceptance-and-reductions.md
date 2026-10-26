@@ -16,9 +16,9 @@ by the original input arc lifetimes.
 
 First check in one scan that
 
-$$
+```math
 l\le x\le u,\qquad B^Tx=b.               \tag{1}
-$$
+```
 
 Build its residual graph `R_x`. It has a forward arc of cost `c_e`
 when `x_e<u_e`, and a reverse arc of cost `-c_e` when `x_e>l_e`.
@@ -32,9 +32,9 @@ Haeupler, Jiang and Saranurak,
 Their problem definition includes finding a negative cycle when one
 exists. The displayed running time is
 
-$$
+```math
 O(m\log^8 n\log(nW)),                \tag{2}
-$$
+```
 
 for integer weights in `[-W,W]`; adding the zero-cost source changes
 the graph size only linearly. A later improvement by Duong,
@@ -45,9 +45,9 @@ If the algorithm detects a negative cycle, reject the candidate. If
 it supplies finite distances `pi`, explicitly verify every residual
 inequality
 
-$$
+```math
 c_{R}(v,w)+\pi(v)-\pi(w)\ge0.              \tag{3}
-$$
+```
 
 Accept only if (1) and (3) pass. The final scan is an exact integer
 check, not an acceptance of an internal asymptotic resource bound.
@@ -61,9 +61,9 @@ forward residual direction when `y_e>x_e` and the reverse direction
 when `y_e<x_e`. Its total reduced cost is nonnegative by (3), while
 the potential terms telescope because its divergence is zero. Thus
 
-$$
+```math
 c^T(y-x)\ge0.                  \tag{4}
-$$
+```
 
 The accepted candidate is exactly optimal. This proof is independent
 of how the candidate was computed. A correct optimum has no residual
@@ -118,20 +118,20 @@ It remains to solve a problem with `0 <= f_e <= u_e` and `B^T f=b`.
 Use the convention that positive `b_v` means required net outflow.
 If `sum_v b_v != 0`, declare infeasibility. Let
 
-$$
+```math
 D=\sum_{v:b_v>0}b_v,
  \qquad C=\max\{1,\max_e|c_e|\},\quad
  U_c=\max\{1,\max_e u_e\}.
-$$
+```
 
 Introduce vertices `sigma,tau`, arcs `sigma -> v` of capacity `b_v`
 for positive demands, and arcs `v -> tau` of capacity `-b_v` for
 negative demands. These arcs have cost zero. Add `tau -> sigma`
 with capacity `D` and cost `-H`, where
 
-$$
+```math
 H=2mCU_c+1.                    \tag{5}
-$$
+```
 
 Original arcs keep their original costs. Zero circulation is a
 feasible starting point. The auxiliary graph has linear size after
@@ -184,20 +184,20 @@ antiparallel arcs remain separate throughout.
 Suppose the moving-pad client and the prior raw-cycle construction
 produce a favorable-branch circulation solver with
 
-$$
+```math
 T(m)=m\exp O\!\left((\log(m+2))^{4/5}
                        (\log\log(m+4))^{1/5}\right)
-$$
+```
 
 for polynomially bounded integral capacities and costs. Binary search
 over the integral cost interval adds only `O(log(mCU_c+2))` calls.
 The verification, reductions, explicit output, and exact rounding
 above preserve the same exponent. The resulting proposed bound is
 
-$$
+```math
 O(n+m)+(m+1)\exp O\!\left((\log(m+2))^{4/5}
                        (\log\log(m+4))^{1/5}\right)
-$$
+```
 
 for arbitrary directed general graphs, including parallel arcs,
 disconnected inputs, integral demands, and lower bounds.

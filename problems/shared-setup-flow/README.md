@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns a permitted $r$-commodity set and common rate at least $(1-\varepsilon)\mathrm{OPT}$, with one shared setup and routing budget and all routing-only budgets exact.
+Returns a permitted $`r`$-commodity set and common rate at least $`(1-\varepsilon)\mathrm{OPT}`$, with one shared setup and routing budget and all routing-only budgets exact.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic, conditional on the paid exact minimum-setup restriction optimizer
 
 **Time**
 
-$\Gamma(1/\varepsilon)^c\mathrm{poly}(H)$; for fixed rational $\varepsilon$, the whole-ground bound is $\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)$.
+$`\Gamma(1/\varepsilon)^c\mathrm{poly}(H)`$; for fixed rational $`\varepsilon`$, the whole-ground bound is $`\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)`$.
 
 **Space**
 
@@ -22,11 +22,11 @@ Polynomial in the explicit network, selected-set state, rational flow witnesses,
 
 **Parameters**
 
-$c=q-r$; $0<\varepsilon<1$ is rational; setup fees and routing charges are nonnegative; $\Gamma(R)=R^R/(R-1)^{R-1}$; $E(q)=2^{O(q\log\log(q+2)/\log(q+2))}$. $H$ includes the exact minimum-setup restriction optimizer.
+$`c=q-r`$; $`0<\varepsilon<1`$ is rational; setup fees and routing charges are nonnegative; $`\Gamma(R)=R^R/(R-1)^{R-1}`$; $`E(q)=2^{O(q\log\log(q+2)/\log(q+2))}`$. $`H`$ includes the exact minimum-setup restriction optimizer.
 
 **Model and representation**
 
-A fixed family of permitted $r$-sets with an attained exact minimum setup cost on every restriction, a rational directed network, splittable flows, and one combined exact budget.
+A fixed family of permitted $`r`$-sets with an attained exact minimum setup cost on every restriction, a rational directed network, splittable flows, and one combined exact budget.
 
 **Lower-bound scope**
 

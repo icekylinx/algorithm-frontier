@@ -19,14 +19,14 @@ the general-matching exponent.
 ## 1. One finite-grid forestification batch
 
 Fix a feasible positive ordinary allocation ledger
-$$
+```math
 \sum_{e\ni r}x_e=L_r,\qquad
  \sum_{e\ni d}x_e+s_d=b_d.
-$$
+```
 Choose a common dyadic epsilon with
-$$
+```math
 0<\epsilon<\min_e x_e .
-$$
+```
 There is a deterministic O(m polylog S) transformation preserving
 every row sum and every bin load, hence every slack, such that the
 incidences with x_e>epsilon form a forest. All other incidences
@@ -56,10 +56,10 @@ For the next incidence e:
 In the third case orient the cycle so that e decreases. Along the
 opposite F path its actual donor coordinates decrease and its
 receiver coordinates increase. Choose
-$$
+```math
 \delta=\min\{x_e-\epsilon,\,
           \min_{\text{donors on that F path}}(x_f-\epsilon)\}.
-$$
+```
 The minimum over an empty donor set is infinity. Apply the cycle
 transfer. Every coordinate remains at least epsilon, every row
 sum and bin load is unchanged, and at least one coordinate reaches
@@ -102,9 +102,9 @@ to this batch.
 Suppose epsilon is below one third of the current minimum slack.
 Any path passing the conservative one-quarter threshold satisfies,
 for every actual donor,
-$$
+```math
 x_e>s_{\rm start}/3.
-$$
+```
 It therefore cannot use an epsilon edge as a donor. A true path
 of ratio above one half has the still stronger donor requirement
 x_e>s_start.
@@ -134,9 +134,9 @@ form a disjoint-edge forest. Set each bin capacity equal to its
 resulting load plus any prescribed positive polynomial-range slack.
 
 A two-edge path
-$$
+```math
 v\to r_v\to w
-$$
+```
 uses the large owner donor and the epsilon receiver. Its donor
 cost is approximately 1/L. By taking epsilon small relative to
 the minimum slack, no off-owner donor can occur on a strong path.
@@ -166,37 +166,37 @@ and bins have degree at most two.
 Every bin has capacity L-C. Give each cycle bin slack 2C, and
 put z=3tC on incidence r_0 f. Write a_i for x_(r_i,d_i) and b_i
 for x_(r_i,d_(i+1)). Choose
-$$
+```math
 a_0=L/2-3tC,\qquad
  a_i=a_0+3(t-i)C\quad(1\le i<t),
-$$
-$$
+```
+```math
 b_0=L-a_0-3tC=L/2,\qquad b_i=L-a_i\quad(i\ne0).
-$$
+```
 Then each row sums to L and each cycle-bin load is L-3C.
 The free-bin slack is L-(3t+1)C. All coordinates are positive
 for L sufficiently larger than tC; the usual matching phase
 scale L=10000CN has ample room.
 
 Now decrease every a_i by
-$$
+```math
 \delta=a_0-\epsilon
-$$
+```
 and increase every b_i by the same amount. All slacks stay
 exactly fixed. Only a_0 reaches epsilon. For i>=1,
-$$
+```math
 a_i'=3(t-i)C+\epsilon.
-$$
+```
 Thus one cycle cancellation removes just one active support
 edge, while changing Theta(t) other allocations by a large
 relative factor.
 
 For example,
-$$
+```math
 \sum_i\log(a_i/a_i')
  \ge (t-1)\log\!\left(
        \frac{L/2-3tC}{3tC+\epsilon}\right).
-$$
+```
 At the stated phase scale this is Omega(t), although
 Delta Phi=0. If the initial registers are ell_i=3a_i/4,
 Theta(t) donor records cross their hysteresis boundary in this
@@ -235,10 +235,10 @@ bounded Phi or from the fact that each pivot drops an edge.
 A useful sufficient next lemma would have to provide a specific
 pivot policy and show, for example, that its total notifications
 and actual forest edits are bounded by
-$$
+```math
 (m+\text{accepted numerical work}
                    +\text{structural transcript})\mathrm{polylog}S,
-$$
+```
 while continuing to search all off-basis receiving directions.
 Alternatively, it could give a different price data structure
 that supports the entire zero-objective pivot without enumerating

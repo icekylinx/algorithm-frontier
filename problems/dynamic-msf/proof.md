@@ -10,11 +10,11 @@ residual-connectivity sketch, read in isolation, would not suffice.
 
 A deterministic fully dynamic exact minimum spanning forest bound
 
-$$
+```math
 \exp O\bigl(U^{2/3}h^{1/3}\bigr)
  \quad\text{per update in the worst case},\qquad
  U=\log(N+4),\quad h=\log(U+4),                            \tag{1}
-$$
+```
 
 is already a derived consequence of the older public MSF reduction,
 the public deterministic balanced-cut construction, and the 2025
@@ -31,7 +31,7 @@ The following official sources were reopened during this audit.
 |---|---|
 | [CGLNPS, arXiv:1910.08025v2](https://arxiv.org/html/1910.08025v2), Corollary 6.1 and Section 6.2, equations (4)--(5) | Deterministic decomposition and a parameterized deterministic reading of the NSW MSF reduction |
 | [NSW, arXiv:1708.03962v2](https://arxiv.org/pdf/1708.03962), Theorem 7.1, Section 9.3, especially Lemma 9.28 | Explicit worst-case batch-insertion/contraction reduction and its recursive time calculation |
-| [MGS, arXiv:2504.00544v1](https://arxiv.org/html/2504.00544v1), Theorems 1.3 and 6.4 | Deterministic pruning with worst-case work and vertex recourse $\widetilde O(\phi^{-2})$ |
+| [MGS, arXiv:2504.00544v1](https://arxiv.org/html/2504.00544v1), Theorems 1.3 and 6.4 | Deterministic pruning with worst-case work and vertex recourse $`\widetilde O(\phi^{-2})`$ |
 | [MPG, arXiv:2510.08297v1](https://arxiv.org/html/2510.08297v1), Sections 3.5--3.7 | New connectivity framework; its deamortization discussion is brief |
 | [MPGY, arXiv:2610.00491v1](https://arxiv.org/html/2610.00491v1), Sections 3, 4, and 6 | Recent randomized polylogarithmic worst-case MSF/2-edge-connectivity result with static decomposition as its only randomized ingredient |
 
@@ -43,125 +43,125 @@ classical guarantee and is not improved by (1).
 
 ## 2. The formal public reduction separates pruning from decomposition
 
-Let $\gamma>1$. The conservative weighted-decomposition adapter
+Let $`\gamma>1`$. The conservative weighted-decomposition adapter
 in the formal audit constructs NSW's hierarchy in
-$n\mathrm{poly}(\gamma)$ time. It has depth
-$O(\gamma)$, total reweighted-edge inventory $O(n/\gamma)$,
-and conductance $\phi_0=\Omega(\gamma^{-5})$ in every
-non-root cluster requiring pruning. Let $\pi$ bound worst-case
+$`n\mathrm{poly}(\gamma)`$ time. It has depth
+$`O(\gamma)`$, total reweighted-edge inventory $`O(n/\gamma)`$,
+and conductance $`\phi_0=\Omega(\gamma^{-5})`$ in every
+non-root cluster requiring pruning. Let $`\pi`$ bound worst-case
 pruning work and publication. With a sufficiently short decremental
 period, the resulting recurrence is
 
-$$
+```math
 T(n)\le\widetilde O\bigl(\pi(\gamma)
                      \mathrm{poly}(\gamma)\bigr)
        +O(\log n)T\bigl(O(n/\gamma)\bigr).                \tag{2}
-$$
+```
 
-NSW Theorem 5.1 asks for a monotone published set $P$, initially
-empty, and existence of $P'\subseteq P$ whose complement induces
+NSW Theorem 5.1 asks for a monotone published set $`P`$, initially
+empty, and existence of $`P'\subseteq P`$ whose complement induces
 a connected graph. This applies only to **non-root large clusters**.
 The root need not expand. The amount of new publication per deletion
-and its computation time are bounded by $\pi$.
+and its computation time are bounded by $`\pi`$.
 
 This weak connectivity statement supports the actual weighted
 certificate, not an arbitrary union of an initial MST and edges
-incident to $P$. Definition 9.5 additionally retains the three
+incident to $`P`$. Definition 9.5 additionally retains the three
 compressed-cluster MSFs, original versions of reweighted edges, and
 retired edges. Claims 9.18 and 9.19 use the hereditary child-MSF
 invariant and contraction monotonicity to prove that this certificate
 contains the exact MSF. Claim 9.19 also justifies publishing a
-superset of the unknown witness $P'$.
+superset of the unknown witness $`P'`$.
 
 NSW Theorem 7.1 and Lemma 9.28 have fixed polynomial dependence on
 batch size, preprocessing factor, and the finite update horizon.
 Batch insertions contribute to the local charge, whereas only
 logarithmically many recursive calls are made for a deletion. Thus
-$\pi$ is not raised to the number of recursion levels in (2).
+$`\pi`$ is not raised to the number of recursion levels in (2).
 CGLN's deterministic decomposition removes the randomized branch of
 this named worst-case construction.
 
 ## 3. Modern pruning, isolated vertices, and a short supported period
 
 MGS Theorems 1.3 and 6.4 deterministically maintain an increasing
-vertex set $A$. During its supported deletion interval, the
+vertex set $`A`$. During its supported deletion interval, the
 positive-volume remainder is a
-$\Omega(\phi/\log^4 m)$-expander. Each deletion costs
-$\mathrm{polylog}(m)/\phi^2$ worst-case work and adds
+$`\Omega(\phi/\log^4 m)`$-expander. Each deletion costs
+$`\mathrm{polylog}(m)/\phi^2`$ worst-case work and adds
 at most that many vertices. Linear times a fixed polynomial in
-$1/\phi$ and $U$ suffices as its initialization allowance.
+$`1/\phi`$ and $`U`$ suffices as its initialization allowance.
 
 Conductance conventions can ignore zero-volume vertices, so direct
 connectivity is not inferred from that statement alone. In a native
 degree-three cluster publish
 
-$$
+```math
 P=A\cup N_{\rm initial}(A)
        \cup\{\text{endpoints of deleted edges}\}.
-$$
+```
 
 This adds only a constant factor to vertex publication. These extra
 vertices are **not** fed as deletions to the pruning algorithm.
-Every newly isolated residual vertex lies in $P$, and positive-
+Every newly isolated residual vertex lies in $`P`$, and positive-
 volume residual vertices form one connected component. If that
-component exists, remove $A$ and the residual isolates as the
+component exists, remove $`A`$ and the residual isolates as the
 existential witness. If all residual vertices are isolated, then
-$P=V$, and retain any singleton. Thus the literal NSW interface
+$`P=V`$, and retain any singleton. Thus the literal NSW interface
 holds even in this boundary case.
 
-The MGS deletion horizon is at least $c\phi_0m_C/Q$, for a
-fixed polynomial $Q=\mathrm{poly}(U)$. Every non-root
-large cluster has $m_C\ge n/(C\gamma)$, so its supported
-period is at least $c'n/(\gamma^6Q)$. Inflate the declared
-publication/work factor to $\pi=\gamma^{12}Q'$, and choose
+The MGS deletion horizon is at least $`c\phi_0m_C/Q`$, for a
+fixed polynomial $`Q=\mathrm{poly}(U)`$. Every non-root
+large cluster has $`m_C\ge n/(C\gamma)`$, so its supported
+period is at least $`c'n/(\gamma^6Q)`$. Inflate the declared
+publication/work factor to $`\pi=\gamma^{12}Q'`$, and choose
 
-$$
+```math
 T_{\rm period}(n)=
    \left\lfloor n/(C\pi d\gamma)\right\rfloor,
  \qquad d=\Theta(\gamma).                                \tag{3}
-$$
+```
 
-Actual pruning costs only $\gamma^{10}\mathrm{poly}(U)$.
-The declared factor is still a fixed polynomial in $\gamma$,
+Actual pruning costs only $`\gamma^{10}\mathrm{poly}(U)`$.
+The declared factor is still a fixed polynomial in $`\gamma`$,
 and (3) expires well before any local pruning horizon. No
 whole-instance publication at the end of a horizon, or gradual
 completion device, is needed. Actual-size polynomial bases handle
 floors and zero-length periods. The total published inventory remains
-$T_{\rm period}\pi d=O(n/\gamma)$, exactly as used by
+$`T_{\rm period}\pi d=O(n/\gamma)`$, exactly as used by
 NSW's compressed certificate and recursive sparsification.
 
 ## 4. Deterministic decomposition with the required gamma
 
-Use CGLNPS Corollary 6.1 with parameter $r$ and crossing budget
-$\epsilon=\gamma^{-2}$. Its output expansion is at least
+Use CGLNPS Corollary 6.1 with parameter $`r`$ and crossing budget
+$`\epsilon=\gamma^{-2}`$. Its output expansion is at least
 
-$$
+```math
 \frac{\gamma^{-2}}{\exp O(r^2h)},
-$$
+```
 
-and its time, on an actual $M$-edge instance, is at most
+and its time, on an actual $`M`$-edge instance, is at most
 
-$$
+```math
 M\exp O(U/r+r^2h)\gamma^4.                               \tag{4}
-$$
+```
 
 Choose
 
-$$
+```math
 r=\Theta((U/h)^{1/3}),\qquad
  \gamma=\exp\bigl(C(U/r+r^2h+h)\bigr)                     \tag{5}
-$$
+```
 
-for a sufficiently large fixed $C$. The contracted output
-expansion is then at least $\gamma^{-3}$, and (4) is
-$M\mathrm{poly}(\gamma)$. Expanding protected blocks
-of size $\Theta(\gamma)$ loses a further fixed power, giving
-the safe native-cluster bound $\phi_0=\Omega(\gamma^{-5})$.
+for a sufficiently large fixed $`C`$. The contracted output
+expansion is then at least $`\gamma^{-3}`$, and (4) is
+$`M\mathrm{poly}(\gamma)`$. Expanding protected blocks
+of size $`\Theta(\gamma)`$ loses a further fixed power, giving
+the safe native-cluster bound $`\phi_0=\Omega(\gamma^{-5})`$.
 Also
 
-$$
+```math
 \log\gamma=O(U^{2/3}h^{1/3}).             \tag{6}
-$$
+```
 
 At each hierarchy step first remove the current weight band and then
 decompose, while preserving the initial MSF block trees. This order
@@ -178,29 +178,29 @@ baseline.
 
 There is no master-size padding. Stop the dynamic recursion and use
 an exact small-graph implementation once its actual size is at most
-$\gamma^{c_1}$ for a fixed constant $c_1$. Its polynomial
-cost is within $\mathrm{poly}(\gamma)$. Above this
-threshold, the source restriction $r=O(\log M)$ holds with
+$`\gamma^{c_1}`$ for a fixed constant $`c_1`$. Its polynomial
+cost is within $`\mathrm{poly}(\gamma)`$. Above this
+threshold, the source restriction $`r=O(\log M)`$ holds with
 room to spare. Alternatively use the local cutoff
-$r_M=\min\{r,c_2\log(M+2)\}$; the same global upper bound
+$`r_M=\min\{r,c_2\log(M+2)\}`$; the same global upper bound
 in (4) follows. The usual bounded-degree reduction is already part
 of the named MSF framework.
 
 ## 5. Solving the worst-case recurrence
 
-Use one master upper bound $\gamma$ from (5) in the recurrence;
-the exact base handles the range in which $n/\gamma$ is too
+Use one master upper bound $`\gamma`$ from (5) in the recurrence;
+the exact base handles the range in which $`n/\gamma`$ is too
 small for another reduction. There are
-$O(U/\log\gamma)$ nonbase levels. Equations (2) and (3) give
+$`O(U/\log\gamma)`$ nonbase levels. Equations (2) and (3) give
 
-$$
+```math
 T(N)\le
    \mathrm{poly}(\gamma,U)\,
    \exp O\left(\frac{Uh}{\log\gamma}\right).              \tag{7}
-$$
+```
 
 The second logarithmic term is
-$O(U^{1/3}h^{2/3})$, smaller than (6). Hence (7) proves (1),
+$`O(U^{1/3}h^{2/3})`$, smaller than (6). Hence (7) proves (1),
 using the named public worst-case reduction throughout. Exact MSF
 edge changes are the output of that reduction. The result also
 supports connectivity queries through the maintained forest.
@@ -209,9 +209,9 @@ For arbitrary tied weights, use deterministic lexicographic ordering
 by weight and immutable edge identity. This selects one exact MSF
 without changing the original minimum-weight objective. The time is in a
 comparison-RAM model with constant-time weight comparisons, or with
-weights having polynomially many bits in $\log N$, whose arithmetic
-cost is absorbed in $\mathrm{poly}(U)$. Arbitrary
-polynomial-in-$N$ bit lengths do not have free comparison cost.
+weights having polynomially many bits in $`\log N`$, whose arithmetic
+cost is absorbed in $`\mathrm{poly}(U)`$. Arbitrary
+polynomial-in-$`N`$ bit lengths do not have free comparison cost.
 
 This is a **derived public-framework baseline**. It is not claimed
 to optimize all public parameter choices or all dynamic MSF

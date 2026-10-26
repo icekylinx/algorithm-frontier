@@ -21,12 +21,12 @@ rational size p_j and an integral polymatroid rank f_j. A schedule
 chooses an integer base of every f_j. Fix a nonempty set of the
 largest types, called large, and write
 
-$$
+```math
 a_- =\min_{j\text{ large}}p_j,\qquad
  a_+ =\max_{j\text{ large}}p_j,\qquad
  h=\sum_{j\text{ large}}f_j(P)>0.
  \tag{I1}
-$$
+```
 
 These are attained sizes. Every remaining size is at most u<a_-;
 if there are no remaining types, put u=0. Unlike the preceding
@@ -37,20 +37,20 @@ cap, the matroid of feasible sets of distinct large recipients.
 
 For a machine that can receive a large unit, define
 
-$$
+```math
 \ell_p=\min\{p_j:j\text{ large},\ f_j(\{p\})\ge1\},\qquad
  a_p=\max\{p_j:j\text{ large},\ f_j(\{p\})\ge1\}.
  \tag{I2}
-$$
+```
 
 Thus every large type eventually assigned to p has size in
 [ell_p,a_p]. These definitions concern eligibility, not a preliminary
 choice of assigned type. Set
 
-$$
+```math
 W_p=\sum_{j\text{ small}}p_j f_j(\{p\}),\qquad C_p=W_p+a_p
  \tag{I3}
-$$
+```
 
 on the nonloops of M. Committed positions will be charged by C_p.
 
@@ -61,10 +61,10 @@ for every large type j. If it has at least two entries, let c_p
 be the sum of its two smallest entries; otherwise let c_p=infinity.
 Define
 
-$$
+```math
 C_2=\min_p c_p.
  \tag{I4}
-$$
+```
 
 This takes polynomial work on the explicit types and singleton
 rank queries, without capacity expansion. It is the minimum possible
@@ -79,13 +79,13 @@ Consequently every schedule of makespan T<C_2 has at most one
 large unit at each machine. If r_M(P)<h, every schedule must have
 a large collision, so
 
-$$
+```math
 \mathrm{OPT}\ge C_2,
  \qquad
  C_{\max}\le\mathrm{OPT}+a_+
        \le(1+a_+/C_2)\mathrm{OPT}.
  \tag{I5}
-$$
+```
 
 The final inequality uses the public additive algorithm. Rank loss
 cannot occur when C_2=infinity: in that case f_b({p})<=1 everywhere,
@@ -101,10 +101,10 @@ branch and no automatic coefficient-three-halves floor.
 Assume M has rank h. Choose a budget 1<=k<=h and any M-independent
 set F0 of size h-k. Put
 
-$$
+```math
 B(F_0)=\max_{p\in F_0}C_p,
  \tag{I6}
-$$
+```
 
 with maximum zero for F0 empty. Let Q consist of the nonloops of
 M/F0, and let N be that contraction restricted to Q. Then N has
@@ -113,21 +113,21 @@ units in this branch.
 
 For these residual machines define
 
-$$
+```math
 A=\max_{p\in Q}a_p,\qquad
  H=\max_{p\in Q}(a_p-\ell_p),\qquad
  L=A-H.
  \tag{I7}
-$$
+```
 
 The letter H in (I7) means an eligibility width; input encoding
 length will be denoted by mathcal H below. Since Q is nonempty,
 these maxima exist. Moreover
 
-$$
+```math
 0<a_-\le L\le A\le a_+.
  \tag{I8}
-$$
+```
 
 To see the first inequality, each width is at most A-a_-.
 The extrema, differences, and L lie on the original rational
@@ -144,29 +144,29 @@ Put D_k=3-2/k. Choose any rational D>=D_k and write D=A_D/B_D
 in positive integers. Let g be a common original job-size quantum,
 so every p_j/g is integral, and choose
 
-$$
+```math
 \Delta=g/A_D,\qquad K=L/\Delta,\qquad
                        b=K/D=(L/g)B_D\in\mathbb Z_{>0}.
  \tag{I9}
-$$
+```
 
 Both K and b are integers of polynomial bit length. Every original
 schedule load, a_+, C_2 when finite, and L are on this Delta-grid.
 For a grid target T put c=T/Delta. Define the small-workload rank
 
-$$
+```math
 F(S)=\sum_{j\text{ small}}(p_j/\Delta)f_j(S)
  \tag{I10}
-$$
+```
 
 and cap its coordinates by c. If the cap lowers total rank, T is
 infeasible. Otherwise call the capped rank g_T and its complement
 dual f_T:
 
-$$
+```math
 f_T(S)=c|S|+g_T(P\setminus S)-g_T(P).
  \tag{I11}
-$$
+```
 
 This is the exact workload dual proved in the
 [workload scheduling manuscript](../many-size-scheduling/proof.md).
@@ -181,10 +181,10 @@ M-basis. Its dual small-workload vector z* belongs to B(f_T).
 At any p in I*, the original small workload is at most T minus
 the size of its assigned large unit. Thus
 
-$$
+```math
 z^*_p\ge\ell_p/\Delta.
  \tag{I12}
-$$
+```
 
 Since I* spans M, I*\F0 spans M/F0. It contains an N-basis J*.
 Restricting z* to J* preserves recipient-polymatroid feasibility.
@@ -193,12 +193,12 @@ restricted to Q, not contracted by F0.
 
 Add the nonnegative integer private capacities
 
-$$
+```math
 d_p=(L-\ell_p)_+/\Delta\quad(p\in Q),
  \qquad
        \widehat f_T(S)=f_T(S)+\sum_{p\in S}d_p\quad(S\subseteq Q).
  \tag{I13}
-$$
+```
 
 The maximum of two original-grid quantities is still on that grid,
 so these capacities are integral. The sum with a modular rank is
@@ -209,9 +209,9 @@ unit-core instance (N,widehat f_T) has an integer K-quota basis.
 Run the [exact unit-quota algorithm](../../manuscripts/allocation-and-scheduling/unit-quota-three-transfer-and-discrete-time-gate.md)
 with output quota b. Its strict criterion is
 
-$$
+```math
 (3-2/k)b<K+1+(k-1)/k.
-$$
+```
 
 It holds because D>=D_k and Db=K: the left side is at most K,
 whereas the right side is strictly larger than K. The algorithm
@@ -223,10 +223,10 @@ It may prune a larger returned count to exactly b.
 For completeness, if y belongs to P(f+d), where d is any
 nonnegative modular capacity vector, then
 
-$$
+```math
 (y-d)_+\in P(f).
  \tag{I14}
-$$
+```
 
 For a subset S, let E={p in S:y_p>d_p}. The left side on S is
 y(E)-d(E)<=f(E)<=f(S). This proves every rank inequality, so
@@ -236,10 +236,10 @@ original and private parts.
 Apply (I14) to the returned b-quota vector. Its residual original
 dual count at p in J is
 
-$$
+```math
 z_p=(b-d_p)_+.
  \tag{I15}
-$$
+```
 
 Set every other original dual coordinate to zero, including F0.
 Restriction and zero extension preserve feasibility in P(f_T).
@@ -266,11 +266,11 @@ quantity is negative. Thus its load is at most
 
 The two bounds agree because L=A-H. Define
 
-$$
+```math
 E_D=A-L/D
              ={(D-1)A+H\over D}\ge0.
  \tag{I16}
-$$
+```
 
 Every residual large recipient has load at most T+E_D before
 small-job rounding. Machines with no large unit have small workload
@@ -284,10 +284,10 @@ Every committed p receives at most a_p in large load and at most
 W_p in actual integral small load, by the original singleton ranks.
 Its final bound is C_p with no additional u. Hence this branch returns
 
-$$
+```math
 C_{\max}\le\max\{T+E_D+u,\ B(F_0)\}.
  \tag{I17}
-$$
+```
 
 For the same F0, E_D<=a_+-a_-/D, because A<=a_+ and L>=a_-.
 Thus this proof also yields the uniform-minimum-size hard-target bound.
@@ -312,11 +312,11 @@ the precise final type assignment, or additional resource structure.
 For an arbitrary positive padding scale L0, the actual guaranteed
 dual workload on p is
 
-$$
+```math
 w_p(L_0)=\max\{0,\min\{L_0/D,
                               \ell_p-(1-1/D)L_0\}\}.
  \tag{I16a}
-$$
+```
 
 The sharper common overhead is C(L0)=max_p(a_p-w_p(L0)). It is
 possible to minimize this one-dimensional bound in polynomial time.
@@ -328,12 +328,12 @@ Machines with a_p<=C impose no constraint. Every other machine
 requires both linear terms in (I16a) to be at least a_p-C. A common
 L0 exists precisely when
 
-$$
+```math
 D(A-C)\le L_0\le {D(C-H_{\rm active}(C))\over D-1},
  \quad\text{equivalently}\quad
  D C\ge(D-1)A+H_{\rm active}(C).
  \tag{I16b}
-$$
+```
 
 These implications also prove that the right endpoint is positive
 whenever the displayed criterion holds. The active set is defined
@@ -359,10 +359,10 @@ All candidates C_* lie on the grid g/A_D: they are either original
 eligibility sizes or the displayed linear balances. Hence L0 lies
 on g/B_D. For this optional optimization, replace (I9)'s quantum by
 
-$$
+```math
 \Delta={g\over A_D B_D}.
  \tag{I16c}
-$$
+```
 
 Then K=L0/Delta, b=K/D and every private capacity are integral, and
 Db=K holds exactly. All subsequent arguments apply with E_D
@@ -390,11 +390,11 @@ positive-rank type must be scheduled.
 
 Write a_+/infinity=0 and define
 
-$$
+```math
 \beta_D(F_0)=
  \max\left\{1+{a_+\over C_2},\ 1+{E_D\over a_+}\right\}.
  \tag{I18}
-$$
+```
 
 For C_2=infinity the first term is simply one, and the hard-target
 construction applies for every T>=a_+. Every successful target
@@ -414,13 +414,13 @@ schedule load, and hence OPT, lies on the grid. Monotonicity of
 the routine's success choices is unnecessary. The saved schedule
 satisfies
 
-$$
+```math
 \boxed{
  C_{\max}\le
        \max\{\beta_D(F_0)\,\mathrm{OPT}+u,\ B(F_0)\}.
  }
  \tag{I19}
-$$
+```
 
 Running the ordinary additive algorithm too allows the stronger
 minimum with OPT+a_+, and therefore with 2OPT. Rank loss in M
@@ -472,12 +472,12 @@ with K0. The resulting comparison is the minimum of the corresponding
 
 With no commitments, A=a_+ and put omega=H/a_+. Then
 
-$$
+```math
 \beta_D=
        \max\left\{1+a_+/C_2,
                        2-{1-\omega\over D}\right\}.
  \tag{I20}
-$$
+```
 
 If every machine is eligible for at most one **large size**,
 omega=0. This permits many different large sizes globally. Whenever
