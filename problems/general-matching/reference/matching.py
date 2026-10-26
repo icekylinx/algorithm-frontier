@@ -5,9 +5,9 @@ This is an ordinary polynomial-time Edmonds blossom implementation.  It does
 not implement or inherit the manuscript's faster research backend.  Native
 input records may contain loops, parallel edges, and user-supplied edge IDs.
 
-Normal mode: O(n + m log(m+2) + sum_i k_i**3) operations.
-Certificate mode has the same bound, with O(sum_i k_i**2) extra operations.
-Here k_i is the retained kernel vertex count in original component i.
+Default modes: O(n + m log(m+2) + sum_i nu_i**3) operations, where nu_i
+is the maximum matching size of original component i (not an input).
+Without kernels, the ordinary cubic component-vertex bound applies.
 Storage is O(n+m), apart from the input/output label bytes.  Integer vertex
 indices and IDs are charged by their representation size; see README.md.
 
@@ -248,6 +248,62 @@ def _blossom(
     return mate
 
 
+def _compress_cover(
+    adjacency: list[list[int]], cover: list[bool]
+) -> tuple[list[int], list[list[int]]]:
+    """Preserve all cover subsets using the right ends of a maximum crossing matching.
+
+    The input is the already sparse c-neighbor kernel, with k=O(c**2)
+    vertices and h=O(c**2) edges.  At most c ordinary bipartite searches cost
+    O(c*(k+h))=O(c**3).  The induced output has at most 2c vertices.
+    """
+    order = len(adjacency)
+    crossing: list[list[int]] = [[] for _ in range(order)]
+    for u, neighbors in enumerate(adjacency):
+        if cover[u]:
+            crossing[u] = [v for v in neighbors if not cover[v]]
+        elif any(not cover[v] for v in neighbors):
+            raise RuntimeError("compression requires a vertex cover")
+    left_mate = [-1] * order
+    right_mate = [-1] * order
+    for root in range(order):
+        if not cover[root] or left_mate[root] != -1:
+            continue
+        parent_right = [-1] * order
+        seen_left = [False] * order
+        seen_left[root] = True
+        queue = deque([root])
+        endpoint = -1
+        while queue and endpoint == -1:
+            u = queue.popleft()
+            for v in crossing[u]:
+                if parent_right[v] != -1:
+                    continue
+                parent_right[v] = u
+                if right_mate[v] == -1:
+                    endpoint = v
+                    break
+                partner = right_mate[v]
+                if not seen_left[partner]:
+                    seen_left[partner] = True
+                    queue.append(partner)
+        while endpoint != -1:
+            u = parent_right[endpoint]
+            previous = left_mate[u]
+            left_mate[u] = endpoint
+            right_mate[endpoint] = u
+            endpoint = previous
+    retained = [u for u in range(order) if cover[u] or right_mate[u] != -1]
+    index_of = [-1] * order
+    for index, u in enumerate(retained):
+        index_of[u] = index
+    reduced: list[list[int]] = [
+        [index_of[v] for v in adjacency[u] if index_of[v] != -1]
+        for u in retained
+    ]
+    return retained, reduced
+
+
 def _matching_size(mate: list[int]) -> int:
     return sum(u < v for u, v in enumerate(mate))
 
@@ -357,7 +413,7 @@ def _failed_search_forest(
 def _barrier(
     adjacency: list[list[int]], mate: list[int], statistics: dict[str, int]
 ) -> list[int]:
-    """Return a tight odd-component barrier in O(k**2) additional work.
+    """Return a tight barrier in O(h+k*(nu+1)) additional work.
 
     An exhausted forest has b=|I|+f odd outer blocks, where I is its inner
     set and f the number of exposed roots.  Unreached vertices are perfectly
@@ -395,7 +451,8 @@ def maximum_matching(
     parallel records are represented by their earliest input occurrence.
     IDs default to input indices and, when supplied, must be distinct ints
     or strings.  ``certificate=True`` adds a separately checkable optimality
-    certificate with O(sum_i k_i**2) extra work after the cubic solve.
+    certificate within the same matching-number cubic bound.  ``use_kernel``
+    enables both the c-neighbor edge kernel and crossing-endpoint compression.
     """
     if type(use_kernel) is not bool or type(certificate) is not bool:
         raise ValueError("use_kernel and certificate must be booleans")
@@ -409,6 +466,8 @@ def maximum_matching(
         "nonempty_components": len(components),
         "kernel_vertices": 0,
         "kernel_edges": 0,
+        "cover_vertices": 0,
+        "blossom_vertices": 0,
         "matching_calls": 0,
         "certificate_searches": 0,
         "blossom_contractions": 0,
@@ -420,7 +479,20 @@ def maximum_matching(
         compact, adjacency, kept, cover = _kernel(vertices, component_edges, index_of, use_kernel)
         statistics["kernel_vertices"] += len(compact)
         statistics["kernel_edges"] += len(kept)
-        mate = _blossom(adjacency, statistics=statistics)
+        statistics["cover_vertices"] += len(cover)
+        if use_kernel:
+            covered = [False] * len(compact)
+            for vertex in cover:
+                covered[index_of[vertex]] = True
+            solve_vertices, solve_adjacency = _compress_cover(adjacency, covered)
+        else:
+            solve_vertices, solve_adjacency = list(range(len(compact))), adjacency
+        statistics["blossom_vertices"] += len(solve_vertices)
+        small_mate = _blossom(solve_adjacency, statistics=statistics)
+        mate = [-1] * len(compact)
+        for u, v in enumerate(small_mate):
+            if v != -1:
+                mate[solve_vertices[u]] = solve_vertices[v]
         for u, v, native_index in kept:
             if mate[index_of[u]] == index_of[v]:
                 selected.append(native_index)
@@ -453,7 +525,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input", nargs="?", default="-", help="graph JSON file; - reads stdin")
     parser.add_argument("--certificate", action="store_true", help="emit a verifiable optimality certificate (same cubic bound)")
-    parser.add_argument("--no-kernel", action="store_true", help="solve full normalized components")
+    parser.add_argument("--no-kernel", action="store_true", help="disable both compression stages; solve full normalized components")
     args = parser.parse_args()
     try:
         source = sys.stdin.read() if args.input == "-" else Path(args.input).read_text(encoding="utf-8")

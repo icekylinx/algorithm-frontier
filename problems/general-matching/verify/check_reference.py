@@ -219,7 +219,26 @@ def scale_and_cli_cases() -> int:
     assert answer["cardinality"] == 1
     assert answer["statistics"]["kernel_vertices"] == 4
     assert answer["statistics"]["kernel_edges"] == 3
+    assert answer["statistics"]["blossom_vertices"] == 3
     assert verify_result(2500, star, answer)["optimality_verified"]
+
+    # The first kernel can retain c+c^2 vertices while the second stage
+    # leaves at most 2c.  Certificates must still describe the first kernel.
+    cover_size = 20
+    pairs_first = [(u, u + 1) for u in range(0, cover_size, 2)]
+    linking_edges = [(u, u + 1) for u in range(1, cover_size - 1, 2)]
+    private_leaves = [(u, cover_size + cover_size * u + offset)
+                      for u in range(cover_size) for offset in range(cover_size)]
+    leaf_path = pairs_first + linking_edges + private_leaves
+    order = cover_size + cover_size * cover_size
+    answer = maximum_matching(order, leaf_path, certificate=True)
+    assert answer["cardinality"] == cover_size
+    assert answer["statistics"]["cover_vertices"] == cover_size
+    assert answer["statistics"]["kernel_vertices"] == order
+    assert answer["statistics"]["kernel_edges"] == len(leaf_path) == 419
+    assert answer["statistics"]["blossom_vertices"] == 2 * cover_size
+    verified = verify_result(order, leaf_path, answer)
+    assert verified["optimality_verified"] and verified["retained_vertices"] == order
 
     graph = {"n": 7, "edges": [[0, 0], [1, 0], [0, 1], [1, 2], [2, 3], [4, 5]],
              "edge_ids": ["loop", "first", "parallel", 8, 9, "separate"]}
@@ -241,7 +260,7 @@ def scale_and_cli_cases() -> int:
         optimized = subprocess.run([sys.executable, "-B", "-O", str(REFERENCE / "matching.py"), str(input_path), "--certificate"],
                                    capture_output=True, text=True, check=True)
         assert json.loads(optimized.stdout) == json.loads(process.stdout)
-    return 3
+    return 4
 
 
 def main() -> None:
@@ -264,7 +283,7 @@ def main() -> None:
     print(f"PASS: {graphs} simple graphs in both modes ({2 * graphs} certified solves)")
     print(f"PASS: {native} native-record and {extra} supplemental instances in both modes")
     print(f"PASS: {rejected} rejection checks; {scale} scale/CLI cases")
-    print(f"Coverage: {contractions} blossom contractions; {augmentations} augmentations (including certificate extraction)")
+    print(f"Coverage: {contractions} blossom contractions (including certificates); {augmentations} matching augmentations")
     print("Scope: exact finite oracle comparison and independent certificate verification; no fast-backend claim.")
 
 
