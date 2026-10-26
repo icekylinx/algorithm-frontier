@@ -6,11 +6,12 @@ agent and independently checked by transfer_frontier and allocation_four.
 
 The supported conclusion is:
 
-```math
+<!-- math-display: 6ee49515462e215bfcb04b57
 \boxed{\text{All seven nontrivial variants require }
        2^{\Omega(\epsilon^{-1/2})}\text{ oracle queries in the worst case.}}
  \tag{LB1}
-```
+-->
+![Formula](../../../assets/math/6ee49515462e215bfcb04b57.svg)
 
 This is an unconditional oracle lower bound, already for matroid rank
 oracles. It does **not** establish a `2^{Omega(1/epsilon)}` lower bound.
@@ -54,25 +55,28 @@ Let `n` be even and sufficiently large, and let `k=n/2`. The ground is
 `[n]`. Among all `k`-element subsets, choose a sum `alpha` attained by
 the largest number of subsets, and define
 
-```math
+<!-- math-display: e20df95aaf44ef97431f537e
 \mathcal A=\{A\subseteq[n]:|A|=k,\ \sum_{i\in A}i=\alpha\},
  \qquad N=|\mathcal A|.
  \tag{LB2}
-```
+-->
+![Formula](../../../assets/math/e20df95aaf44ef97431f537e.svg)
 
 There are at most `n^2` possible sums, so
 
-```math
+<!-- math-display: 9d0d83ac61b7aec98c9ca6f9
 N\ge\binom nk/n^2=2^{n-O(\log n)}.
  \tag{LB3}
-```
+-->
+![Formula](../../../assets/math/9d0d83ac61b7aec98c9ca6f9.svg)
 
 Every such sum satisfies
 
-```math
+<!-- math-display: b25dd26271dbe1979d7d9518
 k(k+1)/2\le\alpha\le k(2n-k+1)/2.
  \tag{LB4}
-```
+-->
+![Formula](../../../assets/math/b25dd26271dbe1979d7d9518.svg)
 
 In particular `alpha=Theta(n^2)`. For large `n`, `N>1`, whereas the
 minimum and maximum sums each have a unique realizing set. Hence
@@ -127,27 +131,30 @@ budget, is solved by the empty set and is not covered by the claim.
 Here are the cardinality checks that matter for the independent-set
 rows. For the maximum upper-budget row,
 
-```math
+<!-- math-display: ffd1e241f759bcad9afdd587
 v(S)=w(S)+|S|\le\alpha+k.
  \tag{LB5}
-```
+-->
+![Formula](../../../assets/math/ffd1e241f759bcad9afdd587.svg)
 
 Equality requires both `w(S)=alpha` and `|S|=k`. For the minimum
 covering row,
 
-```math
+<!-- math-display: d220f60a88f5d8b3dd575ae8
 v(S)=w(S)-|S|\ge\alpha-k,
  \tag{LB6}
-```
+-->
+![Formula](../../../assets/math/d220f60a88f5d8b3dd575ae8.svg)
 
 and equality again requires both conditions. The coefficient `v_1=0`
 is permitted by the nonnegative-value model. For the maximum covering
 row,
 
-```math
+<!-- math-display: 6dc4fad0798117f508b52b5f
 v(S)=(n+1)|S|-w(S)\le k(n+1)-\alpha,
  \tag{LB7}
-```
+-->
+![Formula](../../../assets/math/6dc4fad0798117f508b52b5f.svg)
 
 with equality only at full cardinality and exact sum. These small
 tie-breaks avoid a large cardinality-enforcing constant.
@@ -173,10 +180,11 @@ By LB4, every displayed `B` is positive and `Theta(n^2)`. In particular
 
 For each row choose
 
-```math
+<!-- math-display: ee59a3e5bd91d44553e5810c
 \epsilon=1/(2B).
  \tag{LB8}
-```
+-->
+![Formula](../../../assets/math/ee59a3e5bd91d44553e5810c.svg)
 
 A maximizing `(1-epsilon)` guarantee returns integer value at least
 `B-1/2`, hence at least `B`. A minimizing `(1+epsilon)` guarantee
@@ -204,9 +212,10 @@ data have length `O(n log n)`. Combining this with LB3 proves LB1 on
 an infinite sequence of accuracies. In particular, an oracle algorithm
 with time
 
-```math
+<!-- math-display: 48c96f8cd8a0bb265f4b6217
 2^{o(\epsilon^{-1/2})}\mathrm{poly}(H)
-```
+-->
+![Formula](../../../assets/math/48c96f8cd8a0bb265f4b6217.svg)
 
 would contradict the query bound, for each of the seven variants.
 

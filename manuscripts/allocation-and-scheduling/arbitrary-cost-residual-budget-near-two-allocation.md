@@ -33,20 +33,22 @@ For a threshold theta>0, types with v_j>=theta are heavy and types
 with v_j<theta are light. Fix rational 0<epsilon<1 and an integer
 support budget K>=0, clipped to r. Define
 
-```math
+<!-- math-display: d248ebc71f15ba6b5601588d
 \theta^*={(1-\epsilon)\mathrm{OPT}_C\over2},
                   \qquad \Gamma(R)={R^R\over(R-1)^{R-1}}\le eR.
  \tag{R1}
-```
+-->
+![Formula](../../assets/math/d248ebc71f15ba6b5601588d.svg)
 
 **Theorem R.** A deterministic algorithm always returns a genuine
 M-basis and an integer allocation of cost at most C. Its time is
 
-```math
+<!-- math-display: 65280034aa171b7ba57ffbd5
 \Gamma(1/\epsilon)^{c+K}
                                           \mathrm{poly}(H),
  \tag{R2}
-```
+-->
+![Formula](../../assets/math/65280034aa171b7ba57ffbd5.svg)
 
 and its workspace is polynomial. If OPT_C>0 and some integer
 optimal allocation has at most K selected recipients of heavy
@@ -56,11 +58,12 @@ at threshold zero.
 
 In particular, choosing epsilon=eta/(2+eta) gives factor 2+eta in
 
-```math
+<!-- math-display: 23901a3383fb8e2397784946
 \Gamma\!\left({2+\eta\over\eta}\right)^{c+K}
                                     \mathrm{poly}(H).
  \tag{R3}
-```
+-->
+![Formula](../../assets/math/23901a3383fb8e2397784946.svg)
 
 The computed heavy Boolean rank being at most K is a sufficient
 condition. Section 11 gives the stronger computable sufficient
@@ -103,10 +106,11 @@ uniform polynomial bit length.
 
 If Q' subseteq Q, its permitted completions are a subfamily, so
 
-```math
+<!-- math-display: 90c1c4729e668235cc7a990d
 h_k(Q')\ge h_k(Q).
  \tag{R4}
-```
+-->
+![Formula](../../assets/math/90c1c4729e668235cc7a990d.svg)
 
 This monotonicity is useful, but the proof below uses the stronger
 explicit comparison with a fixed promised heavy assignment.
@@ -115,17 +119,19 @@ explicit comparison with a fixed promised heavy assignment.
 
 For every D>=0 define
 
-```math
+<!-- math-display: d0e6fd09017940b42fa1d3eb
 \mathcal X_s(D)=\{(x_j)_{j\in J_s}:x_j\in P(f_j),\quad
                    \sum_{p,j\in J_s}c_{pj}x_j(p)\le D\},
  \tag{R5}
-```
+-->
+![Formula](../../assets/math/d0e6fd09017940b42fa1d3eb.svg)
 
-```math
+<!-- math-display: e031956a496b29bfb0e9cef8
 \mathcal U_s(D)=\{z\ge0:\exists x\in\mathcal X_s(D),\quad
                   z_p\le\sum_{j\in J_s}v_jx_j(p)\quad(p\in P)\}.
  \tag{R6}
-```
+-->
+![Formula](../../assets/math/e031956a496b29bfb0e9cef8.svg)
 
 This is a compact convex downward rational region. It has the
 exact nonnegative packing separator proved in
@@ -151,10 +157,11 @@ M-basis split I* union F*, with |I*|=r-k, a feasible one-heavy-unit
 assignment H* to F*, and a fractional light allocation x* giving
 each player in I* utility at least t, such that
 
-```math
+<!-- math-display: c901f019239dd2acb0fa7c43
 c(x^*)+c(H^*)\le C.
  \tag{R7}
-```
+-->
+![Formula](../../assets/math/c901f019239dd2acb0fa7c43.svg)
 
 The light counts can be discarded outside I*. Starting from Q=P,
 compute h_k(Q). If no pair exists or h_k(Q)>C, fail this node.
@@ -183,11 +190,12 @@ not justify adding it to a light allocation charged against D_Q.
 Suppose the pair I*,H*,x* in (R7) has I* subseteq Q. It remains
 an eligible completion in the definition of h_k(Q). Hence
 
-```math
+<!-- math-display: 9a6263aa955c7f12a6db4182
 h_k(Q)\le c(H^*),\qquad
              c(x^*)\le C-c(H^*)\le C-h_k(Q)=D_Q.
  \tag{R8}
-```
+-->
+![Formula](../../assets/math/9a6263aa955c7f12a6db4182.svg)
 
 Thus the node cannot fail its completion check, and its full
 target t*1_(I*) belongs to the *current* region U_s(D_Q).
@@ -195,11 +203,12 @@ Every nonnegative row returned at this node is valid for that
 full target. If the row is a·z<=U and is violated by b*1_Q,
 then the omitted set Q\I* has exactly |Q|-(r-k) elements and
 
-```math
+<!-- math-display: eb7c067b72715c14d8b39616
 a(Q\setminus I^*)\ge a(Q)-U/t
                       >\left(1-{b\over t}\right)a(Q).
  \tag{R9}
-```
+-->
+![Formula](../../assets/math/eb7c067b72715c14d8b39616.svg)
 
 The same layer-cake argument therefore supplies a first-crossing
 prefix certificate contained in Q\I*. Deleting that certificate
@@ -217,11 +226,12 @@ on t/(t-b), not on the row values or on which admissible region
 supplied them. The same polynomial-bit row and polynomial selector
 cost bounds hold uniformly. The gap routine therefore runs in
 
-```math
+<!-- math-display: 558b1c255cbb064027fd2ed4
 \Gamma\!\left({t\over t-b}\right)^{c+k}
                                           \mathrm{poly}(H)
  \tag{R10}
-```
+-->
+![Formula](../../assets/math/558b1c255cbb064027fd2ed4.svg)
 
 time and polynomial space, including unpromised inputs and all
 failed completion calls. The zero-light-rank case k=r is tested
@@ -240,10 +250,11 @@ genuine, not a mixture of player bases.
 This joint benchmark is downward in T by trimming light allocations.
 At a positive grid query T, run the adaptive gap with
 
-```math
+<!-- math-display: af5bc39eae97bb4ab0d2ed4a
 t=T,\qquad b=(1-\epsilon)T.
  \tag{R11}
-```
+-->
+![Formula](../../assets/math/af5bc39eae97bb4ab0d2ed4a.svg)
 
 A failure puts T strictly above X; a success returns the weaker
 light service together with its costed heavy completion. The
@@ -291,10 +302,11 @@ so the two resource allocations combine without capacity overlap.
 Their total actual cost is at most C. The selected original basis
 is I union rec(H), with minimum utility at least
 
-```math
+<!-- math-display: d8e6d08c074758d79c3b6845
 \min\{a_H,b-u_L\}.
  \tag{R12}
-```
+-->
+![Formula](../../assets/math/d8e6d08c074758d79c3b6845.svg)
 
 Only nonnegative assignment costs are claimed; discarding counts
 must not increase cost. A second independent hard assignment
@@ -328,12 +340,13 @@ basis or buys a replacement completion at an unaccounted cost.
 
 The comparator split puts equality on the heavy side, so
 
-```math
+<!-- math-display: f7baae07ee8727e33f5b6a6f
 u_L<\theta^*\le a_H,
         \qquad (1-\epsilon)\mathrm{OPT}_C-u_L
                                =2\theta^*-u_L>\theta^*.
  \tag{R13}
-```
+-->
+![Formula](../../assets/math/f7baae07ee8727e33f5b6a6f.svg)
 
 Equation (R12), or the pure-heavy branch, proves the factor.
 The number of distinct value splits is polynomial. For each,
@@ -387,10 +400,11 @@ For any budget-feasible original optimum, dropping to one unit
 per selected heavy recipient gives such an affordable assignment.
 Its heavy support is therefore at most h_C(theta). Consequently
 
-```math
+<!-- math-display: e36fc2468473a0cbbb6b5611
 h_C(\theta^*)\le K
  \tag{R14}
-```
+-->
+![Formula](../../assets/math/e36fc2468473a0cbbb6b5611.svg)
 
 is a computable sufficient parameter condition for the theorem.
 It is no weaker than using the uncosted maximum common rank of

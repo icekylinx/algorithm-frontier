@@ -6,11 +6,12 @@ scenario. Each scenario has its own adaptive routing. All of its
 capacities and all explicitly listed nonnegative routing budgets
 are respected exactly. The deterministic time is
 
-```math
+<!-- math-display: 40744cceb9477bf647033236
 \Gamma(1/\epsilon)^c\mathrm{poly}(H),
        \qquad \Gamma(R)=\frac{R^R}{(R-1)^{R-1}},
  \tag{S1}
-```
+-->
+![Formula](../../assets/math/40744cceb9477bf647033236.svg)
 
 with polynomial space and common service at least
 (1-epsilon)OPT. H includes the total explicit scenario description.
@@ -69,11 +70,12 @@ and routing budgets. The single-scenario proof in
 U_omega is bounded, convex and downward closed. It also gives an
 exact polynomial separator returning a globally valid row
 
-```math
+<!-- math-display: e2bd7423e3663c642b6b6828
 \sum_{i\in P}a_i z_i\le h,
                          \qquad a_i\ge0,\quad h\ge0,
  \tag{S2}
-```
+-->
+![Formula](../../assets/math/e2bd7423e3663c642b6b6828.svg)
 
 of polynomial binary length, whenever the queried z is outside
 U_omega. The row follows from normalized arc-potential Farkas
@@ -81,10 +83,11 @@ certificates, including a nonnegative multiplier for every budget.
 
 The robust service region is exactly
 
-```math
+<!-- math-display: 4c483c26a953f1fb5cb31d56
 U=\bigcap_{\omega\in\Omega}U_\omega.
  \tag{S3}
-```
+-->
+![Formula](../../assets/math/4c483c26a953f1fb5cb31d56.svg)
 
 It contains zero and is bounded, convex and downward closed. To
 separate a nonnegative query z, check the scenarios in a fixed
@@ -118,12 +121,13 @@ constraints in the total explicit input. It is nonempty at zero.
 A uniform finite upper bound is obtained from any one scenario
 omega_0:
 
-```math
+<!-- math-display: c1e3ffaaecf02d9d402dc04f
 V=\max_{i\in P}
           \frac{\sum_{e\text{ out of }s_i^{\omega_0}}u_e^{\omega_0}}
                {d_i^{\omega_0}}.
  \tag{S4}
-```
+-->
+![Formula](../../assets/math/c1e3ffaaecf02d9d402dc04f.svg)
 
 For an undirected network, use the sum of incident physical edge
 capacities. Every common rate on a nonempty I is at most V.
@@ -205,13 +209,14 @@ restriction selector is trivial and its corank is exactly c=k.
 Use pairwise distinct terminals s_i,t_i for each i in P and two
 additional vertices x,y. The common directed topology contains
 
-```math
+<!-- math-display: 65ae8aa99f421a58aebfb34f
 s_i\longrightarrow t_i,\qquad
       s_i\longrightarrow x,\qquad
       y\longrightarrow t_i\quad(i\in P),
       \qquad x\longrightarrow y.
  \tag{S5}
-```
+-->
+![Formula](../../assets/math/65ae8aa99f421a58aebfb34f.svg)
 
 All commodities have demand scale one. There are no routing costs
 or routing budgets. For each S in A create one scenario with
@@ -237,10 +242,11 @@ entire flow on the central bottleneck.
 For a selected set I, routing all selected commodities at unit rate
 is consequently feasible in that scenario exactly when
 
-```math
+<!-- math-display: 047380c6b891263fd37986ef
 |I\cap S|\le |S|-1.
  \tag{S6}
-```
+-->
+![Formula](../../assets/math/047380c6b891263fd37986ef.svg)
 
 Necessity follows from the central capacity. Sufficiency follows
 by using the private arcs outside S and the specified three-arc

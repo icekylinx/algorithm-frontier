@@ -10,11 +10,12 @@ The accepted fixed-parameter construction is unchanged.
 The conclusion is a deterministic general-graph matching running-time
 candidate of the form
 
-```math
+<!-- math-display: c69a9fcd0d2efa091ed64f36
 O(n+m)+(m_s+1)\exp\!\left(
  O\left((\log(m_s+2))^{335/336}
           (\log\log(m_s+4))^3\right)\right),
-```
+-->
+![Formula](../../assets/math/c69a9fcd0d2efa091ed64f36.svg)
 
 where `m_s` is the number of distinct nonloop edges. The constant in
 this display is absolute. Correctness still depends on the complete
@@ -40,10 +41,11 @@ Their former `O_a` running-time conclusions are not premises here.
 Let the physical subcubic graph have order `N`, and fix one power of two
 `S=2^s` with `N<=S<2N` for all its phases. Put
 
-```math
+<!-- math-display: 184d3cc7eee0bc0925244b19
 \alpha=335/336,\qquad
  E(s)=\exp\bigl(O(s^\alpha(\log(s+4))^2)\bigr).
-```
+-->
+![Formula](../../assets/math/184d3cc7eee0bc0925244b19.svg)
 
 The `O` in this definition denotes one absolute, uniform constant.
 Assume the reconstructed primary raw-cycle backend can be run with
@@ -88,11 +90,12 @@ For a smallest instance, `u=log_2 M` is approximately `s/a`. The ratio
 between the exponent `u^alpha(log u)^2` in its possible backend overhead
 and `u/a` in the literal local cap is asymptotically
 
-```math
+<!-- math-display: 4e7f1b7c2c2208b43c652850
 \Theta\left(
  \frac{s^{1/112896}}{(\log s)^{1+3/336}}
  \right),
-```
+-->
+![Formula](../../assets/math/4e7f1b7c2c2208b43c652850.svg)
 
 which tends to infinity. Moreover, the root prices still need `Theta(s)`
 bits even in that small instance. These are concrete reasons to use the
@@ -103,42 +106,47 @@ the fixed-parameter theorem.
 
 For a completely integral parameter selection, set
 
-```math
+<!-- math-display: 45eaded2c5df0ea1876bef7b
 t=\lceil\log_2(s+4)\rceil,\qquad
  r=\lfloor s^{1/336}\rfloor,\qquad
  a=\lfloor r/t^3\rfloor.
-```
+-->
+![Formula](../../assets/math/45eaded2c5df0ea1876bef7b.svg)
 
 The root is found by integer power comparisons. This is an executable
 rounding of `s^(1/336)/(log_2(s+4))^3`, with the same asymptotics.
 Suspend this fast branch unless `a>=1000` and the explicit initial
 guards below hold. Define
 
-```math
+<!-- math-display: 52eccf3000a6f3099449ffa8
 C=a+1,\quad v=\lceil s/a\rceil,\quad B=2^v,\quad
  q=B^{-100},\quad D_*=B^{10},
-```
+-->
+![Formula](../../assets/math/52eccf3000a6f3099449ffa8.svg)
 
 and retain
 
-```math
+<!-- math-display: abef38ce01d9fbe9f6886aba
 \delta=S^{-1000},\qquad \varepsilon=S^{-3000},\qquad H=S^{100}.
-```
+-->
+![Formula](../../assets/math/abef38ce01d9fbe9f6886aba.svg)
 
 As `s` tends to infinity,
 
-```math
+<!-- math-display: b1f295fa99be5b8e88a6b1f2
 v=\Theta(s^\alpha(\log s)^3),\qquad
  a^2=o(v),\qquad v=o(s).
  \tag{1}
-```
+-->
+![Formula](../../assets/math/b1f295fa99be5b8e88a6b1f2.svg)
 
 Every fixed polynomial in `a` and `s` is `2^{o(v)}`. Also
 
-```math
+<!-- math-display: 433a1977d2a8f2f4ef0c6354
 E(s)=2^{o(v)}.
  \tag{2}
-```
+-->
+![Formula](../../assets/math/433a1977d2a8f2f4ef0c6354.svg)
 
 Consequently the master backend's costs, multiplicity, path-piece
 count and inverse quality are eventually bounded by `D_*/4`, after
@@ -146,21 +154,23 @@ harmless constant slack. The client may use the computable cap `D_*`
 without knowing the hidden constant in `E`. Guard failures remain
 suspensions, never LOW certificates. The strong-direction margin is
 
-```math
+<!-- math-display: 690a791b183672a6f5600653
 \frac{1}{4D_*}>2q,
  \tag{3}
-```
+-->
+![Formula](../../assets/math/690a791b183672a6f5600653.svg)
 
 which holds once `2^(90v)>8`. The numerical client can use the weaker
 quality promise `D_*^{-1}` even if the actual backend is better.
 
 The exact reset periods are
 
-```math
+<!-- math-display: e853ac19cbbec1757cd7a18d
 b_j=B^{a-j}\quad (0\le j\le a),\qquad
  S\le b_0<2^a S.
  \tag{4}
-```
+-->
+![Formula](../../assets/math/e853ac19cbbec1757cd7a18d.svg)
 
 The factor `2^a` is not declared constant. It is `2^{o(v)}` and will be
 accounted for explicitly in the local nominal-size check.
@@ -170,10 +180,11 @@ accounted for explicitly in the local nominal-size check.
 Keep the old rule of choosing `M=2^u` by rounding `16(R+B)` upward
 until `u` is divisible by `2a^2`. Then
 
-```math
+<!-- math-display: c64307bdfe0a9166ba0a200f
 16(R+B)\le M<16(R+B)2^{2a^2}.
  \tag{5}
-```
+-->
+![Formula](../../assets/math/c64307bdfe0a9166ba0a200f.svg)
 
 This is no longer a fixed constant-factor rounding. Its factor is
 `2^{o(v)}` by (1), which is sufficient. Divisibility is unnecessary
@@ -184,19 +195,21 @@ The top instance uses `R_top=SB`. Its actual physical births and
 endpoint retargetings are `O(a S log S)`, as derived in Section 6;
 these fit `SB` eventually. Equation (5) gives
 
-```math
+<!-- math-display: cecba0f1ff10ade6e120ce06
 \log_2 M_{\rm top}
  \le s+v+2a^2+O(1)<2s.
  \tag{6}
-```
+-->
+![Formula](../../assets/math/cecba0f1ff10ade6e120ce06.svg)
 
 At a local reset to level `j>1`, the parent debt satisfies
 
-```math
+<!-- math-display: 19db02de21cdaf1d0f58f28b
 P\le(C+2)b_{j-1}\le(C+2)b_1
  <(a+3)2^a S/B.
  \tag{7}
-```
+-->
+![Formula](../../assets/math/19db02de21cdaf1d0f58f28b.svg)
 
 Thus `8192(P+1)+B<=S` eventually, since
 `v-a-log_2(a+3)` tends to infinity. The local projection proof permits
@@ -248,7 +261,7 @@ caused by accumulated numerical motion. Full sweeps cost
 `O(D_*^2 J)`, rather than constant cost per report. Substituting the
 uniform backend bounds into the explicit four work categories yields
 
-```math
+<!-- math-display: e5e265d5833b552b2a96b1df
 \begin{split}
  T_{\rm price}
  &\le\bigl[M+Q+D_*J\bigr]D_*\mathrm{poly}(s)
@@ -257,17 +270,19 @@ uniform backend bounds into the explicit four work categories yields
  &\le (M+Q)D_*^2\mathrm{poly}(s).
  \end{split}
  \tag{8}
-```
+-->
+![Formula](../../assets/math/e5e265d5833b552b2a96b1df.svg)
 
 Here and below every polynomial has an absolute degree. The `Qp_c`
 term includes raw sums for answers rejected as LOW. Combining (5)
 and (8) gives the useful master-size form
 
-```math
+<!-- math-display: e5b29b74821c97fa469681ef
 T_{\rm price}
  \le (R+B+Q)\,2^{2a^2} B^{20}\mathrm{poly}(s).
  \tag{9}
-```
+-->
+![Formula](../../assets/math/e5b29b74821c97fa469681ef.svg)
 
 The drift thresholds and dyadic-grid checks remain valid. Eventually
 `D_*<=S^2`, `q>=S^{-1}`, and `M<=S^2`. The total traversals in a list
@@ -297,10 +312,11 @@ the total insertion/lock loss are therefore bounded by
 `c_0(P+1)s`, with one absolute `c_0`. Each accepted step gains an
 absolute constant times `q^2`. A threshold test has at most
 
-```math
+<!-- math-display: d3f8bbf50539faf894edd11b
 J_{\rm loc}\le c_1(P+1)B^{200}s
  \tag{10}
-```
+-->
+![Formula](../../assets/math/d3f8bbf50539faf894edd11b.svg)
 
 accepted steps, plus one final query. Let `F_num` be the engine's genuine
 motion-triggered notifications, so `F_num=O(D_* J_loc)`. The client
@@ -313,18 +329,20 @@ new absolute-motion credit. Seed and region work is
 Consequently `Q_loc` is bounded from the external requests
 `O(P+1+J_loc+F_num)`, giving
 
-```math
+<!-- math-display: 7a0d7f056db062162d75da49
 Q_{\rm loc}\le
  (P+1+D_*J_{\rm loc})\mathrm{poly}(s).
  \tag{11}
-```
+-->
+![Formula](../../assets/math/7a0d7f056db062162d75da49.svg)
 
 Equations (9)--(11) bound its numerical part by
 
-```math
+<!-- math-display: 304c4670634073023f3d58b6
 (P+B)\,2^{2a^2}B^{230}\mathrm{poly}(s).
  \tag{12}
-```
+-->
+![Formula](../../assets/math/304c4670634073023f3d58b6.svg)
 
 This is a noncircular substitution: (8) treats `Q` as its client's
 external requests, while (11) derives those requests from accepted
@@ -341,11 +359,12 @@ The constructive parameters of van den Brand et al.,
 arXiv:2309.16629v1](https://arxiv.org/abs/2309.16629v1), give the
 rate
 
-```math
+<!-- math-display: c9c6000481fa1d30f820afb3
 Z\exp\bigl(O((\log Z)^{17/18}\log\log(Z+4))\bigr)
  \mathrm{poly}(\text{input bit length})
  \tag{13}
-```
+-->
+![Formula](../../assets/math/c9c6000481fa1d30f820afb3.svg)
 
 for the fixed polynomial-capacity exact-flow primitive used here.
 This is the quantitative dependency being used; a bare `Z^{1+o(1)}`
@@ -364,11 +383,12 @@ residual capacities truncated at the number of arcs. Pad the primitive
 size to `Z+B`; never pad it to `S`. Since `Z=O(P+1)` and
 `log(Z+B)<=O(s)`, (13) gives cost
 
-```math
+<!-- math-display: ddb14c06efab97d0bbcb53fe
 (P+B)\exp\bigl(O(s^{17/18}\log s)\bigr)\mathrm{poly}(s)
  \le (P+B)B
  \tag{14}
-```
+-->
+![Formula](../../assets/math/ddb14c06efab97d0bbcb53fe.svg)
 
 eventually. Exact threshold checks and the final union-flow recovery
 are therefore smaller than (12). There are `O(log(beta+2))=O(s)`
@@ -376,10 +396,11 @@ threshold tests, including the constant number of repeated endpoint
 tests. Using (1), a convenient conservative bound for a whole local
 projection is
 
-```math
+<!-- math-display: 915deea1e94e06dcadfd5f9d
 T_{\rm proj}\le (P+B)B^{250}
  \tag{15}
-```
+-->
+![Formula](../../assets/math/915deea1e94e06dcadfd5f9d.svg)
 
 for all sufficiently large `S`. The exponent 250 is an absolute
 envelope, not a new optimized constant. The exact changed support is
@@ -389,29 +410,32 @@ still `O(P)`, and a peel has weight less than `P`.
 
 For target gain `1<=K<=N`, set
 
-```math
+<!-- math-display: ad4ae6d61633bd5bddcc70b3
 L=\lceil10000 C N/K\rceil,\qquad
  g_*=\max\{1,\lfloor K/(100C)\rfloor\}.
-```
+-->
+![Formula](../../assets/math/ad4ae6d61633bd5bddcc70b3.svg)
 
 If `K>=100C`, then `L g_*<=101N`. If `K<100C`, then
 `g_*=1` and `L<=10001 C N`. Thus in every case
 
-```math
+<!-- math-display: 2dc3982cb491766ed6cbf959
 Lg_*\le10001 C N.
  \tag{16}
-```
+-->
+![Formula](../../assets/math/2dc3982cb491766ed6cbf959.svg)
 
 The exact debt identity pays total peel weight by
 `2L(g_*-1)+S^{-800}`. Including erased gain regions, expansions,
 contraction arities, successful pair materialization and tick count
 are bounded by an absolute constant times `N+Lg_*`. Hence
 
-```math
+<!-- math-display: b77055501cf985386e69115d
 \tau=O(aS),\qquad
  T_{\rm structural}=a^2 S\mathrm{poly}(s).
  \tag{17}
-```
+-->
+![Formula](../../assets/math/b77055501cf985386e69115d.svg)
 
 The second factor `a` allows applying a physical batch to all integral
 levels. Persistent sparse normalizations are charged by their changed
@@ -431,20 +455,22 @@ no-motion repair cascade.
 
 Therefore
 
-```math
+<!-- math-display: bdcf71e7efc05a53b2a2a57e
 J_{\rm top}=O(aS B^{200}s^2).
  \tag{18}
-```
+-->
+![Formula](../../assets/math/bdcf71e7efc05a53b2a2a57e.svg)
 
 Every notification causes constantly many point reads/settings and
 eligibility changes; a high-degree bin residual is read from
 `y=s-p+Cw`, without summing all its moving incidences. Thus
 
-```math
+<!-- math-display: f85d0a586909e657b1f8ec11
 Q_{\rm top}\le
  (aSs+D_*J_{\rm top})\mathrm{poly}(s).
  \tag{19}
-```
+-->
+![Formula](../../assets/math/f85d0a586909e657b1f8ec11.svg)
 
 Using `R_top=SB` in (9) bounds all top numerical work by
 `S B^{240}` eventually, with an absolute exponent. This includes
@@ -460,7 +486,7 @@ This proves (7), including a gain that jumps over many finer periods.
 
 There are at most `floor(tau/b_j)` triggers at level `j`. Hence
 
-```math
+<!-- math-display: 042b95f52c0900edc9a4abf3
 \begin{split}
  \sum_{j=2}^{a}\frac{\tau}{b_j}
        [(C+2)b_{j-1}+B]
@@ -468,7 +494,8 @@ There are at most `floor(tau/b_j)` triggers at level `j`. Hence
  &=O(a^3 S B).
  \end{split}
  \tag{20}
-```
+-->
+![Formula](../../assets/math/042b95f52c0900edc9a4abf3.svg)
 
 Multiplying this sum by the common factor in (15), rather than
 compounding costs along the ledger hierarchy, gives at most
@@ -484,10 +511,11 @@ materialization also fit the previously stated budgets.
 Combining (15)--(20) and absorbing the displayed fixed polynomials
 using (1), a deliberately loose per-phase bound is
 
-```math
+<!-- math-display: 8b8ecfc74da15b3cc2038db5
 T_{\rm phase}\le S B^{300}.
  \tag{21}
-```
+-->
+![Formula](../../assets/math/8b8ecfc74da15b3cc2038db5.svg)
 
 It holds equally on no-instances and prefixes ending in LOW. No phase
 count assumes that `K` equals the number of unmatched pairs.
@@ -496,10 +524,11 @@ count assumes that `K` equals the number of unmatched pairs.
 
 The initial checks
 
-```math
+<!-- math-display: 43f0620e0e6439d2cba624ee
 S\ge2^{100},\quad 100000C\le S^{1/20},\quad
  B\le S^{1/20},\quad q\ge S^{-1}
-```
+-->
+![Formula](../../assets/math/43f0620e0e6439d2cba624ee.svg)
 
 all hold eventually for the computable growing `a`. Retain the finite
 caps `S^20` on main actions/threshold iterations and `S^100` on an
@@ -548,11 +577,12 @@ most `O(a(1+log(N+1)))` phases, with an absolute implied constant.
 After multiplying (21) by this number and paying the exact final
 matching check, a conservative bound is
 
-```math
+<!-- math-display: db0bd66f9944ca91dc4ee3d4
 T_{\rm subcubic}\le S B^{320}
  =S\exp\bigl(O(s^{335/336}(\log s)^3)\bigr).
  \tag{22}
-```
+-->
+![Formula](../../assets/math/db0bd66f9944ca91dc4ee3d4.svg)
 
 The elementary path-port degree reduction has `N=4m_s-r=O(m_s)`
 and an exact optimum offset. Its linear-time decoder is valid for

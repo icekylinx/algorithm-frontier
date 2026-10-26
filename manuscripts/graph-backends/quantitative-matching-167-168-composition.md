@@ -20,13 +20,14 @@ Subject to the stated numerical and structural constructions, a single
 computable deterministic algorithm returns an exact maximum-cardinality
 matching in time
 
-```math
+<!-- math-display: a818861e403d893246f6eac8
 \boxed{\quad
  O(n+m)+(m_s+1)\exp\!\left(
  O\left((\log(m_s+2))^{167/168}
           (\log\log(m_s+4))^2\right)\right).
  \quad}                                                     \tag{1}
-```
+-->
+![Formula](../../assets/math/a818861e403d893246f6eac8.svg)
 
 The implied constant is absolute. There is no bipartiteness,
 connectedness, density, parity or perfect-matching promise.
@@ -58,9 +59,10 @@ it does not substitute into a fixed-parameter little-oh statement.
 For the subcubic matching graph, choose `S=2^s` with `N<=S<2N` and
 keep it fixed through all phases. The numerical backend uses master
 
-```math
+<!-- math-display: 9fed57ff9201be3082faaf34
 U=2s,\qquad S_b=2^U=S^2.           \tag{2}
-```
+-->
+![Formula](../../assets/math/9fed57ff9201be3082faaf34.svg)
 
 At one recursive general-cycle input, an SNC export is a flat forest
 over that **immediate** input. Contract only forest edges explicitly
@@ -105,15 +107,16 @@ changing that theorem's prescribed edge lengths.
 
 Set
 
-```math
+<!-- math-display: 9dee3bcacf609a6f5d21b5cd
 p=41/42,\quad \alpha=167/168,\quad
  t=1/84,\quad \beta=83/84,\quad
  L_U=\lceil\log_2(U+4)\rceil.
-```
+-->
+![Formula](../../assets/math/9dee3bcacf609a6f5d21b5cd.svg)
 
 At every recursive level use the same master parameters
 
-```math
+<!-- math-display: e0cad3b219354bb855bc38e6
 \begin{split}
  k&=2^{\lceil U^\alpha L_U\rceil},\\
  \Gamma&=2^{\lceil U^p\rceil L_U^2},\\
@@ -121,7 +124,8 @@ At every recursive level use the same master parameters
  C_{\rm port}&=2^{\lceil U^\beta\rceil},\\
  A&=2^{\lceil U^\beta\rceil L_U^2}.
  \end{split}                                                \tag{3}
-```
+-->
+![Formula](../../assets/math/e0cad3b219354bb855bc38e6.svg)
 
 Finite integer-root and division routines compute equivalent rounded
 parameters. The geometric graph degree is bounded by a fixed
@@ -136,10 +140,11 @@ The old port exponents `104/105` and `167/168` are not retained in
 any subsidiary expansion. Likewise the old common multiplier
 `M^10` or `S_b^10` is not used. Instead, with
 
-```math
+<!-- math-display: 2d7f4203e91dc107730a5995
 h=\lceil\log_2 C_{\rm port}\rceil,\qquad
  H_{\rm port}=2^{\lceil\log_2(4(h+1))\rceil},              \tag{4}
-```
+-->
+![Formula](../../assets/math/2d7f4203e91dc107730a5995.svg)
 
 we have `4(h+1)<=H_port<8(h+1)`. Multiply both length and gradient
 of each nonfiber geometric edge by `H_port`, and give every binary
@@ -158,16 +163,18 @@ at most `c_K k` parent edges for an absolute `c_K`. Central edges
 retain their original off-tree length, not an old spanner-alias price.
 If `L_i` is the largest input length at outer numerical level `i`,
 
-```math
+<!-- math-display: 2fad9f294ee31474f1088bc6
 L_{i+1}\le c_K k H_{\rm port}\max\{L_i,2\}.              \tag{5}
-```
+-->
+![Formula](../../assets/math/2fad9f294ee31474f1088bc6.svg)
 
 With root lengths of `O(U)` bits and depth `O(U/log k)`, (5) gives
 
-```math
+<!-- math-display: eda6d8dc3935ff7e6a1ea9ce
 B_{\rm len}=O(U),\qquad
  B_{\rm grad}=O(U\cdot\mathrm{depth})=O(U^{169/168}).       \tag{6}
-```
+-->
+![Formula](../../assets/math/eda6d8dc3935ff7e6a1ea9ce.svg)
 
 For the first bound, sum `log k+O(log U)` per level. For the second,
 retain the existing frozen gauges: a potential or path sum adds only
@@ -195,10 +202,11 @@ choose its new local scale data with the already charged restart.
 
 The parameter identities are
 
-```math
+<!-- math-display: 4aa0eb15aacb20b5ff2e13ca
 p+t=\beta,\qquad 1-t=\beta,\qquad
  \beta+1-\alpha=\alpha.                                  \tag{7}
-```
+-->
+![Formula](../../assets/math/4aa0eb15aacb20b5ff2e13ca.svg)
 
 The HRG tree-family logarithm is `O(kappa log Gamma)=O(U^beta L_U)`.
 By (6), the aspect-dependent routing logarithm is
@@ -218,9 +226,10 @@ Both `log(k^10)` and `depth log A` are `O(U^(167/168)L_U)`,
 using the last identity in (7). The same absolute recurrences
 therefore give common factor
 
-```math
+<!-- math-display: 3417a7df6ad45e7e53112e80
 E(s)=\exp\bigl(O(s^{167/168}\log(s+4))\bigr).              \tag{8}
-```
+-->
+![Formula](../../assets/math/3417a7df6ad45e7e53112e80.svg)
 
 The imported interface is the full raw one: actual nominal size `M`
 initializes in `M E(s)` time, while edit/query work, complete logs,
@@ -243,17 +252,19 @@ at most a factor-two quality loss.
 
 Compute
 
-```math
+<!-- math-display: 6089a8ae7396897be3a59647
 T_s=\lceil\log_2(s+4)\rceil,\qquad
  a=\left\lfloor\frac{\lfloor s^{1/168}\rfloor}{T_s^2}\right\rfloor.
-```
+-->
+![Formula](../../assets/math/6089a8ae7396897be3a59647.svg)
 
 Suspend the fast branch unless `a>=1000`. Let
 
-```math
+<!-- math-display: 99ff5d368bf03b1e2579473b
 C=a+1,\quad v=\lceil s/a\rceil,\quad B=2^v,\quad
  q=B^{-100},\quad D_*=B^{10},                              \tag{9}
-```
+-->
+![Formula](../../assets/math/99ff5d368bf03b1e2579473b.svg)
 
 and retain `delta=S^-1000`, `epsilon=S^-3000`, `H_price=S^100`.
 The matching floor `C`, numerical port capacity `C_port`, port scale
@@ -261,10 +272,11 @@ The matching floor `C`, numerical port capacity `C_port`, port scale
 
 Now
 
-```math
+<!-- math-display: b33ab3a64483f03222db13f4
 v=\Theta(s^{167/168}(\log s)^2),\quad
  a^2=o(v),\quad v=o(s),\quad \log E(s)=o(v).                \tag{10}
-```
+-->
+![Formula](../../assets/math/b33ab3a64483f03222db13f4.svg)
 
 The computable master cap `D_*` thus dominates all required backend
 factors with fixed slack, and `(4D_*)^-1>2q` supplies the strong-
@@ -276,9 +288,10 @@ The periods `b_j=B^(a-j)` satisfy `S<=b_0<2^aS`. Rounding
 `2^(2a^2)`. Top lifetime `R_top=SB` contains its actual
 `O(aS log S)` births and retargetings. At a local reset `j>1`,
 
-```math
+<!-- math-display: 6ecf7e64d5b7dd8196b54b7b
 P\le(C+2)b_{j-1}<(a+3)2^aS/B.
-```
+-->
+![Formula](../../assets/math/6ecf7e64d5b7dd8196b54b7b.svg)
 
 Therefore local `R=8192(P+1)` fits `R+B<=S` eventually, and both
 top and local rounded sizes have `M<=S^2`. This meets the backend
@@ -289,9 +302,10 @@ For `Q` externally requested engine operations and `J` accepted
 steps, internal refreshes number `O(D_*J)`. Their complete sweeps
 cost `O(D_*^2J)`. The exact priced-client categories give
 
-```math
+<!-- math-display: d48f4b188ad90c10d20c832e
 T_{\rm price}\le(M+Q)D_*^2\mathrm{poly}(s).           \tag{11}
-```
+-->
+![Formula](../../assets/math/d48f4b188ad90c10d20c832e.svg)
 
 Here `Q` excludes internal refresh/repricing transactions. Responses
 to genuine numerical-motion notifications are external requests;
@@ -309,18 +323,20 @@ For its exact static-flow checks, the fixed deterministic primitive
 has factor `exp(O(s^(17/18)log s))` after the capacity-digit reduction.
 The exact gap is
 
-```math
+<!-- math-display: e160fb0c0db8b16f552750cf
 \frac{167}{168}-\frac{17}{18}=\frac{25}{504}>0.             \tag{12}
-```
+-->
+![Formula](../../assets/math/e160fb0c0db8b16f552750cf.svg)
 
 This factor and its bit costs are at most `B` eventually. Small
 graphs are charged their size plus `B`, not `S`. Including `O(s)`
 threshold tests and exact union-flow recovery, a full projection
 costs at most
 
-```math
+<!-- math-display: 95ef715c291bd927380220df
 T_{\rm proj}\le(P+B)B^{250}.      \tag{13}
-```
+-->
+![Formula](../../assets/math/95ef715c291bd927380220df.svg)
 
 Its exact changed support is still `O(P)`. The frozen parent,
 optimistic boundary, permanent locks and complete residual peel
@@ -340,11 +356,12 @@ response and sweep costs in (11) place the top client within
 
 For local resets, including large gain jumps,
 
-```math
+<!-- math-display: 75a9a8135551ed992731781c
 \sum_{j=2}^{a}\frac{\tau}{b_j}
        [(C+2)b_{j-1}+B]
  \le\tau[(a-1)(C+2)B+2B]=O(a^3SB).                        \tag{14}
-```
+-->
+![Formula](../../assets/math/75a9a8135551ed992731781c.svg)
 
 This is an additive sum, not a product down the hierarchy. Sparse
 projection support and persistent carrier normalization are paid
@@ -359,10 +376,11 @@ phase gains a `Theta(1/a)` fraction above the small integer range.
 The smaller range takes `O(a)` further successful gains. It uses
 the same `S,a` throughout. Consequently
 
-```math
+<!-- math-display: c21ceb5c585dd5216da15cfa
 T_{\rm candidate}\le SB^{320}
    =S\exp(O(s^{167/168}(\log s)^2)).                        \tag{15}
-```
+-->
+![Formula](../../assets/math/c21ceb5c585dd5216da15cfa.svg)
 
 This phase proof uses comparison matchings and does not assume that
 the starting deficiency equals its target `K`. It applies on arbitrary

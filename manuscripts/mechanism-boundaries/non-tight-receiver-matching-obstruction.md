@@ -31,9 +31,10 @@ any_source_fixed_tree_matching_interface.md.
 ## 1. A connected subcubic nonbipartite input with gap one
 
 Take two copies of the five-vertex alternating path
-```math
+<!-- math-display: 01e132c4a572d638cf890ab9
 c-q-b-r-a
-```
+-->
+![Formula](../../assets/math/01e132c4a572d638cf890ab9.svg)
 with matching edges qb and ra. Vertices c,c' are free. Join the contacts
 a,a' through the unmatched edges ap and za' and matching edge pz.
 The main twelve-vertex path has matching size five.
@@ -41,9 +42,10 @@ The main twelve-vertex path has matching size five.
 Add four paired-remainder vertices u,v,w,t, matching edges uv and wt,
 and unmatched edges pu,vw,wu. The triangle u,v,w is attached by pu.
 The connected graph has maximum degree three and
-```math
+<!-- math-display: 255f40da659bf9c57729dbcc
 N=16.
-```
+-->
+![Formula](../../assets/math/255f40da659bf9c57729dbcc.svg)
 Its initial matching has size seven. Flipping the augmenting main path
 from c to c' and keeping uv,wt gives a perfect matching of size eight.
 The true gap is exactly one.
@@ -53,9 +55,10 @@ construction. It creates no extra contact of an active top bin.
 The only eventual top contacts are a-to-p and a'-to-z.
 
 Use K=1, singleton weights one, zero ordinary top debt, and
-```math
+<!-- math-display: c1e5c6faf33a33a62fe7829a
 L=10000CN,\qquad C\ge100.                 \tag{1}
-```
+-->
+![Formula](../../assets/math/c1e5c6faf33a33a62fe7829a.svg)
 Use the standard sufficiently fine dyadic grid and polynomial H.
 Negligible positivity-service padding can be absorbed in the strict
 margins below.
@@ -71,9 +74,10 @@ O(1) extra slack records per step and is legal under the cache
 accuracy contract. It does not reset the allocation registers.
 
 Start from free c and expand qb. The standard top expansion gives
-```math
+<!-- math-display: 5f9491f6eaf1401f70c0bb18
 x_{qc}=C+1,\qquad x_{qb}=L-C-1,\qquad s_b=1.
-```
+-->
+![Formula](../../assets/math/5f9491f6eaf1401f70c0bb18.svg)
 Increase b's slack to its first crossing of 4C along b-to-q-to-c.
 The donor and terminal are L-O(C), so its true ratio stays above
 one half. Use legal steps with every relative motion at most 1/256;
@@ -82,32 +86,36 @@ eligible exact cache is then in [4C,(257/256)4C].
 
 Expand ra from the eligible b. It places C+1 on rb and L-C-1 on ra,
 gives a slack one, and leaves
-```math
+<!-- math-display: a144ba0d2a033f05678c4f8d
 3C-1\le s_b\le3.015625C-1,\qquad s_a=1 .
-```
+-->
+![Formula](../../assets/math/a144ba0d2a033f05678c4f8d.svg)
 
 The missing reduction of b is numerical, not another expansion.
 Transfer along a-to-r-to-b until b first falls to at most 2.04C.
 This keeps
-```math
+<!-- math-display: fbfb7c65c24edfbb394a1626
 3C\le s_a+s_b\le3.015625C .
-```
+-->
+![Formula](../../assets/math/fbfb7c65c24edfbb394a1626.svg)
 Before the last step, s_b>2.04C and s_a<.976C. Its size is at
 most s_a/256<.004C. Hence the resulting slacks obey
-```math
+<!-- math-display: a20d8249ce18ddb2b71b8296
 2.03C\le s_b\le2.04C,\qquad
                     .96C\le s_a<.986C .                     \tag{2}
-```
+-->
+![Formula](../../assets/math/a20d8249ce18ddb2b71b8296.svg)
 
 This intermediate path does not need a one-sided ratio above one
 half. It passes the one-sided one-quarter threshold, and is a
 strong direction for the original full-log raw objective. At
 every point in this transfer its positive and negative normalized
 full-log masses per unit are
-```math
+<!-- math-display: c3c916b84c1228990f2083bd
 P_{\rm raw}=1/s_a+1/(C+s_a)>1.51/C,\qquad
  Q_{\rm raw}=1/s_b+1/(L-C-s_a)<.493/C .
-```
+-->
+![Formula](../../assets/math/c3c916b84c1228990f2083bd.svg)
 Thus P_raw>3Q_raw and its full-log ratio is greater than one half.
 The limiting one-sided ratio is about one third, not one half.
 The conservative one-sided score is also positive:
@@ -119,19 +127,21 @@ Increase a's slack to its first crossing of 23C/8 along
 a-to-r-to-b-to-q-to-c. Both donors and the terminal stay L-O(C),
 so this has one-sided and full-log ratios above one half. The
 normalized step leaves
-```math
+<!-- math-display: d6fe44da83a398e08c2b293d
 23C/8\le s_a\le2.9C<3C.                 \tag{3}
-```
+-->
+![Formula](../../assets/math/d6fe44da83a398e08c2b293d.svg)
 Bin b is internal and its slack stays fixed.
 
 Write s=s_b and a_0=s_a. The resulting exact top equations are
-```math
+<!-- math-display: 139f243ab18f1dfc6471a17d
 \begin{aligned}
  x_{rb}&=C+a_0,             &x_{ra}&=L-C-a_0,\\
  x_{qb}&=L-2C-a_0-s,        &x_{qc}&=2C+a_0+s,\\
  s_c&=L-3C-a_0-s .
 \end{aligned}                                                     \tag{4}
-```
+-->
+![Formula](../../assets/math/139f243ab18f1dfc6471a17d.svg)
 All rows sum to L, and every bin has load plus slack L-C. Every
 coordinate is positive and guarded. The only remainder contact a
 stays below 3C.
@@ -156,10 +166,11 @@ unexpanded.
 ## 3. Lower ledgers and the no-action condition
 
 For every integral floor c_0<=C, a debt-free allocation is
-```math
+<!-- math-display: c507b48ffb1aba6631026f59
 x^{(c_0)}_{ra}=L-c_0,\quad x^{(c_0)}_{rb}=c_0,\qquad
  x^{(c_0)}_{qb}=L-2c_0,\quad x^{(c_0)}_{qc}=2c_0.             \tag{5}
-```
+-->
+![Formula](../../assets/math/c507b48ffb1aba6631026f59.svg)
 The residuals at a,b are c_0 and at c are L-2c_0>=c_0.
 All singleton floor requirements hold. No equality between different
 integral-floor ledgers is imposed.
@@ -187,47 +198,53 @@ The receiver rb grows from x_0=C+1 to C+a_0 in
 2.9C/256<.012C. At the j-th upward reset its value x_j lies
 between 1.5x_(j-1) and 1.5x_(j-1)+.012C. Its third crossing
 therefore occurs by
-```math
+<!-- math-display: d76942c4b6c87a0aaa4cdb00
 x_3\le3.375(C+1)+.012C(1+1.5+2.25)<3.875C
-```
+-->
+![Formula](../../assets/math/d76942c4b6c87a0aaa4cdb00.svg)
 for C>=100, and must occur before preparation ends. Its fourth
 crossing is beyond 5.0625(C+1)>3.9C, so exactly three occur.
 The retained register thus satisfies
-```math
+<!-- math-display: c5b2443cb390f699f0f62480
 \ell_{rb}=(3/4)x_3\ge(81/32)(C+1)>2.53C,\qquad
               \bar c_{rb}/H<.1/C                           \tag{6}
-```
+-->
+![Formula](../../assets/math/c5b2443cb390f699f0f62480.svg)
 after allowing the small integer rounding term.
 
 The large donor qb changes by only O(C) during preparation,
 so its birth register .75(L-C-1) is never crossed. Its price
 is O(H/L). All other registers are reused as well.
 The source offer at b is at least
-```math
+<!-- math-display: ab4e1120c4988c01ec11e09b
 \sigma_b/H\ge .75/(2.04C)-1/H>.367/C .
-```
+-->
+![Formula](../../assets/math/ab4e1120c4988c01ec11e09b.svg)
 The price of b-to-r-to-a is below .1/C after division by H.
 Its offer at a exceeds .267/C, while a's direct offer is below
-```math
+<!-- math-display: 255e4d38791f1d043e4d1f44
 .75/((23/8)C)<.261/C .
-```
+-->
+![Formula](../../assets/math/255e4d38791f1d043e4d1f44.svg)
 The donor qb is L-O(C), so b's offer at c exceeds .36/C.
 The direct offer of c is O(1/L); a's offer anywhere cannot exceed
 its own direct offer, because ordinary costs are nonnegative.
 
 Hence b is the unique first bin in the exact conservative SPT.
 Its ordinary part is
-```math
+<!-- math-display: 63891095b1113406fec4d701
 b\longrightarrow r\longrightarrow a,\qquad
           b\longrightarrow q\longrightarrow c.              \tag{7}
-```
+-->
+![Formula](../../assets/math/63891095b1113406fec4d701.svg)
 Fix these exact labels D. They satisfy
-```math
+<!-- math-display: 4024dfa36ebde85190359b6d
 \begin{aligned}
  D(r)&=D(a)=D(b)+\bar c_{rb},\\
  D(q)&=D(c)=D(b)+\bar c_{qb}. 
 \end{aligned}                                                     \tag{8}
-```
+-->
+![Formula](../../assets/math/4024dfa36ebde85190359b6d.svg)
 Donor prices are positive integers. Thus r-to-b and q-to-b are
 non-tight receiving directions. Only r-to-a and q-to-c are tight.
 
@@ -238,47 +255,54 @@ the tree c-q-b-r-a. There is no missing off-forest physical edge.
 
 Allow every donor direction and precisely the old-D-tight receiving
 directions. The only nontrivial simple bin-to-bin paths are
-```math
+<!-- math-display: 6d6e013518adbaf9f705ca31
 b\to r\to a,\qquad b\to q\to c.       \tag{9}
-```
+-->
+![Formula](../../assets/math/6d6e013518adbaf9f705ca31.svg)
 A or c can use its donor into its incident row, but the only available
 receiver returns to that same bin; this backtrack reaches no other bin.
 
 The b-to-a path never passes. Initially
-```math
+<!-- math-display: 52364e61ef60c22fbfe9e9e4
 \sigma_b/H\le .75/(2.03C)<.37/C,\qquad
  \tau_a/H\ge1.25/(2.9C)>.431/C.                              \tag{10}
-```
+-->
+![Formula](../../assets/math/52364e61ef60c22fbfe9e9e4.svg)
 Its donor cost is nonnegative. Every accepted path is consequently
 b-to-q-to-c. It increases s_b, decreases s_c, and leaves s_a and the
 r-incidences fixed, so (10) only strengthens. Fixed-D feasibility
 is preserved by the operative accepted-step proof.
 
 Put
-```math
+<!-- math-display: 0c8f85d22b5347f5478fa1fd
 T=s_b+s_c=L-3C-a_0.                 \tag{11}
-```
+-->
+![Formula](../../assets/math/0c8f85d22b5347f5478fa1fd.svg)
 Throughout this interval x_qb=s_c+C. The current register bound gives
 bar c_qb/H<1/(2(s_c+C))+1/H. While s_b<=T/10,
-```math
+<!-- math-display: 88d09f3e995a7711c805db27
 \sigma_b/H\ge7.5/T-1/H
-```
+-->
+![Formula](../../assets/math/88d09f3e995a7711c805db27.svg)
 but
-```math
+<!-- math-display: 8539bd8bb6d21064e61cc87c
 \tau_c/H+\bar c_{qb}/H
  \le1.25/(.9T)+1/(2(.9T+C))+2/H<2/T+2/H .
-```
+-->
+![Formula](../../assets/math/8539bd8bb6d21064e61cc87c.svg)
 The path still passes. At exhaustion, therefore,
-```math
+<!-- math-display: c1a9c1e35ebfed07b6f8eca9
 s_b>T/10.                     \tag{12}
-```
+-->
+![Formula](../../assets/math/c1a9c1e35ebfed07b6f8eca9.svg)
 
 Acceptance before any step also implies s_b<(3/5)s_c.
 After its small step,
-```math
+<!-- math-display: 61d85688cde9e50dcf36804d
 s_b^{\rm new}/s_c^{\rm new}
  <(257/255)(3/5)<.605 .
-```
+-->
+![Formula](../../assets/math/61d85688cde9e50dcf36804d.svg)
 The initial state satisfies the same bound. Consequently s_c>.62T
 throughout, and x_qb remains large. All other allocations are unchanged
 or increase from their positive initial values. There is no guard event.
@@ -297,36 +321,40 @@ become eligible.
 ## 6. A strong matching comparison and large E remain
 
 At exhaustion consider
-```math
+<!-- math-display: 921a3f5636c1c34f2f360d59
 a\to r\to b.                  \tag{13}
-```
+-->
+![Formula](../../assets/math/921a3f5636c1c34f2f360d59.svg)
 Its donor is L-C-a_0=L-O(C), its terminal slack exceeds T/10,
 and its start slack is at most 2.9C. Its true ratio is greater
 than one half for (1).
 
 Transfer delta=L/20 on this path. The donor exceeds delta and
 s_b>T/10>.09L>delta, so the comparison is feasible. It gives
-```math
+<!-- math-display: bf97fa403c7b760af1e5570c
 P=\delta/s_a\ge L/(58C)>12N,\qquad
  Q_s=\delta/s_b<1,\qquad Q_x=\delta/x_{ra}<1.                 \tag{14}
-```
+-->
+![Formula](../../assets/math/bf97fa403c7b760af1e5570c.svg)
 The missed direction has the matching comparison's required large
 normalized positive mass; it is not merely an isolated small-gain
 cycle. The physical graph still independently has matching gap one.
 
 The fixed screen is large as well. Initially
-```math
+<!-- math-display: 304e1c9c5f326d9d9a117f9b
 \pi_b=(A-D(b))/H=\sigma_b^{\rm initial}/H>.367/C.
-```
+-->
+![Formula](../../assets/math/304e1c9c5f326d9d9a117f9b.svg)
 It stays fixed while s_b>T/10>.09L. This one term of E exceeds
 .033L/C-5/4, already far above 5N.
 
 ## 7. Scope: repairing the fixed-potential compatibility contract
 
 Path (13) uses r-to-b, whose old label gap is
-```math
+<!-- math-display: c9603485fb83785b120aa3a5
 D(r)-D(b)=\bar c_{rb}^{\rm initial}>0.    \tag{15}
-```
+-->
+![Formula](../../assets/math/c9603485fb83785b120aa3a5.svg)
 No physical forest choice can make it old-D-tight. The whole ambient
 compatible graph was already searched. This reverses an old donor
 as a receiving arc, unlike the harmless reverse of an old tight

@@ -12,9 +12,10 @@ Let `D` be bins of positive integer weights `w`, and let `A` be rows with at mos
 
 Rooting each selected tree at a bin gives an injection of rows into bins: assign a row to the child endpoint of its selected edge. The roots are precisely the free bins. A selected forest implies strict Hall in the form
 
-```math
+<!-- math-display: 445ce151be1c1a2eede76a42
 h(X):=|X|-|\{r:N(r)\subseteq X\}|\ge 1
-```
+-->
+![Formula](../../assets/math/445ce151be1c1a2eede76a42.svg)
 
 for every nonempty bin set `X`. Indeed, every captive row contributes a different selected edge internal to `X`, and the subgraph of a forest induced by `X` has at most `|X|-1` edges.
 

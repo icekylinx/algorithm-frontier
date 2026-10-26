@@ -10,7 +10,7 @@ Run the local [quotient-rounding checker](check_quotient_rounding.py) from the r
 python3 problems/group-metric-constraints/verify/check_quotient_rounding.py
 ~~~
 
-The checker independently enumerates generated subgroups of six explicit whole blocks in $`\mathbb Z_6^3`$. Its subgroup enumeration does not call an HNF implementation.
+The checker independently enumerates generated subgroups of six explicit whole blocks in <code class="math">\mathbb Z_6^3</code>. Its subgroup enumeration does not call an HNF implementation.
 
 | Finite domain | Checked quantity |
 |---|---:|

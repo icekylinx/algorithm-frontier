@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns at least $`\lceil K_\star/2\rceil`$ units to every player of an actual selected basis, preserving the exact combined setup and assignment budget. More generally, fixed integer $`d\ge2`$ gives $`\lceil K_\star/d\rceil`$.
+Returns at least <code class="math">\lceil K_\star/2\rceil</code> units to every player of an actual selected basis, preserving the exact combined setup and assignment budget. More generally, fixed integer <code class="math">d\ge2</code> gives <code class="math">\lceil K_\star/d\rceil</code>.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic corank branching and exact-budget recovery; the whole-ground alter
 
 **Time**
 
-For fixed integer $`d\ge2`$ set $`R_d=(d+1)/(d-1)`$, $`A_d=\Gamma(R_d)`$, and $`B_d=2-1/A_d`$. Time is $`A_d^c\mathrm{poly}(H)`$ or $`B_d^q E(q)\mathrm{poly}(H)`$. Exact factor two has $`A_2=27/4`$ and $`B_2=50/27`$; factor three has $`A_3=4`$ and $`B_3=7/4`$.
+For fixed integer <code class="math">d\ge2</code> set <code class="math">R_d=(d+1)/(d-1)</code>, <code class="math">A_d=\Gamma(R_d)</code>, and <code class="math">B_d=2-1/A_d</code>. Time is <code class="math">A_d^c\mathrm{poly}(H)</code> or <code class="math">B_d^q E(q)\mathrm{poly}(H)</code>. Exact factor two has <code class="math">A_2=27/4</code> and <code class="math">B_2=50/27</code>; factor three has <code class="math">A_3=4</code> and <code class="math">B_3=7/4</code>.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$`q`$ is the nonloop player count; $`r\ge1`$ is its matroid rank; $`c=q-r`$; $`K_\star`$ is the integer optimum count; each unit has value $`v>0`$. $`\Gamma(R)=R^R/(R-1)^{R-1}`$ and $`E(q)=2^{O(q\log\log(q+2)/\log(q+2))}`$. $`H`$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+<code class="math">q</code> is the nonloop player count; <code class="math">r\ge1</code> is its matroid rank; <code class="math">c=q-r</code>; <code class="math">K_\star</code> is the integer optimum count; each unit has value <code class="math">v&gt;0</code>. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code> and <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 
@@ -40,6 +40,6 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md).
 
-The [base proof](proof.md) treats assignment costs; the [setup and full quota tradeoff](setup-tradeoffs.md) proves the stronger shared-budget statement. With $`c=0`$, exact count optimization is polynomial after subtracting the fixed setup cost.
+The [base proof](proof.md) treats assignment costs; the [setup and full quota tradeoff](setup-tradeoffs.md) proves the stronger shared-budget statement. With <code class="math">c=0</code>, exact count optimization is polynomial after subtracting the fixed setup cost.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

@@ -19,11 +19,12 @@ transversal (IT), or a class set `S`, a total dominating set `D` for all
 vertices in those classes, and a constellation `K` on a class set
 `S_0` containing `S`, such that
 
-```math
+<!-- math-display: e030e6975c17d990398039b3
 |D|<(2+\epsilon)(|S|-1),\qquad
  V(K)\subseteq D,\qquad
  |D\setminus V(K)|<\epsilon(|S|-1).
-```
+-->
+![Formula](../../assets/math/e030e6975c17d990398039b3.svg)
 
 The constellation is induced in `G_(S_0)`: first restrict to the
 classes in `S_0`, then delete all within-class edges, as in the
@@ -48,43 +49,48 @@ v2, dated 27 February 2020.
 Here is a useful stronger quantitative baseline derived directly from
 those interfaces. Choose uniformly feasible parameters
 
-```math
+<!-- math-display: d3136dfe162e330da7a06c96
 \mu=\rho=\epsilon/(100r),\qquad Q=\lceil1/\mu\rceil,
-```
+-->
+![Formula](../../assets/math/d3136dfe162e330da7a06c96.svg)
 
 where `Q` denotes the paper's cap parameter `U`. Put
 `z=r/epsilon`. The original birth-growth argument gives
 
-```math
+<!-- math-display: 226e3aaffa8c9561462cdf14
 L_0=O(z\log(q+1)).
-```
+-->
+![Formula](../../assets/math/226e3aaffa8c9561462cdf14.svg)
 
 The signature base is `b=Q/(Q-mu rho)`, so `log b=Theta(z^{-3})`.
 At a continuing boundary, noncollapsibility implies
 `|X_i|<=|Y_i|/(1-mu)<=2q`. Consequently the largest finite
 absolute signature coordinate is at most
 
-```math
+<!-- math-display: 362d62d2d51dfb242f7a008b
 H_0=O\!\left(z^3[L_0\log(2+z)+\log(q+1)]\right).
-```
+-->
+![Formula](../../assets/math/362d62d2d51dfb242f7a008b.svg)
 
 There are at most `2L_0` finite coordinates and their absolute values
 are nonnegative nondecreasing integers. A count by length and height,
 using weakly increasing lists rather than arbitrary subsets of the
 height range, therefore yields
 
-```math
+<!-- math-display: 3a7366810ad1ddf90982f637
 \log\#\mathrm{signatures}
    =O\!\left(L_0\log(2+H_0/L_0)\right)
    =O\!\left(z\log(2+z)\log(q+1)\right).
-```
+-->
+![Formula](../../assets/math/3a7366810ad1ddf90982f637.svg)
 
 Thus a fair named **derived-public** baseline for the same contract is
 
-```math
+<!-- math-display: cdcb2a0b949960fe70c418e3
 P\,(q+1)^{
             O((r/\epsilon)\log(2+r/\epsilon))}.
-```
+-->
+![Formula](../../assets/math/cdcb2a0b949960fe70c418e3.svg)
 
 This is a derivation in the present notes, not a displayed rate in the
 paper. It already improves a literal use of the paper's coarse height
@@ -101,10 +107,11 @@ The current-blocker construction retains the signature's height-to-length
 ratio but adds a certifying stop that forces
 `L=O(epsilon^{-1} log(q+1))`. Its audited rate is consequently
 
-```math
+<!-- math-display: a8cb56c994e679c7317ff267
 P\,(q+1)^{O(\epsilon^{-1}\log(2+r/\epsilon))}
        \mathrm{poly}(b_\epsilon+\log P).
-```
+-->
+![Formula](../../assets/math/a8cb56c994e679c7317ff267.svg)
 
 The improvement is the factor `r` in the exponent on the class count.
 Since `r` can be replaced by `min(r,q+1)`, its arbitrary-graph
@@ -131,11 +138,12 @@ is in [independent-transversal-elementary-exponential-fallback.md](independent-t
 It is a derived public baseline, not an independent new result.
 Thus the fair combined public bound is
 
-```math
+<!-- math-display: d5e6b1d270add65ffe126599
 P\min\left\{\exp(O(q)),\,
  (q+1)^{O((r/\epsilon)\log(2+r/\epsilon))}\right\}
  \mathrm{poly}(b_\epsilon+\log P).
-```
+-->
+![Formula](../../assets/math/d5e6b1d270add65ffe126599.svg)
 
 The current-blocker algorithm also takes the minimum with the same
 fallback, replacing only the second exponent's outer `r/epsilon`

@@ -6,9 +6,10 @@
 algorithm for arbitrary signed binary input, including indexed witnesses.
 Its current exponent is
 
-```math
-E=\frac{158153814247997}{318928754919134}<0.495891.
-```
+<!-- math-display: 2e4692a5690de048c3ca74ff
+E=\frac{158153814247997}{318964058919134}<0.495836.
+-->
+![Formula](../../assets/math/2e4692a5690de048c3ca74ff.svg)
 
 Its running time includes a finite input-independent circuit search. The
 argument does not assume that this search is practical, or that fixed
@@ -26,14 +27,16 @@ oracle is a hypothesis of Theorem F.
    exact search. Part II, Section 6 supplies the refined divisibility,
    grid and error allowances. This is the source of the startup constant.
 3. **Refined trace contacts.** Part II, Sections 2–4 prove the new trace
-   bound and specify every continuous domain. The
+   bound and extend the second positive-query lookup from `1/2` to `14/25`
+   for three additional families, with every continuous domain explicit. The
    [contact checker](../../tools/verify_subset_sum_contacts.py) certifies
    those numerical inequalities by exact rational subdivision. Its
-   [receipt](verify/receipt.json) covers all 44 branches.
+   [receipt](verify/receipt.json) covers all 62 branches.
 4. **Whole-profile and cost bounds.** Part II, Sections 5–7 reconstruct
-   the reflected envelope, justify retyping and balance the outer costs.
+   the continuous reflected envelope, prove the finite contact-cone extension,
+   justify retyping and balance the outer costs.
    The [scalar checker](../../tools/verify_subset_sum_scalars.py) verifies
-   all 104 one-sided profile comparisons, the refined input difference
+   all 160 endpoint profile comparisons, the refined input difference
    table, compiler grid and complete outer ledger.
 5. **Arbitrary integers and witnesses.** Part I, Section I.3 proves
    canonical layers, deterministic round selection, signed-key energy,

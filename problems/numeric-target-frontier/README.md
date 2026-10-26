@@ -12,7 +12,7 @@ Deterministic upper algorithms in the stated exact rank/optimization-oracle mode
 
 **Time**
 
-For total target $`T>0`$ and $`Q>0`$ distinct original nonempty eligible-column supports: $`2^{O(T\log(2+\min\{Q/T,T\}))}\mathrm{poly}(H)`$. Cases $`T=0`$ or $`Q=0`$ are polynomial. The results below give distinct refinements.
+For total target <code class="math">T&gt;0</code> and <code class="math">Q&gt;0</code> distinct original nonempty eligible-column supports: <code class="math">2^{O(T\log(2+\min\{Q/T,T\}))}\mathrm{poly}(H)</code>. Cases <code class="math">T=0</code> or <code class="math">Q=0</code> are polynomial. The results below give distinct refinements.
 
 **Space**
 
@@ -20,7 +20,7 @@ Uniform polynomial binary workspace, including infeasible instances.
 
 **Parameters**
 
-$`T=\sum_jT_j`$; $`Q`$ counts distinct supports, not coefficient values; $`d`$ is row dimension; $`H`$ includes the full binary input and charged polynomial oracle work; $`H_\epsilon`$ also includes the rational accuracy.
+<code class="math">T=\sum_jT_j</code>; <code class="math">Q</code> counts distinct supports, not coefficient values; <code class="math">d</code> is row dimension; <code class="math">H</code> includes the full binary input and charged polynomial oracle work; <code class="math">H_\epsilon</code> also includes the rational accuracy.
 
 **Model and representation**
 
@@ -28,7 +28,7 @@ One normalized monotone integral polymatroid, with exact rank access or a readab
 
 **Lower-bound scope**
 
-For every budget pair $`t\ge512,q\ge1`$, a rank-oracle family with $`T\le t,Q\le q`$ requires at least $`2^{t\log_2(2+\min\{q/t,t\})/256}`$ queries, including bounded-error randomized decision. Separate ETH results use readable rank programs; they are not hardness claims for every explicit matroid class.
+For every budget pair <code class="math">t\ge512,q\ge1</code>, a rank-oracle family with <code class="math">T\le t,Q\le q</code> requires at least <code class="math">2^{t\log_2(2+\min\{q/t,t\})/256}</code> queries, including bounded-error randomized decision. Separate ETH results use readable rank programs; they are not hardness claims for every explicit matroid class.
 
 **Review status**
 
@@ -40,61 +40,62 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 ## Results
 
-Each time bound includes $`\mathrm{poly}(H)`$ unless another input size is shown.
+Each time bound includes <code class="math">\mathrm{poly}(H)</code> unless another input size is shown.
 
 **Arbitrary row count and support**
 
-$`2^{O(T\log(2+\min\{Q/T,T\}))}`$; matching worst-case rank-query order under parameter budgets.
+<code class="math">2^{O(T\log(2+\min\{Q/T,T\}))}</code>; matching worst-case rank-query order under parameter budgets.
 
-**Fixed dimension $`d`$**
+**Fixed dimension <code class="math">d</code>**
 
-$`\exp(O_d((T+1)^{d/(d+1)}))`$; matching exponent on balanced-target oracle families.
+<code class="math">\exp(O_d((T+1)^{d/(d+1)}))</code>; matching exponent on balanced-target oracle families.
 
-**Unequal positive auxiliary caps $`U_j`$**
+**Unequal positive auxiliary caps <code class="math">U_j</code>**
 
-$`\exp((d+2(2^d-1))K(U))`$, where $`K(U)=\max_{\varnothing\ne S}(\prod_{j\in S}U_j)^{1/(|S|+1)}`$. For two caps: $`\max\{\sqrt{U_1},\sqrt{U_2},(U_1U_2)^{1/3}\}`$.
+<code class="math">\exp((d+2(2^d-1))K(U))</code>, where <code class="math">K(U)=\max_{\varnothing\ne S}(\prod_{j\in S}U_j)^{1/(&#124;S&#124;+1)}</code>. For two caps: <code class="math">\max\{\sqrt{U_1},\sqrt{U_2},(U_1U_2)^{1/3}\}</code>.
 
 **Single integer objective, one exact scalar side condition**
 
-Target decision in $`2^{O(\sqrt{T+1})}`$; exact optimization in $`2^{O(\sqrt{\mathrm{OPT}+1})}`$.
+Target decision in <code class="math">2^{O(\sqrt{T+1})}</code>; exact optimization in <code class="math">2^{O(\sqrt{\mathrm{OPT}+1})}</code>.
 
 **Seven single-resource approximation variants**
 
-A $`(1-\epsilon)`$ maximum or $`(1+\epsilon)`$ minimum, with exact side constraint, in $`\epsilon^{-1}\exp(141/(50\epsilon)+7)\mathrm{poly}(H_\epsilon)`$.
+A <code class="math">(1-\epsilon)</code> maximum or <code class="math">(1+\epsilon)</code> minimum, with exact side constraint, in <code class="math">\epsilon^{-1}\exp(141/(50\epsilon)+7)\mathrm{poly}(H_\epsilon)</code>.
 
 **At most one target row per column**
 
-$`\exp(3\sum_j\sqrt{U_j})\le e^{3T}`$, where upper/equality rows use $`U_j=T_j`$ and covering rows use $`U_j=2T_j-1`$.
+<code class="math">\exp(3\sum_j\sqrt{U_j})\le e^{3T}</code>, where upper/equality rows use <code class="math">U_j=T_j</code> and covering rows use <code class="math">U_j=2T_j-1</code>.
 
 **At most two target rows per column**
 
-$`\exp(O(T\log(2+m/T)))`$ for $`m`$ distinct interacting row pairs. Dense instances give the $`T\log T`$ oracle boundary.
+<code class="math">\exp(O(T\log(2+m/T)))</code> for <code class="math">m</code> distinct interacting row pairs. Dense instances give the <code class="math">T\log T</code> oracle boundary.
 
 **Disconnected support geometry**
 
 Product of the component partition bounds; the resource recovery remains one global problem.
 
-**Unequal targets and actual support family $`\mathcal S`$**
+**Unequal targets and actual support family <code class="math">\mathcal S</code>**
 
-Profile count at most $`\exp(\inf_{t>0}\Phi_U(t))`$, with
+Profile count at most <code class="math">\exp(\inf_{t&gt;0}\Phi_U(t))</code>, with
 
-```math
+<!-- math-display: d4461d6128b7b5b561d252a3
 \Phi_U(t)=\sum_jU_jt_j+2\sum_{A\in\mathcal S}\prod_{j\in A}(e^{t_j}-1)^{-1}.
-```
+-->
+![Formula](../../assets/math/d4461d6128b7b5b561d252a3.svg)
 
 Any required cover-lift preparation is charged separately.
 
-**Connected star, $`k`$ unit leaves and center target $`B`$**
+**Connected star, <code class="math">k</code> unit leaves and center target <code class="math">B</code>**
 
-$`\exp(O(k\log(2+B/k)))`$ when every nonzero column touches a leaf. Matching-order oracle and encoded-ETH families are provided.
+<code class="math">\exp(O(k\log(2+B/k)))</code> when every nonzero column touches a leaf. Matching-order oracle and encoded-ETH families are provided.
 
 **Selected disjoint objective blocks**
 
-$`\binom qr\exp(O(r\sqrt{T+1}))`$ for an actual rank-$`r`$ selected basis; the integer grid is part of the parameter.
+<code class="math">\binom qr\exp(O(r\sqrt{T+1}))</code> for an actual rank-<code class="math">r</code> selected basis; the integer grid is part of the parameter.
 
 **Global allocation and scheduling**
 
-Allocation $`\binom qr\exp(O(r/\epsilon))`$; mandatory scheduling $`\exp(O(q/\epsilon))`$; six-profile $`3/2`$ endpoint $`6^q`$. Exact shared budgets and original totals are retained.
+Allocation <code class="math">\binom qr\exp(O(r/\epsilon))</code>; mandatory scheduling <code class="math">\exp(O(q/\epsilon))</code>; six-profile <code class="math">3/2</code> endpoint <code class="math">6^q</code>. Exact shared budgets and original totals are retained.
 
 **Mandatory fair allocation and adaptive scenarios**
 

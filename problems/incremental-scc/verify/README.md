@@ -4,8 +4,8 @@
 
 The small-to-large representation and Corollary 9.1 have complete proofs
 independent of the raw backend, once the exact merge sequence is given.
-Historical equality costs $`O(1+\log\log(n+2))`$; first coalescence costs
-$`O(1+\log\log(n+2))`$ and binary-searches the common suffix of the two label histories.
+Historical equality costs <code class="math">O(1+\log\log(n+2))</code>; first coalescence costs
+<code class="math">O(1+\log\log(n+2))</code> and binary-searches the common suffix of the two label histories.
 
 Run from the repository root:
 

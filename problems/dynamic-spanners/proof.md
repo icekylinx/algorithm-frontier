@@ -13,7 +13,7 @@ than supersedes, the five-sixths low-recourse construction in Part II.
 The bound, for an arbitrary-degree unweighted undirected
 graph on `n` fixed vertices, is
 
-```math
+<!-- math-display: e132af0289ab890953c112dd
 \begin{array}{ll}
  \text{stretch}&\exp O(U^{4/5}h^{1/5}),\\
  \text{current output edges}&n\exp O(U^{4/5}h^{1/5}),\\
@@ -22,7 +22,8 @@ graph on `n` fixed vertices, is
  \text{safe total output-recourse bound}
    &(n+m_0+I+D)\exp O(U^{4/5}h^{1/5}).
  \end{array}                                                \tag{T1}
-```
+-->
+![Formula](../../assets/math/e132af0289ab890953c112dd.svg)
 
 Here `m_0` is actual initial input size, `I,D` are insertions/deletions
 over a polynomially bounded history, `N` is its declared master cap,
@@ -36,7 +37,7 @@ provided the deterministic providers satisfy their stated contracts on
 that same history. All physical lifetimes and generated records count
 toward their announced caps. The maintained output is an explicit edge
 set; enumerating its entire current contents costs an additional
-$`\Omega(|E(H_{\rm out})|)`$ output operations when requested.
+<code class="math">\Omega(&#124;E(H_{\rm out})&#124;)</code> output operations when requested.
 
 The construction does not union every edge in every allocated flat
 forest. Such a union can depend on the `Theta(m)` native port vertices
@@ -49,14 +50,15 @@ paths between their marks.
 Use the already audited normalized positive-port numerical hierarchy
 from [apsp time stretch tradeoff](../apsp-frontier/proof.md). With parameter `t`, it has
 
-```math
+<!-- math-display: 63474d33e5ac263b99a89dc6
 \begin{aligned}
  p=r&=\Theta(t),\quad K_{\rm repair}=\Theta(t^2),\quad
  k=2^x,\quad x=\Theta(U/t),\quad d=O(t),\\
  B&=O(U/t+t^3h),\qquad
  \log\gamma_{\rm native}=O(t^4h).
  \end{aligned}                                             \tag{T2}
-```
+-->
+![Formula](../../assets/math/63474d33e5ac263b99a89dc6.svg)
 
 Its arbitrary-degree root adapter is a current-incidence balanced
 binary tree for each original vertex. Connectors have length one;
@@ -64,9 +66,10 @@ an original unweighted edge has native length `H=poly(U)`, a fixed
 power of two. Only the original `n` vertices have permanent query
 handles `q_v`. For original endpoints,
 
-```math
+<!-- math-display: 207a78220db7a90cefa6206c
 d_G(u,v)\le H^{-1}d_{G_0}(q_u,q_v)\le2d_G(u,v).       \tag{T3}
-```
+-->
+![Formula](../../assets/math/207a78220db7a90cefa6206c.svg)
 
 The root native graph can contain `Theta(m+n)` port vertices. That
 inventory is paid by initialization and the actual update history,
@@ -103,9 +106,10 @@ lifted once from its birth level. The factor `k^{O(1)}` is not
 multiplied once per hierarchy depth. Total work and explicit flat
 forest edits, including initial credit and all unused pools, fit
 
-```math
+<!-- math-display: fbc785db8ad2ce22c3bb1f91
 (n+m_0+I+D)\exp O(B).              \tag{T4}
-```
+-->
+![Formula](../../assets/math/fbc785db8ad2ce22c3bb1f91.svg)
 
 The weights on a flat forest are the lengths of its real `G_0` edge
 copies and zero on its typed nulls. They are exact integers. If a
@@ -119,9 +123,10 @@ This is the arbitrary-forest metric inequality in
 
 Set
 
-```math
+<!-- math-display: 5f79a3bec0b0d6d78fd1b22f
 S_0=\{q_v:v\in V(G)\}.        \tag{T5}
-```
+-->
+![Formula](../../assets/math/5f79a3bec0b0d6d78fd1b22f.svg)
 
 This contains `n` handles, not all root port vertices. For a level
 whose nearest-pivot component is active and exposes its pivot in the
@@ -129,9 +134,10 @@ child, propagate a tracked native vertex `w` to the child query
 handle of `p_i(w)`. Let `S_{i+1}` be the **set** of these propagated
 handles. Duplicate images count once. Thus
 
-```math
+<!-- math-display: 1d62d32217245f608660b6fe
 |S_i|\le n                 \tag{T6}
-```
+-->
+![Formula](../../assets/math/1d62d32217245f608660b6fe.svg)
 
 for every level. This is only a query-tracking set. Adding its marks
 does not promote new centers, modify native graph edges, or rebuild
@@ -169,9 +175,10 @@ If `b_i` counts changes to `S_i` and `l_i` is the complete native
 nearest-pivot/root/exposure transcript at level `i`, the safe total
 propagation bound is
 
-```math
+<!-- math-display: e6873f14caba84a6a311d59e
 b_{i+1}\le b_i+O(l_i).           \tag{T7}
-```
+-->
+![Formula](../../assets/math/e6873f14caba84a6a311d59e.svg)
 
 The coefficient on the propagated membership events is one: a set
 mark changes only one component count and can toggle only that
@@ -226,10 +233,11 @@ vertices. The actual-size base has the same bound. Thus the total
 number `Q_mark` of active marked handles, over the disjoint forest
 family at all levels, obeys
 
-```math
+<!-- math-display: 1a2ff567788d3304f8b738c9
 Q_{\rm mark}\le n k^{O(1)}
                                         \mathrm{poly}(U). \tag{T8}
-```
+-->
+![Formula](../../assets/math/1a2ff567788d3304f8b738c9.svg)
 
 The bound counts marks separately when they occur in different flat
 forest copies, even if their physical images agree. Root native ports
@@ -271,9 +279,10 @@ handle lookup through the hierarchy takes `poly(U)` time.
 Combining (T7), the native family transcript, and this local cost,
 the total active-mark transcript and bookkeeping fit
 
-```math
+<!-- math-display: ce59c0613790bfc32677eff0
 (n+m_0+I+D)\exp O(B).             \tag{T9}
-```
+-->
+![Formula](../../assets/math/ce59c0613790bfc32677eff0.svg)
 
 Multiplication by a fixed polynomial in `k` only increases the fixed
 coefficient of `x` already in `B`. Propagation depth contributes a
@@ -310,10 +319,11 @@ physical-edge aggregate and skips all nulls and root port connectors.
 
 Set
 
-```math
+<!-- math-display: dc3b7671ca5249a4081a92f2
 \Gamma=2\gamma_{\rm native},\qquad
                          R=\lceil H\Gamma\rceil.       \tag{T10}
-```
+-->
+![Formula](../../assets/math/dc3b7671ca5249a4081a92f2.svg)
 
 Expose exactly those compressed edges whose root-native length is at
 most `R`. Their output lists contain only original physical edge IDs,
@@ -343,11 +353,12 @@ edges at the settled state, so `H_out` is then a subgraph of `G`.
 Fix a living original unweighted edge `uv`. By (T3), the numerical
 query on its two root handles has estimate at most
 
-```math
+<!-- math-display: b8250711a31940aec7c881be
 \widehat d_{G_0}(q_u,q_v)
        \le\gamma_{\rm native} d_{G_0}(q_u,q_v)
        \le2H\gamma_{\rm native}\le R.                  \tag{T11}
-```
+-->
+![Formula](../../assets/math/b8250711a31940aec7c881be.svg)
 
 Its witness is a concatenation of native nearest-pivot legs and one
 terminal strict-ball, base, or untouched-component exact path. The
@@ -395,11 +406,12 @@ By (T8), the number of candidate compressed paths is at most
 `n k^{O(1)} poly(U)`. Every exposed path contributes at most `R`
 physical occurrences before deduplication. Hence
 
-```math
+<!-- math-display: 0cebdf608190ec12f2bc9c8a
 |E(H_{\rm out})|
                       \le n k^{O(1)}R\mathrm{poly}(U).
                                                                \tag{T12}
-```
+-->
+![Formula](../../assets/math/0cebdf608190ec12f2bc9c8a.svg)
 
 This is where the number `n` rather than the root native port count
 enters. Long compressed paths and full unused forest branches are not
@@ -416,9 +428,10 @@ updating a long record uses only polynomial-logarithmic structural
 work. A change of length has the same bound. Equations (T4) and (T9)
 therefore give total work
 
-```math
+<!-- math-display: 97b05a6e2cc3f4cd3c27cecf
 (n+m_0+I+D)\exp O(B+\log R).               \tag{T13}
-```
+-->
+![Formula](../../assets/math/97b05a6e2cc3f4cd3c27cecf.svg)
 
 The same expression safely bounds total output recourse, since every
 actual edge insertion/deletion in the output is charged to a reference
@@ -456,15 +469,17 @@ For the family (T2), `log R=O(t^4h+h)` and
 `log k=Theta(U/t)`. Both size and work in (T12)--(T13) have
 logarithmic overhead
 
-```math
+<!-- math-display: 3ebef626217aacb6dda9ac1a
 Z=O(U/t+t^4h),                    \tag{T14}
-```
+-->
+![Formula](../../assets/math/3ebef626217aacb6dda9ac1a.svg)
 
 while the logarithmic stretch is `O(t^4h)`. Taking
 
-```math
+<!-- math-display: 11164cd6b545c44ee55b655d
 t=\Theta((U/h)^{1/5})         \tag{T15}
-```
+-->
+![Formula](../../assets/math/11164cd6b545c44ee55b655d.svg)
 
 gives `Z=O(U^{4/5}h^{1/5})` and proves (T1).
 The source shrink guard has slack: `x=Theta(t^4h)` dominates
@@ -475,17 +490,19 @@ not require a deeper or differently parameterized numerical hierarchy.
 
 There is also a finer-stretch point. Put
 
-```math
+<!-- math-display: 2d34f2ad0e6085621cbe85e3
 A_0=U^{5/7}h^{2/7},\qquad
                   t=\Theta((U/h)^{5/28}).
-```
+-->
+![Formula](../../assets/math/2d34f2ad0e6085621cbe85e3.svg)
 
 Then logarithmic stretch is `O(A_0)`, and logarithmic time and
 output-density overhead are
 
-```math
+<!-- math-display: 54bb72f43e8212d66ce93e32
 O(U^{23/28}h^{5/28}).          \tag{T16}
-```
+-->
+![Formula](../../assets/math/54bb72f43e8212d66ce93e32.svg)
 
 The permitted density is larger than just `n exp O(A_0)`: tracking
 all local tree vertices pays `k^{O(1)}`, whose logarithm is
@@ -508,10 +525,11 @@ the same `k^{O(1)}` occurrence bound. The work recurrence substitutes
 the public local repair factor and retains the initial child credit,
 giving
 
-```math
+<!-- math-display: bee367f074b7ca8e719eccc9
 B_{\rm pub}=O(U/t+t^6h),\qquad
                   A_{\rm pub}=O(t^5h).                 \tag{T17}
-```
+-->
+![Formula](../../assets/math/bee367f074b7ca8e719eccc9.svg)
 
 The original KMG arbitrary-forest copy construction supplies a handle
 for every input forest-node occurrence, including auxiliary nodes;
@@ -614,7 +632,7 @@ made explicit. It then substitutes the numerical hierarchy audited in
 The conclusion is deterministic maintenance of a spanner of
 an arbitrary-degree undirected graph, with
 
-```math
+<!-- math-display: 733f2863d40ae1277d777c6c
 \begin{array}{ll}
  \text{stretch}&\exp O(U^{5/6}h^{1/6}),\\
  \text{current number of edges}&n\exp O(U^{5/6}h^{1/6}),\\
@@ -623,7 +641,8 @@ an arbitrary-degree undirected graph, with
  \text{total output recourse}
      &(n+D)\exp O(U^{5/6}h^{1/6}).
  \end{array}                                                \tag{F1}
-```
+-->
+![Formula](../../assets/math/733f2863d40ae1277d777c6c.svg)
 
 Here `m_0` is the actual initial number of edges, `I,D` count subsequent
 insertions and deletions, `N` is a declared polynomial history cap,
@@ -652,7 +671,7 @@ it is retired. Initial edges are inserted into a fresh empty instance
 and are included in `F`. No condition `D_0 <= F/K` is required for the
 following accounting:
 
-```math
+<!-- math-display: 48fff1b7884a399fac24410c
 \begin{aligned}
  \#\text{assignments}&\le F+K D_0,\\
  \#\text{blocked edge lifetimes}&\le R(F+K D_0)/K,\\
@@ -660,7 +679,8 @@ following accounting:
  \#\text{insertions into }H
     &\le c\bigl(n+(R/K)F+R D_0\bigr).
  \end{aligned}                                             \tag{F2}
-```
+-->
+![Formula](../../assets/math/48fff1b7884a399fac24410c.svg)
 
 The last line follows because an edge leaves this instance's `H` only
 on a genuine input deletion. Increase the absolute constant `c` to
@@ -670,11 +690,12 @@ than `L` and therefore `O(n)` edges throughout.
 With numerical update factor `alpha=exp O(B)`, numerical query cost
 `poly(U)`, and clipped report cost `R poly(U)`, its full work is at most
 
-```math
+<!-- math-display: e0ca1c9eb87af0b6fd244e53
 \mathrm{poly}(U)\left[
    R(F+K D_0)
    +\alpha\bigl(n+(R/K)F+R D_0\bigr)\right].           \tag{F3}
-```
+-->
+![Formula](../../assets/math/e0ca1c9eb87af0b6fd244e53.svg)
 
 This includes initialization of `n` vertex handles, creation and
 retirement of routes and inverse lists, all eligible-graph updates,
@@ -699,10 +720,11 @@ It suffices that `M <= N^{O(1)}`. No `M`-edge padding is allocated.
 
 Choose a power-of-two integer `K >= 2` and define
 
-```math
+<!-- math-display: a31611957d04600a30c38f20
 s=\max\{1,\lceil\log_K(M/n)\rceil\},\qquad
  M'=nK^s,\qquad t_i=M'/K^i\quad(1\le i\le s).          \tag{F4}
-```
+-->
+![Formula](../../assets/math/a31611957d04600a30c38f20.svg)
 
 Then `M' >= M`, `M' <= K max(M,n)`, each clock is an integer,
 `t_{i-1}=K t_i`, and the final clock is exactly `t_s=n`.
@@ -737,9 +759,10 @@ particular parent spanner; it then causes no deletion there.
 
 Choose a sufficiently large absolute constant `c_0` and put
 
-```math
+<!-- math-display: 9c7609d5fdca33008ebde728
 V_i=(c_0R)^i M'/K^i.                \tag{F5}
-```
+-->
+![Formula](../../assets/math/9c7609d5fdca33008ebde728.svg)
 
 We claim `|H_i| <= V_i` after every settled operation in a layer
 lifetime. The base holds because `|G| <= M <= M'`.
@@ -751,25 +774,28 @@ insertion count `F_i^{life}`. Its parent has current size at most
 `initial edges + new insertions = final edges + deletions`
 therefore gives, for every chronological prefix,
 
-```math
+<!-- math-display: 18844061a09ff91649de1bda
 F_i^{life}\le V_{i-1}+t_i.        \tag{F6}
-```
+-->
+![Formula](../../assets/math/18844061a09ff91649de1bda.svg)
 
 Use (F2), `D_i^{life} <= t_i`, and `n <= M'/K^i` for `i <= s`.
 It gives
 
-```math
+<!-- math-display: 00da621f8fe35cbc2039026a
 |H_i|\le c\left[n+(R/K)V_{i-1}+(R/K)t_i+Rt_i\right]
        \le(c_0R)^i M'/K^i
-```
+-->
+![Formula](../../assets/math/00da621f8fe35cbc2039026a.svg)
 
 when `c_0` is large enough. The argument applies during initialization
 as well: inserting a prefix of the actual seed cannot exceed the same
 count. At the final layer,
 
-```math
+<!-- math-display: d73996c55dd68cafc0d2f9aa
 |H_s|\le n(c_0R)^s.           \tag{F7}
-```
+-->
+![Formula](../../assets/math/d73996c55dd68cafc0d2f9aa.svg)
 
 No induction assumes that the number of ordinary insertions is bounded
 by a constant times the number of deletions. Arbitrarily many successive
@@ -783,23 +809,26 @@ Let `O_i` count all insertions into their output spanners, including
 outputs constructed privately during initialization. Layer `i` has
 exactly `1+floor(D/t_i)` instances. Since `t_i >= n`,
 
-```math
+<!-- math-display: e5b8c0a7d094f46667fe074e
 n\bigl(1+\lfloor D/t_i\rfloor\bigr)\le n+D.           \tag{F8}
-```
+-->
+![Formula](../../assets/math/e5b8c0a7d094f46667fe074e.svg)
 
 Apply the last line of (F2) to each of these instances and sum. Genuine
 deletions total at most `D`, as proved in Section 2. This gives
 
-```math
+<!-- math-display: a436945432c200c47d1c04d2
 O_i\le c\left[n+D+(R/K)F_i+R D\right]. \tag{F9}
-```
+-->
+![Formula](../../assets/math/a436945432c200c47d1c04d2.svg)
 
 Layer 1 receives the original updates and is additionally seeded from
 `G` when its clock fires. Thus
 
-```math
+<!-- math-display: 0855a25f7630014fd26eea63
 F_1\le I_*+(D/t_1)M\le I_*+DK.      \tag{F10}
-```
+-->
+![Formula](../../assets/math/0855a25f7630014fd26eea63.svg)
 
 For a subsequent layer, ordinary insertions from its parent are
 included in `O_i`. The first initialization can also be charged to
@@ -807,13 +836,14 @@ the parent's corresponding initial output insertions. Each later
 replacement of the child seeds at most `V_i` edges. Hence the safe
 bound, allowing harmless double charges at coincident replacements, is
 
-```math
+<!-- math-display: 33181d3edfb0968741b8179c
 \begin{aligned}
  F_{i+1}&\le O_i+(D/t_{i+1})V_i\\
         &\le O_i+DK(c_0R)^i.
 \end{aligned}
 \tag{F11}
-```
+-->
+![Formula](../../assets/math/33181d3edfb0968741b8179c.svg)
 
 No `+1` times the potentially dense capacity `M` is introduced in
 (F10) or (F11). The first input is its actual `m_0` edges; an empty
@@ -823,9 +853,10 @@ charged to a completed interval of genuine original deletions.
 Choose a sufficiently large absolute `c_1`. Induction using
 (F9)--(F11) proves
 
-```math
+<!-- math-display: 2f36193ed706cee5c190f461
 F_i\le(c_1R)^i(I_*+n+DK).             \tag{F12}
-```
+-->
+![Formula](../../assets/math/2f36193ed706cee5c190f461.svg)
 
 For example, the coefficient `(cR/K)` in (F9) is at most `cR`, and
 both `c_0R` and this coefficient are dominated by a sufficiently
@@ -835,7 +866,7 @@ only another fixed power of `(c_1R)^s`.
 
 Equations (F3), (F8), and (F12) now imply
 
-```math
+<!-- math-display: 316fee4e2e0384803907de4c
 \begin{split}
  T_{\rm total}
    &\le (I_*+n+DK)(c_2R)^{c_2s}
@@ -843,7 +874,8 @@ Equations (F3), (F8), and (F12) now imply
    &\le (n+m_0+I+D)K(c_2R)^{c_2s}
              (\alpha+Q_{\rm path})\mathrm{poly}(U).
  \end{split}                                             \tag{F13}
-```
+-->
+![Formula](../../assets/math/316fee4e2e0384803907de4c.svg)
 
 The constant `c_2` is absolute. In the new positive native hierarchy,
 `Q_path=poly(U)`; in the public positive-port implementation it is
@@ -873,10 +905,11 @@ between the old and new published edge sets is at most the sum of
 their sizes. Repeated physical edge IDs need not actually change,
 but charging both is safe. Consequently
 
-```math
+<!-- math-display: 259643e474666f6df146fec8
 \mathrm{recourse}(H_s)
         \le (n+D)(c_3R)^s.                              \tag{F14}
-```
+-->
+![Formula](../../assets/math/259643e474666f6df146fec8.svg)
 
 Physical graph edges retain their IDs through all layers. A copy of
 an eligible edge in an inner degree adapter is not an additional
@@ -892,8 +925,8 @@ Clipping occurs in each unweighted class graph. It never enumerates
 `Gamma` times the numerical value of a large original edge weight.
 An additional unweighted instance for zero-length edges preserves
 their current connected components by zero-cost output paths. Its
-local deletion count is included in $`D`$; summing (F14) over all
-classes gives $`(O(n\log N)+D)\exp O(U^{5/6}h^{1/6})`$.
+local deletion count is included in <code class="math">D</code>; summing (F14) over all
+classes gives <code class="math">(O(n\log N)+D)\exp O(U^{5/6}h^{1/6})</code>.
 
 ## 6. Quantitative substitution
 
@@ -901,13 +934,14 @@ Put `z=log K`. Since `log(M/n)=O(U)`, (F4) gives
 `s=O(1+U/z)`. Let `A=log Gamma`, so `log R=O(A+h)`.
 Equations (F7), (F13), and (F14) give the separate logarithmic bounds
 
-```math
+<!-- math-display: 6c9e7a253cf56c02d964bc91
 \begin{aligned}
  Z_{\rm time}&=O\left(B+z+(1+U/z)(A+h)+h\right),\\
  Z_{\rm stretch}, Z_{\rm size}, Z_{\rm recourse}
       &=O\left((1+U/z)(A+h)\right).
  \end{aligned}                                           \tag{F15}
-```
+-->
+![Formula](../../assets/math/6c9e7a253cf56c02d964bc91.svg)
 
 The public reporting factor `O(dh)` is added to the first line if
 needed; it is smaller than the displayed terms at the comparisons
@@ -919,9 +953,10 @@ already audited no-reset hierarchy from
 `p=r=d=Theta(t)`, local repair depth `K_repair=Theta(t^2)`, and
 `x=Theta(U/t)`, it has
 
-```math
+<!-- math-display: f1b0931f141c04ad43fb3b2c
 B=O(U/t+t^5h),\qquad A=O(t^4h).       \tag{F16}
-```
+-->
+![Formula](../../assets/math/f1b0931f141c04ad43fb3b2c.svg)
 
 The `t^5 h` term is the old `K_repair^2 g` repair work. Thus the
 main five-sixths conclusion does **not** require strengthening the
@@ -930,17 +965,19 @@ version would only lower a non-dominating term here.
 
 Choose
 
-```math
+<!-- math-display: 4295e831772dd1b8731a029e
 t=\Theta((U/h)^{1/6}),\qquad
  z=\Theta(U/t),\qquad K=2^{\lceil z\rceil}.             \tag{F17}
-```
+-->
+![Formula](../../assets/math/4295e831772dd1b8731a029e.svg)
 
 Then `U=Theta(t^6h)`, `B=O(t^5h)`, `A=O(t^4h)`, and
 `s=O(t)`. Therefore every bound in (F15) is at most
 
-```math
+<!-- math-display: 83b8c2eafe1abeb719b64379
 O(t^5h)=O(U^{5/6}h^{1/6}).     \tag{F18}
-```
+-->
+![Formula](../../assets/math/83b8c2eafe1abeb719b64379.svg)
 
 The hierarchy's inner shrink guard has slack: `x=Theta(t^5h)`
 dominates `log P=O(t^4h)` and all `O(dh)` degree charges. The
@@ -963,10 +1000,11 @@ retirement costs; they do not certify the numerical provider.
 
 The jointly reconstructed public APSP provider has the family
 
-```math
+<!-- math-display: 5650b88d63188b0561448826
 B_{\rm pub}=O(U/t+t^6h),\qquad
              A_{\rm pub}=O(t^5h),                      \tag{F19}
-```
+-->
+![Formula](../../assets/math/5650b88d63188b0561448826.svg)
 
 proved in [public-apsp-joint-retuning-audit.md](../../manuscripts/graph-backends/public-apsp-joint-retuning-audit.md) and independently
 audited there. The positive-port clipped-report lemma from Section 8
@@ -985,24 +1023,27 @@ spanner theorem.
 There is a more precise matched comparison. Require the common output
 stretch, size overhead, and recourse overhead to have logarithm
 
-```math
+<!-- math-display: 0e45b3dbf901b3fa996c519a
 S_0=U^{5/6}h^{1/6}.
-```
+-->
+![Formula](../../assets/math/0e45b3dbf901b3fa996c519a.svg)
 
 In the public family choose
 
-```math
+<!-- math-display: dd36576d94b8001637c40457
 t_{\rm pub}=\Theta((U/h)^{5/36}),\qquad
  z_{\rm pub}=\Theta(U/t_{\rm pub}).
-```
+-->
+![Formula](../../assets/math/dd36576d94b8001637c40457.svg)
 
 Then `s=O(t_pub)`, its output logarithmic stretch is `O(t_pub^6 h)
 = O(S_0)`, and its logarithmic work is
 
-```math
+<!-- math-display: 0db2f977413c4455487b07d8
 O(U/t_{\rm pub}+t_{\rm pub}^6h)
                      =O(U^{31/36}h^{5/36}).             \tag{F20}
-```
+-->
+![Formula](../../assets/math/0db2f977413c4455487b07d8.svg)
 
 | Construction | Logarithmic time overhead | Common logarithmic stretch, density and recourse overhead |
 |---|---|---|
@@ -1051,10 +1092,11 @@ For the public hierarchy, Section 6 of
 nonuniform inner parameters while local log-size remains comparable
 to `U`, that a work budget `B` dominates charges satisfying
 
-```math
+<!-- math-display: 0adc00f69a51bc7229df5d56
 B^7\gtrsim U^6h,\qquad
               A_{\rm charge}\gtrsim U^5h/B^5.           \tag{F21}
-```
+-->
+![Formula](../../assets/math/0adc00f69a51bc7229df5d56.svg)
 
 In an outer reconstruction with logarithmic density reduction `z`,
 the number of layers is `Omega(U/z)` on a worst-case polynomially
@@ -1062,11 +1104,12 @@ dense input. With a time budget `Z` paying both `B` and `z`, and a
 claimed logarithmic output metric budget `S`, the charged formula
 therefore requires
 
-```math
+<!-- math-display: b70e38180ec0335b79fb3e86
 S\gtrsim U^6h/Z^6,
  \qquad
  Z\gtrsim\max\{U^{6/7}h^{1/7},\ U(h/S)^{1/6}\}.        \tag{F22}
-```
+-->
+![Formula](../../assets/math/b70e38180ec0335b79fb3e86.svg)
 
 For `S=S_0`, the second term gives precisely `U^(31/36)h^(5/36)`.
 The balanced choice `S=Z` gives `Z^7 >= Omega(U^6h)`.
@@ -1086,9 +1129,10 @@ again gives `S >= Omega(U^6h/Z^6)`. Small final levels or a sublinear
 For the research provider, the corresponding inner metric charge from
 [nonuniform-parameter-budget-frontiers.md](../../manuscripts/graph-backends/nonuniform-parameter-budget-frontiers.md) is
 
-```math
+<!-- math-display: 475fd9085746889ff86356fb
 A_i\gtrsim U^4h/B_i^4.         \tag{F23}
-```
+-->
+![Formula](../../assets/math/475fd9085746889ff86356fb.svg)
 
 The same outer argument yields `S >= Omega(U^5h/Z^5)`.
 The displayed work formula also pays the cumulative metric charge,
@@ -1101,14 +1145,15 @@ selection argument.
 
 The uniform families already certify the sufficient curves
 
-```math
+<!-- math-display: 74d45264cb13f9746107b187
 \begin{aligned}
  Z_{\rm new}(S)&=O\left(
        \max\{U^{5/6}h^{1/6},\ U(h/S)^{1/5}\}\right),\\
  Z_{\rm pub}(S)&=O\left(
        \max\{U^{6/7}h^{1/7},\ U(h/S)^{1/6}\}\right),
  \end{aligned}                                           \tag{F24}
-```
+-->
+![Formula](../../assets/math/74d45264cb13f9746107b187.svg)
 
 for `h << S = o(U)`, in the parameter range where the respective
 source shrink and uniformity guards hold. If a larger `S` is allowed,

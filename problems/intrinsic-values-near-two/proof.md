@@ -30,12 +30,13 @@ are assumed in the original instance.
 Let OPT be the integer maximum possible minimum player value. For
 a threshold theta>0, define
 
-```math
+<!-- math-display: 82e9ea603969d9af6cae6ead
 \mathcal H_\theta=\{j:v_j\ge\theta\},\qquad
  \mathcal L_\theta=\{j:v_j<\theta\},\qquad
  f^b_\theta=\sum_{j\in\mathcal H_\theta}f_j.
  \tag{A1}
-```
+-->
+![Formula](../../assets/math/82e9ea603969d9af6cae6ead.svg)
 
 Let N_theta be the Boolean-cap matroid of f^b_theta, and put
 nu(theta)=rank(N_theta). It is the number of distinct players that
@@ -46,26 +47,29 @@ N_theta is the zero matroid and nu(theta)=0.
 Fix rational 0<epsilon<1 and an integer budget k>=0. The relevant
 comparison threshold is
 
-```math
+<!-- math-display: a1a996d29bc66e133a527dce
 \theta^*={(1-\epsilon)\mathrm{OPT}\over2}.
  \tag{A2}
-```
+-->
+![Formula](../../assets/math/a1a996d29bc66e133a527dce.svg)
 
 **Theorem A.** There is a deterministic algorithm with running time
 
-```math
+<!-- math-display: 801777a93e69c94894874b6d
 \Gamma(1/\epsilon)^k
                                 \mathrm{poly}(H)
  \tag{A3}
-```
+-->
+![Formula](../../assets/math/801777a93e69c94894874b6d.svg)
 
 and polynomial workspace which, whenever OPT>0 and
 nu(theta*)<=k, returns an allocation with minimum value at least
 
-```math
+<!-- math-display: 5f14d53cfcf7b634aa5ef1e0
 {(1-\epsilon)\mathrm{OPT}\over2}.
  \tag{A4}
-```
+-->
+![Formula](../../assets/math/5f14d53cfcf7b634aa5ef1e0.svg)
 
 H includes the input and accuracy encoding lengths and the paid
 oracle, submodular-minimization, rational-LP and decomposition work.
@@ -97,11 +101,12 @@ Enumerate all of them.
 
 For a fixed split write N for its heavy Boolean matroid,
 
-```math
+<!-- math-display: f21741ad1f6d7cf537c62493
 a_H=\min_{j\text{ heavy}}v_j,\qquad
  u_L=\max_{j\text{ light}}v_j,
  \tag{A5}
-```
+-->
+![Formula](../../assets/math/f21741ad1f6d7cf537c62493.svg)
 
 with a_H=infinity for no heavy type and u_L=0 for no light type.
 Let M=N*, of rank r=q-rank(N). If r=0, give every player one
@@ -130,17 +135,19 @@ every integer player value, and OPT, lies on the g-grid.
 Write epsilon=e/d with integers 0<e<d and choose the workload
 quantum
 
-```math
+<!-- math-display: 70018fc2e6e8a868e4baa967
 \Delta=g/d.
  \tag{A6}
-```
+-->
+![Formula](../../assets/math/70018fc2e6e8a868e4baa967.svg)
 
 For the current light set define its integral workload polymatroid
 
-```math
+<!-- math-display: e4259da0e06afd87dfb45647
 F(S)=\sum_{j\text{ light}}{v_j\over\Delta}f_j(S).
  \tag{A7}
-```
+-->
+![Formula](../../assets/math/e4259da0e06afd87dfb45647.svg)
 
 All scaling coefficients are integers. Ranks and scaling factors
 stay binary encoded; F is queried by summing the original oracle
@@ -148,18 +155,20 @@ values times these factors. No numerical unit copies are created.
 
 At a positive grid target T=m g, use the unit quotas
 
-```math
+<!-- math-display: 1186f4a181f1c8fa25c4424b
 t=T/\Delta=md,
         \qquad b=(1-\epsilon)t=m(d-e).
  \tag{A8}
-```
+-->
+![Formula](../../assets/math/1186f4a181f1c8fa25c4424b.svg)
 
 Both are positive integers and t>b. Their branch ratio is exactly
 
-```math
+<!-- math-display: 24847e582280b4fdd5da0bf0
 {t\over t-b}=1/\epsilon.
  \tag{A9}
-```
+-->
+![Formula](../../assets/math/24847e582280b4fdd5da0bf0.svg)
 
 Thus the batched corank theorem returns an M-basis with b units
 in P(F), or certifies that no t-unit M-basis exists, in
@@ -209,10 +218,11 @@ light value at least b Delta. The per-player largest-unit lower
 rounding lemma returns integer original light bases with value at
 least
 
-```math
+<!-- math-display: abb0fad2be301ccc4149d96b
 b\Delta-u_L
  \tag{A10}
-```
+-->
+![Formula](../../assets/math/abb0fad2be301ccc4149d96b.svg)
 
 at each such selected player. This lemma is proved via complement
 duality and upper rounding in Section 3 of
@@ -227,10 +237,11 @@ Every complementary player has value at least a_H. Extra units
 assigned during completion can only help. The actual candidate
 allocation thus has minimum value at least
 
-```math
+<!-- math-display: a3c154a51ee82ceff98d9f94
 \min\{a_H,b\Delta-u_L\}.
  \tag{A11}
-```
+-->
+![Formula](../../assets/math/a3c154a51ee82ceff98d9f94.svg)
 
 When the displayed lower bound is negative, the allocation is
 still legal and has nonnegative actual value. The final algorithm
@@ -268,11 +279,12 @@ If its player rank is zero, the pure-heavy candidate already gives
 value a_H>=theta*. Otherwise, if its corank is within budget, the
 optimized workload output and (A10) give light value at least
 
-```math
+<!-- math-display: 141d2eb8f94fda2d309f8896
 (1-\epsilon)\mathrm{OPT}-u_L
               =2\theta^*-u_L>\theta^*.
  \tag{A12}
-```
+-->
+![Formula](../../assets/math/141d2eb8f94fda2d309f8896.svg)
 
 The strict inequality holds because every light type has value
 strictly below theta*. Every heavy type has value at least theta*.
@@ -316,21 +328,23 @@ for unrestricted heavy-cover rank.
 
 For a requested rational eta>0, choose
 
-```math
+<!-- math-display: 7d20ce8b0c7cb6a958c53d15
 \epsilon={\eta\over2+\eta},\qquad
        \theta^*={\mathrm{OPT}\over2+\eta}.
  \tag{A13}
-```
+-->
+![Formula](../../assets/math/7d20ce8b0c7cb6a958c53d15.svg)
 
 Then (A4) is the factor-2+eta guarantee, and (A3) becomes
 
-```math
+<!-- math-display: 0e4ea4557e8c9051937ad8b9
 \Gamma\!\left({2+\eta\over\eta}\right)^k
                \mathrm{poly}(H)
           \le\left({e(2+\eta)\over\eta}\right)^k
                \mathrm{poly}(H).
  \tag{A14}
-```
+-->
+![Formula](../../assets/math/0e4ea4557e8c9051937ad8b9.svg)
 
 Thus the dependence is single exponential in k for fixed positive
 accuracy, and `(O(1+eta^{-1}))^k` jointly in k and accuracy. The

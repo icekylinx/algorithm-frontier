@@ -24,10 +24,11 @@ Choose one actual basis I of an original player matroid M before
 the scenario is known. In every scenario omega, integer independent
 resource counts may be allocated adaptively. The robust utility is
 
-```math
+<!-- math-display: 2633742f992745d1cd475219
 \min_\omega\min_{p\in I}x^\omega(p).
 \tag{RO1}
-```
+-->
+![Formula](../../assets/math/2633742f992745d1cd475219.svg)
 
 There will be one unit-valued recipient matroid resource per
 scenario. Unused capacity is allowed; all costs, setup fees and
@@ -40,10 +41,11 @@ q explicitly listed scenarios and optimum one such that any
 deterministic algorithm attaining any finite positive multiplicative
 factor on every instance needs at least
 
-```math
+<!-- math-display: d866599bb1dc4c531210d22d
 \frac1q\binom qr-1
 \tag{RO2}
-```
+-->
+![Formula](../../assets/math/d866599bb1dc4c531210d22d.svg)
 
 rank-value queries in the worst case. More precisely the bound is
 |H_h|-1 for an explicitly chosen class H_h with
@@ -53,10 +55,11 @@ and all rank answers have O(log q) bits.
 
 For r=floor(q/2) and q>=4, the bound is
 
-```math
+<!-- math-display: 019f7e9371477dcaed302e0f
 2^{q-O(\log q)}.
 \tag{RO3}
-```
+-->
+![Formula](../../assets/math/019f7e9371477dcaed302e0f.svg)
 
 Therefore no deterministic algorithm with running time
 (2-eta)^q*poly(H) for any fixed eta>0 can give a finite
@@ -69,11 +72,12 @@ complexity assumption about explicitly represented matroids.
 
 Let H be a family of r-subsets of P, |P|=q>r, satisfying
 
-```math
+<!-- math-display: 5f5311d6bb7d4cfb388aab95
 |A\cap B|\le r-2
                          \qquad(A,B\in H,\ A\ne B).
 \tag{RO4}
-```
+-->
+![Formula](../../assets/math/5f5311d6bb7d4cfb388aab95.svg)
 
 Define independent sets to be every set of size at most r-1,
 together with the r-sets not in H. There are no larger independent
@@ -93,11 +97,12 @@ The rank is actually r: start with any (r-1)-set and two distinct
 outside elements, possible because q>r, and use the same argument.
 Its rank function is exactly
 
-```math
+<!-- math-display: 9464a6f5f8b6696229681efb
 f_H(S)=\min\{|S|,r\}
                      -\mathbf1[|S|=r\text{ and }S\in H].
 \tag{RO5}
-```
+-->
+![Formula](../../assets/math/9464a6f5f8b6696229681efb.svg)
 
 For |S|<r this follows from independence. A forbidden r-set has
 rank r-1 because all its proper subsets are independent. An
@@ -116,11 +121,12 @@ RO5 at exactly that one r-set.
 Label P by the distinct residues 0,1,...,q-1. For each r-set S
 define
 
-```math
+<!-- math-display: ef288c2ef7dc7671808c39d3
 \chi(S)=\sum_{p\in S}p\pmod q,
                  \qquad H_t=\{S:|S|=r,\ \chi(S)=t\}.
 \tag{RO6}
-```
+-->
+![Formula](../../assets/math/ef288c2ef7dc7671808c39d3.svg)
 
 Every H_t satisfies RO4. Indeed, if two distinct r-sets shared
 r-1 elements, they would differ by exchanging distinct labels
@@ -130,20 +136,22 @@ distinct members of {0,...,q-1}.
 The q residue classes partition all r-subsets. Choose a largest
 class H_h, with a deterministic tie rule. Pigeonhole counting gives
 
-```math
+<!-- math-display: c1f31d8bc0828ab2f0709892
 |H_h|\ge\binom qr/q.
 \tag{RO7}
-```
+-->
+![Formula](../../assets/math/c1f31d8bc0828ab2f0709892.svg)
 
 Choosing h does not require enumerating the r-subsets. Define
 D(i,k,t) as the number of k-subsets of {0,...,i-1} with residue t.
 Initialize D(0,0,0)=1 and all other entries zero. For i=0,...,q-1
 use
 
-```math
+<!-- math-display: 940e133fea1f8d2a57484375
 D(i+1,k,t)=D(i,k,t)+D(i,k-1,t-i\bmod q),
 \tag{RO8}
-```
+-->
+![Formula](../../assets/math/940e133fea1f8d2a57484375.svg)
 
 where out-of-range k terms are zero and k need not exceed r.
 The values D(q,r,t) are precisely the class sizes. There are
@@ -164,10 +172,11 @@ There are q-1 such known scenarios.
 
 Choose a hidden A in H_h. The final scenario has recipient rank
 
-```math
+<!-- math-display: f16669d0d074b62395ed6745
 f_A=f_{H_h\setminus\{A\}}.
 \tag{RO9}
-```
+-->
+![Formula](../../assets/math/f16669d0d074b62395ed6745.svg)
 
 It is valid by Section 2. All scenarios give value one for one
 allocated unit, and have zero costs and budgets. Their resource
@@ -189,11 +198,12 @@ so assigning 1_A in every scenario is legal.
 
 We have proved
 
-```math
+<!-- math-display: c25f6d97bc44ae7d824d51e0
 \mathrm{OPT}=1,\qquad
  I\text{ has positive robust integer service}\iff I=A.
 \tag{RO10}
-```
+-->
+![Formula](../../assets/math/c25f6d97bc44ae7d824d51e0.svg)
 
 The scenarios may allocate independently; the conclusion uses
 only the same selected I and each scenario's necessary unit
@@ -205,10 +215,11 @@ Use the baseline hidden oracle f_0=f_(H_h), in which no member
 of H_h is relaxed. This is also a valid matroid. For every
 possible hidden A,
 
-```math
+<!-- math-display: 119b35a5edadc4f7b13b8f70
 f_A(S)=f_0(S)+\mathbf1[S=A].
 \tag{RO11}
-```
+-->
+![Formula](../../assets/math/119b35a5edadc4f7b13b8f70.svg)
 
 All other scenario oracles are independent of A. Until the
 algorithm queries the hidden scenario on its particular hidden
@@ -250,10 +261,11 @@ For r=floor(q/2), the central binomial coefficient is at least
 2^q/(q+1), because it is a largest term among the q+1 terms
 whose sum is 2^q. Therefore the query bound is at least
 
-```math
+<!-- math-display: 35b18c1fcac41dcffffb1a05
 \frac{2^q}{q(q+1)}-1.
 \tag{RO12}
-```
+-->
+![Formula](../../assets/math/35b18c1fcac41dcffffb1a05.svg)
 
 A fixed base 2-eta times any polynomial in the known input is
 eventually smaller than RO12. Polynomial cost for evaluating a

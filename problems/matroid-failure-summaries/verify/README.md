@@ -10,9 +10,10 @@ Run from the repository root with Python 3 and its standard library:
 python3 problems/matroid-failure-summaries/verify/check_summaries.py
 python3 problems/matroid-failure-summaries/verify/check_weighted_obstruction.py
 python3 problems/matroid-failure-summaries/verify/check_weighted_prefix.py
+python3 problems/matroid-failure-summaries/verify/check_single_replacement.py
 ```
 
-All three scripts reject optimized Python mode. They implement independent
+All four scripts reject optimized Python mode. They implement independent
 reference enumeration alongside the algorithms under test; they do not
 merely check stored output hashes.
 
@@ -20,7 +21,28 @@ merely check stored output hashes.
 |---|---|
 | [Rank, one-failure weighted and integral-value summaries](check_summaries.py) | All 92 labeled matroids on at most four elements; 69,516 rank-summary instances, 202,415 failure-rank comparisons and 146,492 necessity witnesses. Also 23,172 one-failure weighted instances with 344,065 prefix comparisons, 27,144 integral-coverage instances with 88,910 value comparisons, and 18 sharp lower examples. |
 | [Weighted obstruction](check_weighted_obstruction.py) | All 65 underlying bases and 8,448 basis-exchange conditions; all 386 parallel-extension bases and 405,558 exchange conditions; an independent 8,192-entry rank table; all 11 allowed failure sets; 13 exact optimum and prefix-necessity witnesses; and amplified examples for budgets two through six. |
-| [Weighted prefix construction](check_weighted_prefix.py) | 86,340 instances over all 92 small matroids, 961,888 original-prefix rank comparisons and 179,293 necessity witnesses; explicit query-count bounds. A further 130 instances use 26 orders on the nonrepresentable 13-item example. Exact Bernoulli checks include failures larger than the requested budget, as required by the size proof. |
+| [Weighted prefix constructions and refined bounds](check_weighted_prefix.py) | Both the canonical-basis tree and retained-prefix algorithms agree on 86,340 instances over all 92 small matroids, 961,888 original-prefix rank comparisons and 179,293 necessity witnesses. Another 130 cases use 26 orders on the nonrepresentable example. Each algorithm's actual oracle calls are checked against its own bound. |
+| [Sharp singleton replacement summaries](check_single_replacement.py) | 19,329 zero/single-extra algorithm instances with 191,962 actual independence calls and 53,100 scans. Includes 15,622 quotient equivalences, 2,259 potential steps, 32 sharp represented examples, and 8,366 graph-process states with 280,866 transitions through six vertices. |
+
+The prefix checker also contains independent suites for the new results:
+
+- **Two-failure replacement profiles:** 18,521 degree-one instances,
+  including loops, unlabelled basis items and rank drops; 83,618 rank-loss
+  inequalities across all failure subsets, including sets larger than two.
+- **Circuit extension and minimality:** 1,094 candidate basis families,
+  70 valid extensions, 11,434 basis-exchange conditions and 3,784 complete
+  rank-table entries. The missing-pair graph and 395 own-color cases are
+  checked independently. All 6,656 coarsenings of the example into at most
+  three labels or unlabelled items give 28,886 additional failure queries.
+- **Integral-submodular basis trees:** 19,867 instances from 24 scaled
+  matroid tables and 826 weighted-coverage tables; 231,334 prefix-value
+  comparisons and 73,009 failure queries. Every case has a nonzero baseline,
+  575 have zero range and 19,116 have a marginal larger than one. The
+  115,595 actual value calls include the cached initial baseline.
+
+Exact Bernoulli comparisons use all independently failed labels, even when
+their number exceeds the requested failure budget. This matches the size
+proof; the randomized measure is never used by either algorithm.
 
 For the larger label-assignment sweep of the first program:
 
@@ -35,8 +57,8 @@ establish universal theorems by exhaustive testing.
 
 ## What the written proofs establish
 
-The represented theorem uses all monomials of degree at most $`h`$ in the
-$`d`$ label-polynomial coefficients, of dimension $`\binom{h+d}{d}`$.
+The represented theorem uses all monomials of degree at most <code class="math">h</code> in the
+<code class="math">d</code> label-polynomial coefficients, of dimension <code class="math">\binom{h+d}{d}</code>.
 A query functional annihilates exactly the failed items. Applying it to
 the greedy relation with earlier retained columns proves every surviving
 prefix span, including ties, signed costs and rank drops. The dimension
@@ -49,34 +71,51 @@ For arbitrary matroids, the sharp rank bound uses a coloop witness in the
 entire surviving restriction. A cheaper-prefix witness is a different
 condition. The bounded-depth search explicitly decides both conditions
 when supplied the appropriate current ground. Reverse deletion gives the
-sharp rank summary; a forward ordered scan gives the unique smallest
-prefix summary, whose general bound is the larger W–LF factor. Composing
-the two gives the sharp rank bound with linear input dependence for fixed
-rank, failure budget and label degree. The one-failure construction has
-its own sharper uniform polynomial bound.
+sharp rank summary. A canonical-basis tree gives the unique smallest
+prefix summary in at most N times the bounded tree size oracle calls;
+the retained-prefix algorithm offers a separate one-pass tradeoff.
+The original-basis probability calculation strengthens the general size
+factor. Composing prefix compression and reverse deletion gives the sharp
+rank bound with linear input dependence for fixed parameters. The
+one-failure construction is the depth-one basis tree and has its own sharp
+size guarantee.
 
 The explicit counterexample rules out the sharp weighted binomial bound
 for arbitrary oracle matroids from two failures onward, even when only
 the exact optimum cost is required. It leaves the represented theorem and
 the unweighted rank theorem intact. It is a support-size obstruction,
-not an oracle-query hardness statement.
+not an oracle-query hardness statement. The two-failure profile and circuit
+proof gives the exact rank-four maximum of 13, the sharp three-rank bound
+at ranks at most three, and minimum rank/label/ground size for the example.
+The finite suites do not enumerate every rank-four matroid; that universal
+upper bound is established by the written circuit argument.
+
+When the union of one-failure replacements contains only one item, the
+quotient and clique-block potential give the sharp bound <code class="math">r+2t</code> and
+the faster profile-sensitive query algorithm. The new checker includes
+repeated original-basis labels and failures of contracted items. These
+cases exercise the flat-intersection step that a naive contraction would
+leave unjustified. With no replacement item, the original basis suffices.
 
 For integral submodular functions, value-spanning sets replace bases in
-the same witness search. The parameter $`R=f(E)-f(\varnothing)`$ is the
-numerical range, not its bit length. Coverage examples exercise the
-reverse-deletion construction; the general ordered-value corollary is
-proved in the manuscript and is outside the executable checker scope.
+the same witness search. The parameter <code class="math">R=f(E)-f(\varnothing)</code> is the
+numerical range, not its bit length. Coverage examples exercise reverse
+deletion, and the weighted-coverage and scaled-matroid suite independently
+checks the new ordered value-basis tree and its query count. The general
+corollary is proved for every integer-valued monotone submodular function.
 The real-valued marginal and entropy inequalities require no integrality
 and make no exact cardinality-summary claim.
 
 ## Review boundary
 
 The local theorem statements, witness algorithms, one-failure endpoint,
-weighted obstruction and ordered-prefix construction are ready for review
+weighted obstruction, ordered-prefix constructions and exact low-rank
+two-failure results are ready for review
 with their explicit models and evidence. This is a repository review
 status; proof-assistant verification and external peer review are not
 claimed. The best general weighted-oracle size beyond one failure remains
-open between the recorded upper and lower bounds. No unknown algorithm
+open outside the exact low-rank cases, between the recorded upper and
+lower bounds. No unknown algorithm
 is assumed to attain the represented bound in that model.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

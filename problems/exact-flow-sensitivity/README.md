@@ -18,7 +18,7 @@ Deterministic preprocessing and queries in each stated flow, matching, matroid a
 
 **Time**
 
-Flow and vertex-disjoint paths: deterministic $`\widetilde O(mn)`$ arithmetic preprocessing. General matching and oracle matroids: deterministic polynomial preprocessing. Price sensitivity beyond a baseline optimum uses $`O(Nr)`$ independence tests and $`O(Nr^2+r^3)`$ arithmetic work. Query bounds are listed separately.
+Flow and vertex-disjoint paths: deterministic <code class="math">\widetilde O(mn)</code> arithmetic preprocessing. General matching and oracle matroids: deterministic polynomial preprocessing. Price sensitivity beyond a baseline optimum uses <code class="math">O(Nr)</code> independence tests and <code class="math">O(Nr^2+r^3)</code> arithmetic work. Query bounds are listed separately.
 
 **Space**
 
@@ -26,7 +26,7 @@ Support and reporting records are listed below. Rational values occupy their act
 
 **Parameters**
 
-$`n,m`$ are graph sizes; $`\lambda`$ is a feasible flow value; $`s_x`$ is a fixed optimum flow support; $`\mu`$ is graph matching number; $`N,r`$ are matroid ground size and prescribed rank.
+<code class="math">n,m</code> are graph sizes; <code class="math">\lambda</code> is a feasible flow value; <code class="math">s_x</code> is a fixed optimum flow support; <code class="math">\mu</code> is graph matching number; <code class="math">N,r</code> are matroid ground size and prescribed rank.
 
 **Model and representation**
 
@@ -46,65 +46,65 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 ## Results
 
-**Fixed optimal unit flow of support $`s_x`$, general balances/signed costs**
+**Fixed optimal unit flow of support <code class="math">s_x</code>, general balances/signed costs**
 
-**Retained support / records.** $`O(s_x+n\sqrt{s_x})`$
+**Retained support / records.** <code class="math">O(s_x+n\sqrt{s_x})</code>
 
-**Query time or report.** $`O(n)`$ difference; $`O(s_x+n)`$ full support
+**Query time or report.** <code class="math">O(n)</code> difference; <code class="math">O(s_x+n)</code> full support
 
-**Min-cost $`\lambda`$-flow, simple nonnegative-cost digraph**
+**Min-cost <code class="math">\lambda</code>-flow, simple nonnegative-cost digraph**
 
-**Retained support / records.** $`O(n^{3/2}\lambda^{1/4})`$
+**Retained support / records.** <code class="math">O(n^{3/2}\lambda^{1/4})</code>
 
-**Query time or report.** $`O(n)`$ difference; $`O(n\sqrt{\lambda})`$ full support
+**Query time or report.** <code class="math">O(n)</code> difference; <code class="math">O(n\sqrt{\lambda})</code> full support
 
-**Cost-only $`\lambda`$-flow sensitivity**
+**Cost-only <code class="math">\lambda</code>-flow sensitivity**
 
-**Retained support / records.** $`O(n\sqrt{\lambda})`$
+**Retained support / records.** <code class="math">O(n\sqrt{\lambda})</code>
 
-**Query time or report.** $`O(\log(n+1))`$
+**Query time or report.** <code class="math">O(\log(n+1))</code>
 
 **Min-cost maximum flow**
 
-**Retained support / records.** $`O(n^{3/2}\lambda^{1/4})\le O(n^{7/4})`$
+**Retained support / records.** <code class="math">O(n^{3/2}\lambda^{1/4})\le O(n^{7/4})</code>
 
 **Query time or report.** Two consecutive flow-value structures
 
-**Min-cost maximum internally vertex-disjoint $`s`$–$`t`$ paths**
+**Min-cost maximum internally vertex-disjoint <code class="math">s</code>–<code class="math">t</code> paths**
 
-**Retained support / records.** $`O(n^{3/2})`$
+**Retained support / records.** <code class="math">O(n^{3/2})</code>
 
-**Query time or report.** $`O(n)`$ full output; one arc or one internal vertex failure
+**Query time or report.** <code class="math">O(n)</code> full output; one arc or one internal vertex failure
 
 **General matching, one edge failure**
 
-**Retained support / records.** At most $`4\mu+2`$ edges
+**Retained support / records.** At most <code class="math">4\mu+2</code> edges
 
-**Query time or report.** $`O(\mu)`$ via one blossom-aware augmentation
+**Query time or report.** <code class="math">O(\mu)</code> via one blossom-aware augmentation
 
 **General matching, one edge or one vertex failure**
 
-**Retained support / records.** At most $`6\mu+2`$ edges
+**Retained support / records.** At most <code class="math">6\mu+2</code> edges
 
-**Query time or report.** $`O(\mu)`$; alternative single failures
+**Query time or report.** <code class="math">O(\mu)</code>; alternative single failures
 
 **Two arbitrary matroids, cardinality only**
 
-**Retained support / records.** At most $`2r+k\le3r`$ elements
+**Retained support / records.** At most <code class="math">2r+k\le3r</code> elements
 
-**Query time or report.** Optimize on retained ground using original oracles; $`k`$ avoidable baseline elements
+**Query time or report.** Optimize on retained ground using original oracles; <code class="math">k</code> avoidable baseline elements
 
 **One-element price change, two matroids**
 
-**Retained support / records.** $`O(N+r\sqrt{\min\{N,r^2\}})`$
+**Retained support / records.** <code class="math">O(N+r\sqrt{\min\{N,r^2\}})</code>
 
-**Query time or report.** $`O(r)`$ exact output, no query oracle calls
+**Query time or report.** <code class="math">O(r)</code> exact output, no query oracle calls
 
 **Arbitrary new arborescence arc, prescribed spanning size**
 
-**Retained support / records.** $`O(n^2)`$ records
+**Retained support / records.** <code class="math">O(n^2)</code> records
 
-**Query time or report.** $`O(\log^2 n)`$ gap evaluation; $`O(n+\log^2 n)`$ full output
+**Query time or report.** <code class="math">O(\log^2 n)</code> gap evaluation; <code class="math">O(n+\log^2 n)</code> full output
 
 The weighted two-matroid and arborescence single-deletion theorems have their own [preserver card](../exact-failure-preservers/). Supplied-catalog insertion in the price structure keeps rank fixed; it does not handle an insertion that increases maximum rank.
 

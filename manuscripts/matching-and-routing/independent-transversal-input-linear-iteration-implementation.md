@@ -86,9 +86,10 @@ This bound does not depend on the numerical sizes of `mu`, `rho`,
 or `Q`. Including all its SuperposedBuild calls, one outer iteration
 costs
 
-```math
+<!-- math-display: e896e31c61db9147651fdfad
 O(P(q+1)^2).
-```
+-->
+![Formula](../../assets/math/e896e31c61db9147651fdfad.svg)
 
 This count permits a newly built final layer with no blockers. Every
 older continuing layer is noncollapsible and hence contains at least
@@ -120,9 +121,10 @@ return it. No universal domination promise is tested.
 
 Let
 
-```math
+<!-- math-display: 07d4ea601c303035d412ecf4
 \lambda=\epsilon^{-1}\log(2+r/\epsilon).
-```
+-->
+![Formula](../../assets/math/07d4ea601c303035d412ecf4.svg)
 
 The current-blocker signature proof bounds the number of iterations
 per augmentation by `(q+1)^{O(lambda)}`. There are at most `q`
@@ -130,12 +132,13 @@ augmentations. The polynomial factors in `q+1` above are absorbed
 in that exponent because `lambda` is bounded below by a positive
 absolute constant. Hence the implementation yields
 
-```math
+<!-- math-display: dfa850e557add634a83caea4
 \boxed{\quad
  P\,(q+1)^{O(\epsilon^{-1}\log(2+r/\epsilon))}
        \mathrm{poly}(b_\epsilon+\log P).
  \quad}
-```
+-->
+![Formula](../../assets/math/dfa850e557add634a83caea4.svg)
 
 The same implementation applies to the named derived-public baseline,
 with the older exponent

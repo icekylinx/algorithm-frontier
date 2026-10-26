@@ -16,20 +16,22 @@ Use the following primary sources.
 
 Let
 
-```math
+<!-- math-display: f6bf9c74125478bcd3700304
 U=\log(M+4),\qquad h=\log(U+4),\qquad
  \chi=\exp(Cph),\qquad
  F=\exp C(U/p+p^2h),
-```
+-->
+![Formula](../../assets/math/f6bf9c74125478bcd3700304.svg)
 
 where `C` denotes a sufficiently large absolute constant, `p` is a positive integer in the admissible CGLNPS range, and all actual graphs have at most a fixed polynomial in the master size `M` records. Increasing the absolute constants permits the same envelopes at every invocation.
 
 The question is whether FO24 Section 4.4 admits the uniform replacement
 
-```math
+<!-- math-display: d25735c8822ad57f9b8f954b
 c_0,c_1\leq\chi^{O(1)},\qquad
  T_{\rm decomp}\leq M F\chi^{O(1)}\theta^{-O(1)},           \tag{1}
-```
+-->
+![Formula](../../assets/math/d25735c8822ad57f9b8f954b.svg)
 
 with absolute exponents. The printed paper gives only the specialization `p` of order `U^(1/3)`. Crucially, `F` must not enter the output-quality constants `c0,c1`, nor be raised to a later hierarchy depth.
 
@@ -37,23 +39,26 @@ with absolute exponents. The printed paper gives only the specialization `p` of 
 
 CGLNPS Lemma 5.3 gives, on a bounded-degree graph, either a cut of sparsity at most a chosen `theta`, or an explicitly embedded spanning witness of expansion
 
-```math
+<!-- math-display: ce473b02767a3e352fbf5c32
 \psi_p=\log^{-O(p)} M.
-```
+-->
+![Formula](../../assets/math/ce473b02767a3e352fbf5c32.svg)
 
 The construction time is
 
-```math
+<!-- math-display: d53f070fa588944621dd546d
 \widetilde O\bigl(M^{1+O(1/p)}\log^{O(p^2)}M+M/\theta\bigr)
  \leq MF\theta^{-O(1)}.                                  \tag{2}
-```
+-->
+![Formula](../../assets/math/d53f070fa588944621dd546d.svg)
 
 The witness has maximum degree `O(log M)`, and its embedding congestion is `O(log M/theta)` after the standard bounded-degree reduction. Converting sparsity to conductance, making the degree comparison in PS Definition 2.2, and contracting the degree-reduction gadgets costs only fixed powers of `log M` and `psi_p^-1`. Consequently the interface can be written as a `(varphi,psi)` witness with
 
-```math
+<!-- math-display: 0dc0ce6aa8b94d256ae466d7
 \psi^{-1}\leq\chi^{O(1)},\qquad
  \varphi\geq\theta\chi^{-O(1)}.                          \tag{3}
-```
+-->
+![Formula](../../assets/math/0dc0ce6aa8b94d256ae466d7.svg)
 
 These normalizations do not depend on `F`. CGLNPS Section 5.2 gives the deterministic degree reduction and canonical-cut conversion. Its Theorem 5.1 and Corollary 5.2 explicitly state the linear `O(p)` quality exponent, whereas the faster low-conductance theorem in the introduction has a different quadratic quality loss. The latter must not be substituted here.
 
@@ -61,23 +66,26 @@ These normalizations do not depend on `F`. CGLNPS Section 5.2 gives the determin
 
 The proof of CGLNPS Lemma 5.3 contains a useful stronger property than the bare congestion bound. Each missing matching pair receives its own fresh fake edge, and its witness embedding path consists of that one edge. All real routing calls in later rounds are still made on the original graph `G`, not on `G` augmented by earlier fake edges. Hence every fake-edge record is used by only its own witness path, up to the constant duplication used in the witness normalization:
 
-```math
+<!-- math-display: 85be3a7f417a4f2ec94fed18
 |\Pi^{-1}(F_{\rm fake})|=O(|F_{\rm fake}|).               \tag{4}
-```
+-->
+![Formula](../../assets/math/85be3a7f417a4f2ec94fed18.svg)
 
 This statement follows directly from the partial matching and singleton-path construction on printed pages 34--35. It is stronger than bounding this quantity by the maximum congestion times the number of fake edges. The weaker estimate would introduce an unnecessary `theta^-1` into the balancing tolerance.
 
 Set the unmatched-pair tolerance to
 
-```math
+<!-- math-display: 0eb10323b111a667626d12ba
 z=cM\psi^a/\log^b(M+4)
-```
+-->
+![Formula](../../assets/math/0eb10323b111a667626d12ba.svg)
 
 for sufficiently large fixed `a,b` and sufficiently small fixed `c`. Since the number of cut-matching rounds is `O(log M)`, (4) gives
 
-```math
+<!-- math-display: 1d74c31ba6b92a39fcac5d91
 |\Pi^{-1}(F_{\rm fake})|\leq c'\psi^2M,
-```
+-->
+![Formula](../../assets/math/1d74c31ba6b92a39fcac5d91.svg)
 
 with any desired fixed small `c'`. The alternative cut has both sides of volume at least `M chi^-O(1)`. This balance parameter depends on `psi`, and thus on the output quality, but not on the construction work `F` or on `theta^-1`.
 
@@ -85,13 +93,14 @@ with any desired fixed small `c'`. The alternative cut has both sides of volume 
 
 PS Definition 2.2 exposes both parameters rather than hiding them in a polylogarithmic specialization. A `(varphi,psi)` witness has congestion at most `psi/varphi` and degree comparison
 
-```math
+<!-- math-display: effcca20359eaa3b79693ef2
 \deg_G(v)\leq\deg_W(v)\leq\deg_G(v)/\psi.
-```
+-->
+![Formula](../../assets/math/effcca20359eaa3b79693ef2.svg)
 
 Its Theorem 4.1 is deterministic and, for an appropriate deletion set `D`, provides the following explicit bounds:
 
-```math
+<!-- math-display: b47f7a015d649bcf37c920cc
 \begin{aligned}
  \text{new witness parameters}
    &=\left(\varphi\psi^6/32000,\ \psi^4/800\right),\\
@@ -101,13 +110,15 @@ Its Theorem 4.1 is deterministic and, for an appropriate deletion set `D`, provi
  \text{admissible deletion condition}
    &:\quad 200\psi^{-2}|\Pi^{-1}(D)|<|E(G)|.
  \end{aligned}                                           \tag{5}
-```
+-->
+![Formula](../../assets/math/b47f7a015d649bcf37c920cc.svg)
 
 The time bound is `O(H |D|/(psi^2 varphi))`, where the label height is `H=O(log n/varphi)`. Thus it is bounded by
 
-```math
+<!-- math-display: 44cfde78f96e58db630995c4
 |D|\mathrm{polylog}M\,\psi^{-O(1)}\varphi^{-O(1)}. \tag{6}
-```
+-->
+![Formula](../../assets/math/44cfde78f96e58db630995c4.svg)
 
 The hypotheses on fake edges in Section 2 satisfy the initialization deletion condition in (5). The retained component has the desired expansion at least `theta chi^-O(1)`.
 
@@ -122,9 +133,10 @@ PS Appendix A.5 builds a static decomposition by fresh cut/witness calls followe
 
 Therefore the sum of graph volumes over a recursion is at most
 
-```math
+<!-- math-display: b780b3956f032660405f03cc
 M\chi^{O(1)}\mathrm{polylog}M.                    \tag{7}
-```
+-->
+![Formula](../../assets/math/b780b3956f032660405f03cc.svg)
 
 Multiplying (7) by the cost of a fresh static call per unit volume gives `MF chi^O(1) theta^-O(1)`. The static subroutine is called afresh; its internal computation time is not used to choose the cut budget, the witness quality, or the recursion balance. Summing boundary edges through the same volume accounting yields a boundary coefficient `chi^O(1)`, with expansion `theta chi^-O(1)`.
 
@@ -144,10 +156,11 @@ The exported tree has only `M polylog M` cluster records. Its capacities are rou
 
 Claim 4.22 then charges each fully dynamic core period once. If a level has a core of size `M_{i-1}` and rebuilds every `M_i` updates, its total construction contribution is
 
-```math
+<!-- math-display: 5314524d4871a71f3ba11495
 M_{i-1}F_{\rm dec}\frac{M}{M_i}
  =MF_{\rm dec}\exp O(U/L).
-```
+-->
+![Formula](../../assets/math/5314524d4871a71f3ba11495.svg)
 
 It is incorrect to replace the exported recourse by the full internal work `M F_dec` and propagate that computational work through all `L` levels. The source's structural accounting avoids precisely that multiplication.
 
@@ -155,10 +168,11 @@ It is incorrect to replace the exported recourse by the full internal work `M F_
 
 For the parameters
 
-```math
+<!-- math-display: 916583b2616cade48e5f036e
 t=(U/h)^{1/5},\quad p\asymp L\asymp t,\quad
  s=\log\theta^{-1}\asymp t^3h,
-```
+-->
+![Formula](../../assets/math/916583b2616cade48e5f036e.svg)
 
 the companion note proves that both the tree-cut quality and its amortized work have logarithm `O(t^4 h)`. There are two additional checks.
 
@@ -168,9 +182,10 @@ the companion note proves that both the tree-cut quality and its amortized work 
 
 Static flow extraction in Section 6.2 uses one constant-factor undirected minimum-congestion flow computation. To avoid treating its cited randomized nearly-linear implementation as deterministic, CGLNPS Lemmas 6.12--6.13 supply an explicit deterministic alternative:
 
-```math
+<!-- math-display: dd5fd5c4b21e6f6046cf1a99
 M^{1+O(1/r)}\log^{O(r^3)}(MR),
-```
+-->
+![Formula](../../assets/math/dd5fd5c4b21e6f6046cf1a99.svg)
 
 where `R` is the capacity ratio. For `log R=poly(U)`, setting `r` of order `(U/h)^(1/4)` bounds this by `M exp O(U^(3/4) h^(1/4))`, up to larger fixed logarithmic powers if one uses the paper's displayed, less tightly balanced specialization. In either form its leading logarithmic exponent is below `4/5`. Final binary search and integral flow rounding incur only polylogarithmic or nearly-linear overhead.
 
@@ -178,9 +193,10 @@ where `R` is the capacity ratio. For `log R=poly(U)`, setting `r` of order `(U/h
 
 The public framework, with its independent parameters retained, supports the comparison bound
 
-```math
+<!-- math-display: e45e06eff3aa9d17bfbf3718
 M\exp O\bigl(U^{4/5}h^{1/5}\bigr).
-```
+-->
+![Formula](../../assets/math/e45e06eff3aa9d17bfbf3718.svg)
 
 This is a derived specialization of public constructive ingredients. It is not the literal exponent displayed in FO24 Theorem 6.17, and should not be cited as if that theorem printed it. Conversely, the printed five-sixths specialization cannot justify claiming that a different four-fifths static min-cost-flow route surpasses the best bound obtainable by straightforward parameter reoptimization of these sources.
 

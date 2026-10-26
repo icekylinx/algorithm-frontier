@@ -25,18 +25,20 @@ registers, and receiver tightness.
 Normalize the artificial source label to zero. For incidence `(r,d)`, the
 receiving arc `r -> d` has length zero, the donor arc `d -> r` has length
 
-```math
+<!-- math-display: 3a8d7ca071db8c7d9e2c60d6
 c_e=\left\lceil H/(4\ell_e)\right\rceil\ge1,
-```
+-->
+![Formula](../../assets/math/3a8d7ca071db8c7d9e2c60d6.svg)
 
 and the artificial source has an arc to bin `d` of length `A-sigma_d`,
 where
 
-```math
+<!-- math-display: ead91987dae92c074c631532
 \sigma_d=\left\lfloor\frac{3H}{4s_d}\right\rfloor,
  \qquad
  \tau_d=\left\lceil\frac{5H}{4s_d}\right\rceil.
-```
+-->
+![Formula](../../assets/math/ead91987dae92c074c631532.svg)
 
 The fixed integer labels `D` are feasible for all of these current arcs.
 Call an arc `u -> v` **tight** when `D(v)=D(u)+length(u,v)`.
@@ -83,20 +85,22 @@ can only increase; a nontight source arc cannot become tight there.
 
 At a terminal `b`, acceptance gives
 
-```math
+<!-- math-display: 79671c2af731af1a8c830551
 D(b)<A-\tau_b.
-```
+-->
+![Formula](../../assets/math/79671c2af731af1a8c830551.svg)
 
 Write `alpha=1/s_b` before the step. The accepted step satisfies
 `eta alpha <= 1/256`, so its new reciprocal is at most
 `alpha/(1-1/256)`. Consequently
 
-```math
+<!-- math-display: d4d9b7693cbc151bfc34e9a2
 \tau_b-\sigma_b^{\rm new}
  \ge
  H\alpha\left(\frac54-\frac{3/4}{1-1/256}\right)
  =\frac{169}{340}H\alpha>0.
-```
+-->
+![Formula](../../assets/math/d4d9b7693cbc151bfc34e9a2.svg)
 
 The new source arc is therefore strictly slack. This also shows that an
 initially tight source arc cannot be used as a terminal before it has
@@ -140,9 +144,10 @@ edge is tight, so the forest meets the numerical interface's requirements.
 At most a constant number of ordinary cuts/links accompany each removed
 parent record. The total supplied ordinary-edit count is
 
-```math
+<!-- math-display: 102fa42e0219e303baef734e
 P=O(m+\nu).
-```
+-->
+![Formula](../../assets/math/102fa42e0219e303baef734e.svg)
 
 This bound counts the repairs emitted by this particular parent
 maintainer. It does not absorb arbitrary additional caller-requested
@@ -152,9 +157,10 @@ Scanning the initial graph, maintaining reachability, and detecting lost
 tightness from the `O(J)` endpoint updates and `R` register notifications
 costs
 
-```math
+<!-- math-display: 83031d999355af83f640b752
 O(m+\nu+J+R)
-```
+-->
+![Formula](../../assets/math/83031d999355af83f640b752.svg)
 
 bounded-word operations, apart from the polynomial-logarithmic numerical
 and dynamic-forest operations already charged by the interface.
@@ -183,36 +189,40 @@ tight-parent information.
 
 Let `R_bin` be the currently tight-reachable bins, and set
 
-```math
+<!-- math-display: a60549c3077c053d1872f688
 \pi_b=(A-D(b))/H,
  \qquad
  E_R=\sum_{b\in R_{\rm bin}}(s_b\pi_b-5/4)_+.
-```
+-->
+![Formula](../../assets/math/a60549c3077c053d1872f688.svg)
 
 For every reachable bin `b`, let `a` be the first bin on its maintained
 source-tree path. The source arc to `a` is tight, and every following arc
 is tight. Therefore
 
-```math
+<!-- math-display: 31936829d6eee14e44079714
 D(a)=A-\sigma_a,
  \qquad
  \bar L_T(a,b)=D(b)-D(a).
-```
+-->
+![Formula](../../assets/math/31936829d6eee14e44079714.svg)
 
 The score of that ordinary root-to-`b` path is exactly
 
-```math
+<!-- math-display: 2e498add44ccf686df405f4b
 \sigma_a-\tau_b-\bar L_T(a,b)
  =A-D(b)-\tau_b=H\pi_b-\tau_b.
-```
+-->
+![Formula](../../assets/math/2e498add44ccf686df405f4b.svg)
 
 If the compatible forest search returns EMPTY, this value is nonpositive
 for every reachable `b`. Since `tau_b <= 5H/(4s_b)+1`,
 
-```math
+<!-- math-display: 7ba81b33c576823a7a87c3e7
 E_R\le\frac{\sum_{b\in R_{\rm bin}}s_b}{H}
  \le\frac{T_{\rm slack}}H\le N
-```
+-->
+![Formula](../../assets/math/7ba81b33c576823a7a87c3e7.svg)
 
 under the imported rounding budget. An EMPTY result is different from a
 guard failure; the argument uses the actual absence of a positive scored

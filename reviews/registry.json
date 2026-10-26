@@ -15,20 +15,24 @@
       "checks": [
         {
           "path": "tools/verify_subset_sum_contacts.py",
-          "scope": "All 44 refined continuous contact branches, using exact rational box coverage and acceptance. The saved receipt binds checker/menu bytes; --all recomputes every branch. The circuit and trace inequalities are proved in the manuscript."
+          "scope": "All 62 refined continuous contact branches, 248189 accepted leaves and 496320 visited nodes, using exact rational box coverage and acceptance. The saved segmented receipt binds the frozen kernel, menu and resume driver; --all independently recomputes every branch. All 44 original branch records retain identical stable fields."
         },
         {
           "path": "tools/verify_subset_sum_scalars.py",
-          "scope": "Exact entropy enclosures, 104 one-sided reflected-profile comparisons, refined type/dummy-padding and initial-table inequalities, the 10000-point fixed core grid allowance, and all nine outer cost rates at E=158153814247997/318928754919134. Separate from continuous contact verification."
+          "scope": "Exact entropy enclosures, 160 endpoint comparisons for the continuous chord-and-cone envelope, the finite-volume amplification allowance, refined type/dummy-padding and initial-table inequalities, the 10000-point fixed core grid, and all nine outer cost rates at E=158153814247997/318964058919134. Separate from continuous contact verification."
         },
         {
           "path": "problems/subset-sum-fast-deterministic/verify/check_energy.py",
           "scope": "132 rank-three energy-tensor cases and 1,056 output comparisons against independent binary endpoint enumeration in dimensions one through four; not the complete Subset Sum solver."
+        },
+        {
+          "path": "problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py",
+          "scope": "165 accepted leaves across three exact branches, two actual interrupted/resumed traversals, six hash-mismatch rejections, and ignored truncated temporary files. Checkpoints are trusted local work state, not independent proof certificates."
         }
       ],
       "review": {
         "status": "partial",
-        "scope": "The refined parameter and compiler-allowance update in Part II, Sections 6–7: the retyped initial difference-table bound, exact reflected-profile budget, and all nine outer cost rates. The new scalar tuple was independently recalculated against the existing compiler lemmas.",
+        "scope": "Part II parameter composition: the generalized second lookup, its exact 62-branch replay and 44-branch compatibility, the finite-volume cone lemma and compiler allowance, the continuous reflected-profile envelope, and all nine outer cost rates. The scalar tuple was independently recalculated.",
         "date": "2026-10-26",
         "conditions": [
           "The arbitrary-input signed-circuit compiler and witness reduction remain mathematical manuscript proofs; the numerical certificates do not formalize them. The deterministic startup constant is finite and input-independent but has no practical numerical bound."
@@ -95,7 +99,7 @@
       ],
       "review": {
         "status": "partial",
-        "scope": "The sharp sparse-packing FPT restriction, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and the aggregate laminar reduction to at most B lower rows.",
+        "scope": "The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most B lower rows.",
         "date": "2026-10-26",
         "conditions": [
           "The smaller sparse ground uses explicit FPT preprocessing; it is distinct from the uniform polynomial sunflower tradeoff. These checks do not verify the family’s general valuated completion, universal-coloring construction or lower-bound literature. Original oracles and weights remain available after restriction."
@@ -119,11 +123,15 @@
         {
           "path": "problems/general-matching/verify/check_certificate_search.py",
           "scope": "All 33,868 simple graphs through six vertices plus 500 seeded larger graphs. The actual production simultaneous failed-search routine is compared with an independent deletion-defined exposable set, factor-critical block invariants and tight barriers; two nonmaximum inputs are rejected."
+        },
+        {
+          "path": "problems/general-matching/verify/check_cover_compression.py",
+          "scope": "68236 cover choices,70578 maximum-crossing-matching right endpoint sets and2882175 left-subset ranks against independent subset dynamic programming; the production compression and its certificate contraction bound. Includes the connected420-to40-vertex witness in the solver checker."
         }
       ],
       "review": {
         "status": "partial",
-        "scope": "The executable cubic solver with optimality certificates and its independent verifier; the self-contained quadratic certificate-extraction proof; the unconditional sharp c-neighbor and mixed-failure kernels, componentwise composition, and subcubic reduction with its decoder.",
+        "scope": "The executable cubic solver with optimality certificates and its independent verifier; the self-contained quadratic certificate-extraction proof; the unconditional sharp c-neighbor and mixed-failure kernels, componentwise composition, and subcubic reduction with its decoder. The cover-side alternating exchange further reduces the default solver, including certificates, to O(n+m log(m+2)+sum_i nu(G_i)^3), while retaining the original independent certificate format.",
         "date": "2026-10-26",
         "conditions": [
           "The four-fifths research running time still requires the cycle-search implementation and named published prerequisites in sources.md. The executable solver has its separately proved cubic bound. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope."
@@ -310,15 +318,19 @@
         },
         {
           "path": "problems/matroid-failure-summaries/verify/check_weighted_prefix.py",
-          "scope": "Original-prefix rank and exact canonical-basis-union comparisons for 86340 small-matroid instances, plus 130 nonrepresentable cases; necessity witnesses, query bounds and Bernoulli events including failures above the budget. Integral-submodular prefix corollary is proved separately."
+          "scope": "Canonical-basis tree and retained-prefix algorithms compared on 86,340 small matroid and 130 nonrepresentable cases; 18,521 two-failure profiles, 70 valid circuit extensions, 6,656 label coarsenings and 19,867 integral-submodular value-tree instances. Checks exact output, prefix preservation, refined bounds and each query ledger."
+        },
+        {
+          "path": "problems/matroid-failure-summaries/verify/check_single_replacement.py",
+          "scope": "19329 zero/single-replacement algorithm instances,191962 independence calls,53100 scans;15622 quotient equivalences,2259 clique-block potential steps,32 sharp represented examples;8366 graph-process states and280866 transitions through six vertices. Finite evidence for the independently proved singleton-profile theorem."
         }
       ],
       "review": {
         "status": "ready",
-        "scope": "Main Theorems 1–5: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure weighted endpoint; explicit weighted obstruction; deterministic arbitrary-budget prefix construction. The two-stage rank construction has linear input dependence for fixed parameters.",
+        "scope": "Main Theorems 1–6: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure endpoint; explicit weighted obstruction; faster canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima and minimality of the 13-item example. Includes the sharp singleton-replacement bound r+2t, its failed-contracted-item proof, and the profile-sensitive construction with N(1+ell_0+binom(t+1,2)) queries.",
         "date": "2026-10-26",
         "conditions": [
-          "Oracle results require the stated independence or value oracle; they bound retained original items, not an encoding of an arbitrary oracle. The exact general weighted-oracle optimum size beyond one failure is not determined. Finite programs complement the written proofs and do not constitute formal verification."
+          "Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification."
         ]
       }
     },

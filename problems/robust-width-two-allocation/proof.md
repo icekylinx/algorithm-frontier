@@ -2,10 +2,11 @@
 
 Let
 
-```math
+<!-- math-display: 37fa1c37309f62659b92c8d9
 \varphi=\frac{1+\sqrt5}{2}.
  \tag{WF1}
-```
+-->
+![Formula](../../assets/math/37fa1c37309f62659b92c8d9.svg)
 
 When every minimal budget-feasible one-unit obstruction has size at
 most two, the exact robust unit gate improves from 2^c to
@@ -32,27 +33,30 @@ M-independent minimal infeasible sets.
 **Theorem WF.** Exact robust one-unit feasibility can be decided, with
 actual scenario allocations on success, in
 
-```math
+<!-- math-display: 5d50c858ae804691a9e99fde
 \varphi^c\mathrm{poly}(H)
  \tag{WF2}
-```
+-->
+![Formula](../../assets/math/5d50c858ae804691a9e99fde.svg)
 
 and polynomial space. The streamed forced-omission wrapper also gives
 
-```math
+<!-- math-display: 258fedad38dba824388b7d73
 \left(2-\frac1\varphi\right)^q
  2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
  \tag{WF3}
-```
+-->
+![Formula](../../assets/math/258fedad38dba824388b7d73.svg)
 
 The whole-ground base is
 
-```math
+<!-- math-display: 09f2868ea0e37574fb8dca9a
 2-\frac1\varphi
                          =\frac{5-\sqrt5}{2}
                          \simeq1.381966.
  \tag{WF4}
-```
+-->
+![Formula](../../assets/math/09f2868ea0e37574fb8dca9a.svg)
 
 There is a guarded implementation with the same time bounds on all
 inputs: outside the width-two class it may instead return an actual
@@ -84,12 +88,13 @@ contradicting the promised width.
 
 Thus, on the width-two class,
 
-```math
+<!-- math-display: 3d8221ad1aa9697ca0bd9ef8
 I\text{ is a robust unit-feasible M-basis}
  \quad\Longleftrightarrow\quad
  I\text{ is an M-basis avoiding F and all edges of G}.
  \tag{WF5}
-```
+-->
+![Formula](../../assets/math/3d8221ad1aa9697ca0bd9ef8.svg)
 
 The forward implication remains valid on arbitrary inputs. A final
 actual unit test on a graph solution will enforce the guarded
@@ -100,27 +105,30 @@ semantics outside the class.
 Let N=M*. For an original M-basis I, its complement D=P minus I is
 an N-basis of size c. Condition WF5 becomes
 
-```math
+<!-- math-display: 228b31ea23f1696f77146b1f
 D\text{ is an N-basis},\qquad F\subseteq D,\qquad
        D\text{ covers every edge of }G.
  \tag{WF6}
-```
+-->
+![Formula](../../assets/math/228b31ea23f1696f77146b1f.svg)
 
 For a forced-omission seed Z, start by requiring
 
-```math
+<!-- math-display: 906d029a8b31226146fe5be3
 D_0=F\cup Z.
-```
+-->
+![Formula](../../assets/math/906d029a8b31226146fe5be3.svg)
 
 If D_0 is dependent in N, fail: no dual basis can contain it.
 Otherwise contract D_0 in N and remove all vertices of D_0 and every
 edge incident to them from G. Those incident edges are already covered.
 The residual dual matroid has rank
 
-```math
+<!-- math-display: f1457c6b446183ce415683ae
 h=c-|D_0|\le c-|Z|.
  \tag{WF7}
-```
+-->
+![Formula](../../assets/math/f1457c6b446183ce415683ae.svg)
 
 The remaining task is to find a basis of this contracted matroid
 that covers the residual graph. Keeping an explicit accumulated set
@@ -198,10 +206,11 @@ dominance rule is used.
 At a branching node the recursive decrements are 1 and a>=2. The
 identity
 
-```math
+<!-- math-display: f53ccabfbcb07f4afc322e64
 \varphi^{-1}+\varphi^{-2}=1
  \tag{WF8}
-```
+-->
+![Formula](../../assets/math/f53ccabfbcb07f4afc322e64.svg)
 
 therefore bounds the outgoing weights
 varphi^(-1)+varphi^(-a) by one. A root-to-leaf path contracts at most h
@@ -265,10 +274,11 @@ For fixed integer d>=2, the positive quota routine has base
 A_d=Gamma((d+1)/(d-1)). Consequently the complete robust factor-d
 theorem on the width-two class has the improved combined base
 
-```math
+<!-- math-display: 941d39b82c2628676a19617b
 A=\max\{\varphi,A_d\}.
  \tag{WF9}
-```
+-->
+![Formula](../../assets/math/941d39b82c2628676a19617b.svg)
 
 It returns at least ceil(K*/d) units, preserving each scenario budget
 exactly, in A^c polynomial time or the corresponding

@@ -14,7 +14,7 @@ Deterministic label-history construction and conditional SCC maintenance. The la
 
 **Time**
 
-Total work $`(n+m)E(N)^{O(1)}\mathrm{poly}(U)`$ under the raw minimum-ratio-cycle interface, with $`U=\log(N+4)`$ and $`E(N)=\exp(O(U^{4/5}(\log U)^{1/5}))`$; this is total incremental work, not a worst-case per-insertion claim.
+Total work <code class="math">(n+m)E(N)^{O(1)}\mathrm{poly}(U)</code> under the raw minimum-ratio-cycle interface, with <code class="math">U=\log(N+4)</code> and <code class="math">E(N)=\exp(O(U^{4/5}(\log U)^{1/5}))</code>; this is total incremental work, not a worst-case per-insertion claim.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the maintained graph, label inventory, and raw-backend state; the 
 
 **Parameters**
 
-$`n`$ is the original vertex count; $`m`$ bounds inserted edge records; $`N`$ is the power-of-two master cap; $`U`$ is its logarithmic scale. Parallel edges and self-loops are allowed.
+<code class="math">n</code> is the original vertex count; <code class="math">m</code> bounds inserted edge records; <code class="math">N</code> is the power-of-two master cap; <code class="math">U</code> is its logarithmic scale. Parallel edges and self-loops are allowed.
 
 **Model and representation**
 
@@ -46,10 +46,10 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 ## Historical component queries
 
-The same small-to-large labels store $`O(n\log(n+2))`$ historical records.
+The same small-to-large labels store <code class="math">O(n\log(n+2))</code> historical records.
 They answer SCC equality at a past settled update in
-$`O(1+\log\log(n+2))`$ time and first coalescence in
-$`O(1+\log\log(n+2))`$ time. The latter binary-searches their common
+<code class="math">O(1+\log\log(n+2))</code> time and first coalescence in
+<code class="math">O(1+\log\log(n+2))</code> time. The latter binary-searches their common
 label suffix, as proved in Corollary 9.1. These representation
 bounds are unconditional once the exact merge sequence is supplied.
 

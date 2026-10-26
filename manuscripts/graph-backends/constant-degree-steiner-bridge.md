@@ -32,7 +32,7 @@ smaller exponent `83/84`. Products of these factors remain subpolynomial
 here because the recursion depth is fixed for each parameter value;
 we are not reusing the source's growing-depth exponent calculation.
 
-**Theorem 1 (conditional geometric bridge).** Suppose the cover/HRG instances have the explicit flat-edge provenance, degree and occurrence bounds below; the portal layer supplies its immutable alias transcript; and the recursive child supports the stated forest logs and retirement callbacks. With all local factors absorbed into $`A`$, the reduction maintains these invariants:
+**Theorem 1 (conditional geometric bridge).** Suppose the cover/HRG instances have the explicit flat-edge provenance, degree and occurrence bounds below; the portal layer supplies its immutable alias transcript; and the recursive child supports the stated forest logs and retirement callbacks. With all local factors absorbed into <code class="math">A</code>, the reduction maintains these invariants:
 
 * every recursive general-cycle graph has degree at most three;
 * its tree-cycle subinstances have degree at most A;
@@ -43,7 +43,7 @@ we are not reusing the source's growing-depth exponent calculation.
 
 ## 2. Degree of a tree-cycle instance from a degree-three input
 
-**Lemma 2.** For a degree-three general input, one HRG tree-cycle instance has maximum degree at most $`4\kappa(\gamma+1)+2\gamma+3`$.
+**Lemma 2.** For a degree-three general input, one HRG tree-cycle instance has maximum degree at most <code class="math">4\kappa(\gamma+1)+2\gamma+3</code>.
 
 **Proof.** Let G be the degree-three input to the source's hierarchical routing
 construction. Write gamma for the routing-forest vertex-congestion

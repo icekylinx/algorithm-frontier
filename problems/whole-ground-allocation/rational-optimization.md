@@ -18,10 +18,11 @@ Let F be a finite nonempty family of permitted sets. For each
 I in F, let lambda_I be a finite nonnegative optimum of a fixed-set
 optimization problem, and let
 
-```math
+<!-- math-display: e094bbf5415c99140b359161
 \Lambda=\max_{I\in\mathcal F}\lambda_I.
 \tag{RG1}
-```
+-->
+![Formula](../../assets/math/e094bbf5415c99140b359161.svg)
 
 Assume the following interfaces, all with polynomial binary
 complexity in H.
@@ -49,18 +50,20 @@ with T needs a separate argument and is not covered automatically.
 Write alpha=A/B in lowest terms, with positive integers A<B, and
 set
 
-```math
+<!-- math-display: f660c34c762c9523d7b084d1
 \delta=\frac{1}{2BD^2}.
 \tag{RG2}
-```
+-->
+![Formula](../../assets/math/f660c34c762c9523d7b084d1.svg)
 
 Use integer indices for the delta-grid. Initialize L=0 with any
 permitted set and an external upper endpoint
 
-```math
+<!-- math-display: 8cb6c6208979a9b9eeff9cae
 U=\big(\lceil V/\delta\rceil+1\big)\delta.
 \tag{RG3}
-```
+-->
+![Formula](../../assets/math/8cb6c6208979a9b9eeff9cae.svg)
 
 Thus U>V>=Lambda. Query grid midpoints until the upper and lower
 indices differ by one. On success, save the returned set and set
@@ -68,19 +71,21 @@ L=T. On failure, set U=T. Every such failed upper endpoint is
 strictly larger than Lambda by the gap guarantee. Hence at the
 end,
 
-```math
+<!-- math-display: b28ec58822258901c02f6de0
 L>\Lambda-\delta.
 \tag{RG4}
-```
+-->
+![Formula](../../assets/math/b28ec58822258901c02f6de0.svg)
 
 If no positive target succeeded, the saved initial set still has
 lambda_I>=alpha*L=0. In every case the saved I satisfies
 
-```math
+<!-- math-display: 44f607acb84c0dabdd36425b
 \lambda_I\ge\alpha L
                            >\alpha\Lambda-\alpha\delta.
 \tag{RG5}
-```
+-->
+![Formula](../../assets/math/44f607acb84c0dabdd36425b.svg)
 
 The number of calls is logarithmic in `V/delta+2`. Its bit length
 is polynomial in H, log D and the encoding of alpha. A numerically
@@ -100,21 +105,23 @@ lambda_I and Lambda have denominator at most D. If
 `lambda_I<alpha*Lambda`, write them in lowest terms as p/d and
 z/e, where d,e<=D. The positive difference satisfies
 
-```math
+<!-- math-display: 738ec8c66093fc21673ddf1a
 \alpha\Lambda-\lambda_I
    =\frac{Azd-Bpe}{Bed}
    \ge\frac1{BD^2}=2\delta.
 \tag{RG6}
-```
+-->
+![Formula](../../assets/math/738ec8c66093fc21673ddf1a.svg)
 
 But RG5 gives this difference smaller than alpha*delta<delta,
 a contradiction. Therefore the returned exact fixed-set optimum
 obeys
 
-```math
+<!-- math-display: d58f3bb049d6bcb327996f11
 \lambda_I\ge\alpha\Lambda.
 \tag{RG7}
-```
+-->
+![Formula](../../assets/math/d58f3bb049d6bcb327996f11.svg)
 
 This includes Lambda=0. If all fixed-set values are zero, the
 initial zero witness is enough; if Lambda>0, RG4 and the denominator
@@ -140,10 +147,11 @@ Clear denominators in each individual row. There are at most
 n+1 entries, including the right side, so all resulting integer
 entries have magnitude at most
 
-```math
+<!-- math-display: f172f5b0e87c5ccad6cf2ede
 W=2^{(n+2)L}.
 \tag{RG8}
-```
+-->
+![Formula](../../assets/math/f172f5b0e87c5ccad6cf2ede.svg)
 
 At an optimum vertex, choose n linearly independent active rows,
 including equalities represented in the usual way if necessary.
@@ -151,10 +159,11 @@ Boundedness guarantees vertices even when the feasible polytope
 has lower affine dimension. Cramer's rule and the determinant
 bound give a denominator for each coordinate of at most
 
-```math
+<!-- math-display: e7c75647b21126d328385dac
 D=n!W^n.
 \tag{RG9}
-```
+-->
+![Formula](../../assets/math/e7c75647b21126d328385dac.svg)
 
 If the objective is a coordinate lambda, RG9 is directly the
 required bound. General rational linear objectives can be handled
@@ -173,7 +182,7 @@ common denominator. Uniform coefficient bounds suffice.
 Fix one genuine permitted player set I. Its fractional common
 service optimum lambda_I is the optimum of the LP
 
-```math
+<!-- math-display: 156f851b61e4b5c0082fc886
 \begin{aligned}
   \max\;&\lambda,\\
   x_j&\in P(f_j),\\
@@ -181,7 +190,8 @@ service optimum lambda_I is the optimum of the LP
   \lambda&\ge0,
  \end{aligned}
 \tag{RG10}
-```
+-->
+![Formula](../../assets/math/156f851b61e4b5c0082fc886.svg)
 
 with the original assignment-cost row added in the budgeted model.
 A redundant upper bound lambda<=V makes boundedness explicit.
@@ -201,11 +211,12 @@ alpha=1-epsilon and time `Gamma(1/epsilon)^c poly(H)`.
 Apply RG2--RG7, reconstruct the exact optimum allocation of the
 saved basis, and then use the accepted lower rounding. This gives
 
-```math
+<!-- math-display: 43df99c4dce3549b22d17e75
 v_p\ge\max\{0,(1-\varepsilon)\mathrm{FOPT}-u_p\}
        \quad\text{for every selected }p,
 \tag{RG11}
-```
+-->
+![Formula](../../assets/math/43df99c4dce3549b22d17e75.svg)
 
 in `Gamma(1/epsilon)^c poly(H)` time and polynomial space. With
 one nonnegative assignment budget, use the disposal and maximum-total

@@ -6,61 +6,68 @@
 
 We are given Boolean variables `x in {0,1}^n`, any number of signed binary integer equalities, and `m` signed binary interval constraints
 
-```math
+<!-- math-display: 46298af300e805c655225e78
 \ell_i\le a_i^T x\le u_i\qquad(i\in[m]).
-```
+-->
+![Formula](../../../assets/math/46298af300e805c655225e78.svg)
 
 One-sided inequalities are included: intersect their permitted range with the elementary attainable range `[sum_j min(a_ij,0), sum_j max(a_ij,0)]`. An empty interval certifies infeasibility. A zero row is checked and removed. Let `L` denote the full binary input length, including all equalities, interval endpoints, and an optional signed linear objective. Let
 
-```math
+<!-- math-display: 718b09838e258fcb8546359a
 s_i=|\mathrm{supp}(a_i)|,\quad W_i=u_i-\ell_i,\quad
 \kappa_i=\min\{W_i+1,5s_i+1\},\quad
 q_i=\lceil\log_2\kappa_i\rceil,\quad Q=\sum_i q_i.
 \tag{B1}
-```
+-->
+![Formula](../../../assets/math/718b09838e258fcb8546359a.svg)
 
 Exact rows (`W_i=0`) can instead be put in the equality system and contribute no parameter. A deterministic preprocessing step constructs, for every interval row, a catalogue of `p_i` short interval tests. It has
 
-```math
+<!-- math-display: 3e811c386a063d84134a04be
 p_i\le 4\lceil\log_2(W_i+1)\rceil+1,
 \tag{B2}
-```
+-->
+![Formula](../../../assets/math/3e811c386a063d84134a04be.svg)
 
 and `p_i=1` if `W_i<=5s_i`. Every catalogue interval contains at most `kappa_i` integers. The catalogue is exact for every Boolean assignment, not only for some feasible witness.
 
 Assume a deterministic Subset Sum backend returns an indexed witness in time
 
-```math
+<!-- math-display: 4059c274ec749c71e0adff08
 \mathrm{poly}(L')2^{\alpha N}
-```
+-->
+![Formula](../../../assets/math/4059c274ec749c71e0adff08.svg)
 
 on `N` signed binary integers. If it also has writable-bit space `poly(L') 2^{sigma N}`, the same space interface can be used below. The polynomial degrees are constants belonging to the backend.
 
 **Compiler theorem.** For every integer `B` with `0<=B<=Q`, exact feasibility and indexed witness recovery for the above Boolean linear system can be performed in
 
-```math
+<!-- math-display: 00acd09647bee78737365a30
 T_B\le\mathrm{poly}(L)\left(\prod_{i=1}^m p_i\right)
 2^{\alpha n+Q-(1-\alpha)B},
 \tag{B3}
-```
+-->
+![Formula](../../../assets/math/00acd09647bee78737365a30.svg)
 
 and, when the space interface is available,
 
-```math
+<!-- math-display: 60b17a7c9eabd49880c795b0
 S_B\le\mathrm{poly}(L)2^{\sigma(n+B)}.
 \tag{B4}
-```
+-->
+![Formula](../../../assets/math/60b17a7c9eabd49880c795b0.svg)
 
 The equalities do not enter `Q` or the product of catalogue sizes. Their encoding lengths are charged to `L`. The same bounds, up to the displayed polynomial factor, permit exact signed linear optimization, and lexicographic optimization for any explicitly listed polynomial-size sequence of linear objectives.
 
 The endpoints are useful:
 
-```math
+<!-- math-display: 48675e0a3d81cc790a74df21
 T_0\le\mathrm{poly}(L)\Bigl(\prod p_i\Bigr)2^{\alpha n+Q},
 \qquad
 T_Q\le\mathrm{poly}(L)\Bigl(\prod p_i\Bigr)2^{\alpha(n+Q)}.
 \tag{B5}
-```
+-->
+![Formula](../../../assets/math/48675e0a3d81cc790a74df21.svg)
 
 The first endpoint retains the `n`-item backend space exponent. The second replaces the boundary-target enumeration exponent `Q` by `alpha Q`. This comparison is between two proved compiler bounds; it is not a claim that this algorithm dominates every existing Boolean-IP algorithm in every parameter regime.
 
@@ -70,23 +77,26 @@ Here is the elementary modification of the published shrinking-interval procedur
 
 If `u-ell<=5s`, emit the single test `(a,[ell,u])` and stop. Otherwise, if `ell` is odd, emit `(a,[ell,ell])` and recurse with `ell+1`; if `u` is odd, emit `(a,[u,u])` and recurse with `u-1`. Recheck the stopping condition in each recursive call. In the remaining case both endpoints are even. Emit
 
-```math
+<!-- math-display: 382aae5ef0515f6cfa543d14
 (a,[\ell,\ell+3s]),\qquad(a,[u-2s,u]),
-```
+-->
+![Formula](../../../assets/math/382aae5ef0515f6cfa543d14.svg)
 
 set `a'_j=floor(a_j/2)`, and recurse on
 
-```math
+<!-- math-display: 5d0815effc9fd81eafe1af08
 \left(a',\left[(\ell+2s)/2,(u-2s)/2\right]\right).
 \tag{B6}
-```
+-->
+![Formula](../../../assets/math/5d0815effc9fd81eafe1af08.svg)
 
 This uses signed floor, including on negative coefficients. For every Boolean `x`,
 
-```math
+<!-- math-display: a355601e87db895978a6cb9c
 0\le a^Tx-2(a')^Tx\le s.
 \tag{B7}
-```
+-->
+![Formula](../../../assets/math/a355601e87db895978a6cb9c.svg)
 
 Indeed each nonzero coefficient contributes either zero or one to the difference, multiplied by its Boolean variable. Thus all assignments accepted by the recursive interval satisfy the parent interval: their unrounded sum is at least `ell+2s>=ell` and at most `u-2s+s<=u`. Conversely, if a parent-feasible sum is in neither emitted boundary interval, (B7) places its rounded sum in (B6). This proves the exact disjunction inductively.
 
@@ -98,39 +108,43 @@ This proof is the existing signed interval-rounding argument, with adjacent exac
 
 Choose integers `0<=b_i<=q_i` whose sum is `B`. Every `B` from zero to `Q` is possible by filling these intervals in any fixed order. Split each short interval from row `i` into consecutive chunks, each with at most `2^{b_i}` integer values. There are at most
 
-```math
+<!-- math-display: 4b93b76f5d7abec80ead87ba
 \left\lceil\frac{\kappa_i}{2^{b_i}}\right\rceil
 \le 2^{q_i-b_i}
 \tag{B8}
-```
+-->
+![Formula](../../../assets/math/4b93b76f5d7abec80ead87ba.svg)
 
 chunks per catalogue member. An empty interval is never emitted.
 
 Consider one chunk `[l,u]`, let `w=u-l`, and put `q=ceil(log_2(w+1))<=b_i`. If `w=0`, the constraint is already an equality. Otherwise the `q` nonnegative integers
 
-```math
+<!-- math-display: 9803a3d833b301622a3c35fa
 1,2,4,\ldots,2^{q-2},\quad w-(2^{q-1}-1)
 \tag{B9}
-```
+-->
+![Formula](../../../assets/math/9803a3d833b301622a3c35fa.svg)
 
 have subset sums exactly the integers `0,...,w`. For `q=1` the initial sequence is empty. To see the claim, the powers of two cover `[0,2^{q-1}-1]`; the final integer is between one and `2^{q-1}`, so adding it covers an overlapping or adjacent interval ending at `w`.
 
 Consequently `(a')^T x in [l,u]` is equivalent to one equality
 
-```math
+<!-- math-display: ac180f71b5fca7ff7c482312
 (a')^T x+\sum_{t=1}^{q}v_t z_t=u,
 \qquad z_t\in\{0,1\},
 \tag{B10}
-```
+-->
+![Formula](../../../assets/math/ac180f71b5fca7ff7c482312.svg)
 
 using at most `b_i` additional Boolean variables. Slack variables belonging to different rows are distinct. We need only decision and witness recovery; the possible nonuniqueness of the representation in (B9) causes no problem. It would matter for counting, which is not claimed.
 
 For each tuple of catalogue members and chunks, we now have a pure signed equality system on at most `n+B` Boolean variables. The number of tuples is bounded by
 
-```math
+<!-- math-display: 9b7354e148eec6d91f630b39
 \left(\prod_i p_i\right)2^{Q-B}.
 \tag{B11}
-```
+-->
+![Formula](../../../assets/math/9b7354e148eec6d91f630b39.svg)
 
 The catalogue construction, chunk enumeration, and radix-packing arithmetic take `poly(L)` bit operations per tuple. Every packed instance has `N<=n+B` variables and an encoding length `L'=poly(L)`; the polynomial factor in the backend contract is therefore absorbed into the displayed `poly(L)`. Only one packed instance and one backend workspace are live at a time. The branch count in (B11), rather than an unlisted factor depending on the number of original rows, is the complete exponential accounting.
 
@@ -138,18 +152,20 @@ The catalogue construction, chunk enumeration, and radix-packing arithmetic take
 
 Suppose a branch has equalities `c_j^T y=t_j`, for `j=0,...,r-1`, and `y` has `N<=n+B` Boolean coordinates. Set
 
-```math
+<!-- math-display: 3d2bb19ae86c3ee6b9a26878
 R=1+\max_j\left\{\sum_k|c_{jk}|+|t_j|\right\}.
 \tag{B12}
-```
+-->
+![Formula](../../../assets/math/3d2bb19ae86c3ee6b9a26878.svg)
 
 If the maximum is zero, the system is trivial and can be handled directly. Otherwise `R>=2`. Give Boolean coordinate `k` the signed integer weight
 
-```math
+<!-- math-display: 8ddc09aa94fe2d88566b7206
 A_k=\sum_{j=0}^{r-1}c_{jk}R^j,
 \qquad T=\sum_{j=0}^{r-1}t_jR^j.
 \tag{B13}
-```
+-->
+![Formula](../../../assets/math/8ddc09aa94fe2d88566b7206.svg)
 
 Then `sum_k A_k y_k=T` if and only if all original branch equalities hold. For the reverse implication set `d_j=c_j^T y-t_j`. We have `|d_j|<R`. Reducing `sum_j d_j R^j=0` modulo `R` forces `d_0=0`; division by `R` and induction force every `d_j=0`. This argument explicitly permits signed entries and targets; no unjustified nonnegative-digit/no-carry assumption is used.
 
@@ -161,9 +177,10 @@ Multiplying (B11) by the backend time on `n+B` items proves (B3). Only one branc
 
 For a signed linear objective `c^T x`, its exact attainable values lie in
 
-```math
+<!-- math-display: b7a727e9af0b72360ea51fa3
 \left[\sum_j\min(c_j,0),\sum_j\max(c_j,0)\right].
-```
+-->
+![Formula](../../../assets/math/b7a727e9af0b72360ea51fa3.svg)
 
 Binary search for the optimum takes polynomially many feasibility queries in the full binary input length. During each query, convert the objective threshold to exact targets using the ordinary signed interval reduction, enumerating its short target intervals completely. This one extra row costs only a polynomial factor in `L`; it contributes no slack variables. Thus the `B` and `Q` in (B3)–(B4) can remain those of the original interval constraints.
 
@@ -173,38 +190,42 @@ After obtaining an optimum, retrieve a witness for that optimum. For lexicograph
 
 The repository records two separate Subset Sum contracts at the pinned commit:
 
-```math
+<!-- math-display: 8992bcb362d0f98226cc4e4e
 E=\frac{149809813343531}{301754962128739}
 \simeq0.4964618056,
 \quad
 E_S=\frac{18261635770550353}{10^{17}}
 =0.18261635770550353.
 \tag{B14}
-```
+-->
+![Formula](../../../assets/math/8992bcb362d0f98226cc4e4e.svg)
 
 The fast contract has time `poly(L') 2^{E N}` with exact indexed witness recovery; it does not claim a separate space exponent. Substituting `alpha=E` into (B3), and choosing `B=Q`, yields
 
-```math
+<!-- math-display: 1926b81e866eac3d99a5bc73
 \mathrm{poly}(L)\left(\prod_i p_i\right)2^{E(n+Q)}.
 \tag{B15}
-```
+-->
+![Formula](../../../assets/math/1926b81e866eac3d99a5bc73.svg)
 
 **Refined time-only instantiation.** If the exact circuit interfaces and the full-domain contact bounds in [the refined Subset Sum theorem](../../subset-sum-fast-deterministic/proof.md), Section 4, are supplied, one may instead substitute
 
-```math
+<!-- math-display: 917f1b003368d3fc4128d396
 \alpha=E_{\rm new}=\frac{158153814247997}{318927986919134}\simeq0.495891927754
-```
+-->
+![Formula](../../../assets/math/917f1b003368d3fc4128d396.svg)
 
 throughout (B3), (B5), and (B15). In particular, full slack gives `poly(L) (product_i p_i) 2^{E_new(n+Q)}` and a fixed number of interval rows gives `poly(L) 2^{E_new n}`. This instantiation inherits those analytic contact premises; checking its scalar exponent does not certify them. It remains a time-only point and supplies no new space exponent.
 
 The separate low-space contract has time `poly(L') 2^{N/2}` and writable bits `poly(L') 2^{E_S N}`. It gives the full family
 
-```math
+<!-- math-display: 01d83e0a30efda7a4951d2ac
 T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)2^{n/2+Q-B/2},
 \qquad
 S_B\le\mathrm{poly}(L)2^{E_S(n+B)}.
 \tag{B16}
-```
+-->
+![Formula](../../../assets/math/01d83e0a30efda7a4951d2ac.svg)
 
 Do not combine the fast time exponent and low-space exponent into one unproved simultaneous guarantee.
 
@@ -217,10 +238,11 @@ These fixed-dimensional corollaries are consequences of the known reduction and 
 
 For growing `m`, the displayed parameterized compiler is the additional useful content. For example, when all `s_i<=n`, all coefficient/endpoint bit lengths are `n^{c+o(1)}`, and `m=(gamma+o(1))n/log_2 n`, the full-slack bound (B15) is at most
 
-```math
+<!-- math-display: 05ee27888782b68c5db17b01
 2^{[E+(E+c)\gamma+o(1)]n}\mathrm{poly}(L),
 \tag{B17}
-```
+-->
+![Formula](../../../assets/math/05ee27888782b68c5db17b01.svg)
 
 whereas the same backend with complete boundary-target enumeration gives the upper bound with coefficient `1+c` in place of `E+c`. A sub-half exponent is therefore certified whenever `gamma<(1/2-E)/(E+c)` by this compiler. This is a parameter-range statement for the explicitly compared construction; it is not a universal optimality claim for all growing-dimension Boolean IP algorithms.
 

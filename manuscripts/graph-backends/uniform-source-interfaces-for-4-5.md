@@ -17,12 +17,13 @@ directly into those complete old theorems would be invalid.
 
 Use the notation of the main composition:
 
-```math
+<!-- math-display: 7e14035c725db1937ea773de
 h=\lceil\log_2(U+4)\rceil,\quad
  t=\max\{2,\lfloor(U/h)^{1/5}\rfloor\},\quad
  p=r=t,\quad K=t^2,\quad x=\lceil U/t\rceil,\quad k=2^x.
  \tag{1}
-```
+-->
+![Formula](../../assets/math/7e14035c725db1937ea773de.svg)
 
 Here p controls the explicit sequential routing construction, r controls
 the deterministic balanced-cut primitive, K is the number of touched-set
@@ -36,11 +37,12 @@ An actual local graph has resident size m, including its counted isolated
 slots and within-period history, and positive integral lengths of at most
 b_* bits. With the declared depth bound d_*,
 
-```math
+<!-- math-display: b234e4413684c801219f8d2e
 d_*=\lceil8U/x\rceil+10,
  \qquad b_*=(c_0+100)U(d_*+1)=O(Ut).
  \tag{2}
-```
+-->
+![Formula](../../assets/math/b234e4413684c801219f8d2e.svg)
 
 The master bound U is used for counters, caps and integer arithmetic. It
 does not authorize initializing a graph with 2^U vertices when its actual
@@ -58,11 +60,12 @@ construction for centers. The final count actually derived in that appendix
 is sufficient here, without relying on its tighter displayed logarithmic
 factor. On a constant-degree graph, for an integer b, the safe interface is
 
-```math
+<!-- math-display: 45901cd405f029efe1d2383b
 |A|=O((n/b)\log^2(n+2)),\qquad
  |B(v,A)|\le b,\qquad |C(v,A)|\le2b,
  \tag{3}
-```
+-->
+![Formula](../../assets/math/45901cd405f029efe1d2383b.svg)
 
 with actual work O(nb polylog(n+2)). Components smaller than b receive one
 local center, as specified in the disconnected-component wrapper.
@@ -74,10 +77,11 @@ contained in its initial list. The sum of inverse-cluster sizes is at most
 nb. If V_i consists of vertices whose clusters are still larger than 2b,
 and |V_i|>n/b, put
 
-```math
+<!-- math-display: 945e10a4515206ee2e421ce6
 b_i=\lfloor b|V_i|/n\rfloor.
  \tag{4}
-```
+-->
+![Formula](../../assets/math/945e10a4515206ee2e421ce6.svg)
 
 For each initial nearest-vertex list retain its first b_i members in V_i,
 when there are that many, and hit all these sublists. This adds at most
@@ -189,11 +193,12 @@ paths. Its cardinality and explicitly enumerated total edge count are
 m k^{O(1)} poly(U); every path length is at most
 k^{O(1)} poly(U) 2^{b_*}. Weighted halving therefore needs
 
-```math
+<!-- math-display: 412c6721e00d9b52d52f9894
 O(\log(m+2)+\log(k+2)+b_*+\log(U+2))
                        =\mathrm{poly}(U)
  \tag{5}
-```
+-->
+![Formula](../../assets/math/412c6721e00d9b52d52f9894.svg)
 
 forests. KMPG's original O(log m) display uses polynomial aspect ratio;
 (5) is the actual bound used here. It remains a fixed polynomial, so it
@@ -248,11 +253,12 @@ Write Delta_native=k poly(U). At a repair, projected degree and preliminary
 ambient congestion are both O(C_old+Delta_native). The normalized static
 provider gives
 
-```math
+<!-- math-display: 052fce60b2f3e60fc47b77e3
 L_{j+1}\le c\Gamma L_j,\qquad
  C_{j+1}\le c\Gamma(C_j+\Delta_{\rm native}).
  \tag{6}
-```
+-->
+![Formula](../../assets/math/052fce60b2f3e60fc47b77e3.svg)
 
 Thus L_K<=Gamma^{O(K)} and
 C_K<=k poly(U) Gamma^{O(K)}. Full route lists, inverse occurrence lists,
@@ -266,12 +272,13 @@ change a selected edge's gradient or create a recursive input edge.
 The integer scheduling ratio is rho=2^{ceil(8U/K)}. The elementary repair
 proof yields selected degree/encoded recourse with
 
-```math
+<!-- math-display: 6ed940e7d8836c8cac8ec043
 \log R=O(U/K+\log\Gamma+\log U),
  \qquad
  W=k^{O(1)}\rho^{O(1)}F^{O(1)}\Gamma^{O(K)}\mathrm{poly}(U)
  \tag{7}
-```
+-->
+![Formula](../../assets/math/6ed940e7d8836c8cac8ec043.svg)
 
 for local work. Fixed powers in W include possible moved-incidence scans.
 They do not multiply the child-update recurrence. Late spending of initial
@@ -296,11 +303,12 @@ The table concerns the current 4/5 path, not every historical alternative.
 
 The current static provider has
 
-```math
+<!-- math-display: e872b97ad0f71a450040223f
 \log\Gamma=O((p+r)h),\qquad
  \log F=O(U/p+U/r+r^2h+(p+r)h).
  \tag{8}
-```
+-->
+![Formula](../../assets/math/e872b97ad0f71a450040223f.svg)
 
 The r^2 term is construction work. It is not inserted into selected size,
 congestion or per-level quality. Conversely the complete quality loss
@@ -321,11 +329,12 @@ evaluate an old fixed-a asymptotic theorem at a growing value of a. It proves
 the priced-step inequalities using the directly supplied master cap E.
 The actual assumptions are
 
-```math
+<!-- math-display: e9c6466a4a5af9f0d245bd23
 q<1/100,\quad q\ge S^{-1},\quad D\le S^2,
  \quad E\le D/4,\quad 1/(4D)>2q,
  \tag{9}
-```
+-->
+![Formula](../../assets/math/e9c6466a4a5af9f0d245bd23.svg)
 
 plus the stated argument, precision, history and lifetime guards. With
 D and q from the table, these hold eventually for every favorable fixed

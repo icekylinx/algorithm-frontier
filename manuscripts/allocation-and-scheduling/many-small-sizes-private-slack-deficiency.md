@@ -19,10 +19,11 @@ put u=max_j p_j, with the one-size case handled exactly if this set
 is empty. Define the total possible small workload at each machine
 by the singleton statistic
 
-```math
+<!-- math-display: 47c3c4c76d6710367e91e85b
 W_p=\sum_{j:p_j<a}p_j f_j(\{p\}).
  \tag{P1}
-```
+-->
+![Formula](../../assets/math/47c3c4c76d6710367e91e85b.svg)
 
 These rational values are obtained directly by rank queries. They
 can be much larger than the actual load of any feasible schedule;
@@ -30,20 +31,22 @@ they are used only as a sufficient guaranteed-slack test.
 
 Fix a rank budget k>=1 and a rational divisor D satisfying
 
-```math
+<!-- math-display: f678893c9f36c765bc5753dd
 D\ge D_k:=3-2/k.
  \tag{P2}
-```
+-->
+![Formula](../../assets/math/f678893c9f36c765bc5753dd.svg)
 
 For targets a<=T<2a, let M be the unit-box cap of the largest-job
 polymatroid. If its rank is h, define
 
-```math
+<!-- math-display: a3975dc9faf0731991bffac9
 F_D(T)=\{p:W_p\le T-a/D\},
  \qquad
  \delta_D(T)=h-r_M(F_D(T)).
  \tag{P3}
-```
+-->
+![Formula](../../assets/math/a3975dc9faf0731991bffac9.svg)
 
 This deficit is nonincreasing in T. The cap for budget k holds when
 delta_D(T)<=k, holds automatically for T>=2a, and fails for T<a.
@@ -51,28 +54,31 @@ If the Boolean matroid has rank less than h, it fails throughout the
 hard interval and first holds at 2a. Let Theta_(k,D) be the first
 target passing this cap. Define
 
-```math
+<!-- math-display: f68bfba8e2da47183ba2c387
 \beta(D)=\max\{3/2,\ 2-1/D\}.
  \tag{P4}
-```
+-->
+![Formula](../../assets/math/f68bfba8e2da47183ba2c387.svg)
 
 The construction below returns a legal integral schedule satisfying
 
-```math
+<!-- math-display: 2db6eca597585bfe25d76b77
 \boxed{\quad
  C_{\max}\le \beta(D)\max\{\mathrm{OPT},\Theta_{k,D}\}+u.
  \quad}
  \tag{P5}
-```
+-->
+![Formula](../../assets/math/2db6eca597585bfe25d76b77.svg)
 
 For D=D_k its time is 2^{O(k)}poly(H). For D=D_k+eta, where
 0<eta<=1, its time is
 
-```math
+<!-- math-display: 7e0ef65d884d7e33dca84eb1
 \mathrm{poly}(H)
  \min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\}.
  \tag{P6}
-```
+-->
+![Formula](../../assets/math/7e0ef65d884d7e33dca84eb1.svg)
 
 All arithmetic, oracle operations, decomposition and rounding are paid
 in H. The guarantee is against OPT itself when OPT passes the cap.
@@ -84,12 +90,13 @@ Choose a common original quantum g=1/Q such that all original sizes
 are integer multiples of g. Write D=A/B in lowest positive integer
 terms and set
 
-```math
+<!-- math-display: 0290f5f6d6a040a3634658c3
 \Delta=g/A,
  \qquad K=a/\Delta,
  \qquad b=K/D.
  \tag{P7}
-```
+-->
+![Formula](../../assets/math/0290f5f6d6a040a3634658c3.svg)
 
 If a=A_0 g, then K=A_0 A and b=A_0 B are positive integers.
 Every m_j=p_j/Delta is also a positive integer. Choose targets on
@@ -98,10 +105,11 @@ schedule load and OPT. For all queried targets c=T/Delta is integral.
 
 Use the workload rank
 
-```math
+<!-- math-display: e7c09f3fcf714a4edcf9c3ec
 F(S)=\sum_{j:p_j<a}m_j f_j(S).
  \tag{P8}
-```
+-->
+![Formula](../../assets/math/e7c09f3fcf714a4edcf9c3ec.svg)
 
 The binary lengths of A, B, Delta and all derived ranks are polynomial
 in H, including the descriptions of k and D. The scaling does not
@@ -122,18 +130,20 @@ of either check certifies original target infeasibility.
 
 Dualize G to
 
-```math
+<!-- math-display: 9a899bc76a0bc8a5e75a436b
 f(S)=c|S|+G(P\setminus S)-G(P).
  \tag{P9}
-```
+-->
+![Formula](../../assets/math/9a899bc76a0bc8a5e75a436b.svg)
 
 The private coordinate of f at p is
 
-```math
+<!-- math-display: 6d5a86a80869e13c779d8e9c
 \sigma_p=f(P)-f(P\setminus\{p\})
          =c-\min\{c,F(\{p\})\}.
  \tag{P10}
-```
+-->
+![Formula](../../assets/math/6d5a86a80869e13c779d8e9c.svg)
 
 Because b>=1 and Delta F({p})=W_p, the condition sigma_p>=b is
 exactly W_p<=T-b Delta=T-a/D. Hence (P3) is the private set for
@@ -167,10 +177,11 @@ subtracted from the residual resource restriction.
 Let r=delta_D(T)>=1 be the actual contracted rank, with r<=k. Its
 unit-quota contradiction condition is
 
-```math
+<!-- math-display: 37283fe3dd3ec8f71a609657
 (3-2/r)b<K+1+(r-1)/r.
  \tag{P11}
-```
+-->
+![Formula](../../assets/math/37283fe3dd3ec8f71a609657.svg)
 
 Since D>=D_k>=3-2/r and D b=K, its left side is at most K.
 Thus (P11) is strict for every finite r. The exact signature theorem
@@ -179,7 +190,7 @@ therefore returns b units or soundly rejects the K-unit promise in
 
 If D=D_k+eta, write rho=(r-1)/r. The exact slack is
 
-```math
+<!-- math-display: 2293a77e9235a556b42e3e69
 \begin{split}
  \Gamma
    &=K+1+\rho-(3-2/r)b\\
@@ -187,7 +198,8 @@ If D=D_k+eta, write rho=(r-1)/r. The exact slack is
    &\ge\eta b+1+\rho.
  \end{split}
  \tag{P12}
-```
+-->
+![Formula](../../assets/math/2293a77e9235a556b42e3e69.svg)
 
 The cover coefficient is C=2b-1. Consequently Gamma/C>eta/2.
 The accepted growth argument may use, for example, gamma=eta/24.
@@ -201,10 +213,11 @@ Extend the independent dual vector to a dual base and complement to
 a workload base w. Selected largest-job machines have smaller-job
 workload at most
 
-```math
+<!-- math-display: 4dac03026dd3a7a733a9f70f
 \Delta w_p\le T-a/D.
  \tag{P13}
-```
+-->
+![Formula](../../assets/math/4dac03026dd3a7a733a9f70f.svg)
 
 Decompose w into integer bases of m_j f_j, divide the jth component
 by m_j, and obtain fractional original smaller-job bases. Apply the
@@ -215,11 +228,12 @@ fixed and integral.
 
 The final load is at most T+u on other machines and at most
 
-```math
+<!-- math-display: fb1f27fed3d3da14c7f17c8d
 T+(1-1/D)a+u
                               \le(2-1/D)T+u
  \tag{P14}
-```
+-->
+![Formula](../../assets/math/fb1f27fed3d3da14c7f17c8d.svg)
 
 on selected machines. Here D>=1, so replacing a by T is valid.
 The easy branch T>=2a uses the public all-job additive rounding and
@@ -234,18 +248,20 @@ result and the indivisible two-size result without an additive term.
 Suppose the largest Boolean matroid has rank h. If k>=h, put
 Theta_(k,D)=a. Otherwise define the bottleneck workload threshold
 
-```math
+<!-- math-display: f71ab20b35208c8ed518603d
 \lambda_k=\min\{z:r_M(\{p:W_p\le z\})\ge h-k\}.
  \tag{P15}
-```
+-->
+![Formula](../../assets/math/f71ab20b35208c8ed518603d.svg)
 
 Sorting the W_p values and using matroid greedy computes lambda_k
 in polynomial time. The cap first holds at
 
-```math
+<!-- math-display: 360e39766efdb3680732d880
 \Theta_{k,D}=\min\{2a,\ \max\{a,\lambda_k+a/D\}\}.
  \tag{P16}
-```
+-->
+![Formula](../../assets/math/360e39766efdb3680732d880.svg)
 
 If the Boolean matroid has rank less than h, define Theta_(k,D)=2a
 instead. Such a failure already implies OPT>=2a, because every
@@ -291,12 +307,13 @@ coefficient plus epsilon is an approximation factor to OPT.
 Taking k=h eliminates the cap restriction on originally feasible
 targets and gives an exact-signature h-parameter consequence:
 
-```math
+<!-- math-display: 634b96ce69724cf0eb6d60fe
 C_{\max}\le
  \max\{3/2,(5h-4)/(3h-2)\}\,\mathrm{OPT}+u
  \quad\text{in }2^{O(h)}\mathrm{poly}(H).
  \tag{P17}
-```
+-->
+![Formula](../../assets/math/634b96ce69724cf0eb6d60fe.svg)
 
 Taking D=D_k+eta gives its rank-quasipolynomial coefficient
 max{3/2,2-1/(3-2/k+eta)} and the same explicit additive u.

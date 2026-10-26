@@ -6,30 +6,33 @@
 
 Let an undirected graph have positive integer lengths in `[1,N^c]` for a fixed constant `c`. Let `M=n_0+m_0+Q` count the initial vertex and edge inventory and all elementary insertions and deletions, with `N>=M+4`. An edge-weight replacement is a deletion followed by an insertion. Parallel edge lifetimes have distinct identifiers. Write
 
-```math
+<!-- math-display: bee90fb2f2798865aa0f5d6f
 U=\log_2(N+4),\qquad h=\log_2(U+4).
-```
+-->
+![Formula](../../assets/math/bee90fb2f2798865aa0f5d6f.svg)
 
 We use the normalized metric hierarchy with the following explicit local contract. For integer parameters `p,r,K`, reduction factor `k=2^x`, and depth `d=O(U/x)`, its structural and construction factors satisfy
 
-```math
+<!-- math-display: 9633be891b1c3bf7eb1aecd2
 \begin{aligned}
 g=\log\Gamma&=O((p+r)h),\\
 f=\log F&=O(U/p+U/r+r^2h+(p+r)h),\\
 \log P&=O(U/K+g+h).
 \end{aligned}
 \tag{1}
-```
+-->
+![Formula](../../assets/math/9633be891b1c3bf7eb1aecd2.svg)
 
 The hierarchy uses actual local inventories, returns upper distance estimates, and satisfies
 
-```math
+<!-- math-display: 60c2f287f696a00ea50aba91
 \begin{aligned}
 \log(W/M)&=O(x+f+Kg+d\log P+h),\\
 \log\gamma&=O(dKg+dh).
 \end{aligned}
 \tag{2}
-```
+-->
+![Formula](../../assets/math/60c2f287f696a00ea50aba91.svg)
 
 Here `W` is initialization plus total update work, `gamma` is stretch, and `P` includes child inventories and encoded child edits. A query follows one pair of pivot handles per level, ending in an exact table lookup, and costs `O(d poly(U))`. The shrink condition is `x>=C log P` for a sufficiently large fixed constant. The construction and the chronological accounting for initial credit are supplied by the [separated metric hierarchy](../../manuscripts/graph-backends/separated-metric-forest-and-strong-sssp.md). Equations (1)–(2), including the query interface, are the hypotheses of this composition theorem; they are not inferred from a distance-stretch guarantee alone.
 
@@ -43,46 +46,51 @@ rebuilds on a query supplies these premises.
 
 **Theorem 2.1.** Under the preceding hierarchy contract, let `t=t(U)` satisfy `t->infinity` and `t^2h=o(U)`. There is a deterministic fully dynamic distance oracle with
 
-```math
+<!-- math-display: e5027dabccbb3186601b1bfc
 W=M\exp O(U/t+t^3h),\qquad
 \gamma=\exp O(t^4h),\qquad
 T_{\rm query}=\mathrm{poly}(U).
 \tag{3}
-```
+-->
+![Formula](../../assets/math/e5027dabccbb3186601b1bfc.svg)
 
 After every settled external update, the returned value satisfies
 
-```math
+<!-- math-display: ecf9e461acdd818a440c9322
 d_G(u,v)\le \widehat d(u,v)\le\gamma d_G(u,v).
 \tag{4}
-```
+-->
+![Formula](../../assets/math/ecf9e461acdd818a440c9322.svg)
 
 Disconnected pairs return infinity and equal endpoints return zero. The work is amortized over the complete update history.
 
 **Proof.** Choose integer-rounded parameters
 
-```math
+<!-- math-display: f6834fa5ddf1bebe5c82aa6d
 p=r=\Theta(t),\quad K=\Theta(t^2),\quad
 x=\Theta(U/t),\quad d=O(t).
-```
+-->
+![Formula](../../assets/math/f6834fa5ddf1bebe5c82aa6d.svg)
 
 Enlarge the fixed multiplier in `x` when necessary. Equations (1) give
 
-```math
+<!-- math-display: 31d50e5a44f48d1cd15556b7
 g=O(th),\quad f=O(U/t+t^2h),\quad
 \log P=O(U/t^2+th+h).
-```
+-->
+![Formula](../../assets/math/31d50e5a44f48d1cd15556b7.svg)
 
 Consequently `x/(U/t^2)=Theta(t)` and `x/(th)=Theta(U/(t^2h))` both diverge. The shrink condition holds for all sufficiently large `U`; finitely many smaller cases use an exact algorithm. Substituting in (2),
 
-```math
+<!-- math-display: 7207e396734b9cdb7a20fbc0
 \begin{aligned}
 x+f+Kg+d\log P+h
  &=O(U/t+t^2h+t^3h+U/t+t^2h+h)\\
  &=O(U/t+t^3h),\\
 dKg+dh&=O(t^4h).
 \end{aligned}
-```
+-->
+![Formula](../../assets/math/7207e396734b9cdb7a20fbc0.svg)
 
 Rounding changes constant factors only. The per-level distance inequalities compose multiplicatively. Every local upper estimate is the length of a represented walk, so no estimate falls below the true distance. The query visits `O(t)` levels, where `t` is at most polynomial in `U`, and reads one exact base-table entry. These observations prove (3)–(4). ∎
 
@@ -110,9 +118,10 @@ For the third row, a separately derived public-hierarchy comparison has log-upda
 
 A proxy walk projects to a physical walk after connector edges are discarded. Thus its length divided by `H` is at least the physical shortest-path distance. Conversely, lift a physical shortest path. Each of its edges costs at most `O(log N)` additional connector length, while `ell_e>=1`; the chosen `H` gives
 
-```math
+<!-- math-display: a67a99577f7cbf02f26dd77a
 d_G(u,v)\le H^{-1}d_{\rm proxy}(q_u,q_v)\le 2d_G(u,v).
-```
+-->
+![Formula](../../assets/math/a67a99577f7cbf02f26dd77a.svg)
 
 Each incidence allocates only `O(log N)` proxy records. A physical edit causes only polynomially many logarithmic-time proxy edits. Isolated original vertices are handled directly. No size-`N` port tree is materialized for each vertex. Applying the hierarchy to the proxy and dividing estimates by `H` proves the claim. ∎
 
@@ -127,32 +136,32 @@ The theorem is conditional on the named hierarchy primitives. Internal mathemati
 ## 6. Nonnegative integer lengths at the displayed frontier points
 
 **Corollary 6.1.** Every explicit row of the table in Section 3 extends
-to nonnegative integer lengths in $`[0,N^c]`$, with the same asymptotic
+to nonnegative integer lengths in <code class="math">[0,N^c]</code>, with the same asymptotic
 work and query bounds, at most a constant additional stretch factor,
 and exact zero-distance answers.
 
-**Proof.** Let $`R_0`$ be the least power of two at least $`N`$ and run
-the positive-length algorithm on $`L_e=R_0^3\ell_e+1`$.
+**Proof.** Let <code class="math">R_0</code> be the least power of two at least <code class="math">N</code> and run
+the positive-length algorithm on <code class="math">L_e=R_0^3\ell_e+1</code>.
 These integers lie in the predeclared enlarged polynomial range
-$`[1,8N^{c+3}+1]`$. Let $`G(N)`$ be an explicit uniform upper bound
+<code class="math">[1,8N^{c+3}+1]</code>. Let <code class="math">G(N)</code> be an explicit uniform upper bound
 on the complete oracle's stretch for that range, including the root
 degree adapter and all settled states. For each displayed row,
-$`G(N)=N^{o(1)}`$, so $`G(N)\leq N`$ eventually. If that explicit
-bound exceeds $`N`$, use the exact algorithm; this affects only
+<code class="math">G(N)=N^{o(1)}</code>, so <code class="math">G(N)\leq N</code> eventually. If that explicit
+bound exceeds <code class="math">N</code>, use the exact algorithm; this affects only
 finitely many master sizes.
 
-Otherwise return the floor of the estimate divided by $`R_0^3`$.
-A true zero distance has a simple zero-cost path of fewer than $`n`$
+Otherwise return the floor of the estimate divided by <code class="math">R_0^3</code>.
+A true zero distance has a simple zero-cost path of fewer than <code class="math">n</code>
 edges, so the unfloored estimate is at most
-$`G(N)n/R_0^3\leq1/N<1`$. Its floor is zero. A positive finite
-integer distance $`d`$ lies below the floored estimate, which is at
-most $`G(N)(d+n/R_0^3)\leq2G(N)d`$. Infinity is unchanged.
-The fixed perturbation adds only $`O(\log N)`$ length bits and no
+<code class="math">G(N)n/R_0^3\leq1/N&lt;1</code>. Its floor is zero. A positive finite
+integer distance <code class="math">d</code> lies below the floored estimate, which is at
+most <code class="math">G(N)(d+n/R_0^3)\leq2G(N)d</code>. Infinity is unchanged.
+The fixed perturbation adds only <code class="math">O(\log N)</code> length bits and no
 update records. This is the numerical reduction in
 [Zero-length edge adapters, Section 2](../../manuscripts/graph-backends/nonnegative-integer-distance-adapters.md). ∎
 
 For the general parameter family, the same corollary follows under
-the additional condition $`t^4h=o(U)`$. The theorem's weaker
-$`t^2h=o(U)`$ hypothesis alone does not imply subpolynomial stretch
+the additional condition <code class="math">t^4h=o(U)</code>. The theorem's weaker
+<code class="math">t^2h=o(U)</code> hypothesis alone does not imply subpolynomial stretch
 or justify this fixed polynomial perturbation. The corollary supplies
 numerical answers only, with no new simple-path reporting guarantee.

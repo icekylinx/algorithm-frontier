@@ -20,11 +20,12 @@ The resource system has a possibly implicit family A of subsets of
 P and nonnegative rational capacities u_A for A in A. Its packing
 region is
 
-```math
+<!-- math-display: 26196d8d9fa81231ceb00e90
 \mathcal P(u)=\{z\in\mathbb R_{\ge0}^{P}:
                               z(A)\le u_A\text{ for every }A\in\mathcal A\}.
  \tag{E1}
-```
+-->
+![Formula](../../assets/math/26196d8d9fa81231ceb00e90.svg)
 
 Assume a polynomial **packing separation oracle** on the queried
 vectors: it either certifies feasibility or returns a violated row
@@ -54,19 +55,21 @@ I subseteq Q; downward closure makes b*1_I feasible.
 
 If the separator returns A, put S=A intersect Q, m=|S|, and
 
-```math
+<!-- math-display: f5adf8066dadb9be4416c910
 \ell=m-\left\lfloor\frac{u_A}{t}\right\rfloor.
  \tag{E2}
-```
+-->
+![Formula](../../assets/math/f5adf8066dadb9be4416c910.svg)
 
 The violated inequality is u_A<bm. Nonnegative capacities and t>b
 imply 1<=ell<=m. Every promised I* contained in Q has
 
-```math
+<!-- math-display: c261af06d9d5efb706874743
 t|I^*\cap S|=t|I^*\cap A|\le u_A,
                        \qquad |S\setminus I^*|\ge\ell.
  \tag{E3}
-```
+-->
+![Formula](../../assets/math/c261af06d9d5efb706874743.svg)
 
 If ell>d, failure is sound. Otherwise enumerate all ell-subsets D
 of S and recurse on Q\D. One enumerated D is contained in
@@ -76,10 +79,11 @@ promised input cannot fail and that every returned set is valid.
 
 For R=t/(t-b)>1, the strict violation gives
 
-```math
+<!-- math-display: bf0a7ff653b9694cd0eb0f66
 \ell\ge m-u_A/t>m/R.
  \tag{E4}
-```
+-->
+![Formula](../../assets/math/bf0a7ff653b9694cd0eb0f66.svg)
 
 Therefore binom(m,ell)<=Gamma(R)^ell, with
 Gamma(R)=R^R/(R-1)^(R-1). Every attempted deletion subset is counted
@@ -90,12 +94,13 @@ The full augmented computation tree has at most
 **Theorem E.** The rational t-versus-b promise problem has a
 deterministic algorithm of running time
 
-```math
+<!-- math-display: 18f5e3eecdd21ed40e47657a
 \Gamma\!\left(\frac{t}{t-b}\right)^c
                                       \mathrm{poly}(H)
                 \le\left(\frac{et}{t-b}\right)^c\mathrm{poly}(H),
  \tag{E5}
-```
+-->
+![Formula](../../assets/math/18f5e3eecdd21ed40e47657a.svg)
 
 using polynomial workspace. It either returns the requested b-unit
 set or certifies absence of a t-unit set. For r=0, the selector first
@@ -113,38 +118,42 @@ branching calculation avoids that issue.
 
 Suppose the desired integral selection is I in B with
 
-```math
+<!-- math-display: f8c876c38adfaf3d36a087a5
 |I\cap A|\le u_A
                                 \quad\text{for every }A\in\mathcal A.
  \tag{E6}
-```
+-->
+![Formula](../../assets/math/f8c876c38adfaf3d36a087a5.svg)
 
 Fix rational epsilon>0. Inflate the capacities to
 u'_A=(1+epsilon)u_A, and run Theorem E with
 
-```math
+<!-- math-display: d3190e7d8c1fdd8613719900
 t=1+\epsilon,\qquad b=1.
  \tag{E7}
-```
+-->
+![Formula](../../assets/math/d3190e7d8c1fdd8613719900.svg)
 
 Any set satisfying (E6) satisfies the stronger promise
 (1+epsilon)*1_I in P(u'). A successful output satisfies
 
-```math
+<!-- math-display: 7d8b3b59fac1637f01198e66
 |I\cap A|\le(1+\epsilon)u_A
                                       \quad\text{for every }A\in\mathcal A.
  \tag{E8}
-```
+-->
+![Formula](../../assets/math/7d8b3b59fac1637f01198e66.svg)
 
 A failure proves that no set satisfies the original capacities.
 The running time is
 
-```math
+<!-- math-display: 0e3cf1973fb1cf61523dbb0c
 \left(\frac{e(1+\epsilon)}{\epsilon}\right)^c
                         \mathrm{poly}(H)
                  =\bigl(O(1+\epsilon^{-1})\bigr)^c\mathrm{poly}(H).
  \tag{E9}
-```
+-->
+![Formula](../../assets/math/0e3cf1973fb1cf61523dbb0c.svg)
 
 Here H includes the bit representation of epsilon, not its numerical
 inverse. The explicit exponential factor contains the full

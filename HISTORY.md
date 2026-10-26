@@ -1,5 +1,27 @@
 # History
 
+## 2026-10-26 — Smaller matching solves, a tighter exponent and prefix summaries
+
+- Reduced the exact matching solver, including its independent optimality
+  certificate, to O(n+m log(m+2)+sum_i nu(G_i)^3). A maximum crossing matching
+  preserves every cover subset and limits each blossom solve to at most
+  four times the component matching number. A connected 420-vertex example
+  now solves on 40 vertices while certification still checks the larger kernel.
+- Generalized the second Subset Sum lookup and replayed all 62 exact branches.
+  A finite-volume cone lemma then extends every contact continuously; the
+  new exact exponent is 158153814247997/318964058919134, below 0.495836.
+  All 44 previous branch records agree in their stable fields. Checkpoint
+  provenance and a safe resumable rational traversal are explicit.
+- Constructed canonical prefix summaries by a basis tree with N*S(dr,h)
+  independence queries. The original-basis refinement improves the general
+  weighted size factor, and the sharp rank construction has linear input
+  dependence before its parameter-only deletion stage.
+- Proved the exact two-failure oracle maximum through rank four: 3r for
+  ranks at most three, and 13 at rank four. The obstruction is minimal in
+  rank, label count and ground size. A singleton replacement union has the
+  sharp size r+2t and a profile-sensitive query algorithm; its quotient proof
+  explicitly handles failed items inside the contracted set.
+
 ## 2026-10-26 — Executable matching, explicit graph dependencies and rendering
 
 - Added a deterministic general-graph matching reference implementation with

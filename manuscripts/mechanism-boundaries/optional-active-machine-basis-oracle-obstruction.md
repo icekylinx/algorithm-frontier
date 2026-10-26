@@ -22,11 +22,12 @@ jobs; every machine outside I receives zero jobs. A job type j has an
 integral normalized monotone submodular recipient rank f_j. A complete
 integer schedule is a vector x_j in the base polytope B(f_j):
 
-```math
+<!-- math-display: 2a0f875edc7ac5fb72dc869c
 x_j(S)\le f_j(S)\quad(S\subseteq P),\qquad
  x_j(P)=f_j(P),\qquad x_j\in\mathbb Z_{\ge0}^{P}.
  \tag{A1}
-```
+-->
+![Formula](../../assets/math/2a0f875edc7ac5fb72dc869c.svg)
 
 It must additionally satisfy x_j(p)=0 for p outside I. Its machine loads
 are sum_j p_pj x_j(p), for nonnegative rational machine-dependent
@@ -49,15 +50,17 @@ assigned on the selected support.
 Fix integers c>=2 and q>=c+2, and put r=q-c. For every hidden r-element
 set A subseteq P, define
 
-```math
+<!-- math-display: 39cf3b4a4d0f10597da411f5
 f_0(S)=\min\{2|S|,2r\}-{\bf1}[|S|=r],
  \tag{A2}
-```
+-->
+![Formula](../../assets/math/39cf3b4a4d0f10597da411f5.svg)
 
-```math
+<!-- math-display: 9cba85cbc4a08ebda53e12ba
 f_A(S)=f_0(S)+{\bf1}[S=A].
  \tag{A3}
-```
+-->
+![Formula](../../assets/math/9cba85cbc4a08ebda53e12ba.svg)
 
 These are the rank functions used in the earlier self-contained
 [allocation lower bounds proof](../../problems/allocation-lower-bounds/proof.md). Their complete
@@ -82,7 +85,7 @@ cannot hurt. This covers all cases.
 
 Every oracle value has O(log q) bits. In particular,
 
-```math
+<!-- math-display: 1ffcc2e770a6a28edebf2a27
 f_A(P)=2r,
  \qquad
  f_A(I)=
@@ -91,7 +94,8 @@ f_A(P)=2r,
  2r-1,&|I|=r,\ I\ne A.
  \end{cases}
  \tag{A4}
-```
+-->
+![Formula](../../assets/math/1ffcc2e770a6a28edebf2a27.svg)
 
 All singleton values equal two because r>=2. There are no ineligible
 individual machines that reveal the hidden set during preprocessing.
@@ -105,10 +109,11 @@ assignment costs to zero and C=0.
 
 For any active basis I and any complete schedule supported on I,
 
-```math
+<!-- math-display: 3a23ea8d09c0179abbe2a528
 2r=x(P)=x(I)\le f_A(I).
  \tag{A5}
-```
+-->
+![Formula](../../assets/math/3a23ea8d09c0179abbe2a528.svg)
 
 Equation (A4) forces I=A. This implication holds even if the algorithm
 is allowed arbitrarily large makespan: additional load on the selected
@@ -142,10 +147,11 @@ because both instances are promised feasible.
 
 It follows that the worst-case number of recipient-value queries is
 
-```math
+<!-- math-display: adb2ed3bf652aacb78b518db
 {q\choose r}-1={q\choose c}-1.
  \tag{A6}
-```
+-->
+![Formula](../../assets/math/adb2ed3bf652aacb78b518db.svg)
 
 This is a bound on producing any valid schedule, not just on choosing
 an optimal one. No computational assumption such as P!=NP or a
@@ -170,10 +176,11 @@ hidden in F(c) cannot absorb a larger power of the unbounded q.
 For a fixed available machine set Q, the condition that job type j
 can be assigned wholly within Q is
 
-```math
+<!-- math-display: 70ce0ebe59094f170aad5c2f
 f_j(Q)=f_j(P).
  \tag{A7}
-```
+-->
+![Formula](../../assets/math/70ce0ebe59094f170aad5c2f.svg)
 
 Adding available machines can only help (A7). A current set Q that
 contains a promised active basis may therefore support all jobs even
@@ -210,10 +217,11 @@ present project gives its job-polymatroid version. Let x_j be the
 fractional job bases and, independently at each machine p, order types
 by decreasing p_pj. Set the prefix bound
 
-```math
+<!-- math-display: bfea02464f318b9430187239
 C_{p,k}=\left\lceil\sum_{\ell\le k}x_{j_p(\ell)}(p)\right\rceil.
  \tag{A8}
-```
+-->
+![Formula](../../assets/math/bfea02464f318b9430187239.svg)
 
 On the q times number-of-types coordinates, intersect the direct sum
 of the original resource polymatroids with the prefix polymatroid
@@ -224,10 +232,11 @@ the one assignment-cost objective on that face. An integer minimizer
 has cost no larger than x and retains every job type's full base total.
 Prefix telescoping bounds its load at p by
 
-```math
+<!-- math-display: 648dd2772dc126b6f13bb232
 \sum_j p_{pj}x_j(p)+\max_{j:\, f_j(\{p\})>0}p_{pj}.
  \tag{A9}
-```
+-->
+![Formula](../../assets/math/648dd2772dc126b6f13bb232.svg)
 
 The construction uses polynomially many coordinates and binary
 counts. No job-unit expansion is necessary. It is the upper-load

@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-For every fixed integer $`d\ge2`$, returns makespan at most $`(2-1/d)\mathrm{OPT}`$, including exact $`3/2`$ at $`d=2`$.
+For every fixed integer <code class="math">d\ge2</code>, returns makespan at most <code class="math">(2-1/d)\mathrm{OPT}</code>, including exact <code class="math">3/2</code> at <code class="math">d=2</code>.
 
 **Objective and output**
 
@@ -14,11 +14,12 @@ Deterministic quota search and original-total recovery, including the fixed-fact
 
 **Time**
 
-Put $`R_d=(d+1)/(d-1)`$, $`A_d=\Gamma(R_d)`$, and $`B_d=2-1/A_d`$. Time is $`B_d^q E(q)\mathrm{poly}(H)`$. Endpoints are
+Put <code class="math">R_d=(d+1)/(d-1)</code>, <code class="math">A_d=\Gamma(R_d)</code>, and <code class="math">B_d=2-1/A_d</code>. Time is <code class="math">B_d^q E(q)\mathrm{poly}(H)</code>. Endpoints are
 
-```math
+<!-- math-display: 6801e0cf663f5fac123cbc6b
 (\text{factor},\text{base})=(3/2,50/27),(5/3,7/4),\bigl(7/4,2-(108/3125)^{1/3}\bigr).
-```
+-->
+![Formula](../../assets/math/6801e0cf663f5fac123cbc6b.svg)
 
 **Space**
 
@@ -26,7 +27,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$`q`$ is the physical-machine count; $`d\ge2`$ is a fixed integer; each machine has its own at most two positive times $`u_p<a_p`$. $`\Gamma(R)=R^R/(R-1)^{R-1}`$ and $`E(q)=2^{O(q\log\log(q+2)/\log(q+2))}`$. $`H`$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+<code class="math">q</code> is the physical-machine count; <code class="math">d\ge2</code> is a fixed integer; each machine has its own at most two positive times <code class="math">u_p&lt;a_p</code>. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code> and <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 
@@ -44,6 +45,6 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md).
 
-The positive time pair may differ from machine to machine. A rational noninteger $`d`$ is not included in the discrete quota proof.
+The positive time pair may differ from machine to machine. A rational noninteger <code class="math">d</code> is not included in the discrete quota proof.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

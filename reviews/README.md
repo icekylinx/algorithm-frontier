@@ -30,9 +30,9 @@ Theorem 1.1: unconditional sparse deterministic reductions for prescribed degree
 
 ### [Matroid and submodular failure summaries](../problems/matroid-failure-summaries/)
 
-Main Theorems 1–5: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure weighted endpoint; explicit weighted obstruction; deterministic arbitrary-budget prefix construction. The two-stage rank construction has linear input dependence for fixed parameters.
+Main Theorems 1–6: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure endpoint; explicit weighted obstruction; faster canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima and minimality of the 13-item example. Includes the sharp singleton-replacement bound r+2t, its failed-contracted-item proof, and the profile-sensitive construction with N(1+ell_0+binom(t+1,2)) queries.
 
-**Conditions and remaining work.** Oracle results require the stated independence or value oracle; they bound retained original items, not an encoding of an arbitrary oracle. The exact general weighted-oracle optimum size beyond one failure is not determined. Finite programs complement the written proofs and do not constitute formal verification.
+**Conditions and remaining work.** Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification.
 
 [Proof](../problems/matroid-failure-summaries/proof.md) · [Dependencies](../problems/matroid-failure-summaries/sources.md) · [Evidence](../problems/matroid-failure-summaries/verify/README.md) · Reviewed 2026-10-26
 
@@ -40,7 +40,7 @@ Main Theorems 1–5: represented prefix lift; sharp oracle-rank and integral-val
 
 ### [Faster deterministic Subset Sum](../problems/subset-sum-fast-deterministic/)
 
-The refined parameter and compiler-allowance update in Part II, Sections 6–7: the retyped initial difference-table bound, exact reflected-profile budget, and all nine outer cost rates. The new scalar tuple was independently recalculated against the existing compiler lemmas.
+Part II parameter composition: the generalized second lookup, its exact 62-branch replay and 44-branch compatibility, the finite-volume cone lemma and compiler allowance, the continuous reflected-profile envelope, and all nine outer cost rates. The scalar tuple was independently recalculated.
 
 **Conditions and remaining work.** The arbitrary-input signed-circuit compiler and witness reduction remain mathematical manuscript proofs; the numerical certificates do not formalize them. The deterministic startup constant is finite and input-independent but has no practical numerical bound.
 
@@ -56,7 +56,7 @@ The two-short-range theorem, including signed-input normalization, nested residu
 
 ### [Prefix, laminar and sparse quotas](../problems/weighted-prefix-quota-frontier/)
 
-The sharp sparse-packing FPT restriction, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and the aggregate laminar reduction to at most B lower rows.
+The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most B lower rows.
 
 **Conditions and remaining work.** The smaller sparse ground uses explicit FPT preprocessing; it is distinct from the uniform polynomial sunflower tradeoff. These checks do not verify the family’s general valuated completion, universal-coloring construction or lower-bound literature. Original oracles and weights remain available after restriction.
 
@@ -64,7 +64,7 @@ The sharp sparse-packing FPT restriction, arbitrary signed-profit ordered extens
 
 ### [Deterministic general-graph maximum matching](../problems/general-matching/)
 
-The executable cubic solver with optimality certificates and its independent verifier; the self-contained quadratic certificate-extraction proof; the unconditional sharp c-neighbor and mixed-failure kernels, componentwise composition, and subcubic reduction with its decoder.
+The executable cubic solver with optimality certificates and its independent verifier; the self-contained quadratic certificate-extraction proof; the unconditional sharp c-neighbor and mixed-failure kernels, componentwise composition, and subcubic reduction with its decoder. The cover-side alternating exchange further reduces the default solver, including certificates, to O(n+m log(m+2)+sum_i nu(G_i)^3), while retaining the original independent certificate format.
 
 **Conditions and remaining work.** The four-fifths research running time still requires the cycle-search implementation and named published prerequisites in sources.md. The executable solver has its separately proved cubic bound. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope.
 
@@ -177,16 +177,19 @@ Each linked program documents its checked identities or finite domain. The per-r
 
 - [problems/degree-constrained-subgraphs/verify/check_reductions.py](../problems/degree-constrained-subgraphs/verify/check_reductions.py)
 - [problems/general-matching/verify/check_certificate_search.py](../problems/general-matching/verify/check_certificate_search.py)
+- [problems/general-matching/verify/check_cover_compression.py](../problems/general-matching/verify/check_cover_compression.py)
 - [problems/general-matching/verify/check_reductions.py](../problems/general-matching/verify/check_reductions.py)
 - [problems/general-matching/verify/check_reference.py](../problems/general-matching/verify/check_reference.py)
 - [problems/group-metric-constraints/verify/check_quotient_rounding.py](../problems/group-metric-constraints/verify/check_quotient_rounding.py)
 - [problems/incremental-scc/verify/check_label_history.py](../problems/incremental-scc/verify/check_label_history.py)
 - [problems/incremental-sssp/verify/check_path_reporting.py](../problems/incremental-sssp/verify/check_path_reporting.py)
+- [problems/matroid-failure-summaries/verify/check_single_replacement.py](../problems/matroid-failure-summaries/verify/check_single_replacement.py)
 - [problems/matroid-failure-summaries/verify/check_summaries.py](../problems/matroid-failure-summaries/verify/check_summaries.py)
 - [problems/matroid-failure-summaries/verify/check_weighted_obstruction.py](../problems/matroid-failure-summaries/verify/check_weighted_obstruction.py)
 - [problems/matroid-failure-summaries/verify/check_weighted_prefix.py](../problems/matroid-failure-summaries/verify/check_weighted_prefix.py)
 - [problems/min-cost-flow/verify/check_recovery.py](../problems/min-cost-flow/verify/check_recovery.py)
 - [problems/subset-sum-fast-deterministic/verify/check_energy.py](../problems/subset-sum-fast-deterministic/verify/check_energy.py)
+- [problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py](../problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_exact_convolution.py](../problems/subset-sum-low-space-deterministic/verify/check_exact_convolution.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_range_identities.py](../problems/subset-sum-low-space-deterministic/verify/check_range_identities.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_range_solver.py](../problems/subset-sum-low-space-deterministic/verify/check_range_solver.py)

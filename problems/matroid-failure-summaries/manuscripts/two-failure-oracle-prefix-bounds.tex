@@ -1,0 +1,403 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md
+% Recovered-source SHA-256: ad9332b89befb8ee554ad68df508ab889d303b7af9dd6da436b199c066bf14c4
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Final document preamble must use the recovered original Subset Sum style.
+
+\hypertarget{two-failure-weighted-prefix-bounds-for-arbitrary-matroids}{%
+\section{Two-failure weighted prefix bounds for arbitrary matroids}\label{two-failure-weighted-prefix-bounds-for-arbitrary-matroids}}
+
+\hypertarget{scope-and-results}{%
+\subsection{1. Scope and results}\label{scope-and-results}}
+
+Let \(M\) be an arbitrary matroid of rank \(r\) on a finite explicitly listed ground \(E\), with one fixed total item order. Each item has at most one label; unlabelled items are allowed. A failed label deletes its entire class. Let \(H_j\) be the union of the canonical greedy bases after at most \(j\) label failures, including the unfailed query.
+
+The order may be nondecreasing signed rational cost followed by a permanent item ID. Every statement concerns that one fixed order. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md}{general prefix theorem} shows that \(H_j\) is the unique smallest original-item set preserving every surviving prefix rank for those queries. It therefore preserves the canonical minimum-cost surviving bases, including rank drops.
+
+This note proves the following bounds for \textbf{two failures and at most one label per item}:
+
+\[
+|H_2|\le\min\left\{5r,\binom{r+1}{2}+3\right\}
+\qquad(r\ge2).
+\tag{TF1}
+\]
+
+The bounds at ranks zero and one are zero and three, respectively. An instance-dependent bound from the one-failure replacement profile is stronger and is stated below. It gives the sharp \(3r\) bound whenever no replacement item appears in more than two single-failure bases. The same conclusion holds whenever all single failures add only one shared replacement item, even if its multiplicity is large (Section 5). In particular,
+
+\[
+\boxed{|H_2|\le3r\quad\text{for every matroid of rank }r\le3.}
+\tag{TF2}
+\]
+
+At rank four the universal bound is 13, and the explicit obstruction attains it. Thus the largest possible size of the minimum prefix preserver is \textbf{exactly 13 at rank four}. The same \(3r\) bound holds at every rank when at most three labels occur. Together these facts prove that the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md}{rank-four, four-label, 13-item obstruction} has the smallest possible rank, label count and original ground size for violating the represented \(3r\) bound at these fixed failure parameters. This is a mathematical minimality statement within this model, not a publication-priority claim or a statement for other failure budgets.
+
+The ordered-basis tree constructs \(H_2\) with at most \(N(1+r+r^2)\) independence queries, where \(N=|E|\), by rescanning the fixed ordered input at each tree node. This is \(O(N(r+1)^2)\) queries after sorting. The retained-prefix witness alternative scans that input once and uses at most \(N(K+1)(1+r+r^2)\) queries, where \(K\) is any valid bound on \(|H_2|\), clipped at \(N\). At any fixed rank both bounds are linear in \(N\). No representation or field arithmetic is needed.
+
+\hypertarget{the-single-failure-replacement-profile}{%
+\subsection{2. The single-failure replacement profile}\label{the-single-failure-replacement-profile}}
+
+Let \(B_0\) be the ordinary canonical basis. For each occurring label \(\lambda\), let \(D_\lambda\) be its class and \(B_\lambda\) the canonical basis of \(E\setminus D_\lambda\). Define
+
+\[
+R_\lambda=B_\lambda\setminus B_0,
+\qquad
+G=H_1\setminus B_0,
+\qquad
+t_e=|\{\lambda:e\in R_\lambda\}|\quad(e\in G),
+\]
+
+\[
+T=\sum_{e\in G}t_e=\sum_\lambda|R_\lambda|.
+\tag{TF3}
+\]
+
+Thus \(t_e\) counts the single-failure bases in which the same replacement item appears; \(T\) counts these appearances with multiplicity. Every \(t_e\) is positive. A label absent from \(B_0\) leaves that basis unchanged, so only at most \(r\) labels need to be queried. The entire profile can be computed with at most \((1+r)N\) independence queries.
+
+Let \(b_0\) be the number of unlabelled items in \(B_0\), and let
+
+\[
+\delta_\lambda=r-r_M(E\setminus D_\lambda)
+\tag{TF4}
+\]
+
+be the rank lost under the single failure. Greedy-accepted items persist under deletions that keep them. Consequently \(B_\lambda\) contains \(B_0\setminus D_\lambda\), and
+
+\[
+|R_\lambda|=|B_0\cap D_\lambda|-\delta_\lambda.
+\]
+
+The label classes are disjoint, so
+
+\[
+T=r-b_0-\sum_\lambda\delta_\lambda\le r.
+\tag{TF5}
+\]
+
+This identity allows loops, unlabelled items and rank drops. It does not assume that every surviving ground has full rank.
+
+\hypertarget{profile-bound-with-rank-losses-included}{%
+\subsection{3. Profile bound with rank losses included}\label{profile-bound-with-rank-losses-included}}
+
+\textbf{Theorem 1 (replacement-profile bound).} With the notation above,
+
+\[
+\boxed{
+|H_2|\le r+2T+
+\sum_{e\in G}\binom{t_e-1}{2}.}
+\tag{TF6}
+\]
+
+Here \(\binom{0}{2}=\binom{1}{2}=0\). There is also the bound
+
+\[
+|H_2|\le r+4T.
+\tag{TF7}
+\]
+
+\textbf{Proof.} For every failed label set \(F\), including sets larger than two, rank submodularity gives
+
+\[
+r_M(E_F)\le r-\sum_{\lambda\in F}\delta_\lambda.
+\tag{TF8}
+\]
+
+Indeed, when \(\lambda\notin F\), the sets \(E\setminus D_\lambda\) and \(E_F\) have union \(E\) and intersection \(E_{F\cup\{\lambda\}}\). Submodularity says that deleting \(\lambda\) after \(F\) loses at least \(\delta_\lambda\) rank. Add these inequalities one failed label at a time. This step uses disjoint label classes; overlapping lists of two or more labels do not satisfy the same argument.
+
+Independently fail each label with probability \(p\in(0,1)\) and put \(q=1-p\). By TF8, the expected surviving rank is at most \(r-p\sum_\lambda\delta_\lambda\). The items of \(B_0\) contribute exactly \(b_0+(r-b_0)q\) to expected greedy rank.
+
+An item \(e\in G\) is accepted whenever any one of its \(t_e\) witness labels fails and its own label, if present, survives. These are disjoint label sets. Its acceptance probability is therefore at least \(q(1-q^{t_e})\). For an unlabelled item, omitting the factor \(q\) would give an even stronger probability, so the common lower bound is valid.
+
+Put \(n_2=|H_2\setminus H_1|\). Each of these remaining items has a two-failure prefix witness and contributes at least \(qp^2\) to expected rank. Deleting additional earlier items cannot invalidate acceptance of a surviving protected item. Combining the disjoint item contributions with TF5 gives
+
+\[
+n_2qp^2
+\le pT-q\sum_{e\in G}(1-q^{t_e}).
+\tag{TF9}
+\]
+
+For every fixed positive integer \(t\),
+
+\[
+q(1-q^t)
+ =tp-\left(t+\binom{t}{2}\right)p^2+O(p^3)
+\quad\text{as }p\downarrow0.
+\]
+
+Since \(\sum_e t_e=T\), divide TF9 by \(qp^2\) and let \(p\downarrow0\) to obtain
+
+\[
+n_2\le T+\sum_{e\in G}\binom{t_e}{2}.
+\]
+
+Add \(|H_1|=r+|G|\) and rearrange each summand to get TF6.
+
+For TF7, ignore the extra one-failure information and give every item of \(H_2\setminus B_0\) its general lower probability \(qp^2\). Subtracting the \(B_0\) contribution from the upper expected rank leaves exactly \(pT\), by TF5. Thus \(|H_2|-r\le T/(pq)\); take \(p=q=1/2\). No random choices are used by the summary algorithm. The product measure only proves its size. \(\square\)
+
+If every \(t_e\le2\), the sum in TF6 vanishes, giving \(|H_2|\le r+2T\le3r\). This applies to arbitrary matroids satisfying that explicit profile condition, regardless of representability.
+
+For a parameter-only bound, note that \(g(t)=\binom{t-1}{2}\) satisfies \(g(a+b)-g(a)-g(b)=ab-1\ge0\) for positive integers \(a,b\). If \(T>0\), then \(\sum_e g(t_e)\le g(T)\). Since \(T\le r\), TF6 gives
+
+\[
+|H_2|\le r+2r+\binom{r-1}{2}=\binom{r+2}{2}
+\quad(r\ge1).
+\]
+
+If \(T=0\), TF6 gives \(|H_2|=r\) directly; rank zero is also immediate. This proves the preliminary bound \(|H_2|\le\min\{5r,\binom{r+2}{2}\}\), including \(|H_2|\le3\) at rank one. The next section improves the quadratic term.
+
+\hypertarget{a-circuit-argument-improves-the-universal-bound}{%
+\subsection{4. A circuit argument improves the universal bound}\label{a-circuit-argument-improves-the-universal-bound}}
+
+\hypertarget{which-missing-pairs-can-a-new-item-replace}{%
+\subsubsection{4.1. Which missing pairs can a new item replace?}\label{which-missing-pairs-can-a-new-item-replace}}
+
+\textbf{Lemma 2 (circuit extension).} Let \(C\) be a circuit of size \(m\ge3\), and let \(y\notin C\) be a nonloop in its span. Form a graph on \(C\) whose edges are the pairs \(\{a,b\}\) for which
+
+\[
+y\notin\mathrm{cl}_M(C\setminus\{a,b\}).
+\]
+
+This graph is complete multipartite with at least two nonempty parts. Every induced subgraph on \(s\) vertices therefore has either no edges or at least \(s-1\) edges.
+
+\textbf{Proof.} Define \(a\sim b\) if \(a=b\) or if \(y\in\mathrm{cl}_M(C\setminus\{a,b\})\). Symmetry and reflexivity are immediate. For distinct \(a,b,c\), the flats
+
+\[
+L_{ab}=\mathrm{cl}_M(C\setminus\{a,b\}),
+\qquad
+L_{bc}=\mathrm{cl}_M(C\setminus\{b,c\})
+\]
+
+each have rank \(m-2\). Their union has rank \(m-1\): it contains the basis \(C\setminus\{b\}\) and lies in \(\mathrm{cl}_M(C)\). Rank submodularity bounds their intersection rank by \(m-3\). Their intersection already contains the rank-\(m-3\) flat \(\mathrm{cl}_M(C\setminus\{a,b,c\})\). Since a proper inclusion between flats increases rank, the two flats are equal:
+
+\[
+L_{ab}\cap L_{bc}
+=\mathrm{cl}_M(C\setminus\{a,b,c\}).
+\]
+
+Thus \(a\sim b\) and \(b\sim c\) imply \(a\sim c\), proving transitivity.
+
+There cannot be just one equivalence class. Fix \(c\in C\) and put \(B=C\setminus\{c\}\). For subsets \(A,A'\) of the independent set \(B\), rank submodularity similarly gives
+
+\[
+\mathrm{cl}_M(A)\cap\mathrm{cl}_M(A')
+=\mathrm{cl}_M(A\cap A').
+\]
+
+If all pairs were equivalent, \(y\) would belong to every \(\mathrm{cl}_M(B\setminus\{a\})\) for \(a\in B\). Repeatedly applying this equality puts \(y\) in \(\mathrm{cl}_M(\varnothing)\), contradicting that it is a nonloop. Edges are exactly the pairs in different equivalence classes, so the graph has the asserted form. If an induced subgraph is nonempty, choose one of its parts of size \(a\), where \(1\le a<s\). Its edges to the other vertices alone number \(a(s-a)\ge s-1\). \(\square\)
+
+\hypertarget{all-but-one-replacement-profile}{%
+\subsubsection{4.2. All but one replacement profile}\label{all-but-one-replacement-profile}}
+
+We prove \(|H_2|\le\binom{r+1}{2}+3\) for \(r\ge2\). If \(1\le T\le r-1\), the preliminary convexity calculation gives
+
+\[
+|H_2|\le r+2(r-1)+\binom{r-2}{2}
+=\binom{r+1}{2}+1,
+\]
+
+and \(T=0\) gives the stronger bound \(r\) directly. If \(T=r\) and \(|G|\ge2\), the sum of \(g(t_e)=\binom{t_e-1}{2}\) is maximized by multiplicities \(r-1,1\). To see this, the increments \(g(t+1)-g(t)=t-1\) are nondecreasing: moving a unit from a smaller part of size at least two to a largest part cannot reduce the sum. Keep at least two positive parts. TF6 then gives
+
+\[
+|H_2|\le3r+\binom{r-2}{2}=\binom{r+1}{2}+3.
+\]
+
+Only the following profile remains:
+
+\[
+T=r,\qquad G=\{x\},\qquad t_x=r.
+\tag{TF10}
+\]
+
+\hypertarget{the-exceptional-profile-starts-with-a-circuit}{%
+\subsubsection{4.3. The exceptional profile starts with a circuit}\label{the-exceptional-profile-starts-with-a-circuit}}
+
+For any prefix \(P\) of the fixed order, write \(H_j(P)\) for the canonical union computed in the restriction to \(P\). Greedy decisions never change after a prefix has been scanned, so
+
+\[
+H_j(P)=H_j(E)\cap P\quad(j=1,2).
+\tag{TF11}
+\]
+
+If \(H_1(P)\) is just its unfailed basis, its profile has \(T(P)=0\). TF6 then says that \(H_2(P)\) is that same basis. In particular, no two-failure-only item precedes \(x\) in the exceptional case.
+
+Each label whose failure makes \(x\) enter greedy must hit an earlier item of \(B_0\); otherwise the earlier unfailed basis survives and continues to span \(x\). Since \(t_x=r\), all \(r\) items of \(B_0\) precede \(x\) and have distinct labels. TF5 also gives \(b_0=0\) and \(\delta_\lambda=0\) for every label.
+
+We may restrict to \(H_2\): it contains every required canonical basis, and deleting only rejected items preserves all required prefix ranks and greedy decisions. Indeed, induction through the order leaves the accepted set unchanged whenever a rejected item is removed. The first \(r+1\) remaining items are therefore \(Q=B_0\cup\{x\}\). For each \(a\in B_0\), failing its label gives the basis \((B_0\setminus\{a\})\cup\{x\}\). Together with \(B_0\), these are all \(r\)-subsets of \(Q\). Thus \(Q\) is a circuit of size \(r+1\) and rank \(r\).
+
+The item \(x\) is either unlabelled or has a new label: it survives each of the \(r\) witness labels. If it is unlabelled, only the \(\binom r2\) failed pairs among the labels of \(B_0\) can remove two items of \(Q\). Every other query leaves \(r\) independent items of \(Q\) and accepts no later item. Each relevant pair leaves rank \(r-1\) inside \(Q\) and accepts at most one later item. Hence
+
+\[
+|H_2|\le r+1+\binom r2=\binom{r+1}{2}+1.
+\]
+
+Assume that all \(r+1\) items of \(Q\) have distinct labels. Only the \(\binom{r+1}{2}\) failed pairs of these labels can accept a later item. Each query accepts at most one: the first surviving item outside the closure of its surviving \(r-1\) items of \(Q\). Call it the query's winner. If there is no later winner, the required bound already holds.
+
+Otherwise let \(y\) be the first item of \(H_2\) after \(Q\). It is a nonloop and lies in the span of \(Q\), since that circuit already has the full rank \(r\). Lemma 2 says that the failed pairs for which it would increase rank form a complete multipartite graph on \(Q\).
+
+If \(y\) has the label of some \(c\in Q\), it survives exactly the failed pairs that avoid \(c\). Its winning pairs are therefore the edges in the induced graph on \(Q\setminus\{c\}\). This graph has an edge because \(y\) wins a query, so it has at least \(r-1\) edges. If \(y\) has an outside label or is unlabelled, it survives all these pairs and wins at least \(r\) queries, which is stronger. There are no earlier later winners to compete with \(y\) in either case.
+
+Thus one item accounts for at least \(r-1\) of the relevant queries. All other queries together supply at most \(\binom{r+1}{2}-(r-1)\) distinct later winners. Consequently
+
+\[
+|H_2|\le(r+1)+1+\binom{r+1}{2}-(r-1)
+=\binom{r+1}{2}+3.
+\]
+
+Combining this with TF7 proves TF1. In particular the universal bounds at ranks two, three and four are 6, 9 and 13. The rank-one bound proved above completes TF2. Rank-\(r\) partition matroids with three ordered copies per parallel class, labelled by the same three distinct labels in every class, attain \(3r\) under two failures. The explicit rank-four obstruction attains 13. These upper bounds use only matroid ranks.
+
+\hypertarget{one-shared-single-failure-replacement-has-a-sharp-linear-bound}{%
+\subsection{5. One shared single-failure replacement has a sharp linear bound}\label{one-shared-single-failure-replacement-has-a-sharp-linear-bound}}
+
+\textbf{Theorem 3 (one replacement item).} Suppose \(H_1\setminus B_0=\{x\}\). Let \(W\) be the set of labels whose single-failure canonical basis contains \(x\), and put \(t=|W|=T\ge1\). Then
+
+\[
+\boxed{|H_2|\le r+2t\le3r.}
+\tag{TF12}
+\]
+
+The bound \(r+2t\) is attained by explicitly represented matroids for every \(1\le t\le r\). If \(x\) is unlabelled, there is the stronger bound
+
+\[
+|H_2|\le r+1+\max\{0,2t-3\}.
+\]
+
+No assumption is made about the number of items of \(B_0\) sharing a label or about rank losses after a failure. If \(H_1=B_0\) instead, TF6 gives \(H_2=B_0\) directly.
+
+\hypertarget{only-a-small-set-of-failed-pairs-can-add-items}{%
+\subsubsection{5.1. Only a small set of failed pairs can add items}\label{only-a-small-set-of-failed-pairs-can-add-items}}
+
+Write \(b_\lambda=|B_0\cap D_\lambda|\). The single-failure basis is \(B_0\setminus D_\lambda\), together with \(x\) exactly when \(\lambda\in W\). Therefore
+
+\[
+\delta_\lambda=b_\lambda-\mathbf1[\lambda\in W].
+\]
+
+For every \(|F|\le2\), TF8 gives
+
+\[
+r_M(E_F)\le |(B_0)_F|+|F\cap W|.
+\]
+
+Every surviving original-basis item is still accepted. If \(x\) survives and \(F\cap W\ne\varnothing\), deletion stability also keeps \(x\) accepted. Thus an item of \(H_2\setminus H_1\) can appear only after one of the following pairs: two labels of \(W\), or a label of \(W\) together with the own label \(X\) of \(x\), when \(x\) is labelled. The latter label is outside \(W\). Each such pair accepts at most one item outside \(H_1\).
+
+We may move all original-basis items before the other items without changing any required canonical basis. For a fixed failure, its old accepted set already contains the promoted surviving basis items. Induction through the remaining order keeps that same independent accepted set: an old rejected item is still spanned by its old earlier accepted items, possibly with more promoted items. The prefix argument in Section 4.3 shows that no item of \(H_2\setminus H_1\) precedes \(x\). After promotion, the critical items are therefore \(B_0\), then \(x\), then the remaining items in their original relative order.
+
+\hypertarget{a-circuit-quotient-preserves-each-relevant-replacement-test}{%
+\subsubsection{5.2. A circuit quotient preserves each relevant replacement test}\label{a-circuit-quotient-preserves-each-relevant-replacement-test}}
+
+Let \(C\) be the fundamental circuit of \(x\) with respect to \(B_0\): the unique circuit in \(B_0\cup\{x\}\). For every \(\lambda\in W\), choose \(u_\lambda\in C\cap D_\lambda\). Such an item exists because otherwise \(B_0\setminus D_\lambda\) would span \(x\). Set
+
+\[
+A=B_0\setminus\{u_\lambda:\lambda\in W\},
+\qquad
+Q=\{u_\lambda:\lambda\in W\}\cup\{x\}.
+\]
+
+Contract the independent set \(A\) for this proof. The contraction has rank \(t\), and \(Q\) is a \((t+1)\)-item circuit: deleting \(x\) from \(Q\) lifts to \(B_0\), while deleting \(u_\lambda\) lifts to the basis \(B_0-u_\lambda+x\).
+
+Some contracted items may have failed labels. The following explicit intersection argument is needed; treating them as surviving would be incorrect. For a relevant failed pair \(F\), let \(S_F=(H_1)_F\). For every surviving \(e\notin H_1\),
+
+\[
+e\notin\mathrm{cl}_M(S_F)
+\quad\Longleftrightarrow\quad
+e\notin\mathrm{cl}_{M/A}(Q_F).
+\tag{TF13}
+\]
+
+First take \(F=\{\lambda,\mu\}\subseteq W\), and write
+
+\[
+Z=(B_0\setminus\{u_\lambda,u_\mu\})\cup\{x\},
+\qquad
+L_\lambda=\mathrm{cl}_M((B_0\setminus D_\lambda)\cup\{x\}),
+\]
+
+with \(L_\mu\) defined similarly. The item \(e\) belongs to both single-failure basis flats \(L_\lambda,L_\mu\). The ranks of \(\mathrm{cl}_M(Z)\) and \(L_\lambda\) are \(r-1\) and \(r-b_\lambda+1\). Their union has rank \(r\) because it contains \(B_0-u_\lambda+x\). Their intersection therefore has rank at most \(r-b_\lambda\) and contains the independent set \((B_0\setminus(D_\lambda\cup\{u_\mu\}))\cup\{x\}\) of that rank. Hence it is exactly that set's closure. Intersecting with \(L_\mu\) similarly has rank at most \(r-b_\lambda-b_\mu+1\): the union in the submodularity inequality contains \(B_0-u_\mu+x\), of rank \(r\). The intersection contains \(S_F\) of that exact rank, so
+
+\[
+\mathrm{cl}_M(Z)\cap L_\lambda\cap L_\mu
+=\mathrm{cl}_M(S_F).
+\]
+
+Since \(Z=A\cup Q_F\), this proves TF13 for such pairs.
+
+For \(F=\{\lambda,X\}\), use \(Z=B_0\setminus\{u_\lambda\}\) and \(L_X=\mathrm{cl}_M(B_0\setminus D_X)\). The same calculation gives \(\mathrm{cl}_M(Z)\cap L_\lambda =\mathrm{cl}_M(B_0\setminus D_\lambda)\). Intersecting with \(L_X\) gives \(\mathrm{cl}_M(B_0\setminus(D_\lambda\cup D_X))\), because these are closures of subsets of the independent set \(B_0\). This is \(\mathrm{cl}_M(S_F)\) and proves TF13 in the remaining case. These calculations explicitly allow \(b_\lambda>1\) and \(D_X\cap B_0\ne\varnothing\).
+
+\hypertarget{a-decreasing-potential-bounds-all-later-winners}{%
+\subsubsection{5.3. A decreasing potential bounds all later winners}\label{a-decreasing-potential-bounds-all-later-winners}}
+
+When \(x\) has label \(X\), relevant failed pairs are the edges of a complete graph on \(W\cup\{X\}\), with \(n=t+1\) vertices. If \(x\) is unlabelled, use the complete graph on \(W\), with \(n=t\) vertices. Initially every such query is unresolved. Each later critical item wins at least one unresolved query and resolves every surviving query for which it increases rank.
+
+By TF13 and Lemma 2 in the circuit quotient, its rank-increasing pairs form a complete multipartite graph, restricted to the relevant labels. The two-item circuit case has the same property directly. If its own label is one of those vertices, pairs incident with that vertex delete the item and cannot be won. Thus a winner removes all edges between different parts of a partition of the current graph, except that edges incident with one protected vertex may be spared.
+
+The unresolved graph always decomposes into clique blocks joined only through separating vertices. Initially there is just one clique. An operation splits a block into disjoint cliques if its protected vertex is absent, or into cliques sharing just that vertex if it is present. These operations preserve the forest of blocks. Ignore isolated vertices, and use the potential
+
+\[
+\Phi(G)=\sum_{\text{nontrivial blocks }D}(2|D|-3).
+\]
+
+A protected split into \(k\ge2\) nontrivial cliques sharing the protected vertex lowers the potential by \(k-1\). For an unprotected split with \(a\) singleton parts and \(b\) parts of size at least two, the decrease is \(2a+3b-3\). It is at least one whenever an edge is removed. An operation may split several blocks, so every actual winner decreases \(\Phi\) by at least one.
+
+The initial potential is \(2n-3\) for \(n\ge2\) and zero for \(n\le1\). Hence there are at most \(\max\{0,2n-3\}\) later critical items. Adding the \(r+1\) items of \(H_1\) proves TF12 and the unlabelled refinement. This graph is a proof device; the summary algorithm need not construct it or perform any contraction.
+
+\hypertarget{sharp-represented-examples-and-faster-construction}{%
+\subsubsection{5.4. Sharp represented examples and faster construction}\label{sharp-represented-examples-and-faster-construction}}
+
+For \(t\ge2\), take the ordered vectors \(e_1,\ldots,e_t\) of a standard basis over \(\mathbb F_2\), labelled \(1,\ldots,t\), followed by \(x=e_1+\cdots+e_t\) with a new label \(X\). Append:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  one copy of \(e_i\) labelled \(X\) for each \(1\le i<t\);
+\item
+  one copy of \(e_i\) for each \(1\le i\le t\), labelled \(i+1\) cyclically modulo \(t\).
+\end{enumerate}
+
+The single-failure union adds only \(x\), with multiplicity \(t\). The first appended copy of \(e_i\) is forced by failures \(\{i,t\}\): earlier appended copies are parallel to surviving initial basis items. The second appended copy of \(e_i\) is forced by \(\{X,i\}\), which removes every copy in the first appended group. Thus all \(3t\) items are necessary. Adding \(r-t\) unlabelled coloops gives exactly \(r+2t\) forced items. For \(t=1\), use three parallel items with distinct labels and add \(r-1\) unlabelled coloops. Powers-of-two costs in the displayed order also force every item for fixed optimum-value preservation.
+
+The profile gives an algorithmic improvement. Compute \(B_0\) and its single-failure bases for the \(\ell_0\le r\) labels touching \(B_0\). Other labels leave \(B_0\) unchanged. If the extra-item union is empty, return \(B_0\). If it consists of \(x\), compute just the relevant pair-failure bases described in Section 5.1 and add them to \(H_1\). All other queries have no item outside \(H_1\), so this returns exactly \(H_2\). The independence-query bound is
+
+\[
+N\left(1+\ell_0+\binom{t+1}{2}\right),
+\tag{TF14}
+\]
+
+or \(N(1+\ell_0+\binom t2)\) when \(x\) is unlabelled. Thus the observable singleton profile permits \(O(N(r+t^2))\) oracle work after sorting, while retaining the original oracle and all canonical prefix ranks. No field representation is required by this algorithm.
+
+\hypertarget{three-occurring-labels-also-suffice-at-every-rank}{%
+\subsection{6. Three occurring labels also suffice at every rank}\label{three-occurring-labels-also-suffice-at-every-rank}}
+
+Let \(E_0\) be the unlabelled core and \(D_1,\ldots,D_L\) the nonempty classes, where \(L\le3\).
+
+If \(L\le2\), every critical labelled item belongs to the canonical basis of \(E_0\) together with its own label class: delete all other classes after a witness and use greedy stability. Every critical unlabelled item belongs to the basis of \(E_0\), obtained by deleting all \(L\) classes. These are at most \(L+1\le3\) bases, so their union contains \(H_2\) and has size at most \(3r\).
+
+If \(L=3\), use just the three canonical bases of \(E_0\cup D_i\). A critical labelled item belongs to the basis for its own label. A critical unlabelled item has a witness leaving at least one class \(D_i\); extend that witness by deleting the other two classes. The item survives, is still accepted, and lies in the \(i\)-th basis. Again \(|H_2|\le3r\).
+
+\hypertarget{minimality-and-the-exact-rank-four-maximum}{%
+\subsection{7. Minimality and the exact rank-four maximum}\label{minimality-and-the-exact-rank-four-maximum}}
+
+The explicit obstruction has rank four, four occurring labels and 13 original items. Section 4 excludes a violation at any smaller rank, and Section 6 excludes a violation with fewer labels. Any violation must force at least \(3r+1\ge13\) items, so the example also has the smallest possible original ground size.
+
+Theorem 3 also shows that any violation needs at least two distinct replacement items in the one-failure union. The example has exactly two, so it attains this minimum as well.
+
+Theorem 3 also shows that any violation needs at least two distinct replacement items in the one-failure union. The example has exactly two, so it attains this minimum as well.
+
+The example's powers-of-two costs make the relevant optimum bases unique. Its 13 items are therefore necessary even if a restriction need only preserve the fixed optimum-cost values. The upper results in this note preserve all prefixes and hence imply the weaker optimum-value guarantees. The minimality statement covers both requirements at \(h=2,d=1\); it does not address arbitrary cost queries or other failure budgets and label degrees.
+
+For that particular instance, its unfailed basis is \(\{1,2,3,4\}\), and its only one-failure replacement items are item 5 with multiplicity three and item 6 with multiplicity one. Thus \(T=4\) and TF6 gives \(4+8+1=13\), an exact upper certificate for the example. Section 4 proves that every rank-four instance has a prefix preserver of at most 13 items, so the rank-four maximum is exactly 13. The optimal general-rank constant remains open here: the direct sum of this example forces \(13r/4\) items when four divides \(r\), while the universal linear upper bound is \(5r\).
+
+\hypertarget{verification}{%
+\subsection{8. Verification}\label{verification}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/check_weighted_prefix.py}{prefix checker} includes a separate degree-one profile suite over all 92 labelled matroids on at most four items, with unlabelled items, loops and rank drops. It checks TF5, TF8 for every failure subset, TF6, TF7, and TF1 against independently enumerated canonical bases. It also checks the profile of the nonrepresentable 13-item example in 26 fixed item orders.
+
+The circuit lemma is checked independently by enumerating every basis family that extends a fixed circuit of each size from two through five by one nonloop item, testing the basis-exchange axiom, and computing complete rank tables. The checker then forms the missing-pair graph from rank increments and tests its multipartite structure and every own-color case for the first later item. A separate rank-three check enumerates every side-line membership pattern allowed by rank submodularity. The few-label argument is checked on all coarsenings of the example's labels into three classes or the unlabelled core. The general bounds and minimality results are proved in Sections 4--7; these finite checks are supporting evidence, not an exhaustive enumeration of all matroids at those ranks.
+
+The separate \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/check_single_replacement.py}{singleton-profile checker} compares the localized-pair algorithm with every original canonical basis. It covers the zero-extra case, the sharp represented examples, small arbitrary matroids, and coarsenings and seeded orders of the nonrepresentable example. It checks the quotient equivalence even when contracted basis items fail, promotes original-basis items independently, and verifies every decreasing-potential step. A separate enumeration checks all graphs reachable by protected or unprotected binary cuts on complete graphs of sizes two through six. Its block decomposition is computed from graph edges, without assuming the clique invariant. Both checkers refuse optimized Python mode that would disable assertions.
+
+The separate \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/check_single_replacement.py}{singleton-profile checker} compares the localized-pair algorithm with every original canonical basis. It covers the zero-extra case, the sharp represented examples, small arbitrary matroids, and coarsenings and seeded orders of the nonrepresentable example. It checks the quotient equivalence even when contracted basis items fail, promotes original-basis items independently, and verifies every decreasing-potential step. A separate enumeration checks all graphs reachable by protected or unprotected binary cuts on complete graphs of sizes two through six. Its block decomposition is computed from graph edges, without assuming the clique invariant. Both checkers refuse optimized Python mode that would disable assertions.
+
+All algorithmic requirements are explicit: the original independence oracle, the finite label lists and the fixed item order. The probability calculations are proof devices, and the code uses only exact integer arithmetic and Python's standard library.
+
+\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

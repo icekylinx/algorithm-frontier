@@ -30,22 +30,24 @@ representing a child occurrence; it does not remove the copy from the
 numerical state. All occurrence and per-edge-copy bounds include these
 copies, even when they lie in isolated forest components.
 
-For each copy $`c`$ of a real numerical coordinate $`e`$, keep two
+For each copy <code class="math">c</code> of a real numerical coordinate <code class="math">e</code>, keep two
 different counters:
 
-```math
+<!-- math-display: c125d4a61661cb2cb029695f
 h_c=\text{signed physical increment accumulated in that copy},
  \qquad
  A_c=\text{absolute motion since its last coordinate reset or birth}.
-```
+-->
+![Formula](../../assets/math/c125d4a61661cb2cb029695f.svg)
 
-The sign of $`h_c`$ uses the fixed physical orientation, independently
+The sign of <code class="math">h_c</code> uses the fixed physical orientation, independently
 of the current rooting of the forest. Maintain
 
-```math
+<!-- math-display: 4438e6522abed221e8129fcf
 f_e=b_e+\sum_{c\mapsto e}h_c.
  \tag{1}
-```
+-->
+![Formula](../../assets/math/4438e6522abed221e8129fcf.svg)
 
 Every exact point read or setting uses this full sum. Every coordinate
 anchor resets the absolute counter of **every** current copy, including
@@ -56,8 +58,8 @@ gradient after the coordinate's price transaction has settled.
 
 The list size is bounded by the same occurrence argument used for the
 exposed forest. These requirements cost the already charged
-$`O(D)`$ point operations per coordinate sweep when there are at most
-$`D`$ current copies. They introduce no scan of unrelated coordinates.
+<code class="math">O(D)</code> point operations per coordinate sweep when there are at most
+<code class="math">D</code> current copies. They introduce no scan of unrelated coordinates.
 
 ## 2. Retirement and refresh ordering
 
@@ -73,7 +75,7 @@ Use the following order.
    interleaved with representation maintenance.
 2. Before any old real-copy record disappears or its physical
    interpretation changes, read it and transfer **both**
-   $`h_c`$ to $`b_e`$ and $`A_c`$ to the absolute-motion bucket of $`e`$.
+   <code class="math">h_c</code> to <code class="math">b_e</code> and <code class="math">A_c</code> to the absolute-motion bucket of <code class="math">e</code>.
    Remove the record from the copy list only after these transfers.
    Test the bucket, retaining a coalesced pending flag on the
    coordinate rather than on the disappearing copy.
@@ -103,11 +105,12 @@ that coordinate. A representation change may reveal old mass, but
 does not create new mass or erase a required refresh. The signed
 transfer proves (1); the separate absolute transfer preserves
 
-```math
+<!-- math-display: 063b42b057a310d9acbb28dc
 |f_e-\widehat f_e|
  \leq {\rm bucket}_e+\sum_{c\mapsto e}A_c.
  \tag{2}
-```
+-->
+![Formula](../../assets/math/063b42b057a310d9acbb28dc.svg)
 
 The source's disjoint-motion charging argument therefore applies to
 arbitrary pool reuse and retirement.
@@ -197,43 +200,46 @@ buckets.
 
 ## 5. Positive-length input self-loops can be handled separately
 
-Let $`G`$ be an oriented undirected multigraph with strictly positive
-edge lengths. Let $`E_{\rm loop}`$ be its input self-loops and let
-$`G_0=G-E_{\rm loop}`$. Define
+Let <code class="math">G</code> be an oriented undirected multigraph with strictly positive
+edge lengths. Let <code class="math">E_{\rm loop}</code> be its input self-loops and let
+<code class="math">G_0=G-E_{\rm loop}</code>. Define
 
-```math
+<!-- math-display: efc365e9927c38172660c493
 R_{\rm loop}=\max_{e\in E_{\rm loop}}\frac{|g_e|}{\ell_e},
-```
+-->
+![Formula](../../assets/math/efc365e9927c38172660c493.svg)
 
-with the empty maximum equal to zero. For a nonzero circulation $`z`$,
-split its coordinates as $`z=z_0+z_{\rm loop}`$. A loop has zero
+with the empty maximum equal to zero. For a nonzero circulation <code class="math">z</code>,
+split its coordinates as <code class="math">z=z_0+z_{\rm loop}</code>. A loop has zero
 incidence column, so both parts are circulations. The triangle
 inequality gives
 
-```math
+<!-- math-display: 58094312634bf3c41ac8212f
 |g^{\mathsf T}z|
  \leq {\rm OPT}(G_0)\sum_{e\notin E_{\rm loop}}\ell_e|z_e|
       +R_{\rm loop}\sum_{e\in E_{\rm loop}}\ell_e|z_e|.
-```
+-->
+![Formula](../../assets/math/58094312634bf3c41ac8212f.svg)
 
-Each separate optimum is also available in $`G`$. Consequently,
+Each separate optimum is also available in <code class="math">G</code>. Consequently,
 
-```math
+<!-- math-display: af53bd7f9548819d80889d61
 {\rm OPT}(G)=
              \max\{{\rm OPT}(G_0),R_{\rm loop}\}.
  \tag{3}
-```
+-->
+![Formula](../../assets/math/af53bd7f9548819d80889d61.svg)
 
 Maintain the loops in a deterministic maximum heap keyed by the exact
-ratio $`|g_e|/\ell_e`$, with stable edge IDs and deterministic tie
+ratio <code class="math">&#124;g_e&#124;/\ell_e</code>, with stable edge IDs and deterministic tie
 breaking. Compare keys by cross multiplication, not floating point.
-An insertion, deletion, or price replacement costs $`O(\log M)`$
+An insertion, deletion, or price replacement costs <code class="math">O(\log M)</code>
 heap operations with the same polynomial bit sizes as its edge data.
 
 Run the chosen routing or distance primitive on the loopless graph
-$`G_0`$. Compare its returned raw-certificate ratio with the best
-loop ratio, and return the better. If its quality is $`\rho\leq1`$,
-the resulting quality is at least $`\rho\,{\rm OPT}(G)`$, by (3).
+<code class="math">G_0</code>. Compare its returned raw-certificate ratio with the best
+loop ratio, and return the better. If its quality is <code class="math">\rho\leq1</code>,
+the resulting quality is at least <code class="math">\rho\,{\rm OPT}(G)</code>, by (3).
 A selected loop is a one-edge circulation at this input level,
 oriented according to its gradient. It requires no maintained
 forest-copy pool. Its numerical update uses the source's explicit
@@ -257,7 +263,7 @@ null alias connector.
 A zero-length, zero-gradient artificial alias connector is not a
 positive-length input loop for (3). Its justified contraction or
 null treatment belongs to the corresponding gauge/lift construction,
-not to division by $`\ell_e`$ in the loop heap. Real coordinate
+not to division by <code class="math">\ell_e</code> in the loop heap. Real coordinate
 motion is never discarded by that operation.
 
 If a topology change turns an ordinary input edge into a loop, or

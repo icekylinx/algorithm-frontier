@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns value at least $`T_{\mathrm{conf}}/(4-3/r)`$ against the player-matroid configuration LP, hence also against integer optimum. An alternative gives factor $`4-3/r+\eta`$.
+Returns value at least <code class="math">T_{\mathrm{conf}}/(4-3/r)</code> against the player-matroid configuration LP, hence also against integer optimum. An alternative gives factor <code class="math">4-3/r+\eta</code>.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic matroid-union reduction and current-blocker search, including both
 
 **Time**
 
-Factor $`d=4-3/r`$ takes $`2^{O(r)}\mathrm{poly}(H)`$. Factor $`d+\eta`$ takes $`\mathrm{poly}(H)\min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}`$.
+Factor <code class="math">d=4-3/r</code> takes <code class="math">2^{O(r)}\mathrm{poly}(H)</code>. Factor <code class="math">d+\eta</code> takes <code class="math">\mathrm{poly}(H)\min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}</code>.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the explicit item and liking-incidence input, rational encodings, 
 
 **Parameters**
 
-$`r\ge1`$ is the player-matroid rank; $`\eta>0`$ is rational; $`T_{\mathrm{conf}}`$ is the configuration optimum. All matroid-union and original-oracle costs are paid in $`H`$.
+<code class="math">r\ge1</code> is the player-matroid rank; <code class="math">\eta&gt;0</code> is rational; <code class="math">T_{\mathrm{conf}}</code> is the configuration optimum. All matroid-union and original-oracle costs are paid in <code class="math">H</code>.
 
 **Model and representation**
 

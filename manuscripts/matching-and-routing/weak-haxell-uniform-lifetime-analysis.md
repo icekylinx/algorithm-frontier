@@ -30,25 +30,28 @@ integer `r>=2`. Write `b_epsilon` for the bit length of that rational.
 The algorithm described below returns either a matching covering `A`,
 or a nonempty `S subset A` and an explicit `C subset B` such that
 
-```math
+<!-- math-display: d1e633536cd468ee2bea433d
 C\cap e\ne\varnothing\quad\text{for every }e\in E_S,
  \qquad |C|\le(2r-3+\epsilon)(|S|-1).                   \tag{1}
-```
+-->
+![Formula](../../assets/math/d1e633536cd468ee2bea433d.svg)
 
 Its uniform running-time upper bound is
 
-```math
+<!-- math-display: 45346ebaf1e39e6287f40b35
 P\,(n+1)^{\,O((r^2/\epsilon)\log(2+r/\epsilon))}
        \mathrm{poly}(b_\epsilon+\log P).          \tag{2}
-```
+-->
+![Formula](../../assets/math/45346ebaf1e39e6287f40b35.svg)
 
 In particular, it finds a perfect matching under the promise
 
-```math
+<!-- math-display: 052f408d7f4fd9c4df5b9be0
 \tau(E_S)>(2r-3+\epsilon)(|S|-1)
                       \quad\text{for all nonempty }S\subseteq A.
                                                                \tag{3}
-```
+-->
+![Formula](../../assets/math/052f408d7f4fd9c4df5b9be0.svg)
 
 The certificate (1) violates this sufficient condition. It need not
 certify that no perfect matching exists. The algorithm never tests
@@ -60,10 +63,11 @@ are handled directly.
 
 Use the source's parameters
 
-```math
+<!-- math-display: 68146321b04435121c239c0f
 \mu=\epsilon^2/(10r^2),\quad Q=\lceil1/\mu\rceil,
  \quad\delta=\epsilon/(5r^2).                           \tag{4}
-```
+-->
+![Formula](../../assets/math/68146321b04435121c239c0f.svg)
 
 Start one augmenting call from a single unmatched left root. A layer
 is a set `X_i` of pairwise right-disjoint nonmatching edges and their
@@ -88,9 +92,10 @@ notation. It does not add a different operation to the algorithm.
 At every main-loop boundary all surviving positive layers are
 noncollapsible, so
 
-```math
+<!-- math-display: 50d0644a6b1fd82aee184721
 |Y_i|\ge(1-\mu)|X_i|.                 \tag{5}
-```
+-->
+![Formula](../../assets/math/50d0644a6b1fd82aee184721.svg)
 
 The source's matching and alternating-tree invariants prove this
 without a growth assumption. The new certifying version checks the
@@ -104,10 +109,11 @@ most recent **actual** greedy attempt. At birth this is the initial
 build. After an adopted extension it is the current layer. After a
 rejected extension,
 
-```math
+<!-- math-display: 44bd61cd4bd3aeae0c48770b
 \widehat X_i=X_i\mathbin{\dot\cup}E_i,
                   |E_i|<\mu|X_i|.                     \tag{6}
-```
+-->
+![Formula](../../assets/math/44bd61cd4bd3aeae0c48770b.svg)
 
 Until the next direct-child collapse, the lower prefix, `X_i`, and
 the blockers `Y_i` of `X_i` remain fixed. Higher matching swaps use
@@ -120,21 +126,23 @@ owners later retire, can be kept as fixed physical ghost resources.
 Let `F_i` be the active left identities that have reached cap `Q`
 in the recorded candidate, and set
 
-```math
+<!-- math-display: 4ae46f237865257036508d8f
 C_i=B(\widehat X_i\cup\widehat Y_i).
-```
+-->
+![Formula](../../assets/math/4ae46f237865257036508d8f.svg)
 
 Greedy maximality gives a persistent statement: every input edge
 for an active identity outside `F_i` meets the lower forbidden prefix
 or `C_i`. These are fixed resource sets, so later changes of the
 matching outside the layer do not invalidate that statement. Moreover,
 
-```math
+<!-- math-display: f7c090db168c9af18176be06
 |F_i|\le|\widehat X_i|/Q,\qquad
  B(X_i\cup Y_i)\subseteq C_i,
  \qquad
  |C_i\setminus B(X_i\cup Y_i)|\le(r-1)^2|E_i|.          \tag{7}
-```
+-->
+![Formula](../../assets/math/f7c090db168c9af18176be06.svg)
 
 For the last estimate, one newly selected edge has `r-1` resources,
 and each of its at most `r-1` blockers contributes at most `r-2`
@@ -154,17 +162,19 @@ by the actual old computation is reused.
 
 At a main-loop boundary let
 
-```math
+<!-- math-display: cad3ce7074759e07d6ae40a0
 q=|Y_{\le\ell}|=1+\sum_{i=1}^{\ell}|Y_i|,
  \qquad X_{old}=\sum_{i=1}^{\ell}|X_i|.
-```
+-->
+![Formula](../../assets/math/cad3ce7074759e07d6ae40a0.svg)
 
 By (5), `X_old <= (q-1)/(1-mu)`. Build layer `ell+1`, and
 suppose
 
-```math
+<!-- math-display: ee3faaaee84164c121cde4e0
 |X_{new}|\le\delta q.          \tag{8}
-```
+-->
+![Formula](../../assets/math/ee3faaaee84164c121cde4e0.svg)
 
 Use its actual output as its candidate. Remove the union of all
 candidate-full sets `F_i` from the `q` active left identities, and
@@ -175,10 +185,11 @@ candidate supports, so (7) proves that `C` hits all of `E_S`.
 
 Put `T=sum_(old i)|Xhat_i|+|X_new|`. Then
 
-```math
+<!-- math-display: 3d49fc600c8ca60279999368
 T\le\frac{1+\mu}{1-\mu}(q-1)+\delta q,
  \qquad |S|\ge q-T/Q.                                  \tag{9}
-```
+-->
+![Formula](../../assets/math/3d49fc600c8ca60279999368.svg)
 
 The current old layers have a sharper right-support bound than the
 rank-squared estimate. A blocked selected edge with `b>=1` matching
@@ -187,20 +198,22 @@ blocker belongs to exactly one selected edge. Immediately addable
 old selected edges number at most `mu X_old`. Combining this count,
 the new layer, and the historical extras yields
 
-```math
+<!-- math-display: 9f429e69a83466b9bf4b23e6
 |C|\le(2r-3)(q-1)
        +\frac{\mu r(r-1)}{1-\mu}(q-1)
        +\delta(r-1)^2q.                                 \tag{10}
-```
+-->
+![Formula](../../assets/math/9f429e69a83466b9bf4b23e6.svg)
 
 ### 4.1 Small prefixes
 
 If `q<1/delta`, (8) forces `X_new` to be empty. Also
 
-```math
+<!-- math-display: f5d6fe34ac92fbba807c0c65
 \mu X_{old}<\frac{\mu}{\delta(1-\mu)}
             =\frac{\epsilon}{2(1-\mu)}<1.
-```
+-->
+![Formula](../../assets/math/f5d6fe34ac92fbba807c0c65.svg)
 
 Integer counts therefore force every old immediately addable set
 and every historical extra set to be empty. No candidate has `Q`
@@ -212,25 +225,27 @@ the certificate is a single isolated left vertex and the empty set.
 
 Suppose `q>=1/delta`. Since `mu<=1/40` and `delta<=1/20`,
 
-```math
+<!-- math-display: 2a72a0b0ff0dd1992bc83978
 \frac{T/Q}{q-1}
  \le\mu\left(\frac{1+\mu}{1-\mu}
                   +\frac{\delta}{1-\delta}\right)
  \le\frac{10}{9}\mu.                                   \tag{11}
-```
+-->
+![Formula](../../assets/math/2a72a0b0ff0dd1992bc83978.svg)
 
 In particular `S` is nonempty. Subtract the upper bound (10) from
 `(2r-3+epsilon)(|S|-1)`, using (9)--(11). Divided by `q-1`,
 the difference is at least
 
-```math
+<!-- math-display: d4808e783e5218bbab791ee3
 \epsilon-
  \left[
   (2r-3+\epsilon)\frac{10}{9}\mu
   +\frac{\mu r(r-1)}{1-\mu}
   +\frac{\delta(r-1)^2}{1-\delta}
  \right].                                               \tag{12}
-```
+-->
+![Formula](../../assets/math/d4808e783e5218bbab791ee3.svg)
 
 The three bracketed terms, divided by `epsilon`, are at most
 `1/18`, `4/39`, and `4/19`, respectively. Their sum is less
@@ -241,9 +256,10 @@ again.
 Under promise (3), neither case can occur. Therefore each successful
 birth satisfies
 
-```math
+<!-- math-display: d17be038141b39c51a3c097f
 |X_i|>\delta|Y_{<i}|.             \tag{13}
-```
+-->
+![Formula](../../assets/math/d17be038141b39c51a3c097f.svg)
 
 The lower prefix remains fixed while layer `i` is alive, and `X_i`
 only grows. Thus (13) continues to hold throughout its lifetime.
@@ -254,16 +270,18 @@ Fix one augmenting call. For a positive-index layer instance set
 `W_i=|Y_<i|`; it is fixed during that instance's lifetime. At birth,
 `|X_i|>delta W_i`, whereas always
 
-```math
+<!-- math-display: 070c0164b6b0b2b360a7ddc3
 |X_i|\le Q|Y_{i-1}|\le QW_i.
-```
+-->
+![Formula](../../assets/math/070c0164b6b0b2b360a7ddc3.svg)
 
 Each adopted superposition multiplies `|X_i|` by at least `1+mu`.
 There are therefore at most
 
-```math
+<!-- math-display: 76e3182e7b6b10ddd42ad334
 J=1+O\bigl(\mu^{-1}\log(Q/\delta)\bigr)                \tag{14}
-```
+-->
+![Formula](../../assets/math/76e3182e7b6b10ddd42ad334.svg)
 
 epochs of direct children with no adopted superposition between
 them. A rejected attempt changes neither the selected parent edges
@@ -273,44 +291,49 @@ Collapsing a direct child swaps more than `mu|X_child|/Q` distinct
 left identities. Thus within one epoch the prefix sizes at successive
 child births decrease by at least a factor `1-tau`, where
 
-```math
+<!-- math-display: 86e7b2ddd6790d24725d62fd
 \tau=\mu\delta/Q,
  \qquad\tau\ge\frac{\mu^2\delta}{2}
                    =\frac{\epsilon^5}{1000r^6}.         \tag{15}
-```
+-->
+![Formula](../../assets/math/86e7b2ddd6790d24725d62fd.svg)
 
 At a child birth the parent is noncollapsible, so (5) and (13) give
 
-```math
+<!-- math-display: c40b8eb20ce91c1b8da95c4c
 W_{child}\ge\kappa W_i,
                 \qquad\kappa=1+(1-\mu)\delta.          \tag{16}
-```
+-->
+![Formula](../../assets/math/c40b8eb20ce91c1b8da95c4c.svg)
 
 Choose
 
-```math
+<!-- math-display: 05253d2d103e284f0db26946
 \lambda=C\delta^{-1}\log(2+r/\epsilon)
       =O((r^2/\epsilon)\log(2+r/\epsilon)),              \tag{17}
-```
+-->
+![Formula](../../assets/math/05253d2d103e284f0db26946.svg)
 
 for a sufficiently large absolute constant `C`, and give a layer
 weight `W_i^(-lambda)`. In any finite execution prefix, the children
 born in one epoch have geometrically decreasing prefix sizes. Summing
 their weights in reverse order gives total at most
 
-```math
+<!-- math-display: 9b17f1311a6e54c9afd2268c
 \frac{\kappa^{-\lambda}}
       {1-(1-\tau)^\lambda}\ W_i^{-\lambda}.
-```
+-->
+![Formula](../../assets/math/9b17f1311a6e54c9afd2268c.svg)
 
 The same bound includes a final still-live child. Since
 `log kappa >= c delta`, `log J=O(log(2+r/epsilon))`, and
 `log(1/tau)=O(log(2+r/epsilon))`, choosing `C` large makes
 
-```math
+<!-- math-display: c63fe017aad38096abc4b50f
 J\frac{\kappa^{-\lambda}}
          {1-(1-\tau)^\lambda}\le\tfrac12.               \tag{18}
-```
+-->
+![Formula](../../assets/math/c63fe017aad38096abc4b50f.svg)
 
 For example, use
 `1-(1-tau)^lambda >= c min(1,tau lambda)` and `lambda>=1`.
@@ -372,17 +395,19 @@ same bound.
 
 The source's signature proof gives at most
 
-```math
+<!-- math-display: dc9fc50fdaf237751e5f98bf
 L=\lceil C_0\delta^{-1}\log(n+1)\rceil
-```
+-->
+![Formula](../../assets/math/dc9fc50fdaf237751e5f98bf.svg)
 
 layers. With base `b=(1-mu^3)^(-1)`, the absolute value of every
 finite coordinate is at most
 
-```math
+<!-- math-display: 686cbccc34730b8357085f50
 H=O\left(\mu^{-3}
        [L\log(1/\delta)+\log((n+1)Q)]\right).           \tag{19}
-```
+-->
+![Formula](../../assets/math/686cbccc34730b8357085f50.svg)
 
 Coordinates have a fixed sign pattern and nondecreasing absolute
 values. The termination sentinel is fixed. For each length at most
@@ -394,11 +419,12 @@ Here `Q<=delta^(-2)` up to a fixed factor. Thus
 `H/L=O(mu^(-3) log(2+r/epsilon))`, uniformly even when the actual
 tree is much shallower than the displayed upper bound `L`. Therefore
 
-```math
+<!-- math-display: 30a86a426b5e3509656ed742
 \log\!\left[(2L+1){H+2L+1\choose2L}\right]
    =O\bigl(\delta^{-1}\log(2+r/\epsilon)\log(n+1)\bigr).
                                                                \tag{20}
-```
+-->
+![Formula](../../assets/math/30a86a426b5e3509656ed742.svg)
 
 The same rate (2) follows. No tiny-instance exception is required:
 overcounting signatures using the upper bound `L` is valid when

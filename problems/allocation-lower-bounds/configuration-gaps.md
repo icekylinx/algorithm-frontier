@@ -7,162 +7,177 @@ cardinality rank functions; neither is a computational hardness claim.
 
 ## 1. The two relaxations
 
-Let $`M`$ be the player-selection matroid. At target $`T`$, player $`p`$
-puts nonnegative mass $`\mu_{pn}`$ on its locally legal integral
-configurations $`n`$ of value at least $`T`$. Write
-```math
+Let <code class="math">M</code> be the player-selection matroid. At target <code class="math">T</code>, player <code class="math">p</code>
+puts nonnegative mass <code class="math">\mu_{pn}</code> on its locally legal integral
+configurations <code class="math">n</code> of value at least <code class="math">T</code>. Write
+<!-- math-display: 2d2e384c93bb33b6e986b6dd
 x_p=\sum_n\mu_{pn},\qquad y_{pj}=\sum_n\mu_{pn}n_j.
-```
+-->
+![Formula](../../assets/math/2d2e384c93bb33b6e986b6dd.svg)
 The aggregate relaxation requires
-```math
+<!-- math-display: 6f6d192737e69369f210a86b
 x\in B(M),\qquad y_{\cdot j}\in P(f_j)\quad\text{for every type }j.
  \tag{G1}
-```
-It retains only the summed recipient rank $`f_j`$; it does not retain a
+-->
+![Formula](../../assets/math/6f6d192737e69369f210a86b.svg)
+It retains only the summed recipient rank <code class="math">f_j</code>; it does not retain a
 separate column for each component of a decomposition of that rank.
 
-For a single resource $`f`$, a feasible integral reserve $`z\in P(f)`$
+For a single resource <code class="math">f</code>, a feasible integral reserve <code class="math">z\in P(f)</code>
 has residual singleton capacity
-```math
+<!-- math-display: d237edea3dab7d8279ebd987
 a_p(z)=\min_{A\ni p}\{f(A)-z(A)\}.
-```
+-->
+![Formula](../../assets/math/d237edea3dab7d8279ebd987.svg)
 The full residual relaxation adds every inequality
-```math
+<!-- math-display: e28472391cd5b873a97a1d90
 \sum_{p,n}\mu_{pn}(n_j-a_p(z))_+\le z(P).
  \tag{G2}
-```
+-->
+![Formula](../../assets/math/e28472391cd5b873a97a1d90.svg)
 The following equivalent subset form makes the second construction
 checkable without enumerating numerical reserve counts:
-```math
+<!-- math-display: 48c1ed51b10cab6e6817fb4a
 \sum_{p,n}\mu_{pn}(n_j-m_p(S))_+\le f(S),\qquad
  m_p(S)=f(S\cup\{p\})-f(S).
  \tag{G3}
-```
+-->
+![Formula](../../assets/math/48c1ed51b10cab6e6817fb4a.svg)
 
 **Lemma 1.** The full families (G2) and (G3) are equivalent.
 
-**Proof.** Define the violation of (G2) for every real $`z\in P(f)`$
-by subtracting $`z(P)`$ from its left side. Each hinge equals
-```math
+**Proof.** Define the violation of (G2) for every real <code class="math">z\in P(f)</code>
+by subtracting <code class="math">z(P)</code> from its left side. Each hinge equals
+<!-- math-display: 7e38941eac8a2240ad337671
 (n_j-a_p(z))_+
  =\max\{0,\max_{A\ni p}(n_j-f(A)+z(A))\},
-```
-so the violation is a convex function of $`z`$. Its maximum is attained
+-->
+![Formula](../../assets/math/7e38941eac8a2240ad337671.svg)
+so the violation is a convex function of <code class="math">z</code>. Its maximum is attained
 at a polymatroid vertex. Every such vertex is a greedy vector on an
-ordered subset $`S`$, has total $`f(S)`$, and spans the full conceptual
-owner blocks of $`S`$ in the natural matroid. Therefore its residual
-capacity at $`p`$ is exactly $`m_p(S)`$. Its reserve inequality is
+ordered subset <code class="math">S</code>, has total <code class="math">f(S)</code>, and spans the full conceptual
+owner blocks of <code class="math">S</code> in the natural matroid. Therefore its residual
+capacity at <code class="math">p</code> is exactly <code class="math">m_p(S)</code>. Its reserve inequality is
 (G3). Convexity now shows that all subset cuts imply all reserve cuts.
-Conversely, a greedy base on any $`S`$ is an integral feasible reserve
-whose inequality is that subset cut. $`\square`$
+Conversely, a greedy base on any <code class="math">S</code> is an integral feasible reserve
+whose inequality is that subset cut. <code class="math">\square</code>
 
 These are valid inequalities for integral allocations. Indeed, for a
-feasible resource count vector $`n`$, let $`A=\{p:n_p>m_p(S)\}`$.
+feasible resource count vector <code class="math">n</code>, let <code class="math">A=\{p:n_p&gt;m_p(S)\}</code>.
 Submodularity and feasibility give
-```math
+<!-- math-display: bbf30fc484d2b36a56a98617
 n(A)\le f(A)\le f(S\cup A)
        \le f(S)+\sum_{p\in A}m_p(S),
-```
+-->
+![Formula](../../assets/math/bbf30fc484d2b36a56a98617.svg)
 which proves the corresponding hinge inequality.
 
 ## 2. A gap approaching the selection rank
 
-**Theorem 2.** For every $`r\ge2`$, the aggregate relaxation has
-instances with gap arbitrarily close to $`r`$.
+**Theorem 2.** For every <code class="math">r\ge2</code>, the aggregate relaxation has
+instances with gap arbitrarily close to <code class="math">r</code>.
 
-**Proof.** Choose integers $`D\ge r`$ and $`q=Dr`$. Use the uniform
-player matroid $`U_{r,q}`$, one unit-valued resource, and
-```math
+**Proof.** Choose integers <code class="math">D\ge r</code> and <code class="math">q=Dr</code>. Use the uniform
+player matroid <code class="math">U_{r,q}</code>, one unit-valued resource, and
+<!-- math-display: 213fb95666b83a405ca978d3
 f(\varnothing)=0,\qquad f(S)=|S|+D\quad(S\ne\varnothing).
  \tag{G4}
-```
-This is the sum of the free-matroid rank and $`D`$ rank-one
+-->
+![Formula](../../assets/math/213fb95666b83a405ca978d3.svg)
+This is the sum of the free-matroid rank and <code class="math">D</code> rank-one
 uniform-matroid ranks, so it is normalized, monotone, integral, and
 submodular.
 
-At each player put mass $`1/D`$ on its legal configuration of $`D+1`$
-units. Then $`x_p=1/D`$, $`\sum_px_p=r`$, and $`y_p=(D+1)/D`$.
-For every nonempty $`S`$ of size $`s`$,
-```math
+At each player put mass <code class="math">1/D</code> on its legal configuration of <code class="math">D+1</code>
+units. Then <code class="math">x_p=1/D</code>, <code class="math">\sum_px_p=r</code>, and <code class="math">y_p=(D+1)/D</code>.
+For every nonempty <code class="math">S</code> of size <code class="math">s</code>,
+<!-- math-display: 24bf6cd02c396ee159577009
 y(S)=s+s/D\le s+D=f(S),
-```
-because $`s\le Dr\le D^2`$. Thus the target $`D+1`$ is feasible.
+-->
+![Formula](../../assets/math/24bf6cd02c396ee159577009.svg)
+because <code class="math">s\le Dr\le D^2</code>. Thus the target <code class="math">D+1</code> is feasible.
 
-For any selected $`r`$-set $`I`$, integer feasibility requires
-$`n(I)\le r+D`$. Consequently
-```math
+For any selected <code class="math">r</code>-set <code class="math">I</code>, integer feasibility requires
+<code class="math">n(I)\le r+D</code>. Consequently
+<!-- math-display: 0ce4a94ec43075e1735fb955
 \mathrm{OPT}_{\rm int}\le1+\lfloor D/r\rfloor.
-```
+-->
+![Formula](../../assets/math/0ce4a94ec43075e1735fb955.svg)
 Equality is attained by giving that many units to each selected
-player: for every $`A\subseteq I`$,
-```math
+player: for every <code class="math">A\subseteq I</code>,
+<!-- math-display: fc385eba51d28f884f0478e6
 n(A)=|A|+|A|\lfloor D/r\rfloor\le |A|+D.
-```
+-->
+![Formula](../../assets/math/fc385eba51d28f884f0478e6.svg)
 Adding unselected players to the tested set cannot decrease its rank.
 Therefore the gap is at least
-```math
+<!-- math-display: 1eacfafd0af6b12ab1649f58
 \frac{D+1}{1+\lfloor D/r\rfloor},
  \tag{G5}
-```
-which tends to $`r`$ along $`D=rL`$, $`L\to\infty`$.
-No target exceeds $`D+1`$, the singleton capacity. $`\square`$
+-->
+![Formula](../../assets/math/1eacfafd0af6b12ab1649f58.svg)
+which tends to <code class="math">r</code> along <code class="math">D=rL</code>, <code class="math">L\to\infty</code>.
+No target exceeds <code class="math">D+1</code>, the singleton capacity. <code class="math">\square</code>
 
-Keeping the free component and the $`D`$ rank-one components separate
-excludes the displayed point: a $`D+1`$-unit configuration must use all
-$`D`$ rank-one services, forcing expected total $`Dr>D`$ from components
-whose combined capacity is $`D`$. The integer feasible count vectors
+Keeping the free component and the <code class="math">D</code> rank-one components separate
+excludes the displayed point: a <code class="math">D+1</code>-unit configuration must use all
+<code class="math">D</code> rank-one services, forcing expected total <code class="math">Dr&gt;D</code> from components
+whose combined capacity is <code class="math">D</code>. The integer feasible count vectors
 are unchanged by merging, but their configuration relaxation changes.
 
 ## 3. Exact gap two after all residual cuts
 
-**Theorem 3.** For every $`r\ge3`$, there is an explicit single-resource
+**Theorem 3.** For every <code class="math">r\ge3</code>, there is an explicit single-resource
 instance whose integer optimum is one and whose full residual
 configuration optimum is two.
 
-**Proof.** Set $`q=2r`$, $`M=U_{r,2r}`$, and
-```math
+**Proof.** Set <code class="math">q=2r</code>, <code class="math">M=U_{r,2r}</code>, and
+<!-- math-display: 073f152ca1d66f0c8f8e07df
 f(S)=\min\{|S|,r-1\}+\min\{|S|,r+1\}.
  \tag{G6}
-```
-It is the sum of two uniform-matroid ranks. Every selected $`r`$-set
+-->
+![Formula](../../assets/math/073f152ca1d66f0c8f8e07df.svg)
+It is the sum of two uniform-matroid ranks. Every selected <code class="math">r</code>-set
 can receive one unit per player. Two units per selected player violate
-its own rank inequality, since $`f(I)=2r-1<2r`$. Hence the integer
+its own rank inequality, since <code class="math">f(I)=2r-1&lt;2r</code>. Hence the integer
 optimum is exactly one.
 
-Put mass $`1/2`$ on configuration $`n=2`$ at every player. Then
-$`x_p=1/2`$, $`y_p=1`$, and $`x\in B(U_{r,2r})`$.
-The inequality $`f(S)\ge|S|`$ verifies every aggregate recipient row.
-For a subset $`S`$ of size $`s`$, its inside players have marginal zero
-and every outside player has the same next marginal $`m(s)`$. The
+Put mass <code class="math">1/2</code> on configuration <code class="math">n=2</code> at every player. Then
+<code class="math">x_p=1/2</code>, <code class="math">y_p=1</code>, and <code class="math">x\in B(U_{r,2r})</code>.
+The inequality <code class="math">f(S)\ge&#124;S&#124;</code> verifies every aggregate recipient row.
+For a subset <code class="math">S</code> of size <code class="math">s</code>, its inside players have marginal zero
+and every outside player has the same next marginal <code class="math">m(s)</code>. The
 left side of (G3) is
-```math
+<!-- math-display: 6bacb767f52c6342c3f2ea0a
 L(s)=s+\frac{2r-s}{2}(2-m(s))_+.
-```
+-->
+![Formula](../../assets/math/6bacb767f52c6342c3f2ea0a.svg)
 The following four cases exhaust all subsets:
 
-| Subset size | Outside marginal | Left side $`L(s)`$ | Slack $`f(S)-L(s)`$ |
+| Subset size | Outside marginal | Left side <code class="math">L(s)</code> | Slack <code class="math">f(S)-L(s)</code> |
 |---|---:|---:|---:|
-| $`0\le s\le r-2`$ | $`2`$ | $`s`$ | $`s`$ |
-| $`s=r-1`$ | $`1`$ | $`(3r-1)/2`$ | $`(r-3)/2`$ |
-| $`s=r`$ | $`1`$ | $`3r/2`$ | $`(r-2)/2`$ |
-| $`r+1\le s\le2r`$ | $`0`$, or no outside player | $`2r`$ | $`0`$ |
+| <code class="math">0\le s\le r-2</code> | <code class="math">2</code> | <code class="math">s</code> | <code class="math">s</code> |
+| <code class="math">s=r-1</code> | <code class="math">1</code> | <code class="math">(3r-1)/2</code> | <code class="math">(r-3)/2</code> |
+| <code class="math">s=r</code> | <code class="math">1</code> | <code class="math">3r/2</code> | <code class="math">(r-2)/2</code> |
+| <code class="math">r+1\le s\le2r</code> | <code class="math">0</code>, or no outside player | <code class="math">2r</code> | <code class="math">0</code> |
 
-All slacks are nonnegative for $`r\ge3`$. Lemma 1 therefore verifies
+All slacks are nonnegative for <code class="math">r\ge3</code>. Lemma 1 therefore verifies
 every feasible-reserve cut, with arbitrary support. The singleton
 capacity is two, so no configuration target above two exists. Thus
-```math
+<!-- math-display: f9383d80ff934cbfcf070237
 \mathrm{OPT}_{\rm full\ residual\ LP}=2,\qquad
  \mathrm{OPT}_{\rm int}=1.
  \qquad\square
-```
+-->
+![Formula](../../assets/math/f9383d80ff934cbfcf070237.svg)
 
 The two component resources have recipient matroids
-$`U_{r-1,2r}`$ and $`U_{r+1,2r}`$. Integral polymatroid decomposition
+<code class="math">U_{r-1,2r}</code> and <code class="math">U_{r+1,2r}</code>. Integral polymatroid decomposition
 shows that their summed integer counts are exactly the integer points
-of $`P(f)`$. In their separate-component configuration relaxation,
+of <code class="math">P(f)</code>. In their separate-component configuration relaxation,
 every target strictly above one requires one service from each
-component. Total player mass $`r`$ would demand $`r`$ services from
-the first component, exceeding its rank $`r-1`$. Target one is feasible
+component. Total player mass <code class="math">r</code> would demand <code class="math">r</code> services from
+the first component, exceeding its rank <code class="math">r-1</code>. Target one is feasible
 integrally using the larger component, so that relaxation has optimum
 exactly one.
 

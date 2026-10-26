@@ -21,15 +21,17 @@ Let S>=2 include all group/choice/resource headers and all supplied
 occurrences, and let b bound the bit size of each input scalar,
 including rational weights/masses/B and encoded integer counts.
 Let B>0 be any rational upper bound on every w_g a_{gjx}. Define
-```math
+<!-- math-display: 0be88494e1693a67315d3ffc
 \mu_x=\sum_g\sum_j p_{gj}w_g a_{gjx}.        \tag{1}
-```
+-->
+![Formula](../../assets/math/0be88494e1693a67315d3ffc.svg)
 There is a deterministic algorithm choosing one j(g) per group with
-```math
+<!-- math-display: 89a69df8b4e53ca85b49551c
 \sum_g w_g a_{g,j(g),x}
           \leq 2\mu_x+B\log(8(|X|+1))
                           \quad\hbox{for every }x.           \tag{2}
-```
+-->
+![Formula](../../assets/math/89a69df8b4e53ca85b49551c.svg)
 Its work is S times a fixed polynomial in log(S+2) and b, charging
 ordinary multiword arithmetic. Only the supplied sparse incidences
 are scanned. Zero-weight groups can choose an arbitrary positive-mass
@@ -39,36 +41,42 @@ the result is trivial.
 ## 2. Exact positive potential
 
 Put u_{gjx}=w_ga_{gjx}/B, so 0<=u_{gjx}<=1, and
-```math
+<!-- math-display: c34f85baa061ae39d99e9f86
 E_{gx}=\sum_jp_{gj}\exp(u_{gjx}),\qquad
  z_x=\mu_x/B .
-```
+-->
+![Formula](../../assets/math/c34f85baa061ae39d99e9f86.svg)
 For a partial choice define
-```math
+<!-- math-display: 27c9a139b2307657d0a84f9b
 W_x=\exp\!\left(\sum_{g\ {\rm fixed}}u_{g,j(g),x}-2z_x\right)
                     \prod_{g\ {\rm unfixed}}E_{gx}.           \tag{3}
-```
+-->
+![Formula](../../assets/math/27c9a139b2307657d0a84f9b.svg)
 Since exp(u)<=1+(e-1)u for 0<=u<=1,
-```math
+<!-- math-display: 620185b1184b9a6b25520d25
 \prod_gE_{gx}\leq\exp((e-1)z_x),\qquad
                          W_x^{\rm initial}\leq1.             \tag{4}
-```
+-->
+![Formula](../../assets/math/620185b1184b9a6b25520d25.svg)
 Thus the initial sum of (3) is at most |X|.
 
 When fixing g, a candidate j gives
-```math
+<!-- math-display: 0032f8ffb73ddc083351b6ca
 W_x^{\rm new}=W_x E_{gx}^{-1}\exp(u_{gjx}).
-```
+-->
+![Formula](../../assets/math/0032f8ffb73ddc083351b6ca.svg)
 The terms independent of j are a common baseline. Compare only the
 nonnegative sparse scores
-```math
+<!-- math-display: 3a8cf8c596b3a0f0075c24f8
 T_j=\sum_{x:a_{gjx}>0}(W_x/E_{gx})(\exp(u_{gjx})-1).          \tag{5}
-```
+-->
+![Formula](../../assets/math/3a8cf8c596b3a0f0075c24f8.svg)
 Their p-weighted average satisfies
-```math
+<!-- math-display: f3678c3422b9f695244376dd
 \sum_jp_{gj}T_j
        =\sum_x W_x(1-E_{gx}^{-1})\leq\sum_xW_x.              \tag{6}
-```
+-->
+![Formula](../../assets/math/f3678c3422b9f695244376dd.svg)
 An exact minimum score cannot increase sum_x W_x. After all choices,
 W_x=exp((chosen load at x-2mu_x)/B), so even the bound
 B log(|X|) would follow under exact real arithmetic. The slack in
@@ -84,13 +92,14 @@ incidences still require division by E_{gx}.
 ## 3. Avoid exact rational normalization
 
 Compute
-```math
+<!-- math-display: 48fb0308f2531a402d02fe61
 E_{gx}=1+
    \frac{\sum_j\alpha_{gj}(\exp(u_{gjx})-1)}
         {\sum_j\alpha_{gj}},\qquad
  z_x=\sum_g
    \frac{\sum_j\alpha_{gj}u_{gjx}}{\sum_j\alpha_{gj}}.         \tag{7}
-```
+-->
+![Formula](../../assets/math/48fb0308f2531a402d02fe61.svg)
 All numerators and denominators in (7) are positive sums, without
 cancellation. A group total can be approximated by floating addition
 of its input masses; no exact sum with a product of unrelated
@@ -99,9 +108,10 @@ uses the true ratios, while the algorithm approximates (7) with
 explicit relative or absolute error as appropriate.
 
 For u>0 evaluate exp(u)-1 as the positive series
-```math
+<!-- math-display: 395b3e7b552e45f31fcd2d53
 u(1+u/2!+u^2/3!+\cdots).
-```
+-->
+![Formula](../../assets/math/395b3e7b552e45f31fcd2d53.svg)
 Because u<=1, O(log(S+2)) terms with guarded rounding suffice for
 relative error S^{-c}, with a fixed sufficiently large c.
 This remains true when u or an alpha is tiny: their binary exponents

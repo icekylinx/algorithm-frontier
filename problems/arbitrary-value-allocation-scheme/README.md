@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns an actual selected basis and an integer allocation of utility at least $`(1-\varepsilon)\mathrm{OPT}`$ under the exact combined setup and assignment budget.
+Returns an actual selected basis and an integer allocation of utility at least <code class="math">(1-\varepsilon)\mathrm{OPT}</code> under the exact combined setup and assignment budget.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic profile and basis enumeration with paid exact rank, submodular-min
 
 **Time**
 
-Put $`\delta=\varepsilon/3`$, $`J=\lfloor1/\delta\rfloor`$, $`K=\lceil1/\delta\rceil`$, $`L=\left\lceil(1-\delta)/\delta^2\right\rceil`$, and $`C_\delta=\binom{L+K}{K}`$. Time is $`\binom{q}{r}\min\{C_\delta^r,\exp(4r(J+1))\}\mathrm{poly}(H_\varepsilon)`$, hence $`\binom{q}{r}\exp(O(r/\varepsilon))\mathrm{poly}(H_\varepsilon)`$.
+Put <code class="math">\delta=\varepsilon/3</code>, <code class="math">J=\lfloor1/\delta\rfloor</code>, <code class="math">K=\lceil1/\delta\rceil</code>, <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>, and <code class="math">C_\delta=\binom{L+K}{K}</code>. Time is <code class="math">\binom{q}{r}\min\{C_\delta^r,\exp(4r(J+1))\}\mathrm{poly}(H_\varepsilon)</code>, hence <code class="math">\binom{q}{r}\exp(O(r/\varepsilon))\mathrm{poly}(H_\varepsilon)</code>.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$`q`$ is the nonloop player count; $`r`$ is the selected matroid rank; $`0<\varepsilon\le1`$ is rational; $`H_\varepsilon=H+\mathrm{size}(\varepsilon)`$. $`H`$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+<code class="math">q</code> is the nonloop player count; <code class="math">r</code> is the selected matroid rank; <code class="math">0&lt;\varepsilon\le1</code> is rational; <code class="math">H_\varepsilon=H+\mathrm{size}(\varepsilon)</code>. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 

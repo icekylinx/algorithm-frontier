@@ -21,11 +21,12 @@ Choose one actual M-basis I before the scenario is known. For each
 explicit scenario sigma, choose an integer allocation separately, subject
 to that scenario's recipient resources and budget. The robust utility is
 
-```math
+<!-- math-display: 9c2e8761b969f750500ca709
 \min_{\sigma}\ \min_{p\in I}
                 \text{utility of p in scenario sigma}.
 \tag{H1}
-```
+-->
+![Formula](../../assets/math/9c2e8761b969f750500ca709.svg)
 
 The same I is used in all scenarios; the allocations need not be the
 same. Unused resource capacity is permitted. The parameter is c=q-r.
@@ -56,20 +57,22 @@ exactly k using arbitrary unused ground elements.
 
 Use the uniform player matroid
 
-```math
+<!-- math-display: f06ced4be6d43e7ed5aa3485
 M=U_{q-k,q}.
 \tag{H2}
-```
+-->
+![Formula](../../assets/math/f06ced4be6d43e7ed5aa3485.svg)
 
 For each set S=S_i create one scenario with one unit-valued resource
 whose recipient rank is
 
-```math
+<!-- math-display: c5806772e41a53277a9465f3
 f_S(A)=|A\setminus S|+
                  \min\{|A\cap S|,\ |S|-1\}
                          \qquad(A\subseteq P).
 \tag{H3}
-```
+-->
+![Formula](../../assets/math/c5806772e41a53277a9465f3.svg)
 
 This is the rank of the direct sum of the free matroid on P\S and
 the uniform matroid U_(|S|-1,S). Therefore it is normalized, monotone,
@@ -92,12 +95,13 @@ selected player means exactly one allocated unit there.
 
 The vector 1_I is feasible in scenario S exactly when
 
-```math
+<!-- math-display: e33061eb6bb5e6934536ef10
 |I\cap S|\le|S|-1
        \quad\Longleftrightarrow\quad S\not\subseteq I
        \quad\Longleftrightarrow\quad D\cap S\ne\varnothing.
 \tag{H4}
-```
+-->
+![Formula](../../assets/math/e33061eb6bb5e6934536ef10.svg)
 
 If D intersects every set, use x^S=1_I in every scenario. It is legal
 and gives robust value one. Conversely, any scenario allocation giving
@@ -107,14 +111,15 @@ Equation H4 therefore forces D to hit every source set.
 
 Consequently
 
-```math
+<!-- math-display: 17fe03c9d05fe0a62bf535bc
 \mathrm{OPT}_{\mathrm{robust}}=
  \begin{cases}
  1,&\text{the Hitting Set instance is positive},\\
  0,&\text{the Hitting Set instance is negative}.
  \end{cases}
 \tag{H5}
-```
+-->
+![Formula](../../assets/math/17fe03c9d05fe0a62bf535bc.svg)
 
 Allowing adaptive scenario allocations does not help: target one forces
 the same necessary unit vector on the common selected set in every

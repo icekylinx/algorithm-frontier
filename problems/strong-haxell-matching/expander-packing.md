@@ -15,10 +15,11 @@ with `n>=2` vertices, `m` physical edge identities, minimum
 degree `delta>0`, and conductance at least `phi>0`. Parallel
 edges count with multiplicity in degrees and cuts. Fix
 
-```math
+<!-- math-display: fa63a53d5cd8d6ef0b347524
 N=32(n+m+4),\qquad U=\log N,
  \qquad s=\log\Delta,
-```
+-->
+![Formula](../../assets/math/fa63a53d5cd8d6ef0b347524.svg)
 
 where `Delta>=4` is an integer. Use a valid dyadic conductance
 lower bound `phi>=1/(4m)`, as justified in Section 9 of
@@ -30,37 +31,41 @@ Assume the destructive distance interface has stretch at most
 `(n+m+q) exp O(B)` on `q` indexed pairs. For a desired integer
 `K>=1`, suppose
 
-```math
+<!-- math-display: e3a121bd3a864fb7fa93da77
 \boxed{\quad
        \phi^3\delta
           \ge C K\Delta\Gamma^2\log^2N
        \quad}
  \tag{1}
-```
+-->
+![Formula](../../assets/math/e3a121bd3a864fb7fa93da77.svg)
 
 for a sufficiently large absolute constant `C`. Then one can
 deterministically construct `K` subgraphs
 
-```math
+<!-- math-display: b443fd11486a4edb23bd9735
 G_i=(V,E_i),\quad i=1,\ldots,K,
-```
+-->
+![Formula](../../assets/math/b443fd11486a4edb23bd9735.svg)
 
 whose edge sets are pairwise disjoint subsets of `E`, and each
 of which is spanning, connected, and satisfies
 
-```math
+<!-- math-display: dc1346907eb83ca865e4ce73
 \Phi(G_i)\ge
                   c\,\frac{\phi}{\Gamma\log N}
  \tag{2}
-```
+-->
+![Formula](../../assets/math/dc1346907eb83ca865e4ce73.svg)
 
 for an absolute constant `c>0`. The total time is
 
-```math
+<!-- math-display: 3fe2da287855a14bbc9a35ce
 (n+m)\exp O\!\left(B+
                   U\frac{\log(2+s)}s\right).
  \tag{3}
-```
+-->
+![Formula](../../assets/math/3fe2da287855a14bbc9a35ce.svg)
 
 The subgraphs are given explicitly using original edge identities.
 Their total number of edges is at most `m`. Each has at most
@@ -79,11 +84,12 @@ For every integer `n>1`, it deterministically constructs, in
 `O(n)` time, an `n`-vertex graph `X` of maximum degree at
 most nine and constant edge expansion `alpha_0>0`:
 
-```math
+<!-- math-display: 5af5a4b3df586bb2bdc02297
 |\partial_X S|\ge\alpha_0\min\{|S|,|V\setminus S|\}
        \quad\text{for every nontrivial }S\subset V.
  \tag{4}
-```
+-->
+![Formula](../../assets/math/5af5a4b3df586bb2bdc02297.svg)
 
 Its vertex set is identified with `V`. This is an exact-size
 construction, so no square-sized family or unaccounted padding
@@ -104,10 +110,11 @@ For every auxiliary edge identity `e={u,v}` in `X` and every
 copy index `i in {1,...,K}`, create one demand identity `(i,e)`
 with endpoints `(u,v)`. There are
 
-```math
+<!-- math-display: 327faae3d8bed39d6dea1191
 q=K|E(X)|\le9nK/2
  \tag{5}
-```
+-->
+![Formula](../../assets/math/327faae3d8bed39d6dea1191.svg)
 
 demands. At each original vertex there are at most `9K`
 demand endpoints. Duplicate endpoint pairs are distinct indexed
@@ -118,11 +125,12 @@ Route **all these demands in one call** to the theorem of
 [routing.md](routing.md), with endpoint
 load `k=9K` and comparison length
 
-```math
+<!-- math-display: 0b3e8704d4b31b198d91fbe0
 h_0=\left\lceil32\log(2N)/\phi\right\rceil,
  \qquad R=\lceil\Gamma h_0\rceil.
  \tag{6}
-```
+-->
+![Formula](../../assets/math/0b3e8704d4b31b198d91fbe0.svg)
 
 The factor nine and the absolute constants in (6) are absorbed
 in `C` in (1). The routing theorem returns a simple path
@@ -148,19 +156,21 @@ the original graph, with one global edge-disjointness guarantee.
 Fix a copy `i` and a nontrivial cut. Let `T` be its side with
 at most `n/2` vertices, and put
 
-```math
+<!-- math-display: 7dde2fb84d938a1b16d246eb
 b=|\partial_{G_i}T|.
-```
+-->
+![Formula](../../assets/math/7dde2fb84d938a1b16d246eb.svg)
 
 Each auxiliary edge crossing `T` is represented by a path
 crossing this cut. These paths are edge-disjoint, so their
 crossings use distinct physical boundary edges. Consequently,
 
-```math
+<!-- math-display: c816e3c3f07ef9469a1894cb
 b\ge|\partial_X T|
                     \ge\alpha_0|T|.
  \tag{7}
-```
+-->
+![Formula](../../assets/math/c816e3c3f07ef9469a1894cb.svg)
 
 To control the degree volume of `T` in `G_i`, divide its
 represented paths into two relevant types. There are at most
@@ -172,22 +182,24 @@ bounds the number of these latter paths by `b/2`.
 Each represented path contributes at most twice its length,
 hence at most `2R`, to `vol_(G_i)(T)`. Thus
 
-```math
+<!-- math-display: c24a2f605d743e692c98730b
 \mathrm{vol}_{G_i}(T)
        \le2R\left(9|T|+b/2\right)
        \le\left(18/\alpha_0+1\right)Rb,
  \tag{8}
-```
+-->
+![Formula](../../assets/math/c24a2f605d743e692c98730b.svg)
 
 where the last inequality uses (7). The smaller of the two
 `G_i` degree volumes is at most the volume of this cardinality
 smaller side `T`, even if it is not the volume smaller side.
 Therefore the conductance of this cut is at least
 
-```math
+<!-- math-display: d826fe811dd882b464cbde22
 \frac{\alpha_0}{(18+\alpha_0)R}.
  \tag{9}
-```
+-->
+![Formula](../../assets/math/d826fe811dd882b464cbde22.svg)
 
 Taking the minimum over cuts proves (2). The proof explicitly
 accounts for paths whose endpoints are both outside the chosen
@@ -203,11 +215,12 @@ Because `phi<=1`, `Delta>=4`, and `Gamma>=1`, condition
 (1), with a large enough constant, implies `K<=delta`.
 Hence
 
-```math
+<!-- math-display: 004003eb90bdfbaa6415c648
 nK\le n\delta\le2m,
  \qquad q\le9m.
  \tag{10}
-```
+-->
+![Formula](../../assets/math/004003eb90bdfbaa6415c648.svg)
 
 Thus the master `N=32(n+m+4)` covers `n+m+q+4` as
 required by the routing theorem. The `O(n)` auxiliary
@@ -233,32 +246,36 @@ used original edge.
 
 The hierarchy in [apsp frontier proof](../apsp-frontier/proof.md) supplies
 
-```math
+<!-- math-display: a6a0018d4e2a747fc27b2a48
 B=O(U/t+t^3h),\qquad \log\Gamma=O(t^4h),
  \qquad h=\log(U+4).
-```
+-->
+![Formula](../../assets/math/a6a0018d4e2a747fc27b2a48.svg)
 
 Choose an integer power-of-two `Delta` with
 `s=log Delta=Theta(t log(t+2))`. Then the outer term in
 (3) is `O(U/t)`. Any integer `K>=1` satisfying
 
-```math
+<!-- math-display: e7ada8f842ce382ba864c505
 \phi^3\delta/K
           \ge\log^2N\,\exp O(t^4h)
  \tag{11}
-```
+-->
+![Formula](../../assets/math/e7ada8f842ce382ba864c505.svg)
 
 can be packed in time
 
-```math
+<!-- math-display: 98e443a98bcceb44282812c3
 (n+m)\exp O(U/t+t^3h),
-```
+-->
+![Formula](../../assets/math/98e443a98bcceb44282812c3.svg)
 
 and every output graph has conductance at least
 
-```math
+<!-- math-display: 9a0876c5fa42e3b614fc669e
 \frac{\phi}{\log N}\exp(-O(t^4h)).
-```
+-->
+![Formula](../../assets/math/9a0876c5fa42e3b614fc669e.svg)
 
 In particular, the previously audited parameter choices give:
 

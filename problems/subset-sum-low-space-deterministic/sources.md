@@ -3,8 +3,8 @@
 ## Two separate guarantees
 
 [Theorem 2](proof.md#abstract-and-theorem) gives the general deterministic
-time bound $`\mathrm{poly}(n,L)2^{n/2}`$ and writable-space exponent
-$`18261635770550353/10^{17}`$. Its input may contain arbitrary signed,
+time bound <code class="math">\mathrm{poly}(n,L)2^{n/2}</code> and writable-space exponent
+<code class="math">18261635770550353/10^{17}</code>. Its input may contain arbitrary signed,
 zero or repeated binary integers.
 
 The [short-range theorem](range-branch.md) gives a stronger space bound
@@ -47,15 +47,15 @@ quadratically, with polynomial-bit entries.
 ## Short-range theorem: arithmetic proof
 
 The [exact Boolean convolution lemma](convolution.md) supplies
-$`C\,\mathrm{poly}(\log(C+2))`$ bit time and writable space. It proves
+<code class="math">C\,\mathrm{poly}(\log(C+2))</code> bit time and writable space. It proves
 the radix-two transform identity, constructs roots with rational
-arctangent and Taylor sums, bounds all fixed-point errors below $`1/4`$,
-and charges schoolbook arithmetic on $`O(\log C)`$-bit words. Thus the
+arctangent and Taylor sums, bounds all fixed-point errors below <code class="math">1/4</code>,
+and charges schoolbook arithmetic on <code class="math">O(\log C)</code>-bit words. Thus the
 range theorem's arithmetic requirement is proved internally, without an
 imported fast multiplication theorem or a transcendental-number oracle.
 
 The previous packed-product route could use Harvey and van der Hoeven,
-*Integer multiplication in time $`O(n\log n)`$*,
+*Integer multiplication in time <code class="math">O(n\log n)</code>*,
 [Annals of Mathematics 193(2), 563–617 (2021)](https://annals.math.princeton.edu/2021/193-2/p04).
 That published result is not needed by the current proof. The packed
 identity remains useful in the finite range check, whose role is to

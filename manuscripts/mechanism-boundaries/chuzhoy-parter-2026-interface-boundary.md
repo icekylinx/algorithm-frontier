@@ -11,20 +11,22 @@ Theorem 1.3 maintains a deterministic subgraph on a fixed vertex set,
 initially with no edges and remaining simple, under at most n^2 edge
 updates. Its parameter range is
 
-```math
+<!-- math-display: aa00172f866e38aadf954a11
 512\le k\le(\log n)^{1/49},\qquad
 1/k\le\delta<1/400,\qquad \Delta\ge n^{20/k}.
-```
+-->
+![Formula](../../assets/math/aa00172f866e38aadf954a11.svg)
 
 Corollary 9.6 adds length buckets and states
 
-```math
+<!-- math-display: cbb70369dd1948a14c9deea8
 \begin{aligned}
 |E(H)|&\le n^{1+O(1/k)}\Delta(1+\log L),\\
 d&=k^{19}2^{O(\delta^{-6})},\\
 \eta&\le n^{O(1/k)}\max\{\Delta_{\max}(G)/\Delta,1\}.
 \end{aligned}
-```
+-->
+![Formula](../../assets/math/cbb70369dd1948a14c9deea8.svg)
 
 Here eta is NATIVE EDGE congestion. Update time is n^{O(delta)};
 selected-edge recourse is n^{O(1/k)}. The embedding in Lemma 9.4 is
@@ -44,16 +46,17 @@ The distinction above has an exact mathematical consequence. Suppose
 J is a projected graph, each of whose genuine edges e has an explicit
 ambient walk pi(e). Define its ambient occurrence load at z by
 
-```math
+<!-- math-display: cf8474d9672dc622b1de156f
 C_0(z)=\sum_{e\in E(J)}\mathrm{occ}_z(\pi(e)),
  \qquad C_0=\max_z C_0(z).
-```
+-->
+![Formula](../../assets/math/cf8474d9672dc622b1de156f.svg)
 
 Suppose a chosen subgraph H is equipped with paths Q(e) routing all
 J edges and having native edge congestion at most eta. Composing walks
 gives only
 
-```math
+<!-- math-display: e4d32ea78bc9b201fefa9651
 \begin{aligned}
  C_{\rm comp}(z)
  &\le\sum_{f\in E(H)}
@@ -61,7 +64,8 @@ gives only
  &\le\eta\sum_{f\in E(H)}\mathrm{occ}_z(\pi(f))
  \le\eta C_0(z).
 \end{aligned}                                                    \tag{1}
-```
+-->
+![Formula](../../assets/math/e4d32ea78bc9b201fefa9651.svg)
 
 Repeated route occurrences are counted with multiplicity. Loop erasure
 can only decrease this upper bound; it does not establish a smaller
@@ -71,10 +75,11 @@ Substituting the source's eta into (1) gives a product involving
 Delta_max(J), C_0, and the density parameter Delta. It does not give the
 current static primitive's additive form
 
-```math
+<!-- math-display: 4256ef4d1638fbd6f8f2f9c2
 \Gamma\bigl(C_0+\Delta_{\max}(J)\bigr)
                                                                \tag{2}
-```
+-->
+![Formula](../../assets/math/4256ef4d1638fbd6f8f2f9c2.svg)
 
 at its stated sparse-support size. Setting Delta at least the entire
 native maximum degree removes one multiplier from (1), but also raises
@@ -116,10 +121,11 @@ internal static construction or by an unrelated support-graph query.
 Put u=log n. The positive expressions entering the published bounds
 include delta u and u/k. Throughout their permitted parameter range,
 
-```math
+<!-- math-display: 33963b760ee9148b3a74947b
 u/k\ge u^{48/49},\qquad
                    \delta u\ge u/k.                           \tag{3}
-```
+-->
+![Formula](../../assets/math/33963b760ee9148b3a74947b.svg)
 
 Consequently optimizing THESE GUARANTEED EXPRESSIONS cannot certify
 an overhead exp(O(u^(4/5) polylog u)), even before paying for any missing

@@ -5,9 +5,10 @@
 This note examines a proposed refinement of conservative completion.
 For a candidate c with owner p, call a used resource j problematic when
 
-```math
+<!-- math-display: 03db874fca79b07a96fca57c
 p\in\mathrm{cl}_{R_j}(X_j\cup M_j).
-```
+-->
+![Formula](../../assets/math/03db874fca79b07a96fca57c.svg)
 
 Only at those resources, mark all unmarked matching records using j.
 The implicit all-subsets proof still works: at a problematic resource the
@@ -25,9 +26,10 @@ Take threshold B=10 and give every resource value v=9. Every two-resource
 bundle is minimal above B. The player matroid is the partition matroid
 with three blocks
 
-```math
+<!-- math-display: 3795b02f8c1fa58a65701ba1
 \{b_1,q\},\quad\{b_2\},\quad\{p\},
-```
+-->
+![Formula](../../assets/math/3795b02f8c1fa58a65701ba1.svg)
 
 each of capacity one. Its rank is r=3. Thus b1 and q are parallel, while
 b2 and p supply the two other independent directions.
@@ -35,18 +37,20 @@ b2 and p supply the two other independent directions.
 There is a resource j with recipient matroid U_(2,3) on
 {b1,b2,p}; q is a loop for j. There are also private resources
 
-```math
+<!-- math-display: 74834a3f2ab567ed9b51854d
 k_p\text{ for }p,\quad \ell_1\text{ for }b_1,\quad
  \ell_2\text{ for }b_2,\quad a_q,b_q\text{ for }q.
-```
+-->
+![Formula](../../assets/math/74834a3f2ab567ed9b51854d.svg)
 
 Each private resource has a rank-one recipient matroid with only its
 named player nonloop. The only liked bundles above B are respectively
 
-```math
+<!-- math-display: e9689532519e38f6bbbd5318
 C_p=\{j,k_p\},\quad M_1=\{j,\ell_1\},\quad
  M_2=\{j,\ell_2\},\quad C_q=\{a_q,b_q\}.
-```
+-->
+![Formula](../../assets/math/e9689532519e38f6bbbd5318.svg)
 
 Initially the matching contains M1 and M2. Its owners {b1,b2} are
 independent, and resource j serves two players legally.
@@ -87,9 +91,10 @@ matroid is a particularly simple rank-three partition matroid.
 At birth, the resource-j set {p,b1,b2} has rank two. The current cover
 is then
 
-```math
+<!-- math-display: 40e3e363b25c68e25ce01efc
 \Phi_{\rm birth}=2v+v+v+v=5v=45,
-```
+-->
+![Formula](../../assets/math/40e3e363b25c68e25ce01efc.svg)
 
 where the last three terms are kp, ell1 and ell2. There are two blockers.
 The shared dependence at j supplies a saving relative to counting all
@@ -99,17 +104,19 @@ After the exchange, the current selected/blocker resource-j set is
 {p,b2}. It is independent and has rank two. Only kp and ell2 contribute
 private resources to this cover. Therefore
 
-```math
+<!-- math-display: b3d5faa3a3487cc8552e3954
 \Phi_{\rm current}=2v+v+v=4v=36.
-```
+-->
+![Formula](../../assets/math/b3d5faa3a3487cc8552e3954.svg)
 
 There is now one blocker. In particular
 
-```math
+<!-- math-display: 05ce33d074cccfc7ca8f3dc0
 \Phi_{\rm current}=36>3B=30
  \quad\text{and}\quad
  \Phi_{\rm current}=36>2B+u=29.
-```
+-->
+![Formula](../../assets/math/05ce33d074cccfc7ca8f3dc0.svg)
 
 The coarse coefficient actually proved in the accepted construction is
 2(B+u)=38, so this state does not contradict that theorem. The sharper

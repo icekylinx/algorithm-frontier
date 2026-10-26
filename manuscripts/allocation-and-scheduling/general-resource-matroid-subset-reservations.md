@@ -36,11 +36,12 @@ it. This is not a representation by independent physical item slots.
 Let H denote the full explicit input size plus its numerical bit
 length. The construction below gives
 
-```math
+<!-- math-display: 2560780cb0d6e2d71a6d3dcb
 \boxed{\text{factor }5-4/r\text{ in }
                         2^{O(r)}\mathrm{poly}(H)}
  \tag{G1}
-```
+-->
+![Formula](../../assets/math/2560780cb0d6e2d71a6d3dcb.svg)
 
 for r>=1. The oracle interpretation is explicit throughout. The
 comparison can be strengthened to the natural configuration LP for
@@ -52,10 +53,11 @@ Player-local downward-closed bundle families may also be supplied
 with an exact available-bundle oracle. With a certified factor-lambda
 available oracle, the corresponding factor is
 
-```math
+<!-- math-display: eab99f7edc1cf721c6fa7e63
 \lambda^{-1}+4-4/r,
  \tag{G2}
-```
+-->
+![Formula](../../assets/math/eab99f7edc1cf721c6fa7e63.svg)
 
 with the oracle cost and parameters paid. The proof below first
 uses unrestricted liked resource sets, then records this adapter.
@@ -64,7 +66,7 @@ uses unrestricted liked resource sets, then records this adapter.
 
 For target T use the relaxation
 
-```math
+<!-- math-display: b1c253ce54e5ddd78b10ac88
 \begin{split}
  &x\in P_{\mathcal B(M)},\qquad
        y_{\cdot j}\in P_{\mathcal I(R_j)}\quad\text{for each }j,\\
@@ -72,7 +74,8 @@ For target T use the relaxation
        \sum_j v_j y_{pj}\ge T x_p\quad\text{for each }p.
  \end{split}
  \tag{G3}
-```
+-->
+![Formula](../../assets/math/b1c253ce54e5ddd78b10ac88.svg)
 
 No feasible point is required as input. All current allocated and
 selected bundles are minimal above a chosen threshold B>0.
@@ -84,18 +87,20 @@ designated as its blockers. Thus Y is the disjoint union of these
 groups. The group can be empty only during an immediately processed
 free cascade. For resource j write
 
-```math
+<!-- math-display: 76b9dd4c44910dd3302806aa
 X_j=\{p(c):c\in X,\ j\in c\},\qquad
  Y_j=\{p(b):b\in Y,\ j\in b\}.
  \tag{G4}
-```
+-->
+![Formula](../../assets/math/76b9dd4c44910dd3302806aa.svg)
 
 In a last-layer scan, resource j is available to player p exactly when
 
-```math
+<!-- math-display: 7c604e3753b1afce7abdc168
 p\notin\mathrm{cl}_{R_j}(X_j\cup Y_j).
  \tag{G5}
-```
+-->
+![Formula](../../assets/math/7c604e3753b1afce7abdc168.svg)
 
 For an earlier layer its own prefix X_<=i,Y_<=i is used. All these
 closures are on sets of at most 2r current names and can be computed
@@ -116,13 +121,14 @@ groups, and let X_j(Z) be their receiving-player set at j. Let M_j
 be the current matching's receiving-player set at j. Maintain, for
 every Z subseteq X and every resource j,
 
-```math
+<!-- math-display: a1cda943845d2642e993a8f6
 Q_j(Z)=
   \bigl(M_j\setminus\mathrm{owners}(B(Z))\bigr)
                  \mathbin{\dot\cup} X_j(Z)
              \quad\text{independent in }R_j.
  \tag{G6}
-```
+-->
+![Formula](../../assets/math/a1cda943845d2642e993a8f6.svg)
 
 The dotted union requires distinct receiving names. Maintain the
 stronger explicit invariant that different selected centers using j
@@ -147,11 +153,12 @@ from current matching bundles outside Y.
 
 For each Z subseteq X and each resource j in c, test
 
-```math
+<!-- math-display: bf53aac764e0299e89181bb6
 \left[(M_j\setminus\mathrm{owners}(B(Z)\cup D))
                   \mathbin{\dot\cup}X_j(Z)\right]\cup\{p\}.
  \tag{G7}
-```
+-->
+![Formula](../../assets/math/bf53aac764e0299e89181bb6.svg)
 
 Only the matching portion loses the owners of D; selected services
 are not deleted by a matching-owner name operation. The old tested
@@ -246,11 +253,12 @@ mass strictly larger than (T-B)w.
 For resource j, every unavailable player belongs to
 U_j=cl_Rj(X_j union Y_j). Its fractional receiving mass is at most
 
-```math
+<!-- math-display: ce1d2bbc6264f4413ed650de
 y_{\cdot j}(U_j)\le r_{R_j}(U_j)
        =r_{R_j}(X_j\cup Y_j)\le |X_j|+|Y_j|.
  \tag{G8}
-```
+-->
+![Formula](../../assets/math/ce1d2bbc6264f4413ed650de.svg)
 
 After multiplying by v_j and summing, the excluded value is at most
 the sum of selected-bundle values plus blocker-bundle values. Every
@@ -267,11 +275,12 @@ its resources have value below B. Every blocker shares a resource
 with it and therefore cannot be a singleton of value at least B.
 Each bundle in this group has value below B+min{u,B}. Thus
 
-```math
+<!-- math-display: 3716d77a303ffe6331c0d106
 \text{excluded value}\le C_R(B,u)|Y|,\qquad
  C_R(B,u)=\max\{2u,\ 2B+2\min(u,B)\}.
  \tag{G9}
-```
+-->
+![Formula](../../assets/math/3716d77a303ffe6331c0d106.svg)
 
 The charge uses actual service occurrences. No false physical-item
 intersection subtraction is made.
@@ -279,10 +288,11 @@ intersection subtraction is made.
 Put rho=(r-1)/r. With k<r and s earlier blockers, s/(r-k+s)<=rho.
 An empty new layer is impossible for a feasible LP whenever
 
-```math
+<!-- math-display: 4ab29c79a1ac67f776628673
 B+\rho C_R(B,u)\le T.
  \tag{G10}
-```
+-->
+![Formula](../../assets/math/4ab29c79a1ac67f776628673.svg)
 
 Strictness of the lower LP bound makes equality valid. Every
 nonterminal stable layer therefore has a new blocker.
@@ -316,10 +326,11 @@ It suffices to test subsets of X(j). Indeed, for any Z subseteq X,
 put Z_j=Z intersect X(j). The selected receivers at j are the same
 for Z and Z_j, while B(Z) contains B(Z_j). Hence
 
-```math
+<!-- math-display: e0dd10af40e88b673639d3da
 Q_j(Z)\subseteq Q_j(Z_j).
  \tag{G13}
-```
+-->
+![Formula](../../assets/math/e0dd10af40e88b673639d3da.svg)
 
 Deletion of the new blocker group D preserves this inclusion. Thus
 all the required new-center tests follow from at most 2^{|X(j)|}
@@ -338,11 +349,12 @@ After the fat reduction, let tau=1/lambda (or one for an exact
 oracle), rho=(r-1)/r, d=tau+4rho, B_0=T/d and B=T/(d+eta).
 For small resources Cbar=2(B+B_0) bounds C_R(B,u). Its gap is
 
-```math
+<!-- math-display: da344f01713cdd03c23596b9
 T-\tau B-\rho\overline C
        =(\tau+2\rho)(B_0-B).
  \tag{G14}
-```
+-->
+![Formula](../../assets/math/da344f01713cdd03c23596b9.svg)
 
 Since tau>=1>=rho, tau+2rho>=3d/5, and Cbar<=4T/d. Therefore
 the gap divided by Cbar is at least
@@ -353,13 +365,14 @@ the usual O((1+eta^-1)log(r+1)) layer-depth bound.
 
 Consequently factor d+eta has the explicit mixed running time
 
-```math
+<!-- math-display: 5d18943cc92a00f54d7b57d9
 \mathrm{poly}(H,\text{oracle work})
  \min\left\{2^{O(r)},
   2^{\min\{r,\kappa\}}
      (r+1)^{O((1+\eta^{-1})\log(r+1))}\right\}.
  \tag{G15}
-```
+-->
+![Formula](../../assets/math/5d18943cc92a00f54d7b57d9.svg)
 
 The hidden rank-exponent constant is independent of lambda; its
 oracle and parameter bits are paid. The first branch runs the exact
@@ -385,11 +398,12 @@ Use U=M* union N and run the small-resource construction on U*.
 Its rank r' is at most r. Every small resource has value u<B_0,
 so C_R(B_0,u)<=4B_0 and
 
-```math
+<!-- math-display: f4c86c19bbbcac0541991e3a
 B_0+\rho_{r'}C_R(B_0,u)
                      \le(1+4\rho)B_0=T.
  \tag{G11}
-```
+-->
+![Formula](../../assets/math/f4c86c19bbbcac0541991e3a.svg)
 
 The dual-union complement argument and decomposition give a basis
 of the original M, all of whose players receive value at least B_0.
@@ -435,10 +449,11 @@ the true available optimum is below B/lambda. The strict cover becomes
 
 Accordingly replace (G10) by
 
-```math
+<!-- math-display: 043c5ff2b022f0f95c6281f3
 B/\lambda+\rho C_R(B,u)\le T.
  \tag{G12}
-```
+-->
+![Formula](../../assets/math/043c5ff2b022f0f95c6281f3.svg)
 
 The exact fat threshold uses d=lambda^-1+4rho and B_0=T/d;
 (G11) is unchanged after replacing B_0 by B_0/lambda in its

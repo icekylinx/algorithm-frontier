@@ -29,19 +29,21 @@ The other a_v-d_v fiber vertices have no external edge.
 
 The graph P has
 
-```math
+<!-- math-display: 753498aa2a895869731fe909
 |V(P)|=\sum_v a_v\leq4m,\qquad
  |E(P)|=m+\frac12\sum_v a_v\log_2(a_v)
                           =O(m\log(m+2)).
  \tag{1}
-```
+-->
+![Formula](../../assets/math/753498aa2a895869731fe909.svg)
 
 Every port has at most one external edge, and
 
-```math
+<!-- math-display: 37fd113405acfd87257fc547
 \Delta(P)\leq B:=1+\lceil\log_2(2m+1)\rceil.
  \tag{2}
-```
+-->
+![Formula](../../assets/math/37fd113405acfd87257fc547.svg)
 
 The graph is simple even if G has parallel edges: different original
 edge IDs use different real incidence ports, and fiber edges stay
@@ -59,10 +61,11 @@ rounding of each actual incidence count is the only enlargement.
 For the q-dimensional cube Q_q and every subset S, its internal
 edge boundary is at least
 
-```math
+<!-- math-display: 6c9bf4cc7cef5b8a78fb66cd
 \min\{|S|,2^q-|S|\}.
  \tag{3}
-```
+-->
+![Formula](../../assets/math/6c9bf4cc7cef5b8a78fb66cd.svg)
 
 Here is an induction requiring no explicit-expander theorem.
 By complementation assume |S|<=2^{q-1}, and write its intersections
@@ -71,11 +74,12 @@ H=2^{q-1}, a=|S_0|, b=|S_1|, and exchange halves if needed
 so a>=b. The edges joining the halves contribute
 |S_0 triangle S_1|>=a-b. The induction hypothesis gives
 
-```math
+<!-- math-display: 147221bbd89406999f626389
 |\partial S|\geq
         \min(a,H-a)+\min(b,H-b)+(a-b).
  \tag{4}
-```
+-->
+![Formula](../../assets/math/147221bbd89406999f626389.svg)
 
 If a<=H/2, then b<=H/2, and the right-hand side is at least
 a+b. Otherwise b<=H-a<=H/2, and the right-hand side is
@@ -92,41 +96,45 @@ Equation (3), summed over fibers, gives at least z INTERNAL crossing
 edges. The rounded original cut is some vertex set A in G.
 Since d_v>=a_v/2,
 
-```math
+<!-- math-display: 6cbc0a3f619113937deba7e1
 \min\{\mathrm{vol}_G(A),
                \mathrm{vol}_G(\overline A)\}
        \geq \frac12\min\{|T|,|V(P)\setminus T|\}
        \geq \frac12(w-z).
  \tag{5}
-```
+-->
+![Formula](../../assets/math/6cbc0a3f619113937deba7e1.svg)
 
 This inequality is still valid if T or its complement is empty:
 then w-z<=0. Original conductance and the fact that changing a
 port's side changes at most one external crossing imply
 
-```math
+<!-- math-display: 2241bbc581f2f35dabbead5c
 \begin{aligned}
  |\partial_{\rm external} S|
    &\geq \frac{\phi}{2}(w-z)-z\\
    &=\frac{\phi}{2}w-(1+\phi/2)z.
  \end{aligned}
  \tag{6}
-```
+-->
+![Formula](../../assets/math/2241bbc581f2f35dabbead5c.svg)
 
 If z>=phi w/8, the internal edges already suffice. Otherwise (6)
 is at least 5phi w/16, because phi<=1. In either case,
 
-```math
+<!-- math-display: 9f84c763452aff05ab666e2c
 |\partial_P S|\geq\phi w/8.
  \tag{7}
-```
+-->
+![Formula](../../assets/math/9f84c763452aff05ab666e2c.svg)
 
 The smaller port volume is at most B w by (2). Therefore
 
-```math
+<!-- math-display: ced9fe2fbc9ab1c6222fdab0
 \Phi(P)\geq\frac{\phi}{8B}.
  \tag{8}
-```
+-->
+![Formula](../../assets/math/ced9fe2fbc9ab1c6222fdab0.svg)
 
 We use conductance only after excluding the empty or full cut,
 as usual. P has no isolated vertex: a one-vertex fiber has its
@@ -161,12 +169,13 @@ the actual inventories have size at most 2^{O(U)}, and
 h=ceil(log_2(U+4)). Equations (1), (2), and (8) change the relevant
 input bounds only by
 
-```math
+<!-- math-display: dbfb96c2b828fa2908952870
 m_P=O(mU),\qquad
         \Delta(P)=O(U),\qquad
         \log(\Phi(P)^{-1})\leq\log(\phi^{-1})+O(h).
  \tag{9}
-```
+-->
+![Formula](../../assets/math/dbfb96c2b828fa2908952870.svg)
 
 The recursive virtual-hierarchy proof already allows an arbitrary
 stated host degree at its root. Its local short-path, spectral,
@@ -186,7 +195,7 @@ vertex counts and are unaffected except for fixed constants.
 Applying that general-degree proof to P, the preprocessing and
 query bounds remain
 
-```math
+<!-- math-display: a60d60888c98c73aa28cdbf4
 \begin{aligned}
  P_{\rm work}&\leq
        m\exp O(U/p+ph+\log\phi^{-1})\mathrm{poly}(U),\\
@@ -194,7 +203,8 @@ query bounds remain
  Q_{\rm work}&\leq mD Q_{\rm quality}\mathrm{poly}(U).
  \end{aligned}
  \tag{10}
-```
+-->
+![Formula](../../assets/math/a60d60888c98c73aa28cdbf4.svg)
 
 The extra O(U) host-edge volume, O(U) maximum degree, and O(h)
 inverse-conductance logarithm are all included in (10).

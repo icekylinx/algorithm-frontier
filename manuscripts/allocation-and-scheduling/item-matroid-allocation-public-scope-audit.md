@@ -5,7 +5,7 @@
 mathematical checks below. Its ordinary, all-players version must be
 compared with an elementary extension of the public
 Polacek--Svensson algorithm. In particular, a quasipolynomial
-$`(4+\varepsilon)`$ guarantee for heterogeneous item matroids with
+<code class="math">(4+\varepsilon)</code> guarantee for heterogeneous item matroids with
 common item weights is already a **derived-public baseline**. It is not
 an exclusive consequence of the current-blocker construction.
 
@@ -18,18 +18,19 @@ special case.
 
 ## 1. The model being compared
 
-Let $`P`$ be the players, $`E`$ the physical items, and $`v_e\ge0`$
-common intrinsic item values. Player $`p`$ has a downward-closed family
-$`\mathcal F_p\subseteq2^E`$. Its value for an available set is
+Let <code class="math">P</code> be the players, <code class="math">E</code> the physical items, and <code class="math">v_e\ge0</code>
+common intrinsic item values. Player <code class="math">p</code> has a downward-closed family
+<code class="math">\mathcal F_p\subseteq2^E</code>. Its value for an available set is
 
-```math
+<!-- math-display: b973d6abe0bf1807a392b6eb
 f_p(A)=\max\{v(C):C\subseteq A,\ C\in\mathcal F_p\}.
  \tag{1}
-```
+-->
+![Formula](../../assets/math/b973d6abe0bf1807a392b6eb.svg)
 
 The oracle returns an attaining feasible subset, not merely an upper
-bound on (1). For an item matroid $`N_p`$, weighted greedy on its
-restriction to $`A`$ supplies this oracle. Different players may have
+bound on (1). For an item matroid <code class="math">N_p</code>, weighted greedy on its
+restriction to <code class="math">A</code> supplies this oracle. Different players may have
 different item matroids. All running times count these oracle calls
 and their implementation cost.
 
@@ -38,8 +39,8 @@ There are two distinct selection contracts:
 * **Compulsory players:** every player receives a disjoint feasible
   bundle. This is the setting of the public algorithm used in Section 3.
 * **Matroid selection:** the supplied players form a basis of an
-  arbitrary player matroid $`M`$, of rank $`r`$, on all $`q=|P|`$
-  candidate players. Here $`r`$ can be much smaller than $`q`$.
+  arbitrary player matroid <code class="math">M</code>, of rank <code class="math">r</code>, on all <code class="math">q=&#124;P&#124;</code>
+  candidate players. Here <code class="math">r</code> can be much smaller than <code class="math">q</code>.
 
 The common values in (1) are essential. Arbitrary player-specific
 weights are outside this audit, even if each player's valuation
@@ -53,70 +54,73 @@ player-matroid exchange invariant and signature analysis were audited
 separately; the additional interfaces in that manuscript check out as
 follows.
 
-**Available-bundle search.** For a forbidden physical item set $`F`$,
-an exact call to (1) on $`E\setminus F`$ decides whether a feasible
-bundle of value at least $`B`$ exists. Deleting items while keeping
-value at least $`B`$ returns a minimal feasible bundle. Downward
+**Available-bundle search.** For a forbidden physical item set <code class="math">F</code>,
+an exact call to (1) on <code class="math">E\setminus F</code> decides whether a feasible
+bundle of value at least <code class="math">B</code> exists. Deleting items while keeping
+value at least <code class="math">B</code> returns a minimal feasible bundle. Downward
 closure justifies every deletion; no item-matroid exchange is being
 silently substituted for physical disjointness.
 
 **The necessary fractional relaxation.** The correct local constraint
 is the perspective condition
 
-```math
+<!-- math-display: cef19b8e5e1e39382a52855d
 y_p\in x_p\mathrm{conv}
              \{\mathbf1_C:C\in\mathcal F_p\},
  \tag{2}
-```
+-->
+![Formula](../../assets/math/cef19b8e5e1e39382a52855d.svg)
 
 in addition to player-base constraints, physical capacities and
-$`v\cdot y_p\ge Tx_p`$. Individual bounds $`y_{pe}\le x_p`$
-alone are insufficient for arbitrary $`\mathcal F_p`$.
-If every eligible player has $`f_p(E\setminus F)<B`$, intersecting
+<code class="math">v\cdot y_p\ge Tx_p</code>. Individual bounds <code class="math">y_{pe}\le x_p</code>
+alone are insufficient for arbitrary <code class="math">\mathcal F_p</code>.
+If every eligible player has <code class="math">f_p(E\setminus F)&lt;B</code>, intersecting
 each feasible bundle in a convex decomposition of (2) with
-$`E\setminus F`$ gives
+<code class="math">E\setminus F</code> gives
 
-```math
+<!-- math-display: 5414e31dd3b9d2a73a8ec8c1
 \sum_{e\notin F}v_e y_{pe}<Bx_p\qquad(x_p>0).
  \tag{3}
-```
+-->
+![Formula](../../assets/math/5414e31dd3b9d2a73a8ec8c1.svg)
 
 Thus the original strict cover lower bound and infeasibility
 certificate remain valid. The implementation need not receive or
 compute that fractional solution.
 
-**Star bounds.** Every proper subset of a minimal $`B`$-bundle is
-feasible and has value below $`B`$. Consequently the outside part of
-a blocker meeting its center has value below $`B`$. If a center is
-a singleton $`\{e\}`$ with $`v_e\ge B`$, a minimal blocker
-containing $`e`$ is the identical singleton, including when the two
+**Star bounds.** Every proper subset of a minimal <code class="math">B</code>-bundle is
+feasible and has value below <code class="math">B</code>. Consequently the outside part of
+a blocker meeting its center has value below <code class="math">B</code>. If a center is
+a singleton <code class="math">\{e\}</code> with <code class="math">v_e\ge B</code>, a minimal blocker
+containing <code class="math">e</code> is the identical singleton, including when the two
 owners have different feasible families. The sharp charge
 
-```math
+<!-- math-display: 80c00328c90b560d47793f00
 C(B,u)=\max\{u,\,2B+\min(u,B)\}
  \tag{4}
-```
+-->
+![Formula](../../assets/math/80c00328c90b560d47793f00.svg)
 
 therefore survives. A resource fundamental circuit is never used in
 this argument: blockers are allocations sharing an actual item.
 
 **Fat reduction.** The fat player--item graph must retain an edge
-$`(p,e)`$ only when $`\{e\}\in\mathcal F_p`$. Any feasible
+<code class="math">(p,e)</code> only when <code class="math">\{e\}\in\mathcal F_p</code>. Any feasible
 bundle containing a fat item contains such a feasible singleton by
 downward closure. The forward and reverse player-matroid-union
 reductions then preserve local feasibility. In the configuration-LP
 comparison, all-small marginals lie in
-$`h_p\mathrm{conv}(\mathcal F_p)`$, where $`h_p`$ is the
-mass of small configurations. Scaling by $`x'_p/h_p`$, with the
-zero convention when $`h_p=0`$, proves the new perspective
+<code class="math">h_p\mathrm{conv}(\mathcal F_p)</code>, where <code class="math">h_p</code> is the
+mass of small configurations. Scaling by <code class="math">x'_p/h_p</code>, with the
+zero convention when <code class="math">h_p=0</code>, proves the new perspective
 constraint. This does not assert a reduction from an arbitrary
 unrestricted-size point of (2).
 
-**Input and boundary costs.** A scan of all $`q`$ players and their
+**Input and boundary costs.** A scan of all <code class="math">q</code> players and their
 unrelated item oracles is charged. Explicit returned bundles and
 physical-owner records have polynomial size. Rank zero uses the
 trivial empty-basis convention and is excluded from formulas containing
-$`4-3/r`$. Rank one is covered by the separate exact case of the
+<code class="math">4-3/r</code>. Rank one is covered by the separate exact case of the
 imported theorem.
 
 ## 3. A public quasipolynomial four-approximation extends to this model
@@ -135,28 +139,29 @@ fat/thin signature is the one used here.
 
 **Derived-public proposition.** For compulsory players with the
 families and oracle (1), common nonnegative rational item values, and
-$`0<\varepsilon\le1`$, the public algorithm with the oracle
+<code class="math">0&lt;\varepsilon\le1</code>, the public algorithm with the oracle
 replacement below either finds feasible disjoint bundles of value
-$`T/(4+\varepsilon)`$ for every player, or correctly certifies that
-the corresponding feasible-configuration LP at target $`T`$ is
+<code class="math">T/(4+\varepsilon)</code> for every player, or correctly certifies that
+the corresponding feasible-configuration LP at target <code class="math">T</code> is
 infeasible. Its work is
 
-```math
+<!-- math-display: 9be3e21e1d06c988f8f0e38c
 \mathrm{poly}(|P|,|E|,\text{bit length},
                      \text{oracle cost})\,
  (|P|+1)^{O(\varepsilon^{-1}\log(|P|+1))}.
  \tag{5}
-```
+-->
+![Formula](../../assets/math/9be3e21e1d06c988f8f0e38c.svg)
 
 This proposition is an explicitly reconstructed extension of the
 public proof, not a verbatim claim in its theorem statement.
 
 ### 3.2 Feasible minimal hyperedges and exact addable-edge search
 
-Set $`\alpha=4+\varepsilon`$ and $`B=T/\alpha`$. For each
+Set <code class="math">\alpha=4+\varepsilon</code> and <code class="math">B=T/\alpha</code>. For each
 player, the conceptual hyperedges are its inclusion-minimal feasible
-bundles of value at least $`B`$. The algorithm never enumerates them.
-A resource of value at least $`B`$ is fat. A minimal feasible bundle
+bundles of value at least <code class="math">B</code>. The algorithm never enumerates them.
+A resource of value at least <code class="math">B</code> is fat. A minimal feasible bundle
 containing a fat resource is a singleton; every other hyperedge is
 thin. These assertions follow from common values and downward closure.
 
@@ -165,7 +170,7 @@ blocker definition need no change. Addable bundles avoid the resources
 of the current adding and blocking edges and have a player already in
 the tree. Test fat singletons first at the corresponding distance.
 For thin candidates, evaluate (1) on the available nonfat resources
-and trim an attaining bundle to minimality if it reaches $`B`$.
+and trim an attaining bundle to minimality if it reaches <code class="math">B</code>.
 Among the resulting candidates choose one with minimum distance in
 the source's zero-fat, unit-thin distance convention. Scanning the
 currently eligible players is polynomial. Thus this implements the
@@ -179,24 +184,25 @@ feasible.
 
 ### 3.3 The configuration-LP dual argument still applies
 
-Use configurations $`C\in\mathcal F_p`$ with $`v(C)\ge T`$.
+Use configurations <code class="math">C\in\mathcal F_p</code> with <code class="math">v(C)\ge T</code>.
 The source's truncated alternating tree, minimum-distance invariant
 and dual variables are unchanged. A reached player has dual value
-$`(\alpha-1)/\alpha`$. Reached fat resources have that same
+<code class="math">(\alpha-1)/\alpha</code>. Reached fat resources have that same
 dual value; the relevant reached thin resources have dual value
-$`v_e/T`$.
+<code class="math">v_e/T</code>.
 
-Let $`F`$ be the support of those resource dual variables and take
-a feasible target configuration $`C`$ of a reached player. If it
+Let <code class="math">F</code> be the support of those resource dual variables and take
+a feasible target configuration <code class="math">C</code> of a reached player. If it
 contains a positively charged fat resource, its dual constraint is
 immediate. Otherwise, suppose its total charged thin value were below
-$`(\alpha-1)T/\alpha`$. Then
+<code class="math">(\alpha-1)T/\alpha</code>. Then
 
-```math
+<!-- math-display: b356fd406014364529f23d5b
 v(C\setminus F)>T/\alpha=B,
  \qquad C\setminus F\in\mathcal F_p.
  \tag{6}
-```
+-->
+![Formula](../../assets/math/b356fd406014364529f23d5b.svg)
 
 The second statement is exactly the additional step needed for a
 player-local family. Trimming (6) gives an addable hyperedge in the
@@ -204,27 +210,28 @@ truncated tree, contradicting the assumed absence of such an edge.
 Hence all dual constraints hold.
 
 The dual objective estimate also survives. A thin center has value
-below $`2B`$. Its matching blocker, after removing its intersection
-with that center, has value below $`B`$, since this is a proper
+below <code class="math">2B</code>. Its matching blocker, after removing its intersection
+with that center, has value below <code class="math">B</code>, since this is a proper
 feasible subset of the blocker. Each stable center has at least one
 blocker, and the blockers belong to distinct players. Thus the
-source's thin-resource charge is at most three times $`B`$ times
+source's thin-resource charge is at most three times <code class="math">B</code> times
 the number of thin blockers. Fat charges cancel against reached fat
 players just as in the source. No unrestricted-subset assumption is
 used elsewhere in this calculation.
 
 Consequently the literal Lemma 2 inequality is retained:
 
-```math
+<!-- math-display: 50ce78e6611b170a4d4ab21e
 \frac{\alpha-4}{3}
        \sum_{i=1}^{D}|B_{2i}^{\rm thin}|
        <|B_{2D+2}^{\rm thin}|
  \tag{7}
-```
+-->
+![Formula](../../assets/math/50ce78e6611b170a4d4ab21e.svg)
 
 whenever there is no addable edge in the specified distance range and
 the target LP is feasible. This gives depth
-$`O(\varepsilon^{-1}\log(|P|+1))`$.
+<code class="math">O(\varepsilon^{-1}\log(&#124;P&#124;+1))</code>.
 
 ### 3.4 Termination, certification and the target search
 
@@ -237,7 +244,7 @@ Its coordinates are bounded by the number of players. This proves
 When the bounded search fails, the same dual assignment proves
 configuration-LP infeasibility. Rational finite precision and a search
 over the target grid give a guarantee relative to the optimum of that
-configuration LP. The feasibility of this LP is monotone in $`T`$,
+configuration LP. The feasibility of this LP is monotone in <code class="math">T</code>,
 and the algorithm need not solve it. As usual, a successful run above
 the LP optimum does not invalidate the one-sided search guarantee.
 
@@ -252,7 +259,7 @@ The explicit-transversal-resource construction in Section 8 of the
 new extension note replaces a resource by its explicit slots and
 imposes a per-player partition constraint of at most one slot from
 each original resource. This is a special case of (1). Therefore its
-**all-player quasipolynomial $`4+\varepsilon`$ consequence also has
+**all-player quasipolynomial <code class="math">4+\varepsilon</code> consequence also has
 the derived-public proof above**. Neither that consequence nor the
 local item-matroid oracle substitution is, by itself, evidence of a
 new general constant approximation.
@@ -271,12 +278,12 @@ that all possible reanalyses have been exhausted.
 
 | Source | Scope and guarantee relevant here | Why it is not the same general selection-rank theorem |
 |---|---|---|
-| Polacek--Svensson, v2; Section 3 above | Deterministic quasipolynomial $`4+\varepsilon`$, including the derived heterogeneous local-family extension | All players are compulsory; the signature uses their number |
-| Davies--Rothvoss--Zhang v4 plus the local-oracle and fat-union adapters in Section 5 | Named derived-public polynomial $`6+\eta`$ for general player selection and local feasible families | It imports the published player-side exchange machinery; it does not give the new rank-only four-approximation tradeoff |
-| Bamas--Garg--Rohwedder, ICALP 2021 | Polynomial $`O(\log\log\lvert E\rvert)`$ for $`f_p(S)=f(S\cap\Gamma_p)`$ with one common monotone submodular $`f`$ | Different arbitrary item matroids generally are not restrictions of one common function; all players are compulsory |
+| Polacek--Svensson, v2; Section 3 above | Deterministic quasipolynomial <code class="math">4+\varepsilon</code>, including the derived heterogeneous local-family extension | All players are compulsory; the signature uses their number |
+| Davies--Rothvoss--Zhang v4 plus the local-oracle and fat-union adapters in Section 5 | Named derived-public polynomial <code class="math">6+\eta</code> for general player selection and local feasible families | It imports the published player-side exchange machinery; it does not give the new rank-only four-approximation tradeoff |
+| Bamas--Garg--Rohwedder, ICALP 2021 | Polynomial <code class="math">O(\log\log\lvert E\rvert)</code> for <code class="math">f_p(S)=f(S\cap\Gamma_p)</code> with one common monotone submodular <code class="math">f</code> | Different arbitrary item matroids generally are not restrictions of one common function; all players are compulsory |
 | Bamas--Morell--Rohwedder, SODA 2025 | General heterogeneous submodular valuations: polylogarithmic approximation in quasipolynomial time, and polynomial time for any fixed-power approximation | Covers weighted matroid-rank valuations as valuation functions, but gives a weaker general ratio and does not select a player-matroid basis |
-| Chekuri--Kulkarni--Mehta--Vondrak, APPROX 2026 | Randomized polynomial additive guarantee $`(1-1/e-\varepsilon)\mathrm{OPT}-\mathrm{Max}`$, and a multiplicative $`1-1/e-\varepsilon`$ guarantee for a fixed total number of players | The additive loss matters for unrestricted item sizes; a fixed number of all players is not rank-only dependence when $`q\gg r`$ |
-| Bamas--Lindermayr--Megow--Rohwedder--Schloeter, SODA 2024, Theorem 4 | Polynomial $`8+\varepsilon`$ for general resource matroids/polymatroids, $`4+\varepsilon`$ for two values | Constraints act on recipients of one resource, not on the items in one player's bundle; explicit transversal resources admit the separate slot reduction above |
+| Chekuri--Kulkarni--Mehta--Vondrak, APPROX 2026 | Randomized polynomial additive guarantee <code class="math">(1-1/e-\varepsilon)\mathrm{OPT}-\mathrm{Max}</code>, and a multiplicative <code class="math">1-1/e-\varepsilon</code> guarantee for a fixed total number of players | The additive loss matters for unrestricted item sizes; a fixed number of all players is not rank-only dependence when <code class="math">q\gg r</code> |
+| Bamas--Lindermayr--Megow--Rohwedder--Schloeter, SODA 2024, Theorem 4 | Polynomial <code class="math">8+\varepsilon</code> for general resource matroids/polymatroids, <code class="math">4+\varepsilon</code> for two values | Constraints act on recipients of one resource, not on the items in one player's bundle; explicit transversal resources admit the separate slot reduction above |
 | Boehmer, SWAT 2026 | Identical valuations, and a separate configuration-gap/estimation result when the same item-matroid constraints are imposed on all players | Does not state the heterogeneous local-family plus arbitrary player-selection contract |
 
 Primary links:
@@ -315,33 +322,34 @@ Lemmas 8--10 of the v4 full text.
 
 ### 5.1 The exact resource-oracle substitution
 
-Restrict its conceptual minimal $`\alpha T`$-edges and
-$`\beta T`$-edges to the player's feasible family. Implement the
+Restrict its conceptual minimal <code class="math">\alpha T</code>-edges and
+<code class="math">\beta T</code>-edges to the player's feasible family. Implement the
 greedy expansion by the exact available-weight oracle, retaining the
 source's joint player-matroid independence test.
 
-In the proof of Lemma 8, let $`W''`$ denote the current forbidden
+In the proof of Lemma 8, let <code class="math">W''</code> denote the current forbidden
 resources, including those of the freshly selected expansion edges.
 Its one use of unrestricted additive neighborhoods is the implication
 from greedy maximality to
-$`v(N(p)\setminus W'')<\alpha T`$. Replace that statement by
+<code class="math">v(N(p)\setminus W'')&lt;\alpha T</code>. Replace that statement by
 
-```math
+<!-- math-display: 59646cb8944117d57c22f956
 \max\{v(C): C\in\mathcal F_p,
                    C\cap W''=\varnothing\}<\alpha T.
  \tag{8}
-```
+-->
+![Formula](../../assets/math/59646cb8944117d57c22f956.svg)
 
 By (2) and downward closure, (8) implies
-$`\sum_{e\notin W''}v_e y_{pe}<\alpha T x_p`$.
+<code class="math">\sum_{e\notin W''}v_e y_{pe}&lt;\alpha T x_p</code>.
 The same target-value and resource-capacity inequalities therefore
 give the same cover lower bound and the same expansion coefficient
-$`\mu`$. The player-side Strong Swapping Lemma is unchanged.
+<code class="math">\mu</code>. The player-side Strong Swapping Lemma is unchanged.
 
 Claim 7 and Lemmas 9--10 use the value of the available part of an
 already selected edge. Such a part is a feasible subset of that edge.
-Consequently it contains a feasible minimal $`\beta T`$-bundle
-exactly when its value reaches $`\beta T`$. Their minimal-edge
+Consequently it contains a feasible minimal <code class="math">\beta T</code>-bundle
+exactly when its value reaches <code class="math">\beta T</code>. Their minimal-edge
 upper bounds, overlap charges and current-blocker counts are preserved
 without a second approximation factor. The later signature and
 layer-size calculations introduce no additional resource-family
@@ -354,14 +362,15 @@ For a fair named-pipeline comparison, import the published DRZ v4
 player-side exchange and termination guarantee and apply the resource
 adapter above. This gives its displayed fifth-type value
 
-```math
+<!-- math-display: 0277a4516018eec337486953
 \left(\frac15-\varepsilon\right)T-\frac u5
  \tag{9}
-```
+-->
+![Formula](../../assets/math/0277a4516018eec337486953.svg)
 
 for the perspective relaxation, with polynomial work for fixed
-$`\varepsilon`$ and polynomial exact local oracles. The fat wrapper
-only needs the source's safe small-item range $`u/T<1/6`$; no
+<code class="math">\varepsilon</code> and polynomial exact local oracles. The fat wrapper
+only needs the source's safe small-item range <code class="math">u/T&lt;1/6</code>; no
 extrapolation of its printed parameter positivity outside that range
 is needed here.
 
@@ -378,24 +387,25 @@ by the oracle substitution.
 
 ### 5.3 Fat union and the resulting public ratio
 
-For desired fixed $`\eta>0`$, set
-$`\theta=1/(6+\eta)`$. Run the feasible-singleton fat graph and
-player-matroid-union wrapper on items of value at least $`\theta T`$.
-All remaining items satisfy $`u/T<\theta<1/6`$. Taking
+For desired fixed <code class="math">\eta&gt;0</code>, set
+<code class="math">\theta=1/(6+\eta)</code>. Run the feasible-singleton fat graph and
+player-matroid-union wrapper on items of value at least <code class="math">\theta T</code>.
+All remaining items satisfy <code class="math">u/T&lt;\theta&lt;1/6</code>. Taking
 
-```math
+<!-- math-display: 06b4ec5263843ccc2e92e417
 0<\varepsilon\le
              \frac{1-6\theta}{5}
              =\frac{\eta}{5(6+\eta)}
  \tag{10}
-```
+-->
+![Formula](../../assets/math/06b4ec5263843ccc2e92e417.svg)
 
-in (9) gives at least $`\theta T`$ to every selected small-side
+in (9) gives at least <code class="math">\theta T</code> to every selected small-side
 player. Fat-side players receive that value from a legal singleton.
 The union and configuration-LP arguments are exactly those in
 [configuration-comparator.md](../../problems/item-matroid-union/configuration-comparator.md), now using (2).
 
-Accordingly **polynomial $`6+\eta`$ for arbitrary player selection
+Accordingly **polynomial <code class="math">6+\eta</code> for arbitrary player selection
 and efficient exact player-local families is a named derived-public
 baseline**, with the imported player-side dependency just stated.
 The new rank-parameterized four-type result is a stronger ratio with a
@@ -414,61 +424,63 @@ the first constant approximation for player-local budgets.
 
 ### 6.1 Fixed common rounding, followed by exact available optimization
 
-Fix a positive target $`T`$, let $`m=|E|>0`$, and choose
-$`0<\kappa<1`$. Define the same new intrinsic value for an item
+Fix a positive target <code class="math">T</code>, let <code class="math">m=&#124;E&#124;&gt;0</code>, and choose
+<code class="math">0&lt;\kappa&lt;1</code>. Define the same new intrinsic value for an item
 at every player by
 
-```math
+<!-- math-display: e08d0b130e222083b6c6a347
 \widehat v_e=K\left\lfloor\frac{\min\{v_e,T\}}K\right\rfloor,
                   \qquad K=\kappa T/m.
  \tag{11}
-```
+-->
+![Formula](../../assets/math/e08d0b130e222083b6c6a347.svg)
 
-Every originally feasible configuration of value at least $`T`$
-has capped value at least $`T`$: if it contains an item of value
-at least $`T`$, that item alone contributes $`T`$ after
+Every originally feasible configuration of value at least <code class="math">T</code>
+has capped value at least <code class="math">T</code>: if it contains an item of value
+at least <code class="math">T</code>, that item alone contributes <code class="math">T</code> after
 capping; otherwise its value is unchanged. Rounding then loses less
-than $`mK`$. Consequently the same configuration has
-$`\widehat v`$-value at least $`(1-\kappa)T`$. Its player-local
+than <code class="math">mK</code>. Consequently the same configuration has
+<code class="math">\widehat v</code>-value at least <code class="math">(1-\kappa)T</code>. Its player-local
 budget feasibility is unaffected.
 
 For player-dependent knapsack costs and budgets, a dynamic program
-can optimize $`\widehat v`$ exactly over every available set:
-each integer profit is at most $`m/\kappa`$, and the total
-integer profit range is $`O(m^2/\kappa)`$. Store the minimum
+can optimize <code class="math">\widehat v</code> exactly over every available set:
+each integer profit is at most <code class="math">m/\kappa</code>, and the total
+integer profit range is <code class="math">O(m^2/\kappa)</code>. Store the minimum
 true cost for each attainable profit. This is polynomial in the
-explicit input and $`1/\kappa`$, even when costs and budgets have
+explicit input and <code class="math">1/\kappa</code>, even when costs and budgets have
 large binary magnitudes. All arithmetic uses the given rational costs
 and the common rounded profits.
 
-If the original configuration LP is feasible at $`T`$, the same
+If the original configuration LP is feasible at <code class="math">T</code>, the same
 configuration variables are feasible for the rounded instance at
-$`(1-\kappa)T`$. A rounded allocation also has at least its
+<code class="math">(1-\kappa)T</code>. A rounded allocation also has at least its
 rounded value under the original utilities. Thus exact-oracle public
 algorithms apply with a controlled ratio loss.
 
 ### 6.2 The resulting named public bounds
 
 For compulsory players, use Section 3 with
-$`\varepsilon=\eta/2`$ and
-$`\kappa=\eta/[2(4+\eta)]`$, for $`0<\eta\le1`$. Then
+<code class="math">\varepsilon=\eta/2</code> and
+<code class="math">\kappa=\eta/[2(4+\eta)]</code>, for <code class="math">0&lt;\eta\le1</code>. Then
 
-```math
+<!-- math-display: 032c06f647081025017bf886
 \frac{4+\varepsilon}{1-\kappa}=4+\eta.
-```
+-->
+![Formula](../../assets/math/032c06f647081025017bf886.svg)
 
-This gives a deterministic quasipolynomial $`4+\eta`$
+This gives a deterministic quasipolynomial <code class="math">4+\eta</code>
 player-local knapsack allocation guarantee by a direct public
 Polacek--Svensson pipeline. Its minimum-distance hyperedge search is
 implemented exactly for the fixed rounded utilities.
 
 For arbitrary player selection, use the named derived-public
-$`6+\eta/2`$ pipeline of Section 5 with
-$`\kappa=\eta/[2(6+\eta)]`$. The same calculation gives
-$`6+\eta`$ in polynomial time for fixed $`\eta`$, with the
+<code class="math">6+\eta/2</code> pipeline of Section 5 with
+<code class="math">\kappa=\eta/[2(6+\eta)]</code>. The same calculation gives
+<code class="math">6+\eta</code> in polynomial time for fixed <code class="math">\eta</code>, with the
 same explicitly named published player-side dependency. The comparator
 is the original player-matroid configuration LP. The target search
-need not assume success is monotone: feasibility at $`T`$ guarantees
+need not assume success is monotone: feasibility at <code class="math">T</code> guarantees
 success of the rounded run, while success directly certifies its
 original-value allocation.
 
@@ -480,11 +492,11 @@ finite-rank quality and fully stated retained-layer proof.
 
 An approximate available oracle for one fixed objective need not
 support exact optimization for rounded objectives. Furthermore it need
-not detect the truly closest minimal $`B`$-edge in the public PS
+not detect the truly closest minimal <code class="math">B</code>-edge in the public PS
 distance order. Merely changing the dual player price to account for
 an oracle loss does not justify that original truncation invariant.
 The fixed-rounding knapsack argument supplies a genuine exact oracle,
-so it does not have this gap. A general loss-$`\lambda`$ PS adapter
+so it does not have this gap. A general loss-<code class="math">\lambda</code> PS adapter
 would need an additional prefix-search or distance-selection argument
 and is not counted as established here.
 

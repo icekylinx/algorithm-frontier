@@ -18,15 +18,15 @@ Deterministic preprocessing and reporting in the stated oracle model, including 
 
 **Time**
 
-Deterministic polynomial preprocessing. Beyond a baseline common optimum: $`O(Nk)`$ independence/value tests and $`O(Nk^2+k^3)`$ arithmetic work. Arborescences: $`\widetilde O(mn)`$ arithmetic preprocessing. Query: $`O(k)`$, or $`O(n)`$ for arborescences.
+Deterministic polynomial preprocessing. Beyond a baseline common optimum: <code class="math">O(Nk)</code> independence/value tests and <code class="math">O(Nk^2+k^3)</code> arithmetic work. Arborescences: <code class="math">\widetilde O(mn)</code> arithmetic preprocessing. Query: <code class="math">O(k)</code>, or <code class="math">O(n)</code> for arborescences.
 
 **Space**
 
-$`O(k^{3/2})`$ retained original elements and reporting records; $`O(n^{3/2})`$ for arborescences. Exact values are charged by their actual bit length.
+<code class="math">O(k^{3/2})</code> retained original elements and reporting records; <code class="math">O(n^{3/2})</code> for arborescences. Exact values are charged by their actual bit length.
 
 **Parameters**
 
-$`N`$ is original ground size; $`k`$ is prescribed common rank; $`n,m`$ are directed vertex and arc counts. All costs and valuations remain fixed between independent queries.
+<code class="math">N</code> is original ground size; <code class="math">k</code> is prescribed common rank; <code class="math">n,m</code> are directed vertex and arc counts. All costs and valuations remain fixed between independent queries.
 
 **Model and representation**
 
@@ -34,7 +34,7 @@ Ordinary matroids use independence oracles. Valuated matroids additionally requi
 
 **Lower-bound scope**
 
-Inherited directed-distance constructions give $`\Omega(k^{4/3})`$ for weighted two-matroid restrictions and $`\Omega(n^{4/3})`$ for arborescences. Two failures require quadratic original support; approximation lower bounds allow the stated exponential cost aspect ratio.
+Inherited directed-distance constructions give <code class="math">\Omega(k^{4/3})</code> for weighted two-matroid restrictions and <code class="math">\Omega(n^{4/3})</code> for arborescences. Two failures require quadratic original support; approximation lower bounds allow the stated exponential cost aspect ratio.
 
 **Review status**
 
@@ -46,41 +46,41 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 ## Results
 
-**Minimum-cost common $`k`$-set, two arbitrary matroids**
+**Minimum-cost common <code class="math">k</code>-set, two arbitrary matroids**
 
-**Retained support / records.** $`O(k^{3/2})`$
+**Retained support / records.** <code class="math">O(k^{3/2})</code>
 
-**Query output.** $`O(k)`$
+**Query output.** <code class="math">O(k)</code>
 
 **Additional scope.** Fixed linear costs; one element deletion
 
 **Two fixed-rank valuated matroids**
 
-**Retained support / records.** $`O(k^{3/2})`$
+**Retained support / records.** <code class="math">O(k^{3/2})</code>
 
-**Query output.** $`O(k)`$
+**Query output.** <code class="math">O(k)</code>
 
 **Additional scope.** Effective-domain initialization is supplied; no smaller-rank valuation is inferred
 
 **Rooted minimum-cost spanning arborescence**
 
-**Retained support / records.** $`O(n^{3/2})`$
+**Retained support / records.** <code class="math">O(n^{3/2})</code>
 
-**Query output.** $`O(n)`$
+**Query output.** <code class="math">O(n)</code>
 
-**Additional scope.** Directed graph, one arc deletion; $`\widetilde O(mn)`$ preprocessing
+**Additional scope.** Directed graph, one arc deletion; <code class="math">\widetilde O(mn)</code> preprocessing
 
 **Minimum-cost maximum-cardinality common set**
 
-**Retained support / records.** $`O(r^{3/2})`$
+**Retained support / records.** <code class="math">O(r^{3/2})</code>
 
-**Query output.** $`O(r)`$
+**Query output.** <code class="math">O(r)</code>
 
-**Additional scope.** Union of the $`r`$ and $`r-1`$ constructions; ordinary linear costs
+**Additional scope.** Union of the <code class="math">r</code> and <code class="math">r-1</code> constructions; ordinary linear costs
 
 **Two-failure exact matching/arborescence obstruction**
 
-**Retained support / records.** $`\Omega(r^2)`$ / $`\Omega(n^2)`$
+**Retained support / records.** <code class="math">\Omega(r^2)</code> / <code class="math">\Omega(n^2)</code>
 
 **Query output.** Lower bound
 
@@ -88,7 +88,7 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **Two-failure approximate arborescence obstruction**
 
-**Retained support / records.** $`\Omega(n^2)`$
+**Retained support / records.** <code class="math">\Omega(n^2)</code>
 
 **Query output.** Lower bound
 

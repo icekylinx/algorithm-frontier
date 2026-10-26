@@ -11,10 +11,11 @@ finite field. Let K be a finite, explicitly given simplicial complex of
 dimension at most p, where p>=1. Its full (p-1)-skeleton will be retained. Let N
 be the number of p-simplices and let
 
-```math
+<!-- math-display: 48609ed487ecd0b6b1ccced2
 A=\partial_p(K;F),\qquad r=\mathrm{rank}_F A.
  \tag{T1}
-```
+-->
+![Formula](../../../assets/math/48609ed487ecd0b6b1ccced2.svg)
 
 Give each vertex at most a failure labels, and give each p-simplex at most b
 additional labels. A query F_0 contains at most h labels. A failed vertex and
@@ -26,19 +27,21 @@ many vertices or simplices.
 There is a deterministic uniform polynomial-time algorithm retaining a set B
 of original p-simplices with
 
-```math
+<!-- math-display: e6a132642c5085d6c33ae97b
 |B|\le \min\left\{N,\ r\binom{h+a+b}{a+b}\right\}.
  \tag{T2}
-```
+-->
+![Formula](../../../assets/math/e6a132642c5085d6c33ae97b.svg)
 
 Let H contain B and **all original faces of dimensions at most p-1**. For any
 fixed input filtration (face birth precedes coface birth), the construction
 can ensure that the inclusions
 
-```math
+<!-- math-display: 84296129b2657dad55ba0f5d
 H_t-F_0\hookrightarrow K_t-F_0
  \tag{T3}
-```
+-->
+![Formula](../../../assets/math/84296129b2657dad55ba0f5d.svg)
 
 induce isomorphisms in every homological degree j<=p-1, simultaneously for
 every t and every allowed F_0. These isomorphisms commute with the filtration
@@ -67,10 +70,11 @@ the chosen coefficient field.
 
 If each vertex has one color and there are no extra top-simplex labels, then
 
-```math
+<!-- math-display: 579afa1b37ce25a38776f5cf
 |B|\le (h+1)r.
  \tag{T4}
-```
+-->
+![Formula](../../../assets/math/579afa1b37ce25a38776f5cf.svg)
 
 This is independent of the dimension p. Applying the generic element-label
 construction directly to each p-simplex would count up to p+1 vertex colors
@@ -85,20 +89,22 @@ The useful principle is more general than simplicial homology.
 Let A be an m by N matrix over F. Give row i a label set R_i and column e a
 label set C_e. Assume that every nonzero incidence satisfies
 
-```math
+<!-- math-display: 71a3d662b6f73a9c235e760c
 R_i\subseteq C_e,
        \qquad |C_e\setminus R_i|\le d
        \quad\text{whenever } A_{ie}\ne0.
  \tag{T5}
-```
+-->
+![Formula](../../../assets/math/71a3d662b6f73a9c235e760c.svg)
 
 A failed label deletes a column if it lies in C_e. There is a deterministic
 restriction to at most
 
-```math
+<!-- math-display: 8d84494be19417e1012aa966
 r\binom{h+d}{d}
  \tag{T6}
-```
+-->
+![Formula](../../../assets/math/8d84494be19417e1012aa966.svg)
 
 columns preserving every surviving column span at every prefix of one fixed
 column order. The bound is capped by N. The size of C_e itself need not be
@@ -109,17 +115,19 @@ bounded: only its increment beyond an incident row's labels is bounded.
 Assign each of the L input labels a different nonzero field point x_lambda,
 passing to an effective finite extension if necessary. For a label set S let
 
-```math
+<!-- math-display: a88c20786aa80537901d4887
 g_S(T)=\prod_{\lambda\in S}(1-T/x_\lambda).
  \tag{T7}
-```
+-->
+![Formula](../../../assets/math/a88c20786aa80537901d4887.svg)
 
 For an incidence difference Delta=C_e minus R_i, write
 
-```math
+<!-- math-display: 2f7dc284acadfba5ff9fb98d
 g_\Delta(T)=1+\sum_{j=1}^d b_j(\Delta)T^j,
  \tag{T8}
-```
+-->
+![Formula](../../../assets/math/2f7dc284acadfba5ff9fb98d.svg)
 
 padding unused coefficients with zeros. Let Phi(Delta) be all monomials of
 total degree at most h in b_1,...,b_d, including 1. Write
@@ -127,12 +135,13 @@ Q=binomial(h+d,d) for the feature dimension.
 
 For a failed-label set F_0, the polynomial
 
-```math
+<!-- math-display: 759ff671d7fb8063332323d9
 Q_{F_0}(b_1,\ldots,b_d)
    =\prod_{\lambda\in F_0}
        \left(1+\sum_{j=1}^d b_j x_\lambda^j\right)
  \tag{T9}
-```
+-->
+![Formula](../../../assets/math/759ff671d7fb8063332323d9.svg)
 
 has total degree at most h. Therefore it is a linear functional ell_F on
 the feature vector. Its value is product_{lambda in F_0} g_Delta(x_lambda),
@@ -148,10 +157,11 @@ other rows are linear combinations of the selected rows.
 
 For column e, make an r-block vector w_e. Its block at i in I is
 
-```math
+<!-- math-display: 32f23487538f88e446966ec6
 (w_e)_i=A_{ie}\Phi(C_e\setminus R_i)
  \tag{T10}
-```
+-->
+![Formula](../../../assets/math/32f23487538f88e446966ec6.svg)
 
 when A_ie is nonzero, and is zero otherwise. Scan columns in the fixed order
 and keep exactly the columns that increase the lifted span. The retained
@@ -160,18 +170,20 @@ a linear combination of earlier retained columns.
 
 For query F_0, multiply block i's evaluation under ell_F by
 
-```math
+<!-- math-display: 92c8fb38c796905b79326983
 \gamma_i(F_0)=\prod_{\lambda\in F_0}g_{R_i}(x_\lambda).
  \tag{T11}
-```
+-->
+![Formula](../../../assets/math/92c8fb38c796905b79326983.svg)
 
 Because g_{R_i}g_{C_e minus R_i}=g_{C_e}, the resulting linear map sends
 
-```math
+<!-- math-display: b8e60060e64c2dc27211d424
 w_e\longmapsto
        \left(\prod_{\lambda\in F_0}g_{C_e}(x_\lambda)\right)\pi_I(A_e).
  \tag{T12}
-```
+-->
+![Formula](../../../assets/math/b8e60060e64c2dc27211d424.svg)
 
 The scalar is zero exactly on failed columns and is nonzero on every surviving
 column. Apply this map to each lifted prefix-span relation and divide by the
@@ -194,11 +206,12 @@ For a p-simplex sigma, let C_sigma be the union of its vertex labels and its
 own additional labels. If tau is a facet of sigma, exactly one vertex v is
 missing, so
 
-```math
+<!-- math-display: a0695c60a9caa79298946e82
 R_\tau\subseteq C_\sigma,
                   |C_\sigma\setminus R_\tau|\le a+b.
  \tag{T13}
-```
+-->
+![Formula](../../../assets/math/a0695c60a9caa79298946e82.svg)
 
 The signs in the simplicial boundary are just the entries A_tau,sigma in
 (T10). The incidence lemma gives (T2), preserving every surviving boundary
@@ -233,10 +246,11 @@ under containment. A p-simplex has at most binomial(p,s) s-faces not contained
 in a specified facet, because these are the s-faces containing its missing
 vertex. Thus the same proof gives
 
-```math
+<!-- math-display: 5e27b30835a6b863f9b2716b
 |B|\le r\binom{h+\binom{p}{s}}{\binom{p}{s}}.
  \tag{T14}
-```
+-->
+![Formula](../../../assets/math/5e27b30835a6b863f9b2716b.svg)
 
 More generally (T6) applies whenever the label assignment on faces is
 monotone and has incidence increment d. This preserves answers to supplied
@@ -278,18 +292,20 @@ generic representation, and that does not harm the query-projection proof.
 Assume now that every vertex has exactly one failable color and that b=0.
 Write n=|V|, let ell be the number of vertex colors, and put
 
-```math
+<!-- math-display: f17cb6193f135d1a42aa2c90
 k=\min(h+1,\ell),\qquad
  E(n,p,k)=\binom n{p+1}-\binom{n-k}{p+1}.
  \tag{T15}
-```
+-->
+![Formula](../../../assets/math/f17cb6193f135d1a42aa2c90.svg)
 
 There is a single retained set satisfying the sharper bound
 
-```math
+<!-- math-display: dbbb94c21f0493ad3e560c4c
 |B|\le\min\{N,kr,E(n,p,k)\}.
  \tag{T16}
-```
+-->
+![Formula](../../../assets/math/dbbb94c21f0493ad3e560c4c.svg)
 
 Here and below a binomial coefficient is zero when its upper argument is
 smaller than the nonnegative lower argument. If safe/uncolored vertices are
@@ -302,10 +318,11 @@ incorrectly called empty.
 Give the colors distinct nonzero points a_c. Over the working field extension
 E, in V=E^n, define covectors
 
-```math
+<!-- math-display: 08a7ebe4fdc7bf1a67b480fc
 \ell_j(e_v)=a_{c(v)}^j,\qquad 0\le j<k.
  \tag{T17}
-```
+-->
+![Formula](../../../assets/math/08a7ebe4fdc7bf1a67b480fc.svg)
 
 For a p-simplex sigma, stack the contractions
 iota_{ell_j}(e_sigma), with the usual oriented exterior basis. In the row
@@ -318,10 +335,11 @@ Its degree is at most k-1. At row tau, evaluate the feature vector against
 the coefficients of P_F and multiply by product_{u in tau}P_F(a_{c(u)}).
 The entire column maps to
 
-```math
+<!-- math-display: 7ba7229b466ad5f350465822
 \left(\prod_{u\in\sigma}P_F(a_{c(u)})\right)A_\sigma.
  \tag{T18}
-```
+-->
+![Formula](../../../assets/math/7ba7229b466ad5f350465822.svg)
 
 This vanishes exactly on failed simplices. If every color fails, there are
 no surviving positive-dimensional simplices and the claim is immediate.
@@ -331,11 +349,12 @@ The cost-ordered lifted basis therefore has the required prefix property.
 
 For each j, the corresponding weighted boundary block A_j satisfies
 
-```math
+<!-- math-display: bf2b4742fe6ef4730e2ba270
 A_j=D_{p-1,j}^{-1} A D_{p,j},\qquad
  (D_{i,j})_{\eta\eta}=\prod_{v\in\eta}a_{c(v)}^j.
  \tag{T19}
-```
+-->
+![Formula](../../../assets/math/bf2b4742fe6ef4730e2ba270.svg)
 
 Every diagonal entry is nonzero, so rank(A_j)=r. Stacking k blocks gives
 rank at most kr.
@@ -344,10 +363,11 @@ The covectors ell_0,...,ell_{k-1} are independent by the Vandermonde property.
 Let W be their common kernel, of dimension n-k. On the complete universe
 Lambda^{p+1}V, the simultaneous contraction map L satisfies
 
-```math
+<!-- math-display: 9194ff6dbbe0285210ee519c
 \ker L=\Lambda^{p+1}W.
  \tag{T20}
-```
+-->
+![Formula](../../../assets/math/9194ff6dbbe0285210ee519c.svg)
 
 To see this, choose a basis dual to the k independent covectors. A wedge
 monomial containing any of the first k basis vectors has a nonzero,
@@ -394,11 +414,12 @@ from (T7) as 1+sum_{j=1}^a b_j(v)T^j, padding missing coefficients with zeros.
 Encode vertex v by psi(v), the vector of all degree-at-most-h monomials in
 these a nonconstant coefficients, including the constant monomial 1. Let
 
-```math
+<!-- math-display: 0c8e252d7926dbeb12efd7ee
 s=\mathrm{rank}[\psi(v)]_{v\in V}
        \le \min\left\{n,\binom{h+a}{a}\right\}.
  \tag{T21}
-```
+-->
+![Formula](../../../assets/math/0c8e252d7926dbeb12efd7ee.svg)
 
 Each failure query is a linear functional on psi whose evaluation is zero
 exactly at failed vertices. Choose s independent coordinate functions spanning
@@ -406,11 +427,12 @@ all coordinates of the feature vectors psi(v); every query functional then has
 an equivalent linear form in these s coordinates. Use the stacked contraction
 construction above. It gives
 
-```math
+<!-- math-display: 4d5fa2d35bc00833b95e3291
 |B|\le\min\left\{N,sr,
          \binom n{p+1}-\binom{n-s}{p+1}\right\}.
  \tag{T22}
-```
+-->
+![Formula](../../../assets/math/4d5fa2d35bc00833b95e3291.svg)
 
 The common-kernel proof is unchanged. For the sr bound, a coordinate function
 w(v) may vanish on some vertices. Replace it by w(v)+z over F(z). The
@@ -434,11 +456,12 @@ apex add every top simplex {v_S} union tau, where tau is a p-element subset
 of the base; include all lower faces, and no top simplex containing two
 apices. The number of top simplices and the original boundary rank are
 
-```math
+<!-- math-display: 60230b63be76ef92416e19bf
 M=q\binom tp,\qquad
  r=\binom tp+(q-1)\binom{t-1}{p-1}.
  \tag{T23}
-```
+-->
+![Formula](../../../assets/math/60230b63be76ef92416e19bf.svg)
 
 For completeness, write a top chain as sum_S v_S*C_S, where C_S is a
 (p-1)-chain on the base skeleton. Its boundary vanishes exactly when every
@@ -453,11 +476,12 @@ Therefore omitting any one of them decreases boundary rank and changes
 H_{p-1}, even though other cones' lower faces may remain. Every universal
 restriction must retain all M top cells. Hence
 
-```math
+<!-- math-display: e686fbb418bb5e5f3785408e
 \frac Mr=
           \frac{q}{1+(q-1)p/t}\longrightarrow q.
  \tag{T24}
-```
+-->
+![Formula](../../../assets/math/e686fbb418bb5e5f3785408e.svg)
 
 This works over every coefficient field and for all a,b, including a=0 or
 b=0. It is a retained-original-cell lower bound with the lower skeleton

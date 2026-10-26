@@ -4,13 +4,14 @@
 
 This successor refines the support-one/support-two boundary. When each resource coordinate is positive in at most two numeric rows, let `m` be the number of distinct row pairs that actually interact. With total integer target `T>0`, exact scalar optimization takes
 
-```math
+<!-- math-display: 0dd2bad565e7c96129c71ad2
 \boxed{
 \exp\!\left(O\!\left(T\log\left(2+\frac mT\right)\right)\right)
 \mathrm{poly}(H)
 }
 \tag{RD1}
-```
+-->
+![Formula](../../../assets/math/0dd2bad565e7c96129c71ad2.svg)
 
 and polynomial binary workspace. In particular, `m=O(T)` gives singly exponential time even when the maximum row-interaction degree is unbounded. Dense hidden-matching families match the displayed exponent order; the support-one family supplies the zero-overlap endpoint.
 
@@ -20,10 +21,11 @@ The proof retains arbitrary mixed integer upper, equality, and covering rows, on
 
 Use one normalized monotone integral polymatroid rank `F` on an explicit coordinate ground `E`. Integer vectors belong either to `P(F)` or to an original-total base `B(F)`. Eligibility masks are allowed. There are explicit nonnegative integer row vectors `a^j`, nonnegative integer targets `T_j`, and arbitrary relations `rho_j in {<=, =, >=}`. Let
 
-```math
+<!-- math-display: d9f65e5399719b01b1c28f78
 T=\sum_jT_j.
 \tag{RD2}
-```
+-->
+![Formula](../../../assets/math/d9f65e5399719b01b1c28f78.svg)
 
 The separately optimized scalar `c x` is arbitrary rational, including signed coefficients; it is not counted as a numeric target row.
 
@@ -39,10 +41,11 @@ This graph records target-row incidence, not the structure of the resource rank.
 
 For an original coordinate `e`, let `C_e` be the positive covering rows incident with it. It has at most two members. Create one copy `(e,S)` for every subset `S` of `C_e`, and let `pi` forget the subset label. Give these copies the shared rank
 
-```math
+<!-- math-display: 8f8e2b8dced70c51d0dd53be
 F^\uparrow(Y)=F0(\pi(Y)).
 \tag{RD3}
-```
+-->
+![Formula](../../../assets/math/8f8e2b8dced70c51d0dd53be.svg)
 
 As in the earlier shared-copy proofs, this is an integral polymatroid rank. Aggregation `x_e=sum_S z_(e,S)` gives exact independent-vector and base equivalences. Every copy retains the original scalar coefficient `c_e`. The ground has at most four times its original size.
 
@@ -54,28 +57,31 @@ Conversely, true covering values dominate their credited values, while all upper
 
 Let
 
-```math
+<!-- math-display: 0b04d9e316d8af64c9b4e4a5
 U_j=\begin{cases}
 T_j,&\rho_j\in\{\le,=\},\\
 2T_j-1,&\rho_j=\ge,
 \end{cases}
 \qquad U=\sum_jU_j.
 \tag{RD4}
-```
+-->
+![Formula](../../../assets/math/0b04d9e316d8af64c9b4e4a5.svg)
 
 For positive targets,
 
-```math
+<!-- math-display: 0dbcf6360b375e8b988f7626
 T\le U\le2T.
 \tag{RD5}
-```
+-->
+![Formula](../../../assets/math/0dbcf6360b375e8b988f7626.svg)
 
 Every nonzero auxiliary coefficient vector has support either a singleton row or an original interaction edge. Local copying may delete a positive cover component, but it cannot create a new interaction pair. If `Q` is the number of distinct nonempty support patterns among the actual copied vectors, then
 
-```math
+<!-- math-display: af90d3562c1f2a93cd67b028
 Q\le d'+m\le T+m.
 \tag{RD6}
-```
+-->
+![Formula](../../../assets/math/af90d3562c1f2a93cd67b028.svg)
 
 Different coefficient magnitudes on the same row pair do not increase `Q`.
 
@@ -83,10 +89,11 @@ Different coefficient magnitudes on the same row pair do not increase `Q`.
 
 Fix one nonempty support set `S` of size `t`. Consider a multiset of nonzero nonnegative integer vectors having **exactly** support `S`, with total entry sum `w`. If `w>=1`, the number of such multisets is at most
 
-```math
+<!-- math-display: 733d8193a7216f21c42b936d
 2^{w-1}\le2^w,
 \tag{RD7}
-```
+-->
+![Formula](../../../assets/math/733d8193a7216f21c42b936d.svg)
 
 independently of `t`.
 
@@ -104,28 +111,31 @@ A complete nonzero coefficient profile is a multiset of actual auxiliary vectors
 
 The total target allowance gives `sum_i w_i<=U`. The number of ordered positive integer weight assignments with this inequality is
 
-```math
+<!-- math-display: f89fbba5782459367dc0a2df
 \binom Uh.
 \tag{RD8}
-```
+-->
+![Formula](../../../assets/math/f89fbba5782459367dc0a2df.svg)
 
 This follows by subtracting one from each positive entry and adding one nonnegative slack variable. For any such assignment, RD7 bounds the choices of local vector profiles by
 
-```math
+<!-- math-display: d3a8f0b21d8450055c85e18b
 \prod_{i=1}^h2^{w_i}\le2^U.
 \tag{RD9}
-```
+-->
+![Formula](../../../assets/math/d3a8f0b21d8450055c85e18b.svg)
 
 Restricting vectors to those actually present in the input, imposing componentwise caps, or imposing a resource-count cap only reduces the family. Summing over `h`, including the empty profile, gives
 
-```math
+<!-- math-display: d73843438c45b8959ba8cb46
 \begin{aligned}
 \#\{\text{admissible upper-cap profiles}\}
 &\le2^U\sum_{h=0}^{\min(Q,U)}\binom Qh\binom Uh\\
 &=2^U\binom{Q+U}{U}.
 \end{aligned}
 \tag{RD10}
-```
+-->
+![Formula](../../../assets/math/d73843438c45b8959ba8cb46.svg)
 
 The equality is Vandermonde's identity. The count records a multiplicity for each distinct coefficient vector, not the identities of the resource coordinates assigned that vector. Choosing those identities and optimizing their scalar weights is the integral subproblem below; it contributes no extra factor to RD10.
 
@@ -135,12 +145,13 @@ This lemma is independent of a bounded row dimension. It depends on the number o
 
 Group copied coordinates by their complete auxiliary coefficient vector `b`. Enumerate counts `h_b` only for occupied nonzero classes, maintaining
 
-```math
+<!-- math-display: 249c4c6ceebe0d6e4e004efc
 m_0=\sum_{b\ne0}h_b\le R,
 \qquad
 W_j=\sum_{b\ne0}b_jh_b\le U_j.
 \tag{RD11}
-```
+-->
+![Formula](../../../assets/math/249c4c6ceebe0d6e4e004efc.svg)
 
 The global zero-vector group receives `R-m_0`. At a complete profile apply the precise upper, equality, or credited-cover filter to each row.
 
@@ -150,10 +161,11 @@ Use depth-first traversal with the next count bounded by the remaining rank and 
 
 The resulting explicit time bound is
 
-```math
+<!-- math-display: 32f66d491b032596224e71ca
 \boxed{2^U\binom{Q+U}{U}\mathrm{poly}(H).}
 \tag{RD12}
-```
+-->
+![Formula](../../../assets/math/32f66d491b032596224e71ca.svg)
 
 Only one profile and one exact intersection subproblem are retained. The ground has at most four copies per original coordinate; the row vectors, count registers, and rank values have polynomial binary length. Neither numeric targets nor the resource rank are expanded into unit lists. This proves polynomial binary workspace uniformly in the number of rows.
 
@@ -163,22 +175,24 @@ Componentwise pruning is compatible with the older multivariate target bounds as
 
 For `U>=1`,
 
-```math
+<!-- math-display: 7c9bb250d3455d2d99c4831a
 \binom{Q+U}{U}\le
 \left(e\left(1+\frac QU\right)\right)^U.
 \tag{RD13}
-```
+-->
+![Formula](../../../assets/math/7c9bb250d3455d2d99c4831a.svg)
 
 Combining RD5–RD6 and RD12–RD13 bounds the logarithm of the profile factor by
 
-```math
+<!-- math-display: 3b121a025372d229789da248
 \begin{aligned}
 U\left(\log2+1+\log\left(1+\frac QU\right)\right)
 &\le2T\left(\log2+1+\log\left(2+\frac mT\right)\right)\\
 &=O\!\left(T\log\left(2+\frac mT\right)\right).
 \end{aligned}
 \tag{RD14}
-```
+-->
+![Formula](../../../assets/math/3b121a025372d229789da248.svg)
 
 This proves RD1. The zero-target case is handled by preprocessing and exact scalar optimization and needs no expression involving `m/T`.
 
@@ -194,20 +208,22 @@ The lower statements concern subfamilies and upper budgets on the interaction co
 
 Fix an even integer `b>=4` and take `l` disjoint complete graphs on `b` vertices. There are
 
-```math
+<!-- math-display: 4601a9b5ff1fa72cfbc741aa
 T=lb,\qquad m=l\binom b2=\frac{T(b-1)}2
 \tag{RD15}
-```
+-->
+![Formula](../../../assets/math/4601a9b5ff1fa72cfbc741aa.svg)
 
 vertices and edges as indicated. Use the edges as the resource ground and give an edge its endpoint-incidence vector as numeric row coefficients. Put target one at every vertex, so each column has support two and the row-interaction graph is exactly the chosen disjoint-clique graph.
 
 Let `r=T/2` and let `H` be the family of its perfect matchings, viewed as rank-sized edge subsets. Its size is
 
-```math
+<!-- math-display: 705762cdcc3bb05be8892768
 N=((b-1)!!)^{l}
 =\exp\!\left(\Theta\!\left(T\log\left(2+\frac mT\right)\right)\right).
 \tag{RD16}
-```
+-->
+![Formula](../../../assets/math/705762cdcc3bb05be8892768.svg)
 
 The equality in order follows from `log((b-1)!!)=Theta(b log b)`. An elementary lower estimate uses at least `floor(b/4)` factors of size at least `b/2`, and the upper estimate is `b^{b/2}`. Constants can be chosen uniformly for even `b>=4`.
 
@@ -217,10 +233,11 @@ The augmentation proof is the same elementary argument as in the mixed-target lo
 
 Equality targets admit no reference basis and exactly the hidden basis. Pure covering targets do the same on independent sets or bases: at most `r` edges have total incidence at most `T`, while the `T` covers force incidence at least `T`. Pure upper rows do the same on bases, whose total incidence is already `T`. Thus these pure-feasibility orientations require
 
-```math
+<!-- math-display: 5035fdf1571fcaca39003600
 \exp\!\left(\Omega\!\left(T\log\left(2+\frac mT\right)\right)\right)
 \tag{RD17}
-```
+-->
+![Formula](../../../assets/math/5035fdf1571fcaca39003600.svg)
 
 rank queries along this family. Bounded-error randomized decision follows from the balanced reference/hidden distribution: success at least `2/3` requires at least `N/3` worst-case queries. The explicit coefficient data are polynomial in `T`.
 
@@ -234,10 +251,11 @@ Suppose instead every original coordinate has a positive coefficient in at most 
 
 Let `Q` be the number of distinct nonempty exact support patterns after this local copying. The composition proof RD7 is independent of `s`. Therefore the same explicit profile bound and time bound hold:
 
-```math
+<!-- math-display: 10571d22e4495436098c72e3
 2^U\binom{Q+U}{U}\mathrm{poly}(H)
 \tag{RD18}
-```
+-->
+![Formula](../../../assets/math/10571d22e4495436098c72e3.svg)
 
 for fixed `s`, with polynomial binary workspace. The hidden constant in the polynomial pays for the explicit local copies. The bound depends on support patterns actually produced, not on all subsets of the row set.
 

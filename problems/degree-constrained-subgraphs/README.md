@@ -14,7 +14,7 @@ Deterministic reductions using any correct deterministic exact matching solver. 
 
 **Time**
 
-The unconditional reduction constructs an $`O(m\log(m+2))`$-size simple subcubic graph and uses one exact matching call for feasibility, including exact/ranged cardinality, or $`O(\log(m+2))`$ calls for optimization. Conditional on the faster matching theorem's cycle-search implementation, total time is $`O(n+m)+(m+1)\exp\!\left(O((\log(m+2))^{4/5}(\log\log(m+4))^{1/5})\right)`$.
+The unconditional reduction constructs an <code class="math">O(m\log(m+2))</code>-size simple subcubic graph and uses one exact matching call for feasibility, including exact/ranged cardinality, or <code class="math">O(\log(m+2))</code> calls for optimization. Conditional on the faster matching theorem's cycle-search implementation, total time is <code class="math">O(n+m)+(m+1)\exp\!\left(O((\log(m+2))^{4/5}(\log\log(m+4))^{1/5})\right)</code>.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the explicit graph and reduction state; binary degree bounds are n
 
 **Parameters**
 
-$`n`$ is the vertex count; $`m`$ is the explicit edge-record count; $`g(v)`$ and $`f(v)`$ are lower and upper degree bounds.
+<code class="math">n</code> is the vertex count; <code class="math">m</code> is the explicit edge-record count; <code class="math">g(v)</code> and <code class="math">f(v)</code> are lower and upper degree bounds.
 
 **Model and representation**
 

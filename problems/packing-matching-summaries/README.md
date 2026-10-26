@@ -6,11 +6,11 @@ Failure-tolerant packing restrictions with exact fixed-cost replacement in the o
 
 **Guarantee**
 
-Retain at most $`\min\{N,D\}`$ items, where $`D=r\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}`$. Omit $`r`$ without an extra resource matroid.
+Retain at most <code class="math">\min\{N,D\}</code> items, where <code class="math">D=r\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}</code>. Omit <code class="math">r</code> without an extra resource matroid.
 
 **Objective and output**
 
-Preserve feasibility, prescribed positive cardinality up to $`K`$, and minimum fixed positive cost for every allowed failure and every fixed quota-free background in a later extension.
+Preserve feasibility, prescribed positive cardinality up to <code class="math">K</code>, and minimum fixed positive cost for every allowed failure and every fixed quota-free background in a later extension.
 
 **Randomness**
 
@@ -18,15 +18,15 @@ Deterministic uniformly polynomial construction over the supplied rational or fi
 
 **Time**
 
-Uniform deterministic polynomial preprocessing, gated before feature enumeration. Gaussian elimination uses $`O(ND^2)`$ field operations; padding, determinant features, label features, and rank compression are additional polynomial work.
+Uniform deterministic polynomial preprocessing, gated before feature enumeration. Gaussian elimination uses <code class="math">O(ND^2)</code> field operations; padding, determinant features, label features, and rank compression are additional polynomial work.
 
 **Space**
 
-At most $`\min\{N,D\}`$ original item IDs. Tensor/exterior features and elimination workspace are separate. No solver runtime for an unspecified later extension is claimed.
+At most <code class="math">\min\{N,D\}</code> original item IDs. Tensor/exterior features and elimination workspace are separate. No solver runtime for an unspecified later extension is claimed.
 
 **Parameters**
 
-$`p`$ is actual item-support bound after normalization; $`K`$ is positive cardinality; $`h_v`$ is failed universe count; $`h_j,d_j`$ are label budgets/degrees; $`r`$ is the full represented resource rank.
+<code class="math">p</code> is actual item-support bound after normalization; <code class="math">K</code> is positive cardinality; <code class="math">h_v</code> is failed universe count; <code class="math">h_j,d_j</code> are label budgets/degrees; <code class="math">r</code> is the full represented resource rank.
 
 **Model and representation**
 
@@ -48,24 +48,24 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **Packing with represented resource**
 
-$`\min\left\{N,r\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}\right\}`$
+<code class="math">\min\left\{N,r\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}\right\}</code>
 
 **Packing without resource constraint**
 
-$`\min\left\{N,\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}\right\}`$
+<code class="math">\min\left\{N,\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}\right\}</code>
 
-**General multigraph matching, $`h_v`$ vertex and $`h_e`$ edge-ID failures**
+**General multigraph matching, <code class="math">h_v</code> vertex and <code class="math">h_e</code> edge-ID failures**
 
-$`\min\left\{m,(h_e+1)\binom{2K+h_v}{2}\right\}`$
+<code class="math">\min\left\{m,(h_e+1)\binom{2K+h_v}{2}\right\}</code>
 
 **Matching with an additional represented resource**
 
-Multiply the preceding bound by $`r`$, capped by $`m`$
+Multiply the preceding bound by <code class="math">r</code>, capped by <code class="math">m</code>
 
-**Matching with $`h_c`$ additional single-color risk groups**
+**Matching with <code class="math">h_c</code> additional single-color risk groups**
 
-$`\min\left\{m,r(h_e+1)(h_c+1)\binom{2K+h_v}{2}\right\}`$; omit $`r`$ when absent
+<code class="math">\min\left\{m,r(h_e+1)(h_c+1)\binom{2K+h_v}{2}\right\}</code>; omit <code class="math">r</code> when absent
 
-Private dummy padding keeps empty packing sets distinct. Original edge IDs remain distinct when individual failures are allowed. Rational bit accounting includes the Vandermonde ambient degree $`pK+h_v`$.
+Private dummy padding keeps empty packing sets distinct. Original edge IDs remain distinct when individual failures are allowed. Rational bit accounting includes the Vandermonde ambient degree <code class="math">pK+h_v</code>.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

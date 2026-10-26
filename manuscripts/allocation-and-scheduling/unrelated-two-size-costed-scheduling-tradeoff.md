@@ -19,10 +19,11 @@ There are q>=1 physical machines P and resource/job types j. Type j
 has a normalized monotone integral submodular recipient rank f_j.
 Its original mandatory job count is
 
-```math
+<!-- math-display: d3df0b4c46abc75ff10d7963
 n_j=f_j(P),\qquad N=\sum_j n_j.
  \tag{US1}
-```
+-->
+![Formula](../../assets/math/d3df0b4c46abc75ff10d7963.svg)
 
 A schedule has integer base vectors x_j in B(f_j), so every one of
 these original units must be scheduled. On an eligible pair (p,j),
@@ -30,10 +31,11 @@ its processing time ell_pj is either u or a, with 0<u<a. Values may
 differ between machines for the same type. The assignment cost c_pj
 is a nonnegative rational and one budget B>=0 requires
 
-```math
+<!-- math-display: 350f1686a9efe32c5ae79ad4
 \sum_{p,j}c_{pj}x_j(p)\le B.
  \tag{US2}
-```
+-->
+![Formula](../../assets/math/350f1686a9efe32c5ae79ad4.svg)
 
 The load of machine p is sum_j ell_pj x_j(p); OPT is the minimum
 possible maximum load among schedules satisfying US2. Unusable pairs
@@ -49,21 +51,23 @@ large multiplicities; no individual job-unit expansion is used.
 
 For fixed integer d>=2 define
 
-```math
+<!-- math-display: 1557d32ee054b31c552425d7
 \rho_d=2-1/d,\qquad R_d=\frac{d+1}{d-1},\qquad
  A_d=\Gamma(R_d)=\frac{R_d^{R_d}}{(R_d-1)^{R_d-1}},\qquad
  B_d=2-1/A_d.
  \tag{US3}
-```
+-->
+![Formula](../../assets/math/1557d32ee054b31c552425d7.svg)
 
 **Theorem US.** A deterministic algorithm detects infeasibility of
 the assignment budget even with unbounded makespan, or returns a
 legal schedule of makespan at most rho_d*OPT in
 
-```math
+<!-- math-display: bb7cccf1daf6aa32cd766fef
 B_d^q\,2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
  \tag{US4}
-```
+-->
+![Formula](../../assets/math/bb7cccf1daf6aa32cd766fef.svg)
 
 time and polynomial workspace. The original job counts and the
 assignment budget are exact. The exponent counts physical machines,
@@ -118,24 +122,26 @@ For a feasible fractional point let H_p be its large-pair count and
 Z_p its total count at machine p. Its load is
 `u*Z_p+(a-u)*H_p`. Impose integer nested caps
 
-```math
+<!-- math-display: d96a134ef2c46600ca8c4b4f
 H'_p\le\lceil H_p\rceil,\qquad
                Z'_p\le\lceil Z_p\rceil.
  \tag{US5}
-```
+-->
+![Formula](../../assets/math/d96a134ef2c46600ca8c4b4f.svg)
 
 The fractional point satisfies these caps and all original bases.
 Apply the full-total minimum-cost primitive. It returns integer
 original bases at no larger cost and with load at most
 
-```math
+<!-- math-display: e68e05abf0340a060cd694fb
 \begin{aligned}
  u\lceil Z_p\rceil+(a-u)\lceil H_p\rceil
        &\le uZ_p+(a-u)H_p+a\\
        &\le T+a.
  \end{aligned}
  \tag{US6}
-```
+-->
+![Formula](../../assets/math/e68e05abf0340a060cd694fb.svg)
 
 This is the per-machine upper-prefix ceiling argument specialized
 to the two processing values. It permits a different large/small
@@ -144,10 +150,11 @@ integral full-total face that preserves all jobs.
 
 Whenever
 
-```math
+<!-- math-display: bedc5adb3ca5c0263a57eb58
 T\ge\frac d{d-1}a,
  \tag{US7}
-```
+-->
+![Formula](../../assets/math/bedc5adb3ca5c0263a57eb58.svg)
 
 one has T+a<=rho_d*T, so US5--US6 provide the complete polynomial
 target branch. For d=2 this is T>=2a. No assignment-budget violation
@@ -164,15 +171,16 @@ of this small-only test soundly excludes the full target.
 
 After the easy branch and small-only check, the remaining range is
 
-```math
+<!-- math-display: 0c2f014bc3fa02e48df9cfc5
 a\le T<\frac d{d-1}a\le2a.
  \tag{US8}
-```
+-->
+![Formula](../../assets/math/0c2f014bc3fa02e48df9cfc5.svg)
 
 Every target-T integer schedule places at most one large unit on
 each machine. Define
 
-```math
+<!-- math-display: 9313757fa36fa83e46d7d4cf
 \begin{aligned}
  C_T&=\lfloor T/u\rfloor,\qquad
  \delta_T=a+C_Tu-T,\\
@@ -180,7 +188,8 @@ each machine. Define
                 =\left\lceil\frac{\delta_T}{u}\right\rceil.
  \end{aligned}
  \tag{US9}
-```
+-->
+![Formula](../../assets/math/9313757fa36fa83e46d7d4cf.svg)
 
 These quantities obey 0<delta_T<=a<=T and 1<=K<=C_T. A machine
 with a large unit in a target-T schedule has at most C_T-K small
@@ -191,11 +200,12 @@ units. All counts and floors have polynomial binary length.
 
 For 1<=K<=d, impose on every machine the integer nested caps
 
-```math
+<!-- math-display: fbdda2d4ec46cf834aeaf38b
 \text{large count}\le1,
                     \qquad\text{total count}\le C_T.
  \tag{US10}
-```
+-->
+![Formula](../../assets/math/fbdda2d4ec46cf834aeaf38b.svg)
 
 Every full target-T integer schedule obeys these caps: at a large
 recipient its total is at most 1+C_T-K<=C_T, and elsewhere its
@@ -205,7 +215,7 @@ cost intersection under US10 excludes the full target.
 At a success, a machine with no large unit has load at most C_Tu<=T.
 A machine with one large unit has load at most
 
-```math
+<!-- math-display: c1c9e89aa06c83fcffc7de4b
 \begin{aligned}
  a+(C_T-1)u
        &=T+\delta_T-u\\
@@ -213,7 +223,8 @@ A machine with one large unit has load at most
         \le\rho_d T,
  \end{aligned}
  \tag{US11}
-```
+-->
+![Formula](../../assets/math/c1c9e89aa06c83fcffc7de4b.svg)
 
 because delta_T<=Ku<=du. The assignment cost stays at most B.
 This is a one-sided weak success for K>1, not a claim that the
@@ -230,17 +241,18 @@ Assume K>=d+1 and set b=ceil(K/d). A current set Q permits large
 assignments only on its machines. Small assignments remain allowed
 on **every original physical machine**. For each original type put
 
-```math
+<!-- math-display: b24cbdcd269ba2dd963eb598
 A_j(Q)=\{p:\ell_{pj}=u\}\cup\{p\in Q:\ell_{pj}=a\},
                        \qquad f_j^Q(S)=f_j(S\cap A_j(Q)).
  \tag{US12}
-```
+-->
+![Formula](../../assets/math/b24cbdcd269ba2dd963eb598.svg)
 
 Use variables x_j with the original mandatory equalities
 `x_j(P)=n_j`, even after this mask. Let S_p(x) and H_p(x) denote
 its small and large counts at machine p. Define X_Q by
 
-```math
+<!-- math-display: 5c796f453c8b19690eb7b8ff
 \begin{aligned}
  x_j&\in P(f_j^Q),\qquad x_j(P)=n_j &&\text{for every type }j,\\
  H_p(x)&\le1 &&(p\in Q),\\
@@ -248,7 +260,8 @@ its small and large counts at machine p. Define X_Q by
  \sum_{p,j}c_{pj}x_j(p)&\le B.
  \end{aligned}
  \tag{US13}
-```
+-->
+![Formula](../../assets/math/5c796f453c8b19690eb7b8ff.svg)
 
 Outside Q, large counts are zero by the masks. Test X_Q for
 emptiness first. Rank loss in a masked type, insufficient capacity,
@@ -257,21 +270,23 @@ reduce the number of mandatory jobs.
 
 For nonempty X_Q, define the spare-small-capacity projection
 
-```math
+<!-- math-display: ee8e7115c3488c96410f66ae
 U_Q=\{z\in\mathbb R_+^Q:\exists x\in X_Q,\quad
                           z_p+S_p(x)\le C_T\ (p\in Q)\}.
  \tag{US14}
-```
+-->
+![Formula](../../assets/math/ee8e7115c3488c96410f66ae.svg)
 
 This is a compact convex downward region containing zero. Each
 coordinate is at most C_T. For a nonnegative normal a on Q, its
 support is the exact polynomial LP
 
-```math
+<!-- math-display: 554ea6c46881b7e5fad213b8
 h_Q(a)=\max_{x\in X_Q}
                               \sum_{p\in Q}a_p(C_T-S_p(x)).
  \tag{US15}
-```
+-->
+![Formula](../../assets/math/554ea6c46881b7e5fad213b8.svg)
 
 The objective has a constant term and possibly negative coefficients
 on counts, which is harmless for bounded linear optimization. The
@@ -299,20 +314,22 @@ all original base totals are unchanged.
 At a machine in I*, the schedule's small count is at most C_T-K.
 Consequently
 
-```math
+<!-- math-display: 7a892127cac6e944ae3e34eb
 K\,1_{I^*}\in U_Q.
  \tag{US16}
-```
+-->
+![Formula](../../assets/math/7a892127cac6e944ae3e34eb.svg)
 
 For this exact promised cardinality k, start on Q=P, require
 |Q|>=k, and query b*1_Q in U_Q. If an exact nonnegative row
 a*z<=U separates the weak query, US16 gives
 
-```math
+<!-- math-display: 6e3b1124880afb726fd1dddc
 K a(I^*)\le U<b a(Q),\qquad
               a(Q\setminus I^*)>(1-b/K)a(Q).
  \tag{US17}
-```
+-->
+![Formula](../../assets/math/6e3b1124880afb726fd1dddc.svg)
 
 The weighted first-density-crossing deletion certificates contain
 one subset of Q\I*. Its child retains the same complete original
@@ -322,10 +339,11 @@ is also sound along this protected path.
 
 For K>=d+1, the integer-quota calculation gives
 
-```math
+<!-- math-display: de39cc10b3f13605b7a5ee17
 \frac K{K-b}\le\frac{d+1}{d-1}=R_d.
  \tag{US18}
-```
+-->
+![Formula](../../assets/math/de39cc10b3f13605b7a5ee17.svg)
 
 Thus this fixed-k extension, including all failed and unpromised
 branches, costs at most
@@ -339,14 +357,15 @@ is no independent optional-active-machine requirement.
 A successful b*1_Q query gives a fractional joint assignment with
 integer group caps
 
-```math
+<!-- math-display: 613eab49678fb19f9578f8c1
 \begin{array}{c|cc}
        &\text{large count cap}&\text{small count cap}\\ \hline
  p\in Q&1&C_T-b\\
  p\notin Q&0&C_T .
  \end{array}
  \tag{US19}
-```
+-->
+![Formula](../../assets/math/613eab49678fb19f9578f8c1.svg)
 
 The caps are nonnegative because b<=K<=C_T. The large and small
 groups partition the pair coordinates at every machine. These
@@ -363,7 +382,7 @@ no more than the fractional witness.
 At a machine outside Q the load is at most C_Tu<=T. At a machine
 inside Q its load is at most
 
-```math
+<!-- math-display: 94c3d3f4ab14a53615c3a0b3
 \begin{aligned}
        a+(C_T-b)u
        &=T+\delta_T-bu\\
@@ -371,7 +390,8 @@ inside Q its load is at most
         \le\rho_d T,
  \end{aligned}
  \tag{US20}
-```
+-->
+![Formula](../../assets/math/94c3d3f4ab14a53615c3a0b3.svg)
 
 using bu>=Ku/d>=delta_T/d. A machine receiving no large unit
 has only a smaller load. All original job units remain scheduled.

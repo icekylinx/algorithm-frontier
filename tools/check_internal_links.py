@@ -29,6 +29,8 @@ def markdown_files() -> list[Path]:
 def strip_code(text: str) -> str:
     # Code and mathematics are not Markdown links. A coefficient extraction
     # such as [z^r](1+2z)^k must not be read as a relative URL.
+    text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+    text = re.sub(r'<code\b[^>]*>.*?</code>', '', text, flags=re.DOTALL)
     text = re.sub(r"```.*?```", "", text, flags=re.DOTALL)
     text = re.sub(r"(?<!\\)\$\$.*?(?<!\\)\$\$", "", text, flags=re.DOTALL)
     text = re.sub(r"\\\[.*?\\\]", "", text, flags=re.DOTALL)

@@ -1,6 +1,6 @@
 # Growing-depth recurrence bounds with controlled numerical aspect
 
-**Abstract.** We prove a radius-specific cover reduction for arbitrary positive rational input lengths and a conditional growing-depth recurrence bound. The cover reduction exposes only polynomial-range integer lengths to the imported constant-degree primitive. For the recursive backend, explicit depth-independent recurrence and lifetime hypotheses imply a factor with logarithmic exponent $`335/336`$.
+**Abstract.** We prove a radius-specific cover reduction for arbitrary positive rational input lengths and a conditional growing-depth recurrence bound. The cover reduction exposes only polynomial-range integer lengths to the imported constant-degree primitive. For the recursive backend, explicit depth-independent recurrence and lifetime hypotheses imply a factor with logarithmic exponent <code class="math">335/336</code>.
 
 The metric lemma and recurrence solution are mathematical results below. Complete realization of the required dynamic geometry, provenance, and retirement interfaces remains a hypothesis; a fixed-depth subpolynomial bound is not substituted for a uniform growing-depth proof. The [current matching theorem](../../problems/general-matching/proof.md) separately retains complete deterministic cycle-search realization as an explicit hypothesis.
 
@@ -530,21 +530,23 @@ Consequently an engine instance with a tiny actual graph and a
 very large master U does not pay a mandatory k-cubed allocation or
 initialization. It stores no port fibers or HRG trees at the base.
 
-**Lemma 3 (recurrence solution).** After absorbing the fixed recurrence coefficients into $`A\ge8`$, let $`B=4A`$ and $`k\ge2`$. The displayed recurrences and base bounds imply
-```math
+**Lemma 3 (recurrence solution).** After absorbing the fixed recurrence coefficients into <code class="math">A\ge8</code>, let <code class="math">B=4A</code> and <code class="math">k\ge2</code>. The displayed recurrences and base bounds imply
+<!-- math-display: b549b1d0ad8723bd0638e380
 \Gamma_r\le B^{r+1},\qquad
 J_r\le k^2B^{2r+2},\qquad
 T_r\le k^3B^{3r+3}.
-```
+-->
+![Formula](../../assets/math/b549b1d0ad8723bd0638e380.svg)
 
-**Proof.** The three bounds hold at $`r=0`$. The first recurrence is bounded by $`2A B^r\le B^{r+1}`$. In the second, substitute the first bound and $`J_{r-1}\le k^2B^{2r}`$; both resulting summands are bounded by the claimed $`k^2B^{2r+2}`$ with room for their sum. In the third, substitute the two previous estimates and $`T_{r-1}\le k^3B^{3r}`$. Its terms total at most $`4Ak^3B^{3r}\le k^3B^{3r+3}`$. This proves the induction with exponents independent of the depth. ∎
+**Proof.** The three bounds hold at <code class="math">r=0</code>. The first recurrence is bounded by <code class="math">2A B^r\le B^{r+1}</code>. In the second, substitute the first bound and <code class="math">J_{r-1}\le k^2B^{2r}</code>; both resulting summands are bounded by the claimed <code class="math">k^2B^{2r+2}</code> with room for their sum. In the third, substitute the two previous estimates and <code class="math">T_{r-1}\le k^3B^{3r}</code>. Its terms total at most <code class="math">4Ak^3B^{3r}\le k^3B^{3r+3}</code>. This proves the induction with exponents independent of the depth. ∎
 
 Thus
-```math
+<!-- math-display: e61c76450ce5f421b04c55ad
 \Gamma_r\le A^{O(r+1)},\qquad
 J_r\le k^2A^{O(r+1)},\qquad
 T_r\le k^3A^{O(r+1)},
-```
+-->
+![Formula](../../assets/math/e61c76450ce5f421b04c55ad.svg)
 with absolute constants in all three exponents. Candidate quality
 and piece recurrences have the same form, with base quality two
 and base piece count at most `4k`. The loose common envelope

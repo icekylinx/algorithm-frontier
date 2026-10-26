@@ -20,7 +20,8 @@ contain longer derivations and shared interfaces.
    ready for review, record its exact scope, date and remaining conditions in
    `reviews/registry.json`, then run `python3 tools/build_reviews.py`. Use
    partial readiness when only named components of a family have been checked.
-5. Run `python3 tools/check_repository.py`. Run the full continuous-domain
+5. Run `python3 tools/build_math_assets.py` after changing formulas, then
+   `python3 tools/check_repository.py`. Run the full continuous-domain
    Subset Sum certificate separately when changing its acceptance kernel,
    contact menu or circuit parameters.
 
@@ -52,25 +53,33 @@ proofs shared across families belong in `manuscripts/`. Keep import metadata
 and license boundaries in `provenance/`, rather than maintaining copied
 checkpoint trees or separate draft versions.
 
-Use GitHub's protected inline notation, `` $`...`$ ``, and fenced `math`
-blocks for displays. Ordinary dollar delimiters can let Markdown consume
-TeX backslashes before the mathematical renderer sees them: set braces,
-negative spacing and alignment rows can then render incorrectly. Keep inline
-expressions on one physical line; give long bounds their own display instead
-of placing them inside tables. For example:
+Published Markdown uses **literal inline code and standalone SVG equations**.
+It contains no live dollar-delimited or fenced mathematics. Images contain
+their own glyph paths and a white canvas; reading them needs no JavaScript,
+external fonts or mathematical rendering service.
 
-````markdown
-The kernel has $`O(c^2)`$ edges.
+The source-preserving builder records inline TeX in an escaped
+`<code class="math">` element and display TeX in a `math-display` comment
+immediately before the image. Edit that mathematical source, not the SVG.
+The image name is a digest of the formula and its exact bytes are bound in
+`assets/math/manifest.json`. New authoring text may use conventional dollar
+delimiters or a `math` fence as input to the builder; these must be converted
+before committing. Long expressions belong in displays, not table cells.
 
-```math
-m_H\leq\min\left\{m_s,\binom c2+c^2\right\}.
+```sh
+npm ci --prefix tools/math-renderer
+python3 tools/build_math_assets.py
 ```
-````
 
-Use `\mathrm{poly}`, `\mathrm{rank}` and similar upright names in place of
-`\operatorname`, which is rejected by some rendering surfaces. Place equation
-tags after inner `aligned` or `split` environments. Code fences are for code,
-input formats and exact commands; `math` fences contain rendered formulas.
+Node and the pinned MathJax package are optional **authoring** dependencies.
+The ordinary repository checks verify source/image bindings using only Python.
+They also reject executable SVG content and external glyph references. See
+[the manuscript migration guide](docs/MANUSCRIPTS.md) for the TeX sources and
+the separate PDF publication boundary.
+
+Use `\mathrm{poly}`, `\mathrm{rank}` and similar upright names consistently.
+Place equation tags after inner `aligned` or `split` environments. Ordinary
+code fences remain available for programs, input formats and exact commands.
 
 The homepage contains a small selection of results and the complete problem
 index. Full statements and model conditions belong on the problem cards. The nine standard card labels each introduce a separate
@@ -83,13 +92,11 @@ their contents fit comfortably. Use `\lvert` and `\rvert` for mathematical
 vertical bars in such tables.
 
 Run `python3 tools/normalize_math.py` to normalize mathematical typography,
-then `python3 tools/build_catalogue.py` to refresh the generated indexes.
-The standard check command verifies both are current and runs regression
-cases for escaping, adjacent formulas, list indentation and protected code.
-The syntax checker
-catches delimiter, brace, macro and equation-tag errors; it does not prove
-the mathematics. GitHub's [mathematical-expression guide](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
-describes the supported Markdown delimiters.
+then regenerate the catalogue and review surfaces and build formula images.
+The standard checks cover source recovery, escaping, adjacent expressions,
+list indentation, unchanged ordinary code, image rebinding and exact formula
+digests. The source checker catches grouping, macro and equation-tag errors;
+none of these presentation checks proves the mathematics.
 
 Prefer relative links to canonical files. Give a stable primary reference and
 version for an imported theorem. Keep credits and applicable license/NOTICE

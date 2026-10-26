@@ -16,24 +16,27 @@ ambient length, and C_0 for ambient vertex-occurrence congestion.
 Endpoints and repeated occurrences count in C_0.
 
 There are uniform factors
-```math
+<!-- math-display: 9ba53056ee5589fa0ef97ad5
 \log\Gamma=O((p+r)h),\qquad
  \log F=O(U/p+U/r+r^2h+(p+r)h)                              \tag{1}
-```
+-->
+![Formula](../../assets/math/9ba53056ee5589fa0ef97ad5.svg)
 such that the output is a table Pi', a subgraph J_tilde of J, and
 endpoint-preserving routes R:J->J_tilde with
-```math
+<!-- math-display: cdb50c6058ab80872b3e257a
 \begin{aligned}
  |E(J_{\rm tilde})|&\leq n_J\Gamma\mathrm{poly}(U),\\
  L(R)&\leq\Gamma,\quad L(\Pi'\circ R)\leq\Gamma L_0,\\
  C(\Pi'\circ R)&\leq\Gamma(C_0+\Delta).
  \end{aligned}                                               \tag{2}
-```
+-->
+![Formula](../../assets/math/cdb50c6058ab80872b3e257a.svg)
 Full work, plus actual vertex bookkeeping, is
-```math
+<!-- math-display: c27e546a9e90d7ed44589fad
 m_JF^{O(1)}\Gamma^{O(1)}(L_0+1)\mathrm{poly}(U).
                                                                \tag{3}
-```
+-->
+![Formula](../../assets/math/c27e546a9e90d7ed44589fad.svg)
 F enters neither selected size nor congestion. Loops use the local
 annotated empty-route convention of the distance client before this
 nonloop primitive; isolates are processed at actual size.
@@ -67,23 +70,26 @@ Parameter r gives common conductance phi=exp(-O(rh)).
 Partition J into J_0 with at most n_J edges and band graphs J_i.
 Each nontrivial component has conductance at least phi and minimum
 degree at least rho_i=phi 2^i. Decomposition work is
-```math
+<!-- math-display: 6f7884082db96d517ae367a3
 m_J\exp O(U/r+r^2h+rh)\mathrm{poly}(U).  \tag{4}
-```
+-->
+![Formula](../../assets/math/6f7884082db96d517ae367a3.svg)
 Its constant-conductance witness W_i has fresh edges of common
 weight rho_i and, for an absolute D_w,
-```math
+<!-- math-display: 47583c0830dbceb1961288a4
 \deg_{J_i}(v)\leq\rho_i\deg_{W_i}(v)\leq D_w\deg_{J_i}(v).
                                                                \tag{5}
-```
+-->
+![Formula](../../assets/math/47583c0830dbceb1961288a4.svg)
 The established actual-inventory bounds are
-```math
+<!-- math-display: f4cdb29e5e8a5dbe45102e48
 \begin{aligned}
  \sum_i|E(W_i)|&\leq O(n_J\phi^{-1}U),\\
  \sum_i|E(W_i)|&\leq O(m_J\phi^{-1}),\\
  \sum_i\rho_i|E(W_i)|&\leq O(m_J),\qquad \phi\leq\rho_i\leq\Delta.
  \end{aligned}                                               \tag{6}
-```
+-->
+![Formula](../../assets/math/f4cdb29e5e8a5dbe45102e48.svg)
 No master-sized graph is allocated.
 
 An optional fully elementary replacement for the witness construction
@@ -108,20 +114,22 @@ Use a common Q=exp O((p+r)h).
 
 Forward direction: for each witness edge make ceil(rho_i) token
 copies through J_i. Endpoint multiplicity is at most
-```math
+<!-- math-display: 69d09fa37c6dc4af0ef668e5
 \lceil\rho_i\rceil\deg_{W_i}(v)
                          \leq(2D_w/\phi)\deg_{J_i}(v).       \tag{7}
-```
+-->
+![Formula](../../assets/math/69d09fa37c6dc4af0ef668e5.svg)
 Use D_1=ceil(2D_w/phi). Query volume sums to O(m_J/phi);
 the real token inventory also sums to O(m_J/phi). All dummy
 tokens required by the full router are thereby paid.
 
 Reverse direction: route one token per J_i edge through W_i.
 By (5) the load parameter is D_{2,i}=max(1,ceil(rho_i)), and
-```math
+<!-- math-display: 8230fee92e136d77cc073a22
 \sum_i |E(W_i)|D_{2,i}
  \leq\sum_i(\rho_i+1)|E(W_i)|=O(m_J/\phi).                    \tag{8}
-```
+-->
+![Formula](../../assets/math/8230fee92e136d77cc073a22.svg)
 Only query work multiplies this load. Each W_i and J_i component
 is preprocessed once at its actual size, never once per load unit.
 
@@ -138,16 +146,18 @@ O(Q C_0/phi). One candidate has at most Q host edges, each with a
 SIMPLE ambient image; its count at that vertex is O(Q+1), independently
 of L_0. In
 [deterministic-weighted-path-selection.md](deterministic-weighted-path-selection.md),
-```math
+<!-- math-display: 0f6867e9533fa6baa8a4bb41
 B=\max_{g,j,x}\lceil\rho_i\rceil a_{gjx}
                               \leq O((\Delta+1)(Q+1)).       \tag{9}
-```
+-->
+![Formula](../../assets/math/0f6867e9533fa6baa8a4bb41.svg)
 Apply the deterministic sparse selection globally, keeping one P_g
 per witness edge with weight rho_i. Weighted ambient congestion is
-```math
+<!-- math-display: c298eaea5bff79e232ec7392
 O(Q C_0/\phi+Q(\Delta+1)\log(N_{\rm used}+2))
        \leq Q\phi^{-O(1)}\mathrm{poly}(U)(C_0+\Delta).   \tag{10}
-```
+-->
+![Formula](../../assets/math/c298eaea5bff79e232ec7392.svg)
 Only represented ambient vertices count; log N_used=O(U).
 Residual J_0 adds at most C_0.
 
@@ -159,16 +169,18 @@ This supplies L_0+1 in (3); it is absent only from congestion.
 ## 6. Select input edges and compose reverse routes
 
 Select the genuine J-edge IDs used by the P_g, plus J_0:
-```math
+<!-- math-display: 0b5b9d536e592e28243a5d18
 |E(J_{\rm tilde})|
  \leq |E(J_0)|+Q\sum_i|E(W_i)|
           \leq n_JQ\phi^{-O(1)}\mathrm{poly}(U).        \tag{11}
-```
+-->
+![Formula](../../assets/math/0b5b9d536e592e28243a5d18.svg)
 Reverse W_i paths have occurrence load D_{2,i}Q per witness edge.
 Relative to weight rho_i it is at most
-```math
+<!-- math-display: 6e91f7b287dbb6a48b9e141b
 QD_{2,i}/\rho_i\leq2Q/\phi.         \tag{12}
-```
+-->
+![Formula](../../assets/math/6e91f7b287dbb6a48b9e141b.svg)
 Replace each witness occurrence by P_g. The final length is at most
 Q^2; ambient congestion is bounded by (12) times (10), plus residual
 routes. Fixed powers of Q and phi^{-1} give Gamma=exp O((p+r)h).
@@ -185,10 +197,11 @@ harmless if unnecessary after erasure.
 [normalized-projected-route-composition.md](normalized-projected-route-composition.md)
 applies to this output type. Index ACTUAL normalized routes, their
 native edge/vertex lifetimes, and separate central IDs. Recurrences are
-```math
+<!-- math-display: a8ae151ffaad28512f81e057
 C_{j+1}\leq c\Gamma(C_j+\Delta_{\rm native}),\qquad
  L_{j+1}\leq c\Gamma L_j.                                    \tag{13}
-```
+-->
+![Formula](../../assets/math/a8ae151ffaad28512f81e057.svg)
 No old length multiplies the new congestion.
 
 [normalized-route-cycle-comparison.md](normalized-route-cycle-comparison.md)

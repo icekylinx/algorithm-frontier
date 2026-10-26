@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 import sys
 from normalize_math import normalize_markdown
+from math_presentation import present_markdown
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -257,6 +258,7 @@ def main() -> int:
     groups = data["groups"]
     for name, content in {"README.md": render_readme(data), "CONTENTS.md": render_contents(data)}.items():
         path = ROOT / name
+        content = present_markdown(content, path)
         if args.check:
             if not path.is_file() or path.read_text(encoding="utf-8") != content:
                 stale.append(name)
@@ -269,6 +271,7 @@ def main() -> int:
             path = ROOT / "problems" / record["id"] / "README.md"
             before = path.read_text(encoding="utf-8")
             block = normalize_markdown("**Randomness**\n\n" + record["randomness"] + "\n\n")
+            block = present_markdown(block, path)
             if re.search(r"(?m)^\*\*Randomness\*\*$", before):
                 after = re.sub(r"(?ms)^\*\*Randomness\*\*\n\n.*?(?=^\*\*Time\*\*$)",
                                lambda _: block, before, count=1)

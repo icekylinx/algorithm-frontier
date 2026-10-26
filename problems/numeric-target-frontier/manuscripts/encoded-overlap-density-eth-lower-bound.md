@@ -23,69 +23,76 @@ This representation is broader than an explicit matrix, graph, or laminar family
 
 Let `phi` have `nu>=1` variables. Choose an even integer `b>=4`, and put
 
-```math
+<!-- math-display: 83dba94a06a56fa0e4a3dc31
 A_b=(b-1)!!,
 \qquad
 p_b=\lfloor\log_2 A_b\rfloor,
 \qquad
 L=\left\lceil\frac{\nu}{p_b}\right\rceil.
 \tag{ED1}
-```
+-->
+![Formula](../../../assets/math/83dba94a06a56fa0e4a3dc31.svg)
 
 The positive integer `p_b` is obtained from the binary length of `A_b`; no real logarithm is needed by the construction. We use choices satisfying
 
-```math
+<!-- math-display: eca1f669d9581b67d804c65a
 1\le p_b\le2\nu.
 \tag{ED2}
-```
+-->
+![Formula](../../../assets/math/eca1f669d9581b67d804c65a.svg)
 
 Build `L` disjoint labeled complete graphs of order `b`. Their vertex count, edge count, and intended matroid rank are
 
-```math
+<!-- math-display: c6504f3854979bd8cfe0c54e
 T=bL,
 \qquad
 m=L\binom b2=\frac{T(b-1)}2,
 \qquad
 r=T/2.
 \tag{ED3}
-```
+-->
+![Formula](../../../assets/math/c6504f3854979bd8cfe0c54e.svg)
 
 The vertex count will be the total numeric target, and `m` will be precisely the row-interaction edge count.
 
 Elementary product estimates imply, uniformly for even `b>=4`,
 
-```math
+<!-- math-display: 0353570565bf71c1898f1073
 p_b=\Theta(b\log(b+2)).
 \tag{ED4}
-```
+-->
+![Formula](../../../assets/math/0353570565bf71c1898f1073.svg)
 
 For example, at least `floor(b/4)` factors in `(b-1)(b-3)...1` are at least `b/2`, while every factor is at most `b`. Taking a floor loses only a constant factor because `log_2 A_b>=1`.
 
 The ceiling in ED1 gives
 
-```math
+<!-- math-display: 5b0eb904c1887044786d0f7f
 \nu\le Lp_b<\nu+p_b\le3\nu.
 \tag{ED5}
-```
+-->
+![Formula](../../../assets/math/5b0eb904c1887044786d0f7f.svg)
 
 Consequently,
 
-```math
+<!-- math-display: b51ffbe04643c32952a7f104
 T\log\left(2+\frac mT\right)
 =bL\log\left(\frac{b+3}{2}\right)
 =\Theta(Lp_b)
 =\Theta(\nu),
 \tag{ED6}
-```
+-->
+![Formula](../../../assets/math/b51ffbe04643c32952a7f104.svg)
 
 with constants independent of the admissible choice of `b`. In particular, `T=O(nu)` and `m=O(nu^2)`.
 
 All quantities in ED1 can be computed by ordinary integer multiplication and binary-length inspection. Stored matching counts have polynomial bit length. More specifically,
 
-```math
+<!-- math-display: e181e0d9e0d47cba49a93f0e
 \log_2(A_b^L)<L(p_b+1)\le2Lp_b\le6\nu.
 \tag{ED7}
-```
+-->
+![Formula](../../../assets/math/e181e0d9e0d47cba49a93f0e.svg)
 
 Thus even the complete product of matching counts needs only `O(nu)` bits.
 
@@ -93,27 +100,30 @@ Thus even the complete product of matching counts needs only `O(nu)` bits.
 
 At an ordered set of `t` remaining vertices, with `t` even, take its smallest vertex. Order its `t-1` possible partners increasingly. Every fixed partner leaves exactly
 
-```math
+<!-- math-display: 469e46c6c8e225a33e3c8339
 A_{t-2}=(t-3)!!
 \tag{ED8}
-```
+-->
+![Formula](../../../assets/math/469e46c6c8e225a33e3c8339.svg)
 
 matchings of the remaining vertices. If a given matching chooses the partner at zero-based index `j`, define its rank recursively by
 
-```math
+<!-- math-display: d6bee63fba17321c578ef711
 \mathrm{rank}_t(M)=j A_{t-2}
  +\mathrm{rank}_{t-2}(M\text{ on the remaining vertices}).
 \tag{ED9}
-```
+-->
+![Formula](../../../assets/math/d6bee63fba17321c578ef711.svg)
 
 Use the empty matching rank zero and `A_0=1`. This is a bijection from the `A_b` clique matchings to the integers `0,...,A_b-1`. Its inverse divides a proposed rank by `A_{t-2}`, uses the quotient to choose the partner, and recurses with the remainder. Both ranking and unranking use only polynomially many operations on polynomial-length integers. No enumeration of matchings is performed.
 
 Given a perfect matching of the disjoint union, let its clique ranks be `j_1,...,j_L`. Give it the product rank
 
-```math
+<!-- math-display: b422c716a2d56779887ff8fb
 J=\sum_{i=1}^L j_i A_b^{i-1}.
 \tag{ED10}
-```
+-->
+![Formula](../../../assets/math/b422c716a2d56779887ff8fb.svg)
 
 This is a bijection between all perfect matchings of the union and the integers `0,...,A_b^L-1`. The mixed-radix inverse is polynomial-time for the same reason. Recognition of a perfect matching is also polynomial: each vertex must have degree exactly one in the queried edge subset.
 
@@ -146,12 +156,13 @@ For every vertex, create the row counting selected incident edges and give it ta
 
 With equality rows, a feasible base is a perfect matching. It is a base of `M_phi` exactly when its rank decodes to a satisfying assignment. All assignments appear among the first `2^nu` product ranks. Thus
 
-```math
+<!-- math-display: 2aa27b9f85041ba8670dce14
 \text{the target instance is feasible}
 \quad\Longleftrightarrow\quad
 \phi\text{ is satisfiable}.
 \tag{ED11}
-```
+-->
+![Formula](../../../assets/math/2aa27b9f85041ba8670dce14.svg)
 
 The same reduction works for the following variants.
 
@@ -167,10 +178,11 @@ The coefficient matrix has at most `T*m=O(nu^3)` entries. The ground, targets, a
 
 For any polynomial-time computable admissible choice `b=b(nu)` satisfying ED2, the reduction obeys ED6 with universal constant factors. A deterministic target solver with uniform time
 
-```math
+<!-- math-display: 11d5bf36cf77bd2bff0645f5
 2^{o\left(T\log\left(2+m/T\right)\right)}\mathrm{poly}(H)
 \tag{ED12}
-```
+-->
+![Formula](../../../assets/math/11d5bf36cf77bd2bff0645f5.svg)
 
 on these encoded instances would consequently solve 3-SAT in `2^{o(nu)} poly(|phi|)` time, contradicting deterministic ETH.
 
@@ -182,10 +194,11 @@ The range includes the following regimes.
 
 **One dense clique.** Choose the smallest even `b>=4` with `A_b>=2^nu`. Then `p_b>=nu`, so `L=1` and `T=b`. Minimality gives
 
-```math
+<!-- math-display: fe4cce94f6dec9ffc74fb156
 A_b<(b-1)2^\nu
 \tag{ED13}
-```
+-->
+![Formula](../../../assets/math/fe4cce94f6dec9ffc74fb156.svg)
 
 apart from harmless constant initial cases. Thus `p_b<=nu+log_2(b-1)`, which satisfies ED2 for all sufficiently large `nu`. Also `b log b=Theta(nu)`. This yields `m=T(T-1)/2` and rules out `2^{o(T log T)} poly(H)` on the dense encoded family.
 

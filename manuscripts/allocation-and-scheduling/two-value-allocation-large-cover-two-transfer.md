@@ -32,11 +32,12 @@ player-selection matroid in the original problem.
 
 Let N be the Boolean-cap matroid of the large recipient polymatroid:
 
-```math
+<!-- math-display: da4657ca95041fd7ce22acc1
 P(N)=P(f_b)\cap[0,1]^P,
               \qquad \nu=\mathrm{rank}(N).
  \tag{F1}
-```
+-->
+![Formula](../../assets/math/da4657ca95041fd7ce22acc1.svg)
 
 Thus nu is the maximum number of distinct players that can each
 receive one large unit. It is at most q and at most the total number
@@ -45,11 +46,12 @@ f_b(P) of large units, but it can be much smaller than either.
 **Theorem F.** The integer max-min allocation optimum OPT has a
 deterministic factor-two approximation in
 
-```math
+<!-- math-display: 0163b64f3e52e3724bf8e78c
 (27/4)^{\nu}\mathrm{poly}(\mathcal H)
                         =2^{O(\nu)}\mathrm{poly}(\mathcal H)
  \tag{F2}
-```
+-->
+![Formula](../../assets/math/0163b64f3e52e3724bf8e78c.svg)
 
 time and polynomial workspace. Here mathcal H pays all original
 input bits, rank-value and independence queries, deterministic
@@ -69,10 +71,11 @@ type remains, the optimum is zero. If only one value v remains,
 aggregate its recipient ranks into f. A target of k integer units
 per player is feasible exactly when
 
-```math
+<!-- math-display: 02dee094cfa515526b6fa4a1
 k\,\mathbf1_P\in P(f).
  \tag{F3}
-```
+-->
+![Formula](../../assets/math/02dee094cfa515526b6fa4a1.svg)
 
 This is tested by minimizing f(S)-k|S|. Binary search over
 0<=k<=floor(f(P)/q) finds the exact integer optimum. Extend the
@@ -96,10 +99,11 @@ For each resource type, set z_j(p)=f_j({p}). The coordinate bound
 z_j dominates every feasible recipient vector. Its complement dual
 has rank
 
-```math
+<!-- math-display: d4f0a78e4aa8425fa9b36a0d
 g_j(S)=z_j(S)+f_j(P\setminus S)-f_j(P).
  \tag{F4}
-```
+-->
+![Formula](../../assets/math/d4f0a78e4aa8425fa9b36a0d.svg)
 
 For a fractional original base x_j, y_j=z_j-x_j is a fractional
 g_j-base. Apply upper rounding to these dual bases, using the
@@ -124,11 +128,12 @@ The upper-rounding primitive has a separate proof in
 
 Fix a target T with
 
-```math
+<!-- math-display: 60a35a88d63ea53634de4562
 0<T\le2a,
                    \qquad K=\lceil T/u\rceil.
  \tag{F5}
-```
+-->
+![Formula](../../assets/math/60a35a88d63ea53634de4562.svg)
 
 Suppose an integer all-player allocation attaining T exists. Let
 R be the set of players receiving at least one large unit in that
@@ -136,19 +141,21 @@ allocation. Its aggregate large count vector dominates 1_R, so
 1_R belongs to P(f_b) and R is independent in N. Extend R to an
 N-basis F. Its complement
 
-```math
+<!-- math-display: d8d99242c2525645b4715f07
 I^*=P\setminus F
  \tag{F6}
-```
+-->
+![Formula](../../assets/math/d8d99242c2525645b4715f07.svg)
 
 is a basis of the dual player matroid M=N*. Since F contains R,
 every member of I* had no large unit in the fixed optimum. Its
 small count is at least K. Downward closure therefore gives
 
-```math
+<!-- math-display: fe17d51ac813c0c2ab932ec3
 K\mathbf1_{I^*}\in P(f_s).
  \tag{F7}
-```
+-->
+![Formula](../../assets/math/fe17d51ac813c0c2ab932ec3.svg)
 
 This is an integer promise on the same small recipient polymatroid.
 It does not require solving a configuration LP. The player matroid
@@ -169,10 +176,11 @@ call is made on a rank-zero player matroid.
 Otherwise M=N* has positive rank. Invoke the gap theorem in
 [unit-quota-corank-gap-branching.md](unit-quota-corank-gap-branching.md) with target K and output
 
-```math
+<!-- math-display: 8909e822b6cbbfd2dfba96ca
 b=\lceil K/2\rceil.
  \tag{F8}
-```
+-->
+![Formula](../../assets/math/8909e822b6cbbfd2dfba96ca.svg)
 
 For K>=2 one has b<K and K/(K-b)<=3, so its time is
 (27/4)^nu poly(mathcal H), using the batched deficient-set
@@ -190,12 +198,13 @@ f_s and f_b. Extend them to bases and decompose to original resource
 types if required. The extra units do not decrease any value.
 Every player receives value at least
 
-```math
+<!-- math-display: 5ba0bf86d04e2f252e5bbcd4
 \min\{a,bu\}
           \ge\min\{T/2,Ku/2\}
           \ge T/2.
  \tag{F9}
-```
+-->
+![Formula](../../assets/math/5ba0bf86d04e2f252e5bbcd4.svg)
 
 The large value need not be a multiple of u, and b u need not be
 at most a. The displayed minimum handles both orders. There is
@@ -215,10 +224,11 @@ For T>2a, test fractional all-player feasibility at value T.
 Infeasibility proves that the integer target is infeasible. If it
 is feasible, the additive rounding lemma gives integer value
 
-```math
+<!-- math-display: e5e5e64ec414027ff3b7336d
 T-a>T/2.
  \tag{F10}
-```
+-->
+![Formula](../../assets/math/e5e5e64ec414027ff3b7336d.svg)
 
 At T=2a either branch is valid; we use the hard-target branch as
 specified in (F5). Together, Sections 5--6 give a one-sided target
@@ -238,10 +248,11 @@ Write a=A gamma and u=U gamma for positive integers A,U and a
 positive rational gamma of polynomial bit length. Every integer
 allocation value is a multiple of gamma, so OPT is too. Let
 
-```math
+<!-- math-display: 737aafcdcf592656f9b3e98d
 V=a f_b(P)+u f_s(P).
  \tag{F11}
-```
+-->
+![Formula](../../assets/math/737aafcdcf592656f9b3e98d.svg)
 
 The minimum player value is at most V; this deliberately loose
 upper bound suffices. Start with lower target zero and any legal
@@ -270,12 +281,13 @@ expands a large numerical supply into unit copies.
 Fix q>r>=1, put c=q-r, and let P have q players. Use small unit
 value one with the hidden recipient rank
 
-```math
+<!-- math-display: 222c6ea3689560748fb6a260
 f_A(S)=\min\{2|S|,2r\}
           -\mathbf1[|S|=r]+\mathbf1[S=A],
                       \qquad |A|=r.
  \tag{F12}
-```
+-->
+![Formula](../../assets/math/222c6ea3689560748fb6a260.svg)
 
 Use large value two and the uniform recipient matroid U_(c,q).
 Its Boolean large-cover parameter is nu=c, and it has no coloops
@@ -302,10 +314,11 @@ The small rank oracle differs from its symmetric reference at
 exactly the one hidden query A. The usual deterministic transcript
 argument therefore requires at least
 
-```math
+<!-- math-display: 223f83f50cc9a6469882d5e6
 \binom qr-1=\binom q\nu-1
  \tag{F13}
-```
+-->
+![Formula](../../assets/math/223f83f50cc9a6469882d5e6.svg)
 
 queries. For any proposed runtime F(nu) q^C with a fixed polynomial
 degree C, fix an integer nu>C and let q grow. The rank values have

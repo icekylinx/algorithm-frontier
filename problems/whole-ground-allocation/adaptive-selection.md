@@ -22,10 +22,11 @@ budget C.
 For an allowed set Q subseteq P, assume a polynomial-time exact
 oracle finds
 
-```math
+<!-- math-display: 0bd64278df3cc257551ca2c7
 h(Q)=\min\{h(W):(I,W)\text{ admissible},\ I\subseteq Q,\ |I|=s\},
 \tag{RB1}
-```
+-->
+![Formula](../../assets/math/0bd64278df3cc257551ca2c7.svg)
 
 and an attaining pair (I_Q,W_Q), or reports that no such pair exists.
 All returned costs and witnesses have uniform polynomial bit length.
@@ -40,18 +41,20 @@ light candidate does not delete its heavy assignment copies.
 
 If Q' subseteq Q and both minima exist, then
 
-```math
+<!-- math-display: 8a40c9180ee620e0a81364c8
 h(Q')\ge h(Q).
 \tag{RB2}
-```
+-->
+![Formula](../../assets/math/8a40c9180ee620e0a81364c8.svg)
 
 More importantly, for any fixed admissible witness (I*,W*) with
 I* subseteq Q,
 
-```math
+<!-- math-display: 1ad9c253c45a6365ab8b29a0
 h(Q)\le h(W^*).
 \tag{RB3}
-```
+-->
+![Formula](../../assets/math/1ad9c253c45a6365ab8b29a0.svg)
 
 The latter is the witness inequality needed by the branching proof.
 
@@ -89,27 +92,30 @@ intersection construction.
 
 Let t>b>0 be rational and put
 
-```math
+<!-- math-display: 09f86a2968b44c8e21d6c22d
 R=\frac{t}{t-b}>1,
           \qquad \Gamma(R)=\frac{R^R}{(R-1)^{R-1}}.
 \tag{RB4}
-```
+-->
+![Formula](../../assets/math/09f86a2968b44c8e21d6c22d.svg)
 
 The full-target promise is the existence of an admissible pair
 (I*,W*) satisfying
 
-```math
+<!-- math-display: 1de5f2a89f3a7e4583d22d4e
 h(W^*)\le C,
                    \qquad t\mathbf1_{I^*}\in U_{C-h(W^*)}.
 \tag{RB5}
-```
+-->
+![Formula](../../assets/math/1de5f2a89f3a7e4583d22d4e.svg)
 
 The algorithm must return some admissible pair (I,W) with
 
-```math
+<!-- math-display: 099bb84e61ed3b72fe311798
 b\mathbf1_I\in U_{C-h(W)},
 \tag{RB6}
-```
+-->
+![Formula](../../assets/math/099bb84e61ed3b72fe311798.svg)
 
 including its service and completion witnesses, or correctly report
 that no pair satisfying RB5 exists. A successful relaxed output need
@@ -125,10 +131,11 @@ The total cost of the returned two witnesses is at most C.
 At a node Q, let d=|Q|-s. If d<0, reject. Compute RB1. Reject if no
 pair exists or h(Q)>C. Otherwise set
 
-```math
+<!-- math-display: 9debd5516ea98956f808b73d
 B_Q=C-h(Q)\ge0.
 \tag{RB7}
-```
+-->
+![Formula](../../assets/math/9debd5516ea98956f808b73d.svg)
 
 Test `b*1_Q` for membership in U_(B_Q), with zeros outside Q.
 
@@ -158,24 +165,26 @@ recomputes its own minimum completion and separation problem.
 Fix one promised pair (I*,W*) from RB5. Suppose a recursive node Q
 still contains I*. Its completion oracle cannot fail, and RB3 gives
 
-```math
+<!-- math-display: 8507cb9eb6ce104433199430
 C-h(Q)\ge C-h(W^*)\ge0.
 \tag{RB8}
-```
+-->
+![Formula](../../assets/math/8507cb9eb6ce104433199430.svg)
 
 Budget monotonicity implies
 
-```math
+<!-- math-display: 83dc96dab7d32c55264cdadd
 t\mathbf1_{I^*}\in U_{C-h(Q)}.
 \tag{RB9}
-```
+-->
+![Formula](../../assets/math/83dc96dab7d32c55264cdadd.svg)
 
 Thus every row returned at this particular node is valid for the
 same promised service vector, even though the region is allowed
 to change at the next node. With D*=Q\I*, |D*|=d, validity and
 violation yield
 
-```math
+<!-- math-display: 9b467b85a3f2423756099a40
 \begin{aligned}
        t a(I^*)&\le u<b a(Q),\\
        a(D^*)&=a(Q)-a(I^*)
@@ -183,7 +192,8 @@ violation yield
                        =\frac{a(Q)}R.
  \end{aligned}
 \tag{RB10}
-```
+-->
+![Formula](../../assets/math/9b467b85a3f2423756099a40.svg)
 
 The layer-cake argument for ordered nonnegative coefficients then
 gives a first-crossing prefix whose one-positions lie entirely in
@@ -207,10 +217,11 @@ Nor would a generic arbitrary changing separator suffice.
 At a node of deficit d, first-crossing words are prefix-free and
 satisfy
 
-```math
+<!-- math-display: c7add3473d0ac1130843da4c
 \sum_C\Gamma(R)^{-|C|}\le1.
 \tag{RB11}
-```
+-->
+![Formula](../../assets/math/c7add3473d0ac1130843da4c.svg)
 
 The deterministic generator visits at most
 `(q+1)Gamma(R)^d` states, including unfinished words, by the same
@@ -224,11 +235,12 @@ work or invokes the same algorithm at deficit d-|C|. With a uniform
 polynomial bound P(H) covering completion optimization, separation,
 reconstruction and generator overhead, the augmented recursion obeys
 
-```math
+<!-- math-display: 1565b39602e67f18e3c9478f
 T(d)\le P(H)\Gamma(R)^d+\sum_C T(d-|C|)
                 \le P'(H)(d+1)\Gamma(R)^d.
 \tag{RB12}
-```
+-->
+![Formula](../../assets/math/1565b39602e67f18e3c9478f.svg)
 
 The second inequality follows from RB11 and induction, using |C|>=1.
 It charges failed selectors and unpromised branches. Because

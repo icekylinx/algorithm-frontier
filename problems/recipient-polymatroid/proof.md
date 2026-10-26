@@ -2,7 +2,7 @@
 
 The deterministic algorithm below allocates integral resource counts to a
 basis of an arbitrary player-selection matroid. Its exact rank-dependent
-factor is $`4-3/r`$ for unrestricted availability. It uses ordered-prefix
+factor is <code class="math">4-3/r</code> for unrestricted availability. It uses ordered-prefix
 rank additivity and eager release of redundant blocker groups. The
 [representation and comparator lemmas](representation.md) establish every
 conceptual-copy operation with binary count vectors.
@@ -10,32 +10,34 @@ conceptual-copy operation with binary count vectors.
 ## 1. Model and theorem
 
 Use the precise allocation model in [representation.md, Section 1](representation.md):
-a rank-$`r`$ player matroid, integral recipient-polymatroid ranks
-$`f_j`$, nonnegative rational intrinsic values $`v_j`$, and unused capacity
+a rank-<code class="math">r</code> player matroid, integral recipient-polymatroid ranks
+<code class="math">f_j</code>, nonnegative rational intrinsic values <code class="math">v_j</code>, and unused capacity
 allowed. The objective is the minimum utility on an actual selected
-basis; $`\mathrm{OPT}`$ denotes its integral optimum.
+basis; <code class="math">\mathrm{OPT}</code> denotes its integral optimum.
 
-The optional local family at player $`p`$ is type-symmetric and downward
+The optional local family at player <code class="math">p</code> is type-symmetric and downward
 closed. Its paid availability oracle has certified rational
-approximation guarantee $`0<\lambda\le1`$; unrestricted availability
-has $`\lambda=1`$.
+approximation guarantee <code class="math">0&lt;\lambda\le1</code>; unrestricted availability
+has <code class="math">\lambda=1</code>.
 Put tau=1/lambda, rho=(r-1)/r,
 and d=tau+3rho.
 
 **Theorem 1.** The integer-optimum approximation factor is
 
-```math
+<!-- math-display: e6e0a5e068a76826fd2abf57
 \boxed{d\text{ in }2^{O(r)}\mathrm{poly}(H),}
  \tag{Q1}
-```
+-->
+![Formula](../../assets/math/e6e0a5e068a76826fd2abf57.svg)
 
 or d+eta, eta>0, in
 
-```math
+<!-- math-display: f97f8f1da577473779030018
 \boxed{\mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.}
  \tag{Q2}
-```
+-->
+![Formula](../../assets/math/f97f8f1da577473779030018.svg)
 
 Thus exact unrestricted availability gives 4-3/r and 4-3/r+eta,
 respectively. H pays all original input bits, resource value-oracle and
@@ -58,18 +60,20 @@ copies, including when they have the same player owner, as proved by
 Order centers by layer, and within each layer by their insertion time.
 For every ordered prefix S, including one ending inside a layer, set
 
-```math
+<!-- math-display: 38f06a526895a63a14476ad1
 W_j(S)=X_j(S)\cup Y_j(S),\qquad
  U_j(S)=M_j\setminus Y_j(S),
-```
+-->
+![Formula](../../assets/math/38f06a526895a63a14476ad1.svg)
 
 where these are actual copy sets, not just distinct player names.
 In addition to the universal reservations, maintain
 
-```math
+<!-- math-display: 22d11dcfbab0071ef9570427
 r_j(W_j(S)\cup U_j(S))=r_j(W_j(S))+|U_j(S)|.
  \tag{Q3}
-```
+-->
+![Formula](../../assets/math/22d11dcfbab0071ef9570427.svg)
 
 Thus every still-unmarked matching copy is independent after contraction
 of the prefix reservation. Cardinality in (Q3) counts units, with
@@ -77,11 +81,12 @@ binary numerical representation.
 
 For a retained center c and its strictly earlier prefix S^-_c, maintain
 
-```math
+<!-- math-display: 0eff32e08f3ccf660542be29
 r_j(W_j(S^-_c)\cup C_j(c))-r_j(W_j(S^-_c))=|C_j(c)|
                          \quad(j\text{ used by }c).
  \tag{Q4}
-```
+-->
+![Formula](../../assets/math/0eff32e08f3ccf660542be29.svg)
 
 The residual-availability construction establishes (Q4) at birth.
 Preceding center records stay fixed, and their designated groups can
@@ -94,17 +99,19 @@ and independence over it persists. This is a current invariant.
 A new candidate is selected with the residual available
 counts from Lemma 2 of [the representation manuscript](representation.md)
 
-```math
+<!-- math-display: 129ad4108a529aa44ccea517
 A_{pj}=r_j(W_j\cup E_{pj})-r_j(W_j),\qquad n^c_j\le A_{pj}.
-```
+-->
+![Formula](../../assets/math/129ad4108a529aa44ccea517.svg)
 
 Hence the entire block C_j(c) is independent over W_j, not merely each
 of its individual elements. Call a used resource j problematic if
 
-```math
+<!-- math-display: d39e75d67393ec7e7372c0bb
 r_j(M_j\cup X_j\cup C_j(c))-r_j(M_j\cup X_j)<|C_j(c)|.
  \tag{Q5}
-```
+-->
+![Formula](../../assets/math/d39e75d67393ec7e7372c0bb.svg)
 
 At every such resource, mark all currently unmarked matching records
 using j. Take their union as the new designated group. Every designated
@@ -137,26 +144,29 @@ old selected records.
 
 For a stored center c, let
 
-```math
+<!-- math-display: 44f8f1c973bd37b1dd534009
 V_j=W_j(S^-_c)\cup\{
        \text{resource-j copies in the current records of }D(c)\}.
-```
+-->
+![Formula](../../assets/math/44f8f1c973bd37b1dd534009.svg)
 
 If every used resource satisfies
 
-```math
+<!-- math-display: 50bf20b8fa15db0726bf4ffb
 r_j(V_j\cup C_j(c))-r_j(V_j)=|C_j(c)|,
  \tag{Q6}
-```
+-->
+![Formula](../../assets/math/50bf20b8fa15db0726bf4ffb.svg)
 
 then process c immediately as free, whether or not its group is empty.
 This is safe because (Q3), applied to the prefix ending at c, makes
 the remaining U independent over V_j union C_j(c). Together with
 (Q6), it gives
 
-```math
+<!-- math-display: 13eed66117847bf759765826
 r_j(V_j\cup C_j(c)\cup U)=r_j(V_j)+|C_j(c)|+|U|.
-```
+-->
+![Formula](../../assets/math/13eed66117847bf759765826.svg)
 
 The rank without C_j(c) is at most r_j(V_j)+|U|. Hence the whole
 block C_j(c) is independent over V_j union U, which equals M_j plus
@@ -219,9 +229,10 @@ are below B. Each blocker shares such a unit and therefore also has no
 unit of value at least B. All t+1 bundles have value below B+a. Their
 cover increment is less than
 
-```math
+<!-- math-display: 9e9b9dc756f70dc5f42c51aa
 (t+1)(B+a)\le t(2B+a).
-```
+-->
+![Formula](../../assets/math/9e9b9dc756f70dc5f42c51aa.svg)
 
 Finally, if c has at least two units and D(c)={b}, failure of (Q6)
 provides a common used type j with an integer rank deficit at least one.
@@ -229,17 +240,19 @@ Compared with counting every service in c and b, the current rank
 increment saves at least v_j. Minimality of b gives v(b)-v_j<B, even
 when b has several units of type j. Hence the increment is below
 
-```math
+<!-- math-display: 770a5dbe64ddf38db2588fdf
 v(c)+v(b)-v_j<2B+a.
-```
+-->
+![Formula](../../assets/math/770a5dbe64ddf38db2588fdf.svg)
 
 The current groups partition all blockers, so
 
-```math
+<!-- math-display: 217f8b2a6708bd76c456845d
 \boxed{\Phi\le C(B,u)|Y|,\qquad
                   C(B,u)=\max\{u,\,2B+\min(u,B)\}.}
  \tag{Q7}
-```
+-->
+![Formula](../../assets/math/217f8b2a6708bd76c456845d.svg)
 
 No dependence saving is carried from birth without testing it. The
 deficit used in the singleton-group charge is a present prefix deficit.
@@ -249,18 +262,20 @@ deficit used in the singleton-group charge is a present prefix deficit.
 The preceding theorem's contraction-and-box loss certificate applies
 unchanged to these states and the same availability counts:
 
-```math
+<!-- math-display: ee975a81491b1988df1ba322
 \Phi>(T-\tau B)w,\qquad \tau B\le T,
  \tag{Q8}
-```
+-->
+![Formula](../../assets/math/ee975a81491b1988df1ba322.svg)
 
 whenever an integer target-T basis allocation exists and a completed
 available scan fails. Thus the sufficient condition becomes
 
-```math
+<!-- math-display: a9d9336b80180ce5473ff712
 \tau B+\rho C(B,u)\le T.
  \tag{Q9}
-```
+-->
+![Formula](../../assets/math/a9d9336b80180ce5473ff712.svg)
 
 Use Lemma 4 of [the representation manuscript](representation.md) with B0=T/(tau+3rho). At exact B=B0, small-unit
 u<B0 implies C(B0,u)<=3B0, proving the exact-boundary factor (Q1).
@@ -268,10 +283,11 @@ u<B0 implies C(B0,u)<=3B0, proving the exact-boundary factor (Q1).
 For eta>0 put eta0=min(eta,1), retain the fat threshold B0, and take
 B=T/(d+eta0). Since d>=1, B>=B0/2. Consequently
 
-```math
+<!-- math-display: 5d682f6c63b85bca3ee20a50
 C(B,u)\le\max\{B0,3B\}=3B,
  \qquad T-\tau B-\rho(3B)=\eta0 B.
-```
+-->
+![Formula](../../assets/math/5d682f6c63b85bca3ee20a50.svg)
 
 Growth gamma=eta0/16 safely contradicts a failed small-growth layer.
 The unchanged rank-quasipolynomial signature gives (Q2). The proof is
@@ -281,10 +297,11 @@ uniform in lambda apart from the paid available-oracle costs.
 
 Each required rank is evaluated on a multiplicity vector z using
 
-```math
+<!-- math-display: 4d4f8e41416e9bc55960deb9
 R_j(z)=\min_{S\subseteq P}
                             \{f_j(S)+z(P\setminus S)\}.
-```
+-->
+![Formula](../../assets/math/4d4f8e41416e9bc55960deb9.svg)
 
 The disjoint-copy invariant guarantees all coordinates describe actual
 subsets of the conceptual natural matroid. Prefix additivity uses the
@@ -298,11 +315,11 @@ moves are numerical. No query or loop is proportional to the number
 of units. Lemma 1 of [the representation manuscript](representation.md) proves
 the rank implementation; its Lemma 4 proves the large-unit singleton
 tests and reconstruction. A common rational grid of the values contains
-every integral utility. With $`V=\sum_jv_jf_j(P)`$, initialize target zero
-and an external upper grid point above $`V`$; on success save the actual
+every integral utility. With <code class="math">V=\sum_jv_jf_j(P)</code>, initialize target zero
+and an external upper grid point above <code class="math">V</code>; on success save the actual
 allocation, and lower the upper endpoint only on a sound full-target
 failure. At adjacent grid points the saved nominal lower target is at
-least $`\mathrm{OPT}`$. This uses polynomially many calls in the encoding
+least <code class="math">\mathrm{OPT}</code>. This uses polynomially many calls in the encoding
 length and never assumes monotonicity of successful answers.
 
 ## 9. A sharper equal-unit quota theorem
@@ -311,10 +328,11 @@ Suppose every small unit has value one, there are no local-oracle errors,
 and each minimal bundle has integer quota b>=1. The normalized prefix
 cover sharpens further to
 
-```math
+<!-- math-display: af4ba083f5854d67aaf98431
 \Phi\le(2b-1)|Y|.
  \tag{Q10}
-```
+-->
+![Formula](../../assets/math/af4ba083f5854d67aaf98431.svg)
 
 For b=1 every center and blocker is a singleton, and its current
 dependence gives coefficient one. For b>=2, a singleton blocker group
@@ -325,10 +343,11 @@ If an integral target-t allocation exists, failed available scans leave
 each residual optimal player at most b-1 units. The contraction loss
 proof therefore gives Phi>=(t-b+1)w. A sufficient contradiction is
 
-```math
+<!-- math-display: e9b8826116e21e71de30785d
 \boxed{(3-2/r)b<t+1+(r-1)/r.}
  \tag{Q11}
-```
+-->
+![Formula](../../assets/math/e9b8826116e21e71de30785d.svg)
 
 In particular b=ceil(t/3) always satisfies (Q11). Write t=3k+s with
 s in {0,1,2}. For s=0, the strict gap is 1+rho+(2/r)k. For s=1, it is

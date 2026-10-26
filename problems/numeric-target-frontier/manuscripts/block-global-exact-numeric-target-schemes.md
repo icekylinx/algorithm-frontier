@@ -9,11 +9,12 @@ one exact shared setup-plus-assignment budget.
 For an integer target T, exact target feasibility and an actual integer
 witness can be found in
 
-```math
+<!-- math-display: 89daeecfd763adbc1a743126
 \binom qr\exp\bigl(O(r\sqrt{T+1})\bigr)
                      \mathrm{poly}(H+\log(T+1))
        \tag{BQ1}
-```
+-->
+![Formula](../../../assets/math/89daeecfd763adbc1a743126.svg)
 
 time and polynomial binary space. Here an actual rank-r basis of a
 selection matroid chooses the participating blocks from q candidates.
@@ -43,16 +44,18 @@ Coordinate e has nonnegative rational assignment cost c_e. Selecting
 p incurs nonnegative rational setup cost sigma_p. The one exact
 combined budget is
 
-```math
+<!-- math-display: 173bb8c0effe382ac4215748
 \sigma(B)+c x\le C.                  \tag{BQ2}
-```
+-->
+![Formula](../../../assets/math/173bb8c0effe382ac4215748.svg)
 
 In fair allocation, each coordinate has a nonnegative INTEGER value
 v_e, and the objective is
 
-```math
+<!-- math-display: f2ec023236c99b6a6ad19c89
 \max\min_{p\in B}\sum_{e\in E_p}v_e x_e.   \tag{BQ3}
-```
+-->
+![Formula](../../../assets/math/f2ec023236c99b6a6ad19c89.svg)
 
 There are two distinct feasible resource families:
 
@@ -104,10 +107,11 @@ D_1,...,D_m with prescribed nonnegative integer counts h_1,...,h_m.
 Let N=sum_i h_i. The constraints x(D_i)<=h_i define an integral
 partition-count polymatroid K_h, with rank
 
-```math
+<!-- math-display: 1a45ce2826858ffc0bd5aa16
 K_h(S)=\sum_{i:S\cap D_i\ne\varnothing}h_i.
                  \tag{BQ4}
-```
+-->
+![Formula](../../../assets/math/1a45ce2826858ffc0bd5aa16.svg)
 
 Intersect it with the current resource polymatroid. The total is at
 most N. If the intersection cannot attain N, the exact profile is
@@ -136,19 +140,21 @@ At a block, group coordinates with the same positive integer
 auxiliary value a. There is at most one group for each occupied
 positive value. For an integer bound U, a profile satisfies
 
-```math
+<!-- math-display: 49beb56bd512d0ed0593292e
 \sum_{a>0}a h_a\le U.                \tag{BQ5}
-```
+-->
+![Formula](../../../assets/math/49beb56bd512d0ed0593292e.svg)
 
 It injects into an integer partition of total at most U. For U>=1,
 the elementary cumulative partition bound is
 
-```math
+<!-- math-display: fb76b2006939c0e5748d2928
 \#\{h:\text{BQ5}\}
    \le e^{tU}\prod_{j\ge1}(1-e^{-tj})^{-1}
    \le\exp(tU+2/t).
  \tag{BQ6}
-```
+-->
+![Formula](../../../assets/math/fb76b2006939c0e5748d2928.svg)
 
 Set t=1/sqrt(U) to obtain exp(3sqrt(U)). When U=0 there is one
 all-zero positive profile. The product is an analysis device only.
@@ -173,17 +179,19 @@ Discard zero-value coordinates; this is legitimate here because
 resources are optional and assignment costs are nonnegative.
 Credit every remaining coordinate with
 
-```math
+<!-- math-display: f52a551aaa366604c8978af4
 a_e=\min\{v_e,T\}.                \tag{BQ7}
-```
+-->
+![Formula](../../../assets/math/f52a551aaa366604c8978af4.svg)
 
 At each selected block enumerate counts by its occupied credited
 value classes such that
 
-```math
+<!-- math-display: c9ac9fd06e859c29a315bb77
 T\le\sum_{a>0}a h_{p,a}\le2T-1.
                     \tag{BQ8}
-```
+-->
+![Formula](../../../assets/math/c9ac9fd06e859c29a315bb77.svg)
 
 Generate through the upper bound 2T-1 and filter the lower bound
 at completion. Let N be the total prescribed positive count over
@@ -214,9 +222,10 @@ retain its original full allowed rank R and the actual costs.
 Replace each allowed coordinate e by active and passive copies,
 both carrying true cost c_e, with shared resource rank
 
-```math
+<!-- math-display: 9808481c37e4fa4dc391cf66
 F^{\uparrow}(S)=F(\pi(S)).           \tag{BQ9}
-```
+-->
+![Formula](../../../assets/math/9808481c37e4fa4dc391cf66.svg)
 
 For every nonnegative copy vector z, its aggregate
 x_e=z_(e^a)+z_(e^p) is independent exactly when z is independent
@@ -232,9 +241,10 @@ under BQ8. Let N be their global total count. If N>R, reject.
 Put ALL zero-credited coordinates, across every selected block,
 in one global zero group. Prescribe its count to be
 
-```math
+<!-- math-display: 289b22a026d8b699de730879
 h_0=R-N.                     \tag{BQ10}
-```
+-->
+![Formula](../../../assets/math/289b22a026d8b699de730879.svg)
 
 The positive group caps and this one zero-group cap sum to R.
 Apply Section 3 to the lifted resource at total R. Thus each
@@ -268,9 +278,10 @@ processing times above T, and reject any loss of original rank R.
 At each selected machine enumerate exact positive processing-class
 counts with
 
-```math
+<!-- math-display: a4f1710b6c4be8ca5eb1c7da
 \sum_{a>0}a h_{p,a}\le T.             \tag{BQ11}
-```
+-->
+![Formula](../../../assets/math/a4f1710b6c4be8ca5eb1c7da.svg)
 
 Let N be the total positive count. Reject N>R. All zero-time
 coordinates, across all selected machines, form one zero group
@@ -295,19 +306,21 @@ For either fair-allocation model, at T>=1 each selected block
 has at most exp(3sqrt(2T-1)) profiles. Thus the exact target time
 is at most
 
-```math
+<!-- math-display: dc04e78fabe9b250c07eb539
 \binom qr\exp\bigl(3r\sqrt{2T-1}\bigr)
                      \mathrm{poly}(H+\log(T+1)).
        \tag{BQ12}
-```
+-->
+![Formula](../../../assets/math/dc04e78fabe9b250c07eb539.svg)
 
 For scheduling at T>=1 it is at most
 
-```math
+<!-- math-display: d2c1e024f49204672207c3be
 \binom qr\exp\bigl(3r\sqrt T\bigr)
                      \mathrm{poly}(H+\log(T+1)).
        \tag{BQ13}
-```
+-->
+![Formula](../../../assets/math/d2c1e024f49204672207c3be.svg)
 
 Zero targets and original feasibility cost binomial(q,r)*poly(H).
 These bounds include failed selected bases, rank checks, every
@@ -337,9 +350,10 @@ integer utility and load lies on this grid.
 
 Let
 
-```math
+<!-- math-display: 3b8d16fb8a44c862965a8465
 B_*={\mathrm{OPT}}/{g}.            \tag{BQ14}
-```
+-->
+![Formula](../../../assets/math/3b8d16fb8a44c862965a8465.svg)
 
 It is an integer on an originally feasible instance. If no positive
 coefficient exists, the initializer has exact objective zero.
@@ -363,10 +377,11 @@ so the number and encoding length of the target calls are
 polynomial in the original binary input. Consequently exact
 optimization has time
 
-```math
+<!-- math-display: 561e8fa4b256ee42b363b43f
 \binom qr\exp\bigl(O(r\sqrt{B_*+1})\bigr)
                           \mathrm{poly}(H),              \tag{BQ15}
-```
+-->
+![Formula](../../../assets/math/561e8fa4b256ee42b363b43f.svg)
 
 and polynomial binary space. More explicitly, for B_*>=1 the
 fairness exponent in BQ12 is at most 6r sqrt(B_*), and the

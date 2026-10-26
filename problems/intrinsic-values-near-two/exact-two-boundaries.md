@@ -1,7 +1,7 @@
 # Exact factor two at the half-optimum derived corank
 
 The [player-selection theorem](player-selection.md) proves factor
-$`2+\eta`$ in single-exponential time in a derived light-matroid corank.
+<code class="math">2+\eta</code> in single-exponential time in a derived light-matroid corank.
 This manuscript proves three exact-factor-two endpoints in the same
 intrinsic-value model: a polynomial algorithm at corank zero, an XP
 algorithm at any supplied corank budget, and a fixed-parameter algorithm
@@ -11,7 +11,7 @@ problem remains open in this manuscript.
 
 All guarantees below use an actual basis of the original player matroid,
 integral recipient counts, and common intrinsic values. There is no
-assignment or setup budget. The exact threshold is $`\mathrm{OPT}/2`$,
+assignment or setup budget. The exact threshold is <code class="math">\mathrm{OPT}/2</code>,
 rather than the smaller threshold used by the near-two theorem.
 
 ## 1. Definitions and the relevant half-optimum split
@@ -21,11 +21,12 @@ original player matroid M, independent integral recipient
 polymatroids f_j, common nonnegative intrinsic values, and optional
 waste. For a threshold theta, define
 
-```math
+<!-- math-display: ee1b1b12e73f06ce8797238f
 N_\theta=\mathrm{Boolean}\!\left(\sum_{v_j\ge\theta}f_j\right),
         \qquad K_\theta=(M^*\vee N_\theta)^*.
  \tag{X1}
-```
+-->
+![Formula](../../assets/math/ee1b1b12e73f06ce8797238f.svg)
 
 Delete the loops of K_theta, obtaining ground Q_theta and rank
 delta(theta). The derived corank is
@@ -61,10 +62,11 @@ For a surviving fixed basis I, compute an exact workload bound
 without a quota gap. Choose a common positive value quantum g
 and form the integral workload rank
 
-```math
+<!-- math-display: e3ac94fc6bee1e7b94504000
 F(S)=\sum_{j\text{ light}}(v_j/g)f_j(S).
  \tag{X2}
-```
+-->
+![Formula](../../assets/math/e3ac94fc6bee1e7b94504000.svg)
 
 For an integer target ell, membership of ell*1_I in P(F) is
 decided exactly by minimizing F(S)-ell|I intersect S|. Binary
@@ -76,10 +78,11 @@ These operations produce original integral resource vectors. Since
 unused resources are allowed, discard any units outside I. The result is an original light allocation of
 value at least
 
-```math
+<!-- math-display: 65622ec6eb231fda8f7eb506
 g\ell-u_L,
  \tag{X3}
-```
+-->
+![Formula](../../assets/math/65622ec6eb231fda8f7eb506.svg)
 
 where u_L is the largest light value. All these computations are
 polynomial in the input bit length. A fixed-I integer allocation
@@ -90,19 +93,21 @@ At the split theta*=OPT/2, the enumeration contains a promised
 light basis I*. Its workload target is at least OPT, and therefore
 its rounded light value is at least
 
-```math
+<!-- math-display: 3980914319107f91fa210a2c
 \mathrm{OPT}-u_L>\mathrm{OPT}/2.
  \tag{X4}
-```
+-->
+![Formula](../../assets/math/3980914319107f91fa210a2c.svg)
 
 Heavy completion contributes at least OPT/2 to every other
 selected player. Hence, if c(OPT/2)<=k, this algorithm returns an
 exact factor-two allocation in
 
-```math
+<!-- math-display: 21d3486b07393be32764fa08
 (q+1)^k\mathrm{poly}(H)
  \tag{X5}
-```
+-->
+![Formula](../../assets/math/21d3486b07393be32764fa08.svg)
 
 time and polynomial workspace, retaining the same public fallback
 when the condition is absent. Skipping an over-budget split is
@@ -128,11 +133,12 @@ minimum is required there.
 **Theorem.** Fix rational 0<sigma<=1/2. Suppose that at theta*=OPT/2 the largest
 light value obeys
 
-```math
+<!-- math-display: 04db5d3ce22dcb437cebe001
 u_L\le(1/2-\sigma)\mathrm{OPT},
                    \qquad c(\mathrm{OPT}/2)\le k.
  \tag{X6}
-```
+-->
+![Formula](../../assets/math/04db5d3ce22dcb437cebe001.svg)
 
 **Proof.** Run the same split-enumeration and heavy-completion algorithm,
 but use the [additive corank theorem](../unrelated-values-additive/proof.md)
@@ -140,10 +146,11 @@ with epsilon=sigma and zero costs on every processed split. Its
 fractional comparator dominates the promised integral light allocation. At the optimum split, its light output is at
 least
 
-```math
+<!-- math-display: 9896a4c245f6989d390812df
 (1-\sigma)\mathrm{OPT}-u_L\ge\mathrm{OPT}/2.
  \tag{X7}
-```
+-->
+![Formula](../../assets/math/9896a4c245f6989d390812df.svg)
 
 Together with heavy completion this yields exact factor two in
 Gamma(1/sigma)^k poly(H) time and polynomial space. The algorithm
@@ -158,10 +165,11 @@ arbitrarily high binary precision.
 
 At the exact half-optimum split, the additive theorem alone needs
 
-```math
+<!-- math-display: 28160bb7dada8402a8fff025
 \epsilon\le\frac{\mathrm{OPT}/2-u_L}{\mathrm{OPT}}
  \tag{X8}
-```
+-->
+![Formula](../../assets/math/28160bb7dada8402a8fff025.svg)
 
 to guarantee light value at least OPT/2. The right-hand side is
 positive, but its reciprocal need not be polynomial in its binary
@@ -189,14 +197,15 @@ That family need not be a matroid. Consider players a,b,c,d and
 the coverage polymatroid whose underlying resource neighborhoods
 are
 
-```math
+<!-- math-display: de3aac00251d3a3bdfa05235
 \begin{array}{c|c}
  a,b&\{1,2,3,4\}\\
  c&\{1,2,3,5\}\\
  d&\{1,2,3,6\}.
  \end{array}
  \tag{X9}
-```
+-->
+![Formula](../../assets/math/de3aac00251d3a3bdfa05235.svg)
 
 Its rank on a player set is the cardinality of the union of these
 neighborhoods. The set {a,b} can receive two units per player.
@@ -232,10 +241,11 @@ obstruction. If its unit value is v, the new optimum is 2v+delta,
 but any basis with one ordinary unit plus that same private bonus
 has value
 
-```math
+<!-- math-display: 9613d0fbe79f69bbcb657c34
 v+\delta\ge(2v+\delta)/2.
  \tag{X10}
-```
+-->
+![Formula](../../assets/math/9613d0fbe79f69bbcb657c34.svg)
 
 The bonus helps the output as well as the hidden optimum. This
 rules out that particular modification; it does not rule out a

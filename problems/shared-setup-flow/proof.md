@@ -31,29 +31,32 @@ Let B be a family of r-element permitted commodity sets, with
 1<=r<=q, and put c=q-r. Each admitted commodity incurs a nonnegative
 rational setup fee sigma_i. For I in B define
 
-```math
+<!-- math-display: 2091fd5f7247226fe315f22c
 s(I)=\sum_{i\in I}\sigma_i.
  \tag{SF1}
-```
+-->
+![Formula](../../assets/math/2091fd5f7247226fe315f22c.svg)
 
 The fee is charged for membership in I, independently of its routed
 amount. Let w^0_ie>=0 be a rational per-unit routing cost and require
 one shared budget C>=0:
 
-```math
+<!-- math-display: 2cde3dadf9e5d130e70317fe
 s(I)+\sum_{i,e}w^0_{ie}x_{ie}\le C.
  \tag{SF2}
-```
+-->
+![Formula](../../assets/math/2cde3dadf9e5d130e70317fe.svg)
 
 In addition, any explicitly listed polynomial-size collection of
 fixed routing-only constraints is allowed:
 
-```math
+<!-- math-display: 27421087627c7b0368dabf06
 \sum_{i,e}w^h_{ie}x_{ie}\le C_h
                     \quad(1\le h\le m),
                  \qquad w^h_{ie},C_h\ge0.
  \tag{SF3}
-```
+-->
+![Formula](../../assets/math/27421087627c7b0368dabf06.svg)
 
 The original capacities, conservation equations and all these rows
 remain unchanged throughout the algorithm. Unselected commodities
@@ -69,10 +72,11 @@ does not give each direction an independent copy of the capacity.
 
 For every Q subseteq P, assume a polynomial-time oracle computes
 
-```math
+<!-- math-display: d00162f7d64caf112fd7a8d1
 h(Q)=\min\{s(I):I\in\mathcal B,\ I\subseteq Q\}
  \tag{SF4}
-```
+-->
+![Formula](../../assets/math/d00162f7d64caf112fd7a8d1.svg)
 
 and returns an attaining permitted set I_Q, or reports that none
 exists. The value and witness have uniform polynomial encoding.
@@ -98,10 +102,11 @@ Compute h(P) first. If no permitted set exists or h(P)>C, report
 that no legal selected set can satisfy the shared budget, even at
 zero rate. Otherwise the setup-feasible family
 
-```math
+<!-- math-display: a9e5a9dc664867c9a381a95e
 \mathcal B_C=\{I\in\mathcal B:s(I)\le C\}
  \tag{SF5}
-```
+-->
+![Formula](../../assets/math/a9e5a9dc664867c9a381a95e.svg)
 
 is nonempty, and I_P with zero routing is a legal initial output.
 This distinction matters because zero routing does not waive the
@@ -114,10 +119,11 @@ For I in B_C let lambda_I be the maximum common normalized rate
 that its commodities can attain under the original capacities,
 SF2 and SF3. Define
 
-```math
+<!-- math-display: afb412997b070e5b21d644bf
 \Lambda=\max_{I\in\mathcal B_C}\lambda_I.
  \tag{SF6}
-```
+-->
+![Formula](../../assets/math/afb412997b070e5b21d644bf.svg)
 
 The selected set is an actual integral permitted set. Only its
 flows are fractional. Because capacities are finite, demands are
@@ -129,13 +135,14 @@ algorithm either detects that B_C is empty as above or returns a
 permitted set and explicit splittable routing of common rate at
 least
 
-```math
+<!-- math-display: a8c52b6f98e362ed35e2e765
 (1-\epsilon)\Lambda
         \quad\text{in time}\quad
                  \Gamma(1/\epsilon)^c\mathrm{poly}(H),
           \qquad \Gamma(R)=\frac{R^R}{(R-1)^{R-1}},
  \tag{SF7}
-```
+-->
+![Formula](../../assets/math/a8c52b6f98e362ed35e2e765.svg)
 
 using polynomial workspace. Its shared setup-plus-routing cost
 is at most C, every routing-only budget is respected, and no
@@ -151,7 +158,7 @@ and capacities are fixed input data.
 For B_0>=0, let U_(B_0) be the nonnegative normalized service vectors
 z for which there are flows on the original q commodities satisfying
 
-```math
+<!-- math-display: 74e25548f0b9e893e2a8256b
 \begin{aligned}
  B_Gx_i&=d_i z_i(\mathbf1_{s_i}-\mathbf1_{t_i}) &&(i\in P),\\
  \sum_i x_{ie}&\le u_e &&(e\in E),\\
@@ -159,7 +166,8 @@ z for which there are flows on the original q commodities satisfying
  \sum_{i,e}w^h_{ie}x_{ie}&\le C_h &&(1\le h\le m).
  \end{aligned}
  \tag{SF8}
-```
+-->
+![Formula](../../assets/math/74e25548f0b9e893e2a8256b.svg)
 
 B_G is tail-positive. These are bounded explicit rational LPs.
 The regions contain zero, are downward in service, and increase
@@ -171,23 +179,25 @@ applies with SF8's current B_0. For completeness, take nonnegative
 arc lengths ell_e, nonnegative multipliers kappa_0,...,kappa_m,
 and real potentials pi_i satisfying
 
-```math
+<!-- math-display: aa5009efd1de3e6b453fbaf5
 \pi_i(v)-\pi_i(w)
        \le\ell_e+\sum_{h=0}^m\kappa_h w^h_{ie}
                     \quad(e=(v,w)),\qquad
  \pi_i(s_i)-\pi_i(t_i)\ge0.
  \tag{SF9}
-```
+-->
+![Formula](../../assets/math/aa5009efd1de3e6b453fbaf5.svg)
 
 Then the valid packing row has coefficients and capacity
 
-```math
+<!-- math-display: 7d1cb6fa3b004fa43a7d0a7d
 a_i=d_i(\pi_i(s_i)-\pi_i(t_i))\ge0,\qquad
  H_0=\sum_eu_e\ell_e+B_0\kappa_0+
                       \sum_{h=1}^m C_h\kappa_h\ge0,
              \qquad a\cdot z\le H_0.
  \tag{SF10}
-```
+-->
+![Formula](../../assets/math/7d1cb6fa3b004fa43a7d0a7d.svg)
 
 Multiplying conservation by the potentials proves validity.
 Farkas duality gives a strict certificate for every infeasible
@@ -217,10 +227,11 @@ allowed ground Q, let d=|Q|-r. Reject if d<0. Compute h(Q) and
 an attaining I_Q through SF4; reject if no set exists or h(Q)>C.
 Otherwise form the current residual budget
 
-```math
+<!-- math-display: 13774a66f072dfa790560bd8
 B_Q=C-h(Q).
  \tag{SF11}
-```
+-->
+![Formula](../../assets/math/13774a66f072dfa790560bd8.svg)
 
 Query the service vector alpha*T*1_Q in U_(B_Q). If feasible,
 restrict its flows to I_Q and return that attaining set and
@@ -246,21 +257,23 @@ Suppose some permitted I* has a full-T routing satisfying the
 shared budget. Fix that set and routing throughout the proof.
 At every recursive Q containing I*,
 
-```math
+<!-- math-display: 2df6612761da4a8e8be1c374
 h(Q)\le s(I^*),\qquad
                     C-h(Q)\ge C-s(I^*).
  \tag{SF12}
-```
+-->
+![Formula](../../assets/math/2df6612761da4a8e8be1c374.svg)
 
 Its original full-T routing therefore belongs to the current
 U_(B_Q), even though B_Q can change later. For a violated row
 a*z<=H_0 at the weak query alpha*T*1_Q,
 
-```math
+<!-- math-display: 1f05ce552bfc1ced42bbe4b0
 T a(I^*)\le H_0<\alpha T a(Q),
        \qquad a(Q\setminus I^*)>\epsilon a(Q).
  \tag{SF13}
-```
+-->
+![Formula](../../assets/math/1f05ce552bfc1ced42bbe4b0.svg)
 
 The first-crossing argument supplies an enumerated deletion
 certificate contained wholly in Q\I*. Its child retains I*,
@@ -284,10 +297,11 @@ its objective are independent of every queried target.
 
 A convenient uniform finite rate bound is
 
-```math
+<!-- math-display: 6bfd428a192a8154883ba5d6
 V_0=\frac{\sum_{e\in E}u_e}{\min_i d_i}.
  \tag{SF14}
-```
+-->
+![Formula](../../assets/math/6bfd428a192a8154883ba5d6.svg)
 
 For undirected networks the sum is over physical edges. Source
 outflow bounds every normalized rate by V_0. If V_0=0 the legal
@@ -302,10 +316,11 @@ input rationals, whose binary length has a uniform polynomial
 bound. Rowwise denominator clearing and Cramer's rule therefore
 give the known denominator bound
 
-```math
+<!-- math-display: 505d39af04d2d7fc4a8310c3
 D=n_0!\left(2^{(n_0+2)L_0}\right)^{n_0}
  \tag{SF15}
-```
+-->
+![Formula](../../assets/math/505d39af04d2d7fc4a8310c3.svg)
 
 for every exact optimum lambda_I. Its encoding is polynomial.
 Padding smaller formulations by zero-fixed variables handles

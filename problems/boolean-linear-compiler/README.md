@@ -18,19 +18,19 @@ Deterministic compiler with a supplied deterministic indexed-witness Subset Sum 
 
 **Time**
 
-$`T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q-(1-\alpha)B}`$, $`0\le B\le Q`$. Branch count is at most $`\left(\prod_i p_i\right)2^{Q-B}`$, not necessarily equal to that bound.
+<code class="math">T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q-(1-\alpha)B}</code>, <code class="math">0\le B\le Q</code>. Branch count is at most <code class="math">\left(\prod_i p_i\right)2^{Q-B}</code>, not necessarily equal to that bound.
 
 **Space**
 
-If the same backend has writable space $`\mathrm{poly}(L')2^{\sigma N}`$, then $`S_B\le\mathrm{poly}(L)2^{\sigma(n+B)}`$. No space bound is inferred from a time-only backend.
+If the same backend has writable space <code class="math">\mathrm{poly}(L')2^{\sigma N}</code>, then <code class="math">S_B\le\mathrm{poly}(L)2^{\sigma(n+B)}</code>. No space bound is inferred from a time-only backend.
 
 **Parameters**
 
-$`s_i`$ is row support; $`W_i=u_i-\ell_i`$; $`\kappa_i=\min\{W_i+1,5s_i+1\}`$; $`q_i=\lceil\log_2\kappa_i\rceil`$; $`Q=\sum_iq_i`$. Catalogue sizes satisfy $`p_i\le4\lceil\log_2(W_i+1)\rceil+1`$, with $`p_i=1`$ when $`W_i\le5s_i`$. $`L`$ is full binary input length.
+<code class="math">s_i</code> is row support; <code class="math">W_i=u_i-\ell_i</code>; <code class="math">\kappa_i=\min\{W_i+1,5s_i+1\}</code>; <code class="math">q_i=\lceil\log_2\kappa_i\rceil</code>; <code class="math">Q=\sum_iq_i</code>. Catalogue sizes satisfy <code class="math">p_i\le4\lceil\log_2(W_i+1)\rceil+1</code>, with <code class="math">p_i=1</code> when <code class="math">W_i\le5s_i</code>. <code class="math">L</code> is full binary input length.
 
 **Model and representation**
 
-Boolean variables; signed binary coefficients, endpoints, and objectives; a deterministic Subset Sum backend with the stated indexed-witness contract. Exact equalities affect $`L`$ but contribute no slack parameter.
+Boolean variables; signed binary coefficients, endpoints, and objectives; a deterministic Subset Sum backend with the stated indexed-witness contract. Exact equalities affect <code class="math">L</code> but contribute no slack parameter.
 
 **Lower-bound scope**
 
@@ -46,33 +46,33 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 ## Results
 
-**$`B=0`$**
+**<code class="math">B=0</code>**
 
-**Time.** $`\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q}`$
+**Time.** <code class="math">\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q}</code>
 
-**Writable space, when supplied by the backend.** $`\mathrm{poly}(L)2^{\sigma n}`$
+**Writable space, when supplied by the backend.** <code class="math">\mathrm{poly}(L)2^{\sigma n}</code>
 
-**Any $`0\le B\le Q`$**
+**Any <code class="math">0\le B\le Q</code>**
 
-**Time.** $`\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q-(1-\alpha)B}`$
+**Time.** <code class="math">\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha n+Q-(1-\alpha)B}</code>
 
-**Writable space, when supplied by the backend.** $`\mathrm{poly}(L)2^{\sigma(n+B)}`$
+**Writable space, when supplied by the backend.** <code class="math">\mathrm{poly}(L)2^{\sigma(n+B)}</code>
 
-**$`B=Q`$**
+**<code class="math">B=Q</code>**
 
-**Time.** $`\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha(n+Q)}`$
+**Time.** <code class="math">\mathrm{poly}(L)\left(\prod_i p_i\right)2^{\alpha(n+Q)}</code>
 
-**Writable space, when supplied by the backend.** $`\mathrm{poly}(L)2^{\sigma(n+Q)}`$
+**Writable space, when supplied by the backend.** <code class="math">\mathrm{poly}(L)2^{\sigma(n+Q)}</code>
 
 **Fixed number of interval constraints**
 
-**Time.** $`\mathrm{poly}(L)2^{\alpha n}`$
+**Time.** <code class="math">\mathrm{poly}(L)2^{\alpha n}</code>
 
-**Writable space, when supplied by the backend.** $`\mathrm{poly}(L)2^{\sigma n}`$
+**Writable space, when supplied by the backend.** <code class="math">\mathrm{poly}(L)2^{\sigma n}</code>
 
-**Meet-in-the-middle / low-space backend $`\alpha=1/2`$**
+**Meet-in-the-middle / low-space backend <code class="math">\alpha=1/2</code>**
 
-**Time.** $`\mathrm{poly}(L)\left(\prod_i p_i\right)2^{n/2+Q-B/2}`$
+**Time.** <code class="math">\mathrm{poly}(L)\left(\prod_i p_i\right)2^{n/2+Q-B/2}</code>
 
 **Writable space, when supplied by the backend.** Use the space contract of the selected backend
 

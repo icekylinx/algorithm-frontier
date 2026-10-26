@@ -15,37 +15,41 @@ the root agent and an independent proof, including its exact scope.
 
 At a fixed structural state let `R` be the rows, `D` the bins, and let
 
-```math
+<!-- math-display: d3fb3bf1946c6cdb549d8a25
 \sum_{e\ni r}x_e=L,\qquad
  \sum_{e\ni d}x_e+s_d=b_d,
  \qquad b_d=L+p_d-Cw_d.
-```
+-->
+![Formula](../../assets/math/d3fb3bf1946c6cdb549d8a25.svg)
 
 All current allocation and slack values are positive. A feasible comparison
 `(x',s')` is nonnegative and obeys the same equations. Write
 `h=x'-x`, `h_s=s'-s`, and
 
-```math
+<!-- math-display: dc9d2980e829b8e9a0af6d56
 P=\sum_d\frac{(h_{s_d})_+}{s_d},\qquad
  Q_s=\sum_d\frac{(-h_{s_d})_+}{s_d},\qquad
  Q_x=\sum_e\frac{(-h_e)_+}{x_e}.
-```
+-->
+![Formula](../../assets/math/dc9d2980e829b8e9a0af6d56.svg)
 
 The slack gradient and one-sided motion charge are
 
-```math
+<!-- math-display: 199910ac5e2032e7612b59c4
 G=P-Q_s,\qquad
                        \mathcal C=P+Q_s+Q_x.
-```
+-->
+![Formula](../../assets/math/199910ac5e2032e7612b59c4.svg)
 
 The actual matching comparison in a settled state with the promised gap
 has `P>12N`, `Q_s<=N`, and `Q_x<=3N`. Consequently, at `beta=1/4`,
 
-```math
+<!-- math-display: 659217a89ff35e36029111d9
 G-\beta\mathcal C
    =\tfrac34P-\tfrac54Q_s-\tfrac14Q_x
    >9N-\tfrac54N-\tfrac34N=7N.                 \tag{1}
-```
+-->
+![Formula](../../assets/math/659217a89ff35e36029111d9.svg)
 
 This stronger, absolute comparison margin is essential. The certificate is
 allowed to disregard isolated positive-ratio directions that cannot carry
@@ -57,30 +61,33 @@ Use the source graph of the slack-only threshold test. An allocation has a
 zero-cost receiving arc `r -> d` and donor arc `d -> r` of cost `beta/x_e`.
 The source arc to bin `d` has cost
 
-```math
+<!-- math-display: 153ffd449470286d496560e5
 A-(1-\beta)/s_d.
-```
+-->
+![Formula](../../assets/math/153ffd449470286d496560e5.svg)
 
 Let `D(v)` be **any** lower-feasible distance labels, with source label zero:
 each arc `u -> v` of length `c` obeys `D(v)<=D(u)+c`. The labels need not
 equal current shortest distances. Define
 
-```math
+<!-- math-display: 5df9d77b7b7c630b044deded
 \pi_v=A-D(v)
-```
+-->
+![Formula](../../assets/math/5df9d77b7b7c630b044deded.svg)
 
 for ordinary rows and bins. Arc feasibility is precisely
 
-```math
+<!-- math-display: 7a071fab5387cb0ba72a8234
 0\le\pi_d-\pi_r\le\beta/x_e,
  \qquad
  \pi_d\ge(1-\beta)/s_d.                       \tag{2}
-```
+-->
+![Formula](../../assets/math/7a071fab5387cb0ba72a8234.svg)
 
 Rows have zero net allocation change and bins obey
 `sum_(e incident d) h_e + h_(s_d)=0`. Therefore
 
-```math
+<!-- math-display: ac11a25c4b09b74fc7cfafb2
 \begin{aligned}
  \sum_d\pi_d h_{s_d}
   &=-\sum_e\pi_d h_e\\
@@ -88,11 +95,12 @@ Rows have zero net allocation change and bins obey
   &\le\beta Q_x.
 \end{aligned}
 \tag{3}
-```
+-->
+![Formula](../../assets/math/ac11a25c4b09b74fc7cfafb2.svg)
 
 Subtracting this upper bound for the allocation charge yields
 
-```math
+<!-- math-display: 11003eb456e1b2ccfd8b7411
 \begin{aligned}
  G-\beta\mathcal C
  &\le
@@ -105,17 +113,19 @@ Subtracting this upper bound for the allocation charge yields
   \sum_d\big(s_d\pi_d-1-\beta\big)_+.
 \end{aligned}
 \tag{4}
-```
+-->
+![Formula](../../assets/math/11003eb456e1b2ccfd8b7411.svg)
 
 The first sum is nonpositive by (2). The final inequality uses only
 `s'_d>=0`, which gives `(-h_(s_d))_+<=s_d`.
 
 Define
 
-```math
+<!-- math-display: 628730dad8e2864d29b81151
 E(\pi,s)=
                     \sum_d(s_d\pi_d-1-\beta)_+.          \tag{5}
-```
+-->
+![Formula](../../assets/math/628730dad8e2864d29b81151.svg)
 
 Equations (1) and (4) prove the semantic decision:
 
@@ -130,46 +140,51 @@ excesses remains too small to support the required matching comparison.
 
 Fix `beta=1/4` and a polynomial integer scale `H`. Use
 
-```math
+<!-- math-display: 5147a9363da597239e5b03a4
 c_e=\lceil H/(4x_e)\rceil,
  \qquad
  \sigma_d=\lfloor3H/(4s_d)\rfloor,
-```
+-->
+![Formula](../../assets/math/5147a9363da597239e5b03a4.svg)
 
 with receiving cost zero and source cost `A-sigma_d`. Let the integer
 labels `D_int` be feasible for this integer graph and put
 
-```math
+<!-- math-display: d5a91aca749b718944573acc
 \pi_v=(A-D_{\rm int}(v))/H.
-```
+-->
+![Formula](../../assets/math/d5a91aca749b718944573acc.svg)
 
 Then
 
-```math
+<!-- math-display: 51382180a65404192aca5e7e
 0\le\pi_d-\pi_r\le\frac1{4x_e}+\frac1H,
  \qquad
  \pi_d\ge\frac3{4s_d}-\frac1H.                \tag{6}
-```
+-->
+![Formula](../../assets/math/51382180a65404192aca5e7e.svg)
 
 Let `T=sum_d s_d`. Feasibility of the comparison implies
 `sum_d s'_d=T`, because every row retains sum `L` and every bin right-hand
 side remains fixed. Thus
 
-```math
+<!-- math-display: 80d91e1f979ecec88ea3e3ef
 \sum_e(-h_e)_+\le\sum_e x_e=L|R|,
  \qquad
  \sum_d(h_{s_d})_+\le T.                       \tag{7}
-```
+-->
+![Formula](../../assets/math/80d91e1f979ecec88ea3e3ef.svg)
 
 Repeating the preceding calculation with (6) proves
 
-```math
+<!-- math-display: ce92a44354e21499a9c449b1
 G-\tfrac14\mathcal C
        \le E(\pi,s)+\frac{L|R|+T}{H},
  \qquad
  E(\pi,s)=\sum_d(s_d\pi_d-\tfrac54)_+.
                                                         \tag{8}
-```
+-->
+![Formula](../../assets/math/ce92a44354e21499a9c449b1.svg)
 
 No sum of independently encoded rational reciprocals appears in `E`.
 On the existing common dyadic primal grid, every `s_d pi_d` has the same
@@ -181,9 +196,10 @@ word size `O(log S)` with fixed precision constants.
 Choose `H` large enough both for the static detection margin in the main
 slack-only note and for
 
-```math
+<!-- math-display: 1a282b1a00fa658e8955e15d
 (L|R|+T)/H\le N.
-```
+-->
+![Formula](../../assets/math/1a282b1a00fa658e8955e15d.svg)
 
 Then the conservative finite-word decision is
 
@@ -199,10 +215,11 @@ effect is not covered by the fixed-topology statement.
 
 For any potential satisfying (2), replace each row value by
 
-```math
+<!-- math-display: 42a134490db54e5f37cd4043
 \pi_r^{\rm new}
                           =\min_{d\sim r}\pi_d.          \tag{9}
-```
+-->
+![Formula](../../assets/math/42a134490db54e5f37cd4043.svg)
 
 Every old row value is at most this minimum. Raising it to the minimum
 preserves nonnegativity of every difference `pi_d-pi_r` and only decreases
@@ -273,9 +290,10 @@ Every positive tree-arc cost is a donor cost and is nondecreasing. Each
 used source-child cost is nondecreasing. For a non-source-child endpoint,
 `tau_b` is nondecreasing. Consequently
 
-```math
+<!-- math-display: 6fa705b4738f8eb6a8fd8dd3
 A-\tau_b-\mathrm{cost}_{\rm current}(T[z_*,b])
-```
+-->
+![Formula](../../assets/math/6fa705b4738f8eb6a8fd8dd3.svg)
 
 is nonincreasing throughout the epoch. A bin whose old-tree path has failed
 the threshold cannot become acceptable later in that same epoch.

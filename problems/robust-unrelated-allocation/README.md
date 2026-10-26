@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns per-player, per-scenario utility at least $`\max\{0,(1-\varepsilon)\mathrm{FOPT}-u_{\omega,p}\}`$ on one common actual basis. Hence robust minimum utility is at least $`\max\{0,(1-\varepsilon)\mathrm{FOPT}-u\}`$. Every scenario's combined setup and assignment budget remains exact.
+Returns per-player, per-scenario utility at least <code class="math">\max\{0,(1-\varepsilon)\mathrm{FOPT}-u_{\omega,p}\}</code> on one common actual basis. Hence robust minimum utility is at least <code class="math">\max\{0,(1-\varepsilon)\mathrm{FOPT}-u\}</code>. Every scenario's combined setup and assignment budget remains exact.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic common-basis selection and exact-budget rounding in each listed sc
 
 **Time**
 
-$`\Gamma(1/\varepsilon)^c\mathrm{poly}(H)`$. For fixed rational $`\varepsilon`$, the whole-ground alternative is $`\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)`$.
+<code class="math">\Gamma(1/\varepsilon)^c\mathrm{poly}(H)</code>. For fixed rational <code class="math">\varepsilon</code>, the whole-ground alternative is <code class="math">\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)</code>.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$`c=q-r`$; $`0<\varepsilon<1`$ is rational; $`u_{\omega,p}=\max_j v_{\omega,p,j}`$; $`u=\max_{\omega,p}u_{\omega,p}`$. $`\mathrm{FOPT}`$ maximizes over one actual common basis and relaxes only scenario assignment counts. $`\Gamma(R)=R^R/(R-1)^{R-1}`$ and $`E(q)=2^{O(q\log\log(q+2)/\log(q+2))}`$.
+<code class="math">c=q-r</code>; <code class="math">0&lt;\varepsilon&lt;1</code> is rational; <code class="math">u_{\omega,p}=\max_j v_{\omega,p,j}</code>; <code class="math">u=\max_{\omega,p}u_{\omega,p}</code>. <code class="math">\mathrm{FOPT}</code> maximizes over one actual common basis and relaxes only scenario assignment counts. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code> and <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>.
 
 **Model and representation**
 
@@ -40,6 +40,6 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md).
 
-$`\mathrm{FOPT}`$ is one comparator name, not a product of an unspecified factor and integer $`\mathrm{OPT}`$. The proof retains all fractional coordinates needed by that comparator, including pairs whose full-unit cost exceeds a positive budget.
+<code class="math">\mathrm{FOPT}</code> is one comparator name, not a product of an unspecified factor and integer <code class="math">\mathrm{OPT}</code>. The proof retains all fractional coordinates needed by that comparator, including pairs whose full-unit cost exceeds a positive budget.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

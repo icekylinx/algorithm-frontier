@@ -1,0 +1,12 @@
+{
+  "name": "algorithm-frontier-math-assets",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline SVG equation generation; not a solver dependency",
+  "dependencies": {
+    "mathjax-full": "3.2.2"
+  },
+  "overrides": {
+    "@xmldom/xmldom": "0.9.12"
+  }
+}

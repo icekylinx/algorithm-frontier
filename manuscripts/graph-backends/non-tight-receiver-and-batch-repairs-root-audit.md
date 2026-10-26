@@ -78,9 +78,10 @@ delta<=A-sigma_u-D_u for u in S. A shifted donor bin covers a row
 rise of at most delta automatically. For an unshifted donor v, each
 shifted neighboring bin u requires exactly
 
-```math
+<!-- math-display: 6256c3c11c6552f7bbef547b
 \delta\le D_v+\bar c_{rv}-D_u.
-```
+-->
+![Formula](../../assets/math/6256c3c11c6552f7bbef547b.svg)
 
 These are all constraints, proving necessity and sufficiency. Since
 row degree is at most three, O(vol(S)) touched records suffice to

@@ -9,8 +9,8 @@
           "id": "subset-sum-fast-deterministic",
           "title": "Faster deterministic Subset Sum",
           "result": "Exact decision and indexed witness",
-          "quantity": "$C+\\mathrm{poly}(n,L)2^{0.495890734n}$; exact rational exponent on the card",
-          "scope": "Exact rational certification of all 44 continuous contact branches; C is finite input-independent circuit precomputation; combinatorial compiler and bit-cost proofs are in the manuscript",
+          "quantity": "$C+\\mathrm{poly}(n,L)2^{0.495836n}$; exact rational exponent on the card",
+          "scope": "Exact rational certification of all 62 continuous contact branches, followed by a finite-volume cone improvement; C is finite input-independent circuit precomputation; combinatorial compiler and bit-cost proofs are in the manuscript",
           "randomness": "Deterministic exact algorithm in the uniform bit model, including indexed-witness recovery and input-independent deterministic circuit construction; no probability of error."
         },
         {
@@ -53,8 +53,8 @@
           "id": "general-matching",
           "title": "Deterministic general-graph maximum matching",
           "result": "Executable exact solver, independent certificates and a faster conditional research theorem",
-          "quantity": "Executable $O(n+m\\log(m+2)+\\sum_i k_i^3)$ including certificates; conditional research bound $O(n+m)+(m_s+1)\\exp(O((\\log(m_s+2))^{4/5}(\\log\\log(m_s+4))^{1/5}))$",
-          "scope": "The reference solver uses only the Python standard library; k_i counts retained kernel vertices in component i. The faster research bound still requires an unimplemented deterministic cycle-search and edge-retirement data structure. Its precise operations and published prerequisites are listed with the proof.",
+          "quantity": "Executable $O(n+m\\log(m+2)+\\sum_i\\nu(G_i)^3)$ including certificates; conditional research bound $O(n+m)+(m_s+1)\\exp(O((\\log(m_s+2))^{4/5}(\\log\\log(m_s+4))^{1/5}))$",
+          "scope": "The reference solver uses only the Python standard library; nu(G_i) is the matching number of component i. A cover-based compression limits blossom search to at most four times that number. The faster research bound still requires an unimplemented deterministic cycle-search and edge-retirement data structure, with named published prerequisites",
           "randomness": "Deterministic executable solver and certificate verification. The faster research composition additionally requires the deterministic cycle-search implementation and named published primitives in the source map."
         },
         {
@@ -146,9 +146,9 @@
         {
           "id": "matroid-failure-summaries",
           "title": "Matroid and submodular failure summaries",
-          "result": "Sharp represented cost-prefix and oracle-rank summaries; weighted oracle endpoint and obstruction",
-          "quantity": "Represented prefixes and oracle rank: $r\\binom{h+d}{d}$; integral range $R$: $R\\binom{h+d}{d}$; sharp one-failure weighted oracle size $(d+1)r$",
-          "scope": "Uniform polynomial represented construction; explicit oracle FPT construction with linear input dependence for fixed parameters. General weighted oracle prefixes have the larger W–LF bound; a 13-item nonrepresentable example rules out the sharp binomial bound from two failures onward.",
+          "result": "Sharp represented and rank summaries; exact two-failure rank-four oracle maximum",
+          "quantity": "Represented prefixes and oracle rank: $r\\binom{h+d}{d}$; two failed labels and one label per item: sharp $3r$ through rank three, exactly 13 at rank four",
+          "scope": "Rank is r, failed-label budget is h, and each item has at most d labels. Represented preprocessing is uniform polynomial; arbitrary-oracle prefix construction uses a deterministic canonical-basis tree. The 13-item nonrepresentable example is minimal in rank, label count and ground size for exceeding 3r under two failures.",
           "randomness": "Deterministic exact constructions. Random permutations and Bernoulli failures appear only in output-size proofs; no query sampling or probability of error."
         },
         {

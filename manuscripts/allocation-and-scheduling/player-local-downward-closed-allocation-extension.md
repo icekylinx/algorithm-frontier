@@ -18,43 +18,44 @@ as specified below.
 
 ## 1. Model and the required oracle
 
-There is a player matroid $`M`$ of rank $`r`$ on a set $`P`$ of
-$`q`$ players, a finite explicit resource set $`E`$, and common
-nonnegative intrinsic values $`v_e`$. Write $`u=\max_e v_e`$,
-with $`u=0`$ when the resource set is empty.
-Player $`p`$ may receive any bundle in a nonempty downward-closed
-family $`\mathcal F_p\subseteq2^E`$. Resources are still indivisible
+There is a player matroid <code class="math">M</code> of rank <code class="math">r</code> on a set <code class="math">P</code> of
+<code class="math">q</code> players, a finite explicit resource set <code class="math">E</code>, and common
+nonnegative intrinsic values <code class="math">v_e</code>. Write <code class="math">u=\max_e v_e</code>,
+with <code class="math">u=0</code> when the resource set is empty.
+Player <code class="math">p</code> may receive any bundle in a nonempty downward-closed
+family <code class="math">\mathcal F_p\subseteq2^E</code>. Resources are still indivisible
 and may be allocated to at most one selected player. The selected
-players must form a basis of $`M`$.
+players must form a basis of <code class="math">M</code>.
 
 Rank zero is the trivial empty allocation. All formulas containing
-$`1/r`$ below assume $`r\ge1`$.
+<code class="math">1/r</code> below assume <code class="math">r\ge1</code>.
 
-For a currently available resource set $`A\subseteq E`$, assume
+For a currently available resource set <code class="math">A\subseteq E</code>, assume
 access to an oracle returning a bundle
 
-```math
+<!-- math-display: 63f4189088a0aae9fb1e2445
 \mathcal O_p(A)\in\mathrm{arg}\,\max\{v(C): C\subseteq A,
                                       C\in\mathcal F_p\}.
  \tag{D1}
-```
+-->
+![Formula](../../assets/math/63f4189088a0aae9fb1e2445.svg)
 
 Only the fixed common intrinsic objective and available-set
 restrictions are needed. The theorem counts these oracle calls and
 does not assume that an arbitrary downward-closed family has a
 polynomial-time implementation of (D1).
 
-The main explicit specialization is a separate item matroid $`N_p`$
-for each player, with $`\mathcal F_p=\mathcal I(N_p)`$. Restricting
-that matroid to $`A`$ and running weighted greedy implements (D1)
-using $`O(|E|)`$ independence queries. Different players may have
+The main explicit specialization is a separate item matroid <code class="math">N_p</code>
+for each player, with <code class="math">\mathcal F_p=\mathcal I(N_p)</code>. Restricting
+that matroid to <code class="math">A</code> and running weighted greedy implements (D1)
+using <code class="math">O(&#124;E&#124;)</code> independence queries. Different players may have
 different item matroids. Loops encode unacceptable resources.
 
 ## 2. The perspective relaxation
 
-Use the following relaxation, denoted $`L(T)`$:
+Use the following relaxation, denoted <code class="math">L(T)</code>:
 
-```math
+<!-- math-display: 26bb7162c90f74d1afe3173d
 \begin{split}
  &x\in P_{\mathcal B(M)},\\
  &y_p\in x_p\mathrm{conv}
@@ -63,11 +64,12 @@ Use the following relaxation, denoted $`L(T)`$:
  &\sum_e v_e y_{pe}\ge T x_p\quad(p\in P).
  \end{split}
  \tag{D2}
-```
+-->
+![Formula](../../assets/math/26bb7162c90f74d1afe3173d.svg)
 
-At $`x_p=0`$, the second line means $`y_p=0`$. The matroid
+At <code class="math">x_p=0</code>, the second line means <code class="math">y_p=0</code>. The matroid
 specialization uses a scaled matroid independence polytope. It implies
-the individual bounds $`0\le y_{pe}\le x_p`$, but retains the
+the individual bounds <code class="math">0\le y_{pe}\le x_p</code>, but retains the
 additional constraints needed for player-local bundle feasibility.
 
 No feasible point of (D2) is needed as an input to the algorithm.
@@ -76,22 +78,23 @@ No feasible point of (D2) is needed as an input to the algorithm.
 
 The current matching, selected layers, blockers and player eligibility
 are exactly as in the audited current-blocker algorithm. To search a
-last layer with forbidden physical resource set $`F`$, run (D1) on
-$`E\setminus F`$ for each eligible player.
+last layer with forbidden physical resource set <code class="math">F</code>, run (D1) on
+<code class="math">E\setminus F</code> for each eligible player.
 
-If an oracle returns value at least $`B`$, remove resources while
-the remaining value stays at least $`B`$. Every deletion preserves
-membership in $`\mathcal F_p`$. A single deletion scan suffices,
+If an oracle returns value at least <code class="math">B</code>, remove resources while
+the remaining value stays at least <code class="math">B</code>. Every deletion preserves
+membership in <code class="math">\mathcal F_p</code>. A single deletion scan suffices,
 because the remaining value only decreases. The resulting bundle is
-inclusion-minimal above $`B`$ and is a legal bundle for this player.
+inclusion-minimal above <code class="math">B</code> and is a legal bundle for this player.
 If no eligible player succeeds, maximality means exactly
 
-```math
+<!-- math-display: e2a0f84b395b0528dba8eeee
 \max\{v(C):C\subseteq E\setminus F,
                   C\in\mathcal F_p\}<B
                      \quad(p\text{ eligible}).
  \tag{D3}
-```
+-->
+![Formula](../../assets/math/e2a0f84b395b0528dba8eeee.svg)
 
 All matching and selected bundles remain individually feasible for
 their owners. Repeated selected player names are permitted, just as
@@ -100,36 +103,39 @@ to one player.
 
 ## 4. The strict fractional outside-value bound
 
-Fix a feasible point of (D2) and an eligible player with $`x_p>0`$.
-Express $`y_p/x_p`$ as a convex combination of indicators of
-feasible bundles. Intersect each bundle with $`E\setminus F`$.
-By downward closure the intersection remains feasible for $`p`$.
+Fix a feasible point of (D2) and an eligible player with <code class="math">x_p&gt;0</code>.
+Express <code class="math">y_p/x_p</code> as a convex combination of indicators of
+feasible bundles. Intersect each bundle with <code class="math">E\setminus F</code>.
+By downward closure the intersection remains feasible for <code class="math">p</code>.
 Thus (D3) implies
 
-```math
+<!-- math-display: 530a0c1037a8874fe253e3ac
 \sum_{e\notin F}v_e y_{pe}<Bx_p.
  \tag{D4}
-```
+-->
+![Formula](../../assets/math/530a0c1037a8874fe253e3ac.svg)
 
-Assume $`B\le T`$, as in all guarantees below. The eligible
+Assume <code class="math">B\le T</code>, as in all guarantees below. The eligible
 player mass is at least
-$`w=r-|I\setminus\mathrm{owners}(Y_{<i})|>0`$.
+<code class="math">w=r-&#124;I\setminus\mathrm{owners}(Y_{&lt;i})&#124;&gt;0</code>.
 Summing (D4), using the target constraints and physical resource
 capacities, gives the same strict lower bound
 
-```math
+<!-- math-display: 7d6d1ad5bf9e1180c4c23e94
 v(F)>(T-B)w.
  \tag{D5}
-```
+-->
+![Formula](../../assets/math/7d6d1ad5bf9e1180c4c23e94.svg)
 
-Consequently an independent $`J_0`$, a physical resource set $`F`$,
-oracle-verified inequalities (D3) outside $`\mathrm{cl}(J_0)`$,
+Consequently an independent <code class="math">J_0</code>, a physical resource set <code class="math">F</code>,
+oracle-verified inequalities (D3) outside <code class="math">\mathrm{cl}(J_0)</code>,
 and
 
-```math
+<!-- math-display: a35a3f1828bfda85938c58dd
 v(F)\le(T-B)(r-|J_0|)
  \tag{D6}
-```
+-->
+![Formula](../../assets/math/a35a3f1828bfda85938c58dd.svg)
 
 certify infeasibility of (D2). Verification of the available-bundle
 claims is relative to the stated exact oracle. For an item matroid,
@@ -137,7 +143,7 @@ weighted greedy supplies an explicit polynomial verification.
 
 ## 5. All exchange and star arguments survive
 
-The earliest-circuit exchange only uses the player matroid $`M`$,
+The earliest-circuit exchange only uses the player matroid <code class="math">M</code>,
 current physical disjointness and the feasibility of the one candidate
 being inserted. The latter now follows from (D1) and downward closure.
 It introduces no new blocker of a retained selected bundle, because
@@ -147,135 +153,139 @@ literally unchanged. Last-layer-only refresh and old-free-center
 cascades therefore apply without modification.
 
 Minimality supplies the same star estimates. Deleting a resource is
-always legal, so a selected bundle has value below $`B+u`$, and a
-blocker's value outside its unique selected center is below $`B`$.
+always legal, so a selected bundle has value below <code class="math">B+u</code>, and a
+blocker's value outside its unique selected center is below <code class="math">B</code>.
 The sharper singleton/non-singleton argument also remains valid:
 
-```math
+<!-- math-display: a77a0c889f7c658d2d5f5bc4
 v(F)\le C(B,u)|Y|,
  \qquad C(B,u)=\max\{u,2B+\min(u,B)\}.
  \tag{D7}
-```
+-->
+![Formula](../../assets/math/a77a0c889f7c658d2d5f5bc4.svg)
 
-A singleton center with value at least $`B`$ has an identical
+A singleton center with value at least <code class="math">B</code> has an identical
 singleton matching blocker. The common intrinsic value is essential
 here: the same physical resource has the same value in both bundles.
 With unrelated player-specific values the resource-union and star
 equalities used by this proof need not hold.
 
 Therefore every guarantee in the sharp rank-quality note holds with
-$`Q(T)`$ replaced by (D2). In particular
+<code class="math">Q(T)</code> replaced by (D2). In particular
 
-```math
+<!-- math-display: 61ae6d98cd99bb61158e22b5
 B+\frac{r-1}{r}C(B,u)\le T
  \tag{D8}
-```
+-->
+![Formula](../../assets/math/61ae6d98cd99bb61158e22b5.svg)
 
 is sufficient for the exact rank-exponential algorithm. Positive
 slack gives the same rank-quasipolynomial alternative.
 
 ## 6. Work and identity accounting
 
-An available-bundle scan uses at most $`q`$ calls to (D1), in
+An available-bundle scan uses at most <code class="math">q</code> calls to (D1), in
 addition to the player-matroid independence queries. Returned bundles
-are explicit subsets of $`E`$, and pruning needs only a linear
+are explicit subsets of <code class="math">E</code>, and pruning needs only a linear
 value scan. Resource-owner tables, current blockers, selected-owner
 pointers, phase resets and the finite integer signature are unchanged.
 
 All ordinary work per charged microstate is polynomial in
-$`q,|E|,r`$ and the rational input bit length. At most polynomially
+<code class="math">q,&#124;E&#124;,r</code> and the rational input bit length. At most polynomially
 many maximum-bundle oracle calls are used per state. The count of
 charged states is
 
-```math
+<!-- math-display: 2df14fa98cb863c7b2fc74c3
 \min\!\left\{2^{O(r)},
        (r+1)^{O(\varepsilon^{-1}\log(r+1))}\right\}
  \tag{D9}
-```
+-->
+![Formula](../../assets/math/2df14fa98cb863c7b2fc74c3.svg)
 
-for positive slack, and $`2^{O(r)}`$ on the exact boundary. This
+for positive slack, and <code class="math">2^{O(r)}</code> on the exact boundary. This
 is a polynomial full-input multiplier, not an assertion that querying
-$`q`$ unrelated item-matroid oracles is free or linear in a smaller
+<code class="math">q</code> unrelated item-matroid oracles is free or linear in a smaller
 implicit description. The allocation wrapper uses polynomial space,
 in addition to the workspace of its supplied or implemented oracles.
 
 ## 7. Arbitrary item sizes via the same matroid-union wrapper
 
-Classify resources of value at least $`\theta T`$ as fat. Keep the
-bipartite player-fat edge $`(p,e)`$ only if
-$`\{e\}\in\mathcal F_p`$. This singleton condition follows
-automatically from any feasible bundle containing $`e`$, but must
-be enforced when constructing the fat transversal matroid $`N`$.
-It can be tested by (D1) on $`\{e\}`$, or by an item-matroid
-singleton query. Let $`U=M^*\vee N`$.
+Classify resources of value at least <code class="math">\theta T</code> as fat. Keep the
+bipartite player-fat edge <code class="math">(p,e)</code> only if
+<code class="math">\{e\}\in\mathcal F_p</code>. This singleton condition follows
+automatically from any feasible bundle containing <code class="math">e</code>, but must
+be enforced when constructing the fat transversal matroid <code class="math">N</code>.
+It can be tested by (D1) on <code class="math">\{e\}</code>, or by an item-matroid
+singleton query. Let <code class="math">U=M^*\vee N</code>.
 
 The forward optimum promise is unchanged: each fat-supplied optimum
 player can keep one permitted fat singleton, and all other surviving
 players keep their feasible all-small bundles. Complementing an
-extended $`U`$-basis gives a feasible all-small allocation for a
-$`U^*`$-basis. The derived rank is at most $`r`$.
+extended <code class="math">U</code>-basis gives a feasible all-small allocation for a
+<code class="math">U^*</code>-basis. The derived rank is at most <code class="math">r</code>.
 
 The reverse construction returns either a small bundle in
-$`\mathcal F_p`$ or a permitted fat singleton. Extending the dual
+<code class="math">\mathcal F_p</code> or a permitted fat singleton. Extending the dual
 part may discard some supplied players. Downward closure and deleting
 whole allocations preserve validity for every retained player.
 
-With $`\theta=1/(4-3/r)`$, the special-case inner proof from the
+With <code class="math">\theta=1/(4-3/r)</code>, the special-case inner proof from the
 fat-resource note uses only (D5), the star estimate and
-$`u<\theta T`$. It therefore gives an exact factor
-$`4-3/r`$ in rank-exponential time and factor
-$`4-3/r+\eta`$ in rank-quasipolynomial time with the same dependence
-on $`\eta`$. The target-grid binary search and all union/dual
+<code class="math">u&lt;\theta T</code>. It therefore gives an exact factor
+<code class="math">4-3/r</code> in rank-exponential time and factor
+<code class="math">4-3/r+\eta</code> in rank-quasipolynomial time with the same dependence
+on <code class="math">\eta</code>. The target-grid binary search and all union/dual
 oracle costs are paid as in that note. This is a guarantee relative
 to integer optimum with arbitrary item sizes.
 
 ### 7.1 Configuration-LP comparison
 
 The stronger comparator also extends. Let a configuration LP use
-variables $`z_{pC}`$ for $`C\in\mathcal F_p`$ with
-$`v(C)\ge T`$, physical item capacities, and player masses
-$`x_p=\sum_Cz_{pC}`$ in the base polytope of $`M`$.
+variables <code class="math">z_{pC}</code> for <code class="math">C\in\mathcal F_p</code> with
+<code class="math">v(C)\ge T</code>, physical item capacities, and player masses
+<code class="math">x_p=\sum_Cz_{pC}</code> in the base polytope of <code class="math">M</code>.
 Choose one fat item from each fat-containing configuration. Their
-fractional mass $`f`$ belongs to the valid-fat transversal matroid
-polytope. The vector $`1-x+f\le1`$ belongs to the union polytope
+fractional mass <code class="math">f</code> belongs to the valid-fat transversal matroid
+polytope. The vector <code class="math">1-x+f\le1</code> belongs to the union polytope
 and can be increased to a union-base vector. Complementing gives a
-derived base vector $`x'\le h=x-f`$.
+derived base vector <code class="math">x'\le h=x-f</code>.
 
-The marginals of all-small configurations, divided by $`h_p`$ when
+The marginals of all-small configurations, divided by <code class="math">h_p</code> when
 positive, are a convex combination of feasible small bundles for
-$`p`$. Multiplying those marginals by $`x'_p/h_p`$ preserves
-physical capacities and gives exactly a point of (D2) for $`U^*`$.
-When $`h_p=0`$, also $`x'_p=0`$, and the new marginal is zero.
+<code class="math">p</code>. Multiplying those marginals by <code class="math">x'_p/h_p</code> preserves
+physical capacities and gives exactly a point of (D2) for <code class="math">U^*</code>.
+When <code class="math">h_p=0</code>, also <code class="math">x'_p=0</code>, and the new marginal is zero.
 Thus the fat wrapper can be compared to this configuration LP as
 well, without receiving a feasible LP solution as input.
 
 This does not extend the wrapper to an arbitrary feasible point of
 the original unrestricted-size perspective relaxation (D2); the
 configuration split uses configurations individually worth at least
-$`T`$.
+<code class="math">T</code>.
 
 ## 8. A concrete resource-side consequence: explicit transversal resources
 
-Suppose resource $`j`$ has intrinsic value $`v_j`$ and may be
+Suppose resource <code class="math">j</code> has intrinsic value <code class="math">v_j</code> and may be
 assigned once to each of a set of players independent in a resource-
-specific transversal matroid $`R_j`$. Assume that $`R_j`$ is
-given by an explicit bipartite representation: a slot set $`L_j`$
+specific transversal matroid <code class="math">R_j</code>. Assume that <code class="math">R_j</code> is
+given by an explicit bipartite representation: a slot set <code class="math">L_j</code>
 and edges from players to permitted slots. Different resources have
 disjoint slot sets.
 
-Replace every slot $`s\in L_j`$ by a physical item of value
-$`v_j`$. For player $`p`$, allow only adjacent slots and impose
+Replace every slot <code class="math">s\in L_j</code> by a physical item of value
+<code class="math">v_j</code>. For player <code class="math">p</code>, allow only adjacent slots and impose
 the partition-matroid condition
 
-```math
+<!-- math-display: 4efd1ebe1b8c8057a25bef41
 |C\cap L_j|\le1\quad\text{for every }j.
  \tag{D10}
-```
+-->
+![Formula](../../assets/math/4efd1ebe1b8c8057a25bef41.svg)
 
 This is an item matroid of the type already covered above. Any slot
-allocation produces, for each $`j`$, a matching between its
+allocation produces, for each <code class="math">j</code>, a matching between its
 receiving players and distinct slots, so the receiving set is
-independent in $`R_j`$. Conversely every independent receiving set
+independent in <code class="math">R_j</code>. Conversely every independent receiving set
 has such a matching and hence an equivalent slot allocation. Values
 are preserved exactly. The per-player condition (D10) is necessary:
 omitting it would allow a player to count the same service repeatedly.
@@ -295,8 +305,8 @@ avoids expansion when the ordinary copy multiplicities are very large.
 
 For comparison, Bamas--Lindermayr--Megow--Rohwedder--Schl\"oter,
 *Santa Claus meets Makespan and Matroids*, arXiv:2307.08453v1,
-Theorem 4, states polynomial-time $`8+\varepsilon`$ for arbitrary
-resource matroids/polymatroids and $`4+\varepsilon`$ for two values:
+Theorem 4, states polynomial-time <code class="math">8+\varepsilon</code> for arbitrary
+resource matroids/polymatroids and <code class="math">4+\varepsilon</code> for two values:
 <https://arxiv.org/abs/2307.08453>.
 The same-model comparison is recorded in
 [item-matroid-allocation-public-scope-audit.md](item-matroid-allocation-public-scope-audit.md). In particular, the

@@ -10,7 +10,8 @@ Deterministic exact algorithm in the uniform bit model, including indexed-witnes
 
 **Time**
 
-$`C+\mathrm{poly}(n,L)2^{En}`$, where $`E=158153814247997/318928754919134\approx0.4958907336157183<0.495891`$.
+<code class="math">C+\mathrm{poly}(n,L)2^{0.495836n}</code> bit operations. The [proof](proof.md)
+gives the slightly smaller exact rational exponent.
 
 **Space**
 
@@ -18,7 +19,7 @@ No separate writable-space exponent is asserted for this algorithm.
 
 **Parameters**
 
-$`n`$ is the item count; $`L`$ is the complete binary input length; $`C`$ is a finite input-independent circuit-construction cost, with no practical bound claimed.
+<code class="math">n</code> is the item count; <code class="math">L</code> is the complete binary input length; <code class="math">C</code> is a finite input-independent circuit-construction cost, with no practical bound claimed.
 
 **Model and representation**
 
@@ -30,7 +31,7 @@ No lower bound is claimed.
 
 **Review status**
 
-**Ready for review in the stated scope.** The refined parameter and compiler-allowance update in Part II, Sections 6–7: the retyped initial difference-table bound, exact reflected-profile budget, and all nine outer cost rates. The new scalar tuple was independently recalculated against the existing compiler lemmas.
+**Ready for review in the stated scope.** Part II parameter composition: the generalized second lookup, its exact 62-branch replay and 44-branch compatibility, the finite-volume cone lemma and compiler allowance, the continuous reflected-profile envelope, and all nine outer cost rates. The scalar tuple was independently recalculated.
 
 **Conditions and remaining work.** The arbitrary-input signed-circuit compiler and witness reduction remain mathematical manuscript proofs; the numerical certificates do not formalize them. The deterministic startup constant is finite and input-independent but has no practical numerical bound.
 
@@ -43,15 +44,17 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 ## Numerical certificates
 
 The [continuous-domain checker](../../tools/verify_subset_sum_contacts.py)
-reconstructs every branch of the refined contact menu. Its complete run
-accepted 188,227 rationally bounded leaves and proved the two empty recursive
+reconstructs all 62 branches of the refined contact menu, including the
+new second-lookup fraction `14/25`. Its complete run
+accepted 248,189 rationally bounded leaves and proved the two empty recursive
 domains. The [scalar checker](../../tools/verify_subset_sum_scalars.py)
-then verifies the reflected profile and every outer running-time inequality.
+then checks all 160 endpoint comparisons for the continuous contact/chord/cone
+envelope and every outer running-time inequality.
 The [verification note](verify/README.md) explains the acceptance proof,
-the exact scopes of the three programs, and the [full-run receipt](verify/receipt.json).
+the exact scopes of the programs, and the [full-run receipt](verify/receipt.json).
 
 The older baseline exponent
-$`149809813343531/301754962128739<0.4964618056`$ is retained as a background
+<code class="math">149809813343531/301754962128739&lt;0.4964618056</code> is retained as a background
 conditional composition with its own historical contact premise. The refined
 theorem above uses the newly reconstructed menu directly and does not depend
 on an older contact receipt.

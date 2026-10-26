@@ -26,11 +26,12 @@ required. All positive statements below have complete proofs.
 Let M be a matroid of rank r on a finite set P. Let f be a normalized,
 monotone, integer-valued submodular function on P, and write
 
-```math
+<!-- math-display: 78af663d55df5651ef1e6bfd
 P(f)=\{z\in\mathbb R_{\ge0}^{P}: z(S)\le f(S)
                          \text{ for every }S\subseteq P\}.
  \tag{C1}
-```
+-->
+![Formula](../../assets/math/78af663d55df5651ef1e6bfd.svg)
 
 The player matroid is supplied by rank or independence queries, and
 f is supplied by value queries. Numerical ranks and quotas are binary
@@ -42,10 +43,11 @@ bit lengths of oracle answers.
 Delete every loop of M, and restrict f to the remaining ground set.
 Call the resulting loopless ground set P again, put q=|P|, and define
 
-```math
+<!-- math-display: 9e60828c7a3240aa36b3eccd
 c=q-r.
  \tag{C2}
-```
+-->
+![Formula](../../assets/math/9e60828c7a3240aa36b3eccd.svg)
 
 Loop deletion is harmless: every basis already avoids these elements;
 an independent vector on the restricted resource extends by zero to
@@ -61,27 +63,30 @@ even on an input without a t-unit basis.
 **Theorem C.** Write Gamma(R)=R^R/(R-1)^(R-1) for R>1. Such a
 deterministic gap algorithm exists with at most
 
-```math
+<!-- math-display: 96e57751126c62f941520454
 (c+1)\Gamma\!\left(\frac{t}{t-b}\right)^c
  \tag{C3}
-```
+-->
+![Formula](../../assets/math/96e57751126c62f941520454.svg)
 
 computation nodes, counting even candidate deletions rejected by a
 rank test. Each node uses polynomially many input-oracle operations and
 polynomial-bit arithmetic. Consequently its running time is
 
-```math
+<!-- math-display: 0751fadf7268983f92d0a86a
 \Gamma\!\left(\frac{t}{t-b}\right)^c\mathrm{poly}(H)
        \le\left(\frac{et}{t-b}\right)^c\mathrm{poly}(H),
  \tag{C4}
-```
+-->
+![Formula](../../assets/math/0751fadf7268983f92d0a86a.svg)
 
 and it can use polynomial workspace. For t=4 and b=2 this is
 
-```math
+<!-- math-display: 48791315eeaedae5ef13b876
 4^c\mathrm{poly}(H).
  \tag{C5}
-```
+-->
+![Formula](../../assets/math/48791315eeaedae5ef13b876.svg)
 
 The principal batch procedure and the complete proof of (C3)--(C5)
 are in the batch-refinement note. It sets
@@ -100,28 +105,31 @@ contraction of f.
 Suppose S subseteq Q violates the b-unit assignment to every element
 of Q:
 
-```math
+<!-- math-display: 83ac39f6463cc981ddf42e44
 f(S)<b|S|.
  \tag{C6}
-```
+-->
+![Formula](../../assets/math/83ac39f6463cc981ddf42e44.svg)
 
 If I* subseteq Q is a t-unit M-basis, then
 
-```math
+<!-- math-display: bc153a532eb513bfb4eb34bb
 |S\setminus I^*|\le |Q\setminus I^*|=d,
  \qquad
  t(|S|-d)\le t|S\cap I^*|\le f(S)<b|S|.
  \tag{C7}
-```
+-->
+![Formula](../../assets/math/bc153a532eb513bfb4eb34bb.svg)
 
 Therefore every deficient set on a promised instance satisfies
 
-```math
+<!-- math-display: 3e1f68f3cb33de8dc7f24fb9
 (t-b)|S|<td,
  \qquad
  |S|\le\left\lceil\frac{td}{t-b}\right\rceil-1.
  \tag{C8}
-```
+-->
+![Formula](../../assets/math/3e1f68f3cb33de8dc7f24fb9.svg)
 
 The inequality is strict, which matters at the boundary. For t=4,
 b=2 the bound is |S|<=2d-1. For b=ceil(t/2) and t>=2, it is at most
@@ -169,11 +177,12 @@ independent, hence so is its subvector b*1_I. If the original input
 had deleted loops or the recursion deleted other elements, zero
 extension is valid because for any original set A,
 
-```math
+<!-- math-display: a961f6d2aeeb14ab44f27ac4
 b|I\cap A|=b|I\cap(A\cap Q)|
                   \le f(A\cap Q)\le f(A).
  \tag{C9}
-```
+-->
+![Formula](../../assets/math/a961f6d2aeeb14ab44f27ac4.svg)
 
 It remains to prove that FAILURE is a sound certificate against the
 t-unit promise. We prove this by induction on d.
@@ -200,19 +209,21 @@ stronger target t impossible.
 
 At corank d, the guard permits at most
 
-```math
+<!-- math-display: f7cb4305206742271cd1ec21
 B_d=\left\lceil\frac{td}{t-b}\right\rceil-1
  \tag{C10}
-```
+-->
+![Formula](../../assets/math/f7cb4305206742271cd1ec21.svg)
 
 children, and every child has corank d-1. If r>0 and d>=1, B_d>=1.
 The total number of nodes is at most
 
-```math
+<!-- math-display: f7b12d40b4bf590b69c690d2
 1+B_c+B_cB_{c-1}+\cdots+\prod_{i=1}^{c}B_i
                    \le(c+1)\prod_{i=1}^{c}B_i.
  \tag{C11}
-```
+-->
+![Formula](../../assets/math/f7b12d40b4bf590b69c690d2.svg)
 
 Writing R=t/(t-b)>1, one has B_i<Ri, so this one-deletion product is
 at most R^c c!. In the critical four-to-two case it is the odd double
@@ -244,17 +255,19 @@ optimization is not required for the theorem.
 For completeness, an output quota of one can be handled without the
 gap recursion. The integral polytope
 
-```math
+<!-- math-display: 94c64865c29c6254c1b531b0
 P(f)\cap[0,1]^P
  \tag{C12}
-```
+-->
+![Formula](../../assets/math/94c64865c29c6254c1b531b0.svg)
 
 is a matroid independence polytope, with rank function
 
-```math
+<!-- math-display: 12e5730c169e1ca78ef51197
 r_f(S)=\min_{A\subseteq S}\{f(A)+|S\setminus A|\}.
  \tag{C13}
-```
+-->
+![Formula](../../assets/math/12e5730c169e1ca78ef51197.svg)
 
 Its rank and independence queries are implemented by paid
 deterministic submodular minimization. Matroid intersection with M
@@ -268,25 +281,28 @@ continuous rounding is hidden here.
 
 Assume r>=1 and define
 
-```math
+<!-- math-display: 59ae7d6d2d42db990318f73b
 K^*=\max\{K\in\mathbb Z_{\ge0}:\text{an M-basis }I
                                      \text{ has }K1_I\in P(f)\}.
  \tag{C14}
-```
+-->
+![Formula](../../assets/math/59ae7d6d2d42db990318f73b.svg)
 
 At target K>=2, invoke Theorem C with
 
-```math
+<!-- math-display: ea2b06f7c790c0abdabd5038
 t=K,\qquad b=\lceil K/2\rceil.
  \tag{C15}
-```
+-->
+![Formula](../../assets/math/ea2b06f7c790c0abdabd5038.svg)
 
 The denominator K-b=floor(K/2) is positive and
 
-```math
+<!-- math-display: 7c0f4c26592e364dd9b6e658
 \frac{K}{K-b}\le3.
  \tag{C16}
-```
+-->
+![Formula](../../assets/math/7c0f4c26592e364dd9b6e658.svg)
 
 At K=1 use the exact one-unit algorithm. Use the batch version of
 Theorem C at all larger targets. Since Gamma is increasing and
@@ -296,10 +312,11 @@ in time (27/4)^c poly(H).
 
 To optimize, note the explicit upper bound
 
-```math
+<!-- math-display: d146b92a5476ca00e37a8ddd
 K^*\le U_0=\lfloor f(P)/r\rfloor.
  \tag{C17}
-```
+-->
+![Formula](../../assets/math/d146b92a5476ca00e37a8ddd.svg)
 
 Keep an integer lower index L=0 with an arbitrary basis of value
 zero, and an upper index U=U_0+1 certified to exceed K*. Query an
@@ -309,10 +326,11 @@ exceeds K* and L has a recorded successful output. When U=L+1,
 integrality gives L>=K*. This search does not assume that success is
 monotone. Its output therefore has value at least
 
-```math
+<!-- math-display: c31197c2d03d5826c322f391
 \lceil K^*/2\rceil.
  \tag{C18}
-```
+-->
+![Formula](../../assets/math/c31197c2d03d5826c322f391.svg)
 
 The number of queries is O(log(U_0+2)), which is polynomial in H.
 If K*=0, the zero-quota basis is an adequate output. The r=0 problem
@@ -323,11 +341,12 @@ assigning a finite value to a minimum over no selected players.
 and arbitrary integral recipient polymatroid has a deterministic
 factor-two algorithm in
 
-```math
+<!-- math-display: 05499c5e4de3b9da41b0540b
 (27/4)^c\mathrm{poly}(H)
                           =2^{O(c)}\mathrm{poly}(H)
  \tag{C19}
-```
+-->
+![Formula](../../assets/math/05499c5e4de3b9da41b0540b.svg)
 
 time and polynomial workspace, where c is the loop-deleted player
 corank. Several unit-value resource types may first be aggregated

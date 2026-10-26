@@ -63,15 +63,17 @@ selected donor price is needed by this DP.
 
 The identities
 
-```math
+<!-- math-display: 52b5a5f771554a192f628700
 w_D=x-\ell,\quad w_R=2\ell-x,\quad w_D+w_R=\ell
-```
+-->
+![Formula](../../assets/math/52b5a5f771554a192f628700.svg)
 
 and
 
-```math
+<!-- math-display: 376df1490520042810aa07f3
 g_D=x-\chi,\quad g_R=U-x,\quad g_D+g_R=U-\chi
-```
+-->
+![Formula](../../assets/math/376df1490520042810aa07f3.svg)
 
 are exact. If a transfer traverses the edge as a donor, the first state in
 each pair decreases by `eta` and the second increases. For a receiving
@@ -109,9 +111,10 @@ of that exposed path.
 At a reported edge, the point query pushes the needed lazy tags and
 recovers one exact `x`. Resetting `ell=3x/4` gives
 
-```math
+<!-- math-display: 78da1e7c2955c41c1539d740
 w_D=x/4>0,\qquad w_R=x/2>0.
-```
+-->
+![Formula](../../assets/math/78da1e7c2955c41c1539d740.svg)
 
 The reset does not modify the guard buffers, since it does not modify
 `x`. It does modify the one donor cost. The note correctly updates both
@@ -155,9 +158,10 @@ the same edge alternates roles over its lifetime.
 
 The source inequality at the terminal follows from
 
-```math
+<!-- math-display: 954bf22d2f267a0ef594c874
 D(b)\le D(a)+\bar L_F(a,b)<A-\tau_b.
-```
+-->
+![Formula](../../assets/math/954bf22d2f267a0ef594c874.svg)
 
 The imported finite-grid step and rounding allowance pay the ensuing
 source-price change. The start's source cost increases, and the usual
@@ -183,9 +187,10 @@ guard-range ledger.
 
 Consequently the existing bound
 
-```math
+<!-- math-display: 54bf7c186d7b533b6903a7e7
 R=O\bigl(J+(N+A_{\rm ext})\log S\bigr)
-```
+-->
+![Formula](../../assets/math/54bf7c186d7b533b6903a7e7.svg)
 
 remains valid independently of the number `P` of supplied physical
 repairs. Each numerical step, supplied link/cut, extra query, and reported

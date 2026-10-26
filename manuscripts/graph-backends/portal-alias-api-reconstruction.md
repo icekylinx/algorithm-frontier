@@ -468,21 +468,23 @@ repricing, because there is no numerical repricing of retained alias
 records. A physical endpoint move alone does not change their labels.
 Its effect on legal auxiliary routes is already in that transcript.
 
-**Lemma 2 (raw correction comparison).** Suppose the retained subgraph $`H`$ has a fixed route $`\Pi(e)`$ for every edge $`e`$, identity on $`H`$, with literal route length at most $`\rho\ell_e`$, where $`\rho\ge1`$. Suppose its recursive oracle returns a literal certificate whose ratio is within a factor $`\alpha\ge1`$ of the optimum net-circulation ratio on $`H`$. The better of that answer and all corrections $`e-\Pi(e)`$ has raw ratio at least the parent optimum divided by $`3\alpha\rho`$.
+**Lemma 2 (raw correction comparison).** Suppose the retained subgraph <code class="math">H</code> has a fixed route <code class="math">\Pi(e)</code> for every edge <code class="math">e</code>, identity on <code class="math">H</code>, with literal route length at most <code class="math">\rho\ell_e</code>, where <code class="math">\rho\ge1</code>. Suppose its recursive oracle returns a literal certificate whose ratio is within a factor <code class="math">\alpha\ge1</code> of the optimum net-circulation ratio on <code class="math">H</code>. The better of that answer and all corrections <code class="math">e-\Pi(e)</code> has raw ratio at least the parent optimum divided by <code class="math">3\alpha\rho</code>.
 
-**Proof.** Let $`c`$ be a parent circulation and put $`y=\Pi c`$. Then $`y`$ is a circulation on $`H`$ and
-```math
+**Proof.** Let <code class="math">c</code> be a parent circulation and put <code class="math">y=\Pi c</code>. Then <code class="math">y</code> is a circulation on <code class="math">H</code> and
+<!-- math-display: 2ce2d37bbbb8bbbb36feff58
 c=y+\sum_{e\notin H}c_e(e-\Pi(e)),
 \qquad
 \|\ell y\|_1\le\rho\|\ell c\|_1.
-```
-The correction for $`e`$ has raw denominator at most $`(1+\rho)\ell_e`$. If $`R`$ is the best returned raw ratio, oracle quality gives $`|g^\top y|\le\alpha R\|\ell y\|_1`$, and each correction numerator is at most its raw denominator times $`R`$. Hence
-```math
+-->
+![Formula](../../assets/math/2ce2d37bbbb8bbbb36feff58.svg)
+The correction for <code class="math">e</code> has raw denominator at most <code class="math">(1+\rho)\ell_e</code>. If <code class="math">R</code> is the best returned raw ratio, oracle quality gives <code class="math">&#124;g^\top y&#124;\le\alpha R\&#124;\ell y\&#124;_1</code>, and each correction numerator is at most its raw denominator times <code class="math">R</code>. Hence
+<!-- math-display: 64f960b1377772ce328e2e3e
 |g^\top c|
 \le R\bigl(\alpha\rho+1+\rho\bigr)\|\ell c\|_1
 \le3\alpha\rho R\|\ell c\|_1.
-```
-This also covers a zero $`y`$ or a correction with zero numerator. Taking the supremum over $`c`$ proves the claim. No cancellation is used to reduce a returned raw denominator. ∎
+-->
+![Formula](../../assets/math/64f960b1377772ce328e2e3e.svg)
+This also covers a zero <code class="math">y</code> or a correction with zero numerator. Taking the supremum over <code class="math">c</code> proves the claim. No cancellation is used to reduce a returned raw denominator. ∎
 
 For an alias e outside H use the actual correction walk
 `e - Pi(e)` and the denominator `lambda_e + length(Pi(e))`. The

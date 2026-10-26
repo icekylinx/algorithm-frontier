@@ -27,17 +27,19 @@ There are q explicit players and a player-selection matroid M of rank r.
 For each resource type j, a normalized, monotone, integer-valued submodular
 function
 
-```math
+<!-- math-display: 14df7085da58931b6758f20b
 f_j:2^P\longrightarrow\mathbb Z_{\ge0}
-```
+-->
+![Formula](../../assets/math/14df7085da58931b6758f20b.svg)
 
 is supplied by a value oracle. A nonnegative integral recipient-count
 vector n_.j is legal if
 
-```math
+<!-- math-display: 13c3388bb2a852e48c3661ff
 n_.j(S)\le f_j(S)\quad\text{for every }S\subseteq P.
  \tag{P1}
-```
+-->
+![Formula](../../assets/math/13c3388bb2a852e48c3661ff.svg)
 
 Each unit of type j has common rational intrinsic value v_j>=0. The
 output selects a basis I of M and gives its players legal count vectors,
@@ -46,10 +48,11 @@ allowed. All counts and oracle values are binary encoded.
 
 Optionally, each player has a type-symmetric downward-closed family
 
-```math
+<!-- math-display: cc3fb0e009c75821dbd897a3
 \mathcal F_p\subseteq\prod_j\{0,\ldots,f_j(\{p\})\}.
  \tag{P2}
-```
+-->
+![Formula](../../assets/math/cc3fb0e009c75821dbd897a3.svg)
 
 For any integer availability vector A in this box, a paid deterministic
 oracle returns n in F_p, n<=A, with value at least lambda times the best
@@ -62,18 +65,20 @@ oracle simply returns A. Put tau=1/lambda and rho=(r-1)/r.
 For r>=1, define d=tau+4rho. There is a deterministic algorithm with
 integer-optimum approximation factor
 
-```math
+<!-- math-display: e6aa6cbf51bea5296b2997f7
 \boxed{d\quad\text{in }2^{O(r)}\mathrm{poly}(H),}
  \tag{P3}
-```
+-->
+![Formula](../../assets/math/e6aa6cbf51bea5296b2997f7.svg)
 
 or, for a positive rational accuracy parameter eta, factor d+eta in
 
-```math
+<!-- math-display: 19ba27823ffd46080095e7e3
 \boxed{\mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.}
  \tag{P4}
-```
+-->
+![Formula](../../assets/math/19ba27823ffd46080095e7e3.svg)
 
 H includes the explicit player/type input, all numerical bit lengths,
 recipient value-oracle and submodular-minimization work, player-matroid
@@ -96,18 +101,20 @@ by a larger one. This conceptual matroid is never explicitly constructed.
 
 For a set W with block counts z_p, its rank is
 
-```math
+<!-- math-display: 0d0b3f65fa0f7f23fe8877cd
 R(z)=\min_{S\subseteq P}\{f(S)+z(P\setminus S)\}.
  \tag{P5}
-```
+-->
+![Formula](../../assets/math/0d0b3f65fa0f7f23fe8877cd.svg)
 
 One proof uses box restriction of an integral polymatroid: the largest
 sum of a vector h in P(f), 0<=h<=z, is the right side of (P5).
 The box-restricted rank function is
 
-```math
+<!-- math-display: ad6d926ed48a6419608e82bf
 f_z(A)=\min_{S\subseteq A}\{f(S)+z(A\setminus S)\},
-```
+-->
+![Formula](../../assets/math/ad6d926ed48a6419608e82bf.svg)
 
 which is normalized, monotone, integral and submodular, and satisfies
 P(f_z)=P(f) intersect [0,z]. These facts and their uncrossing proof are
@@ -129,19 +136,21 @@ matching groups and X the selected records.
 
 For resource j, define the reserved multiplicity vector
 
-```math
+<!-- math-display: 718e46264cecee5c6ad1c51a
 z^j_p=\sum_{c\in X:p(c)=p}n^c_j
              +\sum_{b\in Y:p(b)=p}n^b_j.
  \tag{P6}
-```
+-->
+![Formula](../../assets/math/718e46264cecee5c6ad1c51a.svg)
 
 For a candidate owner p, replace coordinate p of z^j by f_j({p}),
 obtaining z^(j,p). Its available count of type j is
 
-```math
+<!-- math-display: 485bfba1b02cb87530b8eb49
 A_{pj}=R_j(z^{(j,p)})-R_j(z^j).
  \tag{P7}
-```
+-->
+![Formula](../../assets/math/485bfba1b02cb87530b8eb49.svg)
 
 This is a nonnegative integer. It is at most f_j({p})-z^j_p.
 Conceptually, it is r(W_j union E_pj)-r(W_j): the rank of the player's
@@ -151,10 +160,11 @@ All unused copies in a player block are symmetric. Consequently, for
 any 0<=a<=A_pj, an arbitrary a-element subset C of E_pj outside W_j
 satisfies
 
-```math
+<!-- math-display: d5a0d5d6d7b4e1cc6cf83fb3
 r(W_j\cup C)=r(W_j)+a.
  \tag{P8}
-```
+-->
+![Formula](../../assets/math/d5a0d5d6d7b4e1cc6cf83fb3.svg)
 
 For completeness, in (P5) partition the minimizers into those containing
 p and those not containing p. Increasing z_p by a changes their two
@@ -208,11 +218,12 @@ record vectors give exactly the same rank and availability queries.
 
 For every subset Z of selected records and each resource j, maintain
 
-```math
+<!-- math-display: 068ff82df4ad2b8ba77fcadd
 Q_j(Z)=\sum_{b\in\mathcal M\setminus D(Z)}n^b_j e_{p(b)}
                  +\sum_{c\in Z}n^c_j e_{p(c)}\in P(f_j).
  \tag{P9}
-```
+-->
+![Formula](../../assets/math/068ff82df4ad2b8ba77fcadd.svg)
 
 This is an invariant for every actual subset Z. The algorithm never
 enumerates or tests those subsets.
@@ -267,10 +278,11 @@ No assertion about current actual recipient circuits is used.
 Let J be the current eligibility base and w=r-r_M(J)>0. Suppose a
 completed scan finds no available bundle of value B. Define
 
-```math
+<!-- math-display: 2718dc3c2a8e2fb6463890cc
 \Phi=\sum_j v_j R_j(z^j).
  \tag{P10}
-```
+-->
+![Formula](../../assets/math/2718dc3c2a8e2fb6463890cc.svg)
 
 Assume an integer target allocation of value at least T exists on a
 basis I* of M. Let E=I*\cl_M(J). Then |E|>=w. Restrict that allocation
@@ -280,31 +292,34 @@ For each resource, contract the conceptual reserved set W_j and group
 the remaining service copies by player. The resulting integral
 polymatroid rank function is
 
-```math
+<!-- math-display: e074f0f169e4f22712edf8df
 g_j(S)=r_j(W_j\cup E_{S,j})-r_j(W_j).
  \tag{P11}
-```
+-->
+![Formula](../../assets/math/e074f0f169e4f22712edf8df.svg)
 
 It satisfies g_j({p})=A_pj and
 
-```math
+<!-- math-display: 15bf51c85e95861a3ddcc78c
 g_j(S)\ge f_j(S)-R_j(z^j),
  \tag{P12}
-```
+-->
+![Formula](../../assets/math/15bf51c85e95861a3ddcc78c.svg)
 
 since r_j(W_j union E_S,j)>=r_j(E_S,j)=f_j(S).
 
 Box restriction of g_j by the integral vector n*_.j gives an integral
 vector h_.j<=n*_.j, h_.j in P(g_j), with
 
-```math
+<!-- math-display: 2dd0150658de7b6fe298e165
 \begin{split}
  h_.j(P)
  &=\min_{S\subseteq P}\{g_j(S)+n*_.j(P\setminus S)\}\\
  &\ge n*_.j(P)-R_j(z^j).
  \end{split}
  \tag{P13}
-```
+-->
+![Formula](../../assets/math/2dd0150658de7b6fe298e165.svg)
 
 The last inequality uses n*_.j(S)<=f_j(S). Thus at most R_j(z^j)
 units of that resource have been removed. This vector is needed only
@@ -316,11 +331,12 @@ By the failed approximate-oracle scan, its value is strictly below
 tau B. The original value was at least T. Summing the lost value,
 and using (P13), proves
 
-```math
+<!-- math-display: 14aca7b11ff4dcfe8325ed1a
 \Phi>(T-\tau B)|E|\ge(T-\tau B)w
        \qquad\text{when }\tau B\le T.
  \tag{P14}
-```
+-->
+![Formula](../../assets/math/14aca7b11ff4dcfe8325ed1a.svg)
 
 This is the required strict lower cover inequality. It uses an integer
 optimal basis, not fractional player masses. Replacing this proof by
@@ -334,20 +350,22 @@ minimal B-bundle has value below B+u, where u is the maximum positive
 unit value. Stable designated groups are disjoint and nonempty, so
 |X|<=|Y|. Therefore
 
-```math
+<!-- math-display: 5dea0a278e2b0b9b66138015
 \Phi\le 2(B+u)|Y|.
  \tag{P15}
-```
+-->
+![Formula](../../assets/math/5dea0a278e2b0b9b66138015.svg)
 
 For relevant-only completion, each designated blocker shares a used
 type, hence a common unit value, with its center. The existing singleton
 and nonsingleton star argument gives the sharper coefficient
 
-```math
+<!-- math-display: ba9adce7eecece201a393d39
 C_R(B,u)=\max\{2u,\,2B+2\min(u,B)\},\qquad
                          \Phi\le C_R(B,u)|Y|.
  \tag{P16}
-```
+-->
+![Formula](../../assets/math/ba9adce7eecece201a393d39.svg)
 
 A center consisting of one unit of value at least B has only one-unit
 minimal blockers. Otherwise every unit in it is below B; any sharing
@@ -358,18 +376,20 @@ For a phase with k<r matched players and s earlier blockers,
 w=r-k+s and s/w<=rho. Consequently an empty completed new layer is a
 valid certificate of nonexistence of an integer target-T allocation if
 
-```math
+<!-- math-display: b9ad613ea9d5fbb24645ffa7
 \tau B+\rho C_R(B,u)\le T,
  \tag{P17}
-```
+-->
+![Formula](../../assets/math/b9ad613ea9d5fbb24645ffa7.svg)
 
 or if its coarse counterpart using 2(B+u) holds. For a positive gap
 Delta=T-tau B-rho C_R, use growth
 
-```math
+<!-- math-display: f5fefa0949af515312848cbd
 |Y_i|>\gamma(r-k+|Y_{<i}|),\qquad
  \gamma=\min\{1/2,\Delta/(2C_R)\}.
-```
+-->
+![Formula](../../assets/math/f5fefa0949af515312848cbd.svg)
 
 The old micro-signature (-|X_1|,|Y_1|,...,infinity) strictly decreases
 at every charged action. Completion, one-record earliest exchanges,
@@ -385,10 +405,11 @@ Set d=tau+4rho and B0=T/d. A resource type is fat if its unit value
 is at least B0. For each fat type j, cap its recipient polymatroid
 coordinatewise by one. This is a matroid N_j with rank
 
-```math
+<!-- math-display: 11d043b149f1af22c61747c0
 r_{N_j}(S)=\min_{A\subseteq S}\{f_j(A)+|S\setminus A|\}.
  \tag{P18}
-```
+-->
+![Formula](../../assets/math/11d043b149f1af22c61747c0.svg)
 
 Restrict its ground set to players for whom one unit of type j is
 locally feasible. Testing a positive-factor feasible oracle on e_j
@@ -417,16 +438,18 @@ downward-closed feasibility. If r'=0, only this reconstruction is needed.
 
 At B=B0 and u<B0, the coarse condition holds because
 
-```math
+<!-- math-display: eeebfc0590f46cdc7518df54
 \tau B0+2\rho_{r'}(B0+u)\le(\tau+4\rho)B0=T.
-```
+-->
+![Formula](../../assets/math/eeebfc0590f46cdc7518df54.svg)
 
 For eta>0 retain the same fat threshold and put B=T/(d+eta). With
 Cbar=2(B+B0),
 
-```math
+<!-- math-display: bb1437af275aa6152e80b916
 T-\tau B-\rho Cbar=(\tau+2\rho)(B0-B).
-```
+-->
+![Formula](../../assets/math/bb1437af275aa6152e80b916.svg)
 
 Since tau+2rho>=d/2, the same uniform choice
 gamma=min(eta,1)/64 as in the recipient-matroid proof is valid. This
@@ -459,19 +482,21 @@ If all units have value one and the search quota is an integer b>=1,
 every minimal bundle has exactly b units. Thus the coarse current cover
 improves to Phi<=2b|Y|. The direct sufficient condition is
 
-```math
+<!-- math-display: ed543c428e095a629fbbf631
 (1+2\rho)b\le T.
  \tag{P19}
-```
+-->
+![Formula](../../assets/math/ed543c428e095a629fbbf631.svg)
 
 With the exact available oracle and an integral target t, every failed
 available residual value is at most b-1. The proof of (P14) then gives
 Phi>=(t-b+1)w. A sufficient strict contradiction is
 
-```math
+<!-- math-display: 8db5bd6c935ede688cc2ddae
 (1+2\rho)b<t+1.
  \tag{P20}
-```
+-->
+![Formula](../../assets/math/8db5bd6c935ede688cc2ddae.svg)
 
 These are quota guarantees. They do not automatically assert a uniform
 3-2/r multiplicative approximation after rounding b to an integer. For

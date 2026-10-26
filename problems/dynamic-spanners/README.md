@@ -16,7 +16,7 @@ Both displayed spanner constructions are deterministic conditional on the stated
 
 **Time**
 
-Tracked-terminal construction: total initialization/update work $`(n+m_0+I+D)\exp(O(U^{4/5}h^{1/5}))`$; full-horizon construction: $`(n+m_0+I+D)\exp(O(U^{5/6}h^{1/6}))`$.
+Tracked-terminal construction: total initialization/update work <code class="math">(n+m_0+I+D)\exp(O(U^{4/5}h^{1/5}))</code>; full-horizon construction: <code class="math">(n+m_0+I+D)\exp(O(U^{5/6}h^{1/6}))</code>.
 
 **Space**
 
@@ -48,13 +48,13 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 ## Two recourse regimes
 
-Write $`M=n+m_0+I+D`$ and $`E_a=\exp(O(U^a h^{1-a}))`$.
+Write <code class="math">M=n+m_0+I+D</code> and <code class="math">E_a=\exp(O(U^a h^{1-a}))</code>.
 
-**Tracked original terminals.** Stretch $`E_{4/5}`$, current edges
-$`nE_{4/5}`$, total work $`ME_{4/5}`$, and total output recourse $`ME_{4/5}`$.
+**Tracked original terminals.** Stretch <code class="math">E_{4/5}</code>, current edges
+<code class="math">nE_{4/5}</code>, total work <code class="math">ME_{4/5}</code>, and total output recourse <code class="math">ME_{4/5}</code>.
 
-**Full-horizon construction.** Stretch $`E_{5/6}`$, current edges
-$`nE_{5/6}`$, total work $`ME_{5/6}`$, and total output recourse $`(n+D)E_{5/6}`$.
+**Full-horizon construction.** Stretch <code class="math">E_{5/6}</code>, current edges
+<code class="math">nE_{5/6}</code>, total work <code class="math">ME_{5/6}</code>, and total output recourse <code class="math">(n+D)E_{5/6}</code>.
 
 Both conclusions depend on the named flat-forest hierarchy. The full-horizon construction removes cumulative insertions from output recourse, so neither construction dominates the other in every displayed quantity.
 

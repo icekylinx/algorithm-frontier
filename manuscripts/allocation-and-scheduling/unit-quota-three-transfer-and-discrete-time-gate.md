@@ -41,10 +41,11 @@ with its t designated blockers has the following current rank charge.
 
 Telescoping over ordered prefixes therefore gives
 
-```math
+<!-- math-display: 04612728b76a94c3eacf2c64
 \Phi\le (2b-1)u\,|Y|.
  \tag{U1}
-```
+-->
+![Formula](../../assets/math/04612728b76a94c3eacf2c64.svg)
 
 This saving uses the current normalized dependence. It is not a birth
 charge carried through shrinking blocker groups.
@@ -57,35 +58,38 @@ scan at quota b has maximum available value at most (b-1)u for each
 eligible player. The recipient-polymatroid contraction-loss lemma then
 gives
 
-```math
+<!-- math-display: dfb5c3210772e0e14f73e986
 \Phi\ge(k-b+1)u\,w,
  \qquad w=r-|I\setminus\mathrm{owners}(Y_{<i})|.
  \tag{U2}
-```
+-->
+![Formula](../../assets/math/dfb5c3210772e0e14f73e986.svg)
 
 The same non-strict lower bound follows directly from the fractional
 cover proof in the one-service recipient-matroid model. Write
 rho=(r-1)/r. At an empty last blocker layer, (U1) is at most
 rho(2b-1)u w. Consequently the sufficient exact condition is
 
-```math
+<!-- math-display: 3e00c8c2c6324e7861394ebb
 \boxed{\quad k-b+1>\rho(2b-1),\quad}
  \qquad\text{equivalently}\qquad
  (3-2/r)b<k+1+\rho.
  \tag{U3}
-```
+-->
+![Formula](../../assets/math/3e00c8c2c6324e7861394ebb.svg)
 
 The inequality is strict because (U2) is non-strict. It must not be
 replaced by a non-strict inequality at this exact integer boundary.
 Since multiplication by r makes both sides integral, the largest
 certified integer quota is
 
-```math
+<!-- math-display: cbc78a9677cb12bcb1b9e943
 b_r(k)=\left\lfloor
                        \frac{rk+2r-2}{3r-2}
                      \right\rfloor.
  \tag{U3a}
-```
+-->
+![Formula](../../assets/math/cbc78a9677cb12bcb1b9e943.svg)
 
 Indeed, the strict condition is (3r-2)b<rk+2r-1, equivalent to
 (3r-2)b<=rk+2r-2. This refinement is used in the finite-rank scheduling
@@ -93,10 +97,11 @@ curves in [two-size-makespan-private-slack-deficiency.md](two-size-makespan-priv
 Under (U3), the existing signature algorithm returns a b-unit basis,
 or correctly certifies that no k-unit basis exists, in
 
-```math
+<!-- math-display: c234ef243743dbe2330f84df
 2^{O(r)}\mathrm{poly}(H).
  \tag{U4}
-```
+-->
+![Formula](../../assets/math/c234ef243743dbe2330f84df.svg)
 
 All submodular minimization, numerical work, and binary count operations
 are included in H. No number of expanded service units occurs in the
@@ -108,11 +113,12 @@ Set b=ceil(k/3). Then (U3) holds for every finite r.
 To check the only potentially tight residue, write k=3a+1. Then
 b=a+1 and
 
-```math
+<!-- math-display: 3b1abf5f95cec1ca33395993
 (k-b+1)-\rho(2b-1)
        =(2a+1)(1-\rho)>0.
  \tag{U5}
-```
+-->
+![Formula](../../assets/math/3b1abf5f95cec1ca33395993.svg)
 
 For k=3a and k=3a+2, the gap is larger. Thus the small-unit problem
 has a deterministic factor-three algorithm in (U4). Its output is
@@ -140,10 +146,11 @@ Its rank r' is at most r. The r'=0 case needs only the fat decomposition.
 Every optimum player not supplied by a fat resource has an all-small
 bundle with at least
 
-```math
+<!-- math-display: 7137376e3f328a235a5d3cbd
 k=\lceil T/u\rceil
  \tag{U6}
-```
+-->
+![Formula](../../assets/math/7137376e3f328a235a5d3cbd.svg)
 
 units. Therefore the derived small instance has the k-unit integer
 promise. Run Section 3 and give its selected players b=ceil(k/3)
@@ -153,10 +160,11 @@ original player basis.
 The small-supplied players obtain b u>=T/3. Fat-supplied players obtain
 a. Hence, whenever
 
-```math
+<!-- math-display: c4074fc5f8f1d07721e2d729
 T\le3a,
  \tag{U7}
-```
+-->
+![Formula](../../assets/math/c4074fc5f8f1d07721e2d729.svg)
 
 the result supplies at least T/3 to every output player, in
 2^{O(r')}poly(H) time. The inner value b u is allowed to exceed a:
@@ -196,11 +204,12 @@ retained expected value at most (b-1)u x_p. If all configurations
 have at least k units, summing their lost values over eligible players
 and applying the residual cuts proves
 
-```math
+<!-- math-display: 621bebf5977ad8a47bb6a2aa
 \Phi\ge(k-b+1)u\,x(E)
                                \ge(k-b+1)u\,w.
  \tag{U2R}
-```
+-->
+![Formula](../../assets/math/621bebf5977ad8a47bb6a2aa.svg)
 
 This is exactly (U2), so the strict integer quota condition (U3),
 the factor-three rank-exponential result, and the large-quota
@@ -221,38 +230,42 @@ is asserted or used. The discrete small-quota time boundary in Section
 
 Let 0<eta<=1, d=3-2/r, and select
 
-```math
+<!-- math-display: f6997c16a47e1df7af6c1515
 b=\left\lceil\frac{k}{d+\eta}\right\rceil.
  \tag{U8}
-```
+-->
+![Formula](../../assets/math/f6997c16a47e1df7af6c1515.svg)
 
 The normalized cover coefficient is C=2b-1 units. Its slack is
 
-```math
+<!-- math-display: b455ada7fde7846c3a5df3d9
 \begin{split}
  \Delta&=k-b+1-\rho(2b-1)\\
        &=k+1+\rho-db\\
        &\ge\frac{k\eta}{d+\eta}-\rho.
  \end{split}
  \tag{U9}
-```
+-->
+![Formula](../../assets/math/b455ada7fde7846c3a5df3d9.svg)
 
 If
 
-```math
+<!-- math-display: 4bb3be6e18f40ba190d4e07b
 k\ge\frac{2(d+\eta)}{\eta},
  \tag{U10}
-```
+-->
+![Formula](../../assets/math/4bb3be6e18f40ba190d4e07b.svg)
 
 then Delta>=k eta/[2(d+eta)] and C<=3k/(d+eta), giving
 Delta/C>=eta/6. The usual growth test may use gamma=eta/24.
 This proves factor d+eta in
 
-```math
+<!-- math-display: 555d07248fe7ae20afe1d0f0
 \mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}
  \tag{U11}
-```
+-->
+![Formula](../../assets/math/555d07248fe7ae20afe1d0f0.svg)
 
 under the large-quota condition (U10). For the fat-resource transfer,
 replace r by the derived rank r' and additionally require
@@ -277,10 +290,11 @@ It remains meaningful for arbitrary recipient polymatroids.
 At k=4 and required output b=2, the limiting coefficient in both
 (U1) and (U2) is three units. The actual slack is
 
-```math
+<!-- math-display: fdc62beb6775fdb651127e58
 \Delta=3/r.
  \tag{U12}
-```
+-->
+![Formula](../../assets/math/fdc62beb6775fdb651127e58.svg)
 
 For every eta<1, a factor 3+eta still requires two units when the
 optimum has four. Thus this case cannot be rounded down to one unit,
@@ -316,13 +330,14 @@ each player's number of big units is at most ceil(T/a), which is at
 most ceil(1/epsilon). Enumerate the vector z of these big counts.
 There are at most (1+ceil(1/epsilon))^q choices. For each z, test
 
-```math
+<!-- math-display: a4ed2450386f3588bae61f98
 z\in P_{\rm big},\qquad
  \ell(z)\in P_{\rm small},\qquad
  \ell_p(z)=\max\left\{0,
           \left\lceil\frac{T-a z_p}{u}\right\rceil\right\}.
  \tag{U13}
-```
+-->
+![Formula](../../assets/math/a4ed2450386f3588bae61f98.svg)
 
 These are polynomial-time polymatroid membership tests by submodular
 minimization. The tests are necessary and sufficient for the enumerated
@@ -330,10 +345,11 @@ big vector to admit a target-T allocation, because unused capacity is
 permitted. Integral aggregate decompositions recover the original
 resource allocations. This gives a (1-epsilon) value guarantee in
 
-```math
+<!-- math-display: 755a8bd66d7938d55eefe826
 (1+\epsilon^{-1})^{O(q)}\mathrm{poly}(H).
  \tag{U14}
-```
+-->
+![Formula](../../assets/math/755a8bd66d7938d55eefe826.svg)
 
 This baseline is a derivation here, not a theorem claimed to be printed
 in that paper. It explains why a factor-three algorithm exponential

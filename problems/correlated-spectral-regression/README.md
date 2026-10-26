@@ -14,7 +14,7 @@ Fixed nonnegative weights on original items, rows, edges, or top simplices. Weak
 
 **Randomness**
 
-Mixed. Importance pools are Monte Carlo with failure at most $`\delta`$; random-code variants have code failure at most $`\zeta`$, plus any ordinary sampler failure. One success event covers all allowed failures and later queries. Single-failure PSD/regression and coherence-code PSD alternatives are deterministic. Optimal arbitrary-seminorm support is existence only; its constructive alternative is Monte Carlo with the ordinary backend's high-probability guarantee and lifted-access assumptions.
+Mixed. Importance pools are Monte Carlo with failure at most <code class="math">\delta</code>; random-code variants have code failure at most <code class="math">\zeta</code>, plus any ordinary sampler failure. One success event covers all allowed failures and later queries. Single-failure PSD/regression and coherence-code PSD alternatives are deterministic. Optimal arbitrary-seminorm support is existence only; its constructive alternative is Monte Carlo with the ordinary backend's high-probability guarantee and lifted-access assumptions.
 
 **Time**
 
@@ -26,7 +26,7 @@ The formulas below count retained support. Lifted matrices, codes, and eliminati
 
 **Parameters**
 
-$`r`$ is original rank; $`\Gamma=(h+d)^{h+d}/(h^h d^d)`$, set to $`1`$ for $`hd=0`$; $`Q=\sum_{j\le\min\{h,L\}}\binom{L}{j}`$. $`L`$ is label count; $`h`$ is failure budget; $`d`$ is item-label degree. $`\rho`$ is fixed-background effective dimension.
+<code class="math">r</code> is original rank; <code class="math">\Gamma=(h+d)^{h+d}/(h^h d^d)</code>, set to <code class="math">1</code> for <code class="math">hd=0</code>; <code class="math">Q=\sum_{j\le\min\{h,L\}}\binom{L}{j}</code>. <code class="math">L</code> is label count; <code class="math">h</code> is failure budget; <code class="math">d</code> is item-label degree. <code class="math">\rho</code> is fixed-background effective dimension.
 
 **Model and representation**
 
@@ -34,7 +34,7 @@ Real PSD and norm models; rational data for the explicit polynomial-bit claims. 
 
 **Lower-bound scope**
 
-The robust importance multiplier is at least $`\binom{h+d}{d}`$; $`d+1`$ is sharp for $`h=1`$. Simple graph spectral summaries require $`\Omega\!\left(n\binom{h+a+b}{a+b}/\epsilon^2\right)`$ in the stated size regime. No optimal inverse-accuracy claim is made for the code upper bound.
+The robust importance multiplier is at least <code class="math">\binom{h+d}{d}</code>; <code class="math">d+1</code> is sharp for <code class="math">h=1</code>. Simple graph spectral summaries require <code class="math">\Omega\!\left(n\binom{h+a+b}{a+b}/\epsilon^2\right)</code> in the stated size regime. No optimal inverse-accuracy claim is made for the code upper bound.
 
 **Review status**
 
@@ -48,130 +48,136 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **PSD importance pools**
 
-**Retained support, capped by input size.** $`O\!\left(\Gamma r\epsilon^{-2}\log(2rQ/\delta)\right)`$
+**Retained support, capped by input size.** <code class="math">O\!\left(\Gamma r\epsilon^{-2}\log(2rQ/\delta)\right)</code>
 
-**Algorithm / guarantee.** Monte Carlo, failure at most $`\delta`$ for one simultaneous all-query/all-failure event; uniform polynomial time without failure enumeration
+**Algorithm / guarantee.** Monte Carlo, failure at most <code class="math">\delta</code> for one simultaneous all-query/all-failure event; uniform polynomial time without failure enumeration
 
 **One-label-failure PSD**
 
-**Retained support, capped by input size.** $`O\!\left((d+1)r\epsilon^{-2}\log(2r(L+1))\right)`$
+**Retained support, capped by input size.** <code class="math">O\!\left((d+1)r\epsilon^{-2}\log(2r(L+1))\right)</code>
 
 **Algorithm / guarantee.** Deterministic polynomial-bit construction
 
 **Fixed PSD background**
 
-**Retained support, capped by input size.** Replace $`r`$ by $`\rho`$; ambient dimension remains in the logarithm
+**Retained support, capped by input size.** Replace <code class="math">r</code> by <code class="math">\rho</code>; ambient dimension remains in the logarithm
 
-**Algorithm / guarantee.** Monte Carlo pool construction with failure at most $`\delta`$; valid for every later background $`R'\succeq R`$
+**Algorithm / guarantee.** Monte Carlo pool construction with failure at most <code class="math">\delta</code>; valid for every later background <code class="math">R'\succeq R</code>
 
-**General finite-query nonnegative losses, $`K_0`$ queries**
+**General finite-query nonnegative losses, <code class="math">K_0</code> queries**
 
-**Retained support, capped by input size.** $`O\!\left(\Gamma S_0\epsilon^{-2}\log(2K_0Q/\delta)\right)`$
+**Retained support, capped by input size.** <code class="math">O\!\left(\Gamma S_0\epsilon^{-2}\log(2K_0Q/\delta)\right)</code>
 
-**Algorithm / guarantee.** Monte Carlo, failure at most $`\delta`$; requires hereditary ordinary sensitivity bound/routine $`S_0`$
+**Algorithm / guarantee.** Monte Carlo, failure at most <code class="math">\delta</code>; requires hereditary ordinary sensitivity bound/routine <code class="math">S_0</code>
 
-**$`\ell_1`$ row sums, pool construction**
+**<code class="math">\ell_1</code> row sums, pool construction**
 
-**Retained support, capped by input size.** $`O\!\left(\Gamma r\epsilon^{-2}\log(2NQ/\delta)\right)`$
+**Retained support, capped by input size.** <code class="math">O\!\left(\Gamma r\epsilon^{-2}\log(2NQ/\delta)\right)</code>
 
-**Algorithm / guarantee.** Monte Carlo pool and Lewis-weight sampling, failure at most $`\delta`$; augmented supplied responses allowed
+**Algorithm / guarantee.** Monte Carlo pool and Lewis-weight sampling, failure at most <code class="math">\delta</code>; augmented supplied responses allowed
 
-**Fixed $`1<p<2`$ row sums, pool construction**
+**Fixed <code class="math">1&lt;p&lt;2</code> row sums, pool construction**
 
 **Retained support, capped by input size.**
 
-```math
+<!-- math-display: 43dca413baa992530bba9634
 O_p\!\left(\Gamma r\epsilon^{-2}\left[(\log(2r))^3\log(2N)+\log(2NQ/\delta)\right]\right)
-```
+-->
+![Formula](../../assets/math/43dca413baa992530bba9634.svg)
 
-**Algorithm / guarantee.** Monte Carlo pool and fixed-$`p`$ norm sampling, failure at most $`\delta`$
+**Algorithm / guarantee.** Monte Carlo pool and fixed-<code class="math">p</code> norm sampling, failure at most <code class="math">\delta</code>
 
 **One label per PSD item, code construction**
 
-**Retained support, capped by input size.** $`O(rK/\epsilon^2)`$,
+**Retained support, capped by input size.** <code class="math">O(rK/\epsilon^2)</code>,
 
-```math
+<!-- math-display: 60d25fe105ea455220f8e70e
 K=1+\min\left\{L,O\!\left(\bigl[(h+1)\log(eL/(h+1))+\log(1/\zeta)\bigr]/\epsilon\right)\right\}
-```
+-->
+![Formula](../../assets/math/60d25fe105ea455220f8e70e.svg)
 
-**Algorithm / guarantee.** Monte Carlo code, failure at most $`\zeta`$ in $`1\le h<L`$, followed by deterministic polynomial-arithmetic PSD sparsification; identity-code branch deterministic
+**Algorithm / guarantee.** Monte Carlo code, failure at most <code class="math">\zeta</code> in <code class="math">1\le h&lt;L</code>, followed by deterministic polynomial-arithmetic PSD sparsification; identity-code branch deterministic
 
 **One-label deterministic coherence code**
 
 **Retained support, capped by input size.**
 
-```math
+<!-- math-display: 62704468dc320aa57f32780e
 O\!\left(r\epsilon^{-2}\min\left\{L+1,(h^2+h/\epsilon)\log(2L)+1\right\}\right)
-```
+-->
+![Formula](../../assets/math/62704468dc320aa57f32780e.svg)
 
-**Algorithm / guarantee.** Deterministic arithmetic; explicit bit version adds $`\log(2rK)`$
+**Algorithm / guarantee.** Deterministic arithmetic; explicit bit version adds <code class="math">\log(2rK)</code>
 
-**At most $`d`$ labels per item, exterior code**
+**At most <code class="math">d</code> labels per item, exterior code**
 
-**Retained support, capped by input size.** $`O(rK/\epsilon^2)`$, $`K=\sum_{j\le\min\{d,D\}}\binom{D}{j}`$
+**Retained support, capped by input size.** <code class="math">O(rK/\epsilon^2)</code>, <code class="math">K=\sum_{j\le\min\{d,D\}}\binom{D}{j}</code>
 
-**Algorithm / guarantee.** Monte Carlo code with failure at most $`\zeta`$, followed by deterministic PSD sparsification; $`D`$ as defined below, with fixed $`d`$ giving $`h^d`$ up to logarithms
+**Algorithm / guarantee.** Monte Carlo code with failure at most <code class="math">\zeta</code>, followed by deterministic PSD sparsification; <code class="math">D</code> as defined below, with fixed <code class="math">d</code> giving <code class="math">h^d</code> up to logarithms
 
-**Graph vertex/edge label degrees $`a,b`$**
+**Graph vertex/edge label degrees <code class="math">a,b</code>**
 
-**Retained support, capped by input size.** $`O_{a,b}\!\left(rh^{a+b}\log^{a+b}(2L)/\epsilon^{a+b+2}\right)`$
+**Retained support, capped by input size.** <code class="math">O_{a,b}\!\left(rh^{a+b}\log^{a+b}(2L)/\epsilon^{a+b+2}\right)</code>
 
-**Algorithm / guarantee.** Monte Carlo code with fixed confidence, followed by deterministic PSD sparsification; fixed $`a,b`$, $`h\ge a+b`$; exact capped form in proof
+**Algorithm / guarantee.** Monte Carlo code with fixed confidence, followed by deterministic PSD sparsification; fixed <code class="math">a,b</code>, <code class="math">h\ge a+b</code>; exact capped form in proof
 
 **One vertex color, simplicial boundary**
 
 **Retained support, capped by input size.**
 
-```math
+<!-- math-display: 89fa4dfaa3356fabad79ff8e
 O\!\left(r\epsilon^{-2}\left[1+\min\left\{L,q\bigl[s\log(eL/s)+\log(2/\zeta)\bigr]/\epsilon\right\}\right]\right)
-```
+-->
+![Formula](../../assets/math/89fa4dfaa3356fabad79ff8e.svg)
 
-**Algorithm / guarantee.** Monte Carlo code with failure at most $`\zeta`$, followed by deterministic PSD sparsification; $`q`$ distinct colors per top simplex, $`s=\min\{L,h+q\}`$; lower skeleton retained
+**Algorithm / guarantee.** Monte Carlo code with failure at most <code class="math">\zeta</code>, followed by deterministic PSD sparsification; <code class="math">q</code> distinct colors per top simplex, <code class="math">s=\min\{L,h+q\}</code>; lower skeleton retained
 
 **Weak convex regression, importance pools**
 
-**Retained support, capped by input size.** $`O\!\left(\Gamma\rho\epsilon^{-1}\log(2(p+q)Q/\delta)\right)`$
+**Retained support, capped by input size.** <code class="math">O\!\left(\Gamma\rho\epsilon^{-1}\log(2(p+q)Q/\delta)\right)</code>
 
-**Algorithm / guarantee.** Monte Carlo, failure at most $`\delta`$ for all later responses in the supplied subspace, $`\lambda\ge\lambda_0`$, convex constraints and nonnegative convex penalties
+**Algorithm / guarantee.** Monte Carlo, failure at most <code class="math">\delta</code> for all later responses in the supplied subspace, <code class="math">\lambda\ge\lambda_0</code>, convex constraints and nonnegative convex penalties
 
 **One-failure weak convex regression**
 
-**Retained support, capped by input size.** $`O\!\left((d+1)\rho\epsilon^{-1}\log(2(p+q)(L+1))\right)`$
+**Retained support, capped by input size.** <code class="math">O\!\left((d+1)\rho\epsilon^{-1}\log(2(p+q)(L+1))\right)</code>
 
 **Algorithm / guarantee.** Deterministic polynomial-bit construction
 
 **One-label weak regression, code route**
 
-**Retained support, capped by input size.** $`O\!\left(\rho D\epsilon^{-1}\log(2nD)\right)`$,
+**Retained support, capped by input size.** <code class="math">O\!\left(\rho D\epsilon^{-1}\log(2nD)\right)</code>,
 
-```math
+<!-- math-display: 88d19ed6ad04d6e621bda1cf
 D=O\!\left(\bigl[(h+1)\log(eL/(h+1))+\log(1/\zeta)\bigr]/\sqrt{\epsilon}\right)
-```
+-->
+![Formula](../../assets/math/88d19ed6ad04d6e621bda1cf.svg)
 
-**Algorithm / guarantee.** Monte Carlo code with failure at most $`\zeta`$ when the deterministic lifted PSD routine is used; linear $`h`$, $`\epsilon^{-3/2}`$ up to displayed logs; identity branch needs background padding
+**Algorithm / guarantee.** Monte Carlo code with failure at most <code class="math">\zeta</code> when the deterministic lifted PSD routine is used; linear <code class="math">h</code>, <code class="math">\epsilon^{-3/2}</code> up to displayed logs; identity branch needs background padding
 
 **Whole seminorm blocks, existential**
 
-**Retained support, capped by input size.** $`O(rK/\epsilon^2)`$
+**Retained support, capped by input size.** <code class="math">O(rK/\epsilon^2)</code>
 
 **Algorithm / guarantee.** Existence only at this support bound; choosing deterministic label features does not supply a deterministic optimal seminorm construction
 
 **Whole seminorm blocks, constructive backend**
 
-**Retained support, capped by input size.** $`O\!\left(\epsilon^{-2}R\log(2R/\epsilon)[\log(2R)]^{5/2}\right)`$, $`R\le rK`$
+**Retained support, capped by input size.** <code class="math">O\!\left(\epsilon^{-2}R\log(2R/\epsilon)[\log(2R)]^{5/2}\right)</code>, <code class="math">R\le rK</code>
 
-**Algorithm / guarantee.** Monte Carlo with the ordinary seminorm backend's high-probability guarantee, plus code failure $`\zeta`$ if a random code is used; requires lifted-sum evaluation and roundedness access
+**Algorithm / guarantee.** Monte Carlo with the ordinary seminorm backend's high-probability guarantee, plus code failure <code class="math">\zeta</code> if a random code is used; requires lifted-sum evaluation and roundedness access
 
-For the general exterior code, let $`s=\min\{h+d,L\}`$ and use the actual rounded dimension
-```math
+For the general exterior code, let <code class="math">s=\min\{h+d,L\}</code> and use the actual rounded dimension
+<!-- math-display: 8f4084de856e206285fce761
 D=\min\left\{L,
 \left\lceil\frac{Cd}{\epsilon}
 \left[s\log(eL/s)+\log(2/\zeta)\right]\right\rceil
 \right\}.
-```
+-->
+![Formula](../../assets/math/8f4084de856e206285fce761.svg)
 
-If the cap chooses $`L`$, use the identity code. Compute the final support target before materializing features; if it reaches the input size, return the original input. The exact arithmetic support bound $`O(rK/\epsilon^2)`$ has an explicit polynomial-bit implementation with an additional $`\log(2rK)`$ factor. The sample-confidence and code-confidence probabilities are separate when both stages are randomized.
+If the cap chooses <code class="math">L</code>, use the identity code. Compute the final support target before materializing features; if it reaches the input size, return the original input. The exact arithmetic support bound <code class="math">O(rK/\epsilon^2)</code> has an explicit polynomial-bit implementation with an additional <code class="math">\log(2rK)</code> factor. The sample-confidence and code-confidence probabilities are separate when both stages are randomized.
 
-For regression, $`\rho\le\mathrm{sd}_{\lambda_0}(A)+q`$, where $`q`$ is the supplied response-subspace dimension. The pool route has better inverse-accuracy dependence, while the code route has better failure-budget dependence in some regimes; neither uniformly dominates the other.
+For regression, <code class="math">\rho\le\mathrm{sd}_{\lambda_0}(A)+q</code>, where <code class="math">q</code> is the supplied response-subspace dimension. The pool route has better inverse-accuracy dependence, while the code route has better failure-budget dependence in some regimes; neither uniformly dominates the other.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

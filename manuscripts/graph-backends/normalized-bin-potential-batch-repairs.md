@@ -19,9 +19,10 @@ bidirected_potential_compatible_forest_matching_interface.md.
 ## 1. Normalize row labels without changing bin labels
 
 For every row r replace its feasible label by
-```math
+<!-- math-display: 33a94f93aefa554baa3de187
 D(r):=\max_{d\sim r}D(d).             \tag{1}
-```
+-->
+![Formula](../../assets/math/33a94f93aefa554baa3de187.svg)
 This only lowers D(r). All receiving inequalities hold by the maximum,
 and all donor inequalities become weaker. Source constraints and the
 semantic screen E are unchanged.
@@ -34,30 +35,34 @@ forest-flag updates take O(m polylog S) work once.
 
 Thereafter retain (1). Bounded nonnegative initial bin labels and the
 source constraints give strictly positive bounded
-```math
+<!-- math-display: 21c70bfd6f24a7065045f494
 \pi_d=(A-D(d))/H
-```
+-->
+![Formula](../../assets/math/21c70bfd6f24a7065045f494.svg)
 at bins. The row pi is the minimum neighboring bin pi.
 
 ## 2. Exact feasibility condition for a supplied bin batch
 
 Supply a set S of bins and a positive integer shift delta. Raise
-```math
+<!-- math-display: 7231f99ed256404da052311d
 D'(d)=D(d)+\delta\quad(d\in S)
-```
+-->
+![Formula](../../assets/math/7231f99ed256404da052311d.svg)
 and leave other bin labels unchanged. Set every affected row to the
 maximum of its new neighboring bin labels.
 
 This operation is feasible if and only if both of the following
 conditions hold:
-```math
+<!-- math-display: 90781f0050f9a100fad4ef26
 \delta\le A-\sigma_u-D(u)\qquad(u\in S),                     \tag{2}
-```
+-->
+![Formula](../../assets/math/90781f0050f9a100fad4ef26.svg)
 and
-```math
+<!-- math-display: b489bf6c726708703e1b6c6e
 \delta\le D(v)+\bar c_{rv}-D(u)
  \quad\text{whenever }u\in S,\ v\notin S,\ u,v\sim r.         \tag{3}
-```
+-->
+![Formula](../../assets/math/b489bf6c726708703e1b6c6e.svg)
 All right-hand sides are nonnegative by old feasibility.
 
 For sufficiency, receiving constraints hold by normalization.
@@ -78,10 +83,11 @@ Condition (3) checks just those directed constraints entering S.
 ## 3. Verification and implementation cost
 
 Let
-```math
+<!-- math-display: b97392289071606d5c0f3f82
 \mathrm{vol}(S)=
                   \sum_{d\in S}(1+\deg(d)).
-```
+-->
+![Formula](../../assets/math/b97392289071606d5c0f3f82.svg)
 Enumerate the supplied bins and their incident rows. Mark each touched
 row once and read its at most three neighbors. This checks (2)--(3),
 computes its new maximum, and changes all necessary receiver flags
@@ -118,24 +124,27 @@ to the fixed-D contract.
 
 Suppose, in addition, that for a fixed 0<zeta<1 every supplied successful
 batch obeys
-```math
+<!-- math-display: 2276fba7a9e9b8c644bbff24
 \delta\ge\zeta(A-D(d))
                      \qquad\text{for all }d\in S.            \tag{4}
-```
+-->
+![Formula](../../assets/math/2276fba7a9e9b8c644bbff24.svg)
 Then each affected bin satisfies
-```math
+<!-- math-display: 5cc81e92e0878a04c6e2825a
 \pi'_d\le(1-\zeta)\pi_d.
-```
+-->
+![Formula](../../assets/math/5cc81e92e0878a04c6e2825a.svg)
 Its pi remains at least the guarded positive source lower bound.
 All bin labels only increase; numerical allocation steps between
 repairs do not change them. Hence each bin belongs to at most
 O(zeta^{-1} log S) such batches.
 
 On a fixed ledger graph, the total actual update volume is therefore
-```math
+<!-- math-display: bcac2c7c7bae994683a6daa3
 \sum_{\text{batches}}\mathrm{vol}(S)
                        =O((m+\nu)\zeta^{-1}\log S).          \tag{5}
-```
+-->
+![Formula](../../assets/math/bcac2c7c7bae994683a6daa3.svg)
 This pays explicit bin/row label work, semantic-screen updates, and
 all physical forest direction-flag updates. It is independent of the
 number of intervening accepted numerical steps.
@@ -160,19 +169,21 @@ update across multiple potential intervals.
 
 In non_tight_receiver_matching_obstruction.md, after exhaustion take
 S={b,c} in one component and
-```math
+<!-- math-display: 3144537040584e3b57bfb1c7
 \delta=D(r)-D(b)
                          =\bar c_{rb}^{\rm initial}.         \tag{6}
-```
+-->
+![Formula](../../assets/math/3144537040584e3b57bfb1c7.svg)
 Both bins have slack Theta(L), while their old pi is Theta(1/C).
 Their source constraints have ample room for this shift.
 
 Row q has both its bins in S. The only crossing row is r, with a
 outside and b inside. Its incoming constraint is
-```math
+<!-- math-display: 6437af498f0ae0149dcc1fff
 \delta\le D(a)+\bar c_{ra}-D(b)
                     =\delta+\bar c_{ra},
-```
+-->
+![Formula](../../assets/math/6437af498f0ae0149dcc1fff.svg)
 which holds. Thus the batch is feasible.
 
 At completion D'(b)=D(r)=D(a). Receiving direction r-to-b becomes
@@ -215,14 +226,16 @@ potential update or a tight passing path.
 
 Use the complete threshold graph including its artificial source s.
 For each arc u-to-v define its nonnegative integer reduced cost
-```math
+<!-- math-display: ab87a927706d99a23b7a1af6
 r_{uv}=\mathrm{length}(uv)+D(u)-D(v).
-```
+-->
+![Formula](../../assets/math/ab87a927706d99a23b7a1af6.svg)
 Fix a bin w with s_w pi_w>6, as some bin has when E>5N and there
 are at most N bins. Choose the integer radius
-```math
+<!-- math-display: 2f034b2bd7abdfe5b038c59b
 R=\lfloor(A-D(w))/2\rfloor.
-```
+-->
+![Formula](../../assets/math/2f034b2bd7abdfe5b038c59b.svg)
 The rounding scale ensures that pi_w-R/H remains greater than
 tau_w/H.
 It also gives R>=1 under the stated excess premise: H/s_w is
@@ -235,15 +248,17 @@ R or upon extracting the artificial source. Let d(v) be the reduced
 distance from v to w.
 
 If the source is not reached before radius R, set
-```math
+<!-- math-display: 19575e7c0ae4eae2f2beeb5d
 \Delta_v=(R-d(v))_+,\qquad D'_v=D(v)+\Delta_v.
                                                                \tag{7}
-```
+-->
+![Formula](../../assets/math/19575e7c0ae4eae2f2beeb5d.svg)
 Here unreachable or unexamined vertices have Delta=0. The source
 has Delta=0. Every ordinary or source arc obeys
-```math
+<!-- math-display: e9b898af11d0190b85632e2a
 \Delta_v-\Delta_u\le r_{uv},
-```
+-->
+![Formula](../../assets/math/e9b898af11d0190b85632e2a.svg)
 because d(u)<=r_uv+d(v) and positive clipping preserves the
 inequality. Thus D' is feasible. In particular, w's pi decreases
 by approximately one half.
@@ -253,9 +268,10 @@ formula with radius R_0. It again keeps the source label fixed.
 Every arc of a shortest source-to-w path becomes tight: its
 reduced cost equals the corresponding difference of Delta values.
 That path's actual threshold score at w is
-```math
+<!-- math-display: 11f8db372c718967c5725b46
 A-D(w)-R_0-\tau_w>0.
-```
+-->
+![Formula](../../assets/math/11f8db372c718967c5725b46.svg)
 It is therefore a passing path whose receiving directions are
 tight under the newly repaired labels. This is stronger than merely
 returning an old-potential-incompatible witness.

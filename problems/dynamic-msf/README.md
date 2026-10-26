@@ -14,9 +14,9 @@ Deterministic derived public baseline using deterministic decomposition and prun
 
 **Time**
 
-Worst-case per-update work is $`\exp(O(U^{2/3}h^{1/3}))`$, with $`U=\log(N+4)`$ and $`h=\log(U+4)`$. This is a derived public baseline, not a single-source theorem statement.
+Worst-case per-update work is <code class="math">\exp(O(U^{2/3}h^{1/3}))</code>, with <code class="math">U=\log(N+4)</code> and <code class="math">h=\log(U+4)</code>. This is a derived public baseline, not a single-source theorem statement.
 
-Initialization costs $`(n+m_0)\exp(O(U^{2/3}h^{1/3}))`$, where $`m_0`$ is the initial edge count. Connectivity queries cost a polynomial logarithm.
+Initialization costs <code class="math">(n+m_0)\exp(O(U^{2/3}h^{1/3}))</code>, where <code class="math">m_0</code> is the initial edge count. Connectivity queries cost a polynomial logarithm.
 
 **Space**
 
@@ -24,11 +24,11 @@ Actual weighted-edge inventory, hierarchy certificates, retired records, and pru
 
 **Parameters**
 
-$`n`$ is the fixed vertex count; $`m`$ is the current edge count; $`N`$ bounds vertices, initial edges and subsequent update records; $`U`$ is log of $`N`$ plus a constant; $`h`$ is log of $`U`$ plus a constant.
+<code class="math">n</code> is the fixed vertex count; <code class="math">m</code> is the current edge count; <code class="math">N</code> bounds vertices, initial edges and subsequent update records; <code class="math">U</code> is log of <code class="math">N</code> plus a constant; <code class="math">h</code> is log of <code class="math">U</code> plus a constant.
 
 **Model and representation**
 
-Deterministic fully dynamic weighted multigraph with adaptive edge updates and immutable edge-ID tie breaking. The public decomposition, pruning, contraction and child-forest certificate interfaces are named in the source map. Weight comparison is constant-time in the comparison model, or uses polynomially many bits in $`\log N`$.
+Deterministic fully dynamic weighted multigraph with adaptive edge updates and immutable edge-ID tie breaking. The public decomposition, pruning, contraction and child-forest certificate interfaces are named in the source map. Weight comparison is constant-time in the comparison model, or uses polynomially many bits in <code class="math">\log N</code>.
 
 **Lower-bound scope**
 

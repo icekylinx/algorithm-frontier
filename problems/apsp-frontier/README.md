@@ -16,7 +16,7 @@ Deterministic conditional composition using the metric hierarchy, construction/u
 
 **Time**
 
-Equalized choice: amortized update work $`\exp(O(U^{4/5}h^{1/5}))`$; fixed-$`C`$ choice: $`\exp(O(U^{3/4}h^{(C+1)/4}))`$; queries are polynomial in $`U`$.
+Equalized choice: amortized update work <code class="math">\exp(O(U^{4/5}h^{1/5}))</code>; fixed-<code class="math">C</code> choice: <code class="math">\exp(O(U^{3/4}h^{(C+1)/4}))</code>; queries are polynomial in <code class="math">U</code>.
 
 **Space**
 
@@ -48,20 +48,20 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 ## Quantitative tradeoffs
 
-Set $`U=\log_2(N+4)`$ and $`h=\log_2(U+4)`$. The general parameter choice gives work per charged input/update record
-$`\exp(O(U/t+t^3h))`$ and stretch $`\exp(O(t^4h))`$, where $`t\to\infty`$ and $`t^2h=o(U)`$.
-Distance queries cost $`\mathrm{poly}(U)`$.
+Set <code class="math">U=\log_2(N+4)</code> and <code class="math">h=\log_2(U+4)</code>. The general parameter choice gives work per charged input/update record
+<code class="math">\exp(O(U/t+t^3h))</code> and stretch <code class="math">\exp(O(t^4h))</code>, where <code class="math">t\to\infty</code> and <code class="math">t^2h=o(U)</code>.
+Distance queries cost <code class="math">\mathrm{poly}(U)</code>.
 
-- **Balanced:** $`t=(U/h)^{1/5}`$ gives logarithmic work and stretch
-  both $`O(U^{4/5}h^{1/5})`$.
-- **Smaller work exponent:** $`t=U^{3/14}`$ gives logarithmic work
-  $`O(U^{11/14})`$ and logarithmic stretch $`O(U^{6/7}h)`$.
-- **Matched finer stretch:** $`t=(U/h)^{5/28}`$ gives logarithmic
-  work $`O(U^{23/28}h^{5/28})`$ and logarithmic stretch $`O(U^{5/7}h^{2/7})`$.
-- **Fixed $`C>0`$:** $`t=(U/h^{C+1})^{1/4}`$ gives logarithmic work
-  $`O(U^{3/4}h^{(C+1)/4})`$ and logarithmic stretch $`O(U/h^C)`$.
-- **Fixed $`0<a<1`$:** $`t=(U^a/h)^{1/4}`$ gives logarithmic work
-  $`O(U^{1-a/4}h^{1/4})`$ and logarithmic stretch $`O(U^a)`$.
+- **Balanced:** <code class="math">t=(U/h)^{1/5}</code> gives logarithmic work and stretch
+  both <code class="math">O(U^{4/5}h^{1/5})</code>.
+- **Smaller work exponent:** <code class="math">t=U^{3/14}</code> gives logarithmic work
+  <code class="math">O(U^{11/14})</code> and logarithmic stretch <code class="math">O(U^{6/7}h)</code>.
+- **Matched finer stretch:** <code class="math">t=(U/h)^{5/28}</code> gives logarithmic
+  work <code class="math">O(U^{23/28}h^{5/28})</code> and logarithmic stretch <code class="math">O(U^{5/7}h^{2/7})</code>.
+- **Fixed <code class="math">C&gt;0</code>:** <code class="math">t=(U/h^{C+1})^{1/4}</code> gives logarithmic work
+  <code class="math">O(U^{3/4}h^{(C+1)/4})</code> and logarithmic stretch <code class="math">O(U/h^C)</code>.
+- **Fixed <code class="math">0&lt;a&lt;1</code>:** <code class="math">t=(U^a/h)^{1/4}</code> gives logarithmic work
+  <code class="math">O(U^{1-a/4}h^{1/4})</code> and logarithmic stretch <code class="math">O(U^a)</code>.
 
 Total work multiplies the displayed factor by the actual initial vertex/edge inventory plus the number of updates. The port adapter supports arbitrary original degree and accounts for every allocated native record.
 

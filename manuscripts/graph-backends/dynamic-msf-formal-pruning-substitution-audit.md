@@ -9,11 +9,12 @@ This note checks the formal substitution and gives a conservative
 deterministic decomposition implementation. Together they support
 the derived-public worst-case update envelope
 
-```math
+<!-- math-display: 9cf22559447a026c5630b58a
 \exp O(U^{2/3}h^{1/3}),\qquad
  U=\log(N+4),\quad h=\log(U+4).
  \tag{1}
-```
+-->
+![Formula](../../assets/math/9cf22559447a026c5630b58a.svg)
 
 The result is an analysis of public ingredients. It is not a new
 advantage of the research matching router. The separate October
@@ -34,10 +35,10 @@ The primary sources are:
 The CGLN overview's expression consisting of the initial MSF plus
 edges incident to the published set is not a standalone valid MSF
 certificate under residual connectivity alone. For example, start
-with the light tree path $`1-2-3-4`$ and the heavier edge $`1-4`$.
-After deleting $`2-3`$, publishing $`P=\{2,3\}`$ leaves the
-connected residual graph on $`\{1,4\}`$, but that simplified
-certificate omits the necessary edge $`1-4`$.
+with the light tree path <code class="math">1-2-3-4</code> and the heavier edge <code class="math">1-4</code>.
+After deleting <code class="math">2-3</code>, publishing <code class="math">P=\{2,3\}</code> leaves the
+connected residual graph on <code class="math">\{1,4\}</code>, but that simplified
+certificate omits the necessary edge <code class="math">1-4</code>.
 
 NSW's actual certificate additionally contains MSFs of three
 compressed-cluster graphs at every large cluster, together with
@@ -46,15 +47,15 @@ edges. It is this certificate that must be used below.
 
 ## 2. Exact formal pruning contract
 
-For each initially connected bounded-degree cluster $`C`$, the
-formal pruning interface needs a set $`P_C`$ satisfying:
+For each initially connected bounded-degree cluster <code class="math">C</code>, the
+formal pruning interface needs a set <code class="math">P_C</code> satisfying:
 
-1. $`P_C`$ starts empty and only grows.
+1. <code class="math">P_C</code> starts empty and only grows.
 2. Every deletion is processed and its new published vertices are
-   reported in at most $`\pi`$ time, so at most $`\pi`$ new
+   reported in at most <code class="math">\pi</code> time, so at most <code class="math">\pi</code> new
    vertices are published in one call.
-3. At every supported time, there is some $`W_C\subseteq P_C`$
-   for which $`C[V(C)\setminus W_C]`$ is connected.
+3. At every supported time, there is some <code class="math">W_C\subseteq P_C</code>
+   for which <code class="math">C[V(C)\setminus W_C]</code> is connected.
 
 Theorem 5.1 states precisely this contract, for its own stated
 horizon. NSW's Section 9 uses the analogous failure-detecting
@@ -68,9 +69,9 @@ current input and need not be an expander; no pruning or expansion
 promise is imposed on it. Root-level parent-owned and reweighted
 edges are handled by the ordinary weighted certificate.
 
-There is no required upper bound on the boundary of $`P_C`$, no
+There is no required upper bound on the boundary of <code class="math">P_C</code>, no
 rank condition on published vertices, and no demand that the
-algorithm identify $`W_C`$. Publication work and the bounded
+algorithm identify <code class="math">W_C</code>. Publication work and the bounded
 native degree pay for incident edges. We may use linear times a
 fixed polynomial in the parameters for initialization: the
 preprocessing recurrence explicitly pays this work.
@@ -80,19 +81,19 @@ preprocessing recurrence explicitly pays this work.
 ### 3.1 Two elementary MSF facts, with proofs
 
 Fix a strict total order on edges, using weight and immutable edge ID.
-If an edge $`e`$ is outside the unique MSF of a graph $`X`$, its endpoints
-are joined in that MSF by a path of edges preceding $`e`$ in the order.
-Otherwise exchanging a later path edge for $`e`$ would improve the
+If an edge <code class="math">e</code> is outside the unique MSF of a graph <code class="math">X</code>, its endpoints
+are joined in that MSF by a path of edges preceding <code class="math">e</code> in the order.
+Otherwise exchanging a later path edge for <code class="math">e</code> would improve the
 lexicographically selected minimum forest. Conversely, any edge with
 such a strictly earlier alternative path is rejected by Kruskal's
 algorithm.
 
 This proves two facts needed by the certificate. First, after adding
-arbitrary extra edges $`D`$, every old excluded edge still has its old
+arbitrary extra edges <code class="math">D</code>, every old excluded edge still has its old
 earlier path. Hence
-$`\mathrm{MSF}(X\cup D)\subseteq\mathrm{MSF}(X)\cup D`$.
+<code class="math">\mathrm{MSF}(X\cup D)\subseteq\mathrm{MSF}(X)\cup D</code>.
 Second, under any fixed vertex contraction, that earlier path projects
-to a walk of earlier edges. If $`e`$ becomes a loop it is discarded;
+to a walk of earlier edges. If <code class="math">e</code> becomes a loop it is discarded;
 otherwise deleting repetitions gives an earlier alternative path in
 the quotient. Thus every surviving quotient MSF edge was already an
 MSF edge before contraction. The quotient need not preserve degrees
@@ -115,28 +116,29 @@ Theorem 8.3(3), established using the initial MSF clusters and the
 ordered weight bands. It is not a property of an arbitrary
 expander decomposition.
 
-At a large parent $`C`$, first replace each small child by its
+At a large parent <code class="math">C</code>, first replace each small child by its
 current MSF. For each large child, the vertices outside its
-$`W`$ lie in one current child connected component. Contracting
+<code class="math">W</code> lie in one current child connected component. Contracting
 these subsets is therefore refined by contracting all current
 child connected components. Under fixed distinct edge weights,
 the edges of an MSF after further contraction were already MSF
 edges before that contraction. This gives Claim 9.18's inclusion
 for the parent-owned edges after adding back edges incident to
-$`W`$.
+<code class="math">W</code>.
 
-Now replace $`W`$ by the published superset $`P`$. The newly
+Now replace <code class="math">W</code> by the published superset <code class="math">P</code>. The newly
 removed parent-owned edges are all published explicitly. For
-any graph $`X`$ and extra edges $`D`$,
+any graph <code class="math">X</code> and extra edges <code class="math">D</code>,
 
-```math
+<!-- math-display: 14421b0ebbd664c5586da391
 \mathrm{MSF}(X\cup D)
  \subseteq \mathrm{MSF}(X)\cup D.
  \tag{2}
-```
+-->
+![Formula](../../assets/math/14421b0ebbd664c5586da391.svg)
 
 Applying (2) to each of the three compressed graphs proves the
-transition from $`W`$ to $`P`$, exactly the role of Claim 9.19.
+transition from <code class="math">W</code> to <code class="math">P</code>, exactly the role of Claim 9.19.
 Thus arbitrary additional publication remains sound in the real
 certificate. The retired-edge sets only enlarge that certificate;
 they prevent publication-induced removals from propagating as
@@ -148,37 +150,38 @@ the compressed-cluster MSFs on which this proof depends.
 
 ## 4. A literal connectivity adapter for modern pruning
 
-MGS maintains $`A`$ with positive residual conductance, with
-$`\mathrm{polylog}(N)\phi^{-2}`$ worst-case work and
+MGS maintains <code class="math">A</code> with positive residual conductance, with
+<code class="math">\mathrm{polylog}(N)\phi^{-2}</code> worst-case work and
 vertex recourse. Conductance alone can ignore isolated vertices,
 so use the following conservative publication rule on the
 initial degree-three cluster:
 
-```math
+<!-- math-display: 31b437ab5294298d16523c90
 P=A\cup N_{C_0}(A)\cup\{\text{endpoints of deleted edges}\}.
  \tag{3}
-```
+-->
+![Formula](../../assets/math/31b437ab5294298d16523c90.svg)
 
-The initial graph is connected and nontrivial, so $`P`$ starts
-empty. Each new member of $`A`$ has at most three initial
+The initial graph is connected and nontrivial, so <code class="math">P</code> starts
+empty. Each new member of <code class="math">A</code> has at most three initial
 neighbors. Thus (3) has only a constant factor more publication
 and work than MGS, plus constant work per physical deletion.
 Its extra published vertices are not deleted from MGS's input.
 
-Let $`I`$ be the isolated vertices of the current residual
-$`C[V\setminus A]`$. Every $`v\in I`$ either lost an
-incident physical edge or had a neighbor enter $`A`$; hence
-$`I\subseteq P`$. All positive-volume vertices of that residual
+Let <code class="math">I</code> be the isolated vertices of the current residual
+<code class="math">C[V\setminus A]</code>. Every <code class="math">v\in I</code> either lost an
+incident physical edge or had a neighbor enter <code class="math">A</code>; hence
+<code class="math">I\subseteq P</code>. All positive-volume vertices of that residual
 lie in one connected component, by its positive conductance.
-If that component is nonempty, take $`W=A\cup I`$. Otherwise
-$`P=V`$, and take $`W=V\setminus\{v\}`$ for any one
-vertex. In either case $`W\subseteq P`$ leaves a connected
-induced graph. No search for $`I`$ or $`W`$ is needed by the
+If that component is nonempty, take <code class="math">W=A\cup I</code>. Otherwise
+<code class="math">P=V</code>, and take <code class="math">W=V\setminus\{v\}</code> for any one
+vertex. In either case <code class="math">W\subseteq P</code> leaves a connected
+induced graph. No search for <code class="math">I</code> or <code class="math">W</code> is needed by the
 algorithm.
 
 Singleton initial clusters are handled directly. Initialization
 of the MGS flow and graph structures is covered by
-$`m_C\mathrm{poly}(1/\phi,U)`$, a deliberately loose
+<code class="math">m_C\mathrm{poly}(1/\phi,U)</code>, a deliberately loose
 bound sufficient for the preprocessing account.
 
 ## 5. Conservative deterministic weighted decomposition
@@ -187,58 +190,60 @@ This section spells out a wrapper rather than applying a
 bounded-degree decomposition lemma to a contracted graph of
 unbounded degree.
 
-Choose an integer scale $`\gamma\ge 4`$. Let
-$`\Gamma=\exp O(r^2h)`$ be a common quality loss of CGLN
-Corollary 6.1 and require $`\Gamma\le\gamma`$. Its total
+Choose an integer scale <code class="math">\gamma\ge 4</code>. Let
+<code class="math">\Gamma=\exp O(r^2h)</code> be a common quality loss of CGLN
+Corollary 6.1 and require <code class="math">\Gamma\le\gamma</code>. Its total
 static work factor at crossing budget
-$`\epsilon=c\gamma^{-2}`$ is polynomial in $`\gamma`$
+<code class="math">\epsilon=c\gamma^{-2}</code> is polynomial in <code class="math">\gamma</code>
 provided
 
-```math
+<!-- math-display: cff6225e6b119439a61cc9a3
 U/r+r^2h+h\le c_1\log\gamma.
  \tag{4}
-```
+-->
+![Formula](../../assets/math/cff6225e6b119439a61cc9a3.svg)
 
 Every call uses its actual contracted input size. If that input has
-$`m'`$ edges, replace the cut-player parameter by
-$`r'=\min\{r,\lfloor c_0\log(m'+2)\rfloor\}`$, with a
-sufficiently small fixed $`c_0>0`$ and a constant-size direct base
-case. Thus the source condition $`r'\le c_0\log(m'+2)`$
+<code class="math">m'</code> edges, replace the cut-player parameter by
+<code class="math">r'=\min\{r,\lfloor c_0\log(m'+2)\rfloor\}</code>, with a
+sufficiently small fixed <code class="math">c_0&gt;0</code> and a constant-size direct base
+case. Thus the source condition <code class="math">r'\le c_0\log(m'+2)</code>
 holds even deep inside the hierarchy. The quality loss only improves.
-For a truncated parameter, $`\log(m'+2)/r'=O(1)`$; otherwise
-it is at most $`O(U/r)`$. Also $`(r')^2\log\log(m'+4) \le O(r^2h)`$. Hence each such call still costs its actual input
-size times a fixed polynomial in $`\gamma`$. No tiny instance is
-padded to the master size, and no exponential-in-$`m'`$ solver is
+For a truncated parameter, <code class="math">\log(m'+2)/r'=O(1)</code>; otherwise
+it is at most <code class="math">O(U/r)</code>. Also <code class="math">(r')^2\log\log(m'+4) \le O(r^2h)</code>. Hence each such call still costs its actual input
+size times a fixed polynomial in <code class="math">\gamma</code>. No tiny instance is
+padded to the master size, and no exponential-in-<code class="math">m'</code> solver is
 used except on a fixed constant-size base.
 
 Partition the initial MSF into connected blocks of size between
-$`s/3`$ and $`s`$, where $`s=\Theta(\gamma)`$, as in
+<code class="math">s/3</code> and <code class="math">s</code>, where <code class="math">s=\Theta(\gamma)</code>, as in
 NSW Lemma 8.9. All block-tree edges remain protected from
 reweighting and from removal into weight bands. Use
-$`d=\Theta(\gamma)`$ ordered bands and stop a hierarchy
-branch once its graph has at most $`n/\Theta(\gamma)`$
+<code class="math">d=\Theta(\gamma)</code> ordered bands and stop a hierarchy
+branch once its graph has at most <code class="math">n/\Theta(\gamma)</code>
 edges, with sufficiently generous fixed constants.
 
-At level $`i`$, first remove the current weight band $`E_i`$
+At level <code class="math">i</code>, first remove the current weight band <code class="math">E_i</code>
 from the graph supplied to decomposition. Its protected block
 trees remain present. Contract those blocks, discard loops, and
-run CGLN Corollary 6.1 with crossing budget $`c\gamma^{-2}`$.
-The contracted graph has actual $`O(|V(C)|)`$ edges because
+run CGLN Corollary 6.1 with crossing budget <code class="math">c\gamma^{-2}</code>.
+The contracted graph has actual <code class="math">O(&#124;V(C)&#124;)</code> edges because
 the uncontracted input is degree three; its own degree need not
 be bounded. Split off any isolated contracted vertices. Every
 remaining output block is connected and has edge expansion at
 least its conductance, which is
-$`\Omega(\gamma^{-2}/\Gamma)`$, hence
-$`\Omega(\gamma^{-3})`$.
+<code class="math">\Omega(\gamma^{-2}/\Gamma)</code>, hence
+<code class="math">\Omega(\gamma^{-3})</code>.
 
 Uncontract the protected blocks. NSW Lemma 8.8, with block size
-$`s=O(\gamma)`$ and original degree three, gives connected
+<code class="math">s=O(\gamma)</code> and original degree three, gives connected
 children of conductance at least
 
-```math
+<!-- math-display: 576db76e869e7247e1535395
 \phi_0=\Omega(\gamma^{-5}).
  \tag{5}
-```
+-->
+![Formula](../../assets/math/576db76e869e7247e1535395.svg)
 
 A singleton contracted output corresponds to one connected
 protected block, and also satisfies (5). The decomposition may
@@ -246,13 +251,13 @@ be run separately on disconnected components before contraction;
 each contains at least one entire protected block.
 
 The number of lower-band crossing edges in one call is at most
-$`O(|V(C)|/\gamma^2)`$. Make the parent own its current band
+<code class="math">O(&#124;V(C)&#124;/\gamma^2)</code>. Make the parent own its current band
 and those crossing edges. Raise only the latter to a value
-between the current and next weight bands. Over $`d`$ levels,
-only $`O(n/\gamma)`$ edges are reweighted. The number of
-parent-owned edges at any fixed level is also $`O(n/\gamma)`$:
+between the current and next weight bands. Over <code class="math">d</code> levels,
+only <code class="math">O(n/\gamma)</code> edges are reweighted. The number of
+parent-owned edges at any fixed level is also <code class="math">O(n/\gamma)</code>:
 the current band has this size, and lower-band crossings add
-$`O(n/\gamma^2)`$.
+<code class="math">O(n/\gamma^2)</code>.
 
 The protected initial-MSF edges remain safe under arbitrary
 deletions: they are never made heavier, while other edges are
@@ -260,105 +265,109 @@ only made heavier. After including surviving protected edges,
 Kruskal processes child nonprotected edges before parent-owned
 edges. This proves the child-MSF inclusion from Section 3 under
 every future deletion set. After the last weight band, only
-protected block trees remain, so the depth is at most $`d+O(1)`$.
-Every leaf contains at least $`s/3`$ vertices. All these are
+protected block trees remain, so the depth is at most <code class="math">d+O(1)</code>.
+Every leaf contains at least <code class="math">s/3</code> vertices. All these are
 the properties used in NSW Section 9.
 
 **Ordering clarification.** The displayed NSW Algorithm 8.1
-lists decomposition and subsequent removal of $`E_i`$ in that
+lists decomposition and subsequent removal of <code class="math">E_i</code> in that
 order, while its conductance proof treats children as direct
-decomposition outputs. The explicit order above removes $`E_i`$
+decomposition outputs. The explicit order above removes <code class="math">E_i</code>
 before decomposition. It preserves the protected-block input,
 the ordered-band correctness argument, the depth, and every
 size bound just proved. We do not infer that conductance
 survives an arbitrary uncharged post-decomposition deletion.
 
 Each hierarchy level has disjoint actual vertex inventories.
-Its work is $`n\mathrm{poly}(\gamma)`$, and there are
-$`O(\gamma)`$ levels. Initialization of all pruning instances
-adds only $`n\mathrm{poly}(\gamma)`$. The larger fixed
-power in (5), compared with the informal $`\gamma^{-3}`$
+Its work is <code class="math">n\mathrm{poly}(\gamma)</code>, and there are
+<code class="math">O(\gamma)</code> levels. Initialization of all pruning instances
+adds only <code class="math">n\mathrm{poly}(\gamma)</code>. The larger fixed
+power in (5), compared with the informal <code class="math">\gamma^{-3}</code>
 description, changes no final logarithmic exponent.
 
 ## 6. The finite pruning horizon needs no completion trick
 
 Every pruned non-root large cluster has initially
-$`m_C\ge n/(C\gamma)`$ edges. The modern supported horizon
-is at least $`c\phi_0m_C/Q`$, for a fixed polynomial
-$`Q=U^{O(1)}`$. From (5), this is at least
-$`c'n/(\gamma^6Q)`$.
+<code class="math">m_C\ge n/(C\gamma)</code> edges. The modern supported horizon
+is at least <code class="math">c\phi_0m_C/Q</code>, for a fixed polynomial
+<code class="math">Q=U^{O(1)}</code>. From (5), this is at least
+<code class="math">c'n/(\gamma^6Q)</code>.
 
 Inflate the per-call work/publication allowance to
 
-```math
+<!-- math-display: aabab440b099e5947806802e
 \pi=\gamma^{12}Q',\qquad
  T(n)=\left\lfloor\frac{n}{C\pi d\gamma}\right\rfloor,
  \tag{6}
-```
+-->
+![Formula](../../assets/math/aabab440b099e5947806802e.svg)
 
-where $`Q'`$ dominates the fixed logarithmic factors.
-Actual pruning work is only $`\gamma^{10}U^{O(1)}`$, so
+where <code class="math">Q'</code> dominates the fixed logarithmic factors.
+Actual pruning work is only <code class="math">\gamma^{10}U^{O(1)}</code>, so
 this allowance is safe. The complete decremental period has
-$`T(n)\ll n/(\gamma^6Q)`$ updates; each individual cluster
+<code class="math">T(n)\ll n/(\gamma^6Q)</code> updates; each individual cluster
 sees no more than this. No instance reaches the MGS horizon.
 There is therefore no final burst or all-vertices completion
 operation to justify. Instances below a fixed polynomial in
-$`\gamma`$ are solved directly, so floors and zero-length
+<code class="math">\gamma</code> are solved directly, so floors and zero-length
 periods cause no exceptional cost.
 
 ## 7. Size and worst-case time depend only polynomially on pi
 
 The source's pruning size argument uses precisely
 
-```math
+<!-- math-display: dafb09a05891c4a1b9bfbc4c
 \sum_C |P_C|\le T\pi d=O(n/\gamma).
  \tag{7}
-```
+-->
+![Formula](../../assets/math/dafb09a05891c4a1b9bfbc4c.svg)
 
 Degree three turns this into the same bound for published
 parent-owned incidences. The lower leaf-size bound, the bound
 on reweighted edges, and the ordered hierarchy give the other
 terms in NSW Lemma 9.20. Thus the maintained sketch has only
-$`O(n/\gamma)`$ non-tree edges.
+<code class="math">O(n/\gamma)</code> non-tree edges.
 
 Proposition 9.13 retains edges retired from compressed-cluster
 MSFs. As a result, one actual deletion causes at most two
 deletions of sketch edges, while causing
-$`B=O(\pi d)=O(\pi\gamma)`$ insertions. Lemma 9.27 pays
-$`\mathrm{poly}(\gamma)\pi`$ work for these local
+<code class="math">B=O(\pi d)=O(\pi\gamma)</code> insertions. Lemma 9.27 pays
+<code class="math">\mathrm{poly}(\gamma)\pi</code> work for these local
 changes; it never recursively treats every publication as a
 deletion.
 
 The explicit theorem for batch insertions, NSW Theorem 7.1,
-charges a recursive decremental instance of size $`O(k)`$,
-$`k=O(n/\gamma)`$, through
+charges a recursive decremental instance of size <code class="math">O(k)</code>,
+<code class="math">k=O(n/\gamma)</code>, through
 
-```math
+<!-- math-display: 1d813f9671beba57f218b3c4
 O\left(
  \frac{B\log k}{k}\,t_{\rm pre}(O(k))
  +B\log^2n+\frac{k\log k}{T(k)}
  +\log k\,t_u(O(k))
  \right).
  \tag{8}
-```
+-->
+![Formula](../../assets/math/1d813f9671beba57f218b3c4.svg)
 
 This is a worst-case interface. Preprocessing satisfies the
 source recurrence with additive
-$`n\mathrm{poly}(\gamma)`$; its constant branching
+<code class="math">n\mathrm{poly}(\gamma)</code>; its constant branching
 factor after normalization gives at worst
-$`\exp O(U/\log\gamma)`$ extra overhead. With (6), all
+<code class="math">\exp O(U/\log\gamma)</code> extra overhead. With (6), all
 nonrecursive terms in (8) are
-$`\mathrm{poly}(\gamma,U)`$ times that harmless
-overhead. The only recursive update multiplier is $`O(\log n)`$.
+<code class="math">\mathrm{poly}(\gamma,U)</code> times that harmless
+overhead. The only recursive update multiplier is <code class="math">O(\log n)</code>.
 
-For a global master bound $`N`$, use the same $`\gamma`$
+For a global master bound <code class="math">N</code>, use the same <code class="math">\gamma</code>
 until actual-size base cases. Solving the update recurrence gives
 
-```math
+<!-- math-display: 6aa37fa461dd5e82ccb81875
 \log t_u(N)
  =O\left(\log\gamma+\frac{Uh}{\log\gamma}+h\right).
  \tag{9}
-```
+-->
+![Formula](../../assets/math/6aa37fa461dd5e82ccb81875.svg)
 
 Theorem 7.1 supplies the same bound for fully dynamic updates,
 including the background rebuild cost already present in (8).
@@ -374,11 +383,11 @@ of NSW Lemmas 2.6–2.7. Neither these routines nor the deterministic
 decomposition and pruning replacements require a random seed or an
 oblivious update sequence.
 
-Finally choose $`r=\Theta((U/h)^{1/3})`$ and
-$`\log\gamma=\Theta(U/r+r^2h+h)`$ with a sufficiently
+Finally choose <code class="math">r=\Theta((U/h)^{1/3})</code> and
+<code class="math">\log\gamma=\Theta(U/r+r^2h+h)</code> with a sufficiently
 large fixed constant. Then (4) holds and
-$`\log\gamma=\Theta(U^{2/3}h^{1/3})`$. The second term
-in (9) is only $`O(U^{1/3}h^{2/3})`$. This proves the
+<code class="math">\log\gamma=\Theta(U^{2/3}h^{1/3})</code>. The second term
+in (9) is only <code class="math">O(U^{1/3}h^{2/3})</code>. This proves the
 quantitative envelope (1) for the stated public construction.
 
 The substantive correction to the earlier baseline note is the

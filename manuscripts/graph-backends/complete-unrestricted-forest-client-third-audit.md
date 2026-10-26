@@ -11,16 +11,16 @@ improvement by itself.
 ## 1. Direct separation is complete on the ambient forest
 
 Orient each allocation coordinate from its row to its bin, and each
-slack coordinate from an auxiliary vertex $`z`$ to its bin. A feasible
+slack coordinate from an auxiliary vertex <code class="math">z</code> to its bin. A feasible
 difference has zero divergence at rows and bins. Summing the row and
-bin conservation equations also gives zero divergence at $`z`$.
+bin conservation equations also gives zero divergence at <code class="math">z</code>.
 Choosing the sign-compatible residual direction of each nonzero
 coordinate therefore gives a nonnegative circulation.
 
 Simple-cycle decomposition uses only those chosen signs, so it
 preserves both signed slack gain and the one-sided charge exactly.
 It never inserts an opposite-direction copy of a coordinate as a
-cancellation. A simple cycle containing $`z`$ has exactly one entering
+cancellation. A simple cycle containing <code class="math">z</code> has exactly one entering
 and one leaving slack arc. Its ordinary part is a simple bin-to-bin
 path. In the ambient forest that path is precisely the unique ordinary
 path queried by the dynamic program. Ordinary-only cycles have zero
@@ -52,25 +52,26 @@ needed for either lazy propagation or the hysteresis count.
 ## 3. The fixed numerical floor does not hide a third outcome
 
 A passing path has source and target reciprocals satisfying
-$`1/s_a>(5/3)/s_b`$. With the admitted step normalization, the
+<code class="math">1/s_a&gt;(5/3)/s_b</code>. With the admitted step normalization, the
 source slack increases and the target slack remains above the old
 source slack. Thus the global minimum slack never decreases on
 numerical steps.
 
 For each donor on an accepted path,
 
-```math
+<!-- math-display: 989016a4168b95fbf9c9d8a4
 1/(4x_e)\le\bar c_e/H<3/(4s_a),
                   \qquad x_e>s_a/3.
-```
+-->
+![Formula](../../assets/math/989016a4168b95fbf9c9d8a4.svg)
 
 In addition, the path normalization satisfies
-$`V_{\rm up}\ge1/x_e`$, so
-$`\eta V_{\rm up}\le1/256`$ implies
-$`\eta\le x_e/256`$. This is the inequality that justifies the
+<code class="math">V_{\rm up}\ge1/x_e</code>, so
+<code class="math">\eta V_{\rm up}\le1/256</code> implies
+<code class="math">\eta\le x_e/256</code>. This is the inequality that justifies the
 main note's stated post-step donor bound
-$`x_e-\eta>(255/256)s_a/3`$. Using only
-$`\eta\le s_a/256`$ would give a weaker constant, but the stronger
+<code class="math">x_e-\eta&gt;(255/256)s_a/3</code>. Using only
+<code class="math">\eta\le s_a/256</code> would give a weaker constant, but the stronger
 coordinate bound is available directly.
 
 Therefore a donor cannot fall to an arbitrarily small scale below
@@ -93,8 +94,8 @@ register events. Nothing in this variation argument relies on a
 fixed potential or a permanent donor/receiver role.
 
 For a dynamic structural transcript, the accounting explicitly includes
-every changed bin slack in $`A_s`$, every external allocation record
-in $`A_x`$, and every topological record in $`A_T`$. Retiring a
+every changed bin slack in <code class="math">A_s</code>, every external allocation record
+in <code class="math">A_x</code>, and every topological record in <code class="math">A_T</code>. Retiring a
 high-degree vertex must enumerate its incident cuts. Processing all
 cuts before links makes every link an edge of the final settled forest
 and allows ordinary connectivity checks. External feasibility and the

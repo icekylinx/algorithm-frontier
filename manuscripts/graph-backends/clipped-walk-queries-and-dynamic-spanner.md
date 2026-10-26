@@ -15,10 +15,11 @@ The resulting time has two terms. If the numerical hierarchy has update
 factor `exp O(B)` and a common stretch/reporting envelope
 `Gamma = exp O(A)`, the transfer costs
 
-```math
+<!-- math-display: 20560a0471fd03648fb7e521
 \mathrm{poly}(U)\bigl(m\Gamma+n\Gamma\exp O(B)\bigr),
  \qquad U=\log(N+4),\quad h=\log(U+4).                 \tag{S1}
-```
+-->
+![Formula](../../assets/math/20560a0471fd03648fb7e521.svg)
 
 More precisely, let `gamma_0` be the concrete numerical stretch and
 `Q_path` the reporting factor beyond a clipped length cap and polynomial
@@ -34,10 +35,11 @@ and has polynomially bounded history under the declared master `N`.
 The maintained unweighted spanner has stretch, size, and total recourse
 bounded respectively by
 
-```math
+<!-- math-display: b1efd4c85410e3d698852356
 O(\Gamma\log(n+4)),\qquad
  O(n\Gamma\log(n+4)),\qquad O(n\Gamma\log(n+4)).        \tag{S2}
-```
+-->
+![Formula](../../assets/math/b1efd4c85410e3d698852356.svg)
 
 No ordinary simple-path query with time proportional only to the final
 simple path length is asserted. Nor is the first term of (S1) replaced
@@ -67,10 +69,11 @@ Child vertices use parent native identities. A period keeps at most one
 child identity per parent identity, including isolated retained ghosts.
 An original root degree at most three gives
 
-```math
+<!-- math-display: 99f1cee0e7082fc87adf660f
 \Delta_j\le 3Q^j,\qquad \log\Delta_j=O(jh),
  \qquad Q=U^{O(1)}.                                  \tag{S3}
-```
+-->
+![Formula](../../assets/math/99f1cee0e7082fc87adf660f.svg)
 
 These claims include active-root inventory, first-touch activation of
 initially small components, and the actual-size base case. In particular,
@@ -112,9 +115,10 @@ tree path iterators. No fresh `k`-vertex search is done during a query.
 given a query estimate `Dhat <= R`, the represented root walk and a
 literal simple path between the query endpoints can be reported in
 
-```math
+<!-- math-display: 7cea8c9f42e3232bc0591c93
 (R+1)\mathrm{poly}(U) . \tag{S4}
-```
+-->
+![Formula](../../assets/math/7cea8c9f42e3232bc0591c93.svg)
 
 The simple path has length at most `Dhat`. Equal endpoints return the
 empty path. Disconnected pairs have no finite accepted estimate.
@@ -159,33 +163,36 @@ conservative old `K^2 g` repair work already audited in
 and all stable-forest cut/root logs fit
 `P_j = P Delta_j^{O(1)} poly(U)`, where
 
-```math
+<!-- math-display: 60da12c1b0891f3a968bc4ed
 g=O((p+r)h),\quad
  f=O(U/p+U/r+r^2h+(p+r)h),\quad
  \log P=O(U/K+g+h).                                  \tag{S6}
-```
+-->
+![Formula](../../assets/math/60da12c1b0891f3a968bc4ed.svg)
 
 The numerical recursion pays local tree paths and actual base tables
 once in local work, and retains the initial selected credit that may
 become child edits after initialization. The same coupled recurrence
 as Section 13 of that note gives
 
-```math
+<!-- math-display: dc75924c699015940bc524b8
 \begin{aligned}
  B_{\rm noreset}&=O\bigl(x+f+K^2g+d(U/K+g+h)+d^2h\bigr),\\
  A&=O(dKg+dh),\qquad d=O(U/x).
  \end{aligned}                                             \tag{S7}
-```
+-->
+![Formula](../../assets/math/dc75924c699015940bc524b8.svg)
 
 The term `d^2 h` pays all fixed native-degree powers from (S3).
 There is no full-forest-pool copy factor here, because only native
 query descriptors are retained. With `p=r=t`, `K=t^2`,
 `x=Theta(U/t)` and `d=O(t)`, this gives
 
-```math
+<!-- math-display: 2103c36e9eb7dddb7d97bf9a
 B_{\rm noreset}=O(U/t+t^5h),\qquad
                A=O(t^4h).                              \tag{S5}
-```
+-->
+![Formula](../../assets/math/2103c36e9eb7dddb7d97bf9a.svg)
 
 This is sufficient for the fully dynamic five-sixths application in
 [dynamic spanners proof](../../problems/dynamic-spanners/proof.md). That main application does not
@@ -196,9 +203,10 @@ instead use the already audited normalized **positive-port** APSP
 hierarchy from [apsp frontier proof](../../problems/apsp-frontier/proof.md) and
 [same-stretch-apsp-comparison-and-root-audit.md](same-stretch-apsp-comparison-and-root-audit.md). Its proven envelopes are
 
-```math
+<!-- math-display: 4fbcc36ce155f79b127b3a5a
 B=O(U/t+t^3h),\qquad A=O(t^4h).          \tag{S8}
-```
+-->
+![Formula](../../assets/math/4fbcc36ce155f79b127b3a5a.svg)
 
 That implementation has intermediate positive connectors, so its
 reporting uses the scaled enumeration lemma in Section 8, with the
@@ -228,11 +236,12 @@ for each original vertex.
 
 For distinct connected original endpoints,
 
-```math
+<!-- math-display: 339f223b33029f8012b996bf
 d_{\widehat H}(u,v)
  \le H^{-1}d_{G_0}(q_u,q_v)
  \le2d_{\widehat H}(u,v).                              \tag{S9}
-```
+-->
+![Formula](../../assets/math/339f223b33029f8012b996bf.svg)
 
 The first inequality projects away connectors. A simple original
 `b`-edge path uses `O(b log N)` connectors when lifted, proving the
@@ -252,11 +261,12 @@ are enumerated and paid, and disappear only in the final projection.
 The following is the public KMZ greedy/congestion reduction, with its
 route retirement and a harmless integer threshold made explicit. Let
 
-```math
+<!-- math-display: e50e0b640edac204c7646104
 L=2\lceil\log_2(n+4)\rceil,\qquad
  R=\lceil\gamma_0 L\rceil,\qquad
  \tau=\lceil m/n\rceil+1\ge2.                         \tag{S10}
-```
+-->
+![Formula](../../assets/math/e50e0b640edac204c7646104.svg)
 
 Maintain `H` and its eligible subgraph `Hhat`. Every live input edge
 has one stored simple embedding path in `H`, of at most `R` edges.
@@ -306,9 +316,10 @@ edge is never again used by new routes during its lifetime. Thus every
 spanner edge has load at most `tau`, even after it becomes ineligible.
 For `D <= n`, the total number `Acall` of assignments satisfies
 
-```math
+<!-- math-display: 88f38d7bbb48f5d6c24e31f1
 Acall\le m+D\tau\le4m.                                \tag{S11}
-```
+-->
+![Formula](../../assets/math/88f38d7bbb48f5d6c24e31f1.svg)
 
 At most `R Acall` route-edge incidences are ever installed. Each edge
 lifetime that becomes blocked has received `tau` incidences before
@@ -319,11 +330,12 @@ true endpoints were farther than `L`, and subsequent eligibility
 changes are deletions. The elementary high-girth bound therefore
 gives `O(n)` eligible edges at every time. Consequently
 
-```math
+<!-- math-display: 9c0e0f4a32c568c2a22e2248
 |H|=O(nR),\quad
  \#\text{insertions into }H=O(nR+n),\quad
  \mathrm{recourse}(H)=O(nR).                      \tag{S12}
-```
+-->
+![Formula](../../assets/math/9c0e0f4a32c568c2a22e2248.svg)
 
 Here only the at most `n` external deletions remove edges from `H`.
 Each `H` edge enters the oracle's eligible graph once and leaves it
@@ -368,21 +380,24 @@ standard extension.
 
 At the common stretch scale
 
-```math
+<!-- math-display: e7aa76e4f41e20f03855834c
 A_0=U^{5/7}h^{2/7},
-```
+-->
+![Formula](../../assets/math/e7aa76e4f41e20f03855834c.svg)
 
 take `t=Theta((U/h)^{5/28})` in (S8). The research hierarchy gives
 
-```math
+<!-- math-display: 745575a07d993ace70d0bf3c
 A=O(A_0),\qquad B=O(U^{23/28}h^{5/28}).                \tag{S13}
-```
+-->
+![Formula](../../assets/math/745575a07d993ace70d0bf3c.svg)
 
 The resulting total spanner time is
 
-```math
+<!-- math-display: 82f3a0505580d25b177df59f
 m\exp O(A_0)+n\exp O(U^{23/28}h^{5/28}),              \tag{S14}
-```
+-->
+![Formula](../../assets/math/82f3a0505580d25b177df59f.svg)
 
 with size and recourse `n exp O(A_0)` and stretch `exp O(A_0)`.
 The `A_0` contribution to the second exponent is of smaller order.
@@ -390,9 +405,10 @@ All suppressed factors are polynomial logarithms or fixed constants.
 
 At `t=Theta((U/h)^{1/5})`, (S8) instead gives
 
-```math
+<!-- math-display: 889d7cfaaa4d556ecf40da83
 A,B=O(U^{4/5}h^{1/5}),
-```
+-->
+![Formula](../../assets/math/889d7cfaaa4d556ecf40da83.svg)
 
 so time is `(m+n) exp O(U^{4/5}h^{1/5})` and size/recourse are
 `n exp O(U^{4/5}h^{1/5})`. This is a balanced point, not an automatic
@@ -417,11 +433,12 @@ that the aggregate native walk enumerated at level `j`, including
 all local query legs at that level, has length at most `sigma_j R`.
 All native lengths are positive integers. Therefore
 
-```math
+<!-- math-display: d36d9baf90ff31e978604089
 \#\text{enumerated native records}
        \le R\sum_{j=0}^d\sigma_j\mathrm{poly}(U)
        \le R\exp O(dh).                                \tag{S15}
-```
+-->
+![Formula](../../assets/math/d36d9baf90ff31e978604089.svg)
 
 The same local exact ball/base trees and selected-core physical
 root-leg witnesses are already present in the public source interfaces:
@@ -441,9 +458,10 @@ For the derived public point `d=O((U/h)^{1/7})`, the extra `dh`
 in (S15) is smaller than its logarithmic stretch `A_0`. Thus the
 fair public transfer is
 
-```math
+<!-- math-display: 381ed7d25f4cc4e5d138365b
 m\exp O(A_0)+n\exp O(U^{6/7}h^{1/7}),                 \tag{S16}
-```
+-->
+![Formula](../../assets/math/381ed7d25f4cc4e5d138365b.svg)
 
 with the same size, recourse, stretch scale, and deletion horizon as
 (S14). The two hidden stretch constants can be matched against a

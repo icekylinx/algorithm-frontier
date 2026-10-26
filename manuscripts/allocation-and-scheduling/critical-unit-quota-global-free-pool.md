@@ -24,25 +24,28 @@ Consider a fully normalized state of the prefix algorithm.
 For each resource j, let W_j=X_j union Y_j be its reserved copy set,
 and U_j=M_j minus Y_j the unmarked matching copies. Define
 
-```math
+<!-- math-display: 45196e6a6026368177eb4408
 \Phi=\sum_j r_j(W_j),\qquad
  \Psi=\sum_j r_j(M_j\cup X_j).
-```
+-->
+![Formula](../../assets/math/45196e6a6026368177eb4408.svg)
 
 Prefix rank additivity for the full selected prefix gives
 
-```math
+<!-- math-display: d65055d903e6c8db4c0eab65
 \Psi=\Phi+\sum_j|U_j|
                      =\Phi+b(k-|Y|).
  \tag{F1}
-```
+-->
+![Formula](../../assets/math/d65055d903e6c8db4c0eab65.svg)
 
 The equal-unit current cover is Phi<=(2b-1)|Y|. Hence
 
-```math
+<!-- math-display: 7ae721ec764a8de7633c5691
 \boxed{\Psi\le bk+(b-1)|Y|\le(2b-1)k.}
  \tag{F2}
-```
+-->
+![Formula](../../assets/math/7ae721ec764a8de7633c5691.svg)
 
 This is stronger than merely counting all b(k+|X|) service units of
 M union X. It uses the current prefix invariant, not a birth charge.
@@ -63,12 +66,13 @@ Every such player has available optimum at most b-1, so it loses at
 least d units when restricted to these capacities. At most Psi units
 can be lost in total. Therefore
 
-```math
+<!-- math-display: 89391efa72e0a6757236018d
 |I^*\setminus F|\le\left\lfloor\frac\Psi d\right\rfloor,
  \qquad
  r_M(F)\ge r-\left\lfloor\frac\Psi d\right\rfloor.
  \tag{F3}
-```
+-->
+![Formula](../../assets/math/89391efa72e0a6757236018d.svg)
 
 The same rank conclusion holds against the residual-capacity
 configuration relaxation: its cuts applied to bases of M_j union X_j
@@ -79,10 +83,11 @@ cover this application too.
 At the critical integer target t=3b-2, one has d=2b-1. Combining
 (F2)--(F3) yields
 
-```math
+<!-- math-display: f0a9047bd202a08536705d49
 r_M(F)\ge r-k.
  \tag{F4}
-```
+-->
+![Formula](../../assets/math/f0a9047bd202a08536705d49.svg)
 
 In particular, for t=4 and b=2 there is always a globally strongly
 free candidate while k<r. Its owner need not lie outside the current
@@ -120,16 +125,18 @@ d units. This implies Psi>=d(r-u_0).
 
 At the critical target, (F2) can be rewritten as
 
-```math
+<!-- math-display: dac1ea82336c63dd25d0301b
 \Psi\le(2b-1)k-(b-1)u_0.
-```
+-->
+![Formula](../../assets/math/dac1ea82336c63dd25d0301b.svg)
 
 Writing delta=r-k>0, these inequalities contradict each other whenever
 
-```math
+<!-- math-display: 5f02088bb5317929fdf4a6fe
 u_0<(2-1/b)\,\delta.
  \tag{F5}
-```
+-->
+![Formula](../../assets/math/5f02088bb5317929fdf4a6fe.svg)
 
 Thus (F5) guarantees either augmentation or the safe marked exchange
 in Section 3. For b=2 and delta=1, zero or one unmarked matching

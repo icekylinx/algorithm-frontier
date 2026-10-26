@@ -32,10 +32,11 @@ The maximum utility is 2 in A and 9/4 in B. Because the one player
 is compulsory and the allocations adapt to the scenario, the robust
 integer optimum is exactly
 
-```math
+<!-- math-display: 125ec6f02c5236a9bb097cf3
 \mathrm{OPT}=2.
 \tag{CR1}
-```
+-->
+![Formula](../../assets/math/125ec6f02c5236a9bb097cf3.svg)
 
 Use the exact-half threshold theta=OPT/2=1. Scenario A has only a
 heavy eligible pair; scenario B has only a light eligible pair.
@@ -64,19 +65,21 @@ justification.
 
 Let
 
-```math
+<!-- math-display: 1ede449fdc4b908402a5903d
 P=\{1,2,3,4\},\qquad M=U_{2,4}.
 \tag{CR2}
-```
+-->
+![Formula](../../assets/math/1ede449fdc4b908402a5903d.svg)
 
 The dual player matroid is again U_{2,4}. There is one scenario for
 each of the six pairs S in binom(P,2). In scenario S use one unit-
 valued recipient resource with rank
 
-```math
+<!-- math-display: f6f6aea851ed99028fdccadf
 f_S(A)=|A\setminus S|+\min\{|A\cap S|,1\}.
 \tag{CR3}
-```
+-->
+![Formula](../../assets/math/f6f6aea851ed99028fdccadf.svg)
 
 Thus f_S is the direct sum of a free matroid on P\\S and a rank-one
 uniform matroid on S. All original values are one. All assignment
@@ -88,18 +91,20 @@ Consider the natural proposed joint fractional all-heavy/dummy LP:
 use one common dummy y in P(M*) and one real resource vector x^S in
 P(f_S) per scenario, requiring
 
-```math
+<!-- math-display: ca31882776bbd864c5fc8aec
 x^S_p+y_p=1\qquad(p\in P).
 \tag{CR4}
-```
+-->
+![Formula](../../assets/math/ca31882776bbd864c5fc8aec.svg)
 
 It is feasible. Set
 
-```math
+<!-- math-display: 8e5719e27d333e8601cd9eed
 y_p=1/2,\qquad x^S_p=1/2
                           \qquad(p\in P,\ S\in\tbinom P2).
 \tag{CR5}
-```
+-->
+![Formula](../../assets/math/8e5719e27d333e8601cd9eed.svg)
 
 The dummy has coordinates at most one and total two, so it belongs
 to P(U_{2,4}). Each x^S satisfies the two singleton caps on S and
@@ -168,19 +173,21 @@ arbitrarily with the scenario. Even finding a legal common basis
 with zero allocation can encode the same Hitting Set problem.
 For each source set S, put
 
-```math
+<!-- math-display: 2a7a6d205867f0fc0e345ad1
 \sigma^S_p=\mathbf1[p\in S],\qquad C_S=|S|-1,
                  \qquad M=U_{q-k,q}.
 \tag{CR6}
-```
+-->
+![Formula](../../assets/math/2a7a6d205867f0fc0e345ad1.svg)
 
 Give all real assignments zero utility and cost. A basis B meets
 every setup budget exactly when
 
-```math
+<!-- math-display: 2def6ce7bd1e4a8b751878ff
 |B\cap S|\le |S|-1
 \tag{CR7}
-```
+-->
+![Formula](../../assets/math/2def6ce7bd1e4a8b751878ff.svg)
 
 for every S, which says that P\\B is a hitting set. Use the same
 empty-set and fresh-element preprocessing as in the companion

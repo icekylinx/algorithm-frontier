@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns value at least $`T_{\mathrm{conf}}/d`$ with $`d=4-3/r`$. With a certified local factor-$`\lambda`$ oracle, use $`d=\lambda^{-1}+3-3/r`$. Factor $`d+\eta`$ has the rank-quasipolynomial alternative.
+Returns value at least <code class="math">T_{\mathrm{conf}}/d</code> with <code class="math">d=4-3/r</code>. With a certified local factor-<code class="math">\lambda</code> oracle, use <code class="math">d=\lambda^{-1}+3-3/r</code>. Factor <code class="math">d+\eta</code> has the rank-quasipolynomial alternative.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic current-blocker search with exact paid primitives. The optional fa
 
 **Time**
 
-$`2^{O(r)}\mathrm{poly}(H)`$ for factor $`d`$; $`\mathrm{poly}(H)\min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}`$ for $`d+\eta`$.
+<code class="math">2^{O(r)}\mathrm{poly}(H)</code> for factor <code class="math">d</code>; <code class="math">\mathrm{poly}(H)\min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}</code> for <code class="math">d+\eta</code>.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the original encoded matroid and resource input and paid oracle wo
 
 **Parameters**
 
-$`r\ge1`$ is the selected player rank; $`\eta>0`$ and the certified $`0<\lambda\le1`$ are rational; $`T_{\mathrm{conf}}`$ is the coupled configuration optimum. $`H`$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+<code class="math">r\ge1</code> is the selected player rank; <code class="math">\eta&gt;0</code> and the certified <code class="math">0&lt;\lambda\le1</code> are rational; <code class="math">T_{\mathrm{conf}}</code> is the coupled configuration optimum. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 

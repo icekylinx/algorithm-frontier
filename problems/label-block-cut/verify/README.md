@@ -9,15 +9,17 @@ The decoder and lower bounds are algebraic proofs. No dedicated executable curre
 ## Exact common-scalar decoder
 
 For every original block column,
-```math
+<!-- math-display: a56c10937c471f0b57635fe4
 CT_Fz_{e,j}=\gamma_F(S_e)a_{e,j}.
-```
+-->
+![Formula](../../../assets/math/a56c10937c471f0b57635fe4.svg)
 The same scalar multiplies every column of that block, and its zero set is exactly the failed-label condition. Subspace membership therefore decodes independently of its nonzero magnitude.
 
 The underlying polynomial identity is
-```math
+<!-- math-display: bdd622350b15b02c1d92ba3e
 p_T(\theta(F))=\prod_{c\in T}q_F(\alpha_c),
-```
+-->
+![Formula](../../../assets/math/bdd622350b15b02c1d92ba3e.svg)
 with the dummy-label factor equal to one. Ordinary monomial coefficients require no factorial division, so the identity holds in every characteristic.
 
 Rank compression selects original rows and preserves their labels. It does not label an arbitrary linear combination of rows. The explicit finite-field extension preserves the original-field membership queries.
@@ -30,8 +32,8 @@ Hyperedge failure deletes the whole incident item, and a partition objective cou
 
 ## Lower bounds
 
-A block indexed by a $`k`$-subset of an $`(h+k)`$-label universe survives failure of its complement; every other indexed block contains a failed label. Thus each original block must separately satisfy the underlying cut lower bound.
+A block indexed by a <code class="math">k</code>-subset of an <code class="math">(h+k)</code>-label universe survives failure of its complement; every other indexed block contains a failed label. Thus each original block must separately satisfy the underlying cut lower bound.
 
-That cut bound is proved directly from discrepancies, singleton degree inequalities, the $`L_1`$ Khintchine inequality, and Jensen's inequality. A spectral lower bound alone would not establish the claimed cut lower bound. The compact runtime follows from the dimension gate and explicit arithmetic interfaces, rather than an empirical timing experiment.
+That cut bound is proved directly from discrepancies, singleton degree inequalities, the <code class="math">L_1</code> Khintchine inequality, and Jensen's inequality. A spectral lower bound alone would not establish the claimed cut lower bound. The compact runtime follows from the dimension gate and explicit arithmetic interfaces, rather than an empirical timing experiment.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

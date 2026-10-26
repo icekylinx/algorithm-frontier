@@ -11,9 +11,10 @@ IDs and a fixed feasible potential. It supports supplied compatible
 cuts and links, maximum-score directed path search, implicit numerical
 path steps, guard checks, and register notifications in
 
-```math
+<!-- math-display: 7788d5e6b63bc14eeb9f5077
 (\nu+J+P+Q+R)\mathrm{polylog} S
-```
+-->
+![Formula](../../assets/math/7788d5e6b63bc14eeb9f5077.svg)
 
 local work. Here P counts the supplied edge edits; it is not silently
 bounded by the number of accepted numerical steps J. The register bound
@@ -76,9 +77,10 @@ carries minus tau. A terminal is degree one and has an immutable role.
 It can be an endpoint but cannot be internal to a simple scored path.
 Thus a terminal-to-terminal score is exactly
 
-```math
+<!-- math-display: 471ff540c96736fe4190643d
 \sigma_a-\tau_b-\sum_{e\text{ donor on }a\leadsto b}\bar c_e.
-```
+-->
+![Formula](../../assets/math/471ff540c96736fe4190643d.svg)
 
 Changing a bin's slack changes two individual edge prices. It does not
 require editing every cluster at which that bin appears as a boundary.
@@ -90,9 +92,10 @@ table I, boundary-to-target table O, and internal optimum F have constant
 size. Two edge-disjoint child clusters intersect in one vertex v. A
 simple path either lies in one child or crosses v once. Consequently
 
-```math
+<!-- math-display: c548ba053a2d7b9d97bd368e
 F=\max\{F_1,F_2,I_1(v)+O_2(v),I_2(v)+O_1(v)\}
-```
+-->
+![Formula](../../assets/math/c548ba053a2d7b9d97bd368e.svg)
 
 and the stated I, O, and W join formulas exhaust all possibilities.
 Every finite cross term is a valid directed simple path: the two
@@ -167,10 +170,11 @@ increase.
 For an accepted a-to-b path, ordinary feasibility and its positive
 score imply
 
-```math
+<!-- math-display: 570dffb92873b8df2e0e1a82
 D(b)\le D(a)+\bar L(a,b)
        \le A-\sigma_a+\bar L(a,b)<A-\tau_b.
-```
+-->
+![Formula](../../assets/math/570dffb92873b8df2e0e1a82.svg)
 
 This supplies the same terminal source-arc margin as in the accepted
 fixed-tree lemma. The prescribed small step, including its rounding
@@ -211,9 +215,10 @@ bound total positive variation by the negative variation plus
 O((N+A_ext) log S). Cuts, links, and internal reroots contribute no
 numerical variation and erase none. This gives
 
-```math
+<!-- math-display: c2c9a2b6ddf2fa83fce3d0ca
 R=O\bigl(J+(N+A_{\rm ext})\log S\bigr).
-```
+-->
+![Formula](../../assets/math/c2c9a2b6ddf2fa83fce3d0ca.svg)
 
 The initialization, supplied-edit, query, numerical-step, and reset
 costs consequently give the claimed local total. None of these terms

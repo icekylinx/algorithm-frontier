@@ -11,20 +11,22 @@ not a polynomial-time improvement for general unrelated scheduling.
 Let P be q>=1 machines. Each type j has a normalized monotone integral
 submodular recipient rank f_j, with mandatory original count
 
-```math
+<!-- math-display: 8799be8b9a58190921821362
 n_j=f_j(P),\qquad N=\sum_jn_j.
  \tag{AB1}
-```
+-->
+![Formula](../../assets/math/8799be8b9a58190921821362.svg)
 
 A schedule has integer x_j in B(f_j). Each eligible pair (p,j) has
 arbitrary nonnegative rational processing time ell_pj and assignment
 cost c_pj. A supplied additional eligibility mask never reduces n_j.
 The budget is
 
-```math
+<!-- math-display: 496a9731c0f36fd4f714f939
 \sum_{p,j}c_{pj}x_j(p)\le C,\qquad C\ge0.
  \tag{AB2}
-```
+-->
+![Formula](../../assets/math/496a9731c0f36fd4f714f939.svg)
 
 OPT is the minimum maximum machine load over these schedules. H
 includes binary data and paid polynomial rank, SFM, LP and intersection
@@ -32,19 +34,21 @@ work. No unit of a binary count is expanded.
 
 For integer k>=0 define
 
-```math
+<!-- math-display: d25962a4dc8ec7656be06bdd
 \gamma_k=\frac{3\cdot2^k-1}{2^{k+1}-1}=\frac32+\frac1{2(2^{k+1}-1)}.
  \tag{AB3}
-```
+-->
+![Formula](../../assets/math/d25962a4dc8ec7656be06bdd.svg)
 
 **Theorem AB.** A deterministic algorithm either detects infeasibility
 even without a load bound, or returns a legal schedule of makespan at
 most gamma_k*OPT, with all original totals and the budget exact, in
 
-```math
+<!-- math-display: 0bcd1e9a365deb827942a457
 (k+1)^q\mathrm{poly}(H+k)\text{ time},\qquad \mathrm{poly}(H+k)\text{ space}.
  \tag{AB4}
-```
+-->
+![Formula](../../assets/math/0bcd1e9a365deb827942a457.svg)
 
 | k | Approximation | Exponential time factor |
 | --- | --- | --- |
@@ -57,10 +61,11 @@ most gamma_k*OPT, with all original totals and the budget exact, in
 For rational epsilon>0, choosing k with the last term of AB3 at most
 epsilon gives factor 3/2+epsilon in
 
-```math
+<!-- math-display: 785f8b69c4f8da57bd4a4de8
 \bigl[O(1+\log(1+\varepsilon^{-1}))\bigr]^q\mathrm{poly}(H_\varepsilon).
  \tag{AB5}
-```
+-->
+![Formula](../../assets/math/785f8b69c4f8da57bd4a4de8.svg)
 
 where H_epsilon=H+size(epsilon) includes the complete binary numerator
 and denominator of the supplied rational accuracy. A rational close
@@ -75,10 +80,11 @@ Use one coordinate per eligible machine-type pair. The direct sum of
 the resource polymatroids is integral. After any pair mask, type j has
 rank at most n_j, but we still require
 
-```math
+<!-- math-display: d4f85aec7509335367c16217
 \sum_{p,j}x_j(p)=N.
  \tag{AB6}
-```
+-->
+![Formula](../../assets/math/d4f85aec7509335367c16217.svg)
 
 Thus every type attains its own original n_j. One type cannot compensate
 for another type's missing mandatory units.
@@ -96,18 +102,20 @@ All rank and cap values are kept in binary.
 For one machine group G, order pair coordinates e_1,...,e_m by
 nonincreasing time v_1>=...>=v_m>=0. Given a fractional x, put
 
-```math
+<!-- math-display: 035c9bfb2a4bfa831dd370b7
 X_h=\sum_{i\le h}x(e_i),\qquad U_h=\lceil X_h\rceil.
  \tag{AB7}
-```
+-->
+![Formula](../../assets/math/035c9bfb2a4bfa831dd370b7.svg)
 
 The integer prefix caps x'(e_1,...,e_h)<=U_h, including the full
 prefix, define an integral chain polymatroid. Its explicit rank is
 
-```math
+<!-- math-display: 0163bb428a3bff7a9fb47713
 r_G(S)=\max\{U_h:e_h\in S\},\qquad r_G(\varnothing)=0.
  \tag{AB8}
-```
+-->
+![Formula](../../assets/math/0163bb428a3bff7a9fb47713.svg)
 
 The U_h are nondecreasing. If h is the largest index in S, the prefix
 cap bounds its count by U_h; conversely prefix sets are among the rank
@@ -116,7 +124,7 @@ and submodular, with a polynomial rank oracle and no slot expansion.
 
 With v_(m+1)=0, summation by parts gives
 
-```math
+<!-- math-display: 3bdd282c966afbd18aeb6e59
 \begin{aligned}
  \sum_iv_ix'(e_i)
  &=\sum_h(v_h-v_{h+1})x'(\{e_1,\ldots,e_h\})\\
@@ -124,7 +132,8 @@ With v_(m+1)=0, summation by parts gives
  &\le\sum_iv_ix(e_i)+v_1.
  \end{aligned}
  \tag{AB9}
-```
+-->
+![Formula](../../assets/math/3bdd282c966afbd18aeb6e59.svg)
 
 Empty groups contribute zero. Zero processing times also cause no
 problem: their coefficient differences vanish, while AB6 still
@@ -135,18 +144,20 @@ groups will be combined in one machine direct sum.
 
 Fix T>0 and k>=1. Write D=2^(k+1)-1 and set
 
-```math
+<!-- math-display: 196f99b9dc00a916a7701411
 \ell_i=\frac{2^k+2^i-1}{2^{k+1}-1},\qquad 0\le i\le k.
  \tag{AB10}
-```
+-->
+![Formula](../../assets/math/196f99b9dc00a916a7701411.svg)
 
 These O(k)-bit rationals satisfy
 
-```math
+<!-- math-display: 38966600981592e24739852a
 \frac12<\ell_0=\gamma_k-1<\ell_1<\cdots<\ell_k=1,\qquad
  \ell_i+2(1-\ell_{i-1})=\gamma_k\quad(1\le i\le k).
  \tag{AB11}
-```
+-->
+![Formula](../../assets/math/38966600981592e24739852a.svg)
 
 Give each machine one label in {0,1,...,k}.
 
@@ -186,19 +197,21 @@ to it and to the single resource direct sum at total N.
 The full-total minimum-cost primitive returns integer x' with all
 original totals and cost at most C. By AB9, label-zero load is at most
 
-```math
+<!-- math-display: 9c0d245118c4d6be258670dd
 T+\ell_0T=\gamma_kT.
  \tag{AB12}
-```
+-->
+![Formula](../../assets/math/9c0d245118c4d6be258670dd.svg)
 
 At a label-i machine the big contribution is at most l_i*T. The small
 fractional load and maximum allowed small processing time are each at
 most (1-l_(i-1))*T. Its integral total load is therefore at most
 
-```math
+<!-- math-display: 2beab074b5254ae624c5ab91
 [\ell_i+2(1-\ell_{i-1})]T=\gamma_kT.
  \tag{AB13}
-```
+-->
+![Formula](../../assets/math/2beab074b5254ae624c5ab91.svg)
 
 No lower bound of one on big count is required: an empty big group
 only improves load. All jobs are rounded jointly, no resource is

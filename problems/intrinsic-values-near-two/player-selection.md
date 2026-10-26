@@ -21,10 +21,11 @@ a positive rational intrinsic unit value v_j and an integral normalized
 monotone submodular rank f_j on P. Its allocated integer count vector
 belongs to P(f_j). The objective is
 
-```math
+<!-- math-display: bd558f0544b04de396a64f14
 \min_{p\in B}\sum_j v_j n_j(p).
  \tag{J1}
-```
+-->
+![Formula](../../assets/math/bd558f0544b04de396a64f14.svg)
 
 Resource types have independent feasibility constraints. Unused units
 are allowed; there is no additional local constraint coupling distinct
@@ -43,13 +44,14 @@ minimum over an empty set asserted.
 For a positive threshold theta, let heavy types have value at least
 theta, and light types have value strictly below theta. Define
 
-```math
+<!-- math-display: dad7803483a7da0f34022750
 f^b_\theta=\sum_{j:v_j\ge\theta}f_j,
  \qquad N_\theta=\mathrm{Boolean}(f^b_\theta),
  \qquad U_\theta=M^*\vee N_\theta,
  \qquad K_\theta=U_\theta^*.
  \tag{J2}
-```
+-->
+![Formula](../../assets/math/dad7803483a7da0f34022750.svg)
 
 Here `Boolean(f)` is the matroid of player sets whose indicator lies
 in P(f). It is the integral polymatroid intersected with the unit
@@ -59,11 +61,12 @@ decomposed among the original heavy types in polynomial oracle time.
 
 Let Q_theta be the nonloop set of K_theta, and put
 
-```math
+<!-- math-display: 4da1d21b9b23f5547019a048
 \delta(\theta)=r(K_\theta),
        \qquad c(\theta)=|Q_\theta|-\delta(\theta).
  \tag{J3}
-```
+-->
+![Formula](../../assets/math/4da1d21b9b23f5547019a048.svg)
 
 If delta=0 then Q_theta is empty and c(theta)=0. The parameter c(theta)
 need not be monotone in theta; the algorithm below does not require
@@ -72,18 +75,20 @@ monotonicity.
 Write nu(M,N) for the maximum cardinality of a common independent set.
 The exact rank identity is
 
-```math
+<!-- math-display: 95170c73fdb4e4c2a935069c
 \delta(\theta)=r-\nu(M,N_\theta).
  \tag{J4}
-```
+-->
+![Formula](../../assets/math/95170c73fdb4e4c2a935069c.svg)
 
 Consequently
 
-```math
+<!-- math-display: 190157afb1ad2f267f10c414
 c(\theta)\le q-r+\nu(M,N_\theta)
                     \le(q-r)+r(N_\theta).
  \tag{J5}
-```
+-->
+![Formula](../../assets/math/190157afb1ad2f267f10c414.svg)
 
 Thus the sum of the original corank and heavy-cover rank is a sufficient
 upper parameter, while deleting derived loops can improve it. When M
@@ -120,7 +125,7 @@ S with `r_(M*)(S+e)>r_(M*)(S)`. Such an e is outside the M*-closure of
 every subset of S, including C. Thus `C+e` remains independent in
 M*, and `(C+e) dot-union D=S+e` is independent in U, contradicting
 that S is a U-basis. Hence S has full M* rank, and ordinary matroid
-augmentation extends C within S to an M*-basis. $`\square`$
+augmentation extends C within S to an M*-basis. <code class="math">\square</code>
 
 **Completion corollary.** For every K-basis I, a basis B of the
 original M containing I can be recovered so that B\I is independent
@@ -129,11 +134,12 @@ in N.
 Indeed, S=P\I is a U-basis. Decompose it as above and extend C to
 an M*-basis C' entirely inside S. Then
 
-```math
+<!-- math-display: f1925dbbf061425142bc5b2a
 B=P\setminus C',
                \qquad B\setminus I=S\setminus C'\subseteq D.
  \tag{J6}
-```
+-->
+![Formula](../../assets/math/f1925dbbf061425142bc5b2a.svg)
 
 The first set is an M-basis, it contains I because C' avoids I, and
 the second set is independent in N. This proves both the structural
@@ -156,19 +162,21 @@ Write L=B*\R for its light-only selected players.
 
 The complement of L has the disjoint decomposition
 
-```math
+<!-- math-display: 3f34d780c5a5c982d3df3537
 P\setminus L=(P\setminus B^*)\mathbin{\dot\cup}R.
  \tag{J7}
-```
+-->
+![Formula](../../assets/math/3f34d780c5a5c982d3df3537.svg)
 
 Its first component is an M*-basis and its second is N-independent.
 It is therefore U-independent. Extend it to a U-basis S*. Its
 complement I*=P\S* is a K-basis satisfying
 
-```math
+<!-- math-display: ff5bb6b4677c67448f738b84
 I^*\subseteq L.
  \tag{J8}
-```
+-->
+![Formula](../../assets/math/ff5bb6b4677c67448f738b84.svg)
 
 Every member of I* receives value at least T using only light types
 in the original allocation. Restricting to these players preserves
@@ -191,11 +199,12 @@ than the number of distinct explicit values is needed.
 For a fixed split construct N,U,K and its loop-deleted ground Q.
 Write
 
-```math
+<!-- math-display: 4791fe49ee9024ebdf587f3b
 a_H=\min_{j\text{ heavy}}v_j,
  \qquad u_L=\max_{j\text{ light}}v_j,
  \tag{J9}
-```
+-->
+![Formula](../../assets/math/4791fe49ee9024ebdf587f3b.svg)
 
 with a_H=infinity when there are no heavy types and u_L=0 when there
 are no light types.
@@ -215,10 +224,11 @@ If OPT_L denotes the integer light-only optimum over its bases, it
 returns a K-basis I and original light counts with minimum value at
 least
 
-```math
+<!-- math-display: 720992ab34a55b8e345fe43b
 \max\{0,(1-\epsilon)\mathrm{OPT}_L-u_L\}
  \tag{J10}
-```
+-->
+![Formula](../../assets/math/720992ab34a55b8e345fe43b.svg)
 
 in `Gamma(1/epsilon)^c poly(H)` time, where
 `Gamma(R)=R^R/(R-1)^(R-1)<=eR`. Using u_L from before restriction
@@ -233,10 +243,11 @@ and light types are disjoint, this cannot disturb the light counts.
 Any counts outside B may be discarded. The candidate's actual value
 is at least
 
-```math
+<!-- math-display: 9d81da18fcf68b90b069bf6d
 \min\{a_H,(1-\epsilon)\mathrm{OPT}_L-u_L\},
  \tag{J11}
-```
+-->
+![Formula](../../assets/math/9d81da18fcf68b90b069bf6d.svg)
 
 whenever the displayed expression is positive; the actual value is
 always nonnegative. The final algorithm compares actual achieved
@@ -251,29 +262,30 @@ to optimize the entire original instance; other splits may do better.
 ## 5. The additive subroutine is fully specified
 
 For each fixed split, the permitted family consists of the actual
-bases of $`K|Q`$. It does not vary during the inner target search.
+bases of <code class="math">K&#124;Q</code>. It does not vary during the inner target search.
 The [additive theorem](../unrelated-values-additive/proof.md) applies
-with $`v_{pj}=v_j`$ on the retained light types, zero assignment costs,
+with <code class="math">v_{pj}=v_j</code> on the retained light types, zero assignment costs,
 and zero budget. Its fractional comparator is
-```math
+<!-- math-display: 6bb94ca91a31d3c9fb30ecd3
 \mathrm{FOPT}_L=
  \max_{\substack{I\text{ a }K|Q\text{-basis}\\x_j\in P(f_j|Q)}}
        \min_{p\in I}\sum_{j\text{ light}}v_jx_j(p)
  \ \ge\ \mathrm{OPT}_L.
  \tag{J12}
-```
+-->
+![Formula](../../assets/math/6bb94ca91a31d3c9fb30ecd3.svg)
 The fixed-basis LPs have a uniform polynomial-bit denominator bound.
 Their nonnegative support separators and the weighted omission
-routine give a gap of relative loss $`\epsilon`$ in
-$`\Gamma(1/\epsilon)^c\mathrm{poly}(H)`$ time. Fine rational
+routine give a gap of relative loss <code class="math">\epsilon</code> in
+<code class="math">\Gamma(1/\epsilon)^c\mathrm{poly}(H)</code> time. Fine rational
 search followed by exact reoptimization of the saved basis retains
-that full accuracy without a second split of $`\epsilon`$.
+that full accuracy without a second split of <code class="math">\epsilon</code>.
 
 The common lower-prefix rounding returns original integral counts
 with value at least
-$`(1-\epsilon)\mathrm{FOPT}_L-u_L`$, hence proves (J10).
+<code class="math">(1-\epsilon)\mathrm{FOPT}_L-u_L</code>, hence proves (J10).
 Unused capacity is allowed; resource counts stay binary and there
-is no numerical expansion of units. Restricting to $`Q`$ and
+is no numerical expansion of units. Restricting to <code class="math">Q</code> and
 zero-extending back to the original player ground preserves the
 recipient inequalities.
 
@@ -286,10 +298,11 @@ special case of the more general unrelated-value theorem.
 
 Define
 
-```math
+<!-- math-display: a58dd282c22153df3cb67a6f
 \theta^*={(1-\epsilon)\mathrm{OPT}\over2}.
  \tag{J13}
-```
+-->
+![Formula](../../assets/math/a58dd282c22153df3cb67a6f.svg)
 
 Assume OPT>0 and c(theta*)<=k. The split at theta* appears among the
 enumerated value-class splits, with equality assigned to the heavy
@@ -300,11 +313,12 @@ zero, the pure-heavy candidate already has value at least theta*.
 Otherwise this split is processed, and its light output has value
 at least
 
-```math
+<!-- math-display: 0bbe0e3a3ad17dfc05a509b3
 (1-\epsilon)\mathrm{OPT}-u_L
                    =2\theta^*-u_L>\theta^*.
  \tag{J14}
-```
+-->
+![Formula](../../assets/math/0bbe0e3a3ad17dfc05a509b3.svg)
 
 Every heavy unit has value at least theta*. Completion by (J6)
 therefore yields a full original M-basis of value at least theta*.
@@ -313,10 +327,11 @@ The use of the strict light inequality is essential at this step.
 **Theorem J.** For every rational `0<epsilon<1` and supplied budget
 k, a deterministic algorithm has running time
 
-```math
+<!-- math-display: 3e3a775844079788a76ea4e7
 \Gamma(1/\epsilon)^k\mathrm{poly}(H)
  \tag{J15}
-```
+-->
+![Formula](../../assets/math/3e3a775844079788a76ea4e7.svg)
 
 and polynomial workspace. If OPT>0 and `c((1-epsilon)OPT/2)<=k`, it
 returns a legal allocation on a basis of the arbitrary original player
@@ -331,20 +346,22 @@ numerically evaluated by the algorithm.
 
 For rational eta>0, choose `epsilon=eta/(2+eta)`. The guarantee becomes
 
-```math
+<!-- math-display: dfc4814a57bb4ed463af5d35
 \mathrm{value}\ge{\mathrm{OPT}\over2+\eta},
  \qquad
        c\left({\mathrm{OPT}\over2+\eta}\right)\le k,
  \tag{J16}
-```
+-->
+![Formula](../../assets/math/dfc4814a57bb4ed463af5d35.svg)
 
 with time
 
-```math
+<!-- math-display: 8c3291fa3b6e9d39265faa0f
 \Gamma\!\left({2+\eta\over\eta}\right)^k\mathrm{poly}(H)
              \le\left({e(2+\eta)\over\eta}\right)^k\mathrm{poly}(H).
  \tag{J17}
-```
+-->
+![Formula](../../assets/math/8c3291fa3b6e9d39265faa0f.svg)
 
 The sufficient bound in (J5) gives the same conclusion when the
 original corank plus the common heavy-cover rank is at most k,

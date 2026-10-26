@@ -22,12 +22,13 @@ of a hypothetical superpose rerun in Proposition 5.7.
 Let `H=(A,B,E)` be an explicit `r`-bounded bipartite hypergraph,
 let `p=sum_e |e|`, and assume
 
-```math
+<!-- math-display: e8efdcef445d1aa5c4cc602c
 \tau(E_S)\ge\Delta r^2|S|
        \quad\text{for all }S\subseteq A,
        \qquad\Delta\ge4.
  \tag{1}
-```
+-->
+![Formula](../../assets/math/e8efdcef445d1aa5c4cc602c.svg)
 
 Use the original BHHS operations with `mu=1/10`: extend a
 layer greedily subject to its per-left cap `Delta`, collapse
@@ -37,13 +38,14 @@ increases by a factor at least `1.1`.
 
 These operations find a left-perfect matching in time
 
-```math
+<!-- math-display: 2a7dd6dfda0c7e0495d1dbba
 O(|A|+|B|)+
  p\exp O\!\left(
        \frac{\log(p+4)\log(2+\log\Delta)}{\log\Delta}
        \right).
  \tag{2}
-```
+-->
+![Formula](../../assets/math/2a7dd6dfda0c7e0495d1dbba.svg)
 
 BHHS Theorem 1.5 displays the weaker rate
 `p exp O(log(p+4)/sqrt(log Delta))`. Equation (2) is a
@@ -69,10 +71,11 @@ that layer. At its creation this is the original greedy build.
 If an extension was adopted, `Xhat_i=X_i` just after adoption.
 If it was rejected, the adoption rule gives
 
-```math
+<!-- math-display: e919ac022ca9aa84c2a5c8a8
 |\widehat X_i|<1.1|X_i|.
  \tag{3}
-```
+-->
+![Formula](../../assets/math/e919ac022ca9aa84c2a5c8a8.svg)
 
 Until the next direct-child collapse and immediate new attempt,
 the lower prefix, `X_i`, and `Y_i` are unchanged. The actual
@@ -82,9 +85,10 @@ in the recorded candidate remain fixed input vertices.
 Let `F_i` be the active left vertices that reached degree
 `Delta` in that recorded candidate, and let
 
-```math
+<!-- math-display: 4ae46f237865257036508d8f
 C_i=B(\widehat X_i\cup\widehat Y_i).
-```
+-->
+![Formula](../../assets/math/4ae46f237865257036508d8f.svg)
 
 The greedy build was maximal at the time it ran. Therefore every
 input edge for an active vertex outside `F_i` meets the fixed
@@ -92,12 +96,13 @@ lower forbidden prefix or `C_i`. This assertion remains true
 later, even if some recorded matching blockers are no longer in
 the current matching. Also
 
-```math
+<!-- math-display: 3a509670eef6538385cc10c7
 |F_i|\le|\widehat X_i|/\Delta,
  \qquad B(X_i\cup Y_i)\subseteq C_i,
  \qquad |C_i|\le r^2|\widehat X_i|.
  \tag{4}
-```
+-->
+![Formula](../../assets/math/3a509670eef6538385cc10c7.svg)
 
 The source's actual greedy extension uses residual degree
 counters and respects the cap on the union. It is Algorithm 1,
@@ -112,38 +117,42 @@ At a main-loop boundary all old layers are noncollapsible, so
 `Delta W/10`, then, with the new layer using its own exact
 candidate,
 
-```math
+<!-- math-display: 14f8577a555aebb8bf060fa7
 T=|X_{\ell+1}|+\sum_{i=1}^{\ell}|\widehat X_i|
       \le(\Delta/10+11/9)W.
  \tag{5}
-```
+-->
+![Formula](../../assets/math/14f8577a555aebb8bf060fa7.svg)
 
 Remove all full-counter sets `F_i` from the active left
 identities represented in `Y_(<=ell)`, and call the remainder
 `S`. Their active sets are disjoint across layers, so
 
-```math
+<!-- math-display: 26862889ebbe8973a08af3f7
 |S|\ge W-T/\Delta
        \ge(9/10-11/(9\Delta))W.
-```
+-->
+![Formula](../../assets/math/26862889ebbe8973a08af3f7.svg)
 
 The union of all recorded physical `C_i` hits every edge of
 `E_S`. Earlier forbidden prefixes are already covered by
 earlier certificates, using (4). Hence
 
-```math
+<!-- math-display: f4c2f7b99b4e537d676ee629
 \tau(E_S)\le r^2T
        \le r^2(\Delta/10+11/9)W.
-```
+-->
+![Formula](../../assets/math/f4c2f7b99b4e537d676ee629.svg)
 
 Assumption (1) gives the opposing lower bound
 `r^2(9Delta/10-11/9)W`. It is strictly larger because
 `4Delta/5>22/9` for every `Delta>=4`. Thus
 
-```math
+<!-- math-display: 0726486731236bd7afd94372
 |X_i|>\Delta|Y_{<i}|/10
  \tag{6}
-```
+-->
+![Formula](../../assets/math/0726486731236bd7afd94372.svg)
 
 at a layer's birth. Its lower prefix stays fixed while it
 survives, and its selected edge count only grows, so (6)
@@ -161,9 +170,10 @@ used.
 For one positive-index layer instance let `W=|Y_<i|`, fixed
 through its lifetime. The degree cap gives
 
-```math
+<!-- math-display: 54518d008abb3fc7d2eea20d
 |X_i|\le\Delta|Y_{i-1}|\le\Delta W,
-```
+-->
+![Formula](../../assets/math/54518d008abb3fc7d2eea20d.svg)
 
 whereas (6) gives an initial count exceeding `Delta W/10`.
 Each adopted superposition increases `|X_i|` by at least the
@@ -181,11 +191,12 @@ by a factor at most `rho=.99`.
 
 At every child birth the parent is noncollapsible. By (6),
 
-```math
+<!-- math-display: 4d5f14d40c2ceb3bfef40570
 W_{child}\ge\kappa W,
  \qquad\kappa=1+9\Delta/100.
  \tag{7}
-```
+-->
+![Formula](../../assets/math/4d5f14d40c2ceb3bfef40570.svg)
 
 An adopted extension can increase `Y_i` and break the geometric
 sequence, but it causes only a new epoch. There are at most the
@@ -200,10 +211,11 @@ constant `C`. Weight a positive-index layer instance by
 `W_i^(-lambda)`. In each epoch, (7) and the geometric
 child-size sequence bound the child weights by
 
-```math
+<!-- math-display: 6e84c63005f9e0d330f0bc35
 \frac{\kappa^{-\lambda}}{1-\rho^\lambda}
        W_i^{-\lambda}.
-```
+-->
+![Formula](../../assets/math/6e84c63005f9e0d330f0bc35.svg)
 
 Over all epochs the factor is at most
 `J kappa^(-lambda)/(1-rho^lambda)`. Choose `C` large
@@ -220,9 +232,10 @@ of layer instances in any finite execution prefix bounds total
 weight by twice that quantity. Every node has weight at least
 `|A|^(-lambda)`. There are at most
 
-```math
+<!-- math-display: 3ba1f6a382b2e508e9a017cf
 2|A|^\lambda/(1-\rho^\lambda)
-```
+-->
+![Formula](../../assets/math/3ba1f6a382b2e508e9a017cf.svg)
 
 created layers. As in the companion weighted proof, its
 logarithm is `O(U log(2+s)/s)`, where `U=log(p+4)`.

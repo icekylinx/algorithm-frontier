@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "scope": "Implementation compatibility only. The complete current receipt separately covers the new contact domains; this record does not prove the input algorithm.",
+  "current_checker_sha256": "d10393923c06791aec7666b78814846bd6a53414ce44252185e3307a428505d4",
+  "current_menu_sha256": "616f4a4d8ec3fa28be7bfc73d615952f559cc31cf1af0ac81fde72f5b41aad97",
+  "current_receipt_sha256": "b00a1470a6ca9b646a8acaeba7692aef52c5459b79123daeb6b91bdf783f1a42",
+  "prefix_comparison": {
+    "status": "PASS",
+    "scope": "Exact compatibility at gamma2=1/2 over depth-four domain prefixes for every existing contact branch; not a full replay of the generalized menu.",
+    "nonempty_boxes": 1302,
+    "empty_boxes": 2,
+    "old_sha256": "8315eca7e5adf97dde48866f874c8806c80c974761f3e63010d3146264fd3398",
+    "new_sha256": "f9a3c4d770e4af321c55e6b9270978d6556e374e2d975ba1495755eff717cbd9"
+  },
+  "completed_branch_comparison": {
+    "status": "PASS",
+    "branches": 44,
+    "excluded_fields": [
+      "seconds",
+      "gamma2"
+    ],
+    "old_checker_sha256": "8315eca7e5adf97dde48866f874c8806c80c974761f3e63010d3146264fd3398",
+    "old_menu_sha256": "c711731cb9f3a432b2e957733f415726c11fb5d374c71729b0576d85c7f47fd8",
+    "old_receipt_sha256": "c96f8270d467ae0c1cb7213c81ecc57fa5d617fd0ac0e6508abaa24ead8c8046",
+    "stable_rows_sha256": "e4439457b37e51a0fc31608ae3a4b2b131edc596c3e3931b9b60a3943ac74588",
+    "compared_fields": [
+      "rho",
+      "gamma",
+      "tau",
+      "target",
+      "branch",
+      "leaves",
+      "empty",
+      "nodes",
+      "depth",
+      "maximum",
+      "minimum_margin",
+      "methods"
+    ],
+    "result": "Every stable field agrees exactly; the new gamma2 field is 1/2 for each old recursive family and direct for the direct family."
+  },
+  "current_full_run_counts": {
+    "branches": 62,
+    "leaves": 248189,
+    "nodes": 496320,
+    "empty_domains": 2,
+    "maximum_depth": 29,
+    "minimum_margin": "136285389119/128000000000000000000"
+  },
+  "segmented_replay": {
+    "driver_sha256": "aebf6688d3e75b135e879895992cd42521e6ece5dc5507b4e5c2438a8dcc0371",
+    "producers": {
+      "kernel_main": 34,
+      "resume_driver": 28
+    },
+    "note": "Completed branches and unfinished frontiers were retained as trusted local work products; this is not a proof-carrying checkpoint format."
+  }
+}

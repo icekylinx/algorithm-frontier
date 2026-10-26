@@ -119,9 +119,10 @@ each current native port, its current node population above any
 selected vertex of `H` is at most `P^{O(1)}G`. The full-copy slot
 capacity and direct vertex inventory consequently give
 
-```math
+<!-- math-display: 9524aaa535cc77413d6e4dcb
 G_{parent}\le P^{O(1)}(G_{child}+1).
-```
+-->
+![Formula](../../assets/math/9524aaa535cc77413d6e4dcb.svg)
 
 This is a bound on live owners, including full currently allocated
 unused pools. It is not a bound on the number of port names ever born.
@@ -149,9 +150,10 @@ is computed once and its result is copied; its construction factor
 with the initial child-credit term, this is the separation needed to
 charge
 
-```math
+<!-- math-display: 98763d76e073b9d4a1a2ab52
 B_{public}=O(x+f+K^2g+d\log P+h).
-```
+-->
+![Formula](../../assets/math/98763d76e073b9d4a1a2ab52.svg)
 
 It does not introduce `d^2 log P`, `k^d`, or one additional copy of
 `F` per hierarchy depth.
@@ -168,10 +170,11 @@ The same marked-Steiner compression and short-edge exposure observer
 can now be applied. It adds only its stated local mark work and one
 factor equal to the exposed path-length cap. For the public family,
 
-```math
+<!-- math-display: 8c5c9a25f25d5dba4529df44
 B_{public}=O(U/t+t^6h),\qquad
  A_{public}=O(t^5h),\qquad x=\Theta(U/t).
-```
+-->
+![Formula](../../assets/math/8c5c9a25f25d5dba4529df44.svg)
 
 The logarithmic time and output-density allowance is
 `O(B_public+A_public+x)`. At `t=Theta((U/h)^(1/7))` it is

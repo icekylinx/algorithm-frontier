@@ -12,6 +12,7 @@ from pathlib import Path
 import re
 import sys
 from normalize_math import normalize_markdown
+from math_presentation import present_markdown
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -114,6 +115,7 @@ def main() -> int:
     stale = []
     for name, content in outputs.items():
         path = ROOT / name
+        content = present_markdown(content, path)
         if args.check:
             if not path.is_file() or path.read_text() != content:
                 stale.append(name)

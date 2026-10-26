@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Deterministic factors strictly below $`2`$ for allocation and strictly below $`3/2`$ for two-size scheduling require $`\binom{q}{r}-1`$ recipient-rank queries on the hidden-set instances. Separate configuration constructions give a gap approaching $`r`$ for the aggregate LP and an exact gap $`2`$ for the full residual LP.
+Deterministic factors strictly below <code class="math">2</code> for allocation and strictly below <code class="math">3/2</code> for two-size scheduling require <code class="math">\binom{q}{r}-1</code> recipient-rank queries on the hidden-set instances. Separate configuration constructions give a gap approaching <code class="math">r</code> for the aggregate LP and an exact gap <code class="math">2</code> for the full residual LP.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Lower bounds for deterministic rank-query algorithms, together with explicit int
 
 **Time**
 
-The query lower bound is $`\binom{q}{r}-1`$. On balanced instances it is $`2^{q-O(\log q)}`$. The refined heavy-cover parameter can equal zero throughout the allocation lower-bound family.
+The query lower bound is <code class="math">\binom{q}{r}-1</code>. On balanced instances it is <code class="math">2^{q-O(\log q)}</code>. The refined heavy-cover parameter can equal zero throughout the allocation lower-bound family.
 
 **Space**
 
@@ -22,11 +22,11 @@ No running-time or workspace upper bound is asserted by a lower-bound constructi
 
 **Parameters**
 
-$`q>r\ge1`$ are the hidden ground size and rank. The refined-parameter construction uses $`q=2r`$. The residual-LP gap uses $`r\ge3`$.
+<code class="math">q&gt;r\ge1</code> are the hidden ground size and rank. The refined-parameter construction uses <code class="math">q=2r</code>. The residual-LP gap uses <code class="math">r\ge3</code>.
 
 **Model and representation**
 
-Full rank-value oracles for the query lower bounds; explicit cardinality rank formulas for the two configuration gaps. The heavy threshold for the refined-parameter barrier is $`\mathrm{OPT}/(2+\eta)`$ with fixed $`\eta>0`$.
+Full rank-value oracles for the query lower bounds; explicit cardinality rank formulas for the two configuration gaps. The heavy threshold for the refined-parameter barrier is <code class="math">\mathrm{OPT}/(2+\eta)</code> with fixed <code class="math">\eta&gt;0</code>.
 
 **Lower-bound scope**
 

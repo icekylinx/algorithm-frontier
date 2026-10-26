@@ -7,11 +7,12 @@ preprocessing time. If the explicit raw-backend assumptions of the
 [main theorem](../../problems/general-matching/proof.md) hold, its solve
 time becomes
 
-```math
+<!-- math-display: f5b067538b1d3f0b5246e821
 O(n+m)+(h+1)\exp\!\left[O\!\left(
   (\log(h+2))^{4/5}(\log\log(h+4))^{1/5}
 \right)\right],\qquad h=O(\min\{m_s,\nu(G)^2\}).
-```
+-->
+![Formula](../../assets/math/f5b067538b1d3f0b5246e821.svg)
 
 Here m_s is the number of distinct nonloop edges after cleanup. The
 kernel itself is unconditional; the improved solve time retains the
@@ -29,9 +30,10 @@ order. Retain original edge identifiers. Let
 If `F` is empty, there are no useful edges. Otherwise `c>=2`. Maximality
 implies that `U` is independent, so `C` is a vertex cover. Therefore
 
-```math
+<!-- math-display: baaecd6597c1f79fb75d9a30
 |F|\le\nu\le c=2|F|\le2\nu.      \tag{2}
-```
+-->
+![Formula](../../assets/math/baaecd6597c1f79fb75d9a30.svg)
 
 Construct a subgraph `H` retaining:
 
@@ -42,10 +44,11 @@ Construct a subgraph `H` retaining:
 All choices use fixed edge order. Scanning adjacency lists constructs
 `H` in `O(n+m)` time. Its edge count `m_H` obeys
 
-```math
+<!-- math-display: 419404475c4bb8077cb6b86e
 m_H\le \min\left\{m_s,\binom c2+c^2\right\}
       =O(\min\{m_s,\nu^2\}).                        \tag{3}
-```
+-->
+![Formula](../../assets/math/419404475c4bb8077cb6b86e.svg)
 
 Delete isolated vertices of `H`; its remaining vertex count `n_H` is
 at most `2m_H`.
@@ -66,26 +69,27 @@ edge remains. This is an existence proof; the algorithm does not need
 to know `M` or perform these replacements. Since `H` is a subgraph,
 it follows that
 
-```math
+<!-- math-display: 12e403dae6049ecaadcc4e18
 \nu(H)=\nu(G).         \tag{4}
-```
+-->
+![Formula](../../assets/math/12e403dae6049ecaadcc4e18.svg)
 
 Every edge of the greedy matching `F` belongs to `H`, because its
 endpoints lie in `C`. Thus all bounds in (2) remain valid for `H`.
 
 ### Why the cutoff cannot be reduced to c-1
 
-For even $`c\geq2`$, take $`K_{c,c}`$ with parts $`C,U`$ and add a perfect
-matching on $`C`$. The added edges form a valid initial maximal matching.
-The original graph has matching number $`c`$. If every vertex of $`C`$
-retains the same $`c-1`$ vertices of $`U`$, then the kernel has only $`2c-1`$
-nonisolated vertices. Its matching number is exactly $`c-1`$. Thus a
-universal arbitrary-choice cutoff below $`c`$ cannot preserve exactness.
+For even <code class="math">c\geq2</code>, take <code class="math">K_{c,c}</code> with parts <code class="math">C,U</code> and add a perfect
+matching on <code class="math">C</code>. The added edges form a valid initial maximal matching.
+The original graph has matching number <code class="math">c</code>. If every vertex of <code class="math">C</code>
+retains the same <code class="math">c-1</code> vertices of <code class="math">U</code>, then the kernel has only <code class="math">2c-1</code>
+nonisolated vertices. Its matching number is exactly <code class="math">c-1</code>. Thus a
+universal arbitrary-choice cutoff below <code class="math">c</code> cannot preserve exactness.
 
 ## 2. Composition and independent acceptance
 
-Build and compact $`H`$ once. Its nonempty compact size is
-$`q_H=n_H+m_H=\Theta(m_H)`$, and all retained edges carry original IDs.
+Build and compact <code class="math">H</code> once. Its nonempty compact size is
+<code class="math">q_H=n_H+m_H=\Theta(m_H)</code>, and all retained edges carry original IDs.
 Apply the exact odd-path degree reduction and uniform solver in
 Sections 3.2 and 12 of the main theorem. The solver's geometric,
 lifetime, initialization and finite-arithmetic assumptions remain
@@ -101,7 +105,7 @@ edge IDs back once, after acceptance.
 The uniform instruction scheduler and its independent acceptance check
 are already charged in Section 12 of the main theorem. Cleanup, greedy
 construction, kernelization and final translation are charged once in
-$`O(n+m)`$. No correctness or running-time property of the required cycle-search implementation follows
+<code class="math">O(n+m)</code>. No correctness or running-time property of the required cycle-search implementation follows
 from kernelization itself.
 
 If nu=0, the greedy scan finds no nonloop edge and returns the empty
@@ -112,11 +116,11 @@ computed by the greedy matching and lies between nu and 2nu.
 ## 3. Independent components
 
 Kernelizing nonempty connected components separately retains
-$`h_i=O(\min\{m_i,\nu_i^2\})`$ edges in component $`i`$. The preprocessing
-still totals $`O(n+m)`$, and the solver cost is the sum of its costs on
-the individual $`h_i`$. The union of their maximum matchings is maximum
+<code class="math">h_i=O(\min\{m_i,\nu_i^2\})</code> edges in component <code class="math">i</code>. The preprocessing
+still totals <code class="math">O(n+m)</code>, and the solver cost is the sum of its costs on
+the individual <code class="math">h_i</code>. The union of their maximum matchings is maximum
 in the original graph. This can improve the parameter bound from
-$`(\sum_i\nu_i)^2`$ to $`\sum_i\nu_i^2`$, as well as reducing the
+<code class="math">(\sum_i\nu_i)^2</code> to <code class="math">\sum_i\nu_i^2</code>, as well as reducing the
 logarithmic overhead to each component's actual size.
 
 ## 4. One kernel for mixed vertex and edge failures
@@ -127,54 +131,56 @@ may remove many edges at once. In particular, discarding parallel edge
 records before a record-level failure query is not justified by ordinary
 matching-preserving normalization.
 
-**Theorem 4.1 (simultaneous mixed-failure preservation).** Let $`C`$ be any
-vertex cover of size $`c`$, let $`I=V\setminus C`$, and let $`f\geq0`$ be an
-integer failure budget. Retain every edge inside $`C`$. At each $`u\in C`$,
-retain any $`\min\{c+f,|N(u)\cap I|\}`$ edges to distinct vertices of $`I`$.
-Call the resulting subgraph $`H_f`$. Then
+**Theorem 4.1 (simultaneous mixed-failure preservation).** Let <code class="math">C</code> be any
+vertex cover of size <code class="math">c</code>, let <code class="math">I=V\setminus C</code>, and let <code class="math">f\geq0</code> be an
+integer failure budget. Retain every edge inside <code class="math">C</code>. At each <code class="math">u\in C</code>,
+retain any <code class="math">\min\{c+f,&#124;N(u)\cap I&#124;\}</code> edges to distinct vertices of <code class="math">I</code>.
+Call the resulting subgraph <code class="math">H_f</code>. Then
 
-```math
+<!-- math-display: 95dbd1643bd441ecaff344a5
 |E(H_f)|\leq\min\left\{m,\binom c2+c(c+f)\right\},
-```
+-->
+![Formula](../../assets/math/95dbd1643bd441ecaff344a5.svg)
 
-and, simultaneously for every vertex set $`X`$ and edge set $`F`$ with
-$`|X|+|F|\leq f`$,
+and, simultaneously for every vertex set <code class="math">X</code> and edge set <code class="math">F</code> with
+<code class="math">&#124;X&#124;+&#124;F&#124;\leq f</code>,
 
-```math
+<!-- math-display: 3ef64ae3bc02607b0eac7d13
 \nu(H_f-X-F)=\nu(G-X-F).
-```
+-->
+![Formula](../../assets/math/3ef64ae3bc02607b0eac7d13.svg)
 
-The graph $`H_f`$ is constructed deterministically in $`O(n+m)`$ time and
+The graph <code class="math">H_f</code> is constructed deterministically in <code class="math">O(n+m)</code> time and
 retains original identifiers. Taking the endpoints of a greedy maximal
-matching gives $`c\leq2\nu(G)`$ without knowing $`\nu(G)`$. The budget
-can be clipped to $`n+m`$; reading a longer binary encoding is charged
-separately. The construction never allocates unused slots up to $`f`$.
+matching gives <code class="math">c\leq2\nu(G)</code> without knowing <code class="math">\nu(G)</code>. The budget
+can be clipped to <code class="math">n+m</code>; reading a longer binary encoding is charged
+separately. The construction never allocates unused slots up to <code class="math">f</code>.
 
-**Proof.** Fix any permitted failure pair $`(X,F)`$ and a maximum matching
-$`M`$ of $`G-X-F`$. Since $`I`$ is independent, $`|M|\leq c`$. If an edge
-$`uv\in M`$ is absent from $`H_f`$, it has $`u\in C\setminus X`$ and
-$`v\in I\setminus X`$, and $`u`$ originally retained $`c+f`$ distinct
+**Proof.** Fix any permitted failure pair <code class="math">(X,F)</code> and a maximum matching
+<code class="math">M</code> of <code class="math">G-X-F</code>. Since <code class="math">I</code> is independent, <code class="math">&#124;M&#124;\leq c</code>. If an edge
+<code class="math">uv\in M</code> is absent from <code class="math">H_f</code>, it has <code class="math">u\in C\setminus X</code> and
+<code class="math">v\in I\setminus X</code>, and <code class="math">u</code> originally retained <code class="math">c+f</code> distinct
 outside neighbors. A deleted outside vertex removes at most one of
 these choices. A failed retained edge also removes at most one choice.
-A deleted cover vertex other than $`u`$ removes none of them; $`u`$ itself
-is not deleted because $`uv\in M`$. Counting all failures, including
-any overlap, therefore leaves at least $`c`$ retained choices alive.
+A deleted cover vertex other than <code class="math">u</code> removes none of them; <code class="math">u</code> itself
+is not deleted because <code class="math">uv\in M</code>. Counting all failures, including
+any overlap, therefore leaves at least <code class="math">c</code> retained choices alive.
 
-Remove $`uv`$ temporarily. At most $`c-1`$ outside vertices are matched,
-so one of those $`c`$ surviving choices is free. Matching $`u`$ to it
-restores cardinality and decreases the number of edges outside $`H_f`$.
-Repeat until all matching edges lie in $`H_f-X-F`$. The opposite
+Remove <code class="math">uv</code> temporarily. At most <code class="math">c-1</code> outside vertices are matched,
+so one of those <code class="math">c</code> surviving choices is free. Matching <code class="math">u</code> to it
+restores cardinality and decreases the number of edges outside <code class="math">H_f</code>.
+Repeat until all matching edges lie in <code class="math">H_f-X-F</code>. The opposite
 inequality follows from the subgraph relation. The argument applies to
-every failure pair for this one fixed $`H_f`$; no random choice or
+every failure pair for this one fixed <code class="math">H_f</code>; no random choice or
 query-dependent reconstruction is used. The edge and construction
 bounds follow by scanning adjacency lists. ∎
 
-**Sharpness of the local cutoff.** For even $`c\geq2`$, take $`K_{c,c+f}`$
-with left side $`C`$ and add a perfect matching inside $`C`$. Let every
-cover vertex retain the same $`c+f-1`$ outside neighbors. Delete any $`f`$
+**Sharpness of the local cutoff.** For even <code class="math">c\geq2</code>, take <code class="math">K_{c,c+f}</code>
+with left side <code class="math">C</code> and add a perfect matching inside <code class="math">C</code>. Let every
+cover vertex retain the same <code class="math">c+f-1</code> outside neighbors. Delete any <code class="math">f</code>
 of those neighbors. The original surviving graph still has a matching
-of size $`c`$, but the retained graph has only $`2c-1`$ nonisolated vertices
-and matching number $`c-1`$. Thus the cutoff $`c+f`$ is necessary for
+of size <code class="math">c</code>, but the retained graph has only <code class="math">2c-1</code> nonisolated vertices
+and matching number <code class="math">c-1</code>. Thus the cutoff <code class="math">c+f</code> is necessary for
 arbitrary independent neighbor choices in the mixed-failure model.
 
 This theorem is a size and exact-preservation guarantee. Computing a

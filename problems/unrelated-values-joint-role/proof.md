@@ -24,11 +24,12 @@ count vector x_j lies in P(f_j). A unit assigned to player p has
 nonnegative rational value v_pj and nonnegative rational cost c_pj.
 There is one exact assignment budget
 
-```math
+<!-- math-display: 1afa02ead4d7e1f92c08e615
 \sum_{p,j}c_{pj}x_j(p)\le C,
                          \qquad C\ge0.
  \tag{J1}
-```
+-->
+![Formula](../../assets/math/1afa02ead4d7e1f92c08e615.svg)
 
 Units may be left unused. Initially every player is compulsory, and
 OPT is the maximum possible minimum utility over all players. The
@@ -40,23 +41,25 @@ submodular-minimization and exact-LP oracle work.
 
 Define, for R>1,
 
-```math
+<!-- math-display: fc88c3af7b24549e8b84cd5d
 \alpha=1-1/R,\qquad
        \Gamma(R)=\frac{R^R}{(R-1)^{R-1}},\qquad
        B(R)=2-1/\Gamma(R).
  \tag{J2}
-```
+-->
+![Formula](../../assets/math/fc88c3af7b24549e8b84cd5d.svg)
 
 **Theorem J.** For every fixed rational R>1, there is a deterministic
 algorithm returning a legal integer allocation satisfying J1 and
 having minimum utility at least
 
-```math
+<!-- math-display: ed098f36481d82995212adc6
 \frac{\alpha}{2}\,\mathrm{OPT}
                   \quad\text{in time}\quad
  B(R)^q\,2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H),
  \tag{J3}
-```
+-->
+![Formula](../../assets/math/ed098f36481d82995212adc6.svg)
 
 using polynomial workspace. The theorem holds for compulsory players
 and for a genuine basis of an original player matroid, with q the
@@ -93,11 +96,12 @@ threshold list is assumed in that case.
 
 Choose a positive threshold theta and divide the remaining pairs into
 
-```math
+<!-- math-display: 68d578d3f06610233816fe15
 \mathcal L=\{(p,j):0<v_{pj}<\theta\},\qquad
         \mathcal H=\{(p,j):v_{pj}\ge\theta\}.
  \tag{J4}
-```
+-->
+![Formula](../../assets/math/68d578d3f06610233816fe15.svg)
 
 Eligibility f_j({p})>=1 is implicit. The algorithm enumerates every
 distinct mask induced by the finitely many positive pair values,
@@ -109,10 +113,11 @@ Write u_L for the largest light-pair value, or zero if there is none;
 write a_H for the smallest heavy-pair value, or infinity if there is
 none. For the mask induced by theta*,
 
-```math
+<!-- math-display: 24dae38b39ff276e945bc33c
 u_L<\theta^*\le a_H.
  \tag{J5}
-```
+-->
+![Formula](../../assets/math/24dae38b39ff276e945bc33c.svg)
 
 The same type j may have pairs in both classes. The original f_j
 continues to govern all its allowed counts jointly.
@@ -122,12 +127,13 @@ continues to govern all its allowed counts jointly.
 The current set Q consists of players still allowed to receive light
 service. Every player outside Q is forced into a heavy role. Define
 
-```math
+<!-- math-display: ae2d3c439f20283fa9b8e34a
 A_j(Q)=\{p\in Q:(p,j)\in\mathcal L\}
            \ \cup\ \{p\notin Q:(p,j)\in\mathcal H\},
          \qquad f_j^Q(S)=f_j(S\cap A_j(Q)).
  \tag{J6}
-```
+-->
+![Formula](../../assets/math/ae2d3c439f20283fa9b8e34a.svg)
 
 These masked ranks are normalized monotone integral submodular
 functions. Their independent vectors are exactly original-resource
@@ -137,24 +143,26 @@ type's capacity.
 
 Let X_Q consist of the fractional vectors satisfying
 
-```math
+<!-- math-display: 805cebe7513e15a32d547d2a
 \begin{aligned}
         x_j&\in P(f_j^Q) &&(j=1,\ldots,m),\\
         \sum_j x_j(p)&=1 &&(p\notin Q),\\
         \sum_{p,j}c_{pj}x_j(p)&\le C.
  \end{aligned}
  \tag{J7}
-```
+-->
+![Formula](../../assets/math/805cebe7513e15a32d547d2a.svg)
 
 Every forced heavy player receives exactly one fractional unit, all
 on its allowed heavy pairs. For p in Q there is no count equality.
 Define the normalized light service projection
 
-```math
+<!-- math-display: be14c6d2dc0a1ff3d94a03e7
 U_Q=\{z\in\mathbb R_+^Q:\exists x\in X_Q,\quad
                  z_p\le\sum_jv_{pj}x_j(p)\text{ for all }p\in Q\}.
  \tag{J8}
-```
+-->
+![Formula](../../assets/math/be14c6d2dc0a1ff3d94a03e7.svg)
 
 First test whether X_Q is empty. If it is, reject the node. This
 feasibility check is necessary: forced heavy roles need not admit
@@ -178,11 +186,12 @@ a feasible queried service vector in polynomial oracle time.
 
 For nonempty X_Q and a>=0 on Q, its service support is
 
-```math
+<!-- math-display: b63de5deda851cf6d3faeff3
 h_Q(a)=\max_{x\in X_Q}
                          \sum_{p\in Q,j}a_p v_{pj}x_j(p).
  \tag{J9}
-```
+-->
+![Formula](../../assets/math/b63de5deda851cf6d3faeff3.svg)
 
 The optimizing x can be chosen at a vertex by exact lexicographic
 refinement, preserving the uniform polynomial-bit vertex bound used
@@ -191,11 +200,12 @@ U_Q contains zero. Let V be a uniform
 upper bound on any original player's total possible utility, for
 example `V=sum_j (max_p v_pj) f_j(P)`. For a queried z>=0, solve
 
-```math
+<!-- math-display: 6beb408ec4a438c2c3d3f3f2
 \max\{a\cdot z-h:\ a\ge0,\ a(Q)=1,\ 0\le h\le V,
            \ h\ge a\cdot u(x)\text{ for every }x\in X_Q\},
  \tag{J10}
-```
+-->
+![Formula](../../assets/math/6beb408ec4a438c2c3d3f3f2.svg)
 
 where u(x) is its utility vector restricted to Q. Separation of the
 last family is exactly the support LP J9. At an optimum h=h_Q(a).
@@ -253,19 +263,21 @@ witness but are not forced heavy yet at this node. The retained
 counts respect J6; every player outside Q still has exactly one
 heavy unit; resource counts and cost only decrease. Thus
 
-```math
+<!-- math-display: 6daa95a09c3715ae86a457eb
 t\,1_{I^*}\in U_Q.
  \tag{J11}
-```
+-->
+![Formula](../../assets/math/6daa95a09c3715ae86a457eb.svg)
 
 In particular the empty-X_Q gate cannot reject this protected node.
 If a row a*z<=U is violated by b*1_Q, J11 gives
 
-```math
+<!-- math-display: fa1e40e6bd6d98b9c45ad38d
 t a(I^*)\le U<b a(Q),\qquad
               a(Q\setminus I^*)>\frac1R a(Q).
  \tag{J12}
-```
+-->
+![Formula](../../assets/math/fa1e40e6bd6d98b9c45ad38d.svg)
 
 The same layer-cake and first-density-crossing argument as in
 [Single-exponential corank time for weighted packing through first-violation prefixes](../whole-ground-allocation/selection.md) supplies an enumerated
@@ -278,10 +290,11 @@ The local prefix-free counting inequality depends only on R and
 the remaining deficit |Q|-s. It does not require one fixed service
 region if every protected node satisfies J11. The complete time is
 
-```math
+<!-- math-display: 87e106c6a7f89742d26837a2
 \Gamma(R)^{k-|Z|}\mathrm{poly}(H)
  \tag{J13}
-```
+-->
+![Formula](../../assets/math/87e106c6a7f89742d26837a2.svg)
 
 after forced omissions Z, including every failed feasibility gate,
 support LP and off-promise branch. The polynomial bounds of Section 4
@@ -307,11 +320,12 @@ one nonnegative assignment-cost objective, a polynomial algorithm
 returns an integer allocation of no larger cost such that, at every
 player p and every prefix L of its own decreasing value order,
 
-```math
+<!-- math-display: 169e161fe72c21fb88c71de6
 \sum_{j\in L}x'_j(p)
                       \ge\left\lfloor\sum_{j\in L}x_j(p)\right\rfloor.
  \tag{J14}
-```
+-->
+![Formula](../../assets/math/169e161fe72c21fb88c71de6.svg)
 
 It therefore loses at most the largest eligible unit value u_p in
 utility and, for the full prefix, preserves at least the floor of
@@ -333,7 +347,7 @@ back gives original cost at most the fractional cost.
 
 Since A_L=sum_(j in L)a_j(p) is an integer,
 
-```math
+<!-- math-display: 45d160283b985d8b05071239
 \begin{aligned}
  \sum_{j\in L}x'_j(p)
     &=A_L-\sum_{j\in L}y'_j(p)\\
@@ -341,7 +355,8 @@ Since A_L=sum_(j in L)a_j(p) is an integer,
       =\left\lfloor\sum_{j\in L}x_j(p)\right\rfloor.
  \end{aligned}
  \tag{J15}
-```
+-->
+![Formula](../../assets/math/45d160283b985d8b05071239.svg)
 
 Telescoping each player's nonincreasing value order then gives
 `utility(x',p)>=utility(x,p)-u_p`. The types may be ordered differently
@@ -357,10 +372,11 @@ resource constraints make this trimming safe. Every player in Q
 retains utility at least b-u_L. Hence the final integer allocation
 has actual total cost at most C and minimum utility at least
 
-```math
+<!-- math-display: 86dc7f0e120edf118b731aa5
 \min\{a_H,b-u_L\}.
  \tag{J16}
-```
+-->
+![Formula](../../assets/math/86dc7f0e120edf118b731aa5.svg)
 
 The heavy and light resource capacities are never split or rounded
 separately. Masks must be applied before the disposal/complement
@@ -474,11 +490,12 @@ are arbitrary nonnegative rationals, and the budget is exact.
 **Theorem J2.** This model has a deterministic exact-factor-two
 algorithm in
 
-```math
+<!-- math-display: 3ded5a636230fad75bfb20cf
 (50/27)^q\,
        2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
  \tag{J17}
-```
+-->
+![Formula](../../assets/math/3ded5a636230fad75bfb20cf.svg)
 
 time and polynomial space. It also has the corresponding
 `(27/4)^nu_C poly(H)` bound, where nu_C is the largest affordable
@@ -492,10 +509,11 @@ light units at each small-only player after one large unit per
 other player is retained. The protected-witness argument is
 identical, with t=K and weak quota b, and
 
-```math
+<!-- math-display: 74760c55209168d56b427eac
 K/(K-b)\le3.
  \tag{J18}
-```
+-->
+![Formula](../../assets/math/74760c55209168d56b427eac.svg)
 
 At success, trim each light player's fractional count to exactly
 b; every forced heavy player already has count exactly one.
@@ -570,11 +588,12 @@ Conversely, take any integer compulsory output and let S be its
 actual dummy-resource recipient set. This S is M*-independent,
 possibly smaller than a dual basis. The dual rank identity gives
 
-```math
+<!-- math-display: dd4f3313288331965181f7ea
 r_{M^*}(S)=|S|+r_M(P\setminus S)-r_M(P)=|S|,
                     \quad\text{so }r_M(P\setminus S)=r.
  \tag{J19}
-```
+-->
+![Formula](../../assets/math/dd4f3313288331965181f7ea.svg)
 
 Find an original M-basis B contained in the dummy-free set P\S.
 Its players received no dummy utility, so they retain at least

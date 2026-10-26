@@ -27,10 +27,11 @@ x_j belongs to P(f_j); unused units are allowed. Every pair has
 nonnegative rational value v_(p,j) and assignment cost a_(p,j).
 Player p has nonnegative rational setup fee sigma_p. The one budget is
 
-```math
+<!-- math-display: 57b28410c5bf04e26cd48924
 \sum_{p\in B}\sigma_p+\sum_{p\in B,j}a_{p,j}x_j(p)\le C,\qquad C\ge0.
  \tag{PA1}
-```
+-->
+![Formula](../../assets/math/57b28410c5bf04e26cd48924.svg)
 
 Counts outside B are zero. OPT is the maximum minimum original
 utility over the selected basis. Original player loops can be removed.
@@ -41,10 +42,11 @@ An additional pair eligibility mask is allowed.
 H includes the original binary input, explicit player-type coordinates
 and paid polynomial matroid, rank, SFM, LP and intersection work. Put
 
-```math
+<!-- math-display: 27c34482dc42cc797be3653f
 H_\epsilon=H+\mathrm{size}(\epsilon),
  \tag{PA2}
-```
+-->
+![Formula](../../assets/math/27c34482dc42cc797be3653f.svg)
 
 including the full rational numerator and denominator. Near-one
 accuracy rationals can have long encodings despite small log(1/epsilon).
@@ -58,38 +60,42 @@ separately with the chosen empty-set objective convention.
 
 For rational 0<epsilon<=1 define
 
-```math
+<!-- math-display: 52f17b2fcfad9e6b1052326b
 \delta=\epsilon/3,\qquad J=\lfloor1/\delta\rfloor,\qquad
  K=\lceil1/\delta\rceil,\qquad
  b_\delta=\left\lceil\frac{1-\delta}{\delta^2}\right\rceil.
  \tag{PA3}
-```
+-->
+![Formula](../../assets/math/52f17b2fcfad9e6b1052326b.svg)
 
 Here J>=3 and K<=J+1. Write
 
-```math
+<!-- math-display: 1aad7a00db631682f9483d42
 C_\delta=\binom{b_\delta+K}{K}.
  \tag{PA4}
-```
+-->
+![Formula](../../assets/math/1aad7a00db631682f9483d42.svg)
 
 **Theorem PA.** On every feasible original instance a deterministic
 algorithm returns a genuine M-basis and integer allocation satisfying
 PA1 exactly, of value at least (1-epsilon)OPT. Its time obeys both
 
-```math
+<!-- math-display: 42a67f6a2b191e8ac8c16d5a
 \binom qr C_\delta^r\mathrm{poly}(H_\epsilon),
  \qquad
  \binom qr\exp(4r(J+1))\mathrm{poly}(H_\epsilon).
  \tag{PA5}
-```
+-->
+![Formula](../../assets/math/42a67f6a2b191e8ac8c16d5a.svg)
 
 Consequently the time is
 
-```math
+<!-- math-display: bfa9c511f66183747d512982
 2^{O(q+r/\epsilon)}\mathrm{poly}(H_\epsilon)
        \ \le\ 2^{O(q/\epsilon)}\mathrm{poly}(H_\epsilon).
  \tag{PA6}
-```
+-->
+![Formula](../../assets/math/bfa9c511f66183747d512982.svg)
 
 Space is polynomial in H_epsilon. Neither 1/epsilon nor any resource
 multiplicity is expanded into unary coordinates. The actual selected
@@ -101,10 +107,11 @@ fee is then constant; no dummy selection reduction is needed.
 Fix a rational T>0 and one actual M-basis B with sigma(B)<=C.
 Set outside assignments to zero and cap each remaining positive value:
 
-```math
+<!-- math-display: 071a4d3e25d828b2ef844ffc
 w_{p,j}=\min\{v_{p,j},T\}.
  \tag{PA7}
-```
+-->
+![Formula](../../assets/math/071a4d3e25d828b2ef844ffc.svg)
 
 Actual output utility is evaluated at v, which is at least w.
 Capping preserves full **integer** target feasibility: if no assigned
@@ -115,13 +122,14 @@ fractional full-target witnesses.
 A pair is small when w_(p,j)<=delta*T. Big normalized values lie in
 (delta,1], partitioned into
 
-```math
+<!-- math-display: ac5d80e923a0db0f0770c7d5
 (\lambda_i,\mu_i],\qquad
  \lambda_i=\delta+i\delta^2,\qquad
  \mu_i=\min\{1,\delta+(i+1)\delta^2\},
        \quad 0\le i<b_\delta.
  \tag{PA8}
-```
+-->
+![Formula](../../assets/math/ac5d80e923a0db0f0770c7d5.svg)
 
 Each interval has width at most delta^2. The index of a big normalized
 value t is ceil((t-delta)/delta^2)-1. Equality at an internal endpoint
@@ -139,17 +147,19 @@ and the target bits; no b_delta-sized table is constructed.
 At each selected player enumerate nonnegative integer big-bin counts
 satisfying
 
-```math
+<!-- math-display: 38c287e502e5e37c611f393c
 \sum_i h_{p,i}\le K,\qquad L_p=\sum_i\lambda_i h_{p,i}\le2,
  \tag{PA9}
-```
+-->
+![Formula](../../assets/math/38c287e502e5e37c611f393c.svg)
 
 and define
 
-```math
+<!-- math-display: 8233559a334dbf4f5480b8d9
 U_p=\sum_i\mu_i h_{p,i}.
  \tag{PA10}
-```
+-->
+![Formula](../../assets/math/8233559a334dbf4f5480b8d9.svg)
 
 For one basis and its profiles, solve one joint resource LP:
 
@@ -209,10 +219,11 @@ coordinates at every player. There is an integer independent
 allocation x' of no greater actual assignment cost such that for
 every prefix S in each chosen ordering,
 
-```math
+<!-- math-display: e9e62c95d7b03253aa6a57d2
 x'(S)\ge\lfloor x(S)\rfloor.
  \tag{PA11}
-```
+-->
+![Formula](../../assets/math/e9e62c95d7b03253aa6a57d2.svg)
 
 The following complete construction justifies the simultaneous
 all-prefix and cost guarantees.
@@ -220,14 +231,15 @@ all-prefix and cost guarantees.
 For one masked resource f on its current player ground, let n=f(P).
 Add one free disposal coordinate 0 and define
 
-```math
+<!-- math-display: 02d3d4b91d42bebb2a8abc67
 \widehat f(S)=
  \begin{cases}
  f(S),&0\notin S,\\
  n,&0\in S.
  \end{cases}
  \tag{PA12}
-```
+-->
+![Formula](../../assets/math/02d3d4b91d42bebb2a8abc67.svg)
 
 This is a normalized monotone integral submodular rank. Extend x
 to a base by assigning n-x(P) to disposal, at cost zero. This base
@@ -235,21 +247,23 @@ completion is auxiliary: original unused units stay optional.
 
 Set d_e=widehat f({e}), and on the augmented coordinate ground E put
 
-```math
+<!-- math-display: ac7fbea7fd42092b2c39e358
 g(S)=\widehat f(E\setminus S)+d(S)-n.
  \tag{PA13}
-```
+-->
+![Formula](../../assets/math/ac7fbea7fd42092b2c39e358.svg)
 
 This rank is normalized, integral and submodular. It is monotone
 because every marginal of widehat f is at most the corresponding
 singleton capacity. Complementation gives
 
-```math
+<!-- math-display: 1e091751a0f8adb3f94b09b6
 y=d-\widehat x\in B(g)
                   \quad\Longleftrightarrow\quad
               \widehat x\in B(\widehat f).
  \tag{PA14}
-```
+-->
+![Formula](../../assets/math/1e091751a0f8adb3f94b09b6.svg)
 
 Indeed, the inequalities on E minus S and the base total give the
 complemented upper inequality on S. Singleton bounds ensure
@@ -276,11 +290,12 @@ vectors in the original resources.
 
 For every player prefix S, d(S) is an integer, so
 
-```math
+<!-- math-display: c159a231d9de5688d57d19cf
 x'(S)\ge d(S)-\lceil y(S)\rceil
            =\lfloor d(S)-y(S)\rfloor=\lfloor x(S)\rfloor.
  \tag{PA15}
-```
+-->
+![Formula](../../assets/math/c159a231d9de5688d57d19cf.svg)
 
 All prefixes and the exact cost comparison hold at the same point.
 All counts and ranks remain binary, and only one auxiliary disposal
@@ -298,12 +313,13 @@ big coordinates first when these values tie.
 Apply PA11 to this order. For surrogate values s_1>=...>=s_m>=0,
 s_(m+1)=0, and fractional prefix totals X_h, summation by parts gives
 
-```math
+<!-- math-display: 9baaf18e1fc60339f60fbbce
 \sum_i s_i x'_i
  \ge \sum_i s_i x_i-
        \sum_h(s_h-s_{h+1})(X_h-\lfloor X_h\rfloor).
  \tag{PA16}
-```
+-->
+![Formula](../../assets/math/9baaf18e1fc60339f60fbbce.svg)
 
 Within a big bin the value difference is zero. At the end of a big
 bin, the fractional prefix is a sum of the integer specified big-bin
@@ -314,11 +330,12 @@ Only prefixes inside the small group contribute possible loss.
 Their value differences telescope to at most the largest small
 value, which is at most delta*T. Therefore
 
-```math
+<!-- math-display: 9b4947e65e7baf908be668de
 \text{integer surrogate utility at }p
        \ge\text{fractional surrogate utility at }p-\delta T.
  \tag{PA17}
-```
+-->
+![Formula](../../assets/math/9b4947e65e7baf908be668de.svg)
 
 This is not a generic loss bounded by the largest original value.
 The exact fractional big-bin counts remove those boundary errors.
@@ -331,27 +348,30 @@ when there is no small group the loss in this calculation is zero.
 The fractional big surrogate utility is L_p*T. Including the small
 LP requirement, fractional surrogate utility is at least
 
-```math
+<!-- math-display: b2b3f0644ac678cdebc19be1
 [L_p+\max\{0,1-U_p\}]T.
-```
+-->
+![Formula](../../assets/math/b2b3f0644ac678cdebc19be1.svg)
 
 Since each bin has width at most delta^2,
 
-```math
+<!-- math-display: 12fbf1c579e507c1e0599226
 0\le U_p-L_p
                       \le\delta^2\sum_i h_{p,i}\le K\delta^2.
  \tag{PA18}
-```
+-->
+![Formula](../../assets/math/12fbf1c579e507c1e0599226.svg)
 
 If U_p<=1, the preceding surrogate expression is 1-(U_p-L_p).
 If U_p>1 it is L_p=U_p-(U_p-L_p), even larger than 1-K*delta^2.
 Thus PA17 and actual values at least the surrogate imply
 
-```math
+<!-- math-display: 30344c169fc9535135b7491c
 \mathrm{utility}_{x'}(p)
                   \ge(1-\delta-K\delta^2)T\ge(1-\epsilon)T.
  \tag{PA19}
-```
+-->
+![Formula](../../assets/math/30344c169fc9535135b7491c.svg)
 
 For the last inequality,
 delta+K*delta^2<=2delta+delta^2
@@ -369,11 +389,12 @@ At each selected player, order its occupied bins. Maintain partial
 count s and lower sum L. At the next lower endpoint lambda>0
 enumerate exactly
 
-```math
+<!-- math-display: d702a857cc0a059c7b513c15
 0\le h\le
        \min\left\{K-s,\left\lfloor\frac{2-L}{\lambda}\right\rfloor\right\}.
  \tag{PA20}
-```
+-->
+![Formula](../../assets/math/d702a857cc0a059c7b513c15.svg)
 
 Each generated partial state satisfies PA9 and can be completed
 by assigning zero to all later bins. Every valid profile occurs
@@ -408,9 +429,10 @@ is injective; absent bins only restrict the partitions.
 For any t>0, the number of integer partitions of total at most n
 is bounded by
 
-```math
+<!-- math-display: 5c17c6628ee461c3266ea170
 \exp(tn)\prod_{j\ge1}(1-\exp(-tj))^{-1}.
-```
+-->
+![Formula](../../assets/math/5c17c6628ee461c3266ea170.svg)
 
 The logarithm of the product is
 sum_(ell>=1)1/[ell(exp(t*ell)-1)]<=2/t, using exp(y)-1>=y and
@@ -439,9 +461,10 @@ original pair values. A common denominator and integer gcd give
 polynomial bit length. All integer utility totals and OPT are
 multiples of g. A finite upper bound is
 
-```math
+<!-- math-display: 76ef9d0c7b556ebd0384bc9b
 V=\sum_j f_j(P)\max_p v_{p,j},
-```
+-->
+![Formula](../../assets/math/76ef9d0c7b556ebd0384bc9b.svg)
 
 which also lies on the grid. Start lower target L=0 and external
 upper target U=V+g. At each positive grid midpoint T, run all

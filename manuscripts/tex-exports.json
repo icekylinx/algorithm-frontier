@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "pandoc_version": "pandoc 3.1.3",
+  "generator_sha256": "63cbbe2b0cdbba1299bb254ebd1d66df43c3cc6ae282010b733479272f8da1ae",
+  "exports": [
+    {
+      "source": "problems/general-matching/proof.md",
+      "target": "problems/general-matching/proof.tex",
+      "source_sha256": "4f389d57b93d35e9e6df4cfcddd34a2530b072020b0e4717aa8246cd18b56476",
+      "tex_sha256": "4c08e255ec1cb4ec87845b31d00edc798a13be215ee6e1cb459d34788491738f",
+      "math_nodes": 874,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/general-matching/reference/certificate-proof.md",
+      "target": "problems/general-matching/reference/certificate-proof.tex",
+      "source_sha256": "01789ffb3bd647d199a4f0666a759242749fd01a19e54979007e01283ffd2aa8",
+      "tex_sha256": "1bcf3f7d7d792a3d41b9140966895011d667cf098a4133b649b18c99c714a387",
+      "math_nodes": 78,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/general-matching/reference/cover-compression-proof.md",
+      "target": "problems/general-matching/reference/cover-compression-proof.tex",
+      "source_sha256": "2dce1c938bb92cba501bc4dbda9e07d4c3f8e42dc6e1f39e11dfa57c7e69f98a",
+      "tex_sha256": "f9c89a868c70f79d3cc40b7b8d02ce4bf6a0521e15b7cdaf9d1a8ea9f1bad1c8",
+      "math_nodes": 95,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/subset-sum-fast-deterministic/proof.md",
+      "target": "problems/subset-sum-fast-deterministic/proof.tex",
+      "source_sha256": "cc7a6dce171e873872397b90f221436b810f8a431e340d57883144279f19053a",
+      "tex_sha256": "c519fe2b3985453e335411f8b22a1b22314e1a5dabb3189e26b610a15168a15f",
+      "math_nodes": 1341,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/matroid-failure-summaries/proof.md",
+      "target": "problems/matroid-failure-summaries/proof.tex",
+      "source_sha256": "b52bc2f74b0d2abbee67eab0613a6bfccc0703708b3f210f7ebca600252f40b1",
+      "tex_sha256": "644aff20d9449b37492d631233e45706f521c4378b5a2af84527df2214a3c748",
+      "math_nodes": 184,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md",
+      "target": "problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.tex",
+      "source_sha256": "f848af63380b52a131ce5e3c1ce4ff2958b6be13ebca9d79fe1b97fe9696f1b1",
+      "tex_sha256": "5e0a7175174af70da8ad75c0b5f0eeff6b55d95d40c92de052b2e132851f0dac",
+      "math_nodes": 18,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md",
+      "target": "problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.tex",
+      "source_sha256": "88d6473fb67a15540abcdb6eaa03d1b1d5e01145f4db8955d6168bb805f51f64",
+      "tex_sha256": "3047834e08ab1174a631946702b5cc900a880a6ecddc16a13414ae57acd0aef7",
+      "math_nodes": 37,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md",
+      "target": "problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.tex",
+      "source_sha256": "0992814ca9fa596f35a304754eeeaf7d338312ddb7d941bce9470984cf2f6341",
+      "tex_sha256": "04e6030d0013844b548402321ba83438dbd6df3feb572a4f44632eca184c2104",
+      "math_nodes": 252,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md",
+      "target": "problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.tex",
+      "source_sha256": "266825b36fea52a4a535559925895a0edc5301e1c63b468c6da6b67de2399341",
+      "tex_sha256": "e5ecd1ef230356ca4bc1f831244ea7c99aa9f2b225e743fd1c64ca2315a0a37e",
+      "math_nodes": 83,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md",
+      "target": "problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.tex",
+      "source_sha256": "ad9332b89befb8ee554ad68df508ab889d303b7af9dd6da436b199c066bf14c4",
+      "tex_sha256": "161bc724121add4ced13d79c15a99b609ee54f00c8f9e27464e237f20d98f601",
+      "math_nodes": 372,
+      "pdf": "source-only"
+    }
+  ]
+}

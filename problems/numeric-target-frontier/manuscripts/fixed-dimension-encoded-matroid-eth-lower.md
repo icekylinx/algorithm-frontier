@@ -10,11 +10,12 @@ matroids.
 For every fixed positive dimension d, ETH rules out exact nonnegative
 numeric-target algorithms with running time
 
-```math
+<!-- math-display: bafcd9ada828011d3cdba3e5
 2^{o(T^{d/(d+1)})}\mathrm{poly}(H),
                   \qquad T=\sum_{j=1}^d T_j,
  \tag{FE1}
-```
+-->
+![Formula](../../../assets/math/bafcd9ada828011d3cdba3e5.svg)
 
 already for d equality rows on ordinary matroid bases. All rank queries
 in the constructed input family are answered in polynomial time by a
@@ -26,11 +27,12 @@ For each of the seven nontrivial single-matroid optimization variants
 with one exact scalar side constraint, ETH also rules out approximation
 schemes with running time
 
-```math
+<!-- math-display: f562cc634ccbbff474fc02a9
 2^{o(\varepsilon^{-1/2})}
                          \mathrm{poly}(H_\varepsilon).
  \tag{FE2}
-```
+-->
+![Formula](../../../assets/math/f562cc634ccbbff474fc02a9.svg)
 
 The maximizing guarantee is (1-epsilon)OPT (or OPT/(1+epsilon)); the
 minimizing guarantee is (1+epsilon)OPT. Side constraints remain exact.
@@ -49,10 +51,11 @@ to randomized ETH is used.
 Fix d. Given a 3-CNF formula phi on N variables, choose an even integer
 k and put
 
-```math
+<!-- math-display: 15b263ed26b3a93d4955b5f5
 E=[k]^d,\qquad n=k^d,\qquad r=n/2.
  \tag{FE3}
-```
+-->
+![Formula](../../../assets/math/15b263ed26b3a93d4955b5f5.svg)
 
 Every element is its distinct vector label u=(u_1,...,u_d). Order E
 lexicographically as e_1,...,e_n. Since k is even, n and r are integers.
@@ -60,22 +63,24 @@ lexicographically as e_1,...,e_n. Since k is even, n and r are integers.
 Among all r-subsets of E, choose a most populous class with the same
 vector sum alpha:
 
-```math
+<!-- math-display: 7916fc296aed302cacce4320
 \mathcal H_\alpha=
        \left\{S\subseteq E:|S|=r,\ \sum_{u\in S}u=\alpha\right\},
                     \qquad L=|\mathcal H_\alpha|.
  \tag{FE4}
-```
+-->
+![Formula](../../../assets/math/7916fc296aed302cacce4320.svg)
 
 Each component sum is an integer between zero and rk. There are at
 most (rk+1)^d possible sums. The central binomial coefficient satisfies
 binomial(n,n/2)>=2^n/(n+1), and hence
 
-```math
+<!-- math-display: 6610f245fcf288a70b6fb822
 L\ge \frac{2^n}{(n+1)(rk+1)^d}
                        =2^{n-O_d(\log n)}.
  \tag{FE5}
-```
+-->
+![Formula](../../../assets/math/6610f245fcf288a70b6fb822.svg)
 
 Choose the smallest even k with k^d>=4N, after padding N to a fixed
 constant depending only on d if necessary. Then n=Theta_d(N).
@@ -97,22 +102,24 @@ would require u=v. This property holds for every subfamily of H_alpha.
 The compiler can compute alpha without enumerating the r-subsets.
 For i=1,...,n+1, cardinality h and a vector beta, define
 
-```math
+<!-- math-display: d6b02a291b57b69c0e8b693f
 D_i(h,\beta)=
    \#\left\{S\subseteq\{e_i,\ldots,e_n\}:
            |S|=h,\ \sum_{u\in S}u=\beta\right\}.
  \tag{FE6}
-```
+-->
+![Formula](../../../assets/math/d6b02a291b57b69c0e8b693f.svg)
 
 Use h in {0,...,r} and every component of beta in {0,...,rk}.
 Entries outside these ranges are zero. The recurrence is
 
-```math
+<!-- math-display: 85a77625d2e00c32092c4afe
 D_i(h,\beta)=D_{i+1}(h,\beta)
                      +D_{i+1}(h-1,\beta-e_i),
  \quad D_{n+1}(0,0)=1,
  \tag{FE7}
-```
+-->
+![Formula](../../../assets/math/85a77625d2e00c32092c4afe.svg)
 
 with every other final entry zero. The table contains at most
 (n+1)(r+1)(rk+1)^d entries. For fixed d this is polynomial in n.
@@ -122,20 +129,22 @@ chooses a maximum D_1(r,beta), with a fixed tie rule, as alpha and L.
 Order the characteristic strings of H_alpha lexicographically with
 0<1. A candidate S in H_alpha has a zero-based index
 
-```math
+<!-- math-display: 8a193c433f777996bfdc31af
 \mathrm{idx}(S)\in\{0,\ldots,L-1\}.
  \tag{FE8}
-```
+-->
+![Formula](../../../assets/math/8a193c433f777996bfdc31af.svg)
 
 This index is computable using the same suffix table. Scan positions
 i=1,...,n, maintaining the number h and vector sum beta already
 chosen in earlier positions, initially both zero. If e_i is absent
 from S, continue. If e_i is present, add
 
-```math
+<!-- math-display: 81a0fdd76ca0bb1c81a6280f
 D_{i+1}(r-h,\alpha-\beta)
  \tag{FE9}
-```
+-->
+![Formula](../../../assets/math/81a0fdd76ca0bb1c81a6280f.svg)
 
 to the index, and then increment h and beta by 1 and e_i. FE9 counts
 exactly the completions whose prefix agrees so far but puts 0 at i,
@@ -154,10 +163,11 @@ has polynomial size as well.
 
 Interpret the integer
 
-```math
+<!-- math-display: 3f7cc5fa51344175795d4006
 a(S)=\mathrm{idx}(S)\bmod 2^N
  \tag{FE10}
-```
+-->
+![Formula](../../../assets/math/3f7cc5fa51344175795d4006.svg)
 
 as an N-bit assignment, using a fixed bit order. This map from H_alpha
 onto the Boolean assignments is surjective: L>=2^N, so every index
@@ -166,11 +176,12 @@ of an O(n)-bit number.
 
 Define the accepted subfamily
 
-```math
+<!-- math-display: 77a5286cf30fd97d9bd5e383
 \mathcal A_\phi=
               \{S\in\mathcal H_\alpha:\phi(a(S))=\mathrm{true}\}.
  \tag{FE11}
-```
+-->
+![Formula](../../../assets/math/77a5286cf30fd97d9bd5e383.svg)
 
 It is nonempty exactly when phi is satisfiable. Testing membership
 in A_phi is polynomial-time: compute one candidate's index and
@@ -182,13 +193,14 @@ the program does not search over the assignments.
 
 Let M_phi have the following independent sets:
 
-```math
+<!-- math-display: 48b3cf7c8c4a0a92b78f2aec
 \mathcal I_\phi=
     \{S:|S|<r\}\ \cup\
     \{S:|S|=r,\ S\notin\mathcal H_\alpha\}\ \cup\
                                      \mathcal A_\phi.
  \tag{FE12}
-```
+-->
+![Formula](../../../assets/math/48b3cf7c8c4a0a92b78f2aec.svg)
 
 No set larger than r is independent. This is a rank-r matroid for
 every formula phi, including an unsatisfiable one.
@@ -208,7 +220,7 @@ in H_alpha. Thus the rank does not depend on satisfiability.
 
 The full rank of any query set S is
 
-```math
+<!-- math-display: 210d87daf6ad12755cf9f432
 r_\phi(S)=
  \begin{cases}
  |S|,&|S|<r,\\
@@ -218,7 +230,8 @@ r_\phi(S)=
  r-1,&\text{otherwise}.
  \end{cases}
  \tag{FE13}
-```
+-->
+![Formula](../../../assets/math/210d87daf6ad12755cf9f432.svg)
 
 For |S|>r, the preceding exchange-neighbor argument gives a contained
 basis independently of phi. For a forbidden r-set every (r-1)-subset
@@ -238,11 +251,12 @@ program and data, not merely make black-box calls.
 Give element u coefficient a^j_u=u_j in row j and set T_j=alpha_j.
 Ask for a basis of M_phi satisfying
 
-```math
+<!-- math-display: 10d6a0d25f24bd5fbcb68675
 \sum_{u\in S}u_j=\alpha_j,
                            \qquad j=1,\ldots,d.
  \tag{FE14}
-```
+-->
+![Formula](../../../assets/math/10d6a0d25f24bd5fbcb68675.svg)
 
 Such a basis must belong to H_alpha and hence to A_phi. Conversely
 every member of A_phi is a basis satisfying all these equalities.
@@ -254,20 +268,22 @@ The parameter size is controlled in both directions. Each coordinate
 label 1,...,k occurs k^{d-1} times. Among r=n/2 elements, the smallest
 possible sum in a fixed coordinate is
 
-```math
+<!-- math-display: cd0e7463a79a9f9a8543f860
 k^{d-1}\sum_{i=1}^{k/2}i=\frac{n(k+2)}8\ge\frac{nk}8.
  \tag{FE15}
-```
+-->
+![Formula](../../../assets/math/cd0e7463a79a9f9a8543f860.svg)
 
 The largest is at most rk=nk/2. Therefore
 
-```math
+<!-- math-display: 0b55907779a114cbe19135c9
 \frac{dnk}8\le T=\sum_j\alpha_j\le\frac{dnk}2,
  \qquad
  T=\Theta_d(n^{1+1/d})=\Theta_d(N^{1+1/d}),
  \quad T^{d/(d+1)}=\Theta_d(N).
  \tag{FE16}
-```
+-->
+![Formula](../../../assets/math/0b55907779a114cbe19135c9.svg)
 
 The explicit d-by-n coefficient matrix, targets, ground, formula data
 and rank routine have total encoding H=poly_d(N+|phi|). Constructing
@@ -324,10 +340,11 @@ compiler gives M_phi on n=Theta(N) elements.
 Since L>=2^N>=2, alpha is strictly between the unique minimum and
 maximum sums of an r-subset. In particular,
 
-```math
+<!-- math-display: c94fe07e74d18abc328a8a57
 \frac{r(r+1)}2<\alpha<\frac{r(2n-r+1)}2,
  \tag{FE17}
-```
+-->
+![Formula](../../../assets/math/c94fe07e74d18abc328a8a57.svg)
 
 after the fixed small-input range is removed. Consequently the
 minimum-sum and maximum-sum r-subsets are bases of every M_phi.
@@ -353,12 +370,13 @@ The allowed zero coefficient v_1=0 in the third row causes no issue.
 
 For independent sets, the three bounds are respectively
 
-```math
+<!-- math-display: f6fae7913182e810a39f585b
 w(S)+|S|\le\alpha+r,\qquad
  (n+1)|S|-w(S)\le r(n+1)-\alpha,\qquad
  w(S)-|S|\ge\alpha-r.
  \tag{FE18}
-```
+-->
+![Formula](../../../assets/math/f6fae7913182e810a39f585b.svg)
 
 Equality in each requires |S|=r and w(S)=alpha. For bases, cardinality
 r is automatic and the remaining four bounds follow directly from
@@ -377,10 +395,11 @@ alpha-r>=r(r-1)/2 and
 r(n+1)-alpha>=r(r+1)/2, while the other bounds are immediate.
 Choose the explicitly computable rational accuracy
 
-```math
+<!-- math-display: 4bcfa6f4dade9b76be8f63c3
 \varepsilon=\frac1{2B}.
  \tag{FE19}
-```
+-->
+![Formula](../../../assets/math/4bcfa6f4dade9b76be8f63c3.svg)
 
 On a satisfiable MAX instance, a (1-epsilon) solution has integer
 value at least B-1/2 and therefore exactly B. The convention
@@ -393,11 +412,12 @@ Run the approximation algorithm and compare its returned feasible
 solution's exact objective with B. This decides phi. The numeric
 data and the accuracy have polynomial encoding, and
 
-```math
+<!-- math-display: 5628eda5e3c4d6ea4efdbf37
 \varepsilon^{-1/2}=\sqrt{2B}
                               =\Theta(n)=\Theta(N).
  \tag{FE20}
-```
+-->
+![Formula](../../../assets/math/5628eda5e3c4d6ea4efdbf37.svg)
 
 Thus FE2 would give a deterministic 2^{o(N)} poly(|phi|) SAT
 algorithm, contradicting ETH. The same reduction applies to each

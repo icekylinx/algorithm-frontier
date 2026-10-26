@@ -12,15 +12,17 @@ vertices D. Every row has degree at most three. Give each bin a positive
 integer weight w_d and fix a positive integer L. An actual allocation x
 is nonnegative integral and has row sums
 
-```math
+<!-- math-display: 034ec30f5151b168188474a3
 \sum_{e\ni r}x_e=L.
-```
+-->
+![Formula](../../assets/math/034ec30f5151b168188474a3.svg)
 
 At designated settled states it additionally satisfies
 
-```math
+<!-- math-display: 7b0ad8a4bd5f6b00106595bd
 \mathrm{load}_x(d)\le L-w_d.             \tag{1}
-```
+-->
+![Formula](../../assets/math/7b0ad8a4bd5f6b00106595bd.svg)
 
 The client permits the representation to replace x by any nonnegative
 integral allocation with the same row and column margins. A point read
@@ -55,9 +57,10 @@ There is a deterministic fully persistent representation with:
 4. At every settled state, an implicit selected bin forest with one
    row-labelled edge per row, one free bin in every component C, and
 
-   ```math
+   <!-- math-display: 80e033365319228cd042ec08
    w(C)<2L.                            \tag{2}
-   ```
+   -->
+   ![Formula](../../assets/math/80e033365319228cd042ec08.svg)
 
 Initialization takes O((|V(B)|+|E(B)|) polylog(S+H)), including isolated
 bins. A q-record batch takes
@@ -153,17 +156,19 @@ The top row exports less than L, since at least one retained child
 incidence is positive. If in>=0 is allocation from external rows and
 out<L is this export, then
 
-```math
+<!-- math-display: 63baf9a5f001dfab409a1bfc
 \mathrm{load}(C)=L(|C|-1)-\mathrm{out}
                                       +\mathrm{in}.
-```
+-->
+![Formula](../../assets/math/63baf9a5f001dfab409a1bfc.svg)
 
 Summing (1) and rearranging proves
 
-```math
+<!-- math-display: 6c6f3d3573531c487c264d1a
 w(C)\le L+\mathrm{out}
                                   -\mathrm{in}<2L.
-```
+-->
+![Formula](../../assets/math/6c6f3d3573531c487c264d1a.svg)
 
 This proof permits zero carrier edges. Requiring the carrier to be
 exactly the positive support would unnecessarily expose potentially

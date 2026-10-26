@@ -17,7 +17,7 @@ Deterministic conditional composition; the strong forest and exact Gomory-Hu tra
 
 **Time**
 
-The native decremental forest has total work $`(n+m)E_{6/7}`$. The separately preprocessed exact Gomory–Hu application has total work $`O(n+m)+(m+1)E_{6/7}`$ under its additional interfaces, where $`E_{6/7}=\exp(O(U^{6/7}h^{1/7}))`$.
+The native decremental forest has total work <code class="math">(n+m)E_{6/7}</code>. The separately preprocessed exact Gomory–Hu application has total work <code class="math">O(n+m)+(m+1)E_{6/7}</code> under its additional interfaces, where <code class="math">E_{6/7}=\exp(O(U^{6/7}h^{1/7}))</code>.
 
 **Space**
 
@@ -25,7 +25,7 @@ Polynomial in the maintained graph, forest certificates, and reduction state; no
 
 **Parameters**
 
-$`n`$ is the vertex count; $`m`$ is the lifetime edge inventory; $`k`$ is the fixed reduction parameter; $`U`$ is the master logarithmic scale; $`h`$ is the iterated logarithmic scale used by the forest envelope.
+<code class="math">n</code> is the vertex count; <code class="math">m</code> is the lifetime edge inventory; <code class="math">k</code> is the fixed reduction parameter; <code class="math">U</code> is the master logarithmic scale; <code class="math">h</code> is the iterated logarithmic scale used by the forest envelope.
 
 **Model and representation**
 
@@ -51,6 +51,6 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The returned tree uses the original vertices. For every pair, the minimum edge weight along its tree path equals the exact minimum-cut value. Disconnected component trees are joined by zero-weight edges; graph loops do not affect cuts.
 
-The reduction charges actual-size degree expansion, finite-precision multiplicative weights, the skeleton, fixed-$`k`$ guide families, contractions, and all flow calls. Their $`5/6`$ and $`4/5`$ overhead scales are absorbed by the stated $`6/7`$ factor. This is an application of the complete strong-forest contract, including occurrence and retirement accounting.
+The reduction charges actual-size degree expansion, finite-precision multiplicative weights, the skeleton, fixed-<code class="math">k</code> guide families, contractions, and all flow calls. Their <code class="math">5/6</code> and <code class="math">4/5</code> overhead scales are absorbed by the stated <code class="math">6/7</code> factor. This is an application of the complete strong-forest contract, including occurrence and retirement accounting.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

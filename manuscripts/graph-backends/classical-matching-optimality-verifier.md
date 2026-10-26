@@ -17,14 +17,15 @@ matching is used by the verifier.
 
 ## 1. Starting from an arbitrary proposed matching
 
-Given an undirected general graph $`G`$ and a proposed edge list
-$`M`$, first check edge validity and distinctness of matched endpoints.
+Given an undirected general graph <code class="math">G</code> and a proposed edge list
+<code class="math">M</code>, first check edge validity and distinctness of matched endpoints.
 An invalid proposal is rejected. For a valid matching, initialize
 the first search of Gabow's algorithm using
-```math
+<!-- math-display: 10bc4233cf9074d908f04df8
 w(e)=\begin{cases}2,&e\in M,\\0,&e\notin M,\end{cases}
  \qquad y(v)=1,
-```
+-->
+![Formula](../../assets/math/10bc4233cf9074d908f04df8.svg)
 with no nontrivial initial blossoms. These are legitimate initial
 dual data for every matching: all edge inequalities hold, every
 matched edge is tight, and all free vertices have equal dual value.
@@ -40,40 +41,41 @@ required.
 
 ## 2. A conservative near-linear implementation
 
-The source's Section 5 implements one search in $`O(n+m)`$ time
+The source's Section 5 implements one search in <code class="math">O(n+m)</code> time
 using the 1985 specialized set-union structure. For the present
 application, the weaker bound
-```math
+<!-- math-display: eaffaa66e3966b2f85a5e5cb
 O(n+m\,\alpha(n+2))                     \tag{1}
-```
+-->
+![Formula](../../assets/math/eaffaa66e3966b2f85a5e5cb.svg)
 is sufficient. It follows by using ordinary disjoint-set union for
-the same $`O(m)`$ finds and $`O(n)`$ unions; keep the blossom's
+the same <code class="math">O(m)</code> finds and <code class="math">O(n)</code> unions; keep the blossom's
 base label separately from the representative chosen by union by
 rank. The remaining adjacency scans, blossom bookkeeping and
 integer buckets have linear total size.
 
 There is a useful explicit termination convention for an unsuccessful
-search. Let $`\Delta`$ be the accumulated dual adjustment, so a
-free vertex has dual value $`1-\Delta`$. The source's Section 5
+search. Let <code class="math">\Delta</code> be the accumulated dual adjustment, so a
+free vertex has dual value <code class="math">1-\Delta</code>. The source's Section 5
 shows that the existence of any augmenting path implies
-$`\Delta\le n/2`$. Therefore the bucket scan can stop and certify
-absence as soon as no next event exists at an index at most $`n/2`$.
+<code class="math">\Delta\le n/2</code>. Therefore the bucket scan can stop and certify
+absence as soon as no next event exists at an index at most <code class="math">n/2</code>.
 It never scans an unbounded interval while waiting for an event.
 Finding a positive outcome only needs the search's boolean result;
 the verifier need not expand the augmenting path.
 
 One may instead use simple balanced set representations, paying
-$`O((n+m)\log(n+2))`$ and retaining the same mathematical
+<code class="math">O((n+m)\log(n+2))</code> and retaining the same mathematical
 acceptance test. This also fits every almost-linear envelope in
 the matching construction.
 
 ## 3. Use after shared preprocessing
 
 After the original input has been scanned and isolated vertices
-removed, let the trusted compact graph have $`r`$ vertices and
-$`m_s`$ distinct nonloop edges. Then $`r\le2m_s`$ unless the
+removed, let the trusted compact graph have <code class="math">r</code> vertices and
+<code class="math">m_s</code> distinct nonloop edges. Then <code class="math">r\le2m_s</code> unless the
 graph is empty, which is decided directly. Formula (1) becomes
-$`O(m_s\alpha(m_s+2))`$. Apply the verifier to this compact graph
+<code class="math">O(m_s\alpha(m_s+2))</code>. Apply the verifier to this compact graph
 or to an independently established exact kernel, and map accepted
 edge IDs back to the original input once.
 

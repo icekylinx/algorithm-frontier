@@ -43,11 +43,12 @@ has been corrected.
 There are six players named b0, b1, b2, q, p and d. The player matroid
 is the rank-five partition matroid with blocks
 
-```math
+<!-- math-display: 68e45784c312360650c7e133
 \{b_0\},\quad\{b_1,d\},\quad
                     \{b_2\},\quad\{q\},\quad\{p\},
  \tag{A1}
-```
+-->
+![Formula](../../assets/math/68e45784c312360650c7e133.svg)
 
 each of capacity one. Fix player scan order b0,b1,b2,q,p,d. Every
 resource has value 9 and the bundle threshold is B=10. Every listed
@@ -67,7 +68,7 @@ player is a loop in that resource's recipient matroid.
 
 Thus the only threshold bundles for the six owners are
 
-```math
+<!-- math-display: 4f5f71f97a700c2507d84d41
 \begin{array}{c|c}
  b_0&\{k,\ell\}\\
  b_1&\{k,j\}\\
@@ -77,7 +78,8 @@ Thus the only threshold bundles for the six owners are
  d&\{t_d,s_d\}.
  \end{array}
  \tag{A2}
-```
+-->
+![Formula](../../assets/math/4f5f71f97a700c2507d84d41.svg)
 
 Different players may have the same resource names, because these
 resources have their supplied recipient matroids. No physical-item
@@ -98,10 +100,11 @@ because its two current recipients b0,b1 span q. The resource ell is
 also problematic because b0 spans q there. The exact dependency-filtered
 completion rule therefore stores
 
-```math
+<!-- math-display: 47039122ad6556c6c8174bf1
 c_q=\{k,\ell\},\qquad D(c_q)=\{M_0,M_1\}.
  \tag{A3}
-```
+-->
+![Formula](../../assets/math/47039122ad6556c6c8174bf1.svg)
 
 Player p is still eligible. At j, the preceding reserved set contains
 b1, but not b2: M1 is marked and M2 is unmarked. Player p is outside
@@ -109,10 +112,11 @@ the span of b1 in U_(2,3), so j is available. It is nevertheless
 problematic over the whole actual matching, whose j recipients b1,b2
 span p. The new completion marks exactly M2, giving
 
-```math
+<!-- math-display: 24117aef28d636c39036ace4
 c_p=\{j,t_p\},\qquad D(c_p)=\{M_2\}.
  \tag{A4}
-```
+-->
+![Formula](../../assets/math/24117aef28d636c39036ace4.svg)
 
 Both centers lie in layer one, ordered c_q before c_p. This layer is
 maximal: q and p are its only eligible players, and each of their
@@ -129,10 +133,11 @@ are strongly free. The fundamental player circuit is {d,b1}. The
 earliest-layer exchange removes M1, inserts d's fresh matching record,
 and truncates layer two. The retained layer is now
 
-```math
+<!-- math-display: b6c6eb02ad401593a12b4326
 D(c_q)=\{M_0\},\qquad D(c_p)=\{M_2\}.
  \tag{A5}
-```
+-->
+![Formula](../../assets/math/b6c6eb02ad401593a12b4326.svg)
 
 The new d record is unmarked. In particular, it does not inherit M1's
 group flag. No other matching allocation is altered.
@@ -166,27 +171,30 @@ now be exchanged.
 After the exchange, the resources contributing to the cover have
 current reserved ranks
 
-```math
+<!-- math-display: 6a001f1677253724b2642831
 k:2,\quad\ell:1,\quad j:2,
                  \quad t_p:1,\quad t_{b_2}:1.
-```
+-->
+![Formula](../../assets/math/6a001f1677253724b2642831.svg)
 
 The private resources of d are unmarked and do not contribute to W.
 Therefore
 
-```math
+<!-- math-display: 8fc0a3160abee187be0b0ebe
 \Phi=7\cdot9=63,
               \qquad |Y|=2.
  \tag{A6}
-```
+-->
+![Formula](../../assets/math/8fc0a3160abee187be0b0ebe.svg)
 
 The general claimed coefficient is
 
-```math
+<!-- math-display: 2992e51bbea7077d7fdfe472
 C(B,u)=\max\{u,2B+\min(u,B)\}=29,
              \qquad C(B,u)|Y|=58<63.
  \tag{A7}
-```
+-->
+![Formula](../../assets/math/2992e51bbea7077d7fdfe472.svg)
 
 Thus the sharp charge is false in this reachable, not-yet-normalized
 state. The same combinatorial instance with value one per resource
@@ -222,17 +230,19 @@ There is also a small countermodel to a weaker collection of state
 axioms. At one resource, use a linear matroid over F_2 with matching
 elements
 
-```math
+<!-- math-display: e2e5d14c0c6f0fe1c2071df7
 b=e_2,\qquad u=e_1+e_2,
-```
+-->
+![Formula](../../assets/math/e2e5d14c0c6f0fe1c2071df7.svg)
 
 and two selected elements in the same layer, ordered
 
-```math
+<!-- math-display: efe31dbe10913bb184141db8
 c_1=e_1,\qquad c_2=e_3,
                 \qquad D(c_1)=\{b\},\quad D(c_2)=\{u\}.
  \tag{A8}
-```
+-->
+![Formula](../../assets/math/efe31dbe10913bb184141db8.svg)
 
 All four subset reservations are independent: {b,u}, {c1,u}, {b,c2},
 and {c1,c2}. Each center is independent over its strictly preceding W.
@@ -244,11 +254,12 @@ over the actual matching {b,u}. Treating its passing local release
 test as strong freedom would be false. The missing internal prefix
 is exactly the one ending at c1:
 
-```math
+<!-- math-display: bff4684eab316992efb29a57
 r(\{b,c_1,u\})=2
        <r(\{b,c_1\})+|\{u\}|=3.
  \tag{A9}
-```
+-->
+![Formula](../../assets/math/bff4684eab316992efb29a57.svg)
 
 The actual algorithm rules this state out twice: its invariant includes
 this internal prefix, and its completion at c1 would mark both unmarked
@@ -271,9 +282,10 @@ h as the earliest blocker layer met by C.
 For each retained layer ell<=h, the circuit meets no owner in Y_<ell.
 Consequently C is a circuit in J_ell union {p}, where
 
-```math
+<!-- math-display: c96fb26e3c8ed98dcd2a6a54
 J_\ell=I\setminus\mathrm{owners}(Y_{<\ell}).
-```
+-->
+![Formula](../../assets/math/c96fb26e3c8ed98dcd2a6a54.svg)
 
 The outgoing owner a belongs to this circuit. The independent sets
 J_ell and J_ell-a+p have the same span: the circuit expresses each
@@ -281,12 +293,13 @@ of a and p in terms of the other together with its remaining elements.
 The groups Y_<ell are unchanged, because the outgoing record lies
 in layer h>=ell. Therefore
 
-```math
+<!-- math-display: 6b9fc218142703624c46a468
 \mathrm{cl}_M(I'\setminus\mathrm{owners}(Y'_{<\ell}))
   =\mathrm{cl}_M(I\setminus\mathrm{owners}(Y_{<\ell}))
                  \qquad(\ell\le h).
  \tag{A10}
-```
+-->
+![Formula](../../assets/math/6b9fc218142703624c46a468.svg)
 
 If p is already matched, eligibility forces its own matching record
 into an earlier group. That record is removed, I'=I, and the same
@@ -396,11 +409,12 @@ is added; selected records are only retained or discarded. Blocked
 insertions resume only after empty groups are processed. Consequently
 at every charged microstate,
 
-```math
+<!-- math-display: 565f7ad183c31bf115c435a9
 \sum_i|X_i|\le k,
                  \qquad\sum_i|Y_i|\le k.
  \tag{A11}
-```
+-->
+![Formula](../../assets/math/565f7ad183c31bf115c435a9.svg)
 
 Every non-last layer passed a test requiring at least one blocker,
 and no exchange changes a layer below its last retained layer h.
@@ -409,10 +423,11 @@ The number of layers is at most k+1<=r even at an intermediate state.
 
 For the signature
 
-```math
+<!-- math-display: 06fd1c1762167802d894ee1e
 (-|X_1|,|Y_1|,\ldots,-|X_\ell|,|Y_\ell|,\infty),
  \tag{A12}
-```
+-->
+![Formula](../../assets/math/06fd1c1762167802d894ee1e.svg)
 
 every possible charged nonterminal event decreases it:
 
@@ -434,11 +449,12 @@ For fixed length ell<=r, nonnegative selected-count lists with sum at
 most r number binomial(r+ell,ell), and so do the blocker-count lists.
 Therefore the number of possible signatures is at most
 
-```math
+<!-- math-display: c55c54ce73d252b027a1f208
 \sum_{\ell=0}^{r}\binom{r+\ell}{\ell}^{\!2}
                       \le(r+1)2^{4r}=2^{O(r)}.
  \tag{A13}
-```
+-->
+![Formula](../../assets/math/c55c54ce73d252b027a1f208.svg)
 
 Strict descent prevents revisiting a signature even with different
 record identities or different numerical allocations. There are at
@@ -449,10 +465,11 @@ copies individually.
 
 For the equal-unit theorem, the exact condition is
 
-```math
+<!-- math-display: a6c3b7b59d7f72deebd66ed1
 (3-2/r)b<t+1+(r-1)/r.
  \tag{A14}
-```
+-->
+![Formula](../../assets/math/a6c3b7b59d7f72deebd66ed1.svg)
 
 At an empty completed new layer, the current upper cover is
 (2b-1)s, where s counts earlier blockers. The integer lower cover is

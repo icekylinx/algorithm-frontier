@@ -22,38 +22,41 @@ the gradient of its previous version.
 
 ## 1. A route map at a settled state
 
-Let $`G=(V,E)`$ be the current immediate graph, with an orientation
-for every edge ID, lengths $`\ell_e>0`$, and gradients $`g_e`$.
-Let $`H\subseteq G`$ retain the original labels and provenance of
-its selected edges. For every input edge $`e=(u,v)`$, let $`R(e)`$
-be an explicitly oriented walk in $`H`$ from the CURRENT native
-vertex $`u`$ to the CURRENT native vertex $`v`$. Assume
-```math
+Let <code class="math">G=(V,E)</code> be the current immediate graph, with an orientation
+for every edge ID, lengths <code class="math">\ell_e&gt;0</code>, and gradients <code class="math">g_e</code>.
+Let <code class="math">H\subseteq G</code> retain the original labels and provenance of
+its selected edges. For every input edge <code class="math">e=(u,v)</code>, let <code class="math">R(e)</code>
+be an explicitly oriented walk in <code class="math">H</code> from the CURRENT native
+vertex <code class="math">u</code> to the CURRENT native vertex <code class="math">v</code>. Assume
+<!-- math-display: d0cc4ae656e46ba78aa7e5b1
 \ell_{\rm raw}(R(e))\leq\delta\ell_e,
                    \qquad \delta\geq1.
  \tag{1}
-```
+-->
+![Formula](../../assets/math/d0cc4ae656e46ba78aa7e5b1.svg)
 Lengths count every occurrence in a walk. If the routine uses
 length buckets, their fixed within-bucket ratio is included in
-$`\delta`$.
+<code class="math">\delta</code>.
 
-Write $`B`$ for the incidence matrix. Extending $`R`$ linearly
+Write <code class="math">B</code> for the incidence matrix. Extending <code class="math">R</code> linearly
 to edge vectors gives
-```math
+<!-- math-display: f68a82807926729e116ab34c
 B R(e)=B e.
  \tag{2}
-```
-Consequently $`R(c)`$ is a circulation whenever $`Bc=0`$.
+-->
+![Formula](../../assets/math/f68a82807926729e116ab34c.svg)
+Consequently <code class="math">R(c)</code> is a circulation whenever <code class="math">Bc=0</code>.
 Define the local correction
-```math
+<!-- math-display: 46feab1037e7ac1abb8309b4
 d_e=e-R(e).
  \tag{3}
-```
-It is a circulation in $`G`$, even when $`R(e)`$ repeats edges,
-contains $`e`$, or has been changed by geometric normalization.
+-->
+![Formula](../../assets/math/46feab1037e7ac1abb8309b4.svg)
+It is a circulation in <code class="math">G</code>, even when <code class="math">R(e)</code> repeats edges,
+contains <code class="math">e</code>, or has been changed by geometric normalization.
 
 One may keep (3) for every input edge, including selected edges.
-Alternatively, for comparison set $`R(e)=e`$ on selected edges
+Alternatively, for comparison set <code class="math">R(e)=e</code> on selected edges
 and keep corrections only for nonselected edges. Identity routes
 have stretch one. Either convention is valid; it is unnecessary
 to reinterpret a selected edge's physical identity as its
@@ -61,46 +64,51 @@ possibly nonidentity demand route.
 
 ## 2. Exact decomposition and weighted denominator charge
 
-For every circulation $`c\in\mathbb R^E`$,
-```math
+For every circulation <code class="math">c\in\mathbb R^E</code>,
+<!-- math-display: 26657b5313efc6c24527ad26
 c=\sum_{e\in E}c_e\bigl(e-R(e)\bigr)+R(c).
  \tag{4}
-```
+-->
+![Formula](../../assets/math/26657b5313efc6c24527ad26.svg)
 This is an algebraic identity for the CURRENT route table.
 It does not compare gradients of old and new tables. Taking
 the gradient gives the exact equality
-```math
+<!-- math-display: 50d3a2811042f4ce81654cb6
 g^\top c
                =\sum_e c_e g^\top d_e+g^\top R(c).
  \tag{5}
-```
+-->
+![Formula](../../assets/math/50d3a2811042f4ce81654cb6.svg)
 
-Orient each term $`c_ed_e`$ according to the sign of $`c_e`$.
+Orient each term <code class="math">c_ed_e</code> according to the sign of <code class="math">c_e</code>.
 Its net weighted norm is at most
-```math
+<!-- math-display: 6cfc7ffdf3588e74ca650c6b
 |c_e|\bigl(\ell_e+\ell_{\rm raw}(R(e))\bigr).
  \tag{6}
-```
-The net weighted norm of $`R(c)`$ is at most
-$`\sum_e|c_e|\ell_{\rm raw}(R(e))`$. Hence the sum of positive
+-->
+![Formula](../../assets/math/6cfc7ffdf3588e74ca650c6b.svg)
+The net weighted norm of <code class="math">R(c)</code> is at most
+<code class="math">\sum_e&#124;c_e&#124;\ell_{\rm raw}(R(e))</code>. Hence the sum of positive
 denominator charges in (4) is at most
-```math
+<!-- math-display: acf3d07021281aeeeb359b3b
 \begin{aligned}
  &\sum_e|c_e|\bigl(\ell_e+\ell_{\rm raw}(R(e))\bigr)
                   +\sum_e|c_e|\ell_{\rm raw}(R(e))\\
  &\hspace{35mm}\leq(1+2\delta)\sum_e\ell_e|c_e|.
  \end{aligned}
  \tag{7}
-```
-If $`-g^\top c/\|Lc\|_1=\beta>0`$, weighted averaging implies
-that either some oriented correction $`d_e`$ or the circulation
-$`R(c)`$ in $`H`$ has negative gradient divided by weighted
+-->
+![Formula](../../assets/math/acf3d07021281aeeeb359b3b.svg)
+If <code class="math">-g^\top c/\&#124;Lc\&#124;_1=\beta&gt;0</code>, weighted averaging implies
+that either some oriented correction <code class="math">d_e</code> or the circulation
+<code class="math">R(c)</code> in <code class="math">H</code> has negative gradient divided by weighted
 norm at least
-```math
+<!-- math-display: 8ebf7a653eda60287d47c515
 \frac{\beta}{1+2\delta}.
  \tag{8}
-```
-Thus $`3\delta`$ is a safe loss.
+-->
+![Formula](../../assets/math/8ebf7a653eda60287d47c515.svg)
+Thus <code class="math">3\delta</code> is a safe loss.
 
 The proof works for arbitrary comparator circulations and
 arbitrary signed coefficients. It does not assume that the
@@ -136,22 +144,23 @@ if the new route no longer uses it.
 The selected edge itself retains its own input gradient and
 length. Its gradient is not replaced by the sum along the
 normalized walk. Equation (3) therefore retains exactly the
-gradient discrepancy. More explicitly, if an old table $`R_0`$
-is replaced by $`R_1`$, then
-```math
+gradient discrepancy. More explicitly, if an old table <code class="math">R_0</code>
+is replaced by <code class="math">R_1</code>, then
+<!-- math-display: ba5e8affb23ddf901197d85d
 e-R_1(e)=(e-R_0(e))+(R_0(e)-R_1(e)).
  \tag{9}
-```
+-->
+![Formula](../../assets/math/ba5e8affb23ddf901197d85d.svg)
 The circulation erased by normalization is included in the new
 correction. It need not be retained as an additional independent
 candidate.
 
-For example, let $`e=uv`$ have an old route $`u,a,v`$, and suppose
-both projected anchors are $`a`$. The preliminary projected loop
-is $`a,u,e,v,a`$, which may normalize to the empty route at $`a`$.
-Restoring the exterior prefixes gives $`R_{\rm new}(e)=(u,a,v)`$.
+For example, let <code class="math">e=uv</code> have an old route <code class="math">u,a,v</code>, and suppose
+both projected anchors are <code class="math">a</code>. The preliminary projected loop
+is <code class="math">a,u,e,v,a</code>, which may normalize to the empty route at <code class="math">a</code>.
+Restoring the exterior prefixes gives <code class="math">R_{\rm new}(e)=(u,a,v)</code>.
 The local correction is still the complete triangle
-$`e-(u,a,v)`$, with its exact possibly nonzero gradient.
+<code class="math">e-(u,a,v)</code>, with its exact possibly nonzero gradient.
 
 ## 4. The immediate-identity requirement
 
@@ -162,16 +171,17 @@ Likewise local coefficient cancellation uses actual immediate
 edge IDs, preserving distinct parallel IDs.
 
 This is essential for frozen-gauge aliases. Consider distinct
-native vertices $`a_i`$, $`\mathrm{star}(a)`$, and $`a_j`$
-which all map to the same physical root $`a`$. The open path
-```math
+native vertices <code class="math">a_i</code>, <code class="math">\mathrm{star}(a)</code>, and <code class="math">a_j</code>
+which all map to the same physical root <code class="math">a</code>. The open path
+<!-- math-display: c9fb95764b8ef1947daed820
 a_i\longrightarrow\mathrm{star}(a)
                               \longrightarrow a_j
  \tag{10}
-```
+-->
+![Formula](../../assets/math/c9fb95764b8ef1947daed820.svg)
 has no physical traversal, but its native boundary is
-$`a_j-a_i`$, not zero. With frozen potentials $`p_i,p_j`$,
-its stored gradient can be $`p_i(a)-p_j(a)\ne0`$.
+<code class="math">a_j-a_i</code>, not zero. With frozen potentials <code class="math">p_i,p_j</code>,
+its stored gradient can be <code class="math">p_i(a)-p_j(a)\ne0</code>.
 Erasing it merely because its physical images coincide would
 break (2) and the gradient identities.
 
@@ -192,36 +202,39 @@ normalized demand routes do not change the parent graph,
 ASZ paths, stable core forests, or their fixed stretch labels.
 Apply (4)--(8) to the resulting current core circulation.
 The established vertex-stage loss is followed by the edge-stage
-loss $`3\delta`$, exactly as in the existing hierarchy proof.
+loss <code class="math">3\delta</code>, exactly as in the existing hierarchy proof.
 
-For a parent edge $`e=(u,v)`$ and a stable forest $`F_i`$, the
+For a parent edge <code class="math">e=(u,v)</code> and a stable forest <code class="math">F_i</code>, the
 frozen potential satisfies
-```math
+<!-- math-display: 91f18562854aa75ea8b370c0
 g(f)+p_i(\mathrm{tail}f)
                          -p_i(\mathrm{head}f)=0
                  \quad(f\in F_i).
  \tag{11}
-```
+-->
+![Formula](../../assets/math/91f18562854aa75ea8b370c0.svg)
 The native core label is
-$`g_i(e)=g(e)+p_i(u)-p_i(v)`$. If its current roots are
-$`a=r_i(u)`$, $`b=r_i(v)`$, the selected child record has
-```math
+<code class="math">g_i(e)=g(e)+p_i(u)-p_i(v)</code>. If its current roots are
+<code class="math">a=r_i(u)</code>, <code class="math">b=r_i(v)</code>, the selected child record has
+<!-- math-display: 3979ac10be76fd827a78cf1a
 \widehat g_i(e)
                 =g_i(e)-p_i(a)+p_i(b).
  \tag{12}
-```
+-->
+![Formula](../../assets/math/3979ac10be76fd827a78cf1a.svg)
 This is exactly the gradient of
-```math
+<!-- math-display: ad3e631202666dfd6fd0e90f
 F_i[a,u]\oplus e\oplus F_i[v,b].
  \tag{13}
-```
+-->
+![Formula](../../assets/math/ad3e631202666dfd6fd0e90f.svg)
 For a same-root edge, cancel its common forest leg inside that
 one tree and use the simple fundamental cycle. Its stored core
 length dominates the raw length of this representation.
 
 Equations (11)--(13) depend on the selected edge's original
 parent edge lifetime, forest index, and root IDs. They do not
-depend on a demand route $`R(f)`$. Normalization therefore
+depend on a demand route <code class="math">R(f)</code>. Normalization therefore
 does not modify a child edge label, physical provenance, or
 root-pool map. The zero-alias potential adjustment makes the
 star gradients zero before contraction while preserving
@@ -281,11 +294,11 @@ Dormant copies and all signed/absolute counter transfers retain
 the existing numerical lifetime discipline.
 
 The normalized projected recurrence bounds current route
-length and congestion by $`\Gamma^{O(K)}`$ and
-$`k\mathrm{poly}(U)\Gamma^{O(K)}`$, respectively.
+length and congestion by <code class="math">\Gamma^{O(K)}</code> and
+<code class="math">k\mathrm{poly}(U)\Gamma^{O(K)}</code>, respectively.
 The inverse-list scans, explicit local correction decomposition,
 and optional physical expansion therefore fit the same local
-$`k^{O(1)}F^{O(1)}\Gamma^{O(K)}\mathrm{poly}(U)`$
+<code class="math">k^{O(1)}F^{O(1)}\Gamma^{O(K)}\mathrm{poly}(U)</code>
 work envelope. They do not create a demand-specific exported
 forest or a new recursive selected edge. The smaller selected
 transcript still depends only on original selected core IDs and

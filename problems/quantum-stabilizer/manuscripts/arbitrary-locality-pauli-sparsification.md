@@ -1,78 +1,85 @@
 # Locality-independent sparsification of positive Pauli Hamiltonians
 
-**Abstract.** Every positive Pauli Hamiltonian on $`n`$ qubits, with arbitrary locality and positive rational weights, admits an all-state spectral approximation on $`O((n+1)/\epsilon^2)`$ original clauses. A randomized algorithm polynomial in the compact input retains $`O((n+1)\log((n+2)/\epsilon)/\epsilon^2)`$ clauses. We prove these statements by splitting the input into a uniformly positive part and a commuting part, then applying matrix concentration and weighted code sparsification. We also give a separate common-weight construction for correlated clause deletions.
+**Abstract.** Every positive Pauli Hamiltonian on <code class="math">n</code> qubits, with arbitrary locality and positive rational weights, admits an all-state spectral approximation on <code class="math">O((n+1)/\epsilon^2)</code> original clauses. A randomized algorithm polynomial in the compact input retains <code class="math">O((n+1)\log((n+2)/\epsilon)/\epsilon^2)</code> clauses. We prove these statements by splitting the input into a uniformly positive part and a commuting part, then applying matrix concentration and weighted code sparsification. We also give a separate common-weight construction for correlated clause deletions.
 
 ## 1. Main theorem and exact model
 
 Let
-```math
+<!-- math-display: 6e8bafa0eb025c90abb30a72
 H=\sum_{e=1}^{m}w_e L_{P_e},\qquad
  L_P=I-P,\qquad w_e>0,
  \tag{1}
-```
-where $`P_e`$ is a Hermitian signed Pauli string on $`n\geq1`$ qubits: a tensor product of $`I,X,Y,Z`$, with an overall sign in $`\{+1,-1\}`$. Thus $`P_e^2=I`$ and $`0\preceq L_{P_e}\preceq2I`$. A string may act on every qubit. The input gives each string by $`O(n)`$ bits and each weight as a positive rational. Repeated strings are allowed, $`P=-I`$ is allowed, and zero terms with $`P=I`$ may be discarded.
+-->
+![Formula](../../../assets/math/6e8bafa0eb025c90abb30a72.svg)
+where <code class="math">P_e</code> is a Hermitian signed Pauli string on <code class="math">n\geq1</code> qubits: a tensor product of <code class="math">I,X,Y,Z</code>, with an overall sign in <code class="math">\{+1,-1\}</code>. Thus <code class="math">P_e^2=I</code> and <code class="math">0\preceq L_{P_e}\preceq2I</code>. A string may act on every qubit. The input gives each string by <code class="math">O(n)</code> bits and each weight as a positive rational. Repeated strings are allowed, <code class="math">P=-I</code> is allowed, and zero terms with <code class="math">P=I</code> may be discarded.
 
-A sparsifier uses original indices with nonnegative output coefficients $`\widehat w_e`$ and satisfies
-```math
+A sparsifier uses original indices with nonnegative output coefficients <code class="math">\widehat w_e</code> and satisfies
+<!-- math-display: 90d48ffadec34aee494cbf5f
 (1-\epsilon)H\preceq
  \widehat H:=\sum_e\widehat w_e L_{P_e}
  \preceq(1+\epsilon)H.
  \tag{2}
-```
-Equivalently it gives a fixed nonnegative multiplier $`\widehat w_e/w_e`$ for each retained input clause. The guarantee holds for every quantum state, including entangled states, and preserves the kernel exactly.
+-->
+![Formula](../../../assets/math/90d48ffadec34aee494cbf5f.svg)
+Equivalently it gives a fixed nonnegative multiplier <code class="math">\widehat w_e/w_e</code> for each retained input clause. The guarantee holds for every quantum state, including entangled states, and preserves the kernel exactly.
 
-**Theorem 1 (arbitrary locality).** For every input (1) and $`\epsilon\in(0,1)`$:
+**Theorem 1 (arbitrary locality).** For every input (1) and <code class="math">\epsilon\in(0,1)</code>:
 
 1. There exists a sparsifier (2) with
-   ```math
+   <!-- math-display: 9d736adb40532b268091b3af
    O\!\left(\min\{m,(n+1)/\epsilon^2\}\right)
       \tag{3}
-   ```
-   original terms. A randomized construction is polynomial in $`2^n,m,\epsilon^{-1}`$, and the rational input bit length.
+   -->
+   ![Formula](../../../assets/math/9d736adb40532b268091b3af.svg)
+   original terms. A randomized construction is polynomial in <code class="math">2^n,m,\epsilon^{-1}</code>, and the rational input bit length.
 
-2. There is a randomized classical construction polynomial in $`n,m,\epsilon^{-1}`$, and the rational input bit length, with
-   ```math
+2. There is a randomized classical construction polynomial in <code class="math">n,m,\epsilon^{-1}</code>, and the rational input bit length, with
+   <!-- math-display: 519300d735f97591beb8dd70
    O\!\left(\min\left\{m,\,
           \frac{(n+1)\log((n+2)/\epsilon)}{\epsilon^2}
           \right\}\right)
       \tag{4}
-   ```
+   -->
+   ![Formula](../../../assets/math/519300d735f97591beb8dd70.svg)
    original terms and constant success probability. There is no locality factor and no support dependence on the input weight ratio or original term count. The efficient classical backend is Quanrud's quotient sparsifier with the adaptive resparsification observation proved in the companion note.
 
 Both versions may additionally preserve the total coefficient exactly:
-```math
+<!-- math-display: 655978431fc46654649b7d61
 \sum_e\widehat w_e=\sum_ew_e,
-```
-where the sums refer to the nonzero clauses after discarding $`P_e=I`$. This adds no retained items.
+-->
+![Formula](../../../assets/math/655978431fc46654649b7d61.svg)
+where the sums refer to the nonzero clauses after discarding <code class="math">P_e=I</code>. This adds no retained items.
 
 The distinction between (3) and (4) is computational. The July 2026 optimal weighted binary-code theorem gives the linear support in (3), but its supplied construction can be exponential in the code dimension. Quanrud's quotient theorem and adaptive resparsification give (4). This note does not claim a compact-input polynomial-time construction with the exact support (3).
 
-The support in (3) is jointly optimal in $`n`$ and $`\epsilon`$ in the natural regime $`0<\epsilon\le1/2`$, $`n\ge2\lceil\epsilon^{-2}\rceil`$, already for commuting two-local clauses. This is an inherited classical cut lower bound, not a new Pauli lower-bound phenomenon. Put $`s=\lceil\epsilon^{-2}\rceil`$, $`B=n-s\ge s`$, and use
-```math
+The support in (3) is jointly optimal in <code class="math">n</code> and <code class="math">\epsilon</code> in the natural regime <code class="math">0&lt;\epsilon\le1/2</code>, <code class="math">n\ge2\lceil\epsilon^{-2}\rceil</code>, already for commuting two-local clauses. This is an inherited classical cut lower bound, not a new Pauli lower-bound phenomenon. Put <code class="math">s=\lceil\epsilon^{-2}\rceil</code>, <code class="math">B=n-s\ge s</code>, and use
+<!-- math-display: 63c3d4e224f81dc168c83b7a
 H=\sum_{uv\in E(K_{s,B})}(I-Z_uZ_v).
-```
-On a computational basis state its energy is twice the corresponding cut value. Any nonnegative original-term spectral sparsifier therefore yields a weighted cut sparsifier of $`K_{s,B}`$. The direct cut inequality (EC15) in the companion exact-label-cut note gives support
-```math
+-->
+![Formula](../../../assets/math/63c3d4e224f81dc168c83b7a.svg)
+On a computational basis state its energy is twice the corresponding cut value. Any nonnegative original-term spectral sparsifier therefore yields a weighted cut sparsifier of <code class="math">K_{s,B}</code>. The direct cut inequality (EC15) in the companion exact-label-cut note gives support
+<!-- math-display: 71badb5acd064ae7758d8c0e
 t\ge\frac{(1-\epsilon)^2sB}
               {(1+3\sqrt2\,\epsilon\sqrt{s})^2}
    =\Omega(n/\epsilon^2).
-```
-For every fixed $`\epsilon<1`$, the elementary input $`\sum_{j=1}^n(I-Z_j)`$ also requires all $`n`$ clauses: omit clause $`j`$, and the computational basis state whose sole negative $`Z`$-eigenvalue is at $`j`$ changes from energy $`2`$ to $`0`$. No claim is made that the first lower-bound regime covers every relation between $`n`$ and $`\epsilon`$.
+-->
+![Formula](../../../assets/math/71badb5acd064ae7758d8c0e.svg)
+For every fixed <code class="math">\epsilon&lt;1</code>, the elementary input <code class="math">\sum_{j=1}^n(I-Z_j)</code> also requires all <code class="math">n</code> clauses: omit clause <code class="math">j</code>, and the computational basis state whose sole negative <code class="math">Z</code>-eigenvalue is at <code class="math">j</code> changes from energy <code class="math">2</code> to <code class="math">0</code>. No claim is made that the first lower-bound regime covers every relation between <code class="math">n</code> and <code class="math">\epsilon</code>.
 
-The theorem concerns the positive clauses in (1). Expanding an arbitrary Hamiltonian in the signed Pauli basis does not automatically put it in this model while preserving its reference energy: the identity shifts in $`I-P_e`$ are part of the supplied positive Hamiltonian.
+The theorem concerns the positive clauses in (1). Expanding an arbitrary Hamiltonian in the signed Pauli basis does not automatically put it in this model while preserving its reference energy: the identity shifts in <code class="math">I-P_e</code> are part of the supplied positive Hamiltonian.
 
 ## 2. Related work
 
-Basu, Brakensiek, and Putterman, *Many Hamiltonians Are Sparsifiable*, arXiv:2605.02211v1, May 2026, Theorem 3.5, already give $`\widetilde O_r(n/\epsilon^2)`$ original terms for an arbitrarily weighted **fixed-$`r`$-local** positive Pauli Hamiltonian, with randomized classical preprocessing polynomial in $`m,n,O_r(1)`$. Their introduction explicitly treats $`r`$ as constant. The proof partitions into $`3^r`$ Pauli patterns and then into $`r`$-partite subinstances; each resulting commuting family becomes a classical parity instance. Their Section 3.2 extends that argument to fixed predicates admitting positive Pauli decompositions.
+Basu, Brakensiek, and Putterman, *Many Hamiltonians Are Sparsifiable*, arXiv:2605.02211v1, May 2026, Theorem 3.5, already give <code class="math">\widetilde O_r(n/\epsilon^2)</code> original terms for an arbitrarily weighted **fixed-<code class="math">r</code>-local** positive Pauli Hamiltonian, with randomized classical preprocessing polynomial in <code class="math">m,n,O_r(1)</code>. Their introduction explicitly treats <code class="math">r</code> as constant. The proof partitions into <code class="math">3^r</code> Pauli patterns and then into <code class="math">r</code>-partite subinstances; each resulting commuting family becomes a classical parity instance. Their Section 3.2 extends that argument to fixed predicates admitting positive Pauli decompositions.
 
-The change is the replacement of those locality-dependent partitions by the two-part decomposition in Section 3 below. The commuting part can involve arbitrary high-locality, overlapping Pauli strings. The other part is sampled using a uniform spectral lower bound. Consequently the support and compact-input runtime have no hidden $`O_r(1)`$ or $`3^r`$ dependence.
+The change is the replacement of those locality-dependent partitions by the two-part decomposition in Section 3 below. The commuting part can involve arbitrary high-locality, overlapping Pauli strings. The other part is sampled using a uniform spectral lower bound. Consequently the support and compact-input runtime have no hidden <code class="math">O_r(1)</code> or <code class="math">3^r</code> dependence.
 
 The ordinary classical ingredients are public results and are not claimed new:
 
-- Quanrud, *Quotient sparsification for submodular functions*, SODA 2024, Theorem 1.1, gives $`O(r\log(mr)/\epsilon^2)`$ support for rank-$`r`$ weighted polymatroid quotients. The companion note [../../label-block-cut/manuscripts/adaptive-quotient-resparsification.md](../../label-block-cut/manuscripts/adaptive-quotient-resparsification.md) gives the adaptive repeated-application argument reducing this to $`O(r\log(2r/\epsilon)/\epsilon^2)`$, with constant success probability. It uses only restrictions of the original rank function; explicit finite-field ranks and rational weights satisfy its polynomial-bit implementation contract. Applied to a binary row matroid, every zero set of a linear query is closed, so this backend preserves all weighted codeword support sizes. The resparsification is treated as an ordinary-backend observation, separate from the quantum decomposition.
+- Quanrud, *Quotient sparsification for submodular functions*, SODA 2024, Theorem 1.1, gives <code class="math">O(r\log(mr)/\epsilon^2)</code> support for rank-<code class="math">r</code> weighted polymatroid quotients. The companion note [../../label-block-cut/manuscripts/adaptive-quotient-resparsification.md](../../label-block-cut/manuscripts/adaptive-quotient-resparsification.md) gives the adaptive repeated-application argument reducing this to <code class="math">O(r\log(2r/\epsilon)/\epsilon^2)</code>, with constant success probability. It uses only restrictions of the original rank function; explicit finite-field ranks and rational weights satisfy its polynomial-bit implementation contract. Applied to a binary row matroid, every zero set of a linear query is closed, so this backend preserves all weighted codeword support sizes. The resparsification is treated as an ordinary-backend observation, separate from the quantum decomposition.
 
-- Khanna–Putterman–Sudan, *Efficient Algorithms and New Characterizations for CSP Sparsification*, STOC 2025, arXiv:2404.06327v2, Section 5, Theorem 5.19 and Claim 5.18. Their input is an arbitrary possibly weighted generator matrix. For binary code dimension $`d`$, the resulting support is $`\widetilde O(d/\epsilon^2)`$ and preprocessing is polynomial in $`d,m,\epsilon^{-1}`$. The two-pass reduction removes dependence on the initial code length from the support. Basu–Brakensiek–Putterman Theorem 2.11 explicitly restates the arbitrary-weight binary case.
-- Basu–Kothari–Meka–Tudose, *Optimal Sparsifiers for Abelian Cayley Graphs*, arXiv:2607.08261v1, July 2026, Theorem 1.5 and Remark 1.6. These give $`O(d/\epsilon^2)`$ support for weighted binary linear codes, via the group $`\mathbb F_2^d`$, with randomized computation polynomial in the explicit group size $`2^d`$.
+- Khanna–Putterman–Sudan, *Efficient Algorithms and New Characterizations for CSP Sparsification*, STOC 2025, arXiv:2404.06327v2, Section 5, Theorem 5.19 and Claim 5.18. Their input is an arbitrary possibly weighted generator matrix. For binary code dimension <code class="math">d</code>, the resulting support is <code class="math">\widetilde O(d/\epsilon^2)</code> and preprocessing is polynomial in <code class="math">d,m,\epsilon^{-1}</code>. The two-pass reduction removes dependence on the initial code length from the support. Basu–Brakensiek–Putterman Theorem 2.11 explicitly restates the arbitrary-weight binary case.
+- Basu–Kothari–Meka–Tudose, *Optimal Sparsifiers for Abelian Cayley Graphs*, arXiv:2607.08261v1, July 2026, Theorem 1.5 and Remark 1.6. These give <code class="math">O(d/\epsilon^2)</code> support for weighted binary linear codes, via the group <code class="math">\mathbb F_2^d</code>, with randomized computation polynomial in the explicit group size <code class="math">2^d</code>.
 
 General finite-group Cayley sparsification already supplies weaker locality-independent polynomial support through the finite Pauli group. Thus the claim is not that polynomial-size Pauli sparsifiers were previously impossible. The intended increment is the linear support and near-linear compact-input construction for arbitrary locality.
 
@@ -80,130 +87,145 @@ Basu–Brakensiek–Kothari–Putterman, *Quantum Cut Sparsifiers*, June 2026, a
 
 ## 3. Weighted anticommuting-pair decomposition
 
-Two Pauli strings either commute or anticommute. If Hermitian $`P,Q`$ anticommute, then
-```math
+Two Pauli strings either commute or anticommute. If Hermitian <code class="math">P,Q</code> anticommute, then
+<!-- math-display: 955a125143b6898116c66911
 (P+Q)^2=2I,\qquad
  (I-P)+(I-Q)\succeq(2-\sqrt2)I.
  \tag{5}
-```
+-->
+![Formula](../../../assets/math/955a125143b6898116c66911.svg)
 
-Start with residual coefficients $`a_e=w_e`$ and peeled coefficients $`b_e=0`$. While there are two positive-residual clauses $`e,f`$ with $`P_eP_f=-P_fP_e`$, put
-```math
+Start with residual coefficients <code class="math">a_e=w_e</code> and peeled coefficients <code class="math">b_e=0</code>. While there are two positive-residual clauses <code class="math">e,f</code> with <code class="math">P_eP_f=-P_fP_e</code>, put
+<!-- math-display: 6338203945327f3ca864611a
 d=\min\{a_e,a_f\},
  \quad
  a_e\leftarrow a_e-d,\quad a_f\leftarrow a_f-d,
  \quad
  b_e\leftarrow b_e+d,\quad b_f\leftarrow b_f+d.
  \tag{6}
-```
-Each iteration makes at least one residual coefficient zero, so there are at most $`m`$ iterations. At termination the positive-residual strings commute pairwise.
+-->
+![Formula](../../../assets/math/6338203945327f3ca864611a.svg)
+Each iteration makes at least one residual coefficient zero, so there are at most <code class="math">m</code> iterations. At termination the positive-residual strings commute pairwise.
 
 Define
-```math
+<!-- math-display: 928b04012eb37ae5ca57f195
 H_{\rm com}=\sum_ea_eL_{P_e},\qquad
  H_{\rm gap}=\sum_eb_eL_{P_e},\qquad
  W_{\rm gap}=\sum_eb_e.
  \tag{7}
-```
-Then $`H=H_{\rm com}+H_{\rm gap}`$. Every peeling operation contributes a balanced pair $`d(L_P+L_Q)`$. Consequently, with the absolute constant $`\gamma=1-1/\sqrt2>0`$,
-```math
+-->
+![Formula](../../../assets/math/928b04012eb37ae5ca57f195.svg)
+Then <code class="math">H=H_{\rm com}+H_{\rm gap}</code>. Every peeling operation contributes a balanced pair <code class="math">d(L_P+L_Q)</code>. Consequently, with the absolute constant <code class="math">\gamma=1-1/\sqrt2&gt;0</code>,
+<!-- math-display: 95d20c62c82be8671b848091
 \boxed{\quad
  \gamma W_{\rm gap}I\preceq H_{\rm gap}
        \preceq2W_{\rm gap}I.
  \quad}
  \tag{8}
-```
-If no pair was peeled, $`H_{\rm gap}=0`$. The lower bound follows by summing (5), since $`W_{\rm gap}=2\sum_{\rm peeling\ steps}d`$. It does not require the pairs from different iterations to commute or to be disjoint.
+-->
+![Formula](../../../assets/math/95d20c62c82be8671b848091.svg)
+If no pair was peeled, <code class="math">H_{\rm gap}=0</code>. The lower bound follows by summing (5), since <code class="math">W_{\rm gap}=2\sum_{\rm peeling\ steps}d</code>. It does not require the pairs from different iterations to commute or to be disjoint.
 
 This entire decomposition is computed from binary Pauli descriptions and rational weights. A symplectic inner product tests anticommutation in polynomial time. Straightforward pair searches already give polynomial preprocessing; no fast implementation claim is needed. Exact rational subtraction and addition have polynomial bit complexity in the total supplied rational encoding length.
 
-One original term may contribute to both parts, or to several peeled pairs. This causes no problem: its final coefficients are added, and the delivered operator is still a nonnegative multiple of that original $`I-P_e`$.
+One original term may contribute to both parts, or to several peeled pairs. This causes no problem: its final coefficients are added, and the delivered operator is still a nonnegative multiple of that original <code class="math">I-P_e</code>.
 
 ## 4. Sparsifying the uniformly positive part
 
-If $`W_{\rm gap}>0`$, sample indices independently with probabilities
-```math
+If <code class="math">W_{\rm gap}&gt;0</code>, sample indices independently with probabilities
+<!-- math-display: aded6c652082ca1f31dc74de
 p_e=b_e/W_{\rm gap}.
-```
-Each sampled occurrence contributes $`(W_{\rm gap}/k)L_{P_e}`$, where $`k`$ is the number of samples. In particular the coefficients of this sample sum add exactly to $`W_{\rm gap}`$.
+-->
+![Formula](../../../assets/math/aded6c652082ca1f31dc74de.svg)
+Each sampled occurrence contributes <code class="math">(W_{\rm gap}/k)L_{P_e}</code>, where <code class="math">k</code> is the number of samples. In particular the coefficients of this sample sum add exactly to <code class="math">W_{\rm gap}</code>.
 
-For analysis only, whiten $`H_{\rm gap}`$. Each unscaled sampled matrix is
-```math
+For analysis only, whiten <code class="math">H_{\rm gap}</code>. Each unscaled sampled matrix is
+<!-- math-display: ee96836994d1e37890116de0
 X_e=W_{\rm gap}H_{\rm gap}^{-1/2}
                     L_{P_e}H_{\rm gap}^{-1/2}.
-```
+-->
+![Formula](../../../assets/math/ee96836994d1e37890116de0.svg)
 Its expectation is identity and, by (8),
-```math
+<!-- math-display: 6a41577af0bb8ab0b0ae3124
 0\preceq X_e\preceq(2/\gamma)I.
  \tag{9}
-```
-Standard matrix Chernoff in dimension $`2^n`$ therefore gives
-```math
+-->
+![Formula](../../../assets/math/6a41577af0bb8ab0b0ae3124.svg)
+Standard matrix Chernoff in dimension <code class="math">2^n</code> therefore gives
+<!-- math-display: 47d2d576f305f53d89d3df6c
 (1-\epsilon)H_{\rm gap}\preceq\widehat H_{\rm gap}
        \preceq(1+\epsilon)H_{\rm gap}
  \tag{10}
-```
-with failure probability at most $`\delta`$ using
-```math
+-->
+![Formula](../../../assets/math/47d2d576f305f53d89d3df6c.svg)
+with failure probability at most <code class="math">\delta</code> using
+<!-- math-display: 85820cfe9d044977299921d4
 k=O\!\left(\epsilon^{-2}
                  [n+\log(2/\delta)]\right).
  \tag{11}
-```
+-->
+![Formula](../../../assets/math/85820cfe9d044977299921d4.svg)
 
-The implementation merely samples the rational coefficient distribution and counts occurrences. No Hilbert-space matrices, eigenvectors, or matrix inverses are computed. The dimension $`2^n`$ appears only in the proof through its logarithm.
+The implementation merely samples the rational coefficient distribution and counts occurrences. No Hilbert-space matrices, eigenvectors, or matrix inverses are computed. The dimension <code class="math">2^n</code> appears only in the proof through its logarithm.
 
 ## 5. The commuting remainder is an affine binary code
 
-Let the remaining positive-residual strings be pairwise commuting. Modulo phase, a Pauli string is a vector in $`\mathbb F_2^{2n}`$, and commutation is orthogonality under the standard nondegenerate symplectic form. Their span is isotropic and hence has dimension $`d\leq n`$.
+Let the remaining positive-residual strings be pairwise commuting. Modulo phase, a Pauli string is a vector in <code class="math">\mathbb F_2^{2n}</code>, and commutation is orthogonality under the standard nondegenerate symplectic form. Their span is isotropic and hence has dimension <code class="math">d\leq n</code>.
 
-Choose projectively independent commuting strings $`Q_1,\ldots,Q_d`$ from the residual family. Binary Gaussian elimination and exact Pauli phase tracking write every residual term as
-```math
+Choose projectively independent commuting strings <code class="math">Q_1,\ldots,Q_d</code> from the residual family. Binary Gaussian elimination and exact Pauli phase tracking write every residual term as
+<!-- math-display: 94382bc03a10e5266f143aa1
 P_e=(-1)^{s_e}\prod_{j=1}^{d}Q_j^{v_{e,j}},
  \qquad v_e\in\mathbb F_2^d,\quad s_e\in\mathbb F_2.
  \tag{12}
-```
-The product is Hermitian, so the remaining phase is a real sign. The constant $`P_e=-I`$ is represented by $`v_e=0,s_e=1`$.
+-->
+![Formula](../../../assets/math/94382bc03a10e5266f143aa1.svg)
+The product is Hermitian, so the remaining phase is a real sign. The constant <code class="math">P_e=-I</code> is represented by <code class="math">v_e=0,s_e=1</code>.
 
-There is a common eigenbasis in which $`Q_j`$ has eigenvalue $`(-1)^{x_j}`$, $`x\in\mathbb F_2^d`$. In fact every pattern occurs: its common spectral projector
-```math
+There is a common eigenbasis in which <code class="math">Q_j</code> has eigenvalue <code class="math">(-1)^{x_j}</code>, <code class="math">x\in\mathbb F_2^d</code>. In fact every pattern occurs: its common spectral projector
+<!-- math-display: 63490c9f8e98c3f7f6dfd019
 \Pi_x=2^{-d}\prod_{j=1}^{d}(I+(-1)^{x_j}Q_j)
-```
-has trace $`2^{n-d}>0`$, since every nonempty product of the projectively independent generators is a nonidentity, traceless Pauli. Thus the eigenvalue of $`L_{P_e}`$ on that joint eigenspace is
-```math
+-->
+![Formula](../../../assets/math/63490c9f8e98c3f7f6dfd019.svg)
+has trace <code class="math">2^{n-d}&gt;0</code>, since every nonempty product of the projectively independent generators is a nonidentity, traceless Pauli. Thus the eigenvalue of <code class="math">L_{P_e}</code> on that joint eigenspace is
+<!-- math-display: d788af3e7e479e3d36a36d69
 1-(-1)^{s_e+v_e\cdot x}
  =2\,\mathbf1[s_e+v_e\cdot x=1].
  \tag{13}
-```
+-->
+![Formula](../../../assets/math/d788af3e7e479e3d36a36d69.svg)
 
-Form the binary generator matrix whose row indexed by $`e`$ is $`(v_e,s_e)\in\mathbb F_2^{d+1}`$, with row weight $`a_e`$. A weighted binary-code sparsifier preserves
-```math
+Form the binary generator matrix whose row indexed by <code class="math">e</code> is <code class="math">(v_e,s_e)\in\mathbb F_2^{d+1}</code>, with row weight <code class="math">a_e</code>. A weighted binary-code sparsifier preserves
+<!-- math-display: e531c21e2664e8fdcc4e9396
 \sum_ea_e\,\mathbf1[(v_e,s_e)\cdot y=1]
  \tag{14}
-```
-for every $`y\in\mathbb F_2^{d+1}`$. Taking $`y=(x,1)`$, it preserves all the eigenvalues in (13). Therefore it yields a Loewner sparsifier $`\widehat H_{\rm com}`$ of the commuting Hamiltonian. The extra homogeneous coordinate is only a classical code coordinate; it does not introduce an extra physical qubit.
+-->
+![Formula](../../../assets/math/e531c21e2664e8fdcc4e9396.svg)
+for every <code class="math">y\in\mathbb F_2^{d+1}</code>. Taking <code class="math">y=(x,1)</code>, it preserves all the eigenvalues in (13). Therefore it yields a Loewner sparsifier <code class="math">\widehat H_{\rm com}</code> of the commuting Hamiltonian. The extra homogeneous coordinate is only a classical code coordinate; it does not introduce an extra physical qubit.
 
-For the efficient construction, use the rank function of the augmented binary row vectors. For every $`y`$, the rows annihilating $`y`$ form a closed set: every row in their span is also annihilated. Its complement is a matroid quotient. Quanrud's theorem followed by the companion adaptive resparsification argument therefore preserves (14), with
-```math
+For the efficient construction, use the rank function of the augmented binary row vectors. For every <code class="math">y</code>, the rows annihilating <code class="math">y</code> form a closed set: every row in their span is also annihilated. Its complement is a matroid quotient. Quanrud's theorem followed by the companion adaptive resparsification argument therefore preserves (14), with
+<!-- math-display: fd8635dbba702d9a6b325023
 O\!\left(\frac{(d+1)\log((d+2)/\epsilon)}{\epsilon^2}\right)
-```
-terms and polynomial time in the compact rational input. The earlier KPS routine remains a valid alternative with its stated polylogarithmic factors, but is not needed for this explicit single-logarithm bound. With the July 2026 optimal weighted code theorem, this part instead has $`O((d+1)/\epsilon^2)`$ terms with an explicit-group polynomial, potentially exponential-in-$`d`$, construction.
+-->
+![Formula](../../../assets/math/fd8635dbba702d9a6b325023.svg)
+terms and polynomial time in the compact rational input. The earlier KPS routine remains a valid alternative with its stated polylogarithmic factors, but is not needed for this explicit single-logarithm bound. With the July 2026 optimal weighted code theorem, this part instead has <code class="math">O((d+1)/\epsilon^2)</code> terms with an explicit-group polynomial, potentially exponential-in-<code class="math">d</code>, construction.
 
-**Exact total coefficient.** Every augmented row $`(v_e,s_e)`$ is nonzero: a zero row would represent the discarded operator $`P_e=I`$. Averaging the code approximation over all $`y\in\mathbb F_2^{d+1}`$ therefore shows that the sum $`\widehat W_{\rm com}`$ of its output coefficients lies in $`(1\pm\eta)W_{\rm com}`$, where $`W_{\rm com}=\sum_ea_e`$ and $`\eta`$ is the code accuracy. Rescale those coefficients by $`W_{\rm com}/\widehat W_{\rm com}`$. The total becomes exactly $`W_{\rm com}`$, while the spectral factors become $`(1-\eta)/(1+\eta)`$ and $`(1+\eta)/(1-\eta)`$. Choosing $`\eta=\epsilon/4`$ puts them within $`1\pm\epsilon`$, with the same asymptotic support. An empty commuting part needs no normalization. If a failed code run returns total zero for a nonempty commuting part, detect this and declare preprocessing failure before division.
+**Exact total coefficient.** Every augmented row <code class="math">(v_e,s_e)</code> is nonzero: a zero row would represent the discarded operator <code class="math">P_e=I</code>. Averaging the code approximation over all <code class="math">y\in\mathbb F_2^{d+1}</code> therefore shows that the sum <code class="math">\widehat W_{\rm com}</code> of its output coefficients lies in <code class="math">(1\pm\eta)W_{\rm com}</code>, where <code class="math">W_{\rm com}=\sum_ea_e</code> and <code class="math">\eta</code> is the code accuracy. Rescale those coefficients by <code class="math">W_{\rm com}/\widehat W_{\rm com}</code>. The total becomes exactly <code class="math">W_{\rm com}</code>, while the spectral factors become <code class="math">(1-\eta)/(1+\eta)</code> and <code class="math">(1+\eta)/(1-\eta)</code>. Choosing <code class="math">\eta=\epsilon/4</code> puts them within <code class="math">1\pm\epsilon</code>, with the same asymptotic support. An empty commuting part needs no normalization. If a failed code run returns total zero for a nonempty commuting part, detect this and declare preprocessing failure before division.
 
 No simultaneous diagonalizing matrix needs to be constructed. The input to the code routine is only the polynomial-size binary matrix and rational weight list.
 
 ## 6. Combining the pieces, accuracy, and computational scope
 
-Sparsify the gapped part at accuracy $`\epsilon`$, and the commuting code at accuracy $`\epsilon/4`$ followed by the optional exact-total normalization above. Add the two output coefficients for each original index. On the two success events,
-```math
+Sparsify the gapped part at accuracy <code class="math">\epsilon</code>, and the commuting code at accuracy <code class="math">\epsilon/4</code> followed by the optional exact-total normalization above. Add the two output coefficients for each original index. On the two success events,
+<!-- math-display: 8026e030ebdb4c0d23991ef2
 (1-\epsilon)(H_{\rm com}+H_{\rm gap})
  \preceq\widehat H_{\rm com}+\widehat H_{\rm gap}
  \preceq(1+\epsilon)(H_{\rm com}+H_{\rm gap}).
  \tag{15}
-```
-Thus the errors add as PSD inequalities; no additional relative-error loss is introduced by the decomposition. The total support is at most the sum of the two supports. Their total coefficients are exactly $`W_{\rm gap}`$ and $`W_{\rm com}`$, respectively, so the final total is the original $`\sum_ew_e`$. Choose constant failure budgets for the two subroutines to obtain constant success probability; more precise success parameters are inherited from the selected public code routine and (11).
+-->
+![Formula](../../../assets/math/8026e030ebdb4c0d23991ef2.svg)
+Thus the errors add as PSD inequalities; no additional relative-error loss is introduced by the decomposition. The total support is at most the sum of the two supports. Their total coefficients are exactly <code class="math">W_{\rm gap}</code> and <code class="math">W_{\rm com}</code>, respectively, so the final total is the original <code class="math">\sum_ew_e</code>. Choose constant failure budgets for the two subroutines to obtain constant success probability; more precise success parameters are inherited from the selected public code routine and (11).
 
-For (3), use the optimal weighted-code existence theorem and a constant-probability sample for the gapped part. Their union has $`O((n+1)/\epsilon^2)`$ terms. The public optimal-code algorithm supplies the stated explicit-Hilbert-size construction. For (4), use the resparsified matroid-quotient backend instead. Its exact integer-rank and rational-weight implementation is detailed in the companion note; no implicit real-valued oracle is needed here.
+For (3), use the optimal weighted-code existence theorem and a constant-probability sample for the gapped part. Their union has <code class="math">O((n+1)/\epsilon^2)</code> terms. The public optimal-code algorithm supplies the stated explicit-Hilbert-size construction. For (4), use the resparsified matroid-quotient backend instead. Its exact integer-rank and rational-weight implementation is detailed in the companion note; no implicit real-valued oracle is needed here.
 
 All output coefficients are nonnegative. Repeated sampled occurrences and repeated uses of an original clause can be merged by adding coefficients. If any advertised bound is at least the number of supplied clauses, retaining the input is an available trivial branch.
 
@@ -213,48 +235,53 @@ The input may have a large weight ratio, arbitrary locality, and a nontrivial ke
 
 The preceding two-part decomposition is tailored to one Hamiltonian. It is not automatically a common summary for every deletion scenario: removing one side of a peeled pair can destroy the spectral lower bound (8). The following independent operator-importance argument gives a rigorous shared-summary extension.
 
-Attach a label set $`\Lambda(e)`$, $`|\Lambda(e)|\leq d_0`$, to each original term, using $`L`$ labels in total. A query $`F`$, $`|F|\leq h`$, deletes every term carrying a label of $`F`$. Let $`E_F`$ be the survivors and $`H_F=\sum_{e\in E_F}B_e`$, where $`B_e=w_eL_{P_e}`$. Here a summary must use one fixed multiplier per original item and satisfy (2) for every $`H_F`$. Different label lists are not merged.
+Attach a label set <code class="math">\Lambda(e)</code>, <code class="math">&#124;\Lambda(e)&#124;\leq d_0</code>, to each original term, using <code class="math">L</code> labels in total. A query <code class="math">F</code>, <code class="math">&#124;F&#124;\leq h</code>, deletes every term carrying a label of <code class="math">F</code>. Let <code class="math">E_F</code> be the survivors and <code class="math">H_F=\sum_{e\in E_F}B_e</code>, where <code class="math">B_e=w_eL_{P_e}</code>. Here a summary must use one fixed multiplier per original item and satisfy (2) for every <code class="math">H_F</code>. Different label lists are not merged.
 
 ### 7.1 Hereditary operator-importance bound
 
-For any PSD family $`A_i`$ with sum $`M`$, write
-```math
+For any PSD family <code class="math">A_i</code> with sum <code class="math">M</code>, write
+<!-- math-display: 0db8350834f741d4765c8268
 \tau_i=\inf\{t:A_i\preceq tM\}.
-```
-The all-positive-rescalings lemma in the companion Cayley manuscript says: if every positively rescaled subfamily of size at least $`k`$ has an item $`\alpha A_i\preceq\sum_{j\ne i}A_j`$, then
-```math
+-->
+![Formula](../../../assets/math/0db8350834f741d4765c8268.svg)
+The all-positive-rescalings lemma in the companion Cayley manuscript says: if every positively rescaled subfamily of size at least <code class="math">k</code> has an item <code class="math">\alpha A_i\preceq\sum_{j\ne i}A_j</code>, then
+<!-- math-display: 9a3d307e7feefec3fcd1f38c
 \sum_i\tau_i\leq4(k-1)/\alpha.
  \tag{16}
-```
-Its proof whitens $`M`$, normalizes each item by its operator norm, and samples it with probability proportional to that norm. An eigenvector witness and Markov's inequality produce an expected $`(\alpha/4)\sum_i\tau_i`$ non-dominated items, whereas the hypothesis permits at most $`k-1`$.
+-->
+![Formula](../../../assets/math/9a3d307e7feefec3fcd1f38c.svg)
+Its proof whitens <code class="math">M</code>, normalizes each item by its operator norm, and samples it with probability proportional to that norm. An eigenvector witness and Markov's inequality produce an expected <code class="math">(\alpha/4)\sum_i\tau_i</code> non-dominated items, whereas the hypothesis permits at most <code class="math">k-1</code>.
 
-For Pauli clauses one can take $`k=n+2,\alpha=1/4`$. Sort $`n+2`$ clauses by increasing positive weight. If the last $`n+1`$ contain an anticommuting pair, (5) lets that heavier pair dominate one quarter of the globally lightest clause. Otherwise the last $`n+1`$ commute and have a nonempty signed product relation $`\pm I`$. A $`+I`$ relation dominates its lightest term by the rest, using
-```math
+For Pauli clauses one can take <code class="math">k=n+2,\alpha=1/4</code>. Sort <code class="math">n+2</code> clauses by increasing positive weight. If the last <code class="math">n+1</code> contain an anticommuting pair, (5) lets that heavier pair dominate one quarter of the globally lightest clause. Otherwise the last <code class="math">n+1</code> commute and have a nonempty signed product relation <code class="math">\pm I</code>. A <code class="math">+I</code> relation dominates its lightest term by the rest, using
+<!-- math-display: 42784a13399f8ee789bf44d6
 I-\prod_jP_j\preceq\sum_j(I-P_j)
-```
-for commuting involutions. A $`-I`$ relation has sum at least $`2I`$, so it dominates the globally lightest excluded term. Weight order preserves each inequality.
+-->
+![Formula](../../../assets/math/42784a13399f8ee789bf44d6.svg)
+for commuting involutions. A <code class="math">-I</code> relation has sum at least <code class="math">2I</code>, so it dominates the globally lightest excluded term. Weight order preserves each inequality.
 
-This argument holds under arbitrary further positive rescaling. Therefore, for every subfamily $`X`$,
-```math
+This argument holds under arbitrary further positive rescaling. Therefore, for every subfamily <code class="math">X</code>,
+<!-- math-display: c79e6ad9eda54af71716847a
 \sum_{e\in X}
  \|H_X^{\dagger/2}B_eH_X^{\dagger/2}\|
  \leq16(n+1).
  \tag{17}
-```
+-->
+![Formula](../../../assets/math/c79e6ad9eda54af71716847a.svg)
 This remains valid for noncommuting, frustrated, singular, and arbitrarily weighted inputs.
 
 ### 7.2 Cheap dominating sets and scores in the compact model
 
-A polynomial-time subroutine finds at most $`n+1`$ clauses $`S`$ satisfying
-```math
+A polynomial-time subroutine finds at most <code class="math">n+1</code> clauses <code class="math">S</code> satisfying
+<!-- math-display: 780a264f9cc8ff3c9d85b635
 B_e\preceq4H_S\quad\text{for every term }e.
  \tag{18}
-```
+-->
+![Formula](../../../assets/math/780a264f9cc8ff3c9d85b635.svg)
 
-Process terms in decreasing weight order, maintaining a projectively independent commuting Pauli basis. Add an independent commuting term. Skip a term that equals a positive product of the selected terms, since its clause is dominated by those earlier heavier clauses. At the first anticommuting term, add it and stop. At the first term that is the negative of a selected product, add it and stop. An anticommuting stopping pair has sum at least $`(2-\sqrt2)wI`$, and a negative-product stopping relation has sum at least $`2wI`$, where $`w`$ is the new term's weight. Every later term has weight at most $`w`$ and is therefore dominated by four times the selected sum. Earlier skipped terms remain dominated. If no stopping event occurs, every unselected item was skipped with a valid positive-relation witness.
+Process terms in decreasing weight order, maintaining a projectively independent commuting Pauli basis. Add an independent commuting term. Skip a term that equals a positive product of the selected terms, since its clause is dominated by those earlier heavier clauses. At the first anticommuting term, add it and stop. At the first term that is the negative of a selected product, add it and stop. An anticommuting stopping pair has sum at least <code class="math">(2-\sqrt2)wI</code>, and a negative-product stopping relation has sum at least <code class="math">2wI</code>, where <code class="math">w</code> is the new term's weight. Every later term has weight at most <code class="math">w</code> and is therefore dominated by four times the selected sum. Earlier skipped terms remain dominated. If no stopping event occurs, every unselected item was skipped with a valid positive-relation witness.
 
-Repeatedly remove such sets to form disjoint layers $`S_1,S_2,\ldots`$. For $`e\in S_i`$, summing its domination by earlier layers gives
-```math
+Repeatedly remove such sets to form disjoint layers <code class="math">S_1,S_2,\ldots</code>. For <code class="math">e\in S_i</code>, summing its domination by earlier layers gives
+<!-- math-display: d69a03bdfca888c02773bc63
 \tau_e\leq t_e:=
  \begin{cases}
  1,&i=1,\\
@@ -263,47 +290,52 @@ Repeatedly remove such sets to form disjoint layers $`S_1,S_2,\ldots`$. For $`e\
  \qquad
  \sum_et_e=O((n+1)\log(2m)).
  \tag{19}
-```
-Only binary elimination, phase tracking, and weight comparisons are required. The same upper-score bound holds on every subfamily, with $`\log(2m)`$ using the original count.
+-->
+![Formula](../../../assets/math/d69a03bdfca888c02773bc63.svg)
+Only binary elimination, phase tracking, and weight comparisons are required. The same upper-score bound holds on every subfamily, with <code class="math">\log(2m)</code> using the original count.
 
 ### 7.3 Uniform correlated-failure summaries
 
-Clip $`h`$ to $`L`$, and put
-```math
+Clip <code class="math">h</code> to <code class="math">L</code>, and put
+<!-- math-display: 171fc73dab6de1b6359a8e34
 Q=\sum_{j=0}^{h}\binom Lj,\qquad
  \Gamma(h,d_0)=\frac{(h+d_0)^{h+d_0}}{h^h d_0^{d_0}}
  \tag{20}
-```
-for positive $`h,d_0`$, and $`\Gamma=1`$ otherwise.
+-->
+![Formula](../../../assets/math/171fc73dab6de1b6359a8e34.svg)
+for positive <code class="math">h,d_0</code>, and <code class="math">\Gamma=1</code> otherwise.
 
 The monotone-importance pool argument from the companion robust-spectral manuscript, with (17), yields one fixed-weight summary of size
-```math
+<!-- math-display: ef28204bc885fcc75ff66799
 O\!\left(\min\left\{m,\,
  \frac{\Gamma(n+1)}{\epsilon^2}
       \left[n+\log\frac{2Q}{\delta}\right]\right\}\right)
  \tag{21}
-```
-valid simultaneously for every $`|F|\leq h`$, with probability at least $`1-\delta`$. This version has preprocessing polynomial in the explicit Hilbert-space dimension. Using the cheap scores (19) instead gives compact-input polynomial randomized preprocessing and size
-```math
+-->
+![Formula](../../../assets/math/ef28204bc885fcc75ff66799.svg)
+valid simultaneously for every <code class="math">&#124;F&#124;\leq h</code>, with probability at least <code class="math">1-\delta</code>. This version has preprocessing polynomial in the explicit Hilbert-space dimension. Using the cheap scores (19) instead gives compact-input polynomial randomized preprocessing and size
+<!-- math-display: 4cfcd6b7b3eb92549ca372f5
 O\!\left(\min\left\{m,\,
  \frac{\Gamma(n+1)\log(2m)}{\epsilon^2}
       \left[n+\log\frac{2Q}{\delta}\right]\right\}\right).
  \tag{22}
-```
+-->
+![Formula](../../../assets/math/4cfcd6b7b3eb92549ca372f5.svg)
 
-For completeness, independently include each label in a pool $`R`$ with probability $`d_0/(h+d_0)`$, and include an item in $`X_R`$ exactly when all of its labels lie in $`R`$. For every surviving pair $`(e,F)`$, with probability at least $`1/\Gamma`$, the pool includes all labels of $`e`$ and none of $`F`$. Then $`e\in X_R\subseteq E_F`$, so true importance in $`X_R`$ dominates its value in $`E_F`$.
+For completeness, independently include each label in a pool <code class="math">R</code> with probability <code class="math">d_0/(h+d_0)</code>, and include an item in <code class="math">X_R</code> exactly when all of its labels lie in <code class="math">R</code>. For every surviving pair <code class="math">(e,F)</code>, with probability at least <code class="math">1/\Gamma</code>, the pool includes all labels of <code class="math">e</code> and none of <code class="math">F</code>. Then <code class="math">e\in X_R\subseteq E_F</code>, so true importance in <code class="math">X_R</code> dominates its value in <code class="math">E_F</code>.
 
-Take $`J=O(\Gamma\log(2mQ/\delta))`$ independent pools. With high probability, every surviving item/query pair has at least $`J/(2\Gamma)`$ separating pools. Let $`u_e(X)`$ be either its exact importance on $`X`$, or the computable upper bound (19), and define
-```math
+Take <code class="math">J=O(\Gamma\log(2mQ/\delta))</code> independent pools. With high probability, every surviving item/query pair has at least <code class="math">J/(2\Gamma)</code> separating pools. Let <code class="math">u_e(X)</code> be either its exact importance on <code class="math">X</code>, or the computable upper bound (19), and define
+<!-- math-display: fa3112f9233bc887ae5c69c2
 \widehat\sigma_e=u_e(E)+
        \frac{2\Gamma}{J}\sum_{j:e\in X_{R_j}}u_e(X_{R_j}).
  \tag{23}
-```
-These scores dominate all surviving-scenario importances. Their total mass is $`O(\Gamma(n+1))`$ for exact scores, or $`O(\Gamma(n+1)\log(2m))`$ for cheap scores, on every pool outcome. Importance sampling with these scores and matrix Chernoff, followed by a union bound over $`Q`$ scenarios, proves (21)–(22). The upper scores themselves need not be monotone; their domination of the true monotone importance is sufficient.
+-->
+![Formula](../../../assets/math/fa3112f9233bc887ae5c69c2.svg)
+These scores dominate all surviving-scenario importances. Their total mass is <code class="math">O(\Gamma(n+1))</code> for exact scores, or <code class="math">O(\Gamma(n+1)\log(2m))</code> for cheap scores, on every pool outcome. Importance sampling with these scores and matrix Chernoff, followed by a union bound over <code class="math">Q</code> scenarios, proves (21)–(22). The upper scores themselves need not be monotone; their domination of the true monotone importance is sufficient.
 
-Before generating pools, compare the target with $`m`$ and return the whole input if it is larger. In the nontrivial branch $`\Gamma`$ is polynomially bounded by $`m`$, while $`\log Q\leq L\log2`$. Thus the compact-model construction is uniformly polynomial even when $`h,d_0`$ are input parameters and $`Q`$ is exponential. No query-dependent reweighting is used.
+Before generating pools, compare the target with <code class="math">m</code> and return the whole input if it is larger. In the nontrivial branch <code class="math">\Gamma</code> is polynomially bounded by <code class="math">m</code>, while <code class="math">\log Q\leq L\log2</code>. Thus the compact-model construction is uniformly polynomial even when <code class="math">h,d_0</code> are input parameters and <code class="math">Q</code> is exponential. No query-dependent reweighting is used.
 
-The correlated-failure result is separate from the near-linear ordinary theorem. Its extra factors, including $`\log Q`$, are not suppressed as if they were free. Failure means deletion of specified Hamiltonian clauses, not tracing out or physically losing a quantum subsystem.
+The correlated-failure result is separate from the near-linear ordinary theorem. Its extra factors, including <code class="math">\log Q</code>, are not suppressed as if they were free. Failure means deletion of specified Hamiltonian clauses, not tracing out or physically losing a quantum subsystem.
 
 ## 8. References and computational scope
 
@@ -318,4 +350,4 @@ The correlated-failure result is separate from the near-linear ordinary theorem.
 
 The constant-gap decomposition uses only the elementary anticommuting-pair inequality. It isolates one commuting weighted remainder and eliminates locality-dependent partitions in the all-state spectral approximation problem. Ordinary code sparsification, stabilizer linear algebra, and matrix Chernoff are established ingredients.
 
-A compact-input polynomial-time algorithm with the exact $`O(n/\epsilon^2)`$ support is not supplied, because the analogous sharp binary-code construction is not available from the cited efficient theorem. The ordinary decomposition also does not directly survive correlated deletion; Section 7 is the valid, quantitatively weaker shared-summary construction.
+A compact-input polynomial-time algorithm with the exact <code class="math">O(n/\epsilon^2)</code> support is not supplied, because the analogous sharp binary-code construction is not available from the cited efficient theorem. The ordinary decomposition also does not directly survive correlated deletion; Section 7 is the valid, quantitatively weaker shared-summary construction.

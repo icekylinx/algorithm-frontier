@@ -20,40 +20,44 @@ restrict all recipient ranks to the remaining player ground P.
 Put q=|P| and c=q-r. Every type j has a normalized monotone integral
 submodular recipient rank f_j on P. An integer allocation uses
 
-```math
+<!-- math-display: 7f36894db1bfcd9cef5948a8
 n_j\in P(f_j)\cap\mathbb Z_{\ge0}^{P}.
  \tag{O1}
-```
+-->
+![Formula](../../assets/math/7f36894db1bfcd9cef5948a8.svg)
 
 Unused resource capacity is allowed. All units have one common
 positive rational value v. For every player-type pair prescribe
 an arbitrary nonnegative rational cost c_pj, and require the one
 combined assignment budget
 
-```math
+<!-- math-display: 0ac68bc0cc1e250c4f417953
 \sum_{p,j}c_{pj}n_j(p)\le C,
                           \qquad C\ge0.
  \tag{O2}
-```
+-->
+![Formula](../../assets/math/0ac68bc0cc1e250c4f417953.svg)
 
 The chosen set I must be an actual M-basis. Let K* be the optimal
 integer minimum number of units received by a selected player.
 The utility optimum is OPT_C=v*K*. Define
 
-```math
+<!-- math-display: 1e2087c6669a59acf5f45532
 \Gamma(R)=\frac{R^R}{(R-1)^{R-1}}
                          \quad(R>1).
  \tag{O3}
-```
+-->
+![Formula](../../assets/math/1e2087c6669a59acf5f45532.svg)
 
 **Theorem O.** There is a deterministic algorithm returning an
 M-basis and an integer allocation of total cost at most C, with
 at least ceil(K*/2) units at every selected player, in time
 
-```math
+<!-- math-display: 0349f43111a59201d42d1a0f
 (27/4)^c\mathrm{poly}(H)
  \tag{O4}
-```
+-->
+![Formula](../../assets/math/0349f43111a59201d42d1a0f.svg)
 
 and polynomial workspace. In particular its minimum utility is
 at least OPT_C/2. H includes the complete binary encoding and
@@ -88,21 +92,23 @@ of full resource bases is not assumed.
 
 Define a compact fractional allocation region
 
-```math
+<!-- math-display: 002811312fd35fdd4f91ae8c
 \mathcal X_C=\{(x_j)_j:
       x_j\in P(f_j)\ (j),\quad
       \sum_{p,j}c_{pj}x_j(p)\le C\}.
  \tag{O5}
-```
+-->
+![Formula](../../assets/math/002811312fd35fdd4f91ae8c.svg)
 
 It is nonempty because it contains zero. Its lower count projection is
 
-```math
+<!-- math-display: 5cf314c731cc4c76d95a8c28
 \mathcal U_C=\{z\ge0:
        \exists x\in\mathcal X_C,\quad
        z_p\le\sum_jx_j(p)\text{ for every }p\}.
  \tag{O6}
-```
+-->
+![Formula](../../assets/math/5cf314c731cc4c76d95a8c28.svg)
 
 This is a bounded convex downward rational polytope. The original
 region stays fixed for every omission branch and every target.
@@ -113,10 +119,11 @@ We use the exact nonnegative separator already proved for the
 budgeted unrelated-value region, but spell out its count version
 to make its implementation and bit bounds explicit. For a>=0 set
 
-```math
+<!-- math-display: 3c719984c0237fb97cbde5a4
 h_C(a)=\max_{x\in\mathcal X_C}\sum_{p,j}a_px_j(p).
  \tag{O7}
-```
+-->
+![Formula](../../assets/math/3c719984c0237fb97cbde5a4.svg)
 
 The support LP has polynomially many variables. Each resource is
 separated by minimizing f_j(S)-x_j(S), and the one cost row is
@@ -129,7 +136,7 @@ independent of how many subset rows are present.
 
 Let S_tot=sum_j f_j(P). For a proposed z>=0 solve the outer LP
 
-```math
+<!-- math-display: cb0ab6ef6b57b1009ac251d5
 \begin{array}{ll}
  \text{maximize}&a\cdot z-h,\\
  \text{subject to}&a\ge0,\quad a(P)=1,\quad 0\le h\le S_{\rm tot},\\
@@ -137,7 +144,8 @@ Let S_tot=sum_j f_j(P). For a proposed z>=0 solve the outer LP
                          \quad(x\text{ a vertex of }\mathcal X_C).
  \end{array}
  \tag{O8}
-```
+-->
+![Formula](../../assets/math/cb0ab6ef6b57b1009ac251d5.svg)
 
 Separation of its last rows is the inner support LP. Every returned
 row has polynomial encoding by the preceding vertex bound, and the
@@ -148,10 +156,11 @@ solves O8 without enumerating vertices.
 If the optimum is positive, recompute h_C(a) and return the valid
 nonnegative packing row
 
-```math
+<!-- math-display: dddfb3edb4b02e7c8a69d18a
 a\cdot y\le h_C(a).
  \tag{O9}
-```
+-->
+![Formula](../../assets/math/dddfb3edb4b02e7c8a69d18a.svg)
 
 It is strictly violated by z, and its capacity is nonnegative.
 If the optimum is nonpositive, z belongs to U_C. To verify the latter
@@ -172,10 +181,11 @@ same formulations, with no division by a budget or capacity.
 
 For a target integer K>=2 put
 
-```math
+<!-- math-display: f56b1d992a250154662d7251
 t=K,\qquad b=\lceil K/2\rceil.
  \tag{O10}
-```
+-->
+![Formula](../../assets/math/f56b1d992a250154662d7251.svg)
 
 Then t>b>0. A budget-feasible integer allocation giving at least K
 units to every player of an M-basis I* is in particular a fractional
@@ -186,11 +196,12 @@ in the weighted prefix-free omission theorem. It returns a genuine
 M-basis I with b*1_I in U_C, or soundly excludes every full t-service
 basis in the fractional region. Its time is
 
-```math
+<!-- math-display: cbdc8aa33ac34857b0b1c5e7
 \Gamma\!\left(\frac{K}{K-\lceil K/2\rceil}\right)^c
                            \mathrm{poly}(H).
  \tag{O11}
-```
+-->
+![Formula](../../assets/math/cbdc8aa33ac34857b0b1c5e7.svg)
 
 The maximum ratio for K>=2 is three, attained at K=3. Since
 Gamma is increasing, O11 is at most (27/4)^c times polynomial work.
@@ -211,27 +222,30 @@ coordinates until their sum is exactly b. Coordinatewise reduction
 preserves every P(f_j), and nonnegative costs ensure the budget
 is not increased. Thus there is a fractional point satisfying
 
-```math
+<!-- math-display: 13d5aa9ccf08bcaf14a6fa14
 x_j\in P(f_j|I),\qquad
              \sum_jx_j(p)=b\ (p\in I),\qquad
              \sum_{p\in I,j}c_{pj}x_j(p)\le C.
  \tag{O12}
-```
+-->
+![Formula](../../assets/math/13d5aa9ccf08bcaf14a6fa14.svg)
 
 On the product ground E=I times the type set, define the integral
 direct-sum resource rank
 
-```math
+<!-- math-display: f5141eaab9b13ad4bbd56ad3
 A(S)=\sum_j f_j(\{p\in I:(p,j)\in S\})
  \tag{O13}
-```
+-->
+![Formula](../../assets/math/f5141eaab9b13ad4bbd56ad3.svg)
 
 and the integral partition-polymatroid rank
 
-```math
+<!-- math-display: 03af6579e25b4a9a10bcd87f
 B(S)=b\,|\{p\in I:\exists j\ (p,j)\in S\}|.
  \tag{O14}
-```
+-->
+![Formula](../../assets/math/03af6579e25b4a9a10bcd87f.svg)
 
 The latter imposes at most b total units at each selected player.
 The intersection P(A) intersect P(B) is integral. Point O12 lies
@@ -296,10 +310,11 @@ zero budget require no special approximation argument.
 
 Let
 
-```math
+<!-- math-display: fc7e3a047b021c92101a4c11
 U_0=\left\lfloor\frac{\sum_jf_j(P)}r\right\rfloor.
  \tag{O15}
-```
+-->
+![Formula](../../assets/math/fc7e3a047b021c92101a4c11.svg)
 
 Every feasible minimum integer quota is at most U_0. Initialize
 L=0 with any M-basis and zero counts, and use U=U_0+1 as an
@@ -364,10 +379,11 @@ factor strictly smaller than two in F(c) poly(H) value-oracle time.
 For completeness, choose q>r>=2, c=q-r, the player matroid U_(r,q),
 one unit-valued resource and a hidden r-set A. Set
 
-```math
+<!-- math-display: 26baed21bf049a748b4ad418
 f_A(S)=\min\{2|S|,2r\}-{\bf1}[|S|=r]+{\bf1}[S=A].
  \tag{O16}
-```
+-->
+![Formula](../../assets/math/26baed21bf049a748b4ad418.svg)
 
 This is the normalized monotone integral submodular rank proved
 in [A value-oracle barrier below factor two for rank-parameterized allocation](../allocation-lower-bounds/proof.md) and repeated

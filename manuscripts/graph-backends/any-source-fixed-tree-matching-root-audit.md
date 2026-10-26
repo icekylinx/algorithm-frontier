@@ -21,17 +21,19 @@ For every live allocation x_e retain a register ell_e with
 ell_e<x_e<2ell_e. Set ell_e=3x_e/4 on initialization or reset.
 Use donor cost
 
-```math
+<!-- math-display: 256679b426ce0e204deee92f
 \bar c_e=\left\lceil\frac{H}{4\ell_e}\right\rceil,
-```
+-->
+![Formula](../../assets/math/256679b426ce0e204deee92f.svg)
 
 zero receiving cost, and source cost A-sigma_v, where
 
-```math
+<!-- math-display: 560c47e41b0a17f5e245917e
 \sigma_v=\left\lfloor\frac{3H}{4s_v}\right\rfloor,
  \qquad
  \tau_v=\left\lceil\frac{5H}{4s_v}\right\rceil.
-```
+-->
+![Formula](../../assets/math/560c47e41b0a17f5e245917e.svg)
 
 The supplied exact shortest-path tree is computed in this bar-price
 graph. Removing its artificial source leaves a directed forest with
@@ -51,9 +53,10 @@ For any ancestor bin a and descendant bin b, let bar L be the sum
 of donor costs on their directed forest path. Accept if
 sigma_a-tau_b-bar L>0. Since
 
-```math
+<!-- math-display: e496afd676473441bf7d0465
 \frac{H}{4x_e}\le\bar c_e<\frac{H}{2x_e}+1,
-```
+-->
+![Formula](../../assets/math/e496afd676473441bf7d0465.svg)
 
 every accepted path has true one-sided ratio greater than one quarter.
 Conversely every forest path whose true ratio exceeds one half passes
@@ -88,9 +91,10 @@ another maintained donor tree price.
 
 The starting source cost increases. For the terminal,
 
-```math
+<!-- math-display: 22a2237422a036cbcc71f5bd
 D(b)\le D(a)+\bar L\le A-\sigma_a+\bar L<A-\tau_b.
-```
+-->
+![Formula](../../assets/math/22a2237422a036cbcc71f5bd.svg)
 
 This uses only source feasibility at a, not tightness of its source
 arc. It is consequently valid for a newly chosen intermediate source.
@@ -107,22 +111,24 @@ source offset A remains valid within the structural epoch.
 
 Put pi=(A-D)/H. Feasibility in the operative graph implies
 
-```math
+<!-- math-display: 72528699c1761ffe3892f6c2
 0\le\pi_d-\pi_r\le\frac1{2x_e}+\frac1H,
  \qquad
  \pi_d\ge\frac3{4s_d}-\frac1H.
-```
+-->
+![Formula](../../assets/math/72528699c1761ffe3892f6c2.svg)
 
 For a feasible matching comparison, use the already established
 P>12N, Q_s<=N, and Q_x<=3N. Conservation and the preceding inequalities
 give
 
-```math
+<!-- math-display: 60349f04f6788d3bc3982c95
 \frac34P-\frac54Q_s-\frac12Q_x
   \le E(\pi,s)+\frac{L|R|+T_{\rm slack}}H,
  \qquad
  E(\pi,s)=\sum_d(s_d\pi_d-5/4)_+.
-```
+-->
+![Formula](../../assets/math/60349f04f6788d3bc3982c95.svg)
 
 The left side is strictly larger than 25N/4. Choose H also so that
 the rounding term is at most N. Then E<=5N safely certifies matching
@@ -192,9 +198,10 @@ as an accounting potential, with the guarded range and explicit
 structural record edits, bounds total positive variation too. Therefore
 the total notification count across all epochs is
 
-```math
+<!-- math-display: 901fbb313db319eb0580150b
 O(J+(N+A_{\rm ext})\log S).
-```
+-->
+![Formula](../../assets/math/901fbb313db319eb0580150b.svg)
 
 Here J is the number of accepted steps and A_ext counts all explicitly
 born, deleted, or externally set allocation records. Existing registers

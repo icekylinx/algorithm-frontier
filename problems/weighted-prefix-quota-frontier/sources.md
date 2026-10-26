@@ -34,7 +34,7 @@ part of each use; an interface analysis does not supply an omitted backend.
 - [An encoded ETH tradeoff across row-overlap densities](../numeric-target-frontier/manuscripts/encoded-overlap-density-eth-lower-bound.md)
 - [Covering-row chain compression for exact mixed numeric targets](../numeric-target-frontier/manuscripts/mixed-target-cover-chain-compression.md)
 - [Sharp arbitrary-matroid failure summaries](../matroid-failure-summaries/proof.md): exact binomial rank summaries, deterministic deletion-witness search, and the one-label fixed-cost-prefix endpoint used by the sharp packing transfer.
-- [Deterministic weighted oracle prefix construction](../matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md): the existing Bernoulli support factor with complete FPT witness search on retained prefixes; supplies the arbitrary-profit $`O_\delta(k^{\delta+1})`$ packing restriction.
+- [Deterministic weighted oracle prefix construction](../matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md): the existing Bernoulli support factor with complete FPT witness search on retained prefixes; supplies the arbitrary-profit <code class="math">O_\delta(k^{\delta+1})</code> packing restriction.
 - [Sources, attribution and canonical paths](../../provenance/README.md)
 
 ## Primary references

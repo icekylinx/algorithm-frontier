@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns an actual activated basis and a complete legal schedule; offers factor $`1+\varepsilon`$, exact factor $`3/2`$, and the bucket curve $`\gamma_k=\frac{3\cdot2^k-1}{2^{k+1}-1}`$. Detects global infeasibility.
+Returns an actual activated basis and a complete legal schedule; offers factor <code class="math">1+\varepsilon</code>, exact factor <code class="math">3/2</code>, and the bucket curve <code class="math">\gamma_k=\frac{3\cdot2^k-1}{2^{k+1}-1}</code>. Detects global infeasibility.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic enumeration of activation bases and profiles, followed by exact fe
 
 **Time**
 
-Let $`\delta=\varepsilon/2`$, $`K=\lfloor1/\delta\rfloor`$, $`L=\left\lceil(1-\delta)/\delta^2\right\rceil`$, and $`\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}`$. The three bounds are $`\binom{q}{r}\Pi_\varepsilon^r\mathrm{poly}(H_\varepsilon)`$, $`\binom{q}{r}6^r\mathrm{poly}(H)`$, and $`\binom{q}{r}(k+1)^r\mathrm{poly}(H+k)`$.
+Let <code class="math">\delta=\varepsilon/2</code>, <code class="math">K=\lfloor1/\delta\rfloor</code>, <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>, and <code class="math">\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}</code>. The three bounds are <code class="math">\binom{q}{r}\Pi_\varepsilon^r\mathrm{poly}(H_\varepsilon)</code>, <code class="math">\binom{q}{r}6^r\mathrm{poly}(H)</code>, and <code class="math">\binom{q}{r}(k+1)^r\mathrm{poly}(H+k)</code>.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$`q`$ is the physical-machine count; $`r`$ is the activation-matroid rank; $`\varepsilon`$ is rational with $`0<\varepsilon\le1`$; $`k\ge0`$ is an integer. $`H_\varepsilon=H+\mathrm{size}(\varepsilon)`$. Original totals are $`n_j=f_j(P)`$.
+<code class="math">q</code> is the physical-machine count; <code class="math">r</code> is the activation-matroid rank; <code class="math">\varepsilon</code> is rational with <code class="math">0&lt;\varepsilon\le1</code>; <code class="math">k\ge0</code> is an integer. <code class="math">H_\varepsilon=H+\mathrm{size}(\varepsilon)</code>. Original totals are <code class="math">n_j=f_j(P)</code>.
 
 **Model and representation**
 
@@ -40,6 +40,6 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md).
 
-The rank-sensitive enumeration first chooses an actual activated basis, then profiles only its $`r`$ machines. Original job totals stay mandatory after restriction; an affordable setup basis alone does not certify scheduling feasibility.
+The rank-sensitive enumeration first chooses an actual activated basis, then profiles only its <code class="math">r</code> machines. Original job totals stay mandatory after restriction; an affordable setup basis alone does not certify scheduling feasibility.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

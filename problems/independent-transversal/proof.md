@@ -21,9 +21,10 @@ no vertex has `r` independent neighbours in distinct classes, where
 `r>=2`; this is the source's partition-relative `r`-claw-free condition.
 Let `0<epsilon<1` be rational. Put
 
-```math
+<!-- math-display: dc9ec7409b57683c08ae5b80
 P=|V(G)|+|E(G)|+q+2,
-```
+-->
+![Formula](../../assets/math/dc9ec7409b57683c08ae5b80.svg)
 
 and let `b_epsilon` be its rational input bit length.
 
@@ -45,22 +46,24 @@ Here a constellation is a disjoint union of nontrivial stars whose
 leaves form a partial independent transversal of all but one class of
 `S_0`. These objects satisfy
 
-```math
+<!-- math-display: d9fe5747c991d64c8d4e6885
 |D|<(2+\epsilon)(|S|-1),\qquad
  V(K)\subseteq D,\qquad
  |D\setminus V(K)|<\epsilon(|S|-1).                   \tag{I1}
-```
+-->
+![Formula](../../assets/math/d9fe5747c991d64c8d4e6885.svg)
 
 The uniform running-time bound, using the adjacency-list implementation
 proved in
 [Input-linear scans for the independent-transversal layer primitives](../../manuscripts/matching-and-routing/independent-transversal-input-linear-iteration-implementation.md), is
 
-```math
+<!-- math-display: f1b8fc158f42aae561724616
 \boxed{\quad
  P(q+1)^{\,O(\epsilon^{-1}\log(2+r/\epsilon))}
        \mathrm{poly}(b_\epsilon+\log P).
  \quad}                                               \tag{I2}
-```
+-->
+![Formula](../../assets/math/f1b8fc158f42aae561724616.svg)
 
 The source uses a safe `O(|V|^4)` per-iteration implementation bound.
 The accompanying implementation note instead uses a single monotone
@@ -96,11 +99,12 @@ operation and zero-blocker cascade accounting is proved in
 [An elementary exponential fallback for the full transversal certificate](../../manuscripts/matching-and-routing/independent-transversal-elementary-exponential-fallback.md).
 Taking the better of the two algorithms yields the combined bound
 
-```math
+<!-- math-display: ddca49961939523fb1193602
 P\min\left\{\exp(O(q)),\,
       (q+1)^{O(\epsilon^{-1}\log(2+r/\epsilon))}\right\}
       \mathrm{poly}(b_\epsilon+\log P).
-```
+-->
+![Formula](../../assets/math/ddca49961939523fb1193602.svg)
 
 The fallback is particularly relevant for small `q` or very small
 slack. For fixed positive slack and unrestricted `r<=q+1`, the
@@ -128,10 +132,11 @@ instances are solved directly.
 
 Use the source's public operations with the following feasible values:
 
-```math
+<!-- math-display: 6c7072a30036e7bf0145872c
 \mu=\rho=\frac{\epsilon}{100r},\qquad
  Q=\lceil1/\mu\rceil.                                \tag{I3}
-```
+-->
+![Formula](../../assets/math/6c7072a30036e7bf0145872c.svg)
 
 `Q` is the source's degree-cap parameter `U`; it is renamed to avoid
 confusion with other logarithmic parameters in this manuscript. All
@@ -145,9 +150,10 @@ at least `1-3mu-mu^2`, whereas their right-hand error terms are
 at most `mu(2r+3)` and `mu(2r+6)`, respectively. The first
 inequality has margin at least
 
-```math
+<!-- math-display: 9f50769dcfb465553686d6a2
 \epsilon-(2+\epsilon)(3\mu+\mu^2)-\mu(2r+3)>0,
-```
+-->
+![Formula](../../assets/math/9f50769dcfb465553686d6a2.svg)
 
 and the second follows from
 `epsilon(1-3mu-mu^2)>mu(2r+6)`. The third condition
@@ -180,18 +186,20 @@ algorithm.
 At a main-loop boundary all surviving layers are noncollapsible by
 Lemma 13. Hence
 
-```math
+<!-- math-display: 08e60770e5b93e79bb68a809
 |X_j|\le |Y_j|/(1-\mu).              \tag{I4}
-```
+-->
+![Formula](../../assets/math/08e60770e5b93e79bb68a809.svg)
 
 For every surviving `j`, retain its latest **actual** candidate
 `(Xhat_j,Yhat_j)` from its birth or a SuperposedBuild attempt.
 It has
 
-```math
+<!-- math-display: d5e66f25fe7fe508486c837e
 Xhat_j=X_j\mathbin{\dot\cup}E_j,
                  |E_j|\le\mu|X_j|.                   \tag{I5}
-```
+-->
+![Formula](../../assets/math/d5e66f25fe7fe508486c837e.svg)
 
 After an adopted attempt `E_j` is empty; after rejection the bound
 is strict. This is a fact about an executed computation.
@@ -208,9 +216,10 @@ Thus greedy maximality of every stored candidate can be used directly
 at the current boundary. In particular, no stale hypothetical rerun
 of a greedy routine is needed. New candidate blockers satisfy
 
-```math
+<!-- math-display: b54de326c3f2b178dec6d0e3
 |Yhat_j\setminus Y_j|\le(r-1)|E_j|.                  \tag{I6}
-```
+-->
+![Formula](../../assets/math/b54de326c3f2b178dec6d0e3.svg)
 
 Indeed `M` is independent and meets each class at most once, so a
 selected vertex has at most `r-1` neighbours in `M` by the claw
@@ -220,10 +229,11 @@ condition. The existing blockers of `X_j` are precisely `Y_j`.
 
 Fix any surviving positive layer `i` at a main-loop boundary. Set
 
-```math
+<!-- math-display: f7425fba9c295d27adf038d0
 W=1+\sum_{j<i}|Y_j|,\qquad Y=|Y_i|,
  T=W-1+Y=\sum_{j\le i}|Y_j|.                          \tag{I7}
-```
+-->
+![Formula](../../assets/math/f7425fba9c295d27adf038d0.svg)
 
 The `W` active classes for the prefix through `i` are the root
 class and the classes represented by `Y_1,...,Y_(i-1)`.
@@ -232,9 +242,10 @@ From them remove every class that is full in one of the corresponding
 recorded candidates, and every class containing a vertex of any
 `E_j`, `j<=i`. Call the remaining class set `S`. Define
 
-```math
+<!-- math-display: 702150554707d2ef6d5bcd58
 D_0=\bigcup_{j\le i}(Xhat_j\cup Yhat_j).
-```
+-->
+![Formula](../../assets/math/702150554707d2ef6d5bcd58.svg)
 
 For each currently unblocked vertex of `X_1 union ... union X_i`,
 add one arbitrary neighbour to `D_0`; such a neighbour exists by
@@ -264,25 +275,28 @@ neighbourhood domination.
 
 Let
 
-```math
+<!-- math-display: 0630cdeb87c2761226a70f2f
 \eta=\frac{\mu(r+2)}{1-\mu},\qquad
  f=\frac{\mu+(1+\mu)/Q}{1-\mu}.                       \tag{I8}
-```
+-->
+![Formula](../../assets/math/0630cdeb87c2761226a70f2f.svg)
 
 The candidate extras and their blockers use at most
 `r sum|E_j|` vertices. The neighbour completion adds at most
 `mu sum|X_j|` vertices. Equations (I4)--(I6) give
 
-```math
+<!-- math-display: 5f79b1589503a74e65e3dbbc
 |D|\le(2+\eta)T.                    \tag{I9}
-```
+-->
+![Formula](../../assets/math/5f79b1589503a74e65e3dbbc.svg)
 
 Full classes number at most `sum|Xhat_j|/Q`; extra-selected
 classes number at most `sum|E_j|`. Hence
 
-```math
+<!-- math-display: d35d643144a5799401a2d5dd
 |S|\ge W-fT.                 \tag{I10}
-```
+-->
+![Formula](../../assets/math/d35d643144a5799401a2d5dd.svg)
 
 Let `K` be the subgraph of the working interclass graph induced by
 the current prefix's selected
@@ -303,17 +317,19 @@ is nontrivial. The leaves form an independent transversal
 of the `T` matching-representative classes. Thus `K` is a
 constellation for
 
-```math
+<!-- math-display: 36094634e7b22981246d3389
 S_0=\{\text{root class}\}\cup A(Y_1\cup\cdots\cup Y_i),
-```
+-->
+![Formula](../../assets/math/36094634e7b22981246d3389.svg)
 
 and `S_0` contains `S`. It is contained in `D`. Beyond `K`,
 the current unblocked selected vertices, candidate extras and their
 new blockers, and the neighbour completion give
 
-```math
+<!-- math-display: cdc9f975dadd9f53e17aa35f
 |D\setminus V(K)|\le\eta T.        \tag{I11}
-```
+-->
+![Formula](../../assets/math/cdc9f975dadd9f53e17aa35f.svg)
 
 No factor proportional to the size of a whole class occurs in these
 bounds. The extra-selected **classes** are excluded, whereas the
@@ -324,20 +340,22 @@ one neighbour per unblocked selected vertex.
 
 With (I3), the following convenient bounds hold:
 
-```math
+<!-- math-display: fae3fdf653b7d3fc54810048
 \eta<\epsilon/40,\qquad f<\epsilon/90,
  \qquad \eta+(2+\epsilon)f<\epsilon/10.                \tag{I12}
-```
+-->
+![Formula](../../assets/math/fae3fdf653b7d3fc54810048.svg)
 
 Suppose `W>=2` and
 
-```math
+<!-- math-display: 5c5156b683a0ddf5d7949e8d
 Y\le\epsilon W/10.            \tag{I13}
-```
+-->
+![Formula](../../assets/math/5c5156b683a0ddf5d7949e8d.svg)
 
 Then `T<=(1+epsilon/5)(W-1)`. From (I9)--(I12),
 
-```math
+<!-- math-display: 51358d4593491ee0dbc96e92
 \begin{split}
  |D|+(2+\epsilon)fT
   &\le[2+\eta+(2+\epsilon)f]T\\
@@ -345,23 +363,26 @@ Then `T<=(1+epsilon/5)(W-1)`. From (I9)--(I12),
   &\le(2+13\epsilon/25)(W-1)\\
   &<(2+\epsilon)(W-1).
 \end{split}                                             \tag{I14}
-```
+-->
+![Formula](../../assets/math/51358d4593491ee0dbc96e92.svg)
 
 Since `|S|-1>=W-1-fT`, this proves the first inequality in
 (I1). Moreover,
 
-```math
+<!-- math-display: 2bd9f20a94ead7d1882b66e3
 |S|-1\ge(1-\epsilon/75)(W-1)>0,
-```
+-->
+![Formula](../../assets/math/2bd9f20a94ead7d1882b66e3.svg)
 
 so `S` is nonempty. The additional constellation requirement follows
 from
 
-```math
+<!-- math-display: 59cb42aca389031d5821d17d
 |D\setminus V(K)|
     \le\frac{3\epsilon}{100}(W-1)
     <\epsilon(|S|-1).                                 \tag{I15}
-```
+-->
+![Formula](../../assets/math/59cb42aca389031d5821d17d.svg)
 
 If `W=1`, the original birth check ensures `X_i` is nonempty.
 Current noncollapsibility then forces `Y>=1`, which is larger than
@@ -371,11 +392,12 @@ certificate construction.
 We have proved the following explicit alternative at every main-loop
 boundary: either output (I1), or every surviving positive layer has
 
-```math
+<!-- math-display: 03e14e1ed5942644c345d946
 |Y_i|>\frac{\epsilon}{10}
                        \left(1+\sum_{j<i}|Y_j|\right).
                                                                \tag{I16}
-```
+-->
+![Formula](../../assets/math/03e14e1ed5942644c345d946.svg)
 
 The algorithm can check (I16) for all live layers using prefix counts,
 and build the certificate only on failure. Checking just the newly
@@ -392,31 +414,34 @@ stop cannot invalidate those assertions.
 
 Equation (I16) bounds the number of positive layers by
 
-```math
+<!-- math-display: 82c8b3eec2ec404cdb7ec0e8
 L=O(\epsilon^{-1}\log(q+1)).        \tag{I17}
-```
+-->
+![Formula](../../assets/math/82c8b3eec2ec404cdb7ec0e8.svg)
 
 Use the source's original base
 
-```math
+<!-- math-display: 23373fb405ce4257c18128f2
 b=Q/(Q-\mu\rho).
-```
+-->
+![Formula](../../assets/math/23373fb405ce4257c18128f2.svg)
 
 Because `Q=ceil(1/mu)` and `rho=mu`, its logarithm has order
 `mu^3`, with uniform constants. Definition 17 therefore bounds the
 largest finite signature coordinate by
 
-```math
+<!-- math-display: d9115414c28e59d69ed86e39
 H=O\!\left(\mu^{-3}
        [L\log(1/\rho)+L\mu+\log(q+1)]\right).        \tag{I18}
-```
+-->
+![Formula](../../assets/math/d9115414c28e59d69ed86e39.svg)
 
 There are at most `2L` coordinates, their signs are fixed, and their
 absolute values are nonnegative nondecreasing integers. Counting
 lists by both their height and their length, rather than using every
 subset of the height range, gives
 
-```math
+<!-- math-display: b302b1f1a7ca6e3db1e18cf4
 \begin{split}
  \log\#\mathrm{signatures}
    &\le O\bigl(L\log(2+H/L)\bigr)\\
@@ -424,7 +449,8 @@ subset of the height range, gives
                          \log(q+1)\right).
 \end{split}
 \tag{I19}
-```
+-->
+![Formula](../../assets/math/b302b1f1a7ca6e3db1e18cf4.svg)
 
 This is valid also when the stated upper bound `L` exceeds `q`;
 it then overcounts signatures. Instances with at most one remaining
@@ -459,10 +485,11 @@ The retained public signature proof already accounts for that event.
 For the source's displayed feasible parameters and its original
 birth-growth depth bound, a length-aware signature count gives
 
-```math
+<!-- math-display: 1e88ca88b646fafbf8d06e46
 P(q+1)^{
                    O((r/\epsilon)\log(2+r/\epsilon))}.
-```
+-->
+![Formula](../../assets/math/1e88ca88b646fafbf8d06e46.svg)
 
 The same input implementation is used in both bounds; the source's
 original coarse `P^4` implementation is not used to disadvantage
@@ -476,11 +503,12 @@ inputs satisfying the no-small-domination promise.
 Both algorithms can also use the elementary fallback above. Thus the
 named derived-public baseline should be read as
 
-```math
+<!-- math-display: ac15b18fb8f31c1f29f3cd38
 P\min\left\{\exp(O(q)),\,
       (q+1)^{O((r/\epsilon)\log(2+r/\epsilon))}\right\}
       \mathrm{poly}(b_\epsilon+\log P).
-```
+-->
+![Formula](../../assets/math/ac15b18fb8f31c1f29f3cd38.svg)
 
 The full version and later-source comparison are recorded in
 [Public uniform baselines for the full independent-transversal certificate](../../manuscripts/matching-and-routing/independent-transversal-public-uniform-baseline-audit.md).

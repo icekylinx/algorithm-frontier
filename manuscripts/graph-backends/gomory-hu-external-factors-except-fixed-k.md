@@ -8,8 +8,8 @@ global-max leaf adapter in
 independent audits. The historical filename is retained so existing
 checkpoint links remain valid.
 
-Put $`U=\log(N+4)`$, $`h=\log(U+4)`$. Every graph below has actual
-size at most polynomial in the original input bound $`N`$. All work
+Put <code class="math">U=\log(N+4)</code>, <code class="math">h=\log(U+4)</code>. Every graph below has actual
+size at most polynomial in the original input bound <code class="math">N</code>. All work
 bounds multiply actual sizes; the master parameter does not justify
 padding a small recursive instance.
 
@@ -18,39 +18,41 @@ padding a small recursive instance.
 Theorem 3.5 of
 [AKL+, arXiv:2507.20354v1](https://arxiv.org/html/2507.20354v1)
 states its precise dependency, citing CP24 Definition 4 and Theorem
-3.1. For miss size $`a`$, hit size $`b=O(1)`$, and universe size
-$`n`$, the family size is
+3.1. For miss size <code class="math">a</code>, hit size <code class="math">b=O(1)</code>, and universe size
+<code class="math">n</code>, the family size is
 
-```math
+<!-- math-display: 57f6177c1b9e9cad67d8dbcb
 (a\log n)^{O(b)},
  \qquad\text{construction time }n(a\log n)^{O(b)}.
  \tag{1}
-```
+-->
+![Formula](../../assets/math/57f6177c1b9e9cad67d8dbcb.svg)
 
-The Section 6 calls always use $`b=2`$ and
-$`a=\widetilde O(\psi^{-1})`$. Consequently their cost is a fixed
-power of $`\psi^{-1}`$ and of $`U`$. There is no additional
+The Section 6 calls always use <code class="math">b=2</code> and
+<code class="math">a=\widetilde O(\psi^{-1})</code>. Consequently their cost is a fixed
+power of <code class="math">\psi^{-1}</code> and of <code class="math">U</code>. There is no additional
 unspecified subpolynomial factor from this component.
 
 One can also replace this import by an elementary construction when
 only a fixed hit size is needed. Enumerate sufficiently many small
-primes $`p`$, and for every subset $`R\subseteq\mathbb Z_p`$ of
-size at most $`b`$, use the function
-$`x\mapsto 1[x\bmod p\in R]`$. For fixed disjoint sets $`A,B`$,
+primes <code class="math">p</code>, and for every subset <code class="math">R\subseteq\mathbb Z_p</code> of
+size at most <code class="math">b</code>, use the function
+<code class="math">x\mapsto 1[x\bmod p\in R]</code>. For fixed disjoint sets <code class="math">A,B</code>,
 the nonzero integer
 
-```math
+<!-- math-display: f8a1484c4c128078cf9214cc
 \prod_{x\in A,y\in B}(x-y)
  \tag{2}
-```
+-->
+![Formula](../../assets/math/f8a1484c4c128078cf9214cc.svg)
 
-has at most $`ab\log_2 n`$ distinct prime divisors. Among more than
-that many primes, one makes every residue of $`B`$ distinct from
-every residue of $`A`$. Choosing $`R=B\bmod p`$ separates them.
-The standard polynomial bound on the first $`O(ab\log n)`$ primes,
+has at most <code class="math">ab\log_2 n</code> distinct prime divisors. Among more than
+that many primes, one makes every residue of <code class="math">B</code> distinct from
+every residue of <code class="math">A</code>. Choosing <code class="math">R=B\bmod p</code> separates them.
+The standard polynomial bound on the first <code class="math">O(ab\log n)</code> primes,
 and a deterministic sieve, give family size and time
-$`(a\log n)^{O(b+1)}`$ and
-$`n(a\log n)^{O(b+1)}`$, respectively. For $`b=2`$, these are still
+<code class="math">(a\log n)^{O(b+1)}</code> and
+<code class="math">n(a\log n)^{O(b+1)}</code>, respectively. For <code class="math">b=2</code>, these are still
 the required fixed polynomial bounds. Empty hit sets are covered by
 the zero function.
 
@@ -60,47 +62,50 @@ AKL+ Appendix A quotes a fixed-constant accuracy statement and then
 uses a vanishing accuracy. To avoid any uncertainty from that wording,
 use the original uniform formulation of Li--Saranurak,
 [arXiv:2106.01567](https://arxiv.org/pdf/2106.01567), Theorem 2.4 and
-Corollary 2.5. The parameter $`r\ge1`$ is an explicit input. Its
+Corollary 2.5. The parameter <code class="math">r\ge1</code> is an explicit input. Its
 weighted balanced-cut/prune quality is
 
-```math
+<!-- math-display: a75a09202329e12254728891
 \log^{O(r^4)}N.
  \tag{3}
-```
+-->
+![Formula](../../assets/math/a75a09202329e12254728891.svg)
 
-The stated time is $`m(mW)^{O(1/r)}`$, up to logarithms. For a
+The stated time is <code class="math">m(mW)^{O(1/r)}</code>, up to logarithms. For a
 conservative construction-level estimate, retain also the factors
 visible in the proof: its spectral routine has
-$`\log^{O(r^2)}N`$ overhead, and its recursive j-tree work has
-$`\log^{O(r)}(NW)`$ overhead. Neither factor is iterated through a
+<code class="math">\log^{O(r^2)}N</code> overhead, and its recursive j-tree work has
+<code class="math">\log^{O(r)}(NW)</code> overhead. Neither factor is iterated through a
 second growing-depth application. A sufficient uniform bound is
 
-```math
+<!-- math-display: 4c674425d28265a2d8bdee65
 m\exp O\left(U/r+r^4h\right)
  \tag{4}
-```
+-->
+![Formula](../../assets/math/4c674425d28265a2d8bdee65.svg)
 
 for polynomial external weights and demands. The internal capacity
-ratios may grow by $`N^{O(r)}`$, as explicitly bounded in the proof
-of its Theorem 2.14. This uses $`O(rU)`$ numerical bits and only
+ratios may grow by <code class="math">N^{O(r)}</code>, as explicitly bounded in the proof
+of its Theorem 2.14. This uses <code class="math">O(rU)</code> numerical bits and only
 polynomial logarithmic arithmetic factors, consistent with (4).
 
-Take $`r=\Theta((U/h)^{1/5})`$, rounded to an integer. Both the
+Take <code class="math">r=\Theta((U/h)^{1/5})</code>, rounded to an integer. Both the
 work factor and cut-quality factor are bounded by
 
-```math
+<!-- math-display: 06fa10f944109e6779e44591
 E_{\rm dec}=\exp O(U^{4/5}h^{1/5}).
  \tag{5}
-```
+-->
+![Formula](../../assets/math/06fa10f944109e6779e44591.svg)
 
-The weaker $`\exp O(U^{4/5}h^{O(1)})`$ envelope is enough for the
+The weaker <code class="math">\exp O(U^{4/5}h^{O(1)})</code> envelope is enough for the
 7/8 composition.
 
-For completeness, arbitrary positive target expansion $`\phi`$ is
-compatible with the primitive's normalization $`\psi\le1`$. Set
-$`\beta=\max\{1,\phi\}`$, multiply every nonzero demand by
-$`\beta`$, and use target $`\psi=\phi/\beta`$. The resulting
-inequality is exactly the desired $`\phi`$-expansion for the original
+For completeness, arbitrary positive target expansion <code class="math">\phi</code> is
+compatible with the primitive's normalization <code class="math">\psi\le1</code>. Set
+<code class="math">\beta=\max\{1,\phi\}</code>, multiply every nonzero demand by
+<code class="math">\beta</code>, and use target <code class="math">\psi=\phi/\beta</code>. The resulting
+inequality is exactly the desired <code class="math">\phi</code>-expansion for the original
 demands. Recursively applying the balanced-cut/prune primitive gives
 the needed decomposition with only a logarithmic factor in its quality
 and total actual instance inventory. Demands and capacities remain
@@ -113,29 +118,30 @@ statement.
 The remainder of that appendix uses the preceding decomposition and
 exact maxflow on linear-size graphs, followed by recursive calls on
 vertex-disjoint induced graphs. Its recursion depth is
-$`O(\log(nW))`$. Hence its total actual edge inventory is
-$`m\mathrm{poly}(U)`$.
+<code class="math">O(\log(nW))</code>. Hence its total actual edge inventory is
+<code class="math">m\mathrm{poly}(U)</code>.
 
 Choose all displayed approximation envelopes as powers of two. The
-target $`\phi`$ used in Section 6 can also be chosen dyadic. The
+target <code class="math">\phi</code> used in Section 6 can also be chosen dyadic. The
 auxiliary flow capacities have common factors such as
-$`1/(12\alpha)`$ and $`\phi/2`$. Multiplication by one common
+<code class="math">1/(12\alpha)</code> and <code class="math">\phi/2</code>. Multiplication by one common
 polynomially bounded denominator converts each flow call to positive
 polynomially bounded integer capacities. There is no accumulation of
 unrelated denominators across recursive calls.
 
 With a deterministic exact-flow factor
-$`E_{\rm flow}=\exp O(U^{4/5}h^{O(1)})`$, the refinement costs
+<code class="math">E_{\rm flow}=\exp O(U^{4/5}h^{O(1)})</code>, the refinement costs
 
-```math
+<!-- math-display: ac1dcf6cf9804a7a500b0d43
 m\mathrm{poly}(U)
              \bigl(E_{\rm dec}+E_{\rm flow}\bigr),
  \tag{6}
-```
+-->
+![Formula](../../assets/math/ac1dcf6cf9804a7a500b0d43.svg)
 
 and its source/sink routing guarantee loses only an additional
 polynomial logarithm. Both its work and its structural factor therefore
-have leading logarithmic power at most $`4/5`$.
+have leading logarithmic power at most <code class="math">4/5</code>.
 
 This paragraph uses the correctness of the public flow-linked
 refinement as an imported lemma. The quantitative substitution has been
@@ -145,42 +151,43 @@ level in the exponent.
 
 ## 4. The terminal-selection loops have bounded fixed nesting
 
-AKL+ Section 6 defines $`\psi^{-1}`$ as a fixed power of its
+AKL+ Section 6 defines <code class="math">\psi^{-1}</code> as a fixed power of its
 expander factor and logarithms. The displayed loops in DetectCC,
 DecompFirstStep, and DecompSecondStep have counts polynomial in
-$`\psi^{-1}`$ and $`U`$. Their hit-and-miss families are covered by
+<code class="math">\psi^{-1}</code> and <code class="math">U</code>. Their hit-and-miss families are covered by
 Section 1. Every isolating-cut invocation reduces to exact maxflow on
-graphs of total size $`m\mathrm{poly}(U)`$.
+graphs of total size <code class="math">m\mathrm{poly}(U)</code>.
 
-Full SSMC makes $`O(\log(nW))`$ calls to partial SSMC. A call to
+Full SSMC makes <code class="math">O(\log(nW))</code> calls to partial SSMC. A call to
 GHTreeStep performs a polynomial logarithmic number of the preceding
 selection and decomposition operations. None of these levels has depth
-growing as $`\psi^{-1}`$ with a recursively multiplied oracle work
+growing as <code class="math">\psi^{-1}</code> with a recursively multiplied oracle work
 factor. They are finite nested loops with fixed nesting depth.
 
 Consequently, using the partial-SSMC implementation assembled from the
 audited guide construction and the new fixed-k adapter, the complete
 GHTreeStep work is
 
-```math
+<!-- math-display: 4dab9b697b9827167863cbc5
 m\mathrm{poly}(U)E^{O(1)}
        E_{\rm dec}^{O(1)}E_{\rm flow}^{O(1)}.
  \tag{7}
-```
+-->
+![Formula](../../assets/math/4dab9b697b9827167863cbc5.svg)
 
 ## 5. The final recursive inventory
 
 AKL+ Lemma 6.32 gives total vertex and edge inventories
-$`O(dn)`$ and $`O(dm+dn\log n)`$, respectively, for recursion
-depth $`d`$. The terminal sets shrink by a fixed fraction, so
-$`d=O(\log n)`$. Combining this bound with (7), using actual local
+<code class="math">O(dn)</code> and <code class="math">O(dm+dn\log n)</code>, respectively, for recursion
+depth <code class="math">d</code>. The terminal sets shrink by a fixed fraction, so
+<code class="math">d=O(\log n)</code>. Combining this bound with (7), using actual local
 sizes and a common monotone upper envelope for their factors, adds only
 a polynomial logarithm.
 
-The term $`n\log n`$ is harmless on a connected nontrivial input,
-where $`n\le m+1`$. General inputs are first divided into connected
+The term <code class="math">n\log n</code> is harmless on a connected nontrivial input,
+where <code class="math">n\le m+1</code>. General inputs are first divided into connected
 components and isolated vertices, so their additional processing and
-output cost is $`O(n+m)`$.
+output cost is <code class="math">O(n+m)</code>.
 
 ## 6. Resolution of the fixed-parameter mincut interface
 
@@ -204,11 +211,11 @@ maximizes the candidate value over every non-source, non-centroid guide
 target, including the source arm. A source-arm maximizer gets one full
 child; an outside maximizer gets two children with disjoint
 uncontracted regions. The proof establishes both the required cut
-cases and $`\sum_i(n_i-1)\le n-1`$. Correct contracted-target
+cases and <code class="math">\sum_i(n_i-1)\le n-1</code>. Correct contracted-target
 broadcasts and a set-mincut parameter-one base complete the interface.
 
 The resulting aggregate maxflow input size is
-$`(m+n)\log^{O(k+1)}n`$. For the fixed $`k=16`$, it multiplies
+<code class="math">(m+n)\log^{O(k+1)}n</code>. For the fixed <code class="math">k=16</code>, it multiplies
 the exact-flow factor by only a fixed polynomial logarithm. This new
 construction is independently checked in
 [fixed-k-global-max-leaf-independent-audit.md](fixed-k-global-max-leaf-independent-audit.md). It closes the earlier

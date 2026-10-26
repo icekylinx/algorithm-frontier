@@ -14,7 +14,7 @@ Deterministic conflict enumeration, graph-cover branching and exact matroid inte
 
 **Time**
 
-$`\phi^c\mathrm{poly}(H)`$, where $`\phi=(1+\sqrt{5})/2`$. The whole-ground bound is $`\left(\frac{5-\sqrt{5}}{2}\right)^q E(q)\mathrm{poly}(H)`$.
+<code class="math">\phi^c\mathrm{poly}(H)</code>, where <code class="math">\phi=(1+\sqrt{5})/2</code>. The whole-ground bound is <code class="math">\left(\frac{5-\sqrt{5}}{2}\right)^q E(q)\mathrm{poly}(H)</code>.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$`q`$ is the player count; $`r`$ is the common basis rank; $`c=q-r`$. $`E(q)=2^{O(q\log\log(q+2)/\log(q+2))}`$. All scenarios, costs, budgets, and paid one-unit intersection operations are included in $`H`$.
+<code class="math">q</code> is the player count; <code class="math">r</code> is the common basis rank; <code class="math">c=q-r</code>. <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. All scenarios, costs, budgets, and paid one-unit intersection operations are included in <code class="math">H</code>.
 
 **Model and representation**
 

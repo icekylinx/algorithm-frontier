@@ -4,45 +4,47 @@ The algorithm maintains rank additivity for every ordered center prefix,
 including prefixes ending inside a layer, and immediately processes a
 stored center when its designated blockers become redundant.
 
-**Theorem 1.** Let $`M`$ have rank $`r\ge1`$. For arbitrary recipient
+**Theorem 1.** Let <code class="math">M</code> have rank <code class="math">r\ge1</code>. For arbitrary recipient
 matroids, a deterministic algorithm returns an allocation with minimum
-utility at least $`T_{\rm conf}/d`$, where $`T_{\rm conf}`$ is the
+utility at least <code class="math">T_{\rm conf}/d</code>, where <code class="math">T_{\rm conf}</code> is the
 coupled configuration optimum and
-```math
+<!-- math-display: d0dbdddf2e9b184bc9e3ac4a
 d=4-\frac3r.
-```
-Its time is $`2^{O(r)}\mathrm{poly}(H)`$ and its space is
-polynomial. For any positive rational $`\eta`$, factor $`d+\eta`$ is
+-->
+![Formula](../../assets/math/d0dbdddf2e9b184bc9e3ac4a.svg)
+Its time is <code class="math">2^{O(r)}\mathrm{poly}(H)</code> and its space is
+polynomial. For any positive rational <code class="math">\eta</code>, factor <code class="math">d+\eta</code> is
 obtained in
-```math
+<!-- math-display: 36901d7897b7e27583b68d70
 \mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.
  \tag{P1}
-```
-With a certified factor-$`\lambda`$ local availability oracle, replace
-$`d`$ by $`\lambda^{-1}+3-3/r`$. Input and oracle costs, including
-all rational accuracy bits, are paid in $`H`$.
+-->
+![Formula](../../assets/math/36901d7897b7e27583b68d70.svg)
+With a certified factor-<code class="math">\lambda</code> local availability oracle, replace
+<code class="math">d</code> by <code class="math">\lambda^{-1}+3-3/r</code>. Input and oracle costs, including
+all rational accuracy bits, are paid in <code class="math">H</code>.
 
 ## 1. Model, comparator, and player-side operations
 
-There is an explicit player set $`P`$, a player-selection matroid $`M`$,
-and resources $`j`$ of common intrinsic value $`v_j\ge0`$. Resource $`j`$
+There is an explicit player set <code class="math">P</code>, a player-selection matroid <code class="math">M</code>,
+and resources <code class="math">j</code> of common intrinsic value <code class="math">v_j\ge0</code>. Resource <code class="math">j</code>
 may serve exactly the player sets independent in its supplied recipient
-matroid $`R_j`$; a player receives at most one service from each resource.
-The output selects an actual $`M`$-basis and gives its players feasible
+matroid <code class="math">R_j</code>; a player receives at most one service from each resource.
+The output selects an actual <code class="math">M</code>-basis and gives its players feasible
 resource bundles. Unused capacity is allowed.
 
-Optionally each player has a downward-closed family $`\mathcal F_p`$
+Optionally each player has a downward-closed family <code class="math">\mathcal F_p</code>
 of allowed resource subsets. On an available resource list, its paid
-oracle returns a feasible bundle of value at least $`\lambda`$ times
+oracle returns a feasible bundle of value at least <code class="math">\lambda</code> times
 the best available feasible bundle. Unrestricted availability has
-$`\lambda=1`$.
+<code class="math">\lambda=1</code>.
 
-At target $`T`$, let $`\mathcal C_p(T)=\{C\in\mathcal F_p:v(C)\ge T\}`$,
+At target <code class="math">T</code>, let <code class="math">\mathcal C_p(T)=\{C\in\mathcal F_p:v(C)\ge T\}</code>,
 including only individually permitted services. The coupled
-configuration relaxation has nonnegative variables $`z_{pC}`$ and
+configuration relaxation has nonnegative variables <code class="math">z_{pC}</code> and
 constraints
-```math
+<!-- math-display: a7d4534274d4e964a12c7ed7
 \begin{aligned}
  x_p&=\sum_{C\in\mathcal C_p(T)}z_{pC},&
  x&\in B(M),\\
@@ -50,15 +52,16 @@ constraints
  y_{\cdot j}&\in P(R_j).
  \end{aligned}
  \tag{P0}
-```
-Its largest feasible target is $`T_{\rm conf}`$. Configurations may
+-->
+![Formula](../../assets/math/a7d4534274d4e964a12c7ed7.svg)
+Its largest feasible target is <code class="math">T_{\rm conf}</code>. Configurations may
 be exponentially numerous. They and a feasible fractional point are
 not part of the input, and the algorithm does not solve this LP.
 They are used only to prove the soundness of its obstruction
 certificate. The implied small-resource relaxation has
-$`0\le y_{pj}\le x_p`$ and $`\sum_jv_jy_{pj}\ge Tx_p`$;
+<code class="math">0\le y_{pj}\le x_p</code> and <code class="math">\sum_jv_jy_{pj}\ge Tx_p</code>;
 with local families it also retains their row perspective
-$`y_p\in x_p\mathrm{conv}\{\mathbf1_C:C\in\mathcal F_p\}`$.
+<code class="math">y_p\in x_p\mathrm{conv}\{\mathbf1_C:C\in\mathcal F_p\}</code>.
 
 We use the earliest fundamental-circuit exchange, last-layer refresh,
 and bounded integer signature from
@@ -66,8 +69,8 @@ and bounded integer signature from
 and its
 [player-side invariant proof](../../manuscripts/allocation-and-scheduling/matroid-allocation-current-blocker-quasipolynomial.md).
 The resource invariants and normalization needed for this extension
-are established below. Let $`B>0`$ be the desired bundle threshold and
-let $`u`$ be the largest retained resource value, or zero if none.
+are established below. Let <code class="math">B&gt;0</code> be the desired bundle threshold and
+let <code class="math">u</code> be the largest retained resource value, or zero if none.
 Zero-valued resources are discarded. Rank zero is the empty allocation;
 target zero is attained by any player basis with empty bundles.
 
@@ -84,7 +87,7 @@ remaining centers, and never inserts a center before a retained center.
 
 For an ordered prefix S of centers and a resource j, define
 
-```math
+<!-- math-display: 0b20d3eff1abf304d71bfef6
 \begin{split}
  Y(S)&=\bigcup_{c\in S}D(c),\\
  X_j(S)&=\{p(c):c\in S,\ j\in c\},\\
@@ -93,7 +96,8 @@ For an ordered prefix S of centers and a resource j, define
  U_j(S)&=M_j\setminus Y_j(S).
  \end{split}
  \tag{P2}
-```
+-->
+![Formula](../../assets/math/0b20d3eff1abf304d71bfef6.svg)
 
 Here M_j is the actual current matching's recipient set. The
 distinctness invariant is retained: selected occurrences using j have
@@ -102,10 +106,11 @@ two services to the same player-resource pair.
 
 At layer i, player eligibility is
 
-```math
+<!-- math-display: 6d985d257cdde4c9ba71a4b6
 p\notin\mathrm{cl}_M(I\setminus\mathrm{owners}(Y_{<i})).
  \tag{P3}
-```
+-->
+![Formula](../../assets/math/6d985d257cdde4c9ba71a4b6.svg)
 
 Use the **one-at-a-time earliest-layer player circuit exchange**.
 For a free owner outside cl_M(I), augment. For an already matched owner,
@@ -123,11 +128,12 @@ In addition to universal reservations, maintain two prefix statements.
 
 For every actual subset Z of selected centers and every resource j,
 
-```math
+<!-- math-display: 2a8aa480fe90a6e02819093c
 (M_j\setminus\mathrm{owners}(D(Z)))
         \mathbin{\dot\cup}X_j(Z)\in\mathcal I(R_j).
  \tag{P4}
-```
+-->
+![Formula](../../assets/math/2a8aa480fe90a6e02819093c.svg)
 
 This remains an inductively maintained theorem. The algorithm does not
 enumerate Z.
@@ -136,11 +142,12 @@ enumerate Z.
 
 For every ordered prefix S and every resource j, require
 
-```math
+<!-- math-display: d5775370627703f97e2bfcf7
 r_j(W_j(S)\cup U_j(S))
              =r_j(W_j(S))+|U_j(S)|.
  \tag{P5}
-```
+-->
+![Formula](../../assets/math/d5775370627703f97e2bfcf7.svg)
 
 Equivalently, the currently unmarked matching recipients are independent
 after contracting the flat spanned by the selected-plus-marked prefix.
@@ -152,10 +159,11 @@ exactly independence of the actual matching recipient set M_j.
 For a retained center c, let S^-_c be the centers strictly preceding it.
 For every resource j in c, require
 
-```math
+<!-- math-display: 7dc1bb671c37a1b921a35a4a
 p(c)\notin\mathrm{cl}_{R_j}(W_j(S^-_c)).
  \tag{P6}
-```
+-->
+![Formula](../../assets/math/7dc1bb671c37a1b921a35a4a.svg)
 
 This is a current invariant, not a stored numerical birth charge. It is
 true when c is chosen. Afterwards, the preceding center records remain
@@ -168,10 +176,11 @@ and does not enter any old group. Consequently (P6) persists literally.
 
 During a last-layer scan, use the accepted availability test
 
-```math
+<!-- math-display: 0b1f4d0ff624228f5f51f561
 p\notin\mathrm{cl}_{R_j}(X_j\cup Y_j),
  \tag{P7}
-```
+-->
+![Formula](../../assets/math/0b1f4d0ff624228f5f51f561.svg)
 
 where X,Y are the entire current center/blocker prefix. Find a feasible
 minimal B-bundle c from available resources, using the exact or certified
@@ -179,18 +188,20 @@ approximate local oracle and subsequent ordinary minimality pruning.
 
 Call a resource j used by c **problematic** when
 
-```math
+<!-- math-display: ae57c86555a71b5bc7c00763
 p\in\mathrm{cl}_{R_j}(X_j\cup M_j).
  \tag{P8}
-```
+-->
+![Formula](../../assets/math/ae57c86555a71b5bc7c00763.svg)
 
 Designate the following records:
 
-```math
+<!-- math-display: c14e1810291bc09826f0e1ae
 D(c)=\bigcup_{j\in c:\ (P8)}
        \{b:\ b\text{ is a current matching record outside }Y,\ j\in b\}.
  \tag{P9}
-```
+-->
+![Formula](../../assets/math/c14e1810291bc09826f0e1ae.svg)
 
 Every designated blocker shares a problematic resource with c. If D(c)
 is nonempty, append c with that group. Otherwise process c as a fresh
@@ -224,11 +235,12 @@ If D(c) is empty, no used resource can be problematic. Otherwise (P9)
 would contain a matching record, unless U were empty; in that latter
 case (P8) would contradict (P7). Therefore a fresh free candidate satisfies
 
-```math
+<!-- math-display: 2b8e9e223edfdc603fb5840c
 p\notin\mathrm{cl}_{R_j}(M_j\cup X_j)
                          \quad(j\in c).
  \tag{P10}
-```
+-->
+![Formula](../../assets/math/2b8e9e223edfdc603fb5840c.svg)
 
 This stronger form of freedom will pay for preservation of (P5).
 
@@ -236,35 +248,39 @@ This stronger form of freedom will pay for preservation of (P5).
 
 For a stored center c, let S=S^-_c followed by c. For j in c, put
 
-```math
+<!-- math-display: 5bd6190fd8dd2c30e0c2ef82
 V_j=W_j(S^-_c)\cup
            \{p(b):b\in D(c),\ j\in b\}.
  \tag{P11}
-```
+-->
+![Formula](../../assets/math/5bd6190fd8dd2c30e0c2ef82.svg)
 
 Suppose
 
-```math
+<!-- math-display: 316254eee9ad0f119abbc4da
 p(c)\notin\mathrm{cl}_{R_j}(V_j)
                           \quad\hbox{for every }j\in c.
  \tag{P12}
-```
+-->
+![Formula](../../assets/math/316254eee9ad0f119abbc4da.svg)
 
 Then c is **strongly free relative to the earlier centers**:
 
-```math
+<!-- math-display: fa312af2e0eb5292ddfa6e98
 p(c)\notin\mathrm{cl}_{R_j}(M_j\cup X_j(S^-_c))
                              \quad(j\in c).
  \tag{P13}
-```
+-->
+![Formula](../../assets/math/fa312af2e0eb5292ddfa6e98.svg)
 
 Indeed, by (P5) for S, the remaining unmarked set U_j(S) is independent
 over V_j plus p(c). Hence
 
-```math
+<!-- math-display: 087bba247da210f2627da115
 r_j(V_j\cup\{p(c)\}\cup U_j(S))
        =r_j(V_j)+1+|U_j(S)|.
-```
+-->
+![Formula](../../assets/math/087bba247da210f2627da115.svg)
 
 The rank without p(c) is at most r_j(V_j)+|U_j(S)|. This strict rank
 increase proves (P13), because V_j union U_j(S) equals
@@ -278,11 +294,12 @@ contains matching records. When it fails, there is a used resource j
 at which the owner is spanned by the preceding prefix and the current
 group's services. In particular, for D(c)={b}, there is a resource with
 
-```math
+<!-- math-display: 5402885d41adb15d3d4ab393
 p(c)\in\mathrm{cl}_{R_j}
                (W_j(S^-_c)\cup\{p(b)\}),\qquad j\in b.
  \tag{P14}
-```
+-->
+![Formula](../../assets/math/5402885d41adb15d3d4ab393.svg)
 
 The final membership j in b is forced by (P6): without that service,
 V_j would equal the earlier W_j and could not span p(c).
@@ -363,10 +380,11 @@ release from layer i, its entire old layer is discarded because h<i.
 At layer h, X_h is unchanged and Y_h loses exactly the outgoing matching
 record. Thus the same signature
 
-```math
+<!-- math-display: 7801307b81a28754aade695c
 (-|X_1|,|Y_1|,\ldots,-|X_\ell|,|Y_\ell|,\infty)
  \tag{P15}
-```
+-->
+![Formula](../../assets/math/7801307b81a28754aade695c.svg)
 
 strictly decreases. A successful augmentation ends the phase. A
 nonaugmenting normalization exchange strictly lowers the index of the
@@ -392,10 +410,11 @@ rank-quasipolynomial depth and signature count also apply.
 
 At a normalized completed prefix, define the same cover
 
-```math
+<!-- math-display: 9b9f75b3a7cc2181aa5b1b97
 \Phi=\sum_j v_j r_j(X_j\cup Y_j).
  \tag{P16}
-```
+-->
+![Formula](../../assets/math/9b9f75b3a7cc2181aa5b1b97.svg)
 
 Telescope this rank over the ordered center prefixes. Put a=min(u,B).
 Every current blocker still shares a resource with its assigned center,
@@ -414,10 +433,11 @@ then prevents that blocker from containing any resource of value at
 least B. Thus c and all its blockers have value below B+a. Their rank
 increment is at most the sum of those service values, giving
 
-```math
+<!-- math-display: 3c51c1b73f86eea95c7683d6
 \Delta\Phi_c<(t+1)(B+a)\le t(2B+a).
  \tag{P17}
-```
+-->
+![Formula](../../assets/math/3c51c1b73f86eea95c7683d6.svg)
 
 The last inequality is (t-1)B>=a, valid for t>=2 and a<=B.
 
@@ -428,60 +448,65 @@ the rank increment saves at least v_j compared with separately counting
 both service occurrences. At every other resource, cardinality remains
 an upper bound. Minimality of b implies v(b)-v_j<B, hence
 
-```math
+<!-- math-display: 30d7b200247617b7987bc62c
 \Delta\Phi_c\le v(c)+v(b)-v_j<2B+a.
  \tag{P18}
-```
+-->
+![Formula](../../assets/math/30d7b200247617b7987bc62c.svg)
 
 This saving uses the **current ordered prefix**. It is not the invalid
 claim that a dependency charge established at birth survives unchanged.
 The groups partition Y and the increments telescope, giving
 
-```math
+<!-- math-display: 05a3aad98a918317db767c87
 \Phi\le C(B,u)|Y|,\qquad
  C(B,u)=\max\{u,\ 2B+\min(u,B)\}.
  \tag{P19}
-```
+-->
+![Formula](../../assets/math/05a3aad98a918317db767c87.svg)
 
 In particular, for u<=B,
 
-```math
+<!-- math-display: 17a9cc0ecb6df3d303b44b4c
 C(B,u)=2B+u.
  \tag{P20}
-```
+-->
+![Formula](../../assets/math/17a9cc0ecb6df3d303b44b4c.svg)
 
 **Lemma 2 (fractional lower cover).** At a completed failed available
-scan, a feasible compact point at target $`T`$ implies
-```math
+scan, a feasible compact point at target <code class="math">T</code> implies
+<!-- math-display: 362d82d9a0585e859fffdb88
 \Phi>(T-B/\lambda)w,\qquad B\le\lambda T,
  \tag{P20a}
-```
-where $`w=r-k+|Y_{<i}|`$.
+-->
+![Formula](../../assets/math/362d82d9a0585e859fffdb88.svg)
+where <code class="math">w=r-k+&#124;Y_{&lt;i}&#124;</code>.
 
-**Proof.** Let $`J_0=I\setminus\mathrm{owners}(Y_{<i})`$ and
-$`E=P\setminus\mathrm{cl}_M(J_0)`$. Because $`x\in B(M)`$,
-$`x(E)\ge r-r_M(J_0)=w`$. For resource $`j`$, an unavailable player
-lies in $`\mathrm{cl}_{R_j}(X_j\cup Y_j)`$. Its total fractional
+**Proof.** Let <code class="math">J_0=I\setminus\mathrm{owners}(Y_{&lt;i})</code> and
+<code class="math">E=P\setminus\mathrm{cl}_M(J_0)</code>. Because <code class="math">x\in B(M)</code>,
+<code class="math">x(E)\ge r-r_M(J_0)=w</code>. For resource <code class="math">j</code>, an unavailable player
+lies in <code class="math">\mathrm{cl}_{R_j}(X_j\cup Y_j)</code>. Its total fractional
 receiving mass is at most the rank of that closure, so the total
-unavailable value is at most $`\Phi`$.
+unavailable value is at most <code class="math">\Phi</code>.
 
-For an eligible player with $`x_p>0`$, restrict each configuration
+For an eligible player with <code class="math">x_p&gt;0</code>, restrict each configuration
 in its row perspective to its available resources. Downward closure
 keeps these restricted bundles feasible. The complete failed
-factor-$`\lambda`$ scan says that every such available bundle has
-value strictly below $`B/\lambda`$. Hence its available fractional
-value is strictly below $`Bx_p/\lambda`$, whereas total fractional
-value is at least $`Tx_p`$. Summing the unavailable value over $`E`$
+factor-<code class="math">\lambda</code> scan says that every such available bundle has
+value strictly below <code class="math">B/\lambda</code>. Hence its available fractional
+value is strictly below <code class="math">Bx_p/\lambda</code>, whereas total fractional
+value is at least <code class="math">Tx_p</code>. Summing the unavailable value over <code class="math">E</code>
 gives
-$`\Phi>(T-B/\lambda)x(E)\ge(T-B/\lambda)w`$.
-At least one positive $`x_p`$ occurs because $`w>0`$, so the
-strictness is preserved. $`\square`$ Write tau=1/lambda and rho=(r-1)/r. The sufficient exact
+<code class="math">\Phi&gt;(T-B/\lambda)x(E)\ge(T-B/\lambda)w</code>.
+At least one positive <code class="math">x_p</code> occurs because <code class="math">w&gt;0</code>, so the
+strictness is preserved. <code class="math">\square</code> Write tau=1/lambda and rho=(r-1)/r. The sufficient exact
 boundary condition is therefore
 
-```math
+<!-- math-display: e302b3cb8e222a20b18a7f2e
 \tau B+\rho C(B,u)\le T.
  \tag{P21}
-```
+-->
+![Formula](../../assets/math/e302b3cb8e222a20b18a7f2e.svg)
 
 If a newly completed layer has no blocker, its entire cover uses only
 the preceding s blockers, and s/w<=rho. Inequality (P21) contradicts
@@ -490,10 +515,11 @@ the strict lower cover, yielding a sound infeasibility certificate.
 For positive gap Delta=T-tau B-rho C(B,u)>0, a completed layer with
 y<=gamma w contradicts the lower cover whenever
 
-```math
+<!-- math-display: f6ae864295f0cd4cb768132c
 \gamma\le\min\{1/2,\Delta/(2C(B,u))\}.
  \tag{P22}
-```
+-->
+![Formula](../../assets/math/f6ae864295f0cd4cb768132c.svg)
 
 Thus all continuing completed layers have multiplicative current growth.
 Earlier growth tests remain true below the next earliest exchange layer,
@@ -504,10 +530,11 @@ since their records and eligibility flats do not change.
 Use the accepted fat-resource matroid-union and dual-complement wrapper,
 with
 
-```math
+<!-- math-display: 545575257ba3ef77a132ed8b
 d=\tau+3\rho,\qquad B_0=T/d,
  \tag{P23}
-```
+-->
+![Formula](../../assets/math/545575257ba3ef77a132ed8b.svg)
 
 and declare v_j>=B_0 fat. For each fat resource, restrict its recipient
 matroid to players whose singleton service is locally feasible. The
@@ -519,10 +546,11 @@ coupled configuration LP is feasible.
 
 At B=B_0, (P20) gives C(B_0,u)<=3B_0, so
 
-```math
+<!-- math-display: 4492aad35fabb4427f78e82c
 \tau B_0+\rho_{r'}C(B_0,u)
                             \le(\tau+3\rho)B_0=T.
-```
+-->
+![Formula](../../assets/math/4492aad35fabb4427f78e82c.svg)
 
 The exact-boundary signature count gives factor d in rank-exponential
 time. The fat and small allocations combine exactly as in the accepted
@@ -533,20 +561,22 @@ For eta>0 set eta_0=min{eta,1}, keep the fat threshold B_0 and take
 B=T/(d+eta_0). This delivers at least the requested factor d+eta.
 Because d>=1, one has B>=B_0/2. Since u<B_0,
 
-```math
+<!-- math-display: b1b9b38c536cd9dc10a55617
 C(B,u)\le\max\{B_0,3B\}=\overline C=3B,\qquad
  T-\tau B-\rho\overline C
                          =T-dB=\eta_0 B.
  \tag{P24}
-```
+-->
+![Formula](../../assets/math/b1b9b38c536cd9dc10a55617.svg)
 
 Consequently
 
-```math
+<!-- math-display: cbe1eec9d28f0b347adf1b5a
 \frac{T-\tau B-\rho\overline C}{\overline C}
                   =\tfrac13\min\{\eta,1\}.
  \tag{P25}
-```
+-->
+![Formula](../../assets/math/cbe1eec9d28f0b347adf1b5a.svg)
 
 Hence gamma=min{eta,1}/16 safely satisfies the positive-gap growth
 condition. The rank exponent is uniform in lambda; the cost of obtaining
@@ -554,20 +584,20 @@ its approximate oracle is still paid. This proves the claimed time (P1)
 and the corresponding lambda version.
 
 For completeness, the configuration reduction is as follows. Let
-$`f_p`$ be the mass of configurations containing a large service and
-$`h_p=x_p-f_p`$. Choose one large service from each such configuration.
+<code class="math">f_p</code> be the mass of configurations containing a large service and
+<code class="math">h_p=x_p-f_p</code>. Choose one large service from each such configuration.
 Its typewise recipient marginals are dominated by the original feasible
-columns; their sum $`f\le x\le\mathbf1`$ therefore belongs to the
-independent polytope of the large-service union $`N`$. With
-$`U=M^*\vee N`$, the vector $`\mathbf1-x+f`$ is $`U`$-independent by
-the matroid-union rank formula. Extend it fractionally to a $`U`$-base.
-The complementary vector $`x'\in B(U^*)`$ satisfies $`0\le x'\le h`$.
+columns; their sum <code class="math">f\le x\le\mathbf1</code> therefore belongs to the
+independent polytope of the large-service union <code class="math">N</code>. With
+<code class="math">U=M^*\vee N</code>, the vector <code class="math">\mathbf1-x+f</code> is <code class="math">U</code>-independent by
+the matroid-union rank formula. Extend it fractionally to a <code class="math">U</code>-base.
+The complementary vector <code class="math">x'\in B(U^*)</code> satisfies <code class="math">0\le x'\le h</code>.
 
-All-small configurations have recipient marginals $`a_{pj}\le h_p`$
-and utility at least $`Th_p`$. Multiplying the entire row by
-$`x'_p/h_p`$ (zero when $`h_p=0`$) preserves every recipient-polytope
+All-small configurations have recipient marginals <code class="math">a_{pj}\le h_p</code>
+and utility at least <code class="math">Th_p</code>. Multiplying the entire row by
+<code class="math">x'_p/h_p</code> (zero when <code class="math">h_p=0</code>) preserves every recipient-polytope
 constraint and every local row perspective, and gives small utility
-at least $`Tx'_p`$. Thus a feasible original configuration target
+at least <code class="math">Tx'_p</code>. Thus a feasible original configuration target
 supplies the small-resource compact promise used in Lemma 2.
 This is the same fractional union calculation proved explicitly in
 [the configuration reduction](../item-matroid-union/configuration-comparator.md),
@@ -576,11 +606,11 @@ capacities. None of these fractional witnesses is computed.
 
 A common rational grid of the resource values contains every
 configuration value and hence the attained largest feasible target.
-An upper bound is $`V=\sum_jv_jr_{R_j}(P)`$. A grid search initialized
-at zero and an external upper point above $`V`$ saves actual
+An upper bound is <code class="math">V=\sum_jv_jr_{R_j}(P)</code>. A grid search initialized
+at zero and an external upper point above <code class="math">V</code> saves actual
 allocations on success and lowers the upper endpoint only on a
 sound full-target failure. Adjacent endpoints imply that the saved
-nominal target is at least $`T_{\rm conf}`$, even if successes are
+nominal target is at least <code class="math">T_{\rm conf}</code>, even if successes are
 not monotone. The number of trials and all numerical encodings are
 polynomial.
 

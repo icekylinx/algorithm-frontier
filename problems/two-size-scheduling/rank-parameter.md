@@ -27,20 +27,22 @@ with rank functions f_s and f_b, supplied by value oracles. A legal
 schedule chooses integer bases x_s and x_b of these polymatroids.
 Machine p has load
 
-```math
+<!-- math-display: a40551ac7f04e89f15b5199d
 u x_s(p)+a x_b(p).
  \tag{S1}
-```
+-->
+![Formula](../../assets/math/a40551ac7f04e89f15b5199d.svg)
 
 The same formulation covers individually supplied job matroids or
 polymatroids: sum their rank functions within a size class, and use
 integral polymatroid decomposition to recover individual assignments.
 All ranks and multiplicities are binary encoded. Define
 
-```math
+<!-- math-display: dbd43a8aa78e2010033ac372
 h=f_b(P).
  \tag{S2}
-```
+-->
+![Formula](../../assets/math/dbd43a8aa78e2010033ac372.svg)
 
 In ordinary restricted-assignment scheduling, h is exactly the number
 of jobs of the larger size. In the general model it is the required
@@ -48,11 +50,12 @@ number of large service/job units, fixed independently of any target.
 
 The resulting deterministic guarantee is
 
-```math
+<!-- math-display: d640b2c0ed095df206f9225c
 \boxed{\text{makespan at most }\tfrac53\,\mathrm{OPT}
               \text{ in }2^{O(h)}\mathrm{poly}(H).}
  \tag{S3}
-```
+-->
+![Formula](../../assets/math/d640b2c0ed095df206f9225c.svg)
 
 Here H includes q, the complete original input, all numerical bits,
 and paid deterministic submodular-minimization and decomposition work.
@@ -71,10 +74,11 @@ a<=T/2, solve the assignment relaxation and use the public additive
 rounding theorem. An infeasible relaxation certifies OPT>T. Otherwise,
 the integral schedule has makespan at most
 
-```math
+<!-- math-display: d062e0fa36a1372ca763bd6c
 T+a\le\tfrac32 T.
  \tag{S4}
-```
+-->
+![Formula](../../assets/math/d062e0fa36a1372ca763bd6c.svg)
 
 If h=0, the single remaining size class is handled exactly by checking
 whether its polymatroid has a base under the coordinate bounds
@@ -86,20 +90,22 @@ We henceforth consider h>0 and a>T/2.
 Any target-T schedule in the hard branch assigns at most one large
 unit to each machine. Define
 
-```math
+<!-- math-display: bec77d8fdf40fc435f5ffbd9
 P_b'=P(f_b)\cap[0,1]^P,
  \qquad c=\lfloor T/u\rfloor,
  \qquad P_s'=P(f_s)\cap[0,c]^P.
  \tag{S5}
-```
+-->
+![Formula](../../assets/math/bec77d8fdf40fc435f5ffbd9.svg)
 
 Their rank functions are obtained by the standard box formula
 
-```math
+<!-- math-display: 8e78aae125d97c1995a9b34d
 g_z(S)=\min_{A\subseteq S}
                 \{f(A)+z(S\setminus A)\}.
  \tag{S6}
-```
+-->
+![Formula](../../assets/math/8e78aae125d97c1995a9b34d.svg)
 
 Check that the total ranks remain f_b(P) and f_s(P). A failure
 certifies OPT>T. If T<a, the target is immediately infeasible because
@@ -110,10 +116,11 @@ In particular, h<=q whenever this hard-branch rank check succeeds.
 Let g_s be the rank function of P_s'. Its dual with respect to the
 constant vector c is the integral polymatroid with rank
 
-```math
+<!-- math-display: d026e01f8d872f81cb103237
 \bar g_s(S)=c|S|+g_s(P\setminus S)-g_s(P).
  \tag{S7}
-```
+-->
+![Formula](../../assets/math/d026e01f8d872f81cb103237.svg)
 
 For bases, y belongs to this dual exactly when c*1-y belongs to P_s'.
 Every coordinate of a dual independent vector is at most c. All
@@ -124,31 +131,34 @@ queries and polynomial-bit arithmetic; c is not expanded into slots.
 
 Put
 
-```math
+<!-- math-display: 4d08e67a7c2b1921b501a0c2
 t=a+c u-T,
              \qquad K=\lceil t/u\rceil.
  \tag{S8}
-```
+-->
+![Formula](../../assets/math/4d08e67a7c2b1921b501a0c2.svg)
 
 Since c u<=T and c u>T-u, one has
 
-```math
+<!-- math-display: b512f54062d66418b40e54a1
 0<a-u<t\le a\le T,
  \tag{S9}
-```
+-->
+![Formula](../../assets/math/b512f54062d66418b40e54a1.svg)
 
 where the first displayed strict inequality uses a>u; in particular
 t>0 and K>=1. If a target-T schedule exists, its large-unit recipients
 form a basis I of M_b. Define y=c*1-x_s from its small-unit base.
 On each p in I,
 
-```math
+<!-- math-display: c511c103bfc56c687f338c89
 a+u x_s(p)\le T
  \quad\Longrightarrow\quad
  y(p)\ge t/u
  \quad\Longrightarrow\quad y(p)\ge K.
  \tag{S10}
-```
+-->
+![Formula](../../assets/math/c511c103bfc56c687f338c89.svg)
 
 Thus the rank-h player matroid M_b and the one unit-value recipient
 polymatroid P(bar g_s) have an integer K-unit basis allocation.
@@ -156,10 +166,11 @@ No player-configuration LP is used in this implication.
 
 Apply the exact-boundary unit-core theorem with output quota
 
-```math
+<!-- math-display: 4bff3f6cebd05ebfbc097dd3
 b=\lceil K/3\rceil.
  \tag{S11}
-```
+-->
+![Formula](../../assets/math/4bff3f6cebd05ebfbc097dd3.svg)
 
 It returns a basis I of M_b and a dual-feasible count vector y
 supplying at least b units to every p in I, or certifies absence of
@@ -177,7 +188,7 @@ Set x_b=1_I and x_s=c*1-y. Base duality and the total-rank checks prove
 that these are bases of the original large and small polymatroids.
 For machines outside I the load is at most c u<=T. For machines in I,
 
-```math
+<!-- math-display: 669b026be17bfd8e0e85791a
 \begin{split}
  a+u x_s(p)
    &\le a+c u-bu\\
@@ -186,7 +197,8 @@ For machines outside I the load is at most c u<=T. For machines in I,
    &\le\tfrac53T.
  \end{split}
  \tag{S12}
-```
+-->
+![Formula](../../assets/math/669b026be17bfd8e0e85791a.svg)
 
 The key inequality bu>=t/3 follows from K u>=t and b>=K/3.
 Every count remains integral. Individual job-matroid bases can be
@@ -203,38 +215,42 @@ not assume success is monotone, and keeps the best returned schedule.
 
 Fix 0<eta<=1 and suppose the target additionally satisfies
 
-```math
+<!-- math-display: 8c59998ff5efe6f986a8ed62
 u\le\eta T/18.
  \tag{S13}
-```
+-->
+![Formula](../../assets/math/8c59998ff5efe6f986a8ed62.svg)
 
 The easy branch remains polynomial. In the hard branch a>T/2 and
 t>a-u>T/2-u. Hence
 
-```math
+<!-- math-display: f3159e194e17208b67d214d8
 \frac{t}{u}>\frac{T}{2u}-1
                              \ge\frac9\eta-1
                              \ge\frac{2(3+\eta)}\eta.
  \tag{S14}
-```
+-->
+![Formula](../../assets/math/f3159e194e17208b67d214d8.svg)
 
 Use the unit-core algorithm with output b=ceil(K/(3+eta)). The
 large-quota calculation in the unit-quota note gives constant-relative
 growth Omega(eta), and runtime
 
-```math
+<!-- math-display: 2e4ae0f239e2fffebff73494
 \mathrm{poly}(H)
  \min\{2^{O(h)},(h+1)^{O((1+\eta^{-1})\log(h+1))}\}.
  \tag{S15}
-```
+-->
+![Formula](../../assets/math/2e4ae0f239e2fffebff73494.svg)
 
 Its reconstruction has makespan at most
 
-```math
+<!-- math-display: 8ec887ac05cebba76b3f3074
 T+(1-1/(3+\eta))t
                         \le(2-1/(3+\eta))T.
  \tag{S16}
-```
+-->
+![Formula](../../assets/math/8ec887ac05cebba76b3f3074.svg)
 
 For optimization on instances promised to satisfy
 u<=eta OPT/18, restrict target search to grid values at least

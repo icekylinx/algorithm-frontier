@@ -20,11 +20,12 @@ The top numerical graph has one allocation coordinate `x_e` for each
 row-to-bin incidence and one slack coordinate `s_d` for each bin. At a fixed
 settled structural state,
 
-```math
+<!-- math-display: cdea9e7cafc14331f60c99f5
 \sum_{e\ni r}x_e=L,
  \qquad \sum_{e\ni d}x_e+s_d=b_d,
  \qquad b_d=L+p_d-Cw_d.
-```
+-->
+![Formula](../../assets/math/cdea9e7cafc14331f60c99f5.svg)
 
 All present coordinates are positive. The top objective is the sum of their
 logarithms, so the exact gradient and price are `1/f_e` on every coordinate.
@@ -42,22 +43,24 @@ alternative vector `f'` with the same row and bin equations. For
 `d=f'-f`, its positive logarithmic directional mass exceeds `12N`, whereas
 its negative mass is at most `m_log<=4N`. In particular,
 
-```math
+<!-- math-display: a75cea229fe0893f042eace8
 g^T(f'-f)>8N.
-```
+-->
+![Formula](../../assets/math/a75cea229fe0893f042eace8.svg)
 
 The negative-mass bound is elementary and exact: whenever `d_e<0`,
 `-d_e/f_e<=1` because `f'_e>=0`.
 
 Define the linearized feasible-gain quantity
 
-```math
+<!-- math-display: 3dbc835f5dfb3cfd64f940f3
 \mathcal G(f)=
  \max\left\{
     \sum_e\frac{f'_e-f_e}{f_e}:
     f'\ge0\text{ obeys the same row and bin equations}
           \right\}.
-```
+-->
+![Formula](../../assets/math/3dbc835f5dfb3cfd64f940f3.svg)
 
 Thus a valid upper bound `Gbar<=8N` on `G(f)` is enough to certify the
 matching phase's LOW conclusion, even if the numerical graph still contains
@@ -75,51 +78,57 @@ does not, by itself, show that every matching-semantic oracle must find it.
 
 Let
 
-```math
+<!-- math-display: eb84c15e5e981affc59b14b4
 T=\sum_d s_d
    =L(|D|-|R|)+\sum_d p_d-C\sum_d w_d.
-```
+-->
+![Formula](../../assets/math/eb84c15e5e981affc59b14b4.svg)
 
 This sum is the slack-source divergence and remains fixed during a numerical
 circulation. It is updated exactly from the explicit structural ledger data.
 
 Set
 
-```math
+<!-- math-display: 1a0110977b45daf4638eb572
 a_r=\max_{e\ni r}\frac1{x_e},
  \qquad b=\max_d\frac1{s_d}.
-```
+-->
+![Formula](../../assets/math/1a0110977b45daf4638eb572.svg)
 
 Every feasible alternative obeys
 
-```math
+<!-- math-display: 0f153043b70d4c4b181c6306
 \sum_{e\ni r}\frac{x'_e}{x_e}\le L a_r,
  \qquad \sum_d\frac{s'_d}{s_d}\le Tb.
-```
+-->
+![Formula](../../assets/math/0f153043b70d4c4b181c6306.svg)
 
 Consequently
 
-```math
+<!-- math-display: 8e3f964043b710e1fd1801fc
 \boxed{\quad
        \mathcal G(f)\le
             L\sum_r a_r+Tb-m_{\log}.
        \quad}
-```
+-->
+![Formula](../../assets/math/8e3f964043b710e1fd1801fc.svg)
 
 There is a separate bin-side certificate. Put
 
-```math
+<!-- math-display: 51b5add9b7701239ab3e694d
 c_d=\max\left\{\frac1{s_d},
                    \max_{e\ni d}\frac1{x_e}\right\}.
-```
+-->
+![Formula](../../assets/math/51b5add9b7701239ab3e694d.svg)
 
 The bin equation gives
 
-```math
+<!-- math-display: fba83788bcef504c6a30319b
 \boxed{\quad
              \mathcal G(f)\le\sum_d b_d c_d-m_{\log}.
        \quad}
-```
+-->
+![Formula](../../assets/math/fba83788bcef504c6a30319b.svg)
 
 Both estimates are upper bounds, not heuristics. Taking their minimum is
 valid. They are simple feasible dual solutions for the linear transportation
@@ -140,36 +149,40 @@ component with irrelevant large slack mass in another component.
 The preceding formulas need not read current implicit values after every
 numerical step. Use the existing anchored integer prices
 
-```math
+<!-- math-display: 93256af8f1dafe8223c53451
 \ell_e=\lceil H/\widehat f_e\rceil.
-```
+-->
+![Formula](../../assets/math/93256af8f1dafe8223c53451.svg)
 
 For a single logarithm the settled register condition gives
 `|f_e-fhat_e|/fhat_e<=tau`, with the existing small `tau=q/100`. Hence
 
-```math
+<!-- math-display: f45cb20c197fdee45eca7bd0
 \frac1{f_e}
                             \le\frac{\ell_e}{H(1-\tau)}.
-```
+-->
+![Formula](../../assets/math/f45cb20c197fdee45eca7bd0.svg)
 
 Define integer aggregates
 
-```math
+<!-- math-display: 663222e45336737da337d236
 A=\sum_r\max_{e\ni r}\ell_e,
  \qquad B=\max_{d}\ell_{s_d},
  \qquad Q=\sum_d b_d
                 \max\{\ell_{s_d},\max_{e\ni d}\ell_e\}.
-```
+-->
+![Formula](../../assets/math/663222e45336737da337d236.svg)
 
 Then safe computable upper bounds are
 
-```math
+<!-- math-display: 1d008012edcca099e90ba1cd
 \widehat G_{\rm row}
        =\frac{LA+TB}{H(1-\tau)}-m_{\log},
  \qquad
  \widehat G_{\rm bin}
        =\frac{Q}{H(1-\tau)}-m_{\log}.
-```
+-->
+![Formula](../../assets/math/1d008012edcca099e90ba1cd.svg)
 
 These aggregates use integer prices and the common dyadic ledger grid.
 They do not sum unrelated exact rational reciprocals into a denominator of
@@ -223,21 +236,24 @@ certificate or actively redistributing reserve.
 For `j=1,2`, make physical vertices `a_j,r_j,b_j,u_j,v_j`. Also make `p,q`.
 Use the following initial matching:
 
-```math
+<!-- math-display: fe1d04a8d33d3a7116e36102
 r_1b_1,\quad r_2b_2,\quad u_1v_1,\quad u_2v_2,\quad pq.
-```
+-->
+![Formula](../../assets/math/fe1d04a8d33d3a7116e36102.svg)
 
 The unmatched vertices are `a_1,a_2`. Add the nonmatching edges
 
-```math
+<!-- math-display: 6cd4eb046846836bf9107822
 a_jr_j,\quad a_ju_j\quad(j=1,2),\qquad b_1p,\quad qb_2.
-```
+-->
+![Formula](../../assets/math/6cd4eb046846836bf9107822.svg)
 
 Every vertex has degree at most two. There is an augmenting path
 
-```math
+<!-- math-display: fd0a7d80f4464d7bf434f8f9
 a_1,r_1,b_1,p,q,b_2,r_2,a_2.
-```
+-->
+![Formula](../../assets/math/fd0a7d80f4464d7bf434f8f9.svg)
 
 It matches all twelve gadget vertices after augmentation, so the true gap is
 exactly one. The two `u_jv_j` branches are dead ends. One may add arbitrarily
@@ -248,9 +264,10 @@ simple, subcubic, and without isolated vertices.
 For this enlarged graph the direct driver's initial upper bound is still
 one, its phase target is `K=1`, and
 
-```math
+<!-- math-display: 018146e481ce6327d23908be
 L=10000CN.
-```
+-->
+![Formula](../../assets/math/018146e481ce6327d23908be.svg)
 
 Initially each `a_j` is a singleton bin of weight one, there are no rows, and
 the remaining vertices belong to their listed matched pairs. The unique
@@ -265,16 +282,18 @@ has no distinct-bin edge forcing a competing gain or contraction. The new
 row and child bin are `r_j` and `b_j`, respectively. The literal top settings
 are
 
-```math
+<!-- math-display: 4af246bc2f363b48ab93e8db
 x_{r_j,a_j}=C+1,\qquad x_{r_j,b_j}=L-C-1,
-```
+-->
+![Formula](../../assets/math/4af246bc2f363b48ab93e8db.svg)
 
 and therefore
 
-```math
+<!-- math-display: 1e5fd68bedde189a4f274861
 s_{a_j}=L-2C-1,
               \qquad s_{b_j}=1.
-```
+-->
+![Formula](../../assets/math/1e5fd68bedde189a4f274861.svg)
 
 All these values are positive integers, so no small-coordinate padding is
 required. The child `b_j` has a contact to `p` or `q`, but its slack one is
@@ -288,10 +307,11 @@ contact-LP maximizer, with reserve `2L-4C`.
 
 For any integral ledger floor `c<=C`, one can take
 
-```math
+<!-- math-display: cce2562616644f5bfec7a3f7
 x^{\rm int}_{r_j,a_j}=c,
           \qquad x^{\rm int}_{r_j,b_j}=L-c.
-```
+-->
+![Formula](../../assets/math/cce2562616644f5bfec7a3f7.svg)
 
 Both bin residuals are at least `c`, debts are zero, and the positive support
 is a tree. This verifies simultaneous settled feasibility of every required
@@ -311,16 +331,18 @@ cardinality and fixed graph optimum still imply a true remaining gap of one.
 Now expand each dead matched pair `u_jv_j`. Its parent `a_j` remains eligible.
 The new row `u_j` has allocations
 
-```math
+<!-- math-display: 816b0d621e2bd9019b941c37
 x_{u_j,a_j}=C+1,
                  \qquad x_{u_j,v_j}=L-C-1.
-```
+-->
+![Formula](../../assets/math/816b0d621e2bd9019b941c37.svg)
 
 The old row settings are unchanged. Thus
 
-```math
+<!-- math-display: 7c5efa14ef0018975c318385
 s_{a_j}=L-3C-2,\qquad s_{b_j}=s_{v_j}=1.
-```
+-->
+![Formula](../../assets/math/7c5efa14ef0018975c318385.svg)
 
 All top debts remain zero and all slacks stay positive. The paired edge
 `pq` remains. The bins `a_j` have no further contacts to the paired
@@ -329,9 +351,10 @@ contact set is exactly `Z'={b_1,b_2}`.
 
 The continued reserve is only
 
-```math
+<!-- math-display: 08ee91407c99f7630a2bb20a
 s_{b_1}+s_{b_2}=2.
-```
+-->
+![Formula](../../assets/math/08ee91407c99f7630a2bb20a.svg)
 
 No matching gain has occurred. Only four physical vertices, the two matched
 dead-end pairs, were expanded. The original augmenting path still exists, so
@@ -361,10 +384,11 @@ can still improve the evolving certificate.
 Indeed the example has a constant-size repair. After the dead expansions,
 modify only row `r_j`:
 
-```math
+<!-- math-display: d2aff9d6d391a0f7366fc164
 x_{r_j,a_j}: C+1\longmapsto L-2C-1,
  \qquad x_{r_j,b_j}: L-C-1\longmapsto2C+1.
-```
+-->
+![Formula](../../assets/math/d2aff9d6d391a0f7366fc164.svg)
 
 This moves `L-3C-2` units from the `b_j` incidence to the `a_j` incidence.
 Decrease `s_(a_j)` by the same amount and increase `s_(b_j)` by that amount.

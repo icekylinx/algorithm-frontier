@@ -1,0 +1,298 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md
+% Recovered-source SHA-256: 0992814ca9fa596f35a304754eeeaf7d338312ddb7d941bce9470984cf2f6341
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Final document preamble must use the recovered original Subset Sum style.
+
+\hypertarget{deterministic-fpt-construction-of-weighted-oracle-failure-summaries}{%
+\section{Deterministic FPT construction of weighted oracle failure summaries}\label{deterministic-fpt-construction-of-weighted-oracle-failure-summaries}}
+
+\hypertarget{the-retained-size-and-construction-time}{%
+\subsection{1. The retained size and construction time}\label{the-retained-size-and-construction-time}}
+
+Let \(M\) be an arbitrary independence-oracle matroid on an explicitly listed ground \(E\) of size \(N\) and rank \(r\). Each item \(e\) has a set \(\Lambda(e)\) of at most \(d\) labels. A failure set \(F\) deletes every item whose label set intersects \(F\); write \(X_F\) for the survivors in \(X\). The failure budget is \(|F|\le h\). Fix one total item order, for example nondecreasing signed rational cost followed by a permanent item ID. Let \(P_i\) be its first \(i\) items.
+
+Define
+
+\[
+\Gamma(h,d)=
+\begin{cases}
+\dfrac{(h+d)^{h+d}}{h^h d^d},&h,d>0,\\
+1,&hd=0,
+\end{cases}
+\qquad
+S(a,h)=\sum_{j=0}^{h}a^j,
+\quad 0^0=1.
+\tag{WP1}
+\]
+
+\textbf{Theorem 1.} A deterministic algorithm returns the unique smallest original-item set \(H\) such that
+
+\[
+r_M(H\cap(P_i)_F)=r_M((P_i)_F)
+\quad\text{for every }i\text{ and every }|F|\le h.
+\tag{WP2}
+\]
+
+The set \(H\) is exactly the union of the canonical greedy bases of \(E_F\) over all allowed \(F\). In particular, it contains the canonical minimum-cost surviving basis, including when the surviving rank drops. Its size is at most
+
+\[
+K=\min\{N,\lfloor r\Gamma(h,d)\rfloor\}.
+\tag{WP3}
+\]
+
+After sorting the items, an ordered-basis branching algorithm uses at most
+
+\[
+NS(dr,h)
+\tag{WP4}
+\]
+
+independence queries. It rescans the fixed ordered input at each tree node. With indexed label flags and touched-label lists, bookkeeping uses \(O((d+1)(N+1)S(dr,h))\) ordinary operations. A depth-first implementation uses \(O((h+1)(d+1)(r+1))\) item and label IDs as search workspace, in addition to the input, indexed-label table and retained output.
+
+A second construction scans the ordered input only once and uses at most
+
+\[
+N(K+1)S(dr,h)
+\tag{WP4a}
+\]
+
+independence queries, with \(O((d+1)N(K+1)S(dr,h))\) bookkeeping operations and \(O((h+1)(K+1))\) item IDs of search workspace under the same exclusions. This version tests each item against the retained earlier prefix. One may clip \(h\) to the number of occurring labels. Neither construction needs to know \(r\) or \(K\) in advance.
+
+The Bernoulli size factor \(\Gamma\) is the previous project prefix bound, already recorded in the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md\#8-antecedents-and-comparison-to-public-results}{arbitrary-matroid comparison} and the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md\#8-baselines-and-attribution-boundaries}{represented comparison}. The contribution here is a complete deterministic FPT construction of the canonical prefix summary, together with a one-pass alternative whose per-item oracle work depends on the retained prefix size. Section 3 supplies the size proof from the matroid axioms; no historical checkpoint or external implementation is needed. No priority claim for the factor or its probabilistic proof is made.
+
+The parameters in WP4 include \(r,h,d\). This is an FPT oracle algorithm; it is not a uniform polynomial-time algorithm when all three parameters are unrestricted. The output retains the original oracle and item encodings, so WP3 is an item-count bound, not a parameter-only bit kernel.
+
+\hypertarget{exact-prefix-witnesses}{%
+\subsection{2. Exact prefix witnesses}\label{exact-prefix-witnesses}}
+
+For an item \(e_i\) at position \(i\), call \(F\) a prefix witness if \(|F|\le h\), \(F\cap\Lambda(e_i)=\varnothing\), and
+
+\[
+e_i\notin\mathrm{cl}_M((P_{i-1})_F).
+\tag{WP5}
+\]
+
+An item belongs to the canonical greedy basis of \(E_F\) exactly when it survives and increases the rank of the earlier surviving prefix. Thus the union \(H_*\) of all these bases consists precisely of the items with a prefix witness.
+
+Every set satisfying WP2 must contain every item of \(H_*\). If \(e_i\) is omitted, its witness gives a strict rank increase from \((P_{i-1})_F\) to \((P_i)_F\), while the restricted prefix contains only earlier items. Conversely, \(H_*\) contains the full canonical basis for every \(F\), and the portion of that basis in \(P_i\) is a basis of \((P_i)_F\). Therefore \(H_*\) satisfies WP2. It is the unique minimum set for this simultaneous prefix requirement, not merely an inclusion-minimal output.
+
+This optimality concerns preserving every prefix of this one fixed order. It does not claim minimum cardinality among summaries preserving only final ranks, or among restrictions preserving only one optimum-cost value when several bases have tied costs.
+
+\hypertarget{the-existing-bernoulli-size-bound}{%
+\subsection{3. The existing Bernoulli size bound}\label{the-existing-bernoulli-size-bound}}
+
+For each \(e_i\in H_*\) choose a prefix witness \(F_i\). Independently fail each occurring label with probability \(p\in(0,1)\), giving a random failure set \(Z\). In this proof \(Z\) may contain more than \(h\) labels; the rank bound \(r_M(E_Z)\le r\) holds for all \(Z\).
+
+The event
+
+\[
+F_i\subseteq Z,
+\qquad Z\cap\Lambda(e_i)=\varnothing
+\tag{WP6}
+\]
+
+has probability \(p^{|F_i|}(1-p)^{|\Lambda(e_i)|}\), at least \(p^h(1-p)^d\). On this event \(e_i\) survives and its earlier surviving prefix is contained in \((P_{i-1})_{F_i}\). A smaller set cannot span an item that the larger set does not span. Thus \(e_i\) contributes one to the greedy rank of \(E_Z\).
+
+Summing the rank contributions and taking expectations gives the useful nonuniform inequality
+
+\[
+\sum_{e_i\in H_*}
+p^{|F_i|}(1-p)^{|\Lambda(e_i)|}
+\le \mathbb E[r_M(E_Z)]\le r.
+\tag{WP7}
+\]
+
+For \(h,d>0\), choose \(p=h/(h+d)\) to obtain \(|H_*|\le r\Gamma(h,d)\). If \(h=0\) or \(d=0\), there is only one effective surviving ground, and \(H_*\) is its ordinary canonical basis. This proves WP3 in every case.
+
+No random choices are used by the construction. The product measure only bounds the size of its deterministic output. In particular, the proof does not enumerate or sample failure sets in the implementation.
+
+\hypertarget{a-stronger-bound-using-the-original-basis}{%
+\subsubsection{A stronger bound using the original basis}\label{a-stronger-bound-using-the-original-basis}}
+
+The same argument gives a strictly smaller general upper bound by using the items that need no failure witness. Let \(B_0\) be the ordinary canonical basis of \(E\). Every surviving item of \(B_0\) stays accepted by greedy: deleting earlier items cannot make them span an item that they previously did not span. Its acceptance probability is therefore exactly \((1-p)^{|\Lambda(e)|}\).
+
+The \(r\) original-basis items and the other retained items are disjoint. Using their separate expected contributions in WP7 gives, for every \(p\in(0,1)\) and \(h,d>0\),
+
+\[
+\boxed{
+|H_*|\le r+
+\frac{r-\displaystyle\sum_{e\in B_0}(1-p)^{|\Lambda(e)|}}
+ {p^h(1-p)^d}.}
+\tag{WP7a}
+\]
+
+This is an instance-sensitive bound: label-free or lower-degree items in \(B_0\) reduce the numerator. For a bound depending only on the parameters, define
+
+\[
+\Psi(h,d)=
+1+\inf_{0<p<1}\frac{(1-p)^{-d}-1}{p^h}
+\quad(h,d>0),
+\qquad
+\Psi(h,d)=1\quad(hd=0).
+\tag{WP7b}
+\]
+
+\textbf{Corollary 2.} Theorem 1 and the one-pass query bound also hold with \(K=\min\{N,\lfloor r\Psi(h,d)\rfloor\}\). The data-dependent right side of WP7a can improve this further. The algorithm does not evaluate this infimum or use the bound as a stopping rule.
+
+Indeed, the original-basis sum is at least \(r(1-p)^d\), giving WP7b. For each \(p\), its parameter-only expression equals
+
+\[
+\frac1{p^h(1-p)^d}+1-\frac1{p^h}.
+\]
+
+Consequently \(\Psi(h,d)<\Gamma(h,d)\) when \(h,d>0\). For \(h=1\), taking \(p\downarrow0\) gives \(\Psi(1,d)=d+1\); the reverse inequality follows from \((1-p)^{-d}\ge1+dp\). This is consistent with the separate sharp one-failure construction, which is the depth-one case of the basis tree.
+
+For \(h\ge2\) the infimum is attained in the interior. If \(q=1-p\), its unique minimizing point satisfies
+
+\[
+h\sum_{j=1}^{d}q^j=d.
+\tag{WP7c}
+\]
+
+To check this, differentiate \((q^{-d}-1)/(1-q)^h\), cancel the positive denominator, and use \((1-q^d)/(1-q)=\sum_{j=0}^{d-1}q^j\). The left side of WP7c increases continuously from zero to \(hd>d\), so it has exactly one root in \((0,1)\), and the objective diverges at both endpoints. Any rational \(p\) in WP7a already gives an exact computable upper bound; no algebraic-root routine is a dependency.
+
+In particular, for one label per item and \(h\ge2\), the minimizing point is \(p=(h-1)/h\), giving
+
+\[
+\boxed{
+|H_*|\le r\left(1+
+\frac{h^h}{(h-1)^{h-1}}\right).}
+\tag{WP7d}
+\]
+
+For two failures this is \(5r\), improving the Bernoulli baseline \(27r/4\). If \(b\) items of \(B_0\) have no label, WP7a further gives \(r+4(r-b)\) in this two-failure case. These are upper bounds, not claims of optimal constants. The rank-four obstruction forces 13 items while WP7d alone allows 20. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure profile theorem} improves the universal rank-four upper bound to 13, exactly matching that example, and gives a more detailed instance-dependent certificate.
+
+\hypertarget{a-complete-failure-witness-search}{%
+\subsection{4. A complete failure-witness search}\label{a-complete-failure-witness-search}}
+
+\hypertarget{branch-on-the-canonical-basis-of-the-whole-surviving-ground}{%
+\subsubsection{4.1. Branch on the canonical basis of the whole surviving ground}\label{branch-on-the-canonical-basis-of-the-whole-surviving-ground}}
+
+At a node with already failed set \(F\) and remaining budget \(t\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Scan \(E_F\) in the fixed order to compute its canonical basis \(B_F\).
+\item
+  Add every item of \(B_F\) to the output.
+\item
+  If \(t>0\), recurse once on \(F\cup\{\lambda\},t-1\) for every distinct label \(\lambda\in\bigcup_{e\in B_F}\Lambda(e)\).
+\end{enumerate}
+
+Start with \(F=\varnothing,t=h\). A basis item survives at its node, so none of the branch labels has already failed. Fix the branch order by the indexed label IDs. Repeatedly reaching the same failed set is allowed; memoization is unnecessary.
+
+\textbf{Exactness.} Every node represents at most \(h\) failed labels, so every output item belongs to \(H_*\). Conversely, fix any allowed target set \(F_*\). Follow nodes with \(F\subseteq F_*\). If \(F_*\setminus F\) avoids all labels on \(B_F\), then every item of \(B_F\) survives. Deleting only greedy-rejected items leaves the canonical scan unchanged: its accepted items and every independence test on those items are the same. Thus \(B_F=B_{F_*}\), and the target basis has already been output. Otherwise a remaining label of \(F_*\) touches \(B_F\) and is one of the branches. Following it strictly decreases \(|F_*\setminus F|\). After at most \(|F_*|\) steps the target basis has been output. The returned union is exactly \(H_*\), so all the preceding size bounds apply to this tree, not just to the one-pass construction.
+
+A node uses at most \(N\) independence queries and has at most \(dr\) children. Its depth is at most \(h\), giving WP4. Iterate only the labels actually touched by its basis; do not scan the full label universe at every node. A stack keeps one basis, one touched-label list and one input-scan position per active level, giving the stated workspace bound. When \(h=2,d=1\), this is at most \(N(1+r+r^2)\) queries, or \(O(N(r+1)^2)\).
+
+\hypertarget{test-one-protected-item-against-an-earlier-prefix}{%
+\subsubsection{4.2. Test one protected item against an earlier prefix}\label{test-one-protected-item-against-an-earlier-prefix}}
+
+Suppose \(Q\) is an earlier retained prefix and \(e\) is the next item. We test whether some \(F\) of at most \(h\) labels, avoiding \(\Lambda(e)\), makes \(e\notin\mathrm{cl}_M(Q_F)\). At a search node let \(Y\) be the surviving part of \(Q\), \(F_0\) the labels already failed, and \(t\) the remaining budget.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Compute any greedy basis \(B\) of \(Y\).
+\item
+  If \(B+e\) is independent, return \(F_0\).
+\item
+  If \(t=0\), return \texttt{NONE}.
+\item
+  For each label \(\lambda\) on \(B\) that is not on \(e\), recurse on \(Y_{\{\lambda\}}\), \(F_0\cup\{\lambda\}\), and \(t-1\). Return the first witness found, or \texttt{NONE} if every child fails.
+\end{enumerate}
+
+The fixed input order specifies every basis scan and branch order, so the search is deterministic. Already failed labels cannot occur on \(B\). Each branch spends one new failure, and no branch deletes \(e\).
+
+\textbf{Completeness.} If step 2 fails, \(B\) spans \(e\). Any successful further failure must hit a label on \(B\): otherwise all of \(B\) survives and still spans \(e\). Such a label cannot be on \(e\). Hence every valid witness has a first branch in step 4, and induction on \(t\) proves that the search returns a witness exactly when one exists. This is the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md\#5-a-deterministic-failure-witness-search}{rank-summary witness search} applied to a protected next item and an earlier prefix.
+
+The basis has at most \(r\) items, so there are at most \(dr\) branches per node and at most \(S(dr,h)\) nodes. A node uses at most \(|Q|+1\) independence queries. No enumeration of the full label universe or exponential memoization table is required.
+
+\hypertarget{retain-only-the-necessary-earlier-prefix}{%
+\subsection{5. Retain only the necessary earlier prefix}\label{retain-only-the-necessary-earlier-prefix}}
+
+Start with \(H_0=\varnothing\). Process \(e_1,\ldots,e_N\) in the fixed order. Run the search in Section 4 with \(Q=H_{i-1}\) and protected item \(e_i\). Keep \(e_i\) exactly when the search returns a witness; otherwise set \(H_i=H_{i-1}\).
+
+The invariant is
+
+\[
+\mathrm{cl}_M((H_i)_F)
+ =\mathrm{cl}_M((P_i)_F)
+\quad\text{for every }|F|\le h.
+\tag{WP8}
+\]
+
+It is true at \(i=0\). At the next step, WP8 for \(i-1\) makes a witness against the retained earlier prefix equivalent to a witness against the original earlier prefix. If there is a witness, the algorithm keeps the item, and adjoining the same surviving item to sets with equal closure preserves closure equality. If there is no witness, \(e_i\) is spanned by the retained earlier survivors for every allowed failure that does not delete it. Omitting it therefore preserves the invariant in this case as well. Failures that delete \(e_i\) require no change.
+
+It follows that the algorithm keeps exactly the items with original prefix witnesses, hence returns \(H_*\). This explains why it is safe to query only retained prefixes. Merely applying rank-only reverse deletion to the entire ground would not give this property.
+
+At every step \(|H_{i-1}|\le |H_*|\le K\). There are \(N\) searches, each using at most \((K+1)S(dr,h)\) queries, proving WP4a. The same count with \(N+1\) in place of \(K+1\) gives a simpler alternative implementation that always tests the complete original earlier prefix. An input already presented in the specified order can be processed in one pass, since future items are never inspected by the search. This is an ordered-input statement, not a dynamic-update or arbitrary-order streaming guarantee.
+
+For a query \(F\), filter \(H\) and run ordinary greedy in the fixed order. This uses at most \(|H|\) independence queries and returns exactly the canonical greedy basis that would be obtained on \(E_F\).
+
+\hypertarget{sharp-endpoints-and-the-obstruction}{%
+\subsection{6. Sharp endpoints and the obstruction}\label{sharp-endpoints-and-the-obstruction}}
+
+When \(h=1\), the basis tree specializes to the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md\#7-weighted-oracle-summaries-for-one-label-failure}{one-failure construction}. It gives the same canonical-basis union, has the sharp size \((d+1)r\), and uses at most \((1+dr)N\) independence queries in uniform polynomial time. When a linear representation is supplied, the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md}{polynomial feature construction} attains \(r\binom{h+d}{d}\) in uniform polynomial time for every \(h\).
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md}{weighted oracle obstruction} shows why WP3 is not simply replaced by this exact binomial expression for arbitrary matroids: rank four, one label per item, and two failures can force 13 retained items, exceeding \(4\binom{3}{1}=12\). Its amplified examples fail the proposed sharp weighted formula for every \(h\ge2\). The exact optimal universal weighted-oracle size between that lower bound and WP7b remains outside the claims here. For \(h=2,d=1\), the direct-sum obstruction requires \(13r/4\) when \(r\) is divisible by four, whereas the stronger upper bound here is \(5r\). The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure companion} additionally proves the universal upper bound \(\min\{5r,\binom{r+1}{2}+3\}\) for \(r\ge2\), the sharp \(3r\) bound for every rank at most three, the exact rank-four maximum 13, and minimality of the 13-item obstruction at \(h=2,d=1\). If all single failures add just one shared replacement item, used by \(t\) single-failure bases, that companion gives the sharp bound \(r+2t\le3r\) and a profile-sensitive \(O(N(r+t^2))\) construction.
+
+For sparse packing with item-label degree \(\delta\) and solution bound \(\kappa\), the saturated-row budget \(h=\delta(\kappa-1)\) gives
+
+\[
+\kappa\Gamma(\delta(\kappa-1),\delta)
+ =\kappa\left(
+ \frac{\kappa^\kappa}{(\kappa-1)^{\kappa-1}}
+ \right)^\delta
+ \le e^\delta\kappa^{\delta+1}
+\quad (\kappa\ge2).
+\tag{WP9}
+\]
+
+Using nonincreasing profit order now gives no-worse-profit replacements for arbitrary many signed profit values. The full original-context packing transfer is in the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/weighted-prefix-quota-frontier/manuscripts/sharp-sparse-packing-fpt-restrictions.md}{sparse-packing manuscript}. The exact-binomial rank-only and equal-profit-class alternatives remain useful when their stronger constants or equality requirements apply.
+
+\hypertarget{integral-submodular-prefix-values}{%
+\subsection{7. Integral-submodular prefix values}\label{integral-submodular-prefix-values}}
+
+There is an analogous construction for an integer-valued monotone submodular function \(f\), with \(R=f(E)-f(\varnothing)\). Keep an item precisely when some allowed failure gives it a positive marginal on its earlier surviving prefix. The resulting unique smallest prefix-value preserver has at most \(R\Gamma(h,d)\) items. Indeed, on WP6 its marginal is still positive by diminishing returns, hence at least one by integrality. The sum of all surviving prefix marginals telescopes to \(f(E_Z)-f(\varnothing)\le R\), giving WP7 with \(R\).
+
+The faster construction is the ordered-basis tree of Section 4.1 with each basis replaced by the positive-marginal items of the surviving scan. Cache \(f(\varnothing)\) once. Within a node, keep a set \(B\) and its current value; query \(f(B+e)\) for each surviving item, and adjoin the item exactly when this value increases. Such a set has at most \(R\) items because every positive integer increment is at least one. Branch on its at most \(dR\) touched labels.
+
+Deleting a zero-marginal rejected item leaves this scan's state unchanged. More generally, for \(A\subseteq B\) with \(f(A)=f(B)\), monotonicity and diminishing returns give \(f(A+e)=f(B+e)\) for every item \(e\). Thus skipping rejected items preserves every original prefix value. If a target failure deletes none of the node's positive-marginal items, the whole scan is unchanged; otherwise it contains a touched label on which the tree branches. The same target-following proof as for matroids shows that the output is exactly the union of the canonical positive-marginal items for all allowed failures. The tree therefore uses at most
+
+\[
+1+NS(dR,h)
+\tag{WP9a}
+\]
+
+value queries, including the single cached baseline query. It never needs to know \(R\) in advance.
+
+For the one-pass alternative, use the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md\#9-monotone-submodular-functions}{value-witness search}: at a zero-marginal node choose a value-spanning set \(B\) of the earlier survivors by keeping only positive marginal items. It has at most \(R\) items. Every successful witness must delete a label on \(B\) that is not on the protected item, so branching has at most \(dR\) choices. The search uses \(O(N(K_f+1)S(dR,h))\) value queries, where \(K_f=\min\{N,\lfloor R\Gamma(h,d)\rfloor\}\).
+
+The retained-prefix invariant is exact value equality, so the same zero-marginal argument makes tests against retained and original earlier prefixes agree. The numerical range \(R\), rather than its bit length, is part of the parameter. This statement preserves values of one ordered prefix sequence under failures; it does not claim an exact coreset for arbitrary minimum-cost submodular cover.
+
+The original-basis refinement also extends to this setting. Let \(B_0\) be the positive-marginal items in the unfailed ordered scan, let \(b=|B_0|\le R\), and let \(\Delta_e\) be the original positive marginal of \(e\in B_0\). These marginals sum to \(R\). If \(e\) survives further deletions of earlier items, diminishing returns preserves a marginal of at least \(\Delta_e\). In place of WP7a, the same expectation argument therefore gives
+
+\[
+|H_*|\le b+
+\frac{R-\displaystyle\sum_{e\in B_0}
+\Delta_e(1-p)^{|\Lambda(e)|}}{p^h(1-p)^d}
+\qquad(h,d>0).
+\tag{WP10}
+\]
+
+Taking the infimum over \(p\), using \(b\le R\) and \(\sum_{e\in B_0}\Delta_e=R\), gives \(|H_*|\le R\Psi(h,d)\). Thus \(K_f\) in the construction bound may also use \(\lfloor R\Psi(h,d)\rfloor\). Here the first term is the number of initially positive items, while the sum uses their marginal values; replacing both indiscriminately by the same quantity would lose the argument. The case \(R=0\) returns the empty set, and the baseline \(f(\varnothing)\) is never assumed zero.
+
+\hypertarget{verification-and-dependency-scope}{%
+\subsection{8. Verification and dependency scope}\label{verification-and-dependency-scope}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/check_weighted_prefix.py}{finite checker} independently enumerates canonical bases and all prefix ranks from complete matroid rank tables. It compares their exact union with both the ordered-basis tree and the retained-prefix witness algorithm, verifies each necessity witness and both explicit oracle-call bounds, and checks the Bernoulli event implication also on failure sets larger than the requested budget. It includes all labeled matroids on at most four items and the nonrepresentable 13-item obstruction. These are finite checks, not a proof for all matroids; the general proof is Sections 2--5. A separate value-oracle suite tests the ordered positive-marginal tree on scaled matroid ranks and weighted coverage functions. It checks all original surviving prefix values, the exact canonical union, WP9a and WP10, including nonzero baselines, zero range and marginal jumps larger than one. The general integral-submodular theorem is proved in Section 7. The size checks include WP7a at exact rational probabilities, the degree-one optimizer WP7d, and the sharp \(h=1\) endpoint. No numerical minimization or floating-point comparison is used.
+
+The construction requires only the original independence oracle, finite explicit label lists and the fixed item order. There is no field representation, randomization, separator implementation or external solver dependency.
+
+\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

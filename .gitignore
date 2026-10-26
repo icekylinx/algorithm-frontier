@@ -2,3 +2,10 @@
 *.zip
 .DS_Store
 __pycache__/
+node_modules
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk

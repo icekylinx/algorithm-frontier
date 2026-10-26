@@ -10,29 +10,32 @@ The construction has polynomially many ground elements in the numeric target. It
 
 Choose a positive integer `h` and put
 
-```math
+<!-- math-display: dbb7bd108f08d5fbb24a9a87
 r=2^h,
 \qquad d=2h,
 \qquad E=\{1,2\}^{d},
 \qquad n=|E|=r^2.
 \tag{OS1}
-```
+-->
+![Formula](../../../assets/math/dbb7bd108f08d5fbb24a9a87.svg)
 
 The resource will be an ordinary rank-`r` matroid on this explicit ground. For each coordinate `j=1,...,d`, give element `u` the row coefficient `u_j` and target `3r/2`. Add a cardinality row whose coefficient is one on every element and whose target is `r`. All rows are equalities.
 
 Every coefficient is one or two, and every column has exactly the same full nonempty support. Thus the number of original support patterns is
 
-```math
+<!-- math-display: 47ed3e4cb4c5e767b328d2db
 Q=1.
 \tag{OS2}
-```
+-->
+![Formula](../../../assets/math/47ed3e4cb4c5e767b328d2db.svg)
 
 The total numeric target is
 
-```math
+<!-- math-display: cc32bc3f790211e8d4aab358
 T=r+d\frac{3r}{2}=r(3h+1)=\Theta(r\log(r+2)).
 \tag{OS3}
-```
+-->
+![Formula](../../../assets/math/cc32bc3f790211e8d4aab358.svg)
 
 The cardinality row is redundant for bases but makes the optional independent-set version equivalent as well. It retains `Q=1` and changes the target sum only by `r`.
 
@@ -42,35 +45,39 @@ Let `H` be all rank-sized subsets whose vector sum in the first `d` rows is the 
 
 Pair each label `u` with its coordinatewise complement `bar u=3-u`. There are
 
-```math
+<!-- math-display: 6f00abb2824834f0bd175e5b
 M=n/2=r^2/2
 \tag{OS4}
-```
+-->
+![Formula](../../../assets/math/6f00abb2824834f0bd175e5b.svg)
 
 disjoint complementary pairs. Let `G` consist of the unions of exactly `k=r/2` such pairs. Every member has size `r`, and each pair contributes three in every label coordinate. Hence
 
-```math
+<!-- math-display: 838d931fc140897f575743de
 G\subseteq H,
 \qquad
 N=|G|=\binom{r^2/2}{r/2}.
 \tag{OS5}
-```
+-->
+![Formula](../../../assets/math/838d931fc140897f575743de.svg)
 
 Elementary binomial bounds give
 
-```math
+<!-- math-display: 4e36270687301160a9e64287
 r^{r/2}\le N\le(r^2/2)^{r/2}\le r^r.
 \tag{OS6}
-```
+-->
+![Formula](../../../assets/math/4e36270687301160a9e64287.svg)
 
 For the lower estimate, write the binomial coefficient as a product of `k` ratios `(M-i)/(k-i)`, each at least `M/k=r`. Therefore
 
-```math
+<!-- math-display: 7fb4fd665f73eb8759853f95
 \frac{rh}{2}\le\log_2N\le rh,
 \qquad
 N=2^{\Theta(T)}.
 \tag{OS7}
-```
+-->
+![Formula](../../../assets/math/7fb4fd665f73eb8759853f95.svg)
 
 In fact the lower estimate and OS3 imply `N>=2^{T/8}`, since `h>=1`.
 
@@ -90,10 +97,11 @@ The reference target instance is infeasible. The hidden instance has exactly `A`
 
 On a reference transcript, `Q_alg` queries can hit at most that many candidates in `G`. Under the balanced distribution consisting of the reference instance and a uniformly chosen hidden instance, decision success is at most `1/2+Q_alg/(2N)`. Success at least `2/3` on every input requires
 
-```math
+<!-- math-display: bf45be2644cf09739a7716b1
 Q_{\rm alg}\ge N/3=2^{\Omega(T)}.
 \tag{OS8}
-```
+-->
+![Formula](../../../assets/math/bf45be2644cf09739a7716b1.svg)
 
 This is an unconditional rank-oracle lower bound. It already holds at original support-pattern count one and with nonnegative coefficient magnitudes bounded by two.
 
@@ -101,42 +109,47 @@ This is an unconditional rank-oracle lower bound. It already holds at original s
 
 Let `phi` be a 3-CNF formula with `nu>=1` variables. Choose the smallest power of two `r>=2` such that
 
-```math
+<!-- math-display: b522a217258f8c3bee9b05f5
 N(r)=\binom{r^2/2}{r/2}\ge2^{\nu}.
 \tag{OS9}
-```
+-->
+![Formula](../../../assets/math/b522a217258f8c3bee9b05f5.svg)
 
 Compute it by successive doubling and exact binomial arithmetic. Let `h=log_2r` and use OS1–OS3.
 
 The power-of-two jumps preserve constant-factor calibration. From OS7 and OS9,
 
-```math
+<!-- math-display: 803352588c399a3cf1911a01
 \nu\le\log_2N(r)\le rh.
 \tag{OS10}
-```
+-->
+![Formula](../../../assets/math/803352588c399a3cf1911a01.svg)
 
 If `r>2`, minimality gives `N(r/2)<2^nu`. Its lower bound from OS7 gives
 
-```math
+<!-- math-display: 44e89a78025738491c3f4132
 \frac r4(h-1)<\nu.
 \tag{OS11}
-```
+-->
+![Formula](../../../assets/math/44e89a78025738491c3f4132.svg)
 
 For `h>=2`, `3h+1<=7(h-1)`. Consequently
 
-```math
+<!-- math-display: 23ee6b0320767c7efead2c3d
 T=r(3h+1)<28\nu.
 \tag{OS12}
-```
+-->
+![Formula](../../../assets/math/23ee6b0320767c7efead2c3d.svg)
 
 Together with OS10 and the constant `r=2` case, this proves
 
-```math
+<!-- math-display: 711480e3b975efef7836dce5
 T=\Theta(\nu),\qquad
 r=O(\nu),\qquad
 n=r^2=O(\nu^2).
 \tag{OS13}
-```
+-->
+![Formula](../../../assets/math/711480e3b975efef7836dce5.svg)
 
 Stored binomial counts have `O(rh)=O(nu)` bits. The number of doubling stages, the final ground, and all row descriptions are polynomial in `nu`. Exact binomial values can be computed by the usual multiplicative recurrence, with no enumeration of subsets.
 
@@ -149,10 +162,11 @@ A query subset belongs to `G` exactly when it consists of `k=r/2` complete compl
 Order the `k`-subsets of `[0,M-1]` lexicographically. For identifiers
 `a_1<...<a_k`, their zero-based rank is computed by, at position `i`, summing
 
-```math
+<!-- math-display: 410b7d8c45aec96cf69593ec
 \binom{M-x-1}{k-i}
 \tag{OS14}
-```
+-->
+![Formula](../../../assets/math/410b7d8c45aec96cf69593ec.svg)
 
 over each skipped candidate `x` between the previous chosen identifier and `a_i`. This counts exactly the suffix choices for that alternative first differing identifier. The rank lies in `0,...,N(r)-1`.
 
@@ -184,19 +198,21 @@ No uniqueness assumption on satisfying assignments is needed. The program is all
 
 A set meeting the target equalities belongs to `H`. Among those sets, the resource matroid accepts exactly the members of `G` whose decoded assignments satisfy `phi`. Surjectivity of the rank decoder therefore proves
 
-```math
+<!-- math-display: 2016921bc5addc5df1ec59b7
 \text{target feasibility in }M_\phi
 \quad\Longleftrightarrow\quad
 \phi\text{ is satisfiable}.
 \tag{OS15}
-```
+-->
+![Formula](../../../assets/math/2016921bc5addc5df1ec59b7.svg)
 
 The full input, including the rank circuit and coefficient matrix, has size polynomial in `|phi|+nu`. By OS13, a deterministic algorithm for these encoded instances with running time
 
-```math
+<!-- math-display: d226fa7372198dcace52108a
 2^{o(T)}\mathrm{poly}(H)
 \tag{OS16}
-```
+-->
+![Formula](../../../assets/math/d226fa7372198dcace52108a.svg)
 
 would solve 3-SAT in `2^{o(nu)} poly(|phi|)` time. Deterministic ETH excludes such an algorithm. The corresponding randomized statement requires randomized ETH separately.
 

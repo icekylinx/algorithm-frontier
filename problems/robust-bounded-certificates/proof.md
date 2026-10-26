@@ -34,13 +34,14 @@ constraints and budgets. They do not contract resources.
 
 For C subseteq P define
 
-```math
+<!-- math-display: 7e46659d709728091c1e8ea3
 C\in\mathcal F_\omega
  \quad\Longleftrightarrow\quad
  \text{scenario omega has an integer allocation giving exactly one
  unit to each p in C, at total cost at most }C_\omega.
  \tag{BW1}
-```
+-->
+![Formula](../../assets/math/7e46659d709728091c1e8ea3.svg)
 
 Counts outside C can be set to zero. Each family F_omega is hereditary
 and contains the empty set. Indeed, discard the units belonging to
@@ -49,12 +50,13 @@ its nonnegative cost does not increase.
 
 For a supplied integer w>=1, the **unit-certificate width condition** is
 
-```math
+<!-- math-display: 91b28df32ca5b5da9188e70a
 \text{every inclusion-minimal set }
  C\notin\mathcal F_\omega
  \text{ has }|C|\le w,\qquad\text{for every }\omega.
  \tag{BW2}
-```
+-->
+![Formula](../../assets/math/91b28df32ca5b5da9188e70a.svg)
 
 It is enough to require BW2 for such C that are independent in M.
 Every certificate generated below lies in an actual M-basis. The
@@ -64,43 +66,47 @@ models in Section 9.
 Let K* be the robust integer optimum minimum unit count. For a fixed
 integer d>=2 define
 
-```math
+<!-- math-display: 076ef1c2d74c23bd00d9ea9a
 R_d=\frac{d+1}{d-1},\qquad
  A_d=\Gamma(R_d)
      =\frac{R_d^{R_d}}{(R_d-1)^{R_d-1}},\qquad
  A=\max\{w,A_d\}.
  \tag{BW3}
-```
+-->
+![Formula](../../assets/math/076ef1c2d74c23bd00d9ea9a.svg)
 
 **Theorem BW.** Under BW2, a deterministic polynomial-space algorithm
 returns an actual common M-basis and legal integer allocations in all
 scenarios, preserving each scenario budget exactly, with robust minimum
 count at least
 
-```math
+<!-- math-display: c9b6e6591d84705b4e2c3f82
 \left\lceil K^*/d\right\rceil.
  \tag{BW4}
-```
+-->
+![Formula](../../assets/math/c9b6e6591d84705b4e2c3f82.svg)
 
 Its running time is either
 
-```math
+<!-- math-display: a2c3dffb2bf58d747adfe9d4
 A^c\mathrm{poly}(H)
  \tag{BW5}
-```
+-->
+![Formula](../../assets/math/a2c3dffb2bf58d747adfe9d4.svg)
 
 or
 
-```math
+<!-- math-display: 5197f3155870e9d1313be624
 (2-1/A)^q\,
  2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
  \tag{BW6}
-```
+-->
+![Formula](../../assets/math/5197f3155870e9d1313be624.svg)
 
 Here H includes the explicit scenario list, original binary numerical
 data, matroid/rank oracle descriptions, and the paid polynomial
 intersection and LP work. For fixed w,d, BW6 is
-$`(2-1/A)^{q+o(q)}\mathrm{poly}(H)`$. In particular the utility
+<code class="math">(2-1/A)^{q+o(q)}\mathrm{poly}(H)</code>. In particular the utility
 approximation is exactly d, without an additive unit loss.
 
 The width-guarded implementation has these same time bounds on every
@@ -120,21 +126,23 @@ nonempty theorem assumes r>=1 so K* is a finite integer.
 Fix a scenario omega and C subseteq P. For each type j, use its
 Boolean-cap matroid on eligible owners:
 
-```math
+<!-- math-display: 98f5ee60a8b687f65cc5ce38
 \mathcal I_{\omega,j}^{\,1}
    =\{S\subseteq C:\mathbf 1_S\in P(f_{\omega,j})\}.
  \tag{BW7}
-```
+-->
+![Formula](../../assets/math/98f5ee60a8b687f65cc5ce38.svg)
 
 This is a matroid: intersecting an integral polymatroid with the unit
 box produces a matroid independence polytope. Its rank, if needed, is
 
-```math
+<!-- math-display: 8e2d4ae17f97022c4b968f62
 \rho_{\omega,j}(S)
    =\min_{T\subseteq S}
            \bigl[f_{\omega,j}(T)+|S\setminus T|\bigr].
  \tag{BW8}
-```
+-->
+![Formula](../../assets/math/8e2d4ae17f97022c4b968f62.svg)
 
 Rank or independence evaluation uses polynomial submodular minimization
 with original binary rank values. There is no expansion into individual
@@ -210,10 +218,11 @@ For completeness, let I* subseteq Q be any robust unit-feasible
 M-basis. It cannot contain C: heredity would make C feasible in the
 failed scenario. Therefore
 
-```math
+<!-- math-display: 62c73d426682d11f4547c518
 C\setminus I^*\ne\varnothing.
  \tag{BW9}
-```
+-->
+![Formula](../../assets/math/62c73d426682d11f4547c518.svg)
 
 For some p in this difference, the child Q minus p retains the entire
 same I*. Its player rank is still r. Follow that child; after at most h
@@ -233,11 +242,12 @@ and each child reduces h by one. Count every attempted child, including
 one rejected immediately by its rank test. If N(h) is the maximum
 number of such nodes, then
 
-```math
+<!-- math-display: d7fa4d75f224820d9bf7600f
 N(0)\le1,\qquad N(h)\le1+wN(h-1),\qquad
  N(h)\le\sum_{i=0}^h w^i\le(h+1)w^h.
  \tag{BW10}
-```
+-->
+![Formula](../../assets/math/d7fa4d75f224820d9bf7600f.svg)
 
 Shrinking, all scenario tests, rank tests and certificate reconstruction
 cost polynomial time at a node. The width guard enforces this bound
@@ -250,21 +260,23 @@ h=c-|Z|. The original ranks, costs, budgets and required player rank
 stay fixed. Any original robust unit basis avoiding Z survives, and
 the time is
 
-```math
+<!-- math-display: 60be71fb8f6bf782e9bfce5e
 w^{\,c-|Z|}\mathrm{poly}(H).
  \tag{BW11}
-```
+-->
+![Formula](../../assets/math/60be71fb8f6bf782e9bfce5e.svg)
 
 For w>1 the streamed inclusion-cover construction from
 polynomial_space_global_gap_conversion.md applies with both full
 and output quota equal to one. It gives exact robust unit feasibility
 in
 
-```math
+<!-- math-display: 96c897b477725f2414aa96bf
 (2-1/w)^q
  2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
  \tag{BW12}
-```
+-->
+![Formula](../../assets/math/96c897b477725f2414aa96bf.svg)
 
 The wrapper propagates width violation as a separate outcome. It must
 not count such a call as an ordinary failed seed. On valid width
@@ -292,10 +304,11 @@ count-service region of scenario omega, including all its original
 resource constraints and its one assignment budget. Query the fixed
 intersection
 
-```math
+<!-- math-display: 8b6e40eb71ef1a9edfb654c6
 U=\bigcap_{\omega\in\Omega}U_\omega.
  \tag{BW13}
-```
+-->
+![Formula](../../assets/math/8b6e40eb71ef1a9edfb654c6.svg)
 
 Each scenario has the exact nonnegative packing separator from
 one_value_exact_budget_corank_two_allocation.md. Test all scenarios;
@@ -306,11 +319,12 @@ allocation across scenarios.
 
 The quota calculation is
 
-```math
+<!-- math-display: b9ebab43394aa552aaf255c1
 \frac{K}{K-\lceil K/d\rceil}
                          \le\frac{d+1}{d-1}=R_d.
  \tag{BW14}
-```
+-->
+![Formula](../../assets/math/b9ebab43394aa552aaf255c1.svg)
 
 For clarity, write K=jd+s with j>=1 and 1<=s<=d. Then b=j+1 and
 the left side is (jd+s)/(j(d-1)+s-1). It decreases as s increases,
@@ -345,12 +359,13 @@ arbitrary cost inequalities on one common integer allocation.
 
 A sound integer upper bound is
 
-```math
+<!-- math-display: 0165d8548c4bc63632a51e85
 U_0=\min_{\omega\in\Omega}
                 \left\lfloor\frac{\sum_j f_{\omega,j}(P)}{r}
                 \right\rfloor.
  \tag{BW15}
-```
+-->
+![Formula](../../assets/math/0165d8548c4bc63632a51e85.svg)
 
 After unit-gate success, use lower nominal target L=0 with a legal zero
 allocation, external upper target U_0+1, and binary integer search.
@@ -374,11 +389,12 @@ in the existing exact-oracle model. No unary resource expansion occurs.
 The local time is the sum of the one-time unit gate and the positive
 quota searches:
 
-```math
+<!-- math-display: c4e1e9ae658a7d015d9c243e
 \bigl(w^c+A_d^c\bigr)\mathrm{poly}(H)
                     \le 2A^c\mathrm{poly}(H).
  \tag{BW16}
-```
+-->
+![Formula](../../assets/math/c4e1e9ae658a7d015d9c243e.svg)
 
 Apply the global wrapper separately to the unit gate and each positive
 quota gap. Since the map a to 2-1/a is increasing, their sum is bounded
@@ -403,11 +419,12 @@ require manipulation of degree proportional to a binary-large d.
 At d=2, R_d=3 and A_d=27/4. Consequently every fixed width
 w<=6 retains
 
-```math
+<!-- math-display: bdf2fe8d8ba046f3094106b9
 (27/4)^c\mathrm{poly}(H)
  \quad\text{and}\quad
  (50/27)^{q+o(q)}\mathrm{poly}(H)
-```
+-->
+![Formula](../../assets/math/bdf2fe8d8ba046f3094106b9.svg)
 
 for exact factor two, including K*=1. For wider certificates use
 A=max(w,27/4) explicitly.
@@ -468,12 +485,13 @@ each player receives at most one unit. Hence K* belongs to {0,1},
 and this specialization is solved **exactly**, not merely within
 factor two, in
 
-```math
+<!-- math-display: a347f78c31b17ddca36b3b43
 2^c\mathrm{poly}(H)
  \quad\text{or}\quad
  (3/2)^q2^{O(q\log\log(q+2)/\log(q+2))}
        \mathrm{poly}(H),
-```
+-->
+![Formula](../../assets/math/a347f78c31b17ddca36b3b43.svg)
 
 with polynomial space. Singleton loops are forced-deletion branches;
 if deleting one destroys player rank, infeasibility is correctly
@@ -490,10 +508,11 @@ Take zero assignment costs, or budgets that are redundant for one-unit
 service. For each scenario, partition P into pools B and let pool B have
 integer capacity b_B>=0. One recipient polymatroid with rank
 
-```math
+<!-- math-display: 5dbbcc5a54e0721a1b64dc50
 f_\omega(S)
                      =\sum_{B:S\cap B\ne\varnothing}b_B
-```
+-->
+![Formula](../../assets/math/5dbbcc5a54e0721a1b64dc50.svg)
 
 allows exactly the count constraints x(B)<=b_B. It is a sum of
 submodular coverage terms, hence is an integral polymatroid. Its

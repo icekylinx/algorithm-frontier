@@ -25,9 +25,10 @@ master logarithm. The root graph and the entire guarded structural history
 have size at most `2^(c_size U)` for a fixed size exponent. Admit positive
 integer root lengths and signed integer root gradients with bit width
 
-```math
+<!-- math-display: 26b31d4337a768c3b3c15a16
 b_0\le c_b(U+1)^a.                 \tag{1}
-```
+-->
+![Formula](../../assets/math/26b31d4337a768c3b3c15a16.svg)
 
 The fully dynamic raw-cycle construction has a computable favorable
 constant tuple for which initialization per actual record, amortized
@@ -35,9 +36,10 @@ updates and queries, complete exposed forest logs, current occurrence
 multiplicity, returned piece count, and inverse raw approximation quality
 are all at most
 
-```math
+<!-- math-display: 371baaa070c0fd07f676d4fd
 E_a(U)=\exp O_a\!\left(U^{4/5}(\log(U+2))^{1/5}\right).     \tag{2}
-```
+-->
+![Formula](../../assets/math/371baaa070c0fd07f676d4fd.svg)
 
 Its numerical root sums have `poly_a(U)` bits. In particular, the
 extension does not replace the structural logarithm `U` by `b_0` in (2).
@@ -51,20 +53,22 @@ after seeing the instance.
 
 Retain the structural choices
 
-```math
+<!-- math-display: c75a27620ae484da53a23a47
 h=\lceil\log_2(U+4)\rceil,\quad
  t=\max\{2,\lfloor(U/h)^{1/5}\rfloor\},\quad
  p=r=t,\quad K=t^2,\quad x=\lceil U/t\rceil,\quad k=2^x,
-```
+-->
+![Formula](../../assets/math/c75a27620ae484da53a23a47.svg)
 
 and `d_* = ceil(8U/x)+10`. Under the existing record-size guard, an
 original-edge spanning tree gives the exact core-length formula
 
-```math
+<!-- math-display: f17e0ae885c00a57e99ea3c5
 \ell_{\mathrm{core}}(e)
        =2\sum_{j\le O(\log^2 n)} (\ell_e+P_j),
  \qquad P_j\le 2nL,
-```
+-->
+![Formula](../../assets/math/f17e0ae885c00a57e99ea3c5.svg)
 
 where `L` is the largest parent length admitted during this instance.
 The port expansion multiplies real lengths and gradients by a dyadic
@@ -72,16 +76,18 @@ integer whose logarithm is `O(log U)`. Frozen potential corrections are
 sums of at most `n` admitted parent gradients. Consequently, with a fixed
 constant `c_*` determined only by the structural size convention,
 
-```math
+<!-- math-display: 31f31eeeedfcdaecc98f38f2
 b_{\ell,i+1}\le b_{\ell,i}+c_*U,
  \qquad b_{g,i+1}\le b_{g,i}+c_*U.                           \tag{3}
-```
+-->
+![Formula](../../assets/math/31f31eeeedfcdaecc98f38f2.svg)
 
 Declare before initialization
 
-```math
+<!-- math-display: d86af303731005f955c2b2cd
 b_*=b_0+c_*U(d_*+1)+c_*U.                \tag{4}
-```
+-->
+![Formula](../../assets/math/d86af303731005f955c2b2cd.svg)
 
 Equation (3) proves the label guard conditional only on the record-size
 guard. It does not use the low-stretch approximation factor or running
@@ -131,15 +137,17 @@ a quasipolynomial aspect ratio, not a combinatorial condition used by the
 replacement static-base repair construction. At a nonbase instance,
 `log m_local >= x-O(1)`. Choose once and for all an integer
 
-```math
+<!-- math-display: e010bd57b76afb2d3ce3cd6a
 q_a>\tfrac54\max\{a,6/5\}.                    \tag{5}
-```
+-->
+![Formula](../../assets/math/e010bd57b76afb2d3ce3cd6a.svg)
 
 The replacement check
 
-```math
+<!-- math-display: a6a936de99d85e12cc61df05
 b_*\le(\log m_{\rm local})^{q_a}   \tag{6}
-```
+-->
+![Formula](../../assets/math/a6a936de99d85e12cc61df05.svg)
 
 then holds eventually. For the flow case `a=2`, the concrete choice
 `q_a=3` suffices. This change is justified by the five explicit cost
@@ -151,7 +159,7 @@ outside its advertised range. Tiny instances use the exact base routine.
 Write `poly_a(U)` for fixed polynomial factors whose degree may depend
 on the fixed input-width exponent `a`. The same local envelopes hold:
 
-```math
+<!-- math-display: e27e43840f7a6e1dddad84ff
 \begin{split}
  \log\Gamma&=O((p+r)h),\\
  \log F&=O(U/p+U/r+r^2h+(p+r)h),\\
@@ -159,19 +167,21 @@ on the fixed input-width exponent `a`. The same local envelopes hold:
  W&=k^{O(1)}\rho_{\rm sched}^{O(1)}F^{O(1)}
                               \Gamma^{O(K)}\mathrm{poly}_a(U).
 \end{split}                                                 \tag{7}
-```
+-->
+![Formula](../../assets/math/e27e43840f7a6e1dddad84ff.svg)
 
 The larger bit count does not add an extra factor `k` to a propagated
 child log. Complete lifetime retirement, actual central-edge provenance,
 degree feedback, and the initial child credit remain as before. Thus
 
-```math
+<!-- math-display: f5c3eeac9d3d6cf7338551e6
 \begin{split}
  G_d&\le P(G_{d-1}+1),\\
  J_d&\le W+P(G_{d-1}+1)+(P/k)(J_{d-1}+T_{d-1}),\\
  T_d&\le O(kW+kP(G_{d-1}+1))+O(P)(J_{d-1}+T_{d-1})
 \end{split}                                                 \tag{8}
-```
+-->
+![Formula](../../assets/math/f5c3eeac9d3d6cf7338551e6.svg)
 
 close using `J_d+T_d/k`. The added low-stretch and bucket factors
 contribute at most `O_a(d log U)` to the quality exponent. Even if a
@@ -180,10 +190,11 @@ extra term is only `O_a(dK log U)`.
 
 For the parameters above,
 
-```math
+<!-- math-display: e7e85941301f3c518c6851d2
 dK\log U=O(t^3h),\qquad
  dK(p+r)h=O(t^4h)\le O(U/t)=O(x).                            \tag{9}
-```
+-->
+![Formula](../../assets/math/e7e85941301f3c518c6851d2.svg)
 
 All remaining exponent terms are the previous `O(x)` terms. Equation
 (2) follows. One first proves (3)--(4) under the size guard, then uses

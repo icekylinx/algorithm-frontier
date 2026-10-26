@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-For every integer $`k\ge0`$, returns makespan at most $`\gamma_k\mathrm{OPT}`$, where $`\gamma_k=\frac{3\cdot2^k-1}{2^{k+1}-1}=\frac{3}{2}+\frac{1}{2(2^{k+1}-1)}`$.
+For every integer <code class="math">k\ge0</code>, returns makespan at most <code class="math">\gamma_k\mathrm{OPT}</code>, where <code class="math">\gamma_k=\frac{3\cdot2^k-1}{2^{k+1}-1}=\frac{3}{2}+\frac{1}{2(2^{k+1}-1)}</code>.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic bucket enumeration and exact minimum-cost recovery, for every stat
 
 **Time**
 
-$`(k+1)^q\mathrm{poly}(H+k)`$. Choosing $`k=O(\log(1+1/\varepsilon))`$ gives factor $`3/2+\varepsilon`$ in $`[O(1+\log(1+1/\varepsilon))]^q\mathrm{poly}(H_\varepsilon)`$.
+<code class="math">(k+1)^q\mathrm{poly}(H+k)</code>. Choosing <code class="math">k=O(\log(1+1/\varepsilon))</code> gives factor <code class="math">3/2+\varepsilon</code> in <code class="math">[O(1+\log(1+1/\varepsilon))]^q\mathrm{poly}(H_\varepsilon)</code>.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$`q`$ is the physical-machine count; $`k`$ is an integer bucket depth. The first points are $`(\text{factor},\text{base})=(2,1),(5/3,2),(11/7,3),(23/15,4)`$. $`H`$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+<code class="math">q</code> is the physical-machine count; <code class="math">k</code> is an integer bucket depth. The first points are <code class="math">(\text{factor},\text{base})=(2,1),(5/3,2),(11/7,3),(23/15,4)</code>. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 
@@ -40,6 +40,6 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md).
 
-For an exact $`3/2`$ guarantee at constant base, use the separate [six-profile construction](../six-profile-three-halves/README.md).
+For an exact <code class="math">3/2</code> guarantee at constant base, use the separate [six-profile construction](../six-profile-three-halves/README.md).
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

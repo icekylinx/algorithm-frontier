@@ -18,10 +18,11 @@ Start from parameterized k-SetCover: a finite nonempty universe U, an explicitly
 
 The nontrivial reduction may assume
 
-```math
+<!-- math-display: 94bff217e23bea633fb0fd39
 1\le k\le n.
  \tag{RW1}
-```
+-->
+![Formula](../../../assets/math/94bff217e23bea633fb0fd39.svg)
 
 The excluded cases are polynomially decidable. An empty universe is a YES instance. With k=0, a nonempty universe is a NO instance. If n<k, the answer is determined by whether the union of all n sets covers U. If a many-one reduction must output a quota instance in these cases, use a constant YES or NO instance: one ground element and a rank-one uniform matroid, one full-prefix row of target two, and coefficient two for YES or one for NO. These constant outputs preserve a parameter bound depending only on k.
 
@@ -31,28 +32,31 @@ One may also preprocess an uncovered universe element as an immediate NO, but th
 
 Create one resource coordinate for each input set. Use the rank-k uniform matroid M on this n-element ground, with explicit rank
 
-```math
+<!-- math-display: 2c5755f875f40c45c7e6c459
 r_M(A)=\min\{k,|A|\}.
  \tag{RW2}
-```
+-->
+![Formula](../../../assets/math/2c5755f875f40c45c7e6c459.svg)
 
 Give the ground any one linear order. For each universe element u, introduce a row on its full prefix E, with coefficients
 
-```math
+<!-- math-display: fe40d08513e70553588f2c86
 a_{u,S}=1+\mathbf1[u\in S]\in\{1,2\},
        \qquad
              \sum_{S\in E}a_{u,S}x_S\ge k+1.
  \tag{RW3}
-```
+-->
+![Formula](../../../assets/math/fe40d08513e70553588f2c86.svg)
 
 Set the scalar objective to zero. No other numeric constraint is imposed. In particular the bound on the number of chosen sets comes from the uniform resource, not from an extra scalar side condition.
 
 Every column is positive in every row. Because U is nonempty, all columns have the same nonempty support U. The parameter values are therefore
 
-```math
+<!-- math-display: 7a8b15b3ca2283fb7eb433b1
 Q=1,\qquad B=k+1.
  \tag{RW4}
-```
+-->
+![Formula](../../../assets/math/7a8b15b3ca2283fb7eb433b1.svg)
 
 The resource is fully explicit and easily evaluated. The matrix has n times |U| entries from a two-element alphabet, and all targets have O(log(k+1)) bits. Its size and construction time are polynomial in the explicit SetCover input.
 
@@ -60,19 +64,21 @@ The resource is fully explicit and easily evaluated. The matrix has n times |U| 
 
 An integer vector in P(M) is the indicator of a subset I of sets, with |I|<=k. In row u its value is
 
-```math
+<!-- math-display: c6e8d8d53faf82eb7fcc17dc
 \sum_{S\in I}a_{u,S}
            =|I|+|\{S\in I:u\in S\}|.
  \tag{RW5}
-```
+-->
+![Formula](../../../assets/math/c6e8d8d53faf82eb7fcc17dc.svg)
 
 If I satisfies RW3, then for every u,
 
-```math
+<!-- math-display: 1c8c629e0553e409b10d6c68
 |\{S\in I:u\in S\}|
                        \ge k+1-|I|\ge1.
  \tag{RW6}
-```
+-->
+![Formula](../../../assets/math/1c8c629e0553e409b10d6c68.svg)
 
 Thus the selected family I is a cover using at most k sets.
 
@@ -80,12 +86,13 @@ Conversely, suppose I_0 is a cover with |I_0|<=k. Since n>=k, extend it by arbit
 
 Consequently
 
-```math
+<!-- math-display: e67171c7571c121c79cec60d
 \text{SetCover has a cover of size at most k}
  \quad\Longleftrightarrow\quad
  \text{RW3 is feasible over the integer points of P(M)}.
  \tag{RW7}
-```
+-->
+![Formula](../../../assets/math/e67171c7571c121c79cec60d.svg)
 
 The integrality qualifier matters: this is not a claim that fractional feasibility solves SetCover.
 
@@ -95,10 +102,11 @@ The forward construction in Section 3 already produces exactly k selected coordi
 
 The reduction maps k to B=k+1 on every nontrivial instance. Exact k-SetCover is W[2]-hard, so exact feasibility in either quota formulation is W[2]-hard parameterized by B. In particular, unless FPT=W[2], there is no algorithm with running time
 
-```math
+<!-- math-display: 86dd52fc5c2c68909d4abc67
 f(B)\mathrm{poly}(H)
  \tag{RW8}
-```
+-->
+![Formula](../../../assets/math/86dd52fc5c2c68909d4abc67.svg)
 
 for any computable f on this row-dependent-weight class. Since rank(M)=k and Q=1, adding the uniform rank and support-pattern count to the parameter does not remove this conclusion.
 

@@ -13,7 +13,7 @@ probabilistic existence proof does not alone classify the construction.
   oracle assumptions; it does not supply an unproved backend implementation.
 - **Monte Carlo.** A bounded run can fail to produce an output satisfying the
   approximation or support guarantee. The result states its success event
-  and probability, such as at least $`2/3`$ or $`1-\delta`$. Feasibility of a
+  and probability, such as at least <code class="math">2/3</code> or <code class="math">1-\delta</code>. Feasibility of a
   returned object alone need not certify all its approximation guarantees.
 - **Las Vegas.** Every returned output satisfies the guarantee, while the
   running time is random and must be stated in expectation or with a tail
@@ -35,10 +35,10 @@ event already quantifies over all of them. This alone does not prove that a
 randomized update structure tolerates an adaptive update adversary.
 
 The [label/block construction](../problems/label-block-cut/proof.md), for
-example, has one all-failure, all-query event of probability at least $`2/3`$.
+example, has one all-failure, all-query event of probability at least <code class="math">2/3</code>.
 The [correlated spectral pools](../problems/correlated-spectral-regression/proof.md)
-instead expose their failure parameter $`\delta`$. A separate random-code
-construction also has its own code failure parameter $`\zeta`$; all applicable
+instead expose their failure parameter <code class="math">\delta</code>. A separate random-code
+construction also has its own code failure parameter <code class="math">\zeta</code>; all applicable
 failure events must be counted.
 
 A probabilistically failing local oracle requires an error budget over its
@@ -67,7 +67,7 @@ State whether the adversary argument concerns deterministic algorithms or
 also bounded-error randomized algorithms, and in the latter case state the
 success and query-budget convention. The
 [numeric-target lower bound](../problems/numeric-target-frontier/proof.md)
-covers success at least $`2/3`$ with a bounded worst-case number of rank queries.
+covers success at least <code class="math">2/3</code> with a bounded worst-case number of rank queries.
 The elementary [allocation barriers](../problems/allocation-lower-bounds/proof.md)
 are stated for deterministic algorithms. These scopes should be retained
 when comparing them with algorithmic upper bounds.

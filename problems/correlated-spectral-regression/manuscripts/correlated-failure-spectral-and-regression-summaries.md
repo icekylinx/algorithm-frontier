@@ -6,88 +6,98 @@
 
 There are N original items. Item e has a set of failure labels Λ(e), of size at most d. The L labels appearing in the input are explicit. Failing a set F deletes precisely the items meeting F; write
 
-```math
+<!-- math-display: 6731f5997660329207fa85b0
 E_F=\{e:\Lambda(e)\cap F=\varnothing\},\qquad
  Q=\sum_{j=0}^{h}\binom Lj.
-```
+-->
+![Formula](../../../assets/math/6731f5997660329207fa85b0.svg)
 
 Here h is replaced by min(h,L), and d by the actual largest label-set size. Q is a count, not a list of queries. Its binary representation and its logarithm can be computed without enumerating the queries.
 
 For positive h,d define
 
-```math
+<!-- math-display: f7f1254acb6c4b2cd5ccb45f
 \Gamma(h,d)=\frac{(h+d)^{h+d}}{h^h d^d}.
 \tag{1}
-```
+-->
+![Formula](../../../assets/math/f7f1254acb6c4b2cd5ccb45f.svg)
 
 Set Γ=1 when h=0 or d=0. For h=1 a sharper factor d+1 is available below.
 
 Item e contributes an explicitly given real symmetric positive semidefinite matrix B_e. Let
 
-```math
+<!-- math-display: be9697b68743da61c9daf19c
 M_X=\sum_{e\in X}B_e,\qquad r=\mathrm{rank}(M_E).
-```
+-->
+![Formula](../../../assets/math/be9697b68743da61c9daf19c.svg)
 
 The rank-one case B_e=a_ea_e^T includes covariance matrices and weighted graph Laplacians. Arbitrary-rank PSD items are allowed. Define, for e∈X,
 
-```math
+<!-- math-display: 7a3035b7906899e696e12d1e
 t_e(X)=\mathrm{tr}(B_eM_X^\dagger),\qquad
  \sigma_e=\max_{|F|\le h,\ e\in E_F}t_e(E_F).
 \tag{2}
-```
+-->
+![Formula](../../../assets/math/7a3035b7906899e696e12d1e.svg)
 
 **Importance theorem.**
 
-```math
+<!-- math-display: 91b5092b19d169bae1a72f85
 \sum_e\sigma_e\le \Gamma(h,d)r.
 \tag{3}
-```
+-->
+![Formula](../../../assets/math/91b5092b19d169bae1a72f85.svg)
 
 For one label failure,
 
-```math
+<!-- math-display: e57636d7eed4a79e24d02165
 \sum_e\sigma_e\le(d+1)r.
 \tag{4}
-```
+-->
+![Formula](../../../assets/math/e57636d7eed4a79e24d02165.svg)
 
 The factor d+1 in (4) is exact. For general h,d, examples require total importance r binom(h+d,d). Thus (3) is within the ratio Γ(h,d)/binom(h+d,d) of the natural sharp lower bound. In particular, for d=1 it is less than e(h+1)r. This is a near-sharp importance bound, not by itself a near-sharp all-h sparsifier-size theorem.
 
 **Spectral summary theorem.** For ε,δ∈(0,1), a randomized algorithm constructs one subset H of original items and one fixed set of nonnegative weights ω_e such that, with probability at least 1−δ, simultaneously for every |F|≤h,
 
-```math
+<!-- math-display: 1751529271731efa24318743
 (1-\epsilon)M_{E_F}\preceq
  \sum_{e\in H\cap E_F}\omega_eB_e
  \preceq(1+\epsilon)M_{E_F}.
 \tag{5}
-```
+-->
+![Formula](../../../assets/math/1751529271731efa24318743.svg)
 
 The same weights are used for every F. The number of retained items is
 
-```math
+<!-- math-display: 5c328f21ecdafee072651ade
 O\!\left(\min\left\{N,
  \frac{\Gamma(h,d)r}{\epsilon^2}
  \log\frac{2rQ}{\delta}\right\}\right).
 \tag{6}
-```
+-->
+![Formula](../../../assets/math/5c328f21ecdafee072651ade.svg)
 
 Preprocessing is uniformly polynomial in the explicit input, after the cap at N described below; it does not enumerate F. It is not asserted to be nearly linear time.
 
 For h=1, exact scores can be computed by L+1 covariance calculations. There is then a **deterministic polynomial-time** construction of size
 
-```math
+<!-- math-display: 26e4cbb19a9b5880f6e79960
 O\!\left(\min\left\{N,
  \frac{(d+1)r}{\epsilon^2}\log(2r(L+1))\right\}\right).
 \tag{7}
-```
+-->
+![Formula](../../../assets/math/26e4cbb19a9b5880f6e79960.svg)
 
 For arbitrary h, enumerating all Q scenarios and using the same derandomization gives a deterministic algorithm polynomial in N,Q and the matrix dimensions; this is not a uniform polynomial bound when h is part of the input.
 
 The logarithm in (6) must remain explicit. For d=1 and varying h it may give
 
-```math
+<!-- math-display: d21b162b940498e8bda9d2d4
 O\!\left(\frac{hr}{\epsilon^2}
  [\log(2r/\delta)+h\log(eL/h)]\right),
-```
+-->
+![Formula](../../../assets/math/d21b162b940498e8bda9d2d4.svg)
 
 which can be quadratic in h. We do not hide log Q in a polylogarithmic factor in h and L.
 
@@ -100,41 +110,46 @@ The main bound is more general than matrices. Suppose each subset X has nonnegat
 
 Define σ_e as in (2), replacing t by m. Then
 
-```math
+<!-- math-display: 998b867959f40581b1ecc4cf
 \sum_e\sigma_e\le\Gamma(h,d)S.
 \tag{8}
-```
+-->
+![Formula](../../../assets/math/998b867959f40581b1ecc4cf.svg)
 
 **Proof.** Fix, separately for each e, a maximizing valid failure set F_e. Include every label in a random set R independently with probability α∈(0,1). Let the associated item pool be
 
-```math
+<!-- math-display: 3078dcf9b9bb845719d5a771
 X_R=\{e:\Lambda(e)\subseteq R\}.
-```
+-->
+![Formula](../../../assets/math/3078dcf9b9bb845719d5a771.svg)
 
 The event A_e that Λ(e)⊆R and F_e∩R=∅ has probability
 
-```math
+<!-- math-display: 3b60a88b440a8e6b0794edc2
 \Pr(A_e)=\alpha^{|\Lambda(e)|}(1-\alpha)^{|F_e|}
  \ge\alpha^d(1-\alpha)^h.
-```
+-->
+![Formula](../../../assets/math/3b60a88b440a8e6b0794edc2.svg)
 
 On A_e, e∈X_R⊆E_{F_e}, so monotonicity gives m_e(X_R)≥σ_e. Pointwise in R,
 
-```math
+<!-- math-display: 470ff7f2305c81b11b9dc1bc
 \sum_e\mathbf1_{A_e}\sigma_e
  \le\sum_{e\in X_R}m_e(X_R)\le S.
-```
+-->
+![Formula](../../../assets/math/470ff7f2305c81b11b9dc1bc.svg)
 
 Taking expectations and setting α=d/(h+d) proves (8). Empty own-label sets and empty failure sets need no modification. ∎
 
 For PSD items, Σ_{e∈X}t_e(X)=rank(M_X)≤r. Deletion monotonicity holds even when rank drops. Indeed, for v in the range of M_X and M_X≼M_Y,
 
-```math
+<!-- math-display: 1bef89920332c70ed72d3456
 v^TM_X^\dagger v
  =\sup_z(2v^Tz-z^TM_Xz)
  \ge\sup_z(2v^Tz-z^TM_Yz)
  =v^TM_Y^\dagger v.
-```
+-->
+![Formula](../../../assets/math/1bef89920332c70ed72d3456.svg)
 
 Decompose B_e into rank-one PSD terms; every such vector is in range(M_X) when e∈X. Summing this inequality proves t_e(X)≥t_e(Y). No incorrect global order between the two pseudoinverses is needed.
 
@@ -142,7 +157,7 @@ Decompose B_e into rank-one PSD terms; every such vector is in range(M_X) when e
 
 Let t_e=t_e(E), let E_c be the items surviving failure of c, and let r_c=rank(M_{E_c}). For each surviving item, t_e(E_c)−t_e≥0. Therefore
 
-```math
+<!-- math-display: 988dec445bd6494e7161a38a
 \begin{aligned}
  \sum_e\max\{t_e,\max_{c\notin\Lambda(e)}t_e(E_c)\}
  &\le r+\sum_c\sum_{e\in E_c}[t_e(E_c)-t_e]\\
@@ -151,7 +166,8 @@ Let t_e=t_e(E), let E_c be the items surviving failure of c, and let r_c=rank(M_
  &\le(d+1)r.
 \end{aligned}
 \tag{9}
-```
+-->
+![Formula](../../../assets/math/988dec445bd6494e7161a38a.svg)
 
 The middle expression is also a useful data-dependent bound. The proof applies to any masses whose total equals an inclusion-monotone rank statistic; it does not follow merely from a hereditary upper bound on their total.
 
@@ -161,35 +177,39 @@ For the lower example, take r orthogonal coordinate directions. In each directio
 
 For h,d>0 set α=d/(h+d), so an admissible protected-item/failure pair is separated by a random pool with probability at least 1/Γ. Draw
 
-```math
+<!-- math-display: a8757e0cf309f4ab4fa01ee9
 J=\left\lceil8\Gamma\log\frac{2NQ}{\delta}\right\rceil
 \tag{10}
-```
+-->
+![Formula](../../../assets/math/a8757e0cf309f4ab4fa01ee9.svg)
 
 independent label pools. There are at most NQ admissible pairs (e,F). For each fixed pair, a multiplicative Chernoff bound shows that fewer than J/(2Γ) of the pools separate it with probability at most exp(−J/(8Γ)). A union bound proves that, with probability at least 1−δ/2, **every** admissible pair is separated at least J/(2Γ) times.
 
 Compute t_e(X_j) on each pool. To avoid zero sampling probabilities on any nonzero item, define
 
-```math
+<!-- math-display: f0489aa352a34ef9d97441da
 \widehat\sigma_e=t_e(E)+\frac{2\Gamma}{J}
                 \sum_{j:\ e\in X_j}t_e(X_j).
 \tag{11}
-```
+-->
+![Formula](../../../assets/math/f0489aa352a34ef9d97441da.svg)
 
 On the coverage event, for every admissible (e,F), all separating pools satisfy X_j⊆E_F and contain e. Consequently
 
-```math
+<!-- math-display: b8b8dde14a0156a771b74870
 \widehat\sigma_e\ge t_e(E_F),\qquad
  \widehat\sigma_e\ge\sigma_e.
 \tag{12}
-```
+-->
+![Formula](../../../assets/math/b8b8dde14a0156a771b74870.svg)
 
 For **every** outcome of the pool experiment, including bad outcomes,
 
-```math
+<!-- math-display: af3ec533ca837c9674ed83b2
 T:=\sum_e\widehat\sigma_e\le(1+2\Gamma)r\le3\Gamma r.
 \tag{13}
-```
+-->
+![Formula](../../../assets/math/af3ec533ca837c9674ed83b2.svg)
 
 This deterministic mass bound follows by summing pool ranks. The construction never seeks a maximizing failure set and never tests the exponentially many coverage conditions. Their simultaneous validity is an analysis event.
 
@@ -201,17 +221,19 @@ For h=0 or d=0, simply use t_e(E), because there is only one distinct surviving 
 
 Condition on a good pool outcome. Put p_e=\widehat\sigma_e/T for nonzero items. Independently draw
 
-```math
+<!-- math-display: eff44ad74b4a122eecbe23d8
 k=\left\lceil C T\epsilon^{-2}\log\frac{4rQ}{\delta}\right\rceil
-```
+-->
+![Formula](../../../assets/math/eff44ad74b4a122eecbe23d8.svg)
 
 items from this distribution, with a sufficiently large absolute constant C. If item e is drawn n_e times, give it the single fixed weight ω_e=n_e/(kp_e), and aggregate duplicate draws.
 
 Fix F with surviving rank r_F>0 and whiten only on range(M_{E_F}). The contribution of a surviving e has operator norm at most t_e(E_F). A normalized sampled contribution therefore has norm at most T/k. Its expectation sums to the identity on this r_F-dimensional range. The usual PSD matrix Chernoff bound gives spectral failure probability at most
 
-```math
+<!-- math-display: 08559cc411023cec72092848
 2r_F\exp[-\epsilon^2k/(3T)]\le\delta/(2Q).
-```
+-->
+![Formula](../../../assets/math/08559cc411023cec72092848.svg)
 
 A union bound over the Q failure sets proves simultaneous validity. Rank-zero queries are automatic. This second random experiment is independent of the pools; its conditional failure probability is at most δ/2 for **every** good pool outcome. Combining the two error probabilities proves (5). The number of distinct retained items is at most k and at most N. No query changes a retained item's weight; it only deletes the items carrying failed labels.
 
@@ -221,28 +243,31 @@ Adding an arbitrary common PSD background R later preserves (5), since the same 
 
 For h=1, calculate the exact σ_e using the no-failure matrix and the L single-label matrices. Let T=Σσ_e≤(d+1)r. Whiten each nonzero-rank scenario separately and form the block-diagonal item matrix
 
-```math
+<!-- math-display: 792908bc8bed3ef4c0c5459f
 C_e=\bigoplus_F
  \left[M_{E_F}^{\dagger/2}B_eM_{E_F}^{\dagger/2}\right]_{\mathrm{range}(M_{E_F})},
-```
+-->
+![Formula](../../../assets/math/792908bc8bed3ef4c0c5459f.svg)
 
 with a zero block when e is deleted. The block dimension D=Σ_F r_F is at most (L+1)r. We have Σ_e C_e=I_D and ||C_e||≤σ_e. Thus the matrices X_e=C_e/p_e, p_e=σ_e/T, have expectation I_D and satisfy 0≼X_e≼T I_D.
 
 The matrix-Chernoff experiment can be derandomized by the classical Wigderson–Xiao pessimistic-estimator method. For completeness, a direct two-sided estimator is as follows. Let θ=ε/(2T), choose k=O(Tε^{-2}log(2D)), and write
 
-```math
+<!-- math-display: e610a6a2e764f8b3ca6c44c1
 a=1+\frac{e^{\theta T}-1}{T},\qquad
  b=1+\frac{e^{-\theta T}-1}{T}.
-```
+-->
+![Formula](../../../assets/math/e610a6a2e764f8b3ca6c44c1.svg)
 
 For a partial sum S_j of j chosen matrices define
 
-```math
+<!-- math-display: 94ce8c431574fa1bbf2aa9f9
 \Phi_j=
  e^{-\theta k(1+\epsilon)}a^{k-j}\mathrm{tr}e^{\theta S_j}
  +e^{\theta k(1-\epsilon)}b^{k-j}\mathrm{tr}e^{-\theta S_j}.
 \tag{14}
-```
+-->
+![Formula](../../../assets/math/94ce8c431574fa1bbf2aa9f9.svg)
 
 Golden–Thompson and the scalar chord bound for exp on [0,T] imply E_e Φ_{j+1}≤Φ_j. Choose an index attaining at most that average. For a sufficiently large constant in k, Φ_0<1/4. At completion, Φ_k<1 rules out any eigenvalue outside [k(1−ε),k(1+ε)]. The resulting multiplicities give the same fixed original-item weights as in Section 5.
 
@@ -256,43 +281,48 @@ The rank-deficient case follows from the full-rank version: append arbitrarily s
 
 Consequently, with
 
-```math
+<!-- math-display: 46336cbbf5e80c43a7b92a39
 \sigma_e^{(p)}=\max_{|F|\le h,\ e\in E_F}w_e^{(p)}(A_{E_F}),
-```
+-->
+![Formula](../../../assets/math/46336cbbf5e80c43a7b92a39.svg)
 
 we obtain
 
-```math
+<!-- math-display: d0e3ba0213ff2b20ff33e0cf
 \sum_e\sigma_e^{(p)}\le\Gamma(h,d)r,
  \qquad
  \sum_e\sigma_e^{(p)}\le(d+1)r\quad(h=1).
 \tag{15}
-```
+-->
+![Formula](../../../assets/math/d0e3ba0213ff2b20ff33e0cf.svg)
 
 The orthogonal-copy example from Section 3 proves the same lower bounds for every p. Constant-factor upper approximations to the Lewis weights can be used in the pool estimator: if w≤\widetilde w≤c w, the resulting mass bound is only multiplied by c.
 
 Combining (15) with classical high-probability one-shot Lewis-weight sampling gives one common weighted row subset preserving
 
-```math
+<!-- math-display: f2a693267945aa136cd43195
 \sum_{e\in E_F}|a_e^Tx|^p
-```
+-->
+![Formula](../../../assets/math/f2a693267945aa136cd43195.svg)
 
 within 1±ε for every x and every allowed F. For p=1 one may use the explicit safe bound
 
-```math
+<!-- math-display: 5501933fc76f9b30d294e9a6
 O\!\left(\min\left\{N,
  \Gamma(h,d)r\epsilon^{-2}\log\frac{2NQ}{\delta}\right\}\right).
 \tag{16}
-```
+-->
+![Formula](../../../assets/math/5501933fc76f9b30d294e9a6.svg)
 
 For each fixed 1<p<2, a conservative bound from the published one-shot sampling theorems is
 
-```math
+<!-- math-display: 7277019cccb074870be54744
 O_p\!\left(\min\left\{N,
  \frac{\Gamma(h,d)r}{\epsilon^2}
  \left[(\log(2r))^3\log(2N)+\log\frac{2NQ}{\delta}\right]\right\}\right).
 \tag{17}
-```
+-->
+![Formula](../../../assets/math/7277019cccb074870be54744.svg)
 
 These logarithmic factors are not optimized. Replace Γ by d+1 when h=1 and exact or constant-factor all-scenario weights are computed. Independent Bernoulli row sampling with probability min{1,α\widehatσ_e} and retained loss weight equal to the inverse probability realizes the usual theorem; a Chernoff bound also controls the retained count. Failure sets remove rows after this one shared sampling experiment. The same pool cap makes preprocessing uniformly polynomial for fixed p, using existing Lewis-weight approximation routines.
 
@@ -314,51 +344,57 @@ The following remain open in this manuscript: replacing Γr by r binom(h+d,d) fo
 
 There is a useful variant when a positive-definite background matrix R is fixed in advance. Set
 
-```math
+<!-- math-display: 174c696adf3a329910592b74
 d_R=\mathrm{tr}\bigl(M_E(R+M_E)^{-1}\bigr),\qquad
  t_e^R(X)=\mathrm{tr}\bigl(B_e(R+M_X)^{-1}\bigr).
-```
+-->
+![Formula](../../../assets/math/174c696adf3a329910592b74.svg)
 
 These masses are deletion-monotone. Their total is
 
-```math
+<!-- math-display: 79c82c591cc7b135be5f0abd
 d_R(X)=\mathrm{tr}\bigl(M_X(R+M_X)^{-1}\bigr)\le d_R.
-```
+-->
+![Formula](../../../assets/math/79c82c591cc7b135be5f0abd.svg)
 
 To see the last inequality, write K_X=R^{-1/2}M_XR^{-1/2}; the total is tr[I−(I+K_X)^{-1}], which increases in the PSD order. The pool lemma and the one-failure accounting therefore give robust importance bounds Γd_R and (d+1)d_R, respectively.
 
 The same pool estimator and a shared sample yield
 
-```math
+<!-- math-display: 5db012bd5710fb8f364f50bb
 (1-\epsilon)(R+M_{E_F})\preceq
  R+\sum_{e\in H\cap E_F}\omega_eB_e
  \preceq(1+\epsilon)(R+M_{E_F})
 \tag{18}
-```
+-->
+![Formula](../../../assets/math/5db012bd5710fb8f364f50bb.svg)
 
 for all queries, with size
 
-```math
+<!-- math-display: ee0848d2d0d8a0e8b0ea820a
 O\!\left(\min\left\{N,
  \Gamma d_R\epsilon^{-2}\log\frac{2nQ}{\delta}\right\}\right),
 \tag{19}
-```
+-->
+![Formula](../../../assets/math/ee0848d2d0d8a0e8b0ea820a.svg)
 
 where n is the ambient matrix dimension. For h=1, replace Γ by d+1 and use deterministic finite-scenario derandomization.
 
 Here is the concentration detail, since the sampled part no longer has identity expectation. Whiten R+M_{E_F}. If X is one importance-weighted item draw, then 0≼X≼T I, its mean K satisfies 0≼K≼I, and also K≼T I. Thus Z=X−K satisfies ||Z||≤T and
 
-```math
+<!-- math-display: f04e6259929cf061fa6d328f
 \mathbb E Z^2=\mathbb E X^2-K^2
  \preceq T K\preceq T I.
-```
+-->
+![Formula](../../../assets/math/f04e6259929cf061fa6d328f.svg)
 
 Matrix Bernstein for the average of k independent draws gives failure probability at most 2n exp(−c kε²/T). Adding back the fixed whitened R turns additive error εI into (18). The standard two-sided trace-exponential pessimistic estimator with the bound
 
-```math
+<!-- math-display: 83ab8fabb17c1b6c23058ec6
 \mathbb E e^{\pm\theta Z}
  \preceq\exp\!\left(\frac{e^{\theta T}-\theta T-1}{T}\right)I
-```
+-->
+![Formula](../../../assets/math/83ab8fabb17c1b6c23058ec6.svg)
 
 provides the same deterministic polynomial construction for the L+1 scenarios when h=1.
 
@@ -376,19 +412,21 @@ The exact binomial importance bound would follow if all restriction leverage mar
 
 Take
 
-```math
+<!-- math-display: 9e59234dcad52f47655e3e31
 a_0=(1,-10),\quad a_1=(1,10),\quad
  a_2=(2,-10),\quad a_3=(3,15).
-```
+-->
+![Formula](../../../assets/math/9e59234dcad52f47655e3e31.svg)
 
 Every pair is independent, so their matroid is U_{2,4}. Direct two-by-two determinant calculations give
 
-```math
+<!-- math-display: 8099355bb0e179709c384c65
 \tau_1(\{0,1,2\})=\frac{13}{14},\quad
  \tau_0(\{0,1,3\})=\frac{97}{106},\quad
  \tau_3(\{0,2,3\})=\frac{225}{229},\quad
  \tau_2(\{1,2,3\})=\frac{20}{21}.
-```
+-->
+![Formula](../../../assets/math/8099355bb0e179709c384c65.svg)
 
 Their sum is 963073/254877>3. For any fixed additive ordering, every greedy rank-two basis after one individual deletion is contained in the globally first three elements. Therefore the four corresponding selected-item indicators sum to at most three, pointwise. Taking expectations contradicts the displayed leverage marginals. The argument includes any fixed consistent tie-breaking order.
 

@@ -15,12 +15,13 @@ For j=1,...,d, let a^j be a nonnegative integer vector, let T_j be a
 nonnegative integer, and independently choose a relation rho_j from
 {<=, =, >=}. Rows may overlap arbitrarily. Write
 
-```math
+<!-- math-display: f455bc6cf117194fcd9fa220
 {\cal X}=\{x\in P(F)\cap\mathbb Z^E:
               a^j x\ \rho_j\ T_j\text{ for all }j\},
  \qquad T=\sum_{j=1}^d T_j .
  \tag{MD1}
-```
+-->
+![Formula](../../../assets/math/f455bc6cf117194fcd9fa220.svg)
 
 The base version replaces P(F) by B(F). Original eligibility masks
 are allowed. An original base always retains its original required
@@ -29,11 +30,12 @@ total; a restriction never silently redefines that total.
 For any rational scalar functional w, one can detect emptiness and
 compute either its exact minimum or its exact maximum over X in
 
-```math
+<!-- math-display: 74d9281a17905a5523c2be64
 \boxed{\exp\!\bigl(O_d((T+1)^{d/(d+1)})\bigr)
               \mathrm{poly}(H)}
  \tag{MD2}
-```
+-->
+![Formula](../../../assets/math/74d9281a17905a5523c2be64.svg)
 
 time and polynomial binary space, for fixed d. Here H is the full
 input encoding, including the targets and paid polynomial rank-oracle,
@@ -48,10 +50,11 @@ objective under that side condition.
 The exponent d/(d+1) in MD2 is tight in the rank-oracle model for
 fixed d: even d equality rows on ordinary matroid bases require
 
-```math
+<!-- math-display: 1c5d82c40a9f7ac0ecbc56a4
 \exp(\Omega_d(T^{d/(d+1)}))
  \tag{MD3}
-```
+-->
+![Formula](../../../assets/math/1c5d82c40a9f7ac0ecbc56a4.svg)
 
 queries in the worst case. The lower bound includes bounded-error
 randomized decision algorithms with success probability at least 2/3.
@@ -65,14 +68,15 @@ Let R=F(E) before original eligibility restrictions. For an optional
 P(F) problem, add a free disposal coordinate 0 with all target
 coefficients and scalar weight zero. Define
 
-```math
+<!-- math-display: 1ba7126d41d288ec67f6e1d5
 \widehat F(S)=
  \begin{cases}
  F(S),&0\notin S,\\
  R,&0\in S.
  \end{cases}
  \tag{MD4}
-```
+-->
+![Formula](../../../assets/math/1ba7126d41d288ec67f6e1d5.svg)
 
 This is an integral polymatroid rank. Every x in P(F) extends to a
 base by x_0=R-x(E), and every such base projects back to P(F).
@@ -107,10 +111,11 @@ in precisely the covering rows in S.
 
 Let pi forget the subset label. Define the shared lifted rank
 
-```math
+<!-- math-display: 83a67652ab10c145ee66ec91
 F^\uparrow(Y)=F_0(\pi(Y)).
  \tag{MD5}
-```
+-->
+![Formula](../../../assets/math/83a67652ab10c145ee66ec91.svg)
 
 This is an integral polymatroid rank: projection commutes with
 unions, while pi(A intersect B) is a subset of
@@ -119,12 +124,13 @@ the submodular inequality. For a nonnegative vector z, let
 x_e=sum_S z_(e,S). Directly from all projection-preimage
 constraints,
 
-```math
+<!-- math-display: 49304d16e2feaf5fc7e13bad
 z\in P(F^\uparrow)\ \Longleftrightarrow\ x\in P(F_0),
  \qquad
  z\in B(F^\uparrow)\ \Longleftrightarrow\ x\in B(F_0).
  \tag{MD6}
-```
+-->
+![Formula](../../../assets/math/49304d16e2feaf5fc7e13bad.svg)
 
 All copies retain the same original scalar weight w_e. Thus every
 resource unit and its true scalar contribution are retained.
@@ -133,14 +139,15 @@ Capacities are shared through F^up; they are not duplicated independently.
 For an upper or equality row put b^j_(e,S)=a^j_e on every copy.
 For a covering row put
 
-```math
+<!-- math-display: 725cf3f7e3406c6c6ea08378
 b^j_{(e,S)}=
  \begin{cases}
  \min(a^j_e,T_j),&j\in S,\\
  0,&j\notin S.
  \end{cases}
  \tag{MD7}
-```
+-->
+![Formula](../../../assets/math/725cf3f7e3406c6c6ea08378.svg)
 
 Every b coefficient is a nonnegative integer. For upper and
 equality rows, b^j z=a^j x exactly. For a covering row,
@@ -153,10 +160,11 @@ covering row independently, cap its unit values at T_j. The capped
 sum is still at least T_j. In any order of its positive capped
 units, mark a first-reaching prefix. Its integer sum W_j satisfies
 
-```math
+<!-- math-display: a3904bcaf8848908d06db283
 T_j\le W_j\le 2T_j-1.
  \tag{MD8}
-```
+-->
+![Formula](../../../assets/math/a3904bcaf8848908d06db283.svg)
 
 Give each original unit the subset label of exactly the covering
 rows in which it was marked. This produces a single compatible
@@ -169,7 +177,7 @@ totals. The scalar functional is unchanged. Thus every original
 feasible vector has a lifted representative whose totals lie in
 the bounded intervals
 
-```math
+<!-- math-display: 5443bedbcbb380e69f0a4729
 \begin{array}{c|c}
  \rho_j & \text{allowed auxiliary total }W_j\\ \hline
  \le & 0\le W_j\le T_j\\
@@ -177,7 +185,8 @@ the bounded intervals
  \ge & T_j\le W_j\le 2T_j-1 .
  \end{array}
  \tag{MD9}
-```
+-->
+![Formula](../../../assets/math/5443bedbcbb380e69f0a4729.svg)
 
 Conversely, every lifted integer base satisfying MD9 projects to an
 original feasible integer base with exactly the same scalar value.
@@ -191,19 +200,21 @@ Group lifted coordinates by their complete auxiliary coefficient
 vector b in Z^d_{\ge0}. There is one group D_b for each distinct
 input-occupied vector. Define
 
-```math
+<!-- math-display: 145191dff25ab6e8787d599e
 U=\sum_{j\notin C}T_j+\sum_{j\in C}(2T_j-1)\le 2T.
  \tag{MD10}
-```
+-->
+![Formula](../../../assets/math/145191dff25ab6e8787d599e.svg)
 
 Enumerate nonnegative integer counts h_b for the occupied nonzero
 vectors subject to
 
-```math
+<!-- math-display: cf7f67f7bbcaa2b89cac8993
 m=\sum_{b\ne0}h_b\le R,\qquad
        \sum_{b\ne0}\|b\|_1h_b\le U.
  \tag{MD11}
-```
+-->
+![Formula](../../../assets/math/cf7f67f7bbcaa2b89cac8993.svg)
 
 Retain a profile only if its component totals
 W_j=sum_b b_j h_b satisfy MD9. Put h_0=R-m. The zero group
@@ -216,11 +227,12 @@ h_b, including h_0. Its rank on Y is the sum of the capacities of
 the groups that Y meets. Optimize the chosen scalar functional
 on
 
-```math
+<!-- math-display: b9c5de5f1f3fdb784d8bf26c
 P(F^\uparrow)\cap P(K_h)
              \cap\{z:z(E^\uparrow)=R\}.
  \tag{MD12}
-```
+-->
+![Formula](../../../assets/math/b9c5de5f1f3fdb784d8bf26c.svg)
 
 Two integral polymatroids have an integral intersection. Its total
 is at most R, so a nonempty total-R face is integral. Because all
@@ -241,17 +253,18 @@ Ignore the resource count bound and component filters to upper-bound
 the number of profiles. They inject into multisets of nonzero
 vectors b in Z^d_{\ge0} of total l1 weight at most U. For any t>0,
 
-```math
+<!-- math-display: 2fbaabd5f114a255846f438c
 {\cal P}_d(U)\le
  e^{tU}
  \prod_{b\in\mathbb Z^d_{\ge0}\setminus\{0\}}
                        (1-e^{-t\|b\|_1})^{-1}.
  \tag{MD13}
-```
+-->
+![Formula](../../../assets/math/2fbaabd5f114a255846f438c.svg)
 
 The logarithm of the product is
 
-```math
+<!-- math-display: 28c11fb0e88f1c6ce4c9cb1d
 \begin{aligned}
  \sum_{\ell\ge1}\frac{(1-e^{-\ell t})^{-d}-1}{\ell}
  &\le \sum_{i=1}^d {d\choose i}t^{-i}
@@ -259,17 +272,19 @@ The logarithm of the product is
  &\le 2\bigl((1+1/t)^d-1\bigr).
  \end{aligned}
  \tag{MD14}
-```
+-->
+![Formula](../../../assets/math/28c11fb0e88f1c6ce4c9cb1d.svg)
 
 The first inequality uses
 1/(1-e^{-x})=1+1/(e^x-1)<=1+1/x.
 For U>=1 choose t=U^{-1/(d+1)}<=1. It follows that
 
-```math
+<!-- math-display: b817354286fc28ab24377dfd
 \log {\cal P}_d(U)
  \le (1+2^{d+1})U^{d/(d+1)}.
  \tag{MD15}
-```
+-->
+![Formula](../../../assets/math/b817354286fc28ab24377dfd.svg)
 
 For U=0 only the zero positive-count profile occurs.
 This establishes MD2 with an explicit, nonoptimized fixed-d
@@ -308,21 +323,23 @@ uniform workspace guarantee.
 Fix d and let k be an even positive integer tending to infinity.
 Take n=k^d elements indexed by the distinct vectors
 
-```math
+<!-- math-display: 13e82cafc839d5cb3feff712
 u\in\{1,\ldots,k\}^d,
        \qquad r=n/2.
  \tag{MD16}
-```
+-->
+![Formula](../../../assets/math/13e82cafc839d5cb3feff712.svg)
 
 Among all r-subsets, choose a most populous class H_alpha with
 the same vector sum alpha. Each sum component has at most nk
 possible values. Thus, writing N=|H_alpha|,
 
-```math
+<!-- math-display: 04d4c5f4ca87a01aca314002
 N\ge\frac{{n\choose r}}{(nk)^d}
           =2^{\,n-O_d(\log n)}.
  \tag{MD17}
-```
+-->
+![Formula](../../../assets/math/04d4c5f4ca87a01aca314002.svg)
 
 For fixed d, alpha can be computed by a cardinality-and-vector-sum
 dynamic program in polynomial time in n. Count entries have O(n)
@@ -362,20 +379,22 @@ coordinate j, each label value 1,...,k occurs exactly k^{d-1}
 times. The smallest possible sum of that coordinate over
 r=n/2 elements is
 
-```math
+<!-- math-display: edf994695c6c69dd39fb6cef
 k^{d-1}\sum_{i=1}^{k/2}i
            =\frac{n(k+2)}8\ge\frac{nk}8.
  \tag{MD18}
-```
+-->
+![Formula](../../../assets/math/edf994695c6c69dd39fb6cef.svg)
 
 The largest possible sum is at most nk/2. Therefore
 
-```math
+<!-- math-display: 4b5d288b437e8e6d0fecbd7b
 \frac{dnk}8\le T=\sum_j\alpha_j
                            \le\frac{dnk}2,
  \qquad T=\Theta_d(n^{1+1/d}).
  \tag{MD19}
-```
+-->
+![Formula](../../../assets/math/4b5d288b437e8e6d0fecbd7b.svg)
 
 On the reference transcript, Q oracle queries can hit at most
 Q hidden candidates. Deterministic exact decision therefore
@@ -452,14 +471,15 @@ One can keep the individual auxiliary upper caps and obtain
 a strictly sharper bound when their magnitudes differ.
 For every surviving row set
 
-```math
+<!-- math-display: 2271f949ebd7878c24408253
 U_j=
  \begin{cases}
  T_j,&\rho_j\in\{\le,=\},\\
  2T_j-1,&\rho_j=\ge .
  \end{cases}
  \tag{MD20}
-```
+-->
+![Formula](../../../assets/math/2271f949ebd7878c24408253.svg)
 
 Rows with U_j=0 force zero auxiliary contributions and can be
 removed from the vector-class dimension after the corresponding
@@ -468,26 +488,28 @@ were already removed. If no dimension remains, scalar
 optimization is polynomial. Let d'<=d be the remaining number,
 so every remaining U_j is a positive integer, and define
 
-```math
+<!-- math-display: d1efb3777fef528101a40a9b
 K(U)=
   \max_{\varnothing\ne S\subseteq[d']}
             \left(\prod_{j\in S}U_j\right)^{1/(|S|+1)}.
  \tag{MD21}
-```
+-->
+![Formula](../../../assets/math/d1efb3777fef528101a40a9b.svg)
 
 A refined streamed traversal enumerates only count profiles with
 each component total at most its cap U_j. At a partial state
 with component totals W_j, the next nonzero vector b has
 count range
 
-```math
+<!-- math-display: 7c46d3618b95c5656954ea30
 0\le h_b\le
  \min\left\{R-m,\
        \min_{j:b_j>0}
               \left\lfloor\frac{U_j-W_j}{b_j}\right\rfloor
      \right\}.
  \tag{MD22}
-```
+-->
+![Formula](../../../assets/math/7c46d3618b95c5656954ea30.svg)
 
 This replaces the l1-only bound in Section 5. Lower/equality
 filters are still applied at completion. Every visited
@@ -498,7 +520,7 @@ complete profile, including all infeasible inputs.
 For arbitrary positive real t_1,...,t_d', the number of
 component-capped vector partitions obeys
 
-```math
+<!-- math-display: cb5993c9a74fac03c8bc4de9
 \begin{aligned}
  \log {\cal P}(U)
  &\le \sum_jt_jU_j+
@@ -509,29 +531,32 @@ component-capped vector partitions obeys
                        \prod_{j\in S}t_j^{-1}.
  \end{aligned}
  \tag{MD23}
-```
+-->
+![Formula](../../../assets/math/cb5993c9a74fac03c8bc4de9.svg)
 
 The second inequality expands the product of
 1+1/(ell*t_j) and again uses
 sum_ell ell^{-(|S|+1)}<=2. Put t_j=K(U)/U_j.
 The definition of K gives
 
-```math
+<!-- math-display: 8a55e52d5d62296993a01b5e
 \prod_{j\in S}t_j^{-1}
    =\frac{\prod_{j\in S}U_j}{K(U)^{|S|}}
    \le K(U)
  \tag{MD24}
-```
+-->
+![Formula](../../../assets/math/8a55e52d5d62296993a01b5e.svg)
 
 for every nonempty S. Hence the exact algorithm takes
 
-```math
+<!-- math-display: 031a3fe79e3954dcd3b6bd4d
 \boxed{
  \exp\!\left((d'+2(2^{d'}-1))K(U)\right)
                      \mathrm{poly}(H)
  }
  \tag{MD25}
-```
+-->
+![Formula](../../../assets/math/031a3fe79e3954dcd3b6bd4d.svg)
 
 time and polynomial binary space for fixed d.
 The generating-function parameters and K are analysis devices;
@@ -539,11 +564,12 @@ the algorithm uses only the exact integer bounds MD22.
 
 For two positive caps this reads
 
-```math
+<!-- math-display: c561cddb91330b8cd2d1a3a6
 K(U_1,U_2)=
  \max\{\sqrt{U_1},\sqrt{U_2},(U_1U_2)^{1/3}\}.
  \tag{MD26}
-```
+-->
+![Formula](../../../assets/math/c561cddb91330b8cd2d1a3a6.svg)
 
 In particular, caps (1,N) give a square-root exponent in N,
 whereas the total-target-only form would give N^{2/3}.

@@ -37,13 +37,14 @@ resource or assignment count is required to be shared across different
 scenarios. The selected basis I is the common first-stage decision.
 Unused resource units are permitted. The robust minimum **count** is
 
-```math
+<!-- math-display: 886390b1ac2981c87871075f
 K^*=\max_{I\text{ an M-basis}}
           \max_{\text{legal adaptive integer allocations}}
                \min_{\omega\in\Omega}\min_{p\in I}
                                 \sum_jx_j^\omega(p).
  \tag{RU1}
-```
+-->
+![Formula](../../assets/math/886390b1ac2981c87871075f.svg)
 
 It is a nonnegative integer; the utility optimum is u*K*. H includes
 the complete scenario list, binary numerical data, and the paid
@@ -54,25 +55,27 @@ genuine common basis and explicit integer allocations in every scenario,
 respecting every scenario's budget and resource constraints, with
 minimum count at least
 
-```math
+<!-- math-display: f6c1916edbd9c4fd0fd96dcd
 \psi(K^*)=
  \begin{cases}
  0,&K^*\le1,\\
  \lceil K^*/2\rceil,&K^*\ge2.
  \end{cases}
  \tag{RU2}
-```
+-->
+![Formula](../../assets/math/f6c1916edbd9c4fd0fd96dcd.svg)
 
 In particular the unconditional count guarantee is floor(K*/2).
 The running time is either
 
-```math
+<!-- math-display: d2f4c1bb597becbdac4bf8c0
 (27/4)^c\mathrm{poly}(H)
  \quad\text{or}\quad
  (50/27)^q\,
  2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
  \tag{RU3}
-```
+-->
+![Formula](../../assets/math/d2f4c1bb597becbdac4bf8c0.svg)
 
 Thus the result is an exact-factor-two utility approximation under
 the promise K*>=2. If a feasible one-unit common basis together with
@@ -90,12 +93,13 @@ An invalid certificate does not establish the strengthened guarantee.
 
 For each omega, define the fractional count-service region
 
-```math
+<!-- math-display: 97240a851dcb50f1f3f9305a
 U_\omega=\{z\ge0:\exists x_j\in P(f_{\omega,j}),\quad
         \sum_{p,j}c_{\omega,p,j}x_j(p)\le C_\omega,\quad
         z_p\le\sum_jx_j(p)\ \text{for every }p\}.
  \tag{RU4}
-```
+-->
+![Formula](../../assets/math/97240a851dcb50f1f3f9305a.svg)
 
 Each region is compact, convex, downward and contains zero. It has
 the exact nonnegative packing separator from
@@ -107,10 +111,11 @@ have polynomial-bit fractional witnesses.
 
 Use their intersection
 
-```math
+<!-- math-display: bb59bce34fe1b1fe2c79ef6c
 U=\bigcap_{\omega\in\Omega}U_\omega.
  \tag{RU5}
-```
+-->
+![Formula](../../assets/math/bb59bce34fe1b1fe2c79ef6c.svg)
 
 Test a query in every scenario. If one rejects it, that scenario's
 nonnegative separating row is valid for U and strictly separates the
@@ -128,11 +133,12 @@ are not contracted or redefined on a smaller player ground.
 
 At an integer target K>=2 put
 
-```math
+<!-- math-display: a49c6ae4057692dc795b6caa
 t=K,\qquad b=\lceil K/2\rceil,
                             \qquad \frac{t}{t-b}\le3.
  \tag{RU6}
-```
+-->
+![Formula](../../assets/math/a49c6ae4057692dc795b6caa.svg)
 
 A robust integer full-K solution supplies one actual M-basis I*
 with K*1_(I*) in every U_omega, hence in U. Use the original M
@@ -195,11 +201,12 @@ loss at the difficult one-unit case.
 Together with target zero, the guaranteed output quota as a
 function of the nominal target is
 
-```math
+<!-- math-display: 248fac5f321ece566598d658
 w(K)=0\ \text{for }K=0,1,\qquad
  w(K)=\lceil K/2\rceil\ \text{for }K\ge2.
  \tag{RU7}
-```
+-->
+![Formula](../../assets/math/248fac5f321ece566598d658.svg)
 
 This function is nondecreasing and at least floor(K/2). Actual
 successful positive-gap calls may give better output than this
@@ -210,12 +217,13 @@ claim about their possible failures.
 
 A sound upper bound on K* is
 
-```math
+<!-- math-display: ef524790d5a316589be8ec39
 U_0=\min_{\omega\in\Omega}
                     \left\lfloor\frac{\sum_j f_{\omega,j}(P)}r
                     \right\rfloor.
  \tag{RU8}
-```
+-->
+![Formula](../../assets/math/ef524790d5a316589be8ec39.svg)
 
 Initialize L=0 with any legal zero solution and external upper
 target U=U_0+1. At integer midpoints K, use Section 5 when K=1

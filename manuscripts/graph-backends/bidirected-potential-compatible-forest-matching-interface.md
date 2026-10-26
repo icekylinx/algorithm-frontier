@@ -25,22 +25,24 @@ Use the fixed ledger interval, bounded integer labels D and A,
 common dyadic grid, guard bounds, and persistent registers of
 the preceding forest interface. In particular,
 
-```math
+<!-- math-display: acf0a9a17ec26d764330ebe7
 \ell_e<x_e<2\ell_e,\qquad
  \bar c_e=\left\lceil H/(4\ell_e)\right\rceil,\qquad
  \sigma_d=\left\lfloor3H/(4s_d)\right\rfloor,\quad
  \tau_d=\left\lceil5H/(4s_d)\right\rceil.
  \tag{1}
-```
+-->
+![Formula](../../assets/math/acf0a9a17ec26d764330ebe7.svg)
 
 All labels and arithmetic have O(log S) bits. The full threshold
 graph remains feasible for the fixed D:
 
-```math
+<!-- math-display: b28e6671b8fc8e2405c12cd7
 D(d)\le D(r)\le D(d)+\bar c_e,\qquad
  D(d)\le A-\sigma_d .
  \tag{2}
-```
+-->
+![Formula](../../assets/math/b28e6671b8fc8e2405c12cd7.svg)
 
 The ordinary maintained object is now an undirected forest of
 physical incidence IDs. At most one forest edge owns any live
@@ -50,14 +52,15 @@ logical copies cannot introduce a second owner.
 For a forest incidence e=(r,d), its available scored directions
 are
 
-```math
+<!-- math-display: 6827ae2a35e4065a44610789
 \begin{array}{c|c|c}
  \text{direction}&\text{availability}&\text{score}\\
  d\longrightarrow r&\text{always}&-\bar c_e\\
  r\longrightarrow d&D(r)=D(d)&0 .
  \end{array}
  \tag{3}
-```
+-->
+![Formula](../../assets/math/6827ae2a35e4065a44610789.svg)
 
 The receiver-availability flag is fixed during this D interval.
 A physical edge with two available directions is still just
@@ -98,12 +101,13 @@ change to the scored base initialization.
 All join formulas in Section 4 of the preceding note remain
 valid. In particular, for children C_1,C_2 meeting only at v,
 
-```math
+<!-- math-display: f17eaf0ae946b851f9f6a8bf
 F_C=\max\{F_{C_1},F_{C_2},
           I_{C_1}(v)+O_{C_2}(v),
           I_{C_2}(v)+O_{C_1}(v)\}.
  \tag{4}
-```
+-->
+![Formula](../../assets/math/f17eaf0ae946b851f9f6a8bf.svg)
 
 Each cross term uses disjoint edge sets on the two sides of v.
 It cannot create a two-cycle or revisit a physical edge. The
@@ -115,10 +119,11 @@ edges admit both directions.
 The data structure returns a maximum-score ordered bin pair
 with score
 
-```math
+<!-- math-display: 7c0af03a3fb779ec2ca953c7
 \sigma_a-\tau_b-\bar L_F(a,b),
  \tag{5}
-```
+-->
+![Formula](../../assets/math/7c0af03a3fb779ec2ca953c7.svg)
 
 where bar L sums the donor costs in the actual a-to-b direction.
 Source and target gadget edges have only their indicated
@@ -139,21 +144,23 @@ edge; the point-update DP supports both cases.
 
 For every selected incidence retain both register buffers
 
-```math
+<!-- math-display: 069c892346fa0a93aa3d0084
 w_D=x_e-\ell_e,\qquad
         w_R=2\ell_e-x_e,
         \qquad w_D+w_R=\ell_e,
  \tag{6}
-```
+-->
+![Formula](../../assets/math/069c892346fa0a93aa3d0084.svg)
 
 and both guard buffers
 
-```math
+<!-- math-display: c9c9561863ae92ea007872bb
 g_D=x_e-\chi_e,\qquad
         g_R=U_e-x_e,
         \qquad g_D+g_R=U_e-\chi_e .
  \tag{7}
-```
+-->
+![Formula](../../assets/math/c9c9561863ae92ea007872bb.svg)
 
 The subscripts denote physical donor and receiving directions.
 They do not denote a dynamic-tree parent or a temporary internal
@@ -193,14 +200,15 @@ different fields even if a special instance gives equal values.
 A positive tag delta means transfer in the stored p-to-q
 direction. Applying it updates
 
-```math
+<!-- math-display: c5f00fd07229028f685a0f20
 \begin{array}{c|cc}
        &p\text{-to-}q&q\text{-to-}p\\ \hline
  w_{\min}&-\delta&+\delta\\
  g_{\min}&-\delta&+\delta
  \end{array}
  \tag{8}
-```
+-->
+![Formula](../../assets/math/c5f00fd07229028f685a0f20.svg)
 
 and adds delta to t_C. A negative tag is the same operation
 in the reverse direction. Donor-cost sums do not change until
@@ -254,10 +262,11 @@ search. No enumeration of positive edges is needed.
 At a reported edge, recover x from either physical formula
 in (6), set ell=3x/4, and replace both directional buffers:
 
-```math
+<!-- math-display: b071554de5d128895544a9ed
 w_D=x/4,\qquad w_R=x/2.
  \tag{9}
-```
+-->
+![Formula](../../assets/math/b071554de5d128895544a9ed.svg)
 
 Recompute its one donor price bar c and notify:
 
@@ -293,11 +302,12 @@ was last traversed in the opposite direction.
 
 The finite-grid step rule is unchanged:
 
-```math
+<!-- math-display: 01e09faa9cc4abb253b69ad3
 V_{\rm up}=1/s_a+1/s_b+4\bar L_F(a,b)/H,\qquad
        1/512\le\eta V_{\rm up}\le1/256.
  \tag{10}
-```
+-->
+![Formula](../../assets/math/01e09faa9cc4abb253b69ad3.svg)
 
 All directed bin-to-bin paths alternate physical donors
 and receivers at their internal rows. They therefore
@@ -321,11 +331,12 @@ graph.
 
 The endpoint-source argument is again
 
-```math
+<!-- math-display: af3d0c2e615135439247b71f
 D(b)\le D(a)+\bar L_F(a,b)
        \le A-\sigma_a+\bar L_F(a,b)<A-\tau_b.
  \tag{11}
-```
+-->
+![Formula](../../assets/math/af3d0c2e615135439247b71f.svg)
 
 This pays the terminal price increase; the start's source
 cost increases. The global maximum reciprocal does not
@@ -361,19 +372,21 @@ individual edges' earlier roles.
 The accounting potential sum log x consequently gives
 the same global reset bound
 
-```math
+<!-- math-display: ee130bc20a5dddd2f52312c8
 R=O\bigl(J+(N+A_{\rm ext})\log S\bigr).
  \tag{12}
-```
+-->
+![Formula](../../assets/math/ee130bc20a5dddd2f52312c8.svg)
 
 For J accepted steps, P supplied physical link/cut edits,
 and Q extra queries, local work after the initial labels
 and forest have been supplied is
 
-```math
+<!-- math-display: 3d25de9e6841aaaf76f847d1
 (\nu+J+P+Q+R)\mathrm{polylog}S .
  \tag{13}
-```
+-->
+![Formula](../../assets/math/3d25de9e6841aaaf76f847d1.svg)
 
 This includes every selected donor-price change, including
 those caused by receiving traversals. It includes explicit

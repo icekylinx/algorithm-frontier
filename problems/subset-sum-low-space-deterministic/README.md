@@ -10,15 +10,15 @@ Deterministic exact algorithm in the uniform bit model, including indexed-witnes
 
 **Time**
 
-$`\mathrm{poly}(n,L)2^{n/2}`$ bit operations.
+<code class="math">\mathrm{poly}(n,L)2^{n/2}</code> bit operations.
 
 **Space**
 
-$`\mathrm{poly}(n,L)2^{E_Sn}`$ writable bits, where $`E_S=18261635770550353/10^{17}=0.18261635770550353`$. Read-only input storage is excluded.
+<code class="math">\mathrm{poly}(n,L)2^{E_Sn}</code> writable bits, where <code class="math">E_S=18261635770550353/10^{17}=0.18261635770550353</code>. Read-only input storage is excluded.
 
 **Parameters**
 
-$`n`$ is the number of weights. $`L`$ includes every input bit, including the target, signs and delimiters. Polynomial degrees are fixed.
+<code class="math">n</code> is the number of weights. <code class="math">L</code> includes every input bit, including the target, signs and delimiters. Polynomial degrees are fixed.
 
 **Model and representation**
 
@@ -49,13 +49,14 @@ cover, projection, stream and bit-cost statements are proved internally.
 
 ## Two short normalized ranges
 
-For a supplied partition into three blocks of size at most $`m`$, put $`N=2^m`$. Suppose two blocks have normalized sum ranges $`W_A,W_B`$, at arbitrary positive lattice scales. For $`C^2\ge\max\{N,W_A+1,W_B+1\}`$, the [range theorem](range-branch.md) gives
+For a supplied partition into three blocks of size at most <code class="math">m</code>, put <code class="math">N=2^m</code>. Suppose two blocks have normalized sum ranges <code class="math">W_A,W_B</code>, at arbitrary positive lattice scales. For <code class="math">C^2\ge\max\{N,W_A+1,W_B+1\}</code>, the [range theorem](range-branch.md) gives
 
-```math
+<!-- math-display: 98b527c5b42ba4b5ae4ee7fd
 T=O^*(NC+C^3),\qquad S=O^*(C+\sqrt N).
-```
+-->
+![Formula](../../assets/math/98b527c5b42ba4b5ae4ee7fd.svg)
 
-Thus $`W_A,W_B\le O^*(2^m)`$ and $`n=3m+O(1)`$ give $`O^*(2^{n/2})`$ time and $`O^*(2^{n/6})`$ writable space. The third block and the ratio of lattice scales are unrestricted. The $`O^*`$ notation hides fixed polynomial factors in the full binary input; this is a detectable restricted-input result, separate from the general theorem.
+Thus <code class="math">W_A,W_B\le O^*(2^m)</code> and <code class="math">n=3m+O(1)</code> give <code class="math">O^*(2^{n/2})</code> time and <code class="math">O^*(2^{n/6})</code> writable space. The third block and the ratio of lattice scales are unrestricted. The <code class="math">O^*</code> notation hides fixed polynomial factors in the full binary input; this is a detectable restricted-input result, separate from the general theorem.
 
 The range theorem's [convolution lemma](convolution.md) proves its required
 bit-time and space bounds using elementary deterministic arithmetic.

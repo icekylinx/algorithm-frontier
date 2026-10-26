@@ -10,28 +10,31 @@ Let a matroid M on an explicit ground E of N elements be represented by columns 
 
 There is a deterministic algorithm producing H contained in E with
 
-```math
+<!-- math-display: 0f45e55ae1a7cc26e7831dc5
 |H|\le \min\left\{N,\;r\binom{h+d}{d}\right\}
  \tag{1}
-```
+-->
+![Formula](../../../assets/math/0f45e55ae1a7cc26e7831dc5.svg)
 
 such that, for every allowed F and every cost threshold a,
 
-```math
+<!-- math-display: 7e34fe9c8ec59e38f33a61d2
 \mathrm{span}\{v_e:e\in H,\ c(e)\le a,\ \Lambda(e)\cap F=\varnothing\}
  =
  \mathrm{span}\{v_e:e\in E,\ c(e)\le a,\ \Lambda(e)\cap F=\varnothing\}.
  \tag{2}
-```
+-->
+![Formula](../../../assets/math/7e34fe9c8ec59e38f33a61d2.svg)
 
 In fact the equality holds at every prefix of a fixed total order refining cost. Consequently H contains the canonical minimum-cost basis after every allowed failure set, including queries that decrease the surviving rank. It also preserves the minimum cost of an independent set of every attainable cardinality.
 
 The algorithm is uniform polynomial time in the explicit input length, including when h and d are input parameters. The straightforward nongated implementation uses a lifted dimension
 
-```math
+<!-- math-display: b40ccb7292ba6bd328b7cbd3
 D=r\binom{h+d}{d}
  \tag{3}
-```
+-->
+![Formula](../../../assets/math/b40ccb7292ba6bd328b7cbd3.svg)
 
 and O(N D^2) field operations for its Gaussian-elimination stage, in addition to feature construction and rank compression. The gate in Section 5 avoids constructing this space when D is larger than the input ground.
 
@@ -47,62 +50,69 @@ Let L be the number of distinct labels occurring in the input. Replace h by min(
 
 Work over a field K extending the representation field and containing distinct scalars
 
-```math
+<!-- math-display: be362158f17140bdcd0fda4a
 a_0,\quad a_\lambda\quad(\lambda\text{ an input label}).
-```
+-->
+![Formula](../../../assets/math/be362158f17140bdcd0fda4a.svg)
 
 The extra scalar a_0 represents a dummy label that never fails. How to obtain K deterministically is explained in Section 5.
 
 For each e form the monic degree-d polynomial
 
-```math
+<!-- math-display: fd7e16e4477c46a0ecdba752
 g_e(T)=(T-a_0)^{d-|\Lambda(e)|}
           \prod_{\lambda\in\Lambda(e)}(T-a_\lambda)
        =T^d+\sum_{j=0}^{d-1}b_j(e)T^j.
  \tag{4}
-```
+-->
+![Formula](../../../assets/math/fd7e16e4477c46a0ecdba752.svg)
 
 Padding with repeated copies of the one nonfailing dummy is legitimate: every genuine label scalar differs from a_0. For a genuine label lambda,
 
-```math
+<!-- math-display: d72f633713bbfd91908769c9
 g_e(a_\lambda)=0
  \quad\Longleftrightarrow\quad
  \lambda\in\Lambda(e).
  \tag{5}
-```
+-->
+![Formula](../../../assets/math/d72f633713bbfd91908769c9.svg)
 
 Let phi(e) be the vector of all monomials of total degree at most h in the d coordinates b_0(e),...,b_{d-1}(e), including the constant monomial. Its dimension is
 
-```math
+<!-- math-display: 62b85af297ac2298b894726c
 C=\#\{\alpha\in\mathbb N^d:|\alpha|\le h\}
    =\binom{h+d}{d}.
  \tag{6}
-```
+-->
+![Formula](../../../assets/math/62b85af297ac2298b894726c.svg)
 
 For a query F, define the polynomial in formal variables B_0,...,B_{d-1}
 
-```math
+<!-- math-display: e6f1545db45268394c969dd7
 Q_F(B)=\prod_{\lambda\in F}
           \left(a_\lambda^d+\sum_{j=0}^{d-1}B_j a_\lambda^j\right).
  \tag{7}
-```
+-->
+![Formula](../../../assets/math/e6f1545db45268394c969dd7.svg)
 
 It has total degree at most |F| at most h. Therefore its coefficients define a linear functional ell_F on the C-dimensional feature space with
 
-```math
+<!-- math-display: 0be155fd642e7f164aa09e43
 \ell_F(\phi(e))=Q_F(b(e))
      =\prod_{\lambda\in F}g_e(a_\lambda).
  \tag{8}
-```
+-->
+![Formula](../../../assets/math/0be155fd642e7f164aa09e43.svg)
 
 The empty product is one. Since K is a field, (5) gives the exact predicate
 
-```math
+<!-- math-display: 846a40d46bc6a38e1ed47dc9
 \ell_F(\phi(e))=0
  \quad\Longleftrightarrow\quad
  \Lambda(e)\cap F\ne\varnothing.
  \tag{9}
-```
+-->
+![Formula](../../../assets/math/846a40d46bc6a38e1ed47dc9.svg)
 
 No failure sets are enumerated while constructing phi. The functionals ell_F are used only in the proof.
 
@@ -110,34 +120,38 @@ No failure sets are enumerated while constructing phi. The functionals ell_F are
 
 First remove dependent rows from the original representation, leaving r rows and the same column matroid. Define
 
-```math
+<!-- math-display: 8fcb3c86deda833693fb2cd9
 w_e=v_e\otimes\phi(e)\in K^{rC}.
  \tag{10}
-```
+-->
+![Formula](../../../assets/math/8fcb3c86deda833693fb2cd9.svg)
 
 Scan the elements in a fixed order nondecreasing in cost. Retain e precisely when w_e is outside the linear span of the previously retained lifted columns. Let H be the retained element IDs. Thus H is the canonical cost-ordered basis of the lifted column matroid and has at most rC elements.
 
 For every e, ordinary linear greedy supplies a relation
 
-```math
+<!-- math-display: da598737a5e439b067ad47bf
 w_e\in\mathrm{span}\{w_f:f\in H,\ f\text{ no later than }e\}.
  \tag{11}
-```
+-->
+![Formula](../../../assets/math/da598737a5e439b067ad47bf.svg)
 
 Fix an arbitrary allowed query F. Apply the linear map
 
-```math
+<!-- math-display: ee963beaae3db369a4138cd7
 I_r\otimes\ell_F:K^r\otimes K^C\longrightarrow K^r
  \tag{12}
-```
+-->
+![Formula](../../../assets/math/ee963beaae3db369a4138cd7.svg)
 
 to (11). Every failed retained element maps to zero. If e survives, its image is a nonzero scalar multiple of v_e. Dividing by that scalar shows
 
-```math
+<!-- math-display: 60bf45b3af9b47dd6a6e283a
 v_e\in\mathrm{span}\{v_f:f\in H,\ f\text{ no later than }e,
                                       \ \Lambda(f)\cap F=\varnothing\}.
  \tag{13}
-```
+-->
+![Formula](../../../assets/math/60bf45b3af9b47dd6a6e283a.svg)
 
 The reverse span inclusion is automatic because H is a restriction of E. Hence (2) holds, including every position inside a cost tie when the fixed total order is used.
 
@@ -157,24 +171,27 @@ To obtain a graphic example, take any tree with r edges and replace every tree e
 
 For d=1 the coefficient lift is just a Vandermonde lift. Equivalently, with color scalar a_col(e), use
 
-```math
+<!-- math-display: 65b109200656d31523f82596
 w_e=v_e\otimes(1,a_{\mathrm{col}(e)},\ldots,a_{\mathrm{col}(e)}^h).
  \tag{14}
-```
+-->
+![Formula](../../../assets/math/65b109200656d31523f82596.svg)
 
 For a failure set F the polynomial product over lambda in F of (T-a_lambda) gives the projection functional. The retained size is at most
 
-```math
+<!-- math-display: 1b044cfcbf97d232a6bc0447
 (h+1)r.
  \tag{15}
-```
+-->
+![Formula](../../../assets/math/1b044cfcbf97d232a6bc0447.svg)
 
 Apply this to an oriented incidence representation of an arbitrary undirected multigraph G. Its graphic-matroid rank is r=n-kappa(G), where kappa counts connected components including isolated vertices. The result is a deterministic polynomial-time subgraph with at most
 
-```math
+<!-- math-display: 67c2882801cd0160f15bca2b
 (h+1)(n-\kappa(G))
  \tag{16}
-```
+-->
+![Formula](../../../assets/math/67c2882801cd0160f15bca2b.svg)
 
 edges that preserves every connected component after any h edge-color failures. With arbitrary fixed signed edge costs it simultaneously contains a minimum spanning forest of every surviving graph. The guarantee is for all allowed failure sets, not a high-probability or sampled-query guarantee.
 
@@ -192,10 +209,11 @@ Otherwise D=rC<N. Now the number of lifted coordinates is smaller than the expli
 
 The coarse arithmetic cost is the cost of original rank compression, plus
 
-```math
+<!-- math-display: 8d7e3be8f000cdb89899345c
 O\!\left(N\,[d^2+C d\log(h+2)+D^2]\right)
  \tag{17}
-```
+-->
+![Formula](../../../assets/math/8d7e3be8f000cdb89899345c.svg)
 
 field operations for one straightforward implementation. This bound is deliberately conservative. The d=1 graph specialization has feature-generation cost O(Nh) and a Gaussian stage O(N[(h+1)r]^2) when the gate does not return the input.
 
@@ -244,17 +262,17 @@ An insertion stream with a fixed known ambient representation admits the usual m
 
 For streaming and merging, scalar assignments must remain fixed. An unknown growing finite-field label universe requires a known sufficient universe bound or a separately justified representation update. No such update is silently assumed here.
 
-## 7. Why the direct W–LF witness test is not the right algorithmic target
+## 7. Why the direct Bernoulli prefix witness test is not the right algorithmic target
 
 The generic witness decision asks, given a prior set A and a protected element e, whether some at-most-h label set avoiding Lambda(e) makes e lie outside span(A_F). Even for graphic matroids with at most one label per element, this subsumes parameterized Set Cover.
 
 Given a set-cover instance with universe U and sets S_1,...,S_L, construct one internally vertex-disjoint s–t path P_u for each u in U. Its edges have exactly the colors i with u in S_i, one edge of each such color. An element belonging to no input set can be handled immediately as a no-instance. Add a protected uncolored edge e=st, and let A consist of the path edges. Deleting a color set F disconnects s and t exactly when the chosen sets cover every u. In the graphic matroid, e is outside span(A_F) exactly when s and t are disconnected. This is the desired equivalence. If needed, subdivide one edge per short path into two equally colored edges to avoid parallel-path technicalities without changing the equivalence.
 
-Hence this generic witness decision is W[2]-hard parameterized by h, by the standard Set Cover baseline. This does **not** imply that constructing a valid summary is W[2]-hard, and does not imply that the actual intermediate states of the W–LF procedure realize every arbitrary A. The linear lift avoids the witness problem entirely. Minimum colored s–t cut hardness is a known antecedent, not a new hardness claim.
+Hence this generic witness decision is W[2]-hard parameterized by h, by the standard Set Cover baseline. This does **not** imply that constructing a valid summary is W[2]-hard, and does not imply that the actual intermediate states of the Bernoulli prefix procedure realize every arbitrary A. The linear lift avoids the witness problem entirely. Minimum colored s–t cut hardness is a known antecedent, not a new hardness claim.
 
 ## 8. Baselines and attribution boundaries
 
-1. **Prior project baseline W–LF.** For an arbitrary independence-oracle matroid, W–LF gives retained size at most r(h+d)^(h+d)/(h^h d^d), an exact lower bound r binomial(h+d,d), and a direct XP witness-enumeration construction. The present theorem reaches that lower bound and gives uniform polynomial preprocessing for explicitly represented matroids. The companion [rank-only theorem](arbitrary-matroid-and-submodular-failure-summaries.md) proves the same size bound for arbitrary oracle matroids, with fixed-parameter preprocessing. The [oracle prefix construction](weighted-oracle-prefix-fpt-construction.md) supplies an explicit FPT implementation at the larger W–LF factor, and the one-failure oracle endpoint attains the sharp factor in uniform polynomial time. For two or more failures, the [explicit obstruction](weighted-oracle-two-failure-obstruction.md) rules out this same weighted binomial bound for arbitrary oracle matroids.
+1. **Prior project baseline Bernoulli prefix.** For an arbitrary independence-oracle matroid, Bernoulli prefix gives retained size at most r(h+d)^(h+d)/(h^h d^d), an exact lower bound r binomial(h+d,d), and a direct XP witness-enumeration construction. The present theorem reaches that lower bound and gives uniform polynomial preprocessing for explicitly represented matroids. The companion [rank-only theorem](arbitrary-matroid-and-submodular-failure-summaries.md) proves the same size bound for arbitrary oracle matroids, with fixed-parameter preprocessing. The [oracle prefix construction](weighted-oracle-prefix-fpt-construction.md) supplies an explicit FPT implementation at the larger Bernoulli prefix factor, and the one-failure oracle endpoint attains the sharp factor in uniform polynomial time. For two or more failures, the [explicit obstruction](weighted-oracle-two-failure-obstruction.md) rules out this same weighted binomial bound for arbitrary oracle matroids.
 
 2. **Color-fault graph certificates.** Petruschka, Sapir, and Tzalik, *Color Fault-Tolerant Spanners*, ITCS 2024, Theorem 3 gives O(hn) edge/vertex-color connectivity-certificate existence, while the polynomial construction obtained from Theorem 21 has O(hn log n) edges. Their later *Connectivity Labeling in Faulty Colored Graphs*, Distributed Computing 39, article 14 (published 7 April 2026), explicitly restates the polynomial O(hn log n) certificate as Theorem 4.2. Relative to that checked constructive baseline, (16) removes the log n in retained graph size and additionally preserves every fixed-weight minimum spanning forest.
 
@@ -286,4 +304,4 @@ Hence this generic witness decision is W[2]-hard parameterized by h, by the stan
 
 ## 9. Representation boundary
 
-The polynomial lift uses the supplied linear representation and preserves a fixed additive cost order. The arbitrary-matroid rank-only theorem has a separate combinatorial proof and fixed-parameter construction. The sharp one-failure weighted endpoint also holds for arbitrary independence oracles, whereas from two failures onward the sharp weighted binomial bound fails in that model. The general oracle FPT construction has the larger W–LF factor. None of these statements preserves arbitrary nonadditive base valuations. The dimension gate and the finite-field extension in Section 5 are part of the algorithm.
+The polynomial lift uses the supplied linear representation and preserves a fixed additive cost order. The arbitrary-matroid rank-only theorem has a separate combinatorial proof and fixed-parameter construction. The sharp one-failure weighted endpoint also holds for arbitrary independence oracles, whereas from two failures onward the sharp weighted binomial bound fails in that model. The general oracle FPT construction has the larger Bernoulli prefix factor. None of these statements preserves arbitrary nonadditive base valuations. The dimension gate and the finite-field extension in Section 5 are part of the algorithm.

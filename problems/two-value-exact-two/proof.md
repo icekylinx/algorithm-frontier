@@ -20,11 +20,12 @@ recipient rank f_j, and arbitrary nonnegative rational costs c_pj.
 Integer counts n_j belong to P(f_j); unused resource capacity is
 allowed. The cost condition is
 
-```math
+<!-- math-display: 47cd9274d696d2728946bc34
 \sum_{p,j}c_{pj}n_j(p)\le C,
                               \qquad C\ge0.
  \tag{C1}
-```
+-->
+![Formula](../../assets/math/47cd9274d696d2728946bc34.svg)
 
 After discarding zero-rank or zero-value types, assume two distinct
 values 0<u<a, with small types J_s and large types J_b. Missing
@@ -49,11 +50,12 @@ actual large assignments per recipient to witness that fact.
 allocation satisfying (C1) exactly and giving each player utility
 at least OPT_C/2. Its running time and workspace are
 
-```math
+<!-- math-display: 6fed6b0cfe24a68ae72e0ff5
 (27/4)^{h_C}\mathrm{poly}(H),
                           \qquad\mathrm{poly}(H).
  \tag{C2}
-```
+-->
+![Formula](../../assets/math/6fed6b0cfe24a68ae72e0ff5.svg)
 
 H pays all original bits and the exact polynomial matroid, recipient,
 LP, submodular-minimization and decomposition primitives. Resource
@@ -89,12 +91,13 @@ does not expand numerical supply.
 
 For D>=0 define the fractional small count region
 
-```math
+<!-- math-display: 0d9268d52b7c0f8f6f8d8598
 \mathcal U_s(D)=\left\{z\ge0:\exists x_j\in P(f_j)\ (j\in J_s),
        \ \sum_{j\in J_s}x_j(p)\ge z_p\ (p),
        \ \sum_{p,j\in J_s}c_{pj}x_j(p)\le D\right\}.
  \tag{C3}
-```
+-->
+![Formula](../../assets/math/0d9268d52b7c0f8f6f8d8598.svg)
 
 This is a compact convex downward rational polytope. It has an
 exact nonnegative packing separator and reconstruction LP from
@@ -122,11 +125,12 @@ x* giving at least t units on I*, with total cost at most C.
 Whenever I* subseteq Q, its original large assignment is a
 permitted completion, and therefore
 
-```math
+<!-- math-display: e212385d7315e4155f4cb5af
 h_k(Q)\le c(H^*),\qquad
            c(x^*)\le C-c(H^*)\le C-h_k(Q).
  \tag{C4}
-```
+-->
+![Formula](../../assets/math/e212385d7315e4155f4cb5af.svg)
 
 The full t*1_(I*) is feasible in every current small-count region
 along a branch that preserves I*. Thus every local violated row
@@ -139,11 +143,12 @@ The abstract adaptive theorem and prefix-free accounting are in
 [Corank omission with a changing residual budget](../whole-ground-allocation/adaptive-selection.md). They give a gap routine
 of time
 
-```math
+<!-- math-display: abe1f4c74425186b0e58956d
 \Gamma(t/(t-b))^k\mathrm{poly}(H),
                          \qquad \Gamma(R)={R^R\over(R-1)^{R-1}},
  \tag{C5}
-```
+-->
+![Formula](../../assets/math/abe1f4c74425186b0e58956d.svg)
 
 with polynomial space, including failed completion calls. All
 current residual budgets have polynomial bit length because
@@ -180,20 +185,22 @@ directly and omit this quota procedure.
 
 Fix 0<T<2a and put
 
-```math
+<!-- math-display: 2e24026e129dae245ed60f5a
 K=\lceil T/u\rceil,
                        \qquad b=\lceil K/2\rceil.
  \tag{C6}
-```
+-->
+![Formula](../../assets/math/2e24026e129dae245ed60f5a.svg)
 
 For K>=2, use the adaptive count gap with t=K and this b, for
 every k=0,...,h_C. The ratio satisfies
 
-```math
+<!-- math-display: d82b6c7b417e134f26c4ab09
 K/(K-\lceil K/2\rceil)\le3,
                                 \qquad \Gamma(3)=27/4.
  \tag{C7}
-```
+-->
+![Formula](../../assets/math/d82b6c7b417e134f26c4ab09.svg)
 
 The maximum occurs at K=3. A success followed by Section 5 gives
 small utility b*u>=T/2 and large utility a>T/2, at cost at most C.
@@ -234,10 +241,11 @@ cost-preserving lower-rounding lemma, with free disposal and the
 cost-optimal full-total dual face. Its largest unit value is a,
 so the resulting integer utility is at least
 
-```math
+<!-- math-display: 22170eb07e566dad56277867
 T-a\ge T/2,
  \tag{C8}
-```
+-->
+![Formula](../../assets/math/22170eb07e566dad56277867.svg)
 
 and its total assignment cost is at most C. This branch uses a
 fixed compulsory player set, so no unknown-basis selection step
@@ -291,11 +299,12 @@ The zero-cost subclass already supplies the matching approximation
 threshold. Fix q>r>=2, set h=q-r, take one small unit-valued
 resource with hidden rank
 
-```math
+<!-- math-display: 009d2a29fb3c93be0acc2653
 f_A(S)=\min\{2|S|,2r\}-{\bf1}[|S|=r]+{\bf1}[S=A],
                                   \qquad |A|=r,
  \tag{C9}
-```
+-->
+![Formula](../../assets/math/009d2a29fb3c93be0acc2653.svg)
 
 and a large resource of value two with recipient matroid U_(h,q).
 Set all assignment costs and C to zero. The rank validity and

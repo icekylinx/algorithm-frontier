@@ -12,7 +12,7 @@ Deterministic exact algorithms and deterministic original-ground reductions in t
 
 **Time**
 
-One order $`2^{O(B)}`$; two orders $`2^{O(B\log(B+2))}`$; $`p`$ shared weight families $`2^{O(pB\log(p+2))}`$; common-weight laminar quotas $`2^{O(B^2)}`$, all times $`\mathrm{poly}(H)`$. Sparse and support-sensitive refinements appear below.
+One order <code class="math">2^{O(B)}</code>; two orders <code class="math">2^{O(B\log(B+2))}</code>; <code class="math">p</code> shared weight families <code class="math">2^{O(pB\log(p+2))}</code>; common-weight laminar quotas <code class="math">2^{O(B^2)}</code>, all times <code class="math">\mathrm{poly}(H)</code>. Sparse and support-sensitive refinements appear below.
 
 **Space**
 
@@ -20,7 +20,7 @@ Uniform polynomial binary workspace. Enumerated profiles and universal colorings
 
 **Parameters**
 
-$`B`$ bounds finite targets; $`B_0\le B`$ is the distinguished root cap; $`\Delta`$ bounds positive nonroot incidences; $`C`$ counts distinct support patterns; $`H`$ is the full encoded input with paid oracle work. Kernel parameters are solution size $`k`$ and the specified frequency or additional matroid count.
+<code class="math">B</code> bounds finite targets; <code class="math">B_0\le B</code> is the distinguished root cap; <code class="math">\Delta</code> bounds positive nonroot incidences; <code class="math">C</code> counts distinct support patterns; <code class="math">H</code> is the full encoded input with paid oracle work. Kernel parameters are solution size <code class="math">k</code> and the specified frequency or additional matroid count.
 
 **Model and representation**
 
@@ -28,11 +28,11 @@ One global normalized monotone integral polymatroid with exact rank access. Pref
 
 **Lower-bound scope**
 
-Oracle-query and readable-program ETH bounds are stated separately. Frequency-one disjoint weighted equalities already require $`2^{\Omega(B\log(B+2))}`$ queries. Row-dependent weights have a separate W[2] boundary. The laminar upper and lower exponents are not claimed to coincide.
+Oracle-query and readable-program ETH bounds are stated separately. Frequency-one disjoint weighted equalities already require <code class="math">2^{\Omega(B\log(B+2))}</code> queries. Row-dependent weights have a separate W[2] boundary. The laminar upper and lower exponents are not claimed to coincide.
 
 **Review status**
 
-**Ready for review in the stated scope.** The sharp sparse-packing FPT restriction, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and the aggregate laminar reduction to at most B lower rows.
+**Ready for review in the stated scope.** The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most B lower rows.
 
 **Conditions and remaining work.** The smaller sparse ground uses explicit FPT preprocessing; it is distinct from the uniform polynomial sunflower tradeoff. These checks do not verify the family’s general valuated completion, universal-coloring construction or lower-bound literature. Original oracles and weights remain available after restriction.
 
@@ -44,59 +44,59 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 ## Exact algorithm bounds
 
-All time bounds include $`\mathrm{poly}(H)`$.
+All time bounds include <code class="math">\mathrm{poly}(H)</code>.
 
 **One common order**
 
-$`2^{O(B)}`$
+<code class="math">2^{O(B)}</code>
 
 **Two common orders**
 
-$`2^{O(B\log(B+2))}`$
+<code class="math">2^{O(B\log(B+2))}</code>
 
-**One order, $`C`$ actual supports**
+**One order, <code class="math">C</code> actual supports**
 
-$`2^{O(\sqrt{B\min\{C,B\}})}`$
+<code class="math">2^{O(\sqrt{B\min\{C,B\}})}</code>
 
-**Two orders, $`C`$ actual supports**
+**Two orders, <code class="math">C</code> actual supports**
 
-$`2^{O(\min\{\sqrt{BC},B\log(2+\min\{C/B,B\})\})}`$
+<code class="math">2^{O(\min\{\sqrt{BC},B\log(2+\min\{C/B,B\})\})}</code>
 
-**$`p`$ shared weight families**
+**<code class="math">p</code> shared weight families**
 
-$`2^{O(pB\log(p+2))}`$
+<code class="math">2^{O(pB\log(p+2))}</code>
 
-**Common-weight laminar family with root cap $`B`$**
+**Common-weight laminar family with root cap <code class="math">B</code>**
 
-$`2^{4B^2+O(B\log(B+1))}`$
+<code class="math">2^{4B^2+O(B\log(B+1))}</code>
 
-**Root cap $`B_0`$, maximum target $`B`$, frequency $`\Delta`$**
+**Root cap <code class="math">B_0</code>, maximum target <code class="math">B</code>, frequency <code class="math">\Delta</code>**
 
-$`2^{O((\Delta+1)B_0\log((\Delta+1)B_0(B+2)+2))}`$; in particular $`2^{O(\Delta B\log(\Delta B+2))}`$ for $`\Delta\ge1`$
+<code class="math">2^{O((\Delta+1)B_0\log((\Delta+1)B_0(B+2)+2))}</code>; in particular <code class="math">2^{O(\Delta B\log(\Delta B+2))}</code> for <code class="math">\Delta\ge1</code>
 
 ## Deterministic ground reductions
 
 These constructions are polynomial in the explicit input. The retained original resource oracle and weights remain part of the output model.
 
-**One item matroid and frequency-$`\delta`$ sparse packing**
+**One item matroid and frequency-<code class="math">\delta</code> sparse packing**
 
-$`k\delta![k(\delta(k-1)+1)]^\delta=O_\delta(k^{2\delta+1})`$
+<code class="math">k\delta![k(\delta(k-1)+1)]^\delta=O_\delta(k^{2\delta+1})</code>
 
 **The same packing with distinct item supports**
 
-The leading multiplicity factor $`k`$ is unnecessary: $`O_\delta(k^{2\delta})`$
+The leading multiplicity factor <code class="math">k</code> is unnecessary: <code class="math">O_\delta(k^{2\delta})</code>
 
-**One arbitrary and $`d`$ additional coverable matroids**
+**One arbitrary and <code class="math">d</code> additional coverable matroids**
 
-$`k\,d![k(1+\sum_i g_i)]^d`$, for the stated closure-class bounds $`g_i`$
+<code class="math">k\,d![k(1+\sum_i g_i)]^d</code>, for the stated closure-class bounds <code class="math">g_i</code>
 
-**One arbitrary and $`d`$ explicitly represented transversal matroids**
+**One arbitrary and <code class="math">d</code> explicitly represented transversal matroids**
 
-$`O_d(k^{2d+1})`$
+<code class="math">O_d(k^{2d+1})</code>
 
 **Graph matching with one matroid on edges**
 
-$`O(k^4)`$ for simple graphs; $`O(k^5)`$ with parallel edges
+<code class="math">O(k^4)</code> for simple graphs; <code class="math">O(k^5)</code> with parallel edges
 
 **Sparse numeric quotas and valuated completion**
 
@@ -111,41 +111,41 @@ gives a different time/size tradeoff for one arbitrary item matroid.
 
 **Unweighted sparse packing**
 
-At most $`k\binom{\delta k}{\delta}=O_\delta(k^{\delta+1})`$ original
+At most <code class="math">k\binom{\delta k}{\delta}=O_\delta(k^{\delta+1})</code> original
 items, with deterministic
-$`2^{O(\delta k\log(\delta k+2))}\mathrm{poly}(H)`$ preprocessing.
+<code class="math">2^{O(\delta k\log(\delta k+2))}\mathrm{poly}(H)</code> preprocessing.
 This size is worst-case exact for single replacement against every
-original feasible context. With $`q`$ fixed profit values, multiply the
-support by at most $`q`$ to preserve profits exactly.
+original feasible context. With <code class="math">q</code> fixed profit values, multiply the
+support by at most <code class="math">q</code> to preserve profits exactly.
 
 **Arbitrary signed profits**
 
-At most $`e^\delta k^{\delta+1}`$ original items with no-worse-profit
+At most <code class="math">e^\delta k^{\delta+1}</code> original items with no-worse-profit
 replacements, independent of the number of profit values. The deterministic
 preprocessing has the same FPT parameter dependence. The exponent is
-optimal for original-context replacement at each fixed $`\delta`$; the
+optimal for original-context replacement at each fixed <code class="math">\delta</code>; the
 displayed constant is not claimed optimal.
 
 **Matching with an arbitrary edge matroid**
 
-Retain at most $`k\binom{2k}{2}`$ edges for unweighted replacement, or
-$`e^2k^3`$ for arbitrary signed profits, including parallel records.
-Both use $`2^{O(k\log(k+2))}\mathrm{poly}(H)`$ oracle time. This
-preprocessing is exponential in $`k`$; the polynomial-time reduction above
+Retain at most <code class="math">k\binom{2k}{2}</code> edges for unweighted replacement, or
+<code class="math">e^2k^3</code> for arbitrary signed profits, including parallel records.
+Both use <code class="math">2^{O(k\log(k+2))}\mathrm{poly}(H)</code> oracle time. This
+preprocessing is exponential in <code class="math">k</code>; the polynomial-time reduction above
 has a larger retained ground.
 
 **Larger packing capacities**
 
-If every feasible context saturates at most $`h`$ rows, the unweighted
-support becomes $`k\binom{h+\delta}{\delta}`$; arbitrary profits use
-$`k\Gamma(h,\delta)`$ with the explicit Bernoulli factor in the theorem.
+If every feasible context saturates at most <code class="math">h</code> rows, the unweighted
+support becomes <code class="math">k\binom{h+\delta}{\delta}</code>; arbitrary profits use
+<code class="math">k\Gamma(h,\delta)</code> with the explicit Bernoulli factor in the theorem.
 The theorem gives a polynomially computable inverse-capacity load bound
-on $`h`$. When $`h\le1`$, arbitrary signed
-profits admit at most $`(\delta+1)k`$ retained items with uniform
+on <code class="math">h</code>. When <code class="math">h\le1</code>, arbitrary signed
+profits admit at most <code class="math">(\delta+1)k</code> retained items with uniform
 polynomial preprocessing.
 
 For common-weight laminar quotas, aggregate lower demands also reduce
-the lower-row system to at most $`B`$ rows and $`B+1`$ membership patterns.
+the lower-row system to at most <code class="math">B</code> rows and <code class="math">B+1</code> membership patterns.
 This improves preprocessing and catalogue factors while leaving the
 stated quadratic exponential upper bound unchanged.
 

@@ -1,9 +1,10 @@
 # A master-controlled hierarchy with exponent 209/210
 
 **Abstract.** We give a conditional parameter balance for the master-size recurrence with common factor
-```math
+<!-- math-display: 6c05863dd099272e78f24079
 \exp\!\left(O_{c_0}\!\left(U^{209/210}(\log U)^2\right)\right).
-```
+-->
+![Formula](../../assets/math/6c05863dd099272e78f24079.svg)
 The proof varies the number of HRG levels, the reduction parameter, and the port capacity together. It relies on the explicit uniform realization hypothesis of [the master-size recurrence](growing-depth-metric-recurrence.md), including legal dynamic transactions and literal traversal certificates. The algebra below does not establish that complete implementation.
 
 The [separate outer composition](quantitative-matching-209-210-composition.md) uses additional matching-client hypotheses. The current stronger [main matching theorem](../../problems/general-matching/proof.md) retains the explicit cycle-search implementation requirements; this parameter specialization leaves them unresolved.
@@ -56,10 +57,11 @@ for a computable A to dominate fixed hidden coefficients rather than
 equating its exponent to an unknown constant times the same expression.
 
 **Theorem 1.** Assume the uniform recurrences, cover/spanner primitives, and complete lift/lifetime interface specified in the master-size analysis, including the parameterized HRG enumeration described in Section 2. The above parameters give a common backend factor
-```math
+<!-- math-display: 254e0e8c6a0533ba31b8cbbe
 E(S)=\exp\!\left(O_{c_0}\!\left(U^{209/210}(\log U)^2\right)\right)
-```
-for quality, occurrences, pieces, and amortized update/query/log work, with actual-inventory initialization multiplied by the same factor. The theorem is eventual in $`S`$, with finite resource guards and exact charged arithmetic.
+-->
+![Formula](../../assets/math/254e0e8c6a0533ba31b8cbbe.svg)
+for quality, occurrences, pieces, and amortized update/query/log work, with actual-inventory initialization multiplied by the same factor. The theorem is eventual in <code class="math">S</code>, with finite resource guards and exact charged arithmetic.
 
 ## 2. The parameterized HRG construction
 
@@ -298,4 +300,4 @@ log-overhead, while `a^2=o(s/a)` and `2^a` is also absorbed.
 The complete substitution, including its finite guards and final
 deterministic program, is given in
 [quantitative-matching-209-210-composition.md](quantitative-matching-209-210-composition.md). It derives the same
-fixed B-power bounds from the explicit client inequalities. The earlier $`335/336`$ calculation is a separate, weaker parameter specialization of the same conditional recurrence framework.
+fixed B-power bounds from the explicit client inequalities. The earlier <code class="math">335/336</code> calculation is a separate, weaker parameter specialization of the same conditional recurrence framework.

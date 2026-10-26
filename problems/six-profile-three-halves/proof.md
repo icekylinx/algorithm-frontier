@@ -7,10 +7,11 @@ For arbitrary machine-dependent processing times, six profiles per physical mach
 There are q>=1 physical machines. Type j has an integral normalized
 monotone submodular recipient rank f_j, with mandatory original count
 
-```math
+<!-- math-display: 07ffbeb36f8438e9e970bfab
 n_j=f_j(P),\qquad N=\sum_jn_j.
  \tag{SX1}
-```
+-->
+![Formula](../../assets/math/07ffbeb36f8438e9e970bfab.svg)
 
 Eligible pair (p,j) has nonnegative rational processing time ell_pj
 and nonnegative rational assignment cost c_pj. An integer schedule
@@ -24,10 +25,11 @@ and polymatroid-intersection work.
 original budget-feasible schedule exists, even with unbounded load,
 or returns a schedule of makespan at most (3/2)OPT in
 
-```math
+<!-- math-display: ae5d3e8c7a45bd26b0d1687e
 6^q\mathrm{poly}(H)\text{ time},\qquad \mathrm{poly}(H)\text{ space},
  \tag{SX2}
-```
+-->
+![Formula](../../assets/math/ae5d3e8c7a45bd26b0d1687e.svg)
 
 with all original type totals and the assignment-cost budget exact.
 The result is unconditional within this model; q counts all physical
@@ -38,10 +40,11 @@ machines, not a structural deficit or a restricted eligible subset.
 After any pair mask, the available rank of type j is at most its
 original n_j. The requirement
 
-```math
+<!-- math-display: 137440dd2565cbbe0539e589
 \sum_{p,j}x_j(p)=N.
  \tag{SX3}
-```
+-->
+![Formula](../../assets/math/137440dd2565cbbe0539e589.svg)
 
 therefore forces every type to attain its own original total. Masked
 rank loss cannot be hidden by assigning extra units of another type.
@@ -59,10 +62,11 @@ U_h=ceil(X_h), and impose integer prefix caps U_h. Their rank is
 max{U_h:e_h in S}, with empty rank zero. This is an integral chain
 polymatroid. Summation by parts yields
 
-```math
+<!-- math-display: e7a6b843ea629d8f92dc608b
 \sum_iv_ix_i^\prime\le\sum_iv_ix_i+v_1.
  \tag{SX4}
-```
+-->
+![Formula](../../assets/math/e7a6b843ea629d8f92dc608b.svg)
 
 Each disjoint big group below instead has total-count cap one, another
 integral polymatroid. All machine groups are combined by direct sum
@@ -114,7 +118,7 @@ The big contribution is at most the sum of big interval upper endpoints.
 The small contribution is at most its fractional cap plus 1/4, by
 SX4. The five normalized bounds are
 
-```math
+<!-- math-display: b46817f875793491cd70bfdb
 \begin{array}{ll}
  \text{Profile 1:}&3/4+1/2+1/4=3/2,\\
  \text{Profile 2:}&1+1/4+1/4=3/2,\\
@@ -123,7 +127,8 @@ SX4. The five normalized bounds are
  \text{Profile 5:}&1/2+5/8+1/8+1/4=3/2.
  \end{array}
  \tag{SX5}
-```
+-->
+![Formula](../../assets/math/b46817f875793491cd70bfdb.svg)
 
 Big groups are only upper-capped: omitting a big unit only improves
 these estimates. No per-type capacity, cost or assignment is split
@@ -151,10 +156,11 @@ less than T/4, fitting its small group and cap.
 
 Write its time as a. Since b>T/2 and a+b<=T,
 
-```math
+<!-- math-display: 3d9a80bbfa122c4f72b69c70
 T/4<a<T/2,\qquad T/2<b<3T/4.
  \tag{SX6}
-```
+-->
+![Formula](../../assets/math/3d9a80bbfa122c4f72b69c70.svg)
 
 Partition a into (T/4,3T/8] or (3T/8,T/2], and b into
 (T/2,5T/8] or (5T/8,3T/4]. Choosing both upper intervals would give
@@ -162,14 +168,15 @@ a>3T/8 and b>5T/8, hence a+b>T. That pair is impossible.
 
 The only possibilities are therefore
 
-```math
+<!-- math-display: bff3e4a037c74cc917daf8cc
 \begin{array}{ll}
  a\le3T/8,\ b\le5T/8:&\text{profile 3},\\
  a\le3T/8,\ b>5T/8:&\text{profile 4},\\
  a>3T/8,\ b\le5T/8:&\text{profile 5}.
  \end{array}
  \tag{SX7}
-```
+-->
+![Formula](../../assets/math/bff3e4a037c74cc917daf8cc.svg)
 
 All remaining units have time at most T/4. Their total load is at
 most T-a-b. The corresponding sums of interval lower endpoints
@@ -181,14 +188,15 @@ This classification is exhaustive and leaves the original schedule
 unchanged on every machine. Its resources, mandatory counts and
 cost therefore satisfy one enumerated profile LP. It follows that
 
-```math
+<!-- math-display: 70239fd08d73060fe593c3f6
 \begin{aligned}
  \text{target }T\text{ feasible}&\Longrightarrow
        \text{a legal schedule of load at most }3T/2,\\
  \text{every profile fails}&\Longrightarrow \mathrm{OPT}>T.
  \end{aligned}
  \tag{SX8}
-```
+-->
+![Formula](../../assets/math/70239fd08d73060fe593c3f6.svg)
 
 The algorithm does not treat weak success as full target-T feasibility.
 

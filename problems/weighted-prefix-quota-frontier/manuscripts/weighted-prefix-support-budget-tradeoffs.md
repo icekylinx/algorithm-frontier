@@ -14,55 +14,61 @@ Use the one-order model PX or the two-order model TP. Let B be the largest input
 
 For each eligible positive-weight coordinate e, let S_e be the set of retained quota rows whose prefix contains e. Define
 
-```math
+<!-- math-display: 33b0801bb9ebb3949178d983
 C=\left|\{S_e:S_e\ne\varnothing,\ w_e>0\}\right|.
  \tag{PS1}
-```
+-->
+![Formula](../../../assets/math/33b0801bb9ebb3949178d983.svg)
 
 C counts original positive supports after the prescribed preparation, before active/passive copying. It does not count distinct coefficient magnitudes. Zero-weight coordinates remain available for resource use and the scalar objective, but contribute no positive support.
 
 Within one order there are at most 2B retained rows, so C<=2B. With two orders a coordinate occupies one prefix-incidence interval in each order, and therefore
 
-```math
+<!-- math-display: a4658112e6e47fe2adc4af51
 C\le(2B+1)^2-1.
  \tag{PS2}
-```
+-->
+![Formula](../../../assets/math/a4658112e6e47fe2adc4af51.svg)
 
 These are counting bounds, not arrays constructed through the numeric target. Actual supports and occupied intervals are obtained from the explicit row and coordinate data.
 
 For positive real b,c define
 
-```math
+<!-- math-display: b6c566cbdeb6ef8a5efd3baa
 \begin{split}
  g_1(b,c)&=\sqrt{b\min\{c,b\}},\\
  g_2(b,c)&=\min\left\{\sqrt{bc},\
  b\log_2\left(2+\min\{c/b,b\}\right)\right\}.
  \end{split}
  \tag{PS3}
-```
+-->
+![Formula](../../../assets/math/b6c566cbdeb6ef8a5efd3baa.svg)
 
 **Upper theorem.** One order admits exact time
 
-```math
+<!-- math-display: a8513e0061af26366413c7c0
 2^{O(g_1(B,C))}\mathrm{poly}(H);
  \tag{PS4}
-```
+-->
+![Formula](../../../assets/math/a8513e0061af26366413c7c0.svg)
 
 two arbitrary orders admit exact time
 
-```math
+<!-- math-display: 08eaa277a3f6ca8830fe66c0
 2^{O(g_2(B,C))}\mathrm{poly}(H).
  \tag{PS5}
-```
+-->
+![Formula](../../../assets/math/08eaa277a3f6ca8830fe66c0.svg)
 
 Both have polynomial binary workspace. If B=0 or C=0, the direct preprocessing and scalar tests are polynomial.
 
 **Worst-case budget theorem.** For every integer b>=2^14 and c>=1, there are polynomial(b)-size explicit coefficient families with actual largest target at most b and actual support count at most c, for which any randomized algorithm correct with probability at least 2/3 needs at least
 
-```math
+<!-- math-display: 406a85a0a7b3399539b34c72
 2^{g_1(b,c)/64}\quad\hbox{or}\quad 2^{g_2(b,c)/64}
  \tag{PS6}
-```
+-->
+![Formula](../../../assets/math/406a85a0a7b3399539b34c72.svg)
 
 worst-case rank queries, respectively.
 
@@ -74,36 +80,40 @@ The constants are deliberately conservative. The budget theorem does not assert 
 
 On the prepared ground every nonzero column has the form a times the indicator of a support color. The one-order lift has at most two copies per coordinate; the two-order lift has at most four. Consequently
 
-```math
+<!-- math-display: 733680f2152e74c1185756f6
 q\le2C\ \hbox{for one order},\qquad
  q\le4C\ \hbox{for two orders}.
  \tag{PS7}
-```
+-->
+![Formula](../../../assets/math/733680f2152e74c1185756f6.svg)
 
 This holds even when distinct original supports merge after deleting cover components. Each original support has at most two or four deterministic marked images.
 
 The canonical first-reaching representatives from PX and TP have total nonzero magnitude mass at most
 
-```math
+<!-- math-display: f23c2905804891a6de1dba58
 W_1=2B-1,\qquad W_2=4B-2.
  \tag{PS8}
-```
+-->
+![Formula](../../../assets/math/f23c2905804891a6de1dba58.svg)
 
 All original resource units remain, including the zero-vector remainder, and every real scalar weight remains on its copies. The mass is an auxiliary profile bound, not the original resource rank.
 
 Let P_q(W) be the cumulative number of q-colored integer partitions of mass at most W. The generating function proof gives
 
-```math
+<!-- math-display: fdf5feb89809044d1fc59014
 P_q(W)\le\exp(2\sqrt{2qW}).
  \tag{PS9}
-```
+-->
+![Formula](../../../assets/math/fdf5feb89809044d1fc59014.svg)
 
 A second direct count gives
 
-```math
+<!-- math-display: 7d1ddfac020594e22781d653
 P_q(W)\le2^W\binom{q+W}{W}.
  \tag{PS10}
-```
+-->
+![Formula](../../../assets/math/7d1ddfac020594e22781d653.svg)
 
 Indeed, choose h used colors, then their positive masses summing to at most W in binomial(W,h) ways. A partition of a positive mass w on one color injects into compositions of w and has at most 2^w choices. Multiply and sum over h; Vandermonde's identity gives PS10.
 
@@ -121,11 +131,12 @@ All counts concern polynomial-size copied grounds. For one order there are two s
 
 Both g_1 and g_2 are nondecreasing in both arguments. For g_1 this follows by writing it as min{sqrt(bc),b}. For g_2, write it as the minimum of sqrt(bc), b log_2(2+c/b), and b log_2(b+2). The only less immediate derivative, apart from a positive logarithm conversion constant, is
 
-```math
+<!-- math-display: 9b4a3831c21a8e7511462d25
 \frac{d}{db}\bigl[b\ln(2+c/b)\bigr]
  =\ln(2+z)-\frac{z}{2+z}>0,\qquad z=c/b.
  \tag{PS11}
-```
+-->
+![Formula](../../../assets/math/9b4a3831c21a8e7511462d25.svg)
 
 Thus the per-instance upper bounds also bound the entire class with B<=b and C<=c.
 
@@ -133,26 +144,29 @@ Thus the per-instance upper bounds also bound the entire class with B<=b and C<=
 
 Fix positive integers p and a. Make p consecutive blocks of 4a elements each. Within each block the common weights are 1,2,...,4a. Put
 
-```math
+<!-- math-display: 7405e4cf936340951461b619
 \alpha=a(4a+1),
  \tag{PS12}
-```
+-->
+![Formula](../../../assets/math/7405e4cf936340951461b619.svg)
 
 and impose equality to j alpha at the prefix ending after block j, for j=1,...,p. Thus
 
-```math
+<!-- math-display: 2b0a60b431c28b1a503ee140
 B'=p\alpha,\qquad C'=p.
  \tag{PS13}
-```
+-->
+![Formula](../../../assets/math/2b0a60b431c28b1a503ee140.svg)
 
 There is exactly one distinct original positive incidence support per block. Within a block, pair i with 4a+1-i. There are 2a complementary pairs. Choose any a of them, giving 2a elements of weight alpha.
 
 Let G be the products of these choices across all p blocks. Its sets have size r=2ap and satisfy every cumulative equality. Its size obeys
 
-```math
+<!-- math-display: a6c241019437948578d3cea5
 N=\binom{2a}{a}^p\ge2^{ap},
  \tag{PS14}
-```
+-->
+![Formula](../../../assets/math/a6c241019437948578d3cea5.svg)
 
 because binomial(2a,a)>=2^a.
 
@@ -172,38 +186,42 @@ Under the balanced reference/hidden distribution, success at least 2/3 needs at 
 
 Given integers b>=20 and c>=1, choose
 
-```math
+<!-- math-display: ec5b57d4485aaa4755db6e6e
 p=\min\{c,\lfloor b/5\rfloor\},\qquad
  a=\left\lfloor\sqrt{\frac{b}{5p}}\right\rfloor.
  \tag{PS15}
-```
+-->
+![Formula](../../../assets/math/ec5b57d4485aaa4755db6e6e.svg)
 
 Both are positive. Since a>=1,
 
-```math
+<!-- math-display: 3675552c133eb6ff9a3017bc
 B'=pa(4a+1)\le5pa^2\le b,\qquad C'=p\le c.
  \tag{PS16}
-```
+-->
+![Formula](../../../assets/math/3675552c133eb6ff9a3017bc.svg)
 
 Also a>=one half of sqrt(b/(5p)), and p>=min(c,b)/10. Therefore
 
-```math
+<!-- math-display: 321a336d15415571d8b358f4
 \log_2N\ge ap
  \ge\frac{\sqrt{bp}}{2\sqrt5}
  \ge\frac{g_1(b,c)}{2\sqrt{50}}
  >\frac{g_1(b,c)}{16}.
  \tag{PS17}
-```
+-->
+![Formula](../../../assets/math/321a336d15415571d8b358f4.svg)
 
 This proves the one-order budget lower across every c, including c larger than the number of possible effective patterns. The chosen actual parameter need only be below the budget.
 
 The same one-order instances are also two-order instances, by providing no extra rows in the second order. When c/b<=4, one has g_2(b,c)<=2g_1(b,c). Hence PS17 gives
 
-```math
+<!-- math-display: 06609d6157fb9946353d49a6
 \log_2N>g_2(b,c)/32
  \qquad(c/b\le4).
  \tag{PS18}
-```
+-->
+![Formula](../../../assets/math/06609d6157fb9946353d49a6.svg)
 
 The input size is polynomial in b: p<=b/5, a<=sqrt(b), and 4ap=O(b). No numeric budget c enlarges the actual coefficient encoding beyond polynomial(b).
 
@@ -211,11 +229,12 @@ The input size is polynomial in b: p<=b/5, a<=sqrt(b), and 4ap=O(b). No numeric 
 
 Suppose b>=20 and c/b>4. Set
 
-```math
+<!-- math-display: 123cb4595c328fde77fa8f13
 k=\min\{\lfloor c/b\rfloor,\lfloor b/2\rfloor\},
  \qquad L=\lfloor b/k\rfloor,\qquad B'=Lk.
  \tag{PS19}
-```
+-->
+![Formula](../../../assets/math/123cb4595c328fde77fa8f13.svg)
 
 Then k>=4, k<=b/2, and b/2<=B'<=b. Take L disjoint copies of K_{k,k}, with B' vertices on each side in total. The ground consists of their edges, all with common weight one.
 
@@ -223,30 +242,33 @@ Order edges first by their left endpoint, with arbitrary order inside a block. A
 
 Subtracting consecutive cumulative equalities forces degree one at every left and right vertex. The feasible edge sets are exactly perfect matchings of the disjoint union. The largest target and original support count are
 
-```math
+<!-- math-display: 208b35d68e648162dc7ed69c
 B',\qquad C'=Lk^2=B'k\le bk\le c.
  \tag{PS20}
-```
+-->
+![Formula](../../../assets/math/208b35d68e648162dc7ed69c.svg)
 
 The original support distinguishes every allowed pair of endpoints, so C' is exactly the edge count, despite the common weight being one.
 
 There are
 
-```math
+<!-- math-display: 7dd07389b2e68fea9fec16e4
 N=(k!)^L
  \tag{PS21}
-```
+-->
+![Formula](../../../assets/math/7dd07389b2e68fea9fec16e4.svg)
 
 candidate perfect matchings, all of rank size B'. Distinct cumulative coefficient vectors imply nonadjacency under one exchange. A reference rank-B' matroid forbids all of them; a hidden instance restores one. An outside reference basis is obtained by a single replacement creating a repeated endpoint. All equalities, including the last full-prefix equality, force cardinality B', so the reference/hidden distinction is feasibility in both resource conventions.
 
 For k>=4, k!>=(k/2)^{k/2} gives log_2(k!)>=(k/4)log_2k. Put z=min(c/b,b). Since k>=z/4 and k>=4, one has 2+z<=5k<=k^3. Thus
 
-```math
+<!-- math-display: ebfd12a30e65c6c1622699d0
 \log_2N\ge\frac{B'}4\log_2k
  \ge\frac b{24}\log_2(2+z)
  \ge\frac{g_2(b,c)}{24}.
  \tag{PS22}
-```
+-->
+![Formula](../../../assets/math/ebfd12a30e65c6c1622699d0.svg)
 
 There are O(b squared) edges and O(b) rows, giving polynomial(b) explicit data. The resource is one globally hidden matroid, not a direct sum of independent resource oracles.
 
@@ -256,12 +278,13 @@ Combining PS17, PS18 and PS22 gives N>=2^{g_i(b,c)/32} in the corresponding mode
 
 The low-pattern construction also gives a uniform family of encoded ETH reductions. Let phi have nu variables. Choose any polynomial-time computable p with 1<=p<=nu, and set a=ceil(nu/p). Then
 
-```math
+<!-- math-display: 81d32bd8208fd3a3b2f9c89c
 \nu\le ap\le2\nu,\qquad
  B'=pa(4a+1),\qquad C'=p,\qquad
  \sqrt{B'C'}=\Theta(\nu).
  \tag{PS23}
-```
+-->
+![Formula](../../../assets/math/81d32bd8208fd3a3b2f9c89c.svg)
 
 The hidden-candidate count in PS14 is at least 2^nu and at most 2^{4nu}. A candidate in G is represented by, in each block, an a-subset of the 2a complementary-pair identifiers. Standard binomial suffix counts rank each such subset in polynomial time. Combining the p ranks in radix binomial(2a,a) ranks all members of G.
 

@@ -6,65 +6,66 @@ A polynomial label decoder turns every permitted failure and query into an ordin
 
 Write
 
-```math
+<!-- math-display: 3d659e4d96e4f0cbcef9263c
 S(D,\varepsilon)=O\!\left(\min\left\{m,\frac{D\log(2D/\varepsilon)}{\varepsilon^2}\right\}\right).
-```
+-->
+![Formula](../../assets/math/3d659e4d96e4f0cbcef9263c.svg)
 
-All constructions below are Monte Carlo randomized polynomial time in the explicit compact matrix/graph input and inverse accuracy. One event of probability at least $`2/3`$ covers every allowed failure and the entire query family, including queries selected after the output. The exact polynomial decoder and field-extension steps are deterministic; a failed sampling event can silently violate an approximation guarantee.
+All constructions below are Monte Carlo randomized polynomial time in the explicit compact matrix/graph input and inverse accuracy. One event of probability at least <code class="math">2/3</code> covers every allowed failure and the entire query family, including queries selected after the output. The exact polynomial decoder and field-extension steps are deterministic; a failed sampling event can silently violate an approximation guarantee.
 
-**Ordinary normalized monotone submodular quotients of rank $`r`$, positive marginals at least one**
+**Ordinary normalized monotone submodular quotients of rank <code class="math">r</code>, positive marginals at least one**
 
-**Lifted rank parameter $`D`$.** $`r`$
+**Lifted rank parameter <code class="math">D</code>.** <code class="math">r</code>
 
-**Retained support and output.** $`S(r,\varepsilon)`$ original items; $`O(\log\log(2m))`$ backend calls
+**Retained support and output.** <code class="math">S(r,\varepsilon)</code> original items; <code class="math">O(\log\log(2m))</code> backend calls
 
 **Proof.** [Adaptive resparsification theorem](manuscripts/adaptive-quotient-resparsification.md)
 
-**Represented columns or whole represented subspaces with incidence label deficit at most $`k`$**
+**Represented columns or whole represented subspaces with incidence label deficit at most <code class="math">k</code>**
 
-**Lifted rank parameter $`D`$.** $`r\binom{h+k}{k}`$
+**Lifted rank parameter <code class="math">D</code>.** <code class="math">r\binom{h+k}{k}</code>
 
-**Retained support and output.** $`S(D,\varepsilon)`$ original columns or whole blocks, preserving all subspace-complement queries
+**Retained support and output.** <code class="math">S(D,\varepsilon)</code> original columns or whole blocks, preserving all subspace-complement queries
 
 **Proof.** [Column theorem](manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md), [Theorem B1](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 
-**Undirected graph: at most $`a`$ labels per vertex and $`b`$ additional labels per edge**
+**Undirected graph: at most <code class="math">a</code> labels per vertex and <code class="math">b</code> additional labels per edge**
 
-**Lifted rank parameter $`D`$.** $`(n-c)\binom{h+a+b}{a+b}`$
+**Lifted rank parameter <code class="math">D</code>.** <code class="math">(n-c)\binom{h+a+b}{a+b}</code>
 
-**Retained support and output.** $`S(D,\varepsilon)`$ edges, preserving every cut after every allowed failure
+**Retained support and output.** <code class="math">S(D,\varepsilon)</code> edges, preserving every cut after every allowed failure
 
 **Proof.** [Equation EC1](manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md)
 
 **One vertex color per graph vertex, no additional edge labels**
 
-**Lifted rank parameter $`D`$.** $`(n-c)(h+1)`$
+**Lifted rank parameter <code class="math">D</code>.** <code class="math">(n-c)(h+1)</code>
 
-**Retained support and output.** $`S(D,\varepsilon)`$ edges with one fixed coefficient each
+**Retained support and output.** <code class="math">S(D,\varepsilon)</code> edges with one fixed coefficient each
 
 **Proof.** [Equation EC2](manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md)
 
-**Hyperedges of size at most $`t`$, with at most $`a`$ vertex labels and $`b`$ additional item labels**
+**Hyperedges of size at most <code class="math">t</code>, with at most <code class="math">a</code> vertex labels and <code class="math">b</code> additional item labels**
 
-**Lifted rank parameter $`D`$.** $`(n-c)\binom{h+a(t-1)+b}{a(t-1)+b}`$
+**Lifted rank parameter <code class="math">D</code>.** <code class="math">(n-c)\binom{h+a(t-1)+b}{a(t-1)+b}</code>
 
-**Retained support and output.** $`S(D,\varepsilon)`$ whole hyperedges; cuts and partition-crossing objectives
+**Retained support and output.** <code class="math">S(D,\varepsilon)</code> whole hyperedges; cuts and partition-crossing objectives
 
 **Proof.** [Equation B6](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 
-**Whole hedges, with at most $`d`$ labels per hedge**
+**Whole hedges, with at most <code class="math">d</code> labels per hedge**
 
-**Lifted rank parameter $`D`$.** At most $`(n-c)\binom{h+d}{d}`$
+**Lifted rank parameter <code class="math">D</code>.** At most <code class="math">(n-c)\binom{h+d}{d}</code>
 
-**Retained support and output.** $`S(D,\varepsilon)`$ whole hedges; no factor for the number of constituent edges
+**Retained support and output.** <code class="math">S(D,\varepsilon)</code> whole hedges; no factor for the number of constituent edges
 
 **Proof.** [Equation B9](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 
-**Globally commuting prime-dimensional stabilizer blocks, at most $`d`$ labels per block**
+**Globally commuting prime-dimensional stabilizer blocks, at most <code class="math">d</code> labels per block**
 
-**Lifted rank parameter $`D`$.** $`(n+1)\binom{h+d}{d}`$
+**Lifted rank parameter <code class="math">D</code>.** <code class="math">(n+1)\binom{h+d}{d}</code>
 
-**Retained support and output.** $`S(D,\varepsilon)`$ whole blocks; simultaneous all-state energy and kernel preservation
+**Retained support and output.** <code class="math">S(D,\varepsilon)</code> whole blocks; simultaneous all-state energy and kernel preservation
 
 **Proof.** [Equations B10–B11](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 
@@ -72,15 +73,15 @@ All constructions below are Monte Carlo randomized polynomial time in the explic
 
 **Objective and output**
 
-One original-item reweighting preserving every stated cut, partition, represented quotient, or commuting-block energy after all sets of at most $`h`$ failed labels.
+One original-item reweighting preserving every stated cut, partition, represented quotient, or commuting-block energy after all sets of at most <code class="math">h</code> failed labels.
 
 **Randomness**
 
-Monte Carlo randomized preprocessing, with success probability at least $`2/3`$ for one event covering every allowed failure and quotient/cut query. Queries and failed labels may be chosen after the summary is revealed. The exact label decoder and field-extension arithmetic are deterministic.
+Monte Carlo randomized preprocessing, with success probability at least <code class="math">2/3</code> for one event covering every allowed failure and quotient/cut query. Queries and failed labels may be chosen after the summary is revealed. The exact label decoder and field-extension arithmetic are deterministic.
 
 **Time**
 
-Polynomial in explicit compact input length and $`\varepsilon^{-1}`$; the construction returns the whole input before materializing a lift whose dimension exceeds the item count. No failure set is enumerated.
+Polynomial in explicit compact input length and <code class="math">\varepsilon^{-1}</code>; the construction returns the whole input before materializing a lift whose dimension exceeds the item count. No failure set is enumerated.
 
 **Space**
 
@@ -88,7 +89,7 @@ Lifted rank bounds and retained support are separate from workspace. Only the po
 
 **Parameters**
 
-$`m`$ counts original items, $`r`$ is original concatenated-column rank, $`c`$ counts positive-input components including isolated vertices, $`h`$ is the failure budget, and $`k`$ bounds item labels absent from an incident row.
+<code class="math">m</code> counts original items, <code class="math">r</code> is original concatenated-column rank, <code class="math">c</code> counts positive-input components including isolated vertices, <code class="math">h</code> is the failure budget, and <code class="math">k</code> bounds item labels absent from an incident row.
 
 **Model and representation**
 
@@ -96,7 +97,7 @@ Explicit rational or finite-field matrices and rational item weights. A failed v
 
 **Lower-bound scope**
 
-Simple unweighted graph and hypergraph families require $`\Omega\!\left(\frac{n\binom{h+k}{k}}{\varepsilon^2}\right)`$ original items in the stated large-$`n`$ regimes. Repeated labeled commuting-check families require $`\Omega\!\left(\frac{n\binom{h+d}{d}}{\varepsilon^2}\right)`$ when $`n\ge2\left\lceil\varepsilon^{-2}\right\rceil`$. These are support lower bounds allowing arbitrary nonnegative output weights.
+Simple unweighted graph and hypergraph families require <code class="math">\Omega\!\left(\frac{n\binom{h+k}{k}}{\varepsilon^2}\right)</code> original items in the stated large-<code class="math">n</code> regimes. Repeated labeled commuting-check families require <code class="math">\Omega\!\left(\frac{n\binom{h+d}{d}}{\varepsilon^2}\right)</code> when <code class="math">n\ge2\left\lceil\varepsilon^{-2}\right\rceil</code>. These are support lower bounds allowing arbitrary nonnegative output weights.
 
 **Review status**
 

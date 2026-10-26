@@ -29,9 +29,9 @@ Do not turn an audit note into a formal-verification claim. An output verifier p
 
 Every public result should separate guarantee, objective, time, space, parameters, representation, lower-bound type, and review status. See [`docs/COMPLEXITY.md`](docs/COMPLEXITY.md). Unconditional rank-oracle query bounds and deterministic-ETH consequences must be displayed as different statements.
 
-GitHub-facing pages and canonical manuscripts use protected inline mathematics
-and fenced `math` displays, so Markdown preserves TeX escapes. Ordinary code
-spans describe code and exact encodings.
+GitHub-facing pages use literal inline mathematical code and checked-in SVG
+equations. Their exact TeX source remains recoverable; no live GitHub math
+renderer is required. TeX migration and PDF readiness are tracked separately.
 See [the maintenance guide](CONTRIBUTING.md).
 
 ## Recommended citation

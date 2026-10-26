@@ -37,8 +37,8 @@ from verify_subset_sum_scalars import CONTACTS
 
 CHECKER_SHA256 = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 EXPECTED_CHOICES = [
-    dict(rho=rho, gamma=gamma, tau=tau, target=target, branch=branch)
-    for rho, gamma, points in CONTACTS
+    dict(rho=rho, gamma=gamma, gamma2=gamma2, tau=tau, target=target, branch=branch)
+    for rho, gamma, gamma2, points in CONTACTS
     for tau, target in points
     for branch in (["direct"] if gamma == "direct" else ["push", "recursive"])
 ]
@@ -163,11 +163,11 @@ def corners(box):
 
 class Family:
     def __init__(self, rho: F, gamma: F | None, tau: F, target: F,
-                 branch: str):
-        self.rho, self.gamma = rho, gamma
+                 branch: str, gamma2: F = F(1, 2)):
+        self.rho, self.gamma, self.gamma2 = rho, gamma, gamma2
         self.tau, self.target, self.branch = tau, target, branch
         if not (0 < A < S < 1 and B == S - A and 0 < T < 1
-                and rho > 1 and 0 < tau < 1 and target > 0):
+                and rho > 1 and 0 < tau < 1 and target > 0 and 0 < gamma2 < 1):
             raise ValueError("invalid fixed types or contact parameters")
         beta_top = A + rho * (S - A)
         if beta_top >= min(T, 1 - T, 1 - S):
@@ -176,10 +176,11 @@ class Family:
             raise ValueError("recursive lookup fraction must lie in (0,1)")
         self.beta = add(aff(A * (1 - rho)), mul(rho, M))
         self.c = mul(gamma or F(0), self.beta)
-        self.c2 = mul(F(1, 2), self.c)
+        self.c2 = mul(gamma2, self.c)
+        self.cut = mul(1 - gamma2, self.c)
         self.q1 = sub(self.beta, Z)
         self.d1 = sub(self.c, self.q1)
-        self.w1 = add(self.c2, V)
+        self.w1 = add(self.cut, V)
         self.q = sub(self.c2, V)
         self.d = sub(M, aff(A))
         self.r = sub(aff(S), M)
@@ -187,9 +188,9 @@ class Family:
         self.constraints = [sub(Z, M), sub(self.beta, Z)]
         if branch == "push":
             self.constraints += [sub(M, self.c2),
-                                 sub(Z, sub(self.beta, self.c2))]
+                                 sub(Z, sub(self.beta, self.cut))]
         elif branch == "recursive":
-            self.constraints += [V, sub(V, sub(self.q1, self.c2)),
+            self.constraints += [V, sub(V, sub(self.q1, self.cut)),
                                  sub(V, sub(self.c2, M)),
                                  sub(self.c2, V), self.D]
         elif branch != "direct":
@@ -234,15 +235,16 @@ class Family:
         m, z, v = (float((lo + hi) / 2) for lo, hi in box)
         beta = float(A) + float(self.rho) * (m - float(A))
         c = float(self.gamma or 0) * beta
+        c2, cut = float(self.gamma2) * c, float(1 - self.gamma2) * c
         if self.branch == "push":
-            z = min(beta, max(z, m, beta - c / 2))
+            z = min(beta, max(z, m, beta - cut))
             v = 0.0
         elif self.branch == "recursive":
             # A globally feasible center is sufficient to propose tangents;
             # it need not be inside the current relaxed box.
-            vlo, vhi = max(0.0, c / 2 - m), min(c / 2, beta - m - c / 2)
+            vlo, vhi = max(0.0, c2 - m), min(c2, beta - m - cut)
             v = max(vlo, min(vhi, v))
-            z = min(beta, max(z, m, beta - c / 2 - v))
+            z = min(beta, max(z, m, beta - cut - v))
         else:
             z = min(beta, max(z, m))
         return m, z, v
@@ -264,6 +266,7 @@ class Family:
         rho, gamma, tau = float(self.rho), float(self.gamma or 0), float(self.tau)
         beta = float(A) + rho * (m - float(A))
         c, d, r = gamma * beta, m - float(A), float(S) - m
+        c2, cut = float(self.gamma2) * c, float(1 - self.gamma2) * c
         q1, d1 = beta - z, c - beta + z
         p = {"outer1": probability(z, float(T)),
              "outer2": probability(beta - z, 1 - float(T)),
@@ -272,7 +275,7 @@ class Family:
         if self.branch == "direct":
             p["direct"] = probability(z - m, beta - m)
         elif self.branch == "push":
-            lo, hi = max(q1, c - m, 0.0), min(beta - m, c / 2)
+            lo, hi = max(q1, c - m, 0.0), min(beta - m, cut)
             def derivative(w):
                 return ((1 - tau) * (log(beta - m - w) + log(c - w)
                         - log(w) - log(m - c + w))
@@ -284,7 +287,7 @@ class Family:
             wzero = max(lo, min(hi, q1 + d1 / 2))
             p["pushzero"] = probability(wzero - q1, d1)
         else:
-            c2, w1, q = c / 2, c / 2 + v, c / 2 - v
+            w1, q = cut + v, c2 - v
             D = beta - m - w1
             p.update(first1=probability(w1, beta - m),
                      first2=probability(q, m))
@@ -399,7 +402,7 @@ class Family:
 
         if self.branch == "push":
             lower = [self.q1, sub(self.c, M), ZERO]
-            upper = [sub(self.beta, M), self.c2]
+            upper = [sub(self.beta, M), self.cut]
             raw = add(mul(rtau, gib("push1", sub(self.beta, M), AUX)),
                       mul(rtau, gib("push2", M, sub(self.c, AUX))),
                       mul(tau, gib("push3", self.d1, sub(AUX, self.q1))))
@@ -448,9 +451,9 @@ class Family:
 
 
 def verify_contact(job):
-    rho, gamma, tau, target, branch, max_nodes = job
+    rho, gamma, gamma2, tau, target, branch, max_nodes = job
     family = Family(F(rho), None if gamma == "direct" else F(gamma),
-                    F(tau), F(target), branch)
+                    F(tau), F(target), branch, F(1, 2) if gamma2 == "direct" else F(gamma2))
     pending = [(family.initial(), 0)]
     nodes, leaves, empty, depthmax = 0, 0, 0, 0
     methods = Counter()
@@ -490,7 +493,7 @@ def verify_contact(job):
         pending.append((tuple(left), depth + 1))
     if nodes != 2 * (leaves + empty) - 1:
         raise RuntimeError("the completed binary subdivision has inconsistent node counts")
-    return dict(rho=rho, gamma=gamma, tau=tau, target=target, branch=branch,
+    return dict(rho=rho, gamma=gamma, gamma2=gamma2, tau=tau, target=target, branch=branch,
                 leaves=leaves, empty=empty, nodes=nodes, depth=depthmax,
                 maximum=str(largest), minimum_margin=None if margin is None else str(margin),
                 methods=dict(methods),
@@ -507,17 +510,17 @@ def check_receipt(path: Path):
     def require(condition, message):
         if not condition:
             raise ValueError("invalid contact receipt: " + message)
-    require(receipt.get("receipt_schema") == 1, "unsupported schema")
+    require(receipt.get("receipt_schema") == 2, "unsupported schema")
     require(receipt.get("status") == "PASS", "full run did not pass")
     require(receipt.get("complete_X02_contact_menu") is True, "incomplete menu")
     require(receipt.get("checker_sha256") == CHECKER_SHA256, "checker bytes changed")
     require(receipt.get("menu_sha256") == MENU_SHA256, "contact menu changed")
     require(receipt.get("expected_choices") == EXPECTED_CHOICES, "wrong expected choices")
-    require(receipt.get("expected_branch_count") == len(EXPECTED_CHOICES) == 44,
+    require(receipt.get("expected_branch_count") == len(EXPECTED_CHOICES) == 62,
             "wrong expected branch count")
     results = receipt.get("results", [])
-    require(len(results) == receipt.get("branches") == 44, "wrong covered branch count")
-    fields = ("rho", "gamma", "tau", "target", "branch")
+    require(len(results) == receipt.get("branches") == 62, "wrong covered branch count")
+    fields = ("rho", "gamma", "gamma2", "tau", "target", "branch")
     choices = lambda records: sorted(tuple(row.get(key) for key in fields) for row in records)
     require(choices(results) == choices(EXPECTED_CHOICES), "missing or repeated branch")
     total_leaves = 0
@@ -533,7 +536,8 @@ def check_receipt(path: Path):
                 all(type(x) is int and x > 0 for x in methods.values()) and
                 sum(methods.values()) == leaves, "invalid accepted-leaf counts")
         family = Family(F(row["rho"]), None if row["gamma"] == "direct" else F(row["gamma"]),
-                        F(row["tau"]), F(row["target"]), row["branch"])
+                        F(row["tau"]), F(row["target"]), row["branch"],
+                        F(1, 2) if row["gamma2"] == "direct" else F(row["gamma2"]))
         maximum = F(row["maximum"])
         if leaves:
             margin = F(row["minimum_margin"])
@@ -547,14 +551,16 @@ def check_receipt(path: Path):
         total_leaves += leaves
     require(total_leaves == receipt.get("leaves"), "wrong total leaf count")
     print(json.dumps(dict(status="receipt binding PASS", checker_sha256=CHECKER_SHA256,
-                          menu_sha256=MENU_SHA256, branches=44, leaves=total_leaves,
+                          menu_sha256=MENU_SHA256, branches=62, leaves=total_leaves,
                           scope="provenance and coverage metadata; full replay uses --all"),
                      sort_keys=True))
 
 
 def main():
+    if not __debug__:
+        raise SystemExit('Run mathematical verification without python -O.')
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--all", action="store_true", help="verify all 44 branches")
+    parser.add_argument("--all", action="store_true", help="verify all 62 branches")
     parser.add_argument("--rho", help="select an exact family parameter")
     parser.add_argument("--tau", help="select one exact contact")
     parser.add_argument("--branch", choices=("push", "recursive", "direct"))
@@ -574,7 +580,7 @@ def main():
     if not args.all and not args.rho and not args.branch:
         parser.error("select --all, --rho, or --branch")
     jobs = []
-    for rho, gamma, points in CONTACTS:
+    for rho, gamma, gamma2, points in CONTACTS:
         if args.rho and F(rho) != F(args.rho):
             continue
         for tau, target in points:
@@ -582,7 +588,7 @@ def main():
                 continue
             for branch in (["direct"] if gamma == "direct" else ["push", "recursive"]):
                 if not args.branch or branch == args.branch:
-                    jobs.append((rho, gamma, tau, target, branch, args.max_nodes))
+                    jobs.append((rho, gamma, gamma2, tau, target, branch, args.max_nodes))
     if not jobs:
         parser.error("selection contains no contacts")
     results = []
@@ -600,9 +606,9 @@ def main():
                 print(json.dumps(result, sort_keys=True), flush=True)
     if hashlib.sha256(Path(__file__).read_bytes()).hexdigest() != CHECKER_SHA256:
         raise RuntimeError("checker bytes changed during the run; no receipt will be written")
-    complete = (len(results) == len(EXPECTED_CHOICES) == 44 and args.all and not args.rho
+    complete = (len(results) == len(EXPECTED_CHOICES) == 62 and args.all and not args.rho
                 and not args.tau and not args.branch)
-    summary = dict(receipt_schema=1, status="PASS", complete_X02_contact_menu=complete,
+    summary = dict(receipt_schema=2, status="PASS", complete_X02_contact_menu=complete,
                    checker_sha256=CHECKER_SHA256, menu_sha256=MENU_SHA256,
                    expected_branch_count=len(EXPECTED_CHOICES), expected_choices=EXPECTED_CHOICES,
                    branches=len(results), leaves=sum(r["leaves"] for r in results),

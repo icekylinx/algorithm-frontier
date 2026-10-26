@@ -27,21 +27,23 @@ included in that solver extension.
 Fix one integral recipient polymatroid f on player set P. For a subset
 S, write
 
-```math
+<!-- math-display: db0dd3c4f023ea4f9a2509d1
 m_p(S)=f(S\cup\{p\})-f(S),
  \tag{C1}
-```
+-->
+![Formula](../../assets/math/db0dd3c4f023ea4f9a2509d1.svg)
 
 which is zero for p in S. For the configuration variables mu_pn of
 the original relaxation, its subset cut is
 
-```math
+<!-- math-display: 9ed91628970daccefa620a52
 \boxed{
  \sum_p\sum_n\mu_{pn}\bigl(n_j-m_p(S)\bigr)_+\le f(S)
                   \quad(S\subseteq P).
  }
  \tag{C2}
-```
+-->
+![Formula](../../assets/math/9ed91628970daccefa620a52.svg)
 
 There is one such family for each resource j, using that resource's
 rank f_j and the corresponding configuration coordinate n_j.
@@ -52,17 +54,19 @@ Let n be any feasible integral recipient vector. Put
 A={p:n_p>m_p(S)}. Polymatroid feasibility, monotonicity and diminishing
 returns give
 
-```math
+<!-- math-display: 8fe9f99993c43b273ad779f3
 n(A)\le f(A)\le f(S\cup A)
                  \le f(S)+\sum_{p\in A}m_p(S).
-```
+-->
+![Formula](../../assets/math/8fe9f99993c43b273ad779f3.svg)
 
 Subtract the last sum to obtain
 
-```math
+<!-- math-display: 27c48738ffaa79229f202c4f
 \sum_p(n_p-m_p(S))_+\le f(S).
  \tag{C3}
-```
+-->
+![Formula](../../assets/math/27c48738ffaa79229f202c4f.svg)
 
 An integer allocation on a selected player basis satisfies (C2) by
 putting mass one on its selected configurations and zero on other
@@ -74,21 +78,23 @@ representation or any approximation algorithm.
 
 For an arbitrary real feasible vector z in P(f), define
 
-```math
+<!-- math-display: a479173dc7011aa2c9b9ac3b
 a_p(z)=\min_{T\ni p}\{f(T)-z(T)\},\qquad
  F(z)=\sum_{p,n}\mu_{pn}(n_j-a_p(z))_+-z(P).
  \tag{C4}
-```
+-->
+![Formula](../../assets/math/a479173dc7011aa2c9b9ac3b.svg)
 
 For integer z, F(z)<=0 is the preceding note's residual-capacity cut.
 For the equivalence proof we may evaluate the same formula on the
 whole real polymatroid. Every summand is convex, since
 
-```math
+<!-- math-display: b57d7d828fe0773a727d42dd
 (n_j-a_p(z))_+
  =\max\left\{0,\max_{T\ni p}\bigl(n_j-f(T)+z(T)\bigr)\right\}
  \tag{C5}
-```
+-->
+![Formula](../../assets/math/b57d7d828fe0773a727d42dd.svg)
 
 is a maximum of affine functions of z. All mu coefficients are
 nonnegative, and subtracting z(P) is affine. Therefore F is convex.
@@ -103,10 +109,11 @@ assume any integrality or capacity expansion of the configuration point.
 Polymatroid vertices are obtained by the greedy construction on an
 ordered subset A=(p_1,...,p_s): with A_i={p_1,...,p_i}, set
 
-```math
+<!-- math-display: 6e2384371e0de892cc5de606
 z_{p_i}=f(A_i)-f(A_{i-1}),\qquad z_p=0\ (p\notin A).
  \tag{C6}
-```
+-->
+![Formula](../../assets/math/6e2384371e0de892cc5de606.svg)
 
 The resulting vector is integral, feasible and has sum f(A). These
 greedy vectors contain every vertex: maximizing any linear objective
@@ -118,11 +125,12 @@ In the natural matroid, a vector (C6) is a basis of the union E_A of
 all player-copy blocks in A. It therefore spans E_A. Its residual
 individual capacities depend only on A, not on its greedy order:
 
-```math
+<!-- math-display: a21fea253180fc8a1bdfe73a
 a_p(z)=r(E_A\cup E_p)-r(E_A)
                     =f(A\cup\{p\})-f(A)=m_p(A).
  \tag{C7}
-```
+-->
+![Formula](../../assets/math/a21fea253180fc8a1bdfe73a.svg)
 
 Its right side z(P) is f(A). The residual inequality for this vertex
 is exactly the subset cut (C2) indexed by A.
@@ -147,22 +155,24 @@ Conversely, the greedy basis for a subset A of size at most s has
 at most s nonzero coordinates. Its residual cut belongs to that
 bounded-support family. Thus
 
-```math
+<!-- math-display: 702aaf92a6e107452c7a2d8b
 \boxed{\begin{array}{c}
  \text{all feasible reserved-count cuts with support at most }s\\
  \Longleftrightarrow\\
  \text{all subset cuts (C2) with }|S|\le s.
  \end{array}}
  \tag{C8}
-```
+-->
+![Formula](../../assets/math/702aaf92a6e107452c7a2d8b.svg)
 
 The algorithm requires only s=2(r-1) at completed normalized states.
 There are consequently at most
 
-```math
+<!-- math-display: 80b5d422cf9839dbc11269a3
 \sum_{i=0}^{\min\{q,2r-2\}}\binom qi
  \tag{C9}
-```
+-->
+![Formula](../../assets/math/80b5d422cf9839dbc11269a3.svg)
 
 cuts per resource in this sufficient relaxation. The earlier
 factor-four and positive-error rank-quasipolynomial guarantees apply
@@ -188,11 +198,12 @@ cut family in 2^q times polynomial explicit-support work. Enumerating
 only subsets of size at most s separates the bounded-support family
 in
 
-```math
+<!-- math-display: f0c33218dc47ab1bd53a461d
 \left(\sum_{i=0}^{\min(q,s)}\binom qi\right)
        \mathrm{poly}(H,\text{explicit configuration support}).
  \tag{C10}
-```
+-->
+![Formula](../../assets/math/f0c33218dc47ab1bd53a461d.svg)
 
 For s=2(r-1), this is q^{O(r)} and is independent of numerical
 capacity magnitudes except for their binary arithmetic. This is an

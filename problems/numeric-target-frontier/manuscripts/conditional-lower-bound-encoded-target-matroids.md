@@ -9,10 +9,11 @@ Assuming deterministic ETH, no deterministic algorithm solves the
 stated mixed-target problem on all polynomial-size rank-circuit
 matroids in
 
-```math
+<!-- math-display: 15b660ed24cb0d5462800e27
 2^{o(T\log(T+2))}\mathrm{poly}(H),
 \tag{ET1}
-```
+-->
+![Formula](../../../assets/math/15b660ed24cb0d5462800e27.svg)
 
 where `T` is the total numeric target and `H` includes the explicit
 rank-circuit description. The lower bound already uses binary row
@@ -50,10 +51,11 @@ than a matrix representation of a linear matroid.
 Given a 3-CNF formula `phi` with `N` variables, choose the
 smallest even integer `d>=4` such that
 
-```math
+<!-- math-display: 09e094f3f7c8c7824dc4e96c
 L_d=(d-1)!!\ge2^N.
 \tag{ET2}
-```
+-->
+![Formula](../../../assets/math/09e094f3f7c8c7824dc4e96c.svg)
 
 Let the ground be all unordered pairs of `[d]`, and let
 `r=d/2`. The number of perfect matchings on this ground is
@@ -63,10 +65,11 @@ smallest remaining vertex, giving `L_d=(d-1)L_{d-2}`.
 Elementary product bounds give
 `log L_d=Theta(d log d)`. Minimality in ET2 therefore implies
 
-```math
+<!-- math-display: 48852a9b45b18a602dab41bd
 d\log d=\Theta(N)
 \tag{ET3}
-```
+-->
+![Formula](../../../assets/math/48852a9b45b18a602dab41bd.svg)
 
 for growing `N`. The constant-size initial cases are harmless.
 Computing the first such `d` uses polynomially many binary
@@ -82,10 +85,11 @@ smallest vertex in increasing order. Each partner choice has
 exactly `(m-3)!!` residual matchings. If the chosen partner has
 zero-based index `j`, the rank is
 
-```math
+<!-- math-display: cbb038cc05fc853a8ea4a9d2
 j(m-3)!!+\text{rank of the residual matching}.
 \tag{ET4}
-```
+-->
+![Formula](../../../assets/math/cbb038cc05fc853a8ea4a9d2.svg)
 
 Use the empty matching rank zero and `(-1)!!=1`. This is a
 bijection between the perfect matchings and integers
@@ -95,10 +99,11 @@ There is no enumeration of all matchings.
 
 Decode a matching `A` into the `N` assignment bits of
 
-```math
+<!-- math-display: 3d01b73bb544da8164ce1fe9
 \mathrm{rank}(A)\bmod 2^N.
 \tag{ET5}
-```
+-->
+![Formula](../../../assets/math/3d01b73bb544da8164ce1fe9.svg)
 
 This map is surjective: the first `2^N` ranks already supply
 all assignments. Evaluating `phi` on a decoded assignment
@@ -151,22 +156,24 @@ For every vertex `j` create its incidence row on the edge
 ground, with target one. There are `d` rows, all with binary
 coefficients, and
 
-```math
+<!-- math-display: 322c82158cf7670c8d9e2f1d
 T=d.
 \tag{ET6}
-```
+-->
+![Formula](../../../assets/math/322c82158cf7670c8d9e2f1d.svg)
 
 A base satisfying equality in every row is a perfect matching.
 Such a matching is a basis of `M_phi` precisely when its
 decoded assignment satisfies `phi`. Surjectivity of ET5
 therefore gives
 
-```math
+<!-- math-display: 478c357ce1683a4cadddcaf3
 \phi\text{ is satisfiable}
  \quad\Longleftrightarrow\quad
  \text{the target instance is feasible}.
 \tag{ET7}
-```
+-->
+![Formula](../../../assets/math/478c357ce1683a4cadddcaf3.svg)
 
 The same equivalence holds for pure covering rows over either
 independent sets or bases: total endpoint incidence is at most

@@ -18,11 +18,12 @@ binary-capacity implementation and the equality limitation.
 Let F be one normalized monotone integral polymatroid rank on an
 explicit coordinate ground E. Write
 
-```math
+<!-- math-display: 69986e38cb2166338df807c5
 P(F)=\{x\ge0:x(S)\le F(S)\text{ for every }S\subseteq E\},
  \quad R=F(E),\qquad B(F)=\{x\in P(F):x(E)=R\}.
  \tag{AN1}
-```
+-->
+![Formula](../../../assets/math/69986e38cb2166338df807c5.svg)
 
 The resource vector x is integer and belongs either to P(F) or to
 B(F). Every coordinate has a binary integer domain 0<=x_e<=d_e,
@@ -32,12 +33,13 @@ eligibility restrictions.
 
 For j=1,...,d, prescribe a nonnegative integer target T_j and a row
 
-```math
+<!-- math-display: bd4baf827db236bba836988c
 A_j(x)=\sum_{e\in E} A_{je}(x_e)\ \rho_j\ T_j,
  \qquad \rho_j\in\{\le,=,\ge\},\qquad
  T=\sum_{j=1}^d T_j.
  \tag{AN2}
-```
+-->
+![Formula](../../../assets/math/bd4baf827db236bba836988c.svg)
 
 Every A_je is zero at zero, nondecreasing, and given by an explicit
 list of constant nonnegative **integer marginal slopes** on integer
@@ -51,10 +53,11 @@ intervals. The function shapes must agree with the row directions:
 
 The scalar objective is
 
-```math
+<!-- math-display: d5ea368484be80ed188aaf15
 W(x)=\sum_e W_e(x_e).
  \tag{AN3}
-```
+-->
+![Formula](../../../assets/math/d5ea368484be80ed188aaf15.svg)
 
 It is zero at zero, nondecreasing, and given by explicit rational
 nonnegative marginal slopes. For **MIN W**, require convex W_e.
@@ -66,18 +69,20 @@ There is an exact deterministic algorithm that detects infeasibility
 and computes the chosen scalar optimum, together with an actual
 integer resource vector. For fixed d its running time is
 
-```math
+<!-- math-display: d8cbb9f432b0bb02f39d7325
 \exp\!\bigl(O_d((T+1)^{d/(d+1)})\bigr)
                                   \mathrm{poly}(H).
  \tag{AN4}
-```
+-->
+![Formula](../../../assets/math/d8cbb9f432b0bb02f39d7325.svg)
 
 When d is part of the input, the running time is
 
-```math
+<!-- math-display: b50a820f735f7f7b6c16038c
 2^{O((T+1)\log(T+2))}\mathrm{poly}(H).
  \tag{AN5}
-```
+-->
+![Formula](../../../assets/math/b50a820f735f7f7b6c16038c.svg)
 
 Both statements use **polynomial binary workspace**, uniformly in
 the full input encoding for AN5. H includes all explicit marginal
@@ -89,7 +94,7 @@ individual resource units.
 The sharper fixed-dimensional bound keeps the individual targets.
 After removing zero targets as described below, let
 
-```math
+<!-- math-display: dd0ed9fa20b304b7ac8e8ceb
 U_j=\begin{cases}T_j,&\rho_j\in\{\le,=\},\\
                   2T_j-1,&\rho_j=\ge,
        \end{cases}
@@ -97,7 +102,8 @@ U_j=\begin{cases}T_j,&\rho_j\in\{\le,=\},\\
  K(U)=\max_{\varnothing\ne S\subseteq[d']}
              \left(\prod_{j\in S}U_j\right)^{1/(|S|+1)}.
  \tag{AN6}
-```
+-->
+![Formula](../../../assets/math/dd0ed9fa20b304b7ac8e8ceb.svg)
 
 Here d' is the number of positive remaining caps. If d'=0 the
 problem is polynomial. Otherwise the bound is exp(O_d(K(U)))
@@ -123,11 +129,12 @@ coordinate with domain zero is forced to zero and has no bands.
 Merge the breakpoints of all d row functions and the scalar function
 at each coordinate. Write the common refinement as
 
-```math
+<!-- math-display: fd6decc5626b71caad615fea
 0=b_{e0}<b_{e1}<\cdots<b_{em_e}=d_e,
  \qquad \ell_{ei}=b_{ei}-b_{e,i-1}>0.
  \tag{AN7}
-```
+-->
+![Formula](../../../assets/math/fd6decc5626b71caad615fea.svg)
 
 Let a^j_ei be the row-j marginal and w_ei the scalar marginal
 on the i-th interval. Refinement preserves every monotonicity
@@ -138,10 +145,11 @@ lengths are not replaced by that many coordinates.
 
 For an integer count k define its canonical prefix representation
 
-```math
+<!-- math-display: 4d26d2358c009486b76368e9
 z^*_{ei}(k)=\min\{\ell_{ei},\max\{0,k-b_{e,i-1}\}\}.
  \tag{AN8}
-```
+-->
+![Formula](../../../assets/math/4d26d2358c009486b76368e9.svg)
 
 Then A_je(k)=sum_i a^j_ei z^*_ei(k) and
 W_e(k)=sum_i w_ei z^*_ei(k), exactly. All-zero bands and bands
@@ -161,25 +169,28 @@ For z>=0, put x_e=sum_i z_ei. The full inverse image of any
 original set proves one implication, and
 z(S)<=x(pi(S)) proves the other in
 
-```math
+<!-- math-display: 9752a4ee0c7cf4c248181b47
 z\in P(H_0)\quad\Longleftrightarrow
                   \quad x\in P(F).
  \tag{AN9}
-```
+-->
+![Formula](../../../assets/math/9752a4ee0c7cf4c248181b47.svg)
 
 Impose the binary band capacities through the rank
 
-```math
+<!-- math-display: 6bacafee829d5619f1f91bb8
 G(S)=\min_{Y\subseteq S}\{H_0(Y)+\ell(S\setminus Y)\}.
  \tag{AN10}
-```
+-->
+![Formula](../../../assets/math/6bacafee829d5619f1f91bb8.svg)
 
 This is normalized, monotone, integral and submodular, with
 
-```math
+<!-- math-display: c1ac3e09304dc838b61c382a
 P(G)=P(H_0)\cap\{0\le z\le\ell\}.
  \tag{AN11}
-```
+-->
+![Formula](../../../assets/math/c1ac3e09304dc838b61c382a.svg)
 
 For completeness, monotonicity follows by intersecting a minimizer
 for a larger set with the smaller set. Submodularity follows by
@@ -193,12 +204,13 @@ G({i})<=ell_i gives all box constraints.
 A rank query needs only submodular minimization on the original
 ground, because
 
-```math
+<!-- math-display: cb5e3802edac616eff86cbad
 G(S)=\min_{A\subseteq E}
      \left\{F(A)+\sum_{e\notin A}
                      \ell(S\cap\pi^{-1}(e))\right\}.
  \tag{AN12}
-```
+-->
+![Formula](../../../assets/math/cb5e3802edac616eff86cbad.svg)
 
 Once a set Y contains any S-band of e, including every other
 S-band of e does not change its projected rank and can only
@@ -210,11 +222,12 @@ function is submodular plus a modular term and a constant.
 
 In particular,
 
-```math
+<!-- math-display: 3c3079f190a13b1066efa556
 \{\mathrm{agg}z:z\in P(G)\}
            =P(F)\cap\{0\le x\le d\}.
  \tag{AN13}
-```
+-->
+![Formula](../../../assets/math/3c3079f190a13b1066efa556.svg)
 
 The reverse inclusion uses the canonical vector AN8; the forward
 inclusion uses AN9 and the band caps. The statement is exact
@@ -235,19 +248,21 @@ It is not an original mandatory resource unit.
 Take any band vector 0<=z<=ell and fix an original coordinate e.
 Let k=sum_i z_ei. For every h<m_e, its cumulative prefix satisfies
 
-```math
+<!-- math-display: ed62b88d3b829ae7816a62e0
 Z_h=\sum_{i\le h}z_{ei}\le\min\{k,b_{eh}\}
                        =\sum_{i\le h}z^*_{ei}(k)=Z^*_h.
  \tag{AN14}
-```
+-->
+![Formula](../../../assets/math/ed62b88d3b829ae7816a62e0.svg)
 
 For any slope sequence v_i, summation by parts gives
 
-```math
+<!-- math-display: 119789489c0e83904e29ce37
 \sum_i v_i(z^*_{ei}-z_{ei})
        =\sum_{h<m_e}(v_h-v_{h+1})(Z^*_h-Z_h).
  \tag{AN15}
-```
+-->
+![Formula](../../../assets/math/119789489c0e83904e29ce37.svg)
 
 The total difference is zero, so there is no final-boundary term.
 Consequently the same prefix vector has every one of these
@@ -273,13 +288,14 @@ because their required inequality directions are opposite.
 
 Consider the following linear band instance:
 
-```math
+<!-- math-display: 5b7c5181ab4b97f611fcf11f
 z\in P(G)\cap\mathbb Z^D
        \quad\text{or the required total-R base},\qquad
    \sum_{e,i}a^j_{ei}z_{ei}\ \rho_j\ T_j,
  \qquad \text{optimize }\sum_{e,i}w_{ei}z_{ei}.
  \tag{AN16}
-```
+-->
+![Formula](../../../assets/math/5b7c5181ab4b97f611fcf11f.svg)
 
 Every original feasible integer x has the canonical lift AN8,
 which preserves **all** row values and the scalar value exactly.
@@ -359,13 +375,14 @@ proof that this profile is empty.
 For fixed d, the number of component-capped vector profiles is
 bounded by the multivariate-partition estimate
 
-```math
+<!-- math-display: 3bc6bd59ca9f42fefd73f3aa
 \log\mathcal P(U)\le
  \sum_j t_jU_j+
        2\sum_{\varnothing\ne S\subseteq[d']}
                           \prod_{j\in S}t_j^{-1}.
  \tag{AN17}
-```
+-->
+![Formula](../../../assets/math/3bc6bd59ca9f42fefd73f3aa.svg)
 
 Set t_j=K(U)/U_j. Each product is at most K(U), giving
 log P(U)<= (d'+2(2^{d'}-1)) K(U). The s! factor is constant
@@ -380,12 +397,13 @@ each vector occurrence becomes a block with its color counts,
 and the unused tokens accompany the marker. Reading the
 nonmarker blocks recovers the profile. Therefore
 
-```math
+<!-- math-display: 8e317d462abd026721788d56
 \mathcal P(U_1,\ldots,U_{d'})\le
         \mathrm{Bell}(U+1)\le(U+1)^{U+1},
  \qquad s!\le T!.
  \tag{AN18}
-```
+-->
+![Formula](../../../assets/math/8e317d462abd026721788d56.svg)
 
 These bounds prove AN5. The tokens are only a counting device.
 No object of numeric length T is materialized.
@@ -395,11 +413,12 @@ No object of numeric length T is materialized.
 For the next occupied vector b, the streamed depth-first count
 range is bounded by the remaining resource total and by
 
-```math
+<!-- math-display: 114a8aa93d153a6ea2875ae6
 \min_{j:b_j>0}
                    \left\lfloor\frac{U_j-W_j}{b_j}\right\rfloor,
  \tag{AN19}
-```
+-->
+![Formula](../../../assets/math/114a8aa93d153a6ea2875ae6.svg)
 
 where W_j is the current component total. Every visited partial
 profile has a zero completion satisfying these upper caps.
@@ -464,10 +483,11 @@ and VT therefore remain subclasses of the present theorem.
 For each fixed d, d linear equality rows on ordinary matroid
 bases give the lower bound
 
-```math
+<!-- math-display: 04211504565afd8e428bd4c9
 \exp(\Omega_d(T^{d/(d+1)})).
  \tag{AN20}
-```
+-->
+![Formula](../../../assets/math/04211504565afd8e428bd4c9.svg)
 
 It concerns the worst-case target-exponent order; it does not
 assert a matching lower bound for every anisotropic target

@@ -26,20 +26,22 @@ the a-sized types, and put h=f_b(P)>0. Zero-rank types are removed.
 Let M be the unit-box restriction of f_b. First assume r_M(P)=h.
 The smaller Boolean-rank case is handled in Section 6. Define
 
-```math
+<!-- math-display: 25a4b7877ce8a8530c0364db
 W_p=\sum_{j:p_j<a}p_j f_j(\{p\}),\qquad
  u=\max_{j:p_j<a,\ f_j(P)>0}p_j.
  \tag{B1}
-```
+-->
+![Formula](../../assets/math/25a4b7877ce8a8530c0364db.svg)
 
 The one-size case is polynomially solvable and is handled separately.
 For an integer budget 1<=k<=h, define
 
-```math
+<!-- math-display: 0a55798a555b399d25255617
 \lambda_k=
  \min\{z:r_M(\{p:W_p\le z\})\ge h-k\},
  \tag{B2}
-```
+-->
+![Formula](../../assets/math/0a55798a555b399d25255617.svg)
 
 with lambda_h=0 and an empty commitment when k=h. Sorting W_p and
 running matroid greedy constructs an independent set F0 of exactly
@@ -71,10 +73,11 @@ the output quota b to J, or soundly rejects the K-unit promise.
 Regard y as a vector on all machines by setting it to **zero on F0**.
 It is still feasible in P(f): for any set S,
 
-```math
+<!-- math-display: d2953e72acdadcf7f112bffa
 y(S)=y(S\cap Q)\le f(S\cap Q)\le f(S).
  \tag{B3}
-```
+-->
+![Formula](../../assets/math/d2953e72acdadcf7f112bffa.svg)
 
 Extend this vector to an integral base of f. No positive preassignment
 at F0 has to be combined with the residual resource vector. Thus no
@@ -89,11 +92,12 @@ base, and rounding all smaller job types integrally, every original
 type j is still a base of f_j. In particular, at every committed
 machine p, its final count satisfies x_j(p)<=f_j({p}). Therefore
 
-```math
+<!-- math-display: 7faa519ff7d0e191e9a4ef6d
 \text{load}(p)\le a+\sum_{j:p_j<a}p_j f_j(\{p\})
                 \le a+\lambda_k\qquad(p\in F0).
  \tag{B4}
-```
+-->
+![Formula](../../assets/math/7faa519ff7d0e191e9a4ef6d.svg)
 
 There is **no extra +u in (B4)**. It bounds the final original-type
 integer bases directly, rather than their fractional precursors.
@@ -109,10 +113,11 @@ every original integral schedule load.
 
 At rank k the unit-core condition
 
-```math
+<!-- math-display: 038952bed99f66a21d29ea8f
 (3-2/k)b<K+1+(k-1)/k
  \tag{B5}
-```
+-->
+![Formula](../../assets/math/038952bed99f66a21d29ea8f.svg)
 
 holds because its left side is at most Db=K. With D=D_k+eta,
 0<eta<=1, its relative growth slack is greater than eta/2, using
@@ -123,31 +128,34 @@ On noncommitted selected machines, reconstruction and rounding give
 load at most T+(1-1/D)a+u. On nonselected machines the load is at
 most T+u. Together with (B4), the hard-target output bound is
 
-```math
+<!-- math-display: 8925a2f2f45124a19ff73fbc
 \max\{T+(1-1/D)a+u,\ a+\lambda_k\}.
  \tag{B6}
-```
+-->
+![Formula](../../assets/math/8925a2f2f45124a19ff73fbc.svg)
 
 For T>=2a, the public additive rounding algorithm on all jobs has
 bound T+a<=3T/2. Write beta(D)=max{3/2,2-1/D}. The optimized theorem is
 
-```math
+<!-- math-display: a3beb9b17bb7cdbebed16012
 \boxed{
  C_{\max}\le
  \min\left\{\mathrm{OPT}+a,
        \max\{\beta(D)\,\mathrm{OPT}+u,\ a+\lambda_k\}\right\}.
  }
  \tag{B7}
-```
+-->
+![Formula](../../assets/math/a3beb9b17bb7cdbebed16012.svg)
 
 The first term is obtained by also solving the full original assignment relaxation and applying additive-largest-job rounding; its makespan is at most OPT+a. Return the better actual schedule. For D=D_k the new construction
 takes `2^{O(k)} poly(H)` time. For D=D_k+eta it takes
 
-```math
+<!-- math-display: 9315fd2d49b4036cfe286e9f
 \mathrm{poly}(H)
  \min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\}.
  \tag{B8}
-```
+-->
+![Formula](../../assets/math/9315fd2d49b4036cfe286e9f.svg)
 
 Space is polynomial, in addition to oracle workspace. Artificial
 workload units and large binary capacities are not expanded.
@@ -163,10 +171,11 @@ Suppose all smaller jobs have size u<a, with aggregate rank f_s.
 Then W_p=u f_s({p}). Use the integral small-count dual directly,
 with c=floor(T/u), K=c-floor((T-a)/u), and exact rank-k quota
 
-```math
+<!-- math-display: 6b9cf1c453c8d80ce43c5a9b
 b_k(K)=\left\lfloor\frac{kK+2k-2}{3k-2}\right\rfloor.
  \tag{B9}
-```
+-->
+![Formula](../../assets/math/6b9cf1c453c8d80ce43c5a9b.svg)
 
 The contraction promise and zero extension are unchanged. Original
 small counts are already integral, so no workload rounding occurs.
@@ -177,7 +186,7 @@ the load is bounded by a+lambda_k, with lambda in workload units.
 The unit quota gives a uniform hard-target coefficient 3/2 for
 k=1,2 and 5/3 for k>=3. The easy branch is at most 3/2. Consequently
 
-```math
+<!-- math-display: 9b4996d406d101a0eb81aca6
 \boxed{
  C_{\max}\le
  \max\{\alpha_k\,\mathrm{OPT},\ a+\lambda_k\},\qquad
@@ -185,7 +194,8 @@ k=1,2 and 5/3 for k>=3. The easy branch is at most 3/2. Consequently
  \end{cases}
  }
  \tag{B10}
-```
+-->
+![Formula](../../assets/math/9b4996d406d101a0eb81aca6.svg)
 
 The time is `2^{O(k)} poly(H)`. One may additionally return the
 better schedule from the public polynomial `(7/4+epsilon)` algorithm
@@ -233,10 +243,11 @@ bounded a+lambda_k. This is why the original OPT can be retained.
 
 If OPT<2a and the old private rank condition holds at OPT, then
 
-```math
+<!-- math-display: 2b57aceda40475fab4755155
 a+\lambda_k\le\mathrm{OPT}+(1-1/D)a
               \le(2-1/D)\mathrm{OPT}.
-```
+-->
+![Formula](../../assets/math/2b57aceda40475fab4755155.svg)
 
 For OPT>=2a, the separate public additive algorithm has load at most
 OPT+a<=3 OPT/2 regardless of lambda_k. Thus returning its schedule

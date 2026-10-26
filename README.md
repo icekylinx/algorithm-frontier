@@ -18,15 +18,16 @@ Executable exact solver, independent certificates and a faster conditional resea
 
 **Quantitative result.**
 
-Executable $`O(n+m\log(m+2)+\sum_i k_i^3)`$ including certificates.
+Executable <code class="math">O(n+m\log(m+2)+\sum_i\nu(G_i)^3)</code> including certificates.
 
 Conditional research bound:
 
-```math
+<!-- math-display: 959b4822078bcdb0b44c8061
 O(n+m)+(m_s+1)\exp(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5}))
-```
+-->
+![Formula](assets/math/959b4822078bcdb0b44c8061.svg)
 
-**Model and scope.** The reference solver uses only the Python standard library; k_i counts retained kernel vertices in component i. The faster research bound still requires an unimplemented deterministic cycle-search and edge-retirement data structure. Its precise operations and published prerequisites are listed with the proof.
+**Model and scope.** The reference solver uses only the Python standard library; nu(G_i) is the matching number of component i. A cover-based compression limits blossom search to at most four times that number. The faster research bound still requires an unimplemented deterministic cycle-search and edge-retirement data structure, with named published prerequisites.
 
 ### [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/)
 
@@ -36,29 +37,28 @@ Exact decision and indexed witness.
 
 **Quantitative result.**
 
-```math
-C+\mathrm{poly}(n,L)2^{0.495890734n}
-```
+<!-- math-display: 8bb0f251ccb5da8a921fc6a4
+C+\mathrm{poly}(n,L)2^{0.495836n}
+-->
+![Formula](assets/math/8bb0f251ccb5da8a921fc6a4.svg)
 
 Exact rational exponent on the card.
 
-**Model and scope.** Exact rational certification of all 44 continuous contact branches; C is finite input-independent circuit precomputation; combinatorial compiler and bit-cost proofs are in the manuscript.
+**Model and scope.** Exact rational certification of all 62 continuous contact branches, followed by a finite-volume cone improvement; C is finite input-independent circuit precomputation; combinatorial compiler and bit-cost proofs are in the manuscript.
 
 ### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
 
-Sharp represented cost-prefix and oracle-rank summaries; weighted oracle endpoint and obstruction.
+Sharp represented and rank summaries; exact two-failure rank-four oracle maximum.
 
 **Randomness.** Deterministic exact constructions. Random permutations and Bernoulli failures appear only in output-size proofs; no query sampling or probability of error.
 
 **Quantitative result.**
 
-Represented prefixes and oracle rank: $`r\binom{h+d}{d}`$.
+Represented prefixes and oracle rank: <code class="math">r\binom{h+d}{d}</code>.
 
-Integral range $`R`$: $`R\binom{h+d}{d}`$.
+Two failed labels and one label per item: sharp <code class="math">3r</code> through rank three, exactly 13 at rank four.
 
-Sharp one-failure weighted oracle size $`(d+1)r`$.
-
-**Model and scope.** Uniform polynomial represented construction; explicit oracle FPT construction with linear input dependence for fixed parameters. General weighted oracle prefixes have the larger W–LF bound; a 13-item nonrepresentable example rules out the sharp binomial bound from two failures onward.
+**Model and scope.** Rank is r, failed-label budget is h, and each item has at most d labels. Represented preprocessing is uniform polynomial; arbitrary-oracle prefix construction uses a deterministic canonical-basis tree. The 13-item nonrepresentable example is minimal in rank, label count and ground size for exceeding 3r under two failures.
 
 ## Results
 

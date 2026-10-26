@@ -9,10 +9,11 @@ algorithmic interface has not been closed in this audit.
 
 The initial accepted new construction has value
 
-```math
+<!-- math-display: e33e8773ac10423c98fca16f
 (T-u)/3-\varepsilon T,
  \qquad u=\max_jv_j,
-```
+-->
+![Formula](../../assets/math/e33e8773ac10423c98fca16f.svg)
 
 for the player-basis relaxation `Q(T)`, with quasipolynomial running
 time for fixed positive epsilon. The coefficient one third is not a
@@ -24,9 +25,10 @@ The subsequent audited refinement is recorded in
 [matroid-allocation-sharp-star-rank-quality.md](matroid-allocation-sharp-star-rank-quality.md). If the player matroid
 has rank r, write rho=(r-1)/r and
 
-```math
+<!-- math-display: 8fe699225096255f77ec12e2
 C(B,u)=\max\{u,2B+\min(u,B)\}.
-```
+-->
+![Formula](../../assets/math/8fe699225096255f77ec12e2.svg)
 
 Every positive B satisfying `B+rho C(B,u)<=T` is attained in
 `mathcal P 2^{O(r)} poly(b+log mathcal P)` time, with an explicit
@@ -43,12 +45,13 @@ In Davies--Rothvoss--Zhang (DRZ), a matroid is given on the player set.
 One must select a basis and give those players disjoint sets of liked
 resources. Resource values are player-independent. The relaxation is
 
-```math
+<!-- math-display: d6f16942b73c28edc74e25da
 x\in P_{\mathcal B(\mathcal M)},\qquad
  \sum_j v_j y_{pj}\ge Tx_p,\qquad
  \sum_p y_{pj}\le1,\qquad 0\le y_{pj}\le x_p.
  \tag{1}
-```
+-->
+![Formula](../../assets/math/d6f16942b73c28edc74e25da.svg)
 
 This is exactly the model of the new construction. The condition
 `y_pj<=x_p` is used in its infeasibility proof. A guarantee against the
@@ -101,7 +104,7 @@ Section 4, and is separate from the following exact calculations.
 Normalize `delta=u/T`. Write the free parameters in DRZ Lemmas 8--12
 as `alpha`, `beta`, and `kappa`, with
 
-```math
+<!-- math-display: 2a734663ab7b157bb61585b4
 \begin{split}
  \mu&=\frac{1-\alpha-\delta-(\alpha+\delta)
                     (\beta/(\alpha-\beta)+\kappa)}{1+\delta},\\
@@ -110,28 +113,31 @@ as `alpha`, `beta`, and `kappa`, with
                     {\beta+\delta+\kappa(\alpha-\beta)}.
  \end{split}
  \tag{2}
-```
+-->
+![Formula](../../assets/math/2a734663ab7b157bb61585b4.svg)
 
 For `0<=delta<1` and `0<eta<(1-delta)^2/4`, set
 
-```math
+<!-- math-display: f09ad543d763e7eb27415201
 \alpha=\frac{1-\delta}{2},\qquad
  \beta=\alpha^2-\eta,\qquad
  d=\alpha-\beta,\qquad
  \kappa=\frac{\eta}{2d(1-\alpha)}.
  \tag{3}
-```
+-->
+![Formula](../../assets/math/f09ad543d763e7eb27415201.svg)
 
 Substitution gives
 
-```math
+<!-- math-display: 766ba8f2bbd599ea80309662
 \mu=\frac{\eta}{2d(1+\delta)}=\frac\kappa2,
  \qquad
  \phi=\frac d{1-\alpha},
  \qquad
  c_{\rm grow}=\frac{2\eta}{(1+\delta)^3-4\delta\eta}.
  \tag{4}
-```
+-->
+![Formula](../../assets/math/766ba8f2bbd599ea80309662.svg)
 
 All three are positive. For example, the domain implies
 `mu>=eta`, `kappa>=2eta`, `phi>=alpha>sqrt(eta)`, and
@@ -144,13 +150,14 @@ free-edge branch supplies a swappable fraction `phi mu`; its inner
 collapse branch supplies `kappa c_grow`. These need not be as large
 as `c_grow` itself. A safe common parameter is
 
-```math
+<!-- math-display: 2e5cc99a4b7c233c76921ab1
 c_* =\min\{c_{\rm grow},\phi\mu,\kappa c_{\rm grow},1/4\},
  \qquad
  \gamma=\frac{1}{2\bigl(\lceil\log(2/c_*)/
                                   \log(1+c_*)\rceil+1\bigr)}.
  \tag{5}
-```
+-->
+![Formula](../../assets/math/2e5cc99a4b7c233c76921ab1.svg)
 
 The same concentration proof then has both its required growth and
 fraction hypotheses. Conservatively, `c_*=Omega(eta^2)` and gamma
@@ -161,10 +168,11 @@ is supplied correctly.
 
 The resulting candidate value would be
 
-```math
+<!-- math-display: 397fa216535bb5ff2061fc22
 \left(\frac{(1-u/T)^2}{4}-\eta\right)T.
  \tag{6}
-```
+-->
+![Formula](../../assets/math/397fa216535bb5ff2061fc22.svg)
 
 In the limit of negligible largest resource it approaches `T/4`,
 instead of the displayed `T/5`. At zero slack, it exceeds the
@@ -202,10 +210,11 @@ A later free candidate can also be owned by `p`, while using
 different resources. The printed choice conditions allow it to
 replace `y`, retaining the earlier adding layer. Now
 
-```math
+<!-- math-display: 58ce71a6d23c4b6562b4be19
 S=\{s_0,p\},\qquad M=\{\text{new bundle of }p\},
  \qquad B_1=\varnothing,
-```
+-->
+![Formula](../../assets/math/58ce71a6d23c4b6562b4be19.svg)
 
 and the old adding bundle of `p` has become free. Applying Algorithm
 2 to this old layer can select `C'={s0}` and `D'={p}`. The printed
@@ -295,10 +304,11 @@ Theorem 1 and Section 4](https://arxiv.org/pdf/1701.03263v2)
 give an approximation scheme with parameter the number K of player
 valuation types, with time
 
-```math
+<!-- math-display: 9e7a88873f6571f3902bb0ce
 2^{O(K\log(2+K)\,\zeta^{-1}\log^4(2+1/\zeta))}
        +\mathrm{poly}(|I|).
-```
+-->
+![Formula](../../assets/math/9e7a88873f6571f3902bb0ce.svg)
 
 In particular, K is at most the total number of players. This also
 explains the parameterized approximation scheme noted by Grandoni in
@@ -332,10 +342,11 @@ The large-resource transversal-matroid reduction in DRZ Section 3
 does apply to the new theorem. If resources at most `theta T` are
 small, its two allocation alternatives have value at least
 
-```math
+<!-- math-display: be67c1b9c20fbcf981cc2056
 \min\{\theta,(1-\theta)/3-\varepsilon\}T.
  \tag{7}
-```
+-->
+![Formula](../../assets/math/be67c1b9c20fbcf981cc2056.svg)
 
 Setting `theta=(1-3epsilon)/4` gives `(1-3epsilon)T/4`.
 The proof that the compact Santa Claus LP induces (1) for the dual
@@ -364,9 +375,10 @@ original player matroid M. For fat resources at threshold theta T,
 let N be the player transversal matroid supplied by those resources,
 and use the derived player matroid
 
-```math
+<!-- math-display: 3a8e20021299f2d8c4e86d17
 (M^*\vee N)^*.
-```
+-->
+![Formula](../../assets/math/3a8e20021299f2d8c4e86d17.svg)
 
 Its rank is at most rank(M)=r. An original integral basis allocation
 at target T supplies an integral feasible small-resource solution
@@ -415,10 +427,11 @@ Section 4; it is not presented as a newly repaired proof of DRZ.
 For the new exact row take theta=1/d_r. Every small item has value
 u<theta T, and the auxiliary rank r' is at most r. Hence
 
-```math
+<!-- math-display: 0196c3f0571e7a10abf1204f
 \theta T+\rho_{r'}(2\theta T+u)
  \le\theta T(1+3\rho_r)=T.
-```
+-->
+![Formula](../../assets/math/0196c3f0571e7a10abf1204f.svg)
 
 The inner exact solver supplies value theta T, as do the fat items.
 The positive-error row uses epsilon=1/d_r-1/(d_r+eta), whose inverse

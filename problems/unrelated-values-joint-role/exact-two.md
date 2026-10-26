@@ -28,11 +28,12 @@ light-role set I subseteq P, fix Q=I in SD7--SD9. Keep the
 zero-service dual-matroid dummy on all positions, including I.
 Solve the exact rational LP
 
-```math
+<!-- math-display: 5617132cd1d844c293cd9e10
 \max t\quad\text{subject to }(x,y)\in X_I,\quad t\ge0,\quad
            \sum_j v_{pj}x_j(p)\ge t\quad(p\in I).
  \tag{X2-1}
-```
+-->
+![Formula](../../assets/math/5617132cd1d844c293cd9e10.svg)
 
 An infeasible role LP is skipped. A feasible one has a finite maximum:
 I is nonempty, real resource ranks are bounded and dummy service is
@@ -45,10 +46,11 @@ to its optimizing joint point. Extract an actual original M-basis
 from the integer dummy-free players. The actual original setup and
 assignment cost is at most C, and its value is at least
 
-```math
+<!-- math-display: 102e130ee4a87c0373f19a7f
 \min\{a_H,t-u_L\}.
  \tag{X2-2}
-```
+-->
+![Formula](../../assets/math/102e130ee4a87c0373f19a7f.svg)
 
 Only legal integer original solutions are recorded. Their actual
 minimum utility is computed exactly, and the best is returned.
@@ -91,11 +93,12 @@ case uses polynomial exact LP, rank-oracle, intersection, rounding
 and basis-extraction work. Cases are streamed, keeping only one
 current workspace and the best actual allocation. Total time is
 
-```math
+<!-- math-display: 440f4d5ed24f15ddba339523
 2^q\mathrm{poly}(H),
  \qquad\text{space }\mathrm{poly}(H).
  \tag{X2-3}
-```
+-->
+![Formula](../../assets/math/440f4d5ed24f15ddba339523.svg)
 
 For any fixed rational eta>0, the accepted gap/global-cover
 construction instead gives factor 2+eta in

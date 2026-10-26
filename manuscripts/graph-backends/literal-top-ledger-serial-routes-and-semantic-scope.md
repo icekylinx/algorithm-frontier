@@ -23,10 +23,11 @@ sparsifier chooses this state and these route tables.
 Fix an integer `b>=2` and depth `k>=1`, and put `n0=b^k`. Make a core path
 with vertices `v_0,...,v_(n0)`. Include shortcuts
 
-```math
+<!-- math-display: ce615661b2d93b2bfc8a6e85
 v_{j b^{k-i}}v_{(j+1)b^{k-i}},
        \qquad 0\le i<k,\quad 0\le j<b^i.
-```
+-->
+![Formula](../../assets/math/ce615661b2d93b2bfc8a6e85.svg)
 
 Also include one distinguished return connection between `v_0` and `v_(n0)`.
 It is a separate connection identity from the top shortcut. Call all other
@@ -41,9 +42,10 @@ only the base path and the return connection remain cyclic.
 
 Choose an integer
 
-```math
+<!-- math-display: da993872ac67ae17694fd3f7
 A>120000+16(2k+4),\qquad D=A-120000.
-```
+-->
+![Formula](../../assets/math/da993872ac67ae17694fd3f7.svg)
 
 Add isolated core-bin identities, if necessary, so the total number `v` of
 core bins is a multiple of `D` and is at least `n0+1`. The added bins will be
@@ -52,9 +54,10 @@ separate physical odd-cycle components. Write `z=v/D`.
 Every core connection `e={u,v}` becomes a distinct row `r_e`, incident to its
 two core endpoint bins and one private bin `d_e`. Let
 
-```math
+<!-- math-display: 7c4b35ef3847e6ab04917d97
 L=CA.
-```
+-->
+![Formula](../../assets/math/7c4b35ef3847e6ab04917d97.svg)
 
 For an ordinary row, set its two core allocations to `8C` and its private
 allocation to `L-16C`. For the return row, set the allocation to `v_0` to `C`,
@@ -64,9 +67,10 @@ Every allocation is a positive integer and every row sum is exactly `L`.
 Give an ordinary private bin weight 16 and the return private bin weight 9.
 Give a core bin `u` weight
 
-```math
+<!-- math-display: cbb26e1fadb0a872e68130b3
 w_u=A-8\deg(u)+7\,1_{u=v_0}.
-```
+-->
+![Formula](../../assets/math/cbb26e1fadb0a872e68130b3.svg)
 
 The displayed choice of `A` makes all weights positive and leaves enough
 physical ports. Every bin has residual `L-load=Cw`.
@@ -75,9 +79,10 @@ Choose the master `S` from the final physical size, put `delta=S^(-1000)` and
 `sigma=8delta`, and set top debt and slack to `sigma` at every core or private
 bin. The top equation
 
-```math
+<!-- math-display: edec24f0e5e36283f3cdda11
 s_d=L-\mathrm{load}(d)+p_d-Cw_d
-```
+-->
+![Formula](../../assets/math/edec24f0e5e36283f3cdda11.svg)
 
 holds exactly. These slacks are above the positivity-service trigger. Total
 top debt is below the existing `S^(-800)` allowance for sufficiently large
@@ -101,41 +106,46 @@ odd-cycle witness.
 The core and private weights sum to `vA`. If there are `e` connection rows,
 the physical order before padding is
 
-```math
+<!-- math-display: 806c4f5afe41c19b11f0496b
 n_{\rm core}=2vA-(v+e)+e=v(2A-1).
-```
+-->
+![Formula](../../assets/math/806c4f5afe41c19b11f0496b.svg)
 
 Assign each row injectively to its private bin. There are exactly `v` free
 bins. Add
 
-```math
+<!-- math-display: f6bebdea578644ff80d0686d
 t=z(79999A-40000)
-```
+-->
+![Formula](../../assets/math/f6bebdea578644ff80d0686d.svg)
 
 disjoint triangle bins, with no rows incident to them. Their weights are two,
 their top debts are zero, and their top slacks are `L-2C>0`.
 
 The total physical order and free-bin count are exactly
 
-```math
+<!-- math-display: 14a6d0a63b77d1bcd77baead
 N=2A(A-2)z,
                  \qquad F=80000(A-2)z.
-```
+-->
+![Formula](../../assets/math/14a6d0a63b77d1bcd77baead.svg)
 
 The represented matching has cardinality `(N-F)/2`. Therefore the direct
 driver's initial numerical upper bound on its possible remaining improvement
 is `F/2`, and its first target can be
 
-```math
+<!-- math-display: 928e3c872d83f76dc89284c1
 K=F/4=20000(A-2)z.
-```
+-->
+![Formula](../../assets/math/928e3c872d83f76dc89284c1.svg)
 
 The prescribed phase formula is then literal:
 
-```math
+<!-- math-display: 9e6f97b8fc00cb263aea5c33
 \left\lceil\frac{10000CN}{K}\right\rceil
                                 =CA=L.
-```
+-->
+![Formula](../../assets/math/9e6f97b8fc00cb263aea5c33.svg)
 
 The value of `C`, for example `log_2 S+1` in the binary hierarchy, can be
 fixed after constructing the physical graph: all bin weights and `N` are
@@ -176,17 +186,19 @@ allocation cycle. The one-stage weighted stretch is at most `2b+1`.
 The four-incidence cycle using the top shortcut and the return row has
 numerator `7a` and length `11a`. Thus its ratio is
 
-```math
+<!-- math-display: b8c5ae9982cb128df7f421ff
 \beta_0=7/11>1/2.
-```
+-->
+![Formula](../../assets/math/b8c5ae9982cb128df7f421ff.svg)
 
 Every allocation cycle not using the return has numerator zero. At the
 terminal stage, the only nontrivial allocation cycle uses all `n0` base
 connections and the return. Its ratio is
 
-```math
+<!-- math-display: 87a7d08d47c6ad5cd447e100
 \beta_k=\frac7{2n0+9}.
-```
+-->
+![Formula](../../assets/math/87a7d08d47c6ad5cd447e100.svg)
 
 The ratio loss is exponential in the serial depth `k`.
 
@@ -222,14 +234,15 @@ the slack-sum part of the certificate cancels the number of slack terms.
 An ordinary row's smallest allocation is `8C`, while the return row's
 smallest allocation is `C`. Therefore
 
-```math
+<!-- math-display: c92abf8ad6869c3c14e50b04
 \begin{split}
  \mathcal G(f)
  &\le L\left(\frac{e-1}{8C}+\frac1C\right)-3e\\
  &\le A\left(\frac{v0}{4}+1\right)
    <v0(2A-1)
  \end{split}
-```
+-->
+![Formula](../../assets/math/c92abf8ad6869c3c14e50b04.svg)
 
 for the stated sizes. All components with no rows have exact linearized gain
 zero. Safe anchored integer rounding and its small register error keep the

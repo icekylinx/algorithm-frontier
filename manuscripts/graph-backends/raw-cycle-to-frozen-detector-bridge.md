@@ -41,9 +41,10 @@ Its denominator `V` sums the physical lengths of **all traversals before
 cancellation**. If the maximum absolute circulation ratio is `OPT>0`,
 the returned object has `V>0` and
 
-```math
+<!-- math-display: 19ba62e9498381bcfdcacc50
 |\gamma^T c|/V\geq \mathrm{OPT}/R.                 \tag{1}
-```
+-->
+![Formula](../../assets/math/19ba62e9498381bcfdcacc50.svg)
 
 The actual oriented numerator is computed from the same retained edge
 lifetimes. Only physically empty images are null. A real loop or an edge
@@ -56,10 +57,11 @@ numerical master to `S=N^C` for one sufficiently large fixed integer `C`.
 All exponents below are fixed once the input weight envelope and primitive
 constants are fixed. This change preserves
 
-```math
+<!-- math-display: 373555d375c880f4bc1526c1
 \exp O\bigl((\log S)^{4/5}(\log\log S)^{1/5}\bigr)
  =\exp O\bigl(U^{4/5}(\log(U+4))^{1/5}\bigr).
-```
+-->
+![Formula](../../assets/math/373555d375c880f4bc1526c1.svg)
 
 No local detector is padded to size `N` or `S`; these are precision and
 parameter masters. Work and inventory still scale with its actual local
@@ -69,9 +71,10 @@ allowance `M`.
 
 For every logical coordinate use the existing representation
 
-```math
+<!-- math-display: 6d3e92f4e6b9bc7ab13be7c7
 f_e=\mathrm{base}_e+\sum_{q\mapsto e}h_q.       \tag{2}
-```
+-->
+![Formula](../../assets/math/6d3e92f4e6b9bc7ab13be7c7.svg)
 
 The sum includes every live and dormant occurrence. The registers `h_q`
 are maintained by signed path additions; independent absolute-motion
@@ -104,24 +107,27 @@ Use the notation of the detector: its gap is `r=P-(1-alpha)F>0`, its
 gradient is `g=AM c_cost/r-w`, and `w` is the positive magnitude of the
 derivative of the coordinate barrier. Let
 
-```math
+<!-- math-display: d8e4ed4f1ebaef0f55293c23
 \beta=1/(256R),\qquad \xi=\beta/10^5.
-```
+-->
+![Formula](../../assets/math/d8e4ed4f1ebaef0f55293c23.svg)
 
 Increasing the fixed envelope to a power of two makes this numerical
 choice dyadic. Maintain an anchor `rhat` and coordinate anchors such that
 
-```math
+<!-- math-display: 84763d44562fab40f5f0d680
 |r/rhat-1|\leq\xi,\qquad
  |what_e/w_e-1|\leq\xi.                              \tag{3}
-```
+-->
+![Formula](../../assets/math/84763d44562fab40f5f0d680.svg)
 
 At the anchors define `ghat=AM c_cost/rhat-what`. If `kappa=r/rhat`,
 then the cost terms cancel exactly:
 
-```math
+<!-- math-display: 8af48b8308198d9b73fde822
 \widehat g-\kappa g=\kappa w-\widehat w.             \tag{4}
-```
+-->
+![Formula](../../assets/math/8af48b8308198d9b73fde822.svg)
 
 Thus `|ghat-kappa g|<=2 xi w`, regardless of the magnitude or cancellation
 of the individual cost-gradient terms. This is why an additive
@@ -129,10 +135,11 @@ coordinate bound on `g` relative to `w` is unnecessary.
 
 For a coordinate anchor it suffices to maintain
 
-```math
+<!-- math-display: ca16ea52494db056c53dc123
 \widehat w_e |f_e-\widehat f_e|
  \leq \xi/(C(p+1)),                                 \tag{5}
-```
+-->
+![Formula](../../assets/math/ca16ea52494db056c53dc123.svg)
 
 for a large absolute `C`. For the ordinary logarithm this is stronger
 than necessary. For the auxiliary branch below one,
@@ -150,16 +157,18 @@ The detector's potential and slack guards imply polynomial bounds in `N`
 on `w`, `1/w`, `|g|`, coordinate values, and `1/r`. Fix one common scale
 `H=N^C_H`, large enough that for all logical edges
 
-```math
+<!-- math-display: 50243f110262785f44a03d54
 H w_e\geq N^3/\beta
-```
+-->
+![Formula](../../assets/math/50243f110262785f44a03d54.svg)
 
 and that rounding errors are below `xi w_e`. Export
 
-```math
+<!-- math-display: 81351729bb3943b2b894a203
 \ell_e=\lceil H\widehat w_e\rceil,\qquad
  \gamma_e=\mathrm{round}(H\widehat g_e).          \tag{6}
-```
+-->
+![Formula](../../assets/math/81351729bb3943b2b894a203.svg)
 
 The integers have `O(U)` bits. The degree-three lift replaces each logical
 vertex by a private path of ports, with length-one, zero-gradient
@@ -167,9 +176,10 @@ connectors. A logical circulation `d` lifts by routing its incidence
 imbalances along the paths. If there are `P_0=O(M)` port records, its
 connector length is at most
 
-```math
+<!-- math-display: 33168fa33930a14d5c63fe7c
 2P_0\sum_e|d_e|.                                    \tag{7}
-```
+-->
+![Formula](../../assets/math/33168fa33930a14d5c63fe7c.svg)
 
 The scale choice makes (7) negligible relative to `H sum w_e|d_e|`.
 Thus if the true logical circulation ratio is at most `-1/4`, the
@@ -181,9 +191,10 @@ answer, and uses the full connector cost of that direction.
 Orient a raw answer so that `T=-gamma^T c>=0`. Return LOW only if the
 backend supplies no positive certificate or its valid certificate has
 
-```math
+<!-- math-display: 05e21cd0284b19cefd858db7
 T/V<1/(16R).                                        \tag{8}
-```
+-->
+![Formula](../../assets/math/05e21cd0284b19cefd858db7.svg)
 
 Equation (1) and the preceding `1/5` comparison prove that (8) is
 impossible if any true logical circulation has ratio at most `-1/4`.
@@ -194,17 +205,19 @@ invalid representation is never interpreted as LOW.
 For an accepted answer, (4)--(6), cancellation only in signed sums,
 and the raw length bound give
 
-```math
+<!-- math-display: 5520dd7c8336dcc577972727
 -g^T c\geq 7\beta V/H.                              \tag{9}
-```
+-->
+![Formula](../../assets/math/5520dd7c8336dcc577972727.svg)
 
 The true weighted absolute motion of the full raw traversal list is
 at most `2V/H`. Define the certified raw denominator for the numerical
 step to be
 
-```math
+<!-- math-display: ebca86a42d01eb8356af7adc
 R_{\rm raw}=2V/H.
-```
+-->
+![Formula](../../assets/math/ebca86a42d01eb8356af7adc.svg)
 
 Then (9) implies `g^T c<=-3 beta R_raw`. In particular it supplies the
 weaker `-beta R_raw` descent guarantee used in the detector. There is
@@ -214,10 +227,11 @@ no reliance on the norm of the projected circulation after cancellation.
 
 Choose a power of two `eta` by integer comparisons so that
 
-```math
+<!-- math-display: eb514b378768e7ccb46437a9
 \frac{\beta}{C_1p}\leq\eta R_{\rm raw}
  \leq\frac{2\beta}{C_1p}.                            \tag{10}
-```
+-->
+![Formula](../../assets/math/eb514b378768e7ccb46437a9.svg)
 
 Such a power of two always exists. The output contains unit signed
 pieces, so `eta c` is an exact common-grid circulation. Every partial
@@ -280,9 +294,10 @@ ports for a retained edge identity.
 
 The detector proves a total of
 
-```math
+<!-- math-display: 8c0fc09eac684ca128d55dcd
 T=O(Mp\beta^{-2}U)
-```
+-->
+![Formula](../../assets/math/8c0fc09eac684ca128d55dcd.svg)
 
 accepted steps. Their total raw weighted motion is `O(T beta/p)`.
 Use the old absolute-drift scheme with per-copy threshold smaller than
@@ -298,10 +313,11 @@ lifetime contract.
 
 Full repricing is also bounded. For an accepted negative-gradient step,
 
-```math
+<!-- math-display: 562615659fbc461d8fb7b513
 AM\,\Delta r/r=g^T h+w^T h\leq\|Wh\|_1
                   =O(\beta/p).
-```
+-->
+![Formula](../../assets/math/562615659fbc461d8fb7b513.svg)
 
 Positive logarithmic gap variation due to numerical steps is at most
 `O(T beta/(Mp))`; auxiliary births add `O(U)`. Since the gap remains
@@ -313,9 +329,10 @@ logical coordinates, with its actual occurrence work included.
 
 The entire detector lifetime therefore costs
 
-```math
+<!-- math-display: d343b06c585875648f6d9425
 M R^{O(1)}\mathrm{poly}(U).                    \tag{11}
-```
+-->
+![Formula](../../assets/math/d343b06c585875648f6d9425.svg)
 
 This factor is computational work. It is not included in `AM` and is
 not multiplied into the potential charge for a retired barrier. The

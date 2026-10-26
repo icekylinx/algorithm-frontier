@@ -13,8 +13,8 @@ resource-matroid algorithm or the accepted player-local/binary-capacity
 extensions.
 
 The target model has common intrinsic resource values. Resource
-$`j`$ may be supplied to a receiving-player set independent in its
-own matroid $`R_j`$, or to an integer vector in its own polymatroid.
+<code class="math">j</code> may be supplied to a receiving-player set independent in its
+own matroid <code class="math">R_j</code>, or to an integer vector in its own polymatroid.
 The physical-unit algorithm instead has one owner of every individual
 item. The distinction matters even when every resource matroid in an
 example is a small uniform matroid.
@@ -24,8 +24,8 @@ example is a small uniform matroid.
 Bamas, Lindermayr, Megow, Rohwedder and Schloeter,
 *Santa Claus meets Makespan and Matroids: Algorithms and Reductions*,
 [arXiv:2307.08453v1](https://arxiv.org/abs/2307.08453v1),
-Theorem 4, gives polynomial-time $`8+\varepsilon`$ for general
-resource matroids/polymatroids and $`4+\varepsilon`$ for two values.
+Theorem 4, gives polynomial-time <code class="math">8+\varepsilon</code> for general
+resource matroids/polymatroids and <code class="math">4+\varepsilon</code> for two values.
 Their Section 4 uses a matroid and a polymatroid on the player ground
 set, truncated polymatroid contraction, and explicit reservations
 across recursive calls. It does not replace resource intersections by
@@ -48,21 +48,22 @@ does not, by itself, establish either resource-side fact above.
 
 Consider a rank-two linear resource matroid with elements
 
-```math
+<!-- math-display: c54f5e7abec555d15ef48384
 a=e_1,\qquad b=e_2,\qquad p=q=e_1+e_2.
  \tag{R1}
-```
+-->
+![Formula](../../assets/math/c54f5e7abec555d15ef48384.svg)
 
-The current receiving set $`\{a,b\}`$ is independent. Individually
-one may replace $`a`$ by $`p`$, and one may replace $`b`$ by
-$`q`$. The selected old blockers are distinct. Nevertheless the
-joint replacement $`\{p,q\}`$ is dependent.
+The current receiving set <code class="math">\{a,b\}</code> is independent. Individually
+one may replace <code class="math">a</code> by <code class="math">p</code>, and one may replace <code class="math">b</code> by
+<code class="math">q</code>. The selected old blockers are distinct. Nevertheless the
+joint replacement <code class="math">\{p,q\}</code> is dependent.
 
 Thus assigning each pending candidate a legal old circuit element,
 even with distinct choices, does not supply simultaneous capacity.
 The issue is not special to a difficult oracle matroid: this example
-also has a transversal representation. Give $`p,q`$ access only
-to one slot, and give $`a,b`$ access to either of two slots. A
+also has a transversal representation. Give <code class="math">p,q</code> access only
+to one slot, and give <code class="math">a,b</code> access to either of two slots. A
 single fixed slot assignment exposes their common conflict; two
 independently rerouted assignments can conceal it.
 
@@ -71,11 +72,11 @@ does not rule out maintaining a joint reservation or a consistent
 slot representation.
 
 Nor can an arbitrary resource matroid safely be replaced by the
-bipartite graph of exchanges with one fixed basis. For rank $`k`$,
-let that basis be $`e_1,\ldots,e_k`$, and let arbitrarily many
-other elements all equal $`e_1+\cdots+e_k`$. Each such element
+bipartite graph of exchanges with one fixed basis. For rank <code class="math">k</code>,
+let that basis be <code class="math">e_1,\ldots,e_k</code>, and let arbitrarily many
+other elements all equal <code class="math">e_1+\cdots+e_k</code>. Each such element
 can replace every basis vector, so the basis-exchange bipartite graph
-can match $`k`$ of them to distinct slots. Their true matroid rank
+can match <code class="math">k</code> of them to distinct slots. Their true matroid rank
 is only one. Thus this proposed slot representation can overstate
 simultaneously usable receiving capacity by an unbounded factor.
 
@@ -86,97 +87,101 @@ earliest player exchange can break the retained resource invariant.
 
 ### 3.1 Players, values, and a feasible target allocation
 
-There are four players $`a,b,x,p`$. Their selection matroid is
-the direct sum of singleton nonloops $`a,x`$ and one rank-one
-parallel class $`\{b,p\}`$. Its rank is three. In vector form
-use three independent directions for $`a,b,x`$, and set $`p=b`$.
+There are four players <code class="math">a,b,x,p</code>. Their selection matroid is
+the direct sum of singleton nonloops <code class="math">a,x</code> and one rank-one
+parallel class <code class="math">\{b,p\}</code>. Its rank is three. In vector form
+use three independent directions for <code class="math">a,b,x</code>, and set <code class="math">p=b</code>.
 
 Every resource has intrinsic value one and can be supplied at most
 once to a receiving player. The resource constraints are:
 
 | Resource | Eligible receiving players | Resource matroid |
 |---|---|---|
-| $`j`$ | $`a,x,p`$ | uniform rank two |
-| $`k`$ | $`b,x`$ | uniform rank one |
-| $`a'`$ | $`a`$ | one singleton |
-| $`b'`$, $`b''`$ | $`b`$ | separate singletons |
-| $`\ell`$ | $`p`$ | one singleton |
+| <code class="math">j</code> | <code class="math">a,x,p</code> | uniform rank two |
+| <code class="math">k</code> | <code class="math">b,x</code> | uniform rank one |
+| <code class="math">a'</code> | <code class="math">a</code> | one singleton |
+| <code class="math">b'</code>, <code class="math">b''</code> | <code class="math">b</code> | separate singletons |
+| <code class="math">\ell</code> | <code class="math">p</code> | one singleton |
 
-Take bundle target $`B=2`$. The original instance really has a
+Take bundle target <code class="math">B=2</code>. The original instance really has a
 feasible basis allocation at this target:
 
-```math
+<!-- math-display: 8c514334d6f38ebade65c999
 a:\{j,a'\},\qquad b:\{b',b''\},\qquad x:\{j,k\}.
  \tag{R2}
-```
+-->
+![Formula](../../assets/math/8c514334d6f38ebade65c999.svg)
 
-Resource $`j`$ supplies two players, resource $`k`$ one, and
-the basis $`\{a,b,x\}`$ has rank three. Hence the example does
+Resource <code class="math">j</code> supplies two players, resource <code class="math">k</code> one, and
+the basis <code class="math">\{a,b,x\}</code> has rank three. Hence the example does
 not rely on an infeasible target promise.
 
 ### 3.2 A legal partial matching and first selected center
 
 Consider the partial allocation
 
-```math
+<!-- math-display: 880343158ba7700be3bb8bbf
 M_a=\{j,a'\},\qquad M_b=\{k,b'\},\qquad I=\{a,b\}.
  \tag{R3}
-```
+-->
+![Formula](../../assets/math/880343158ba7700be3bb8bbf.svg)
 
 Both bundles are minimal above two; they can be inserted successively
 from the empty matching by free rank-increasing choices. The unused
-private item $`b''`$ does not affect their legality.
+private item <code class="math">b''</code> does not affect their legality.
 
 Select the center
 
-```math
+<!-- math-display: d1b001a682dd307777f90c9b
 X_1(x)=\{j,k\}.
  \tag{R4}
-```
+-->
+![Formula](../../assets/math/d1b001a682dd307777f90c9b.svg)
 
-At resource $`j`$, adding $`x`$ to the current receiver $`a`$
+At resource <code class="math">j</code>, adding <code class="math">x</code> to the current receiver <code class="math">a</code>
 is feasible, so that resource has no actual matching blocker of this
-center. At resource $`k`$, player $`b`$ is its unique blocker.
+center. At resource <code class="math">k</code>, player <code class="math">b</code> is its unique blocker.
 Consequently the naive resource-circuit version records
-$`Y_1=\{M_b\}`$. The player $`x`$ is eligible because
-$`x\notin\mathrm{cl}(I)`$.
+<code class="math">Y_1=\{M_b\}</code>. The player <code class="math">x</code> is eligible because
+<code class="math">x\notin\mathrm{cl}(I)</code>.
 
 Suppose the naive forbidden test at each resource excludes the span
 of the receiving players of selected centers and current blockers.
 This is the natural attempt to replace forbidden physical items by
 resource flats. The first layer can be completed under that test:
-its only player eligible outside $`\mathrm{cl}(I)`$ is
-$`x`$, and its selected resources are unavailable to another copy
+its only player eligible outside <code class="math">\mathrm{cl}(I)</code> is
+<code class="math">x</code>, and its selected resources are unavailable to another copy
 of its own candidate.
 
 ### 3.3 A free later center and its forced earliest exchange
 
-At the next layer, remove the earlier blocker owner $`b`$ from
-the eligibility base. Then $`J_2=\{a\}`$, so $`p`$ is
+At the next layer, remove the earlier blocker owner <code class="math">b</code> from
+the eligibility base. Then <code class="math">J_2=\{a\}</code>, so <code class="math">p</code> is
 eligible. Consider
 
-```math
+<!-- math-display: 3aa3e7db6d2e78359b4b0687
 X_2(p)=\{j,\ell\}.
  \tag{R5}
-```
+-->
+![Formula](../../assets/math/3aa3e7db6d2e78359b4b0687.svg)
 
-At resource $`j`$, the earlier selected receiver set is only
-$`\{x\}`$; the matching blocker $`b`$ receives no $`j`$.
-In the uniform rank-two resource matroid, $`p`$ is outside the
-span of $`\{x\}`$. The private resource $`\ell`$ is also
+At resource <code class="math">j</code>, the earlier selected receiver set is only
+<code class="math">\{x\}</code>; the matching blocker <code class="math">b</code> receives no <code class="math">j</code>.
+In the uniform rank-two resource matroid, <code class="math">p</code> is outside the
+span of <code class="math">\{x\}</code>. The private resource <code class="math">\ell</code> is also
 available. Thus (R5) passes the proposed resource-flat forbidden test.
 
 It is also free relative to the actual current matching: assigning
-$`j`$ to $`a,p`$ is feasible, and $`\ell`$ is unused.
-The player fundamental circuit is exactly $`\{b,p\}`$, so the
-earliest exchange removes $`M_b`$ from layer one and inserts
-$`X_2(p)`$. The new matching receiver set at $`j`$ is
-$`\{a,p\}`$.
+<code class="math">j</code> to <code class="math">a,p</code> is feasible, and <code class="math">\ell</code> is unused.
+The player fundamental circuit is exactly <code class="math">\{b,p\}</code>, so the
+earliest exchange removes <code class="math">M_b</code> from layer one and inserts
+<code class="math">X_2(p)</code>. The new matching receiver set at <code class="math">j</code> is
+<code class="math">\{a,p\}</code>.
 
-The recorded blocker of $`X_1(x)`$ has disappeared, and its old
-resource $`k`$ is now free. But $`x`$ can no longer be added
-at resource $`j`$: $`\{a,p,x\}`$ has size three in a
-rank-two uniform matroid. Therefore $`X_1(x)`$ has acquired a
+The recorded blocker of <code class="math">X_1(x)</code> has disappeared, and its old
+resource <code class="math">k</code> is now free. But <code class="math">x</code> can no longer be added
+at resource <code class="math">j</code>: <code class="math">\{a,p,x\}</code> has size three in a
+rank-two uniform matroid. Therefore <code class="math">X_1(x)</code> has acquired a
 new blocker at a resource that was previously free for it.
 
 The physical-item free-cascade rule would regard its last recorded
@@ -197,9 +202,9 @@ Forbidding an entire resource type after its first selected use would
 reject (R5), but it discards arbitrarily large remaining capacity in
 general. It is not an implementation of the same value certificate.
 
-In a fixed two-slot representation of resource $`j`$, allocation
-$`M_a`$ uses one slot and selected center $`X_1(x)`$ reserves
-the other. Then $`X_2(p)`$ cannot both avoid the selected slot
+In a fixed two-slot representation of resource <code class="math">j</code>, allocation
+<code class="math">M_a</code> uses one slot and selected center <code class="math">X_1(x)</code> reserves
+the other. Then <code class="math">X_2(p)</code> cannot both avoid the selected slot
 and be free against the actual matching. This is exactly why the
 proved explicit-transversal and binary-capacity adapters remain sound:
 their physical identities or cells retain that joint reservation.
@@ -228,7 +233,7 @@ Any such repair still needs all of the following proofs:
 The public Bamas et al. recursion explicitly contracts bounded
 capacity for pending and blocking sets, which addresses precisely
 this sort of interaction. Its correctness does not follow from the
-simpler physical-item invariant, and its printed $`8+\varepsilon`$
+simpler physical-item invariant, and its printed <code class="math">8+\varepsilon</code>
 general-value bound is not improved by the examples or arguments in
 this note.
 

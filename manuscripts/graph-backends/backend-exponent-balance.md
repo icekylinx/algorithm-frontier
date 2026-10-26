@@ -214,12 +214,13 @@ starting at `u_0=U`. Write `h_i=log k_i` and let `K_i>=1` be its
 local spanner parameter. In this model a known logarithmic upper
 budget `A` must pay, up to fixed positive constant factors,
 
-```math
+<!-- math-display: 37fecd3a2cff2bd2e7d0ba3d
 \max_i h_i,\qquad
  \max_i K_i^2 u_i^{2/3}\log(u_i+2),\qquad
  \sum_i\frac{u_i}{K_i}.
  \tag{10}
-```
+-->
+![Formula](../../assets/math/37fecd3a2cff2bd2e7d0ba3d.svg)
 
 The first quantity represents local/base shrink work. The second
 represents local spanner work, even granting the more favorable use
@@ -238,25 +239,28 @@ claimed sublinear expression and there is nothing to prove. Otherwise
 the path from `U` to `U/2` uses at least `c U/A` levels with
 `u_i>=U/2`, for a fixed `c>0`. The second expression in (10) forces
 
-```math
+<!-- math-display: 236bc27013e5a077d6695fe8
 K_i\le C\sqrt{\frac{A}{U^{2/3}\log U}}
-```
+-->
+![Formula](../../assets/math/236bc27013e5a077d6695fe8.svg)
 
 at each of those levels. Consequently their contribution to the sum
 in (10) is at least
 
-```math
+<!-- math-display: 622d4f1b439ddefa6959c51e
 c'\frac U A\,
        \frac{U^{4/3}(\log U)^{1/2}}{A^{1/2}}
  =c' U^{7/3}(\log U)^{1/2}A^{-3/2}.
-```
+-->
+![Formula](../../assets/math/622d4f1b439ddefa6959c51e.svg)
 
 Requiring the common budget to dominate this quantity gives
 
-```math
+<!-- math-display: f159f41b609cbeda871282ae
 A\ge c'' U^{14/15}(\log U)^{1/5}.
  \tag{11}
-```
+-->
+![Formula](../../assets/math/f159f41b609cbeda871282ae.svg)
 
 The uniform construction in Section 4 attains the order in (11).
 Therefore merely adapting `k_i,K_i` to each local size does not improve
@@ -275,79 +279,87 @@ cannot certify a better rate by nonuniform parameter selection alone.
 
 The new
 [separated static construction](separated-static-sparsifier-parameters.md)
-has two parameters, the cut-player depth $`r`$ and the expander
-path hierarchy depth $`q`$. With $`L=\log(U+2)`$, its output factor
+has two parameters, the cut-player depth <code class="math">r</code> and the expander
+path hierarchy depth <code class="math">q</code>. With <code class="math">L=\log(U+2)</code>, its output factor
 and local work factor are
 
-```math
+<!-- math-display: 76a9bb3a5c2aee6499be4c70
 \log\Gamma=O(qrL),\qquad
  \log F=O(U/r+U/q+r^2L+qrL).
-```
+-->
+![Formula](../../assets/math/76a9bb3a5c2aee6499be4c70.svg)
 
 After the explicitly clocked short-period batching construction,
 the prospective logarithmic numerical overhead is
 
-```math
+<!-- math-display: 4387daa5dc7cacfc37a2973e
 A=O\!\left(
  x+\frac Ur+\frac Uq+r^2L+qrL+K^2qrL+
       \frac{U^2}{Kx}+\frac{UqrL}{x}
       +\frac{UKqrL}{x}\right),
  \qquad x=\log k.                                    \tag{12}
-```
+-->
+![Formula](../../assets/math/4387daa5dc7cacfc37a2973e.svg)
 
 This formula still keeps the input-path-length congestion factor.
-It changes the older model because the large static work $`F`$
+It changes the older model because the large static work <code class="math">F</code>
 is additive locally, while only the smaller output factor
-$`\Gamma`$ participates in the $`K^2`$ route envelope.
+<code class="math">\Gamma</code> participates in the <code class="math">K^2</code> route envelope.
 
-On the power scale put $`r=U^a,q=U^b,K=U^t,x=U^z`$.
-A common exponent $`z`$ must satisfy
-```math
+On the power scale put <code class="math">r=U^a,q=U^b,K=U^t,x=U^z</code>.
+A common exponent <code class="math">z</code> must satisfy
+<!-- math-display: 8c839c1875d6c0dc9f4390ea
 a,b\geq1-z,\qquad t\geq2-2z,\qquad
  z\geq a+b+2t.
-```
-Therefore $`z\geq6-6z`$, or $`z\geq6/7`$. Equality is attained
-at $`a=b=1/7,t=2/7`$. The previously unused term $`r^2L`$
+-->
+![Formula](../../assets/math/8c839c1875d6c0dc9f4390ea.svg)
+Therefore <code class="math">z\geq6-6z</code>, or <code class="math">z\geq6/7</code>. Equality is attained
+at <code class="math">a=b=1/7,t=2/7</code>. The previously unused term <code class="math">r^2L</code>
 is smaller at that point, and the output contribution to
-propagated recourse is smaller than $`U/K`$.
+propagated recourse is smaller than <code class="math">U/K</code>.
 
 The same calculation has a finite-scale version that includes the
 leading logarithm and permits different parameters at each level.
-Suppose a known logarithmic budget $`A=o(U)`$ must pay the current
+Suppose a known logarithmic budget <code class="math">A=o(U)</code> must pay the current
 charged expressions. Consider the levels before the source size
-envelope drops below $`U/2`$. There are at least $`cU/A`$ such
-levels, because local shrink work gives $`\log k_i\leq O(A)`$.
+envelope drops below <code class="math">U/2</code>. There are at least <code class="math">cU/A</code> such
+levels, because local shrink work gives <code class="math">\log k_i\leq O(A)</code>.
 At each of these levels, the static work terms imply
-```math
+<!-- math-display: e234e06f903dd8cc2309a2d8
 r_i,q_i\geq cU/A.
-```
-The route-work term $`K_i^2q_ir_i\log U\leq O(A)`$ then gives
-```math
+-->
+![Formula](../../assets/math/e234e06f903dd8cc2309a2d8.svg)
+The route-work term <code class="math">K_i^2q_ir_i\log U\leq O(A)</code> then gives
+<!-- math-display: 9fc09b4566b0da01e10fdee6
 K_i\leq C\,\frac{A^{3/2}}{U(\log U)^{1/2}}.
-```
+-->
+![Formula](../../assets/math/9fc09b4566b0da01e10fdee6.svg)
 Hence the propagated-recourse sum over these levels is at least
-```math
+<!-- math-display: b9a24ffd649a485526a90f8a
 c'\frac U A\cdot
        \frac{U^2(\log U)^{1/2}}{A^{3/2}}
  =c'U^3(\log U)^{1/2}A^{-5/2}.
-```
+-->
+![Formula](../../assets/math/b9a24ffd649a485526a90f8a.svg)
 Requiring this to fit within the same budget yields
-```math
+<!-- math-display: 6f668ec1c2f86459ae033285
 A\geq
           c''U^{6/7}(\log U)^{1/7}.                    \tag{13}
-```
+-->
+![Formula](../../assets/math/6f668ec1c2f86459ae033285.svg)
 The uniform choices
-```math
+<!-- math-display: ef49275be9fa8cf070877bcf
 r,q=\Theta((U/\log U)^{1/7}),\quad
  K=\Theta((U/\log U)^{2/7}),\quad
  \log k=\Theta(U^{6/7}(\log U)^{1/7})
-```
-attain this order in (12). Thus neither uneven $`q,r`$ choices
+-->
+![Formula](../../assets/math/ef49275be9fa8cf070877bcf.svg)
+attain this order in (12). Thus neither uneven <code class="math">q,r</code> choices
 nor level-dependent parameters alone improve this particular
 envelope. Improving it requires changing at least one charged
 dependency, not merely rebalancing the displayed parameters.
 The last term of (12) is the raw-quality loss across the numerical
-hierarchy. At the displayed $`6/7`$ balance it is smaller than
+hierarchy. At the displayed <code class="math">6/7</code> balance it is smaller than
 the leading term, but it must be retained when changing the local
 route-cost model.
 
@@ -359,27 +371,30 @@ or general-graph matching.
 ## 7. Raw quality remains a cost if a local congestion recurrence improves
 
 Suppose, hypothetically, that a replacement static argument reduced
-the local $`K^2\log\Gamma`$ work term to $`K\log\Gamma`$, but still
-returned paths of length $`\Gamma^{O(K)}`$ per numerical level.
-Then it would be incorrect to remove $`K^2\log\Gamma`$ from the
+the local <code class="math">K^2\log\Gamma</code> work term to <code class="math">K\log\Gamma</code>, but still
+returned paths of length <code class="math">\Gamma^{O(K)}</code> per numerical level.
+Then it would be incorrect to remove <code class="math">K^2\log\Gamma</code> from the
 model and ignore the remaining quality term
-```math
+<!-- math-display: 4dcab2ab576a1a83d1852a55
 (U/x)K\log\Gamma.
-```
+-->
+![Formula](../../assets/math/4dcab2ab576a1a83d1852a55.svg)
 
-For the tunable output $`\log\Gamma=\Theta(qr\log U)`$, the
+For the tunable output <code class="math">\log\Gamma=\Theta(qr\log U)</code>, the
 quality-aware power constraints are
-```math
+<!-- math-display: 29b257781ebfa95ec6b753c7
 a,b\geq1-z,\qquad t\geq2-2z,\qquad
  z\geq1-z+t+a+b.
-```
-They imply $`z\geq5-5z`$, hence $`z\geq5/6`$.
+-->
+![Formula](../../assets/math/29b257781ebfa95ec6b753c7.svg)
+They imply <code class="math">z\geq5-5z</code>, hence <code class="math">z\geq5/6</code>.
 The model balance is attained by
-```math
+<!-- math-display: 991bbef22029de948ef3bc7b
 r,q=\Theta((U/\log U)^{1/6}),\qquad
  K=\Theta((U/\log U)^{1/3}),\qquad
  \log k=\Theta(U^{5/6}(\log U)^{1/6}).
-```
+-->
+![Formula](../../assets/math/991bbef22029de948ef3bc7b.svg)
 This balance is now supplied by the separate normalized-route
 construction in [length-free-ambient-static-sparsifier.md](length-free-ambient-static-sparsifier.md) and
 [normalized-projected-route-composition.md](normalized-projected-route-composition.md). Its complete matching
@@ -391,31 +406,33 @@ q,r >= c U/A, and propagated recourse requires
 K >= c U^2/A^2 when log k <= O(A). The accumulated quality then
 requires
 
-```math
+<!-- math-display: e141dcf61f50c9b06153861c
 A\geq c\frac U A Kqr\log U
    \geq c'\frac{U^5\log U}{A^5}.
-```
+-->
+![Formula](../../assets/math/e141dcf61f50c9b06153861c.svg)
 
 Consequently A >= c'' U^{5/6}(log U)^{1/6} within this explicit
 uniform accounting model. This is a limitation of these charged
 expressions, not a lower bound for matching or for other routers.
 
 For comparison, if a different proposed primitive had the fixed
-output factor $`\log\Gamma=\Theta(U^p\log U)`$, retaining both
-propagated recourse $`U/K`$ and per-level quality
-$`K\log\Gamma`$ gives the balance
-```math
+output factor <code class="math">\log\Gamma=\Theta(U^p\log U)</code>, retaining both
+propagated recourse <code class="math">U/K</code> and per-level quality
+<code class="math">K\log\Gamma</code> gives the balance
+<!-- math-display: 86126553321c7c2d82a304fd
 \log E\ \geq\
        \Omega(U^{(3+p)/4}(\log U)^{1/4})
-```
+-->
+![Formula](../../assets/math/86126553321c7c2d82a304fd.svg)
 within this model, even if local construction work is smaller.
-Indeed, a budget $`A`$ needs $`\Omega(U/A)`$ levels before the
+Indeed, a budget <code class="math">A</code> needs <code class="math">\Omega(U/A)</code> levels before the
 size envelope halves, and at each level the product of the two
-charged terms is $`\Omega(U^{1+p}\log U)`$. Cauchy--Schwarz
+charged terms is <code class="math">\Omega(U^{1+p}\log U)</code>. Cauchy--Schwarz
 on their sums gives
-$`A^2\geq \Omega((U/A)^2U^{1+p}\log U)`$.
-For $`p=1/2`$, the resulting power is $`7/8`$, which is larger
-than $`6/7`$. Thus a square-root logarithmic output factor by
+<code class="math">A^2\geq \Omega((U/A)^2U^{1+p}\log U)</code>.
+For <code class="math">p=1/2</code>, the resulting power is <code class="math">7/8</code>, which is larger
+than <code class="math">6/7</code>. Thus a square-root logarithmic output factor by
 itself is not an improvement over the current tunable
 construction. A proposed new router must be assessed with its
 whole preprocessing/output/quality interface.

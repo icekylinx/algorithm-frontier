@@ -8,10 +8,14 @@
 
 **Unconditional executable solver.** The
 [reference implementation](reference/README.md) uses only Python's standard
-library. Its cubic-per-kernel blossom search implements the classical method
+library. Its blossom search implements the classical method
 of [Edmonds, *Paths, Trees, and Flowers* (1965), Section 4](https://doi.org/10.4153/CJM-1965-045-4).
-Its optional certificate uses one failed alternating forest, adding only
-quadratic work per kernel. The [complete extraction proof](reference/certificate-proof.md)
+The [outside-endpoint compression proof](reference/cover-compression-proof.md)
+preserves every matchable cover subset and gives the default time
+<code class="math">O(n+m\log(m+2)+\sum_i\nu(G_i)^3)</code>. It derives the needed exchange
+argument locally. Its optional certificate uses one failed alternating
+forest on each original edge kernel, within that same time bound. The
+[complete extraction proof](reference/certificate-proof.md)
 establishes its tight odd-component bound and exposable set locally;
 [Gallai (1964), Theorem (E.1)](https://real.mtak.hu/189486/1/cut_MATKUTINT_1964_3_pp401_-_413.pdf)
 is historical provenance, not an assumed extraction theorem. The certificate's
@@ -22,7 +26,7 @@ unimplemented cycle-search dependency in this reference solver.
 **Unconditional local reductions.** Lemmas 3.1–3.2 prove the exact
 matching-size kernel, its componentwise form and the subcubic gadget.
 The companion's [mixed-failure theorem](../../manuscripts/graph-backends/matching-size-kernel-corollary.md#4-one-kernel-for-mixed-vertex-and-edge-failures)
-extends exact preservation to every mixture of at most $`f`$ native
+extends exact preservation to every mixture of at most <code class="math">f</code> native
 vertex/edge failures in a fixed simple graph. These reductions need no
 external matching algorithm, random sampling or raw-cycle interface.
 The [finite reduction checker](verify/check_reductions.py)
@@ -72,6 +76,7 @@ part of each use; an interface analysis does not supply an omitted backend.
 - [A deterministic near-linear final maximum-matching verifier](../../manuscripts/graph-backends/deterministic-maximum-matching-verifier.md)
 - [An exact matching-size kernel and the current time corollary](../../manuscripts/graph-backends/matching-size-kernel-corollary.md)
 - [Executable exact matching and its independent certificate](reference/README.md)
+- [Outside-endpoint compression and the matching-size cubic bound](reference/cover-compression-proof.md)
 - [A 4/5 research composition from sequential expander routing](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
 - [Exact general-graph matching](README.md)
 

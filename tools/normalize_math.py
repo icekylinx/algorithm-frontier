@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Normalize maintained Markdown math to the repository's GitHub-safe notation.
+"""Normalize mathematical source and emit the repository's static presentation.
 
 Only mathematical spans are changed. Inline code, ordinary code fences and
 HTML comments stay byte-for-byte intact. The transformations preserve values
-and statements: upright operator names use ``\\mathrm``, displays use fenced
-``math`` blocks, and inline formulas use GitHub's dollar/backtick syntax.
-These protected forms keep Markdown from consuming TeX backslashes, braces,
-alignment separators and underscore pairs before MathJax sees the expression.
+and statements: upright operator names use ``\\mathrm``. The internal source
+normalizer understands protected mathematical delimiters; the command emits
+inline code and source-bound display-image links. Run build_math_assets.py
+after changing formulas to generate any newly required images.
 Run without arguments to normalize Markdown and catalogue.json; use --check
 to report stale notation without writing any files. Requires only Python.
 """
@@ -67,6 +67,12 @@ def normalize_markdown(text: str, *, github_safe: bool = True) -> str:
     output: list[str] = []
     index = 0
     while index < len(text):
+        if text.startswith('<code class="math">', index):
+            end = text.find('</code>', index)
+            end = len(text) if end < 0 else end + len('</code>')
+            output.append(text[index:end])
+            index = end
+            continue
         if text.startswith("<!--", index):
             end = text.find("-->", index + 4)
             end = len(text) if end < 0 else end + 3
@@ -159,6 +165,7 @@ def normalize_catalogue(text: str) -> str:
 
 
 def main() -> int:
+    from math_presentation import present_markdown
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("paths", nargs="*", type=Path, help="Markdown files/directories or catalogue.json")
     parser.add_argument("--check", action="store_true", help="report required changes without writing")
@@ -178,7 +185,8 @@ def main() -> int:
     changed: list[str] = []
     for path in sorted(paths):
         before = path.read_text(encoding="utf-8")
-        after = (normalize_catalogue(before) if path.name == "catalogue.json" else normalize_markdown(before))
+        after = (normalize_catalogue(before) if path.name == "catalogue.json" else
+                 present_markdown(normalize_markdown(before), path.resolve()))
         if after != before:
             changed.append(str(path))
             if not args.check:

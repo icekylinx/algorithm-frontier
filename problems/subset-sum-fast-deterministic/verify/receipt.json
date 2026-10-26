@@ -1,14 +1,15 @@
 {
-  "receipt_schema": 1,
+  "receipt_schema": 2,
   "status": "PASS",
   "complete_X02_contact_menu": true,
-  "checker_sha256": "8315eca7e5adf97dde48866f874c8806c80c974761f3e63010d3146264fd3398",
-  "menu_sha256": "c711731cb9f3a432b2e957733f415726c11fb5d374c71729b0576d85c7f47fd8",
-  "expected_branch_count": 44,
+  "checker_sha256": "d10393923c06791aec7666b78814846bd6a53414ce44252185e3307a428505d4",
+  "menu_sha256": "616f4a4d8ec3fa28be7bfc73d615952f559cc31cf1af0ac81fde72f5b41aad97",
+  "expected_branch_count": 62,
   "expected_choices": [
     {
       "rho": "1.3",
       "gamma": ".47",
+      "gamma2": ".5",
       "tau": ".24",
       "target": ".14310",
       "branch": "push"
@@ -16,6 +17,7 @@
     {
       "rho": "1.3",
       "gamma": ".47",
+      "gamma2": ".5",
       "tau": ".24",
       "target": ".14310",
       "branch": "recursive"
@@ -23,6 +25,7 @@
     {
       "rho": "1.3",
       "gamma": ".47",
+      "gamma2": ".5",
       "tau": ".40",
       "target": ".19000",
       "branch": "push"
@@ -30,6 +33,7 @@
     {
       "rho": "1.3",
       "gamma": ".47",
+      "gamma2": ".5",
       "tau": ".40",
       "target": ".19000",
       "branch": "recursive"
@@ -37,6 +41,7 @@
     {
       "rho": "1.7",
       "gamma": ".47",
+      "gamma2": ".5",
       "tau": ".40",
       "target": ".18545",
       "branch": "push"
@@ -44,6 +49,7 @@
     {
       "rho": "1.7",
       "gamma": ".47",
+      "gamma2": ".5",
       "tau": ".40",
       "target": ".18545",
       "branch": "recursive"
@@ -51,6 +57,7 @@
     {
       "rho": "1.7",
       "gamma": ".47",
+      "gamma2": ".5",
       "tau": ".44",
       "target": ".19560",
       "branch": "push"
@@ -58,6 +65,7 @@
     {
       "rho": "1.7",
       "gamma": ".47",
+      "gamma2": ".5",
       "tau": ".44",
       "target": ".19560",
       "branch": "recursive"
@@ -65,6 +73,7 @@
     {
       "rho": "2.2",
       "gamma": ".50",
+      "gamma2": ".5",
       "tau": ".43",
       "target": ".19229",
       "branch": "push"
@@ -72,6 +81,7 @@
     {
       "rho": "2.2",
       "gamma": ".50",
+      "gamma2": ".5",
       "tau": ".43",
       "target": ".19229",
       "branch": "recursive"
@@ -79,6 +89,7 @@
     {
       "rho": "2.2",
       "gamma": ".50",
+      "gamma2": ".5",
       "tau": ".46",
       "target": ".19877",
       "branch": "push"
@@ -86,6 +97,7 @@
     {
       "rho": "2.2",
       "gamma": ".50",
+      "gamma2": ".5",
       "tau": ".46",
       "target": ".19877",
       "branch": "recursive"
@@ -93,6 +105,7 @@
     {
       "rho": "2.6",
       "gamma": ".54",
+      "gamma2": ".5",
       "tau": ".45",
       "target": ".19669",
       "branch": "push"
@@ -100,6 +113,7 @@
     {
       "rho": "2.6",
       "gamma": ".54",
+      "gamma2": ".5",
       "tau": ".45",
       "target": ".19669",
       "branch": "recursive"
@@ -107,6 +121,7 @@
     {
       "rho": "2.6",
       "gamma": ".54",
+      "gamma2": ".5",
       "tau": ".48",
       "target": ".20234",
       "branch": "push"
@@ -114,6 +129,7 @@
     {
       "rho": "2.6",
       "gamma": ".54",
+      "gamma2": ".5",
       "tau": ".48",
       "target": ".20234",
       "branch": "recursive"
@@ -121,6 +137,7 @@
     {
       "rho": "2.8",
       "gamma": ".58",
+      "gamma2": ".5",
       "tau": ".47",
       "target": ".20032",
       "branch": "push"
@@ -128,6 +145,7 @@
     {
       "rho": "2.8",
       "gamma": ".58",
+      "gamma2": ".5",
       "tau": ".47",
       "target": ".20032",
       "branch": "recursive"
@@ -135,6 +153,7 @@
     {
       "rho": "2.8",
       "gamma": ".58",
+      "gamma2": ".5",
       "tau": ".49",
       "target": ".20396",
       "branch": "push"
@@ -142,6 +161,7 @@
     {
       "rho": "2.8",
       "gamma": ".58",
+      "gamma2": ".5",
       "tau": ".49",
       "target": ".20396",
       "branch": "recursive"
@@ -149,6 +169,7 @@
     {
       "rho": "3",
       "gamma": ".60",
+      "gamma2": ".5",
       "tau": ".48",
       "target": ".20214",
       "branch": "push"
@@ -156,6 +177,7 @@
     {
       "rho": "3",
       "gamma": ".60",
+      "gamma2": ".5",
       "tau": ".48",
       "target": ".20214",
       "branch": "recursive"
@@ -163,6 +185,7 @@
     {
       "rho": "3",
       "gamma": ".60",
+      "gamma2": ".5",
       "tau": ".49",
       "target": ".20384",
       "branch": "push"
@@ -170,6 +193,7 @@
     {
       "rho": "3",
       "gamma": ".60",
+      "gamma2": ".5",
       "tau": ".49",
       "target": ".20384",
       "branch": "recursive"
@@ -177,6 +201,7 @@
     {
       "rho": "3",
       "gamma": ".60",
+      "gamma2": ".5",
       "tau": ".50",
       "target": ".20556",
       "branch": "push"
@@ -184,6 +209,7 @@
     {
       "rho": "3",
       "gamma": ".60",
+      "gamma2": ".5",
       "tau": ".50",
       "target": ".20556",
       "branch": "recursive"
@@ -191,6 +217,7 @@
     {
       "rho": "3",
       "gamma": ".60",
+      "gamma2": ".5",
       "tau": ".51",
       "target": ".20730",
       "branch": "push"
@@ -198,13 +225,111 @@
     {
       "rho": "3",
       "gamma": ".60",
+      "gamma2": ".5",
       "tau": ".51",
       "target": ".20730",
       "branch": "recursive"
     },
     {
+      "rho": "3.15",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".48",
+      "target": ".20200",
+      "branch": "push"
+    },
+    {
+      "rho": "3.15",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".48",
+      "target": ".20200",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.15",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".49",
+      "target": ".20371",
+      "branch": "push"
+    },
+    {
+      "rho": "3.15",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".49",
+      "target": ".20371",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.15",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".50",
+      "target": ".20544",
+      "branch": "push"
+    },
+    {
+      "rho": "3.15",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".50",
+      "target": ".20544",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.29",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".49",
+      "target": ".20377",
+      "branch": "push"
+    },
+    {
+      "rho": "3.29",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".49",
+      "target": ".20377",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.29",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".50",
+      "target": ".20538",
+      "branch": "push"
+    },
+    {
+      "rho": "3.29",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".50",
+      "target": ".20538",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.29",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".51",
+      "target": ".20700",
+      "branch": "push"
+    },
+    {
+      "rho": "3.29",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".51",
+      "target": ".20700",
+      "branch": "recursive"
+    },
+    {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".50",
       "target": ".20561",
       "branch": "push"
@@ -212,6 +337,7 @@
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".50",
       "target": ".20561",
       "branch": "recursive"
@@ -219,6 +345,7 @@
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".51",
       "target": ".20706",
       "branch": "push"
@@ -226,6 +353,7 @@
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".51",
       "target": ".20706",
       "branch": "recursive"
@@ -233,6 +361,7 @@
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".54",
       "target": ".21148",
       "branch": "push"
@@ -240,6 +369,7 @@
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".54",
       "target": ".21148",
       "branch": "recursive"
@@ -247,6 +377,7 @@
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".58",
       "target": ".21758",
       "branch": "push"
@@ -254,13 +385,63 @@
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".58",
       "target": ".21758",
       "branch": "recursive"
     },
     {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".50",
+      "target": ".20545",
+      "branch": "push"
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".50",
+      "target": ".20545",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".51",
+      "target": ".20695",
+      "branch": "push"
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".51",
+      "target": ".20695",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".52",
+      "target": ".20846",
+      "branch": "push"
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".52",
+      "target": ".20846",
+      "branch": "recursive"
+    },
+    {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".55",
       "target": ".21218",
       "branch": "push"
@@ -268,6 +449,7 @@
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".55",
       "target": ".21218",
       "branch": "recursive"
@@ -275,6 +457,7 @@
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".60",
       "target": ".21801",
       "branch": "push"
@@ -282,6 +465,7 @@
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".60",
       "target": ".21801",
       "branch": "recursive"
@@ -289,6 +473,7 @@
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".65",
       "target": ".22429",
       "branch": "push"
@@ -296,6 +481,7 @@
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".65",
       "target": ".22429",
       "branch": "recursive"
@@ -303,6 +489,7 @@
     {
       "rho": "4",
       "gamma": "direct",
+      "gamma2": "direct",
       "tau": ".60",
       "target": ".21873",
       "branch": "direct"
@@ -310,515 +497,781 @@
     {
       "rho": "4",
       "gamma": "direct",
+      "gamma2": "direct",
       "tau": ".76",
       "target": ".22760",
       "branch": "direct"
     }
   ],
-  "branches": 44,
-  "leaves": 188227,
+  "branches": 62,
+  "leaves": 248189,
   "arithmetic": "exact rationals; integer interval atanh logarithms",
   "scope": "continuous profile inequalities conditional on the analytic circuit and trace lemmas",
+  "segmented_replay": {
+    "driver_sha256": "aebf6688d3e75b135e879895992cd42521e6ece5dc5507b4e5c2438a8dcc0371",
+    "producers": {
+      "kernel_main": 34,
+      "resume_driver": 28
+    },
+    "note": "Completed branches and unfinished frontiers were retained as trusted local work products; this is not a proof-carrying checkpoint format."
+  },
   "results": [
     {
-      "rho": "1.3",
-      "gamma": ".47",
-      "tau": ".24",
-      "target": ".14310",
       "branch": "push",
-      "leaves": 177,
-      "empty": 0,
-      "nodes": 353,
       "depth": 14,
+      "empty": 0,
+      "gamma": ".47",
+      "gamma2": ".5",
+      "leaves": 177,
       "maximum": "57239637489884724783/400000000000000000000",
-      "minimum_margin": "362510115275217/400000000000000000000",
       "methods": {
         "push": 177
       },
-      "seconds": 1.487
-    },
-    {
+      "minimum_margin": "362510115275217/400000000000000000000",
+      "nodes": 353,
       "rho": "1.3",
-      "gamma": ".47",
-      "tau": ".24",
+      "seconds": 0.861,
       "target": ".14310",
-      "branch": "recursive",
-      "leaves": 0,
-      "empty": 1,
-      "nodes": 1,
-      "depth": 0,
-      "maximum": "0",
-      "minimum_margin": null,
-      "methods": {},
-      "seconds": 0.0
+      "tau": ".24"
     },
     {
-      "rho": "1.3",
+      "branch": "recursive",
+      "depth": 0,
+      "empty": 1,
       "gamma": ".47",
-      "tau": ".40",
-      "target": ".19000",
+      "gamma2": ".5",
+      "leaves": 0,
+      "maximum": "0",
+      "methods": {},
+      "minimum_margin": null,
+      "nodes": 1,
+      "rho": "1.3",
+      "seconds": 0.001,
+      "target": ".14310",
+      "tau": ".24"
+    },
+    {
       "branch": "push",
-      "leaves": 25,
-      "empty": 0,
-      "nodes": 49,
       "depth": 6,
+      "empty": 0,
+      "gamma": ".47",
+      "gamma2": ".5",
+      "leaves": 25,
       "maximum": "15168799149606871671/80000000000000000000",
-      "minimum_margin": "31200850393128329/80000000000000000000",
       "methods": {
         "push": 25
       },
-      "seconds": 0.07
-    },
-    {
+      "minimum_margin": "31200850393128329/80000000000000000000",
+      "nodes": 49,
       "rho": "1.3",
-      "gamma": ".47",
-      "tau": ".40",
+      "seconds": 0.135,
       "target": ".19000",
-      "branch": "recursive",
-      "leaves": 0,
-      "empty": 1,
-      "nodes": 1,
-      "depth": 0,
-      "maximum": "0",
-      "minimum_margin": null,
-      "methods": {},
-      "seconds": 0.0
+      "tau": ".40"
     },
     {
-      "rho": "1.7",
+      "branch": "recursive",
+      "depth": 0,
+      "empty": 1,
       "gamma": ".47",
-      "tau": ".40",
-      "target": ".18545",
+      "gamma2": ".5",
+      "leaves": 0,
+      "maximum": "0",
+      "methods": {},
+      "minimum_margin": null,
+      "nodes": 1,
+      "rho": "1.3",
+      "seconds": 0.0,
+      "target": ".19000",
+      "tau": ".40"
+    },
+    {
       "branch": "push",
-      "leaves": 123,
-      "empty": 0,
-      "nodes": 245,
       "depth": 14,
+      "empty": 0,
+      "gamma": ".47",
+      "gamma2": ".5",
+      "leaves": 123,
       "maximum": "23737380544786765573/128000000000000000000",
-      "minimum_margin": "219455213234427/128000000000000000000",
       "methods": {
         "push": 123
       },
-      "seconds": 0.999
-    },
-    {
+      "minimum_margin": "219455213234427/128000000000000000000",
+      "nodes": 245,
       "rho": "1.7",
-      "gamma": ".47",
-      "tau": ".40",
+      "seconds": 0.384,
       "target": ".18545",
-      "branch": "recursive",
-      "leaves": 119,
-      "empty": 0,
-      "nodes": 237,
-      "depth": 16,
-      "maximum": "35657945995489817433973/192320000000000000000000",
-      "minimum_margin": "7798004510182566027/192320000000000000000000",
-      "methods": {
-        "continuous": 111,
-        "old": 3,
-        "closed": 5
-      },
-      "seconds": 2.886
+      "tau": ".40"
     },
     {
-      "rho": "1.7",
-      "gamma": ".47",
-      "tau": ".44",
-      "target": ".19560",
-      "branch": "push",
-      "leaves": 120,
+      "branch": "recursive",
+      "depth": 16,
       "empty": 0,
-      "nodes": 239,
+      "gamma": ".47",
+      "gamma2": ".5",
+      "leaves": 119,
+      "maximum": "35657945995489817433973/192320000000000000000000",
+      "methods": {
+        "closed": 5,
+        "continuous": 111,
+        "old": 3
+      },
+      "minimum_margin": "7798004510182566027/192320000000000000000000",
+      "nodes": 237,
+      "rho": "1.7",
+      "seconds": 1.905,
+      "target": ".18545",
+      "tau": ".40"
+    },
+    {
+      "branch": "push",
       "depth": 13,
+      "empty": 0,
+      "gamma": ".47",
+      "gamma2": ".5",
+      "leaves": 120,
       "maximum": "156476472858852369867/800000000000000000000",
-      "minimum_margin": "3527141147630133/800000000000000000000",
       "methods": {
         "push": 120
       },
-      "seconds": 0.887
+      "minimum_margin": "3527141147630133/800000000000000000000",
+      "nodes": 239,
+      "rho": "1.7",
+      "seconds": 0.603,
+      "target": ".19560",
+      "tau": ".44"
     },
     {
-      "rho": "1.7",
-      "gamma": ".47",
-      "tau": ".44",
-      "target": ".19560",
       "branch": "recursive",
-      "leaves": 210,
-      "empty": 0,
-      "nodes": 419,
       "depth": 16,
+      "empty": 0,
+      "gamma": ".47",
+      "gamma2": ".5",
+      "leaves": 210,
       "maximum": "188087852917406377565987/961600000000000000000000",
-      "minimum_margin": "1107082593622434013/961600000000000000000000",
       "methods": {
-        "continuous": 202,
         "closed": 6,
+        "continuous": 202,
         "old": 2
       },
-      "seconds": 3.776
+      "minimum_margin": "1107082593622434013/961600000000000000000000",
+      "nodes": 419,
+      "rho": "1.7",
+      "seconds": 2.058,
+      "target": ".19560",
+      "tau": ".44"
     },
     {
-      "rho": "2.2",
-      "gamma": ".50",
-      "tau": ".43",
-      "target": ".19229",
       "branch": "push",
-      "leaves": 80,
-      "empty": 0,
-      "nodes": 159,
       "depth": 13,
+      "empty": 0,
+      "gamma": ".50",
+      "gamma2": ".5",
+      "leaves": 80,
       "maximum": "16902802829644386377/88000000000000000000",
+      "methods": {
+        "push": 80
+      },
       "minimum_margin": "18717170355613623/88000000000000000000",
-      "methods": {
-        "push": 80
-      },
-      "seconds": 0.45
-    },
-    {
-      "rho": "2.2",
-      "gamma": ".50",
-      "tau": ".43",
-      "target": ".19229",
-      "branch": "recursive",
-      "leaves": 17319,
-      "empty": 0,
-      "nodes": 34637,
-      "depth": 29,
-      "maximum": "24613119863714610881/128000000000000000000",
-      "minimum_margin": "136285389119/128000000000000000000",
-      "methods": {
-        "old": 61,
-        "continuous": 17236,
-        "closed": 22
-      },
-      "seconds": 249.91
-    },
-    {
-      "rho": "2.2",
-      "gamma": ".50",
-      "tau": ".46",
-      "target": ".19877",
-      "branch": "push",
-      "leaves": 80,
-      "empty": 0,
       "nodes": 159,
+      "rho": "2.2",
+      "seconds": 0.421,
+      "target": ".19229",
+      "tau": ".43"
+    },
+    {
+      "branch": "recursive",
+      "depth": 29,
+      "empty": 0,
+      "gamma": ".50",
+      "gamma2": ".5",
+      "leaves": 17319,
+      "maximum": "24613119863714610881/128000000000000000000",
+      "methods": {
+        "closed": 22,
+        "continuous": 17236,
+        "old": 61
+      },
+      "minimum_margin": "136285389119/128000000000000000000",
+      "nodes": 34637,
+      "rho": "2.2",
+      "seconds": 283.999,
+      "target": ".19229",
+      "tau": ".43"
+    },
+    {
+      "branch": "push",
       "depth": 13,
+      "empty": 0,
+      "gamma": ".50",
+      "gamma2": ".5",
+      "leaves": 80,
       "maximum": "1748668496419722357/8800000000000000000",
-      "minimum_margin": "507503580277643/8800000000000000000",
       "methods": {
         "push": 80
       },
-      "seconds": 0.312
-    },
-    {
+      "minimum_margin": "507503580277643/8800000000000000000",
+      "nodes": 159,
       "rho": "2.2",
-      "gamma": ".50",
-      "tau": ".46",
+      "seconds": 0.315,
       "target": ".19877",
-      "branch": "recursive",
-      "leaves": 14139,
-      "empty": 0,
-      "nodes": 28277,
-      "depth": 28,
-      "maximum": "223894464219913484543/1126400000000000000000",
-      "minimum_margin": "63780086515457/1126400000000000000000",
-      "methods": {
-        "old": 60,
-        "continuous": 14050,
-        "closed": 29
-      },
-      "seconds": 187.555
+      "tau": ".46"
     },
     {
-      "rho": "2.6",
-      "gamma": ".54",
-      "tau": ".45",
-      "target": ".19669",
-      "branch": "push",
-      "leaves": 56,
+      "branch": "recursive",
+      "depth": 28,
       "empty": 0,
-      "nodes": 111,
+      "gamma": ".50",
+      "gamma2": ".5",
+      "leaves": 14139,
+      "maximum": "223894464219913484543/1126400000000000000000",
+      "methods": {
+        "closed": 29,
+        "continuous": 14050,
+        "old": 60
+      },
+      "minimum_margin": "63780086515457/1126400000000000000000",
+      "nodes": 28277,
+      "rho": "2.2",
+      "seconds": 211.169,
+      "target": ".19877",
+      "tau": ".46"
+    },
+    {
+      "branch": "push",
       "depth": 11,
+      "empty": 0,
+      "gamma": ".54",
+      "gamma2": ".5",
+      "leaves": 56,
       "maximum": "1253753401917576819/6400000000000000000",
-      "minimum_margin": "5062598082423181/6400000000000000000",
       "methods": {
         "push": 56
       },
-      "seconds": 0.494
-    },
-    {
+      "minimum_margin": "5062598082423181/6400000000000000000",
+      "nodes": 111,
       "rho": "2.6",
-      "gamma": ".54",
-      "tau": ".45",
+      "seconds": 0.353,
       "target": ".19669",
-      "branch": "recursive",
-      "leaves": 15591,
-      "empty": 0,
-      "nodes": 31181,
-      "depth": 29,
-      "maximum": "56520807233121460205151/287360000000000000000000",
-      "minimum_margin": "31166878539794849/287360000000000000000000",
-      "methods": {
-        "old": 82,
-        "continuous": 15440,
-        "closed": 69
-      },
-      "seconds": 273.96
+      "tau": ".45"
     },
     {
-      "rho": "2.6",
-      "gamma": ".54",
-      "tau": ".48",
-      "target": ".20234",
-      "branch": "push",
-      "leaves": 59,
+      "branch": "recursive",
+      "depth": 29,
       "empty": 0,
-      "nodes": 117,
+      "gamma": ".54",
+      "gamma2": ".5",
+      "leaves": 15591,
+      "maximum": "56520807233121460205151/287360000000000000000000",
+      "methods": {
+        "closed": 69,
+        "continuous": 15440,
+        "old": 82
+      },
+      "minimum_margin": "31166878539794849/287360000000000000000000",
+      "nodes": 31181,
+      "rho": "2.6",
+      "seconds": 164.564,
+      "target": ".19669",
+      "tau": ".45"
+    },
+    {
+      "branch": "push",
       "depth": 11,
+      "empty": 0,
+      "gamma": ".54",
+      "gamma2": ".5",
+      "leaves": 59,
       "maximum": "250902753369263671/1250000000000000000",
-      "minimum_margin": "2022246630736329/1250000000000000000",
       "methods": {
         "push": 59
       },
-      "seconds": 0.359
-    },
-    {
+      "minimum_margin": "2022246630736329/1250000000000000000",
+      "nodes": 117,
       "rho": "2.6",
-      "gamma": ".54",
-      "tau": ".48",
+      "seconds": 0.166,
       "target": ".20234",
+      "tau": ".48"
+    },
+    {
       "branch": "recursive",
-      "leaves": 13576,
-      "empty": 0,
-      "nodes": 27151,
       "depth": 27,
+      "empty": 0,
+      "gamma": ".54",
+      "gamma2": ".5",
+      "leaves": 13576,
       "maximum": "68973808986305862010722947/340880800000000000000000000",
-      "minimum_margin": "12085694137989277053/340880800000000000000000000",
       "methods": {
-        "old": 88,
+        "closed": 70,
         "continuous": 13418,
-        "closed": 70
+        "old": 88
       },
-      "seconds": 238.503
+      "minimum_margin": "12085694137989277053/340880800000000000000000000",
+      "nodes": 27151,
+      "rho": "2.6",
+      "seconds": 133.521,
+      "target": ".20234",
+      "tau": ".48"
     },
     {
-      "rho": "2.8",
-      "gamma": ".58",
-      "tau": ".47",
-      "target": ".20032",
       "branch": "push",
-      "leaves": 52,
-      "empty": 0,
-      "nodes": 103,
       "depth": 9,
+      "empty": 0,
+      "gamma": ".58",
+      "gamma2": ".5",
+      "leaves": 52,
       "maximum": "79476045573281610351/400000000000000000000",
+      "methods": {
+        "push": 52
+      },
       "minimum_margin": "651954426718389649/400000000000000000000",
-      "methods": {
-        "push": 52
-      },
-      "seconds": 0.292
-    },
-    {
-      "rho": "2.8",
-      "gamma": ".58",
-      "tau": ".47",
-      "target": ".20032",
-      "branch": "recursive",
-      "leaves": 11670,
-      "empty": 0,
-      "nodes": 23339,
-      "depth": 26,
-      "maximum": "38740407136173087249508049/193392640000000000000000000",
-      "minimum_margin": "6508626912750491951/193392640000000000000000000",
-      "methods": {
-        "old": 72,
-        "continuous": 11508,
-        "closed": 90
-      },
-      "seconds": 220.637
-    },
-    {
-      "rho": "2.8",
-      "gamma": ".58",
-      "tau": ".49",
-      "target": ".20396",
-      "branch": "push",
-      "leaves": 52,
-      "empty": 0,
       "nodes": 103,
+      "rho": "2.8",
+      "seconds": 0.165,
+      "target": ".20032",
+      "tau": ".47"
+    },
+    {
+      "branch": "recursive",
+      "depth": 26,
+      "empty": 0,
+      "gamma": ".58",
+      "gamma2": ".5",
+      "leaves": 11670,
+      "maximum": "38740407136173087249508049/193392640000000000000000000",
+      "methods": {
+        "closed": 90,
+        "continuous": 11508,
+        "old": 72
+      },
+      "minimum_margin": "6508626912750491951/193392640000000000000000000",
+      "nodes": 23339,
+      "rho": "2.8",
+      "seconds": 122.711,
+      "target": ".20032",
+      "tau": ".47"
+    },
+    {
+      "branch": "push",
       "depth": 9,
+      "empty": 0,
+      "gamma": ".58",
+      "gamma2": ".5",
+      "leaves": 52,
       "maximum": "81055767518402876299/400000000000000000000",
-      "minimum_margin": "528232481597123701/400000000000000000000",
       "methods": {
         "push": 52
       },
-      "seconds": 0.196
-    },
-    {
+      "minimum_margin": "528232481597123701/400000000000000000000",
+      "nodes": 103,
       "rho": "2.8",
-      "gamma": ".58",
-      "tau": ".49",
+      "seconds": 0.141,
       "target": ".20396",
+      "tau": ".49"
+    },
+    {
       "branch": "recursive",
+      "depth": 26,
+      "empty": 0,
+      "gamma": ".58",
+      "gamma2": ".5",
       "leaves": 10663,
-      "empty": 0,
-      "nodes": 21325,
-      "depth": 26,
       "maximum": "1232634482307334417256167/6043520000000000000000000",
-      "minimum_margin": "1856892665582743833/6043520000000000000000000",
       "methods": {
-        "old": 71,
+        "closed": 90,
         "continuous": 10502,
-        "closed": 90
+        "old": 71
       },
-      "seconds": 148.038
+      "minimum_margin": "1856892665582743833/6043520000000000000000000",
+      "nodes": 21325,
+      "rho": "2.8",
+      "seconds": 144.309,
+      "target": ".20396",
+      "tau": ".49"
     },
     {
-      "rho": "3",
-      "gamma": ".60",
-      "tau": ".48",
-      "target": ".20214",
       "branch": "push",
-      "leaves": 48,
-      "empty": 0,
-      "nodes": 95,
       "depth": 8,
+      "empty": 0,
+      "gamma": ".60",
+      "gamma2": ".5",
+      "leaves": 48,
       "maximum": "3212079288371567119/16000000000000000000",
+      "methods": {
+        "push": 48
+      },
       "minimum_margin": "22160711628432881/16000000000000000000",
-      "methods": {
-        "push": 48
-      },
-      "seconds": 0.304
-    },
-    {
-      "rho": "3",
-      "gamma": ".60",
-      "tau": ".48",
-      "target": ".20214",
-      "branch": "recursive",
-      "leaves": 10249,
-      "empty": 0,
-      "nodes": 20497,
-      "depth": 26,
-      "maximum": "355766386085135204827/1760000000000000000000",
-      "minimum_margin": "13914864795173/1760000000000000000000",
-      "methods": {
-        "old": 80,
-        "continuous": 10084,
-        "closed": 85
-      },
-      "seconds": 175.265
-    },
-    {
-      "rho": "3",
-      "gamma": ".60",
-      "tau": ".49",
-      "target": ".20384",
-      "branch": "push",
-      "leaves": 48,
-      "empty": 0,
       "nodes": 95,
+      "rho": "3",
+      "seconds": 0.475,
+      "target": ".20214",
+      "tau": ".48"
+    },
+    {
+      "branch": "recursive",
+      "depth": 26,
+      "empty": 0,
+      "gamma": ".60",
+      "gamma2": ".5",
+      "leaves": 10249,
+      "maximum": "355766386085135204827/1760000000000000000000",
+      "methods": {
+        "closed": 85,
+        "continuous": 10084,
+        "old": 80
+      },
+      "minimum_margin": "13914864795173/1760000000000000000000",
+      "nodes": 20497,
+      "rho": "3",
+      "seconds": 172.539,
+      "target": ".20214",
+      "tau": ".48"
+    },
+    {
+      "branch": "push",
       "depth": 8,
+      "empty": 0,
+      "gamma": ".60",
+      "gamma2": ".5",
+      "leaves": 48,
       "maximum": "8110105098624959407/40000000000000000000",
-      "minimum_margin": "43494901375040593/40000000000000000000",
       "methods": {
         "push": 48
       },
-      "seconds": 0.242
-    },
-    {
+      "minimum_margin": "43494901375040593/40000000000000000000",
+      "nodes": 95,
       "rho": "3",
-      "gamma": ".60",
-      "tau": ".49",
+      "seconds": 0.127,
       "target": ".20384",
+      "tau": ".49"
+    },
+    {
       "branch": "recursive",
+      "depth": 26,
+      "empty": 0,
+      "gamma": ".60",
+      "gamma2": ".5",
       "leaves": 9932,
-      "empty": 0,
-      "nodes": 19863,
-      "depth": 26,
       "maximum": "2870066986817379982899/14080000000000000000000",
-      "minimum_margin": "213182620017101/14080000000000000000000",
       "methods": {
-        "old": 80,
+        "closed": 85,
         "continuous": 9767,
-        "closed": 85
+        "old": 80
       },
-      "seconds": 138.388
+      "minimum_margin": "213182620017101/14080000000000000000000",
+      "nodes": 19863,
+      "rho": "3",
+      "seconds": 111.438,
+      "target": ".20384",
+      "tau": ".49"
     },
     {
-      "rho": "3",
-      "gamma": ".60",
-      "tau": ".50",
-      "target": ".20556",
       "branch": "push",
-      "leaves": 49,
-      "empty": 0,
-      "nodes": 97,
       "depth": 8,
+      "empty": 0,
+      "gamma": ".60",
+      "gamma2": ".5",
+      "leaves": 49,
       "maximum": "653024686642566767/3200000000000000000",
+      "methods": {
+        "push": 49
+      },
       "minimum_margin": "4767313357433233/3200000000000000000",
-      "methods": {
-        "push": 49
-      },
-      "seconds": 0.206
-    },
-    {
-      "rho": "3",
-      "gamma": ".60",
-      "tau": ".50",
-      "target": ".20556",
-      "branch": "recursive",
-      "leaves": 9562,
-      "empty": 0,
-      "nodes": 19123,
-      "depth": 26,
-      "maximum": "14471411928324917287/70400000000000000000",
-      "minimum_margin": "12071675082713/70400000000000000000",
-      "methods": {
-        "old": 80,
-        "continuous": 9397,
-        "closed": 85
-      },
-      "seconds": 116.016
-    },
-    {
-      "rho": "3",
-      "gamma": ".60",
-      "tau": ".51",
-      "target": ".20730",
-      "branch": "push",
-      "leaves": 49,
-      "empty": 0,
       "nodes": 97,
+      "rho": "3",
+      "seconds": 0.142,
+      "target": ".20556",
+      "tau": ".50"
+    },
+    {
+      "branch": "recursive",
+      "depth": 26,
+      "empty": 0,
+      "gamma": ".60",
+      "gamma2": ".5",
+      "leaves": 9562,
+      "maximum": "14471411928324917287/70400000000000000000",
+      "methods": {
+        "closed": 85,
+        "continuous": 9397,
+        "old": 80
+      },
+      "minimum_margin": "12071675082713/70400000000000000000",
+      "nodes": 19123,
+      "rho": "3",
+      "seconds": 96.291,
+      "target": ".20556",
+      "tau": ".50"
+    },
+    {
+      "branch": "push",
       "depth": 8,
+      "empty": 0,
+      "gamma": ".60",
+      "gamma2": ".5",
+      "leaves": 49,
       "maximum": "32963270719542949927/160000000000000000000",
-      "minimum_margin": "204729280457050073/160000000000000000000",
       "methods": {
         "push": 49
       },
-      "seconds": 0.254
+      "minimum_margin": "204729280457050073/160000000000000000000",
+      "nodes": 97,
+      "rho": "3",
+      "seconds": 0.143,
+      "target": ".20730",
+      "tau": ".51"
     },
     {
-      "rho": "3",
-      "gamma": ".60",
-      "tau": ".51",
-      "target": ".20730",
       "branch": "recursive",
-      "leaves": 9402,
-      "empty": 0,
-      "nodes": 18803,
       "depth": 26,
+      "empty": 0,
+      "gamma": ".60",
+      "gamma2": ".5",
+      "leaves": 9402,
       "maximum": "5107865804275476230539/24640000000000000000000",
-      "minimum_margin": "6195724523769461/24640000000000000000000",
       "methods": {
-        "old": 81,
+        "closed": 83,
         "continuous": 9238,
-        "closed": 83
+        "old": 81
       },
-      "seconds": 167.016
+      "minimum_margin": "6195724523769461/24640000000000000000000",
+      "nodes": 18803,
+      "rho": "3",
+      "seconds": 84.794,
+      "target": ".20730",
+      "tau": ".51"
+    },
+    {
+      "branch": "push",
+      "depth": 9,
+      "empty": 0,
+      "gamma": ".664",
+      "gamma2": ".56",
+      "leaves": 47,
+      "maximum": "78030748896041637600970021/387100000000000000000000000",
+      "methods": {
+        "push": 47
+      },
+      "minimum_margin": "163451103958362399029979/387100000000000000000000000",
+      "nodes": 93,
+      "rho": "3.15",
+      "seconds": 0.135,
+      "target": ".20200",
+      "tau": ".48"
+    },
+    {
+      "branch": "recursive",
+      "depth": 25,
+      "empty": 0,
+      "gamma": ".664",
+      "gamma2": ".56",
+      "leaves": 6760,
+      "maximum": "59711197706456546008375241/295600000000000000000000000",
+      "methods": {
+        "closed": 12,
+        "continuous": 6649,
+        "old": 99
+      },
+      "minimum_margin": "2293543453991624759/295600000000000000000000000",
+      "nodes": 13519,
+      "rho": "3.15",
+      "seconds": 62.967,
+      "target": ".20200",
+      "tau": ".48"
+    },
+    {
+      "branch": "push",
+      "depth": 9,
+      "empty": 0,
+      "gamma": ".664",
+      "gamma2": ".56",
+      "leaves": 47,
+      "maximum": "236143674181190611645528619/1161300000000000000000000000",
+      "methods": {
+        "push": 47
+      },
+      "minimum_margin": "424748818809388354471381/1161300000000000000000000000",
+      "nodes": 93,
+      "rho": "3.15",
+      "seconds": 0.257,
+      "target": ".20371",
+      "tau": ".49"
+    },
+    {
+      "rho": "3.15",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".49",
+      "target": ".20371",
+      "branch": "recursive",
+      "leaves": 6513,
+      "empty": 0,
+      "nodes": 13025,
+      "depth": 24,
+      "maximum": "174824047143742997468215821337/858200700000000000000000000000",
+      "minimum_margin": "17453257002531784178663/858200700000000000000000000000",
+      "methods": {
+        "old": 99,
+        "continuous": 6398,
+        "closed": 16
+      },
+      "seconds": 293.707
+    },
+    {
+      "branch": "push",
+      "depth": 9,
+      "empty": 0,
+      "gamma": ".664",
+      "gamma2": ".56",
+      "leaves": 47,
+      "maximum": "114367106385426380107839211/557424000000000000000000000",
+      "methods": {
+        "push": 47
+      },
+      "minimum_margin": "150080174573619892160789/557424000000000000000000000",
+      "nodes": 93,
+      "rho": "3.15",
+      "seconds": 0.255,
+      "target": ".20544",
+      "tau": ".50"
+    },
+    {
+      "rho": "3.15",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".50",
+      "target": ".20544",
+      "branch": "recursive",
+      "leaves": 6382,
+      "empty": 0,
+      "nodes": 12763,
+      "depth": 23,
+      "maximum": "11283746417464754609164037411/54924844800000000000000000000",
+      "minimum_margin": "13698247245390835962589/54924844800000000000000000000",
+      "methods": {
+        "old": 112,
+        "continuous": 6253,
+        "closed": 17
+      },
+      "seconds": 290.625
+    },
+    {
+      "branch": "push",
+      "depth": 9,
+      "empty": 0,
+      "gamma": ".664",
+      "gamma2": ".56",
+      "leaves": 46,
+      "maximum": "5038419507490058012427716429/24774400000000000000000000000",
+      "methods": {
+        "push": 46
+      },
+      "minimum_margin": "9859980509941987572283571/24774400000000000000000000000",
+      "nodes": 91,
+      "rho": "3.29",
+      "seconds": 0.136,
+      "target": ".20377",
+      "tau": ".49"
+    },
+    {
+      "rho": "3.29",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".49",
+      "target": ".20377",
+      "branch": "recursive",
+      "leaves": 6484,
+      "empty": 0,
+      "nodes": 12967,
+      "depth": 24,
+      "maximum": "28205022583105734444256330311/138416000000000000000000000000",
+      "minimum_margin": "5736894265555743669689/138416000000000000000000000000",
+      "methods": {
+        "old": 103,
+        "continuous": 6362,
+        "closed": 19
+      },
+      "seconds": 135.294
+    },
+    {
+      "branch": "push",
+      "depth": 9,
+      "empty": 0,
+      "gamma": ".664",
+      "gamma2": ".56",
+      "leaves": 46,
+      "maximum": "20334079539329610664975819/99097600000000000000000000",
+      "methods": {
+        "push": 46
+      },
+      "minimum_margin": "18585548670389335024181/99097600000000000000000000",
+      "nodes": 91,
+      "rho": "3.29",
+      "seconds": 0.139,
+      "target": ".20538",
+      "tau": ".50"
+    },
+    {
+      "rho": "3.29",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".50",
+      "target": ".20538",
+      "branch": "recursive",
+      "leaves": 6405,
+      "empty": 0,
+      "nodes": 12809,
+      "depth": 24,
+      "maximum": "284278550455949712848857003/1384160000000000000000000000",
+      "minimum_margin": "230344050287151142997/1384160000000000000000000000",
+      "methods": {
+        "old": 116,
+        "continuous": 6268,
+        "closed": 21
+      },
+      "seconds": 300.198
+    },
+    {
+      "rho": "3.29",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".51",
+      "target": ".20700",
+      "branch": "push",
+      "leaves": 47,
+      "empty": 0,
+      "nodes": 93,
+      "depth": 9,
+      "maximum": "16663679001420161938935611/81221875000000000000000000",
+      "minimum_margin": "149249123579838061064389/81221875000000000000000000",
+      "methods": {
+        "push": 47
+      },
+      "seconds": 1.284
+    },
+    {
+      "rho": "3.29",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".51",
+      "target": ".20700",
+      "branch": "recursive",
+      "leaves": 6397,
+      "empty": 0,
+      "nodes": 12793,
+      "depth": 24,
+      "maximum": "114608405013932682397245502777/553664000000000000000000000000",
+      "minimum_margin": "42986067317602754497223/553664000000000000000000000000",
+      "methods": {
+        "old": 115,
+        "continuous": 6259,
+        "closed": 23
+      },
+      "seconds": 268.622
     },
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".50",
       "target": ".20561",
       "branch": "push",
@@ -831,11 +1284,12 @@
       "methods": {
         "push": 48
       },
-      "seconds": 0.255
+      "seconds": 0.877
     },
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".50",
       "target": ".20561",
       "branch": "recursive",
@@ -850,11 +1304,12 @@
         "continuous": 9222,
         "closed": 43
       },
-      "seconds": 143.431
+      "seconds": 371.527
     },
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".51",
       "target": ".20706",
       "branch": "push",
@@ -867,11 +1322,12 @@
       "methods": {
         "push": 49
       },
-      "seconds": 0.262
+      "seconds": 0.308
     },
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".51",
       "target": ".20706",
       "branch": "recursive",
@@ -886,11 +1342,12 @@
         "continuous": 9053,
         "closed": 44
       },
-      "seconds": 164.819
+      "seconds": 251.879
     },
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".54",
       "target": ".21148",
       "branch": "push",
@@ -903,11 +1360,12 @@
       "methods": {
         "push": 49
       },
-      "seconds": 0.236
+      "seconds": 0.597
     },
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".54",
       "target": ".21148",
       "branch": "recursive",
@@ -922,11 +1380,12 @@
         "continuous": 9257,
         "closed": 45
       },
-      "seconds": 90.356
+      "seconds": 304.26
     },
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".58",
       "target": ".21758",
       "branch": "push",
@@ -939,11 +1398,12 @@
       "methods": {
         "push": 49
       },
-      "seconds": 0.171
+      "seconds": 0.714
     },
     {
       "rho": "3.4",
       "gamma": ".62",
+      "gamma2": ".5",
       "tau": ".58",
       "target": ".21758",
       "branch": "recursive",
@@ -958,11 +1418,126 @@
         "continuous": 9433,
         "closed": 47
       },
-      "seconds": 131.666
+      "seconds": 342.933
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".50",
+      "target": ".20545",
+      "branch": "push",
+      "leaves": 45,
+      "empty": 0,
+      "nodes": 89,
+      "depth": 9,
+      "maximum": "8195606072021199043/40000000000000000000",
+      "minimum_margin": "22393927978800957/40000000000000000000",
+      "methods": {
+        "push": 45
+      },
+      "seconds": 0.305
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".50",
+      "target": ".20545",
+      "branch": "recursive",
+      "leaves": 6782,
+      "empty": 0,
+      "nodes": 13563,
+      "depth": 24,
+      "maximum": "458375356604850051751678477/2231080000000000000000000000",
+      "minimum_margin": "29395149948248321523/2231080000000000000000000000",
+      "methods": {
+        "old": 114,
+        "continuous": 6646,
+        "closed": 22
+      },
+      "seconds": 154.869
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".51",
+      "target": ".20695",
+      "branch": "push",
+      "leaves": 46,
+      "empty": 0,
+      "nodes": 91,
+      "depth": 9,
+      "maximum": "14133263258567178234873982901/69368320000000000000000000000",
+      "minimum_margin": "222510565432821765126017099/69368320000000000000000000000",
+      "methods": {
+        "push": 46
+      },
+      "seconds": 0.765
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".51",
+      "target": ".20695",
+      "branch": "recursive",
+      "leaves": 6811,
+      "empty": 0,
+      "nodes": 13621,
+      "depth": 24,
+      "maximum": "92344270804349895848768030343/446216000000000000000000000000",
+      "minimum_margin": "130395650104151231969657/446216000000000000000000000000",
+      "methods": {
+        "old": 114,
+        "continuous": 6674,
+        "closed": 23
+      },
+      "seconds": 254.049
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".52",
+      "target": ".20846",
+      "branch": "push",
+      "leaves": 46,
+      "empty": 0,
+      "nodes": 91,
+      "depth": 9,
+      "maximum": "24947850438086887078158131401/121394560000000000000000000000",
+      "minimum_margin": "358059539513112921841868599/121394560000000000000000000000",
+      "methods": {
+        "push": 46
+      },
+      "seconds": 0.585
+    },
+    {
+      "rho": "3.43",
+      "gamma": ".664",
+      "gamma2": ".56",
+      "tau": ".52",
+      "target": ".20846",
+      "branch": "recursive",
+      "leaves": 7011,
+      "empty": 0,
+      "nodes": 14021,
+      "depth": 24,
+      "maximum": "93018163502632972918398142581/446216000000000000000000000000",
+      "minimum_margin": "23857367027081601857419/446216000000000000000000000000",
+      "methods": {
+        "old": 114,
+        "continuous": 6873,
+        "closed": 24
+      },
+      "seconds": 170.545
     },
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".55",
       "target": ".21218",
       "branch": "push",
@@ -975,11 +1550,12 @@
       "methods": {
         "push": 47
       },
-      "seconds": 0.186
+      "seconds": 0.659
     },
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".55",
       "target": ".21218",
       "branch": "recursive",
@@ -994,11 +1570,12 @@
         "continuous": 8089,
         "closed": 61
       },
-      "seconds": 149.962
+      "seconds": 271.902
     },
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".60",
       "target": ".21801",
       "branch": "push",
@@ -1011,11 +1588,12 @@
       "methods": {
         "push": 53
       },
-      "seconds": 0.283
+      "seconds": 0.635
     },
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".60",
       "target": ".21801",
       "branch": "recursive",
@@ -1030,11 +1608,12 @@
         "continuous": 8680,
         "closed": 58
       },
-      "seconds": 154.387
+      "seconds": 178.524
     },
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".65",
       "target": ".22429",
       "branch": "push",
@@ -1047,11 +1626,12 @@
       "methods": {
         "push": 60
       },
-      "seconds": 0.315
+      "seconds": 0.183
     },
     {
       "rho": "4",
       "gamma": ".65",
+      "gamma2": ".5",
       "tau": ".65",
       "target": ".22429",
       "branch": "recursive",
@@ -1066,11 +1646,12 @@
         "continuous": 9212,
         "closed": 57
       },
-      "seconds": 148.981
+      "seconds": 97.731
     },
     {
       "rho": "4",
       "gamma": "direct",
+      "gamma2": "direct",
       "tau": ".60",
       "target": ".21873",
       "branch": "direct",
@@ -1083,11 +1664,12 @@
       "methods": {
         "direct": 161
       },
-      "seconds": 0.209
+      "seconds": 0.42
     },
     {
       "rho": "4",
       "gamma": "direct",
+      "gamma2": "direct",
       "tau": ".76",
       "target": ".22760",
       "branch": "direct",
@@ -1100,7 +1682,7 @@
       "methods": {
         "direct": 224
       },
-      "seconds": 0.267
+      "seconds": 0.552
     }
   ]
 }

@@ -6,9 +6,10 @@ The current-blocker lemma reduces the independent-transversal layer
 depth to O(epsilon^{-1} log(q+1)). The retained public signature
 analysis still gives the exponent
 
-```math
+<!-- math-display: 3dae720ad5021117d6843c09
 O(\epsilon^{-1}\log(2+r/\epsilon)).
-```
+-->
+![Formula](../../assets/math/3dae720ad5021117d6843c09.svg)
 
 This note explains two precise limitations of that proof architecture.
 It does not prove an algorithmic lower bound, and it does not rule out
@@ -39,10 +40,11 @@ that r by a constant times epsilon k.
 
 Consequently the existing estimate
 
-```math
+<!-- math-display: efe7fd473799d7e0ea5571c0
 |D\setminus K|
        \le O(\mu r)\sum |X_i|
-```
+-->
+![Formula](../../assets/math/efe7fd473799d7e0ea5571c0.svg)
 
 cannot be made O(epsilon) times the blocker prefix merely by taking
 mu=Theta(epsilon) independently of r. The chosen mu=Theta(epsilon/r)
@@ -51,9 +53,10 @@ is doing actual work in this proof.
 One possible new rule is to adopt whenever the extra candidate
 vertex volume
 
-```math
+<!-- math-display: c4f36821c9dc951b6a35e55b
 |Xhat_i\setminus X_i|+|Yhat_i\setminus Y_i|
-```
+-->
+![Formula](../../assets/math/c4f36821c9dc951b6a35e55b.svg)
 
 is a significant fraction of the current blocker count. Rejection
 would then give a rank-independent certificate loss directly.
@@ -75,10 +78,11 @@ There is a stronger counting limitation. Even with the new current-Y
 growth and all current graph invariants, the set of possible public
 signature vectors can have
 
-```math
+<!-- math-display: c64c319fa636d9fbd5a0a510
 q^{\Omega(\epsilon^{-1}\log r)}
  \tag{1}
-```
+-->
+![Formula](../../assets/math/c64c319fa636d9fbd5a0a510.svg)
 
 distinct elements. This is a statement about the container counted
 by the analysis, across valid inputs and reachable states of that
@@ -87,35 +91,39 @@ size. It is not a statement that one input executes all these states.
 For clarity take r>=3, mu=rho=epsilon/(100r), and
 Q=ceil(1/mu). Start with
 
-```math
+<!-- math-display: 8ba1b77f56ab5c45f0be6f55
 X_1=Q,\qquad Y_1=(r-1)Q,\qquad W_2=1+Y_1.
-```
+-->
+![Formula](../../assets/math/8ba1b77f56ab5c45f0be6f55.svg)
 
 For each later layer, fix its blocker count by
 
-```math
+<!-- math-display: 174fbec8495e36640daec2c0
 W_i=1+\sum_{j<i}Y_j,\qquad
        Y_i=\left\lceil\frac{\epsilon}{5}W_i\right\rceil.
  \tag{2}
-```
+-->
+![Formula](../../assets/math/174fbec8495e36640daec2c0.svg)
 
 Stop after L layers, and let q=1+sum_{j<=L}Y_j. Once q is
 sufficiently larger than (r^2/epsilon)^2, this gives
 
-```math
+<!-- math-display: a1bb619f416f82b96f8fc410
 L=\Theta(\epsilon^{-1}\log q).
-```
+-->
+![Formula](../../assets/math/a1bb619f416f82b96f8fc410.svg)
 
 The small integer rounding in (2) changes only constants: W_2 is
 already much larger than 1/epsilon.
 
 Independently at every layer i>=2, choose one of r-1 selected counts
 
-```math
+<!-- math-display: 2c523f6b9b08d3f559e61c59
 X_i(j)=\left\lceil\frac{jY_i}{r-1}\right\rceil,
                       \qquad j=1,\ldots,r-1.
  \tag{3}
-```
+-->
+![Formula](../../assets/math/2c523f6b9b08d3f559e61c59.svg)
 
 These choices satisfy all the count conditions used by the current
 signature proof:
@@ -175,11 +183,12 @@ construction is not an execution-length lower bound.
 
 The negative selected coordinate at layer i is
 
-```math
+<!-- math-display: 033d506d2d4e3b7ea414cbfc
 -\left\lfloor\log_b
     \frac{\rho^{-i}}{(1-\mu)^{i-1}}X_i\right\rfloor,
  \qquad b=\frac{Q}{Q-\mu\rho}.
-```
+-->
+![Formula](../../assets/math/033d506d2d4e3b7ea414cbfc.svg)
 
 Here log b=Theta(mu^3). Consecutive values in (3) differ
 multiplicatively by at least 1+c/r for an absolute c, after the

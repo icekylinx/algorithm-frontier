@@ -12,10 +12,11 @@ Let `F` be one normalized monotone integral polymatroid rank on an explicit grou
 
 Set
 
-```math
+<!-- math-display: 30a5c8f8151a7cb93cce0291
 T=\sum_{j=1}^d T_j.
 \tag{CC1}
-```
+-->
+![Formula](../../../assets/math/30a5c8f8151a7cb93cce0291.svg)
 
 An optional independent-vector problem can be represented by a base using one disposal coordinate with zero row and scalar coefficients. If the original rank is `R`, its lifted rank is `F(S)` for sets not containing disposal and `R` for sets containing it. Projection and completion by the missing total give an exact correspondence. An original mandatory base receives no such disposal coordinate.
 
@@ -23,10 +24,11 @@ From this point, keep the required original base total `R`. Remove zero-target c
 
 Let `C` be the remaining covering rows and `s=|C|`. Every one has positive integer target, so
 
-```math
+<!-- math-display: c6d9bf184de47429fbb07a10
 s\le T.
 \tag{CC2}
-```
+-->
+![Formula](../../../assets/math/c6d9bf184de47429fbb07a10.svg)
 
 Let `F0` be the remaining rank on the eligible ground `E0`. Whenever preprocessing succeeds, `F0(E0)=R`. Its ground includes the legitimate disposal coordinate only in the optional model. All subsequent constructions use binary counts; conceptual individual resource units appear only in existence proofs.
 
@@ -34,34 +36,38 @@ Let `F0` be the remaining rank on the eligible ground `E0`. Whenever preprocessi
 
 Enumerate every permutation
 
-```math
+<!-- math-display: 4ce5181fef74f24d8ce60789
 \pi=(\pi_1,\ldots,\pi_s)
 \tag{CC3}
-```
+-->
+![Formula](../../../assets/math/4ce5181fef74f24d8ce60789.svg)
 
 of the covering rows. For this permutation define the decreasing chain
 
-```math
+<!-- math-display: d4c0f9ba50b3edf50c195f5b
 C_i=C\setminus\{\pi_1,\ldots,\pi_i\},
 \qquad 0\le i\le s.
 \tag{CC4}
-```
+-->
+![Formula](../../../assets/math/d4c0f9ba50b3edf50c195f5b.svg)
 
 Thus `C_0=C` and `C_s` is empty. Create the coordinates `(e,i)` for `e in E0` and `0<=i<=s`. Let `pr` forget the second coordinate and define
 
-```math
+<!-- math-display: 59ce88a6c5f1b08b80032413
 F_\pi^\uparrow(Y)=F0(\mathrm{pr}(Y)).
 \tag{CC5}
-```
+-->
+![Formula](../../../assets/math/59ce88a6c5f1b08b80032413.svg)
 
 This is an integral polymatroid rank. If `x_e=sum_i z_(e,i)`, then
 
-```math
+<!-- math-display: ae1c0b53c2f813f159e75fd4
 z\in P(F_\pi^\uparrow)\iff x\in P(F0),
 \qquad
 z\in B(F_\pi^\uparrow)\iff x\in B(F0).
 \tag{CC6}
-```
+-->
+![Formula](../../../assets/math/ae1c0b53c2f813f159e75fd4.svg)
 
 For the forward implication, query the full preimage of each original set. For the reverse implication, the sum on any copied set is bounded by the aggregate on its projection. The base equivalence follows by total mass. Projection preserves unions and maps intersections into intersections, which proves submodularity together with monotonicity of `F0`.
 
@@ -69,18 +75,19 @@ Every copy retains the original scalar coefficient `w_e`. Resource capacities ar
 
 For an upper or equality row set `b^j_(e,i)=a^j_e`. For a covering row set
 
-```math
+<!-- math-display: b128cd89cbe45c0494415803
 b^j_{(e,i)}=
 \begin{cases}
 \min\{a^j_e,T_j\},&j\in C_i,\\
 0,&j\notin C_i.
 \end{cases}
 \tag{CC7}
-```
+-->
+![Formula](../../../assets/math/b128cd89cbe45c0494415803.svg)
 
 The chain instance asks for the auxiliary row totals in the intervals
 
-```math
+<!-- math-display: dffae3b4e8c6f93a660047c2
 \begin{array}{c|c}
 \rho_j&\text{allowed auxiliary total}\\ \hline
 \le&[0,T_j]\\
@@ -88,7 +95,8 @@ The chain instance asks for the auxiliary row totals in the intervals
 \ge&[T_j,2T_j-1].
 \end{array}
 \tag{CC8}
-```
+-->
+![Formula](../../../assets/math/dffae3b4e8c6f93a660047c2.svg)
 
 All bounds and coefficients in this representation are integers.
 
@@ -102,37 +110,41 @@ The original scalar is unchanged, including when some scalar coefficients are ne
 
 Fix any feasible original integer base `x`. Conceptually list its `R` individual units in one arbitrary common order
 
-```math
+<!-- math-display: 9dccb91f31eeee759cd7cb3d
 e_1,e_2,\ldots,e_R,
 \tag{CC9}
-```
+-->
+![Formula](../../../assets/math/9dccb91f31eeee759cd7cb3d.svg)
 
 where coordinate `e` appears `x_e` times. No algorithm constructs this list.
 
 For every remaining covering row `j`, let
 
-```math
+<!-- math-display: 7bd1293fb3183133adb95482
 c_{jt}=\min\{a^j_{e_t},T_j\},
 \qquad
 \tau_j=\min\left\{u:\sum_{t=1}^u c_{jt}\ge T_j\right\}.
 \tag{CC10}
-```
+-->
+![Formula](../../../assets/math/7bd1293fb3183133adb95482.svg)
 
 This first-reaching position exists. Indeed, if an original unit already has coefficient at least `T_j`, its capped contribution alone reaches the target; otherwise no coefficient changes under capping. In either case the full capped sum reaches `T_j`.
 
 Mark the entire common-order prefix through position `tau_j` in row `j`. Zero-contribution units may be included in this prefix and do not affect the argument. The previous prefix has integer sum at most `T_j-1`, and the last contribution is at most `T_j`. Consequently
 
-```math
+<!-- math-display: 11dc1cb8da492764953f4092
 T_j\le\sum_{t=1}^{\tau_j}c_{jt}\le2T_j-1.
 \tag{CC11}
-```
+-->
+![Formula](../../../assets/math/11dc1cb8da492764953f4092.svg)
 
 Choose a permutation `pi` that sorts the positions `tau_j` nondecreasingly, breaking ties arbitrarily. For a unit in position `t`, put
 
-```math
+<!-- math-display: 8ebe900781006628ffc46b5e
 i(t)=|\{j\in C:\tau_j<t\}|.
 \tag{CC12}
-```
+-->
+![Formula](../../../assets/math/8ebe900781006628ffc46b5e.svg)
 
 The rows that mark this unit are exactly those with `tau_j>=t`, which form the chain suffix `C_(i(t))`. Assign the unit to copy `(e_t,i(t))`. Aggregating these assignments produces binary-encoded counts `z_(e,i)` with the same original projection `x`.
 
@@ -150,7 +162,7 @@ Impose these counts as upper caps of a partition-count polymatroid. Its intersec
 
 For each surviving row let
 
-```math
+<!-- math-display: 6ac8c5910f3a5c697bc86482
 U_j=\begin{cases}
 T_j,&\rho_j\in\{\le,=\},\\
 2T_j-1,&\rho_j=\ge.
@@ -158,7 +170,8 @@ T_j,&\rho_j\in\{\le,=\},\\
 \qquad
 U=\sum_j U_j\le2T.
 \tag{CC13}
-```
+-->
+![Formula](../../../assets/math/6ac8c5910f3a5c697bc86482.svg)
 
 Rows with zero cap have already been removed after their masks. Enumerate nonzero profile counts by depth-first search, enforcing every component upper cap and the total count bound. The next count is bounded by the remaining rank and by `(U_j-W_j)/b_j` in every positive component. Lower and equality filters are applied at complete profiles.
 
@@ -168,10 +181,11 @@ For a fixed chain there are only `(s+1)|E0|` copied coordinates and at most that
 
 Therefore the complete algorithm uses polynomial binary workspace uniformly in the full input. Its running time is
 
-```math
+<!-- math-display: 153990ff1e7e4ed0246aba05
 s!\;\mathcal P(U_1,\ldots,U_{d'})\;\mathrm{poly}(H),
 \tag{CC14}
-```
+-->
+![Formula](../../../assets/math/153990ff1e7e4ed0246aba05.svg)
 
 where `mathcal P` counts nonzero vector profiles respecting the component upper caps; occupied-depth factors are absorbed in the polynomial. All oracle and exact-intersection costs are paid in that polynomial. No unit list, target-sized coefficient universe, or exponentially large subset-copy ground is stored.
 
@@ -181,12 +195,13 @@ For fixed dimension, applying the colored-partition estimate from MD recovers it
 
 The following elementary counting bound is useful when the number of rows is not fixed:
 
-```math
+<!-- math-display: 17969f0200f3fe50c08be92b
 \mathcal P(U_1,\ldots,U_{d'})
 \le \mathrm{Bell}(U+1)
 \le (U+1)^{U+1}.
 \tag{CC15}
-```
+-->
+![Formula](../../../assets/math/17969f0200f3fe50c08be92b.svg)
 
 For the first inequality, imagine `U_j` distinguished tokens of color `j`, together with one distinguished star. Order the nonzero vectors of a profile canonically, and order repeated copies arbitrarily by their occurrence number. For each vector occurrence `b`, form a block by taking the next `b_j` unused tokens of color `j` for every component. The cap constraints guarantee enough tokens. Each such block is nonempty because `b` is nonzero. Put all remaining tokens and the star into one final block.
 
@@ -198,10 +213,11 @@ The tokens are solely a counting device. In particular, CC15 does not require `U
 
 Using `s<=T` and `U<=2T` in CC14–CC15 gives the uniform consequence
 
-```math
+<!-- math-display: e9c35c05b101c74fe5e391b7
 2^{O((T+1)\log(T+2))}\mathrm{poly}(H)
 \tag{CC16}
-```
+-->
+![Formula](../../../assets/math/e9c35c05b101c74fe5e391b7.svg)
 
 with polynomial binary space. When `T=0`, preprocessing leaves only the original base and scalar optimization, which is polynomial. The companion variable-dimensional theorem supplies the matching target-order oracle lower bound; this note's main purpose is the exact chain representation that makes the uniform workspace statement possible.
 

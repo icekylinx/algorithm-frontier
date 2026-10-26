@@ -31,12 +31,13 @@ Let H include the explicit ground, every original numerical bit, and
 the paid descriptions and costs of the required polynomial oracles.
 For A>1 define
 
-```math
+<!-- math-display: f396434cabef1587b94bf618
 \mathcal T_A(q,H)=
  (2-1/A)^q\,
  2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
  \tag{E1}
-```
+-->
+![Formula](../../assets/math/f396434cabef1587b94bf618.svg)
 
 For each fixed A this is `(2-1/A)^(q+o(q)) poly(H)`. All algorithms
 stated here are deterministic and use polynomial workspace. A table
@@ -52,10 +53,11 @@ of the principal consequences is:
 
 Here R>1 is a fixed rational accuracy choice and
 
-```math
+<!-- math-display: 65ba086d5956928f47c5b662
 \Gamma(R)=\frac{R^R}{(R-1)^{R-1}}.
  \tag{E2}
-```
+-->
+![Formula](../../assets/math/65ba086d5956928f47c5b662.svg)
 
 The flow line also permits the explicit-scenario robust extension and,
 under an exact minimum-setup restriction oracle, one shared setup and
@@ -89,7 +91,7 @@ Thus its approximation losses are not multiplied across blocks.
 
 For clarity, the numerical base follows from the exact identity
 
-```math
+<!-- math-display: c9f05a92188d27ae353dcdff
 \begin{aligned}
  &w_z=\binom dz\frac{(A-1)^z}{A^d},
        \qquad \sum_{z=0}^d w_z=1,\\
@@ -99,7 +101,8 @@ For clarity, the numerical base follows from the exact identity
    \le(2-1/A)^q.
  \end{aligned}
  \tag{E3}
-```
+-->
+![Formula](../../assets/math/c9f05a92188d27ae353dcdff.svg)
 
 The local-cover overhead and count-profile enumeration contribute the
 subexponential factor in E1. Their stored local universes have only
@@ -121,20 +124,22 @@ rank and cost unchanged. A query on Q is b*1_Q with zero counts outside
 Q. The restriction selector asks for an original M-basis contained in
 Q. For a forced set Z, the remaining omission budget is
 
-```math
+<!-- math-display: 539dfb7ed348e8e6ef014aa5
 |Q|-r=(q-r)-|Z|.
  \tag{E4}
-```
+-->
+![Formula](../../assets/math/539dfb7ed348e8e6ef014aa5.svg)
 
 If a full-K basis I* avoids Z, its original allocation remains feasible
 in this fixed count region. The weighted omission routine is therefore
 a valid extension algorithm. Since
 
-```math
+<!-- math-display: 3175012fb908ec3389f324e9
 \frac{K}{K-\lceil K/2\rceil}\le3
                        \quad(K\ge2),
  \tag{E5}
-```
+-->
+![Formula](../../assets/math/3175012fb908ec3389f324e9.svg)
 
 one may uniformly take A=Gamma(3)=27/4. Gamma is increasing on (1,infty),
 as follows by differentiating its logarithm to obtain
@@ -156,11 +161,12 @@ adjacent-grid argument still return quota at least ceil(K*/2).
 Consequently the complete algorithm has exact approximation factor two
 in
 
-```math
+<!-- math-display: 0baba035d392ef0a02af2e00
 \mathcal T_{27/4}(q,H),
                   \qquad 2-\frac4{27}=\frac{50}{27}.
  \tag{E6}
-```
+-->
+![Formula](../../assets/math/0baba035d392ef0a02af2e00.svg)
 
 This is an unconditional theorem for all original matroid ranks and
 all budgets, not just a result for bounded corank. When all players are
@@ -190,11 +196,12 @@ support F* has size k; the complement I*=P\F* is small-only and receives
 at least K original small units. If a forced set Z is contained in F*,
 then I* remains a valid light set in Q=P\Z and
 
-```math
+<!-- math-display: 98087d3fc648954a4f45570a
 h_k(Q)\le c(H^*),\qquad
              c(x_s^*)\le C-c(H^*)\le C-h_k(Q).
  \tag{E7}
-```
+-->
+![Formula](../../assets/math/98087d3fc648954a4f45570a.svg)
 
 This is the adaptive residual-budget promise at the starting node and
 at every surviving child. The extension recursion has omission budget
@@ -229,10 +236,11 @@ Fix R>1, put alpha=1-1/R, and enumerate every distinct light/heavy split
 of the intrinsic values, including the empty classes. For one split
 and 0<=k<r the protected light set has size
 
-```math
+<!-- math-display: 9c4930cbcb7a93591f420541
 s=r-k,\qquad d=q-r+k.
  \tag{E8}
-```
+-->
+![Formula](../../assets/math/9c4930cbcb7a93591f420541.svg)
 
 For a target T the full light promise is T and the output fractional
 light promise is alpha*T. Their gap ratio is exactly R. The original
@@ -253,10 +261,11 @@ Exactly the invariant E7 holds at every later surviving node.
 
 Thus the adaptive routine is an extension algorithm with time
 
-```math
+<!-- math-display: 01be55f226ee0919194b4ef4
 \Gamma(R)^{d-|Z|}\mathrm{poly}(H).
  \tag{E9}
-```
+-->
+![Formula](../../assets/math/01be55f226ee0919194b4ef4.svg)
 
 The global conversion bounds every split/k target by
 T_(Gamma(R))(q,H), uniformly over d. A saved fractional light allocation
@@ -278,10 +287,11 @@ k=r use the original zero-service and pure-heavy exits.
 
 Now fix any integer optimum and choose the split at
 
-```math
+<!-- math-display: 62b29f70155eb56cac32a296
 \theta^*=\frac{\alpha\,\mathrm{OPT}}2.
  \tag{E10}
-```
+-->
+![Formula](../../assets/math/62b29f70155eb56cac32a296.svg)
 
 Equality belongs to the heavy side. Keep one original heavy unit per
 selected heavy recipient and preserve the full original small-only
@@ -296,7 +306,7 @@ players. The resulting minimum utility is at least theta*.
 The number of splits, support cardinalities and target calls is
 polynomial. We obtain the unconditional guarantee
 
-```math
+<!-- math-display: d79c8792d9d6fb0b84d6138e
 \boxed{\quad
        \text{value}\ge\frac{1-1/R}{2}\,\mathrm{OPT},
        \qquad
@@ -304,7 +314,8 @@ polynomial. We obtain the unconditional guarantee
        \qquad\text{actual cost}\le C.
        \quad}
  \tag{E11}
-```
+-->
+![Formula](../../assets/math/d79c8792d9d6fb0b84d6138e.svg)
 
 Zero optimum needs no threshold convention: an arbitrary M-basis with
 zero counts is a valid initialized output. The additive fallback in
@@ -333,7 +344,7 @@ hypothesis is excluded from the global theorem.
 
 Assume rank(M_b)=h>0 and put q=|P^+|. At a hard target a<=T<2a define
 
-```math
+<!-- math-display: 4bfc032e6abd2beac4624ff7
 \begin{aligned}
  C_T&=\lfloor T/u\rfloor,\qquad
       P(g_T)=P(f_s)\cap[0,C_T]^P,\\
@@ -342,7 +353,8 @@ Assume rank(M_b)=h>0 and put q=|P^+|. At a hard target a<=T<2a define
        \qquad b_T=\lceil K_T/2\rceil.
  \end{aligned}
  \tag{E12}
-```
+-->
+![Formula](../../assets/math/4bfc032e6abd2beac4624ff7.svg)
 
 The retained-rank test g_T(P)=f_s(P) is performed first. Failure proves
 target infeasibility. The dual F_T is constructed on the **full physical
@@ -404,12 +416,13 @@ saved actual selected set, consequently gives the full factor alpha,
 with no extra accuracy loss. The fixed-set reoptimization uses the
 original LP, not the artificial fine-grid target witness. We obtain
 
-```math
+<!-- math-display: f7427be9befac31a0fe6eddb
 \text{rate}\ge(1-1/R)\,\mathrm{OPT}
                  \quad\text{in }\mathcal T_{\Gamma(R)}(q,H)
                  \text{ time}.
  \tag{E13}
-```
+-->
+![Formula](../../assets/math/f7427be9befac31a0fe6eddb.svg)
 
 All capacities, routing budgets and selection conditions remain exact.
 Zero optimum and an empty permitted family are handled by the original
@@ -433,11 +446,12 @@ The extension in [Selected concurrent flow with one shared setup and routing bud
 nonnegative setup fee sigma_i for every selected commodity and a single
 combined budget
 
-```math
+<!-- math-display: fd35397c956abda902477bed
 \sum_{i\in I}\sigma_i+
                          \text{actual routing cost}\le C.
  \tag{E14}
-```
+-->
+![Formula](../../assets/math/fd35397c956abda902477bed.svg)
 
 Its family must admit an exact minimum-setup restriction optimizer,
 which returns h(Q)=min_{I subseteq Q} sum_(i in I) sigma_i and an
@@ -485,11 +499,12 @@ fixed positive accuracy loss, and converge to two as eta tends to zero.
 
 For a fixed rational R=a/b>1, the block comparisons are exact because
 
-```math
+<!-- math-display: 59e4f8b4ee61f991b0929432
 \Gamma(R)^b=
                      \frac{a^a}{b^b(a-b)^{a-b}}.
  \tag{E15}
-```
+-->
+![Formula](../../assets/math/59e4f8b4ee61f991b0929432.svg)
 
 Raising a positive comparison to its fixed denominator b therefore
 reduces it to rational arithmetic. This is not an implicit
@@ -508,10 +523,11 @@ The accepted lower-bound constructions now give a global time boundary,
 in addition to their parameterized corank interpretation. Let q=2r>=4
 and hide one r-element set A in the resource rank
 
-```math
+<!-- math-display: 73171dca70eea37a94950101
 f_A(S)=\min\{2|S|,2r\}-{\bf1}[|S|=r]+{\bf1}[S=A].
  \tag{E16}
-```
+-->
+![Formula](../../assets/math/73171dca70eea37a94950101.svg)
 
 Its normalized, monotone, integral submodularity is proved in
 [A value-oracle barrier below factor two for rank-parameterized allocation](../allocation-lower-bounds/proof.md). Values need only
@@ -537,10 +553,11 @@ small-only and their set must have f_A-value 2r. This set is A.
 **Two-size scheduling.** Take r size-two jobs governed by U_(r,q) and
 small size-one jobs governed by
 
-```math
+<!-- math-display: da6f29b24c87d257bbb5b86b
 g_A(S)=2|S|+f_A(P\setminus S)-2r.
  \tag{E17}
-```
+-->
+![Formula](../../assets/math/da6f29b24c87d257bbb5b86b.svg)
 
 The optimum makespan is two: put the large units on A and two small
 units on each other machine. Every approximation factor strictly below
@@ -554,11 +571,12 @@ with every still-hidden set. If two possible hidden r-sets remain,
 one output cannot identify both. Therefore each respective problem
 requires at least
 
-```math
+<!-- math-display: b88069f2db40c663360f90ce
 \binom q{q/2}-1
                     =2^{q-O(\log q)}
  \tag{E18}
-```
+-->
+![Formula](../../assets/math/b88069f2db40c663360f90ce.svg)
 
 oracle queries for the strictly better approximation factor. In
 particular, for any fixed delta>0 there is no deterministic

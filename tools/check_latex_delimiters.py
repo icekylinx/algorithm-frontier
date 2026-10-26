@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Check Markdown math syntax and common GitHub rendering failures.
+"""Check the retained mathematical source behind static Markdown presentation.
 
-Maintained Markdown uses protected GitHub dollar/backtick inline math and
-fenced math blocks. Bare dollar math is rejected because Markdown may strip
-TeX backslashes before MathJax sees the expression.
+Published Markdown uses inline code and standalone equation images. Its source
+is recovered before these grouping/macro checks. The low-level checker also
+accepts the protected intermediate syntax used by the source normalizer.
 Code spans and ordinary fenced code are excluded from math checks. TeX grouping
 braces are checked inside math; ordinary parentheses/brackets are not, because
 half-open intervals and one-sided delimiters are valid mathematical notation.
@@ -177,6 +177,8 @@ def check_text(text: str, *, controls_only: bool = False) -> list[tuple[int, str
 
 
 def main() -> int:
+    from math_presentation import restore_markdown
+    from normalize_math import normalize_markdown
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("paths", nargs="*", type=Path, help="explicit Markdown files or directories")
     args = parser.parse_args()
@@ -203,7 +205,7 @@ def main() -> int:
         full_count += 1
         errors.extend(
             f"{relative}:{line}: {message}"
-            for line, message in check_text(text)
+            for line, message in check_text(normalize_markdown(restore_markdown(text, path.resolve())))
         )
     if errors:
         print("MARKDOWN MATH CHECK FAILED")

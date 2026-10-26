@@ -1,6 +1,6 @@
 # Preserving the master length aspect through the cycle recursion
 
-**Abstract.** We prove a local metric transformation with length-bit increment $`\log_2 k+O(\log U)`$ per outer recursion. It contracts only true-null edges of the immediate flat map, retains original integer lengths on real edges, and uses a small integral port scale. Frozen gradient gauges remain separate and may have larger bit length. Under the complete uniform dynamic realization specified in Section 7, the transformation yields the conditional backend exponent $`167/168`$.
+**Abstract.** We prove a local metric transformation with length-bit increment <code class="math">\log_2 k+O(\log U)</code> per outer recursion. It contracts only true-null edges of the immediate flat map, retains original integer lengths on real edges, and uses a small integral port scale. Frozen gradient gauges remain separate and may have larger bit length. Under the complete uniform dynamic realization specified in Section 7, the transformation yields the conditional backend exponent <code class="math">167/168</code>.
 
 This metric argument does not establish every dynamic geometry and lifetime interface required by a full solver. Those remain explicit here and in the cycle-search implementation requirements of [the current main matching proof](../../problems/general-matching/proof.md).
 
@@ -24,7 +24,7 @@ are stated in [alias-geometric-raw-bridge.md](alias-geometric-raw-bridge.md).
 
 ## 1. Contract only true-null edges of an immediate cover map
 
-**Lemma 1 (typed null quotient).** Suppose a flat forest has explicit real-edge and true-null records, at most $`\Gamma`$ occurrences per input vertex, and a degree-three immediate input graph. Contracting the true-null components preserves the marked cover, produces a forest, retains every real edge identity, and can be maintained with $`\Gamma^{O(1)}`$ local work and logs per reported source update, provided the stated retirement transactions are available.
+**Lemma 1 (typed null quotient).** Suppose a flat forest has explicit real-edge and true-null records, at most <code class="math">\Gamma</code> occurrences per input vertex, and a degree-three immediate input graph. Contracting the true-null components preserves the marked cover, produces a forest, retains every real edge identity, and can be maintained with <code class="math">\Gamma^{O(1)}</code> local work and logs per reported source update, provided the stated retirement transactions are available.
 
 **Proof.** Consider one SNC forest F after the artificial heavy-backbone
 occurrences have been filtered out. Its map into the CURRENT
@@ -195,11 +195,12 @@ the next recursive child.
 ## 4. Geometric path length and small port scaling
 
 **Lemma 2 (one-step metric growth).** Under the geometric path and port interfaces, the transformed child satisfies
-```math
+<!-- math-display: dce401398ae7563660788069
 \ell_{\max,\mathrm{child}}
 \le c_K kH\max\{\ell_{\max,\mathrm{parent}},2\},
-```
-and preserves the cycle numerator after division by $`H`$, with at most a factor-two quality loss. Here $`H=2^{\lceil\log_2(4(h+1))\rceil}`$ and $`h`$ is the port-tree height.
+-->
+![Formula](../../assets/math/dce401398ae7563660788069.svg)
+and preserves the cycle numerator after division by <code class="math">H</code>, with at most a factor-two quality loss. Here <code class="math">H=2^{\lceil\log_2(4(h+1))\rceil}</code> and <code class="math">h</code> is the port-tree height.
 
 **Proof.** The portal/Steiner construction retains the original central edge
 of each selected off-edge lifetime and the compressed Steiner
@@ -402,7 +403,7 @@ Here `OPT=max |g^T d|/||ell d||_1` over nonzero circulations d,
 with value zero if all circulation gradients vanish or the graph
 has no nonzero circulation.
 
-**Theorem 3.** Under the complete realization hypothesis above and the stated cover/spanner primitives, the metric transformation and parameters give, for all sufficiently large $`S`$, the common deterministic factor
+**Theorem 3.** Under the complete realization hypothesis above and the stated cover/spanner primitives, the metric transformation and parameters give, for all sufficiently large <code class="math">S</code>, the common deterministic factor
 
     E(S)=exp(O_c0(U^(167/168) log(U+4))).             (3)
 

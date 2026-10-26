@@ -23,167 +23,177 @@ The constructive dependencies are:
 * [van den Brand et al., arXiv:2309.16629v1](https://arxiv.org/pdf/2309.16629v1),
   Algorithm 4 and its proof, Theorem 8.1, and Appendix B's degree-band reduction.
 
-Let $`U\geq 2`$ be a master logarithmic size bound; all graphs in the following
-static computations have at most $`2^{O(U)}`$ explicit records. Put
+Let <code class="math">U\geq 2</code> be a master logarithmic size bound; all graphs in the following
+static computations have at most <code class="math">2^{O(U)}</code> explicit records. Put
 
-```math
+<!-- math-display: dcd06de69506103d55469cd6
 h=\lceil\log_2(U+2)\rceil.
-```
+-->
+![Formula](../../assets/math/dcd06de69506103d55469cd6.svg)
 
 There are two independent integer parameters:
 
-* $`r\geq 1`$, the recursion parameter of the deterministic cut player;
-* $`q\geq 2`$, the number of levels in the decremental expander path oracle.
+* <code class="math">r\geq 1</code>, the recursion parameter of the deterministic cut player;
+* <code class="math">q\geq 2</code>, the number of levels in the decremental expander path oracle.
 
-They are distinct from the later touched-set batching depth $`K`$ and the
-numerical hierarchy's size-reduction parameter $`k`$. We use them only in a
-range where $`r,q\leq U`$ and $`qrh\leq U`$. The latter condition keeps
-all constructed witnesses within $`2^{O(U)}`$ records; it has ample
+They are distinct from the later touched-set batching depth <code class="math">K</code> and the
+numerical hierarchy's size-reduction parameter <code class="math">k</code>. We use them only in a
+range where <code class="math">r,q\leq U</code> and <code class="math">qrh\leq U</code>. The latter condition keeps
+all constructed witnesses within <code class="math">2^{O(U)}</code> records; it has ample
 slack for the parameters in Section 6. Fixed constants in the bounds below come from the
 named constructive algorithms, not from a choice depending on the input.
 
 For sufficiently large fixed constants, define a common conductance threshold
 and a cut-player work factor by
 
-```math
+<!-- math-display: 859f692551d7e1011818f100
 \phi^{-1}=2^{O(rh)},\qquad
  F_r=2^{O(U/r+r^2h)}.                                      \tag{1}
-```
+-->
+![Formula](../../assets/math/859f692551d7e1011818f100.svg)
 
-Their roles are different: $`\log\phi^{-1}=O(rh)`$, whereas
-$`\log F_r=O(U/r+r^2h)`$. The latter is not raised to the path-oracle
+Their roles are different: <code class="math">\log\phi^{-1}=O(rh)</code>, whereas
+<code class="math">\log F_r=O(U/r+r^2h)</code>. The latter is not raised to the path-oracle
 depth in the stage-count argument below.
 
 ## 2. Expander decomposition with separate conductance and work bounds
 
-CGLNPS Theorem 5.1, with its parameter denoted here by $`r`$, returns a cut
-of size at most $`\theta\mathrm{vol}(G)`$. Either both sides have
+CGLNPS Theorem 5.1, with its parameter denoted here by <code class="math">r</code>, returns a cut
+of size at most <code class="math">\theta\mathrm{vol}(G)</code>. Either both sides have
 constant-fraction volume, or one constant-fraction side has conductance at
 least
 
-```math
+<!-- math-display: 331cfb7ee96e2e5cb2a1cc45
 \theta/(\log m)^{O(r)}.
-```
+-->
+![Formula](../../assets/math/331cfb7ee96e2e5cb2a1cc45.svg)
 
 Its time is
 
-```math
+<!-- math-display: ca43a4b1ce6b343629e062df
 m^{1+O(1/r)}(\log m)^{O(r^2)}/\theta^2.       \tag{2}
-```
+-->
+![Formula](../../assets/math/ca43a4b1ce6b343629e062df.svg)
 
 Run the ordinary balanced-cluster recursion with
-$`\theta=\varepsilon/(c\log(m+2))`$. A balanced return recurses on both
+<code class="math">\theta=\varepsilon/(c\log(m+2))</code>. A balanced return recurses on both
 sides; an expanding return finishes its large side and recurses on the other.
 Every active cluster's volume falls by a constant factor at each iteration.
-There are $`O(\log m)`$ iterations, their graphs are edge-disjoint within an
-iteration, and their cut budgets sum to at most $`\varepsilon m`$, after
-adjusting $`c`$. The resulting pieces have conductance at least
+There are <code class="math">O(\log m)</code> iterations, their graphs are edge-disjoint within an
+iteration, and their cut budgets sum to at most <code class="math">\varepsilon m</code>, after
+adjusting <code class="math">c</code>. The resulting pieces have conductance at least
 
-```math
+<!-- math-display: 6df11c50ceb97b312de03caa
 \varepsilon\,2^{-O(rh)},
-```
+-->
+![Formula](../../assets/math/6df11c50ceb97b312de03caa.svg)
 
-and total work $`mF_r\mathrm{poly}(U)/\varepsilon^2`$.
-This uses Theorem 5.1's actual output guarantee. The larger $`r^2`$ exponent
+and total work <code class="math">mF_r\mathrm{poly}(U)/\varepsilon^2</code>.
+This uses Theorem 5.1's actual output guarantee. The larger <code class="math">r^2</code> exponent
 printed in the packaged Corollary 6.1 is not needed in this recursion.
 
-When a recursive cluster is too small for a given source parameter $`r`$, use
-$`r'=\min\{r,\lfloor\log |E|/c_0\rfloor\}`$, with a constant-size base
-case. The source's absolute cutoff is met by a sufficiently large fixed $`c_0`$.
+When a recursive cluster is too small for a given source parameter <code class="math">r</code>, use
+<code class="math">r'=\min\{r,\lfloor\log &#124;E&#124;/c_0\rfloor\}</code>, with a constant-size base
+case. The source's absolute cutoff is met by a sufficiently large fixed <code class="math">c_0</code>.
 The output guarantee only improves. Its time still fits the master envelope:
-when $`r'<r`$, $`\log |E|/r'=O(1)`$, and
-$`(r')^2\log\log(|E|+2)\leq O(r^2h)`$. No small invocation is padded
+when <code class="math">r'&lt;r</code>, <code class="math">\log &#124;E&#124;/r'=O(1)</code>, and
+<code class="math">(r')^2\log\log(&#124;E&#124;+2)\leq O(r^2h)</code>. No small invocation is padded
 to master size.
 
 ### Actual-size degree bands without artificial self-loops
 
-In the degree-band reduction, start with the nonisolated vertex count $`n`$ and
-edge count $`m`$, and set
+In the degree-band reduction, start with the nonisolated vertex count <code class="math">n</code> and
+edge count <code class="math">m</code>, and set
 
-```math
+<!-- math-display: cbe4d06b18abfbff13901e90
 \ell=\max\{0,\lceil\log_2(2m/n)\rceil\},\qquad G_\ell=G.
-```
+-->
+![Formula](../../assets/math/cbe4d06b18abfbff13901e90.svg)
 
-The invariant is $`|E(G_i)|\leq 2^i n`$. No maximum-degree condition is
-needed. At stage $`i>0`$, apply the preceding loopless decomposition with
-crossing-edge budget at most $`|E(G_i)|/4`$, obtaining components of
-conductance at least $`\phi`$. In each nontrivial component $`C`$, initialize
+The invariant is <code class="math">&#124;E(G_i)&#124;\leq 2^i n</code>. No maximum-degree condition is
+needed. At stage <code class="math">i&gt;0</code>, apply the preceding loopless decomposition with
+crossing-edge budget at most <code class="math">&#124;E(G_i)&#124;/4</code>, obtaining components of
+conductance at least <code class="math">\phi</code>. In each nontrivial component <code class="math">C</code>, initialize
 CS21 Theorem 3.7's deterministic expander-pruning structure.
 For a loopless multigraph, use the simple subdivision and projection
 adapter proved in Section 4 for pruning as well as for path queries.
-Fix an absolute constant $`c_{\rm pr}`$ covering this adapter: up to
-$`\phi |E(C)|/c_{\rm pr}`$ original-edge deletions, it removes
-original volume at most $`c_{\rm pr}t_C/\phi`$, leaves a strong
-$`\phi/c_{\rm pr}`$-expander with respect to the original component,
-and has work $`O(t_C\mathrm{poly}(U)/\phi^2)`$.
+Fix an absolute constant <code class="math">c_{\rm pr}</code> covering this adapter: up to
+<code class="math">\phi &#124;E(C)&#124;/c_{\rm pr}</code> original-edge deletions, it removes
+original volume at most <code class="math">c_{\rm pr}t_C/\phi</code>, leaves a strong
+<code class="math">\phi/c_{\rm pr}</code>-expander with respect to the original component,
+and has work <code class="math">O(t_C\mathrm{poly}(U)/\phi^2)</code>.
 All constants below use this literal simple-graph reduction.
 
-Fix an absolute constant $`C_b`$, sufficiently large, and put
+Fix an absolute constant <code class="math">C_b</code>, sufficiently large, and put
 
-```math
+<!-- math-display: c4d7c7230936b2bd72d2a306
 \delta_i=\phi 2^i/C_b.
-```
+-->
+![Formula](../../assets/math/c4d7c7230936b2bd72d2a306.svg)
 
 While a surviving vertex has positive current degree smaller than
-$`\delta_i`$, choose it and explicitly request deletion of all its current
+<code class="math">\delta_i</code>, choose it and explicitly request deletion of all its current
 incident edges. Settle the pruning structure before choosing the next
 vertex. A chosen vertex becomes isolated and never acquires an edge again;
-there are at most $`n`$ choices. Thus the number $`t_i`$ of explicitly
+there are at most <code class="math">n</code> choices. Thus the number <code class="math">t_i</code> of explicitly
 requested edge deletions, summed over all initial components of the band,
 satisfies
 
-```math
+<!-- math-display: 540ed6190a2d9ad72289fae1
 t_i<\delta_i n.
-```
+-->
+![Formula](../../assets/math/540ed6190a2d9ad72289fae1.svg)
 
 Move to the next residual graph every explicitly deleted edge and every
 original component edge incident to a pruned vertex. The latter includes
 edges on an earlier pruning boundary, not only edges present when that
 vertex is finally processed. The pruning theorem bounds this count by the
-initial volume of the pruned set, at most $`c_{\rm pr}t_C/\phi`$ in a component
-with $`t_C`$ explicit requests.
+initial volume of the pruned set, at most <code class="math">c_{\rm pr}t_C/\phi</code> in a component
+with <code class="math">t_C</code> explicit requests.
 
 If a component's next request would exceed its allowed budget
-$`\lfloor\phi |E(C)|/c_{\rm pr}\rfloor`$, count that first excess request and
+<code class="math">\lfloor\phi &#124;E(C)&#124;/c_{\rm pr}\rfloor</code>, count that first excess request and
 move the whole remaining component to the residual graph. Its original
-edge count is then smaller than $`c_{\rm pr}t_C/\phi`$. This convention also
+edge count is then smaller than <code class="math">c_{\rm pr}t_C/\phi</code>. This convention also
 handles a quota below one: the first actual edge-deletion request pays
 for discarding the component. Already moved edges are counted only once.
-Therefore, for an absolute constant $`c_b`$,
+Therefore, for an absolute constant <code class="math">c_b</code>,
 
-```math
+<!-- math-display: f2b104f7fc73e50f73fd38cd
 |E(G_{i-1})|
    \leq |E(G_i)|/4+c_b t_i/\phi
    \leq 2^i n(1/4+c_b/C_b)
    \leq 2^{i-1}n.                                      \tag{2a}
-```
+-->
+![Formula](../../assets/math/f2b104f7fc73e50f73fd38cd.svg)
 
-Choose $`C_b\geq 4c_b`$. The retained graph $`J_i`$ is the union of
+Choose <code class="math">C_b\geq 4c_b</code>. The retained graph <code class="math">J_i</code> is the union of
 the final surviving component graphs. Every nontrivial component has
-conductance at least $`\phi/c_{\rm pr}`$ and minimum degree at least
-$`\delta_i`$. Zero-edge isolates are omitted. The final residual
-$`G_0`$ has at most $`n`$ edges and is retained directly.
+conductance at least <code class="math">\phi/c_{\rm pr}</code> and minimum degree at least
+<code class="math">\delta_i</code>. Zero-edge isolates are omitted. The final residual
+<code class="math">G_0</code> has at most <code class="math">n</code> edges and is retained directly.
 For Algorithm 4's interface, use the common parameter
-$`\bar\phi=\phi/\max\{c_{\rm pr},C_b\}`$. Then both required properties hold
-literally: conductance at least $`\bar\phi`$ and minimum degree at least
-$`\bar\phi 2^i`$. Below, $`\phi`$ may denote this smaller common
+<code class="math">\bar\phi=\phi/\max\{c_{\rm pr},C_b\}</code>. Then both required properties hold
+literally: conductance at least <code class="math">\bar\phi</code> and minimum degree at least
+<code class="math">\bar\phi 2^i</code>. Below, <code class="math">\phi</code> may denote this smaller common
 parameter; all displayed envelopes are unchanged by this fixed factor.
 
 A heap or degree bucket detects low-degree vertices. Each moved edge is
 scanned only a constant number of times within its band. Pruning and
 whole-component quota handling cost
-$`O(|E(G_i)|+t_i\mathrm{poly}(U)/\phi^2)`$, in addition to the
-decomposition. Since $`2^\ell n\leq 4m`$,
+<code class="math">O(&#124;E(G_i)&#124;+t_i\mathrm{poly}(U)/\phi^2)</code>, in addition to the
+decomposition. Since <code class="math">2^\ell n\leq 4m</code>,
 
-```math
+<!-- math-display: ec6c74ddddac2db5829afc49
 \sum_{i=1}^{\ell}2^i n=O(m).
-```
+-->
+![Formula](../../assets/math/ec6c74ddddac2db5829afc49.svg)
 
 Consequently all band construction work is
-$`mF_r\mathrm{poly}(U,\phi^{-1})`$, and there is no
-$`n\Delta`$ padding cost. High-degree vertices remain permitted. The
+<code class="math">mF_r\mathrm{poly}(U,\phi^{-1})</code>, and there is no
+<code class="math">n\Delta</code> padding cost. High-degree vertices remain permitted. The
 witness size for a band is bounded through its total degree:
-$`|E(G_i)|/(\phi2^i)=O(n/\phi)`$.
+<code class="math">&#124;E(G_i)&#124;/(\phi2^i)=O(n/\phi)</code>.
 
 This loopless construction replaces the artificial-loop degree-band step
 of the packaged static sparsifier. It invokes CGLNPS Theorem 5.1 only on
@@ -192,31 +202,33 @@ inputs covered by its literal loopless-multigraph convention.
 ### Loopless weighted witnesses in the degree bands
 
 Algorithm 4 needs a constant-conductance witness with degrees comparable to
-```math
+<!-- math-display: e13fd73258300caad42016b0
 w_v=\deg_{J_i[X]}(v)/(\phi2^i)\geq1.
-```
+-->
+![Formula](../../assets/math/e13fd73258300caad42016b0.svg)
 These weights are balanced: because the component is loopless,
-$`w_v\leq\sum_{u\ne v}w_u`$. Put $`p_v=\lceil w_v\rceil`$ and
-$`N=\sum_v p_v`$. Then $`p_v\leq\sum_{u\ne v}p_u`$, so every
-fiber has at most $`N/2`$ ports.
+<code class="math">w_v\leq\sum_{u\ne v}w_u</code>. Put <code class="math">p_v=\lceil w_v\rceil</code> and
+<code class="math">N=\sum_v p_v</code>. Then <code class="math">p_v\leq\sum_{u\ne v}p_u</code>, so every
+fiber has at most <code class="math">N/2</code> ports.
 
-Apply CGLNPS Theorem 2.4 to $`N`$ ports, obtaining a graph of fixed
-maximum degree $`D_0`$ and fixed positive edge expansion $`\alpha_0`$.
-Group $`p_v`$ ports into the fiber for $`v`$, contract each fiber,
+Apply CGLNPS Theorem 2.4 to <code class="math">N</code> ports, obtaining a graph of fixed
+maximum degree <code class="math">D_0</code> and fixed positive edge expansion <code class="math">\alpha_0</code>.
+Group <code class="math">p_v</code> ports into the fiber for <code class="math">v</code>, contract each fiber,
 and discard all edges internal to a fiber. Retain parallel crossing
-edge IDs. For one fiber its boundary has at least $`\alpha_0p_v`$
+edge IDs. For one fiber its boundary has at least <code class="math">\alpha_0p_v</code>
 edges. Replicate every remaining edge a fixed integer
-$`c_w\geq1/\alpha_0`$ times. The resulting loopless multigraph has
-```math
+<code class="math">c_w\geq1/\alpha_0</code> times. The resulting loopless multigraph has
+<!-- math-display: c6e207d9992943a7b096edf8
 w_v\leq p_v\leq\deg_W(v)
        \leq c_wD_0p_v\leq 2c_wD_0w_v.
-```
+-->
+![Formula](../../assets/math/c6e207d9992943a7b096edf8.svg)
 For any union of vertex fibers, its crossing edge count is at least
-$`c_w\alpha_0`$ times the smaller port-side cardinality, while each
-side's witness volume is at most $`c_wD_0`$ times its port cardinality.
-Thus $`W`$ has conductance at least $`\alpha_0/D_0`$.
+<code class="math">c_w\alpha_0</code> times the smaller port-side cardinality, while each
+side's witness volume is at most <code class="math">c_wD_0</code> times its port cardinality.
+Thus <code class="math">W</code> has conductance at least <code class="math">\alpha_0/D_0</code>.
 
-This construction takes $`O(\sum_v w_v)`$ time and space, with fixed
+This construction takes <code class="math">O(\sum_v w_v)</code> time and space, with fixed
 constant factors. It gives exactly the degree comparisons needed in
 Algorithm 4's two routing tasks. It does not require an arbitrary-weight
 loopless version of the packaged witness theorem. Every graph sent to
@@ -226,66 +238,68 @@ adapter below.
 ## 3. A terminal expander with a cheap output and more expensive construction
 
 CGLNPS Theorem 1.6 is a cut player on graphs of maximum degree
-$`O(\log |T|)`$. Its certificate has sparsity
-$`(\log |T|)^{-O(r)}`$, and its time is
-$`|T|^{1+O(1/r)}(\log |T|)^{O(r^2)}`$. Run the cut-matching game
+<code class="math">O(\log &#124;T&#124;)</code>. Its certificate has sparsity
+<code class="math">(\log &#124;T&#124;)^{-O(r)}</code>, and its time is
+<code class="math">&#124;T&#124;^{1+O(1/r)}(\log &#124;T&#124;)^{O(r^2)}</code>. Run the cut-matching game
 of CGLNPS Theorem 2.5, using the following explicit moves. If the cut player
-returns a sparse cut $`A_i,B_i`$ with
-$`|T|/4\leq |A_i|\leq |B_i|`$, **extend**
-$`A_i\subseteq A_i'`$ to a balanced partition
-$`(A_i',B_i')`$; the matching player supplies a perfect matching between
+returns a sparse cut <code class="math">A_i,B_i</code> with
+<code class="math">&#124;T&#124;/4\leq &#124;A_i&#124;\leq &#124;B_i&#124;</code>, **extend**
+<code class="math">A_i\subseteq A_i'</code> to a balanced partition
+<code class="math">(A_i',B_i')</code>; the matching player supplies a perfect matching between
 those two sides. If the cut player instead certifies an expanding set
-$`S`$ with $`|S|\geq |T|/2`$, supply one final matching from
-$`T\setminus S`$ into distinct vertices of $`S`$. CGLNPS Observation 2.3
+<code class="math">S</code> with <code class="math">&#124;S&#124;\geq &#124;T&#124;/2</code>, supply one final matching from
+<code class="math">T\setminus S</code> into distinct vertices of <code class="math">S</code>. CGLNPS Observation 2.3
 then extends the certified sparsity to all terminals. These are the moves
 specified in the primary CGLNPS proof; they avoid the reversed inclusion
 and final-side typographical errors in CS21 Appendix B.4.
 
-The game has $`O(\log |T|)`$ rounds. Its final terminal graph has maximum
-degree $`O(\log |T|)`$ and conductance $`2^{-O(rh)}`$. If the terminal
+The game has <code class="math">O(\log &#124;T&#124;)</code> rounds. Its final terminal graph has maximum
+degree <code class="math">O(\log &#124;T&#124;)</code> and conductance <code class="math">2^{-O(rh)}</code>. If the terminal
 cardinality is odd, run the even game on all but one terminal and attach
 the last terminal by one additional matching edge; the same bounds hold.
 
 The matching player is CS21 Theorem B.9. In an input expander of conductance
-at least a fixed positive constant times $`\phi`$, it constructs each matching with paths of length
-$`O(U/\phi)`$, edge congestion $`O(U^2/\phi^2)`$, and time
-$`m\mathrm{poly}(U)/\phi^3`$. Unioning the matchings gives the
+at least a fixed positive constant times <code class="math">\phi</code>, it constructs each matching with paths of length
+<code class="math">O(U/\phi)</code>, edge congestion <code class="math">O(U^2/\phi^2)</code>, and time
+<code class="math">m\mathrm{poly}(U)/\phi^3</code>. Unioning the matchings gives the
 safe bounds
 
-```math
+<!-- math-display: 1bdf43a8db5989a49efd728d
 \lambda=O(U/\phi),\qquad
       \eta=O(U^3/\phi^2),                                \tag{3}
-```
+-->
+![Formula](../../assets/math/1bdf43a8db5989a49efd728d.svg)
 
-for the terminal embedding. We use the proof's $`U^3`$ congestion bound;
-Theorem 3.8's displayed $`U^2`$ bound omits the union over matching rounds.
+for the terminal embedding. We use the proof's <code class="math">U^3</code> congestion bound;
+Theorem 3.8's displayed <code class="math">U^2</code> bound omits the union over matching rounds.
 The construction time is at most
 
-```math
+<!-- math-display: 3b56f56999e217c960510e16
 m F_r\mathrm{poly}(U)/\phi^3.    \tag{4}
-```
+-->
+![Formula](../../assets/math/3b56f56999e217c960510e16.svg)
 
-In particular $`F_r`$ changes the cost of building this object, not its
-$`\lambda,\eta`$ or its output conductance.
+In particular <code class="math">F_r</code> changes the cost of building this object, not its
+<code class="math">\lambda,\eta</code> or its output conductance.
 
 For a simple-graph implementation of the subsequent path oracle, deduplicate
 parallel witness edges after the whole cut-matching game. Their multiplicity
-is at most $`O(\log |T|)`$. Keeping one edge and its associated embedding path
+is at most <code class="math">O(\log &#124;T&#124;)</code>. Keeping one edge and its associated embedding path
 loses at most that factor in conductance, while decreasing embedding
 congestion and maximum degree. This loss is absorbed when choosing the
-common $`\phi=2^{-c rh}`$. Do not deduplicate during the game itself.
+common <code class="math">\phi=2^{-c rh}</code>. Do not deduplicate during the game itself.
 
 ## 4. A parameterized decremental expander path oracle
 
-Take an initially $`\phi`$-expanding graph of actual size $`m`$.
-Use the CS21 Section 3.2 hierarchy with $`q`$ levels and nominal level sizes
-$`m^{i/q}`$, rounded by integer ceilings. At each stage, construct the
+Take an initially <code class="math">\phi</code>-expanding graph of actual size <code class="math">m</code>.
+Use the CS21 Section 3.2 hierarchy with <code class="math">q</code> levels and nominal level sizes
+<code class="math">m^{i/q}</code>, rounded by integer ceilings. At each stage, construct the
 next smaller terminal expander by Section 3. Its output conductance is at
-least the common $`\phi`$, independently of the larger work factor
-$`F_r`$. Expander pruning is CS21 Theorem 3.7, whose update work is
-$`O(tU/\phi^2)`$, removed original volume is at most
-$`O(t/\phi)`$, and surviving conductance is at least
-$`\phi/c_{\rm pr}`$ after the multigraph adapter.
+least the common <code class="math">\phi</code>, independently of the larger work factor
+<code class="math">F_r</code>. Expander pruning is CS21 Theorem 3.7, whose update work is
+<code class="math">O(tU/\phi^2)</code>, removed original volume is at most
+<code class="math">O(t/\phi)</code>, and surviving conductance is at least
+<code class="math">\phi/c_{\rm pr}</code> after the multigraph adapter.
 
 The top input may be a loopless multigraph. Subdivide every input edge once,
 retaining its original edge ID on the two-edge representation. This gives a
@@ -306,8 +320,8 @@ handled outside this path oracle.
 
 ### Current roots and deletion order
 
-The ES tree at level $`i`$ is rooted at the CURRENT surviving vertices of the
-level-$`(i-1)`$ expander, not the terminal set as it stood at that expander's
+The ES tree at level <code class="math">i</code> is rooted at the CURRENT surviving vertices of the
+level-<code class="math">(i-1)</code> expander, not the terminal set as it stood at that expander's
 birth. Represent these roots by super-source edges. When a lower terminal is
 pruned, delete its super-source edge. On a stage restart install the new root
 set and rebuild the corresponding ES tree. These are deletion-only changes
@@ -321,18 +335,18 @@ also remove the associated embedded lower edges before querying. These
 explicit steps repair an ambiguity in the source's abbreviated pseudocode
 without changing its stage bound.
 
-Apply pruning at the bottom level $`G_1`$ as well. After a settled
+Apply pruning at the bottom level <code class="math">G_1</code> as well. After a settled
 bottom edge deletion and its pruning output, recompute a BFS tree on
 the surviving bottom expander, rooted at any surviving vertex.
 Remove pruned bottom vertices from the parent ES root set before
-queries. The printed $`i=1`$ deletion branch omits this pruning
+queries. The printed <code class="math">i=1</code> deletion branch omits this pruning
 operation, although the accompanying proof assumes that every
-current $`G_i`$ is pruned; simply recomputing a tree in an unpruned
+current <code class="math">G_i</code> is pruned; simply recomputing a tree in an unpruned
 graph could leave an isolated terminal unreachable. A base stage
-has $`O(m^{1/q}\mathrm{poly}(U))`$ edges and at most that
+has <code class="math">O(m^{1/q}\mathrm{poly}(U))</code> edges and at most that
 many deletions, so these BFS recomputations cost
-$`m^{2/q}\mathrm{poly}(U,\phi^{-1})`$, already covered by
-the $`i=1`$ case of (5).
+<code class="math">m^{2/q}\mathrm{poly}(U,\phi^{-1})</code>, already covered by
+the <code class="math">i=1</code> case of (5).
 
 Whenever a stage is rebuilt, retire its old embedding and deletion
 queue records by generation. A callback from an old generation
@@ -341,16 +355,16 @@ and all current-generation prune/root changes before queries.
 
 ### Small instances
 
-If $`\log(m+2)<c_1qrh`$, use ordinary expander pruning and perform a
-direct BFS for each query. This costs at most $`2^{O(qrh)}`$ per query, and
-the initialization plus all pruning costs are $`m2^{O(qrh)}`$. Otherwise
+If <code class="math">\log(m+2)&lt;c_1qrh</code>, use ordinary expander pruning and perform a
+direct BFS for each query. This costs at most <code class="math">2^{O(qrh)}</code> per query, and
+the initialization plus all pruning costs are <code class="math">m2^{O(qrh)}</code>. Otherwise
 the smallest nominal terminal set has logarithmic size at least
-$`c_1rh`$. It satisfies the cut-player cutoff
-$`|T|^{1/r}\geq N_0`$, and consecutive hierarchy sizes have enough
-slack to dominate the $`O(U)`$ maximum degree and pruning losses. This is an
+<code class="math">c_1rh</code>. It satisfies the cut-player cutoff
+<code class="math">&#124;T&#124;^{1/r}\geq N_0</code>, and consecutive hierarchy sizes have enough
+slack to dominate the <code class="math">O(U)</code> maximum degree and pruning losses. This is an
 actual-size base case, not a master-sized allocation.
-In particular, choose $`c_1`$ large enough that
-$`m^{1/q}\geq U^{c_2}\phi^{-c_2}`$ for the fixed constants used
+In particular, choose <code class="math">c_1</code> large enough that
+<code class="math">m^{1/q}\geq U^{c_2}\phi^{-c_2}</code> for the fixed constants used
 in the stage proof. Then the smallest nonbase stage has a positive
 deletion budget and enough surviving vertices to supply the next
 terminal set. Integer floors in the quota and hierarchy sizes
@@ -358,206 +372,220 @@ change only fixed factors.
 
 ### Stage work and stage counts
 
-Let $`B=\mathrm{poly}(U,\phi^{-1})=2^{O(rh)}`$. A single
-level-$`i`$ stage costs at most
+Let <code class="math">B=\mathrm{poly}(U,\phi^{-1})=2^{O(rh)}</code>. A single
+level-<code class="math">i</code> stage costs at most
 
-```math
+<!-- math-display: fd45348e47ddb9e8c015a4e4
 m^{(i+1)/q}F_r B                      \tag{5}
-```
+-->
+![Formula](../../assets/math/fd45348e47ddb9e8c015a4e4.svg)
 
 apart from recursively charged lower stages. This includes one terminal
 expander construction, its explicit inverse embedding lists, its ES tree,
-pruning, and processing the at most $`\eta`$ immediate preimages of
+pruning, and processing the at most <code class="math">\eta</code> immediate preimages of
 each deleted edge.
 
-One stage at level $`i+1`$ causes at most
+One stage at level <code class="math">i+1</code> causes at most
 
-```math
+<!-- math-display: 3519bdf1800d9daa4b452fd0
 m^{1/q}B                       \tag{6}
-```
+-->
+![Formula](../../assets/math/3519bdf1800d9daa4b452fd0.svg)
 
-level-$`i`$ stages. This is exactly the source's counting argument: pruning
-removes at most a $`1/\phi`$ multiple of deleted-edge volume, the
-embedding amplifies deletions by at most $`\eta`$, and a child stage
-requires a $`\phi`$ fraction of its initial edges to disappear.
-Only output congestion and conductance occur in $`6`$. **The construction
-factor $`F_r`$ does not occur in the number of stages.**
+level-<code class="math">i</code> stages. This is exactly the source's counting argument: pruning
+removes at most a <code class="math">1/\phi</code> multiple of deleted-edge volume, the
+embedding amplifies deletions by at most <code class="math">\eta</code>, and a child stage
+requires a <code class="math">\phi</code> fraction of its initial edges to disappear.
+Only output congestion and conductance occur in <code class="math">6</code>. **The construction
+factor <code class="math">F_r</code> does not occur in the number of stages.**
 
-Multiplying $`5`$ by the number
-$`m^{(q-i)/q}B^{O(q-i)}`$ of level-$`i`$ stages and summing gives
+Multiplying <code class="math">5</code> by the number
+<code class="math">m^{(q-i)/q}B^{O(q-i)}</code> of level-<code class="math">i</code> stages and summing gives
 
-```math
+<!-- math-display: 78e83f385ee6c6ec2c9a850e
 \boxed{
     \text{initialization plus all deletion work}
       \ \leq mF,
     \qquad
     F=2^{O(U/q+U/r+r^2h+qrh)}.
  }                                                         \tag{7}
-```
+-->
+![Formula](../../assets/math/78e83f385ee6c6ec2c9a850e.svg)
 
 For queries the source recurrence is
 
-```math
+<!-- math-display: 7d06dcf621fa7f8bcb697ccf
 L_i\leq O(U/\phi)\,[1+L_{i-1}],
-```
+-->
+![Formula](../../assets/math/7d06dcf621fa7f8bcb697ccf.svg)
 
 so a returned simple path and its computation have size at most
 
-```math
+<!-- math-display: 4678fa3f2c035f6532f0f108
 \Lambda=2^{O(qrh)}.             \tag{8}
-```
+-->
+![Formula](../../assets/math/4678fa3f2c035f6532f0f108.svg)
 
 The path is made simple by deleting closed subwalks in linear time in its
 explicit length. Only the final simple path is charged to ambient vertex
 congestion in the static sparsifier.
 
 The source and multigraph adapter support at most
-$`\phi m/c_{\rm pr}`$ original-edge deletions before the top
+<code class="math">\phi m/c_{\rm pr}</code> original-edge deletions before the top
 expander is exhausted. At the first request beyond that budget, declare every
-remaining original vertex pruned and stop that oracle. This costs $`O(m)`$
-once and keeps removed volume $`O(t/\phi)`$, after increasing the absolute
+remaining original vertex pruned and stop that oracle. This costs <code class="math">O(m)</code>
+once and keeps removed volume <code class="math">O(t/\phi)</code>, after increasing the absolute
 constant. It supplies the all-deletion convention used by Algorithm 4.
 
 ## 5. Consequences for the literal ambient static sparsifier
 
-Let $`J`$ be the demand graph and $`\Pi:J\to H`$ an explicit ambient
-embedding. Let $`L_0\geq1`$ be its maximum path cardinality and $`C_0`$ its
+Let <code class="math">J</code> be the demand graph and <code class="math">\Pi:J\to H</code> an explicit ambient
+embedding. Let <code class="math">L_0\geq1</code> be its maximum path cardinality and <code class="math">C_0</code> its
 vertex congestion. Apply the degree-band decomposition from Section 2 and
 Algorithm 4 of van den Brand et al., using Section 4's oracle.
 
 Here is an explicit weighted version of the two charging arguments.
 It is useful because the published proof has a few numerical slips that
 are immaterial to its asymptotic conclusion but should not be copied.
-Count repeated ambient path occurrences in $`C_0`$ and in the maintained
+Count repeated ambient path occurrences in <code class="math">C_0</code> and in the maintained
 loads; this is at least the number of distinct demand IDs using a vertex.
 
-Give every witness edge in band $`i>0`$ weight
-$`\rho_i=\phi2^i`$, and give the directly retained $`J_0`$ edges weight
+Give every witness edge in band <code class="math">i&gt;0</code> weight
+<code class="math">\rho_i=\phi2^i</code>, and give the directly retained <code class="math">J_0</code> edges weight
 one. The weighted witness degrees obey
-```math
+<!-- math-display: 9cdb7404dbff7a5d893c849c
 \deg_{J_i}(v)\leq \rho_i\deg_{W_i}(v)
                       \leq D_w\deg_{J_i}(v)
-```
-for a fixed $`D_w`$. The nonbase witness edge IDs are fresh and distinct
+-->
+![Formula](../../assets/math/9cdb7404dbff7a5d893c849c.svg)
+for a fixed <code class="math">D_w</code>. The nonbase witness edge IDs are fresh and distinct
 from all demand IDs, even when their endpoint pairs agree.
 
-**Route the witness into $`J`$.** In each round, initialize a fresh
+**Route the witness into <code class="math">J</code>.** In each round, initialize a fresh
 path oracle on each band component. Route every still-unrouted witness
 edge whose endpoints survive, using a simple path in its own band.
-Retain the route permanently once assigned. At ambient vertex $`x`$,
+Retain the route permanently once assigned. At ambient vertex <code class="math">x</code>,
 maintain the weighted, occurrence-counted load of the composed routes
-$`\Pi\circ\Pi_{W\to J}`$. In round $`j`$, when that load reaches
-$`j\tau_1`$, delete from the current oracles every original demand edge
-whose input path uses $`x`$, where
-```math
+<code class="math">\Pi\circ\Pi_{W\to J}</code>. In round <code class="math">j</code>, when that load reaches
+<code class="math">j\tau_1</code>, delete from the current oracles every original demand edge
+whose input path uses <code class="math">x</code>, where
+<!-- math-display: dca3ce6d49f7fcdf3427e82c
 \tau_1=c_1'\Lambda(L_0+1)(C_0+\Delta(J))/\phi.
-```
-Use a sufficiently large fixed $`c_1'`$.
+-->
+![Formula](../../assets/math/dca3ce6d49f7fcdf3427e82c.svg)
+Use a sufficiently large fixed <code class="math">c_1'</code>.
 
 One newly assigned witness route increases any one ambient load by at
-most $`\Delta(J)\Lambda(L_0+1)`$, because its edge weight is at most
-$`\Delta(J)`$. Thus the overshoot is at most $`\tau_1/2`$. Each
+most <code class="math">\Delta(J)\Lambda(L_0+1)</code>, because its edge weight is at most
+<code class="math">\Delta(J)</code>. Thus the overshoot is at most <code class="math">\tau_1/2</code>. Each
 ambient vertex disabled in a round has accumulated at least
-$`\tau_1/2`$ new load in that round. If $`B`$ is the weighted mass of
+<code class="math">\tau_1/2</code> new load in that round. If <code class="math">B</code> is the weighted mass of
 witness edges assigned during the round, total new ambient load is at
-most $`\Lambda(L_0+1)B`$. The total number of original demand edges
+most <code class="math">\Lambda(L_0+1)B</code>. The total number of original demand edges
 explicitly deleted from all band oracles is therefore at most
-```math
+<!-- math-display: e3d63bd425b1db64c32e1fa4
 2C_0\Lambda(L_0+1)B/\tau_1.
-```
+-->
+![Formula](../../assets/math/e3d63bd425b1db64c32e1fa4.svg)
 Pruning removes initial band volume at most a fixed constant times this
-quantity divided by $`\phi`$. Every witness edge left unrouted has a
-pruned endpoint. Its total weighted mass is at most $`D_w`$ times the
-removed initial band volume. Choosing $`c_1'`$ sufficiently large makes
-that remaining mass at most a fixed multiple of $`B`$, and even at most
-$`B/2`$ if desired. Consequently each round makes constant-factor
+quantity divided by <code class="math">\phi</code>. Every witness edge left unrouted has a
+pruned endpoint. Its total weighted mass is at most <code class="math">D_w</code> times the
+removed initial band volume. Choosing <code class="math">c_1'</code> sufficiently large makes
+that remaining mass at most a fixed multiple of <code class="math">B</code>, and even at most
+<code class="math">B/2</code> if desired. Consequently each round makes constant-factor
 progress. This is the correct constant-fraction conclusion; the
-factor $`18`$ is reversed in one displayed deduction of the source's
+factor <code class="math">18</code> is reversed in one displayed deduction of the source's
 Claim 8.7, without affecting this argument.
 
-The total initial weighted mass is $`O(|E(J)|)`$; every positive
-witness weight is at least $`\min\{1,\phi\}`$. Hence the number of
-rounds is $`O(\log(|E(J)|+2)+\log(1/\phi))=O(U)`$.
-The final weighted ambient congestion is $`O(U\tau_1)`$.
+The total initial weighted mass is <code class="math">O(&#124;E(J)&#124;)</code>; every positive
+witness weight is at least <code class="math">\min\{1,\phi\}</code>. Hence the number of
+rounds is <code class="math">O(\log(&#124;E(J)&#124;+2)+\log(1/\phi))=O(U)</code>.
+The final weighted ambient congestion is <code class="math">O(U\tau_1)</code>.
 
-**Route $`J`$ into the witness.** Define normalized witness-edge load
+**Route <code class="math">J</code> into the witness.** Define normalized witness-edge load
 as the number of assigned unit-demand routes using that edge, divided
-by its weight $`\rho_i`$. In round $`j`$, use a fresh path oracle in
+by its weight <code class="math">\rho_i</code>. In round <code class="math">j</code>, use a fresh path oracle in
 each witness component and delete an edge from that round's oracle
-when its normalized load reaches $`j\tau_2`$, where
-```math
+when its normalized load reaches <code class="math">j\tau_2</code>, where
+<!-- math-display: 5c4e835da512c08061cf3e37
 \tau_2=c_2'\Lambda/\phi.
-```
+-->
+![Formula](../../assets/math/5c4e835da512c08061cf3e37.svg)
 Every new simple route increases the load of an edge by
-$`1/\rho_i\leq1/\phi`$, so a sufficiently large fixed $`c_2'`$
-again bounds the overshoot by $`\tau_2/2`$. The increase need not be
+<code class="math">1/\rho_i\leq1/\phi</code>, so a sufficiently large fixed <code class="math">c_2'</code>
+again bounds the overshoot by <code class="math">\tau_2/2</code>. The increase need not be
 at most one; this is the normalized-weight correction to the
 published Invariant 2.
 
-If $`B'`$ demand edges are assigned in a round, the sum of
-$`\rho_i`$ times the new normalized edge load is at most
-$`\Lambda B'`$. Thus the total weight of explicitly deleted witness
-edges is at most $`2\Lambda B'/\tau_2`$. The witness weights are
+If <code class="math">B'</code> demand edges are assigned in a round, the sum of
+<code class="math">\rho_i</code> times the new normalized edge load is at most
+<code class="math">\Lambda B'</code>. Thus the total weight of explicitly deleted witness
+edges is at most <code class="math">2\Lambda B'/\tau_2</code>. The witness weights are
 uniform within each component, so ordinary pruning bounds the
 removed weighted volume by a fixed constant times this deleted
-weight divided by $`\phi`$. The degree lower bound
-$`\rho_i\deg_{W_i}\geq\deg_{J_i}`$ shows that the number of still
+weight divided by <code class="math">\phi</code>. The degree lower bound
+<code class="math">\rho_i\deg_{W_i}\geq\deg_{J_i}</code> shows that the number of still
 unrouted demand edges is no larger than that removed weighted
-volume. For a sufficiently large fixed $`c_2'`$, each round again
-makes constant progress. There are $`O(\log(|E(J)|+2))`$ rounds,
-and the final normalized edge congestion is $`O(U\tau_2)`$.
+volume. For a sufficiently large fixed <code class="math">c_2'</code>, each round again
+makes constant progress. There are <code class="math">O(\log(&#124;E(J)&#124;+2))</code> rounds,
+and the final normalized edge congestion is <code class="math">O(U\tau_2)</code>.
 
-The directly retained $`J_0`$ edges use their own identity routes;
+The directly retained <code class="math">J_0</code> edges use their own identity routes;
 they fit the initial-load bounds and require no path-oracle call.
 For the other edges, both witness-routing steps have maximum path
-length $`\Lambda`$. Weighted composition of the two embeddings gives
+length <code class="math">\Lambda</code>. Weighted composition of the two embeddings gives
 ambient congestion
-```math
+<!-- math-display: 1f744f542d56a72b0c2b4938
 O(U^2\tau_1\tau_2)
  =O\!\left(
   U^2\Lambda^2\phi^{-2}(L_0+1)(C_0+\Delta(J))
  \right).
-```
-Because $`L_0\geq1`$, the factor $`L_0+1`$ is absorbed by $`2L_0`$.
+-->
+![Formula](../../assets/math/1f744f542d56a72b0c2b4938.svg)
+Because <code class="math">L_0\geq1</code>, the factor <code class="math">L_0+1</code> is absorbed by <code class="math">2L_0</code>.
 With a common output envelope
 
-```math
+<!-- math-display: 3bc8f29495daa8b041454989
 \Gamma=2^{O(qrh)},              \tag{9}
-```
+-->
+![Formula](../../assets/math/3bc8f29495daa8b041454989.svg)
 
 the resulting selected subgraph and explicit embedding satisfy
 
-```math
+<!-- math-display: 65884812e9ae45107e1bba3a
 |E(\widetilde J)|\leq |V(J)|\Gamma\mathrm{poly}(U),
  \qquad L(\widehat\Pi)\leq\Gamma,\qquad
  L(\Pi\circ\widehat\Pi)\leq\Gamma L_0,
-```
+-->
+![Formula](../../assets/math/65884812e9ae45107e1bba3a.svg)
 
-```math
+<!-- math-display: 10a143b159a562c6a2995fdc
 C(\Pi\circ\widehat\Pi)
        \leq \Gamma L_0[C_0+\Delta(J)].                    \tag{10}
-```
+-->
+![Formula](../../assets/math/10a143b159a562c6a2995fdc.svg)
 
 For example, the source proof gives a congestion factor proportional to
-$`\Lambda^2\phi^{-2}\mathrm{poly}(U)`$, and path factor
-$`\Lambda^2`$; both fit $`9`$. The selected witness-path count and total
+<code class="math">\Lambda^2\phi^{-2}\mathrm{poly}(U)</code>, and path factor
+<code class="math">\Lambda^2</code>; both fit <code class="math">9</code>. The selected witness-path count and total
 support also fit that envelope. Every representative selected edge remains an
 actual demand-edge ID, as required by the later core-edge lift.
-If an interface requires each final route in $`\widetilde J`$ to be
+If an interface requires each final route in <code class="math">\widetilde J</code> to be
 simple, erase closed subwalks in that graph in time proportional to
 the explicit route length. This only deletes occurrences from its
 ambient expansion and cannot increase any of the stated bounds.
 
 The initialization and all adaptive path-oracle deletions cost at most a fixed
-multiple of the actual host size times $`F`$, for each of the $`O(U)`$
+multiple of the actual host size times <code class="math">F</code>, for each of the <code class="math">O(U)</code>
 rounds. Explicit path output, ambient inverse indexing, and
-edge updates contribute fixed factors of $`\Gamma`$ and $`L_0`$.
+edge updates contribute fixed factors of <code class="math">\Gamma</code> and <code class="math">L_0</code>.
 Thus a safe runtime is
 
-```math
+<!-- math-display: 651784bc3b7bd297eec07f7d
 |E(J)|\,F\,\Gamma^{O(1)}
                       (L_0+1)\mathrm{poly}(U).    \tag{11}
-```
+-->
+![Formula](../../assets/math/651784bc3b7bd297eec07f7d.svg)
 
 An ambient graph is represented by the union of the supplied explicit paths
 and relevant central edges. Unrelated ambient isolates are not scanned. The
@@ -565,31 +593,31 @@ same conventions on parallel IDs, loop demands, original endpoints and
 explicit route-owner records apply as in
 [demand-route notifications](demand-route-notifications-and-local-work.md).
 
-Formula $`10`$ is **not** the unsupported length-free restatement. The new
-separation is between the larger local work factor $`F`$ and the smaller
-output factor $`\Gamma`$.
+Formula <code class="math">10</code> is **not** the unsupported length-free restatement. The new
+separation is between the larger local work factor <code class="math">F</code> and the smaller
+output factor <code class="math">\Gamma</code>.
 
 ### Finite arithmetic and primitive boundaries
 
-Choose the common $`\phi`$ as a reciprocal power of two below the
+Choose the common <code class="math">\phi</code> as a reciprocal power of two below the
 proved conductance threshold, for example
-$`2^{-c_\phi r h}`$ for a sufficiently large fixed integer
-$`c_\phi`$. The component quotas, witness port counts, normalized
+<code class="math">2^{-c_\phi r h}</code> for a sufficiently large fixed integer
+<code class="math">c_\phi</code>. The component quotas, witness port counts, normalized
 loads, and threshold comparisons then use integers or dyadic
 rationals. The positive weights have logarithmic magnitudes
-$`O(U+rh)`$, and input-path indices and explicitly generated path
+<code class="math">O(U+rh)</code>, and input-path indices and explicitly generated path
 records are charged at their actual lengths. Floors and ceilings of
-the hierarchy sizes $`m^{i/q}`$ are computed by integer power
+the hierarchy sizes <code class="math">m^{i/q}</code> are computed by integer power
 comparisons. No real-arithmetic oracle or uncharged implicit path
 enumeration is required.
 
 The source algorithms are used with their constructive cut-player,
 matching-player, pruning, and ES-tree procedures. Fixed constants
-such as the cutoff $`N_0`$ and the large absolute constants in this
+such as the cutoff <code class="math">N_0</code> and the large absolute constants in this
 note belong to a fixed finite program or to its enumerated
 constant-parameter family. They are not input-dependent advice.
 For the growing parameters of Section 6, all declared counts and
-integer bit lengths are $`2^{O(U)}`$ and $`O(\mathrm{poly}U)`$,
+integer bit lengths are <code class="math">2^{O(U)}</code> and <code class="math">O(\mathrm{poly}U)</code>,
 respectively; the master backend charges their arithmetic and may
 guard the corresponding explicit bounds.
 
@@ -604,45 +632,47 @@ This section assumes the separately documented
 [amortized static-base distance sparsifier](amortized-static-base-distance-sparsifier.md)
 and its complete degree-reset/raw-lift interfaces. It uses that construction's
 own integer batching clock, not the different KMPG black-box restriction on
-$`K`$. The original length-sensitive recurrence gives local work
-$`\Gamma^{O(K^2)}`$, while selected recourse remains a fixed power of
-$`\rho\Gamma\mathrm{poly}(U)`$, where
-$`\log\rho=O(U/K)`$.
+<code class="math">K</code>. The original length-sensitive recurrence gives local work
+<code class="math">\Gamma^{O(K^2)}</code>, while selected recourse remains a fixed power of
+<code class="math">\rho\Gamma\mathrm{poly}(U)</code>, where
+<code class="math">\log\rho=O(U/K)</code>.
 
-Writing $`x=\log k`$, a safe prospective total logarithmic overhead is
+Writing <code class="math">x=\log k</code>, a safe prospective total logarithmic overhead is
 
-```math
+<!-- math-display: 2dd18db06da78ee23b06ccd3
 O\!\left(
  x+U/r+U/q+r^2h+qrh+K^2qrh
        +\frac{U^2}{Kx}+\frac{Uqrh}{x}
        +\frac{UKqrh}{x}
  \right).                                                 \tag{12}
-```
+-->
+![Formula](../../assets/math/2dd18db06da78ee23b06ccd3.svg)
 
-Here the work factor $`F`$ is local/additive. It is not inserted into the
+Here the work factor <code class="math">F</code> is local/additive. It is not inserted into the
 selected-degree cap, the recursive update multiplier, or the exposed forest
 occurrence cap. The last term explicitly charges the raw-quality loss:
-each numerical level may lose $`\Gamma^{O(K)}`$, across
-$`O(U/x)`$ levels. When $`K^2qrh=o(U)`$, the one-level path-quality factor
-$`\Gamma^{O(K)}`$ is also bounded by a fixed power of the recourse
+each numerical level may lose <code class="math">\Gamma^{O(K)}</code>, across
+<code class="math">O(U/x)</code> levels. When <code class="math">K^2qrh=o(U)</code>, the one-level path-quality factor
+<code class="math">\Gamma^{O(K)}</code> is also bounded by a fixed power of the recourse
 envelope, so its multiplication through the hierarchy is included.
 
-The power/logarithm balance suggested by $`12`$ is
+The power/logarithm balance suggested by <code class="math">12</code> is
 
-```math
+<!-- math-display: b644489179ce6aee58f20d8d
 r,q=\Theta(U^{1/7}h^{-1/7}),\qquad
  K=\Theta(U^{2/7}h^{-2/7}),\qquad
  x=\Theta(U^{6/7}h^{1/7}).                                \tag{13}
-```
+-->
+![Formula](../../assets/math/b644489179ce6aee58f20d8d.svg)
 
-It gives $`\log\Gamma=O(U^{2/7}h^{5/7})`$,
-$`\log F=O(U^{6/7}h^{1/7})`$, and makes every term in $`12`$ at most
-$`O(U^{6/7}h^{1/7})`$. For instance
-$`K^2qrh=\Theta(U^{6/7}h^{1/7})=o(U)`$,
-while $`\log R=O(U^{5/7}h^{2/7})=o(x)`$.
+It gives <code class="math">\log\Gamma=O(U^{2/7}h^{5/7})</code>,
+<code class="math">\log F=O(U^{6/7}h^{1/7})</code>, and makes every term in <code class="math">12</code> at most
+<code class="math">O(U^{6/7}h^{1/7})</code>. For instance
+<code class="math">K^2qrh=\Theta(U^{6/7}h^{1/7})=o(U)</code>,
+while <code class="math">\log R=O(U^{5/7}h^{2/7})=o(x)</code>.
 
 This is a proposed composition rate to audit, not a claim that merely replacing
-a printed $`2/3`$ by a smaller number proves a matching theorem. The
+a printed <code class="math">2/3</code> by a smaller number proves a matching theorem. The
 short-period selected transcript, delayed-initial-credit accounting, master
 bit and horizon guards, complete raw certificates, exact projection recovery,
 and final optimality verification must all be carried through a separate

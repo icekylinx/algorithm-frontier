@@ -19,15 +19,17 @@ for the maximum degree of J.
 
 For any supplied positive resource prices w_x, assign the native
 edge cost
-```math
+<!-- math-display: 0a3c2a5bdba32238824f848b
 c_w(e)=\sum_{x\in\Pi(e)}w_x.
-```
+-->
+![Formula](../../assets/math/0a3c2a5bdba32238824f848b.svg)
 Suppose a deterministic weighted-spanner oracle returns a selected
 subgraph H with at most s edges and, for every e=uv, an explicit H-path
 P_e satisfying
-```math
+<!-- math-display: 5db9d0944e774a1c23700327
 \sum_{f\in P_e}c_w(f)\leq\alpha c_w(e).       \tag{1}
-```
+-->
+![Formula](../../assets/math/5db9d0944e774a1c23700327.svg)
 Any desired bound on the number of native edges in P_e must be a
 separate oracle guarantee; weighted distance alone does not provide it.
 
@@ -36,40 +38,45 @@ ambient walk. With positive prices this does not increase its cost.
 Loop erasure uses immediate ambient vertex IDs, never a later
 identification of distinct aliases through their physical images.
 Let a_x be the number of resulting simple ambient paths using x. Then
-```math
+<!-- math-display: 7ea4d9f76c402d0005b5d7dc
 0\leq a_x\leq q,\qquad
  \sum_x w_x a_x
        \leq\alpha\sum_e c_w(e)
        \leq\alpha C_0\sum_x w_x.                           \tag{2}
-```
+-->
+![Formula](../../assets/math/7ea4d9f76c402d0005b5d7dc.svg)
 Thus a weighted distance oracle gives a low-cost aggregate response.
 It does not give a bound a_x=polylog(R)(C0+Delta) for each resource.
 
 ## 2. A literal multiplicative-weights construction
 
 Start with w_x=1. After response a^(t), update
-```math
+<!-- math-display: aa5caaac542a38f378a6a9d9
 w_x\leftarrow w_x(1+a_x^{(t)}/q).
                                                                     \tag{3}
-```
+-->
+![Formula](../../assets/math/aa5caaac542a38f378a6a9d9.svg)
 This is a mathematical packing calculation; exact products in (3)
 would have T-dependent bit size, which a fast implementation would
 also have to address. From (2), the total weight after T responses is
 at most
-```math
+<!-- math-display: 0819ee3c37b09b3e534ec498
 R(1+\alpha C_0/q)^T
                     \leq R\exp(T\alpha C_0/q).
-```
+-->
+![Formula](../../assets/math/0819ee3c37b09b3e534ec498.svg)
 For 0<=z<=1, ln(1+z)>=z ln 2. Comparing one coordinate's weight with
 the total gives
-```math
+<!-- math-display: 48b5a1c53c1f9359e4a8a147
 \max_x\frac1T\sum_{t=1}^T a_x^{(t)}
        \leq\frac{\alpha C_0+q\ln R/T}{\ln 2}.             \tag{4}
-```
+-->
+![Formula](../../assets/math/48b5a1c53c1f9359e4a8a147.svg)
 For example, let D=gamma(C0+Delta) with gamma>=4 alpha, and take
-```math
+<!-- math-display: 2d0fd68a4e254249a742664a
 T\geq\max\{1,4q\ln R/D\}.
-```
+-->
+![Formula](../../assets/math/2d0fd68a4e254249a742664a.svg)
 Then the average response has congestion below D. The union of the
 T native selected subgraphs has at most Ts selected IDs. Keep every
 candidate as a pair: its native H-path P_e and its loop-erased ambient
@@ -104,10 +111,11 @@ roots by an edge f. Let T be this tree. Add a simple D0-regular
 bipartite graph between the two leaf sets, where 4<=D0<=Q; a union
 of D0 distinct cyclic perfect matchings is an explicit choice.
 The resulting native graph J has
-```math
+<!-- math-display: c52f3cc4e39f51e0981432c4
 n=4Q-2,\qquad q=4Q-3+D_0Q,\qquad
  \Delta=\max\{3,D_0+1\}.
-```
+-->
+![Formula](../../assets/math/c52f3cc4e39f51e0981432c4.svg)
 Use J itself as the ambient graph, take EDGE resources X=E(J),
 and use the identity input images,
 so C0=1. At uniform resource prices, H=T is an alpha-spanner with
@@ -115,16 +123,18 @@ alpha=2h+1. Every demand path has at most alpha native edges; H has
 n-1 edges and maximum selected degree three.
 
 Nevertheless the response load on f is
-```math
+<!-- math-display: 1754d9f855f852e6819a6e8a
 a_f=D_0Q+1.                         \tag{5}
-```
+-->
+![Formula](../../assets/math/1754d9f855f852e6819a6e8a.svg)
 All of these routes are already simple ambient paths, so loop
 erasure does not reduce (5). For D0 growing with Q, the input is
 also substantially denser than the selected tree. Relative to the
 desired target D=gamma(C0+Delta), (5) gives
-```math
+<!-- math-display: 00cd956962c0d45c4cdbde29
 a_f/D=\Omega(n/\gamma).
-```
+-->
+![Formula](../../assets/math/00cd956962c0d45c4cdbde29.svg)
 Taking gamma to be a fixed polynomial in log n leaves a polynomial
 width. Given an otherwise valid all-price oracle whose allowed
 stretch is at least 2h+1 and whose support cap is at least n-1,

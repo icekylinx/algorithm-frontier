@@ -30,12 +30,13 @@ assume all donor prices are monotone.
 Source arcs obey the same deletion-only conclusion. A start increases
 its slack and cannot create source tightness. For a terminal,
 
-```math
+<!-- math-display: 68dfa086107ec99efc186eb7
 D(b)<A-\tau_b,\qquad
  \tau_b-\sigma_b^{\rm new}
  \ge H\alpha_b\left(5/4-(3/4)/(1-1/256)\right)
  =169H\alpha_b/340>0 .
-```
+-->
+![Formula](../../assets/math/68dfa086107ec99efc186eb7.svg)
 
 The floor on the new source offer and ceiling on tau only strengthen
 this inequality. Thus the new source arc remains strictly slack.

@@ -14,7 +14,7 @@ Deterministic exact numerical reductions. The fast dynamic bound requires the st
 
 **Time**
 
-$`O((N+1)E(S)^4\mathrm{poly}(\log S))`$ under the raw-cycle lifetime interface, where $`E(S)=\exp\!\left(O((\log S)^{4/5}(\log\log(S+4))^{1/5})\right)`$; explicit output of a full flow is charged separately.
+<code class="math">O((N+1)E(S)^4\mathrm{poly}(\log S))</code> under the raw-cycle lifetime interface, where <code class="math">E(S)=\exp\!\left(O((\log S)^{4/5}(\log\log(S+4))^{1/5})\right)</code>; explicit output of a full flow is charged separately.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial binary storage for actual edge records and numerical state; stored va
 
 **Parameters**
 
-$`N`$ bounds edge records over their lifetime, including the artificial initialization arcs; lazy initialization keeps their number linear in original edge births. $`n`$ and $`m`$ count vertices and current edges; $`S`$ is the declared power-of-two numerical cap, including the fixed full-stream artificial penalty. Capacities, costs, demands, and threshold are binary encoded.
+<code class="math">N</code> bounds edge records over their lifetime, including the artificial initialization arcs; lazy initialization keeps their number linear in original edge births. <code class="math">n</code> and <code class="math">m</code> count vertices and current edges; <code class="math">S</code> is the declared power-of-two numerical cap, including the fixed full-stream artificial penalty. Capacities, costs, demands, and threshold are binary encoded.
 
 **Model and representation**
 

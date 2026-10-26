@@ -10,73 +10,81 @@ The guarantee is a weak coreset guarantee: a minimizer of the weighted surviving
 
 Let A be an N-by-p real matrix. Let B be an N-by-q matrix specifying a supplied response subspace; one may remove dependent columns and assume rank(B)=q. Each row e carries a set Λ(e) of at most d failure labels from an explicitly given universe of L occurring labels. For F with |F|≤h, write
 
-```math
+<!-- math-display: 21c0dd340d70192ece4671e9
 E_F=\{e:\Lambda(e)\cap F=\varnothing\},\qquad
  Q=\sum_{j=0}^{\min\{h,L\}}\binom Lj.
-```
+-->
+![Formula](../../../assets/math/21c0dd340d70192ece4671e9.svg)
 
 Clip h at L and d at the actual maximum label-set size. Define
 
-```math
+<!-- math-display: d8ee3da9cdf914d8c2218186
 \Gamma(h,d)=\frac{(h+d)^{h+d}}{h^h d^d}
-```
+-->
+![Formula](../../../assets/math/d8ee3da9cdf914d8c2218186.svg)
 
 when h,d>0, and set Γ=1 if either parameter is zero. Fix λ_0≥0 and set C=[A B],
 
-```math
+<!-- math-display: d64f947ba94be15edf11666c
 R_0=\begin{pmatrix}\lambda_0 I_p&0\\0&0_q\end{pmatrix},
  \qquad
  \rho=\mathrm{tr}\left(C^TC(C^TC+R_0)^\dagger\right).
 \tag{1}
-```
+-->
+![Formula](../../../assets/math/d64f947ba94be15edf11666c.svg)
 
 For ε,δ in (0,1), there is a randomized uniformly polynomial-time construction of a row subset H and fixed nonnegative weights ω_e, of size
 
-```math
+<!-- math-display: 18e60c5748b1b8053681f06f
 O\!\left(\min\left\{N,
   \frac{\Gamma(h,d)\rho}{\epsilon}
   \log\frac{2(p+q)Q}{\delta}\right\}\right),
 \tag{2}
-```
+-->
+![Formula](../../../assets/math/18e60c5748b1b8053681f06f.svg)
 
 with the following simultaneous guarantee, with probability at least 1−δ. Choose any allowed F, any λ≥λ_0, any response matrix Y=BT with any finite number of columns, any convex feasible set K of coefficient matrices, and any convex penalty g:K→[0,∞). Every attained minimizer \widehat X over X∈K of
 
-```math
+<!-- math-display: ebf3264083b8df05bac3706e
 \sum_{e\in H\cap E_F}\omega_e\|a_e^T X-y_e^T\|_2^2
   +\lambda\|X\|_F^2+g(X)
 \tag{3}
-```
+-->
+![Formula](../../../assets/math/ebf3264083b8df05bac3706e.svg)
 
 satisfies
 
-```math
+<!-- math-display: 2e49d56c91e2eb967a067057
 \|A_{E_F}\widehat X-Y_{E_F}\|_F^2
   +\lambda\|\widehat X\|_F^2+g(\widehat X)
  \le(1+\epsilon)
   \inf_{X\in K}\{\|A_{E_F}X-Y_{E_F}\|_F^2+\lambda\|X\|_F^2+g(X)\}.
 \tag{4}
-```
+-->
+![Formula](../../../assets/math/2e49d56c91e2eb967a067057.svg)
 
 The same H and weights work for all these choices, including choices of K and g made after inspecting the summary. No additional union bound over λ, T, K, or g is needed. The lower endpoint λ_0 and the supplied response subspace must be fixed before preprocessing. Examples include nonnegative least squares, simplex or box constraints, lasso and generalized lasso, elastic net, and nuclear-norm penalties on matrix coefficients. Convexity and nonnegativity of the added penalty are explicit assumptions; arbitrary discrete constraints or nonconvex penalties are not covered by this precision bound.
 
 The quantity in (1) obeys
 
-```math
+<!-- math-display: fede8541d1ef0a3c49cadc16
 \rho\le\mathrm{sd}_{\lambda_0}(A)+q,
  \qquad
  \mathrm{sd}_{\lambda}(A)
    =\mathrm{tr}\bigl(A^TA(A^TA+\lambda I)^\dagger\bigr).
 \tag{5}
-```
+-->
+![Formula](../../../assets/math/fede8541d1ef0a3c49cadc16.svg)
 
 For h=1, there is a deterministic polynomial-time construction of size
 
-```math
+<!-- math-display: 4c41ee7f7a0e9b5ab78a987d
 O\!\left(\min\left\{N,
  \frac{(d+1)\rho}{\epsilon}
  \log\bigl(2(p+q)(L+1)\bigr)\right\}\right).
 \tag{6}
-```
+-->
+![Formula](../../../assets/math/4c41ee7f7a0e9b5ab78a987d.svg)
 
 In particular, a fixed response vector costs at most one additional effective dimension. For λ_0=0, one may use the sharper expression ρ=rank([A B]). Rational-input statements have their usual polynomial bit-complexity interpretation, using the finite-precision derandomization in the spectral manuscript. A zero-dimensional input or ρ=0 is handled by the empty summary.
 
@@ -84,29 +92,32 @@ In particular, a fixed response vector costs at most one additional effective di
 
 The spectral manuscript initially writes fixed regularization as R≻0. Its proof extends to any R≽0. For X⊆E and e∈X, use
 
-```math
+<!-- math-display: 44213f21c6784b0e1e6908e0
 t_e^R(X)=\mathrm{tr}\bigl(B_e(R+M_X)^\dagger\bigr),
  \qquad M_X=\sum_{e\in X}B_e.
-```
+-->
+![Formula](../../../assets/math/44213f21c6784b0e1e6908e0.svg)
 
 Apply the positive-definite version with R+ζI and let ζ decrease to zero. Since range(B_e)⊆range(M_X)⊆range(R+M_X), each trace converges to this finite pseudoinverse trace. Thus deletion monotonicity, the hereditary total bound, the Γ pool argument, and the exact h=1 accounting all remain valid. Their total bound is
 
-```math
+<!-- math-display: 78081d8b19345fce3087c98a
 d_R=\mathrm{tr}\bigl(M_E(R+M_E)^\dagger\bigr).
-```
+-->
+![Formula](../../../assets/math/78081d8b19345fce3087c98a.svg)
 
 Concentration and derandomization whiten range(R+M_{E_F}) separately for each scenario. All item matrices and the background vanish on its orthogonal complement, so rank changes cause no extra error. The cap at the full input size and the small-effective-dimension precheck from the spectral manuscript remain valid. This proves the PSD version, not just a limiting existential statement about output weights.
 
 Apply that result to B_e=c_ec_e^T, where c_e is the transpose of row e of C, and background R_0. With embedding accuracy η∈(0,1), it gives simultaneously for all F
 
-```math
+<!-- math-display: fb04503427b8a761816b160c
 (1-\eta)(C_{E_F}^TC_{E_F}+R_0)
  \preceq
  C_{H\cap E_F}^T W C_{H\cap E_F}+R_0
  \preceq
  (1+\eta)(C_{E_F}^TC_{E_F}+R_0).
 \tag{7}
-```
+-->
+![Formula](../../../assets/math/fb04503427b8a761816b160c.svg)
 
 Adding diag((λ−λ_0)I_p,0) preserves (7), with R_0 replaced by diag(λI_p,0), for every λ≥λ_0. Congruence under diag(I_p,T) gives the analogous statement for responses Y=BT. Thus all these later choices are covered by the one event in (7).
 
@@ -114,48 +125,53 @@ Adding diag((λ−λ_0)I_p,0) preserves (7), with R_0 replaced by diag(λI_p,0),
 
 Fix F, λ and Y, and use the augmented ordinary least-squares matrices
 
-```math
+<!-- math-display: 81f35b8090274f070162f0a4
 \bar A=\begin{pmatrix}A_{E_F}\\\sqrt\lambda I_p\end{pmatrix},
  \qquad
  \bar Y=\begin{pmatrix}Y_{E_F}\\0\end{pmatrix}.
-```
+-->
+![Formula](../../../assets/math/81f35b8090274f070162f0a4.svg)
 
 Let S scale/select the data rows according to the common surviving summary and leave the regularization rows untouched. Statement (7) means that S preserves all squared norms in col([\bar A\ \bar Y]) within 1±η. Therefore its bilinear error satisfies
 
-```math
+<!-- math-display: 05530c0dd0c798c5c942047c
 |\langle Su,Sv\rangle-\langle u,v\rangle|
   \le\eta\|u\|_2\|v\|_2
 \tag{8}
-```
+-->
+![Formula](../../../assets/math/05530c0dd0c798c5c942047c.svg)
 
 for all u,v in that column space. This follows by representing S^TS−I on an orthonormal basis of the space and using its operator norm bound η.
 
 Fix any feasible comparator X_* with finite objective. It need not be an optimizer. Set
 
-```math
+<!-- math-display: 0a5d9ea56a56256c268a9f70
 \Delta=\widehat X-X_*,\qquad
  U=\bar A\Delta,\qquad
  V=\bar A\widehat X-\bar Y.
-```
+-->
+![Formula](../../../assets/math/0a5d9ea56a56256c268a9f70.svg)
 
 For 0<t≤1, the point X_t=\widehat X−tΔ is feasible. Optimality of \widehat X and convexity of g imply
 
-```math
+<!-- math-display: 3f66782fd5b10e02ae4331d3
 0\le
  -2t\langle SU,SV\rangle_F+t^2\|SU\|_F^2
  +t\bigl(g(X_*)-g(\widehat X)\bigr).
-```
+-->
+![Formula](../../../assets/math/3f66782fd5b10e02ae4331d3.svg)
 
 Divide by t and let t decrease to zero. This gives
 
-```math
+<!-- math-display: ba5aefeda20428fcf23f69cb
 2\langle SU,SV\rangle_F
  \le g(X_*)-g(\widehat X).
-```
+-->
+![Formula](../../../assets/math/ba5aefeda20428fcf23f69cb.svg)
 
 Thus, writing f(X)=\|\bar AX−\bar Y\|_F^2+g(X),
 
-```math
+<!-- math-display: 7189f0d68a9821318f1180cb
 \begin{aligned}
  f(\widehat X)-f(X_*)
  &=2\langle U,V\rangle_F-\|U\|_F^2
@@ -166,14 +182,16 @@ Thus, writing f(X)=\|\bar AX−\bar Y\|_F^2+g(X),
  &\le\eta^2\|V\|_F^2
  \le\eta^2 f(\widehat X).
  \end{aligned}
-```
+-->
+![Formula](../../../assets/math/7189f0d68a9821318f1180cb.svg)
 
 The penultimate inequality is 2ab−b^2≤a^2. The last uses g≥0. Consequently
 
-```math
+<!-- math-display: 6c2455405d9eebea64247ece
 f(\widehat X)\le\frac{1}{1-\eta^2}f(X_*).
 \tag{9}
-```
+-->
+![Formula](../../../assets/math/6c2455405d9eebea64247ece.svg)
 
 Take the infimum over all finite feasible comparators. Choosing η^2=ε/(1+ε) proves (4), while η^{-2}=(1+ε)/ε proves the size bounds. This segment proof handles nonsmooth penalties without requiring a subgradient sum rule or a constraint qualification. It includes zero optimum and rank-deficient design matrices. An attained sketched minimum is the only optimization existence requirement. Because (8) holds uniformly on the supplied column space, the same argument applies to every subsequently chosen convex K and g on the single successful embedding event.
 
@@ -185,32 +203,36 @@ For λ_0=0, (5) is the elementary inequality rank([A B])≤rank(A)+rank(B).
 
 Suppose λ_0>0. Put
 
-```math
+<!-- math-display: 08c634ec47894f50e9013a34
 H=A^TA+\lambda_0 I_p,\qquad
  X_*=H^{-1}A^TB,\qquad U=B-AX_*,
-```
+-->
+![Formula](../../../assets/math/08c634ec47894f50e9013a34.svg)
 
 and let
 
-```math
+<!-- math-display: e5665f3c32bc07736d5a46d4
 V=B^TB-B^TAH^{-1}A^TB
    =U^TU+\lambda_0X_*^TX_*.
-```
+-->
+![Formula](../../../assets/math/e5665f3c32bc07736d5a46d4.svg)
 
 After dependent response columns have been removed, V is positive definite: it equals B^T[I−AH^{-1}A^T]B and the middle matrix is positive definite. The block inverse of C^TC+R_0 gives, for each row,
 
-```math
+<!-- math-display: 73f00c69db968068189abfa6
 c_e^T(C^TC+R_0)^{-1}c_e
   =a_e^TH^{-1}a_e+u_e^TV^{-1}u_e.
-```
+-->
+![Formula](../../../assets/math/73f00c69db968068189abfa6.svg)
 
 Summing and using U^TU≼V proves
 
-```math
+<!-- math-display: 2c767b02408969167db92b94
 \rho=\mathrm{sd}_{\lambda_0}(A)
        +\mathrm{tr}(V^{-1/2}U^TUV^{-1/2})
        \le\mathrm{sd}_{\lambda_0}(A)+q.
-```
+-->
+![Formula](../../../assets/math/2c767b02408969167db92b94.svg)
 
 The same formula also exposes why the response contribution is bounded even when its scale is large. The response subspace, rather than the number of separately queried response matrices, controls this term.
 

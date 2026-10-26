@@ -11,10 +11,11 @@ oracle, and let its rank be r. Let J be a set of indivisible resources, with pos
 values v_j and explicit liking sets L_p contained in J. A resource has
 the same value to every player who likes it. Write
 
-```math
+<!-- math-display: b421e05781daee6495a1c603
 u=\max_{j\in J}v_j,
  \qquad \mathcal P=q+|J|+\sum_p|L_p|+2.
-```
+-->
+![Formula](../../assets/math/b421e05781daee6495a1c603.svg)
 
 Zero-value resources may be removed. The case of rank zero is vacuous.
 If the resource set is empty, take u=0 and use the same failure
@@ -23,23 +24,25 @@ certificate below whenever a positive target is requested.
 The public fractional relaxation Q(T) has variables x_p and y_pj,
 with x in the matroid base polytope, and
 
-```math
+<!-- math-display: 3a1f0735848b6e2606361597
 \sum_{j\in L_p}v_jy_{pj}\ge T x_p,
  \qquad
  \sum_{p:j\in L_p}y_{pj}\le1,
  \qquad
  0\le y_{pj}\le x_p.
  \tag{M1}
-```
+-->
+![Formula](../../assets/math/3a1f0735848b6e2606361597.svg)
 
 For T>u and rational
 
-```math
+<!-- math-display: af745800123d1ea77dbebbad
 0<\varepsilon<\frac{1-u/T}{3},
  \qquad
  B=\frac{T-u}{3}-\varepsilon T>0,
  \tag{M2}
-```
+-->
+![Formula](../../assets/math/af745800123d1ea77dbebbad.svg)
 
 the deterministic algorithm described here returns either:
 
@@ -52,14 +55,15 @@ solution is not needed as an algorithmic input. With b denoting the
 total bit length of the rational numerical input, the time and number
 of independence-oracle calls are bounded by
 
-```math
+<!-- math-display: 53065822d73850a463b4ae83
 \boxed{
  \mathcal P\,\min\!\left\{2^{O(r)},
             (r+1)^{O(\varepsilon^{-1}\log(r+1))}\right\}
              \mathrm{poly}(b+\log\mathcal P).
  }
  \tag{M3}
-```
+-->
+![Formula](../../assets/math/53065822d73850a463b4ae83.svg)
 
 Polynomial factors in r are absorbed in the displayed exponent. The
 time bound assumes unit-cost oracle calls; otherwise multiply their
@@ -72,11 +76,12 @@ algorithm, not an assumption that a separate fallback is free.
 One may also set epsilon to zero and obtain the exact additive
 boundary B=(T-u)/3 in time and oracle calls
 
-```math
+<!-- math-display: 3444446c695e458b551f4f93
 \boxed{\mathcal P\,2^{O(r)}
                  \mathrm{poly}(b+\log\mathcal P).}
  \tag{M3a}
-```
+-->
+![Formula](../../assets/math/3444446c695e458b551f4f93.svg)
 
 This version uses the same operations and tests completed layers for
 at least one blocker; it does not claim quasipolynomial time at the
@@ -138,11 +143,12 @@ described free-center cascade.
    has at least one blocker. In particular |X_i|<=|Y_i|.
 4. A selected bundle in layer i has an owner in
 
-```math
+<!-- math-display: b5b89180721bda1f7de4db7f
 U_i=P\setminus\mathrm{cl}\bigl(I\setminus
                  \mathrm{owners}(Y_{<i})\bigr).
  \tag{M4}
-```
+-->
+![Formula](../../assets/math/b5b89180721bda1f7de4db7f.svg)
 
 Here closure is matroid closure and Y_<i is the union of the earlier
 blocking sets. The criterion is individual eligibility of an owner.
@@ -153,10 +159,11 @@ For a completed layer i, also require maximality: there is no
 inclusion-minimal B-bundle belonging to a player in U_i that is
 disjoint from all resources in
 
-```math
+<!-- math-display: 27dec9bf8f0cfbf19fe1bc98
 F_i=R(X_{\le i}\cup Y_{\le i}).
  \tag{M5}
-```
+-->
+![Formula](../../assets/math/27dec9bf8f0cfbf19fe1bc98.svg)
 
 R denotes the resource union. The proof below shows that an exchange
 preserves this maximality in all lower layers that it retains.
@@ -232,19 +239,21 @@ Consider the case p not in I. For every h<=j, the fundamental circuit
 contains no owner from Y_<h, by the earliest-layer choice. It is
 therefore a circuit in
 
-```math
+<!-- math-display: 9c38a9bb72bb23878e43f2a3
 (I\setminus\mathrm{owners}(Y_{<h}))\cup\{p\}.
-```
+-->
+![Formula](../../assets/math/9c38a9bb72bb23878e43f2a3.svg)
 
 The independent set inside parentheses contains owner(y). Replacing
 owner(y) by p is a basis exchange inside its span. Consequently
 
-```math
+<!-- math-display: 9409b924e69c38e64b3aba78
 \mathrm{cl}(I'\setminus\mathrm{owners}(Y'_{<h}))
  =\mathrm{cl}(I\setminus\mathrm{owners}(Y_{<h}))
  \quad (h\le j).
  \tag{M6}
-```
+-->
+![Formula](../../assets/math/9409b924e69c38e64b3aba78.svg)
 
 The earlier blocking sets are unchanged. In the case p in I, the
 independent owner set is unchanged and (M6) is immediate.
@@ -270,10 +279,11 @@ representative after a swap.
 
 Let i be a completed maximal layer. Put
 
-```math
+<!-- math-display: 907f79027e2ae6f0ef323ab9
 a=|X_{\le i}|,\quad t=|Y_{\le i}|,
  \quad w=1+|Y_{<i}|.
-```
+-->
+![Formula](../../assets/math/907f79027e2ae6f0ef323ab9.svg)
 
 Each selected bundle has value less than B+u. A matching blocker
 intersects its unique selected owner. Removing one resource in that
@@ -282,10 +292,11 @@ so the blocker's resources outside its selected owner have value
 strictly less than B. Summing over the resource-disjoint selected
 bundles and matching bundles gives
 
-```math
+<!-- math-display: 9a15716db898cf362d42f8e3
 v(F_i)<(B+u)a+Bt\le(2B+u)t,
  \tag{M7}
-```
+-->
+![Formula](../../assets/math/9a15716db898cf362d42f8e3.svg)
 
 when t>0. If t=0, F_i is empty and its value is zero. The inequality
 a<=t uses current nonempty blocker sets, not their historical sizes.
@@ -300,17 +311,19 @@ Assume for this paragraph that (M1) has a feasible solution. The set
 I minus owners(Y_<i) is independent of size k-|Y_<i|. Its closure is
 a flat of that rank. Since x is in the base polytope,
 
-```math
+<!-- math-display: 736a7375fac8ca9e4d2bf12a
 x(U_i)\ge r-k+|Y_{<i}|\ge 1+|Y_{<i}|=w.
  \tag{M8}
-```
+-->
+![Formula](../../assets/math/736a7375fac8ca9e4d2bf12a.svg)
 
 Maximality of layer i says that for every p in U_i,
 
-```math
+<!-- math-display: 722628cebad0f998f11ec895
 v(L_p\setminus F_i)<B.
  \tag{M9}
-```
+-->
+![Formula](../../assets/math/722628cebad0f998f11ec895.svg)
 
 Otherwise those available resources contain a minimal B-bundle. The
 constraints y_pj<=x_p then imply that the fractional value assigned to
@@ -318,41 +331,46 @@ p from outside F_i is less than B x_p whenever x_p>0. Summing the
 remaining required value over U_i and using the unit resource capacities
 gives
 
-```math
+<!-- math-display: 9c68ee3cf8836dd90aa0d484
 v(F_i)\ge (T-B)x(U_i)\ge(T-B)w.
  \tag{M10}
-```
+-->
+![Formula](../../assets/math/9c68ee3cf8836dd90aa0d484.svg)
 
 The weak inequality is sufficient; one can obtain a strict inequality
 because x(U_i)>0. We do not need that refinement.
 
 Write A=2B+u. By (M2), A<T and
 
-```math
+<!-- math-display: 831128118b63e996438d8f3c
 (T-B)-A=3\varepsilon T.
-```
+-->
+![Formula](../../assets/math/831128118b63e996438d8f3c.svg)
 
 If |Y_i|<=epsilon w, then
 
-```math
+<!-- math-display: 50f8808da4d9148eaac1e9ed
 t=w-1+|Y_i|\le(1+\varepsilon)w-1,
-```
+-->
+![Formula](../../assets/math/50f8808da4d9148eaac1e9ed.svg)
 
 and (M7) gives
 
-```math
+<!-- math-display: 278032fdceadfed3e258c4d4
 v(F_i)\le A((1+\varepsilon)w-1)<(T-B)w.
  \tag{M11}
-```
+-->
+![Formula](../../assets/math/278032fdceadfed3e258c4d4.svg)
 
 Indeed the difference of the coefficients on w is
 3epsilon T-epsilon A>2epsilon T. This contradicts (M10).
 Therefore every completed layer in a feasible instance has
 
-```math
+<!-- math-display: c25a0a6954469b163c5c00f0
 \boxed{|Y_i|>\varepsilon(1+|Y_{<i}|).}
  \tag{M12}
-```
+-->
+![Formula](../../assets/math/c25a0a6954469b163c5c00f0.svg)
 
 This is a statement about the current matching blockers after all
 earlier exchanges and the required last-layer refresh.
@@ -364,10 +382,11 @@ fails (M12), return its independent set
 J_0=I minus owners(Y_<i), its closure flat, and the explicit resource
 set F_i. Verify (M9) for every player outside that flat and verify
 
-```math
+<!-- math-display: d5d3b8df94b4beff5699e76e
 v(F_i)<(T-B)(r-|J_0|).
  \tag{M13}
-```
+-->
+![Formula](../../assets/math/d5d3b8df94b4beff5699e76e.svg)
 
 The calculation above guarantees (M13), including the empty-layer
 case. These two facts contradict (M1) by the same rank and capacity
@@ -380,17 +399,19 @@ Whenever a maximal layer passes (M12), append a new empty last layer
 and start building it. Since the blocking sets are disjoint subsets of
 M, (M12) implies
 
-```math
+<!-- math-display: e0d9142bf896c32d26038536
 1+|Y_{\le i}|>(1+\varepsilon)(1+|Y_{<i}|).
-```
+-->
+![Formula](../../assets/math/e0d9142bf896c32d26038536.svg)
 
 Thus the number of completed layers is at most
 
-```math
+<!-- math-display: 23be991f01ebc1a35c48ab5d
 L=\left\lceil\frac{\log(r+1)}{\log(1+\varepsilon)}\right\rceil
    =O(\varepsilon^{-1}\log(r+1)).
  \tag{M14}
-```
+-->
+![Formula](../../assets/math/23be991f01ebc1a35c48ab5d.svg)
 
 During construction there is at most one additional unfinished last
 layer. A collapse or a refresh never increases the number of layers.
@@ -400,10 +421,11 @@ layer is checked again after its refresh.
 
 For the current stack use the integer signature
 
-```math
+<!-- math-display: 54ba9904984ffc20fb06d64e
 (-|X_1|,|Y_1|,\ldots,-|X_\ell|,|Y_\ell|,\infty).
  \tag{M15}
-```
+-->
+![Formula](../../assets/math/54ba9904984ffc20fb06d64e.svg)
 
 Every nonterminal change strictly decreases this vector in ordinary
 lexicographic order:
@@ -426,11 +448,12 @@ one selected center can be free, but its count has not increased; the
 same r bound holds until the cascade is processed. Together with the
 temporary length bound L+1, the number of signatures is at most
 
-```math
+<!-- math-display: 958df4f36d70c5cdc8d49c12
 (2r+3)^{2L+3}
   =(r+1)^{O(\varepsilon^{-1}\log(r+1))}.
  \tag{M16}
-```
+-->
+![Formula](../../assets/math/958df4f36d70c5cdc8d49c12.svg)
 
 No signature repeats. There are at most r successful augmentation
 phases. This proves the quasipolynomial part of the bound. It does
@@ -441,10 +464,11 @@ revised public matroid allocation paper.
 
 At every microstate, including a free-center cascade,
 
-```math
+<!-- math-display: 4542dc5c45196cdaef419ef3
 \sum_i|X_i|\le k<r,\qquad \sum_i|Y_i|\le k<r.
  \tag{M17}
-```
+-->
+![Formula](../../assets/math/4542dc5c45196cdaef419ef3.svg)
 
 Before a free exchange all stored centers are blocked. A newly found
 free candidate is not stored in X. Every step of a subsequent cascade
@@ -460,11 +484,12 @@ length is at most k+1, at most r. For fixed length ell, the number
 of nonnegative count lists with total at most r is
 binomial(r+ell,ell). Counting the two lists independently gives at most
 
-```math
+<!-- math-display: 17b489258d8de228a62928ff
 \sum_{\ell=0}^{r}\binom{r+\ell}{\ell}^2
        \le(r+1)2^{4r}=2^{O(r)}
  \tag{M18}
-```
+-->
+![Formula](../../assets/math/17b489258d8de228a62928ff.svg)
 
 possible signatures. This overcounts many impossible states, which
 is harmless. Multiplying by r phases and polynomial work per event
@@ -477,10 +502,11 @@ and freshness invariants are unchanged. Now A=2B+u=T-B. If a completed
 maximal layer has Y_i empty, then t=w-1, and (M7), including its empty
 case, gives
 
-```math
+<!-- math-display: 5334917bf312074299db3bcf
 v(F_i)\le A(w-1)<Aw\le(T-B)(r-|J_0|).
  \tag{M19}
-```
+-->
+![Formula](../../assets/math/5334917bf312074299db3bcf.svg)
 
 This is the same explicit failure certificate. Every passing layer
 has at least one blocker, so the composition count (M18) still applies.
@@ -536,10 +562,11 @@ matroid of players matchable to one large resource. In the public
 compact relaxation, the fractional large-resource assignment has
 player marginal a, and the small assignments z satisfy
 
-```math
+<!-- math-display: 6322e41f10e160c95141dbfe
 v(z_p)\ge T(1-a_p),\qquad z_{pj}\le1-a_p,
  \qquad\sum_pz_{pj}\le1.
-```
+-->
+![Formula](../../assets/math/6322e41f10e160c95141dbfe.svg)
 
 Extend a coordinatewise to a base vector a' of N. Scale each player's
 small assignments by (1-a'_p)/(1-a_p), treating a_p=1 separately as
@@ -550,9 +577,10 @@ The new algorithm allocates small resources to a dual basis, and its
 complement can be matched to distinct large resources. The guaranteed
 value per player is therefore
 
-```math
+<!-- math-display: 494f7b393026e68db117616a
 \min\{\theta,(1-\theta)/3-\varepsilon\}T.
-```
+-->
+![Formula](../../assets/math/494f7b393026e68db117616a.svg)
 
 Choosing theta=(1-3epsilon)/4 gives (1-3epsilon)T/4. The compact LP
 may be supplied or solved in polynomial time. This proves a

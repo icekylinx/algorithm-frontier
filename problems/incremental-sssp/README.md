@@ -16,7 +16,7 @@ Deterministic path-reporting and integer zero-length reductions. The faster dist
 
 **Time**
 
-Total work $`O(n+m)+(n+m)\exp\!\left(O(\log E(N)+\sqrt{U(h+\log(1/\epsilon))})\right)`$, with $`\log E(N)=O(U^{4/5}h^{1/5})`$; conditional on the raw detector and retirement interface.
+Total work <code class="math">O(n+m)+(n+m)\exp\!\left(O(\log E(N)+\sqrt{U(h+\log(1/\epsilon))})\right)</code>, with <code class="math">\log E(N)=O(U^{4/5}h^{1/5})</code>; conditional on the raw detector and retirement interface.
 
 **Space**
 
@@ -24,7 +24,7 @@ Actual root vertices, inserted edges, and auxiliary copies over their lifetimes,
 
 **Parameters**
 
-**N** is the power-of-two cap; **U=log N**; **h=log(U+4)**; $`0<\epsilon\le1/2`$ with $`\log(1/\epsilon)\le c_*U`$; $`E(N)`$ is the raw-backend factor; **k** is the number of returned path edges.
+**N** is the power-of-two cap; **U=log N**; **h=log(U+4)**; <code class="math">0&lt;\epsilon\le1/2</code> with <code class="math">\log(1/\epsilon)\le c_*U</code>; <code class="math">E(N)</code> is the raw-backend factor; **k** is the number of returned path edges.
 
 **Model and representation**
 

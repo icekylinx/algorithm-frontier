@@ -3,7 +3,7 @@
 
 The default run validates the saved full-contact receipt's code/menu binding
 and recomputes the rho=1.7 and direct continuous branches. Use --full-contacts
-to recompute all 44 branches instead. A receipt binding check is provenance,
+to recompute all 62 branches instead. A receipt binding check is provenance,
 not an independent replay of the covered inequalities.
 
 All checks use the Python standard library. The finite and numerical checks
@@ -52,7 +52,10 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check("Result-card schema", ("tools/check_card_schema.py",)),
         Check("Mathematical delimiters", ("tools/check_latex_delimiters.py",)),
         Check("Portable mathematical notation", ("tools/normalize_math.py", "--check")),
-        Check("GitHub math formatting regressions", ("tools/check_math_formatting.py",)),
+        Check("Mathematical source formatting regressions", ("tools/check_math_formatting.py",)),
+        Check("Static mathematical presentation regressions", ("tools/check_math_presentation.py",)),
+        Check("Formula images and exact source bindings", ("tools/build_math_assets.py", "--check")),
+        Check("Selected TeX source exports", ("tools/build_manuscripts.py", "--check")),
         Check("Generated result and proof catalogues", ("tools/build_catalogue.py", "--check")),
         Check(
             "Low-space Subset Sum resource certificate",
@@ -79,19 +82,22 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
             ("problems/subset-sum-fast-deterministic/verify/check_energy.py",),
         ),
         Check("Fast Subset Sum scalar composition", ("tools/verify_subset_sum_scalars.py",)),
+        Check("Exact contact replay checkpoint recovery", ("problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py",)),
         Check("Scheduling quotas, buckets and six-profile coverage", ("tools/verify_profile_certificates.py",)),
         Check("Finite two-scenario hardness reduction", ("tools/verify_finite_reductions.py",)),
         Check("Finite sensitivity certificates", ("tools/verify_sensitivity_certificates.py",)),
         Check("Matching kernels and subcubic reduction", ("problems/general-matching/verify/check_reductions.py",)),
         Check("Exact matching solver and independent certificates", ("problems/general-matching/verify/check_reference.py",)),
         Check("Simultaneous failed-search matching certificates", ("problems/general-matching/verify/check_certificate_search.py",)),
+        Check("Matching cover compression and left-subset preservation", ("problems/general-matching/verify/check_cover_compression.py",)),
         Check("Degree-interval and cardinality reductions", ("problems/degree-constrained-subgraphs/verify/check_reductions.py",)),
         Check("Integral flow recovery and safe prefix initialization", ("problems/min-cost-flow/verify/check_recovery.py",)),
         Check("Persistent component labels and first coalescence", ("problems/incremental-scc/verify/check_label_history.py",)),
         Check("Clipped-tree intersections and simple-path reporting", ("problems/incremental-sssp/verify/check_path_reporting.py",)),
         Check("Matroid rank, one-failure weighted and value summaries", ("problems/matroid-failure-summaries/verify/check_summaries.py",)),
         Check("Nonrepresentable weighted-oracle obstruction", ("problems/matroid-failure-summaries/verify/check_weighted_obstruction.py",)),
-        Check("Weighted oracle retained-prefix construction", ("problems/matroid-failure-summaries/verify/check_weighted_prefix.py",)),
+        Check("Weighted oracle canonical-prefix construction", ("problems/matroid-failure-summaries/verify/check_weighted_prefix.py",)),
+        Check("Sharp singleton-replacement prefix summaries", ("problems/matroid-failure-summaries/verify/check_single_replacement.py",)),
         Check("Sharp sparse-packing original-context restrictions", ("problems/weighted-prefix-quota-frontier/verify/check_sharp_packing.py",)),
         Check("Aggregate laminar lower-row reduction", ("problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py",)),
         Check(
@@ -111,7 +117,7 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
     parallelism = ("--jobs", str(jobs))
     if full_contacts:
         suite.append(Check(
-            "All 44 continuous contact branches",
+            "All 62 continuous contact branches",
             ("tools/verify_subset_sum_contacts.py", "--all", *parallelism),
         ))
     else:
@@ -133,7 +139,7 @@ def main() -> int:
     parser.add_argument(
         "--full-contacts",
         action="store_true",
-        help="recompute all 44 continuous contact branches instead of the default selected replay",
+        help="recompute all 62 continuous contact branches instead of the default selected replay",
     )
     parser.add_argument(
         "--jobs",
@@ -161,7 +167,7 @@ def main() -> int:
     started = time.monotonic()
     print(
         f"Running {len(suite)} canonical checks from {ROOT}\n"
-        f"Continuous contacts: {'all 44 branches' if args.full_contacts else 'rho=1.7 and direct branches'}; "
+        f"Continuous contacts: {'all 62 branches' if args.full_contacts else 'rho=1.7 and direct branches'}; "
         f"workers: {args.jobs}",
         flush=True,
     )

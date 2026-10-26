@@ -52,10 +52,11 @@ A cycle avoiding z has zero slack gain. A simple cycle containing z
 visits it once, enters a bin a, follows an ordinary simple path to
 a bin b, and returns to z. Its gain and charge are precisely
 
-```math
+<!-- math-display: 533a8ba94d8fe8e97a99e64b
 G=1/s_a-1/s_b,
  \qquad C=1/s_a+1/s_b+\sum_{e\text{ donor}}1/x_e.
-```
+-->
+![Formula](../../assets/math/533a8ba94d8fe8e97a99e64b.svg)
 
 If every such cycle has `G<=C/2`, their nonnegative weighted sum
 does too. Conversely, a feasible comparison exceeding one half must
@@ -76,10 +77,11 @@ settled matching state as explicitly stipulated.
 Write `A=1/s_a`, `B=1/s_b` and `L=bar L/H`. A positive
 integer offer implies
 
-```math
+<!-- math-display: 9e4c01dc6ff66375bff12107
 \tfrac34 A-\tfrac54 B-L>0,
  \qquad A-B>\tfrac14(A+B+4L)=V_{\rm up}/4.
-```
+-->
+![Formula](../../assets/math/9e4c01dc6ff66375bff12107.svg)
 
 For a step with `eta V_up<=1/256`, the quadratic remainder in
 `log(1+eta A)+log(1-eta B)` is smaller than half this first-order
@@ -92,10 +94,11 @@ step. The global minimum slack cannot decrease on a static ledger.
 For each donor, its individual cost is below the entire positive
 source budget, so
 
-```math
+<!-- math-display: a444b92cec6a34b6fd561b3e
 1/(4x_e)\le\bar c_e/H<3/(4s_a),
  \qquad x_e>s_a/3.
-```
+-->
+![Formula](../../assets/math/a444b92cec6a34b6fd561b3e.svg)
 
 Also `V_up>=1/x_e`, and thus `eta<=x_e/256`. Its allocation
 after the step is at least `(255/256)x_e`, explaining the precise

@@ -4,23 +4,25 @@
 
 For a weighted undirected graph, put at most a labels on each vertex and at most b additional labels on each edge. Failure of a label deletes every vertex or edge carrying it, together with edges incident to deleted vertices. There is one nonnegative reweighting of original edges, valid simultaneously after every set of at most h label failures, that preserves **every cut** within 1±epsilon and has support
 
-```math
+<!-- math-display: 025ae8594c961fcf5aebb059
 O\!\left(\min\left\{m,\,
  D\epsilon^{-2}\log(2D/\epsilon)\right\}\right),
  \qquad
  D=(n-c)\binom{h+a+b}{a+b}.
  \tag{EC1}
-```
+-->
+![Formula](../../../assets/math/025ae8594c961fcf5aebb059.svg)
 
 Here c is the number of components of the positive-weight input. The construction is randomized polynomial time with constant success probability for the one event covering **all failures and cuts**. Color classes can be arbitrarily large, labels can overlap, and endpoint colors may repeat. The coefficients do not change with the queried failure set.
 
 For one color per vertex and no additional edge labels, (EC1) becomes
 
-```math
+<!-- math-display: c38821397d6ccad4f27caea7
 O\!\left(\min\{m,\,
  n(h+1)\epsilon^{-2}\log(2n(h+1)/\epsilon)\}\right).
  \tag{EC2}
-```
+-->
+![Formula](../../../assets/math/c38821397d6ccad4f27caea7.svg)
 
 This improves the inverse-accuracy dependence of the earlier label-vector route for cut queries. It does **not** replace that route's stronger spectral guarantee.
 
@@ -30,36 +32,40 @@ The classical backend is Quanrud's existing quotient-sparsification theorem, tog
 
 Let A have rank r over a field K. Row i has a set R_i of labels; column e has a set S_e. Assume
 
-```math
+<!-- math-display: ab684d754c441d364e6f37ad
 A_{ie}\ne0 \Longrightarrow
  R_i\subseteq S_e,\qquad |S_e\setminus R_i|\le k.
  \tag{EC3}
-```
+-->
+![Formula](../../../assets/math/ab684d754c441d364e6f37ad.svg)
 
 Failure of F deletes exactly the columns with S_e intersecting F. Column weights w_e are nonnegative. For each linear subspace W of the original column ambient space, consider
 
-```math
+<!-- math-display: f9f9961d1bfd6013c7529599
 \Phi_F(W)=
  \sum_{\substack{e:S_e\cap F=\varnothing\\a_e\notin W}}w_e.
  \tag{EC4}
-```
+-->
+![Formula](../../../assets/math/f9f9961d1bfd6013c7529599.svg)
 
-**Theorem 1 (exact labeled-incidence transfer).** For every $`0<\epsilon<1`$, one nonnegative original-column reweighting preserves (EC4) within $`1\pm\epsilon`$, simultaneously for every $`|F|\le h`$ and every linear subspace $`W`$, using
+**Theorem 1 (exact labeled-incidence transfer).** For every <code class="math">0&lt;\epsilon&lt;1</code>, one nonnegative original-column reweighting preserves (EC4) within <code class="math">1\pm\epsilon</code>, simultaneously for every <code class="math">&#124;F&#124;\le h</code> and every linear subspace <code class="math">W</code>, using
 
-```math
+<!-- math-display: b87625a64552310d23274f0b
 O(\min\{|E|,D\epsilon^{-2}\log(2D/\epsilon)\}),
  \qquad D=r\binom{h+k}{k}.
  \tag{EC5}
-```
+-->
+![Formula](../../../assets/math/b87625a64552310d23274f0b.svg)
 
-For explicit rational or finite-field representations and rational item weights, the construction is randomized polynomial time in the input length and $`\epsilon^{-1}`$, with success probability at least $`2/3`$. The cap in Section 4 makes this assertion uniform when $`h`$ and $`k`$ are input parameters.
+For explicit rational or finite-field representations and rational item weights, the construction is randomized polynomial time in the input length and <code class="math">\epsilon^{-1}</code>, with success probability at least <code class="math">2/3</code>. The cap in Section 4 makes this assertion uniform when <code class="math">h</code> and <code class="math">k</code> are input parameters.
 
 **Proof.** Zero columns can be discarded. Select r independent **original rows** with selection matrix P, and write
 
-```math
+<!-- math-display: 6fbf11f39094e51e7f32b812
 A=C(PA).
  \tag{EC6}
-```
+-->
+![Formula](../../../assets/math/6fbf11f39094e51e7f32b812.svg)
 
 Keep the selected rows' original labels. No label set is assigned to an artificial linear combination of rows.
 
@@ -67,42 +73,47 @@ Keep the selected rows' original labels. No label set is assigned to an artifici
 
 Use pairwise distinct field elements alpha_0,...,alpha_L for the L genuine labels and one dummy label 0 which never fails. Extend a finite field if necessary. Put
 
-```math
+<!-- math-display: 2d6a9b392d001442ac0793bb
 \ell_c(z_0,\ldots,z_h)=\sum_{t=0}^h\alpha_c^t z_t.
-```
+-->
+![Formula](../../../assets/math/2d6a9b392d001442ac0793bb.svg)
 
 For a label set T with |T|≤k, use the coefficient vector of
 
-```math
+<!-- math-display: 0e525ed7b8d91b1b988ae00c
 p_T(z)=
  \left(\prod_{c\in T}\ell_c(z)\right)
  \ell_0(z)^{k-|T|}.
  \tag{EC7}
-```
+-->
+![Formula](../../../assets/math/0e525ed7b8d91b1b988ae00c.svg)
 
 These are homogeneous degree-k polynomials in h+1 variables, so the coefficient-space dimension is
 
-```math
+<!-- math-display: 60bc0980918fe9cd052bf9cc
 K_{h,k}=\binom{h+k}{k}.
-```
+-->
+![Formula](../../../assets/math/60bc0980918fe9cd052bf9cc.svg)
 
 Use ordinary monomial coefficients. There is no division by factorials, so the construction works in every characteristic.
 
 For a failure set F, define
 
-```math
+<!-- math-display: 5f55650454f84da0a5621da1
 q_F(t)=\prod_{f\in F}
  \frac{t-\alpha_f}{\alpha_0-\alpha_f}
        =\sum_{j=0}^h\theta_j(F)t^j.
  \tag{EC8}
-```
+-->
+![Formula](../../../assets/math/5f55650454f84da0a5621da1.svg)
 
 It has degree at most h, equals 1 at alpha_0, and vanishes at precisely the failed genuine label points. Therefore
 
-```math
+<!-- math-display: 3779efa202f6d2d48b6ec726
 p_T(\theta(F))=\prod_{c\in T}q_F(\alpha_c).
  \tag{EC9}
-```
+-->
+![Formula](../../../assets/math/3779efa202f6d2d48b6ec726.svg)
 
 The dummy factors evaluate to one, including for empty label differences. Write gamma_F(S)=product_{c in S} q_F(alpha_c). Then gamma_F(S)=0 exactly when S intersects F.
 
@@ -110,38 +121,42 @@ The dummy factors evaluate to one, including for empty label differences. Write 
 
 For each original column e, its lift z_e has r polynomial blocks. The block indexed by selected original row i is
 
-```math
+<!-- math-display: 3ad24386997911463586ffc5
 (PA)_{ie}\,p_{S_e\setminus R_i}
  \tag{EC10}
-```
+-->
+![Formula](../../../assets/math/3ad24386997911463586ffc5.svg)
 
 when (PA)_{ie} is nonzero, and zero otherwise. The dimension is D=rK_{h,k}.
 
 Define a linear map T_F to K^r: evaluate polynomial block i at theta(F), then multiply by gamma_F(R_i). Since R_i is a subset of S_e on every nonzero incidence,
 
-```math
+<!-- math-display: 4111bf86217318d422bedfaf
 T_F z_e=\gamma_F(S_e)(PA)_e,
  \qquad
  CT_F z_e=\gamma_F(S_e)a_e.
  \tag{EC11}
-```
+-->
+![Formula](../../../assets/math/4111bf86217318d422bedfaf.svg)
 
 These identities are exact. The scalar is common to the whole column. Its magnitude is irrelevant; only whether it vanishes matters.
 
 Given an original subspace W, its preimage
 
-```math
+<!-- math-display: 5c7ff0586b3bc6e3d6127b6a
 \widehat W_F=(CT_F)^{-1}(W)
-```
+-->
+![Formula](../../../assets/math/5c7ff0586b3bc6e3d6127b6a.svg)
 
 is a subspace of the lifted space. Since W contains zero and is invariant under multiplication by a nonzero field element,
 
-```math
+<!-- math-display: 5c009db194779ea86fa72e9b
 z_e\notin\widehat W_F
  \Longleftrightarrow
  S_e\cap F=\varnothing\ \text{and}\ a_e\notin W.
  \tag{EC12}
-```
+-->
+![Formula](../../../assets/math/5c009db194779ea86fa72e9b.svg)
 
 Thus all queries (F,W) become ordinary subspace-complement queries on one fixed lifted instance.
 
@@ -169,9 +184,10 @@ The rank-zero case has zero value for every query. The formulas also handle h=0 
 
 Take A to be an oriented vertex-edge incidence matrix. For e=uv put S_e=R_u union R_v union T_e, where T_e is its set of additional edge labels. Every nonzero incidence satisfies
 
-```math
+<!-- math-display: 5b91ed1234f60b60e918a136
 |S_e\setminus R_u|\le a+b.
-```
+-->
+![Formula](../../../assets/math/5b91ed1234f60b60e918a136.svg)
 
 Its rank over every field is n-c. For a Boolean vertex indicator x, x^T a_e is nonzero exactly when e crosses the cut, including in characteristic two. Apply (EC4) with W=ker(x^T). This proves (EC1).
 
@@ -187,34 +203,38 @@ Consider the unweighted complete bipartite graph K_{s,B}. Let W be the s by B no
 
 For signs sigma in {−1,1}^s and tau in {−1,1}^B, the cut value is (total weight−sigma^T W tau)/2. The input cut value is at most sB; comparing with the full bipartition cut gives
 
-```math
+<!-- math-display: 1a7c912cb388a65f6f31bf65
 |\sigma^\top E\tau|\le3\epsilon sB.
  \tag{EC13}
-```
+-->
+![Formula](../../../assets/math/1a7c912cb388a65f6f31bf65.svg)
 
 Choose tau coordinatewise according to the signs of E^T sigma. Average uniform sigma and use the Khintchine bound E|a dot sigma|≥||a||_2/sqrt(2):
 
-```math
+<!-- math-display: 3747ab47cc534da392930212
 \sum_{j=1}^B\|E_{\cdot j}\|_2
  \le3\sqrt2\,\epsilon sB.
  \tag{EC14}
-```
+-->
+![Formula](../../../assets/math/3747ab47cc534da392930212.svg)
 
 If t_j is the support size in column j, its degree bound gives
 
-```math
+<!-- math-display: 1cbfed8a03f9273f10ca55b6
 \|E_{\cdot j}\|_2
  \ge (1-\epsilon)s/\sqrt{t_j}-\sqrt{s}.
-```
+-->
+![Formula](../../../assets/math/1cbfed8a03f9273f10ca55b6.svg)
 
 Every t_j is positive for epsilon<1. Convexity of u to u^{-1/2} and sum_j t_j=t now imply
 
-```math
+<!-- math-display: b92889e483efac8de0e25cb3
 t\ge
  \frac{(1-\epsilon)^2sB}
  {(1+3\sqrt2\,\epsilon\sqrt{s})^2}.
  \tag{EC15}
-```
+-->
+![Formula](../../../assets/math/b92889e483efac8de0e25cb3.svg)
 
 For s=ceil(epsilon^{-2}) and 0<epsilon≤1/2 this is Omega(B/epsilon^2).
 
@@ -222,12 +242,13 @@ Let k=a+b≥1 and q=binom(h+k,k). Make q left blocks of s vertices each and a sh
 
 Failing exactly the h labels outside S isolates the K_{s,B} edges of block S. Every other block contains a failed label. Therefore (EC15) must hold independently in all q edge-disjoint blocks. Since n=B+qs≤2B, every simultaneous cut sparsifier needs
 
-```math
+<!-- math-display: 128591d1e2440513339ccabb
 \Omega\!\left(
  n\epsilon^{-2}\binom{h+a+b}{a+b}
  \right)
  \tag{EC16}
-```
+-->
+![Formula](../../../assets/math/128591d1e2440513339ccabb.svg)
 
 edges. The stated regime requires n sufficiently large compared with q/epsilon^2. Each input graph is simple and unweighted; output weights may be arbitrary and nonnegative. Thus the failure exponent and inverse-square accuracy dependence in (EC1) are jointly necessary in this regime, up to its logarithm.
 

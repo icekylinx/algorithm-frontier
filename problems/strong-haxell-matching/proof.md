@@ -22,10 +22,11 @@ contains exactly one vertex of `A` and between one and `r` vertices
 of `B`. Its rank here means its number of `B` vertices. Parallel
 hyperedge identities are allowed. Write
 
-```math
+<!-- math-display: 37b2ca1e999daa22691e20cc
 p=\sum_{e\in E}|e|,\qquad
  U=\log(p+4),\qquad s=\log\Delta,
-```
+-->
+![Formula](../../assets/math/37b2ca1e999daa22691e20cc.svg)
 
 where `Delta>=4` is an integer. For `S subseteq A`, let `E_S`
 denote the hyperedges whose left vertex belongs to `S`; their
@@ -41,11 +42,12 @@ returns one of the following:
 
 Its running time is
 
-```math
+<!-- math-display: a63b5310e9aa6582a1814a02
 O(|A|+|B|)+
  p\exp O\!\left(\frac{U\log(2+s)}s\right).
  \tag{1}
-```
+-->
+![Formula](../../assets/math/a63b5310e9aa6582a1814a02.svg)
 
 The nontrivial execution only needs `4<=Delta<=p`; the
 prechecks below handle larger parameters immediately. The theorem
@@ -56,11 +58,12 @@ outputs can be independently checked in
 
 Consequently, if
 
-```math
+<!-- math-display: 0f68ba9a0357da1d223d2769
 \tau(E_S)\ge\Delta r^2 |S|
        \quad\text{for every }S\subseteq A,
  \tag{2}
-```
+-->
+![Formula](../../assets/math/0f68ba9a0357da1d223d2769.svg)
 
 the algorithm necessarily returns a perfect matching on the left.
 A certificate of type 2 refutes (2). It does **not** assert that a
@@ -79,10 +82,11 @@ If `Delta r^2>|B_used|` and `A` is nonempty, choose any left
 vertex `a` and return `S={a}, C=B_used`. This is already a
 strict certificate of type 2. In every remaining execution,
 
-```math
+<!-- math-display: d8a17036f822e821247d5778
 \Delta r^2\le |B_{used}|\le p,
  \tag{3}
-```
+-->
+![Formula](../../assets/math/d8a17036f822e821247d5778.svg)
 
 so `s<=U` and `log r<=U`. The initial cost of reading unused
 vertices is paid only once, in the leading term of (1). All
@@ -104,9 +108,10 @@ layer is `L_i=(X_i,Y_i)`, where:
 
 To build a new layer from prefix `0,...,ell`, mark as forbidden
 
-```math
+<!-- math-display: 8265cc50b9a71e177d8f0188
 F_0=B(X_{\le\ell}\cup Y_{\le\ell}).
-```
+-->
+![Formula](../../assets/math/8265cc50b9a71e177d8f0188.svg)
 
 Index the matching owner of each right vertex. Scan the input
 hyperedge list once, in a fixed deterministic order. An edge is
@@ -138,11 +143,12 @@ Store two further objects:
 
 They satisfy
 
-```math
+<!-- math-display: d3096eea7574beda893c772f
 |F|\le |X|/\Delta,\qquad B(X\cup Y)\subseteq C,
  \qquad |C|\le r^2|X|.
  \tag{4}
-```
+-->
+![Formula](../../assets/math/d3096eea7574beda893c772f.svg)
 
 For the last inequality, an accepted right set `Q` has size at
 most `r` and touches at most `|Q|` disjoint matching edges.
@@ -158,11 +164,12 @@ input edge intersects `F_0 union C`. Its counter was never full,
 so any such edge that was not accepted must have met the forbidden
 set when scanned. That set only grows during the call. Therefore
 
-```math
+<!-- math-display: 1f9b5e845ebe88b4e9c90949
 F_0\cup C\text{ hits every edge incident to an active
  left vertex outside }F.
  \tag{5}
-```
+-->
+![Formula](../../assets/math/1f9b5e845ebe88b4e9c90949.svg)
 
 This is a direct edge-list certificate. No approximation oracle
 and no shortest-path structure enter the explicit-hypergraph result.
@@ -202,43 +209,47 @@ At the beginning of a build, all old positive-index layers are
 noncollapsible. Since different nonfree selected edges have
 disjoint blocker sets,
 
-```math
+<!-- math-display: 665275106123adf16e2c8939
 |Y_i|\ge\tfrac9{10}|X_i|.
  \tag{6}
-```
+-->
+![Formula](../../assets/math/665275106123adf16e2c8939.svg)
 
 ## 4. The growth test or a directly checkable violation
 
 For the just-built layer `ell+1`, put
 
-```math
+<!-- math-display: abc355c63fd891594b51b2d9
 W=|Y_{\le\ell}|>0,
  \qquad T=\sum_{i=1}^{\ell+1}|X_i|.
-```
+-->
+![Formula](../../assets/math/abc355c63fd891594b51b2d9.svg)
 
 If `|X_(ell+1)|>Delta W/10`, the growth test passes. Otherwise
 (6) gives
 
-```math
+<!-- math-display: a5798a524c81c10ddb67a735
 T\le(\Delta/10+10/9)W.
-```
+-->
+![Formula](../../assets/math/a5798a524c81c10ddb67a735.svg)
 
 Let `S` be all left identities represented in `Y_(<=ell)`,
 excluding every full-counter set `F_i`, and let
 `C=union_i C_i`. The active sets are disjoint across layers.
 Therefore
 
-```math
+<!-- math-display: 905c5b73f7f89de82fa4dc43
 |S|\ge W-T/\Delta
        \ge(9/10-10/(9\Delta))W>0.
-```
+-->
+![Formula](../../assets/math/905c5b73f7f89de82fa4dc43.svg)
 
 For each left vertex in `S`, apply (5) in its unique layer.
 The earlier forbidden prefix is covered by earlier `C_j`,
 using (4). Hence `C` hits every input edge incident to `S`,
 and
 
-```math
+<!-- math-display: 9771a661c5a05006da9b387a
 \begin{split}
  |C|&\le r^2T
       \le r^2(\Delta/10+10/9)W\\
@@ -246,17 +257,19 @@ and
       \le\Delta r^2|S|.
  \end{split}
  \tag{7}
-```
+-->
+![Formula](../../assets/math/9771a661c5a05006da9b387a.svg)
 
 The strict inequality holds for every `Delta>=4`. Return
 this `S,C` as the violation certificate. This argument does
 not assume the strong Haxell condition. If (2) holds, the test
 always passes, so every surviving layer satisfies
 
-```math
+<!-- math-display: 7d1d2424c524284361ec9967
 |X_i|>\Delta |Y_{<i}|/10.
  \tag{8}
-```
+-->
+![Formula](../../assets/math/7d1d2424c524284361ec9967.svg)
 
 The algorithm therefore has a valid, verifiable outcome on every
 input, without pretending to test all subsets in (2) in advance.
@@ -273,10 +286,11 @@ At a main-loop boundary, (6) and (8) imply
 `|Y_i|>(9Delta/100)|Y_<i|`. The sets `Y_i` use disjoint left
 vertices. Therefore the maximum number of surviving layers is
 
-```math
+<!-- math-display: 3abf3dbd6b57fb767fbf8851
 D=O(U/\log\Delta)=O(U/s).
  \tag{9}
-```
+-->
+![Formula](../../assets/math/3abf3dbd6b57fb767fbf8851.svg)
 
 The currently appended layer adds at most one to the depth.
 
@@ -288,12 +302,13 @@ positive integer at most `q=|A|`. When it creates a direct child
 it is noncollapsible. By (6), (8), the child's fixed prefix size
 is therefore
 
-```math
+<!-- math-display: 9f56be9045f20639fca33f56
 W_{child}=W_i+|Y_i|
        \ge\kappa W_i,
  \qquad\kappa=1+9\Delta/100.
  \tag{10}
-```
+-->
+![Formula](../../assets/math/9f56be9045f20639fca33f56.svg)
 
 When a direct child collapses, more than `|X_child|/10` of
 its edges are free. At most `Delta` share a left vertex, so
@@ -308,10 +323,11 @@ be the fixed prefix size of child `j`. Only the current top
 layer is collapsed or discarded. Thus child `j` must collapse
 before child `j+1` can be born, giving
 
-```math
+<!-- math-display: 8cc7f86272f33372043ae165
 z_{j+1}\le0.99z_j.
  \tag{11}
-```
+-->
+![Formula](../../assets/math/8cc7f86272f33372043ae165.svg)
 
 Both (10) and (11) hold in every finite execution prefix,
 including its possible last living child. We do not need the
@@ -322,9 +338,10 @@ had.
 
 Let `rho=0.99` and
 
-```math
+<!-- math-display: 84f392f78bce71378e8252cd
 \lambda=100\frac{\log(2+s)}s.
-```
+-->
+![Formula](../../assets/math/84f392f78bce71378e8252cd.svg)
 
 Give each positive-index layer instance weight
 `w_i=W_i^(-lambda)`. These weights are used only in the
@@ -333,12 +350,13 @@ membership tests, and the integer growth comparison. From (10),
 (11), the children of this
 instance have total weight at most
 
-```math
+<!-- math-display: 5a231d258762b582e4ea46df
 \sum_{child} w_{child}
      \le\frac{\kappa^{-\lambda}}{1-\rho^\lambda}\,w_i
      \le\tfrac12w_i.
  \tag{12}
-```
+-->
+![Formula](../../assets/math/5a231d258762b582e4ea46df.svg)
 
 Indeed, reverse the geometric sequence of children: every earlier
 weight is at most `rho^lambda` times the next, and the last
@@ -359,11 +377,12 @@ child weight, so total forest weight is at most twice the sum
 of the root-child weights. Each node has weight at least
 `q^(-lambda)`. Its node count is consequently at most
 
-```math
+<!-- math-display: dcf9032458518ae848d0ccb1
 \frac{2q^\lambda}{1-\rho^\lambda}
        =\exp O\!\left(\frac{U\log(2+s)}s\right).
  \tag{13}
-```
+-->
+![Formula](../../assets/math/dcf9032458518ae848d0ccb1.svg)
 
 The logarithm of the prefactor is
 `O(log(1+1/lambda))=O(log(U+4))`, which is absorbed by the
@@ -441,9 +460,10 @@ the same promise `tau(E_S)>=Delta r^2 |S|` throughout.
 The total time includes a leading factor `p` and the one-time
 vertex-list reading cost. The first row therefore gives
 
-```math
+<!-- math-display: ff141f1857404f6574759f1f
 O(|A|+|B|)+p(\log p)^{O(1/\epsilon)}
-```
+-->
+![Formula](../../assets/math/ff141f1857404f6574759f1f.svg)
 
 for each fixed `epsilon`, with the same matching-or-violation
 certificate alternative even without a promise.

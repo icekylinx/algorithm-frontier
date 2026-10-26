@@ -6,16 +6,18 @@
 
 Let omega_1 and omega_2 be rational-valued **minimization-convention valuated matroids** of the same rank k on an explicitly listed ground set E of size N. Their effective domains are the basis families of matroids M_1 and M_2; the value of every other subset is +infinity. Thus for bases A,B in the domain of omega_i and any a in A minus B, some b in B minus A satisfies
 
-```math
+<!-- math-display: 990394c2fa9c061ad0cd624b
 \omega_i(A)+\omega_i(B)\ge
 \omega_i(A-a+b)+\omega_i(B-b+a). \tag{V1}
-```
+-->
+![Formula](../../../assets/math/990394c2fa9c061ad0cd624b.svg)
 
 Assume at least one common basis exists. Write
 
-```math
+<!-- math-display: 6d8971a715360a2c096ec83c
 \Omega(J)=\omega_1(J)+\omega_2(J).
-```
+-->
+![Formula](../../../assets/math/6d8971a715360a2c096ec83c.svg)
 
 An additional arbitrary linear element cost can be absorbed into either valuation without changing (V1). The query deletes a single original element and restricts these same fixed valuations to surviving bases.
 
@@ -23,9 +25,10 @@ An additional arbitrary linear element cost can be absorbed into either valuatio
 
 **Theorem.** There is a deterministic polynomial-time construction, using value-oracle access to the two valuations and a supplied feasible basis in each effective domain, of a restriction S contained in E with
 
-```math
+<!-- math-display: d06bf951d1e6cf75b9e7334f
 |S|=O(k^{3/2}),
-```
+-->
+![Formula](../../../assets/math/d06bf951d1e6cf75b9e7334f.svg)
 
 such that after every one-element deletion f, if a surviving common rank-k basis exists, S-f contains one minimizing Omega. In addition, a path-reporting data structure with O(k^{3/2}) records returns the k element identifiers of such an optimum in O(k) word operations, with no valuation or independence queries at query time. Infeasibility can be reported as well.
 
@@ -49,33 +52,37 @@ These are classical properties of valuated matroids; the short arguments are inc
 
 For i=1,2, let the lower convex closure of omega_i on its base polytope be
 
-```math
+<!-- math-display: 4db6af0fa9fc4f2142704cd9
 \bar\omega_i(x)=
 \min\left\{\sum_B\lambda_B\omega_i(B):
  \lambda_B\ge0,\ \sum_B\lambda_B=1,
  \sum_B\lambda_B\mathbf1_B=x\right\}.
-```
+-->
+![Formula](../../../assets/math/4db6af0fa9fc4f2142704cd9.svg)
 
 **Lemma 1.** Every x in P(M_1) intersect P(M_2) has a convex decomposition into common bases J such that
 
-```math
+<!-- math-display: 780deb4e3e491fb83c389d93
 x=\sum_J\lambda_J\mathbf1_J,
 \qquad
 \sum_J\lambda_J\Omega(J)
 =\bar\omega_1(x)+\bar\omega_2(x). \tag{V2}
-```
+-->
+![Formula](../../../assets/math/780deb4e3e491fb83c389d93.svg)
 
 **Proof.** Choose a supporting affine function for each lower convex closure at x. Equivalently, by the dual of the finite linear program defining the convex closure, choose a vector p_i and scalar alpha_i such that
 
-```math
+<!-- math-display: 093c70a66079f59132970afe
 \omega_i(B)\ge\alpha_i+p_i(B)
-```
+-->
+![Formula](../../../assets/math/093c70a66079f59132970afe.svg)
 
 for every basis B, with equality on the supporting bases and
 
-```math
+<!-- math-display: 990d62d74852246be298656d
 \bar\omega_i(x)=\alpha_i+p_i\cdot x.
-```
+-->
+![Formula](../../../assets/math/990d62d74852246be298656d.svg)
 
 The supporting bases minimize omega_i-p_i, so by Section 2 they form the basis family of an ordinary matroid N_i. An optimal decomposition defining the convex closure uses only supporting bases, whence x belongs to P(N_i).
 
@@ -87,35 +94,40 @@ In particular, the sum of the two separate lower convex closures is the lower co
 
 Fix bases B,J of one valuated matroid omega. On the bipartition B-J and J-B, put an edge a e whenever B-a+e is a basis, with cost
 
-```math
+<!-- math-display: cd385f03f3956f24ffc6c8c2
 \gamma(a,e)=\omega(B-a+e)-\omega(B).
-```
+-->
+![Formula](../../../assets/math/cd385f03f3956f24ffc6c8c2.svg)
 
 **Lemma 2.** There is a perfect matching mu in this exchange graph with
 
-```math
+<!-- math-display: bbf729e53f83532cf3eb9a87
 \sum_{ae\in\mu}\gamma(a,e)
 \le\omega(J)-\omega(B). \tag{V3}
-```
+-->
+![Formula](../../../assets/math/bbf729e53f83532cf3eb9a87.svg)
 
 **Proof.** The ordinary basis-exchange matching lemma ensures at least one perfect matching. Let its minimum cost be m. By assignment linear-programming duality there are numbers alpha_a and beta_e such that
 
-```math
+<!-- math-display: e89b671010792ea744741918
 \alpha_a+\beta_e\le\gamma(a,e)
-```
+-->
+![Formula](../../../assets/math/e89b671010792ea744741918.svg)
 
 on every feasible edge and
 
-```math
+<!-- math-display: bf65d9168b5f966845cd73f8
 m=\sum_{a\in B-J}\alpha_a+
   \sum_{e\in J-B}\beta_e.
-```
+-->
+![Formula](../../../assets/math/bf65d9168b5f966845cd73f8.svg)
 
 Contract B intersect J and delete everything outside B union J. The resulting valuated matroid has the two disjoint bases B-J and J-B, with values inherited by adjoining the contracted common set. Define prices p_a=-alpha_a on B-J and p_e=beta_e on J-B. The dual inequalities say precisely that no feasible single exchange improves omega-p at B-J. Section 2 gives global optimality, in particular relative to J-B. Thus
 
-```math
+<!-- math-display: 512c74a671b59c0e90e47849
 \omega(J)-\omega(B)\ge p(J-B)-p(B-J)=m.
-```
+-->
+![Formula](../../../assets/math/512c74a671b59c0e90e47849.svg)
 
 Choose a minimum-cost matching. This proves (V3). QED.
 
@@ -125,46 +137,52 @@ The argument does not assert a simultaneous basis exchange for the whole matchin
 
 Fix a common basis B minimizing Omega. For each outside element e and each a in B, compute
 
-```math
+<!-- math-display: 82294050c6dd40aed3b00288
 \gamma_i(a,e)=\omega_i(B-a+e)-\omega_i(B),
-```
+-->
+![Formula](../../../assets/math/82294050c6dd40aed3b00288.svg)
 
 using +infinity when the exchanged set is outside the effective domain.
 
 The compressed digraph D has the k elements of B as vertices. For each ordered pair a,b, including a=b, keep an outside element e minimizing
 
-```math
+<!-- math-display: 0d361b8d61ba48cc2a75bb46
 \ell(a,b;e)=\gamma_1(a,e)+\gamma_2(b,e), \tag{V4}
-```
+-->
+![Formula](../../../assets/math/0d361b8d61ba48cc2a75bb46.svg)
 
 among elements for which both terms are finite. Label the arc a to b by this e and give it length (V4). The chosen label can depend on the ordered pair; it is not necessarily the globally cheapest outside element under a linear cost.
 
 For a simple directed cycle C of length t, let d_C add each outside label with its number of occurrences and subtract each cycle vertex of B once. With any 0<epsilon<=1/t, the point
 
-```math
+<!-- math-display: e3d6969f4cc525ecd160135e
 x=\mathbf1_B+\varepsilon d_C
-```
+-->
+![Formula](../../../assets/math/e3d6969f4cc525ecd160135e.svg)
 
 is simultaneously the following two convex combinations:
 
-```math
+<!-- math-display: 3703a0f4ccb35471c13dc470
 x=(1-t\varepsilon)\mathbf1_B+
 \varepsilon\sum_{a\to b\in C}\mathbf1_{B-a+e_{a,b}}
 \quad\text{in }P(M_1),
-```
+-->
+![Formula](../../../assets/math/3703a0f4ccb35471c13dc470.svg)
 
-```math
+<!-- math-display: 90c5e5ea590a14481aee0a3e
 x=(1-t\varepsilon)\mathbf1_B+
 \varepsilon\sum_{a\to b\in C}\mathbf1_{B-b+e_{a,b}}
 \quad\text{in }P(M_2).
-```
+-->
+![Formula](../../../assets/math/90c5e5ea590a14481aee0a3e.svg)
 
 The two vectors coincide because the cycle tails and heads are the same multiset. Repeated outside labels are allowed in this intermediate argument. Convexity gives
 
-```math
+<!-- math-display: 9e4706e1fee59fac15fc7cbb
 \bar\omega_1(x)+\bar\omega_2(x)
 \le\Omega(B)+\varepsilon\ell(C). \tag{V5}
-```
+-->
+![Formula](../../../assets/math/9e4706e1fee59fac15fc7cbb.svg)
 
 By Lemma 1, x decomposes into common bases with average Omega equal to the left side. Since B is optimal among common bases, every component has value at least Omega(B). Therefore every directed cycle has nonnegative length.
 
@@ -172,10 +190,11 @@ By Lemma 1, x decomposes into common bases with average Omega equal to the left 
 
 For f in B, let delta_f be the minimum directed-cycle length through f, with +infinity if there is none. Then
 
-```math
+<!-- math-display: 12151f6011a0045ab615ada7
 \boxed{\min_{J\text{ common basis},\ f\notin J}\Omega(J)
 =\Omega(B)+\delta_f.} \tag{V6}
-```
+-->
+![Formula](../../../assets/math/12151f6011a0045ab615ada7.svg)
 
 The two directions mirror the ordinary companion, with Lemmas 1 and 2 replacing linear-objective identities.
 
@@ -185,17 +204,19 @@ The two directions mirror the ordinary companion, with Lemmas 1 and 2 replacing 
 
 **Lemma 3 (literal minimum-hop update).** Among cycles of minimum length delta_f through f, choose one C with the fewest arcs t. Then its outside labels are all distinct and
 
-```math
+<!-- math-display: 8cd7652d3d11d69c517feb26
 J_C=(B\setminus V(C))\cup\{\text{labels of }C\}
-```
+-->
+![Formula](../../../assets/math/8cd7652d3d11d69c517feb26.svg)
 
 is an optimal common basis avoiding f.
 
 **Proof.** The cycle-to-replacement argument supplies an optimum J avoiding f supported on B plus the labels of C, and containing B outside V(C). Let q=|J-B| and let u be the number of distinct labels on C. Then q<=u<=t. Applying the replacement-to-cycle argument to this J gives a cycle through f with at most q arcs and cost at most delta_f, including after minimum-label compression. Its cost must equal delta_f. Minimum hop count of C therefore implies
 
-```math
+<!-- math-display: e8acd81a204fe2a09926a296
 t\le\text{number of arcs of the new cycle}\le q\le u\le t.
-```
+-->
+![Formula](../../../assets/math/e8acd81a204fe2a09926a296.svg)
 
 All quantities are equal. Hence q=u=t, the removed elements are exactly V(C), and the added elements are exactly its distinct labels. This proves the stated literal update. QED.
 
@@ -217,9 +238,10 @@ Retain B and all outside labels occurring in the preserver. Lemma 3 converts the
 
 Iwamasa and Takazawa, *Optimal matroid bases with intersection constraints: Valuated matroids, M-convex functions, and their applications*, arXiv:2003.02424v3 (2021), Lemma 7, give the standard baseline-valuated-intersection runtime
 
-```math
+<!-- math-display: dfcccbe610d20fa6e1f1bb83
 O(Nk^2\gamma+Nk\log N),
-```
+-->
+![Formula](../../../assets/math/dfcccbe610d20fa6e1f1bb83.svg)
 
 where gamma is the time needed to evaluate a valuation. For a bit-model
 statement, let beta_val bound the bit length of every finite valuation returned

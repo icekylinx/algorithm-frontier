@@ -17,9 +17,10 @@ the initial nominal size range whose logarithms are comparable to `U`.
 They allow different routing, repair, and shrink parameters at every
 level and prove the positive-budget inequality
 
-```math
+<!-- math-display: 778a7145cc9b809c4c096b0f
 A\gtrsim U^4h/B^4.        \tag{R1}
-```
+-->
+![Formula](../../assets/math/778a7145cc9b809c4c096b0f.svg)
 
 For completeness, the model charges `x_i` and `u_i/p_i` to `B`,
 and charges `sum_i u_i/K_i` to `B`. A total nominal shrink
@@ -35,9 +36,10 @@ listing at most `R=exp O(A)` physical occurrences. Its certified
 time overhead is `exp O(B+A)`. Thus a common positive budget `Z`
 for this proof must cover both `B` and `A`. Substituting into (R1),
 
-```math
+<!-- math-display: e608d1c76b99d57de8720d9f
 Z^5\gtrsim U^4h.               \tag{R2}
-```
+-->
+![Formula](../../assets/math/e608d1c76b99d57de8720d9f.svg)
 
 The four-fifths choice attains this displayed envelope. Nonuniform
 inner parameters or fewer current marks alone do not remove (R2):

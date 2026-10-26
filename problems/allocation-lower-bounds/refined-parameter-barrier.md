@@ -4,10 +4,11 @@
 Fix any positive rational eta. Define the heavy threshold using the
 same convention as the near-two algorithms:
 
-```math
+<!-- math-display: 9931eed548be0cd6cf84a767
 \theta={\mathrm{OPT}\over2+\eta}.
  \tag{Z1}
-```
+-->
+![Formula](../../assets/math/9931eed548be0cd6cf84a767.svg)
 
 In the arbitrary-player theorem, the parameter is the loop-deleted
 corank of `K=(M* vee N_theta)*`. In the compulsory-player theorem,
@@ -27,12 +28,13 @@ factor two or determine an optimal exponential running-time base.
 Choose an integer r>=2, let q=2r, and let P be a q-element player set.
 For each hidden r-set A, define
 
-```math
+<!-- math-display: c903de8ee7b0dbc9c509a9b6
 f_0(S)=\min\{2|S|,2r\}-{\bf1}_{|S|=r},
  \qquad
  f_A(S)=f_0(S)+{\bf1}_{S=A}.
  \tag{Z2}
-```
+-->
+![Formula](../../assets/math/c903de8ee7b0dbc9c509a9b6.svg)
 
 These are the same hidden ranks as in
 [A value-oracle barrier below factor two for rank-parameterized allocation](proof.md). Here their relevant
@@ -58,10 +60,11 @@ nonnegative. Thus f_A is an integral polymatroid rank.
 
 Its total rank is 2r. For every S subseteq P,
 
-```math
+<!-- math-display: e08cee4f71f4d70d7d008d5d
 f_A(S)\ge|S|.
  \tag{Z3}
-```
+-->
+![Formula](../../assets/math/e08cee4f71f4d70d7d008d5d.svg)
 
 For |S|<r this follows from 2|S|, for |S|=r from 2r-1>=r, and
 for |S|>r from 2r>=|S|. Hence the all-ones vector on P is already
@@ -70,11 +73,12 @@ on P.
 
 On the other hand, for any r-set I,
 
-```math
+<!-- math-display: d046be357d295da8a86b2e53
 2\mathbf1_I\in P(f_A)
                                \quad\Longleftrightarrow\quad I=A.
  \tag{Z4}
-```
+-->
+![Formula](../../assets/math/d046be357d295da8a86b2e53.svg)
 
 If I is not A, its own rank inequality rejects the total 2r because
 f_A(I)=2r-1. If I=A, every subset inequality holds: the requested
@@ -93,11 +97,12 @@ unit is heavy. Equation (Z3) makes its Boolean matroid N_theta free
 on all q players. In particular, M and N_theta have a common basis,
 and their common-independent-set maximum is r. Consequently
 
-```math
+<!-- math-display: a7cfb5263431f7659e3ad65a
 K=(M^*\vee N_\theta)^*\text{ has rank }0,
                  \qquad c(\theta)=0.
  \tag{Z5}
-```
+-->
+![Formula](../../assets/math/a7cfb5263431f7659e3ad65a.svg)
 
 Any approximation factor alpha<2 must return a selected M-basis whose
 minimum integer value is at least `2/alpha>1`. Each selected player
@@ -124,10 +129,11 @@ resource alone already admits `1_P` by (Z3), so their aggregate
 Boolean matroid N_theta is free. It has rank q and every player
 is a coloop. The refined parameter is therefore
 
-```math
+<!-- math-display: 33402639bdff9949597e85a9
 \gamma(\theta)=q-q=0.
  \tag{Z6}
-```
+-->
+![Formula](../../assets/math/33402639bdff9949597e85a9.svg)
 
 Suppose an alpha<2 algorithm returns value at least two at every
 player. At most r players receive a large unit, because that
@@ -158,10 +164,11 @@ would have to return the same output for both, but the preceding
 sections show that any alpha<2-valid output identifies a unique hidden
 set. Therefore some promised instance forces at least
 
-```math
+<!-- math-display: 4a7cc5d3af63985d4c35cbd3
 {2r\choose r}-1
  \tag{Z7}
-```
+-->
+![Formula](../../assets/math/4a7cc5d3af63985d4c35cbd3.svg)
 
 queries to the hidden recipient rank oracle.
 

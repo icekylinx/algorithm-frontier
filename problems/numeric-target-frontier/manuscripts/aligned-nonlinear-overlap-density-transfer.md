@@ -6,13 +6,14 @@ The overlap-density algorithm extends to compressed separable nonlinear constrai
 
 Under the model below, if each refined band is positive in at most two target rows and the band-row interaction graph has `m_B` edges, exact scalar optimization takes
 
-```math
+<!-- math-display: 662b96bfcde63326dd4bec43
 \boxed{
 \exp\!\left(O\!\left(T\log\left(2+\frac{m_B}{T}\right)\right)\right)
 \mathrm{poly}(H)
 }
 \tag{ND1}
-```
+-->
+![Formula](../../../assets/math/662b96bfcde63326dd4bec43.svg)
 
 for `T>0`, with polynomial binary workspace. The zero-target case is polynomial. Original mandatory resource totals and all function domains are retained. The proof is exact and introduces no approximation error.
 
@@ -24,13 +25,14 @@ Let `F` be one integral polymatroid rank on an explicit ground `E`, and let the 
 
 For each target row `j`,
 
-```math
+<!-- math-display: e26bf6c4aecc47a1d4d603b4
 A_j(x)=\sum_e A_{je}(x_e)\ \rho_j\ T_j,
 \qquad
 T_j\in\mathbb Z_{\ge0},
 \qquad T=\sum_jT_j.
 \tag{ND2}
-```
+-->
+![Formula](../../../assets/math/e26bf6c4aecc47a1d4d603b4.svg)
 
 Every coordinate function is zero at zero and is specified over its whole domain by explicit constant marginal bands with nonnegative integer slopes. Required shapes are:
 
@@ -52,20 +54,22 @@ Refine the breakpoints of all target functions and the scalar function on each o
 
 Let `D` be the explicit band ground, and let `pi` map a band to its original coordinate. The shared, box-restricted band rank is
 
-```math
+<!-- math-display: 936b3ba5f8cb589a6031a9b7
 G(S)=\min_{A\subseteq E}
 \left\{F(A)+
 \sum_{e\notin A}\sum_{i:(e,i)\in S}\ell_{e,i}\right\}.
 \tag{ND3}
-```
+-->
+![Formula](../../../assets/math/936b3ba5f8cb589a6031a9b7.svg)
 
 This is an integral polymatroid rank with
 
-```math
+<!-- math-display: a9238ad516773879080fc2b7
 P(G)=P\bigl(S\mapsto F(\pi(S))\bigr)
 \cap\{0\le z_{e,i}\le\ell_{e,i}\}.
 \tag{ND4}
-```
+-->
+![Formula](../../../assets/math/a9238ad516773879080fc2b7.svg)
 
 One proof writes the coordinate-box intersection rank as
 `min_(Y subset S) [F(pi(Y))+ell(S\Y)]`. Once a band of an original coordinate is placed in `Y`, including all its bands present in `S` leaves the first term unchanged and can only decrease the second, giving ND3. The modular-convolution formula is submodular by applying submodularity to two minimizers and modularity to their complementary pieces. It is normalized, monotone, and integral. The two inclusions in ND4 follow by splitting every set into `Y` and its complement, and by separately recovering the original rank and singleton bounds.
@@ -78,17 +82,18 @@ Aggregating `x_e=sum_i z_(e,i)` gives exactly `P(F)` intersected with the origin
 
 For aggregate count `x_e`, let `z^*_(e,i)` fill the bands in their original order up to that count. Its cumulative count through every initial band is at least that of any other band vector with the same aggregate. If `Z_h` and `Z_h^*` are these cumulative counts, then for arbitrary marginal slopes `v_i`,
 
-```math
+<!-- math-display: f2aad82fac870172218bbc12
 \sum_i v_i(z_i^*-z_i)
 =\sum_{h<m_e}(v_h-v_{h+1})(Z_h^*-Z_h).
 \tag{ND5}
-```
+-->
+![Formula](../../../assets/math/f2aad82fac870172218bbc12.svg)
 
 The total difference is zero, and every cumulative difference is nonnegative. Therefore prefix repacking decreases convex marginal sums, increases concave marginal sums, and preserves linear sums exactly. No sign assumption on the scalar slopes is used in ND5.
 
 Consequently, if a linear band vector meets the target rows, its original aggregate satisfies
 
-```math
+<!-- math-display: ed8fa34ce83e5664d50d3a4f
 \begin{array}{c|c}
 \text{row type}&\text{comparison after aggregation}\\ \hline
 \text{convex upper}&A_j(x)\le\sum_{e,i}a^j_{e,i}z_{e,i}\le T_j\\
@@ -96,20 +101,22 @@ Consequently, if a linear band vector meets the target rows, its original aggreg
 \text{linear equality}&A_j(x)=\sum_{e,i}a^j_{e,i}z_{e,i}=T_j.
 \end{array}
 \tag{ND6}
-```
+-->
+![Formula](../../../assets/math/ed8fa34ce83e5664d50d3a4f.svg)
 
 The aggregate keeps the same original coordinate counts, domains, eligibility, and mandatory total. A target routine's internal band masks do not become new original eligibility rules: canonical reconstruction may use another band of the same allowed original coordinate, and ND6 remains the validity guarantee.
 
 For the scalar, repacking gives
 
-```math
+<!-- math-display: 1ec78384f1df22c32ecd79df
 W(x)\le\sum_{e,i}w_{e,i}z_{e,i}
 \quad\text{in the minimization case},
 \qquad
 W(x)\ge\sum_{e,i}w_{e,i}z_{e,i}
 \quad\text{in the maximization case}.
 \tag{ND7}
-```
+-->
+![Formula](../../../assets/math/1ec78384f1df22c32ecd79df.svg)
 
 Canonical lifting of an original count vector gives equality in every original function, including the scalar.
 
@@ -127,11 +134,12 @@ Apply the linear target preprocessing on the band instance. Delete automatic zer
 
 On the surviving common-band coefficient columns, require
 
-```math
+<!-- math-display: 112e13b92ba6f96e70938f9c
 \left|\{j:a^j_{e,i}>0\}\right|\le2
 \quad\text{for every band }(e,i).
 \tag{ND8}
-```
+-->
+![Formula](../../../assets/math/112e13b92ba6f96e70938f9c.svg)
 
 Define the band-row interaction graph by joining `j` and `k` when some surviving band has both marginal slopes positive. Let `m_B` be its number of distinct edges. This is the parameter in ND1.
 
@@ -147,18 +155,20 @@ The band model has one global integral resource polymatroid `G`, explicit nonneg
 
 For the positive targets define `U_j=T_j` for upper/equality rows and `U_j=2T_j-1` for cover rows, with `U=sum_j U_j`. At most four local shared copies per band mark its positive covering rows. No interaction edge is added by this marking. If `Q_B` is the resulting number of distinct nonempty support patterns, then
 
-```math
+<!-- math-display: f7700c298ce362356cb87765
 T\le U\le2T,
 \qquad Q_B\le d'+m_B\le T+m_B.
 \tag{ND9}
-```
+-->
+![Formula](../../../assets/math/f7700c298ce362356cb87765.svg)
 
 The exact profile bound is
 
-```math
+<!-- math-display: 85584e6154d14eb0e2ecae59
 2^U\binom{Q_B+U}{U}\mathrm{poly}(H).
 \tag{ND10}
-```
+-->
+![Formula](../../../assets/math/85584e6154d14eb0e2ecae59.svg)
 
 One global zero-vector remainder retains all original mandatory mass. Each profile is solved by the shared resource/partition-count integral intersection; the copied scalar is the original linear marginal scalar. Taking the exact best profile and reconstructing the original aggregate is optimal by Section 4.
 
@@ -166,11 +176,12 @@ RD's binomial estimate gives ND1. All-input traversal, including failed filters 
 
 If every band has support at most one, the sharper bound
 
-```math
+<!-- math-display: 50f9d57a3706d92828d05c08
 \exp\!\left(3\sum_j\sqrt{U_j}\right)\mathrm{poly}(H)
 \le e^{3T}\mathrm{poly}(H)
 \tag{ND11}
-```
+-->
+![Formula](../../../assets/math/50f9d57a3706d92828d05c08.svg)
 
 follows from the support-one theorem. For any fixed band-support bound `s`, the more general pattern count ND10 still applies with the actual support-pattern count after at most `2^s` local copies; the polynomial-space guarantee for that implementation is then for fixed `s`.
 

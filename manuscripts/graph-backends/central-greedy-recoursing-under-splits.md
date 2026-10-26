@@ -16,96 +16,101 @@ splits and distinguishes edge membership from endpoint changes.
 
 ## 1. The algorithm as a combinatorial object
 
-Let an unweighted loopless-or-looped native multigraph $`G`$ undergo
+Let an unweighted loopless-or-looped native multigraph <code class="math">G</code> undergo
 edge insertions/deletions and vertex splits. A split partitions
 incidences between two descendants and preserves each real edge ID.
 It never identifies distinct vertices. Initially or later isolated
 vertices are allowed.
 
-Fix an upper bound $`n_*\geq2`$ on the number of resident vertices
-over the finite run, and an integer $`b\geq1`$. Start with the empty
-selected graph and maintain a subgraph $`H\subseteq G`$. An
+Fix an upper bound <code class="math">n_*\geq2</code> on the number of resident vertices
+over the finite run, and an integer <code class="math">b\geq1</code>. Start with the empty
+selected graph and maintain a subgraph <code class="math">H\subseteq G</code>. An
 initial nonempty input is processed by the same insertion rule.
 After each native edit, first apply it to the
-selected edges. Then, while some nonloop $`e=uv\in E(G)`$ has
-```math
+selected edges. Then, while some nonloop <code class="math">e=uv\in E(G)</code> has
+<!-- math-display: 2cba440c62e7123c10233c19
 \mathrm{dist}_H(u,v)>2b,
  \tag{1}
-```
-insert that CENTRAL native edge ID into $`H`$. A loop never needs
+-->
+![Formula](../../assets/math/2cba440c62e7123c10233c19.svg)
+insert that CENTRAL native edge ID into <code class="math">H</code>. A loop never needs
 insertion. Continue until no such edge exists.
 
 The algorithm can be made literal by scanning all current native
 edge IDs and performing an exact breadth-first search truncated
-at depth $`2b`$ for each test. Adding an edge can only improve
+at depth <code class="math">2b</code> for each test. Adding an edge can only improve
 other distances, so a single scan after the native edit suffices.
 This is a finite deterministic algorithm, albeit generally slow.
 
 At settlement every original edge has a selected route of length
-at most $`2b`$; substituting these routes in an arbitrary path gives
-a $`2b`$-spanner.
+at most <code class="math">2b</code>; substituting these routes in an arbitrary path gives
+a <code class="math">2b</code>-spanner.
 
 ## 2. Splits preserve the girth invariant
 
 Every selected insertion satisfying (1) creates no cycle of length
-at most $`2b+1`$. Deletions create no cycles.
+at most <code class="math">2b+1</code>. Deletions create no cycles.
 
 A vertex split also cannot create a shorter cycle. If a cycle in
 the split graph is mapped back by identifying its two descendants,
 its edge IDs form a closed trail in the pre-split graph. This trail
 contains a cycle of no greater length. Therefore a graph of girth
-greater than $`2b+1`$ retains that property after splitting.
+greater than <code class="math">2b+1</code> retains that property after splitting.
 
 Parallel selected edges are impossible because the second such
 edge has endpoint distance one. Selected loops are absent. Thus
-the ordinary simple-graph girth argument applies to $`H`$, despite
+the ordinary simple-graph girth argument applies to <code class="math">H</code>, despite
 parallel and loop IDs in the native input.
 
 ## 3. Explicit size and edge-ID recourse
 
-A graph on at most $`n_*`$ vertices and girth exceeding $`2b+1`$
+A graph on at most <code class="math">n_*</code> vertices and girth exceeding <code class="math">2b+1</code>
 has at most
-```math
+<!-- math-display: 63640ba2b030375319d2f1d1
 2n_*^{1+1/b}
  \tag{2}
-```
+-->
+![Formula](../../assets/math/63640ba2b030375319d2f1d1.svg)
 edges. Here is a sufficient elementary estimate. If a graph had
-average degree exceeding $`4n_*^{1/b}`$, repeatedly removing
+average degree exceeding <code class="math">4n_*^{1/b}</code>, repeatedly removing
 vertices of degree below half that average leaves a nonempty
-subgraph with minimum degree greater than $`2n_*^{1/b}`$.
-A breadth-first search of depth $`b`$, with no cycle of length at
-most $`2b+1`$, would then contain more than $`n_*`$ vertices.
+subgraph with minimum degree greater than <code class="math">2n_*^{1/b}</code>.
+A breadth-first search of depth <code class="math">b</code>, with no cycle of length at
+most <code class="math">2b+1</code>, would then contain more than <code class="math">n_*</code> vertices.
 This contradiction gives (2), with harmless slack for constant
 sizes.
 
-A selected native ID leaves $`H`$ only when that native edge is
+A selected native ID leaves <code class="math">H</code> only when that native edge is
 deleted. In particular, a vertex split changes endpoints but does
-not delete selected memberships. If the whole run has $`D_{\rm del}`$
+not delete selected memberships. If the whole run has <code class="math">D_{\rm del}</code>
 native edge deletions, then the number of selected membership births
 is at most
-```math
+<!-- math-display: 77913456319f5708251cff7c
 2n_*^{1+1/b}+D_{\rm del},
  \tag{3}
-```
+-->
+![Formula](../../assets/math/77913456319f5708251cff7c.svg)
 and selected births plus deaths are at most
-```math
+<!-- math-display: b664b85072c99dcc919bd644
 2n_*^{1+1/b}+2D_{\rm del}.
  \tag{4}
-```
+-->
+![Formula](../../assets/math/b664b85072c99dcc919bd644.svg)
 These bounds are independent of the number of native edge
 insertions and of how many input incidences a split moves.
 
-Taking $`b=\lceil\log_2 n_*\rceil`$ gives stretch
-$`O(\log n_*)`$, selected size $`O(n_*)`$, and total selected
+Taking <code class="math">b=\lceil\log_2 n_*\rceil</code> gives stretch
+<code class="math">O(\log n_*)</code>, selected size <code class="math">O(n_*)</code>, and total selected
 edge-ID recourse
-```math
+<!-- math-display: fa6b468ba596665f40a7fff8
 O(n_*+D_{\rm del}).
  \tag{5}
-```
+-->
+![Formula](../../assets/math/fa6b468ba596665f40a7fff8.svg)
 Equations (3)--(5) also hold for every finite prefix when its
 resident-vertex bound is used.
 
-The count $`n_*`$ includes actual split descendants and genuine
+The count <code class="math">n_*</code> includes actual split descendants and genuine
 resident vertices. It must not silently include a much larger
 unused private universe when applying this statement to a shrinking
 backend. A separate active-instance adapter is required there.
@@ -115,40 +120,43 @@ backend. A separate active-instance adapter is required there.
 There is an explicit obstruction to inferring the needed route
 congestion from the preceding girth and degree bounds.
 
-Let $`q\geq2`$ be a power of two. Take two full balanced binary
-trees, each with $`q`$ leaves, and join their roots by one central
-edge. Call the resulting tree $`T`$. It has
-```math
+Let <code class="math">q\geq2</code> be a power of two. Take two full balanced binary
+trees, each with <code class="math">q</code> leaves, and join their roots by one central
+edge. Call the resulting tree <code class="math">T</code>. It has
+<!-- math-display: cca3f0b8120d99d5db808a33
 N=4q-2,\qquad
               \Delta(T)=3,\qquad
               \mathrm{diam}(T)=2\log_2q+1.
  \tag{6}
-```
-Choose $`1\leq D\leq q`$. Between the two leaf sets add a simple
-$`D`$-regular bipartite graph, for example the $`D`$ distinct cyclic
-shift matchings. Let $`G`$ be the tree plus these $`Dq`$ cross
+-->
+![Formula](../../assets/math/cca3f0b8120d99d5db808a33.svg)
+Choose <code class="math">1\leq D\leq q</code>. Between the two leaf sets add a simple
+<code class="math">D</code>-regular bipartite graph, for example the <code class="math">D</code> distinct cyclic
+shift matchings. Let <code class="math">G</code> be the tree plus these <code class="math">Dq</code> cross
 edges. Its native maximum degree is
-```math
+<!-- math-display: adb407958c46b30644424861
 \Delta(G)=\max\{3,D+1\}.
  \tag{7}
-```
+-->
+![Formula](../../assets/math/adb407958c46b30644424861.svg)
 
 Run the greedy algorithm with all tree edges first and
-$`b=\lceil\log_2 N\rceil`$. Every tree edge is inserted because
+<code class="math">b=\lceil\log_2 N\rceil</code>. Every tree edge is inserted because
 its endpoints are then in different components. Every later cross
 edge is omitted, since its tree distance is at most
-$`\mathrm{diam}(T)\leq2b`$. Thus the final selected graph is
-exactly $`H=T`$.
+<code class="math">\mathrm{diam}(T)\leq2b</code>. Thus the final selected graph is
+exactly <code class="math">H=T</code>.
 
 For every cross demand the unique simple selected route uses the
-central edge. Every endpoint-preserving walk in $`T`$ must also
+central edge. Every endpoint-preserving walk in <code class="math">T</code> must also
 use that edge. Consequently its edge-occurrence congestion, and
 the occurrence congestion at either central endpoint, is at least
-```math
+<!-- math-display: 6e8508273e8ebaacd0ee2af9
 Dq=\Omega(N\Delta(G)).
  \tag{8}
-```
-The asymptotic equality includes $`D=1,2`$, because the maximum
+-->
+![Formula](../../assets/math/6e8508273e8ebaacd0ee2af9.svg)
+The asymptotic equality includes <code class="math">D=1,2</code>, because the maximum
 degree in (7) is then an absolute constant.
 
 Here the selected graph already has maximum degree three, linear

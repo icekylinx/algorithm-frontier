@@ -12,18 +12,20 @@ it pays for collapses, including immediately collapsing new layers.
 
 The resulting deterministic uniform running time is
 
-```math
+<!-- math-display: c096de4aa61349914967278c
 P\,(n+1)^{\,O((r/\epsilon)\log(2+r/\epsilon))}
        \mathrm{poly}(b_\epsilon+\log P),           \tag{1}
-```
+-->
+![Formula](../../assets/math/c096de4aa61349914967278c.svg)
 
 for an explicit `r`-uniform bipartite hypergraph, under the sufficient
 condition
 
-```math
+<!-- math-display: 0c5ae3c3e9161e62c7890db2
 \tau(E_S)>(2r-3+\epsilon)(|S|-1),\qquad 0<\epsilon<1.
                                                                \tag{2}
-```
+-->
+![Formula](../../assets/math/0c5ae3c3e9161e62c7890db2.svg)
 
 Here `r` is whole-edge size, `n` is the number of left vertices,
 `P` is total explicit incidence and vertex-list volume plus two, and
@@ -43,19 +45,21 @@ are given in full below.
 
 Keep the public parameters
 
-```math
+<!-- math-display: 5232ae030d189b8709823623
 \mu=\frac{\epsilon^2}{10r^2},\quad
  Q=\lceil1/\mu\rceil,\quad
  \delta_X=\frac{\epsilon}{5r^2}.
-```
+-->
+![Formula](../../assets/math/5232ae030d189b8709823623.svg)
 
 For a live layer `i`, let `W_i=|Y_<i|`, including the unmatched
 dummy root in `Y_0`. Its lower prefix is fixed throughout its
 lifetime. The companion proof establishes, at **every** birth,
 
-```math
+<!-- math-display: 8b8b20243472eefb1c81b362
 |X_i|>\delta_X W_i.                    \tag{3}
-```
+-->
+![Formula](../../assets/math/8b8b20243472eefb1c81b362.svg)
 
 This includes a new layer that immediately collapses. Selected sets
 only grow while their layer is alive, so (3) persists.
@@ -63,10 +67,11 @@ only grow while their layer is alive, so (3) persists.
 The new assertion concerns a different quantity and a different time:
 at every main-loop boundary, every surviving positive layer obeys
 
-```math
+<!-- math-display: 62df0f6be8ec62c2a4242b73
 |Y_i|>\delta_Y W_i,
              \qquad \delta_Y=\frac{\epsilon}{10r}.      \tag{4}
-```
+-->
+![Formula](../../assets/math/62df0f6be8ec62c2a4242b73.svg)
 
 It is the **current** `Y_i`, after any previous collapse and extension,
 not its birth value. Equation (4) will follow anew from current
@@ -80,9 +85,10 @@ For each live layer `j`, record the output
 If adopted, it equals the current layer immediately after adoption.
 If rejected, writing `E_j=Xhat_j minus X_j` gives
 
-```math
+<!-- math-display: c536b41b60589fb8aa7ddc58
 |E_j|<\mu|X_j|.                  \tag{5}
-```
+-->
+![Formula](../../assets/math/c536b41b60589fb8aa7ddc58.svg)
 
 Until the next direct-child collapse, the selected set `X_j` and its
 current matching blockers `Y_j` are unchanged. That next collapse
@@ -98,33 +104,37 @@ edges and their then-blockers. Those then-blockers may no longer be
 in the current matching, but their resource sets are retained as
 fixed ghosts. Set
 
-```math
+<!-- math-display: 11e38b917a3122eaea79a3b6
 C_j=B(\widehat X_j\cup\widehat Y_j).
-```
+-->
+![Formula](../../assets/math/11e38b917a3122eaea79a3b6.svg)
 
 Each extra selected edge and its then-blockers contributes at most
 `(r-1)^2` additional resources. Consequently
 
-```math
+<!-- math-display: d9b7099e204c4e44920fe4df
 |C_j|\le |B(X_j\cup Y_j)|+\mu(r-1)^2|X_j|.             \tag{6}
-```
+-->
+![Formula](../../assets/math/d9b7099e204c4e44920fe4df.svg)
 
 The current matching blockers are pairwise disjoint, and each meets
 exactly one selected edge. Counting at least one distinct overlap
 resource for each blocker gives
 
-```math
+<!-- math-display: c695a91406c62df0351a8032
 |B(X_j\cup Y_j)|\le(r-1)|X_j|+(r-2)|Y_j|.             \tag{7}
-```
+-->
+![Formula](../../assets/math/c695a91406c62df0351a8032.svg)
 
 At a main-loop boundary, current noncollapsibility gives
 `|X_j|<=|Y_j|/(1-mu)`. Combining (6)--(7) yields
 
-```math
+<!-- math-display: 6180cafe9ae77ca3c27c80cf
 |C_j|\le(a+\eta)|Y_j|,\qquad
  a=2r-3,\quad
  \eta=\frac{\mu r(r-1)}{1-\mu}.                         \tag{8}
-```
+-->
+![Formula](../../assets/math/6180cafe9ae77ca3c27c80cf.svg)
 
 This is precisely the conversion from historical candidate size to
 the **current** blocker count that the argument needs. Both terms
@@ -136,10 +146,11 @@ Let `F_j` be the active left vertices with degree `Q` in the
 recorded candidate. Since `|Xhat_j|<=(1+mu)|X_j|` and
 `1/Q<=mu`,
 
-```math
+<!-- math-display: 9ccc4b66cd1f5f3f19b37eb2
 |F_j|\le f|Y_j|,\qquad
                 f=\frac{\mu(1+\mu)}{1-\mu}.            \tag{9}
-```
+-->
+![Formula](../../assets/math/9ccc4b66cd1f5f3f19b37eb2.svg)
 
 For an active left vertex outside `F_j`, every incident hyperedge
 meets the lower forbidden prefix or `C_j`. This is the fixed
@@ -152,57 +163,63 @@ the statement includes all input edges.
 Fix any positive layer `i` at a main-loop boundary. Look only at
 the prefix through `i`, and put
 
-```math
+<!-- math-display: c35632bc66ce6f5c39c5fbac
 W=|Y_{<i}|,\qquad Y=|Y_i|.
-```
+-->
+![Formula](../../assets/math/c35632bc66ce6f5c39c5fbac.svg)
 
 The `W` active left identities for this prefix are those represented
 by the dummy root and the matching blockers below `i`. They are
 distinct. Remove every candidate-full set `F_j` for `1<=j<=i`
 from them and call the result `S`. Let
 
-```math
+<!-- math-display: 9d9aff6c1d146c9a0c7893aa
 C=\bigcup_{j=1}^i C_j.
-```
+-->
+![Formula](../../assets/math/9d9aff6c1d146c9a0c7893aa.svg)
 
 All lower forbidden supports are covered by earlier `C_j`, so `C`
 hits all of `E_S`. Equations (8)--(9) give
 
-```math
+<!-- math-display: 4405922b4c2ac5a536a87f4f
 |C|\le(a+\eta)(W-1+Y),
  \qquad |S|\ge W-f(W-1+Y).                              \tag{10}
-```
+-->
+![Formula](../../assets/math/4405922b4c2ac5a536a87f4f.svg)
 
 Here the `-1` removes only the dummy root, which has no right support.
 All quantities `Y_j` in this sum are current matching-blocker counts.
 
 Since `r>=2`, `epsilon<1`, and `mu<=1/40`,
 
-```math
+<!-- math-display: e4492080d2294427840fe2ce
 \eta\le\frac4{39}\epsilon^2,
  \qquad
  (a+\epsilon)f
      \le\frac{41}{780}\epsilon^2.
-```
+-->
+![Formula](../../assets/math/e4492080d2294427840fe2ce.svg)
 
 For the second bound use `(r-1)/r^2<=1/4`. Therefore
 
-```math
+<!-- math-display: 8e53cf19885b1c9a7ef7f9bb
 \eta+(a+\epsilon)f
           \le\frac{121}{780}\epsilon^2
           <\epsilon/5.                                 \tag{11}
-```
+-->
+![Formula](../../assets/math/8e53cf19885b1c9a7ef7f9bb.svg)
 
 Suppose first `W>=2` and, contrary to (4),
 `Y<=epsilon W/(10r)`. Then
 
-```math
+<!-- math-display: 87991cc32a35533db5fba02d
 \frac{Y}{W-1}\le\frac{\epsilon}{5r}.
-```
+-->
+![Formula](../../assets/math/87991cc32a35533db5fba02d.svg)
 
 Using (10)--(11),
 
-```math
+<!-- math-display: f81bd5eb71380844107dfdf5
 \begin{split}
  |C|+(a+\epsilon)f(W-1+Y)
   &\le(a+\epsilon/5)(W-1+Y)\\
@@ -210,15 +227,17 @@ Using (10)--(11),
   &\le(a+31\epsilon/50)(W-1)\\
   &<(a+\epsilon)(W-1).
 \end{split}                                               \tag{12}
-```
+-->
+![Formula](../../assets/math/f81bd5eb71380844107dfdf5.svg)
 
 In the third line use `a<=2r` and
 `epsilon^2/(25r)<=epsilon/50`. Combining (12) with the
 lower bound for `|S|` proves
 
-```math
+<!-- math-display: 9855df97746c7ed811f56894
 |C|<(a+\epsilon)(|S|-1).          \tag{13}
-```
+-->
+![Formula](../../assets/math/9855df97746c7ed811f56894.svg)
 
 The set `S` is nonempty: from (9), `f<=41/1560`, and under
 the assumed upper bound on `Y`, at most `(41/1560)(21/20)W`
@@ -241,17 +260,19 @@ resets. For a layer with fixed `W`, its selected count starts above
 `delta_X W` and never exceeds `QW`. Each adoption increases it by
 `1+mu`. Thus its children split into at most
 
-```math
+<!-- math-display: c5db965d4b0025a367983f0b
 J=1+O(\mu^{-1}\log(Q/\delta_X))
-```
+-->
+![Formula](../../assets/math/c5db965d4b0025a367983f0b.svg)
 
 epochs. In each epoch, successive child prefix sizes decrease
 geometrically with ratio at most `1-tau`, where
 
-```math
+<!-- math-display: 29082138d9a3af18bf492bc8
 \tau=\mu\delta_X/Q
                \ge\epsilon^5/(1000r^6).                \tag{14}
-```
+-->
+![Formula](../../assets/math/29082138d9a3af18bf492bc8.svg)
 
 Indeed a collapsing child has more than `mu|X_child|` unblocked
 selected edges and at most `Q` per active left identity. It swaps
@@ -263,24 +284,27 @@ noncollapsible layer.
 At every child birth, however, its parent is a current noncollapsible
 layer at a main-loop boundary. The new (4) gives
 
-```math
+<!-- math-display: d1550ba9ee28e09e80a96e99
 W_{child}\ge(1+\delta_Y)W_{parent}.     \tag{15}
-```
+-->
+![Formula](../../assets/math/d1550ba9ee28e09e80a96e99.svg)
 
 Set
 
-```math
+<!-- math-display: 646507ae99999269c8762ab1
 \lambda=C\delta_Y^{-1}\log(2+r/\epsilon)
                   =O((r/\epsilon)\log(2+r/\epsilon)).   \tag{16}
-```
+-->
+![Formula](../../assets/math/646507ae99999269c8762ab1.svg)
 
 The logarithms of `J` and `1/tau` are only
 `O(log(2+r/epsilon))`. A sufficiently large absolute `C` makes
 
-```math
+<!-- math-display: 9c273467698d1a09e6be65df
 J\frac{(1+\delta_Y)^{-\lambda}}
               {1-(1-\tau)^\lambda}\le\tfrac12.         \tag{17}
-```
+-->
+![Formula](../../assets/math/9c273467698d1a09e6be65df.svg)
 
 Use the same weight `W^(-lambda)` for every born layer. In a
 finite execution prefix, each epoch's child weights are summed in
@@ -310,33 +334,37 @@ are nondecreasing because the original birth-selected inequality is
 also unchanged. But the current-blocker bound now limits the number
 of positive layers to
 
-```math
+<!-- math-display: 538e0ffe98be4961f505eafd
 L=O(\delta_Y^{-1}\log(n+1)).
-```
+-->
+![Formula](../../assets/math/538e0ffe98be4961f505eafd.svg)
 
 Keep the source's logarithmic base `b=1/(1-mu^3)`. Its largest
 finite coordinate is at most
 
-```math
+<!-- math-display: 1bb5ae5cac354cfab2d15631
 H=O\!\left(\mu^{-3}
        [L\log(1/\delta_X)+L\mu+\log(n+1)]\right).
-```
+-->
+![Formula](../../assets/math/1bb5ae5cac354cfab2d15631.svg)
 
 Fixed signs and at most `2L` nondecreasing nonnegative integer
 absolute coordinates give at most
 
-```math
+<!-- math-display: f13ea564a8530be98219f00b
 (2L+1){\lceil H\rceil+2\lceil L\rceil+1
                   \choose 2\lceil L\rceil+1}
-```
+-->
+![Formula](../../assets/math/f13ea564a8530be98219f00b.svg)
 
 signatures, with harmless ceiling adjustments. Its logarithm is
 
-```math
+<!-- math-display: aa753bef6475644faee0c1e9
 O\!\left(L\log(2+H/L)\right)
    =O\!\left((r/\epsilon)\log(2+r/\epsilon)
                       \log(n+1)\right).
-```
+-->
+![Formula](../../assets/math/aa753bef6475644faee0c1e9.svg)
 
 This count remains valid when the displayed upper bound `L` exceeds
 `n`; it is simply an overcount. The cases `n<=1` are handled

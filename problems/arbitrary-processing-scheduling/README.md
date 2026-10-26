@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns an integer schedule of makespan at most $`(1+\varepsilon)\mathrm{OPT}`$, or detects infeasibility even without a load bound.
+Returns an integer schedule of makespan at most <code class="math">(1+\varepsilon)\mathrm{OPT}</code>, or detects infeasibility even without a load bound.
 
 **Objective and output**
 
@@ -14,11 +14,12 @@ Deterministic profile enumeration and exact integral recovery, including the com
 
 **Time**
 
-With $`\delta=\varepsilon/2`$, $`K=\lfloor1/\delta\rfloor`$, $`L=\left\lceil(1-\delta)/\delta^2\right\rceil`$, and $`\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}`$, time is
+With <code class="math">\delta=\varepsilon/2</code>, <code class="math">K=\lfloor1/\delta\rfloor</code>, <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>, and <code class="math">\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}</code>, time is
 
-```math
+<!-- math-display: 51861c94b2b6e60d8314738e
 \Pi_\varepsilon^q\mathrm{poly}(H_\varepsilon)=2^{O(q/\varepsilon)}\mathrm{poly}(H_\varepsilon).
-```
+-->
+![Formula](../../assets/math/51861c94b2b6e60d8314738e.svg)
 
 **Space**
 
@@ -26,7 +27,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$`q`$ is the physical-machine count; $`0<\varepsilon\le1`$ is rational; $`H_\varepsilon=H+\mathrm{size}(\varepsilon)`$; all original totals $`n_j=f_j(P)`$ are mandatory. $`H`$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+<code class="math">q</code> is the physical-machine count; <code class="math">0&lt;\varepsilon\le1</code> is rational; <code class="math">H_\varepsilon=H+\mathrm{size}(\varepsilon)</code>; all original totals <code class="math">n_j=f_j(P)</code> are mandatory. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 
@@ -49,24 +50,24 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 The [compressed slot-surplus theorem](slot-surplus.md) handles common
 processing sizes and mandatory original job-polymatroid bases, with
 arbitrary binary multiplicities and no assignment-cost budget.
-Let $`a`$ be the maximum size, $`h`$ its mandatory total, $`u`$ the largest
+Let <code class="math">a</code> be the maximum size, <code class="math">h</code> its mandatory total, <code class="math">u</code> the largest
 smaller size, and
 
-$`s_p(T)=\min\{f_b(\{p\}),\lfloor T/a\rfloor\}`$,  $`c_{\mathrm{slot}}(T)=\sum_p s_p(T)-h`$.
+<code class="math">s_p(T)=\min\{f_b(\{p\}),\lfloor T/a\rfloor\}</code>,  <code class="math">c_{\mathrm{slot}}(T)=\sum_p s_p(T)-h</code>.
 
-**$`C_{\max}\le\mathrm{OPT}+a`$**
+**<code class="math">C_{\max}\le\mathrm{OPT}+a</code>**
 
 Always retained as a polynomial fallback
 
-**$`C_{\max}\le\min\{\mathrm{OPT}+a,(1+\varepsilon)\mathrm{OPT}+u\}`$**
+**<code class="math">C_{\max}\le\min\{\mathrm{OPT}+a,(1+\varepsilon)\mathrm{OPT}+u\}</code>**
 
-$`\Gamma(1/\varepsilon)^k\mathrm{poly}(H)`$ when $`c_{\mathrm{slot}}(\mathrm{OPT})\le k`$, for rational $`0<\varepsilon\le1/2`$
+<code class="math">\Gamma(1/\varepsilon)^k\mathrm{poly}(H)</code> when <code class="math">c_{\mathrm{slot}}(\mathrm{OPT})\le k</code>, for rational <code class="math">0&lt;\varepsilon\le1/2</code>
 
-**Factor $`1+\eta`$**
+**Factor <code class="math">1+\eta</code>**
 
-$`\Gamma(2/\eta)^k\mathrm{poly}(H)`$ when $`u\le(\eta/2)\mathrm{OPT}`$ and $`c_{\mathrm{slot}}(\mathrm{OPT})\le k`$, for rational $`0<\eta\le1`$
+<code class="math">\Gamma(2/\eta)^k\mathrm{poly}(H)</code> when <code class="math">u\le(\eta/2)\mathrm{OPT}</code> and <code class="math">c_{\mathrm{slot}}(\mathrm{OPT})\le k</code>, for rational <code class="math">0&lt;\eta\le1</code>
 
-Here $`\Gamma(R)=R^R/(R-1)^{R-1}`$. The supplied slot-surplus budget $`k`$
+Here <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>. The supplied slot-surplus budget <code class="math">k</code>
 can itself be binary encoded. A hybrid count enumeration guarantees
 polynomial workspace even when its numerical value exceeds the number
 of machines. This theorem does not impose at most one largest unit per

@@ -16,17 +16,19 @@ either an independent transversal or a nonempty class set `S` and a
 constellation `K` induced in `G_S`, such that `D=V(K)` totally
 dominates `G_S` and
 
-```math
+<!-- math-display: c67f7318e17ea510edd473d8
 |D|\le2(|S|-1).
-```
+-->
+![Formula](../../assets/math/c67f7318e17ea510edd473d8.svg)
 
 Consequently it satisfies the full approximate certificate contract
 for every positive `epsilon`, with no excess vertices outside `K`.
 Its running time is
 
-```math
+<!-- math-display: 376f3b6bfdb330003053ba7c
 P\exp(O(q)).
-```
+-->
+![Formula](../../assets/math/376f3b6bfdb330003053ba7c.svg)
 
 ## 1. The elementary operation and its stable states
 
@@ -69,16 +71,18 @@ centres as stable nontrivial stars.
 
 At a stable state write
 
-```math
+<!-- math-display: 086ab2e0d33313775ef97df7
 (d_1,\ldots,d_t,\infty),\qquad
                d_i=|N_M(x_i)|>0.
-```
+-->
+![Formula](../../assets/math/086ab2e0d33313775ef97df7.svg)
 
 The blocker sets are disjoint subsets of `M`, so
 
-```math
+<!-- math-display: 220f2465f6b112989b8b8280
 \sum_i d_i\le|M|\le q-1.
-```
+-->
+![Formula](../../assets/math/220f2465f6b112989b8b8280.svg)
 
 Appending a star replaces the terminal infinity by a positive finite
 coordinate. A swap followed by its zero-blocker cascade decreases an
@@ -121,11 +125,12 @@ run the two algorithms in alternating work budgets until one returns
 a result; both outputs have directly checkable certificates. The new
 rate becomes
 
-```math
+<!-- math-display: b1321160a595ef88fe1af627
 P\min\left\{\exp(O(q)),\,
       (q+1)^{O(\epsilon^{-1}\log(2+r/\epsilon))}\right\}
       \mathrm{poly}(b_\epsilon+\log P),
-```
+-->
+![Formula](../../assets/math/b1321160a595ef88fe1af627.svg)
 
 whereas the named derived-public layer rate has the exponent
 `O((r/epsilon) log(2+r/epsilon))` in its second term. For fixed

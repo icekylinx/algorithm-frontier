@@ -5,7 +5,7 @@
 The [tree-segment construction](../../../manuscripts/graph-backends/simple-path-reporting-from-tree-segments.md)
 gives a self-contained deterministic intersection index and removes
 cycles before enumerating the returned path. Its query bound is
-$`O((k+1)\mathrm{poly}(\log N))`$ for **k returned edges**. It does
+<code class="math">O((k+1)\mathrm{poly}(\log N))</code> for **k returned edges**. It does
 not charge a possibly much longer expanded witness as the output.
 
 Run the independent standard-library checker from the repository root:

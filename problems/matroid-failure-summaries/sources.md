@@ -9,14 +9,15 @@
 | Sharp represented fixed-cost summary | [Polynomial label lift, prefix spans and field construction](manuscripts/sharp-represented-matroid-failure-summaries.md) | Rational or explicit finite-field columns, fixed additive costs and explicit label lists. |
 | Sharp arbitrary-matroid rank summary | [Circuit-blocking inequality and complete witness branching](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md) | An independence oracle; rank, failure budget and label degree are parameters. |
 | Sharp one-failure weighted oracle summary | [Union of the canonical basis and its relevant single-label replacements](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md#7-weighted-oracle-summaries-for-one-label-failure) | An independence oracle and one fixed item order; uniform polynomial preprocessing. |
-| Arbitrary-budget weighted oracle summary | [Canonical-prefix necessity, the W–LF size proof and retained-prefix FPT construction](manuscripts/weighted-oracle-prefix-fpt-construction.md) | An independence oracle and fixed order; the nonsharp W–LF factor is an existing project baseline. |
+| Arbitrary-budget weighted oracle summary | [Canonical-basis tree, original-basis size refinement and one-pass alternative](manuscripts/weighted-oracle-prefix-fpt-construction.md) | An independence oracle, fixed order and explicit labels; no external summary implementation. |
+| Exact two-failure rank-four maximum and minimality | [Replacement profiles, the circuit missing-pair graph and few-label bound](manuscripts/two-failure-oracle-prefix-bounds.md) | An arbitrary independence oracle; two failures and at most one label per item. All arguments follow from the matroid axioms. |
 | Weighted sharp-bound obstruction | [The 13-item construction, exact failure table and amplification](manuscripts/weighted-oracle-two-failure-obstruction.md) | An explicitly defined rank-four nonrepresentable matroid; no external algorithm. |
 | Integral values, real marginals and entropy | [Diminishing returns and the circuit-blocking permutation argument](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md#9-monotone-submodular-functions) | A monotone submodular value oracle for constructions; finite joint entropy for the entropy inequality. |
 
 The sharp rank and integral-value constructions no longer depend on a
 separating-family generator or repeated-halving implementation. Their
-bounded-depth search is specified and proved locally. The ordered-prefix
-construction followed by reverse deletion also gives linear input
+bounded-depth search is specified and proved locally. The canonical-basis
+tree followed by reverse deletion also gives linear input
 dependence for fixed parameters; see [main proof, Section 4.2](proof.md#42-linear-input-dependence-for-the-sharp-rank-construction).
 
 Random permutations and independent label failures are used only to bound
@@ -31,11 +32,19 @@ a bit encoding or implementation of an arbitrary input oracle.
 - [Fault-Tolerant Matroid Bases](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESA.2025.83) studies minimum-cardinality full-rank protection under individual failures. Here the allowed queries delete correlated label classes and may decrease the surviving rank; the local size theorem does not optimize the restriction size on each individual instance.
 - [Equivariant Kazhdan–Lusztig theory of paving matroids](https://pages.uoregon.edu/njp/eq-relax.pdf), by Karn, Nasr, Proudfoot and Vecchi, Section 5, records the classical Vámos matroid used as the underlying obstruction. The local manuscript proves the needed basis exchange and nonrepresentability facts and supplies its own ordered colored parallel extension and necessity witnesses.
 
-The W–LF factor and its direct XP construction were already recorded in
-the project's canonical comparison sections. The new weighted manuscript
-reproves the factor and supplies the FPT implementation; it makes no
-priority claim for the factor or its probabilistic proof. The exact best
-universal weighted-oracle size for two or more failures is not determined
-by the displayed upper and lower bounds.
+The original Bernoulli prefix factor and its direct XP construction were
+already recorded in the project's canonical comparison sections. The
+weighted manuscript supplies the faster canonical-basis tree and proves
+the stronger original-basis bound, with a complete local derivation of
+every size inequality. No priority claim is made for the earlier factor
+or its probabilistic proof.
+
+For two failures and one label per item, the low-rank bounds are now
+exact: three times the rank through rank three, and 13 items at rank
+four. The 13-item obstruction is minimal in rank, number of labels and
+ground size for exceeding three times the rank. Outside those cases the
+best universal weighted-oracle size remains open between the recorded
+upper and lower bounds; the constructions do not assume an algorithm
+attaining the represented binomial bound.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

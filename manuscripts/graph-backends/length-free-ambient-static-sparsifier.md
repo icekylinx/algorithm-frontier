@@ -22,30 +22,33 @@ integer parameters q >= 2 and r >= 1 from
 [the separated static parameter reconstruction](separated-static-sparsifier-parameters.md),
 with q,r <= U and q r h <= U. Its decremental path oracle gives
 
-```math
+<!-- math-display: 4f50d1ac0aed316e855ec827
 \Lambda=2^{O(qrh)},\qquad
  F=2^{O(U/q+U/r+r^2h+qrh)},\qquad
  \phi^{-1}=2^{O(rh)}.                                  \tag{1}
-```
+-->
+![Formula](../../assets/math/4f50d1ac0aed316e855ec827.svg)
 
 The threshold-routing note derives the following STATIC query
 algorithm from that oracle. Given M token pairs, with at most
 D deg_H(v) starts and at most D deg_H(v) destinations at every
 vertex, it produces an explicit simple path for each token with
 
-```math
+<!-- math-display: 1e3b21142ec68ebc110e4009
 \text{length}\leq\Lambda,\qquad
  \text{edge-occurrence congestion}\leq D Q,
  \quad Q=\Lambda\phi^{-O(1)}\mathrm{poly}(U).
                                                         \tag{2}
-```
+-->
+![Formula](../../assets/math/1e3b21142ec68ebc110e4009.svg)
 
 The work, including its O(log(M+2)) fresh oracle rounds, is
 
-```math
+<!-- math-display: b04136e370b599df8feebd1b
 (mF+M\Lambda)\mathrm{poly}(U).
                                                         \tag{3}
-```
+-->
+![Formula](../../assets/math/b04136e370b599df8feebd1b.svg)
 
 All hidden constants are fixed independently of q and r. The
 algorithm handles the aggregate endpoint load D in one query.
@@ -63,10 +66,11 @@ Pi(e), with matching endpoints, in an ambient graph H'. Parallel
 demand edges have distinct IDs. Ambient congestion counts repeated
 vertex occurrences, including annotated endpoints. Put
 
-```math
+<!-- math-display: cd851a90cebbac29c441cb8f
 L_0=\max\{1,\max_e |\Pi(e)|\},\quad
  C_0=C(\Pi),\quad \Delta=\Delta(J).
-```
+-->
+![Formula](../../assets/math/cd851a90cebbac29c441cb8f.svg)
 
 For every nonloop demand edge, first erase closed subwalks from its
 individual ambient image. Denote the resulting SIMPLE path by
@@ -80,9 +84,10 @@ a path between them is not an ambient closed walk. In particular,
 null physical images do not authorize deleting an open native path.
 Then
 
-```math
+<!-- math-display: 1b8fa3c1429b6894dbd5116d
 L(\Pi')\leq L_0,\qquad C(\Pi')\leq C_0.                \tag{4}
-```
+-->
+![Formula](../../assets/math/1b8fa3c1429b6894dbd5116d.svg)
 
 The output type includes this normalized edge-route table. The
 congestion bound proved below is for Pi' composed with the new
@@ -121,32 +126,35 @@ minimum degree at least phi 2^i. No maximum-degree promise is used.
 
 All decomposition and pruning work is bounded by
 
-```math
+<!-- math-display: 474f8aeea76022a9bec506cb
 |E(J)|\,2^{O(U/r+r^2h+rh)}\mathrm{poly}(U).
                                                         \tag{5}
-```
+-->
+![Formula](../../assets/math/474f8aeea76022a9bec506cb.svg)
 
 For a component in band i put rho_i = phi 2^i. The balanced-port
 witness construction gives a loopless constant-conductance
 multigraph W_i with fresh edge IDs and
 
-```math
+<!-- math-display: 9c97d95cf7f651e4687bed73
 \deg_{J_i}(v)\leq\rho_i\deg_{W_i}(v)
                   \leq D_w\deg_{J_i}(v),                 \tag{6}
-```
+-->
+![Formula](../../assets/math/9c97d95cf7f651e4687bed73.svg)
 
 where D_w is one absolute constant. Every witness edge in this
 component has weight rho_i. Direct residual edges have weight one
 and keep their own identity routes. In particular,
 
-```math
+<!-- math-display: 1f859c2a66100247d218536f
 \begin{split}
  \sum_{i>0}|E(W_i)|&\leq O(|V(J)|\phi^{-1}U),\\
  \sum_{i>0}|E(W_i)|&\leq O(|E(J)|\phi^{-1}),\\
  \sum_{i>0}\rho_i|E(W_i)|&\leq O(|E(J)|),\\
  \phi\leq\rho_i&\leq\Delta.
  \end{split}                                            \tag{7}
-```
+-->
+![Formula](../../assets/math/1f859c2a66100247d218536f.svg)
 
 The last inequality follows from the minimum-degree property in
 any nonempty component. Thus every constructed record inventory
@@ -160,18 +168,20 @@ Q_g = ceil(rho_i) directed tokens with the same endpoints. Fix an
 orientation for g. The total number of these token records is at
 most
 
-```math
+<!-- math-display: 4af42bcfc3189728b6a0b1ac
 \sum_i(\rho_i+1)|E(W_i)|=O(|E(J)|/\phi).                 \tag{8}
-```
+-->
+![Formula](../../assets/math/4af42bcfc3189728b6a0b1ac.svg)
 
 At each band vertex, the number of starts or destinations is at
 most
 
-```math
+<!-- math-display: 206d99199badef5fa2c7be83
 \lceil\rho_i\rceil\deg_{W_i}(v)
  \leq D_w\frac{\lceil\rho_i\rceil}{\rho_i}\deg_{J_i}(v)
  \leq \frac{2D_w}{\phi}\deg_{J_i}(v).                   \tag{9}
-```
+-->
+![Formula](../../assets/math/206d99199badef5fa2c7be83.svg)
 
 The router therefore supplies all token paths with length at most
 Lambda and total per-demand-edge occurrence load at most O(Q/phi).
@@ -189,21 +199,23 @@ Apply the sparse deterministic path-selection lemma globally to
 these groups. Keep one token path P_g for each witness edge g and
 give it the original weight rho_i. In that lemma,
 
-```math
+<!-- math-display: 85ac256f5a1a576d54061662
 B\leq O((\Lambda+1)(\Delta+1)).                         \tag{10}
-```
+-->
+![Formula](../../assets/math/85ac256f5a1a576d54061662.svg)
 
 It follows that the WEIGHTED ambient congestion of the selected
 witness embedding is at most
 
-```math
+<!-- math-display: acbafc14af40d0317bebc48a
 C(\Pi'\circ\Pi_{W\to J})
  \leq O\!\left(
      QC_0/\phi+\Lambda(\Delta+1)\log(N_{\rm amb}+2)
        \right)
  \leq Q\phi^{-O(1)}\mathrm{poly}(U)(C_0+\Delta).
                                                         \tag{11}
-```
+-->
+![Formula](../../assets/math/acbafc14af40d0317bebc48a.svg)
 
 N_amb counts only explicitly used ambient vertices; it is at most
 2^{O(U)} in the master interface. Nonempty J has Delta >= 1.
@@ -227,10 +239,11 @@ The returned path of each demand has at most Lambda witness edges.
 Every witness edge has unweighted load O(D_i Q). Dividing by its
 weight rho_i gives normalized load
 
-```math
+<!-- math-display: f610f4b2a8a3d30cd4522cab
 O\!\left(Q\frac{\lceil\rho_i\rceil}{\rho_i}\right)
                        \leq O(Q/\phi).                  \tag{12}
-```
+-->
+![Formula](../../assets/math/f610f4b2a8a3d30cd4522cab.svg)
 
 A large D_i does not multiply the expensive F term. The aggregate
 router's work on this component is
@@ -239,12 +252,13 @@ uses (7). This is a direct aggregate query, not D_i separately
 initialized queries. Even the more conservative load-one batching
 work would have affordable output cost, since
 
-```math
+<!-- math-display: 1b228919d1e49cc43c8e306b
 |E(W_i)|D_i
    \leq O\!\left(|E(J_i)|
                  \frac{\lceil\rho_i\rceil}{\rho_i}\right)
    \leq O(|E(J_i)|/\phi).                               \tag{13}
-```
+-->
+![Formula](../../assets/math/1b228919d1e49cc43c8e306b.svg)
 
 Each token's path length is Lambda, independent of D_i. This is
 necessary both for sparsity and for the recursive stretch bound.
@@ -256,11 +270,12 @@ the one selected path P_g of each nonbase witness edge. Refcounts
 deduplicate support while preserving the individual selected route
 records. From (7),
 
-```math
+<!-- math-display: fc73e4b7fd5de8095b638850
 |E(\widetilde J)|
     \leq |V(J)|+\Lambda\sum_i|E(W_i)|
     \leq |V(J)|\Lambda\phi^{-1}\mathrm{poly}(U).    \tag{14}
-```
+-->
+![Formula](../../assets/math/fc73e4b7fd5de8095b638850.svg)
 
 Compose the J-to-W paths from Section 5 with the selected W-to-J
 paths from Section 4. This gives an explicit embedding of every
@@ -268,11 +283,12 @@ original demand into tilde J. Its length measured in J edges is
 at most Lambda^2. Its ambient length is at most Lambda^2 L_0.
 Weighted composition of (11) and (12) gives
 
-```math
+<!-- math-display: 120cae6436df917b19d41c4f
 C(\Pi'\circ\Pi_{J\to\widetilde J})
    \leq Q^2\phi^{-O(1)}\mathrm{poly}(U)
                                       (C_0+\Delta).     \tag{15}
-```
+-->
+![Formula](../../assets/math/120cae6436df917b19d41c4f.svg)
 
 Optional loop erasure of the final route IN J only removes edge
 occurrences and their ambient expansions, so it cannot increase
@@ -281,13 +297,14 @@ identity is inferred from geometric simplification.
 
 With one common structural envelope
 
-```math
+<!-- math-display: fb9a9e55b4fea584d3924cb5
 \Gamma=2^{O(qrh)},                 \tag{16}
-```
+-->
+![Formula](../../assets/math/fb9a9e55b4fea584d3924cb5.svg)
 
 the output satisfies
 
-```math
+<!-- math-display: d19d39627d451ef338f4058f
 \boxed{
  \begin{aligned}
  |E(\widetilde J)|&\leq |V(J)|\Gamma\mathrm{poly}(U),\\
@@ -297,17 +314,19 @@ the output satisfies
                        \Gamma(C_0+\Delta).
  \end{aligned}}
                                                         \tag{17}
-```
+-->
+![Formula](../../assets/math/d19d39627d451ef338f4058f.svg)
 
 ## 7. Work, words, and distance-layer compatibility
 
 All host constructions, queries, deterministic selection, and
 explicit path-list processing fit
 
-```math
+<!-- math-display: d773a7abe1737bc4a24c1950
 |E(J)|F^{O(1)}\Gamma^{O(1)}(L_0+1)
                        \mathrm{poly}(U),           \tag{18}
-```
+-->
+![Formula](../../assets/math/d773a7abe1737bc4a24c1950.svg)
 
 plus actual input vertex bookkeeping. For token generation and
 all-round work use (3), (7)--(9), and the aggregate query bound.
@@ -330,10 +349,11 @@ silently move their ends.
 Consequently the membership recourse proof is unchanged, whereas
 the local congestion recurrence becomes
 
-```math
+<!-- math-display: 92568c74fa1d0e0756caa4ba
 L_j\leq O(\Gamma)L_{j-1},\qquad
  C_j\leq O(\Gamma)(C_{j-1}+\Delta_j).                     \tag{19}
-```
+-->
+![Formula](../../assets/math/92568c74fa1d0e0756caa4ba.svg)
 
 The degree bound for projected inputs is paid by the maintained
 incident-route congestion and selected-degree cap. Over K repair

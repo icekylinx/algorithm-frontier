@@ -6,7 +6,7 @@ interface and must not be replaced by an uncharged restart.
 
 The nonnegative-integer adapter in Section 14.1 is ready for review
 as a local reduction. It runs the positive-length algorithm on one
-fixed dyadic perturbation with internal accuracy $`\varepsilon/8`$,
+fixed dyadic perturbation with internal accuracy <code class="math">\varepsilon/8</code>,
 then publishes original lengths on the unchanged flat copies. Its
 zero-distance proof uses the original integer unit gap, and its bit
 and aspect-ratio costs are stated. It does not turn a repeated
@@ -18,8 +18,8 @@ terminal selection and the fixed-parameter external factors. Each
 quantitative claim keeps its stated forest or hierarchy premises. No complete
 dynamic forest or Gomory--Hu implementation is supplied.
 
-The native forest work $`(n+m)E_{6/7}`$ and the cut-tree application's
-$`O(n+m)+(m+1)E_{6/7}`$ are distinct claims. Removing zero-capacity
+The native forest work <code class="math">(n+m)E_{6/7}</code> and the cut-tree application's
+<code class="math">O(n+m)+(m+1)E_{6/7}</code> are distinct claims. Removing zero-capacity
 edges preserves every cut exactly and requires only the initial input
 scan; it removes no positive-capacity requirement from the actual
 flow and skeleton calls.

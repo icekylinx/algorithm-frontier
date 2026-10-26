@@ -12,25 +12,27 @@ Let `F` be one normalized monotone integral polymatroid rank on an explicit grou
 
 There are explicitly listed nonnegative integer row coefficients `a^j_e`, integer targets `T_j>=0`, and independently chosen relations `rho_j` from `{<=, =, >=}`. The number of rows is part of the input. Put
 
-```math
+<!-- math-display: f0141fa9e3003fbf8ba5e2da
 T=\sum_jT_j,
 \qquad
 s=\max_{e\in E}|\{j:a^j_e>0\}|.
 \tag{CS1}
-```
+-->
+![Formula](../../../assets/math/f0141fa9e3003fbf8ba5e2da.svg)
 
 An arbitrary rational scalar functional `c x` is to be minimized or maximized exactly. Its coefficients may be signed and do not contribute to `s` or `T`.
 
 **Support-one theorem.** If `s<=1`, exact optimization with infeasibility reporting takes
 
-```math
+<!-- math-display: 072a27b264b23d84abe88223
 \boxed{
 \exp\!\left(3\sum_{j:T_j>0}\sqrt{U_j}\right)
 \mathrm{poly}(H)
 \ \le\ e^{3T}\mathrm{poly}(H),
 }
 \tag{CS2}
-```
+-->
+![Formula](../../../assets/math/072a27b264b23d84abe88223.svg)
 
 where surviving upper/equality rows have `U_j=T_j`, surviving cover rows have `U_j=2T_j-1`, and zero-target rows are preprocessed as below. Workspace is polynomial in the full binary input `H`, uniformly in the number of rows.
 
@@ -38,10 +40,11 @@ For this support-one model there are equality-target instances with `T=5d` requi
 
 **Support-two boundary.** If `s<=2`, the general mixed-target upper bound is
 
-```math
+<!-- math-display: 58f3ee54715c62b06d9be773
 2^{O((T+1)\log(T+2))}\mathrm{poly}(H),
 \tag{CS3}
-```
+-->
+![Formula](../../../assets/math/58f3ee54715c62b06d9be773.svg)
 
 with polynomial binary workspace. A matching `2^{Omega(T log T)}` rank-query lower bound already holds with `s=2`, every nonzero coefficient equal to one, and every target equal to one. Thus merely allowing a coordinate to participate in a second target row changes the worst-case total-target exponent.
 
@@ -63,10 +66,11 @@ The positive supports of the target rows are now disjoint. If a coordinate `e` h
 
 Let `pi` project the copied ground to the original eligible ground, and define
 
-```math
+<!-- math-display: d40e7a399448c60c1b113419
 F^\uparrow(Y)=F0(\pi(Y)).
 \tag{CS4}
-```
+-->
+![Formula](../../../assets/math/d40e7a399448c60c1b113419.svg)
 
 This is an integral polymatroid rank. Aggregating copy counts gives exact equivalences of independent regions and original-total bases. All original resource capacities are shared, and every original scalar contribution is preserved.
 
@@ -80,17 +84,19 @@ The copied ground has at most twice the original number of coordinates, independ
 
 Every nonzero lifted coefficient vector has exactly one positive component. Group such coordinates by the pair `(j,a)`, where `j` is their row and `a>=1` their integer credited coefficient. Let `h_(j,a)` be its guessed count. For each row require during generation
 
-```math
+<!-- math-display: 006311620292d9fa6de94f69
 W_j=\sum_{a\ge1}a h_{j,a}\le U_j.
 \tag{CS5}
-```
+-->
+![Formula](../../../assets/math/006311620292d9fa6de94f69.svg)
 
 Also keep the total nonzero count
 
-```math
+<!-- math-display: fa0ccc7ae5c17595c78572a4
 m=\sum_{j,a}h_{j,a}\le R.
 \tag{CS6}
-```
+-->
+![Formula](../../../assets/math/fa0ccc7ae5c17595c78572a4.svg)
 
 The one global zero-vector group receives count `R-m`. At complete profiles apply the actual upper, equality, or credited-cover interval to every `W_j`.
 
@@ -102,31 +108,34 @@ Taking the best scalar over all feasible profiles solves the original problem ex
 
 For each row, its profile is an ordinary integer partition of some value at most `U_j`, restricted to the coefficient values actually present. Let `P_1(U)` be the cumulative number of unrestricted integer partitions through `U`. For `U>=1` and `t>0`,
 
-```math
+<!-- math-display: 279238405c6bb3263807d284
 P_1(U)\le
 e^{tU}\prod_{a\ge1}(1-e^{-ta})^{-1}.
 \tag{CS7}
-```
+-->
+![Formula](../../../assets/math/279238405c6bb3263807d284.svg)
 
 The logarithm of the product is
 
-```math
+<!-- math-display: e8cf65d17ce867e794cbe34b
 \sum_{\ell\ge1}\frac{1}{\ell(e^{t\ell}-1)}
 \le \frac1t\sum_{\ell\ge1}\frac1{\ell^2}
 \le\frac2t.
 \tag{CS8}
-```
+-->
+![Formula](../../../assets/math/e8cf65d17ce867e794cbe34b.svg)
 
 Choosing `t=1/sqrt(U)` gives `P_1(U)<=exp(3 sqrt(U))`. Independent row-profile choices therefore have total number at most the exponential in CS2. The total count cap and final row filters can only reduce this number.
 
 For a positive integer target `t`,
 
-```math
+<!-- math-display: dd3b8d9a1de571e6bc0b71d9
 \sqrt t\le t,
 \qquad
 \sqrt{2t-1}\le t,
 \tag{CS9}
-```
+-->
+![Formula](../../../assets/math/dd3b8d9a1de571e6bc0b71d9.svg)
 
 where the second inequality is equivalent to `(t-1)^2>=0`. Thus `sum_j sqrt(U_j)<=T`, proving the final bound in CS2.
 
@@ -138,10 +147,11 @@ The algorithm stores one class list, one binary count profile, component sums, a
 
 For any positive integer `d`, create four elements in each disjoint row block. Their positive coefficients in that row are respectively `1,2,3,4`, and all other row coefficients are zero. Set every equality target to `5`, so
 
-```math
+<!-- math-display: 71559712481f81cb44e22845
 n=4d,\qquad r=2d,\qquad T=5d.
 \tag{CS10}
-```
+-->
+![Formula](../../../assets/math/71559712481f81cb44e22845.svg)
 
 A row subset of these four elements sums to `5` precisely when it is either `{1,4}` or `{2,3}`. No singleton reaches `5`, and every three-element subset has sum at least `6`. Thus the family `H` of all sets satisfying every equality consists exactly of the `2^d` Cartesian choices of these two pairs, each of total size `r`.
 
@@ -155,10 +165,11 @@ The reference equality instance is infeasible, while the hidden instance has exa
 
 The explicit row data have polynomial size in `d`. Under a balanced mixture of the reference instance and a uniformly random hidden instance, a worst-case `Q`-query algorithm has average decision success at most `1/2+Q/(2|H|)`: only hidden sets queried along the reference transcript can cause a different transcript. Success at least `2/3` on every input forces
 
-```math
+<!-- math-display: 541e2a78e42e479367c2561f
 Q\ge 2^d/3=2^{\Omega(T)}.
 \tag{CS11}
-```
+-->
+![Formula](../../../assets/math/541e2a78e42e479367c2561f.svg)
 
 This is a rank-oracle lower bound for the claimed exact numeric-target model, without an explicit-representation hardness claim.
 
@@ -178,10 +189,11 @@ The variable-dimensional theorem gives CS3 for every support. Its lower family a
 
 There are `(d-1)!!=2^{Theta(d log d)}` candidate perfect matchings, and two distinct candidates are not one-exchange neighbors. The same reference/hidden rank-oracle argument applies. Since `T=d`, this gives
 
-```math
+<!-- math-display: 322903fd56b4a572adf55ddf
 2^{\Omega(T\log T)}
 \tag{CS12}
-```
+-->
+![Formula](../../../assets/math/322903fd56b4a572adf55ddf.svg)
 
 queries. It works for equality targets, pure covers over independent sets or bases, and pure upper rows over bases, as proved in [variable-dimension-total-target-classification.md](variable-dimension-total-target-classification.md).
 

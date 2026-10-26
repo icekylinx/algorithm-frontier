@@ -32,22 +32,24 @@ heavy support; the algorithm does not enlarge an optimum's support.
 
 For a fixed integer d>=2 put
 
-```math
+<!-- math-display: eda731347343210030b061e4
 R_d=\frac{d+1}{d-1},\qquad
  A_d=\Gamma(R_d),\qquad B_d=2-1/A_d,
       \qquad\Gamma(R)=\frac{R^R}{(R-1)^{R-1}}.
  \tag{UQ1}
-```
+-->
+![Formula](../../assets/math/eda731347343210030b061e4.svg)
 
 **Theorem UQ.** A deterministic algorithm returns an integer allocation
 of value at least OPT/d and actual cost at most C, in either
 
-```math
+<!-- math-display: 3bbbfe157261bd0509bed1af
 A_d^{\nu_C}\mathrm{poly}(H)
  \quad\text{or}\quad
  B_d^q\,2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H),
  \tag{UQ2}
-```
+-->
+![Formula](../../assets/math/3bbbfe157261bd0509bed1af.svg)
 
 using polynomial workspace. H counts all original numerical bits and
 the paid polynomial oracle work. No binary resource supply is expanded.
@@ -59,10 +61,11 @@ or exclude every integer full-T allocation.
 
 If
 
-```math
+<!-- math-display: fbc39ea84fe821b3914516c1
 T\ge\frac d{d-1}a,
  \tag{UQ3}
-```
+-->
+![Formula](../../assets/math/fbc39ea84fe821b3914516c1.svg)
 
 solve the original full-player fractional allocation LP at utility T,
 retaining all shared original resource constraints and the exact
@@ -80,19 +83,21 @@ is used for every 1<=K<=d; it is not a claim of full-K feasibility.
 
 The remaining case has K>=d+1 and T<d*a/(d-1)<=d*a. Define
 
-```math
+<!-- math-display: 033c8b060abd76586af9e11c
 b=\lceil K/d\rceil.
  \tag{UQ4}
-```
+-->
+![Formula](../../assets/math/033c8b060abd76586af9e11c.svg)
 
 For K=jd+s, with j>=1 and 1<=s<=d, one has b=j+1 and
 
-```math
+<!-- math-display: 7d418fdce2452dd10ac18d0f
 \frac K{K-b}
               =\frac{jd+s}{j(d-1)+s-1}
               \le\frac{d+1}{d-1}=R_d.
  \tag{UQ5}
-```
+-->
+![Formula](../../assets/math/7d418fdce2452dd10ac18d0f.svg)
 
 The last bound is attained at K=d+1. This is the quota calculation
 proved in [Faster global time for coarser integer-quota approximation](../whole-ground-allocation/integer-quotas.md).

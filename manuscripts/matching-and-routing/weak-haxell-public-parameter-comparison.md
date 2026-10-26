@@ -11,10 +11,11 @@ Throughout, an edge has one left vertex and `r-1` right resources,
 `n` is the number of left vertices, and `0<epsilon<1`. The promise
 being compared is
 
-```math
+<!-- math-display: b420bfea64d14f277298c228
 \tau(E_S)>(2r-3+\epsilon)(|S|-1)
                   \quad\hbox{for every nonempty }S\subseteq A.
-```
+-->
+![Formula](../../assets/math/b420bfea64d14f277298c228.svg)
 
 ## 1. Annamalai's matching algorithm and certifying theorem
 
@@ -34,17 +35,19 @@ of this research round.
 
 The source's parameters are
 
-```math
+<!-- math-display: 53e453b5c0a83854aa79c882
 \mu=\epsilon^2/(10r^2),\quad Q=\lceil1/\mu\rceil,
  \delta_X=\epsilon/(5r^2).
-```
+-->
+![Formula](../../assets/math/53e453b5c0a83854aa79c882.svg)
 
 An immediate length-aware count of its existing nondecreasing
 signature vectors gives the derived exponent
 
-```math
+<!-- math-display: aaebd47625a69d05d3c030bc
 O\!\left((r^2/\epsilon)\log(2+r/\epsilon)\right).
-```
+-->
+![Formula](../../assets/math/aaebd47625a69d05d3c030bc.svg)
 
 The derivation is in [weak-haxell-uniform-lifetime-analysis.md](weak-haxell-uniform-lifetime-analysis.md).
 This should be treated as a public-formula baseline, not as a bound
@@ -58,9 +61,10 @@ adds a new proof that every surviving layer's **current** blocker
 count exceeds `epsilon/(10r)` times the size of its lower prefix.
 That reduces the exponent to
 
-```math
+<!-- math-display: 6e7239f95f050697c622431e
 O\!\left((r/\epsilon)\log(2+r/\epsilon)\right).
-```
+-->
+![Formula](../../assets/math/6e7239f95f050697c622431e.svg)
 
 Both a weighted lifetime count and a length-aware count of the
 source signature then give this rate. The operation sequence on
@@ -81,9 +85,10 @@ v2 of February 2020 and the journal publication in
 Section 7.1 constructs the intersection graph on hyperedges and
 applies the independent-transversal theorem with
 
-```math
+<!-- math-display: 478743e45f806fb282db81d1
 \epsilon'=\epsilon/(r-1).
-```
+-->
+![Formula](../../assets/math/478743e45f806fb282db81d1.svg)
 
 The graph is `r`-claw-free. Crucially, the returned dominating set
 contains a constellation. Counting overlaps within its stars saves
@@ -94,9 +99,10 @@ dominating vertex and concludes that this needs coefficient
 
 The example feasible parameters in Definition 10 are
 
-```math
+<!-- math-display: 02ed62af3a88d2ac5fb604c4
 \mu=\rho=\epsilon'/(10r),\qquad U=10r/\epsilon'.
-```
+-->
+![Formula](../../assets/math/02ed62af3a88d2ac5fb604c4.svg)
 
 For the hypergraph application, `rho=Theta(epsilon/r^2)`.
 Lemma 16 gives signature length
@@ -104,19 +110,21 @@ Lemma 16 gives signature length
 `b=U/(U-mu rho)`, Definition 17 and Lemma 20 give maximum
 coordinate
 
-```math
+<!-- math-display: 8a910652f94188750877d99e
 H=O\!\left(\rho^{-3}
        [L\log(1/\rho)+\log(n+1)]\right).
-```
+-->
+![Formula](../../assets/math/8a910652f94188750877d99e.svg)
 
 A length-aware count is therefore
 
-```math
+<!-- math-display: 7549956215197368e4accb40
 \log\#\mathrm{signatures}
    =O(L\log(2+H/L))
    =O\!\left((r^2/\epsilon)\log(2+r/\epsilon)
                        \log(n+1)\right).
-```
+-->
+![Formula](../../assets/math/7549956215197368e4accb40.svg)
 
 This is again a derivation from named public formulas. The paper
 itself explicitly does not optimize the parameter dependence. Its

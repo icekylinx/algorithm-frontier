@@ -52,12 +52,13 @@ fat unit form a matroid N_theta:
 
 These are the same paid fat matroids as in the accepted wrappers. Let
 
-```math
+<!-- math-display: 391f4d77e59c9a4fae3444ee
 U_\theta=M^*\vee N_\theta,
  \qquad
  \delta(\theta)=r(U_\theta^*).
  \tag{D1}
-```
+-->
+![Formula](../../assets/math/391f4d77e59c9a4fae3444ee.svg)
 
 This delta is exactly the rank of the derived small-player problem.
 It is computable in polynomial oracle time and is nondecreasing in
@@ -68,10 +69,11 @@ theta, since raising the threshold only removes possible fat services.
 Let nu(M,N) be the largest cardinality of a common independent set of
 M and N. Then
 
-```math
+<!-- math-display: a55a0566632faf44992d94d8
 \boxed{\delta(\theta)=r-\nu(M,N_\theta).}
  \tag{D2}
-```
+-->
+![Formula](../../assets/math/a55a0566632faf44992d94d8.svg)
 
 **Proof.** If F is common independent, extend it to an M-basis I.
 Its complement D is an M*-basis disjoint from F. Thus D union F is
@@ -82,14 +84,15 @@ in M* and F independent in N. Extend D to an M*-basis D'. The set
 F'=F minus D' is contained in the M-basis P minus D', hence is common
 independent. At most q-r-|D| members of F have been removed, so
 
-```math
+<!-- math-display: e4118bf63a55e9cb654a7f44
 |F'|\ge r(U)-(q-r).
-```
+-->
+![Formula](../../assets/math/e4118bf63a55e9cb654a7f44.svg)
 
 Both bounds prove r(U)=q-r+nu, and (D2) follows. This proof also uses
 exactly the decomposition and extension operations already available
 in the algorithm. No unimplemented intersection oracle is required.
-$`\square`$
+<code class="math">\square</code>
 
 Thus r-delta players can be selected independently in M and each covered
 by one theta-valued fat unit. The remaining delta is a structural
@@ -99,10 +102,11 @@ deficit, not the total number of potential or compulsory players.
 
 Fix an integer 1<=k<=r. Put
 
-```math
+<!-- math-display: 51000a37b28c5ff5a60cfda2
 d_k=\tau+3-3/k,\qquad \eta_0=\min\{\eta,1\}.
  \tag{D3}
-```
+-->
+![Formula](../../assets/math/51000a37b28c5ff5a60cfda2.svg)
 
 For a positive target T, set theta=T/d_k and compute delta(theta).
 
@@ -112,10 +116,11 @@ This is not a certificate that the original target is infeasible.
 If delta<=k, run the reviewed small-resource algorithm on U_theta*,
 with small units of value less than theta, and use
 
-```math
+<!-- math-display: ee46229cc69494e7cba5cc50
 B=T/(d_k+\eta_0)
  \tag{D4}
-```
+-->
+![Formula](../../assets/math/ee46229cc69494e7cba5cc50.svg)
 
 for the positive-error branch, or B=theta for the exact branch. If
 delta=0 no small search is needed. On success use the existing union
@@ -126,11 +131,12 @@ decomposition to reconstruct a full basis of the original M.
 If the chosen target comparator is feasible at T and delta(T/d_k)<=k,
 the algorithm succeeds with minimum value at least B. Its time is
 
-```math
+<!-- math-display: a4132d3fe3feb679f4002f36
 \mathrm{poly}(H)
  \min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\},
  \tag{D5}
-```
+-->
+![Formula](../../assets/math/a4132d3fe3feb679f4002f36.svg)
 
 or 2^{O(k)} poly(H) at the exact boundary. Wrapper space is polynomial.
 
@@ -143,31 +149,34 @@ enters polynomial union, duality, rank and reconstruction work.
 Let rho_delta=(delta-1)/delta when delta>0. At B=theta, the sharp cover
 is at most 3theta and
 
-```math
+<!-- math-display: 4b3b707fc7bd5f75b5fc364f
 \tau\theta+3\rho_\delta\theta
                 \le d_k\theta=T.
-```
+-->
+![Formula](../../assets/math/4b3b707fc7bd5f75b5fc364f.svg)
 
 For positive error, B>=theta/2 and the small-unit bound u<theta implies
 C(B,u)<=3B. Since rho_delta<=1-1/k,
 
-```math
+<!-- math-display: f32765c3889077d7e316d920
 T-\tau B-\rho_\delta C(B,u)\ge\eta_0 B.
-```
+-->
+![Formula](../../assets/math/f32765c3889077d7e316d920.svg)
 
 The same gamma=eta0/16 supplies uniform current-layer growth and the
 signature count (D5). If delta=0, the fat reconstruction gives at
 least theta>=B directly. No small-record state is needed.
-$`\square`$
+<code class="math">\square</code>
 
 ## 4. A computable bottleneck value beta_k
 
 For k<r, define
 
-```math
+<!-- math-display: 57a8c778952ea0db6cbca8a0
 \beta_k=\sup\{\theta>0:\nu(M,N_\theta)\ge r-k\},
  \tag{D6}
-```
+-->
+![Formula](../../assets/math/57a8c778952ea0db6cbca8a0.svg)
 
 with beta_k=0 if no positive threshold works. If k=r, set beta_k=infinity.
 For k<r and beta_k>0 the supremum is attained at a positive resource
@@ -179,20 +188,22 @@ list, computes beta_k in polynomial oracle time.
 Equivalently, beta_k is the best minimum value of a one-unit allocation
 to r-k players whose owners are independent in M. Formula (D2) gives
 
-```math
+<!-- math-display: 15974e6fc4238589d4da9981
 \delta(T/d_k)\le k
              \quad\Longleftrightarrow\quad T\le d_k\beta_k
  \tag{D7}
-```
+-->
+![Formula](../../assets/math/15974e6fc4238589d4da9981.svg)
 
 for positive T, with the stated zero/infinity conventions.
 
 Define the capped target
 
-```math
+<!-- math-display: 0daf3f622c5dd7e3533e3e8c
 T_k^*=\min\{\mathrm{OPT},d_k\beta_k\}.
  \tag{D8}
-```
+-->
+![Formula](../../assets/math/0daf3f622c5dd7e3533e3e8c.svg)
 
 It is a structural target with an exact meaning; the cap is not an
 unproven assertion about which players an optimum uses for small units.
@@ -201,21 +212,23 @@ unproven assertion about which players an optimum uses for small units.
 
 The algorithm has the following explicit approximation guarantee:
 
-```math
+<!-- math-display: 84a90babd3a480bc6694b3dc
 \boxed{\quad
  \text{output value}\ \ge
        \frac{\min\{\mathrm{OPT},d_k\beta_k\}}{d_k+\eta}
        \quad\text{in time (D5).}\quad}
  \tag{D9}
-```
+-->
+![Formula](../../assets/math/84a90babd3a480bc6694b3dc.svg)
 
 The exact branch gives T_k^*/d_k in 2^{O(k)} poly(H) time.
 In particular, whenever
 
-```math
+<!-- math-display: e8a2af43eba0324b9cb55362
 \delta(\mathrm{OPT}/d_k)\le k,
  \tag{D10}
-```
+-->
+![Formula](../../assets/math/e8a2af43eba0324b9cb55362.svg)
 
 the full OPT/(d_k+eta) guarantee holds, even if the original selection
 rank r and number q of potential players are large.

@@ -21,12 +21,13 @@ subject to the original integral recipient-polymatroid constraints.
 Replace one nonnegative assignment-cost row by d independently supplied
 rows
 
-```math
+<!-- math-display: 8fd0fbec5bdfda06a50924c6
 \sum_{p,j}c^{(\ell)}_{pj}x_{pj}
                          \le C_\ell
                    \qquad(1\le\ell\le d),
  \tag{B1}
-```
+-->
+![Formula](../../assets/math/8fd0fbec5bdfda06a50924c6.svg)
 
 where all costs and right sides are nonnegative and all d rows must hold
 exactly. The number d is part of the input. No budget augmentation or
@@ -43,11 +44,12 @@ value oracle, or binary expansion in the construction.
 Let G=(V,E) be any finite simple graph with n>=1 vertices. For each vertex
 v create a resource type j_v of intrinsic value one and recipient rank
 
-```math
+<!-- math-display: 22b8743638b951edb2b39a06
 f_{j_v}(\varnothing)=0,
                          \qquad f_{j_v}(\{p\})=1.
  \tag{B2}
-```
+-->
+![Formula](../../assets/math/22b8743638b951edb2b39a06.svg)
 
 Each resource is just one explicit unit that may be allocated to the
 sole player or left unused. Its integer variable is x_v in {0,1}.
@@ -55,10 +57,11 @@ For each edge e={u,v} create a separate assignment budget with right
 side one, coefficient one on its two endpoint types, and coefficient
 zero on every other type. Its row is
 
-```math
+<!-- math-display: 03917ef7b36569f1d76e6bbe
 x_u+x_v\le1.
  \tag{B3}
-```
+-->
+![Formula](../../assets/math/03917ef7b36569f1d76e6bbe.svg)
 
 All numerical data are zero or one. There are n types and d=|E| rows;
 the explicit dense or sparse encoding is polynomial in the graph size.
@@ -68,10 +71,11 @@ no graph edge has both endpoints in S, which is exactly the definition
 of an independent set. Conversely every independent set gives a legal
 allocation. The sole player's utility is
 
-```math
+<!-- math-display: f6c0df849c27af4ff04c098a
 \sum_{v\in V}x_v=|S|.
  \tag{B4}
-```
+-->
+![Formula](../../assets/math/f6c0df849c27af4ff04c098a.svg)
 
 Therefore the optimum allocation utility equals alpha(G), and the
 reduction preserves every multiplicative approximation ratio exactly.
@@ -115,20 +119,22 @@ subexponential-time claim in the number of graph vertices or budgets.
 For the complete graph G=K_n with n>=3, the natural fractional count
 relaxation is
 
-```math
+<!-- math-display: c39ddcdeae87a689b38a250f
 0\le x_v\le1,
               \qquad x_u+x_v\le1\quad(u\ne v).
  \tag{B5}
-```
+-->
+![Formula](../../assets/math/c39ddcdeae87a689b38a250f.svg)
 
 The vector x_v=1/2 for every v is feasible and has utility n/2. Summing
 all pair constraints yields
 
-```math
+<!-- math-display: 9ba783ea423744d1e60ff846
 (n-1)\sum_v x_v
                             \le\frac{n(n-1)}2,
  \tag{B6}
-```
+-->
+![Formula](../../assets/math/9ba783ea423744d1e60ff846.svg)
 
 so the fractional optimum is exactly n/2. The integer optimum is one,
 since an independent set in a complete graph has at most one vertex.
@@ -138,11 +144,12 @@ individual unit value remains one.
 For every fixed epsilon in (0,1), an asserted simultaneous-budget
 rounding guarantee
 
-```math
+<!-- math-display: d500637360b4f92ca074e2d0
 \text{integer value}
                            \ge(1-\epsilon)\mathrm{FOPT}-1
  \tag{B7}
-```
+-->
+![Formula](../../assets/math/d500637360b4f92ca074e2d0.svg)
 
 is false for sufficiently large n, regardless of running time. The
 right side exceeds the integer optimum once n>4/(1-epsilon).

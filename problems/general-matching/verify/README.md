@@ -4,10 +4,12 @@
 
 The [standard-library reference solver](../reference/README.md) returns
 an exact maximum matching and original edge IDs. Normal mode uses
-$`O(n+m\log(m+2)+\sum_i k_i^3)`$ operations, where $`k_i`$ is the
-actual retained vertex count in input component $`i`$. Optional
-certificate generation has the same bound, with
-$`O(\sum_i k_i^2)`$ additional extraction work. The
+<code class="math">O(n+m\log(m+2)+\sum_i\nu(G_i)^3)</code> operations, where <code class="math">G_i</code>
+ranges over nonempty normalized input components. Optional certificate
+generation has the same bound. The
+[cover-compression proof](../reference/cover-compression-proof.md) derives
+the smaller blossom graph while keeping certificates on the original edge
+kernel. The
 [complete certificate-search proof](../reference/certificate-proof.md)
 establishes the needed alternating-forest and odd-component invariants
 without importing the Gallai–Edmonds decomposition theorem.
@@ -22,13 +24,14 @@ certificate encoding by their actual size.
 ```bash
 python3 -B problems/general-matching/verify/check_reference.py
 python3 -B problems/general-matching/verify/check_certificate_search.py
+python3 -B problems/general-matching/verify/check_cover_compression.py
 ```
 
 The default suite compares 33,868 simple graphs through six vertices
 against an independent subset-DP matching oracle, in both kernel and
 full-graph modes: 67,736 certified solves. It also covers 152 native-record
 instances and 260 larger seeded or explicit instances in both modes,
-29 rejection checks, and three scale/CLI cases. All oracle comparisons
+29 rejection checks, and four scale/CLI cases. All oracle comparisons
 include independent certificate verification. Loops, parallel records,
 isolates, mixed integer/string IDs, odd cycles, the Petersen graph and
 invalid certificates are included. Randomness selects supplemental test
@@ -40,6 +43,17 @@ even alternating paths and tight odd-component counts. Two valid but
 nonmaximum input matchings are rejected explicitly. The mathematical
 checkers refuse `-O` execution.
 
+The dedicated compression check invokes the actual implementation on
+68,236 covers, checks 70,578 possible maximum-crossing right endpoint sets
+and 2,882,175 cover-subset ranks by independent subset dynamic programming.
+Its exhaustive scope is all simple graphs through six vertices in both
+fixed edge orders; 500 seeded graphs on seven through thirteen vertices
+follow. It also verifies the general matching optimum, the <code class="math">2c</code> vertex
+cap, the matched-edge bound on certificate contractions and explicit
+rejection of an invalid cover. The full solver check includes a connected
+420-vertex graph reduced to 40 blossom vertices, with its certificate
+independently verified on the 420-vertex first kernel.
+
 This is finite implementation evidence and an independently checkable
 optimality output. It does not verify the faster research implementation
 or constitute a proof-assistant formalization.
@@ -47,8 +61,8 @@ or constitute a proof-assistant formalization.
 ## Ready for review: exact preprocessing
 
 The unconditional reduction in Lemma 3.1 retains at most
-$`\binom c2+c^2`$ edges for a computed cover of size $`c`$, with original
-edge identifiers and exact matching preservation. Its cutoff $`c`$ is
+<code class="math">\binom c2+c^2</code> edges for a computed cover of size <code class="math">c</code>, with original
+edge identifiers and exact matching preservation. Its cutoff <code class="math">c</code> is
 sharp for arbitrary local neighbor choices. Corollary 3.1a applies the
 same reduction componentwise. Lemma 3.2 gives the exact subcubic
 odd-path gadget and a decoder for every matching, not only an optimum.
@@ -64,10 +78,10 @@ It uses exhaustive matching enumeration and dynamic programming to check:
 - all 33,868 simple graphs through six vertices, in two fixed edge orders;
 - all 76 simple graphs through four vertices after the subcubic reduction;
 - the decoder inequality for all 42,721 matchings of those gadget graphs;
-- three examples showing failure at cutoff $`c-1`$.
+- three examples showing failure at cutoff <code class="math">c-1</code>.
 - all 5,188 mixed-failure cases in its stated through-four-vertex scope,
   with budgets one and two and both fixed edge orders, plus four
-  examples showing the mixed-failure cutoff $`c+f`$ is sharp.
+  examples showing the mixed-failure cutoff <code class="math">c+f</code> is sharp.
 
 The [mixed-failure theorem](../../../manuscripts/graph-backends/matching-size-kernel-corollary.md#4-one-kernel-for-mixed-vertex-and-edge-failures)
 is also ready for review. It concerns native edge/vertex deletions in a

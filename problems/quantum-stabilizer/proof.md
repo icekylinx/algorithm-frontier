@@ -2,116 +2,123 @@
 
 ## 1. Operator model
 
-Let $`D=\prod_jq_j`$ and $`Q=2\mathrm{lcm}_jq_j`$. Each original block consists of mutually commuting, compactly represented Weyl operators of order dividing $`Q`$, with required eigenvalues absorbed into their phases. Write $`E_e`$ for the joint acceptance projector and $`B_e=I-E_e`$. Inconsistent blocks have $`E_e=0`$; an empty or universally accepting block has $`B_e=0`$. The target is
+Let <code class="math">D=\prod_jq_j</code> and <code class="math">Q=2\mathrm{lcm}_jq_j</code>. Each original block consists of mutually commuting, compactly represented Weyl operators of order dividing <code class="math">Q</code>, with required eigenvalues absorbed into their phases. Write <code class="math">E_e</code> for the joint acceptance projector and <code class="math">B_e=I-E_e</code>. Inconsistent blocks have <code class="math">E_e=0</code>; an empty or universally accepting block has <code class="math">B_e=0</code>. The target is
 
-```math
+<!-- math-display: ca35c3668f7d20cf0191eb9f
 H=\sum_ew_eB_e,\qquad
 (1-\epsilon)H\preceq\sum_e\widehat w_eB_e\preceq(1+\epsilon)H.
-```
+-->
+![Formula](../../assets/math/ca35c3668f7d20cf0191eb9f.svg)
 
 The final coefficients refer to whole original blocks.
 
 ## 2. Constant gap and balanced splitting
 
-**Lemma 1.** If finite-order Weyl operators obey $`UV=\zeta VU`$, with $`\zeta`$ of order $`t\ge2`$, then their accepted-eigenvalue projectors satisfy $`\|\Pi_{U,1}\Pi_{V,1}\|\le t^{-1/2}`$. If two blocks contain such a conflicting pair, then
+**Lemma 1.** If finite-order Weyl operators obey <code class="math">UV=\zeta VU</code>, with <code class="math">\zeta</code> of order <code class="math">t\ge2</code>, then their accepted-eigenvalue projectors satisfy <code class="math">\&#124;\Pi_{U,1}\Pi_{V,1}\&#124;\le t^{-1/2}</code>. If two blocks contain such a conflicting pair, then
 
-```math
+<!-- math-display: 1bdfe473dc6e04616fae1092
 B_e+B_f\succeq(1-2^{-1/2})I.
-```
+-->
+![Formula](../../assets/math/1bdfe473dc6e04616fae1092.svg)
 
-**Proof.** Sandwich the Fourier projector $`Q^{-1}\sum_{a=0}^{Q-1}V^a`$ by $`P=\Pi_{U,1}`$. Every exponent not divisible by $`t`$ changes the $`U`$-eigenvalue and vanishes, giving
+**Proof.** Sandwich the Fourier projector <code class="math">Q^{-1}\sum_{a=0}^{Q-1}V^a</code> by <code class="math">P=\Pi_{U,1}</code>. Every exponent not divisible by <code class="math">t</code> changes the <code class="math">U</code>-eigenvalue and vanishes, giving
 
-```math
+<!-- math-display: 6694ac9093e7929c551e15a4
 P\Pi_{V,1}P=t^{-1}P\Pi_{V^t,1}P\preceq t^{-1}P.
-```
+-->
+![Formula](../../assets/math/6694ac9093e7929c551e15a4.svg)
 
-The block acceptance spaces are subspaces of the respective single-check spaces, so their projector-product norm is at most $`t^{-1/2}\le2^{-1/2}`$. For orthogonal projectors, $`E+F\preceq(1+\|EF\|)I`$. Subtracting from $`2I`$ proves the claim. $`\square`$
+The block acceptance spaces are subspaces of the respective single-check spaces, so their projector-product norm is at most <code class="math">t^{-1/2}\le2^{-1/2}</code>. For orthogonal projectors, <code class="math">E+F\preceq(1+\&#124;EF\&#124;)I</code>. Subtracting from <code class="math">2I</code> proves the claim. <code class="math">\square</code>
 
 **Lemma 2.** Polynomially many rational coefficient operations produce
 
-```math
+<!-- math-display: f80d786b72ebfcaa3824ea00
 H=H_{\mathrm{gap}}+H_{\mathrm{com}},\qquad
 \gamma WI\preceq H_{\mathrm{gap}}\preceq WI,
 \quad \gamma=(1-2^{-1/2})/2,
-```
+-->
+![Formula](../../assets/math/f80d786b72ebfcaa3824ea00.svg)
 
-where all generators of the residual $`H_{\mathrm{com}}`$ commute globally and $`W`$ is the total coefficient assigned to $`H_{\mathrm{gap}}`$.
+where all generators of the residual <code class="math">H_{\mathrm{com}}</code> commute globally and <code class="math">W</code> is the total coefficient assigned to <code class="math">H_{\mathrm{gap}}</code>.
 
-**Proof.** Whenever two positive residual blocks conflict, subtract the minimum of their coefficients from both and assign that amount to both removed blocks. Each operation eliminates at least one residual block, so there are at most $`m`$ operations. Sum Lemma 1 over these balanced pairs. Each pair contributes twice the removed amount to $`W`$, proving the lower bound. The upper bound follows from $`0\preceq B_e\preceq I`$. On termination no cross-block generators conflict. An item may appear in both parts; its final coefficients are added. $`\square`$
+**Proof.** Whenever two positive residual blocks conflict, subtract the minimum of their coefficients from both and assign that amount to both removed blocks. Each operation eliminates at least one residual block, so there are at most <code class="math">m</code> operations. Sum Lemma 1 over these balanced pairs. Each pair contributes twice the removed amount to <code class="math">W</code>, proving the lower bound. The upper bound follows from <code class="math">0\preceq B_e\preceq I</code>. On termination no cross-block generators conflict. An item may appear in both parts; its final coefficients are added. <code class="math">\square</code>
 
-If $`W>0`$, sample original blocks with probability proportional to their removed coefficients. Matrix Chernoff, used only in the proof after whitening, needs $`O((\log(2D)+\log(1/\delta))/\epsilon^2)`$ samples. The algorithm computes no quantum matrix: it samples a rational distribution. If $`W=0`$, this part is absent.
+If <code class="math">W&gt;0</code>, sample original blocks with probability proportional to their removed coefficients. Matrix Chernoff, used only in the proof after whitening, needs <code class="math">O((\log(2D)+\log(1/\delta))/\epsilon^2)</code> samples. The algorithm computes no quantum matrix: it samples a rational distribution. If <code class="math">W=0</code>, this part is absent.
 
 ## 3. Whole-block support existence
 
-**Theorem 3.** There is a whole-block spectral sparsifier on $`O(\log(2D)/\epsilon^2)`$ original blocks. Its supplied randomized construction is polynomial in $`D`$ and the remaining encoding and accuracy parameters.
+**Theorem 3.** There is a whole-block spectral sparsifier on <code class="math">O(\log(2D)/\epsilon^2)</code> original blocks. Its supplied randomized construction is polynomial in <code class="math">D</code> and the remaining encoding and accuracy parameters.
 
-**Proof.** Let $`\mathcal H`$ be the abelian group of actual Weyl operators generated by the commuting remainder, and $`\mathcal C`$ its scalar subgroup. A non-scalar Weyl operator has trace zero. Character orthogonality gives the multiplicity of a character $`\chi`$ as
+**Proof.** Let <code class="math">\mathcal H</code> be the abelian group of actual Weyl operators generated by the commuting remainder, and <code class="math">\mathcal C</code> its scalar subgroup. A non-scalar Weyl operator has trace zero. Character orthogonality gives the multiplicity of a character <code class="math">\chi</code> as
 
-```math
+<!-- math-display: 1c0b5cb2aa5a66c9864d726e
 \frac{D}{|\mathcal H|}\sum_{c\in\mathcal C}
 \overline{\chi(c)}\chi_0(c),
-```
+-->
+![Formula](../../assets/math/1c0b5cb2aa5a66c9864d726e.svg)
 
-where $`\chi_0`$ is the physical scalar character. This is $`D|\mathcal C|/|\mathcal H|`$ for every extension of $`\chi_0`$, and zero otherwise. The occurring characters therefore form one torsor under $`\widehat{\mathcal H/\mathcal C}`$, of size at most $`D`$.
+where <code class="math">\chi_0</code> is the physical scalar character. This is <code class="math">D&#124;\mathcal C&#124;/&#124;\mathcal H&#124;</code> for every extension of <code class="math">\chi_0</code>, and zero otherwise. The occurring characters therefore form one torsor under <code class="math">\widehat{\mathcal H/\mathcal C}</code>, of size at most <code class="math">D</code>.
 
-On this torsor, a block accepts either a coset of a subgroup or no characters at all. The [affine subgroup theorem](../group-metric-constraints/manuscripts/affine-constraints-over-arbitrary-finite-groups.md) retains $`O(\log(2D)/\epsilon^2)`$ whole block predicates while preserving every character value. Since the remainder is diagonal in these eigenspaces, that scalar guarantee is precisely its Loewner guarantee. Add it to the gapped approximation and merge coefficients assigned to the same input block. Relative PSD inequalities add without additional error. Finally $`|\mathcal H|\le DQ\le2D^2`$, so an explicit character-table construction is polynomial in $`D`$. $`\square`$
+On this torsor, a block accepts either a coset of a subgroup or no characters at all. The [affine subgroup theorem](../group-metric-constraints/manuscripts/affine-constraints-over-arbitrary-finite-groups.md) retains <code class="math">O(\log(2D)/\epsilon^2)</code> whole block predicates while preserving every character value. Since the remainder is diagonal in these eigenspaces, that scalar guarantee is precisely its Loewner guarantee. Add it to the gapped approximation and merge coefficients assigned to the same input block. Relative PSD inequalities add without additional error. Finally <code class="math">&#124;\mathcal H&#124;\le DQ\le2D^2</code>, so an explicit character-table construction is polynomial in <code class="math">D</code>. <code class="math">\square</code>
 
 ## 4. Compact construction without factoring
 
-**Theorem 4.** In randomized polynomial time in the compact binary input and $`\epsilon^{-1}`$, one can retain
+**Theorem 4.** In randomized polynomial time in the compact binary input and <code class="math">\epsilon^{-1}</code>, one can retain
 
-```math
+<!-- math-display: a2a4897c324d8505d1cde9ca
 O\!\left(\min\left\{m,
 \frac{\rho\log(2\rho/\epsilon)}{\epsilon^2}\right\}\right),
 \qquad \rho=\log_2(2D),
-```
+-->
+![Formula](../../assets/math/a2a4897c324d8505d1cde9ca.svg)
 
-whole blocks with success probability at least $`2/3`$, without factoring the local dimensions.
+whole blocks with success probability at least <code class="math">2/3</code>, without factoring the local dimensions.
 
-**Proof.** For a block subset $`S`$, let $`\mathcal H_S`$ be its generated subgroup. Compute its projective displacement image using the lattice generated by the displacement columns and the diagonal modulus lattice. Hermite normal form gives the image order. An integer basis of the relation lattice identifies every displacement relation; compact Weyl multiplication maps those basis relations to scalar phases. A gcd with $`Q`$ gives the scalar subgroup order. The product is $`|\mathcal H_S|`$. Normal forms, products, and gcds have polynomial bit complexity; scalar relations cannot be discarded.
+**Proof.** For a block subset <code class="math">S</code>, let <code class="math">\mathcal H_S</code> be its generated subgroup. Compute its projective displacement image using the lattice generated by the displacement columns and the diagonal modulus lattice. Hermite normal form gives the image order. An integer basis of the relation lattice identifies every displacement relation; compact Weyl multiplication maps those basis relations to scalar phases. A gcd with <code class="math">Q</code> gives the scalar subgroup order. The product is <code class="math">&#124;\mathcal H_S&#124;</code>. Normal forms, products, and gcds have polynomial bit complexity; scalar relations cannot be discarded.
 
-The rank $`f(S)=\log_2|\mathcal H_S|`$ is normalized, monotone, and submodular, with unit positive-marginal gap and total rank $`O(\rho)`$. For any physical character, its zero-block set is closed: a block already in the subgroup generated by zero blocks must also be annihilated by that character.
+The rank <code class="math">f(S)=\log_2&#124;\mathcal H_S&#124;</code> is normalized, monotone, and submodular, with unit positive-marginal gap and total rank <code class="math">O(\rho)</code>. For any physical character, its zero-block set is closed: a block already in the subgroup generated by zero blocks must also be annihilated by that character.
 
-Apply the [exact rational rank theorem](../group-metric-constraints/manuscripts/rational-quotient-ranks-from-weak-oracles.md) to the integer-order oracle. Its concave transform and canonical-key rounding produce an exact rational rank with the same closures, the same unit positive-marginal gap, and rank $`O(\rho)`$. Quanrud's quotient theorem and [adaptive resparsification](../label-block-cut/manuscripts/adaptive-quotient-resparsification.md) then preserve all physical character queries on $`O(\rho\log(2\rho/\epsilon)/\epsilon^2)`$ whole blocks. Use constant failure budgets for this construction and the gapped sample, then add their PSD guarantees. The complete relation-lattice and fixed-denominator ledger is in [Sections 5–6 of the general-dimensional manuscript](manuscripts/arbitrary-dimension-whole-stabilizer-blocks.md). $`\square`$
+Apply the [exact rational rank theorem](../group-metric-constraints/manuscripts/rational-quotient-ranks-from-weak-oracles.md) to the integer-order oracle. Its concave transform and canonical-key rounding produce an exact rational rank with the same closures, the same unit positive-marginal gap, and rank <code class="math">O(\rho)</code>. Quanrud's quotient theorem and [adaptive resparsification](../label-block-cut/manuscripts/adaptive-quotient-resparsification.md) then preserve all physical character queries on <code class="math">O(\rho\log(2\rho/\epsilon)/\epsilon^2)</code> whole blocks. Use constant failure budgets for this construction and the gapped sample, then add their PSD guarantees. The complete relation-lattice and fixed-denominator ledger is in [Sections 5–6 of the general-dimensional manuscript](manuscripts/arbitrary-dimension-whole-stabilizer-blocks.md). <code class="math">\square</code>
 
-For prime local dimension $`p`$, the commuting projective span has field dimension at most $`n`$, so ordinary integer rank after affine homogenization is at most $`n+1`$. The commuting support is then $`O((n+1)\log((n+2)/\epsilon)/\epsilon^2)`$, while the gapped sample contributes $`O(n\log p/\epsilon^2)`$. Their sum is the sharper prime-dimensional compact bound in [Theorem SB](manuscripts/arbitrary-locality-stabilizer-block-sparsification.md).
+For prime local dimension <code class="math">p</code>, the commuting projective span has field dimension at most <code class="math">n</code>, so ordinary integer rank after affine homogenization is at most <code class="math">n+1</code>. The commuting support is then <code class="math">O((n+1)\log((n+2)/\epsilon)/\epsilon^2)</code>, while the gapped sample contributes <code class="math">O(n\log p/\epsilon^2)</code>. Their sum is the sharper prime-dimensional compact bound in [Theorem SB](manuscripts/arbitrary-locality-stabilizer-block-sparsification.md).
 
-Positive Pauli clauses $`I-P`$ are twice their accepted-eigenvalue projector penalties. The Pauli manuscript additionally preserves the total coefficient exactly and provides a distinct correlated-deletion theorem. Arbitrary deletions do not preserve a single precomputed balanced-pair decomposition; its robust construction uses hereditary importance and common label-pool scores instead.
+Positive Pauli clauses <code class="math">I-P</code> are twice their accepted-eigenvalue projector penalties. The Pauli manuscript additionally preserves the total coefficient exactly and provides a distinct correlated-deletion theorem. Arbitrary deletions do not preserve a single precomputed balanced-pair decomposition; its robust construction uses hereditary importance and common label-pool scores instead.
 
 ## Randomness and confidence
 
 Both the compact construction of Theorem 4 and the explicit-dimension
 construction accompanying Theorem 3 are Monte Carlo. Their sampling is
 classical preprocessing randomness. For the latter, assign failure budget
-$`1/6`$ to the gapped matrix-Chernoff sample and $`1/6`$ to the commuting
+<code class="math">1/6</code> to the gapped matrix-Chernoff sample and <code class="math">1/6</code> to the commuting
 explicit-character-table construction. The
 [group-theorem confidence argument](../group-metric-constraints/proof.md#randomness-and-confidence)
 uses bounded fresh partial-coloring trials and explicit table verification
 to attain that fixed confidence without changing support asymptotics.
-The union bound gives success at least $`2/3`$ for the full Loewner guarantee,
+The union bound gives success at least <code class="math">2/3</code> for the full Loewner guarantee,
 simultaneously over all states. Theorem 4 already allocates constant failure
 budgets to its gapped sample and quotient sparsifier in the same way.
 
 The separate correlated-Pauli theorem uses a single event of probability at
-least $`1-\delta`$ for all allowed failures and states; it does not rerandomize
+least <code class="math">1-\delta</code> for all allowed failures and states; it does not rerandomize
 coefficients at query time. The globally commuting failure construction
-inherits the quotient theorem's simultaneous success at least $`2/3`$.
+inherits the quotient theorem's simultaneous success at least <code class="math">2/3</code>.
 These statements do not assert a Las Vegas guarantee. The surrogate-basis
 reduction in Section 5 and the stated exhaustive exact optimization over
 that basis are deterministic.
 
 ## 5. A classical stabilizer witness
 
-**Theorem 5.** For a positive Pauli Hamiltonian, a deterministic polynomial-time reduction gives a complete stabilizer basis and a diagonal Hamiltonian $`K`$ with
+**Theorem 5.** For a positive Pauli Hamiltonian, a deterministic polynomial-time reduction gives a complete stabilizer basis and a diagonal Hamiltonian <code class="math">K</code> with
 
-```math
+<!-- math-display: 7befc32289f0f14635efacf6
 (1+1/\sqrt2)^{-1}H\preceq K\preceq(2+\sqrt2)H.
-```
+-->
+![Formula](../../assets/math/7befc32289f0f14635efacf6.svg)
 
-Every state of that basis has the same $`H`$- and $`K`$-energy. Consequently a basis state minimizing $`K`$ has energy at most $`(2+\sqrt2)E_0(H)`$.
+Every state of that basis has the same <code class="math">H</code>- and <code class="math">K</code>-energy. Consequently a basis state minimizing <code class="math">K</code> has energy at most <code class="math">(2+\sqrt2)E_0(H)</code>.
 
-**Proof.** Peeling anticommuting Pauli pairs leaves a commuting residual family. Extend its projective span to a maximal isotropic space and pinch in the associated stabilizer basis. A Pauli is either fixed or erased; in an anticommuting pair at most one can be fixed. Thus the image of $`2I-P-Q`$ is one of $`2I`$, $`2I-P`$, and $`2I-Q`$. Since $`(aP+bQ)^2=(a^2+b^2)I`$, direct eigenvalue bounds give the two displayed operator factors for each case. Summing over the pairs and the fixed residual proves the operator inequality. Pinching preserves each diagonal matrix element in its defining basis. Evaluating the upper bound on a ground state of $`H`$ and taking a minimum over basis states proves the energy conclusion. $`\square`$
+**Proof.** Peeling anticommuting Pauli pairs leaves a commuting residual family. Extend its projective span to a maximal isotropic space and pinch in the associated stabilizer basis. A Pauli is either fixed or erased; in an anticommuting pair at most one can be fixed. Thus the image of <code class="math">2I-P-Q</code> is one of <code class="math">2I</code>, <code class="math">2I-P</code>, and <code class="math">2I-Q</code>. Since <code class="math">(aP+bQ)^2=(a^2+b^2)I</code>, direct eigenvalue bounds give the two displayed operator factors for each case. Summing over the pairs and the fixed residual proves the operator inequality. Pinching preserves each diagonal matrix element in its defining basis. Evaluating the upper bound on a ground state of <code class="math">H</code> and taking a minimum over basis states proves the energy conclusion. <code class="math">\square</code>
 
-The diagonal objective is a nonnegative scalar plus weighted affine parity penalties. Enumeration on its $`d\le n`$ independent labels costs $`2^d\mathrm{poly}(L)`$ time and polynomial space, producing a stabilizer tableau. [The full witness proof](manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md) supplies the constants, prime-dimensional factor $`2(1+p^{-1/2})`$, and basis-choice lower examples. The polynomial-time reduction does not solve its remaining classical minimization in polynomial time.
+The diagonal objective is a nonnegative scalar plus weighted affine parity penalties. Enumeration on its <code class="math">d\le n</code> independent labels costs <code class="math">2^d\mathrm{poly}(L)</code> time and polynomial space, producing a stabilizer tableau. [The full witness proof](manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md) supplies the constants, prime-dimensional factor <code class="math">2(1+p^{-1/2})</code>, and basis-choice lower examples. The polynomial-time reduction does not solve its remaining classical minimization in polynomial time.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

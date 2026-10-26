@@ -23,14 +23,32 @@ part of each use; an interface analysis does not supply an omitted backend.
 - [Separating metric stretch, forest congestion, and work](../../manuscripts/graph-backends/separated-metric-forest-and-strong-sssp.md)
 - [Zero-length edges in integer distance and spanner interfaces](../../manuscripts/graph-backends/nonnegative-integer-distance-adapters.md)
 
-## Public comparison source
+## Named public sources and the operations they supply
 
-[Kyng–Meierhans–Probst Gutenberg, arXiv:2311.06402v1](https://arxiv.org/abs/2311.06402v1),
-Sections 3–4, supplies the public hierarchy reconstructed in the
-comparison notes. The improved normalized local factors are research
-premises of the main composition, not a theorem quoted from that
-public source. The matched comparison concerns these named families;
-it is not a lower bound on all dynamic APSP algorithms.
+The main hierarchy source is Rasmus Kyng, Simon Meierhans and Maximilian
+Probst Gutenberg, [*A Dynamic Shortest Paths Toolbox: Low-Congestion Vertex
+Sparsifiers and their Applications*](https://arxiv.org/abs/2311.06402v1).
+Section 3.2 gives the pivot/ball/core construction; Claims 3.17–3.18
+separate selected-edge changes from embedding work; Algorithm 6 and
+Claim 4.4 supply numerical distance queries. These particular locations
+matter because metric stretch alone does not imply a maintenance bound
+or an output-sensitive path routine.
+
+The [public retuning proof](../../manuscripts/graph-backends/public-apsp-joint-retuning-audit.md)
+also uses the following pinned ingredients:
+
+| Paper | Exact location | Operation used in the public comparison |
+|---|---|---|
+| Chuzhoy, Gao, Li, Nanongkai, Peng and Saranurak, [*A Deterministic Algorithm for Balanced Cut with Applications to Dynamic Connectivity, Flows, and Beyond*](https://arxiv.org/html/1910.08025v2) | Theorems 1.6, 2.4–2.5 and 5.1 | A deterministic cut player, auxiliary expanders and a balanced-cut construction; construction cost is kept separate from resulting conductance. |
+| Julia Chuzhoy and Thatchaphol Saranurak, [*Deterministic Algorithms for Decremental Shortest Paths via Layered Core Decomposition*](https://arxiv.org/html/2009.08479v1) | Theorem B.9; Theorem 3.7 and Lemmas 3.10–3.11 | Terminal routing in expanders and the stage/path recurrences of the decremental path oracle. |
+| Jan van den Brand and coauthors, [*A Deterministic Almost-Linear Time Algorithm for Minimum-Cost Flow*](https://arxiv.org/html/2309.16629v1) | Theorems 8.1–8.2, Algorithm 4, Theorems 8.4–8.6 and Appendix B | Deterministic static sparsification with an ambient embedding and the stated repair reduction. |
+| Li Chen, Rasmus Kyng, Yang P. Liu, Richard Peng, Maximilian Probst Gutenberg and Sushant Sachdeva, [*Maximum Flow and Minimum-Cost Flow in Almost-Linear Time*](https://arxiv.org/pdf/2203.00671v1) | Section 5.1, Algorithm 1, Claims 5.7–5.8 and Lemma 5.9 | The touched-set repair hierarchy. Its randomized static provider is replaced by the preceding deterministic one. |
+
+The improved normalized local factors in the main frontier are research
+premises, not guarantees quoted from these public theorems. The comparison
+note rederives the needed local parameter envelope rather than extending a
+printed theorem beyond its range. Its matched comparison concerns these
+named families; it is not a lower bound on all dynamic APSP algorithms.
 
 ## Evidence and provenance
 

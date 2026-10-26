@@ -28,17 +28,31 @@ interface on large instances.
 
 ## Primary references and comparison scope
 
-[Liu, arXiv:2506.19207v1, Sections 3–4](https://arxiv.org/html/2506.19207v1)
-is the public starting point for the incremental SSSP reduction.
+Yang P. Liu's [*Incremental Shortest Paths in Almost Linear Time via a
+Modified Interior Point Method*](https://arxiv.org/html/2506.19207v1),
+Sections 3–4, is the public starting point for the incremental SSSP reduction.
 The frozen-barrier retirement argument, its reporting budget, and the
 tree-segment output construction are the local additions in this
 repository. The public theorem is not cited as a proof of those additions.
 
-The comparison with the public $`20/21`$ raw engine cites
-[arXiv:2609.23852v1](https://arxiv.org/html/2609.23852v1). That comparison
-still requires the stated raw-interface composition check. A numerical
-objective solver alone does not provide exact nonzero-flow retirement
-or output-sensitive path reporting.
+The public cycle engine is Rasmus Kyng, Simon Meierhans, Maximilian
+Probst Gutenberg and Aurelio Sulser, [*A Simpler and Faster Min-Cost Flow
+Solver via Min-Ratio Cycles from Distance Oracles*](https://arxiv.org/html/2609.23852v1).
+Its Theorems 4.4–4.5 supply the published <code class="math">20/21</code> hierarchy scale;
+Definition 5.1 and Theorem 5.2 give the numerical interface and solver.
+Definition 5.1 inserts new edges at zero flow. Neither that interface
+nor a numerical objective bound supplies exact nonzero-flow retirement
+or an output-sensitive simple path.
+
+The detector's local Section 5 now proves the needed approximate
+potential directly by difference constraints: the absence of a sufficiently
+negative circulation implies no negative cycle in a bidirected constraint
+graph, whose shortest-path labels satisfy both edge inequalities. This is
+an existence proof for the analysis; it does not call an uncharged fast
+shortest-path routine. The local tree-segment manuscript separately proves
+the reporting algorithm and its construction/output charges. Thus the
+remaining large-instance dependency is the explicit numerical maintenance
+interface, not an unspecified duality or path-reporting theorem.
 
 ## Evidence and provenance
 

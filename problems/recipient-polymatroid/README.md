@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Returns at least $`\mathrm{OPT}/d`$ with $`d=4-3/r`$ against integer optimum. With a certified local factor-$`\lambda`$ availability oracle, use $`d=\lambda^{-1}+3-3/r`$. The equal-unit core also returns $`\lceil K/3\rceil`$ units from a full quota-$`K`$ promise.
+Returns at least <code class="math">\mathrm{OPT}/d</code> with <code class="math">d=4-3/r</code> against integer optimum. With a certified local factor-<code class="math">\lambda</code> availability oracle, use <code class="math">d=\lambda^{-1}+3-3/r</code>. The equal-unit core also returns <code class="math">\lceil K/3\rceil</code> units from a full quota-<code class="math">K</code> promise.
 
 **Objective and output**
 
@@ -14,7 +14,7 @@ Deterministic current-blocker search with paid exact primitives. A supplied fact
 
 **Time**
 
-Factor $`d`$ and the equal-unit core take $`2^{O(r)}\mathrm{poly}(H)`$. Factor $`d+\eta`$ takes $`\mathrm{poly}(H)\min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}`$.
+Factor <code class="math">d</code> and the equal-unit core take <code class="math">2^{O(r)}\mathrm{poly}(H)</code>. Factor <code class="math">d+\eta</code> takes <code class="math">\mathrm{poly}(H)\min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}</code>.
 
 **Space**
 
@@ -22,7 +22,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-$`r\ge1`$ is the player-matroid rank; $`\eta>0`$ is rational; optional $`0<\lambda\le1`$ is a certified local-oracle guarantee. $`H`$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+<code class="math">r\ge1</code> is the player-matroid rank; <code class="math">\eta&gt;0</code> is rational; optional <code class="math">0&lt;\lambda\le1</code> is a certified local-oracle guarantee. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 
@@ -30,7 +30,7 @@ Common intrinsic values, arbitrary normalized monotone integral submodular recip
 
 **Lower-bound scope**
 
-The [hidden-rank oracle barrier](../allocation-lower-bounds/proof.md) excludes deterministic factor strictly below two in rank-FPT oracle time. The [configuration gap](../allocation-lower-bounds/configuration-gaps.md) prevents replacing integer $`\mathrm{OPT}`$ by the simple aggregate configuration LP.
+The [hidden-rank oracle barrier](../allocation-lower-bounds/proof.md) excludes deterministic factor strictly below two in rank-FPT oracle time. The [configuration gap](../allocation-lower-bounds/configuration-gaps.md) prevents replacing integer <code class="math">\mathrm{OPT}</code> by the simple aggregate configuration LP.
 
 **Review status**
 
@@ -50,7 +50,7 @@ additional results.
 
 **[Residual-capacity comparator](../../manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md)**
 
-**Guarantee and cost.** Factor $`4-3/r`$ in $`2^{O(r)}\mathrm{poly}(H)`$ with exact local availability; factor $`\lambda^{-1}+3-3/r`$ with certified availability $`\lambda`$
+**Guarantee and cost.** Factor <code class="math">4-3/r</code> in <code class="math">2^{O(r)}\mathrm{poly}(H)</code> with exact local availability; factor <code class="math">\lambda^{-1}+3-3/r</code> with certified availability <code class="math">\lambda</code>
 
 **Scope.** Arbitrary recipient polymatroids; the allocation algorithm uses the LP as a comparator without solving it
 
@@ -58,13 +58,13 @@ additional results.
 
 **Guarantee and cost.** The same approximation against the component configuration LP
 
-**Scope.** Each supplied type has rank $`f_j=c_jr_{R_j}`$ with binary multiplicity; component constraints are retained
+**Scope.** Each supplied type has rank <code class="math">f_j=c_jr_{R_j}</code> with binary multiplicity; component constraints are retained
 
 **[Fractional weak optimizer](../../manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md)**
 
-**Guarantee and cost.** Target at least $`(1-\epsilon)\mathrm{OPT}_{\rm LP}`$ in $`(q+1)^{O(s+1)}\mathrm{poly}(H,\epsilon^{-1})`$ for support-$`s`$ cuts; the full LP takes $`2^{O(q)}\mathrm{poly}(H,\epsilon^{-1})`$
+**Guarantee and cost.** Target at least <code class="math">(1-\epsilon)\mathrm{OPT}_{\rm LP}</code> in <code class="math">(q+1)^{O(s+1)}\mathrm{poly}(H,\epsilon^{-1})</code> for support-<code class="math">s</code> cuts; the full LP takes <code class="math">2^{O(q)}\mathrm{poly}(H,\epsilon^{-1})</code>
 
-**Scope.** Coordinate-box local families; $`s=2(r-1)`$ is an XP rank bound, and the output is fractional
+**Scope.** Coordinate-box local families; <code class="math">s=2(r-1)</code> is an XP rank bound, and the output is fractional
 
 The residual-cut proof also transfers the exact integer-quota comparator.
 It preserves the critical small-quota growth boundary and does not give a
