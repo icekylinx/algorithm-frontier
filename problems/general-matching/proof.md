@@ -2,21 +2,22 @@
 
 **Yilin Liu · GPT-6 Astra Pro**
 
-**Theorem-and-proof manuscript.** The faster quantitative algorithm is
-conditional on the explicitly stated published primitives and the
-required deterministic cycle-search implementation in Section 11.6.
-An unconditional polynomial-time [reference implementation](reference/README.md)
-is available separately.
+**Theorem-and-proof manuscript.** This manuscript constructs a deterministic
+exact matching algorithm with four-fifths logarithmic overhead, using the
+named source results in Section 2.2 and the local constructions assembled
+in Theorem 11.6. The complete mathematical construction and the current
+[polynomial reference implementation](reference/README.md) have distinct
+implementation coverage.
 
 ## Abstract
 
-We organize a deterministic construction for exact maximum-cardinality matching in arbitrary undirected graphs around two interfaces: a persistent representation of the actual integral matching ledgers, and a dynamic minimum-ratio circulation backend with explicit traversal and lifetime guarantees. Our contributions are the carrier representation and its local exposure procedure, an optimum-gap formulation that applies without a perfect-matching promise, exact projection recovery from conserved near-feasible flows, and a sequential routing and normalized sparsification construction with separate structural and construction-work bounds. We prove the matching-side composition and the quantitative parameter balance. The complete time statement is conditional on the explicitly stated external primitive and raw-backend realization contracts. It yields a single deterministic program with logarithmic overhead exponent <code class="math">4/5</code>. All returned edges retain their original input identifiers.
+We construct a deterministic algorithm for exact maximum-cardinality matching in arbitrary undirected graphs around two interfaces: a persistent representation of the actual integral matching ledgers, and a dynamic minimum-ratio circulation algorithm with explicit traversal and lifetime guarantees. The construction uses the carrier representation and its local exposure procedure, an optimum-gap formulation without a perfect-matching promise, exact projection recovery from conserved near-feasible flows, and sequential routing and normalized sparsification with separate structural and construction-work bounds. Theorem 11.6 assembles the local raw-lift, repair, occurrence, retirement and finite-arithmetic proofs into the required cycle-search algorithm. The complete composition gives a single deterministic program with logarithmic overhead exponent <code class="math">4/5</code>, importing only the named source results at their stated interfaces. All returned edges retain their original input identifiers. The repository separately implements and tests a polynomial-time exact solver; it does not yet implement the full fast hierarchy.
 
 ## 1. Result, contributions, and proof scope
 
 Let <code class="math">G</code> be an undirected graph given by <code class="math">n</code> vertices and <code class="math">m</code> listed edge records. Loops and parallel records are permitted in the input. Write <code class="math">m_s</code> for the number of distinct nonloop edges and <code class="math">\nu(G)</code> for the maximum matching cardinality.
 
-**Theorem 1.1 (quantitative composition).** Assume the deterministic external primitive interfaces in Section 2 and the complete raw-backend realization contract in Section 11.6. There is one deterministic program that returns an explicit maximum-cardinality matching of <code class="math">G</code>, with original edge identifiers, in time
+**Theorem 1.1 (deterministic exact matching).** In the computational model of Section 2.1, there is one deterministic program that returns an explicit maximum-cardinality matching of <code class="math">G</code>, with original edge identifiers, in time
 
 <!-- math-display: 3dfffb10bdf03999a8ca90be
 O(n+m)+(m_s+1)
@@ -38,43 +39,57 @@ The central contributions are as follows.
 4. **Sequential routing and normalized ambient sparsification.** We give explicit finite local procedures, a virtual hierarchy with one physical root map, and a scatter–meet–reverse query induction. The static provider has structural quality <code class="math">\log\Gamma=O((p+r)\log U)</code>, while its larger construction factor remains local work.
 5. **A complete quantitative composition.** We retain selected-edge recourse, late initial update credit, occurrence pools, finite arithmetic, and the full recursive quality product. Their simultaneous balance gives (1).
 
-The proof separates the matching reduction, the geometric module interfaces,
-and the quantitative composition. The cycle-search implementation requirements
-in Section 11.6 are hypotheses of Theorem 1.1. They are not an implemented
-module or a theorem established by a single published paper. Each use is
-identified before its cost is substituted. Output verification establishes
-optimality of an accepted matching; it does not establish the faster time bound.
+The theorem uses the named source results in Section 2.2. Theorem 11.6
+supplies the required cycle-search interface by composing the local
+construction proofs; Section 12 then balances their actual costs. No single
+source paper is asserted to prove the improved bound. The
+[checkpoint source map](sources.md#checkpoint-provenance) records the
+construction chain already present in the revised 24 October checkpoint.
+The absence of an end-to-end fast implementation is a code-coverage limit,
+not an additional mathematical hypothesis. Output verification establishes
+optimality of an accepted matching; the construction proofs establish the
+faster time bound.
 
 ### 1.1 Unconditional executable companion
 
 The [standard-library reference solver](reference/README.md) implements
 the normalization, connected-component decomposition and exact edge kernel
-of Section 3.1. An additional
+of Section 3.1. The earlier checkpoint's
 [outside-endpoint compression](reference/cover-compression-proof.md) preserves
 every matchable subset of the computed cover and leaves at most
-<code class="math">4\nu(G_i)</code> vertices for a classical deterministic Edmonds blossom
-search. For nonempty normalized input components <code class="math">G_i</code>, its time is
+<code class="math">4\nu(G_i)</code> vertices for the final exact matching search.
+Both the crossing compression and a final bipartite solve use
+Hopcroft–Karp; other final solves use classical Edmonds blossom.
+For nonempty normalized input components <code class="math">G_i</code>, its time is
 
-<!-- math-display: 29ab54a1c33a4e04fc8cb2b4
-O\!\left(n+m\log(m+2)+\sum_i\nu(G_i)^3\right).
+<!-- math-display: 6c0fddf87e29fb75109bfdec
+O\!\left(n+m\log(m+2)+\sum_i\nu(G_i)^{p_i}\right),
+\qquad p_i\in\{5/2,3\}.
 -->
-![Formula](../../assets/math/29ab54a1c33a4e04fc8cb2b4.svg)
+![Formula](../../assets/math/6c0fddf87e29fb75109bfdec.svg)
+
+The exponent is `5/2` if the first retained edge kernel is bipartite and
+`3` otherwise. The [complete bipartite proof](reference/bipartite-proof.md)
+derives the matching-number phase bound and linear certificate extraction;
+all originally bipartite input components satisfy its condition.
 
 It returns the original selected edge IDs and uses <code class="math">O(n+m)</code> records,
 with actual label bytes and comparison costs charged separately. Its
 optional certificate mode has the same bound. Certificate extraction still
 runs on the original edge kernel; with <code class="math">k_i</code> vertices and <code class="math">h_i</code>
-edges there, it costs <code class="math">O(h_i+k_i(\nu(G_i)+1))</code>, within the stated
-cubic envelope. No matching-number estimate is supplied as input.
+edges there, it costs `O(k_i+h_i)` in the bipartite case and
+<code class="math">O(h_i+k_i(\nu(G_i)+1))</code> otherwise, within the respective
+solve bounds. No matching-number estimate is supplied as input.
 A [separate verifier](reference/verify_certificate.py) checks exact kernel
 preservation and a Tutte–Berge upper bound using graph scans and comparison
 sorting, without calling a matching algorithm. The reference documentation
 proves that acceptance certifies maximum cardinality. Its
 [self-contained extraction proof](reference/certificate-proof.md) derives a
-tight odd-component barrier from one exhausted alternating forest;
-classical blossom search supplies the initial maximum matching. None of
-Section 11.6's cycle-search requirements is needed by this implementation.
-The extra cubic preprocessing is used only in this executable companion,
+tight general odd-component barrier from one exhausted alternating forest;
+the bipartite proof obtains the same certificate equality from a minimum
+vertex cover. This implementation uses classical matching searches;
+it does not execute Theorem 11.6's cycle-search hierarchy.
+The additional polynomial matching work is used only in this executable companion,
 and is not charged to or assumed by the faster composition theorem.
 
 ## 2. Model, notation, and inherited primitives
@@ -108,7 +123,10 @@ We separate the following parameters throughout.
 
 ### 2.2 External inputs
 
-We assume the following source results at their indicated interfaces. The bibliography gives primary source locations. Only these local interfaces are inherited; the new parameterized composition is developed below.
+We use the following named source results at their indicated interfaces.
+The bibliography gives primary source locations. These are ordinary
+mathematical dependencies; the parameterized composition and the additional
+algorithmic interfaces are proved below and in the linked companion proofs.
 
 | Input | Interface used |
 |---|---|
@@ -122,7 +140,10 @@ We assume the following source results at their indicated interfaces. The biblio
 
 The matching-state localization input has a particularly useful precise form. A projection from an integral parent of floor <code class="math">c+1</code> and debt <code class="math">P_{\mathrm d}</code> to floor <code class="math">c</code> uses a frozen parent. Its threshold networks expose <code class="math">O(P_{\mathrm d}+1)</code> records, keep permanent sink locks, have total source deficit at most <code class="math">P_{\mathrm d}</code>, and admit the true/optimistic-region recovery in Section 8. We inherit this locality and its bounded objective/lock accounting from the source framework; an exact flow existence argument alone is not its locality proof.
 
-All external statements are assumed correct, as stipulated for this manuscript. Our own routing, normalization, lifetime, and parameter claims are not assigned to those external results merely because their constructions use them.
+The theorem relies on these source results in their stated scope. Its
+routing, normalization, lifetime and parameter claims are supplied by the
+local constructions, rather than attributed to a source result with a
+different interface or parameter range.
 
 ## 3. Exact input reductions
 
@@ -154,7 +175,7 @@ h_i\leq\min\left\{m_i,\binom{c_i}{2}+c_i^2\right\}
 -->
 ![Formula](../../assets/math/ad0a5dc30399fd01705c24bb.svg)
 
-Under the same hypotheses as Theorem 1.1, the solve time refines to
+Applying Theorem 1.1 to each retained component gives the refined time
 
 <!-- math-display: c11b4819087eae338a95a968
 O(n+m)+\sum_{i=1}^{a}(h_i+1)
@@ -502,7 +523,7 @@ Here <code class="math">B</code> is the incidence matrix; take <code class="math
 -->
 ![Formula](../../assets/math/2c38189940759e4c12e8da1a.svg)
 
-Zero-score cases may return a certified zero alternative. A complete cap <code class="math">E</code> also bounds initialization per actual record, amortized edits and queries, exposed logs, occurrence multiplicity, and answer pieces. The interface includes disconnected graphs, genuine loops, native identities, stable path images, dormant occurrences, and complete retirement transfers. Numerical instances have actual nominal size at most <code class="math">S^2</code>, <code class="math">O(s)</code>-bit root prices, and a fixed polynomial master history. Section 11.6 specifies the realization obligations used by Theorem 1.1.
+Zero-score cases may return a certified zero alternative. A complete cap <code class="math">E</code> also bounds initialization per actual record, amortized edits and queries, exposed logs, occurrence multiplicity, and answer pieces. The interface includes disconnected graphs, genuine loops, native identities, stable path images, dormant occurrences, and complete retirement transfers. Numerical instances have actual nominal size at most <code class="math">S^2</code>, <code class="math">O(s)</code>-bit root prices, and a fixed polynomial master history. Theorem 11.6 constructs this interface and supplies the bounds used by Theorem 1.1.
 
 ### 8.2 A direct master-scale priced client
 
@@ -1046,7 +1067,11 @@ Replacing a route <code class="math">R_0(e)</code> by <code class="math">R_1(e)<
 
 ## 11. Dynamic repair, degree reset, and the complete raw backend
 
-This section specifies the current backend realization and its quantitative proof obligations. Its local structural and recurrence arguments are given explicitly. The large distance-geometry/occurrence implementation is retained as the realization contract in Section 11.6; the main theorem is conditional on that complete contract.
+This section constructs the dynamic cycle-search hierarchy and records its
+chronological work, literal path lengths and finite arithmetic. Sections
+11.1–11.5 give the main invariants and recurrences. Theorem 11.6 identifies
+the complete companion constructions that instantiate each required
+interface and proves that their composition has those bounds.
 
 ### 11.1 Actual-size stable cores
 
@@ -1242,7 +1267,16 @@ The finite-bit tree interface required here is the following: on a connected <co
 -->
 ![Formula](../../assets/math/0cabacbdb870530f5b44fb96.svg)
 
-in <code class="math">(n'+m')\mathrm{poly}(b+\log(n'+m'+4))</code> bit work. Its geometric realization uses the weighted petal construction of [AN]: exact weighted portals on a common dyadic grid, a static directed metric during each petal, exact midpoint tests, and separate working and inherited target paths. Temporary portal coordinates are removed before exporting the tree. We treat this finite-bit realization, including its geometric induction, as part of the backend contract; only its integration into the numerical hierarchy is proved here.
+in <code class="math">(n'+m')\mathrm{poly}(b+\log(n'+m'+4))</code> bit work. The
+[finite-bit petal-tree adapter](../../manuscripts/graph-backends/an-weighted-finite-bit-adapter.md),
+Sections 1–7, proves this realization using the weighted petal geometry of
+[AN]. It uses exact weighted portals on a common dyadic grid, one static
+directed metric during each petal, exact midpoint tests, and separate
+working and inherited target paths. It omits short-edge contractions and
+pays polynomial overhead in the aspect-bit bound. Temporary portal
+coordinates are removed before exporting the original-edge tree. The
+[stable-forest integration proof](../../manuscripts/graph-backends/polynomial-bit-stretch-stable-forest-integration.md),
+Sections 2–7, supplies the weighted calls and the acyclic bit bound below.
 
 For weighted forest calls, use occurrence counts <code class="math">N_e</code> and integer importance <code class="math">w_e=N_e\ell_e</code>. If a component has <code class="math">a</code> edges and total <code class="math">W_0&gt;0</code>, smooth by <code class="math">v_e=aw_e+W_0</code> and use replica counts <code class="math">\lceil av_e/\sum_fv_f\rceil</code>, totaling at most <code class="math">2a</code>. If <code class="math">W_0=0</code>, use uniform positive weights. Reciprocal ordering uses the dyadic proxy <code class="math">2^{-\lceil\log\ell_e\rceil}</code>. All these operations use integer arithmetic or one common power-of-two grid.
 
@@ -1275,42 +1309,146 @@ forests. This count includes the length aspect. Temporary spectral, moment, or p
 
 <a id="116-explicit-raw-backend-realization-contract"></a>
 
-### 11.6 Required deterministic cycle-search implementation
+### 11.6 Deterministic cycle-search realization
 
-The following is the precise internal realization hypothesis used in Theorem 1.1. It states more than an ordinary distance oracle or a net-norm cycle oracle.
+The next theorem instantiates the interfaces used above. In particular,
+the raw-length comparison, occurrence maintenance and finite-bit tree
+construction are supplied by the linked proofs. They are not additional
+unproved primitives.
 
-**Unresolved implementation hypothesis.** A fixed finite deterministic
-implementation must maintain the graph hierarchy, repair it after updates,
-control its degrees, and represent the reported circulations by signed
-physical-edge and forest-path pieces. Its length certificate counts every
-traversal before cancellation. The following five requirements must all hold:
+**Theorem 11.6 (realization and dependency closure).** Use the deterministic
+source results in Section 2.2, the actual-size conventions of Section 11.1,
+and the parameter family (73). For every sufficiently large master size,
+fixed sufficiently large cap constants give a finite deterministic dynamic
+algorithm realizing Section 8.1 on its announced polynomial master
+history. This includes disconnected graphs, native parallel records,
+genuine positive-length loops, and representation changes chosen from the
+settled past. It returns signed physical-edge and forest-path pieces whose
+gradient is exact and whose length certificate dominates every physical
+traversal before cancellation.
 
-1. **Geometric comparison.** The local distance-to-cycle decomposition is valid on its actual degree-three multigraphs. The one-level loss is bounded by a fixed power of <code class="math">\Gamma^{K_{\mathrm r}}U</code>; complete recursion gives (69), with numerator identities and literal traversal certificates as in (56) and (65).
-2. **Construction and recourse.** For every chronological prefix and the first attempted batch, actual local work, selected support/degree, published child edits, and initial credit satisfy (61)–(67). Old loop lifetimes, native splits, and disconnected small components obey Section 11.1.
-3. **Occurrences and retirement.** The flat forests are actual forests with the pool inventory in Section 11.4. The implementation reports every exposed representation change, preserves the old immediate maps through retirement, counts dormant and isolated occurrences, and transfers both signed and absolute counters. Queries expose only settled transactions.
-4. **Finite arithmetic.** The weighted original-edge tree realization satisfies (70); its exported labels satisfy (71)–(72). All temporary and stored arithmetic, explicit paths, dictionaries, and private resident records are charged. Root prices fit the fixed master envelope of Section 8.
-5. **Uniform executable bounds.** Fixed, enumerable cap constants suffice for all these claims uniformly in <code class="math">U,p,r,K_{\mathrm r},k</code>. Actual-size base cases and finite guards are implemented, and initialization is proportional to actual inventory.
+Before balancing the parameters, its occurrence, initialization and update
+bounds are (67)–(68), and its inverse raw quality is (69). Thus the work
+and record bounds are
+<code class="math">k^{O(1)}W(cP_{\mathrm b})^{O(d_*)}</code>;
+the separate quality bound includes
+<code class="math">\exp O(d_*K_{\mathrm r}\log\Gamma+d_*\log U)</code>.
+The same work envelope pays queries, their exposed logs and explicit
+answer pieces. Stored lengths and gradients satisfy (71)–(72). All
+polynomial degrees and implicit constants are fixed independently of the
+growing parameters.
 
-The carrier, rounding, entropy, weighted selection, degree-feedback,
-recurrence solution and parameter balance have separate local arguments.
-Those arguments do not supply a complete executable implementation satisfying
-these five requirements. Equations (67) and (69) yield the next section's
-cap only if all five hold.
+The intermediate constructions allow integer
+<code class="math">1\leq p,r,K_{\mathrm r}\leq U</code> with
+<code class="math">(p+r)h\leq U</code>. Each local call uses its actual
+resident graph, the local source range or the stated direct base case,
+and the bit guard of Section 11.5. Section 12 checks the shrinkage, depth,
+aspect and numerical-client inequalities for (73); no inadmissible
+parameter substitution into a complete published hierarchy is used.
 
-For the exact published boundary, Kyng–Meierhans–Probst Gutenberg–Sulser,
-[*A Simpler and Faster Min-Cost Flow Solver via Min-Ratio Cycles from Distance
-Oracles*, arXiv:2609.23852v1](https://arxiv.org/html/2609.23852v1),
-Theorems 4.4–4.5, provides a deterministic hierarchy at its own
-<code class="math">\exp(O(\log^{20/21}m\log\log m))</code> scale. Its Definition 5.1 inserts
-edges with zero flow; it does not specify retirement of a positive frozen
-flow. Its Lemma 5.4, as printed, gives a path-length inequality in the
-opposite direction from the upper certificate needed here. The required
-direction is that the reported physical traversal sum is at most the
-charged length certificate. The accompanying source discussion and the
-[local lift argument](../../manuscripts/graph-backends/distance-oracle-raw-lift.md)
-must be checked at that stronger interface. Neither the printed lemma
-alone nor the published parameter choice establishes the four-fifths
-time bound. The [source map](sources.md) identifies the remaining imports.
+| Required interface | Construction that supplies it | Bound and application scope |
+|---|---|---|
+| Literal raw-cycle quality and exact gradients | [Raw lift](../../manuscripts/graph-backends/distance-oracle-raw-lift.md), Sections 2–7; [normalized cycle comparison](../../manuscripts/graph-backends/normalized-route-cycle-comparison.md), Sections 1–6; [degree reset](../../manuscripts/graph-backends/distance-degree-reset-candidate.md), Sections 2–5 | Nonloop root legs, same-root fundamental cycles, retained-edge gauge correction and the circulation identity give (56), (65) and the full product (69). The final local extraction loss is paid once. |
+| Chronological initialization, repair and selected-edge recourse | [Static-base repair](../../manuscripts/graph-backends/amortized-static-base-distance-sparsifier.md), Sections 3–7; [projected route composition](../../manuscripts/graph-backends/normalized-projected-route-composition.md), Sections 1–5; [route notifications](../../manuscripts/graph-backends/demand-route-notifications-and-local-work.md), Sections 2–6 and 8 | Every prefix, including an attempted cascade, satisfies (59)–(63). Initial credit may be spent later and is paid by the child update term in (67). Full route and inverse-list maintenance enters <code class="math">W</code>; only selected native-edge changes enter <code class="math">P_{\mathrm b}</code>. |
+| Genuine occurrence forests, dormant records and retirement | [Degree reset and flat pools](../../manuscripts/graph-backends/distance-degree-reset-candidate.md), Sections 2–7; [lifetime and loop construction](../../manuscripts/graph-backends/numerical-backend-lifetime-and-loops.md), Sections 1–5; [disconnected-component wrapper](../../manuscripts/graph-backends/disconnected-component-backend-wrapper.md), Sections 2, 5–8 | Stable fibers belong to actual lifetimes; dormant and isolated copies count in (67). Old maps remain valid until signed increments and absolute motion are transferred. Query and consumption form one atomic transaction. Positive-length loops have their separate exact-ratio service. |
+| Finite-bit original-edge trees and additive label growth | [Finite-bit petal-tree adapter](../../manuscripts/graph-backends/an-weighted-finite-bit-adapter.md), Sections 1–7; [stable-forest integration](../../manuscripts/graph-backends/polynomial-bit-stretch-stable-forest-integration.md), Sections 2–7; [deterministic path ties](../../manuscripts/graph-backends/deterministic-symbolic-shortest-path-ties.md), Sections 1–6 | Equation (70) holds in polynomial aspect-bit work. Integer smoothing and a common dyadic reciprocal grid avoid unrelated denominators. The exact label formula (71) gives only <code class="math">O(U)</code> added bits per level, before the tree's cost is substituted. |
+| A uniform finite router, static provider and common caps | [Sequential router](../../manuscripts/graph-backends/sequential-expander-routing-tradeoff.md), Sections 2–8; [linear-parameter static provider](../../manuscripts/graph-backends/linear-parameter-static-sparsifier.md), Sections 2–7; [uniform source interfaces](../../manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md), Sections 1–8; [quantitative composition](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md), Sections 3–7 | The explicit providers give <code class="math">\log\Gamma=O((p+r)h)</code> and <code class="math">\log F=O(U/p+U/r+r^2h+(p+r)h)</code>. Actual-size base cases, temporary bit work, both witness-query volumes and all recursive quality factors are charged. Fixed enumerable constants suffice. |
+
+**Proof.** First construct the static provider rather than assuming its
+output type. The
+[virtual hierarchy](../../manuscripts/graph-backends/virtual-expander-hierarchy-reconstruction.md),
+Sections 3–5.1, supplies literal child inclusions, the corrected coverage
+guarantee, and the complete family of paths flattened through one root
+embedding. Exact short-path matching, the fresh-cut adapter, the
+threshold-at-most-one-eighth entropy proof, the energy cut player and the
+leaf circuits supply its local procedures. The
+[full-router induction](../../manuscripts/graph-backends/conditional-full-router-from-shufflers.md),
+Sections 3–8, then routes the real and dummy tokens with exact destinations.
+Its generic input hypotheses are all supplied by that hierarchy and its
+leaf circuits; the sequential router's Section 6 performs this
+instantiation explicitly. Thus a filename containing “conditional” does
+not leave the present router as an assumption.
+
+The static provider uses this router in both weighted-witness directions
+and pays full host size times load in both calls. Deterministic weighted
+path selection and immediate-graph loop erasure supply the selected
+support and normalized paths. This proves Proposition 10.1 with its
+separate structural factor <code class="math">\Gamma</code> and construction
+factor <code class="math">F</code>. Small balanced-cut calls clip
+<code class="math">r</code> to their actual legal range. The old complete
+dynamic-spanner theorem is never invoked at
+<code class="math">K_{\mathrm r}=t^2</code>.
+
+Next apply the static-base schedule to each actual stable core. The
+prefix potential proof bounds all feedback cuts before settlement;
+deduplicated selected-edge IDs determine degree and child publication.
+The route-owner recurrence gives (62), including endpoints of formerly
+empty routes. Explicit forward and inverse lists enumerate every changed
+correction route; the selected edge keeps its own central provenance.
+Consequently this local work is charged by (63), without turning each
+correction change into a recursive input edit. The late initial credit
+is a genuine chronological charge, so (67) retains both
+<code class="math">J_{d-1}</code> and <code class="math">T_{d-1}</code>.
+
+Insert the stable degree-three fibers and flat root pools. Contracting
+the assigned pool trees recovers the child forest, which proves that the
+expanded object is a forest. A child forest change alters a connecting
+record or claims a counted pool slot; parent cuts are separately applied
+to all descendant copies. Pool growth uses observed-count doubling, whose
+replacement and retirement work is charged geometrically. The lifetime
+construction transfers both signed flow and absolute motion while the
+old maps are valid, retains dormant copies, and queues refreshes until a
+returned answer is consumed or discarded. These rules preserve the
+numerical identities on every completed transaction and under adaptive
+histories of settled operations.
+
+For quality, the raw-lift proof bounds each literal lifted traversal.
+A same-root edge uses its simple fundamental cycle; a nonloop uses its
+two root legs. Retained edges receive the frozen-potential correction
+before zero-link contraction. Hence gradients telescope on complete
+circulations and raw length is bounded in the required direction.
+The normalized-route identity preserves its correction alternative, and
+degree reset preserves the numerator with (65)'s length domination.
+Multiplying all level losses gives (69); the terminal extraction loss is
+not repeated at every level.
+
+For arithmetic, the petal adapter proves the weighted original-edge
+tree interface with polynomial cost in
+<code class="math">b+\log(n'+m'+4)</code>. Its portals lie on one dyadic grid
+and its temporary coordinates do not become numerical labels. The fixed
+label expression (71) depends on simple original-tree paths, so its
+magnitude is bounded independently of the average stretch or number of
+weighted calls. This establishes (72) before charging the polynomial
+tree work. Weighted future-path halving includes the aspect term and all
+initial singleton edges. Deterministic symbolic ties, integer replicas
+and exact conditional expectations introduce no random seed or
+uncharged real operation.
+
+All remaining loops are finite scans, dictionary operations, explicit
+path operations or named deterministic source calls within their stated
+ranges. The recurrences therefore have fixed uniform constants.
+Equations (67)–(69) and the acyclic bit induction give the asserted work,
+record and quality bounds. Their simultaneous substitution in Section 12
+provides a favorable fixed cap tuple; that section handles all finite
+exceptional sizes by the independently checked classical worker. ∎
+
+**Published boundary and implementation coverage.** Kyng, Meierhans,
+Probst Gutenberg and Sulser's
+[*A Simpler and Faster Min-Cost Flow Solver via Min-Ratio Cycles from
+Distance Oracles*, arXiv:2609.23852v1](https://arxiv.org/html/2609.23852v1),
+Theorems 4.4–4.5, gives its own deterministic
+<code class="math">\exp(O(\log^{20/21}m\log\log m))</code> hierarchy.
+That parameter choice is not the proof of this theorem. Its zero-flow
+insertion operation is supplemented here by the proved lifetime transfer,
+and the raw-lift proof supplies the physical-length upper bound required
+in place of the printed direction in its Lemma 5.4. The new routing,
+repair and finite-bit constructions supply the improved parameters.
+These are mathematical algorithms and proofs already present in the
+24 October construction chain. End-to-end fast code remains future
+implementation work; the available reference solver has its own
+polynomial bound. The [source map](sources.md) identifies every imported
+paper and the [verification note](verify/README.md) records the narrower
+executable evidence.
 
 ## 12. Parameter balance and one finite program
 
@@ -1381,7 +1519,8 @@ Since <code class="math">t^5h\leq U</code>, all logarithmic overhead charges are
 <code class="math">\log P_{\mathrm b}/x=O(1/t+t^2h/U)=o(1)</code>, so the child size factor <code class="math">P_{\mathrm b}/k\leq k^{-1/2}</code> eventually; <code class="math">d_*</code> has fixed slack. On a nonbase graph <code class="math">\log m'\geq x-O(1)</code>, and
 <code class="math">b_*/x^2=O(t^3/U)=o(1)</code>, satisfying the stored-label aspect guard. Smaller instances use their direct charged base solver.
 
-Thus, assuming the implementation specified in Section 11.6, a fixed sufficiently large pair <code class="math">(c_C,c_E)</code> gives the computable complete cap
+By Theorem 11.6, a fixed sufficiently large pair
+<code class="math">(c_C,c_E)</code> therefore gives the computable complete cap
 
 <!-- math-display: b1bbf358860e881023720016
 E_*=2^{c_E x},\qquad
@@ -1398,13 +1537,26 @@ To obtain one program without numerical advice about sufficiently large constant
 
 Each worker checks degree, size, history, prefix-recourse, depth, label, and work caps before using a result. A cap violation suspends the worker, and an overlong path is never truncated. Before any candidate is accepted, validate its edge list and run one independent deterministic augmenting-path search [Gabow] on the shared compact graph. No augmenting path certifies maximum cardinality. Verification and candidate materialization are charged inside that worker's instruction share.
 
-This arrangement always terminates and returns a correct answer: the classical worker receives positive share and supplies one, while no accepted candidate fails the augmenting-path criterion. Under the external interfaces and the implementation requirements of Section 11.6, some fixed tuple is favorable for every sufficiently large input. Its scheduling penalty is constant, its finite-word simulation overhead is polynomial in <code class="math">s</code>, and its verified completion is bounded by (31). Any finite collection of exceptional input sizes is absorbed into a uniform constant.
+This arrangement always terminates and returns a correct answer: the
+classical worker receives positive share and supplies one, while no accepted
+candidate fails the augmenting-path criterion. Theorem 11.6 and the
+inequalities in Section 12.1 prove that some fixed tuple is favorable for
+every sufficiently large input. To see that the guards do not add a new
+hypothesis, consider its first purported failure. All prior transactions
+satisfy the invariants; the chronological prefix bounds also cover the
+attempted batch. The work, size, label and depth bounds consequently fit
+that tuple's caps, contradicting first failure. Its scheduling penalty is
+constant, its finite-word simulation overhead is polynomial in
+<code class="math">s</code>, and its verified completion is bounded by (31).
+Any finite collection of exceptional input sizes is absorbed into a
+uniform constant. The output verifier alone would not establish this
+favorable-tuple or running-time argument.
 
 The classical worker also bounds total pretermination instructions and allocated records by a fixed polynomial in the compact instance size, up to scheduler overhead. Addresses and live scheduling indices therefore need only <code class="math">O(s)</code> bits. This justifies the charged word simulation used by the persistent memory and the portfolio.
 
 ### 12.3 Completion of Theorem 1.1
 
-Substitute <code class="math">U=2s</code> and (77) into (31). Since <code class="math">S=\Theta(e+1)</code> for the cleaned subcubic construction, all fixed polynomial factors in <code class="math">s</code> fit the exponential in (1). Cleanup and optional kernel construction cost <code class="math">O(n+m)</code>; candidate checks use only that shared compact exact-preserving graph. Translate only the accepted matching's edge identifiers once. Lemmas 3.1 and 3.2 give exactness on the original input and the kernelized form of the second term. This proves the stated conditional composition theorem. ∎
+Substitute <code class="math">U=2s</code> and (77) into (31). Since <code class="math">S=\Theta(e+1)</code> for the cleaned subcubic construction, all fixed polynomial factors in <code class="math">s</code> fit the exponential in (1). Cleanup and optional kernel construction cost <code class="math">O(n+m)</code>; candidate checks use only that shared compact exact-preserving graph. Translate only the accepted matching's edge identifiers once. Lemmas 3.1 and 3.2 give exactness on the original input and the kernelized form of the second term. This proves Theorem 1.1, using the instantiated construction of Theorem 11.6 and the named source results in Section 2.2. ∎
 
 ## References
 

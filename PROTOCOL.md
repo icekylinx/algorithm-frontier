@@ -20,10 +20,19 @@ Use these labels consistently:
 - **Internal review:** the repository records a complete internal mathematical review.
 - **Formal verification:** a machine-checked derivation establishes the exact stated claim. An executable finite check alone is not a formalization of an asymptotic theorem.
 - **External peer review:** an external review or publication record is actually available.
-- **Conditional:** the result depends on a named backend, oracle, representation, or complexity assumption.
+- **Conditional:** the result still assumes a mathematical claim or interface
+  for which no applicable proof or realization is supplied. Identify that
+  assumption. A stated oracle or representation defines a model; a proved
+  local construction or named published theorem is a dependency, not an
+  unresolved hypothesis. Record these categories separately.
 - **Historical:** the result remains for provenance but is not the current strongest same-scope record.
 
 Do not turn an audit note into a formal-verification claim. An output verifier proves the returned object's validity; it does not independently prove a fast running-time claim.
+
+Before downgrading a result, trace its dependencies through the canonical
+proofs and the checkpoint manifests. Generic conditional interface lemmas
+may already have concrete instantiations elsewhere. Executable coverage and
+formalization status are separate from mathematical proof readiness.
 
 ## Complexity discipline
 
@@ -32,6 +41,8 @@ Every public result should separate guarantee, objective, time, space, parameter
 GitHub-facing pages use literal inline mathematical code and checked-in SVG
 equations. Their exact TeX source remains recoverable; no live GitHub math
 renderer is required. TeX migration and PDF readiness are tracked separately.
+Machine-readable TeX, code, JSON and verification records retain their text;
+the static-image convention applies only to presentation surfaces.
 See [the maintenance guide](CONTRIBUTING.md).
 
 ## Recommended citation

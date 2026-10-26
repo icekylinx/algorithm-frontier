@@ -4,8 +4,8 @@
 Pandoc is used only for authoring. --check validates source, generator and
 output hashes with Python. Every mathematical AST node is compared with the
 source parser before export, so a dropped or changed formula blocks the build.
-The generated body fragments deliberately do not invent the missing original
-Subset Sum document class, fonts or page geometry.
+Generated body fragments preserve the exact mathematical source. Selected
+complete packages use the recovered original Subset Sum paper style.
 """
 from __future__ import annotations
 
@@ -14,6 +14,7 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 import sys
 from urllib.parse import urlsplit
@@ -31,6 +32,15 @@ SOURCES = [
     'problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md',
     'problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md',
     'problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md',
+    'problems/general-matching/reference/bipartite-proof.md',
+    'problems/degree-constrained-subgraphs/proof.md',
+    'problems/degree-constrained-subgraphs/reference/correctness.md',
+    'problems/weighted-prefix-quota-frontier/manuscripts/laminar-dominant-weight-recovery.md',
+    'problems/weighted-prefix-quota-frontier/manuscripts/two-positive-weight-laminar-boundary.md',
+    'problems/weighted-prefix-quota-frontier/manuscripts/compatible-cut-quota-extension.md',
+    'problems/boolean-linear-compiler/proof.md',
+    'problems/boolean-linear-compiler/manuscripts/boolean-linear-optimization-compiler.md',
+    'manuscripts/graph-backends/published-flow-capacity-scaling.md',
 ]
 MANIFEST = ROOT / 'manuscripts' / 'tex-exports.json'
 
@@ -54,10 +64,47 @@ def pandoc(*arguments: str, data: str) -> str:
                           capture_output=True, check=True).stdout
 
 
-def export(source: str, path: Path, expected: list[dict[str, object]]) -> str:
+def export(source: str, path: Path, expected: list[dict[str, object]], *, paper: bool = False,
+           preserve_section_labels: bool = False) -> str:
     ast = json.loads(pandoc('--from=markdown+tex_math_dollars+raw_tex', '--to=json', data=source))
+    prefix = 'af-' + digest(path.relative_to(ROOT).as_posix().encode())[:10] + '-'
+    if paper:
+        # The wrapper supplies the paper/part title; source headings below it
+        # become numbered article sections rather than duplicated titles.
+        ast['blocks'] = [node for index, node in enumerate(ast['blocks'])
+                         if not (index == 0 and node.get('t') == 'Header' and node['c'][0] == 1)]
+        def navigation(node):
+            return (node.get('t') == 'Para' and
+                    sum(x.get('t') == 'Link' for x in node['c']) >= 2 and
+                    all(x.get('t') in {'Link', 'Space'} or
+                        (x.get('t') == 'Str' and x.get('c') in {'·', '|', ';'})
+                        for x in node['c']))
+        if ast['blocks'] and navigation(ast['blocks'][0]):
+            ast['blocks'].pop(0)
+        # The article wrapper owns author metadata. Retain mathematical
+        # paragraphs, and verify their full AST against the source below.
+        if ast['blocks'] and ast['blocks'][0].get('t') == 'Para':
+            first = ast['blocks'][0]['c']
+            if (len(first) == 1 and first[0].get('t') == 'Strong' and
+                    'Yilin' in str(first[0]) and 'GPT-6' in str(first[0])):
+                ast['blocks'].pop(0)
+        if ast['blocks'] and ast['blocks'][-1].get('t') == 'Para':
+            first = ast['blocks'][-1]['c'][:1]
+            if first and first[0].get('t') == 'Strong' and first[0].get('c') == [{'t': 'Str', 'c': 'Attribution:'}]:
+                ast['blocks'].pop()
     observed = []
     for node in walk(ast):
+        if node.get('t') == 'Header':
+            if node['c'][1][0]:
+                node['c'][1][0] = prefix + node['c'][1][0]
+            if paper:
+                node['c'][0] = max(1, node['c'][0] - 1)
+                words = node['c'][2]
+                if not preserve_section_labels and words and words[0].get('t') == 'Str' and re.fullmatch(
+                        r'(?:[IVX]+\.)?\d+(?:\.\d+)*\.?', words[0].get('c', '')):
+                    words.pop(0)
+                    if words and words[0].get('t') == 'Space':
+                        words.pop(0)
         if node.get('t') == 'Math':
             kind, tex = node['c']
             display = kind['t'] == 'DisplayMath'
@@ -65,6 +112,8 @@ def export(source: str, path: Path, expected: list[dict[str, object]]) -> str:
         if node.get('t') in {'Link', 'Image'}:
             target = node['c'][-1][0]
             parsed = urlsplit(target)
+            if target.startswith('#'):
+                node['c'][-1][0] = '#' + prefix + target[1:]
             if not parsed.scheme and not target.startswith('#'):
                 destination = (path.parent / parsed.path).resolve()
                 relative = destination.relative_to(ROOT).as_posix()
@@ -114,7 +163,7 @@ def main() -> int:
                   '% Recovered-source SHA-256: ' + source_hash + '\n' +
                   '% Rebuild: python3 tools/build_manuscripts.py\n' +
                   '% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.\n' +
-                  '% Final document preamble must use the recovered original Subset Sum style.\n\n')
+                  '% Shared original Subset Sum preamble: manuscripts/paper-style.tex.\n\n')
         target.write_text(header + body, encoding='utf-8')
         entries.append({'source': name, 'target': target.relative_to(ROOT).as_posix(),
                         'source_sha256': source_hash, 'tex_sha256': digest(target.read_bytes()),

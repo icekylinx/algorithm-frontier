@@ -2,7 +2,7 @@
 
 **Yilin Liu · GPT-6 Astra Pro**
 
-## 1. Model and interface hypothesis
+## 1. Model, generic interface and its construction
 
 Let an undirected graph have positive integer lengths in `[1,N^c]` for a fixed constant `c`. Let `M=n_0+m_0+Q` count the initial vertex and edge inventory and all elementary insertions and deletions, with `N>=M+4`. An edge-weight replacement is a deletion followed by an insertion. Parallel edge lifetimes have distinct identifiers. Write
 
@@ -35,6 +35,18 @@ The hierarchy uses actual local inventories, returns upper distance estimates, a
 ![Formula](../../assets/math/60c2f287f696a00ea50aba91.svg)
 
 Here `W` is initialization plus total update work, `gamma` is stretch, and `P` includes child inventories and encoded child edits. A query follows one pair of pivot handles per level, ending in an exact table lookup, and costs `O(d poly(U))`. The shrink condition is `x>=C log P` for a sufficiently large fixed constant. The construction and the chronological accounting for initial credit are supplied by the [separated metric hierarchy](../../manuscripts/graph-backends/separated-metric-forest-and-strong-sssp.md). Equations (1)–(2), including the query interface, are the hypotheses of this composition theorem; they are not inferred from a distance-stretch guarantee alone.
+
+**Supplied construction.** The
+[linear-parameter static sparsifier](../../manuscripts/graph-backends/linear-parameter-static-sparsifier.md),
+Sections 3–7, proves the separated structural and work factors in (1).
+The [normalized repair](../../manuscripts/graph-backends/normalized-projected-route-composition.md)
+and [separated metric hierarchy, Sections 2–7](../../manuscripts/graph-backends/separated-metric-forest-and-strong-sssp.md)
+prove the chronological recurrence, upper metric estimates, stable
+pivot handles and query construction in (2). The
+[uniform source audit](../../manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md)
+keeps the elementary public algorithms within their parameter ranges
+and proves the finite-bit adapters. Thus the generic theorem below
+has a constructed instantiation, recorded as Corollary 2.2.
 
 The deterministic contract is required on histories chosen adaptively
 from earlier answers. A numerical query reads the settled hierarchy;
@@ -94,6 +106,14 @@ dKg+dh&=O(t^4h).
 
 Rounding changes constant factors only. The per-level distance inequalities compose multiplicatively. Every local upper estimate is the length of a represented walk, so no estimate falls below the true distance. The query visits `O(t)` levels, where `t` is at most polynomial in `U`, and reads one exact base-table entry. These observations prove (3)–(4). ∎
 
+**Corollary 2.2 (constructed distance oracle).** The local algorithms
+identified in Section 1, with the named deterministic public inputs,
+give (3)–(4) on the stated undirected graph model. Their constants are
+uniform in the growing parameters. The preceding shrink calculation
+and actual-size stopping rule check the required range; Section 4
+supplies arbitrary original degree. This is the instantiated research
+theorem underlying the frontier below.
+
 ## 3. Explicit nondominated parameter choices
 
 Each row follows from Theorem 2.1 and retains its own stretch.
@@ -131,7 +151,11 @@ The constant two is absorbed in the stretch factors above. This numerical distan
 
 The oracle stores hierarchy records and exact base tables. It does not explicitly update an all-pairs matrix. All work in (3) includes late child edits paid from initialization credit and all actual base tables. Extracting a represented walk is charged to that walk; this theorem makes no simple-path reporting claim measured solely by a shorter loop-erased output. The separate incremental SSSP theorem supplies its own path-reporting proof.
 
-The theorem is conditional on the named hierarchy primitives. Internal mathematical review and finite parameter calculations do not constitute a proof-assistant formalization.
+The generic implication in Theorem 2.1 and its supplied construction in
+Corollary 2.2 have separate roles. The source map records the local
+proofs and published inputs of the constructed oracle. A complete
+executable APSP implementation is not supplied; that software boundary
+does not add a mathematical hypothesis to Corollary 2.2.
 
 ## 6. Nonnegative integer lengths at the displayed frontier points
 

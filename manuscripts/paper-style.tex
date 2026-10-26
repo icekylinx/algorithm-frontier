@@ -7,9 +7,14 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+% Preserve the original T1 fonts while spelling Unicode names correctly.
+\usepackage{newunicodechar}
+\newunicodechar{ę}{\k{e}}
 \usepackage[a4paper,margin=25mm]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs,longtable,array}
+% Pandoc's paragraph-width arithmetic; this does not alter the source style.
+\usepackage{calc}
 \usepackage{microtype}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage[unicode,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,hypertexnames=false]{hyperref}

@@ -12,7 +12,7 @@ Trade amortized update work against distance stretch and return approximate dist
 
 **Randomness**
 
-Deterministic conditional composition using the metric hierarchy, construction/update guarantees and uniform numerical bounds listed in the source map.
+Deterministic fully dynamic metric construction. The source map supplies the hierarchy, initialization/update and numerical bounds; the parameter and output restrictions remain part of the theorem.
 
 **Time**
 
@@ -28,7 +28,7 @@ Actual-size hierarchy storage and query structures, charged to the graph invento
 
 **Model and representation**
 
-Conditional numerical-hierarchy composition for undirected graphs with polynomial-range integer lengths and amortized maintenance. All displayed frontier points support nonnegative lengths and exact zero-distance answers by Corollary 6.1; the unrestricted general family is stated for positive lengths. The normalized local work, recourse and approximation inequalities remain explicit hypotheses.
+Undirected graphs with polynomial-range integer lengths and amortized maintenance. Theorem 2.1 gives the generic hierarchy implication; Corollary 2.2 instantiates it with the local construction. All displayed frontier points support nonnegative lengths and exact zero-distance answers by Corollary 6.1; the unrestricted general family is stated for positive lengths.
 
 **Lower-bound scope**
 
@@ -36,9 +36,9 @@ The record is an upper-bound frontier and comparison map. It does not assert tha
 
 **Review status**
 
-**Ready for review in the stated scope.** The five explicit parameter substitutions and the nonnegative-integer distance adapter, including exact zero answers, transformed length range, and the required uniform stretch bound.
+**Ready for review.** The constructed fully dynamic metric hierarchy, full time/stretch curve and all five explicit parameter points, including the same-stretch 23/28 versus 6/7 comparison. The nonnegative-integer adapter supplies exact zero answers and transformed-range accounting.
 
-**Conditions and remaining work.** The positive-distance hierarchy remains an explicit prerequisite. For the general parameter family, the zero-length extension additionally needs t^4 h=o(U); t^2 h=o(U) alone is insufficient. Only numerical distance output is claimed.
+**Conditions and remaining work.** The tradeoff is amortized and reports numerical distances. Its general family assumes t tends to infinity and t^2 h=o(U); extending that family to zero lengths additionally needs t^4 h=o(U) and a uniform stretch bound. The five displayed points satisfy the stronger conditions.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 

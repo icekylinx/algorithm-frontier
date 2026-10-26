@@ -8,61 +8,45 @@ Algorithms and proofs in combinatorial optimization, dynamic graphs, and sparsif
 
 ## Selected results
 
-Three entry points into the manuscripts. Full parameter ranges and the current review status are on the linked problem pages.
+Three deterministic constructions. The linked problem pages give the full statements, proof dependencies, executable coverage and review status.
 
 ### [Deterministic general-graph maximum matching](problems/general-matching/)
 
-Executable exact solver, independent certificates and a faster conditional research theorem.
-
-**Randomness.** Deterministic executable solver and certificate verification. The faster research composition additionally requires the deterministic cycle-search implementation and named published primitives in the source map.
-
-**Quantitative result.**
-
-Executable <code class="math">O(n+m\log(m+2)+\sum_i\nu(G_i)^3)</code> including certificates.
-
-Conditional research bound:
+Deterministic exact maximum matching in general graphs.
 
 <!-- math-display: 959b4822078bcdb0b44c8061
 O(n+m)+(m_s+1)\exp(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5}))
 -->
 ![Formula](assets/math/959b4822078bcdb0b44c8061.svg)
 
-**Model and scope.** The reference solver uses only the Python standard library; nu(G_i) is the matching number of component i. A cover-based compression limits blossom search to at most four times that number. The faster research bound still requires an unimplemented deterministic cycle-search and edge-retirement data structure, with named published prerequisites.
+Here m_s counts distinct nonloop edge pairs. The proof supplies the uniform cycle-search construction and names its published prerequisites. A separate executable solver returns independently verifiable optimality certificates.
 
 ### [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/)
 
 Exact decision and indexed witness.
 
-**Randomness.** Deterministic exact algorithm in the uniform bit model, including indexed-witness recovery and input-independent deterministic circuit construction; no probability of error.
-
-**Quantitative result.**
-
-<!-- math-display: 8bb0f251ccb5da8a921fc6a4
-C+\mathrm{poly}(n,L)2^{0.495836n}
+<!-- math-display: 45dc56e8c77bc161431d075b
+C+\mathrm{poly}(n,L)2^{0.495748n}
 -->
-![Formula](assets/math/8bb0f251ccb5da8a921fc6a4.svg)
+![Formula](assets/math/45dc56e8c77bc161431d075b.svg)
 
 Exact rational exponent on the card.
 
-**Model and scope.** Exact rational certification of all 62 continuous contact branches, followed by a finite-volume cone improvement; C is finite input-independent circuit precomputation; combinatorial compiler and bit-cost proofs are in the manuscript.
+For n integers of total bit length L, including an indexed witness. The finite startup constant C is input-independent. The complete compiler proof and exact continuous certificates support the improved third-lookup exponent.
 
 ### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
 
 Sharp represented and rank summaries; exact two-failure rank-four oracle maximum.
 
-**Randomness.** Deterministic exact constructions. Random permutations and Bernoulli failures appear only in output-size proofs; no query sampling or probability of error.
-
-**Quantitative result.**
-
 Represented prefixes and oracle rank: <code class="math">r\binom{h+d}{d}</code>.
 
 Two failed labels and one label per item: sharp <code class="math">3r</code> through rank three, exactly 13 at rank four.
 
-**Model and scope.** Rank is r, failed-label budget is h, and each item has at most d labels. Represented preprocessing is uniform polynomial; arbitrary-oracle prefix construction uses a deterministic canonical-basis tree. The 13-item nonrepresentable example is minimal in rank, label count and ground size for exceeding 3r under two failures.
+Rank is r, failed-label budget is h, and each item has at most d labels. Represented preprocessing is uniform polynomial; arbitrary-oracle prefix construction uses a deterministic canonical-basis tree. The 13-item nonrepresentable example is minimal in rank, label count and ground size for exceeding 3r under two failures.
 
 ## Results
 
-Browse by problem. Each link opens its statement and proof; conditional algorithms retain their named backend assumptions. [Computational models](docs/COMPLEXITY.md) and [randomness contracts](docs/RANDOMNESS.md) explain how to compare bounds.
+Browse by problem. Each link opens its statement, proof and dependencies. [Computational models](docs/COMPLEXITY.md) and [randomness contracts](docs/RANDOMNESS.md) explain how to compare bounds.
 
 ### Subset Sum
 

@@ -23,13 +23,44 @@ valid degree intervals, plus explicit parallel-edge cases. Both sides
 are compared with enumerated original edge subsets. These are finite
 checks of the specified gadgets, not a substitute for the general proof.
 
-## Conditional: the fast running-time corollary
+## Ready for review: the unconditional executable solver
+
+The [reference implementation](../reference/README.md) constructs the
+actual sparse reduction and invokes the repository's exact matching
+solver. Native parallel records preserve their IDs. Every failed
+perfect-matching call is checked by the independent matching certificate
+verifier, and final native degrees and cardinality are checked directly.
+Optimization carries one certified interval excluding all better sizes.
+
+```bash
+python3 -B problems/degree-constrained-subgraphs/verify/check_reference.py
+```
+
+The default suite checks 8,292 requests against independently enumerated
+original subsets, using 5,341 exact matching calls. It includes every
+valid interval-degree request on all simple graphs through three
+vertices plus two parallel-record graphs, their full cardinality ranges,
+all simple four-vertex graphs with additional requests and 120 seeded
+native instances. It checks 3,364 constructed graphs for simplicity and
+maximum degree three. It also exercises long encodings and isolates,
+rejects 15 malformed requests and 15 corrupted certificates, and runs
+both production CLIs under `python -O` to check their explicit rejection
+conditions. The finite checker itself refuses `-O`.
+
+The external degree verifier runs no matching search. It shares only
+the deterministic input/reduction builder and invokes the independent
+matching certificate checker. Its meaning and polynomial cost are
+proved in the [certificate note](../reference/correctness.md).
+
+## Ready for review: the fast running-time corollary
 
 The proof gives the sparse-selector and interval-degree reductions,
 including parity, original-edge recovery and cardinality optimization. Its
-fast running-time corollary inherits the matching backend and its explicitly
-stated cycle-search implementation requirements. The reduction does not independently establish
-that backend.
+fast running-time corollary invokes the matching theorem, whose Section 11.6
+realizes the deterministic cycle-search interface with the linked local
+constructions and named published inputs. The reduction's proof and that
+realization together establish the corollary. The shipped implementation
+uses its separately analyzed polynomial solver.
 
 Cap normalization, loop/parallel-edge conventions and actual output length
 must be read with the theorem. A matching optimality verifier can validate the

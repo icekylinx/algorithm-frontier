@@ -1,9 +1,10 @@
 # Exact degree-constrained subgraphs from the general matching backend
 
-**Deterministic reduction theorem; conditional fast algorithm.**
+**Deterministic reduction and instantiated fast algorithm.**
 
 This note records a second class of transfers that stays within arbitrary
-undirected general graphs. These are consequences of the conditional general-matching theorem, not a new improvement to its four-fifths exponent. The prescribed
+undirected general graphs. Substituting the proved general-matching
+construction gives the same four-fifths exponent. The prescribed
 degree reduction is already present in Section 10 of the OpenAI matching
 preprint; the deterministic consequence must be attributed to replacing its
 randomized matching call. The additional hub and parity gadgets below make
@@ -29,7 +30,17 @@ same solver. Invalid bounds and the edgeless case are handled in the
 initial scan; the size statement concerns nonempty inputs. Sections 2–5
 prove the theorem.
 
-After substituting the conditional general-matching backend, the
+**Executable corollary.** The repository's
+[standard-library degree solver](reference/README.md) implements these
+reductions using its exact matching solver. Put
+`H=1+m log(m+2)`. Its feasibility bound is `O(n+H^3)`, and either
+cardinality optimization takes `O(n+H^3 log(m+2))`; both include checked
+NO certificates and native witnesses. The
+[implementation proof](reference/correctness.md) covers decoding,
+the independently checkable optimality boundary and actual storage.
+Its ordinary polynomial cost is separate from the fast research bound.
+
+After substituting the general-matching theorem and its realized cycle-search construction, the
 deterministic running-time bound is
 
 <!-- math-display: 3792002223ef0231bd69f826

@@ -34,15 +34,19 @@ constant-factor accuracy reserve, and exact flooring. A zero-distance
 vertex receives estimate zero and an original zero-cost path.
 Arbitrary real and negative lengths are not included.
 
-## Conditional fast dynamic theorem
+## Ready for review: the complete dynamic theorem
 
-The frozen detector still requires deterministic adaptive raw-cycle
-queries, finite-precision settlement, exact retirement at nonzero flow,
-retained costs and divergences, and charged callbacks. Its local
-reporting proof and the checker above do not realize those interfaces.
-The outer reduction explicitly pays reachability activation, changing
-degree demands, child quotas, phase initialization, and tree indices.
-There is no runnable implementation of the complete dynamic structure.
+The [raw-cycle bridge](../../../manuscripts/graph-backends/raw-cycle-to-frozen-detector-bridge.md),
+Sections 2–8, constructs deterministic adaptive queries, finite-precision
+settlement, exact nonzero-flow retirement, retained costs and divergences,
+and charged callbacks. The
+[quantitative construction, Sections 1–7](../../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
+supplies its four-fifths engine using the named deterministic public
+primitives. The outer proof pays reachability activation, changing
+degree demands, child quotas, phase initialization and tree indices.
+These proofs establish the complete composition. The executable tests
+above cover its reporting layer; there is no runnable implementation
+of the complete fast dynamic structure.
 
 Read the [main proof](../proof.md) with its [source map](../sources.md).
 Repository syntax checks do not certify the asymptotic theorem. No

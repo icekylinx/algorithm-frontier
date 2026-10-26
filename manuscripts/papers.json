@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "style": "manuscripts/paper-style.tex",
+  "engine": "xelatex",
+  "papers": [
+    {
+      "id": "deterministic-general-matching",
+      "wrapper": "problems/general-matching/paper.tex",
+      "output": "problems/general-matching/paper.pdf",
+      "sources": [
+        "problems/general-matching/proof.md"
+      ],
+      "heading_numbers": "source",
+      "scope": "Complete four-fifths deterministic general-matching research manuscript with explicit local realization theorem and named companion/published proof dependencies; software coverage is stated separately"
+    },
+    {
+      "id": "deterministic-subset-sum",
+      "wrapper": "problems/subset-sum-fast-deterministic/paper.tex",
+      "output": "problems/subset-sum-fast-deterministic/paper.pdf",
+      "sources": [
+        "problems/subset-sum-fast-deterministic/proof.md"
+      ],
+      "heading_numbers": "source",
+      "scope": "Complete uniform deterministic Subset Sum compiler and witness proof in Parts I–III, preserved F2 and stronger F3; the older background contact presentation has its separately stated evidence boundary"
+    },
+    {
+      "id": "certified-matching",
+      "wrapper": "problems/general-matching/reference/paper.tex",
+      "output": "problems/general-matching/reference/paper.pdf",
+      "sources": [
+        "problems/general-matching/reference/certificate-proof.md",
+        "problems/general-matching/reference/cover-compression-proof.md",
+        "problems/general-matching/reference/bipartite-proof.md"
+      ],
+      "scope": "Complete polynomial reference matching certificates, cover compression and bipartite acceleration; no faster cycle-search implementation claim"
+    },
+    {
+      "id": "two-failure-matroids",
+      "wrapper": "problems/matroid-failure-summaries/two-failure-paper.tex",
+      "output": "problems/matroid-failure-summaries/two-failure-paper.pdf",
+      "sources": [
+        "problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md",
+        "problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md"
+      ],
+      "scope": "Complete two-failure prefix bounds, singleton case, exact low-rank maxima and explicit obstruction"
+    }
+  ],
+  "source_date_epoch": 1792972800
+}

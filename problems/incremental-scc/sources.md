@@ -15,15 +15,19 @@ an exact merge sequence is supplied. Its
 [finite checker](verify/check_label_history.py) covers batched merge
 histories independently of a numerical SCC algorithm.
 
-**Raw backend and maintenance hypothesis.** Section 1 requires more than
-a minimum-ratio approximation: nonzero-base logical edge insertion,
-exact point reads, complete signed/absolute retirement transfers,
-preservation of surviving flow values, and atomic endpoint retargeting
-must fit the declared cap. These remain conditions of the fast SCC
-algorithm, including the proposed raw realization in
-[the required deterministic cycle-search implementation](../general-matching/proof.md#116-explicit-raw-backend-realization-contract).
-The direct small-instance solver below covers its stated local cutoff;
-it does not realize the large-instance hierarchy.
+**Constructed raw backend and exact maintenance.** Section 1 first gives
+the generic SCC client and then instantiates it with
+[the quantitative construction, Sections 1–7](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md).
+The [raw-cycle bridge, Sections 2 and 6](../../manuscripts/graph-backends/raw-cycle-to-frozen-detector-bridge.md)
+represents a logical flow as an explicit base plus all live and dormant
+occurrence registers. New occurrences start at zero; a prescribed
+nonzero logical value is stored in the base. The
+[lifetime construction, Sections 1–4](../../manuscripts/graph-backends/numerical-backend-lifetime-and-loops.md)
+transfers signed and absolute registers before retiring old metadata.
+Main Section 7 combines these operations into an atomic endpoint change
+that preserves surviving flows and is paid by small-to-large incidence
+scans. The [uniform source audit](../../manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md)
+names the deterministic public inputs and their local parameter adapters.
 
 **Public starting point.** The contraction principle is from Li Chen,
 Rasmus Kyng, Yang P. Liu, Simon Meierhans and Maximilian Probst Gutenberg,
@@ -32,12 +36,12 @@ SCCs, s–t Shortest Path, and Minimum-Cost Flow*](https://arxiv.org/html/2311.1
 Section 8.3 and Theorem 1.8. The public theorem supplies deterministic
 almost-linear SCC maintenance. The present client uses one logarithmic
 barrier and explicit endpoint retargeting; its sharper displayed exponent
-requires the separately stated quantitative backend assumptions.
+uses the separately constructed quantitative backend.
 
 | Operation | Source of the guarantee | Boundary |
 |---|---|---|
 | Contract vertices certified by circulation flow | The incremental-graphs paper, Section 8.3; local Section 3 supplies the near-nonnegativity argument | The public theorem does not establish the new one-barrier running-time calculation. |
-| Insert a logical edge with positive base flow, retire it exactly, or retarget its endpoints | Explicit implementation requirements in main Section 1 | The distance-oracle flow solver below only specifies zero-flow insertion. These stronger operations remain unresolved at the required cost. |
+| Insert a logical edge with positive base flow, retire it exactly, or retarget its endpoints | Raw-cycle bridge Sections 2 and 6; lifetime construction Sections 1–4; main Section 7 | The local base and retirement registers supply the stronger operations. They are not inferred from the public solver's zero-flow insertion rule. |
 | Maintain settled labels and answer first-coalescence queries | Main Sections 7 and 9, Corollary 9.1, and the local history checker | Requires an exact merge sequence; it has no numerical-cycle dependency of its own. |
 
 The relevant public cycle engine is Rasmus Kyng, Simon Meierhans,
@@ -55,9 +59,9 @@ and label-history bounds.
 
 ## Linked mathematical dependencies
 
-These manuscripts contain the interfaces, auxiliary arguments or source
-comparisons referenced by this result. Their stated hypotheses remain
-part of each use; an interface analysis does not supply an omitted backend.
+The linked constructions supply the generic client's required operations.
+Their numerical ranges, adaptive-history model and named published
+theorem dependencies remain part of the instantiated result.
 
 - [A direct exact solver for small local detector instances](../../manuscripts/graph-backends/small-local-detector-exact-solver.md)
 - [Topological ordering: a valid transpose reduction and its missing interface](../../manuscripts/graph-backends/topological-order-transpose-interface-gap.md)

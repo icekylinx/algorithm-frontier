@@ -1,6 +1,6 @@
 # Exact Boolean linear optimization compiler
 
-A support-sensitive interval/slack reduction transfers a supplied indexed-witness Subset Sum backend to signed Boolean feasibility and optimization.
+Each signed interval row is reduced to short tests containing at most its support size many integer values. A tunable slack reduction then transfers a supplied indexed-witness Subset Sum backend to exact Boolean feasibility and optimization.
 
 [Proof](proof.md) · [Sources](sources.md)
 
@@ -26,19 +26,23 @@ If the same backend has writable space <code class="math">\mathrm{poly}(L')2^{\s
 
 **Parameters**
 
-<code class="math">s_i</code> is row support; <code class="math">W_i=u_i-\ell_i</code>; <code class="math">\kappa_i=\min\{W_i+1,5s_i+1\}</code>; <code class="math">q_i=\lceil\log_2\kappa_i\rceil</code>; <code class="math">Q=\sum_iq_i</code>. Catalogue sizes satisfy <code class="math">p_i\le4\lceil\log_2(W_i+1)\rceil+1</code>, with <code class="math">p_i=1</code> when <code class="math">W_i\le5s_i</code>. <code class="math">L</code> is full binary input length.
+<code class="math">s_i</code> is row support; <code class="math">W_i=u_i-\ell_i</code>; <code class="math">\kappa_i=\min\{W_i+1,s_i\}</code>; <code class="math">q_i=\lceil\log_2\kappa_i\rceil</code>; <code class="math">Q=\sum_iq_i</code>. Catalogue sizes satisfy <code class="math">p_i\le2\lceil\log_2(W_i+1)\rceil+1</code>, with <code class="math">p_i=1</code> when <code class="math">W_i+1\le s_i</code>. <code class="math">L</code> is full binary input length.
 
 **Model and representation**
 
-Boolean variables; signed binary coefficients, endpoints, and objectives; a deterministic Subset Sum backend with the stated indexed-witness contract. Exact equalities affect <code class="math">L</code> but contribute no slack parameter.
+Boolean variables; signed binary coefficients, endpoints, and objectives; a deterministic Subset Sum backend with the stated indexed-witness contract. Exact equalities affect <code class="math">L</code> but contribute no slack parameter. Zero rows and empty intervals are handled directly before defining the support parameters.
 
 **Lower-bound scope**
 
-No universal dominance or lower bound is claimed. Signed interval rounding is inherited from the cited literature; the theorem isolates short-interval/slack interpolation and exact accounting.
+No universal dominance or lower bound is claimed. The general signed interval-rounding method is inherited from the cited literature. The complete local proof sharpens the emitted interval cap to the row support and gives the slack interpolation; no literature-priority claim is made.
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete signed interval-disjunction proof, bounded-slack interpolation, signed radix packing and indexed-witness/optimization transfer. Each halving emits at most two intervals with at most the original row support many integer values; all exceptional and binary-input cases are explicit.
+
+**Conditions and remaining work.** The Subset Sum backend is supplied with its stated indexed-witness time contract; a space bound requires that same backend. The compiler and finite checks do not establish the backend circuit or continuous-contact proofs.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

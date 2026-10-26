@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Exact static min-cost flow and exact fixed-threshold feasibility with witness recovery under the named raw backend.
+Exact static min-cost flow and exact insertion-only fixed-threshold feasibility with integral witness recovery.
 
 **Objective and output**
 
@@ -10,7 +10,7 @@ Decide whether the integral demand can be routed under capacities and a cost thr
 
 **Randomness**
 
-Deterministic exact numerical reductions. The fast dynamic bound requires the stated deterministic cycle-search, flow-maintenance and edge-retirement data structures for adaptive polynomial-length histories.
+Deterministic exact static and fixed-threshold constructions, with local flow-maintenance and edge-retirement proofs for the stated adaptive polynomial-length histories. Published numerical primitives are identified in the source map.
 
 **Time**
 
@@ -30,13 +30,13 @@ Oriented multigraph with loops, parallel arcs, integral capacities, integral cos
 
 **Lower-bound scope**
 
-No lower bound is claimed. The upper bound is conditional on the raw-cycle and lifetime-maintenance backend.
+No lower bound is claimed. The generic interface theorem and its constructed four-fifths specialization are stated separately in the proof.
 
 **Review status**
 
-**Ready for review in the stated scope.** The exact affine integral-recovery proof and reference checks; artificial-edge penalties, fixed-threshold accounting, and initialization that safely defers currently infeasible prefixes.
+**Ready for review.** The complete static and insertion-only fixed-threshold moving-box log-barrier construction, instantiated with the locally realized raw-cycle search, numerical lifetime and retirement rules. Includes affine integral recovery, artificial-edge penalties and prefix-safe deferred initialization. The published-flow capacity-bit adapter is a separately proved alternative for exact max-flow calls.
 
-**Conditions and remaining work.** The faster numerical client still needs deterministic cycle search, dynamic flow maintenance and edge retirement with the stated lifetime and bit bounds. A NO answer at an early insertion prefix is not permanent infeasibility.
+**Conditions and remaining work.** The numerical cap, polynomial adaptive-history horizon and full-flow output charge remain part of the theorem. The incremental result is a fixed-threshold guarantee, not a fresh optimal flow after every update. An infeasible early prefix does not imply permanent infeasibility. The alternative capacity-bit route uses van den Brand et al., arXiv:2407.10830v1, Theorem 6.17, with polynomial capacity relative to each actual call size. Its published algorithm is an external proof dependency; local finite adapter checks do not execute it.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 

@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "papers": {
+    "certified-matching": {
+      "scope": "Complete polynomial reference matching certificates, cover compression and bipartite acceleration; no faster cycle-search implementation claim",
+      "output": "problems/general-matching/reference/paper.pdf",
+      "inputs": {
+        "manuscripts/papers.json": "3c2a6c1ee53ab1adc0c0f94b316aab304854d2bf95b2f50d5ab148f5a957bff5",
+        "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
+        "problems/general-matching/reference/paper.tex": "046c035c21f957db4a580acf45d9595d2667d0028642d340fa4c005da78ac91e",
+        "tools/build_manuscripts.py": "8662260bc756fd55c924a0d7dd3852f23f35a9e9fd3e70ad730b6275b62f8ad6",
+        "tools/build_papers.py": "33ad4a761953750fe303025df066ffdc57428ca25aa34df13c696d9d886c9088",
+        "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
+        "problems/general-matching/reference/certificate-proof.md": "631e93415372ffe498383b3113212e009445a7c41e719abfa7dd8505fbb6dbad",
+        "problems/general-matching/reference/cover-compression-proof.md": "6ef82fc04178e6756f7ac49daba0eb2c22873812b518379112f1f7df4f373ba4",
+        "problems/general-matching/reference/bipartite-proof.md": "107778d4645abf3ad5f3c77d1e51295b9670636fd39cbd07a1440197f19a47d7"
+      },
+      "pdf_sha256": "8e28c9a701f2f875935a661b21c39b9533dd208ced7045f2f6712a8fcf9591b1",
+      "engine": "xelatex",
+      "source_date_epoch": 1792972800,
+      "layout_warnings": [],
+      "visual_review": "passed",
+      "visual_review_details": {
+        "date": "2026-10-26",
+        "pages": 12,
+        "method": "Every page inspected in rendered contact sheets; selected dense tables, references and corrected pages also inspected at full-page resolution.",
+        "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. All recorded typesetting layout warnings were resolved."
+      }
+    },
+    "two-failure-matroids": {
+      "scope": "Complete two-failure prefix bounds, singleton case, exact low-rank maxima and explicit obstruction",
+      "output": "problems/matroid-failure-summaries/two-failure-paper.pdf",
+      "inputs": {
+        "manuscripts/papers.json": "3c2a6c1ee53ab1adc0c0f94b316aab304854d2bf95b2f50d5ab148f5a957bff5",
+        "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
+        "problems/matroid-failure-summaries/two-failure-paper.tex": "5bf9398dcd0892a8834a39477591ea5c7e2674d7a2014ac0ec1c1f385d745932",
+        "tools/build_manuscripts.py": "8662260bc756fd55c924a0d7dd3852f23f35a9e9fd3e70ad730b6275b62f8ad6",
+        "tools/build_papers.py": "33ad4a761953750fe303025df066ffdc57428ca25aa34df13c696d9d886c9088",
+        "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
+        "problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md": "b2d75c8548e4fe08161e4b742dd18556053bced4e066ca8db592407c591e751d",
+        "problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md": "b922466bb3e418f7e8a00bb63cf83dd3f36868457fd401c3f84e4b46edcd81d4"
+      },
+      "pdf_sha256": "0a6ce3570af84cd08c931f780a5483df69854d7d59bb5905e66b236ce4790908",
+      "engine": "xelatex",
+      "source_date_epoch": 1792972800,
+      "layout_warnings": [],
+      "visual_review": "passed",
+      "visual_review_details": {
+        "date": "2026-10-26",
+        "pages": 14,
+        "method": "Every page inspected in rendered contact sheets; selected dense tables, references and corrected pages also inspected at full-page resolution.",
+        "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. All recorded typesetting layout warnings were resolved."
+      }
+    },
+    "deterministic-general-matching": {
+      "scope": "Complete four-fifths deterministic general-matching research manuscript with explicit local realization theorem and named companion/published proof dependencies; software coverage is stated separately",
+      "output": "problems/general-matching/paper.pdf",
+      "inputs": {
+        "manuscripts/papers.json": "3c2a6c1ee53ab1adc0c0f94b316aab304854d2bf95b2f50d5ab148f5a957bff5",
+        "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
+        "problems/general-matching/paper.tex": "0121685b046749488ab223496d3324a250fe529ec9dc7a692d9c265c6b1e3ac1",
+        "tools/build_manuscripts.py": "8662260bc756fd55c924a0d7dd3852f23f35a9e9fd3e70ad730b6275b62f8ad6",
+        "tools/build_papers.py": "33ad4a761953750fe303025df066ffdc57428ca25aa34df13c696d9d886c9088",
+        "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
+        "problems/general-matching/proof.md": "d2df3b8f66526564a8694ee890497e07f321d8007825aeea90adaae0cab4577f"
+      },
+      "pdf_sha256": "48572b77e96c4ce14ed582adbb3a39ce6cf97e3992ae0662be04f3e74872c951",
+      "engine": "xelatex",
+      "source_date_epoch": 1792972800,
+      "layout_warnings": [],
+      "visual_review": "passed",
+      "visual_review_details": {
+        "date": "2026-10-26",
+        "pages": 34,
+        "method": "Every page inspected in rendered contact sheets; selected dense tables, references and corrected pages also inspected at full-page resolution.",
+        "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. All recorded typesetting layout warnings were resolved."
+      }
+    },
+    "deterministic-subset-sum": {
+      "scope": "Complete uniform deterministic Subset Sum compiler and witness proof in Parts I–III, preserved F2 and stronger F3; the older background contact presentation has its separately stated evidence boundary",
+      "output": "problems/subset-sum-fast-deterministic/paper.pdf",
+      "inputs": {
+        "manuscripts/papers.json": "3c2a6c1ee53ab1adc0c0f94b316aab304854d2bf95b2f50d5ab148f5a957bff5",
+        "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
+        "problems/subset-sum-fast-deterministic/paper.tex": "7f0d95452880e9b840cc64125f9affa80b474bea2862ce641a20e753037963c5",
+        "tools/build_manuscripts.py": "8662260bc756fd55c924a0d7dd3852f23f35a9e9fd3e70ad730b6275b62f8ad6",
+        "tools/build_papers.py": "33ad4a761953750fe303025df066ffdc57428ca25aa34df13c696d9d886c9088",
+        "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
+        "problems/subset-sum-fast-deterministic/proof.md": "f7d5005061ebb5f711918ad7b791fce64a2893afa6ff00c96d3afe73828e7733"
+      },
+      "pdf_sha256": "38b6ea5b0fb18152cd9b64e97a5f0a36c8f4d8fcfbb9d1e48a11c84dad1ef4b0",
+      "engine": "xelatex",
+      "source_date_epoch": 1792972800,
+      "layout_warnings": [],
+      "visual_review": "passed",
+      "visual_review_details": {
+        "date": "2026-10-26",
+        "pages": 56,
+        "method": "Every page inspected in rendered contact sheets; selected dense tables, references and corrected pages also inspected at full-page resolution.",
+        "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. All recorded typesetting layout warnings were resolved."
+      }
+    }
+  }
+}

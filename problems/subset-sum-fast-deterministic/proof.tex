@@ -1,31 +1,31 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/subset-sum-fast-deterministic/proof.md
-% Recovered-source SHA-256: 4a00f594bc619486b3a2a8e878499e15b26e183ab1306fea7594685d49d5aebc
+% Recovered-source SHA-256: 80bf9a9792b790036d73b44eb9e5a92ce01a9aae24e981d62cfc39f54cf3cf5b
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
-% Final document preamble must use the recovered original Subset Sum style.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
 
-\hypertarget{deterministic-subset-sum-through-signed-circuits-and-trace-bounds}{%
-\section{Deterministic Subset Sum through signed circuits and trace bounds}\label{deterministic-subset-sum-through-signed-circuits-and-trace-bounds}}
+\hypertarget{af-a9ec399514-deterministic-subset-sum-through-signed-circuits-and-trace-bounds}{%
+\section{Deterministic Subset Sum through signed circuits and trace bounds}\label{af-a9ec399514-deterministic-subset-sum-through-signed-circuits-and-trace-bounds}}
 
 \textbf{Yilin Liu · GPT-6 Astra Pro}
 
-\hypertarget{abstract}{%
-\subsection{Abstract}\label{abstract}}
+\hypertarget{af-a9ec399514-abstract}{%
+\subsection{Abstract}\label{af-a9ec399514-abstract}}
 
-We give an exact deterministic algorithm for Subset Sum on arbitrary signed binary integers, with indexed witness recovery. The refined running time is \(C+\mathrm{poly}(n,L)2^{En}\), where \(E=158153814247997/318964058919134<0.495836\) and \(C\) is finite and independent of the input. Part I develops the signed-circuit compiler and reduction. Part II proves the trace and type refinement, and its continuous-domain checker certifies all 62 contact branches with exact rational arithmetic. A separate scalar checker reconstructs the reflected profile and the complete outer cost ledger. The refined theorem uses this new certificate directly; the older numerical menu is retained only as background with its explicit premise. No simultaneous space exponent is asserted for this algorithm.
+We give an exact deterministic algorithm for Subset Sum on arbitrary signed binary integers, with indexed witness recovery. Its running time is \(C_{\mathrm{start},3}+\mathrm{poly}(n,L)2^{E_3n}\), where \(E_3=158153814247997/319021177919134<0.495748\) and the startup constant is finite and independent of the input. Part I proves the signed-circuit compiler and reduction. Part II supplies the preserved two-level theorem F2, with 62 exact contact branches and exponent \(E_2<0.495836\). Part III adds a third positive-containment lookup and proves the stronger theorem F3, using a separate completed 16-branch exact replay. The combined scalar ledger verifies 112 reflected-profile comparisons and all nine outer costs. Both reconstructed theorems are independent of the older historical contact premise. No simultaneous space exponent is asserted.
 
-\hypertarget{theorem-and-proof-structure}{%
-\subsection{Theorem and proof structure}\label{theorem-and-proof-structure}}
+\hypertarget{af-a9ec399514-theorem-and-proof-structure}{%
+\subsection{Theorem and proof structure}\label{af-a9ec399514-theorem-and-proof-structure}}
 
-\textbf{Theorem F (refined deterministic algorithm).} On \(n\) indexed signed integers of full binary encoding length \(L\), the circuit and reduction constructions proved in Part I, with the parameter changes proved in Part II, decide feasibility and return an indexed witness in
+\textbf{Theorem F3 (third-lookup refinement).} On \(n\) indexed signed integers of full binary encoding length \(L\), a uniform deterministic algorithm decides feasibility and returns an indexed witness in
 
 \[
-C+\mathrm{poly}(n,L)2^{En},\qquad
-E=\frac{158153814247997}{318964058919134}.
+C_{\mathrm{start},3}+\mathrm{poly}(n,L)2^{E_3n},\qquad
+E_3=\frac{158153814247997}{319021177919134}<.495748.
 \]
 
-Here \(C\) is the finite input-independent cost of constructing fixed circuit data, with no practical numerical bound claimed. All polynomial degrees are fixed and the complexity counts deterministic bit operations. The composition proof is Part II, Sections 2--7. The continuous-domain contact certificate in Part II, Section 4, and the scalar certificate in Section 9 discharge their separate numerical requirements. The circuit compiler and witness reduction are established by the mathematical arguments in the manuscript; the numerical programs are not a machine-checked formalization of those arguments.
+The startup cost is finite and independent of the input, with no practical numerical bound claimed. All polynomial degrees are fixed and complexity counts deterministic bit operations. Parts I--II prove the inherited signed-circuit, compiler, reduction and witness interfaces. Part III proves the additional lookup, its full-domain acceptance and compiler allowances, and the strengthened complete cost ledger. Its 16-branch receipt records a completed resumable replay under the final source; it is separate from the preserved 62-branch certificate of Theorem F2. The numerical programs discharge their stated finite requirements and do not claim proof-assistant formalization of the manuscript.
 
 \textbf{Theorem 1 (background conditional composition).} Assume the continuous-domain contact inequalities in Part I, Section I.4.2. The older baseline construction decides every signed binary Subset Sum instance and returns an indexed witness in
 
@@ -34,19 +34,19 @@ C+\mathrm{poly}(n,L)2^{E_0n},
 \qquad E_0=\frac{149809813343531}{301754962128739}<0.4964618056.
 \]
 
-Here \(C\) is the finite input-independent cost of constructing fixed circuit data. The input-dependent term includes residue-cover construction. The imported baseline profile wrapper did not include the modules and receipt needed to replay its full-domain calculation; its reported leaf counts alone do not establish those contacts. This background theorem retains its explicit premise. Theorem F instead uses the reconstructed new menu and does not depend on the older numerical receipt. Both compositions use fixed polynomial degrees and the uniform deterministic bit model.
+Here \(C\) is the finite input-independent cost of constructing fixed circuit data. The input-dependent term includes residue-cover construction. The imported baseline profile wrapper did not include the modules and receipt needed to replay its full-domain calculation; its reported leaf counts alone do not establish those contacts. This background theorem retains its explicit premise. Theorems F2 and F3 use their independently reconstructed menus and do not depend on the older numerical receipt. Both compositions use fixed polynomial degrees and the uniform deterministic bit model.
 
 \textbf{Notation.} A witness is a binary vector \texttt{x} with \texttt{sum\_i\ w\_i\ x\_i=t}. The input includes zero, negative and repeated weights. \texttt{L} includes every input bit. Logarithms are base two unless \texttt{ln} is written. Set \texttt{h(z)=-z\ log\_2\ z-(1-z)\ log\_2(1-z)} with continuous endpoint values and \texttt{H(c,z)=c\ h(z/c)}.
 
 The finite startup search builds fixed circuit data once; it is part of the running time, with no practical bound claimed here. Original indices remain attached to all representations and are recovered by the signed-circuit witness procedure.
 
-\hypertarget{arithmetic-primitives}{%
-\subsection{2. Arithmetic primitives}\label{arithmetic-primitives}}
+\hypertarget{af-a9ec399514-arithmetic-primitives}{%
+\subsection{2. Arithmetic primitives}\label{af-a9ec399514-arithmetic-primitives}}
 
 Both algorithms use polynomial-time arithmetic on binary integers, the following prime bound, and exact array operations.
 
-\hypertarget{prime-density-and-enumeration}{%
-\subsubsection{2.1. Prime density and enumeration}\label{prime-density-and-enumeration}}
+\hypertarget{af-a9ec399514-prime-density-and-enumeration}{%
+\subsubsection{2.1. Prime density and enumeration}\label{af-a9ec399514-prime-density-and-enumeration}}
 
 For real \(x\geq1\), define
 
@@ -97,8 +97,8 @@ If a nonzero integer has absolute value less than \(2^b\), at most \(b\ln2/\ln P
 
 All these primes can be generated deterministically in \(P\mathrm{poly}(\log P)\) bit operations. Start with the integers through \(\lfloor32P\rfloor\), and, for each unmarked integer starting at two, mark its proper multiples. A number remaining unmarked is prime: a composite has a smaller prime divisor, already processed. The number of marking iterations is at most \(32P\sum_{d\leq32P}1/d=O(P\log P)\) even if all integers, rather than just primes, are charged. Index arithmetic has \(O(\log P)\) bits.
 
-\hypertarget{exact-array-and-polynomial-operations}{%
-\subsubsection{2.2. Exact array and polynomial operations}\label{exact-array-and-polynomial-operations}}
+\hypertarget{af-a9ec399514-exact-array-and-polynomial-operations}{%
+\subsubsection{2.2. Exact array and polynomial operations}\label{af-a9ec399514-exact-array-and-polynomial-operations}}
 
 For two length-\(q\) arrays of integers of at most \(b\) bits, compute cyclic convolution directly by
 
@@ -110,20 +110,20 @@ This uses \(q^2\) multiplications and additions on integers of \(O(b+\log(q+1))\
 
 In fixed dimension \(d\), a polynomial of coordinatewise degree at most \(M\) has at most \((M+1)^d\) coefficients. Store them in an array. Addition, monomial shifts, and multiplication by a fixed polynomial take polynomial time in the degree and coefficient bit length. Integer arithmetic computes binomial coefficients and factorials through order \(M\). These operations support conditional-expectation arguments.
 
-\hypertarget{part-i.-a-faster-deterministic-algorithm}{%
-\section{Part I. A faster deterministic algorithm}\label{part-i.-a-faster-deterministic-algorithm}}
+\hypertarget{af-a9ec399514-part-i.-a-faster-deterministic-algorithm}{%
+\section{Part I. A faster deterministic algorithm}\label{af-a9ec399514-part-i.-a-faster-deterministic-algorithm}}
 
-This part proves the baseline compiler and reduction theorem used by Theorem F.
+This part proves the baseline compiler and reduction theorem used by Theorems F2 and F3.
 
 The reduction splits the coordinates into a prefix and two balanced outside parts. A deterministic cover supplies binary--ternary representations of each prefix; exact matching circuits join compatible records at equal integer keys.
 
-\hypertarget{i.1.-affine-majorant-rebalancing}{%
-\subsection{I.1. Affine-majorant rebalancing}\label{i.1.-affine-majorant-rebalancing}}
+\hypertarget{af-a9ec399514-i.1.-affine-majorant-rebalancing}{%
+\subsection{I.1. Affine-majorant rebalancing}\label{af-a9ec399514-i.1.-affine-majorant-rebalancing}}
 
 We develop the colored-circuit framework of Alman and Li {[}3{]} and Ye and Li {[}4{]}, beginning with affine-majorant rebalancing.
 
-\hypertarget{i.1.1.-a-finite-rebalancing-lemma}{%
-\subsubsection{I.1.1. A finite rebalancing lemma}\label{i.1.1.-a-finite-rebalancing-lemma}}
+\hypertarget{af-a9ec399514-i.1.1.-a-finite-rebalancing-lemma}{%
+\subsubsection{I.1.1. A finite rebalancing lemma}\label{af-a9ec399514-i.1.1.-a-finite-rebalancing-lemma}}
 
 Let \(\mathcal I\) and each \(\mathcal J_i\) be nonempty finite sets, with positive real pairs
 
@@ -293,8 +293,8 @@ G_d(t)\leq (T^df_K)(t)
 
 Since \(f_K(0)=2^K\), substituting \(t=0\) into (8) and (16) proves (4). The inequalities \(\sqrt d\leq K<\sqrt d+1\) and \(d/K\leq\sqrt d\) give (5). \(\square\)
 
-\hypertarget{i.1.2.-tensor-circuits}{%
-\subsubsection{I.1.2. Tensor circuits}\label{i.1.2.-tensor-circuits}}
+\hypertarget{af-a9ec399514-i.1.2.-tensor-circuits}{%
+\subsubsection{I.1.2. Tensor circuits}\label{af-a9ec399514-i.1.2.-tensor-circuits}}
 
 An exact integer depth-two circuit for a finite integer matrix \(M\) is a factorization into integer matrices. Its left and right degrees are the maximum nonzero counts in a row of the left factor and a column of the right factor, respectively. Exactness means integer matrix equality, with signed coefficients.
 
@@ -363,11 +363,11 @@ Apply the numerical lemma with weight \(\lambda=e^{(p-q)d}\). Since the two degr
 
 The implicit constants depend only on the fixed menu and affine majorant.
 
-\hypertarget{i.2.-biased-partial-matching-circuits-and-uniform-enumeration}{%
-\subsection{I.2. Biased partial-matching circuits and uniform enumeration}\label{i.2.-biased-partial-matching-circuits-and-uniform-enumeration}}
+\hypertarget{af-a9ec399514-i.2.-biased-partial-matching-circuits-and-uniform-enumeration}{%
+\subsection{I.2. Biased partial-matching circuits and uniform enumeration}\label{af-a9ec399514-i.2.-biased-partial-matching-circuits-and-uniform-enumeration}}
 
-\hypertarget{i.2.1.-typed-matrices-and-colored-profiles}{%
-\subsubsection{I.2.1. Typed matrices and colored profiles}\label{i.2.1.-typed-matrices-and-colored-profiles}}
+\hypertarget{af-a9ec399514-i.2.1.-typed-matrices-and-colored-profiles}{%
+\subsubsection{I.2.1. Typed matrices and colored profiles}\label{af-a9ec399514-i.2.1.-typed-matrices-and-colored-profiles}}
 
 Fix
 
@@ -418,8 +418,8 @@ R_{\rm old}(m,z)=H(b,m-a)+H(\beta-m,z-m).
 
 We form the continuous envelope \(R_{\rm new}\) from the two bounds and a simpler certified envelope \(\widehat R_\rho\).
 
-\hypertarget{i.2.2.-exact-lookup-circuits-with-simultaneous-concentration}{%
-\subsubsection{I.2.2. Exact lookup circuits with simultaneous concentration}\label{i.2.2.-exact-lookup-circuits-with-simultaneous-concentration}}
+\hypertarget{af-a9ec399514-i.2.2.-exact-lookup-circuits-with-simultaneous-concentration}{%
+\subsubsection{I.2.2. Exact lookup circuits with simultaneous concentration}\label{af-a9ec399514-i.2.2.-exact-lookup-circuits-with-simultaneous-concentration}}
 
 The elementary binomial bounds
 
@@ -489,8 +489,8 @@ Let \(m=m_0/N,z=z_0/N,\beta'=B_0/N\). The identity
 
 and (25) show that the left and right degrees are polynomial times \(2^{NL}\) and \(2^{NR_{\rm old}}\), respectively, with \(\beta'\) substituted for \(\beta\) in (24). The ceiling in \(T_{m_0}\) adds at most one to each expected occurrence count and is absorbed in that polynomial.
 
-\hypertarget{i.2.3.-counting-distinct-query-gates}{%
-\subsubsection{I.2.3. Counting distinct query gates}\label{i.2.3.-counting-distinct-query-gates}}
+\hypertarget{af-a9ec399514-i.2.3.-counting-distinct-query-gates}{%
+\subsubsection{I.2.3. Counting distinct query gates}\label{af-a9ec399514-i.2.3.-counting-distinct-query-gates}}
 
 Fix a query and a lookup occurrence counted in (27), and put \(j=j_0/N\). If its assignment has weight \(zN\) and its gate is nonzero at this query, it is one on \(Y_1\) and has at least \((m-a)N\) ones in \(B\cap Y_0\). If the latter count is \(uN\), the number of assignments is
 
@@ -560,8 +560,8 @@ Indeed, \(\max(\max(C,0)+S)=\max(\max(C+S),\max S)\). The entropy chain identity
 
 For example, after selecting the \(u\) ones from the first region and \(w-u\) ones from the second, the remaining \(B-w\) lookup positions are split optimally between regions of sizes \(b-u\) and \(c-w+u\); their entropy is \(H(b+c-w,B-w)=H(1-z,\beta-z)\). The unconstrained optimum in \(u\) is \(bw/(1-a)\), so imposing \(u\ge v\) gives \(F_1\). Its other feasibility constraints hold since \(B<c\) and \(v\le\min(b,w)\). For \(S\) alone, the unconstrained split in a region of size \(j\) has \(u=jw/B\). It attains \(H(B,w)\) in the first case of (32). In the second case the optimum has \(u=v\); the function \(H(j,v)+H(B-j,w-v)\) increases up to \(j=vB/w>b\), and hence is maximal at \(j=b\). The same condition implies \(w-v\le B-b\), so the entropy arguments are valid. All formulas agree at branch boundaries and extend continuously to their compact domain, including \(B=0\).
 
-\hypertarget{i.2.4.-a-rational-improvement-used-in-the-profile-certificate}{%
-\subsubsection{I.2.4. A rational improvement used in the profile certificate}\label{i.2.4.-a-rational-improvement-used-in-the-profile-certificate}}
+\hypertarget{af-a9ec399514-i.2.4.-a-rational-improvement-used-in-the-profile-certificate}{%
+\subsubsection{I.2.4. A rational improvement used in the profile certificate}\label{af-a9ec399514-i.2.4.-a-rational-improvement-used-in-the-profile-certificate}}
 
 If \(m>a\) and
 
@@ -617,8 +617,8 @@ Thus \(R_{\rm new}\le\widehat R_\rho\). On a rectangular box \([m_0,m_1]\times[z
 
 This rational quantity is the only occurrence improvement needed in the finite certificate of Section I.4.
 
-\hypertarget{i.2.5.-recursive-positive-containment-and-two-orientation-swaps}{%
-\subsubsection{I.2.5. Recursive positive containment and two orientation swaps}\label{i.2.5.-recursive-positive-containment-and-two-orientation-swaps}}
+\hypertarget{af-a9ec399514-i.2.5.-recursive-positive-containment-and-two-orientation-swaps}{%
+\subsubsection{I.2.5. Recursive positive containment and two orientation swaps}\label{af-a9ec399514-i.2.5.-recursive-positive-containment-and-two-orientation-swaps}}
 
 Use the direct occurrence circuit on the last profile interval and recursive circuits on the others. We first establish their exact integer matrix identities.
 
@@ -717,8 +717,8 @@ R^{(2)}=H(b,m-a)+F_1+G_2.
 
 At \(w_1=C_1/2\), one has \(D_2=G_2=0\) and \(F_2=H(D_1,Q_2)\), so the unmerged formulas agree at the routing boundary. All displayed entropies include their continuous boundary values.
 
-\hypertarget{i.2.6.-exact-trace-aggregation-and-pooled-occurrence-counts}{%
-\subsubsection{I.2.6. Exact trace aggregation and pooled occurrence counts}\label{i.2.6.-exact-trace-aggregation-and-pooled-occurrence-counts}}
+\hypertarget{af-a9ec399514-i.2.6.-exact-trace-aggregation-and-pooled-occurrence-counts}{%
+\subsubsection{I.2.6. Exact trace aggregation and pooled occurrence counts}\label{af-a9ec399514-i.2.6.-exact-trace-aggregation-and-pooled-occurrence-counts}}
 
 Fix an outer color \((m,z)\) and labelled occurrences \(B\) and \(C\subseteq B\) with \(|B|=\beta N\), \(|C|=cN\), \(c=\gamma_1\beta\). The first inner row is \(B\setminus U\), whose intersection with \(C\) is \(W=C\setminus U\). After the next complement and transpose, the residual query is \(K=C\setminus W=U\cap C\). Hence every descendant incidence and its coefficient depends on \(U\) only through \(K\) for these fixed labels. The coefficient may be summed first:
 
@@ -781,8 +781,8 @@ G_2+\max_{j,e,f\text{ in }(48)}
 
 Both bounds apply to the same integer circuit.
 
-\hypertarget{i.2.7.-a-closed-trace-correction}{%
-\subsubsection{I.2.7. A closed trace correction}\label{i.2.7.-a-closed-trace-correction}}
+\hypertarget{af-a9ec399514-i.2.7.-a-closed-trace-correction}{%
+\subsubsection{I.2.7. A closed trace correction}\label{af-a9ec399514-i.2.7.-a-closed-trace-correction}}
 
 Put \(d=m-a\), \(r=s-m\), \(w=w_1\), \(q=c-w\) and \(D=\beta-m-w\). Suppose
 
@@ -860,8 +860,8 @@ Indeed \(\log_2[x/(x-D)]\ge D/(x\ln2)\ge(7/5)D/(1-m)\) throughout the integral. 
 
 The certificate verifies the region conditions throughout each rectangle. Elsewhere set \(\delta=0\) and use (46).
 
-\hypertarget{i.2.8.-finite-matrices-rounding-and-the-compiler-interface}{%
-\subsubsection{I.2.8. Finite matrices, rounding and the compiler interface}\label{i.2.8.-finite-matrices-rounding-and-the-compiler-interface}}
+\hypertarget{af-a9ec399514-i.2.8.-finite-matrices-rounding-and-the-compiler-interface}{%
+\subsubsection{I.2.8. Finite matrices, rounding and the compiler interface}\label{af-a9ec399514-i.2.8.-finite-matrices-rounding-and-the-compiler-interface}}
 
 All recursive families have fixed depth and polynomially many colors. At a fixed finite base, exhaustive search finds outer and inner families satisfying the simultaneous finite cover and histogram requirements. Form the coefficients (47), merge equal traces, and store the resulting nonzero finite adjacency lists. Exact multiplication verifies the matrix identity. Each coefficient sums at most \(2^{O(N)}\) bounded integer contributions, and consequently has \(O(N)\) bits.
 
@@ -873,8 +873,8 @@ Rounding lookup sizes changes normalized parameters by \(O(1/N)\). Use the full 
 
 Section I.2.16 absorbs these fixed polynomial losses into the total compiler allowance \(\zeta=10^{-6}\) by choosing a sufficiently large fixed base. Preprocessing is independent of the Subset Sum instance; variable-length coefficients and gate labels have \(O(M)\) bits, with polynomial work per emitted incidence.
 
-\hypertarget{i.2.9.-direct-profiles-endpoint-circuits-and-rounding}{%
-\subsubsection{I.2.9. Direct profiles, endpoint circuits, and rounding}\label{i.2.9.-direct-profiles-endpoint-circuits-and-rounding}}
+\hypertarget{af-a9ec399514-i.2.9.-direct-profiles-endpoint-circuits-and-rounding}{%
+\subsubsection{I.2.9. Direct profiles, endpoint circuits, and rounding}\label{af-a9ec399514-i.2.9.-direct-profiles-endpoint-circuits-and-rounding}}
 
 Define the direct upper lookup profile
 
@@ -904,8 +904,8 @@ d_{\rm pull}=H(1-s,t-a).
 
 For the first circuit a row meets \(\binom{tN}{aN}\binom{(1-t)N}{bN}\) query gates and each query meets one; for the second, a query meets \(\binom{(1-s)N}{(t-a)N}\) row gates and each row meets one. At a fixed base length, the direct and recursive circuits of Sections I.2.2--I.2.8 form an exact menu for \(T_N\). Tensor products and transposes give the mixed menus below.
 
-\hypertarget{i.2.10.-constructive-simultaneous-grouping-of-three-counts}{%
-\subsubsection{I.2.10. Constructive simultaneous grouping of three counts}\label{i.2.10.-constructive-simultaneous-grouping-of-three-counts}}
+\hypertarget{af-a9ec399514-i.2.10.-constructive-simultaneous-grouping-of-three-counts}{%
+\subsubsection{I.2.10. Constructive simultaneous grouping of three counts}\label{af-a9ec399514-i.2.10.-constructive-simultaneous-grouping-of-three-counts}}
 
 \textbf{Lemma I.2.1.} Given \(kd\) integer vectors in \([0,k]^3\), one can deterministically partition them into \(d\) groups of exactly \(k\) vectors such that every group sum differs in each coordinate by at most \(12k\) from \(k\) times the global coordinate average. The algorithm takes polynomial time and uses polynomial-bit rational arithmetic in the explicit input size.
 
@@ -920,8 +920,8 @@ While more than four coordinates are fractional, choose five and a nonzero integ
 
 A node's error relative to its target number of final groups times the global group average becomes \((q_i/q)\Delta+e\) in a child, where \(\|e\|_\infty\le4k\). For every nontrivial split \(q_i/q\le2/3\). Thus a leaf's error is at most \(4k\sum_{j\ge0}(2/3)^j=12k\). The recursion and all its rational operations have polynomial total size. \(\square\)
 
-\hypertarget{i.2.11.-matching-dummy-positions-and-exact-joint-descriptions}{%
-\subsubsection{I.2.11. Matching dummy positions and exact joint descriptions}\label{i.2.11.-matching-dummy-positions-and-exact-joint-descriptions}}
+\hypertarget{af-a9ec399514-i.2.11.-matching-dummy-positions-and-exact-joint-descriptions}{%
+\subsubsection{I.2.11. Matching dummy positions and exact joint descriptions}\label{af-a9ec399514-i.2.11.-matching-dummy-positions-and-exact-joint-descriptions}}
 
 Take \(k\) to be a multiple of 500, and put
 
@@ -955,8 +955,8 @@ Among at most \((k+1)^{3kd}\) descriptions, a row enumerates at most \((k+1)^{2k
 
 Any remaining admissible length can be padded to the next multiple of \(k^2\) using fewer than \(k^2\) fixed positions of matching type \((t,a,b)\). This is a bounded additive cost once \(k\) is fixed; the zero-length matrix is handled separately. These are the restrictions used in mixed-core compilation.
 
-\hypertarget{i.2.12.-a-joint-endpoint-objective}{%
-\subsubsection{I.2.12. A joint endpoint objective}\label{i.2.12.-a-joint-endpoint-objective}}
+\hypertarget{af-a9ec399514-i.2.12.-a-joint-endpoint-objective}{%
+\subsubsection{I.2.12. A joint endpoint objective}\label{af-a9ec399514-i.2.12.-a-joint-endpoint-objective}}
 
 Let \(T_N\) be the typed matrix of Sections I.2.1--I.2.11, and write
 
@@ -1002,8 +1002,8 @@ C_0\,2^{(\delta_V(q)+\eta)M},
 
 where \(C_0\) is input-independent. Adjacency lists are generated within these bounds times a polynomial in \(M\). Gate identifiers and integer coefficients have \(O(M)\) bits, up to fixed constants. The zero-length matrix is handled separately. The preprocessing depends only on the fixed circuit data and \(\eta\).
 
-\hypertarget{i.2.13.-fixed-exact-mixed-templates}{%
-\subsubsection{I.2.13. Fixed exact mixed templates}\label{i.2.13.-fixed-exact-mixed-templates}}
+\hypertarget{af-a9ec399514-i.2.13.-fixed-exact-mixed-templates}{%
+\subsubsection{I.2.13. Fixed exact mixed templates}\label{af-a9ec399514-i.2.13.-fixed-exact-mixed-templates}}
 
 Choose a fixed integer \(B\) and a sufficiently large multiple \(k\) of \(500\). Put \(N_0=k^2+500k\) and \(q_j=j/B\). For every \(0\le j\le B\), consider the fixed matrix
 
@@ -1022,8 +1022,8 @@ By (64) this has the affine majorant with endpoint exponents \(\delta_U(q_j)+\ep
 
 There are finitely many grid points. Fix one sufficiently large common depth \(d_0\) and store an exact circuit for each \(\mathcal Q_j^{\otimes d_0}\). Use these stored circuits thereafter.
 
-\hypertarget{i.2.14.-joint-descriptions-and-three-count-grouping}{%
-\subsubsection{I.2.14. Joint descriptions and three-count grouping}\label{i.2.14.-joint-descriptions-and-three-count-grouping}}
+\hypertarget{af-a9ec399514-i.2.14.-joint-descriptions-and-three-count-grouping}{%
+\subsubsection{I.2.14. Joint descriptions and three-count grouping}\label{af-a9ec399514-i.2.14.-joint-descriptions-and-three-count-grouping}}
 
 Pad each original core to length \(k^2d_i\), with the bounded divisibility conditions specified below. The added lengths are multiples of \(500\), so fixed matching row/query strings of types \(t,a,b\) embed the original matrix as a restriction of the padded matrix.
 
@@ -1042,8 +1042,8 @@ In the first core, an endpoint on the row side knows its row-count vector and gu
 
 The micro-padding multiplies the grouped length by \(N_0/k^2=1+500/k\). These two overheads tend to zero as the single fixed \(k\) increases.
 
-\hypertarget{i.2.15.-exact-adjacent-template-mixing}{%
-\subsubsection{I.2.15. Exact adjacent-template mixing}\label{i.2.15.-exact-adjacent-template-mixing}}
+\hypertarget{af-a9ec399514-i.2.15.-exact-adjacent-template-mixing}{%
+\subsubsection{I.2.15. Exact adjacent-template mixing}\label{af-a9ec399514-i.2.15.-exact-adjacent-template-mixing}}
 
 Choose the initial bounded padding so that
 
@@ -1086,8 +1086,8 @@ At \(q'=0,1\) use the corresponding endpoint template. Tensoring the stored circ
 
 The bounded initial padding changes the logarithmic target by only \(O(1)\): the two functions in (63) have bounded derivatives, and both the total length and the first-core length changed by a bounded amount.
 
-\hypertarget{i.2.16.-allowances-uniform-search-and-enumeration}{%
-\subsubsection{I.2.16. Allowances, uniform search, and enumeration}\label{i.2.16.-allowances-uniform-search-and-enumeration}}
+\hypertarget{af-a9ec399514-i.2.16.-allowances-uniform-search-and-enumeration}{%
+\subsubsection{I.2.16. Allowances, uniform search, and enumeration}\label{af-a9ec399514-i.2.16.-allowances-uniform-search-and-enumeration}}
 
 For the stated parameters \(C_*=1521/875\). Take \(B=1000\). Then \(C_*/(4B^2)<4.35\cdot10^{-7}\). For \(\eta=10^{-6}\), allocate less than \(2.5\cdot10^{-7}\) to stored-template errors, less than \(2.5\cdot10^{-7}\) to (66) and the micro-padding inflation, and less than \(5\cdot10^{-7}\) to (67), including its micro-padding factor. Choose \(k\) sufficiently large, then the common depth \(d_0\). All choices are fixed independently of the input. The same construction works for any prescribed positive rational allowance by first enlarging \(B\).
 
@@ -1097,8 +1097,8 @@ At the input length, enumerate an endpoint's missing count descriptions, discard
 
 Compute integer histogram caps by multiplying stored maximum degrees by an integer upper bound on description counts. Their exponents satisfy (65), completing Theorem I.2.2.
 
-\hypertarget{i.3.-a-uniform-deterministic-reduction}{%
-\subsection{I.3. A uniform deterministic reduction}\label{i.3.-a-uniform-deterministic-reduction}}
+\hypertarget{af-a9ec399514-i.3.-a-uniform-deterministic-reduction}{%
+\subsection{I.3. A uniform deterministic reduction}\label{af-a9ec399514-i.3.-a-uniform-deterministic-reduction}}
 
 Let \(z_1,\ldots,z_n,\tau\) be integers of total binary encoding length \(L\). Fix
 
@@ -1142,8 +1142,8 @@ On \(M_0\) main coordinates the two degree caps are at most a fixed constant tim
 
 Put \(M=H_0\lfloor\mu n/H_0\rfloor\). Handle the fixed finite range of smaller \(n\) by exhaustive search, at cost a fixed multiple of \(\mathrm{poly}(L)\). Assume henceforth that \(M\) meets the stated core ranges.
 
-\hypertarget{i.3.1.-three-dictionaries-and-canonical-layers}{%
-\subsubsection{I.3.1. Three dictionaries and canonical layers}\label{i.3.1.-three-dictionaries-and-canonical-layers}}
+\hypertarget{af-a9ec399514-i.3.1.-three-dictionaries-and-canonical-layers}{%
+\subsubsection{I.3.1. Three dictionaries and canonical layers}\label{af-a9ec399514-i.3.1.-three-dictionaries-and-canonical-layers}}
 
 Choose three disjoint \(M\)-coordinate blocks. Construct each sorted distinct-sum dictionary by repeated merging of
 
@@ -1197,8 +1197,8 @@ d_c(k)=(A*_{\oplus}h_k)(\bar c),\qquad
 
 A polynomial-size binomial table, one transform of \(A\), and one inverse transform per layer suffice. All intermediate integers have \(O(M)\) bits.
 
-\hypertarget{i.3.2.-integral-cores-label-flips-and-original-integer-keys}{%
-\subsubsection{I.3.2. Integral cores, label flips, and original integer keys}\label{i.3.2.-integral-cores-label-flips-and-original-integer-keys}}
+\hypertarget{af-a9ec399514-i.3.2.-integral-cores-label-flips-and-original-integer-keys}{%
+\subsubsection{I.3.2. Integral cores, label flips, and original integer keys}\label{af-a9ec399514-i.3.2.-integral-cores-label-flips-and-original-integer-keys}}
 
 Fix a nonempty class \(\mathcal C_k\). Put \(M_0=M-H_0\) and choose
 
@@ -1277,8 +1277,8 @@ After reordering coordinates, the two-core matrix is \(T_{m_2}\otimes T_{m_1}^{\
 \tag{80}
 \]
 
-\hypertarget{i.3.3.-an-exact-polynomial-tensor-round-selector}{%
-\subsubsection{I.3.3. An exact polynomial-tensor round selector}\label{i.3.3.-an-exact-polynomial-tensor-round-selector}}
+\hypertarget{af-a9ec399514-i.3.3.-an-exact-polynomial-tensor-round-selector}{%
+\subsubsection{I.3.3. An exact polynomial-tensor round selector}\label{af-a9ec399514-i.3.3.-an-exact-polynomial-tensor-round-selector}}
 
 Let \(\mathcal U\subseteq\mathcal C_k\) be the unserved prefixes. For a partition and flip, let \(W_c\) count the canonical masks \(b\in\mathcal A\) such that \(K=b\oplus\bar c\) belongs to \(\mathcal D\) and meets both flipped type constraints. Uniform partition and flip averaging gives
 
@@ -1344,8 +1344,8 @@ W_c\le K_{\rm typed}\le\mathrm{poly}(M)2^{k_{\rm typed}M},
 
 Use the sharper bound for upper costs, retaining denominator \(NK_0\theta\) in (81).
 
-\hypertarget{i.3.4.-actual-width-buckets-canonical-extraction-and-implicit-energy}{%
-\subsubsection{I.3.4. Actual-width buckets, canonical extraction, and implicit energy}\label{i.3.4.-actual-width-buckets-canonical-extraction-and-implicit-energy}}
+\hypertarget{af-a9ec399514-i.3.4.-actual-width-buckets-canonical-extraction-and-implicit-energy}{%
+\subsubsection{I.3.4. Actual-width buckets, canonical extraction, and implicit energy}\label{af-a9ec399514-i.3.4.-actual-width-buckets-canonical-extraction-and-implicit-energy}}
 
 Bucket the positive terminal counts into intervals \([w,2w)\) with \(w\) a power of two. Choose a bucket \(G\) maximizing \(|G|w\). Since there are at most \(M+1\) buckets,
 
@@ -1505,8 +1505,8 @@ Serve the explicit patterns with \(E_Q(c)\le2w\); at least half of \(G\) qualify
 
 where \(S_c\) is the deduplicated residue support. Cauchy--Schwarz gives this bound; use \(w/5\) in the cover below.
 
-\hypertarget{i.3.5.-complete-local-covers-and-harmonic-charging}{%
-\subsubsection{I.3.5. Complete local covers and harmonic charging}\label{i.3.5.-complete-local-covers-and-harmonic-charging}}
+\hypertarget{af-a9ec399514-i.3.5.-complete-local-covers-and-harmonic-charging}{%
+\subsubsection{I.3.5. Complete local covers and harmonic charging}\label{af-a9ec399514-i.3.5.-complete-local-covers-and-harmonic-charging}}
 
 For this fixed round initialize \(U_c=\mathbb Z_Q\) for every served pattern. A residue \(\delta\) newly covers
 
@@ -1584,8 +1584,8 @@ Shared witness-table preprocessing and selectors cost \(I2^M\mathrm{poly}(n,L)\)
 
 Each assigned round covers every residue for every served prefix. A common shift of its local residue sequence preserves coverage by translating the residue to be covered oppositely. Choose the modulus and shift separately in each round.
 
-\hypertarget{i.3.6.-cached-outer-lists-and-balanced-incidence-bounds}{%
-\subsubsection{I.3.6. Cached outer lists and balanced incidence bounds}\label{i.3.6.-cached-outer-lists-and-balanced-incidence-bounds}}
+\hypertarget{af-a9ec399514-i.3.6.-cached-outer-lists-and-balanced-incidence-bounds}{%
+\subsubsection{I.3.6. Cached outer lists and balanced incidence bounds}\label{af-a9ec399514-i.3.6.-cached-outer-lists-and-balanced-incidence-bounds}}
 
 Split the coordinates outside \(P\) into \(O_U,O_V\) of sizes differing by at most one, containing the whole blocks \(P_U,P_V\), respectively. This is feasible since \(3M\le n\). Cache the two exact lists using each designated dictionary and all binary masks on the other coordinates of that side. Retain the corresponding witnesses. Their sizes are at most
 
@@ -1665,8 +1665,8 @@ Sum (109) and use (76), (78), (103), (105), (108), and \(B\le2^{Mh(\kappa)}\). T
 
 Both the deficiency and the layer entropy cancel. The outside lists remain balanced for every layer.
 
-\hypertarget{i.3.7.-exact-counting-and-binary-witnesses}{%
-\subsubsection{I.3.7. Exact counting and binary witnesses}\label{i.3.7.-exact-counting-and-binary-witnesses}}
+\hypertarget{af-a9ec399514-i.3.7.-exact-counting-and-binary-witnesses}{%
+\subsubsection{I.3.7. Exact counting and binary witnesses}\label{af-a9ec399514-i.3.7.-exact-counting-and-binary-witnesses}}
 
 For each selected round and each local residue occurrence, use the common exact integer compatibility circuit on the retained records. Gate tags include both that round and that residue occurrence, or these instances are processed separately. Sort incidences by their full integer key and gate, aggregate the coefficients on each side, and sum the products of the two aggregates. Circuit exactness gives the nonnegative integer
 
@@ -1683,8 +1683,8 @@ Conversely, fix a genuine solution with prefix \(c\). Its assigned good layer ev
 
 Recover a pair from a positive count by bisecting the retained \(U\) list and recounting, keeping a positive part, until one record remains; then bisect the \(V\) list. Restricted counts retain the nonnegative interpretation and sum to the preceding count. The polynomially many restrictions each reduce incidence volume, so sorting, aggregation, and recovery add polynomial factors to (110).
 
-\hypertarget{i.3.8.-all-remaining-costs-and-uniformity}{%
-\subsubsection{I.3.8. All remaining costs and uniformity}\label{i.3.8.-all-remaining-costs-and-uniformity}}
+\hypertarget{af-a9ec399514-i.3.8.-all-remaining-costs-and-uniformity}{%
+\subsubsection{I.3.8. All remaining costs and uniformity}\label{af-a9ec399514-i.3.8.-all-remaining-costs-and-uniformity}}
 
 The remaining operations have the following bounds up to \(\mathrm{poly}(n,L)\) factors. Here \(I\le2^{(d+\eta)M}\mathrm{poly}(n,L)\), \(Q_i\le2^{DM}\mathrm{poly}(n,L)\), and \(\max_iD_i\le2^{(d+\eta)M}\mathrm{poly}(n,L)\).
 
@@ -1708,13 +1708,13 @@ A raw prefix list has at most \(2^M\) times a fixed boundary factor, since \(R\l
 
 There are \(M+1\) layers and fixed numbers of boundary coordinates, count variables and prime factors. The counts have polynomial bit length in \(n,L\). Comparisons and covers are exact; zero-difference tests are deterministic. Section I.2 supplies terminating input-independent compilation. Since \(M=\mu n+O(1)\), lattice rounding adds \(O(1)\) to logarithmic costs and gives uniformity for arbitrary binary input lengths.
 
-\hypertarget{i.4.-baseline-analytic-tools-and-numerical-specification}{%
-\subsection{I.4. Baseline analytic tools and numerical specification}\label{i.4.-baseline-analytic-tools-and-numerical-specification}}
+\hypertarget{af-a9ec399514-i.4.-baseline-analytic-tools-and-numerical-specification}{%
+\subsection{I.4. Baseline analytic tools and numerical specification}\label{af-a9ec399514-i.4.-baseline-analytic-tools-and-numerical-specification}}
 
-This section records the baseline entropy tools, numerical menu, and cost calculation. The analytic inequalities are proved below. The contact values and subdivision counts in Section I.4.2 are historical reports for the older menu, whose full-domain replay is absent from the imported material. They remain the explicit premise of the background Theorem 1. The refined Theorem F uses the independently reconstructed certificate in Part II, Section 4. All terminating decimals denote exact rationals.
+This section records the baseline entropy tools, numerical menu, and cost calculation. The analytic inequalities are proved below. The contact values and subdivision counts in Section I.4.2 are historical reports for the older menu, whose full-domain replay is absent from the imported material. They remain the explicit premise of the background Theorem 1. The refined Theorem F2 uses the independently reconstructed certificate in Part II, Section 4. All terminating decimals denote exact rationals.
 
-\hypertarget{i.4.1.-entropy-inequalities-and-rational-logarithms}{%
-\subsubsection{I.4.1. Entropy inequalities and rational logarithms}\label{i.4.1.-entropy-inequalities-and-rational-logarithms}}
+\hypertarget{af-a9ec399514-i.4.1.-entropy-inequalities-and-rational-logarithms}{%
+\subsubsection{I.4.1. Entropy inequalities and rational logarithms}\label{af-a9ec399514-i.4.1.-entropy-inequalities-and-rational-logarithms}}
 
 For \(0<q,p<1\), the inequality \(\ln y\le y-1\) gives
 
@@ -1755,8 +1755,8 @@ h''(u)=-\frac1{(\ln2)u(1-u)}.
 
 Integrating the second derivative from \(1/2\), where \(h'=0\), yields \(1-h(1/2+x)\ge2x^2/\ln2\) on \(|x|\le1/2\). The same logarithm enclosures give \(\ln2<7/10\).
 
-\hypertarget{i.4.2.-recursive-and-trace-aggregated-lookup-contacts}{%
-\subsubsection{I.4.2. Recursive and trace-aggregated lookup contacts}\label{i.4.2.-recursive-and-trace-aggregated-lookup-contacts}}
+\hypertarget{af-a9ec399514-i.4.2.-recursive-and-trace-aggregated-lookup-contacts}{%
+\subsubsection{I.4.2. Recursive and trace-aggregated lookup contacts}\label{af-a9ec399514-i.4.2.-recursive-and-trace-aggregated-lookup-contacts}}
 
 Every decimal in the following table denotes an exact rational number. The first two rows use (42), the middle six use the trace-aggregated construction (43)--(53), and the last uses the direct occurrence circuit of Sections I.2.2--I.2.4. Within a row, both contacts concern one fixed circuit and one fixed routing rule independent of \(\tau\).
 
@@ -1943,8 +1943,8 @@ Right contact: push + recursive
 
 The reported counts total \(204538\) accepted leaves in these twelve contacts, with positive trace corrections on \(183117\) recursive leaves. The reported four first-level counts are \(176,139,143,137\). For the two direct contacts start with \([a,s]\times[a,\beta(s)]\), tighten \(z_0\ge m_0,z_1\le\beta(m_1)\), and use center-selected Gibbs lines for all positive terms in (24) and a lower chord for \(H(1-m,\beta-m)\). If \(m_0>a\) and \(\rho(m_0-a)^2\ge b(z_1-a)\), subtract the constant \((7/5)(s-m_1)\max(0,z_0-m_1)\) from the right degree; otherwise subtract zero. Evaluate both branches of \(L_\rho\) at all four vertices, accepting only below the contact. Bisect by the same \(3(m_1-m_0)\) versus \(z_1-z_0\) rule. The reported direct-contact counts are \(175\) and \(183\) accepted leaves. Their full-domain inequalities remain the explicit numerical premise of the background Theorem 1; these counts alone do not independently establish that premise. Finite cover factors and rounding are accounted for separately by \(\zeta\).
 
-\hypertarget{i.4.3.-whole-prefix-compensation}{%
-\subsubsection{I.4.3. Whole-prefix compensation}\label{i.4.3.-whole-prefix-compensation}}
+\hypertarget{af-a9ec399514-i.4.3.-whole-prefix-compensation}{%
+\subsubsection{I.4.3. Whole-prefix compensation}\label{af-a9ec399514-i.4.3.-whole-prefix-compensation}}
 
 Join each row's two contacts by its chord. On \([0,.24]\) use \(\tau d_{\rm push}\) and on \([.76,1]\) use \((1-\tau)d_{\rm pull}\). Denote this piecewise upper profile by \(f\); at a boundary retain both one-sided values. Convexity of each fixed family's colored profile proves its chord throughout the interval.
 
@@ -2027,8 +2027,8 @@ The reflected orientation has the same entropy. Bounded core rounding changes th
 
 These give the per-endpoint enumeration bounds for the exact circuits.
 
-\hypertarget{i.4.4.-exact-gain-and-complete-reduction-costs}{%
-\subsubsection{I.4.4. Exact gain and complete reduction costs}\label{i.4.4.-exact-gain-and-complete-reduction-costs}}
+\hypertarget{af-a9ec399514-i.4.4.-exact-gain-and-complete-reduction-costs}{%
+\subsubsection{I.4.4. Exact gain and complete reduction costs}\label{af-a9ec399514-i.4.4.-exact-gain-and-complete-reduction-costs}}
 
 Use the matching types of Section I.3, \(S_*=903/2500\), the full compilation allowance \(\zeta=10^{-6}\), and \(d_0=1/50\). With the definitions there,
 
@@ -2101,8 +2101,8 @@ Dictionary and canonical-layer preparation & \(.331394717\) \\
 
 Each auxiliary rate is strictly smaller than \(E\) by exact rational comparison. The bound \(h(1/5)<.74<1-d_0\) places every nonempty good layer in \((1/5,4/5)\) for sufficiently large \(M\), as required by the core construction. The ledger includes local repetitions, modulus candidates, residue states, trie preprocessing, and witness recovery, with polynomial bit factors for all arithmetic.
 
-\hypertarget{i.5.-proof-of-theorem-1}{%
-\subsection{I.5. Proof of Theorem 1}\label{i.5.-proof-of-theorem-1}}
+\hypertarget{af-a9ec399514-i.5.-proof-of-theorem-1}{%
+\subsection{I.5. Proof of Theorem 1}\label{af-a9ec399514-i.5.-proof-of-theorem-1}}
 
 Sections I.2 and I.4 give exact typed circuits and common adjacency enumerators with total allowance \(\zeta=10^{-6}\). Their terminating input-independent compilation contributes \(C\).
 
@@ -2112,25 +2112,25 @@ Form original integer keys after undoing label flips, keeping round and residue-
 
 The ledger and (131) bound input-dependent work by \(\mathrm{poly}(n,L)2^{En}\). Rounding and the boundary change only constant factors; the finite small-input range is handled exhaustively with a fixed polynomial coefficient. Adding \(C\) proves the theorem. \(\square\)
 
-\hypertarget{part-ii.-trace-refinement-and-improved-parameter-setting}{%
-\section{Part II. Trace refinement and improved parameter setting}\label{part-ii.-trace-refinement-and-improved-parameter-setting}}
+\hypertarget{af-a9ec399514-part-ii.-trace-refinement-and-improved-parameter-setting}{%
+\section{Part II. Trace refinement and improved parameter setting}\label{af-a9ec399514-part-ii.-trace-refinement-and-improved-parameter-setting}}
 
 This part applies the exact circuit compiler and reduction proved in Part I to a stronger pooled-trace bound and a new rational parameter setting. Its numerical requirements are discharged by the reconstructed continuous-domain and scalar certificates described in Sections 4 and 9. Source revisions and attribution are recorded in the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/sources.md}{source map}.
 
-\hypertarget{theorem-and-dependencies}{%
-\subsection{1. Theorem and dependencies}\label{theorem-and-dependencies}}
+\hypertarget{af-a9ec399514-theorem-and-dependencies}{%
+\subsection{1. Theorem and dependencies}\label{af-a9ec399514-theorem-and-dependencies}}
 
 The background conditional composition in Theorem 1 has exponent
 
 \[
-E_{\rm old}=\frac{149809813343531}{301754962128739}
+E_0=\frac{149809813343531}{301754962128739}
  =.496461805587\ldots.
 \]
 
 The change below gives
 
 \[
-\boxed{E_{\rm new}=
+\boxed{E_2=
  \frac{158153814247997}{318964058919134}
  =.4958358467845221\ldots < .495836.}
  \tag{XSS1}
@@ -2138,19 +2138,44 @@ The change below gives
 
 The exponent decreases by approximately \texttt{.00062595880} per input coordinate. This result applies to arbitrary signed binary integers, with no promise on density, multiplicities, target, or the existence of a solution.
 
-\textbf{Theorem F, restated.} There is a uniform deterministic algorithm deciding Subset Sum on \texttt{n} indexed signed binary integers of total encoding length \texttt{L}, and returning an indexed witness on YES instances, using
+\textbf{Theorem F2 (preserved two-level theorem).} There is a uniform deterministic algorithm deciding Subset Sum on \texttt{n} indexed signed binary integers of total encoding length \texttt{L}, and returning an indexed witness on YES instances, using
 
 \[
-C_{\rm new}+\mathrm{poly}(n,L)2^{E_{\rm new}n}
+C_{\mathrm{start},2}+\mathrm{poly}(n,L)2^{E_2n}
  \tag{XSS2}
 \]
 
-bit operations. The startup cost \texttt{C\_new} is finite and independent of the input. All polynomial degrees are fixed. This is a time theorem; it makes no simultaneous claim for the separate low-space algorithm.
+bit operations. The startup cost \(C_{\mathrm{start},2}\) is finite and independent of the input. All polynomial degrees are fixed. This is a time theorem; it makes no simultaneous claim for the separate low-space algorithm.
 
 The new argument changes the following concrete ingredients: the pooled-trace upper bound, the rational matching types used inside the reduction, and the finite menu of recursive lookup widths. The finite contact-cone lemma extends every contact beyond its original chord interval. The argument then recomputes the entire profile and every outer cost line. The exact signed identities, fixed-seed compiler, canonical selection, energy evaluation, residue covers, exact integer keys, and witness lifting are proved in Part I. The argument below applies those constructions with the parameter changes justified in Section 6 and recomputes their cost in Section 7. It uses the new contact certificate directly and does not assume the older numerical menu in Section I.4.2.
 
-\hypertarget{new-types-and-the-exact-circuit-families}{%
-\subsection{2. New types and the exact circuit families}\label{new-types-and-the-exact-circuit-families}}
+\hypertarget{af-a9ec399514-a-deterministic-baseline-cap}{%
+\subsubsection{A deterministic baseline cap}\label{af-a9ec399514-a-deterministic-baseline-cap}}
+
+The finite circuit search need not finish before the instance can be answered. Let \(t_{\rm fast}(x)\) be the bit-step count of the algorithm in Theorem F2 on an encoded instance \(x\), including its startup search. Construct an ordinary meet-in-the-middle algorithm as follows. Split the indices into blocks of sizes \(\lfloor n/2\rfloor\) and \(\lceil n/2\rceil\). Enumerate their exact subset sums, retaining the index mask with each entry, sort one indexed sum list, and search it for the target minus each sum in the other list. Each sum and comparison has polynomial bit cost in \(n,L\). There are at most \(2^{\lceil n/2\rceil}\) entries per list, so this deterministic algorithm takes \(t_{\rm MITM}(x)\le P_0(n,L)2^{n/2}\) bit operations for a fixed polynomial \(P_0\). It returns the union of two disjoint index masks on YES instances and returns NO exactly when no complement occurs. Signed, zero and repeated weights require no separate assumption.
+
+Run these two fixed exact programs by alternating their elementary bit steps, retaining both machine states. Their input copies and output buffers can be kept separate; copying the common input and the completed answer adds \(O(L+n\log(n+1))\) bit operations. Return the first completed decision and, on YES instances, its indexed witness. If the faster program takes \(t\) steps, it finishes within at most \(2t\) interleaved steps. Consequently the resulting deterministic algorithm satisfies
+
+\[
+T(x)\le 2\min\{t_{\rm fast}(x),t_{\rm MITM}(x)\}
+       +O(L+n\log(n+1)),
+\]
+
+and hence, for fixed polynomials \(P_0,P_1\),
+
+\[
+T(n,L)\le
+2\min\left\{C_{\mathrm{start},2}+P_1(n,L)2^{E_2n},
+           P_0(n,L)2^{n/2}\right\}
+ +O(L+n\log(n+1)).
+\]
+
+This preserves the proved faster exponent while bounding every instance by the meet-in-the-middle schedule, even if its circuit search has not yet completed. The corollary is about time and exact indexed output; it adds no simultaneous space guarantee and no practical implementation claim for the finite circuit compiler.
+
+The same interleaving applies to Theorem F3 after Part III. In that application, replace \(C_{\mathrm{start},2},E_2\) in the displayed bound by \(C_{\mathrm{start},3},E_3\); the indexed-output proof and the common input/output overhead are unchanged.
+
+\hypertarget{af-a9ec399514-new-types-and-the-exact-circuit-families}{%
+\subsection{2. New types and the exact circuit families}\label{af-a9ec399514-new-types-and-the-exact-circuit-families}}
 
 Set
 
@@ -2253,8 +2278,8 @@ G_2=H(D_2,w_2-Q_2).
  \tag{XSS10}
 \]
 
-\hypertarget{why-the-generalized-second-width-is-an-exact-circuit}{%
-\subsubsection{Why the generalized second width is an exact circuit}\label{why-the-generalized-second-width-is-an-exact-circuit}}
+\hypertarget{af-a9ec399514-why-the-generalized-second-width-is-an-exact-circuit}{%
+\subsubsection{Why the generalized second width is an exact circuit}\label{af-a9ec399514-why-the-generalized-second-width-is-an-exact-circuit}}
 
 The positive-containment identity in Section I.2.5 permits any lookup containing its query. Here \texttt{0\textless{}=Q\_2\textless{}=C\_2\textless{}=c}. At finite integer sizes, choose \texttt{max(ceil(gamma\_2\ \textbar{}C\textbar{}),\textbar{}Q\_2\textbar{})}; it remains at most \texttt{\textbar{}C\textbar{}}. The same complement/transposition therefore gives (XSS10) for both \texttt{gamma\_2=1/2} and \texttt{gamma\_2=14/25}.
 
@@ -2284,8 +2309,8 @@ P_{\rm dir}=\tau L_0+(1-\tau)
 
 On a rectangle where \texttt{m\_0\textgreater{}a} and \texttt{rho(m\_0-a)\^{}2\textgreater{}=b(z\_1-a)}, use \texttt{delta\_dir=(7/5)(s-m\_1)\ max(0,z\_0-m\_1)}; otherwise use zero. This is the existing direct distinct-gate bound, applied at the new types.
 
-\hypertarget{the-new-pooled-trace-lemma}{%
-\subsection{3. The new pooled-trace lemma}\label{the-new-pooled-trace-lemma}}
+\hypertarget{af-a9ec399514-the-new-pooled-trace-lemma}{%
+\subsection{3. The new pooled-trace lemma}\label{af-a9ec399514-the-new-pooled-trace-lemma}}
 
 Fix one outer and first-inner occurrence and write
 
@@ -2335,8 +2360,8 @@ P_{\rm rec}=\tau L_0+(1-\tau)B_{\rm tr}
  \tag{XSS15}
 \]
 
-\hypertarget{proof-of-the-trace-lemma}{%
-\subsubsection{Proof of the trace lemma}\label{proof-of-the-trace-lemma}}
+\hypertarget{af-a9ec399514-proof-of-the-trace-lemma}{%
+\subsubsection{Proof of the trace lemma}\label{af-a9ec399514-proof-of-the-trace-lemma}}
 
 Use the exact pooled-histogram expression (51) in the baseline. Its histogram coordinates are \texttt{j,e,f}. Set \texttt{k=q-e} and \texttt{g=f-k}. The three branches of the pooled count are \texttt{0,C\_1,C\_0+C\_1}.
 
@@ -2375,8 +2400,8 @@ H(b,d+u)+H(d+u,k)+H(a,q-k)
 
 The two negative terms are \texttt{H(1-m,w\_1+D)} and \texttt{H(z,D\_1)}. Vandermonde in \texttt{k} gives \texttt{H(m+u,q)}; independently, Vandermonde in \texttt{g} gives \texttt{H(1-m-D,w\_1)}. The resulting expression is \texttt{J(u)}. Maximize over \texttt{I\_u}, and combine the three branches. Polynomially many histogram choices do not change normalized exponents. Taking the minimum with the old bound for the same circuit proves (XSS14).
 
-\hypertarget{a-useful-closed-corollary}{%
-\subsubsection{A useful closed corollary}\label{a-useful-closed-corollary}}
+\hypertarget{af-a9ec399514-a-useful-closed-corollary}{%
+\subsubsection{A useful closed corollary}\label{af-a9ec399514-a-useful-closed-corollary}}
 
 If, in addition, \texttt{0\textless{}=q\textless{}=d}, \texttt{w\_1\textgreater{}=r}, and
 
@@ -2409,8 +2434,8 @@ because \texttt{(1-s-D)-(w\_1-r)=1-beta\textgreater{}=0}. Thus \texttt{J\_*=J(0)
 
 This guard is weaker than the old first guard: \texttt{(b-q)w\_1\textgreater{}=r(beta-a-q)} is equivalent to \texttt{(d-q)(w\_1-r)\textgreater{}=rD}; multiply by \texttt{m} and use \texttt{d(m-q)-m(d-q)=aq\textgreater{}=0} to obtain (XSS16). The old second guard follows automatically. The continuous bound (XSS14) remains available even when the closed guard fails.
 
-\hypertarget{full-domain-contacts}{%
-\subsection{4. Full-domain contacts}\label{full-domain-contacts}}
+\hypertarget{af-a9ec399514-full-domain-contacts}{%
+\subsection{4. Full-domain contacts}\label{af-a9ec399514-full-domain-contacts}}
 
 The following bounds concern one fixed exact family in each row. Every push branch, recursive branch, nonnegative maximum, and legal color is included. A pair \texttt{(tau,U)} means that the full normalized colored profile at \texttt{tau} is at most the exact rational \texttt{U}.
 
@@ -2443,8 +2468,8 @@ Direct \texttt{rho=4} & \texttt{(.60,.21873)}, \texttt{(.76,.22760)} \\
 
 For one fixed family, the supremum of \texttt{tau\ L+(1-tau)R} over its colors is convex in \texttt{tau}. The trace bound is independent of \texttt{tau}. Hence a chord between consecutive contacts bounds the same family's whole intervening interval. No chord joins unrelated circuit families.
 
-\hypertarget{rational-proof-method-for-the-contacts}{%
-\subsubsection{Rational proof method for the contacts}\label{rational-proof-method-for-the-contacts}}
+\hypertarget{af-a9ec399514-rational-proof-method-for-the-contacts}{%
+\subsubsection{Rational proof method for the contacts}\label{af-a9ec399514-rational-proof-method-for-the-contacts}}
 
 Use the baseline Gibbs inequality, for any rational \texttt{0\textless{}p\textless{}1},
 
@@ -2519,11 +2544,11 @@ The smallest exact acceptance margin over all nonempty leaves is
 
 The receipt binds the complete contact menu to the checker's exact source bytes. It is a record of the completed calculation; rerunning \texttt{-\/-all} reconstructs the entire continuous-domain proof. Approximate optimization only proposes rational planes and never accepts or discards a box. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/verify/README.md}{verification note} proves the coverage and acceptance rules.
 
-\hypertarget{the-whole-reflected-profile}{%
-\subsection{5. The whole reflected profile}\label{the-whole-reflected-profile}}
+\hypertarget{af-a9ec399514-the-whole-reflected-profile}{%
+\subsection{5. The whole reflected profile}\label{af-a9ec399514-the-whole-reflected-profile}}
 
-\hypertarget{finite-contact-cones}{%
-\subsubsection{Finite contact cones}\label{finite-contact-cones}}
+\hypertarget{af-a9ec399514-finite-contact-cones}{%
+\subsubsection{Finite contact cones}\label{af-a9ec399514-finite-contact-cones}}
 
 For a finite exact colored circuit, Section I.2.1 deletes gates with a zero factor and defines positive integer color degrees \(A_j,B_j\ge1\). Its colored volume is \(\Upsilon(\tau)=\sum_j A_j^\tau B_j^{1-\tau}\). For a contact weight \(\alpha\in(0,1)\), put
 
@@ -2623,8 +2648,8 @@ The maximum occurs at \(\tau=99/200\) and its reflection \(101/200\). The exact 
 
 The numerical values of \(S\) for different matching types are not directly comparable. The running-time comparison uses the rebalanced reduction below, with all type-dependent entropy terms recomputed.
 
-\hypertarget{unequal-cores-rational-types-and-the-finite-compiler}{%
-\subsection{6. Unequal cores, rational types, and the finite compiler}\label{unequal-cores-rational-types-and-the-finite-compiler}}
+\hypertarget{af-a9ec399514-unequal-cores-rational-types-and-the-finite-compiler}{%
+\subsection{6. Unequal cores, rational types, and the finite compiler}\label{af-a9ec399514-unequal-cores-rational-types-and-the-finite-compiler}}
 
 Put \texttt{R=h(t)}, \texttt{Q=h(s)+H(s,a)}. For a fraction \texttt{lambda} of row-oriented core coordinates, the endpoint objective is
 
@@ -2671,8 +2696,8 @@ Choose the fixed microblock length first, then the common amplification depth, l
 
 At input length, use the same count descriptions, tensor products of stored adjacency lists, actual gate names, and output-sensitive incidence enumeration. The additional scalar entropy optimizations in the proof are absent from this input-time implementation.
 
-\hypertarget{retyping-the-reduction-and-the-full-outer-ledger}{%
-\subsection{7. Retyping the reduction and the full outer ledger}\label{retyping-the-reduction-and-the-full-outer-ledger}}
+\hypertarget{af-a9ec399514-retyping-the-reduction-and-the-full-outer-ledger}{%
+\subsection{7. Retyping the reduction and the full outer ledger}\label{af-a9ec399514-retyping-the-reduction-and-the-full-outer-ledger}}
 
 The three-dictionary reduction is unchanged except for its rational types and block scale. Its low-deficiency canonical layers satisfy \texttt{1/5\textless{}k/M\textless{}4/5} exactly as before. Since the new \texttt{s=.14\textless{}1/5}, both integral cores remain positive in the required range. Replacing \texttt{H\_0=500} by \texttt{1000} gives integral counts for all new types and only a fixed boundary overhead.
 
@@ -2739,7 +2764,7 @@ Then \texttt{3mu\textless{}1}, so the three dictionaries fit, and \texttt{g\_L\t
 
 \[
 \mu(1+D_U)=\frac12-\mu g_L
- =\frac{158153814247997}{318964058919134}=E_{\rm new}.
+ =\frac{158153814247997}{318964058919134}=E_2.
  \tag{XSS31}
 \]
 
@@ -2752,8 +2777,8 @@ Operation & Rate per original input coordinate \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Retained signed-circuit incidences and witness recovery & \texttt{E\_new} \\
-Canonical outputs and complete residue-cover state & \texttt{E\_new} \\
+Retained signed-circuit incidences and witness recovery & \texttt{E\_2} \\
+Canonical outputs and complete residue-cover state & \texttt{E\_2} \\
 All candidate-modulus energy evaluations & \texttt{\textless{}.463358446} \\
 Selectors and shared witness preprocessing & \texttt{\textless{}.321234175} \\
 Repeated prefix lookups & \texttt{\textless{}.328953402} \\
@@ -2780,22 +2805,408 @@ These are exact substitutions into, respectively, the full existing input-cost e
 
 The modulus candidates, full residue state, repetitions of the local covers, outside scans, canonical witnesses, integer-key bit lengths, and large-deficiency fallback are included. The change in \texttt{H\_0} contributes only fixed padding and rounding costs. Handle the fixed finite small-input range exhaustively, with polynomial dependence on \texttt{L}. This yields (XSS2) under the same uniformity and exact-witness contract as the baseline.
 
-\hypertarget{scope}{%
-\subsection{8. Scope}\label{scope}}
+\hypertarget{af-a9ec399514-scope}{%
+\subsection{8. Scope}\label{af-a9ec399514-scope}}
 
 The main new lemma replaces a constrained three-histogram maximization by two concave scalar upper bounds and weakens the old closed-correction guard. The second lookup also admits the exact rational fraction \texttt{14/25}, with complete color domains and the same trace aggregation. The finite contact-cone inequality extends the certified weights to a continuous whole-interval envelope, with its seed amplification explicitly charged. Retyping and the enlarged circuit menu convert these local changes into the stated general deterministic time exponent. The claim is not restricted to a favorable class of instances or to a single active color.
 
 The startup search remains a large input-independent constant, with no practical numerical bound supplied here. The result does not combine this time exponent with the repository's separate small-space exponent, and it does not change the unrelated matching exponent \texttt{4/5}.
 
-\hypertarget{reproducible-numerical-certificates}{%
-\subsection{9. Reproducible numerical certificates}\label{reproducible-numerical-certificates}}
+\hypertarget{af-a9ec399514-reproducible-numerical-certificates}{%
+\subsection{9. Reproducible numerical certificates}\label{af-a9ec399514-reproducible-numerical-certificates}}
 
 \href{https://github.com/icekylinx/algorithm-frontier/blob/main/tools/verify_subset_sum_contacts.py}{\texttt{verify\_subset\_sum\_contacts.py}} reconstructs the complete contact proof of Section 4. Run it with \texttt{-\/-all} to repeat all 62 branch calculations; \texttt{-\/-jobs} only controls parallelism. Every domain tightening and accepted vertex bound uses exact rational arithmetic. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/verify/receipt.json}{receipt} records the complete menu, the accepted bounds and margins, and the source-code and menu fingerprints. Receipt binding can be checked separately, without confusing that inexpensive provenance check with a full recomputation.
 
-\href{https://github.com/icekylinx/algorithm-frontier/blob/main/tools/verify_subset_sum_scalars.py}{\texttt{verify\_subset\_sum\_scalars.py}} reconstructs the continuous contact/chord/cone envelope, proves its entropy enclosures with rational logarithm series, checks all 160 reflected-profile comparisons, and checks every operation in the outer ledger. It reproduces the exact maximum (XSS24) and exponent (XSS31) without floating-point acceptance. These two programs discharge the numerical requirements of Theorem F. The circuit compiler, reduction, and witness recovery remain the mathematical proofs given in this manuscript. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/verify/README.md}{verification note} gives the complete commands and the separate scope of the finite energy-tensor check.
+\href{https://github.com/icekylinx/algorithm-frontier/blob/main/tools/verify_subset_sum_scalars.py}{\texttt{verify\_subset\_sum\_scalars.py}}, run with \texttt{-\/-base-two-level}, independently reconstructs this part's preserved continuous contact/chord/cone envelope and proves its entropy enclosures with rational logarithm series, checks all 160 reflected-profile comparisons, and checks every operation in the outer ledger. It reproduces the exact maximum (XSS24) and exponent (XSS31) without floating-point acceptance. These two programs discharge the numerical requirements of Theorem F2. The circuit compiler, reduction, and witness recovery are proved by the mathematical arguments in this manuscript. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/verify/README.md}{verification note} gives the complete commands and the separate scope of the finite energy-tensor check.
 
-\hypertarget{references}{%
-\subsection{References}\label{references}}
+\hypertarget{af-a9ec399514-part-iii.-a-third-positive-containment-lookup}{%
+\section{Part III. A third positive-containment lookup}\label{af-a9ec399514-part-iii.-a-third-positive-containment-lookup}}
+
+The final-source \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/verify/third_receipt.json}{contact receipt} covers all 16 new branches in a completed resumable replay under the final source. Its source and menu bindings, and the independent exact scalar ledger, have passed. The analytic geometry and ledger have also received separate internal review. Numerical candidate searches are not part of the acceptance argument.
+
+This extension keeps the matching types, outer reduction, trace aggregation, and all 62 previously certified branches. It adds one positive-containment lookup to three fixed circuit families. The resulting contact bounds are combined with the existing contacts by same-family chords and the finite contact-cone lemma.
+
+\hypertarget{af-a9ec399514-iii.1.-theorem-and-inherited-proof-interfaces}{%
+\subsection{III.1. Theorem and inherited proof interfaces}\label{af-a9ec399514-iii.1.-theorem-and-inherited-proof-interfaces}}
+
+Keep the exact rational types
+
+\[
+(a,b,s,t)=(.065,.075,.14,.45).
+\]
+
+\textbf{Theorem F3, restated.} A uniform deterministic construction has a fixed startup constant \(C_{\mathrm{start},3}\) and solves integer Subset Sum, including an indexed witness when one exists, in
+
+\[
+C_{\mathrm{start},3}+\mathrm{poly}(n,L)\,
+ 2^{E_3n},
+\qquad
+E_3=\frac{158153814247997}{319021177919134}
+ < .495748.
+\tag{T1}
+\]
+
+Here \(L\) is the binary input length. The baseline cap by deterministic interleaving with the indexed meet-in-the-middle algorithm continues to apply. No new space bound or practical implementation of the compiled fast circuit is asserted.
+
+The positive-containment factorization, signed inclusion-exclusion identity, first-lookup trace aggregation, integer matrix compiler, and output-sensitive incidence enumeration are the ingredients proved in Parts I--II. This extension changes the finite circuit family and the scalar gain. It does not replace any signed equality by a positive cover or infer a global proof from sampled input instances.
+
+\hypertarget{af-a9ec399514-iii.2.-exact-third-lookup-identity}{%
+\subsection{III.2. Exact third-lookup identity}\label{af-a9ec399514-iii.2.-exact-third-lookup-identity}}
+
+For an outer color, use the notation of Parts I--II
+
+\[
+\beta=a+\rho(m-a),\quad
+a\le m\le s,\quad m\le z\le\beta,\quad
+C_1=\gamma_1\beta,\quad Q_1=\beta-z,\quad D_1=C_1-Q_1.
+\]
+
+The first color satisfies
+
+\[
+\max\{Q_1,C_1-m\}\le w_1\le\min\{\beta-m,C_1\}.
+\]
+
+Retain the second-level routing
+
+\[
+Q_2=C_1-w_1,\qquad
+C_2=\max\{\gamma_2 C_1,Q_2\},\qquad D_2=C_2-Q_2.
+\]
+
+The branch \(C_2=Q_2\) is implemented by the existing first-level push circuit, with its previously proved upper profile. On the other closed branch put
+
+\[
+v=w_1-(1-\gamma_2)C_1\ge0,\qquad
+C_2=\gamma_2C_1,\qquad D_2=v.
+\]
+
+Its second color obeys
+
+\[
+\max\{Q_2,C_2-Q_1\}\le w_2\le\min\{D_1,C_2\}.
+\tag{T2}
+\]
+
+After the second complement and transpose, the residual containment matrix has universe size \(C_2N\), row size \(D_2N\), and query size
+
+\[
+Q_3N=(C_2-w_2)N.
+\]
+
+Indeed, (T2) implies \(0\le Q_3\le D_2\le C_2\). Choose a fixed rational \(0<\gamma_3<1\) and set
+
+\[
+C_3=\max\{\gamma_3C_2,Q_3\},\qquad D_3=C_3-Q_3.
+\tag{T3}
+\]
+
+At integer sizes choose \(\max\{\lceil\gamma_3|C_2|\rceil,|Q_3|\}\). This contains the query and is at most \(|C_2|\): for an integer \(p\ge0\), an integer \(0\le q\le p\), and \(0<\gamma<1\), one has \(\max\{\lceil\gamma p\rceil,q\}\le p\). There is no divisibility requirement on an inner lookup width.
+
+The generic positive-containment factorization now gives the color domain and degree contributions
+
+\[
+\max\{Q_3,C_3-Q_2\}\le w_3\le\min\{D_2,C_3\},
+\tag{T4}
+\]
+
+\[
+\begin{aligned}
+F_3&=\max\{0,H(D_2,w_3)+H(Q_2,C_3-w_3)-H(w_2,D_3)\},\\
+G_3&=H(D_3,w_3-Q_3).
+\end{aligned}
+\tag{T5}
+\]
+
+Write \(L_0\) for the outer occurrence exponent and \(F_2\) for the second occurrence exponent. Let \(B_{\mathrm{tr}}\) be the proved first-lookup trace bound, before adding the final residual degree. Three orientation swaps give
+
+\[
+L^{(3)}=L_0+F_2+G_3,\qquad
+R^{(3)}=B_{\mathrm{tr}}+F_3.
+\tag{T6}
+\]
+
+To check the orientation, the generic rule sends a residual pair \((L',R')\) to \((F+\gamma R',\gamma L')\), with the scale converted to the original universe. Substitution of (T5) into the residual matrix after the second swap puts \(G_3\) on the original row side and \(F_3\) on the original query side. The earlier \(F_2\) therefore stays on the row side.
+
+The pooled signed coefficient is unchanged. After fixing the first outer and inner occurrence labels, every descendant incidence depends on the original completion \(U\) only through \(K=U\cap C_1\). One first sums the completions with this trace, exactly as in the identity (47) in Part I, then applies the additional positive factorization to the residual matrix. The coefficient has \(O(N)\) bits because it is a signed count of at most \(2^N\) completions.
+
+On the third push branch \(Q_3\ge\gamma_3 C_2\), (T3) gives \(C_3=Q_3\), \(D_3=0\), and (T4) forces \(w_3=Q_3\). Thus
+
+\[
+G_3=0,\qquad
+F_3=H(D_2,Q_3)=H(D_2,w_2-Q_2)=G_2.
+\tag{T7}
+\]
+
+The last equality uses \(Q_3+(w_2-Q_2)=D_2\) and entropy symmetry. This branch recovers the two-level recursive contribution exactly. The unmerged degree identities also agree on its routing boundary. The first-level push branch retains its older upper bound; that upper bound need not equal the sharper trace upper bound on their common boundary.
+
+All routing domains and degree contributions are independent of the weight \(\tau\). The supremum of
+
+\[
+\tau(L_0+F_2+G_3)+(1-\tau)(B_{\mathrm{tr}}+F_3)
+\tag{T8}
+\]
+
+over the closed third-level branches, together with the first-level push profile, is therefore convex in \(\tau\) for each fixed family. Only contacts from that same family may be joined by a chord.
+
+\hypertarget{af-a9ec399514-iii.3.-families-and-full-domain-hypotheses}{%
+\subsection{III.3. Families and full-domain hypotheses}\label{af-a9ec399514-iii.3.-families-and-full-domain-hypotheses}}
+
+The added menu is:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(\rho\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\gamma_1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\gamma_2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\gamma_3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contacts \((\tau,U)\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(3.18\) & \(.728\) & \(.671\) & \(.583\) & \((.44,.19449)\), \((.48,.20164)\), \((.50,.20530)\) \\
+\(3.44\) & \(.721\) & \(.663\) & \(.584\) & \((.48,.20187)\), \((.50,.20507)\), \((.52,.20834)\) \\
+\(3.72\) & \(.714\) & \(.657\) & \(.589\) & \((.52,.20809)\), \((.56,.21380)\) \\
+\end{longtable}
+
+Every decimal is an exact rational. The maximum outer widths are \(.3035\), \(.323\), and \(.344\), respectively. Each is below \(\min\{t,1-t,1-s\}\). The first query must fit the first lookup on the entire outer domain, not merely on the boxes remaining after a filter. The affine function
+
+\[
+\gamma_1\beta(m)-(\beta(m)-m)
+\]
+
+has the following positive values at its two endpoints:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(\rho\) & At \(m=a\) & At \(m=s\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(3.18\) & \(.04732\) & \(.057448\) \\
+\(3.44\) & \(.046865\) & \(.049883\) \\
+\(3.72\) & \(.04641\) & \(.041616\) \\
+\end{longtable}
+
+Checking both endpoints proves the condition for every \(m\in[a,s]\). All three inner fractions lie strictly between zero and one. The second and third max rules then contain every residual query, including degenerate zero-width cases. The final kernel rejects a family that fails any of these preliminary hypotheses.
+
+The matching types are unchanged, so the original core-fitting, dummy-padding, and energy-table arguments retain their hypotheses. The scalar ledger nevertheless rechecks
+
+\[
+s<1/5,\quad s<1/3,\quad 2s<2/3,\qquad
+h(2s)+2s<1.135451<1.444238<1+h(s)-s.
+\tag{T9}
+\]
+
+The last comparison charges the initial difference table to the energy-transform budget; it does not require that table's exponent to be below one.
+
+\hypertarget{af-a9ec399514-iii.4.-exact-four-dimensional-acceptance}{%
+\subsection{III.4. Exact four-dimensional acceptance}\label{af-a9ec399514-iii.4.-exact-four-dimensional-acceptance}}
+
+The final kernel uses box coordinates \((m,z,v,\theta)\) with
+
+\[
+w_2=Q_2+\theta(D_1-Q_2),\qquad 0\le\theta\le1.
+\tag{T10}
+\]
+
+On every feasible first color, \(Q_2\le D_1\). Every legal second color therefore has a representation (T10). When \(D_1=Q_2\), all values of \(\theta\) represent the same color. The initial box is
+
+\[
+[a,s]\times[a,\beta(s)]
+ \times[0,\gamma_2\gamma_1\beta(s)]\times[0,1].
+\]
+
+The first-color affine constraints and all four inequalities in (T2) are retained. The first-level push branch instead has \(v=\theta=0\) and uses its exact projected constraints and auxiliary-color elimination.
+
+\hypertarget{af-a9ec399514-coverage-under-tightening}{%
+\subsubsection{Coverage under tightening}\label{af-a9ec399514-coverage-under-tightening}}
+
+Every expression affine in \((m,z,v,w_2)\) becomes multiaffine after (T10): it is affine in each one of the four box coordinates while the other three are fixed. Its extrema over a rectangular box occur at corners.
+
+For a multiaffine necessary constraint \(g(x)\ge0\), fix one coordinate \(x_i=u\). The value of \(g(u,x_{-i})\) is a convex combination of the affine functions \(g_e(u)\) obtained by setting the other coordinates to their endpoints. Consequently a feasible \(u\) must satisfy \(g_e(u)\ge0\) for at least one such endpoint assignment. Intersect each exact affine half-line with the current coordinate interval, take the hull of their union, and intersect the box coordinate with that hull. This cannot remove a feasible point. An empty union or a strictly negative maximum of \(g\) proves the box empty.
+
+This projection uses rational roots with known scalar coefficients. It never divides by an interval coefficient or assumes that a varying slope has one sign. Repeating it a fixed number of times changes only the search tree, not the set that must be covered.
+
+\hypertarget{af-a9ec399514-entropy-bounds-and-auxiliary-colors}{%
+\subsubsection{Entropy bounds and auxiliary colors}\label{af-a9ec399514-entropy-bounds-and-auxiliary-colors}}
+
+For each rational \(0<p<1\), the Gibbs plane
+
+\[
+H(c,y)\le -y\log_2p-(c-y)\log_2(1-p)
+\tag{T11}
+\]
+
+bounds every positive entropy on its domain. Floating arithmetic proposes \(p\); the accepting plane uses exact rational logarithm enclosures.
+
+For a negative entropy, test its entire box domain using all corners. The conditions \(c\ge0\), \(y\ge0\), and \(c-y\ge0\) are multiaffine, so their corner tests suffice. If they pass, the composition \(H(c(x),y(x))\) is concave in each coordinate separately. Successive one-coordinate concavity proves that the multilinear interpolation of certified lower corner values lies below the entropy on the whole box. If any corner fails the domain test, use the valid lower bound zero on the actual feasible colors.
+
+The four negative entropy pairs are \((1-m,\beta-m)\), \((z,D_1)\), \((w_1,D_2)\), and \((w_2,D_3)\). The last pair is used only for the third recursive branch.
+
+After choosing Gibbs planes, the coefficient of the remaining scalar color \(w_3\) is constant over a box. For a nonnegative coefficient, substitute any globally valid affine upper endpoint from (T4); for a negative coefficient, substitute a globally valid lower endpoint. The center may select which endpoint is convenient, but the chosen expression is fixed throughout the box. Each choice is individually valid, so floating selection cannot invalidate the bound.
+
+Retain the nonnegative floor in \(F_3\) as two separate cases. For the raw case use (T4). For the zero case put \(y=w_3-Q_3\) and use
+
+\[
+\max\{0,D_3-Q_2\}\le y\le\min\{D_3,w_2-Q_2\}.
+\tag{T12}
+\]
+
+Eliminate \(y\) separately. The \(F_2\) floor is likewise retained; the checker never assumes that either raw occurrence exponent is positive.
+
+\hypertarget{af-a9ec399514-routing-and-whole-box-maxima}{%
+\subsubsection{Routing and whole-box maxima}\label{af-a9ec399514-routing-and-whole-box-maxima}}
+
+In the recursive expression, the third routing sign is
+
+\[
+D_3=w_2-(1-\gamma_3)C_2.
+\]
+
+Its corner extrema certify a box lying wholly on either side. If a box crosses zero, take the maximum of the push and recursive majorants on the whole box. Their affine extensions need only bound their own feasible branch. Their maximum covers both branches.
+
+After substitution, each plane and each interpolant is multiaffine. The floors and routing maxima preserve convexity in each coordinate separately. The resulting upper bound therefore attains its whole-box maximum at a corner. The old trace bound and continuous trace bound each receive a whole-box maximum before their minimum is taken. A pointwise minimum of corner values would not justify coverage and is not used.
+
+Every accepted leaf has an exact rational upper bound at most its contact target. Empty leaves have a necessary-constraint proof. Binary subdivision covers the parent box, and the completed tree has exactly \(2(\text{accepted}+\text{empty})-1\) nodes. Together these facts prove the continuous contact inequality. Node or depth limits stop with an error; they never certify an unresolved region.
+
+\hypertarget{af-a9ec399514-arithmetic-and-recovery}{%
+\subsubsection{Arithmetic and recovery}\label{af-a9ec399514-arithmetic-and-recovery}}
+
+The logarithm enclosure normalizes its rational argument to \([1,2]\) and uses the 32-term atanh series. With \(q=(x-1)/(x+1)\), the omitted tail is bounded by \(2q^{65}/(65(1-q^2))\). Integer outward rounding at scale \(2^{128}\) and exact rational arithmetic then enclose the logarithms used in (T11) and in the entropy lower bounds. The unchanged proof of this enclosure is the one used by the two-level checker.
+
+The input-time Subset Sum algorithm and its exact uniform seed search do not call the floating proposal routine. That routine only helps find rational planes for this finite verification. Different numerical libraries may propose different planes or subdivision trees; every accepting comparison is still made by the same exact inequality. The only executable dependencies of the verifier are the Python standard library, its fixed menu, and the explicitly supplied mathematical proofs.
+
+The optional recovery driver atomically preserves completed branches and exact JSON subdivision frontiers. It binds each record to the kernel, menu, and driver bytes. These records are trusted local work products, not independently verified proof objects. The ordinary clean replay starts from the initial boxes without loading them. Spawned workers explicitly check the same source hashes and load the fixed menu independently. An interrupted branch may therefore resume without relying on inherited mutable process state.
+
+\hypertarget{af-a9ec399514-iii.5.-uniform-compiler-allowance}{%
+\subsection{III.5. Uniform compiler allowance}\label{af-a9ec399514-iii.5.-uniform-compiler-allowance}}
+
+The extra lookup introduces finitely many additional labels and one more integer ceiling. A constant number of sampling levels still uses \(\exp(O(N))\) labelled events. The same polynomial oversampling and simultaneous bounds establish a finite exact circuit family. The first-lookup pooled histogram and the signed coefficient remain unchanged.
+
+Choose integer widths with the max rules above. Their normalized values differ from the ideal widths by \(O(1/N)\) at this fixed depth. Use the full pooled histogram expression (51) and the unmerged degree identities for this limit argument. Their entropy expressions are continuous on compact feasible domains, and every limit of rounded feasible colors belongs to one of the retained closed routing branches. Thus the three inner lookup ceilings, the unchanged outer rounding, polynomial color factors, and seed approximations incur a uniform \(o(1)\) per-coordinate loss.
+
+No continuity of a simplified minimum envelope is needed. Nor is continuity of the inverse quotient defining \(\theta\) assumed at \(D_1=Q_2\). Rounding is carried out in the original raw color coordinates. Compactness supplies a legal limit, and (T10) represents that limit even when its interval collapses.
+
+All old and new contact weights remain in \([.24,.76]\). The finite contact-cone amplification is therefore still at most \(25/6\). Choose the common pre-cone seed loss below \(3\cdot10^{-10}\), giving post-cone loss below \(1.25\cdot10^{-9}\). Choose the common finite amplification depth so its further loss is below \(1.25\cdot10^{-9}\). Their sum fits the strict template allowance \(2.5\cdot10^{-9}\).
+
+Keep the divisibility scale \(H_0=1000\), microblocks \(N_0=k^2+1000k\), and core grid size \(10000\). Count descriptions and dummy padding contribute less than \(2.5\cdot10^{-9}\). The exact interpolation loss before padding is \(81/21875000000\); with sufficiently small fixed padding inflation it remains below \(5\cdot10^{-9}\). These three allowances retain the total \(\zeta=10^{-8}\) used below.
+
+The common fixed seed may have to increase. Exhaustive exact matrix checks still terminate because the finite circuit exists, and the larger search cost is absorbed in \(C_{\mathrm{start},3}\). Input-time tensor products, stored adjacency lists, gate naming, and output-sensitive enumeration remain those proved in Parts I--II. The certificate's fourth coordinate creates no input-time continuous optimization.
+
+\hypertarget{af-a9ec399514-iii.6.-reflected-envelope-and-complete-outer-ledger}{%
+\subsection{III.6. Reflected envelope and complete outer ledger}\label{af-a9ec399514-iii.6.-reflected-envelope-and-complete-outer-ledger}}
+
+Combine every old and new same-family chord, both endpoint circuits, and the two global cone pieces from each contact. For a contact \((\alpha,U)\) these pieces are
+
+\[
+U\frac{1-\tau}{1-\alpha}\quad(0\le\tau\le\alpha),\qquad
+U\frac{\tau}{\alpha}\quad(\alpha\le\tau\le1).
+\]
+
+The finite-volume proof applies to actual integer color degrees, so it also transfers the already rounded seed estimate. It introduces no new continuous contact premise.
+
+For the stated menu the exact lower envelope has 18 breakpoints. The reflected quadratic bound requires 112 exact endpoint comparisons. Its maximum is
+
+\[
+\frac{212647711284991364849543952290503}
+     {518400000000000000000000000000000},
+\tag{T13}
+\]
+
+attained at \(\tau=49/100\) and \(51/100\). Choose
+
+\[
+S_3=.41020007.
+\]
+
+The exact margin is
+
+\[
+S_3-\text{(T13)}
+=\frac{5003008635150456047709497}
+       {518400000000000000000000000000000}>0.
+\tag{T14}
+\]
+
+Retaining the same outward type constants, exact entropy enclosures give
+
+\[
+g_3\ge g_{3,L}=\frac{135677471157}{10^{13}},\qquad
+\mu_3=\frac{50000000000000}{159510588959567}.
+\tag{T15}
+\]
+
+The gain includes the entire \(\zeta=10^{-8}\) compiler allowance. With \(D_U=58153814247997/10^{14}\),
+
+\[
+\mu_3(1+D_U)=\frac12-\mu_3g_{3,L}=E_3.
+\tag{T16}
+\]
+
+The changed dictionary fraction slightly increases some nonbinding rates, so every operation is checked again:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Operation & Certified bound on the exponent \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Circuit incidences and indexed witnesses & \(E_3\) \\
+Canonical output and complete residue cover & \(E_3\) \\
+Modulus energy search & \(<.463275485\) \\
+Selectors and shared witness preprocessing & \(<.321176660\) \\
+Repeated prefix lookups & \(<.328894505\) \\
+Repeated outside lookups & \(<.352437108\) \\
+Cyclic convolution and shift scans & \(<.372294358\) \\
+High-deficiency fallback & \(<.493730824\) \\
+Dictionary preparation & \(<.313458814\) \\
+\end{longtable}
+
+All seven nonbinding bounds are strictly below \(E_3\). The exact ledger also verifies \(3\mu_3<1\), \(g_{3,L}<1/50\), the canonical-layer density gate, all endpoint entropy enclosures, every envelope intersection and continuity junction, and the unchanged compiler and core-fitting requirements.
+
+\hypertarget{af-a9ec399514-iii.7.-evidence-boundary}{%
+\subsection{III.7. Evidence boundary}\label{af-a9ec399514-iii.7.-evidence-boundary}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/verify/third_receipt.json}{final-source receipt} contains all 16 new branch results, bound to the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/tools/verify_subset_sum_third_contacts.py}{kernel} and \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/verify/third_contacts.json}{fixed menu}. It records 317,138 accepted leaves, 634,268 nodes, four empty leaves and maximum depth 29. The smallest exact margin is
+
+\[
+\frac{73419063191692283632585383801}
+     {6416636480000000000000000000000000000}>1.14\cdot10^{-8}.
+\]
+
+The old 62-branch \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/verify/receipt.json}{receipt} remains separate and unchanged. The new scalar ledger uses both proved sets of continuous contact inequalities and the analytic construction; it does not prove these ingredients by itself. Its default command verifies Theorem F3, with 112 reflected-profile comparisons. The independent option \texttt{-\/-base-two-level} reproduces all 160 comparisons and the preserved Theorem F2 exponent without reading the third-level menu.
+
+Run the inexpensive binding and scalar checks from the repository root:
+
+\begin{verbatim}
+python3 tools/verify_subset_sum_third_contacts.py --receipt \
+  problems/subset-sum-fast-deterministic/verify/third_receipt.json
+python3 tools/verify_subset_sum_scalars.py
+python3 tools/verify_subset_sum_scalars.py --base-two-level
+python3 problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py
+\end{verbatim}
+
+Receipt binding checks provenance and complete result accounting; it does not rerun the box inequalities. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/verify/README.md}{verification note} gives the clean full replay and the optional resumable command, with their different evidence scopes.
+
+An independent geometry audit checked feasible-color preservation, degenerate second-color intervals, multiaffine interpolation identities, mixed routing boxes, and the optimized closed trace guard. These finite checks accompany the analytic arguments above. They do not replace the full-domain branch replay or establish the complete Subset Sum theorem independently of the rest of this manuscript.
+
+\hypertarget{af-a9ec399514-references}{%
+\subsection{References}\label{af-a9ec399514-references}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}

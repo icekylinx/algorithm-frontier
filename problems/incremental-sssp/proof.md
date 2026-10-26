@@ -10,12 +10,15 @@ size; the latter still contains the raw minimum-ratio-cycle overhead.
 That separation is what can preserve a four-fifths exponent through
 the shortest-path recursion.
 
-This theorem is conditional on the exact raw interface
-and numerical settlement hypotheses stated in the detector note. It
-is not yet an unconditional published result. In particular, logical
-edges must be retireable at their exact current flow, their fixed costs
-and divergences must be retained, and every raw representation change
-must pay its actual callbacks and inventory.
+The generic reduction uses the exact raw interface and numerical
+settlement rules stated in the detector note. The
+[raw-cycle bridge](../../manuscripts/graph-backends/raw-cycle-to-frozen-detector-bridge.md),
+Sections 2–8, constructs those operations: retiring an edge retains its
+exact flow, fixed cost and divergence, and every representation change
+pays its callbacks and inventory. Section 1 instantiates the reduction
+with that bridge and the constructed four-fifths raw engine. The
+[source map](sources.md) distinguishes these local proofs from the
+published algorithms they use.
 
 The public starting point is Yang P. Liu, *Incremental Shortest Paths in
 Almost Linear Time via a Modified Interior Point Method*,
@@ -65,7 +68,9 @@ polylogarithmic accuracy; no limiting issue with this restriction then
 arises. Root vertices that are unreachable have estimate <code class="math">+\infty</code>.
 The estimates are explicit, so their lookup time is constant.
 
-For the stated backend
+**Instantiated theorem.** The
+[quantitative backend construction, Sections 1–7](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md),
+together with the exact raw-cycle bridge, supplies
 
 <!-- math-display: 7992e5bca2ced37be9c69a64
 \log E(N)=O\!\left(U^{4/5}h^{1/5}\right),
@@ -678,19 +683,25 @@ this round gives a derived exponent <code class="math">4/5</code> for static min
 decremental SCCs. It does not directly provide the active-flow
 raw-cycle interface used here. The present claim is an incremental
 all-target distance result with a different client and a newly
-proved reporting bound, conditional on the exact imported interface.
+proved reporting bound, using the exact interface constructed in the
+raw-cycle bridge.
 
-## 12. Remaining audit boundary
+## 12. Complete proof and verification scope
 
 The substantive new mathematical assertion is that deleting each
 frozen auxiliary barrier is both a paid potential decrease and a
 sound restriction of future flow directions. The companion detector
 note proves the residual-demand, comparison-flow, and LOW-certificate
-statements needed for that assertion. An independent audit must still
-accept those proofs and the exact raw interface.
+statements needed for that assertion. The
+[raw-cycle bridge](../../manuscripts/graph-backends/raw-cycle-to-frozen-detector-bridge.md)
+supplies its numerical instantiation, including sound LOW thresholds,
+exact retirement, refresh costs and finite arithmetic. The generic
+detector and outer reduction therefore compose with the four-fifths
+engine; they do not leave a further retirement hypothesis unconstructed.
 
-The tree-intersection index, segment-level loop removal, and integer
-perturbation are separate local arguments and are ready for review.
+The complete detector, outer reduction, tree-intersection index,
+segment-level loop removal and integer perturbation form the theorem
+ready for review. Executable coverage is narrower:
 The [independent checker](verify/check_path_reporting.py) compares the
 index with explicit path intersections on every labeled tree rooted at vertex zero on
 subsets of four vertices, tests short walk segmentations, and includes a

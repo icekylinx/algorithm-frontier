@@ -1,15 +1,15 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md
-% Recovered-source SHA-256: ad9332b89befb8ee554ad68df508ab889d303b7af9dd6da436b199c066bf14c4
+% Recovered-source SHA-256: 63e5a3d281dd2a5805d364015ea63afb83fc0c190b1170c37880f4ea06c7aec8
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
-% Final document preamble must use the recovered original Subset Sum style.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
 
-\hypertarget{two-failure-weighted-prefix-bounds-for-arbitrary-matroids}{%
-\section{Two-failure weighted prefix bounds for arbitrary matroids}\label{two-failure-weighted-prefix-bounds-for-arbitrary-matroids}}
+\hypertarget{af-0a3ce40617-two-failure-weighted-prefix-bounds-for-arbitrary-matroids}{%
+\section{Two-failure weighted prefix bounds for arbitrary matroids}\label{af-0a3ce40617-two-failure-weighted-prefix-bounds-for-arbitrary-matroids}}
 
-\hypertarget{scope-and-results}{%
-\subsection{1. Scope and results}\label{scope-and-results}}
+\hypertarget{af-0a3ce40617-scope-and-results}{%
+\subsection{1. Scope and results}\label{af-0a3ce40617-scope-and-results}}
 
 Let \(M\) be an arbitrary matroid of rank \(r\) on a finite explicitly listed ground \(E\), with one fixed total item order. Each item has at most one label; unlabelled items are allowed. A failed label deletes its entire class. Let \(H_j\) be the union of the canonical greedy bases after at most \(j\) label failures, including the unfailed query.
 
@@ -34,8 +34,8 @@ At rank four the universal bound is 13, and the explicit obstruction attains it.
 
 The ordered-basis tree constructs \(H_2\) with at most \(N(1+r+r^2)\) independence queries, where \(N=|E|\), by rescanning the fixed ordered input at each tree node. This is \(O(N(r+1)^2)\) queries after sorting. The retained-prefix witness alternative scans that input once and uses at most \(N(K+1)(1+r+r^2)\) queries, where \(K\) is any valid bound on \(|H_2|\), clipped at \(N\). At any fixed rank both bounds are linear in \(N\). No representation or field arithmetic is needed.
 
-\hypertarget{the-single-failure-replacement-profile}{%
-\subsection{2. The single-failure replacement profile}\label{the-single-failure-replacement-profile}}
+\hypertarget{af-0a3ce40617-the-single-failure-replacement-profile}{%
+\subsection{2. The single-failure replacement profile}\label{af-0a3ce40617-the-single-failure-replacement-profile}}
 
 Let \(B_0\) be the ordinary canonical basis. For each occurring label \(\lambda\), let \(D_\lambda\) be its class and \(B_\lambda\) the canonical basis of \(E\setminus D_\lambda\). Define
 
@@ -76,8 +76,8 @@ T=r-b_0-\sum_\lambda\delta_\lambda\le r.
 
 This identity allows loops, unlabelled items and rank drops. It does not assume that every surviving ground has full rank.
 
-\hypertarget{profile-bound-with-rank-losses-included}{%
-\subsection{3. Profile bound with rank losses included}\label{profile-bound-with-rank-losses-included}}
+\hypertarget{af-0a3ce40617-profile-bound-with-rank-losses-included}{%
+\subsection{3. Profile bound with rank losses included}\label{af-0a3ce40617-profile-bound-with-rank-losses-included}}
 
 \textbf{Theorem 1 (replacement-profile bound).} With the notation above,
 
@@ -145,11 +145,11 @@ For a parameter-only bound, note that \(g(t)=\binom{t-1}{2}\) satisfies \(g(a+b)
 
 If \(T=0\), TF6 gives \(|H_2|=r\) directly; rank zero is also immediate. This proves the preliminary bound \(|H_2|\le\min\{5r,\binom{r+2}{2}\}\), including \(|H_2|\le3\) at rank one. The next section improves the quadratic term.
 
-\hypertarget{a-circuit-argument-improves-the-universal-bound}{%
-\subsection{4. A circuit argument improves the universal bound}\label{a-circuit-argument-improves-the-universal-bound}}
+\hypertarget{af-0a3ce40617-a-circuit-argument-improves-the-universal-bound}{%
+\subsection{4. A circuit argument improves the universal bound}\label{af-0a3ce40617-a-circuit-argument-improves-the-universal-bound}}
 
-\hypertarget{which-missing-pairs-can-a-new-item-replace}{%
-\subsubsection{4.1. Which missing pairs can a new item replace?}\label{which-missing-pairs-can-a-new-item-replace}}
+\hypertarget{af-0a3ce40617-which-missing-pairs-can-a-new-item-replace}{%
+\subsubsection{4.1. Which missing pairs can a new item replace?}\label{af-0a3ce40617-which-missing-pairs-can-a-new-item-replace}}
 
 \textbf{Lemma 2 (circuit extension).} Let \(C\) be a circuit of size \(m\ge3\), and let \(y\notin C\) be a nonloop in its span. Form a graph on \(C\) whose edges are the pairs \(\{a,b\}\) for which
 
@@ -185,8 +185,8 @@ There cannot be just one equivalence class. Fix \(c\in C\) and put \(B=C\setminu
 
 If all pairs were equivalent, \(y\) would belong to every \(\mathrm{cl}_M(B\setminus\{a\})\) for \(a\in B\). Repeatedly applying this equality puts \(y\) in \(\mathrm{cl}_M(\varnothing)\), contradicting that it is a nonloop. Edges are exactly the pairs in different equivalence classes, so the graph has the asserted form. If an induced subgraph is nonempty, choose one of its parts of size \(a\), where \(1\le a<s\). Its edges to the other vertices alone number \(a(s-a)\ge s-1\). \(\square\)
 
-\hypertarget{all-but-one-replacement-profile}{%
-\subsubsection{4.2. All but one replacement profile}\label{all-but-one-replacement-profile}}
+\hypertarget{af-0a3ce40617-all-but-one-replacement-profile}{%
+\subsubsection{4.2. All but one replacement profile}\label{af-0a3ce40617-all-but-one-replacement-profile}}
 
 We prove \(|H_2|\le\binom{r+1}{2}+3\) for \(r\ge2\). If \(1\le T\le r-1\), the preliminary convexity calculation gives
 
@@ -208,8 +208,8 @@ T=r,\qquad G=\{x\},\qquad t_x=r.
 \tag{TF10}
 \]
 
-\hypertarget{the-exceptional-profile-starts-with-a-circuit}{%
-\subsubsection{4.3. The exceptional profile starts with a circuit}\label{the-exceptional-profile-starts-with-a-circuit}}
+\hypertarget{af-0a3ce40617-the-exceptional-profile-starts-with-a-circuit}{%
+\subsubsection{4.3. The exceptional profile starts with a circuit}\label{af-0a3ce40617-the-exceptional-profile-starts-with-a-circuit}}
 
 For any prefix \(P\) of the fixed order, write \(H_j(P)\) for the canonical union computed in the restriction to \(P\). Greedy decisions never change after a prefix has been scanned, so
 
@@ -245,8 +245,8 @@ Thus one item accounts for at least \(r-1\) of the relevant queries. All other q
 
 Combining this with TF7 proves TF1. In particular the universal bounds at ranks two, three and four are 6, 9 and 13. The rank-one bound proved above completes TF2. Rank-\(r\) partition matroids with three ordered copies per parallel class, labelled by the same three distinct labels in every class, attain \(3r\) under two failures. The explicit rank-four obstruction attains 13. These upper bounds use only matroid ranks.
 
-\hypertarget{one-shared-single-failure-replacement-has-a-sharp-linear-bound}{%
-\subsection{5. One shared single-failure replacement has a sharp linear bound}\label{one-shared-single-failure-replacement-has-a-sharp-linear-bound}}
+\hypertarget{af-0a3ce40617-one-shared-single-failure-replacement-has-a-sharp-linear-bound}{%
+\subsection{5. One shared single-failure replacement has a sharp linear bound}\label{af-0a3ce40617-one-shared-single-failure-replacement-has-a-sharp-linear-bound}}
 
 \textbf{Theorem 3 (one replacement item).} Suppose \(H_1\setminus B_0=\{x\}\). Let \(W\) be the set of labels whose single-failure canonical basis contains \(x\), and put \(t=|W|=T\ge1\). Then
 
@@ -263,8 +263,8 @@ The bound \(r+2t\) is attained by explicitly represented matroids for every \(1\
 
 No assumption is made about the number of items of \(B_0\) sharing a label or about rank losses after a failure. If \(H_1=B_0\) instead, TF6 gives \(H_2=B_0\) directly.
 
-\hypertarget{only-a-small-set-of-failed-pairs-can-add-items}{%
-\subsubsection{5.1. Only a small set of failed pairs can add items}\label{only-a-small-set-of-failed-pairs-can-add-items}}
+\hypertarget{af-0a3ce40617-only-a-small-set-of-failed-pairs-can-add-items}{%
+\subsubsection{5.1. Only a small set of failed pairs can add items}\label{af-0a3ce40617-only-a-small-set-of-failed-pairs-can-add-items}}
 
 Write \(b_\lambda=|B_0\cap D_\lambda|\). The single-failure basis is \(B_0\setminus D_\lambda\), together with \(x\) exactly when \(\lambda\in W\). Therefore
 
@@ -282,8 +282,8 @@ Every surviving original-basis item is still accepted. If \(x\) survives and \(F
 
 We may move all original-basis items before the other items without changing any required canonical basis. For a fixed failure, its old accepted set already contains the promoted surviving basis items. Induction through the remaining order keeps that same independent accepted set: an old rejected item is still spanned by its old earlier accepted items, possibly with more promoted items. The prefix argument in Section 4.3 shows that no item of \(H_2\setminus H_1\) precedes \(x\). After promotion, the critical items are therefore \(B_0\), then \(x\), then the remaining items in their original relative order.
 
-\hypertarget{a-circuit-quotient-preserves-each-relevant-replacement-test}{%
-\subsubsection{5.2. A circuit quotient preserves each relevant replacement test}\label{a-circuit-quotient-preserves-each-relevant-replacement-test}}
+\hypertarget{af-0a3ce40617-a-circuit-quotient-preserves-each-relevant-replacement-test}{%
+\subsubsection{5.2. A circuit quotient preserves each relevant replacement test}\label{af-0a3ce40617-a-circuit-quotient-preserves-each-relevant-replacement-test}}
 
 Let \(C\) be the fundamental circuit of \(x\) with respect to \(B_0\): the unique circuit in \(B_0\cup\{x\}\). For every \(\lambda\in W\), choose \(u_\lambda\in C\cap D_\lambda\). Such an item exists because otherwise \(B_0\setminus D_\lambda\) would span \(x\). Set
 
@@ -323,8 +323,8 @@ Since \(Z=A\cup Q_F\), this proves TF13 for such pairs.
 
 For \(F=\{\lambda,X\}\), use \(Z=B_0\setminus\{u_\lambda\}\) and \(L_X=\mathrm{cl}_M(B_0\setminus D_X)\). The same calculation gives \(\mathrm{cl}_M(Z)\cap L_\lambda =\mathrm{cl}_M(B_0\setminus D_\lambda)\). Intersecting with \(L_X\) gives \(\mathrm{cl}_M(B_0\setminus(D_\lambda\cup D_X))\), because these are closures of subsets of the independent set \(B_0\). This is \(\mathrm{cl}_M(S_F)\) and proves TF13 in the remaining case. These calculations explicitly allow \(b_\lambda>1\) and \(D_X\cap B_0\ne\varnothing\).
 
-\hypertarget{a-decreasing-potential-bounds-all-later-winners}{%
-\subsubsection{5.3. A decreasing potential bounds all later winners}\label{a-decreasing-potential-bounds-all-later-winners}}
+\hypertarget{af-0a3ce40617-a-decreasing-potential-bounds-all-later-winners}{%
+\subsubsection{5.3. A decreasing potential bounds all later winners}\label{af-0a3ce40617-a-decreasing-potential-bounds-all-later-winners}}
 
 When \(x\) has label \(X\), relevant failed pairs are the edges of a complete graph on \(W\cup\{X\}\), with \(n=t+1\) vertices. If \(x\) is unlabelled, use the complete graph on \(W\), with \(n=t\) vertices. Initially every such query is unresolved. Each later critical item wins at least one unresolved query and resolves every surviving query for which it increases rank.
 
@@ -340,8 +340,8 @@ A protected split into \(k\ge2\) nontrivial cliques sharing the protected vertex
 
 The initial potential is \(2n-3\) for \(n\ge2\) and zero for \(n\le1\). Hence there are at most \(\max\{0,2n-3\}\) later critical items. Adding the \(r+1\) items of \(H_1\) proves TF12 and the unlabelled refinement. This graph is a proof device; the summary algorithm need not construct it or perform any contraction.
 
-\hypertarget{sharp-represented-examples-and-faster-construction}{%
-\subsubsection{5.4. Sharp represented examples and faster construction}\label{sharp-represented-examples-and-faster-construction}}
+\hypertarget{af-0a3ce40617-sharp-represented-examples-and-faster-construction}{%
+\subsubsection{5.4. Sharp represented examples and faster construction}\label{af-0a3ce40617-sharp-represented-examples-and-faster-construction}}
 
 For \(t\ge2\), take the ordered vectors \(e_1,\ldots,e_t\) of a standard basis over \(\mathbb F_2\), labelled \(1,\ldots,t\), followed by \(x=e_1+\cdots+e_t\) with a new label \(X\). Append:
 
@@ -365,8 +365,8 @@ N\left(1+\ell_0+\binom{t+1}{2}\right),
 
 or \(N(1+\ell_0+\binom t2)\) when \(x\) is unlabelled. Thus the observable singleton profile permits \(O(N(r+t^2))\) oracle work after sorting, while retaining the original oracle and all canonical prefix ranks. No field representation is required by this algorithm.
 
-\hypertarget{three-occurring-labels-also-suffice-at-every-rank}{%
-\subsection{6. Three occurring labels also suffice at every rank}\label{three-occurring-labels-also-suffice-at-every-rank}}
+\hypertarget{af-0a3ce40617-three-occurring-labels-also-suffice-at-every-rank}{%
+\subsection{6. Three occurring labels also suffice at every rank}\label{af-0a3ce40617-three-occurring-labels-also-suffice-at-every-rank}}
 
 Let \(E_0\) be the unlabelled core and \(D_1,\ldots,D_L\) the nonempty classes, where \(L\le3\).
 
@@ -374,12 +374,10 @@ If \(L\le2\), every critical labelled item belongs to the canonical basis of \(E
 
 If \(L=3\), use just the three canonical bases of \(E_0\cup D_i\). A critical labelled item belongs to the basis for its own label. A critical unlabelled item has a witness leaving at least one class \(D_i\); extend that witness by deleting the other two classes. The item survives, is still accepted, and lies in the \(i\)-th basis. Again \(|H_2|\le3r\).
 
-\hypertarget{minimality-and-the-exact-rank-four-maximum}{%
-\subsection{7. Minimality and the exact rank-four maximum}\label{minimality-and-the-exact-rank-four-maximum}}
+\hypertarget{af-0a3ce40617-minimality-and-the-exact-rank-four-maximum}{%
+\subsection{7. Minimality and the exact rank-four maximum}\label{af-0a3ce40617-minimality-and-the-exact-rank-four-maximum}}
 
 The explicit obstruction has rank four, four occurring labels and 13 original items. Section 4 excludes a violation at any smaller rank, and Section 6 excludes a violation with fewer labels. Any violation must force at least \(3r+1\ge13\) items, so the example also has the smallest possible original ground size.
-
-Theorem 3 also shows that any violation needs at least two distinct replacement items in the one-failure union. The example has exactly two, so it attains this minimum as well.
 
 Theorem 3 also shows that any violation needs at least two distinct replacement items in the one-failure union. The example has exactly two, so it attains this minimum as well.
 
@@ -387,14 +385,12 @@ The example's powers-of-two costs make the relevant optimum bases unique. Its 13
 
 For that particular instance, its unfailed basis is \(\{1,2,3,4\}\), and its only one-failure replacement items are item 5 with multiplicity three and item 6 with multiplicity one. Thus \(T=4\) and TF6 gives \(4+8+1=13\), an exact upper certificate for the example. Section 4 proves that every rank-four instance has a prefix preserver of at most 13 items, so the rank-four maximum is exactly 13. The optimal general-rank constant remains open here: the direct sum of this example forces \(13r/4\) items when four divides \(r\), while the universal linear upper bound is \(5r\).
 
-\hypertarget{verification}{%
-\subsection{8. Verification}\label{verification}}
+\hypertarget{af-0a3ce40617-verification}{%
+\subsection{8. Verification}\label{af-0a3ce40617-verification}}
 
 The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/check_weighted_prefix.py}{prefix checker} includes a separate degree-one profile suite over all 92 labelled matroids on at most four items, with unlabelled items, loops and rank drops. It checks TF5, TF8 for every failure subset, TF6, TF7, and TF1 against independently enumerated canonical bases. It also checks the profile of the nonrepresentable 13-item example in 26 fixed item orders.
 
 The circuit lemma is checked independently by enumerating every basis family that extends a fixed circuit of each size from two through five by one nonloop item, testing the basis-exchange axiom, and computing complete rank tables. The checker then forms the missing-pair graph from rank increments and tests its multipartite structure and every own-color case for the first later item. A separate rank-three check enumerates every side-line membership pattern allowed by rank submodularity. The few-label argument is checked on all coarsenings of the example's labels into three classes or the unlabelled core. The general bounds and minimality results are proved in Sections 4--7; these finite checks are supporting evidence, not an exhaustive enumeration of all matroids at those ranks.
-
-The separate \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/check_single_replacement.py}{singleton-profile checker} compares the localized-pair algorithm with every original canonical basis. It covers the zero-extra case, the sharp represented examples, small arbitrary matroids, and coarsenings and seeded orders of the nonrepresentable example. It checks the quotient equivalence even when contracted basis items fail, promotes original-basis items independently, and verifies every decreasing-potential step. A separate enumeration checks all graphs reachable by protected or unprotected binary cuts on complete graphs of sizes two through six. Its block decomposition is computed from graph edges, without assuming the clique invariant. Both checkers refuse optimized Python mode that would disable assertions.
 
 The separate \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/check_single_replacement.py}{singleton-profile checker} compares the localized-pair algorithm with every original canonical basis. It covers the zero-extra case, the sharp represented examples, small arbitrary matroids, and coarsenings and seeded orders of the nonrepresentable example. It checks the quotient equivalence even when contracted basis items fail, promotes original-basis items independently, and verifies every decreasing-potential step. A separate enumeration checks all graphs reachable by protected or unprotected binary cuts on complete graphs of sizes two through six. Its block decomposition is computed from graph edges, without assuming the clique invariant. Both checkers refuse optimized Python mode that would disable assertions.
 

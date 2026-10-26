@@ -8,6 +8,13 @@ final matching verifier. The construction remains a research proof assembly;
 the named constructive source primitives and the linked replacement proofs
 are its dependencies.
 
+The [matching realization theorem](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization)
+now gives the explicit dependency-closure statement: the local constructions
+listed here supply all five cycle-search interfaces and their common
+parameter range. References to an algorithmic interface are therefore
+ordinary uses of these proved constructions. The absence of end-to-end
+fast code is recorded separately from the mathematical theorem.
+
 The main distinction is between the elementary forest and projection
 interfaces that are retained from the distance sources and their complete
 dynamic-spanner theorems, which are replaced. Substituting the new parameters
@@ -322,7 +329,7 @@ factor has a constant exponent. Both fit the master work envelope, while
 the smaller r' only improves the output's logarithmic conductance loss.
 No hidden input-sized padding is used to satisfy a parameter inequality.
 
-## 6. Numerical uniformity is a direct contract
+## 6. Numerical uniformity is proved at the supplied cap
 
 [The decoupled numerical proof](decoupled-numerical-client.md) does not
 evaluate an old fixed-a asymptotic theorem at a growing value of a. It proves
@@ -410,11 +417,14 @@ Gamma^{O(K)}, and recursive factors. They do not introduce a new hidden
 exponent depending on p,r,K. This is the parameter-uniform implication
 needed by the 4/5 calculation.
 
-The claim remains conditional on executing the named deterministic
-low-stretch and balanced-cut/pruning algorithms and on the linked new
-router, normalization, dynamic repair and numerical proofs. It is not a
-claim that the unmodified public distance theorem already proves the new
-matching theorem. In particular, replacing the current static-base proof
+The named deterministic low-stretch and balanced-cut/pruning source
+algorithms, together with the linked router, normalization, dynamic
+repair and numerical constructions, supply the hypotheses of this
+interface implication. The
+[realization theorem](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization)
+records that instantiation and the resulting matching theorem. The
+unmodified public distance theorem is not asserted to prove the new
+bound. In particular, replacing the current static-base proof
 by the old KMPG black box at K=t^2, dropping real-loop annotations, or
 forgetting the aspect-dependent forest count (5) would invalidate this
 interface statement.

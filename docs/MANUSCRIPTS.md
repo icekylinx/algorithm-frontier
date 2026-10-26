@@ -6,19 +6,22 @@ recoverable TeX source. They render without GitHub's mathematical interpreter.
 
 ## Incremental TeX migration
 
-The first export set follows the homepage's three selected families:
+The export set starts with the homepage's three selected families and also
+includes complete degree, quota, flow-adapter and Boolean-compiler proofs:
 
 | Family | Maintained proof | TeX source export | PDF status |
 |---|---|---|---|
-| Deterministic general-graph matching | [Proof](../problems/general-matching/proof.md) | [TeX](../problems/general-matching/proof.tex) | Source only; the fast cycle-search implementation is still incomplete. |
-| Faster deterministic Subset Sum | [Proof](../problems/subset-sum-fast-deterministic/proof.md) | [TeX](../problems/subset-sum-fast-deterministic/proof.tex) | Source export; scoped typesetting and page review follow separately. |
-| Matroid and submodular failure summaries | [Proof](../problems/matroid-failure-summaries/proof.md) | [TeX](../problems/matroid-failure-summaries/proof.tex) | Source export; scoped typesetting and page review follow separately. |
+| Deterministic general-graph matching | [Proof](../problems/general-matching/proof.md) | [TeX](../problems/general-matching/proof.tex) | The complete research manuscript has a [PDF](../problems/general-matching/paper.pdf); its [reference implementation paper](../problems/general-matching/reference/paper.pdf) has a separate scope. |
+| Faster deterministic Subset Sum | [Proof](../problems/subset-sum-fast-deterministic/proof.md) | [TeX](../problems/subset-sum-fast-deterministic/proof.tex) | Complete Parts I–III, including the stronger third-lookup theorem, have a [PDF](../problems/subset-sum-fast-deterministic/paper.pdf). |
+| Matroid and submodular failure summaries | [Proof](../problems/matroid-failure-summaries/proof.md) | [TeX](../problems/matroid-failure-summaries/proof.tex) | The complete two-failure package has a [PDF](../problems/matroid-failure-summaries/two-failure-paper.pdf); the wider family remains source only. |
 
 During this transition the Markdown proof owns the text; the adjacent TeX
 file is generated from its recovered mathematical source. This avoids two
 independently edited versions. The exports contain the complete main proof,
 including its model limitations and links to the full companion proofs.
-They are TeX body fragments ready for the eventual shared paper template.
+They are TeX body fragments that can be included in the recovered shared
+paper style. The [export manifest](../manuscripts/tex-exports.json) lists
+every maintained source, output and exact mathematical-source hash.
 The [source/image builder](../tools/build_math_assets.py) also accepts formulas
 written conventionally during editing and converts them before publication.
 
@@ -35,8 +38,9 @@ tool and output hashes with Python and does not invoke a document compiler.
 A source file or a successful typesetting run does not make a theorem
 complete. A PDF is published only for a defined proof package that has a
 complete statement, justified proof, explicit external theorems, and a scoped
-review record. Missing algorithms and substantial proof gaps remain visible
-in source-only manuscripts.
+review record. Substantial unproved steps remain visible in source-only manuscripts.
+A complete mathematical algorithm does not require a software implementation
+to qualify; its software coverage is stated separately.
 
 The visual reference is the original Subset Sum paper. Its
 [import manifest](../provenance/imports/subset-sum/source-manifest.json)
@@ -47,7 +51,32 @@ the original 11-point A4 article class, Latin Modern fonts, 25 mm margins,
 microtype, 3-point paragraph spacing and blue links. This establishes the
 typesetting reference; it does not by itself approve a manuscript for PDF.
 
-When a package is ready, its PDF build uses the recovered shared style,
-record the source revision, and pass visual review of the actual pages.
+The four selected paper packages are:
+
+- **[Deterministic Exact General Matching](../problems/general-matching/paper.pdf):** the complete four-fifths research manuscript, including the local cycle-search realization, parameter balance and uniform finite program. Named companion and published proofs remain explicit dependencies. [TeX wrapper](../problems/general-matching/paper.tex).
+- **[Deterministic Subset Sum through Signed Circuits and Trace Bounds](../problems/subset-sum-fast-deterministic/paper.pdf):** the complete compiler and witness proof, preserved two-level theorem and third-lookup refinement. Historical and current numerical evidence are distinguished. [TeX wrapper](../problems/subset-sum-fast-deterministic/paper.tex).
+- **[Certificates and Cover Compression for Deterministic Matching](../problems/general-matching/reference/paper.pdf):** the independent optimality certificate, cover compression, and the complete nonrecursive bipartite phase proof. The classical general-graph blossom method is attributed to its precise source. [TeX wrapper](../problems/general-matching/reference/paper.tex).
+- **[Two-Failure Prefix Summaries in Oracle Matroids](../problems/matroid-failure-summaries/two-failure-paper.pdf):** profile bounds, the sharp singleton replacement case, exact maxima through rank four, and the explicit 13-item obstruction with its amplification. [TeX wrapper](../problems/matroid-failure-summaries/two-failure-paper.tex).
+
+Every PDF build uses the recovered shared style, records exact source and
+artifact hashes, and requires visual review of the actual pages. Rebuilding
+resets that review to pending. The ordinary check rejects stale inputs,
+unreviewed output or recorded layout warnings. A fixed source timestamp is
+passed to the compiler; the manifest binds the actual generated bytes.
+
+```sh
+python3 tools/build_papers.py
+python3 tools/build_papers.py --check
+```
+
+PDF authoring uses Pandoc and XeLaTeX with the packages listed in
+[paper-style.tex](../manuscripts/paper-style.tex), including Latin Modern and
+microtype. The source-to-TeX conversion compares every mathematical AST node
+with the original source. The two main research papers retain the source
+section labels, so their internal cross-references are unchanged. XeLaTeX runs with shell escape disabled. Ordinary
+repository verification uses Python only and does not install or run TeX.
+The [paper configuration](../manuscripts/papers.json) defines each package;
+the [build manifest](../manuscripts/paper-builds.json) records its evidence.
+
 See [review and verification](../reviews/README.md) for the mathematical scope
 of each package and [Contributing](../CONTRIBUTING.md) for updates.

@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       full_contacts:
-        description: "Recompute all 62 continuous Subset Sum contact branches"
+        description: "Recompute all 62 two-level and 16 third-lookup Subset Sum branches"
         type: boolean
         required: false
         default: false

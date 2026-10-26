@@ -8,7 +8,7 @@ The main proof gives the family-level theorem composition. The following canonic
 
 | Manuscript | Proof role |
 |---|---|
-| [Signed interval compiler](manuscripts/boolean-linear-optimization-compiler.md) | Signed interval reduction, bounded slack, radix packing, exact optimization, and symbolic time–space composition. |
+| [Signed interval compiler](manuscripts/boolean-linear-optimization-compiler.md) | Complete support-sized signed interval refinement, bounded slack, radix packing, exact optimization, and symbolic time–space composition. |
 
 ## Shared proof dependencies
 
@@ -20,6 +20,10 @@ The main proof gives the family-level theorem composition. The following canonic
 ## External inputs
 
 - Nederlof, van Leeuwen, and van der Zwaan, [Reducing a Target Interval to a Few Exact Queries](https://arxiv.org/pdf/1208.4225), Theorems 1–2 and Corollary 1: the interval mechanism and Knapsack/Subset Sum transfer.
-- Bansal, Garg, Nederlof, and Vyas, [Faster Space-Efficient Algorithms for Subset Sum, k-Sum and Related Problems](https://arxiv.org/pdf/1612.02788), Lemma 4.4 and the proof of Corollary 2: signed rows and exact-target enumeration. The local manuscript isolates the additional support-sensitive slack accounting.
+- Bansal, Garg, Nederlof, and Vyas, [Faster Space-Efficient Algorithms for Subset Sum, k-Sum and Related Problems](https://arxiv.org/pdf/1612.02788), Lemma 4.4 and the proof of Corollary 2: signed rows and exact-target enumeration. The local manuscript proves its sharper boundary cap and the support-sensitive slack accounting directly. These refinements do not require another external theorem; the cited work supplies the historical method and comparison baseline.
+
+## Local executable evidence
+
+The [compiler checker](verify/check_interval_compiler.py) uses exhaustive Boolean evaluation as its reference, including for the complete signed radix instances. The [verification note](verify/README.md) records exact counts and distinguishes these local checks from the separately supplied Subset Sum backend.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

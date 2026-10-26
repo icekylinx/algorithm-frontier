@@ -1,0 +1,58 @@
+% Built from the complete scoped proof sources listed in manuscripts/papers.json.
+% Compile with: python3 tools/build_papers.py --paper certified-matching
+\input{manuscripts/paper-style.tex}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\hypersetup{pdftitle={Certificates and Cover Compression for Deterministic Matching},pdfauthor={Yilin Liu}}
+\title{Certificates and Cover Compression\\for Deterministic Matching}
+\author{Yilin Liu}
+\date{26 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give a deterministic reference implementation for maximum matching in
+general graphs, with independently verifiable optimality certificates and
+original input-edge identifiers. A cover-based reduction preserves every
+matchable cover subset and reduces each blossom solve to at most four times
+the component matching number. Including certificate construction, the
+running time is \(O(n+m\log(m+2)+\sum_i\nu(G_i)^3)\), with linear
+record storage. If a retained component is bipartite, both its crossing
+compression and final solve have matching-number exponent \(5/2\), and
+its certificate is constructed in linear additional work.
+The certificate verifier performs no matching search. This paper proves the
+cover compression and the simultaneous failed-forest certificate extraction,
+proves the nonrecursive bipartite phase algorithm and its matching-number
+phase bound, and states the boundary to the classical blossom algorithm
+used for the other components.
+\end{abstract}
+
+\paragraph{Scope and evidence.}
+The executable solver uses the standard-library implementation linked from
+the repository's reference directory. Its classical augmenting-path method
+is Edmonds's \emph{Paths, Trees, and Flowers}, Canadian Journal of Mathematics
+17 (1965), Section 4,
+\href{https://doi.org/10.4153/CJM-1965-045-4}{doi:10.4153/CJM-1965-045-4}.
+The independent odd-component upper bound proves the optimality of each
+accepted certificate. Finite enumeration supports implementation review;
+it is distinct from the universal proofs below. This is the complete
+polynomial reference package, with its stated word-operation and identifier
+encoding model.
+
+\part{Independent optimality certificates}
+\setcounter{section}{0}
+\renewcommand{\thesection}{\thepart.\arabic{section}}
+\input{\AFGeneratedPath/certificate-proof.tex}
+
+\part{Cover compression and matching-number complexity}
+\setcounter{section}{0}
+\input{\AFGeneratedPath/cover-compression-proof.tex}
+
+\part{Bipartite acceleration and its certificate}
+\setcounter{section}{0}
+\input{\AFGeneratedPath/bipartite-proof.tex}
+
+\paragraph{Attribution and version.}
+Yilin Liu and GPT-6 Astra Pro. \emph{Algorithm Frontier}, 26 October 2026.
+The source files, executable checks and their exact hashes are recorded by
+the repository's paper build manifest. External peer review and proof-assistant
+formalization are not claimed.
+\end{document}

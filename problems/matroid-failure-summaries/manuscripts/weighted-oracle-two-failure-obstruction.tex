@@ -1,15 +1,15 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md
-% Recovered-source SHA-256: 266825b36fea52a4a535559925895a0edc5301e1c63b468c6da6b67de2399341
+% Recovered-source SHA-256: 5d82a3c2ee05b7e4143fb7a6920d9d51583b6d6185e811967b138a295131fb7a
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
-% Final document preamble must use the recovered original Subset Sum style.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
 
-\hypertarget{weighted-oracle-summaries-exceed-the-binomial-bound-from-two-failures-onward}{%
-\section{Weighted oracle summaries exceed the binomial bound from two failures onward}\label{weighted-oracle-summaries-exceed-the-binomial-bound-from-two-failures-onward}}
+\hypertarget{af-f44144c751-weighted-oracle-summaries-exceed-the-binomial-bound-from-two-failures-onward}{%
+\section{Weighted oracle summaries exceed the binomial bound from two failures onward}\label{af-f44144c751-weighted-oracle-summaries-exceed-the-binomial-bound-from-two-failures-onward}}
 
-\hypertarget{statement-and-scope}{%
-\subsection{1. Statement and scope}\label{statement-and-scope}}
+\hypertarget{af-f44144c751-statement-and-scope}{%
+\subsection{1. Statement and scope}\label{af-f44144c751-statement-and-scope}}
 
 The sharp rank-only bound \(r\binom{h+d}{d}\) does not extend to fixed-cost summaries of arbitrary oracle matroids. It already fails for rank four, one label per item, and two failed labels.
 
@@ -28,8 +28,8 @@ original items. Taking direct sums gives, for every rank \(r\) divisible by four
 
 These are exact finite constructions with proofs. They do not assert an optimal general weighted-oracle bound above the displayed obstruction. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure upper-bound companion} proves that every rank-at-most-three matroid, and every instance with at most three occurring labels, still admits a \(3r\) prefix summary at \(h=2,d=1\). Thus Theorem 1 has the smallest possible rank, label count and original ground size for a violation in that fixed model. The same companion proves that the universal rank-four maximum is exactly 13 and gives an exact one-failure-profile certificate for this instance. It also proves that a violation requires at least two distinct items outside the original basis in the one-failure union; this example has exactly two.
 
-\hypertarget{the-underlying-eight-class-matroid}{%
-\subsection{2. The underlying eight-class matroid}\label{the-underlying-eight-class-matroid}}
+\hypertarget{af-f44144c751-the-underlying-eight-class-matroid}{%
+\subsection{2. The underlying eight-class matroid}\label{af-f44144c751-the-underlying-eight-class-matroid}}
 
 Let the underlying class ground be \(\{0,1,\ldots,7\}\). Declare every set of at most three classes independent, and declare a four-class set a basis except for the following five forbidden sets:
 
@@ -54,8 +54,8 @@ Replace some underlying classes by parallel copies. A set of copies is independe
 
 It is an explicit, efficiently evaluable oracle: check duplicate classes, the cardinality, and the five constant-size forbidden sets. The lower bound concerns the retained original ground, not computational difficulty hidden inside the oracle.
 
-\hypertarget{the-13-ordered-colored-items}{%
-\subsection{3. The 13 ordered, colored items}\label{the-13-ordered-colored-items}}
+\hypertarget{af-f44144c751-the-13-ordered-colored-items}{%
+\subsection{3. The 13 ordered, colored items}\label{af-f44144c751-the-13-ordered-colored-items}}
 
 Give item \(i\) cost \(c_i=2^{i-1}\). All subset costs are distinct, so each surviving optimum is unique. The cost order is the item order in this table. The last column gives one failure query under which that item is forced into the unique optimum.
 
@@ -122,8 +122,8 @@ All listed accepted four-sets are allowed bases. Matroid greedy minimizes the fi
 
 \textbf{Proof of Theorem 1.} The union of the six displayed bases is all 13 items. If a restriction omits item \(i\), use its necessity query from the first table. The unique original optimum contains \(i\), so the restricted instance either has no rank-four basis or has strictly larger optimum cost. Either outcome violates the prescribed guarantee. Thus every valid restriction retains all 13 items. This also proves the prefix obstruction: at the prefix ending in an accepted item, omitting that item loses the greedy rank increase. \(\square\)
 
-\hypertarget{amplification-to-every-failure-budget-at-least-two}{%
-\subsection{4. Amplification to every failure budget at least two}\label{amplification-to-every-failure-budget-at-least-two}}
+\hypertarget{af-f44144c751-amplification-to-every-failure-budget-at-least-two}{%
+\subsection{4. Amplification to every failure budget at least two}\label{af-f44144c751-amplification-to-every-failure-budget-at-least-two}}
 
 Fix \(h\ge2\). Before the 13-item order, prepend \(h-2\) blocks \(Q_1,\ldots,Q_{h-2}\). Each block consists of four new parallel copies whose underlying classes are the allowed basis \(\{1,2,3,5\}\). Give all four copies in \(Q_j\) a new single label \(Z_j\); these labels are distinct and do not belong to the original four-label alphabet. Assign costs as successive powers of two in the complete new order.
 
@@ -135,8 +135,8 @@ In fact every allowed failure still leaves rank four. If a new block survives, i
 
 For \(t\) disjoint copies of the construction, take the direct sum of their resource matroids and reuse the same label alphabet across copies. A surviving basis is a union of bases of the separate components. Give all items distinct power-of-two costs, keeping the prescribed local order inside each component. The optimum is unique and componentwise optimal, so the same witness still forces each copy of each item. The rank is \(r=4t\), and the necessary support is \(t(4(h+1)+1)=r(h+1)+r/4\). \(\square\)
 
-\hypertarget{why-this-does-not-contradict-the-rank-only-theorem}{%
-\subsection{5. Why this does not contradict the rank-only theorem}\label{why-this-does-not-contradict-the-rank-only-theorem}}
+\hypertarget{af-f44144c751-why-this-does-not-contradict-the-rank-only-theorem}{%
+\subsection{5. Why this does not contradict the rank-only theorem}\label{af-f44144c751-why-this-does-not-contradict-the-rank-only-theorem}}
 
 The nine-item restriction
 
@@ -160,8 +160,8 @@ Their underlying class sets are all allowed by WO2. Every zero- or one-label fai
 
 Thus the sharp rank-only summary, the one-failure weighted oracle summary, and the represented fixed-cost theorem have different valid scopes. The obstruction rules out silently transferring the last theorem to all independence-oracle matroids for \(h\ge2\).
 
-\hypertarget{nonrepresentability-and-source-attribution}{%
-\subsection{6. Nonrepresentability and source attribution}\label{nonrepresentability-and-source-attribution}}
+\hypertarget{af-f44144c751-nonrepresentability-and-source-attribution}{%
+\subsection{6. Nonrepresentability and source attribution}\label{af-f44144c751-nonrepresentability-and-source-attribution}}
 
 Here is a short independent check of the representation boundary. Group the underlying classes into pairs \(P=\{0,1\}\), \(Q=\{2,3\}\), \(R=\{4,5\}\), and \(S=\{6,7\}\). Suppose vectors over a field represented WO2, and let the same letters denote their two-dimensional spans. The five forbidden pair unions have dimension three, whereas \(R+S\) has dimension four. Also \(P+Q+R\) and \(P+Q+S\) have dimension four.
 
@@ -169,13 +169,14 @@ Since \(\dim(P+Q)=3\), let \(L=P\cap Q\), a line. Both \(R\cap P\) and \(R\cap Q
 
 The underlying matroid is classical; the 13-item coloring, order, failure table, and amplification above are the concrete obstruction used here. For primary background on the Vámos matroid, see Karn, Nasr, Proudfoot and Vecchi, \href{https://pages.uoregon.edu/njp/eq-relax.pdf}{\emph{Equivariant Kazhdan--Lusztig theory of paving matroids}, Section 5}. None of its representation or polynomial-invariant results is needed for the proof above. No publication-priority claim is made for this failure-summary application.
 
-\hypertarget{reproducible-exact-certificate}{%
-\subsection{7. Reproducible exact certificate}\label{reproducible-exact-certificate}}
+\hypertarget{af-f44144c751-reproducible-exact-certificate}{%
+\subsection{7. Reproducible exact certificate}\label{af-f44144c751-reproducible-exact-certificate}}
 
 Run
 
 \begin{verbatim}
-python3 -B problems/matroid-failure-summaries/verify/check_weighted_obstruction.py
+python3 -B \
+  problems/matroid-failure-summaries/verify/check_weighted_obstruction.py
 \end{verbatim}
 
 The checker independently enumerates the 65 underlying bases, the 386 extended bases, and all 8,192 subsets of the 13-item ground. It verifies basis exchange, constructs the complete rank table by exhaustive subset recurrence, and compares greedy with literal minimum cost over all surviving bases. It checks all zero-, one-, and two-label queries, every item's optimum and prefix necessity witness, and the rank-only restriction WO3. Small amplified instances are also checked directly; the proof in Section 4 establishes the unbounded family.

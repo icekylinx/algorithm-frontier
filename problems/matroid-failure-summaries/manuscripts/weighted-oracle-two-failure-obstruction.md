@@ -263,7 +263,8 @@ application.
 Run
 
 ~~~sh
-python3 -B problems/matroid-failure-summaries/verify/check_weighted_obstruction.py
+python3 -B \
+  problems/matroid-failure-summaries/verify/check_weighted_obstruction.py
 ~~~
 
 The checker independently enumerates the 65 underlying bases, the 386

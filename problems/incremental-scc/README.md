@@ -10,7 +10,7 @@ Maintain one explicit component label per original vertex. The record does not i
 
 **Randomness**
 
-Deterministic label-history construction and conditional SCC maintenance. The latter requires deterministic cycle search, exact flow maintenance and edge retirement under adaptive updates.
+Deterministic exact SCC maintenance and label-history construction. The source map connects the detector, flow-maintenance and edge-retirement operations to their local realizations and named published prerequisites.
 
 **Time**
 
@@ -26,7 +26,7 @@ Polynomial in the maintained graph, label inventory, and raw-backend state; the 
 
 **Model and representation**
 
-Conditional incremental directed graph client using the named raw minimum-ratio-cycle interface, explicit endpoint retargeting, edge retirement, and exact component-label updates.
+Incremental directed graph construction using the raw minimum-ratio-cycle engine, exact base registers, atomic endpoint retargeting, edge retirement and explicit component-label updates. The source map identifies each constructed interface and its published inputs.
 
 **Lower-bound scope**
 
@@ -34,9 +34,9 @@ No lower bound is claimed.
 
 **Review status**
 
-**Ready for review in the stated scope.** The small-to-large persistent label history, historical equality queries, and first-coalescence queries in O(1+log log(n+2)) time via a binary search on the shared suffix.
+**Ready for review.** The complete incremental SCC label theorem with the raw-cycle-to-frozen-detector realization, nonzero-base handling and retirement rules. The label-history extension proves historical equality and O(1+log log(n+2)) first-coalescence queries using permanently retired identities.
 
-**Conditions and remaining work.** The history layer assumes correct monotone component merges and permanently retired label identities. The faster SCC update algorithm still requires the cycle-search, exact flow and edge-retirement operations listed in sources.md.
+**Conditions and remaining work.** The theorem gives exact component labels under the stated insertion model and adaptive-history bounds. It does not include dynamic topological-order maintenance or within-component path output. The executable history checks cover that layer separately.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 

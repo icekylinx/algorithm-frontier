@@ -53,6 +53,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/weighted-prefix-quota-frontier/README.md) · [Main proof](problems/weighted-prefix-quota-frontier/proof.md) · [Sources](problems/weighted-prefix-quota-frontier/sources.md) · [Verification](problems/weighted-prefix-quota-frontier/verify/README.md)
 
 - [Exact sparse numeric quotas with a root cap and arbitrary completion costs](problems/weighted-prefix-quota-frontier/manuscripts/bounded-frequency-root-cap-valuated-fpt.md)
+- [Exact quotas on compatible cuts](problems/weighted-prefix-quota-frontier/manuscripts/compatible-cut-quota-extension.md)
 - [Deterministic sunflower kernels for several coverable matroids](problems/weighted-prefix-quota-frontier/manuscripts/deterministic-coverable-matroid-sunflower-kernel.md)
 - [Deterministic sparse packing kernels with an oracle matroid](problems/weighted-prefix-quota-frontier/manuscripts/deterministic-sparse-packing-oracle-kernel.md)
 - [Deterministic kernels with explicitly represented transversal matroids](problems/weighted-prefix-quota-frontier/manuscripts/deterministic-transversal-matroid-kernel-transfer.md)
@@ -63,11 +64,13 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [New primary-source comparisons for checkpoint T](problems/weighted-prefix-quota-frontier/manuscripts/incremental-primary-baselines-T.md)
 - [Primary baselines and method credits for increment U](problems/weighted-prefix-quota-frontier/manuscripts/incremental-primary-baselines-U.md)
 - [Exact common-weight laminar quotas under a root cap](problems/weighted-prefix-quota-frontier/manuscripts/laminar-common-weight-root-cap-fpt.md)
+- [Faster exact recovery for laminar quotas by fixing the uncommon weights](problems/weighted-prefix-quota-frontier/manuscripts/laminar-dominant-weight-recovery.md)
 - [Exact laminar quotas with arbitrary zero-weight completion costs](problems/weighted-prefix-quota-frontier/manuscripts/laminar-valuated-zero-completion-fpt.md)
 - [Row-dependent weights defeat the largest-prefix-target parameter](problems/weighted-prefix-quota-frontier/manuscripts/row-dependent-full-prefix-target-boundary.md)
 - [Sharp deterministic restrictions for sparse packing with an oracle matroid](problems/weighted-prefix-quota-frontier/manuscripts/sharp-sparse-packing-fpt-restrictions.md)
 - [A direct hash-and-profile algorithm for sparse exact root-bounded quotas](problems/weighted-prefix-quota-frontier/manuscripts/sparse-root-quota-hash-profile-algorithm.md)
 - [Two weighted coordinate orders: a sharp largest-target classification](problems/weighted-prefix-quota-frontier/manuscripts/two-order-weighted-prefix-target-classification.md)
+- [Two positive weights already force exponential laminar oracle complexity](problems/weighted-prefix-quota-frontier/manuscripts/two-positive-weight-laminar-boundary.md)
 - [Uniform scalar coefficients on optional zero-weight coordinates](problems/weighted-prefix-quota-frontier/manuscripts/uniform-zero-scalar-laminar-extension.md)
 - [Labeled sunflower kernels for sparse numeric quotas and valuated completion](problems/weighted-prefix-quota-frontier/manuscripts/valuated-sparse-quota-sunflower-kernel.md)
 - [Sharp support-budget tradeoffs for one and two weighted-prefix orders](problems/weighted-prefix-quota-frontier/manuscripts/weighted-prefix-support-budget-tradeoffs.md)
@@ -78,12 +81,15 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/general-matching/README.md) · [Main proof](problems/general-matching/proof.md) · [Sources](problems/general-matching/sources.md) · [Verification](problems/general-matching/verify/README.md)
 
+- [Matching-number time bound for the implemented bipartite branch](problems/general-matching/reference/bipartite-proof.md)
 - [A quadratic extraction of a matching optimality certificate](problems/general-matching/reference/certificate-proof.md)
 - [Cubic reference matching in the component matching numbers](problems/general-matching/reference/cover-compression-proof.md)
 
 ### [Degree-constrained subgraphs](problems/degree-constrained-subgraphs/)
 
 [Statement](problems/degree-constrained-subgraphs/README.md) · [Main proof](problems/degree-constrained-subgraphs/proof.md) · [Sources](problems/degree-constrained-subgraphs/sources.md) · [Verification](problems/degree-constrained-subgraphs/verify/README.md)
+
+- [Correctness and certificates for the executable degree solver](problems/degree-constrained-subgraphs/reference/correctness.md)
 
 ### [Static and threshold min-cost flow](problems/min-cost-flow/)
 
@@ -811,6 +817,7 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Joint public retuning for the strong forest: a conservative source audit](manuscripts/graph-backends/public-strong-forest-joint-retuning-audit.md)
 - [Focused audit: public forest marks, rebuilds, and the forced anchor](manuscripts/graph-backends/public-strong-forest-marks-anchor-focused-audit.md)
 - [A stronger public baseline for the strong forest and Gomory--Hu application](manuscripts/graph-backends/public-strong-forest-retuning-baseline.md)
+- [Using the published flow bound on small recursive graphs](manuscripts/graph-backends/published-flow-capacity-scaling.md)
 - [An explicit deterministic exact-flow bound for the growing-parameter construction](manuscripts/graph-backends/quantitative-exact-flow-dependency.md)
 - [A conditional 14/15 quantitative bound for deterministic general matching](manuscripts/graph-backends/quantitative-matching-14-15-composition.md)
 - [Quantitative deterministic general matching with preserved length aspect](manuscripts/graph-backends/quantitative-matching-167-168-composition.md)

@@ -12,10 +12,27 @@ O\!\left(n+m\log(m+2)+\sum_i \nu(G_i)^3\right),
 
 where <code class="math">G_i</code> ranges over nonempty normalized input components. No
 matching-number estimate is supplied as input. This is an ordinary
-polynomial implementation improvement, derived from classical alternating
-exchange; no new almost-linear algorithm or publication-priority claim is
-made. The separate faster research composition does not use this cubic
-preprocessing step.
+polynomial implementation improvement. The structural reduction below
+restates the earlier checkpoint proof described next. The separate faster
+research composition uses its own cycle-search construction and does not
+charge this implementation's polynomial crossing solve to its fast bound.
+
+The [bipartite refinement](bipartite-proof.md) improves a component's cubic
+solve term to `O(nu(G_i)^(5/2))` whenever its first retained kernel is
+bipartite, including certificate generation. The crossing matching itself
+now uses Hopcroft–Karp; Section 2 accounts for this required improvement.
+
+**Historical source.** Lemma 1's right-endpoint exchange and the resulting
+<code class="math">2c\leq4\nu</code> vertex bound were already proved in
+<em>A linear-vertex refinement of the matching-size kernel</em>
+(<code>linear_vertex_kernel_refinement.md</code>), Sections 1–3, in the
+direct checkpoint of 24 October 2026. The fixed-epsilon and uniform
+checkpoints retain the identical proof. The present work supplies its
+standard-library implementation, the complete componentwise implementation
+bound, independent finite checks and certificate compatibility.
+[The bipartite refinement](bipartite-proof.md) adds the nonrecursive
+Hopcroft–Karp implementation and its matching-number analysis. See the
+[checkpoint source map](../sources.md#checkpoint-provenance).
 
 ## 1. A small set of outside endpoints preserves all cover subsets
 
@@ -75,26 +92,25 @@ k_i=|V(H_i)|\leq c_i+c_i^2,
 ![Formula](../../../assets/math/caa52414a3f7e0bb81709373.svg)
 
 Compute a maximum crossing matching in <code class="math">H_i[C_i,V(H_i)\setminus C_i]</code>
-and apply Lemma 1. The graph <code class="math">J_i</code> given to blossom search has at most
+and apply Lemma 1. The graph <code class="math">J_i</code> given to the final matching search has at most
 <code class="math">2c_i\leq4\nu(G_i)</code> vertices. All its edges retain original native
 input indices and identifiers.
 
-The crossing matching uses ordinary bipartite augmenting paths, processing
-the cover vertices one at a time. Inductively, the current matching is
-maximum for the processed left prefix. Adding one left vertex can increase
-the optimum by at most one. Any new augmenting path must start at that
-new vertex: an augmenting path with other endpoints could not contain the
-new unmatched left vertex internally and would already exist in the old
-prefix. An exhaustive alternating search therefore either increases the
-optimum by one or certifies that it is unchanged. This proves the
-correctness of `_compress_cover`'s crossing matching.
+The crossing matching uses the implemented Hopcroft–Karp phase algorithm.
+Each phase freezes its starting matching, finds a maximal family of
+vertex-disjoint shortest augmenting paths, and flips those paths. The
+[complete phase proof](bipartite-proof.md#2-the-phase-implementation)
+establishes correctness and the bound `O((k+h) sqrt(nu_cross+1))`, including
+one final failed BFS. Here `nu_cross <= c_i`, even though the crossing graph
+may have quadratically many vertices. Consequently `_compress_cover`
+costs `O(c_i^(5/2))` time and `O(c_i^2)` storage.
 
-There are at most <code class="math">c_i</code> searches. Each scans
-<code class="math">O(h_i+k_i)=O(c_i^2)</code> records, including its working arrays. Thus the
-crossing matching costs <code class="math">O(c_i^3)</code> time and <code class="math">O(c_i^2)</code> space.
-The subsequent blossom computation on <code class="math">J_i</code> also costs
-<code class="math">O(c_i^3)</code>. Computing the crossing matching only **after** the edge
-kernel avoids an extra <code class="math">c_i m_i</code> input-processing term.
+If the first kernel `H_i` is bipartite, its coloring restricts to `J_i`,
+and a second Hopcroft–Karp solve also takes `O(c_i^(5/2))`. Otherwise the
+subsequent blossom computation takes <code class="math">O(c_i^3)</code>.
+Computing the crossing matching only **after** the edge kernel keeps all
+superlinear matching work on `O(c_i^2)` records; the original component
+is still scanned only linearly after normalization.
 
 ## 3. Certify on the original edge kernel
 
@@ -105,8 +121,12 @@ or execute the additional compression.
 
 Lift the maximum matching of <code class="math">J_i</code> back to <code class="math">H_i</code>, marking discarded
 outside vertices unmatched. Lemma 1 proves that this is maximum in
-<code class="math">H_i</code>. Run the [simultaneous failed-forest extraction](certificate-proof.md)
-there. Its sharper accounting is useful here.
+<code class="math">H_i</code>. On a bipartite kernel, the
+[alternating-reachability vertex cover](bipartite-proof.md#5-a-linear-certificate-on-the-first-kernel)
+gives a tight odd-component certificate in `O(k_i+h_i)` work. On a
+nonbipartite kernel, run the
+[simultaneous failed-forest extraction](certificate-proof.md) there.
+Its sharper accounting is useful here.
 
 **Lemma 2.** Given a maximum matching of size <code class="math">\nu</code> in a graph with
 <code class="math">k</code> vertices and <code class="math">h</code> edges, that extraction takes
@@ -127,8 +147,9 @@ cost <code class="math">O(h)</code> in total, and initial arrays cost <code clas
 the claimed bound. ∎
 
 Here <code class="math">k_i=O(c_i^2)</code>, <code class="math">h_i=O(c_i^2)</code>, and
-<code class="math">\nu(H_i)\leq c_i</code>, so certificate extraction also costs
-<code class="math">O(c_i^3)</code>. Its independently checked equality proves optimality on
+<code class="math">\nu(H_i)\leq c_i</code>, so general certificate extraction costs
+<code class="math">O(c_i^3)</code>; bipartite extraction costs `O(c_i^2)`.
+Its independently checked equality proves optimality on
 <code class="math">H_i</code> and, by the verified edge-kernel conditions, on the original
 input. A faulty compression cannot make the unchanged verifier accept
 a suboptimal matching.
@@ -151,10 +172,16 @@ The verifier still takes <code class="math">O(n+m\log(m+2))</code> word operatio
 no matching search. Empty inputs and isolated vertices retain their
 previous handling.
 
-The `--no-kernel` option disables both stages and runs blossom search
-on the full normalized components. Its bound is
-<code class="math">O(n+m\log(m+2)+\sum_i n_i^3)</code>, where <code class="math">n_i</code> counts vertices of
-nonempty normalized component <code class="math">i</code>.
+The cubic sum is a uniform upper bound. More precisely, replace the term
+for every bipartite first kernel by `O(nu(G_i)^(5/2))`; both its compression
+and solve have that bound, and its certificate costs less. The
+[bipartite proof](bipartite-proof.md#1-graphs-and-the-exact-bound) states
+the resulting mixed-component formula.
+
+The `--no-kernel` option disables both stages and solves the full normalized
+components. A bipartite component costs `O((n_i+m_i) sqrt(nu(G_i)+1))`;
+a nonbipartite component costs `O(n_i^3)`. Here `n_i,m_i` are the component's
+vertex and edge counts. The initial `O(n+m log(m+2))` term remains charged.
 
 This compression is for the current static graph. It is not a replacement
 for the separately proved simultaneous mixed-failure kernel. A right
@@ -177,7 +204,7 @@ matched-edge bound on contractions in the actual certificate search.
 For a visible larger example, take a path on 20 cover vertices, list its
 10 disjoint pair edges first, and attach 20 private leaves to each cover
 vertex. The first kernel has all 420 vertices and 419 edges. The new
-stage reduces the blossom solve to 40 vertices, returns 20 original
+stage reduces the final bipartite solve to 40 vertices, returns 20 original
 edges, and certifies the answer on the original 420-vertex kernel. This
 case is included in the [full solver checker](../verify/check_reference.py).
 

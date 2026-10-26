@@ -2,11 +2,15 @@
 
 ## Source snapshot
 
-The editorial basis is the newest supplied research archive:
+The single-file matching manuscript was assembled from the revised
+24 October research archive:
 
 deterministic_general_matching_four_fifths_revised_checkpoint_20261024.zip
 
-Its internal README identifies it as the revised 24 October 2026 snapshot. The manuscript was assembled on 25 October 2026. Source files are listed here for traceability; they are not needed alongside the single-file manuscript.
+Its internal README identifies that snapshot; the manuscript was assembled
+on 25 October 2026. Later transfer checkpoints carry the shared modules
+forward. Source filenames below identify the original notes; their maintained
+versions are linked from the current source map.
 
 Source archive SHA-256:
 
@@ -48,20 +52,34 @@ Source archive SHA-256:
 The [source map](../problems/general-matching/sources.md) identifies each
 published theorem and the operation for which it is used.
 
-The faster research statement remains a conditional composition theorem.
-Section 11.6 requires a deterministic data structure that actually performs
-cycle comparisons, repairs changing routes, tracks and retires edge copies,
-and realizes its forests with the stated bit and update bounds. This
-implementation has not been supplied. The named published results do not
-by themselves provide those additional operations. The requirement is
-stated explicitly in the theorem and is separate from its proved local
-reductions.
+The fast research theorem uses the deterministic cycle-search realization
+in Section 11.6. That theorem connects raw comparisons, chronological route
+repairs, stable retirement, finite-bit forests and uniform parameters to
+their existing construction proofs. The revised checkpoint already supplied
+these modules. A generic interface statement in one note must be read
+together with its realizing modules; it is not an unresolved assumption
+merely because a stand-alone software implementation is absent.
+
+The published theorems used inside those constructions remain named external
+proof dependencies. The original local extensions supply the additional
+operations; their initialization, lifetime, work and quality accounts are
+included in the realization. The
+[checkpoint restoration record](checkpoint-restoration.md) distinguishes
+the original research contribution from subsequent implementation work.
 
 The [executable reference solver](../problems/general-matching/reference/README.md)
 has its own ordinary polynomial bound and uses only Python's standard
 library. Its independently checked optimality certificates do not assume
 the faster research data structure.
 
-The carrier normalization, balanced selected-tree argument, factor-critical Hall argument, kernel and decoder, preserved-debt algebra, arbitrary-gap implication, exact rounding, entropy increment, weighted-selection potential, feedback potential, coupled recurrence, and final parameter balance are explicitly developed in the main file. The larger hierarchy and raw-backend implementation arguments are presented as compressed module assemblies, with the latter's remaining realization premise visible in the theorem statement.
+The carrier normalization, balanced selected-tree argument, factor-critical
+Hall argument, kernel and decoder, preserved-debt algebra, arbitrary-gap
+implication, exact rounding, entropy increment, weighted-selection potential,
+feedback potential, coupled recurrence and final parameter balance are
+developed in the main file. Longer hierarchy and raw-backend proofs are
+retained as named companion constructions with exact source links.
 
-This scope preserves the source's research status while making the positive contribution and the mathematical implication readable. Independent final acceptance establishes exact output; the quantitative theorem uses the favorable backend implementation as stated.
+Independent final acceptance proves exact output; the construction and cost
+arguments prove the quantitative running time. The reference implementation,
+finite checks and manuscript theorem have distinct evidence scopes. None is
+described as proof-assistant formalization or external peer review.

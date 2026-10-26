@@ -12,7 +12,7 @@ Maintain an explicit sparse spanner after settled updates and report its edge ch
 
 **Randomness**
 
-Both displayed spanner constructions are deterministic conditional on the stated deterministic hierarchy and forest interfaces. Randomized public baselines are comparisons only.
+Both displayed spanner constructions are deterministic, with the hierarchy, strong-forest and destructive-support interfaces realized by the linked proofs. Randomized public baselines are comparisons only.
 
 **Time**
 
@@ -36,9 +36,9 @@ This page records two upper-bound constructions and their incomparable recourse 
 
 **Review status**
 
-**Ready for review in the stated scope.** The separate zero-edge class, dyadic positive-weight wrapper, and their initialization, update and recourse accounting for both displayed regimes.
+**Ready for review.** The complete tracked-terminal four-fifths and full-horizon five-sixths constructions, including the destructive-support realization, hierarchy and strong-forest substitutions. The zero-edge class and dyadic positive-weight wrapper charge initialization, all updates and settled output recourse.
 
-**Conditions and remaining work.** The underlying unweighted hierarchy and forest algorithms remain explicit prerequisites. Output guarantees apply after each complete external update and retain the provider’s adaptive-history requirements.
+**Conditions and remaining work.** The two recourse guarantees have different scopes and are retained separately. Output is measured after a complete external update, with the stated adaptive-history and numerical-range restrictions. The underlying proofs are available even though a full executable implementation is not supplied.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -56,7 +56,7 @@ Write <code class="math">M=n+m_0+I+D</code> and <code class="math">E_a=\exp(O(U^
 **Full-horizon construction.** Stretch <code class="math">E_{5/6}</code>, current edges
 <code class="math">nE_{5/6}</code>, total work <code class="math">ME_{5/6}</code>, and total output recourse <code class="math">(n+D)E_{5/6}</code>.
 
-Both conclusions depend on the named flat-forest hierarchy. The full-horizon construction removes cumulative insertions from output recourse, so neither construction dominates the other in every displayed quantity.
+Both conclusions use the constructed flat-forest hierarchy. The full-horizon construction removes cumulative insertions from output recourse, so neither construction dominates the other in every displayed quantity.
 
 Read the [proof](proof.md), [source map](sources.md), and [complexity guide](../../docs/COMPLEXITY.md) for the exact envelopes and recourse accounting.
 

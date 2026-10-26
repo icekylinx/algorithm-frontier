@@ -152,17 +152,19 @@ def render_readme(data: dict) -> str:
         "[Review and verification](reviews/README.md) · "
         "[Citation](CITATION.cff)", "",
         "## Selected results", "",
-        "Three entry points into the manuscripts. Full parameter ranges and "
-        "the current review status are on the linked problem pages.", "",
+        "Three deterministic constructions. The linked problem pages give "
+        "the full statements, proof dependencies, executable coverage and review status.", "",
     ]
     by_id = {r["id"]: r for g in groups for r in g["records"]}
     for problem_id in data.get("featured", []):
         record = by_id[problem_id]
-        out += render_record(record, f"problems/{problem_id}/", level=3)
+        out += [f"### [{record['title']}](problems/{problem_id}/)", "",
+                record['result'].rstrip('.') + '.', "",
+                *quantity_paragraphs(record['quantity']),
+                record['scope'].rstrip('.') + '.', ""]
     out += [
         "## Results", "",
-        "Browse by problem. Each link opens its statement and proof; "
-        "conditional algorithms retain their named backend assumptions. "
+        "Browse by problem. Each link opens its statement, proof and dependencies. "
         "[Computational models](docs/COMPLEXITY.md) and "
         "[randomness contracts](docs/RANDOMNESS.md) explain how to compare bounds.", "",
     ]

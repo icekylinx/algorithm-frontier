@@ -36,9 +36,9 @@ No lower bound is claimed. The displayed point is a baseline and should not be a
 
 **Review status**
 
-**Ready for review in the stated scope.** The formal weighted MSF certificate and pruning substitution: local exchange/contraction proofs, literal connectivity adapter, finite pruning horizons, deterministic decomposition parameters and the NSW recursive cost calculation.
+**Ready for review.** The full deterministic weighted MSF public-baseline composition: local exchange/contraction proofs, connectivity adapter, finite pruning horizons, decomposition parameters and recursive worst-case cost.
 
-**Conditions and remaining work.** This is a derived public baseline using Chuzhoy–Gao–Li–Nanongkai–Peng–Saranurak Corollary 6.1, Meierhans–Probst Gutenberg–Saranurak Theorem 6.4, and Nanongkai–Saranurak–Wulff-Nilsen Theorem 7.1 and Section 9. It is not an executable implementation or a consequence of the research matching router.
+**Conditions and remaining work.** The external theorems are Chuzhoy–Gao–Li–Nanongkai–Peng–Saranurak Corollary 6.1, Meierhans–Probst Gutenberg–Saranurak Theorem 6.4, and Nanongkai–Saranurak–Wulff-Nilsen Theorem 7.1 and Section 9. This is a derived public result; a full executable implementation is not supplied.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 

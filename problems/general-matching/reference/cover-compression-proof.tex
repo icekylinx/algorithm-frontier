@@ -1,12 +1,12 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/general-matching/reference/cover-compression-proof.md
-% Recovered-source SHA-256: 2dce1c938bb92cba501bc4dbda9e07d4c3f8e42dc6e1f39e11dfa57c7e69f98a
+% Recovered-source SHA-256: 7e560138fee8aa100dc6cb0c64b1447824bdddf49ed2c264f8fc87a082286ff0
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
-% Final document preamble must use the recovered original Subset Sum style.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
 
-\hypertarget{cubic-reference-matching-in-the-component-matching-numbers}{%
-\section{Cubic reference matching in the component matching numbers}\label{cubic-reference-matching-in-the-component-matching-numbers}}
+\hypertarget{af-e51d4b9b02-cubic-reference-matching-in-the-component-matching-numbers}{%
+\section{Cubic reference matching in the component matching numbers}\label{af-e51d4b9b02-cubic-reference-matching-in-the-component-matching-numbers}}
 
 The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/matching.py}{reference solver} first builds the proved \(c\)-neighbor edge kernel, then reduces the number of vertices further using a maximum matching in its bipartite crossing graph. The resulting default time bound, including an optional optimality certificate, is
 
@@ -14,10 +14,14 @@ The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/gen
 O\!\left(n+m\log(m+2)+\sum_i \nu(G_i)^3\right),
 \]
 
-where \(G_i\) ranges over nonempty normalized input components. No matching-number estimate is supplied as input. This is an ordinary polynomial implementation improvement, derived from classical alternating exchange; no new almost-linear algorithm or publication-priority claim is made. The separate faster research composition does not use this cubic preprocessing step.
+where \(G_i\) ranges over nonempty normalized input components. No matching-number estimate is supplied as input. This is an ordinary polynomial implementation improvement. The structural reduction below restates the earlier checkpoint proof described next. The separate faster research composition uses its own cycle-search construction and does not charge this implementation's polynomial crossing solve to its fast bound.
 
-\hypertarget{a-small-set-of-outside-endpoints-preserves-all-cover-subsets}{%
-\subsection{1. A small set of outside endpoints preserves all cover subsets}\label{a-small-set-of-outside-endpoints-preserves-all-cover-subsets}}
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/bipartite-proof.md}{bipartite refinement} improves a component's cubic solve term to \texttt{O(nu(G\_i)\^{}(5/2))} whenever its first retained kernel is bipartite, including certificate generation. The crossing matching itself now uses Hopcroft--Karp; Section 2 accounts for this required improvement.
+
+\textbf{Historical source.} Lemma 1's right-endpoint exchange and the resulting \(2c\leq4\nu\) vertex bound were already proved in A linear-vertex refinement of the matching-size kernel (linear\_vertex\_kernel\_refinement.md), Sections 1--3, in the direct checkpoint of 24 October 2026. The fixed-epsilon and uniform checkpoints retain the identical proof. The present work supplies its standard-library implementation, the complete componentwise implementation bound, independent finite checks and certificate compatibility. \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/bipartite-proof.md}{The bipartite refinement} adds the nonrecursive Hopcroft--Karp implementation and its matching-number analysis. See the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/sources.md\#checkpoint-provenance}{checkpoint source map}.
+
+\hypertarget{af-e51d4b9b02-a-small-set-of-outside-endpoints-preserves-all-cover-subsets}{%
+\subsection{1. A small set of outside endpoints preserves all cover subsets}\label{af-e51d4b9b02-a-small-set-of-outside-endpoints-preserves-all-cover-subsets}}
 
 \textbf{Lemma 1.} Let \(C\) be any vertex cover of a simple graph \(H\), put \(I=V(H)\setminus C\), and let \(Q\) be a maximum matching in the bipartite graph containing the \(C\)--\(I\) edges of \(H\). Let \(T\subseteq I\) be the right endpoints matched by \(Q\). Every subset of \(C\) matchable into \(I\) is matchable into \(T\). Consequently the induced graph \(J=H[C\cup T]\) satisfies
 
@@ -33,8 +37,8 @@ Now take any matching in the general graph \(H\). Keep its \(C\)--\(C\) edges. I
 
 The lemma holds for \textbf{any maximum} crossing matching. It preserves every matchable left subset simultaneously, including subsets chosen after \(T\) is fixed. A merely maximal crossing matching is insufficient.
 
-\hypertarget{apply-the-edge-kernel-before-computing-the-crossing-matching}{%
-\subsection{2. Apply the edge kernel before computing the crossing matching}\label{apply-the-edge-kernel-before-computing-the-crossing-matching}}
+\hypertarget{af-e51d4b9b02-apply-the-edge-kernel-before-computing-the-crossing-matching}{%
+\subsection{2. Apply the edge kernel before computing the crossing matching}\label{af-e51d4b9b02-apply-the-edge-kernel-before-computing-the-crossing-matching}}
 
 For a normalized component \(G_i\), let \(C_i\) be the endpoints of a greedy maximal matching and put \(c_i=|C_i|\). Then \(\nu(G_i)\leq c_i\leq2\nu(G_i)\). The first-stage \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/proof.md\#31-cleanup-and-an-optional-quadratic-edge-kernel}{\(c_i\)-neighbor kernel} \(H_i\) has
 
@@ -45,18 +49,18 @@ k_i=|V(H_i)|\leq c_i+c_i^2,
 \qquad \nu(H_i)=\nu(G_i).
 \]
 
-Compute a maximum crossing matching in \(H_i[C_i,V(H_i)\setminus C_i]\) and apply Lemma 1. The graph \(J_i\) given to blossom search has at most \(2c_i\leq4\nu(G_i)\) vertices. All its edges retain original native input indices and identifiers.
+Compute a maximum crossing matching in \(H_i[C_i,V(H_i)\setminus C_i]\) and apply Lemma 1. The graph \(J_i\) given to the final matching search has at most \(2c_i\leq4\nu(G_i)\) vertices. All its edges retain original native input indices and identifiers.
 
-The crossing matching uses ordinary bipartite augmenting paths, processing the cover vertices one at a time. Inductively, the current matching is maximum for the processed left prefix. Adding one left vertex can increase the optimum by at most one. Any new augmenting path must start at that new vertex: an augmenting path with other endpoints could not contain the new unmatched left vertex internally and would already exist in the old prefix. An exhaustive alternating search therefore either increases the optimum by one or certifies that it is unchanged. This proves the correctness of \texttt{\_compress\_cover}'s crossing matching.
+The crossing matching uses the implemented Hopcroft--Karp phase algorithm. Each phase freezes its starting matching, finds a maximal family of vertex-disjoint shortest augmenting paths, and flips those paths. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/bipartite-proof.md\#2-the-phase-implementation}{complete phase proof} establishes correctness and the bound \texttt{O((k+h)\ sqrt(nu\_cross+1))}, including one final failed BFS. Here \texttt{nu\_cross\ \textless{}=\ c\_i}, even though the crossing graph may have quadratically many vertices. Consequently \texttt{\_compress\_cover} costs \texttt{O(c\_i\^{}(5/2))} time and \texttt{O(c\_i\^{}2)} storage.
 
-There are at most \(c_i\) searches. Each scans \(O(h_i+k_i)=O(c_i^2)\) records, including its working arrays. Thus the crossing matching costs \(O(c_i^3)\) time and \(O(c_i^2)\) space. The subsequent blossom computation on \(J_i\) also costs \(O(c_i^3)\). Computing the crossing matching only \textbf{after} the edge kernel avoids an extra \(c_i m_i\) input-processing term.
+If the first kernel \texttt{H\_i} is bipartite, its coloring restricts to \texttt{J\_i}, and a second Hopcroft--Karp solve also takes \texttt{O(c\_i\^{}(5/2))}. Otherwise the subsequent blossom computation takes \(O(c_i^3)\). Computing the crossing matching only \textbf{after} the edge kernel keeps all superlinear matching work on \texttt{O(c\_i\^{}2)} records; the original component is still scanned only linearly after normalization.
 
-\hypertarget{certify-on-the-original-edge-kernel}{%
-\subsection{3. Certify on the original edge kernel}\label{certify-on-the-original-edge-kernel}}
+\hypertarget{af-e51d4b9b02-certify-on-the-original-edge-kernel}{%
+\subsection{3. Certify on the original edge kernel}\label{af-e51d4b9b02-certify-on-the-original-edge-kernel}}
 
 The public certificate format is unchanged. It lists the first-stage kernel \(H_i\), its cover, the original chosen edge records, and an odd-component barrier in \(H_i\). It does not ask the verifier to trust or execute the additional compression.
 
-Lift the maximum matching of \(J_i\) back to \(H_i\), marking discarded outside vertices unmatched. Lemma 1 proves that this is maximum in \(H_i\). Run the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/certificate-proof.md}{simultaneous failed-forest extraction} there. Its sharper accounting is useful here.
+Lift the maximum matching of \(J_i\) back to \(H_i\), marking discarded outside vertices unmatched. Lemma 1 proves that this is maximum in \(H_i\). On a bipartite kernel, the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/bipartite-proof.md\#5-a-linear-certificate-on-the-first-kernel}{alternating-reachability vertex cover} gives a tight odd-component certificate in \texttt{O(k\_i+h\_i)} work. On a nonbipartite kernel, run the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/certificate-proof.md}{simultaneous failed-forest extraction} there. Its sharper accounting is useful here.
 
 \textbf{Lemma 2.} Given a maximum matching of size \(\nu\) in a graph with \(k\) vertices and \(h\) edges, that extraction takes \(O(h+k(\nu+1))\) time and linear storage.
 
@@ -64,10 +68,10 @@ Lift the maximum matching of \(J_i\) back to \(H_i\), marking discarded outside 
 
 Every nontrivial odd-cycle contraction absorbs at least one current inner singleton, permanently making it outer. Hence there are at most \(\nu\) contractions. Each contraction's ancestor walks, temporary arrays and full-array scan cost \(O(k)\). Ordinary adjacency scans cost \(O(h)\) in total, and initial arrays cost \(O(k)\). This gives the claimed bound. \hfill\(\square\)
 
-Here \(k_i=O(c_i^2)\), \(h_i=O(c_i^2)\), and \(\nu(H_i)\leq c_i\), so certificate extraction also costs \(O(c_i^3)\). Its independently checked equality proves optimality on \(H_i\) and, by the verified edge-kernel conditions, on the original input. A faulty compression cannot make the unchanged verifier accept a suboptimal matching.
+Here \(k_i=O(c_i^2)\), \(h_i=O(c_i^2)\), and \(\nu(H_i)\leq c_i\), so general certificate extraction costs \(O(c_i^3)\); bipartite extraction costs \texttt{O(c\_i\^{}2)}. Its independently checked equality proves optimality on \(H_i\) and, by the verified edge-kernel conditions, on the original input. A faulty compression cannot make the unchanged verifier accept a suboptimal matching.
 
-\hypertarget{complete-time-storage-and-scope}{%
-\subsection{4. Complete time, storage and scope}\label{complete-time-storage-and-scope}}
+\hypertarget{af-e51d4b9b02-complete-time-storage-and-scope}{%
+\subsection{4. Complete time, storage and scope}\label{af-e51d4b9b02-complete-time-storage-and-scope}}
 
 Comparison-sort normalization costs \(O(n+m\log(m+2))\). Constructing all first-stage kernels and handling components costs \(O(n+m)\) after normalization. Both normal and certificate modes therefore take
 
@@ -78,15 +82,17 @@ O\!\left(n+m\log(m+2)+\sum_i c_i^3\right)
 
 Working storage and certificate storage remain \(O(n+m)\) records. Long edge-ID labels incur their actual comparison and encoding costs. The verifier still takes \(O(n+m\log(m+2))\) word operations, with no matching search. Empty inputs and isolated vertices retain their previous handling.
 
-The \texttt{-\/-no-kernel} option disables both stages and runs blossom search on the full normalized components. Its bound is \(O(n+m\log(m+2)+\sum_i n_i^3)\), where \(n_i\) counts vertices of nonempty normalized component \(i\).
+The cubic sum is a uniform upper bound. More precisely, replace the term for every bipartite first kernel by \texttt{O(nu(G\_i)\^{}(5/2))}; both its compression and solve have that bound, and its certificate costs less. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/bipartite-proof.md\#1-graphs-and-the-exact-bound}{bipartite proof} states the resulting mixed-component formula.
+
+The \texttt{-\/-no-kernel} option disables both stages and solves the full normalized components. A bipartite component costs \texttt{O((n\_i+m\_i)\ sqrt(nu(G\_i)+1))}; a nonbipartite component costs \texttt{O(n\_i\^{}3)}. Here \texttt{n\_i,m\_i} are the component's vertex and edge counts. The initial \texttt{O(n+m\ log(m+2))} term remains charged.
 
 This compression is for the current static graph. It is not a replacement for the separately proved simultaneous mixed-failure kernel. A right endpoint set chosen before failures need not preserve later answers: with a one-vertex cover of a star, deleting the one retained crossing edge destroys its matching while another original leaf remains usable. The fault summary must remain intact until a particular failure instance has been fixed.
 
-\hypertarget{evidence-and-a-concrete-size-reduction}{%
-\subsection{5. Evidence and a concrete size reduction}\label{evidence-and-a-concrete-size-reduction}}
+\hypertarget{af-e51d4b9b02-evidence-and-a-concrete-size-reduction}{%
+\subsection{5. Evidence and a concrete size reduction}\label{af-e51d4b9b02-evidence-and-a-concrete-size-reduction}}
 
 The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/verify/check_cover_compression.py}{production-helper checker} tests all 33,868 simple graphs through six vertices in both fixed edge orders, followed by 500 seeded graphs on seven through thirteen vertices. It checks 68,236 covers, 70,578 possible maximum-matching right endpoint sets, and 2,882,175 left-subset ranks using independent subset dynamic programming. It invokes the actual compression code and verifies the matched-edge bound on contractions in the actual certificate search.
 
-For a visible larger example, take a path on 20 cover vertices, list its 10 disjoint pair edges first, and attach 20 private leaves to each cover vertex. The first kernel has all 420 vertices and 419 edges. The new stage reduces the blossom solve to 40 vertices, returns 20 original edges, and certifies the answer on the original 420-vertex kernel. This case is included in the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/verify/check_reference.py}{full solver checker}.
+For a visible larger example, take a path on 20 cover vertices, list its 10 disjoint pair edges first, and attach 20 private leaves to each cover vertex. The first kernel has all 420 vertices and 419 edges. The new stage reduces the final bipartite solve to 40 vertices, returns 20 original edges, and certifies the answer on the original 420-vertex kernel. This case is included in the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/verify/check_reference.py}{full solver checker}.
 
 The finite checks support implementation review and the displayed local proofs. They do not certify the separate fast research hierarchy.

@@ -13,8 +13,10 @@ contain longer derivations and shared interfaces.
    objective/output, time, space, parameters, model/representation,
    lower-bound scope, review status and source.
 3. Update its `sources.md` dependency map and `verify/README.md`. An executable check must
-   state exactly which finite or analytic claim it certifies. Missing modules,
-   receipts or oracle implementations are unresolved dependencies.
+   state exactly which finite or analytic claim it certifies. Distinguish an
+   unproved mathematical interface from a proved construction that has no
+   executable implementation. Link the realizing theorem before classifying
+   an interface as unresolved, and check earlier checkpoint provenance.
 4. Update the concise entry in `catalogue.json`, then regenerate both public
    indexes with `python3 tools/build_catalogue.py`. When a proof package is
    ready for review, record its exact scope, date and remaining conditions in
@@ -31,6 +33,14 @@ Write formal statements followed by proofs. A summary may cite a separately
 proved internal lemma or an identified external theorem, but must not replace
 an unresolved step with an internal-review label. State a conditional
 composition as a conditional theorem.
+
+A proved local construction discharges an abstract interface when its model,
+parameters, initialization, updates and output bounds match the client. Cite
+that realization explicitly. A named published theorem is an external proof
+dependency; a stated oracle is part of the computational model. Neither a
+missing software implementation nor missing proof-assistant formalization
+turns a complete mathematical algorithm into an unresolved conditional claim.
+Keep genuine promises and conjectural dependencies visible beside the result.
 
 Retain incomparable bounds when their parameters, output guarantees or
 computational models differ. Remove a weaker headline only when the stronger
@@ -57,6 +67,12 @@ Published Markdown uses **literal inline code and standalone SVG equations**.
 It contains no live dollar-delimited or fenced mathematics. Images contain
 their own glyph paths and a white canvas; reading them needs no JavaScript,
 external fonts or mathematical rendering service.
+
+This rule applies to human-facing presentation. TeX sources, programs, JSON
+catalogues, receipts, manifests and other machine-readable records retain
+their literal formulas and data. Do not replace those values with images,
+HTML or rendered fragments. The presentation builder reads their text and
+produces the separately checked Markdown surfaces.
 
 The source-preserving builder records inline TeX in an escaped
 `<code class="math">` element and display TeX in a `math-display` comment

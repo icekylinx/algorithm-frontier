@@ -1,6 +1,6 @@
 # Incremental directed SSSP with simple-path reporting
 
-This is a conditional composition theorem for incremental directed shortest paths with explicit path output.
+The construction maintains incremental directed shortest paths with explicit simple-path output.
 
 **Guarantee**
 
@@ -12,11 +12,11 @@ For every reachable vertex, the estimate is between the true distance and one pl
 
 **Randomness**
 
-Deterministic path-reporting and integer zero-length reductions. The faster distance maintenance requires the deterministic cycle-search and edge-retirement guarantees listed in the source map.
+Deterministic distance maintenance and simple-path reporting, using the realized detector and edge-retirement constructions. Zero-length handling and the exact numerical range are part of the proved reduction.
 
 **Time**
 
-Total work <code class="math">O(n+m)+(n+m)\exp\!\left(O(\log E(N)+\sqrt{U(h+\log(1/\epsilon))})\right)</code>, with <code class="math">\log E(N)=O(U^{4/5}h^{1/5})</code>; conditional on the raw detector and retirement interface.
+Total work <code class="math">O(n+m)+(n+m)\exp\!\left(O(\log E(N)+\sqrt{U(h+\log(1/\epsilon))})\right)</code>, with <code class="math">\log E(N)=O(U^{4/5}h^{1/5})</code> from the constructed raw detector and retirement interface.
 
 **Space**
 
@@ -32,13 +32,13 @@ Nonnegative integer root lengths in a polynomial range and parallel edges are al
 
 **Lower-bound scope**
 
-This is an upper bound under the explicitly stated backend interfaces. It is not an unconditional published theorem and carries no new lower-bound claim.
+This is a research upper bound with the explicitly identified local constructions and published theorem dependencies. No lower bound is claimed.
 
 **Review status**
 
-**Ready for review in the stated scope.** The clipped-tree intersection and loop-removal reporting construction, including zero-length edges; the nonnegative-integer perturbation reduction and its accuracy/bit accounting.
+**Ready for review.** The complete frozen-detector incremental SSSP construction, its realized numerical interface, the simple-path reporting argument and nonnegative-integer perturbation adapter. Includes exact zero distances, clipped-tree intersections, loop removal and accuracy/bit accounting.
 
-**Conditions and remaining work.** The fast distance-maintenance theorem still requires the explicitly stated detector, cycle-search and edge-retirement data structures. The finite path tests do not validate their update time.
+**Conditions and remaining work.** The input, accuracy and polynomial numerical-range promises remain explicit. Reporting a path with k edges costs (k+1) poly(U). Finite path tests support the reporting lemmas and do not measure the asymptotic detector update time.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -46,6 +46,6 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 [Complete theorem and proof](proof.md), [dependencies and primary sources](sources.md).
 
-Read the [proof](proof.md), [source map](sources.md), and [complexity guide](../../docs/COMPLEXITY.md) for the exact accuracy and backend hypotheses.
+Read the [proof](proof.md), [source map](sources.md), and [complexity guide](../../docs/COMPLEXITY.md) for the accuracy range, constructed interfaces and public dependencies.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

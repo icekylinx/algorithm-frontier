@@ -20,31 +20,43 @@ the split-network form of Section 10 of the
 The interval, parity and cardinality gadgets are elementary extensions;
 no publication-priority claim is made for them.
 
-**Conditional quantitative input.** Only the fast running-time corollary
+**Proved quantitative input.** The fast running-time corollary
 uses [the general-matching theorem](../general-matching/proof.md),
-including its Section 2 published primitives and Section 11.6 requirements
-for a deterministic cycle-search implementation.
+including its Section 2 published primitives and the deterministic
+cycle-search realization in Theorem 11.6. That construction supplies the
+interface used by the corollary; executable coverage is recorded separately.
 Replacing that solver by any correct exact matching algorithm preserves
 the reductions' correctness and changes their running time accordingly.
-The repository now supplies one such
-[unconditional reference solver](../general-matching/reference/README.md)
-with original edge IDs and an independently verified optimality certificate.
-The full sparse degree-constrained gadget construction is still a
-mathematical reduction, separately exercised by its finite checker.
+The repository now supplies both the
+[unconditional exact matcher](../general-matching/reference/README.md)
+and the [complete degree-subgraph reference solver](reference/README.md).
+The latter constructs the sparse gadgets, decodes original IDs, checks
+each matching NO certificate and supplies a final excluded-cardinality
+interval for optimization. Its [implementation proof](reference/correctness.md)
+has an ordinary polynomial bound and no external runtime package.
 An arbitrary unsuccessful attempt to find a perfect matching cannot
 serve as a NO certificate; the supplied matching must be maximum.
 
-**Public comparator.** Gabow's
+**Verification boundary.** The degree verifier checks native witnesses
+directly and rebuilds the sparse reduction for a NO or optimality
+certificate. It uses the independent matching certificate checker and
+never runs matching search. The deterministic reduction builder is
+shared code, not a second independent construction. The
+[executable oracle suite](verify/check_reference.py) compares answers
+against exhaustive original-edge subset enumeration.
+
+**Public comparator.** Harold N. Gabow's
 [*Maximum Cardinality f-Matching in Time O(n^(2/3)m)*](https://arxiv.org/abs/2311.14236v1)
-states the separate deterministic simple-graph and multigraph bounds
+Theorem 4.1 states the separate deterministic simple-graph and multigraph bounds
 quoted in Section 7. It supplies a benchmark, not an assumption needed
 to prove the gadgets or to implement the faster cycle-search machinery.
 
 ## Linked mathematical dependencies
 
 These manuscripts contain the interfaces, auxiliary arguments or source
-comparisons referenced by this result. Their stated hypotheses remain
-part of each use; an interface analysis does not supply an omitted backend.
+comparisons referenced by this result. Their graph models, parameter ranges
+and output contracts remain part of each use. The matching realization
+supplies the formerly abstract fast-solver interface.
 
 - [A deterministic near-linear final maximum-matching verifier](../../manuscripts/graph-backends/deterministic-maximum-matching-verifier.md)
 - [OpenAI baseline and exact imported interfaces](../../manuscripts/graph-backends/oai-baseline-and-imports.md)

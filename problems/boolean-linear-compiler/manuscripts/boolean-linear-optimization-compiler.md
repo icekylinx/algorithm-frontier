@@ -1,6 +1,6 @@
 # A support-sensitive interval compiler for exact Boolean linear optimization
 
-**Abstract.** We retain the short intervals produced by signed interval rounding, encode a chosen number of slack bits, and derive a support-sensitive time–space interpolation for exact Boolean linear optimization. The interval mechanism is due to Nederlof, van Leeuwen, and van der Zwaan, with the signed extension recorded by Bansal, Garg, Nederlof, and Vyas. The compiler is proved independently of its Subset Sum backend; numerical instantiations use the separately stated backend contracts.
+**Abstract.** We give an exact signed interval-rounding rule whose emitted intervals contain at most as many integers as the original row has nonzero coefficients. Retaining these intervals and encoding a chosen number of slack bits gives a support-sensitive time–space interpolation for exact Boolean linear optimization. The general shrinking-interval method is due to Nederlof, van Leeuwen, and van der Zwaan, with the signed extension recorded by Bansal, Garg, Nederlof, and Vyas. The sharper boundary rule and the compiler accounting below are self-contained. The compiler is independent of its Subset Sum backend; numerical instantiations retain the separately stated backend hypotheses.
 
 ## 1. Target problem and result
 
@@ -13,23 +13,23 @@ We are given Boolean variables `x in {0,1}^n`, any number of signed binary integ
 
 One-sided inequalities are included: intersect their permitted range with the elementary attainable range `[sum_j min(a_ij,0), sum_j max(a_ij,0)]`. An empty interval certifies infeasibility. A zero row is checked and removed. Let `L` denote the full binary input length, including all equalities, interval endpoints, and an optional signed linear objective. Let
 
-<!-- math-display: 718b09838e258fcb8546359a
+<!-- math-display: 0a9e4f1a0b88e4e684e080f4
 s_i=|\mathrm{supp}(a_i)|,\quad W_i=u_i-\ell_i,\quad
-\kappa_i=\min\{W_i+1,5s_i+1\},\quad
+\kappa_i=\min\{W_i+1,s_i\},\quad
 q_i=\lceil\log_2\kappa_i\rceil,\quad Q=\sum_i q_i.
 \tag{B1}
 -->
-![Formula](../../../assets/math/718b09838e258fcb8546359a.svg)
+![Formula](../../../assets/math/0a9e4f1a0b88e4e684e080f4.svg)
 
 Exact rows (`W_i=0`) can instead be put in the equality system and contribute no parameter. A deterministic preprocessing step constructs, for every interval row, a catalogue of `p_i` short interval tests. It has
 
-<!-- math-display: 3e811c386a063d84134a04be
-p_i\le 4\lceil\log_2(W_i+1)\rceil+1,
+<!-- math-display: fd191269225fd5bbfd5eeddc
+p_i\le 2\lceil\log_2(W_i+1)\rceil+1,
 \tag{B2}
 -->
-![Formula](../../../assets/math/3e811c386a063d84134a04be.svg)
+![Formula](../../../assets/math/fd191269225fd5bbfd5eeddc.svg)
 
-and `p_i=1` if `W_i<=5s_i`. Every catalogue interval contains at most `kappa_i` integers. The catalogue is exact for every Boolean assignment, not only for some feasible witness.
+and `p_i=1` if `W_i+1<=s_i`. Every catalogue interval contains at most `kappa_i` integers. The catalogue is exact for every Boolean assignment, not only for some feasible witness.
 
 Assume a deterministic Subset Sum backend returns an indexed witness in time
 
@@ -73,36 +73,62 @@ The first endpoint retains the `n`-item backend space exponent. The second repla
 
 ## 2. Signed short-interval catalogue
 
-Here is the elementary modification of the published shrinking-interval procedure. Fix a row `a`, a support bound `s>=|supp(a)|`, and an integer interval `[ell,u]` of nonnegative width. Maintain the same bound `s` while rounding the row.
+Fix a nonzero row <code class="math">a</code>, its original support size <code class="math">s\ge1</code>, and an integer interval <code class="math">[\ell,u]</code> of nonnegative width. Keep this same support bound throughout the procedure: floor-halving cannot turn an initially zero coefficient into a nonzero one. Before this procedure, a zero row is discarded if <code class="math">\ell\le0\le u</code>, and otherwise certifies infeasibility. Thus no logarithm or stopping rule below is applied with <code class="math">s=0</code>.
 
-If `u-ell<=5s`, emit the single test `(a,[ell,u])` and stop. Otherwise, if `ell` is odd, emit `(a,[ell,ell])` and recurse with `ell+1`; if `u` is odd, emit `(a,[u,u])` and recurse with `u-1`. Recheck the stopping condition in each recursive call. In the remaining case both endpoints are even. Emit
+If <code class="math">u-\ell+1\le s</code>, emit <code class="math">(a,[\ell,u])</code> and stop. Otherwise set
 
-<!-- math-display: 382aae5ef0515f6cfa543d14
-(a,[\ell,\ell+3s]),\qquad(a,[u-2s,u]),
--->
-![Formula](../../../assets/math/382aae5ef0515f6cfa543d14.svg)
-
-set `a'_j=floor(a_j/2)`, and recurse on
-
-<!-- math-display: 5d0815effc9fd81eafe1af08
-\left(a',\left[(\ell+2s)/2,(u-2s)/2\right]\right).
+<!-- math-display: 3688c9fb31d39b3fdd42de2b
+a'_j=\lfloor a_j/2\rfloor,\qquad
+t=|\{j:a_j\text{ is odd}\}|,\qquad
+\ell'=\lceil\ell/2\rceil,\qquad
+u'=\lfloor(u-t)/2\rfloor.
 \tag{B6}
 -->
-![Formula](../../../assets/math/5d0815effc9fd81eafe1af08.svg)
+![Formula](../../../assets/math/3688c9fb31d39b3fdd42de2b.svg)
 
-This uses signed floor, including on negative coefficients. For every Boolean `x`,
+Emit the following two tests, omitting each one whose lower endpoint exceeds its upper endpoint:
 
-<!-- math-display: a355601e87db895978a6cb9c
-0\le a^Tx-2(a')^Tx\le s.
+<!-- math-display: 30ccb2d4b2fa049c9c6f990f
+\left(a,\left[\ell,\min\{u,2\ell'+t-2\}\right]\right),
+\qquad
+\left(a,\left[\max\{\ell,2u'+2\},u\right]\right).
+-->
+![Formula](../../../assets/math/30ccb2d4b2fa049c9c6f990f.svg)
+
+If <code class="math">\ell'\le u'</code>, continue with the single recursive instance <code class="math">(a',[\ell',u'])</code>; otherwise stop after these boundary tests. There are no endpoint-peeling calls and no recursive branching.
+
+**Exactness for signed coefficients.** For every integer coefficient, including a negative one, <code class="math">a_j-2\lfloor a_j/2\rfloor</code> belongs to <code class="math">\{0,1\}</code> and equals its oddness indicator. Hence every Boolean assignment satisfies
+
+<!-- math-display: 6b1b0e08c79c0fabf2f4ffcb
+a^\top x=2(a')^\top x+\delta(x),\qquad
+\delta(x)=\sum_{j:a_j\text{ is odd}}x_j,\qquad
+0\le\delta(x)\le t\le s.
 \tag{B7}
 -->
-![Formula](../../../assets/math/a355601e87db895978a6cb9c.svg)
+![Formula](../../../assets/math/6b1b0e08c79c0fabf2f4ffcb.svg)
 
-Indeed each nonzero coefficient contributes either zero or one to the difference, multiplied by its Boolean variable. Thus all assignments accepted by the recursive interval satisfy the parent interval: their unrounded sum is at least `ell+2s>=ell` and at most `u-2s+s<=u`. Conversely, if a parent-feasible sum is in neither emitted boundary interval, (B7) places its rounded sum in (B6). This proves the exact disjunction inductively.
+Write <code class="math">z=(a')^\top x</code>. If <code class="math">\ell'\le z\le u'</code>, then
+<code class="math">a^\top x\ge2\ell'\ge\ell</code> and
+<code class="math">a^\top x\le2u'+t\le u</code>. Each boundary interval was clipped to the parent interval, so every acceptance in any emitted or recursive test is parent-feasible.
 
-Between two halving steps at most two singleton endpoints are emitted. Each halving emits two short boundary intervals and reduces width by at least a factor of two. A final short interval terminates the recursion. This proves (B2), and every emitted interval has at most `5s+1` integers. If the initial width is at most `5s`, the single initial interval has `W+1` integers. These observations give the stated `kappa` bound. The row coefficients and endpoint bit lengths remain polynomially bounded by the original encoding.
+Conversely, suppose <code class="math">\ell\le a^\top x\le u</code>. If <code class="math">z&lt;\ell'</code>, integrality and (B7) give <code class="math">a^\top x\le2\ell'+t-2</code>, placing the sum in the lower boundary test. If <code class="math">z&gt;u'</code>, then <code class="math">a^\top x\ge2u'+2</code>, placing it in the upper boundary test. In the remaining case the recursive interval accepts. This reasoning also covers <code class="math">\ell'&gt;u'</code>: every integer <code class="math">z</code> then lies below <code class="math">\ell'</code> or above <code class="math">u'</code>, so the two boundaries cover all parent-feasible assignments even though no recursive instance exists. For example, <code class="math">a=(1,1)</code> and <code class="math">[\ell,u]=[1,3]</code> have <code class="math">t=2</code>, <code class="math">\ell'=1</code>, <code class="math">u'=0</code>, and emit <code class="math">[1,2]</code> and <code class="math">[2,3]</code>. The overlap is intentional. Induction proves an exact disjunction assignment by assignment.
 
-This proof is the existing signed interval-rounding argument, with adjacent exact target queries collected as intervals. The claim of this manuscript is the compiler accounting after collecting them.
+**Boundary size.** Before clipping, the lower interval contains
+<code class="math">2\ell'-\ell+t-1</code> integers when this number is positive. Since <code class="math">2\ell'-\ell\in\{0,1\}</code>, this number is at most <code class="math">t</code>. Write <code class="math">u-t=2u'+\varepsilon</code> with <code class="math">\varepsilon\in\{0,1\}</code>. The upper interval similarly contains <code class="math">u-2u'-1=t+\varepsilon-1\le t</code> integers when nonempty. Thus both emitted intervals contain at most <code class="math">t\le s</code> integers. If <code class="math">t=0</code>, both boundaries are empty and the operation is an exact halving with no boundary tests. A terminal interval contains at most <code class="math">s</code> integers by the stopping rule. If the initial interval already has at most <code class="math">s</code> integers, the single emitted test has exactly <code class="math">W+1</code> values. This proves the cap <code class="math">\kappa=\min\{W+1,s\}</code>.
+
+**Catalogue size and binary complexity.** Whenever the recursive interval is nonempty, its width satisfies
+
+<!-- math-display: 398612155fe963b15a1b12c7
+u'-\ell'\le\left\lfloor\frac{u-\ell-t}{2}\right\rfloor
+\le\left\lfloor\frac{u-\ell}{2}\right\rfloor.
+-->
+![Formula](../../../assets/math/398612155fe963b15a1b12c7.svg)
+
+The procedure therefore performs at most <code class="math">\lceil\log_2(W+1)\rceil</code> halving steps, emits at most two intervals at each step, and emits at most one final interval. This proves (B2), including width zero. The recursion depth is logarithmic in the numerical width and hence polynomial in the binary input length; it does not iterate through the interval's integer values. This remains true when a negative coefficient such as <code class="math">-1</code> stops changing under floor-halving. Coefficient magnitudes do not increase, and the endpoint updates use a halving and an additive term at most <code class="math">s</code>, so their bit lengths remain polynomially bounded. An iterative implementation keeps only the current row and the polynomial-size output catalogue.
+
+Overlapping or repeated tests are allowed. They contribute their actual multiplicities to <code class="math">p_i</code> and never create a second recursive call. The subsequent compiler enumerates the product of these finite catalogues, so overlap adds no factor beyond the displayed branch bound. Neither this step nor the bounded-slack encoding is claimed to preserve solution counts.
+
+The general floor-rounding method is inherited from the cited literature. The explicit rule above replaces the previous project bound <code class="math">5s+1</code> by <code class="math">s</code> and its four emissions per scale by two, with a full local proof. No claim of literature priority or universal optimality is made. For a moderately wide interval it can still be useful to keep the initial interval as one test and use its actual width in the compiler; the smaller cap and the smaller catalogue are different resources.
 
 ## 3. A tunable number of slack bits
 
@@ -256,7 +282,7 @@ The relevant source comparisons are:
 2. Bansal–Garg–Nederlof–Vyas, *Faster Space-Efficient Algorithms for Subset Sum, k-Sum and Related Problems*, 2017 manuscript, Lemma 4.4 and proof of Corollary 2: signed rows and a growing number of Boolean-IP inequalities are already handled by exact-target enumeration. This is the explicit compiler baseline for (B3).
 3. The OpenAI public catalogue, entry 138, states a randomized `2^{0.49n}` word-RAM algorithm for polynomial-bit Subset Sum inputs. The deterministic `E` instantiation is not numerically faster than `0.49`; determinism, binary-input scope, and the separate space interface must stay visible. The catalogue was checked, not the entire linked manuscript in this manuscript.
 
-The contribution stated here is the proved short-boundary/slack interpolation (B3); literature priority is not inferred from this comparison. Higher-dimensional dominance algorithms, coefficient-bounded dynamic programming, and structural integer-programming algorithms can be preferable in some regimes; no dominance over all of them is asserted. The compiler has no dynamic-graph backend dependency.
+The locally proved refinements are the support-sized boundary rule in Section 2 and the short-boundary/slack interpolation (B3); literature priority is not inferred from this comparison. Higher-dimensional dominance algorithms, coefficient-bounded dynamic programming, and structural integer-programming algorithms can be preferable in some regimes; no dominance over all of them is asserted. The compiler has no dynamic-graph backend dependency.
 
 ## Sources and pinned dependencies
 

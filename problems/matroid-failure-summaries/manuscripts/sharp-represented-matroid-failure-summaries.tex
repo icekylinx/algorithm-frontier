@@ -3,17 +3,17 @@
 % Recovered-source SHA-256: f848af63380b52a131ce5e3c1ce4ff2958b6be13ebca9d79fe1b97fe9696f1b1
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
-% Final document preamble must use the recovered original Subset Sum style.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
 
-\hypertarget{a-sharp-polynomial-time-restriction-for-overlapping-label-failures-in-represented-matroids}{%
-\section{A sharp polynomial-time restriction for overlapping label failures in represented matroids}\label{a-sharp-polynomial-time-restriction-for-overlapping-label-failures-in-represented-matroids}}
+\hypertarget{af-7a1626f5ae-a-sharp-polynomial-time-restriction-for-overlapping-label-failures-in-represented-matroids}{%
+\section{A sharp polynomial-time restriction for overlapping label failures in represented matroids}\label{af-7a1626f5ae-a-sharp-polynomial-time-restriction-for-overlapping-label-failures-in-represented-matroids}}
 
 \textbf{Abstract.} A polynomial feature lift converts every bounded label-failure query into a linear projection. One cost-ordered basis of the lifted representation preserves all surviving prefixes and canonical minimum-cost bases, using at most the sharp bound of rank times a binomial coefficient. The algorithm is deterministic and uniformly polynomial for rational and explicitly represented finite-field inputs.
 
 The algebra is closely related to classical representative-family constructions. The concrete graph application removes the logarithmic factor from the polynomial-time edge-color connectivity certificate stated in the primary sources listed below. Preprocessing here is deterministic polynomial time; it is not claimed near-linear.
 
-\hypertarget{the-exact-statement}{%
-\subsection{1. The exact statement}\label{the-exact-statement}}
+\hypertarget{af-7a1626f5ae-the-exact-statement}{%
+\subsection{1. The exact statement}\label{af-7a1626f5ae-the-exact-statement}}
 
 Let a matroid M on an explicit ground E of N elements be represented by columns v\_e over the rationals or an explicitly represented finite field. Write r = rank(M). Every element has a fixed signed rational cost c(e), and a fixed set Lambda(e) of at most d failure labels. A query specifies at most h labels F and deletes every e with Lambda(e) intersecting F. Labels can overlap arbitrarily.
 
@@ -50,8 +50,8 @@ The bound r binomial(h+d,d) is worst-case exact even for zero-cost partition mat
 
 \textbf{Scope.} This is a represented-matroid theorem. It does not assert the same construction for a matroid given only by an independence oracle, and it does not handle an arbitrary nonadditive valuation on bases. The cost is a fixed linear objective on elements. The labels, representation, and costs do not change between queries.
 
-\hypertarget{polynomial-features-that-recognize-label-survival}{%
-\subsection{2. Polynomial features that recognize label survival}\label{polynomial-features-that-recognize-label-survival}}
+\hypertarget{af-7a1626f5ae-polynomial-features-that-recognize-label-survival}{%
+\subsection{2. Polynomial features that recognize label survival}\label{af-7a1626f5ae-polynomial-features-that-recognize-label-survival}}
 
 Let L be the number of distinct labels occurring in the input. Replace h by min(h,L), and replace d by the maximum actual number of labels on an element. The cases h=0 or d=0 are ordinary cost-ordered basis computation. Assume below that h,d are positive.
 
@@ -116,8 +116,8 @@ The empty product is one. Since K is a field, (5) gives the exact predicate
 
 No failure sets are enumerated while constructing phi. The functionals ell\_F are used only in the proof.
 
-\hypertarget{one-lifted-basis-proves-all-queries}{%
-\subsection{3. One lifted basis proves all queries}\label{one-lifted-basis-proves-all-queries}}
+\hypertarget{af-7a1626f5ae-one-lifted-basis-proves-all-queries}{%
+\subsection{3. One lifted basis proves all queries}\label{af-7a1626f5ae-one-lifted-basis-proves-all-queries}}
 
 First remove dependent rows from the original representation, leaving r rows and the same column matroid. Define
 
@@ -154,11 +154,11 @@ The reverse span inclusion is automatic because H is a restriction of E. Hence (
 
 Running ordinary greedy on the surviving original matroid accepts e exactly when e increases the span of the earlier surviving prefix. Equality (2) shows that an accepted original e cannot have been discarded from H: otherwise (13) would already span it by earlier retained survivors. Thus the entire canonical surviving minimum-cost basis is contained in H. Signed costs cause no issue for a minimum-cost basis of the full surviving rank.
 
-\hypertarget{sharpness-and-graph-consequences}{%
-\subsection{4. Sharpness and graph consequences}\label{sharpness-and-graph-consequences}}
+\hypertarget{af-7a1626f5ae-sharpness-and-graph-consequences}{%
+\subsection{4. Sharpness and graph consequences}\label{af-7a1626f5ae-sharpness-and-graph-consequences}}
 
-\hypertarget{exact-general-lower-bound}{%
-\subsubsection{4.1 Exact general lower bound}\label{exact-general-lower-bound}}
+\hypertarget{af-7a1626f5ae-exact-general-lower-bound}{%
+\subsubsection{4.1 Exact general lower bound}\label{af-7a1626f5ae-exact-general-lower-bound}}
 
 Take a label universe U of size h+d.~In one rank-one parallel class introduce an element e\_A for each d-subset A of U, giving it label set A. Under the failure set F=U minus A, exactly e\_A survives in the class. Therefore every valid restriction must keep every e\_A.
 
@@ -166,8 +166,8 @@ Taking a direct sum of r such classes forces exactly r binomial(h+d,d) retained 
 
 To obtain a graphic example, take any tree with r edges and replace every tree edge by parallel copies indexed by the d-subsets A. Label each copy by A. Under F=U minus A, the surviving graph is precisely the original tree using its A-indexed copies. Each such copy is forced. This yields the same exact lower bound for multigraph connectivity certificates and for minimum-spanning-forest preservation.
 
-\hypertarget{one-color-per-graph-edge}{%
-\subsubsection{4.2 One color per graph edge}\label{one-color-per-graph-edge}}
+\hypertarget{af-7a1626f5ae-one-color-per-graph-edge}{%
+\subsubsection{4.2 One color per graph edge}\label{af-7a1626f5ae-one-color-per-graph-edge}}
 
 For d=1 the coefficient lift is just a Vandermonde lift. Equivalently, with color scalar a\_col(e), use
 
@@ -196,11 +196,11 @@ Parallel edges are not required for the asymptotic lower bound. In the simple co
 
 The graph claim in this subsection concerns \textbf{edge-color} failures. A vertex-color query can be encoded by putting both endpoint colors on an edge, but doing so gives the generic d=2 bound and need not exploit the better structure available for vertex colors. Specialized vertex and mixed-color lifts are a separate manuscript.
 
-\hypertarget{uniform-polynomial-construction-and-field-details}{%
-\subsection{5. Uniform polynomial construction and field details}\label{uniform-polynomial-construction-and-field-details}}
+\hypertarget{af-7a1626f5ae-uniform-polynomial-construction-and-field-details}{%
+\subsection{5. Uniform polynomial construction and field details}\label{af-7a1626f5ae-uniform-polynomial-construction-and-field-details}}
 
-\hypertarget{the-dimension-gate}{%
-\subsubsection{5.1 The dimension gate}\label{the-dimension-gate}}
+\hypertarget{af-7a1626f5ae-the-dimension-gate}{%
+\subsubsection{5.1 The dimension gate}\label{af-7a1626f5ae-the-dimension-gate}}
 
 Compute the actual rank r first. If r=0, return the empty restriction. Compute C=binomial(h+d,d) only up to the threshold ceil(N/r), using capped integer arithmetic. If rC is at least N, return E itself. This satisfies (1) and (2), and no feature enumeration is needed.
 
@@ -215,13 +215,13 @@ O\!\left(N\,[d^2+C d\log(h+2)+D^2]\right)
 
 field operations for one straightforward implementation. This bound is deliberately conservative. The d=1 graph specialization has feature-generation cost O(Nh) and a Gaussian stage O(N{[}(h+1)r{]}\^{}2) when the gate does not return the input.
 
-\hypertarget{rational-representation}{%
-\subsubsection{5.2 Rational representation}\label{rational-representation}}
+\hypertarget{af-7a1626f5ae-rational-representation}{%
+\subsubsection{5.2 Rational representation}\label{af-7a1626f5ae-rational-representation}}
 
 Choose a\_0=0 and assign genuine labels distinct integers in \{1,\ldots,L\}. All features are rational integers. Coefficient and feature bit lengths are polynomial in the explicit input parameters; for example each monomial has bit length O(hd log(L+2)+hd). Exact fraction-free elimination therefore gives polynomial bit complexity in the input length and the retained dimension. Costs only determine a sorting order and may be arbitrary signed binary rationals.
 
-\hypertarget{explicit-finite-fields}{%
-\subsubsection{5.3 Explicit finite fields}\label{explicit-finite-fields}}
+\hypertarget{af-7a1626f5ae-explicit-finite-fields}{%
+\subsubsection{5.3 Explicit finite fields}\label{af-7a1626f5ae-explicit-finite-fields}}
 
 Suppose the original field is F\_q, with its usual explicit representation and field arithmetic. If q is at least L+1, choose the required distinct scalars in F\_q.
 
@@ -231,8 +231,8 @@ This avoids invoking an unqualified deterministic polynomial-in-log(q) irreducib
 
 For a more general abstract arithmetic field, the theorem can be stated after providing a field extension with L+1 distinct effectively available scalars. The concrete bit-complexity claim above is limited to rational and explicit finite-field representations.
 
-\hypertarget{bit-accounting-and-output-representation}{%
-\subsubsection{5.4 Bit accounting and output representation}\label{bit-accounting-and-output-representation}}
+\hypertarget{af-7a1626f5ae-bit-accounting-and-output-representation}{%
+\subsubsection{5.4 Bit accounting and output representation}\label{af-7a1626f5ae-bit-accounting-and-output-representation}}
 
 Let \texttt{b\_in} be the maximum bit length of a rational representation entry, a cost, or an input label identifier. Before elimination, clear denominators row by row. A conservative bound on the resulting integer matrix entry length is
 
@@ -249,8 +249,8 @@ O(N*D^2) arithmetic operations and
 
 plus the original rank-compression, feature-generation, and cost-sorting costs. This is a conservative bound; the theorem only needs that it is polynomial in the explicit input length and \texttt{D}. For an explicit finite field \texttt{F\_\{q\^{}s\}}, let \texttt{B\_K\ =\ s*ceil(log\_2\ q)} be the bit representation length of one field element. Replacing \texttt{M(...)} by the chosen field-arithmetic cost gives \texttt{O(N*D\^{}2*poly(B\_K))} bit operations. The retained summary stores original element identifiers; the lifted matrix and elimination workspace are auxiliary and are not part of the \texttt{\textbar{}H\textbar{}} output bound.
 
-\hypertarget{universal-completion-and-mergeability}{%
-\subsection{6. Universal completion and mergeability}\label{universal-completion-and-mergeability}}
+\hypertarget{af-7a1626f5ae-universal-completion-and-mergeability}{%
+\subsection{6. Universal completion and mergeability}\label{af-7a1626f5ae-universal-completion-and-mergeability}}
 
 The relation (13) is a closure relation in the \textbf{original untruncated matroid} M. Therefore it transfers to every matroid extension M+ on E disjoint union Z whose restriction to E equals M, whether or not that extension is representable.
 
@@ -264,8 +264,8 @@ An insertion stream with a fixed known ambient representation admits the usual m
 
 For streaming and merging, scalar assignments must remain fixed. An unknown growing finite-field label universe requires a known sufficient universe bound or a separately justified representation update. No such update is silently assumed here.
 
-\hypertarget{why-the-direct-bernoulli-prefix-witness-test-is-not-the-right-algorithmic-target}{%
-\subsection{7. Why the direct Bernoulli prefix witness test is not the right algorithmic target}\label{why-the-direct-bernoulli-prefix-witness-test-is-not-the-right-algorithmic-target}}
+\hypertarget{af-7a1626f5ae-why-the-direct-bernoulli-prefix-witness-test-is-not-the-right-algorithmic-target}{%
+\subsection{7. Why the direct Bernoulli prefix witness test is not the right algorithmic target}\label{af-7a1626f5ae-why-the-direct-bernoulli-prefix-witness-test-is-not-the-right-algorithmic-target}}
 
 The generic witness decision asks, given a prior set A and a protected element e, whether some at-most-h label set avoiding Lambda(e) makes e lie outside span(A\_F). Even for graphic matroids with at most one label per element, this subsumes parameterized Set Cover.
 
@@ -273,8 +273,8 @@ Given a set-cover instance with universe U and sets S\_1,\ldots,S\_L, construct 
 
 Hence this generic witness decision is W{[}2{]}-hard parameterized by h, by the standard Set Cover baseline. This does \textbf{not} imply that constructing a valid summary is W{[}2{]}-hard, and does not imply that the actual intermediate states of the Bernoulli prefix procedure realize every arbitrary A. The linear lift avoids the witness problem entirely. Minimum colored s--t cut hardness is a known antecedent, not a new hardness claim.
 
-\hypertarget{baselines-and-attribution-boundaries}{%
-\subsection{8. Baselines and attribution boundaries}\label{baselines-and-attribution-boundaries}}
+\hypertarget{af-7a1626f5ae-baselines-and-attribution-boundaries}{%
+\subsection{8. Baselines and attribution boundaries}\label{af-7a1626f5ae-baselines-and-attribution-boundaries}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -338,7 +338,7 @@ Hence this generic witness decision is W{[}2{]}-hard parameterized by h, by the 
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{representation-boundary}{%
-\subsection{9. Representation boundary}\label{representation-boundary}}
+\hypertarget{af-7a1626f5ae-representation-boundary}{%
+\subsection{9. Representation boundary}\label{af-7a1626f5ae-representation-boundary}}
 
 The polynomial lift uses the supplied linear representation and preserves a fixed additive cost order. The arbitrary-matroid rank-only theorem has a separate combinatorial proof and fixed-parameter construction. The sharp one-failure weighted endpoint also holds for arbitrary independence oracles, whereas from two failures onward the sharp weighted binomial bound fails in that model. The general oracle FPT construction has the larger Bernoulli prefix factor. None of these statements preserves arbitrary nonadditive base valuations. The dimension gate and the finite-field extension in Section 5 are part of the algorithm.

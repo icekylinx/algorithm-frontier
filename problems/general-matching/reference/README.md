@@ -6,12 +6,20 @@ only the standard library. It returns original edge identifiers, handles
 loops, parallel input records and isolated vertices, and optionally supplies
 an optimality certificate checked by a [separate verifier](verify_certificate.py).
 
-This implementation uses the classical Edmonds blossom algorithm with two
-proved componentwise reductions: an edge kernel and a smaller set of outside
-vertices. Its ordinary polynomial running time
-is stated below. The faster conditional [research theorem](../proof.md)
-requires additional deterministic cycle-search machinery and is a separate
-result; that machinery is not part of this executable.
+This implementation uses Hopcroft–Karp on bipartite retained graphs and
+Edmonds blossom otherwise, with two proved componentwise reductions: an
+edge kernel and a smaller set of outside vertices. Its ordinary polynomial running time
+is stated below. The faster [research theorem](../proof.md) has its own
+proved cycle-search construction, assembled in
+[Theorem 11.6](../proof.md#116-deterministic-cycle-search-realization).
+That hierarchy is not part of this executable; the distinction concerns
+code coverage, not an unresolved mathematical premise.
+
+The outside-endpoint exchange lemma and its at-most-<code class="math">4\nu</code>
+vertex bound already appear in the direct checkpoint of 24 October 2026.
+This package adds executable compression, native-ID handling, independent
+checks and certificates, and the current bipartite phase refinement. See
+the [source history](../sources.md#checkpoint-provenance).
 
 ## Run the example
 
@@ -31,7 +39,7 @@ vertex. Its optimum has two edges. The verifier returns
 `"optimality_verified": true` after checking the actual input, matching and
 certificate. It does not import or call the blossom solver.
 
-Both normal mode and `--certificate` have the same cubic time bound.
+Both normal mode and `--certificate` have the same componentwise time bound.
 Use `--no-kernel` to solve
 the full normalized components. Input `-`, or no filename, reads JSON from
 standard input. A result without a certificate can be checked with
@@ -71,20 +79,25 @@ statistics supplied by the solver never serve as certificate evidence.
 
 Let <code class="math">n</code> be the number of named vertices and <code class="math">m</code> the number of input edge
 records. For each nonempty connected component <code class="math">G_i</code> of the normalized
-simple graph, let <code class="math">\nu_i=\nu(G_i)</code> be its maximum matching size. The
-implemented default bounds are
+simple graph, let <code class="math">\nu_i=\nu(G_i)</code> be its maximum matching size.
+Let `B` contain the components whose first retained edge kernel is bipartite.
+The implemented default bounds are
 
-<!-- math-display: 881d8fd3ae4ba28e3c163328
+<!-- math-display: 90ca746e3eb379a953073ce1
 T_{\mathrm{normal}},\ T_{\mathrm{certificate}}
- = O\!\left(n+m\log(m+2)+\sum_i \nu_i^3\right).
+ = O\!\left(n+m\log(m+2)
+   +\sum_{i\in B}\nu_i^{5/2}+\sum_{i\notin B}\nu_i^3\right).
 -->
-![Formula](../../../assets/math/881d8fd3ae4ba28e3c163328.svg)
+![Formula](../../../assets/math/90ca746e3eb379a953073ce1.svg)
 
 The matching sizes are not input parameters. The
-[complete compression proof](cover-compression-proof.md) derives the bound
-and keeps certificate generation within it. With `--no-kernel`, both
-reductions are disabled and the solve term is instead
-<code class="math">\sum_i n_i^3</code>, where <code class="math">n_i=&#124;V(G_i)&#124;</code>.
+[compression proof](cover-compression-proof.md) and
+[bipartite phase/certificate proof](bipartite-proof.md) derive the bound.
+Every originally bipartite component belongs to `B`; surplus-edge deletion
+can sometimes make the retained graph bipartite as well. With `--no-kernel`,
+both reductions are disabled: a bipartite full component costs
+`O((n_i+m_i) sqrt(nu_i+1))`, and a nonbipartite full component costs `O(n_i^3)`.
+The normalization term remains unchanged.
 
 Working storage is <code class="math">O(n+m)</code>. The output certificate also has
 <code class="math">O(n+m)</code> records. These are word-operation bounds with vertex indices and
@@ -118,26 +131,39 @@ The second reduction computes a maximum bipartite matching between
 <code class="math">C_i</code> and the remaining vertices of <code class="math">H_i</code>. Keep only its matched
 outside endpoints <code class="math">T_i</code>, together with the entire cover. The induced
 graph <code class="math">J_i=H_i[C_i\cup T_i]</code> has at most <code class="math">2c_i\leq4\nu_i</code>
-vertices and preserves the general matching optimum. Both this crossing
-matching and the subsequent blossom solve cost <code class="math">O(c_i^3)</code>.
+vertices and preserves the general matching optimum. Hopcroft–Karp computes
+this crossing matching in `O(c_i^(5/2))`: its number of matched edges is at
+most `c_i`, even though its vertex count may be quadratic. If `H_i` is
+bipartite, the solve on `J_i` has the same bound. Otherwise blossom search
+costs `O(c_i^3)`. Both the compression and final bipartite solve are
+accelerated; the first stage does not leave a hidden cubic cost.
 
-The certificate is still constructed and verified on <code class="math">H_i</code>. If it has
-<code class="math">k_i</code> vertices and <code class="math">h_i</code> edges, extraction costs
+The certificate is still constructed and verified on <code class="math">H_i</code>;
+write `k_i=|V(H_i)|` and `h_i=|E(H_i)|`.
+For a bipartite kernel, one alternating reachability search produces a
+minimum vertex cover in `O(k_i+h_i)`, which supplies the existing tight
+odd-component certificate. For a nonbipartite kernel, extraction costs
 <code class="math">O(h_i+k_i(\nu_i+1))</code>. It uses one simultaneous failed alternating
-forest per kernel requiring a nonempty barrier, with at most <code class="math">\nu_i</code>
+forest when an empty barrier is insufficient, with at most <code class="math">\nu_i</code>
 contractions and no vertex-deletion matching calls. Since
-<code class="math">h_i,k_i=O(c_i^2)</code>, this is also <code class="math">O(c_i^3)</code>. The
-[complete extraction proof](certificate-proof.md) is self-contained.
+<code class="math">h_i,k_i=O(c_i^2)</code>, this is <code class="math">O(c_i^3)</code> in the general
+case and `O(c_i^2)` in the bipartite case. Both extraction proofs are
+self-contained: [general forests](certificate-proof.md) and
+[bipartite covers](bipartite-proof.md#5-a-linear-certificate-on-the-first-kernel).
 
 The informational statistics distinguish the two stages:
 `kernel_vertices` and `kernel_edges` describe <code class="math">H_i</code> in total;
-`blossom_vertices` counts the vertices actually given to blossom search;
-`cover_vertices` counts the computed covers. None is trusted by the verifier.
+`solver_vertices` counts all final solve vertices, split between
+`blossom_vertices` and `bipartite_vertices`; `cover_vertices` counts the
+computed covers. `hopcroft_karp_calls`, `hopcroft_karp_phases`, and
+`hopcroft_karp_bfs` include both crossing compression and final bipartite
+solves. Each call has exactly one more BFS than successful phases.
+None of these counters is trusted by the verifier.
 A path on 20 cover vertices, each with 20 private leaves, has 420 vertices
 and 419 edges. With the specified greedy order, its first kernel retains
-all 420 vertices, while the second stage needs only 40 blossom vertices.
+all 420 vertices, while the second stage needs only 40 bipartite solve vertices.
 It returns and independently certifies a matching of size 20. A large star
-has a four-vertex first kernel and a three-vertex blossom graph. Processing
+has a four-vertex first kernel and a three-vertex bipartite solve graph. Processing
 many separate components does not allocate a full <code class="math">n</code>-vertex array for
 each one.
 
@@ -168,6 +194,18 @@ general matching can keep its cover-cover edges and replace the crossing
 edges without changing its size. The
 [full exchange proof](cover-compression-proof.md#1-a-small-set-of-outside-endpoints-preserves-all-cover-subsets)
 also proves the deterministic crossing-matching algorithm and its cost.
+
+**Bipartite search.** A BFS finds the minimum number of matching edges on
+an augmenting path. Each phase freezes the starting matching and uses
+explicit DFS stacks to find a maximal family of vertex-disjoint shortest
+augmenting paths. Flipping those paths strictly increases the next shortest
+augmenting length. The symmetric difference with an optimum then bounds
+the number of phases by `O(sqrt(nu+1))`, including a final failed BFS.
+The [complete local proof](bipartite-proof.md) establishes the fixed-matching
+search invariants, this matching-number bound, and the cost of both uses
+of the algorithm. Its classical source is John E. Hopcroft and Richard M.
+Karp, [*An n^(5/2) Algorithm for Maximum Matchings in Bipartite Graphs*
+(1973)](https://doi.org/10.1137/0202019).
 
 **Blossom search.** The code initializes a greedy matching and searches
 from each still-free vertex. An alternating tree labels unmatched and
@@ -224,7 +262,15 @@ least <code class="math">o(H-A)-&#124;A&#124;</code> vertices unmatched and has 
 right-hand side divided by two. A feasible matching attaining that upper
 bound is maximum. No claim about the search's internal state is used.
 
-**How a certificate is found.** First try <code class="math">A=\varnothing</code>; this already
+**Bipartite certificates.** Let `Z` be the vertices reached by alternating
+search from all unmatched left vertices in `H`. Then
+`A = (L - Z) union (R intersect Z)` covers every edge and contains exactly
+one endpoint of every matching edge. Thus `|A|=|M|`, and `H-A` consists
+of singleton odd components. This gives the same displayed equality in
+linear time. The [full proof](bipartite-proof.md#5-a-linear-certificate-on-the-first-kernel)
+also establishes the production rejection conditions.
+
+**General certificates.** For a nonbipartite kernel, first try <code class="math">A=\varnothing</code>; this already
 works whenever each retained component has a perfect or nearly perfect
 matching. Otherwise run one complete alternating forest from all exposed
 vertices, with the maximum matching fixed. Every original member of a
@@ -253,6 +299,7 @@ the exposable set or correctly contracted a blossom.
 python3 -B problems/general-matching/verify/check_reference.py
 python3 -B problems/general-matching/verify/check_certificate_search.py
 python3 -B problems/general-matching/verify/check_cover_compression.py
+python3 -B problems/general-matching/verify/check_bipartite.py
 ```
 
 The first check compares all 33,868 simple graphs through six vertices
@@ -277,6 +324,15 @@ checks 70,578 maximum-crossing right endpoint sets and 2,882,175 ranks of
 cover subsets. It also checks general matching preservation, the
 <code class="math">2c</code> vertex bound and the certificate search's matched-edge contraction
 bound. These counts describe the default command.
+
+The fourth check compares 74,963 bipartite graphs with at most four vertices
+per side to an independent matching oracle. It adds 300 seeded cases in
+two side/adjacency orders, eight rejection checks and six long-path,
+native-record and branch-selection cases. A constructed second-phase
+augmenting path contains 2,400 matching edges, exercising the nonrecursive
+search beyond Python's usual recursion limit. Public results are checked
+by the unchanged independent certificate verifier, in both kernel modes.
+It also verifies the phase-count bound and the final failed BFS accounting.
 
 The seed selects test graphs only; the solver has no randomized step.
 The mathematical checkers explicitly refuse optimized Python execution

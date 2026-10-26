@@ -8,11 +8,15 @@ monotone expansion of the capacity box. In particular, it does not need
 to evaluate fractional powers or to assume that the matching theorem
 itself is a minimum-cost-flow oracle.
 
-The quantitative conclusion is conditional on the complete raw-cycle,
-initialization and lifetime interface stated in Section 1. Its proposed
-realization includes the unresolved [deterministic cycle-search implementation requirements](../general-matching/proof.md#116-explicit-raw-backend-realization-contract).
-The exact recovery and artificial-arc reductions below are proved
-separately; they do not establish that fast backend or its running time.
+Section 1 first states a generic client theorem for an explicit raw-cycle
+and lifetime interface, then instantiates it with the constructed
+[four-fifths backend](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md),
+Sections 1–7. The [raw-lift proof](../../manuscripts/graph-backends/distance-oracle-raw-lift.md)
+and [lifetime construction](../../manuscripts/graph-backends/numerical-backend-lifetime-and-loops.md)
+supply the physical traversal and retirement operations used here.
+These are mathematical constructions with the published dependencies
+listed in [sources.md](sources.md). Their software implementation and
+the separate exact-recovery checks have different verification scopes.
 
 ## 1. Statement and input conventions
 
@@ -46,7 +50,7 @@ Section 12 is allowed. No array of size S is allocated. For polynomially
 bounded input numbers, log S=O(log(N+2)). A separate O(n+m) scan accounts
 for all input vertices, including isolated vertices.
 
-### Raw backend assumption
+### Generic raw-backend interface
 
 For every degree-three numerical graph of actual size at most S^2, assume
 a deterministic backend with a computable common cap E=E(S). The cap
@@ -66,7 +70,7 @@ images, and retirement callbacks retain old metadata. Dormant copies
 remain counted. The numerical client maintains signed and absolute
 motion on all copies and retirement buckets.
 
-The detailed interface specifications are in the following manuscripts:
+The interface is constructed in the following manuscripts:
 
 * [quantitative matching 4 5 composition](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md),
   Sections 1--7, for the raw backend cap;
@@ -91,12 +95,19 @@ answer first becomes YES. Its stored numerical values have O(log S)
 bits. A failed numerical guard suspends a branch and is never interpreted
 as a NO answer.
 
-With the previous construction's cap
+**Instantiated theorem.** The linked structural and lifetime construction
+supplies the preceding interface with cap
 
     E(S)=exp O((log S)^(4/5) (log log(S+4))^(1/5)),          (1.3)
 
-the total cost is (N+1) times the same exponential order. Polynomial
+so the total cost is (N+1) times the same exponential order. Polynomial
 powers of E do not change either exponent in (1.3).
+This instantiation uses the deterministic source algorithms and the
+parameter-uniform local replacements in
+[Uniform source interfaces, Sections 2–8](../../manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md).
+The proofs below establish the client calculation for every backend
+satisfying the generic interface; the cited construction establishes
+the displayed four-fifths specialization.
 
 ## 2. Parameters and the expanded box
 

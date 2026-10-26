@@ -19,12 +19,16 @@ coalescence answers against explicit partition snapshots. It includes
 multiple internal merges in one settled external update. This finite
 evidence concerns the representation, not the numerical SCC solver.
 
-## Conditional: fast SCC maintenance
+## Ready for review: fast SCC maintenance
 
 The proof gives the SCC contraction and component-label composition with
-logarithmic-barrier accounting. Its numerical envelope retains the stated
-graph hierarchy and raw-backend conditions. The output contract is exact
-component labels, not a topological ordering or a path witness.
+logarithmic-barrier accounting. Section 1 instantiates the generic client
+with the [quantitative raw backend](../../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md),
+the [exact base and retirement bridge](../../../manuscripts/graph-backends/raw-cycle-to-frozen-detector-bridge.md)
+and the [lifetime construction](../../../manuscripts/graph-backends/numerical-backend-lifetime-and-loops.md).
+These local proofs and their named deterministic public inputs establish
+the stated numerical envelope. The output contract is exact component
+labels; the history checker above tests a separate representation layer.
 
 Transpose access and topological ordering require additional interfaces;
 they are not inferred from the component-label theorem. The current graph,

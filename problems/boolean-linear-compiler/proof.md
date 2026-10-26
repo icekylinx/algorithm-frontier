@@ -3,10 +3,10 @@
 ## 1. Compiler theorem
 
 The input has <code class="math">n</code> Boolean variables, signed binary integer equalities, and interval rows <code class="math">\ell_i\le a_i^\top x\le u_i</code>. Let <code class="math">L</code> be its binary length, <code class="math">s_i=&#124;\mathrm{supp}(a_i)&#124;</code>, and <code class="math">W_i=u_i-\ell_i</code>. Normalize one-sided rows against their attainable ranges and handle empty intervals and zero rows directly. Put
-<!-- math-display: f4d5a4f898d7a3bf3b053128
-\kappa_i=\min\{W_i+1,5s_i+1\},\quad q_i=\lceil\log_2\kappa_i\rceil,\quad Q=\sum_iq_i.
+<!-- math-display: 972de2e59f303d81dcb6e4b2
+\kappa_i=\min\{W_i+1,s_i\},\quad q_i=\lceil\log_2\kappa_i\rceil,\quad Q=\sum_iq_i.
 -->
-![Formula](../../assets/math/f4d5a4f898d7a3bf3b053128.svg)
+![Formula](../../assets/math/972de2e59f303d81dcb6e4b2.svg)
 Assume a deterministic Subset Sum backend returns indexed witnesses in time <code class="math">\mathrm{poly}(L')2^{\alpha N}</code>, and, if supplied, writable space <code class="math">\mathrm{poly}(L')2^{\sigma N}</code>. For any integer <code class="math">0\le B\le Q</code>, the compiler gives
 <!-- math-display: d10cc014ca3dc9c461ad85d1
 T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)
@@ -14,21 +14,38 @@ T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)
 S_B\le\mathrm{poly}(L)2^{\sigma(n+B)},
 -->
 ![Formula](../../assets/math/d10cc014ca3dc9c461ad85d1.svg)
-where <code class="math">p_i\le4\lceil\log_2(W_i+1)\rceil+1</code>, and <code class="math">p_i=1</code> if <code class="math">W_i\le5s_i</code>. Exact equalities contribute no slack parameter. Feasibility, indexed witnesses, linear optimization, and explicitly listed polynomial-size lexicographic optimization are supported.
+where <code class="math">p_i\le2\lceil\log_2(W_i+1)\rceil+1</code>, and <code class="math">p_i=1</code> if <code class="math">W_i+1\le s_i</code>. Exact equalities contribute no slack parameter. Feasibility, indexed witnesses, linear optimization, and explicitly listed polynomial-size lexicographic optimization are supported.
 
 ## 2. Signed interval lemma
 
-For one row, stop when the interval width is at most <code class="math">5s</code>. Otherwise peel odd endpoints as singleton tests until both endpoints are even. Emit <code class="math">[\ell,\ell+3s]</code> and <code class="math">[u-2s,u]</code>, then recurse with <code class="math">a'_j=\lfloor a_j/2\rfloor</code> on
-<!-- math-display: 875ddb8a62662bdd60586005
-[(\ell+2s)/2,(u-2s)/2].
+For a nonzero row with original support <code class="math">s\ge1</code>, stop when the current interval contains at most <code class="math">s</code> integers. Otherwise let <code class="math">t</code> be the number of odd current coefficients, set <code class="math">a'_j=\lfloor a_j/2\rfloor</code>, and put
+
+<!-- math-display: 4ba1528586485df26fc79322
+\ell'=\lceil\ell/2\rceil,\qquad u'=\lfloor(u-t)/2\rfloor.
 -->
-![Formula](../../assets/math/875ddb8a62662bdd60586005.svg)
-For every Boolean assignment, even with signed coefficients,
-<!-- math-display: 675acb38ae8293daf937a044
-0\le a^\top x-2(a')^\top x\le s.
+![Formula](../../assets/math/4ba1528586485df26fc79322.svg)
+
+Emit the nonempty intervals
+
+<!-- math-display: 44c54b36a771196f9a13db93
+[\ell,\min\{u,2\ell'+t-2\}],\qquad
+[\max\{\ell,2u'+2\},u]
 -->
-![Formula](../../assets/math/675acb38ae8293daf937a044.svg)
-This makes every recursive acceptance parent-feasible. A parent-feasible sum outside the two emitted boundaries has its rounded sum in the recursive interval. Induction proves exact disjunction assignment by assignment. At most two singleton endpoints and two boundary intervals occur per halving, proving the catalogue-size bound. Each emitted interval contains at most <code class="math">\kappa_i</code> integer values.
+![Formula](../../assets/math/44c54b36a771196f9a13db93.svg)
+
+using the current coefficient row. Recurse once with <code class="math">a'</code> on <code class="math">[\ell',u']</code> if it is nonempty. For every Boolean assignment, including for signed coefficients,
+
+<!-- math-display: f977bde887a07ce20726ee7d
+a^\top x=2(a')^\top x+\delta(x),\qquad
+\delta(x)=\sum_{j:a_j\text{ odd}}x_j\in[0,t].
+-->
+![Formula](../../assets/math/f977bde887a07ce20726ee7d.svg)
+
+Thus a recursive acceptance has original value between <code class="math">2\ell'\ge\ell</code> and <code class="math">2u'+t\le u</code>. Conversely, if a parent-feasible assignment has rounded sum below <code class="math">\ell'</code>, its original sum is at most <code class="math">2\ell'+t-2</code> and falls in the lower boundary. A rounded sum above <code class="math">u'</code> has original sum at least <code class="math">2u'+2</code> and falls in the upper boundary. When <code class="math">\ell'&gt;u'</code>, these two cases cover every assignment and no recursion is needed. Clipping keeps boundary acceptances inside the parent interval.
+
+The lower boundary has at most <code class="math">2\ell'-\ell+t-1\le t</code> values; the upper has at most <code class="math">u-2u'-1\le t</code> values. When <code class="math">t=0</code>, both are empty. Every emitted interval therefore contains at most <code class="math">s</code> values, or at most <code class="math">W+1</code> if the initial row is already short. A recursive width is at most half its parent's width, so at most two emissions per halving and one terminal emission prove <code class="math">p_i\le2\lceil\log_2(W_i+1)\rceil+1</code>. The depth and all intermediate bit lengths are polynomial in the binary input size. A zero row is checked directly and removed before defining <code class="math">q_i</code>; a reversed interval is infeasible.
+
+This proves exact disjunction for each original Boolean assignment. Boundary overlaps are harmless: they are counted among the catalogue's actual tests, and the construction has only one recursive child. The [complete proof](manuscripts/boolean-linear-optimization-compiler.md#2-signed-short-interval-catalogue) treats the empty-child and negative-floor cases explicitly. The [independent checker](verify/check_interval_compiler.py) also compares full compiled solution sets with the original systems.
 
 ## 3. Slack and branch count
 
@@ -64,6 +81,6 @@ For a fixed number of interval rows, <code class="math">Q=O(\log n)</code> and <
 
 ## Complete proof
 
-[Interval compiler, numerical instantiations, and primary source comparison](manuscripts/boolean-linear-optimization-compiler.md). Signed interval rounding is inherited from Nederlof–van Leeuwen–van der Zwaan and Bansal–Garg–Nederlof–Vyas; the theorem isolates the short-interval/slack interpolation.
+[Interval compiler, numerical instantiations, and primary source comparison](manuscripts/boolean-linear-optimization-compiler.md). The general signed interval-rounding method is inherited from Nederlof–van Leeuwen–van der Zwaan and Bansal–Garg–Nederlof–Vyas. The manuscript gives the complete support-sized boundary refinement and the short-interval/slack interpolation; it requires no further external theorem for either local step.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

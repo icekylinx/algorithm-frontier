@@ -1,0 +1,82 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/boolean-linear-compiler/proof.md
+% Recovered-source SHA-256: 95396ed9210db5f7d3b695bd3df845579f74b5b41426af738e812cf16423cf96
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-c97649ed9d-exact-boolean-optimization-by-interval-and-slack-compilation}{%
+\section{Exact Boolean optimization by interval and slack compilation}\label{af-c97649ed9d-exact-boolean-optimization-by-interval-and-slack-compilation}}
+
+\hypertarget{af-c97649ed9d-compiler-theorem}{%
+\subsection{1. Compiler theorem}\label{af-c97649ed9d-compiler-theorem}}
+
+The input has \(n\) Boolean variables, signed binary integer equalities, and interval rows \(\ell_i\le a_i^\top x\le u_i\). Let \(L\) be its binary length, \(s_i=|\mathrm{supp}(a_i)|\), and \(W_i=u_i-\ell_i\). Normalize one-sided rows against their attainable ranges and handle empty intervals and zero rows directly. Put \[
+\kappa_i=\min\{W_i+1,s_i\},\quad q_i=\lceil\log_2\kappa_i\rceil,\quad Q=\sum_iq_i.
+\] Assume a deterministic Subset Sum backend returns indexed witnesses in time \(\mathrm{poly}(L')2^{\alpha N}\), and, if supplied, writable space \(\mathrm{poly}(L')2^{\sigma N}\). For any integer \(0\le B\le Q\), the compiler gives \[
+T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)
+2^{\alpha n+Q-(1-\alpha)B},\qquad
+S_B\le\mathrm{poly}(L)2^{\sigma(n+B)},
+\] where \(p_i\le2\lceil\log_2(W_i+1)\rceil+1\), and \(p_i=1\) if \(W_i+1\le s_i\). Exact equalities contribute no slack parameter. Feasibility, indexed witnesses, linear optimization, and explicitly listed polynomial-size lexicographic optimization are supported.
+
+\hypertarget{af-c97649ed9d-signed-interval-lemma}{%
+\subsection{2. Signed interval lemma}\label{af-c97649ed9d-signed-interval-lemma}}
+
+For a nonzero row with original support \(s\ge1\), stop when the current interval contains at most \(s\) integers. Otherwise let \(t\) be the number of odd current coefficients, set \(a'_j=\lfloor a_j/2\rfloor\), and put
+
+\[
+\ell'=\lceil\ell/2\rceil,\qquad u'=\lfloor(u-t)/2\rfloor.
+\]
+
+Emit the nonempty intervals
+
+\[
+[\ell,\min\{u,2\ell'+t-2\}],\qquad
+[\max\{\ell,2u'+2\},u]
+\]
+
+using the current coefficient row. Recurse once with \(a'\) on \([\ell',u']\) if it is nonempty. For every Boolean assignment, including for signed coefficients,
+
+\[
+a^\top x=2(a')^\top x+\delta(x),\qquad
+\delta(x)=\sum_{j:a_j\text{ odd}}x_j\in[0,t].
+\]
+
+Thus a recursive acceptance has original value between \(2\ell'\ge\ell\) and \(2u'+t\le u\). Conversely, if a parent-feasible assignment has rounded sum below \(\ell'\), its original sum is at most \(2\ell'+t-2\) and falls in the lower boundary. A rounded sum above \(u'\) has original sum at least \(2u'+2\) and falls in the upper boundary. When \(\ell'>u'\), these two cases cover every assignment and no recursion is needed. Clipping keeps boundary acceptances inside the parent interval.
+
+The lower boundary has at most \(2\ell'-\ell+t-1\le t\) values; the upper has at most \(u-2u'-1\le t\) values. When \(t=0\), both are empty. Every emitted interval therefore contains at most \(s\) values, or at most \(W+1\) if the initial row is already short. A recursive width is at most half its parent's width, so at most two emissions per halving and one terminal emission prove \(p_i\le2\lceil\log_2(W_i+1)\rceil+1\). The depth and all intermediate bit lengths are polynomial in the binary input size. A zero row is checked directly and removed before defining \(q_i\); a reversed interval is infeasible.
+
+This proves exact disjunction for each original Boolean assignment. Boundary overlaps are harmless: they are counted among the catalogue's actual tests, and the construction has only one recursive child. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/boolean-linear-compiler/manuscripts/boolean-linear-optimization-compiler.md\#2-signed-short-interval-catalogue}{complete proof} treats the empty-child and negative-floor cases explicitly. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/boolean-linear-compiler/verify/check_interval_compiler.py}{independent checker} also compares full compiled solution sets with the original systems.
+
+\hypertarget{af-c97649ed9d-slack-and-branch-count}{%
+\subsection{3. Slack and branch count}\label{af-c97649ed9d-slack-and-branch-count}}
+
+Choose \(0\le b_i\le q_i\) summing to \(B\). Split each catalogue interval into chunks of at most \(2^{b_i}\) values. There are at most \(2^{q_i-b_i}\) chunks, so the number of branch tuples is at most \[
+\left(\prod_i p_i\right)2^{Q-B}.
+\] For a positive-width chunk \([l,u]\), put \(w=u-l\), \(q=\lceil\log_2(w+1)\rceil\le b_i\). The \(q\) weights \[
+1,2,\ldots,2^{q-2},\quad w-(2^{q-1}-1)
+\] have subset sums exactly \(0,\ldots,w\). For \(q=1\), the initial list is empty. The powers cover the initial interval; the final shift overlaps or abuts it and ends at \(w\). Thus the chunk becomes one equality with at most \(b_i\) Boolean slack variables. Different rows use different variables; width zero needs none. This is a witness reduction, not a parsimonious counting reduction.
+
+\hypertarget{af-c97649ed9d-signed-radix-packing}{%
+\subsection{4. Signed radix packing}\label{af-c97649ed9d-signed-radix-packing}}
+
+For a branch with equations \(c_j^\top y=t_j\) on \(N\le n+B\) variables, use \[
+R=1+\max_j\left(\sum_k|c_{jk}|+|t_j|\right),\qquad
+A_k=\sum_jc_{jk}R^j,\qquad T=\sum_jt_jR^j.
+\] Handle the all-zero system directly; otherwise \(R\ge2\). The packed equation \(\sum_kA_ky_k=T\) is equivalent to all branch equations. Indeed \(d_j=c_j^\top y-t_j\) satisfies \(|d_j|<R\). Reducing \(\sum_jd_jR^j=0\) modulo \(R\) forces \(d_0=0\); divide and repeat. This proof permits signed digits.
+
+The packed bit length is polynomial in \(L\). Multiplying the branch bound by the backend cost at \(n+B\) proves the time formula. Branches run sequentially with one backend workspace, proving the space formula. A witness is restricted to its original \(n\) coordinates.
+
+\hypertarget{af-c97649ed9d-optimization-and-backend-conditions}{%
+\subsection{5. Optimization and backend conditions}\label{af-c97649ed9d-optimization-and-backend-conditions}}
+
+Binary search over the polynomial-bit objective range uses polynomially many feasibility queries. Completely enumerate the short-target catalogue for the one added threshold row; its cost is polynomial and it adds no slack variables. Fix an optimum as an exact equality before treating the next lexicographic objective.
+
+For a fixed number of interval rows, \(Q=O(\log n)\) and \(\prod_i p_i\) is polynomial in \(L\), so the backend's separate time and space interfaces transfer up to polynomial factors. A time-only backend supplies no new simultaneous space bound. The refined numerical exponent additionally inherits its full-domain analytic contact premises; scalar exponent verification alone does not prove those premises.
+
+\hypertarget{af-c97649ed9d-complete-proof}{%
+\subsection{Complete proof}\label{af-c97649ed9d-complete-proof}}
+
+\href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/boolean-linear-compiler/manuscripts/boolean-linear-optimization-compiler.md}{Interval compiler, numerical instantiations, and primary source comparison}. The general signed interval-rounding method is inherited from Nederlof--van Leeuwen--van der Zwaan and Bansal--Garg--Nederlof--Vyas. The manuscript gives the complete support-sized boundary refinement and the short-interval/slack interpolation; it requires no further external theorem for either local step.
+
+\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

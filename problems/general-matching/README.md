@@ -1,9 +1,11 @@
 # Exact general-graph matching
 
-An executable deterministic solver returns exact maximum-cardinality
-matchings in arbitrary undirected graphs using only Python's standard
-library. A separate research theorem gives a faster bound conditional on
-the explicitly required cycle-search implementation.
+The research theorem constructs a deterministic exact maximum-cardinality
+matching algorithm with four-fifths logarithmic overhead. Its
+[complete proof](proof.md) connects the matching framework to explicit
+routing, cycle-search, repair and finite-arithmetic constructions.
+A separate standard-library solver makes exact matching and independent
+optimality certificates executable now.
 
 **Guarantee**
 
@@ -15,29 +17,37 @@ Maximize the number of matched edges and return the selected edge identifiers af
 
 **Randomness**
 
-Deterministic executable solver and certificate verification. The faster research composition additionally requires the deterministic cycle-search implementation and named published primitives in the source map.
+Deterministic exact algorithm, including the uniform parameter search and all locally constructed interfaces. Named published deterministic primitives remain explicit proof dependencies. The separate executable solver and its certificate verification are also deterministic.
 
 **Time**
 
-The [implemented reference solver](reference/README.md) takes
-
-<!-- math-display: 78ab04a90d9fbe296ea21ae1
-O\!\left(n+m\log(m+2)+\sum_i\nu(G_i)^3\right),
--->
-![Formula](../../assets/math/78ab04a90d9fbe296ea21ae1.svg)
-
-where <code class="math">G_i</code> ranges over nonempty normalized input components.
-Optional optimality-certificate generation has the same bound;
-independent verification takes
-<code class="math">O(n+m\log(m+2))</code>.
-
-The faster research bound requires the
-[cycle-search implementation specified in Section 11.6](proof.md#116-explicit-raw-backend-realization-contract):
+The [research theorem](proof.md#1-result-contributions-and-proof-scope) gives
 
 <!-- math-display: c167d7229cda5041570021d3
 O(n+m)+(m_s+1)\exp\!\left(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5})\right).
 -->
 ![Formula](../../assets/math/c167d7229cda5041570021d3.svg)
+
+[Theorem 11.6](proof.md#116-deterministic-cycle-search-realization)
+instantiates the required cycle-search interface from the checkpoint's
+local construction proofs and named source results. The full fast
+hierarchy has not yet been implemented end to end.
+
+The [implemented reference solver](reference/README.md), including optional
+optimality-certificate generation, takes
+
+<!-- math-display: 6c0fddf87e29fb75109bfdec
+O\!\left(n+m\log(m+2)+\sum_i\nu(G_i)^{p_i}\right),
+\qquad p_i\in\{5/2,3\}.
+-->
+![Formula](../../assets/math/6c0fddf87e29fb75109bfdec.svg)
+
+Here <code class="math">G_i</code> ranges over nonempty normalized input components.
+The exponent is `5/2` when the component's retained edge kernel is
+bipartite and `3` otherwise. Every bipartite input component gets the
+improved bound.
+Independent verification takes
+<code class="math">O(n+m\log(m+2))</code>.
 
 **Space**
 
@@ -50,26 +60,29 @@ in its graph and cycle-search inventory.
 **n** is the vertex count; **m** is the input edge-record count; **m_s** is
 the number of distinct nonloop edges. **ν(G_i)** is the maximum matching
 size in normalized component **i**; it is not supplied as input.
+The first retained edge kernel is used to choose the component exponent
+`p_i`; no bipartition is required in the input.
 
 **Model and representation**
 
 Arbitrary undirected graphs, including loops, parallel records and isolated
 vertices; original selected edge IDs are returned. The reference code is
 standalone. Its documented word-operation bounds additionally charge long
-ID comparisons and serialization. The faster theorem requires the named
-published primitives and the still-unimplemented cycle-search, repair and
-edge-lifetime operations in Section 11.6.
+ID comparisons and serialization. The research theorem charges actual
+integer and rational work, explicit path inventories and edge lifetimes.
+Its named source dependencies and parameter ranges are listed separately
+from the repository's current code coverage.
 
 **Lower-bound scope**
 
-This card records an unconditional polynomial implementation and a
-conditional faster upper bound. No new matching lower bound is claimed.
+This card records a deterministic research upper bound and a polynomial
+reference implementation. No new matching lower bound is claimed.
 
 **Review status**
 
-**Ready for review in the stated scope.** The executable cubic solver with optimality certificates and its independent verifier; the self-contained quadratic certificate-extraction proof; the unconditional sharp c-neighbor and mixed-failure kernels, componentwise composition, and subcubic reduction with its decoder. The cover-side alternating exchange further reduces the default solver, including certificates, to O(n+m log(m+2)+sum_i nu(G_i)^3), while retaining the original independent certificate format.
+**Ready for review.** The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable edge retirement, finite-bit implementation and uniform parameter search. The separate executable package includes exact matching, independent optimality certificates, the early checkpoint’s four-times-matching-number compression, and the newly implemented nonrecursive bipartite phase algorithm. Sharp cover-neighbor, mixed-failure and subcubic reductions retain their own proved scopes.
 
-**Conditions and remaining work.** The four-fifths research running time still requires the cycle-search implementation and named published prerequisites in sources.md. The executable solver has its separately proved cubic bound. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope.
+**Conditions and remaining work.** Named published deterministic primitives are explicit proof dependencies; the local realization theorem discharges the abstract cycle-search contract. The shipped reference implementation has a separate polynomial bound and does not implement the entire fast research construction. The mixed-failure kernel concerns a fixed simple graph. Native parallel records and correlated failure labels are separate models. Readiness is a mathematical review invitation, not proof-assistant verification.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -77,6 +90,7 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 [Executable solver and example](reference/README.md),
 [matching-size cubic bound and proof](reference/cover-compression-proof.md),
+[bipartite refinement and linear certificates](reference/bipartite-proof.md),
 [complete research theorem and proof](proof.md),
 [dependencies and primary sources](sources.md).
 
@@ -89,7 +103,7 @@ m_H\le\min\{m_s,O(\nu(G)^2)\}.
 -->
 ![Formula](../../assets/math/af2551cab5849cf7c623583b.svg)
 
-The second term of the conditional research bound may use <code class="math">m_H</code> in
+The second term of the research bound may use <code class="math">m_H</code> in
 place of <code class="math">m_s</code>, while its word-RAM radix normalization costs
 <code class="math">O(n+m)</code>. The Python reference uses comparison sorting and charges its
 separate <code class="math">m\log(m+2)</code> term. Both restore original selected edge IDs.
@@ -105,6 +119,14 @@ the exact matching number after every mixture of at most <code class="math">f</c
 vertex/edge deletions. This is an unconditional deterministic kernel;
 each query still needs a matching solver.
 
-Read the [proof](proof.md), [source map](sources.md), and [complete index](../../CONTENTS.md) for the backend contract and audit trail.
+The <code class="math">4\nu</code> vertex compression already appears in
+the 24 October direct checkpoint's
+<em>A linear-vertex refinement of the matching-size kernel</em>
+proof. The current implementation, certificate extraction and bipartite
+refinement are documented separately in the
+[source history](sources.md#checkpoint-provenance).
+
+Read the [proof](proof.md), [source map](sources.md), and
+[complete index](../../CONTENTS.md) for the construction and its review scope.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

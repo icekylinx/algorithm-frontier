@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Run the canonical repository validation and executable evidence suite.
 
-The default run validates the saved full-contact receipt's code/menu binding
-and recomputes the rho=1.7 and direct continuous branches. Use --full-contacts
-to recompute all 62 branches instead. A receipt binding check is provenance,
+The default run validates both contact receipts' code/menu bindings,
+checks the third-lookup recovery path and recomputes the rho=1.7 and direct
+two-level branches. Use --full-contacts to recompute all 62 two-level and
+16 third-level branches instead. A receipt binding check is provenance,
 not an independent replay of the covered inequalities.
 
 All checks use the Python standard library. The finite and numerical checks
@@ -55,6 +56,7 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check("Mathematical source formatting regressions", ("tools/check_math_formatting.py",)),
         Check("Static mathematical presentation regressions", ("tools/check_math_presentation.py",)),
         Check("Formula images and exact source bindings", ("tools/build_math_assets.py", "--check")),
+        Check("Reviewed PDF source and artifact bindings", ("tools/build_papers.py", "--check")),
         Check("Selected TeX source exports", ("tools/build_manuscripts.py", "--check")),
         Check("Generated result and proof catalogues", ("tools/build_catalogue.py", "--check")),
         Check(
@@ -82,6 +84,10 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
             ("problems/subset-sum-fast-deterministic/verify/check_energy.py",),
         ),
         Check("Fast Subset Sum scalar composition", ("tools/verify_subset_sum_scalars.py",)),
+        Check("Preserved two-level Subset Sum scalar composition", ("tools/verify_subset_sum_scalars.py", "--base-two-level")),
+        Check("Subset Sum theorem and headline ledger synchronization", ("problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py",)),
+        Check("Third-lookup contact receipt binding and coverage", ("tools/verify_subset_sum_third_contacts.py", "--receipt", "problems/subset-sum-fast-deterministic/verify/third_receipt.json")),
+        Check("Third-lookup exact recovery and invalid-input rejection", ("problems/subset-sum-fast-deterministic/verify/check_third_recovery.py",)),
         Check("Exact contact replay checkpoint recovery", ("problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py",)),
         Check("Scheduling quotas, buckets and six-profile coverage", ("tools/verify_profile_certificates.py",)),
         Check("Finite two-scenario hardness reduction", ("tools/verify_finite_reductions.py",)),
@@ -104,6 +110,13 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
             "Composite-group quotient rounding",
             ("problems/group-metric-constraints/verify/check_quotient_rounding.py",),
         ),
+        Check('Bipartite phase matching and independent cover certificates', ('problems/general-matching/verify/check_bipartite.py',)),
+        Check('Native degree constraints and certified cardinality optimization', ('problems/degree-constrained-subgraphs/verify/check_reference.py',)),
+        Check('Capacity-bit scaling for the published exact-flow theorem', ('problems/min-cost-flow/verify/check_capacity_scaling.py',)),
+        Check('Laminar dominant-weight recovery and binary rank oracles', ('problems/weighted-prefix-quota-frontier/verify/check_laminar_recovery.py',)),
+        Check('Two-positive-weight oracle and encoded-program boundary', ('problems/weighted-prefix-quota-frontier/verify/check_two_weight_lower.py',)),
+        Check('Projected quota catalogues and compatible-cut orientation', ('problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py',)),
+        Check('Signed support-sized interval and slack compilation', ('problems/boolean-linear-compiler/verify/check_interval_compiler.py',)),
         Check("Non-Fano obstruction", ("tools/verify_non_fano.py",)),
         Check(
             "Full-contact receipt binding and coverage metadata",
@@ -119,6 +132,10 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         suite.append(Check(
             "All 62 continuous contact branches",
             ("tools/verify_subset_sum_contacts.py", "--all", *parallelism),
+        ))
+        suite.append(Check(
+            "All 16 third-lookup continuous contact branches",
+            ("tools/verify_subset_sum_third_contacts.py", "--all", *parallelism),
         ))
     else:
         suite.extend([
@@ -139,7 +156,7 @@ def main() -> int:
     parser.add_argument(
         "--full-contacts",
         action="store_true",
-        help="recompute all 62 continuous contact branches instead of the default selected replay",
+        help="recompute all 62 two-level and 16 third-lookup branches instead of the default selected replay",
     )
     parser.add_argument(
         "--jobs",
@@ -167,7 +184,7 @@ def main() -> int:
     started = time.monotonic()
     print(
         f"Running {len(suite)} canonical checks from {ROOT}\n"
-        f"Continuous contacts: {'all 62 branches' if args.full_contacts else 'rho=1.7 and direct branches'}; "
+        f"Continuous contacts: {'all 62 + 16 branches' if args.full_contacts else 'rho=1.7 and direct branches, plus third-lookup recovery'}; "
         f"workers: {args.jobs}",
         flush=True,
     )

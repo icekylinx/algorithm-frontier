@@ -1,0 +1,51 @@
+% Built from the complete scoped proof sources listed in manuscripts/papers.json.
+% Compile with: python3 tools/build_papers.py --paper two-failure-matroids
+\input{manuscripts/paper-style.tex}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\hypersetup{pdftitle={Two-Failure Prefix Summaries in Oracle Matroids},pdfauthor={Yilin Liu}}
+\title{Two-Failure Prefix Summaries\\in Oracle Matroids}
+\author{Yilin Liu}
+\date{26 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Fix an order on a rank-\(r\) matroid and assign at most one failure label to
+each item. We study the unique minimum subset preserving every ordered-prefix
+rank after at most two label failures. Its worst-case size is exactly \(3r\)
+through rank three and exactly 13 at rank four. General upper bounds follow
+from one-failure replacement profiles and a circuit missing-pair argument.
+If the one-failure union adds only one new item, appearing under \(t\)
+single failures, the sharp size is \(r+2t\). We give a profile-sensitive
+construction and a 13-item nonrepresentable obstruction. The proofs allow
+loops, unlabelled items, rank drops and arbitrary fixed signed costs.
+\end{abstract}
+
+\paragraph{A direct construction.}
+Let \(N\) be the number of items. Compute the canonical basis \(B_0\).
+For each label on \(B_0\), compute the basis after that label fails; for
+each label on each resulting basis, compute the basis after both labels
+fail. Retain their union. For a target failure set, a basis avoiding all
+remaining failed labels is unchanged by those deletions. Otherwise at least
+one failed label occurs on that basis and is a branch of the construction.
+Following at most two such branches therefore reaches the target canonical
+basis. Every queried set is itself allowed, so the retained union is exactly
+the union over all allowed failures. There are at most \(1+r+r^2\) scans
+and at most \(N(1+r+r^2)\) independence queries after fixing the order.
+The proofs below establish its size, uniqueness and improved structured case.
+
+\part{Profile bounds and sharp structured cases}
+\setcounter{section}{0}
+\renewcommand{\thesection}{\thepart.\arabic{section}}
+\input{\AFGeneratedPath/two-failure-oracle-prefix-bounds.tex}
+
+\part{The rank-four obstruction and its amplification}
+\setcounter{section}{0}
+\input{\AFGeneratedPath/weighted-oracle-two-failure-obstruction.tex}
+
+\paragraph{Attribution and review scope.}
+Yilin Liu and GPT-6 Astra Pro. \emph{Algorithm Frontier}, 26 October 2026.
+These are exact independence-oracle statements. The finite checkers test
+independent rank tables, original-prefix necessity, quotient identities and
+the specified constructions; they do not replace the universal arguments.
+External peer review and proof-assistant formalization are not claimed.
+\end{document}

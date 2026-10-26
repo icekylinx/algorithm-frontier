@@ -4,10 +4,17 @@ This note proves the certificate extraction implemented by
 `_failed_search_forest` and `_barrier` in [matching.py](matching.py).
 Given a maximum matching of size <code class="math">\nu</code> on a simple graph with <code class="math">k</code>
 vertices and <code class="math">h</code> edges, extraction takes <code class="math">O(h+k(\nu+1))</code> additional
-work, at most <code class="math">O(k^2)</code>. Consequently the reference solver's normal and
-certificate modes share the same cubic bound. The certificate is checked
+work, at most <code class="math">O(k^2)</code>. This preserves the reference solver's cubic
+bound on general components. The certificate is checked
 by the [independent verifier](verify_certificate.py), which performs no
 blossom search.
+
+The public solver uses this extraction on nonbipartite retained kernels.
+On a bipartite kernel, a [separate local proof](bipartite-proof.md#5-a-linear-certificate-on-the-first-kernel)
+constructs a minimum vertex cover in `O(k+h)` work and proves that it is a
+tight certificate in the same format. This avoids a cubic certificate
+cost in the faster bipartite branch. The theorem below continues to apply
+to `_failed_search_forest` and `_barrier` on any simple graph.
 
 The construction is a classical alternating-forest method. The resulting
 sets give the Gallai–Edmonds decomposition, whose historical source is

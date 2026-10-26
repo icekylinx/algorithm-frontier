@@ -10,6 +10,15 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 
 ## Mathematical dependencies
 
+The routing theorem first states a generic destructive-distance
+interface. Its concrete instantiation is supplied by the path-support
+extractor below, Sections 2–4, using APSP Corollary 2.2, local shortest-path
+trees and the metric forest lift. It charges actual support occurrences
+and temporary updates without an additional multiplicative stretch
+factor. Thus the routing and packing parameter substitutions use a
+constructed interface; their hitting-number, conductance and density
+conditions remain genuine input promises.
+
 - [Destructive path-support extraction from the APSP hierarchy](../../manuscripts/graph-backends/destructive-apsp-path-support-extractor.md)
 - [The same sharper rate for the existing BHHS explicit-hypergraph algorithm](../../manuscripts/matching-and-routing/public-hypergraph-algorithm-weighted-reanalysis.md)
 - [Rank-sensitive counting for certified Haxell layers](../../manuscripts/matching-and-routing/rank-sensitive-layer-count.md)

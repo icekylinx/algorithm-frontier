@@ -1,17 +1,22 @@
 # Verification of the deterministic Subset Sum refinement
 
-The continuous-domain checker establishes the numerical contact inequalities
-used by the refined signed circuit construction. The scalar checker derives
-the reflected profile and outer running-time exponent from those contacts.
+Two continuous-domain checkers establish the numerical contact inequalities
+used by the signed circuit construction: 62 preserved base branches for F2
+and 16 third-lookup branches added for F3. The scalar checker derives the
+reflected profile and complete running-time ledger from their combined menu.
 The energy-tensor check compares finite algebraic identities with independent
 enumeration.
 
 | Program | Mathematical scope | Complete command |
 |---|---|---|
-| [Continuous contacts](../../../tools/verify_subset_sum_contacts.py) | Every legal color, both nonnegative-maximum branches, and every routing branch of all refined contacts | `python tools/verify_subset_sum_contacts.py --all --jobs 4` |
-| [Scalar composition](../../../tools/verify_subset_sum_scalars.py) | Exact entropy enclosures, continuous contact/chord/cone envelope, reflected quadratic compensation, and every outer cost inequality | `python tools/verify_subset_sum_scalars.py` |
+| [Base continuous contacts](../../../tools/verify_subset_sum_contacts.py) | Every legal color, both nonnegative-maximum branches, and every routing branch of all refined contacts | `python tools/verify_subset_sum_contacts.py --all --jobs 4` |
+| [F3 scalar composition](../../../tools/verify_subset_sum_scalars.py) | Exact entropy enclosures, continuous contact/chord/cone envelope, reflected quadratic compensation, and every outer cost inequality | `python tools/verify_subset_sum_scalars.py` |
+| [Third-lookup contacts](../../../tools/verify_subset_sum_third_contacts.py) | Complete four-coordinate domain, third routing choices and occurrence floors for all 16 extension branches | `python tools/verify_subset_sum_third_contacts.py --all --jobs 4` |
+| [Preserved F2 scalar ledger](../../../tools/verify_subset_sum_scalars.py) | The independent 160-comparison base calculation, without loading the extension menu | `python tools/verify_subset_sum_scalars.py --base-two-level` |
+| [Headline consistency](check_headline_ledger.py) | Top theorem, abstract, card and source-map exponents agree with the current exact ledger; explicitly named historical values remain distinct | `python problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py` |
 | [Energy tensor](check_energy.py) | Exact rank-three identities and pruned contractions compared with independent binary endpoint enumeration on dimensions one through four | `python problems/subset-sum-fast-deterministic/verify/check_energy.py` |
 | [Replay recovery](check_replay_recovery.py) | Interrupted exact branches resume identically to clean runs; mismatched kernel, menu or driver fingerprints are rejected | `python problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py` |
+| [Third replay recovery](check_third_recovery.py) | Exact interruption/resume agreement, source-change rejection and explicit initialization in a spawned worker | `python problems/subset-sum-fast-deterministic/verify/check_third_recovery.py` |
 
 All commands are run from the repository root with Python assertions enabled.
 They use only the Python standard library. Parallelism changes execution time, not the accepted
@@ -167,7 +172,7 @@ If it also reports `complete_X02_contact_menu: true`, it has covered all
 menu. Node or depth limits raise an error and do not produce a complete
 receipt. The limits cannot cause an unresolved box to be accepted.
 
-## 4. Scalar composition and remaining proof dependencies
+## 4. Preserved F2 scalar composition and analytic proof interfaces
 
 For one fixed circuit family, the supremum of
 <code class="math">\tau L+(1-\tau)R</code> over its colors is convex in <code class="math">\tau</code>.
@@ -184,17 +189,18 @@ circuit level, positive integer color degrees give
 The proof derives this inequality for the entire color sum. A contact
 <code class="math">(\alpha,U)</code> supplies <code class="math">U(1-\tau)/(1-\alpha)</code> on the left and <code class="math">U\tau/\alpha</code>
 on the right. The scalar checker combines those pieces with the eligible
-same-family chords and exact endpoint circuits, verifies continuity at
-every junction, and checks 160 exact reflected-profile endpoint comparisons.
+same-family chords and exact endpoint circuits. With `--base-two-level`, it
+verifies continuity at every junction and all 160 exact reflected-profile
+endpoint comparisons of F2.
 It also checks the refined type constraints, the initial difference-table
 size, the fixed compiler grid and all nine outer operation costs at
 
-<!-- math-display: ac0abdadddcfdb3a81545fc0
-E=\frac{158153814247997}{318964058919134}<.495836.
+<!-- math-display: 3054506b2825457cc2040494
+E_2=\frac{158153814247997}{318964058919134}<.495836.
 -->
-![Formula](../../../assets/math/ac0abdadddcfdb3a81545fc0.svg)
+![Formula](../../../assets/math/3054506b2825457cc2040494.svg)
 
-The reflected contact budget is <code class="math">S=.41077126</code>. The compiler allowance is
+The preserved F2 contact budget is <code class="math">S_2=.41077126</code>. The compiler allowance is
 <code class="math">10^{-8}</code> on a fixed core-fraction grid of size <code class="math">10000</code>. All contact
 weights lie in <code class="math">[6/25,19/25]</code>, so the cone amplification is at most <code class="math">25/6</code>.
 A pre-cone seed error below <code class="math">3\cdot10^{-10}</code> contributes less than
@@ -207,7 +213,7 @@ The scalar checker checks these rational caps and every displayed
 nonbinding rate cap. Improving the binding exponent does not require every
 nonbinding rate to decrease.
 
-The proof still supplies the exact signed identities, finite circuit
+The proof supplies the exact signed identities, finite circuit
 existence, fixed-data compiler, integer-key reduction, bit-cost accounting
 and indexed witness recovery. The startup constant is finite and independent
 of the input; the verifiers do not supply a practical bound on it.
@@ -218,7 +224,7 @@ contacts. Historical leaf counts are not used by either reconstructed
 verifier. The refined menu is checked directly, without an assumed receipt
 for the older parameter setting.
 
-## 5. Completed full run and receipt binding
+## 5. Completed base run and receipt binding
 
 The committed [complete receipt](receipt.json) records successful coverage
 of all 62 branches: 248,189 accepted nonempty leaves, 496,320 subdivision
@@ -314,3 +320,44 @@ forces two actual interruptions, rejects six fingerprint mismatches with
 otherwise valid record checksums, and exercises a truncated temporary
 write. This validates the recovery mechanism's concrete failure cases;
 it does not extend the mathematical scope of the contact certificate.
+
+
+## 8. Completed third-lookup extension
+
+The third-lookup extension keeps the original 62 branches and their receipt. It adds a separate fixed menu with eight contacts, each covering both the first-level push branch and the remaining recursive domain. The recursive check includes both third-level routing choices and every nonnegative occurrence floor.
+
+The new kernel is `tools/verify_subset_sum_third_contacts.py`; its exact menu is [third_contacts.json](third_contacts.json). The complete receipt is [third_receipt.json](third_receipt.json). The analytic proof of orientation, coverage, multiaffine acceptance, trace preservation, and compiler losses is in [Part III of the proof](../proof.md#part-iii-a-third-positive-containment-lookup). The strengthened scalar ledger uses both the old and new contact sets. It verifies 112 reflected-profile comparisons and all nine costs. Its independent `--base-two-level` mode retains the 160-comparison F2 ledger without loading the extension menu.
+
+After the completed segmented replay, exactly one final newline was removed from the distributed kernel; the recovery check reconstructs both original source and receipt bytes and verifies their recorded SHA-256 digests, so every mathematical branch record is unchanged and no fresh or clean replay is claimed.
+
+Run a clean independent replay from the repository root:
+
+```sh
+python3 tools/verify_subset_sum_third_contacts.py --all --jobs 4 --output /tmp/third-clean-receipt.json
+```
+
+For a long computation that must survive interruption, use the separate recovery driver:
+
+```sh
+python3 problems/subset-sum-fast-deterministic/verify/replay_third_contacts.py --all --cache /tmp/subset-sum-third-cache --jobs 4 --output /tmp/third-resumed-receipt.json
+```
+
+Every completed branch is retained. Between nodes, unfinished branches save exact rational subdivision frontiers once 1,000 further nodes or 20 seconds have elapsed, using atomic file replacement. A resume rechecks kernel, menu, and driver digests. The cache is a trusted local work product, not a proof-carrying format; the clean command ignores all caches. A changed source or menu requires a separate cache and a new complete receipt.
+
+A cheap stored-receipt check verifies source binding, branch coverage, exact acceptance margins, and binary-tree accounting:
+
+```sh
+python3 tools/verify_subset_sum_third_contacts.py --receipt problems/subset-sum-fast-deterministic/verify/third_receipt.json
+```
+
+This check does not rerun the box inequalities. To exercise the concrete recovery and portability risks, run:
+
+```sh
+python3 problems/subset-sum-fast-deterministic/verify/check_third_recovery.py
+```
+
+That regression compares clean and interrupted/resumed runs, rejects changed source digests, ignores a truncated temporary write, verifies initialization in a newly spawned worker, rejects an invalid first-containment family, and refuses to turn an incomplete result list into a complete menu receipt. Its deliberately loose recursive target is only a bookkeeping test; it is not one of the claimed contacts.
+
+All these scripts use the Python standard library and refuse `python -O`. Floating arithmetic only proposes rational Gibbs planes and subdivision choices. Every accepted contact bound uses exact rational arithmetic and outward integer logarithm enclosures. The theoretical Subset Sum compiler and its exact uniform seed search do not depend on the floating proposal routine.
+
+The completed resumable replay under the final source covers 317,138 accepted leaves, 634,268 nodes, four empty leaves and maximum depth 29. Its minimum exact margin exceeds `1.14e-8`. Together with the proved analytic acceptance lemmas, this establishes the listed continuous contact inequalities. It does not independently verify the full signed circuit, its compiler, the input reduction, or the claimed algorithmic exponent. Those obligations are proved in the manuscript and the complete nine-rate ledger.

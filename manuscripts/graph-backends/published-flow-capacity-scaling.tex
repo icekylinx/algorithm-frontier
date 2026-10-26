@@ -1,0 +1,160 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: manuscripts/graph-backends/published-flow-capacity-scaling.md
+% Recovered-source SHA-256: ac11fe2572318b3df58aa490c4a61f6db8f2ccebe5f480865d871cb38bbed413
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-bcf24248b3-using-the-published-flow-bound-on-small-recursive-graphs}{%
+\section{Using the published flow bound on small recursive graphs}\label{af-bcf24248b3-using-the-published-flow-bound-on-small-recursive-graphs}}
+
+This note removes an unnecessary dependency from the Gomory--Hu application. Its forest overhead has leading logarithmic power \texttt{6/7}. The published deterministic exact-flow bound with power \texttt{5/6} already fits below it. The application's flow calls therefore need no four-fifths parameter retuning of the public dual-flow construction.
+
+A local-size issue must still be resolved: a small recursive graph can have capacities polynomial in the original input size but much larger than any fixed polynomial in its own edge count. The elementary capacity-bit reduction below handles that issue without allocating dummy vertices or padding the graph to the original input size.
+
+\hypertarget{af-bcf24248b3-the-precise-published-input}{%
+\subsection{1. The precise published input}\label{af-bcf24248b3-the-precise-published-input}}
+
+Jan van den Brand, Li Chen, Rasmus Kyng, Yang P. Liu, Simon Meierhans, Maximilian Probst Gutenberg and Sushant Sachdeva, \href{https://arxiv.org/html/2407.10830v1}{\emph{Almost-Linear Time Algorithms for Decremental Graphs: Min-Cost Flow and More via Duality}}, \textbf{Theorem 6.17}, gives a deterministic exact minimum-cost-flow algorithm for polynomially bounded integer capacities and costs in time
+
+\[
+T(r)=r\exp O\!\left((\log(r+2))^{5/6}\log\log(r+4)\right).
+\]
+
+Section 6.2 constructs a flow and the proof of Theorem 6.17 includes exact final rounding. We use an integral optimum on integral input, including the flow itself. An objective-value oracle alone would not suffice for the reduction below. This is a named published algorithm, not an implementation supplied by this repository.
+
+We use the theorem only on graphs whose positive capacities are at most their actual edge count, with costs zero or minus one and zero demands. Thus no growing accuracy parameter or unproved uniform retuning is imported. A single-arc or empty instance can be solved directly, avoiding conventions about logarithms of very small sizes.
+
+\hypertarget{af-bcf24248b3-capacity-bits-and-a-bound-on-the-missing-flow}{%
+\subsection{2. Capacity bits and a bound on the missing flow}\label{af-bcf24248b3-capacity-bits-and-a-bound-on-the-missing-flow}}
+
+Let a directed input graph have distinct source and sink \(s,t\), nonnegative integral capacities, and \(m\) nonloop positive-capacity arc records. Let \(W\) be the largest capacity of these retained records, or zero if there are none. Parallel and oppositely directed records remain distinct. Loops and zero-capacity records are ignored for the solve and receive zero flow in the returned native record list. If there are no remaining arcs, return the zero flow and a separating zero-capacity cut immediately.
+
+Set \(B=\lceil\log_2(W+1)\rceil\) when \(W>0\). Begin with zero capacities and the zero maximum flow. Reveal the capacity bits from most significant to least significant. A stage replaces the previous capacity vector \(a\) by
+
+\[
+a'_e=2a_e+b_e,\qquad b_e\in\{0,1\},\qquad
+q=\sum_e b_e\leq m.
+\]
+
+Assume \(f\) is a maximum integral flow for \(a\), of value \(F\). Then \(2f\) is feasible for \(a'\). Let \(R\) be the maximum additional source-to-sink flow in its residual graph. An old minimum cut \(S\) has \(a(\delta^+(S))=F\), and hence
+
+\[
+a'(\delta^+(S))
+ =2F+\sum_{e\in\delta^+(S)}b_e
+ \leq 2F+q.
+\]
+
+The residual capacity of this cut equals \(a'(\delta^+(S))-2F\), because reverse residual records subtract the net current flow across the cut. Consequently
+
+\[
+0\leq R\leq q\leq m.
+\]
+
+The residual maximum-flow value is exactly the new optimum minus \(2F\). One direction follows by adding any residual flow to \(2f\). For the other, compare \(2f\) with a maximum flow for \(a'\): the positive and negative coordinate differences are feasible on the corresponding forward and reverse residual records. Their divergence is the difference in the two source-to-sink values. Equivalently, minimizing the displayed residual-cut identity gives this equality directly by the elementary max-flow/min-cut theorem.
+
+If \(q=0\), the old cut already shows that \(2f\) is maximum, so the stage makes no oracle call.
+
+\hypertarget{af-bcf24248b3-truncate-to-capacities-polynomial-in-the-actual-call-size}{%
+\subsection{3. Truncate to capacities polynomial in the actual call size}\label{af-bcf24248b3-truncate-to-capacities-polynomial-in-the-actual-call-size}}
+
+For \(q>0\), form the positive residual records of \(2f\) under \(a'\). For each original arc \(e=(u,v)\), these records are:
+
+\begin{itemize}
+\tightlist
+\item
+  a forward record \(u\to v\) of capacity \(a'_e-2f_e\), if positive;
+\item
+  a reverse record \(v\to u\) of capacity \(2f_e\), if positive.
+\end{itemize}
+
+Keep their original record and direction tags even if other arcs have the same endpoints. Let \(r\leq2m\) be their total number. Whenever \(b_e=1\), the forward residual capacity is positive, since \(a'_e-2f_e=2(a_e-f_e)+1\geq1\). Therefore
+
+\[
+q\leq r.
+\]
+
+Replace every residual capacity \(c_e\) by \(\widehat c_e=\min\{c_e,q\}\).
+
+\textbf{Truncation lemma.} The capped residual graph still has maximum-flow value \(R\).
+
+\textbf{Proof.} Every old cut has capacity at least \(R\). If none of its arcs is changed by capping, its capacity is unchanged. Otherwise it contains a capped arc of capacity \(q\geq R\), so its new total capacity is still at least \(R\). Thus every new cut has capacity at least \(R\). A minimum cut of old capacity \(R\) has no arc larger than \(R\leq q\), so that cut is unchanged. The two minimum-cut values, and hence the maximum-flow values, are equal. \hfill\(\square\)
+
+For completeness, the integer max-flow/min-cut fact used here has a short constructive proof. Start with zero flow and augment along any residual source-to-sink path by its positive integral bottleneck. The integral value increases at each step and is bounded by the sum of capacities leaving the source, so this process terminates. At termination the source's residual reachable set excludes the sink. Every outgoing cut arc is saturated and every incoming cut arc has zero flow, giving equality between flow value and cut capacity. Weak cut bounds prove optimality. This establishes the fact needed by the argument; the efficient oracle uses the published algorithm.
+
+All capped positive capacities are at most \(q\leq r\). Compact only vertices incident to these records, together with \(s,t\); there are at most \(2r+2\) such vertices. No global-size graph is allocated. If either terminal has no relevant path, the resulting zero value is handled in the same way as any other solve.
+
+To invoke the published minimum-cost-flow algorithm, give each capped residual arc cost zero and add one additional record \(t\to s\) with capacity \(q\) and cost minus one. All demands are zero. The zero circulation is feasible. Removing the added record from any feasible circulation gives a source-to-sink flow of value equal to that record's flow, and the circulation's cost is minus that value. Conversely any residual flow of value at most \(q\) becomes such a circulation by placing its value on the added record. Since \(R\leq q\), an integral minimum-cost circulation yields an integral maximum residual flow. The new graph has \(r+1\) edges, capacities at most \(r\), and costs in \(\{-1,0\}\), meeting the literal polynomial-range input condition of Theorem 6.17.
+
+An existing original or reverse arc \(t\to s\) is not merged with the added negative-cost record. Keeping their identities is necessary for the cost and the returned-flow projection.
+
+\hypertarget{af-bcf24248b3-lift-the-answer-and-recover-an-explicit-cut}{%
+\subsection{4. Lift the answer and recover an explicit cut}\label{af-bcf24248b3-lift-the-answer-and-recover-an-explicit-cut}}
+
+Let \(g_e^+\) and \(g_e^-\) be the integral flows on the forward and reverse residual records of original arc \(e\), with zero for an absent record. Set
+
+\[
+f'_e=2f_e+g_e^+-g_e^-.
+\]
+
+Even if both directions carry flow, the individual residual bounds give
+
+\[
+0\leq2f_e-g_e^-\leq f'_e
+ \leq2f_e+g_e^+\leq a'_e.
+\]
+
+The residual divergence adds \(R\) units to the source-to-sink value and zero at every other vertex. Thus \(f'\) is a feasible integral flow of value \(2F+R\), exactly the new optimum. Induction over the bits proves that the final native flow is maximum for the original capacities.
+
+After the last stage, scan the ordinary uncapped residual graph and take the vertices reachable from \(s\). The sink is not reachable, and the corresponding original cut has capacity equal to the final flow value. This supplies an explicit minimum cut as well as a flow. Restoring a full cut-membership vector costs \(O(n)\); writing the native flow vector costs \(O(m_{\rm input})\), including zeros on ignored loops and zero-capacity records. Isolated vertices are not repeatedly allocated inside the oracle calls.
+
+For an undirected cut instance, replace each nonloop edge by two oppositely directed arcs of the same capacity. A directed source-side cut counts each crossing undirected edge exactly once. Contracting specified source and sink vertex sets also preserves the relevant cut problem; loops created by contraction can be discarded. These adapters use linear actual inventory and preserve native cut witnesses.
+
+\hypertarget{af-bcf24248b3-time-numeric-representation-and-recursive-calls}{%
+\subsection{5. Time, numeric representation and recursive calls}\label{af-bcf24248b3-time-numeric-representation-and-recursive-calls}}
+
+The zero-capacity case \(W=0\) needs no scaling stage. Otherwise there are exactly \(B=\lceil\log_2(W+1)\rceil\) stages and at most that many oracle calls. Each has at most \(2m+1\) actual records. The preprocessing, residual construction, reconstruction and final output cost \(O(n+m_{\rm input}+Bm)\) outside the oracle. The total is
+
+\[
+O(n+m_{\rm input})+
+O\!\left(Bm\exp O\!\left((\log(m+2))^{5/6}
+                             \log\log(m+4)\right)\right).
+\]
+
+The numerical conditions are explicit. If every recursive capacity is bounded by \(N^C\) for one fixed constant \(C\), then \(B=O(\log N)\). Scaling, doubling and returned-flow arithmetic use \(O(\log N)\) bits per number. The source oracle sees only \(O(\log(m+2))\)-bit capacities and costs. Its internal finite arithmetic is that of the published theorem. For larger user-supplied integers, actual multiword arithmetic and encoding costs must be added; the word-operation statement does not make such integers free.
+
+Now consider a sequence of recursive calls, each of actual size \(n_j+m_j\), total inventory \(A=\sum_j(n_j+m_j)\), maximum size polynomial in \(N\), and capacities at most \(N^C\). Summing the per-call bound gives
+
+\[
+A\exp O(U^{5/6}h),\qquad
+U=\log(N+4),\quad h=\log(U+4),
+\]
+
+where the additional bit stages and fixed polynomial logarithms are absorbed. Empty calls and explicit isolated-vertex output are charged to their actual inventories. In particular, small calls are never padded to \(N\) to satisfy a numeric-range condition.
+
+\hypertarget{af-bcf24248b3-consequence-for-the-gomoryhu-dependency-chain}{%
+\subsection{6. Consequence for the Gomory--Hu dependency chain}\label{af-bcf24248b3-consequence-for-the-gomoryhu-dependency-chain}}
+
+The strong-forest application has overhead \(E_{6/7}(N)=\exp O(U^{6/7}h^{1/7})\). Since
+
+\[
+\frac{U^{5/6}h}{U^{6/7}h^{1/7}}
+ =\frac{h^{6/7}}{U^{1/42}}\longrightarrow0,
+\]
+
+the literal published flow factor is absorbed by that overhead, even after any fixed polynomial logarithmic multiplier. Finitely many small sizes are absorbed by increasing one fixed constant. The same conclusion holds for the older seven-eighths application bound.
+
+The application already proves its aggregate exact-flow input inventory and bounds the integer capacities of its contracted and auxiliary instances. Applying the preceding sum establishes the required flow cost directly. Its forest, skeleton and guide-tree requirements remain unchanged; only the unnecessary four-fifths flow-retuning dependency is removed. The published flow algorithm remains an external theorem, identified precisely as Theorem 6.17 above.
+
+\hypertarget{af-bcf24248b3-executable-finite-evidence}{%
+\subsection{7. Executable finite evidence}\label{af-bcf24248b3-executable-finite-evidence}}
+
+Run the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/min-cost-flow/verify/check_capacity_scaling.py}{capacity-scaling checker} from the repository root:
+
+\begin{verbatim}
+python3 -B problems/min-cost-flow/verify/check_capacity_scaling.py
+\end{verbatim}
+
+It enumerates all directed capacity assignments from zero through three on two and three vertices, all binary assignments on four vertices, 300 seeded native-record instances and four explicit edge cases. It compares each stage with independently enumerated cuts, including both residual directions, truncation and lifted feasibility. Loops, parallel records, opposite arcs, isolated vertices, all-zero inputs, zero-bit stages and capacities longer than a machine word occur in this finite suite.
+
+It also enumerates 419,904 flow assignments for 729 small negative-return-edge instances, checking conservation and the exact minimum circulation cost. A simple integral augmenting-path algorithm instantiates the oracle for testing; the checker does not implement or verify the published fast flow algorithm. It refuses optimized Python execution that disables assertions.

@@ -9,7 +9,9 @@ The algorithms in this family optimize one signed rational scalar exactly while 
 | <code class="math">C</code> support patterns, one order | <code class="math">2^{O(\sqrt{B\min\{C,B\}})}</code> | [Support tradeoffs](manuscripts/weighted-prefix-support-budget-tradeoffs.md) |
 | <code class="math">C</code> support patterns, two orders | <code class="math">2^{O(\min\{\sqrt{BC},B\log(2+\min\{C/B,B\})\})}</code> | [Support tradeoffs](manuscripts/weighted-prefix-support-budget-tradeoffs.md) |
 | <code class="math">p</code> shared weight families | <code class="math">2^{O(pB\log(p+2))}</code> | [Family algorithm](manuscripts/few-weight-families-prefix-target-scheme.md), [joint lower calibration](manuscripts/few-weight-prefix-joint-lower-bounds.md) |
-| Common-weight laminar quotas, root cap <code class="math">B</code> | <code class="math">2^{4B^2+O(B\log(B+1))}</code> | Theorem and complete proof below |
+| Common-weight laminar quotas, root cap <code class="math">B</code> | <code class="math">2^{(5/9+o(1))B^2}</code> | Catalogue below; [improved recovery](manuscripts/laminar-dominant-weight-recovery.md) |
+| Quotas on compatible cuts | <code class="math">2^{(5/9+o(1))B^2}</code> | [Fixed-mass orientation](manuscripts/compatible-cut-quota-extension.md) |
+| Laminar quotas with one positive weight value | <code class="math">\mathrm{poly}(H)</code> | [Binary count-rank completion](manuscripts/laminar-dominant-weight-recovery.md#4-exact-completion-after-fixing-the-exceptional-units) |
 | Sparse root-bounded mixed quotas | <code class="math">2^{O((\Delta+1)B_0\log((\Delta+1)B_0(B+2)+2))}</code> | [Direct hash-and-profile proof](manuscripts/sparse-root-quota-hash-profile-algorithm.md) |
 
 Here <code class="math">B</code> bounds the finite targets, <code class="math">B_0\le B</code> is the root cap, and <code class="math">\Delta</code> counts positive nonroot incidences per coordinate. In the sparse theorem a zero-root coordinate is zero in every numeric row, but can have an arbitrary scalar cost. All algorithms use uniform polynomial binary workspace.
@@ -45,6 +47,31 @@ budget one are proved in
 The lower bounds distinguish rank queries from computation with an explicitly readable rank program. In particular, [disjoint nonroot equality rows](manuscripts/disjoint-row-root-target-sharp-lower.md) already force <code class="math">2^{\Omega(B\log(B+2))}</code> rank queries at frequency one; [row-dependent weights](manuscripts/row-dependent-full-prefix-target-boundary.md) cross a separate W[2]-hard boundary. The laminar theorem below has a <code class="math">2^{\Omega(B)}</code> oracle lower bound and does not close that exponent gap.
 
 ## Main theorem: the quadratic laminar exponent
+
+The complete basic catalogue construction below gives the bound LC3.
+The [most-frequent-weight recovery companion](manuscripts/laminar-dominant-weight-recovery.md)
+keeps the actual positive cardinality in the catalogue and enumerates only
+units outside a most frequent weight. With this manuscript's elementary
+coloring, it gives <code class="math">2^{(10/9)B^2+O(B\log(B+1))}\mathrm{poly}(H)</code>.
+Using the specific locally explicit universal-set construction of
+Naor–Schulman–Srinivasan, Theorem 7, it gives
+<code class="math">2^{(5/9+o(1))B^2}\mathrm{poly}(H)</code> with the same polynomial binary space.
+The companion states the exact integer maximum before these simplified
+coefficients and explains the local evaluation guarantee that makes the
+published construction compatible with streaming. Its projected coloring
+identities and histogram-dependent choice of the homogeneous weight can
+reduce the exponent further, while retaining every original numeric row.
+The [compatible-cut extension](manuscripts/compatible-cut-quota-extension.md)
+uses the same bounds after orienting quota sets at a fixed total mass;
+it includes quotas on either side of edges of an unrooted tree.
+
+It also proves a polynomial endpoint for one positive weight value,
+with arbitrary signed costs on zero-weight coordinates and the original
+resource total. The [two-weight boundary](manuscripts/two-positive-weight-laminar-boundary.md)
+shows exponential rank-query hardness already with weights 1 and 2 at
+laminar depth two, for mandatory feasibility and optional exact scalar
+optimization. The construction below remains a valid baseline and supplies
+the catalogue prerequisite.
 
 The arbitrary-cost laminar theorem in [laminar-valuated-zero-completion-fpt.md](manuscripts/laminar-valuated-zero-completion-fpt.md) (VZ) has time <code class="math">2^{O(B^2\log(B+1))}\mathrm{poly}(H)</code>. This note replaces its recursive upper-blocker representatives by deterministic universal colorings. The resulting time is
 
@@ -83,7 +110,12 @@ More explicitly, the construction below gives a bound of the form
 -->
 ![Formula](../../assets/math/60947615a6f0ad33e1026a7e.svg)
 
-The coefficient in LC3 is only an accounting bound for this construction, not an optimized constant. The existing <code class="math">2^{\Omega(B)}</code> oracle lower family remains applicable and leaves an exponent gap.
+The coefficient in LC3 describes the basic full-tuple recovery below.
+The companion refines recovery through two integral polymatroids and
+keeps the cardinality in the catalogue parameter. This gives coefficient
+<code class="math">10/9</code> with the elementary coloring, or <code class="math">5/9+o(1)</code> with the specifically
+cited local universal-set construction. Its actual-weight and depth
+refinements can reduce the exponent further. The existing <code class="math">2^{\Omega(B)}</code> oracle lower family remains applicable and leaves an exponent gap.
 
 ## 2. Prepared geometry and the completed-cost oracle
 

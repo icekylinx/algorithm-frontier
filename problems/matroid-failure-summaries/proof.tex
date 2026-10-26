@@ -3,13 +3,13 @@
 % Recovered-source SHA-256: b52bc2f74b0d2abbee67eab0613a6bfccc0703708b3f210f7ebca600252f40b1
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
-% Final document preamble must use the recovered original Subset Sum style.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
 
-\hypertarget{sharp-matroid-and-submodular-failure-summaries}{%
-\section{Sharp matroid and submodular failure summaries}\label{sharp-matroid-and-submodular-failure-summaries}}
+\hypertarget{af-240b5086c5-sharp-matroid-and-submodular-failure-summaries}{%
+\section{Sharp matroid and submodular failure summaries}\label{af-240b5086c5-sharp-matroid-and-submodular-failure-summaries}}
 
-\hypertarget{statements-and-distinction-of-models}{%
-\subsection{1. Statements and distinction of models}\label{statements-and-distinction-of-models}}
+\hypertarget{af-240b5086c5-statements-and-distinction-of-models}{%
+\subsection{1. Statements and distinction of models}\label{af-240b5086c5-statements-and-distinction-of-models}}
 
 Each element of a rank-\(r\) matroid has at most \(d\) failure labels. A query fails a set \(F\) of at most \(h\) labels and retains \(E_F=\{e:\Lambda(e)\cap F=\varnothing\}\). Put \(C=\binom{h+d}{d}\).
 
@@ -46,8 +46,8 @@ Ranks zero and one have bounds zero and three. The exact worst-case size is \(3r
 
 If the one-failure union adds exactly one item \(x\) to the original basis, let \(t\) count the single failures whose canonical basis contains \(x\). Then the stronger bound \(r+2t\le3r\) is sharp at every \(1\le t\le r\), even for represented matroids. The summary can be found with \(N(1+\ell_0+\binom{t+1}{2})\) independence queries, or with \(\binom t2\) in place of \(\binom{t+1}{2}\) when \(x\) is unlabelled. If the one-failure union adds no item, the original basis suffices.
 
-\hypertarget{proof-of-the-represented-theorem}{%
-\subsection{2. Proof of the represented theorem}\label{proof-of-the-represented-theorem}}
+\hypertarget{af-240b5086c5-proof-of-the-represented-theorem}{%
+\subsection{2. Proof of the represented theorem}\label{af-240b5086c5-proof-of-the-represented-theorem}}
 
 Choose distinct field points \(a_0,a_\lambda\), with \(a_0\) never failing. For element \(e\), define \[
 g_e(T)=(T-a_0)^{d-|\Lambda(e)|}\prod_{\lambda\in\Lambda(e)}(T-a_\lambda)
@@ -60,8 +60,8 @@ After compressing the original representation to rank \(r\), retain a fixed-orde
 
 Compute \(rC\) with saturation before enumerating features; if \(rC\ge N\), return the input. Otherwise the lift has fewer than \(N\) rows. Rational feature bit lengths are polynomial. If a finite field is too small, use an extension with at least \(L+1\) elements; when an extension is needed its size can be kept below \((L+1)^2\), permitting deterministic enumeration of irreducible polynomials. Extending scalars preserves original ranks.
 
-\hypertarget{circuit-blocking-set-pair-lemma}{%
-\subsection{3. Circuit-blocking set-pair lemma}\label{circuit-blocking-set-pair-lemma}}
+\hypertarget{af-240b5086c5-circuit-blocking-set-pair-lemma}{%
+\subsection{3. Circuit-blocking set-pair lemma}\label{af-240b5086c5-circuit-blocking-set-pair-lemma}}
 
 \textbf{Lemma 3.1.} Give each \(e\in H\) disjoint label sets \(A_e,B_e\), and assume \[
 e\notin\mathrm{cl}\{f\in H-e:A_f\cap B_e=\varnothing\}.
@@ -75,15 +75,15 @@ For an inclusion-minimal rank-preserving restriction, each \(e\) has a failure w
 
 For tightness, use \(r\) parallel classes. In each class, create one element for every \(d\)-subset \(A\) of an \((h+d)\)-label universe, with labels \(A\). Failing the complement of \(A\) isolates that element in its class; all \(rC\) elements are necessary.
 
-\hypertarget{fixed-parameter-construction}{%
-\subsection{4. Fixed-parameter construction}\label{fixed-parameter-construction}}
+\hypertarget{af-240b5086c5-fixed-parameter-construction}{%
+\subsection{4. Fixed-parameter construction}\label{af-240b5086c5-fixed-parameter-construction}}
 
 To decide whether a current element \(e\) can be deleted, search for at most \(h\) failed labels avoiding \(\Lambda(e)\) under which \(e\) becomes a coloop. At a search node, let \(Y\) be the surviving restriction and compute a basis \(B\) of \(Y-e\). If \(B+e\) is independent, the labels already failed are a valid witness. Otherwise \(B\) spans \(e\). Any remaining successful failure must hit a label of \(B\): if all of \(B\) survives, it still spans \(e\). Branch on every label in \(\Lambda(B)\setminus\Lambda(e)\), delete its entire class, and decrease the remaining budget. Return no witness when the budget is exhausted or every child fails. Induction on the budget proves completeness, with at most \(dr\) children per node.
 
 Process the original elements once, deleting \(e\) exactly when the search finds no witness. Every deletion preserves all ranks. A witness that keeps \(e\) remains valid after later deletions, because taking a subset cannot make \(e\) enter its closure. The result is inclusion-minimal, so Section 3 gives size \(rC\). Each search uses at most \(\sum_{i=0}^{h}(dr)^i\) nodes and at most \(N+1\) independence queries per node, proving Theorem 2 with the explicit bound above. Rank is part of the parameter.
 
-\hypertarget{sharp-weighted-oracle-construction-for-one-failure}{%
-\subsubsection{4.1 Sharp weighted oracle construction for one failure}\label{sharp-weighted-oracle-construction-for-one-failure}}
+\hypertarget{af-240b5086c5-sharp-weighted-oracle-construction-for-one-failure}{%
+\subsubsection{4.1 Sharp weighted oracle construction for one failure}\label{af-240b5086c5-sharp-weighted-oracle-construction-for-one-failure}}
 
 Let \(B_0\) be the canonical greedy basis in one fixed total cost order. For every label \(\lambda\) occurring on \(B_0\), compute the canonical basis \(B_\lambda\) after that label fails. Retain their union with \(B_0\). A surviving element accepted by the original greedy scan remains accepted after deletions: its earlier set has only shrunk. Thus, writing \(D_\lambda\) for the failed class, \(B_0\setminus D_\lambda\subseteq B_\lambda\). Since \(|B_\lambda|\le r\),
 
@@ -96,8 +96,8 @@ Let \(B_0\) be the canonical greedy basis in one fixed total cost order. For eve
 
 A failed label missing \(B_0\) leaves that entire canonical basis unchanged. Every other query has its canonical basis included in the retained union. Canonical greedy basis elements in each prefix span that prefix, so this containment preserves every prefix rank, including prefixes within ties. At most \(dr+1\) greedy scans give the construction cost. The lower example of Section 3 with \(h=1\) proves sharpness. This proves Theorem 3, including signed costs and rank drops.
 
-\hypertarget{linear-input-dependence-for-the-sharp-rank-construction}{%
-\subsubsection{4.2 Linear input dependence for the sharp rank construction}\label{linear-input-dependence-for-the-sharp-rank-construction}}
+\hypertarget{af-240b5086c5-linear-input-dependence-for-the-sharp-rank-construction}{%
+\subsubsection{4.2 Linear input dependence for the sharp rank construction}\label{af-240b5086c5-linear-input-dependence-for-the-sharp-rank-construction}}
 
 First apply Theorem 5 using the input order; no cost sorting is needed. Its output \(Q\) has at most \(K\) items and preserves every surviving rank. Run the reverse deletion of Section 4 only on \(Q\). The final restriction still preserves the ranks of the original ground and has the sharp size \(rC\). The total number of independence queries is at most
 
@@ -107,8 +107,8 @@ First apply Theorem 5 using the input order; no cost sorting is needed. Its outp
 
 The first stage rescans the fixed ordered input once at each basis-tree node. The final deletion stage scans only \(Q\). Indexed label flags and sparse original-ID lists give \(O((d+1)(N+K(K+1))\sum_{i=0}^{h}(dr)^i)\) ordinary bookkeeping operations after explicit label indexing. For fixed \(r,h,d\) this is linear in \(N\). The direct quadratic construction remains an alternative with the same sharp output bound.
 
-\hypertarget{submodular-and-entropy-consequences}{%
-\subsection{5. Submodular and entropy consequences}\label{submodular-and-entropy-consequences}}
+\hypertarget{af-240b5086c5-submodular-and-entropy-consequences}{%
+\subsection{5. Submodular and entropy consequences}\label{af-240b5086c5-submodular-and-entropy-consequences}}
 
 For monotone submodular \(f\), write \(H_e=\{x:A_x\cap B_e=\varnothing\}\) and \(\delta_e=f(H_e)-f(H_e-e)\). The same permutation method gives \[
 \sum_e\frac{\delta_e}{\binom{|A_e|+|B_e|}{|A_e|}}\le f(H)-f(\varnothing).
@@ -124,8 +124,8 @@ If \(f\) is integer-valued with range \(R=f(E)-f(\varnothing)\), an inclusion-mi
 
 The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md\#7-integral-submodular-prefix-values}{ordered value-summary construction} also permits the two-stage improvement above. With \(K_f=\min\{N,\lfloor R\Gamma(h,d)\rfloor\}\), first form that prefix summary, then apply value-preserving reverse deletion to it. This retains at most \(RC\) items with \(O((N+K_f(K_f+1))\sum_{i=0}^{h}(dR)^i)\) value queries. The numerical range \(R\) is a parameter; this is not a bound polynomial in the binary length of \(R\).
 
-\hypertarget{the-weighted-boundary-is-an-explicit-obstruction}{%
-\subsection{6. The weighted boundary is an explicit obstruction}\label{the-weighted-boundary-is-an-explicit-obstruction}}
+\hypertarget{af-240b5086c5-the-weighted-boundary-is-an-explicit-obstruction}{%
+\subsection{6. The weighted boundary is an explicit obstruction}\label{af-240b5086c5-the-weighted-boundary-is-an-explicit-obstruction}}
 
 Start with a rank-four matroid on eight classes: every four-set is a basis except \(\{0,1,2,3\}\), \(\{0,1,4,5\}\), \(\{0,1,6,7\}\), \(\{2,3,4,5\}\) and \(\{2,3,6,7\}\). Different forbidden sets intersect in at most two elements, so among two or more one-element exchanges sharing a three-set at most one is forbidden. This proves basis exchange.
 
@@ -135,8 +135,8 @@ For any \(h\ge2\), prepend \(h-2\) copies of an underlying four-element basis, e
 
 The represented lift is unaffected; the underlying eight-class matroid is not representable over any field, as proved in the obstruction manuscript. The rank-only theorem is also unaffected: the same 13-item example has a nine-item restriction preserving every required surviving rank.
 
-\hypertarget{exact-low-rank-weighted-boundary-under-two-failures}{%
-\subsection{7. Exact low-rank weighted boundary under two failures}\label{exact-low-rank-weighted-boundary-under-two-failures}}
+\hypertarget{af-240b5086c5-exact-low-rank-weighted-boundary-under-two-failures}{%
+\subsection{7. Exact low-rank weighted boundary under two failures}\label{af-240b5086c5-exact-low-rank-weighted-boundary-under-two-failures}}
 
 Let \(B_0\) be the unfailed canonical basis. For each single label failure, count the appearances of replacement item \(e\notin B_0\) in its canonical basis by \(t_e\), and put \(T=\sum_e t_e\le r\). The complete \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure companion} proves
 
@@ -153,8 +153,8 @@ Three-copy partition matroids attain \(3r\). The 13-item obstruction attains the
 
 For the additional singleton case, rank-loss superadditivity confines all new winners to pairs of witness labels, together with pairs containing the label of \(x\). Contracting the other original-basis elements yields a rank-\(t\) circuit. Two explicit flat-intersection calculations preserve these tests even when contracted elements carry failed labels. In that quotient, a later item resolves the edges of a complete multipartite graph, except possibly edges incident to its own failed label. The unresolved graph has clique blocks; the potential \(\sum_B(2|B|-3)\) drops at least one for each new winner. It starts at \(2t-1\) for labelled \(x\), giving \(r+1+(2t-1)=r+2t\). The complete proof, a faster query enumeration and sharp binary representations appear in Theorem 3 of the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure companion}.
 
-\hypertarget{complete-proofs}{%
-\subsection{Complete proofs}\label{complete-proofs}}
+\hypertarget{af-240b5086c5-complete-proofs}{%
+\subsection{Complete proofs}\label{af-240b5086c5-complete-proofs}}
 
 \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md}{Represented lift and field construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md}{arbitrary-matroid and submodular proofs}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md}{weighted oracle FPT construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md}{weighted two-failure obstruction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure profile bounds and exact rank-four maximum}.
 

@@ -1,9 +1,12 @@
 # Strong forests from uncontracted Steiner cores, without recursive degree resets
 
-**Conditional composition theorem.** The static provider, native
-selected-record transcript and outer cover interfaces remain named
-premises. Local forest lifting and parameter accounting do not by
-themselves implement those providers.
+**Theorem and proof.** The construction combines the
+[normalized static provider](../../manuscripts/graph-backends/linear-parameter-static-sparsifier.md),
+the native selected-record construction in Sections 1–3, and the
+published cover/hopset algorithms identified in [sources.md](sources.md).
+Sections 4–13 supply the uncontracted forest lift and its complete
+occurrence and update accounting. The generic interfaces remain explicit;
+each is supplied by the named local construction or published theorem.
 
 The construction uses native child identities that are subsets of parent identities. The earlier bounded-degree variant in [steiner colored pool strong forest candidate](../../manuscripts/graph-backends/steiner-colored-pool-strong-forest-candidate.md)
 is optional; its source vertex-deletion adapter is not needed here.
@@ -600,7 +603,7 @@ whole decremental history. The complete local reduction is
 It makes no additional simple-path reporting claim for the forest's
 possibly repeated physical projection.
 
-## 15. Local proof and dependency boundary
+## 15. Completed construction and review scope
 
 The linked local reviews address the following mathematical obligations:
 
@@ -627,9 +630,12 @@ The second focused review is
 [steiner pool metric inventory focused audit](../../manuscripts/graph-backends/steiner-pool-metric-inventory-focused-audit.md), including its
 final comparison with this main proof. The exact application and
 current comparison are recorded in
-Sections 14 and 16 of this primary proof. These internal review
-documents do not remove the retained provider hypotheses or constitute
-independent external certification.
+Sections 14 and 16 of this primary proof. The static provider, native
+transcript, local pool lift and published outer covers together establish
+the instantiated theorem. Their graph models and parameter ranges
+remain explicit in [the source map](sources.md). The linked reviews
+cover the complete no-reset construction; they are internal mathematical
+reviews rather than external certification.
 
 
 ## 16. Exact deterministic Gomory--Hu trees
@@ -637,8 +643,8 @@ independent external certification.
 For an arbitrary undirected graph, including parallel edges and
 disconnected components, with nonnegative polynomial-range integer
 capacities on nonloop edges, the deterministic reduction gives an exact
-cut-equivalent tree under the stated forest, exact-flow, skeleton and
-fixed-parameter guide-tree interfaces, in
+cut-equivalent tree by combining the constructed forest and guide-tree
+adapter with the named exact-flow and skeleton theorems, in
 <!-- math-display: 9cd2459882c0607d37de52f9
 O(n+m)+(m+1)E_6(n+m).
 -->
@@ -669,10 +675,24 @@ application audits still pay for:
 * all graph contractions, guide-family inventory, recursion,
   and final exact tree construction.
 
-The separately audited exact flow factor is at most the <code class="math">4/5</code>
-scale. The skeleton factor has leading power <code class="math">5/6</code>. Both are
-asymptotically absorbed by <code class="math">E_6</code>, even with fixed powers and
-fixed polylogarithmic factors. Replacing the forest interface
+One choice for the exact-flow calls is Theorem 6.17 of van den Brand and coauthors,
+[*Almost-Linear Time Algorithms for Decremental Graphs: Min-Cost Flow
+and More via Duality*](https://arxiv.org/html/2407.10830v1), with its
+printed leading power <code class="math">5/6</code>. The self-contained
+[capacity-bit reduction](../../manuscripts/graph-backends/published-flow-capacity-scaling.md)
+ensures that every recursive oracle call satisfies the theorem's
+polynomial-range condition in its own actual edge count. It charges
+the bit stages and explicit flow/cut output without padding small
+instances. This gives an alternative dependency route using the literal
+published theorem. The earlier four-fifths flow construction also fits
+the application; the capacity-bit route reduces the local proof imports
+without repairing a missing proof of that construction.
+
+The skeleton factor also has leading power <code class="math">5/6</code>.
+Both factors are asymptotically absorbed by <code class="math">E_6</code>,
+even with fixed powers and fixed polylogarithmic factors. The expander
+construction's structural quality retains its separate
+<code class="math">4/5</code> scale. Replacing the forest interface
 therefore introduces no new larger term.
 
 This is a substitution of a fully specified strong forest,

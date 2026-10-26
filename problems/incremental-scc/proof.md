@@ -19,12 +19,13 @@ upper-capacity barrier. It also implements contractions by explicitly
 paid endpoint retargeting, using the exact nonzero-base and retirement
 interface developed in this research round.
 
-This is not a new first almost-linear SCC algorithm. Its quantitative
-consequence is conditional on the current raw backend and exact
-flow-maintenance bridge. In particular, a threshold-flow headline alone
-does not imply this white-box client.
+The quantitative result composes the raw-cycle construction with the
+exact flow-maintenance bridge. Section 1 retains the generic interface
+statement and identifies its constructed four-fifths instantiation.
+The high-flow contraction principle and earlier almost-linear SCC
+algorithms remain credited to the public source above.
 
-## 1. Claimed interface and bound
+## 1. Generic interface and instantiated bound
 
 Let the original vertex set have size <code class="math">n</code>, and let at most <code class="math">m</code>
 directed edge records be inserted. Parallel edges and self-loops are
@@ -59,11 +60,20 @@ external insertion. This assertion does not include a topological
 ordering of the quotient, or a fast path witness between vertices in
 one component.
 
-For the stated raw engine
+**Instantiated theorem.** The raw engine in
+[the quantitative construction, Sections 1–7](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
+has
 <code class="math">E(N)=\exp O(U^{4/5}(\log U)^{1/5})</code>, (1) has the same
 four-fifths exponent. The <code class="math">O(\log n)</code> endpoint-retargeting and
 label-write factors below are explicit polynomial logarithmic factors,
 not an extra oracle loss at every recursive level.
+The [exact base-register construction](../../manuscripts/graph-backends/raw-cycle-to-frozen-detector-bridge.md),
+Sections 2 and 6, and the
+[lifetime construction](../../manuscripts/graph-backends/numerical-backend-lifetime-and-loops.md),
+Sections 1–4, supply nonzero-base insertion, exact reads and signed/absolute
+retirement. Section 7 below uses these operations to retarget endpoints
+atomically. Thus the generic client gives the displayed deterministic
+SCC bound using constructed interfaces and their named published inputs.
 
 ## 2. Quotient graph, circulation, and slack offsets
 
@@ -452,7 +462,7 @@ initial labels have time zero. ∎
 
 This is an unconditional consequence of any exact merge-only partition
 maintained by the specified small-to-large labels. The fast SCC update
-bound still has its raw-backend premises. A topological order and
+bound uses the constructed raw backend identified in Section 1. A topological order and
 within-component path reporting are separate output contracts.
 
 ## 10. Novelty comparison and the topological-order boundary

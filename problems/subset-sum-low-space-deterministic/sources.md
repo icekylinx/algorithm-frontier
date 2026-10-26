@@ -78,6 +78,11 @@ Arbitrary-input correctness, the storage schedule and the asymptotic
 costs are mathematical proofs in the manuscripts, rather than conclusions
 of finite enumeration.
 
+These proof interfaces are closed for the general theorem. The absence of
+a whole-solver implementation or proof-assistant formalization is an
+implementation or verification boundary, not an additional theorem premise.
+The separate short-range theorem retains exactly its stated input promise.
+
 ## Source lineage
 
 The bibliography in [proof.md](proof.md#references) retains the classical

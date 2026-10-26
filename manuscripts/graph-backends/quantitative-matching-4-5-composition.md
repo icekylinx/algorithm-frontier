@@ -1,6 +1,6 @@
 # A 4/5 research composition from sequential expander routing
 
-**Separate research theorem candidate, 24 October 2026.** This note gives
+**Research construction, 24 October 2026.** This note gives
 the complete quantitative composition using the sequential expander
 router and static sparsifier constructed in the linked provider notes.
 Their mathematical proofs, including the repaired half-matching entropy
@@ -23,6 +23,18 @@ compaction. Section 9 gives the optional exact matching-size kernel.
 This is a research proof assembly with named dependencies, not an
 externally verified implementation. Exact output verification and the
 proof of the faster running time are separate claims.
+
+**Instantiated conclusion.** Sections 1–8 expose the component interfaces
+so that the parameter calculation can be checked separately. Their
+antecedents are supplied by the linked sequential router, static provider,
+repair, raw-lift, lifetime and finite-bit constructions.
+[Theorem 11.6 of the matching manuscript](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization)
+collects the suppliers, verifies their common parameter range and
+composes them into the deterministic cycle-search algorithm. Thus the
+four-fifths result is the instantiated research theorem. The phrase
+“additional primitive” below denotes this locally constructed provider,
+not an unsolved existence or implementation premise. The current
+executable reference solver has separate polynomial bounds.
 
 ## 1. The additional primitive and its literal output type
 
@@ -545,9 +557,10 @@ The raw denominator does not exceed an inherited upper
 certificate, so using it improves the ratio. Internal
 arithmetic still pays (36).
 
-These executable guards do not establish the imported mathematical
-contracts. Eventual nonfailure and fast completion require the
-supplied primitive and lifetime proofs.
+These executable guards do not establish the mathematical interfaces.
+Eventual nonfailure and fast completion follow from the supplied
+construction and lifetime proofs, assembled in the realization theorem
+linked above.
 
 ## 8. Decoupled exact matching client
 
@@ -616,7 +629,8 @@ input, all prior states satisfy those interfaces. Physical debt,
 padded debt, and prefix estimates bound the attempted operation.
 Equations (15)--(44) then place its work and state within the
 declared caps, contradicting first failure. This argument is
-conditional on the mathematical primitive, not on a verifier.
+an application of the supplied construction theorems, not a consequence
+of output verification.
 
 ## 9. One finite program, all graphs, and an optional kernel
 
@@ -650,12 +664,14 @@ budget. The classical branch ensures termination and exact
 output even when another branch suspends or makes an
 incorrect early LOW claim.
 
-Under the additional primitive theorem, one fixed pair has
+The additional primitive is supplied by the explicit constructions in
+Sections 1–2 and the realization theorem. Consequently one fixed pair has
 the eventual fast bound (44), and its budget share is a
 fixed positive constant. The same finite program handles
 all finite exceptional sizes through the classical branch,
-without knowing their threshold. This proves the conditional
-time bound (1).
+without knowing their threshold. This proves the instantiated time
+bound (1). If this parameter argument is reused with another provider,
+that provider must separately establish the same interfaces.
 
 Optionally compute an exact matching-size kernel before
 starting workers. A maximal matching gives a vertex cover

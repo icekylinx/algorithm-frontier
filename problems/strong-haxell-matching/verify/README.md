@@ -9,7 +9,7 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 
 - Current layers retain failed-extension and maximality certificates. Weighted signatures count attempted operations, epochs and stored layer data.
 - The output is an explicit left-perfect matching or a right-vertex hitting set refuting the quantified strong promise.
-- Routing states its destructive-distance backend and stretch conditions; expander packing retains its density hypothesis and charges one shared routing instance.
+- Routing states a generic destructive-distance interface and instantiates it with the [constructed support extractor](../../../manuscripts/graph-backends/destructive-apsp-path-support-extractor.md) and [APSP oracle](../../apsp-frontier/proof.md). Expander packing retains its density hypothesis and charges one shared routing instance.
 - The same sharper rate is derived for the public BHHS operation sequence by weighted reanalysis.
 
 ## Executable evidence
@@ -18,7 +18,7 @@ No result-specific executable check is supplied. The argument above is a mathema
 
 ## Model and verification boundaries
 
-The hypergraph is explicitly listed and hitting sets use right vertices. A failed-promise certificate need not exclude every left-perfect matching. Routing and packing retain their named backend and density hypotheses. No exclusive speed advantage over the public reanalysis, implementation, or executable validator is claimed.
+The hypergraph is explicitly listed and hitting sets use right vertices. A failed-promise certificate need not exclude every left-perfect matching. Routing and packing use the named local constructions and public algorithms, with their stated numerical, hitting and density conditions. No exclusive speed advantage over the public reanalysis, implementation, or executable validator is claimed.
 
 The [source map](../sources.md) identifies the actual proof dependencies. Repository checks validate the registry, links, notation and generated catalogue; those checks do not establish mathematical correctness. Proof-assistant verification and external peer review are not claimed.
 

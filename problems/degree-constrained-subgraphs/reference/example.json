@@ -1,0 +1,8 @@
+{
+  "n": 5,
+  "edges": [[0, 1], [1, 0], [0, 2], [0, 3]],
+  "edge_ids": ["parallel-a", "parallel-b", "to-2", "to-3"],
+  "lower": [0, 0, 0, 0, 0],
+  "upper": [1, 1, 1, 1, 0],
+  "objective": "maximum"
+}

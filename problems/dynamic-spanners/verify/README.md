@@ -5,10 +5,13 @@ the full-horizon five-sixths construction separate. They have different
 recourse contracts even when a headline stretch expression looks similar.
 
 Flat projection, clipped reporting, finite horizons, restart charges and
-published-edge changes are accounted for explicitly. The numerical bounds
-retain their stated routing/hierarchy premises. A support or stretch proof
-does not by itself establish update work or recourse. No end-to-end dynamic
-spanner implementation is supplied.
+published-edge changes are accounted for explicitly. The
+[constructed APSP hierarchy](../../apsp-frontier/proof.md),
+[flat witness family](../../../manuscripts/graph-backends/destructive-apsp-path-support-extractor.md)
+and [clipped-reporting construction](../../../manuscripts/graph-backends/clipped-walk-queries-and-dynamic-spanner.md)
+supply the generic lemmas' inputs, including update work and recourse.
+Both complete theorem instantiations are ready for review. No executable
+end-to-end dynamic spanner is supplied.
 
 The zero-edge class extension is a local deterministic reduction ready
 for review. It preserves zero-cost connectivity by current output

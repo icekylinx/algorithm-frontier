@@ -1,11 +1,71 @@
 # History
 
+## 2026-10-26 — Restored checkpoint results and a third Subset Sum lookup
+
+- Recovered all 36 supplied checkpoint archives and matched every archive
+  fingerprint to its existing manifest, including the separate X import.
+  The original source comparison restores the completed four-fifths
+  matching and graph constructions. Generic interface hypotheses now link
+  explicitly to their realizing proofs. Mathematical proof readiness,
+  software coverage and formal verification are separate records.
+- Corrected the earlier consolidation's mistaken treatment of absent fast
+  executable code as an unresolved mathematical hypothesis. Matching,
+  min-cost flow, incremental SCC/SSSP, the APSP curve, both spanner regimes,
+  strong forests, fixed-k cut-tree construction and routing/packing retain
+  their proved checkpoint results and precise input/output promises.
+- Restored the complete general low-space Subset Sum theorem and the full
+  uniform fast compiler to their review scopes. The third positive-containment
+  lookup adds 16 final-source branches, with 317138 accepted leaves and
+  634268 visited nodes. Together with the unchanged 62-branch menu it gives
+  E3=158153814247997/319021177919134, below 0.495748. The preserved F2 ledger
+  remains independently runnable; provenance checks and clean recomputation
+  are explicitly different verification modes.
+- Credited the four-times-matching-number vertex reduction to the original
+  24 October direct checkpoint. The later reference implementation,
+  independent certificates and bipartite acceleration are subsequent work.
+  The published-flow capacity adapter is an additional proof route; the
+  earlier local four-fifths flow construction was already present.
+- Shortened the three selected homepage entries and retained the complete
+  problem index. Human-facing formulas use static presentation; TeX, code,
+  catalogues, manifests and receipts keep their literal machine-readable data.
+
+## 2026-10-26 — Complete reference packages and sharper local reductions
+
+- Accelerated both crossing compression and final bipartite matching with
+  a nonrecursive phase algorithm. The matching-number exponent is 5/2 on
+  bipartite retained components, including a linear cover certificate;
+  other components retain the cubic guarantee and the same certificate format.
+- Added an executable degree-interval and cardinality solver on native
+  loopless multigraphs. Feasibility and optimum outputs have separately
+  checkable witnesses, including certified exclusion of all better sizes.
+- Added an explicit capacity-bit adapter to the published deterministic
+  integral min-cost-flow theorem, giving an alternative Gomory–Hu flow
+  route with actual-call size bounds. The earlier local flow construction
+  retains its own completed dependency chain.
+- Improved exact laminar recovery to a self-contained 10/9 quadratic
+  exponent coefficient, or 5/9 with the precisely named locally explicit
+  universal-set theorem. Added homogeneous completion, projected coloring
+  identities, histogram costs, compatible-cut quotas and the two-weight
+  oracle/encoded-program lower-bound distinction.
+- Tightened the signed Boolean interval compiler to at most two boundary
+  intervals per halving, each containing at most the original support many
+  integers; independently checked the entire slack and signed-radix reduction.
+- Published scoped matching and two-failure matroid PDFs in the hash-matched
+  original Subset Sum style, expanded the TeX source exports, and removed
+  duplicated proof paragraphs. PDF publication requires source bindings,
+  warning-free typesetting and visual page review.
+- Replaced direct Markdown mathematics by literal inline notation and
+  self-contained displayed SVGs throughout the repository. The actual fast
+  Subset Sum page loaded all 273 formula images without a math interpreter.
+  Corrected a stale weaker value in its top theorem display to agree with
+  the already verified 62-branch ledger.
+
 ## 2026-10-26 — Smaller matching solves, a tighter exponent and prefix summaries
 
-- Reduced the exact matching solver, including its independent optimality
-  certificate, to O(n+m log(m+2)+sum_i nu(G_i)^3). A maximum crossing matching
-  preserves every cover subset and limits each blossom solve to at most
-  four times the component matching number. A connected 420-vertex example
+- Implemented the early checkpoint’s cover-side compression in the exact
+  matching solver, including its independent optimality certificate, giving
+  O(n+m log(m+2)+sum_i nu(G_i)^3). Its original preservation lemma limits
+  each blossom solve to at most four times the component matching number. A connected 420-vertex example
   now solves on 40 vertices while certification still checks the larger kernel.
 - Generalized the second Subset Sum lookup and replayed all 62 exact branches.
   A finite-volume cone lemma then extends every contact continuously; the
@@ -29,9 +89,11 @@
   optimality verification. Its simultaneous failed-search forest constructs
   a tight odd-component certificate in quadratic additional work, so the
   complete solver with certificates retains its cubic bound.
-- Replaced opaque cycle-search labels with the required operations, named
-  primary theorems and the exact remaining implementation gap. Proved the
-  detector's difference-constraints potential lemma locally.
+- Replaced opaque cycle-search labels with the required operations and
+  named primary theorems. The initial edit incorrectly described the missing
+  fast executable implementation as a mathematical gap; the checkpoint
+  restoration above corrects that classification. Proved the detector’s
+  difference-constraints potential lemma locally.
 - Improved persistent component first-coalescence queries to
   O(1+log log(n+2)) using the common suffix of permanently retired labels.
   Added exact checks for those histories, clipped-tree path reporting,
@@ -103,7 +165,8 @@
 
 - Ordered the homepage highlights as deterministic general-graph matching,
   faster deterministic Subset Sum, and sharp correlated-failure summaries.
-  The matching backend conditions remain visible in its headline.
+  The matching dependency scope was displayed; its incorrect conditional
+  classification was later corrected by the checkpoint restoration above.
 - Tightened the matching kernel cutoff from c+1 to c neighbors and proved
   its sharpness, componentwise cost refinement, and a c+f-neighbor kernel
   for native mixed edge/vertex failures on a fixed simple graph.
@@ -111,8 +174,8 @@
   and ranged cardinality with one feasibility call. Added independent finite
   checks for kernels, decoders, selectors, and cardinality gadgets.
 - Introduced synchronized, scope-specific review statuses. A completed local
-  proof does not promote an unresolved backend implementation; the evidence
-  registry states remaining conditions beside each review invitation.
+  proof and executable implementation have separate evidence scopes; the
+  checkpoint restoration above corrects earlier overly narrow classifications.
 
 ## 2026-10-26 — Compact problem index
 
@@ -154,7 +217,7 @@
 - Consolidated the checkpoint trees into semantic manuscript paths, integrated superseded source copies, removed redundant review pointers and broken verification wrappers, and retained imported licenses and canonical provenance mappings.
 - Preserved results that were absent from the old display, including the two-short-range Subset Sum branch, slot-surplus scheduling, optional-player intrinsic allocation, safe machine contraction, eligibility/collision refinements, exact-two parameter boundaries, and expander packing.
 - Corrected allocation and scheduling scope and accounting: activated-basis enumeration, bucket bases, fixed-integer two-time parameters, exact fractional comparators, full original resource totals, and the separation between compulsory and optional players.
-- Clarified graph backend assumptions, positive-length SSSP scope, the five-point APSP tradeoff, separate spanner recourse regimes, and the derived public MSF baseline. General matching retains its explicit the deterministic cycle-search implementation requirement condition.
+- Clarified graph backend assumptions, positive-length SSSP scope, the five-point APSP tradeoff, separate spanner recourse regimes, and the derived public MSF baseline. The graph conditional labels introduced in that consolidation were later corrected after restoring the earlier realizing proofs; see the checkpoint restoration above.
 - Formalized the laminar quadratic bound and the numeric-target budget classification; retained distinctions between oracle-query and explicit-input lower bounds, kernel size and construction time, and weighted versus rank-only interfaces.
 - Reconstructed a self-contained exact continuous-domain Subset Sum checker. Its full refined menu passed all 44 branches with 188,227 accepted leaves. A separate exact scalar checker verifies 104 one-sided profile comparisons and the outer exponent ledger.
 - Added scoped profile, sensitivity and quotient-rounding checks, retained the substantive low-space and energy certificates, and accelerated the exhaustive two-scenario reduction check without changing its finite coverage.

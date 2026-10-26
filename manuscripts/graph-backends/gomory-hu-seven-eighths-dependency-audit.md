@@ -50,7 +50,7 @@ shortest-path oracle. Both distinctions matter to the claimed bound.
 
 Write AKL+ for Abboud, Kyng, Li, Panigrahi, Probst Gutenberg, Saranurak,
 W. Yuan, and W. Yuan,
-[arXiv:2507.20354v1](https://arxiv.org/html/2507.20354v1).
+[*Deterministic Almost-Linear-Time Gomory-Hu Trees*](https://arxiv.org/html/2507.20354v1).
 The public components used are identified below, rather than treated as
 one unspecified <code class="math">m^{1+o(1)}</code> black box.
 
@@ -61,7 +61,7 @@ one unspecified <code class="math">m^{1+o(1)}</code> black box.
 | Tree packing | AKL+ Theorem 4.23 | <code class="math">\widetilde O(m_H\lambda_H)</code>, with <code class="math">\lambda_H\le F_L</code> at constant accuracy |
 | Mincuts respected by one guide tree | New global-max leaf adapter in [deterministic-fixed-k-tree-mincut-adapter.md](deterministic-fixed-k-tree-mincut-adapter.md), using the public centroid framework | A fixed polynomial logarithm times deterministic exact maxflow, with proved aggregate actual-instance inventory |
 | Partial to full single-source mincuts | AKL+ Algorithm 8 | <code class="math">O(\log(nW))</code> partial calls |
-| Terminal expander decomposition | AKL+ Appendix A | Work and structural factor <code class="math">\exp O(U^{4/5}h^{O(1)})</code> |
+| Terminal expander decomposition | AKL+ Appendix A | Work factor <code class="math">\exp O(U^{5/6}h^{O(1)})</code>; structural factor <code class="math">\exp O(U^{4/5}h^{O(1)})</code> |
 | Terminal selection and cut decomposition | AKL+ Section 6 | Fixed powers of the preceding factors, of <code class="math">\psi^{-1}</code>, and of logarithms |
 | Final Gomory--Hu recursion | AKL+ Lemma 6.32 and Claim 6.33 | Polylogarithmic total instance inventory |
 
@@ -70,11 +70,17 @@ upper bound on the actual record inventories in the application. It is
 polynomially related to the original input size. A small recursive call
 is charged by its actual size, never padded to <code class="math">N</code>.
 
-The deterministic exact maxflow used in this table can be the
-independently audited public <code class="math">4/5</code> retuning in
-[public-dual-reoptimization.md](public-dual-reoptimization.md) and
-[public-dual-uniform-wrapper-audit.md](public-dual-uniform-wrapper-audit.md). The static <code class="math">4/5</code> flow result
-is not counted as a new separation in this application.
+The deterministic exact maxflow used here comes from Theorem 6.17 of
+van den Brand and coauthors,
+[*Almost-Linear Time Algorithms for Decremental Graphs: Min-Cost Flow
+and More via Duality*](https://arxiv.org/html/2407.10830v1).
+Its printed leading logarithmic power <code class="math">5/6</code> already
+fits below the forest overhead. The self-contained
+[capacity-bit reduction](published-flow-capacity-scaling.md) applies that
+theorem to small recursive graphs whose capacities are polynomial in the
+original input size. Every solver call has capacities bounded by its own
+actual edge count; no graph is padded to the original size. This
+application therefore has no dependency on a four-fifths flow retuning.
 
 ## 2. A cut-preserving bounded-degree input for each packing call
 
@@ -732,9 +738,11 @@ m_*\mathrm{poly}(U)\,
 ![Formula](../../assets/math/7d43bf877d470bbd75d0eace.svg)
 
 where all <code class="math">C_i</code> are fixed constants and
-<code class="math">\log E_{\rm flow}=O(U^{4/5}h^{O(1)})</code>. Small recursive instances
-may use their own smaller oracle parameters; (29) is simply a uniform
-upper envelope multiplied by their actual size.
+<code class="math">\log E_{\rm flow}=O(U^{5/6}h)</code>.
+The [capacity-bit reduction](published-flow-capacity-scaling.md) pays
+the actual inventory and bit stages of every recursive flow call,
+including small calls and explicit cut output. Equation (29) is its
+uniform upper envelope, multiplied by the actual input size.
 
 AKL+ Lemma 6.32 bounds the sum of all recursive edge inventories by a
 polynomial logarithm times the original size, because the terminal

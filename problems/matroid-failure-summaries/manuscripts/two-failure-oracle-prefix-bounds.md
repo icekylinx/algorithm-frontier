@@ -646,10 +646,6 @@ Theorem 3 also shows that any violation needs at least two distinct
 replacement items in the one-failure union. The example has exactly two,
 so it attains this minimum as well.
 
-Theorem 3 also shows that any violation needs at least two distinct
-replacement items in the one-failure union. The example has exactly two,
-so it attains this minimum as well.
-
 The example's powers-of-two costs make the relevant optimum bases
 unique. Its 13 items are therefore necessary even if a restriction need
 only preserve the fixed optimum-cost values. The upper results in this
@@ -689,18 +685,6 @@ checked on all coarsenings of the example's labels into three classes
 or the unlabelled core. The general bounds and minimality results
 are proved in Sections 4--7; these finite checks are supporting evidence,
 not an exhaustive enumeration of all matroids at those ranks.
-
-The separate [singleton-profile checker](../verify/check_single_replacement.py)
-compares the localized-pair algorithm with every original canonical
-basis. It covers the zero-extra case, the sharp represented examples,
-small arbitrary matroids, and coarsenings and seeded orders of the
-nonrepresentable example. It checks the quotient equivalence even when
-contracted basis items fail, promotes original-basis items independently,
-and verifies every decreasing-potential step. A separate enumeration
-checks all graphs reachable by protected or unprotected binary cuts
-on complete graphs of sizes two through six. Its block decomposition
-is computed from graph edges, without assuming the clique invariant.
-Both checkers refuse optimized Python mode that would disable assertions.
 
 The separate [singleton-profile checker](../verify/check_single_replacement.py)
 compares the localized-pair algorithm with every original canonical

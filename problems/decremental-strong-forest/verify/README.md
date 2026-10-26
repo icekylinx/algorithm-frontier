@@ -1,8 +1,10 @@
 # Verification and proof scope
 
-The proof separates metric stretch, strong-forest congestion and
-update work. Its no-reset and actual-size bookkeeping belong to the claimed
-interface and must not be replaced by an uncharged restart.
+The complete six-sevenths construction is ready for review. The proof
+separates metric stretch, strong-forest congestion and update work;
+the no-reset lift, full-pool inventory, historical cover ownership and
+actual-size recurrence are proved in the manuscript and its linked
+component reviews.
 
 The nonnegative-integer adapter in Section 14.1 is ready for review
 as a local reduction. It runs the positive-length algorithm on one
@@ -14,9 +16,23 @@ physical forest projection into an output-sensitive simple path.
 
 The Gomory--Hu application is a separate composition. It accounts for
 general-degree adapters, fixed geometric copies, canonical projection,
-terminal selection and the fixed-parameter external factors. Each
-quantitative claim keeps its stated forest or hierarchy premises. No complete
-dynamic forest or Gomory--Hu implementation is supplied.
+terminal selection and fixed-parameter factors. The
+[global-max guide-tree adapter](../../../manuscripts/graph-backends/deterministic-fixed-k-tree-mincut-adapter.md)
+and [application proof](../../../manuscripts/graph-backends/gomory-hu-seven-eighths-dependency-audit.md)
+close its internal interfaces; the named public cover, skeleton and
+exact-flow theorems retain their stated ranges. No complete executable
+fast dynamic forest or Gomory–Hu solver is supplied.
+
+Its [capacity-bit flow adapter](../../../manuscripts/graph-backends/published-flow-capacity-scaling.md)
+is ready for review as a self-contained reduction. It applies the literal
+published deterministic exact-flow theorem to small recursive graphs
+without global-size padding. It is an alternative to the already proved
+four-fifths flow route, using fewer local construction dependencies. The
+[finite checker](../../min-cost-flow/verify/check_capacity_scaling.py)
+compares all scaling stages and residual truncations with independently
+enumerated cuts, including parallel/reverse records and zero-bit stages.
+A separate exhaustive circulation check validates the negative return
+edge. These checks exercise the adapter, not the published fast solver.
 
 The native forest work <code class="math">(n+m)E_{6/7}</code> and the cut-tree application's
 <code class="math">O(n+m)+(m+1)E_{6/7}</code> are distinct claims. Removing zero-capacity

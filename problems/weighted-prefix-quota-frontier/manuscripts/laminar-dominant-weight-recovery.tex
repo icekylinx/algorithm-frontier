@@ -1,0 +1,426 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/weighted-prefix-quota-frontier/manuscripts/laminar-dominant-weight-recovery.md
+% Recovered-source SHA-256: aed8f8743f51b49329925843bcf08b4e662a658bb4116ac9dd308eba1c7d5379
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-fe230a140d-faster-exact-recovery-for-laminar-quotas-by-fixing-the-uncommon-weights}{%
+\section{Faster exact recovery for laminar quotas by fixing the uncommon weights}\label{af-fe230a140d-faster-exact-recovery-for-laminar-quotas-by-fixing-the-uncommon-weights}}
+
+This manuscript improves the explicit quadratic exponent in the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/weighted-prefix-quota-frontier/proof.md}{common-weight laminar algorithm} using its existing representative replacement lemma. Recovery enumerates only the selected units outside a most frequent positive weight and completes the remaining units by polynomial optimization. The same completion gives a polynomial-time algorithm when the prepared instance has only one positive weight value. Cardinality-aware accounting in Section 8 sharpens the elementary time bound to \(2^{(10/9)B^2+O(B\log(B+1))}\mathrm{poly}(H)\); the specific published locally explicit universal-set theorem stated there gives \(2^{(5/9+o(1))B^2}\mathrm{poly}(H)\) with the same space guarantee.
+
+\textbf{Scope.} One global normalized monotone integral polymatroid, a laminar family of numeric lower and upper bounds, and one common nonnegative integer weight vector for those rows. The scalar objective has arbitrary signed rational coefficients. Every original mandatory resource total and every real zero-weight coordinate, including its actual cost, is retained. The model and the paid exact oracle operations are those of \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/weighted-prefix-quota-frontier/proof.md\#1-model-and-theorem}{the main proof}.
+
+\textbf{Review status.} Ready for review in this scope after an independent proof pass and the finite checks in Section 7. The executable evidence checks the new count-rank and recovery mechanisms; it does not implement the earlier representative catalogue or a general weighted polymatroid intersection solver.
+
+\hypertarget{af-fe230a140d-the-basic-recovery-bound-and-its-prerequisites}{%
+\subsection{1. The basic recovery bound and its prerequisites}\label{af-fe230a140d-the-basic-recovery-bound-and-its-prerequisites}}
+
+Let \(B\) be the integer root cap on total positive numeric mass, and let \(H\) be the full encoded input length, including the stated polynomial-bit rank-oracle model. The prepared positive coordinates have weights in a finite set
+
+\[
+W=\{w_1<\cdots<w_s\},\qquad
+\eta(W)=
+\begin{cases}
+0,&s\le1,\\
+\displaystyle\max_{2\le j\le s}
+\frac{j-1}{w_1+\cdots+w_j},&s\ge2.
+\end{cases}
+\tag{DW1}
+\]
+
+Weights exceeding \(B\) and empty prepared positive classes are discarded before forming \(W\): no such unit can be selected. This removal does not lower a mandatory resource total. If the remaining coordinates cannot realize that original total, the algorithm returns infeasibility.
+
+\textbf{Theorem 1.} Put \(q=\lfloor B\eta(W)\rfloor\). If \(q=0\), the exact signed-scalar optimum is computable in time polynomial in \(H\). If \(q\ge1\), it is computable deterministically in
+
+\[
+2^{4Bq+O(B\log(B+1))}\mathrm{poly}(H)
+\le
+2^{4B\lfloor B/3\rfloor+O(B\log(B+1))}
+\mathrm{poly}(H)
+\le
+2^{\frac43 B^2+O(B\log(B+1))}\mathrm{poly}(H).
+\tag{DW2}
+\]
+
+All cases use workspace polynomial in the original binary input length. The \(q=0\) case bypasses both the representative catalogue and the loop over positive cardinalities. In particular, one positive weight value admits polynomial time even when \(B\) and the resource total are binary large. Minimization is stated below; negating the scalar gives maximization.
+
+This first bound improves the explicit coefficient \(4\) in the basic recovery bound of equation LC3 to \(4/3\). It retains the quadratic exponent class and does not close the existing laminar oracle lower-bound gap. Section 8 then gives the sharper bounds stated at the beginning of this manuscript.
+
+Only the following previously proved catalogue properties are used. For each fixed positive cardinality \(k\), the main proof emits at most
+
+\[
+K_k\le 2^{4B+O(\log(B+1))}L^3,
+\qquad L=O(\log(m+2)),
+\tag{DW3}
+\]
+
+positions, where \(m\) is the number of prepared upper rows. Each position can be replayed using polynomial binary space. Every feasible optimum of cardinality \(k\) has a no-worse optimum supported on the emitted union, with exactly the same positive weight multiplicities. This last assertion follows because each catalogue replacement stays in its weight and lower membership class. The completed-cost valuation and the catalogue are proved in \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/weighted-prefix-quota-frontier/proof.md}{the main proof, Sections 2--7} and \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/weighted-prefix-quota-frontier/manuscripts/laminar-valuated-zero-completion-fpt.md}{the arbitrary-zero-cost companion}.
+
+For the new completion, the only general optimization ingredients are exact submodular minimization and weighted intersection of two integral polymatroids. They are concrete classical results, rather than an unspecified additional oracle: Grötschel, Lovász and Schrijver, \href{https://ir.cwi.nl/pub/10046/10046D.pdf}{\emph{The ellipsoid method and its consequences in combinatorial optimization}}, Combinatorica 1 (1981), Sections 3--5, give the separation/optimization method and explicitly extend the intersection application to polymatroids on page 183. Schrijver, \href{https://homepages.cwi.nl/~lex/files/minsubm6.pdf}{\emph{A combinatorial algorithm minimizing submodular functions in strongly polynomial time}}, Journal of Combinatorial Theory, Series B 80 (2000), supplies a value-oracle submodular minimization algorithm. All oracle work is charged. Sections 3--4 below prove the new rank functions and the exact correspondence of their feasible vectors to original allocations.
+
+\hypertarget{af-fe230a140d-a-most-frequent-weight-leaves-few-exceptions}{%
+\subsection{2. A most frequent weight leaves few exceptions}\label{af-fe230a140d-a-most-frequent-weight-leaves-few-exceptions}}
+
+For a selected positive set, let \(n_j\) count its units of weight \(j\), let \(k=\sum_j n_j\), and let \(a=\max_j n_j\), with \(a=0\) for the empty set. There are \(k-a\) units outside a most frequent weight. The identity
+
+\[
+\sum_{j\ge1}j n_j-3(k-a)
+=3a-2n_1-n_2+\sum_{j\ge4}(j-3)n_j\ge0
+\tag{DW4}
+\]
+
+shows that \(k-a\le\lfloor B/3\rfloor\). The inequality uses \(n_1,n_2\le a\). Equal multiplicities of weights \(1,2\), or of weights \(1,2,3\), attain this histogram constant.
+
+The actual weights give the stronger \(k-a\le\lfloor B\eta(W)\rfloor\). For each integer height \(z=1,\ldots,a\), let \(S_z=\{w\in W:n_w\ge z\}\). Every \(S_z\) is nonempty and
+
+\[
+k-a=\sum_{z=1}^{a}(|S_z|-1),
+\qquad
+\sum_{w\in W}w n_w
+=\sum_{z=1}^{a}\sum_{w\in S_z}w.
+\tag{DW5}
+\]
+
+For a set of \(j\) distinct occurring weights, its sum is at least \(w_1+\cdots+w_j\). Hence \(|S_z|-1\le\eta(W)\sum_{w\in S_z}w\), also when \(|S_z|=1\). Summing proves the claim. Finally, \(w_i\ge i\), so
+
+\[
+\frac{j-1}{w_1+\cdots+w_j}
+\le \frac{2(j-1)}{j(j+1)}\le\frac13
+\qquad(j\ge2).
+\tag{DW6}
+\]
+
+The rational number \(\eta(W)\) is computable from the explicit sorted weight values with polynomial binary arithmetic. It does not require an array indexed by \(B\).
+
+\hypertarget{af-fe230a140d-laminar-count-constraints-give-one-integral-rank}{%
+\subsection{3. Laminar count constraints give one integral rank}\label{af-fe230a140d-laminar-count-constraints-give-one-integral-rank}}
+
+Let \(V\) be a finite coordinate ground with nonnegative integer caps \(c_v\). On a laminar family containing \(V\), prescribe integer bounds \(\ell_A\le z(A)\le u_A\), and prescribe the full total \(z(V)=R'\). Caps and totals may be binary large. Missing upper bounds can be replaced by the sum of the coordinate caps. Merge repeated sets by taking the largest lower and smallest upper bound; reject an inconsistent empty row.
+
+\hypertarget{af-fe230a140d-ordinary-basis-exchange}{%
+\subsubsection{3.1 Ordinary basis exchange}\label{af-fe230a140d-ordinary-basis-exchange}}
+
+Conceptually replace each coordinate \(v\) by \(c_v\) distinguishable unit copies. Lift every row to all copies of its coordinates. Suppose the family of feasible \(R'\)-element subsets is nonempty. It is the basis family of an ordinary matroid.
+
+To prove this, take feasible sets \(S,T\) and \(e\in S\setminus T\). Choose an inclusion-minimal row \(A\) containing \(e\) whose lower bound is tight at \(S\). The full-total row ensures existence. Laminarity implies that every other tight lower row containing \(e\) contains \(A\).
+
+Inside \(A\), consider the inclusion-maximal rows \(U\) with a tight upper bound at \(S\) and with \(e\notin U\). These rows are pairwise disjoint. Every tight upper row containing a candidate \(f\in A\) but not \(e\) is contained in one of these maximal rows: it intersects \(A\), and it cannot contain \(A\) while avoiding \(e\).
+
+Feasibility of \(T\) and the indicated tight bounds give
+
+\[
+|(T\setminus S)\cap A|\ge |(S\setminus T)\cap A|,
+\qquad
+|(T\setminus S)\cap U|\le |(S\setminus T)\cap U|.
+\tag{DW7}
+\]
+
+If every member of \((T\setminus S)\cap A\) were in those disjoint upper rows, summing DW7 over them would give an upper bound of \(|(S\setminus T)\cap A|-1\), because \(e\) belongs to the right-hand set and none of the upper rows. This contradicts the first inequality. Choose \(f\in(T\setminus S)\cap A\) outside them.
+
+The exchange \(S-e+f\) preserves every tight lower row that could lose a unit and enters no tight upper row that could gain a unit. Every nontight integer row tolerates that unit change. The total and available copy caps are unchanged. This proves the ordinary basis-exchange axiom. Denote the conceptual matroid by \(N\).
+
+\hypertarget{af-fe230a140d-coordinate-rank-and-exact-integer-bases}{%
+\subsubsection{3.2 Coordinate rank and exact integer bases}\label{af-fe230a140d-coordinate-rank-and-exact-integer-bases}}
+
+Define
+
+\[
+Q(A)=r_N(\text{all copies of coordinates in }A),
+\qquad A\subseteq V.
+\tag{DW8}
+\]
+
+The copy blocks are disjoint. Therefore \(Q\) is normalized, monotone, integer and submodular, and \(Q(V)=R'\). Its integer bases are exactly the original feasible count vectors.
+
+Indeed, every feasible count vector is realized by a conceptual base and satisfies all \(Q\)-rank inequalities. Conversely, let \(z\in P(Q)\cap\mathbb Z^V\) have total \(R'\). Every row and coordinate satisfy
+
+\[
+Q(A)\le u_A,
+\qquad Q(V\setminus A)\le R'-\ell_A,
+\qquad Q(\{v\})\le c_v.
+\tag{DW9}
+\]
+
+For example, the second inequality holds because every conceptual base uses at least \(\ell_A\) copies in \(A\), so no independent set in the complement can exceed \(R'-\ell_A\). The rank inequalities and total now give \(\ell_A\le z(A)\le u_A\) and \(z_v\le c_v\). Thus the literal count constraints follow directly. This argument needs no unproved assertion about projecting an integer polytope.
+
+\hypertarget{af-fe230a140d-binary-rank-access-without-creating-unit-copies}{%
+\subsubsection{3.3 Binary rank access without creating unit copies}\label{af-fe230a140d-binary-rank-access-without-creating-unit-copies}}
+
+A nonnegative integer vector \(y\) represents a conceptual independent set exactly when it extends coordinatewise to a feasible count base. Build the laminar inclusion tree, adding singleton leaves and the full root. At a leaf \(v\), start with the interval \([y_v,c_v]\) and intersect it with any singleton bounds. At an internal row, sum the feasible intervals of its children and intersect with its own lower and upper interval. Reject an empty interval, and impose \([R',R']\) at the root.
+
+This is an exact extension test. The children are disjoint, and every integer between the sum of their lower endpoints and the sum of their upper endpoints is attainable. Induction up the tree proves that the computed interval is precisely the set of feasible totals at each row. The test uses polynomial binary work and space. Test \(y=0\) first to detect an empty base family. An empty coordinate ground is feasible exactly when its total and every lower requirement are zero; its rank is then identically zero.
+
+To evaluate \(Q(A)\) for a nonempty feasible system, process the coordinates of \(A\) in any fixed order. Start with \(y=0\). For the current coordinate \(v\), increase \(y_v\) as far as the extension test permits, using binary search on \([0,\min\{c_v,R'\}]\). Previously chosen coordinates stay fixed. Extendability is monotone in \(y_v\), and this procedure is exactly matroid greedy with all copies of each coordinate consecutive. It returns \(Q(A)\) using at most
+
+\[
+O\!\left(|V|\log(2+\max_v c_v)\right)
+\tag{DW10}
+\]
+
+extension tests. The exponential conceptual copy ground is never built.
+
+\hypertarget{af-fe230a140d-exact-completion-after-fixing-the-exceptional-units}{%
+\subsection{4. Exact completion after fixing the exceptional units}\label{af-fe230a140d-exact-completion-after-fixing-the-exceptional-units}}
+
+Use the prepared mixed ground \(U\dot\cup Z\) of the main proof: positive unit copies \(U\), compressed zero-weight coordinates \(Z\), and the shared resource rank \(G\) in equation LC6. Every positive copy has resource cap at most one. The original required total is \(R\).
+
+Fix a proposed remaining weight \(w\in W\) and a set \(J\) of distinct positive copies whose weights differ from \(w\). Write \(b=|J|\). Reject unless \(b\le R\) and \(G(J)=b\). Let \(U_w\) contain \textbf{all original prepared copies} of weight \(w\), and put \(V=U_w\dot\cup Z\). Mask all other positive copies. In particular, the completion is not restricted to representative copies of weight \(w\).
+
+For each original numeric row \(A\), let \(a_A\) be the numeric mass of \(J\) in \(A\). The remaining numeric constraints are exactly
+
+\[
+\max\!\left\{0,\left\lceil\frac{\ell_A-a_A}{w}\right\rceil\right\}
+\le z(A\cap U_w)
+\le \left\lfloor\frac{u_A-a_A}{w}\right\rfloor.
+\tag{DW11}
+\]
+
+An absent upper bound stays absent; a negative upper bound rejects the branch. Intersecting all rows with \(U_w\) preserves laminarity, including after repeated projected sets are merged. Add the full mixed-ground total \(z(V)=R-b\). Give positive copies cap one and every zero coordinate cap \(R-b\) in this count system. The shared resource will still enforce each zero coordinate's original cap. Section 3 yields a rank \(Q\) with full rank \(R-b\), or an explicit infeasibility result.
+
+The other rank is the genuine contraction
+
+\[
+G_J(A)=G(A\cup J)-b,
+\qquad A\subseteq V.
+\tag{DW12}
+\]
+
+It is a normalized monotone integral polymatroid rank. To verify the fixed-unit interpretation, note first that \(G(J)=|J|\) and the unit caps imply \(G(C)=|C|\) for every \(C\subseteq J\). Submodularity then gives
+
+\[
+G(A\cup J)-b\le G(A\cup C)-|C|.
+\tag{DW13}
+\]
+
+Hence \(z(A)\le G_J(A)\) implies every original inequality using an arbitrary partial set \(C\) of the fixed copies. Conversely, the original inequality using all of \(J\) implies the contracted inequality. Thus \(z\in P(G_J)\) exactly when \(\mathbf1_J+z\) respects the resource on the masked ground.
+
+Optimize the original scalar, including its fixed contribution on \(J\), over
+
+\[
+z\in P(G_J)\cap P(Q),
+\qquad z(V)=R-b.
+\tag{DW14}
+\]
+
+This uses exactly two integral polymatroids. Their intersection is an integral polytope, and the required total selects its maximum-size face if that face exists. To implement the face requirement with a single weighted optimization, clear the scalar denominators, let \(C\) be the largest absolute resulting coefficient, and maximize \((2(R-b)C+1)z(V)-c\cdot z\). Integral feasible vectors have total at most \(R-b\), so the multiplier makes total size primary and true scalar cost secondary. Reject if the returned total is smaller. The coefficients have polynomial bit length. The case \(R-b=0\) is checked directly.
+
+By Sections 3.2 and DW13, the integer vectors in DW14 are exactly the original allocations with these fixed exceptions and all remaining positive units of weight \(w\). Every real zero coordinate retains its original signed scalar coefficient. This proves polynomial-time exact completion. It introduces neither a third intersection nor a uniform-zero-cost assumption.
+
+The procedure does not fix the remaining positive cardinality. It may return a different cardinality from the original witness. That is safe: every returned vector still satisfies the original rows and original resource total, and is compared using the original objective.
+
+For the one-weight case, apply the same construction directly to the original coordinates: take \(J=\varnothing\), use the original resource \(F\) restricted to the allowed coordinates, and give coordinates cap \(R\) in the count rank. Section 3.3 handles these binary-large caps. No positive unit expansion is needed. If optional resource was converted to a base, the existing zero-weight, zero-cost disposal coordinate remains present.
+
+\hypertarget{af-fe230a140d-recovering-an-optimum-from-the-catalogue}{%
+\subsection{5. Recovering an optimum from the catalogue}\label{af-fe230a140d-recovering-an-optimum-from-the-catalogue}}
+
+First handle the zero-only case by masking every positive coordinate and optimizing the original scalar at the required total, rejecting any positive numeric lower bound. If \(q=0\), every feasible positive set has a single weight by Section 2. Try each occurring weight with the direct completion of Section 4 and take the best original feasible answer. This is the claimed polynomial case; neither cardinality enumeration nor the catalogue is used.
+
+For \(q\ge1\), consider the catalogue for each relevant cardinality \(k\). Its replacement property supplies an optimum positive set \(S'\) in its emitted union with the original weight histogram. Choose a most frequent weight \(w\) in that histogram and let \(J\) be the units of other weights. Section 2 gives \(|J|\le q\).
+
+For every \(w\in W\), enumerate tuples of at most \(q\) emitted positions, rejecting a tuple if two positions name the same physical copy or if an entry has weight \(w\). Run Section 4 on the resulting set \(J\). There is a tuple naming the exceptional units of \(S'\). Its remaining units and original zero completion are a feasible witness for DW14. The returned cost is at most the optimum witness cost. Conversely, every accepted answer is original feasible, so no branch has a cost below the true optimum. Taking the best answer is exact.
+
+This argument uses preservation of the entire weight histogram by the earlier representatives. Preserving total weight alone would not justify the exception bound for the supported optimum.
+
+\hypertarget{af-fe230a140d-time-and-uniform-binary-workspace}{%
+\subsection{6. Time and uniform binary workspace}\label{af-fe230a140d-time-and-uniform-binary-workspace}}
+
+Let \(n\) be the number of prepared positive coordinates. In the branch \(B<n\), the positive copy ground has size at most \(nB<n^2\). There are polynomially many relevant cardinalities and occurring weight values. For each catalogue, tuples of length at most \(q\) are bounded by \((K_k+1)^q\), using padding positions. Equation DW3 gives
+
+\[
+(K_k+1)^q
+\le 2^{4Bq+O(q\log(B+1))}L^{3q}.
+\tag{DW15}
+\]
+
+Each tuple takes polynomial work in the encoded mixed ground, plus the catalogue replay already charged in the main proof. Since \(q\ge1\), catalogue construction is absorbed in the bound. The usual inequality \((\log x)^a\le(a/e)^a x\) for \(x\ge1\), with constants adjusted for the chosen logarithm base, absorbs \(L^{3q}\) into \(2^{O(B\log(B+1))}\mathrm{poly}(H)\). This proves DW2 for \(B<n\).
+
+If \(B\ge n\), retain the main proof's direct count-vector fallback: enumerate at most \((B+1)^n\) positive count vectors and solve the exact compressed zero completion for each. Its time \(2^{O(B\log(B+1))}\mathrm{poly}(H)\) is within DW2. Run the \(q=0\) algorithm before this split so that the one-weight endpoint remains polynomial even for large binary \(B\).
+
+In the first branch, \(q\le B/3<n\), and each emitted position has the same polynomial-bit replay description as before. Store one tuple, one compressed oracle instance, and the best original binary output. In the fallback, keep one vector with \(n\) binary counters. The rank algorithm in Section 3.3 never expands large zero capacities. All general optimization calls are polynomial in binary length, so workspace is uniformly polynomial in \(H\).
+
+\hypertarget{af-fe230a140d-independent-finite-checks-and-remaining-dependencies}{%
+\subsection{7. Independent finite checks and remaining dependencies}\label{af-fe230a140d-independent-finite-checks-and-remaining-dependencies}}
+
+Run from the repository root:
+
+\begin{verbatim}
+python3 -B problems/weighted-prefix-quota-frontier/verify/check_laminar_recovery.py
+\end{verbatim}
+
+The deterministic checker refuses execution with assertions disabled. It uses literal finite feasible-vector and basis enumeration as references, separate from the interval extension and grouped-copy rank procedure.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Count-rank construction:} 77,438 laminar count systems, including 60,980 empty systems; 1,480,360 extension comparisons, 200,256 rank comparisons, and 319,624 comparisons between rank bases and literal count constraints. Across 262 distinct nonempty base families it checks 14,938 ordinary unit-copy basis-exchange conditions and 28,312 rank submodularity inequalities.
+\item
+  \textbf{Binary capacity handling:} a separate instance with capacities up to \(2^{45}\) compares all 16 coordinate ranks with an independent partition formula. The interval procedure uses 672 distinct queries; it does not enumerate capacity units.
+\item
+  \textbf{Histogram bounds:} 194,016 histograms over distinct weights from one through eight, including 1,206 equalities in the actual-weight bound and 327 nonzero equalities in the universal one-third bound.
+\item
+  \textbf{Recovery and signed costs:} 600 seeded integer-polymatroid instances compare the recovered optimum with all literal original bases. The resource is a sum of two independently chosen four-element matroid ranks. The check evaluates 945 contracted two-rank models and 4,015 literal candidate vectors, including 215 infeasible instances, 550 with unequal zero-coordinate costs, 422 with a negative zero cost, 31 with root budget zero, and 212 with one positive weight value.
+\end{itemize}
+
+The refined accounting in Section 8 is also checked on 590,480 cardinality/depth/budget combinations and 6,321 actual-weight, row-count and depth combinations. These compare the exact integer maximum with direct enumeration and the stated continuous upper bound.
+
+For recovery tests, all original prepared positive copies are used as a valid superset of the earlier representative union. Thus these tests isolate and verify the new contraction, projected count rank, exact fixed-exception feasible set, and optimum recovery. They do not implement or reverify the universal-coloring catalogue, weighted Rado induction, or the polynomial intersection algorithm. Those mathematical dependencies remain explicit in Section 1 and the linked source manuscripts. No external peer review, proof-assistant verification, or literature-wide priority claim is asserted.
+
+\hypertarget{af-fe230a140d-cardinality-sensitive-catalogues-and-sharper-exponents}{%
+\subsection{8. Cardinality-sensitive catalogues and sharper exponents}\label{af-fe230a140d-cardinality-sensitive-catalogues-and-sharper-exponents}}
+
+The simple bound DW2 used the worst-case catalogue size before choosing how many exceptional units to enumerate. Keeping these two quantities together gives a smaller exponent. Let \(D\le B\) be the prepared upper forest depth, let \(m\) be its number of rows, and retain \(q=\lfloor B\eta(W)\rfloor\). The case \(q=0\) remains the direct polynomial algorithm. For each \(1\le k\le B\), define
+
+\[
+h_k=\min\{m,D+k-1\},
+\qquad q_k=\min\{q,B-k\},
+\qquad
+E=\max_{1\le k\le B} h_k q_k.
+\tag{DW16}
+\]
+
+The maximum may be restricted to the positive cardinalities allowed by the original resource. One may also replace \(q_k\) by \(\min\{q_k,k-1\}\), since a nonempty histogram has a nonempty largest class. The displayed version is convenient for a uniform bound.
+
+\textbf{Theorem 2.} The same problem has the following deterministic exact algorithms, both with uniform polynomial binary workspace:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  With the elementary coloring construction proved in the main manuscript, time \(2^{2E+O(B\log(B+1))}\mathrm{poly}(H)\).
+\item
+  With the indexed universal-set construction in Naor, Schulman and Srinivasan's Theorem 7, time \(2^{E+o(B^2)}\mathrm{poly}(H)\).
+\end{enumerate}
+
+The exact integer maximum \(E\) is the primary accounting bound. If \(e=\eta(W)\le1/3\), it satisfies
+
+\[
+E\le eBD+e(1-e)B^2
+\le\frac59 B^2.
+\tag{DW17}
+\]
+
+Thus the elementary construction gives \(2^{(10/9)B^2+O(B\log(B+1))}\mathrm{poly}(H)\), and the published indexed construction gives \(2^{(5/9+o(1))B^2}\mathrm{poly}(H)\). The stronger bound explicitly uses the cited universal-set theorem. The elementary alternative supplies a complete local coloring proof with a larger leading coefficient.
+
+\hypertarget{af-fe230a140d-keep-the-positive-cardinality-in-both-bounds}{%
+\subsubsection{8.1 Keep the positive cardinality in both bounds}\label{af-fe230a140d-keep-the-positive-cardinality-in-both-bounds}}
+
+The red/green certificate of the main proof marks at most \(D\) ancestors and at most \(k-1\) disjoint blockers for a size-\(k\) positive set. Therefore that proof's hash and small-bias construction can be run separately with prescription parameter \(h_k\), in place of its uniform \(2B-1\). Equations LC23--LC24 then give a catalogue with
+
+\[
+K_k\le 2^{2h_k+O(\log(B+1))}L^3.
+\tag{DW18}
+\]
+
+All previous oracle, exact replacement, and replay arguments are unchanged. If \(m=0\), the single empty coloring suffices.
+
+Let \(q'=k-a\) be the actual number of exceptions in a selected histogram. Since \(n_1\le a\) and every other weight is at least two,
+
+\[
+\sum_{j\ge1}j n_j
+\ge n_1+2(k-n_1)
+\ge 2k-a=k+q'.
+\tag{DW19}
+\]
+
+Hence \(q'\le B-k\) as well as \(q'\le q\). Enumerate only \(q_k\) positions for cardinality \(k\). A branch with \(q_k=0\) needs no catalogue: its optimum witness, if it exists, is homogeneous, and Section 4 directly returns an original feasible answer of no greater cost. A different returned cardinality is harmless for the reason already given there.
+
+For \(q_k\ge1\), DW18 gives a leading exponent \(2h_k q_k\). Its field construction cost is absorbed because the same exponent is at least \(2h_k\). The logarithmic input factors and all polynomial catalogue multiplicities contribute \(O(B\log(B+1))\) as in Section 6. This proves part 1 of Theorem 2. In the binary-large branch, the same direct count fallback contributes only \(2^{O(B\log(B+1))}\mathrm{poly}(H)\).
+
+\hypertarget{af-fe230a140d-the-actual-weight-maximum}{%
+\subsubsection{8.2 The actual-weight maximum}\label{af-fe230a140d-the-actual-weight-maximum}}
+
+For a continuous variable \(k\in[0,B]\), use \(q_k\le\min\{eB,B-k\}\) and \(h_k\le D+k\). When \(k\le(1-e)B\), the product \((D+k)eB\) increases with \(k\). When \(k\ge(1-e)B\), the derivative of \((D+k)(B-k)\) is \(B-D-2k\le-(1-2e)B-D\le0\). The maximum is therefore attained at \(k=(1-e)B\), giving the first bound in DW17.
+
+Since \(D\le B\), this is at most \(e(2-e)B^2\). The function \(e(2-e)\) increases on \([0,1/3]\) and equals \(5/9\) at \(e=1/3\). This proves the universal coefficient. Floors, the exact value of \(m\), and a restricted cardinality range can only improve the primary maximum DW16.
+
+For the full integer range \(1\le k\le B\) and \(q\ge1\), one can evaluate that maximum without enumerating cardinalities:
+
+\[
+E=q\min\{m,D+B-q-1\}.
+\tag{DW20}
+\]
+
+Indeed, up to \(k=B-q\), the exception cap is constant and \(h_k\) is nondecreasing. Beyond that point, a capped constant \(h_k\) gives a decreasing product; on an uncapped interval the derivative is \(B-D+1-2k\le1-D-B/3\le0\), since \(q\le B/3\) and \(q\ge1\) implies \(B\ge3\). Thus \(k=B-q\) is a maximizer. If additional resource restrictions exclude that cardinality, use the restricted maximum in DW16 instead.
+
+\hypertarget{af-fe230a140d-the-precise-published-construction-and-the-space-claim}{%
+\subsubsection{8.3 The precise published construction and the space claim}\label{af-fe230a140d-the-precise-published-construction-and-the-space-claim}}
+
+Naor, Schulman and Srinivasan, \href{https://www.wisdom.weizmann.ac.il/~naor/PAPERS/splitters.pdf}{\emph{Splitters and near-optimal derandomization}}, Theorem 7 in Section 5.2, supplies a \textbf{locally explicit} \((m,h)\)-universal set of size \(2^{h+o(h)}\log m\). Section 1.3 defines local evaluation as computing the bit at a given coordinate of a given indexed member in polynomial time in the lengths of those indices. Use the finite index range of that construction; handle \(m\le1\) directly. The linked preliminary paper states Theorem 7 with a proof sketch. It is a named external theorem used here, not a locally reconstructed or executably verified universal-set algorithm.
+
+This local guarantee is the property needed here. It lets the algorithm stream indexed colorings and replay any selected representative position without storing the universal family. A position uses \(O(h_k+\log(m+2)+\log(B+1))\) bits, and each color is evaluated with polynomial work on the \(B<n\) branch. The merely global listing guarantee of the paper's Theorem 6 would not, by itself, justify this space claim.
+
+Replacing the coloring family in DW18 now gives \(K_k\le2^{h_k+o(h_k)}\mathrm{poly}(B)\log(m+2)\). The leading recovery exponent is \(h_k q_k\). Uniformly over \(h_k\le2B\) and \(q_k\le B\), its additional exponent is \(o(B^2)\), including the \(O(B\log(B+1))\) logarithmic and fallback terms. This proves part 2. No randomness is sampled by either algorithm, and no new universal-set construction is claimed.
+
+\hypertarget{af-fe230a140d-projected-coloring-identities-and-histogram-sensitive-recovery}{%
+\subsubsection{8.4 Projected coloring identities and histogram-sensitive recovery}\label{af-fe230a140d-projected-coloring-identities-and-histogram-sensitive-recovery}}
+
+The upper depth can be reduced further for individual candidate classes. For a fixed weight/lower-membership class \(T\), form the family of distinct nonempty sets
+
+\[
+\mathcal A_T=\{A\cap T:A\text{ is a retained upper row},\ A\cap T\ne\varnothing\}.
+\tag{DW21}
+\]
+
+Let \(m_T=|\mathcal A_T|\) and let \(D_T\) be its maximum chain length. Projection preserves laminarity, and \(m_T\le m\), \(D_T\le D\). \textbf{Identical projections are merged only as coloring identities. Every original numeric constraint remains in force.} Their residual capacities need not agree before counts outside \(T\) are fixed.
+
+For example, take \(T=\{a,b\}\) with weights one, a further item \(x\) of weight two, and upper rows \(\{a,b\}\) of capacity two and \(\{a,b,x\}\) of capacity three. Both project to \(T\). With the outside item \(x\) fixed, their remaining capacities for \(T\) are respectively two and one. Deleting the second numeric constraint on the strength of equal projections would be wrong. Sharing its color with the first is valid.
+
+Define the class pool by retaining an item exactly when every projected identity containing it is green, just as in the original catalogue. For the coloring proof, fix a feasible size-\(k\) positive set and a protected \(e\in T\). Its green identities are the distinct projected upper rows containing \(e\), at most \(D_T\). The at-most-\(k-1\) maximal original blocking nodes project to disjoint sets; drop empty projections. Their nonempty red identities avoid \(e\), so none can equal a green identity. All their members are excluded by coloring that identity red. Conversely, coloring every green identity green keeps \(e\) in the pool. Thus the complete replacement proof uses at most
+
+\[
+\min\{m_T,D_T+k-1\}
+\tag{DW22}
+\]
+
+prescribed IDs. In particular, it still checks feasibility against every original upper row, and its same-class replacement preserves every original lower total. No numeric row is deleted by this argument.
+
+For each occurring weight \(w\), put
+
+\[
+h_{k,w}=\max_{T:\,\text{weight}(T)=w}
+             \min\{m_T,D_T+k-1\}\le h_k.
+\tag{DW23}
+\]
+
+The union of class catalogues for that weight has at most \(2^{2h_{k,w}+O(\log(B+1))}L^3\) positions with the elementary coloring, or \(2^{h_{k,w}+o(h_{k,w})}\mathrm{poly}(B)\log(m+2)\) with the published indexed coloring. The number of lower classes contributes only a polynomial factor. Projecting onto all of \(U_w\) instead of each class also gives a valid, sometimes less sharp, bound.
+
+Consider all numeric histograms \(n=(n_w)_{w\in W}\) with \(\sum_w w n_w\le B\), and write \(k(n)=\sum_w n_w\). For a nonempty histogram, choose a remaining homogeneous weight \(v\) maximizing \(n_vh_{k(n),v}\) among weights with \(n_v>0\). Define
+
+\[
+E_{\mathrm{proj}}=
+\max_{\substack{n\in\mathbb Z_{\ge0}^{W}\\
+                 0<\sum_w w n_w\le B}}
+\left(\sum_w n_w h_{k(n),w}
+       -\max_{v:\,n_v>0}n_v h_{k(n),v}\right),
+\tag{DW24}
+\]
+
+with value zero if no nonempty histogram exists. Resource cardinality and per-weight availability restrictions may be used to skip additional histograms.
+
+\textbf{Theorem 3.} In the same model, the elementary algorithm takes \(2^{2E_{\mathrm{proj}}+O(B\log(B+1))}\mathrm{poly}(H)\) time, and the published-family algorithm takes \(2^{E_{\mathrm{proj}}+o(B^2)}\mathrm{poly}(H)\) time, both in uniform polynomial binary space. Moreover \(E_{\mathrm{proj}}\le E\). The global \(q=0\) case still uses the direct polynomial route before any histogram enumeration.
+
+For a fixed histogram and chosen \(v\), construct or replay only the catalogues for exception weights \(w\ne v\) with \(n_w>0\). The replacement proof can be applied only to nonrepresentative items of these weights. Each replacement keeps its weight and improves the same fixed-cardinality completed value, while the number of selected exception representatives increases. It terminates at an optimum whose exception items all appear in the corresponding catalogues. No catalogue for the omitted weight \(v\) is needed: its original items stay available for homogeneous completion.
+
+Enumerate \(n_w\) positions from each exception weight's catalogue, reject repeated physical copies, and apply Section 4 on their union \(J\). The witness optimum appears. Every returned answer is original feasible, even if its completed histogram differs from the enumerated witness histogram. A homogeneous histogram requires no catalogue at all.
+
+The leading product of the exception catalogue sizes is twice the parenthesized expression in DW24 for the elementary construction, or once that expression for the published construction. Setup for every used exception weight is absorbed because \(n_w\ge1\). Polynomial class factors and logarithmic input factors contribute \(O(B\log(B+1))\).
+
+For completeness, enumerate histograms by sorted weight index. At a node with remaining mass \(b\), loop over counts \(0,\ldots,\lfloor b/w\rfloor\) and recurse on the next weight with the reduced mass. This enumerates every histogram exactly once, storing at most \(|W|\le B\) binary counters on the \(B<n\) branch. The number of histograms of total mass at most \(B\) is at most \(2^B\): map a histogram to its sorted composition of its mass; there are \(2^{a-1}\) positive compositions of mass \(a\), and include the empty histogram. Thus the histogram loop adds \(O(B)\) to the exponent, already included above. In the \(B\ge n\) branch retain the earlier count-vector fallback, so no binary-large count array is built.
+
+Finally, choose any most frequent weight \(v_0\) in a histogram. The choice of \(v\) in DW24 saves at least \(n_{v_0}h_{k,v_0}\). Since every \(h_{k,w}\le h_k\), the remaining sum is at most \(h_k(k-n_{v_0})\le h_kq_k\). Taking maxima proves \(E_{\mathrm{proj}}\le E\). The homogeneous weight chosen by this refinement need not itself be most frequent: a weight with a more expensive catalogue can be more useful to leave for polynomial completion.
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py}{extension checker} compares projected certificates with literal original-row replacements on 1,500 seeded laminar instances: 67,200 preparation comparisons, 25,797 projected certificates and 32,473 replacement comparisons. It observes 22,066 strict depth reductions and 23,227 reductions in coloring identities. Its streamed histogram generator is compared with literal products on 448 weight/budget instances, and it checks 1,368,168 weighted difficulty profiles against the scalar bound. These are finite checks of the new geometry and accounting; they do not implement the published universal family or the earlier valuated representative oracle.
+
+\hypertarget{af-fe230a140d-a-boundary-for-the-number-of-positive-weight-values}{%
+\subsection{9. A boundary for the number of positive weight values}\label{af-fe230a140d-a-boundary-for-the-number-of-positive-weight-values}}
+
+The polynomial one-positive-weight endpoint cannot extend to arbitrary two-positive-weight instances in this oracle model. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/weighted-prefix-quota-frontier/manuscripts/two-positive-weight-laminar-boundary.md}{two-weight boundary} gives a complete depth-two construction with weights exactly \(1,2\), nonroot targets two, and root cap \(B\). Mandatory-base feasibility already needs \(2^{\Omega(B)}\) rank queries. Optional exact optimization has the same lower bound with all scalar profits one. The optional instances always have a feasible solution, so the latter statement is explicitly about optimization. The companion also gives the separately stated ETH consequence for polynomial readable rank programs.
+
+\hypertarget{af-fe230a140d-quotas-on-either-side-of-compatible-cuts}{%
+\subsection{10. Quotas on either side of compatible cuts}\label{af-fe230a140d-quotas-on-either-side-of-compatible-cuts}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/weighted-prefix-quota-frontier/manuscripts/compatible-cut-quota-extension.md}{compatible-cut companion} extends the same FPT bounds to set families whose pairs are nested, disjoint, or cover the whole positive ground. It fixes total numeric mass and orients every row away from one anchor, yielding a laminar instance with an exact root equality. This includes quotas on either side of unrooted-tree cuts. The companion states the binary-space implementation and the narrower one-weight polynomial endpoint for prescribed or forced total mass.
+
+\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

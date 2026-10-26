@@ -1,0 +1,307 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/boolean-linear-compiler/manuscripts/boolean-linear-optimization-compiler.md
+% Recovered-source SHA-256: 4936710062eebe438e76a6beefb87e17bf5be041b1a20f4c7186af77d3c66d65
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-77b0bb6793-a-support-sensitive-interval-compiler-for-exact-boolean-linear-optimization}{%
+\section{A support-sensitive interval compiler for exact Boolean linear optimization}\label{af-77b0bb6793-a-support-sensitive-interval-compiler-for-exact-boolean-linear-optimization}}
+
+\textbf{Abstract.} We give an exact signed interval-rounding rule whose emitted intervals contain at most as many integers as the original row has nonzero coefficients. Retaining these intervals and encoding a chosen number of slack bits gives a support-sensitive time--space interpolation for exact Boolean linear optimization. The general shrinking-interval method is due to Nederlof, van Leeuwen, and van der Zwaan, with the signed extension recorded by Bansal, Garg, Nederlof, and Vyas. The sharper boundary rule and the compiler accounting below are self-contained. The compiler is independent of its Subset Sum backend; numerical instantiations retain the separately stated backend hypotheses.
+
+\hypertarget{af-77b0bb6793-target-problem-and-result}{%
+\subsection{1. Target problem and result}\label{af-77b0bb6793-target-problem-and-result}}
+
+We are given Boolean variables \texttt{x\ in\ \{0,1\}\^{}n}, any number of signed binary integer equalities, and \texttt{m} signed binary interval constraints
+
+\[
+\ell_i\le a_i^T x\le u_i\qquad(i\in[m]).
+\]
+
+One-sided inequalities are included: intersect their permitted range with the elementary attainable range \texttt{{[}sum\_j\ min(a\_ij,0),\ sum\_j\ max(a\_ij,0){]}}. An empty interval certifies infeasibility. A zero row is checked and removed. Let \texttt{L} denote the full binary input length, including all equalities, interval endpoints, and an optional signed linear objective. Let
+
+\[
+s_i=|\mathrm{supp}(a_i)|,\quad W_i=u_i-\ell_i,\quad
+\kappa_i=\min\{W_i+1,s_i\},\quad
+q_i=\lceil\log_2\kappa_i\rceil,\quad Q=\sum_i q_i.
+\tag{B1}
+\]
+
+Exact rows (\texttt{W\_i=0}) can instead be put in the equality system and contribute no parameter. A deterministic preprocessing step constructs, for every interval row, a catalogue of \texttt{p\_i} short interval tests. It has
+
+\[
+p_i\le 2\lceil\log_2(W_i+1)\rceil+1,
+\tag{B2}
+\]
+
+and \texttt{p\_i=1} if \texttt{W\_i+1\textless{}=s\_i}. Every catalogue interval contains at most \texttt{kappa\_i} integers. The catalogue is exact for every Boolean assignment, not only for some feasible witness.
+
+Assume a deterministic Subset Sum backend returns an indexed witness in time
+
+\[
+\mathrm{poly}(L')2^{\alpha N}
+\]
+
+on \texttt{N} signed binary integers. If it also has writable-bit space \texttt{poly(L\textquotesingle{})\ 2\^{}\{sigma\ N\}}, the same space interface can be used below. The polynomial degrees are constants belonging to the backend.
+
+\textbf{Compiler theorem.} For every integer \texttt{B} with \texttt{0\textless{}=B\textless{}=Q}, exact feasibility and indexed witness recovery for the above Boolean linear system can be performed in
+
+\[
+T_B\le\mathrm{poly}(L)\left(\prod_{i=1}^m p_i\right)
+2^{\alpha n+Q-(1-\alpha)B},
+\tag{B3}
+\]
+
+and, when the space interface is available,
+
+\[
+S_B\le\mathrm{poly}(L)2^{\sigma(n+B)}.
+\tag{B4}
+\]
+
+The equalities do not enter \texttt{Q} or the product of catalogue sizes. Their encoding lengths are charged to \texttt{L}. The same bounds, up to the displayed polynomial factor, permit exact signed linear optimization, and lexicographic optimization for any explicitly listed polynomial-size sequence of linear objectives.
+
+The endpoints are useful:
+
+\[
+T_0\le\mathrm{poly}(L)\Bigl(\prod p_i\Bigr)2^{\alpha n+Q},
+\qquad
+T_Q\le\mathrm{poly}(L)\Bigl(\prod p_i\Bigr)2^{\alpha(n+Q)}.
+\tag{B5}
+\]
+
+The first endpoint retains the \texttt{n}-item backend space exponent. The second replaces the boundary-target enumeration exponent \texttt{Q} by \texttt{alpha\ Q}. This comparison is between two proved compiler bounds; it is not a claim that this algorithm dominates every existing Boolean-IP algorithm in every parameter regime.
+
+\hypertarget{af-77b0bb6793-signed-short-interval-catalogue}{%
+\subsection{2. Signed short-interval catalogue}\label{af-77b0bb6793-signed-short-interval-catalogue}}
+
+Fix a nonzero row \(a\), its original support size \(s\ge1\), and an integer interval \([\ell,u]\) of nonnegative width. Keep this same support bound throughout the procedure: floor-halving cannot turn an initially zero coefficient into a nonzero one. Before this procedure, a zero row is discarded if \(\ell\le0\le u\), and otherwise certifies infeasibility. Thus no logarithm or stopping rule below is applied with \(s=0\).
+
+If \(u-\ell+1\le s\), emit \((a,[\ell,u])\) and stop. Otherwise set
+
+\[
+a'_j=\lfloor a_j/2\rfloor,\qquad
+t=|\{j:a_j\text{ is odd}\}|,\qquad
+\ell'=\lceil\ell/2\rceil,\qquad
+u'=\lfloor(u-t)/2\rfloor.
+\tag{B6}
+\]
+
+Emit the following two tests, omitting each one whose lower endpoint exceeds its upper endpoint:
+
+\[
+\left(a,\left[\ell,\min\{u,2\ell'+t-2\}\right]\right),
+\qquad
+\left(a,\left[\max\{\ell,2u'+2\},u\right]\right).
+\]
+
+If \(\ell'\le u'\), continue with the single recursive instance \((a',[\ell',u'])\); otherwise stop after these boundary tests. There are no endpoint-peeling calls and no recursive branching.
+
+\textbf{Exactness for signed coefficients.} For every integer coefficient, including a negative one, \(a_j-2\lfloor a_j/2\rfloor\) belongs to \(\{0,1\}\) and equals its oddness indicator. Hence every Boolean assignment satisfies
+
+\[
+a^\top x=2(a')^\top x+\delta(x),\qquad
+\delta(x)=\sum_{j:a_j\text{ is odd}}x_j,\qquad
+0\le\delta(x)\le t\le s.
+\tag{B7}
+\]
+
+Write \(z=(a')^\top x\). If \(\ell'\le z\le u'\), then \(a^\top x\ge2\ell'\ge\ell\) and \(a^\top x\le2u'+t\le u\). Each boundary interval was clipped to the parent interval, so every acceptance in any emitted or recursive test is parent-feasible.
+
+Conversely, suppose \(\ell\le a^\top x\le u\). If \(z<\ell'\), integrality and (B7) give \(a^\top x\le2\ell'+t-2\), placing the sum in the lower boundary test. If \(z>u'\), then \(a^\top x\ge2u'+2\), placing it in the upper boundary test. In the remaining case the recursive interval accepts. This reasoning also covers \(\ell'>u'\): every integer \(z\) then lies below \(\ell'\) or above \(u'\), so the two boundaries cover all parent-feasible assignments even though no recursive instance exists. For example, \(a=(1,1)\) and \([\ell,u]=[1,3]\) have \(t=2\), \(\ell'=1\), \(u'=0\), and emit \([1,2]\) and \([2,3]\). The overlap is intentional. Induction proves an exact disjunction assignment by assignment.
+
+\textbf{Boundary size.} Before clipping, the lower interval contains \(2\ell'-\ell+t-1\) integers when this number is positive. Since \(2\ell'-\ell\in\{0,1\}\), this number is at most \(t\). Write \(u-t=2u'+\varepsilon\) with \(\varepsilon\in\{0,1\}\). The upper interval similarly contains \(u-2u'-1=t+\varepsilon-1\le t\) integers when nonempty. Thus both emitted intervals contain at most \(t\le s\) integers. If \(t=0\), both boundaries are empty and the operation is an exact halving with no boundary tests. A terminal interval contains at most \(s\) integers by the stopping rule. If the initial interval already has at most \(s\) integers, the single emitted test has exactly \(W+1\) values. This proves the cap \(\kappa=\min\{W+1,s\}\).
+
+\textbf{Catalogue size and binary complexity.} Whenever the recursive interval is nonempty, its width satisfies
+
+\[
+u'-\ell'\le\left\lfloor\frac{u-\ell-t}{2}\right\rfloor
+\le\left\lfloor\frac{u-\ell}{2}\right\rfloor.
+\]
+
+The procedure therefore performs at most \(\lceil\log_2(W+1)\rceil\) halving steps, emits at most two intervals at each step, and emits at most one final interval. This proves (B2), including width zero. The recursion depth is logarithmic in the numerical width and hence polynomial in the binary input length; it does not iterate through the interval's integer values. This remains true when a negative coefficient such as \(-1\) stops changing under floor-halving. Coefficient magnitudes do not increase, and the endpoint updates use a halving and an additive term at most \(s\), so their bit lengths remain polynomially bounded. An iterative implementation keeps only the current row and the polynomial-size output catalogue.
+
+Overlapping or repeated tests are allowed. They contribute their actual multiplicities to \(p_i\) and never create a second recursive call. The subsequent compiler enumerates the product of these finite catalogues, so overlap adds no factor beyond the displayed branch bound. Neither this step nor the bounded-slack encoding is claimed to preserve solution counts.
+
+The general floor-rounding method is inherited from the cited literature. The explicit rule above replaces the previous project bound \(5s+1\) by \(s\) and its four emissions per scale by two, with a full local proof. No claim of literature priority or universal optimality is made. For a moderately wide interval it can still be useful to keep the initial interval as one test and use its actual width in the compiler; the smaller cap and the smaller catalogue are different resources.
+
+\hypertarget{af-77b0bb6793-a-tunable-number-of-slack-bits}{%
+\subsection{3. A tunable number of slack bits}\label{af-77b0bb6793-a-tunable-number-of-slack-bits}}
+
+Choose integers \texttt{0\textless{}=b\_i\textless{}=q\_i} whose sum is \texttt{B}. Every \texttt{B} from zero to \texttt{Q} is possible by filling these intervals in any fixed order. Split each short interval from row \texttt{i} into consecutive chunks, each with at most \texttt{2\^{}\{b\_i\}} integer values. There are at most
+
+\[
+\left\lceil\frac{\kappa_i}{2^{b_i}}\right\rceil
+\le 2^{q_i-b_i}
+\tag{B8}
+\]
+
+chunks per catalogue member. An empty interval is never emitted.
+
+Consider one chunk \texttt{{[}l,u{]}}, let \texttt{w=u-l}, and put \texttt{q=ceil(log\_2(w+1))\textless{}=b\_i}. If \texttt{w=0}, the constraint is already an equality. Otherwise the \texttt{q} nonnegative integers
+
+\[
+1,2,4,\ldots,2^{q-2},\quad w-(2^{q-1}-1)
+\tag{B9}
+\]
+
+have subset sums exactly the integers \texttt{0,...,w}. For \texttt{q=1} the initial sequence is empty. To see the claim, the powers of two cover \texttt{{[}0,2\^{}\{q-1\}-1{]}}; the final integer is between one and \texttt{2\^{}\{q-1\}}, so adding it covers an overlapping or adjacent interval ending at \texttt{w}.
+
+Consequently \texttt{(a\textquotesingle{})\^{}T\ x\ in\ {[}l,u{]}} is equivalent to one equality
+
+\[
+(a')^T x+\sum_{t=1}^{q}v_t z_t=u,
+\qquad z_t\in\{0,1\},
+\tag{B10}
+\]
+
+using at most \texttt{b\_i} additional Boolean variables. Slack variables belonging to different rows are distinct. We need only decision and witness recovery; the possible nonuniqueness of the representation in (B9) causes no problem. It would matter for counting, which is not claimed.
+
+For each tuple of catalogue members and chunks, we now have a pure signed equality system on at most \texttt{n+B} Boolean variables. The number of tuples is bounded by
+
+\[
+\left(\prod_i p_i\right)2^{Q-B}.
+\tag{B11}
+\]
+
+The catalogue construction, chunk enumeration, and radix-packing arithmetic take \texttt{poly(L)} bit operations per tuple. Every packed instance has \texttt{N\textless{}=n+B} variables and an encoding length \texttt{L\textquotesingle{}=poly(L)}; the polynomial factor in the backend contract is therefore absorbed into the displayed \texttt{poly(L)}. Only one packed instance and one backend workspace are live at a time. The branch count in (B11), rather than an unlisted factor depending on the number of original rows, is the complete exponential accounting.
+
+\hypertarget{af-77b0bb6793-packing-signed-equalities-without-adding-variables}{%
+\subsection{4. Packing signed equalities without adding variables}\label{af-77b0bb6793-packing-signed-equalities-without-adding-variables}}
+
+Suppose a branch has equalities \texttt{c\_j\^{}T\ y=t\_j}, for \texttt{j=0,...,r-1}, and \texttt{y} has \texttt{N\textless{}=n+B} Boolean coordinates. Set
+
+\[
+R=1+\max_j\left\{\sum_k|c_{jk}|+|t_j|\right\}.
+\tag{B12}
+\]
+
+If the maximum is zero, the system is trivial and can be handled directly. Otherwise \texttt{R\textgreater{}=2}. Give Boolean coordinate \texttt{k} the signed integer weight
+
+\[
+A_k=\sum_{j=0}^{r-1}c_{jk}R^j,
+\qquad T=\sum_{j=0}^{r-1}t_jR^j.
+\tag{B13}
+\]
+
+Then \texttt{sum\_k\ A\_k\ y\_k=T} if and only if all original branch equalities hold. For the reverse implication set \texttt{d\_j=c\_j\^{}T\ y-t\_j}. We have \texttt{\textbar{}d\_j\textbar{}\textless{}R}. Reducing \texttt{sum\_j\ d\_j\ R\^{}j=0} modulo \texttt{R} forces \texttt{d\_0=0}; division by \texttt{R} and induction force every \texttt{d\_j=0}. This argument explicitly permits signed entries and targets; no unjustified nonnegative-digit/no-carry assumption is used.
+
+The new bit length is polynomial in \texttt{L}: there are at most polynomially many rows and variables, the coefficients have polynomial bit length, and each packed integer has \texttt{O(r\ log\ R)} bits. The branch introduces no further Boolean variables. Solve branches sequentially, returning the first witness restricted to its original \texttt{n} coordinates. If desired, evaluate the original binary rows and objective once on that witness.
+
+Multiplying (B11) by the backend time on \texttt{n+B} items proves (B3). Only one branch and one backend execution are stored at a time, giving (B4). The catalogues, loop indices, radix arithmetic, and witness use polynomial additional writable bits.
+
+\hypertarget{af-77b0bb6793-optimization-does-not-change-the-exponential-parameters}{%
+\subsection{5. Optimization does not change the exponential parameters}\label{af-77b0bb6793-optimization-does-not-change-the-exponential-parameters}}
+
+For a signed linear objective \texttt{c\^{}T\ x}, its exact attainable values lie in
+
+\[
+\left[\sum_j\min(c_j,0),\sum_j\max(c_j,0)\right].
+\]
+
+Binary search for the optimum takes polynomially many feasibility queries in the full binary input length. During each query, convert the objective threshold to exact targets using the ordinary signed interval reduction, enumerating its short target intervals completely. This one extra row costs only a polynomial factor in \texttt{L}; it contributes no slack variables. Thus the \texttt{B} and \texttt{Q} in (B3)--(B4) can remain those of the original interval constraints.
+
+After obtaining an optimum, retrieve a witness for that optimum. For lexicographic optimization, add the optimum of each completed objective as an exact equality and proceed to the next objective. Exact rows do not add to \texttt{Q}. This gives an optimal indexed Boolean vector, not merely an optimum value. Listing the entire Pareto frontier is not claimed.
+
+\hypertarget{af-77b0bb6793-instantiating-the-repositorys-deterministic-algorithms}{%
+\subsection{6. Instantiating the repository's deterministic algorithms}\label{af-77b0bb6793-instantiating-the-repositorys-deterministic-algorithms}}
+
+The repository records two separate Subset Sum contracts at the pinned commit:
+
+\[
+E=\frac{149809813343531}{301754962128739}
+\simeq0.4964618056,
+\quad
+E_S=\frac{18261635770550353}{10^{17}}
+=0.18261635770550353.
+\tag{B14}
+\]
+
+The fast contract has time \texttt{poly(L\textquotesingle{})\ 2\^{}\{E\ N\}} with exact indexed witness recovery; it does not claim a separate space exponent. Substituting \texttt{alpha=E} into (B3), and choosing \texttt{B=Q}, yields
+
+\[
+\mathrm{poly}(L)\left(\prod_i p_i\right)2^{E(n+Q)}.
+\tag{B15}
+\]
+
+\textbf{Refined time-only instantiation.} If the exact circuit interfaces and the full-domain contact bounds in \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/subset-sum-fast-deterministic/proof.md}{the refined Subset Sum theorem}, Section 4, are supplied, one may instead substitute
+
+\[
+\alpha=E_{\rm new}=\frac{158153814247997}{318927986919134}\simeq0.495891927754
+\]
+
+throughout (B3), (B5), and (B15). In particular, full slack gives \texttt{poly(L)\ (product\_i\ p\_i)\ 2\^{}\{E\_new(n+Q)\}} and a fixed number of interval rows gives \texttt{poly(L)\ 2\^{}\{E\_new\ n\}}. This instantiation inherits those analytic contact premises; checking its scalar exponent does not certify them. It remains a time-only point and supplies no new space exponent.
+
+The separate low-space contract has time \texttt{poly(L\textquotesingle{})\ 2\^{}\{N/2\}} and writable bits \texttt{poly(L\textquotesingle{})\ 2\^{}\{E\_S\ N\}}. It gives the full family
+
+\[
+T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)2^{n/2+Q-B/2},
+\qquad
+S_B\le\mathrm{poly}(L)2^{E_S(n+B)}.
+\tag{B16}
+\]
+
+Do not combine the fast time exponent and low-space exponent into one unproved simultaneous guarantee.
+
+For every fixed number of interval constraints, \texttt{Q=O(log\ n)} and the product of catalogue sizes is polynomial in \texttt{L}. Hence exact signed 0--1 knapsack, fixed-dimensional 0--1 knapsack, and Boolean linear optimization with any number of exact equalities and a fixed number of interval constraints inherit:
+
+\begin{itemize}
+\tightlist
+\item
+  the separate time bound \texttt{poly(L)\ 2\^{}\{E\ n\}};
+\item
+  the separate time/space point \texttt{poly(L)\ 2\^{}\{n/2\}} and \texttt{poly(L)\ 2\^{}\{E\_S\ n\}} writable bits.
+\end{itemize}
+
+These fixed-dimensional corollaries are consequences of the known reduction and the repository backend. They should not be presented as a newly discovered Knapsack-to-Subset-Sum equivalence. Their potential significance is that a new backend theorem automatically moves several standard general-problem frontiers.
+
+For growing \texttt{m}, the displayed parameterized compiler is the additional useful content. For example, when all \texttt{s\_i\textless{}=n}, all coefficient/endpoint bit lengths are \texttt{n\^{}\{c+o(1)\}}, and \texttt{m=(gamma+o(1))n/log\_2\ n}, the full-slack bound (B15) is at most
+
+\[
+2^{[E+(E+c)\gamma+o(1)]n}\mathrm{poly}(L),
+\tag{B17}
+\]
+
+whereas the same backend with complete boundary-target enumeration gives the upper bound with coefficient \texttt{1+c} in place of \texttt{E+c}. A sub-half exponent is therefore certified whenever \texttt{gamma\textless{}(1/2-E)/(E+c)} by this compiler. This is a parameter-range statement for the explicitly compared construction; it is not a universal optimality claim for all growing-dimension Boolean IP algorithms.
+
+\hypertarget{af-77b0bb6793-backend-dependence-and-comparison}{%
+\subsection{7. Backend dependence and comparison}\label{af-77b0bb6793-backend-dependence-and-comparison}}
+
+The compiler proof is independent of the repository's new Subset Sum claims. It can already be instantiated with classical deterministic backends, including ordinary meet-in-the-middle and Schroeppel--Shamir. The repository's smaller exponents are conditional only on accepting its existing backend theorem contracts, whose full proofs and internal reviews reside in that repository.
+
+The relevant source comparisons are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Nederlof--van Leeuwen--van der Zwaan, \emph{Reducing a Target Interval to a Few Exact Queries}, MFCS 2012, Theorem 1, Theorem 2, Corollary 1: the interval mechanism and Knapsack/Subset-Sum time--space transfer are already known.
+\item
+  Bansal--Garg--Nederlof--Vyas, \emph{Faster Space-Efficient Algorithms for Subset Sum, k-Sum and Related Problems}, 2017 manuscript, Lemma 4.4 and proof of Corollary 2: signed rows and a growing number of Boolean-IP inequalities are already handled by exact-target enumeration. This is the explicit compiler baseline for (B3).
+\item
+  The OpenAI public catalogue, entry 138, states a randomized \texttt{2\^{}\{0.49n\}} word-RAM algorithm for polynomial-bit Subset Sum inputs. The deterministic \texttt{E} instantiation is not numerically faster than \texttt{0.49}; determinism, binary-input scope, and the separate space interface must stay visible. The catalogue was checked, not the entire linked manuscript in this manuscript.
+\end{enumerate}
+
+The locally proved refinements are the support-sized boundary rule in Section 2 and the short-boundary/slack interpolation (B3); literature priority is not inferred from this comparison. Higher-dimensional dominance algorithms, coefficient-bounded dynamic programming, and structural integer-programming algorithms can be preferable in some regimes; no dominance over all of them is asserted. The compiler has no dynamic-graph backend dependency.
+
+\hypertarget{af-77b0bb6793-sources-and-pinned-dependencies}{%
+\subsection{Sources and pinned dependencies}\label{af-77b0bb6793-sources-and-pinned-dependencies}}
+
+\begin{itemize}
+\tightlist
+\item
+  Jesper Nederlof, Erik Jan van Leeuwen, Ruben van der Zwaan. \href{https://arxiv.org/pdf/1208.4225}{Reducing a Target Interval to a Few Exact Queries}. MFCS 2012. Theorems 1--2 and Corollary 1.
+\item
+  Nikhil Bansal, Shashwat Garg, Jesper Nederlof, Nikhil Vyas. \href{https://arxiv.org/pdf/1612.02788}{Faster Space-Efficient Algorithms for Subset Sum, k-Sum and Related Problems}. Version 2, June 2017. Lemma 4.4 and Corollary 2 proof.
+\item
+  \href{https://github.com/icekylinx/algorithm-frontier/blob/37b31138bf102a83d9efb2cbe44437eec45ae3c2/problems/subset-sum-fast-deterministic/README.md}{Pinned repository fast-time contract}.
+\item
+  \href{https://github.com/icekylinx/algorithm-frontier/blob/37b31138bf102a83d9efb2cbe44437eec45ae3c2/problems/subset-sum-low-space-deterministic/README.md}{Pinned repository low-space contract}.
+\item
+  \href{https://github.com/icekylinx/algorithm-frontier/blob/37b31138bf102a83d9efb2cbe44437eec45ae3c2/problems/subset-sum-fast-deterministic/proof.md}{Pinned fast-time full proof}.
+\item
+  \href{https://github.com/icekylinx/algorithm-frontier/blob/37b31138bf102a83d9efb2cbe44437eec45ae3c2/problems/subset-sum-low-space-deterministic/proof.md}{Pinned low-space theorem}.
+\item
+  \href{https://github.com/openai/math/blob/main/overview.tex}{OpenAI public catalogue}, entry 138, accessed 2026-10-25.
+\end{itemize}

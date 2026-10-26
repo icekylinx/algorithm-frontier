@@ -1,28 +1,28 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/general-matching/proof.md
-% Recovered-source SHA-256: 4f389d57b93d35e9e6df4cfcddd34a2530b072020b0e4717aa8246cd18b56476
+% Recovered-source SHA-256: 81f397508e9fcaa5e1c53c52470e6249e8aa50be4de0b76133ea22f6afb066dc
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
-% Final document preamble must use the recovered original Subset Sum style.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
 
-\hypertarget{deterministic-exact-general-matching-through-persistent-integral-carriers-and-normalized-routing}{%
-\section{Deterministic Exact General Matching through Persistent Integral Carriers and Normalized Routing}\label{deterministic-exact-general-matching-through-persistent-integral-carriers-and-normalized-routing}}
+\hypertarget{af-46593eb93e-deterministic-exact-general-matching-through-persistent-integral-carriers-and-normalized-routing}{%
+\section{Deterministic Exact General Matching through Persistent Integral Carriers and Normalized Routing}\label{af-46593eb93e-deterministic-exact-general-matching-through-persistent-integral-carriers-and-normalized-routing}}
 
 \textbf{Yilin Liu · GPT-6 Astra Pro}
 
-\textbf{Theorem-and-proof manuscript.} The faster quantitative algorithm is conditional on the explicitly stated published primitives and the required deterministic cycle-search implementation in Section 11.6. An unconditional polynomial-time \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/README.md}{reference implementation} is available separately.
+\textbf{Theorem-and-proof manuscript.} This manuscript constructs a deterministic exact matching algorithm with four-fifths logarithmic overhead, using the named source results in Section 2.2 and the local constructions assembled in Theorem 11.6. The complete mathematical construction and the current \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/README.md}{polynomial reference implementation} have distinct implementation coverage.
 
-\hypertarget{abstract}{%
-\subsection{Abstract}\label{abstract}}
+\hypertarget{af-46593eb93e-abstract}{%
+\subsection{Abstract}\label{af-46593eb93e-abstract}}
 
-We organize a deterministic construction for exact maximum-cardinality matching in arbitrary undirected graphs around two interfaces: a persistent representation of the actual integral matching ledgers, and a dynamic minimum-ratio circulation backend with explicit traversal and lifetime guarantees. Our contributions are the carrier representation and its local exposure procedure, an optimum-gap formulation that applies without a perfect-matching promise, exact projection recovery from conserved near-feasible flows, and a sequential routing and normalized sparsification construction with separate structural and construction-work bounds. We prove the matching-side composition and the quantitative parameter balance. The complete time statement is conditional on the explicitly stated external primitive and raw-backend realization contracts. It yields a single deterministic program with logarithmic overhead exponent \(4/5\). All returned edges retain their original input identifiers.
+We construct a deterministic algorithm for exact maximum-cardinality matching in arbitrary undirected graphs around two interfaces: a persistent representation of the actual integral matching ledgers, and a dynamic minimum-ratio circulation algorithm with explicit traversal and lifetime guarantees. The construction uses the carrier representation and its local exposure procedure, an optimum-gap formulation without a perfect-matching promise, exact projection recovery from conserved near-feasible flows, and sequential routing and normalized sparsification with separate structural and construction-work bounds. Theorem 11.6 assembles the local raw-lift, repair, occurrence, retirement and finite-arithmetic proofs into the required cycle-search algorithm. The complete composition gives a single deterministic program with logarithmic overhead exponent \(4/5\), importing only the named source results at their stated interfaces. All returned edges retain their original input identifiers. The repository separately implements and tests a polynomial-time exact solver; it does not yet implement the full fast hierarchy.
 
-\hypertarget{result-contributions-and-proof-scope}{%
-\subsection{1. Result, contributions, and proof scope}\label{result-contributions-and-proof-scope}}
+\hypertarget{af-46593eb93e-result-contributions-and-proof-scope}{%
+\subsection{1. Result, contributions, and proof scope}\label{af-46593eb93e-result-contributions-and-proof-scope}}
 
 Let \(G\) be an undirected graph given by \(n\) vertices and \(m\) listed edge records. Loops and parallel records are permitted in the input. Write \(m_s\) for the number of distinct nonloop edges and \(\nu(G)\) for the maximum matching cardinality.
 
-\textbf{Theorem 1.1 (quantitative composition).} Assume the deterministic external primitive interfaces in Section 2 and the complete raw-backend realization contract in Section 11.6. There is one deterministic program that returns an explicit maximum-cardinality matching of \(G\), with original edge identifiers, in time
+\textbf{Theorem 1.1 (deterministic exact matching).} In the computational model of Section 2.1, there is one deterministic program that returns an explicit maximum-cardinality matching of \(G\), with original edge identifiers, in time
 
 \[
 O(n+m)+(m_s+1)
@@ -52,24 +52,27 @@ The central contributions are as follows.
   \textbf{A complete quantitative composition.} We retain selected-edge recourse, late initial update credit, occurrence pools, finite arithmetic, and the full recursive quality product. Their simultaneous balance gives (1).
 \end{enumerate}
 
-The proof separates the matching reduction, the geometric module interfaces, and the quantitative composition. The cycle-search implementation requirements in Section 11.6 are hypotheses of Theorem 1.1. They are not an implemented module or a theorem established by a single published paper. Each use is identified before its cost is substituted. Output verification establishes optimality of an accepted matching; it does not establish the faster time bound.
+The theorem uses the named source results in Section 2.2. Theorem 11.6 supplies the required cycle-search interface by composing the local construction proofs; Section 12 then balances their actual costs. No single source paper is asserted to prove the improved bound. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/sources.md\#checkpoint-provenance}{checkpoint source map} records the construction chain already present in the revised 24 October checkpoint. The absence of an end-to-end fast implementation is a code-coverage limit, not an additional mathematical hypothesis. Output verification establishes optimality of an accepted matching; the construction proofs establish the faster time bound.
 
-\hypertarget{unconditional-executable-companion}{%
-\subsubsection{1.1 Unconditional executable companion}\label{unconditional-executable-companion}}
+\hypertarget{af-46593eb93e-unconditional-executable-companion}{%
+\subsubsection{1.1 Unconditional executable companion}\label{af-46593eb93e-unconditional-executable-companion}}
 
-The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/README.md}{standard-library reference solver} implements the normalization, connected-component decomposition and exact edge kernel of Section 3.1. An additional \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/cover-compression-proof.md}{outside-endpoint compression} preserves every matchable subset of the computed cover and leaves at most \(4\nu(G_i)\) vertices for a classical deterministic Edmonds blossom search. For nonempty normalized input components \(G_i\), its time is
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/README.md}{standard-library reference solver} implements the normalization, connected-component decomposition and exact edge kernel of Section 3.1. The earlier checkpoint's \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/cover-compression-proof.md}{outside-endpoint compression} preserves every matchable subset of the computed cover and leaves at most \(4\nu(G_i)\) vertices for the final exact matching search. Both the crossing compression and a final bipartite solve use Hopcroft--Karp; other final solves use classical Edmonds blossom. For nonempty normalized input components \(G_i\), its time is
 
 \[
-O\!\left(n+m\log(m+2)+\sum_i\nu(G_i)^3\right).
+O\!\left(n+m\log(m+2)+\sum_i\nu(G_i)^{p_i}\right),
+\qquad p_i\in\{5/2,3\}.
 \]
 
-It returns the original selected edge IDs and uses \(O(n+m)\) records, with actual label bytes and comparison costs charged separately. Its optional certificate mode has the same bound. Certificate extraction still runs on the original edge kernel; with \(k_i\) vertices and \(h_i\) edges there, it costs \(O(h_i+k_i(\nu(G_i)+1))\), within the stated cubic envelope. No matching-number estimate is supplied as input. A \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/verify_certificate.py}{separate verifier} checks exact kernel preservation and a Tutte--Berge upper bound using graph scans and comparison sorting, without calling a matching algorithm. The reference documentation proves that acceptance certifies maximum cardinality. Its \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/certificate-proof.md}{self-contained extraction proof} derives a tight odd-component barrier from one exhausted alternating forest; classical blossom search supplies the initial maximum matching. None of Section 11.6's cycle-search requirements is needed by this implementation. The extra cubic preprocessing is used only in this executable companion, and is not charged to or assumed by the faster composition theorem.
+The exponent is \texttt{5/2} if the first retained edge kernel is bipartite and \texttt{3} otherwise. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/bipartite-proof.md}{complete bipartite proof} derives the matching-number phase bound and linear certificate extraction; all originally bipartite input components satisfy its condition.
 
-\hypertarget{model-notation-and-inherited-primitives}{%
-\subsection{2. Model, notation, and inherited primitives}\label{model-notation-and-inherited-primitives}}
+It returns the original selected edge IDs and uses \(O(n+m)\) records, with actual label bytes and comparison costs charged separately. Its optional certificate mode has the same bound. Certificate extraction still runs on the original edge kernel; with \(k_i\) vertices and \(h_i\) edges there, it costs \texttt{O(k\_i+h\_i)} in the bipartite case and \(O(h_i+k_i(\nu(G_i)+1))\) otherwise, within the respective solve bounds. No matching-number estimate is supplied as input. A \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/verify_certificate.py}{separate verifier} checks exact kernel preservation and a Tutte--Berge upper bound using graph scans and comparison sorting, without calling a matching algorithm. The reference documentation proves that acceptance certifies maximum cardinality. Its \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/certificate-proof.md}{self-contained extraction proof} derives a tight general odd-component barrier from one exhausted alternating forest; the bipartite proof obtains the same certificate equality from a minimum vertex cover. This implementation uses classical matching searches; it does not execute Theorem 11.6's cycle-search hierarchy. The additional polynomial matching work is used only in this executable companion, and is not charged to or assumed by the faster composition theorem.
 
-\hypertarget{computational-and-identity-conventions}{%
-\subsubsection{2.1 Computational and identity conventions}\label{computational-and-identity-conventions}}
+\hypertarget{af-46593eb93e-model-notation-and-inherited-primitives}{%
+\subsection{2. Model, notation, and inherited primitives}\label{af-46593eb93e-model-notation-and-inherited-primitives}}
+
+\hypertarget{af-46593eb93e-computational-and-identity-conventions}{%
+\subsubsection{2.1 Computational and identity conventions}\label{af-46593eb93e-computational-and-identity-conventions}}
 
 We use a word RAM with word size sufficient for an input vertex or edge identifier. Input vertex names are integers in \([n]\). Counting/radix sorting of endpoint pairs and compaction therefore take \(O(n+m)\) time. All larger integers and rational arithmetic are charged by their actual word operations. A word never stores an uncharged arbitrarily long integer.
 
@@ -108,10 +111,10 @@ Meaning
 \(E,D,q\) & Backend cap, rounded numerical cap, and numerical accuracy \\
 \end{longtable}
 
-\hypertarget{external-inputs}{%
-\subsubsection{2.2 External inputs}\label{external-inputs}}
+\hypertarget{af-46593eb93e-external-inputs}{%
+\subsubsection{2.2 External inputs}\label{af-46593eb93e-external-inputs}}
 
-We assume the following source results at their indicated interfaces. The bibliography gives primary source locations. Only these local interfaces are inherited; the new parameterized composition is developed below.
+We use the following named source results at their indicated interfaces. The bibliography gives primary source locations. These are ordinary mathematical dependencies; the parameterized composition and the additional algorithmic interfaces are proved below and in the linked companion proofs.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
@@ -137,13 +140,13 @@ Interface used
 
 The matching-state localization input has a particularly useful precise form. A projection from an integral parent of floor \(c+1\) and debt \(P_{\mathrm d}\) to floor \(c\) uses a frozen parent. Its threshold networks expose \(O(P_{\mathrm d}+1)\) records, keep permanent sink locks, have total source deficit at most \(P_{\mathrm d}\), and admit the true/optimistic-region recovery in Section 8. We inherit this locality and its bounded objective/lock accounting from the source framework; an exact flow existence argument alone is not its locality proof.
 
-All external statements are assumed correct, as stipulated for this manuscript. Our own routing, normalization, lifetime, and parameter claims are not assigned to those external results merely because their constructions use them.
+The theorem relies on these source results in their stated scope. Its routing, normalization, lifetime and parameter claims are supplied by the local constructions, rather than attributed to a source result with a different interface or parameter range.
 
-\hypertarget{exact-input-reductions}{%
-\subsection{3. Exact input reductions}\label{exact-input-reductions}}
+\hypertarget{af-46593eb93e-exact-input-reductions}{%
+\subsection{3. Exact input reductions}\label{af-46593eb93e-exact-input-reductions}}
 
-\hypertarget{cleanup-and-an-optional-quadratic-edge-kernel}{%
-\subsubsection{3.1 Cleanup and an optional quadratic edge kernel}\label{cleanup-and-an-optional-quadratic-edge-kernel}}
+\hypertarget{af-46593eb93e-cleanup-and-an-optional-quadratic-edge-kernel}{%
+\subsubsection{3.1 Cleanup and an optional quadratic edge kernel}\label{af-46593eb93e-cleanup-and-an-optional-quadratic-edge-kernel}}
 
 Remove loops, keep one original identifier per unordered nonloop pair, and remove isolated vertices. The empty case returns immediately. Let the remaining simple graph have \(v_0\leq2m_s\) vertices.
 
@@ -169,7 +172,7 @@ h_i\leq\min\left\{m_i,\binom{c_i}{2}+c_i^2\right\}
        =O(\min\{m_i,\nu_i^2\}).
 \]
 
-Under the same hypotheses as Theorem 1.1, the solve time refines to
+Applying Theorem 1.1 to each retained component gives the refined time
 
 \[
 O(n+m)+\sum_{i=1}^{a}(h_i+1)
@@ -182,8 +185,8 @@ O(n+m)+\sum_{i=1}^{a}(h_i+1)
 
 All subsequent workers and verifiers use the same cleaned graph or the same kernel. Original identifiers remain passive labels until the winner is translated once.
 
-\hypertarget{an-exact-subcubic-reduction-with-a-decoder-for-every-matching}{%
-\subsubsection{3.2 An exact subcubic reduction with a decoder for every matching}\label{an-exact-subcubic-reduction-with-a-decoder-for-every-matching}}
+\hypertarget{af-46593eb93e-an-exact-subcubic-reduction-with-a-decoder-for-every-matching}{%
+\subsubsection{3.2 An exact subcubic reduction with a decoder for every matching}\label{af-46593eb93e-an-exact-subcubic-reduction-with-a-decoder-for-every-matching}}
 
 For the graph to be solved, write \(e\) and \(v\) for its edge and nonisolated vertex counts. Replace a degree-\(d_u\) vertex \(u\) by a path with \(2d_u-1\) vertices. Its odd positions are incidence ports. Each original edge joins its designated two ports. Let \(J\) be the resulting subcubic graph and put
 
@@ -208,11 +211,11 @@ Here \(V(F)\) excludes isolated vertices. Each nonempty tree component of \(F\) 
 
 Choose \(S=2^s\) with \(N\leq S<2N\), using direct handling of bounded cases. A lifted greedy matching initializes the phase driver. Its remaining optimum gap is at most \(\lfloor v/2\rfloor-|M_0|\), by (3).
 
-\hypertarget{the-represented-matching-and-minimal-tight-contractions}{%
-\subsection{4. The represented matching and minimal tight contractions}\label{the-represented-matching-and-minimal-tight-contractions}}
+\hypertarget{af-46593eb93e-the-represented-matching-and-minimal-tight-contractions}{%
+\subsection{4. The represented matching and minimal tight contractions}\label{af-46593eb93e-the-represented-matching-and-minimal-tight-contractions}}
 
-\hypertarget{bins-rows-and-ledgers}{%
-\subsubsection{4.1 Bins, rows, and ledgers}\label{bins-rows-and-ledgers}}
+\hypertarget{af-46593eb93e-bins-rows-and-ledgers}{%
+\subsubsection{4.1 Bins, rows, and ledgers}\label{af-46593eb93e-bins-rows-and-ledgers}}
 
 A \emph{bin} \(d\) is an odd factor-critical physical block of size \(2w_d-1\), where \(w_d\geq1\). A \emph{row} is a physical singleton outside the bins, with at most three physical incidences to bins. Let \(\mathcal A\) be the rows and \(\mathcal D\) the bins. An injection \(\mu:\mathcal A\to\mathcal D\) assigns each row along one real incidence. The remaining vertices are explicitly matched pairs or unmatched blockers.
 
@@ -252,8 +255,8 @@ In particular, \(\eta(X)\geq1\); if \(X\) is \emph{tight}, meaning \(\eta(X)=1\)
 
 The positive top coordinates are \(x^0\) and \(\sigma_d=y_d^0+p_d^0-Cw_d\). Their logarithmic objective is the sum of their logarithms. Integral carrier normalization below leaves top coordinates unchanged.
 
-\hypertarget{constructive-contraction}{%
-\subsubsection{4.2 Constructive contraction}\label{constructive-contraction}}
+\hypertarget{af-46593eb93e-constructive-contraction}{%
+\subsubsection{4.2 Constructive contraction}\label{af-46593eb93e-constructive-contraction}}
 
 \textbf{Lemma 4.1.} Let a physical edge join distinct bins \(i,j\). If \(X\) is an inclusion-minimal tight set containing \(i,j\), then the union of its bins and its captive rows \(\mathcal A(X)\) is factor-critical, has weight \(w(X)\), and preserves the represented matching cardinality when contracted.
 
@@ -265,11 +268,11 @@ The old injection uses \(|X|-1\) bins for captive rows, so at most one exterior 
 
 Each contraction stores one immutable record: child-bin records, captive row incidences, the joining edge, and the creation-time captive assignment. To materialize a prescribed exposure, repair that stored assignment by at most one bipartite augmentation for a child exposure, or at most two for a swallowed-row exposure. Each row has at most three incidences. The record tree has total arity linear in physical volume, so dissolution costs that volume times a logarithmic indexing factor. Later global assignment choices do not modify these creation-time records.
 
-\hypertarget{persistent-carriers-for-the-actual-integral-ledgers}{%
-\subsection{5. Persistent carriers for the actual integral ledgers}\label{persistent-carriers-for-the-actual-integral-ledgers}}
+\hypertarget{af-46593eb93e-persistent-carriers-for-the-actual-integral-ledgers}{%
+\subsection{5. Persistent carriers for the actual integral ledgers}\label{af-46593eb93e-persistent-carriers-for-the-actual-integral-ledgers}}
 
-\hypertarget{sparse-batch-normalization}{%
-\subsubsection{5.1 Sparse-batch normalization}\label{sparse-batch-normalization}}
+\hypertarget{af-46593eb93e-sparse-batch-normalization}{%
+\subsubsection{5.1 Sparse-batch normalization}\label{af-46593eb93e-sparse-batch-normalization}}
 
 A carrier is a forest in the bipartite row/bin incidence graph. It contains every positive allocation; its other edges may have allocation zero. Every off-carrier incidence has allocation zero. We store the actual integral ledger in this form.
 
@@ -283,8 +286,8 @@ Each pending incidence uses at most one pivot. An earlier pivot touches only car
 
 An edge can become zero without an explicit notification. It remains represented until a charged topology operation removes it. The ledger fields \(y,p,w\) are unchanged by every pivot, so (7) and (8) are preserved exactly.
 
-\hypertarget{balanced-selected-trees-and-canonical-point-assignments}{%
-\subsubsection{5.2 Balanced selected trees and canonical point assignments}\label{balanced-selected-trees-and-canonical-point-assignments}}
+\hypertarget{af-46593eb93e-balanced-selected-trees-and-canonical-point-assignments}{%
+\subsubsection{5.2 Balanced selected trees and canonical point assignments}\label{af-46593eb93e-balanced-selected-trees-and-canonical-point-assignments}}
 
 Root each carrier component at its minimum-identifier bin. Every row has at least two positive incidences: one positive incidence would equal \(L\), exceeding its bin capacity \(L-w_d<L\). Its carrier degree is therefore two or three. Keep both incidences of a degree-two row; for a degree-three row keep its two child incidences. Suppress rows to obtain a selected forest with one row-labelled edge per row.
 
@@ -301,8 +304,8 @@ Thus \(w(D_T)\leq L+o-i<2L\). The physical volume is \(2w(D_T)-1\). \hfill\(\squ
 
 Assign a degree-two carrier row to its child bin and a degree-three row to its child with smaller incidence identifier. Each bin has only one carrier parent row, so the assignment is injective. To invert at a bin, inspect its parent row and that row's chosen child. These queries use a constant number of rooted forest operations and at most three incidences. This is an implicit representation of the complete current injection.
 
-\hypertarget{persistence-and-transaction-order}{%
-\subsubsection{5.3 Persistence and transaction order}\label{persistence-and-transaction-order}}
+\hypertarget{af-46593eb93e-persistence-and-transaction-order}{%
+\subsubsection{5.3 Persistence and transaction order}\label{af-46593eb93e-persistence-and-transaction-order}}
 
 Use the worst-case dynamic-tree implementation of {[}AHLT{]}. Path clusters store two orientation classes, two minima, and two lazy tags; reversing a path swaps the classes. Internal degree-reduction connectors have zero incidence count and participate in neither allocation extrema nor additions.
 
@@ -329,11 +332,11 @@ A structural transaction uses the following order.
 
 Unchanged physical matching edges remain implicit through factor-critical records. Materialize only erased physical volume and phase-boundary output. Equation (5) justifies replacing one settled valid injection by another.
 
-\hypertarget{deterministic-local-structural-actions}{%
-\subsection{6. Deterministic local structural actions}\label{deterministic-local-structural-actions}}
+\hypertarget{af-46593eb93e-deterministic-local-structural-actions}{%
+\subsection{6. Deterministic local structural actions}\label{af-46593eb93e-deterministic-local-structural-actions}}
 
-\hypertarget{output-sensitive-minimal-tight-set-discovery}{%
-\subsubsection{6.1 Output-sensitive minimal tight-set discovery}\label{output-sensitive-minimal-tight-set-discovery}}
+\hypertarget{af-46593eb93e-output-sensitive-minimal-tight-set-discovery}{%
+\subsubsection{6.1 Output-sensitive minimal tight-set discovery}\label{af-46593eb93e-output-sensitive-minimal-tight-set-discovery}}
 
 For queried bins \(i,j\), construct an implicit directed split graph. Each bin has \(d_{\rm in}\to d_{\rm out}\). Add doubled arcs from a query source to \(i_{\rm in},j_{\rm in}\); from an occupied \(d_{\rm out}\) to every neighbor input of its assigned row; and from a free \(d_{\rm out}\) to a sink. Outgoing degree is constant. Generate it by inverse assignment queries and the assigned row's three incidences.
 
@@ -343,8 +346,8 @@ Apply {[}CHHIP{]} with doubling budgets up to a constant multiple of \(L\). A la
 
 Refine this witness using only its captive rows: one unit augmentation in its split network, followed by residual reachability, returns the smallest source-side minimum cut. Tight sets containing the pair are closed under intersection, because \(\eta\) is submodular and strict surplus holds on their nonempty intersection. Thus this is the globally inclusion-minimal tight witness. Doubling makes the total work \(O((|X|+1)\mathrm{polylog}S)\) on a tight answer and \(O(L\mathrm{polylog}S)\) on a certified freeable pair.
 
-\hypertarget{joint-exposure-inside-two-small-selected-trees}{%
-\subsubsection{6.2 Joint exposure inside two small selected trees}\label{joint-exposure-inside-two-small-selected-trees}}
+\hypertarget{af-46593eb93e-joint-exposure-inside-two-small-selected-trees}{%
+\subsubsection{6.2 Joint exposure inside two small selected trees}\label{af-46593eb93e-joint-exposure-inside-two-small-selected-trees}}
 
 If a certified freeable pair lies in different selected trees, enumerate those trees and root them at the pair. Otherwise enumerate its common selected tree \(T\), whose physical volume is \(O(L)\). A tight set containing both queried bins is contained in \(T\): its \(|X|-1\) captive selected edges already connect its bins.
 
@@ -362,11 +365,11 @@ O\!\left(\left[\sum_{a=1}^{b}(|X_a|-1)+Lg\right]
  \tag{9}
 \]
 
-\hypertarget{an-exact-optimum-gap-phase-and-binary-ledger-accounting}{%
-\subsection{7. An exact optimum-gap phase and binary ledger accounting}\label{an-exact-optimum-gap-phase-and-binary-ledger-accounting}}
+\hypertarget{af-46593eb93e-an-exact-optimum-gap-phase-and-binary-ledger-accounting}{%
+\subsection{7. An exact optimum-gap phase and binary ledger accounting}\label{af-46593eb93e-an-exact-optimum-gap-phase-and-binary-ledger-accounting}}
 
-\hypertarget{phase-specification}{%
-\subsubsection{7.1 Phase specification}\label{phase-specification}}
+\hypertarget{af-46593eb93e-phase-specification}{%
+\subsubsection{7.1 Phase specification}\label{af-46593eb93e-phase-specification}}
 
 Start a phase with represented matching size \(q_0\), target \(K_{\mathrm g}\geq1\), and
 
@@ -394,8 +397,8 @@ At a settled state, perform the first applicable action.
 
 The \(g_*\)-th gain ends the phase immediately. Other structural actions are followed by the reset transaction below. A checked prerequisite or work-cap violation suspends its worker and is a distinct outcome from LOW.
 
-\hypertarget{ledger-algebra-and-erased-volume-charges}{%
-\subsubsection{7.2 Ledger algebra and erased-volume charges}\label{ledger-algebra-and-erased-volume-charges}}
+\hypertarget{af-46593eb93e-ledger-algebra-and-erased-volume-charges}{%
+\subsubsection{7.2 Ledger algebra and erased-volume charges}\label{af-46593eb93e-ledger-algebra-and-erased-volume-charges}}
 
 A tight contraction replaces \(X\) by a bin of weight \(w(X)\), residual \(y(X)\), and debt \(p(X)\). Indeed, deleting its \(|X|-1\) captive rows removes \(L(|X|-1)\) load, making the new residual \(L|X|-\mathrm{load}(X)=y(X)\). All floor inequalities add.
 
@@ -435,8 +438,8 @@ Before the terminal gain, the top debt pays all peeled weight. Hence
 
 The latter follows from the strict inequality (12), integrality, and \(CS^{-800}/L<1\). A peel materializes at most \(2w(R)\) physical vertices; a gain erases bins of total weight at most \(2L\). Also \(Lg_*\leq10001CN\). Counting initial vertices, returned volume, expansions, and contraction arities gives \(O(CN)\) structural volume. Retaining a largest child at each contraction moves a physical vertex only \(O(\log S)\) times per stay in the bin system. Its original degree is at most three. All physical incidence work and all carrier updates over the \(s\) levels consequently cost \(S\mathrm{poly}(s)\), apart from numerical projection work.
 
-\hypertarget{a-comparison-matching-prevents-a-false-low}{%
-\subsubsection{7.3 A comparison matching prevents a false LOW}\label{a-comparison-matching-prevents-a-false-low}}
+\hypertarget{af-46593eb93e-a-comparison-matching-prevents-a-false-low}{%
+\subsubsection{7.3 A comparison matching prevents a false LOW}\label{af-46593eb93e-a-comparison-matching-prevents-a-false-low}}
 
 \textbf{Lemma 7.1.} If \(\nu(J)\geq q_0+K_{\mathrm g}\), the phase cannot return a valid LOW before its \(g_*\)-th gain.
 
@@ -473,8 +476,8 @@ Its signed derivative exceeds one half of the sum of absolute individual logarit
 
 Thus a LOW after \(i\) gains means precisely \(\nu(J)<q_0+K_{\mathrm g}\), while the current matching has size \(q_0+i\).
 
-\hypertarget{binary-resets-and-additive-projection-volume}{%
-\subsubsection{7.4 Binary resets and additive projection volume}\label{binary-resets-and-additive-projection-volume}}
+\hypertarget{af-46593eb93e-binary-resets-and-additive-projection-volume}{%
+\subsubsection{7.4 Binary resets and additive projection volume}\label{af-46593eb93e-binary-resets-and-additive-projection-volume}}
 
 Give level \(j\) period \(b_j=2^{s-j}\). Expansions and contractions add one tick; repaired gains add \(L\); peels add none. On a positive tick increase, reset the smallest \(j\geq1\) whose period quotient changes. A reset at level one uses all-expanded exact exchange recovery. At \(j>1\), project from the just-current normalized parent, freeze it for the complete call, and share the settled child's persistent roots with deeper fresh levels.
 
@@ -497,8 +500,8 @@ This applies to large tick jumps as well: crossing a coarser boundary would sele
 
 There are \(O(s)\) level-one resets. Applying a structural batch to \(s\) ledgers is an additive factor; the numerical accuracy is chosen independently below.
 
-\hypertarget{the-optimum-gap-driver}{%
-\subsubsection{7.5 The optimum-gap driver}\label{the-optimum-gap-driver}}
+\hypertarget{af-46593eb93e-the-optimum-gap-driver}{%
+\subsubsection{7.5 The optimum-gap driver}\label{af-46593eb93e-the-optimum-gap-driver}}
 
 Maintain an integer \(B\geq\nu(J)-|Q|\). While \(B>0\), set \(K_{\mathrm g}=\lceil B/2\rceil\) and run a phase.
 
@@ -510,11 +513,11 @@ SUSPENDED:                  suspend this worker
 
 Both numerical updates preserve the bound, by Lemma 7.1 and integrality. For \(B\) above a fixed multiple of \(C\), success reduces it by an \(\Omega(1/C)\) fraction, while LOW approximately halves it. Below that threshold, each success gains at least one. There are \(O(C(1+\log N))=O(s^2)\) phases. At \(B=0\), materialize the maximum gadget matching and use Lemma 3.2.
 
-\hypertarget{from-raw-circulations-to-exact-projection}{%
-\subsection{8. From raw circulations to exact projection}\label{from-raw-circulations-to-exact-projection}}
+\hypertarget{af-46593eb93e-from-raw-circulations-to-exact-projection}{%
+\subsection{8. From raw circulations to exact projection}\label{af-46593eb93e-from-raw-circulations-to-exact-projection}}
 
-\hypertarget{the-raw-numerical-interface}{%
-\subsubsection{8.1 The raw numerical interface}\label{the-raw-numerical-interface}}
+\hypertarget{af-46593eb93e-the-raw-numerical-interface}{%
+\subsubsection{8.1 The raw numerical interface}\label{af-46593eb93e-the-raw-numerical-interface}}
 
 For an oriented graph with positive integral lengths \(\ell\) and integral gradient \(\gamma\), put
 
@@ -531,10 +534,10 @@ Here \(B\) is the incidence matrix; take \(\rho^*=0\) when there is no nonzero c
  \tag{20}
 \]
 
-Zero-score cases may return a certified zero alternative. A complete cap \(E\) also bounds initialization per actual record, amortized edits and queries, exposed logs, occurrence multiplicity, and answer pieces. The interface includes disconnected graphs, genuine loops, native identities, stable path images, dormant occurrences, and complete retirement transfers. Numerical instances have actual nominal size at most \(S^2\), \(O(s)\)-bit root prices, and a fixed polynomial master history. Section 11.6 specifies the realization obligations used by Theorem 1.1.
+Zero-score cases may return a certified zero alternative. A complete cap \(E\) also bounds initialization per actual record, amortized edits and queries, exposed logs, occurrence multiplicity, and answer pieces. The interface includes disconnected graphs, genuine loops, native identities, stable path images, dormant occurrences, and complete retirement transfers. Numerical instances have actual nominal size at most \(S^2\), \(O(s)\)-bit root prices, and a fixed polynomial master history. Theorem 11.6 constructs this interface and supplies the bounds used by Theorem 1.1.
 
-\hypertarget{a-direct-master-scale-priced-client}{%
-\subsubsection{8.2 A direct master-scale priced client}\label{a-direct-master-scale-priced-client}}
+\hypertarget{af-46593eb93e-a-direct-master-scale-priced-client}{%
+\subsubsection{8.2 A direct master-scale priced client}\label{af-46593eb93e-a-direct-master-scale-priced-client}}
 
 Set
 
@@ -584,8 +587,8 @@ T_{\rm priced}
 
 All exposed copies, including dormant ones, remain on signed and absolute-motion lists. Retirement transfers both counters before metadata expires. Obtaining and consuming or discarding a query answer is one transaction; representation-triggered refreshes are queued until afterward. Mutable numerical trees have one amortized history. The persistent integral carrier is a separate worst-case structure.
 
-\hypertarget{exact-rounding-below-one-unit-of-violation}{%
-\subsubsection{8.3 Exact rounding below one unit of violation}\label{exact-rounding-below-one-unit-of-violation}}
+\hypertarget{af-46593eb93e-exact-rounding-below-one-unit-of-violation}{%
+\subsubsection{8.3 Exact rounding below one unit of violation}\label{af-46593eb93e-exact-rounding-below-one-unit-of-violation}}
 
 \textbf{Lemma 8.1 (conserved near-feasible rounding).} Let \(f\) satisfy integral vertex demands exactly in an oriented multigraph with integral lower and upper bounds \(l\leq u\). If
 
@@ -603,8 +606,8 @@ Freeze integral coordinates. Maintain a forest of nonintegral edges. Each off-fo
 
 Each edge is processed, linked, and removed at most once. The remaining fractional support is a forest. A nonempty fractional forest would have a leaf whose divergence is nonintegral after all other incident coordinates have become integral, contradicting the integral demand. Hence the final vector is integral. Its violation is a nonnegative integer no larger than the original value below one, so it is zero. Pushes are differences of dyadic coordinates and integer endpoints; no new denominator is introduced. \hfill\(\square\)
 
-\hypertarget{exact-exchange-and-its-residual-peel}{%
-\subsubsection{8.4 Exact exchange and its residual peel}\label{exact-exchange-and-its-residual-peel}}
+\hypertarget{af-46593eb93e-exact-exchange-and-its-residual-peel}{%
+\subsubsection{8.4 Exact exchange and its residual peel}\label{af-46593eb93e-exact-exchange-and-its-residual-peel}}
 
 For an integral ledger and target floor \(c\), put
 
@@ -632,8 +635,8 @@ y'(R)=L\eta(R)<cw(R).
 
 Outside \(R\), deficits are filled. Restrict the new allocation after deleting \(R\) and its assigned rows; a surviving row has no positive allocation into \(R\). This is the exact zero-debt child needed by Section 7. When the frozen parent satisfies floor \(c+1\), \(\beta\leq P_{\mathrm d}\). Its captive rows also give \(y_{\rm parent}(R)\leq L\eta(R)\), so \((c+1)w(R)\leq y_{\rm parent}(R)+p(R)\leq L\eta(R)+P_{\mathrm d}<cw(R)+P_{\mathrm d}\). Thus \(w(R)<P_{\mathrm d}\).
 
-\hypertarget{recovering-the-exact-local-maximum-without-another-feasibility-solver}{%
-\subsubsection{8.5 Recovering the exact local maximum without another feasibility solver}\label{recovering-the-exact-local-maximum-without-another-feasibility-solver}}
+\hypertarget{af-46593eb93e-recovering-the-exact-local-maximum-without-another-feasibility-solver}{%
+\subsubsection{8.5 Recovering the exact local maximum without another feasibility solver}\label{af-46593eb93e-recovering-the-exact-local-maximum-without-another-feasibility-solver}}
 
 The inherited localized threshold engine uses fewer than \(1000(P_{\mathrm d}+1)\) ordinary arcs. Multiply capacities by 16, let the return arc \(t\to s\) have value \(z\), and test threshold \(b\) with \(T=16b\) and return weight \(W=20000(P_{\mathrm d}+1)\). The objective is
 
@@ -658,8 +661,8 @@ For the complete residual peel, unite the success and failure regions by origina
 
 This recovers (27) and the entire peel with \(O(P_{\mathrm d}+1)\) records. All-expanded recovery uses the same argument with its actual graph volume in place of \(P_{\mathrm d}+1\).
 
-\hypertarget{complete-matching-client-cost}{%
-\subsubsection{8.6 Complete matching-client cost}\label{complete-matching-client-cost}}
+\hypertarget{af-46593eb93e-complete-matching-client-cost}{%
+\subsubsection{8.6 Complete matching-client cost}\label{af-46593eb93e-complete-matching-client-cost}}
 
 Each local threshold has objective range, including insertion and lock losses, \(O((P_{\mathrm d}+1)s)\). Progress \(\Omega(q^2)\) gives
 
@@ -688,8 +691,8 @@ T_{\rm match}\leq S E^4\mathrm{poly}(s).
 
 Loose polynomial action, lifetime, and iteration guards are declared first. On their prefixes, tiny pad changes have total size below \(S^{-800}\); the sharper objective and locality counts then imply eventual nonfailure when \(E=S^{o(1)}\). This order establishes precision premises before using the final fast-time bound.
 
-\hypertarget{sequential-expander-routing-with-explicit-paths}{%
-\subsection{9. Sequential expander routing with explicit paths}\label{sequential-expander-routing-with-explicit-paths}}
+\hypertarget{af-46593eb93e-sequential-expander-routing-with-explicit-paths}{%
+\subsection{9. Sequential expander routing with explicit paths}\label{af-46593eb93e-sequential-expander-routing-with-explicit-paths}}
 
 The routing construction is useful because its output quality depends linearly on a depth parameter in the logarithmic exponent, whereas expensive local construction remains a separate cost.
 
@@ -709,8 +712,8 @@ Q=\exp O(ph+\log\phi^{-1}).
 
 The polynomial degrees and constants are independent of \(p\). The geometric hierarchy uses the module interfaces from {[}CS, CHS{]} and the implementation requirements of Section 11.6. The following subsections specify these interfaces and prove the sequential replacement and cost bounds used in the composition.
 
-\hypertarget{incidence-ports-and-actual-size-recursion}{%
-\subsubsection{9.1 Incidence ports and actual-size recursion}\label{incidence-ports-and-actual-size-recursion}}
+\hypertarget{af-46593eb93e-incidence-ports-and-actual-size-recursion}{%
+\subsubsection{9.1 Incidence ports and actual-size recursion}\label{af-46593eb93e-incidence-ports-and-actual-size-recursion}}
 
 Give each incidence a port. A vertex of degree \(d\) receives a cube fiber with the next power of two above \(d\) ports, and each genuine edge joins its designated ports. The elementary cube inequality
 
@@ -742,8 +745,8 @@ Stop hierarchy recursion when an actual node has at most \(C_{\rm leaf}b_{\rm ro
 
 These are the integer guards used in the query proof.
 
-\hypertarget{short-paths-actual-cuts-and-success-coverage}{%
-\subsubsection{9.2 Short paths, actual cuts, and success coverage}\label{short-paths-actual-cuts-and-success-coverage}}
+\hypertarget{af-46593eb93e-short-paths-actual-cuts-and-success-coverage}{%
+\subsubsection{9.2 Short paths, actual cuts, and success coverage}\label{af-46593eb93e-short-paths-actual-cuts-and-success-coverage}}
 
 The local matching primitive maintains a breadth-first-search tree truncated at depth \(d+2\), with a supersource and supersink. Extract a shortest path of length at most \(d\), delete all its physical vertices, and continue. Distances only increase; each arc is scanned \(O(d+2)\) times. This gives an exact maximal packing of short vertex-disjoint paths in \(O((n+m)(d+2))\) work. Processing at most \(b_{\rm route}\) colors sequentially costs an additional construction factor \(b_{\rm route}\), while the union remains vertex-disjoint in one round.
 
@@ -762,8 +765,8 @@ The strong wrapper removes disjoint weak cuts until their union first reaches \(
 
 There are \(O(1/\beta)\) weak calls. In a promised expander root, every actual-host cutoff is strictly below true sparsity. A first removed cut is impossible. Covering therefore covers the entire root; a first coarse removal is likewise impossible because its block boundary is exactly the corresponding original-host cut. Root coverage is exact.
 
-\hypertarget{half-matching-entropy-progress}{%
-\subsubsection{9.3 Half-matching entropy progress}\label{half-matching-entropy-progress}}
+\hypertarget{af-46593eb93e-half-matching-entropy-progress}{%
+\subsubsection{9.3 Half-matching entropy progress}\label{af-46593eb93e-half-matching-entropy-progress}}
 
 \textbf{Lemma 9.2.} Let an abstract \(N\)-vertex graph be the multigraph union of previous matchings. Suppose a continuing cut has \(N/4\leq |S|=a\leq N/2\) and boundary at most \(a/8\). Adding a matching from \(S\) to its complement of size at least \(a/2\), with lazy averaging on matched pairs, increases total transition entropy by at least \(5N/1024\).
 
@@ -775,8 +778,8 @@ For entropy density \(H(z)=z\ln(1/z)\), averaging \(u,w\) with \(w\leq u/2\) gai
 
 Entropy lies in \([0,N\ln N]\), so \(512\lceil\log(N+2)\rceil\) continuing rounds are more than sufficient. Every repeated matching occurrence remains a distinct multigraph edge.
 
-\hypertarget{virtual-hierarchy-and-polynomial-local-construction}{%
-\subsubsection{9.4 Virtual hierarchy and polynomial local construction}\label{virtual-hierarchy-and-polynomial-local-construction}}
+\hypertarget{af-46593eb93e-virtual-hierarchy-and-polynomial-local-construction}{%
+\subsubsection{9.4 Virtual hierarchy and polynomial local construction}\label{af-46593eb93e-virtual-hierarchy-and-polynomial-local-construction}}
 
 Each successful node exports an explicit graph on exactly its terminal set \(X\), partitioned as
 
@@ -844,8 +847,8 @@ T(N,j)\leq v^{c_1}\sum_iT(N_i,j-1)
 
 with absolute constants. Local polynomial-\(b_{\rm route}\) work is additive. Only polynomial-\(v\) attempt factors multiply over \(O(p)\) levels. Original inverse expansion occurs at the first host; nonroot thresholds are fixed constants on bounded-degree matching hosts. Together with the leaf and shuffler computations, this yields (32). This is a sequential-work argument including temporary bit operations and explicit lists.
 
-\hypertarget{scatter-meet-reverse-and-exact-destinations}{%
-\subsubsection{9.5 Scatter, meet, reverse, and exact destinations}\label{scatter-meet-reverse-and-exact-destinations}}
+\hypertarget{af-46593eb93e-scatter-meet-reverse-and-exact-destinations}{%
+\subsubsection{9.5 Scatter, meet, reverse, and exact destinations}\label{af-46593eb93e-scatter-meet-reverse-and-exact-destinations}}
 
 The query induction uses the retained hierarchy, its shuffler matrices, (36), and (39). To route inside a part \(Y_i\), fold \(B_i\) into \(X_i\) along its injective covering matching, invoke the smaller child router, and unfold the destination. Every folding fiber has size at most two.
 
@@ -880,8 +883,8 @@ The same factor counts uses of each stored primitive and repeated trace consumpt
 
 Project cube-port moves to the original host, retaining genuine edge identifiers, then erase closed subwalks using immediate host lifetime IDs. Length and all loads decrease. Equations (39) and (46) give (33) and the full query-volume bound in Proposition 9.1.
 
-\hypertarget{a-normalized-static-sparsifier}{%
-\subsection{10. A normalized static sparsifier}\label{a-normalized-static-sparsifier}}
+\hypertarget{af-46593eb93e-a-normalized-static-sparsifier}{%
+\subsection{10. A normalized static sparsifier}\label{af-46593eb93e-a-normalized-static-sparsifier}}
 
 \textbf{Proposition 10.1 (static provider).} Let a loopless demand multigraph \(J_0\) have native edge identifiers, maximum degree \(\Delta_0\), and endpoint-preserving ambient walks \(\Pi(e)\) of maximum length \(L_0\geq1\) and vertex-occurrence congestion \(C_0\). For \(1\leq p,r\leq U\) with \((p+r)h\leq U\), the construction below returns a normalized table \(\Pi'\), a selected subgraph \(\widetilde J_0\subseteq J_0\), and routes \(R:J_0\to\widetilde J_0\), with
 
@@ -911,8 +914,8 @@ Full work, plus actual vertex bookkeeping, is
 
 The statement is relative to Proposition 9.1 and the inherited degree-band primitive. Its proof follows.
 
-\hypertarget{degree-bands-and-explicit-weighted-witnesses}{%
-\subsubsection{10.1 Degree bands and explicit weighted witnesses}\label{degree-bands-and-explicit-weighted-witnesses}}
+\hypertarget{af-46593eb93e-degree-bands-and-explicit-weighted-witnesses}{%
+\subsubsection{10.1 Degree bands and explicit weighted witnesses}\label{af-46593eb93e-degree-bands-and-explicit-weighted-witnesses}}
 
 First loop-erase every individual ambient image, using immediate ambient lifetime identifiers. This gives simple \(\Pi'(e)\), with length at most \(L_0\) and congestion at most \(C_0\).
 
@@ -942,8 +945,8 @@ The degree-band inventory bounds, with the explicit cube factor, give
 
 Every host and witness is generated at its actual inventory.
 
-\hypertarget{both-routing-directions-pay-full-query-volume}{%
-\subsubsection{10.2 Both routing directions pay full query volume}\label{both-routing-directions-pay-full-query-volume}}
+\hypertarget{af-46593eb93e-both-routing-directions-pay-full-query-volume}{%
+\subsubsection{10.2 Both routing directions pay full query volume}\label{af-46593eb93e-both-routing-directions-pay-full-query-volume}}
 
 Route \(\lceil\rho_i\rceil\) unit-token copies of every witness edge through \(J_i\). Equation (50) gives endpoint load \(O(U/\phi)\) relative to host degree. Aggregate full query volume is \(O(m_0U/\phi)\).
 
@@ -958,8 +961,8 @@ In reverse, route one token per \(J_i\) edge through \(W_i\), with degree-relati
 
 Preprocess each actual \(J_i\) and \(W_i\) component once. Only query work multiplies load. Proposition 9.1 gives common simple-path quality \(Q=\exp O((p+r)h)\) and the work factor in (48). Loop-erasing these token paths in their immediate hosts is separate from normalizing \(\Pi\).
 
-\hypertarget{sparse-deterministic-weighted-path-selection}{%
-\subsubsection{10.3 Sparse deterministic weighted path selection}\label{sparse-deterministic-weighted-path-selection}}
+\hypertarget{af-46593eb93e-sparse-deterministic-weighted-path-selection}{%
+\subsubsection{10.3 Sparse deterministic weighted path selection}\label{af-46593eb93e-sparse-deterministic-weighted-path-selection}}
 
 \textbf{Lemma 10.2.} Suppose group \(g\) has \(q_g\geq1\) explicit options with nonnegative integer resource multiplicities \(a_{gjx}\). The explicit-list size \(S_{\rm list}\) counts all option headers and every unit resource occurrence; aggregated multiplicities retain that occurrence budget. Put
 
@@ -1012,15 +1015,15 @@ Q\phi^{-O(1)}\mathrm{poly}(U)(C_0+\Delta_0).
 
 Only used ambient resources enter the logarithm; their logarithmic inventory is \(O(U)\).
 
-\hypertarget{selected-input-support-and-composition}{%
-\subsubsection{10.4 Selected input support and composition}\label{selected-input-support-and-composition}}
+\hypertarget{af-46593eb93e-selected-input-support-and-composition}{%
+\subsubsection{10.4 Selected input support and composition}\label{af-46593eb93e-selected-input-support-and-composition}}
 
 Retain all native \(J_0\)-edge identifiers used by the selected witness paths, together with residual edges. By (51), their number is at most \(|V(J_0)|Q\phi^{-O(1)}\mathrm{poly}(U)\).
 
 Each reverse route uses a witness edge with congestion at most \(D_iQ\), or relative to weight \(\rho_i\), at most \(2Q/\phi\). Substitute the chosen forward path for every witness occurrence. This multiplies (55) by at most \(2Q/\phi\); final host length is at most \(Q^2\). These fixed powers give (47)--(48). Scanning all composed occurrence lists costs the factor \(L_0+1\) in (49). Thus ambient input length affects construction work while the congestion bound remains additive in \(C_0+\Delta_0\).
 
-\hypertarget{exact-correction-circulations-after-normalization}{%
-\subsubsection{10.5 Exact correction circulations after normalization}\label{exact-correction-circulations-after-normalization}}
+\hypertarget{af-46593eb93e-exact-correction-circulations-after-normalization}{%
+\subsubsection{10.5 Exact correction circulations after normalization}\label{af-46593eb93e-exact-correction-circulations-after-normalization}}
 
 Let \(R(e)\) be the current selected-support route for edge \(e\), with the same immediate endpoints and raw weighted length at most \(\delta_{\rm str}\ell_e\). The selected edge keeps its own native length and gradient. Define its correction \(d_e=e-R(e)\). For every circulation \(c\),
 
@@ -1040,13 +1043,13 @@ Linearity of the numerator and weighted averaging therefore give a correction or
 
 Replacing a route \(R_0(e)\) by \(R_1(e)\) changes the correction by the exact circulation \(R_0(e)-R_1(e)\). Normalization's entire gradient discrepancy is retained in the new \(e-R_1(e)\). A selected projected edge contributes its central original identifier to support, even if geometric loop erasure removes that occurrence from its image. Distinct aliases remain distinct until their explicitly typed projection. These conventions preserve (56) and the raw lift.
 
-\hypertarget{dynamic-repair-degree-reset-and-the-complete-raw-backend}{%
-\subsection{11. Dynamic repair, degree reset, and the complete raw backend}\label{dynamic-repair-degree-reset-and-the-complete-raw-backend}}
+\hypertarget{af-46593eb93e-dynamic-repair-degree-reset-and-the-complete-raw-backend}{%
+\subsection{11. Dynamic repair, degree reset, and the complete raw backend}\label{af-46593eb93e-dynamic-repair-degree-reset-and-the-complete-raw-backend}}
 
-This section specifies the current backend realization and its quantitative proof obligations. Its local structural and recurrence arguments are given explicitly. The large distance-geometry/occurrence implementation is retained as the realization contract in Section 11.6; the main theorem is conditional on that complete contract.
+This section constructs the dynamic cycle-search hierarchy and records its chronological work, literal path lengths and finite arithmetic. Sections 11.1--11.5 give the main invariants and recurrences. Theorem 11.6 identifies the complete companion constructions that instantiate each required interface and proves that their composition has those bounds.
 
-\hypertarget{actual-size-stable-cores}{%
-\subsubsection{11.1 Actual-size stable cores}\label{actual-size-stable-cores}}
+\hypertarget{af-46593eb93e-actual-size-stable-cores}{%
+\subsubsection{11.1 Actual-size stable cores}\label{af-46593eb93e-actual-size-stable-cores}}
 
 Every nonbase parent has maximum degree three. A fresh period begins with its actual nonisolated graph of resident size \(m'\), and lasts \(O(m'/k)\) parent edits. Within the period, newly isolated slots are retained and counted. A later period starts from the maintained nonisolated list, without rescanning unrelated private isolates.
 
@@ -1068,8 +1071,8 @@ Stable forests have components of \(O(k)\) physical vertices. Endpoint promotion
 
 Whole small-component trees remain in parent storage and physical pool counts. Only selected nonloop endpoints are published recursively. A registered loop demand keeps its current endpoint annotations and an empty route. If a native split makes it nonloop, both endpoints are touched; this does not create a fresh batch of input lifetimes.
 
-\hypertarget{touched-set-repair-and-selected-edge-feedback}{%
-\subsubsection{11.2 Touched-set repair and selected-edge feedback}\label{touched-set-repair-and-selected-edge-feedback}}
+\hypertarget{af-46593eb93e-touched-set-repair-and-selected-edge-feedback}{%
+\subsubsection{11.2 Touched-set repair and selected-edge feedback}\label{af-46593eb93e-touched-set-repair-and-selected-edge-feedback}}
 
 Choose
 
@@ -1145,8 +1148,8 @@ W=k^{O(1)}\rho^{O(1)}F^{O(1)}
 
 Only genuine selected-edge provenance and label changes propagate as recursive input edits. Updating a correction route changes its correction record under (56); it does not replace the selected edge's native gradient.
 
-\hypertarget{fixed-degree-three-fibers-and-exact-cycle-comparison}{%
-\subsubsection{11.3 Fixed degree-three fibers and exact cycle comparison}\label{fixed-degree-three-fibers-and-exact-cycle-comparison}}
+\hypertarget{af-46593eb93e-fixed-degree-three-fibers-and-exact-cycle-comparison}{%
+\subsubsection{11.3 Fixed degree-three fibers and exact cycle comparison}\label{af-46593eb93e-fixed-degree-three-fibers-and-exact-cycle-comparison}}
 
 After identifying equal physical roots with their correct frozen gauges, let the settled selected graph have maximum degree at most \(C_{\rm port}\), a fixed dyadic envelope for \(R_{\rm sel}\). Give each actual selected-vertex lifetime a fixed full binary tree with \(C_{\rm port}\) leaves. Assign its current incidences to distinct leaves. Put a real child edge between the assigned leaves for every selected edge. Let
 
@@ -1170,8 +1173,8 @@ N_{\rm par}=N_{\rm ch}/H_{\rm port},\qquad
 
 Path coefficients stay unit signed integers. The selected edge's gradient is the exact gradient of its two forest legs and central parent edge. Frozen potential corrections telescope on complete circulations. They are not recomputed merely because a stable forest splits. Immediate-null links have their own typed provenance; an edge that becomes null only after a later projection remains a real edge in its immediate graph.
 
-\hypertarget{flat-occurrence-pools-and-chronological-recurrences}{%
-\subsubsection{11.4 Flat occurrence pools and chronological recurrences}\label{flat-occurrence-pools-and-chronological-recurrences}}
+\hypertarget{af-46593eb93e-flat-occurrence-pools-and-chronological-recurrences}{%
+\subsubsection{11.4 Flat occurrence pools and chronological recurrences}\label{af-46593eb93e-flat-occurrence-pools-and-chronological-recurrences}}
 
 For each parent root \(v\), let \(T_v\) be the direct sum of its stable forest trees, identifying only their roots. If the child has \(G_{\rm ch}\) occurrences per child vertex, reserve \(O(C_{\rm port}(G_{\rm ch}+1))\) copies \(T_{v,a}\), with common copy indices across roots. Assign each child occurrence over a port of \(v\) a distinct index.
 
@@ -1219,8 +1222,8 @@ k^{O(1)}\exp O(dK_{\mathrm r}\log\Gamma+d\log U).
 
 Local same-tree cycles and correction circulations are extracted with their actual expansion work paid in \(W\). The raw certificate must dominate their literal traversals. Equation (69) includes every recursive level.
 
-\hypertarget{finite-bit-forests-without-recursive-precision-growth}{%
-\subsubsection{11.5 Finite-bit forests without recursive precision growth}\label{finite-bit-forests-without-recursive-precision-growth}}
+\hypertarget{af-46593eb93e-finite-bit-forests-without-recursive-precision-growth}{%
+\subsubsection{11.5 Finite-bit forests without recursive precision growth}\label{af-46593eb93e-finite-bit-forests-without-recursive-precision-growth}}
 
 The finite-bit tree interface required here is the following: on a connected \(n'\)-vertex, \(m'\)-edge graph with original edge lengths in \([1,2^b)\), return an original-edge spanning tree \(T\) with
 
@@ -1230,7 +1233,7 @@ The finite-bit tree interface required here is the following: on a connected \(n
  \tag{70}
 \]
 
-in \((n'+m')\mathrm{poly}(b+\log(n'+m'+4))\) bit work. Its geometric realization uses the weighted petal construction of {[}AN{]}: exact weighted portals on a common dyadic grid, a static directed metric during each petal, exact midpoint tests, and separate working and inherited target paths. Temporary portal coordinates are removed before exporting the tree. We treat this finite-bit realization, including its geometric induction, as part of the backend contract; only its integration into the numerical hierarchy is proved here.
+in \((n'+m')\mathrm{poly}(b+\log(n'+m'+4))\) bit work. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/an-weighted-finite-bit-adapter.md}{finite-bit petal-tree adapter}, Sections 1--7, proves this realization using the weighted petal geometry of {[}AN{]}. It uses exact weighted portals on a common dyadic grid, one static directed metric during each petal, exact midpoint tests, and separate working and inherited target paths. It omits short-edge contractions and pays polynomial overhead in the aspect-bit bound. Temporary portal coordinates are removed before exporting the original-edge tree. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/polynomial-bit-stretch-stable-forest-integration.md}{stable-forest integration proof}, Sections 2--7, supplies the weighted calls and the acyclic bit bound below.
 
 For weighted forest calls, use occurrence counts \(N_e\) and integer importance \(w_e=N_e\ell_e\). If a component has \(a\) edges and total \(W_0>0\), smooth by \(v_e=aw_e+W_0\) and use replica counts \(\lceil av_e/\sum_fv_f\rceil\), totaling at most \(2a\). If \(W_0=0\), use uniform positive weights. Reciprocal ordering uses the dyadic proxy \(2^{-\lceil\log\ell_e\rceil}\). All these operations use integer arithmetic or one common power-of-two grid.
 
@@ -1255,37 +1258,61 @@ with fixed \(c_b\) large enough for the root-price and size constants. This labe
 
 The complete initial future-path occurrence inventory has size and total edge count \(m'k^{O(1)}\mathrm{poly}(U)\), and maximum path length at most \(k^{O(1)}\mathrm{poly}(U)2^{b_*}\). Weighted path halving thus uses \(O(\log(m'+2)+\log(k+2)+b_*+\log(U+2))=\mathrm{poly}(U)\) forests. This count includes the length aspect. Temporary spectral, moment, or portal arithmetic is charged locally and is not exported as a stored numerical label.
 
-\hypertarget{required-deterministic-cycle-search-implementation}{%
-\subsubsection{11.6 Required deterministic cycle-search implementation}\label{required-deterministic-cycle-search-implementation}}
+\hypertarget{af-46593eb93e-deterministic-cycle-search-realization}{%
+\subsubsection{11.6 Deterministic cycle-search realization}\label{af-46593eb93e-deterministic-cycle-search-realization}}
 
-The following is the precise internal realization hypothesis used in Theorem 1.1. It states more than an ordinary distance oracle or a net-norm cycle oracle.
+The next theorem instantiates the interfaces used above. In particular, the raw-length comparison, occurrence maintenance and finite-bit tree construction are supplied by the linked proofs. They are not additional unproved primitives.
 
-\textbf{Unresolved implementation hypothesis.} A fixed finite deterministic implementation must maintain the graph hierarchy, repair it after updates, control its degrees, and represent the reported circulations by signed physical-edge and forest-path pieces. Its length certificate counts every traversal before cancellation. The following five requirements must all hold:
+\textbf{Theorem 11.6 (realization and dependency closure).} Use the deterministic source results in Section 2.2, the actual-size conventions of Section 11.1, and the parameter family (73). For every sufficiently large master size, fixed sufficiently large cap constants give a finite deterministic dynamic algorithm realizing Section 8.1 on its announced polynomial master history. This includes disconnected graphs, native parallel records, genuine positive-length loops, and representation changes chosen from the settled past. It returns signed physical-edge and forest-path pieces whose gradient is exact and whose length certificate dominates every physical traversal before cancellation.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{Geometric comparison.} The local distance-to-cycle decomposition is valid on its actual degree-three multigraphs. The one-level loss is bounded by a fixed power of \(\Gamma^{K_{\mathrm r}}U\); complete recursion gives (69), with numerator identities and literal traversal certificates as in (56) and (65).
-\item
-  \textbf{Construction and recourse.} For every chronological prefix and the first attempted batch, actual local work, selected support/degree, published child edits, and initial credit satisfy (61)--(67). Old loop lifetimes, native splits, and disconnected small components obey Section 11.1.
-\item
-  \textbf{Occurrences and retirement.} The flat forests are actual forests with the pool inventory in Section 11.4. The implementation reports every exposed representation change, preserves the old immediate maps through retirement, counts dormant and isolated occurrences, and transfers both signed and absolute counters. Queries expose only settled transactions.
-\item
-  \textbf{Finite arithmetic.} The weighted original-edge tree realization satisfies (70); its exported labels satisfy (71)--(72). All temporary and stored arithmetic, explicit paths, dictionaries, and private resident records are charged. Root prices fit the fixed master envelope of Section 8.
-\item
-  \textbf{Uniform executable bounds.} Fixed, enumerable cap constants suffice for all these claims uniformly in \(U,p,r,K_{\mathrm r},k\). Actual-size base cases and finite guards are implemented, and initialization is proportional to actual inventory.
-\end{enumerate}
+Before balancing the parameters, its occurrence, initialization and update bounds are (67)--(68), and its inverse raw quality is (69). Thus the work and record bounds are \(k^{O(1)}W(cP_{\mathrm b})^{O(d_*)}\); the separate quality bound includes \(\exp O(d_*K_{\mathrm r}\log\Gamma+d_*\log U)\). The same work envelope pays queries, their exposed logs and explicit answer pieces. Stored lengths and gradients satisfy (71)--(72). All polynomial degrees and implicit constants are fixed independently of the growing parameters.
 
-The carrier, rounding, entropy, weighted selection, degree-feedback, recurrence solution and parameter balance have separate local arguments. Those arguments do not supply a complete executable implementation satisfying these five requirements. Equations (67) and (69) yield the next section's cap only if all five hold.
+The intermediate constructions allow integer \(1\leq p,r,K_{\mathrm r}\leq U\) with \((p+r)h\leq U\). Each local call uses its actual resident graph, the local source range or the stated direct base case, and the bit guard of Section 11.5. Section 12 checks the shrinkage, depth, aspect and numerical-client inequalities for (73); no inadmissible parameter substitution into a complete published hierarchy is used.
 
-For the exact published boundary, Kyng--Meierhans--Probst Gutenberg--Sulser, \href{https://arxiv.org/html/2609.23852v1}{\emph{A Simpler and Faster Min-Cost Flow Solver via Min-Ratio Cycles from Distance Oracles}, arXiv:2609.23852v1}, Theorems 4.4--4.5, provides a deterministic hierarchy at its own \(\exp(O(\log^{20/21}m\log\log m))\) scale. Its Definition 5.1 inserts edges with zero flow; it does not specify retirement of a positive frozen flow. Its Lemma 5.4, as printed, gives a path-length inequality in the opposite direction from the upper certificate needed here. The required direction is that the reported physical traversal sum is at most the charged length certificate. The accompanying source discussion and the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/distance-oracle-raw-lift.md}{local lift argument} must be checked at that stronger interface. Neither the printed lemma alone nor the published parameter choice establishes the four-fifths time bound. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/sources.md}{source map} identifies the remaining imports.
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Required interface
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Construction that supplies it
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Bound and application scope
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Literal raw-cycle quality and exact gradients & \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/distance-oracle-raw-lift.md}{Raw lift}, Sections 2--7; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/normalized-route-cycle-comparison.md}{normalized cycle comparison}, Sections 1--6; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/distance-degree-reset-candidate.md}{degree reset}, Sections 2--5 & Nonloop root legs, same-root fundamental cycles, retained-edge gauge correction and the circulation identity give (56), (65) and the full product (69). The final local extraction loss is paid once. \\
+Chronological initialization, repair and selected-edge recourse & \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/amortized-static-base-distance-sparsifier.md}{Static-base repair}, Sections 3--7; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/normalized-projected-route-composition.md}{projected route composition}, Sections 1--5; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/demand-route-notifications-and-local-work.md}{route notifications}, Sections 2--6 and 8 & Every prefix, including an attempted cascade, satisfies (59)--(63). Initial credit may be spent later and is paid by the child update term in (67). Full route and inverse-list maintenance enters \(W\); only selected native-edge changes enter \(P_{\mathrm b}\). \\
+Genuine occurrence forests, dormant records and retirement & \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/distance-degree-reset-candidate.md}{Degree reset and flat pools}, Sections 2--7; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/numerical-backend-lifetime-and-loops.md}{lifetime and loop construction}, Sections 1--5; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/disconnected-component-backend-wrapper.md}{disconnected-component wrapper}, Sections 2, 5--8 & Stable fibers belong to actual lifetimes; dormant and isolated copies count in (67). Old maps remain valid until signed increments and absolute motion are transferred. Query and consumption form one atomic transaction. Positive-length loops have their separate exact-ratio service. \\
+Finite-bit original-edge trees and additive label growth & \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/an-weighted-finite-bit-adapter.md}{Finite-bit petal-tree adapter}, Sections 1--7; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/polynomial-bit-stretch-stable-forest-integration.md}{stable-forest integration}, Sections 2--7; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/deterministic-symbolic-shortest-path-ties.md}{deterministic path ties}, Sections 1--6 & Equation (70) holds in polynomial aspect-bit work. Integer smoothing and a common dyadic reciprocal grid avoid unrelated denominators. The exact label formula (71) gives only \(O(U)\) added bits per level, before the tree's cost is substituted. \\
+A uniform finite router, static provider and common caps & \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/sequential-expander-routing-tradeoff.md}{Sequential router}, Sections 2--8; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/linear-parameter-static-sparsifier.md}{linear-parameter static provider}, Sections 2--7; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md}{uniform source interfaces}, Sections 1--8; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/quantitative-matching-4-5-composition.md}{quantitative composition}, Sections 3--7 & The explicit providers give \(\log\Gamma=O((p+r)h)\) and \(\log F=O(U/p+U/r+r^2h+(p+r)h)\). Actual-size base cases, temporary bit work, both witness-query volumes and all recursive quality factors are charged. Fixed enumerable constants suffice. \\
+\end{longtable}
 
-\hypertarget{parameter-balance-and-one-finite-program}{%
-\subsection{12. Parameter balance and one finite program}\label{parameter-balance-and-one-finite-program}}
+\textbf{Proof.} First construct the static provider rather than assuming its output type. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/virtual-expander-hierarchy-reconstruction.md}{virtual hierarchy}, Sections 3--5.1, supplies literal child inclusions, the corrected coverage guarantee, and the complete family of paths flattened through one root embedding. Exact short-path matching, the fresh-cut adapter, the threshold-at-most-one-eighth entropy proof, the energy cut player and the leaf circuits supply its local procedures. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/conditional-full-router-from-shufflers.md}{full-router induction}, Sections 3--8, then routes the real and dummy tokens with exact destinations. Its generic input hypotheses are all supplied by that hierarchy and its leaf circuits; the sequential router's Section 6 performs this instantiation explicitly. Thus a filename containing ``conditional'' does not leave the present router as an assumption.
 
-\hypertarget{rounded-parameters-and-all-charged-terms}{%
-\subsubsection{12.1 Rounded parameters and all charged terms}\label{rounded-parameters-and-all-charged-terms}}
+The static provider uses this router in both weighted-witness directions and pays full host size times load in both calls. Deterministic weighted path selection and immediate-graph loop erasure supply the selected support and normalized paths. This proves Proposition 10.1 with its separate structural factor \(\Gamma\) and construction factor \(F\). Small balanced-cut calls clip \(r\) to their actual legal range. The old complete dynamic-spanner theorem is never invoked at \(K_{\mathrm r}=t^2\).
+
+Next apply the static-base schedule to each actual stable core. The prefix potential proof bounds all feedback cuts before settlement; deduplicated selected-edge IDs determine degree and child publication. The route-owner recurrence gives (62), including endpoints of formerly empty routes. Explicit forward and inverse lists enumerate every changed correction route; the selected edge keeps its own central provenance. Consequently this local work is charged by (63), without turning each correction change into a recursive input edit. The late initial credit is a genuine chronological charge, so (67) retains both \(J_{d-1}\) and \(T_{d-1}\).
+
+Insert the stable degree-three fibers and flat root pools. Contracting the assigned pool trees recovers the child forest, which proves that the expanded object is a forest. A child forest change alters a connecting record or claims a counted pool slot; parent cuts are separately applied to all descendant copies. Pool growth uses observed-count doubling, whose replacement and retirement work is charged geometrically. The lifetime construction transfers both signed flow and absolute motion while the old maps are valid, retains dormant copies, and queues refreshes until a returned answer is consumed or discarded. These rules preserve the numerical identities on every completed transaction and under adaptive histories of settled operations.
+
+For quality, the raw-lift proof bounds each literal lifted traversal. A same-root edge uses its simple fundamental cycle; a nonloop uses its two root legs. Retained edges receive the frozen-potential correction before zero-link contraction. Hence gradients telescope on complete circulations and raw length is bounded in the required direction. The normalized-route identity preserves its correction alternative, and degree reset preserves the numerator with (65)'s length domination. Multiplying all level losses gives (69); the terminal extraction loss is not repeated at every level.
+
+For arithmetic, the petal adapter proves the weighted original-edge tree interface with polynomial cost in \(b+\log(n'+m'+4)\). Its portals lie on one dyadic grid and its temporary coordinates do not become numerical labels. The fixed label expression (71) depends on simple original-tree paths, so its magnitude is bounded independently of the average stretch or number of weighted calls. This establishes (72) before charging the polynomial tree work. Weighted future-path halving includes the aspect term and all initial singleton edges. Deterministic symbolic ties, integer replicas and exact conditional expectations introduce no random seed or uncharged real operation.
+
+All remaining loops are finite scans, dictionary operations, explicit path operations or named deterministic source calls within their stated ranges. The recurrences therefore have fixed uniform constants. Equations (67)--(69) and the acyclic bit induction give the asserted work, record and quality bounds. Their simultaneous substitution in Section 12 provides a favorable fixed cap tuple; that section handles all finite exceptional sizes by the independently checked classical worker. \hfill\(\square\)
+
+\textbf{Published boundary and implementation coverage.} Kyng, Meierhans, Probst Gutenberg and Sulser's \href{https://arxiv.org/html/2609.23852v1}{\emph{A Simpler and Faster Min-Cost Flow Solver via Min-Ratio Cycles from Distance Oracles}, arXiv:2609.23852v1}, Theorems 4.4--4.5, gives its own deterministic \(\exp(O(\log^{20/21}m\log\log m))\) hierarchy. That parameter choice is not the proof of this theorem. Its zero-flow insertion operation is supplemented here by the proved lifetime transfer, and the raw-lift proof supplies the physical-length upper bound required in place of the printed direction in its Lemma 5.4. The new routing, repair and finite-bit constructions supply the improved parameters. These are mathematical algorithms and proofs already present in the 24 October construction chain. End-to-end fast code remains future implementation work; the available reference solver has its own polynomial bound. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/sources.md}{source map} identifies every imported paper and the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/verify/README.md}{verification note} records the narrower executable evidence.
+
+\hypertarget{af-46593eb93e-parameter-balance-and-one-finite-program}{%
+\subsection{12. Parameter balance and one finite program}\label{af-46593eb93e-parameter-balance-and-one-finite-program}}
+
+\hypertarget{af-46593eb93e-rounded-parameters-and-all-charged-terms}{%
+\subsubsection{12.1 Rounded parameters and all charged terms}\label{af-46593eb93e-rounded-parameters-and-all-charged-terms}}
 
 For sufficiently large \(U\), compute
 
@@ -1352,7 +1379,7 @@ Stored-label arithmetic & \(b_*=O(Ut)\), charged polynomially \\
 
 Since \(t^5h\leq U\), all logarithmic overhead charges are \(O(U/t)\). Moreover \(\log P_{\mathrm b}/x=O(1/t+t^2h/U)=o(1)\), so the child size factor \(P_{\mathrm b}/k\leq k^{-1/2}\) eventually; \(d_*\) has fixed slack. On a nonbase graph \(\log m'\geq x-O(1)\), and \(b_*/x^2=O(t^3/U)=o(1)\), satisfying the stored-label aspect guard. Smaller instances use their direct charged base solver.
 
-Thus, assuming the implementation specified in Section 11.6, a fixed sufficiently large pair \((c_C,c_E)\) gives the computable complete cap
+By Theorem 11.6, a fixed sufficiently large pair \((c_C,c_E)\) therefore gives the computable complete cap
 
 \[
 E_*=2^{c_E x},\qquad
@@ -1362,24 +1389,24 @@ E_*=2^{c_E x},\qquad
 
 This covers initialization per actual record, amortized updates, queries, complete logs, occurrences, answer pieces, and inverse raw quality. A root answer with at most \(E_*\) pieces in forests of at most \(ME_*\) records has raw numerator and denominator bounded in magnitude by \(ME_*^2\) times the corresponding root label bound. Their bit sizes are \(O(U)\) for a favorable fixed tuple. Maintained path aggregates supply each returned forest path's length and signed gradient sum without expanding it to compute the certificate. Computing the actual raw denominator can only improve its ratio relative to the inherited upper certificate.
 
-\hypertarget{uniform-constants-and-independent-acceptance}{%
-\subsubsection{12.2 Uniform constants and independent acceptance}\label{uniform-constants-and-independent-acceptance}}
+\hypertarget{af-46593eb93e-uniform-constants-and-independent-acceptance}{%
+\subsubsection{12.2 Uniform constants and independent acceptance}\label{af-46593eb93e-uniform-constants-and-independent-acceptance}}
 
 To obtain one program without numerical advice about sufficiently large constants, enumerate positive integer pairs \((c_C,c_E)\) in a fixed computable order. A scheduler reserves a fixed positive instruction share for a classical deterministic exact worker and assigns each fixed tuple a positive constant share, for example by a binary ruler schedule. Tuple generation and instruction simulation are charged. No worker preallocates its master bound.
 
 Each worker checks degree, size, history, prefix-recourse, depth, label, and work caps before using a result. A cap violation suspends the worker, and an overlong path is never truncated. Before any candidate is accepted, validate its edge list and run one independent deterministic augmenting-path search {[}Gabow{]} on the shared compact graph. No augmenting path certifies maximum cardinality. Verification and candidate materialization are charged inside that worker's instruction share.
 
-This arrangement always terminates and returns a correct answer: the classical worker receives positive share and supplies one, while no accepted candidate fails the augmenting-path criterion. Under the external interfaces and the implementation requirements of Section 11.6, some fixed tuple is favorable for every sufficiently large input. Its scheduling penalty is constant, its finite-word simulation overhead is polynomial in \(s\), and its verified completion is bounded by (31). Any finite collection of exceptional input sizes is absorbed into a uniform constant.
+This arrangement always terminates and returns a correct answer: the classical worker receives positive share and supplies one, while no accepted candidate fails the augmenting-path criterion. Theorem 11.6 and the inequalities in Section 12.1 prove that some fixed tuple is favorable for every sufficiently large input. To see that the guards do not add a new hypothesis, consider its first purported failure. All prior transactions satisfy the invariants; the chronological prefix bounds also cover the attempted batch. The work, size, label and depth bounds consequently fit that tuple's caps, contradicting first failure. Its scheduling penalty is constant, its finite-word simulation overhead is polynomial in \(s\), and its verified completion is bounded by (31). Any finite collection of exceptional input sizes is absorbed into a uniform constant. The output verifier alone would not establish this favorable-tuple or running-time argument.
 
 The classical worker also bounds total pretermination instructions and allocated records by a fixed polynomial in the compact instance size, up to scheduler overhead. Addresses and live scheduling indices therefore need only \(O(s)\) bits. This justifies the charged word simulation used by the persistent memory and the portfolio.
 
-\hypertarget{completion-of-theorem-1.1}{%
-\subsubsection{12.3 Completion of Theorem 1.1}\label{completion-of-theorem-1.1}}
+\hypertarget{af-46593eb93e-completion-of-theorem-1.1}{%
+\subsubsection{12.3 Completion of Theorem 1.1}\label{af-46593eb93e-completion-of-theorem-1.1}}
 
-Substitute \(U=2s\) and (77) into (31). Since \(S=\Theta(e+1)\) for the cleaned subcubic construction, all fixed polynomial factors in \(s\) fit the exponential in (1). Cleanup and optional kernel construction cost \(O(n+m)\); candidate checks use only that shared compact exact-preserving graph. Translate only the accepted matching's edge identifiers once. Lemmas 3.1 and 3.2 give exactness on the original input and the kernelized form of the second term. This proves the stated conditional composition theorem. \hfill\(\square\)
+Substitute \(U=2s\) and (77) into (31). Since \(S=\Theta(e+1)\) for the cleaned subcubic construction, all fixed polynomial factors in \(s\) fit the exponential in (1). Cleanup and optional kernel construction cost \(O(n+m)\); candidate checks use only that shared compact exact-preserving graph. Translate only the accepted matching's edge identifiers once. Lemmas 3.1 and 3.2 give exactness on the original input and the kernelized form of the second term. This proves Theorem 1.1, using the instantiated construction of Theorem 11.6 and the named source results in Section 2.2. \hfill\(\square\)
 
-\hypertarget{references}{%
-\subsection{References}\label{references}}
+\hypertarget{af-46593eb93e-references}{%
+\subsection{References}\label{af-46593eb93e-references}}
 
 \textbf{{[}OAI{]}} OpenAI. \emph{Almost-Linear-Time Maximum-Cardinality Matching in General Graphs}. Manuscript dated 24 September 2026, Sections 3--5. \href{https://github.com/openai/math/tree/main/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026}{Official manuscript directory}.
 

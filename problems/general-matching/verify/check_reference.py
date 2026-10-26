@@ -219,7 +219,8 @@ def scale_and_cli_cases() -> int:
     assert answer["cardinality"] == 1
     assert answer["statistics"]["kernel_vertices"] == 4
     assert answer["statistics"]["kernel_edges"] == 3
-    assert answer["statistics"]["blossom_vertices"] == 3
+    assert answer["statistics"]["solver_vertices"] == 3
+    assert answer["statistics"]["blossom_vertices"] == 0
     assert verify_result(2500, star, answer)["optimality_verified"]
 
     # The first kernel can retain c+c^2 vertices while the second stage
@@ -236,7 +237,8 @@ def scale_and_cli_cases() -> int:
     assert answer["statistics"]["cover_vertices"] == cover_size
     assert answer["statistics"]["kernel_vertices"] == order
     assert answer["statistics"]["kernel_edges"] == len(leaf_path) == 419
-    assert answer["statistics"]["blossom_vertices"] == 2 * cover_size
+    assert answer["statistics"]["solver_vertices"] == 2 * cover_size
+    assert answer["statistics"]["blossom_vertices"] == 0
     verified = verify_result(order, leaf_path, answer)
     assert verified["optimality_verified"] and verified["retained_vertices"] == order
 

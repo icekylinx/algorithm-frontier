@@ -6,18 +6,20 @@
 
 ## Linked mathematical dependencies
 
-These manuscripts contain the interfaces, auxiliary arguments or source
-comparisons referenced by this result. Their stated hypotheses remain
-part of each use; an interface analysis does not supply an omitted backend.
+The generic interfaces are supplied by the local constructions and
+published theorems below. The accepted no-reset forest avoids the
+additional vertex-deletion interface needed by the older optional
+ported-pool variant. Input models, source versions and parameter ranges
+remain explicit.
 
 | Layer | Exact dependency and boundary |
 |---|---|
-| Static metric provider | The normalized quality and construction bounds in (2) are research premises. Their constants must be uniform in the growing parameters. |
-| Native selected records | Requires stable forest identities, physical edge provenance, active-root events and the chronological bound (4), including initial credit used later. A distance-only sparsifier does not supply this transcript. |
+| Static metric provider | [The linear-parameter static construction, Sections 3–7](../../manuscripts/graph-backends/linear-parameter-static-sparsifier.md) proves (2); [the uniform source audit](../../manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md) checks the growing parameters and finite arithmetic. |
+| Native selected records | Main Sections 1–3 and [the metric/inventory audit, Sections 1–2 and 9](../../manuscripts/graph-backends/steiner-pool-metric-inventory-focused-audit.md) establish physical provenance, stable forest identities, active roots and chronological bound (4), including late spending of initial credit. |
 | Uncontracted Steiner lift | Proves the fixed pool construction, native degree growth, typed-null handling and separate occurrence/work recurrences. All unused pools and historical isolates are counted. |
 | Outer decremental covers | Uses Definition 5.2 of *A Dynamic Shortest Paths Toolbox*, named below, and the explicit-copy recurrence from Algorithm 10. Present-time overlap alone would not pay retained birth-cover ghosts. |
 | Zero-length extension | Reweights an already valid positive-length flat output using a fixed perturbation and original integer lengths; it preserves topology and occurrence bounds. |
-| Exact Gomory–Hu transfer | Separately needs exact flow, finite-arithmetic packing, the Li skeleton and fixed-parameter guide-tree interfaces. The forest improvement alone is insufficient. |
+| Exact Gomory–Hu transfer | The [quantified application proof](../../manuscripts/graph-backends/gomory-hu-seven-eighths-dependency-audit.md) supplies the complete composition: finite-arithmetic packing, the Li skeleton, named exact flow and the locally proved fixed-parameter guide-tree adapter. |
 
 The native forest bound is <code class="math">(n+m)E_{6/7}</code>. The exact cut-tree
 application additionally removes loops, zero-capacity edges and trivial
@@ -51,12 +53,12 @@ native sparsifier and forest framework.
 
 | Source location | Required operation or invariant | Local boundary |
 |---|---|---|
-| Section 3, Algorithms 2–4 | Maintain native selected records, forests and their physical provenance | The improved local factors and uncontracted pools are proved or assumed separately in the main manuscript. |
+| Section 3, Algorithms 2–4 | Maintain native selected records, forests and their physical provenance | The static-provider proof establishes the improved local factors; main Sections 3–13 prove the active-root, uncontracted-pool and chronological inventory bounds. |
 | Definition 5.2(1),(3), Theorem 5.3 | Decremental covers with an overlap bound over the entire history | A bound only on the currently present covers cannot pay retained birth-cover records. |
-| Algorithm 10 and Claims 5.15–5.17 | Outer forest copies and their maintenance recurrence | The new pool construction must supply its explicit occurrence inventory before this recurrence is substituted. |
+| Algorithm 10 and Claims 5.15–5.17 | Outer forest copies and their maintenance recurrence | Main Sections 11–14 supply historical ownership, explicit occurrence inventory and the separate work recurrence used in the substitution. |
 
-The source's headline theorem does not establish the proposed new
-parameters. For the other public metric primitives, see the
+The local construction establishes the new parameters using these
+particular source operations. For the other public metric primitives, see the
 [named APSP source map](../apsp-frontier/sources.md).
 
 ## Additional sources used only by the Gomory–Hu application
@@ -81,10 +83,27 @@ without expanding author abbreviations:
   proves the required leaf construction and its aggregate inventory;
   it does not infer those strengthened guarantees from a headline theorem.
 
-Exact flow remains a separate named input to the
-[quantified transfer](../../manuscripts/graph-backends/gomory-hu-seven-eighths-dependency-audit.md).
-The source versions, fixed-parameter ranges and finite arithmetic remain
-part of the application's assumptions.
+- Jan van den Brand, Li Chen, Rasmus Kyng, Yang P. Liu, Simon Meierhans,
+  Maximilian Probst Gutenberg and Sushant Sachdeva,
+  [*Almost-Linear Time Algorithms for Decremental Graphs: Min-Cost Flow
+  and More via Duality*](https://arxiv.org/html/2407.10830v1),
+  Theorem 6.17 and Section 6.2 supply deterministic exact integral flow
+  with leading logarithmic power <code class="math">5/6</code>, including
+  final rounding. The local
+  [capacity-bit reduction](../../manuscripts/graph-backends/published-flow-capacity-scaling.md)
+  keeps each call's capacities at most its actual edge count and
+  recovers an explicit cut. Its correctness is proved here; the fast
+  solver itself remains a published external algorithm.
+
+The [quantified transfer](../../manuscripts/graph-backends/gomory-hu-seven-eighths-dependency-audit.md)
+can therefore use the published five-sixths flow theorem through the
+capacity-bit adapter, as an alternative to the already constructed
+four-fifths flow route. Both fit below the six-sevenths forest bound.
+The source versions, fixed-parameter ranges and finite arithmetic of
+the other components remain part of the theorem. The
+[fixed-parameter interface review, Section 5](../../manuscripts/graph-backends/fixed-k-tree-mincut-source-interface-audit.md)
+records how the global-max leaf construction closes the earlier guide-tree
+gap; that historical issue is not an extra hypothesis of this application.
 
 ## Evidence and provenance
 

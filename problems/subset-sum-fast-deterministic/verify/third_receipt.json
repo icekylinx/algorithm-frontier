@@ -1,0 +1,496 @@
+{
+  "receipt_schema": 1,
+  "certificate_kind": "third_lookup_contacts",
+  "status": "PASS",
+  "checker_sha256": "5f4b9f4ac9322971c439612eb14242ecfacb920bdaca46643a432c9243a36761",
+  "menu_sha256": "3867bb0c10d89709e3cc436a6f62d9fbea90b6866edd92faa5b2daa12b65abf9",
+  "expected_choices": [
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".44",
+      "target": ".19449",
+      "branch": "push"
+    },
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".44",
+      "target": ".19449",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".48",
+      "target": "0.20164",
+      "branch": "push"
+    },
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".48",
+      "target": "0.20164",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".50",
+      "target": "0.20530",
+      "branch": "push"
+    },
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".50",
+      "target": "0.20530",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".48",
+      "target": "0.20187",
+      "branch": "push"
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".48",
+      "target": "0.20187",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".50",
+      "target": "0.20507",
+      "branch": "push"
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".50",
+      "target": "0.20507",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".52",
+      "target": "0.20834",
+      "branch": "push"
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".52",
+      "target": "0.20834",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.72",
+      "gamma": ".714",
+      "gamma2": ".657",
+      "gamma3": ".589",
+      "tau": ".52",
+      "target": "0.20809",
+      "branch": "push"
+    },
+    {
+      "rho": "3.72",
+      "gamma": ".714",
+      "gamma2": ".657",
+      "gamma3": ".589",
+      "tau": ".52",
+      "target": "0.20809",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.72",
+      "gamma": ".714",
+      "gamma2": ".657",
+      "gamma3": ".589",
+      "tau": ".56",
+      "target": ".21380",
+      "branch": "push"
+    },
+    {
+      "rho": "3.72",
+      "gamma": ".714",
+      "gamma2": ".657",
+      "gamma3": ".589",
+      "tau": ".56",
+      "target": ".21380",
+      "branch": "recursive"
+    }
+  ],
+  "expected_branch_count": 16,
+  "branches": 16,
+  "leaves": 317138,
+  "nodes": 634268,
+  "empty": 4,
+  "maximum_depth": 29,
+  "minimum_margin": "73419063191692283632585383801/6416636480000000000000000000000000000",
+  "arithmetic": "exact rationals; integer interval atanh logarithms",
+  "scope": "Continuous-domain contact bounds conditional on the separate containment, pooled-trace, and four-dimensional acceptance proofs; this receipt alone does not establish an algorithmic exponent.",
+  "replay_kind": "segmented_trusted_local",
+  "segmented_replay": {
+    "driver_sha256": "4ccc4b38676ceb2989398cfff68c759b19fb628fcc6ed2cbbc7a816732634f16",
+    "completed_branches": 16,
+    "note": "Completed branches and unfinished frontiers were retained as trusted local work products; this is not a proof-carrying checkpoint format.",
+    "distribution_normalization": {
+      "operation": "remove_one_trailing_newline",
+      "execution_checker_sha256": "a8cf3c045780ab72ef8f31128be013b561f4bfe8e08cd22a3bd30b6fb521448b",
+      "distribution_checker_sha256": "5f4b9f4ac9322971c439612eb14242ecfacb920bdaca46643a432c9243a36761",
+      "original_receipt_sha256": "7a8260c24922e9b46111252a81874fb5751c58e392ec6ebc32436e08c3247bb2"
+    }
+  },
+  "results": [
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".44",
+      "target": ".19449",
+      "branch": "push",
+      "leaves": 15,
+      "empty": 0,
+      "nodes": 29,
+      "depth": 6,
+      "maximum": "479869800800000662171663657923656563/2484761184465203830500000000000000000",
+      "minimum_margin": "3391401966636830822281342076343437/2484761184465203830500000000000000000",
+      "methods": {
+        "push": 15
+      },
+      "seconds": 0.058
+    },
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".44",
+      "target": ".19449",
+      "branch": "recursive",
+      "leaves": 32870,
+      "empty": 0,
+      "nodes": 65739,
+      "depth": 29,
+      "maximum": "172409520358768033767847764805161/886469900000000000000000000000000",
+      "minimum_margin": "10492231966232152235194839/886469900000000000000000000000000",
+      "methods": {
+        "old": 1076,
+        "continuous": 31657,
+        "closed": 137
+      },
+      "seconds": 1014.618
+    },
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".48",
+      "target": "0.20164",
+      "branch": "push",
+      "leaves": 23,
+      "empty": 0,
+      "nodes": 45,
+      "depth": 8,
+      "maximum": "433395717660020140036412070880120967/2178216429858375000000000000000000000",
+      "minimum_margin": "5819843256622594963587929119879033/2178216429858375000000000000000000000",
+      "methods": {
+        "push": 23
+      },
+      "seconds": 0.08
+    },
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".48",
+      "target": "0.20164",
+      "branch": "recursive",
+      "leaves": 32905,
+      "empty": 0,
+      "nodes": 65809,
+      "depth": 28,
+      "maximum": "142998220903561563360458046799313813/709175920000000000000000000000000000",
+      "minimum_margin": "11605238436639541953200686187/709175920000000000000000000000000000",
+      "methods": {
+        "old": 1216,
+        "continuous": 31526,
+        "closed": 163
+      },
+      "seconds": 945.346
+    },
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".50",
+      "target": "0.20530",
+      "branch": "push",
+      "leaves": 23,
+      "empty": 0,
+      "nodes": 45,
+      "depth": 8,
+      "maximum": "16215165956469250157680533760711836391/79512357902886522576000000000000000000",
+      "minimum_margin": "108721120993352927172266239288163609/79512357902886522576000000000000000000",
+      "methods": {
+        "push": 23
+      },
+      "seconds": 0.053
+    },
+    {
+      "rho": "3.18",
+      "gamma": ".728",
+      "gamma2": ".671",
+      "gamma3": ".583",
+      "tau": ".50",
+      "target": "0.20530",
+      "branch": "recursive",
+      "leaves": 33407,
+      "empty": 0,
+      "nodes": 66813,
+      "depth": 28,
+      "maximum": "72796892031645633376011661562889/354587960000000000000000000000000",
+      "minimum_margin": "16156354366623988338437111/354587960000000000000000000000000",
+      "methods": {
+        "old": 1309,
+        "continuous": 31923,
+        "closed": 175
+      },
+      "seconds": 545.159
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".48",
+      "target": "0.20187",
+      "branch": "push",
+      "leaves": 15,
+      "empty": 0,
+      "nodes": 29,
+      "depth": 6,
+      "maximum": "107756979943857407717812063403622893/542338544048112100500000000000000000",
+      "minimum_margin": "1724901943134982010122936596377107/542338544048112100500000000000000000",
+      "methods": {
+        "push": 15
+      },
+      "seconds": 0.062
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".48",
+      "target": "0.20187",
+      "branch": "recursive",
+      "leaves": 38252,
+      "empty": 1,
+      "nodes": 76505,
+      "depth": 29,
+      "maximum": "207252212789225342931448406145492359/1026661836800000000000000000000000000",
+      "minimum_margin": "12205590657068551593854507641/1026661836800000000000000000000000000",
+      "methods": {
+        "old": 1317,
+        "continuous": 36421,
+        "closed": 514
+      },
+      "seconds": 799.251
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".50",
+      "target": "0.20507",
+      "branch": "push",
+      "leaves": 15,
+      "empty": 0,
+      "nodes": 29,
+      "depth": 6,
+      "maximum": "5877317969675049947574293525664917/28924722349232645360000000000000000",
+      "minimum_margin": "54274842482088636400906474335083/28924722349232645360000000000000000",
+      "methods": {
+        "push": 15
+      },
+      "seconds": 0.056
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".50",
+      "target": "0.20507",
+      "branch": "recursive",
+      "leaves": 38778,
+      "empty": 1,
+      "nodes": 77557,
+      "depth": 29,
+      "maximum": "5263438224248327701792169741433461/25666545920000000000000000000000000",
+      "minimum_margin": "347566072298207830258566539/25666545920000000000000000000000000",
+      "methods": {
+        "old": 1396,
+        "continuous": 36842,
+        "closed": 540
+      },
+      "seconds": 1000.778
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".52",
+      "target": "0.20834",
+      "branch": "push",
+      "leaves": 15,
+      "empty": 0,
+      "nodes": 29,
+      "depth": 6,
+      "maximum": "112672647564407501653202158219608227/542338544048112100500000000000000000",
+      "minimum_margin": "318164702576173364967841780391773/542338544048112100500000000000000000",
+      "methods": {
+        "push": 15
+      },
+      "seconds": 0.057
+    },
+    {
+      "rho": "3.44",
+      "gamma": ".721",
+      "gamma2": ".663",
+      "gamma3": ".584",
+      "tau": ".52",
+      "target": "0.20834",
+      "branch": "recursive",
+      "leaves": 39997,
+      "empty": 1,
+      "nodes": 79995,
+      "depth": 29,
+      "maximum": "1336841970824136808307716367414616199/6416636480000000000000000000000000000",
+      "minimum_margin": "73419063191692283632585383801/6416636480000000000000000000000000000",
+      "methods": {
+        "old": 1474,
+        "continuous": 37969,
+        "closed": 554
+      },
+      "seconds": 1003.09
+    },
+    {
+      "rho": "3.72",
+      "gamma": ".714",
+      "gamma2": ".657",
+      "gamma3": ".589",
+      "tau": ".52",
+      "target": "0.20809",
+      "branch": "push",
+      "leaves": 15,
+      "empty": 0,
+      "nodes": 29,
+      "depth": 6,
+      "maximum": "323608761527127088749255809372709559/1582804424166502329500000000000000000",
+      "minimum_margin": "5757011097680380996399190627290441/1582804424166502329500000000000000000",
+      "methods": {
+        "push": 15
+      },
+      "seconds": 0.113
+    },
+    {
+      "rho": "3.72",
+      "gamma": ".714",
+      "gamma2": ".657",
+      "gamma3": ".589",
+      "tau": ".52",
+      "target": "0.20809",
+      "branch": "recursive",
+      "leaves": 48956,
+      "empty": 0,
+      "nodes": 97911,
+      "depth": 29,
+      "maximum": "124595955677511599841692589731286738927/598760056011500000000000000000000000000",
+      "minimum_margin": "24377921435158307410268713261073/598760056011500000000000000000000000000",
+      "methods": {
+        "old": 1589,
+        "continuous": 45629,
+        "closed": 1738
+      },
+      "seconds": 1286.12
+    },
+    {
+      "rho": "3.72",
+      "gamma": ".714",
+      "gamma2": ".657",
+      "gamma3": ".589",
+      "tau": ".56",
+      "target": ".21380",
+      "branch": "push",
+      "leaves": 15,
+      "empty": 0,
+      "nodes": 29,
+      "depth": 6,
+      "maximum": "1353060806918741826185014039121927323/6331217696666009318000000000000000000",
+      "minimum_margin": "553536628450966003385960878072677/6331217696666009318000000000000000000",
+      "methods": {
+        "push": 15
+      },
+      "seconds": 0.27
+    },
+    {
+      "rho": "3.72",
+      "gamma": ".714",
+      "gamma2": ".657",
+      "gamma3": ".589",
+      "tau": ".56",
+      "target": ".21380",
+      "branch": "recursive",
+      "leaves": 51837,
+      "empty": 1,
+      "nodes": 103675,
+      "depth": 29,
+      "maximum": "20002326179957300828613029688645904227/93556258751796875000000000000000000000",
+      "minimum_margin": "1941176871046386970311354095773/93556258751796875000000000000000000000",
+      "methods": {
+        "old": 1814,
+        "continuous": 48364,
+        "closed": 1659
+      },
+      "seconds": 1227.45
+    }
+  ]
+}

@@ -12,7 +12,8 @@ license boundaries. There is one current copy of each retained manuscript.
 | [Archive manifest](archive-manifest.json) | The supplied archive inventory and archive-level fingerprints |
 | [Checkpoint file manifest](checkpoint-files.json) | The original checkpoint payload inventory and recorded hashes |
 | [Import manifests](imports/) | Additional numerical, quota and sparsification increments, plus the Subset Sum source snapshot |
-| [Matching provenance](matching.md) | The matching manuscript's source-to-section map and the precise remaining the deterministic cycle-search implementation requirement dependency |
+| [Matching provenance](matching.md) | The matching manuscript's source-to-section map and the realized cycle-search dependency chain |
+| [Checkpoint restoration](checkpoint-restoration.md) | Earlier completed results, their original archive evidence, current realizing proofs and attribution corrections |
 | [Subset Sum source manifest](imports/subset-sum/source-manifest.json) | The imported Subset Sum material and source-project revision |
 
 The original pre-consolidation tree is available in repository history at
@@ -43,8 +44,11 @@ their retained destination identifies the integrated mathematical content.
 
 `python3 tools/check_provenance.py` checks unique original paths, valid
 dispositions, retained target existence and required license boundaries.
-It does not compare edited manuscripts with historical hashes or certify
-their mathematical claims.
+It also checks the recovery index against the original archive manifests,
+its inventory counts and its canonical targets. The archived ZIPs are not
+shipped as duplicate source trees, so ordinary CI does not replay their
+extraction or compare edited manuscripts with historical bytes. These
+metadata checks do not certify mathematical claims.
 
 ## Licenses and third-party attribution
 

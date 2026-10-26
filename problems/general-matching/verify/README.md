@@ -3,13 +3,15 @@
 ## Ready for review: executable exact matching
 
 The [standard-library reference solver](../reference/README.md) returns
-an exact maximum matching and original edge IDs. Normal mode uses
-<code class="math">O(n+m\log(m+2)+\sum_i\nu(G_i)^3)</code> operations, where <code class="math">G_i</code>
-ranges over nonempty normalized input components. Optional certificate
-generation has the same bound. The
+an exact maximum matching and original edge IDs. Normal and certificate
+modes use `O(n+m log(m+2)+sum_i nu(G_i)^p_i)` operations, where `p_i=5/2`
+for a bipartite first kernel and `p_i=3` otherwise. Every originally
+bipartite input component receives the improved bound. The
 [cover-compression proof](../reference/cover-compression-proof.md) derives
-the smaller blossom graph while keeping certificates on the original edge
-kernel. The
+smaller final solve graph while keeping certificates on the original edge
+kernel. The [bipartite proof](../reference/bipartite-proof.md) establishes
+the nonrecursive Hopcroft–Karp phases, matching-number time bound and
+linear vertex-cover certificate. The
 [complete certificate-search proof](../reference/certificate-proof.md)
 establishes the needed alternating-forest and odd-component invariants
 without importing the Gallai–Edmonds decomposition theorem.
@@ -25,6 +27,7 @@ certificate encoding by their actual size.
 python3 -B problems/general-matching/verify/check_reference.py
 python3 -B problems/general-matching/verify/check_certificate_search.py
 python3 -B problems/general-matching/verify/check_cover_compression.py
+python3 -B problems/general-matching/verify/check_bipartite.py
 ```
 
 The default suite compares 33,868 simple graphs through six vertices
@@ -51,8 +54,18 @@ fixed edge orders; 500 seeded graphs on seven through thirteen vertices
 follow. It also verifies the general matching optimum, the <code class="math">2c</code> vertex
 cap, the matched-edge bound on certificate contractions and explicit
 rejection of an invalid cover. The full solver check includes a connected
-420-vertex graph reduced to 40 blossom vertices, with its certificate
+420-vertex graph reduced to 40 bipartite solve vertices, with its certificate
 independently verified on the 420-vertex first kernel.
+
+The dedicated bipartite check compares all 74,963 graphs with at most four
+vertices on each side with an independent matching oracle, plus 300
+seeded cases in two side/adjacency orders. It verifies the matching,
+minimum cover, phase-count bound and one final failed BFS per call.
+Eight rejection checks and six native/branch/long-path cases include
+a second-phase path containing 2,400 matching edges. Both public kernel
+modes use the unchanged independent certificate verifier; a nonbipartite
+original graph with a bipartite first kernel checks the exact dispatch
+condition. The standalone checker refuses `python -O`.
 
 This is finite implementation evidence and an independently checkable
 optimality output. It does not verify the faster research implementation
@@ -92,25 +105,31 @@ justify discarding parallel representatives before record-level faults.
 The counts describe finite evidence. The displayed proofs establish the
 general reduction statements; this script does not execute the fast backend.
 
-## Conditional: the fast matching composition
+## Ready for review: the deterministic four-fifths construction
 
 The main proof assembles the matching reduction, integral-ledger carrier,
-local tight discovery, graph hierarchy and final optimality check. The numerical
-running-time conclusion remains conditional on the complete deterministic
-cycle-search implementation requirements in Section 11.6. In particular,
-quoting a static routing or sparsification theorem
-does not supply all of its dynamic initialization, repair, notification and
-retirement obligations.
+local tight discovery, cycle-search hierarchy and final optimality check.
+[Theorem 11.6](../proof.md#116-deterministic-cycle-search-realization)
+instantiates the five interfaces from their detailed checkpoint proofs:
+raw traversal quality, chronological initialization and repair, signed and
+absolute retirement, finite-bit original-edge trees, and constants uniform
+in the growing parameters. Its table lists suppliers, applicable ranges
+and costs; Section 12 proves the resulting four-fifths bound. The named
+published source results remain ordinary mathematical dependencies.
 
-The matching-size kernel and classical optimality certificate have their own
-proofs. Verifying a returned matching and a Tutte--Berge witness establishes
-optimality of that output; it does not certify the advertised fast construction
-time. The five outstanding requirements are circulation quality measured
-before traversal cancellation, repair and initialization costs for every
-operation prefix, complete retirement of edge copies, finite-bit tree
-construction, and constants uniform in the growing parameters. The repository
-does not yet provide an executable implementation meeting all five. The
-polynomial reference solver supplies a usable exact algorithm with its own
-bound and leaves those faster requirements unresolved.
+The repository's finite checkers execute the polynomial reference package
+and local reductions. They do not execute the full fast hierarchy. This
+implementation limit does not turn the supplied mathematical construction
+into an open premise. End-to-end code and performance validation for the
+fast hierarchy remain future work.
+
+Verifying a matching and a Tutte–Berge witness establishes the optimality
+of that output, independently of the research hierarchy. It does not
+establish a running-time bound. The theoretical portfolio similarly uses
+its independent augmenting-path check only for acceptance; the favorable
+fast branch is justified by the construction and its first-failure
+argument. The [source history](../sources.md#checkpoint-provenance) also
+distinguishes the earlier <code class="math">4\nu</code> kernel proof from
+the current implementation and tests.
 
 Read the [main proof](../proof.md) with its [source map](../sources.md). Repository checks validate links, mathematical syntax and catalogue coverage; they do not certify the asymptotic theorem. No proof-assistant verification or external peer review is claimed.

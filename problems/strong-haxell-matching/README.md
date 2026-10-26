@@ -10,7 +10,7 @@ Find a matching covering every left vertex, or return the stated directly checka
 
 **Randomness**
 
-Deterministic certifying hypergraph matching. The routing and expander-packing transfers additionally require the supplied deterministic destructive-support distance interface.
+Deterministic certifying hypergraph matching. The routing and expander-packing transfers use the locally constructed destructive-support distance interface and preserve their stated expansion, density and congestion promises.
 
 **Time**
 
@@ -34,7 +34,11 @@ No lower bound is claimed. A hitting-set certificate refutes the strong Haxell p
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The explicit certifying hypergraph-matching algorithm, including build/growth/collapse and weighted finite-prefix termination; the public explicit-algorithm weighted reanalysis; certified disjoint-path routing and spanning-expander packing. The destructive-support extractor, exact-size auxiliary graph and route/conductance accounting are explicitly instantiated.
+
+**Conditions and remaining work.** The hitting, expansion, density, load and input-size promises remain part of their respective theorems. The companion’s separate conditional observation about the public approximate-extension algorithm is not used by these results and retains its stated assumption. Manuscript readiness does not claim a full executable implementation.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
@@ -44,7 +48,7 @@ The same sharper asymptotic rate also follows from the documented weighted reana
 
 ## Certified routing and expander packing
 
-The [routing theorem](routing.md) uses a destructive-support distance interface with stretch <code class="math">\Gamma</code> and aggregate cost <code class="math">(n+m+q)\exp(O(B))</code>. For short-path comparison length <code class="math">h_0</code>, put <code class="math">R=\lceil\Gamma h_0\rceil</code>. If the demand-path hypergraph satisfies <code class="math">\tau(E_S)\ge\Psi\lvert S\rvert</code> and <code class="math">\Psi\ge\Delta R^2</code>, <code class="math">\Delta\ge4</code>, the algorithm returns all demanded edge-disjoint simple paths in
+The [routing theorem](routing.md) uses the [constructed destructive-support interface](../../manuscripts/graph-backends/destructive-apsp-path-support-extractor.md) with stretch <code class="math">\Gamma</code> and aggregate cost <code class="math">(n+m+q)\exp(O(B))</code>. For short-path comparison length <code class="math">h_0</code>, put <code class="math">R=\lceil\Gamma h_0\rceil</code>. If the demand-path hypergraph satisfies <code class="math">\tau(E_S)\ge\Psi\lvert S\rvert</code> and <code class="math">\Psi\ge\Delta R^2</code>, <code class="math">\Delta\ge4</code>, the algorithm returns all demanded edge-disjoint simple paths in
 
 <!-- math-display: 2f1f766aa4ba196913a1f619
 (n+m+q)\exp\left(O\left(B+\frac{U\log(2+s)}s\right)\right),\qquad s=\log\Delta.

@@ -1,6 +1,11 @@
 # A matching algorithm from explicit backend contracts
 
-This mathematical algorithm specification gives the input preparation, gap-phase driver and update transactions for exact general matching. Each subroutine retains the stated correctness, cost and lifetime contracts. The [main theorem](../../problems/general-matching/proof.md) supplies the complete composition proof and explicitly retains the required deterministic cycle-search implementation as a hypothesis for the faster bound.
+This mathematical algorithm specification gives the input preparation,
+gap-phase driver and update transactions for exact general matching. Each
+subroutine retains its correctness, cost and lifetime contract. The
+[main theorem](../../problems/general-matching/proof.md) supplies the complete
+composition; its Theorem 11.6 realizes the deterministic cycle-search
+contract using the linked local constructions and named published inputs.
 
 ## 1. One input preparation
 
@@ -10,9 +15,11 @@ remaining graph G. This costs O(n+m) in the stated word-RAM model.
 The empty graph returns its empty matching directly.
 
 Optionally apply the exact matching-size kernel: endpoints of a maximal
-greedy matching give a cover C; retain every C-C edge and at most |C|+1
-outside neighbors per cover vertex. [matching-size-kernel-corollary.md](matching-size-kernel-corollary.md)
-proves exact optimum preservation, without knowledge of the optimum.
+greedy matching give a cover C; retain every C-C edge and at most |C|
+outside neighbors per cover vertex. [Main Lemma 3.1](../../problems/general-matching/proof.md#31-cleanup-and-an-optional-quadratic-edge-kernel)
+proves this sharp cutoff and exact optimum preservation without knowing
+the optimum. The [earlier kernel corollary](matching-size-kernel-corollary.md)
+records its predecessor.
 Every subsequent branch and acceptance check uses this same compact
 exact-preserving graph. Original edge IDs remain passive output labels.
 

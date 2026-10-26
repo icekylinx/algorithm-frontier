@@ -45,8 +45,10 @@ def render_registry(data: dict, catalogue: dict) -> str:
         '```sh', 'python3 tools/check_repository.py', '```', '',
         'The default suite checks repository structure and every registered '
         'executable used by the canonical runner. For Subset Sum it validates '
-        'the saved full-contact receipt\'s source/menu binding and freshly replays '
-        'the rho=1.7 and direct branches. To replay the complete contact menu:', '',
+        'the two-level and third-lookup receipts\' source/menu bindings, checks '
+        'both scalar ledgers and the recovery paths, and freshly replays '
+        'the rho=1.7 and direct two-level branches. To cleanly replay all '
+        '62 two-level and 16 third-lookup branches:', '',
         '```sh', 'python3 tools/check_repository.py --full-contacts --jobs 4', '```', '',
         'Receipt binding establishes provenance and coverage metadata; only '
         'recomputation re-establishes the inequalities. The full mode is also '
@@ -86,7 +88,9 @@ def render_registry(data: dict, catalogue: dict) -> str:
     out += ['', '## Maintaining a status', '',
             'Set a readiness scope only after checking the corresponding proof, '
             'algorithm, representation, randomness and source requirements. Name '
-            'required data structures or unproved implementation steps beside the scope. Update `registry.json`, '
+            'proved local realizations, external theorems and genuinely unresolved '
+            'assumptions separately. Executable coverage is a distinct field of '
+            'evidence. Update `registry.json`, '
             'then run `python3 tools/build_reviews.py`; this synchronizes these '
             'entries with the reviewed problem cards. A changed theorem or '
             'dependency requires a new scope assessment.', '',

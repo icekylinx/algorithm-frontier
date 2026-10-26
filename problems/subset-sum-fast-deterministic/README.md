@@ -10,8 +10,11 @@ Deterministic exact algorithm in the uniform bit model, including indexed-witnes
 
 **Time**
 
-<code class="math">C+\mathrm{poly}(n,L)2^{0.495836n}</code> bit operations. The [proof](proof.md)
-gives the slightly smaller exact rational exponent.
+<code class="math">C+\mathrm{poly}(n,L)2^{0.495748n}</code> bit operations. The exact
+exponent is `E_3=158153814247997/319021177919134`; [Theorem F3](proof.md#theorem-and-proof-structure)
+proves this bound. A
+[deterministic baseline cap](proof.md#a-deterministic-baseline-cap) also
+bounds each instance by ordinary meet-in-the-middle time.
 
 **Space**
 
@@ -31,9 +34,9 @@ No lower bound is claimed.
 
 **Review status**
 
-**Ready for review in the stated scope.** Part II parameter composition: the generalized second lookup, its exact 62-branch replay and 44-branch compatibility, the finite-volume cone lemma and compiler allowance, the continuous reflected-profile envelope, and all nine outer cost rates. The scalar tuple was independently recalculated.
+**Ready for review.** The complete uniform deterministic integer Subset Sum and indexed-witness construction in Parts I–III: signed circuit compilation, finite exact seed search, trace aggregation, all inherited reductions, the preserved two-level result and the third-lookup extension. The final-source 62-branch and 16-branch evidence, finite contact-cone lemma, exact reflected envelope and all nine outer cost rates are separately accounted for.
 
-**Conditions and remaining work.** The arbitrary-input signed-circuit compiler and witness reduction remain mathematical manuscript proofs; the numerical certificates do not formalize them. The deterministic startup constant is finite and input-independent but has no practical numerical bound.
+**Conditions and remaining work.** The finite input-independent startup constant has no practical numerical bound. Mathematical compiler proofs and exact continuous certificates have different scopes; neither is described as proof-assistant formalization or as a practical implementation of the compiled algorithm. The historical 18-contact presentation retains its explicitly stated numerical evidence boundary. The current 62-plus-16-branch theorem uses its own complete contact evidence and does not depend on that historical receipt.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -43,15 +46,18 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 ## Numerical certificates
 
-The [continuous-domain checker](../../tools/verify_subset_sum_contacts.py)
-reconstructs all 62 branches of the refined contact menu, including the
-new second-lookup fraction `14/25`. Its complete run
-accepted 248,189 rationally bounded leaves and proved the two empty recursive
-domains. The [scalar checker](../../tools/verify_subset_sum_scalars.py)
-then checks all 160 endpoint comparisons for the continuous contact/chord/cone
-envelope and every outer running-time inequality.
+The [third-lookup checker](../../tools/verify_subset_sum_third_contacts.py)
+has a source-bound [16-branch receipt](verify/third_receipt.json): 317,138
+accepted leaves and four empty leaves in the completed resumable replay.
+The [base checker](../../tools/verify_subset_sum_contacts.py) retains all 62
+branches and its separate [receipt](verify/receipt.json), with 248,189
+accepted leaves and two empty recursive domains. The
+[scalar checker](../../tools/verify_subset_sum_scalars.py) combines both
+menus, checks 112 reflected-profile comparisons and every outer cost.
+Its `--base-two-level` mode independently preserves the 160-comparison F2
+ledger and `E_2=158153814247997/318964058919134`.
 The [verification note](verify/README.md) explains the acceptance proof,
-the exact scopes of the programs, and the [full-run receipt](verify/receipt.json).
+the scope of each program, and clean replay versus stored-receipt binding.
 
 The older baseline exponent
 <code class="math">149809813343531/301754962128739&lt;0.4964618056</code> is retained as a background

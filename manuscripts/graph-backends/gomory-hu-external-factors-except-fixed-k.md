@@ -129,8 +129,14 @@ polynomially bounded denominator converts each flow call to positive
 polynomially bounded integer capacities. There is no accumulation of
 unrelated denominators across recursive calls.
 
-With a deterministic exact-flow factor
-<code class="math">E_{\rm flow}=\exp O(U^{4/5}h^{O(1)})</code>, the refinement costs
+Theorem 6.17 of van den Brand and coauthors,
+[*Almost-Linear Time Algorithms for Decremental Graphs: Min-Cost Flow
+and More via Duality*](https://arxiv.org/html/2407.10830v1), supplies
+deterministic exact flow with its printed factor
+<code class="math">E_{\rm flow}=\exp O(U^{5/6}h)</code>.
+The [capacity-bit reduction](published-flow-capacity-scaling.md)
+handles polynomial-in-global-size capacities without padding a small
+recursive input. With this literal published bound, the refinement costs
 
 <!-- math-display: ac1dcf6cf9804a7a500b0d43
 m\mathrm{poly}(U)
@@ -140,14 +146,19 @@ m\mathrm{poly}(U)
 ![Formula](../../assets/math/ac1dcf6cf9804a7a500b0d43.svg)
 
 and its source/sink routing guarantee loses only an additional
-polynomial logarithm. Both its work and its structural factor therefore
-have leading logarithmic power at most <code class="math">4/5</code>.
+polynomial logarithm. Its work therefore has leading logarithmic power
+at most <code class="math">5/6</code>. Its structural factor still has
+leading power at most <code class="math">4/5</code>: substituting one
+exact maxflow algorithm for another does not change any flow or cut
+guarantee. Both scales fit below the forest's <code class="math">6/7</code>
+factor, as well as the older <code class="math">7/8</code> bound.
 
 This paragraph uses the correctness of the public flow-linked
 refinement as an imported lemma. The quantitative substitution has been
-checked independently: it does not silently use a more expensive
-maxflow black box or multiply construction work once per recursion
-level in the exponent.
+checked independently: the named published solver and the local
+capacity reduction supply the charged exact-flow work. No flow
+retuning is assumed, and construction work is not multiplied once per
+recursion level in the exponent.
 
 ## 4. The terminal-selection loops have bounded fixed nesting
 

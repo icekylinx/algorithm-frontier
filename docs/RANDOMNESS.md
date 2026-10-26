@@ -43,8 +43,10 @@ failure events must be counted.
 
 A probabilistically failing local oracle requires an error budget over its
 actual calls. Replacing an exact or certified deterministic oracle by such an
-oracle does not automatically preserve the theorem. The conditional graph
-compositions require the deterministic interfaces named in their statements.
+oracle does not automatically preserve the theorem. The graph compositions
+use the deterministic interfaces and local realizations named in their
+statements. Published prerequisites, supplied oracle models and unresolved
+mathematical assumptions are recorded separately.
 
 ## Probability used only in a proof
 
@@ -75,8 +77,9 @@ when comparing them with algorithmic upper bounds.
 ## Maintaining the labels
 
 `catalogue.json` owns the concise randomness contracts for all main and
-supporting entries. `python3 tools/build_catalogue.py` updates the homepage
-and the **Randomness** paragraph on each problem card. The standard
-repository check rejects missing labels and disagreement between the two
-surfaces. A changed backend, success probability, or adversary model requires
+supporting entries. `python3 tools/build_catalogue.py` updates the compact
+homepage and the **Randomness** paragraph on each problem card. The three
+featured methods are deterministic; their detailed contracts remain on
+their cards. The standard repository check rejects missing or stale card
+labels. A changed backend, success probability, or adversary model requires
 a corresponding proof and source update.

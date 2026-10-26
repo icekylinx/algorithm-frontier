@@ -2,19 +2,24 @@
 
 ## Current theorem
 
-[Theorem F](proof.md#theorem-and-proof-structure) is a deterministic exact
+[Theorem F3](proof.md#theorem-and-proof-structure) is a deterministic exact
 algorithm for arbitrary signed binary input, including indexed witnesses.
 Its current exponent is
 
-<!-- math-display: 2e4692a5690de048c3ca74ff
-E=\frac{158153814247997}{318964058919134}<0.495836.
+<!-- math-display: 1971dd7e28fa25647de46211
+E_3=\frac{158153814247997}{319021177919134}<0.495748.
 -->
-![Formula](../../assets/math/2e4692a5690de048c3ca74ff.svg)
+![Formula](../../assets/math/1971dd7e28fa25647de46211.svg)
 
 Its running time includes a finite input-independent circuit search. The
 argument does not assume that this search is practical, or that fixed
 circuits are supplied as free advice. No unimplemented external algorithmic
-oracle is a hypothesis of Theorem F.
+oracle is a hypothesis of Theorem F3. Part II separately preserves Theorem
+F2 with `E_2=158153814247997/318964058919134`.
+The [baseline-cap corollary](proof.md#a-deterministic-baseline-cap)
+interleaves this construction with two exact indexed sum lists, so an
+instance can finish through meet-in-the-middle before the circuit search
+completes. It preserves the exponent and does not assert a space bound.
 
 ## Proof chain
 
@@ -26,19 +31,29 @@ oracle is a hypothesis of Theorem F.
    grouping, matching padding, mixed-core compilation and terminating
    exact search. Part II, Section 6 supplies the refined divisibility,
    grid and error allowances. This is the source of the startup constant.
-3. **Refined trace contacts.** Part II, Sections 2–4 prove the new trace
+3. **Base trace contacts.** Part II, Sections 2–4 prove the refined trace
    bound and extend the second positive-query lookup from `1/2` to `14/25`
    for three additional families, with every continuous domain explicit. The
    [contact checker](../../tools/verify_subset_sum_contacts.py) certifies
    those numerical inequalities by exact rational subdivision. Its
    [receipt](verify/receipt.json) covers all 62 branches.
-4. **Whole-profile and cost bounds.** Part II, Sections 5–7 reconstruct
+4. **Third positive-containment lookup.** Part III, Sections III.2–III.5
+   prove the additional orientation swap, full color coverage, four-coordinate
+   exact acceptance and fixed-seed allowance. Its separate
+   [kernel](../../tools/verify_subset_sum_third_contacts.py),
+   [menu](verify/third_contacts.json) and [receipt](verify/third_receipt.json)
+   cover all 16 new branches. The receipt records a completed resumable replay
+   under the final source; it does not claim that its cached states are
+   independently verified proof objects.
+5. **Whole-profile and cost bounds.** Part II, Sections 5–7 reconstruct
    the continuous reflected envelope, prove the finite contact-cone extension,
    justify retyping and balance the outer costs.
+   Part III, Section III.6 strengthens that profile using both contact menus.
    The [scalar checker](../../tools/verify_subset_sum_scalars.py) verifies
-   all 160 endpoint profile comparisons, the refined input difference
-   table, compiler grid and complete outer ledger.
-5. **Arbitrary integers and witnesses.** Part I, Section I.3 proves
+   all 112 endpoint comparisons for F3, the refined input difference table,
+   compiler grid and complete outer ledger. Its `--base-two-level` mode
+   preserves the independent 160-comparison F2 calculation.
+6. **Arbitrary integers and witnesses.** Part I, Section I.3 proves
    canonical layers, deterministic round selection, signed-key energy,
    fixed-factor modulus selection, complete residue covers, cached outer
    lists and nonnegative exact counting. Section I.3.7 recovers an indexed
@@ -52,7 +67,7 @@ and cost proof used by this theorem.
 
 The older contact table in Part I, Section I.4.2 remains a premise only
 of the separately labelled background Theorem 1. Its missing historical
-replay is not a dependency of Theorem F.
+replay is not a dependency of Theorems F2 or F3.
 
 ## Randomness and verification scope
 
@@ -61,6 +76,12 @@ lookup families. The compiler enumerates and checks integer candidates
 deterministically. The input algorithm neither samples these families nor
 permits a probability of error. An average in a conditional-expectation
 proof is computed exactly.
+
+The compiler, finite seed search and indexed-witness interfaces are closed
+by the manuscript proofs identified above. They are not conditional on a
+future whole-solver implementation or proof-assistant formalization. The
+historical 18-contact premise belongs only to background Theorem 1; it
+does not reopen these interfaces or qualify the reconstructed Theorems F2 and F3.
 
 The executable certificates discharge numerical and finite algebraic
 obligations. They do not formalize the arbitrary-input circuit compiler,

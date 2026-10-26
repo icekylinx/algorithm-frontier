@@ -19,7 +19,7 @@
         },
         {
           "path": "tools/verify_subset_sum_scalars.py",
-          "scope": "Exact entropy enclosures, 160 endpoint comparisons for the continuous chord-and-cone envelope, the finite-volume amplification allowance, refined type/dummy-padding and initial-table inequalities, the 10000-point fixed core grid, and all nine outer cost rates at E=158153814247997/318964058919134. Separate from continuous contact verification."
+          "scope": "Exact entropy enclosures, all nine outer cost rates and the full compiler allowance. Default: F3 with 112 reflected-envelope comparisons, E3=158153814247997/319021177919134. --base-two-level independently preserves F2 with 160 comparisons and E2=158153814247997/318964058919134. Neither mode replaces continuous contact verification or the signed-circuit proof."
         },
         {
           "path": "problems/subset-sum-fast-deterministic/verify/check_energy.py",
@@ -28,14 +28,27 @@
         {
           "path": "problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py",
           "scope": "165 accepted leaves across three exact branches, two actual interrupted/resumed traversals, six hash-mismatch rejections, and ignored truncated temporary files. Checkpoints are trusted local work state, not independent proof certificates."
+        },
+        {
+          "path": "tools/verify_subset_sum_third_contacts.py",
+          "scope": "All 16 third-lookup branches completed under the final source in a resumable exact traversal: 317138 accepted leaves, 634268 nodes, four empty leaves and depth at most 29. The segmented_trusted_local receipt binds source/menu/driver and complete accounting; --all is a separate clean replay. The analytic four-dimensional coverage proof is Part III."
+        },
+        {
+          "path": "problems/subset-sum-fast-deterministic/verify/check_third_recovery.py",
+          "scope": "Actual interruption and recovery on three branches with 447 accepted leaves, two resumes, six altered-source/menu/driver rejection cases and a spawned-worker agreement check. Also rejects an invalid outer containment family and an incomplete menu. This is recovery evidence, not a replay of all 16 branches."
+        },
+        {
+          "path": "problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py",
+          "scope": "Binds the main theorem, abstract, result card and source map to the exact F3 scalar ledger, and preserves the explicitly named F2 value. Four fault injections reject stale fractions or headlines, including a stale but still valid weaker upper bound."
         }
       ],
       "review": {
-        "status": "partial",
-        "scope": "Part II parameter composition: the generalized second lookup, its exact 62-branch replay and 44-branch compatibility, the finite-volume cone lemma and compiler allowance, the continuous reflected-profile envelope, and all nine outer cost rates. The scalar tuple was independently recalculated.",
+        "status": "ready",
+        "scope": "The complete uniform deterministic integer Subset Sum and indexed-witness construction in Parts I–III: signed circuit compilation, finite exact seed search, trace aggregation, all inherited reductions, the preserved two-level result and the third-lookup extension. The final-source 62-branch and 16-branch evidence, finite contact-cone lemma, exact reflected envelope and all nine outer cost rates are separately accounted for.",
         "date": "2026-10-26",
         "conditions": [
-          "The arbitrary-input signed-circuit compiler and witness reduction remain mathematical manuscript proofs; the numerical certificates do not formalize them. The deterministic startup constant is finite and input-independent but has no practical numerical bound."
+          "The finite input-independent startup constant has no practical numerical bound. Mathematical compiler proofs and exact continuous certificates have different scopes; neither is described as proof-assistant formalization or as a practical implementation of the compiled algorithm.",
+          "The historical 18-contact presentation retains its explicitly stated numerical evidence boundary. The current 62-plus-16-branch theorem uses its own complete contact evidence and does not depend on that historical receipt."
         ]
       }
     },
@@ -67,11 +80,11 @@
         }
       ],
       "review": {
-        "status": "partial",
-        "scope": "The two-short-range theorem, including signed-input normalization, nested residue streams, indexed witnesses, and the self-contained exact Boolean convolution lemma. The general low-space ledger now explicitly charges the one-bit deficiency-proxy loss.",
+        "status": "ready",
+        "scope": "The complete general low-space theorem with writable-space exponent 0.18261635770550353, including the storage schedule, indexed witnesses and the one-bit deficiency-proxy charge. The separate two-short-range theorem includes signed normalization, nested residue streams and self-contained exact Boolean convolution.",
         "date": "2026-10-26",
         "conditions": [
-          "The stronger n/6 space exponent requires the supplied three-block partition and its two short normalized ranges. The general 0.18261635770550353-space theorem is a separate algorithm; finite range tests do not verify its full storage schedule."
+          "The stronger n/6-space result requires the supplied three-block partition and two short normalized ranges. The general theorem has no such input restriction. Executable finite checks cover their named identities and resource ledgers; they are not a full implementation or formalization of either asymptotic construction."
         ]
       }
     },
@@ -95,14 +108,27 @@
         {
           "path": "problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py",
           "scope": "21658 lower assignments and 696490 mass comparisons on five laminar topologies; exact lower-row equivalence and telescoping charges giving at most B retained lower rows."
+        },
+        {
+          "path": "problems/weighted-prefix-quota-frontier/verify/check_laminar_recovery.py",
+          "scope": "77,438 laminar count systems; 1,480,360 extension, 200,256 rank and 319,624 rank-base comparisons; ordinary basis exchange and rank submodularity on 262 families. Includes binary capacities up to 2^45, 194,016 weight histograms, 600 signed-cost integer-polymatroid recovery instances, 590,480 cardinality/depth/budget cases and 6,321 actual-weight maxima. Does not implement the universal coloring or polynomial intersection theorem."
+        },
+        {
+          "path": "problems/weighted-prefix-quota-frontier/verify/check_two_weight_lower.py",
+          "scope": "20 explicitly enumerated sparse-paving matroids; 20,569,302 basis-exchange conditions, 37,120 rank entries, 4,672 numeric-family and 26,240 one-restoration rank comparisons. Includes mandatory and optional optima and a polynomial SAT decoder checked on 276 truth tables. The asymptotic query and ETH lower bounds are separate proved arguments."
+        },
+        {
+          "path": "problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py",
+          "scope": "1,500 seeded laminar instances, 25,797 projected coloring certificates and 32,473 literal original-row replacements; 1,368,168 weighted histogram profiles. Exhausts all 2,629 cross-free families on at most four elements and 10,441 anchors, with 819,576 comparisons of original and fixed-mass oriented constraints."
         }
       ],
       "review": {
         "status": "partial",
-        "scope": "The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most B lower rows.",
+        "scope": "The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most B lower rows. Exact dominant-weight completion with all signed zero-coordinate costs, a binary count-rank oracle, the one-positive-weight polynomial endpoint, the self-contained 10/9 quadratic leading exponent, the named universal-set 5/9 refinement, projected coloring identities and histogram-sensitive enumeration. The compatible-cut extension and the two-positive-weight oracle/encoded-program lower-bound models are proved separately.",
         "date": "2026-10-26",
         "conditions": [
-          "The smaller sparse ground uses explicit FPT preprocessing; it is distinct from the uniform polynomial sunflower tradeoff. These checks do not verify the family’s general valuated completion, universal-coloring construction or lower-bound literature. Original oracles and weights remain available after restriction."
+          "The general resource calls retain exact integral-polymatroid optimization and submodular-minimization dependencies named in sources.md. The 5/9 leading coefficient specifically uses Naor-Schulman-Srinivasan Theorem 7 and its locally explicit indexing guarantee; the elementary 10/9 alternative supplies a local coloring proof. Finite checkers isolate the stated mechanisms and do not implement all of these optimization algorithms.",
+          "The compatible-cut one-weight polynomial endpoint requires a prescribed or forced total numeric mass. Original resource totals, all numeric constraints and signed costs remain intact. Oracle query lower bounds and ETH claims for readable rank programs are separate models."
         ]
       }
     },
@@ -127,14 +153,19 @@
         {
           "path": "problems/general-matching/verify/check_cover_compression.py",
           "scope": "68236 cover choices,70578 maximum-crossing-matching right endpoint sets and2882175 left-subset ranks against independent subset dynamic programming; the production compression and its certificate contraction bound. Includes the connected420-to40-vertex witness in the solver checker."
+        },
+        {
+          "path": "problems/general-matching/verify/check_bipartite.py",
+          "scope": "74,963 exhaustive bipartite graphs, 300 seeded cases in both side orientations, eight explicit rejection cases and six native/branch/deep-path cases. The phase solver is compared with independent subset matching, including a 2,400-matched-edge augmenting path, and its output uses the unchanged independent certificate verifier."
         }
       ],
       "review": {
-        "status": "partial",
-        "scope": "The executable cubic solver with optimality certificates and its independent verifier; the self-contained quadratic certificate-extraction proof; the unconditional sharp c-neighbor and mixed-failure kernels, componentwise composition, and subcubic reduction with its decoder. The cover-side alternating exchange further reduces the default solver, including certificates, to O(n+m log(m+2)+sum_i nu(G_i)^3), while retaining the original independent certificate format.",
+        "status": "ready",
+        "scope": "The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable edge retirement, finite-bit implementation and uniform parameter search. The separate executable package includes exact matching, independent optimality certificates, the early checkpoint’s four-times-matching-number compression, and the newly implemented nonrecursive bipartite phase algorithm. Sharp cover-neighbor, mixed-failure and subcubic reductions retain their own proved scopes.",
         "date": "2026-10-26",
         "conditions": [
-          "The four-fifths research running time still requires the cycle-search implementation and named published prerequisites in sources.md. The executable solver has its separately proved cubic bound. The mixed-failure kernel assumes a fixed simple graph; discarded parallel records and correlated labels are outside its scope."
+          "Named published deterministic primitives are explicit proof dependencies; the local realization theorem discharges the abstract cycle-search contract. The shipped reference implementation has a separate polynomial bound and does not implement the entire fast research construction.",
+          "The mixed-failure kernel concerns a fixed simple graph. Native parallel records and correlated failure labels are separate models. Readiness is a mathematical review invitation, not proof-assistant verification."
         ]
       }
     },
@@ -147,14 +178,18 @@
         {
           "path": "problems/degree-constrained-subgraphs/verify/check_reductions.py",
           "scope": "Finite permutation-selector, interval-degree multigraph, and exact/ranged-cardinality reductions against exhaustive original subsets; not a matching-backend verifier."
+        },
+        {
+          "path": "problems/degree-constrained-subgraphs/verify/check_reference.py",
+          "scope": "8,292 feasibility and cardinality-optimization requests against independent original-edge subset enumeration; 5,341 matching calls and 3,364 actual simple subcubic reductions. Includes parallel records, all cardinality ranges on the smallest cases, 15 malformed inputs, 15 corrupted certificates, long representations, isolates and both production CLIs under optimized Python."
         }
       ],
       "review": {
         "status": "ready",
-        "scope": "Theorem 1.1: unconditional sparse deterministic reductions for prescribed degrees, degree intervals, and exact or ranged cardinality, with both extension and decoding directions. Cardinality feasibility uses one exact matching call.",
+        "scope": "The complete sparse reductions for prescribed degrees, degree intervals and exact/ranged cardinality, with extension, native decoding and the fast matching substitution. The shipped native-record solver handles feasibility, minimum and maximum cardinality. Its independent verifier checks YES witnesses and local or matching-based NO/optimality certificates without a matching search.",
         "date": "2026-10-26",
         "conditions": [
-          "The displayed fast running time requires the faster conditional general-matching implementation. Any correct exact maximum-matching solver, including the standard-library reference solver, suffices for the unconditional reduction theorem."
+          "The reference implementation has its own polynomial bounds and shares the proved deterministic reduction builder with the verifier. Input is a loopless multigraph with capacity one per explicit record. Binary multiplicities and arbitrary edge-weight optimization are outside this implementation."
         ]
       }
     },
@@ -167,14 +202,19 @@
         {
           "path": "problems/min-cost-flow/verify/check_recovery.py",
           "scope": "2,437 exact rational affine rounding/recovery cases and 12,243 threshold-prefix cases, including 5,058 deferred initializations and 1,090 NO-to-YES transitions. This is finite evidence for recovery and initialization, not the fast dynamic cycle-search implementation."
+        },
+        {
+          "path": "problems/min-cost-flow/verify/check_capacity_scaling.py",
+          "scope": "8,512 capacity-scaling instances, 18,634 stages and 18,273 bounded circulation calls against exact small-instance enumeration, with 90,375 truncated residual records, 3,999 injected forward/reverse circulations and 361 zero-bit stages. Includes 729 return-edge cases and 419,904 enumerated assignments. The external near-linear min-cost-flow theorem is not implemented by this finite checker."
         }
       ],
       "review": {
-        "status": "partial",
-        "scope": "The exact affine integral-recovery proof and reference checks; artificial-edge penalties, fixed-threshold accounting, and initialization that safely defers currently infeasible prefixes.",
+        "status": "ready",
+        "scope": "The complete static and insertion-only fixed-threshold moving-box log-barrier construction, instantiated with the locally realized raw-cycle search, numerical lifetime and retirement rules. Includes affine integral recovery, artificial-edge penalties and prefix-safe deferred initialization. The published-flow capacity-bit adapter is a separately proved alternative for exact max-flow calls.",
         "date": "2026-10-26",
         "conditions": [
-          "The faster numerical client still needs deterministic cycle search, dynamic flow maintenance and edge retirement with the stated lifetime and bit bounds. A NO answer at an early insertion prefix is not permanent infeasibility."
+          "The numerical cap, polynomial adaptive-history horizon and full-flow output charge remain part of the theorem. The incremental result is a fixed-threshold guarantee, not a fresh optimal flow after every update. An infeasible early prefix does not imply permanent infeasibility.",
+          "The alternative capacity-bit route uses van den Brand et al., arXiv:2407.10830v1, Theorem 6.17, with polynomial capacity relative to each actual call size. Its published algorithm is an external proof dependency; local finite adapter checks do not execute it."
         ]
       }
     },
@@ -190,11 +230,11 @@
         }
       ],
       "review": {
-        "status": "partial",
-        "scope": "The small-to-large persistent label history, historical equality queries, and first-coalescence queries in O(1+log log(n+2)) time via a binary search on the shared suffix.",
+        "status": "ready",
+        "scope": "The complete incremental SCC label theorem with the raw-cycle-to-frozen-detector realization, nonzero-base handling and retirement rules. The label-history extension proves historical equality and O(1+log log(n+2)) first-coalescence queries using permanently retired identities.",
         "date": "2026-10-26",
         "conditions": [
-          "The history layer assumes correct monotone component merges and permanently retired label identities. The faster SCC update algorithm still requires the cycle-search, exact flow and edge-retirement operations listed in sources.md."
+          "The theorem gives exact component labels under the stated insertion model and adaptive-history bounds. It does not include dynamic topological-order maintenance or within-component path output. The executable history checks cover that layer separately."
         ]
       }
     },
@@ -210,11 +250,11 @@
         }
       ],
       "review": {
-        "status": "partial",
-        "scope": "The clipped-tree intersection and loop-removal reporting construction, including zero-length edges; the nonnegative-integer perturbation reduction and its accuracy/bit accounting.",
+        "status": "ready",
+        "scope": "The complete frozen-detector incremental SSSP construction, its realized numerical interface, the simple-path reporting argument and nonnegative-integer perturbation adapter. Includes exact zero distances, clipped-tree intersections, loop removal and accuracy/bit accounting.",
         "date": "2026-10-26",
         "conditions": [
-          "The fast distance-maintenance theorem still requires the explicitly stated detector, cycle-search and edge-retirement data structures. The finite path tests do not validate their update time."
+          "The input, accuracy and polynomial numerical-range promises remain explicit. Reporting a path with k edges costs (k+1) poly(U). Finite path tests support the reporting lemmas and do not measure the asymptotic detector update time."
         ]
       }
     },
@@ -225,11 +265,11 @@
       "formal_verification": "not-claimed",
       "checks": [],
       "review": {
-        "status": "partial",
-        "scope": "The five explicit parameter substitutions and the nonnegative-integer distance adapter, including exact zero answers, transformed length range, and the required uniform stretch bound.",
+        "status": "ready",
+        "scope": "The constructed fully dynamic metric hierarchy, full time/stretch curve and all five explicit parameter points, including the same-stretch 23/28 versus 6/7 comparison. The nonnegative-integer adapter supplies exact zero answers and transformed-range accounting.",
         "date": "2026-10-26",
         "conditions": [
-          "The positive-distance hierarchy remains an explicit prerequisite. For the general parameter family, the zero-length extension additionally needs t^4 h=o(U); t^2 h=o(U) alone is insufficient. Only numerical distance output is claimed."
+          "The tradeoff is amortized and reports numerical distances. Its general family assumes t tends to infinity and t^2 h=o(U); extending that family to zero lengths additionally needs t^4 h=o(U) and a uniform stretch bound. The five displayed points satisfy the stronger conditions."
         ]
       }
     },
@@ -240,11 +280,11 @@
       "formal_verification": "not-claimed",
       "checks": [],
       "review": {
-        "status": "partial",
-        "scope": "The separate zero-edge class, dyadic positive-weight wrapper, and their initialization, update and recourse accounting for both displayed regimes.",
+        "status": "ready",
+        "scope": "The complete tracked-terminal four-fifths and full-horizon five-sixths constructions, including the destructive-support realization, hierarchy and strong-forest substitutions. The zero-edge class and dyadic positive-weight wrapper charge initialization, all updates and settled output recourse.",
         "date": "2026-10-26",
         "conditions": [
-          "The underlying unweighted hierarchy and forest algorithms remain explicit prerequisites. Output guarantees apply after each complete external update and retain the provider’s adaptive-history requirements."
+          "The two recourse guarantees have different scopes and are retained separately. Output is measured after a complete external update, with the stated adaptive-history and numerical-range restrictions. The underlying proofs are available even though a full executable implementation is not supplied."
         ]
       }
     },
@@ -255,11 +295,11 @@
       "formal_verification": "not-claimed",
       "checks": [],
       "review": {
-        "status": "partial",
-        "scope": "The formal weighted MSF certificate and pruning substitution: local exchange/contraction proofs, literal connectivity adapter, finite pruning horizons, deterministic decomposition parameters and the NSW recursive cost calculation.",
+        "status": "ready",
+        "scope": "The full deterministic weighted MSF public-baseline composition: local exchange/contraction proofs, connectivity adapter, finite pruning horizons, decomposition parameters and recursive worst-case cost.",
         "date": "2026-10-26",
         "conditions": [
-          "This is a derived public baseline using Chuzhoy–Gao–Li–Nanongkai–Peng–Saranurak Corollary 6.1, Meierhans–Probst Gutenberg–Saranurak Theorem 6.4, and Nanongkai–Saranurak–Wulff-Nilsen Theorem 7.1 and Section 9. It is not an executable implementation or a consequence of the research matching router."
+          "The external theorems are Chuzhoy–Gao–Li–Nanongkai–Peng–Saranurak Corollary 6.1, Meierhans–Probst Gutenberg–Saranurak Theorem 6.4, and Nanongkai–Saranurak–Wulff-Nilsen Theorem 7.1 and Section 9. This is a derived public result; a full executable implementation is not supplied."
         ]
       }
     },
@@ -270,11 +310,12 @@
       "formal_verification": "not-claimed",
       "checks": [],
       "review": {
-        "status": "partial",
-        "scope": "The nonnegative-integer flat-forest adapter and zero-capacity Gomory–Hu preprocessing, with native-forest and cut-tree input costs stated separately.",
+        "status": "ready",
+        "scope": "The complete accepted no-reset Steiner-pool strong-forest construction, with fixed pools, native identities, ghost ownership and chronological work. The six-sevenths cut-tree composition includes the locally realized fixed-k adapter and exact-flow chain. Nonnegative flat-forest and zero-capacity adapters, native input costs and actual-call inventory are explicit. The published-flow capacity-bit construction gives an additional route.",
         "date": "2026-10-26",
         "conditions": [
-          "The faster forest and exact-flow constructions retain the data-structure assumptions in sources.md. The local reductions do not supply those implementations or an additional simple-path reporting interface."
+          "The structural expansion, bounded-degree and numerical-range hypotheses remain part of the theorem. Forest routing outputs walks under its stated interface; a simple-path reporting contract is not added. The optional older ported-forest candidate is distinct from the completed no-reset construction.",
+          "The alternative flow route invokes van den Brand et al., arXiv:2407.10830v1, Theorem 6.17. The earlier four-fifths local flow theorem already had its own proof chain and is not reclassified as an open assumption."
         ]
       }
     },
@@ -364,8 +405,20 @@
         {
           "path": "tools/verify_sensitivity_certificates.py",
           "scope": "direct finite mechanism: Signed recursive interval catalogue versus exhaustive Boolean evaluation, plus bounded-slack attainable sums. Excludes general backend implementation, continuous contact certificates, and asymptotic time or space exponents."
+        },
+        {
+          "path": "problems/boolean-linear-compiler/verify/check_interval_compiler.py",
+          "scope": "Exact signed interval and complete slack/radix compilation against independent Boolean enumeration, including negative floors, empty recursive children, overlapping boundaries, even rows, zero rows and binary-large depth. The local support-sized refinement is separate from the earlier 5s+1 baseline in the shared sensitivity checker; detailed current counts are recorded in the problem verification note."
         }
-      ]
+      ],
+      "review": {
+        "status": "ready",
+        "date": "2026-10-26",
+        "scope": "The complete signed interval-disjunction proof, bounded-slack interpolation, signed radix packing and indexed-witness/optimization transfer. Each halving emits at most two intervals with at most the original row support many integer values; all exceptional and binary-input cases are explicit.",
+        "conditions": [
+          "The Subset Sum backend is supplied with its stated indexed-witness time contract; a space bound requires that same backend. The compiler and finite checks do not establish the backend circuit or continuous-contact proofs."
+        ]
+      }
     },
     {
       "id": "correlated-spectral-regression",
@@ -652,7 +705,15 @@
       "path": "problems/strong-haxell-matching",
       "evidence_note": "problems/strong-haxell-matching/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [],
+      "review": {
+        "status": "ready",
+        "date": "2026-10-26",
+        "scope": "The explicit certifying hypergraph-matching algorithm, including build/growth/collapse and weighted finite-prefix termination; the public explicit-algorithm weighted reanalysis; certified disjoint-path routing and spanning-expander packing. The destructive-support extractor, exact-size auxiliary graph and route/conductance accounting are explicitly instantiated.",
+        "conditions": [
+          "The hitting, expansion, density, load and input-size promises remain part of their respective theorems. The companion’s separate conditional observation about the public approximate-extension algorithm is not used by these results and retains its stated assumption. Manuscript readiness does not claim a full executable implementation."
+        ]
+      }
     },
     {
       "id": "independent-transversal",

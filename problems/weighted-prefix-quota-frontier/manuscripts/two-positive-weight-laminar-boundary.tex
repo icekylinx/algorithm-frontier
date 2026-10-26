@@ -1,0 +1,181 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/weighted-prefix-quota-frontier/manuscripts/two-positive-weight-laminar-boundary.md
+% Recovered-source SHA-256: 9938dc96c750dc8b2ebfab71a03892a26a9d5388e6b6f71bb00db8185df9308c
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-e9b108715f-two-positive-weights-already-force-exponential-laminar-oracle-complexity}{%
+\section{Two positive weights already force exponential laminar oracle complexity}\label{af-e9b108715f-two-positive-weights-already-force-exponential-laminar-oracle-complexity}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/weighted-prefix-quota-frontier/manuscripts/laminar-dominant-weight-recovery.md}{homogeneous completion theorem} gives polynomial-time exact optimization when the prepared laminar instance has one positive weight value. This note proves an exponential rank-oracle boundary with exactly two positive values, \(1\) and \(2\). The laminar family has depth two, every nonroot target is two, and there are no zero-weight coordinates.
+
+The hidden sparse-paving construction and the readable SAT-decoder method have established antecedents. Section 6 names the papers and the local specialization proved here. No publication-priority claim is made.
+
+\hypertarget{af-e9b108715f-precise-statement}{%
+\subsection{1. Precise statement}\label{af-e9b108715f-precise-statement}}
+
+\textbf{Theorem.} With one arbitrary ordinary matroid resource, common coordinate weights in \(\{1,2\}\), disjoint block equalities of target two, and root weighted cap \(B\), the following tasks require \(2^{\Omega(B)}\) rank-oracle queries in the worst case:
+
+\begin{itemize}
+\tightlist
+\item
+  Feasibility of an original-total matroid base, with scalar objective zero.
+\item
+  Exact optimization over optional independent sets, with scalar profit one on every item.
+\end{itemize}
+
+The bound applies to deterministic algorithms and to randomized algorithms with worst-case success at least \(2/3\). It holds even when all coordinates are positive, and all numeric rows use the same coordinate weights.
+
+For polynomially encoded, polynomial-time evaluable rank programs, a deterministic \(2^{o(B)}\mathrm{poly}(H)\) algorithm for either task would contradict deterministic ETH. The randomized running-time version requires randomized ETH separately. Oracle and encoded-program statements are distinct models.
+
+The optional examples always have a feasible solution. Their hardness is for exact scalar optimization; no lower bound for optional pure feasibility is inferred from them. No linear or graphic representation is asserted.
+
+\hypertarget{af-e9b108715f-a-depth-two-instance-with-weights-one-and-two}{%
+\subsection{2. A depth-two instance with weights one and two}\label{af-e9b108715f-a-depth-two-instance-with-weights-one-and-two}}
+
+Fix integers \(d\ge2\) and \(1\le t\le d-1\). The ground consists of \(d\) disjoint three-item blocks
+
+\[
+E=\{a_i,b_i,c_i:i\in[d]\},
+\qquad w(a_i)=w(b_i)=1,\quad w(c_i)=2.
+\tag{TW1}
+\]
+
+Impose the block equalities and root cap
+
+\[
+x_{a_i}+x_{b_i}+2x_{c_i}=2\quad(i\in[d]),
+\qquad w\cdot x\le B=2d.
+\tag{TW2}
+\]
+
+These rows are laminar. The resource will have rank \(r=d+t\), and it is an ordinary matroid, so its nonnegative integer feasible vectors are zero-one. Within one block, TW2 permits exactly the pair \(\{a_i,b_i\}\) or the singleton \(\{c_i\}\). Thus a numeric set of cardinality \(r\) has exactly \(t\) pair-blocks.
+
+For \(T\in\binom{[d]}t\), define
+
+\[
+A_T=\bigcup_{i\in T}\{a_i,b_i\}
+\;\cup\!\bigcup_{i\notin T}\{c_i\},
+\qquad
+\mathcal H=\{A_T:T\in\tbinom{[d]}t\}.
+\tag{TW3}
+\]
+
+Consequently the numeric \(r\)-sets are exactly \(\mathcal H\), and \(|\mathcal H|=\binom dt\). If \(T\ne T'\) and \(a=|T\setminus T'|\), then \(|T'\setminus T|=a\ge1\). Switching these blocks removes three old elements per exchanged block pair. Hence
+
+\[
+|A_T\cap A_{T'}|=r-3a\le r-3.
+\tag{TW4}
+\]
+
+The root bound holds with equality for every numeric set; it is retained to make the parameter \(B\) explicit.
+
+\hypertarget{af-e9b108715f-the-matroid-and-every-rank-answer}{%
+\subsection{3. The matroid and every rank answer}\label{af-e9b108715f-the-matroid-and-every-rank-answer}}
+
+For any subfamily \(\mathcal G\subseteq\mathcal H\), declare the allowed bases to be
+
+\[
+\mathcal B_{\mathcal G}
+=\{S\subseteq E:|S|=r,\ S\notin\mathcal H\setminus\mathcal G\}.
+\tag{TW5}
+\]
+
+This is the basis family of a rank-\(r\) matroid. First it is nonempty: an \(r\)-set containing a whole three-item block is not numeric, hence is allowed. Such a set exists because \(3\le r<|E|\).
+
+For allowed bases \(X,Y\) and \(e\in X\setminus Y\), if \(|Y\setminus X|=1\), the sole exchange gives \(Y\). Otherwise consider the candidates \(X-e+f\) for \(f\in Y\setminus X\). Any two share \(r-1\) elements. By TW4 at most one can be forbidden, so an allowed exchange exists. This proves the ordinary basis-exchange axiom directly.
+
+Every \((r-1)\)-set has at least two one-element extensions, of which at most one is forbidden. It therefore extends to an allowed basis, as does every smaller set. Every set larger than \(r\) contains an \((r+1)\)-set; its distinct \(r\)-subsets pairwise share \(r-1\) elements, so at most one is forbidden. The full rank function is therefore
+
+\[
+r_{\mathcal G}(S)=
+\begin{cases}
+|S|,&|S|<r,\\
+r-1,&|S|=r\text{ and }S\in\mathcal H\setminus\mathcal G,\\
+r,&\text{otherwise}.
+\end{cases}
+\tag{TW6}
+\]
+
+The formula accounts for all query sizes, including sets larger than the required base. In particular, a numeric resource base exists exactly when \(\mathcal G\) is nonempty.
+
+For optional independent sets with all profits one, the optimum is \(r\) when \(\mathcal G\ne\varnothing\). When \(\mathcal G=\varnothing\), no numeric \(r\)-set is independent, and rank excludes larger independent sets. Choosing exactly \(t-1\) pair-blocks gives a numeric set of size \(r-1\), which is independent by TW6. Thus the optional optimum is exactly
+
+\[
+\mathrm{OPT}_{\mathcal G}=
+\begin{cases}
+r-1,&\mathcal G=\varnothing,\\
+r,&\mathcal G\ne\varnothing.
+\end{cases}
+\tag{TW7}
+\]
+
+This scalar is the objective itself; no additional scalar constraint or cardinality equality is supplied in the optional problem.
+
+\hypertarget{af-e9b108715f-query-lower-bound}{%
+\subsection{4. Query lower bound}\label{af-e9b108715f-query-lower-bound}}
+
+Compare the reference instance \(\mathcal G=\varnothing\) with the instances \(\mathcal G=\{A\}\), one for every \(A\in\mathcal H\). Their rank oracles differ on exactly the query \(A\), by TW6. A deterministic algorithm must query every member of \(\mathcal H\) on the reference transcript to decide mandatory feasibility or distinguish the two exact optional optimum values.
+
+For bounded error, put probability \(1/2\) on the reference and otherwise choose \(A\) uniformly from \(\mathcal H\). A deterministic algorithm using at most \(Q\) queries encounters the changed answer on at most a \(Q/|\mathcal H|\) fraction of the restored instances. Its average success is at most \(1/2+Q/(2|\mathcal H|)\). Averaging over the random coins of a randomized algorithm gives \(Q\ge|\mathcal H|/3\) for worst-case success at least \(2/3\).
+
+Take \(t=\lfloor d/2\rfloor\). Since the largest binomial coefficient is at least the average of the \(d+1\) binomial coefficients,
+
+\[
+Q\ge\frac13\binom d{\lfloor d/2\rfloor}
+\ge\frac{2^d}{3(d+1)}
+=\frac{2^{B/2}}{3(B/2+1)}.
+\tag{TW8}
+\]
+
+This is the stated exponential lower bound along even \(B\ge4\). For a general sufficiently large budget upper bound, take the largest even \(2d\) no greater than it. The explicit graph-free quota data have size polynomial in \(B\).
+
+\hypertarget{af-e9b108715f-a-polynomial-rank-program-and-eth}{%
+\subsection{5. A polynomial rank program and ETH}\label{af-e9b108715f-a-polynomial-rank-program-and-eth}}
+
+Given a 3-CNF formula \(\varphi\) with \(\nu\ge1\) variables, use
+
+\[
+d=2\nu,\qquad t=\nu,\qquad r=3\nu,\qquad B=4\nu.
+\tag{TW9}
+\]
+
+There are enough candidate bases to encode every assignment, because
+
+\[
+\binom{2\nu}{\nu}
+=\prod_{i=1}^{\nu}\frac{\nu+i}{i}\ge2^\nu.
+\tag{TW10}
+\]
+
+Order the \(t\)-subsets of \([d]\) lexicographically and write \(J(T)\) for their zero-based ranks. For \(T=\{t_1<\cdots<t_t\}\) and \(t_0=0\),
+
+\[
+J(T)=\sum_{i=1}^{t}\sum_{v=t_{i-1}+1}^{t_i-1}
+\binom{d-v}{t-i}.
+\tag{TW11}
+\]
+
+This counts all earlier subsets at their first differing position. It is computable with polynomially many arithmetic operations on polynomial-bit integers. Admit \(A_T\) to \(\mathcal G_\varphi\) exactly when \(J(T)<2^\nu\) and its \(\nu\)-bit binary expansion satisfies \(\varphi\). Every assignment occurs, so \(\mathcal G_\varphi\ne\varnothing\) exactly when \(\varphi\) is satisfiable.
+
+The rank program evaluates TW6. Only size-\(r\) queries need to be tested against \(\mathcal H\): inspect the choice in every block, recover \(T\), compute TW11, and evaluate the formula if the rank is in range. All work is polynomial in \(|\varphi|+\nu\). Section 3 proves that the program defines a valid matroid for every input formula.
+
+A deterministic \(2^{o(B)}\mathrm{poly}(H)\) algorithm for either task would therefore solve 3-SAT in \(2^{o(\nu)}\mathrm{poly}(|\varphi|)\) time. This contradicts deterministic ETH. The corresponding randomized conclusion uses randomized ETH, not deterministic ETH alone.
+
+\hypertarget{af-e9b108715f-verification-provenance-and-scope}{%
+\subsection{6. Verification, provenance and scope}\label{af-e9b108715f-verification-provenance-and-scope}}
+
+Run:
+
+\begin{verbatim}
+python3 -B problems/weighted-prefix-quota-frontier/verify/check_two_weight_lower.py
+\end{verbatim}
+
+The deterministic script refuses assertions-disabled execution. It checks all admitted subfamilies for \(d=2,3\), and the reference, every single restoration, and full restoration for \(d=4\). Across 20 resulting matroids, it checks 20,569,302 ordinary basis-exchange conditions and 37,120 complete rank entries, computing the reference rank by enumerating subsets of literal allowed bases. It also checks 4,672 numeric-family comparisons, 26,240 rank comparisons between reference and one-restored instances, the exact mandatory and optional outcomes, and the lexicographic decoder. An additional 276 complete truth tables give 5,224 independent decoder membership comparisons. These finite checks do not prove the asymptotic query or ETH conclusions; Sections 4--5 give those arguments.
+
+The hidden-matroid method is not new. Doron-Arad, Kulik and Shachnai, \href{https://arxiv.org/html/2412.02217v2}{\emph{You (Almost) Can't Beat Brute Force for 3-Matroid Intersection}}, Section 3, give the general forbidden-family matroid framework. Their \href{https://arxiv.org/html/2307.07773v2}{\emph{Lower Bounds for Matroid Optimization Problems with a Linear Constraint}}, Definitions 4.4--4.5 and Lemma 4.6, give polynomial SAT-matroid encodings. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/weighted-prefix-quota-frontier/manuscripts/disjoint-row-root-target-sharp-lower.md}{earlier disjoint-row manuscript} records additional antecedents and the ETH convention.
+
+The contribution here is the explicit depth-two encoding with only weights \(1,2\), its mandatory-feasibility and optional-objective calibration, and the boundary it supplies next to the polynomial one-weight theorem. It does not close the general laminar quadratic-exponent gap. The complete local proof and finite checks make this statement ready for review in its stated oracle and readable-program scopes; external peer review or proof-assistant verification is not claimed.
+
+\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

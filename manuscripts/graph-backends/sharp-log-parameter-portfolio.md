@@ -10,7 +10,12 @@ O(n+m)+(m_s+1)\exp\!\left[
 ![Formula](../../assets/math/d7c9cc37cca561848a79593c.svg)
 The parameter balance is proved explicitly. Its improved logarithmic factor comes from selecting one favorable fixed tuple of constants through a verified portfolio, without an additional slowly growing coefficient.
 
-The numerical realization remains a hypothesis. The current stronger [main matching theorem](../../problems/general-matching/proof.md) retains the explicit cycle-search implementation hypothesis; the fixed-tuple argument and final output verification leave it unresolved.
+The numerical realization is an explicit premise of this historical
+standalone parameter calculation. The current stronger
+[main matching theorem](../../problems/general-matching/proof.md) has its
+own completed cycle-search realization in Theorem 11.6 and its four-fifths
+balance in Section 12. The portfolio and output verifier alone do not
+establish a running-time bound; the applicable construction proof does.
 
 The quantifier used here is a *fixed constant tuple*, chosen by a uniform
 program through exhaustive interleaving. A favorable tuple is the same

@@ -6,14 +6,15 @@
 
 ## Linked mathematical dependencies
 
-These manuscripts contain the interfaces, auxiliary arguments or source
-comparisons referenced by this result. Their stated hypotheses remain
-part of each use; an interface analysis does not supply an omitted backend.
+The generic observer and batching lemmas use the interfaces listed
+below. The linked local constructions supply them for both displayed
+spanner theorems, with the named public algorithms and their parameter
+ranges retained.
 
 | Layer | Required contract | Scope of the local argument |
 |---|---|---|
-| Numerical hierarchy | Deterministic adaptive histories, actual-size initialization, upper estimates and polynomial-bit lengths | The APSP factor is a premise, with its own local-provider dependencies. |
-| Tracked-terminal construction | Explicit nearest-pivot and local source forests, fixed owner handles, typed nulls and chronological physical-edge logs | Proves an observer and short-path union with ordinary recourse proportional to the complete input history. A distance-only oracle is insufficient. |
+| Numerical hierarchy | Deterministic adaptive histories, actual-size initialization, upper estimates and polynomial-bit lengths | [APSP Corollary 2.2](../apsp-frontier/proof.md) instantiates the hierarchy with the constructed normalized provider and its named deterministic public inputs. |
+| Tracked-terminal construction | Explicit nearest-pivot and local source forests, fixed owner handles, typed nulls and chronological physical-edge logs | [The flat-family construction, Sections 2–2.2](../../manuscripts/graph-backends/destructive-apsp-path-support-extractor.md) supplies the forests and handles; main Part I adds the observer and short-path union with ordinary recourse proportional to the complete input history. |
 | Clipped reporting | Reports at most the threshold number of physical edge occurrences, skipping null and connector chains | Charges actual reported length and route retirement; no output charge is hidden in numerical query time. |
 | Full-horizon construction | Single-instance assignment accounting (F2) and work (F3) | Proves nested deletion clocks, actual seeding costs and recourse depending on <code class="math">n+D</code>. Dense graphs are not rebuilt after every <code class="math">n</code> deletions at every layer. |
 | Nonnegative integer lengths | One unweighted zero-edge class plus the positive dyadic classes | Preserves zero-cost connectivity by current output paths and sums all class work and recourse. |
@@ -46,7 +47,7 @@ added after the original arXiv version.
 | Source location | Operation or guarantee used | Boundary in this repository |
 |---|---|---|
 | Definition 5 and Theorem 12 | Transfer from a path-reporting APSP interface over a bounded deletion interval | A numerical distance oracle alone does not satisfy that premise. |
-| Section 5, Lemma 13 | Single-layer stretch, edge inventory and recourse | The local tracked-terminal construction must separately meet the required reporting and assignment work. |
+| Section 5, Lemma 13 | Single-layer stretch, edge inventory and recourse | The local clipped-reporting proof and Part II Section 1 establish the reporting and assignment costs used in the substitution. |
 | Claims 14–17 and Theorem 18 | Nested restart periods and the transfer to a full update horizon | The local proof charges actual initial inventory and its chosen parameters; the public theorem does not supply the proposed faster hierarchy. |
 
 The [APSP source map](../apsp-frontier/sources.md) names the public metric

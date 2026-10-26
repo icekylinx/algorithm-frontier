@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """Deterministic, unconditional maximum-cardinality matching reference solver.
 
-This is an ordinary polynomial-time Edmonds blossom implementation.  It does
-not implement or inherit the manuscript's faster research backend.  Native
-input records may contain loops, parallel edges, and user-supplied edge IDs.
+This ordinary polynomial-time solver uses Hopcroft--Karp on bipartite
+retained graphs and Edmonds blossom otherwise.  It does not implement or
+inherit the manuscript's faster research backend.  Native input records may
+contain loops, parallel edges, and user-supplied edge IDs.
 
-Default modes: O(n + m log(m+2) + sum_i nu_i**3) operations, where nu_i
-is the maximum matching size of original component i (not an input).
-Without kernels, the ordinary cubic component-vertex bound applies.
+Default modes: O(n + m log(m+2) + sum_i nu_i**p_i), including certificates,
+where nu_i is the maximum matching size of original component i (not an
+input), and p_i is 5/2 if its first kernel is bipartite and 3 otherwise.
+Without kernels, bipartite components cost O((n_i+m_i)*sqrt(nu_i+1));
+other components retain the ordinary cubic component-vertex bound.
 Storage is O(n+m), apart from the input/output label bytes.  Integer vertex
 indices and IDs are charged by their representation size; see README.md.
 
@@ -248,14 +251,180 @@ def _blossom(
     return mate
 
 
+def _bipartition(adjacency: list[list[int]]) -> list[bool] | None:
+    """Return a deterministic left-side mask, or None after an odd conflict."""
+    color = [-1] * len(adjacency)
+    for root in range(len(adjacency)):
+        if color[root] != -1:
+            continue
+        color[root] = 0
+        queue = deque([root])
+        while queue:
+            u = queue.popleft()
+            for v in adjacency[u]:
+                if color[v] == -1:
+                    color[v] = 1 - color[u]
+                    queue.append(v)
+                elif color[v] == color[u]:
+                    return None
+    return [value == 0 for value in color]
+
+
+def _hopcroft_karp(
+    adjacency: list[list[int]],
+    left: list[bool],
+    *,
+    statistics: dict[str, int] | None = None,
+) -> list[int]:
+    """Exact bipartite matching in O((k+h)*sqrt(nu+1)) operations.
+
+    Only adjacency lists on ``left`` are read.  A phase freezes its starting
+    matching, takes a maximal set of vertex-disjoint shortest augmenting
+    paths, and flips them.  Explicit DFS stacks avoid recursion-depth limits.
+    Here nu is the unknown maximum matching size, not the vertex count.
+    """
+    order = len(adjacency)
+    if len(left) != order:
+        raise RuntimeError("bipartite side mask has the wrong length")
+    left_vertices = [u for u in range(order) if left[u]]
+    for u in left_vertices:
+        if any(left[v] for v in adjacency[u]):
+            raise RuntimeError("bipartite matching received a same-side edge")
+    mate = [-1] * order
+    if statistics is not None:
+        statistics["hopcroft_karp_calls"] = statistics.get("hopcroft_karp_calls", 0) + 1
+    while True:
+        if statistics is not None:
+            statistics["hopcroft_karp_bfs"] = statistics.get("hopcroft_karp_bfs", 0) + 1
+        distance = [-1] * order
+        queue: deque[int] = deque()
+        for u in left_vertices:
+            if mate[u] == -1:
+                distance[u] = 0
+                queue.append(u)
+        terminal_level = order + 1
+        while queue:
+            u = queue.popleft()
+            if distance[u] > terminal_level:
+                continue
+            for v in adjacency[u]:
+                if v == mate[u]:
+                    continue
+                partner = mate[v]
+                if partner == -1:
+                    terminal_level = distance[u]
+                elif distance[u] < terminal_level and distance[partner] == -1:
+                    distance[partner] = distance[u] + 1
+                    queue.append(partner)
+        if terminal_level == order + 1:
+            return mate
+        if statistics is not None:
+            statistics["hopcroft_karp_phases"] = statistics.get("hopcroft_karp_phases", 0) + 1
+        phase_mate = mate.copy()
+        cursor = [0] * order
+        unavailable = [False] * order
+        gains = 0
+        for root in left_vertices:
+            if phase_mate[root] != -1 or unavailable[root]:
+                continue
+            path_left = [root]
+            path_right: list[int] = []
+            found = False
+            while path_left and not found:
+                u = path_left[-1]
+                while cursor[u] < len(adjacency[u]):
+                    v = adjacency[u][cursor[u]]
+                    cursor[u] += 1
+                    if v == phase_mate[u] or unavailable[v]:
+                        continue
+                    partner = phase_mate[v]
+                    if partner == -1:
+                        if distance[u] != terminal_level:
+                            continue
+                        path_right.append(v)
+                        for a, b in zip(path_left, path_right):
+                            mate[a] = b
+                            mate[b] = a
+                            unavailable[a] = unavailable[b] = True
+                        gains += 1
+                        found = True
+                        break
+                    if (distance[u] < terminal_level
+                            and distance[partner] == distance[u] + 1
+                            and not unavailable[partner]):
+                        path_right.append(v)
+                        path_left.append(partner)
+                        break
+                else:
+                    # A failed node stays dead: later paths only remove more
+                    # vertices from this fixed layered graph.
+                    unavailable[u] = True
+                    path_left.pop()
+                    if path_right:
+                        path_right.pop()
+        if gains == 0:
+            raise RuntimeError("a reachable bipartite phase found no augmenting path")
+        if statistics is not None:
+            statistics["hopcroft_karp_augmentations"] = statistics.get("hopcroft_karp_augmentations", 0) + gains
+
+
+def _bipartite_barrier(
+    adjacency: list[list[int]],
+    mate: list[int],
+    left: list[bool],
+    statistics: dict[str, int] | None = None,
+) -> list[int]:
+    """Return a minimum vertex cover, also a tight odd-component barrier."""
+    order = len(adjacency)
+    if len(mate) != order or len(left) != order:
+        raise RuntimeError("bipartite certificate arrays have different lengths")
+    for u, neighbors in enumerate(adjacency):
+        if any(left[u] == left[v] for v in neighbors):
+            raise RuntimeError("bipartite certificate received a same-side edge")
+        v = mate[u]
+        if v != -1 and (not 0 <= v < order or mate[v] != u or v not in neighbors):
+            raise RuntimeError("bipartite certificate received an invalid matching")
+    reached = [False] * order
+    queue: deque[int] = deque()
+    for u in range(order):
+        if left[u] and mate[u] == -1:
+            reached[u] = True
+            queue.append(u)
+    while queue:
+        u = queue.popleft()
+        for v in adjacency[u]:
+            if v == mate[u] or reached[v]:
+                continue
+            reached[v] = True
+            partner = mate[v]
+            if partner == -1:
+                raise RuntimeError("bipartite certificate found an augmenting path")
+            if not reached[partner]:
+                reached[partner] = True
+                queue.append(partner)
+    barrier = [u for u in range(order) if left[u] != reached[u]]
+    removed = [False] * order
+    for u in barrier:
+        removed[u] = True
+    if (len(barrier) != _matching_size(mate)
+            or any(not removed[u] and not removed[v]
+                   for u, neighbors in enumerate(adjacency) for v in neighbors)):
+        raise RuntimeError("bipartite cover does not certify this matching")
+    if statistics is not None:
+        statistics["bipartite_certificate_searches"] = statistics.get("bipartite_certificate_searches", 0) + 1
+    return barrier
+
+
 def _compress_cover(
-    adjacency: list[list[int]], cover: list[bool]
+    adjacency: list[list[int]], cover: list[bool],
+    *, statistics: dict[str, int] | None = None,
 ) -> tuple[list[int], list[list[int]]]:
     """Preserve all cover subsets using the right ends of a maximum crossing matching.
 
     The input is the already sparse c-neighbor kernel, with k=O(c**2)
-    vertices and h=O(c**2) edges.  At most c ordinary bipartite searches cost
-    O(c*(k+h))=O(c**3).  The induced output has at most 2c vertices.
+    vertices and h=O(c**2) edges.  The crossing matching has size at most c,
+    so Hopcroft--Karp costs O((k+h)*sqrt(c+1))=O(c**(5/2)).  The induced
+    output has at most 2c vertices.
     """
     order = len(adjacency)
     crossing: list[list[int]] = [[] for _ in range(order)]
@@ -264,36 +433,8 @@ def _compress_cover(
             crossing[u] = [v for v in neighbors if not cover[v]]
         elif any(not cover[v] for v in neighbors):
             raise RuntimeError("compression requires a vertex cover")
-    left_mate = [-1] * order
-    right_mate = [-1] * order
-    for root in range(order):
-        if not cover[root] or left_mate[root] != -1:
-            continue
-        parent_right = [-1] * order
-        seen_left = [False] * order
-        seen_left[root] = True
-        queue = deque([root])
-        endpoint = -1
-        while queue and endpoint == -1:
-            u = queue.popleft()
-            for v in crossing[u]:
-                if parent_right[v] != -1:
-                    continue
-                parent_right[v] = u
-                if right_mate[v] == -1:
-                    endpoint = v
-                    break
-                partner = right_mate[v]
-                if not seen_left[partner]:
-                    seen_left[partner] = True
-                    queue.append(partner)
-        while endpoint != -1:
-            u = parent_right[endpoint]
-            previous = left_mate[u]
-            left_mate[u] = endpoint
-            right_mate[endpoint] = u
-            endpoint = previous
-    retained = [u for u in range(order) if cover[u] or right_mate[u] != -1]
+    crossing_mate = _hopcroft_karp(crossing, cover, statistics=statistics)
+    retained = [u for u in range(order) if cover[u] or crossing_mate[u] != -1]
     index_of = [-1] * order
     for index, u in enumerate(retained):
         index_of[u] = index
@@ -451,7 +592,7 @@ def maximum_matching(
     parallel records are represented by their earliest input occurrence.
     IDs default to input indices and, when supplied, must be distinct ints
     or strings.  ``certificate=True`` adds a separately checkable optimality
-    certificate within the same matching-number cubic bound.  ``use_kernel``
+    certificate within the same componentwise time bound.  ``use_kernel``
     enables both the c-neighbor edge kernel and crossing-endpoint compression.
     """
     if type(use_kernel) is not bool or type(certificate) is not bool:
@@ -467,9 +608,17 @@ def maximum_matching(
         "kernel_vertices": 0,
         "kernel_edges": 0,
         "cover_vertices": 0,
+        "solver_vertices": 0,
         "blossom_vertices": 0,
+        "bipartite_vertices": 0,
+        "bipartite_components": 0,
+        "hopcroft_karp_calls": 0,
+        "hopcroft_karp_phases": 0,
+        "hopcroft_karp_bfs": 0,
+        "hopcroft_karp_augmentations": 0,
         "matching_calls": 0,
         "certificate_searches": 0,
+        "bipartite_certificate_searches": 0,
         "blossom_contractions": 0,
         "augmentations": 0,
     }
@@ -480,15 +629,24 @@ def maximum_matching(
         statistics["kernel_vertices"] += len(compact)
         statistics["kernel_edges"] += len(kept)
         statistics["cover_vertices"] += len(cover)
+        left = _bipartition(adjacency)
         if use_kernel:
             covered = [False] * len(compact)
             for vertex in cover:
                 covered[index_of[vertex]] = True
-            solve_vertices, solve_adjacency = _compress_cover(adjacency, covered)
+            solve_vertices, solve_adjacency = _compress_cover(adjacency, covered, statistics=statistics)
         else:
             solve_vertices, solve_adjacency = list(range(len(compact))), adjacency
-        statistics["blossom_vertices"] += len(solve_vertices)
-        small_mate = _blossom(solve_adjacency, statistics=statistics)
+        statistics["solver_vertices"] += len(solve_vertices)
+        if left is None:
+            statistics["blossom_vertices"] += len(solve_vertices)
+            small_mate = _blossom(solve_adjacency, statistics=statistics)
+        else:
+            statistics["bipartite_vertices"] += len(solve_vertices)
+            statistics["bipartite_components"] += 1
+            statistics["matching_calls"] += 1
+            small_mate = _hopcroft_karp(solve_adjacency, [left[u] for u in solve_vertices], statistics=statistics)
+            statistics["augmentations"] += _matching_size(small_mate)
         mate = [-1] * len(compact)
         for u, v in enumerate(small_mate):
             if v != -1:
@@ -497,7 +655,8 @@ def maximum_matching(
             if mate[index_of[u]] == index_of[v]:
                 selected.append(native_index)
         if certificate:
-            barrier = _barrier(adjacency, mate, statistics)
+            barrier = (_barrier(adjacency, mate, statistics) if left is None
+                       else _bipartite_barrier(adjacency, mate, left, statistics))
             certified_components.append({
                 "root": vertices[0],
                 "cover": cover,
@@ -524,7 +683,7 @@ def maximum_matching(
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input", nargs="?", default="-", help="graph JSON file; - reads stdin")
-    parser.add_argument("--certificate", action="store_true", help="emit a verifiable optimality certificate (same cubic bound)")
+    parser.add_argument("--certificate", action="store_true", help="emit a verifiable optimality certificate (same componentwise bound)")
     parser.add_argument("--no-kernel", action="store_true", help="disable both compression stages; solve full normalized components")
     args = parser.parse_args()
     try:

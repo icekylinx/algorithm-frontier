@@ -3,15 +3,15 @@
 % Recovered-source SHA-256: 88d6473fb67a15540abcdb6eaa03d1b1d5e01145f4db8955d6168bb805f51f64
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
-% Final document preamble must use the recovered original Subset Sum style.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
 
-\hypertarget{exact-binomial-fault-summaries-for-arbitrary-matroids}{%
-\section{Exact binomial fault summaries for arbitrary matroids}\label{exact-binomial-fault-summaries-for-arbitrary-matroids}}
+\hypertarget{af-4c0863a692-exact-binomial-fault-summaries-for-arbitrary-matroids}{%
+\section{Exact binomial fault summaries for arbitrary matroids}\label{af-4c0863a692-exact-binomial-fault-summaries-for-arbitrary-matroids}}
 
 \textbf{Abstract.} A circuit-blocking set-pair inequality gives the sharp binomial bound for rank-preserving summaries of arbitrary oracle matroids under correlated label failures. A direct failure-witness branching algorithm gives explicit fixed-parameter preprocessing. For one label failure, a separate weighted construction attains the sharp bound in uniform polynomial oracle time. The same argument extends to integer-valued monotone submodular functions and to sharp real-valued marginal and entropy inequalities. For two or more label failures, an explicit counterexample rules out the same sharp weighted bound for arbitrary matroids. A separate FPT construction preserves all weighted prefixes with the larger existing Bernoulli prefix factor.
 
-\hypertarget{model-and-result}{%
-\subsection{1. Model and result}\label{model-and-result}}
+\hypertarget{af-4c0863a692-model-and-result}{%
+\subsection{1. Model and result}\label{af-4c0863a692-model-and-result}}
 
 Let M be a matroid on a finite explicitly listed ground set E, with rank r. Each element e has a set Lambda(e) of at most d labels. A query F consists of at most h labels and deletes every element whose label set intersects F. Write
 
@@ -45,8 +45,8 @@ The combinatorial size proof is short and independent of the construction. The F
 
 Before construction, one may clip \texttt{h} to the number \texttt{L} of distinct labels and \texttt{d} to the largest actual label-set size; rank is always at most \texttt{\textbar{}E\textbar{}}. The oracle statement treats one independence-oracle call as one unit of cost. It does not assume a linear representation, a field, or a bit-level encoding for oracle answers. Label indexing, basis scans and bounded-depth branching use \texttt{f(r,h,d)*\textbar{}E\textbar{}\^{}\{O(1)\}} ordinary operations on explicit input identifiers. Thus the theorem gives an FPT oracle-query/time bound, not a polynomial-space bit-kernel claim.
 
-\hypertarget{a-circuit-blocking-set-pair-lemma}{%
-\subsection{2. A circuit-blocking set-pair lemma}\label{a-circuit-blocking-set-pair-lemma}}
+\hypertarget{af-4c0863a692-a-circuit-blocking-set-pair-lemma}{%
+\subsection{2. A circuit-blocking set-pair lemma}\label{af-4c0863a692-a-circuit-blocking-set-pair-lemma}}
 
 For every e in a matroid ground set H, let A\_e and B\_e be disjoint subsets of some auxiliary label universe. Suppose
 
@@ -74,8 +74,8 @@ Choose e in C whose last A\_e-label in the random order is as late as possible, 
 
 For rank one, (3) gives the ordinary strong cross-intersection condition between distinct set pairs, so (4) specializes to the classical Bollobas set-pairs inequality. The new use here is that circuit blocking replaces pairwise cross-intersection and the right-hand side becomes matroid rank.
 
-\hypertarget{proof-of-the-size-theorem}{%
-\subsection{3. Proof of the size theorem}\label{proof-of-the-size-theorem}}
+\hypertarget{af-4c0863a692-proof-of-the-size-theorem}{%
+\subsection{3. Proof of the size theorem}\label{af-4c0863a692-proof-of-the-size-theorem}}
 
 Start with an inclusion-minimal H satisfying (1); existence is immediate because E itself satisfies (1). For each e in H, minimality gives a failure set F\_e of at most h labels such that H-e does not satisfy (1). Since H does satisfy it, this says
 
@@ -99,18 +99,18 @@ Therefore
 
 This proves (2). The nonuniform inequality (4) can also retain information about the actual element label degrees and witness sizes instead of replacing both by worst-case bounds.
 
-\hypertarget{tightness}{%
-\subsubsection{Tightness}\label{tightness}}
+\hypertarget{af-4c0863a692-tightness}{%
+\subsubsection{Tightness}\label{af-4c0863a692-tightness}}
 
 Use h+d labels. In each of r rank-one direct-sum classes, create one element e\_A for every d-element subset A of the labels, and give e\_A label set A. To force a particular e\_A, fail the h-element complement of A. In each class, e\_A is then its only surviving element. Hence every rank-preserving restriction must contain all r times binomial(h+d,d) elements. The construction also works when h=0 or d=0, with the usual conventions.
 
-\hypertarget{extension-interpretation}{%
-\subsubsection{Extension interpretation}\label{extension-interpretation}}
+\hypertarget{af-4c0863a692-extension-interpretation}{%
+\subsubsection{Extension interpretation}\label{af-4c0863a692-extension-interpretation}}
 
 Because H\_F is contained in E\_F, rank equality implies equality of their original-matroid closures. This closure relation persists in any later matroid extension whose restriction to E is M. Thus the summary preserves the maximum number of surviving original elements that can extend any fixed independent background set in such an extension. Repeated exchange can retain that background exactly. This is an unweighted feasibility/cardinality consequence; no arbitrary-cost claim follows from it.
 
-\hypertarget{direct-xp-construction}{%
-\subsection{4. Direct XP construction}\label{direct-xp-construction}}
+\hypertarget{af-4c0863a692-direct-xp-construction}{%
+\subsection{4. Direct XP construction}\label{af-4c0863a692-direct-xp-construction}}
 
 List the L labels actually occurring in E. Repeatedly remove e whenever
 
@@ -128,8 +128,8 @@ O\!\left(|E|^2\sum_{i=0}^{h}\binom{L}{i}\right)
 
 independence queries, up to bookkeeping and with h clipped at L. It is polynomial for each fixed h, but this expression alone is not an FPT bound in h.
 
-\hypertarget{a-deterministic-failure-witness-search}{%
-\subsection{5. A deterministic failure-witness search}\label{a-deterministic-failure-witness-search}}
+\hypertarget{af-4c0863a692-a-deterministic-failure-witness-search}{%
+\subsection{5. A deterministic failure-witness search}\label{af-4c0863a692-a-deterministic-failure-witness-search}}
 
 The construction needs only independence queries. It does not require a linear representation, a prime-field construction, or a separating family. For a current restriction X and a protected element e in X, we decide whether there is a set F of at most h labels, disjoint from Lambda(e), for which
 
@@ -167,8 +167,8 @@ S(a,h)=\sum_{i=0}^{h}a^i,
 
 There are at most dr branch labels at every node and at most h levels. One test uses at most S(dr,h) nodes, at most (\textbar X\textbar+1)S(dr,h) independence queries, and O((d+1)\textbar X\textbar S(dr,h)) ordinary bookkeeping operations after the explicit labels have been indexed. No failure set over the full label universe is enumerated. If e is a loop, it can be deleted immediately; this optional shortcut does not affect the proof.
 
-\hypertarget{sharp-construction-and-explicit-parameter-dependence}{%
-\subsection{6. Sharp construction and explicit parameter dependence}\label{sharp-construction-and-explicit-parameter-dependence}}
+\hypertarget{af-4c0863a692-sharp-construction-and-explicit-parameter-dependence}{%
+\subsection{6. Sharp construction and explicit parameter dependence}\label{af-4c0863a692-sharp-construction-and-explicit-parameter-dependence}}
 
 Start with X=E. Process its original elements once in a fixed order. For each still-present e, run the search in Section 5 from (X,e,emptyset,h). Delete e exactly when the answer is \texttt{NONE}.
 
@@ -198,8 +198,8 @@ For fixed d and rank r=k, with failure budget h=O\_d(k), (7) is
 
 This explicit construction replaces the earlier separating-pool and repeated-halving proof of computable fixed-parameter preprocessing.
 
-\hypertarget{linear-dependence-on-the-explicit-ground-size}{%
-\subsubsection{6.1 Linear dependence on the explicit ground size}\label{linear-dependence-on-the-explicit-ground-size}}
+\hypertarget{af-4c0863a692-linear-dependence-on-the-explicit-ground-size}{%
+\subsubsection{6.1 Linear dependence on the explicit ground size}\label{af-4c0863a692-linear-dependence-on-the-explicit-ground-size}}
 
 The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md}{canonical-basis tree construction} first produces a rank-preserving restriction of size at most \(K=\min\{N,\lfloor r\Gamma(h,d)\rfloor\}\), where \(\Gamma(h,d)=(h+d)^{h+d}/(h^h d^d)\) for positive \(h,d\) and one otherwise. Use the input order; no cost sorting is needed for this rank-only application. The construction uses at most \(NS(dr,h)\) independence queries by rescanning the fixed ordered input at each branching node. Apply the reverse deletion above to only those \(K\) items. This gives the same sharp \(r\binom{h+d}{d}\) output bound with at most
 
@@ -211,8 +211,8 @@ independence queries. For fixed rank, failure budget and label degree, this is l
 
 \textbf{Query interface after preprocessing.} Given F, filter H and run greedy augmentation on H\_F. This returns a surviving basis using at most \textbar H\textbar{} independence queries, plus label filtering and output. For the submodular extension below, one value query to f(H\_F) returns the exact surviving value. These are oracle bounds; no bit encoding of an arbitrary oracle is supplied by the summary.
 
-\hypertarget{weighted-oracle-summaries-for-one-label-failure}{%
-\subsection{7. Weighted oracle summaries for one label failure}\label{weighted-oracle-summaries-for-one-label-failure}}
+\hypertarget{af-4c0863a692-weighted-oracle-summaries-for-one-label-failure}{%
+\subsection{7. Weighted oracle summaries for one label failure}\label{af-4c0863a692-weighted-oracle-summaries-for-one-label-failure}}
 
 There is a sharp weighted result without a linear representation when h=1. Fix a total order refining the signed element costs. Let B\_0 be the canonical greedy basis of E. For each label lambda occurring on B\_0, compute the canonical basis B\_lambda after deleting all elements carrying lambda, and retain
 
@@ -243,15 +243,15 @@ If a failed label does not occur on B\_0, that entire basis survives and the sam
 
 The bound is exact by the rank-one direct-sum construction in Section 3 with h=1. Signed costs, tied costs with a fixed tie order, loops, and rank drops require no additional assumption. This resolves the weighted oracle case for one failed label; it is separate from the rank-only reverse-deletion algorithm of Section 6.
 
-\hypertarget{boundary-for-two-or-more-failures}{%
-\subsubsection{Boundary for two or more failures}\label{boundary-for-two-or-more-failures}}
+\hypertarget{af-4c0863a692-boundary-for-two-or-more-failures}{%
+\subsubsection{Boundary for two or more failures}\label{af-4c0863a692-boundary-for-two-or-more-failures}}
 
 The argument establishing (4) requires a coloop witness in the \textbf{entire surviving restriction}. A cost-prefix witness only makes e independent of earlier surviving elements. In a selected circuit, the element with the last own-label need not be the last element in cost order, so that weaker witness does not prove (4). The proposed sharp weighted-prefix extension is false in general once h is at least two: the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md}{explicit weighted oracle obstruction} uses rank four and one label per item, yet forces 4(h+1)+1 elements. The h=2 instance has only 13 items and four labels. Its all-h extension and direct sums are proved in the companion.
 
 For explicitly represented matroids, the companion polynomial-feature lift attains r binomial(h+d,d) with full fixed-cost preservation and uniform polynomial preprocessing for every h. For arbitrary oracles, Section 6 gives the sharp \textbf{rank-only} summary with explicit FPT work, while Theorem 7.1 gives the sharp \textbf{weighted} summary when h=1. No uniform polynomial sharp rank-summary algorithm for unrestricted h,d,r is established. The known hardness of a generic colored failure-witness problem with a smaller parameter set is not used as a lower bound on these constructions.
 
-\hypertarget{antecedents-and-comparison-to-public-results}{%
-\subsection{8. Antecedents and comparison to public results}\label{antecedents-and-comparison-to-public-results}}
+\hypertarget{af-4c0863a692-antecedents-and-comparison-to-public-results}{%
+\subsection{8. Antecedents and comparison to public results}\label{af-4c0863a692-antecedents-and-comparison-to-public-results}}
 
 \begin{itemize}
 \item
@@ -264,8 +264,8 @@ For explicitly represented matroids, the companion polynomial-feature lift attai
   Relative to Checkpoint W's LF rank summary, (2) replaces r (h+d)\textsuperscript{(h+d)/(h}h d\^{}d) by the sharp r binomial(h+d,d), but only the unweighted/rank part is upgraded for arbitrary matroids. The represented companion retains fixed-cost preservation. No unrestricted weighted-oracle improvement is asserted.
 \end{itemize}
 
-\hypertarget{monotone-submodular-functions}{%
-\subsection{9. Monotone submodular functions}\label{monotone-submodular-functions}}
+\hypertarget{af-4c0863a692-monotone-submodular-functions}{%
+\subsection{9. Monotone submodular functions}\label{af-4c0863a692-monotone-submodular-functions}}
 
 The permutation proof has a more general form that does not use matroid exchange or circuits.
 
@@ -321,8 +321,8 @@ for every context B. Indeed, the zero marginal gain from adjoining E\_F to H\_F 
 
 This extension concerns exact saturation/value preservation. It does not claim a smaller general-purpose coreset for constrained submodular maximization or minimum-cost submodular cover, and does not supply weighted-prefix preservation for h at least two, which is ruled out at the same sharp size by the obstruction in Section 7. Priority of (10) and its precise fault-summary application should be checked separately; the proof is self-contained.
 
-\hypertarget{a-sharp-real-valued-total-sensitivity-consequence}{%
-\subsubsection{A sharp real-valued total-sensitivity consequence}\label{a-sharp-real-valued-total-sensitivity-consequence}}
+\hypertarget{af-4c0863a692-a-sharp-real-valued-total-sensitivity-consequence}{%
+\subsubsection{A sharp real-valued total-sensitivity consequence}\label{af-4c0863a692-a-sharp-real-valued-total-sensitivity-consequence}}
 
 For any real-valued monotone submodular f, define the maximum final marginal of e after allowed failures by
 

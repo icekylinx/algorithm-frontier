@@ -1,8 +1,11 @@
 # A direct dynamic spanner from tracked terminal forests
 
-**Conditional composition theorems.** The two spanner constructions
-require the deterministic metric and forest interfaces stated below.
-Local observer and batching arguments do not implement those providers.
+**Constructed composition theorems.** The two spanner constructions
+use the [normalized APSP hierarchy](../apsp-frontier/proof.md),
+the [explicit flat witness families](../../manuscripts/graph-backends/destructive-apsp-path-support-extractor.md)
+and the [metric forest lift](../../manuscripts/graph-backends/separated-metric-forest-and-strong-sssp.md),
+Section 5. The generic observer and batching lemmas retain their stated
+interfaces; these linked constructions supply their instantiations.
 
 This note constructs a deterministic fully dynamic spanner with explicit
 four-fifths overhead, by using the already maintained flat witness
@@ -594,7 +597,8 @@ logarithmic factors. The full argument is in
 ## 9. Proof dependencies and review scope
 
 The numerical hierarchy, normalized static provider, local source
-families, and arbitrary-forest lift are retained research imports.
+families and arbitrary-forest lift are the constructed local inputs
+identified in Section 1 and the [source map](sources.md).
 The new ingredients assembled here are the original-terminal trace
 observer, its root mark inventory, and the short compressed-path
 union. The local compression proof is separately written in
@@ -604,7 +608,8 @@ The local tracking and compression arguments specify what the provider
 must expose: stable canonical handles, source-tree lifetimes, typed
 nulls, physical-edge maps, and a chronological update transcript with
 initial credit. A distance-only approximation oracle supplies none of
-these obligations automatically. The separate public-provider
+these obligations automatically; the explicit family and metric-lift
+proofs in Section 1 supply them. The separate public-provider
 comparison is in the focused audit named above. The linked notes record
 internal mathematical reviews only. No end-to-end implementation, formal verification
 or performance measurement is claimed. The four-fifths construction
@@ -618,8 +623,9 @@ bound.
 
 ### A fully dynamic spanner with explicit five-sixths overhead
 
-**Conditional full-horizon composition.** This part gives the exact
-batching and lifetime accounting under its single-instance contract.
+**Full-horizon construction.** This part proves the generic batching
+and lifetime accounting, then instantiates its single-instance contract
+with the constructed hierarchy and clipped-reporting routine.
 
 This note supplies the full update horizon for the clipped-walk spanner
 transfer. It reconstructs the batching argument in the published version
@@ -991,10 +997,11 @@ increase of the declared history cap covers these records and the
 positive root degree adapters. It changes `U` by only a fixed constant
 factor. This is a bound on actual records, not padded instances.
 
-Equations (F13), (F14), and (F18) prove conclusion (F1), with the
-explicitly retained research-provider imports. They establish the
-conditional batching implication, including actual seeding and
-retirement costs; they do not certify the numerical provider.
+Equations (F13), (F14), and (F18) prove conclusion (F1) after substituting
+the constructed provider and clipped-reporting routine. The batching
+lemma applies to any provider satisfying its generic contract; the
+local hierarchy supplies the displayed five-sixths instantiation.
+Actual seeding, retirement and output changes are included.
 
 ## 7. Public comparison at the same output guarantees
 
@@ -1175,12 +1182,13 @@ remain attached to any final novelty summary. This note establishes
 a comparison with the explicitly reconstructed public composition;
 it does not claim to have optimized every public spanner framework.
 
-The provider, no-reset native hierarchy, positive internal lengths,
-finite-bit operations and small-component interfaces remain named
-imports. Sections 1–6 give the clipped-reporting and batching
-implication, with initialization and output recourse included. The
-result remains conditional on those imports; no executable dynamic
-provider or externally certified implementation is supplied here.
+The normalized native hierarchy, positive internal lengths, finite-bit
+operations and small-component cases are supplied by the local
+constructions named in [the source map](sources.md). Sections 1–6
+combine them with clipped reporting and batching, including
+initialization and output recourse. The resulting theorem is ready
+for review. No complete executable dynamic provider or spanner is
+supplied here.
 
 
 ---

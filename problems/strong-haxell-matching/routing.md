@@ -39,6 +39,13 @@ touched by `S` is included. The proof of that interface counts flat
 occurrences and actual deleted edge identities; (1) has no
 unaccounted multiplicative `Gamma` or path-length factor.
 
+This generic interface is supplied by the
+[destructive-support construction, Sections 2–4](../../manuscripts/graph-backends/destructive-apsp-path-support-extractor.md),
+using the [constructed APSP oracle](../apsp-frontier/proof.md).
+Section 9.2 below instantiates its work and stretch parameters. The
+short-path hitting and expander density conditions are separate input
+promises and remain part of the resulting routing theorem.
+
 Fix an integer short-path comparison bound `h_0>=1`, and put
 
 <!-- math-display: f02abb29d60f06612fd27f55

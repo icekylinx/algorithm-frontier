@@ -1,0 +1,109 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/general-matching/reference/bipartite-proof.md
+% Recovered-source SHA-256: 3660930d1a6768a93b4b54162245719c91fefc9da5c12c556b653a0e551223bf
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-4c656876fd-matching-number-time-bound-for-the-implemented-bipartite-branch}{%
+\section{Matching-number time bound for the implemented bipartite branch}\label{af-4c656876fd-matching-number-time-bound-for-the-implemented-bipartite-branch}}
+
+This proves the bipartite branch of the ordinary, unconditional \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/matching.py}{matching reference implementation}. It does not implement the manuscript's faster deterministic cycle-search construction. The existing edge-kernel and right-endpoint compression proofs continue to supply their stated matching preservation properties.
+
+\hypertarget{af-4c656876fd-graphs-and-the-exact-bound}{%
+\subsection{1. Graphs and the exact bound}\label{af-4c656876fd-graphs-and-the-exact-bound}}
+
+Let \texttt{n} count the named vertices and \texttt{m} the native input edge records. Normalize the graph by removing loops and retaining the earliest input record of every unordered pair, while preserving its original ID for output. Let the nonempty connected components of this graph be \texttt{G\_i}, and write \texttt{nu\_i} for their maximum matching sizes. In each component, the endpoints of a greedy maximal matching form a cover \texttt{C\_i} of size \texttt{c\_i\ \textless{}=\ 2\ nu\_i}.
+
+The first compression retains all cover--cover edges and the first \texttt{c\_i} distinct outside neighbors of each cover vertex. Its graph \texttt{H\_i} has \texttt{O(c\_i\^{}2)} vertices and edges, no more edges than the original component, and the same maximum matching size. The second compression takes a maximum matching \texttt{Q\_i} in the bipartite crossing graph \texttt{C\_i} versus \texttt{V(H\_i)\ -\ C\_i}. If \texttt{T\_i} comprises its matched right endpoints, the induced graph \texttt{J\_i\ =\ H\_i{[}C\_i\ union\ T\_i{]}} has at most \texttt{2\ c\_i\ \textless{}=\ 4\ nu\_i} vertices and preserves every cover subset that could be matched to the outside. Hence it preserves the general matching number as well.
+
+The implementation uses the bipartite phase algorithm of John E. Hopcroft and Richard M. Karp, \href{https://doi.org/10.1137/0202019}{\emph{An n\^{}(5/2) Algorithm for Maximum Matchings in Bipartite Graphs}, SIAM Journal on Computing 2(4), 225--231 (1973)}. The published paper gives the classical \texttt{O((V+E)\ sqrt(V))} bound. Sections 2--4 below give the specific implementation invariants and the matching-number refinement needed here; the refinement is not obtained by substituting \texttt{nu} for the vertex count without proof.
+
+Hopcroft--Karp computes \texttt{Q\_i}, and a breadth-first two-color test on \texttt{H\_i} decides the final branch. If \texttt{H\_i} is bipartite, its coloring restricts to \texttt{J\_i}, which is solved by Hopcroft--Karp. Otherwise the existing Edmonds blossom implementation solves \texttt{J\_i}. Both return the original input IDs after lifting through the unchanged index maps. Testing \texttt{H\_i} rather than only \texttt{J\_i} also permits the linear certificate algorithm in Section 5.
+
+Let \texttt{B} be the set of components whose retained \texttt{H\_i} is bipartite. The total operation count, with or without optional optimality certificates, is
+
+\[
+O\!\left(n+m\log(m+2)
+  +\sum_{i\in B}\nu_i^{5/2}
+  +\sum_{i\notin B}\nu_i^3\right).
+\]
+
+Every originally bipartite component belongs to \texttt{B}; occasionally deletion of surplus edges makes \texttt{H\_i} bipartite even when \texttt{G\_i} was not. This broader classification is safe because both kernel preservation and certification refer to \texttt{H\_i}. The bound is a componentwise operation bound on the stated integer-index model; long ID comparisons and input/output representation bytes retain the charges in the reference README.
+
+\hypertarget{af-4c656876fd-the-phase-implementation}{%
+\subsection{2. The phase implementation}\label{af-4c656876fd-the-phase-implementation}}
+
+Consider a bipartite graph with fixed left and right sides, \texttt{k} vertices, \texttt{h} edges, and a current matching \texttt{M}. Only left adjacency lists are needed. An augmenting path begins at an unmatched left vertex, ends at an unmatched right vertex, and alternates between unused and matching edges. If it has \texttt{d} matching edges, it has \texttt{2d+1} graph edges. This \texttt{d}, not the total path length, is the unit used in the implementation.
+
+The BFS initializes every free left vertex at level zero. From a left vertex \texttt{u} at level \texttt{d}, an edge outside \texttt{M} either reaches a free right endpoint, producing a candidate terminal level \texttt{d}, or reaches a matched right vertex whose partner is put at level \texttt{d+1}. The first terminal level is the minimum number of matching edges on any augmenting path. Vertices at greater levels need not be scanned. If there is no terminal, the algorithm returns \texttt{M}.
+
+Otherwise, \texttt{phase\_mate} freezes the matching for the entire phase. An explicit-stack DFS follows only this fixed layered graph: a matched right vertex advances to its partner at the next left level; a free right vertex is accepted only at the minimum terminal level. Each left adjacency list has a cursor advanced whenever an edge is examined. A left vertex exhausted without a terminal is permanently marked unavailable for this phase. Every vertex on a successful path is also marked unavailable.
+
+Exhausted vertices may safely remain unavailable: subsequent successful paths only delete vertices from this fixed directed acyclic layered graph. They never introduce a new path from a previously exhausted vertex. The strictly increasing left levels also prohibit a repeated vertex within one DFS path. Successful paths are therefore vertex-disjoint. The implementation may flip them immediately because every subsequent search reads \texttt{phase\_mate}, and the unavailable marks prevent intersecting a flipped path.
+
+Each originally free left root is searched unless already used. If, at the end, a shortest augmenting path disjoint from all selected paths remained, its free root would have been exhausted even though it had a route to a terminal in the remaining graph. This contradicts the DFS rule. The selected paths are consequently a maximal vertex-disjoint family of shortest augmenting paths. A reachable phase must have at least one such path; the production code raises an explicit error if this invariant fails.
+
+The BFS, initialization, matching snapshot, cursors, unavailable marks, and path flips cost \texttt{O(k+h)} per phase. A successful path's vertices are visited only once during its flip; a failed left vertex never reenters a later DFS. Every left adjacency cursor advances at most its degree. The implementation uses no recursion, so the bound does not require a bounded augmenting-path depth.
+
+\hypertarget{af-4c656876fd-why-the-next-shortest-path-is-longer}{%
+\subsection{3. Why the next shortest path is longer}\label{af-4c656876fd-why-the-next-shortest-path-is-longer}}
+
+For completeness, use the standard unit-capacity matching network: arcs \texttt{s\ -\textgreater{}\ L}, \texttt{L\ -\textgreater{}\ R} for graph edges, and \texttt{R\ -\textgreater{}\ t}, each with capacity one. The integral unit flow of \texttt{M} has an \texttt{s}--\texttt{t} residual path exactly when the graph has an augmenting path. Such a graph path with \texttt{d} matching edges becomes a residual path of \texttt{2d+3} arcs. Simplicity removes any irrelevant return to \texttt{s} or visit to \texttt{t} before the final endpoint.
+
+Before one phase, let \texttt{ell(x)} be residual distance from \texttt{s}. Every residual arc from a reachable vertex satisfies \texttt{ell(v)\ \textless{}=\ ell(u)+1}. A shortest \texttt{s}--\texttt{t} path increases this distance by exactly one at each step. Augmenting the chosen disjoint shortest paths introduces only reversals of such arcs; every newly introduced arc goes backward by one old level. Every unchanged arc still advances by at most one. No newly reachable vertex can have had infinite old distance: unchanged arcs out of the old reachable set could already be followed, and new arcs have endpoints on the chosen paths.
+
+It follows that a new augmenting residual path is at least as long as the old shortest one. If its length were equal, every arc would advance by one old level. It could not use any reversed path arc. Moreover it could not pass through a vertex of a chosen path using only unchanged forward arcs: each left vertex on that path had exactly one incoming residual arc (its old matching edge, or its source arc when free), and that arc was used and reversed; equivalently, each right vertex had exactly one outgoing residual arc (its old matching edge, or its sink arc when free), also used and reversed. Thus an equally short new path would be an old shortest path vertex-disjoint from the entire chosen family. Section 2's maximality rules this out.
+
+The minimum \texttt{d} therefore strictly increases after every successful phase that leaves another augmenting path. Its integer value increases by at least one. This is the progress fact used by the phase count, not an assumption that any single arbitrary augmentation increases the shortest path length.
+
+\hypertarget{af-4c656876fd-matching-number-controls-the-phase-count}{%
+\subsection{4. Matching number controls the phase count}\label{af-4c656876fd-matching-number-controls-the-phase-count}}
+
+An empty graph is handled in constant time. For a nonempty vertex array, let \texttt{nu} be the unknown optimum matching size. For \texttt{nu=0}, the initial BFS already fails and costs \texttt{O(k+h)}. Suppose \texttt{nu\textgreater{}=1}, and set \texttt{r\ =\ ceil(sqrt(nu))}. After \texttt{r} successful phases, if the algorithm has not terminated, every augmenting path contains at least \texttt{r} matching edges by Section 3 and the initial lower bound zero.
+
+Compare the current \texttt{M} with any optimum \texttt{M*}. Their symmetric difference is a vertex-disjoint union of alternating paths and cycles. No component can have one more \texttt{M} edge than \texttt{M*} edges: flipping that component would increase the maximum matching \texttt{M*}. Components with one more \texttt{M*} edge are augmenting paths for \texttt{M}, and there are exactly \texttt{nu\ -\ \textbar{}M\textbar{}} of them. Every such path uses at least \texttt{r} distinct edges of \texttt{M}; the paths are edge-disjoint. Consequently
+
+\[
+r\bigl(\nu-|M|\bigr)\le |M|\le\nu.
+\]
+
+At most \texttt{floor(nu/r)} further successful phases are possible, since each increases matching size by at least one. There are at most \texttt{r\ +\ floor(nu/r)\ \textless{}=\ 2\ ceil(sqrt(nu))} successful phases in total. \textbf{One final failed BFS is also charged}, including the case where the last successful phase produces a maximum matching. This gives
+
+\[
+O\bigl((k+h)\sqrt{\nu+1}\bigr)
+\]
+
+operations and \texttt{O(k+h)} storage. This also proves optimality: on termination there is no augmenting path, whereas the symmetric-difference argument would supply one if a larger matching existed.
+
+For the crossing graph used by compression, \texttt{nu\_cross\ \textless{}=\ c}, even though its number of vertices may be \texttt{Theta(c\^{}2)}. Thus the crossing computation costs \texttt{O(c\^{}(5/2))}, rather than the \texttt{O(c\^{}3)} cost of sequentially augmenting once for every cover vertex. The induced \texttt{J} has \texttt{O(c)} vertices and \texttt{O(c\^{}2)} edges, and its matching number is \texttt{nu\ \textless{}=\ c}, so its bipartite solve also costs \texttt{O(c\^{}(5/2))}. Accelerating only the second solve would not suffice: the old compression step would otherwise keep the total cost cubic.
+
+For \texttt{-\/-no-kernel}, a bipartite full component is solved in \texttt{O((n\_i+m\_i)\ sqrt(nu\_i+1))}; nonbipartite full components retain their ordinary \texttt{O(n\_i\^{}3)} blossom bound. Normalization and explicit vertex/output scans remain charged separately.
+
+\hypertarget{af-4c656876fd-a-linear-certificate-on-the-first-kernel}{%
+\subsection{5. A linear certificate on the first kernel}\label{af-4c656876fd-a-linear-certificate-on-the-first-kernel}}
+
+Lift the resulting maximum matching from \texttt{J} to the retained graph \texttt{H}. Its matching number is unchanged by compression. Suppose the two-color test gave sides \texttt{L,R} for \texttt{H}. Start an alternating reachability search at every unmatched left vertex. Follow nonmatching edges from left to right, and the unique matching edge from a reached matched right vertex back to the left. Let \texttt{Z} be the reached vertex set. Reaching an unmatched right vertex would exhibit an augmenting path and is an explicit production error.
+
+Set \texttt{A\ =\ (L\ -\ Z)\ union\ (R\ intersect\ Z)}. This is a vertex cover. For an edge \texttt{lr}, if \texttt{l} is not reached then \texttt{l} is in \texttt{A}. If \texttt{l} is reached and \texttt{lr} is not a matching edge, the search reaches \texttt{r}, so \texttt{r} is in \texttt{A}. If it is a matching edge, the matched left vertex \texttt{l} could only have been reached through its partner \texttt{r}, giving the same conclusion; a root is unmatched.
+
+For each matching edge, its endpoints are either both reached or both unreached. Hence exactly one endpoint belongs to \texttt{A}. Every unmatched left vertex is reached and is not in \texttt{A}; every reached right vertex is matched, so there is no unmatched right vertex in \texttt{A}. Therefore \texttt{\textbar{}A\textbar{}\ =\ \textbar{}M\textbar{}\ =\ nu}. This proves minimum cardinality directly, because any vertex cover must meet all \texttt{nu} disjoint matching edges.
+
+The existing certificate format records a vertex set whose odd-component bound is tight. A vertex cover \texttt{A} is exactly such a set: \texttt{H-A} is independent, so all \texttt{k-\textbar{}A\textbar{}} remaining vertices are singleton odd components. Consequently
+
+\[
+2|M|=k-\mathrm{odd}(H-A)+|A|=2|A|.
+\]
+
+The separate verifier already checks the matching, kernel preservation, and this odd-component equality. It needs no new field, no bipartite algorithm, and no change of certificate format. The producer additionally checks the lifted matching's validity, the edge-cover condition, and \texttt{\textbar{}A\textbar{}=\textbar{}M\textbar{}} by explicit rejection conditions; none depends on \texttt{assert}. Coloring, alternating reachability, these checks, and output all cost \texttt{O(k+h)=O(c\^{}2)}.
+
+Nonbipartite \texttt{H} continues to use the previously proved general forest barrier extraction in \texttt{O(h+k(nu+1))}, which is \texttt{O(c\^{}3)} on the first kernel. The general case's bound is unchanged. The bipartite branch needs neither that cubic certificate computation nor an external decomposition theorem.
+
+\hypertarget{af-4c656876fd-finite-evidence-and-scope}{%
+\subsection{6. Finite evidence and scope}\label{af-4c656876fd-finite-evidence-and-scope}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/verify/check_bipartite.py}{bipartite checker} compares the actual phase solver with an independent subset-enumeration matching oracle on every bipartite graph with at most four vertices per side. It checks matching validity, the phase-count bound, the final failed BFS count, and the produced minimum cover. Seeded cases reverse the side names and adjacency order and exercise both public kernel modes with the unchanged independent optimality verifier.
+
+A separate construction forces a second-phase augmenting path containing 2,400 matching edges, beyond Python's usual recursion limit. Native cases include ignored loops, parallel and reversed records, isolated vertices, and distinct integer versus string IDs. Another fixture has a nonbipartite original component but bipartite retained \texttt{H}, checking the branch's exact scope. Invalid side masks, invalid matchings, and a valid nonmaximum matching are rejected explicitly. The existing exhaustive general-graph, compression, certificate-forest, and CLI suites continue to exercise the blossom fallback.
+
+These are finite implementation checks supporting review of the local proofs. They do not certify all executions or establish the manuscript's complete faster cycle-search construction or its asymptotic work bound.

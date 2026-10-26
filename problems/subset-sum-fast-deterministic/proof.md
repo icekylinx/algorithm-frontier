@@ -4,19 +4,19 @@
 
 ## Abstract
 
-We give an exact deterministic algorithm for Subset Sum on arbitrary signed binary integers, with indexed witness recovery. The refined running time is <code class="math">C+\mathrm{poly}(n,L)2^{En}</code>, where <code class="math">E=158153814247997/318964058919134&lt;0.495836</code> and <code class="math">C</code> is finite and independent of the input. Part I develops the signed-circuit compiler and reduction. Part II proves the trace and type refinement, and its continuous-domain checker certifies all 62 contact branches with exact rational arithmetic. A separate scalar checker reconstructs the reflected profile and the complete outer cost ledger. The refined theorem uses this new certificate directly; the older numerical menu is retained only as background with its explicit premise. No simultaneous space exponent is asserted for this algorithm.
+We give an exact deterministic algorithm for Subset Sum on arbitrary signed binary integers, with indexed witness recovery. Its running time is <code class="math">C_{\mathrm{start},3}+\mathrm{poly}(n,L)2^{E_3n}</code>, where <code class="math">E_3=158153814247997/319021177919134&lt;0.495748</code> and the startup constant is finite and independent of the input. Part I proves the signed-circuit compiler and reduction. Part II supplies the preserved two-level theorem F2, with 62 exact contact branches and exponent <code class="math">E_2&lt;0.495836</code>. Part III adds a third positive-containment lookup and proves the stronger theorem F3, using a separate completed 16-branch exact replay. The combined scalar ledger verifies 112 reflected-profile comparisons and all nine outer costs. Both reconstructed theorems are independent of the older historical contact premise. No simultaneous space exponent is asserted.
 
 ## Theorem and proof structure
 
-**Theorem F (refined deterministic algorithm).** On <code class="math">n</code> indexed signed integers of full binary encoding length <code class="math">L</code>, the circuit and reduction constructions proved in Part I, with the parameter changes proved in Part II, decide feasibility and return an indexed witness in
+**Theorem F3 (third-lookup refinement).** On <code class="math">n</code> indexed signed integers of full binary encoding length <code class="math">L</code>, a uniform deterministic algorithm decides feasibility and returns an indexed witness in
 
-<!-- math-display: 8e6756ac25f24efe1ec07fea
-C+\mathrm{poly}(n,L)2^{En},\qquad
-E=\frac{158153814247997}{318964058919134}.
+<!-- math-display: 160f0ca8047685c87eaab71f
+C_{\mathrm{start},3}+\mathrm{poly}(n,L)2^{E_3n},\qquad
+E_3=\frac{158153814247997}{319021177919134}<.495748.
 -->
-![Formula](../../assets/math/8e6756ac25f24efe1ec07fea.svg)
+![Formula](../../assets/math/160f0ca8047685c87eaab71f.svg)
 
-Here <code class="math">C</code> is the finite input-independent cost of constructing fixed circuit data, with no practical numerical bound claimed. All polynomial degrees are fixed and the complexity counts deterministic bit operations. The composition proof is Part II, Sections 2–7. The continuous-domain contact certificate in Part II, Section 4, and the scalar certificate in Section 9 discharge their separate numerical requirements. The circuit compiler and witness reduction are established by the mathematical arguments in the manuscript; the numerical programs are not a machine-checked formalization of those arguments.
+The startup cost is finite and independent of the input, with no practical numerical bound claimed. All polynomial degrees are fixed and complexity counts deterministic bit operations. Parts I–II prove the inherited signed-circuit, compiler, reduction and witness interfaces. Part III proves the additional lookup, its full-domain acceptance and compiler allowances, and the strengthened complete cost ledger. Its 16-branch receipt records a completed resumable replay under the final source; it is separate from the preserved 62-branch certificate of Theorem F2. The numerical programs discharge their stated finite requirements and do not claim proof-assistant formalization of the manuscript.
 
 **Theorem 1 (background conditional composition).** Assume the continuous-domain contact inequalities in Part I, Section I.4.2. The older baseline construction decides every signed binary Subset Sum instance and returns an indexed witness in
 
@@ -26,7 +26,7 @@ C+\mathrm{poly}(n,L)2^{E_0n},
 -->
 ![Formula](../../assets/math/f372af3e5220e8f7a6e06800.svg)
 
-Here <code class="math">C</code> is the finite input-independent cost of constructing fixed circuit data. The input-dependent term includes residue-cover construction. The imported baseline profile wrapper did not include the modules and receipt needed to replay its full-domain calculation; its reported leaf counts alone do not establish those contacts. This background theorem retains its explicit premise. Theorem F instead uses the reconstructed new menu and does not depend on the older numerical receipt. Both compositions use fixed polynomial degrees and the uniform deterministic bit model.
+Here <code class="math">C</code> is the finite input-independent cost of constructing fixed circuit data. The input-dependent term includes residue-cover construction. The imported baseline profile wrapper did not include the modules and receipt needed to replay its full-domain calculation; its reported leaf counts alone do not establish those contacts. This background theorem retains its explicit premise. Theorems F2 and F3 use their independently reconstructed menus and do not depend on the older numerical receipt. Both compositions use fixed polynomial degrees and the uniform deterministic bit model.
 
 **Notation.** A witness is a binary vector `x` with `sum_i w_i x_i=t`. The input includes zero, negative and repeated weights. `L` includes every input bit. Logarithms are base two unless `ln` is written. Set `h(z)=-z log_2 z-(1-z) log_2(1-z)` with continuous endpoint values and `H(c,z)=c h(z/c)`.
 
@@ -109,7 +109,7 @@ In fixed dimension <code class="math">d</code>, a polynomial of coordinatewise d
 
 # Part I. A faster deterministic algorithm
 
-This part proves the baseline compiler and reduction theorem used by Theorem F.
+This part proves the baseline compiler and reduction theorem used by Theorems F2 and F3.
 
 The reduction splits the coordinates into a prefix and two balanced outside
 parts. A deterministic cover supplies binary–ternary representations of
@@ -2127,7 +2127,7 @@ calculation. The analytic inequalities are proved below. The contact values
 and subdivision counts in Section I.4.2 are historical reports for the older
 menu, whose full-domain replay is absent from the imported material. They
 remain the explicit premise of the background Theorem 1. The refined
-Theorem F uses the independently reconstructed certificate in Part II,
+Theorem F2 uses the independently reconstructed certificate in Part II,
 Section 4. All terminating decimals denote exact rationals.
 
 ### I.4.1. Entropy inequalities and rational logarithms
@@ -2643,37 +2643,37 @@ Source revisions and attribution are recorded in the [source map](sources.md).
 
 The background conditional composition in Theorem 1 has exponent
 
-<!-- math-display: 10930d3b37a3f232430ec536
-E_{\rm old}=\frac{149809813343531}{301754962128739}
+<!-- math-display: 93e352d9c2b7a0c666b70b00
+E_0=\frac{149809813343531}{301754962128739}
  =.496461805587\ldots.
 -->
-![Formula](../../assets/math/10930d3b37a3f232430ec536.svg)
+![Formula](../../assets/math/93e352d9c2b7a0c666b70b00.svg)
 
 The change below gives
 
-<!-- math-display: 7c59a591e6a22df591bee65f
-\boxed{E_{\rm new}=
+<!-- math-display: b638acd92965eaa197daab73
+\boxed{E_2=
  \frac{158153814247997}{318964058919134}
  =.4958358467845221\ldots < .495836.}
  \tag{XSS1}
 -->
-![Formula](../../assets/math/7c59a591e6a22df591bee65f.svg)
+![Formula](../../assets/math/b638acd92965eaa197daab73.svg)
 
 The exponent decreases by approximately `.00062595880` per input coordinate.
 This result applies to arbitrary signed binary integers, with no promise
 on density, multiplicities, target, or the existence of a solution.
 
-**Theorem F, restated.** There is a uniform deterministic algorithm deciding Subset
+**Theorem F2 (preserved two-level theorem).** There is a uniform deterministic algorithm deciding Subset
 Sum on `n` indexed signed binary integers of total encoding length `L`, and
 returning an indexed witness on YES instances, using
 
-<!-- math-display: 33c539bfa936f2ad9fa3ffa8
-C_{\rm new}+\mathrm{poly}(n,L)2^{E_{\rm new}n}
+<!-- math-display: 711b72de54c7888313959125
+C_{\mathrm{start},2}+\mathrm{poly}(n,L)2^{E_2n}
  \tag{XSS2}
 -->
-![Formula](../../assets/math/33c539bfa936f2ad9fa3ffa8.svg)
+![Formula](../../assets/math/711b72de54c7888313959125.svg)
 
-bit operations. The startup cost `C_new` is finite and independent of the
+bit operations. The startup cost <code class="math">C_{\mathrm{start},2}</code> is finite and independent of the
 input. All polynomial degrees are fixed. This is a time theorem; it makes
 no simultaneous claim for the separate low-space algorithm.
 
@@ -2687,6 +2687,58 @@ integer keys, and witness lifting are proved in Part I. The argument below
 applies those constructions with the parameter changes justified in Section 6
 and recomputes their cost in Section 7. It uses the new contact certificate
 directly and does not assume the older numerical menu in Section I.4.2.
+
+### A deterministic baseline cap
+
+The finite circuit search need not finish before the instance can be
+answered. Let <code class="math">t_{\rm fast}(x)</code> be the bit-step count of the algorithm in
+Theorem F2 on an encoded instance <code class="math">x</code>, including its startup search.
+Construct an ordinary meet-in-the-middle algorithm as follows. Split the
+indices into blocks of sizes <code class="math">\lfloor n/2\rfloor</code> and <code class="math">\lceil n/2\rceil</code>.
+Enumerate their exact subset sums, retaining the index mask with each
+entry, sort one indexed sum list, and search it for the target minus
+each sum in the other list. Each sum and comparison has polynomial bit
+cost in <code class="math">n,L</code>. There are at most <code class="math">2^{\lceil n/2\rceil}</code> entries per list,
+so this deterministic algorithm takes
+<code class="math">t_{\rm MITM}(x)\le P_0(n,L)2^{n/2}</code> bit operations for a fixed polynomial
+<code class="math">P_0</code>. It returns the union of two disjoint index masks on YES instances
+and returns NO exactly when no complement occurs. Signed, zero and
+repeated weights require no separate assumption.
+
+Run these two fixed exact programs by alternating their elementary bit
+steps, retaining both machine states. Their input copies and output
+buffers can be kept separate; copying the common input and the completed
+answer adds <code class="math">O(L+n\log(n+1))</code> bit operations. Return the first completed
+decision and, on YES instances, its indexed witness. If the faster
+program takes <code class="math">t</code> steps, it finishes within at most <code class="math">2t</code> interleaved
+steps. Consequently the resulting deterministic algorithm satisfies
+
+<!-- math-display: 9626f23becbe511fba978a5d
+T(x)\le 2\min\{t_{\rm fast}(x),t_{\rm MITM}(x)\}
+       +O(L+n\log(n+1)),
+-->
+![Formula](../../assets/math/9626f23becbe511fba978a5d.svg)
+
+and hence, for fixed polynomials <code class="math">P_0,P_1</code>,
+
+<!-- math-display: 2321bb43fcf087102039f2e8
+T(n,L)\le
+2\min\left\{C_{\mathrm{start},2}+P_1(n,L)2^{E_2n},
+           P_0(n,L)2^{n/2}\right\}
+ +O(L+n\log(n+1)).
+-->
+![Formula](../../assets/math/2321bb43fcf087102039f2e8.svg)
+
+This preserves the proved faster exponent while bounding every instance
+by the meet-in-the-middle schedule, even if its circuit search has not
+yet completed. The corollary is about time and exact indexed output; it
+adds no simultaneous space guarantee and no practical implementation
+claim for the finite circuit compiler.
+
+The same interleaving applies to Theorem F3 after Part III. In that
+application, replace <code class="math">C_{\mathrm{start},2},E_2</code> in the displayed bound
+by <code class="math">C_{\mathrm{start},3},E_3</code>; the indexed-output proof and the common
+input/output overhead are unchanged.
 
 ## 2. New types and the exact circuit families
 
@@ -3509,20 +3561,20 @@ M=1000\left\lfloor\frac{\mu n}{1000}\right\rfloor.
 Then `3mu<1`, so the three dictionaries fit, and `g_L<d_0`. The two
 binding input-dependent rates are exactly
 
-<!-- math-display: 9fd7ec5d99ab6b689bf3fe9a
+<!-- math-display: ec27d26469f76fd70e329471
 \mu(1+D_U)=\frac12-\mu g_L
- =\frac{158153814247997}{318964058919134}=E_{\rm new}.
+ =\frac{158153814247997}{318964058919134}=E_2.
  \tag{XSS31}
 -->
-![Formula](../../assets/math/9fd7ec5d99ab6b689bf3fe9a.svg)
+![Formula](../../assets/math/ec27d26469f76fd70e329471.svg)
 
 Here is the complete ledger, with all displayed decimal caps rounded
 upward:
 
 | Operation | Rate per original input coordinate |
 |---|---:|
-| Retained signed-circuit incidences and witness recovery | `E_new` |
-| Canonical outputs and complete residue-cover state | `E_new` |
+| Retained signed-circuit incidences and witness recovery | `E_2` |
+| Canonical outputs and complete residue-cover state | `E_2` |
 | All candidate-modulus energy evaluations | `<.463358446` |
 | Selectors and shared witness preprocessing | `<.321234175` |
 | Repeated prefix lookups | `<.328953402` |
@@ -3584,16 +3636,586 @@ the accepted bounds and margins, and the source-code and menu fingerprints.
 Receipt binding can be checked separately, without confusing that inexpensive
 provenance check with a full recomputation.
 
-[`verify_subset_sum_scalars.py`](../../tools/verify_subset_sum_scalars.py)
-reconstructs the continuous contact/chord/cone envelope, proves its entropy enclosures
+[`verify_subset_sum_scalars.py`](../../tools/verify_subset_sum_scalars.py),
+run with `--base-two-level`, independently reconstructs this part's preserved
+continuous contact/chord/cone envelope and proves its entropy enclosures
 with rational logarithm series, checks all 160 reflected-profile
 comparisons, and checks every operation in the outer ledger. It reproduces
 the exact maximum (XSS24) and exponent (XSS31) without floating-point
 acceptance. These two programs discharge the numerical requirements of
-Theorem F. The circuit compiler, reduction, and witness recovery remain
-the mathematical proofs given in this manuscript. The
+Theorem F2. The circuit compiler, reduction, and witness recovery are
+proved by the mathematical arguments in this manuscript. The
 [verification note](verify/README.md) gives the complete commands and
 the separate scope of the finite energy-tensor check.
+
+# Part III. A third positive-containment lookup
+
+The final-source [contact receipt](verify/third_receipt.json) covers all
+16 new branches in a completed resumable replay under the final source.
+Its source and menu bindings, and the independent exact
+scalar ledger, have passed. The analytic geometry and ledger have also
+received separate internal review. Numerical candidate searches are not
+part of the acceptance argument.
+
+This extension keeps the matching types, outer reduction, trace aggregation,
+and all 62 previously certified branches. It adds one positive-containment
+lookup to three fixed circuit families. The resulting contact bounds are
+combined with the existing contacts by same-family chords and the finite
+contact-cone lemma.
+
+## III.1. Theorem and inherited proof interfaces
+
+Keep the exact rational types
+
+<!-- math-display: 2d1b8477d232359d1935e993
+(a,b,s,t)=(.065,.075,.14,.45).
+-->
+![Formula](../../assets/math/2d1b8477d232359d1935e993.svg)
+
+**Theorem F3, restated.** A uniform deterministic construction has a fixed
+startup constant <code class="math">C_{\mathrm{start},3}</code> and solves integer Subset Sum,
+including an indexed witness when one exists, in
+
+<!-- math-display: 698366a69ca8cb94ccae4590
+C_{\mathrm{start},3}+\mathrm{poly}(n,L)\,
+ 2^{E_3n},
+\qquad
+E_3=\frac{158153814247997}{319021177919134}
+ < .495748.
+\tag{T1}
+-->
+![Formula](../../assets/math/698366a69ca8cb94ccae4590.svg)
+
+Here <code class="math">L</code> is the binary input length. The baseline cap by deterministic
+interleaving with the indexed meet-in-the-middle algorithm continues to
+apply. No new space bound or practical implementation of the compiled
+fast circuit is asserted.
+
+The positive-containment factorization, signed inclusion-exclusion
+identity, first-lookup trace aggregation, integer matrix compiler, and
+output-sensitive incidence enumeration are the ingredients proved in
+Parts I–II. This extension changes the finite circuit family and
+the scalar gain. It does not replace any signed equality by a positive
+cover or infer a global proof from sampled input instances.
+
+## III.2. Exact third-lookup identity
+
+For an outer color, use the notation of Parts I–II
+
+<!-- math-display: add530477fe88ef945559828
+\beta=a+\rho(m-a),\quad
+a\le m\le s,\quad m\le z\le\beta,\quad
+C_1=\gamma_1\beta,\quad Q_1=\beta-z,\quad D_1=C_1-Q_1.
+-->
+![Formula](../../assets/math/add530477fe88ef945559828.svg)
+
+The first color satisfies
+
+<!-- math-display: 3495eb3ac2a99eca9ea4ded8
+\max\{Q_1,C_1-m\}\le w_1\le\min\{\beta-m,C_1\}.
+-->
+![Formula](../../assets/math/3495eb3ac2a99eca9ea4ded8.svg)
+
+Retain the second-level routing
+
+<!-- math-display: bd10609135e030dcb9e24628
+Q_2=C_1-w_1,\qquad
+C_2=\max\{\gamma_2 C_1,Q_2\},\qquad D_2=C_2-Q_2.
+-->
+![Formula](../../assets/math/bd10609135e030dcb9e24628.svg)
+
+The branch <code class="math">C_2=Q_2</code> is implemented by the existing first-level push
+circuit, with its previously proved upper profile. On the other closed
+branch put
+
+<!-- math-display: 99ad2a67c065b0f1fccd1342
+v=w_1-(1-\gamma_2)C_1\ge0,\qquad
+C_2=\gamma_2C_1,\qquad D_2=v.
+-->
+![Formula](../../assets/math/99ad2a67c065b0f1fccd1342.svg)
+
+Its second color obeys
+
+<!-- math-display: 42de375cd1e56d60143de1f9
+\max\{Q_2,C_2-Q_1\}\le w_2\le\min\{D_1,C_2\}.
+\tag{T2}
+-->
+![Formula](../../assets/math/42de375cd1e56d60143de1f9.svg)
+
+After the second complement and transpose, the residual containment
+matrix has universe size <code class="math">C_2N</code>, row size <code class="math">D_2N</code>, and query size
+
+<!-- math-display: b97db608f8b5cdb74b64f1e0
+Q_3N=(C_2-w_2)N.
+-->
+![Formula](../../assets/math/b97db608f8b5cdb74b64f1e0.svg)
+
+Indeed, (T2) implies <code class="math">0\le Q_3\le D_2\le C_2</code>. Choose a fixed rational
+<code class="math">0&lt;\gamma_3&lt;1</code> and set
+
+<!-- math-display: 2ecd4d1d71cc16b37c0a90ed
+C_3=\max\{\gamma_3C_2,Q_3\},\qquad D_3=C_3-Q_3.
+\tag{T3}
+-->
+![Formula](../../assets/math/2ecd4d1d71cc16b37c0a90ed.svg)
+
+At integer sizes choose
+<code class="math">\max\{\lceil\gamma_3&#124;C_2&#124;\rceil,&#124;Q_3&#124;\}</code>.
+This contains the query and is at most <code class="math">&#124;C_2&#124;</code>: for an integer <code class="math">p\ge0</code>,
+an integer <code class="math">0\le q\le p</code>, and <code class="math">0&lt;\gamma&lt;1</code>, one has
+<code class="math">\max\{\lceil\gamma p\rceil,q\}\le p</code>.
+There is no divisibility requirement on an inner lookup width.
+
+The generic positive-containment factorization now gives the color
+domain and degree contributions
+
+<!-- math-display: c906af8e831c70a09aa4ffd6
+\max\{Q_3,C_3-Q_2\}\le w_3\le\min\{D_2,C_3\},
+\tag{T4}
+-->
+![Formula](../../assets/math/c906af8e831c70a09aa4ffd6.svg)
+
+<!-- math-display: afb34b71f883011445f406c0
+\begin{aligned}
+F_3&=\max\{0,H(D_2,w_3)+H(Q_2,C_3-w_3)-H(w_2,D_3)\},\\
+G_3&=H(D_3,w_3-Q_3).
+\end{aligned}
+\tag{T5}
+-->
+![Formula](../../assets/math/afb34b71f883011445f406c0.svg)
+
+Write <code class="math">L_0</code> for the outer occurrence exponent and <code class="math">F_2</code> for the second
+occurrence exponent. Let <code class="math">B_{\mathrm{tr}}</code> be the proved first-lookup
+trace bound, before adding the final residual degree. Three orientation
+swaps give
+
+<!-- math-display: c40c37874006a23746dcfe84
+L^{(3)}=L_0+F_2+G_3,\qquad
+R^{(3)}=B_{\mathrm{tr}}+F_3.
+\tag{T6}
+-->
+![Formula](../../assets/math/c40c37874006a23746dcfe84.svg)
+
+To check the orientation, the generic rule sends a residual pair
+<code class="math">(L',R')</code> to <code class="math">(F+\gamma R',\gamma L')</code>, with the scale converted to
+the original universe. Substitution of (T5) into the residual matrix
+after the second swap puts <code class="math">G_3</code> on the original row side and <code class="math">F_3</code>
+on the original query side. The earlier <code class="math">F_2</code> therefore stays on the
+row side.
+
+The pooled signed coefficient is unchanged. After fixing the first
+outer and inner occurrence labels, every descendant incidence depends
+on the original completion <code class="math">U</code> only through <code class="math">K=U\cap C_1</code>.
+One first sums the completions with this trace, exactly as in the
+identity (47) in Part I, then applies the additional positive
+factorization to the residual matrix. The coefficient has <code class="math">O(N)</code> bits
+because it is a signed count of at most <code class="math">2^N</code> completions.
+
+On the third push branch <code class="math">Q_3\ge\gamma_3 C_2</code>, (T3) gives
+<code class="math">C_3=Q_3</code>, <code class="math">D_3=0</code>, and (T4) forces <code class="math">w_3=Q_3</code>. Thus
+
+<!-- math-display: ee3ea40df0ac36c9f01ec6fc
+G_3=0,\qquad
+F_3=H(D_2,Q_3)=H(D_2,w_2-Q_2)=G_2.
+\tag{T7}
+-->
+![Formula](../../assets/math/ee3ea40df0ac36c9f01ec6fc.svg)
+
+The last equality uses <code class="math">Q_3+(w_2-Q_2)=D_2</code> and entropy symmetry.
+This branch recovers the two-level recursive contribution exactly.
+The unmerged degree identities also agree on its routing boundary.
+The first-level push branch retains its older upper bound; that upper
+bound need not equal the sharper trace upper bound on their common
+boundary.
+
+All routing domains and degree contributions are independent of the
+weight <code class="math">\tau</code>. The supremum of
+
+<!-- math-display: a4252395a7230d06c5084ba5
+\tau(L_0+F_2+G_3)+(1-\tau)(B_{\mathrm{tr}}+F_3)
+\tag{T8}
+-->
+![Formula](../../assets/math/a4252395a7230d06c5084ba5.svg)
+
+over the closed third-level branches, together with the first-level
+push profile, is therefore convex in <code class="math">\tau</code> for each fixed family.
+Only contacts from that same family may be joined by a chord.
+
+## III.3. Families and full-domain hypotheses
+
+The added menu is:
+
+| <code class="math">\rho</code> | <code class="math">\gamma_1</code> | <code class="math">\gamma_2</code> | <code class="math">\gamma_3</code> | Contacts <code class="math">(\tau,U)</code> |
+| --- | --- | --- | --- | --- |
+| <code class="math">3.18</code> | <code class="math">.728</code> | <code class="math">.671</code> | <code class="math">.583</code> | <code class="math">(.44,.19449)</code>, <code class="math">(.48,.20164)</code>, <code class="math">(.50,.20530)</code> |
+| <code class="math">3.44</code> | <code class="math">.721</code> | <code class="math">.663</code> | <code class="math">.584</code> | <code class="math">(.48,.20187)</code>, <code class="math">(.50,.20507)</code>, <code class="math">(.52,.20834)</code> |
+| <code class="math">3.72</code> | <code class="math">.714</code> | <code class="math">.657</code> | <code class="math">.589</code> | <code class="math">(.52,.20809)</code>, <code class="math">(.56,.21380)</code> |
+
+Every decimal is an exact rational. The maximum outer widths are
+<code class="math">.3035</code>, <code class="math">.323</code>, and <code class="math">.344</code>, respectively. Each is below
+<code class="math">\min\{t,1-t,1-s\}</code>. The first query must fit the first lookup on the
+entire outer domain, not merely on the boxes remaining after a filter.
+The affine function
+
+<!-- math-display: c21ef942e70877dc79e5f40a
+\gamma_1\beta(m)-(\beta(m)-m)
+-->
+![Formula](../../assets/math/c21ef942e70877dc79e5f40a.svg)
+
+has the following positive values at its two endpoints:
+
+| <code class="math">\rho</code> | At <code class="math">m=a</code> | At <code class="math">m=s</code> |
+| --- | --- | --- |
+| <code class="math">3.18</code> | <code class="math">.04732</code> | <code class="math">.057448</code> |
+| <code class="math">3.44</code> | <code class="math">.046865</code> | <code class="math">.049883</code> |
+| <code class="math">3.72</code> | <code class="math">.04641</code> | <code class="math">.041616</code> |
+
+Checking both endpoints proves the condition for every <code class="math">m\in[a,s]</code>.
+All three inner fractions lie strictly between zero and one. The
+second and third max rules then contain every residual query, including
+degenerate zero-width cases. The final kernel rejects a family that
+fails any of these preliminary hypotheses.
+
+The matching types are unchanged, so the original core-fitting,
+dummy-padding, and energy-table arguments retain their hypotheses.
+The scalar ledger nevertheless rechecks
+
+<!-- math-display: 3d6754d17c0c1bd42753b537
+s<1/5,\quad s<1/3,\quad 2s<2/3,\qquad
+h(2s)+2s<1.135451<1.444238<1+h(s)-s.
+\tag{T9}
+-->
+![Formula](../../assets/math/3d6754d17c0c1bd42753b537.svg)
+
+The last comparison charges the initial difference table to the
+energy-transform budget; it does not require that table's exponent
+to be below one.
+
+## III.4. Exact four-dimensional acceptance
+
+The final kernel uses box coordinates <code class="math">(m,z,v,\theta)</code> with
+
+<!-- math-display: 9a6bc4d57d27add06a20d6d4
+w_2=Q_2+\theta(D_1-Q_2),\qquad 0\le\theta\le1.
+\tag{T10}
+-->
+![Formula](../../assets/math/9a6bc4d57d27add06a20d6d4.svg)
+
+On every feasible first color, <code class="math">Q_2\le D_1</code>. Every legal second color
+therefore has a representation (T10). When <code class="math">D_1=Q_2</code>, all values of
+<code class="math">\theta</code> represent the same color. The initial box is
+
+<!-- math-display: b5c1fc83bb0c8a77a8a8eabb
+[a,s]\times[a,\beta(s)]
+ \times[0,\gamma_2\gamma_1\beta(s)]\times[0,1].
+-->
+![Formula](../../assets/math/b5c1fc83bb0c8a77a8a8eabb.svg)
+
+The first-color affine constraints and all four inequalities in (T2)
+are retained. The first-level push branch instead has <code class="math">v=\theta=0</code>
+and uses its exact projected constraints and auxiliary-color elimination.
+
+### Coverage under tightening
+
+Every expression affine in <code class="math">(m,z,v,w_2)</code> becomes multiaffine after
+(T10): it is affine in each one of the four box coordinates while
+the other three are fixed. Its extrema over a rectangular box occur
+at corners.
+
+For a multiaffine necessary constraint <code class="math">g(x)\ge0</code>, fix one coordinate
+<code class="math">x_i=u</code>. The value of <code class="math">g(u,x_{-i})</code> is a convex combination of the
+affine functions <code class="math">g_e(u)</code> obtained by setting the other coordinates
+to their endpoints. Consequently a feasible <code class="math">u</code> must satisfy
+<code class="math">g_e(u)\ge0</code> for at least one such endpoint assignment. Intersect
+each exact affine half-line with the current coordinate interval,
+take the hull of their union, and intersect the box coordinate with
+that hull. This cannot remove a feasible point. An empty union or
+a strictly negative maximum of <code class="math">g</code> proves the box empty.
+
+This projection uses rational roots with known scalar coefficients.
+It never divides by an interval coefficient or assumes that a varying
+slope has one sign. Repeating it a fixed number of times changes only
+the search tree, not the set that must be covered.
+
+### Entropy bounds and auxiliary colors
+
+For each rational <code class="math">0&lt;p&lt;1</code>, the Gibbs plane
+
+<!-- math-display: d6ff78334d6ae7eabf7cc356
+H(c,y)\le -y\log_2p-(c-y)\log_2(1-p)
+\tag{T11}
+-->
+![Formula](../../assets/math/d6ff78334d6ae7eabf7cc356.svg)
+
+bounds every positive entropy on its domain. Floating arithmetic
+proposes <code class="math">p</code>; the accepting plane uses exact rational logarithm
+enclosures.
+
+For a negative entropy, test its entire box domain using all corners.
+The conditions <code class="math">c\ge0</code>, <code class="math">y\ge0</code>, and <code class="math">c-y\ge0</code> are multiaffine, so
+their corner tests suffice. If they pass, the composition
+<code class="math">H(c(x),y(x))</code> is concave in each coordinate separately. Successive
+one-coordinate concavity proves that the multilinear interpolation
+of certified lower corner values lies below the entropy on the
+whole box. If any corner fails the domain test, use the valid lower
+bound zero on the actual feasible colors.
+
+The four negative entropy pairs are
+<code class="math">(1-m,\beta-m)</code>, <code class="math">(z,D_1)</code>, <code class="math">(w_1,D_2)</code>, and <code class="math">(w_2,D_3)</code>.
+The last pair is used only for the third recursive branch.
+
+After choosing Gibbs planes, the coefficient of the remaining scalar
+color <code class="math">w_3</code> is constant over a box. For a nonnegative coefficient,
+substitute any globally valid affine upper endpoint from (T4); for a
+negative coefficient, substitute a globally valid lower endpoint.
+The center may select which endpoint is convenient, but the chosen
+expression is fixed throughout the box. Each choice is individually
+valid, so floating selection cannot invalidate the bound.
+
+Retain the nonnegative floor in <code class="math">F_3</code> as two separate cases. For the
+raw case use (T4). For the zero case put <code class="math">y=w_3-Q_3</code> and use
+
+<!-- math-display: 0308368795ae3fb51843f035
+\max\{0,D_3-Q_2\}\le y\le\min\{D_3,w_2-Q_2\}.
+\tag{T12}
+-->
+![Formula](../../assets/math/0308368795ae3fb51843f035.svg)
+
+Eliminate <code class="math">y</code> separately. The <code class="math">F_2</code> floor is likewise retained; the
+checker never assumes that either raw occurrence exponent is positive.
+
+### Routing and whole-box maxima
+
+In the recursive expression, the third routing sign is
+
+<!-- math-display: a4b32afb2b1d195505f901f4
+D_3=w_2-(1-\gamma_3)C_2.
+-->
+![Formula](../../assets/math/a4b32afb2b1d195505f901f4.svg)
+
+Its corner extrema certify a box lying wholly on either side.
+If a box crosses zero, take the maximum of the push and recursive
+majorants on the whole box. Their affine extensions need only bound
+their own feasible branch. Their maximum covers both branches.
+
+After substitution, each plane and each interpolant is multiaffine.
+The floors and routing maxima preserve convexity in each coordinate
+separately. The resulting upper bound therefore attains its whole-box
+maximum at a corner. The old trace bound and continuous trace bound
+each receive a whole-box maximum before their minimum is taken.
+A pointwise minimum of corner values would not justify coverage and
+is not used.
+
+Every accepted leaf has an exact rational upper bound at most its
+contact target. Empty leaves have a necessary-constraint proof.
+Binary subdivision covers the parent box, and the completed tree
+has exactly <code class="math">2(\text{accepted}+\text{empty})-1</code> nodes.
+Together these facts prove the continuous contact inequality.
+Node or depth limits stop with an error; they never certify an
+unresolved region.
+
+### Arithmetic and recovery
+
+The logarithm enclosure normalizes its rational argument to <code class="math">[1,2]</code>
+and uses the 32-term atanh series. With
+<code class="math">q=(x-1)/(x+1)</code>, the omitted tail is bounded by
+<code class="math">2q^{65}/(65(1-q^2))</code>. Integer outward rounding at scale <code class="math">2^{128}</code>
+and exact rational arithmetic then enclose the logarithms used in
+(T11) and in the entropy lower bounds. The unchanged proof of this
+enclosure is the one used by the two-level checker.
+
+The input-time Subset Sum algorithm and its exact uniform seed search do
+not call the floating proposal routine. That routine only helps find
+rational planes for this finite verification. Different numerical
+libraries may propose different planes or subdivision trees; every
+accepting comparison is still made by the same exact inequality. The
+only executable dependencies of the verifier are the Python standard
+library, its fixed menu, and the explicitly supplied mathematical proofs.
+
+The optional recovery driver atomically preserves completed branches
+and exact JSON subdivision frontiers. It binds each record to the
+kernel, menu, and driver bytes. These records are trusted local work
+products, not independently verified proof objects. The ordinary
+clean replay starts from the initial boxes without loading them.
+Spawned workers explicitly check the same source hashes and load
+the fixed menu independently. An interrupted branch may therefore
+resume without relying on inherited mutable process state.
+
+## III.5. Uniform compiler allowance
+
+The extra lookup introduces finitely many additional labels and one
+more integer ceiling. A constant number of sampling levels still
+uses <code class="math">\exp(O(N))</code> labelled events. The same polynomial oversampling
+and simultaneous bounds establish a finite exact circuit family.
+The first-lookup pooled histogram and the signed coefficient remain
+unchanged.
+
+Choose integer widths with the max rules above. Their normalized
+values differ from the ideal widths by <code class="math">O(1/N)</code> at this fixed depth.
+Use the full pooled histogram expression (51) and the unmerged
+degree identities for this limit argument. Their entropy expressions
+are continuous on compact feasible domains, and every limit of
+rounded feasible colors belongs to one of the retained closed
+routing branches. Thus the three inner lookup ceilings, the
+unchanged outer rounding, polynomial color factors, and seed
+approximations incur a uniform <code class="math">o(1)</code> per-coordinate loss.
+
+No continuity of a simplified minimum envelope is needed. Nor is
+continuity of the inverse quotient defining <code class="math">\theta</code> assumed at
+<code class="math">D_1=Q_2</code>. Rounding is carried out in the original raw color
+coordinates. Compactness supplies a legal limit, and (T10)
+represents that limit even when its interval collapses.
+
+All old and new contact weights remain in <code class="math">[.24,.76]</code>. The finite
+contact-cone amplification is therefore still at most <code class="math">25/6</code>.
+Choose the common pre-cone seed loss below <code class="math">3\cdot10^{-10}</code>,
+giving post-cone loss below <code class="math">1.25\cdot10^{-9}</code>. Choose the common
+finite amplification depth so its further loss is below
+<code class="math">1.25\cdot10^{-9}</code>. Their sum fits the strict template allowance
+<code class="math">2.5\cdot10^{-9}</code>.
+
+Keep the divisibility scale <code class="math">H_0=1000</code>, microblocks
+<code class="math">N_0=k^2+1000k</code>, and core grid size <code class="math">10000</code>.
+Count descriptions and dummy padding contribute less than
+<code class="math">2.5\cdot10^{-9}</code>. The exact interpolation loss before padding is
+<code class="math">81/21875000000</code>; with sufficiently small fixed padding inflation
+it remains below <code class="math">5\cdot10^{-9}</code>. These three allowances retain the
+total <code class="math">\zeta=10^{-8}</code> used below.
+
+The common fixed seed may have to increase. Exhaustive exact matrix
+checks still terminate because the finite circuit exists, and the
+larger search cost is absorbed in <code class="math">C_{\mathrm{start},3}</code>. Input-time tensor products,
+stored adjacency lists, gate naming, and output-sensitive enumeration
+remain those proved in Parts I–II. The certificate's fourth
+coordinate creates no input-time continuous optimization.
+
+## III.6. Reflected envelope and complete outer ledger
+
+Combine every old and new same-family chord, both endpoint circuits,
+and the two global cone pieces from each contact. For a contact
+<code class="math">(\alpha,U)</code> these pieces are
+
+<!-- math-display: ebc4b5daf59522064f361d5d
+U\frac{1-\tau}{1-\alpha}\quad(0\le\tau\le\alpha),\qquad
+U\frac{\tau}{\alpha}\quad(\alpha\le\tau\le1).
+-->
+![Formula](../../assets/math/ebc4b5daf59522064f361d5d.svg)
+
+The finite-volume proof applies to actual integer color degrees, so
+it also transfers the already rounded seed estimate. It introduces
+no new continuous contact premise.
+
+For the stated menu the exact lower envelope has 18 breakpoints.
+The reflected quadratic bound requires 112 exact endpoint
+comparisons. Its maximum is
+
+<!-- math-display: b2fe25d5f1af6ac648dcad27
+\frac{212647711284991364849543952290503}
+     {518400000000000000000000000000000},
+\tag{T13}
+-->
+![Formula](../../assets/math/b2fe25d5f1af6ac648dcad27.svg)
+
+attained at <code class="math">\tau=49/100</code> and <code class="math">51/100</code>. Choose
+
+<!-- math-display: 7014e5f9388f3532779c5842
+S_3=.41020007.
+-->
+![Formula](../../assets/math/7014e5f9388f3532779c5842.svg)
+
+The exact margin is
+
+<!-- math-display: 860503526d845d1a62f85178
+S_3-\text{(T13)}
+=\frac{5003008635150456047709497}
+       {518400000000000000000000000000000}>0.
+\tag{T14}
+-->
+![Formula](../../assets/math/860503526d845d1a62f85178.svg)
+
+Retaining the same outward type constants, exact entropy enclosures give
+
+<!-- math-display: e3df6c4eaf94c4caa7410d28
+g_3\ge g_{3,L}=\frac{135677471157}{10^{13}},\qquad
+\mu_3=\frac{50000000000000}{159510588959567}.
+\tag{T15}
+-->
+![Formula](../../assets/math/e3df6c4eaf94c4caa7410d28.svg)
+
+The gain includes the entire <code class="math">\zeta=10^{-8}</code> compiler allowance.
+With <code class="math">D_U=58153814247997/10^{14}</code>,
+
+<!-- math-display: e3f914172d9236cfd20c7ed7
+\mu_3(1+D_U)=\frac12-\mu_3g_{3,L}=E_3.
+\tag{T16}
+-->
+![Formula](../../assets/math/e3f914172d9236cfd20c7ed7.svg)
+
+The changed dictionary fraction slightly increases some nonbinding
+rates, so every operation is checked again:
+
+| Operation | Certified bound on the exponent |
+| --- | --- |
+| Circuit incidences and indexed witnesses | <code class="math">E_3</code> |
+| Canonical output and complete residue cover | <code class="math">E_3</code> |
+| Modulus energy search | <code class="math">&lt;.463275485</code> |
+| Selectors and shared witness preprocessing | <code class="math">&lt;.321176660</code> |
+| Repeated prefix lookups | <code class="math">&lt;.328894505</code> |
+| Repeated outside lookups | <code class="math">&lt;.352437108</code> |
+| Cyclic convolution and shift scans | <code class="math">&lt;.372294358</code> |
+| High-deficiency fallback | <code class="math">&lt;.493730824</code> |
+| Dictionary preparation | <code class="math">&lt;.313458814</code> |
+
+All seven nonbinding bounds are strictly below <code class="math">E_3</code>. The exact
+ledger also verifies <code class="math">3\mu_3&lt;1</code>, <code class="math">g_{3,L}&lt;1/50</code>, the canonical-layer
+density gate, all endpoint entropy enclosures, every envelope
+intersection and continuity junction, and the unchanged compiler
+and core-fitting requirements.
+
+## III.7. Evidence boundary
+
+The [final-source receipt](verify/third_receipt.json) contains all 16 new
+branch results, bound to the [kernel](../../tools/verify_subset_sum_third_contacts.py)
+and [fixed menu](verify/third_contacts.json). It records 317,138 accepted
+leaves, 634,268 nodes, four empty leaves and maximum depth 29. The smallest
+exact margin is
+
+<!-- math-display: 214fd90cb8f625f5a034fa34
+\frac{73419063191692283632585383801}
+     {6416636480000000000000000000000000000}>1.14\cdot10^{-8}.
+-->
+![Formula](../../assets/math/214fd90cb8f625f5a034fa34.svg)
+
+The old 62-branch [receipt](verify/receipt.json) remains separate and
+unchanged. The new scalar ledger uses both proved sets of continuous
+contact inequalities and the analytic construction; it does not prove
+these ingredients by itself. Its default command verifies Theorem F3,
+with 112 reflected-profile comparisons. The independent option
+`--base-two-level` reproduces all 160 comparisons and the preserved
+Theorem F2 exponent without reading the third-level menu.
+
+Run the inexpensive binding and scalar checks from the repository root:
+
+```sh
+python3 tools/verify_subset_sum_third_contacts.py --receipt \
+  problems/subset-sum-fast-deterministic/verify/third_receipt.json
+python3 tools/verify_subset_sum_scalars.py
+python3 tools/verify_subset_sum_scalars.py --base-two-level
+python3 problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py
+```
+
+Receipt binding checks provenance and complete result accounting; it does
+not rerun the box inequalities. The [verification note](verify/README.md)
+gives the clean full replay and the optional resumable command, with their
+different evidence scopes.
+
+An independent geometry audit checked feasible-color preservation,
+degenerate second-color intervals, multiaffine interpolation identities,
+mixed routing boxes, and the optimized closed trace guard. These
+finite checks accompany the analytic arguments above. They do not
+replace the full-domain branch replay or establish the complete
+Subset Sum theorem independently of the rest of this manuscript.
+
 
 ## References
 

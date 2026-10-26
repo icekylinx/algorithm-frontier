@@ -9,8 +9,8 @@
           "id": "subset-sum-fast-deterministic",
           "title": "Faster deterministic Subset Sum",
           "result": "Exact decision and indexed witness",
-          "quantity": "$C+\\mathrm{poly}(n,L)2^{0.495836n}$; exact rational exponent on the card",
-          "scope": "Exact rational certification of all 62 continuous contact branches, followed by a finite-volume cone improvement; C is finite input-independent circuit precomputation; combinatorial compiler and bit-cost proofs are in the manuscript",
+          "quantity": "$C+\\mathrm{poly}(n,L)2^{0.495748n}$; exact rational exponent on the card",
+          "scope": "For n integers of total bit length L, including an indexed witness. The finite startup constant C is input-independent. The complete compiler proof and exact continuous certificates support the improved third-lookup exponent",
           "randomness": "Deterministic exact algorithm in the uniform bit model, including indexed-witness recovery and input-independent deterministic circuit construction; no probability of error."
         },
         {
@@ -39,71 +39,71 @@
           "id": "weighted-prefix-quota-frontier",
           "title": "Prefix, laminar and sparse quotas",
           "result": "Exact quota algorithms and deterministic original-ground kernels",
-          "quantity": "One order $2^{O(B)}$; two orders $2^{O(B\\log(B+2))}$; $p$ weight families $2^{O(pB\\log(p+2))}$; laminar $2^{O(B^2)}$",
-          "scope": "Also deterministic sparse-packing restrictions of $O_\\delta(\\kappa^{\\delta+1})$ original items for arbitrary signed profits with FPT preprocessing; exact unweighted binomial size; laminar lower preprocessing retains at most B rows. The uniform polynomial sunflower construction remains a separate tradeoff.",
+          "quantity": "One order $2^{O(B)}$; two orders $2^{O(B\\log(B+2))}$; laminar and compatible cuts $2^{(5/9+o(1))B^2}\\mathrm{poly}(H)$ with the named indexed universal-set theorem, or $2^{(10/9)B^2+O(B\\log(B+1))}\\mathrm{poly}(H)$ with local coloring",
+          "scope": "Exact common-weight quotas with an arbitrary integral-polymatroid resource and signed scalar costs. One positive weight has a polynomial laminar algorithm; two weights already have an exponential oracle boundary. Projected row identities and actual histograms improve instance-specific costs. The compatible-cut one-weight endpoint needs fixed total mass. Sharp sparse-packing restrictions remain a separate result",
           "randomness": "Deterministic exact algorithms and deterministic original-ground reductions in the stated exact oracle model; universal colorings are explicitly enumerated rather than sampled."
         }
       ]
     },
     {
       "title": "Graph algorithms",
-      "note": "Use each result’s declared graph cap N, with $U=\\log(N+4)$, $h=\\log(U+4)$ and $\\mathcal E_a=\\exp(O(U^ah^{1-a}))$. The flow entry displays its numerical cap S explicitly. Conditional bounds require the data structures and update guarantees listed in the source maps; the MSF entry combines named published theorems.",
+      "note": "Use each result’s declared graph cap N, with $U=\\log(N+4)$, $h=\\log(U+4)$ and $\\mathcal E_a=\\exp(O(U^ah^{1-a}))$. The flow entry displays its numerical cap S explicitly. Source maps identify the proved local constructions and named published theorems realizing the interfaces. Executable reference coverage is stated separately.",
       "records": [
         {
           "id": "general-matching",
           "title": "Deterministic general-graph maximum matching",
-          "result": "Executable exact solver, independent certificates and a faster conditional research theorem",
-          "quantity": "Executable $O(n+m\\log(m+2)+\\sum_i\\nu(G_i)^3)$ including certificates; conditional research bound $O(n+m)+(m_s+1)\\exp(O((\\log(m_s+2))^{4/5}(\\log\\log(m_s+4))^{1/5}))$",
-          "scope": "The reference solver uses only the Python standard library; nu(G_i) is the matching number of component i. A cover-based compression limits blossom search to at most four times that number. The faster research bound still requires an unimplemented deterministic cycle-search and edge-retirement data structure, with named published prerequisites",
-          "randomness": "Deterministic executable solver and certificate verification. The faster research composition additionally requires the deterministic cycle-search implementation and named published primitives in the source map."
+          "result": "Deterministic exact maximum matching in general graphs",
+          "quantity": "$O(n+m)+(m_s+1)\\exp(O((\\log(m_s+2))^{4/5}(\\log\\log(m_s+4))^{1/5}))$",
+          "scope": "Here m_s counts distinct nonloop edge pairs. The proof supplies the uniform cycle-search construction and names its published prerequisites. A separate executable solver returns independently verifiable optimality certificates",
+          "randomness": "Deterministic exact algorithm, including the uniform parameter search and all locally constructed interfaces. Named published deterministic primitives remain explicit proof dependencies. The separate executable solver and its certificate verification are also deterministic."
         },
         {
           "id": "degree-constrained-subgraphs",
           "title": "Degree-constrained subgraphs",
-          "result": "Exact factors, interval degrees and cardinality optimization",
-          "quantity": "$O(n+m)+(m+1)\\mathcal E_{4/5}$",
-          "scope": "Unconditional deterministic sparse reductions on loopless multigraphs, with capacity one per explicit edge record; exact or ranged cardinality uses one matching call. The displayed fast time requires the faster conditional matching implementation.",
-          "randomness": "Deterministic reductions using any correct deterministic exact matching solver. The faster bound additionally requires the cycle-search implementation and published prerequisites of the matching theorem."
+          "result": "Exact degree intervals and cardinality optimization",
+          "quantity": "Research bound $O(n+m)+(m+1)\\mathcal E_{4/5}$; executable feasibility $O(n+H^3)$ and optimization $O(n+H^3\\log(m+2))$, $H=1+m\\log(m+2)$",
+          "scope": "Loopless multigraphs with capacity one per explicit record. The proved sparse reduction invokes the completed matching theorem. The reference implementation returns original-ID YES witnesses, certified NO decisions and cardinality optimality certificates; its verifier performs no matching search",
+          "randomness": "Deterministic reductions and exact algorithms. The faster bound invokes the proved deterministic general-matching construction and its named published dependencies; the shipped reference solver has its own polynomial cost."
         },
         {
           "id": "min-cost-flow",
           "title": "Static and threshold min-cost flow",
           "result": "Exact integral optimum or threshold witness",
           "quantity": "$O((N+1)E(S)^4\\mathrm{polylog}S)$, $E(S)=\\exp(O((\\log S)^{4/5}(\\log\\log(S+4))^{1/5}))$",
-          "scope": "Conditional deterministic cycle search, edge retirement and initialization; numerical cap S; exact affine integral recovery and prefix-safe deferred initialization are proved locally. Full-flow output is charged separately.",
-          "randomness": "Deterministic exact numerical reductions. The fast dynamic bound requires the stated deterministic cycle-search, flow-maintenance and edge-retirement data structures for adaptive polynomial-length histories."
+          "scope": "The moving-box barrier construction uses the realized deterministic cycle search, edge retirement and prefix-safe initialization. The numerical cap S, exact affine integral recovery and full-flow output charge are explicit. The incremental guarantee concerns a fixed threshold",
+          "randomness": "Deterministic exact static and fixed-threshold constructions, with local flow-maintenance and edge-retirement proofs for the stated adaptive polynomial-length histories. Published numerical primitives are identified in the source map."
         },
         {
           "id": "incremental-scc",
           "title": "Incremental strongly connected components",
           "result": "Exact component labels",
           "quantity": "Total $(n+m)\\mathcal E_{4/5}^{O(1)}\\mathrm{poly}(U)$",
-          "scope": "The fast update bound requires the stated cycle-search and edge-retirement data structures. A separate component-label history answers first-coalescence queries in $O(1+\\log\\log(n+2))$ time after $O(n\\log(n+2))$ label changes.",
-          "randomness": "Deterministic label-history construction and conditional SCC maintenance. The latter requires deterministic cycle search, exact flow maintenance and edge retirement under adaptive updates."
+          "scope": "The realized raw-cycle detector and lifetime rules supply the fast update bound. A separate component-label history answers first-coalescence queries in O(1+log log(n+2)) time after O(n log(n+2)) label changes. Dynamic topological ordering and within-component path output are not part of this interface",
+          "randomness": "Deterministic exact SCC maintenance and label-history construction. The source map connects the detector, flow-maintenance and edge-retirement operations to their local realizations and named published prerequisites."
         },
         {
           "id": "incremental-sssp",
           "title": "Incremental directed SSSP",
           "result": "$(1+\\epsilon)$ distances and simple paths",
           "quantity": "Total $(n+m)\\exp(O(U^{4/5}h^{1/5}+\\sqrt{U(h+\\log(1/\\epsilon))}))$",
-          "scope": "Conditional distance detector and edge-retirement data structures; nonnegative polynomial-range integer lengths; $0<\\epsilon\\le1/2$, $\\log(1/\\epsilon)=O(U)$; a k-edge simple path costs $(k+1)\\mathrm{poly}(U)$ to report.",
-          "randomness": "Deterministic path-reporting and integer zero-length reductions. The faster distance maintenance requires the deterministic cycle-search and edge-retirement guarantees listed in the source map."
+          "scope": "The frozen-detector bridge and simple-path reporting construction are proved locally; nonnegative polynomial-range integer lengths; $0<\\epsilon\\le1/2$, $\\log(1/\\epsilon)=O(U)$. A k-edge simple path costs $(k+1)\\mathrm{poly}(U)$ to report",
+          "randomness": "Deterministic distance maintenance and simple-path reporting, using the realized detector and edge-retirement constructions. Zero-length handling and the exact numerical range are part of the proved reduction."
         },
         {
           "id": "apsp-frontier",
           "title": "Fully dynamic APSP",
           "result": "A family of update/stretch tradeoffs",
           "quantity": "Amortized factor $\\exp(O(U/t+t^3h))$; stretch $\\exp(O(t^4h))$; query $\\mathrm{poly}(U)$",
-          "scope": "Conditional metric data structures; $t\\to\\infty$, $t^2h=o(U)$. All five explicit points allow nonnegative polynomial-range integer lengths; the general zero-length extension additionally requires $t^4h=o(U)$ and an explicit uniform stretch bound.",
-          "randomness": "Deterministic conditional composition using the metric hierarchy, construction/update guarantees and uniform numerical bounds listed in the source map."
+          "scope": "The metric hierarchy and uniform tradeoff are constructed locally; $t\\to\\infty$, $t^2h=o(U)$. All five explicit points allow nonnegative polynomial-range integer lengths; the general zero-length extension additionally needs $t^4h=o(U)$ and a uniform stretch bound. Queries return numerical distances",
+          "randomness": "Deterministic fully dynamic metric construction. The source map supplies the hierarchy, initialization/update and numerical bounds; the parameter and output restrictions remain part of the theorem."
         },
         {
           "id": "dynamic-spanners",
           "title": "Dynamic spanners",
           "result": "Two distinct stretch/recourse regimes",
           "quantity": "Tracked terminals $\\mathcal E_{4/5}$; full-horizon $\\mathcal E_{5/6}$ with recourse $(n+D)\\mathcal E_{5/6}$",
-          "scope": "Conditional hierarchy and forest data structures. The unweighted results extend to nonnegative polynomial-range integer weights using dyadic positive classes and a separate zero-edge class; initialization, insertions, deletions and settled output recourse are charged.",
-          "randomness": "Both displayed spanner constructions are deterministic conditional on the stated deterministic hierarchy and forest interfaces. Randomized public baselines are comparisons only."
+          "scope": "The tracked-terminal and full-horizon constructions have separate proved recourse guarantees. Their unweighted results extend to nonnegative polynomial-range integer weights using dyadic positive classes and a separate zero-edge class; initialization, insertions, deletions and settled output are charged",
+          "randomness": "Both displayed spanner constructions are deterministic, with the hierarchy, strong-forest and destructive-support interfaces realized by the linked proofs. Randomized public baselines are comparisons only."
         },
         {
           "id": "dynamic-msf",
@@ -118,8 +118,8 @@
           "title": "Strong forests and Gomory–Hu trees",
           "result": "Decremental strong forest; exact cut-equivalent tree",
           "quantity": "Native forest $(n+m)\\mathcal E_{6/7}$; cut-equivalent tree $O(n+m)+(m+1)\\mathcal E_{6/7}$",
-          "scope": "Conditional forest and exact-flow data structures; bounded-degree native forest with nonnegative integer lengths. The arbitrary-degree Gomory–Hu transfer allows nonnegative polynomial-range integer capacities and separately charges isolated vertices.",
-          "randomness": "Deterministic conditional composition; the strong forest and exact Gomory-Hu transfer require the named deterministic hierarchy, flow, skeleton and guide-tree interfaces."
+          "scope": "The accepted no-reset Steiner-pool construction proves the native strong forest. The cut-tree theorem uses the locally realized fixed-k adapter and deterministic exact flow. A separate capacity-bit adapter also instantiates flow with the named published theorem. Nonnegative polynomial-range capacities, zero handling, actual call sizes and isolated vertices are charged",
+          "randomness": "Deterministic strong-forest and cut-tree constructions. The source map identifies the completed no-reset hierarchy, fixed-k realization and exact-flow proof. The published-flow capacity adapter is an additional deterministic route."
         }
       ]
     },
@@ -180,7 +180,7 @@
           "title": "Boolean linear optimization compiler",
           "result": "Signed equalities, intervals, witnesses and lexicographic optimization",
           "quantity": "$\\mathrm{poly}(L)(\\prod_i p_i)2^{\\alpha n+Q-(1-\\alpha)B}$",
-          "scope": "Supplied indexed-witness Subset Sum backend of exponent $\\alpha$; $0\\le B\\le Q$; a space bound requires that same backend",
+          "scope": "Supplied indexed-witness Subset Sum backend of exponent $\\alpha$; support-sized short intervals, at most two boundary emissions per halving, and $0\\le B\\le Q$. A space bound requires that same backend",
           "randomness": "Deterministic compiler with a supplied deterministic indexed-witness Subset Sum backend; optimization, witnesses and the stated space transfer retain that same backend contract."
         }
       ]
@@ -459,7 +459,7 @@
           "result": "Left-perfect matching or an explicit deficient hitting-set certificate",
           "quantity": "$O(\\lvert A\\rvert+\\lvert B\\rvert)+p\\exp(O(U\\log(2+s)/s))$",
           "scope": "$\\Delta\\ge4$, right-resource rank r, $U=\\log(p+4)$ and $s=\\log\\Delta$; also certified disjoint paths and density-conditioned spanning expander packing",
-          "randomness": "Deterministic certifying hypergraph matching. The routing and expander-packing transfers additionally require the supplied deterministic destructive-support distance interface."
+          "randomness": "Deterministic certifying hypergraph matching. The routing and expander-packing transfers use the locally constructed destructive-support distance interface and preserve their stated expansion, density and congestion promises."
         },
         {
           "id": "independent-transversal",

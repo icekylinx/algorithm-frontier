@@ -14,6 +14,7 @@ import argparse
 from fractions import Fraction as F
 from functools import lru_cache
 import json
+import hashlib
 from pathlib import Path
 
 CONTACTS = [
@@ -30,6 +31,64 @@ CONTACTS = [
     ('4', '.65', '.5', [('.55','.21218'),('.60','.21801'),('.65','.22429')]),
     ('4', 'direct', 'direct', [('.60','.21873'),('.76','.22760')]),
 ]
+
+
+THIRD_MENU_PATH = Path(__file__).resolve().parents[1] / "problems/subset-sum-fast-deterministic/verify/third_contacts.json"
+
+
+@lru_cache(maxsize=1)
+def third_contact_data():
+    """Load the extension only when requested; the E_2 replay is independent."""
+    data = THIRD_MENU_PATH.read_bytes()
+    menu = json.loads(data)
+    require({key:F(value) for key,value in menu["types"].items()} == {
+            'a':F('.065'),'b':F('.075'),'s':F('.14'),'t':F('.45')},
+            'third-contact menu uses the refined matching types')
+    contacts = [tuple(family[key] for key in ('rho','gamma','gamma2','gamma3'))
+                + (family['contacts'],) for family in menu['families']]
+    return contacts, hashlib.sha256(data).hexdigest()
+
+
+def all_contact_points(include_third=True):
+    extension = third_contact_data()[0] if include_third else []
+    return [row[-1] for row in CONTACTS]+[row[-1] for row in extension]
+
+
+PROFILE_CASES = {
+    False: {
+        'budget':F('.41077126'),
+        'comparisons':160,
+        'maximum':F(10515744200139750970543135213463,25600000000000000000000000000000),
+        'breakpoints':['0','2425000000000/9700570910413','5672/14453','2/5',
+            '288877/673855','43/100','3759/8300','2114877/4502050','47/100',
+            '177893/370800','12/25','49/100','99/200','1/2','607/1200','51/100',
+            '13/25','257244/494425','27/50','308143/561610','11/20','3/5',
+            '5709/9355','16693148922977/22715773922977','1'],
+        'gain_lower':F(132821521157,10**13),
+        'dictionary_fraction':F(50000000000000,159482029459567),
+        'exponent':F(158153814247997,318964058919134),
+        'previous_exponent':F(158153814247997,318963914919134),
+        'displayed_exponent':F('.495836'),
+        'nonbinding_caps':['.463358446','.321234175','.328953402','.352410683',
+                           '.372361028','.493729702','.313514947'],
+    },
+    True: {
+        'budget':F('.41020007'),
+        'comparisons':112,
+        'maximum':F(212647711284991364849543952290503,518400000000000000000000000000000),
+        'breakpoints':['0','2425000000000/9700570910413','5672/14453','2/5',
+            '288877/673855','43/100','1643/3725','12/25','49/100','1/2',
+            '372241/716425','13/25','303886/552835','11/20','3/5','5709/9355',
+            '16693148922977/22715773922977','1'],
+        'gain_lower':F(135677471157,10**13),
+        'dictionary_fraction':F(50000000000000,159510588959567),
+        'exponent':F(158153814247997,319021177919134),
+        'previous_exponent':F(158153814247997,318964058919134),
+        'displayed_exponent':F('.495748'),
+        'nonbinding_caps':['.463275485','.321176660','.328894505','.352437108',
+                           '.372294358','.493730824','.313458814'],
+    },
+}
 
 
 def ln_enclosure(x: F) -> tuple[F, F]:
@@ -89,10 +148,10 @@ def line_value(line: tuple[F, F, F, F], x: F) -> F:
     return line[2]*x+line[3]
 
 
-def envelope():
+def envelope(include_third=True):
     push,pull = F('.58414212731239'), F('.85319345691908')
     lines = [(F(0),F(1),push,F(0)), (F(0),F(1),-pull,pull)]
-    for _,_,_,raw in CONTACTS:
+    for raw in all_contact_points(include_third):
         points = [(F(x),F(y)) for x,y in raw]
         for (x,y),(z,w) in zip(points,points[1:]):
             a = (w-y)/(z-x)
@@ -130,7 +189,8 @@ def envelope():
     return raw_segments
 
 
-def scalar_profile():
+def scalar_profile(include_third=True):
+    case=PROFILE_CASES[include_third]
     s,t,a,b=F('0.14'),F('0.45'),F('0.065'),F('0.075')
     row=H(F(1),t)
     hs=H(F(1),s)
@@ -141,8 +201,8 @@ def scalar_profile():
     require(add(H(t,a),H(1-t,b))[1] <= F('.58414212731239'),'push endpoint')
     require(H(1-s,t-a)[1] <= F('.85319345691908'),'pull endpoint')
     require(LN2[1] < F('0.7'),'entropy curvature')
-    segments=envelope()
-    expected=[F(x) for x in ['0', '2425000000000/9700570910413', '5672/14453', '2/5', '288877/673855', '43/100', '3759/8300', '2114877/4502050', '47/100', '177893/370800', '12/25', '49/100', '99/200', '1/2', '607/1200', '51/100', '13/25', '257244/494425', '27/50', '308143/561610', '11/20', '3/5', '5709/9355', '16693148922977/22715773922977', '1']]
+    segments=envelope(include_third)
+    expected=[F(x) for x in case['breakpoints']]
     actual=[segments[0][0]]+[s[1] for s in segments]
     require(actual==expected,'full lower-envelope breakpoint list')
     cuts=sorted(set(actual+[1-x for x in actual]))
@@ -161,16 +221,16 @@ def scalar_profile():
                 require(abs(theta)<F('.52'),'monotonicity range')
                 candidates.append((u+v+K*theta*theta,x,d))
     maximum=max(z[0] for z in candidates)
-    expected_max=F(10515744200139750970543135213463,25600000000000000000000000000000)
+    expected_max=case['maximum']
     require(maximum==expected_max,'reflected quadratic maximum')
-    require(len(candidates)==160,'complete endpoint comparison count')
-    require(maximum < F('.41077126'),'quadratic contact budget')
+    require(len(candidates)==case['comparisons'],'complete endpoint comparison count')
+    require(maximum < case['budget'],'quadratic contact budget')
     return {'comparisons':len(candidates),'continuous_envelope':True,'breakpoints':[str(x) for x in actual],
-            'quadratic_maximum':str(maximum),'margin':str(F('.41077126')-maximum),
+            'quadratic_maximum':str(maximum),'margin':str(case['budget']-maximum),
             'maximizers':sorted({str(x) for value,x,_ in candidates if value==maximum})}
 
 
-def retyping_contract():
+def retyping_contract(include_third=True):
     """Check the finite obligations changed by the refined circuit types.
 
     The input difference tensor is indexed by at most 2sM nonzero symbols.
@@ -194,30 +254,48 @@ def retyping_contract():
         if gamma!='direct':
             require(0<F(gamma2)<1,'second lookup is a legal positive-query width')
             require(beta-s<=F(gamma)*beta,'first inner lookup contains every query')
+    third_contacts=third_contact_data()[0] if include_third else []
+    for rho,gamma,gamma2,gamma3,points in third_contacts:
+        rho,gamma,gamma2,gamma3=map(F,(rho,gamma,gamma2,gamma3))
+        require(rho>1 and all(0<value<1 for value in (gamma,gamma2,gamma3)),
+                'legal third-lookup family fractions')
+        beta=a+rho*(s-a)
+        require(beta<min(t,1-t,1-s),'third-family outer and trace domains')
+        for m in (a,s):
+            beta_m=a+rho*(m-a)
+            require(gamma*beta_m>=beta_m-m,'third-family complete first-query containment')
+        weights=[F(point[0]) for point in points]
+        require(weights==sorted(set(weights)) and all(0<value<1 for value in weights),
+                'ordered distinct third-family contact weights')
+        require(all(F(point[1])>0 for point in points),'positive third-contact targets')
     padding=1000
     require(a*padding>=12 and b*padding>=12 and
             (t-a)*padding>=24 and (1-t-b)*padding>=24,
             'three-count dummy padding')
     amplification=max(max(1/F(tau),1/(1-F(tau)))
-                      for _,_,_,points in CONTACTS for tau,_ in points)
+                      for points in all_contact_points(include_third) for tau,_ in points)
     require(amplification==F(25,6),'uniform contact-cone seed amplification')
     require(amplification*F(3,10**10)+F(1,800000000)==F(1,400000000),
             'strict seed and depth errors fit the template allowance')
     grid=10000
     interpolation=F(1296,875)/(4*grid*grid)
     require(interpolation<F(5,10**9),'refined compiler interpolation allowance')
-    return {'initial_difference_table_upper':'1.135451',
+    result={'initial_difference_table_upper':'1.135451',
             'energy_transform_lower':'1.444238',
             'core_fraction_grid':grid,'compiler_allowance':'1/100000000',
             'max_contact_cone_amplification':str(amplification),
             'pre_cone_seed_error_cap':'3/10000000000',
-            'second_lookup_fractions':sorted({str(F(row[2])) for row in CONTACTS if row[1]!='direct'}),
+            'second_lookup_fractions':[str(value) for value in sorted({F(row[2]) for row in CONTACTS if row[1]!='direct'}|{F(row[2]) for row in third_contacts})],
             'quadratic_interpolation_loss':str(interpolation)}
+    if include_third:
+        result['third_lookup_fractions']=[str(value) for value in sorted({F(row[3]) for row in third_contacts})]
+    return result
 
 
-def ledger():
+def ledger(include_third=True):
+    case=PROFILE_CASES[include_third]
     s,t,a,b=F('.14'),F('.45'),F('.065'),F('.075')
-    S,zeta,d0=F('.41077126'),F(1,10**8),F(1,50)
+    S,zeta,d0=case['budget'],F(1,10**8),F(1,50)
     u=t-a+b
     typed=add(H(1-u,a),H(u,b))
     eta=add((F(1),F(1)),scale(F(-1),H(F(1),u)))
@@ -228,13 +306,13 @@ def ledger():
     D_U=F(58153814247997,10**14)
     alpha_U=F(144423881164287,10**14)
     eta_U=F(231078058989,5*10**13)
-    g_L=F(132821521157,10**13)
+    g_L=case['gain_lower']
     for condition,name in [(typed[1]<=D_U,'typed width'),(alpha[1]<=alpha_U,'energy transform'),
                            (eta[1]<=eta_U,'rounding loss'),(gain[0]>=g_L,'gain')]:
         require(condition,name+' entropy bound')
     mu=1/(2*(1+D_U+g_L))
-    E=F(158153814247997,318964058919134)
-    require(mu==F(50000000000000,159482029459567),'dictionary fraction')
+    E=case['exponent']
+    require(mu==case['dictionary_fraction'],'dictionary fraction')
     require(mu*(1+D_U)==F(1,2)-mu*g_L==E,'balanced exact exponent')
     require(3*mu<1 and g_L<d0,'dictionary fitting and deficiency threshold')
     require(H(F(1),F(1,5))[1]<1-d0,'canonical layer density gate')
@@ -250,17 +328,13 @@ def ledger():
         'dictionary_preparation':mu,
     }
     require(all(x<=E for x in rates.values()),'complete outer cost domination')
-    require(E<F(158153814247997,318963914919134),'strict cone improvement')
-    require(E<F('.495836'),'displayed rounded exponent')
-    displayed_caps={
-        'modulus_energy':F('.463358446'),
-        'selector_and_shared_witness_preprocessing':F('.321234175'),
-        'repeated_prefix_lookups':F('.328953402'),
-        'repeated_outside_lookups':F('.352410683'),
-        'cyclic_convolution_and_shifts':F('.372361028'),
-        'high_deficiency_fallback':F('.493729702'),
-        'dictionary_preparation':F('.313514947'),
-    }
+    require(E<case['previous_exponent'],'strict improvement over the preceding ledger')
+    require(E<case['displayed_exponent'],'displayed rounded exponent')
+    cap_names=('modulus_energy','selector_and_shared_witness_preprocessing',
+               'repeated_prefix_lookups','repeated_outside_lookups',
+               'cyclic_convolution_and_shifts','high_deficiency_fallback',
+               'dictionary_preparation')
+    displayed_caps=dict(zip(cap_names,map(F,case['nonbinding_caps'])))
     require(all(rates[key]<cap for key,cap in displayed_caps.items()),
             'strict displayed nonbinding rate caps')
     return {'exponent':str(E),'dictionary_fraction':str(mu),
@@ -272,13 +346,25 @@ def main():
         raise SystemExit('Run mathematical verification without python -O.')
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--base-two-level',action='store_true',
+                        help='replay the preserved Part II E_2 ledger without loading the third-level menu')
     args=parser.parse_args()
-    result={'status':'PASS','scope':'Exact entropy bounds, 160 reflected-profile comparisons, and all outer rates; continuous contacts and circuit construction are separate premises.',
-            'profile':scalar_profile(),'retyping':retyping_contract(),'ledger':ledger()}
+    include_third=not args.base_two_level
+    count=PROFILE_CASES[include_third]['comparisons']
+    result={'status':'PASS',
+            'scope':f'Exact entropy bounds, {count} reflected-profile comparisons, and all outer rates; continuous contacts and circuit construction are separate premises.',
+            'theorem':'F3' if include_third else 'F2',
+            'profile':scalar_profile(include_third),
+            'retyping':retyping_contract(include_third),'ledger':ledger(include_third)}
+    if include_third:
+        digest=third_contact_data()[1]
+        result['third_menu_sha256']=digest
+        require(hashlib.sha256(THIRD_MENU_PATH.read_bytes()).hexdigest()==digest,
+                'third-contact menu unchanged during scalar verification')
     if args.output:
         args.output.parent.mkdir(parents=True,exist_ok=True)
         args.output.write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: exact entropy enclosures, 160 reflected-profile comparisons, and complete operation ledger')
+    print(f'PASS: {result["theorem"]}, exact entropy enclosures, {count} reflected-profile comparisons, and complete operation ledger')
 
 
 if __name__=='__main__':
