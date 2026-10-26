@@ -1,0 +1,408 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\F}{\mathbb F}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\SV}{\operatorname{SV}}
+\newcommand{\Mat}{\operatorname{Mat}}
+\title{An Affine-Orbit Consequence of the Interval-Rank Cone Theorem}
+\author{Yilin Liu \and GPT-6 Astra Pro}
+\date{26 October 2026}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Status.}
+This note proves a consequence of the proposed rank-profile cone theorem
+in the companion \texttt{interval-rank-cones.tex}. Its complete proof
+is supplied there and is not reproduced here. The main argument
+below uses that theorem; a final remark gives an alternative using its
+elementary coefficient-space counterpart. The argument does not use the
+width-three joint classification. It has internal model review, not
+external human peer review; no novelty or priority claim is made.
+
+\section{Model and statement}
+
+Let $n,w,\delta\ge1$. Consider
+\[
+ f(X)=uA_1(\ell_1(X)+c_1)\cdots
+       A_n(\ell_n(X)+c_n)v,
+\]
+where $u,v$ are constant endpoints, the polynomial matrices have width
+at most $w$, and every entry of every univariate $A_i$ has degree at most
+$\delta$. The map
+\[
+ L:X\longmapsto(\ell_1(X),\ldots,\ell_n(X))
+\]
+is invertible and linear. The map $L$, the constants $c_i$, the variable
+order, and the factors are unavailable to the black-box algorithm.
+Constant factors and unused coordinates are allowed. Compatible zero
+padding reduces rectangular factors to square width $w$.
+
+This is the affine orbit of the individual-degree-$\delta$, width-$w$
+ROABP class. Indeed, if only the scalar preimage polynomial is promised
+to have individual degree at most $\delta$, truncating each univariate
+factor above that degree preserves the scalar polynomial: each variable
+occurs in only its own factor.
+
+Define
+\[
+ D_w(w)=w^2-1,\qquad
+ D_w(r)=2r^2\left(2\max_{r<s\le w}D_w(s)+1\right)
+ \quad(1\le r<w),
+\]
+and write
+\[
+ b_r=\max_{r<s\le w}D_w(s),\qquad
+ k_{\rm geo}(w)=1+\sum_{r=1}^{w-1}(2b_r+2).
+\]
+At $w=1$, the sum is empty and $k_{\rm geo}(1)=1$.
+
+For distinct abscissas $a_1,\ldots,a_n$ in the working field, let
+$\lambda_i(y)$ be the Lagrange interpolation polynomial satisfying
+$\lambda_i(a_j)=\mathbf 1_{i=j}$. Put
+\[
+ \SV_{h,i}(y,z)=\sum_{j=1}^h z_j\lambda_i(y_j).
+\]
+
+\begin{theorem}[Affine-orbit hitting via the companion cone theorem]\label{thm:orbit}
+Use the rank-profile cone theorem stated in Section~\ref{sec:input}
+and proved in the companion \texttt{interval-rank-cones.tex}.
+For $1\le r<w$, put $a_r=\binom wr^2-1$ and choose
+\[
+ \eta_r=
+ \begin{cases}
+ \min\{r\delta,a_r\},&
+  \operatorname{char}\F=0\text{ or }\operatorname{char}\F>w\delta,\\
+ r\delta,&\text{otherwise}.
+ \end{cases}
+\]
+Set
+\[
+ K=1+\sum_{r=1}^{w-1}\eta_r(2b_r+2).
+\]
+Then $\SV_K$ preserves the generic rank of every contiguous interval of
+every matrix product in the model above, and hits every nonzero scalar
+output. In particular,
+\[
+ K\le \delta w\,k_{\rm geo}(w),
+ \qquad
+ K\le \delta w\,4^{w-1}(w!)^2\quad(w\ge2).
+\]
+In characteristic zero, or characteristic greater than $w\delta$,
+\[
+ K\le4^w k_{\rm geo}(w)
+   \le4^{2w-1}(w!)^2=2^{O(w\log w)}\quad(w\ge2),
+\]
+independently of $\delta$.
+For $w=1$, $K=1$.
+
+If the evaluation field has at least $n^2\delta+1$ elements, a grid gives
+at most
+\[
+ (n^2\delta+1)^{2K}
+\]
+oracle queries. This is polynomial in $n,\delta$ for fixed $w$ in the
+stated characteristic-zero or large-characteristic regime. In every
+characteristic it is polynomial in $n$ for fixed $w,\delta$, including
+the multilinear case $\delta=1$. Extension-field evaluations must be
+permitted when the base field is too small.
+\end{theorem}
+
+\section{The input and elementary consequences}\label{sec:input}
+
+For a polynomial matrix $M$ over a field $E$, work over an algebraic
+closure $k$ of $E$ and define
+\[
+ \mathcal C(M)=
+ \overline{\{\alpha M(x):\alpha\in k,\ x\in k^{|X|}\}}.
+\]
+A restriction fixing all but selected variable blocks to zero is
+\emph{cone preserving} if it leaves this scalar-saturated image closure
+unchanged.
+
+\medskip
+\noindent\textbf{Assumed rank-profile cone theorem.}
+For a width-$w$ product on disjoint variable blocks, suppose every
+contiguous interval has the same generic rank as its constant value.
+A nonzero full product of rank $s$ has a cone-preserving restriction to
+at most $D_w(s)$ original blocks.
+\medskip
+
+The blocks in this input may be singleton variables, which is the case
+used below. The input applies over arbitrary coefficient-field
+extensions.
+
+\begin{lemma}[Cone restrictions and coefficients]\label{lem:cone}
+If a matrix product $M(Y)$ has a cone-preserving restriction retaining
+at most $t$ singleton variables, then the coefficient-matrix span of
+$\bigwedge^r M$ is generated by coefficients of support at most $t$.
+\end{lemma}
+\begin{proof}
+A linear functional on the entries of $\bigwedge^r M$ is homogeneous
+of degree $r$ in the entries of $M$. If it vanishes on every coefficient
+of the restriction, it vanishes on the restricted image cone and hence
+on the full cone. The restricted and full coefficient spaces therefore
+have the same annihilator and are equal. All restricted coefficients
+have support at most $t$. Equality after extending to an algebraic
+closure descends to the original coefficient field.
+\end{proof}
+
+\begin{lemma}[Local Taylor coefficient span]\label{lem:jets}
+Let $H(T)$ be a nonzero polynomial matrix of degree at most $d$.
+Write $q=\dim\operatorname{span}\operatorname{Coeff}(H)$.
+In characteristic zero, or characteristic greater than $d$, there is
+a nonzero polynomial $W_H(C)$ such that, whenever $W_H(c)\ne0$
+in an extension field,
+the coefficients of $T^0,\ldots,T^{q-1}$ in $H(c+T)$ span its full
+joint coefficient-matrix space.
+\end{lemma}
+\begin{proof}
+Choose a basis $C_1,\ldots,C_q$ of the coefficient-matrix space and
+write $H(T)=\sum_{\nu=1}^q f_\nu(T)C_\nu$. The scalar coordinate
+polynomials $f_\nu$ are linearly independent; otherwise the original
+coefficient matrices would span a proper subspace of this basis.
+
+Let $D^{[j]}f(C)$ denote the coefficient of $T^j$ in $f(C+T)$.
+The Hasse-Wronskian
+\[
+ W_H(C)=\det\bigl(D^{[j]}f_\nu(C)\bigr)_{
+                  0\le j<q,\ 1\le\nu\le q}
+\]
+is nonzero in the stated characteristic regime. Indeed, a constant
+basis change makes the $f_\nu$ have distinct degrees
+$d_1<\cdots<d_q\le d$. Its leading determinant coefficient, up to
+the nonzero leading coefficients of the $f_\nu$, is
+\[
+ \det\left(\binom{d_\nu}{j}\right)_{j,\nu}
+   =\frac{\prod_{\mu<\nu}(d_\nu-d_\mu)}
+          {\prod_{j=0}^{q-1}j!}\ne0.
+\]
+Here $q\le d+1$, so every denominator and degree difference is nonzero
+in the stated characteristic. Invertibility at $c$ proves the spanning
+assertion. Translation itself preserves the full coefficient span.
+\end{proof}
+
+\begin{lemma}[From support to total degree]\label{lem:degree}
+Suppose $H_i(Y_i)$ are polynomial matrices on disjoint singleton
+variables and every coefficient of $H_i$ lies in the span of its
+coefficients of degrees at most $\eta$. If $\prod_iH_i$ is concentrated
+in support at most $t$, then its coefficient span is generated in
+total degree at most $\eta t$.
+\end{lemma}
+\begin{proof}
+Expand a spanning coefficient of support at most $t$ as a product of
+local coefficients. Keep every unselected factor's constant coefficient
+unchanged. In the selected factors, expand each coefficient using
+degrees at most $\eta$. Disjointness makes every resulting product an
+actual coefficient of total degree at most $\eta t$.
+Concentration in total degree adds under multiplication of products on
+disjoint variables by the same coefficient-product argument.
+Every nonzero scalar entry of a concentrated matrix has a nonzero
+coefficient among the spanning low-degree coefficients.
+\end{proof}
+
+\begin{lemma}[Moving a low-degree witness]\label{lem:move}
+Let $p(Y)\ne0$ over a coefficient field $E$ have a nonzero homogeneous
+component of degree at most $h$, and let $L$ be invertible and linear.
+Then $p(LX)$ has a nonzero monomial of support at most $h$, and
+$p(L\SV_h)\ne0$.
+\end{lemma}
+\begin{proof}
+An invertible homogeneous linear change is a graded polynomial-ring
+automorphism. It preserves the nonzeroness and degree of each
+homogeneous component. A monomial of degree at most $h$ uses at most
+$h$ variables.
+
+For the last assertion, choose such a nonzero monomial. Set one
+interpolation seed to the abscissa of each variable in its support,
+and set unused amplitudes to zero. This restricts the original
+coordinates to that support, with independent amplitudes in the
+selected coordinates. The chosen coefficient survives. The argument
+works over every extension coefficient field.
+\end{proof}
+
+\section{Proof of Theorem~\ref{thm:orbit}}
+
+Use independent coordinates $Y=LX$. We construct shifts in the
+\emph{original} $X$ coordinates, starting with ranks $w$ and descending.
+All earlier seeds are retained symbolically as coefficient-field
+elements.
+
+\paragraph{Full-rank base case.}
+Take $G_w=\SV_1$. For every nonzero linear form $\ell_i$,
+\[
+ \ell_i(\SV_1)=z_1p_i(y_1),\qquad
+ p_i(y)=\sum_{j=1}^n L_{ij}\lambda_j(y)\ne0.
+\]
+The last inequality follows by evaluating at the abscissas: a nonzero
+row of $L$ cannot give the zero interpolation polynomial.
+Consequently $c_i+z_1p_i(y_1)$ is transcendental over the original
+coefficient field. Every nonzero univariate determinant remains
+nonzero at that argument. A full-rank interval consists of full-rank
+factors, so its determinant, a product of such nonzero factors, survives.
+
+In the characteristic regime of Lemma~\ref{lem:jets}, this same shift
+also makes every nonzero local compound's Hasse-Wronskian nonzero:
+apply the lemma to $H_{i,r}(T)=\bigwedge^r A_i(T)$, whose degree is at most
+$r\delta$ and whose coefficient-space dimension is at most
+$\binom wr^2$. Evaluating its nonzero Wronskian at
+$c_i+\ell_i(G_w)$ cannot kill it.
+These conditions persist after adding fresh shifts, because zeroing
+their amplitudes recovers the preceding nonzero Wronskians.
+
+\paragraph{Inductive coordinate bookkeeping.}
+Suppose $G_{r+1}$ preserves every interval rank greater than $r$.
+Let $E$ be its rational seed field. In independent residual coordinates
+$Y$, replace each local factor by
+\[
+ \widetilde A_i(Y_i)=
+ A_i\bigl(Y_i+c_i+\ell_i(G_{r+1})\bigr).
+\]
+These factors still use disjoint singleton $Y$ variables and have
+degree at most $\delta$. Their generic ranks agree with the original
+interval ranks, and their values at $Y=0$ are exactly the interval
+values at the old original-coordinate shift.
+
+Every local compound $\bigwedge^r\widetilde A_i$ has its full coefficient
+span generated by degrees at most $\eta_r$. In the unrestricted
+characteristic case this is its degree bound $r\delta$.
+In the good-characteristic case, Lemma~\ref{lem:jets} and the maintained
+Wronskian give degrees at most $q_{i,r}-1$, where
+\[
+ q_{i,r}-1\le
+ \min\left\{r\delta,\binom wr^2-1\right\}.
+\]
+Identically zero compounds are trivial, and constant factors need only
+their degree-zero coefficients.
+
+For a minor $p(Y)$ of such a residual product, the polynomial
+$p(LX)$ is the corresponding minor after the residual original
+coordinate shift $X\mapsto X+G_{r+1}$. The affine constants have
+already been absorbed above. The remaining substitution $Y=LX$
+is homogeneous and invertible.
+
+\paragraph{Local witnesses.}
+Fix an interval of generic rank $r$. Greedily write it as
+\[
+ B_1\cdots B_mT,\qquad B_j=C_jA_{e_j},
+\]
+where each $B_j$ is a shortest rank-$r$ prefix and each $C_j$, and the
+tail $T$, has rank greater than $r$ or is empty. Every interval within
+a higher-rank run has rank greater than $r$ and is already preserved
+at residual zero.
+
+The assumed cone theorem restricts each such run to at most $b_r$
+singleton $Y$ variables while preserving its cone.
+Lemmas~\ref{lem:cone} and~\ref{lem:degree} concentrate its $r$-th
+compound in total degree at most $\eta_r b_r$.
+A local final factor's compound is concentrated in total degree at most
+$\eta_r$. Composition on disjoint $Y$ variables gives
+\[
+\begin{array}{c|ccc}
+ \text{product}&B_j&B_jB_{j+1}&B_mT\\ \hline
+ \text{compound total-degree bound}
+   &\eta_r(b_r+1)&\eta_r(2b_r+2)&\eta_r(2b_r+1).
+\end{array}
+\]
+Each product has generic rank $r$, so it has a nonzero $r$-minor.
+Such a minor has a nonzero homogeneous component of degree at most
+\[
+ h_r=\eta_r(2b_r+2).
+\]
+Lemma~\ref{lem:move} shows that a fresh $\SV_{h_r}$ in the residual
+original $X$ coordinates preserves it. This holds for all local
+witnesses in their common symbolic seed field.
+
+\paragraph{Completing an interval.}
+At this specialization write $B_j=U_jV_j$ through rank $r$.
+Adjacent-pair preservation makes every $V_jU_{j+1}$ invertible, and
+the separate $B_mT$ witness makes $V_mT$ full row rank. Therefore
+\[
+ U_1(V_1U_2)\cdots(V_{m-1}U_m)(V_mT)
+\]
+has rank $r$. The argument includes $m=1$ and an empty tail.
+
+Set $G_r=G_{r+1}+\SV_{h_r}$. Previously preserved minors remain
+nonzero because setting all new amplitudes to zero recovers the old
+map. Specialization cannot increase rank. This proves the descending
+induction simultaneously for every interval. Additivity gives
+$G_1=\SV_K$.
+
+For a scalar output, insert the constant matrices $e_1u$ and $ve_1^T$.
+The augmented full product is $fE_{11}$, whose rank is one when
+$f\ne0$. This proves scalar hitting with the same width and seed count.
+
+\paragraph{Size and finite grid.}
+Since $r\le w$ and $\delta\ge1$,
+\[
+ K\le\delta w\left(1+\sum_{r<w}(2b_r+2)\right).
+\]
+The recurrence for $D_w$ gives the previously established estimate
+$k_{\rm geo}(w)\le4^{w-1}(w!)^2$ for $w\ge2$.
+In the good-characteristic regime, $\eta_r\le\binom wr^2-1<4^w$
+gives $K\le4^w k_{\rm geo}(w)$.
+The scalar polynomial has total degree at most $n\delta$, including
+after the affine change. Each SV coordinate has total seed degree
+at most $n$. Thus $f(\SV_K)$ has degree at most $n^2\delta$.
+A product grid with $n^2\delta+1$ values for each of its $2K$ seeds
+hits this nonzero polynomial. These values may overlap the abscissas.
+
+\section{Scope and comparison}
+
+The cases $n=0$ or $\delta=0$ are constant-polynomial models and need
+one evaluation; the displayed nontrivial parameter bound assumes
+$n,\delta\ge1$. The proof is characteristic independent. The use of
+an invertible $L$ is essential to Lemma~\ref{lem:move}; no statement
+about singular affine projections or orbit closures follows.
+A fixed common diagonal shift cannot replace the first SV pair for
+unknown $L$: a nonzero linear form can vanish on that diagonal.
+The Wronskian improvement is not asserted in small characteristic:
+for example, the independent polynomials $1,T^p$ have a singular
+matrix of their first two Taylor coefficients in characteristic $p$.
+
+\begin{remark}[Elementary fallback]
+The qualitative fixed-width conclusion does not require the geometric
+input if one instead assumes the elementary rank-profile concentration
+theorem from the main manuscript. For each $r$, let $W_r=\binom wr$,
+$\mathcal R_r=\{\binom sr:r<s\le w\}$, and let $M_r$ be its stated
+concentration bound for higher-rank runs after taking the $r$-th
+compound. Replace $b_r$ everywhere in the proof by $M_r$; the cone lemma
+is then unnecessary. The same argument uses
+\[
+ K_{\rm elem}=1+\sum_{r<w}\eta_r(2M_r+2).
+\]
+In good characteristic this is at most $4^w k_{\rm elem}(w)$, where
+$k_{\rm elem}(w)=1+\sum_{r<w}(2M_r+2)=2^{O(w^2)}$ is the elementary
+main-manuscript budget. Thus polynomial query complexity in $n,\delta$
+for fixed $w$ already follows from the elementary input; the cone
+theorem improves the width dependence to $2^{O(w\log w)}$.
+\end{remark}
+
+For comparison, Saha and Thankey give quasipolynomial hitting sets for
+orbits of multilinear constant-width ROABPs~\cite{ST21}.
+Bhargava and Ghosh give the stronger unknown-order orbit bound
+$(ndw)^{O(w^2\log n\min\{w^2,d\log w\})}$ in characteristic zero or
+greater than $d$~\cite{BG21}. At fixed width and fixed preimage individual
+degree, these verified bounds are quasipolynomial, whereas the
+cone-theorem consequence above is polynomial. In the stated
+good-characteristic regime it is also polynomial in the preimage degree
+for each fixed width. This comparison does not
+assert that no later result exists.
+
+\begin{thebibliography}{2}
+\bibitem{ST21}
+C. Saha and B. Thankey.
+\emph{Hitting Sets for Orbits of Circuit Classes and Polynomial Families}.
+APPROX/RANDOM 2021, Article 50, especially Theorem 8.
+\url{https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2021.50}.
+\bibitem{BG21}
+V. Bhargava and S. Ghosh.
+\emph{Improved Hitting Set for Orbit of ROABPs}.
+APPROX/RANDOM 2021, Article 30.
+\url{https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2021.30}.
+\end{thebibliography}
+\end{document}

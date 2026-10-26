@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "last_updated": "2026-10-26",
+  "last_updated": "2026-10-27",
   "policy": {
     "executable_evidence_has_explicit_scope": true,
     "finite_checks_are_formal_verification": false,
@@ -787,6 +787,52 @@
           "No general Turing bit-complexity bound, deterministic construction, or exhaustive historical-priority claim is made."
         ]
       }
+    },
+    {
+      "id": "roabp-affine-pit",
+      "path": "problems/roabp-affine-pit",
+      "evidence_note": "problems/roabp-affine-pit/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "problems/roabp-affine-pit/verify/check_source_bindings.py",
+          "scope": "Exact original/canonical source hashes and reversibility of recorded publication edits; provenance only."
+        },
+        {
+          "path": "problems/roabp-affine-pit/verify/build_native_papers.py",
+          "scope": "Saved native-TeX/PDF/source/style and full-page visual-review bindings; presentation evidence only."
+        },
+        {
+          "path": "problems/roabp-affine-pit/verify/all_rank_affine_orbit.py",
+          "scope": "Exact arithmetic, genuine mixed-rank promised witnesses, working-field grids and complete versus interrupted traversal in Q and finite fields; no exhaustive large-grid test. The implementation uses Q or constructed prime-field extensions; it does not implement arbitrary-base-field embeddings."
+        },
+        {
+          "path": "problems/roabp-affine-pit/verify/check_palette_sharpness.py",
+          "scope": "Exact integer-polynomial multiplication for all 127 rank palettes through width seven; construction examples, not the upper-bound theorem."
+        },
+        {
+          "path": "problems/roabp-affine-pit/verify/check_artin_reset.py",
+          "scope": "Explicit Artin-ring minor, reset, reachability and source-budget examples over Q and F2; finite evidence only."
+        },
+        {
+          "path": "problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py",
+          "scope": "Exact separating-curve exponents, smaller rank-one/full width budgets, rational and constructed prime-field extension arithmetic, and traversal semantics; no arbitrary-base-field embedding API."
+        },
+        {
+          "path": "problems/roabp-affine-pit/verify/check_quadratic_hasse.py",
+          "scope": "Independent exact coefficient-basis, determinant, residual and degree checks for widths two through ten and three qualifying primes per width; finite evidence for a separately proved construction."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The complete general fixed-width affine-orbit PIT proof and direction-grid refinement have separate exact-source internal reconstructions, including a fresh-context review of the weighted Artin induction. Arbitrary local ranks, unrestricted local entry degrees and every characteristic are covered.",
+        "date": "2026-10-27",
+        "conditions": [
+          "The promise is one unknown-order ROABP under an invertible affine map, with a known scalar total-degree bound; small base fields require extension-field oracle access.",
+          "The polynomial query exponent depends on width; no FPT, unbounded-width polynomial-time, singular-projection or orbit-closure claim is made.",
+          "The generic Hasse pivot criterion is standard and attributed. Internal model-assisted review, finite tests and presentation checks are not external peer review, proof-assistant verification or priority certification."
+        ]
+      }
     }
   ],
   "supporting_records": [
@@ -988,6 +1034,51 @@
         "date": "2026-10-26",
         "conditions": [
           "The input state supplies constructive factor-critical witnesses. Ordinary bipartite matching suffices; the named published almost-linear flow theorem is an optional faster construction. A bound on the remaining optimum gap does not bound the entire retained graph."
+        ]
+      }
+    },
+    {
+      "id": "roabp-palette-sharpness",
+      "path": "problems/roabp-affine-pit/manuscripts/palette-sharpness.md",
+      "evidence_note": "problems/roabp-affine-pit/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "problems/roabp-affine-pit/verify/check_palette_sharpness.py",
+          "scope": "All 127 palettes through width seven by exact integer polynomial multiplication."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The general palette lower construction and original-field degree-two actual-curve lift have complete internal proofs, matching the separately proved concentration threshold. The uniform active-endpoint subcase retains its sharper exact threshold.",
+        "date": "2026-10-27",
+        "conditions": [
+          "Interval preservation concerns physical matrix words; the augmented scalar interval is excluded when the scalar vanishes on the initial curve.",
+          "The examples survive one SV pair, so the result is not a PIT or generator lower bound.",
+          "Internal review and finite identities do not constitute external peer review or formal verification."
+        ]
+      }
+    },
+    {
+      "id": "roabp-quadratic-hasse-obstruction",
+      "path": "problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md",
+      "evidence_note": "problems/roabp-affine-pit/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "problems/roabp-affine-pit/verify/check_quadratic_hasse.py",
+          "scope": "Exact integer coefficient bases and Bareiss determinants, plus three prime fields for every width two through ten; no author verifier imported."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The binomial determinant formula and original-field actual-curve construction have a complete symbolic proof and a separate internal reconstruction. The first ordinary homogeneous component has digit degree exactly w²−1.",
+        "date": "2026-10-27",
+        "conditions": [
+          "Width w≥2 and prime characteristic p>w²+w−2; the construction uses n=p coordinates and scalar total degree 2p(w−1).",
+          "The curve is the ordinary moment curve, whose p-th coordinate has zero derivative. This is not a counterexample to a derivative-separating-curve theorem.",
+          "Every physical interval preserves full rank. The endpoint-augmented scalar interval does not. One SV pair detects the example, so no PIT or generator lower bound is asserted.",
+          "The audit is internal model-assisted reconstruction, not external peer review, formal certification or priority determination."
         ]
       }
     }

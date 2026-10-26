@@ -1,5 +1,14 @@
 # History
 
+## 2026-10-27 — Fixed-width affine ROABP identity testing
+
+- Added a complete deterministic black-box PIT proof for one unknown-order ROABP under an unknown invertible affine change, with arbitrary local ranks and degrees in every characteristic. The explicit query bound is polynomial in the variable count and scalar total degree for each fixed width; the width-dependent exponent is stated prominently.
+- Added the finite direction-grid refinement, complete native-TeX sources and two papers in the shared repository style. The 12-page core and 5-page addendum have separate exact-source internal audits and full-page visual review. Publication changes reverse to the frozen research-session source hashes.
+- Preserved stronger small-width, good-characteristic and rank-restricted results under their exact assumptions. Added exact palette-support constructions and their degree-two actual-curve lift, with explicit physical-interval and non-PIT-lower-bound scope.
+- Added an original-field actual-curve construction attaining local Hasse digit degree w²−1, with a complete determinant proof and independent finite checks. This bounds a local proof interface; the examples are detected by one SV pair and give no PIT lower bound.
+- Added separate general and rank-one/full exact-arithmetic generator prototypes, finite palette and Artin-ring checks, source bindings and scoped evidence records. The implementation uses the rationals or constructed prime-field extensions and leaves arbitrary-base-field embeddings to the theorem's oracle model. The separate review of the named rigidity preprint records concrete defects in its identified statements without using them to certify this proof.
+- Made this the third selected result after deterministic general-graph matching and deterministic Subset Sum. Cone sparsification and all earlier families remain in the complete catalogue. No external peer review, proof-assistant certification or exhaustive priority verification is claimed.
+
 ## 2026-10-26 — Barrier-parameter cone sparsification
 
 - Integrated the complete English LaTeX proof of O(nu/epsilon^2) cone-order sparsification for arbitrary proper cones with an ordinary nu-logarithmically homogeneous standard self-concordant barrier, including boundary sums. The corresponding prior general barrier theorem was quadratic in nu; the stronger pairwise-self-concordant bound is credited separately.

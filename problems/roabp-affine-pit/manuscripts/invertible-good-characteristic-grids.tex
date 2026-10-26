@@ -1,0 +1,251 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\F}{\mathbb F}
+\newcommand{\SV}{\operatorname{SV}}
+\title{Polarization and Degree-Independent Direction Grids\\
+for Rank-One or Invertible Affine Words}
+\author{Yilin Liu \and GPT-6 Astra Pro}\date{26 October 2026}
+\begin{document}\maketitle
+\begin{abstract}
+For local ranks one or \(w\), the constant-rowspace concentration
+theorem gives an affine-orbit hitting map with \(2w-1\) seeds in
+characteristic zero or characteristic greater than the local
+entry-degree bound. This note chooses its direction grids
+independently of that degree.
+The lowest homogeneous term of each scalar numerator has individual
+degrees below the characteristic, so its full polarization is nonzero
+even when its total degree is at least the characteristic.
+The coefficient is governed by a product of individual factorials,
+not the factorial of the total degree.
+For fixed \(w\), this gives
+\(O_w(n^{2w-1}D^w)=O_w(n^{3w-1}\delta^w)\) oracle queries,
+where \(D=n\delta\).
+\end{abstract}
+
+\noindent\textbf{Status.}
+This quantitative argument has independent model-assisted internal
+reconstructions and an exact-source audit. This is not external
+peer review, and no publication-priority claim is made.
+
+\section{Setting and theorem}
+
+Let \(n,w,\delta\ge1\).
+Assume \(\operatorname{char}\F=0\) or
+\(\operatorname{char}\F=p>\delta\).
+Consider a nonzero polynomial
+\[
+ f(X)=uA_1(\ell_1(X)+c_1)\cdots A_n(\ell_n(X)+c_n)v,
+\]
+where \(u,v\) are constant endpoints, \(L=(\ell_1,\ldots,\ell_n)\)
+is invertible and linear, and each \(w\)-by-\(w\) polynomial matrix
+\(A_i(T)\) has entry degree at most \(\delta\) and generic rank
+one or \(w\).
+The degree bound is on a representation with this rank pattern;
+a scalar individual-degree promise alone does not suffice.
+
+We use \emph{Constant Row Spaces and Low-Degree Concentration for
+Invertible Affine ROABP Words}, in
+\path{invertible_affine_constant_space_concentration.tex}.
+Its structural theorem is the only dependency.
+Write \(D=n\delta\), fix \(n\) distinct interpolation abscissas,
+and let \(\lambda_i(y)\) be the Lagrange basis. Put \(k=w-1\) and
+\[
+ \mathcal H_i(t,\boldsymbol y,\boldsymbol z)
+ =t^i+\sum_{j=1}^{k}z_j\lambda_i(y_j).
+\]
+
+\begin{theorem}\label{thm:grid}
+For each \(1\le j\le k\), choose arbitrary sets \(Y_j,Z_j\subseteq\F\)
+with
+\[
+ |Y_j|=n^2,\qquad |Z_j|=D+1.
+\]
+Choose a set \(T\subseteq\F\) with \(|T|=nD+1\).
+Elements within each set are distinct; the sets may overlap.
+The Cartesian evaluations of \(\mathcal H\) hit every nonzero
+polynomial in the stated class.
+The number of oracle queries is at most
+\begin{equation}\label{eq:count}
+ n^{2w-2}(nD+1)(D+1)^{w-1}
+ =O_w(n^{2w-1}D^w)=O_w(n^{3w-1}\delta^w).
+\end{equation}
+A working field of at least \(nD+1\) elements suffices.
+\end{theorem}
+
+For \(w=1\) there are no direction or amplitude parameters and
+the displayed product of their grids is empty.
+If \(n=0\) or \(\delta=0\), one evaluation handles the constant case.
+Over a smaller field one may pass to a sufficiently large extension,
+provided oracle evaluations there are available.
+
+\section{Polarization without a total factorial}
+
+\begin{lemma}\label{lem:polar}
+Let \(K\) be any field, and let \(0\ne H(Y)\in K[Y_1,\ldots,Y_n]\)
+be homogeneous of degree \(m\).
+Assume characteristic zero, or that every exponent of every
+nonzero monomial of \(H\) is strictly less than
+\(p=\operatorname{char}K\).
+For \(m\) independent vector variables \(V_1,\ldots,V_m\), define
+\[
+ \mathcal P_H(V_1,\ldots,V_m)
+ =[z_1\cdots z_m]\,
+ H\!\left(\sum_{j=1}^m z_j V_j\right).
+\]
+Then \(\mathcal P_H\ne0\) and is multilinear in the vector arguments.
+For any invertible linear map \(L\),
+\[
+ \mathcal P_{H\circ L}(V_1,\ldots,V_m)
+ =\mathcal P_H(LV_1,\ldots,LV_m)\ne0.
+\]
+\end{lemma}
+\begin{proof}
+Write \(H=\sum_{|\alpha|=m}h_\alpha Y^\alpha\).
+Fix an ordered tuple \(i_1,\ldots,i_m\) in which index \(i\)
+occurs \(\alpha_i\) times. The coefficient of
+\[
+ \prod_{j=1}^m (V_j)_{i_j}
+\]
+in \(\mathcal P_H\) is exactly
+\[
+ h_\alpha\prod_{i=1}^n\alpha_i!.
+\]
+Indeed each group of \(\alpha_i\) distinct amplitude variables
+assigned to \(Y_i^{\alpha_i}\) contributes its own
+multinomial factor \(\alpha_i!\).
+The ordered vector monomial determines \(\alpha\), so different
+input monomials do not cancel this coefficient.
+
+For a nonzero \(h_\alpha\), every \(\alpha_i!\) is nonzero under
+the hypothesis. Hence \(\mathcal P_H\ne0\).
+This calculation neither divides by \(m!\) nor assumes \(m<p\).
+The covariance identity follows directly by substitution, and
+invertibility in every vector argument preserves nonzeroness.
+\end{proof}
+
+\begin{lemma}\label{lem:directions}
+Under the hypotheses of Lemma~\ref{lem:polar}, the polynomial
+\[
+ \mathcal P_H(L\lambda(y_1),\ldots,L\lambda(y_m))
+\]
+is nonzero and has degree at most \(n-1\) in each direction
+variable, where \(\lambda(y)=(\lambda_1(y),\ldots,\lambda_n(y))\).
+The assertion holds over any coefficient-field extension.
+\end{lemma}
+\begin{proof}
+The nonzero polarized form after \(L\) is a tensor in \(m\)
+independent vector arguments. Substituting the independent basis
+polynomials \(\lambda_i(y_j)\) in the \(j\)-th argument is an
+injective linear map for each argument. Their tensor product
+is injective, so the result stays nonzero.
+Multilinearity gives the individual degree bound \(n-1\).
+\end{proof}
+
+The transformed polynomial \(H\circ L\) may have exponents at least
+\(p\). This does not invalidate the argument: the nonzero polarization
+is established before the substitution and then transported by the
+displayed covariance identity.
+
+\section{Apply the tensor coefficient to every scalar segment}
+
+As in the structural theorem, split each rank-one local factor
+by a nonzero pivot:
+\[
+ R(T)=(R(T)e_b)\bigl(e_a^{\mathsf T}R(T)/h(T)\bigr),
+ \qquad h=R_{ab}\ne0.
+\]
+Keep the scalar denominator \(h\) outside the numerator word.
+If there are \(r\le n\) rank-one factors, this gives \(r+1\le n+1\)
+nonzero scalar numerators, together with nonzero univariate
+denominators.
+
+Each numerator has an invertible middle run and polynomial
+univariate endpoint vectors of degree at most \(\delta\).
+Completing these endpoints with constant standard basis vectors
+preserves the degree bound.
+Every original variable occurs once within a numerator, though
+neighboring numerators may share boundary variables.
+Consequently each numerator has individual latent degree at most
+\(\delta\).
+
+Set \(\gamma_i(t)=t^i\) and
+\(C_i(t)=c_i+\ell_i(\gamma(t))\).
+Every \(C_i\) is transcendental over \(\F\).
+Work over \(E=\F(t)\).
+The structural concentration theorem gives, for each numerator
+vanishing at \(C\), a lowest nonzero homogeneous residual term
+\[
+ H_\nu(Y)\quad\text{of degree }1\le m_\nu\le k=w-1.
+\]
+Its individual degrees remain at most \(\delta\).
+In characteristic \(p>\delta\), these are all strictly below \(p\).
+Lemma~\ref{lem:polar} therefore gives a nonzero full polarization.
+
+After the original-coordinate substitution
+\[
+ Y=L\left(\sum_{j=1}^{k}z_j\lambda(y_j)\right),
+\]
+the coefficient of \(z_1\cdots z_{m_\nu}\), with every other
+amplitude exponent zero, is the nonzero polynomial
+\[
+ P_\nu(y_1,\ldots,y_k)
+ =\mathcal P_{H_\nu}
+       (L\lambda(y_1),\ldots,L\lambda(y_{m_\nu})).
+\]
+It does not depend on unused direction variables.
+Every higher homogeneous residual term has larger total amplitude
+degree, so it cannot alter this coefficient.
+By Lemma~\ref{lem:directions},
+\[
+ \deg_{y_j}P_\nu\le n-1
+ \quad\text{for every }j.
+\]
+If a numerator is already nonzero at \(C\), use its nonzero
+constant amplitude coefficient for \(P_\nu\).
+
+The product \(P=\prod_\nu P_\nu\) is nonzero over \(E\), and
+\[
+ \deg_{y_j}P\le(n+1)(n-1)=n^2-1
+ \quad\text{for every direction }j.
+\]
+Thus every Cartesian product of \(n^2\)-point direction grids
+contains a tuple for which \(P\ne0\).
+At that tuple every scalar numerator stays nonzero as a rational
+function of \(t,\boldsymbol z\).
+All pivot denominators stay nonzero as well: their constant
+amplitude terms are the nonzero \(h(C_i(t))\), independently
+of the chosen directions.
+Their exact product identity proves that the original polynomial
+is nonzero after those direction choices.
+
+\section{Final evaluation count}
+
+\begin{proof}[Proof of Theorem~\ref{thm:grid}]
+Choose the direction tuple established above.
+The original polynomial \(f(\mathcal H)\) is then nonzero in
+\(t,z_1,\ldots,z_k\).
+Its individual degrees are at most \(nD\) in \(t\) and at most
+\(D\) in every amplitude. Therefore it cannot vanish on
+\(T\times Z_1\times\cdots\times Z_k\).
+The full Cartesian search includes that tuple and hence hits \(f\).
+Counting all direction and remaining seed values gives
+\eqref{eq:count}.
+
+Since \(D=n\delta\ge n\), we have \(nD+1\ge n^2+1\), as well
+as \(D+1\) and \(n\). This field size supplies all grids and
+interpolation nodes.
+The actual queries evaluate the original polynomial; they need
+not separately avoid numerical zeros of auxiliary pivot
+denominators used only in the symbolic proof.
+\end{proof}
+
+This addendum changes only the finite grid. The characteristic
+hypothesis and local-rank promise are unchanged.
+It does not convert latent digit-weight concentration into an
+all-characteristic affine hitting theorem.
+\end{document}

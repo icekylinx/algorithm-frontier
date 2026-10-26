@@ -1,0 +1,429 @@
+FRESH EXACT-SOURCE ADVERSARIAL MATHEMATICAL AUDIT
+Internal model-assisted audit; not external human peer review
+Date: 26 October 2026
+
+SOURCE AUDITED
+  fresh-round-20261026/complexity/general_affine_roabp_all_characteristics.tex
+  845 lines
+  SHA-256:
+  9864136e134bbc9c3f35d8d0f1fb7595cf40c397e01d0247173956795f0c695f
+
+The hash was checked directly. The source was not modified. I read the
+complete candidate source before forming this report and did not read any
+existing audit report or another agent's mathematical verdict. No external
+person was contacted, and nothing was uploaded. This report assesses the
+self-contained argument; it does not verify the bibliography, novelty,
+priority, or the manuscript's statements about earlier internal reviews.
+
+1. VERDICT AND ITS LIMITS
+
+I did not identify a fatal mathematical flaw or an exact missing mathematical
+assumption in this source. In particular, the intended objections concerning
+future-dependent controls, loss of support through the zero reset, circular
+same-level induction, correlated shifts in the Hasse argument, and the
+adjacent-block rank descent did not produce a counterexample after explicit
+reconstruction.
+
+This is a limited negative finding from an internal model-assisted audit,
+not certification of the theorem, not an independent human referee report,
+and not a claim that a gap cannot remain. The weighted stable-phase lemma
+is the central and least routine dependency. I reconstructed its quantitative
+induction below rather than treating its statement as established.
+
+I also constructed a width-four example in which the constant passive
+product is zero but the corrected passive response is nonzero. The stated
+controlled reset cancels that response exactly. Cleared-denominator identities
+for this example were checked by exact sparse-polynomial arithmetic over
+Z[b,x,y], so that calculation has no floating-point or characteristic-zero
+division assumption. It is a stress test, not a proof of the general lemma.
+
+2. DEPENDENCY STRUCTURE
+
+The main claim depends on the following chain, all present in this source:
+
+  (a) coefficient-span closure and unit-rank graph factorization;
+  (b) the weighted stable-phase lemma, including positive-passive induction
+      and zero-passive reset/source reduction;
+  (c) palette row concentration in finite monomial Artin rings;
+  (d) a separate box quotient for each selected leading monomial;
+  (e) generic Hasse pivot closure and specialization at individually
+      transcendental shifts;
+  (f) detection of a leading component of bounded digit degree by SV;
+  (g) descending preservation of all interval ranks using compound matrices,
+      conditioned prepared chunks, adjacent-block tests, and a tail test;
+  (h) interpolation using only the total degree of the original scalar.
+
+The support bound and the exponent bound are genuinely separate. The proof
+does not infer either one merely from the existence of a convenient
+unfiltered coefficient. This separation is essential for its conclusion.
+
+3. ARTIN COEFFICIENT SPANS AND UNIT-RANK GRAPHS
+   Source lines 132-193.
+
+The coefficient-span lemma is valid in the stated tensor product of finite
+monomial quotients. In a product HF, every coefficient row is a field-linear
+combination of coefficient rows of F. Multiplication by scalar polynomials
+that involve variables occurring later in the word has the same property.
+This is a statement about coefficient spans in the full tensor ring; it
+does not assert preservation of support cost.
+
+For a square H with invertible constant matrix, its inverse exists because
+the augmentation ideal is nilpotent. Applying the inclusion to H and H^{-1}
+gives equality of coefficient-row spans. The monomial quotient does not
+identify a high monomial with a lower one, so the interpretation of actual
+coefficients used later is preserved.
+
+For an interval matrix with constant rank s and vanishing (s+1)-minors,
+an s-by-s block with nonzero constant determinant is a unit. The bordered
+minor identity then proves D=CE_0^{-1}B over the ring itself. Consequently
+a row in the row module of that interval is determined by its active s
+coordinates. This uses no fraction field of the Artin ring and remains
+valid with zero divisors. The cases s=0 and s=W behave as asserted.
+
+Constant invertible cutwise gauges telescope on intervals and preserve
+the unit pivots and larger-minor identities. No polynomial gauge with
+uncontrolled support is used for this step.
+
+4. RECONSTRUCTION OF THE KERNEL DYNAMICS
+   Source lines 217-287.
+
+I interpret S_i, as required by the wording, as the coefficient-row span
+obtained from S_0 by the first i matrices. Disjoint variable blocks imply
+S_i=Coeff(S_{i-1} A_i). This equality is necessary here and is available
+under the stated hypotheses.
+
+Since the constant active block is I_a, constant-prefix propagation keeps
+the active row matrix H unchanged. If the active projection of S_i is T,
+then S_i decomposes as rowspan(B_i) plus its passive kernel. For d=rank H,
+choose J with HJ=I_d. The active part of B_{i-1} A_i has all its coefficient
+rows in T, so it equals R_i H with R_i(0)=I_d. In particular R_i is a unit
+over the current block's Artin ring.
+
+Writing B_{i-1,p}=B_p, the normalized row matrix has passive part
+
+  (W_i)_p = H C_i + R_i^{-1} B_p F_i.
+
+For p in K_{i-1}, active stability gives pD_iE_iJH=pD_iE_i. Therefore direct
+subtraction yields
+
+  (0,p)A_i - (pD_iE_iJ)W_i
+    = (0, p(I-D_iE_iJR_i^{-1}B_p)F_i).
+
+This is precisely the corrected passive operator in the manuscript. All
+coefficients of the subtracted row belong to the available coefficient-row
+span. Normalization by R_i and R_i^{-1} preserves the span. Subtracting
+constant B_i rows then establishes both inclusions in the displayed kernel
+recurrence, not merely one inclusion.
+
+For a state a_{i-1} B_{i-1}+(0,p_{i-1}), the two evolution formulas follow by
+the same calculation. They remain exact for polynomial scalar controls,
+provided p_{i-1} is coefficientwise in K_{i-1}. The d=0 case is separate
+and does not require a nonexistent right inverse.
+
+The claim that each coefficient of Z_i has weighted prefix cost at most
+one is also justified: B_{i-1} is the constant-prefix propagation of the
+original zero-cost B_0, and R_i^{-1} uses only block i. Normalization can
+raise the degree inside block i, but cannot introduce another block into
+its support. Subtracting B_i costs zero.
+
+5. FUTURE-DEPENDENT CONTROLS AND THE ZERO RESET
+   Source lines 289-318.
+
+Let Q_c...Q_e=0. The constant full interval is diag(I_a,0), so its assumed
+unit rank is a and its active pivot is a unit. For fixed p in K_{c-1}, write
+the active part of (0,p)P as L H. Write the active part of B_{c-1}P as
+R H, with R(0)=I_d. Both coefficientwise factorizations follow from active
+stability. The initial control
+
+  a_{c-1} = -L R^{-1}
+
+is defined in the interval tensor ring. It can depend on every interval
+variable. Its controlled full output has zero active part; the row-graph
+identity makes its entire output zero. The final active coordinate is zero
+because H has a right inverse. Unrolling the exact passive evolution gives
+the manuscript's reset, with no final Z_e term.
+
+The future dependence is not an algebraic reachability obstruction. A
+coefficientwise reachable state multiplied by an arbitrary scalar in the
+full tensor ring still has every coefficient row in the same field-vector
+space. Multiplication by the already traversed matrices preserves this
+statement. At each cut, extracting and subtracting the active lift leaves
+a coefficientwise passive remainder in K_i. This does not require the
+control to be supported only on past variables.
+
+However, it would be invalid to charge this control a bounded support
+cost. The source explicitly avoids that inference. It uses the reset only
+to obtain an unweighted coefficient-span inclusion and later pays for
+sources using actual one-block witnesses. This distinction closes the
+most obvious attempted attack on the proof.
+
+6. POSITIVE-PASSIVE INDUCTION AND SUPPORT ACCOUNTING
+   Source lines 319-363 and 391-400.
+
+Suppose q=rank(Q_1...Q_n)>0 and b=a+q. The b here is the rank of the full
+constant interval, hence belongs to the palette. The proposed persistent
+passive core is valid. On U_i=U_0Q_1...Q_i, the suffix map is injective and
+maps onto U_n. For V_i defined as the inverse image of V_n under that suffix
+map, the induced map into the quotient by V_n is surjective on U_i.
+Therefore dim V_i=k-q and U_i intersects V_i trivially. Each Q_i preserves
+these splittings. Bases propagated along U_i make its constant action the
+identity. Thus all constants can indeed be put in the enlarged block form
+diag(I_a,I_q,Q'_i).
+
+The enlarged active projections are nested: multiplication by the constant
+part of the next matrix retains the same enlarged active coordinate for
+every previously reachable row. Their dimensions start at d+beta and can
+never exceed d+q, since projection onto the old a coordinates remains the
+fixed d-dimensional T. Hence there are at most q-beta strict growth cuts.
+
+Between these growth cuts, the hypotheses of the weighted lemma hold at
+the strictly larger palette level b. The matrices are contiguous subwords
+of the original matrices, not products of corrected passive operators.
+Their interval rank identities therefore persist. A field-constant gauge
+and a new initial reachable row space do not alter that fact.
+
+The support recurrence is sound. If active lifts are linear combinations
+of prefix coefficients of weighted cost at most L, and passive-kernel
+generators have cost at most L+1, induction at level b spans a stable
+subphase with cost at most L+G(b). Prefix witnesses and the subsequent
+subphase variables occupy disjoint blocks, so multiplying their actual
+coefficient witnesses adds support bounds. The next growth cut consumes
+one new block and allows both the new lifts and new kernel generators
+to be chosen within L+G(b)+1. Linear algebra selection and subtraction
+do not increase that cost. Empty stable phases cause no difficulty.
+
+If beta=0, the initial costs are 0 and 1. At most q growth cuts yield
+
+  (q+1)G(b)+q = (q+1)(G(b)+1)-1 <= G(a).
+
+If beta>=1, all enlarged active lifts can be assigned cost 1; the remaining
+kernel has actual cost at most 1 and hence satisfies the allowed cost 2.
+At most q-beta growth cuts yield
+
+  1+(q-beta+1)G(b)+(q-beta)
+    = (q-beta+1)(G(b)+1)
+    <= q(G(b)+1) <= G(a).
+
+The last inequality follows from
+G(a)+1 >= (q+1)(G(b)+1), because G(b)>=0. There is no missing +1 in either
+case. Every invocation in this positive-passive proof is at level b>a,
+so this part is genuinely inductive on palette levels.
+
+7. ZERO-PASSIVE SOURCE REDUCTION AND THE PAID SOURCE COST
+   Source lines 365-389.
+
+Take c maximal with Q_c...Q_n=0. Unrolling the kernel recurrence at c gives
+the initial term K_{c-1} times the corrected interval and the sources
+Z_j times their corrected suffixes for j>=c. Applying the reset to each
+constant generator of K_{c-1} absorbs that initial term into the source
+coefficient spans. Multipliers in the reset may be complicated, but scalar
+coefficient-span closure is enough for this unweighted absorption.
+
+Every suffix after a source j>=c has positive passive constant rank; the
+empty suffix has rank k. Since Z_j uses only block j, the source response
+is generated by responses from its individual coefficient rows p. Restart
+the actual suffix from rowspan(B_j)+(0,span(p)). Its old active projection
+is T: containment in global reachability supplies the upper bound, while
+the constant-prefix B_j rows supply all of T. Its B_i and normalized
+operators are the same as in the original evolution. The kernel recurrence
+therefore contains every coefficient of p times the corrected suffix.
+
+The already established positive-passive case supplies weighted budget
+G(a) for this restart. Its B_j outputs use at most G(a) suffix blocks;
+its p outputs use at most G(a)-1 suffix blocks. In the original prefix,
+B_j costs zero and (0,p) costs at most one, by the local Z_j calculation.
+The source block and suffix blocks are disjoint. Thus both output types
+have total original weighted cost at most G(a).
+
+In particular, no support bound on a reset control is being smuggled into
+this last step. The same-level call is to the positive-passive case just
+proved solely using higher levels; it is not a recursive call to the
+unproved zero-passive case. I found no circularity here.
+
+8. ROW CONCENTRATION AND THE BOX FILTER
+   Source lines 403-463.
+
+At a=0 with initial passive row u of weight one, the weighted bound
+G(0) becomes ordinary support bound G(0)-1, exactly the displayed palette
+product minus two. If the whole interval has unit rank zero, it is actually
+the zero matrix in the Artin ring, so there is no exceptional nonzero
+coefficient row.
+
+For a selected nonzero leading coefficient g_alpha, the tensor box with
+Y_i^(alpha_i+1)=0 on its support and all outside variables set to zero
+has exactly the divisors of Y^alpha as surviving monomials. Every proper
+divisor has degree below the first nonzero total degree. The scalar in
+that box is consequently exactly g_alpha Y^alpha, with no additional
+same-degree survivor.
+
+Every original larger minor remains zero in the quotient, and a constant
+nonzero pivot remains a unit. Thus row concentration applies in this box.
+If alpha has too much support, every allowed small-support scalar
+coefficient is zero, so contraction of the row-span conclusion forces
+the surviving scalar coefficient to vanish. This is a valid contradiction.
+
+The argument works separately for each leading monomial and therefore
+bounds every such support. It does not rely on selecting a favorable
+monomial that could be destroyed by the unknown linear transformation.
+Arbitrary coefficient-field endpoints are legitimate, as long as they
+are constant in the residual variables of the chunk.
+
+9. HASSE PIVOTS, MOVING FUNCTIONALS, AND AFFINE DETECTION
+   Source lines 465-587.
+
+The pivot-closure proof uses the exact Hasse composition identity.
+Applying D^[nu-mu] to a relation at mu produces on the right only indices
+j+nu-mu-e<nu, since j<mu and e>=0. If binomial(nu,mu) is nonzero, the left
+side cannot be a pivot. This proves closure under digit subindices in
+positive characteristic. The number of those subindices is the product
+of (digit+1), which is at least digit weight plus one, giving the stated
+q-1 bound. Characteristic zero gives the usual consecutive order bound.
+
+Individual transcendence of C over the original field is enough for the
+moving-functional lemma. All rational jet relations and all nonzero finite
+jet minors over that original field specialize without a zero denominator
+or a loss of rank. The functional may have coefficients in a much larger
+field and depend on C or other correlated shifts. Such dependence does
+not invalidate an already specialized linear relation. No joint algebraic
+independence of the shifts is needed for this argument.
+
+For a leading monomial, fixing the other exponents gives a matrix-entry
+functional of the remaining local Hasse derivative. Every earlier order
+vanishes because its full total degree is lower. The nonzero selected
+order is thus a generic pivot of the original vector of W^2 entries.
+This proves the per-coordinate digit-weight bound for every leading
+monomial, independently of rank preservation.
+
+Under an invertible residual linear map, a monomial of digit degree at
+most k expands into monomials of digit degree at most k. Frobenius handles
+each digit copy; exponent collisions can decrease, but cannot increase,
+digit weight. Consequently support is at most k. The SV image contains
+the coordinate subspace corresponding to the support of any retained
+nonzero monomial. Higher ordinary homogeneous degrees have larger fresh
+amplitude degrees and cannot cancel the detected first component.
+
+10. DESCENDING RANK INVARIANT, CONDITIONING, AND QUANTITATIVE CLAIMS
+    Source lines 589-797.
+
+The augmented endpoints turn the whole scalar into a rank-one matrix
+interval without adding residual variables. Each latent C_i is individually
+transcendental because its nonzero t-polynomial cannot be canceled by the
+SV terms, which use independent seeds. This remains true in characteristic
+p even if its ordinary derivative vanishes.
+
+Every rank-w interval initially survives: each factor is full rank, its
+nonzero univariate determinant survives at its individually transcendental
+argument, and determinants multiply. A previously nonzero minor remains
+nonzero after adding new pairs because setting their amplitudes to zero
+recovers the preceding shift.
+
+Inside a fixed generic-rank-r target interval, every subinterval has rank
+at least r. Therefore the greedy shortest-rank-r prefixes cannot jump
+below r. Their proper-prefix chunks and the leftover tail have rank greater
+than r, and so do all subintervals within them. Each listed block,
+adjacent-block product, and final block-tail product has rank exactly r.
+
+The compound rank of a generic-rank-s matrix is binomial(s,r) over any
+field. Shifted chunks have the same generic rank as before translation,
+and their constants have the same rank by the inductive invariant.
+Their larger-minor identities therefore give precisely the palette used
+in the leading-support theorem. The first gap is r+1, and subsequent
+gaps are binomial(s-1,r-1), yielding the displayed h_{w,r}.
+
+Conditioning outside a prepared chunk is legitimate because each matrix
+has its own variable block and the chunk is contiguous. Extracting fixed
+outside coefficients leaves a fixed left row and right column. If a lower
+total chunk degree survived with those endpoints, it would be a lower
+total degree of the full test. Thus the chosen chunk monomial really is
+in its first homogeneous component. Endpoint dependence on old seeds
+does not change this conclusion.
+
+There are at most two prepared chunks and two singleton layers in any
+selected test. The support bound and independent exponent bound apply
+to the same arbitrary leading monomial, so their product bounds the
+digit degree of the entire first component. A single fresh symbolic SV
+map therefore preserves every selected test. Finiteness is enough for
+simultaneous symbolic nonzeroness; no finite-field union bound or seed
+specialization is hidden here.
+
+The chain lemma is valid: a rank-r prefix has the same row space as its
+last rank-r block, and preservation of the adjacent product transfers
+that property to the next block. The separately counted tail test
+completes the argument. No three-prepared-chunk test has been omitted.
+Descending to r=1 preserves the nonzero scalar augmented interval.
+
+The final interpolation bounds use only deg f<=D: the t degree is at most
+nD, each amplitude degree at most D, and each direction degree at most
+(n-1)D. Unbounded local entry degrees do not change those scalar bounds.
+The permission for extension-field evaluations is an explicit oracle
+assumption in the theorem and is needed when the base field is too small.
+The pure-SV first-pair specialization gives t times a nonzero Lagrange
+combination and therefore supplies the same individual transcendence.
+
+11. NONTRIVIAL RESET STRESS TEST
+
+Take width W=4, active size a=1, variables x and y in separate blocks, and
+
+  A_1 = ((1,0,0,x), (0,1,x,0), (0,0,0,0), (0,0,0,0)),
+  A_2 = ((1,0,0,0), (y,0,0,0), (0,0,0,y), (0,0,0,1)),
+
+where the displayed tuples are rows. Each local matrix has unit rank 2.
+Their product has rows
+
+  (1,0,0,x), (y,0,0,xy), (0,0,0,0), (0,0,0,0),
+
+and has unit rank 1. Thus all nonempty intervals preserve their constant
+rank. Let B_0=(1,b,0,0), with b a field scalar, and let the initial passive
+kernel contain p=(1,0,0). The old active projection is the one-dimensional
+space T and is automatically stable.
+
+The passive constants are Q_1=diag(1,0,0) and Q_2=diag(0,0,1), so Q_1Q_2=0.
+The corrected passive matrices in this example are
+
+  Ftilde_1 = ((1,x,0), (0,0,0), (0,0,0)),
+  Ftilde_2 = ((0,0,0), (0,0,y), (0,0,1)).
+
+Here Z_1=(0,bx,x), Z_2=0, and
+
+  p Ftilde_1 Ftilde_2 = (0,0,xy) != 0,
+  Z_1 Ftilde_2 = (0,0,x(1+by)).
+
+The future-dependent initial control a_0=a_1=-y/(1+by) kills the entire
+controlled product, and the reset reads
+
+  (0,0,xy) = -a_1 Z_1 Ftilde_2.
+
+The denominator is a unit in every relevant Artin quotient. After clearing
+it, both this identity and the controlled full-product identity are
+polynomial identities over Z[b,x,y]. Exact sparse-polynomial checks passed.
+The example specifically rules out simplifying the argument to the false
+claim that a zero passive constant product forces the corrected passive
+product itself to be zero. The actual source does not make that claim.
+
+12. REMAINING REVIEW RISK AND PRESENTATION SUGGESTIONS
+
+No missing premise was established in this audit. The following would make
+future human verification easier, but I do not regard them as repairs to a
+demonstrated mathematical defect:
+
+  * Define S_i explicitly as Coeff(S_0 A_1...A_i) and state once why disjoint
+    blocks identify it with Coeff(S_{i-1}A_i).
+  * State explicitly that coefficientwise membership in a field-vector
+    subspace is preserved by multiplication by arbitrary scalars in the
+    full tensor ring. This makes the future-control justification easier
+    to verify without interpreting it as a weighted assertion.
+  * Give a separate short witness-substitution observation for the stable
+    subphase support recurrence. It should say that field-linear changes
+    of prefix generators preserve a budget, and multiplication by actual
+    coefficients on disjoint later blocks adds the budgets.
+  * Write the explicit reset control -L R^{-1}; this highlights where the
+    unit hypothesis is used and where future-variable dependence enters.
+  * Include a small nonzero-response reset example such as the one above,
+    if explanatory space permits.
+
+These are exposition suggestions only. The exact source already supplies
+the required unit pivots, disjoint block structure, weighted initial costs,
+individual transcendence, finite symbolic seed fields, and extension-oracle
+assumption. The unresolved limitation is the ordinary limitation of this
+internal audit: it is not external peer review or a formal machine-checked
+proof, and its failure to find an error cannot establish correctness.

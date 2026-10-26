@@ -1,0 +1,118 @@
+EXACT PROTOTYPE AUDIT: ALL-RANK AFFINE-ORBIT GENERATOR
+26 October 2026
+
+Reviewer: fresh_algorithms. This is an independent code and mathematical
+interface review, not an external certificate of the underlying theorem.
+
+VERDICT: PASS for the changed constructor, generator, query-count,
+mixed-rank example, and traversal semantics. No repair requested.
+
+Exact source:
+root/all_rank_affine_orbit.py
+SHA-256
+536d9256eb46672ed7efb43e57f7b6561411d641132ee9d4f5998a3d9675cae2.
+
+1. Scope and field arithmetic
+
+I read the complete changed rank_budgets/HittingGrid/example/self_check
+code and the module's model declaration. I also compared the entire
+field-arithmetic block, from def _trim through FiniteField.metadata,
+byte for byte against root/all_characteristic_rank_one_full_affine_orbit.py.
+The blocks are identical. Their common block SHA is
+b13e3889b3b8bc3afc7fe8de7952233b388c98185eb106c715d7f1430b353478.
+This review does not repeat the earlier independent field-arithmetic
+audit or claim that a finite test certifies the mathematical theorem.
+
+2. Stage budgets and constructor
+
+rank_budgets implements W=binomial(w,r),
+h+2=(r+2) product_{s=r+2}^w(binomial(s-1,r-1)+1), and
+k_r=(W^2-1)(2h+2). The loop ranges and empty products agree with the
+proof. Width one has no levels and K=0. The exact K values for widths
+one through six agree with the independent formula calculation:
+0,12,128,1500,23718,553854.
+
+The constructor uses initial-curve grid nD+1, amplitude grid D+1,
+and the GLOBAL minimum of the two direction lengths
+(n-1)D+1 and (n-1)(n+2)(n+3)/2+1. The direction_method metadata
+records which argument applies. No unsupported per-stage mixture
+of the two proofs is used.
+
+The selected direction length is at most (n-1)D+1<=nD+1. The amplitude
+length and node count are also at most nD+1 for n,D>=1. Thus choosing
+the finite working field with minimum size nD+1 suffices for every
+enumerated index and for distinct interpolation nodes, including
+when the degree-independent grid by itself would require a larger
+field. Characteristic zero uses exact rational arithmetic.
+
+For n=1 the code deliberately uses zero pairs and interpolates at
+D+1 t values. This is valid for every univariate polynomial of degree
+at most D, independently of the representation. The theorem's pair
+bound is retained separately in metadata. Nonpositive n,D,w are
+rejected with an explicit instruction to handle constants directly.
+
+3. Map and lazy enumeration
+
+evaluate_map returns t^(i+1)+sum_j z_j lambda_i(y_j), over the chosen
+exact field. The direction and amplitude arrays must have exactly the
+stated pair count. Skipping a zero amplitude is algebraically exact.
+
+points enumerates the full Cartesian grid lazily. Field elements are
+constructed from the grid indices; distinctness follows from the
+field size and encoding. The cached Lagrange vectors depend only on
+the direction element, so reuse across amplitudes and t values is
+valid. Each yielded point is a fresh list initialized to the moment
+curve, avoiding mutation of earlier outputs.
+
+query_count records exactly
+(nD+1)[(D+1)*direction_length]^pairs. Its bit-length estimate is an
+upper bound; when expansion would be large the exact factored
+expression remains available instead of allocating the integer.
+This affects representation of the count, not which grid is used.
+
+4. Traversal semantics
+
+test returns nonzero only after an exact nonzero oracle response.
+The seed indices, point, value, and number of evaluated queries are
+reported. A negative query cap is rejected. A zero cap returns
+incomplete with no queries. If the cap is reached before the grid
+ends, incomplete is returned, never an identity conclusion.
+
+When the cap equals the full grid size, the loop exhausts normally
+and correctly returns the completed-grid result. Only exhaustion
+returns zero_under_all_rank_affine_orbit_candidate_theorem, with
+completed_grid=true. Its name and metadata retain the promise and
+the internally audited candidate status. The program neither tests
+nor infers the unknown representation promise.
+
+5. Actual mixed-rank example
+
+mixed_rank_example explicitly multiplies a width-four row through
+eight univariate factors on E14,E42,E24,E43, choosing the correct
+factor order according to PE=E or EP=E. The four edge coefficients
+are x_e^2-y_e, on coordinate indices 2e-1 and 4e-2. The final scalar
+is exactly their product, total degree eight. The optional input
+shear ell_i=X_i+X_(i+1), ell_n=X_n is upper triangular with unit
+diagonal in every characteristic, hence is invertible.
+
+The identity factors for unused coordinates are correctly omitted
+from explicit numerical multiplication; inserting them would not
+change the result or the promised n-variable representation. The
+row[2]==closed assertion verifies the displayed factorization at
+each evaluated point, including characteristic two.
+
+6. Interpretation of existing self-checks
+
+The existing self_check checks the exact stage constants, Lagrange
+node interpolation, nonzero witnesses of the actual mixed-rank word
+with and without the unknown invertible input shear, a 17-query
+incomplete traversal, a complete four-query univariate zero traversal,
+and an instance selecting the refined direction grid.
+
+I inspected these checks and their scope; I did not rerun the entire
+suite because no concrete defect or remaining arithmetic risk was
+identified. The checks are implementation evidence, not an exhaustive
+large-grid test and not a proof of the all-rank theorem. The source
+states that limitation explicitly.
+
+END AUDIT

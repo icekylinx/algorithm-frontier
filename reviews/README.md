@@ -140,6 +140,14 @@ The cone-order sparsification theorem and its boundary-sum proof have been check
 
 [Proof](../problems/conic-barrier-sparsification/proof.md) · [Dependencies](../problems/conic-barrier-sparsification/sources.md) · [Evidence](../problems/conic-barrier-sparsification/verify/README.md) · Reviewed 2026-10-26
 
+### [Deterministic PIT for fixed-width affine ROABP orbits](../problems/roabp-affine-pit/)
+
+The complete general fixed-width affine-orbit PIT proof and direction-grid refinement have separate exact-source internal reconstructions, including a fresh-context review of the weighted Artin induction. Arbitrary local ranks, unrestricted local entry degrees and every characteristic are covered.
+
+**Dependencies and scope.** The promise is one unknown-order ROABP under an invertible affine map, with a known scalar total-degree bound; small base fields require extension-field oracle access. The polynomial query exponent depends on width; no FPT, unbounded-width polynomial-time, singular-projection or orbit-closure claim is made. The generic Hasse pivot criterion is standard and attributed. Internal model-assisted review, finite tests and presentation checks are not external peer review, proof-assistant verification or priority certification.
+
+[Proof](../problems/roabp-affine-pit/proof.md) · [Dependencies](../problems/roabp-affine-pit/sources.md) · [Evidence](../problems/roabp-affine-pit/verify/README.md) · Reviewed 2026-10-27
+
 ## Components ready for review
 
 ### [Prefix, laminar and sparse quotas](../problems/weighted-prefix-quota-frontier/)
@@ -236,6 +244,22 @@ These independent results have their own review scopes. A completed static theor
 
 [Manuscript](../manuscripts/graph-backends/low-state-odd-crown.md) · [Evidence](../manuscripts/graph-backends/verify/README.md) · Reviewed 2026-10-26
 
+### [Exact interval-rank palette support bounds](../problems/roabp-affine-pit/manuscripts/palette-sharpness.md)
+
+**Ready for review.** The general palette lower construction and original-field degree-two actual-curve lift have complete internal proofs, matching the separately proved concentration threshold. The uniform active-endpoint subcase retains its sharper exact threshold.
+
+**Dependencies and scope.** Interval preservation concerns physical matrix words; the augmented scalar interval is excluded when the scalar vanishes on the initial curve. The examples survive one SV pair, so the result is not a PIT or generator lower bound. Internal review and finite identities do not constitute external peer review or formal verification.
+
+[Manuscript](../problems/roabp-affine-pit/manuscripts/palette-sharpness.md) · [Evidence](../problems/roabp-affine-pit/verify/README.md) · Reviewed 2026-10-27
+
+### [Quadratic local Hasse digit-degree obstruction](../problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md)
+
+**Ready for review.** The binomial determinant formula and original-field actual-curve construction have a complete symbolic proof and a separate internal reconstruction. The first ordinary homogeneous component has digit degree exactly w²−1.
+
+**Dependencies and scope.** Width w≥2 and prime characteristic p>w²+w−2; the construction uses n=p coordinates and scalar total degree 2p(w−1). The curve is the ordinary moment curve, whose p-th coordinate has zero derivative. This is not a counterexample to a derivative-separating-curve theorem. Every physical interval preserves full rank. The endpoint-augmented scalar interval does not. One SV pair detects the example, so no PIT or generator lower bound is asserted. The audit is internal model-assisted reconstruction, not external peer review, formal certification or priority determination.
+
+[Manuscript](../problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md) · [Evidence](../problems/roabp-affine-pit/verify/README.md) · Reviewed 2026-10-27
+
 ### Supporting review pending
 
 - [Grouped choices under resource deletions](../manuscripts/graph-backends/decremental-choice-recourse-lemma.md)
@@ -286,6 +310,13 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/min-cost-flow/verify/check_capacity_scaling.py](../problems/min-cost-flow/verify/check_capacity_scaling.py)
 - [problems/min-cost-flow/verify/check_recovery.py](../problems/min-cost-flow/verify/check_recovery.py)
 - [problems/persistence-failure-certificates/verify/check_feature_construction.py](../problems/persistence-failure-certificates/verify/check_feature_construction.py)
+- [problems/roabp-affine-pit/verify/all_rank_affine_orbit.py](../problems/roabp-affine-pit/verify/all_rank_affine_orbit.py)
+- [problems/roabp-affine-pit/verify/build_native_papers.py](../problems/roabp-affine-pit/verify/build_native_papers.py)
+- [problems/roabp-affine-pit/verify/check_artin_reset.py](../problems/roabp-affine-pit/verify/check_artin_reset.py)
+- [problems/roabp-affine-pit/verify/check_palette_sharpness.py](../problems/roabp-affine-pit/verify/check_palette_sharpness.py)
+- [problems/roabp-affine-pit/verify/check_quadratic_hasse.py](../problems/roabp-affine-pit/verify/check_quadratic_hasse.py)
+- [problems/roabp-affine-pit/verify/check_source_bindings.py](../problems/roabp-affine-pit/verify/check_source_bindings.py)
+- [problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py](../problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py)
 - [problems/subset-sum-fast-deterministic/verify/check_energy.py](../problems/subset-sum-fast-deterministic/verify/check_energy.py)
 - [problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py](../problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py)
 - [problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py](../problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py)

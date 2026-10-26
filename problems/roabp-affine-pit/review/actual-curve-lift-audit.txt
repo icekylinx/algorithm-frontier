@@ -1,0 +1,209 @@
+EXACT-SOURCE HOSTILE AUDIT: ACTUAL-CURVE SUPPORT LOWER-BOUND LIFT
+Date: 26 October 2026
+Reviewer: /root/fresh_core_hostile
+
+VERDICT
+
+PASS for the lifting lemma and every stated nonconstant sharpness
+application, over every field. I requested one literal N=0 clarification
+in the uniform example's endpoint paragraph; it does not change any
+mathematical conclusion. The author/root supplied the precise clarification
+and its final reversal check is recorded below. There is no unresolved
+proof gap. This is internal model-assisted review, not external peer review
+or a priority claim.
+
+Exact source read in full:
+  algorithms/rank_stable_support_lower_bound_actual_curve_lift.txt
+  original SHA256 f3b4ba3236a2f2f9414061ab6d8501cbf7ac3d96ec4733f5ef31bcf40298f208.
+
+Before reading that source, I independently reconstructed the lift in
+  referee/rank_palette_actual_curve_lift_independent_reconstruction.txt
+  SHA256 e0e735b8b199c6e3624bd85c25b389ca896827a6000477b594d6d77a0cc79c19.
+The source agrees with that proof and adds the correctly bounded generator
+and endpoint-augmentation discussion. I also read both cited older example
+families directly, and had separately audited the general palette family.
+
+1. THE MACRO IS AN ORIGINAL-FIELD READ-ONCE REALIZATION
+
+Every base factor is P_s+zE_ab, a!=b, with PE=E or EP=E. Thus E^2=0.
+The two replacements are exactly
+  (P+x^2 E)(I-yE)=P+(x^2-y)E when PE=E,
+  (I-yE)(P+x^2 E)=P+(x^2-y)E when EP=E.
+No division or characteristic hypothesis is used. These are two distinct
+original univariate factors, with degrees at most two and one. The first
+rank-s factor is P times an invertible shear, or an invertible shear times
+P, and therefore has rank exactly s. The other factor is unipotent and
+has rank W. Their coefficients remain in the original field. The shifted
+parameter t never enters an original local matrix coefficient.
+
+Substitution into the exact base scalar identity gives
+  f=product_e(x_e^2-y_e)
+as a polynomial identity. All variables are distinct; the macro notation
+does not hide a multivariate local factor or a repeated variable.
+
+2. ALL PHYSICAL INTERVALS ARE CHECKED
+
+At any coefficient-field point with C_y=C_x^2, put U=I+C_x^2E. Since
+U^(-1)=I-C_x^2E, the constant macro is respectively
+  P U, U^(-1)       or       U^(-1), U P.
+Every complete macro is P. In an arbitrary contiguous interval, the
+interior macros are complete. Only its two boundary macros may be partial,
+and the displayed forms put their surviving shear on the outside of the
+projector product. If the interval lies inside one macro, the same claim
+is checked directly for each single factor or the complete pair.
+
+Thus the evaluated interval is an invertible left factor, followed by a
+product of nested projections, followed by an invertible right factor.
+Its rank equals the minimum local rank actually present (or W if there
+are only invertible factors). Its generic rank is at most that same
+minimum, and at least the evaluated rank. Equality proves preservation.
+
+This does not commute a shear through a projector. It also does not assume
+that only macro-aligned intervals matter. Constant identity padding can
+be inserted anywhere, including between the two local factors of a macro,
+without changing the cancellation or partial-boundary analysis.
+
+3. THE ACTUAL MOMENT CURVE AND ALL CHARACTERISTICS
+
+For N>=1, x_e uses observed coordinate 2e-1 and y_e uses coordinate 4e-2.
+The former indices are odd and distinct, the latter even and distinct,
+so all 2N coordinates are different and their maximum is 4N-2. Padding
+to n=4N-2 yields an ordinary read-once word in a suitable variable order.
+It can be viewed as an identity affine orbit; the order permutation is
+already allowed by the model.
+
+At gamma_i=t^i, C_y=t^(4e-2)=C_x^2. Every used and padded coordinate is
+individually transcendental over the original coefficient field in every
+characteristic. For N=0 the source separately uses the empty constant word
+and does not apply the formula n=4N-2.
+
+The source correctly says derivative separation only in characteristic
+zero. There the derivatives i t^(i-1) are not merely nonzero but linearly
+independent, because their degrees are distinct. In characteristic two
+the y derivatives vanish, but the new all-rank theorem requires only
+individual transcendence, which still holds. No small-characteristic
+derivative-separation premise is asserted or needed.
+
+4. LEADING SUPPORT AND DIGIT DEGREE
+
+The exact residual scalar is
+  product_e(2C_x X'_e-Y'_e+(X'_e)^2).
+Every factor has nonzero linear part, since the Y'_e coefficient is -1.
+The first nonzero ordinary homogeneous component is therefore
+  product_e(2C_x X'_e-Y'_e),
+of degree N. Every nonzero monomial chooses one coordinate from each
+disjoint pair, so has support exactly N and exponents all equal to one.
+Consequently its digit degree is also exactly N in every characteristic.
+The all-Y coefficient is (-1)^N, proving nonvanishing even in
+characteristic two, where it is the only monomial of this component.
+
+Every monomial of the complete residual scalar still uses at least one
+variable in each pair. Thus a fixed sink kills every coefficient row of
+support below N but not the all-Y coefficient row. This proves the
+coefficient-span lower statement over F(t), as well as the support and
+digit-degree lower statements for the whole first component.
+
+5. CHECK OF ALL THREE APPLICATIONS
+
+I read algorithms/mixed_projection_artin_support_sharpness.txt. Its
+active-to-passive entry, passive unipotent chain, and passive-to-active
+exit are all off-diagonal matrix units with PE=E or EP=E. Its exact
+scalar recurrence gives N=(W-r+1)(r-1). For N>0 the full constant product
+is P_r and both endpoints are active; the lifted macros preserve these
+facts. The local constant cut gauges are explicit: at an internal
+P U,U^(-1) cut choose U^(-1), and at a U^(-1),U P cut choose U.
+They normalize constants to P/I while leaving the scalar unchanged.
+
+The sole literal qualification requested concerns r=1<W. Then N=0 and
+the referenced construction is the empty word, whose product is I_W,
+not P_r. The conclusion is the constant scalar one and support zero in
+either case. Root's correction separately states the N>0 and N=0 products
+and retains the true statement that the endpoints are active for P_r.
+
+I also read discrete/04-rank-profile-exponential-support-lower-bound.md.
+The base word is empty; the inductive embedding and two rank-one bridges
+preserve the one-active-index property. Its scalar is the full monomial
+on 2^W-2 variables, so the lift applies directly.
+
+Finally, the independently audited general palette construction has only
+the same base unipotent edges, embeddings, and active/passive bridges.
+Therefore N=product(successive palette gaps+1)-2 is realized at the
+actual curve. Extra rank-W shear and identity factors are allowed because
+W already belongs to the prescribed palette. The statement concerns an
+allowed palette, not a requirement that every listed rank occur on a
+nonempty interval of the unexpanded word.
+
+6. IMPORTANT LIMITS: AUGMENTATION AND SV
+
+The source explicitly restricts interval preservation to the PHYSICAL
+matrix word. For N>0 the scalar vanishes at C, so appending the scalar
+endpoint matrices produces a full augmented interval with generic rank
+one and evaluated rank zero. No augmented-rank preservation claim is made.
+This is compatible with the all-rank PIT proof, whose later descent must
+also preserve endpoint-augmented intervals before it can conclude that
+the scalar has been hit.
+
+The gamma+SV_1 survival claim is correct. For each factor its linear
+amplitude coefficient is
+  2C_x lambda_x(y)-lambda_y(y),
+a nonzero old-field linear combination of two distinct Lagrange
+polynomials (or just -lambda_y in characteristic two). Every factor is
+nonzero after substitution; their product is nonzero in the polynomial
+domain. Unshifted SV_1 also works, because z^2 lambda_x(y)^2 and
+-z lambda_y(y) have different amplitude degrees and the latter is nonzero.
+
+Accordingly this is not a lower bound for SV pairs, seed count, oracle
+queries, or affine PIT. It is an exact support and digit-degree obstruction
+for the WHOLE first homogeneous component at the specified actual shift.
+The examples for compound-shaped palettes are not thereby shown to be
+exterior powers of smaller matrix words.
+
+7. ONE CONCRETE COMPOUND-AWARE RESEARCH TARGET
+
+A useful next case is original width four and exterior power two. A
+prepared higher-rank chunk has original interval ranks three or four;
+the compound width is six and its allowed nonzero ranks are three and
+six. The current abstract palette bound is h=14.
+
+An actual local compound T=wedge^2 A obeys the Klein quadratic identity
+  q(Tx)=det(A)q(x),
+where q(x)=x_12 x_34-x_13 x_24+x_14 x_23. Its polarized bilinear form
+is nondegenerate and gives T^T J T=det(A)J. In characteristic two the
+quadratic identity must be retained; polarization alone loses information.
+The rank-three images are the particular subspaces wedge^2 U with
+dim U=3, not arbitrary three-dimensional subspaces.
+
+In the natural active/passive 3+3 split, the abstract sharpness recursion
+uses invertible passive gadgets diag(I_3,H). The J identity forces H to
+be scalar for such a gadget to be an actual compound (after a compatible
+dual choice of bases). Thus that independent passive-chain realization
+does not immediately lift to actual exterior powers.
+
+Concrete target: prove or disprove an actual-compound first-component
+support bound at most 13 in this width-four/exterior-two setting, allowing
+ARBITRARY old-field row and column contractions. Endpoints obtained by
+conditioning on other exponents need not be decomposable two-vectors;
+assuming they are decomposable would not suffice for the descent.
+Even the first strict improvement 14 to 13 changes the current K(4)
+from 1500 to 1430, because the stage multiplier is 6^2-1=35 and
+k_2=35(2h+2). This is a research target, not a proved bound. Uniform
+compound-aware improvements could reduce the much larger rank-palette
+cost at greater widths.
+
+FINAL CONCLUSION
+
+The actual-curve lift is mathematically sound with the explicit empty-word
+clarification. It establishes exactly the bounded structural conclusion
+above: original-field local degree at most two, all characteristics,
+physical-interval rank preservation, and first-component support/digit
+degree h(P). It supplies no PIT lower bound. No further repair is requested.
+
+
+FINAL EXACT REVERSAL CONFIRMATION
+Final source SHA256 4126eacd502cf8143f133cedf74f4797ae98b4a7f2ab382574f040f7c4ebdd60
+Recovered reviewed source SHA256 f3b4ba3236a2f2f9414061ab6d8501cbf7ac3d96ec4733f5ef31bcf40298f208
+I verified the current bytes and reversed the unique declared N=0
+replacement in memory. The recovered hash is exactly the original
+reviewed source. This is the sole byte change. It resolves the stated
+empty-word sentence without altering any construction or conclusion.
+The final source receives PASS with no outstanding qualification.

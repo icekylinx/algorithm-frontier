@@ -1,0 +1,845 @@
+% Canonical native-TeX manuscript; compile from the repository root.
+% Publication layout changes are reversible in the import manifest.
+\input{manuscripts/paper-style.tex}
+\usepackage{mathtools}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newcommand{\F}{\mathbb F}
+\newcommand{\SV}{\operatorname{SV}}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\pdeg}{\operatorname{pdeg}}
+\newcommand{\Coeff}{\operatorname{Coeff}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Mat}{\operatorname{Mat}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\rowspan}{\operatorname{rowspan}}
+\title{Deterministic Identity Testing for Constant-Width\\
+Affine ROABP Orbits in Every Characteristic}
+\author{Yilin Liu \and GPT-6 Astra Pro}
+\date{27 October 2026}
+\begin{document}\maketitle
+
+\begin{abstract}
+We give a self-contained candidate proof of a polynomial-size black-box
+hitting set, for every fixed width, for the unknown invertible affine
+orbit of read-once oblivious algebraic branching programs in arbitrary
+characteristic. The local univariate matrices may have arbitrary generic
+ranks and arbitrary degrees; only the scalar total degree is bounded.
+The proof extends a coefficient-span argument to finite monomial Artin
+rings. A box quotient then bounds the support of every monomial of a
+lowest homogeneous component whenever all interval ranks are preserved.
+The standard characteristic-order criterion for Hasse pivots bounds
+every exponent of each such leading monomial. Conditioning on the other
+blocks supplies the required filtered interface in an exterior-power
+rank descent. The resulting explicit map is a moment curve plus
+$K(w)=2^{O(w^2)}$ Shpilka--Volkovich pairs. Its basic grid has at most
+$(nD+1)^{2K(w)+1}$ points for scalar total degree at most $D$.
+\end{abstract}
+
+\noindent\textbf{Status and attribution.}
+The constituent notes and this self-contained integrated manuscript have
+separate model-assisted internal reconstructions and exact-source audits,
+including an additional adversarial review of the Artin reset/source step.
+The mathematical source is frozen after those internal reviews. It remains
+an internal candidate proof, not external peer review or a
+publication-priority claim.
+The generic Hasse-order closure used below is a standard $p$-adic
+criterion, recorded for example in Garcia--Lax~\cite[Proposition 1.1]{GL92}
+and in the St\"ohr--Voloch order-sequence context~\cite{SV86}; no novelty
+is claimed for that criterion. We prove the precise rational-vector
+version needed here rather than importing extra geometric hypotheses.
+
+\section{Statement and oracle model}
+
+Let $n,w,D\ge1$. Suppose that the nonzero polynomial presented to the
+oracle has the form
+\begin{equation}\label{eq:model}
+ f(X)=uA_1(\ell_1(X)+c_1)\cdots A_n(\ell_n(X)+c_n)v,
+ \qquad \deg f\le D.
+\end{equation}
+The matrices $A_i$ are $w$-by-$w$ univariate polynomial matrices over
+a field $\F$, and $u,v$ are constant endpoints. Their generic ranks
+and entry degrees are unrestricted. The forms $\ell_1,\ldots,\ell_n$
+are the coordinates of an invertible linear transformation. The
+representation, its order, and the affine transformation are unknown.
+A representation of smaller width can be padded with zeros.
+
+This is the affine-orbit model for one unknown ROABP order, as studied
+by Bhargava and Ghosh~\cite{BG}; it does not assume a representation
+in every variable order. The degree promise is on the scalar polynomial.
+If local entry degrees, or latent scalar individual degrees, are bounded
+by $\delta$, one may take $D=n\delta$. No truncation of the promised
+representation is performed.
+
+For $w\ge2$ and $1\le r<w$ define
+\begin{align}
+ W_{w,r}&=\binom wr,\label{eq:W}\\
+ h_{w,r}&=(r+2)\prod_{s=r+2}^{w}
+                    \left(\binom{s-1}{r-1}+1\right)-2,\label{eq:h}\\
+ k_{w,r}&=(W_{w,r}^2-1)(2h_{w,r}+2),\qquad
+ K(w)=\sum_{r=1}^{w-1}k_{w,r}.\label{eq:K}
+\end{align}
+An empty product is one, and $K(1)=0$. These constants are independent
+of the characteristic and of every degree parameter. The construction gives
+\[
+ \begin{array}{c|rrrrrr}
+ w&1&2&3&4&5&6\\ \hline
+ K(w)&0&12&128&1500&23718&553854
+ \end{array}
+\]
+
+Choose $n$ distinct nodes $a_i$ in a working field and their Lagrange
+polynomials $\lambda_i(y)$, of degree at most $n-1$. Write
+\[
+ \SV_{k,i}(z,y)=\sum_{j=1}^{k}z_j\lambda_i(y_j),\qquad
+ \gamma_i(t)=t^i.
+\]
+
+\begin{theorem}\label{thm:main}
+In every characteristic, every nonzero polynomial \eqref{eq:model}
+satisfies
+\begin{equation}\label{eq:map}
+ f\bigl(\gamma(t)+\SV_{K(w)}(z,y)\bigr)\ne0.
+\end{equation}
+The pure map $\SV_{K(w)+1}$ also hits the class. A Cartesian grid
+for \eqref{eq:map} uses at most
+\begin{equation}\label{eq:grid}
+ (nD+1)(D+1)^{K(w)}\bigl((n-1)D+1\bigr)^{K(w)}
+ \le(nD+1)^{2K(w)+1}
+\end{equation}
+oracle evaluations. A working field of size at least $nD+1$ supplies
+all grids and nodes; extension-field oracle evaluations are permitted
+when needed. Moreover
+\[
+ K(w)\le(w-1)2^{w(w+1)/2+2w}=2^{O(w^2)}\qquad(w\ge2).
+\]
+Thus for every fixed width the hitting set is polynomial in $n,D$.
+Constants, including the cases $n=0$ or $D=0$, need one query.
+\end{theorem}
+
+This is an XP-type query bound in the width parameter: the polynomial
+exponent depends on $w$. It does not establish an FPT bound
+$g(w)(nD)^{O(1)}$ with a uniform exponent. The parameter dependence is
+large and is not asserted to be optimal.
+The theorem concerns invertible affine transformations, not singular
+projections or orbit closures. All final degree counts refer to the
+original scalar $f$, even though auxiliary minors may have much larger
+degrees.
+
+\section{Coefficient spaces in monomial Artin rings}
+
+Let $E$ be a field. For disjoint variable blocks $X_i$, let
+$\mathcal R_i=E[X_i]/I_i$, where $I_i$ is a proper monomial ideal
+containing a positive power of every variable. A trivial block
+$\mathcal R_i=E$ is also allowed. The surviving monomials form an
+$E$-basis, and the augmentation ideal is nilpotent. Work in the tensor
+product $\mathcal R=\bigotimes_i\mathcal R_i$ over $E$.
+Support counts the blocks containing a nonconstant monomial.
+
+For a row-valued or matrix-valued polynomial over these rings,
+$\Coeff$ means the $E$-linear span of its actual coefficient rows
+in the surviving monomial bases.
+
+\begin{lemma}\label{lem:coeff}
+Scalar multiplication, including multiplication by a polynomial using
+future variable blocks, only takes $E$-linear combinations of existing
+coefficient rows. The same holds for a compatible matrix multiplying
+a row family on the left. Left multiplication by a square matrix with
+invertible constant term preserves the coefficient-row span in both
+directions.
+\end{lemma}
+\begin{proof}
+Coefficient convolution expresses each resulting row as a linear
+combination of original rows. Monomial truncation discards terms and
+never identifies a higher monomial with a lower one. A matrix with
+invertible constant term has an inverse in the finite local ring.
+Apply the inclusion to the matrix and its inverse.
+\end{proof}
+
+\begin{definition}\label{def:unitrank}
+An interval matrix has \emph{unit rank} $s$ if its constant matrix
+has field rank $s$ and all its $(s+1)$-minors vanish in the tensor
+ring. At $s=0$ this means that the matrix is zero; at full width the
+condition on larger minors is empty.
+\end{definition}
+
+The constant matrix supplies an $s$-minor with nonzero constant
+determinant, which is a unit. Thus the definition imposes the precise
+algebraic rank identities needed below without defining a fraction-field
+rank over a ring with zero divisors.
+
+\begin{lemma}\label{lem:graph}
+Let $P$ have unit rank $s$, and suppose an $s$-by-$s$ block $E_0$
+has invertible constant term. After arranging it in the upper left,
+write $P=\left[\begin{smallmatrix}E_0&B\\C&D\end{smallmatrix}\right]$.
+Then $D=CE_0^{-1}B$. Consequently every row in the row module of $P$
+is determined by its first $s$ coordinates; a zero active part forces
+the entire row to be zero. Constant invertible cutwise gauges preserve
+all unit-rank conditions.
+\end{lemma}
+\begin{proof}
+Each entry of the Schur complement $D-CE_0^{-1}B$ is, up to sign,
+an $(s+1)$-minor divided by the unit $\det E_0$, and hence vanishes.
+The row-graph statement follows from
+$P=\left[\begin{smallmatrix}I\\CE_0^{-1}\end{smallmatrix}\right]
+E_0[I,E_0^{-1}B]$.
+Cauchy--Binet preserves the vanishing larger minors under constant
+invertible changes, and the constant rank is unchanged.
+\end{proof}
+
+No integral-domain assumption is present in these lemmas.
+
+\section{Weighted concentration with a rank palette}
+
+Fix a width $W$ and a set of allowed ranks
+\[
+ \mathcal P=\{0=p_0<p_1<\cdots<p_m=W\}.
+\]
+Assume every contiguous interval of a word
+$A_1(X_1)\cdots A_n(X_n)$ over the tensor rings has unit rank equal
+to its constant rank, and that rank belongs to $\mathcal P$.
+Unused ranks may be included in the palette.
+
+For $a=p_j\in\mathcal P$ put
+\begin{equation}\label{eq:G}
+ G(a)+1=\prod_{\ell=j+1}^{m}(p_\ell-p_{\ell-1}+1).
+\end{equation}
+In particular $G(W)=0$. For $b>a$ in the palette,
+\begin{equation}\label{eq:recurrence}
+ (b-a+1)(G(b)+1)\le G(a)+1.
+\end{equation}
+Indeed inserting an intermediate level splits a jump into positive
+$u,v$ and replaces $u+v+1$ by $(u+1)(v+1)\ge u+v+1$.
+
+Suppose constant cutwise gauges have made
+\[
+ A_i(0)=\operatorname{diag}(I_a,Q_i),\qquad a\in\mathcal P.
+\]
+Let the initial row space be
+\[
+ S_0=\rowspan(B_0)\oplus(0\times K_0),
+\]
+where the active part $H$ of $B_0$ has independent rows and spans a
+space $T$. Assign cost zero to rows of $B_0$ and cost one to rows
+$(0,p)$ with $p\in K_0$. A weighted budget $b$ allows coefficients
+of $B_0A_1\cdots A_n$ supported on at most $b$ blocks and coefficients
+from the initial passive rows supported on at most $b-1$ blocks.
+Assume that the active projection of the full reachable coefficient-row
+space $S_i$ remains exactly $T$ at every cut.
+
+\begin{lemma}[Weighted stable phase]\label{lem:weighted}
+Under these assumptions, weighted budget $G(a)$ spans $S_n$.
+\end{lemma}
+\begin{proof}
+Induct on the number of palette levels above $a$. At $a=W$ there
+are no passive coordinates. The unchanged active space is already
+spanned by the constant-prefix rows, and $G(W)=0$ suffices.
+We give the exact kernel and reset identities before the induction step.
+
+\paragraph{Kernel dynamics.}
+Propagate $B_i=B_{i-1}A_i(0)$; its active part remains $H$. Write
+$S_i=\rowspan(B_i)\oplus(0\times K_i)$ and put $k=W-a$.
+For $d=\dim T>0$, choose a field right inverse $J$ of $H$.
+The active block of each local matrix is a unit, so write
+\[
+ A_i=\begin{bmatrix}
+ E_i&E_iC_i\\D_iE_i&D_iE_iC_i+F_i
+ \end{bmatrix},\qquad
+ E_i(0)=I_a,\quad C_i(0)=D_i(0)=0,\quad F_i(0)=Q_i.
+\]
+Active stability gives
+\[
+ (H+B_{i-1,p}D_i)E_i=R_iH,\qquad R_i(0)=I_d,
+\]
+where the subscript $p$ denotes the passive block. Define
+\begin{align}
+ W_i&=R_i^{-1}B_{i-1}A_i=[H,B_{i,p}+Z_i],\label{eq:Wi}\\
+ \widetilde F_i&=(I_k-D_iE_iJR_i^{-1}B_{i-1,p})F_i.\label{eq:Fi}
+\end{align}
+These functions use only the current variable block: $B_{i-1},H,J$
+are field-constant coefficient lifts. Moreover $Z_i(0)=0$ and
+$\widetilde F_i(0)=Q_i$. Lemma~\ref{lem:coeff} gives
+$\Coeff(W_i)=\Coeff(B_{i-1}A_i)$. Each coefficient row of $Z_i$
+is consequently a combination of actual rows of weighted cost at most
+one.
+
+For $p\in K_{i-1}$, stability implies $pD_iE_iJH=pD_iE_i$.
+Direct subtraction gives
+\[
+ (0,p)A_i-(pD_iE_iJ)W_i=(0,p\widetilde F_i).
+\]
+Taking coefficient spans in both directions, and subtracting active
+parts using the available constant rows $B_i$, yields
+\begin{equation}\label{eq:KD}
+ K_i=\Coeff(Z_i)+\Coeff(K_{i-1}\widetilde F_i).
+\end{equation}
+For a reachable state $a_{i-1}B_{i-1}+(0,p_{i-1})$, its coordinates
+evolve by the exact identities
+\begin{equation}\label{eq:EV}
+ a_i=a_{i-1}R_i+p_{i-1}D_iE_iJ,\qquad
+ p_i=p_{i-1}\widetilde F_i+a_iZ_i.
+\end{equation}
+If $d=0$, the $B,W,Z$ families are empty; active stability forces
+reachable active outputs to zero, and the formulas reduce to
+$K_i=\Coeff(K_{i-1}F_i)$. No right inverse is required in that case.
+
+\paragraph{Reset across a zero passive interval.}
+Suppose $Q_c\cdots Q_e=0$. The original interval
+$P=A_c\cdots A_e$ has unit rank $a$, and its active pivot is a unit.
+It is a graph over the active coordinates by Lemma~\ref{lem:graph}.
+For fixed $p\in K_{c-1}$, the active part of $B_{c-1}P$ is
+$R_{[c,e]}H$ with $R_{[c,e]}(0)=I$, and that of $(0,p)P$ is
+coefficientwise in $T$. A regular initial active control $a_{c-1}$
+therefore makes
+\[
+ (a_{c-1}B_{c-1}+(0,p))P
+\]
+have zero final active part. The graph identity makes its entire
+output zero. Since $H$ has a constant right inverse, its final active
+coordinate $a_e$ is zero as well. Unrolling \eqref{eq:EV} gives
+\begin{equation}\label{eq:reset}
+ p\widetilde F_c\cdots\widetilde F_e
+ =-\sum_{j=c}^{e-1}a_jZ_j\widetilde F_{j+1}\cdots\widetilde F_e.
+\end{equation}
+The $j=e$ term is absent because $a_e=0$.
+When $d=\dim T=0$, the reachable row already has zero active part
+and the same reset statement holds without controls or sources.
+
+The initial control may use future interval variables. This does not
+violate reachability: by Lemma~\ref{lem:coeff}, multiplying an actual
+prefix row by such a scalar only combines its coefficient rows.
+Every controlled intermediate state remains coefficientwise in $S_i$,
+and its passive remainder remains in $K_i$. The reset identity is used
+only for an \emph{unweighted coefficient-span inclusion}. No support
+cost is assigned to its possibly complicated scalar multipliers.
+
+\paragraph{Positive passive constant rank.}
+Suppose $q=\rank(Q_1\cdots Q_n)>0$, and put $b=a+q$.
+This is the rank of the full constant interval, so $b\in\mathcal P$.
+Constant gauges split a persistent $q$-dimensional passive core.
+For explicit construction, choose $U_0$ complementary to the kernel
+of $Q_1\cdots Q_n$, set $U_i=U_0Q_1\cdots Q_i$, choose a
+complement $V_n$ of $U_n$, and put
+\[
+ V_i=\{v:vQ_{i+1}\cdots Q_n\in V_n\}.
+\]
+Then $U_i,V_i$ are complementary of dimensions $q,k-q$; each constant
+map preserves this splitting, and maps the $U_i$ isomorphically.
+The constants become $\operatorname{diag}(I_a,I_q,Q_i')$.
+
+Let $\beta$ be the dimension of the initial passive kernel's projection
+onto this new core. The enlarged reachable active space starts at
+dimension $\dim T+\beta$, is nested, and has dimension at most
+$\dim T+q$. Hence there are at most $q-\beta$ strict growth steps.
+Every stable subphase now has persistent core dimension $b$, so
+induction applies with budget $G(b)$.
+
+Here is the support accounting. If active lifts cost at most $L$ and
+passive-kernel generators at most $L+1$, a stable phase costs at most
+$L+G(b)$. The next growth step adds one fresh block; a new active
+basis and its kernel can both be selected at cost $L+G(b)+1$.
+Substituting these coefficient witnesses is legitimate because later
+blocks are disjoint from earlier ones. The tensor quotient changes
+no cross-block coefficient convolution.
+
+If $\beta=0$, the initial costs are zero and one. At most $q$ growth
+steps give
+\[
+ (q+1)G(b)+q=(q+1)(G(b)+1)-1\le G(a)
+\]
+by \eqref{eq:recurrence}. If $\beta\ge1$, choose additional active
+lifts from the initial kernel at cost one. The remaining kernel also
+costs one, within the permitted cost two. At most $q-\beta$ growths
+give
+\[
+ 1+(q-\beta+1)G(b)+(q-\beta)
+ =(q-\beta+1)(G(b)+1)
+ \le q(G(b)+1)\le G(a).
+\]
+The last inequality uses $G(b)\ge0$ and \eqref{eq:recurrence}.
+Only larger active levels $b>a$ have been used.
+
+\paragraph{Zero passive constant rank.}
+Suppose $Q_1\cdots Q_n=0$. Choose $c$ maximal with
+$Q_c\cdots Q_n=0$. Every proper suffix $Q_{j+1}\cdots Q_n$,
+$j\ge c$, has positive rank, including the empty suffix of rank $k$.
+Equations \eqref{eq:KD} and \eqref{eq:reset} show that $K_n$ is
+spanned by coefficients of
+\[
+ Z_j\widetilde F_{j+1}\cdots\widetilde F_n,\qquad j\ge c.
+\]
+For a coefficient row $p$ of $Z_j$, start the actual suffix
+$A_{j+1}\cdots A_n$ from $\Span(B_j,(0,p))$, assigning weights
+zero and one. Its old active projection remains $T$: it is contained
+in the global reachable space, and its constant-prefix rows already
+supply $T$. Its positive-passive-rank case, just proved, has budget
+$G(a)$. Its kernel recurrence uses the same $B_i,W_i,Z_i,
+\widetilde F_i$ and contains
+$p\widetilde F_{j+1}\cdots\widetilde F_n$.
+
+That response is therefore spanned by actual suffix coefficients
+from $B_j$ of support at most $G(a)$, or from $p$ of support at most
+$G(a)-1$. In the original word $B_j$ costs zero and $p$ costs at most
+one. Its source cost is already paid by the weight one, so the total
+budget is $G(a)$. This is not circular induction at level $a$:
+the positive-rank case invoked only levels $b>a$. Adding the constant
+rows $B_n$ completes the span of $S_n$.
+
+\paragraph{Preservation of the palette.}
+Every subphase and source restart uses a contiguous subword of the
+same full matrices. It changes an initial row space, not the matrices.
+The cutwise gauges are invertible field-constant changes and preserve
+each interval rank and its unit-pivot identities. Each newly enlarged
+core dimension is the rank of an actual full constant interval, hence
+belongs to $\mathcal P$. The corrected passive operators
+$\widetilde F_i$ are used only in the exact algebra; no rank palette
+is assumed for their products. These observations justify all
+induction calls and finish the proof.
+\end{proof}
+
+\begin{theorem}[Palette row concentration]\label{thm:row}
+For every fixed row $u$, the coefficient-row span of
+$uA_1\cdots A_n$ is generated by actual coefficients supported on at
+most
+\begin{equation}\label{eq:paletteh}
+ h(\mathcal P)=\prod_{j=1}^{m}(p_j-p_{j-1}+1)-2
+\end{equation}
+blocks.
+\end{theorem}
+\begin{proof}
+Use Lemma~\ref{lem:weighted} with empty active core $a=0$ and initial
+passive space $\Span(u)$ of weight one. Weighted budget $G(0)$ means
+ordinary support budget $G(0)-1$, which is \eqref{eq:paletteh}.
+A full interval of unit rank zero is the zero matrix and causes no
+exception.
+\end{proof}
+
+For the full palette $\{0,1,\ldots,W\}$, this gives $2^W-2$.
+The palette refinement will be substantially smaller on compound words.
+
+\section{Box quotients bound every leading support}
+
+Return to polynomial or regular rational univariate matrices
+$A_i(Y_i)$ over a field $E$. Suppose every contiguous interval has
+generic rank equal to its constant rank at zero, and all these ranks
+belong to $\mathcal P$. Let $u,v$ be any fixed vectors over $E$ and
+assume $g(Y)=uA_1(Y_1)\cdots A_n(Y_n)v\ne0$.
+
+\begin{theorem}\label{thm:leading-support}
+Every nonzero monomial in the first ordinary-homogeneous component
+of $g$ has support at most $h(\mathcal P)$.
+\end{theorem}
+\begin{proof}
+A nonzero constant component is immediate. Otherwise let $m>0$ be
+the first degree and choose any nonzero coefficient $g_\alpha$ with
+$|\alpha|=m$. Set variables outside its support to zero and pass to
+the tensor box
+\[
+ \bigotimes_{i:\alpha_i>0} E[Y_i]/(Y_i^{\alpha_i+1}).
+\]
+Every surviving monomial is a divisor of $Y^\alpha$. Each proper
+divisor has total degree below $m$ and zero scalar coefficient. Thus
+the entire scalar in this quotient is exactly $g_\alpha Y^\alpha$,
+which is nonzero.
+
+All interval hypotheses survive the quotient. Larger minors vanish
+identically before quotienting, while every chosen constant nonzero
+pivot stays a unit. Regular rational denominators are units as well.
+Theorem~\ref{thm:row} therefore applies in this particular box. If
+$|\operatorname{supp}\alpha|>h(\mathcal P)$, every scalar coefficient
+permitted by its row-span bound is zero, forcing the entire scalar to
+be zero. This contradicts $g_\alpha\ne0$.
+\end{proof}
+
+The box step is essential. Ordinary unfiltered coefficient concentration
+alone would not bound every leading support: it could use a low-support
+coefficient of a much higher total degree. The quotient removes those
+coefficients while retaining all needed Schur identities.
+The endpoints here are arbitrary constants over $E$; they may depend
+on other shifts or parameters, as long as they are fixed in the residual
+variables being considered.
+
+\section{Standard Hasse orders and the filtered exponent bound}
+
+In characteristic $p>0$, let $\wt_p(a)$ be the sum of the base-$p$
+digits of $a$. The digit degree of a monomial is the sum of the digit
+weights of its exponents. In characteristic zero use $\wt_0(a)=a$.
+For a rational function, Hasse derivatives are defined by
+\[
+ F(T+Z)=\sum_{j\ge0}D_T^{[j]}F(T)Z^j.
+\]
+Their product and composition rules hold over every field.
+
+\begin{lemma}[Generic pivot closure]\label{lem:pivots}
+Let $F(T)$ be a nonzero row vector of $q$ rational functions over
+an arbitrary original field $F_0$. Call $\nu$ a pivot if
+$D^{[\nu]}F$ does not lie in the $F_0(T)$-span of all earlier jets.
+There are at most $q$ pivots. If $\nu$ is a pivot and
+$\binom\nu\mu\ne0$ in $F_0$, with $0\le\mu\le\nu$, then
+$\mu$ is a pivot. Consequently every pivot satisfies
+\[
+ \wt_p(\nu)\le q-1
+\]
+in positive characteristic, and $\nu\le q-1$ in characteristic zero.
+\end{lemma}
+\begin{proof}
+If $\mu$ were not a pivot, write
+\[
+ D^{[\mu]}F=\sum_{j<\mu}a_j(T)D^{[j]}F.
+\]
+Apply $D^{[\nu-\mu]}$. The left side is
+$\binom\nu\mu D^{[\nu]}F$. The product rule on the right gives
+only jets of indices $j+\nu-\mu-e<\nu$, for $e\ge0$.
+This contradicts the pivot property of $\nu$.
+
+In characteristic $p$, the nonzero binomial coefficients are exactly
+the digit subindices, as follows from the Frobenius expansion of
+$(1+Z)^\nu$. If $\nu=\sum_e\nu_ep^e$, all
+$\prod_e(\nu_e+1)$ digit subindices are pivots. Thus
+\[
+ \wt_p(\nu)+1\le\prod_e(\nu_e+1)\le q.
+\]
+In characteristic zero every index $0,\ldots,\nu$ is a pivot.
+This is the standard $p$-adic order criterion cited above, proved here
+for the precise rational-vector setting.
+\end{proof}
+
+\begin{lemma}\label{lem:moving-functional}
+Let $C\in E$ be transcendental over $F_0$, and let
+$\Lambda:E^q\to E$ be any $E$-linear functional. If
+$\Lambda(F(C+Y))$ is nonzero and first becomes nonzero at order $a$,
+then $a$ is a generic pivot of $F$. In particular $\wt_p(a)\le q-1$,
+with ordinary weight in characteristic zero.
+\end{lemma}
+\begin{proof}
+Every original-field rational jet relation is defined at $C$ because
+its nonzero denominator cannot vanish there. Every nonzero finite jet
+minor remains nonzero as well, so all successive jet ranks and pivots
+are preserved at $C$. If $a$ were not a pivot, its specialized jet
+would be a linear combination of earlier ones, all annihilated by
+$\Lambda$, contradicting its nonzero value.
+\end{proof}
+
+The functional may depend on $C$ and other correlated parameters.
+Neither perfection of $F_0$ nor transcendence of $C$ over the enlarged
+field $E$ is assumed.
+
+\begin{lemma}[Every leading exponent]\label{lem:exponents}
+Let $A_i(T_i)$ be rational univariate matrices of width $W$ over
+$F_0$, and let every $C_i\in E$ be transcendental over $F_0$.
+For arbitrary fixed $E$-endpoints, suppose
+\[
+ g(Y)=uA_1(C_1+Y_1)\cdots A_n(C_n+Y_n)v\ne0.
+\]
+For every nonzero monomial $Y^\alpha$ of its first homogeneous
+component, every coordinate satisfies
+$\wt_p(\alpha_i)\le W^2-1$. Local ranks are unrestricted.
+\end{lemma}
+\begin{proof}
+Let $m=|\alpha|$. Hold all exponents other than that of $Y_i$ at
+their chosen values. The remaining scalar coefficient at order $a$
+is an $E$-linear matrix-entry functional of $D^{[a]}A_i(C_i)$:
+its left and right vectors are the products of the fixed outside
+coefficient matrices and endpoints. At every $a<\alpha_i$ this
+coefficient is zero, since its full total degree is below $m$.
+At $a=\alpha_i$ it is nonzero. Apply
+Lemma~\ref{lem:moving-functional} to the vector of the $W^2$
+original matrix entries. Constants and empty variable blocks have
+only order-zero coefficients and cause no exception.
+\end{proof}
+
+This is an ordinary-order filtration argument for every leading
+monomial. It is stronger than selecting a low-digit-weight coefficient
+somewhere in the expansion. Only individual original-field
+transcendence is needed; there is no derivative-separating or
+common-translation premise in Lemma~\ref{lem:exponents}.
+
+\section{Affine detection of a bounded leading component}
+
+\begin{lemma}\label{lem:affine-detection}
+Let a nonzero polynomial or regular series have a first homogeneous
+component of digit degree at most $k$. After any invertible linear
+residual change of coordinates, $\SV_k$ detects that component and
+the whole series remains nonzero under the substitution.
+\end{lemma}
+\begin{proof}
+An invertible linear change preserves nonzeroness. Digit degree cannot
+increase: expand each exponent into its digit copies, use Frobenius
+on every copy, and note that collisions can only decrease digit weight.
+In characteristic zero this is ordinary total degree preservation.
+Every resulting monomial has support at most $k$.
+
+The image of $\SV_k$ contains every coordinate subspace of dimension
+at most $k$: specialize its direction variables to the corresponding
+interpolation nodes and unused amplitudes to zero. Restricting to
+the support of a nonzero monomial retains that coefficient, so one of
+these subspaces has a nonzero restriction. Thus the first component's
+SV image is nonzero. Higher homogeneous components have larger total
+degree in the fresh amplitudes and cannot cancel it. A nonzero constant
+component needs no fresh variables.
+\end{proof}
+
+All statements remain valid over a coefficient extension generated by
+earlier symbolic seeds; evaluation at the interpolation nodes still
+gives the identity matrix for the Lagrange basis.
+
+\section{The interval-rank descent}
+
+Adjoin the constant width-$w$ factors
+\[
+ E_{\mathrm{in}}=e_1u,\qquad E_{\mathrm{out}}=ve_1^T
+\]
+to the original latent word. Its full product is
+$f_{\mathrm{latent}}(T)E_{11}$. These are empty variable blocks and
+add no observed coordinates. Every interval mentioned in the descent
+belongs to this \emph{unshifted augmented word}.
+
+At any stage let $G$ be the moment curve plus already introduced
+SV pairs, with all seeds retained as independent indeterminates. Put
+\[
+ C_i=c_i+\ell_i(G).
+\]
+Every $C_i$ is transcendental over the original working field: its
+$t$-part is a nonzero linear combination of $t,t^2,\ldots,t^n$,
+whereas all additional SV terms are independent of $t$.
+This remains true in every characteristic, even if an ordinary
+derivative of that combination vanishes.
+
+Before the rank-$r$ step the induction invariant is
+\begin{equation}\label{eq:invariant}
+ \begin{gathered}
+ \text{every augmented interval of generic rank greater than }r\\
+ \text{retains that rank at the current }C.
+ \end{gathered}
+\end{equation}
+At $G=\gamma$, every rank-$w$ interval consists solely of full-rank
+locals. Their nonzero original-field univariate determinants survive
+at the individually transcendental $C_i$, so their product does too.
+Constant invertible factors also survive. This starts the induction
+at $r=w-1$. Previously preserved minors stay nonzero after adding
+fresh pairs, because setting their amplitudes to zero recovers the
+old shift.
+
+\subsection{Greedy blocks inside one target interval}
+
+Fix a contiguous interval $I$ of the unshifted augmented word with
+generic rank exactly $r$. Every subinterval of $I$ has rank at least
+$r$, since the rank of a full product is at most that of any contiguous
+subproduct. Starting at the left, take a shortest prefix of rank $r$,
+then repeat on the remaining suffix as long as such a prefix exists.
+Write
+\begin{equation}\label{eq:greedy}
+ I=B_1\cdots B_qT,\qquad B_j=C_jA_{i_j},
+\end{equation}
+where $A_{i_j}$ is the last single factor of that shortest prefix.
+There is at least one block. The chunks $C_j$ and leftover tail $T$
+have generic rank greater than $r$, or are empty. Indeed a shortest
+prefix cannot reach below $r$, and all its proper prefixes have
+higher rank; stopping means the remaining full suffix has higher
+rank. Every subinterval within one of these chunks has higher rank
+as well.
+
+The following words all have generic rank exactly $r$:
+\begin{equation}\label{eq:tests}
+ B_j,\qquad B_jB_{j+1}\ (j<q),\qquad B_qT.
+\end{equation}
+They are subintervals of $I$, giving rank at least $r$, and each
+contains a rank-$r$ block, giving rank at most $r$. Choose for each
+one a nonzero $r$-minor. The algorithm does not need to discover this
+choice; it is used only in the proof.
+
+\subsection{Exterior chunks with a preserved palette}
+
+Put $W=\binom wr$ and replace each local matrix by its $r$-th
+compound matrix. Cauchy--Binet gives
+\[
+ \bigwedge^r(AB)=(\bigwedge^rA)(\bigwedge^rB)
+\]
+in every characteristic. A matrix of rank $s$ has compound rank
+$\binom sr$, by reducing it over its field to a diagonal rank-$s$
+matrix. Thus each selected minor in \eqref{eq:tests} is a nonzero
+scalar entry of a width-$W$ compound word whose locals are still
+original-field univariate polynomial matrices.
+
+By \eqref{eq:invariant}, every interval inside $C_j$ or $T$ has
+preserved original rank $s>r$. Its compound interval has preserved
+rank $\binom sr$. Hence every prepared compound chunk satisfies
+Theorem~\ref{thm:leading-support} with palette
+\[
+ \mathcal P_{w,r}=\left\{0,\binom{r+1}{r},
+                    \binom{r+2}{r},\ldots,\binom wr\right\}.
+\]
+Its first positive rank is $r+1$, and later gaps are
+$\binom{s-1}{r-1}$. Formula \eqref{eq:paletteh} therefore gives
+exactly $h(\mathcal P_{w,r})=h_{w,r}$ from \eqref{eq:h}.
+An empty chunk is the identity and contributes support zero.
+
+\subsection{Conditioning the leading monomial of a test}
+
+Let $g(Y)$ be one selected nonzero compound-entry test after the
+current shift $C$, in independent latent residual variables. It
+remains a nonzero polynomial: translation by $C$ is an automorphism
+over the old-seed field. If its constant term is nonzero, it is already
+preserved. Otherwise choose \emph{any} nonzero monomial $Y^\alpha$
+of its first degree $m$.
+
+Fix the exponents outside one prepared chunk. Coefficient extraction
+there leaves a scalar contraction of the chunk with a fixed row and
+column over the old-seed field. These endpoints are products of the
+fixed outside local coefficient matrices; they can depend on those
+exponents and all shifts, but not on the chunk's residual variables.
+The chosen chunk coefficient is nonzero. Every coefficient of smaller
+\emph{total chunk degree} is zero, since it would yield a nonzero
+coefficient of the full test below degree $m$ with the same outside
+exponents. The chunk part of $\alpha$ therefore belongs to its first
+homogeneous scalar component.
+
+Theorem~\ref{thm:leading-support} bounds its support by $h_{w,r}$.
+This is valid for arbitrary coefficient-field endpoints, and also
+when the chunk degree is zero. Each word in \eqref{eq:tests} contains
+at most two prepared chunks and at most two singleton layers:
+\[
+ C_jA_{i_j},\qquad
+ C_jA_{i_j}C_{j+1}A_{i_{j+1}},\qquad
+ C_qA_{i_q}T.
+\]
+Thus every leading monomial of every test has support at most
+$2h_{w,r}+2$.
+
+Apply Lemma~\ref{lem:exponents} independently to the whole compound
+test. Its local matrices have width $W$, are over the original field,
+and have individually transcendental shifts. Every leading exponent
+has digit weight at most $W^2-1$, including those at singleton layers
+where no rank-preservation premise has been used. Consequently the
+\emph{entire} first homogeneous component of each test has digit
+degree at most
+\[
+ (W^2-1)(2h_{w,r}+2)=k_{w,r}.
+\]
+No multivariate boundary vector has been factored. Both support and
+exponent bounds are applied to first ordinary degrees, rather than
+to unfiltered coefficient witnesses.
+
+\subsection{One stage preserves rank \texorpdfstring{$r$}{r}}
+
+Add a fresh $\SV_{k_{w,r}}$ in the observed coordinates. The latent
+residual change is the original invertible linear transformation, so
+Lemma~\ref{lem:affine-detection} preserves every selected test.
+The same map works simultaneously for all tests in all target
+intervals: they form a finite family of nonzero rational functions
+in the common old and fresh seed field. No seed specialization is
+made during the symbolic induction.
+
+Every word in \eqref{eq:tests} now has specialized rank at least $r$
+because its chosen minor survives, and at most $r$ because its larger
+minors vanish identically. These ranks are therefore exactly $r$.
+The following elementary chain fact completes the step.
+
+\begin{lemma}\label{lem:chain}
+If $B_1,\ldots,B_q$ have rank $r$, every adjacent product has rank
+$r$, and $B_qT$ has rank $r$, then $B_1\cdots B_qT$ has rank $r$.
+\end{lemma}
+\begin{proof}
+Inductively the prefix product through $B_j$ has rank $r$ and the
+same row space as $B_j$. Multiplication by $B_{j+1}$ has rank $r$
+because $B_jB_{j+1}$ does; the new row space equals that of
+$B_{j+1}$. At the last block it therefore has the same row space
+as $B_q$, whose multiplication by $T$ has rank $r$.
+\end{proof}
+
+The proof uses the tail test $B_qT$ separately, so there is no
+uncounted three-chunk test after absorbing the tail. We have established
+\eqref{eq:invariant} for the next lower rank while preserving all
+previous ranks. Descend through $r=w-1,\ldots,1$. The final map is
+the sum of the moment curve and exactly $K(w)$ fresh SV pairs.
+The full augmented interval has generic rank one because $f\ne0$;
+its rank preservation gives $f(G)\ne0$. If $w=1$, the initial curve
+already preserves the product of nonzero univariate scalars.
+
+\section{Quantitative bounds and the pure map}
+
+For $1\le r<w$, we have $r+2\le2^{r+1}$ and
+$\binom{s-1}{r-1}+1\le2^s$. Thus
+\[
+ h_{w,r}+2\le2^{\sum_{s=r+1}^{w}s}
+             \le2^{w(w+1)/2-1}.
+\]
+Since $W_{w,r}\le2^w$, the safe estimate
+\[
+ K(w)\le(w-1)2^{w(w+1)/2+2w}
+\]
+follows. Much smaller constants are possible in several small-width
+special cases; no such refinements are dependencies here.
+
+The observed polynomial after the final substitution has individual
+seed degrees at most $nD$ in $t$, $D$ in each amplitude, and
+$(n-1)D$ in each direction. Cartesian interpolation proves
+\eqref{eq:grid}. It evaluates only the original scalar polynomial on
+an explicit polynomial map. Numerical points need not avoid the
+auxiliary pivots used in the proof, and the degrees of auxiliary
+minors do not enter this grid calculation.
+
+For the pure map $\SV_{K(w)+1}$, specialize its first pair to
+$z_0=t,y_0=t$ in every characteristic. A nonzero latent combination
+of this first pair is $c+tq(t)$, where $q$ is a nonzero combination
+of the independent Lagrange polynomials. It is nonconstant, hence
+transcendental over the original field. All later SV stages are
+independent of $t$. Therefore the entire preceding proof applies to
+this first-pair specialization, and the unspecialized pure SV image
+is nonzero as well. A basic pure-map grid uses at most
+\[
+ \bigl((D+1)((n-1)D+1)\bigr)^{K(w)+1}
+ \le(nD+1)^{2K(w)+2}
+\]
+points. This completes Theorem~\ref{thm:main}.
+
+\section{What the proof does and does not use}
+
+The rank profile is used through constant-unit pivots and vanishing
+larger minors, so it survives monomial box quotients. The weighted
+reset identity is a coefficient-span statement; it does not claim
+preservation of a matrix image variety or a nonlinear cone. The
+Hasse argument is applied after filtering by the first ordinary total
+degree, so it bounds each exponent of every leading monomial. It is
+not the invalid inference that one low-digit-weight coefficient must
+survive an unknown linear change.
+
+The rank descent always decomposes a particular target interval of
+generic rank $r$. That is what prevents a greedy prefix from jumping
+below $r$, and ensures every adjacent-block and tail test has rank
+exactly $r$. Conditioning on the outside coefficients leaves constant
+endpoints for the chosen chunk, even when those endpoints depend on
+all old seeds. The coefficient field in the generic Hasse relations
+remains the original field, where each shifted latent argument is
+transcendental. These are the interfaces on which the proof depends.
+
+The final conclusion is an internal candidate proof with polynomial
+size for fixed width. It does not give a polynomial bound uniform in
+unbounded width, assert an optimal parameter count, or cover singular
+affine projections or orbit closures.
+
+\begin{thebibliography}{9}\raggedright
+\bibitem{BG}
+Vishwas Bhargava and Sumanta Ghosh.
+\emph{Improved Hitting Set for Orbit of ROABPs}.
+Computational Complexity, 2022.
+\href{https://doi.org/10.1007/s00037-022-00230-9}{doi:10.1007/s00037-022-00230-9}.
+Primary preprint:
+\url{https://eccc.weizmann.ac.il/report/2021/062/revision/2/download/}.
+
+\bibitem{GL92}
+Arnaldo Garcia and R.\ F.\ Lax.
+\emph{Weierstrass Weight of Gorenstein Singularities with One or Two Branches}.
+1992 preprint, Proposition 1.1.
+\url{https://arxiv.org/pdf/alg-geom/9208003}.
+
+\bibitem{SV86}
+K.-O. St\"ohr and J.\ F.\ Voloch.
+\emph{Weierstrass Points and Curves Over Finite Fields}.
+Proceedings of the London Mathematical Society, 52(1):1--19, 1986.
+\href{https://doi.org/10.1112/plms/s3-52.1.1}{doi:10.1112/plms/s3-52.1.1}.
+\end{thebibliography}
+\end{document}

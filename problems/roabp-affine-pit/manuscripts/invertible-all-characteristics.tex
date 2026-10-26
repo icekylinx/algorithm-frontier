@@ -1,0 +1,544 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\F}{\mathbb F}
+\newcommand{\SV}{\operatorname{SV}}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\pdeg}{\operatorname{pdeg}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\GL}{\operatorname{GL}}
+\title{Affine-Orbit Hitting for Invertible-Local ROABPs\\
+in Every Characteristic}
+\author{Yilin Liu \and GPT-6 Astra Pro}\date{26 October 2026}
+\begin{document}\maketitle
+
+\begin{abstract}
+We prove an exponential-in-width bound on the characteristic digit degree
+of the entire first homogeneous scalar component of an invertible-local
+read-once oblivious algebraic branching program after a separating curve
+shift. For each fixed support of size $k$, an exterior pairing bounds the
+number of leading monomials by $\binom{w-2}{k-1}$. Full common-translation
+invariance forces whole-digit transfers among monomials of maximal digit
+degree. A finite-set spanning-tree argument then gives
+$\pdeg\le b(w):=\max_k\{\binom{w-2}{k-1}+k-1\}$ for $w\ge2$.
+Consequently a curve and $b(w)$ Shpilka--Volkovich pairs hit unknown
+invertible affine orbits in every characteristic. Univariate rank-one
+splitting permits local generic ranks one or $w$. A self-contained digit
+polarization argument gives degree-independent direction grids and
+$n^{2b(w)}(\rho D+1)(D+1)^{b(w)}$ evaluations for scalar total degree
+at most $D$, where $\rho\le2n-1$.
+\end{abstract}
+
+\noindent\textbf{Review status.}
+This manuscript and its preceding structural notes have independent
+model-assisted internal reconstructions and exact-source audits.
+The mathematical text is frozen. No external peer review
+or publication-priority claim is asserted.
+
+\section{Statement and precise model}
+
+Let $n,w,D\ge1$. We consider a nonzero polynomial
+\begin{equation}\label{eq:model}
+ f(X)=uA_1(\ell_1(X)+c_1)\cdots A_n(\ell_n(X)+c_n)v,
+ \qquad \deg f\le D,
+\end{equation}
+over a field $\F$. Each $A_i$ is a $w$-by-$w$ univariate polynomial
+matrix of generic rank either one or $w$; $u,v$ are constant endpoints;
+and $\ell_1,\ldots,\ell_n$ are the coordinate forms of an invertible
+linear transformation. The representation, its order, and the affine
+transformation are unknown. There is no characteristic or local-degree
+restriction. A representation with local entry degrees at most $\delta$
+has $D\le n\delta$. A known latent scalar individual-degree bound
+$\delta$ also implies $D\le n\delta$, without changing the promised
+representation.
+
+Put
+\begin{equation}\label{eq:b}
+ b(1)=0,\qquad
+ b(w)=\max_{1\le k\le w-1}
+       \left\{\binom{w-2}{k-1}+k-1\right\}\quad(w\ge2).
+\end{equation}
+For widths $2,\ldots,8$ the values are $1,2,3,5,8,13,23$.
+For $w\ge2$, the estimate $b(w)\le2^{w-2}+w-2$ suffices for the asymptotic statement.
+No optimality of this width-dependent constant is asserted.
+
+Choose $n$ distinct interpolation nodes $a_i$ in a working field and
+their Lagrange polynomials $\lambda_i$, of degree at most $n-1$.
+For $k\ge0$ define
+\[
+ \SV_{k,i}=\sum_{j=1}^k z_j\lambda_i(y_j).
+\]
+In characteristic zero let $e_i=i$. In characteristic $p>0$, let $e_i$
+be the $i$-th positive integer not divisible by $p$. Set
+\[
+ \gamma_i(t)=t^{e_i},\qquad \rho=e_n,\qquad n\le\rho\le2n-1.
+\]
+The coordinate derivatives of $\gamma$ are linearly independent.
+
+\begin{theorem}\label{thm:main}
+Every nonzero polynomial \eqref{eq:model}, over every characteristic,
+is hit by
+\begin{equation}\label{eq:map}
+ \mathcal H_i(t,z,y)=t^{e_i}
+          +\sum_{j=1}^{b(w)}z_j\lambda_i(y_j).
+\end{equation}
+The standard map $\SV_{b(w)+1}$ also hits this class.
+For \eqref{eq:map}, any Cartesian grids with
+\[
+ |T|=\rho D+1,\qquad |Z_j|=D+1,\qquad |Y_j|=n^2
+\]
+give a hitting set of size at most
+\begin{equation}\label{eq:count}
+ n^{2b(w)}(\rho D+1)(D+1)^{b(w)}.
+\end{equation}
+A working field of size at least $\max\{n^2,\rho D+1\}$ supplies
+all these grids and the interpolation nodes. Extension-field oracle
+evaluations are allowed when the base field is smaller.
+If $D=n\delta$ with $n,\delta\ge1$, the count is
+$O_w(n^{3b(w)+2}\delta^{b(w)+1})$.
+Constant polynomials, including $n=0$ or $D=0$, need one evaluation.
+\end{theorem}
+
+The theorem permits rank-one bottlenecks, but does not include local
+generic ranks strictly between one and $w$. It concerns invertible
+affine transformations, not singular projections or orbit closures.
+The proof bounds the \emph{whole} first homogeneous component. It does
+not infer affine hitting merely from the existence of one coefficient
+of low digit degree.
+
+\section{Identity normalization and full translation}
+
+In characteristic $p>0$, write $\wt_p(a)$ for the sum of the base-$p$
+digits of a nonnegative integer $a$. The digit degree of $Y^\alpha$ is
+$\sum_i\wt_p(\alpha_i)$, and that of a nonzero polynomial is its
+maximum monomial digit degree. In characteristic zero define
+$\wt_0(a)=a$, so digit degree means ordinary total degree.
+
+We first allow generically invertible rational univariate factors
+$H_i(T_i)$ of width $w$, over an arbitrary coefficient field $F_0$.
+Let $u,v$ be constant nonzero endpoints and
+\[
+ f(T)=uH_1(T_1)\cdots H_n(T_n)v\ne0.
+\]
+Let $C_i(t)\in F_0(t)$ satisfy $C_i'(t)\ne0$ for every $i$.
+Each $C_i$ is transcendental over $F_0$, so each nonzero local
+determinant and univariate denominator remains nonzero on this curve.
+Thus $f(C+Y)$ is regular at $Y=0$ over $E=F_0(t)$.
+No perfection assumption on either coefficient field is used.
+
+If $f(C)\ne0$, its first component is a nonzero constant. Otherwise put
+\[
+ P_j=H_1(C_1)\cdots H_j(C_j),\qquad
+ B_i(Y_i)=P_{i-1}H_i(C_i+Y_i)P_i^{-1},\qquad v_*=P_nv.
+\]
+Then $B_i(0)=I_w$, $u,v_*$ are nonzero, $uv_*=0$, and
+\begin{equation}\label{eq:identity}
+ g(Y)=f(C+Y)=uB_1(Y_1)\cdots B_n(Y_n)v_*.
+\end{equation}
+Let $m>0$ be the first nonzero ordinary total degree of this formal
+series, and let $H=g_{[m]}$ be its homogeneous component of degree $m$.
+
+\begin{lemma}\label{lem:translation}
+The leading component satisfies the polynomial identity
+\[
+ H_t(Y+hC'(t))=H_t(Y).
+\]
+After the diagonal change $Y_i=C_i'(t)Z_i$, it satisfies
+$H(Z+h\mathbf1)=H(Z)$. This change preserves support, digit degree,
+and the number of nonzero monomials on every support.
+\end{lemma}
+\begin{proof}
+Expand $f(C(t+h)+Y)$ as a formal series in the combined variables
+$(Y,h)$. Expanding first at the curve parameter $t+h$, every component
+of residual $Y$-degree below $m$ vanishes identically as a rational
+function of the parameter. Its total-degree-$m$ part is therefore
+$H_t(Y)$; changing a coefficient from $t$ to $t+h$ affects only higher
+combined degree. Expanding instead at $C(t)$ gives
+$f(C(t)+Y+\Delta)$ with
+$\Delta_i=hC_i'(t)+O(h^2)$. Its total-degree-$m$ part is
+$H_t(Y+hC')$. Comparing the expansions proves the full identity.
+All $C_i'$ are nonzero, which proves the remaining assertions.
+\end{proof}
+
+The full translation identity, rather than only its first derivative,
+is essential in positive characteristic.
+
+\section{An exterior bound for each fixed support}
+
+The following lemma applies to any identity-constant word
+\eqref{eq:identity}, even without its origin on a curve. Write
+$B_{i,a}=[Y_i^a]B_i$.
+
+\begin{lemma}\label{lem:exterior}
+Let $w\ge2$. For the first nonzero homogeneous component $H$ of an identity-constant
+width-$w$ word with $uv_*=0$, the number $N_S$ of nonzero monomials on
+a fixed support $S$ of size $k$ satisfies
+\[
+ N_S\le\binom{w-2}{k-1}.
+\]
+In particular every nonzero leading monomial has support at most $w-1$.
+\end{lemma}
+\begin{proof}
+The case $k=1$ follows from homogeneity. Assume $k\ge2$ and write
+$S=\{i_1<\cdots<i_k\}$. For a nonzero leading monomial $Y^\alpha$
+on $S$, write its positive exponents as $\alpha_1,\ldots,\alpha_k$,
+whose sum is $m$, and define
+\[
+ r_s^\alpha=uB_{i_1,\alpha_1}\cdots B_{i_s,\alpha_s},\qquad
+ c_t^\alpha=B_{i_{t+1},\alpha_{t+1}}\cdots B_{i_k,\alpha_k}v_* .
+\]
+For $1\le s,t\le k-1$, the rows $r_s^\alpha$ lie in
+$V=\ker(v_*)$ and the columns $c_t^\alpha$ lie in $W=\ker(u)$:
+their scalar contractions are coefficients of ordinary degree below
+$m$. The pairing induced on $V/Eu$ and $W/Ev_*$ is nondegenerate and
+has dimension $w-2$. Indeed the annihilator of $W$ in the row space is
+$Eu$, and dually the annihilator of $V$ is $Ev_*$.
+
+Take the exterior products of the $k-1$ prefix rows and the $k-1$
+suffix columns in these quotient spaces. Their exterior pairing is
+the determinant of $(r_s^\alpha c_t^\beta)_{s,t=1}^{k-1}$.
+For $\alpha=\beta$, entries with $s<t$ vanish: their variable sets
+are disjoint and their total degree is below $m$. Every diagonal entry
+is the nonzero full coefficient $h_\alpha=[Y^\alpha]H$. Thus
+\begin{equation}\label{eq:diagonal}
+ \det(r_s^\alpha c_t^\alpha)=h_\alpha^{k-1}\ne0.
+\end{equation}
+
+Order the exponent vectors on $S$ lexicographically. Suppose
+$\alpha<\beta$, with first difference at position $h$. Then
+$\alpha_h<\beta_h$ and $h\le k-1$, since their total degrees agree.
+Let $a_s=\sum_{j\le s}\alpha_j$ and
+$b_t=\sum_{j\le t}\beta_j$. For $s\le h$ and $t\ge h$,
+\[
+ a_s\le a_h<b_h\le b_t.
+\]
+Here $s\le t$, so the prefix and suffix use disjoint variable sets;
+their product is a genuine scalar coefficient of total degree
+$a_s+m-b_t<m$. It vanishes. The first $h$ rows of the pairing matrix
+are consequently supported on only $h-1$ columns, and its determinant
+is zero.
+
+The matrix of exterior pairings over all leading monomials on $S$ is
+triangular with nonzero diagonal \eqref{eq:diagonal}. Its rank is
+$N_S$ and is at most the dimension of the exterior space,
+$\binom{w-2}{k-1}$. If $k\ge w$, this dimension is zero, so no
+such monomial exists. Entries with $s>t$ may repeat variable positions;
+no coefficient interpretation or vanishing assertion for those entries
+was used.
+\end{proof}
+
+\section{Digit transfers and a spanning-tree count}
+
+\begin{lemma}\label{lem:sets}
+Let a finite connected undirected graph have vertex labels
+$d(v)=(d_1(v),\ldots,d_k(v))$ in positive integers, all with sum $K$.
+Every edge transfers one unit from one coordinate to another. Suppose
+that for every vertex and every coordinate $i$ with $d_i>1$, there is
+an adjacent vertex whose $i$-th coordinate is $d_i-1$.
+Then the graph has at least $K-k+1$ vertices. Labels need not be distinct.
+\end{lemma}
+\begin{proof}
+Put $R=K-k$ and associate to vertex $v$ the $R$-element set
+\[
+ S_v=\{(i,r):1\le r\le d_i(v)-1\}.
+\]
+Adjacent sets exchange one element. For every fixed coordinate, repeated
+decreasing steps reach weight one within the connected component.
+Hence $\bigcap_v S_v=\varnothing$.
+
+Order the vertices along a rooted spanning tree, with each parent
+preceding its children. The initial intersection has $R$ elements.
+Before adding a child, the current intersection is contained in its
+parent's set. The child removes at most one element of that set, so
+each added vertex decreases the intersection by at most one. An empty
+final intersection requires at least $R$ additions, proving the claim.
+The argument also covers $R=0$ and repeated labels.
+\end{proof}
+
+\begin{lemma}\label{lem:transfer}
+Let $H$ be a nonzero homogeneous polynomial with
+$H(Z+h\mathbf1)=H(Z)$, and let $K$ be its maximal digit degree.
+Choose a support $S$ of maximum cardinality $k$ among its nonzero
+digit-degree-$K$ monomials. If $N$ is the number of such monomials on
+this same support, then
+\[
+ K\le N+k-1.
+\]
+\end{lemma}
+\begin{proof}
+Let $Z^\alpha$ be any of these monomials and put
+$d_i=\wt_p(\alpha_i)$, using ordinary exponents in characteristic zero.
+If $d_i>1$, choose a digit power $q=p^e$ that occurs in $\alpha_i$;
+in characteristic zero take $q=1$. Then $\alpha_i-q>0$ and its digit
+weight is $d_i-1$.
+
+In the translation identity the monomial $Z^\alpha$ contributes
+nontrivially to
+\[
+ Z^\gamma h^q,\qquad \gamma=\alpha-qe_i.
+\]
+This coefficient must cancel. Any contributing source has exponent
+$\beta=\gamma+\delta$, with $\delta_j\ge0$ and
+$\sum_j\delta_j=q$. In positive characteristic, the nonzero binomial
+coefficient requires that every digit of $\gamma_j$ be a subdigit of
+$\beta_j$. This follows directly by expanding
+$(Z+h)^a=\prod_e(Z^{p^e}+h^{p^e})^{a_e}$.
+There is therefore no borrow in the subtraction, and
+\begin{equation}\label{eq:weight}
+ \wt_p(\beta)=\wt_p(\gamma)+\sum_j\wt_p(\delta_j)
+              =K-1+\sum_j\wt_p(\delta_j).
+\end{equation}
+The same equation holds with ordinary weights in characteristic zero.
+Maximality of $K$ forces the last sum to be one. Since
+$\sum_j\delta_j=q$, exactly one increment is nonzero and it equals
+$q$. A distinct nonzero cancelling source thus has the form
+\begin{equation}\label{eq:transfer}
+ \beta=\alpha-qe_i+qe_j,\qquad j\ne i,
+\end{equation}
+with no carry in the addition at $j$ and the same digit degree $K$.
+If $j$ were outside $S$, its support would have size $k+1$, because
+the decreased coordinate remains positive. This contradicts the choice
+of $k$. The partner lies on the same support.
+
+Form the graph of all $N$ monomials, with edges for all such permitted
+whole-digit transfers. An edge is reversible: its destination has digit
+weight at least two, removing the transferred digit has no borrow, and
+adding it back restores the original exponent without a carry.
+Each connected component has the decreasing-step property of
+Lemma~\ref{lem:sets} for every coordinate. That lemma gives at least
+$K-k+1$ vertices in any component, and hence $N\ge K-k+1$.
+Only the existence of a cancelling partner was used; there is no claim
+that every destination or every allocation of digit copies must occur.
+\end{proof}
+
+\begin{theorem}\label{thm:component}
+For the rational invertible-local word and curve of Section 2, the
+entire first nonzero homogeneous component of $f(C(t)+Y)$ has digit
+degree at most $b(w)$. In width one, $f(C(t))\ne0$.
+\end{theorem}
+\begin{proof}
+If the constant component is nonzero there is nothing to prove.
+Otherwise use Lemma~\ref{lem:translation} to make common translation
+invariance hold by a nonzero diagonal scaling. This preserves the
+fixed-support counts in Lemma~\ref{lem:exterior}. For a maximal-digit-
+degree monomial on a largest such support $S$, Lemma~\ref{lem:transfer}
+and the exterior bound give
+\[
+ K\le N+k-1\le\binom{w-2}{k-1}+k-1\le b(w).
+\]
+Here $1\le k\le w-1$. In width one the scalar is a product of
+nonzero univariate rational functions and nonzero constant endpoints;
+each factor stays nonzero at its transcendental $C_i$.
+\end{proof}
+
+\section{Affine changes and rank-one splitting}
+
+Digit degree cannot increase under linear substitution. In positive
+characteristic this follows by expanding each exponent into base-$p$
+digits and using Frobenius on every digit copy; subsequent collisions
+can only reduce the resulting digit weight. An invertible linear
+substitution also preserves nonzeroness. A polynomial of digit degree
+at most $k$ has every monomial supported on at most $k$ variables.
+
+The image of $\SV_k$ contains every coordinate subspace of dimension
+at most $k$: specialize its direction variables to the corresponding
+interpolation nodes, and unused amplitudes to zero. Consequently it
+hits every nonzero polynomial having a nonzero monomial supported on
+at most $k$ variables. Indeed restriction to that monomial's coordinate
+set retains its coefficient.
+
+For \eqref{eq:model} with all local factors invertible, set
+$C_i(t)=c_i+\ell_i(\gamma(t))$. Independent coordinate derivatives
+ensure $C_i'\ne0$. Theorem~\ref{thm:component} applies. The residual
+invertible linear change takes the entire leading component to a
+nonzero polynomial of digit degree at most $b(w)$, which is hit by
+$\SV_{b(w)}$. Higher homogeneous components have larger total degree
+in the fresh amplitudes and cannot cancel it. This proves
+$f(\gamma+\SV_{b(w)})\ne0$ for invertible local factors.
+The argument applies to any subset of independent latent forms by
+extending them to a full basis of the original coordinate space.
+
+For completeness we give the rank-one interface explicitly. Let
+$R_j(T_j)$, $1\le j\le s$, be the rank-one factors in their order,
+and let $G_0,\ldots,G_s$ denote the intervening invertible words.
+Choose a nonzero univariate pivot $h_j=(R_j)_{a_jb_j}$ and put
+\[
+ a_j^*=R_je_{b_j},\qquad b_j^*=e_{a_j}^{T}R_j,
+ \qquad R_j=\frac{a_j^*b_j^*}{h_j}.
+\]
+The scalar has the exact rational factorization
+\begin{equation}\label{eq:split}
+ f=\frac{(uG_0a_1^*)
+       (b_1^*G_1a_2^*)\cdots
+       (b_{s-1}^*G_{s-1}a_s^*)(b_s^*G_sv)}
+          {h_1\cdots h_s}.
+\end{equation}
+Every numerator is nonzero because $f\ne0$, and is internally read
+once. Adjacent numerators may share a rank-one boundary variable.
+
+A nonzero univariate row or column can be completed to an invertible
+univariate matrix by adjoining constant standard-basis rows or columns:
+choose one nonzero coordinate for its determinant. Make these choices
+over the original coefficient field, before evaluating the curve.
+Thus every numerator in \eqref{eq:split} is an invertible-local scalar
+word with constant endpoints, to which the preceding argument applies.
+The completion determinants and the pivots $h_j$ remain nonzero at
+the curve because their latent arguments are transcendental. Their
+shifted denominators are units at residual zero. The same map preserves
+all numerator factors, and their product remains nonzero even though
+different factors can share variables. There are at most $s+1\le n+1$
+numerators. If $s=0$, use the one original scalar word instead.
+
+The structural argument allowed rational univariate factors precisely
+so that regular univariate endpoint completions or pivot divisions do
+not require a change of coefficient field depending on residual
+variables. All such rational functions are defined over the original
+field; the only common coefficient extension in the proof is $F_0(t)$.
+
+\section{Digit polarization and finite direction grids}
+
+We include the direction-grid proof to make the query count independent
+of any auxiliary addendum.
+
+\begin{lemma}\label{lem:polar}
+Let $0\ne H$ be homogeneous of positive ordinary degree over any
+field $E$, with maximal digit degree $K$. There are $K$ pure digit
+powers $q_1,\ldots,q_K$ (all one in characteristic zero) such that
+\[
+ \mathcal P(V_1,\ldots,V_K)=
+ [z_1^{q_1}\cdots z_K^{q_K}]
+ H\left(\sum_{j=1}^K z_jV_j\right)
+\]
+is a nonzero tensor of the form
+$\sum c_{i_1,\ldots,i_K}\prod_j(V_j)_{i_j}^{q_j}$.
+It remains nonzero after any invertible linear change in every vector
+argument induced by the same invertible coordinate map.
+\end{lemma}
+\begin{proof}
+Choose a nonzero monomial $h_\alpha Y^\alpha$ of digit degree $K$.
+In characteristic $p$, write $\alpha_i=\sum_e d_{i,e}p^e$,
+$0\le d_{i,e}<p$, and list its $K$ digit copies in any order.
+Assign one amplitude to each copy, recording its coordinate $i_j$
+and power $q_j$. A source monomial contributes to the target amplitude
+monomial only if all $K$ amplitudes are occupied. Every source has at
+most $K$ digit copies, so exactly one copy must occupy each amplitude.
+This proves the tensor form. The coefficient of the particular vector
+monomial $\prod_j(V_j)_{i_j}^{q_j}$ is
+\[
+ h_\alpha\prod_{i,e}d_{i,e}!\ne0.
+\]
+Its coordinate/exponent list determines $\alpha$, so a different
+source cannot cancel this coefficient. In characteristic zero the same
+argument uses $K=\deg H$, powers one, and coefficient
+$h_\alpha\prod_i\alpha_i!\ne0$.
+Coefficient extraction commutes with an invertible coordinate change,
+and replacing every $V_j$ by $LV_j$ is invertible. Equivalently, each
+Frobenius-twisted matrix has determinant $(\det L)^{q_j}\ne0$.
+No total factorial or perfection assumption is required.
+\end{proof}
+
+The polynomial in Lemma~\ref{lem:polar} remains nonzero when
+$V_j=(\lambda_1(y_j),\ldots,\lambda_n(y_j))$. Each family
+$\{\lambda_i(y_j)^{q_j}\}_i$ is independent over every coefficient
+extension, as evaluation at the interpolation nodes gives the identity
+matrix.
+
+\begin{lemma}\label{lem:directions}
+Suppose $M$ nonzero polynomials in $k$ direction variables have, in
+each variable $y_j$, coefficients in the span of
+$\{\lambda_i(y_j)^{q_j}\}_i$, where $q_j$ is a pure digit power;
+the power lists may differ between polynomials. A polynomial constant
+in a direction is allowed. Any $k$ grids of size $M(n-1)+1$ contain
+a tuple preserving all $M$ polynomials as nonzero over the coefficient
+field.
+\end{lemma}
+\begin{proof}
+Choose directions successively. In each currently nonzero polynomial,
+select a nonzero coefficient after expanding in the remaining
+direction variables. As a polynomial in the current direction it is
+$\sum_i b_i\lambda_i(y)^{q}$. Over an algebraic closure of the
+coefficient field it is a $q$-th power of a nonzero polynomial of
+degree at most $n-1$. Hence it has at most $n-1$ distinct roots.
+In characteristic zero $q=1$ and the same bound is immediate.
+Avoid the union of at most $M(n-1)$ bad choices and continue.
+Constant directions have no bad choices. Root extraction is used only
+in the proof; the algorithm searches the specified Cartesian grids.
+\end{proof}
+
+Apply these lemmas over $E=\F(t)$ to the at most $M\le n+1$
+numerators in \eqref{eq:split}. A numerator already nonzero at zero
+uses its nonzero constant amplitude coefficient. For each other one,
+apply polarization to its entire first homogeneous component, of digit
+degree $K\le b(w)$, using the first $K$ amplitude variables and
+exponent zero in the remaining ones. The target amplitude degree is
+the ordinary degree of that component, so no higher component changes
+this coefficient. Direction polynomials for different numerators may
+use different powers. Lemma~\ref{lem:directions} simultaneously
+preserves all of them on grids of size
+\[
+ M(n-1)+1\le(n+1)(n-1)+1=n^2.
+\]
+Every auxiliary denominator stays a unit at amplitude zero regardless
+of those directions. Thus the original $f$ remains a nonzero polynomial
+in $t,z_1,\ldots,z_{b(w)}$ after one such direction choice.
+
+Its individual degrees in these remaining variables are at most
+$\rho D,D,\ldots,D$. Standard individual-degree interpolation on
+$\rho D+1,D+1,\ldots,D+1$ points gives a nonzero evaluation.
+This proves \eqref{eq:count} and its field-size statement. The search
+evaluates only the original polynomial composed with the polynomial
+map \eqref{eq:map}; numerical grid points need not avoid any auxiliary
+rational pivot. In width one, no directions or fresh amplitudes are
+needed and the same argument uses only the curve grid.
+
+For comparison, ordinary degree interpolation in all seeds gives the
+basic rectangular count
+\[
+ (\rho D+1)(D+1)^{b(w)}\bigl((n-1)D+1\bigr)^{b(w)}.
+\]
+The improved count replaces its direction grids by $n^2$ elements
+without imposing any bound on $D$ relative to the characteristic.
+
+\section{The pure Shpilka--Volkovich map}
+
+Use the first pair of $\SV_{b(w)+1}$ as a proof-only separating
+curve. In characteristic $p>0$, specialize
+$z_0=t$, $y_0=t^p$. The coordinate derivatives of
+$t\lambda_i(t^p)$ are $\lambda_i(t^p)$ and are independent.
+In characteristic zero, specialize $z_0=t$, $y_0=t$. The derivatives
+are $\lambda_i(t)+t\lambda_i'(t)$; the map
+$q(t)\mapsto q(t)+tq'(t)$ is invertible on polynomials of degree
+below $n$, since it multiplies $t^a$ by $a+1$.
+The remaining $b(w)$ pairs are fresh, so the already proved argument
+shows that this specialization has nonzero image. The unspecialized
+$\SV_{b(w)+1}$ image is consequently nonzero as well.
+
+A basic finite grid for this pure map has $(D+1)$ values per amplitude
+and $((n-1)D+1)$ per direction, for at most
+\[
+ \bigl((D+1)((n-1)D+1)\bigr)^{b(w)+1}
+ \le(nD+1)^{2b(w)+2}
+\]
+evaluations. This bound uses the actual polynomial map, not the
+possibly higher-degree proof-only curve. In width one it gives
+$\SV_1$, consistent with the curve-only argument.
+
+\section{Limits of the conclusion}
+
+The exponent depends only on width and is at most exponential in that
+width. The proof does not establish the smaller bound $w-1$ in every
+characteristic. Its combinatorial lower bound is $N\ge K-k+1$,
+not $N\ge\binom{K-1}{k-1}$; the latter assertion is false in general
+even under full translation invariance. Intermediate singular local
+ranks require additional arguments and are outside the present model.
+All finite-grid degree bounds refer to the original scalar polynomial,
+so a known scalar degree promise can be used without truncating or
+otherwise changing the rank pattern of the representation.
+
+\end{document}

@@ -1,0 +1,2746 @@
+{
+  "status": "all exact instance checks passed",
+  "scope": "lower-bound construction only; not a certificate of the PIT upper bound",
+  "arithmetic": "integer sparse polynomial identities, valid after reduction to every field",
+  "max_width": 7,
+  "case_count": 127,
+  "script_sha256": "112f733d3a47d2b3a359cf770b14a49277e870e8ea4fcfabffc04631ba84e845",
+  "cases": [
+    {
+      "width": 1,
+      "palette": [
+        0,
+        1
+      ],
+      "support": 0,
+      "source_one_based": 1,
+      "sink_one_based": 1,
+      "interval_count": 0,
+      "interval_rank_counts": {},
+      "peak_sparse_row_terms": 1,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 2,
+      "palette": [
+        0,
+        2
+      ],
+      "support": 1,
+      "source_one_based": 1,
+      "sink_one_based": 2,
+      "interval_count": 1,
+      "interval_rank_counts": {
+        "2": 1
+      },
+      "peak_sparse_row_terms": 2,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 2,
+      "palette": [
+        0,
+        1,
+        2
+      ],
+      "support": 2,
+      "source_one_based": 2,
+      "sink_one_based": 2,
+      "interval_count": 3,
+      "interval_rank_counts": {
+        "1": 3
+      },
+      "peak_sparse_row_terms": 2,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 3,
+      "palette": [
+        0,
+        3
+      ],
+      "support": 2,
+      "source_one_based": 1,
+      "sink_one_based": 3,
+      "interval_count": 3,
+      "interval_rank_counts": {
+        "3": 3
+      },
+      "peak_sparse_row_terms": 3,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 3,
+      "palette": [
+        0,
+        2,
+        3
+      ],
+      "support": 4,
+      "source_one_based": 3,
+      "sink_one_based": 3,
+      "interval_count": 10,
+      "interval_rank_counts": {
+        "2": 10
+      },
+      "peak_sparse_row_terms": 3,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 3,
+      "palette": [
+        0,
+        1,
+        3
+      ],
+      "support": 4,
+      "source_one_based": 2,
+      "sink_one_based": 3,
+      "interval_count": 10,
+      "interval_rank_counts": {
+        "3": 2,
+        "1": 8
+      },
+      "peak_sparse_row_terms": 3,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 3,
+      "palette": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "support": 6,
+      "source_one_based": 3,
+      "sink_one_based": 3,
+      "interval_count": 21,
+      "interval_rank_counts": {
+        "2": 6,
+        "1": 15
+      },
+      "peak_sparse_row_terms": 3,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 4,
+      "palette": [
+        0,
+        4
+      ],
+      "support": 3,
+      "source_one_based": 1,
+      "sink_one_based": 4,
+      "interval_count": 6,
+      "interval_rank_counts": {
+        "4": 6
+      },
+      "peak_sparse_row_terms": 4,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 4,
+      "palette": [
+        0,
+        3,
+        4
+      ],
+      "support": 6,
+      "source_one_based": 4,
+      "sink_one_based": 4,
+      "interval_count": 21,
+      "interval_rank_counts": {
+        "3": 21
+      },
+      "peak_sparse_row_terms": 4,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 4,
+      "palette": [
+        0,
+        2,
+        4
+      ],
+      "support": 7,
+      "source_one_based": 3,
+      "sink_one_based": 4,
+      "interval_count": 28,
+      "interval_rank_counts": {
+        "4": 3,
+        "2": 25
+      },
+      "peak_sparse_row_terms": 4,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 4,
+      "palette": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "support": 10,
+      "source_one_based": 4,
+      "sink_one_based": 4,
+      "interval_count": 55,
+      "interval_rank_counts": {
+        "3": 9,
+        "2": 46
+      },
+      "peak_sparse_row_terms": 4,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 4,
+      "palette": [
+        0,
+        1,
+        4
+      ],
+      "support": 6,
+      "source_one_based": 2,
+      "sink_one_based": 4,
+      "interval_count": 21,
+      "interval_rank_counts": {
+        "4": 6,
+        "1": 15
+      },
+      "peak_sparse_row_terms": 4,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 4,
+      "palette": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "support": 10,
+      "source_one_based": 4,
+      "sink_one_based": 4,
+      "interval_count": 55,
+      "interval_rank_counts": {
+        "3": 20,
+        "1": 35
+      },
+      "peak_sparse_row_terms": 4,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 4,
+      "palette": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "support": 10,
+      "source_one_based": 3,
+      "sink_one_based": 4,
+      "interval_count": 55,
+      "interval_rank_counts": {
+        "4": 4,
+        "2": 16,
+        "1": 35
+      },
+      "peak_sparse_row_terms": 4,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 4,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "support": 14,
+      "source_one_based": 4,
+      "sink_one_based": 4,
+      "interval_count": 105,
+      "interval_rank_counts": {
+        "3": 12,
+        "2": 30,
+        "1": 63
+      },
+      "peak_sparse_row_terms": 4,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        5
+      ],
+      "support": 4,
+      "source_one_based": 1,
+      "sink_one_based": 5,
+      "interval_count": 10,
+      "interval_rank_counts": {
+        "5": 10
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        4,
+        5
+      ],
+      "support": 8,
+      "source_one_based": 5,
+      "sink_one_based": 5,
+      "interval_count": 36,
+      "interval_rank_counts": {
+        "4": 36
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        3,
+        5
+      ],
+      "support": 10,
+      "source_one_based": 4,
+      "sink_one_based": 5,
+      "interval_count": 55,
+      "interval_rank_counts": {
+        "5": 4,
+        "3": 51
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "support": 14,
+      "source_one_based": 5,
+      "sink_one_based": 5,
+      "interval_count": 105,
+      "interval_rank_counts": {
+        "4": 12,
+        "3": 93
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        2,
+        5
+      ],
+      "support": 10,
+      "source_one_based": 3,
+      "sink_one_based": 5,
+      "interval_count": 55,
+      "interval_rank_counts": {
+        "5": 9,
+        "2": 46
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        2,
+        4,
+        5
+      ],
+      "support": 16,
+      "source_one_based": 5,
+      "sink_one_based": 5,
+      "interval_count": 136,
+      "interval_rank_counts": {
+        "4": 30,
+        "2": 106
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        2,
+        3,
+        5
+      ],
+      "support": 16,
+      "source_one_based": 4,
+      "sink_one_based": 5,
+      "interval_count": 136,
+      "interval_rank_counts": {
+        "5": 6,
+        "3": 24,
+        "2": 106
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ],
+      "support": 22,
+      "source_one_based": 5,
+      "sink_one_based": 5,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "4": 18,
+        "3": 45,
+        "2": 190
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        1,
+        5
+      ],
+      "support": 8,
+      "source_one_based": 2,
+      "sink_one_based": 5,
+      "interval_count": 36,
+      "interval_rank_counts": {
+        "5": 12,
+        "1": 24
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "support": 14,
+      "source_one_based": 5,
+      "sink_one_based": 5,
+      "interval_count": 105,
+      "interval_rank_counts": {
+        "4": 42,
+        "1": 63
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "support": 16,
+      "source_one_based": 4,
+      "sink_one_based": 5,
+      "interval_count": 136,
+      "interval_rank_counts": {
+        "5": 6,
+        "3": 50,
+        "1": 80
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "support": 22,
+      "source_one_based": 5,
+      "sink_one_based": 5,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "4": 18,
+        "3": 92,
+        "1": 143
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "support": 14,
+      "source_one_based": 3,
+      "sink_one_based": 5,
+      "interval_count": 105,
+      "interval_rank_counts": {
+        "5": 12,
+        "2": 30,
+        "1": 63
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        1,
+        2,
+        4,
+        5
+      ],
+      "support": 22,
+      "source_one_based": 5,
+      "sink_one_based": 5,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "4": 40,
+        "2": 70,
+        "1": 143
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "support": 22,
+      "source_one_based": 4,
+      "sink_one_based": 5,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "5": 8,
+        "3": 32,
+        "2": 70,
+        "1": 143
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 5,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "support": 30,
+      "source_one_based": 5,
+      "sink_one_based": 5,
+      "interval_count": 465,
+      "interval_rank_counts": {
+        "4": 24,
+        "3": 60,
+        "2": 126,
+        "1": 255
+      },
+      "peak_sparse_row_terms": 5,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        6
+      ],
+      "support": 5,
+      "source_one_based": 1,
+      "sink_one_based": 6,
+      "interval_count": 15,
+      "interval_rank_counts": {
+        "6": 15
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        5,
+        6
+      ],
+      "support": 10,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 55,
+      "interval_rank_counts": {
+        "5": 55
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        4,
+        6
+      ],
+      "support": 13,
+      "source_one_based": 5,
+      "sink_one_based": 6,
+      "interval_count": 91,
+      "interval_rank_counts": {
+        "6": 5,
+        "4": 86
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        4,
+        5,
+        6
+      ],
+      "support": 18,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 171,
+      "interval_rank_counts": {
+        "5": 15,
+        "4": 156
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        3,
+        6
+      ],
+      "support": 14,
+      "source_one_based": 4,
+      "sink_one_based": 6,
+      "interval_count": 105,
+      "interval_rank_counts": {
+        "6": 12,
+        "3": 93
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "support": 22,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "5": 40,
+        "3": 213
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        3,
+        4,
+        6
+      ],
+      "support": 22,
+      "source_one_based": 5,
+      "sink_one_based": 6,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "6": 8,
+        "4": 32,
+        "3": 213
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        3,
+        4,
+        5,
+        6
+      ],
+      "support": 30,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 465,
+      "interval_rank_counts": {
+        "5": 24,
+        "4": 60,
+        "3": 381
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        2,
+        6
+      ],
+      "support": 13,
+      "source_one_based": 3,
+      "sink_one_based": 6,
+      "interval_count": 91,
+      "interval_rank_counts": {
+        "6": 18,
+        "2": 73
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        2,
+        5,
+        6
+      ],
+      "support": 22,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "5": 63,
+        "2": 190
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "support": 25,
+      "source_one_based": 5,
+      "sink_one_based": 6,
+      "interval_count": 325,
+      "interval_rank_counts": {
+        "6": 9,
+        "4": 75,
+        "2": 241
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        2,
+        4,
+        5,
+        6
+      ],
+      "support": 34,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 595,
+      "interval_rank_counts": {
+        "5": 27,
+        "4": 138,
+        "2": 430
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        2,
+        3,
+        6
+      ],
+      "support": 22,
+      "source_one_based": 4,
+      "sink_one_based": 6,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "6": 18,
+        "3": 45,
+        "2": 190
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        2,
+        3,
+        5,
+        6
+      ],
+      "support": 34,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 595,
+      "interval_rank_counts": {
+        "5": 60,
+        "3": 105,
+        "2": 430
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        2,
+        3,
+        4,
+        6
+      ],
+      "support": 34,
+      "source_one_based": 5,
+      "sink_one_based": 6,
+      "interval_count": 595,
+      "interval_rank_counts": {
+        "6": 12,
+        "4": 48,
+        "3": 105,
+        "2": 430
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "support": 46,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "5": 36,
+        "4": 90,
+        "3": 189,
+        "2": 766
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        6
+      ],
+      "support": 10,
+      "source_one_based": 2,
+      "sink_one_based": 6,
+      "interval_count": 55,
+      "interval_rank_counts": {
+        "6": 20,
+        "1": 35
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "support": 18,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 171,
+      "interval_rank_counts": {
+        "5": 72,
+        "1": 99
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        4,
+        6
+      ],
+      "support": 22,
+      "source_one_based": 5,
+      "sink_one_based": 6,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "6": 8,
+        "4": 102,
+        "1": 143
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        4,
+        5,
+        6
+      ],
+      "support": 30,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 465,
+      "interval_rank_counts": {
+        "5": 24,
+        "4": 186,
+        "1": 255
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        3,
+        6
+      ],
+      "support": 22,
+      "source_one_based": 4,
+      "sink_one_based": 6,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "6": 18,
+        "3": 92,
+        "1": 143
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        3,
+        5,
+        6
+      ],
+      "support": 34,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 595,
+      "interval_rank_counts": {
+        "5": 60,
+        "3": 212,
+        "1": 323
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        3,
+        4,
+        6
+      ],
+      "support": 34,
+      "source_one_based": 5,
+      "sink_one_based": 6,
+      "interval_count": 595,
+      "interval_rank_counts": {
+        "6": 12,
+        "4": 48,
+        "3": 212,
+        "1": 323
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6
+      ],
+      "support": 46,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "5": 36,
+        "4": 90,
+        "3": 380,
+        "1": 575
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        2,
+        6
+      ],
+      "support": 18,
+      "source_one_based": 3,
+      "sink_one_based": 6,
+      "interval_count": 171,
+      "interval_rank_counts": {
+        "6": 24,
+        "2": 48,
+        "1": 99
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "support": 30,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 465,
+      "interval_rank_counts": {
+        "5": 84,
+        "2": 126,
+        "1": 255
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "support": 34,
+      "source_one_based": 5,
+      "sink_one_based": 6,
+      "interval_count": 595,
+      "interval_rank_counts": {
+        "6": 12,
+        "4": 100,
+        "2": 160,
+        "1": 323
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "support": 46,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "5": 36,
+        "4": 184,
+        "2": 286,
+        "1": 575
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "support": 30,
+      "source_one_based": 4,
+      "sink_one_based": 6,
+      "interval_count": 465,
+      "interval_rank_counts": {
+        "6": 24,
+        "3": 60,
+        "2": 126,
+        "1": 255
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "support": 46,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "5": 80,
+        "3": 140,
+        "2": 286,
+        "1": 575
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "support": 46,
+      "source_one_based": 5,
+      "sink_one_based": 6,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "6": 16,
+        "4": 64,
+        "3": 140,
+        "2": 286,
+        "1": 575
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 6,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "support": 62,
+      "source_one_based": 6,
+      "sink_one_based": 6,
+      "interval_count": 1953,
+      "interval_rank_counts": {
+        "5": 48,
+        "4": 120,
+        "3": 252,
+        "2": 510,
+        "1": 1023
+      },
+      "peak_sparse_row_terms": 6,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        7
+      ],
+      "support": 6,
+      "source_one_based": 1,
+      "sink_one_based": 7,
+      "interval_count": 21,
+      "interval_rank_counts": {
+        "7": 21
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        6,
+        7
+      ],
+      "support": 12,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 78,
+      "interval_rank_counts": {
+        "6": 78
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        5,
+        7
+      ],
+      "support": 16,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 136,
+      "interval_rank_counts": {
+        "7": 6,
+        "5": 130
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        5,
+        6,
+        7
+      ],
+      "support": 22,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "6": 18,
+        "5": 235
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        4,
+        7
+      ],
+      "support": 18,
+      "source_one_based": 5,
+      "sink_one_based": 7,
+      "interval_count": 171,
+      "interval_rank_counts": {
+        "7": 15,
+        "4": 156
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        4,
+        6,
+        7
+      ],
+      "support": 28,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 406,
+      "interval_rank_counts": {
+        "6": 50,
+        "4": 356
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        4,
+        5,
+        7
+      ],
+      "support": 28,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 406,
+      "interval_rank_counts": {
+        "7": 10,
+        "5": 40,
+        "4": 356
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        4,
+        5,
+        6,
+        7
+      ],
+      "support": 38,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 741,
+      "interval_rank_counts": {
+        "6": 30,
+        "5": 75,
+        "4": 636
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        3,
+        7
+      ],
+      "support": 18,
+      "source_one_based": 4,
+      "sink_one_based": 7,
+      "interval_count": 171,
+      "interval_rank_counts": {
+        "7": 24,
+        "3": 147
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        3,
+        6,
+        7
+      ],
+      "support": 30,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 465,
+      "interval_rank_counts": {
+        "6": 84,
+        "3": 381
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "support": 34,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 595,
+      "interval_rank_counts": {
+        "7": 12,
+        "5": 100,
+        "3": 483
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        3,
+        5,
+        6,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "6": 36,
+        "5": 184,
+        "3": 861
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        3,
+        4,
+        7
+      ],
+      "support": 30,
+      "source_one_based": 5,
+      "sink_one_based": 7,
+      "interval_count": 465,
+      "interval_rank_counts": {
+        "7": 24,
+        "4": 60,
+        "3": 381
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        3,
+        4,
+        6,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "6": 80,
+        "4": 140,
+        "3": 861
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        3,
+        4,
+        5,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "7": 16,
+        "5": 64,
+        "4": 140,
+        "3": 861
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "support": 62,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1953,
+      "interval_rank_counts": {
+        "6": 48,
+        "5": 120,
+        "4": 252,
+        "3": 1533
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        7
+      ],
+      "support": 16,
+      "source_one_based": 3,
+      "sink_one_based": 7,
+      "interval_count": 136,
+      "interval_rank_counts": {
+        "7": 30,
+        "2": 106
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        6,
+        7
+      ],
+      "support": 28,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 406,
+      "interval_rank_counts": {
+        "6": 108,
+        "2": 298
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        5,
+        7
+      ],
+      "support": 34,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 595,
+      "interval_rank_counts": {
+        "7": 12,
+        "5": 153,
+        "2": 430
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        5,
+        6,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "6": 36,
+        "5": 279,
+        "2": 766
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        4,
+        7
+      ],
+      "support": 34,
+      "source_one_based": 5,
+      "sink_one_based": 7,
+      "interval_count": 595,
+      "interval_rank_counts": {
+        "7": 27,
+        "4": 138,
+        "2": 430
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        4,
+        6,
+        7
+      ],
+      "support": 52,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1378,
+      "interval_rank_counts": {
+        "6": 90,
+        "4": 318,
+        "2": 970
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        4,
+        5,
+        7
+      ],
+      "support": 52,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 1378,
+      "interval_rank_counts": {
+        "7": 18,
+        "5": 72,
+        "4": 318,
+        "2": 970
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "support": 70,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 2485,
+      "interval_rank_counts": {
+        "6": 54,
+        "5": 135,
+        "4": 570,
+        "2": 1726
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        3,
+        7
+      ],
+      "support": 28,
+      "source_one_based": 4,
+      "sink_one_based": 7,
+      "interval_count": 406,
+      "interval_rank_counts": {
+        "7": 36,
+        "3": 72,
+        "2": 298
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        3,
+        6,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "6": 126,
+        "3": 189,
+        "2": 766
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        3,
+        5,
+        7
+      ],
+      "support": 52,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 1378,
+      "interval_rank_counts": {
+        "7": 18,
+        "5": 150,
+        "3": 240,
+        "2": 970
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "support": 70,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 2485,
+      "interval_rank_counts": {
+        "6": 54,
+        "5": 276,
+        "3": 429,
+        "2": 1726
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        3,
+        4,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 5,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "7": 36,
+        "4": 90,
+        "3": 189,
+        "2": 766
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "support": 70,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 2485,
+      "interval_rank_counts": {
+        "6": 120,
+        "4": 210,
+        "3": 429,
+        "2": 1726
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "support": 70,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 2485,
+      "interval_rank_counts": {
+        "7": 24,
+        "5": 96,
+        "4": 210,
+        "3": 429,
+        "2": 1726
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "support": 94,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 4465,
+      "interval_rank_counts": {
+        "6": 72,
+        "5": 180,
+        "4": 378,
+        "3": 765,
+        "2": 3070
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        7
+      ],
+      "support": 12,
+      "source_one_based": 2,
+      "sink_one_based": 7,
+      "interval_count": 78,
+      "interval_rank_counts": {
+        "7": 30,
+        "1": 48
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        6,
+        7
+      ],
+      "support": 22,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "6": 110,
+        "1": 143
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "support": 28,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 406,
+      "interval_rank_counts": {
+        "7": 10,
+        "5": 172,
+        "1": 224
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "support": 38,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 741,
+      "interval_rank_counts": {
+        "6": 30,
+        "5": 312,
+        "1": 399
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        4,
+        7
+      ],
+      "support": 30,
+      "source_one_based": 5,
+      "sink_one_based": 7,
+      "interval_count": 465,
+      "interval_rank_counts": {
+        "7": 24,
+        "4": 186,
+        "1": 255
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        4,
+        6,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "6": 80,
+        "4": 426,
+        "1": 575
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        4,
+        5,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "7": 16,
+        "5": 64,
+        "4": 426,
+        "1": 575
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7
+      ],
+      "support": 62,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1953,
+      "interval_rank_counts": {
+        "6": 48,
+        "5": 120,
+        "4": 762,
+        "1": 1023
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        3,
+        7
+      ],
+      "support": 28,
+      "source_one_based": 4,
+      "sink_one_based": 7,
+      "interval_count": 406,
+      "interval_rank_counts": {
+        "7": 36,
+        "3": 146,
+        "1": 224
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        3,
+        6,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "6": 126,
+        "3": 380,
+        "1": 575
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        3,
+        5,
+        7
+      ],
+      "support": 52,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 1378,
+      "interval_rank_counts": {
+        "7": 18,
+        "5": 150,
+        "3": 482,
+        "1": 728
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        7
+      ],
+      "support": 70,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 2485,
+      "interval_rank_counts": {
+        "6": 54,
+        "5": 276,
+        "3": 860,
+        "1": 1295
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        3,
+        4,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 5,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "7": 36,
+        "4": 90,
+        "3": 380,
+        "1": 575
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "support": 70,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 2485,
+      "interval_rank_counts": {
+        "6": 120,
+        "4": 210,
+        "3": 860,
+        "1": 1295
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        7
+      ],
+      "support": 70,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 2485,
+      "interval_rank_counts": {
+        "7": 24,
+        "5": 96,
+        "4": 210,
+        "3": 860,
+        "1": 1295
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "support": 94,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 4465,
+      "interval_rank_counts": {
+        "6": 72,
+        "5": 180,
+        "4": 378,
+        "3": 1532,
+        "1": 2303
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        7
+      ],
+      "support": 22,
+      "source_one_based": 3,
+      "sink_one_based": 7,
+      "interval_count": 253,
+      "interval_rank_counts": {
+        "7": 40,
+        "2": 70,
+        "1": 143
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        6,
+        7
+      ],
+      "support": 38,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 741,
+      "interval_rank_counts": {
+        "6": 144,
+        "2": 198,
+        "1": 399
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        5,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "7": 16,
+        "5": 204,
+        "2": 286,
+        "1": 575
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7
+      ],
+      "support": 62,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1953,
+      "interval_rank_counts": {
+        "6": 48,
+        "5": 372,
+        "2": 510,
+        "1": 1023
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        4,
+        7
+      ],
+      "support": 46,
+      "source_one_based": 5,
+      "sink_one_based": 7,
+      "interval_count": 1081,
+      "interval_rank_counts": {
+        "7": 36,
+        "4": 184,
+        "2": 286,
+        "1": 575
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        7
+      ],
+      "support": 70,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 2485,
+      "interval_rank_counts": {
+        "6": 120,
+        "4": 424,
+        "2": 646,
+        "1": 1295
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        7
+      ],
+      "support": 70,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 2485,
+      "interval_rank_counts": {
+        "7": 24,
+        "5": 96,
+        "4": 424,
+        "2": 646,
+        "1": 1295
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "support": 94,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 4465,
+      "interval_rank_counts": {
+        "6": 72,
+        "5": 180,
+        "4": 760,
+        "2": 1150,
+        "1": 2303
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "support": 38,
+      "source_one_based": 4,
+      "sink_one_based": 7,
+      "interval_count": 741,
+      "interval_rank_counts": {
+        "7": 48,
+        "3": 96,
+        "2": 198,
+        "1": 399
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7
+      ],
+      "support": 62,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 1953,
+      "interval_rank_counts": {
+        "6": 168,
+        "3": 252,
+        "2": 510,
+        "1": 1023
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      "support": 70,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 2485,
+      "interval_rank_counts": {
+        "7": 24,
+        "5": 200,
+        "3": 320,
+        "2": 646,
+        "1": 1295
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "support": 94,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 4465,
+      "interval_rank_counts": {
+        "6": 72,
+        "5": 368,
+        "3": 572,
+        "2": 1150,
+        "1": 2303
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "support": 62,
+      "source_one_based": 5,
+      "sink_one_based": 7,
+      "interval_count": 1953,
+      "interval_rank_counts": {
+        "7": 48,
+        "4": 120,
+        "3": 252,
+        "2": 510,
+        "1": 1023
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "support": 94,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 4465,
+      "interval_rank_counts": {
+        "6": 160,
+        "4": 280,
+        "3": 572,
+        "2": 1150,
+        "1": 2303
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "support": 94,
+      "source_one_based": 6,
+      "sink_one_based": 7,
+      "interval_count": 4465,
+      "interval_rank_counts": {
+        "7": 32,
+        "5": 128,
+        "4": 280,
+        "3": 572,
+        "2": 1150,
+        "1": 2303
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    },
+    {
+      "width": 7,
+      "palette": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "support": 126,
+      "source_one_based": 7,
+      "sink_one_based": 7,
+      "interval_count": 8001,
+      "interval_rank_counts": {
+        "6": 96,
+        "5": 240,
+        "4": 504,
+        "3": 1020,
+        "2": 2046,
+        "1": 4095
+      },
+      "peak_sparse_row_terms": 7,
+      "scalar_identity": "exact squarefree product, coefficient 1 over Z",
+      "passed": true
+    }
+  ]
+}

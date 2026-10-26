@@ -1,0 +1,142 @@
+INDEPENDENT HOSTILE AUDIT: EXACT RANK-PALETTE SUPPORT SHARPNESS
+Date: 26 October 2026
+Reviewer: /root/fresh_core_hostile
+
+VERDICT
+
+PASS for the stated construction over every field. The recursion gives
+exactly h(P)=product(successive rank gaps +1)-2 distinct variables, one
+affine univariate matrix factor per variable, all contiguous interval
+ranks preserved at zero, and a standard-basis scalar contraction equal
+to the product of all variables with coefficient one. No mathematical
+repair is requested. This is an internal reconstruction, not external
+peer review or a publication-priority finding.
+
+Source audited in full:
+  root/rank_palette_exact_sharpness_candidate.txt.
+Exact source SHA256:
+  210aeda2b4bad178a215d6fc8b23f4666d24b4bcd5a137f9a44fb38d25e06dce.
+I did not use another agent's audit or the bounded computational checks
+as a substitute for the proof. The following general induction suffices.
+
+1. BASE CASE AND DOMAIN
+
+The palette is P={0=p_0<p_1<...<p_m=W}, W>=1. If its only positive
+element is W, use I+x_j E_(j,j+1) for j=1,...,W-1. Every local matrix
+is unipotent, so every interval has rank W at every point. A path from
+state 1 to state W must take every consecutive off-diagonal transition,
+and there is exactly one such path. The (1,W) scalar is therefore
+product_j x_j, over every characteristic. The factor count W-1 equals
+h({0,W}). For W=1, the empty word and scalar 1 correctly realize h=0.
+
+The theorem uses P as an allowed rank palette. It does not require every
+rank in P to occur as the rank of a nonempty interval. This is consistent
+with both its explicit local-factor statement and the palette upper bound.
+For example, an empty top-level recursive word need not insert an unused
+rank-W factor solely to realize that rank in a nonempty interval.
+
+2. INDUCTION AND LOCAL RANKS
+
+Let r be the least positive level and k=W-r. The shifted lower palette
+Q={0,p_2-r,...,p_m-r=k} has smaller width. Inductively choose a width-k
+word H with standard endpoints alpha,beta and scalar the full squarefree
+variable product. Make r+1 disjoint copies H_0,...,H_r, embedding every
+LOCAL factor as diag(I_r,A). These are still univariate local factors;
+no multivariate product is treated as one local matrix.
+
+For j=1,...,r, insert
+  B_j=P_r+x_j E_(r+beta,j),
+  C_j=P_r+y_j E_(j,r+alpha).
+For B_j the added passive row is x_j times active row j; for C_j the
+added passive column is y_j times active column j. Each therefore has
+generic rank exactly r and constant P_r, with its top-left r-minor equal
+to one. Embedded local factors have generic and constant ranks r+s,
+where s is the corresponding lower-word rank. These belong to P.
+
+All newly introduced variables and all copied variables are distinct.
+The widths, endpoint indices, and ranges of j are valid even when k=1
+and the lower word is empty. In that case alpha=beta=1 and H_a is the
+one-by-one identity, so the bridge computation below still applies.
+
+3. EXACT SCALAR, INCLUDING EARLIER ACTIVE COORDINATES
+
+Start with the passive row e_(r+alpha)^T. The first embedded copy gives
+passive row e_alpha^T H_0 and no active coordinates. B_1 kills the
+passive part and sends its beta entry to active coordinate 1, with factor
+x_1. C_1 retains that active entry and places y_1 times it at passive
+coordinate alpha.
+
+After bridge pair j, all active support is among indices 1,...,j, and
+the passive row is q_j e_alpha^T. The next embedded copy leaves all
+active coordinates unchanged and transforms the passive row to
+q_j e_alpha^T H_j. B_(j+1) retains the earlier active entries and sends
+the beta entry of that passive row into the NEW coordinate j+1. There
+was no earlier contribution at j+1. C_(j+1) sends only this new active
+coordinate back into the passive coordinate alpha; older active entries
+cannot generate an unwanted passive excursion.
+
+Thus exactly
+  q_j=(product_{a=1}^j x_a y_a)
+      (product_{a=0}^{j-1} H_a(alpha,beta)).
+The final embedded copy and passive beta sink give
+  (product_{j=1}^r x_j y_j)
+  (product_{a=0}^r H_a(alpha,beta)).
+The induction hypothesis turns this into the product of every original
+variable, coefficient one. The recurrence involves no subtraction or
+division, so characteristic two and all other fields are included.
+
+4. FACTOR COUNT AND EVERY CONTIGUOUS INTERVAL
+
+If N=h(Q), the number of variables and factors is (r+1)N+2r, equal to
+  (r+1)(h(Q)+2)-2=h(P).
+The successive gaps of Q are exactly the later gaps of P, so the product
+formula follows without an additional term.
+
+Every local constant is a nested flag projection P_s, and its generic
+local rank is exactly s. On any nonempty interval, let s_min be the
+minimum of those local values. The constant interval product is P_s_min,
+so a constant s_min-minor certifies generic rank at least s_min. Generic
+rank is at most the minimum local rank, hence at most s_min. Equality
+follows for every interval, regardless of its position inside or across
+recursive copies and bridges. This argument also proves the upper rank
+identities over the polynomial ring, not only at selected evaluations.
+
+5. LEADING SUPPORT AND COEFFICIENT-SPAN CONSEQUENCES
+
+The selected scalar is one squarefree monomial of support h(P). It is
+therefore the whole first nonzero homogeneous component, and no smaller
+support bound can hold uniformly for the stated rank-palette hypotheses.
+
+For the fixed starting row, the sink functional annihilates every
+coefficient row whose monomial has support below h(P), while it evaluates
+the full-product coefficient to one. If low-support coefficient rows
+spanned all coefficient rows, applying this fixed sink would give a
+contradiction. Thus the same construction is a coefficient-span support
+lower bound, not merely a scalar first-component example.
+
+Passing to the quotient by each X_i^2 preserves the squarefree scalar
+monomial. All larger-minor identities and nonzero constant pivots also
+pass to the quotient. Consequently it realizes the same obstruction in
+the precise monomial Artin setting used by the upper bound.
+
+6. WHAT THIS DOES AND DOES NOT ESTABLISH
+
+Together with the separately audited palette upper theorem, the example
+shows that its abstract support constant is exact for each allowed
+palette. It includes h=2^W-2 for the full palette and
+h=(r+1)(W-r+1)-2 for {0,r,W}. The latter is not the active-endpoint
+P_r/I_W theorem: the passive endpoints here need not survive the full
+constant product, so its stronger active-endpoint bound does not apply.
+
+For a compound-rank palette, this only proves sharpness of the abstract
+palette hypothesis. It does not realize each matrix as an exterior power
+of a smaller matrix. Nor does this zero-base-point construction alone
+supply a genuine transcendental affine-curve shift; the separately
+proposed macro lift must be checked on its own. The base scalar is a
+monomial and is already hit by SV_1. There is no PIT, SV-seed, or query
+lower bound here.
+
+No optional numerical testing is necessary to establish the general
+construction: the local rank argument and exact scalar recurrence cover
+all widths, palettes, and characteristics. The author's bounded exact
+verifier, if retained, is an illustration rather than a premise.

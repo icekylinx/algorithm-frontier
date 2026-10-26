@@ -1,0 +1,258 @@
+CP13 PUBLICATION DEPENDENCY AUDIT
+Date: 26 October 2026
+Reviewer: /root/fresh_core_hostile
+
+VERDICT
+
+PASS. The exact companion manuscript supplies, with a complete proposed
+proof, the rank-profile image-cone theorem assumed in the affine-orbit
+addendum. Its statement, constants, field scope, variable-block model, and
+simultaneous exterior-power consequence match the addendum's use. There
+is no omitted width-three dependency or additional characteristic
+hypothesis in that geometric input.
+
+It is mathematically accurate to describe CP13 as a consequence of the
+supplied companion theorem. The dependency is not an unprovided conjecture.
+This conclusion does not convert the internal proposed proof into an
+externally peer-reviewed or formally verified theorem. The publication
+status should continue to state that limitation.
+
+EXACT SOURCES
+
+1. root/proof/focused_interval_rank_main_review.tex
+   SHA256 22751a12b6369675dc9b8a97891b4a08152a485841da8402c33717b46feed589
+   842 lines.
+
+2. root/proof/affine_orbit_extension_cp13.tex
+   SHA256 2a3bd4eb5e551546a4ce32cf753f04a541f696c767cc1c6821bf3d6572b4e077
+   407 lines.
+
+I checked both current hashes. This bounded review reads the complete
+geometric section, the normalized and rank-profile lemmas it uses, and
+the complete affine addendum. It addresses the mathematical dependency
+interface and the good-characteristic factorial-width consequence. It
+does not repeat old numerical tests or certify independent criticisms of
+external papers. Neither source nor any repository file was modified.
+
+1. THE SUPPLIED AND ASSUMED THEOREMS ARE THE SAME
+
+The companion's theorem labelled thm:cone-profile states:
+  If every contiguous interval of a width-w product preserves its
+  generic rank at zero, a nonzero full product of rank r admits a
+  cone-preserving restriction to at most D_w(r) original blocks.
+
+The affine addendum's Section 2 premise states the same assertion, for
+a product on disjoint variable blocks, with the same recurrence
+  D_w(w)=w^2-1,
+  D_w(r)=2r^2(2 max_{r<s<=w} D_w(s)+1),  1<=r<w.
+Its rank symbol s in the premise is merely a renaming of r. The companion
+uses disjoint blocks throughout; singleton residual variables are a
+special case. It imposes no individual-degree bound on this cone theorem.
+
+Both sources define the same scalar-saturated image cone: over an algebraic
+closure k of the current coefficient field, take the Zariski closure of
+{lambda M(x)}. The scalar lambda is auxiliary and is not charged as an
+original variable block. A coordinate restriction fixes entire unselected
+original blocks to zero. The selected subset may depend on the product;
+the black-box construction need not find it.
+
+The companion does not restrict its theorem to base-field rational points.
+This matters over finite fields. It explicitly uses an algebraic closure
+of the CURRENT coefficient field, so the theorem can be invoked over the
+old symbolic seed field of the affine induction.
+
+2. GEOMETRIC PROOF SUPPLIED BY THE COMPANION
+
+The proof does not invoke a width-three classification. Its ingredients
+are the following field-independent matrix and image-closure facts.
+
+(a) Invertible constants. Constant gauges normalize the factors to identity
+constants. Prefix scalar-saturated cones are nested irreducible closed
+subvarieties of Mat_w, starting at a line. A strict inclusion raises
+dimension, so at most w^2-1 growth steps require a retained block.
+Polynomial multiplication and density justify retaining the old restricted
+image through a stable step and adding the current block at a growth step.
+
+(b) Normalized equal-rank factors. For constant P=diag(I_r,0) and generic
+rank r, a unit active pivot gives the rational Schur graph
+  A=[I;D]E[I,C], E(0)=I, C(0)=D(0)=0.
+The active prefix cones V_i are nested. At a stable step with the baseline
+[V,0] contained in the preceding full cone, the source proves the exact
+equality between the new cone and the closure of [T,0]A_i(a), T in V.
+
+For fixed a in the nonempty open set where E(a) is invertible, stability
+gives V E(a) contained in V. The left side is a closed irreducible variety
+of the same dimension as V, so it equals V. The Schur graph then gives both
+inclusions in the stable-step identity. Restricting current parameters to
+that dense open set does not change the image closure. These facts hold
+in every characteristic; no differential/separability assertion is used.
+
+(c) Intrinsic rank. The same phase argument for an a-by-w starting matrix
+with nonzero active part gives 2ar-1 remaining blocks. Retain the first
+original block and work over k(X_1). Factor A_1=U_1 R_1 with r-column
+U_1 of full column rank and R_1=[I_r,C_1]. Applying the rectangular bound
+with a=r costs at most 2r^2-1 later blocks, hence 2r^2 including the first.
+
+Crucially, the chosen subset is a single subset of original block indices
+over the generic first-block field. It is not selected separately for each
+minor or each specialization of X_1. If a homogeneous polynomial in the
+output entries vanishes on that restricted image, cone equality over
+k(X_1) makes it vanish on the full generic image, hence identically in
+all original variables. Homogeneous vanishing ideals determine the closed
+cones, so the same subset descends to the original algebraically closed
+field. This supplies the uniform restriction needed by the addendum.
+
+(d) Rank-profile induction. The companion's greedy decomposition is made
+inside a full rank-r interval. Every subinterval has rank at least r.
+Each shortest rank-r block is a higher-rank prefix followed by one local
+factor; the remaining tail is higher-rank or empty. By induction, these
+higher-rank pieces have cone-preserving restrictions. Absorbing the tail
+costs at most 2 max_{s>r} D_w(s)+1 original blocks per macroblock.
+The macroblocks and their adjacent products have constant rank r, so the
+explicit simultaneous constant-gauge lemma normalizes them. The intrinsic
+bound chooses at most 2r^2 macroblocks, giving exactly D_w(r).
+
+Cone preservation composes across disjoint factors because products of
+dense images are dense and matrix multiplication is polynomial. Independent
+scalar amplitudes multiply into one scalar amplitude of the output.
+Unselected macroblocks retain their original constant matrices when their
+variables are set to zero. No extra compatibility hypothesis is omitted.
+
+3. THE EXTERIOR-POWER INTERFACE IS JOINT AND SIMULTANEOUS
+
+The companion's cone-composition lemma already states that a cone-preserving
+restriction to t blocks makes EVERY exterior power coefficient-matrix
+space t-concentrated. The affine addendum proves the same consequence
+again as its Lemma 2.
+
+A linear functional on the entries of wedge^r M is a homogeneous degree-r
+polynomial in the entries of M. If it annihilates all coefficients of the
+restriction, it vanishes on the restricted cone and thus on the full cone.
+Equality of annihilators gives equality of the joint matrix coefficient
+spaces. This does not merely prove a separate entrywise or rowwise claim.
+Since the restriction consists of actual original coordinates, its
+coefficients have support at most t. Equality after algebraic closure
+descends by elementary field-extension linear algebra.
+
+The affine proof invokes this at the ORIGINAL width w for higher-rank runs,
+so b_r=max_{s>r}D_w(s) applies simultaneously to all their r-minors. It
+does not substitute the much larger exterior dimension into D. This is
+the precise interface responsible for the factorial-width estimate.
+
+4. AFFINE BOOKKEEPING MATCHES THE CONE HYPOTHESES
+
+At an affine rank-descent stage, the addendum uses the old-seed rational
+function field E and independent latent residual coordinates Y_i. Each
+local factor is
+  A_i(Y_i+c_i+ell_i(G_old)).
+It remains a polynomial in its own singleton Y_i. Translation over E is
+a polynomial-ring automorphism, so generic interval ranks are unchanged.
+Its value at Y=0 is exactly the previously prepared interval value.
+
+Every interval inside a higher-rank run or tail has rank greater than the
+current r, and hence already has its generic rank preserved at residual
+zero. The cone theorem's premise therefore holds on each such run over
+E, with no independence requirement on the different shift values.
+
+Cone support concentration is converted to total-degree concentration
+using local JOINT coefficient-matrix spans. Only selected local factors
+are re-expanded; unselected constant coefficients stay unchanged. Distinct
+singleton variables make each resulting product an actual coefficient.
+Thus the higher-rank run has compound total-degree concentration eta_r b_r.
+The single-block, adjacent-pair, and last-block/tail bounds are respectively
+eta_r(b_r+1), eta_r(2b_r+2), and eta_r(2b_r+1).
+
+A nonzero minor has a nonzero homogeneous component of degree at most the
+stated bound. The residual substitution Y=LX is invertible and homogeneous,
+so that component remains nonzero with the same degree. A degree-h monomial
+has support at most h and is detected by a fresh SV_h in the ORIGINAL X
+coordinates. This is an ordinary-total-degree transfer; it does not use
+the invalid general transport of a low-digit latent witness.
+
+All old seeds remain symbolic. Fresh amplitudes set to zero recover old
+nonzero minors and the maintained local Wronskians. Adjacent rank-r block
+products and the separate tail witness complete the interval induction.
+Constant scalar endpoint matrices can be adjoined without creating new
+variable coordinates or changing the local degree promise. Their role is
+handled by the same interval argument, not a width-three scalar theorem.
+
+5. WHERE THE CHARACTERISTIC RESTRICTION ENTERS
+
+There is no characteristic restriction in the supplied cone theorem.
+The affine addendum's degree-independent improvement uses its own local
+Hasse-Wronskian lemma. For a polynomial matrix H of degree d and joint
+coefficient-space dimension q, the coordinate polynomials are independent.
+After an invertible basis change they have distinct degrees d_1<...<d_q.
+The leading Hasse-Wronskian coefficient is, up to nonzero scalars,
+  product_{mu<nu}(d_nu-d_mu) / product_{j=0}^{q-1} j!.
+It is nonzero in characteristic zero or p>d, since q<=d+1.
+
+For H=wedge^r A_i, d<=r delta and q<=binom(w,r)^2. Therefore the source's
+uniform hypothesis char(F)=0 or p>w delta is sufficient at every r<w.
+Under it, the local degree budget is
+  eta_r=min{r delta, binom(w,r)^2-1}.
+
+The initial SV_1 makes c_i+ell_i(SV_1)=c_i+z p_i(y) transcendental over the
+original coefficient field because p_i is a nonzero Lagrange combination.
+Thus every nonzero original-field local Wronskian survives. Correlation
+among the shifts is harmless, and later symbolic additions preserve these
+nonzero polynomial conditions by zero-amplitude recovery. No perfectness,
+algebraic-closure oracle, or larger characteristic hypothesis is hidden.
+
+In arbitrary characteristic the addendum instead uses eta_r=r delta.
+That statement has degree-dependent seed count; it is not the same as a
+degree-independent polynomial query bound for varying delta. The publication
+should preserve this distinction. The later CP22 result supplies a
+different all-characteristic degree-independent guarantee.
+
+6. THE RETAINED FACTORIAL-WIDTH CONSEQUENCE
+
+The companion establishes
+  k_geo(w)=1+sum_{r<w}(2b_r+2)<=4^(w-1)(w!)^2 for w>=2.
+The affine addendum then establishes, in characteristic zero or p>w delta,
+  K=1+sum_{r<w}eta_r(2b_r+2)
+   <=4^w k_geo(w)
+   <=4^(2w-1)(w!)^2=2^{O(w log w)}.
+At w=1, K=1. These constants are independent of delta in that regime.
+
+The scalar has total degree at most n delta, and an SV coordinate has total
+seed degree at most n. Hence the source's grid of at most
+  (n^2 delta+1)^(2K)
+queries is valid over a working field with at least n^2 delta+1 elements.
+The working field must be an allowed oracle evaluation field. Field
+extension does not change the characteristic condition.
+
+The promise is local entry degree at most delta, or equivalently existence
+of an unknown-order preimage ROABP with scalar individual degree at most
+delta. The latter equivalence is legitimate HERE because factorwise
+truncation preserves the scalar in disjoint variables and this theorem
+allows arbitrary local rank patterns. It should not be exported to a
+separate theorem promising only ranks 1 and w without rechecking that
+pattern. Constants and n=0/delta=0 are explicitly separate cases.
+
+The resulting width dependence is a legitimate retained good-characteristic
+alternative to the newer 2^{O(w^2)} all-characteristic budget. It remains
+an XP-style fixed-width polynomial query bound: the exponent depends on
+w. It does not establish a uniform-exponent FPT bound.
+
+7. PUBLICATION WORDING
+
+Safe description:
+  Consequence of the supplied rank-profile cone theorem. The companion
+  manuscript proves that theorem; the affine addendum proves the transfer
+  and the good-characteristic Wronskian refinement. Both have received
+  internal model-assisted reconstruction and exact-source review.
+
+The author label and theorem heading may be changed from "conditional
+consequence" to that description with exact editorial provenance. The
+explicit dependency statement may remain, since it is mathematically
+informative. Do not call the input unproved or missing, and do not imply
+external expert acceptance or formal verification.
+
+No width-three grammar/classification, one-pole obstruction, disputed
+external-paper critique, or omitted small-width theorem occurs in the
+dependency chain checked here. The elementary fallback is genuinely a
+different supplied route to a qualitative fixed-width result, but the
+2^{O(w log w)} width estimate specifically uses the geometric section.
+
+No mathematical repair is requested for this dependency interface.

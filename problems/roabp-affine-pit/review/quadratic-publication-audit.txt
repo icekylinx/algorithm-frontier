@@ -1,0 +1,181 @@
+READ-ONLY PUBLICATION AUDIT: QUADRATIC HASSE OBSTRUCTION
+Date: 26 October 2026
+Reviewer: /root/fresh_core_hostile
+
+LIMITED VERDICT
+
+PASS for the mathematical statement and proof in the repository
+transcription read below. I found no algebraic blocker and request no
+mathematical repair. This is a bounded independent internal review, not
+external peer review or proof-assistant certification. I did not rerun
+the optional finite computations described in Section 8, nor audit
+separate conjectures or theorems mentioned only for comparison.
+
+Exact file read in full:
+  /workspace/scratch/ab365b6cbb9c/algorithm-frontier-pit/problems/
+  roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md
+  SHA256 0a1eac6c591692a74b56c488d786e5474507c670932475b9fe85de53e50f0ad6
+  352 lines, before any subsequent static formula rendering.
+
+Only this manuscript was inspected for this review. The proof was
+reconstructed directly rather than accepted on another lane's verdict.
+No repository file was edited and no remote operation was performed.
+
+1. EXACT DOMAIN AND CONCLUSION
+
+The theorem assumes w>=2, N=w^2-1, and prime characteristic
+  p>N+w-1=w^2+w-2.
+It constructs an original-field width-w read-once word in n=p observed
+coordinates, with three active variables and identity padding. Every
+physical local factor is generically invertible and invertible at
+gamma_i=t^i. The scalar has degree exactly 2p(w-1), vanishes on gamma,
+and has whole first nonzero residual component (-Y_p)^N.
+
+Since N<p, that component has characteristic digit degree N. The theorem
+does not claim the example in characteristic zero, in the excluded small
+characteristics, or under a derivative-separating curve. The dependence
+n=p and the use of only three active coordinates are consistent.
+
+2. BINOMIAL DETERMINANT: SIGN AND NONVANISHING MODULO p
+
+For Lemma 2, factoring
+  c_j=N!/((k_j+w-1)!(N-k_j)!)
+from column j leaves
+  P_i(k)=product_{a=i+1}^{w-1}(k+a)
+         product_{b=0}^{i-1}(N-k-b).
+The stated bounds on k_j ensure all factorial arguments are nonnegative,
+and direct cancellation recovers binom(N,k_j+i).
+
+At q_s=N-s, the entry P_i(q_s) vanishes for i>s. The diagonal is
+  P_s(q_s)=s! (N+w-1-s)!/N!.
+The Vandermonde on the q_s is
+  (-1)^(w(w-1)/2) product_{s=0}^{w-1}s!.
+Dividing the triangular evaluation determinant by this Vandermonde gives
+exactly the coefficient-basis determinant and the sign written in (1).
+Restoring all column factors gives the displayed consecutive-binomial
+determinant formula, with no missing sign or factorial factor.
+
+For k_j=wj and N=w^2-1, the largest k_j is N-w+1. Every factorial in
+the formula has argument at most N+w-1<p, so every factorial denominator
+and numerator is a unit modulo p. Every nonzero Vandermonde difference
+w(b-a) lies strictly between zero and p. The determinant is therefore
+nonzero in the field. This explicitly justifies modular nonvanishing;
+nonvanishing over the rationals alone would not suffice.
+
+3. MIDDLE MATRIX AND ITS DETERMINANT
+
+The map (i,j) -> i+wj is a bijection from 0<=i,j<w to 0,...,N.
+Hence every exponent N-i-wj of T is nonnegative, and every coefficient
+binom(N,i+wj) is nonzero because p>N.
+
+The row u(C)=(1,C,...,C^(w-1)) and column
+v(C)=(1,C^w,...,C^(w(w-1))) give
+  u(C)A(T)v(C)
+   =sum_{m=0}^N (-1)^(N-m) binom(N,m) C^m T^(N-m)
+   =(C-T)^N.
+There is no index collision or omitted term.
+
+For any determinant permutation, both the total T exponent and the total
+sign exponent from the entries are
+  E=wN-sum_i i-w sum_i sigma(i)=w(w^2-1)/2.
+This is an integer. The permutation sign is still supplied by the
+binomial determinant, so
+  det A(T)=(-1)^E T^E det[binom(N,i+wj)]
+has exactly the stated sign. It is a nonzero scalar multiple of T^E.
+It is not a polynomial unit at every value of T, and the manuscript does
+not claim that. It is nonzero generically and becomes a unit in F(t)
+at T=t^p, which is the property needed for physical interval ranks.
+
+The entries are distinct nonzero scalar multiples of 1,T,...,T^N, so
+their original-field scalar span has dimension N+1=w^2. After ordering
+and scaling those coordinates, the Hasse jet matrix has zeros when
+degree<order and diagonal entries one. Its leading square submatrices
+are invertible. The claimed generic pivots 0,...,N and last-order
+contraction are therefore correct.
+
+4. ORIGINAL-FIELD REALIZATION AND EXACT SCALAR DEGREE
+
+U(X) changes only the first row of the identity, preserving its first
+entry as one; V(Z) does the analogous operation on the first column.
+Their nonidentity parts square to zero and have zero diagonal. They are
+triangular unipotents, so det U=det V=1 in every characteristic.
+
+U, A, and V are univariate polynomial matrices over the original field.
+The shift parameter t occurs nowhere in their coefficients. With constant
+endpoints, their scalar has the term indexed by (i,j)
+  (-1)^(N-i-wj) binom(N,i+wj)
+  X^(ip) T^(N-i-wj) Z^(jp).
+Distinct pairs have distinct X,Z exponents, so no such terms cancel.
+
+Its total degree is N+i(p-1)+j(p-w). Both slopes are positive under
+the theorem's threshold. The unique maximum is i=j=w-1; its T exponent
+is zero and its coefficient is one. Its degree is exactly 2p(w-1).
+Thus the nonzero scalar and exact degree claims are correct, rather
+than merely upper bounds.
+
+5. GENUINE MOMENT-CURVE SHIFT AND EVERY PHYSICAL INTERVAL
+
+The active variables are x_1, x_p, x_w, which are distinct because
+2<=w<p. At gamma, with C=t^p, their p-th-power values produce exactly
+u(C), middle argument C, and v(C). Equation (5) gives f(gamma)=0.
+The remaining observed variables are represented by identity factors.
+This is a legitimate read-once order of n=p independent variables.
+
+Every generic local determinant is nonzero. At the curve the outer
+determinants remain one and det A(C) is nonzero in F(t). Determinants
+multiply, so every contiguous physical interval has rank w both
+generically and at gamma, regardless of identity padding. No assertion
+about scalar-endpoint-augmented intervals follows from this, and the
+source explicitly excludes that stronger assertion.
+
+Every t^i, including t^p, is transcendental over the original field.
+The arguments are correlated, but they are genuine substitutions of
+an original-field word into the actual prescribed moment curve.
+
+6. THE WHOLE FIRST RESIDUAL COMPONENT
+
+By Frobenius,
+  (t+Y_1)^p=C+Y_1^p,
+  (t^w+Y_w)^p=C^w+Y_w^p.
+All nonconstant residual terms of U and V have ordinary degree at
+least p. Middle entries are polynomials, so multiplication cannot lower
+that degree. Since p>N, no endpoint perturbation contributes to any
+component of degree at most N.
+
+Those components come only from
+  u(C)A(C+Y_p)v(C)=(-Y_p)^N.
+Thus all smaller components vanish and the ENTIRE degree-N component
+is the stated one-variable monomial. No unfiltered coefficient-span
+inference is being used. Because 0<N<p, its digit weight is N.
+
+7. SV1 COEFFICIENT AND SCOPE
+
+Under Y_i=z lambda_i(y), each ordinary residual component of degree d
+has amplitude degree d. Hence the coefficient of z^N is exactly
+  (-lambda_p(y))^N,
+which is nonzero. Higher residual degrees, including endpoint
+perturbations beginning at degree p, cannot cancel it. This proves
+symbolic nonvanishing under gamma+SV1, as asserted.
+
+The source correctly separates individual transcendence from derivative
+separation: gamma_p'=0. It also correctly notes that the local entry
+degree delta is at least (w-1)p, so a hypothesis p>delta is not satisfied.
+The example therefore does not refute those stronger-hypothesis results.
+
+Any universal width-only upper bound for the stated individually
+transcendental class must be at least w^2-1, because the construction
+exists for every qualifying characteristic. This lower bound on the
+whole-first-component quantity does not imply a generator or query lower
+bound, and the explicit SV1 coefficient demonstrates that distinction.
+
+8. LIMIT OF THIS REVIEW
+
+The general proof is self-contained and needs no numerical experiment.
+I did not independently rerun or verify the Section 8 claims about the
+separate finite computational checks, and do not use them as a premise
+for this PASS. I did not audit any proposed quadratic upper bound; the
+source labels such an upper bound a separate question. Subsequent static
+math rendering may alter the file hash and presentation. This report
+identifies the exact pre-render mathematical text actually read.
+
+No algebraic blocker or mathematical repair was found.

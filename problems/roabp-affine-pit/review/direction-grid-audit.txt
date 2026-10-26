@@ -1,0 +1,225 @@
+INDEPENDENT EXACT-SOURCE AUDIT: ALL-RANK AFFINE DIRECTION GRIDS
+Date: 26 October 2026
+Reviewer: /root/fresh_core_hostile
+
+VERDICT
+
+PASS as an internal independent mathematical reconstruction. No gap or
+repair is identified in the degree-independent direction grid or in the
+formal source's minimum-of-two-grids corollary. This is conditional on the
+companion all-rank structural theorem; I separately audited its complete
+source, rather than treating this addendum as a proof of that theorem.
+No external peer-review, novelty, or optimality conclusion is made.
+
+Audited plaintext:
+  algorithms/general_affine_rank_descent_direction_grid_candidate.txt
+  SHA256 4b03bf5f6dfc8d8f6d6de699659de959540f3a3524bbc4b5d61e95b85692523e.
+Audited formal source:
+  algorithms/general_affine_rank_descent_direction_grid.tex
+  SHA256 5817321c6b6203f059a292fca7d1d4845bf0bc7b1d5f6247a4012cb45c0f3ba8.
+Both sources were read in full. The formal source transcribes the
+plaintext argument and adds the explicitly checked global minimum-grid
+rule. The companion mathematical source is
+  complexity/general_affine_roabp_all_characteristics.tex
+  SHA256 89418d6e808a4878f8fe4eed5b48185da6b3c65e898d7d9617b587beb4b75ab6;
+its final editorial SHA256 9864136e134bbc9c3f35d8d0f1fb7595cf40c397e01d0247173956795f0c695f
+was checked to recover that mathematical source exactly by the declared
+editorial replacements.
+
+1. MODEL AND RESULT
+
+The original scalar polynomial has degree at most D and lies in an unknown
+invertible affine orbit of an unknown-order width-w ROABP. All univariate
+entry degrees and local generic ranks are allowed. The structural theorem
+supplies gamma+SV_K, gamma_i=t^i, K=K(w), with rank-stage budgets k_r.
+
+Let M=(n+2)(n+3)/2 and Q=(n-1)M+1. The addendum establishes that each of the
+K direction coordinates can use any common Q-element set while the initial
+parameter and amplitudes use sets of sizes nD+1 and D+1. The count is
+  Q^K(nD+1)(D+1)^K,
+over a field of size at least max{Q,nD+1}. For fixed w this is
+O_w(n^(3K+1)D^(K+1)). The direct inequality Q<=2n^3 holds also at n=1.
+
+The formal source then chooses globally
+  B=min{Q,(n-1)D+1}
+and obtains
+  (nD+1)[(D+1)B]^K
+over a working field of size at least nD+1. The latter uses one complete
+argument or the other, not an unsupported stagewise hybrid.
+
+2. MAXIMUM-DIGIT-WEIGHT POLARIZATION
+
+Let H be the nonzero first ordinary homogeneous component of a scalar
+test, of ordinary degree m and characteristic digit degree at most k.
+Choose a monomial of MAXIMUM digit weight k_0 among H's monomials, and
+list its k_0 digit powers q_j, with repetitions. Their sum is m. In
+characteristic zero take all q_j=1.
+
+Consider the coefficient of product_j z_j^(q_j) in
+H(sum_j z_j V_j). Every positive target amplitude needs at least one digit
+copy. No source monomial has more than k_0 copies. Thus any contributor
+uses exactly one copy per amplitude; a carry formed from several copies
+inside one amplitude cannot occur. The resulting coefficient is a tensor
+separately linear in the Frobenius coordinates V_(j,i)^(q_j).
+
+Assigning the selected monomial's copies to their own direction entries
+gives coefficient h_alpha times product_(i,e) alpha_(i,e)!, nonzero because
+each base-p digit is less than p. In characteristic zero the factor is
+product_i alpha_i!, also nonzero. A different source exponent vector
+cannot give this same direction monomial, since summing its direction
+exponents reconstructs alpha. Therefore the tensor is nonzero. There is
+no division by m!, and no implicit assumption m<p.
+
+The maximum-weight choice is essential and is stated explicitly. A
+lower-weight selected monomial would allow other terms' digit copies to
+carry into the requested amplitudes and would not prove the special tensor
+form used in the root-count argument.
+
+3. ROOT COUNTS OVER THE OLD-SEED COEFFICIENT FIELD
+
+For each q_j, the n functions lambda_i(y)^(q_j) are linearly independent
+over any coefficient-field extension. The Lagrange coefficient matrix is
+invertible, and entrywise Frobenius preserves its nonzero determinant;
+equivalently, evaluation at the original Lagrange nodes gives the identity.
+Tensoring these injective substitutions preserves the nonzero tensor.
+
+With the other directions viewed as formal, a nonzero tensor as a function
+of y_j is a nonzero linear combination of lambda_i(y_j)^(q_j). Over an
+algebraic closure of that coefficient field it is a q_j-th power of a
+polynomial of degree at most n-1. Thus at most n-1 distinct elements of
+the working field can annihilate it identically in all other directions.
+The coefficient field may contain t, old amplitudes, and other directions.
+The proof neither assumes a perfect base field nor asks the algorithm to
+extract roots.
+
+For M_0 tests, choose a tensor for each nonconstant test. At each successive
+direction, at most (n-1)M_0 values are forbidden, so any prescribed set
+of that size plus one contains a value preserving all current tensors.
+Unused directions and tests with nonzero constant term impose no condition.
+Previously fixed directions only change coefficients in the still
+separately Frobenius-linear tensor. Higher ordinary homogeneous components
+have larger total amplitude degree and cannot cancel the chosen tensor.
+
+The selection is existential for an explicit Cartesian hitting grid. The
+algorithm never needs to know the representation, minors, tensors, or good
+direction values.
+
+4. COUNTING DISTINCT RANK CONDITIONS
+
+The companion augments the word with two scalar-endpoint factors, for a
+total of N=n+2 factors. There are exactly N(N+1)/2=M possible nonempty
+contiguous intervals. At a rank-r stage, a target decomposition requires
+only individual greedy blocks, adjacent-block products, and last-block/
+tail products. Every such object is one of those contiguous intervals.
+
+Deduplicate the required tests by interval over all target decompositions
+and choose one nonzero r-minor for each. A single surviving r-minor proves
+rank at least r; larger minors vanish identically because that interval
+has generic rank r. The same chosen minor therefore certifies all its
+occurrences. The companion bounds EVERY nonzero r-minor of a required
+test, so any one decomposition witnessing the interval's admissible shape
+supplies the leading-component bound for this chosen minor.
+
+There is no extra multiplicative factor for the number of minors, target
+intervals containing the test, or possible greedy decompositions. Hence
+M is a valid simultaneous condition count at each stage.
+
+5. FIX DIRECTIONS WITHIN THE RANK DESCENT
+
+The argument correctly fixes directions stage by stage, retaining t and
+all old amplitudes as independent variables. The current coefficient field
+is E(t,old amplitudes). Each latent shift remains
+  c_i+ell_i(t,t^2,...,t^n)+a polynomial in old amplitudes.
+Its t-part is nonconstant because ell_i is a nonzero row of the invertible
+linear transformation. Therefore each shift is transcendental over the
+original coefficient field, and over E, in every characteristic. Ordinary
+derivatives are not needed; t^p is just as transcendental as t.
+
+The new direction choices preserve every new scalar minor as a polynomial
+in the old formal parameters and the fresh amplitudes. Setting fresh
+amplitudes to zero recovers all old nonzero higher-rank minors. The same
+adjacent-block row-space argument used in the companion then restores the
+rank invariant at the new stage.
+
+Proof gauges, unit pivots, and coefficient bases are chosen anew over the
+current old-parameter field. There is no requirement to preserve a
+particular earlier rational gauge formula under later direction fixing.
+The actual tests are minors of original polynomial intervals. Their
+analysis coefficients lie in the current coefficient field, with no
+denominator involving the NEW directions being selected. This avoids a
+hidden denominator condition beyond the counted interval tests.
+
+After all stages, at least one direction tuple in the stated Cartesian
+grid leaves the original scalar nonzero as a polynomial in t and the
+amplitudes. Its degree in t is at most nD, and in each amplitude at most
+D. Ordinary interpolation on those parameters proves the advertised query
+count. Entry degrees and auxiliary-minor degrees do not enter this final
+step.
+
+6. ALTERNATIVE INITIAL CURVE AND PURE SV
+
+With eta_i(t)=t lambda_i(t), every nonzero latent combination is c+t q(t)
+for nonzero q, so it is nonconstant in all characteristics and has degree
+at most n. The full stagewise proof is unchanged. This map is the image
+of pure SV_(K+1) with its first pair set to (t,t).
+
+The result is a subfamily of the pure generator's image; it does not claim
+that the initial t values must belong to the Q-element direction set used
+for the remaining pairs. No additional field restriction is needed.
+
+7. MINIMUM-GRID COROLLARY ADDED IN THE FORMAL SOURCE
+
+If Q<=(n-1)D+1, the root-count construction applies to all directions and
+Q<=nD+1, so its field requirement reduces to nD+1. If the inequality is
+reversed, use ordinary interpolation of the full nonzero substituted
+scalar from the companion theorem. Its direction degrees are at most
+(n-1)D, amplitude degrees at most D, and initial-parameter degree at most
+nD. This gives the other branch with the same field bound.
+
+The branch is selected once for the entire generator. All directions use
+the same size-B set justified by that complete argument. This establishes
+the precise count (nD+1)[(D+1)B]^K without mixing a condition count from one
+stage with a scalar-degree promise that does not bound auxiliary tests.
+The corollary is valid for both gamma and eta.
+
+8. SCOPE, EDGES, AND FINAL ASSESSMENT
+
+The n,w,D>=1 domain is explicit. Nonzero constants need one query, and
+n=1 admits the separately stated elementary D+1 univariate bound. At w=1,
+K=0 and the general formula specializes consistently. The evaluation sets
+may overlap, and nD+1 supplies the n Lagrange nodes. Extension-field access
+is expressly required if the working field extends the oracle's base
+field. The affine map remains invertible, and the result does not cover
+singular projections or unrestricted repeated factors.
+
+The fixed-width asymptotic notation O_w is correct. The direction
+refinement decreases the scalar-degree exponent of the degree-independent
+branch to K+1, while its n-dependence is explicit and larger. No claim of
+optimality, a lower bound, or an FPT exponent uniform in w is made.
+
+No mathematical repair is requested. The condition deduplication, maximal-
+weight digit tensor, arbitrary-coefficient-field root count, and stagewise
+reconstruction of proof gauges are all essential and all present in the
+audited exact source.
+
+
+FINAL EXACT REVERSAL CONFIRMATION — 26 OCTOBER 2026
+Source: algorithms/general_affine_rank_descent_direction_grid_candidate.txt
+Final SHA256: 27eef61ab05a62a40143de65b569a452666aafa191507910594d1ddfde99b0ab
+Recovered mathematical SHA256: 4b03bf5f6dfc8d8f6d6de699659de959540f3a3524bbc4b5d61e95b85692523e
+I checked the current bytes against the final hash, verified each declared
+new string occurred exactly once, reversed the declared replacements in
+memory, and recovered the audited mathematical hash exactly. The declared
+review-status/dependency-metadata changes do not change the mathematics.
+The PASS above therefore applies to this final source. No source was edited.
+
+
+FINAL EXACT REVERSAL CONFIRMATION — 26 OCTOBER 2026
+Source: algorithms/general_affine_rank_descent_direction_grid.tex
+Final SHA256: 229d353e00366bbb1ee78ce26e593076d636dc58fcf3499b5d01e9828e1292e7
+Recovered mathematical SHA256: 5817321c6b6203f059a292fca7d1d4845bf0bc7b1d5f6247a4012cb45c0f3ba8
+I checked the current bytes against the final hash, verified each declared
+new string occurred exactly once, reversed the declared replacements in
+memory, and recovered the audited mathematical hash exactly. The declared
+review-status/dependency-metadata changes do not change the mathematics.
+The PASS above therefore applies to this final source. No source was edited.

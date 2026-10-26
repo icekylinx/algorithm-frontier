@@ -15,6 +15,16 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Exact Boolean convolution with elementary bit arithmetic](problems/subset-sum-low-space-deterministic/convolution.md)
 - [Two short normalized ranges at arbitrary lattice scales](problems/subset-sum-low-space-deterministic/range-branch.md)
 
+## Algebraic complexity
+
+### [Deterministic PIT for fixed-width affine ROABP orbits](problems/roabp-affine-pit/)
+
+[Statement](problems/roabp-affine-pit/README.md) · [Main proof](problems/roabp-affine-pit/proof.md) · [Sources](problems/roabp-affine-pit/sources.md) · [Verification](problems/roabp-affine-pit/verify/README.md)
+
+- [Exact support bounds for rank-stable matrix words](problems/roabp-affine-pit/manuscripts/palette-sharpness.md)
+- [A quadratic leading-digit obstruction at the ordinary moment curve](problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md)
+- [Stronger bounds under distinct ROABP promises](problems/roabp-affine-pit/manuscripts/special-cases.md)
+
 ## Numeric targets and quota geometry
 
 ### [Numeric targets and support patterns](problems/numeric-target-frontier/)
@@ -726,6 +736,45 @@ One outside bipartite matching plus linear graph work.
 Residual gap <code class="math">\le\lfloor(r+b)/2\rfloor</code>.
 
 **Model and scope.** Supplied constructive factor-critical bins and a row-covering injection. LOW gives an explicit bound on contact rank r, not on the total retained vertex count; b counts unmatched blockers.
+
+### [Exact interval-rank palette support bounds](problems/roabp-affine-pit/manuscripts/palette-sharpness.md)
+
+Matching structural lower constructions for every interval-rank palette, with an original-field degree-two lift at the actual moment curve.
+
+**Randomness.** Explicit deterministic algebraic constructions and exact symbolic identities. The finite verifier uses integer sparse-polynomial arithmetic, without sampling.
+
+**Quantitative result.**
+
+<!-- math-display: b8bb124871e11b97d3a3f6f7
+h(P)=\prod_j(p_j-p_{j-1}+1)-2
+-->
+![Formula](assets/math/b8bb124871e11b97d3a3f6f7.svg)
+
+Full palette <code class="math">h=2^W-2</code>.
+
+**Model and scope.** Every characteristic; physical matrix-interval ranks are preserved at the curve. The endpoint-augmented scalar interval is excluded. These examples survive one SV pair and give no hitting-set or PIT-query lower bound.
+
+### [Quadratic local Hasse digit-degree obstruction](problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md)
+
+An original-field width-w word with invertible physical factors attains first-component digit degree w²−1 at the ordinary moment curve.
+
+**Randomness.** Explicit deterministic matrix construction and symbolic determinant identity; finite checks use exact integer and prime-field arithmetic without sampling.
+
+**Quantitative result.**
+
+<!-- math-display: 082c7cadbc4b9b9ba230eb8f
+N=w^2-1
+-->
+![Formula](assets/math/082c7cadbc4b9b9ba230eb8f.svg)
+
+<!-- math-display: f055b506b86aa4d1f6f2a959
+n=p
+-->
+![Formula](assets/math/f055b506b86aa4d1f6f2a959.svg)
+
+Scalar total degree <code class="math">2p(w-1)</code>.
+
+**Model and scope.** Every width w≥2 in prime characteristic p>w²+w−2; physical interval ranks survive the ordinary curve. This is a local proof-interface obstruction; one SV pair detects the examples, so no PIT lower bound is claimed.
 
 ## Shared manuscripts
 

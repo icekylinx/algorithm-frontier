@@ -1,0 +1,212 @@
+CANONICAL AFFINE-ROABP RESULTS FOR THE GITHUB PUBLICATION INCREMENT
+26 October 2026 UTC / 27 October 2026 Asia/Singapore
+
+Status: scope and dependency inventory, checked against the exact frozen
+sources listed below. These are internally model-assisted audited candidate
+proofs. No external peer review, proof-assistant certification, publication
+priority, or unconditional novelty finding is asserted. This inventory does
+not alter any frozen source and does not introduce a new theorem.
+
+1. COMMON MODEL AND NOTATION
+
+The scalar is f(X)=u product_i A_i(ell_i(X)+c_i) v, with one unknown
+read-once order and an unknown INVERTIBLE affine change of n coordinates.
+The ell_i are the independent coordinate forms of that change. This is
+not the stronger any-order promise, not a singular affine projection, and
+not an orbit closure. Local matrices are over the original coefficient
+field, not over a later seed field. D denotes a bound on scalar total
+degree; delta denotes the degree promise specified separately in each row.
+
+SV_k has k independent Lagrange pairs (z_j,y_j), hence 2k parameters.
+gamma+SV_k has 2k+1 parameters. Extension-field oracle evaluations are
+required if the base field cannot supply the stated evaluation sets.
+Every fixed-width polynomial-time statement is XP in the width parameter;
+no fixed-parameter tractability claim is made. Constants need one query.
+
+2. NONREDUNDANT RESULT CARDS
+
+A. CP22: arbitrary local ranks, every characteristic, scalar degree D.
+
+  W_r=binom(w,r),
+  h_r=(r+2) product_{s=r+2}^w (binom(s-1,r-1)+1)-2,
+  k_r=(W_r^2-1)(2h_r+2),
+  K(w)=sum_{r=1}^{w-1} k_r; K(1)=0.
+
+  Map: gamma_i=t^i plus SV_K; also pure SV_(K+1).
+  K(1),...,K(6)=0,12,128,1500,23718,553854.
+  Safe asymptotic K=2^{O(w^2)}. No bound on local representation degrees
+  is needed; the final finite grid depends on scalar total degree D.
+  Refined query count:
+
+    (nD+1)[(D+1)B]^K,
+    B=min{ (n-1)(n+2)(n+3)/2+1, (n-1)D+1 }.
+
+  Field size nD+1 suffices, for n,D>=1. This is the broad all-rank,
+  all-characteristic candidate, but it does NOT supersede the smaller
+  bounds under the additional promises in cards B--E.
+
+B. CP13: arbitrary local ranks; factorial width dependence in good
+   characteristic, with a cone-theorem dependency that must be supplied.
+
+  Define D_w(w)=w^2-1 and
+    D_w(r)=2r^2(2 max_{s>r} D_w(s)+1),
+    b_r=max_{s>r}D_w(s),
+    k_geo=1+sum_{r<w}(2b_r+2).
+  In char 0 or char p>w*delta, set
+    eta_r=min{r*delta, binom(w,r)^2-1},
+    K_good=1+sum_{r<w} eta_r(2b_r+2).
+  Pure SV_(K_good) hits, with
+
+    K_good <= 4^(2w-1)(w!)^2 = 2^{O(w log w)}  (w>=2),
+    K_good=1 (w=1).
+
+  This asymptotic width bound can improve on CP22, so it must not be
+  discarded merely because it predates CP22. It need not be numerically
+  smaller at each small width.
+
+  Here delta may be a latent SCALAR individual-degree bound. Truncating
+  the local matrices above delta preserves that scalar, and arbitrary
+  local ranks remain allowed. The original affine output has total degree
+  at most n*delta. The stated finite grid uses
+    (n^2*delta+1)^(2K_good) queries,
+  over a field with at least n^2*delta+1 elements.
+
+  In every characteristic the same addendum uses eta_r=r*delta, with
+    K <= delta*w*4^(w-1)(w!)^2 (w>=2).
+  This is polynomial for fixed w AND delta; unlike CP22, its exponent
+  is not independent of delta in small characteristic.
+
+  The CP13 addendum is explicitly conditional on the companion
+  rank-profile IMAGE-CONE theorem. Publishing the addendum alone is not
+  a complete proof of the factorial bound. Include the focused interval-
+  rank manuscript, whose geometric section supplies that theorem and
+  whose earlier sections supply its normalization/rank-descent machinery.
+  Its elementary fallback gives 2^{O(w^2)}, not the factorial improvement.
+
+C. CP18: width at most three, arbitrary local ranks, every characteristic.
+
+  Let e_i=i in char 0; in char p let e_i be the ith positive integer
+  not divisible by p. Put rho=e_n<=2n-1. The map
+    t^(e_i)+SV_4,i
+  has nine parameters; pure SV_5 also hits. This is much smaller than
+  substituting w=3 in CP22, and includes the rank-two layers excluded by
+  CP21's width-three rank-one/full specialization.
+
+  The frozen theorem allows delta to be a latent scalar individual-degree
+  bound, by local truncation, since no intermediate-rank promise is lost.
+  With D=n*delta, its direction addendum gives
+    n^8 (rho D+1)(D+1)^4 = O(n^14 delta^5)
+  queries, field size rho D+1. The basic pure-SV_5 grid is
+    (n^2*delta+1)^10.
+  The complete proof is independent of the general cone theorem and of
+  the later CP22 Artin/palette proof.
+
+D. CP19: local generic ranks one or w, char 0 or char p>delta.
+
+  Map: ordinary moment curve gamma_i=t^i plus SV_(w-1), with 2w-1
+  parameters; also pure SV_w. The whole first scalar component of an
+  invertible segment has ORDINARY degree at most w-1.
+  With D=n*delta, the refined query count is
+    n^(2w-2)(nD+1)(D+1)^(w-1)
+      = O_w(n^(3w-1) delta^w),
+  field size nD+1.
+
+  CRUCIAL DEGREE PROMISE: delta bounds entries in an actual representation
+  with the asserted rank-one/full pattern. A scalar individual-degree
+  promise alone cannot replace it, because truncation can destroy that
+  local rank pattern. There is no p>w, p>w*delta, or p>n*delta requirement;
+  p>delta is the exact finite-characteristic hypothesis in this source.
+  Width one itself works in all characteristics.
+
+  This remains useful for general w: its w-1 pairs are smaller than
+  CP21's b(w) from width five onward. At widths two through four CP21
+  gives the same pair count without the good-characteristic restriction.
+
+E. CP21: local generic ranks one or w, every characteristic, scalar degree D.
+
+  b(1)=0;
+  b(w)=max_{1<=k<=w-1}{binom(w-2,k-1)+k-1}, w>=2.
+  b(2),...,b(8)=1,2,3,5,8,13,23.
+  Use the derivative-separating exponents e_i from card C, rho=e_n.
+  Map: gamma_i=t^(e_i) plus SV_b; also pure SV_(b+1).
+  Query count:
+    n^(2b)(rho D+1)(D+1)^b,
+  field size max{n^2,rho D+1}. For D=n*delta this is
+    O_w(n^(3b+2) delta^(b+1)).
+
+  There is no characteristic or local matrix degree restriction. A known
+  latent scalar individual-degree delta implies D<=n*delta WITHOUT
+  truncating or changing the promised rank-one/full representation.
+  The entire first homogeneous component, not just one coefficient,
+  has characteristic digit degree at most b(w).
+
+  Exact recovered special cases:
+    CP17, width two: gamma+SV_1, three parameters; pure SV_2.
+    Width three, ranks one/three only: gamma+SV_2; pure SV_3.
+    CP20, width four, ranks one/four only: gamma+SV_3; pure SV_4.
+  All widths at most two are covered by its width-two case. Rank-three
+  layers at width four are NOT covered. CP17/CP20 source histories and
+  audits can be archived, but need not be duplicated in the minimal
+  canonical proof set, because CP21 proves these exact specializations.
+
+3. MINIMAL CANONICAL COMPLETE AFFINE PROOF SET
+
+Nine TeX sources suffice for the five cards and their best listed grids:
+
+  [CP22 core] complexity/general_affine_roabp_all_characteristics.tex
+    9864136e134bbc9c3f35d8d0f1fb7595cf40c397e01d0247173956795f0c695f
+  [CP22 grid] algorithms/general_affine_rank_descent_direction_grid.tex
+    229d353e00366bbb1ee78ce26e593076d636dc58fcf3499b5d01e9828e1292e7
+
+  [CP13 cone dependency] root/proof/focused_interval_rank_main_review.tex
+    22751a12b6369675dc9b8a97891b4a08152a485841da8402c33717b46feed589
+  [CP13 affine consequence] root/proof/affine_orbit_extension_cp13.tex
+    2a3bd4eb5e551546a4ce32cf753f04a541f696c767cc1c6821bf3d6572b4e077
+
+  [CP18 core] complexity/width_three_affine_orbit_all_characteristics.tex
+    e4de131b23a6f66f66e0bc91e4f16bbf0d90e546bf3f30060d659e8c5c7f94e8
+  [CP18 grid] algorithms/width_three_affine_orbit_direction_grid.tex
+    e31a52f025a05cac4dee27056e952a57d49d007a03f09c8ad50e66f38ad273a0
+
+  [CP19 core] algorithms/invertible_affine_constant_space_concentration.tex
+    8f082ad69dc4accd88db4815e4660ee86d5ffdb9b48b4dc6027285d7c523ee42
+  [CP19 grid] algorithms/invertible_affine_direction_grid.tex
+    bb12fd419ef8d105e17a6dc2777d9322309ceb6c8ed34887583e1e12cb422268
+
+  [CP21, including its grid] complexity/general_invertible_affine_all_characteristics.tex
+    89571bdecf554a54fdc80e6605de6a07c6c612759106ec3abd7192bfaa222cc4
+
+These are canonical mathematical sources, not recommendations to overwrite
+historical checkpoint wrappers. The CP18 grid cites the audited precursor
+TXT; the standalone CP18 core above supplies its structural dependency in
+full. The CP13 focused source includes the full geometric proof, so no
+separate geometric_refinement.tex include is needed in this minimal set.
+Keep the exact-source audit reports and machine-readable manifests beside
+the canonical files; internal PASS labels must retain their limitations.
+
+4. CURVE AND LOWER-BOUND WARNINGS FOR THE PUBLIC SUMMARY
+
+The ordinary moment curve t^i makes every nonzero original-field affine
+coordinate form transcendental in every characteristic. It does NOT
+make every such form have nonzero derivative in positive characteristic.
+CP22's Hasse filtering uses only individual transcendence. CP21 and CP18
+use the stronger derivative-separating curve t^(e_i); CP19 uses ordinary
+derivatives plus the local representation-degree restriction.
+
+Do not present min{b(w),(w-1)(w^2-1)} as a first-component bound under
+only individual transcendence. The new original-field width-two example
+at an ordinary moment curve has first component -Y_p^3 in char p>=5;
+the new general-width supplement raises this obstruction to w^2-1.
+Both fail derivative separation. Neither is a lower bound on the number
+of SV pairs: one additional pair detects these particular examples.
+
+Do not silently replace representation-degree delta by scalar degree in
+CP19, weaken p>w*delta to p>delta in CP13, or drop the cone dependency
+from CP13's factorial bound. Conversely, CP22/CP21 do not require any
+bound on representation degrees when scalar total degree D is known.
+
+The comparison literature should name Vishwas Bhargava and Sumanta Ghosh.
+Their any-order and unknown-order theorems are different promises. Keep
+research-validity status separate from literature/priority status.
+
+END INVENTORY

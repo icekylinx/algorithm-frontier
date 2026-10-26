@@ -1,0 +1,176 @@
+INDEPENDENT EXACT-SOURCE AUDIT: QUADRATIC DIGIT OBSTRUCTION
+26 October 2026 UTC / 27 October 2026 Asia/Singapore
+Reviewer: fresh_complexity, internal model-assisted reconstruction
+
+Source:
+  root/quadratic_hasse_obstruction_actual_curve.txt
+  SHA-256 72f5bb302f33884f03b9450a37087fc4b102571560f3b6ab8b8fd9ce51f8fb69
+
+Author verifier:
+  root/verify_quadratic_hasse_obstruction.py
+  SHA-256 bd3d4724af1db85e1e3f675b1bf834e3fb35d5deeceb9990c38560ba80b88b8d
+
+VERDICT
+
+PASS on the stated construction, after reading the entire exact source
+and independently reconstructing its determinant identity, original-field
+realization, padded moment curve, complete first homogeneous component,
+and limitations. No mathematical repair requested.
+
+The conclusion is a lower bound of w^2-1 for a particular first-component
+digit-degree interface under INDIVIDUAL TRANSCENDENCE. It is not a lower
+bound on SV pairs or black-box query complexity. The derivative-separating
+curve hypotheses of CP21 are not satisfied. The CP22 local Hasse bound
+explicitly permits this behavior. These qualifications are present in
+the source and are mathematically necessary.
+
+This is internal model-assisted scrutiny, not external peer review or
+formal proof-assistant verification. No novelty or priority conclusion
+is part of this audit.
+
+1. DETERMINANT IDENTITY
+
+Set N=w^2-1 and k_j=wj. Factoring
+
+  c_j=N!/[(k_j+w-1)!(N-k_j)!]
+
+from column j of binom(N,k_j+i) leaves
+
+  P_i(k)=product_{a=i+1}^{w-1}(k+a)
+         product_{b=0}^{i-1}(N-k-b).
+
+Indeed multiplying this expression by c_j cancels the two factorial
+tails and gives N!/[(k_j+i)!(N-k_j-i)!]. All these arguments are
+nonnegative for the actual k_j=wj and 0<=i,j<w.
+
+Each P_i has degree at most w-1. At q_s=N-s, the second product vanishes
+when i>s, and
+
+  P_s(q_s)=s! (N+w-1-s)!/N!.
+
+Thus the w-by-w evaluation matrix (rows i, columns s) is triangular
+with the displayed nonzero diagonal. Its Vandermonde is
+
+  product_{a<b}(q_b-q_a)
+   =(-1)^[w(w-1)/2] product_{s=0}^{w-1}s!.
+
+The resulting determinant of the coefficient matrix of P_i is
+
+  (-1)^[w(w-1)/2] product_{s=0}^{w-1}(N+s)!/(N!)^w.
+
+Evaluating the same coefficient basis at k_j and restoring the c_j
+gives exactly source equation (1). This argument is an identity over
+the rationals at the required integer k_j. Clearing the integer
+factorial denominators allows reduction modulo p.
+
+Every relevant factorial argument is at most N+w-1, which is strictly
+below p. Each Vandermonde difference is w(b-a), a positive integer
+at most w(w-1)<p. Hence every numerator and denominator factor is a
+unit modulo p, and the binomial determinant remains nonzero. Merely
+having a nonzero rational determinant would not suffice; the explicit
+factorization supplies the required reduction argument.
+
+2. THE MIDDLE MATRIX AND ITS ENTRY SPACE
+
+The integers i+wj biject with 0,...,N. Since p>N, every binomial(N,m)
+is nonzero modulo p. Thus the entries of A(T) are nonzero scalar
+multiples of the distinct monomials T^0,...,T^N. Their coefficient
+space has dimension w^2, and the generic local Hasse pivots are
+0,...,N in this characteristic range.
+
+In every determinant term the T exponent and sign exponent coincide:
+
+  E=wN-sum_i i-w sum_j j=w(w^2-1)/2.
+
+The latter is an integer, since w(w-1)(w+1) is even. Factoring the
+common monomial and common sign from the determinant expansion gives
+
+  det A(T)=(-1)^E T^E det[binom(N,i+wj)].
+
+It is nonzero. At every transcendental C it remains nonzero.
+The contraction u(C)A(T)v(C) is the full binomial expansion of
+(C-T)^N, because its (i,j) entry contributes C^(i+wj) times the
+coefficient of that exponent. There are no repeated or omitted terms.
+
+3. ORIGINAL-FIELD ENDPOINT REALIZATION
+
+U(X) differs from the identity only in off-diagonal positions of its
+first row; V(Z) differs only in off-diagonal positions of its first
+column. Both are unipotent with determinant one, over the original
+field polynomial rings. Their source row and sink column supply
+X^(ip) and Z^(jp), respectively. No coefficient depends on the later
+shift parameter, and X,T,Z are three distinct variables, each used
+in one local matrix.
+
+The original scalar monomials have distinct X and Z exponent pairs,
+so no cancellation can invalidate the degree calculation. For (i,j),
+the total degree is N+i(p-1)+j(p-w). Both slopes are positive. The
+unique maximum occurs at i=j=w-1, has coefficient one, and is
+2p(w-1). This also proves that the scalar polynomial is nonzero.
+
+4. THE ACTUAL CURVE AND ALL PHYSICAL INTERVALS
+
+For n=p, the coordinate indices 1,w,p are distinct because 2<=w<p.
+The assignment X=X_1, T=X_p, Z=X_w is therefore a valid unknown-order
+ROABP in n observed variables; other coordinates have identity layers.
+At gamma_i=t^i, write C=t^p. Then X^p=C, T=C, Z^p=C^w.
+The middle contraction is (C-C)^N=0, while every local matrix is
+invertible over F(t). Hence every product of consecutive physical
+layers is invertible, exactly as is its generic counterpart.
+
+The scalar can vanish while the full matrix product remains invertible.
+If constant scalar endpoint matrices are appended, their full interval
+does drop rank; the source explicitly excludes that augmented interval
+from its rank-preservation assertion.
+
+5. ENTIRE FIRST COMPONENT, NOT ONLY A SELECTED COEFFICIENT
+
+Frobenius gives (t+Y_1)^p=C+Y_1^p and
+(t^w+Y_w)^p=C^w+Y_w^p. Every nonconstant endpoint contribution has
+residual ordinary degree at least p>N. Multiplying by the polynomial
+middle matrix cannot lower that degree. Thus ALL residual terms of
+degree at most N arise from the constant endpoint row and column.
+Their exact contraction is
+
+  u(C)A(C+Y_p)v(C)=(-Y_p)^N.
+
+This proves both absence of all lower homogeneous terms and the exact
+whole first homogeneous component. Since 0<N<p, its digit degree is N.
+No unfiltered coefficient concentration or moving-endpoint Hasse lemma
+is being used to infer this conclusion.
+
+The middle curve argument t^p has derivative zero. Consequently the
+example does not satisfy the stronger premise that every relevant
+original-field latent coordinate has nonzero derivative. Moreover the
+local degree of U and V is (w-1)p, so the CP19 condition p>delta does
+not apply either.
+
+One fresh SV pair does hit this example: the amplitude-degree-N
+coefficient is (-lambda_p(y))^N, nonzero, and endpoint variations
+have amplitude degree at least p>N. This proves the claimed negative
+scope of the obstruction: it is not a generator lower bound.
+
+6. INDEPENDENT EXACT COMPUTATION AND AUTHOR VERIFIER REVIEW
+
+I wrote and ran a separate standard-library checker:
+
+  complexity/quadratic_hasse_obstruction_independent_verify.py
+  SHA-256 0ab5ff0386321c758321548e6c5dc07cecb6a6a826ca27097216b03aa6ab987a
+  complexity/quadratic_hasse_obstruction_independent_verify.json
+  SHA-256 19115b04a0101a46f6e3cb7378b0cde68706c956ffb8412b076d2056377eeb6d
+
+It imports no author code. It builds the polynomial coefficient basis
+P_i, checks all triangular evaluations, computes integer determinants
+by fraction-free Bareiss elimination, compares the binomial determinant,
+and expands the middle residual term by term from the w^2 entries.
+For widths 2,...,10 it also independently reduces determinants at the
+first three primes above N+w-1, checking nonzero reductions, scalar
+degree, and the active-coordinate constraints. Every assertion passes.
+
+I also read the author's verifier in full and reran it. Its stored JSON
+matches the rerun exactly. Its rational Gaussian determinant calculation
+and middle residual coefficient check correctly corroborate the stated
+general proof; neither author nor independent finite checks are being
+presented as the proof for all widths or all qualifying primes.
+
+END AUDIT

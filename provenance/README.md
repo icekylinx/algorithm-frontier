@@ -11,7 +11,8 @@ license boundaries. There is one current copy of each retained manuscript.
 | [Canonical map](canonical-map.json) | Every original source path, its retained destination or integration target, and the disposition of redundant material |
 | [Archive manifest](archive-manifest.json) | The supplied archive inventory and archive-level fingerprints |
 | [Checkpoint file manifest](checkpoint-files.json) | The original checkpoint payload inventory and recorded hashes |
-| [Import manifests](imports/) | Additional numerical, quota and sparsification increments, plus the Subset Sum source snapshot |
+| [Import manifests](imports/) | Additional numerical, quota, sparsification and algebraic-complexity increments, plus the Subset Sum source snapshot |
+| [Affine ROABP PIT import](imports/roabp-affine-pit.json) | Exact reviewed source identities and reversible publication edits for the fixed-width all-characteristic PIT package |
 | [Matching provenance](matching.md) | The matching manuscript's source-to-section map and the realized cycle-search dependency chain |
 | [Checkpoint restoration](checkpoint-restoration.md) | Earlier completed results, their original archive evidence, current realizing proofs and attribution corrections |
 | [Subset Sum source manifest](imports/subset-sum/source-manifest.json) | The imported Subset Sum material and source-project revision |
@@ -49,6 +50,16 @@ its inventory counts and its canonical targets. The archived ZIPs are not
 shipped as duplicate source trees, so ordinary CI does not replay their
 extraction or compare edited manuscripts with historical bytes. These
 metadata checks do not certify mathematical claims.
+
+The affine ROABP package has an additional
+[source-binding check](../problems/roabp-affine-pit/verify/check_source_bindings.py).
+It reverses the explicitly recorded publication edits and verifies the
+original mathematical-source hashes, without keeping duplicate checkpoint
+trees. Each record identifies either an exact member of the frozen
+checkpoint-22 archive or a later session source with its own hash; the
+archive is not represented as containing the later additions.
+Native-TeX PDF bindings and visual-review evidence are checked
+separately. Neither check is an external review or a mathematical certificate.
 
 ## Licenses and third-party attribution
 

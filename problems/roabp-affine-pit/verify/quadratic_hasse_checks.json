@@ -1,0 +1,269 @@
+{
+  "source_sha256": "72f5bb302f33884f03b9450a37087fc4b102571560f3b6ab8b8fd9ce51f8fb69",
+  "verifier_sha256": "0ab5ff0386321c758321548e6c5dc07cecb6a6a826ca27097216b03aa6ab987a",
+  "method": "integer coefficient bases, Bareiss determinants, prime-field elimination; no author code imported",
+  "scope": "finite corroboration of a separately reconstructed general proof",
+  "cases": [
+    {
+      "w": 2,
+      "N": 3,
+      "binomial_determinant": "-8",
+      "coefficient_basis_determinant": "-4",
+      "middle_determinant_T_exponent": 3,
+      "middle_only_residual": "(-Y_T)^3",
+      "prime_checks": [
+        {
+          "p": 5,
+          "determinant_mod_p": 3,
+          "scalar_total_degree": 10,
+          "all_nonconstant_endpoint_residual_orders_at_least": 5
+        },
+        {
+          "p": 7,
+          "determinant_mod_p": 1,
+          "scalar_total_degree": 14,
+          "all_nonconstant_endpoint_residual_orders_at_least": 7
+        },
+        {
+          "p": 11,
+          "determinant_mod_p": 8,
+          "scalar_total_degree": 22,
+          "all_nonconstant_endpoint_residual_orders_at_least": 11
+        }
+      ],
+      "all_assertions_pass": true
+    },
+    {
+      "w": 3,
+      "N": 8,
+      "binomial_determinant": "-30618",
+      "coefficient_basis_determinant": "-810",
+      "middle_determinant_T_exponent": 12,
+      "middle_only_residual": "(-Y_T)^8",
+      "prime_checks": [
+        {
+          "p": 11,
+          "determinant_mod_p": 6,
+          "scalar_total_degree": 44,
+          "all_nonconstant_endpoint_residual_orders_at_least": 11
+        },
+        {
+          "p": 13,
+          "determinant_mod_p": 10,
+          "scalar_total_degree": 52,
+          "all_nonconstant_endpoint_residual_orders_at_least": 13
+        },
+        {
+          "p": 17,
+          "determinant_mod_p": 16,
+          "scalar_total_degree": 68,
+          "all_nonconstant_endpoint_residual_orders_at_least": 17
+        }
+      ],
+      "all_assertions_pass": true
+    },
+    {
+      "w": 4,
+      "N": 15,
+      "binomial_determinant": "1229124009984",
+      "coefficient_basis_determinant": "21307392",
+      "middle_determinant_T_exponent": 30,
+      "middle_only_residual": "(-Y_T)^15",
+      "prime_checks": [
+        {
+          "p": 19,
+          "determinant_mod_p": 11,
+          "scalar_total_degree": 114,
+          "all_nonconstant_endpoint_residual_orders_at_least": 19
+        },
+        {
+          "p": 23,
+          "determinant_mod_p": 3,
+          "scalar_total_degree": 138,
+          "all_nonconstant_endpoint_residual_orders_at_least": 23
+        },
+        {
+          "p": 29,
+          "determinant_mod_p": 5,
+          "scalar_total_degree": 174,
+          "all_nonconstant_endpoint_residual_orders_at_least": 29
+        }
+      ],
+      "all_assertions_pass": true
+    },
+    {
+      "w": 5,
+      "N": 24,
+      "binomial_determinant": "11036228509231567382812500",
+      "coefficient_basis_determinant": "140141137500000",
+      "middle_determinant_T_exponent": 60,
+      "middle_only_residual": "(-Y_T)^24",
+      "prime_checks": [
+        {
+          "p": 29,
+          "determinant_mod_p": 20,
+          "scalar_total_degree": 232,
+          "all_nonconstant_endpoint_residual_orders_at_least": 29
+        },
+        {
+          "p": 31,
+          "determinant_mod_p": 1,
+          "scalar_total_degree": 248,
+          "all_nonconstant_endpoint_residual_orders_at_least": 31
+        },
+        {
+          "p": 37,
+          "determinant_mod_p": 20,
+          "scalar_total_degree": 296,
+          "all_nonconstant_endpoint_residual_orders_at_least": 37
+        }
+      ],
+      "all_assertions_pass": true
+    },
+    {
+      "w": 6,
+      "N": 35,
+      "binomial_determinant": "-462120274352350883503061547498198312733900800",
+      "coefficient_basis_determinant": "-378320082170830904033280",
+      "middle_determinant_T_exponent": 105,
+      "middle_only_residual": "(-Y_T)^35",
+      "prime_checks": [
+        {
+          "p": 41,
+          "determinant_mod_p": 38,
+          "scalar_total_degree": 410,
+          "all_nonconstant_endpoint_residual_orders_at_least": 41
+        },
+        {
+          "p": 43,
+          "determinant_mod_p": 6,
+          "scalar_total_degree": 430,
+          "all_nonconstant_endpoint_residual_orders_at_least": 43
+        },
+        {
+          "p": 47,
+          "determinant_mod_p": 33,
+          "scalar_total_degree": 470,
+          "all_nonconstant_endpoint_residual_orders_at_least": 47
+        }
+      ],
+      "all_assertions_pass": true
+    },
+    {
+      "w": 7,
+      "N": 48,
+      "binomial_determinant": "-1858421615593814446152316022351082048358682876830096443119680116344690000",
+      "coefficient_basis_determinant": "-624112292002143570375498840000000000",
+      "middle_determinant_T_exponent": 168,
+      "middle_only_residual": "(-Y_T)^48",
+      "prime_checks": [
+        {
+          "p": 59,
+          "determinant_mod_p": 10,
+          "scalar_total_degree": 708,
+          "all_nonconstant_endpoint_residual_orders_at_least": 59
+        },
+        {
+          "p": 61,
+          "determinant_mod_p": 21,
+          "scalar_total_degree": 732,
+          "all_nonconstant_endpoint_residual_orders_at_least": 61
+        },
+        {
+          "p": 67,
+          "determinant_mod_p": 3,
+          "scalar_total_degree": 804,
+          "all_nonconstant_endpoint_residual_orders_at_least": 67
+        }
+      ],
+      "all_assertions_pass": true
+    },
+    {
+      "w": 8,
+      "N": 63,
+      "binomial_determinant": "14675752586165388123546541595301808113948618825422207947365288330580543885925144571040336461614436882107596800",
+      "coefficient_basis_determinant": "877166032931345673964135310828536009913794560000000",
+      "middle_determinant_T_exponent": 252,
+      "middle_only_residual": "(-Y_T)^63",
+      "prime_checks": [
+        {
+          "p": 71,
+          "determinant_mod_p": 54,
+          "scalar_total_degree": 994,
+          "all_nonconstant_endpoint_residual_orders_at_least": 71
+        },
+        {
+          "p": 73,
+          "determinant_mod_p": 72,
+          "scalar_total_degree": 1022,
+          "all_nonconstant_endpoint_residual_orders_at_least": 73
+        },
+        {
+          "p": 79,
+          "determinant_mod_p": 69,
+          "scalar_total_degree": 1106,
+          "all_nonconstant_endpoint_residual_orders_at_least": 79
+        }
+      ],
+      "all_assertions_pass": true
+    },
+    {
+      "w": 9,
+      "N": 80,
+      "binomial_determinant": "4631992646968790123346132819744083830944326069316597951386131611206964767948326742296773261693300249874342508750803371570893112383884730782432887445130112000",
+      "coefficient_basis_determinant": "1396800353449456109176456156154852479415992996847127299760728309760000",
+      "middle_determinant_T_exponent": 360,
+      "middle_only_residual": "(-Y_T)^80",
+      "prime_checks": [
+        {
+          "p": 89,
+          "determinant_mod_p": 45,
+          "scalar_total_degree": 1424,
+          "all_nonconstant_endpoint_residual_orders_at_least": 89
+        },
+        {
+          "p": 97,
+          "determinant_mod_p": 4,
+          "scalar_total_degree": 1552,
+          "all_nonconstant_endpoint_residual_orders_at_least": 97
+        },
+        {
+          "p": 101,
+          "determinant_mod_p": 16,
+          "scalar_total_degree": 1616,
+          "all_nonconstant_endpoint_residual_orders_at_least": 101
+        }
+      ],
+      "all_assertions_pass": true
+    },
+    {
+      "w": 10,
+      "N": 99,
+      "binomial_determinant": "-1185719168945860827653958024976208599008015548958524804635320719019504532844412071928057347238494454931143976762231629766467986329163681010782427280473772368000000000000000000000000000000000000000000000000000000000000",
+      "coefficient_basis_determinant": "-3234657781935994115779764473155263357659703416120226700154703194357760000000000000000000000",
+      "middle_determinant_T_exponent": 495,
+      "middle_only_residual": "(-Y_T)^99",
+      "prime_checks": [
+        {
+          "p": 109,
+          "determinant_mod_p": 68,
+          "scalar_total_degree": 1962,
+          "all_nonconstant_endpoint_residual_orders_at_least": 109
+        },
+        {
+          "p": 113,
+          "determinant_mod_p": 15,
+          "scalar_total_degree": 2034,
+          "all_nonconstant_endpoint_residual_orders_at_least": 113
+        },
+        {
+          "p": 127,
+          "determinant_mod_p": 105,
+          "scalar_total_degree": 2286,
+          "all_nonconstant_endpoint_residual_orders_at_least": 127
+        }
+      ],
+      "all_assertions_pass": true
+    }
+  ]
+}

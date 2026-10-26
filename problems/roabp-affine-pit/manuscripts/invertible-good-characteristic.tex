@@ -1,0 +1,321 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\SV}{\operatorname{SV}}
+\newcommand{\GL}{\operatorname{GL}}
+\title{Constant Row Spaces and Low-Degree Concentration\\
+for Invertible Affine ROABP Words}
+\author{Yilin Liu \and GPT-6 Astra Pro}\date{26 October 2026}
+\begin{document}\maketitle
+\begin{abstract}
+For an invertible-local width-\(w\) polynomial matrix word, translating
+each latent variable by any element transcendental over the base field
+makes its row coefficient space generated in total degree at most
+\(w-1\). The shifts may be correlated.
+The proof tracks constant coefficient row spaces and charges local
+derivatives to dimension increases. It works in characteristic zero
+or in characteristic greater than the local entry-degree bound.
+Consequently \(\gamma+\SV_{w-1}\), with \(\gamma_i(t)=t^i\),
+hits unknown invertible affine orbits of words whose local ranks
+are one or \(w\). The map has \(2w-1\) seeds; pure \(\SV_w\)
+also hits. The argument does not supply an all-characteristic
+affine transport theorem.
+\end{abstract}
+
+\noindent\textbf{Status.}
+This proof has independent model-assisted internal reconstructions
+and an exact-source audit. This is not external peer review,
+and no publication-priority claim is made.
+
+\section{Statement}
+
+Let \(n,w,\delta\ge1\), and let
+\(A_i(T)\in\F[T]^{w\times w}\) have entry degrees at most
+\(\delta\), with constant scalar endpoints \(u,v\).
+Assume \(\operatorname{char}\F=0\) or
+\(\operatorname{char}\F=p>\delta\).
+Fix \(L\in\GL_n(\F)\) with coordinate forms \(\ell_i\), and
+constants \(c_i\). The representation and affine change are unknown.
+Consider
+\[
+ f(X)=uA_1(\ell_1(X)+c_1)\cdots A_n(\ell_n(X)+c_n)v.
+\]
+
+Choose \(n\) distinct abscissas and their Lagrange polynomials
+\(\lambda_i(y)\). Let
+\[
+ \gamma_i(t)=t^i,\qquad
+ \mathcal H_i(t,\boldsymbol y,\boldsymbol z)
+  =t^i+\sum_{j=1}^{w-1}z_j\lambda_i(y_j).
+\]
+For \(w=1\), the sum is empty.
+
+\begin{theorem}\label{thm:hit}
+If each \(A_i\) has generic rank one or \(w\), then
+\[
+ f\ne0\quad\Longrightarrow\quad f(\mathcal H)\ne0.
+\]
+The standard map \(\SV_w\) also hits this class.
+With \(D=n\delta\), a rectangular grid for \(\mathcal H\)
+uses at most
+\[
+ (nD+1)\bigl((n-1)D+1\bigr)^{w-1}(D+1)^{w-1}
+\]
+queries, over a working field of at least \(nD+1\) elements.
+Appropriate extension-field oracle evaluations are required if
+the base field is too small.
+\end{theorem}
+
+The claim is polynomial for fixed \(w\).
+It includes arbitrary invertible-local words. It does not assert the
+same map for intermediate singular ranks.
+Here \(\delta\) bounds the local matrix entries in a representation
+with the stated rank pattern; truncating a representation from a
+scalar-degree promise alone need not preserve that pattern.
+When \(n=0\) or \(\delta=0\), the scalar is constant and one evaluation
+suffices. The width-one case in fact works in every characteristic,
+since it is a product of nonzero univariate factors at transcendental
+arguments.
+
+\section{A univariate block-jet lemma}
+
+For a polynomial row matrix \(R(T)\), its \emph{constant coefficient
+row space} is the \(\F\)-span of every row of every coefficient
+matrix of \(R\). It is a subspace of \(\F^w\).
+
+\begin{lemma}\label{lem:block}
+Let \(B\in\F^{r\times w}\) have row rank \(r\), and let
+\(A(T)\in\F[T]^{w\times w}\) be generically invertible with
+entry degrees at most \(\delta\).
+Let \(U\subseteq\F^w\) be the constant coefficient row space
+of \(BA(T)\), and put \(s=\dim U\).
+Then \(s\ge r\), and over \(\F(T)\) the rows of
+\[
+ BA^{(a)}(T),\qquad 0\le a\le s-r,
+\]
+span \(U\otimes_\F\F(T)\).
+The same statement holds after substituting any \(C\) transcendental
+over \(\F\), in any extension field containing \(C\).
+\end{lemma}
+\begin{proof}
+Let
+\[
+ V_k=\Span_{\F(T)}
+ \{\text{rows of }BA^{(a)}(T):0\le a\le k\}.
+\]
+Since \(A(T)\) is invertible, \(\dim V_0=r\).
+All these rows lie in \(U\otimes\F(T)\).
+
+If \(V_k=V_{k+1}\), differentiating every displayed spanning row
+of \(V_k\) stays in \(V_{k+1}=V_k\).
+Differentiating a rational linear combination also stays in \(V_k\),
+by the ordinary product rule. Thus \(V_k\) is derivative-stable
+and contains all higher derivatives of \(BA\).
+
+These derivatives span \(U\otimes\F(T)\).
+Indeed \(\delta!\) is nonzero under the characteristic hypothesis,
+and the exact Taylor identity
+\[
+ BA(S)=\sum_{a=0}^{\delta}
+       \frac{BA^{(a)}(T)}{a!}(S-T)^a
+\]
+holds with an independent variable \(S\).
+It expresses every constant coefficient row of \(BA(S)\)
+in their \(\F(T)\)-span. The opposite inclusion is immediate.
+
+Therefore the filtration cannot stall before it reaches dimension
+\(s\). Starting at dimension \(r\), it is full by \(k=s-r\).
+In particular \(s\ge r\).
+
+Choose an \(s\)-by-\(s\) nonzero minor certifying this spanning rank.
+Its entries are univariate polynomials over \(\F\), so the minor
+remains nonzero at a transcendental \(C\).
+The evaluated rows remain contained in \(U\) after scalar extension,
+and therefore span it. Further coefficient-field extension does not
+change this rank.
+\end{proof}
+
+Only derivatives through the local degree \(\delta\) are needed.
+Thus positive characteristic requires \(p>\delta\), not
+\(p>w\) or \(p>n\delta\). Vanishing higher derivatives cause
+no difficulty in the proof.
+
+\section{Constant prefix spaces}
+
+Let \(u\in\F^{1\times w}\) be nonzero and assume all local
+matrices are generically invertible.
+For each \(j\), define
+\[
+ R_j(T_1,\ldots,T_j)=uA_1(T_1)\cdots A_j(T_j),
+\]
+and let \(U_j\subseteq\F^w\) be its constant coefficient row space.
+Put \(r_j=\dim U_j\), so \(U_0=\Span_\F(u)\) and \(r_0=1\).
+These spaces use \emph{independent original variables}.
+They are not coefficient spans of a correlated curve specialization.
+
+If \(B\) is any constant basis matrix of \(U_{j-1}\), the coefficient
+row space of \(BA_j(T)\) is exactly \(U_j\). This follows by extracting
+coefficients in the independent first \(j-1\) variables.
+Consequently
+\[
+ 1=r_0\le r_1\le\cdots\le r_n\le w
+\]
+by Lemma~\ref{lem:block}.
+
+\begin{theorem}[Low total-degree row concentration]\label{thm:conc}
+Let \(K\supseteq\F\) be any extension field, and let
+\(C_1,\ldots,C_n\in K\) each be transcendental over \(\F\).
+They need not be algebraically independent.
+For every \(j\), the coefficient rows of
+\[
+ R_j(C_1+Y_1,\ldots,C_j+Y_j)
+\]
+of total degree at most \(r_j-1\) span \(U_j\otimes_\F K\).
+\end{theorem}
+\begin{proof}
+The assertion for \(j=0\) is immediate.
+Suppose it is true at \(j-1\). Write \(r=r_{j-1}\) and \(s=r_j\).
+The selected prefix coefficient rows of degree at most \(r-1\)
+span every row of a constant basis \(B\) of \(U_{j-1}\), after
+extending scalars to \(K\).
+
+Lemma~\ref{lem:block}, evaluated at \(C_j\), says that
+\[
+ BA_j^{(a)}(C_j),\qquad 0\le a\le s-r,
+\]
+span \(U_j\otimes K\).
+When \(a\le\delta\), division by \(a!\) is allowed, and
+these are scalar multiples of the corresponding Hasse coefficients
+of \(BA_j(C_j+Y_j)\). Terms with \(a>\delta\) are zero and may
+be ignored.
+
+Multiply the previous low-degree coefficient rows by these local
+Hasse matrices. The products are actual coefficient rows of the
+new prefix, with total degree at most
+\[
+ (r-1)+(s-r)=s-1.
+\]
+Their \(K\)-span contains the displayed full spanning family,
+and hence is \(U_j\otimes K\).
+\end{proof}
+
+The rank certificate used at step \(j\) is a polynomial in the
+single local argument over \(\F\), not a polynomial involving the
+earlier \(C_i\). This is why correlations among the shifts do
+not invalidate the induction.
+
+\begin{corollary}\label{cor:scalar}
+If the invertible-local scalar \(uA_1(T_1)\cdots A_n(T_n)v\)
+is nonzero, then after the shift \(T_i=C_i+Y_i\) its first
+nonzero homogeneous term has ordinary total degree at most \(w-1\).
+\end{corollary}
+\begin{proof}
+Nonzeroness says that \(v\) does not annihilate \(U_n\).
+The spanning coefficients in Theorem~\ref{thm:conc} therefore
+include one whose pairing with \(v\) is nonzero.
+\end{proof}
+
+In characteristic zero the same concentration statement holds for
+generically invertible rational univariate local matrices.
+Define their constant row spaces by clearing scalar denominators.
+The choice of clearing factor does not affect the row space:
+a constant column annihilates a rational row if and only if it
+annihilates any nonzero scalar multiple of that row.
+Clear a nonzero scalar univariate denominator from each local
+matrix. The polynomial argument applies with its finite local degree.
+At every transcendental \(C_i\), the cleared scalar is a unit in
+the residual power-series ring. Multiplication by a scalar unit
+relates coefficient rows up to any total degree by an invertible
+triangular transformation, preserving the asserted concentration.
+This rational extension does not assert the same \(p>\delta\)
+bound when clearing denominators raises local degrees.
+
+\section{Affine detection and rank-one factors}
+
+For the curve \(\gamma_i=t^i\), every
+\[
+ C_i(t)=c_i+\ell_i(\gamma(t))
+\]
+is a nonconstant polynomial in \(t\), hence transcendental over \(\F\).
+This holds in every characteristic. Ordinary derivatives of the
+\(C_i\) need not be nonzero; the proof uses transcendence only.
+
+For an invertible-local word, Corollary~\ref{cor:scalar} gives a
+nonzero first homogeneous term of degree at most \(w-1\).
+The invertible residual change \(Y=LX\) preserves that degree
+and nonzeroness.
+Every nonzero polynomial of total degree at most \(w-1\) is hit by
+\(\SV_{w-1}\): some nonzero monomial uses at most \(w-1\)
+coordinates, and this map contains every such coordinate plane
+by specializing its direction seeds to the corresponding abscissas.
+Higher homogeneous terms have larger total fresh-amplitude degree
+and cannot cancel the detected first term.
+
+Now suppose local ranks are one or \(w\).
+For a rank-one factor \(R(T)\), choose a nonzero polynomial entry
+\(h=R_{ab}\) and use
+\[
+ R(T)=(R(T)e_b)\bigl(e_a^{\mathsf T}R(T)/h(T)\bigr).
+\]
+Splitting at all rank-one factors gives nonzero rational scalar
+segments with invertible middle runs.
+Keep every denominator \(h\) outside its scalar numerator.
+The new row endpoint \(e_a^{\mathsf T}R\) and column endpoint
+\(Re_b\) are polynomial vectors with entry degree at most \(\delta\).
+Complete each by constant standard basis rows or columns to a
+generically invertible \(w\)-by-\(w\) polynomial matrix.
+Its entry-degree bound is still \(\delta\).
+Constant endpoint vectors admit constant completions.
+
+Thus every scalar numerator is an invertible-local polynomial word
+of the same local degree bound and is detected by the same fresh
+\(\SV_{w-1}\). Each denominator remains nonzero, since its
+constant fresh-amplitude value is \(h(C_i(t))\ne0\).
+Neighboring segments may share a boundary variable; within each
+segment every original variable occurs once.
+The product of their nonzero rational substitutions is nonzero.
+This proves the first assertion of Theorem~\ref{thm:hit}.
+
+For pure \(\SV_w\), use its first pair as the initial shift
+\[
+ C_i=c_i+z_0\ell_i(\lambda(y_0)).
+\]
+The coefficient \(\ell_i(\lambda(y_0))\) is nonzero, since the
+Lagrange polynomials are independent.
+Over \(\F(y_0)\), each \(C_i\) is nonconstant in \(z_0\) and
+therefore transcendental. The same argument applies and uses
+the remaining \(w-1\) pairs as the fresh map.
+
+Finally \(\deg f\le D=n\delta\).
+For the explicit \(\gamma\), the individual seed degrees are at most
+\(nD\) in \(t\), \((n-1)D\) in each direction, and \(D\)
+in each amplitude. These are the rectangular grid bounds in
+Theorem~\ref{thm:hit}. The finite evaluations use the original
+polynomial, so numerical grid points need not avoid auxiliary
+rational pivots separately.
+
+\section{Small-characteristic boundary}
+
+The derivative plateau proof does not justify an unrestricted
+small-characteristic conclusion. For example, ordinary derivatives
+can miss \(T^p\).
+One may instead obtain latent coefficient concentration measured by
+base-\(p\) digit weights using Hasse derivatives, but that alone
+does not survive an arbitrary affine change as a low-support
+coefficient assertion.
+
+The present theorem uses ordinary total degree: once a nonzero
+coefficient has degree at most \(w-1\), the entire first homogeneous
+term has that ordinary degree bound. This is preserved by invertible
+linear substitution. A low-digit-weight witness, possibly of much
+higher ordinary degree than other terms, would not provide this
+argument. No all-characteristic \(\gamma+\SV_{w-1}\) theorem for
+general width is claimed here.
+\end{document}

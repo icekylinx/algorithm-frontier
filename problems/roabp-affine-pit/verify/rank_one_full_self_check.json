@@ -1,0 +1,327 @@
+{
+  "status": "exact_all_characteristic_rank_one_or_full_checks_passed",
+  "cases": [
+    {
+      "grid": {
+        "field": "Q",
+        "characteristic": 0,
+        "variables": 4,
+        "scalar_total_degree_bound": 4,
+        "initial_curve_exponents": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "width_bound": 4,
+        "local_rank_promise": "one or full width",
+        "digit_degree_bound": 3,
+        "parameter_count": 7,
+        "t_grid_length": 17,
+        "each_direction_grid_length": 16,
+        "each_amplitude_grid_length": 5,
+        "query_bound": 8704000,
+        "query_formula": "n^(2b(w)) (rho*D+1) (D+1)^b(w)"
+      },
+      "frobenius_word_witness": {
+        "status": "nonzero",
+        "queries": 252,
+        "seed_indices_t_ys_zs": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        "point": [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        "value": "1"
+      },
+      "partial_zero": {
+        "status": "incomplete",
+        "queries": 17,
+        "query_bound": 8704000
+      },
+      "one_variable_complete_zero": {
+        "status": "zero_under_rank_one_or_full_affine_orbit_promise",
+        "queries": 16,
+        "query_bound": 16,
+        "completed_grid": true
+      }
+    },
+    {
+      "grid": {
+        "field": "finite extension",
+        "characteristic": 2,
+        "size": 32,
+        "extension_degree": 5,
+        "modulus_low_to_high": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "element_encoding": "base-p polynomial coefficients",
+        "variables": 4,
+        "scalar_total_degree_bound": 4,
+        "initial_curve_exponents": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "width_bound": 4,
+        "local_rank_promise": "one or full width",
+        "digit_degree_bound": 3,
+        "parameter_count": 7,
+        "t_grid_length": 29,
+        "each_direction_grid_length": 16,
+        "each_amplitude_grid_length": 5,
+        "query_bound": 14848000,
+        "query_formula": "n^(2b(w)) (rho*D+1) (D+1)^b(w)"
+      },
+      "frobenius_word_witness": {
+        "status": "nonzero",
+        "queries": 252,
+        "seed_indices_t_ys_zs": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        "point": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "value": 1
+      },
+      "partial_zero": {
+        "status": "incomplete",
+        "queries": 17,
+        "query_bound": 14848000
+      },
+      "one_variable_complete_zero": {
+        "status": "zero_under_rank_one_or_full_affine_orbit_promise",
+        "queries": 16,
+        "query_bound": 16,
+        "completed_grid": true
+      }
+    },
+    {
+      "grid": {
+        "field": "finite extension",
+        "characteristic": 3,
+        "size": 81,
+        "extension_degree": 4,
+        "modulus_low_to_high": [
+          2,
+          1,
+          0,
+          0,
+          1
+        ],
+        "element_encoding": "base-p polynomial coefficients",
+        "variables": 4,
+        "scalar_total_degree_bound": 6,
+        "initial_curve_exponents": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "width_bound": 4,
+        "local_rank_promise": "one or full width",
+        "digit_degree_bound": 3,
+        "parameter_count": 7,
+        "t_grid_length": 31,
+        "each_direction_grid_length": 16,
+        "each_amplitude_grid_length": 7,
+        "query_bound": 43552768,
+        "query_formula": "n^(2b(w)) (rho*D+1) (D+1)^b(w)"
+      },
+      "frobenius_word_witness": {
+        "status": "nonzero",
+        "queries": 688,
+        "seed_indices_t_ys_zs": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        "point": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "value": 1
+      },
+      "partial_zero": {
+        "status": "incomplete",
+        "queries": 17,
+        "query_bound": 43552768
+      },
+      "one_variable_complete_zero": {
+        "status": "zero_under_rank_one_or_full_affine_orbit_promise",
+        "queries": 16,
+        "query_bound": 16,
+        "completed_grid": true
+      }
+    },
+    {
+      "grid": {
+        "field": "finite extension",
+        "characteristic": 5,
+        "size": 125,
+        "extension_degree": 3,
+        "modulus_low_to_high": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "element_encoding": "base-p polynomial coefficients",
+        "variables": 4,
+        "scalar_total_degree_bound": 10,
+        "initial_curve_exponents": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "width_bound": 4,
+        "local_rank_promise": "one or full width",
+        "digit_degree_bound": 3,
+        "parameter_count": 7,
+        "t_grid_length": 41,
+        "each_direction_grid_length": 16,
+        "each_amplitude_grid_length": 11,
+        "query_bound": 223522816,
+        "query_formula": "n^(2b(w)) (rho*D+1) (D+1)^b(w)"
+      },
+      "frobenius_word_witness": {
+        "status": "nonzero",
+        "queries": 2664,
+        "seed_indices_t_ys_zs": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        "point": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "value": 1
+      },
+      "partial_zero": {
+        "status": "incomplete",
+        "queries": 17,
+        "query_bound": 223522816
+      },
+      "one_variable_complete_zero": {
+        "status": "zero_under_rank_one_or_full_affine_orbit_promise",
+        "queries": 16,
+        "query_bound": 16,
+        "completed_grid": true
+      }
+    }
+  ],
+  "known_D_smaller_than_n": {
+    "grid": {
+      "field": "finite extension",
+      "characteristic": 2,
+      "size": 32,
+      "extension_degree": 5,
+      "modulus_low_to_high": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "element_encoding": "base-p polynomial coefficients",
+      "variables": 5,
+      "scalar_total_degree_bound": 1,
+      "initial_curve_exponents": [
+        1,
+        3,
+        5,
+        7,
+        9
+      ],
+      "width_bound": 4,
+      "local_rank_promise": "one or full width",
+      "digit_degree_bound": 3,
+      "parameter_count": 7,
+      "t_grid_length": 10,
+      "each_direction_grid_length": 25,
+      "each_amplitude_grid_length": 2,
+      "query_bound": 1250000,
+      "query_formula": "n^(2b(w)) (rho*D+1) (D+1)^b(w)"
+    },
+    "linear_witness": {
+      "status": "nonzero",
+      "queries": 2,
+      "seed_indices_t_ys_zs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "point": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "value": 1
+    }
+  },
+  "width_five_complete_zero": {
+    "status": "zero_under_rank_one_or_full_affine_orbit_promise",
+    "queries": 64,
+    "query_bound": 64,
+    "completed_grid": true
+  },
+  "width_one_curve_only": {
+    "status": "nonzero",
+    "queries": 2,
+    "seed_indices_t_ys_zs": [
+      1
+    ],
+    "point": [
+      1,
+      1,
+      1
+    ],
+    "value": 1
+  },
+  "scope": "Arithmetic, examples and grid semantics only; the general theorem requires its proof."
+}

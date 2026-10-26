@@ -1,0 +1,647 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\F}{\mathbb F}
+\newcommand{\SV}{\operatorname{SV}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\pdeg}{\operatorname{pdeg}}
+\newcommand{\wt}{\operatorname{wt}}
+\title{A Nine-Parameter Hitting Map for Affine Orbits\\
+of Width-Three ROABPs in Every Characteristic}
+\author{Yilin Liu \and GPT-6 Astra Pro}
+\date{26 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give a self-contained argument for a polynomial-size black-box
+hitting set for the invertible affine orbit of width-three read-once
+oblivious algebraic branching programs, with unknown variable order,
+over every field characteristic. The number of parameters is nine and
+does not depend on the degree or the characteristic. The standard
+five-pair Shpilka--Volkovich map also hits this class.
+
+The proof uses a separating rational curve, a three-coordinate Hasse
+jet lemma, and a rank-two Schur identity. After suitable constant
+gauges, the whole first nonzero homogeneous scalar term has base-
+characteristic digit weight at most two. Two fresh SV pairs detect
+that term. A preliminary two-pair stage preserves transfer ranks and
+boundary vectors; splitting rank-one transfers then reduces the
+general word to the required mixed rank-two/invertible segments.
+\end{abstract}
+
+\noindent\textbf{Review status.}
+This manuscript has received internal independent mathematical and
+exact-source checks, in addition to the audits of its preceding proof
+notes. It has not undergone external peer review, and no publication
+priority claim is made.
+
+\section{Model, map, and scope}
+
+Let \(n,\delta\ge1\), let \(A_i(T)\in\F[T]^{3\times3}\) have entry
+degrees at most \(\delta\), and let \(u,v\) be constant row and column
+endpoints. Let \(L\in\GL_n(\F)\) have coordinate forms
+\(\ell_1,\ldots,\ell_n\), and let \(c\in\F^n\). We consider
+\begin{equation}\label{eq:model}
+ f(X)=uA_1(\ell_1(X)+c_1)\cdots A_n(\ell_n(X)+c_n)v.
+\end{equation}
+The order, \(L\), \(c\), and the representation are unknown to the
+black-box algorithm. Width at most three is included by zero padding;
+unused coordinates and constant factors are allowed. The local generic
+ranks may be one, two, or three. A zero local factor cannot occur in a
+nonzero scalar word.
+
+Fix distinct nodes \(a_1,\ldots,a_n\) in a working field, and let
+\(\lambda_i(y)\) be their Lagrange interpolation polynomials. Write
+\[
+ \SV_{h,i}=\sum_{j=1}^h z_j\lambda_i(y_j).
+\]
+In characteristic zero put \(e_i=i\). In characteristic \(p>0\), let
+\(e_1<\cdots<e_n\) be the first \(n\) positive integers not divisible
+by \(p\). In both cases \(e_n\le2n-1\). Define
+\begin{equation}\label{eq:map}
+ \mathcal H_i(t,\boldsymbol y,\boldsymbol z)
+   =t^{e_i}+\sum_{j=1}^4z_j\lambda_i(y_j).
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+For every field characteristic and every nonzero polynomial
+\eqref{eq:model},
+\[
+ f(\mathcal H)\ne0.
+\]
+The standard map \(\SV_5\) also hits every such polynomial. A Cartesian
+grid gives at most
+\[
+ \bigl((2n-1)n\delta+1\bigr)^9
+\]
+oracle evaluations for \eqref{eq:map}, or \((n^2\delta+1)^{10}\) for
+\(\SV_5\). Extension-field evaluations are permitted when the base
+field is too small. For \(n=0\) or \(\delta=0\), the model is constant
+and one evaluation suffices.
+\end{theorem}
+
+The statement concerns an invertible affine orbit, not arbitrary singular
+projections or an orbit closure. If a promise bounds only the individual
+degrees of the latent scalar polynomial, each local matrix may be
+truncated above that bound: its variable occurs in no other factor, so
+the discarded terms contribute only scalar monomials exceeding the
+promised individual degree.
+
+For context, Bhargava--Ghosh~\cite{BG} give a quasipolynomial bound for
+unknown-order ROABP affine orbits in characteristic zero or greater than
+the latent individual degree. Their polynomial bound at constant width
+for \emph{any-order} ROABPs uses the stronger promise that a width-bounded
+representation exists in every variable order. The present statement
+uses one unknown order and makes no restriction on the characteristic.
+This comparison is not a certification that no later or equivalent
+result exists.
+
+\section{Three-coordinate rational Hasse jets}
+
+For a rational vector \(R(t)\), let \(D^{(m)}R\) be the coefficient
+of \(h^m\) in \(R(t+h)\). Call \(m\) a \emph{pivot order} if
+\(D^{(m)}R\) is not in the \(\F(t)\)-span of its earlier Hasse rows.
+In characteristic \(p\), write \(\wt_p(m)\) for the sum of the base-
+\(p\) digits of \(m\).
+
+\begin{lemma}\label{lem:jets}
+Let \(0\ne R(t)\in\F(t)^q\), with \(q\le3\). In characteristic
+zero every pivot order is at most \(q-1\). In characteristic \(p>0\)
+every pivot order \(m\) satisfies \(\wt_p(m)\le q-1\).
+More precisely, the first positive pivot, if present, is a \(p\)-power;
+a third pivot, if present, is either twice that first power or another
+\(p\)-power. In characteristic zero the only possible positive pivots
+are one and two.
+\end{lemma}
+
+\begin{proof}
+We may extend the field to an algebraic closure, since nonzero minors
+remain nonzero. Divide the vector by a nonzero coordinate. The product
+rule expresses each new Hasse row as a nonzero multiple of the old row
+of that order plus earlier rows, so the pivot orders are unchanged.
+It suffices to treat \((1,F_1(t),F_2(t))\), omitting missing coordinates.
+
+The first nonzero Hasse variation of a nonconstant rational function in
+characteristic \(p\) has order \(p^e\): extract its maximal Frobenius
+power, after which its ordinary derivative is nonzero. In characteristic
+zero that order is one. If both remaining functions are constant, there
+is nothing more to prove.
+
+In positive characteristic, take the largest common \(q_0=p^e\) for
+which both functions belong to \(\F(t^{q_0})\), and put \(s=t^{q_0}\).
+The pivot orders in \(t\) are \(q_0\) times those in \(s\). At least
+one remaining function has nonzero derivative in \(s\); call it \(F\),
+and call the other \(G\). In characteristic zero use \(s=t\).
+The first positive pivot is now one. Put
+\[
+ h=G'/F',\qquad R_m=D^{(m)}G-hD^{(m)}F\quad(m\ge2).
+\]
+The third pivot is the first order with \(R_m\ne0\), if any.
+
+If \(h'\ne0\), the characteristic is not two: in characteristic two
+both second ordinary derivatives are zero, which forces \(h'=0\).
+The product rule gives \(R_2=h'F'/2\ne0\). Thus the third pivot is two.
+
+Suppose \(h'=0\). In characteristic zero, \(h\) is constant and
+\(G-hF\) is constant, so there is no third pivot. In positive
+characteristic both \(h\) and \(J=G-hF\) lie in \(\F(s^p)\).
+If \(h\) is constant, the first nonzero Hasse variation of a nonconstant
+\(J\) gives a \(p\)-power third pivot; if \(J\) is constant there is
+none.
+
+If \(h\) is nonconstant, let \(a=p^e\ge p\) be its first positive
+Hasse order. Let \(b\) be the first positive Hasse order of \(J\), or
+infinity if \(J\) is constant. For \(m<a\) we have \(R_m=D^{(m)}J\).
+If \(b<a\), the third pivot is the \(p\)-power \(b\). If \(b\ge a\),
+all these earlier defects vanish and
+\[
+ R_a=D^{(a)}J+F D^{(a)}h.
+\]
+Both Hasse derivatives on the right belong to \(\F(s^p)\), since
+\(J,h\) do and \(p\mid a\). Thus
+\(R_a'=F'D^{(a)}h\ne0\), proving that the third pivot is \(a\).
+Multiplying the orders back by \(q_0\) proves the assertion. The
+initial extension removes any need for perfectness of the original
+coefficient field.
+\end{proof}
+
+This is a small-dimensional instance of the classical generic-order
+criterion associated with Hasse derivatives; see
+Stoehr--Voloch~\cite{SVorder}. The complete rational-function argument
+above is the only version needed here. If a matrix \(Q(t)\) is applied
+to \(R(t+h)\), it is always held fixed in \(h\). Multiplying every
+Hasse row by that invertible matrix preserves pivot ranks. We never
+substitute the derivatives of \(R(t)Q(t)\) for those of \(R(t+h)Q(t)\).
+
+\section{Detecting a polynomial of digit degree two}
+
+In positive characteristic define the \emph{digit degree} of a monomial
+as the sum of the base-\(p\) digits of all its exponents. In
+characteristic zero use its ordinary degree. The digit degree of a
+polynomial is the largest such value among its nonzero monomials.
+
+\begin{lemma}\label{lem:digit}
+Over every coefficient-field extension, \(\SV_2\) hits every nonzero
+homogeneous polynomial of digit degree at most two. An invertible
+linear substitution preserves that assertion.
+\end{lemma}
+
+\begin{proof}
+Linear substitution preserves digit degree because a \(p^e\)-th power
+of a linear form is a linear combination of \(p^e\)-th powers. It
+preserves nonzeroness when the linear map is invertible.
+
+For each \(e\), the polynomials \(\lambda_i(y)^{p^e}\) are linearly
+independent over every coefficient extension: evaluation at \(a_j\)
+gives the identity matrix. Thus one pair detects a nonzero sum of
+equal pure powers.
+
+At degree \(p^e+p^f\) with \(e\ne f\), write the polynomial as
+\(\sum_{i,j}c_{ij}X_i^{p^e}X_j^{p^f}\). The coefficient of
+\(z_1^{p^e}z_2^{p^f}\) after two pairs is
+\[
+ \sum_{i,j}c_{ij}\lambda_i(y_1)^{p^e}\lambda_j(y_2)^{p^f},
+\]
+which is nonzero by independence in the two parameter variables.
+At degree \(2p^e\) in odd characteristic, ordinary quadratic
+polarization in \(X_i^{p^e}\) gives a nonzero bilinear coefficient.
+In characteristic two at degree \(2p^e=p^{e+1}\), any cross term
+with two distinct variables gives a nonzero symmetric bilinear
+coefficient of \(z_1^{p^e}z_2^{p^e}\); pure powers do not contribute to
+it. If there are no cross terms, the pure-power case applies.
+Characteristic zero is the usual linear/quadratic argument. These
+cases exhaust homogeneous digit degree at most two.
+\end{proof}
+
+\section{The lowest term of an identity/projector word}
+
+Put \(P=\operatorname{diag}(1,1,0)\). Let \(B_i(Y_i)\) be rational
+matrices over a field \(E\), regular at zero, on distinct variables,
+with constants \(I_3\) or \(P\). A factor with constant \(P\) is
+assumed to have generic rank two. Consider
+\[
+ p(Y)=e_1^{\mathsf T}B_1(Y_1)\cdots B_N(Y_N)e_2.
+\]
+Write
+\[
+ b_i=(B_i)_{13},\quad c_i=(B_i)_{32},\quad d_i=(B_i)_{12},
+ \qquad
+ \alpha_i=\ord b_i,\quad\beta_i=\ord c_i,\quad\delta_i=\ord d_i,
+\]
+where \(\ord0=\infty\). A pair \(i<j\) is \emph{allowed} when every
+strict intermediate constant is \(I_3\). Its endpoints may have
+constant \(P\).
+
+\begin{lemma}\label{lem:lowest}
+If \(p\ne0\), its first nonzero total degree is
+\begin{equation}\label{eq:min}
+ m=\min\left\{\min_i\delta_i,
+         \min_{\text{allowed }i<j}(\alpha_i+\beta_j)\right\}.
+\end{equation}
+Its whole homogeneous term of degree \(m\) is
+\begin{equation}\label{eq:leading}
+ \sum_{\delta_i=m}d_{i,m}Y_i^m+
+ \sum_{\substack{\text{allowed }i<j\\\alpha_i+\beta_j=m}}
+ b_{i,\alpha_i}c_{j,\beta_j}Y_i^{\alpha_i}Y_j^{\beta_j},
+\end{equation}
+where the subscripts denote the corresponding nonzero coefficients.
+\end{lemma}
+
+\begin{proof}
+At a \(P\)-layer let \(E_i\) be the active \(2\)-by-\(2\) block.
+Its determinant is a unit. The rank-two Schur identity is
+\begin{align}
+ (B_i)_{33}&=b_iU_i+c_iV_i+d_iW_i,\label{eq:schur}\\
+ U_i&=\frac{(B_i)_{31}(B_i)_{22}-c_i(B_i)_{21}}{\det E_i},\nonumber\\
+ V_i&=\frac{(B_i)_{11}(B_i)_{23}}{\det E_i},\qquad
+ W_i=-\frac{(B_i)_{31}(B_i)_{23}}{\det E_i}.\nonumber
+\end{align}
+Here \(U_i,V_i\) have positive order and \(W_i\) has order at least
+two. Thus a finite order of \((B_i)_{33}\) is strictly larger than
+at least one of \(\alpha_i,\beta_i,\delta_i\).
+
+Expand a coefficient path and examine its first visit to state two.
+A direct transition from one to two costs at least \(\min\delta_i\).
+Otherwise choose its last transition from one to three before that
+visit; until the transition from three to two, the path stays in
+state three. Without an intermediate \(P\)-layer these endpoints
+give an allowed pair of no greater degree. At an intermediate
+\(P\)-layer, \eqref{eq:schur} shortens the path: a \(b_i\) term permits
+discarding the earlier inactive prefix, a \(c_i\) term permits
+discarding the later inactive suffix, and a \(d_i\) term gives a direct
+transition. The discarded multiplier has positive degree. Equivalently,
+use the strict order inequality and recurse on a smaller interval.
+Continue until a direct transition or an allowed pair is reached.
+Every path crossing an intermediate \(P\)-layer therefore has degree
+strictly larger than such a witness.
+
+No coefficient can occur below \eqref{eq:min}. At that degree only
+the direct steps or the allowed two-step paths remain. Their
+coefficients do not cancel: a direct monomial has support one, and a
+two-variable monomial has the unique intermediate state three. A path
+using active state one or two instead would require a direct \(d\)
+and an additional positive degree. Different pairs have different
+supports. This proves \eqref{eq:leading}. If the minimum were infinite,
+the shortening argument would make every scalar coefficient zero.
+\end{proof}
+
+\begin{lemma}[Low-degree reset]\label{lem:reset}
+Let \(m\) be as above. At a \(P\)-layer the inactive coordinate of a
+prefix row is, modulo terms of degree at least \(m\), its local
+\(b_i\) multiplied by a unit with constant one. The transpose/reverse
+statement holds for a suffix column and \(c_i\).
+\end{lemma}
+
+\begin{proof}
+Write the row just before the layer as \((r_1,r_2,r_3)\), with constant
+\(e_1^{\mathsf T}\). Every prefix's active second coordinate has order
+at least \(m\), since later constant factors preserve it. The update
+of that coordinate, together with \(\ord d_i\ge m\), gives
+\(\ord(r_3c_i)\ge m\). Using \eqref{eq:schur}, the inactive update is
+\[
+ r_3'=(r_1+r_3U_i)b_i+r_2(B_i)_{23}
+                 +(r_3c_i)V_i+(r_3d_i)W_i.
+\]
+The last three terms have order at least \(m\). The first multiplier
+is a unit with constant one. Transpose and reverse for the dual result.
+\end{proof}
+
+\section{Constant gauges and actual rational curves}
+
+A \emph{separating curve} here means a polynomial curve
+\(\gamma(t)\in\F[t]^n\) whose coordinate derivatives are
+\(\F\)-linearly independent. The curves in \eqref{eq:map} have this
+property: their nonzero derivatives are distinct monomials.
+For independent latent forms, every
+\[
+ C_i(t)=c_i+\ell_i(\gamma(t))
+\]
+has \(C_i'\ne0\), and hence is transcendental over the coefficient
+field. The same remains true after adjoining independent old seeds
+and adding their values to the constants \(c_i\).
+
+\begin{lemma}[Pure active endpoint gauges]\label{lem:gauges}
+Let \(F_i(T_i)\) be rational univariate matrices over a field \(\F_0\),
+and evaluate them at \(C_i(t)\), with \(C_i'\ne0\). Assume local ranks
+are two or three and are preserved by this evaluation. Assume every
+constant interval containing a rank-two layer has rank two. Put
+\(A_i=F_i(C_i)\), \(M=A_1\cdots A_N\), and take fixed endpoints \(u,v\)
+such that
+\[
+ uM\ne0,\qquad Mv\ne0,\qquad uMv=0.
+\]
+There are rational cut gauges \(Q_i(t)\) for which
+\[
+ Q_{i-1}A_iQ_i^{-1}\in\{I_3,P\},\qquad
+ u=e_1^{\mathsf T}Q_0,\qquad Q_Nv=e_2.
+\]
+The conclusion also holds when all factors are invertible.
+\end{lemma}
+
+\begin{proof}
+Choose a row \(b\) with \(bMv=1\). The rows \(uM,bM\) are independent,
+so \(U_0=\Span(u,b)\) maps injectively under \(M\). Propagate
+\(U_i=U_0A_1\cdots A_i\) with these propagated basis rows.
+They remain two-dimensional. Choose a one-dimensional final complement
+\(W_N\) to \(U_N\) contained in \(\ker(v)\); it exists because
+\(U_Nv\ne0\). Put
+\[
+ W_i=\{x:xA_{i+1}\cdots A_N\in W_N\}.
+\]
+When the tail contains a rank-two layer, it has rank two and image
+\(U_N\), so \(W_i\) is its one-dimensional kernel. Otherwise the tail
+is invertible and \(W_i\) is the one-dimensional inverse image of
+\(W_N\). Thus \(U_i\oplus W_i\) is the full row space and
+\(W_{i-1}A_i\subseteq W_i\). A rank-two layer kills the passive line;
+an invertible layer maps it isomorphically. Normalize its basis along
+each invertible run to make every nonzero passive map equal to one.
+Let \(Q_i\) have the resulting three basis rows. The active maps are
+identities, giving the asserted constants. The endpoint identities
+follow from the first basis row \(u\), from \(uMv=0\), and from
+\(bMv=1\). All choices use linear algebra over \(\F_0(t)\).
+\end{proof}
+
+For residual variables set
+\[
+ B_i(Y_i)=Q_{i-1}(t)F_i(C_i(t)+Y_i)Q_i(t)^{-1}.
+\]
+Let \(\Delta_i=C_i(t+h)-C_i(t)=C_i'(t)h+O(h^2)\).
+The normalized prefix row after this substitution is
+\begin{equation}\label{eq:prefix}
+ \bigl[uF_1(C_1(t+h))\cdots F_j(C_j(t+h))\bigr]Q_j(t)^{-1}.
+\end{equation}
+The suffix column is \(Q_{j-1}(t)\) times its actual suffix curve at
+\(t+h\). These are rational curves over \(\F_0\), followed or preceded
+by invertible gauges held fixed in \(h\). No singular prefix matrix is
+inverted.
+
+\begin{lemma}[Mixed segment detection]\label{lem:mixed}
+Under the rank and boundary hypotheses of Lemma~\ref{lem:gauges}, a
+nonzero shifted scalar is detected by two fresh original-coordinate
+SV pairs, when its residual variables are independent linear forms
+\(Y_i=\ell_i(X)\). The same conclusion holds for a fully invertible
+rational word with nonzero endpoint vectors.
+\end{lemma}
+
+\begin{proof}
+If its value at \(C\) is nonzero, set the fresh amplitudes to zero.
+Otherwise use the gauges and Lemma~\ref{lem:lowest}. Consider a minimal
+allowed pair \((i,j)\), with \(\alpha_i+\beta_j=m\). Every \(b_h\)
+in the identity run before \(j\), including its preceding \(P\)-layer
+if present, has order at least \(\alpha_i\); otherwise \((h,j)\)
+would be cheaper. Choose the first one attaining that order.
+Lemma~\ref{lem:reset} discards older inactive terms below \(m\), and
+the intervening identity constants show that this prefix's first
+projective variation has exactly that order in its inactive coordinate.
+Its coefficient after \(Y=\Delta\) is
+\(b_{h,\alpha_i}(C_h')^{\alpha_i}\ne0\). Its active second coordinate
+starts only at degree \(m>\alpha_i\). By \eqref{eq:prefix} and
+Lemma~\ref{lem:jets}, \(\alpha_i\) is a \(p\)-power, or one in
+characteristic zero. The last minimum \(c_h\) in the dual suffix run
+similarly proves that \(\beta_j\) is a \(p\)-power. This applies to
+every minimal pair.
+
+If any such pair exists, \(m\) is the sum of two \(p\)-powers. Thus
+all mixed terms in \eqref{eq:leading}, and all direct terms \(Y_i^m\),
+have digit degree at most two. If there is no minimal pair, choose the
+first direct factor with \(\delta_j=m\). Its prefix's active second
+coordinate has the unique degree-\(m\) term \(d_{j,m}Y_j^m\).
+After \(Y=\Delta\), its coefficient at \(h^m\) is nonzero, while all
+earlier Hasse rows have zero active second coordinate. Therefore \(m\)
+is a pivot of the actual three-coordinate curve in \eqref{eq:prefix}.
+Lemma~\ref{lem:jets} again bounds its digit weight by two.
+
+Consequently the \emph{whole} first nonzero homogeneous scalar term
+has digit degree at most two. The independent residual forms give an
+injective substitution \(Y_i=\ell_i(X)\), which preserves digit degree.
+If the segment uses only a subset of the latent coordinates, extend
+its independent forms to a full basis for this argument.
+Lemma~\ref{lem:digit} detects the resulting nonzero term. Higher terms
+have larger total fresh-amplitude degree and cannot cancel it. All
+rational denominators are units at fresh amplitude zero.
+\end{proof}
+
+\section{The invertible precursor and endpoint completion}
+
+A nonzero rational univariate row can be completed to a generically
+invertible \(3\)-by-\(3\) matrix by using two \emph{constant} standard
+rows over the original coefficient field. Choose a nonzero coordinate
+of the row and use the other two standard rows. Do the column version
+for a column endpoint. These choices are made before evaluating the
+curve. Their determinants are nonzero univariate rational functions,
+so remain nonzero at the transcendental \(C_i\). Constant endpoints
+admit constant completions.
+
+\begin{proposition}[Restricted precursor]\label{prop:precursor}
+The map \(\gamma+\SV_2\) hits every nonzero scalar consisting of a
+generically invertible width-three rational run and rational univariate
+endpoint vectors on distinct latent variables. It also hits words whose
+local generic ranks are one or three.
+\end{proposition}
+
+\begin{proof}
+Complete the endpoints as just described. Every constant matrix after
+the separating curve is invertible. Nonzero source and sink endpoints
+therefore have nonzero active projections, and Lemma~\ref{lem:mixed}
+applies in its all-invertible case.
+
+For a rank-one factor \(R(T)\), choose a nonzero entry \(h=R_{ab}\)
+and use the exact factorization
+\[
+ R(T)=(R(T)e_b)\bigl(e_a^{\mathsf T}R(T)/h(T)\bigr).
+\]
+Every pivot is nonzero at \(C_i\). Splitting at all such factors gives
+a product of nonzero rational scalar segments with invertible middle
+runs. The same fresh pairs hit every segment, so their product remains
+nonzero. Neighboring scalar factors may share a boundary variable;
+within each segment the variables remain distinct.
+\end{proof}
+
+\section{Rank preparation for a general width-three word}
+
+Begin with the symbolic shift
+\[
+ G=\gamma(t)+\SV_2(\text{old seeds}),\qquad
+ C_i=c_i+\ell_i(G).
+\]
+Split original rank-one factors by their univariate pivot
+factorizations. Each resulting scalar chain has local ranks two or
+three and univariate endpoint vectors. It is nonzero because their
+product is nonzero. Chains with no rank-two factor are covered by
+Proposition~\ref{prop:precursor}.
+
+In a remaining chain, write its rank-two factors, in their order, as
+\[
+ R_i(T)=U_i(T)V_i(T),\qquad 1\le i\le k,
+\]
+where \(U_i\) is \(3\)-by-\(2\) of full column rank and \(V_i\) is
+\(2\)-by-\(3\) of full row rank. Choose two independent columns and
+invert a nonzero \(2\)-by-\(2\) pivot minor to obtain this rational
+univariate factorization. Every denominator remains nonzero at \(C_i\).
+Let \(M_i\) be the invertible run between \(R_i\) and \(R_{i+1}\),
+with \(M_0,M_k\) the outer runs, and let \(l,r\) be the endpoints.
+Define
+\begin{equation}\label{eq:transfers}
+ \alpha=lM_0U_1,\qquad \beta=V_kM_kr,\qquad
+ T_i=V_iM_iU_{i+1}\quad(1\le i<k).
+\end{equation}
+The scalar is \(\alpha T_1\cdots T_{k-1}\beta\).
+
+Every nonzero entry of \(\alpha,\beta,T_i\) is an invertible-run scalar
+with univariate endpoint vectors. Proposition~\ref{prop:precursor}
+therefore preserves it at \(G\), in particular
+\(\alpha(C),\beta(C)\ne0\). A nonzero determinant of \(T_i\) is the
+scalar
+\[
+ (\textstyle\bigwedge^2 V_i)
+ (\textstyle\bigwedge^2 M_i)
+ (\textstyle\bigwedge^2 U_{i+1}),
+\]
+whose middle word again consists of invertible \(3\)-by-\(3\) compound
+matrices and whose endpoints are rational univariate vectors. It too
+is preserved. Thus every transfer retains its generic rank, one or
+two. Rank zero would make the original scalar chain zero.
+
+All assertions hold simultaneously over the old-seed function field.
+In particular, boundary nonzeroness has been proved separately; it is
+not inferred from preservation of square interval ranks.
+
+\section{Rank-one transfer splitting and original-variable recovery}
+
+For each rank-one \(T_i\), choose a pivot
+\(h_i=(T_i)_{a_i b_i}\ne0\), whose value at \(C\) is nonzero, and
+factor
+\[
+ T_i=(T_ie_{b_i})\bigl(e_{a_i}^{\mathsf T}T_i/h_i\bigr).
+\]
+The pivot may depend on several variables, but is a scalar unit at
+the shifted origin. Splitting at these transfers expresses the scalar
+chain as a product of nonzero rational scalars.
+
+For consecutive marked transfers \(i<j\), multiply the intervening
+scalar by \(h_i\). Its numerator is exactly
+\begin{equation}\label{eq:recombine}
+ e_{a_i}^{\mathsf T}V_iM_i
+ R_{i+1}M_{i+1}\cdots M_{j-1}R_j
+ M_jU_{j+1}e_{b_j}.
+\end{equation}
+Every \(U_hV_h\) has recombined to the original univariate matrix
+\(R_h\). Therefore this is a word on distinct original latent variables,
+with univariate endpoints \(e_{a_i}^{\mathsf T}V_i\) and
+\(U_{j+1}e_{b_j}\). The scalar denominator is kept outside this word.
+Different scalar factors may share variables; each numerator remains
+read once internally.
+
+All internal transfers \(T_{i+1},\ldots,T_{j-1}\) are invertible at
+\(C\). Every middle interval containing a rank-two original factor
+therefore has constant rank two. The left boundary projection through
+the whole constant middle is nonzero: it is the nonzero row
+\(e_{a_i}^{\mathsf T}T_i\), followed by invertible two-state transfers,
+a full-row-rank \(V_j\), and an invertible outer run. The right
+projection is nonzero by the dual argument using \(T_je_{b_j}\).
+
+For the first scalar factor, use the already nonzero row \(\alpha(C)\)
+instead of a marked left transfer. For the last use the already nonzero
+column \(\beta(C)\). If no transfer is marked, use both directly.
+Adjacent marked transfers cause no exception: \eqref{eq:recombine}
+then contains the single rank-two original factor \(R_{i+1}\).
+These statements verify every boundary and interval hypothesis of
+Lemma~\ref{lem:gauges} for each numerator after fixed univariate endpoint
+completion.
+
+\section{Completion of the proof and quantitative bounds}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Treat the old two SV pairs as constants and put
+\(\F_0=\F(\text{old seeds})\). The parameter \(t\) is still
+transcendental. Each \(C_i(t)\) still has nonzero derivative, and all
+actual local factors and fixed endpoint completions are rational
+univariate functions over \(\F_0\). The possibly imperfect nature of
+\(\F_0\) is allowed by Lemma~\ref{lem:jets}.
+
+Apply Lemma~\ref{lem:mixed} to every numerator from the preceding
+section, using two new SV pairs. Every scalar pivot denominator stays
+nonzero because its value at new amplitude zero was already nonzero.
+A product of nonzero rational functions is nonzero. The exact
+factorizations thus prove
+\[
+ f\bigl(\gamma+\SV_2(\text{old})+\SV_2(\text{new})\bigr)\ne0,
+\]
+which is \eqref{eq:map}.
+
+For pure \(\SV_5\), specialize its first pair in characteristic \(p\)
+to \(z_0=t,y_0=t^p\). The curve
+\(\gamma_i=t\lambda_i(t^p)\) has independent derivatives
+\(\lambda_i(t^p)\). In characteristic zero use \(z_0=t,y_0=t\);
+the map \(q(t)\mapsto q(t)+tq'(t)\) is invertible on polynomials of
+degree less than \(n\), so these derivatives are also independent.
+The other four pairs remain fresh. Nonvanishing at this proof-only
+specialization implies nonvanishing for unrestricted \(\SV_5\).
+
+The original scalar has total degree at most \(n\delta\), unchanged
+by an affine substitution. For the explicit curve in \eqref{eq:map},
+the separate seed-degree bounds are
+\[
+ \deg_t\le e_n n\delta,\qquad
+ \deg_{z_j}\le n\delta,\qquad
+ \deg_{y_j}\le n(n-1)\delta.
+\]
+Consequently a more precise rectangular grid has size
+\[
+ (e_n n\delta+1)(n\delta+1)^4
+                  \bigl(n(n-1)\delta+1\bigr)^4.
+\]
+The uniform bound in the theorem follows from \(e_n\le2n-1\).
+For pure \(\SV_5\), every individual seed degree is at most
+\(n^2\delta\), giving the stated ten-seed grid. The nonvanishing
+statement concerns the original polynomial; numerical grid points
+need not separately avoid every auxiliary rational pivot used in
+the proof.
+\end{proof}
+
+\section{What the proof does and does not use}
+
+The proof has no dependency on a general-width cone-preservation theorem,
+on a coefficient-transport claim based only on digit weight, or on an
+assumption that a generic rank-one transfer has univariate factors.
+The low digit-degree assertion applies to the entire first homogeneous
+scalar component after the actual separating-curve shift. Rank-one
+transfer splitting is followed by exact recombination of the original
+univariate matrices.
+
+The decisive width-three feature is one inactive state beside a
+two-dimensional active core. Its rank-two Schur entry lies in the ideal
+of the two inactive boundary channels and the single active scalar
+channel, with positive-order multipliers. No analogous general-width
+statement is inferred here. Nor is the theorem a hitting result for
+arbitrary singular affine projections, which can have very different
+expressive power.
+
+\begin{thebibliography}{9}
+\bibitem{BG}
+V. Bhargava and S. Ghosh.
+\newblock Improved Hitting Set for Orbit of ROABPs.
+\newblock \emph{Computational Complexity}, 2022.
+\newblock \href{https://doi.org/10.1007/s00037-022-00230-9}{doi:10.1007/s00037-022-00230-9}.
+\newblock Primary preprint:
+\url{https://eccc.weizmann.ac.il/report/2021/062/revision/1/download/}.
+
+\bibitem{SVorder}
+K.-O. Stoehr and J. F. Voloch.
+\newblock Weierstrass Points and Curves Over Finite Fields.
+\newblock \emph{Proceedings of the London Mathematical Society},
+52(1):1--19, 1986.
+\newblock \href{https://doi.org/10.1112/plms/s3-52.1.1}{doi:10.1112/plms/s3-52.1.1}.
+\end{thebibliography}
+\end{document}

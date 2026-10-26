@@ -1,0 +1,322 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\F}{\mathbb F}
+\newcommand{\SV}{\operatorname{SV}}
+\title{Degree-Independent Direction Grids for\\
+Width-Three Affine-Orbit Identity Testing}
+\author{Yilin Liu \and GPT-6 Astra Pro}\date{26 October 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The nine-seed width-three affine-orbit construction admits direction
+grids whose sizes do not depend on the latent individual degree.
+The first preparation stage has at most \(n+1\) scalar conditions.
+The final scalar decomposition has at most \(n+1\) factors.
+Each relevant lowest homogeneous term has characteristic digit degree
+at most two, giving a two-direction coefficient with at most \(n-1\)
+distinct bad values in each sequentially chosen direction.
+This yields \(O(n^9D^5)=O(n^{14}\delta^5)\) queries, where
+\(D=n\delta\), over every characteristic. The structural nine-seed
+theorem is a dependency; this note only refines its finite grid.
+\end{abstract}
+
+\noindent\textbf{Status.}
+This quantitative argument has independent model-assisted internal
+reconstructions and an exact-source audit. This is not external
+peer review, and no publication-priority claim is made.
+
+\section{Statement and structural dependency}
+
+Let \(n,\delta\ge1\) and \(D=n\delta\).
+The polynomial class consists of
+\begin{equation}\label{eq:model}
+ f(X)=u A_1(\ell_1(X)+c_1)\cdots A_n(\ell_n(X)+c_n)v,
+\end{equation}
+where the univariate matrices have width at most three, their entries
+have degree at most \(\delta\), and the linear forms \(\ell_i\) are the
+coordinates of an invertible linear transformation.
+The representation, order, and affine transformation are unknown.
+
+Fix \(n\) distinct abscissas in a working field \(\F\), and let
+\(\lambda_i(y)\) be their Lagrange basis.
+Set \(e_i=i\) in characteristic zero. In characteristic \(p>0\),
+let \(e_i\) be the \(i\)-th positive integer not divisible by \(p\).
+Write
+\[
+ \gamma_i(t)=t^{e_i},\qquad \rho=e_n\le2n-1,
+ \qquad
+ \mathcal H_i=\gamma_i(t)+\sum_{j=1}^4z_j\lambda_i(y_j).
+\]
+
+We use the independently reconstructed nine-seed theorem in
+\emph{General Width-Three Affine Orbits via Mixed \(P_2/I_3\) Jets}
+and its invertible-segment dependency.
+The exact mathematical source reviewed for this deduction is
+\path{width_three_general_affine_separating_curve_candidate.txt},
+SHA-256 prefix \texttt{064b9e69}.
+The properties needed here are recalled and counted below.
+No interval-rank cone theorem is used.
+
+\begin{theorem}\label{thm:main}
+Choose arbitrary sets \(Y_1,\ldots,Y_4\subseteq\F\), each of size
+\(n^2\), and sets
+\[
+ |T|=\rho D+1,\qquad |Z_j|=D+1\quad(1\le j\le4),
+\]
+with distinct elements within each set. The Cartesian evaluations
+of \(\mathcal H\) on these sets hit every nonzero \eqref{eq:model}.
+The number of oracle queries is at most
+\begin{equation}\label{eq:bound}
+ n^8(\rho D+1)(D+1)^4
+ =O(n^9D^5)=O(n^{14}\delta^5).
+\end{equation}
+The field-size requirement
+\[
+ |\F|\ge\rho D+1
+\]
+suffices.
+\end{theorem}
+
+The sets need not be disjoint from one another or from the abscissas.
+The evaluated map is polynomial, so every query is defined.
+Over a smaller base field one may work in a sufficiently large
+extension if oracle evaluations there are permitted.
+If \(n=0\) or \(\delta=0\), one evaluation handles the constant case.
+
+\section{A two-direction root bound}
+
+In characteristic \(p>0\), the digit degree of a monomial is the sum
+of the base-\(p\) digit sums of its exponents.
+In characteristic zero use ordinary total degree.
+
+\begin{lemma}\label{lem:witness}
+Let \(K\supseteq\F\) be any coefficient-field extension.
+Suppose a nonzero rational scalar \(g\), regular at a shifted origin,
+has either a nonzero constant term or a lowest nonzero homogeneous
+term \(H\) of digit degree at most two.
+After two fresh SV pairs, there is a nonzero amplitude coefficient
+\(C(y_1,y_2)\) of one of the following forms:
+\begin{enumerate}
+\item a nonzero constant;
+\item a nonzero linear combination of \(\lambda_i(y_1)^a\);
+\item
+\[
+ \sum_{i,j}c_{ij}\lambda_i(y_1)^a\lambda_j(y_2)^b\ne0.
+\]
+\end{enumerate}
+Here each positive exponent \(a,b\) is one in characteristic zero
+or a pure \(p\)-power in characteristic \(p\).
+The claim remains true after an invertible linear change of the
+residual variables.
+\end{lemma}
+\begin{proof}
+Linear substitution preserves the digit-degree upper bound and
+preserves nonzeroness when invertible.
+If the constant term is nonzero, take that coefficient.
+Otherwise \(H\) is homogeneous of positive total degree.
+A pure-power sum gives case2.
+For degree \(p^e+p^f\) with \(e\ne f\), the coefficient of
+\(z_1^{p^e}z_2^{p^f}\) gives case3 and is nonzero by independence
+of the two Frobenius-powered Lagrange bases.
+For degree \(2p^e\) in odd characteristic, quadratic polarization
+gives a nonzero coefficient of this form.
+In characteristic two, nonzero cross terms give the nonzero
+off-diagonal bilinear coefficient; if there are no cross terms,
+the pure-power case applies.
+The characteristic-zero cases are linear and quadratic.
+These exhaust the possibilities. Higher homogeneous terms have
+larger total amplitude degree and cannot affect the chosen coefficient.
+\end{proof}
+
+\begin{lemma}[Simultaneous sequential directions]\label{lem:simultaneous}
+Suppose \(M\) nonzero coefficients \(C_\nu(y_1,y_2)\) have the forms
+in Lemma~\ref{lem:witness}, with exponents permitted to differ
+between coefficients. Any two sets of at least \(M(n-1)+1\)
+distinct elements of \(\F\) contain a pair \((\eta_1,\eta_2)\)
+such that every \(C_\nu(\eta_1,\eta_2)\) is nonzero in \(K\).
+\end{lemma}
+\begin{proof}
+For a nonzero case3 coefficient, expand in the independent basis
+\(\{\lambda_j(y_2)^b\}\). At least one coefficient is a nonzero
+combination of \(\lambda_i(y_1)^a\).
+Over an algebraic closure of \(K\), this combination is an \(a\)-th
+power of a nonzero polynomial of degree at most \(n-1\).
+It therefore has at most \(n-1\) distinct roots.
+Thus at most \(n-1\) choices of \(\eta_1\) make the entire
+coefficient vanish identically in \(y_2\).
+Case2 has the same root bound; a constant has no bad choices.
+
+Choose \(\eta_1\) outside the union of all these bad sets.
+For every remaining nonconstant coefficient, its specialization is
+a nonzero combination of \(\lambda_j(y_2)^b\), so the same argument
+excludes at most \(n-1\) second directions. Choose \(\eta_2\)
+outside their union.
+Root extraction is used only in the algebraic-closure proof of
+the distinct-root bound. No perfectness or effective root extraction
+is required.
+\end{proof}
+
+If the rational scalar has denominators that are units at the shifted
+origin, these remain units after every fixed direction choice: their
+constant amplitude terms do not depend on the directions.
+Thus a nonzero coefficient supplied by the lemmas certifies a
+well-defined nonzero rational substitution.
+
+\section{Counting the first-stage scalar conditions}
+
+Assume \(f\ne0\), so no original local factor is zero.
+Let \(r\) be the number of original factors of rank one and \(q\)
+the number of rank two. In particular \(r+q\le n\).
+First split the word at its rank-one factors by nonzero univariate
+pivots. This gives \(r+1\) nonzero scalar chains.
+Let \(c\) chains contain at least one rank-two factor and
+\(c_0=r+1-c\) contain none.
+
+For a chain with \(k\ge1\) rank-two factors, choose rational
+univariate full-rank factorizations \(A_i=U_iV_i\).
+Writing \(M_i\) for its intervening rank-three runs, define
+\[
+ \alpha=\mathbf lM_0U_1,\qquad
+ \beta=V_kM_k\mathbf r,\qquad
+ T_i=V_iM_iU_{i+1}\quad(1\le i<k).
+\]
+Here \(\mathbf l,\mathbf r\) are the chain's endpoint vectors.
+It suffices to preserve the following chosen nonzero scalar functions:
+\[
+\begin{array}{c|c}
+\text{condition in one chain}&\text{maximum count}\\ \hline
+\text{one entry of }\alpha\text{ and one of }\beta&2\\
+\text{one pivot for each rank-one }T_i&
+ \#\{i:\operatorname{rank}T_i=1\}\\
+\det T_i\text{ for each rank-two }T_i&
+ \#\{i:\operatorname{rank}T_i=2\}
+\end{array}
+\]
+Every \(T_i\) has rank one or two: a zero transfer would make the
+original scalar chain zero. Thus each transfer contributes exactly
+one test, and the total in this chain is \(k+1\).
+For a chain with no rank-two factor, preserve its single nonzero
+scalar output.
+Consequently the total number of tests satisfies
+\begin{equation}\label{eq:counttests}
+ M\le q+c+c_0=q+r+1\le n+1.
+\end{equation}
+
+A chosen entry keeps each endpoint vector nonzero.
+A chosen rank-one pivot keeps its designated row and column nonzero,
+and its transfer remains rank one because all two-by-two minors
+vanish identically. A chosen rank-two determinant keeps its transfer
+invertible. These are exactly the facts used by the scalar splitting
+and the active-boundary gauges; no other transfer entry is required
+to stay nonzero.
+
+Every entry test is an invertible three-state run with at most two
+rational univariate boundary vectors on distinct variables.
+A determinant test has the same form after taking second compounds:
+\[
+ \det(V_iM_iU_{i+1})
+   =(\wedge^2V_i)(\wedge^2M_i)(\wedge^2U_{i+1}).
+\]
+The middle compound matrices are still invertible three-by-three
+matrices. The restricted-rank theorem gives a lowest homogeneous
+term of digit degree at most two for each test that vanishes on
+the initial curve. Tests nonzero on that curve need no bad-direction
+exclusion.
+
+There are no omitted scalar conditions for local pivots, endpoint
+completions, or exterior-square denominators.
+Their denominators and nonzero determinants are univariate rational
+functions chosen before any seed substitution.
+For \emph{every} fixed pair of direction values, and with their
+amplitudes still symbolic,
+\[
+ C_i(t)=c_i+\ell_i\bigl(\gamma(t)+
+ z_1\lambda(\eta_1)+z_2\lambda(\eta_2)\bigr)
+\]
+has derivative \(\ell_i(\gamma'(t))\ne0\).
+Thus \(C_i\) is transcendental over \(\F(z_1,z_2)\), so every
+nonzero such univariate rational function remains defined and
+nonzero. This covers the original rank-one pivots, the two-by-two
+pivots defining \(U_i,V_i\), their compound denominators, and the
+standard-basis endpoint completions.
+
+Apply Lemmas~\ref{lem:witness}--\ref{lem:simultaneous} over \(K=\F(t)\)
+to the at most \(n+1\) scalar tests.
+Since \((n+1)(n-1)+1=n^2\), the first two grids contain old directions for
+which all tests survive as rational functions in \(t,z_1,z_2\).
+All transfers then have their generic ranks, and both boundary
+active projections are nonzero.
+
+\section{Counting the final scalar factors}
+
+Fix the old directions just obtained and keep \(z_1,z_2\) symbolic.
+Split each rank-one transfer \(T_i\) at a nonzero entry.
+Use the same chosen pivots as in the preceding tests, so their values
+are nonzero at the new shifted origin.
+There are at most \(q-c\) internal transfers across the \(c\)
+chains with rank-two factors. If \(m_1\) of them have rank one,
+then \(m_1\le q-c\).
+The final number of nonzero rational scalar factors is therefore
+\begin{equation}\label{eq:factorcount}
+ (r+1)+m_1\le r+q-c+1\le n+1.
+\end{equation}
+
+The structural theorem recombines every adjacent \(U_iV_i\) into
+the original univariate factor. Thus each scalar numerator still
+has one occurrence of each of its latent variables, even though
+different scalar factors may share variables.
+Every mixed segment has exact constant matrices \(P_2\) or \(I_3\)
+after cut gauges, with nonzero active boundary projections.
+The theorem proves that its entire lowest homogeneous term has
+digit degree at most two. Division by a transfer pivot only scales
+that term by the nonzero inverse constant of the pivot.
+A factor already nonzero at the shifted origin has no bad directions.
+
+Apply Lemma~\ref{lem:simultaneous} over
+\(K=\F(z_1,z_2)(t)\) to these at most \(n+1\) factors.
+Since
+\[
+ (n+1)(n-1)+1=n^2,
+\]
+the two new direction grids contain a pair preserving every factor.
+Transfer-pivot denominators have nonzero constants in the new
+amplitudes and need no additional exclusion. Cut gauges are
+constructed after the directions are fixed; their nonzero minors
+follow from the preserved rank and boundary conditions, rather than
+being extra tests.
+
+The product is consequently nonzero as a rational function in
+\(t,z_1,z_2,z_3,z_4\). The exact factorization identity implies that
+the original polynomial \(f(\mathcal H)\), with all four directions
+fixed, is a nonzero polynomial in those five variables.
+
+\section{Finish the grid proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The two preceding sections choose, inside the prescribed direction
+grids, a tuple for which the original polynomial remains nonzero.
+After that tuple is fixed, the degree in \(t\) is at most \(\rho D\),
+and the degree in each amplitude is at most \(D\).
+The usual individual-degree interpolation bound gives a nonzero
+evaluation on \(T\times Z_1\times\cdots\times Z_4\).
+The full Cartesian search includes these adaptively established
+direction choices and therefore hits every input polynomial.
+
+This proof uses rational functions only to certify symbolic
+nonzeroness. It imposes no denominator restriction on the final
+evaluation points: the oracle is queried on the original polynomial.
+The number of queries is \eqref{eq:bound}.
+Finally \(\rho\ge n\) and \(D=n\delta\ge n\), so
+\(\rho D+1\ge n^2+1\), as well as \(D+1\) and \(n\).
+The field-size assumption supplies all required sets and abscissas.
+\end{proof}
+
+One may instead use the ordinary individual-degree grid for the
+same nine-seed map. The present theorem is a separately justified
+choice of grids; it does not assert that arbitrary coordinatewise
+mixtures of these two grid prescriptions inherit both proofs.
+\end{document}

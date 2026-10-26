@@ -59,6 +59,13 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check("Reviewed PDF source and artifact bindings", ("tools/build_papers.py", "--check")),
         Check("Selected TeX source exports", ("tools/build_manuscripts.py", "--check")),
         Check("Generated result and proof catalogues", ("tools/build_catalogue.py", "--check")),
+        Check("ROABP exact source identities and publication edits", ("problems/roabp-affine-pit/verify/check_source_bindings.py",)),
+        Check("ROABP native paper and visual-review bindings", ("problems/roabp-affine-pit/verify/build_native_papers.py", "--check")),
+        Check("ROABP exact generator arithmetic and traversal semantics", ("problems/roabp-affine-pit/verify/all_rank_affine_orbit.py", "--self-check")),
+        Check("Rank-one/full ROABP exact generator and separating-curve arithmetic", ("problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py", "--self-check")),
+        Check("Exact interval-rank palette sharpness constructions", ("problems/roabp-affine-pit/verify/check_palette_sharpness.py",)),
+        Check("Artin-ring reset and source-restart identities", ("problems/roabp-affine-pit/verify/check_artin_reset.py",)),
+        Check("Quadratic Hasse obstruction determinant and residual identities", ("problems/roabp-affine-pit/verify/check_quadratic_hasse.py",)),
         Check(
             "Low-space Subset Sum resource certificate",
             ("problems/subset-sum-low-space-deterministic/verify/check_resources.py",),

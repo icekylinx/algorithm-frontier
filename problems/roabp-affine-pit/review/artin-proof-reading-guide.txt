@@ -1,0 +1,212 @@
+PROOF-READING COMPANION: FOUR ELEMENTARY INTERFACES
+Internal model-assisted explanatory note, 26 October 2026
+
+Companion to:
+  complexity/general_affine_roabp_all_characteristics.tex
+  845 lines; SHA-256
+  9864136e134bbc9c3f35d8d0f1fb7595cf40c397e01d0247173956795f0c695f
+
+This note spells out four elementary interfaces used in the frozen
+candidate manuscript. It does not change its hypotheses, conclusions,
+constants, or source. It is an explanatory companion to an internal
+model-assisted candidate proof, not external human peer review or a
+formal verification of the complete theorem. Lemma names below refer to
+the frozen source and remain usable if its rendered numbering changes.
+
+1. WHAT THE REACHABLE COEFFICIENT SPACE S_i MEANS
+   Weighted stable-phase lemma; source lines 217-244.
+
+Let R_j=E[X_j]/I_j be the finite monomial rings of the manuscript. Choose
+an E-basis r_1,...,r_s of the initial row space S_0. For i>=0, define
+
+  P_i=A_1(X_1)...A_i(X_i), with P_0=I,
+  S_i=span_E{ [X^alpha](r_h P_i) : 1<=h<=s,
+                                      alpha survives in R_1 tensor ... tensor R_i }.
+
+Here a coefficient is a row vector over E. The definition is independent
+of the chosen basis of S_0. It is also equivalent to taking coefficients
+from every initial row in S_0.
+
+Because block i is disjoint from all earlier blocks, coefficient
+extraction gives the useful exact equality
+
+  S_i = Coeff(S_{i-1} A_i).
+
+Indeed, if r is a coefficient row of r_h P_{i-1} and M is a coefficient
+matrix of A_i, then rM is the coefficient of r_h P_i at the concatenation
+of those two monomials. Conversely, every coefficient of r_h P_i has
+that form. Passing to field-linear spans proves the equality.
+
+For the weighted lemma, use initial rows of B_0 with initial cost 0 and
+a basis of (0,K_0) with initial cost 1. The cost of an actual prefix
+coefficient is its initial-row cost plus the number of blocks in its
+support. A row has a witness of cost at most L if it belongs to the
+E-linear span of such actual coefficients of cost at most L.
+
+The active-stability assumption says that the projection of S_i onto
+the first a coordinates is the same space T for every i. The propagated
+constant row matrix B_i=B_0 A_1(0)...A_i(0) has the same independent
+active row matrix H as B_0. Its rows therefore supply a lift of T inside
+S_i. If
+
+  K_i={p in E^(W-a) : (0,p) belongs to S_i},
+
+then
+
+  S_i=rowspan_E(B_i) direct-sum (0,K_i).
+
+For any row of S_i, subtract its unique active lift from rowspan(B_i).
+The remainder is passive. Directness follows from independence of the
+rows of H. This justifies the kernel decomposition used in the source.
+
+2. SCALAR COEFFICIENT-SPAN CLOSURE, INCLUDING FUTURE VARIABLES
+   Coefficient-span lemma and zero-reset paragraph;
+   source lines 146-160 and 311-317.
+
+Let R be the full tensor ring, let V be a fixed E-vector subspace of
+E^W, and let F be a row polynomial whose every coefficient belongs to V.
+For any scalar h in R, every coefficient of hF belongs to V as well.
+
+To see this directly, write h=sum_beta h_beta X^beta and
+F=sum_alpha F_alpha X^alpha in the surviving monomial basis. Each
+coefficient of the product is a sum of terms h_beta F_alpha. Terms
+killed by the monomial ideal are discarded. Every retained term is an
+E-scalar multiple of a vector of V. This argument allows overlap between
+the variable sets of h and F and allows h to involve variables that
+occur later in the matrix word.
+
+The same reasoning works for a row family multiplied on the left by a
+compatible polynomial matrix: each output coefficient row is an
+E-linear combination of input coefficient rows. If the left matrix is
+square and has invertible constant term, its inverse exists in R.
+Applying the inclusion first to the matrix and then to its inverse
+proves equality of coefficient-row spans.
+
+This is an UNWEIGHTED statement. Scalar multiplication can introduce
+many supported blocks. The statement does not preserve a support budget.
+The reset uses it only to show membership in S_i or K_i and to absorb
+responses into coefficient spans. The later source-restart argument
+obtains its support bound from actual prefix and suffix witnesses.
+
+For example, a controlled intermediate state is a scalar combination
+of rows propagated from a reachable initial row. Its coefficients lie
+in the appropriate S_i by the inclusion just proved. If its active
+coordinate row is a_i, subtracting a_i B_i leaves a row with zero active
+part whose coefficients are still in S_i. Its passive coefficient rows
+therefore belong to K_i. This is the precise meaning of coefficientwise
+reachability for a control that may depend on future variables.
+
+3. WHY PREFIX AND SUFFIX WITNESS COSTS ADD
+   Positive-passive induction and source restart;
+   source lines 340-360 and 374-387.
+
+Fix a cut j. Suppose a row r has a prefix witness
+
+  r=sum_nu c_nu [X^alpha_nu](s_nu A_1...A_j),
+
+where s_nu is an allowed initial row of cost epsilon_nu and
+
+  epsilon_nu + support(alpha_nu) <= L.
+
+Let M_beta be an actual coefficient matrix of the suffix
+A_{j+1}...A_e, supported on at most h suffix blocks. Disjointness of the
+prefix and suffix variable blocks gives
+
+  r M_beta
+    =sum_nu c_nu [X^alpha_nu Y^beta](s_nu A_1...A_e).
+
+Every coefficient on the right has cost at most L+h. This is an exact
+coefficient identity, not merely a convolution estimate. Linear
+combinations of suffix coefficients obey the same span bound. Changes
+of basis and subtraction of reachable rows also preserve the bound,
+because a bounded-cost witness space is an E-vector space.
+
+Apply this observation to an inductive stable subphase at active level
+b. If its initial active lifts have prefix witnesses of cost at most L
+and its passive generators have witnesses of cost at most L+1, the
+weighted lemma at level b uses at most G(b) suffix blocks for active
+lifts and at most G(b)-1 for passive generators. Both types therefore
+have global cost at most L+G(b). If G(b)=0, there is no passive
+contribution in that budget; at the base level b=W there are no passive
+coordinates at all.
+
+A following growth step multiplies by one fresh variable block and
+adds at most one to the cost. A new active basis and a new passive
+kernel basis can then be chosen as field-linear combinations within
+the cost bound L+G(b)+1. In particular, one may use this as the next
+active-lift bound, with passive allowance one larger. This is the
+witness justification for the support recurrences in the manuscript.
+
+For a zero-reset source, take a coefficient p of Z_j. Normalization
+defining Z_j involves only block j, while B_{j-1} is the constant-prefix
+propagation of B_0. Consequently (0,p) has an actual original-prefix
+witness of cost at most one. Restart the actual suffix from B_j with
+cost 0 and from (0,p) with cost 1. The positive-passive case then uses
+at most G(a)-1 suffix blocks for that passive source. Inserting its
+one-block prefix witness yields total cost at most G(a). The B_j
+contribution has prefix cost zero and uses at most G(a) suffix blocks.
+
+This accounting does not assign a support cost to a reset multiplier.
+Its only inputs are the unweighted reset inclusion, the one-block
+witness for the source row, and disjointness at the restart cut.
+
+4. THE EXPLICIT RESET CONTROL -L R^{-1}
+   Unit-rank graph lemma and zero-passive reset;
+   source lines 174-191 and 289-309.
+
+Suppose Q_c...Q_e=0 and write P=A_c...A_e. Its constant matrix is
+diag(I_a,0). The interval hypothesis gives unit rank a, so P has an
+invertible active a-by-a pivot and vanishing larger minors. The graph
+lemma says that a row in the row module of P with zero active part
+must be entirely zero.
+
+First assume d=dim T>0. Let H be the independent d-by-a active row
+matrix of B_{c-1}, and choose J with HJ=I_d. By active stability, all
+coefficient rows of the active part of B_{c-1}P belong to rowspan(H).
+There is therefore a unique d-by-d matrix R over the interval ring
+such that
+
+  (B_{c-1}P)_active = R H.
+
+It can be obtained by multiplying that active part by J. Its constant
+term is I_d, so R is invertible in the finite local interval ring.
+
+For a fixed p in K_{c-1}, active stability likewise gives a unique
+1-by-d row L satisfying
+
+  ((0,p)P)_active = L H.
+
+Again L is that active part times J. Set
+
+  a_{c-1}=-L R^{-1}.
+
+Then the active part of
+
+  (a_{c-1} B_{c-1}+(0,p))P
+
+is (-L R^{-1}R+L)H=0. This output belongs to the row module of P, so
+the graph lemma makes its entire output zero. Its final active
+coordinate a_e is zero as well: a_e H=0 and HJ=I_d.
+
+The control may involve the entire interval. Section 2 above explains
+why that does not obstruct its use in the unweighted coefficient-span
+argument. The exact evolution identities of the weighted lemma can
+therefore be unrolled to give
+
+  0=p Ftilde_c...Ftilde_e
+      +sum_{j=c}^e a_j Z_j Ftilde_{j+1}...Ftilde_e.
+
+The term j=e vanishes because a_e=0. Moving the remaining sum to the
+other side gives the reset identity in the manuscript.
+
+If d=0, no H, J, R, L, or active control is needed. A reachable row has
+zero active output throughout. Its output through P belongs to the row
+module of P and has zero active part, so it is zero by the same graph
+lemma. The source-free version of the evolution gives the required
+reset in that case.
+
+END OF COMPANION
+
+All four explanations use only the manuscript's stated finite monomial
+rings, disjoint blocks, field-linear coefficient spans, active stability,
+and unit-rank interval hypotheses. They introduce no new hypothesis.

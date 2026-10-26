@@ -1,0 +1,349 @@
+% Canonical native-TeX manuscript; compile from the repository root.
+% Publication layout changes are reversible in the import manifest.
+\input{manuscripts/paper-style.tex}
+\usepackage{mathtools}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\F}{\mathbb F}
+\newcommand{\SV}{\operatorname{SV}}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\pdeg}{\operatorname{pdeg}}
+\title{Direction Grids for All-Characteristic\\
+Affine-Orbit Identity Testing}
+\author{Yilin Liu \and GPT-6 Astra Pro}
+\date{27 October 2026}
+\begin{document}\maketitle
+
+\begin{abstract}
+We refine the finite grids in the companion all-rank affine-orbit
+hitting theorem. At each rank stage, it suffices to preserve one minor
+for each of at most $(n+2)(n+3)/2$ distinct contiguous intervals.
+Digit polarization of a maximum-digit-weight leading monomial gives
+a nonzero tensor that is separately Frobenius-linear in every direction.
+Each interval test therefore excludes at most $n-1$ values per direction,
+independently of all degrees. The resulting bound is
+$Q^{K}(nD+1)(D+1)^K$, where
+$Q=(n-1)(n+2)(n+3)/2+1$ and $K=K(w)=2^{O(w^2)}$.
+Choosing globally between this argument and ordinary interpolation
+replaces $Q$ by $\min\{Q,(n-1)D+1\}$ and restores the working-field
+requirement $|E|\ge nD+1$.
+\end{abstract}
+
+\noindent\textbf{Status and dependency.}
+The mathematical plaintext and this formal addendum have separate
+model-assisted internal reconstructions and exact-source audits.
+Their mathematical content is frozen after those internal reviews.
+This is not external peer review or a publication-priority claim.
+The companion manuscript supplies the all-characteristic symbolic
+rank-descent theorem and its Artin and Hasse lemmas. This addendum proves
+the finite-grid refinement and does not replace those structural proofs.
+The canonical companion is \texttt{manuscripts/general-affine.tex}
+in this problem directory. Its research-session source before the
+documented publication layout changes has SHA-256
+\begin{center}\footnotesize\ttfamily
+9864136e134bbc9c3f35d8d0f1fb7595cf40c397e01d0247173956795f0c695f.
+\end{center}
+
+\section{Model and quantitative statements}
+
+Let $n,w,D\ge1$, let $\F$ be any field, and let the nonzero oracle
+polynomial have a representation
+\begin{equation}\label{eq:model}
+ f(X)=uA_1(\ell_1(X)+c_1)\cdots A_n(\ell_n(X)+c_n)v,
+ \qquad \deg f\le D.
+\end{equation}
+The univariate matrices $A_i$ are $w$-by-$w$ over $\F$, with arbitrary
+entry degrees and generic ranks. The forms $\ell_i$ are the coordinates
+of an invertible linear transformation. The order, affine transformation,
+and representation are unknown. The degree promise concerns only the
+scalar polynomial.
+
+For $1\le r<w$ put
+\begin{align}
+ W_r&=\binom wr,\qquad
+ h_r=(r+2)\prod_{s=r+2}^w
+                   \left(\binom{s-1}{r-1}+1\right)-2,\label{eq:h}\\
+ k_r&=(2h_r+2)(W_r^2-1),\qquad
+ K=K(w)=\sum_{r=1}^{w-1}k_r.\label{eq:K}
+\end{align}
+Set $K(1)=0$. Empty products are one. The companion proves
+$K(w)=2^{O(w^2)}$ and that
+\[
+ f\bigl(\gamma(t)+\SV_K(z,y)\bigr)\ne0,
+ \qquad \gamma_i(t)=t^i,
+\]
+in every characteristic. Here $\lambda_1,\ldots,\lambda_n$ are the
+Lagrange polynomials for $n$ distinct nodes in a working field $E$
+extending $\F$, and
+\[
+ G_i(t,z,y)=t^i+\sum_{j=1}^K z_j\lambda_i(y_j).
+\]
+
+Define
+\begin{equation}\label{eq:Q}
+ M=\frac{(n+2)(n+3)}2,\qquad Q=(n-1)M+1.
+\end{equation}
+These integers depend only on $n$, and $Q\le2n^3$.
+
+\begin{theorem}[Degree-independent direction grids]\label{thm:grid}
+Let $\mathcal Y,\mathcal T,\mathcal Z\subseteq E$ be arbitrary sets
+of respective sizes $Q,nD+1,D+1$. The evaluations
+\[
+ \left\{G(t,z,y):
+ t\in\mathcal T,\quad z_j\in\mathcal Z,\quad
+ y_j\in\mathcal Y\ (1\le j\le K)\right\}
+\]
+hit every nonzero polynomial \eqref{eq:model}. Their number is at most
+\begin{equation}\label{eq:count}
+ Q^K(nD+1)(D+1)^K.
+\end{equation}
+It suffices that $|E|\ge\max\{Q,nD+1\}$. The sets may overlap.
+For fixed $w$, the count is $O_w(n^{3K+1}D^{K+1})$.
+\end{theorem}
+
+The result also holds with the initial curve
+\begin{equation}\label{eq:eta}
+ \eta_i(t)=t\lambda_i(t)
+\end{equation}
+in place of $\gamma_i(t)$. The corresponding evaluations lie in the
+image of pure $\SV_{K+1}$, with its first pair specialized to
+$(z_0,y_0)=(t,t)$.
+
+\begin{corollary}[Smaller field and the better of two grids]\label{cor:min}
+Put
+\[
+ B=\min\{Q,(n-1)D+1\}.
+\]
+Over a working field of size at least $nD+1$, a Cartesian hitting
+grid for either initial curve uses at most
+\begin{equation}\label{eq:mincount}
+ (nD+1)\bigl((D+1)B\bigr)^K
+\end{equation}
+queries. Every direction uses the same size-$B$ set: the choice
+between the two arguments is made globally.
+\end{corollary}
+
+Extension-field evaluations require the corresponding black-box access.
+The statements do not promise that base-field-valued queries alone
+always suffice. Nonzero constants need one query. If $n=1$, ordinary
+univariate interpolation gives the sharper elementary count $D+1$,
+independently of the displayed general upper bounds.
+
+\section{A nonzero Frobenius direction tensor}
+
+For characteristic $p>0$, let $\wt_p(a)$ be the sum of the base-$p$
+digits of $a$. The digit weight of $X^\alpha$ is
+$\sum_i\wt_p(\alpha_i)$. In characteristic zero use ordinary degree,
+so every digit copy below has size one.
+
+\begin{lemma}\label{lem:tensor}
+Let $K_0$ be a coefficient field containing $E$, and let $H(X)$ be a
+nonzero ordinary homogeneous polynomial of degree $m>0$ and digit
+degree at most $k$. There are $k_0\le k$ powers
+$q_1,\ldots,q_{k_0}$ of the characteristic, or ones in characteristic
+zero, with $\sum_jq_j=m$, such that the coefficient of
+$\prod_jz_j^{q_j}$ in
+\[
+ H\left(\sum_{j=1}^{k_0}z_jV_j\right)
+\]
+is a nonzero tensor
+\begin{equation}\label{eq:tensor}
+ T(V_1,\ldots,V_{k_0})
+   =\sum_{i_1,\ldots,i_{k_0}}b_{i_1,\ldots,i_{k_0}}
+                        \prod_{j=1}^{k_0}V_{j,i_j}^{q_j}.
+\end{equation}
+After substituting $V_{j,i}=\lambda_i(y_j)$, the tensor remains
+nonzero. For each direction $y_j$, at most $n-1$ values in $E$
+can make it identically zero in all the other directions.
+\end{lemma}
+\begin{proof}
+Choose a nonzero monomial $X^\alpha$ of \emph{maximum} digit weight
+$k_0$ among the monomials of $H$. List its digit copies as the
+$q_j$, with repetition according to each digit. Their sum is $m$.
+
+In the Frobenius expansion of a source monomial, every one of the
+$k_0$ positive amplitude exponents in the selected coefficient must
+receive at least one digit copy. No source monomial has more than
+$k_0$ copies. Thus every contributor has exactly $k_0$ copies, with
+exactly one assigned to each amplitude. In particular, no carry
+within an amplitude produces a mixed direction monomial. This proves
+the separate Frobenius-linearity in \eqref{eq:tensor}.
+
+Assign the chosen monomial's copies to their corresponding direction
+coordinates. The resulting direction-monomial coefficient is the
+nonzero coefficient of $X^\alpha$ times
+\[
+ \prod_{i,e}\alpha_{i,e}!,
+ \qquad \alpha_i=\sum_e\alpha_{i,e}p^e
+\]
+in positive characteristic. Every digit is less than $p$, so all
+these factorials are nonzero. In characteristic zero the coefficient
+is instead $\prod_i\alpha_i!$, also nonzero. No division by $m!$
+is used. A different source monomial cannot yield this same direction
+monomial, since its exponents sum back to $\alpha$. Hence $T\ne0$.
+
+The functions $\lambda_i(y_j)^{q_j}$ are linearly independent over
+$K_0$. Their coefficient matrix on the powers $y_j^{a q_j}$ is
+the $q_j$-th Frobenius power of the invertible Lagrange coefficient
+matrix. In characteristic zero it is that matrix itself. Applying
+these injective linear maps in each tensor factor preserves $T\ne0$.
+
+View the resulting tensor as a polynomial in $y_j$ over the rational
+function field in all the other directions. It is a nonzero linear
+combination of $\lambda_i(y_j)^{q_j}$. Over an algebraic closure of
+that coefficient field it is a $q_j$-th power of a polynomial of
+degree at most $n-1$. It therefore has at most $n-1$ distinct roots.
+This proves the assertion about values making the entire remaining
+tensor zero. Root extraction is only a proof device; neither
+perfection nor an algorithm for taking these roots is assumed.
+\end{proof}
+
+The maximum-digit-weight choice is necessary for this argument.
+Selecting an arbitrary lower-weight monomial would allow additional
+digit copies from other monomials to carry inside one amplitude and
+would not establish the special tensor form \eqref{eq:tensor}.
+
+\begin{lemma}[A finite family of tests]\label{lem:family}
+Suppose $M_0$ nonzero scalar tests over $K_0$ have first homogeneous
+components of digit degree at most $k$. Then one can specialize all
+$k$ fresh SV directions to any prescribed set of
+$(n-1)M_0+1$ distinct elements of $E$ so that every test remains
+nonzero as a function of the old parameters and the fresh amplitudes.
+\end{lemma}
+\begin{proof}
+A test with nonzero constant term imposes no condition. For every
+other test choose the nonzero tensor of Lemma~\ref{lem:tensor},
+using at most $k$ directions; additional directions are ignored.
+Specialize directions one at a time. As long as a tensor is nonzero,
+it excludes at most $n-1$ choices for the next direction. The union
+of the forbidden choices has size at most $(n-1)M_0$, so one of the
+prescribed values keeps all tensors nonzero. Repeat.
+
+The chosen tensor is an amplitude coefficient of the original test.
+Higher ordinary homogeneous terms have larger total amplitude degree
+and cannot change it. Thus each test survives. This is an existential
+proof for an explicit Cartesian grid; the algorithm does not identify
+tests, tensors, or the good specialization.
+\end{proof}
+
+\section{Counting the rank-descent conditions}
+
+We recall exactly the structural facts from the companion proof that
+are used here. It adjoins two constant scalar-endpoint factors to the
+$n$ original matrices. At rank stage $r$, every augmented interval
+of generic rank greater than $r$ already retains its rank at the
+current symbolic shift. A generic rank-$r$ target interval is cut into
+shortest rank-$r$ blocks and a higher-rank tail:
+\[
+ I=B_1\cdots B_qT,\qquad B_j=C_jA_{i_j}.
+\]
+Each $C_j$ and $T$ is empty or has every interval of rank greater
+than $r$. The required rank-$r$ tests are
+\begin{equation}\label{eq:tests}
+ B_j,\qquad B_jB_{j+1}\ (j<q),\qquad B_qT.
+\end{equation}
+Each is a contiguous interval of the same augmented word.
+
+The companion's Artin-box and filtered local-Hasse arguments prove
+that \emph{every nonzero $r$-minor} of any word in \eqref{eq:tests}
+has its entire first homogeneous residual component of digit degree
+at most $k_r$ from \eqref{eq:K}. This is the filtered conclusion that
+permits Lemma~\ref{lem:family}; a low-weight witness somewhere in the
+series would not suffice.
+
+There are $N=n+2$ factors in the augmented word, hence at most
+$N(N+1)/2=M$ nonempty contiguous intervals. For every generic
+rank-$r$ target take its required intervals \eqref{eq:tests}, and
+deduplicate the entire list by interval. Choose \emph{one} nonzero
+$r$-minor of each distinct required interval.
+
+Preserving that one minor certifies rank at least $r$; rank at most
+$r$ follows from the identically vanishing larger minors. The chosen
+minor works in every target decomposition where the interval occurs.
+For its leading-component bound, choose any one such decomposition.
+There is therefore no extra factor for the number of minors, the
+number of target occurrences, or repeated decompositions.
+
+At most $M$ scalar conditions need to be preserved at each stage.
+Lemma~\ref{lem:family} applies with the same grid size
+$Q=(n-1)M+1$ for every one of the stage's $k_r$ directions.
+
+\section{Fixing directions while retaining the rank invariant}
+
+This specialization must be done within the symbolic descent, not
+merely after a rational proof has been frozen. At the start of a
+stage, fix every earlier direction to its previously selected element
+of $E$, while keeping $t$ and all earlier amplitudes algebraically
+independent. The current coefficient field is
+\[
+ K_0=E(t,\text{earlier amplitudes}).
+\]
+Every latent shift has the form
+\[
+ C_i=c_i+\ell_i(t,t^2,\ldots,t^n)
+               +\text{a polynomial in earlier amplitudes}.
+\]
+Its $t$-part is nonconstant, since $\ell_i$ is a nonzero linear form
+and $t,t^2,\ldots,t^n$ are independent polynomials over $E$.
+Thus each $C_i$ remains transcendental over the original coefficient
+field and over $E$, in every characteristic. This is the precise
+local-Hasse premise; no derivative condition is needed.
+
+By induction all already prepared higher-rank interval minors survive
+as functions of the formal old parameters. The common direction grid
+preserves every new rank-$r$ test as a function of these parameters
+and the new amplitudes. Old nonzero minors remain nonzero because
+setting new amplitudes to zero recovers them. The companion's
+adjacent-block chain argument consequently preserves every rank-$r$
+target after the directions have been fixed.
+
+All unit pivots, coefficient-space bases, and constant cutwise gauges
+may be chosen anew over the current coefficient field. They are proof
+devices and introduce no additional direction conditions. In particular,
+we do not require an earlier rational expression for a gauge to
+retain its denominator under a later specialization. The actual tests
+are minors of original polynomial matrix intervals. Their analysis
+uses coefficients in the current old-parameter field, not new-direction
+denominators.
+
+Iterating through the ranks gives at least one full choice of all $K$
+directions from the common set $\mathcal Y$ for which $f(G)$ is a
+nonzero polynomial in $t,z_1,\ldots,z_K$. Its individual degrees are
+at most $nD$ in $t$ and $D$ in each amplitude. The final
+$\mathcal T,\mathcal Z$ grids therefore hit it. This proves
+Theorem~\ref{thm:grid}. Auxiliary representation or minor degrees do
+not enter this last interpolation step.
+
+\section{The alternative curve and the minimum-size rule}
+
+For \eqref{eq:eta}, every nonzero latent linear combination is
+$c+tq(t)$, with $q$ a nonzero combination of the independent Lagrange
+polynomials. It is nonconstant in every characteristic, and $\eta$
+has degree at most $n$. The entire stagewise argument and final
+degree counts are unchanged. This proves the pure-map specialization
+stated after Theorem~\ref{thm:grid}.
+
+\begin{proof}[Proof of Corollary~\ref{cor:min}]
+If $Q\le(n-1)D+1$, use Theorem~\ref{thm:grid} for all directions.
+Then $Q\le nD+1$, so its field requirement is simply $|E|\ge nD+1$.
+If $Q>(n-1)D+1$, use instead ordinary Cartesian interpolation on
+the full nonzero substituted scalar polynomial from the companion
+theorem. Every direction has degree at most $(n-1)D$, every amplitude
+degree at most $D$, and the initial parameter degree at most $nD$.
+This gives the stated size with $B=(n-1)D+1$.
+
+The choice is global: one uses the same size-$B$ direction grid for
+all pairs, justified entirely by one of these two arguments. No
+unproved mixture of stagewise degree and root-count bounds is needed.
+Both cases yield \eqref{eq:mincount} over the advertised field.
+\end{proof}
+
+For fixed width, the degree-independent branch has exponent $K+1$
+in the scalar degree instead of the basic $2K+1$ bound. Its dependence
+on $n$ is larger. No optimality is asserted. The affine transformation
+must remain invertible; singular projections and unrestricted repeated
+variables are outside the model. All mathematical conclusions retain
+the internal-review status of the companion proof.
+
+\end{document}

@@ -24,6 +24,19 @@
       ]
     },
     {
+      "title": "Algebraic complexity",
+      "records": [
+        {
+          "id": "roabp-affine-pit",
+          "title": "Deterministic PIT for fixed-width affine ROABP orbits",
+          "result": "Deterministic black-box identity testing with unknown order and unknown invertible affine coordinates, in every characteristic",
+          "quantity": "$(nD+1)((D+1)B)^{K(w)}$",
+          "scope": "Here $K(w)=2^{O(w^2)}$, and $B$ is the smaller direction grid defined on the problem card. Arbitrary local ranks and entry degrees; known scalar total degree D and extension-field oracle access when needed. Polynomial query count for each fixed width, with a width-dependent exponent. Complete internally reconstructed proof; external peer review and priority certification are not claimed",
+          "randomness": "Deterministic construction and oracle evaluation; no random seed or failure probability. The theorem uses arithmetic over a sufficiently large working field, with extension-field oracle evaluations when the base field is too small. Promise recognition and a general Turing bit-complexity implementation are not included."
+        }
+      ]
+    },
+    {
       "title": "Numeric targets and quota geometry",
       "note": "Every bound includes polynomial work in the full encoded input. Binary resource counts remain compressed, and mandatory bases retain their original total.",
       "records": [
@@ -686,11 +699,29 @@
       "quantity": "One outside bipartite matching plus linear graph work; residual gap $\\le\\lfloor(r+b)/2\\rfloor$",
       "scope": "Supplied constructive factor-critical bins and a row-covering injection. LOW gives an explicit bound on contact rank r, not on the total retained vertex count; b counts unmatched blockers",
       "randomness": "Deterministic matching, alternating reachability, integral cut certificates and physical witness recovery."
+    },
+    {
+      "id": "roabp-palette-sharpness",
+      "path": "problems/roabp-affine-pit/manuscripts/palette-sharpness.md",
+      "title": "Exact interval-rank palette support bounds",
+      "result": "Matching structural lower constructions for every interval-rank palette, with an original-field degree-two lift at the actual moment curve",
+      "quantity": "$h(P)=\\prod_j(p_j-p_{j-1}+1)-2$; full palette $h=2^W-2$",
+      "scope": "Every characteristic; physical matrix-interval ranks are preserved at the curve. The endpoint-augmented scalar interval is excluded. These examples survive one SV pair and give no hitting-set or PIT-query lower bound",
+      "randomness": "Explicit deterministic algebraic constructions and exact symbolic identities. The finite verifier uses integer sparse-polynomial arithmetic, without sampling."
+    },
+    {
+      "id": "roabp-quadratic-hasse-obstruction",
+      "path": "problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md",
+      "title": "Quadratic local Hasse digit-degree obstruction",
+      "result": "An original-field width-w word with invertible physical factors attains first-component digit degree w²−1 at the ordinary moment curve",
+      "quantity": "$N=w^2-1$; $n=p$; scalar total degree $2p(w-1)$",
+      "scope": "Every width w≥2 in prime characteristic p>w²+w−2; physical interval ranks survive the ordinary curve. This is a local proof-interface obstruction; one SV pair detects the examples, so no PIT lower bound is claimed",
+      "randomness": "Explicit deterministic matrix construction and symbolic determinant identity; finite checks use exact integer and prime-field arithmetic without sampling."
     }
   ],
   "featured": [
     "general-matching",
     "subset-sum-fast-deterministic",
-    "conic-barrier-sparsification"
+    "roabp-affine-pit"
   ]
 }

@@ -1,0 +1,632 @@
+{
+  "schema_version": 1,
+  "import_id": "fresh-roabp-affine-pit-2026-10-27",
+  "attribution": [
+    "Yilin Liu",
+    "GPT-6 Astra Pro"
+  ],
+  "license": "Apache-2.0",
+  "source_archive": {
+    "name": "fresh_tcs_checkpoint_22.zip",
+    "snapshot_utc": "2026-10-26T18:16:49.750962+00:00",
+    "sha256": "41413f22bc950f98ea25b381c876c272257f936d074d7f9cbc80388773bffed3",
+    "bytes": 15168879,
+    "archive_is_not_duplicated_in_repository": true,
+    "coverage": "Frozen research baseline only. Per-record origin distinguishes exact archive members from later session sources."
+  },
+  "scope": "Complete general fixed-width unknown-order invertible-affine-orbit PIT proof, every characteristic; exact grid refinement and scoped internal review.",
+  "status": "Internal mathematical reconstruction complete; no external peer review, formal verification or novelty/priority certification.",
+  "records": [
+    {
+      "original_path": "complexity/general_affine_roabp_all_characteristics.tex",
+      "canonical_path": "problems/roabp-affine-pit/manuscripts/general-affine.tex",
+      "role": "complete native-TeX proof",
+      "original_sha256": "9864136e134bbc9c3f35d8d0f1fb7595cf40c397e01d0247173956795f0c695f",
+      "canonical_sha256": "c5e068c54550199922569d70d9d9c3788532ad82feb450dc31957b6078fdaca6",
+      "original_bytes": 37171,
+      "canonical_bytes": 37135,
+      "editorial_changes": [
+        {
+          "old_text": "\\documentclass[11pt]{article}\n\\usepackage[a4paper,margin=25mm]{geometry}\n\\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}\n\\usepackage[T1]{fontenc}\\usepackage{lmodern}\n\\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}\n",
+          "new_text": "% Canonical native-TeX manuscript; compile from the repository root.\n% Publication layout changes are reversible in the import manifest.\n\\input{manuscripts/paper-style.tex}\n\\usepackage{mathtools}\n"
+        },
+        {
+          "old_text": "\\title{An Internal Candidate Proof of Constant-Width\\\\\nAffine-Orbit PIT in Every Characteristic}\n\\author{Internal research manuscript}\\date{26 October 2026}\n",
+          "new_text": "\\title{Deterministic Identity Testing for Constant-Width\\\\\nAffine ROABP Orbits in Every Characteristic}\n\\author{Yilin Liu \\and GPT-6 Astra Pro}\n\\date{27 October 2026}\n"
+        }
+      ],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "complexity/general_affine_roabp_all_characteristics.tex"
+      }
+    },
+    {
+      "original_path": "algorithms/general_affine_rank_descent_direction_grid.tex",
+      "canonical_path": "problems/roabp-affine-pit/manuscripts/direction-grids.tex",
+      "role": "complete native-TeX proof",
+      "original_sha256": "229d353e00366bbb1ee78ce26e593076d636dc58fcf3499b5d01e9828e1292e7",
+      "canonical_sha256": "41c9f79004f3f4d3d6eec0cbcd4d3d23ab758c0742ff1895697fd4cb3a7f938e",
+      "original_bytes": 15592,
+      "canonical_bytes": 15621,
+      "editorial_changes": [
+        {
+          "old_text": "\\documentclass[11pt]{article}\n\\usepackage[a4paper,margin=25mm]{geometry}\n\\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}\n\\usepackage[T1]{fontenc}\\usepackage{lmodern}\n\\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}\n",
+          "new_text": "% Canonical native-TeX manuscript; compile from the repository root.\n% Publication layout changes are reversible in the import manifest.\n\\input{manuscripts/paper-style.tex}\n\\usepackage{mathtools}\n"
+        },
+        {
+          "old_text": "\\title{Direction Grids for All-Characteristic\\\\Affine-Orbit Identity Testing}\n\\author{Internal research addendum}\n\\date{26 October 2026}\n",
+          "new_text": "\\title{Direction Grids for All-Characteristic\\\\\nAffine-Orbit Identity Testing}\n\\author{Yilin Liu \\and GPT-6 Astra Pro}\n\\date{27 October 2026}\n"
+        },
+        {
+          "old_text": "The exact frozen companion source used is\n\\url{complexity/general_affine_roabp_all_characteristics.tex},\nSHA-256\n",
+          "new_text": "The canonical companion is \\texttt{manuscripts/general-affine.tex}\nin this problem directory. Its research-session source before the\ndocumented publication layout changes has SHA-256\n"
+        }
+      ],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "algorithms/general_affine_rank_descent_direction_grid.tex"
+      }
+    },
+    {
+      "original_path": "root/all_rank_affine_orbit.py",
+      "canonical_path": "problems/roabp-affine-pit/verify/all_rank_affine_orbit.py",
+      "role": "exact all-rank generator prototype",
+      "original_sha256": "536d9256eb46672ed7efb43e57f7b6561411d641132ee9d4f5998a3d9675cae2",
+      "canonical_sha256": "3145e104623df4874696268bcb45ea98a944b309f9de4869a694cde878710d3a",
+      "original_bytes": 17950,
+      "canonical_bytes": 17948,
+      "editorial_changes": [
+        {
+          "old_text": "if __name__ == \"__main__\":\n    main()\n\n\n",
+          "new_text": "if __name__ == \"__main__\":\n    main()\n"
+        }
+      ],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "root/all_rank_affine_orbit.py"
+      },
+      "adaptation_scope": "Remove only surplus blank lines at EOF for the repository whitespace gate; all executable code is unchanged."
+    },
+    {
+      "original_path": "root/all_rank_affine_orbit_self_check.json",
+      "canonical_path": "problems/roabp-affine-pit/verify/all_rank_self_check.json",
+      "role": "finite exact arithmetic evidence",
+      "original_sha256": "0a35d98e8f19ac2b40e2bd9a65cc7304bef264a2363bcc3aee57373846952c5f",
+      "canonical_sha256": "0a35d98e8f19ac2b40e2bd9a65cc7304bef264a2363bcc3aee57373846952c5f",
+      "original_bytes": 17262,
+      "canonical_bytes": 17262,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "root/all_rank_affine_orbit_self_check.json"
+      }
+    },
+    {
+      "original_path": "root/verify_rank_palette_sharpness.py",
+      "canonical_path": "problems/roabp-affine-pit/verify/check_palette_sharpness.py",
+      "role": "finite exact sharpness construction check",
+      "original_sha256": "112f733d3a47d2b3a359cf770b14a49277e870e8ea4fcfabffc04631ba84e845",
+      "canonical_sha256": "112f733d3a47d2b3a359cf770b14a49277e870e8ea4fcfabffc04631ba84e845",
+      "original_bytes": 4940,
+      "canonical_bytes": 4940,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "root/verify_rank_palette_sharpness.py"
+      }
+    },
+    {
+      "original_path": "root/rank_palette_sharpness_exact_checks.json",
+      "canonical_path": "problems/roabp-affine-pit/verify/palette_sharpness_checks.json",
+      "role": "127 exact palette instances",
+      "original_sha256": "16c0c294eda4c843c0646401211cbca404d4e43a232386c6b00c8c94c33857ad",
+      "canonical_sha256": "16c0c294eda4c843c0646401211cbca404d4e43a232386c6b00c8c94c33857ad",
+      "original_bytes": 55854,
+      "canonical_bytes": 55854,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "root/rank_palette_sharpness_exact_checks.json"
+      }
+    },
+    {
+      "original_path": "referee/artin_reset_source_adversarial_probe.py",
+      "canonical_path": "problems/roabp-affine-pit/verify/check_artin_reset.py",
+      "role": "exact zero-divisor reset stress test",
+      "original_sha256": "ad47759b26780cf4c3b9cfbfdef2a8e1ffe00a72577cee24d2d584916d08a10b",
+      "canonical_sha256": "23ffd989cb0649e744c6de7aabb97306c36740e45cec16d721135c585f9d8ae0",
+      "original_bytes": 13711,
+      "canonical_bytes": 13873,
+      "editorial_changes": [
+        {
+          "old_text": "from fractions import Fraction\n",
+          "new_text": "from fractions import Fraction\nimport argparse\n"
+        },
+        {
+          "old_text": "def main():\n    result =",
+          "new_text": "def main():\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\"--output\", type=Path)\n    args = parser.parse_args()\n    result ="
+        },
+        {
+          "old_text": "    output = Path(__file__).with_suffix('.json')\n    output.write_text(json.dumps(result, indent=2) + '\\n')\n    print(json.dumps({'status': result['status'], 'certificate': str(output),\n",
+          "new_text": "    if args.output:\n        args.output.write_text(json.dumps(result, indent=2) + '\\n')\n    print(json.dumps({'status': result['status'], 'certificate': str(args.output) if args.output else None,\n"
+        }
+      ],
+      "adaptation_scope": "Only make the output JSON optional for clean CI; arithmetic and assertions are unchanged.",
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "referee/artin_reset_source_adversarial_probe.py"
+      }
+    },
+    {
+      "original_path": "referee/artin_reset_source_adversarial_probe.json",
+      "canonical_path": "problems/roabp-affine-pit/verify/artin_reset_checks.json",
+      "role": "Q and F2 Artin reset evidence",
+      "original_sha256": "ad74e7bd9e618196cc25991e5f5620970e0b3874f663aeb523a827ab2e123c02",
+      "canonical_sha256": "ad74e7bd9e618196cc25991e5f5620970e0b3874f663aeb523a827ab2e123c02",
+      "original_bytes": 17765,
+      "canonical_bytes": 17765,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "referee/artin_reset_source_adversarial_probe.json"
+      }
+    },
+    {
+      "original_path": "referee/artin_reset_source_adversarial_followup.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/artin-reset-audit.txt",
+      "role": "internal adversarial proof-interface review",
+      "original_sha256": "e65a8d4cc10385c2687084c09ee6ee906cfbdbb0d0ec05c6419f118f541980ac",
+      "canonical_sha256": "e65a8d4cc10385c2687084c09ee6ee906cfbdbb0d0ec05c6419f118f541980ac",
+      "original_bytes": 12919,
+      "canonical_bytes": 12919,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "referee/artin_reset_source_adversarial_followup.txt"
+      }
+    },
+    {
+      "original_path": "referee/all_rank_clean_source_audit.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/independent-core-audit.txt",
+      "role": "fresh-context internal reconstruction",
+      "original_sha256": "1da326cfa3cdbee951ff1624b8d522ee50ce4cc758efb0a71fe39c91cf6d01c7",
+      "canonical_sha256": "1da326cfa3cdbee951ff1624b8d522ee50ce4cc758efb0a71fe39c91cf6d01c7",
+      "original_bytes": 22318,
+      "canonical_bytes": 22318,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "referee/all_rank_clean_source_audit.txt"
+      }
+    },
+    {
+      "original_path": "referee/general_affine_roabp_all_characteristics_tex_audit.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/core-source-audit.txt",
+      "role": "exact-source internal mathematical audit",
+      "original_sha256": "fd91482c3d2edec7e9203fcd4d29e5c20e5a2ec587343a890e57da978ddfcb39",
+      "canonical_sha256": "fd91482c3d2edec7e9203fcd4d29e5c20e5a2ec587343a890e57da978ddfcb39",
+      "original_bytes": 18310,
+      "canonical_bytes": 18310,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "referee/general_affine_roabp_all_characteristics_tex_audit.txt"
+      }
+    },
+    {
+      "original_path": "referee/general_affine_rank_descent_direction_grid_independent_audit.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/direction-grid-audit.txt",
+      "role": "exact-source internal grid audit",
+      "original_sha256": "1f19c05f1f1accb277d47e93e293bfa1efd5224683c20bc84c42bd3a5c27bb8c",
+      "canonical_sha256": "1f19c05f1f1accb277d47e93e293bfa1efd5224683c20bc84c42bd3a5c27bb8c",
+      "original_bytes": 12026,
+      "canonical_bytes": 12026,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "referee/general_affine_rank_descent_direction_grid_independent_audit.txt"
+      }
+    },
+    {
+      "original_path": "algorithms/all_rank_affine_orbit_prototype_independent_audit.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/prototype-audit.txt",
+      "role": "prototype scope review",
+      "original_sha256": "d298917a6e74f3b0ad83e0a96e4a0ebdafd790f6b429cfa02e8e5fca4f0eb0d5",
+      "canonical_sha256": "d298917a6e74f3b0ad83e0a96e4a0ebdafd790f6b429cfa02e8e5fca4f0eb0d5",
+      "original_bytes": 5539,
+      "canonical_bytes": 5539,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "algorithms/all_rank_affine_orbit_prototype_independent_audit.txt"
+      }
+    },
+    {
+      "original_path": "referee/rank_palette_exact_sharpness_independent_audit.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/palette-sharpness-audit.txt",
+      "role": "internal sharpness proof review",
+      "original_sha256": "5455d3eba2a171b59c1deda9bf15be121020e69e8f4603ed08e09940d464d196",
+      "canonical_sha256": "5455d3eba2a171b59c1deda9bf15be121020e69e8f4603ed08e09940d464d196",
+      "original_bytes": 7184,
+      "canonical_bytes": 7184,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "referee/rank_palette_exact_sharpness_independent_audit.txt"
+      }
+    },
+    {
+      "original_path": "referee/rank_stable_support_actual_curve_lift_exact_source_audit.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/actual-curve-lift-audit.txt",
+      "role": "internal exact-source lift review",
+      "original_sha256": "b8e11e9e305f0292a3e679d3d8bd42f98a2e18159d9b4f8ab77ea55f498ca8f8",
+      "canonical_sha256": "b8e11e9e305f0292a3e679d3d8bd42f98a2e18159d9b4f8ab77ea55f498ca8f8",
+      "original_bytes": 11006,
+      "canonical_bytes": 11006,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "referee/rank_stable_support_actual_curve_lift_exact_source_audit.txt"
+      }
+    },
+    {
+      "original_path": "root/external_rigidity_review.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/external-rigidity-review.txt",
+      "role": "explicit counterexamples to identified external preprint statements",
+      "original_sha256": "281c006a1c88f85863fc5d5f23b1f60542f075fde8244af3f0192a5dd94ba272",
+      "canonical_sha256": "281c006a1c88f85863fc5d5f23b1f60542f075fde8244af3f0192a5dd94ba272",
+      "original_bytes": 5863,
+      "canonical_bytes": 5863,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "root/external_rigidity_review.txt"
+      }
+    },
+    {
+      "original_path": "root/proof/focused_interval_rank_main_review.tex",
+      "canonical_path": "problems/roabp-affine-pit/manuscripts/interval-rank-cones.tex",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "22751a12b6369675dc9b8a97891b4a08152a485841da8402c33717b46feed589",
+      "canonical_sha256": "c2a667e1be34aa2e58e139cafaea089ec08bfb6a1945111cd27afb774dc4bfd1",
+      "original_bytes": 41727,
+      "canonical_bytes": 41730,
+      "editorial_changes": [
+        {
+          "old_text": "\\author{Working research manuscript}",
+          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+        }
+      ],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "root/proof/focused_interval_rank_main_review.tex"
+      }
+    },
+    {
+      "original_path": "root/proof/affine_orbit_extension_cp13.tex",
+      "canonical_path": "problems/roabp-affine-pit/manuscripts/factorial-width-affine.tex",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "2a3bd4eb5e551546a4ce32cf753f04a541f696c767cc1c6821bf3d6572b4e077",
+      "canonical_sha256": "39e091153b5f24711fb6fdebba5e66a92f04231dab76348ed03040977d07f8e3",
+      "original_bytes": 16844,
+      "canonical_bytes": 16904,
+      "editorial_changes": [
+        {
+          "old_text": "\\author{Research checkpoint 13; conditional consequence}",
+          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+        },
+        {
+          "old_text": "[Conditional affine-orbit hitting]",
+          "new_text": "[Affine-orbit hitting via the companion cone theorem]"
+        },
+        {
+          "old_text": "Assume the rank-profile cone theorem stated in Section~\\ref{sec:input}.",
+          "new_text": "Use the rank-profile cone theorem stated in Section~\\ref{sec:input}\nand proved in the companion \\texttt{interval-rank-cones.tex}."
+        },
+        {
+          "old_text": "conditional consequence above is polynomial.",
+          "new_text": "cone-theorem consequence above is polynomial."
+        },
+        {
+          "old_text": "in the main interval-rank manuscript. Its proof is supplied in that\ncompanion manuscript and is not reproduced here.",
+          "new_text": "in the companion \\texttt{interval-rank-cones.tex}. Its complete proof\nis supplied there and is not reproduced here."
+        }
+      ],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "root/proof/affine_orbit_extension_cp13.tex"
+      }
+    },
+    {
+      "original_path": "complexity/width_three_affine_orbit_all_characteristics.tex",
+      "canonical_path": "problems/roabp-affine-pit/manuscripts/width-three-all-ranks.tex",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "e4de131b23a6f66f66e0bc91e4f16bbf0d90e546bf3f30060d659e8c5c7f94e8",
+      "canonical_sha256": "a94eb4f2705bebc7bc2835634fe9ea3de45d47c066f08cd84e5c77c0117843b1",
+      "original_bytes": 29016,
+      "canonical_bytes": 29018,
+      "editorial_changes": [
+        {
+          "old_text": "\\author{Internal research manuscript}",
+          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+        }
+      ],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "complexity/width_three_affine_orbit_all_characteristics.tex"
+      }
+    },
+    {
+      "original_path": "algorithms/width_three_affine_orbit_direction_grid.tex",
+      "canonical_path": "problems/roabp-affine-pit/manuscripts/width-three-grids.tex",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "e31a52f025a05cac4dee27056e952a57d49d007a03f09c8ad50e66f38ad273a0",
+      "canonical_sha256": "3438cca175892e524f192c6855ecfe005904e7b575ae3811c7fef57fde8810b6",
+      "original_bytes": 13876,
+      "canonical_bytes": 13880,
+      "editorial_changes": [
+        {
+          "old_text": "\\author{Internal research addendum}",
+          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+        }
+      ],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "algorithms/width_three_affine_orbit_direction_grid.tex"
+      }
+    },
+    {
+      "original_path": "algorithms/invertible_affine_constant_space_concentration.tex",
+      "canonical_path": "problems/roabp-affine-pit/manuscripts/invertible-good-characteristic.tex",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "8f082ad69dc4accd88db4815e4660ee86d5ffdb9b48b4dc6027285d7c523ee42",
+      "canonical_sha256": "b91bd7c0fdd2531181b8ce502e0dbc2a385a394a7740ed2a33dba99ce402e897",
+      "original_bytes": 12833,
+      "canonical_bytes": 12841,
+      "editorial_changes": [
+        {
+          "old_text": "\\author{Internal research note}",
+          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+        }
+      ],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "algorithms/invertible_affine_constant_space_concentration.tex"
+      }
+    },
+    {
+      "original_path": "algorithms/invertible_affine_direction_grid.tex",
+      "canonical_path": "problems/roabp-affine-pit/manuscripts/invertible-good-characteristic-grids.tex",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "bb12fd419ef8d105e17a6dc2777d9322309ceb6c8ed34887583e1e12cb422268",
+      "canonical_sha256": "171180eb34f31ecd359b5da81f8be3ae9cbc4f83341c7f92e527137ab7f5a26e",
+      "original_bytes": 9501,
+      "canonical_bytes": 9505,
+      "editorial_changes": [
+        {
+          "old_text": "\\author{Internal research addendum}",
+          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+        }
+      ],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "algorithms/invertible_affine_direction_grid.tex"
+      }
+    },
+    {
+      "original_path": "complexity/general_invertible_affine_all_characteristics.tex",
+      "canonical_path": "problems/roabp-affine-pit/manuscripts/invertible-all-characteristics.tex",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "89571bdecf554a54fdc80e6605de6a07c6c612759106ec3abd7192bfaa222cc4",
+      "canonical_sha256": "0b391710a6255197a364101344c39c1d422eb0af9c240cc5bd00e671d67f72fa",
+      "original_bytes": 24664,
+      "canonical_bytes": 24666,
+      "editorial_changes": [
+        {
+          "old_text": "\\author{Internal research manuscript}",
+          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+        }
+      ],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "complexity/general_invertible_affine_all_characteristics.tex"
+      }
+    },
+    {
+      "original_path": "root/all_characteristic_rank_one_full_affine_orbit.py",
+      "canonical_path": "problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "c448714a46fe964815bb60e96d56fc1b3f80f841b8de7b83b7ac75f8ac786f23",
+      "canonical_sha256": "c448714a46fe964815bb60e96d56fc1b3f80f841b8de7b83b7ac75f8ac786f23",
+      "original_bytes": 15791,
+      "canonical_bytes": 15791,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "root/all_characteristic_rank_one_full_affine_orbit.py"
+      }
+    },
+    {
+      "original_path": "root/all_characteristic_rank_one_full_affine_orbit_self_check.json",
+      "canonical_path": "problems/roabp-affine-pit/verify/rank_one_full_self_check.json",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "2c32b3a4ad9d2f6b97738277acc16a689db0a49e273222b04cfd17227ce1438d",
+      "canonical_sha256": "2c32b3a4ad9d2f6b97738277acc16a689db0a49e273222b04cfd17227ce1438d",
+      "original_bytes": 7344,
+      "canonical_bytes": 7344,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "checkpoint-archive",
+        "archive": "fresh_tcs_checkpoint_22.zip",
+        "member": "root/all_characteristic_rank_one_full_affine_orbit_self_check.json"
+      }
+    },
+    {
+      "original_path": "referee/all_rank_proof_reading_guide.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/artin-proof-reading-guide.txt",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "7544ecff84342022a79d44e0531053abe42f7f11a59c9cd3f4cedee915dbcd36",
+      "canonical_sha256": "7544ecff84342022a79d44e0531053abe42f7f11a59c9cd3f4cedee915dbcd36",
+      "original_bytes": 9491,
+      "canonical_bytes": 9491,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "post-checkpoint-session-source",
+        "path": "referee/all_rank_proof_reading_guide.txt",
+        "note": "Created after the frozen checkpoint-22 snapshot; not a member of that archive."
+      }
+    },
+    {
+      "original_path": "complexity/github_special_case_scope.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/special-case-scope-audit.txt",
+      "role": "complete special-case proof or scoped supporting evidence",
+      "original_sha256": "0d07c99015ce8ba5da7060b7f583ef8bc66e7e7a5ac44c819dd1b52508fdce66",
+      "canonical_sha256": "0d07c99015ce8ba5da7060b7f583ef8bc66e7e7a5ac44c819dd1b52508fdce66",
+      "original_bytes": 10232,
+      "canonical_bytes": 10232,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "post-checkpoint-session-source",
+        "path": "complexity/github_special_case_scope.txt",
+        "note": "Created after the frozen checkpoint-22 snapshot; not a member of that archive."
+      }
+    },
+    {
+      "original_path": "referee/cp13_publication_dependency_audit.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/cone-dependency-audit.txt",
+      "role": "internal exact dependency review of the factorial-width special case",
+      "original_sha256": "e1a8d593f15e02ebf08680023dbe8cfa737648f0d8030f41dcc0369b25d44593",
+      "canonical_sha256": "e1a8d593f15e02ebf08680023dbe8cfa737648f0d8030f41dcc0369b25d44593",
+      "original_bytes": 13760,
+      "canonical_bytes": 13760,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "post-checkpoint-session-source",
+        "path": "referee/cp13_publication_dependency_audit.txt",
+        "note": "Created after the frozen checkpoint-22 snapshot; not a member of that archive."
+      }
+    },
+    {
+      "original_path": "referee/github_publication_scope_audit.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/publication-scope-audit.txt",
+      "role": "bounded internal publication-facing scope review before static formula rendering",
+      "original_sha256": "f81eacf4566b452056c70a49b3002dee67d9d456ed5ea724aabe9b93a3f73ed7",
+      "canonical_sha256": "f81eacf4566b452056c70a49b3002dee67d9d456ed5ea724aabe9b93a3f73ed7",
+      "original_bytes": 10397,
+      "canonical_bytes": 10397,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "post-checkpoint-session-source",
+        "path": "referee/github_publication_scope_audit.txt",
+        "note": "Created after the frozen checkpoint-22 snapshot; not a member of that archive."
+      }
+    },
+    {
+      "original_path": "complexity/quadratic_hasse_obstruction_independent_audit.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/quadratic-hasse-audit.txt",
+      "role": "independent internal reconstruction of the quadratic Hasse obstruction",
+      "original_sha256": "12c85600753f057aac539a33a3b66d0d0ad1dea3a1e4ad46a2d55efceb0e49f1",
+      "canonical_sha256": "12c85600753f057aac539a33a3b66d0d0ad1dea3a1e4ad46a2d55efceb0e49f1",
+      "original_bytes": 7699,
+      "canonical_bytes": 7699,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "post-checkpoint-session-source",
+        "path": "complexity/quadratic_hasse_obstruction_independent_audit.txt",
+        "note": "Created after the frozen checkpoint-22 snapshot; not a member of that archive."
+      }
+    },
+    {
+      "original_path": "complexity/quadratic_hasse_obstruction_independent_verify.json",
+      "canonical_path": "problems/roabp-affine-pit/verify/quadratic_hasse_checks.json",
+      "role": "finite independently implemented integer and prime-field obstruction checks",
+      "original_sha256": "19115b04a0101a46f6e3cb7378b0cde68706c956ffb8412b076d2056377eeb6d",
+      "canonical_sha256": "19115b04a0101a46f6e3cb7378b0cde68706c956ffb8412b076d2056377eeb6d",
+      "original_bytes": 8614,
+      "canonical_bytes": 8614,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "post-checkpoint-session-source",
+        "path": "complexity/quadratic_hasse_obstruction_independent_verify.json",
+        "note": "Created after the frozen checkpoint-22 snapshot; not a member of that archive."
+      }
+    },
+    {
+      "original_path": "complexity/quadratic_hasse_obstruction_independent_verify.py",
+      "canonical_path": "problems/roabp-affine-pit/verify/check_quadratic_hasse.py",
+      "role": "independently implemented exact finite obstruction verifier",
+      "original_sha256": "0ab5ff0386321c758321548e6c5dc07cecb6a6a826ca27097216b03aa6ab987a",
+      "canonical_sha256": "7fea7b1263b9acfdad30743e432d9c1f0974c3332b9680ca6213cc214f2d382e",
+      "original_bytes": 5960,
+      "canonical_bytes": 6125,
+      "editorial_changes": [
+        {
+          "old_text": "from pathlib import Path\n",
+          "new_text": "from pathlib import Path\nimport argparse\n"
+        },
+        {
+          "old_text": "    source=Path(__file__).resolve().parent.parent/\"root/quadratic_hasse_obstruction_actual_curve.txt\"\n",
+          "new_text": "    parser=argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\"--output\",type=Path)\n    args=parser.parse_args()\n    source=Path(__file__).resolve().parent.parent/\"manuscripts/quadratic-hasse-obstruction.md\"\n"
+        },
+        {
+          "old_text": "    destination=Path(__file__).with_suffix(\".json\")\n    destination.write_text(json.dumps(output,indent=2)+\"\\n\")\n",
+          "new_text": "    destination=args.output\n    if destination:\n        destination.write_text(json.dumps(output,indent=2)+\"\\n\")\n"
+        },
+        {
+          "old_text": "                      \"output\":str(destination)},indent=2))\n",
+          "new_text": "                      \"output\":str(destination) if destination else None},indent=2))\n"
+        }
+      ],
+      "adaptation_scope": "Only use the canonical manuscript path and optional JSON output for clean CI; all determinant, residual, and degree assertions are unchanged.",
+      "origin": {
+        "kind": "post-checkpoint-session-source",
+        "path": "complexity/quadratic_hasse_obstruction_independent_verify.py",
+        "note": "Created after the frozen checkpoint-22 snapshot; not a member of that archive."
+      }
+    },
+    {
+      "original_path": "referee/quadratic_hasse_obstruction_publication_audit.txt",
+      "canonical_path": "problems/roabp-affine-pit/review/quadratic-publication-audit.txt",
+      "role": "second internal mathematical reconstruction of the quadratic obstruction publication manuscript",
+      "original_sha256": "f35f2cf5ad5e4dbfebfa171b54763fe656e651a99f2c39382d50c193b77c0741",
+      "canonical_sha256": "f35f2cf5ad5e4dbfebfa171b54763fe656e651a99f2c39382d50c193b77c0741",
+      "original_bytes": 8434,
+      "canonical_bytes": 8434,
+      "editorial_changes": [],
+      "origin": {
+        "kind": "post-checkpoint-session-source",
+        "path": "referee/quadratic_hasse_obstruction_publication_audit.txt",
+        "note": "Created after the frozen checkpoint-22 snapshot; not a member of that archive."
+      }
+    }
+  ],
+  "source_origins": {
+    "checkpoint_archive_records": 25,
+    "post_checkpoint_session_records": 8,
+    "post_checkpoint_identity": "Each later original is identified by its own path, byte count and SHA-256; publication edits reverse to that identity."
+  }
+}

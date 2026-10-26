@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "papers": {
+    "core": {
+      "scope": "Complete all-rank fixed-width affine-orbit PIT proof in every characteristic.",
+      "inputs": {
+        "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
+        "problems/roabp-affine-pit/manuscripts/general-affine.tex": "c5e068c54550199922569d70d9d9c3788532ad82feb450dc31957b6078fdaca6",
+        "problems/roabp-affine-pit/verify/build_native_papers.py": "759b5307241e11726381e257f66853aabad8ba952a257832a702c5d418ccd659"
+      },
+      "output": "problems/roabp-affine-pit/paper.pdf",
+      "pdf_sha256": "d0038e22b8af0931477c7c7e7cde51f07bba0bcaef19cdc4a816ebe3d4f85541",
+      "pages": 12,
+      "engine": "xelatex",
+      "source_date_epoch": 1792972800,
+      "layout_warnings": [],
+      "visual_review": "passed",
+      "visual_review_details": {
+        "date": "2026-10-27",
+        "reviewer": "research-session root",
+        "scope": "All 12 pages rendered at 90 dpi and inspected for clipping, missing text, equation overflow, margins, headings and reference layout; no defects found.",
+        "mathematical_certification": false,
+        "method": "Full PDF parsing plus numbered page contact sheets; source and artifact hashes are recorded separately."
+      }
+    },
+    "directions": {
+      "scope": "Complete finite direction-grid refinement, using the companion core theorem.",
+      "inputs": {
+        "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
+        "problems/roabp-affine-pit/manuscripts/direction-grids.tex": "41c9f79004f3f4d3d6eec0cbcd4d3d23ab758c0742ff1895697fd4cb3a7f938e",
+        "problems/roabp-affine-pit/verify/build_native_papers.py": "759b5307241e11726381e257f66853aabad8ba952a257832a702c5d418ccd659"
+      },
+      "output": "problems/roabp-affine-pit/direction-grids.pdf",
+      "pdf_sha256": "77d0b9500b21362c0c34e98184ba6535bc0e88fb249bc7bcb96d6619d3e042d0",
+      "pages": 5,
+      "engine": "xelatex",
+      "source_date_epoch": 1792972800,
+      "layout_warnings": [],
+      "visual_review": "passed",
+      "visual_review_details": {
+        "date": "2026-10-27",
+        "reviewer": "research-session root",
+        "scope": "All 5 pages rendered at 90 dpi and inspected for clipping, missing text, equation overflow, margins, headings and reference layout; no defects found.",
+        "mathematical_certification": false,
+        "method": "Full PDF parsing plus numbered page contact sheets; source and artifact hashes are recorded separately."
+      }
+    }
+  }
+}

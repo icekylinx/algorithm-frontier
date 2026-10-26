@@ -1,0 +1,217 @@
+BOUNDED PUBLICATION-FACING SCOPE AUDIT
+Internal model-assisted review; not external human peer review
+26 October 2026 UTC
+
+VERDICT: LIMITED PASS. No blocking mathematical-scope or attribution
+defect was identified in the publication-facing snapshot listed below.
+
+This review was read-only with respect to the repository. No repository
+file or remote was changed. No arithmetic tests were rerun. The only
+checks executed were reading files, listing the manuscript inventory,
+and resolving local documentation links. This report is saved outside
+the repository.
+
+FILES REVIEWED
+
+Repository: /workspace/scratch/ab365b6cbb9c/algorithm-frontier-pit
+Problem directory: problems/roabp-affine-pit
+
+  README.md
+  proof.md
+  sources.md
+  verify/README.md
+  manuscripts/palette-sharpness.md
+  manuscripts/special-cases.md
+
+The special-case ledger was compared against the complete scope inventory
+at fresh-round-20261026/complexity/github_special_case_scope.txt. The
+quantified core scope was compared with the independently audited frozen
+845-line source having SHA-256
+9864136e134bbc9c3f35d8d0f1fb7595cf40c397e01d0247173956795f0c695f.
+The quantitative statements of the published direction-grid TeX were
+also read to check their correspondence with the public grid summary.
+
+This is a publication-facing consistency review, not a second complete
+reconstruction of every special-case proof. In particular, the CP13
+cone theorem was not independently re-proved in this review. Its
+explicit dependency and the presence of both companion manuscripts
+were checked. The separately planned quadratic Hasse supplement was
+not part of the reviewed snapshot and is not covered by this verdict.
+
+1. GENERAL QUANTIFIED SCOPE: PASS
+
+The public statements retain one unknown ROABP order, an unknown
+invertible affine coordinate change, original-field local matrices,
+arbitrary local generic ranks, arbitrary local entry degrees, and a
+bound D on scalar total degree. They exclude singular affine projections
+and orbit closures. Neither the hidden representation nor its order is
+treated as an input to the construction.
+
+The stated generator is the ordinary moment curve plus K(w) pairs,
+with the same rank-stage constants as the frozen core. The pure
+SV_{K(w)+1} claim is preserved. The public complexity is explicitly XP
+in width, rather than an FPT claim. The finite-grid minimum is described
+as a global choice between two complete arguments. Extension-field
+oracle evaluations and the working-field size are explicit.
+
+The public description does not pretend that the local representation
+can be truncated to scalar total degree in the arbitrary-rank core.
+The grid interpolation is applied to the original scalar, not to
+auxiliary minors of possibly larger degree.
+
+2. WEIGHTED RESET AND LEADING-COMPONENT TRANSPORT: PASS
+
+The proof companion correctly distinguishes the unweighted reset
+inclusion from weighted source-restart accounting. It allows future-
+dependent controls without charging them a low support cost and does
+not transfer the interval-rank palette to corrected passive operators.
+
+The leading-support summary uses a separate box quotient for an
+arbitrary chosen first-component monomial. The Hasse exponent bound
+is then applied to that same leading monomial after fixing the other
+exponents. The later affine transport concerns the bounded digit
+degree of the entire first homogeneous component. I found no inference
+from the existence of an unfiltered low-support coefficient to survival
+under an unknown linear change.
+
+The rank descent retains actual contiguous block, adjacent-block and
+tail tests. It does not omit the tail condition or silently replace the
+target interval by an unrelated word.
+
+3. SPECIAL-CASE LEDGER VERSUS INVENTORY: PASS
+
+All five result cards retain the material distinctions in the scope
+inventory:
+
+  A. The arbitrary-rank, all-characteristic result uses scalar total
+     degree and has no local entry-degree restriction.
+
+  B. The factorial-width result explicitly includes BOTH the interval-
+     rank image-cone theorem and its affine consequence. Its good-
+     characteristic condition remains char 0 or p>w*delta. The ledger
+     explains why delta may bound latent scalar individual degree in
+     this unrestricted-rank case. It preserves the separate all-
+     characteristic bound whose exponent depends on delta.
+
+  C. The width-three result includes rank-two layers and uses the
+     derivative-separating exponents. Its four-pair map, nine scalar
+     parameters, pure five-pair map, refined grid and scalar-degree
+     truncation convention match the inventory.
+
+  D. The good-characteristic rank-one/full result retains an entry-
+     degree bound in an ACTUAL representation with that rank pattern.
+     The ledger explicitly forbids replacing it by a scalar individual-
+     degree bound. Its condition is p>delta, without an added factor
+     of w or n. The ordinary-curve and pure-SV_w claims have the same
+     stated assumptions as the inventory.
+
+  E. The all-characteristic rank-one/full result keeps scalar total
+     degree, unbounded local entry degree, the separating curve, its
+     binomial b(w) budget, and the maximum of n^2 and rho*D+1 in the
+     field-size requirement. Width-four rank-three layers are expressly
+     excluded. The width-two specialization is explained correctly.
+
+The ledger does not claim that the broader all-characteristic theorem
+dominates every stronger bound under an additional promise. It also
+distinguishes individual transcendence from derivative separation.
+Its displayed recurrence, summation ranges, query formulas and parameter
+counts match the inventory as source mathematics. No arithmetic test
+was needed or rerun for that comparison.
+
+4. STRUCTURAL SHARPNESS VERSUS PIT LOWER BOUNDS: PASS
+
+The palette manuscript states exactly which upper theorem is imported
+from the core and supplies its own lower construction and active-
+endpoint argument. The physical-interval rank claim is distinguished
+from endpoint augmentation. In particular, the lifted full augmented
+scalar interval is acknowledged to drop from rank one to rank zero at
+the moment curve for nonconstant examples.
+
+The actual-curve lift uses two univariate physical factors per edge;
+it does not treat a multivariate macro as a legal local factor. Its
+interval explanation accounts for partial boundary macros without
+commuting a shear through a projection.
+
+The examples are expressly said to survive one SV pair, with and
+without the initial curve. The manuscript and public summaries deny
+the unsupported inference to seed-count, hitting-set-size or query
+lower bounds. They also decline to identify every extremal abstract
+palette word with an exterior power of a smaller word. These are the
+correct boundaries for the structural result.
+
+5. REVIEW, PRIORITY AND EXTERNAL COMPARISON: PASS
+
+The reviewed pages consistently identify the reviews as model-assisted
+internal work. They do not claim external human peer review, a proof-
+assistant certificate, exhaustive novelty verification, or priority.
+The finite programs are described as checks of explicit identities,
+arithmetic and traversal behavior, not proofs of the general theorem.
+An interrupted traversal reports incomplete rather than zero.
+
+The named external-preprint criticism is kept separate from validation
+of the present argument. Its displayed matrix-factorization objection
+is mathematically valid: a matrix of entries e_1^T W_a W'_b e_w factors
+through a w-dimensional space, so a w^2-square determinant vanishes
+for w>1. No assertion about author intent is made.
+
+Primary-source spot checks confirmed the public author names and the
+unknown-order/every-order distinction for Bhargava--Ghosh; the official
+record gives the displayed exponent, with individual degree d and
+char 0 or p>d. The official Gurjar--Korwar--Saxena article separates
+known order from representations in every order, and its known-order
+fixed-width bound has a characteristic-zero/large-characteristic
+hypothesis. Garcia--Lax Proposition 1.1 records the p-adic criterion
+with the stated Schmidt and Stoehr--Voloch attribution.
+
+Primary URLs checked:
+  https://eccc.weizmann.ac.il/report/2021/062/
+  https://theoryofcomputing.org/articles/v013a002/
+  https://arxiv.org/pdf/alg-geom/9208003
+
+Nonblocking precision suggestion: sources.md could state BG's exact
+degree convention and characteristic threshold, and GKS's characteristic
+qualification, inline rather than deferring to the original references.
+The reviewed wording does not explicitly claim that those results hold
+in every characteristic; this is a self-containedness improvement,
+not a demonstrated false statement or a blocking defect.
+
+6. DEPENDENCIES AND FINAL PROVENANCE LINK: PASS
+
+All nine named native-TeX dependencies are present:
+
+  general-affine.tex
+  direction-grids.tex
+  interval-rank-cones.tex
+  factorial-width-affine.tex
+  width-three-all-ranks.tex
+  width-three-grids.tex
+  invertible-good-characteristic.tex
+  invertible-good-characteristic-grids.tex
+  invertible-all-characteristics.tex
+
+Every local link in special-cases.md resolves to an existing file.
+Its final relative link
+
+  ../../../provenance/imports/roabp-affine-pit.json
+
+resolves from the manuscripts directory to the intended repository-root
+provenance/imports/roabp-affine-pit.json. The number of parent traversals
+is correct. This link check does not replace the separate reversible-
+import binding check owned by repository integration.
+
+LIMITATION
+
+This limited PASS reports no identified inconsistency in the stated
+publication snapshot. It is not a guarantee that every proof is correct
+or that no error remains. Later additions or edits are outside this
+snapshot unless separately identified below.
+
+SNAPSHOT HASHES
+
+  6627583d2bd6e0860c27e4791b75ca125fe252ca04d8dcf3d017f74f4d9e811c  README.md
+  85cf3f854bc423757dcc753c09920a96075bc3a440670327979803381af0719a  proof.md
+  6c577832073bcb07d394718c9ddc147ccb86a2bc99fcc699d62e8463d7b0f89b  sources.md
+  f4741d7edeb3b5a12743df2d672665f13f32932abffbfbfa9c7c51828d3254bd  verify/README.md
+  66bea95663b3c58754b12ae1822f4f92b8fc3112f9ce3355dcf463c253b5cad7  manuscripts/palette-sharpness.md
+  69cae579f2bb65b0ff864924bf8974acf2c4b50c48305a6d0da5bea99831d135  manuscripts/special-cases.md
+  41c9f79004f3f4d3d6eec0cbcd4d3d23ab758c0742ff1895697fd4cb3a7f938e  manuscripts/direction-grids.tex

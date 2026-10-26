@@ -6,7 +6,7 @@ recoverable TeX source. They render without GitHub's mathematical interpreter.
 
 ## Incremental TeX migration
 
-The export set starts with the homepage's three selected families and also
+The source-bound export set covers the original selected families and also
 includes complete degree, quota, flow-adapter and Boolean-compiler proofs,
 the four restored static graph packages, rank-sensitive Haxell analysis,
 optimal rank-two oracle construction, universal mixed-failure matching
@@ -92,3 +92,25 @@ the [build manifest](../manuscripts/paper-builds.json) records its evidence.
 
 See [review and verification](../reviews/README.md) for the mathematical scope
 of each package and [Contributing](../CONTRIBUTING.md) for updates.
+
+## Native algebraic-complexity manuscripts
+
+The [affine ROABP PIT package](../problems/roabp-affine-pit/) has two complete
+native-TeX papers: the [general theorem](../problems/roabp-affine-pit/paper.pdf)
+and the [finite direction-grid refinement](../problems/roabp-affine-pit/direction-grids.pdf).
+Their native sources are canonical; they are not independently maintained
+exports of a second Markdown proof. Both import the same shared paper style.
+The reading companion and static formula pages point to those complete sources.
+
+```sh
+python3 problems/roabp-affine-pit/verify/build_native_papers.py
+python3 problems/roabp-affine-pit/verify/build_native_papers.py --check
+```
+
+The [native build receipt](../problems/roabp-affine-pit/verify/native-paper-builds.json)
+binds the sources, style, builder and PDF bytes. All 17 pages were rendered
+and inspected after the publication layout changes. Rebuilding resets
+visual review to pending. The ordinary repository runner checks these
+Python-only bindings alongside the five Markdown-derived paper packages;
+no TeX installation is needed in CI. Internal mathematical review remains
+distinct from presentation checks and external peer review.

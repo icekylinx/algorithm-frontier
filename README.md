@@ -1,14 +1,14 @@
 # Algorithm Frontier
 
-Algorithms and proofs in combinatorial optimization, dynamic graphs, and sparsification. Each problem page gives the theorem, complexity, randomness, dependencies, and verification evidence.
+Algorithms and proofs in combinatorial optimization, algebraic complexity, dynamic graphs, and sparsification. Each problem page gives the theorem, complexity, randomness, dependencies, and verification evidence.
 
 [![Repository checks](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml/badge.svg)](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-**54 problem families · 22 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
+**55 problem families · 24 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
 
 ## Selected results
 
-Two deterministic algorithms and one cone sparsification theorem. The linked problem pages give the full statements, proof dependencies, executable coverage and review status.
+Three deterministic algorithmic results. The linked problem pages give the full statements, proof dependencies, executable coverage and review status.
 
 ### [Deterministic general-graph maximum matching](problems/general-matching/)
 
@@ -34,13 +34,16 @@ Exact rational exponent on the card.
 
 For n integers of total bit length L, including an indexed witness. The finite startup constant C is input-independent. The complete compiler proof and exact continuous certificates support the improved third-lookup exponent.
 
-### [Self-concordant cone sparsification](problems/conic-barrier-sparsification/)
+### [Deterministic PIT for fixed-width affine ROABP orbits](problems/roabp-affine-pit/)
 
-Cone-order multiplicative approximation by reweighting existing summands, including boundary sums.
+Deterministic black-box identity testing with unknown order and unknown invertible affine coordinates, in every characteristic.
 
-Support O(nu/epsilon^2), compared with the cited general ordinary-barrier baseline O(nu^2/epsilon^2).
+<!-- math-display: 12a2d9dc8785be756359ee12
+(nD+1)((D+1)B)^{K(w)}
+-->
+![Formula](assets/math/12a2d9dc8785be756359ee12.svg)
 
-Proper cones admitting a nu-logarithmically homogeneous self-concordant barrier. Existence is unconditional; the randomized construction assumes an ideal strong separation oracle and a supplied upper bound on nu.
+Here <code class="math">K(w)=2^{O(w^2)}</code>, and <code class="math">B</code> is the smaller direction grid defined on the problem card. Arbitrary local ranks and entry degrees; known scalar total degree D and extension-field oracle access when needed. Polynomial query count for each fixed width, with a width-dependent exponent. Complete internally reconstructed proof; external peer review and priority certification are not claimed.
 
 ## Results
 
@@ -50,6 +53,10 @@ Browse by problem. Each link opens its statement, proof and dependencies. [Compu
 
 - [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/)
 - [Low-space deterministic Subset Sum](problems/subset-sum-low-space-deterministic/)
+
+### Algebraic complexity
+
+- [Deterministic PIT for fixed-width affine ROABP orbits](problems/roabp-affine-pit/)
 
 ### Numeric targets and quota geometry
 
@@ -129,7 +136,7 @@ Browse by problem. Each link opens its statement, proof and dependencies. [Compu
 
 ### Supporting results
 
-The [complete index](CONTENTS.md#supporting-results) also lists 22 supporting algorithms, structural theorems, and scoped lower bounds. [Shared manuscripts](CONTENTS.md#shared-manuscripts) collect reusable proofs and backend interfaces.
+The [complete index](CONTENTS.md#supporting-results) also lists 24 supporting algorithms, structural theorems, and scoped lower bounds. [Shared manuscripts](CONTENTS.md#shared-manuscripts) collect reusable proofs and backend interfaces.
 
 ## Reading and verification
 

@@ -1,0 +1,334 @@
+INDEPENDENT HOSTILE EXACT-SOURCE AUDIT: GENERAL AFFINE ROABP PIT
+Date: 26 October 2026
+Reviewer: /root/fresh_core_hostile
+
+VERDICT
+
+PASS as an internal mathematical and exact-source reconstruction. I found
+no mathematical gap in the integrated argument, including the Artin
+reset/source induction, its filtered leading-component interface, and the
+augmented interval-rank descent. This is model-assisted internal review,
+not external peer review, a publication-priority finding, or a proof of
+optimality. The surprisingly broad consequence should retain that status.
+
+The exact mathematical source read in full was
+  complexity/general_affine_roabp_all_characteristics.tex
+  SHA256 89418d6e808a4878f8fe4eed5b48185da6b3c65e898d7d9617b587beb4b75ab6
+  834 lines.
+Its final editorial version is
+  SHA256 9864136e134bbc9c3f35d8d0f1fb7595cf40c397e01d0247173956795f0c695f
+  845 lines.
+I verified exact reversal of all four declared replacements to the
+834-line mathematical source. The numerical table was also recomputed
+independently; see Section 10 below. No proof text changed.
+
+1. EXACT SCOPE AND DEPENDENCIES
+
+The input is a nonzero scalar polynomial of known total degree at most D,
+with an unknown representation
+  f(X)=u A_1(ell_1(X)+c_1) ... A_n(ell_n(X)+c_n) v,
+where the ell_i form an invertible linear coordinate system, every A_i is
+a w-by-w univariate polynomial matrix over the original coefficient field,
+and the representation/order/affine transformation are unknown. All local
+generic ranks and entry degrees are permitted. The source does not truncate
+the representation from the scalar-degree promise.
+
+The explicit result is gamma+SV_K, gamma_i=t^i, in every characteristic;
+pure SV_(K+1) follows separately. With W_r=binom(w,r), the constants are
+  h_r=(r+2) product_{s=r+2}^w (binom(s-1,r-1)+1)-2,
+  k_r=(W_r^2-1)(2h_r+2),
+  K=sum_{r=1}^{w-1} k_r; K(1)=0.
+The basic Cartesian count is
+  (nD+1)(D+1)^K((n-1)D+1)^K.
+The field must supply the stated sets; extension-field oracle evaluation
+is explicitly part of the permitted model when the base field is too small.
+
+The integrated source reproduces all substantive mathematical steps. The
+generic Hasse-order closure is credited as standard, but its precise
+rational-vector form is proved, so that no unstated geometric hypotheses
+are imported. I did not perform a separate historical/novelty review of
+the bibliography. Earlier constituent audits and the extra adversarial
+Artin review are corroborating records, not substitutes for this complete
+source review.
+
+2. COEFFICIENT SPANS AND UNIT RANK OVER ARTIN RINGS
+
+The ambient rings are finite tensor products of monomial local quotients,
+with the surviving monomials as the field-vector-space basis. The
+coefficient-span lemma is correctly restricted to scalar multiplication
+and compatible matrix multiplication ON THE LEFT of a row family. Even
+when a multiplier uses future variables, convolution creates only field
+linear combinations of existing coefficient rows. Monomial truncation
+deletes terms; it does not identify a higher monomial with a lower one.
+A left matrix whose constant term is invertible has an inverse in the
+finite local ring, giving equality in both directions.
+
+Unit rank s means constant rank s plus vanishing of all (s+1)-minors in
+the quotient. It does not mean a vaguely defined generic rank in a ring
+with zero divisors. A constant s-pivot is a unit. The Schur-complement
+identity follows by division by that unit determinant, which is legal.
+Consequently an interval of unit rank s with a unit active s-pivot has a
+row graph and any row in its row module with zero active coordinates is
+zero. Constant invertible cut gauges preserve this property by
+Cauchy--Binet. These facts are sufficient for every reset in the proof.
+
+The rank-zero and full-rank cases agree with the definition: rank zero
+means the matrix itself vanishes, and at full width the larger-minor
+condition is empty. Trivial variable blocks are allowed and have support
+cost zero. These edge cases are used correctly later for empty chunks
+and constant endpoint factors.
+
+3. THE WEIGHTED STABLE-PHASE INDUCTION
+
+I independently reconstructed the source/reset identities, rather than
+assuming the conclusion from the corresponding field argument.
+
+On a stable active phase, let H be a field basis of the fixed active
+coefficient space and J a right inverse. The constant witnesses B_i are
+propagated through the constant matrices. In the block decomposition
+  A_i=[E, EC; DE, DEC+F],
+the active coordinate matrix R_i has identity constant term and is a
+unit. Normalizing B_(i-1) A_i by R_i gives
+  W_i=[H, B_(i),passive + Z_i],
+where Z_i has zero constant term and depends only on the current block.
+The corrected passive transition Ftilde_i is obtained by subtracting the
+active lift. For a passive coefficient row p in K_(i-1), the identities
+  (0,p)A_i-(pDEJ)W_i=(0,p Ftilde_i)
+and
+  K_i=Coeff(Z_i)+Coeff(K_(i-1) Ftilde_i)
+are valid in the monomial ring. They use only unit inversions and field
+linear coefficient-space identities.
+
+The evolution formulas for an arbitrary controlled reachable row are
+  a_i=a_(i-1)R_i+p_(i-1)DEJ,
+  p_i=p_(i-1)Ftilde_i+a_i Z_i.
+These include controls using future blocks. Such a controlled row need
+not belong to the prefix polynomial subalgebra. What the proof needs,
+and what remains true, is that its coefficient rows belong to the actual
+prefix coefficient space. The left-multiplication lemma supplies exactly
+that assertion. Field right inverses extract its active coordinates;
+subtracting the corresponding B_i lift keeps coefficient reachability
+and leaves a row in K_i.
+
+On an interval whose passive constant product is zero, the full interval
+has a unit active pivot and the exact graph identity. An initial active
+control cancels the final active output of any chosen initial passive row.
+The graph then forces its entire final output to vanish. Expanding the
+passive evolution yields the RESET identity, expressing the initial-row
+contribution as a sum of later Z_j sources times passive suffix products.
+The final source is absent because the final active control is zero.
+No cancellation by a nonunit, fraction-field rank, or lift of a quotient
+identity to the polynomial ring is used.
+
+The RESET identity is used for UNWEIGHTED coefficient-span inclusion.
+The potentially complicated controls are not assigned small supports.
+Only after removing them by the coefficient-span inclusion does the proof
+assign one current-block support cost to the genuine local Z_j source.
+This separation is the central point preventing future-control dependence
+from invalidating the quantitative induction.
+
+For a source at cut j, the restart uses the unchanged actual suffix word
+and the coefficient-reachable initial space spanned by B_j and the source
+row. Its active output space stays inside the global stable space, while
+the constant B_j witnesses supply all of that space. Thus it has exactly
+the same stable active space, not a newly assumed rank profile. The same
+normalization/source formulas are available. The proof never assumes
+rank constraints for the auxiliary matrices Ftilde_i.
+
+The recursion is well founded. First establish the positive-passive-
+constant-product case for all lengths, using strictly larger active
+constant ranks. Then prove the zero-product case by restarting in an
+already established positive case at the same active rank. This is not
+induction on a length that can fail under a restart. The palette budget
+  G(a)+1=product of (successive allowed rank gaps +1) above a
+satisfies the displayed inequality for every possible next allowed rank.
+The positive-case initial-active-dimension split, including beta=0 and
+beta>0, fits that budget. The initial source offset and final subtraction
+give h(P)=product(gap+1)-2.
+
+I also checked the zero-dimensional active space convention and the
+nonempty/empty source cases. Nothing depends on characteristic or on an
+original-field polynomial representation at this purely Artin stage.
+
+4. A SEPARATE ADVERSARIAL RESET/SOURCE CHECK
+
+At root's request, I made a further attempt to invalidate the deepest
+step with concrete truncated-ring examples and future-dependent controls.
+The independent exact report and arithmetic verifier are:
+  referee/artin_reset_source_adversarial_followup.txt
+  referee/artin_reset_source_adversarial_probe.py
+  referee/artin_reset_source_adversarial_probe.json.
+The report SHA256 is
+  e65a8d4cc10385c2687084c09ee6ee906cfbdbb0d0ec05c6419f118f541980ac.
+
+Those checks include a genuinely nonzero RESET relation, a case where
+rank identities hold only after monomial truncation, a proper-prefix-
+coefficient-space case, and a width-three support-six example making the
+source/restart budget tight. They use exact rational and characteristic-
+two quotient arithmetic, not random sampling. Future-dependent controls
+can increase monomial support, but do not create new coefficient-row
+directions; the source witnesses still have the claimed separate costs.
+I also isolated an invalid near-example with only constant-rank stability:
+diag(1,x) over F[x]/(x^2). It fails the required vanishing larger minor,
+showing why the actual unit-rank hypothesis is necessary. No counterexample
+to the stated reset/source lemma emerged.
+
+5. BOX QUOTIENTS: EVERY LEADING MONOMIAL
+
+For a chosen monomial X^alpha of the first nonzero ordinary homogeneous
+scalar component, set variables outside its support to zero and quotient
+by X_i^(alpha_i+1). Every lower-total-degree scalar coefficient is zero;
+every other monomial of degree at least |alpha| either is alpha or dies.
+Thus the surviving scalar is exactly its nonzero coefficient times
+X^alpha. Original interval rank identities pass to the quotient and the
+preserved constant pivots remain units. The Artin row-span bound must
+therefore witness this unique monomial, bounding its support.
+
+This proves a bound on EVERY monomial of the first component, not merely
+existence of one low-support coefficient somewhere in a shifted series.
+That filtered distinction is indispensable for the later affine change
+of variables. The palette specialization for exterior-r words is valid:
+compound interval ranks are binom(s,r), and in a prepared higher-rank
+chunk the possible positive values begin with binom(r+1,r)=r+1. Applying
+the gap product gives exactly h_r in the theorem.
+
+6. LOCAL HASSE PIVOTS WITH CORRELATED SYMBOLIC SHIFTS
+
+For an original-field rational vector F(T) with at most q entries, take
+generic greedy Hasse row pivots over the original rational function field.
+If mu is a nonpivot, a relation expressing D^[mu]F in smaller jets can be
+Hasse differentiated by nu-mu. Every jet on the right has order below nu;
+the left is binom(nu,mu)D^[nu]F. Hence any digit suborder of a pivot is
+also a pivot. In characteristic p this gives
+  product_e(nu_e+1)<=q and wt_p(nu)<=q-1;
+in characteristic zero it gives nu<=q-1.
+
+Substitution T=C preserves all required nonzero minors and rational
+relations provided C is transcendental over the ORIGINAL coefficient
+field. C need not be transcendental over the whole current coefficient
+field, which contains C. The latter would be impossible and is not used.
+A functional over that larger field, even one depending on C and all old
+seeds, has its first nonzero contracted jet among the same pivots.
+
+For any chosen first homogeneous word monomial, fixing all other local
+exponents makes each remaining exponent the first nonzero local contracted
+jet: a smaller exponent would give a nonzero lower-total-degree scalar
+coefficient. Applying the rational-vector lemma to all entries of one
+W-by-W local matrix yields exponent digit weight at most W^2-1.
+This first-order-filtration argument is stronger than a coefficient-span
+replacement claim and remains valid with arbitrarily correlated shifts.
+
+Every current latent shift is c_i+ell_i(t,t^2,...,t^n) plus terms in fresh
+amplitudes/directions independent of t. Since ell_i is nonzero, its t-part
+is a nonconstant polynomial in every characteristic. It is individually
+transcendental over the original coefficient field throughout the descent.
+No derivative-separating condition, perfectness, or large-characteristic
+assumption remains in this proof.
+
+7. AFFINE TRANSPORT AND THE FILTERED CHUNK INTERFACE
+
+In positive characteristic a monomial is a product of its digit copies.
+An invertible linear substitution expands each p-power copy by Frobenius,
+so the digit degree cannot increase. The transformed first ordinary
+homogeneous component is still nonzero because the linear map is
+invertible. Ordinary homogeneity prevents higher components from cancelling
+it after a homogeneous fresh SV substitution.
+
+A polynomial of digit degree at most k has ordinary variable support at
+most k in every monomial. SV_k contains every coordinate k-plane by
+specializing its directions to the Lagrange nodes. Hence it hits the
+nonzero transformed first component. This is applied to the whole first
+component established above, not to an isolated latent-coordinate witness
+that could disappear after linear transport.
+
+For a test interval, fix outside exponents of any chosen leading monomial
+before examining a prepared chunk. The remaining expression is a scalar
+contraction of the chunk with endpoints in the old-seed coefficient field.
+All smaller chunk total degrees vanish, since the other exponents are
+fixed and the original monomial is of globally first degree. Therefore
+the chunk part is a monomial of that contraction's first component. The
+Artin support bound applies with precisely those field-constant endpoints.
+There is no conditioning on fresh polynomial variables in an endpoint.
+
+8. AUGMENTED INTERVAL-RANK DESCENT
+
+The proof first adjoins E_in=e_1 u and E_out=v e_1^T, so the full augmented
+product is the scalar polynomial times E_11. The rank invariant is about
+contiguous intervals of this ORIGINAL AUGMENTED word, including constants.
+This avoids silently requiring separate endpoint preservation later.
+
+At rank r, every interval of generic rank greater than r is already
+preserved at the current symbolic shift. For a particular target interval
+of generic rank r, the greedy decomposition is performed INSIDE that
+interval. Every subinterval has generic rank at least r, so a shortest
+prefix reaching rank r cannot skip below r. A greedy block is C_j A_i,
+with all intervals in C_j of rank greater than r; the same holds for the
+final tail. Empty chunks and constant singletons cause no exception.
+
+The only new tests are the individual greedy blocks, adjacent block
+products, and the last block times the tail. All have generic rank r and
+each contains at most two prepared chunks and two singleton factors.
+Taking exterior powers, selecting a nonzero entry/minor, applying the
+conditional chunk bound to every leading monomial, and then applying the
+local Hasse bound yields k_r=(2h_r+2)(W_r^2-1).
+
+One common fresh SV_(k_r) over the old-seed field keeps every finitely many
+chosen nonzero test minor nonzero symbolically. No numerical common-good-
+point argument or unknown-order knowledge is needed at this stage. Larger
+minors remain identically zero. Higher-rank old tests remain nonzero since
+setting the new amplitudes to zero recovers the old values.
+
+For rank-r matrices, preservation of each block and adjacent product is
+enough: the row space of a prefix product equals the row space of its last
+block, inductively. The last-block/tail test then certifies the entire
+target. No unproved three-block compatibility is assumed. Repeating to
+r=1 preserves the rank of the augmented full product and therefore detects
+the nonzero scalar. For w=1 the initial curve already preserves each
+nonzero univariate factor and the scalar directly.
+
+9. PURE MAP, DEGREE COUNTS, AND EDGES
+
+The pure-map specialization uses its first pair (z_0,y_0)=(t,t). Any
+nonzero latent linear combination becomes c+t q(t), with q a nonzero
+combination of independent Lagrange polynomials; it is nonconstant over
+every field. Its degree is at most n. This supplies the same individual
+transcendence premise without using an invalid derivative argument in
+small characteristic.
+
+For gamma+SV_K, the original scalar degree D implies individual seed
+degrees at most nD in t, D in each amplitude, and (n-1)D in each direction.
+The final interpolation count therefore does not depend on entry or
+auxiliary-minor degrees. The field-size bound nD+1 supplies both grids
+and n distinct Lagrange nodes. Constants and n=0/D=0 are separately one
+query. Width padding by zeros is legitimate because the theorem allows
+all local ranks. The affine map must be invertible; singular projections,
+orbit closures, and unrestricted repetition are not proved here.
+
+10. FINAL EDITORIAL FREEZE AND NUMERICAL CHECK
+
+I loaded complexity/all_rank_integrated_editorial_freeze.json, checked the
+current file SHA256, verified that every declared new text occurred once,
+replaced the four new texts by the exact old texts in memory, and obtained
+SHA256 89418d6e808a4878f8fe4eed5b48185da6b3c65e898d7d9617b587beb4b75ab6.
+Thus the final 9864136e... source differs only by the declared review status,
+width table, parameterized-complexity explanation, and BG revision URL.
+
+Independent integer evaluation of the displayed formulas gives:
+  w       1   2    3     4      5       6
+  K(w)    0  12  128  1500  23718  553854.
+For example, the stage contributions at width 4 are 330,1050,120, and at
+width 6 they are 3290,214592,306432,29120,420. The new table is correct.
+The XP-type wording correctly says that the polynomial exponent depends
+on width and that this result does not establish an FPT bound with a
+uniform exponent. The revised bibliography URL does not alter any proof
+dependency. The same PASS applies to the final source.
+
+FINAL ASSESSMENT
+
+No remaining mathematical repair is requested. The decisive qualitative
+steps are the Artin box argument for every leading monomial, the original-
+field generic Hasse filtration, and conditioning before the chunk bound.
+Together they avoid the previously identified invalid transport of a
+single low-support latent witness. All unit-ring and future-control uses
+have been checked explicitly. This report records an internal hostile
+reconstruction, with the uncertainty status stated at its beginning.

@@ -1,0 +1,842 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\lhead{Focused main theorem for review}\rhead{26 October 2026}\cfoot{\thepage}
+\setlength{\headheight}{14pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Mat}{\operatorname{Mat}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\Coeff}{\operatorname{Coeff}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\SV}{\operatorname{SV}}
+\newcommand{\supp}{\operatorname{supp}}
+\title{The Interval-Rank Method\\for Unknown-Order ROABP Identity Testing}
+\author{Yilin Liu \and GPT-6 Astra Pro}
+\date{26 October 2026}
+\begin{document}
+\maketitle
+\begin{center}
+\fbox{\parbox{0.91\textwidth}{\textbf{Research status.} This document contains the complete proposed main argument and its geometric refinement, independently of all width-three classifications. It has internal model-assisted independent audits, but no external human expert review or proof-assistant certification. The larger checkpoint improves some constants and gives separate small-width results. This document is intended to make the core mathematical claim directly reviewable.}}
+\end{center}
+\begin{abstract}
+We propose a deterministic black-box identity test for read-once oblivious
+algebraic branching programs of every fixed width, with arbitrary unknown
+variable order, arbitrary individual degree, and possibly singular factors.
+The first step proves that products whose every contiguous interval
+preserves its generic rank at zero have coefficient concentration bounded
+only by their width. A descending induction on rank then constructs a
+universal Shpilka--Volkovich shift preserving all interval ranks. The
+elementary argument gives $2^{O(w^2)}$ seed pairs. Preserving scalar-saturated
+image closures strengthens this to $2^{O(w\log w)}$ seed pairs. A rational
+reparameterization yields $(nd+1)^{2^{O(w\log w)}}$ queries for individual
+degree $d$, over any characteristic when an adequate evaluation field is
+available. Over small finite fields, extension-field oracle access is an
+explicit model requirement. This is a complete proposed proof, internally
+audited but not externally peer reviewed; its validity and novelty remain
+subject to that review.
+\end{abstract}
+\tableofcontents
+\newpage
+\section{Target, scope, and comparison}
+
+A width-$w$ ROABP computes a polynomial of the form
+\[
+ f(x_1,\ldots,x_n)=uA_1(x_{\pi(1)})\cdots A_n(x_{\pi(n)})v,
+\]
+where $u\in\F^{1\times w}$, $v\in\F^{w\times1}$, and each $A_i$ is a
+univariate polynomial matrix. The order $\pi$ is arbitrary and unavailable
+to the black-box algorithm. Constant factors and unused variables are
+allowed. Rectangular ROABPs of width at most $w$ can be padded to this form.
+
+This target must be distinguished from a known variable order, and from
+the stronger promise that a polynomial has a small ROABP in every order.
+Polynomial hitting sets for constant width with a known order were given
+by Gurjar, Korwar, and Saxena~\cite{GKS17}. The verified general unknown-order
+baseline of Guo and Gurjar~\cite{GG20}, for fixed width, is
+$n^{O(\log n/\log\log n)}\operatorname{poly}(d)$ under its stated field
+conditions. Earlier work handles invertible-factor constant-width ROABPs
+and arbitrary width two~\cite{AGKS15}.
+
+Hu, van Melkebeek, and Morgan~\cite{HMM24} study the vanishing ideal of the
+SV generator. Their ROABP theorem has an additional low-degree-monomial
+condition. Theorem 1.9 and the end-of-Section-1 discussion explicitly identify full
+black-box derandomization of arbitrary-degree constant-width ROABPs as
+unresolved there. The proof below is intended to address that broader
+target. A literature search can establish this comparison, but cannot by
+itself certify that no later or differently phrased prior result exists.
+
+A competing preprint of Singh and Singh~\cite{SS26}, version 1 of
+13 February 2026, also claims an order-oblivious hitting set of polynomial
+size for fixed width. Our separate research checkpoint records explicit
+objections to intermediate statements in that version. These objections
+do not certify the present proof or settle priority. The argument below
+does not use that preprint, and both validity and any novelty claim require
+independent scrutiny.
+
+\section{Coefficient spaces and formal units}
+
+All polynomial variable blocks in a product are pairwise disjoint. They
+may contain several variables, or be empty. The support of a monomial
+counts the blocks in which it has positive degree. When the blocks are
+singletons, this is ordinary variable support.
+
+\begin{definition}
+For a matrix polynomial $M$, let $\Coeff(M)$ be the $\F$-linear span of its
+coefficient matrices. We call $M$ \emph{$\ell$-concentrated} if this span is
+generated by coefficients of block support at most $\ell$. The same
+definition applies to row polynomials. Zero and constant polynomials
+are $0$-concentrated.
+\end{definition}
+
+The concentration convention here is ``at most $\ell$''; some papers use
+``strictly less than $\ell$''. This only changes indexing.
+
+\begin{lemma}[Composition]\label{lem:composition}
+Let $P(X)$ and $Q(Y)$ have disjoint blocks and concentration bounds $a,b$.
+Then $P(X)Q(Y)$ is $(a+b)$-concentrated. Constant left and right matrices
+preserve concentration. If a product is concentrated in at most $k$
+macroblocks, and each macroblock is $b$-concentrated in its own original
+blocks, the product is $kb$-concentrated in the original blocks.
+\end{lemma}
+\begin{proof}
+Each coefficient of a product on disjoint blocks is a product of
+coefficient matrices. Expand these matrices in their low-support spanning
+sets and distribute. All resulting products are actual coefficients on
+the disjoint original blocks. Constant transformations follow by linearity.
+\end{proof}
+
+\begin{lemma}[Formal units]\label{lem:units}
+Let $H(X)$ be a matrix of formal power series, and let $R(X)$ be a square
+formal matrix with invertible constant term. The linear spans of all
+coefficient rows of $H$ and $RH$ coincide.
+\end{lemma}
+\begin{proof}
+Every coefficient of $RH$ is a finite linear combination of coefficient
+rows of $H$. The inverse $R^{-1}$ exists in the formal power series ring,
+so applying the same argument to $H=R^{-1}(RH)$ gives the reverse inclusion.
+\end{proof}
+
+All generic ranks are over the rational-function field in the relevant
+variables. Polynomial translation by a vector in an extended coefficient
+field preserves these ranks, since it is an automorphism of that
+polynomial ring. Specialization never increases generic rank.
+
+\section{The normalized constant-rank lemma}
+
+\begin{theorem}[Normalized row concentration]\label{thm:normalized}
+Fix $P=\operatorname{diag}(I_r,0)\in\Mat_w(\F)$, with $r\ge1$. Let
+$A_i(X_i)$ have generic rank $r$ and $A_i(0)=P$, on disjoint variable
+blocks. For every constant row $u$, the row polynomial
+$uA_1\cdots A_m$ is $2r$-concentrated.
+\end{theorem}
+
+\begin{proof}
+Put $N_i=uA_1\cdots A_i$, $S_i=\Coeff(N_i)$, and let $T_i\subseteq\F^r$
+be the projection of $S_i$ to its first $r$ coordinates. Setting the current
+block to zero gives $N_i|_{X_i=0}=N_{i-1}P$, whence
+\[
+ T_{i-1}\subseteq T_i,\qquad T_{i-1}\times\{0\}\subseteq S_i.
+\]
+Disjointness also gives
+\[
+ S_i=\Span\{v\,\operatorname{coeff}_\alpha(A_i):v\in S_{i-1},\ \alpha\}.
+\]
+
+Write $E_i$ for the upper-left $r\times r$ block of $A_i$. Since
+$E_i(0)=I_r$ and $\rank A_i=r$, Schur complementation over the rational
+function field gives
+\begin{equation}\label{eq:schur}
+ A_i=\begin{bmatrix}I_r\\D_i\end{bmatrix}E_i
+       \begin{bmatrix}I_r&C_i\end{bmatrix},
+ \qquad E_i(0)=I_r,\quad C_i(0)=D_i(0)=0.
+\end{equation}
+All entries in this factorization are regular at zero, so the identity
+holds in the formal power series ring as well.
+
+We first prove a stable-step claim. Suppose $T_i=T_{i-1}=T$ and
+$T\times\{0\}\subseteq S_{i-1}$. Then
+\begin{equation}\label{eq:stable}
+ S_i=\Span\Coeff\{(t,0)A_i:t\in T\}.
+\end{equation}
+For $v\in S_{i-1}$, every coefficient of the first $r$ coordinates of
+$vA_i$ belongs to $T$. Equation~\eqref{eq:schur} writes $vA_i$ as that
+active core times $[I_r,C_i]$. Thus its coefficients lie in the coefficient
+span of $T[I_r,C_i]$.
+
+For the reverse comparison, choose a basis row matrix $B$ of $T$. Since
+$(T,0)\subseteq S_{i-1}$ and the active span is stable, $BE_i=R_iB$ for a
+formal square matrix $R_i$ with $R_i(0)=I$. Lemma~\ref{lem:units} implies
+that $BE_i[I_r,C_i]$ and $B[I_r,C_i]$ have identical coefficient-row spans.
+The first family is contained in $S_i$. This proves~\eqref{eq:stable}.
+
+Now partition the indices into maximal phases of constant $T_i$. At a
+phase start $j$, suppose $S_j$ has a spanning set of actual coefficients
+of support at most $L$. The next prefix is $(L+1)$-concentrated by direct
+multiplication. At a later index $i\ge j+2$ in the same phase,
+equation~\eqref{eq:stable} applies. Project the chosen prefix coefficients
+at $j$ to $T$, set blocks $j+1,\ldots,i-1$ to zero, and activate block $i$.
+There is at least one intervening $P$, so these are exactly coefficients
+realizing $(t,0)A_i$, and their support is at most $L+1$. A long stable
+phase therefore incurs only one additional block.
+
+A useful invariant is: at the start of a phase of active dimension $t$,
+support at most $2t-1$ spans the row space; within the phase, $2t$ suffices.
+It holds initially since $S_1$ is $1$-concentrated. If $N_1\ne0$, then
+$T_1\ne0$ by~\eqref{eq:schur}. A growth step from dimension $t$ needs at
+most $2t+1\le2\dim T_{\mathrm{new}}-1$, establishing the invariant.
+Since $\dim T_i\le r$, the final bound is $2r$. If $N_1=0$, the entire
+product is zero and the assertion is immediate.
+\end{proof}
+
+\begin{corollary}[Full matrix concentration]\label{cor:matrix}
+Under the hypotheses of Theorem~\ref{thm:normalized}, the full matrix
+product $A_1\cdots A_m$ is $2wr$-concentrated.
+\end{corollary}
+\begin{proof}
+Use the row $[e_1^T,\ldots,e_w^T]$ of length $w^2$ and factors
+$I_w\otimes A_i$. Their common constant term is a projector of rank $wr$,
+conjugate by a fixed permutation to a standard projector. The output row
+is the row-wise vectorization of the full matrix product. Apply
+Theorem~\ref{thm:normalized} with rank $wr$.
+\end{proof}
+
+The distinction between rows and full matrices is essential: separately
+proving a $2r$ bound for each row does not establish a $2r$ bound for the
+joint matrix coefficient space.
+
+\begin{proposition}[Sharpness of the row support bound]
+For every $r\ge1$, width $r+1$ admits an example satisfying the normalized
+hypotheses whose scalar output is a monomial of support $2r$.
+\end{proposition}
+\begin{proof}
+Let $q=r+1$ and $P=\operatorname{diag}(I_r,0)$. Take, for $j=1,\ldots,r$,
+the consecutive factors
+\[
+ P+x_{2j-1}E_{qj},\qquad P+x_{2j}E_{jq}.
+\]
+Each has generic rank $r$ and constant term $P$. In the scalar contraction
+from row $e_q^T$ to column $e_q$, the only surviving path alternates through
+the active channels $1,\ldots,r$ and the inactive channel $q$. Its weight
+is $x_1\cdots x_{2r}$. Any omitted transition either leaves the inactive
+channel across a zero diagonal entry or strands the path in an active
+channel that cannot reach the final inactive endpoint.
+\end{proof}
+
+\section{Rank profiles imply concentration}
+
+\begin{lemma}[Constant gauges]\label{lem:gauge}
+Suppose constant matrices $B_1,\ldots,B_k$ have rank $r$ and every adjacent
+product $B_iB_{i+1}$ has rank $r$. There are invertible matrices
+$T_0,\ldots,T_k$ such that
+\[
+ T_{i-1}^{-1}B_iT_i=\operatorname{diag}(I_r,0).
+\]
+In particular, the full product has rank $r$.
+\end{lemma}
+\begin{proof}
+Choose an ordered basis for a complement to $\ker B_k$ at the last cut.
+Propagate these active basis vectors backwards through the maps $B_i$.
+At an internal cut the active space is $\im B_{i+1}$, transverse to
+$\ker B_i$ because $\rank(B_iB_{i+1})=r$. Complete each active basis by a
+basis of $\ker B_i$. Complete the left endpoint basis arbitrarily. In these
+bases every map is the stated projector. Their product is the same
+projector.
+\end{proof}
+
+For a positive integer $q$ and an allowed-rank set
+$\mathcal R\subseteq\{1,\ldots,q\}$ containing $q$, define constants by
+descending rank:
+\begin{align}
+ a_{q,\mathcal R}(q)&=q^2-1,\label{eq:base}\tag{4.1}\\
+ a_{q,\mathcal R}(s)&=2qs\left(2\max_{t\in\mathcal R,\ t>s}
+              a_{q,\mathcal R}(t)+1\right),\quad s<q.
+ \label{eq:recurrence}\tag{4.2}
+\end{align}
+
+\begin{theorem}[Rank-profile concentration]\label{thm:profile}
+Let $M=A_1(X_1)\cdots A_m(X_m)$ have width $q$. Suppose every contiguous
+interval product has the same generic rank as its constant specialization,
+and every nonzero interval rank belongs to $\mathcal R$. If $M$ has rank
+$s>0$, it is $a_{q,\mathcal R}(s)$-concentrated. If $M$ has rank zero,
+it is the zero matrix polynomial.
+\end{theorem}
+\begin{proof}
+Induct downwards through $\mathcal R$ on the rank of the full product.
+If $s=q$, every factor has invertible constant term. Constant gauges make
+all these terms the identity. The prefix matrix coefficient spaces are
+nested subspaces of $\Mat_q(\F)$, initially spanned by $I_q$. At a strict
+dimension increase, multiplying a prior coefficient spanning set adds at
+most one active block. At a stable step the old coefficients remain actual
+coefficients by choosing the identity constant. There are at most $q^2-1$
+increases, proving~\eqref{eq:base}.
+
+Suppose $s<q$. Starting from the left, take a shortest prefix of rank $s$,
+then repeat if the remaining product still has rank $s$. Write the chosen
+blocks as $B_j=C_jA_{e_j}$, where $C_j$ is the prefix before the final
+original factor. Its rank is greater than $s$, unless it is empty, in
+which case it is the identity. The remaining tail $T$ also has rank
+greater than $s$, or is empty. This process is valid because the rank of
+any subinterval is at least the rank of the full product.
+
+Every interval inside $C_j$ or $T$ has rank greater than $s$. By induction,
+these products are concentrated at
+$b=\max_{t\in\mathcal R,t>s}a_{q,\mathcal R}(t)$.
+Absorb $T$ into the final $B_j$. Each resulting macroblock is
+$(2b+1)$-concentrated and has both generic and constant rank $s$.
+Every adjacent macroblock product has rank $s$: it contains a rank-$s$
+factor and is an interval of a full rank-$s$ product. The constant rank is
+also $s$ by hypothesis.
+
+Lemma~\ref{lem:gauge} simultaneously normalizes the macroblock constants.
+Corollary~\ref{cor:matrix} concentrates their product in at most $2qs$
+macroblocks. Lemma~\ref{lem:composition} replaces each macroblock coefficient
+by original coefficients, giving $2qs(2b+1)$ and proving the recurrence.
+\end{proof}
+
+\section{A universal rank-preserving SV shift}
+
+Choose distinct $a_1,\ldots,a_n\in\F$ and let
+\[
+ L_i(y)=\prod_{j\ne i}\frac{y-a_j}{a_i-a_j},\qquad
+ \SV_{\ell,i}(y,z)=\sum_{j=1}^{\ell}z_jL_i(y_j).
+\]
+The generator is additive in disjoint seed pairs:
+$\SV_a+\SV_b=\SV_{a+b}$ after relabeling. It includes the zero vector.
+
+\begin{lemma}[Support hitting]\label{lem:sv}
+Over any coefficient-field extension of $\F$, a polynomial with a nonzero
+monomial of support at most $\ell$ remains nonzero under $\SV_\ell$.
+\end{lemma}
+\begin{proof}
+Set the corresponding $y_j$ to the abscissas of its support, and set unused
+$z_j$ to zero. This leaves those coordinates as independent variables and
+sets all other coordinates to zero. The chosen coefficient remains nonzero.
+\end{proof}
+
+For $1\le r<w$, put $W_r=\binom wr$ and
+\[
+ \mathcal R_r=\left\{\binom sr:r+1\le s\le w\right\},\qquad
+ M_r=\max_{s\in\mathcal R_r}a_{W_r,\mathcal R_r}(s),\qquad
+ h_r=2M_r+2.
+\]
+Finally define
+\begin{equation}\label{eq:k}
+ k(w)=1+\sum_{r=1}^{w-1}h_r,\qquad k(1)=1.
+\end{equation}
+
+\begin{theorem}[Universal interval rank preservation]\label{thm:preserve}
+For every product of width-$w$ univariate polynomial matrices on distinct
+variables, in any order, $\SV_{k(w)}$ preserves the generic rank of every
+contiguous interval, over the rational-function field in its seeds.
+The same assertion allows constant factors without variables.
+\end{theorem}
+\begin{proof}
+Construct $G_w,G_{w-1},\ldots,G_1$ so that $G_r$ preserves all interval ranks
+at least $r$. Take $G_w=\SV_1$. A full-rank interval consists of invertible
+univariate factors and invertible constant factors. A nonzero univariate
+determinant stays nonzero under its coordinate $z_1L_i(y_1)$, so this base
+case holds over $\F(y_1,z_1)$.
+
+Suppose $G_{r+1}$ has been constructed. Work over its seed field $K$ and
+translate the original variables by $G_{r+1}$. The residual variables
+still occur in disjoint layers. Fix any interval of generic rank exactly
+$r$. Partition it greedily as
+\[
+ B_1\cdots B_qT,\qquad B_j=C_jA_{e_j},
+\]
+where each $B_j$ is a shortest rank-$r$ prefix and $T$ has rank greater
+than $r$, or is empty. Every interval inside each $C_j$ and inside $T$
+has rank greater than $r$, hence that rank is preserved by the previous
+shift at residual zero.
+
+Take the $r$th exterior power. Its dimension is $W_r$, multiplication is
+preserved, and the exterior power of a rank-$s$ matrix has rank
+$\binom sr$ over every field. Consequently the exterior interval products
+inside $C_j$ or $T$ satisfy the hypotheses of
+Theorem~\ref{thm:profile} with allowed ranks $\mathcal R_r$. Each of
+$\bigwedge^r C_j$ and $\bigwedge^r T$ is $M_r$-concentrated. A single
+factor $\bigwedge^r A_{e_j}$ is univariate and thus $1$-concentrated.
+
+Lemma~\ref{lem:composition} gives concentration bounds
+\[
+\begin{array}{c|ccc}
+\text{product}&\bigwedge^r B_j&\bigwedge^r(B_jB_{j+1})&\bigwedge^r(B_qT)\\
+\hline
+\text{bound}&M_r+1&2M_r+2&2M_r+1.
+\end{array}
+\]
+Each underlying product has generic rank $r$. Some exterior entry is
+therefore nonzero, and concentration gives such an entry with a nonzero
+coefficient of support at most $h_r$. Lemma~\ref{lem:sv} shows that it
+survives a fresh $\SV_{h_r}$. Thus, at the new specialization, each $B_j$
+has rank $r$, each adjacent pair has rank $r$, and $B_qT$ has rank $r$.
+
+These statements imply that the entire interval still has rank $r$.
+For example, write $B_j=U_jV_j$ with $U_j,V_j$ of full column and row
+rank $r$. All transfers $V_jU_{j+1}$ are invertible, and $V_qT$ has full
+row rank. Their product has rank $r$.
+
+Set $G_r=G_{r+1}+\SV_{h_r}$. Already preserved minors of higher rank
+cannot become identically zero, since setting the new $z$ seeds to zero
+recovers the previous map. Specialization cannot raise rank. This proves
+the induction. The same universal map works for each interval and each
+ROABP; the interval-dependent greedy partition is only a proof device.
+Additivity of SV gives $G_1=\SV_{k(w)}$.
+\end{proof}
+
+\begin{remark}[The tail is not absorbed in this proof]
+The concentration proof in Section 4 may absorb its tail because it
+already assumes preservation of every interval rank. In the construction
+above, doing so would require a bound for $B_{q-1}B_qT$ with three
+higher-rank runs. Instead we preserve $B_qT$ separately. Its image equals
+$\im B_q$, and injectivity of the preceding transfers gives the required
+full rank. This distinction prevents a missing term in the support budget.
+\end{remark}
+
+\section{The proposed hitting set and its size}
+
+\begin{theorem}[Candidate main theorem]\label{thm:main}
+Let $f$ be a nonzero $n$-variate polynomial of individual degree at most
+$d$, computed by a width-at-most-$w$ ROABP in an arbitrary unknown order.
+Then
+\[
+ f\bigl(\SV_{k(w)}\bigr)\not\equiv0.
+\]
+For $w\ge2$, $k(w)\le2^{4w^2}$ is a valid coarse bound. If the field
+contains a set $S$ of more than $n^2d$ elements and the $n$ abscissas,
+evaluating all $2k(w)$ seeds on $S$ produces a hitting set of size at most
+\[
+ |S|^{2k(w)}=(n^2d+1)^{2^{O(w^2)}}
+\]
+when a set of the indicated size is available. This is polynomial in
+$n,d$ for every fixed $w$.
+\end{theorem}
+\begin{proof}
+Pad the scalar product $uA_1\cdots A_nv$ by constant matrices
+$e_1u$ and $ve_1^T$. The resulting full product is $fE_{11}$, of generic
+rank one. Theorem~\ref{thm:preserve} preserves this rank and therefore
+the nonzeroness of $f$.
+
+For the quantitative bound, an allowed-rank recurrence at width $W_r$
+has at most $w-r$ levels. Writing $a+1$ avoids the additive term and gives
+\[
+ M_r+1\le(5W_r^2)^{w-r}\le(5\cdot4^w)^{w-r}.
+\]
+Therefore $k(w)\le1+2\sum_{r=1}^{w-1}(5\cdot4^w)^{w-r}\le2^{4w^2}$
+for $w\ge2$. The exact recurrence is much smaller than this coarse bound.
+
+Each coordinate of SV has total seed degree at most $n$, while $f$ has
+total degree at most $nd$. Thus $f(\SV)$ has degree at most $n^2d$.
+The elementary grid lemma for nonzero polynomials supplies a nonzero
+evaluation on $S^{2k(w)}$.
+\end{proof}
+
+The field issue is substantive: a formal polynomial such as $x^q-x$ is
+nonzero over $\F_q$ yet vanishes at all base-field points. Extension-field
+queries must therefore be explicitly allowed if the base field is too
+small. No statement here converts a base-field-only oracle into an
+extension-field oracle. Over characteristic zero, the construction can
+use ordinary distinct rational abscissas and seed values.
+
+\section{A geometric refinement: \texorpdfstring{$2^{O(w\log w)}$}{2 to O(w log w)} seed pairs}
+\label{sec:geometry}
+
+The preceding proof uses exterior powers to turn rank conditions into
+scalar nonvanishing. Its loss comes from applying a linear coefficient-space
+lemma at the exterior dimension. We can avoid this loss by preserving a
+geometric object that controls every homogeneous polynomial in the matrix
+entries simultaneously. This section gives the stronger candidate bound.
+The earlier proof is retained as an independent, purely linear-algebraic
+route to the qualitative constant-width conclusion.
+
+Work over an algebraic closure $k$ of the current coefficient field. For a
+polynomial matrix map $M(X)$, define its scalar-saturated image closure
+\[
+ \mathcal C(M)=\overline{\{\lambda M(x):\lambda\in k,\ x\in k^{|X|}\}}.
+\]
+The closure is Zariski closure. In particular, over a finite coefficient
+field we do \emph{not} take only its finite set of rational points. The
+variety $\mathcal C(M)$ is an irreducible affine cone, being the closure of
+the image of an affine space under a polynomial map. The auxiliary scalar
+$\lambda$ is not an original variable block and incurs no support charge.
+
+Call a restriction $X_j=0$ outside a subset $J$ \emph{cone preserving} if
+it leaves $\mathcal C(M)$ unchanged. The selected $J$ may depend on the
+matrix product; no black-box algorithm must find it.
+
+\begin{lemma}[Consequences of a cone-preserving restriction]
+\label{lem:cone-composition}
+If $J$ is cone preserving for $M$, every nonzero homogeneous polynomial
+function $p(M)$ remains nonzero after that restriction. In particular,
+every exterior-power matrix $\bigwedge^r M$ is $|J|$-concentrated in the
+original blocks. Cone-preserving restrictions compose across disjoint
+factors and across disjoint macroblocks, with the same support addition
+and multiplication rules as Lemma~\ref{lem:composition}.
+\end{lemma}
+\begin{proof}
+A homogeneous polynomial vanishes on an image if and only if it vanishes
+on its scalar-saturated closure. This proves the first assertion. A linear
+functional on the entries of $\bigwedge^r M$ is a homogeneous polynomial
+of degree $r$ in the entries of $M$. If it vanishes on all coefficients
+of the restriction, it vanishes on the full matrix polynomial. Duality
+of finite-dimensional vector spaces therefore gives the coefficient-span
+assertion.
+
+For composition, products of dense subsets are dense in the corresponding
+products of varieties, and multiplication of matrices is a polynomial map.
+Independent scalar amplitudes in the factors multiply to one scalar
+amplitude of the full product. Thus replacing each factor image by a
+cone-dense restricted image preserves the product cone. The same reasoning
+applies after unselected macroblocks have been fixed at zero.
+\end{proof}
+
+\begin{lemma}[Invertible constants]\label{lem:cone-invertible}
+A width-$w$ product with invertible constant factors has a cone-preserving
+restriction to at most $w^2-1$ blocks.
+\end{lemma}
+\begin{proof}
+Normalize the constants to $I_w$ and let $M_i=A_1\cdots A_i$, $M_0=I_w$.
+The cones $\mathcal C(M_i)$ are nested, since the current block may be set
+to zero. They are irreducible, live in a space of dimension $w^2$, and
+start at the line $kI_w$, of dimension one. A proper inclusion of
+irreducible closed varieties increases dimension. At a stable step keep
+the previous restriction. At a growth step retain the new block as well;
+the multiplication morphism and density show that this suffices. There
+are at most $w^2-1$ growth steps.
+\end{proof}
+
+\begin{lemma}[Normalized constant-rank cones]\label{lem:cone-normalized}
+Under the hypotheses of Theorem~\ref{thm:normalized}, the full matrix
+product has a cone-preserving restriction to at most $2wr$ blocks.
+\end{lemma}
+\begin{proof}
+Put $M_i=A_1\cdots A_i$, let $Q_i$ be its first $r$ columns, and set
+$\mathcal S_i=\mathcal C(M_i)$, $V_i=\mathcal C(Q_i)$. For $i\ge2$,
+\[
+ V_{i-1}\subseteq V_i,\qquad [V_{i-1},0]\subseteq\mathcal S_i.
+\]
+The $V_i$ are irreducible cones in $\Mat_{w\times r}$, so their dimensions
+are at most $wr$. They have dimension at least one because $Q_i(0)$ is
+the nonzero first-$r$-column part of $P$.
+
+We prove the geometric stable-step identity. Suppose
+$V_i=V_{i-1}=V$ and $[V,0]\subseteq\mathcal S_{i-1}$. Then
+\begin{equation}\label{eq:geometric-stable}
+ \mathcal S_i=
+ \overline{\{[T,0]A_i(a):T\in V,\ a\in k^{|X_i|}\}}.
+\end{equation}
+Use the Schur factorization~\eqref{eq:schur} on the nonempty open set
+$U$ where $E_i$ is invertible. For every $H\in\mathcal S_{i-1}$ and
+$a\in U$, the active core of $HA_i(a)$ belongs to $V$, by stability
+and continuity from the actual prefix image. The output equals this
+core times $[I,C_i(a)]$.
+
+Conversely, baseline inclusion implies $VE_i(a)\subseteq V$ for each
+fixed $a\in U$. Right multiplication by $E_i(a)$ is an invertible
+linear map, so $VE_i(a)$ is a closed irreducible variety of the same
+dimension as $V$. Inclusion forces equality. Hence the baseline outputs
+at this fixed $a$ are precisely
+\[
+ \{TE_i(a)[I,C_i(a)]:T\in V\}
+   =\{T[I,C_i(a)]:T\in V\}.
+\]
+This gives both inclusions in~\eqref{eq:geometric-stable} after taking
+closures. Restricting the current parameters to $U$ loses no image closure:
+it is a dense open subset, and the full parameter map is polynomial.
+
+Partition the indices into phases where $V_i$ is constant. At a phase
+start $j$, retain a cone-preserving restriction of $M_j$ using $L$ blocks.
+The next step costs at most $L+1$. At a later step $i\ge j+2$, project
+that restricted image to its active core, set all intervening blocks to
+zero, and retain block $i$. An intervening $P$ gives the baseline in
+\eqref{eq:geometric-stable}, so this restriction is cone preserving and
+still costs at most $L+1$.
+
+A strict active-cone growth raises the next phase-start budget by at
+most two. The first product costs one block, and there are at most
+$wr-1$ later dimension increases. Thus $1+2(wr-1)+1=2wr$ blocks suffice.
+\end{proof}
+
+\begin{lemma}[Intrinsic-rank bound]\label{lem:intrinsic-cone}
+The normalized cone restriction in Lemma~\ref{lem:cone-normalized} can
+be chosen using at most $2r^2$ blocks, independently of the ambient width.
+\end{lemma}
+\begin{proof}
+First consider a fixed $a\times w$ initial matrix $R$ with nonzero active
+part, followed by normalized rank-$r$ factors. The preceding phase proof
+applies to rectangular output matrices. Its active cones lie in
+$\Mat_{a\times r}$ and start at the nonzero line spanned by the active
+part of $R$, with support budget zero. There are at most $ar-1$ strict
+growths. Paying at most two per growth and one for the final stable
+phase gives $2ar-1$ blocks. The first stable step is paid separately,
+so arbitrary passive columns of $R$ cause no difficulty.
+
+Now retain the entire first original block $X_1$ and work over
+$K=k(X_1)$. The first $r$ columns $U_1$ of $A_1$ have full column rank,
+and the rank hypothesis gives $A_1=U_1R_1$, where $R_1=[I_r,C_1]$ is
+a fixed $r\times w$ matrix over $K$. The rectangular statement selects
+at most $2r^2-1$ of the remaining blocks while preserving the output cone
+over an algebraic closure of $K$. Left multiplication by $U_1$ preserves
+this equality. Including $X_1$ gives $2r^2$ blocks.
+
+For completeness, descent to $k$ follows from homogeneous identities.
+If a homogeneous polynomial in the full matrix entries vanishes on the
+selected restriction, it vanishes there over $K$, hence on the unrestricted
+cone over $K$, and hence as a polynomial identity in all original
+variables over $k$. The subset is common to every such polynomial.
+Homogeneous vanishing ideals determine closed cones, proving the claim.
+\end{proof}
+
+Define constants at the original width by
+\begin{align*}
+ D_w(w)&=w^2-1,\\
+ D_w(r)&=2r^2\left(2\max_{r<s\le w}D_w(s)+1\right),\qquad 1\le r<w.
+\end{align*}
+\begin{theorem}[Rank-profile cone preservation]\label{thm:cone-profile}
+If every contiguous interval of a width-$w$ product preserves its generic
+rank at zero, a nonzero full product of rank $r$ has a cone-preserving
+restriction to at most $D_w(r)$ blocks.
+\end{theorem}
+\begin{proof}
+Use the same downward rank induction and the same greedy blocks
+$B_j=C_jA_{e_j}$ as in Theorem~\ref{thm:profile}. The full-rank case is
+Lemma~\ref{lem:cone-invertible}. The higher-rank prefixes and tail have
+cone-preserving restrictions by induction. Absorbing the tail into the
+last macroblock costs at most $2\max_{s>r}D_w(s)+1$ original blocks
+per macroblock. Constant gauges and Lemma~\ref{lem:intrinsic-cone}
+select at most $2r^2$ macroblocks. Lemma~\ref{lem:cone-composition} then
+gives exactly the displayed recurrence.
+\end{proof}
+
+\begin{theorem}[Improved candidate generator]\label{thm:improved}
+Let
+\[
+ k_{\mathrm{geo}}(w)=1+\sum_{r=1}^{w-1}
+       \left(2\max_{r<s\le w}D_w(s)+2\right).
+\]
+Then $\SV_{k_{\mathrm{geo}}(w)}$ preserves every interval rank of every
+unknown-order width-$w$ ROABP matrix product and hits every nonzero scalar
+ROABP of that width. Moreover
+\[
+ k_{\mathrm{geo}}(w)\le4^{w-1}(w!)^2=2^{O(w\log w)}\quad(w\ge2),
+ \qquad |\mathcal H|\le(n^2d+1)^{2^{O(w\log w)}}.
+\]
+The variant $t+\SV_{k_{\mathrm{geo}}(w)-1}$ uses one fewer seed variable.
+\end{theorem}
+\begin{proof}
+Repeat the descending-rank construction of Theorem~\ref{thm:preserve}.
+At rank $r$, every interval inside the higher-rank runs $C_j$ and tail
+$T$ has already had its rank preserved. Theorem~\ref{thm:cone-profile}
+and Lemma~\ref{lem:cone-composition} concentrate \emph{all} their
+$r$th exterior entries at the original-width level
+$\max_{s>r}D_w(s)$. The local pair and tail bounds are therefore
+$2\max_{s>r}D_w(s)+2$, with no exterior-dimension substitution.
+The same block-chain argument completes the induction.
+
+For $w\ge2$, the $D_w(r)$ increase as $r$ decreases, and
+\[
+ D_w(r)+1\le4r^2\bigl(D_w(r+1)+1\bigr).
+\]
+Consequently
+\[
+ D_w(s)+1\le4^{w-s}\left(\frac{(w-1)!}{(s-1)!}\right)^2w^2.
+\]
+Summing from $s=2$ to $w$ and using a geometric upper bound gives
+\[
+ k_{\mathrm{geo}}(w)\le1+\frac83\,4^{w-2}(w!)^2
+                  \le4^{w-1}(w!)^2\quad(w\ge2).
+\]
+The finite-grid argument
+uses the original polynomial $f$, of degree at most $nd$, exactly as
+before. All intermediate seeds remain symbolic; their ranks are not
+preserved by prematurely fixing a numerical seed assignment.
+\end{proof}
+
+This geometric strengthening uses only elementary facts about irreducible
+image closures and dimension, in addition to the previous matrix
+factorizations. Its crucial new assertion is preservation of the entire
+image cone under one small coordinate restriction. It is stronger than
+linear coefficient concentration and is what justifies applying the same
+width bound to minors of arbitrary order.
+
+
+\section{Rational evaluations and the explicit query bounds}
+\label{sec:rational}
+
+The polynomial form of SV has degree $n-1$ in each interpolation seed.
+A rational reparameterization removes this extra factor from the grid
+degree. This is also a direct connection with the rational-function
+evaluation framework of Hu, van Melkebeek, and Morgan~\cite{HMM24}.
+
+Write $P(T)=\prod_i(T-a_i)$ and $d_i=P'(a_i)\ne0$. Then
+\[
+ L_i(y)=\frac{P(y)}{d_i(y-a_i)}.
+\]
+All uses of the initial common shift $t$ remain valid if coordinate $i$
+is shifted by $c_it$ for arbitrary nonzero constants $c_i$: a nonzero
+univariate polynomial remains nonzero at $c_it$. Thus the proved variants
+also hold for $c_it+\SV_m$.
+
+Apply this to the ROABP polynomial $g(x)=f(d_1x_1,\ldots,d_nx_n)$ with
+$c_i=1/d_i$. Reparameterize $z_jP(y_j)$ as an independent residue
+$\beta_j$; this is an invertible rational change of parameters over
+$\F(y)$. We obtain the unweighted rational generator
+\begin{equation}\label{eq:rational-generator}
+ H_i(t,\beta,y)=t+\sum_{j=1}^{m}\frac{\beta_j}{y_j-a_i}.
+\end{equation}
+Whenever $c_it+\SV_m$ has the preceding hitting property, so does $H$.
+Its values are evaluations, at the abscissas $a_i$, of a univariate
+rational function with numerator and denominator degrees at most $m$.
+
+\begin{lemma}[Grid degree after clearing poles]\label{lem:rational-grid}
+Let $f$ have individual degree at most $d$ and suppose $f(H)\not\equiv0$.
+Then
+\[
+ N(t,\beta,y)=
+   \left(\prod_{i=1}^n\prod_{j=1}^{m}(y_j-a_i)^d\right)f(H)
+\]
+is a nonzero polynomial of degree at most $nd$ in \emph{each} of its
+$2m+1$ seed variables. If $S,Y\subseteq\F$ have size $nd+1$ and
+$Y\cap\{a_1,\ldots,a_n\}=\varnothing$, the evaluations on
+$S^{m+1}\times Y^m$ are all defined and include a nonzero value of $f(H)$.
+\end{lemma}
+\begin{proof}
+The denominator-clearing product is nonzero, so $N$ is nonzero. For a
+fixed pole variable $y_j$, each coordinate has the form
+$A_i+\beta_j/(y_j-a_i)$ with $A_i$ independent of $y_j$. A monomial
+$\prod_i x_i^{e_i}$ of $f$, with $0\le e_i\le d$, becomes after clearing
+these denominators a polynomial of $y_j$-degree at most
+\[
+ \sum_i e_i+\sum_i(d-e_i)=nd.
+\]
+The denominators involving other poles do not change this degree. The
+degrees in $t$ and in each residue are at most $\sum_i e_i\le nd$.
+The individual-degree grid lemma gives a nonzero value of $N$. All
+denominators are nonzero on the chosen grid, so this is a nonzero value
+of $f(H)$.
+\end{proof}
+
+
+\begin{corollary}[Rational finite grid for the elementary construction]
+Let $k(w)$ be defined in~\eqref{eq:k}. For the class in Theorem~\ref{thm:main}, the map
+\[
+ H_i=t+\sum_{j=1}^{k(w)-1}\frac{\beta_j}{y_j-a_i}
+\]
+is a hitting map. If the evaluation field has at least $nd+n+1$ elements, enumerating $nd+1$ values for every seed, with pole seeds avoiding all abscissas, gives at most $(nd+1)^{2k(w)-1}$ queries.
+\end{corollary}
+\begin{proof}
+The initial $\SV_1$ in Theorem~\ref{thm:preserve} is used only to preserve nonzero univariate determinants. It can therefore be replaced by the weighted common shift $(c_it)_i$ for any nonzero constants $c_i$. Every subsequent stage of that proof is unchanged. The weighted-shift rescaling above and Lemma~\ref{lem:rational-grid} give the assertion.
+\end{proof}
+Over $\mathbb Q$ one may take $a_i=i-1$, the amplitude and common-shift grid $\{0,\ldots,nd\}$, and the pole grid $\{n,\ldots,n+nd\}$. Query coordinates have bit length $O(k(w)\log(nd+n+1))$. The enumeration does not use the unknown variable order, the matrices, their ranks, or their coefficients.
+
+
+\begin{corollary}[The improved finite-grid bound]\label{cor:focused-main}
+Let $f\ne0$ have individual degree at most $d$ and have a width-at-most-$w$
+ROABP in some variable order, which need not be given. Put
+$K=k_{\mathrm{geo}}(w)$, with $K=1$ for $w=1$. Then
+\[
+ f\left(t+\sum_{j=1}^{K-1}\frac{\beta_j}{y_j-a_1},\ldots,
+         t+\sum_{j=1}^{K-1}\frac{\beta_j}{y_j-a_n}\right)\ne0
+\]
+as a rational function of independent seeds. If the evaluation field has
+at least $nd+n+1$ elements, the indicated grids give at most
+\[
+ (nd+1)^{2K-1},\qquad K\le4^{w-1}(w!)^2=2^{O(w\log w)}
+ \quad(w\ge2)
+\]
+oracle queries. This is polynomial in $n,d$ for each fixed $w$. It is an
+XP-type bound in the width parameter, not a claim of fixed-parameter
+tractability with a width-independent polynomial exponent.
+\end{corollary}
+\begin{proof}
+The only use of the first seed pair in Theorem~\ref{thm:improved} is the
+full-rank base case of Theorem~\ref{thm:preserve}. Replace it by the weighted
+common shift as above, leaving every later rank-descent step unchanged.
+Apply the rational rescaling and Lemma~\ref{lem:rational-grid}.
+\end{proof}
+
+\section{Two direct algebraic consequences}
+These consequences require no additional classification or algorithmic
+closure property. They are recorded as implications of the proposed main
+theorem, without a separate novelty claim.
+
+\begin{corollary}[Factors and products of factors]\label{cor:factors}
+The formal rational map in Corollary~\ref{cor:focused-main} is nonzero on
+every nonzero polynomial factor of a nonzero width-at-most-$w$ ROABP.
+It is also nonzero on any product of such factors, even if the parent
+ROABPs use different variable orders. For a factor or product of known
+individual degree at most $d'$, Lemma~\ref{lem:rational-grid} gives the
+corresponding finite grid with $nd'+1$ values per seed.
+\end{corollary}
+\begin{proof}
+Substitution by the rational map is an algebra homomorphism from
+$\F[X]$ into the field of rational functions in the seeds. If $F=gh$ is
+a nonzero parent polynomial, then $F(H)=g(H)h(H)\ne0$ by the main theorem,
+so both factors remain nonzero. Products of nonzero rational functions
+remain nonzero. No bound on the ROABP width of a factor is asserted or
+needed. The finite grid uses the degree of the polynomial being tested,
+not a degree bound silently inherited from an unspecified parent.
+\end{proof}
+
+\begin{corollary}[A degree-unrestricted kernel-ideal lower bound]
+Fix distinct abscissas and let $I_m$ be the kernel of substitution
+$x_i\mapsto t+\sum_{j=1}^m\beta_j/(y_j-a_i)$ into the rational-function
+field. If $m\ge k_{\mathrm{geo}}(w)-1$, then $I_m$ contains no nonzero
+polynomial with a width-at-most-$w$ ROABP in any variable order, regardless
+of its individual degree. Consequently every nonzero $f\in I_m$ has
+ROABP width
+\[
+ \Omega\!\left(\frac{\log(m+2)}{\log\log(m+3)}\right)
+\]
+in every order, as $m$ grows. When $n>2m+1$, the ideal is nonzero.
+\end{corollary}
+\begin{proof}
+If more poles are available than required by the main theorem, set their
+residues to zero. A nonzero composition on that specialization cannot
+be identically zero before specialization. Thus a nonzero width-$w$
+element in the kernel would force $m<k_{\mathrm{geo}}(w)-1$.
+The upper bound $k_{\mathrm{geo}}(w)\le4^{w-1}(w!)^2$ implies
+$\log(m+2)=O(w\log(w+1))$, giving the stated inversion. Finally the target
+field has transcendence degree $2m+1$; if there are more source variables,
+their images are algebraically dependent. This last assertion does not
+provide an explicit kernel element or strengthen the width lower bound.
+\end{proof}
+
+\section{What an external reviewer needs to check}
+The mathematical dependencies are fully contained above. The crucial checks are: the stable-step identity in the normalized row lemma; joint full-matrix concentration through vectorization; simultaneous constant gauges; rank-profile induction on shortest rank-drop prefixes; and the three separate local witnesses in the rank descent, including its final tail. At every descent stage old seeds are retained as coefficient-field parameters. No numerical choice of those seeds occurs before the final grid. The variable-order-dependent partition is used only inside the correctness proof.
+
+The elementary qualitative claim does not depend on the geometric section. The improved width dependence does use that section, especially its stable-step equality and its descent from a generic first block to a single coordinate restriction over the original field. Neither argument depends on the weighted sharp-row theorem, any width-three invariant classification, or the separate critique of a competing preprint. Those separate results are not certified by checking this manuscript.
+\begin{thebibliography}{9}
+\bibitem{AGKS15} M. Agrawal, R. Gurjar, A. Korwar, and N. Saxena.
+\emph{Hitting-sets for ROABP and sum of set-multilinear circuits}.
+SIAM Journal on Computing, 2015. Preprint:
+\url{https://arxiv.org/abs/1406.7535}.
+\bibitem{GKS17} R. Gurjar, A. Korwar, and N. Saxena.
+\emph{Identity Testing for Constant-Width, and Any-Order, Read-Once
+Oblivious Arithmetic Branching Programs}. Theory of Computing 13(2), 2017.
+\url{https://theoryofcomputing.org/articles/v013a002/}.
+\bibitem{GG20} Z. Guo and R. Gurjar.
+\emph{Improved Explicit Hitting-Sets for ROABPs}. APPROX/RANDOM 2020.
+\url{https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2020.4}.
+\bibitem{HMM24} I. Hu, D. van Melkebeek, and A. Morgan.
+\emph{Polynomial Identity Testing via Evaluation of Rational Functions}.
+Theory of Computing 20(1), 2024.
+\url{https://doi.org/10.4086/toc.2024.v020a001}.
+\bibitem{SS26} S. Singh and V. Singh.
+\emph{An Algebraic Rigidity Framework for Order-Oblivious Deterministic
+Black-Box PIT of ROABPs}. arXiv:2602.13449v1, 13 February 2026.
+\url{https://arxiv.org/abs/2602.13449}.
+\end{thebibliography}
+\end{document}
