@@ -181,9 +181,9 @@ vertex v define
 $$
 \begin{aligned}
  M_v&=\max_{\substack{b\text{ a bin}\\b\in T_v}}
-           \{-\tau_b-\operatorname{dist}_{\bar c}(v,b)\},\\
+           \{-\tau_b-\mathrm{dist}_{\bar c}(v,b)\},\\
  F_v&=\max_{\substack{a,b\text{ bins in }T_v\\a\text{ ancestor of }b}}
-           \{\sigma_a-\tau_b-\operatorname{dist}_{\bar c}(a,b)\}.
+           \{\sigma_a-\tau_b-\mathrm{dist}_{\bar c}(a,b)\}.
 \end{aligned}
 \tag{9}
 $$

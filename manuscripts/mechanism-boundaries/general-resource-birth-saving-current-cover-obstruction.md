@@ -6,7 +6,7 @@ This note examines a proposed refinement of conservative completion.
 For a candidate c with owner p, call a used resource j problematic when
 
 $$
-p\in\operatorname{cl}_{R_j}(X_j\cup M_j).
+p\in\mathrm{cl}_{R_j}(X_j\cup M_j).
 $$
 
 Only at those resources, mark all unmarked matching records using j.

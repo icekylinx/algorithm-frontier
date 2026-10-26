@@ -7,7 +7,7 @@ capacities and all explicitly listed nonnegative routing budgets
 are respected exactly. The deterministic time is
 
 $$
-\Gamma(1/\epsilon)^c\operatorname{poly}(H),
+\Gamma(1/\epsilon)^c\mathrm{poly}(H),
        \qquad \Gamma(R)=\frac{R^R}{(R-1)^{R-1}},
  \tag{S1}
 $$

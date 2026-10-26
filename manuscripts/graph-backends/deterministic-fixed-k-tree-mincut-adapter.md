@@ -59,7 +59,7 @@ polynomially bounded integers when the input capacities are so bounded.
 
 Thus an exact maxflow factor $E_{\rm flow}(N)$, monotone in a common
 size bound $N$, gives time
-$(m+n)E_{\rm flow}(N)\operatorname{polylog}N$ for fixed $k$.
+$(m+n)E_{\rm flow}(N)\mathrm{polylog}N$ for fixed $k$.
 In the Gomory--Hu application $k=16$, so all logarithmic exponents
 are fixed constants.
 
@@ -116,7 +116,7 @@ Every call also computes an exact $(s,c)$-mincut when $s\ne c$,
 updating $\mu(c)$. A set-terminal mincut is implemented by
 contraction or by sufficiently large common-capacity forcing edges.
 The isolating-cut construction is a deterministic reduction to maxflow
-on total size $(m+n)\operatorname{polylog}n$.
+on total size $(m+n)\mathrm{polylog}n$.
 
 ### 3.1 The two uncrossing facts used below
 
@@ -285,7 +285,7 @@ $T^+$ from (7), with parameter $k-1$, and combine its answers.
 Only after these calls finish, choose
 
 $$
-z\in\arg\max_{v\in V(T)\setminus\{s,c\}}\mu(v),
+z\in\mathrm{arg}\,\max_{v\in V(T)\setminus\{s,c\}}\mu(v),
  \tag{8}
 $$
 

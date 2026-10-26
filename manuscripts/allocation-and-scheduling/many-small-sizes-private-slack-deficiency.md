@@ -69,7 +69,7 @@ For D=D_k its time is 2^{O(k)}poly(H). For D=D_k+eta, where
 0<eta<=1, its time is
 
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\}.
  \tag{P6}
 $$
@@ -294,7 +294,7 @@ targets and gives an exact-signature h-parameter consequence:
 $$
 C_{\max}\le
  \max\{3/2,(5h-4)/(3h-2)\}\,\mathrm{OPT}+u
- \quad\text{in }2^{O(h)}\operatorname{poly}(H).
+ \quad\text{in }2^{O(h)}\mathrm{poly}(H).
  \tag{P17}
 $$
 

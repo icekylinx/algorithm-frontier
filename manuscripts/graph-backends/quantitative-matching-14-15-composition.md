@@ -175,7 +175,7 @@ $$
 $$
 
 where $P\le P_*$ eventually and
-$W=k^{O(1)}C_p^{O(1)}\gamma_*^{O(K^2)}\operatorname{poly}(U)$.
+$W=k^{O(1)}C_p^{O(1)}\gamma_*^{O(K^2)}\mathrm{poly}(U)$.
 The exponents denoted $O(1)$ are absolute implementation constants,
 independent of depth and $K$; an adequate $c_E$ covers them.
 
@@ -344,7 +344,7 @@ All remaining outer overheads are strictly smaller:
 
 $$
 a=o(v),\qquad a^2=o(v),\qquad
- \operatorname{poly}(a,s)=2^{o(v)},\qquad v=o(s).
+ \mathrm{poly}(a,s)=2^{o(v)},\qquad v=o(s).
  \tag{18}
 $$
 
@@ -359,7 +359,7 @@ has ample size and history headroom without a master-sized allocation.
 Numerical root prices have $O(s)$ bits under the existing explicit
 $S^{1122}$ price bound. Equation (14), with $M\le S^2$ and
 $E_*\le B/4=S^{o(1)}$, gives polynomial root certificate
-magnitude. Internal fields in (12) use only $\operatorname{poly}(s)$
+magnitude. Internal fields in (12) use only $\mathrm{poly}(s)$
 ordinary $\Theta(s)$-bit words. Their fixed polynomial arithmetic
 cost is absorbed by (18).
 
@@ -389,7 +389,7 @@ full occurrence sweeps and their $D_*^2$ cost. Substitution of
 (17) into its explicit counts bounds numerical work by
 
 $$
-(P+B)2^{2a^2}B^{230}\operatorname{poly}(s).
+(P+B)2^{2a^2}B^{230}\mathrm{poly}(s).
 $$
 
 Near-feasible rounding adds $O(P)$ exact coordinate reads and
@@ -439,7 +439,7 @@ $g_*=\max\{1,\lfloor K/(100C)\rfloor\}$,
 
 $$
 Lg_*\le10001CN,\qquad \tau=O(aS),\qquad
- T_{\rm structural}=a^2S\operatorname{poly}(s).
+ T_{\rm structural}=a^2S\mathrm{poly}(s).
  \tag{21}
 $$
 

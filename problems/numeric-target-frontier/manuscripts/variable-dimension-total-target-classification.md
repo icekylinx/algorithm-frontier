@@ -28,7 +28,7 @@ maximum over the integer feasible family in
 
 $$
 \boxed{
-  2^{O((T+1)\log(T+2))}\operatorname{poly}(H)
+  2^{O((T+1)\log(T+2))}\mathrm{poly}(H)
  }
  \tag{VT2}
 $$
@@ -230,7 +230,7 @@ Writing Bell for the number of set partitions gives
 
 $$
 \#\{\text{profiles satisfying VT8}\}
-                 \le \operatorname{Bell}(U+1)
+                 \le \mathrm{Bell}(U+1)
                  \le (U+1)^{U+1}.
  \tag{VT9}
 $$
@@ -272,9 +272,9 @@ infeasible input instances are charged.
 The resulting explicit bound is
 
 $$
-s!\,(U+1)^{U+1}\operatorname{poly}(H)
+s!\,(U+1)^{U+1}\mathrm{poly}(H)
         \le
-          2^{O((T+1)\log(T+2))}\operatorname{poly}(H).
+          2^{O((T+1)\log(T+2))}\mathrm{poly}(H).
  \tag{VT11}
 $$
 

@@ -60,8 +60,8 @@ oracle time. Otherwise a deterministic factor-3/2 schedule is found
 in
 
 $$
-(27/4)^c\operatorname{poly}(H)
-                         =2^{O(c)}\operatorname{poly}(H)
+(27/4)^c\mathrm{poly}(H)
+                         =2^{O(c)}\mathrm{poly}(H)
  \tag{D4}
 $$
 

@@ -67,10 +67,10 @@ In particular the unconditional count guarantee is floor(K*/2).
 The running time is either
 
 $$
-(27/4)^c\operatorname{poly}(H)
+(27/4)^c\mathrm{poly}(H)
  \quad\text{or}\quad
  (50/27)^q\,
- 2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H).
+ 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
  \tag{RU3}
 $$
 

@@ -68,7 +68,7 @@ Use
 $$
 \begin{split}
  &x\in P_{\mathcal B(M)},\qquad
-          y_p\in x_p\operatorname{conv}(\mathcal F_p),\\
+          y_p\in x_p\mathrm{conv}(\mathcal F_p),\\
  &\sum_p y_{pj}\le c_j,\qquad v\cdot y_p\ge T x_p.
  \end{split}
  \tag{S3}
@@ -215,7 +215,7 @@ $$
 in rank-exponential time, or $d_{r,\lambda}+\eta$ in
 
 $$
-\operatorname{poly}(\text{explicit input bits, oracle work})
+\mathrm{poly}(\text{explicit input bits, oracle work})
  \min\left\{2^{O(r)},
        (r+1)^{O((1+\eta^{-1})\log(r+1))}\right\}.
  \tag{S8}

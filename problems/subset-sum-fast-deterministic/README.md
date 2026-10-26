@@ -1,15 +1,40 @@
 # Deterministic Subset Sum: time bound
 
-| Field | Result |
-|---|---|
-| **Objective and output** | Exact YES/NO decision and the selected input indices. Arbitrary signed binary integers, zeros and repeated weights are allowed. |
-| **Time** | $C+\operatorname{poly}(n,L)2^{En}$, where $E=158153814247997/318927986919134\approx0.4958919277538907<0.495892$. |
-| **Space** | No separate writable-space exponent is asserted for this algorithm. |
-| **Parameters** | $n$ is the item count; $L$ is the complete binary input length; $C$ is a finite input-independent circuit-construction cost, with no practical bound claimed. |
-| **Model and representation** | Uniform deterministic bit operations and indexed witness recovery. Polynomial degrees are fixed. |
-| **Lower-bound scope** | No lower bound is claimed. |
-| **Review status** | Mathematical proof with computer-assisted numerical certification: all 44 continuous-domain branches pass exact rational verification, followed by 104 reflected-profile comparisons and the complete outer cost ledger. The circuit and reduction arguments are mathematical proofs; no machine-checked formalization is claimed. |
-| **Source** | [Theorems and complete composition proof](proof.md), [provenance and verification scope](sources.md). |
+**Objective and output**
+
+Exact YES/NO decision and the selected input indices. Arbitrary signed binary integers, zeros and repeated weights are allowed.
+
+**Randomness**
+
+Deterministic exact algorithm in the uniform bit model, including indexed-witness recovery and input-independent deterministic circuit construction; no probability of error.
+
+**Time**
+
+$C+\mathrm{poly}(n,L)2^{En}$, where $E=158153814247997/318927986919134\approx0.4958919277538907<0.495892$.
+
+**Space**
+
+No separate writable-space exponent is asserted for this algorithm.
+
+**Parameters**
+
+$n$ is the item count; $L$ is the complete binary input length; $C$ is a finite input-independent circuit-construction cost, with no practical bound claimed.
+
+**Model and representation**
+
+Uniform deterministic bit operations and indexed witness recovery. Polynomial degrees are fixed.
+
+**Lower-bound scope**
+
+No lower bound is claimed.
+
+**Review status**
+
+Mathematical proof with computer-assisted numerical certification: all 44 continuous-domain branches pass exact rational verification, followed by 104 reflected-profile comparisons and the complete outer cost ledger. The circuit and reduction arguments are mathematical proofs; no machine-checked formalization is claimed.
+
+**Source**
+
+[Theorems and complete composition proof](proof.md), [provenance and verification scope](sources.md).
 
 ## Numerical certificates
 

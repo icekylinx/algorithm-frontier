@@ -44,7 +44,7 @@ M-basis and an integer allocation of cost at most C. Its time is
 
 $$
 \Gamma(1/\epsilon)^{c+K}
-                                          \operatorname{poly}(H),
+                                          \mathrm{poly}(H),
  \tag{R2}
 $$
 
@@ -58,7 +58,7 @@ In particular, choosing epsilon=eta/(2+eta) gives factor 2+eta in
 
 $$
 \Gamma\!\left({2+\eta\over\eta}\right)^{c+K}
-                                    \operatorname{poly}(H).
+                                    \mathrm{poly}(H).
  \tag{R3}
 $$
 
@@ -196,7 +196,7 @@ full target. If the row is a·z<=U and is violated by b*1_Q,
 then the omitted set Q\I* has exactly |Q|-(r-k) elements and
 
 $$
-a(Q\I^*)\ge a(Q)-U/t
+a(Q\setminus I^*)\ge a(Q)-U/t
                       >\left(1-{b\over t}\right)a(Q).
  \tag{R9}
 $$
@@ -219,7 +219,7 @@ cost bounds hold uniformly. The gap routine therefore runs in
 
 $$
 \Gamma\!\left({t\over t-b}\right)^{c+k}
-                                          \operatorname{poly}(H)
+                                          \mathrm{poly}(H)
  \tag{R10}
 $$
 

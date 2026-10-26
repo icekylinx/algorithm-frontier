@@ -340,7 +340,7 @@ recursive circulation answers whose total positive raw charge is at
 most
 
 $$
-\Gamma^{O(\sqrt K)}\operatorname{poly}(U)
+\Gamma^{O(\sqrt K)}\mathrm{poly}(U)
                          \|\ell c\|_1.
  \tag{13}
 $$

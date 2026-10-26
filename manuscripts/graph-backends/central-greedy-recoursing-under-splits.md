@@ -29,7 +29,7 @@ initial nonempty input is processed by the same insertion rule.
 After each native edit, first apply it to the
 selected edges. Then, while some nonloop $e=uv\in E(G)$ has
 $$
-\operatorname{dist}_H(u,v)>2b,
+\mathrm{dist}_H(u,v)>2b,
  \tag{1}
 $$
 insert that CENTRAL native edge ID into $H$. A loop never needs
@@ -121,7 +121,7 @@ edge. Call the resulting tree $T$. It has
 $$
 N=4q-2,\qquad
               \Delta(T)=3,\qquad
-              \operatorname{diam}(T)=2\log_2q+1.
+              \mathrm{diam}(T)=2\log_2q+1.
  \tag{6}
 $$
 Choose $1\leq D\leq q$. Between the two leaf sets add a simple
@@ -137,7 +137,7 @@ Run the greedy algorithm with all tree edges first and
 $b=\lceil\log_2 N\rceil$. Every tree edge is inserted because
 its endpoints are then in different components. Every later cross
 edge is omitted, since its tree distance is at most
-$\operatorname{diam}(T)\leq2b$. Thus the final selected graph is
+$\mathrm{diam}(T)\leq2b$. Thus the final selected graph is
 exactly $H=T$.
 
 For every cross demand the unique simple selected route uses the

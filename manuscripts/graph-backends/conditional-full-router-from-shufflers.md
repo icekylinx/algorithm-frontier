@@ -77,7 +77,7 @@ $\lambda\leq\lambda_{\rm cap}$, without requiring
 $k\geq c\lambda$.
 
 The depth is $O(\log n/\log k)\leq O(p)$.
-All leaves have size $\operatorname{poly}(k,\lambda_{\rm cap})$,
+All leaves have size $\mathrm{poly}(k,\lambda_{\rm cap})$,
 including a whole small host declared a leaf. Hence one fixed
 polynomial leaf algorithm costs only
 $\exp O(v/p+\log(v+2))$ per actual host record.
@@ -91,7 +91,7 @@ tokens of endpoint load at most $L$, it returns physical paths of
 length at most $A_{\rm leaf}$, congestion at most $LA_{\rm leaf}$,
 and work
 $$
-|X|L A_{\rm leaf}\operatorname{poly}(\log(nL+2)).
+|X|L A_{\rm leaf}\mathrm{poly}(\log(nL+2)).
                                                                \tag{6}
 $$
 Preprocessing is independent of $L$, with one fixed polynomial
@@ -116,11 +116,11 @@ $$
  \text{maximum path length}&\leq A(c(\lambda+1))^{d+1},\\
  \text{edge congestion}&\leq LA(c(\lambda+1)^2)^{d+1},\\
  \text{query work}&\leq nLA(c(\lambda+1)^2)^{d+1}
-                          \operatorname{poly}(\log(nL+2)).
+                          \mathrm{poly}(\log(nL+2)).
  \end{aligned}                                                \tag{7}
 $$
 The constant is independent of $d,k,L$.
-For $d=O(p)$, $\lambda=\operatorname{poly}(\log n)$, and
+For $d=O(p)$, $\lambda=\mathrm{poly}(\log n)$, and
 $$
 A=\phi^{-O(1)}(\log n)^{O(p)},              \tag{8}
 $$
@@ -219,7 +219,7 @@ There is at most one failed stopping test per nonempty
 $(i,\ell)$. Consequently counts, quota intervals, and
 cyclic assignments cost
 $$
-O((M+t^2)\operatorname{poly}(\log(nL_0+2)))
+O((M+t^2)\mathrm{poly}(\log(nL_0+2)))
                                                                \tag{14}
 $$
 per step, with $M$ the current token count. There is no
@@ -289,7 +289,7 @@ $$
 $$
 One factor pays the number of families, the other their load
 increase. All dummy records and local bookkeeping are paid
-by $\mathcal V_j\operatorname{poly}(\log(nL+2))$.
+by $\mathcal V_j\mathrm{poly}(\log(nL+2))$.
 The $t^2$ metadata is paid because $t^2\leq|X|$.
 
 For a fixed hierarchy node at depth $j$, the sum of load
@@ -385,12 +385,12 @@ is paid in this single construction only once.
 The $nL$ term is sufficient for both static witness tasks.
 
 For witness-to-host routing in a degree band $J_i$, endpoint
-load is $\operatorname{poly}(\phi^{-1})\deg_{J_i}(v)$.
+load is $\mathrm{poly}(\phi^{-1})\deg_{J_i}(v)$.
 The incidence-port split has $O(|E(J_i)|)$ vertices with
-per-port load $\operatorname{poly}(\phi^{-1})$.
+per-port load $\mathrm{poly}(\phi^{-1})$.
 Its query volume is therefore
 $$
-|E(J_i)|\operatorname{poly}(\phi^{-1}).      \tag{21}
+|E(J_i)|\mathrm{poly}(\phi^{-1}).      \tag{21}
 $$
 For host-to-witness routing with witness edge weight $\rho_i$,
 per-port load is $L_i=\max(1,\lceil\rho_i\rceil)$, and

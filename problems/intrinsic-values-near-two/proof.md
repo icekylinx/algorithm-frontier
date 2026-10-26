@@ -55,7 +55,7 @@ $$
 
 $$
 \Gamma(1/\epsilon)^k
-                                \operatorname{poly}(H)
+                                \mathrm{poly}(H)
  \tag{A3}
 $$
 
@@ -326,9 +326,9 @@ Then (A4) is the factor-2+eta guarantee, and (A3) becomes
 
 $$
 \Gamma\!\left({2+\eta\over\eta}\right)^k
-               \operatorname{poly}(H)
+               \mathrm{poly}(H)
           \le\left({e(2+\eta)\over\eta}\right)^k
-               \operatorname{poly}(H).
+               \mathrm{poly}(H).
  \tag{A14}
 $$
 

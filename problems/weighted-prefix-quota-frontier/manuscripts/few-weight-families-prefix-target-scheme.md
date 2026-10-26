@@ -5,7 +5,7 @@
 One common coordinate order can support several different weight vectors without losing fixed-parameter tractability in the largest target. Let p be the number of supplied nonnegative integer weight vectors used by the prefix rows, and let B be the largest integer target. Exact mixed upper, equality and covering quotas on one global integral polymatroid admit
 
 $$
-\boxed{2^{O(pB\log(p+2))}\operatorname{poly}(H)}
+\boxed{2^{O(pB\log(p+2))}\mathrm{poly}(H)}
  \tag{FW1}
 $$
 
@@ -93,7 +93,7 @@ $$
 Create copies (e,l) of each eligible coordinate, with the shared resource rank
 
 $$
-F^{\uparrow}(Y)=F0(\operatorname{pr}(Y)),
+F^{\uparrow}(Y)=F0(\mathrm{pr}(Y)),
  \tag{FW7}
 $$
 
@@ -216,7 +216,7 @@ For each chain traverse only the actual nonzero classes. A next multiplicity is 
 The complete explicit bound is
 
 $$
-s!\,(2p)^W\binom{D+W}{W}\operatorname{poly}(H),
+s!\,(2p)^W\binom{D+W}{W}\mathrm{poly}(H),
       \quad W=p(2B-1),\quad D\le2p(p+1)B.
  \tag{FW15}
 $$

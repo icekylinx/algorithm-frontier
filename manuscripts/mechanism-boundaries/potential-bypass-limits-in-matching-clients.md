@@ -23,7 +23,7 @@ $$
 Ordinary paths may use either reference orientation, with the
 corresponding signed gradient. Let
 $$
-d=\operatorname{dist}_{\ell,{\rm ordinary}}(s,t),\qquad
+d=\mathrm{dist}_{\ell,{\rm ordinary}}(s,t),\qquad
  \kappa=g_{\rm ret}+p(t)-p(s).
 $$
 If $s,t$ are connected, a shortest ordinary path plus the
@@ -93,7 +93,7 @@ X^0=
 $$
 The column loads are unchanged, so the top equations
 $$
-s_d=L-\operatorname{load}(d)+p^0_d-Cw
+s_d=L-\mathrm{load}(d)+p^0_d-Cw
  \tag{5}
 $$
 hold exactly. The allocation entries are positive integers
@@ -205,7 +205,7 @@ negligible $\eta<S^{-800}$. Total core row mass stays $2L$.
 The other two columns each have upper load $2L/3+p_d$,
 so column capacities imply
 $$
-\operatorname{load}(d_1)
+\mathrm{load}(d_1)
                                \ge 2L/3-\eta.
  \tag{10}
 $$
@@ -255,9 +255,9 @@ The obstruction is more immediate in the ACTUAL exchange network.
 Every positive INTEGRAL parent allocation $x_e>0$, on an incidence
 $(r,d)$, creates two DISTINCT ordinary arc IDs:
 $$
-d\longrightarrow r\quad[\operatorname{cap}=x_e],
+d\longrightarrow r\quad[\mathrm{cap}=x_e],
        \qquad
-        r\longrightarrow d\quad[\operatorname{cap}=L+1].
+        r\longrightarrow d\quad[\mathrm{cap}=L+1].
  \tag{14}
 $$
 Both have lower bound zero. In a threshold test their upper

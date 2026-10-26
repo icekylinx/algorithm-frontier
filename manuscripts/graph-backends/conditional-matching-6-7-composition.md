@@ -48,7 +48,7 @@ SUBGRAPH $\widetilde J\subseteq J$ and explicit demand routes with:
 $$
 \begin{split}
  |E(\widetilde J)|&\leq
-       \Gamma\,\operatorname{poly}(U)|V(J)|,\\
+       \Gamma\,\mathrm{poly}(U)|V(J)|,\\
  L(\Pi\circ\Pi_{J\to\widetilde J})&\leq \Gamma L(\Pi),\\
  C(\Pi\circ\Pi_{J\to\widetilde J})&\leq
        \Gamma L(\Pi)\bigl(C(\Pi)+\Delta(J)\bigr).
@@ -63,7 +63,7 @@ explicit route indexing and notifications, is bounded by
 
 $$
 |E(J)|\,F^{O(1)}\Gamma^{O(1)}
-                 (L(\Pi)+1)\operatorname{poly}(U),
+                 (L(\Pi)+1)\mathrm{poly}(U),
  \tag{4}
 $$
 
@@ -201,7 +201,7 @@ ORIGINAL core-edge ID. Its old route prefixes already lie in lower
 layers. Expanding those prefixes into extra memberships would produce
 an incorrect recourse bound.
 
-Let $A=\operatorname{poly}(U)$ cover stable forests, buckets, native
+Let $A=\mathrm{poly}(U)$ cover stable forests, buckets, native
 translation, and ordinary indexing. The alternative supplies
 $$
 R=(A\rho\Gamma)^{O(1)},\qquad
@@ -223,7 +223,7 @@ L_{j+1}\leq O(\Gamma)L_j,\qquad
  \tag{10}
 $$
 Hence route length is $\Gamma^{O(K)}$, and route congestion is
-$k\operatorname{poly}(U)\Gamma^{O(K^2)}$.
+$k\mathrm{poly}(U)\Gamma^{O(K^2)}$.
 The fresh-base normalization does not worsen the exponent: its initial
 route length is already $\Gamma^{O(K)}$ and congestion is
 $k\Gamma^{O(K^2)}$, and another $K$ levels of (10) still give
@@ -232,7 +232,7 @@ $\Gamma^{O(K^2)}$.
 A common local work envelope is therefore
 $$
 W=k^{O(1)}\rho^{O(1)}F^{O(1)}
-                    \Gamma^{O(K^2)}\operatorname{poly}(U).
+                    \Gamma^{O(K^2)}\mathrm{poly}(U).
  \tag{11}
 $$
 No factor $F$ belongs in (9). The old restriction
@@ -244,7 +244,7 @@ must instead be verified directly under Section 1.
 ## 5. Recursive size, occurrence, and work bounds
 
 Apply the existing fixed port-fiber degree reset to each settled
-selected graph. Let $P=R^{O(1)}\operatorname{poly}(U)$ bound the
+selected graph. Let $P=R^{O(1)}\mathrm{poly}(U)$ bound the
 child size factor, its fully encoded ordinary edits, and its flat-pool
 factor. Every actual parent vertex lifetime has one fixed fiber.
 Inactive fibers remain counted in the child, and their purely null
@@ -447,16 +447,16 @@ $O(s)$, and the gap driver uses $O(s^2)$ phases.
 The [decoupled priced client](decoupled-numerical-client.md) bounds
 work by
 $$
-O(MD+QD+D^2J)\operatorname{poly}(s),
+O(MD+QD+D^2J)\mathrm{poly}(s),
  \tag{30}
 $$
 where $J$ counts accepted numerical steps separately from calls
 and refreshes $Q$. The local/all-expanded exact recovery costs
-$(P_{\rm debt}+1)D^4\operatorname{poly}(s)$, and the top run costs
-$SD^4\operatorname{poly}(s)$. Therefore the complete favorable
+$(P_{\rm debt}+1)D^4\mathrm{poly}(s)$, and the top run costs
+$SD^4\mathrm{poly}(s)$. Therefore the complete favorable
 matching branch has work
 $$
-SE_*^4\operatorname{poly}(s)
+SE_*^4\mathrm{poly}(s)
  =S\exp\!\left(
     O(s^{6/7}(\log(s+4))^{1/7})
    \right).

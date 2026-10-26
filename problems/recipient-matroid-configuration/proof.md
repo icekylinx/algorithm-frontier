@@ -11,11 +11,11 @@ coupled configuration optimum and
 $$
 d=4-\frac3r.
 $$
-Its time is $2^{O(r)}\operatorname{poly}(H)$ and its space is
+Its time is $2^{O(r)}\mathrm{poly}(H)$ and its space is
 polynomial. For any positive rational $\eta$, factor $d+\eta$ is
 obtained in
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.
  \tag{P1}
 $$
@@ -58,7 +58,7 @@ They are used only to prove the soundness of its obstruction
 certificate. The implied small-resource relaxation has
 $0\le y_{pj}\le x_p$ and $\sum_jv_jy_{pj}\ge Tx_p$;
 with local families it also retains their row perspective
-$y_p\in x_p\operatorname{conv}\{\mathbf1_C:C\in\mathcal F_p\}$.
+$y_p\in x_p\mathrm{conv}\{\mathbf1_C:C\in\mathcal F_p\}$.
 
 We use the earliest fundamental-circuit exchange, last-layer refresh,
 and bounded integer signature from
@@ -103,7 +103,7 @@ two services to the same player-resource pair.
 At layer i, player eligibility is
 
 $$
-p\notin\operatorname{cl}_M(I\setminus\operatorname{owners}(Y_{<i})).
+p\notin\mathrm{cl}_M(I\setminus\mathrm{owners}(Y_{<i})).
  \tag{P3}
 $$
 
@@ -124,7 +124,7 @@ In addition to universal reservations, maintain two prefix statements.
 For every actual subset Z of selected centers and every resource j,
 
 $$
-(M_j\setminus\operatorname{owners}(D(Z)))
+(M_j\setminus\mathrm{owners}(D(Z)))
         \mathbin{\dot\cup}X_j(Z)\in\mathcal I(R_j).
  \tag{P4}
 $$
@@ -153,7 +153,7 @@ For a retained center c, let S^-_c be the centers strictly preceding it.
 For every resource j in c, require
 
 $$
-p(c)\notin\operatorname{cl}_{R_j}(W_j(S^-_c)).
+p(c)\notin\mathrm{cl}_{R_j}(W_j(S^-_c)).
  \tag{P6}
 $$
 
@@ -169,7 +169,7 @@ and does not enter any old group. Consequently (P6) persists literally.
 During a last-layer scan, use the accepted availability test
 
 $$
-p\notin\operatorname{cl}_{R_j}(X_j\cup Y_j),
+p\notin\mathrm{cl}_{R_j}(X_j\cup Y_j),
  \tag{P7}
 $$
 
@@ -180,7 +180,7 @@ approximate local oracle and subsequent ordinary minimality pruning.
 Call a resource j used by c **problematic** when
 
 $$
-p\in\operatorname{cl}_{R_j}(X_j\cup M_j).
+p\in\mathrm{cl}_{R_j}(X_j\cup M_j).
  \tag{P8}
 $$
 
@@ -225,7 +225,7 @@ would contain a matching record, unless U were empty; in that latter
 case (P8) would contradict (P7). Therefore a fresh free candidate satisfies
 
 $$
-p\notin\operatorname{cl}_{R_j}(M_j\cup X_j)
+p\notin\mathrm{cl}_{R_j}(M_j\cup X_j)
                          \quad(j\in c).
  \tag{P10}
 $$
@@ -245,7 +245,7 @@ $$
 Suppose
 
 $$
-p(c)\notin\operatorname{cl}_{R_j}(V_j)
+p(c)\notin\mathrm{cl}_{R_j}(V_j)
                           \quad\hbox{for every }j\in c.
  \tag{P12}
 $$
@@ -253,7 +253,7 @@ $$
 Then c is **strongly free relative to the earlier centers**:
 
 $$
-p(c)\notin\operatorname{cl}_{R_j}(M_j\cup X_j(S^-_c))
+p(c)\notin\mathrm{cl}_{R_j}(M_j\cup X_j(S^-_c))
                              \quad(j\in c).
  \tag{P13}
 $$
@@ -279,7 +279,7 @@ at which the owner is spanned by the preceding prefix and the current
 group's services. In particular, for D(c)={b}, there is a resource with
 
 $$
-p(c)\in\operatorname{cl}_{R_j}
+p(c)\in\mathrm{cl}_{R_j}
                (W_j(S^-_c)\cup\{p(b)\}),\qquad j\in b.
  \tag{P14}
 $$
@@ -458,10 +458,10 @@ $$
 $$
 where $w=r-k+|Y_{<i}|$.
 
-**Proof.** Let $J_0=I\setminus\operatorname{owners}(Y_{<i})$ and
-$E=P\setminus\operatorname{cl}_M(J_0)$. Because $x\in B(M)$,
+**Proof.** Let $J_0=I\setminus\mathrm{owners}(Y_{<i})$ and
+$E=P\setminus\mathrm{cl}_M(J_0)$. Because $x\in B(M)$,
 $x(E)\ge r-r_M(J_0)=w$. For resource $j$, an unavailable player
-lies in $\operatorname{cl}_{R_j}(X_j\cup Y_j)$. Its total fractional
+lies in $\mathrm{cl}_{R_j}(X_j\cup Y_j)$. Its total fractional
 receiving mass is at most the rank of that closure, so the total
 unavailable value is at most $\Phi$.
 

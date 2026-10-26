@@ -45,7 +45,7 @@ theta, and light types have value strictly below theta. Define
 
 $$
 f^b_\theta=\sum_{j:v_j\ge\theta}f_j,
- \qquad N_\theta=\operatorname{Boolean}(f^b_\theta),
+ \qquad N_\theta=\mathrm{Boolean}(f^b_\theta),
  \qquad U_\theta=M^*\vee N_\theta,
  \qquad K_\theta=U_\theta^*.
  \tag{J2}
@@ -265,7 +265,7 @@ $$
 The fixed-basis LPs have a uniform polynomial-bit denominator bound.
 Their nonnegative support separators and the weighted omission
 routine give a gap of relative loss $\epsilon$ in
-$\Gamma(1/\epsilon)^c\operatorname{poly}(H)$ time. Fine rational
+$\Gamma(1/\epsilon)^c\mathrm{poly}(H)$ time. Fine rational
 search followed by exact reoptimization of the saved basis retains
 that full accuracy without a second split of $\epsilon$.
 
@@ -314,7 +314,7 @@ The use of the strict light inequality is essential at this step.
 k, a deterministic algorithm has running time
 
 $$
-\Gamma(1/\epsilon)^k\operatorname{poly}(H)
+\Gamma(1/\epsilon)^k\mathrm{poly}(H)
  \tag{J15}
 $$
 
@@ -332,7 +332,7 @@ numerically evaluated by the algorithm.
 For rational eta>0, choose `epsilon=eta/(2+eta)`. The guarantee becomes
 
 $$
-\operatorname{value}\ge{\mathrm{OPT}\over2+\eta},
+\mathrm{value}\ge{\mathrm{OPT}\over2+\eta},
  \qquad
        c\left({\mathrm{OPT}\over2+\eta}\right)\le k,
  \tag{J16}
@@ -341,8 +341,8 @@ $$
 with time
 
 $$
-\Gamma\!\left({2+\eta\over\eta}\right)^k\operatorname{poly}(H)
-             \le\left({e(2+\eta)\over\eta}\right)^k\operatorname{poly}(H).
+\Gamma\!\left({2+\eta\over\eta}\right)^k\mathrm{poly}(H)
+             \le\left({e(2+\eta)\over\eta}\right)^k\mathrm{poly}(H).
  \tag{J17}
 $$
 

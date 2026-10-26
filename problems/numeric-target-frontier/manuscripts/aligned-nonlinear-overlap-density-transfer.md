@@ -9,7 +9,7 @@ Under the model below, if each refined band is positive in at most two target ro
 $$
 \boxed{
 \exp\!\left(O\!\left(T\log\left(2+\frac{m_B}{T}\right)\right)\right)
-\operatorname{poly}(H)
+\mathrm{poly}(H)
 }
 \tag{ND1}
 $$
@@ -156,7 +156,7 @@ $$
 The exact profile bound is
 
 $$
-2^U\binom{Q_B+U}{U}\operatorname{poly}(H).
+2^U\binom{Q_B+U}{U}\mathrm{poly}(H).
 \tag{ND10}
 $$
 
@@ -167,8 +167,8 @@ RD's binomial estimate gives ND1. All-input traversal, including failed filters 
 If every band has support at most one, the sharper bound
 
 $$
-\exp\!\left(3\sum_j\sqrt{U_j}\right)\operatorname{poly}(H)
-\le e^{3T}\operatorname{poly}(H)
+\exp\!\left(3\sum_j\sqrt{U_j}\right)\mathrm{poly}(H)
+\le e^{3T}\mathrm{poly}(H)
 \tag{ND11}
 $$
 

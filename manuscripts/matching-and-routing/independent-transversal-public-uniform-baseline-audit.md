@@ -103,7 +103,7 @@ ratio but adds a certifying stop that forces
 
 $$
 P\,(q+1)^{O(\epsilon^{-1}\log(2+r/\epsilon))}
-       \operatorname{poly}(b_\epsilon+\log P).
+       \mathrm{poly}(b_\epsilon+\log P).
 $$
 
 The improvement is the factor `r` in the exponent on the class count.
@@ -134,7 +134,7 @@ Thus the fair combined public bound is
 $$
 P\min\left\{\exp(O(q)),\,
  (q+1)^{O((r/\epsilon)\log(2+r/\epsilon))}\right\}
- \operatorname{poly}(b_\epsilon+\log P).
+ \mathrm{poly}(b_\epsilon+\log P).
 $$
 
 The current-blocker algorithm also takes the minimum with the same

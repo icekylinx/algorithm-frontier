@@ -45,7 +45,7 @@ J is a projected graph, each of whose genuine edges e has an explicit
 ambient walk pi(e). Define its ambient occurrence load at z by
 
 $$
-C_0(z)=\sum_{e\in E(J)}\operatorname{occ}_z(\pi(e)),
+C_0(z)=\sum_{e\in E(J)}\mathrm{occ}_z(\pi(e)),
  \qquad C_0=\max_z C_0(z).
 $$
 
@@ -57,8 +57,8 @@ $$
 \begin{aligned}
  C_{\rm comp}(z)
  &\le\sum_{f\in E(H)}
-       \#\{e:f\in Q(e)\}\operatorname{occ}_z(\pi(f))\\
- &\le\eta\sum_{f\in E(H)}\operatorname{occ}_z(\pi(f))
+       \#\{e:f\in Q(e)\}\mathrm{occ}_z(\pi(f))\\
+ &\le\eta\sum_{f\in E(H)}\mathrm{occ}_z(\pi(f))
  \le\eta C_0(z).
 \end{aligned}                                                    \tag{1}
 $$

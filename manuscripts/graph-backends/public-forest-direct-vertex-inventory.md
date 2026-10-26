@@ -29,7 +29,7 @@ Algorithm 5, and the accompanying proof on pages 30--32.
 
 Let $G$ be the current native graph and $H$ its public selected
 core graph. Let $F_1,\ldots,F_b$ be the stable native forests,
-where $b=\operatorname{poly}(U)$. The source uses an incoming
+where $b=\mathrm{poly}(U)$. The source uses an incoming
 flat forest $\mathcal F$ embedded in $H$. It allocates
 
 $$
@@ -92,7 +92,7 @@ Repeated internal ownership can be represented by a reference count.
 Equivalently, retaining a polynomial number of explicitly indexed
 bucket or core aliases only changes the polynomial below.
 
-Thus one physical edge has at most $b_0=\operatorname{poly}(U)$
+Thus one physical edge has at most $b_0=\mathrm{poly}(U)$
 living selected aliases. This statement does not bound the number of
 *different* native edges incident to a high-degree root by a constant.
 It does not require such a bound.
@@ -132,8 +132,8 @@ isolated nodes. The forest-copy edges have at most $bC$ copies
 of each native edge. Together with the projected-edge calculation,
 
 $$
-\operatorname{econg}(\mathcal F'\to G)
-       \le C\operatorname{poly}(U).                       \tag{4}
+\mathrm{econg}(\mathcal F'\to G)
+       \le C\mathrm{poly}(U).                       \tag{4}
 $$
 
 There is no selected-degree factor in (3) or (4). A large degree
@@ -165,7 +165,7 @@ attachment when it is joined, so the join cannot create a cycle or
 merge two distinct designated input nodes. The settled state is
 again precisely Algorithm 5 with $C$ slots.
 
-Root-alias joins can require $C\operatorname{poly}(\Delta,U)$
+Root-alias joins can require $C\mathrm{poly}(\Delta,U)$
 work and actual incident-edge edits. This is a work charge, not an
 increase in the simultaneous occurrence bound (3). Core provenance
 and cuts-before-reinsertions are required; ignoring the input edit
@@ -193,7 +193,7 @@ $$
 
 vertex and edge occurrences per root native vertex. Equivalently,
 an induction of the form $C_{j+1}\le Q(C_j+1)$ with
-$Q=\operatorname{poly}(U)$ yields the same bound. This is
+$Q=\mathrm{poly}(U)$ yields the same bound. This is
 valid for the **unreset** public hierarchy: a child native vertex
 is a single physical root identifier in its parent graph. It is not
 a claim that an arbitrary high-degree port expansion has this
@@ -237,8 +237,8 @@ $$
  K_{\rm cov}\Lambda(a+O(h))&\le c_0U,\\
  Z&=O\bigl(B+U/\Lambda+U/K_{\rm cov}
               +\Lambda U/K_{\rm cov}+\Lambda c+h\bigr).
-                                                               \tag{6}
- \end{aligned}
+\end{aligned}
+\tag{6}
 $$
 
 The local forest's explicit recourse is included in $B$ once;

@@ -43,9 +43,9 @@ $$
 of value at least OPT/d and actual cost at most C, in either
 
 $$
-A_d^{\nu_C}\operatorname{poly}(H)
+A_d^{\nu_C}\mathrm{poly}(H)
  \quad\text{or}\quad
- B_d^q\,2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H),
+ B_d^q\,2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H),
  \tag{UQ2}
 $$
 

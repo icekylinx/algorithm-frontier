@@ -154,8 +154,8 @@ $$
 An item with a failed label is annihilated. For a live item, the principal-angle bound from restricted isometry is
 
 $$
-\|\Pi_{\operatorname{span}V_F}
-       |_{\operatorname{span}V_{\Lambda(e)}}\|
+\|\Pi_{\mathrm{span}V_F}
+       |_{\mathrm{span}V_{\Lambda(e)}}\|
  \le\frac{\delta_0}{1-\delta_0}.
 $$
 
@@ -199,7 +199,7 @@ $$
 Its algorithm is randomized. For a total seminorm that is $(a,b)$-rounded on the orthogonal complement of its kernel, the runtime has the form
 
 $$
-(m\,\operatorname{polylog}R+\operatorname{poly}R)
+(m\,\mathrm{polylog}R+\mathrm{poly}R)
     [\log(mb/a)]^{O(1)}T_{\rm eval},
 \tag{N18}
 $$

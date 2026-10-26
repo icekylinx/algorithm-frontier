@@ -37,11 +37,11 @@ A ratio-only oracle does not suffice. The cap is a proved performance
 and quality hypothesis on a favorable branch, not a conclusion drawn
 from its final matching verifier.
 
-Define $\operatorname{pow2ceil}(x)$ to be the smallest power
+Define $\mathrm{pow2ceil}(x)$ to be the smallest power
 of two at least $x$, and set
 
 $$
-D=\operatorname{pow2ceil}(\max\{16,4E\}),\qquad
+D=\mathrm{pow2ceil}(\max\{16,4E\}),\qquad
  q=\frac1{16D}.
  \tag{1}
 $$
@@ -57,7 +57,7 @@ $$
 For a logical lifetime allowance $R$, choose simply
 
 $$
-M=\operatorname{pow2ceil}(16(R+2)).
+M=\mathrm{pow2ceil}(16(R+2)).
  \tag{3}
 $$
 
@@ -116,7 +116,7 @@ bound $E\le D/4$, and raw quality at least $1/D$.
 
 At an exact anchor, prices remain
 $\ell_e=\lceil H_{\rm price}\lambda_e\rceil$ and
-$\gamma_e=\operatorname{round}(H_{\rm price}g_e)$.
+$\gamma_e=\mathrm{round}(H_{\rm price}g_e)$.
 The same argument and weight bounds give
 $\ell_e\ge S^{80}$ and prices below $S^{1122}$,
 within the direct $S^{1200}$ backend limit. The old inequality
@@ -181,10 +181,10 @@ $O(DJ)$ category. The explicit cost is
 $$
 \begin{split}
  T_{\rm priced}
- &\le O((M+Q+DJ)E)\operatorname{poly}(s)\\
- &\quad+O((Q+DJ)D)\operatorname{poly}(s)\\
- &\quad+O(Qp_c+DJ)\operatorname{poly}(s)\\
- &\le O(MD+QD+D^2J)\operatorname{poly}(s).
+ &\le O((M+Q+DJ)E)\mathrm{poly}(s)\\
+ &\quad+O((Q+DJ)D)\mathrm{poly}(s)\\
+ &\quad+O(Qp_c+DJ)\mathrm{poly}(s)\\
+ &\le O(MD+QD+D^2J)\mathrm{poly}(s).
 \end{split}
 \tag{7}
 $$
@@ -209,14 +209,14 @@ J_{\rm loc}=O((P+1)D^2s)
 $$
 
 per threshold. Across $O(s)$ thresholds and their checked
-recoveries, this is $(P+1)D^2\operatorname{poly}(s)$.
+recoveries, this is $(P+1)D^2\mathrm{poly}(s)$.
 Client services per genuine numerical notification are constant in
 number up to ordinary identifier work. Reanchoring cannot create new
 absolute-motion credit. Thus
 
 $$
-Q_{\rm loc}=O(P+1+DJ_{\rm loc})\operatorname{poly}(s)
-            =(P+1)D^3\operatorname{poly}(s).
+Q_{\rm loc}=O(P+1+DJ_{\rm loc})\mathrm{poly}(s)
+            =(P+1)D^3\mathrm{poly}(s).
  \tag{9}
 $$
 
@@ -237,13 +237,13 @@ Substitute (8)--(10) into (7):
 
 $$
 T_{\rm projection}
-             \le (P+1)D^4\operatorname{poly}(s).
+             \le (P+1)D^4\mathrm{poly}(s).
  \tag{11}
 $$
 
 Near-feasible integral cycle rounding, exact reads, cut checks and
 ordinary residual searches add only
-$(P+1)D\operatorname{poly}(s)$. There is no new static
+$(P+1)D\mathrm{poly}(s)$. There is no new static
 max-flow call. The fixed scale 16, return-weight comparison, total
 violation below one and exact true-flow/optimistic-cut recovery are
 unchanged. All residual searches omit the numerical return arc.
@@ -253,7 +253,7 @@ input state of size $N_0$. Repeating the same reasoning gives
 
 $$
 T_{\rm global}
-             \le (N_0+1)D^4\operatorname{poly}(s).
+             \le (N_0+1)D^4\mathrm{poly}(s).
  \tag{12}
 $$
 
@@ -268,8 +268,8 @@ are $O(aSs^2)$, while each step gains $\Omega(D^{-2})$.
 Thus
 
 $$
-J_{\rm top}=S D^2\operatorname{poly}(s),\qquad
- Q_{\rm top}=S D^3\operatorname{poly}(s).
+J_{\rm top}=S D^2\mathrm{poly}(s),\qquad
+ Q_{\rm top}=S D^3\mathrm{poly}(s).
  \tag{13}
 $$
 
@@ -282,12 +282,12 @@ R_{\rm top}=S(s+1)^{10}
  \tag{14}
 $$
 
-covers them eventually and gives $M=S\operatorname{poly}(s)$
+covers them eventually and gives $M=S\mathrm{poly}(s)$
 in (3). It is below $S^2$ eventually. Equation (7) therefore
 gives
 
 $$
-T_{\rm top}=S D^4\operatorname{poly}(s).
+T_{\rm top}=S D^4\mathrm{poly}(s).
  \tag{15}
 $$
 
@@ -311,8 +311,8 @@ these facts with (11), (12), and (15) yields
 
 $$
 T_{\rm complete}
-              =S D^4\operatorname{poly}(s)
-              =S E^4\operatorname{poly}(s).
+              =S D^4\mathrm{poly}(s)
+              =S E^4\mathrm{poly}(s).
  \tag{16}
 $$
 

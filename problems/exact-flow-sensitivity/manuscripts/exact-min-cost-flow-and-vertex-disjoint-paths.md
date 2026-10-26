@@ -40,7 +40,7 @@ $$
 \begin{aligned}
  \sum_{(u,v):x_{uv}=1}\bigl(\pi(v)-\pi(u)\bigr)
  &=\sum_{v\in V}\pi(v)
-       \bigl(\operatorname{indeg}_x(v)-\operatorname{outdeg}_x(v)\bigr)\\
+       \bigl(\mathrm{indeg}_x(v)-\mathrm{outdeg}_x(v)\bigr)\\
  &=\lambda\bigl(\pi(t)-\pi(s)\bigr)
  \le \lambda(n-1).
 \end{aligned}
@@ -64,8 +64,8 @@ Construct the residual graph $R_x$. For an unused original arc $a=(u,v)$, includ
 If a failed arc $f$ is unused, $x$ remains optimum. Consider a used arc $f=(u,v)$. The key identity is
 
 $$
-\operatorname{OPT}_{G-f}(\lambda)
-        =c(x)-c(f)+\operatorname{dist}_{R_x}(u,v),
+\mathrm{OPT}_{G-f}(\lambda)
+        =c(x)-c(f)+\mathrm{dist}_{R_x}(u,v),
 \tag{F5}
 $$
 

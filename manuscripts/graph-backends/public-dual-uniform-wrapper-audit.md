@@ -95,8 +95,8 @@ $$
 \begin{aligned}
  \text{new witness parameters}
    &=\left(\varphi\psi^6/32000,\ \psi^4/800\right),\\
- |E^r|&\leq(\varphi/4)\sum_{P\in\mathcal P}\operatorname{vol}_G(P),\\
- \sum_{P\in\mathcal P}\operatorname{vol}_W(P)
+ |E^r|&\leq(\varphi/4)\sum_{P\in\mathcal P}\mathrm{vol}_G(P),\\
+ \sum_{P\in\mathcal P}\mathrm{vol}_W(P)
    &\leq(8/\psi)|\Pi^{-1}(D)|,\\
  \text{admissible deletion condition}
    &:\quad 200\psi^{-2}|\Pi^{-1}(D)|<|E(G)|.
@@ -106,7 +106,7 @@ $$
 The time bound is `O(H |D|/(psi^2 varphi))`, where the label height is `H=O(log n/varphi)`. Thus it is bounded by
 
 $$
-|D|\operatorname{polylog}M\,\psi^{-O(1)}\varphi^{-O(1)}. \tag{6}
+|D|\mathrm{polylog}M\,\psi^{-O(1)}\varphi^{-O(1)}. \tag{6}
 $$
 
 The hypotheses on fake edges in Section 2 satisfy the initialization deletion condition in (5). The retained component has the desired expansion at least `theta chi^-O(1)`.
@@ -123,7 +123,7 @@ PS Appendix A.5 builds a static decomposition by fresh cut/witness calls followe
 Therefore the sum of graph volumes over a recursion is at most
 
 $$
-M\chi^{O(1)}\operatorname{polylog}M.                    \tag{7}
+M\chi^{O(1)}\mathrm{polylog}M.                    \tag{7}
 $$
 
 Multiplying (7) by the cost of a fresh static call per unit volume gives `MF chi^O(1) theta^-O(1)`. The static subroutine is called afresh; its internal computation time is not used to choose the cut budget, the witness quality, or the recursion balance. Summing boundary edges through the same volume accounting yields a boundary coefficient `chi^O(1)`, with expansion `theta chi^-O(1)`.

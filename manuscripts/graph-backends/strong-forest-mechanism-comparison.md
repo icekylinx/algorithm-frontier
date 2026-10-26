@@ -225,12 +225,12 @@ including isolated nodes and unused copies.
 
 Every physical parent vertex belongs to exactly one component of
 each stable core forest. Thus $C$ root-tree slots contain at most
-$C\operatorname{poly}(U)$ copies of that vertex. For a fixed
+$C\mathrm{poly}(U)$ copies of that vertex. For a fixed
 child edge, its occurrences lie between two fibers containing at
 most $2C$ nodes altogether. They are a subgraph of a forest and
 therefore number at most $2C-1$. A native physical edge has only
 polynomially many distinct core aliases. Its edge occurrence is
-also $C\operatorname{poly}(U)$.
+also $C\mathrm{poly}(U)$.
 
 This is the existing public copy construction. High native degree
 still affects local work and explicit recourse, but it no longer

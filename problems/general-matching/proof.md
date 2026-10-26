@@ -29,7 +29,7 @@ The central contributions are as follows.
 
 1. **Actual integral carriers.** We maintain every integral ledger as an acyclic transportation carrier, retaining zero-valued carrier edges. A batch touching $q$ incidences needs only $O(q)$ forest pivots. At a settled bottom ledger, the carrier induces selected trees of bin weight less than $2L$, together with implicit forward and inverse row assignments.
 2. **Local deterministic exposure and arbitrary optimum gaps.** Output-sensitive tight-set discovery and a local forest exchange supply the structural actions. A comparison matching with $K_{\mathrm g}$ additional edges supplies the augmenting prefixes needed by the phase proof. This gives an exact gap driver on every general graph.
-3. **Exact projection and direct numerical parameters.** A conserved rational flow with total integral-bound violation below one can be rounded to exact feasibility. True-flow and optimistic-cut recovery give the complete residual peel. Binary ledger periods and independently chosen numerical accuracy give total client work $S E^4\operatorname{poly}(\log S)$.
+3. **Exact projection and direct numerical parameters.** A conserved rational flow with total integral-bound violation below one can be rounded to exact feasibility. True-flow and optimistic-cut recovery give the complete residual peel. Binary ledger periods and independently chosen numerical accuracy give total client work $S E^4\mathrm{poly}(\log S)$.
 4. **Sequential routing and normalized ambient sparsification.** We give explicit finite local procedures, a virtual hierarchy with one physical root map, and a scatter–meet–reverse query induction. The static provider has structural quality $\log\Gamma=O((p+r)\log U)$, while its larger construction factor remains local work.
 5. **A complete quantitative composition.** We retain selected-edge recourse, late initial update credit, occurrence pools, finite arithmetic, and the full recursive quality product. Their simultaneous balance gives (1).
 
@@ -41,7 +41,7 @@ The proof separates the matching reduction, the geometric module interfaces, and
 
 We use a word RAM with word size sufficient for an input vertex or edge identifier. Input vertex names are integers in $[n]$. Counting/radix sorting of endpoint pairs and compaction therefore take $O(n+m)$ time. All larger integers and rational arithmetic are charged by their actual word operations. A word never stores an uncharged arbitrarily long integer.
 
-All logarithms are base two unless an entropy or exponential potential explicitly uses natural logarithms. The notation $\operatorname{poly}(U)$ always has a fixed absolute degree. Constants in $O(\cdot)$ are uniform in every growing parameter introduced below.
+All logarithms are base two unless an entropy or exponential potential explicitly uses natural logarithms. The notation $\mathrm{poly}(U)$ always has a fixed absolute degree. Constants in $O(\cdot)$ are uniform in every growing parameter introduced below.
 
 A *lifetime identifier* names one birth-to-retirement instance of a vertex, edge, or exposed occurrence. Reusing an address creates a new lifetime. Parallel edges have distinct identifiers. An *immediate* graph is the graph in which a path is currently defined; two distinct immediate vertices remain distinct even if they later project to the same physical vertex.
 
@@ -207,7 +207,7 @@ Root each carrier component at its minimum-identifier bin. Every row has at leas
 **Proof.** A selected component with bin set $D_T$ has $ |D_T|-1$ internal rows. At most one of those rows—the top degree-three row, if present—sends allocation outside the component. Its export $o$ is less than $L$, since at least one retained child incidence is positive. Let $i\geq0$ be incoming allocation from external rows. Then
 
 $$
-\operatorname{load}(D_T)=L(|D_T|-1)-o+i
+\mathrm{load}(D_T)=L(|D_T|-1)-o+i
                          \leq L|D_T|-w(D_T).
 $$
 
@@ -243,13 +243,13 @@ For a tight set $X$ containing $i,j$, exactly $ |X|-1$ bins are occupied by capt
 
 Apply [CHHIP] with doubling budgets up to a constant multiple of $L$. A lazily generated doubled chain beyond the sink, longer than twice the largest returned-volume budget, excludes sink-containing outputs. A returned set is first restricted to vertices reachable from the query source in its original induced digraph. No doubled arc can cross its one-edge boundary, so the input bins form a tight witness containing $i,j$.
 
-Refine this witness using only its captive rows: one unit augmentation in its split network, followed by residual reachability, returns the smallest source-side minimum cut. Tight sets containing the pair are closed under intersection, because $\eta$ is submodular and strict surplus holds on their nonempty intersection. Thus this is the globally inclusion-minimal tight witness. Doubling makes the total work $O((|X|+1)\operatorname{polylog}S)$ on a tight answer and $O(L\operatorname{polylog}S)$ on a certified freeable pair.
+Refine this witness using only its captive rows: one unit augmentation in its split network, followed by residual reachability, returns the smallest source-side minimum cut. Tight sets containing the pair are closed under intersection, because $\eta$ is submodular and strict surplus holds on their nonempty intersection. Thus this is the globally inclusion-minimal tight witness. Doubling makes the total work $O((|X|+1)\mathrm{polylog}S)$ on a tight answer and $O(L\mathrm{polylog}S)$ on a certified freeable pair.
 
 ### 6.2 Joint exposure inside two small selected trees
 
 If a certified freeable pair lies in different selected trees, enumerate those trees and root them at the pair. Otherwise enumerate its common selected tree $T$, whose physical volume is $O(L)$. A tight set containing both queried bins is contained in $T$: its $ |X|-1$ captive selected edges already connect its bins.
 
-Prune row edges in parallel rounds whenever the row has a third neighbor outside its current component. Record the round and one exterior witness. Queue processing and scans of the smaller pieces give $O(|T|\operatorname{polylog}S)$ work. The final components are maximal tight blocks: within a terminal component every selected row is captive, and a first pruned internal edge prevents any tight set from crossing its split.
+Prune row edges in parallel rounds whenever the row has a third neighbor outside its current component. Record the round and one exterior witness. Queue processing and scans of the smaller pieces give $O(|T|\mathrm{polylog}S)$ work. The final components are maximal tight blocks: within a terminal component every selected row is captive, and a first pruned internal edge prevents any tight set from crossing its split.
 
 Add an artificial infinite-level edge $ij$, delete a minimum finite-level row edge on its cycle, and regard that row as a hole. Replace the hole's original edge by the pair consisting of an original endpoint and its recorded exterior witness. If this closes a cycle, delete a minimum-level edge on it and continue. The hole level strictly decreases. Indeed, at threshold $\ell$, every current edge of level at least $\ell$ lies within an original level-$\ell$ component, while the hole's witness lies outside that component. Any connecting path therefore contains a lower-level edge. The final operation links to one second original tree; deleting the artificial edge separates $i,j$.
 
@@ -259,7 +259,7 @@ Consequently, over contractions $X_1,\ldots,X_b$ and $g$ gains, local pair work 
 
 $$
 O\!\left(\left[\sum_{a=1}^{b}(|X_a|-1)+Lg\right]
-                     \operatorname{polylog}S\right).
+                     \mathrm{polylog}S\right).
  \tag{9}
 $$
 
@@ -288,7 +288,7 @@ The $g_*$-th gain ends the phase immediately. Other structural actions are follo
 
 ### 7.2 Ledger algebra and erased-volume charges
 
-A tight contraction replaces $X$ by a bin of weight $w(X)$, residual $y(X)$, and debt $p(X)$. Indeed, deleting its $ |X|-1$ captive rows removes $L(|X|-1)$ load, making the new residual $L|X|-\operatorname{load}(X)=y(X)$. All floor inequalities add.
+A tight contraction replaces $X$ by a bin of weight $w(X)$, residual $y(X)$, and debt $p(X)$. Indeed, deleting its $ |X|-1$ captive rows removes $L(|X|-1)$ load, making the new residual $L|X|-\mathrm{load}(X)=y(X)$. All floor inequalities add.
 
 An integral expansion puts $L$ on the new assigned incidence and debt $c_j$ on the child bin. At the top, put $C+1$ on the trigger-parent incidence and $L-C-1$ on the child incidence, with the source positivity service on any remaining coordinates. Eligibility gives enough actual parent slack; the new child slack is one. The guarded positivity service adds total debt less than $S^{-800}$ during a phase.
 
@@ -324,7 +324,7 @@ $$
  \tag{13}
 $$
 
-The latter follows from the strict inequality (12), integrality, and $CS^{-800}/L<1$. A peel materializes at most $2w(R)$ physical vertices; a gain erases bins of total weight at most $2L$. Also $Lg_*\leq10001CN$. Counting initial vertices, returned volume, expansions, and contraction arities gives $O(CN)$ structural volume. Retaining a largest child at each contraction moves a physical vertex only $O(\log S)$ times per stay in the bin system. Its original degree is at most three. All physical incidence work and all carrier updates over the $s$ levels consequently cost $S\operatorname{poly}(s)$, apart from numerical projection work.
+The latter follows from the strict inequality (12), integrality, and $CS^{-800}/L<1$. A peel materializes at most $2w(R)$ physical vertices; a gain erases bins of total weight at most $2L$. Also $Lg_*\leq10001CN$. Counting initial vertices, returned volume, expansions, and contraction arities gives $O(CN)$ structural volume. Retaining a largest child at each contraction moves a physical vertex only $O(\log S)$ times per stay in the bin system. Its original degree is at most three. All physical incidence work and all carrier updates over the $s$ levels consequently cost $S\mathrm{poly}(s)$, apart from numerical projection work.
 
 ### 7.3 A comparison matching prevents a false LOW
 
@@ -424,14 +424,14 @@ Zero-score cases may return a certified zero alternative. A complete cap $E$ als
 Set
 
 $$
-D=\operatorname{pow2ceil}(\max\{16,4E\}),\qquad
+D=\mathrm{pow2ceil}(\max\{16,4E\}),\qquad
  q=\frac1{16D},\qquad
  \delta=S^{-1000},\quad \varepsilon=S^{-3000},
  \quad H_{\rm price}=S^{100}.
  \tag{21}
 $$
 
-The logarithmic client has coordinate gradient $g$ and absolute derivative weight $\lambda$, counting individual logarithms before signed cancellation. At anchors use integer prices $\ell_e=\lceil H_{\rm price}\lambda_e\rceil$ and $\gamma_e=\operatorname{round}(H_{\rm price}g_e)$. Source argument and magnitude bounds give $\ell_e\geq S^{80}$ and prices below $S^{1200}$. Degree-three private port paths add at most $2M\sum_e|d_e|$ length to a logical circulation, with $M\leq S^2$. Thus any logical direction
+The logarithmic client has coordinate gradient $g$ and absolute derivative weight $\lambda$, counting individual logarithms before signed cancellation. At anchors use integer prices $\ell_e=\lceil H_{\rm price}\lambda_e\rceil$ and $\gamma_e=\mathrm{round}(H_{\rm price}g_e)$. Source argument and magnitude bounds give $\ell_e\geq S^{80}$ and prices below $S^{1200}$. Degree-three private port paths add at most $2M\sum_e|d_e|$ length to a logical circulation, with $M\leq S^2$. Thus any logical direction
 
 $$
 g^{\mathsf T}d>\tfrac12\sum_e\lambda_e|d_e|
@@ -463,7 +463,7 @@ Let $J_{\rm step}$ count accepted steps and $Q_{\rm own}$ requests from the owni
 $$
 T_{\rm priced}
  \leq O(MD+Q_{\rm own}D+D^2J_{\rm step})
-                                      \operatorname{poly}(s).
+                                      \mathrm{poly}(s).
  \tag{25}
 $$
 
@@ -474,7 +474,7 @@ All exposed copies, including dormant ones, remain on signed and absolute-motion
 **Lemma 8.1 (conserved near-feasible rounding).** Let $f$ satisfy integral vertex demands exactly in an oriented multigraph with integral lower and upper bounds $l\leq u$. If
 
 $$
-\operatorname{viol}(f)=
+\mathrm{viol}(f)=
  \sum_e((l_e-f_e)_++(f_e-u_e)_+)<1,
  \tag{26}
 $$
@@ -547,25 +547,25 @@ This recovers (27) and the entire peel with $O(P_{\mathrm d}+1)$ records. All-ex
 Each local threshold has objective range, including insertion and lock losses, $O((P_{\mathrm d}+1)s)$. Progress $\Omega(q^2)$ gives
 
 $$
-J_{\rm step}=(P_{\mathrm d}+1)D^2\operatorname{poly}(s),
+J_{\rm step}=(P_{\mathrm d}+1)D^2\mathrm{poly}(s),
  \qquad
- Q_{\rm own}=(P_{\mathrm d}+1)D^3\operatorname{poly}(s).
+ Q_{\rm own}=(P_{\mathrm d}+1)D^3\mathrm{poly}(s).
 $$
 
-Its nominal lifetime is at most $8192(P_{\mathrm d}+1)$, with power-of-two rounding $M=\operatorname{pow2ceil}(16(R+2))$. Equation (25), all $O(s)$ tests, rounding, and final recovery consequently cost
+Its nominal lifetime is at most $8192(P_{\mathrm d}+1)$, with power-of-two rounding $M=\mathrm{pow2ceil}(16(R+2))$. Equation (25), all $O(s)$ tests, rounding, and final recovery consequently cost
 
 $$
 T_{\rm projection}\leq
-       (P_{\mathrm d}+1)D^4\operatorname{poly}(s).
+       (P_{\mathrm d}+1)D^4\mathrm{poly}(s).
  \tag{30}
 $$
 
-The top client uses $R_{\rm top}=S(s+1)^{10}$ and costs $SD^4\operatorname{poly}(s)$. By (17), local lifetimes are $O(sS)$; both top and local nominal sizes are below $S^2$ eventually. Root prices and logical capacity bounds are fixed before choosing $D,q$; repricing reuses endpoint slots.
+The top client uses $R_{\rm top}=S(s+1)^{10}$ and costs $SD^4\mathrm{poly}(s)$. By (17), local lifetimes are $O(sS)$; both top and local nominal sizes are below $S^2$ eventually. Root prices and logical capacity bounds are fixed before choosing $D,q$; repricing reuses endpoint slots.
 
 Sum (30) using (18), add $O(s)$ all-expanded resets and structural work, and then include $O(s^2)$ phases. Since $D=O(E)$, the complete matching-side reduction is
 
 $$
-T_{\rm match}\leq S E^4\operatorname{poly}(s).
+T_{\rm match}\leq S E^4\mathrm{poly}(s).
  \tag{31}
 $$
 
@@ -578,11 +578,11 @@ The routing construction is useful because its output quality depends linearly o
 **Proposition 9.1 (routing assembly).** On a connected loopless $m'$-edge multigraph of conductance at least $\phi>0$, and with master logarithmic inventory bound $U$, the hierarchy and local constructions specified below give preprocessing work
 
 $$
-m'\exp O(U/p+ph+\log\phi^{-1})\operatorname{poly}(U).
+m'\exp O(U/p+ph+\log\phi^{-1})\mathrm{poly}(U).
  \tag{32}
 $$
 
-A query with at most $D_{\rm tok}\deg(v)$ starts and destinations at every vertex returns explicit simple paths with length at most $Q$, edge-occurrence congestion at most $D_{\rm tok}Q$, and work at most $m'D_{\rm tok}Q\operatorname{poly}(U)$, where
+A query with at most $D_{\rm tok}\deg(v)$ starts and destinations at every vertex returns explicit simple paths with length at most $Q$, edge-occurrence congestion at most $D_{\rm tok}Q$, and work at most $m'D_{\rm tok}Q\mathrm{poly}(U)$, where
 
 $$
 Q=\exp O(ph+\log\phi^{-1}).
@@ -718,7 +718,7 @@ Finally, hierarchy construction satisfies an actual-size recurrence
 $$
 T(N,j)\leq v^{c_1}\sum_iT(N_i,j-1)
        +N b_{\rm route}^{c_2}v^{c_3}
-                      \operatorname{poly}(\psi_{\rm cut}^{-1}),
+                      \mathrm{poly}(\psi_{\rm cut}^{-1}),
  \quad \sum_iN_i\leq c_4N,
  \tag{43}
 $$
@@ -759,7 +759,7 @@ $$
  \tag{46}
 $$
 
-The same factor counts uses of each stored primitive and repeated trace consumption. Hence dilation is at most $A_{\rm fam}(c(\lambda+1))^{d+1}$, congestion at most $L_{\rm tok}A_{\rm fam}(c(\lambda+1)^2)^{d+1}$, and work at most $n'L_{\rm tok}$ times this non-load factor and logarithmic bookkeeping. Here $d=O(p)$. For quota enumeration, store portal groups in decreasing $p_{ij}^a$; every positive quota consumes a token, plus one stopping test per nonempty part/color. Work per step is $O((M_{\rm tok}+t_{\rm part}^2)\operatorname{polylog}(n'L_{\rm tok}+2))$, paid by (36).
+The same factor counts uses of each stored primitive and repeated trace consumption. Hence dilation is at most $A_{\rm fam}(c(\lambda+1))^{d+1}$, congestion at most $L_{\rm tok}A_{\rm fam}(c(\lambda+1)^2)^{d+1}$, and work at most $n'L_{\rm tok}$ times this non-load factor and logarithmic bookkeeping. Here $d=O(p)$. For quota enumeration, store portal groups in decreasing $p_{ij}^a$; every positive quota consumes a token, plus one stopping test per nonempty part/color. Work per step is $O((M_{\rm tok}+t_{\rm part}^2)\mathrm{polylog}(n'L_{\rm tok}+2))$, paid by (36).
 
 Project cube-port moves to the original host, retaining genuine edge identifiers, then erase closed subwalks using immediate host lifetime IDs. Length and all loads decrease. Equations (39) and (46) give (33) and the full query-volume bound in Proposition 9.1.
 
@@ -769,7 +769,7 @@ Project cube-port moves to the original host, retaining genuine edge identifiers
 
 $$
 \begin{aligned}
- |E(\widetilde J_0)|&\leq |V(J_0)|\Gamma\operatorname{poly}(U),\\
+ |E(\widetilde J_0)|&\leq |V(J_0)|\Gamma\mathrm{poly}(U),\\
  L(R)&\leq\Gamma,\qquad L(\Pi'\circ R)\leq\Gamma L_0,\\
  C(\Pi'\circ R)&\leq\Gamma(C_0+\Delta_0),
 \end{aligned}
@@ -787,7 +787,7 @@ $$
 Full work, plus actual vertex bookkeeping, is
 
 $$
-|E(J_0)|F^{O(1)}\Gamma^{O(1)}(L_0+1)\operatorname{poly}(U).
+|E(J_0)|F^{O(1)}\Gamma^{O(1)}(L_0+1)\mathrm{poly}(U).
  \tag{49}
 $$
 
@@ -797,7 +797,7 @@ The statement is relative to Proposition 9.1 and the inherited degree-band primi
 
 First loop-erase every individual ambient image, using immediate ambient lifetime identifiers. This gives simple $\Pi'(e)$, with length at most $L_0$ and congestion at most $C_0$.
 
-The degree-band primitive, with parameter $r$, partitions demand edges into a residual graph with at most $|V(J_0)|$ edges and band graphs $J_i$. Their nontrivial components have conductance at least $\phi=\exp(-O(rh))$, minimum degree at least $\rho_i=\phi2^i$, and $\phi\leq\rho_i\leq\Delta_0$. Its work is $m_0\exp O(U/r+r^2h+rh)\operatorname{poly}(U)$, with $m_0=|E(J_0)|$.
+The degree-band primitive, with parameter $r$, partitions demand edges into a residual graph with at most $|V(J_0)|$ edges and band graphs $J_i$. Their nontrivial components have conductance at least $\phi=\exp(-O(rh))$, minimum degree at least $\rho_i=\phi2^i$, and $\phi\leq\rho_i\leq\Delta_0$. Its work is $m_0\exp O(U/r+r^2h+rh)\mathrm{poly}(U)$, with $m_0=|E(J_0)|$.
 
 For clarity, this is a reconstructed reduction from the external cut/pruning primitives. Start at $\ell=\max\{0,\lceil\log(2m_0/n_0)\rceil\}$, where $n_0$ counts nonisolated vertices, with invariant $|E(G_i)|\leq2^in_0$. Decompose $G_i$ with a fixed crossing-edge fraction; within each component prune vertices below $\phi2^i$, using a sufficiently small fixed rescaling of the common $\phi$. The pruning volume bound and component discard budget leave at most $2^{i-1}n_0$ edges for the next stage. Retained components have the stated minimum degree and conductance. Summing $\sum_{i\leq\ell}2^in_0=O(m_0)$ pays actual scanning work. There are $O(U)$ bands, and each retained band has at most $2^in_0$ edges. Calls on smaller graphs clip $r$ to the source's legal range; this improves expansion and stays within the master work envelope.
 
@@ -885,7 +885,7 @@ $$
 Weighted ambient congestion of the chosen witness paths is at most
 
 $$
-Q\phi^{-O(1)}\operatorname{poly}(U)(C_0+\Delta_0).
+Q\phi^{-O(1)}\mathrm{poly}(U)(C_0+\Delta_0).
  \tag{55}
 $$
 
@@ -893,7 +893,7 @@ Only used ambient resources enter the logarithm; their logarithmic inventory is 
 
 ### 10.4 Selected input support and composition
 
-Retain all native $J_0$-edge identifiers used by the selected witness paths, together with residual edges. By (51), their number is at most $|V(J_0)|Q\phi^{-O(1)}\operatorname{poly}(U)$.
+Retain all native $J_0$-edge identifiers used by the selected witness paths, together with residual edges. By (51), their number is at most $|V(J_0)|Q\phi^{-O(1)}\mathrm{poly}(U)$.
 
 Each reverse route uses a witness edge with congestion at most $D_iQ$, or relative to weight $\rho_i$, at most $2Q/\phi$. Substitute the chosen forward path for every witness occurrence. This multiplies (55) by at most $2Q/\phi$; final host length is at most $Q^2$. These fixed powers give (47)–(48). Scanning all composed occurrence lists costs the factor $L_0+1$ in (49). Thus ambient input length affects construction work while the congestion bound remains additive in $C_0+\Delta_0$.
 
@@ -925,9 +925,9 @@ This section specifies the current backend realization and its quantitative proo
 
 Every nonbase parent has maximum degree three. A fresh period begins with its actual nonisolated graph of resident size $m'$, and lasts $O(m'/k)$ parent edits. Within the period, newly isolated slots are retained and counted. A later period starts from the maintained nonisolated list, without rescanning unrelated private isolates.
 
-The deterministic center interface uses $O((n'/k)\log^2(n'+2))$ large-component centers, strict balls of size at most $k$, and inverse clusters of size at most $2k$, with $O(n'k\operatorname{polylog}(n'+2))$ work. It follows by greedy hitting sets of nearest-vertex lists, then repeatedly hitting prefixes in the remaining oversized inverse clusters; at least half of the oversized vertices settle each round. Small connected components receive a common local center.
+The deterministic center interface uses $O((n'/k)\log^2(n'+2))$ large-component centers, strict balls of size at most $k$, and inverse clusters of size at most $2k$, with $O(n'k\mathrm{polylog}(n'+2))$ work. It follows by greedy hitting sets of nearest-vertex lists, then repeatedly hitting prefixes in the remaining oversized inverse clusters; at least half of the oversized vertices settle each round. Small connected components receive a common local center.
 
-Stable forests have components of $O(k)$ physical vertices. Endpoint promotions and monotone cuts preserve the initial future-path inventory, apart from separately recorded new generating middle edges. Weighted future-path halving gives a polynomial-$U$ family of forests. We use $A=\operatorname{poly}(U)$ to cover their count, buckets, cut logs, and indexing factors. Then:
+Stable forests have components of $O(k)$ physical vertices. Endpoint promotions and monotone cuts preserve the initial future-path inventory, apart from separately recorded new generating middle edges. Weighted future-path halving gives a polynomial-$U$ family of forests. We use $A=\mathrm{poly}(U)$ to cover their count, buckets, cut logs, and indexing factors. Then:
 
 - native core degree is at most $Ak$;
 - initially relevant nonloop roots number at most $Am'/k$;
@@ -996,21 +996,21 @@ with initial size and chronological child transcript at most
 $O(m'R_{\rm sel}/k+R_{\rm sel}q_{\rm par})$.
 The additive initial term is one credit for the period, and may be spent later.
 
-At each repair, preliminary projected degree and ambient congestion are $O(C_j+\Delta_{\rm native})$, where $\Delta_{\rm native}=k\operatorname{poly}(U)$. This uses actual normalized route owners and their first-touched endpoints. Proposition 10.1 gives
+At each repair, preliminary projected degree and ambient congestion are $O(C_j+\Delta_{\rm native})$, where $\Delta_{\rm native}=k\mathrm{poly}(U)$. This uses actual normalized route owners and their first-touched endpoints. Proposition 10.1 gives
 
 $$
 L_{j+1}\leq c\Gamma L_j,\qquad
- C_{j+1}\leq c\Gamma(C_j+k\operatorname{poly}(U)).
+ C_{j+1}\leq c\Gamma(C_j+k\mathrm{poly}(U)).
  \tag{62}
 $$
 
 Therefore $L_{K_{\mathrm r}}\leq\Gamma^{O(K_{\mathrm r})}$ and
-$C_{K_{\mathrm r}}\leq k\operatorname{poly}(U)\Gamma^{O(K_{\mathrm r})}$.
+$C_{K_{\mathrm r}}\leq k\mathrm{poly}(U)\Gamma^{O(K_{\mathrm r})}$.
 Full route lists, reverse occurrence indices, moved incidences, native endpoint changes, and correction-score updates are local work bounded by
 
 $$
 W=k^{O(1)}\rho^{O(1)}F^{O(1)}
-                       \Gamma^{O(K_{\mathrm r})}\operatorname{poly}(U).
+                       \Gamma^{O(K_{\mathrm r})}\mathrm{poly}(U).
  \tag{63}
 $$
 
@@ -1096,11 +1096,11 @@ The finite-bit tree interface required here is the following: on a connected $n'
 
 $$
 \sum_{e=uv}\frac{d_T(u,v)}{\ell_e}\leq
-       m'\operatorname{poly}(b+\log(n'+m'+4))
+       m'\mathrm{poly}(b+\log(n'+m'+4))
  \tag{70}
 $$
 
-in $(n'+m')\operatorname{poly}(b+\log(n'+m'+4))$ bit work. Its geometric realization uses the weighted petal construction of [AN]: exact weighted portals on a common dyadic grid, a static directed metric during each petal, exact midpoint tests, and separate working and inherited target paths. Temporary portal coordinates are removed before exporting the tree. We treat this finite-bit realization, including its geometric induction, as part of the backend contract; only its integration into the numerical hierarchy is proved here.
+in $(n'+m')\mathrm{poly}(b+\log(n'+m'+4))$ bit work. Its geometric realization uses the weighted petal construction of [AN]: exact weighted portals on a common dyadic grid, a static directed metric during each petal, exact midpoint tests, and separate working and inherited target paths. Temporary portal coordinates are removed before exporting the tree. We treat this finite-bit realization, including its geometric induction, as part of the backend contract; only its integration into the numerical hierarchy is proved here.
 
 For weighted forest calls, use occurrence counts $N_e$ and integer importance $w_e=N_e\ell_e$. If a component has $a$ edges and total $W_0>0$, smooth by $v_e=aw_e+W_0$ and use replica counts $\lceil av_e/\sum_fv_f\rceil$, totaling at most $2a$. If $W_0=0$, use uniform positive weights. Reciprocal ordering uses the dyadic proxy $2^{-\lceil\log\ell_e\rceil}$. All these operations use integer arithmetic or one common power-of-two grid.
 
@@ -1123,10 +1123,10 @@ b_*=c_b U(d_*+1),
  \tag{72}
 $$
 
-with fixed $c_b$ large enough for the root-price and size constants. This label bound is proved before substituting the polynomial-bit tree cost. Consequently the input precision in (70) is $\operatorname{poly}(U)$, and its cost contributes fixed polynomial factors only.
+with fixed $c_b$ large enough for the root-price and size constants. This label bound is proved before substituting the polynomial-bit tree cost. Consequently the input precision in (70) is $\mathrm{poly}(U)$, and its cost contributes fixed polynomial factors only.
 
-The complete initial future-path occurrence inventory has size and total edge count $m'k^{O(1)}\operatorname{poly}(U)$, and maximum path length at most $k^{O(1)}\operatorname{poly}(U)2^{b_*}$. Weighted path halving thus uses
-$O(\log(m'+2)+\log(k+2)+b_*+\log(U+2))=\operatorname{poly}(U)$
+The complete initial future-path occurrence inventory has size and total edge count $m'k^{O(1)}\mathrm{poly}(U)$, and maximum path length at most $k^{O(1)}\mathrm{poly}(U)2^{b_*}$. Weighted path halving thus uses
+$O(\log(m'+2)+\log(k+2)+b_*+\log(U+2))=\mathrm{poly}(U)$
 forests. This count includes the length aspect. Temporary spectral, moment, or portal arithmetic is charged locally and is not exported as a stored numerical label.
 
 ### 11.6 Explicit raw-backend realization contract

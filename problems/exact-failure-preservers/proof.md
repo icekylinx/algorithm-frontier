@@ -20,7 +20,7 @@ In the second use the heads $b$ instead of the tails $a$. Both vectors agree bec
 
 **Lemma 2.2 (replacement identity).** If $\delta_f$ is the shortest cycle length through $f\in B$, with infinity when none exists, then
 $$
-\operatorname{OPT}_{-f}(k)=w(B)+\delta_f.
+\mathrm{OPT}_{-f}(k)=w(B)+\delta_f.
 $$
 
 **Proof.** In Lemma 2.1's decomposition for a cycle through $f$, bases avoiding $f$ have total coefficient $\eta$. All component gaps above $w(B)$ are nonnegative and their average is $\eta\ell(C)$. Some avoiding basis therefore has gap at most $\ell(C)$. Its support uses only $B$ and cycle labels, and it contains $B\setminus V(C)$.

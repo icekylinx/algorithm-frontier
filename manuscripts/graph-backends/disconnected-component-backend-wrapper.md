@@ -48,7 +48,7 @@ recomputed after each graph update.
 
 The correct componentwise low-stretch initialization has
 $$
-O(m_0\,\operatorname{polylog}M/k)
+O(m_0\,\mathrm{polylog}M/k)
        +\#\{\text{initial small components}\}
  \tag{1}
 $$
@@ -86,9 +86,9 @@ and is incident to at most $k\Delta$ current graph edges.
 Here is the precise stability argument. The fixed stretch labels of
 CKL+22 equation (56) have the form
 $$
-\widetilde{\operatorname{str}}(e)
+\widetilde{\mathrm{str}}(e)
     =2\sum_{j=0}^{h}
-       \operatorname{str}_{F_T(B_j,\pi)}(e),
+       \mathrm{str}_{F_T(B_j,\pi)}(e),
        \qquad h=O(\log^2|C|).
  \tag{2}
 $$
@@ -130,7 +130,7 @@ not give this immediate conclusion.
 
 Large initial components use the ordinary source initialization.
 Their initial root and cut counts sum to
-$O(m_0\operatorname{polylog}M/k)$, because their number is also
+$O(m_0\mathrm{polylog}M/k)$, because their number is also
 $O(m_0/k)$. Newly born input vertices start as singleton forest trees.
 
 The weighted family construction may use one common global parameter
@@ -145,7 +145,7 @@ forest updates.
 
 There is no large rational denominator in this modification. In our
 integer-length realization the original weights are integers
-$w_e=\operatorname{econg}(\widetilde{\mathcal P}_i,e)\ell_e$.
+$w_e=\mathrm{econg}(\widetilde{\mathcal P}_i,e)\ell_e$.
 Here the count is the total number of **edge occurrences** in the
 concatenated inventory walks, including repetitions. A concatenation
 of shortest-path legs need not be simple; counting only whether a
@@ -185,8 +185,8 @@ of that path satisfies $c_f\leq2c_g$.
 
 This gives the following direct variant of CKL+22 Lemma B.6:
 $$
-\sum_{e\in E(G_v)}\operatorname{str}_{F_T(R,\pi),\ell}(e)
- \leq3\sum_{e\in E(G_v)}\operatorname{str}_{T,\ell}(e).
+\sum_{e\in E(G_v)}\mathrm{str}_{F_T(R,\pi),\ell}(e)
+ \leq3\sum_{e\in E(G_v)}\mathrm{str}_{T,\ell}(e).
  \tag{2b}
 $$
 Indeed, the source's equation (55) bounds the left side by the
@@ -220,7 +220,7 @@ covered conservatively by
 $\gamma_{\rm ord}=2\gamma_{\rm src}$. Positive-weight smoothing
 then gives
 $$
-\sum_e w_e\widetilde{\operatorname{str}}(e)
+\sum_e w_e\widetilde{\mathrm{str}}(e)
  \leq \gamma_{\rm eff}\sum_e w_e,\qquad
  \gamma_{\rm eff}=2\gamma_{\rm ord}=4\gamma_{\rm src}.
  \tag{2c}
@@ -244,8 +244,7 @@ of twice that amount at its LCA,
 followed by a tree postorder sum, compute all tree-edge loads.
 Sorting them takes $O(e_C\log(e_C+2))$ comparisons of these
 integers. Formula (56) is subsequently stored as
-$\ell_e\widetilde{\operatorname{str}}(e)
- =2\sum_j(\ell_e+P_j)$, using only integer path lengths.
+$\ell_e\widetilde{\mathrm{str}}(e) =2\sum_j(\ell_e+P_j)$, using only integer path lengths.
 No least common multiple or exact reciprocal sum is formed. This
 closes the normalization and Appendix B.3 ordering arithmetic;
 the deterministic weighted low-stretch-tree construction remains
@@ -269,12 +268,12 @@ exactly $\{r_C\}$, with the root chosen in Section 2. Run the source
 center construction on each large component, adding one actual local
 pivot if it returns no center there. In large components these extra
 roots and their ancestor closures cost only
-$O(m_0\operatorname{polylog}M/k)$ in total.
+$O(m_0\mathrm{polylog}M/k)$ in total.
 
 Every vertex now has a genuine closest logical pivot. No distance to
 a nonexistent pivot is queried. The logical pivot set may have
 $$
-O(m_0\operatorname{polylog}M/k)
+O(m_0\mathrm{polylog}M/k)
        +\#\{\text{initial small components}\}
  \tag{3}
 $$
@@ -364,11 +363,11 @@ Apply the KMPG degree-feedback routine to the retained positive
 edges in each core, exactly the core intersections used by its
 Algorithms 2--4. The feedback proof uses the per-core sparsity
 and native-split edit bounds; zero gluing edges are not part of that
-degree test. There are $\lambda=\operatorname{polylog}M$ cores.
+degree test. There are $\lambda=\mathrm{polylog}M$ cores.
 Summing their work and recourse and then identifying equal physical
 roots multiplies the degree and edit bounds only by this source
 factor, absorbed in $R$. A new root alias changes only
-$\operatorname{polylog}M$ external gluing records. Frozen-gauge
+$\mathrm{polylog}M$ external gluing records. Frozen-gauge
 values on the gluing links are corrected to zero before their
 contraction, as in the integration note.
 
@@ -378,7 +377,7 @@ edges. Their embeddings may all meet that vertex, so we do not use
 a $k$-free bound on this congestion. Empty loop embeddings also
 retain their base vertex for touched-incidence bookkeeping; their
 contribution is bounded by the full registered core degree.
-The corresponding $k\,\operatorname{poly}(\Delta,A)$ route and
+The corresponding $k\,\mathrm{poly}(\Delta,A)$ route and
 incidence work is part of the local envelope $W$. The bounds
 required without a $k$ factor are the selected spanner's controlled
 degree and its emitted child-edit count. Physical flat-forest
@@ -475,7 +474,7 @@ not zero alias links. It therefore makes no extra initial forest cuts
 in an untouched small whole-tree component.
 
 The initialization sparsity argument for the large blocks consequently
-uses only their own $O(m_0\operatorname{polylog}M/k)$ core roots.
+uses only their own $O(m_0\mathrm{polylog}M/k)$ core roots.
 An arbitrarily large collection of isolated small blocks cannot
 subsidize extra selected edges or extra initial degree-control cuts
 elsewhere.
@@ -648,8 +647,8 @@ exported occurrences.
 
 ## 8. Effect on the recursive bound and remaining imports
 
-The wrapper adds $m_0\operatorname{poly}(k,\Delta)$ local
-initialization work and $\operatorname{poly}(k,\Delta)$ local
+The wrapper adds $m_0\mathrm{poly}(k,\Delta)$ local
+initialization work and $\mathrm{poly}(k,\Delta)$ local
 update work within the existing envelope $W$. Its child terms
 remain
 $$

@@ -13,7 +13,7 @@ $$
 One-sided inequalities are included: intersect their permitted range with the elementary attainable range `[sum_j min(a_ij,0), sum_j max(a_ij,0)]`. An empty interval certifies infeasibility. A zero row is checked and removed. Let `L` denote the full binary input length, including all equalities, interval endpoints, and an optional signed linear objective. Let
 
 $$
-s_i=|\operatorname{supp}(a_i)|,\quad W_i=u_i-\ell_i,\quad
+s_i=|\mathrm{supp}(a_i)|,\quad W_i=u_i-\ell_i,\quad
 \kappa_i=\min\{W_i+1,5s_i+1\},\quad
 q_i=\lceil\log_2\kappa_i\rceil,\quad Q=\sum_i q_i.
 \tag{B1}
@@ -31,7 +31,7 @@ and `p_i=1` if `W_i<=5s_i`. Every catalogue interval contains at most `kappa_i` 
 Assume a deterministic Subset Sum backend returns an indexed witness in time
 
 $$
-\operatorname{poly}(L')2^{\alpha N}
+\mathrm{poly}(L')2^{\alpha N}
 $$
 
 on `N` signed binary integers. If it also has writable-bit space `poly(L') 2^{sigma N}`, the same space interface can be used below. The polynomial degrees are constants belonging to the backend.
@@ -39,7 +39,7 @@ on `N` signed binary integers. If it also has writable-bit space `poly(L') 2^{si
 **Compiler theorem.** For every integer `B` with `0<=B<=Q`, exact feasibility and indexed witness recovery for the above Boolean linear system can be performed in
 
 $$
-T_B\le\operatorname{poly}(L)\left(\prod_{i=1}^m p_i\right)
+T_B\le\mathrm{poly}(L)\left(\prod_{i=1}^m p_i\right)
 2^{\alpha n+Q-(1-\alpha)B},
 \tag{B3}
 $$
@@ -47,7 +47,7 @@ $$
 and, when the space interface is available,
 
 $$
-S_B\le\operatorname{poly}(L)2^{\sigma(n+B)}.
+S_B\le\mathrm{poly}(L)2^{\sigma(n+B)}.
 \tag{B4}
 $$
 
@@ -56,9 +56,9 @@ The equalities do not enter `Q` or the product of catalogue sizes. Their encodin
 The endpoints are useful:
 
 $$
-T_0\le\operatorname{poly}(L)\Bigl(\prod p_i\Bigr)2^{\alpha n+Q},
+T_0\le\mathrm{poly}(L)\Bigl(\prod p_i\Bigr)2^{\alpha n+Q},
 \qquad
-T_Q\le\operatorname{poly}(L)\Bigl(\prod p_i\Bigr)2^{\alpha(n+Q)}.
+T_Q\le\mathrm{poly}(L)\Bigl(\prod p_i\Bigr)2^{\alpha(n+Q)}.
 \tag{B5}
 $$
 
@@ -185,7 +185,7 @@ $$
 The fast contract has time `poly(L') 2^{E N}` with exact indexed witness recovery; it does not claim a separate space exponent. Substituting `alpha=E` into (B3), and choosing `B=Q`, yields
 
 $$
-\operatorname{poly}(L)\left(\prod_i p_i\right)2^{E(n+Q)}.
+\mathrm{poly}(L)\left(\prod_i p_i\right)2^{E(n+Q)}.
 \tag{B15}
 $$
 
@@ -200,9 +200,9 @@ throughout (B3), (B5), and (B15). In particular, full slack gives `poly(L) (prod
 The separate low-space contract has time `poly(L') 2^{N/2}` and writable bits `poly(L') 2^{E_S N}`. It gives the full family
 
 $$
-T_B\le\operatorname{poly}(L)\left(\prod_i p_i\right)2^{n/2+Q-B/2},
+T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)2^{n/2+Q-B/2},
 \qquad
-S_B\le\operatorname{poly}(L)2^{E_S(n+B)}.
+S_B\le\mathrm{poly}(L)2^{E_S(n+B)}.
 \tag{B16}
 $$
 
@@ -218,7 +218,7 @@ These fixed-dimensional corollaries are consequences of the known reduction and 
 For growing `m`, the displayed parameterized compiler is the additional useful content. For example, when all `s_i<=n`, all coefficient/endpoint bit lengths are `n^{c+o(1)}`, and `m=(gamma+o(1))n/log_2 n`, the full-slack bound (B15) is at most
 
 $$
-2^{[E+(E+c)\gamma+o(1)]n}\operatorname{poly}(L),
+2^{[E+(E+c)\gamma+o(1)]n}\mathrm{poly}(L),
 \tag{B17}
 $$
 

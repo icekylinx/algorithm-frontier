@@ -124,8 +124,8 @@ can contain the same physical vertex. The retained center interface has
 both guarantees
 
 $$
-|B(v,A)|\le k\operatorname{poly}(U),\qquad
-       |C(w,A)|\le k\operatorname{poly}(U),
+|B(v,A)|\le k\mathrm{poly}(U),\qquad
+       |C(w,A)|\le k\mathrm{poly}(U),
        \quad C(w,A)=\{v:w\in B(v,A)\}.
 \tag{D6}
 $$
@@ -152,9 +152,9 @@ Every internal vertex on a positive-length shortest path from $v$ to
 a point in $B(v,A)$ lies in $B(v,A)$. Consequently a physical
 vertex $w$ occurs in the strict-ball trees of at most
 $|C(w,A)|+1$ roots. This bounds local vertex occurrence, and hence
-edge occurrence, by $k^{O(1)}\operatorname{poly}(U)$. The nearest-pivot
+edge occurrence, by $k^{O(1)}\mathrm{poly}(U)$. The nearest-pivot
 forest contributes only one further copy of each native vertex and edge.
-At a base instance, its at most $k^{O(1)}\operatorname{poly}(U)$
+At a base instance, its at most $k^{O(1)}\mathrm{poly}(U)$
 shortest-path forests contribute the same kind of bound.
 
 The stored exact paths may be drawn from the source's initial future-path
@@ -164,7 +164,7 @@ promoted, so a current strict-ball path cannot first traverse such a new or
 deleted edge without first hitting a pivot. The source's exact local path
 maintenance, or its explicit path inventory with literal tree rebuilding,
 therefore maintains the above families in
-$k^{O(1)}\operatorname{poly}(U)$ additional local work per native
+$k^{O(1)}\mathrm{poly}(U)$ additional local work per native
 operation. No current shortest-path search over the entire root graph is
 needed for an accepted query.
 
@@ -181,13 +181,13 @@ G_{j-1}\le P(G_j+1).
 $$
 
 Thus a local family born at level $i$, with occurrence
-$k^{O(1)}\operatorname{poly}(U)$, has root occurrence at most
-$k^{O(1)}P^i\operatorname{poly}(U)$. Summing the families born at
+$k^{O(1)}\mathrm{poly}(U)$, has root occurrence at most
+$k^{O(1)}P^i\mathrm{poly}(U)$. Summing the families born at
 all $d+1$ levels gives
 
 $$
 G_{\rm root}
-             \le k^{O(1)}P^d\operatorname{poly}(U).
+             \le k^{O(1)}P^d\mathrm{poly}(U).
 \tag{D8}
 $$
 
@@ -213,8 +213,7 @@ a parent period. All historical ghosts and dormant allocated pools count
 as records. This is the same actual-inventory accounting as the audited
 arbitrary-forest lift, with a larger polynomial local family at its leaves.
 
-One may make the work induction explicit. Let $b_*=k^{O(1)}
-\operatorname{poly}(U)$ bound a local family's pointwise occurrence,
+One may make the work induction explicit. Let $b_*=k^{O(1)} \mathrm{poly}(U)$ bound a local family's pointwise occurrence,
 and enlarge local work once to $W'=k^{O(1)}W$. With $j$ remaining
 recursive levels, let $J_j$ be initialization cost per initial native
 record and $T_j$ amortized cost per native edit. The safe recurrences,
@@ -281,7 +280,7 @@ the same physical image; this is enough for their projected walks to
 concatenate. The descriptor represents an original walk $W$ with
 
 $$
-\operatorname{len}(W)\le\widehat d
+\mathrm{len}(W)\le\widehat d
                           \le\Gamma d_G(s,t).
 \tag{D10}
 $$
@@ -342,9 +341,9 @@ $s$-to-$t$ path $P$. With positive lengths,
 
 $$
 |S|\le \sum_{e\in S}\ell_e
-       \le\operatorname{len}(W)\le\widehat d,
+       \le\mathrm{len}(W)\le\widehat d,
  \qquad
- \operatorname{len}(P)\le\sum_{e\in S}\ell_e.
+ \mathrm{len}(P)\le\sum_{e\in S}\ell_e.
 \tag{D12}
 $$
 

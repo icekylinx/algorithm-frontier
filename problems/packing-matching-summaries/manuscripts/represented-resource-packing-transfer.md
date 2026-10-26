@@ -126,7 +126,7 @@ $$
 Without the resource matroid, omit v_e. Keep the cost-ordered greedy basis of these lifted columns. Its cardinality obeys (2), and for every protected e it supplies a relation
 
 $$
-z_e\in\operatorname{span}
+z_e\in\mathrm{span}
                       \{z_f:f\in H,\ c(f)\le c(e)\}.
  \tag{10}
 $$
@@ -138,7 +138,7 @@ Inside a cost tie, only predecessors in the fixed total order are needed when e 
 This is the main quantifier point. Let T be an independent context in an arbitrary later extension M+, and protect e in T intersect E. Define
 
 $$
-A=E\cap\operatorname{cl}_{M^+}(T-\{e\}).
+A=E\cap\mathrm{cl}_{M^+}(T-\{e\}).
  \tag{11}
 $$
 

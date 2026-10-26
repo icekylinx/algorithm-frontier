@@ -8,7 +8,7 @@ Let the local dimensions be arbitrary integers
 $$
 q_1,\ldots,q_n\ge2,\qquad
  D=\prod_{j=1}^n q_j,\qquad
- Q=2\operatorname{lcm}(q_1,\ldots,q_n).
+ Q=2\mathrm{lcm}(q_1,\ldots,q_n).
  \tag{CB1}
 $$
 In particular, $Q\le2D$, and its binary encoding has polynomial length in the input dimensions. Let $\tau=e^{2\pi i/Q}$. On factor $j$, use the shift and clock operators
@@ -100,7 +100,7 @@ $$
 B_e+B_f\succeq(1-1/\sqrt2)I.
  \tag{CB9}
 $$
-This depends on the order of the nontrivial commutator, not on how close its phase is to one. It concerns eigenvalue-check projectors, not the different penalty $I-\operatorname{Re}U$.
+This depends on the order of the nontrivial commutator, not on how close its phase is to one. It concerns eigenvalue-check projectors, not the different penalty $I-\mathrm{Re}U$.
 
 For the compact representation (CB2), commutation and all products are computed by modular phase arithmetic:
 $$
@@ -156,7 +156,7 @@ $$
 \begin{aligned}
  m_\chi
  &=\frac1{|\mathcal H|}
- \sum_{h\in\mathcal H}\overline{\chi(h)}\,\operatorname{tr}(h)\\
+ \sum_{h\in\mathcal H}\overline{\chi(h)}\,\mathrm{tr}(h)\\
  &=\frac{D}{|\mathcal H|}
  \sum_{c\in\mathcal C}\overline{\chi(c)}\chi_0(c)\\
  &=
@@ -223,7 +223,7 @@ We compute $|\mathcal H_S|$ exactly with integer normal forms and greatest commo
 
 Collect the $s$ checks in those blocks. Let $A_S$ be the integer $2n\times s$ matrix of their projective displacement columns, and let
 $$
-M=\operatorname{diag}(q_1,\ldots,q_n,q_1,\ldots,q_n).
+M=\mathrm{diag}(q_1,\ldots,q_n,q_1,\ldots,q_n).
 $$
 The projective displacement image is
 $$
@@ -337,7 +337,7 @@ x_v=2^{k-\ell}b_v\pmod{2^k},
 $$
 where $\ell=0$ is the all-zero assignment. The check at level $j$ violates exactly when $uv$ crosses the cut and $j<\ell$. Thus its original energy is
 $$
-W_\ell\,\operatorname{cut}_{K_{s,B}}(b),
+W_\ell\,\mathrm{cut}_{K_{s,B}}(b),
  \qquad W_\ell=\sum_{j<\ell}3^j=\frac{3^\ell-1}{2}.
  \tag{CB30}
 $$
@@ -345,10 +345,10 @@ $$
 Let $\widehat G_j$ be the nonnegative weighted graph consisting of the output coefficients at level $j$. The spectral guarantee on these basis states implies
 $$
 \left|
- \sum_{j<\ell}\operatorname{cut}_{\widehat G_j}(b)
- -W_\ell\operatorname{cut}_{K_{s,B}}(b)
+ \sum_{j<\ell}\mathrm{cut}_{\widehat G_j}(b)
+ -W_\ell\mathrm{cut}_{K_{s,B}}(b)
  \right|
- \le\epsilon W_\ell\operatorname{cut}_{K_{s,B}}(b).
+ \le\epsilon W_\ell\mathrm{cut}_{K_{s,B}}(b).
  \tag{CB31}
 $$
 Subtract the estimates for $\ell=j+1$ and $\ell=j$. Since
@@ -358,10 +358,10 @@ $$
 we obtain
 $$
 \left|
- \operatorname{cut}_{\widehat G_j}(b)
- -3^j\operatorname{cut}_{K_{s,B}}(b)
+ \mathrm{cut}_{\widehat G_j}(b)
+ -3^j\mathrm{cut}_{K_{s,B}}(b)
  \right|
- \le2\epsilon\,3^j\operatorname{cut}_{K_{s,B}}(b).
+ \le2\epsilon\,3^j\mathrm{cut}_{K_{s,B}}(b).
  \tag{CB32}
 $$
 After division by $3^j$, each level is independently a weighted $(1\pm2\epsilon)$ cut sparsifier of $K_{s,B}$.

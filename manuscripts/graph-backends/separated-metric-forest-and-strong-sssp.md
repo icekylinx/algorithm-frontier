@@ -24,7 +24,7 @@ merely by substituting a faster static maximum-flow algorithm.
 For the main theorem, let $G$ be an undirected bounded-degree graph,
 with a fixed vertex set, positive integer lengths of polynomial aspect
 ratio, a fixed source $s$, and a sequence of edge deletions. Let
-$\epsilon\geq1/\operatorname{polylog}(m+4)$. The proposed data structure
+$\epsilon\geq1/\mathrm{polylog}(m+4)$. The proposed data structure
 maintains an explicit forest $F$, an injection
 $\iota:V(G)\to V(F)$, a vertex-image map
 $\pi:V(F)\to V(G)$, and an edge-image map
@@ -38,7 +38,7 @@ $\eta:E(F)\to E(G)$, with the following contract.
    There are no exposed null edges in this final forest.
 3. If $v$ is reachable from $s$, the two distinguished nodes lie in
    one tree, and their forest path has length at most
-   $(1+\epsilon)\operatorname{dist}_G(s,v)$. Its projection is an
+   $(1+\epsilon)\mathrm{dist}_G(s,v)$. Its projection is an
    original-edge walk; loop erasure, if a simple path is desired, takes
    linear time in the reported walk.
    A vertex outside the initial source-reachable set is retained as an
@@ -105,11 +105,11 @@ following public components from Kyng--Meierhans--Probst Gutenberg
 | Public component | Exact role retained here | Parameter dependence used |
 |---|---|---|
 | Appendix A.1 and Theorem 3.2 | Deterministic centers, strict balls, and inverse clusters | Fixed polynomial in $k,U$ |
-| Theorem 3.3 and Claim 3.10 | Exact nearest-pivot forest and local distances | $\operatorname{poly}(k,U)$ work; $k\operatorname{poly}(U)$ nearest-pivot forest changes |
-| Lemma 3.5, from CKL Lemma 6.5 | Stable core forest family, endpoint/root promotion, fixed stretch labels | $\operatorname{poly}(U)$ stable forest cuts per elementary promotion or edit; local work polynomial in $k,U$ |
-| Lemmas 3.12--3.14 | The future-path family and pivot-pair metric comparison | $\operatorname{poly}(U)$ factor, separately from the dynamic spanner |
+| Theorem 3.3 and Claim 3.10 | Exact nearest-pivot forest and local distances | $\mathrm{poly}(k,U)$ work; $k\mathrm{poly}(U)$ nearest-pivot forest changes |
+| Lemma 3.5, from CKL Lemma 6.5 | Stable core forest family, endpoint/root promotion, fixed stretch labels | $\mathrm{poly}(U)$ stable forest cuts per elementary promotion or edit; local work polynomial in $k,U$ |
+| Lemmas 3.12--3.14 | The future-path family and pivot-pair metric comparison | $\mathrm{poly}(U)$ factor, separately from the dynamic spanner |
 | Theorem 3.8 | Selected-degree feedback by partitioning a physical tree | Fixed polynomial local work |
-| Theorem 4.7 | Marked-ancestor dynamic-tree operations for diameter witnesses | $\operatorname{poly}(U)$ per operation |
+| Theorem 4.7 | Marked-ancestor dynamic-tree operations for diameter witnesses | $\mathrm{poly}(U)$ per operation |
 | Theorem 5.3 | Decremental sparse covers from the APSP interface | Explicit covering formula in Section 8 |
 | Theorems 5.12 and 5.14 | Hopsets and approximate-ball forests | Explicit scale constraint and $n^{O(1/\Lambda)}$ work |
 | Section 5.3, Algorithm 10 | Flattening hopset forests to original-edge forests | Copy-count recurrence in Section 8 |
@@ -168,9 +168,9 @@ its same-core selected route, while retaining the zero alias identifications,
 therefore proves
 
 $$
-\operatorname{dist}_G(a,b)
- \leq \operatorname{dist}_S(a,b)
- \leq \rho\operatorname{dist}_G(a,b),\qquad a,b\in A,
+\mathrm{dist}_G(a,b)
+ \leq \mathrm{dist}_S(a,b)
+ \leq \rho\mathrm{dist}_G(a,b),\qquad a,b\in A,
  \quad \log\rho=O(Kg+h).
  \tag{4}
 $$
@@ -197,9 +197,9 @@ power of two at least $4(\log_2 C+1)$. Let $q(v)$ be the root of
 the port tree. For distinct connected selected vertices,
 
 $$
-\operatorname{dist}_S(v,w)
- \leq H^{-1}\operatorname{dist}_{B}(q(v),q(w))
- \leq 2\operatorname{dist}_S(v,w).
+\mathrm{dist}_S(v,w)
+ \leq H^{-1}\mathrm{dist}_{B}(q(v),q(w))
+ \leq 2\mathrm{dist}_S(v,w).
  \tag{5}
 $$
 
@@ -254,7 +254,7 @@ $$
 There is no factor $k^{O(1)}$ in (7). Such a factor appearing in a
 different min-ratio-cycle extraction is not a metric query loss.
 The query evaluates one pivot per level and therefore costs
-$O(d\operatorname{poly}(U))$. Outputting its path costs the literal
+$O(d\mathrm{poly}(U))$. Outputting its path costs the literal
 output size times the same logarithmic overhead. The later strong-forest
 argument does not rely on enumerating all these query paths.
 
@@ -262,7 +262,7 @@ argument does not rely on enumerating all these query paths.
 
 Maintain the pivot-chain meta-forest, whose level-$i$ vertex $v$
 points to $q(p_i(v))$, with edge weight
-$\operatorname{dist}_{G_i}(v,p_i(v))/\sigma_i$. Original marked
+$\mathrm{dist}_{G_i}(v,p_i(v))/\sigma_i$. Original marked
 vertices lie at level zero. KMG Theorem 4.7 supplies a farthest marked
 descendant/ancestor operation, depending on the chosen orientation,
 and temporary subtree unmarking with rollback.
@@ -281,9 +281,9 @@ $x$ and the middle exact distance are fixed, and the chosen marked
 vertex maximizes the other accumulated-leg term. Therefore the largest
 inspected estimate dominates the estimate for a farthest marked vertex.
 The selected pair has real distance at least
-$\operatorname{diam}(X)/(2\gamma_{\rm APSP})$.
+$\mathrm{diam}(X)/(2\gamma_{\rm APSP})$.
 
-The inspection costs $k^{O(1)}\operatorname{poly}(U)$, including the
+The inspection costs $k^{O(1)}\mathrm{poly}(U)$, including the
 base. It can be recomputed after each settled graph or mark-set update
 and stored, so the exposed diameter query is constant time. The
 meta-forest changes are generated by the exact nearest-pivot-forest logs
@@ -379,15 +379,15 @@ For any original $v=v_0$, let
 $v_{i+1}=q(p_i(v_i))$, and define
 
 $$
-D_i=\sigma_i^{-1}\operatorname{dist}_{G_i}(v_i,s_i).
+D_i=\sigma_i^{-1}\mathrm{dist}_{G_i}(v_i,s_i).
  \tag{9}
 $$
 
 Since $s_i$ is one of the pivots,
 
 $$
-\operatorname{dist}_{G_i}(v_i,p_i(v_i))
-       \leq\operatorname{dist}_{G_i}(v_i,s_i).
+\mathrm{dist}_{G_i}(v_i,p_i(v_i))
+       \leq\mathrm{dist}_{G_i}(v_i,s_i).
  \tag{10}
 $$
 
@@ -396,7 +396,7 @@ inequality give
 
 $$
 D_{i+1}\leq 2\rho\,
-       \sigma_i^{-1}\operatorname{dist}_{G_i}(p_i(v_i),s_i)
+       \sigma_i^{-1}\mathrm{dist}_{G_i}(p_i(v_i),s_i)
        \leq4\rho D_i.
  \tag{11}
 $$
@@ -407,12 +407,12 @@ the sum of its nearest-pivot leg lengths in root units plus the exact
 base distance. Therefore it is at most
 
 $$
-(d+1)(4\rho)^d\operatorname{dist}_G(v,s_0).
+(d+1)(4\rho)^d\mathrm{dist}_G(v,s_0).
  \tag{12}
 $$
 
 In a connected graph this implies terminal diameter at most
-$2(d+1)(4\rho)^d\operatorname{diam}(G)$. Thus
+$2(d+1)(4\rho)^d\mathrm{diam}(G)$. Thus
 
 $$
 a_{\rm diam}:=\log\gamma_{\rm diam}=O(dKg+dh).
@@ -478,7 +478,7 @@ number at most a fixed constant times the edge-congestion bound. A
 single null-link change can consequently rebuild its affected quotient
 components, update all incident real edge endpoints, and preserve any
 distinguished representative in
-$\gamma_{\rm cong}\operatorname{poly}(U)$ work and recourse. A
+$\gamma_{\rm cong}\mathrm{poly}(U)$ work and recourse. A
 new real edge requires only its two current representatives. Contracting
 forest edges preserves acyclicity, preserves physical terminal lengths,
 and does not increase edge or vertex congestion.
@@ -539,7 +539,7 @@ be (16). Set
 $$
 \gamma_{\rm cover}\geq
        \max\{2\gamma_{\rm APSP}^2,\gamma_{\rm diam}\}
-       \operatorname{poly}(U),\qquad
+       \mathrm{poly}(U),\qquad
        \log\gamma_{\rm cover}=O(a+h).
  \tag{17}
 $$

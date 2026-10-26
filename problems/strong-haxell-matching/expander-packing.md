@@ -173,7 +173,7 @@ Each represented path contributes at most twice its length,
 hence at most `2R`, to `vol_(G_i)(T)`. Thus
 
 $$
-\operatorname{vol}_{G_i}(T)
+\mathrm{vol}_{G_i}(T)
        \le2R\left(9|T|+b/2\right)
        \le\left(18/\alpha_0+1\right)Rb,
  \tag{8}

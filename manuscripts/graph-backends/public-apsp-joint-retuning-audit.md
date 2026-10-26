@@ -15,7 +15,7 @@ $$
     &\le \exp O(U^{6/7}h^{1/7}),\\
  \text{distance stretch}
     &\le \exp O(U^{5/7}h^{2/7}),\\
- \text{distance query time}&\le\operatorname{polylog}N,
+ \text{distance query time}&\le\mathrm{polylog}N,
  \qquad U=\log_2(N+4),\quad h=\lceil\log_2(U+4)\rceil.
 \end{aligned}}                                                    \tag{P1}
 $$
@@ -130,7 +130,7 @@ The ordinary balanced-cluster recursion, with
 $\theta=\epsilon/(C\log(m+2))$, gives an expander decomposition
 with crossing-edge budget $\epsilon m$, conductance
 $\epsilon 2^{-O(rh)}$, and total construction work
-$mF_r\operatorname{poly}(U)/\epsilon^2$. The recursion has
+$mF_r\mathrm{poly}(U)/\epsilon^2$. The recursion has
 logarithmically many edge-disjoint levels. The quadratic $r^2h$
 term pays for constructing the cut certificate; it need not be inserted
 into the output conductance.
@@ -144,17 +144,17 @@ the master bound (P3). No small graph is padded to size $N$.
 
 CS21 Theorem B.9 routes one terminal matching in a $\phi$-expander
 using paths of length $O(U/\phi)$, edge congestion
-$O(U^2/\phi^2)$, and work $m\operatorname{poly}(U)/\phi^3$.
+$O(U^2/\phi^2)$, and work $m\mathrm{poly}(U)/\phi^3$.
 Using CGLNPS Theorem 1.6 as the cut player in the public cut-matching
 construction yields an embedded terminal expander with
 
 $$
 \text{conductance}\ge2^{-O(rh)},\quad
- \ell=\operatorname{poly}(U)/\phi,
- \quad\eta=\operatorname{poly}(U)/\phi^2,                 \tag{P4}
+ \ell=\mathrm{poly}(U)/\phi,
+ \quad\eta=\mathrm{poly}(U)/\phi^2,                 \tag{P4}
 $$
 
-and work $mF_r\operatorname{poly}(U,\phi^{-1})$. In (P4), the
+and work $mF_r\mathrm{poly}(U,\phi^{-1})$. In (P4), the
 congestion includes all $O(U)$ matching rounds; using a safe
 $O(U^3/\phi^2)$ bound also agrees with the proof in CS21 B.4.3.
 The factor $F_r$ controls construction, not output length or
@@ -213,7 +213,7 @@ each query. The BFS path length is still $O(U/\phi)$, since the
 surviving graph is a strong $\phi/O(1)$-expander. Its query work,
 however, can be as large as $2^{O(q^2rh)}$. This extra term is a
 construction/work allowance, not an output-quality allowance. The
-static sparsifier below makes only $m\Gamma^{O(1)}\operatorname{poly}(U)$
+static sparsifier below makes only $m\Gamma^{O(1)}\mathrm{poly}(U)$
 path calls, so it pays this fallback with one extra factor
 $2^{O(q^2rh)}$. No small component is replaced by a master-sized graph.
 
@@ -292,7 +292,7 @@ parameter, as in the published interface.
 
 The total size charged to bands is at most
 $\sum_i2^in=O(m)$. Their decomposition, adjacency scanning, and
-pruning therefore cost $mF_r\operatorname{poly}(U,\phi^{-1})$.
+pruning therefore cost $mF_r\mathrm{poly}(U,\phi^{-1})$.
 In particular there is no maximum-degree padding factor. Pruning and
 path queries on a loopless multigraph may use the source's one-subdivision
 representation: it is simple, has constant-factor size and conductance
@@ -342,10 +342,10 @@ an explicit routing $\widehat\Pi:J\to\widetilde J$ with
 
 $$
 \begin{aligned}
- |E(\widetilde J)|&\le |V(J)|\Gamma\operatorname{poly}(U),\\
- \operatorname{length}(\widehat\Pi)&\le\Gamma,\\
- \operatorname{length}(\Pi\circ\widehat\Pi)&\le\Gamma L_0,\\
- \operatorname{vcong}(\Pi\circ\widehat\Pi)
+ |E(\widetilde J)|&\le |V(J)|\Gamma\mathrm{poly}(U),\\
+ \mathrm{length}(\widehat\Pi)&\le\Gamma,\\
+ \mathrm{length}(\Pi\circ\widehat\Pi)&\le\Gamma L_0,\\
+ \mathrm{vcong}(\Pi\circ\widehat\Pi)
     &\le\Gamma L_0\bigl(C_0+\Delta(J)\bigr).
 \end{aligned}                                                   \tag{P8}
 $$
@@ -353,7 +353,7 @@ $$
 Its safe work bound is
 
 $$
-|E(J)|\,F\,\Gamma^{O(1)}(L_0+1)\operatorname{poly}(U).  \tag{P9}
+|E(J)|\,F\,\Gamma^{O(1)}(L_0+1)\mathrm{poly}(U).  \tag{P9}
 $$
 
 For example, the published two-pass composition has congestion factor
@@ -437,17 +437,17 @@ $O(|S_{j-1}|\mathcal C_{j-1})$ demand edges. Equations (P9)--(P11)
 bound the entire job by
 
 $$
-|S_{j-1}|\,\Delta F\Gamma^{O(K^2)}\operatorname{poly}(U).
+|S_{j-1}|\,\Delta F\Gamma^{O(K^2)}\mathrm{poly}(U).
                                                                \tag{P12}
 $$
 
 The number of selected edges created by the job is only
-$|S_{j-1}|\Gamma\operatorname{poly}(U)$. The public clock charges
+$|S_{j-1}|\Gamma\mathrm{poly}(U)$. The public clock charges
 one such touched-set job to its interval of updates. Thus, with
 $\rho=2^{O(U/K)}$, the selected-edge recourse is
 
 $$
-\rho\Gamma\operatorname{poly}(U),              \tag{P13}
+\rho\Gamma\mathrm{poly}(U),              \tag{P13}
 $$
 
 while the update work has the additional multiplier
@@ -559,7 +559,7 @@ where $P$ bounds both the child inventory multiplier and the number
 of child edits per native edit. A safe local work allowance is
 
 $$
-k^{O(1)} F\Gamma^{O(K^2)}P^{O(1)}\operatorname{poly}(U).
+k^{O(1)} F\Gamma^{O(K^2)}P^{O(1)}\mathrm{poly}(U).
                                                                \tag{P15}
 $$
 
@@ -662,7 +662,7 @@ The exact base graph recomputes its distance table after each settled
 update; its $k^{O(1)}$ cost belongs to (P15). A query reads one
 entry of that table. It never performs a size-$k$ shortest-path
 computation. Deterministic dictionaries and polynomial logarithmic
-arithmetic therefore give $O(d\operatorname{poly}(U))$ query time.
+arithmetic therefore give $O(d\mathrm{poly}(U))$ query time.
 The source's pivot-detour proof multiplies approximation by
 $\Gamma^{O(K)}$ per level; (P16) adds a constant per reset,
 giving the second line of (P18).

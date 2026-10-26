@@ -22,7 +22,7 @@ Suppose a deterministic weak value oracle returns rational approximations to $f(
 2. $F$ has exactly the same zero marginals, and hence exactly the same closure operator and quotient family, as $f$.
 3. Every positive marginal of $F$ is at least one, and $F(E)\le4R$.
 4. All values of $F$ have a common denominator $O(R)$.
-5. One evaluation uses $O(m)$ weak calls at constant precision and one weak call at additive precision $1/\operatorname{poly}(R)$, followed by polynomial-bit rational arithmetic.
+5. One evaluation uses $O(m)$ weak calls at constant precision and one weak call at additive precision $1/\mathrm{poly}(R)$, followed by polynomial-bit rational arithmetic.
 
 Thus, if the weak oracle is polynomial time in the input length and the requested precision in bits, so is the exact rational oracle for $F$. This is an exact oracle for a different function preserving the quotient structure; it is not an exact oracle for the original real-valued $f$.
 
@@ -32,7 +32,7 @@ When $f(S)=\log_2 \nu(S)$ and $\nu(S)$ is an exactly computable positive integer
 
 Define
 $$
-\operatorname{cl}_f(S)
+\mathrm{cl}_f(S)
  =\{e\in E:f(S+e)=f(S)\}.
  \tag{R2}
 $$
@@ -42,7 +42,7 @@ We use two standard consequences of monotonicity and submodularity, included her
 
 First,
 $$
-f(\operatorname{cl}_f(S))=f(S).
+f(\mathrm{cl}_f(S))=f(S).
  \tag{R3}
 $$
 Indeed, every element added in the closure has marginal zero at $S$, and diminishing returns keeps that marginal zero as the other closure elements are added.
@@ -51,10 +51,10 @@ Second, for nested sets $S\subseteq T$,
 $$
 f(S)=f(T)
  \quad\Longrightarrow\quad
- \operatorname{cl}_f(S)=\operatorname{cl}_f(T).
+ \mathrm{cl}_f(S)=\mathrm{cl}_f(T).
  \tag{R4}
 $$
-One inclusion follows from monotonicity of closure. For the other, if $f(T+e)=f(T)=f(S)$, then monotonicity gives $f(S+e)\le f(T+e)=f(S)$, so $e\in\operatorname{cl}_f(S)$.
+One inclusion follows from monotonicity of closure. For the other, if $f(T+e)=f(T)=f(S)$, then monotonicity gives $f(S+e)\le f(T+e)=f(S)$, so $e\in\mathrm{cl}_f(S)$.
 
 Represent every closure by its canonical bit vector in the original ground-set order. Repeated evaluations on the same closure will therefore use the identical input to the deterministic weak oracle.
 
@@ -75,12 +75,12 @@ $$
 $$
 Use the same value on repeated occurrences of the same $C$, and set
 $$
-A(\operatorname{cl}_f(\varnothing))=0.
+A(\mathrm{cl}_f(\varnothing))=0.
  \tag{R7}
 $$
 Define
 $$
-F(S)=4A(\operatorname{cl}_f(S)).
+F(S)=4A(\mathrm{cl}_f(S)).
  \tag{R8}
 $$
 
@@ -114,9 +114,9 @@ I=S\cap T,\quad U=S\cup T,\quad
 $$
 If $a=0$, submodularity and monotonicity imply $f(U)=f(T)$. Equation (R4) gives
 $$
-\operatorname{cl}_f(S)=\operatorname{cl}_f(I),
+\mathrm{cl}_f(S)=\mathrm{cl}_f(I),
  \qquad
- \operatorname{cl}_f(U)=\operatorname{cl}_f(T).
+ \mathrm{cl}_f(U)=\mathrm{cl}_f(T).
 $$
 The rounded submodularity expression is exactly zero. The case $b=0$ is identical.
 

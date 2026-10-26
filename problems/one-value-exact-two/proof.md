@@ -51,7 +51,7 @@ M-basis and an integer allocation of total cost at most C, with
 at least ceil(K*/2) units at every selected player, in time
 
 $$
-(27/4)^c\operatorname{poly}(H)
+(27/4)^c\mathrm{poly}(H)
  \tag{O4}
 $$
 
@@ -188,7 +188,7 @@ basis in the fractional region. Its time is
 
 $$
 \Gamma\!\left(\frac{K}{K-\lceil K/2\rceil}\right)^c
-                           \operatorname{poly}(H).
+                           \mathrm{poly}(H).
  \tag{O11}
 $$
 

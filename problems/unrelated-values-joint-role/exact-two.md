@@ -92,8 +92,8 @@ and basis-extraction work. Cases are streamed, keeping only one
 current workspace and the best actual allocation. Total time is
 
 $$
-2^q\operatorname{poly}(H),
- \qquad\text{space }\operatorname{poly}(H).
+2^q\mathrm{poly}(H),
+ \qquad\text{space }\mathrm{poly}(H).
  \tag{X2-3}
 $$
 

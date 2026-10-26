@@ -85,8 +85,9 @@ $$
  \sum_d\pi_d h_{s_d}
   &=-\sum_e\pi_d h_e\\
   &=-\sum_{e=(r,d)}(\pi_d-\pi_r)h_e\\
-  &\le\beta Q_x.                              \tag{3}
- \end{aligned}
+  &\le\beta Q_x.
+\end{aligned}
+\tag{3}
 $$
 
 Subtracting this upper bound for the allocation charge yields
@@ -102,8 +103,8 @@ $$
   \sum_d\big(\pi_d-(1+\beta)/s_d\big)_+(-h_{s_d})_+\\
  &\le
   \sum_d\big(s_d\pi_d-1-\beta\big)_+.
-                                                        \tag{4}
- \end{aligned}
+\end{aligned}
+\tag{4}
 $$
 
 The first sum is nonpositive by (2). The final inequality uses only
@@ -273,7 +274,7 @@ used source-child cost is nondecreasing. For a non-source-child endpoint,
 `tau_b` is nondecreasing. Consequently
 
 $$
-A-\tau_b-\operatorname{cost}_{\rm current}(T[z_*,b])
+A-\tau_b-\mathrm{cost}_{\rm current}(T[z_*,b])
 $$
 
 is nonincreasing throughout the epoch. A bin whose old-tree path has failed

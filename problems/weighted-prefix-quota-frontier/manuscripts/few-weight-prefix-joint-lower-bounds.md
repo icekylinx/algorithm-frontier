@@ -5,7 +5,7 @@
 The upper theorem in [few-weight-families-prefix-target-scheme.md](few-weight-families-prefix-target-scheme.md) gives
 
 $$
-2^{O(pB\log(p+2))}\operatorname{poly}(H)
+2^{O(pB\log(p+2))}\mathrm{poly}(H)
  \tag{FJ1}
 $$
 
@@ -80,7 +80,7 @@ The rank is indeed r. Begin with a product of perfect matchings and, in its firs
 The reference and hidden rank oracles differ only on A. Their complete rank rules are
 
 $$
-\operatorname{rank}(S)=
+\mathrm{rank}(S)=
  \begin{cases}
  |S|,&|S|<r,\\
  r,&|S|>r,\\
@@ -174,9 +174,9 @@ This is a calibrated-family statement: B is chosen by FJ11 in the encoded reduct
 At an ordered set of m remaining vertices, m even, take its smallest vertex and order its possible partners increasingly. Each partner choice leaves exactly A_(m-2)=(m-3)!! residual matchings. If the chosen partner has zero-based index j, set
 
 $$
-\operatorname{rank}_m(M)
+\mathrm{rank}_m(M)
        =j A_{m-2}
-         +\operatorname{rank}_{m-2}(M\text{ after removing that edge}).
+         +\mathrm{rank}_{m-2}(M\text{ after removing that edge}).
  \tag{FJ15}
 $$
 
@@ -202,7 +202,7 @@ The rank decoder implements FJ7. Below rank, above rank and on nonmatching rank-
 The prefix equalities are feasible if and only if an accepted product matching exists, which is equivalent to satisfiability of phi. Together with FJ13, this proves that a uniform exact algorithm with running time
 
 $$
-2^{o(pB\log(p+2))}\operatorname{poly}(H)
+2^{o(pB\log(p+2))}\mathrm{poly}(H)
  \tag{FJ17}
 $$
 
@@ -215,7 +215,7 @@ The representation is a promised valid rank program or rank circuit, not an arbi
 Let P>=1 and L>=1 be upper budgets on the number of families and the largest target, respectively. FW1 immediately gives the monotone upper envelope
 
 $$
-2^{O(PL\log(P+2))}\operatorname{poly}(H).
+2^{O(PL\log(P+2))}\mathrm{poly}(H).
  \tag{FJ18}
 $$
 

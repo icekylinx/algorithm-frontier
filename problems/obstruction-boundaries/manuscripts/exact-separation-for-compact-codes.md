@@ -46,20 +46,20 @@ Here the binary quantities are interpreted as real $0/1$ numbers. Every summand 
 
 If $t=0$ and $S=\{v:x_v=1\}$, then
 $$
-F(x,0)=\operatorname{cut}_\lambda(S)-M|S|
+F(x,0)=\mathrm{cut}_\lambda(S)-M|S|
 \le0,
 \tag{3}
 $$
 because every cut edge incident to $S$ is counted in the weighted-degree sum of $S$. If $t=1$, then $x_v+(x_v\oplus1)=1$, so
 $$
-F(x,1)=\operatorname{cut}_\lambda(S)-K.
+F(x,1)=\mathrm{cut}_\lambda(S)-K.
 \tag{4}
 $$
 Thus
 $$
 F(y)\le0\ \text{for every }y\in\mathbb F_2^{n+1}
 \quad\Longleftrightarrow\quad
-\operatorname{MaxCut}_\lambda(G)\le K.
+\mathrm{MaxCut}_\lambda(G)\le K.
 \tag{5}
 $$
 
@@ -68,7 +68,7 @@ $$
 a=\frac14,\qquad
 w_e=\frac{|c_e|}{a}=4|c_e|,
 \qquad
-z_e=a(1+\operatorname{sign}c_e).
+z_e=a(1+\mathrm{sign}c_e).
 \tag{6}
 $$
 All weights are positive rationals, and $z_e\in\{0,1/2\}$. Moreover,
@@ -80,7 +80,7 @@ The upper inequality in (1) is therefore exactly the left side of (5). The lower
 $$
 z\in Q_{1/4}
 \quad\Longleftrightarrow\quad
-\operatorname{MaxCut}_\lambda(G)\le K.
+\mathrm{MaxCut}_\lambda(G)\le K.
 \tag{8}
 $$
 The construction has polynomial size and rational bit complexity.

@@ -157,7 +157,7 @@ $$
  \log F&=O(U/p+U/r+r^2h+(p+r)h),\\
  \log P&=O_a(U/K+\log\Gamma+\log U),\\
  W&=k^{O(1)}\rho_{\rm sched}^{O(1)}F^{O(1)}
-                              \Gamma^{O(K)}\operatorname{poly}_a(U).
+                              \Gamma^{O(K)}\mathrm{poly}_a(U).
 \end{split}                                                 \tag{7}
 $$
 

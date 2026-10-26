@@ -272,7 +272,7 @@ For each retained layer ell<=h, the circuit meets no owner in Y_<ell.
 Consequently C is a circuit in J_ell union {p}, where
 
 $$
-J_\ell=I\setminus\operatorname{owners}(Y_{<\ell}).
+J_\ell=I\setminus\mathrm{owners}(Y_{<\ell}).
 $$
 
 The outgoing owner a belongs to this circuit. The independent sets
@@ -282,8 +282,8 @@ The groups Y_<ell are unchanged, because the outgoing record lies
 in layer h>=ell. Therefore
 
 $$
-\operatorname{cl}_M(I'\setminus\operatorname{owners}(Y'_{<\ell}))
-  =\operatorname{cl}_M(I\setminus\operatorname{owners}(Y_{<\ell}))
+\mathrm{cl}_M(I'\setminus\mathrm{owners}(Y'_{<\ell}))
+  =\mathrm{cl}_M(I\setminus\mathrm{owners}(Y_{<\ell}))
                  \qquad(\ell\le h).
  \tag{A10}
 $$

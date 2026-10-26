@@ -34,7 +34,7 @@ Let N be the Boolean-cap matroid of the large recipient polymatroid:
 
 $$
 P(N)=P(f_b)\cap[0,1]^P,
-              \qquad \nu=\operatorname{rank}(N).
+              \qquad \nu=\mathrm{rank}(N).
  \tag{F1}
 $$
 
@@ -46,8 +46,8 @@ f_b(P) of large units, but it can be much smaller than either.
 deterministic factor-two approximation in
 
 $$
-(27/4)^{\nu}\operatorname{poly}(\mathcal H)
-                        =2^{O(\nu)}\operatorname{poly}(\mathcal H)
+(27/4)^{\nu}\mathrm{poly}(\mathcal H)
+                        =2^{O(\nu)}\mathrm{poly}(\mathcal H)
  \tag{F2}
 $$
 

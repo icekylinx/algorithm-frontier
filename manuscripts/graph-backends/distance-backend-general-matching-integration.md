@@ -683,10 +683,11 @@ isolated records, and a cap $E_i$ on non-rebuilding representation
 edits per level-$i$ input edit, safe recurrences are
 $$
 \begin{split}
- C_i&\le R_i^4(C_{i+1}+\operatorname{polylog}M)M^{o(1)},\\
+ C_i&\le R_i^4(C_{i+1}+\mathrm{polylog}M)M^{o(1)},\\
  E_i&\le R_iE_{i+1}
-           +R_i^4(C_{i+1}+1)M^{o(1)}.                         \tag{16}
- \end{split}
+           +R_i^4(C_{i+1}+1)M^{o(1)}.
+\end{split}
+\tag{16}
 $$
 Equation (3) is the sharper vertex-pool count; (16) also covers
 root identifications, all parent cuts, auxiliary level forests and
@@ -800,7 +801,7 @@ $$
  Lg_*=O_a(N).
 $$
 Hence all successful pair actions cost
-$O_a(N\operatorname{polylog}N)$, and output-sensitive tight
+$O_a(N\mathrm{polylog}N)$, and output-sensitive tight
 searches and carrier updates have the same near-linear structural
 accounting. The alternative backend supplies the numerical bound.
 One phase consequently takes
@@ -870,7 +871,7 @@ rejected, and a suspended branch is inactive. A fixed branch
 needing $T_t(q)$ instructions, including its verifier, is
 completed by total work
 $$
-O(2^t(T_t(q)+1)\operatorname{polylog}(q+2)).
+O(2^t(T_t(q)+1)\mathrm{polylog}(q+2)).
 $$
 All long arithmetic, initialization loops, allocations and source
 calls are interruptible. Logical large integers use digit arrays;

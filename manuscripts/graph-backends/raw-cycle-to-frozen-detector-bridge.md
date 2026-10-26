@@ -70,7 +70,7 @@ allowance `M`.
 For every logical coordinate use the existing representation
 
 $$
-f_e=\operatorname{base}_e+\sum_{q\mapsto e}h_q.       \tag{2}
+f_e=\mathrm{base}_e+\sum_{q\mapsto e}h_q.       \tag{2}
 $$
 
 The sum includes every live and dormant occurrence. The registers `h_q`
@@ -158,7 +158,7 @@ and that rounding errors are below `xi w_e`. Export
 
 $$
 \ell_e=\lceil H\widehat w_e\rceil,\qquad
- \gamma_e=\operatorname{round}(H\widehat g_e).          \tag{6}
+ \gamma_e=\mathrm{round}(H\widehat g_e).          \tag{6}
 $$
 
 The integers have `O(U)` bits. The degree-three lift replaces each logical
@@ -314,7 +314,7 @@ logical coordinates, with its actual occurrence work included.
 The entire detector lifetime therefore costs
 
 $$
-M R^{O(1)}\operatorname{poly}(U).                    \tag{11}
+M R^{O(1)}\mathrm{poly}(U).                    \tag{11}
 $$
 
 This factor is computational work. It is not included in `AM` and is

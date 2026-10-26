@@ -180,8 +180,9 @@ $$
  \log_2\max\{L_i,2\}
  &\le(c_0+1)U
     +i[\log_2 k+\log_2 H+O(1)]\\
- &=O_{c_0}(U),\qquad 0\le i\le d.                         \tag{6}
- \end{split}
+ &=O_{c_0}(U),\qquad 0\le i\le d.
+\end{split}
+\tag{6}
 $$
 
 Indeed `d log k=O(U)`, while

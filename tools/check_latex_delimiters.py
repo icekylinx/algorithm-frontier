@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Check Markdown math delimiters, fenced blocks, and accidental control bytes.
+"""Check Markdown math syntax and common GitHub rendering failures.
 
-Maintained Markdown accepts GitHub dollar math and transitional TeX delimiters.
+Maintained Markdown uses GitHub dollar math or fenced math blocks.
 Code spans and ordinary fenced code are excluded from math checks. TeX grouping
 braces are checked inside math; ordinary parentheses/brackets are not, because
 half-open intervals and one-sided delimiters are valid mathematical notation.
@@ -42,6 +42,23 @@ def check_text(text: str, *, controls_only: bool = False) -> list[tuple[int, str
         return errors
 
     def check_braces(body: str, start: int) -> None:
+        for match in re.finditer(r"\\operatorname\b\*?", body):
+            error(start + match.start(),
+                  r"unsupported \operatorname macro; use \mathrm{...}")
+        for match in re.finditer(r"\\(?:arg|I|T)\b", body):
+            error(start + match.start(),
+                  f"undefined math command {match[0]!r}; use an explicit operator or \\setminus")
+        environments: list[str] = []
+        for match in re.finditer(r"\\(begin|end)\{([^}]+)\}|\\tag\b", body):
+            if match[1] == "begin":
+                environments.append(match[2])
+            elif match[1] == "end":
+                if environments and environments[-1] == match[2]:
+                    environments.pop()
+            elif any(name in {"aligned", "split", "gathered", "alignedat"}
+                     for name in environments):
+                error(start + match.start(),
+                      r"\tag belongs outside the inner alignment environment")
         stack: list[int] = []
         index = 0
         while index < len(body):
@@ -110,6 +127,8 @@ def check_text(text: str, *, controls_only: bool = False) -> list[tuple[int, str
             found = next((pair for pair in delimiters if content.startswith(pair[0], index)), None)
             if found:
                 left, right = found
+                if left in {r"\(", r"\["}:
+                    error(index, "use GitHub dollar delimiters for rendered mathematics")
                 opening = (left, right, index, index + len(left))
                 index += len(left)
                 continue
@@ -124,6 +143,8 @@ def check_text(text: str, *, controls_only: bool = False) -> list[tuple[int, str
             left, right, start, body_start = opening
             if content.startswith(right, index):
                 check_braces(content[body_start:index], body_start)
+                if left == "$" and "\n" in content[body_start:index]:
+                    error(start, "inline mathematics crosses a line; join it or use a display")
                 opening = None
                 index += len(right)
                 continue

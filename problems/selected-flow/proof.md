@@ -10,7 +10,7 @@ epsilon in (0,1), the algorithm obtains
 $$
 (1-\epsilon)\mathrm{OPT}
        \quad\hbox{in time}\quad
-                \Gamma(1/\epsilon)^c\operatorname{poly}(H),
+                \Gamma(1/\epsilon)^c\mathrm{poly}(H),
        \qquad
                 \Gamma(R)=\frac{R^R}{(R-1)^{R-1}},
  \tag{F1}

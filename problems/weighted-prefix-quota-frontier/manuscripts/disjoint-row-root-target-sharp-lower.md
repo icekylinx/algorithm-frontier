@@ -20,7 +20,7 @@ The result holds for mandatory bases and for optional independent sets. No objec
 
 The same family has polynomially encoded, polynomial-time evaluable rank programs. Under deterministic ETH there is no deterministic
 $$
-2^{o(B\log(B+2))}\operatorname{poly}(H)
+2^{o(B\log(B+2))}\mathrm{poly}(H)
 $$
 algorithm on that promised representation class. Randomized ETH is required separately for the corresponding randomized statement.
 
@@ -153,13 +153,13 @@ B\log(B+2)=\Theta(\nu),\qquad d=O(\nu),                           \tag{DR13}
 $$
 and the complete encoded target/resource instance has size polynomial in $|\varphi|+\nu$.
 
-A deterministic $2^{o(B\log B)}\operatorname{poly}(H)$ algorithm for this encoded problem would decide 3-SAT in $2^{o(\nu)}\operatorname{poly}(|\varphi|)$ time, contradicting deterministic ETH. The corresponding randomized conclusion requires randomized ETH, not deterministic ETH alone.
+A deterministic $2^{o(B\log B)}\mathrm{poly}(H)$ algorithm for this encoded problem would decide 3-SAT in $2^{o(\nu)}\mathrm{poly}(|\varphi|)$ time, contradicting deterministic ETH. The corresponding randomized conclusion requires randomized ETH, not deterministic ETH alone.
 
 ## 6. Relation to the upper bound and source credit
 
 For fixed $\Delta=1$, the direct sparse algorithm's bound
 $$
-2^{O(B\log(B+2))}\operatorname{poly}(H)
+2^{O(B\log(B+2))}\mathrm{poly}(H)
 $$
 has the correct exponent order in the oracle model, even though all nonroot rows have disjoint supports. The numeric coefficients create the obstruction; the lower should not be interpreted as a lower for the unit-coefficient disjoint-partition case, which has a different structure.
 

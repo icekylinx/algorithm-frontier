@@ -63,9 +63,9 @@ The scalar $c\cdot x$ has arbitrary signed rational coefficients, including on r
 **Theorem.** If $B_0=0$, feasibility and scalar optimization are polynomial. If $B_0\ge1$, they have a deterministic algorithm with time
 
 $$
-2^{O(\Delta B_0\log(\Delta B_0B+2))}\operatorname{poly}(H)
+2^{O(\Delta B_0\log(\Delta B_0B+2))}\mathrm{poly}(H)
  \ \le\
- 2^{O(\Delta B\log(\Delta B+2))}\operatorname{poly}(H)
+ 2^{O(\Delta B\log(\Delta B+2))}\mathrm{poly}(H)
 \tag{BF6}
 $$
 
@@ -202,7 +202,7 @@ $$
 Then $q=O(K^2L)$. Enumerate the monic irreducible degree-$d$ polynomials $f\in\mathbb F_2[X]$. Each supplies a hash to the $q$ residues of degree less than $d$:
 
 $$
-h_f(j)=\operatorname{id}_j\bmod f.
+h_f(j)=\mathrm{id}_j\bmod f.
 \tag{BF17}
 $$
 
@@ -217,7 +217,7 @@ dI_d\ge2^d-\sum_{r=1}^{\lfloor d/2\rfloor}2^r
 $$
 
 For fixed $W$, its pair-difference product
-$D_W=\prod_{\{i,j\}\subseteq W}(\operatorname{id}_i-\operatorname{id}_j)$
+$D_W=\prod_{\{i,j\}\subseteq W}(\mathrm{id}_i-\mathrm{id}_j)$
 is nonzero and has degree below $D_0$; the empty product is one. At most $D_0/d$ distinct degree-$d$ irreducibles divide it, whereas $I_d\ge q/(2d)>D_0/d$. Choose one not dividing the product. No two IDs then have equal remainders.
 
 The catalogue is explicitly deterministic. Stream all $q$ monic degree-$d$ polynomials and retain exactly those for which
@@ -312,7 +312,7 @@ Enumerating at most $B_0$ positions costs
 
 $$
 (\Delta B_0B+2)^{O(\Delta B_0)}
-        L^{(\Delta+1)B_0}\operatorname{poly}(H).
+        L^{(\Delta+1)B_0}\mathrm{poly}(H).
 \tag{BF24}
 $$
 

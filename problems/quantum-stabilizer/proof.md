@@ -2,7 +2,7 @@
 
 ## 1. Operator model
 
-Let $D=\prod_jq_j$ and $Q=2\operatorname{lcm}_jq_j$. Each original block consists of mutually commuting, compactly represented Weyl operators of order dividing $Q$, with required eigenvalues absorbed into their phases. Write $E_e$ for the joint acceptance projector and $B_e=I-E_e$. Inconsistent blocks have $E_e=0$; an empty or universally accepting block has $B_e=0$. The target is
+Let $D=\prod_jq_j$ and $Q=2\mathrm{lcm}_jq_j$. Each original block consists of mutually commuting, compactly represented Weyl operators of order dividing $Q$, with required eigenvalues absorbed into their phases. Write $E_e$ for the joint acceptance projector and $B_e=I-E_e$. Inconsistent blocks have $E_e=0$; an empty or universally accepting block has $B_e=0$. The target is
 
 $$
 H=\sum_ew_eB_e,\qquad
@@ -78,6 +78,28 @@ For prime local dimension $p$, the commuting projective span has field dimension
 
 Positive Pauli clauses $I-P$ are twice their accepted-eigenvalue projector penalties. The Pauli manuscript additionally preserves the total coefficient exactly and provides a distinct correlated-deletion theorem. Arbitrary deletions do not preserve a single precomputed balanced-pair decomposition; its robust construction uses hereditary importance and common label-pool scores instead.
 
+## Randomness and confidence
+
+Both the compact construction of Theorem 4 and the explicit-dimension
+construction accompanying Theorem 3 are Monte Carlo. Their sampling is
+classical preprocessing randomness. For the latter, assign failure budget
+$1/6$ to the gapped matrix-Chernoff sample and $1/6$ to the commuting
+explicit-character-table construction. The
+[group-theorem confidence argument](../group-metric-constraints/proof.md#randomness-and-confidence)
+uses bounded fresh partial-coloring trials and explicit table verification
+to attain that fixed confidence without changing support asymptotics.
+The union bound gives success at least $2/3$ for the full Loewner guarantee,
+simultaneously over all states. Theorem 4 already allocates constant failure
+budgets to its gapped sample and quotient sparsifier in the same way.
+
+The separate correlated-Pauli theorem uses a single event of probability at
+least $1-\delta$ for all allowed failures and states; it does not rerandomize
+coefficients at query time. The globally commuting failure construction
+inherits the quotient theorem's simultaneous success at least $2/3$.
+These statements do not assert a Las Vegas guarantee. The surrogate-basis
+reduction in Section 5 and the stated exhaustive exact optimization over
+that basis are deterministic.
+
 ## 5. A classical stabilizer witness
 
 **Theorem 5.** For a positive Pauli Hamiltonian, a deterministic polynomial-time reduction gives a complete stabilizer basis and a diagonal Hamiltonian $K$ with
@@ -90,6 +112,6 @@ Every state of that basis has the same $H$- and $K$-energy. Consequently a basis
 
 **Proof.** Peeling anticommuting Pauli pairs leaves a commuting residual family. Extend its projective span to a maximal isotropic space and pinch in the associated stabilizer basis. A Pauli is either fixed or erased; in an anticommuting pair at most one can be fixed. Thus the image of $2I-P-Q$ is one of $2I$, $2I-P$, and $2I-Q$. Since $(aP+bQ)^2=(a^2+b^2)I$, direct eigenvalue bounds give the two displayed operator factors for each case. Summing over the pairs and the fixed residual proves the operator inequality. Pinching preserves each diagonal matrix element in its defining basis. Evaluating the upper bound on a ground state of $H$ and taking a minimum over basis states proves the energy conclusion. $\square$
 
-The diagonal objective is a nonnegative scalar plus weighted affine parity penalties. Enumeration on its $d\le n$ independent labels costs $2^d\operatorname{poly}(L)$ time and polynomial space, producing a stabilizer tableau. [The full witness proof](manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md) supplies the constants, prime-dimensional factor $2(1+p^{-1/2})$, and basis-choice lower examples. The polynomial-time reduction does not solve its remaining classical minimization in polynomial time.
+The diagonal objective is a nonnegative scalar plus weighted affine parity penalties. Enumeration on its $d\le n$ independent labels costs $2^d\mathrm{poly}(L)$ time and polynomial space, producing a stabilizer tableau. [The full witness proof](manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md) supplies the constants, prime-dimensional factor $2(1+p^{-1/2})$, and basis-choice lower examples. The polynomial-time reduction does not solve its remaining classical minimization in polynomial time.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

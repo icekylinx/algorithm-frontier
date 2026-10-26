@@ -57,7 +57,7 @@ depth in the stage-count argument below.
 ## 2. Expander decomposition with separate conductance and work bounds
 
 CGLNPS Theorem 5.1, with its parameter denoted here by $r$, returns a cut
-of size at most $\theta\operatorname{vol}(G)$. Either both sides have
+of size at most $\theta\mathrm{vol}(G)$. Either both sides have
 constant-fraction volume, or one constant-fraction side has conductance at
 least
 
@@ -83,7 +83,7 @@ $$
 \varepsilon\,2^{-O(rh)},
 $$
 
-and total work $mF_r\operatorname{poly}(U)/\varepsilon^2$.
+and total work $mF_r\mathrm{poly}(U)/\varepsilon^2$.
 This uses Theorem 5.1's actual output guarantee. The larger $r^2$ exponent
 printed in the packaged Corollary 6.1 is not needed in this recursion.
 
@@ -115,7 +115,7 @@ Fix an absolute constant $c_{\rm pr}$ covering this adapter: up to
 $\phi |E(C)|/c_{\rm pr}$ original-edge deletions, it removes
 original volume at most $c_{\rm pr}t_C/\phi$, leaves a strong
 $\phi/c_{\rm pr}$-expander with respect to the original component,
-and has work $O(t_C\operatorname{poly}(U)/\phi^2)$.
+and has work $O(t_C\mathrm{poly}(U)/\phi^2)$.
 All constants below use this literal simple-graph reduction.
 
 Fix an absolute constant $C_b$, sufficiently large, and put
@@ -172,7 +172,7 @@ parameter; all displayed envelopes are unchanged by this fixed factor.
 A heap or degree bucket detects low-degree vertices. Each moved edge is
 scanned only a constant number of times within its band. Pruning and
 whole-component quota handling cost
-$O(|E(G_i)|+t_i\operatorname{poly}(U)/\phi^2)$, in addition to the
+$O(|E(G_i)|+t_i\mathrm{poly}(U)/\phi^2)$, in addition to the
 decomposition. Since $2^\ell n\leq 4m$,
 
 $$
@@ -180,7 +180,7 @@ $$
 $$
 
 Consequently all band construction work is
-$mF_r\operatorname{poly}(U,\phi^{-1})$, and there is no
+$mF_r\mathrm{poly}(U,\phi^{-1})$, and there is no
 $n\Delta$ padding cost. High-degree vertices remain permitted. The
 witness size for a band is bounded through its total degree:
 $|E(G_i)|/(\phi2^i)=O(n/\phi)$.
@@ -249,7 +249,7 @@ the last terminal by one additional matching edge; the same bounds hold.
 The matching player is CS21 Theorem B.9. In an input expander of conductance
 at least a fixed positive constant times $\phi$, it constructs each matching with paths of length
 $O(U/\phi)$, edge congestion $O(U^2/\phi^2)$, and time
-$m\operatorname{poly}(U)/\phi^3$. Unioning the matchings gives the
+$m\mathrm{poly}(U)/\phi^3$. Unioning the matchings gives the
 safe bounds
 
 $$
@@ -262,7 +262,7 @@ Theorem 3.8's displayed $U^2$ bound omits the union over matching rounds.
 The construction time is at most
 
 $$
-m F_r\operatorname{poly}(U)/\phi^3.    \tag{4}
+m F_r\mathrm{poly}(U)/\phi^3.    \tag{4}
 $$
 
 In particular $F_r$ changes the cost of building this object, not its
@@ -329,9 +329,9 @@ queries. The printed $i=1$ deletion branch omits this pruning
 operation, although the accompanying proof assumes that every
 current $G_i$ is pruned; simply recomputing a tree in an unpruned
 graph could leave an isolated terminal unreachable. A base stage
-has $O(m^{1/q}\operatorname{poly}(U))$ edges and at most that
+has $O(m^{1/q}\mathrm{poly}(U))$ edges and at most that
 many deletions, so these BFS recomputations cost
-$m^{2/q}\operatorname{poly}(U,\phi^{-1})$, already covered by
+$m^{2/q}\mathrm{poly}(U,\phi^{-1})$, already covered by
 the $i=1$ case of (5).
 
 Whenever a stage is rebuilt, retire its old embedding and deletion
@@ -358,7 +358,7 @@ change only fixed factors.
 
 ### Stage work and stage counts
 
-Let $B=\operatorname{poly}(U,\phi^{-1})=2^{O(rh)}$. A single
+Let $B=\mathrm{poly}(U,\phi^{-1})=2^{O(rh)}$. A single
 level-$i$ stage costs at most
 
 $$
@@ -528,7 +528,7 @@ $$
 the resulting selected subgraph and explicit embedding satisfy
 
 $$
-|E(\widetilde J)|\leq |V(J)|\Gamma\operatorname{poly}(U),
+|E(\widetilde J)|\leq |V(J)|\Gamma\mathrm{poly}(U),
  \qquad L(\widehat\Pi)\leq\Gamma,\qquad
  L(\Pi\circ\widehat\Pi)\leq\Gamma L_0,
 $$
@@ -539,7 +539,7 @@ C(\Pi\circ\widehat\Pi)
 $$
 
 For example, the source proof gives a congestion factor proportional to
-$\Lambda^2\phi^{-2}\operatorname{poly}(U)$, and path factor
+$\Lambda^2\phi^{-2}\mathrm{poly}(U)$, and path factor
 $\Lambda^2$; both fit $9$. The selected witness-path count and total
 support also fit that envelope. Every representative selected edge remains an
 actual demand-edge ID, as required by the later core-edge lift.
@@ -556,7 +556,7 @@ Thus a safe runtime is
 
 $$
 |E(J)|\,F\,\Gamma^{O(1)}
-                      (L_0+1)\operatorname{poly}(U).    \tag{11}
+                      (L_0+1)\mathrm{poly}(U).    \tag{11}
 $$
 
 An ambient graph is represented by the union of the supplied explicit paths
@@ -589,7 +589,7 @@ such as the cutoff $N_0$ and the large absolute constants in this
 note belong to a fixed finite program or to its enumerated
 constant-parameter family. They are not input-dependent advice.
 For the growing parameters of Section 6, all declared counts and
-integer bit lengths are $2^{O(U)}$ and $O(\operatorname{poly}U)$,
+integer bit lengths are $2^{O(U)}$ and $O(\mathrm{poly}U)$,
 respectively; the master backend charges their arithmetic and may
 guard the corresponding explicit bounds.
 
@@ -606,7 +606,7 @@ and its complete degree-reset/raw-lift interfaces. It uses that construction's
 own integer batching clock, not the different KMPG black-box restriction on
 $K$. The original length-sensitive recurrence gives local work
 $\Gamma^{O(K^2)}$, while selected recourse remains a fixed power of
-$\rho\Gamma\operatorname{poly}(U)$, where
+$\rho\Gamma\mathrm{poly}(U)$, where
 $\log\rho=O(U/K)$.
 
 Writing $x=\log k$, a safe prospective total logarithmic overhead is

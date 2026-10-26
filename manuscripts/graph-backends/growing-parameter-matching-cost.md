@@ -251,10 +251,10 @@ uniform backend bounds into the explicit four work categories yields
 $$
 \begin{split}
  T_{\rm price}
- &\le\bigl[M+Q+D_*J\bigr]D_*\operatorname{poly}(s)
-       +(Q+D_*J)D_*\operatorname{poly}(s)\\
- &\hspace{1cm}+(Qp_c+D_*J)\operatorname{poly}(s)\\
- &\le (M+Q)D_*^2\operatorname{poly}(s).
+ &\le\bigl[M+Q+D_*J\bigr]D_*\mathrm{poly}(s)
+       +(Q+D_*J)D_*\mathrm{poly}(s)\\
+ &\hspace{1cm}+(Qp_c+D_*J)\mathrm{poly}(s)\\
+ &\le (M+Q)D_*^2\mathrm{poly}(s).
  \end{split}
  \tag{8}
 $$
@@ -265,7 +265,7 @@ and (8) gives the useful master-size form
 
 $$
 T_{\rm price}
- \le (R+B+Q)\,2^{2a^2} B^{20}\operatorname{poly}(s).
+ \le (R+B+Q)\,2^{2a^2} B^{20}\mathrm{poly}(s).
  \tag{9}
 $$
 
@@ -315,14 +315,14 @@ Consequently `Q_loc` is bounded from the external requests
 
 $$
 Q_{\rm loc}\le
- (P+1+D_*J_{\rm loc})\operatorname{poly}(s).
+ (P+1+D_*J_{\rm loc})\mathrm{poly}(s).
  \tag{11}
 $$
 
 Equations (9)--(11) bound its numerical part by
 
 $$
-(P+B)\,2^{2a^2}B^{230}\operatorname{poly}(s).
+(P+B)\,2^{2a^2}B^{230}\mathrm{poly}(s).
  \tag{12}
 $$
 
@@ -343,7 +343,7 @@ rate
 
 $$
 Z\exp\bigl(O((\log Z)^{17/18}\log\log(Z+4))\bigr)
- \operatorname{poly}(\text{input bit length})
+ \mathrm{poly}(\text{input bit length})
  \tag{13}
 $$
 
@@ -365,7 +365,7 @@ size to `Z+B`; never pad it to `S`. Since `Z=O(P+1)` and
 `log(Z+B)<=O(s)`, (13) gives cost
 
 $$
-(P+B)\exp\bigl(O(s^{17/18}\log s)\bigr)\operatorname{poly}(s)
+(P+B)\exp\bigl(O(s^{17/18}\log s)\bigr)\mathrm{poly}(s)
  \le (P+B)B
  \tag{14}
 $$
@@ -409,7 +409,7 @@ are bounded by an absolute constant times `N+Lg_*`. Hence
 
 $$
 \tau=O(aS),\qquad
- T_{\rm structural}=a^2 S\operatorname{poly}(s).
+ T_{\rm structural}=a^2 S\mathrm{poly}(s).
  \tag{17}
 $$
 
@@ -442,7 +442,7 @@ eligibility changes; a high-degree bin residual is read from
 
 $$
 Q_{\rm top}\le
- (aSs+D_*J_{\rm top})\operatorname{poly}(s).
+ (aSs+D_*J_{\rm top})\mathrm{poly}(s).
  \tag{19}
 $$
 

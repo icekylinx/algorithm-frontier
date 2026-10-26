@@ -1,5 +1,27 @@
 # History
 
+## 2026-10-26 — Readable result pages and portable mathematics
+
+- Replaced the homepage's four-column result tables with grouped, full-width
+  entries, retaining all 53 result families and 18 supporting results.
+- Replaced field and refinement tables in all 53 problem cards with stacked
+  paragraphs. Long headline expressions have separate displays; model and
+  scope conditions remain visible alongside each result.
+- Replaced incompatible operator-name macros throughout the maintained
+  mathematics, repaired undefined set-difference and arg-max commands, moved
+  misplaced equation tags outside inner alignments, and joined multiline
+  inline expressions. These are typography and syntax corrections, without
+  changes to the stated mathematical guarantees.
+- Added an idempotent notation normalizer and repository checks for unsupported
+  macros, misplaced tags, multiline inline math and table-free result cards.
+- Audited randomness across all 71 catalogue entries. Added synchronized
+  per-result randomness contracts, variant-level Monte Carlo confidence and
+  simultaneous-query scopes, explicit existence-only labels, and the
+  distinction between deterministic and randomized oracle lower bounds.
+- Recorded the bounded-trial partial-coloring confidence argument for explicit
+  group/metric tables and its quantum composition, retaining numerical-access
+  conditions and the deterministic stabilizer-witness algorithms.
+
 ## 2026-10-26 — Formal manuscripts and complete result catalogue
 
 - Removed `overview.pdf` and its obsolete build sources in [93830a3](https://github.com/icekylinx/algorithm-frontier/commit/93830a3faa8c43e235e9cbb5b76162b0960bd318).

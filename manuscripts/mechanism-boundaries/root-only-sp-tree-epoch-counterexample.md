@@ -174,7 +174,7 @@ particular carrier orientation.
 
 At the top every row sums to $L$, and every bin satisfies
 $$
-\operatorname{load}(d)+s_d=L-C.
+\mathrm{load}(d)+s_d=L-C.
 $$
 All coordinates are positive and lie in the guarded polynomial range.
 Take $\epsilon$ on the existing common dyadic grid.
@@ -325,8 +325,9 @@ $$
  E(\pi,s)
    &=\sum_d(s_d\pi_d-5/4)_+\\
    &\ge \tfrac12T-\tfrac54(2t+3)
-     =\Omega(L)\gg7N.                                  \tag{4}
- \end{aligned}
+     =\Omega(L)\gg7N.
+\end{aligned}
+\tag{4}
 $$
 The stronger maintained LOW screen therefore cannot close this case.
 

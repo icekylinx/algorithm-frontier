@@ -31,7 +31,7 @@ compute either its exact minimum or its exact maximum over X in
 
 $$
 \boxed{\exp\!\bigl(O_d((T+1)^{d/(d+1)})\bigr)
-              \operatorname{poly}(H)}
+              \mathrm{poly}(H)}
  \tag{MD2}
 $$
 
@@ -528,7 +528,7 @@ for every nonempty S. Hence the exact algorithm takes
 $$
 \boxed{
  \exp\!\left((d'+2(2^{d'}-1))K(U)\right)
-                     \operatorname{poly}(H)
+                     \mathrm{poly}(H)
  }
  \tag{MD25}
 $$

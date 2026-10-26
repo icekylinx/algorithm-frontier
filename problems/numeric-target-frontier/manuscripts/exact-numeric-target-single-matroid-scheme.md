@@ -9,7 +9,7 @@ all seven nontrivial single-matroid variants admit exact target decision
 in
 
 $$
-2^{O(\sqrt{T+1})}\operatorname{poly}(H)
+2^{O(\sqrt{T+1})}\mathrm{poly}(H)
 \tag{NT1}
 $$
 
@@ -168,7 +168,7 @@ profiles and passes its side test.
 This proves an exact gate in
 
 $$
-\exp(3\sqrt T)\operatorname{poly}(H)
+\exp(3\sqrt T)\mathrm{poly}(H)
 \tag{NT7}
 $$
 
@@ -220,7 +220,7 @@ original target witness supplies a retained profile, so complete
 failure is sound. The exact target gate takes at most
 
 $$
-\exp(3\sqrt{2T-1})\operatorname{poly}(H)
+\exp(3\sqrt{2T-1})\mathrm{poly}(H)
 \tag{NT10}
 $$
 
@@ -250,7 +250,7 @@ directions, and hence all seven variants, have exact optimization time
 
 $$
 2^{O(\sqrt{\mathrm{OPT}+1})}
-                    \operatorname{poly}(H)
+                    \mathrm{poly}(H)
 \tag{NT11}
 $$
 

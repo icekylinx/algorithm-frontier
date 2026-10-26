@@ -124,7 +124,7 @@ rate becomes
 $$
 P\min\left\{\exp(O(q)),\,
       (q+1)^{O(\epsilon^{-1}\log(2+r/\epsilon))}\right\}
-      \operatorname{poly}(b_\epsilon+\log P),
+      \mathrm{poly}(b_\epsilon+\log P),
 $$
 
 whereas the named derived-public layer rate has the exponent

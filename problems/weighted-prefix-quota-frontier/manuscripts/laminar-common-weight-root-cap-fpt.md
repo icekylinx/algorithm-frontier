@@ -45,7 +45,7 @@ Let $H$ be the full binary input size, including the explicit laminar family, nu
 **Theorem.** Under these assumptions, feasibility and exact scalar optimization can be solved deterministically in
 
 $$
-2^{O(B^2\log(B+1))}\operatorname{poly}(H)
+2^{O(B^2\log(B+1))}\mathrm{poly}(H)
 \tag{LM4}
 $$
 
@@ -166,19 +166,19 @@ K_{\ell,d}=\sum_{j=0}^{d}\ell^j
 \tag{LM15}
 $$
 
-candidates with the following property. For any independent sets $B_i$ of $N_i$ satisfying $\sum_i|B_i|\le d$, and any $e\in T$ outside every $\operatorname{cl}_{N_i}(B_i)$, an emitted candidate $f$ has $a_f\ge a_e$ and is also outside all those closures. The sets $B_i$ may differ, overlap, or contain elements outside $T$.
+candidates with the following property. For any independent sets $B_i$ of $N_i$ satisfying $\sum_i|B_i|\le d$, and any $e\in T$ outside every $\mathrm{cl}_{N_i}(B_i)$, an emitted candidate $f$ has $a_f\ge a_e$ and is also outside all those closures. The sets $B_i$ may differ, overlap, or contain elements outside $T$.
 
 Generate the candidates recursively. Maintain independent $J_i$, initially empty, and let
 
 $$
 Y(J)=T\setminus\bigcup_{i=1}^{\ell}
-                                   \operatorname{cl}_{N_i}(J_i).
+                                   \mathrm{cl}_{N_i}(J_i).
 \tag{LM16}
 $$
 
 If $Y(J)$ is empty, stop this branch. Otherwise emit a highest-score candidate $f\in Y(J)$, using a fixed tie order. If $\sum_i|J_i|<d$, branch on each $i$, inserting $f$ into $J_i$. The inserted set remains independent. The tree has depth at most $d$ and at most LM15 nodes.
 
-For correctness, maintain $J_i\subseteq\operatorname{cl}(B_i)$ and the target $e\in Y(J)$. The emitted score is then at least $a_e$. If $f$ fails a test, choose $i$ with $f\in\operatorname{cl}(B_i)$. Since $f\notin\operatorname{cl}(J_i)$, independence and closure containment imply $|J_i|<|B_i|$. Inserting $f$ in this $J_i$ preserves containment; $e$ remains outside its closure. Thus a legitimate branch continues until a candidate passes all tests. It cannot require depth greater than $\sum_i|B_i|\le d$. This proves the lemma.
+For correctness, maintain $J_i\subseteq\mathrm{cl}(B_i)$ and the target $e\in Y(J)$. The emitted score is then at least $a_e$. If $f$ fails a test, choose $i$ with $f\in\mathrm{cl}(B_i)$. Since $f\notin\mathrm{cl}(J_i)$, independence and closure containment imply $|J_i|<|B_i|$. Inserting $f$ in this $J_i$ preserves containment; $e$ remains outside its closure. Thus a legitimate branch continues until a candidate passes all tests. It cannot require depth greater than $\sum_i|B_i|\le d$. This proves the lemma.
 
 One may obtain the same restricted tests from private copies in the joint-representative formulation of Huang–Ward. The direct proof above makes the smaller **sum of test ranks** bound explicit; it does not substitute $d$ for a public theorem's rank parameter without proof. Matroid closures are evaluated only on the generated candidate sets.
 
@@ -265,8 +265,8 @@ Enumerate sets of at most $B$ emitted copies, reject repetitions of a copy, test
 Enumeration may use ordered index tuples padded by a blank symbol. There are at most $(K+1)^B$ such tuples. Duplicate enumeration is harmless and gives
 
 $$
-(K+1)^B\operatorname{poly}(H+B)
-                    =2^{O(B^2\log(B+1))}\operatorname{poly}(H).
+(K+1)^B\mathrm{poly}(H+B)
+                    =2^{O(B^2\log(B+1))}\mathrm{poly}(H).
 \tag{LM23}
 $$
 

@@ -25,13 +25,13 @@ Set Γ=1 when h=0 or d=0. For h=1 a sharper factor d+1 is available below.
 Item e contributes an explicitly given real symmetric positive semidefinite matrix B_e. Let
 
 $$
-M_X=\sum_{e\in X}B_e,\qquad r=\operatorname{rank}(M_E).
+M_X=\sum_{e\in X}B_e,\qquad r=\mathrm{rank}(M_E).
 $$
 
 The rank-one case B_e=a_ea_e^T includes covariance matrices and weighted graph Laplacians. Arbitrary-rank PSD items are allowed. Define, for e∈X,
 
 $$
-t_e(X)=\operatorname{tr}(B_eM_X^\dagger),\qquad
+t_e(X)=\mathrm{tr}(B_eM_X^\dagger),\qquad
  \sigma_e=\max_{|F|\le h,\ e\in E_F}t_e(E_F).
 \tag{2}
 $$
@@ -223,7 +223,7 @@ For h=1, calculate the exact σ_e using the no-failure matrix and the L single-l
 
 $$
 C_e=\bigoplus_F
- \left[M_{E_F}^{\dagger/2}B_eM_{E_F}^{\dagger/2}\right]_{\operatorname{range}(M_{E_F})},
+ \left[M_{E_F}^{\dagger/2}B_eM_{E_F}^{\dagger/2}\right]_{\mathrm{range}(M_{E_F})},
 $$
 
 with a zero block when e is deleted. The block dimension D=Σ_F r_F is at most (L+1)r. We have Σ_e C_e=I_D and ||C_e||≤σ_e. Thus the matrices X_e=C_e/p_e, p_e=σ_e/T, have expectation I_D and satisfy 0≼X_e≼T I_D.
@@ -239,8 +239,8 @@ For a partial sum S_j of j chosen matrices define
 
 $$
 \Phi_j=
- e^{-\theta k(1+\epsilon)}a^{k-j}\operatorname{tr}e^{\theta S_j}
- +e^{\theta k(1-\epsilon)}b^{k-j}\operatorname{tr}e^{-\theta S_j}.
+ e^{-\theta k(1+\epsilon)}a^{k-j}\mathrm{tr}e^{\theta S_j}
+ +e^{\theta k(1-\epsilon)}b^{k-j}\mathrm{tr}e^{-\theta S_j}.
 \tag{14}
 $$
 
@@ -315,14 +315,14 @@ The following remain open in this manuscript: replacing Γr by r binom(h+d,d) fo
 There is a useful variant when a positive-definite background matrix R is fixed in advance. Set
 
 $$
-d_R=\operatorname{tr}\bigl(M_E(R+M_E)^{-1}\bigr),\qquad
- t_e^R(X)=\operatorname{tr}\bigl(B_e(R+M_X)^{-1}\bigr).
+d_R=\mathrm{tr}\bigl(M_E(R+M_E)^{-1}\bigr),\qquad
+ t_e^R(X)=\mathrm{tr}\bigl(B_e(R+M_X)^{-1}\bigr).
 $$
 
 These masses are deletion-monotone. Their total is
 
 $$
-d_R(X)=\operatorname{tr}\bigl(M_X(R+M_X)^{-1}\bigr)\le d_R.
+d_R(X)=\mathrm{tr}\bigl(M_X(R+M_X)^{-1}\bigr)\le d_R.
 $$
 
 To see the last inequality, write K_X=R^{-1/2}M_XR^{-1/2}; the total is tr[I−(I+K_X)^{-1}], which increases in the PSD order. The pool lemma and the one-failure accounting therefore give robust importance bounds Γd_R and (d+1)d_R, respectively.

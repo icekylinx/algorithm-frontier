@@ -67,7 +67,7 @@ $O(\log(l+2))$ deterministic calls.
 Now choose a maximizer
 
 $$
-z\in\operatorname*{arg\,max}_{v\in V(T)\setminus\{s,c\}}
+z\in\mathop{\mathrm{arg\,max}}\limits_{v\in V(T)\setminus\{s,c\}}
                               \mu(v).
  \tag{1}
 $$

@@ -42,7 +42,7 @@ even without a load bound, or returns a legal schedule of makespan at
 most gamma_k*OPT, with all original totals and the budget exact, in
 
 $$
-(k+1)^q\operatorname{poly}(H+k)\text{ time},\qquad \operatorname{poly}(H+k)\text{ space}.
+(k+1)^q\mathrm{poly}(H+k)\text{ time},\qquad \mathrm{poly}(H+k)\text{ space}.
  \tag{AB4}
 $$
 
@@ -58,7 +58,7 @@ For rational epsilon>0, choosing k with the last term of AB3 at most
 epsilon gives factor 3/2+epsilon in
 
 $$
-\bigl[O(1+\log(1+\varepsilon^{-1}))\bigr]^q\operatorname{poly}(H_\varepsilon).
+\bigl[O(1+\log(1+\varepsilon^{-1}))\bigr]^q\mathrm{poly}(H_\varepsilon).
  \tag{AB5}
 $$
 

@@ -15,7 +15,7 @@ Simplicity bounds arcs of span below $L$ by $nL$; the rest number at most $\lamb
 
 **Lemma 1.2 (residual identity).** For an optimal integral flow $x$ and used failed arc $f=(u,v)$,
 $$
-\operatorname{OPT}_{G-f}(\lambda)=c(x)-c(f)+\operatorname{dist}_{R_x}(u,v).
+\mathrm{OPT}_{G-f}(\lambda)=c(x)-c(f)+\mathrm{dist}_{R_x}(u,v).
 $$
 
 **Proof.** The residual graph has no negative cycle. A simple residual $u$-to-$v$ path cannot use the reverse $v$-to-$u$ of $f$. Remove $f$ and augment along that path to repair conservation and capacities at the displayed cost. Conversely, decompose any repair difference into residual cycles. Each costs nonnegatively. Remove the reverse of $f$ from its cycle to obtain a path costing at most the repair gap plus $c(f)$. This proves equality and the infeasibility convention. $\square$

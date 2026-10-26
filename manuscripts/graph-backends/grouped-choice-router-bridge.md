@@ -176,7 +176,7 @@ the diagonal routes does not remove this count.
 The selected support has only $n$ central IDs, and its origin
 loads are perfectly balanced. Its ambient vertex-occurrence
 congestion is nevertheless $\Omega(n^2)$, rather than the
-$k\operatorname{polylog}n$ scale of (5).
+$k\mathrm{polylog}n$ scale of (5).
 
 This is not a lower bound against all possible representative choices:
 other choices can avoid the diagonal paths. It proves that the

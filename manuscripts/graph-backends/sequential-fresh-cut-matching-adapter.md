@@ -95,7 +95,7 @@ number of successful rounds before all pairs finish or a cut
 occurs is
 $$
 R=O\!\left(\zeta^{-1}\log(2/b)\right)
-  =\operatorname{poly}(\Delta,\eta^{-1},\log(N+2),\log(2/b)).
+  =\mathrm{poly}(\Delta,\eta^{-1},\log(N+2),\log(2/b)).
                                                                \tag{6}
 $$
 The graph never accumulates removed path vertices between
@@ -199,7 +199,7 @@ is not used.
 Consequently
 $$
 \eta_j^{-1}\leq
-           \operatorname{poly}(\log(N+2))\,\psi^{-1}
+           \mathrm{poly}(\log(N+2))\,\psi^{-1}
  \tag{12}
 $$
 throughout the actual execution. Path length, union congestion,
@@ -229,10 +229,10 @@ $$
 rounds every source is matched. All paths are explicit,
 have length $O(\Delta\sigma^{-1}\log N)$, and total
 vertex congestion
-$\operatorname{poly}(\Delta,\sigma^{-1},\log N)$.
+$\mathrm{poly}(\Delta,\sigma^{-1},\log N)$.
 Work is
 $$
-(m+N)\operatorname{poly}
+(m+N)\mathrm{poly}
                            (\Delta,\sigma^{-1},\log N).
                                                                \tag{14}
 $$

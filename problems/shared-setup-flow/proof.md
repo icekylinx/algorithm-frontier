@@ -132,7 +132,7 @@ least
 $$
 (1-\epsilon)\Lambda
         \quad\text{in time}\quad
-                 \Gamma(1/\epsilon)^c\operatorname{poly}(H),
+                 \Gamma(1/\epsilon)^c\mathrm{poly}(H),
           \qquad \Gamma(R)=\frac{R^R}{(R-1)^{R-1}},
  \tag{SF7}
 $$

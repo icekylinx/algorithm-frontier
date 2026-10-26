@@ -1,6 +1,6 @@
 # A commuting surrogate and a constant-factor stabilizer witness for positive Pauli Hamiltonians
 
-**Abstract.** We construct, in polynomial time in a compact positive-Pauli description, a commuting surrogate whose minimum energy is within a factor $2+\sqrt2$ of the original ground energy. Every state in the constructed stabilizer basis has the same energy for the original and surrogate Hamiltonians. Exact minimization of the resulting affine-parity objective yields a polynomial-size stabilizer witness; it takes $2^n\operatorname{poly}(L)$ time and polynomial space by enumeration. Prime-dimensional eigenvalue checks admit the analogous factor $2(1+p^{-1/2})$.
+**Abstract.** We construct, in polynomial time in a compact positive-Pauli description, a commuting surrogate whose minimum energy is within a factor $2+\sqrt2$ of the original ground energy. Every state in the constructed stabilizer basis has the same energy for the original and surrogate Hamiltonians. Exact minimization of the resulting affine-parity objective yields a polynomial-size stabilizer witness; it takes $2^n\mathrm{poly}(L)$ time and polynomial space by enumeration. Prime-dimensional eigenvalue checks admit the analogous factor $2(1+p^{-1/2})$.
 
 ## 1. Main statement
 
@@ -32,7 +32,7 @@ and a stabilizer basis state minimizing $K$ is a $2+\sqrt2$ approximation to the
 
 The output $K$ is a scalar plus an explicitly given positive weighted affine-parity objective on at most $n$ bits. Thus exact enumeration yields a deterministic
 $$
-2^n\operatorname{poly}(n,m,\text{input bit length})
+2^n\mathrm{poly}(n,m,\text{input bit length})
 $$
 time algorithm using polynomial space and outputting an $O(n^2)$-bit stabilizer tableau with the guarantee (4). If only $d\le n$ independent diagonal Pauli labels occur in $K$, enumeration needs $2^d$ assignments instead.
 
@@ -132,8 +132,8 @@ where $Q_1,\ldots,Q_n$ generate $L$. On their eigenvalue assignment $Q_j=(-1)^{x
 $$
 \langle x|K|x\rangle
  =
- \sum_{\operatorname{label}(P_e)\notin L} w_e
- +2\sum_{\operatorname{label}(P_e)\in L}
+ \sum_{\mathrm{label}(P_e)\notin L} w_e
+ +2\sum_{\mathrm{label}(P_e)\in L}
        w_e\,\mathbf1[s_e+v_e\cdot x=1].
  \tag{12}
 $$
@@ -149,17 +149,17 @@ For $E_0(H)=0$, the conclusion gives a zero-energy stabilizer witness. The exact
 
 There is also a short existence proof of the same variational factor that does not use peeling. Fix any quantum state $\rho$. The signed input Paulis with
 $$
-\operatorname{Tr}(\rho P)>1/\sqrt2
+\mathrm{Tr}(\rho P)>1/\sqrt2
 $$
 commute pairwise: for anticommuting $P,Q$,
 $$
-\operatorname{Tr}(\rho P)^2+\operatorname{Tr}(\rho Q)^2\le1.
+\mathrm{Tr}(\rho P)^2+\mathrm{Tr}(\rho Q)^2\le1.
 $$
 Extend their span to a maximal commuting Pauli space and dephase $\rho$ in its stabilizer basis. A retained expectation is unchanged. An erased expectation $x\le1/\sqrt2$ has new penalty $1$, and
 $$
 1\le(2+\sqrt2)(1-x).
 $$
-The resulting mixture of stabilizer basis states has energy at most $(2+\sqrt2)\operatorname{Tr}(\rho H)$; one pure member is at least as good. Unlike Theorem 1's basis construction, this argument uses expectation information about $\rho$, so it is not the constructive reduction used above.
+The resulting mixture of stabilizer basis states has energy at most $(2+\sqrt2)\mathrm{Tr}(\rho H)$; one pure member is at least as good. Unlike Theorem 1's basis construction, this argument uses expectation information about $\rho$, so it is not the constructive reduction used above.
 
 The true best universal ratio for stabilizer states is not settled by either argument. A one-qubit example already requires
 $$
@@ -191,7 +191,7 @@ E_e=\Pi_{U_e,\lambda_e},\qquad
  H=\sum_e w_e(I-E_e).
  \tag{14}
 $$
-Scalar operators give the constant checks $E_e=0$ or $I$ and can be handled directly. For a nonscalar Weyl operator, its spectral projector has rank $p^{n-1}$. The model retains an entire eigenvalue check; it is not the different objective $I-\operatorname{Re}U_e$.
+Scalar operators give the constant checks $E_e=0$ or $I$ and can be handled directly. For a nonscalar Weyl operator, its spectral projector has rank $p^{n-1}$. The model retains an entire eigenvalue check; it is not the different objective $I-\mathrm{Re}U_e$.
 
 **Corollary 2.** A deterministic reduction polynomial in $n,m,\log p$, and the rational input bit length produces one complete stabilizer basis and a diagonal Hamiltonian $K$ such that every basis state has equal $H$- and $K$-energy and
 $$
@@ -200,7 +200,7 @@ K\preceq\kappa_p H,\qquad
  \kappa_p=2(1+p^{-1/2}).
  \tag{15}
 $$
-Enumeration takes $p^n\operatorname{poly}(n,m,\log p,\text{input bit length})$ time and polynomial space, and outputs a stabilizer tableau of polynomial bit length. This is not a polynomial-time optimizer when the Hilbert-space dimension is exponential in the compact input.
+Enumeration takes $p^n\mathrm{poly}(n,m,\log p,\text{input bit length})$ time and polynomial space, and outputs a stabilizer tableau of polynomial bit length. This is not a polynomial-time optimizer when the Hilbert-space dimension is exponential in the compact input.
 
 To prove the corollary, peel equal coefficient mass from every noncommuting pair until the residual Weyl operators commute. If $E,F$ are the accepted-eigenvalue projectors of a noncommuting pair, Weyl commutation gives
 $$
@@ -238,7 +238,7 @@ The case retaining only $F$ is identical. Summing these inequalities over the pe
 
 The diagonal objective consists of positive weighted affine equations over $\mathbb F_p$ together with the scalar contribution
 $$
-(1-1/p)\sum_{\operatorname{label}(U_e)\notin L} w_e.
+(1-1/p)\sum_{\mathrm{label}(U_e)\notin L} w_e.
 $$
 Its evaluation and a complete stabilizer tableau use only finite-field and phase arithmetic. Independent generators of $L$ realize all $p^n$ eigenvalue assignments, so direct enumeration is valid without constructing Hilbert-space matrices.
 

@@ -217,8 +217,7 @@ terms into the Dirichlet form in (20).
 Equivalently $I-Q^2=(I-M^*)(3I+M^*)/4\succeq(I-M^*)/2$,
 since the eigenvalues of the symmetric stochastic $M^*$ lie in
 $[-1,1]$. The quadratic-form identity
-$\langle v,(I-M^*)v\rangle
-=\tfrac12\sum_{ij}m^*_{ij}\|v_i-v_j\|^2$
+$\langle v,(I-M^*)v\rangle =\tfrac12\sum_{ij}m^*_{ij}\|v_i-v_j\|^2$
 then gives (20).
 
 Combining (18) and (20),
@@ -355,7 +354,7 @@ therefore polynomial in $k$ and $\log n$, with fixed degree.
 Summing over at most $n$ hierarchy nodes gives the safe work
 bound
 $$
-n\,\operatorname{poly}(k,\log n).
+n\,\mathrm{poly}(k,\log n).
  \tag{29}
 $$
 This is compatible with the intended

@@ -25,7 +25,7 @@ original budget-feasible schedule exists, even with unbounded load,
 or returns a schedule of makespan at most (3/2)OPT in
 
 $$
-6^q\operatorname{poly}(H)\text{ time},\qquad \operatorname{poly}(H)\text{ space},
+6^q\mathrm{poly}(H)\text{ time},\qquad \mathrm{poly}(H)\text{ space},
  \tag{SX2}
 $$
 

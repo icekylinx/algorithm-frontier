@@ -85,7 +85,7 @@ $$
 Its running time is either
 
 $$
-A^c\operatorname{poly}(H)
+A^c\mathrm{poly}(H)
  \tag{BW5}
 $$
 
@@ -93,14 +93,14 @@ or
 
 $$
 (2-1/A)^q\,
- 2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H).
+ 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
  \tag{BW6}
 $$
 
 Here H includes the explicit scenario list, original binary numerical
 data, matroid/rank oracle descriptions, and the paid polynomial
 intersection and LP work. For fixed w,d, BW6 is
-$(2-1/A)^{q+o(q)}\operatorname{poly}(H)$. In particular the utility
+$(2-1/A)^{q+o(q)}\mathrm{poly}(H)$. In particular the utility
 approximation is exactly d, without an additive unit loss.
 
 The width-guarded implementation has these same time bounds on every
@@ -251,7 +251,7 @@ stay fixed. Any original robust unit basis avoiding Z survives, and
 the time is
 
 $$
-w^{\,c-|Z|}\operatorname{poly}(H).
+w^{\,c-|Z|}\mathrm{poly}(H).
  \tag{BW11}
 $$
 
@@ -262,7 +262,7 @@ in
 
 $$
 (2-1/w)^q
- 2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H).
+ 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
  \tag{BW12}
 $$
 
@@ -375,8 +375,8 @@ The local time is the sum of the one-time unit gate and the positive
 quota searches:
 
 $$
-\bigl(w^c+A_d^c\bigr)\operatorname{poly}(H)
-                    \le 2A^c\operatorname{poly}(H).
+\bigl(w^c+A_d^c\bigr)\mathrm{poly}(H)
+                    \le 2A^c\mathrm{poly}(H).
  \tag{BW16}
 $$
 
@@ -404,9 +404,9 @@ At d=2, R_d=3 and A_d=27/4. Consequently every fixed width
 w<=6 retains
 
 $$
-(27/4)^c\operatorname{poly}(H)
+(27/4)^c\mathrm{poly}(H)
  \quad\text{and}\quad
- (50/27)^{q+o(q)}\operatorname{poly}(H)
+ (50/27)^{q+o(q)}\mathrm{poly}(H)
 $$
 
 for exact factor two, including K*=1. For wider certificates use
@@ -469,10 +469,10 @@ and this specialization is solved **exactly**, not merely within
 factor two, in
 
 $$
-2^c\operatorname{poly}(H)
+2^c\mathrm{poly}(H)
  \quad\text{or}\quad
  (3/2)^q2^{O(q\log\log(q+2)/\log(q+2))}
-       \operatorname{poly}(H),
+       \mathrm{poly}(H),
 $$
 
 with polynomial space. Singleton loops are forced-deletion branches;

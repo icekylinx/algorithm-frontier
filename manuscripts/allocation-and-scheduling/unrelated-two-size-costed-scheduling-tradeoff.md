@@ -61,7 +61,7 @@ the assignment budget even with unbounded makespan, or returns a
 legal schedule of makespan at most rho_d*OPT in
 
 $$
-B_d^q\,2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H)
+B_d^q\,2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
  \tag{US4}
 $$
 

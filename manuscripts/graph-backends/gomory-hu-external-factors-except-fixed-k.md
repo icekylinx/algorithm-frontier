@@ -114,7 +114,7 @@ The remainder of that appendix uses the preceding decomposition and
 exact maxflow on linear-size graphs, followed by recursive calls on
 vertex-disjoint induced graphs. Its recursion depth is
 $O(\log(nW))$. Hence its total actual edge inventory is
-$m\operatorname{poly}(U)$.
+$m\mathrm{poly}(U)$.
 
 Choose all displayed approximation envelopes as powers of two. The
 target $\phi$ used in Section 6 can also be chosen dyadic. The
@@ -128,7 +128,7 @@ With a deterministic exact-flow factor
 $E_{\rm flow}=\exp O(U^{4/5}h^{O(1)})$, the refinement costs
 
 $$
-m\operatorname{poly}(U)
+m\mathrm{poly}(U)
              \bigl(E_{\rm dec}+E_{\rm flow}\bigr),
  \tag{6}
 $$
@@ -150,7 +150,7 @@ expander factor and logarithms. The displayed loops in DetectCC,
 DecompFirstStep, and DecompSecondStep have counts polynomial in
 $\psi^{-1}$ and $U$. Their hit-and-miss families are covered by
 Section 1. Every isolating-cut invocation reduces to exact maxflow on
-graphs of total size $m\operatorname{poly}(U)$.
+graphs of total size $m\mathrm{poly}(U)$.
 
 Full SSMC makes $O(\log(nW))$ calls to partial SSMC. A call to
 GHTreeStep performs a polynomial logarithmic number of the preceding
@@ -163,7 +163,7 @@ audited guide construction and the new fixed-k adapter, the complete
 GHTreeStep work is
 
 $$
-m\operatorname{poly}(U)E^{O(1)}
+m\mathrm{poly}(U)E^{O(1)}
        E_{\rm dec}^{O(1)}E_{\rm flow}^{O(1)}.
  \tag{7}
 $$

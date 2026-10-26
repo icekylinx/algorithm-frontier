@@ -142,7 +142,7 @@ This argument uses additive subgroups and their orders, without assuming a field
 Set $d=n+1$. For a block subset $S$, form the full-rank integer lattice
 $$
 \mathcal L_S=
-\operatorname{span}_{\mathbb Z}
+\mathrm{span}_{\mathbb Z}
 \{\text{integer representatives of the augmented rows in }S\}
 +q\mathbb Z^d
 \subseteq\mathbb Z^d.
@@ -180,7 +180,7 @@ For the present integer-order oracle, its direct specialization is
 $$
 \phi(t)=t-\frac{t^2}{4\overline R},
 \qquad
-g(S)=4\,\operatorname{Round}
+g(S)=4\,\mathrm{Round}
 \bigl(\phi(\log_2N_S)\bigr),
 \tag{MB15}
 $$
@@ -270,9 +270,9 @@ times the cut size of $K_{s,B}$.
 
 For any claimed sparsifier, let $G'_j$ consist of its retained original items at level $j$, with their output coefficients. Equation (MB3) gives
 $$
-\operatorname{cut}_{\sum_{j<\ell}G'_j}(z)
+\mathrm{cut}_{\sum_{j<\ell}G'_j}(z)
 \in(1\pm\epsilon)W_\ell
-\operatorname{cut}_{K_{s,B}}(z)
+\mathrm{cut}_{K_{s,B}}(z)
 \quad\text{for every }z.
 \tag{MB20}
 $$
@@ -280,12 +280,12 @@ Subtract the prefix equations for $\ell=j+1$ and $\ell=j$. The error bounds add:
 $$
 \begin{split}
 \left|
-\operatorname{cut}_{G'_j}(z)
--3^j\operatorname{cut}_{K_{s,B}}(z)
+\mathrm{cut}_{G'_j}(z)
+-3^j\mathrm{cut}_{K_{s,B}}(z)
 \right|
 &\le\epsilon(W_{j+1}+W_j)
-\operatorname{cut}_{K_{s,B}}(z)\\
-&\le2\epsilon\,3^j\operatorname{cut}_{K_{s,B}}(z).
+\mathrm{cut}_{K_{s,B}}(z)\\
+&\le2\epsilon\,3^j\mathrm{cut}_{K_{s,B}}(z).
 \end{split}
 \tag{MB21}
 $$
@@ -304,7 +304,7 @@ Blocks may also use a different modulus on each row. For a row
 $$
 a\cdot x\equiv b\pmod{q_i},
 $$
-compute $Q=\operatorname{lcm}_i q_i$ by gcd operations and replace its augmented row by
+compute $Q=\mathrm{lcm}_i q_i$ by gcd operations and replace its augmented row by
 $$
 \frac{Q}{q_i}(a,-b)\pmod Q.
 \tag{MB22}

@@ -124,7 +124,7 @@ work, including initialization, numerical steps, births, price
 refreshes, and exact edge retirements, is
 
 $$
-M E(N)^{O(1)}\operatorname{poly}(U).
+M E(N)^{O(1)}\mathrm{poly}(U).
 \tag{6}
 $$
 
@@ -410,7 +410,7 @@ certifies it. Including quota restarts and initialization, the phase
 count is
 
 $$
-P\leq\operatorname{poly}(U)/\alpha
+P\leq\mathrm{poly}(U)/\alpha
    \leq K_1/\theta,
 \qquad
 \log K_1=O\bigl(h+\log(1/\varepsilon)\bigr).
@@ -435,16 +435,16 @@ $$
 
 The sum of owner allowances at depth $b$ is consequently at most
 $(n+m)K_1^b$. Each phase costs
-$M E(N)^{O(1)}\operatorname{poly}(U)$ outside its child, by
+$M E(N)^{O(1)}\mathrm{poly}(U)$ outside its child, by
 (6), the $O(U)$ scale count, Dijkstra rebuilding, and ordinary
 record forwarding. Multiplying by the phase count gives at most
-$M E(N)^{O(1)}K_1\theta^{-1}\operatorname{poly}(U)$ for one
+$M E(N)^{O(1)}K_1\theta^{-1}\mathrm{poly}(U)$ for one
 owner outside its descendants.
 
 Stop recursing when $M\leq C/\theta$. At such a leaf, recompute
 exact distances by Dijkstra after every complete external batch.
 Even charging each record as a separate batch costs at most
-$M^2\operatorname{poly}(U)\leq M\exp O(s)\operatorname{poly}(U)$.
+$M^2\mathrm{poly}(U)\leq M\exp O(s)\mathrm{poly}(U)$.
 The recursive depth is $B\leq U/s+O(1)$. Summing all levels and
 leaves gives
 
@@ -551,7 +551,7 @@ phase trees. A shared vertex is represented by the four Euler-interval
 coordinates of the two trees. A static sparse dyadic range index finds
 the last intersection along either of two clipped ancestor paths in
 polynomial logarithmic time. Constructing all these indices costs
-$O(BM\operatorname{poly}(U))$ per new tree, absorbed by the
+$O(BM\mathrm{poly}(U))$ per new tree, absorbed by the
 already charged Dijkstra and leaf computations.
 
 Process the $O(B)$ native pieces while maintaining a simple path.
@@ -564,8 +564,8 @@ $O(B^2)$ intersection queries. Only after all these deletions are
 complete are the retained edges enumerated, giving
 
 $$
-O((k+B^2)\operatorname{poly}(U))
-   =O((k+1)\operatorname{poly}(\log N))
+O((k+B^2)\mathrm{poly}(U))
+   =O((k+1)\mathrm{poly}(\log N))
 $$
 
 query time for $k$ returned edges. The path's cost is at most the

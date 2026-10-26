@@ -445,7 +445,7 @@ After D and a compatible initial forest have been supplied,
 the total local data-structure work is
 
 $$
-(\nu+J+P+Q+R)\operatorname{polylog} S .
+(\nu+J+P+Q+R)\mathrm{polylog} S .
  \tag{14}
 $$
 

@@ -50,7 +50,7 @@ The resulting deterministic guarantee is
 
 $$
 \boxed{\text{makespan at most }\tfrac53\,\mathrm{OPT}
-              \text{ in }2^{O(h)}\operatorname{poly}(H).}
+              \text{ in }2^{O(h)}\mathrm{poly}(H).}
  \tag{S3}
 $$
 
@@ -223,7 +223,7 @@ large-quota calculation in the unit-quota note gives constant-relative
 growth Omega(eta), and runtime
 
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(h)},(h+1)^{O((1+\eta^{-1})\log(h+1))}\}.
  \tag{S15}
 $$

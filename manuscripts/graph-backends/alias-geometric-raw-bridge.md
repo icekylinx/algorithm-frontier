@@ -24,8 +24,8 @@ tree edge has residual zero, and keep $\pi$ fixed. Define, for
 EVERY current parent edge,
 
 $$
-\bar g_J(e)=g_J(e)+\pi(\operatorname{tail}e)
-                         -\pi(\operatorname{head}e).
+\bar g_J(e)=g_J(e)+\pi(\mathrm{tail}e)
+                         -\pi(\mathrm{head}e).
  \tag{1}
 $$
 
@@ -99,7 +99,7 @@ Each alias $a$ has positive stored length $\lambda_a$, fixed
 gradient $h_a$, and a current parent walk $L_a$ such that
 
 $$
-\operatorname{raw}_{\ell_J}(L_a)\le\lambda_a,\qquad
+\mathrm{raw}_{\ell_J}(L_a)\le\lambda_a,\qquad
                     \bar g_J^{\mathsf T}L_a=h_a .
  \tag{4}
 $$
@@ -151,7 +151,7 @@ Equations (2) and (4) give
 
 $$
 \bar g_S^{\mathsf T}F_a=h_a,\qquad
-             \operatorname{raw}_{\ell_S}(F_a)\le\lambda_a .
+             \mathrm{raw}_{\ell_S}(F_a)\le\lambda_a .
  \tag{6}
 $$
 
@@ -326,7 +326,7 @@ every child forest log. For the complete returned circulation,
 
 $$
 N_J=N_B/H,\qquad
- \operatorname{raw}_{\ell_J}(\text{returned lift})
+ \mathrm{raw}_{\ell_J}(\text{returned lift})
                    \le U_B/H .
  \tag{13}
 $$

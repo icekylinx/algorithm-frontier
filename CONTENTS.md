@@ -614,5 +614,6 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Verification registry](reviews/README.md)
 - [Import provenance and canonical paths](provenance/README.md)
 - [Complexity and computational models](docs/COMPLEXITY.md)
+- [Randomness contracts](docs/RANDOMNESS.md)
 - [Maintenance and validation](CONTRIBUTING.md)
 - [Change history](HISTORY.md)

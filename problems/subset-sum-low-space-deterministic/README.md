@@ -1,15 +1,40 @@
 # Deterministic Subset Sum: writable-space bound
 
-| Field | Result |
-|---|---|
-| **Objective and output** | Exact YES/NO decision and the selected input indices for arbitrary signed binary integers, including zeros and repeated weights. |
-| **Time** | $\operatorname{poly}(n,L)2^{n/2}$ bit operations. |
-| **Space** | $\operatorname{poly}(n,L)2^{E_Sn}$ writable bits, where $E_S=18261635770550353/10^{17}=0.18261635770550353$. Read-only input storage is excluded. |
-| **Parameters** | $n$ is the number of weights. $L$ includes every input bit, including the target, signs and delimiters. Polynomial degrees are fixed. |
-| **Model and representation** | Uniform deterministic bit model, bounded-storage generation and indexed witness recovery. |
-| **Lower-bound scope** | No lower bound is claimed. |
-| **Review status** | The full proof includes support extraction, canonical ownership, parent-stream generation and the resource ledger. Exact resource and structural checks support named components; no proof-assistant verification is claimed. |
-| **Source** | [Theorem and complete proof](proof.md), [source and verification index](sources.md), [import notice](NOTICE.md). |
+**Objective and output**
+
+Exact YES/NO decision and the selected input indices for arbitrary signed binary integers, including zeros and repeated weights.
+
+**Randomness**
+
+Deterministic exact algorithm in the uniform bit model, including indexed-witness recovery; the writable-space and restricted-range variants have no probability of error.
+
+**Time**
+
+$\mathrm{poly}(n,L)2^{n/2}$ bit operations.
+
+**Space**
+
+$\mathrm{poly}(n,L)2^{E_Sn}$ writable bits, where $E_S=18261635770550353/10^{17}=0.18261635770550353$. Read-only input storage is excluded.
+
+**Parameters**
+
+$n$ is the number of weights. $L$ includes every input bit, including the target, signs and delimiters. Polynomial degrees are fixed.
+
+**Model and representation**
+
+Uniform deterministic bit model, bounded-storage generation and indexed witness recovery.
+
+**Lower-bound scope**
+
+No lower bound is claimed.
+
+**Review status**
+
+The full proof includes support extraction, canonical ownership, parent-stream generation and the resource ledger. Exact resource and structural checks support named components; no proof-assistant verification is claimed.
+
+**Source**
+
+[Theorem and complete proof](proof.md), [source and verification index](sources.md), [import notice](NOTICE.md).
 
 The resource certificate is [check_resources.py](verify/check_resources.py). Its exact rational and integer comparisons accompany the proof's analytic reductions. The [structural check](verify/check_structural.py) covers the finite ownership and layout identities stated in its documentation.
 

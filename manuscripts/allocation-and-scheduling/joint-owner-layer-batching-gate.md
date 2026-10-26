@@ -14,8 +14,8 @@ $k=|I|<r$, and layer $i$ has selected bundles $X_i$
 and unique current blockers $Y_i$. Let
 
 $$
-J_i=I\setminus\operatorname{owners}(Y_{<i}),\qquad
- A_i=\operatorname{owners}(X_i).
+J_i=I\setminus\mathrm{owners}(Y_{<i}),\qquad
+ A_i=\mathrm{owners}(X_i).
  \tag{J1}
 $$
 
@@ -31,7 +31,7 @@ $$
 
 Owner names may still repeat between different layers. When extending
 the last layer, accept a new owner only outside
-$\operatorname{cl}(J_i\cup A_i)$. Physical available-resource
+$\mathrm{cl}(J_i\cup A_i)$. Physical available-resource
 tests, minimal bundles, blockers, and immediate one-at-a-time free
 cascades are unchanged. An already stored free center is processed
 using its individual eligibility, which follows from (J2); it need
@@ -44,14 +44,14 @@ and its earliest exchangeable blocker lies in layer $j<i$.
 The existing proof gives, for every retained layer $h\le j$,
 
 $$
-\operatorname{cl}(J'_h)=\operatorname{cl}(J_h),
+\mathrm{cl}(J'_h)=\mathrm{cl}(J_h),
               \qquad |J'_h|=|J_h|.
  \tag{J3}
 $$
 
 Independence of $J_h\cup A_h$ means that adjoining $A_h$
 increases rank by exactly $|A_h|$. Rank increments depend only
-on the flat $\operatorname{cl}(J_h)$. Hence (J3) implies the
+on the flat $\mathrm{cl}(J_h)$. Hence (J3) implies the
 same rank increment for $J'_h\cup A_h$, proving (J2) after
 the exchange. In particular no retained candidate owner has secretly
 become an element of $J'_h$.
@@ -67,7 +67,7 @@ cascade.
 
 For $h<j$, the selected owner set $A_h$ and physical forbidden
 set are unchanged. Equation (J3) also preserves
-$\operatorname{cl}(J_h\cup A_h)$. Therefore the earlier
+$\mathrm{cl}(J_h\cup A_h)$. Therefore the earlier
 statement that no jointly addable owner has an available bundle is
 literally the same statement after the exchange. Layer $j$ is
 refreshed before a growth test, as in the accepted construction.
@@ -88,7 +88,7 @@ $$
 
 We have $a=|X_i|\le y$, and $w\ge s+1$. For any
 fractional base vector $x$, the mass outside the flat
-$\operatorname{cl}(J_i\cup A_i)$ is at least
+$\mathrm{cl}(J_i\cup A_i)$ is at least
 
 $$
 r-(k-s+a)=w-a.
@@ -198,9 +198,9 @@ owners. But the flat required by the retained second layer changes
 from
 
 $$
-\operatorname{span}\{f_t:1\le t\le L\}
+\mathrm{span}\{f_t:1\le t\le L\}
           \quad\text{to}\quad
-          \operatorname{span}\{e_1+f_t:1\le t\le L\}.
+          \mathrm{span}\{e_1+f_t:1\le t\le L\}.
  \tag{J13}
 $$
 
@@ -232,11 +232,11 @@ free players from the flat. This is not a valid matroid implication.
 Over a field of characteristic different from two, take
 
 $$
-F=\{e_1+e_2,e_1-e_2\},\qquad L=\operatorname{span}\{e_2\}.
+F=\{e_1+e_2,e_1-e_2\},\qquad L=\mathrm{span}\{e_2\}.
  \tag{J14}
 $$
 
-Here $\operatorname{span}(F)\cap L=L$ has dimension one,
+Here $\mathrm{span}(F)\cap L=L$ has dimension one,
 but neither actual candidate element belongs to $L$. The vector
 $e_2$ is a linear combination of candidate elements; it is not
 automatically a player with a resource-free bundle. In an independence-

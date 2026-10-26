@@ -237,7 +237,7 @@ pivot policy and show, for example, that its total notifications
 and actual forest edits are bounded by
 $$
 (m+\text{accepted numerical work}
-                   +\text{structural transcript})\operatorname{polylog}S,
+                   +\text{structural transcript})\mathrm{polylog}S,
 $$
 while continuing to search all off-basis receiving directions.
 Alternatively, it could give a different price data structure

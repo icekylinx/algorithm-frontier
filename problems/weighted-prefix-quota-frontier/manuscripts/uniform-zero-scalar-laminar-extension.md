@@ -17,7 +17,7 @@ $$
 Positive-weight coordinates may have arbitrary signed rational scalar coefficients. Then exact feasibility and scalar optimization still have deterministic running time
 
 $$
-2^{O(B^2\log(B+1))}\operatorname{poly}(H)
+2^{O(B^2\log(B+1))}\mathrm{poly}(H)
 \tag{UZ2}
 $$
 
@@ -74,7 +74,7 @@ If $e$ is a $Q$-loop, deletion does not change $\rho$, and a same-class replacem
 
 If $e$ is a nonloop and $q(S^-)=\rho$, use the empty $Q$-test. The target passes it because it is a nonloop, and adding any replacement cannot reduce the already attained rank $\rho$.
 
-If $q(S^-)<\rho$, the one-element rank change implies $q(S^-)=\rho-1$. Choose a $Q$-basis $D\subseteq S^-$ as the test. Its size is at most $|S|-1\le B-1$, and $e\notin\operatorname{cl}_Q(D)$. A replacement outside that closure restores rank $\rho$.
+If $q(S^-)<\rho$, the one-element rank change implies $q(S^-)=\rho-1$. Choose a $Q$-basis $D\subseteq S^-$ as the test. Its size is at most $|S|-1\le B-1$, and $e\notin\mathrm{cl}_Q(D)$. A replacement outside that closure restores rank $\rho$.
 
 Thus the same separate-test representative lemma returns a no-worse adjusted-score replacement with
 

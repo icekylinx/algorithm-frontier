@@ -42,7 +42,7 @@ H includes the original binary input, explicit player-type coordinates
 and paid polynomial matroid, rank, SFM, LP and intersection work. Put
 
 $$
-H_\epsilon=H+\operatorname{size}(\epsilon),
+H_\epsilon=H+\mathrm{size}(\epsilon),
  \tag{PA2}
 $$
 
@@ -77,17 +77,17 @@ algorithm returns a genuine M-basis and integer allocation satisfying
 PA1 exactly, of value at least (1-epsilon)OPT. Its time obeys both
 
 $$
-\binom qr C_\delta^r\operatorname{poly}(H_\epsilon),
+\binom qr C_\delta^r\mathrm{poly}(H_\epsilon),
  \qquad
- \binom qr\exp(4r(J+1))\operatorname{poly}(H_\epsilon).
+ \binom qr\exp(4r(J+1))\mathrm{poly}(H_\epsilon).
  \tag{PA5}
 $$
 
 Consequently the time is
 
 $$
-2^{O(q+r/\epsilon)}\operatorname{poly}(H_\epsilon)
-       \ \le\ 2^{O(q/\epsilon)}\operatorname{poly}(H_\epsilon).
+2^{O(q+r/\epsilon)}\mathrm{poly}(H_\epsilon)
+       \ \le\ 2^{O(q/\epsilon)}\mathrm{poly}(H_\epsilon).
  \tag{PA6}
 $$
 
@@ -348,7 +348,7 @@ If U_p>1 it is L_p=U_p-(U_p-L_p), even larger than 1-K*delta^2.
 Thus PA17 and actual values at least the surrogate imply
 
 $$
-\operatorname{utility}_{x'}(p)
+\mathrm{utility}_{x'}(p)
                   \ge(1-\delta-K\delta^2)T\ge(1-\epsilon)T.
  \tag{PA19}
 $$

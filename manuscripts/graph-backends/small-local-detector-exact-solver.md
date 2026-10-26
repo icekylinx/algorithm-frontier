@@ -59,7 +59,7 @@ in Section 1. With $\zeta=1/4096$, set
 $$
 \ell_e=\lceil Hw_e\rceil,
 \qquad
-\gamma_e=\operatorname{round}(Hg_e).
+\gamma_e=\mathrm{round}(Hg_e).
 \tag{2}
 $$
 
@@ -206,7 +206,7 @@ have one fixed polynomial-bit grid as well.
 
 At retirement, read the stored $z_j=f_j$, add $a_jz_j$ to the
 fixed-cost offset, record its fixed divergence, and remove the active
-auxiliary coordinate. This is $O(\operatorname{poly}(U))$ local
+auxiliary coordinate. This is $O(\mathrm{poly}(U))$ local
 arithmetic. No stale flat copies exist. Full weight recomputation
 settles all heavy auxiliary coordinates and ordinary slack rearms
 before returning LOW.
@@ -217,29 +217,29 @@ With constant $\beta$, the same potential accounting bounds the
 number of accepted numerical steps by
 
 $$
-T=O(MpU)=M\operatorname{poly}(U).
+T=O(MpU)=M\mathrm{poly}(U).
 $$
 
 There are at most $O(M)$ external births and auxiliary retirements.
 Ordinary rearms have one initial birth credit and then a constant
 weighted-movement charge. LOW queries after external batches add at
 most the number of actual external records, apart from a harmless
-initial query. Thus there are $M\operatorname{poly}(U)$ total
+initial query. Thus there are $M\mathrm{poly}(U)$ total
 full solver calls. Recomputing all prices, applying an explicit cycle,
-and updating cost aggregates take $M\operatorname{poly}(U)$ per
+and updating cost aggregates take $M\mathrm{poly}(U)$ per
 step. Bellman--Ford dominates, giving total time
 
 $$
-M^3\operatorname{poly}(U).
+M^3\mathrm{poly}(U).
 \tag{9}
 $$
 
 For $M\leq E(N)^C$,
 
 $$
-M^3\operatorname{poly}(U)
- \leq M E(N)^{2C}\operatorname{poly}(U)
- =M E(N)^{O(1)}\operatorname{poly}(U).
+M^3\mathrm{poly}(U)
+ \leq M E(N)^{2C}\mathrm{poly}(U)
+ =M E(N)^{O(1)}\mathrm{poly}(U).
 \tag{10}
 $$
 

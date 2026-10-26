@@ -277,11 +277,11 @@ earlier blocker count $s$, and current-layer blocker count $y$.
 Put
 
 $$
-J_0=I\setminus\operatorname{owners}(Y_{<i}),\qquad
+J_0=I\setminus\mathrm{owners}(Y_{<i}),\qquad
  w=r-|J_0|=r-k+s\ge1.
 $$
 
-Every player outside $\operatorname{cl}_M(J_0)$ has available
+Every player outside $\mathrm{cl}_M(J_0)$ has available
 resource value strictly below $B$. If (L2) were feasible, its
 positive eligible player mass would have strictly less than
 $Bx_p$ fractional value at available resources. All unavailable
@@ -363,7 +363,7 @@ $M$-basis, and every retained player already has a legal fat or
 small allocation. Deletion preserves each resource's independence.
 
 Thus the factor $d_r$ is achieved in
-$\operatorname{poly}(\text{explicit input bits})2^{O(r)}$
+$\mathrm{poly}(\text{explicit input bits})2^{O(r)}$
 time with paid original-matroid, dual and union oracles. Rank one has
 factor one in this exact-availability model: with only one selected
 player, all individually permitted resources can be supplied to it.
@@ -403,7 +403,7 @@ gives the established rank-quasipolynomial depth. Consequently ratio
 $5-4/r+\eta$ is obtained in
 
 $$
-\operatorname{poly}(\text{input bits})
+\mathrm{poly}(\text{input bits})
  \min\left\{2^{O(r)},
           (r+1)^{O((1+\eta^{-1})\log(r+1))}\right\}
  \tag{L13}

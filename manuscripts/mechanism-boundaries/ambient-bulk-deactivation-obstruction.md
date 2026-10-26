@@ -186,7 +186,7 @@ For example, with $\gamma=\lceil\log_2 n\rceil$, the rule keeps
 $\Omega(n^2/\log n)$ IDs on an input with $m=\Theta(n^2)$, despite
 normalized ambient paths of constant length and threshold
 $\Theta(\gamma(C_0+\Delta))$. This is much larger than
-$n\operatorname{polylog}n$. The active high-girth invariant provides
+$n\mathrm{polylog}n$. The active high-girth invariant provides
 no bound on the inactive inventory: every active graph here is a tree.
 
 ## 5. Degree-three ambient variant with short simple input paths

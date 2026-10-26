@@ -242,16 +242,16 @@ selected-star split, and it does not by itself fix (7).
 The dynamic repair proof requires more than congestion in $H$.
 Its input graph $J$ is itself embedded by simple native paths
 $\Pi$ in an arbitrary immediate ambient graph. Writing
-$C_0=\operatorname{vcong}(\Pi)$, the needed output guarantee is
+$C_0=\mathrm{vcong}(\Pi)$, the needed output guarantee is
 of the form
 $$
-\operatorname{vcong}(\Pi\circ P)
+\mathrm{vcong}(\Pi\circ P)
                        \leq\Gamma\bigl(C_0+\Delta(J)\bigr).
  \tag{8}
 $$
 The static greedy lemma only proves, directly,
 $$
-\operatorname{vcong}(\Pi\circ P)
+\mathrm{vcong}(\Pi\circ P)
                        \leq(\tau+1)C_0,
  \tag{9}
 $$
@@ -344,8 +344,7 @@ m\geq 2^{4L}(q-1)/2
  \tag{14}
 $$
 Consequently the output ambient congestion exceeds
-$C_0+\Delta(J)$ by a factor $\Omega(2^{L/2})=
-\Omega(n^{1/8})$. A subpolynomial factor $\Gamma$ cannot
+$C_0+\Delta(J)$ by a factor $\Omega(2^{L/2})= \Omega(n^{1/8})$. A subpolynomial factor $\Gamma$ cannot
 absorb this family. Native edge capacities, a degree-three
 selected graph, and complete loop erasure do not imply (8).
 
@@ -429,7 +428,7 @@ smaller selected/active update stream invokes its expensive
 maintenance.
 
 For a provider returning a path of length at most
-$\gamma\operatorname{dist}_F(u,v)$, use route threshold
+$\gamma\mathrm{dist}_F(u,v)$, use route threshold
 $L=2\gamma b$. Rejecting a route longer than $L$ then certifies
 that the true distance is greater than $2b$, which preserves
 the same active-girth bound. All displayed occurrence charges

@@ -101,8 +101,8 @@ $$
 matchings of the remaining vertices. If a given matching chooses the partner at zero-based index `j`, define its rank recursively by
 
 $$
-\operatorname{rank}_t(M)=j A_{t-2}
- +\operatorname{rank}_{t-2}(M\text{ on the remaining vertices}).
+\mathrm{rank}_t(M)=j A_{t-2}
+ +\mathrm{rank}_{t-2}(M\text{ on the remaining vertices}).
 \tag{ED9}
 $$
 
@@ -168,7 +168,7 @@ The coefficient matrix has at most `T*m=O(nu^3)` entries. The ground, targets, a
 For any polynomial-time computable admissible choice `b=b(nu)` satisfying ED2, the reduction obeys ED6 with universal constant factors. A deterministic target solver with uniform time
 
 $$
-2^{o\left(T\log\left(2+m/T\right)\right)}\operatorname{poly}(H)
+2^{o\left(T\log\left(2+m/T\right)\right)}\mathrm{poly}(H)
 \tag{ED12}
 $$
 

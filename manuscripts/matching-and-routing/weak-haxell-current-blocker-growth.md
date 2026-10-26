@@ -14,7 +14,7 @@ The resulting deterministic uniform running time is
 
 $$
 P\,(n+1)^{\,O((r/\epsilon)\log(2+r/\epsilon))}
-       \operatorname{poly}(b_\epsilon+\log P),           \tag{1}
+       \mathrm{poly}(b_\epsilon+\log P),           \tag{1}
 $$
 
 for an explicit `r`-uniform bipartite hypergraph, under the sufficient

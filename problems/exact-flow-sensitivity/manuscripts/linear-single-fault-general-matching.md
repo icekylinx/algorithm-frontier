@@ -150,7 +150,7 @@ $$
 \tag{7}
 $$
 
-Let $s=|\operatorname{supp}(x)|$. The dual equality expressing $c$ consists of at most $2\mu$ positive degree rows, at most $\mu$ positive laminar odd-set rows, at most $k$ added rows, the cardinality row, and dual-slack unit vectors on zero coordinates. There are at most $m-s$ of the latter. If
+Let $s=|\mathrm{supp}(x)|$. The dual equality expressing $c$ consists of at most $2\mu$ positive degree rows, at most $\mu$ positive laminar odd-set rows, at most $k$ added rows, the cardinality row, and dual-slack unit vectors on zero coordinates. There are at most $m-s$ of the latter. If
 $$
 s>3\mu+k+1,
 $$
@@ -162,15 +162,15 @@ This proves (3). This use of a generic objective is deliberate: the existence of
 
 Apply the support lemma to (2). There are $k\le\mu$ avoidance caps and one outside-mass cap, so choose $x\in K$ with
 $$
-|\operatorname{supp}(x)|\le4\mu+2.
+|\mathrm{supp}(x)|\le4\mu+2.
 $$
 Return
 $$
-E(H)=\operatorname{supp}(x).
+E(H)=\mathrm{supp}(x).
 $$
 The outside-mass cap proves $M\subseteq E(H)$, and $|E(H)|\le4\mu+2$.
 
-Because $x\in P(G)$, it is a convex combination of matching incidence vectors. Because $x(E)=\mu$, every matching with positive coefficient in this combination has cardinality exactly $\mu$. Every such matching uses only edges of $\operatorname{supp}(x)$.
+Because $x\in P(G)$, it is a convex combination of matching incidence vectors. Because $x(E)=\mu$, every matching with positive coefficient in this combination has cardinality exactly $\mu$. Every such matching uses only edges of $\mathrm{supp}(x)$.
 
 For $f\in Q$, the inequality $x_f<1$ implies that at least one matching in this combination avoids $f$. Therefore $\nu(H-f)=\mu=\nu(G-f)$.
 
@@ -215,13 +215,13 @@ Remove edges that lie in no perfect matching of the augmented graph. Each remain
 
 The theorem preserves exact **cardinality**. It does not prove an $O(n^{3/2})$ exact replacement-cost preserver for arbitrary weighted nonbipartite matching.
 
-The fractional-cap argument does extend to a fixed optimal face. For example, intersect with $w^\top x=\operatorname{OPT}$, and cap only baseline edges that some original minimum-cost maximum matching avoids. One additional row changes the support bound by at most one. This preserves whether a failure can be repaired without increasing the original optimum cost. It does not preserve the potentially larger optimum after every failure.
+The fractional-cap argument does extend to a fixed optimal face. For example, intersect with $w^\top x=\mathrm{OPT}$, and cap only baseline edges that some original minimum-cost maximum matching avoids. One additional row changes the support bound by at most one. This preserves whether a failure can be repaired without increasing the original optimum cost. It does not preserve the potentially larger optimum after every failure.
 
 A direct alternating-walk reduction for the stronger weighted question fails. Take two zero-cost triangles $a_1a_2a_3$ and $b_1b_2b_3$, joined only by an edge $a_3b_3$ of cost one. The unique perfect matching is
 $$
 M=\{a_1a_2,b_1b_2,a_3b_3\}.
 $$
-In the naive transition digraph, a nonmatching edge $uv$ gives an arc $u\to\operatorname{mate}_M(v)$ of length $w(uv)-w(v\operatorname{mate}_M(v))$. It contains the directed cycle
+In the naive transition digraph, a nonmatching edge $uv$ gives an arc $u\to\mathrm{mate}_M(v)$ of length $w(uv)-w(v\mathrm{mate}_M(v))$. It contains the directed cycle
 $$
 a_3\to a_2\to b_3\to b_1\to a_3
 $$

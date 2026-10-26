@@ -6,7 +6,7 @@
 
 Let item $e$ have a positive rational weight $w_e$ and an explicitly represented subspace
 $$
-B_e=\operatorname{span}\{a_{e,1},\ldots,a_{e,t_e}\}
+B_e=\mathrm{span}\{a_{e,1},\ldots,a_{e,t_e}\}
        \subseteq\mathbb K^N.
 $$
 Let $A$ be the concatenation of all these columns, of rank $r$. Each original row $i$ has a label set $R_i$, and every column belonging to item $e$ has the same label set $S_e$. Suppose every nonzero incidence satisfies

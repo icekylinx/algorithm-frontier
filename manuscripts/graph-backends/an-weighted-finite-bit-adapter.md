@@ -26,7 +26,7 @@ The adapter returns an actual spanning tree of G with total stretch
 
 $$
 \sum_{e=uv}\frac{d_T(u,v)}{\ell_e}
-                       \leq m\operatorname{poly}(B),         \tag{2}
+                       \leq m\mathrm{poly}(B),         \tag{2}
 $$
 
 using (m+n) poly(B) bit operations. The polynomial degrees are fixed.
@@ -304,7 +304,7 @@ to the number of petals. Summing by depth gives total stretch
 
 $$
 O\big((m+n)\Lambda H^2\big)
-                         =m\operatorname{poly}(B).           \tag{11}
+                         =m\mathrm{poly}(B).           \tag{11}
 $$
 
 Every original edge is charged before both endpoints could reach a

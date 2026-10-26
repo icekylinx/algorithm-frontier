@@ -27,7 +27,7 @@ def anchor(text: str) -> str:
 
 def read_catalogue() -> dict:
     data = json.loads((ROOT / "catalogue.json").read_text(encoding="utf-8"))
-    if data.get("schema_version") != 1:
+    if data.get("schema_version") != 2:
         raise ValueError("unsupported catalogue schema")
     groups = data["groups"]
     ids = [r["id"] for g in groups for r in g["records"]]
@@ -38,26 +38,95 @@ def read_catalogue() -> dict:
         raise ValueError(f"omitted={sorted(actual-set(ids))}; missing={sorted(set(ids)-actual)}")
     for g in groups:
         for r in g["records"]:
-            if set(r) != {"id", "title", "result", "quantity", "scope"}:
+            if set(r) != {"id", "title", "result", "quantity", "scope", "randomness"}:
                 raise ValueError(f"invalid record fields: {r['id']}")
+            if not r["randomness"].strip():
+                raise ValueError(f"missing randomness contract: {r['id']}")
             for field, text in r.items():
                 if any(ord(c) < 32 for c in text):
                     raise ValueError(f"control byte in {r['id']}.{field}")
                 if "|" in text:
-                    raise ValueError(f"unescaped table separator in {r['id']}.{field}")
+                    raise ValueError(f"ambiguous vertical bar in {r['id']}.{field}; use TeX delimiters")
     supporting = data.get("supporting_results", [])
     supporting_ids = [r["id"] for r in supporting]
     if len(supporting_ids) != len(set(supporting_ids)):
         raise ValueError("a supporting result appears more than once")
     for record in supporting:
-        if set(record) != {"id", "path", "title", "result", "quantity", "scope"}:
+        if set(record) != {"id", "path", "title", "result", "quantity", "scope", "randomness"}:
             raise ValueError(f"invalid supporting fields: {record['id']}")
         if not (ROOT / record["path"]).is_file():
             raise ValueError(f"missing supporting manuscript: {record['path']}")
+        if not record["randomness"].strip():
+            raise ValueError(f"missing randomness contract: {record['id']}")
         for field, text in record.items():
             if any(ord(c) < 32 for c in text) or "|" in text:
-                raise ValueError(f"invalid table text in {record['id']}.{field}")
+                raise ValueError(f"invalid summary text in {record['id']}.{field}")
     return data
+
+
+def quantity_paragraphs(text: str) -> list[str]:
+    """Give long bounds their own line without splitting a TeX expression.
+
+    Catalogue values stay renderer-independent Markdown. Semicolons outside
+    mathematics separate incomparable bounds; short formula fragments remain
+    inline, while substantial expressions get the full page width.
+    """
+    clauses: list[str] = []
+    start = 0
+    in_math = False
+    for index, char in enumerate(text):
+        if char == "$" and (index == 0 or text[index - 1] != "\\"):
+            in_math = not in_math
+        elif char == ";" and not in_math:
+            clauses.append(text[start:index].strip())
+            start = index + 1
+    clauses.append(text[start:].strip())
+    out: list[str] = []
+
+    def sentence(fragment: str) -> str:
+        fragment = fragment.strip().lstrip(", ")
+        if fragment and fragment[0].islower() and not fragment.startswith("coNP"):
+            fragment = fragment[0].upper() + fragment[1:]
+        return fragment.rstrip(".") + "."
+
+    for clause in clauses:
+        # Do not promote identifiers or tiny arithmetic expressions. Isolating
+        # only the long expressions also prevents Markdown emphasis from
+        # interfering with subscripts, stars and products in headline bounds.
+        cursor = 0
+        pending = ""
+        for match in re.finditer(r"\$([^$]+)\$", clause):
+            pending += clause[cursor:match.start()]
+            formula = match[1]
+            if len(formula) >= 36 or clause == match[0]:
+                lead = pending.strip().rstrip(",:")
+                if lead:
+                    # A preceding complete formula is a separate definition,
+                    # rather than the label of the following display.
+                    if "$" in lead:
+                        out += [sentence(lead), ""]
+                    else:
+                        out += [sentence(lead).rstrip(".") + ":", ""]
+                out += ["$$", formula, "$$", ""]
+                pending = ""
+            else:
+                pending += match[0]
+            cursor = match.end()
+        pending += clause[cursor:]
+        if pending.strip().strip(","):
+            out += [sentence(pending), ""]
+    return out
+
+
+def render_record(record: dict, path: str, *, level: int = 4) -> list[str]:
+    return [
+        f"{'#' * level} [{record['title']}]({path})", "",
+        record["result"].rstrip(".") + ".", "",
+        "**Randomness.** " + record["randomness"], "",
+        "**Quantitative result.**", "",
+        *quantity_paragraphs(record["quantity"]),
+        "**Model and scope.** " + record["scope"].rstrip(".") + ".", "",
+    ]
 
 
 def render_readme(data: dict) -> str:
@@ -77,32 +146,28 @@ def render_readme(data: dict) -> str:
         "[Complexity conventions](docs/COMPLEXITY.md) · [Verification evidence](reviews/README.md) · "
         "[Citation](CITATION.cff)", "",
         "## Results", "",
-        " · ".join(f"[{g['title']}](#{anchor(g['title'])})" for g in groups) +
-        " · [Supporting results](#supporting-results)", "",
+        *[f"- [{g['title']}](#{anchor(g['title'])})" for g in groups],
+        "- [Supporting results](#supporting-results)", "",
         "A displayed conditional composition includes its named backend hypotheses. "
         "Oracle bounds, explicit-input algorithms, support sizes, query costs, and "
         "existence theorems keep their distinct meanings. Exact rational constants "
         "and complete parameter ranges are stated on the linked cards.", "",
+        "Every entry states its [randomness contract](docs/RANDOMNESS.md): "
+        "deterministic, Monte Carlo, Las Vegas, or a separately identified "
+        "existence theorem, structural result or lower bound. A supplied "
+        "randomized backend must retain its own confidence and adversary assumptions.", "",
     ]
     for g in groups:
-        out += [f"### {g['title']}", "", g["note"], "",
-                "| Problem | Output or guarantee | Quantitative result | Model and scope |",
-                "|---|---|---|---|"]
+        out += [f"### {g['title']}", "", g["note"], ""]
         for r in g["records"]:
-            out.append(f"| [{r['title']}](problems/{r['id']}/) | {r['result']} | "
-                       f"{r['quantity']} | {r['scope']} |")
-        out.append("")
+            out += render_record(r, f"problems/{r['id']}/")
     if supporting:
         out += ["## Supporting results", "",
                 "These additional algorithms, structural lemmas and scoped boundaries "
                 "have their own complete manuscripts. Further refinements are listed "
-                "with their parent result in the [proof index](CONTENTS.md).", "",
-                "| Result | Output or guarantee | Quantitative result | Model and scope |",
-                "|---|---|---|---|"]
+                "with their parent result in the [proof index](CONTENTS.md).", ""]
         for record in supporting:
-            out.append(f"| [{record['title']}]({record['path']}) | {record['result']} | "
-                       f"{record['quantity']} | {record['scope']} |")
-        out.append("")
+            out += render_record(record, record["path"], level=3)
     out += [
         "## Reading and verification", "",
         "Start with a result card, then read its `proof.md`. Longer derivations are "
@@ -165,6 +230,7 @@ def render_contents(groups: list[dict]) -> str:
             "- [Verification registry](reviews/README.md)",
             "- [Import provenance and canonical paths](provenance/README.md)",
             "- [Complexity and computational models](docs/COMPLEXITY.md)",
+            "- [Randomness contracts](docs/RANDOMNESS.md)",
             "- [Maintenance and validation](CONTRIBUTING.md)",
             "- [Change history](HISTORY.md)", ""]
     return "\n".join(out)
@@ -188,6 +254,23 @@ def main() -> int:
                 stale.append(name)
         else:
             path.write_text(content, encoding="utf-8")
+    # The catalogue owns the concise randomness contract on both reading
+    # surfaces. Editing it once must update the homepage and the result card.
+    for group in groups:
+        for record in group["records"]:
+            path = ROOT / "problems" / record["id"] / "README.md"
+            before = path.read_text(encoding="utf-8")
+            block = "**Randomness**\n\n" + record["randomness"] + "\n\n"
+            if re.search(r"(?m)^\*\*Randomness\*\*$", before):
+                after = re.sub(r"(?ms)^\*\*Randomness\*\*\n\n.*?(?=^\*\*Time\*\*$)",
+                               lambda _: block, before, count=1)
+            else:
+                after = before.replace("**Time**\n", block + "**Time**\n", 1)
+            if args.check:
+                if after != before:
+                    stale.append(path.relative_to(ROOT).as_posix())
+            else:
+                path.write_text(after, encoding="utf-8")
     if stale:
         print("stale generated indexes: " + ", ".join(stale) +
               "; run python3 tools/build_catalogue.py", file=sys.stderr)

@@ -83,7 +83,7 @@ path as recourse.
 In one core, restore every selected real edge at its original physical
 endpoints and include the compressed marked forest. A physical vertex
 has at most $\Delta$ selected incidences and $\Delta$ virtual
-incidences. Over $b=\operatorname{poly}(U)$ cores, the uncontracted
+incidences. Over $b=\mathrm{poly}(U)$ cores, the uncontracted
 graph $J$ has maximum degree at most $2b\Delta$.
 
 A physical edge belongs to at most one virtual path and one selected
@@ -197,7 +197,7 @@ The bounded-degree original root permits the final quotient separately.
 One core has $O(\Delta C)$ full copies. Every physical parent vertex
 appears once in each copy, whether used, dangling, or isolated.
 Across all cores this contributes
-$C\operatorname{poly}(U,\Delta)$ node occurrences.
+$C\mathrm{poly}(U,\Delta)$ node occurrences.
 
 In the no-reset representation the child vertex names are a subset of
 the parent native names. A dedicated representative for an incoming
@@ -208,7 +208,7 @@ Thus a fixed polynomial $Q$ gives
 
 $$
 C_{\rm parent}
-   \le Q(U)\operatorname{poly}(\Delta)(C_{\rm child}+1).       \tag{1}
+   \le Q(U)\mathrm{poly}(\Delta)(C_{\rm child}+1).       \tag{1}
 $$
 
 For the explicit pool scheme the dependence on $\Delta$ can be kept
@@ -274,7 +274,7 @@ prevents a circular update dependency.
 
 One incoming forest record causes constantly many output records.
 A physical cut, virtual birth/death, or native vertex birth costs
-$C\operatorname{poly}(U,\Delta)$ pool records. These are different
+$C\mathrm{poly}(U,\Delta)$ pool records. These are different
 charges; multiplying both by $C$ would be an incorrect square.
 
 ## 11. Uniform degree dependence and recursive work
@@ -282,8 +282,8 @@ charges; multiplying both by $C$ would be an incorrect square.
 The constant-degree source statements must be upgraded explicitly:
 
 $$
-P_j=P\operatorname{poly}(\Delta_j),\qquad
- W_j=W\operatorname{poly}(\Delta_j).                        \tag{3}
+P_j=P\mathrm{poly}(\Delta_j),\qquad
+ W_j=W\mathrm{poly}(\Delta_j).                        \tag{3}
 $$
 
 The retained public constructive primitives have fixed polynomial
@@ -417,7 +417,7 @@ The source's degree-times-edge-congestion conversion is used only
 to choose enough slots for incoming nodes at a selected root.
 With a direct node capacity $C$, only $C$ root-tree slots
 are required. Each physical vertex lies in one rooted fiber of
-each stable forest, giving $C\operatorname{poly}(U)$ node
+each stable forest, giving $C\mathrm{poly}(U)$ node
 occurrences. Projected edges create no new nodes.
 
 A root cut is safe after retiring every changed projected input

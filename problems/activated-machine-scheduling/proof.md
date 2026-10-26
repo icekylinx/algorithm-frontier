@@ -29,7 +29,7 @@ $$
  \Pi_\varepsilon=\min\{C_\varepsilon,\exp(3(K+1))\}. \tag{AS2}
 $$
 
-Also let $H_\varepsilon=H+\operatorname{size}(\varepsilon)$, including
+Also let $H_\varepsilon=H+\mathrm{size}(\varepsilon)$, including
 the entire rational numerator and denominator.
 
 **Theorem AS (activation adapter).** A deterministic algorithm detects
@@ -39,13 +39,13 @@ workspace in the displayed input:
 
 | Makespan guarantee | Time |
 | --- | --- |
-| $(1+\varepsilon)\mathrm{OPT}$ | $\binom qr\Pi_\varepsilon^r\operatorname{poly}(H_\varepsilon)$ |
-| $\tfrac32\mathrm{OPT}$ | $\binom qr6^r\operatorname{poly}(H)$ |
-| $\gamma_k\mathrm{OPT}$, $\gamma_k=(3\cdot2^k-1)/(2^{k+1}-1)$, integer $k\ge0$ | $\binom qr(k+1)^r\operatorname{poly}(H+k)$ |
+| $(1+\varepsilon)\mathrm{OPT}$ | $\binom qr\Pi_\varepsilon^r\mathrm{poly}(H_\varepsilon)$ |
+| $\tfrac32\mathrm{OPT}$ | $\binom qr6^r\mathrm{poly}(H)$ |
+| $\gamma_k\mathrm{OPT}$, $\gamma_k=(3\cdot2^k-1)/(2^{k+1}-1)$, integer $k\ge0$ | $\binom qr(k+1)^r\mathrm{poly}(H+k)$ |
 
 In particular the first bound is
-$2^{O(q+r/\varepsilon)}\operatorname{poly}(H_\varepsilon)$, hence
-$2^{O(q/\varepsilon)}\operatorname{poly}(H_\varepsilon)$.
+$2^{O(q+r/\varepsilon)}\mathrm{poly}(H_\varepsilon)$, hence
+$2^{O(q/\varepsilon)}\mathrm{poly}(H_\varepsilon)$.
 Every original job total and the single shared budget remain exact.
 
 The rank-sensitive enumeration in the table fixes the active basis
@@ -58,7 +58,7 @@ bounds are at least as strong.
 
 **Lemma 1 (exact feasibility).** Global feasibility with unbounded load,
 and feasibility at makespan zero, can each be decided in
-$\binom qr\operatorname{poly}(H)$ time and polynomial space.
+$\binom qr\mathrm{poly}(H)$ time and polynomial space.
 
 **Proof.** Stream all $r$-subsets of $P$. Reject nonbases by a rank
 test and bases with $\sigma(B)>C$. For each remaining basis, restrict

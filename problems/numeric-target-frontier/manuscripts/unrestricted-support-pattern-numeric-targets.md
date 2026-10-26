@@ -14,7 +14,7 @@ the new bound is
 
 $$
 \boxed{\exp\!\left(O\!\left(T\log\left(2+\frac QT\right)\right)\right)
-                     \operatorname{poly}(H).}
+                     \mathrm{poly}(H).}
  \tag{UP1}
 $$
 
@@ -26,7 +26,7 @@ For pure upper/equality rows there is no cover representation step,
 and the sharper explicit bound is
 
 $$
-2^T\binom{Q+T}{T}\operatorname{poly}(H).
+2^T\binom{Q+T}{T}\mathrm{poly}(H).
  \tag{UP2}
 $$
 
@@ -114,7 +114,7 @@ distinct nonempty supports of its actual coefficient vectors.
 Then exact scalar optimization takes
 
 $$
-2^V\binom{q_*+V}{V}\operatorname{poly}(H_*),
+2^V\binom{q_*+V}{V}\mathrm{poly}(H_*),
  \tag{UP5}
 $$
 
@@ -401,7 +401,7 @@ $$
  \left(\prod_{j\in C}T_j\right)
  2^{U+T_C}
  \binom{Q_0+Q_C+s+U+T_C}{U+T_C}
-                      \operatorname{poly}(H).
+                      \mathrm{poly}(H).
  }
  \tag{UP19}
 $$

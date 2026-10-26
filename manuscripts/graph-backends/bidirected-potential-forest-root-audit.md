@@ -16,7 +16,7 @@ opposite directions without an intervening cut, link, or register reset.
 For supplied labels and initial forest, the total local work remains
 
 $$
-(\nu+J+P+Q+R)\operatorname{polylog} S,
+(\nu+J+P+Q+R)\mathrm{polylog} S,
  \qquad
  R=O\bigl(J+(N+A_{\rm ext})\log S\bigr).
 $$

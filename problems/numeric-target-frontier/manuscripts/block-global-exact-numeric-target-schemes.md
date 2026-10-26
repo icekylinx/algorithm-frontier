@@ -11,7 +11,7 @@ witness can be found in
 
 $$
 \binom qr\exp\bigl(O(r\sqrt{T+1})\bigr)
-                     \operatorname{poly}(H+\log(T+1))
+                     \mathrm{poly}(H+\log(T+1))
        \tag{BQ1}
 $$
 
@@ -297,7 +297,7 @@ is at most
 
 $$
 \binom qr\exp\bigl(3r\sqrt{2T-1}\bigr)
-                     \operatorname{poly}(H+\log(T+1)).
+                     \mathrm{poly}(H+\log(T+1)).
        \tag{BQ12}
 $$
 
@@ -305,7 +305,7 @@ For scheduling at T>=1 it is at most
 
 $$
 \binom qr\exp\bigl(3r\sqrt T\bigr)
-                     \operatorname{poly}(H+\log(T+1)).
+                     \mathrm{poly}(H+\log(T+1)).
        \tag{BQ13}
 $$
 
@@ -365,7 +365,7 @@ optimization has time
 
 $$
 \binom qr\exp\bigl(O(r\sqrt{B_*+1})\bigr)
-                          \operatorname{poly}(H),              \tag{BQ15}
+                          \mathrm{poly}(H),              \tag{BQ15}
 $$
 
 and polynomial binary space. More explicitly, for B_*>=1 the

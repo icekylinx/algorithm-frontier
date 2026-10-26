@@ -20,12 +20,12 @@ $l_e\le u_e$. Let a rational vector $f$ satisfy integral vertex
 demands exactly; a circulation is the zero-demand special case. Define
 
 $$
-\operatorname{viol}(f)=
+\mathrm{viol}(f)=
  \sum_e\bigl((l_e-f_e)_+ +(f_e-u_e)_+\bigr).
  \tag{1}
 $$
 
-**Rounding theorem.** If $\operatorname{viol}(f)<1$, a deterministic
+**Rounding theorem.** If $\mathrm{viol}(f)<1$, a deterministic
 algorithm produces an integral vector with the same demands and
 $l\le f'\le u$, using $O(m)$ dynamic-tree operations and
 $O(n+m)$ input/demand bookkeeping if isolated vertices are supplied.
@@ -52,7 +52,7 @@ For every vector $x\in[a,b]$, its total violation of the ORIGINAL
 bounds is an affine function
 
 $$
-\operatorname{viol}(x)=c^{\mathsf T}x+K
+\mathrm{viol}(x)=c^{\mathsf T}x+K
  \tag{3}
 $$
 
@@ -98,8 +98,8 @@ and every frozen incident edge are integral. This is impossible.
 Thus the resulting vector $f'$ is integral. Equation (3) gives
 
 $$
-0\le\operatorname{viol}(f')
- \le\operatorname{viol}(f)<1.
+0\le\mathrm{viol}(f')
+ \le\mathrm{viol}(f)<1.
 $$
 
 The left-hand quantity is an integer, hence zero. This proves the
@@ -170,7 +170,7 @@ those residual graphs.
 At a successful threshold, discard every lower lock and use the TRUE
 ordinary capacities. Divide the current circulation, including its
 return coordinate, by 16. Impose integral ordinary intervals
-$[0,\operatorname{cap}_e]$ and return interval $[b,\beta]$.
+$[0,\mathrm{cap}_e]$ and return interval $[b,\beta]$.
 
 No unexpanded boundary violates its new upper capacity, because its
 scaled flow is below $10u_d<16u_d$. Removing lower locks can only
@@ -384,7 +384,7 @@ This preserves the maximum value, since a maximum flow has a
 cycle-free decomposition into simple source-to-sink paths, none of
 which uses these arcs. It also preserves the capacity of every
 source-side cut. Remove or separately ignore isolated nonterminal vertices.
-Put $\beta=\sum_{e\text{ leaving }s}\operatorname{cap}_e$.
+Put $\beta=\sum_{e\text{ leaving }s}\mathrm{cap}_e$.
 If $\beta=0$, the zero flow is maximum. Otherwise make every
 vertex and arc represented from the start, use true capacities
 throughout, and use no locks or boundary operations. Set

@@ -50,8 +50,8 @@ allocation satisfying (C1) exactly and giving each player utility
 at least OPT_C/2. Its running time and workspace are
 
 $$
-(27/4)^{h_C}\operatorname{poly}(H),
-                          \qquad\operatorname{poly}(H).
+(27/4)^{h_C}\mathrm{poly}(H),
+                          \qquad\mathrm{poly}(H).
  \tag{C2}
 $$
 
@@ -140,7 +140,7 @@ The abstract adaptive theorem and prefix-free accounting are in
 of time
 
 $$
-\Gamma(t/(t-b))^k\operatorname{poly}(H),
+\Gamma(t/(t-b))^k\mathrm{poly}(H),
                          \qquad \Gamma(R)={R^R\over(R-1)^{R-1}},
  \tag{C5}
 $$

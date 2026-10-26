@@ -325,7 +325,7 @@ cost. The child factor $A$ is summed over the entire family.
 There is no extra factor $k$ on every recursive child edit.
 
 The base initializes only its actual records; a single direct
-query costs at most $O((t+1)^3\operatorname{poly}(b_{\rm grad}))$
+query costs at most $O((t+1)^3\mathrm{poly}(b_{\rm grad}))$
 on actual size $t\le4k$. Thus a loose common bound remains
 
 $$
@@ -426,7 +426,7 @@ little-oh estimates:
 
 $$
 a=o(v),\qquad a^2=o(v),\qquad
- \operatorname{poly}(a,s)=2^{o(v)},\qquad v=o(s).
+ \mathrm{poly}(a,s)=2^{o(v)},\qquad v=o(s).
  \tag{16}
 $$
 

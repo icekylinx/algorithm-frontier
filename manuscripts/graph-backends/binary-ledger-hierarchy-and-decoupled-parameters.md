@@ -94,7 +94,7 @@ internal refresh work, then
 
 $$
 T_{\rm priced}
- \le O(MD+QD+D^2J)\operatorname{poly}(s).
+ \le O(MD+QD+D^2J)\mathrm{poly}(s).
  \tag{6}
 $$
 
@@ -119,7 +119,7 @@ singleton top slacks are positive. Integral levels satisfy
 
 $$
 \sum_{e\text{ at row }r}x^j_e=L,\qquad
- y^j_d=L-\operatorname{load}^j(d),\qquad
+ y^j_d=L-\mathrm{load}^j(d),\qquad
  y^j_d+p^j_d\ge c_jw_d,
  \qquad x^j,p^j\ge0.
  \tag{8}
@@ -211,7 +211,7 @@ total changed physical incidence records are $O(CNs)$. Processing
 them at all integral levels, including persistent normalization, costs
 
 $$
-S\operatorname{poly}(s).
+S\mathrm{poly}(s).
  \tag{13}
 $$
 
@@ -315,7 +315,7 @@ With $q^{-2}=256D^2$, the numerical-client and exact-rounding
 proofs give
 
 $$
-T_{\rm local}\le(P+1)D^4\operatorname{poly}(s).
+T_{\rm local}\le(P+1)D^4\mathrm{poly}(s).
  \tag{17}
 $$
 
@@ -333,7 +333,7 @@ Hence
 $$
 J_{\rm top}=O(sS s^2D^2),\qquad
  Q_{\rm top}\le[O(sSs)+O(DJ_{\rm top})]
-                                       \operatorname{poly}(s).
+                                       \mathrm{poly}(s).
  \tag{18}
 $$
 
@@ -341,7 +341,7 @@ The second expression counts genuine motion-triggered notifications
 and constantly many client services per notification. It does not
 relabel all explicit settings as fresh numerical motion. Substitution
 in (6), with (16), yields
-$T_{\rm top}\le SD^4\operatorname{poly}(s)$.
+$T_{\rm top}\le SD^4\mathrm{poly}(s)$.
 
 ## 6. Phase cost, direct maximum matching, and finite guards
 
@@ -350,7 +350,7 @@ all-expanded resets, and then adding the top, structural and
 materialization work gives
 
 $$
-T_{\rm phase}\le SD^4\operatorname{poly}(s).
+T_{\rm phase}\le SD^4\mathrm{poly}(s).
  \tag{19}
 $$
 
@@ -368,7 +368,7 @@ the arbitrary-comparison-matching no-false-LOW proof, not a perfect-
 matching promise. The complete branch cost is
 
 $$
-SD^4\operatorname{poly}(s).
+SD^4\mathrm{poly}(s).
  \tag{20}
 $$
 
@@ -409,7 +409,7 @@ E_*=
 $$
 
 Since $D=O(E_*+1)$, (20) is
-$SE_*^4\operatorname{poly}(s)$, with a constant factor for
+$SE_*^4\mathrm{poly}(s)$, with a constant factor for
 the fixed cap rounding. The same rate follows for all general graphs
 after the exact subcubic reduction and decoder:
 

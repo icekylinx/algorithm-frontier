@@ -297,7 +297,7 @@ valuation types, with time
 
 $$
 2^{O(K\log(2+K)\,\zeta^{-1}\log^4(2+1/\zeta))}
-       +\operatorname{poly}(|I|).
+       +\mathrm{poly}(|I|).
 $$
 
 In particular, K is at most the total number of players. This also

@@ -71,7 +71,7 @@ integer scenario allocations satisfying RA1 exactly, with
 
 $$
 \sum_jv_{\omega,p,j}x^\omega_j(p)
-      \ge \max\{0,\alpha\operatorname{FOPT}-u_{\omega,p}\}
+      \ge \max\{0,\alpha\mathrm{FOPT}-u_{\omega,p}\}
                    \qquad(\omega\in\Omega,\ p\in I).
 \tag{RA4}
 $$
@@ -79,7 +79,7 @@ $$
 It uses polynomial workspace and either time
 
 $$
-A^c\operatorname{poly}(H)
+A^c\mathrm{poly}(H)
 \tag{RA5}
 $$
 
@@ -87,7 +87,7 @@ or, for fixed rational epsilon, time
 
 $$
 \beta^q\,
-  2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H).
+  2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
 \tag{RA6}
 $$
 
@@ -344,7 +344,7 @@ FOPT-delta. Reoptimize RA16 on the saved basis. Rational separation
 of denominators at most D then gives
 
 $$
-\lambda_I\ge\alpha\operatorname{FOPT}.
+\lambda_I\ge\alpha\mathrm{FOPT}.
 \tag{RA19}
 $$
 

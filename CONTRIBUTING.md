@@ -50,10 +50,28 @@ and license boundaries in `provenance/`, rather than maintaining copied
 checkpoint trees or separate draft versions.
 
 Use GitHub math delimiters: `$...$` for inline mathematics and `$$` on
-separate lines for displays. Code fences are for code, input formats and exact
-commands. Escape table separators or use `\lvert` and `\rvert` in
-mathematical tables. The syntax checker catches delimiter, brace and accidental
-control-byte corruption; it does not prove the mathematics.
+separate lines for displays. Keep inline expressions on one physical line;
+give long bounds their own display instead of placing them inside tables.
+Use `\mathrm{poly}`, `\mathrm{rank}` and similar upright names in place of
+`\operatorname`, which is rejected by some rendering surfaces. Place equation
+tags after inner `aligned` or `split` environments. Code fences are for code,
+input formats and exact commands; a `math` fence is also supported by GitHub.
+
+The homepage and problem cards use stacked entries with visible model and
+scope conditions. The nine standard card labels each introduce a separate
+paragraph. Every method states its [randomness contract](docs/RANDOMNESS.md),
+including confidence and backend assumptions when relevant. `catalogue.json`
+owns the **Randomness** paragraphs synchronized with the homepage. Keep small
+comparison tables in technical manuscripts only when
+their contents fit comfortably. Use `\lvert` and `\rvert` for mathematical
+vertical bars in such tables.
+
+Run `python3 tools/normalize_math.py` to normalize mathematical typography,
+then `python3 tools/build_catalogue.py` to refresh the generated indexes.
+The standard check command verifies both are current. The syntax checker
+catches delimiter, brace, macro and equation-tag errors; it does not prove
+the mathematics. GitHub's [mathematical-expression guide](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
+describes the supported Markdown delimiters.
 
 Prefer relative links to canonical files. Give a stable primary reference and
 version for an imported theorem. Keep credits and applicable license/NOTICE

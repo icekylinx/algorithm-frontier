@@ -151,7 +151,7 @@ the input inverse sparsity at the root. At every deeper level,
 that dependence is only polylogarithmic in the graph size.
 Corollary 3.4 therefore bounds the flattened path quality by
 $$
-\operatorname{poly}(\psi^{-1})
+\mathrm{poly}(\psi^{-1})
                          \log^{O(1/\epsilon)}n.
 $$
 It does not multiply $\psi^{-1}$ once per hierarchy level.

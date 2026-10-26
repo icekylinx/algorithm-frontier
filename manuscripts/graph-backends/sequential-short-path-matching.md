@@ -297,7 +297,7 @@ actual vertices and polynomial work in $k$ and $\log n$. Thus local construction
 the form
 
 $$
-(n+m)k^{c_1}\operatorname{poly}
+(n+m)k^{c_1}\mathrm{poly}
             (\Delta,\psi_{\rm cut}^{-1},\log n),
  \tag{5}
 $$
@@ -307,9 +307,9 @@ $k^{c_1}$ on every recursive branch.
 
 The polynomial in (5), and the final envelope (7), include the FULL
 bit work of temporary exact rationals. The PSD matrices may use
-$\operatorname{poly}(k,\log n,\log\psi^{-1})$-bit numbers.
+$\mathrm{poly}(k,\log n,\log\psi^{-1})$-bit numbers.
 The separate leaf moment computations can use the larger
-$\operatorname{poly}(k,\psi^{-1},\log^{O(p)}n)$-bit numbers,
+$\mathrm{poly}(k,\psi^{-1},\log^{O(p)}n)$-bit numbers,
 because their explicit lazy-walk length depends polynomially on the
 leaf's inverse expansion. Their stated polynomial bit work is charged
 to the same local construction envelope. These numbers are local
@@ -317,7 +317,7 @@ preprocessing state and are not tested against
 a backend's smaller numerical length/gradient-label cap. Only finite
 graph records, source vertex/edge IDs, and explicit unweighted path
 lists leave this preprocessing routine. Those labels have
-$O(\operatorname{poly}(\log n+\log\psi^{-1}))$ bits. The
+$O(\mathrm{poly}(\log n+\log\psi^{-1}))$ bits. The
 overall guarded WORK allowance must pay for the temporary multiword
 operations; treating them as constant-time arithmetic would not prove
 (7).
@@ -331,9 +331,9 @@ For recursion depth $d$, a safe work recurrence therefore has
 the form
 
 $$
-T(n,d)\leq\operatorname{poly}(\log n)
+T(n,d)\leq\mathrm{poly}(\log n)
        \sum_{i\leq k}T(O(n/k),d-1)
-       +nk^{c_2}\operatorname{poly}
+       +nk^{c_2}\mathrm{poly}
              (\Delta,\psi_{\rm cut}^{-1},\log n)
        +\text{explicit output-list work}.
  \tag{6}
@@ -348,7 +348,7 @@ $n^{1/p}$, the recursion has depth $O(p)$, and (6) gives
 
 $$
 n^{1+O(1/p)}
-                  \operatorname{poly}(\psi^{-1})
+                  \mathrm{poly}(\psi^{-1})
                   \log^{O(p)}n.
  \tag{7}
 $$

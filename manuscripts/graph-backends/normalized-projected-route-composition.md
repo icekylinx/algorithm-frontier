@@ -94,7 +94,7 @@ L(W'\circ A)\leq\Gamma L(W'),\qquad
  C(W'\circ A)\leq\Gamma\bigl(C(W')+\Delta(J)\bigr).
  \tag{3}
 $$
-Its subgraph support has $O(\Gamma|S|\operatorname{poly}(U))$ edge IDs.
+Its subgraph support has $O(\Gamma|S|\mathrm{poly}(U))$ edge IDs.
 
 For each selected projected ID $\widehat f$, insert only its associated
 central original ID $f$ into layer $j$. The rest of $W'_{\widehat f}$
@@ -131,11 +131,11 @@ an unrelated selected-degree bound.
 
 In the degree-three parent application, a stable core component contains
 $O(k)$ parent vertices. Hence the current native degree is
-$\Delta\leq k\operatorname{poly}(U)$, even if a historical master vertex
+$\Delta\leq k\mathrm{poly}(U)$, even if a historical master vertex
 has received many later descendants. The static initial base satisfies
 $$
 L_{-1}\leq\Gamma,\qquad
- C_{-1}\leq k\operatorname{poly}(U)\Gamma.
+ C_{-1}\leq k\mathrm{poly}(U)\Gamma.
  \tag{6}
 $$
 Live postinitial edge births use their identity routes. Their simultaneous
@@ -145,7 +145,7 @@ Apply (5) at each rebuild, with the same additive current-degree allowance
 between rebuilds. For $K+1$ repair levels,
 $$
 L_K\leq\Gamma^{O(K+1)},\qquad
- C_K\leq k\operatorname{poly}(U)\Gamma^{O(K+1)}.
+ C_K\leq k\mathrm{poly}(U)\Gamma^{O(K+1)}.
  \tag{7}
 $$
 If all retained layer-owned route versions are indexed, rather than only the
@@ -188,11 +188,11 @@ and output path is read and indexed at its full length. Thus local work
 retains the $L$ factor for list processing, while (5) removes it from
 congestion. The static work bound
 $$
-|E(J)|F^{O(1)}\Gamma^{O(1)}(L+1)\operatorname{poly}(U)
+|E(J)|F^{O(1)}\Gamma^{O(1)}(L+1)\mathrm{poly}(U)
 $$
 and (7) yield local factors $\Gamma^{O(K)}$, with a fixed polynomial
 in $F$. Selected membership recourse remains controlled by
-$|S|\Gamma\operatorname{poly}(U)$, independently of $L$, $C$, and $F$.
+$|S|\Gamma\mathrm{poly}(U)$, independently of $L$, $C$, and $F$.
 
 Native split publication, feedback settlement, dormant physical counters,
 and numerical query transactions retain their separate lifetime rules.

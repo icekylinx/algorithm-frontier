@@ -228,7 +228,7 @@ a blocker-layer flag does not delete its matching bundle; it makes
 its remaining copies available again as prescribed by (C7).
 
 All of these operations can conservatively scan the full cell table.
-They therefore cost $\mathcal P\operatorname{poly}(r)$ integer
+They therefore cost $\mathcal P\mathrm{poly}(r)$ integer
 operations per charged microstate. No event is multiplied by a supply
 count. Reusing a row or column slot is preceded by clearing its old
 counts and owner metadata, so historical labels do not accumulate.
@@ -283,7 +283,7 @@ number of item copies. Consequently every proved positive-slack
 sharp-rank guarantee is implementable in
 
 $$
-\mathcal P\operatorname{poly}(r,b)\,
+\mathcal P\mathrm{poly}(r,b)\,
  \min\!\left\{2^{O(r)},
        (r+1)^{O(\varepsilon^{-1}\log(r+1))}\right\}
  \tag{C10}

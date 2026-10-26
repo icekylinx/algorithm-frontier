@@ -52,8 +52,7 @@ Indeed, $x/d=\Theta(x^{17/18})$, while
 $d x^{8/9}=\Theta(x^{1/18+16/18})=\Theta(x^{17/18})$.
 
 The accuracy denominator in the same construction is a constant
-multiple of $(d+1)\widetilde O(m^{1/d})
-\widetilde O(\gamma_\ell)^d$. Consequently
+multiple of $(d+1)\widetilde O(m^{1/d}) \widetilde O(\gamma_\ell)^d$. Consequently
 $$
 \kappa^{-1}\le \exp(O(E(x))).       \tag{3}
 $$
@@ -86,9 +85,10 @@ $$
 \begin{split}
  T_{\rm flow}(m,C,U)
  \le {}&m\exp(O(E(\log(m+2))))\,
-      \operatorname{poly}(\log(m+2))\\
- &\cdot\log(2+C)\log(2+mU),                                 \tag{6}
- \end{split}
+      \mathrm{poly}(\log(m+2))\\
+ &\cdot\log(2+C)\log(2+mU),
+\end{split}
+\tag{6}
 $$
 before the polynomial bit-arithmetic overhead is absorbed. The
 polynomial logarithm allows the extra $\log m$ in the capacity
@@ -102,7 +102,7 @@ arithmetic regime. Its field width is a fixed power of the logarithm
 of its encoding length. Simulating such a field by digits on a
 machine with physical words of $\Theta(\log S)$ bits costs only
 a polynomial in $\log S$, provided the original magnitudes have
-$\operatorname{poly}(\log S)$ bits and the graph has size
+$\mathrm{poly}(\log S)$ bits and the graph has size
 $S^{O(1)}$. Ordinary integer arithmetic, including schoolbook
 multiplication and division, is already sufficient for this statement.
 No unit-cost operation on an unbounded-precision real is used.
@@ -125,7 +125,7 @@ reachability search extracts the corresponding exact cut if requested.
 Let $S=2^s$, and let $Z$ bound the local flow graph size. Assume
 $$
 B\le Z\le S^{c_0},\qquad
- \log(2+C)+\log(2+U)\le \operatorname{poly}(s),               \tag{7}
+ \log(2+C)+\log(2+U)\le \mathrm{poly}(s),               \tag{7}
 $$
 with fixed exponents. The outer accounting is responsible for the
 sum of these nominal sizes $Z$. An instance smaller than $B$

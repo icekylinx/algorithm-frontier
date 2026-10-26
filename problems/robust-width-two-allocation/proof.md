@@ -33,7 +33,7 @@ M-independent minimal infeasible sets.
 actual scenario allocations on success, in
 
 $$
-\varphi^c\operatorname{poly}(H)
+\varphi^c\mathrm{poly}(H)
  \tag{WF2}
 $$
 
@@ -41,7 +41,7 @@ and polynomial space. The streamed forced-omission wrapper also gives
 
 $$
 \left(2-\frac1\varphi\right)^q
- 2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H).
+ 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
  \tag{WF3}
 $$
 

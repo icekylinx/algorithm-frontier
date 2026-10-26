@@ -2,15 +2,15 @@
 
 ## 1. Compiler theorem
 
-The input has $n$ Boolean variables, signed binary integer equalities, and interval rows $\ell_i\le a_i^\top x\le u_i$. Let $L$ be its binary length, $s_i=|\operatorname{supp}(a_i)|$, and $W_i=u_i-\ell_i$. Normalize one-sided rows against their attainable ranges and handle empty intervals and zero rows directly. Put
+The input has $n$ Boolean variables, signed binary integer equalities, and interval rows $\ell_i\le a_i^\top x\le u_i$. Let $L$ be its binary length, $s_i=|\mathrm{supp}(a_i)|$, and $W_i=u_i-\ell_i$. Normalize one-sided rows against their attainable ranges and handle empty intervals and zero rows directly. Put
 $$
 \kappa_i=\min\{W_i+1,5s_i+1\},\quad q_i=\lceil\log_2\kappa_i\rceil,\quad Q=\sum_iq_i.
 $$
-Assume a deterministic Subset Sum backend returns indexed witnesses in time $\operatorname{poly}(L')2^{\alpha N}$, and, if supplied, writable space $\operatorname{poly}(L')2^{\sigma N}$. For any integer $0\le B\le Q$, the compiler gives
+Assume a deterministic Subset Sum backend returns indexed witnesses in time $\mathrm{poly}(L')2^{\alpha N}$, and, if supplied, writable space $\mathrm{poly}(L')2^{\sigma N}$. For any integer $0\le B\le Q$, the compiler gives
 $$
-T_B\le\operatorname{poly}(L)\left(\prod_i p_i\right)
+T_B\le\mathrm{poly}(L)\left(\prod_i p_i\right)
 2^{\alpha n+Q-(1-\alpha)B},\qquad
-S_B\le\operatorname{poly}(L)2^{\sigma(n+B)},
+S_B\le\mathrm{poly}(L)2^{\sigma(n+B)},
 $$
 where $p_i\le4\lceil\log_2(W_i+1)\rceil+1$, and $p_i=1$ if $W_i\le5s_i$. Exact equalities contribute no slack parameter. Feasibility, indexed witnesses, linear optimization, and explicitly listed polynomial-size lexicographic optimization are supported.
 

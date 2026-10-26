@@ -46,8 +46,8 @@ whose vector b*1_I satisfies all packing rows, or soundly reports
 that no I* in B has t*1_(I*) satisfying them. It has running time
 
 $$
-\Gamma(R)^c\operatorname{poly}(H)
-                       \le(eR)^c\operatorname{poly}(H)
+\Gamma(R)^c\mathrm{poly}(H)
+                       \le(eR)^c\mathrm{poly}(H)
  \tag{WP3}
 $$
 
@@ -281,8 +281,8 @@ $$
 or soundly rejects original feasibility, in time
 
 $$
-\Gamma\!\left(\frac{1+\epsilon}{\epsilon}\right)^c\operatorname{poly}(H)
-       \le\left(\frac{e(1+\epsilon)}{\epsilon}\right)^c\operatorname{poly}(H).
+\Gamma\!\left(\frac{1+\epsilon}{\epsilon}\right)^c\mathrm{poly}(H)
+       \le\left(\frac{e(1+\epsilon)}{\epsilon}\right)^c\mathrm{poly}(H).
  \tag{WP16}
 $$
 

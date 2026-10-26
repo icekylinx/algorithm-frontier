@@ -38,7 +38,7 @@ native degree, and each physical selected edge occurs at most once
 per core.
 
 After the already audited positive-length degree adapter, each parent
-vertex has at most $b=\operatorname{poly}(U)$ **live** child port
+vertex has at most $b=\mathrm{poly}(U)$ **live** child port
 aliases. Let an incoming flat forest have both vertex occurrence and
 native-edge occurrence at most $C$. Its nodes have persistent
 identifiers and fixed child-native images while alive.
@@ -121,16 +121,16 @@ assembly; it must not be replaced by joining all equal-image nodes.
 There are $O(Cb)$ colors per core and polynomially many cores.
 Every live parent-native vertex occurs at most once in each full-core
 copy. Thus all pool vertices, including unused components and dangling
-branches, contribute $C\operatorname{poly}(U)$ occurrences.
+branches, contribute $C\mathrm{poly}(U)$ occurrences.
 The dedicated representatives add at most $Cb$ at any physical
 vertex. Direct-edge and true-null incidences obey the same bound.
 
 The local recurrence is consequently
 $$
-C_{\rm parent}\le \operatorname{poly}(U)(C_{\rm child}+1).
+C_{\rm parent}\le \mathrm{poly}(U)(C_{\rm child}+1).
 $$
 Its initialization cost is the actual full-core inventory times
-$C\operatorname{poly}(U)$, not just the selected compressed paths.
+$C\mathrm{poly}(U)$, not just the selected compressed paths.
 For $d$ recursive levels, logarithmic occurrence is $O(dh)$,
 or the weaker $O(d^2h)$ envelope after harmless assembly factors,
 where $h=\log(U+4)$. No selected-record factor
@@ -159,10 +159,10 @@ also prevents an obsolete path component from linking two input
 components while the compressed representation changes.
 
 The physical cut is applied to every pool copy, costing
-$C\operatorname{poly}(U)$ edge operations. Changing a virtual default
+$C\mathrm{poly}(U)$ edge operations. Changing a virtual default
 cut across all colors has the same bound. A native child-forest edge
 edit changes only constantly many joins or direct edges once its
-color is found. A naive color scan costs $O(C\operatorname{poly}(U))$
+color is found. A naive color scan costs $O(C\mathrm{poly}(U))$
 CPU operations but does not create that many copies or reassignments.
 
 The input update and its recursive child transcript are processed as
@@ -188,7 +188,7 @@ for any later port birth. Internal provider storage may retain its
 ghost, but that ghost is outside the exposed lift and its terminal
 domain.
 
-Every such retirement costs $C\operatorname{poly}(U)$ and is charged
+Every such retirement costs $C\mathrm{poly}(U)$ and is charged
 as an actual graph/terminal event. It introduces no physical cut or
 long-path traversal at this point. Root-original canonical vertices
 have permanent identifiers and are not private retired ports.

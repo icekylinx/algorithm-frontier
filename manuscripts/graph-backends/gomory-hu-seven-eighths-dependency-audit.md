@@ -309,7 +309,7 @@ to the other gives
 
 $$
 \widehat d(u)+\ell(uv)+\widehat d(v)
-       \le (1+\epsilon_0)\operatorname{dist}_G(B,S\setminus B).
+       \le (1+\epsilon_0)\mathrm{dist}_G(B,S\setminus B).
  \tag{10}
 $$
 
@@ -321,9 +321,9 @@ closure. Integrating the component count, or applying the ordinary MST
 cut-exchange argument, gives
 
 $$
-\operatorname{key}(M^S)
- \le (1+\epsilon_0)\operatorname{MST}_{d_G}(S)
- \le 2(1+\epsilon_0)\operatorname{OPT}_{\rm Steiner}(G,S).
+\mathrm{key}(M^S)
+ \le (1+\epsilon_0)\mathrm{MST}_{d_G}(S)
+ \le 2(1+\epsilon_0)\mathrm{OPT}_{\rm Steiner}(G,S).
  \tag{11}
 $$
 
@@ -336,9 +336,9 @@ these paths and the physical helper edges contains $M^S$, possibly
 counting some physical edges more than once. Therefore
 
 $$
-\operatorname{len}_{\rm physical}(M^S)
- \le(1+\epsilon_0)\operatorname{key}(M^S)
- \le(2+O(\epsilon_0))\operatorname{OPT}_{\rm Steiner}.
+\mathrm{len}_{\rm physical}(M^S)
+ \le(1+\epsilon_0)\mathrm{key}(M^S)
+ \le(2+O(\epsilon_0))\mathrm{OPT}_{\rm Steiner}.
  \tag{12}
 $$
 
@@ -370,7 +370,7 @@ The monotone MWU potential bounds every edge's total normalized load by
 $O(\log(NW)/\epsilon^2)$. Hence the number of packing iterations is
 
 $$
-I\le m\alpha\operatorname{poly}(U).
+I\le m\alpha\mathrm{poly}(U).
  \tag{14}
 $$
 
@@ -379,18 +379,18 @@ the public augmented-tree construction. Flush an occurrence when its
 pending load reaches $c_e/(C_1\alpha)$, with $C_1$ a sufficiently
 large fixed constant. Charge a threshold flush to that much new physical
 load. Thus there are at most
-$m\alpha\operatorname{poly}(U)$ threshold flushes. An occurrence
+$m\alpha\mathrm{poly}(U)$ threshold flushes. An occurrence
 retired by a forest or helper edit is also flushed, but that flush is
 charged to the explicit deletion record rather than to a threshold.
 
 Recomputing a physical price may require updating every current copy of
 that physical edge. This costs $\alpha$ times a polynomial
 logarithm. Paying this factor explicitly is harmless:
-$m\alpha^2\operatorname{poly}(U)$ is still $mE^{O(1)}$.
+$m\alpha^2\mathrm{poly}(U)$ is still $mE^{O(1)}$.
 
 There is no uncharged feedback loop between retirement flushes and the
 forest. The forest sees only deletions of the fixed geometric copies
-from Section 4. Their total number is $O(m\operatorname{poly}(U))$,
+from Section 4. Their total number is $O(m\mathrm{poly}(U))$,
 regardless of how adaptively the numerical prices are chosen. All
 resulting forest recourse is already bounded by the decremental oracle.
 An MST change changes the maintained $M$ and $M^S$, but does not
@@ -696,7 +696,7 @@ power of (28), not an exponential in $\psi^{-1}$.
 The resulting work for one actual recursive input of size $m_*$ is
 
 $$
-m_*\operatorname{poly}(U)\,
+m_*\mathrm{poly}(U)\,
        E(N)^{C_5}F_L(N)^{C_6}
        \gamma_{\rm exp}(N)^{C_7}E_{\rm flow}(N)^{C_8},
  \tag{29}

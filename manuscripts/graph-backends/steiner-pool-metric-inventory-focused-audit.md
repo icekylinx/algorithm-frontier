@@ -134,7 +134,7 @@ retire the old virtual edge identity and insert a new one.
 ## 4. Degree and physical overlap are independent of selected recourse
 
 Let the current native parent maximum degree be $\Delta_j$, and
-let $b_j=\operatorname{poly}(U)$ be the number of cores and
+let $b_j=\mathrm{poly}(U)$ be the number of cores and
 buckets. Within one core, a physical vertex has at most
 $\Delta_j$ virtual incidences and $\Delta_j$ selected-real
 incidences. Selected membership is by physical edge identity. Thus
@@ -148,7 +148,7 @@ and in at most one selected-real copy per core. Virtual paths in one
 core have disjoint interiors and meet only at retained endpoints.
 The number of path endpoint occurrences at a vertex is at most its
 native degree per core. Thus all physical edge and vertex overlap is
-$\operatorname{poly}(U,\Delta_j)$, independent of the selected
+$\mathrm{poly}(U,\Delta_j)$, independent of the selected
 update multiplier $P$.
 
 For a degree-three parent this justifies the construction's polynomial-size
@@ -189,7 +189,7 @@ P_0=\exp O(U/K+g+h),
 $$
 
 one may use a local allowance
-$P_j=P_0\operatorname{poly}(U,\Delta_j)$.
+$P_j=P_0\mathrm{poly}(U,\Delta_j)$.
 The added logarithmic charge across all levels is $O(d^2h)$.
 At the proposed parameters, $\log P_j=o(x)$, so actual
 initial child size still decreases by a factor at least
@@ -238,7 +238,7 @@ including canonical nodes and selected-real copies, is therefore
 
 $$
 C'\le Q_j(C+1),\qquad
-              Q_j=\operatorname{poly}(U,\Delta_j).         \tag{6}
+              Q_j=\mathrm{poly}(U,\Delta_j).         \tag{6}
 $$
 
 The pool mask cuts one key edge of each unused virtual path. A pool
@@ -295,8 +295,9 @@ $$
 \begin{aligned}
  c&=O(d^2h+h),\\
  B&=O\bigl(x+f+K^2g+d\log P_0+d^2h+h\bigr),\\
- a&=O(dKg+dh).                                           \tag{7}
- \end{aligned}
+ a&=O(dKg+dh).
+\end{aligned}
+\tag{7}
 $$
 
 Here $B$ includes explicit recourse and color/mask work;

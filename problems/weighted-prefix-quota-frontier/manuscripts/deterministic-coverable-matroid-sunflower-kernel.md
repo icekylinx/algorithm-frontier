@@ -22,7 +22,7 @@ Delete elements that are loops in any matroid. In a loopless matroid, the span o
 
 $$
 \text{if }I\in\mathcal I(M_i),\ |I|\le k-1,\text{ then }
- \operatorname{cl}_{M_i}(I)
+ \mathrm{cl}_{M_i}(I)
  \text{ is a union of at most }g_i\text{ parallel classes.}
 \tag{CK2}
 $$
@@ -69,7 +69,7 @@ For each additional matroid, compute parallel classes by comparing each nonloop 
 Give item $e$ the feature set
 
 $$
-\sigma(e)=\{(i,\operatorname{class}_{M_i}(e)):
+\sigma(e)=\{(i,\mathrm{class}_{M_i}(e)):
                                       1\le i\le d\}.
 \tag{CK6}
 $$
@@ -78,7 +78,7 @@ Every support has exactly $d$ features. Features from different matroids are dis
 
 Keep these original feature IDs throughout the reduction. Removing candidates does not change the oracle or silently replace an original closure by a closure in a different context.
 
-For a fixed feasible context $I$, let $\mathcal B_i(I)$ be the feature classes contained in $\operatorname{cl}_{M_i}(I)$. By CK2,
+For a fixed feasible context $I$, let $\mathcal B_i(I)$ be the feature classes contained in $\mathrm{cl}_{M_i}(I)$. By CK2,
 
 $$
 |\mathcal B(I)|:=
@@ -94,9 +94,9 @@ The algorithm does not need to compute these unknown context closures. They are 
 ## 4. Identical feature tuples
 
 Within each class of identical $\sigma(e)$, keep only
-$\operatorname{Greedy}(M_0,\text{class},k)$, scanning in nonincreasing profit order and retaining independent elements until size $k$.
+$\mathrm{Greedy}(M_0,\text{class},k)$, scanning in nonincreasing profit order and retaining independent elements until size $k$.
 
-For every original feasible $I+e$, the SK greedy lemma returns a no-worse resource-valid replacement $f$ in this retained set, outside $I$. Because $e,f$ are parallel in each additional matroid, $e\notin\operatorname{cl}_{M_i}(I)$ implies $f\notin\operatorname{cl}_{M_i}(I)$. Thus all additional constraints remain valid.
+For every original feasible $I+e$, the SK greedy lemma returns a no-worse resource-valid replacement $f$ in this retained set, outside $I$. Because $e,f$ are parallel in each additional matroid, $e\notin\mathrm{cl}_{M_i}(I)$ implies $f\notin\mathrm{cl}_{M_i}(I)$. Thus all additional constraints remain valid.
 
 This is an external-context reduction: $I$ need not lie in the current candidate set. Afterwards at most $k$ items have any one feature tuple, and later deletions preserve that invariant.
 
@@ -114,7 +114,7 @@ If the current ground has more than $d!(L-1)^d$ distinct feature supports, the c
 Choose one current item per sunflower support, and let $V$ be these $L$ items. Construct $t$ disjoint layers
 
 $$
-F_j=\operatorname{Greedy}
+F_j=\mathrm{Greedy}
        \left(M_0,V\setminus\bigcup_{h<j}F_h,k\right),
                               \qquad 1\le j\le t.
 \tag{CK9}

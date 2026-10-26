@@ -40,7 +40,7 @@ The deterministic construction gives:
   least OPT/(d_r+eta) in
 
 $$
-\operatorname{poly}(P,b+\operatorname{bits}(\eta))
+\mathrm{poly}(P,b+\mathrm{bits}(\eta))
  \min\!\left\{2^{O(r)},
  (r+1)^{O((1+\eta^{-1})\log(r+1))}\right\}
  \tag{U2}

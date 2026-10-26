@@ -94,8 +94,8 @@ During an augmentation phase, write $k=|I|<r$, and let a completed
 last layer $i$ have earlier blocker count $s=|Y_{<i}|$. Define
 
 $$
-J_0=I\setminus\operatorname{owners}(Y_{<i}),\qquad
- U=P\setminus\operatorname{cl}(J_0),\qquad
+J_0=I\setminus\mathrm{owners}(Y_{<i}),\qquad
+ U=P\setminus\mathrm{cl}(J_0),\qquad
  w=r-|J_0|=r-k+s.
  \tag{Q3}
 $$
@@ -129,7 +129,7 @@ $F$, and
 $$
 \begin{split}
  &v(L_p\setminus F)<B\quad
-                         (p\notin\operatorname{cl}(J_0)),\\
+                         (p\notin\mathrm{cl}(J_0)),\\
  &v(F)\le(T-B)(r-|J_0|),\qquad r-|J_0|\ge1.
  \end{split}
  \tag{Q6}
@@ -172,7 +172,7 @@ is therefore
 
 $$
 \mathcal P\,2^{O(r)}
-                       \operatorname{poly}(b+\log\mathcal P),
+                       \mathrm{poly}(b+\log\mathcal P),
  \tag{Q9}
 $$
 
@@ -295,7 +295,7 @@ $$
  \mathcal P\,
  \min\!\left\{2^{O(r)},
        (r+1)^{O(\varepsilon^{-1}\log(r+1))}\right\}
-       \operatorname{poly}(b+\log\mathcal P).
+       \mathrm{poly}(b+\log\mathcal P).
  \quad}
  \tag{Q18}
 $$
@@ -434,7 +434,7 @@ Consequently the exact rank-exponential solver supplies all selected
 small players with value at least $\theta T$; retained fat players
 also receive at least $\theta T$. The separately audited reduction
 therefore gives factor $4-3/r$ against integer optimum in
-$2^{O(r)}\operatorname{poly}(\mathcal P,b)$ time. Rank one is
+$2^{O(r)}\mathrm{poly}(\mathcal P,b)$ time. Rank one is
 exact. This factor tends to four as rank grows and is not a uniform
 constant-below-four result for unrestricted rank. Matroid-union oracle
 overhead is polynomial in the full input and is not asserted to be

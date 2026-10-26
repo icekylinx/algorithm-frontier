@@ -44,14 +44,14 @@ $$
 **Upper theorem.** One order admits exact time
 
 $$
-2^{O(g_1(B,C))}\operatorname{poly}(H);
+2^{O(g_1(B,C))}\mathrm{poly}(H);
  \tag{PS4}
 $$
 
 two arbitrary orders admit exact time
 
 $$
-2^{O(g_2(B,C))}\operatorname{poly}(H).
+2^{O(g_2(B,C))}\mathrm{poly}(H).
  \tag{PS5}
 $$
 

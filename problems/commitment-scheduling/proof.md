@@ -144,7 +144,7 @@ The first term is obtained by also solving the full original assignment relaxati
 takes `2^{O(k)} poly(H)` time. For D=D_k+eta it takes
 
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\}.
  \tag{B8}
 $$

@@ -190,7 +190,7 @@ in
 
 $$
 \left(\sum_{i=0}^{\min(q,s)}\binom qi\right)
-       \operatorname{poly}(H,\text{explicit configuration support}).
+       \mathrm{poly}(H,\text{explicit configuration support}).
  \tag{C10}
 $$
 

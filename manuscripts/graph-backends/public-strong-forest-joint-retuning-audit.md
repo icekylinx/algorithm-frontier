@@ -150,7 +150,7 @@ Likewise, no high-degree bound of $O(k)$ is assumed for the total
 number of vertices in a nearest-pivot tree. A pivot can have
 $\Delta$ incident branches, each controlled by a strict inverse
 cluster; the safe component bound contains $\Delta$. An individual
-pivot leg still contains $O(k\operatorname{poly}U)$ vertices because
+pivot leg still contains $O(k\mathrm{poly}U)$ vertices because
 all its vertices except its pivot lie in the source's strict ball.
 The native nearest-pivot forest has edge congestion one regardless of
 its component size. All local scans are allowed a fixed polynomial in
@@ -306,7 +306,7 @@ the rebuilt level is published. If an isolated anchor is removed,
 choose another current root vertex; that choice and its $O(d)$
 promotions are charged to the vertex-deletion operation.
 
-Write $\rho=\Gamma^{O(K)}\operatorname{poly}U$. Suppose the current
+Write $\rho=\Gamma^{O(K)}\mathrm{poly}U$. Suppose the current
 root graph is connected and has diameter $D$. For a root vertex
 $v$, let $v_0=v$ and $v_{i+1}=p_{i+1}(v_i)$. Because the anchor
 is in the pivot set at level $i$,
@@ -377,7 +377,7 @@ numerical APSP and marked-diameter operations required by the cover
 have no larger common envelope: stored exact ball/base distances
 give polylogarithmic distance queries, and the marked-diameter
 query can be recomputed after each edit at the charged
-$k\operatorname{poly}U$ cost as in KMG Claim 4.8.
+$k\mathrm{poly}U$ cost as in KMG Claim 4.8.
 
 Choose rounded parameters
 

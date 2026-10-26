@@ -11,7 +11,7 @@ The complete deterministic running time is
 
 $$
 2^{O(q/\epsilon)}
-              \operatorname{poly}(H_\epsilon)
+              \mathrm{poly}(H_\epsilon)
  \tag{PS1}
 $$
 
@@ -72,10 +72,10 @@ The time is bounded by either of the following simultaneous upper
 bounds on this same algorithm:
 
 $$
-C_\epsilon^q\operatorname{poly}(H_\epsilon),
+C_\epsilon^q\mathrm{poly}(H_\epsilon),
  \qquad
  \exp\bigl(3q(K+1)\bigr)
-       \operatorname{poly}(H_\epsilon).
+       \mathrm{poly}(H_\epsilon).
  \tag{PS5}
 $$
 
@@ -270,7 +270,7 @@ permitted small time is at most delta*T. By PS8 its integer load is
 at most (1-L_p)T+delta*T. Adding this to PS12 yields
 
 $$
-\operatorname{load}_{x'}(p)
+\mathrm{load}_{x'}(p)
                     \le(1+2\delta)T=(1+\epsilon)T.
  \tag{PS13}
 $$

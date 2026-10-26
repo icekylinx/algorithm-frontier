@@ -28,11 +28,11 @@ The scalar objective is one arbitrary signed rational linear functional $c^\top 
 Let $H$ include the entire explicit row and coefficient encoding, the scalar encoding, and the bit lengths of rank values. There is a deterministic exact algorithm, with uniform polynomial binary space, taking
 $$
 2^{\,O((\Delta+1)B_0
- \log((\Delta+1)B_0(B+2)+2))}\operatorname{poly}(H)                 \tag{HP4}
+ \log((\Delta+1)B_0(B+2)+2))}\mathrm{poly}(H)                 \tag{HP4}
 $$
 time and oracle calls when $B_0\ge1$. In particular, for $\Delta\ge1$ and $B_0\le B$, this is
 $$
-2^{O(\Delta B\log(\Delta B+2))}\operatorname{poly}(H).               \tag{HP5}
+2^{O(\Delta B\log(\Delta B+2))}\mathrm{poly}(H).               \tag{HP5}
 $$
 The case $B_0=0$ is polynomial time.
 
@@ -130,7 +130,7 @@ The sum in HP13 is essential. When several actual upper rows collide, using the 
 
 Each remaining positive coordinate has a type
 $$
-\operatorname{type}(e)=
+\mathrm{type}(e)=
 \left(w_e,\;(\bar a^j_e)_{j\text{ lower}},\;
                 (b_{e,t})_{t\in\mathcal C}\right).               \tag{HP14}
 $$

@@ -55,7 +55,7 @@ The routing part of (3) is the following sequential interface. On a
 loopless expander of $m'$ edge IDs and conductance
 $\phi\geq2^{-O(rh)}$, preprocess once in
 $$
-m'\exp O(U/p+ph+\log\phi^{-1})\operatorname{poly}(U)
+m'\exp O(U/p+ph+\log\phi^{-1})\mathrm{poly}(U)
  \tag{5}
 $$
 work. For token demands with at most $D\deg(v)$ starts and at most
@@ -63,7 +63,7 @@ $D\deg(v)$ destinations at every vertex, return explicit walks of
 length at most $2^{O((p+r)h)}$ and edge congestion at most
 $D\,2^{O((p+r)h)}$. Query work is allowed to be
 $$
-m'D\,2^{O((p+r)h)}\operatorname{poly}(U).
+m'D\,2^{O((p+r)h)}\mathrm{poly}(U).
  \tag{6}
 $$
 It is not claimed to be proportional only to the number of nonempty
@@ -110,7 +110,7 @@ $\widetilde J\subseteq J$, and explicit routes
 $\widehat\Pi:J\to\widetilde J$, satisfying
 $$
 \begin{aligned}
- |E(\widetilde J)|&\leq |V(J)|\Gamma\operatorname{poly}(U),\\
+ |E(\widetilde J)|&\leq |V(J)|\Gamma\mathrm{poly}(U),\\
  L(\widehat\Pi)&\leq\Gamma,\\
  L(\Pi'\circ\widehat\Pi)&\leq\Gamma L_0,\\
  C(\Pi'\circ\widehat\Pi)&\leq\Gamma(C_0+\Delta_0).
@@ -119,7 +119,7 @@ $$
 $$
 Its full work is
 $$
-|E(J)|F^{O(1)}\Gamma^{O(1)}(L_0+1)\operatorname{poly}(U)
+|E(J)|F^{O(1)}\Gamma^{O(1)}(L_0+1)\mathrm{poly}(U)
  \tag{9}
 $$
 plus actual vertex bookkeeping. In particular, the construction-work
@@ -190,9 +190,9 @@ these inequalities, not a CHS distributed-$\epsilon$ range.
 The hierarchy depth is $O(p)$; the fixed minimum
 $k_{\rm route}=32$ only improves that bound.
 
-All leaves have $\operatorname{poly}(k_{\rm route},v)$ vertices. The
+All leaves have $\mathrm{poly}(k_{\rm route},v)$ vertices. The
 exact PSD and moment procedures may have
-$\operatorname{poly}(k_{\rm route},v,\log\phi^{-1})$-bit TEMPORARY
+$\mathrm{poly}(k_{\rm route},v,\log\phi^{-1})$-bit TEMPORARY
 integers; leaf walk moments may additionally have a fixed polynomial
 dependence on inverse expansion. Their complete bit operations are
 charged in (5). They are not core lengths or gradient labels and need
@@ -317,23 +317,23 @@ and preliminary ambient congestion by a constant times old route
 congestion plus the native degree:
 [normalized-projected-route-composition.md](normalized-projected-route-composition.md).
 For a degree-three parent, that native degree is
-$k\operatorname{poly}(U)$. The repaired length and congestion
+$k\mathrm{poly}(U)$. The repaired length and congestion
 therefore obey
 $$
 L_{j+1}\leq O(\Gamma)L_j,\qquad
  C_{j+1}\leq O(\Gamma)
-                    (C_j+k\operatorname{poly}(U)).
+                    (C_j+k\mathrm{poly}(U)).
  \tag{22}
 $$
 There is no $L_j$ factor in the second recurrence. After $K$
 layers, lengths are $\Gamma^{O(K)}$, and congestion is
-$k\operatorname{poly}(U)\Gamma^{O(K)}$. An optional fresh-base
+$k\mathrm{poly}(U)\Gamma^{O(K)}$. An optional fresh-base
 normalization changes only the absolute constant in $O(K)$.
 
 The local work envelope is
 $$
 W=k^{O(1)}\rho_{\rm sched}^{O(1)}F^{O(1)}
-                       \Gamma^{O(K)}\operatorname{poly}(U).
+                       \Gamma^{O(K)}\mathrm{poly}(U).
  \tag{23}
 $$
 Route-owner replacement, inverse occurrence lists, current
@@ -543,7 +543,7 @@ The structural reset sum is $O(s^3S)$, the number of global
 resets is $O(s)$, and the number of gap phases is $O(s^2)$.
 The [decoupled client](decoupled-numerical-client.md) costs
 $$
-O(MD+QD+D^2J)\operatorname{poly}(s),
+O(MD+QD+D^2J)\mathrm{poly}(s),
  \tag{43}
 $$
 Here $J$ counts accepted steps and $Q$ counts external
@@ -552,13 +552,13 @@ and exact point requests. Internal numerical refreshes form
 the separate $O(DJ)$ category already paid by $D^2J$;
 they are not added to this $Q$.
 Local and all-expanded exact recovery cost
-$(P_{\rm debt}+1)D^4\operatorname{poly}(s)$. They round
+$(P_{\rm debt}+1)D^4\mathrm{poly}(s)$. They round
 the conserved grid circulation and use ordinary residual
 searches; no fresh static max-flow call is hidden there.
 
 The complete favorable branch therefore costs
 $$
-SE_*^4\operatorname{poly}(s)
+SE_*^4\mathrm{poly}(s)
        =S\exp O(s^{4/5}(\log(s+4))^{1/5}).
  \tag{44}
 $$

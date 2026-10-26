@@ -26,8 +26,8 @@ An arbitrary rational scalar functional `c x` is to be minimized or maximized ex
 $$
 \boxed{
 \exp\!\left(3\sum_{j:T_j>0}\sqrt{U_j}\right)
-\operatorname{poly}(H)
-\ \le\ e^{3T}\operatorname{poly}(H),
+\mathrm{poly}(H)
+\ \le\ e^{3T}\mathrm{poly}(H),
 }
 \tag{CS2}
 $$
@@ -39,7 +39,7 @@ For this support-one model there are equality-target instances with `T=5d` requi
 **Support-two boundary.** If `s<=2`, the general mixed-target upper bound is
 
 $$
-2^{O((T+1)\log(T+2))}\operatorname{poly}(H),
+2^{O((T+1)\log(T+2))}\mathrm{poly}(H),
 \tag{CS3}
 $$
 

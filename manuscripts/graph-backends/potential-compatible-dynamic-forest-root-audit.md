@@ -12,7 +12,7 @@ cuts and links, maximum-score directed path search, implicit numerical
 path steps, guard checks, and register notifications in
 
 $$
-(\nu+J+P+Q+R)\operatorname{polylog} S
+(\nu+J+P+Q+R)\mathrm{polylog} S
 $$
 
 local work. Here P counts the supplied edge edits; it is not silently

@@ -81,7 +81,7 @@ profile, and its row filters decide whether this profile is acceptable.
 takes
 
 $$
-\boxed{\left(\prod_C B_C\right)\operatorname{poly}(H)}
+\boxed{\left(\prod_C B_C\right)\mathrm{poly}(H)}
 \tag{CP5}
 $$
 
@@ -211,7 +211,7 @@ $$
  3\sum_{j\in I}\sqrt{U_j}
  +O\!\left(\sum_{C:\,d_C\ge2}
       T_C\log\left(2+\frac{m_C}{T_C}\right)\right)
-\right)\operatorname{poly}(H).
+\right)\mathrm{poly}(H).
 \tag{CP11}
 $$
 
@@ -258,8 +258,8 @@ bound gives `exp(O(T))`. In contrast CP5 gives
 
 $$
 \exp\!\left(O\left(k\log k+\sqrt\alpha\right)\right)
-       \operatorname{poly}(H)
-   =\exp(O(\sqrt T))\operatorname{poly}(H).
+       \mathrm{poly}(H)
+   =\exp(O(\sqrt T))\mathrm{poly}(H).
 \tag{CP13}
 $$
 

@@ -17,7 +17,7 @@ The supplied lower bound phi has polynomially many bits in U.
 
 The construction preprocesses the ACTUAL host in
 $$
-P\leq m\exp O(U/p+ph+\log\phi^{-1})\operatorname{poly}(U). \tag{1}
+P\leq m\exp O(U/p+ph+\log\phi^{-1})\mathrm{poly}(U). \tag{1}
 $$
 A query consists of an explicit ordered token list whose starts and
 destinations separately have multiplicity at most D deg_G(v) at v,
@@ -30,7 +30,7 @@ Q=\exp O(ph+\log\phi^{-1}),\qquad
 $$
 and query work
 $$
-mDQ\operatorname{poly}(U).          \tag{3}
+mDQ\mathrm{poly}(U).          \tag{3}
 $$
 This is an mD-volume bound, including dummy tokens, not a sparse
 token-list-only bound. Preprocessing is paid once per host.
@@ -257,7 +257,7 @@ $$
  \text{length}&\leq A(c(\lambda+1))^{d+1},\\
  \text{congestion}&\leq LA(c(\lambda+1)^2)^{d+1},\\
  \text{work}&\leq nLA(c(\lambda+1)^2)^{d+1}
-                       \operatorname{poly}(\log(nL+2)).
+                       \mathrm{poly}(\log(nL+2)).
  \end{aligned}                                               \tag{11}
 $$
 This applies the flattened A once, not once per level.
@@ -285,7 +285,7 @@ The short-path and hierarchy notes give the explicit recurrence
 $$
 T(N,j)\leq v^{c_1}\sum_i T(N_i,j-1)
        +Nk_{\rm route}^{c_2}v^{c_3}
-                         \operatorname{poly}(\psi_{\rm cut}^{-1}),
+                         \mathrm{poly}(\psi_{\rm cut}^{-1}),
  \qquad\sum_iN_i\leq c_4N,                                  \tag{12}
 $$
 with absolute constants. Only polynomial-v repeated-attempt costs

@@ -45,8 +45,7 @@ $$
 \widetilde O(|E(J)|\gamma_\ell^2 L(\Pi)),
 $$
 where
-$\gamma_c,\gamma_\ell=
-\exp(O((\log m)^{2/3}\log\log m))$.
+$\gamma_c,\gamma_\ell= \exp(O((\log m)^{2/3}\log\log m))$.
 
 Theorem 7.11 of the incremental paper cites this theorem but omits
 $L(\Pi)$ from (1). Its Claim 7.15 then uses precisely that stronger
@@ -68,8 +67,7 @@ most $\Delta$. Splits partition incidences and preserve edge IDs.
 There is no bound on the degree of a historical master vertex
 obtained by identifying all its descendants.
 
-Initialize a deterministic static sparsifier $H_{\rm init}\subseteq
-G_0$ and an embedding $\Pi_{\rm init}$, using the identity embedding
+Initialize a deterministic static sparsifier $H_{\rm init}\subseteq G_0$ and an embedding $\Pi_{\rm init}$, using the identity embedding
 as input to (1)--(2). It has
 $$
 |E(H_{\rm init})|=\widetilde O(n_0\gamma_\ell),\quad

@@ -26,7 +26,7 @@ when h,d>0, and set Γ=1 if either parameter is zero. Fix λ_0≥0 and set C=[A 
 $$
 R_0=\begin{pmatrix}\lambda_0 I_p&0\\0&0_q\end{pmatrix},
  \qquad
- \rho=\operatorname{tr}\left(C^TC(C^TC+R_0)^\dagger\right).
+ \rho=\mathrm{tr}\left(C^TC(C^TC+R_0)^\dagger\right).
 \tag{1}
 $$
 
@@ -62,10 +62,10 @@ The same H and weights work for all these choices, including choices of K and g 
 The quantity in (1) obeys
 
 $$
-\rho\le\operatorname{sd}_{\lambda_0}(A)+q,
+\rho\le\mathrm{sd}_{\lambda_0}(A)+q,
  \qquad
- \operatorname{sd}_{\lambda}(A)
-   =\operatorname{tr}\bigl(A^TA(A^TA+\lambda I)^\dagger\bigr).
+ \mathrm{sd}_{\lambda}(A)
+   =\mathrm{tr}\bigl(A^TA(A^TA+\lambda I)^\dagger\bigr).
 \tag{5}
 $$
 
@@ -85,14 +85,14 @@ In particular, a fixed response vector costs at most one additional effective di
 The spectral manuscript initially writes fixed regularization as R≻0. Its proof extends to any R≽0. For X⊆E and e∈X, use
 
 $$
-t_e^R(X)=\operatorname{tr}\bigl(B_e(R+M_X)^\dagger\bigr),
+t_e^R(X)=\mathrm{tr}\bigl(B_e(R+M_X)^\dagger\bigr),
  \qquad M_X=\sum_{e\in X}B_e.
 $$
 
 Apply the positive-definite version with R+ζI and let ζ decrease to zero. Since range(B_e)⊆range(M_X)⊆range(R+M_X), each trace converges to this finite pseudoinverse trace. Thus deletion monotonicity, the hereditary total bound, the Γ pool argument, and the exact h=1 accounting all remain valid. Their total bound is
 
 $$
-d_R=\operatorname{tr}\bigl(M_E(R+M_E)^\dagger\bigr).
+d_R=\mathrm{tr}\bigl(M_E(R+M_E)^\dagger\bigr).
 $$
 
 Concentration and derandomization whiten range(R+M_{E_F}) separately for each scenario. All item matrices and the background vanish on its orthogonal complement, so rank changes cause no extra error. The cap at the full input size and the small-effective-dimension precheck from the spectral manuscript remain valid. This proves the PSD version, not just a limiting existential statement about output weights.
@@ -207,9 +207,9 @@ $$
 Summing and using U^TU≼V proves
 
 $$
-\rho=\operatorname{sd}_{\lambda_0}(A)
-       +\operatorname{tr}(V^{-1/2}U^TUV^{-1/2})
-       \le\operatorname{sd}_{\lambda_0}(A)+q.
+\rho=\mathrm{sd}_{\lambda_0}(A)
+       +\mathrm{tr}(V^{-1/2}U^TUV^{-1/2})
+       \le\mathrm{sd}_{\lambda_0}(A)+q.
 $$
 
 The same formula also exposes why the response contribution is bounded even when its scale is large. The response subspace, rather than the number of separately queried response matrices, controls this term.

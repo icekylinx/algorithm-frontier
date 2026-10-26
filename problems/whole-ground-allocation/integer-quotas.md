@@ -31,7 +31,7 @@ For a supplied admissible base A, write
 $$
 \mathcal T_A(q,H)=
  (2-1/A)^q
- 2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H).
+ 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
 \tag{QT2}
 $$
 
@@ -144,7 +144,7 @@ remaining omission deficit is c-|Z|, and QT4 bounds the complete
 extension cost by
 
 $$
-A_d^{c-|Z|}\operatorname{poly}(H).
+A_d^{c-|Z|}\mathrm{poly}(H).
 \tag{QT5}
 $$
 
@@ -182,7 +182,7 @@ model admits QT6, exact assignment budget, and polynomial space in
 either
 
 $$
-A_d^c\operatorname{poly}(H)
+A_d^c\mathrm{poly}(H)
  \quad\text{or}\quad
  \mathcal T_{A_d}(q,H)
 \tag{QT7}
@@ -287,7 +287,7 @@ exact factor d, one exact assignment budget, and polynomial space in
 either
 
 $$
-A_d^{h_C}\operatorname{poly}(H)
+A_d^{h_C}\mathrm{poly}(H)
  \quad\text{or}\quad
  \mathcal T_{A_d}(q,H)
 \tag{QT10}
@@ -370,7 +370,7 @@ minimization search give a final schedule of makespan at most
 has approximation factor 2-1/d and polynomial space in either
 
 $$
-A_d^c\operatorname{poly}(H)
+A_d^c\mathrm{poly}(H)
  \quad\text{or}\quad
  \mathcal T_{A_d}(|P^+|,H).
 \tag{QT14}
@@ -411,7 +411,7 @@ also gives
 $$
 \min\left\{A_d^c,
        E(q)\Psi_{A_d}(q,c),\binom qc\right\}
-                      \operatorname{poly}(H),
+                      \mathrm{poly}(H),
 \tag{QT15}
 $$
 

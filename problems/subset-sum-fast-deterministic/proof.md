@@ -4,14 +4,14 @@
 
 ## Abstract
 
-We give an exact deterministic algorithm for Subset Sum on arbitrary signed binary integers, with indexed witness recovery. The refined running time is $C+\operatorname{poly}(n,L)2^{En}$, where $E=158153814247997/318927986919134<0.495892$ and $C$ is finite and independent of the input. Part I develops the signed-circuit compiler and reduction. Part II proves the trace and type refinement, and its continuous-domain checker certifies all 44 contact branches with exact rational arithmetic. A separate scalar checker reconstructs the reflected profile and the complete outer cost ledger. The refined theorem uses this new certificate directly; the older numerical menu is retained only as background with its explicit premise. No simultaneous space exponent is asserted for this algorithm.
+We give an exact deterministic algorithm for Subset Sum on arbitrary signed binary integers, with indexed witness recovery. The refined running time is $C+\mathrm{poly}(n,L)2^{En}$, where $E=158153814247997/318927986919134<0.495892$ and $C$ is finite and independent of the input. Part I develops the signed-circuit compiler and reduction. Part II proves the trace and type refinement, and its continuous-domain checker certifies all 44 contact branches with exact rational arithmetic. A separate scalar checker reconstructs the reflected profile and the complete outer cost ledger. The refined theorem uses this new certificate directly; the older numerical menu is retained only as background with its explicit premise. No simultaneous space exponent is asserted for this algorithm.
 
 ## Theorem and proof structure
 
 **Theorem F (refined deterministic algorithm).** On $n$ indexed signed integers of full binary encoding length $L$, the circuit and reduction constructions proved in Part I, with the parameter changes proved in Part II, decide feasibility and return an indexed witness in
 
 $$
-C+\operatorname{poly}(n,L)2^{En},\qquad
+C+\mathrm{poly}(n,L)2^{En},\qquad
 E=\frac{158153814247997}{318927986919134}.
 $$
 
@@ -20,7 +20,7 @@ Here $C$ is the finite input-independent cost of constructing fixed circuit data
 **Theorem 1 (background conditional composition).** Assume the continuous-domain contact inequalities in Part I, Section I.4.2. The older baseline construction decides every signed binary Subset Sum instance and returns an indexed witness in
 
 $$
-C+\operatorname{poly}(n,L)2^{E_0n},
+C+\mathrm{poly}(n,L)2^{E_0n},
 \qquad E_0=\frac{149809813343531}{301754962128739}<0.4964618056.
 $$
 
@@ -83,7 +83,7 @@ $$
 
 If a nonzero integer has absolute value less than $2^b$, at most $b\ln2/\ln P$ primes greater than $P$ divide it. The fraction of primes in this interval dividing that integer is therefore at most $2b/P$. This bound holds for all $P\geq2^{20}$. The interval ratio $32$ contributes a fixed factor.
 
-All these primes can be generated deterministically in $P\operatorname{poly}(\log P)$ bit operations. Start with the integers through $\lfloor32P\rfloor$, and, for each unmarked integer starting at two, mark its proper multiples. A number remaining unmarked is prime: a composite has a smaller prime divisor, already processed. The number of marking iterations is at most $32P\sum_{d\leq32P}1/d=O(P\log P)$ even if all integers, rather than just primes, are charged. Index arithmetic has $O(\log P)$ bits.
+All these primes can be generated deterministically in $P\mathrm{poly}(\log P)$ bit operations. Start with the integers through $\lfloor32P\rfloor$, and, for each unmarked integer starting at two, mark its proper multiples. A number remaining unmarked is prime: a composite has a smaller prime divisor, already processed. The number of marking iterations is at most $32P\sum_{d\leq32P}1/d=O(P\log P)$ even if all integers, rather than just primes, are charged. Index arithmetic has $O(\log P)$ bits.
 
 ### 2.2. Exact array and polynomial operations
 
@@ -437,7 +437,7 @@ $m_0$-set is missed with probability at most $e^{-N^2}$.
 
 Require two further bounds on the same lists. For every binary row $x$
 and integer $z_0$, the number of occurrences intersecting
-$\operatorname{supp}(x)$ in exactly $z_0$ positions is at most
+$\mathrm{supp}(x)$ in exactly $z_0$ positions is at most
 $6\nu+3N$, where
 
 $$
@@ -462,9 +462,9 @@ An out-of-domain binomial coefficient is zero. If $X$ is a sum of
 independent indicators with mean $v$, then
 $\mathbb E e^X\le e^{(e-1)v}$, and consequently
 $\Pr(X>6v+dN)\le e^{-dN}\le2^{-dN}$.
-There are at most $2^N\operatorname{poly}(N)$ row events,
-$3^N\operatorname{poly}(N)$ query events, and
-$2^N\operatorname{poly}(N)$ coverage events. A union bound proves
+There are at most $2^N\mathrm{poly}(N)$ row events,
+$3^N\mathrm{poly}(N)$ query events, and
+$2^N\mathrm{poly}(N)$ coverage events. A union bound proves
 that all three requirements hold simultaneously at every sufficiently
 large admissible $N$. The deterministic compiler below finds such fixed
 finite circuits by exact search.
@@ -1354,7 +1354,7 @@ $$
 
 On $M_0$ main coordinates the two degree caps are at most a fixed constant times $2^{[\delta_U(q)+\zeta]M_0}$ and $2^{[\delta_V(q)+\zeta]M_0}$, respectively. Enlarge these integer caps to at least one. All circuit constants are input-independent.
 
-Put $M=H_0\lfloor\mu n/H_0\rfloor$. Handle the fixed finite range of smaller $n$ by exhaustive search, at cost a fixed multiple of $\operatorname{poly}(L)$. Assume henceforth that $M$ meets the stated core ranges.
+Put $M=H_0\lfloor\mu n/H_0\rfloor$. Handle the fixed finite range of smaller $n$ by exhaustive search, at cost a fixed multiple of $\mathrm{poly}(L)$. Assume henceforth that $M$ meets the stated core ranges.
 
 ### I.3.1. Three dictionaries and canonical layers
 
@@ -1364,13 +1364,13 @@ $$
 \Sigma(X\cup\{i\})=\Sigma(X)\cup(\Sigma(X)+z_i),
 $$
 
-retaining one binary mask per sum. This costs $2^M\operatorname{poly}(n,L)$. Let $P$ be a block with largest dictionary, let $N=|\Sigma(P)|$, and denote the other two blocks by $P_U,P_V$. For analysis write $N=2^{(1-d)M}$.
+retaining one binary mask per sum. This costs $2^M\mathrm{poly}(n,L)$. Let $P$ be a block with largest dictionary, let $N=|\Sigma(P)|$, and denote the other two blocks by $P_U,P_V$. For analysis write $N=2^{(1-d)M}$.
 
 If the exact integer test $N^{50}\le2^{49M}$ holds, then $d\ge d_0=1/50$. Place two complete $M$-block dictionaries in opposite halves and divide the remaining coordinates equally. Each half has at most $N2^{(n-2M)/2+O(1)}$ entries. Exact complement matching, retaining the stored equal-sum witnesses, decides the instance in
 
 $$
-\operatorname{poly}(n,L)2^{n/2-dM+O(1)}
-\le\operatorname{poly}(n,L)2^{(1/2-d_0\mu)n+O(1)}.
+\mathrm{poly}(n,L)2^{n/2-dM+O(1)}
+\le\mathrm{poly}(n,L)2^{(1/2-d_0\mu)n+O(1)}.
 \tag{71}
 $$
 
@@ -1378,8 +1378,8 @@ The unused third block may be split in this branch. Henceforth $d<d_0=.02$. Let 
 
 $$
 q_c(K)=\sum_{i\in K}(2c_i-1)z_i
-=\sum_{i\in K\triangle\operatorname{supp}(\bar c)}z_i
--\sum_{i\in\operatorname{supp}(\bar c)}z_i.
+=\sum_{i\in K\triangle\mathrm{supp}(\bar c)}z_i
+-\sum_{i\in\mathrm{supp}(\bar c)}z_i.
 \tag{72}
 $$
 
@@ -1393,7 +1393,7 @@ $$
 
 Since $h(1/5)<.74$, it follows that $1/5<\kappa<4/5$ for sufficiently large $M$.
 
-All classes can be computed in $2^M\operatorname{poly}(M)$ integer operations. For functions on the binary cube define
+All classes can be computed in $2^M\mathrm{poly}(M)$ integer operations. For functions on the binary cube define
 
 $$
 \widehat f(S)=\sum_xf(x)(-1)^{S\cdot x},\qquad
@@ -1437,7 +1437,7 @@ Its size is
 
 $$
 K_0=\binom{m_1}{sm_1}\binom{m_2}{sm_2}\binom{H_0}{u_0}
-=2^{h(s)M}\operatorname{poly}(M)^{\pm1},
+=2^{h(s)M}\mathrm{poly}(M)^{\pm1},
 \tag{76}
 $$
 
@@ -1449,7 +1449,7 @@ For a solution prefix $c$ put $e_i=2c_i-1$. On $H_1\cup R_0$, the $U$ contributi
 Both core queries have support density $s$. The original $U$ prefix key is
 
 $$
-\operatorname{blockkey}_U=\gamma(c,\mathcal D)+q_c(K),
+\mathrm{blockkey}_U=\gamma(c,\mathcal D)+q_c(K),
 \qquad
 \gamma(c,\mathcal D)=\sum_{i\in H_2}(1-c_i)z_i.
 \tag{77}
@@ -1466,7 +1466,7 @@ $$
 \frac{\binom{sm}{am}\binom{(1-s)m}{(t-a)m}}{2^m}.
 \qquad
 \theta=\theta_{m_1}\theta_{m_2}
-=2^{-JM}\operatorname{poly}(M)^{\pm1}.
+=2^{-JM}\mathrm{poly}(M)^{\pm1}.
 \tag{78}
 $$
 
@@ -1502,7 +1502,7 @@ T=\frac{NK_0\theta}{(M+1)B}.
 \tag{81}
 $$
 
-A round attaining this mean and all its actual counts can be computed in $2^M\operatorname{poly}(n,L)$ bit operations. To see this, introduce ten formal variables: $X_j,Z_j$ for $j=0,1,2$, recording regional sizes and regional $K$ counts; and $Y_j,V_j$ for $j=1,2$, recording core row-one and specified-query-one counts.
+A round attaining this mean and all its actual counts can be computed in $2^M\mathrm{poly}(n,L)$ bit operations. To see this, introduce ten formal variables: $X_j,Z_j$ for $j=0,1,2$, recording regional sizes and regional $K$ counts; and $Y_j,V_j$ for $j=1,2$, recording core row-one and specified-query-one counts.
 
 For local bits $(c_i,b_i)$ put $k_i=1\oplus c_i\oplus b_i$. The binary row before flipping is $1-b_i$ on core 1 and $b_i$ on core 2. For a local region and flip $(j,f_i)$ use the following monomial as the corresponding entry of a $2$ by $2$ matrix indexed by $(c_i,b_i)$:
 
@@ -1528,7 +1528,7 @@ $$
 
 counts completions and their canonical witnesses. Extract the coefficient with regional sizes $(H_0,m_1,m_2)$, regional $K$ counts $(u_0,sm_1,(1-s)m_2)$, row-one counts $(tm_1,tm_2)$, and query-one counts $(am_1,am_2)$. The regional $K$ counts already force the global layer.
 
-Compute (83) by applying the tensor product of the local matrices to the length-$2^M$ indicator vector of $\mathcal A$, and sum the indicated output entries. Each tensor stage combines pairs of vector entries. Since all exponents are nonnegative, they may be truncated at their target values. There are at most $(M+1)^{10}$ coefficients per polynomial and at most six monomials per local matrix entry. The full tensor computation costs $2^M\operatorname{poly}(M)$ operations. Its coefficients count at most $4^M6^M$ objects and have $O(M)$ bits.
+Compute (83) by applying the tensor product of the local matrices to the length-$2^M$ indicator vector of $\mathcal A$, and sum the indicated output entries. Each tensor stage combines pairs of vector entries. Since all exponents are nonnegative, they may be truncated at their target values. There are at most $(M+1)^{10}$ coefficients per polynomial and at most six monomials per local matrix entry. The full tensor computation costs $2^M\mathrm{poly}(M)$ operations. Its coefficients count at most $4^M6^M$ objects and have $O(M)$ bits.
 
 Expose a coordinate's region and flip simultaneously. If $R'$ coordinates and regional capacities $R_0',R_1',R_2'$ remain, then the number of uniform completions is
 
@@ -1549,7 +1549,7 @@ $$
 On either core there are at most $\binom{(1-u)m}{am}\binom{um}{bm}$ such supports; on core 2 the support is the complement of $K$. Including the fixed boundary,
 
 $$
-W_c\le K_{\rm typed}\le\operatorname{poly}(M)2^{k_{\rm typed}M},
+W_c\le K_{\rm typed}\le\mathrm{poly}(M)2^{k_{\rm typed}M},
 \qquad k_{\rm typed}<.4981.
 \tag{85}
 $$
@@ -1566,7 +1566,7 @@ w\ge\frac{T}{2(M+1)}.
 \tag{86}
 $$
 
-Let $K$ be the exact size of the full typed support family of this round, including the boundary. It is independent of the pattern whenever its transformed regional weights are feasible; patterns with another weight have count zero. By (85), $K\le\operatorname{poly}(M)2^{DM}$, where
+Let $K$ be the exact size of the full typed support family of this round, including the boundary. It is independent of the pattern whenever its transformed regional weights are feasible; patterns with another weight have count zero. By (85), $K\le\mathrm{poly}(M)2^{DM}$, where
 
 $$
 D=H(1-u,a)+H(u,b),\qquad
@@ -1578,9 +1578,9 @@ Expanding the entropy terms of the same four-cell joint distribution in the two 
 
 $$
 h(u)+D=1+h(s)-J,\qquad
-\frac KT\le\operatorname{poly}(M)
+\frac KT\le\mathrm{poly}(M)
 2^{[d+h(\kappa)-h(u)]M}
-\le\operatorname{poly}(M)2^{(d+\eta)M}.
+\le\mathrm{poly}(M)2^{(d+\eta)M}.
 \tag{88}
 $$
 
@@ -1594,7 +1594,7 @@ $$
 The ten variables of (82) suffice. For every witness prefix $p$ of length $j$, apply
 $T_{j+1}\otimes\cdots\otimes T_M$ to $1_{\mathcal A}(p,\cdot)$ and store
 its polynomial vector $F_p$. The $2^j$ vectors each have length $2^{M-j}$;
-all depths cost $2^M\operatorname{poly}(M)$ in time and storage. Degrees
+all depths cost $2^M\mathrm{poly}(M)$ in time and storage. Degrees
 are $O(M)$ in a fixed number of variables, and coefficients have $O(M)$
 bits. Nonnegative exponents permit truncation above each target.
 
@@ -1606,7 +1606,7 @@ F_p[c_{j+1},\ldots,c_M],
 \tag{89}
 $$
 
-with a negative residual count interpreted as zero. Querying the zero child and comparing its count with a requested lexicographic rank unpacks one witness in polynomial time. Shared $2^M\operatorname{poly}(n,L)$ preprocessing thus reports $w$ witnesses for each of $G$ patterns in $|G|w\operatorname{poly}(n,L)$ additional time. Their integer keys are distinct by canonical injectivity.
+with a negative residual count interpreted as zero. Querying the zero child and comparing its count with a requested lexicographic rank unpacks one witness in polynomial time. Shared $2^M\mathrm{poly}(n,L)$ preprocessing thus reports $w$ witnesses for each of $G$ patterns in $|G|w\mathrm{poly}(n,L)$ additional time. Their integer keys are distinct by canonical injectivity.
 
 **One-canonical collision energy.** We choose a modulus before reporting witnesses. In a fixed number of regions prescribe the pattern weight $U_j$ and the support counts $A_j,B_j$ on its zero and one positions. Write $\mathcal R_c$ for this full typed support family. After fixed complements and orientations, the witness has the form $b(R,c)=R\oplus(1-c)$ and its key is a known translation plus $\sum_i z_i b_i$. Sign changes in $z_i$ and the corresponding permutation of $\mathcal A$ handle both orientations. For a positive modulus $q$ define the ordered energy
 
@@ -1622,7 +1622,7 @@ $$
 
 The orientation change is explicit: on the cores set $c^*=c\oplus f$, $b^*=b\oplus f$ on $H_1$, and $b^*=b\oplus f\oplus1$ on $H_2$. Take $R=K$ on $H_1$ and $R=\overline K$ on $H_2$. Then $b^*=R\oplus(1-c^*)$. Replace $z_i$ by $z_i^*=(-1)^{f_i+1_{i\in H_2}}z_i$ in differences. The affine translation preserves equalities and canonical injectivity. Use this transformed notation below.
 
-Only the first endpoint is canonical. For a bucket with $w\le W_c<2w$, the aggregate energy at modulus one is less than $2|G|wK$. The oracle below computes every $E_q(c)$ in $2^{\alpha M}\operatorname{poly}(n,L,\log q)$ bit operations, independently of the modulus magnitude apart from $\log q$.
+Only the first endpoint is canonical. For a bucket with $w\le W_c<2w$, the aggregate energy at modulus one is less than $2|G|wK$. The oracle below computes every $E_q(c)$ in $2^{\alpha M}\mathrm{poly}(n,L,\log q)$ bit operations, independently of the modulus magnitude apart from $\log q$.
 
 Put $\delta_i=b_i-b_i'\in\{-1,0,1\}$. In each region both endpoints have weight $|H_j|-U_j-A_j+B_j$, so their positive and negative difference counts agree. Their support difference has size at most twice $k=\sum_j(A_j+B_j)$, giving at most $k$ negative differences. Fill the ternary array
 
@@ -1680,7 +1680,7 @@ R_k=\sum_{j\le k}\binom Mj2^{M-j}.
 \tag{93}
 $$
 
-For example, after $t$ coordinates of the canonical-input transform it is $2^{M-t}\sum_{j\le k}\binom tj2^{t-j}\le R_k$; the analogous output bound is $2^t\sum_{j\le k}\binom{M-t}j2^{M-t-j}\le R_k$. These are ordinary coordinatewise contractions with polynomial arrays. Here $k=sM+O(1)$ and $s<1/3$, so $R_k\le\operatorname{poly}(M)2^{[1+h(s)-s]M}$. The initial difference table is smaller because $h(2s)+2s<1<\alpha$.
+For example, after $t$ coordinates of the canonical-input transform it is $2^{M-t}\sum_{j\le k}\binom tj2^{t-j}\le R_k$; the analogous output bound is $2^t\sum_{j\le k}\binom{M-t}j2^{M-t-j}\le R_k$. These are ordinary coordinatewise contractions with polynomial arrays. Here $k=sM+O(1)$ and $s<1/3$, so $R_k\le\mathrm{poly}(M)2^{[1+h(s)-s]M}$. The initial difference table is smaller because $h(2s)+2s<1<\alpha$.
 
 For (91), $\mathcal D=x'(xy-1)$ is a nonzero formal polynomial. The common multiplier is $\prod_j(x'_j)^{m_j}(x_jy_j-1)^{m_j}$. Remove the monomial factors and multiply by the truncated series
 
@@ -1709,16 +1709,16 @@ $$
 Sieve the primes in $(P_0,32P_0]$. Section 2.1 gives at least $P_0/\log_2P_0$ candidates, more than $2r$. A nonzero $B_0$-bit difference has at most $B_0/\log_2P_0$ prime factors in the pool. At least half the pool remains unused at every stage; therefore at most a $2B_0/P_0\le1/(2t_0)$ fraction of the unused primes divide it. Starting at $m=1$, compute $\sum_{c\in G}E_{mp}(c)$ for each unused candidate and choose a minimum. Conditional averaging reduces the surviving aggregate by a factor at least $2t_0$ at each stage. The product $Q$ of the $r$ chosen distinct primes satisfies
 
 $$
-K\le Q\le K\operatorname{poly}(n,L),\qquad
+K\le Q\le K\mathrm{poly}(n,L),\qquad
 \sum_{c\in G}E_Q(c)
 \le\frac{2|G|wK}{(2t_0)^r}\le |G|w/2.
 \tag{96}
 $$
 
-Indeed $Q>P_0^r\ge t_0^r\ge4K$ and $t_0\le2(4K)^{1/r}$; $r$ is fixed, so all factors other than $K$ in $(32P_0)^r$ are polynomial. The number of candidate oracle calls is at most $K^{1/64}\operatorname{poly}(n,L)$. Their total time per round is
+Indeed $Q>P_0^r\ge t_0^r\ge4K$ and $t_0\le2(4K)^{1/r}$; $r$ is fixed, so all factors other than $K$ in $(32P_0)^r$ are polynomial. The number of candidate oracle calls is at most $K^{1/64}\mathrm{poly}(n,L)$. Their total time per round is
 
 $$
-2^{(\alpha+D/64)M}\operatorname{poly}(n,L).
+2^{(\alpha+D/64)M}\mathrm{poly}(n,L).
 \tag{97}
 $$
 
@@ -1765,11 +1765,11 @@ D_i\le\left\lceil\frac{5Q_i}{w_i}
 \tag{100}
 $$
 
-choices suffice. Indeed each step multiplies the uncovered count by at most $1-w_i/(5Q_i)$; using $1-x\le e^{-x}$ makes the final integer count less than one. Initialization costs $|G_i|Q_i$, and each search and deletion pass costs $|G_i|w_i\operatorname{poly}(n,L)$. Thus all local covering work and state cost $|G_i|Q_i\operatorname{poly}(n,L)$, including the residue deduplication. For $w_i=Q_i=1$, use residue zero. In general,
+choices suffice. Indeed each step multiplies the uncovered count by at most $1-w_i/(5Q_i)$; using $1-x\le e^{-x}$ makes the final integer count less than one. Initialization costs $|G_i|Q_i$, and each search and deletion pass costs $|G_i|w_i\mathrm{poly}(n,L)$. Thus all local covering work and state cost $|G_i|Q_i\mathrm{poly}(n,L)$, including the residue deduplication. For $w_i=Q_i=1$, use residue zero. In general,
 
 $$
-D_i\le\operatorname{poly}(n,L)K/w_i,\qquad
-\frac{D_i}{Q_i}\le\frac{\operatorname{poly}(n,L)}{w_i}.
+D_i\le\mathrm{poly}(n,L)K/w_i,\qquad
+\frac{D_i}{Q_i}\le\frac{\mathrm{poly}(n,L)}{w_i}.
 \tag{101}
 $$
 
@@ -1785,10 +1785,10 @@ $$
 \begin{aligned}
 \sum_i|G_i|&\le2|\mathcal C_k|,\\
 \sum_i\frac1{w_i}&\le\frac{4(M+1)(1+\ln|\mathcal C_k|)}T
-\le\operatorname{poly}(M)\frac{B}{NK_0\theta},\\
+\le\mathrm{poly}(M)\frac{B}{NK_0\theta},\\
 I&\le K\sum_i\frac1{w_i}
-\le\operatorname{poly}(M)K/T
-\le\operatorname{poly}(M)2^{(d+\eta)M}.
+\le\mathrm{poly}(M)K/T
+\le\mathrm{poly}(M)2^{(d+\eta)M}.
 \end{aligned}
 \tag{102}
 $$
@@ -1797,26 +1797,26 @@ Combining (101) and (102) gives the full filtering rate
 
 $$
 \boxed{\sum_i\frac{D_i}{Q_i}
-\le\operatorname{poly}(n,L)\frac{B}{NK_0\theta}.}
+\le\mathrm{poly}(n,L)\frac{B}{NK_0\theta}.}
 \tag{103}
 $$
 
 Every local residue repetition is included. Equations (86), (96), and (88) also give
 
 $$
-\max_iD_i\le\operatorname{poly}(n,L)K/T
-\le\operatorname{poly}(n,L)2^{(d+\eta)M}.
+\max_iD_i\le\mathrm{poly}(n,L)K/T
+\le\mathrm{poly}(n,L)2^{(d+\eta)M}.
 $$
 
 The total reported-witness and complete-cover costs are at most
 
 $$
 \sum_i|G_i|w_i+\sum_i|G_i|Q_i
-\le 2^M K\operatorname{poly}(n,L).
+\le 2^M K\mathrm{poly}(n,L).
 \tag{104}
 $$
 
-Shared witness-table preprocessing and selectors cost $I2^M\operatorname{poly}(n,L)$. All candidate-prime oracle calls cost $I2^{(\alpha+D/64)M}\operatorname{poly}(n,L)$. These charges include the full-family modulus scale and its residue states, in addition to harmonic filtering.
+Shared witness-table preprocessing and selectors cost $I2^M\mathrm{poly}(n,L)$. All candidate-prime oracle calls cost $I2^{(\alpha+D/64)M}\mathrm{poly}(n,L)$. These charges include the full-family modulus scale and its residue states, in addition to harmonic filtering.
 
 Each assigned round covers every residue for every served prefix. A common shift of its local residue sequence preserves coverage by translating the residue to be covered oppositely. Choose the modulus and shift separately in each round.
 
@@ -1833,9 +1833,9 @@ $$
 For a selected round, let $\mathcal B_U,\mathcal B_V$ be its allowed typed prefix records, after undoing its flips. Their exact full keys are
 
 $$
-\operatorname{key}(u)=\operatorname{blockkey}(u)+\operatorname{outersum}(u),
+\mathrm{key}(u)=\mathrm{blockkey}(u)+\mathrm{outersum}(u),
 \qquad
-\operatorname{key}'(v)=\tau-\operatorname{blockkey}(v)-\operatorname{outersum}(v).
+\mathrm{key}'(v)=\tau-\mathrm{blockkey}(v)-\mathrm{outersum}(v).
 \tag{106}
 $$
 
@@ -1843,7 +1843,7 @@ The binary row universe has size $\binom m{tm}\le2^{Rm}$ and the query universe 
 
 $$
 D_U|\mathcal B_U|,\ D_V|\mathcal B_V|
-\le\operatorname{poly}(M)2^{[v(q)+\zeta]M_0+O_{H_0}(1)}.
+\le\mathrm{poly}(M)2^{[v(q)+\zeta]M_0+O_{H_0}(1)}.
 \tag{107}
 $$
 
@@ -1863,15 +1863,15 @@ The relevant layers stay in $(1/5,4/5)$ and $\kappa-\kappa_0=O(1/M)$, so $M|h(\k
 
 $$
 D_U|\mathcal B_U|,\ D_V|\mathcal B_V|
-\le\operatorname{poly}(M)2^{[v_0+1-h(\kappa)+\zeta]M}.
+\le\mathrm{poly}(M)2^{[v_0+1-h(\kappa)+\zeta]M}.
 \tag{108}
 $$
 
 For modulus $Q_i$, rebuild the cached outside residue buckets and histograms. Enumerate the raw prefix patterns to form prefix-key histograms, convolve them directly with the outside histograms, and reflect the $V$ sums around $\tau$. The resulting nonnegative weighted-load array is
 
 $$
-W_i(r)=D_U\#\{u:\operatorname{key}(u)\equiv r\}
-+D_V\#\{v:\operatorname{key}'(v)\equiv r\}.
+W_i(r)=D_U\#\{u:\mathrm{key}(u)\equiv r\}
++D_V\#\{v:\mathrm{key}'(v)\equiv r\}.
 $$
 
 For the local cover $\delta_{i,1},\ldots,\delta_{i,D_i}$, scan all common shifts and choose $\sigma_i$ minimizing $\sum_jW_i(\delta_{i,j}+\sigma_i)$. Its value is at most
@@ -1883,7 +1883,7 @@ $$
 \tag{109}
 $$
 
-Direct cyclic convolution and shift evaluation cost $O(Q_i^2)$ and $O(Q_iD_i)\le Q_i^2\operatorname{poly}(n,L)$ integer operations, respectively.
+Direct cyclic convolution and shift evaluation cost $O(Q_i^2)$ and $O(Q_iD_i)\le Q_i^2\mathrm{poly}(n,L)$ integer operations, respectively.
 
 For each chosen residue and each $U$ prefix key $x$, access only the outside bucket at $\delta_{i,j}+\sigma_i-x$. On side $V$ access the bucket at $\tau-x-\delta_{i,j}-\sigma_i$. Emit its entries and only then enumerate each retained record's circuit adjacency. Raw prefix enumeration and bucket lookups pay the overhead; (109) pays every emitted record because both degree caps are at least one.
 
@@ -1906,7 +1906,7 @@ For each selected round and each local residue occurrence, use the common exact 
 
 $$
 \sum_{u,v}
-1_{\operatorname{key}(u)=\operatorname{key}'(v)}
+1_{\mathrm{key}(u)=\mathrm{key}'(v)}
 1_{\text{coordinatewise compatible}(u,v)}.
 \tag{111}
 $$
@@ -1919,7 +1919,7 @@ Recover a pair from a positive count by bisecting the retained $U$ list and reco
 
 ### I.3.8. All remaining costs and uniformity
 
-The remaining operations have the following bounds up to $\operatorname{poly}(n,L)$ factors. Here $I\le2^{(d+\eta)M}\operatorname{poly}(n,L)$, $Q_i\le2^{DM}\operatorname{poly}(n,L)$, and $\max_iD_i\le2^{(d+\eta)M}\operatorname{poly}(n,L)$.
+The remaining operations have the following bounds up to $\mathrm{poly}(n,L)$ factors. Here $I\le2^{(d+\eta)M}\mathrm{poly}(n,L)$, $Q_i\le2^{DM}\mathrm{poly}(n,L)$, and $\max_iD_i\le2^{(d+\eta)M}\mathrm{poly}(n,L)$.
 
 $$
 \begin{array}{c|c}
@@ -1937,7 +1937,7 @@ $$
 \tag{112}
 $$
 
-A raw prefix list has at most $2^M$ times a fixed boundary factor, since $R\le1$ and $Q_{\rm ent}<1$. Enumerating it for every round and residue therefore gives the prefix-lookup line. Even scanning both outside lists once per residue costs at most $I\max_iD_i\,2^{(n-M)/2-dM+O(1)}$, giving the outside line. Histogram convolution and shift scans cost $I\max_iQ_i^2\operatorname{poly}(n,L)$. The energy row includes every candidate prime at all 64 stages; the prime sieve is smaller. Section I.4 certifies all these rates at $d<d_0$.
+A raw prefix list has at most $2^M$ times a fixed boundary factor, since $R\le1$ and $Q_{\rm ent}<1$. Enumerating it for every round and residue therefore gives the prefix-lookup line. Even scanning both outside lists once per residue costs at most $I\max_iD_i\,2^{(n-M)/2-dM+O(1)}$, giving the outside line. Histogram convolution and shift scans cost $I\max_iQ_i^2\mathrm{poly}(n,L)$. The energy row includes every candidate prime at all 64 stages; the prime sieve is smaller. Section I.4 certifies all these rates at $d<d_0$.
 
 There are $M+1$ layers and fixed numbers of boundary coordinates,
 count variables and prime factors. The counts have polynomial bit length
@@ -2419,7 +2419,7 @@ a binary witness by bisection; if all counts vanish, completeness gives
 NO. This applies to signed weights, repetitions, zeros, and coincidences.
 
 The ledger and (131) bound input-dependent work by
-$\operatorname{poly}(n,L)2^{En}$. Rounding and the boundary change only
+$\mathrm{poly}(n,L)2^{En}$. Rounding and the boundary change only
 constant factors; the finite small-input range is handled exhaustively
 with a fixed polynomial coefficient. Adding $C$ proves the theorem. $\square$
 
@@ -2459,7 +2459,7 @@ Sum on `n` indexed signed binary integers of total encoding length `L`, and
 returning an indexed witness on YES instances, using
 
 $$
-C_{\rm new}+\operatorname{poly}(n,L)2^{E_{\rm new}n}
+C_{\rm new}+\mathrm{poly}(n,L)2^{E_{\rm new}n}
  \tag{XSS2}
 $$
 

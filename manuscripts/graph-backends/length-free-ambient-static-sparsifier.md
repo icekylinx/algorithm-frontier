@@ -36,14 +36,14 @@ vertex, it produces an explicit simple path for each token with
 $$
 \text{length}\leq\Lambda,\qquad
  \text{edge-occurrence congestion}\leq D Q,
- \quad Q=\Lambda\phi^{-O(1)}\operatorname{poly}(U).
+ \quad Q=\Lambda\phi^{-O(1)}\mathrm{poly}(U).
                                                         \tag{2}
 $$
 
 The work, including its O(log(M+2)) fresh oracle rounds, is
 
 $$
-(mF+M\Lambda)\operatorname{poly}(U).
+(mF+M\Lambda)\mathrm{poly}(U).
                                                         \tag{3}
 $$
 
@@ -122,7 +122,7 @@ minimum degree at least phi 2^i. No maximum-degree promise is used.
 All decomposition and pruning work is bounded by
 
 $$
-|E(J)|\,2^{O(U/r+r^2h+rh)}\operatorname{poly}(U).
+|E(J)|\,2^{O(U/r+r^2h+rh)}\mathrm{poly}(U).
                                                         \tag{5}
 $$
 
@@ -201,7 +201,7 @@ C(\Pi'\circ\Pi_{W\to J})
  \leq O\!\left(
      QC_0/\phi+\Lambda(\Delta+1)\log(N_{\rm amb}+2)
        \right)
- \leq Q\phi^{-O(1)}\operatorname{poly}(U)(C_0+\Delta).
+ \leq Q\phi^{-O(1)}\mathrm{poly}(U)(C_0+\Delta).
                                                         \tag{11}
 $$
 
@@ -259,7 +259,7 @@ records. From (7),
 $$
 |E(\widetilde J)|
     \leq |V(J)|+\Lambda\sum_i|E(W_i)|
-    \leq |V(J)|\Lambda\phi^{-1}\operatorname{poly}(U).    \tag{14}
+    \leq |V(J)|\Lambda\phi^{-1}\mathrm{poly}(U).    \tag{14}
 $$
 
 Compose the J-to-W paths from Section 5 with the selected W-to-J
@@ -270,7 +270,7 @@ Weighted composition of (11) and (12) gives
 
 $$
 C(\Pi'\circ\Pi_{J\to\widetilde J})
-   \leq Q^2\phi^{-O(1)}\operatorname{poly}(U)
+   \leq Q^2\phi^{-O(1)}\mathrm{poly}(U)
                                       (C_0+\Delta).     \tag{15}
 $$
 
@@ -290,7 +290,7 @@ the output satisfies
 $$
 \boxed{
  \begin{aligned}
- |E(\widetilde J)|&\leq |V(J)|\Gamma\operatorname{poly}(U),\\
+ |E(\widetilde J)|&\leq |V(J)|\Gamma\mathrm{poly}(U),\\
  L(\Pi_{J\to\widetilde J})&\leq\Gamma,\\
  L(\Pi'\circ\Pi_{J\to\widetilde J})&\leq\Gamma L_0,\\
  C(\Pi'\circ\Pi_{J\to\widetilde J})&\leq
@@ -306,7 +306,7 @@ explicit path-list processing fit
 
 $$
 |E(J)|F^{O(1)}\Gamma^{O(1)}(L_0+1)
-                       \operatorname{poly}(U),           \tag{18}
+                       \mathrm{poly}(U),           \tag{18}
 $$
 
 plus actual input vertex bookkeeping. For token generation and

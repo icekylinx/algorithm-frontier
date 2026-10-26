@@ -196,7 +196,7 @@ each new deletion.
 Here is an explicit obstruction to the statement:
 
 > Any old assignment feasible for (6) can be repaired after one
-> resource deletion using only $O(D\operatorname{polylog}M)$
+> resource deletion using only $O(D\mathrm{polylog}M)$
 > other group changes.
 
 The obstruction works for every integer $C\geq1$, including
@@ -384,7 +384,7 @@ pays for large cascades from its initial credit and replenishes that
 credit under actual updates.
 
 It does **not** refute a total bound such as
-$(M+Q)\operatorname{polylog}(MR)$. One cascade in (15) can be
+$(M+Q)\mathrm{polylog}(MR)$. One cascade in (15) can be
 paid from an $O(M)$ initialization allowance. Nor does it force
 every algorithm to start in this saturated old assignment. A carefully
 chosen maintained assignment could avoid this particular state.

@@ -199,7 +199,7 @@ gain actions has pair work
 $$
 O\!\left(
    \left[\sum_{\nu=1}^{c}(|X_\nu|-1)+LG\right]
-   \operatorname{polylog}N
+   \mathrm{polylog}N
  \right).
 $$
 This count does not assume that every failed small-budget trial

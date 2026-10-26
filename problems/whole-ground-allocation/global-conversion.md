@@ -11,7 +11,7 @@ The explicit time bound for a supplied rational A>1 is
 
 $$
 (2-1/A)^q\,
-       2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H).
+       2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
 \tag{G1}
 $$
 
@@ -209,9 +209,9 @@ is at least one.
 Multiplying G9 by the at most `(ell+1)^m` profiles gives
 
 $$
-[(\ell+1)(\ell+2)]^m(2-1/A)^q\operatorname{poly}(H)
+[(\ell+1)(\ell+2)]^m(2-1/A)^q\mathrm{poly}(H)
    =(2-1/A)^q
-     2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H).
+     2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
 \tag{G10}
 $$
 

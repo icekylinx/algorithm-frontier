@@ -127,7 +127,7 @@ If the chosen target comparator is feasible at T and delta(T/d_k)<=k,
 the algorithm succeeds with minimum value at least B. Its time is
 
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\},
  \tag{D5}
 $$

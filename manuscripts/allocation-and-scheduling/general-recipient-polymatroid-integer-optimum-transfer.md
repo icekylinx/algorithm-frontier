@@ -63,14 +63,14 @@ For r>=1, define d=tau+4rho. There is a deterministic algorithm with
 integer-optimum approximation factor
 
 $$
-\boxed{d\quad\text{in }2^{O(r)}\operatorname{poly}(H),}
+\boxed{d\quad\text{in }2^{O(r)}\mathrm{poly}(H),}
  \tag{P3}
 $$
 
 or, for a positive rational accuracy parameter eta, factor d+eta in
 
 $$
-\boxed{\operatorname{poly}(H)
+\boxed{\mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.}
  \tag{P4}
 $$

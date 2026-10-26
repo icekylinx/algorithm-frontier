@@ -203,7 +203,7 @@ An upward dyadic approximation to $\log2$ with error at most
 $\eta/(2B)$ suffices. Divide every packing value by $S$. By
 (13), the result is exactly capacity feasible. The scaling number has
 $O(U)$ bits, and an interval algorithm for $\log2$ computes it
-in $\operatorname{poly}(U)$ bit operations.
+in $\mathrm{poly}(U)$ bit operations.
 
 ## 4. The packing value remains $\lambda(U)/(4+O(\eta))$
 
@@ -362,7 +362,7 @@ All exact loads have common denominator $\alpha$; their numerators
 are at most $\alpha W\,O(U)$. The exponent $\eta a_e/c_e$
 is therefore a rational with $O(U)$ bits and magnitude $O(U)$.
 Certified evaluation of its exponential to absolute error $g$
-uses $\operatorname{poly}(U)$ bit operations, for example by range
+uses $\mathrm{poly}(U)$ bit operations, for example by range
 reduction and interval Taylor arithmetic. The output accuracy needs
 only $\log(1/g)=O(U)$ bits. This remains true for every refresh;
 there is no growing product denominator.
@@ -449,7 +449,7 @@ time. Substituting both bounds in (24) yields
 $$
 \widetilde O(m_H\lambda_H)
            \leq m'\varepsilon^{-14}F_5(N)^2
-                    \operatorname{poly}(U).
+                    \mathrm{poly}(U).
        \tag{25}
 $$
 

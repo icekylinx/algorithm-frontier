@@ -5,7 +5,7 @@
 Two arbitrary coordinate orders with a common nonnegative integer weight vector admit exact mixed prefix-quota optimization in
 
 $$
-\boxed{2^{O(B\log(B+2))}\operatorname{poly}(H),
+\boxed{2^{O(B\log(B+2))}\mathrm{poly}(H),
         \qquad B=\max_j b_j,}
  \tag{TP1}
 $$
@@ -14,7 +14,7 @@ with uniform polynomial binary workspace. There is one global integral polymatro
 
 The exponential order is necessary for general rank oracles, already for unit weights and equality rows. A separate readable rank-program/circuit reduction gives the corresponding exclusion under deterministic ETH. This lower construction is a cumulative-prefix encoding of the known paving-plus-two-partition framework, not a new general framework for three-matroid intersection.
 
-When the second order reverses the first, the upper bound improves to $2^{O(B)}\operatorname{poly}(H)$. Thus mixed prefixes and suffixes on one line have a smaller worst-case exponent than two unrestricted orders.
+When the second order reverses the first, the upper bound improves to $2^{O(B)}\mathrm{poly}(H)$. Thus mixed prefixes and suffixes on one line have a smaller worst-case exponent than two unrestricted orders.
 
 ## 1. Model and precise scope
 
@@ -207,7 +207,7 @@ $$
  \tag{TP16}
 $$
 
-Therefore mixed common-weight prefix/suffix quotas have an exact $2^{O(B)}\operatorname{poly}(H)$ algorithm in uniform polynomial space. The leading constant in TP16 is only a convenient bound.
+Therefore mixed common-weight prefix/suffix quotas have an exact $2^{O(B)}\mathrm{poly}(H)$ algorithm in uniform polynomial space. The leading constant in TP16 is only a convenient bound.
 
 The one-order block lower bound in [exact-weighted-prefix-quotas-max-target.md](exact-weighted-prefix-quotas-max-target.md) applies to this subclass: take consecutive blocks of weights $1,2,3,4$, cumulative equality targets $5,10,\ldots,5d$, and a rank-$2d$ paving resource hiding one of the $2^d$ choices $\{1,4\}$ or $\{2,3\}$ in each block. One can leave the second-order list empty or add its redundant whole-ground equality. Thus $2^{\Omega(B)}$ oracle necessity, and the separately encoded ETH exclusion, persist in the reversed-order subclass. The primary construction and its complete verification are in that companion note.
 
@@ -277,11 +277,11 @@ Its exact rank decoder has four cases: below $B$, return cardinality; above $B$,
 Every Boolean assignment appears among the first $2^\nu$ permutations. Thus the two-order prefix instance is feasible exactly when $\phi$ is satisfiable. By TP20, a deterministic
 
 $$
-2^{o(B\log(B+2))}\operatorname{poly}(H)
+2^{o(B\log(B+2))}\mathrm{poly}(H)
  \tag{TP22}
 $$
 
-exact algorithm in this readable encoded-rank model would give a deterministic $2^{o(\nu)}\operatorname{poly}(|\phi|)$ algorithm for 3-SAT, contradicting deterministic ETH. A randomized statement requires randomized ETH separately. This is not a corresponding hardness claim for matrix, graphic, laminar, or other restricted explicit resource representations.
+exact algorithm in this readable encoded-rank model would give a deterministic $2^{o(\nu)}\mathrm{poly}(|\phi|)$ algorithm for 3-SAT, contradicting deterministic ETH. A randomized statement requires randomized ETH separately. This is not a corresponding hardness claim for matrix, graphic, laminar, or other restricted explicit resource representations.
 
 ## 11. Primary comparison and boundaries
 

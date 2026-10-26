@@ -26,8 +26,8 @@ There is a deterministic algorithm, polynomial in
 $h,\Delta,\psi^{-1}$ and the bit size of the stated lower bound $\psi$,
 that produces an explicit path for each demand with
 $$
-\operatorname{length}\leq 2T,\qquad
- \operatorname{edge\ congestion}=O(bT\log(h+\Delta+2)),
+\mathrm{length}\leq 2T,\qquad
+ \mathrm{edge\ congestion}=O(bT\log(h+\Delta+2)),
  \tag{1}
 $$
 where
@@ -180,10 +180,10 @@ sentinel larger than every genuine key.
 
 In CHS Section 6.4 the leaf size is $h=O(k^4)$, with
 $k=n^{1/p}$, and the leaf's expansion lower bound has inverse
-$\operatorname{poly}(\psi_{\rm root}^{-1},(\log n)^p)$.
+$\mathrm{poly}(\psi_{\rm root}^{-1},(\log n)^p)$.
 Thus the replacement costs
 $$
-\operatorname{poly}(k,\psi_{\rm root}^{-1},(\log n)^p)
+\mathrm{poly}(k,\psi_{\rm root}^{-1},(\log n)^p)
  \tag{11}
 $$
 per leaf, with fixed polynomial degree. Leaf vertex sets are disjoint.

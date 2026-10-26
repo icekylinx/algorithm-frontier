@@ -5,7 +5,7 @@
 With one common coordinate order and one common nonnegative integer weight per coordinate, exact mixed prefix quotas on a single global integral polymatroid can be solved in
 
 $$
-\boxed{\exp(O(B))\operatorname{poly}(H),\qquad B=\max_j b_j,}
+\boxed{\exp(O(B))\mathrm{poly}(H),\qquad B=\max_j b_j,}
 \tag{PX1}
 $$
 
@@ -33,7 +33,7 @@ An arbitrary rational scalar $c^\top x$, with either sign permitted in $c$, is m
 For $B\ge1$, the proof gives the explicit bound
 
 $$
-\exp\!\left(2\sqrt{2qL}\right)\operatorname{poly}(H),
+\exp\!\left(2\sqrt{2qL}\right)\mathrm{poly}(H),
 \qquad q\le3B,\qquad L\le2B-1,
 \tag{PX3}
 $$
@@ -214,11 +214,11 @@ The full rank evaluator returns cardinality below rank, full rank above rank, an
 Prefix feasibility is equivalent to satisfiability, and
 
 $$
-B=5\nu,\qquad H=\operatorname{poly}(\nu+|\phi|).
+B=5\nu,\qquad H=\mathrm{poly}(\nu+|\phi|).
 \tag{PX15}
 $$
 
-Deterministic ETH therefore excludes a deterministic $2^{o(B)}\operatorname{poly}(H)$ exact algorithm in this encoded-rank model. Randomized algorithms require randomized ETH separately. The unconditional query bound PX14 already allows bounded-error randomized decision.
+Deterministic ETH therefore excludes a deterministic $2^{o(B)}\mathrm{poly}(H)$ exact algorithm in this encoded-rank model. Randomized algorithms require randomized ETH separately. The unconditional query bound PX14 already allows bounded-error randomized decision.
 
 These constructions use one global paving resource, not a graphic resource. They also exhibit a strict improvement in the parameter analysis over replacing the largest prefix target by the sum of all cumulative targets. No optimal leading constant is claimed.
 

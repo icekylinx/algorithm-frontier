@@ -14,7 +14,7 @@ a represented simple-path update, and its guard checks cost
 (k+1) polylog S, plus discovered register events. On a fixed
 polynomial-range ledger the total work is
 $$
-(m+\nu(k+1))\operatorname{polylog}S. \tag{1}
+(m+\nu(k+1))\mathrm{polylog}S. \tag{1}
 $$
 
 This is a parameterized interface. General bounded-degree allocation
@@ -91,7 +91,7 @@ First check the best tree-only score. If it is positive, use that path.
 Otherwise run Dijkstra from the core's artificial source. A terminal
 v passes when
 $$
-\operatorname{dist}(v)<A+O_T(v).       \tag{3}
+\mathrm{dist}(v)<A+O_T(v).       \tag{3}
 $$
 This computation takes O((k+1) polylog S) bounded-word work.
 Keep a simple predecessor path and the maximizing starting and
@@ -175,9 +175,9 @@ using a constant number of hop-distance and path-selection queries.
 
 For P=T[a,b], project a vertex c onto P. Its distance from a is
 $$
-\frac{\operatorname{hop}(a,b)
-                         +\operatorname{hop}(a,c)
-                         -\operatorname{hop}(b,c)}2 .
+\frac{\mathrm{hop}(a,b)
+                         +\mathrm{hop}(a,c)
+                         -\mathrm{hop}(b,c)}2 .
 $$
 Select that vertex along P by its hop index. For Q=T[c,d], let
 p,q be the projections of c,d onto P.
@@ -291,12 +291,12 @@ For J steps, Q additional queries and A_T topological records,
 a conservative total bound is
 $$
 \bigl[m_0+\nu_0+(J+Q+A_T)(k+1)+A_x+A_s+R\bigr]
-                              \operatorname{polylog}S.      \tag{4}
+                              \mathrm{polylog}S.      \tag{4}
 $$
 With the objective/variation accounts substituted, this is
 $$
 \bigl[m_0+\nu_0+A_x+A_s
-       +(k+1)(\nu_0+A_s+A_T+Q)\bigr]\operatorname{polylog}S.
+       +(k+1)(\nu_0+A_s+A_T+Q)\bigr]\mathrm{polylog}S.
 $$
 The parameter bounds the actual intermediate graph ranks as
 well as the settled ones; using cuts before insertions in a

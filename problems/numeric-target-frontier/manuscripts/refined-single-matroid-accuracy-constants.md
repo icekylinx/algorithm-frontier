@@ -12,7 +12,7 @@ approximation guarantees in time
 
 $$
 \frac1\epsilon\exp\left(\frac3\epsilon+7\right)
-                   \operatorname{poly}(H_\epsilon).
+                   \mathrm{poly}(H_\epsilon).
  \tag{AC1}
 $$
 
@@ -21,7 +21,7 @@ An elementary sharpening of the same calculation gives the stronger bound
 $$
 \boxed{\frac1\epsilon
        \exp\left(\frac{141}{50\epsilon}+7\right)
-                   \operatorname{poly}(H_\epsilon).}
+                   \mathrm{poly}(H_\epsilon).}
  \tag{AC2}
 $$
 

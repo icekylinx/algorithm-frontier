@@ -22,7 +22,7 @@ The main distinction is between **selected-record recourse** and
 **geometric overlap**. A local update can still create
 $P=\exp O(U/K+g+h)$ child records. Nevertheless the representation
 of the entire current child graph will overlap each physical parent
-vertex or edge only $\operatorname{poly}(U)$ times. Full forest
+vertex or edge only $\mathrm{poly}(U)$ times. Full forest
 copies are charged in the overlap count, even when unused.
 
 ## 1. Existing ingredients retained
@@ -56,7 +56,7 @@ constant, say three after a constant-factor initial adapter. Each
 local period supplies the following data:
 
 1. A family $F_1,\ldots,F_b$ of stable forests, with
-   $b\le Q_0=\operatorname{poly}(U)$. Each is a subforest of
+   $b\le Q_0=\mathrm{poly}(U)$. Each is a subforest of
    the physical parent graph. Within the period its edges only
    disappear; a new vertex is initially isolated. Every living
    physical edge has a fixed positive length.
@@ -66,8 +66,7 @@ local period supplies the following data:
    index. Repeated ownership by repair layers is deduplicated by
    reference counts before publication.
 3. A projected core edge of physical preimage $e=uv$ has endpoints
-   $\operatorname{root}_{F_i}(u),
-   \operatorname{root}_{F_i}(v)$. Its stored core length bounds
+   $\mathrm{root}_{F_i}(u), \mathrm{root}_{F_i}(v)$. Its stored core length bounds
    the physical route consisting of the first root leg, $e$,
    and the second root leg. Logical pivots are roots in every
    relevant stable forest.
@@ -239,7 +238,7 @@ walk of length at most its $B$-length divided by $H$. This
 proves (4). Equal-endpoint distances are zero by convention.
 
 All vertices in one port fiber have the same fixed parent image.
-There are only $\operatorname{poly}(U)$ of them, not $P$ of
+There are only $\mathrm{poly}(U)$ of them, not $P$ of
 them. Each currently exposed physical parent vertex has at most
 one such fiber. A fiber that is no longer needed may be retired
 after its incident records; a subsequent fiber uses a fresh
@@ -382,7 +381,7 @@ has physical length at most the child length divided by $H$.
 
 ## 8. All vertices, including unused copies, are charged
 
-There are $b=\operatorname{poly}(U)$ cores and $10C$
+There are $b=\mathrm{poly}(U)$ cores and $10C$
 colors per core. Each full pool has exactly one node for each
 current live native parent vertex. Hence all pool nodes with
 one given physical image number
@@ -534,7 +533,7 @@ factor polynomial in $d$. Adding the native forest at a level
 and lifting the higher families gives
 
 $$
-G_j\le Q_4(G_{j-1}+1),\qquad Q_4=\operatorname{poly}(U).
+G_j\le Q_4(G_{j-1}+1),\qquad Q_4=\mathrm{poly}(U).
                                                                   \tag{7}
 $$
 
@@ -542,12 +541,12 @@ Thus logarithmic edge/vertex occurrence is $O(dh)$. We may
 use the looser $c=O(d^2h+h)$ below without affecting the
 candidate exponent. Full unused pools are included in $G_j$.
 
-The child graph still emits $P\operatorname{poly}(U)$ edits
+The child graph still emits $P\mathrm{poly}(U)$ edits
 per parent edit, with the initial selected credit from Section 1.
 Each incoming forest edit is forwarded with constant output
 recourse and polynomial-logarithmic work. Source forest and
 virtual-graph edits separately affect all declared pools, and
-therefore pay $G_j\operatorname{poly}(U)$. Even a conservative
+therefore pay $G_j\mathrm{poly}(U)$. Even a conservative
 recurrence that overpays these copy charges multiplicatively
 over levels adds at most
 $\prod_{j\le d}Q_4^{O(j)}=\exp O(d^2h)$. It never multiplies

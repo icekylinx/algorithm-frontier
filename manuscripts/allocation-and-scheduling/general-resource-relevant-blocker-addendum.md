@@ -34,7 +34,7 @@ every unmarked matching recipient at $j$ belongs to a record in
 (R1). Consequently
 
 $$
-M_j\setminus\operatorname{owners}(D(Z)\cup D_{\rm rel}(c))
+M_j\setminus\mathrm{owners}(D(Z)\cup D_{\rm rel}(c))
                            \subseteq Y_j.
  \tag{R2}
 $$

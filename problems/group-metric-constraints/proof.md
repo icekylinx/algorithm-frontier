@@ -2,6 +2,48 @@
 
 This manuscript records the theorem composition used by the family. Full analytic and arithmetic arguments are linked at the lemma that supplies them. The retained objects are always original items, with one nonnegative coefficient each.
 
+## Randomness and confidence
+
+The constructions have different algorithmic types. Section 1's Cayley
+algorithm and the exact rational-rank conversion in Section 4 are
+deterministic. The optional group-operations bundle sampler in [Section 5.1 of the Cayley manuscript](manuscripts/arbitrary-group-cayley-sparsification.md) is instead Monte Carlo, with failure at most $\delta$ for its spectral approximation and stated size bound. The compact modular-block construction is Monte Carlo with
+success at least $2/3$, by the quoted adaptive quotient theorem. The sharper
+compact-input support bound is an existence theorem, rather than that
+algorithm's support guarantee.
+
+The explicit-table constructions in Sections 2 and 3 use randomized partial
+coloring. We use a bounded-attempt Monte Carlo implementation with success at
+least $2/3$, under the supplied separation and numerical-precision contract.
+[Reis--Rothvoss, Theorem 7 (July 2026)](https://arxiv.org/html/2606.28147v2)
+supplies randomized polynomial-time partial coloring with a separation
+oracle. Its constructive Gaussian backend is
+[Reis--Rothvoss, Theorems 6 and 21](https://arxiv.org/html/2007.05634v2);
+the latter bounds a trial's failure by an exponential in the negative
+active dimension, for fixed absolute parameters.
+
+Here is the confidence bookkeeping. There are at most
+$T=1+\lceil\log_{4/3}(m+1)\rceil$ coloring phases. In the explicit rational
+table model, cube membership, all query inequalities for the candidate
+coloring, and its number of saturated coordinates are polynomial-time
+checks. Choose the sign with at least one quarter of the coordinates equal
+to $-1$. Use a bounded number $O(\log(T+2))$ of fresh trials in each phase,
+accepting only a verified coloring and otherwise returning a failure flag.
+The backend's constant success probability makes the conditional probability
+of exhausting a phase's trials at most $1/(3T)$, after fixing the absolute
+constant in that trial budget. The finitely many small active dimensions
+can instead be handled directly. Union over phases gives total failure at
+most $1/3$. Every accepted coloring obeys the deterministic error and support
+ledger below. Fixed additional confidence slack, when needed in a composition,
+changes only constants. No unbounded restart or Las Vegas runtime is asserted.
+
+For indirectly represented metric values, those tests require the stated
+certified separation/precision access and sufficient slack for their
+numerical error; the explicit-table statement does not supply that access
+for arbitrary real numbers. One successful output preserves the entire
+specified query family, so a later query can depend on the output. Gaussian
+orthant and volume probabilities used to prove existence are not algorithm
+failure probabilities.
+
 ## 1. Arbitrarily weighted Cayley generators
 
 **Theorem 1.** For a finite group of order $N\ge2$, every nonnegative weighted sum of regular-representation generator Laplacians has a $(1\pm\epsilon)$ spectral approximation on $O(\epsilon^{-2}\log^3(2N))$ original generator items. A deterministic construction has polynomial bit complexity in the explicit rational permutation-matrix input and $\epsilon^{-1}$.
@@ -65,7 +107,7 @@ Apply the subgroup theorem in $\widetilde G$, whose order is $2|G|^2$, and restr
 
 **Theorem 4.** If one transitive action on an $N$-point space preserves each Hilbertian pseudometric $d_e$ individually, their weighted sum has a whole-item relative-error sparsifier of size $O(\log(2N)/\epsilon^2)$.
 
-**Proof.** Center an embedding of each item to obtain vectors $u_e(x)$. Its Gram matrix is determined by the squared distances and is invariant under the action. Thus $F_x=\sum_e w_e\langle T_e,u_e(x)\rangle$, for independent standard Gaussian vectors $T_e$, is stationary. For an anchor $o$, the event $F_o\le F_x$ for all $x$ has probability at least $1/N$. Put $Y_x=F_o-F_x$ and $Z_x=\sum_e w_e\xi_ed_e(o,x)$. Variances coincide, and Cauchy–Schwarz gives $\operatorname{Cov}(Y_x,Y_y)\le\operatorname{Cov}(Z_x,Z_y)$. Slepian comparison proves Lemma 2's hereditary hypothesis with $p=1/N$. The resulting weights preserve every anchor distance. Any pair can be translated to an anchor pair without changing any individual metric, proving all-pairs preservation. $\square$
+**Proof.** Center an embedding of each item to obtain vectors $u_e(x)$. Its Gram matrix is determined by the squared distances and is invariant under the action. Thus $F_x=\sum_e w_e\langle T_e,u_e(x)\rangle$, for independent standard Gaussian vectors $T_e$, is stationary. For an anchor $o$, the event $F_o\le F_x$ for all $x$ has probability at least $1/N$. Put $Y_x=F_o-F_x$ and $Z_x=\sum_e w_e\xi_ed_e(o,x)$. Variances coincide, and Cauchy–Schwarz gives $\mathrm{Cov}(Y_x,Y_y)\le\mathrm{Cov}(Z_x,Z_y)$. Slepian comparison proves Lemma 2's hereditary hypothesis with $p=1/N$. The resulting weights preserve every anchor distance. Any pair can be translated to an anchor pair without changing any individual metric, proving all-pairs preservation. $\square$
 
 For two-anchor losses $\|u_e-\rho_e(g)v_e\|$, the swap representation on $V_e\oplus V_e$ sends the vector $(u_e,v_e)/\sqrt2$ through $(g,g^{-1})\tau$ by exactly that orbit distance. This gives the finite-group alignment corollary. If there are $k$ action orbits, transitive ordered tuples with one point from each orbit have size $k!\prod_jN_j$; direct-sum Euclidean embeddings encode every original pair up to the same scalar for every item. These arguments and the Bernstein-transform closure are proved in [the transitive](manuscripts/transitive-metrics-and-group-alignment.md) and [few-orbit](manuscripts/hilbert-metric-sums-with-few-orbits.md) manuscripts.
 

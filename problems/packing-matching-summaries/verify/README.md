@@ -20,7 +20,7 @@ before the resource and label factors are included. The Vandermonde degree is pa
 
 For an independent extension context $T$ and protected item $e$, the set
 $$
-A=E\cap\operatorname{cl}_{M^+}(T-e)
+A=E\cap\mathrm{cl}_{M^+}(T-e)
 $$
 is a flat of the original matroid and excludes $e$. The supplied original linear representation yields a functional vanishing on that flat and nonzero on $e$. Combining it with the packing and failure functionals yields a retained replacement outside the context closure.
 

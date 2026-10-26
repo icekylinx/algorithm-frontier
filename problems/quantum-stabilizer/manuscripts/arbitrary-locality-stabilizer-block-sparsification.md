@@ -160,7 +160,7 @@ The right side is one if at least one equation in the block fails. Every simulta
 Homogenize by setting $y=(x,1)$ and $M_e=[\,A_e\ \ s_e\,]$. Let
 
 $$
-S_e=\operatorname{rowspan}_{\mathbb F_p}(M_e)
+S_e=\mathrm{rowspan}_{\mathbb F_p}(M_e)
 \subseteq\mathbb F_p^{d},\qquad d=r+1\le n+1.
 \tag{SB12}
 $$

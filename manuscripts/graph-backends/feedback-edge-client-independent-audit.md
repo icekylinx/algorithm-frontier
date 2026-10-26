@@ -50,7 +50,7 @@ For A at least every source price, the artificial source length
 `A-I_T(v)` is nonnegative. An exit at v is positive precisely when
 
 $$
-\operatorname{dist}(v)<A+O_T(v).
+\mathrm{dist}(v)<A+O_T(v).
 $$
 
 Indeed the corresponding score is
@@ -96,8 +96,8 @@ For two tree paths in the same T, projection of c onto T[a,b] is
 at hop index
 
 $$
-[\operatorname{hop}(a,b)+\operatorname{hop}(a,c)
-        -\operatorname{hop}(b,c)]/2.
+[\mathrm{hop}(a,b)+\mathrm{hop}(a,c)
+        -\mathrm{hop}(b,c)]/2.
 $$
 
 The projections of the second path's endpoints delimit its

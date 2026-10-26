@@ -84,7 +84,7 @@ This is stronger than proving that every reduction preserves an optimum whose en
 
 ## 3. The weighted greedy replacement lemma
 
-For $Y\subseteq E$, let $\operatorname{Greedy}(M,Y,k)$ scan $Y$ in nonincreasing profit order, with fixed deterministic ties, adding an item when matroid independence is maintained and fewer than $k$ items have been retained.
+For $Y\subseteq E$, let $\mathrm{Greedy}(M,Y,k)$ scan $Y$ in nonincreasing profit order, with fixed deterministic ties, adding an item when matroid independence is maintained and fewer than $k$ items have been retained.
 
 **Greedy lemma.** If $S\in\mathcal I$, $|S|\le k$, and $e\in S\cap Y$, then this scan returns an $f\notin S-e$ with
 
@@ -95,9 +95,9 @@ $$
 
 Here $S-e$ can contain items outside $Y$.
 
-To prove it, let $I=S-e$, which has size at most $k-1$. If $e$ is retained, use $f=e$. If the scan has already retained $k$ items by the time it reaches $e$, these items form an independent set of rank $k>|I|$, so some retained item is outside $\operatorname{cl}_M(I)$. All were processed no later than $e$, and have profit at least $c_e$.
+To prove it, let $I=S-e$, which has size at most $k-1$. If $e$ is retained, use $f=e$. If the scan has already retained $k$ items by the time it reaches $e$, these items form an independent set of rank $k>|I|$, so some retained item is outside $\mathrm{cl}_M(I)$. All were processed no later than $e$, and have profit at least $c_e$.
 
-Otherwise the greedy prefix has fewer than $k$ retained items and rejected $e$ because that prefix spans $e$. Since $e\notin\operatorname{cl}_M(I)$, at least one member of the prefix lies outside $\operatorname{cl}_M(I)$; use it as $f$. Again its profit is at least $c_e$. In both cases an item outside the closure is outside $I$ and extends it independently.
+Otherwise the greedy prefix has fewer than $k$ retained items and rejected $e$ because that prefix spans $e$. Since $e\notin\mathrm{cl}_M(I)$, at least one member of the prefix lies outside $\mathrm{cl}_M(I)$; use it as $f$. Again its profit is at least $c_e$. In both cases an item outside the closure is outside $I$ and extends it independently.
 
 This is the same one-matroid property stated as Lemma 2 in Huang, Kakimura, Kobayashi and Terao, *Polynomial Kernels with Reachability for Weighted d-Matroid Intersection* (2026). The proof above records the exact external-context quantifier required here. No packing feasibility is imposed on the greedy pool itself.
 
@@ -108,7 +108,7 @@ Remove matroid loops and items in any zero-capacity row. Such items appear in no
 For each class of items with the same **real row support**, retain only
 
 $$
-\operatorname{Greedy}(M,\text{class},k).
+\mathrm{Greedy}(M,\text{class},k).
 \tag{SK8}
 $$
 
@@ -158,7 +158,7 @@ Construct $t$ disjoint greedy layers:
 $$
 \begin{split}
  V_1&=V,\\
- F_i&=\operatorname{Greedy}(M,V_i,k),\\
+ F_i&=\mathrm{Greedy}(M,V_i,k),\\
  V_{i+1}&=V_i\setminus F_i\qquad(1\le i\le t).
  \end{split}
 \tag{SK11}
@@ -225,7 +225,7 @@ In particular, restricting to $R$ preserves maximum additive profit for every fi
 Enumerating subsets of $R$ of size at most $k$ gives the standard exact time consequence
 $$
 2^{O(\delta k\log(\delta k+2))}
-                         \operatorname{poly}(H).
+                         \mathrm{poly}(H).
 \tag{SK14}
 $$
 The exact FPT order itself is not the new comparison claimed here: sparse item-set packing already permits direct coloring/profile deductions. The stronger result of this note is the deterministic polynomial-time ground reduction with SK3.

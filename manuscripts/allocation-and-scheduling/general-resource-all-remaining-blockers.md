@@ -15,9 +15,9 @@ For player-selection rank $r\ge1$, the main guarantee is
 
 $$
 \boxed{\begin{gathered}
- \text{factor }5-4/r\text{ in }2^{O(r)}\operatorname{poly}(H),\\
+ \text{factor }5-4/r\text{ in }2^{O(r)}\mathrm{poly}(H),\\
  \text{factor }5-4/r+\eta\text{ in }
- \operatorname{poly}(H)
+ \mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.
  \end{gathered}}
  \tag{A1}
@@ -101,12 +101,12 @@ $$
 A last-layer scan treats $j$ as available to $p$ precisely when
 
 $$
-p\notin\operatorname{cl}_{R_j}(X_j\cup Y_j).
+p\notin\mathrm{cl}_{R_j}(X_j\cup Y_j).
  \tag{A3}
 $$
 
 At layer $i$, player eligibility is outside
-$\operatorname{cl}_M(I\setminus\operatorname{owners}(Y_{<i}))$.
+$\mathrm{cl}_M(I\setminus\mathrm{owners}(Y_{<i}))$.
 For an earlier layer use its own selected and blocker prefixes in
 (A3). Each resource closure is determined by at most $2r$ names.
 
@@ -137,7 +137,7 @@ groups and $X_j(Z)$ its selected recipients at $j$. Maintain
 
 $$
 Q_j(Z)=
- \bigl(M_j\setminus\operatorname{owners}(D(Z))\bigr)
+ \bigl(M_j\setminus\mathrm{owners}(D(Z))\bigr)
        \mathbin{\dot\cup}X_j(Z)\in\mathcal I(R_j)
        \qquad\text{for every }Z,j.
  \tag{A5}
@@ -159,7 +159,7 @@ be (A4). For every old $Z$ and each $j\in c$, the prospective
 reservation is
 
 $$
-\Bigl(M_j\setminus\operatorname{owners}(D(Z)\cup D)\Bigr)
+\Bigl(M_j\setminus\mathrm{owners}(D(Z)\cup D)\Bigr)
        \mathbin{\dot\cup}X_j(Z)\mathbin{\dot\cup}\{p\}.
  \tag{A6}
 $$
@@ -195,7 +195,7 @@ legal free center. The converse is unnecessary: a center that is
 already feasible may continue to carry conservative blockers.
 
 Use the accepted player-side rule. An owner outside
-$\operatorname{cl}_M(I)$ augments and ends the phase. Otherwise
+$\mathrm{cl}_M(I)$ augments and ends the phase. Otherwise
 remove its own matching bundle if already matched; for a new spanned
 owner remove a bundle in the earliest layer met by its fundamental
 circuit. This is strictly earlier than the free center's search layer.

@@ -25,14 +25,14 @@ and d=tau+3rho.
 **Theorem 1.** The integer-optimum approximation factor is
 
 $$
-\boxed{d\text{ in }2^{O(r)}\operatorname{poly}(H),}
+\boxed{d\text{ in }2^{O(r)}\mathrm{poly}(H),}
  \tag{Q1}
 $$
 
 or d+eta, eta>0, in
 
 $$
-\boxed{\operatorname{poly}(H)
+\boxed{\mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.}
  \tag{Q2}
 $$

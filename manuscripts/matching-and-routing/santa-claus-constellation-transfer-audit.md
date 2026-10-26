@@ -111,7 +111,7 @@ owners; it does not require three nonempty set differences.
 Consequently a constellation `K` made of such stars satisfies
 
 $$
-z(R(K))\le\#\operatorname{leaves}(K),
+z(R(K))\le\#\mathrm{leaves}(K),
  \qquad z(R(K))\le |V(K)|/2.
 $$
 

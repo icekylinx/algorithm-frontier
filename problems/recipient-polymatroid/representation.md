@@ -136,7 +136,7 @@ $$
 $$
 
 **Proof.** Let $I^*$ be such a basis and
-$E=I^*\setminus\operatorname{cl}_M(J)$. Since a basis has at most
+$E=I^*\setminus\mathrm{cl}_M(J)$. Since a basis has at most
 $r_M(J)$ elements in this flat, $|E|\ge w$. Restrict the target
 allocation to $E$, and denote its count vector of type $j$ by
 $n^*_{\cdot j}$.

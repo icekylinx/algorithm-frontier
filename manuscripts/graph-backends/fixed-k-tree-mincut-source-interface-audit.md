@@ -182,7 +182,7 @@ The first of the following routes has now been supplied:
 1. A corrected main/leaf contraction construction that retains all
    required cuts and proves the aggregate same-k inventory bound.
 2. A source-supported different fixed-k reduction with explicit total
-   maxflow input size $(m+n)\operatorname{polylog}n$.
+   maxflow input size $(m+n)\mathrm{polylog}n$.
 3. A new amortization for the uncovered region $R$ that bounds its
    total processing despite overlap, with all additional oracle work
    below the target 7/8 envelope.

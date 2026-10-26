@@ -100,7 +100,7 @@ $$
  \le w_e^2,
  \tag{9}
 $$
-whereas its contribution to $\operatorname{Cov}(Z_g,Z_h)$ is $w_e^2$. In particular, the coordinate variances match. Slepian comparison gives
+whereas its contribution to $\mathrm{Cov}(Z_g,Z_h)$ is $w_e^2$. In particular, the coordinate variances match. Slepian comparison gives
 $$
 \Pr[Z_g\le0\ \forall g]\ge
  \Pr[Y_g\le0\ \forall g]\ge1/N.
@@ -265,7 +265,7 @@ $$
  \ge e^{-C_2m}.
  \tag{20}
 $$
-The standard Gaussian density is at most $(2\pi)^{-m/2}$, so (20) also gives $\operatorname{Vol}_m(Q)\ge c^m$. This proves Lemma 3. $\square$
+The standard Gaussian density is at most $(2\pi)^{-m/2}$, so (20) also gives $\mathrm{Vol}_m(Q)\ge c^m$. This proves Lemma 3. $\square$
 
 ## 4. From Gaussian sections to sparsification
 
@@ -359,17 +359,17 @@ F_g=\sum_e w_e\langle T_e,\rho_e(g)v_e\rangle,
 $$
 Left translation of $g$ rotates each $T_e$ orthogonally and therefore preserves the joint law of $F$. Hence the identity is a minimum with probability at least $1/|G|$. Moreover,
 $$
-\operatorname{Var}(Y_g)=\sum_e w_e^2 f_e(g)^2
- =\operatorname{Var}(Z_g),
+\mathrm{Var}(Y_g)=\sum_e w_e^2 f_e(g)^2
+ =\mathrm{Var}(Z_g),
 $$
 and Cauchy--Schwarz gives
 $$
-\operatorname{Cov}(Y_g,Y_h)
+\mathrm{Cov}(Y_g,Y_h)
  =
  \sum_e w_e^2
  \langle v_e-\rho_e(g)v_e,v_e-\rho_e(h)v_e\rangle
  \le\sum_e w_e^2 f_e(g)f_e(h)
- =\operatorname{Cov}(Z_g,Z_h).
+ =\mathrm{Cov}(Z_g,Z_h).
  \tag{28}
 $$
 Slepian comparison proves the same hereditary lower bound (6), with $b_e$ replaced by $f_e$. Their nonnegativity is the only other property used in Sections 3--4, so those sections give simultaneous preservation of $\sum_e w_e f_e(g)$. Finally
@@ -398,7 +398,7 @@ The metric theorem is an existence claim. An explicitly supplied anchor-distance
 
 ## 6. Baselines and algorithmic limits
 
-1. **Quanrud, _Quotient Sparsification for Submodular Functions_, SODA 2024.** Theorem 1.1 gives $O(r\log(mr)/\epsilon^2)$ support for real-valued monotone submodular functions of total value $r$, normalized so every positive marginal is at least one, in randomized evaluation-oracle polynomial time. The rank function $S\mapsto\dim\sum_{e\in S}\operatorname{row}(A_e)$ shows that ordinary finite-field whole-block predicates are already included. More generally, **Corollary 1.7 on joint entropy directly includes all the subgroup predicates of this manuscript**, including nonnormal subgroups; the reduction is detailed below. The support/error part of adaptive repeated sparsification gives $O(r\log(2r/\epsilon)/\epsilon^2)$, so the strongest checked subgroup baseline has only one remaining logarithm. This repeated-application consequence is not attributed as a verbatim theorem of Quanrud. For finite-field blocks one should also compare the ordinary dimension-rank version, which can be better when the field is large. <https://kentq.s3.amazonaws.com/submodular-sparsification.pdf>.
+1. **Quanrud, _Quotient Sparsification for Submodular Functions_, SODA 2024.** Theorem 1.1 gives $O(r\log(mr)/\epsilon^2)$ support for real-valued monotone submodular functions of total value $r$, normalized so every positive marginal is at least one, in randomized evaluation-oracle polynomial time. The rank function $S\mapsto\dim\sum_{e\in S}\mathrm{row}(A_e)$ shows that ordinary finite-field whole-block predicates are already included. More generally, **Corollary 1.7 on joint entropy directly includes all the subgroup predicates of this manuscript**, including nonnormal subgroups; the reduction is detailed below. The support/error part of adaptive repeated sparsification gives $O(r\log(2r/\epsilon)/\epsilon^2)$, so the strongest checked subgroup baseline has only one remaining logarithm. This repeated-application consequence is not attributed as a verbatim theorem of Quanrud. For finite-field blocks one should also compare the ordinary dimension-rank version, which can be better when the field is large. <https://kentq.s3.amazonaws.com/submodular-sparsification.pdf>.
 
 2. **Basu, Kothari, Meka, Tudose, _Optimal Sparsifiers for Abelian Cayley Graphs_, July 2026.** This proves optimal $O(\log|G|/\epsilon^2)$ support for individual abelian Cayley generators, using the Reis--Rothvoss framework. A whole subgroup item averages many characters with one shared coefficient. Sparsifying those characters separately does not retain whole original items, so their theorem is an antecedent rather than a direct invocation for (5). The present Gaussian comparison treats that shared coefficient explicitly. <https://arxiv.org/html/2607.08261v1>.
 

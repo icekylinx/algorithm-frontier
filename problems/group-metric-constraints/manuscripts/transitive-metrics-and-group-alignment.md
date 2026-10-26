@@ -71,7 +71,7 @@ F_x=\sum_e w_e\langle T_e,u_e(x)\rangle.
 $$
 The process is centered Gaussian. Its covariance is
 $$
-\operatorname{Cov}(F_x,F_y)
+\mathrm{Cov}(F_x,F_y)
    =\sum_e w_e^2\langle u_e(x),u_e(y)\rangle,
 $$
 which is invariant under the common transitive action. Thus the entire joint law is invariant. Every sample has a minimum, and every point has the same probability of being a minimum. Consequently
@@ -89,19 +89,19 @@ Y_x=F_o-F_x,\qquad
 $$
 For every coordinate,
 $$
-\operatorname{Var}(Y_x)
+\mathrm{Var}(Y_x)
  =\sum_e w_e^2d_e(o,x)^2
- =\operatorname{Var}(Z_x).
+ =\mathrm{Var}(Z_x).
  \tag{T11}
 $$
 For two coordinates, Cauchy--Schwarz gives
 $$
 \begin{aligned}
- \operatorname{Cov}(Y_x,Y_y)
+ \mathrm{Cov}(Y_x,Y_y)
  &=\sum_e w_e^2
    \langle u_e(o)-u_e(x),u_e(o)-u_e(y)\rangle\\
  &\le\sum_e w_e^2 d_e(o,x)d_e(o,y)
- =\operatorname{Cov}(Z_x,Z_y).
+ =\mathrm{Cov}(Z_x,Z_y).
 \end{aligned}
  \tag{T12}
 $$
@@ -220,7 +220,7 @@ whole original pairs preserving $L(g)$ within $1\pm\epsilon$ simultaneously for 
 **Proof.** On $\widetilde G=(G\times G)\rtimes C_2$, define an orthogonal representation on $V_e\oplus V_e$:
 $$
 \widetilde\rho_e(a,b)
-   =\operatorname{diag}(\rho_e(a),\rho_e(b)),
+   =\mathrm{diag}(\rho_e(a),\rho_e(b)),
  \qquad
  \widetilde\rho_e(\tau)(x,y)=(y,x).
  \tag{T21}
@@ -326,7 +326,7 @@ $$
 This is a group-alignment loss. Use the diagonal representation
 $$
 \rho_e(x)=
- \operatorname{diag}\bigl((-1)^{\langle a_{ej},x\rangle}\bigr),
+ \mathrm{diag}\bigl((-1)^{\langle a_{ej},x\rangle}\bigr),
  \quad
  (v_e)_j=\frac{\sqrt{c_{ej}}}{2},
  \quad

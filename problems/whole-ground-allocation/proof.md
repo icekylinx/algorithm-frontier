@@ -34,7 +34,7 @@ For A>1 define
 $$
 \mathcal T_A(q,H)=
  (2-1/A)^q\,
- 2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H).
+ 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
  \tag{E1}
 $$
 
@@ -254,7 +254,7 @@ Exactly the invariant E7 holds at every later surviving node.
 Thus the adaptive routine is an extension algorithm with time
 
 $$
-\Gamma(R)^{d-|Z|}\operatorname{poly}(H).
+\Gamma(R)^{d-|Z|}\mathrm{poly}(H).
  \tag{E9}
 $$
 

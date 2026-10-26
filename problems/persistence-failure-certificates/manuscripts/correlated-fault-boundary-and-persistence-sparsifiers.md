@@ -12,7 +12,7 @@ dimension at most p, where p>=1. Its full (p-1)-skeleton will be retained. Let N
 be the number of p-simplices and let
 
 $$
-A=\partial_p(K;F),\qquad r=\operatorname{rank}_F A.
+A=\partial_p(K;F),\qquad r=\mathrm{rank}_F A.
  \tag{T1}
 $$
 
@@ -395,7 +395,7 @@ Encode vertex v by psi(v), the vector of all degree-at-most-h monomials in
 these a nonconstant coefficients, including the constant monomial 1. Let
 
 $$
-s=\operatorname{rank}[\psi(v)]_{v\in V}
+s=\mathrm{rank}[\psi(v)]_{v\in V}
        \le \min\left\{n,\binom{h+a}{a}\right\}.
  \tag{T21}
 $$

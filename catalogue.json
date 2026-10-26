@@ -1,23 +1,25 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "groups": [
     {
       "title": "Subset Sum",
-      "note": "Time counts deterministic bit operations; $L$ is the complete input length. The two rows are separate algorithms.",
+      "note": "Time counts deterministic bit operations; $L$ is the complete input length. The two entries describe separate algorithms.",
       "records": [
         {
           "id": "subset-sum-fast-deterministic",
           "title": "Faster deterministic Subset Sum",
           "result": "Exact decision and indexed witness",
-          "quantity": "$C+\\operatorname{poly}(n,L)2^{0.495891928n}$; exact rational exponent on the card",
-          "scope": "Exact rational certification of all 44 continuous contact branches; C is finite input-independent circuit precomputation; combinatorial compiler and bit-cost proofs are in the manuscript"
+          "quantity": "$C+\\mathrm{poly}(n,L)2^{0.495891928n}$; exact rational exponent on the card",
+          "scope": "Exact rational certification of all 44 continuous contact branches; C is finite input-independent circuit precomputation; combinatorial compiler and bit-cost proofs are in the manuscript",
+          "randomness": "Deterministic exact algorithm in the uniform bit model, including indexed-witness recovery and input-independent deterministic circuit construction; no probability of error."
         },
         {
           "id": "subset-sum-low-space-deterministic",
           "title": "Low-space deterministic Subset Sum",
           "result": "Exact decision and indexed witness",
-          "quantity": "Time $\\operatorname{poly}(n,L)2^{n/2}$; writable bits $\\operatorname{poly}(n,L)2^{0.18261635770550353n}$",
-          "scope": "Also half-exponential time and $O^*(2^{n/6})$ space for the stated two-short-range input class"
+          "quantity": "Time $\\mathrm{poly}(n,L)2^{n/2}$; writable bits $\\mathrm{poly}(n,L)2^{0.18261635770550353n}$",
+          "scope": "Also half-exponential time and $O^*(2^{n/6})$ space for the stated two-short-range input class",
+          "randomness": "Deterministic exact algorithm in the uniform bit model, including indexed-witness recovery; the writable-space and restricted-range variants have no probability of error."
         }
       ]
     },
@@ -30,83 +32,94 @@
           "title": "Numeric targets and support patterns",
           "result": "Exact mixed targets and signed-scalar optimization",
           "quantity": "$2^{O(T\\log(2+\\min\\{Q/T,T\\}))}$; fixed dimension $\\exp(O_d((T+1)^{d/(d+1)}))$; one-target decision $2^{O(\\sqrt{T+1})}$",
-          "scope": "$T,Q>0$ in the first formula; zero cases are polynomial. Also unequal targets, overlap/components, stars, seven accuracy schemes and aligned nonlinear transfers"
+          "scope": "$T,Q>0$ in the first formula; zero cases are polynomial. Also unequal targets, overlap/components, stars, seven accuracy schemes and aligned nonlinear transfers",
+          "randomness": "Deterministic upper algorithms in the stated exact rank/optimization-oracle model. The success-probability-2/3 randomized statement is an oracle lower bound, not a randomized upper algorithm."
         },
         {
           "id": "weighted-prefix-quota-frontier",
           "title": "Prefix, laminar and sparse quotas",
           "result": "Exact quota algorithms and deterministic original-ground kernels",
           "quantity": "One order $2^{O(B)}$; two orders $2^{O(B\\log(B+2))}$; $p$ weight families $2^{O(pB\\log(p+2))}$; laminar $2^{O(B^2)}$",
-          "scope": "Also support/family tradeoffs, sparse quotas, coverable/transversal kernels, and edge-matroid matching kernels"
+          "scope": "Also support/family tradeoffs, sparse quotas, coverable/transversal kernels, and edge-matroid matching kernels",
+          "randomness": "Deterministic exact algorithms and deterministic original-ground reductions in the stated exact oracle model; universal colorings are explicitly enumerated rather than sampled."
         }
       ]
     },
     {
       "title": "Graph algorithms",
-      "note": "Use each result’s declared graph cap N, with $U=\\log(N+4)$, $h=\\log(U+4)$ and $\\mathcal E_a=\\exp(O(U^ah^{1-a}))$. The flow row instead displays its numerical cap S explicitly. Conditional compositions retain their named hierarchy, raw-cycle and lifetime interfaces; the MSF row is a derived public baseline.",
+      "note": "Use each result’s declared graph cap N, with $U=\\log(N+4)$, $h=\\log(U+4)$ and $\\mathcal E_a=\\exp(O(U^ah^{1-a}))$. The flow entry instead displays its numerical cap S explicitly. Conditional compositions retain their named hierarchy, raw-cycle and lifetime interfaces; the MSF entry is a derived public baseline.",
       "records": [
         {
           "id": "general-matching",
           "title": "Maximum-cardinality matching",
           "result": "Exact matching with original edge identifiers",
           "quantity": "$O(n+m)+(m_s+1)\\mathcal E_{4/5}$; optional $m_H=O(\\nu(G)^2)$ kernel",
-          "scope": "Conditional on raw-backend Contract R and the named external primitives"
+          "scope": "Conditional on raw-backend Contract R and the named external primitives",
+          "randomness": "Deterministic conditional composition, requiring deterministic external primitives and a deterministic implementation of Contract R."
         },
         {
           "id": "degree-constrained-subgraphs",
           "title": "Degree-constrained subgraphs",
           "result": "Exact factors, interval degrees and cardinality optimization",
           "quantity": "$O(n+m)+(m+1)\\mathcal E_{4/5}$",
-          "scope": "Loopless multigraph; capacity one per explicit edge record; conditional matching backend"
+          "scope": "Loopless multigraph; capacity one per explicit edge record; conditional matching backend",
+          "randomness": "Deterministic reductions conditional on the deterministic matching backend, including Contract R and its external primitives."
         },
         {
           "id": "min-cost-flow",
           "title": "Static and threshold min-cost flow",
           "result": "Exact integral optimum or threshold witness",
-          "quantity": "$O((N+1)E(S)^4\\operatorname{polylog}S)$, $E(S)=\\exp(O((\\log S)^{4/5}(\\log\\log(S+4))^{1/5}))$",
-          "scope": "Conditional raw-cycle lifetime and initialization interfaces; numerical cap S; full-flow output charged separately"
+          "quantity": "$O((N+1)E(S)^4\\mathrm{polylog}S)$, $E(S)=\\exp(O((\\log S)^{4/5}(\\log\\log(S+4))^{1/5}))$",
+          "scope": "Conditional raw-cycle lifetime and initialization interfaces; numerical cap S; full-flow output charged separately",
+          "randomness": "Deterministic exact numerical client conditional on the stated deterministic raw-cycle/lifetime backend, including its guarantees for adaptive polynomial-length histories."
         },
         {
           "id": "incremental-scc",
           "title": "Incremental strongly connected components",
           "result": "Exact component labels",
-          "quantity": "Total $(n+m)\\mathcal E_{4/5}^{O(1)}\\operatorname{poly}(U)$",
-          "scope": "Conditional raw-cycle/retirement interface; total insertion work; component labels only"
+          "quantity": "Total $(n+m)\\mathcal E_{4/5}^{O(1)}\\mathrm{poly}(U)$",
+          "scope": "Conditional raw-cycle/retirement interface; total insertion work; component labels only",
+          "randomness": "Deterministic conditional composition using the deterministic raw-cycle backend and exact nonzero-base, flow-maintenance and retirement interfaces; no randomized error allowance is stated."
         },
         {
           "id": "incremental-sssp",
           "title": "Incremental directed SSSP",
           "result": "$(1+\\epsilon)$ distances and simple paths",
           "quantity": "Total $(n+m)\\exp(O(U^{4/5}h^{1/5}+\\sqrt{U(h+\\log(1/\\epsilon))}))$",
-          "scope": "Conditional detector/retirement interface; positive polynomial-range lengths; $0<\\epsilon\\le1/2$, $\\log(1/\\epsilon)=O(U)$; $k$-edge output costs $(k+1)\\operatorname{poly}(U)$"
+          "scope": "Conditional detector/retirement interface; positive polynomial-range lengths; $0<\\epsilon\\le1/2$, $\\log(1/\\epsilon)=O(U)$; $k$-edge output costs $(k+1)\\mathrm{poly}(U)$",
+          "randomness": "Deterministic conditional composition; its raw-cycle and retirement backend is explicitly required to be deterministic and to support adaptive updates."
         },
         {
           "id": "apsp-frontier",
           "title": "Fully dynamic APSP",
           "result": "A family of update/stretch tradeoffs",
-          "quantity": "Amortized factor $\\exp(O(U/t+t^3h))$; stretch $\\exp(O(t^4h))$; query $\\operatorname{poly}(U)$",
-          "scope": "Conditional metric hierarchy; $t\\to\\infty$, $t^2h=o(U)$; positive polynomial-range lengths; five explicit parameter points"
+          "quantity": "Amortized factor $\\exp(O(U/t+t^3h))$; stretch $\\exp(O(t^4h))$; query $\\mathrm{poly}(U)$",
+          "scope": "Conditional metric hierarchy; $t\\to\\infty$, $t^2h=o(U)$; positive polynomial-range lengths; five explicit parameter points",
+          "randomness": "Deterministic conditional composition under the normalized deterministic metric-hierarchy contract, including its construction, update and query interfaces."
         },
         {
           "id": "dynamic-spanners",
           "title": "Dynamic spanners",
           "result": "Two distinct stretch/recourse regimes",
           "quantity": "Tracked terminals $\\mathcal E_{4/5}$; full-horizon $\\mathcal E_{5/6}$ with recourse $(n+D)\\mathcal E_{5/6}$",
-          "scope": "Conditional hierarchy interfaces; unweighted graph; amortized work includes initial inventory, insertions and deletions"
+          "scope": "Conditional hierarchy interfaces; unweighted graph; amortized work includes initial inventory, insertions and deletions",
+          "randomness": "Both displayed spanner constructions are deterministic conditional on the stated deterministic hierarchy and forest interfaces. Randomized public baselines are comparisons only."
         },
         {
           "id": "dynamic-msf",
           "title": "Dynamic minimum spanning forest",
           "result": "Exact fully dynamic MSF",
           "quantity": "Worst-case update $\\mathcal E_{2/3}$",
-          "scope": "Derived public baseline using the stated decomposition and pruning results"
+          "scope": "Derived public baseline using the stated decomposition and pruning results",
+          "randomness": "Deterministic derived public baseline using deterministic decomposition and pruning in the stated worst-case MSF reduction."
         },
         {
           "id": "decremental-strong-forest",
           "title": "Strong forests and Gomory–Hu trees",
           "result": "Decremental strong forest; exact cut-equivalent tree",
           "quantity": "$O(n+m)+(m+1)\\mathcal E_{6/7}$",
-          "scope": "Conditional forest/flow interfaces; bounded-degree native forest; arbitrary-degree cut-tree transfer with positive polynomial-range integer capacities"
+          "scope": "Conditional forest/flow interfaces; bounded-degree native forest; arbitrary-degree cut-tree transfer with positive polynomial-range integer capacities",
+          "randomness": "Deterministic conditional composition; the strong forest and exact Gomory-Hu transfer require the named deterministic hierarchy, flow, skeleton and guide-tree interfaces."
         }
       ]
     },
@@ -119,49 +132,56 @@
           "title": "Single-failure optimum preservers",
           "result": "Weighted and valuated two-matroid intersection; rooted arborescences",
           "quantity": "Matroids: $O(k^{3/2})$ support/records, $O(k)$ reporting; arborescences: $O(n^{3/2})$, $O(n)$",
-          "scope": "Deterministic polynomial preprocessing; arborescences $\\widetilde O(mn)$ arithmetic work; effective-domain initialization for valuations"
+          "scope": "Deterministic polynomial preprocessing; arborescences $\\widetilde O(mn)$ arithmetic work; effective-domain initialization for valuations",
+          "randomness": "Deterministic preprocessing and reporting in the stated oracle model, including the valuated and arborescence variants. Randomness is not required by the distance-preserver reporting construction."
         },
         {
           "id": "exact-flow-sensitivity",
           "title": "Flow, matching and price sensitivity",
           "result": "Unit-flow/path failures, general matching, two matroids and one-element prices",
           "quantity": "Flow $O(n^{3/2}\\lambda^{1/4})$; matching $4\\mu+2$ edges, or $6\\mu+2$ for edge/vertex failure; matroids $2r+k\\le3r$; prices $O(N+r\\sqrt{\\min\\{N,r^2\\}})$",
-          "scope": "Flow exponent: simple unit-capacity digraph and nonnegative costs. Matching/matroid failures preserve cardinality; each reporting bound is model-specific"
+          "scope": "Flow exponent: simple unit-capacity digraph and nonnegative costs. Matching/matroid failures preserve cardinality; each reporting bound is model-specific",
+          "randomness": "Deterministic preprocessing and queries in each stated flow, matching, matroid and price-sensitivity model; the required exact optimization and independence oracles retain their specified costs."
         },
         {
           "id": "matroid-failure-summaries",
           "title": "Matroid and submodular failure summaries",
           "result": "Represented fixed-cost prefixes; oracle rank and integer-submodular value preservation",
           "quantity": "Rank: $r\\binom{h+d}{d}$; integral submodular range $R$: $R\\binom{h+d}{d}$; sharp marginal/entropy inequality",
-          "scope": "Support capped by original ground size; uniform polynomial represented construction; parameterized oracle construction; rank-only oracle model has no weighted-prefix claim"
+          "scope": "Support capped by original ground size; uniform polynomial represented construction; parameterized oracle construction; rank-only oracle model has no weighted-prefix claim",
+          "randomness": "Deterministic: represented weighted-prefix elimination, oracle-rank FPT/XP constructions and integer-submodular value-summary construction. Random label orderings occur only in the size-bound proof, not in these algorithms."
         },
         {
           "id": "graph-color-failure-certificates",
           "title": "Colored and vertex-failure graph certificates",
           "result": "Exact surviving connectivity and canonical MSF",
           "quantity": "$\\sum_C(n_Ck_C-\\binom{k_C+1}{2})$, $k_C=\\min\\{h+1,q_C\\}$",
-          "scope": "Displayed bound: one color per vertex and a fixed weight order; overlapping vertex lists and additional edge labels have separate bounds"
+          "scope": "Displayed bound: one color per vertex and a fixed weight order; overlapping vertex lists and additional edge labels have separate bounds",
+          "randomness": "Deterministic preprocessing and exact queries. The near-linear single-color construction uses a deterministic dynamic-MSF backend with exchange reporting."
         },
         {
           "id": "packing-matching-summaries",
           "title": "Resource-constrained packing summaries",
           "result": "Weighted universal completion after deletions and forbidden vertices",
           "quantity": "$\\min\\{N,r\\binom{pK+h_v}{p}\\prod_j\\binom{h_j+d_j}{d_j}\\}$",
-          "scope": "Explicit packing sets and represented resource; omit r when absent; full-input gate precedes lift expansion"
+          "scope": "Explicit packing sets and represented resource; omit r when absent; full-input gate precedes lift expansion",
+          "randomness": "Deterministic uniformly polynomial construction over the supplied rational or finite-field representation; no randomized representation, hashing or isolation step is assumed."
         },
         {
           "id": "persistence-failure-certificates",
           "title": "Persistent-homology failure certificates",
           "result": "All surviving boundary spaces and lower-degree persistence modules",
           "quantity": "$\\min\\{N,r\\binom{h+a+b}{a+b}\\}$ retained top simplices",
-          "scope": "One fixed filtration over the stated field; full lower skeleton retained; homology degrees at most $p-1$"
+          "scope": "One fixed filtration over the stated field; full lower skeleton retained; homology degrees at most $p-1$",
+          "randomness": "Deterministic uniformly polynomial construction for the explicit complex and supplied coefficient-field representation, valid simultaneously after every allowed failure."
         },
         {
           "id": "boolean-linear-compiler",
           "title": "Boolean linear optimization compiler",
           "result": "Signed equalities, intervals, witnesses and lexicographic optimization",
-          "quantity": "$\\operatorname{poly}(L)(\\prod_i p_i)2^{\\alpha n+Q-(1-\\alpha)B}$",
-          "scope": "Supplied indexed-witness Subset Sum backend of exponent $\\alpha$; $0\\le B\\le Q$; a space bound requires that same backend"
+          "quantity": "$\\mathrm{poly}(L)(\\prod_i p_i)2^{\\alpha n+Q-(1-\\alpha)B}$",
+          "scope": "Supplied indexed-witness Subset Sum backend of exponent $\\alpha$; $0\\le B\\le Q$; a space bound requires that same backend",
+          "randomness": "Deterministic compiler with a supplied deterministic indexed-witness Subset Sum backend; optimization, witnesses and the stated space transfer retain that same backend contract."
         }
       ]
     },
@@ -174,111 +194,126 @@
           "title": "Correlated spectral, regression and seminorm summaries",
           "result": "PSD forms, norms, weak convex losses, graded incidence and simplicial spectra",
           "quantity": "PSD: $O(\\Gamma r\\epsilon^{-2}\\log(2rQ/\\delta))$; weak regression: $O(\\Gamma\\rho\\epsilon^{-1}\\log(2(p+q)Q/\\delta))$; seminorm existence: $O(rK/\\epsilon^2)$",
-          "scope": "Capped original-item support; one event covers all failures; regression penalties are nonnegative convex; constructive seminorm bounds require the lifted backend"
+          "scope": "Capped original-item support; one event covers all failures; regression penalties are nonnegative convex; constructive seminorm bounds require the lifted backend",
+          "randomness": "Mixed. Importance pools are Monte Carlo with failure at most $\\delta$; random-code variants have code failure at most $\\zeta$, plus any ordinary sampler failure. One success event covers all allowed failures and later queries. Single-failure PSD/regression and coherence-code PSD alternatives are deterministic. Optimal arbitrary-seminorm support is existence only; its constructive alternative is Monte Carlo with the ordinary backend's high-probability guarantee and lifted-access assumptions."
         },
         {
           "id": "label-block-cut",
           "title": "Label and whole-block cut sparsification",
           "result": "Exact incidence decoders, hyperedges, whole blocks and adaptive quotient resparsification",
           "quantity": "$O(\\min\\{m,R\\log(2R/\\epsilon)/\\epsilon^2\\})$, with $R=r\\binom{h+k}{k}$ for incidence label deficit k",
-          "scope": "Compact randomized whole-item construction; full-input gate; graph deficit a+b, hyperedge and commuting-block variants keep their distinct ranks"
+          "scope": "Compact randomized whole-item construction; full-input gate; graph deficit a+b, hyperedge and commuting-block variants keep their distinct ranks",
+          "randomness": "Monte Carlo randomized preprocessing, with success probability at least $2/3$ for one event covering every allowed failure and quotient/cut query. Queries and failed labels may be chosen after the summary is revealed. The exact label decoder and field-extension arithmetic are deterministic."
         },
         {
           "id": "group-metric-constraints",
           "title": "Finite groups, affine constraints and metrics",
           "result": "Cayley generators, subgroups/cosets, modular blocks and Hilbert metric sums",
           "quantity": "Cayley $O(\\epsilon^{-2}\\log^3(2\\lvert G\\rvert))$; subgroups $O(\\epsilon^{-2}\\log(2[G:\\cap_eH_e]))$; cosets $O(\\epsilon^{-2}\\log(2\\lvert G\\rvert))$; transitive metrics $O(\\epsilon^{-2}\\log(2N))$",
-          "scope": "Cayley construction uses explicit matrices; subgroup/coset/metric constructions use explicit query tables; compact modular construction has its separate logarithmic overhead"
+          "scope": "Cayley construction uses explicit matrices; subgroup/coset/metric constructions use explicit query tables; compact modular construction has its separate logarithmic overhead",
+          "randomness": "Mixed. Cayley matrix construction and rational-rank conversion are deterministic; the optional group-operations Cayley variant is Monte Carlo with failure at most $\\delta$. Subgroup, coset and metric table constructions are Monte Carlo partial coloring with success at least $2/3$, using bounded fresh trials and certified table/separation checks under the stated precision contract. Compact modular blocks are Monte Carlo with success at least $2/3$. Optimal compact-input support and the unrestricted few-orbit seminorm branch are existence statements where no such construction is supplied."
         },
         {
           "id": "quantum-stabilizer",
           "title": "Pauli, qudit and stabilizer blocks",
           "result": "Whole-check sparsification and commuting energy witnesses",
           "quantity": "$R=\\log_2(2D)$: support existence $O(\\min\\{m,R/\\epsilon^2\\})$; compact randomized $O(\\min\\{m,R\\log(2R/\\epsilon)/\\epsilon^2\\})$",
-          "scope": "Whole internally commuting blocks; arbitrary cross-block noncommutation. Sharper prime-dimensional rows and separate $2+\\sqrt2$ witness approximation are on the card; witness optimization is exponential"
+          "scope": "Whole internally commuting blocks; arbitrary cross-block noncommutation. Sharper prime-dimensional bounds and separate $2+\\sqrt2$ witness approximation are on the card; witness optimization is exponential",
+          "randomness": "Mixed. Compact and explicit-dimension whole-block sparsification are Monte Carlo with success at least $2/3$; correlated Pauli preprocessing succeeds with probability at least $1-\\delta$ simultaneously for all allowed failures. Sharp support is existential in the compact-input model. Stabilizer-basis surrogate construction and the stated exponential exact witness enumeration are deterministic. All sampling is classical preprocessing randomness."
         },
         {
           "id": "obstruction-boundaries",
           "title": "Exact-separation and non-Fano boundaries",
           "result": "Compact relative-error-body membership and a precise fixed-amplitude matroid obstruction",
           "quantity": "coNP-complete membership; non-Fano sign probability $15/128<1/8$",
-          "scope": "Exact separation would decide the membership problem; the sign obstruction does not refute general sparsification"
+          "scope": "Exact separation would decide the membership problem; the sign obstruction does not refute general sparsification",
+          "randomness": "Deterministic reductions, explicit constructions and exhaustive exact verification. The non-Fano sign probability describes a mathematical random-sign experiment, not a randomized algorithm or algorithm failure probability."
         }
       ]
     },
     {
       "title": "Allocation and resource matroids",
-      "note": "Time entries suppress $\\operatorname{poly}(H)$, or $\\operatorname{poly}(H_\\epsilon)$ for accuracy. Let $q$ be the candidate count, $r$ the selected rank, $c=q-r$, $\\Gamma(R)=R^R/(R-1)^{R-1}$, and $E(q)=2^{O(q\\log\\log(q+2)/\\log(q+2))}$.",
+      "note": "Time entries suppress $\\mathrm{poly}(H)$, or $\\mathrm{poly}(H_\\epsilon)$ for accuracy. Let $q$ be the candidate count, $r$ the selected rank, $c=q-r$, $\\Gamma(R)=R^R/(R-1)^{R-1}$, and $E(q)=2^{O(q\\log\\log(q+2)/\\log(q+2))}$.",
       "records": [
         {
           "id": "arbitrary-value-allocation-scheme",
           "title": "Arbitrary-value allocation scheme",
           "result": "$(1-\\epsilon)\\mathrm{OPT}$ with exact setup and assignment budget",
           "quantity": "$\\binom qr\\exp(O(r/\\epsilon))$",
-          "scope": "Actual selected player basis; integer comparator"
+          "scope": "Actual selected player basis; integer comparator",
+          "randomness": "Deterministic profile and basis enumeration with paid exact rank, submodular-minimization, LP and intersection primitives."
         },
         {
           "id": "recipient-polymatroid",
           "title": "Recipient polymatroids",
           "result": "Factor $4-3/r$; approximate availability and equal-unit extensions",
           "quantity": "$2^{O(r)}$; relaxed factor has a rank-quasipolynomial alternative",
-          "scope": "Integer comparator; binary repeated resources"
+          "scope": "Integer comparator; binary repeated resources",
+          "randomness": "Deterministic current-blocker search with paid exact primitives. A supplied factor-lambda availability oracle must satisfy its certified guarantee on every call."
         },
         {
           "id": "recipient-matroid-configuration",
           "title": "Recipient-matroid configuration",
           "result": "Factor $4-3/r$ against the configuration LP",
           "quantity": "$2^{O(r)}$; factor $\\lambda^{-1}+3-3/r$ with a certified local $\\lambda$ oracle",
-          "scope": "The configuration comparator is explicit"
+          "scope": "The configuration comparator is explicit",
+          "randomness": "Deterministic current-blocker search with exact paid primitives. The optional factor-lambda availability oracle requires a certified per-call guarantee."
         },
         {
           "id": "item-matroid-union",
           "title": "Explicit-item matroid union",
           "result": "Factor $4-3/r$ against the configuration LP",
           "quantity": "$2^{O(r)}$; relaxed factor has the stated rank-quasipolynomial bound",
-          "scope": "Explicit items and liking incidences"
+          "scope": "Explicit items and liking incidences",
+          "randomness": "Deterministic matroid-union reduction and current-blocker search, including both the exact rank-dependent factor and the relaxed quasipolynomial variant."
         },
         {
           "id": "one-value-exact-two",
           "title": "One-value allocation",
           "result": "Exact factor two with setup and assignment budget",
           "quantity": "$(27/4)^c$ or $(50/27)^qE(q)$",
-          "scope": "All fixed integer quota factors are included"
+          "scope": "All fixed integer quota factors are included",
+          "randomness": "Deterministic corank branching and exact-budget recovery; the whole-ground alternative uses deterministic inclusion covers."
         },
         {
           "id": "two-value-exact-two",
           "title": "Intrinsic two-value allocation",
           "result": "Exact factor two for compulsory players",
           "quantity": "$(27/4)^{h_C}$ or $(50/27)^qE(q)$",
-          "scope": "Exact assignment budget; intrinsic values shared by recipients"
+          "scope": "Exact assignment budget; intrinsic values shared by recipients",
+          "randomness": "Deterministic in the exact-two and whole-ground variants, with paid exact completion, rank, LP and decomposition primitives."
         },
         {
           "id": "intrinsic-values-near-two",
           "title": "Intrinsic values near factor two",
           "result": "Factor $2+\\eta$",
           "quantity": "Near-two: $\\Gamma(1/\\epsilon)^k$, $\\epsilon=\\eta/(2+\\eta)$; exact-two: XP $(q+1)^k$ or separated-light $\\Gamma(1/\\sigma)^k$",
-          "scope": "Actual compulsory/optional bases; near-two and exact-two use their distinct threshold-derived coranks. Exact-two is polynomial at corank zero; the $\\sigma$ branch requires a quantified light-value gap. No cost budget"
+          "scope": "Actual compulsory/optional bases; near-two and exact-two use their distinct threshold-derived coranks. Exact-two is polynomial at corank zero; the $\\sigma$ branch requires a quantified light-value gap. No cost budget",
+          "randomness": "Deterministic split enumeration, omission branching and integral recovery, including optional-player, exact-two and constructive local-search fallback variants."
         },
         {
           "id": "unrelated-values-additive",
           "title": "Unrelated-value additive allocation",
           "result": "At player $p$: $\\max\\{0,(1-\\epsilon)\\mathrm{FOPT}-u_p\\}$",
           "quantity": "$\\Gamma(1/\\epsilon)^c$; whole-ground alternative $(2-1/\\Gamma(1/\\epsilon))^qE(q)$",
-          "scope": "An actual permitted set with fractional assignments as comparator; exact assignment budget; whole-ground alternative for fixed accuracy"
+          "scope": "An actual permitted set with fractional assignments as comparator; exact assignment budget; whole-ground alternative for fixed accuracy",
+          "randomness": "Deterministic selection, rational optimization and additive-loss rounding with paid exact primitives; whole-ground selection uses deterministic covers."
         },
         {
           "id": "unrelated-values-joint-role",
           "title": "Unrelated values with a joint role",
           "result": "Factor $2+\\eta$ with setup; exact two in $2^q$; player-specific two-value J2 endpoint",
           "quantity": "$(2-1/\\Gamma(R))^qE(q)$; J2 $(27/4)^{\\nu_C}$ or $(50/27)^qE(q)$",
-          "scope": "Near-two uses fixed $R=(2+\\eta)/\\eta$ and permits an actual optional basis; J2 requires compulsory players with pair values $\\{0,u,a\\}$"
+          "scope": "Near-two uses fixed $R=(2+\\eta)/\\eta$ and permits an actual optional basis; J2 requires compulsory players with pair values $\\{0,u,a\\}$",
+          "randomness": "Deterministic in the near-two, exhaustive exact-two, compulsory J2 and whole-ground variants, with paid exact optimization and rounding primitives."
         },
         {
           "id": "whole-ground-allocation",
           "title": "Whole-ground selection and transfers",
           "result": "Converts forced-omission extensions without changing comparator or exact constraints",
           "quantity": "$A^c\\longmapsto(2-1/A)^qE(q)$",
-          "scope": "Fixed A>1, all-input forced-seed extension and polynomial space; weighted/adaptive selection and rational optimization retained"
+          "scope": "Fixed A>1, all-input forced-seed extension and polynomial space; weighted/adaptive selection and rational optimization retained",
+          "randomness": "Deterministic streamed inclusion covers and fixed-order enumeration. Bernoulli measures in the analysis count branches; the procedure draws no random bits."
         }
       ]
     },
@@ -291,49 +326,56 @@
           "title": "Selected concurrent flow",
           "result": "$(1-\\epsilon)$ of optimum common splittable rate",
           "quantity": "$\\Gamma(1/\\epsilon)^c$ or $(2-1/\\Gamma(1/\\epsilon))^qE(q)$",
-          "scope": "Paid exact restriction selector; permitted commodity set and exact routing constraints; whole-ground alternative for fixed accuracy"
+          "scope": "Paid exact restriction selector; permitted commodity set and exact routing constraints; whole-ground alternative for fixed accuracy",
+          "randomness": "Deterministic branching and exact rational flow-LP optimization, conditional on the paid exact restriction selector; both time alternatives are deterministic."
         },
         {
           "id": "shared-setup-flow",
           "title": "Flow with shared setup budget",
           "result": "$(1-\\epsilon)$ of optimum common rate",
           "quantity": "$\\Gamma(1/\\epsilon)^c$ with the whole-ground alternative",
-          "scope": "Paid minimum-setup restriction optimizer; one combined setup/routing budget; routing-only budgets exact"
+          "scope": "Paid minimum-setup restriction optimizer; one combined setup/routing budget; routing-only budgets exact",
+          "randomness": "Deterministic, conditional on the paid exact minimum-setup restriction optimizer and exact rational flow-LP primitives."
         },
         {
           "id": "robust-scenario-flow",
           "title": "Robust selected flow",
           "result": "One commodity set attains $(1-\\epsilon)\\mathrm{OPT}$ in every scenario",
           "quantity": "$\\Gamma(1/\\epsilon)^c$ with the whole-ground alternative",
-          "scope": "Paid exact restriction selector; separate exact scenario budgets and adaptive splittable routings"
+          "scope": "Paid exact restriction selector; separate exact scenario budgets and adaptive splittable routings",
+          "randomness": "Deterministic for the explicit scenario list, with a paid exact selector. Scenario-dependent routing is recourse after selection, rather than randomized or adversarial input."
         },
         {
           "id": "robust-unrelated-allocation",
           "title": "Robust unrelated allocation",
           "result": "At $(\\omega,p)$: $\\max\\{0,(1-\\epsilon)\\mathrm{FOPT}-u_{\\omega,p}\\}$",
           "quantity": "$\\Gamma(1/\\epsilon)^c$ with the whole-ground alternative",
-          "scope": "One actual basis; exact per-scenario setup/assignment budgets"
+          "scope": "One actual basis; exact per-scenario setup/assignment budgets",
+          "randomness": "Deterministic common-basis selection and exact-budget rounding in each listed scenario; whole-ground selection also uses deterministic covers."
         },
         {
           "id": "robust-bounded-certificates",
           "title": "Robust bounded-width certificates",
           "result": "Fixed integer factor $d\\ge2$ under failure width $w$",
           "quantity": "$A^c$ or $(2-1/A)^qE(q)$, $A=\\max\\{w,\\Gamma((d+1)/(d-1))\\}$",
-          "scope": "Width is a stated promise, not automatic"
+          "scope": "Width is a stated promise, not automatic",
+          "randomness": "Deterministic width-guarded branching and exact unit tests. A width-violation certificate reports a failed promise, rather than a probabilistic failure."
         },
         {
           "id": "robust-width-two-allocation",
           "title": "Width-two robust unit allocation",
           "result": "Exact common-basis unit feasibility",
           "quantity": "$\\varphi^c$ or $((5-\\sqrt5)/2)^qE(q)$",
-          "scope": "$\\varphi=(1+\\sqrt5)/2$; width two bounds minimal aggregate budget-feasible one-unit failures"
+          "scope": "$\\varphi=(1+\\sqrt5)/2$; width two bounds minimal aggregate budget-feasible one-unit failures",
+          "randomness": "Deterministic conflict enumeration, graph-cover branching and exact matroid intersection; the whole-ground alternative uses deterministic covers."
         },
         {
           "id": "robust-two-scenario-hardness",
           "title": "Two-scenario hardness",
           "result": "W[1]-hard exact positive service in corank $c$",
           "quantity": "Parameter-preserving reduction with $c=k$",
-          "scope": "Two explicit scenarios; Boolean recipient ranks are free, while nonnegative assignment costs and both exact budgets remain"
+          "scope": "Two explicit scenarios; Boolean recipient ranks are free, while nonnegative assignment costs and both exact budgets remain",
+          "randomness": "Deterministic parameter-preserving reduction from bounded-integer k-SUM. The stated hardness consequence concerns deterministic algorithms; no randomized reduction is needed."
         }
       ]
     },
@@ -346,56 +388,64 @@
           "title": "Arbitrary-processing scheme",
           "result": "Factor $1+\\epsilon$",
           "quantity": "$\\Pi_\\epsilon^q=2^{O(q/\\epsilon)}$",
-          "scope": "Exact assignment budget for the scheme. Separate common-type/no-budget branch: $\\min\\{\\mathrm{OPT}+a,(1+\\epsilon)\\mathrm{OPT}+u\\}$ in $\\Gamma(1/\\epsilon)^k$ when $c_{\\rm slot}(\\mathrm{OPT})\\le k$, $0<\\epsilon\\le1/2$"
+          "scope": "Exact assignment budget for the scheme. Separate common-type/no-budget branch: $\\min\\{\\mathrm{OPT}+a,(1+\\epsilon)\\mathrm{OPT}+u\\}$ in $\\Gamma(1/\\epsilon)^k$ when $c_{\\mathrm{slot}}(\\mathrm{OPT})\\le k$, $0<\\epsilon\\le1/2$",
+          "randomness": "Deterministic profile enumeration and exact integral recovery, including the compressed-slot-surplus branch, with paid deterministic primitives."
         },
         {
           "id": "activated-machine-scheduling",
           "title": "Activated-machine scheduling",
           "result": "Factors $1+\\epsilon$, $3/2$, and the bucket curve",
           "quantity": "$\\binom qr\\Pi_\\epsilon^r$; $\\binom qr6^r$; $\\binom qr(k+1)^r$",
-          "scope": "Actual rank-$r$ activation bases"
+          "scope": "Actual rank-$r$ activation bases",
+          "randomness": "Deterministic enumeration of activation bases and profiles, followed by exact feasibility and recovery tests."
         },
         {
           "id": "six-profile-three-halves",
           "title": "Six-profile scheduling",
           "result": "Exact factor $3/2$",
           "quantity": "$6^q$",
-          "scope": "Unrelated processing times; six profiles per machine"
+          "scope": "Unrelated processing times; six profiles per machine",
+          "randomness": "Deterministic enumeration of six profiles per machine and exact cost-preserving integral recovery."
         },
         {
           "id": "processing-bucket-tradeoff",
           "title": "Processing-bucket tradeoff",
           "result": "$\\gamma_k=(3\\cdot2^k-1)/(2^{k+1}-1)$",
-          "quantity": "$(k+1)^q\\operatorname{poly}(H+k)$",
-          "scope": "Approaches $3/2$ with increasing bucket depth"
+          "quantity": "$(k+1)^q\\mathrm{poly}(H+k)$",
+          "scope": "Approaches $3/2$ with increasing bucket depth",
+          "randomness": "Deterministic bucket enumeration and exact minimum-cost recovery, for every stated integer bucket depth."
         },
         {
           "id": "two-size-scheduling",
           "title": "Two-size scheduling",
           "result": "Exact $3/2$; separate $5/3$ small-large-count regime",
           "quantity": "$(27/4)^c$ or $(50/27)^qE(q)$; separate $2^{O(h)}$ branch",
-          "scope": "$c=q-h$ is surplus large positions; h is mandatory large-unit count; common type sizes and no assignment-cost budget"
+          "scope": "$c=q-h$ is surplus large positions; h is mandatory large-unit count; common type sizes and no assignment-cost budget",
+          "randomness": "Deterministic rank tests, omission branching and job reconstruction; the independent large-count branch and whole-ground alternative are also deterministic."
         },
         {
           "id": "two-time-scheduling",
           "title": "Per-machine two-time scheduling",
           "result": "Factor $2-1/d$ for fixed integer $d\\ge2$",
           "quantity": "$(2-1/\\Gamma((d+1)/(d-1)))^qE(q)$",
-          "scope": "At most two positive times per machine; zero-time handling is explicit"
+          "scope": "At most two positive times per machine; zero-time handling is explicit",
+          "randomness": "Deterministic quota search and original-total recovery, including the fixed-factor endpoints and deterministic whole-ground conversion."
         },
         {
           "id": "many-size-scheduling",
           "title": "Many-size workload scheduling",
           "result": "$\\min\\{2\\mathrm{OPT},(2-1/(3+\\eta))\\mathrm{OPT}+u\\}$",
           "quantity": "$\\min\\{2^{O(h)},(h+1)^{O((1+\\eta^{-1})\\log(h+1))}\\}$",
-          "scope": "$0<\\eta\\le1$; h counts mandatory largest-size units; common type sizes and no assignment-cost budget"
+          "scope": "$0<\\eta\\le1$; h counts mandatory largest-size units; common type sizes and no assignment-cost budget",
+          "randomness": "Deterministic workload aggregation, rank-based unit search, decomposition and additive rounding in both approximation variants."
         },
         {
           "id": "commitment-scheduling",
           "title": "Commitment scheduling",
           "result": "Bottleneck/additive guarantee; two-size $3/2$ or $5/3$ endpoints",
           "quantity": "$2^{O(k)}$ with a rank-quasipolynomial relaxed alternative",
-          "scope": "Common type sizes without an assignment-cost budget; full-machine contraction permits more large units than machines, and eligibility-width/collision refinements have their own certificates"
+          "scope": "Common type sizes without an assignment-cost budget; full-machine contraction permits more large units than machines, and eligibility-width/collision refinements have their own certificates",
+          "randomness": "Deterministic greedy commitment selection, residual unit search, exact decomposition and additive rounding."
         }
       ]
     },
@@ -408,21 +458,24 @@
           "title": "Hypergraph matching and expander routing",
           "result": "Left-perfect matching or an explicit deficient hitting-set certificate",
           "quantity": "$O(\\lvert A\\rvert+\\lvert B\\rvert)+p\\exp(O(U\\log(2+s)/s))$",
-          "scope": "$\\Delta\\ge4$, right-resource rank r, $U=\\log(p+4)$ and $s=\\log\\Delta$; also certified disjoint paths and density-conditioned spanning expander packing"
+          "scope": "$\\Delta\\ge4$, right-resource rank r, $U=\\log(p+4)$ and $s=\\log\\Delta$; also certified disjoint paths and density-conditioned spanning expander packing",
+          "randomness": "Deterministic certifying hypergraph matching. The routing and expander-packing transfers additionally require the supplied deterministic destructive-support distance interface."
         },
         {
           "id": "independent-transversal",
           "title": "Independent transversals",
           "result": "Independent transversal or a dominating-set/constellation certificate",
           "quantity": "$P\\min\\{e^{O(q)},(q+1)^{O(\\epsilon^{-1}\\log(2+r/\\epsilon))}\\}$",
-          "scope": "Explicit graph/partition; no vertex has r independent neighbours in distinct classes; full bit and rational-accuracy factors remain on the card"
+          "scope": "Explicit graph/partition; no vertex has r independent neighbours in distinct classes; full bit and rational-accuracy factors remain on the card",
+          "randomness": "Deterministic certifying construction, including the elementary exponential fallback; arbitrary choices use fixed tie rules."
         },
         {
           "id": "allocation-lower-bounds",
           "title": "Allocation and scheduling barriers",
           "result": "Below-two allocation and below-$3/2$ scheduling oracle barriers",
           "quantity": "$\\binom qr-1$ deterministic recipient-rank queries",
-          "scope": "Also aggregate configuration gap approaching $r$, residual gap two, and a zero refined-parameter family"
+          "scope": "Also aggregate configuration gap approaching $r$, residual gap two, and a zero refined-parameter family",
+          "randomness": "Lower bounds for deterministic rank-query algorithms, together with explicit integrality-gap constructions. These query statements do not claim the same bound for randomized algorithms."
         }
       ]
     }
@@ -434,15 +487,17 @@
       "title": "Grouped choices under resource deletions",
       "result": "One live representative per group with bounded prefix recourse",
       "quantity": "$O((M\\log R+Q)\\log(M+2))$ representative changes",
-      "scope": "M groups, R resources and Q adaptive deletions; augmenting-path discovery work is separate"
+      "scope": "M groups, R resources and Q adaptive deletions; augmenting-path discovery work is separate",
+      "randomness": "Deterministic representative-maintenance rule, valid against an adaptive deletion order; the recourse bound does not assert near-linear total augmenting-path search time."
     },
     {
       "id": "nonuniform-route-rounding",
       "path": "manuscripts/graph-backends/nonuniform-fractional-path-selection.md",
       "title": "Nonuniform sparse route rounding",
       "result": "Choose one supplied candidate per group while controlling every resource load",
-      "quantity": "Load $\\le2\\mu_x+B\\log(8(\\lvert X\\rvert+1))$; $S\\operatorname{poly}(\\log S,b)$ bit work",
-      "scope": "Explicit sparse occurrences, rational masses and weights; B bounds one weighted occurrence contribution"
+      "quantity": "Load $\\le2\\mu_x+B\\log(8(\\lvert X\\rvert+1))$; $S\\mathrm{poly}(\\log S,b)$ bit work",
+      "scope": "Explicit sparse occurrences, rational masses and weights; B bounds one weighted occurrence contribution",
+      "randomness": "Deterministic sparse rounding by conditional averaging and guarded finite arithmetic. Candidate probabilities are mathematical weights; the implementation does not sample choices."
     },
     {
       "id": "short-path-inventories",
@@ -450,39 +505,44 @@
       "title": "Short path inventories from a shared DAG",
       "result": "Retain at least half of the unit commodities on short candidate routes",
       "quantity": "$O(Z+P)$ arithmetic operations; route length $\\le4H$ and fractional load at most doubled",
-      "scope": "Supplied DAG and rational masses with total weighted length at most MH; explicit expansion is output-charged"
+      "scope": "Supplied DAG and rational masses with total weighted length at most MH; explicit expansion is output-charged",
+      "randomness": "Deterministic extraction from a supplied exact shared DAG and rational flow records. The upstream flow-oracle construction and its randomness are outside this lemma."
     },
     {
       "id": "bounded-width-path-client",
       "path": "manuscripts/graph-backends/bounded-interface-witness-pattern-updates.md",
       "title": "Bounded-width lazy path client",
       "result": "Complete static numerical client with implicit physical-path updates",
-      "quantity": "Time $(m+\\nu)\\exp(O(b^2))h\\operatorname{polylog}S$; space $(m+\\nu)\\exp(O(b^2))$",
-      "scope": "Supplied fixed edge-partition hierarchy of height h and boundary b; decomposition-input work is additional"
+      "quantity": "Time $(m+\\nu)\\exp(O(b^2))h\\mathrm{polylog}S$; space $(m+\\nu)\\exp(O(b^2))$",
+      "scope": "Supplied fixed edge-partition hierarchy of height h and boundary b; decomposition-input work is additional",
+      "randomness": "Deterministic finite-interface numerical client with a supplied edge-partition/separator hierarchy; hierarchy-construction work is additional."
     },
     {
       "id": "forest-support-path-client",
       "path": "manuscripts/graph-backends/complete-unrestricted-forest-one-sided-client.md",
       "title": "Forest-support numerical client",
       "result": "Complete threshold search with unrestricted receiving directions",
-      "quantity": "$(m+\\nu)\\operatorname{polylog}S$ total fixed-ledger work",
-      "scope": "The entire ambient allocation support is a forest, with the stated polynomial-range guards"
+      "quantity": "$(m+\\nu)\\mathrm{polylog}S$ total fixed-ledger work",
+      "scope": "The entire ambient allocation support is a forest, with the stated polynomial-range guards",
+      "randomness": "Deterministic numerical client under the stated ambient-support forest and finite-word contracts, using exact directed tree dynamic programming and lazy path updates."
     },
     {
       "id": "feedback-edge-path-client",
       "path": "manuscripts/graph-backends/feedback-edge-one-sided-client.md",
       "title": "Feedback-edge numerical client",
       "result": "Complete threshold search with k nonforest incidences",
-      "quantity": "$(m+\\nu(k+1))\\operatorname{polylog}S$ total work; $(k+1)\\operatorname{polylog}S$ per query/update plus events",
-      "scope": "Fixed polynomial-range ledger; parameterized support theorem does not improve arbitrary-graph matching time"
+      "quantity": "$(m+\\nu(k+1))\\mathrm{polylog}S$ total work; $(k+1)\\mathrm{polylog}S$ per query/update plus events",
+      "scope": "Fixed polynomial-range ledger; parameterized support theorem does not improve arbitrary-graph matching time",
+      "randomness": "Deterministic numerical client under the stated feedback-edge and finite-word contracts, using exact forest queries and a small Dijkstra computation."
     },
     {
       "id": "weak-haxell-certificates",
       "path": "manuscripts/matching-and-routing/weak-haxell-current-blocker-growth.md",
       "title": "Weak-Haxell certifying matching",
       "result": "Left-perfect matching or an explicit violated hitting-set condition",
-      "quantity": "$P(n+1)^{O((r/\\epsilon)\\log(2+r/\\epsilon))}\\operatorname{poly}(b_\\epsilon+\\log P)$",
-      "scope": "Whole-edge rank $r\\ge2$, $0<\\epsilon<1$; matching under $\\tau(E_S)>(2r-3+\\epsilon)(\\lvert S\\rvert-1)$"
+      "quantity": "$P(n+1)^{O((r/\\epsilon)\\log(2+r/\\epsilon))}\\mathrm{poly}(b_\\epsilon+\\log P)$",
+      "scope": "Whole-edge rank $r\\ge2$, $0<\\epsilon<1$; matching under $\\tau(E_S)>(2r-3+\\epsilon)(\\lvert S\\rvert-1)$",
+      "randomness": "Deterministic certifying augmenting search on the explicit hypergraph; it returns a matching or the stated hitting-set certificate."
     },
     {
       "id": "sparse-separator-corank",
@@ -490,7 +550,8 @@
       "title": "Sparse-separator corank refinement",
       "result": "Smaller extension and whole-ground bases when the returned separator is sparse",
       "quantity": "$\\beta(R,w)^c$; $\\beta(2,3)=(1+\\sqrt5)/2$, $\\beta(3,4)=1+\\sqrt2$",
-      "scope": "Actual separator width w; matching global bases $(5-\\sqrt5)/2$ and $3-\\sqrt2$ use the forced-omission wrapper"
+      "scope": "Actual separator width w; matching global bases $(5-\\sqrt5)/2$ and $3-\\sqrt2$ use the forced-omission wrapper",
+      "randomness": "Deterministic certificate enumeration, relative to the paid exact separator, selection and recovery interfaces. Bernoulli probabilities are used only to count branches."
     },
     {
       "id": "robust-whole-ground-barrier",
@@ -498,15 +559,17 @@
       "title": "Whole-ground robust allocation barrier",
       "result": "Every finite multiplicative guarantee requires near-exhaustive rank queries",
       "quantity": "At least $q^{-1}\\binom qr-1$ deterministic queries; $2^{q-O(\\log q)}$ for balanced rank",
-      "scope": "$2\\le r<q$; q explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication"
+      "scope": "$2\\le r<q$; q explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication",
+      "randomness": "Lower bounds: the self-contained q-scenario oracle proof concerns deterministic algorithms; the attributed two-scenario consequence also excludes bounded-error randomized algorithms."
     },
     {
       "id": "implicit-minimal-bundle-transversal",
       "path": "manuscripts/matching-and-routing/implicit-minimal-bundle-transversal-oracle.md",
       "title": "Implicit minimal-bundle transversals",
       "result": "Disjoint minimal bundles or an explicit domination/constellation certificate",
-      "quantity": "$P(q+1)^{O(\\epsilon^{-1}\\log(2+q/\\epsilon))}\\operatorname{poly}(b+b_\\epsilon+\\log P)$",
-      "scope": "No configuration enumeration or arbitrary-neighbour oracle; certificate class sets retain their distinct meanings"
+      "quantity": "$P(q+1)^{O(\\epsilon^{-1}\\log(2+q/\\epsilon))}\\mathrm{poly}(b+b_\\epsilon+\\log P)$",
+      "scope": "No configuration enumeration or arbitrary-neighbour oracle; certificate class sets retain their distinct meanings",
+      "randomness": "Deterministic implicit construction using fixed-order resource scans and the stated exact bundle operations."
     },
     {
       "id": "critical-quota-free-pool",
@@ -514,7 +577,8 @@
       "title": "Global free pool at the critical quota",
       "result": "Globally resource-free owners cover the current player-rank deficit",
       "quantity": "$r_M(F)\\ge r-k$ when the full quota is $t=3b-2$ and each current record has b units",
-      "scope": "Fully normalized prefix invariant; eligible free owners admit a paid exchange; no faster critical-quota runtime follows"
+      "scope": "Fully normalized prefix invariant; eligible free owners admit a paid exchange; no faster critical-quota runtime follows",
+      "randomness": "Structural rank lemma and deterministic paid search acceleration with exact availability. No improved global running-time bound is asserted."
     },
     {
       "id": "joint-layer-owner-quality",
@@ -522,7 +586,8 @@
       "title": "Jointly independent layer owners",
       "result": "Within-layer joint independence retains the sharp availability-dependent quality",
       "quantity": "Factor $\\lambda^{-1}+3-3/r+\\eta$ with the original rank-exponential or relaxed rank-quasipolynomial time",
-      "scope": "The stated current-blocker and paid availability model; joint independence alone does not supply a polynomial batching theorem"
+      "scope": "The stated current-blocker and paid availability model; joint independence alone does not supply a polynomial batching theorem",
+      "randomness": "Structural guarantee for deterministic current-blocker search, conditional on an availability oracle satisfying its certified factor on every call."
     },
     {
       "id": "laminar-reservation-interface",
@@ -530,7 +595,8 @@
       "title": "Explicit laminar reservation interface",
       "result": "Token reservations and antichain compact certificates for recipient constraints",
       "quantity": "No laminar-depth factor in the resource value certificate",
-      "scope": "Includes the stated local-family interfaces; its older base-model approximation is subsumed by the main recipient-polymatroid theorem"
+      "scope": "Includes the stated local-family interfaces; its older base-model approximation is subsumed by the main recipient-polymatroid theorem",
+      "randomness": "Deterministic explicit-token reservations and fixed-order current-blocker search for the supplied laminar matroids."
     },
     {
       "id": "persistent-path-hitting",
@@ -538,7 +604,8 @@
       "title": "Persistent path-hitting certificates",
       "result": "One shared update set preserves all historical path-hitting certificates",
       "quantity": "$C\\cup I$ hits current short paths; size at most $\\lvert C\\rvert+\\lvert I\\rvert$",
-      "scope": "Deletions and length increases are safe; inserted/decreased edge lifetimes enter I; selected-path and layer repair are separate"
+      "scope": "Deletions and length increases are safe; inserted/decreased edge lifetimes enter I; selected-path and layer repair are separate",
+      "randomness": "Deterministic structural certificate transfer from supplied historical hitting sets; it does not establish a complete fully dynamic matching or disjoint-path algorithm."
     },
     {
       "id": "fixed-potential-tight-dag",
@@ -546,7 +613,8 @@
       "title": "Fixed-potential tight-DAG repairs",
       "result": "Maintain old-label shortest-path forests on tight-reachable vertices",
       "quantity": "$O(m+\\nu)$ total graph work and supplied forest edits per fixed-potential interval",
-      "scope": "No ledger births or label changes inside the interval; potential-refresh work is outside the bound"
+      "scope": "No ledger births or label changes inside the interval; potential-refresh work is outside the bound",
+      "randomness": "Deterministic reachability and parent-repair algorithm within one supplied fixed-potential interval; no global bound across potential refreshes is established."
     },
     {
       "id": "slack-only-directed-client",
@@ -554,23 +622,26 @@
       "title": "Slack-only directed matching reduction",
       "result": "Constant-ratio comparison and a finite-word static threshold oracle",
       "quantity": "Directed nonnegative SSSP reduction with monotone prices and a charged repricing budget",
-      "scope": "The dynamic path-reporting/update provider remains a separate unproved interface; no improved general-matching exponent"
+      "scope": "The dynamic path-reporting/update provider remains a separate unproved interface; no improved general-matching exponent",
+      "randomness": "Deterministic mathematical reduction and exact static threshold oracle. The required fast dynamic interface has not been constructed, so no complete faster dynamic algorithm is classified."
     },
     {
       "id": "residual-configuration-comparator",
       "path": "manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md",
       "title": "Residual-capacity configuration comparator",
       "result": "Integral allocation with factor $4-3/r$ against the strengthened residual-capacity configuration LP",
-      "quantity": "$2^{O(r)}\\operatorname{poly}(H)$; the stated rank-quasipolynomial alternative allows additive accuracy in the factor",
-      "scope": "Arbitrary binary recipient polymatroids and exact local availability; certified factor-$\\lambda$ availability changes the ratio to $\\lambda^{-1}+3-3/r$. The algorithm does not solve the LP"
+      "quantity": "$2^{O(r)}\\mathrm{poly}(H)$; the stated rank-quasipolynomial alternative allows additive accuracy in the factor",
+      "scope": "Arbitrary binary recipient polymatroids and exact local availability; certified factor-$\\lambda$ availability changes the ratio to $\\lambda^{-1}+3-3/r$. The algorithm does not solve the LP",
+      "randomness": "Deterministic current-blocker allocation relative to the stronger LP. A supplied factor-lambda availability oracle must meet its certified guarantee on every call."
     },
     {
       "id": "residual-configuration-fractional-optimization",
       "path": "manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md",
       "title": "Fractional optimization of residual configuration relaxations",
-      "result": "A feasible fractional configuration point at target at least $(1-\\epsilon)\\mathrm{OPT}_{\\rm LP}$",
-      "quantity": "Full LP: $2^{O(q)}\\operatorname{poly}(H,\\epsilon^{-1})$; support-s cuts: $(q+1)^{O(s+1)}\\operatorname{poly}(H,\\epsilon^{-1})$",
-      "scope": "Coordinate-box local families and binary capacities; $s=2(r-1)$ gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding"
+      "result": "A feasible fractional configuration point at target at least $(1-\\epsilon)\\mathrm{OPT}_{\\mathrm{LP}}$",
+      "quantity": "Full LP: $2^{O(q)}\\mathrm{poly}(H,\\epsilon^{-1})$; support-s cuts: $(q+1)^{O(s+1)}\\mathrm{poly}(H,\\epsilon^{-1})$",
+      "scope": "Coordinate-box local families and binary capacities; $s=2(r-1)$ gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding",
+      "randomness": "Deterministic rational ellipsoid optimization, exact-budget profit-scaling dynamic programming and finite primal LP extraction."
     }
   ]
 }

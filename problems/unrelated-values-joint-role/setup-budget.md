@@ -56,7 +56,7 @@ alpha*OPT/2, respecting SD1 exactly, in
 $$
 B(R)^q\,
  2^{O(q\log\log(q+2)/\log(q+2))}
- \operatorname{poly}(H)
+ \mathrm{poly}(H)
  \tag{SD3}
 $$
 

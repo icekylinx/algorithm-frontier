@@ -156,7 +156,7 @@ No new transfer is issued until the entire transaction is settled.
 Each reported register event, point price edit, or endpoint-price
 edit takes
 $$
-3^q\operatorname{poly}(q)\,h        \tag{4}
+3^q\mathrm{poly}(q)\,h        \tag{4}
 $$
 work. A path transfer and its guard query have no dependence
 on the physical path length.
@@ -224,7 +224,7 @@ At the root, the best selected source-to-target path is exactly
 the maximum conservative threshold score in the whole graph.
 Its endpoint bin IDs and score determine its donor cost sum:
 $$
-\bar L=\sigma_a-\tau_b-\operatorname{score}.
+\bar L=\sigma_a-\tau_b-\mathrm{score}.
 $$
 The ordinary physical path remains implicit.
 
@@ -245,7 +245,7 @@ J=O(\nu\log S),\qquad R=O(J+m\log S).
 $$
 With q=O(b^2), the resulting total work is
 $$
-(m+\nu)\exp(O(b^2))\,h\,\operatorname{polylog}S,
+(m+\nu)\exp(O(b^2))\,h\,\mathrm{polylog}S,
                                                                \tag{5}
 $$
 and the space bound is

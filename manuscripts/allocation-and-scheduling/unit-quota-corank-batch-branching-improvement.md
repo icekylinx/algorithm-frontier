@@ -138,7 +138,7 @@ improved gap running time is therefore
 
 $$
 \boxed{\Gamma\!\left(\frac{t}{t-b}\right)^c
-                              \operatorname{poly}(H).}
+                              \mathrm{poly}(H).}
  \tag{B9}
 $$
 
@@ -153,7 +153,7 @@ For t=4 and b=2, R=2 and Gamma(2)=4. Thus the critical four-unit
 promise/two-unit output problem has deterministic time
 
 $$
-4^c\operatorname{poly}(H).
+4^c\mathrm{poly}(H).
  \tag{B10}
 $$
 
@@ -162,8 +162,8 @@ b=ceil(K/2), so R<=3 and Gamma(R)<=Gamma(3)=27/4. The unit allocation
 algorithm consequently runs in
 
 $$
-(27/4)^c\operatorname{poly}(H)
-                           =2^{O(c)}\operatorname{poly}(H)
+(27/4)^c\mathrm{poly}(H)
+                           =2^{O(c)}\mathrm{poly}(H)
  \tag{B11}
 $$
 
@@ -177,7 +177,7 @@ target and reconstruction step, including the exact factor 3/2
 without an additive small-job term. Its running time improves to
 
 $$
-(27/4)^c\operatorname{poly}(H),
+(27/4)^c\mathrm{poly}(H),
  \tag{B12}
 $$
 
@@ -196,7 +196,7 @@ for a rational D>1, the branch ratio becomes
 $$
 R=\frac{D}{D-1},
         \qquad\text{time }\left(\frac{eD}{D-1}\right)^c
-                                      \operatorname{poly}(H).
+                                      \mathrm{poly}(H).
  \tag{B13}
 $$
 

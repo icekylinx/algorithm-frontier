@@ -19,7 +19,7 @@ $$
 At designated settled states it additionally satisfies
 
 $$
-\operatorname{load}_x(d)\le L-w_d.             \tag{1}
+\mathrm{load}_x(d)\le L-w_d.             \tag{1}
 $$
 
 The client permits the representation to replace x by any nonnegative
@@ -154,15 +154,15 @@ incidence is positive. If in>=0 is allocation from external rows and
 out<L is this export, then
 
 $$
-\operatorname{load}(C)=L(|C|-1)-\operatorname{out}
-                                      +\operatorname{in}.
+\mathrm{load}(C)=L(|C|-1)-\mathrm{out}
+                                      +\mathrm{in}.
 $$
 
 Summing (1) and rearranging proves
 
 $$
-w(C)\le L+\operatorname{out}
-                                  -\operatorname{in}<2L.
+w(C)\le L+\mathrm{out}
+                                  -\mathrm{in}<2L.
 $$
 
 This proof permits zero carrier edges. Requiring the carrier to be

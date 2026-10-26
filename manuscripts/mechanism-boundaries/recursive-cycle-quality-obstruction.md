@@ -367,7 +367,7 @@ More generally, let $Z(G)$ be the circulation space of
 a graph. Equation (4) proves the exact spanning identity
 $$
 Z(G_0)=
-   \operatorname{span}\{D_i(e):0\leq i<d,\ e\in E(G_i)\}
+   \mathrm{span}\{D_i(e):0\leq i<d,\ e\in E(G_i)\}
                   +Z(G_d).
  \tag{24}
 $$
@@ -384,7 +384,7 @@ many ancestor corrections. In the zero-gradient case one
 may formulate the special task as
 $$
 \min_{z\in{\cal K}}\|L(c_d+z)\|_1,\qquad
-       {\cal K}=\operatorname{span}\{D_i(e)\}.
+       {\cal K}=\mathrm{span}\{D_i(e)\}.
  \tag{25}
 $$
 The numerator is constant on this affine space.

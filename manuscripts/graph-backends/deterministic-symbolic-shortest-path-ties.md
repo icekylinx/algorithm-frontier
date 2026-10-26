@@ -41,7 +41,7 @@ For a walk $P$, including repeated traversals, define the
 MATHEMATICAL additive perturbation
 $$
 \tau(P)=\sum_{e\text{ traversed in }P}
-                                     2^{-\operatorname{rank}(e)}.
+                                     2^{-\mathrm{rank}(e)}.
  \tag{2}
 $$
 For undirected edges the orientation does not change this
@@ -240,7 +240,7 @@ charged finite-bit costs.
 
 Thus on the compact graph the total work is
 $$
-O\bigl((m+1)\operatorname{poly}
+O\bigl((m+1)\mathrm{poly}
                                   (b+\log(m+2))\bigr)
  \tag{9}
 $$
@@ -250,7 +250,7 @@ If full uncompressed input identifiers are charged bit by bit,
 their actual identifier length must also be included; one safe
 full statement is
 $$
-O\bigl((n+m+1)\operatorname{poly}
+O\bigl((n+m+1)\mathrm{poly}
                               (b+\log(n+m+2))\bigr).
  \tag{10}
 $$
@@ -274,7 +274,7 @@ stopping. Its candidate-node count is O((A+1) log(m+2)), and its
 work is
 
 $$
-(A+V_A+1)\operatorname{poly}(b+\log(m+2)),
+(A+V_A+1)\mathrm{poly}(b+\log(m+2)),
 $$
 
 using the already assigned global ranks. Store tentative labels and

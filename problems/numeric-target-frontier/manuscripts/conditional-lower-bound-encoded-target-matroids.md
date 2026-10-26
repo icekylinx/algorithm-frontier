@@ -10,7 +10,7 @@ stated mixed-target problem on all polynomial-size rank-circuit
 matroids in
 
 $$
-2^{o(T\log(T+2))}\operatorname{poly}(H),
+2^{o(T\log(T+2))}\mathrm{poly}(H),
 \tag{ET1}
 $$
 
@@ -96,7 +96,7 @@ There is no enumeration of all matchings.
 Decode a matching `A` into the `N` assignment bits of
 
 $$
-\operatorname{rank}(A)\bmod 2^N.
+\mathrm{rank}(A)\bmod 2^N.
 \tag{ET5}
 $$
 

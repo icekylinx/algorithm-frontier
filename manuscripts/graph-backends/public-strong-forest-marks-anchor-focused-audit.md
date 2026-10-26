@@ -246,7 +246,7 @@ outside that active set impose no finite metric requirement.
 
 Set $v_0=v$ and $v_{i+1}=p_{i+1}(v_i)$. Since $a$ is a
 logical pivot at every level, with local pivot stretch
-$\rho=\Gamma^{O(K)}\operatorname{poly}(U)$,
+$\rho=\Gamma^{O(K)}\mathrm{poly}(U)$,
 
 $$
 \begin{aligned}

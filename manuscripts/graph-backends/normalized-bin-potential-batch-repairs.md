@@ -79,7 +79,7 @@ Condition (3) checks just those directed constraints entering S.
 
 Let
 $$
-\operatorname{vol}(S)=
+\mathrm{vol}(S)=
                   \sum_{d\in S}(1+\deg(d)).
 $$
 Enumerate the supplied bins and their incident rows. Mark each touched
@@ -133,7 +133,7 @@ O(zeta^{-1} log S) such batches.
 
 On a fixed ledger graph, the total actual update volume is therefore
 $$
-\sum_{\text{batches}}\operatorname{vol}(S)
+\sum_{\text{batches}}\mathrm{vol}(S)
                        =O((m+\nu)\zeta^{-1}\log S).          \tag{5}
 $$
 This pays explicit bin/row label work, semantic-screen updates, and
@@ -216,7 +216,7 @@ potential update or a tight passing path.
 Use the complete threshold graph including its artificial source s.
 For each arc u-to-v define its nonnegative integer reduced cost
 $$
-r_{uv}=\operatorname{length}(uv)+D(u)-D(v).
+r_{uv}=\mathrm{length}(uv)+D(u)-D(v).
 $$
 Fix a bin w with s_w pi_w>6, as some bin has when E>5N and there
 are at most N bins. Choose the integer radius

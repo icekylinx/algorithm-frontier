@@ -55,7 +55,7 @@ $\widetilde J\subseteq J$, and explicit routes
 $\widehat\Pi:J\to\widetilde J$, with
 $$
 \begin{aligned}
- |E(\widetilde J)|&\leq |V(J)|\Gamma\operatorname{poly}(U),\\
+ |E(\widetilde J)|&\leq |V(J)|\Gamma\mathrm{poly}(U),\\
  L(\widehat\Pi)&\leq\Gamma,\\
  L(\Pi'\circ\widehat\Pi)&\leq\Gamma L_0,\\
  C(\Pi'\circ\widehat\Pi)&\leq\Gamma(C_0+\Delta_0).
@@ -65,7 +65,7 @@ $$
 Its work, including the normalization and full explicit ambient
 route lists, is
 $$
-|E(J)|F^{O(1)}\Gamma^{O(1)}(L_0+1)\operatorname{poly}(U),
+|E(J)|F^{O(1)}\Gamma^{O(1)}(L_0+1)\mathrm{poly}(U),
  \tag{4}
 $$
 plus actual vertex bookkeeping. In particular $F$ enters none
@@ -263,7 +263,7 @@ layers. Selected IDs are deduplicated across layer owners before
 degree feedback. The static running time $F$ is local work;
 it does not multiply selected size or recourse.
 
-Let $A=\operatorname{poly}(U)$ cover native translation, stable
+Let $A=\mathrm{poly}(U)$ cover native translation, stable
 core forests, length buckets, and ordinary indexing. The
 selected-degree and encoded child-edit factor is
 $$
@@ -288,16 +288,16 @@ proof is in
 In particular it bounds both projected degree and preliminary
 ambient congestion without a factor $L_j$.
 The native envelope is
-$k\operatorname{poly}(U)$ in the degree-three parent interface.
+$k\mathrm{poly}(U)$ in the degree-three parent interface.
 Together with (3), the repair recurrence is therefore
 $$
 L_{j+1}\leq O(\Gamma)L_j,\qquad
  C_{j+1}\leq O(\Gamma)
-                  \bigl(C_j+k\operatorname{poly}(U)\bigr).
+                  \bigl(C_j+k\mathrm{poly}(U)\bigr).
  \tag{12}
 $$
 It gives length $\Gamma^{O(K)}$ and congestion
-$k\operatorname{poly}(U)\Gamma^{O(K)}$.
+$k\mathrm{poly}(U)\Gamma^{O(K)}$.
 There is no multiplication by $L_j$ in the second recurrence.
 Freezing a settled base and then running another $K$ repair
 layers changes only the constant in $O(K)$.
@@ -314,7 +314,7 @@ signed or absolute motion counters.
 The resulting local work envelope is
 $$
 W=k^{O(1)}\rho^{O(1)}F^{O(1)}
-                      \Gamma^{O(K)}\operatorname{poly}(U).
+                      \Gamma^{O(K)}\mathrm{poly}(U).
  \tag{13}
 $$
 This is where $\Gamma^{O(K)}$ replaces the previous
@@ -546,19 +546,19 @@ phases by $O(s^2)$. The
 [decoupled numerical client](decoupled-numerical-client.md)
 has work
 $$
-O(MD+QD+D^2J)\operatorname{poly}(s),
+O(MD+QD+D^2J)\mathrm{poly}(s),
  \tag{34}
 $$
 where $J$ counts accepted steps and $Q$ includes client calls
 and refreshes. Local and all-expanded exact recovery cost
-$(P_{\rm debt}+1)D^4\operatorname{poly}(s)$; the top run costs
-$SD^4\operatorname{poly}(s)$. These recoveries round the
+$(P_{\rm debt}+1)D^4\mathrm{poly}(s)$; the top run costs
+$SD^4\mathrm{poly}(s)$. These recoveries round the
 already conserved grid flow and use ordinary residual searches.
 They do not call a new static max-flow routine.
 
 After all resets and phases, a favorable complete branch costs
 $$
-SE_*^4\operatorname{poly}(s)
+SE_*^4\mathrm{poly}(s)
     =S\exp O\!\left(s^{5/6}(\log(s+4))^{1/6}\right).
  \tag{35}
 $$

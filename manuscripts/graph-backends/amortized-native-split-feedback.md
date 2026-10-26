@@ -220,9 +220,9 @@ congestion bound than its cited source. In the cited
 the actual guarantee is
 
 $$
-\operatorname{vcong}(\Pi\circ\Pi_{J\to\widetilde J})
- \le\gamma_c\,\operatorname{length}(\Pi)
-                  [\operatorname{vcong}(\Pi)+\Delta(J)].
+\mathrm{vcong}(\Pi\circ\Pi_{J\to\widetilde J})
+ \le\gamma_c\,\mathrm{length}(\Pi)
+                  [\mathrm{vcong}(\Pi)+\Delta(J)].
  \tag{7}
 $$
 

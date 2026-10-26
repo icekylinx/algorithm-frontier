@@ -30,7 +30,7 @@ Historical private isolates from earlier periods are not rescanned.
 
 Use the componentwise stable-forest construction of
 [the disconnected-component wrapper](disconnected-component-backend-wrapper.md).
-Write $A=\operatorname{poly}(U)$ for one fixed polynomial large enough
+Write $A=\mathrm{poly}(U)$ for one fixed polynomial large enough
 to include its number of forests, length buckets, ancestor-closure
 cuts, and ordinary local indexing factors, where $U$ is the common
 master bit/size parameter. In particular:
@@ -156,7 +156,7 @@ private native universe and the period's native history. This is only
 a counter parameter: no array of size $N_{\rm sched}$ is allocated.
 For example, when the actual parent size is at most $2^U$, take
 $M_{\rm cap}=2^{8U}$ and impose executable size/history guards.
-The proof below gives $m\operatorname{poly}(U)$ private records, so
+The proof below gives $m\mathrm{poly}(U)$ private records, so
 this fixed choice eventually suffices without knowing an asymptotic
 constant. Then
 
@@ -307,7 +307,7 @@ correction used in the existing distance lift.
 There is no circular universe assumption. Equations (4), (9), and
 (11) imply $I_0/z\leq O(Am/k)$ after enlarging the fixed polynomial
 $A$. Thus all native slots and cuts during a period with
-$q=O(m/k)$ fit in $m\operatorname{poly}(U)$ private records, well
+$q=O(m/k)$ fit in $m\mathrm{poly}(U)$ private records, well
 within the polynomial-master allowance in (5). A guard checks this
 before a branch can rely on it.
 
@@ -403,7 +403,7 @@ costs their actual total length. Thus the static work and route-change
 notifications can be charged by the same geometric-period summation
 as in Section 3, with the additional local factor in (20).
 Native incidence scans, positive loop awakenings, and physical
-`FindSets` scans cost at most $k\operatorname{poly}(U)$ per relevant
+`FindSets` scans cost at most $k\mathrm{poly}(U)$ per relevant
 native event. They remain local work; they are not child edits.
 For a local static call, its ambient graph is the union of the
 explicit affected routes and central edges, with isolated unrelated
@@ -414,7 +414,7 @@ A sufficiently generous common local envelope is
 
 $$
 W=k^{O(1)}\rho^{O(1)}
-                    \Gamma^{O(K^2)}\operatorname{poly}(U).
+                    \Gamma^{O(K^2)}\mathrm{poly}(U).
  \tag{21}
 $$
 
@@ -586,8 +586,7 @@ the stated actual-input static primitive.
 
 For the finite program, replace the analytical factors $A,\Gamma,r,z$
 by the existing declared dyadic caps of the form
-$2^{c_C(\lceil U/K\rceil+\lceil U^{2/3}\rceil
-\lceil\log_2(U+4)\rceil+\lceil\log_2(U+4)\rceil)}$, raised to fixed
+$2^{c_C(\lceil U/K\rceil+\lceil U^{2/3}\rceil \lceil\log_2(U+4)\rceil+\lceil\log_2(U+4)\rceil)}$, raised to fixed
 powers where needed. Use one such cap for the feedback threshold and
 check the selected-membership prefix on every intermediate cascade.
 Some fixed enumerated $c_C$ eventually dominates all the fixed

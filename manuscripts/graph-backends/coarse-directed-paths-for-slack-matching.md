@@ -16,7 +16,7 @@ $b$, its slack-only ratio is
 
 $$
 \frac{\alpha_a-\alpha_b}
-            {\alpha_a+\alpha_b+\operatorname{len}(a\leadsto b)}.
+            {\alpha_a+\alpha_b+\mathrm{len}(a\leadsto b)}.
                                                                \tag{1}
 $$
 
@@ -24,7 +24,7 @@ The actual matching comparison has ratio greater than $1/2$.
 Decomposing it into directed simple cycles supplies a path satisfying
 
 $$
-\alpha_a>3\alpha_b+\operatorname{len}(a\leadsto b).
+\alpha_a>3\alpha_b+\mathrm{len}(a\leadsto b).
                                                                \tag{2}
 $$
 
@@ -47,7 +47,7 @@ of (2). Then
 
 $$
 b\in B_T,\qquad
-                  \operatorname{dist}(A_T,b)<2T.             \tag{4}
+                  \mathrm{dist}(A_T,b)<2T.             \tag{4}
 $$
 
 Suppose a directed multisource provider has upper distance estimates
@@ -62,7 +62,7 @@ Equation (3) gives
 
 $$
 \alpha_{a'}-\alpha_b>T/3,\qquad
- \alpha_{a'}+\alpha_b+\operatorname{len}(a'\leadsto b)
+ \alpha_{a'}+\alpha_b+\mathrm{len}(a'\leadsto b)
           <(8/3+2\Gamma)T.
 $$
 

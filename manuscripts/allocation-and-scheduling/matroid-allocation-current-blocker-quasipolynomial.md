@@ -56,7 +56,7 @@ $$
 \boxed{
  \mathcal P\,\min\!\left\{2^{O(r)},
             (r+1)^{O(\varepsilon^{-1}\log(r+1))}\right\}
-             \operatorname{poly}(b+\log\mathcal P).
+             \mathrm{poly}(b+\log\mathcal P).
  }
  \tag{M3}
 $$
@@ -74,7 +74,7 @@ boundary B=(T-u)/3 in time and oracle calls
 
 $$
 \boxed{\mathcal P\,2^{O(r)}
-                 \operatorname{poly}(b+\log\mathcal P).}
+                 \mathrm{poly}(b+\log\mathcal P).}
  \tag{M3a}
 $$
 
@@ -139,8 +139,8 @@ described free-center cascade.
 4. A selected bundle in layer i has an owner in
 
 $$
-U_i=P\setminus\operatorname{cl}\bigl(I\setminus
-                 \operatorname{owners}(Y_{<i})\bigr).
+U_i=P\setminus\mathrm{cl}\bigl(I\setminus
+                 \mathrm{owners}(Y_{<i})\bigr).
  \tag{M4}
 $$
 
@@ -233,15 +233,15 @@ contains no owner from Y_<h, by the earliest-layer choice. It is
 therefore a circuit in
 
 $$
-(I\setminus\operatorname{owners}(Y_{<h}))\cup\{p\}.
+(I\setminus\mathrm{owners}(Y_{<h}))\cup\{p\}.
 $$
 
 The independent set inside parentheses contains owner(y). Replacing
 owner(y) by p is a basis exchange inside its span. Consequently
 
 $$
-\operatorname{cl}(I'\setminus\operatorname{owners}(Y'_{<h}))
- =\operatorname{cl}(I\setminus\operatorname{owners}(Y_{<h}))
+\mathrm{cl}(I'\setminus\mathrm{owners}(Y'_{<h}))
+ =\mathrm{cl}(I\setminus\mathrm{owners}(Y_{<h}))
  \quad (h\le j).
  \tag{M6}
 $$

@@ -46,8 +46,8 @@ make n_p occurrences of p in a conceptual parallel extension of R_j.
 Every occurrence subset A obeys
 
 $$
-|A|\le n(\operatorname{supp}A)
-       \le c_j r_{R_j}(\operatorname{supp}A).
+|A|\le n(\mathrm{supp}A)
+       \le c_j r_{R_j}(\mathrm{supp}A).
 $$
 
 The c_j-fold matroid-union criterion partitions the occurrences into
@@ -78,7 +78,7 @@ For a positive target T, use
 
 $$
 \begin{split}
- &x\in P_{\mathcal B(M)},\qquad y_p\in x_p\operatorname{conv}(F_p),\\
+ &x\in P_{\mathcal B(M)},\qquad y_p\in x_p\mathrm{conv}(F_p),\\
  &y_{\cdot j}/c_j\in P_{\mathcal I(R_j)}\quad(c_j>0),\\
  &\sum_jv_jy_{pj}\ge Tx_p.
  \end{split}
@@ -269,7 +269,7 @@ configuration optimum in 2^{O(r)} poly(H) time. For every eta>0 it gives
 factor d+eta in
 
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.
  \tag{S14}
 $$

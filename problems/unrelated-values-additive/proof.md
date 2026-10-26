@@ -30,7 +30,7 @@ utility with fractional resource counts, zero assignments outside $I$,
 and budget (U1). Define
 
 $$
-\operatorname{FOPT}=\max_{I\in\mathcal B}\lambda_I,\qquad
+\mathrm{FOPT}=\max_{I\in\mathcal B}\lambda_I,\qquad
  u_p=\max\bigl(\{v_{pj}:f_j(\{p\})\ge1\}\cup\{0\}\bigr),\qquad
  u=\max_pu_p. \tag{U2}
 $$
@@ -45,13 +45,13 @@ algorithm returns $I\in\mathcal B$ and an integer allocation obeying
 
 $$
 \sum_jv_{pj}x_j(p)\ge
- \max\{0,(1-\varepsilon)\operatorname{FOPT}-u_p\}\qquad(p\in I). \tag{U3}
+ \max\{0,(1-\varepsilon)\mathrm{FOPT}-u_p\}\qquad(p\in I). \tag{U3}
 $$
 
 Its time is
 
 $$
-\Gamma(1/\varepsilon)^c\operatorname{poly}(H), \tag{U4}
+\Gamma(1/\varepsilon)^c\mathrm{poly}(H), \tag{U4}
 $$
 
 and its workspace is polynomial in $H$. Here $H$ includes the full
@@ -64,7 +64,7 @@ For fixed rational $\varepsilon$, the same guarantee also has time
 
 $$
 \left(2-\Gamma(1/\varepsilon)^{-1}\right)^q
- 2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H). \tag{U5}
+ 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H). \tag{U5}
 $$
 
 The unbudgeted theorem is the specialization $a_{pj}=C=0$. The guarantee
@@ -183,19 +183,19 @@ the upper endpoint. Every failed upper endpoint remains strictly above
 FOPT. At adjacent endpoints the saved set obeys
 
 $$
-L>\operatorname{FOPT}-\delta,\qquad
+L>\mathrm{FOPT}-\delta,\qquad
                   \lambda_I\ge\alpha L. \tag{U9}
 $$
 
-Reoptimize (U8) for this set. If $\lambda_I<\alpha\operatorname{FOPT}$,
+Reoptimize (U8) for this set. If $\lambda_I<\alpha\mathrm{FOPT}$,
 their denominator bounds imply
 
 $$
-\alpha\operatorname{FOPT}-\lambda_I
+\alpha\mathrm{FOPT}-\lambda_I
                             \ge 1/(BD^2)=2\delta,
 $$
 
-contradicting (U9). Therefore $\lambda_I\ge\alpha\operatorname{FOPT}$.
+contradicting (U9). Therefore $\lambda_I\ge\alpha\mathrm{FOPT}$.
 There are polynomially many target calls, of polynomial bit length,
 without enumerating $D$. FOPT $=0$ is included. The
 [rational optimization lemma](../whole-ground-allocation/rational-optimization.md)

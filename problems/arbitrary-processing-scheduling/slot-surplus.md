@@ -61,8 +61,8 @@ Gamma(R)=R^R/(R-1)^(R-1) for R>1.
 **Theorem S.** There is a deterministic algorithm with runtime
 
 $$
-\Gamma(1/\epsilon)^k\operatorname{poly}(H)
-                     \le(e/\epsilon)^k\operatorname{poly}(H)
+\Gamma(1/\epsilon)^k\mathrm{poly}(H)
+                     \le(e/\epsilon)^k\mathrm{poly}(H)
  \tag{S4}
 $$
 
@@ -203,7 +203,7 @@ h by (S9), on N(T) slots, with corank c. The lifted resource
 rank on a slot subset Z is
 
 $$
-\widetilde f_T(Z)=f_T(\operatorname{owners}(Z)).
+\widetilde f_T(Z)=f_T(\mathrm{owners}(Z)).
  \tag{S14}
 $$
 

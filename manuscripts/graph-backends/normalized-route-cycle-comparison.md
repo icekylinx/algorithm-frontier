@@ -162,10 +162,10 @@ Likewise local coefficient cancellation uses actual immediate
 edge IDs, preserving distinct parallel IDs.
 
 This is essential for frozen-gauge aliases. Consider distinct
-native vertices $a_i$, $\operatorname{star}(a)$, and $a_j$
+native vertices $a_i$, $\mathrm{star}(a)$, and $a_j$
 which all map to the same physical root $a$. The open path
 $$
-a_i\longrightarrow\operatorname{star}(a)
+a_i\longrightarrow\mathrm{star}(a)
                               \longrightarrow a_j
  \tag{10}
 $$
@@ -197,8 +197,8 @@ loss $3\delta$, exactly as in the existing hierarchy proof.
 For a parent edge $e=(u,v)$ and a stable forest $F_i$, the
 frozen potential satisfies
 $$
-g(f)+p_i(\operatorname{tail}f)
-                         -p_i(\operatorname{head}f)=0
+g(f)+p_i(\mathrm{tail}f)
+                         -p_i(\mathrm{head}f)=0
                  \quad(f\in F_i).
  \tag{11}
 $$
@@ -282,10 +282,10 @@ the existing numerical lifetime discipline.
 
 The normalized projected recurrence bounds current route
 length and congestion by $\Gamma^{O(K)}$ and
-$k\operatorname{poly}(U)\Gamma^{O(K)}$, respectively.
+$k\mathrm{poly}(U)\Gamma^{O(K)}$, respectively.
 The inverse-list scans, explicit local correction decomposition,
 and optional physical expansion therefore fit the same local
-$k^{O(1)}F^{O(1)}\Gamma^{O(K)}\operatorname{poly}(U)$
+$k^{O(1)}F^{O(1)}\Gamma^{O(K)}\mathrm{poly}(U)$
 work envelope. They do not create a demand-specific exported
 forest or a new recursive selected edge. The smaller selected
 transcript still depends only on original selected core IDs and

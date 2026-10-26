@@ -90,13 +90,13 @@ The stage-count argument in Lemma 3.10 uses only the embedding
 congestion and the pruning volume bound. In one level-$i$ stage,
 the number of level-$(i-1)$ stages is at most
 $$
-m^{1/q}\operatorname{poly}(U)\phi^{-O(1)}.
+m^{1/q}\mathrm{poly}(U)\phi^{-O(1)}.
  \tag{6}
 $$
 Consequently there are at most
 $$
 m^{(q-i)/q}
-           \bigl(\operatorname{poly}(U)\phi^{-O(1)}\bigr)^{q-i}
+           \bigl(\mathrm{poly}(U)\phi^{-O(1)}\bigr)^{q-i}
 $$
 level-$i$ stages. The nonrecursive work of one such stage is at most
 $$
@@ -136,11 +136,11 @@ set, and recompute the base BFS tree on the surviving expander.
 Use the same deletion-quota restart rule there. At most the initial
 number of base edges can be deleted within a base stage, so these
 BFS recomputations cost
-$m^{2/q}\operatorname{poly}(U,\phi^{-1})$, within (7) for $i=1$.
+$m^{2/q}\mathrm{poly}(U,\phi^{-1})$, within (7) for $i=1$.
 
 The path oracle is retired once its top-level deletion quota is
 reached. Reporting every remaining vertex as pruned at that point
-preserves $\operatorname{vol}(S)=O(t/\phi)$, with a larger absolute
+preserves $\mathrm{vol}(S)=O(t/\phi)$, with a larger absolute
 constant. This supplies the all-deletion interface used by the
 static sparsifier; it does not ask the source oracle to exceed its
 promised quota.
@@ -266,8 +266,8 @@ hold with one common parameter $\phi'=c\phi$, for a fixed small
 constant $c>0$. Band zero has at most $n$ edges and is retained
 directly. The pruning time sums to
 $$
-\sum_i O(2^in\,\operatorname{poly}(U)/\phi)
-             =O(m\,\operatorname{poly}(U)/\phi),
+\sum_i O(2^in\,\mathrm{poly}(U)/\phi)
+             =O(m\,\mathrm{poly}(U)/\phi),
  \tag{14}
 $$
 which fits (11). Degrees and candidate queues can be updated by

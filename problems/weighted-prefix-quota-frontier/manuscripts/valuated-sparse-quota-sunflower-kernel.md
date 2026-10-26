@@ -289,7 +289,7 @@ Thus the upper load of that row is exactly its original load in $S$.
 Outside $C$, consider rows meeting the fixed context $I$. Their number
 is at most
 $$
-\left|\bigcup_{u\in I}\operatorname{supp}\alpha_u\right|
+\left|\bigcup_{u\in I}\mathrm{supp}\alpha_u\right|
                          \le\delta(k-1)=t-1.
 \tag{VS18}
 $$
@@ -602,7 +602,7 @@ original resource rank is covered by the same gate.
 The capacity kernel supplies the same all-input FPT order as BF:
 $$
 2^{O(\Delta B_0\log(\Delta B_0B+2))}
-                                      \operatorname{poly}(H).
+                                      \mathrm{poly}(H).
 \tag{VS31}
 $$
 The additional conclusion is the uniform polynomial-time positive-capacity

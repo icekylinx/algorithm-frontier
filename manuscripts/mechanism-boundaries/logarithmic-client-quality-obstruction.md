@@ -302,7 +302,7 @@ At an exact anchor the client uses
 $$
 \ell^{\rm int}_e=\lceil H_{\rm price}\lambda_e\rceil,
              \qquad
-        \gamma_e=\operatorname{round}(H_{\rm price}g_e),
+        \gamma_e=\mathrm{round}(H_{\rm price}g_e),
                       \qquad H_{\rm price}=S^{100}.
  \tag{23}
 $$
@@ -388,7 +388,7 @@ $$
 Ordinary traversals may use either orientation, with the corresponding
 signed gradient. Put
 $$
-d_\ell=\operatorname{dist}_{\ell,{\rm ordinary}}(s,t),
+d_\ell=\mathrm{dist}_{\ell,{\rm ordinary}}(s,t),
  \qquad \kappa=g_{\rm ret}+p(t)-p(s).
 $$
 If $s,t$ are connected in the ordinary graph, the exact maximum

@@ -58,7 +58,7 @@ proved in
 $$
 \boxed{\quad
  P(q+1)^{\,O(\epsilon^{-1}\log(2+r/\epsilon))}
-       \operatorname{poly}(b_\epsilon+\log P).
+       \mathrm{poly}(b_\epsilon+\log P).
  \quad}                                               \tag{I2}
 $$
 
@@ -99,7 +99,7 @@ Taking the better of the two algorithms yields the combined bound
 $$
 P\min\left\{\exp(O(q)),\,
       (q+1)^{O(\epsilon^{-1}\log(2+r/\epsilon))}\right\}
-      \operatorname{poly}(b_\epsilon+\log P).
+      \mathrm{poly}(b_\epsilon+\log P).
 $$
 
 The fallback is particularly relevant for small `q` or very small
@@ -421,8 +421,9 @@ $$
  \log\#\mathrm{signatures}
    &\le O\bigl(L\log(2+H/L)\bigr)\\
    &=O\!\left(\epsilon^{-1}\log(2+r/\epsilon)
-                         \log(q+1)\right).             \tag{I19}
+                         \log(q+1)\right).
 \end{split}
+\tag{I19}
 $$
 
 This is valid also when the stated upper bound `L` exceeds `q`;
@@ -478,7 +479,7 @@ named derived-public baseline should be read as
 $$
 P\min\left\{\exp(O(q)),\,
       (q+1)^{O((r/\epsilon)\log(2+r/\epsilon))}\right\}
-      \operatorname{poly}(b_\epsilon+\log P).
+      \mathrm{poly}(b_\epsilon+\log P).
 $$
 
 The full version and later-source comparison are recorded in

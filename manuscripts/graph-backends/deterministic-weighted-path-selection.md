@@ -45,7 +45,7 @@ one may use the convenient bound
 $4\mu_x+4B\log(2|X|+2)$.
 
 The total number of scalar operations is
-$S\operatorname{polylog}(S+2)$. Resource-ID comparisons additionally
+$S\mathrm{polylog}(S+2)$. Resource-ID comparisons additionally
 use the given ID word size. All mantissas and binary exponents have
 $O(\log(S+2))$ bits; there is no least-common-denominator computation.
 
@@ -120,7 +120,7 @@ $$
 The sum of $|X_g|$ over all groups is at most $S$.
 Computing all factors, initializing their products in (5), evaluating
 all candidates, and applying all updates therefore takes
-$S\operatorname{polylog}(S+2)$ operations.
+$S\mathrm{polylog}(S+2)$ operations.
 
 With exact arithmetic the total potential never increases, so the
 final value $\exp((b_x-2\mu_x)/B)\leq|X|$ proves the slightly
@@ -139,7 +139,7 @@ $Q_ga_{g,j,x}/B\geq1/B$ and $B\leq S^2$.
 Taylor expansion on $[0,1]$, followed by positive sums and ordinary
 division, computes them and their positive increments to any
 relative accuracy $(S+2)^{-c}$ in
-$\operatorname{polylog}(S+2)$ scalar work.
+$\mathrm{polylog}(S+2)$ scalar work.
 
 For initialization, the exponent $-2\mu_x/B$ has absolute value at
 most $2S$. Compute its exponential by scaling into $[-1,0]$,
@@ -235,7 +235,7 @@ $w_g\leq\Delta(J)/\phi$. If
 $D_{\rm route},T_{\rm route},\phi^{-1}$ are bounded by a common
 factor $\Gamma_0$, then (13) is
 $$
-\Gamma_0^{O(1)}\operatorname{polylog}M
+\Gamma_0^{O(1)}\mathrm{polylog}M
                          \bigl(C+\Delta(J)\bigr).
  \tag{14}
 $$

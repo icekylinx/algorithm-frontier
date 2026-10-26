@@ -47,9 +47,9 @@ in time
 
 $$
 \Gamma\!\left(\frac{1+\epsilon}{\epsilon}\right)^c
-                                \operatorname{poly}(H)
+                                \mathrm{poly}(H)
        \le\left(\frac{e(1+\epsilon)}{\epsilon}\right)^c
-                                \operatorname{poly}(H),
+                                \mathrm{poly}(H),
  \tag{G3}
 $$
 
@@ -194,7 +194,7 @@ bounded by U_max. There is a direct exact algorithm, with preserved
 minimum cost, in
 
 $$
-(U_{\max}+1)^c\operatorname{poly}(H).
+(U_{\max}+1)^c\mathrm{poly}(H).
  \tag{G10}
 $$
 

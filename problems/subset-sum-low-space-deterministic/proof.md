@@ -7,8 +7,8 @@
 **Theorem 2.** For arbitrary indexed binary integers `w_1,...,w_n,t` of total encoding length `L`, a uniform deterministic algorithm returns an indexed witness or correctly returns NO using
 
 $$
-T=\operatorname{poly}(n,L)2^{n/2},\qquad
-S=\operatorname{poly}(n,L)2^{E_S n},\qquad
+T=\mathrm{poly}(n,L)2^{n/2},\qquad
+S=\mathrm{poly}(n,L)2^{E_S n},\qquad
 E_S=\frac{18261635770550353}{10^{17}}.
 $$
 
@@ -69,7 +69,7 @@ $$
 
 If a nonzero integer has absolute value less than $2^b$, at most $b\ln2/\ln P$ primes greater than $P$ divide it. The fraction of primes in this interval dividing that integer is therefore at most $2b/P$. This bound holds for all $P\geq2^{20}$. The interval ratio $32$ contributes a fixed factor.
 
-All these primes can be generated deterministically in $P\operatorname{poly}(\log P)$ bit operations. Start with the integers through $\lfloor32P\rfloor$, and, for each unmarked integer starting at two, mark its proper multiples. A number remaining unmarked is prime: a composite has a smaller prime divisor, already processed. The number of marking iterations is at most $32P\sum_{d\leq32P}1/d=O(P\log P)$ even if all integers, rather than just primes, are charged. Index arithmetic has $O(\log P)$ bits.
+All these primes can be generated deterministically in $P\mathrm{poly}(\log P)$ bit operations. Start with the integers through $\lfloor32P\rfloor$, and, for each unmarked integer starting at two, mark its proper multiples. A number remaining unmarked is prime: a composite has a smaller prime divisor, already processed. The number of marking iterations is at most $32P\sum_{d\leq32P}1/d=O(P\log P)$ even if all integers, rather than just primes, are charged. Index arithmetic has $O(\log P)$ bits.
 
 ### 2.2. Exact array and polynomial operations
 
@@ -87,7 +87,7 @@ In fixed dimension $d$, a polynomial of coordinatewise degree at most $M$ has at
 # Part II. A deterministic low-space algorithm
 
 This part proves Theorem 2. Write $O^*(f(n))$ for
-$\operatorname{poly}(n,L)f(n)$, where $L$ is the full encoding length.
+$\mathrm{poly}(n,L)f(n)$, where $L$ is the full encoding length.
 Masks refer to indexed coordinates. The weights are $w_1,\ldots,w_n$
 and the target is $t$; parameters used below are local to this part.
 The time and space bounds are
@@ -270,7 +270,7 @@ weight $w$,
 
 $$
 \sum_{A\in\mathcal D}w(|A|)
-\ge\sum_{j=0}^{N-1}w(\operatorname{wt}(j)).
+\ge\sum_{j=0}^{N-1}w(\mathrm{wt}(j)).
 \tag{141}
 $$
 
@@ -406,7 +406,7 @@ K:=|H|\le\min\left\{2^c,\frac{2(1+c\ln2)}{\alpha}\right\}.
 \tag{148}
 $$
 
-Its time is $O^*(2^cKQ)$ and its space is $O^*(W+\operatorname{poly}(c))$. A basis permits enumeration of all centers with polynomial delay and state. All arithmetic in the construction has polynomial bitlength.
+Its time is $O^*(2^cKQ)$ and its space is $O^*(W+\mathrm{poly}(c))$. A basis permits enumeration of all centers with polynomial delay and state. All arithmetic in the construction has polynomial bitlength.
 
 Start with $H=\{0\}$ and let $U=V\setminus(G+H)$. Adding a vector $v$ to the basis replaces the uncovered set by $U\cap(U+v)$. The average translation intersection is
 
@@ -434,13 +434,13 @@ $$
 
 For each uncovered $x$ with prefix $a$, its translated suffix is uniform in the suffix class with prefix $a+P$; this proves the formula. The two next-bit means average to the current mean. Choose the smaller, using their common-denominator integer numerators. The uncovered predicate remains unchanged until all bits of the new vector have been chosen.
 
-Membership in $U$ is decided by enumerating the present $H$ and testing $x+h\notin G$ for every $h$. For one candidate prefix, enumerate each $a$, count $U_a$ and $U_{a+P}$ by scanning their suffix classes, multiply the two counts, then discard them. The suffix classes partition $V$, so this is at most two full passes, with time $O^*(N|H|Q)$ and space $W+\operatorname{poly}(c)$. The score has at most $2c+1$ bits. The $c$ bit choices add a polynomial factor. Across stages the current subspace sizes are $1,2,\ldots,K/2$, whose sum is less than $K$. Exact stopping tests, including a final full pass, obey the same bound. This proves the claimed time and space.
+Membership in $U$ is decided by enumerating the present $H$ and testing $x+h\notin G$ for every $h$. For one candidate prefix, enumerate each $a$, count $U_a$ and $U_{a+P}$ by scanning their suffix classes, multiply the two counts, then discard them. The suffix classes partition $V$, so this is at most two full passes, with time $O^*(N|H|Q)$ and space $W+\mathrm{poly}(c)$. The score has at most $2c+1$ bits. The $c$ bit choices add a polynomial factor. Across stages the current subspace sizes are $1,2,\ldots,K/2$, whose sum is less than $K$. Exact stopping tests, including a final full pass, obey the same bound. This proves the claimed time and space.
 
 If $G$ lies in the cardinality layer $\binom{[c]}r$, test cardinality before the expensive predicate, whose time and state on this layer are $Q_r,W_r$. For each fixed $h$, exactly $\binom cr$ of the $N$ translated vectors in a full pass have cardinality $r$. The preceding proof therefore gives the sharper bound
 
 $$
 T=O^*\!\left(K\left[2^c+\binom cr Q_r\right]\right),
-\qquad S=O^*(W_r+\operatorname{poly}(c)).
+\qquad S=O^*(W_r+\mathrm{poly}(c)).
 \tag{152}
 $$
 
@@ -455,7 +455,7 @@ class maximizing $2^\ell g$, where $g=|\mathcal G_\ell|$.
 There are at most $r+1$ classes, so $2^\ell g\ge S_r/(2(r+1))$.
 Apply the linear translate cover to this class, and let $K$ be its
 actual number of centers. Coverage gives $2^c\le Kg$, while the size
-bound gives $Kg\le\operatorname{poly}(c)2^c$. Put
+bound gives $Kg\le\mathrm{poly}(c)2^c$. Put
 $\tau=1-h(\theta)$ and $\phi=\theta-\gamma$ for the applicable trace
 gain $\gamma$. The resulting bounds are:
 
@@ -478,7 +478,7 @@ construction bound gives
 
 $$
 T=O^*\!\left(2^{(1+\theta)c+\phi d}\right),\qquad
-S=O^*\!\left(2^{r/2}+\operatorname{poly}(c)\right).
+S=O^*\!\left(2^{r/2}+\mathrm{poly}(c)\right).
 \tag{154}
 $$
 
@@ -573,7 +573,7 @@ $\ell/r>7/8$ after a fixed coordinate cutoff.
 Pigeonhole distinct-sum witnesses by cardinality, complement within
 $T$ if necessary, and trim fewer than $Q_{\rm grid}$ positions.
 The resulting smaller layer $k\le r/2$ retains at least
-$2^\ell/\operatorname{poly}(m)$ distinct sums. Since its cardinality
+$2^\ell/\mathrm{poly}(m)$ distinct sums. Since its cardinality
 is at most $2^{r h(k/r)}$,
 
 $$
@@ -628,7 +628,7 @@ For fixed local layer, layout, and child roles, a center $D$ and good
 selected set $T$ determine a permitted image $X_D(T)$.
 In a candidate-prime scan, enumerate $T$ first and count its support
 once. For good $T$ only, enumerate the centers and generate
-$X_D(T)$. Since $K|\mathcal G_\ell|\le\operatorname{poly}(c)2^c$,
+$X_D(T)$. Since $K|\mathcal G_\ell|\le\mathrm{poly}(c)2^c$,
 
 $$
 O^*\!\left(\binom cr2^r+K|\mathcal G_\ell|2^r\right)
@@ -747,7 +747,7 @@ Charge $2^{-\ell}$ to the pair. If it removes $r$ of the $U$ current elements, i
 $$
 \sum_i2^{-\ell_i}\le\frac{L_Q H_{|\mathcal E|}}M
  \le\frac{L_Q(1+a\ln2)}M,\qquad
-K:=\#\{i\}\le\operatorname{poly}(a)2^d.
+K:=\#\{i\}\le\mathrm{poly}(a)2^d.
 \tag{167}
 $$
 
@@ -756,7 +756,7 @@ $\binom aj\le2^a$. Grouping pairs by threshold yields, for each group,
 
 $$
 \frac{K_\ell Q}{2^\ell}
- \le\operatorname{poly}(a)\frac{\binom aj}{N}.
+ \le\mathrm{poly}(a)\frac{\binom aj}{N}.
 \tag{168}
 $$
 
@@ -955,7 +955,7 @@ has polynomial size. Every eligible triple has a path good at all
 active stages. Its recorded moduli satisfy
 
 $$
-\frac{2^{\ell_i}}{\operatorname{poly}(u)}\le p_i\le2^{\ell_i},
+\frac{2^{\ell_i}}{\mathrm{poly}(u)}\le p_i\le2^{\ell_i},
 \qquad
 C_{p_i}(X_i)\le(80u^2)^{19}|X_i|^2/p_i.
 \tag{183}
@@ -971,7 +971,7 @@ $$
 \tag{184}
 $$
 
-Eligibility means $|X_i|\ge2^{\ell_i}/\operatorname{poly}(u)$ with
+Eligibility means $|X_i|\ge2^{\ell_i}/\mathrm{poly}(u)$ with
 a fixed polynomial. Fix an integer $E_{\rm img}$ larger than its degree and put
 $\delta=u^{-(2E_{\rm img}+400)}$. After a fixed small-input cutoff every
 eligible image on a common-good path has density at least $\delta$.
@@ -992,18 +992,18 @@ values have polynomial bit length.
 Suppose images $I_A\subseteq\mathbb Z/p\mathbb Z$ have density at
 least $\delta$. Let $c(\rho)\ge0$ be an exact rational cost with
 uniform mean $\mu$. If $Q$ pattern-offset pairs remain uncovered, let
-$\operatorname{cov}(\rho)$ count those covered by $\rho$. Its mean
+$\mathrm{cov}(\rho)$ count those covered by $\rho$. Its mean
 is at least $\delta Q$. When $\mu>0$, select a residue with score
 at least the mean of
 
 $$
-\operatorname{cov}(\rho)-\frac{\delta Q}{2\mu}c(\rho).
+\mathrm{cov}(\rho)-\frac{\delta Q}{2\mu}c(\rho).
 \tag{185}
 $$
 
 That mean is at least $\delta Q/2$. The selected residue covers at
 least $\delta Q/2$ pairs and costs at most $2\mu/\delta$, since
-$\operatorname{cov}(\rho)\le Q$. If $\mu=0$, all costs vanish and
+$\mathrm{cov}(\rho)\le Q$. If $\mu=0$, all costs vanish and
 use coverage alone. Repeating for
 $O(\delta^{-1}\log(Q+1))$ rounds gives a polynomial-size list
 $\mathcal R$ satisfying
@@ -1012,7 +1012,7 @@ $$
 \mathcal R\cap(I_A+v)\ne\varnothing\quad\text{for all }A,v,
 \qquad
 \sum_{\rho\in\mathcal R}c(\rho)
-\le\operatorname{poly}(u)\mu.
+\le\mathrm{poly}(u)\mu.
 \tag{186}
 $$
 
@@ -1059,24 +1059,24 @@ complete trimmed layer of $T$.
 
 The balanced-cell family gives a layout into $Q_{\rm grid}$ equal
 cells and a subfamily $\mathcal F$ of at least
-$M/\operatorname{poly}(b)$ canonical masks with equal selected and
+$M/\mathrm{poly}(b)$ canonical masks with equal selected and
 layer counts in each cell. The family of distinct projected masks from $\mathcal F$
 on any union of cells is sum-injective. Otherwise
 replacing the larger equal-sum projection in its full witness would
 preserve both its cardinality and sum while decreasing the canonical
 witness.
 
-For completeness, write $\operatorname{Ent}$ for binary Shannon
+For completeness, write $\mathrm{Ent}$ for binary Shannon
 entropy. Factoring joint probabilities proves the chain rule;
 concavity of $-\sum p_i\log_2p_i$ shows that additional conditioning
 decreases conditional entropy. For uniform $D\in\mathcal F$, expand
-$\operatorname{Ent}(D\cap U)$ in coordinate order, where $U$ is a
+$\mathrm{Ent}(D\cap U)$ in coordinate order, where $U$ is a
 uniform union of $p$ cells. Replace conditioning on earlier coordinates
 of $U$ by conditioning on all earlier coordinates. Each coordinate
 belongs to $U$ with probability $p/Q_{\rm grid}$, so
 
 $$
-\mathbb E_U\operatorname{Ent}(D\cap U)
+\mathbb E_U\mathrm{Ent}(D\cap U)
 \ge\frac{p}{Q_{\rm grid}}\log_2|\mathcal F|.
 \tag{188}
 $$
@@ -1088,7 +1088,7 @@ cardinalities are unchanged. Thus a support threshold $2^\ell$ on
 the base yields a projected permitted image of size at least
 
 $$
-2^{(a/b)\ell}/\operatorname{poly}(b).
+2^{(a/b)\ell}/\mathrm{poly}(b).
 \tag{189}
 $$
 
@@ -1146,14 +1146,14 @@ $$
 Here $x_0$ bounds the full top-block deficiency density, and strict
 extraction preserves this density bound. Let the linear translate
 cover of this class have $K$ centers. It satisfies
-$Kg\le\operatorname{poly}(m)2^b$. Put
+$Kg\le\mathrm{poly}(m)2^b$. Put
 
 $$
 \delta=sb-\ell,\qquad \kappa=\log K,\qquad \tau_0=1-h(s).
 \tag{192}
 $$
 
-Since $g\le\binom br\le\operatorname{poly}(m)2^{h(s)b}$,
+Since $g\le\binom br\le\mathrm{poly}(m)2^{h(s)b}$,
 
 $$
 \delta+\kappa\le\tau_0b+\phi_0d+O(\log(m+1)),
@@ -1571,7 +1571,7 @@ $$
 For strict locals $\theta=.45$, and for the oriented-half mode
 $\theta=.5$. In either case $1-h(\theta)<.015$ and
 $d_T\le d_j\le.203m+O(1)$. Each unrestricted child therefore has
-more than $2^{.64m}/\operatorname{poly}(n)$ occurrences after the fixed
+more than $2^{.64m}/\mathrm{poly}(n)$ occurrences after the fixed
 cutoff. Interval and prefix restrictions use the upper initialization
 budget above.
 
@@ -1934,9 +1934,9 @@ separators and retain one no larger than the mean. A common positive
 denominator makes every comparison integral. The final potential
 below one gives complete coverage and both load bounds.
 
-There are at most $2^g$ candidates per choice, $\operatorname{poly}(g)2^g$
+There are at most $2^g$ candidates per choice, $\mathrm{poly}(g)2^g$
 choices, $3^g$ pair constraints and $2^{g+1}$ degree constraints.
-Comparison integers have at most $\operatorname{poly}(g)2^g$ bits.
+Comparison integers have at most $\mathrm{poly}(g)2^g$ bits.
 Schoolbook arithmetic gives $O^*(2^{6g})$ bit time and $O^*(2^{2g})$
 state, including the support-to-separator indices. Four coarse regions
 therefore cost $O^*(2^{3a/2})$ time and $O^*(2^{a/2})$ construction
@@ -2125,7 +2125,7 @@ the union query's scans, diagonal restart products, and raw pairs:
 $$
 \sum_{D,r\in\mathcal R_D,v\in\Omega_j}
 G_D(v,r)U_j(v)
-\le\operatorname{poly}(u)K\mu Z_j(\eta),
+\le\mathrm{poly}(u)K\mu Z_j(\eta),
 \tag{254}
 $$
 
@@ -2629,7 +2629,7 @@ $$
 Physical integer layers and layouts precede prime selection. For the
 joint local universe $(D,\mathrm{Good}T,\text{layer},\text{layout})$,
 test Good membership with the selected set outside the signing loop.
-The inequality $K|\mathrm{Good}|\le\operatorname{poly}(n)2^c$
+The inequality $K|\mathrm{Good}|\le\mathrm{poly}(n)2^c$
 then bounds a candidate scan by $O^*(2^{c+r})$. Prime depth $16$
 therefore gives exponent $1+.45+.45/16=1.478125$.
 Both physical local images are fixed before allocating a top fine profile;
@@ -2871,8 +2871,8 @@ Since $n=3m+O(1)$, the resulting bounds are
 
 $$
 \begin{gathered}
-T=\operatorname{poly}(n,L)2^{n/2},\qquad
-S=\operatorname{poly}(n,L)2^{E_Sn},\\
+T=\mathrm{poly}(n,L)2^{n/2},\qquad
+S=\mathrm{poly}(n,L)2^{E_Sn},\\
 E_S=\frac{18261635770550353}{10^{17}}.
 \end{gathered}
 \tag{291}

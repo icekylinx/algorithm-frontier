@@ -13,7 +13,7 @@ runtime proved here is single exponential in the **number q of potential
 players**, not in the selection rank r:
 
 $$
-2^{O(q)}\operatorname{poly}(H,\epsilon^{-1}).
+2^{O(q)}\mathrm{poly}(H,\epsilon^{-1}).
  \tag{W1}
 $$
 

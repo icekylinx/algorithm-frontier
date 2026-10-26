@@ -68,14 +68,14 @@ integer resource vector. For fixed d its running time is
 
 $$
 \exp\!\bigl(O_d((T+1)^{d/(d+1)})\bigr)
-                                  \operatorname{poly}(H).
+                                  \mathrm{poly}(H).
  \tag{AN4}
 $$
 
 When d is part of the input, the running time is
 
 $$
-2^{O((T+1)\log(T+2))}\operatorname{poly}(H).
+2^{O((T+1)\log(T+2))}\mathrm{poly}(H).
  \tag{AN5}
 $$
 
@@ -211,7 +211,7 @@ function is submodular plus a modular term and a constant.
 In particular,
 
 $$
-\{\operatorname{agg}z:z\in P(G)\}
+\{\mathrm{agg}z:z\in P(G)\}
            =P(F)\cap\{0\le x\le d\}.
  \tag{AN13}
 $$
@@ -382,7 +382,7 @@ nonmarker blocks recovers the profile. Therefore
 
 $$
 \mathcal P(U_1,\ldots,U_{d'})\le
-        \operatorname{Bell}(U+1)\le(U+1)^{U+1},
+        \mathrm{Bell}(U+1)\le(U+1)^{U+1},
  \qquad s!\le T!.
  \tag{AN18}
 $$

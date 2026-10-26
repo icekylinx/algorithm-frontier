@@ -54,7 +54,7 @@ having minimum utility at least
 $$
 \frac{\alpha}{2}\,\mathrm{OPT}
                   \quad\text{in time}\quad
- B(R)^q\,2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H),
+ B(R)^q\,2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H),
  \tag{J3}
 $$
 
@@ -279,7 +279,7 @@ the remaining deficit |Q|-s. It does not require one fixed service
 region if every protected node satisfies J11. The complete time is
 
 $$
-\Gamma(R)^{k-|Z|}\operatorname{poly}(H)
+\Gamma(R)^{k-|Z|}\mathrm{poly}(H)
  \tag{J13}
 $$
 
@@ -476,7 +476,7 @@ algorithm in
 
 $$
 (50/27)^q\,
-       2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H)
+       2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
  \tag{J17}
 $$
 

@@ -41,7 +41,7 @@ Before construction, one may clip `h` to the number `L` of distinct labels and `
 For every e in a matroid ground set H, let A_e and B_e be disjoint subsets of some auxiliary label universe. Suppose
 
 $$
-e\notin\operatorname{cl}_M\bigl(\{f\in H-e:A_f\cap B_e=\varnothing\}\bigr). \tag{3}
+e\notin\mathrm{cl}_M\bigl(\{f\in H-e:A_f\cap B_e=\varnothing\}\bigr). \tag{3}
 $$
 
 Equivalently, deleting all elements whose A-set meets B_e makes e a coloop. Then
@@ -152,7 +152,7 @@ $$
 For an allowed failure set F and a surviving e in X_F, choose t separating Lambda(e) from F intersect the current label universe, and choose P=chi_t(Lambda(e)). This pool contains e and contains no failed elements. Its retained basis therefore spans e using elements of R_F. It follows that
 
 $$
-\operatorname{cl}_M(R_F)=\operatorname{cl}_M(X_F) \tag{7}
+\mathrm{cl}_M(R_F)=\mathrm{cl}_M(X_F) \tag{7}
 $$
 
 for every query F. Importantly, the failure labels outside the current instance do nothing, so (7) composes through repeated restrictions even when the hash maps are rebuilt between rounds.

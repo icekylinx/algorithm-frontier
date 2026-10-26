@@ -92,8 +92,8 @@ deterministic algorithm of running time
 
 $$
 \Gamma\!\left(\frac{t}{t-b}\right)^c
-                                      \operatorname{poly}(H)
-                \le\left(\frac{et}{t-b}\right)^c\operatorname{poly}(H),
+                                      \mathrm{poly}(H)
+                \le\left(\frac{et}{t-b}\right)^c\mathrm{poly}(H),
  \tag{E5}
 $$
 
@@ -141,8 +141,8 @@ The running time is
 
 $$
 \left(\frac{e(1+\epsilon)}{\epsilon}\right)^c
-                        \operatorname{poly}(H)
-                 =\bigl(O(1+\epsilon^{-1})\bigr)^c\operatorname{poly}(H).
+                        \mathrm{poly}(H)
+                 =\bigl(O(1+\epsilon^{-1})\bigr)^c\mathrm{poly}(H).
  \tag{E9}
 $$
 

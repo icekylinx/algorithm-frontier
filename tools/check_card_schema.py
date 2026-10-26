@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Enforce the compact problem-card field contract.
+"""Enforce the readable, table-free problem-card field contract.
 
-Every public problem card uses the same eight labels so that the index can be
-scanned mechanically.  The check intentionally validates presentation
+Every public problem card uses the same nine standalone labels and full-width
+paragraphs. Dense field/refinement tables are deliberately excluded. The index
+can still be scanned mechanically.  The check intentionally validates presentation
 structure only; mathematical truth remains a review task.
 """
 from __future__ import annotations
@@ -12,6 +13,7 @@ import re
 
 REQUIRED = (
     "Objective and output",
+    "Randomness",
     "Time",
     "Space",
     "Parameters",
@@ -39,6 +41,10 @@ def main() -> None:
                 errors.append(f"{path}: duplicate **{label}** ({count})")
             else:
                 positions.append(text.index(f"**{label}**"))
+                if not re.search(r"(?m)^\*\*" + re.escape(label) + r"\*\*$\n\n\S", text):
+                    errors.append(f"{path}: **{label}** must introduce a separate paragraph")
+        if re.search(r"(?m)^ *\|[ :|\-]+\| *$", text):
+            errors.append(f"{path}: use stacked result entries instead of Markdown tables")
         if len(positions) == len(REQUIRED) and positions != sorted(positions):
             errors.append(f"{path}: required fields are out of order")
     if errors:

@@ -5,7 +5,7 @@
 This note strengthens the expanded-walk interface in [incremental sssp proof](../../problems/incremental-sssp/proof.md). Under the same recursive construction, a query can return a simple directed path with approximation guarantee at most the maintained distance estimate, in
 
 $$
-O\!\left((k+B^2)\operatorname{poly}(\log N)\right)
+O\!\left((k+B^2)\mathrm{poly}(\log N)\right)
 $$
 
 time, where `k` is the number of root edges actually returned and `B=O(log N)` is the recursive depth. The preprocessing adds only a polynomial logarithmic factor to the already charged Dijkstra and leaf computations. In particular this is `O((k+1) poly(log N))`, and does not enumerate a potentially much longer walk before deleting its cycles.
@@ -48,18 +48,18 @@ Let `T_1,T_2` be two immutable rooted shortest-path trees. Their vertex sets may
 
 $$
 x\longmapsto
- (\operatorname{tin}_1(x),\operatorname{tout}_1(x),
-  \operatorname{tin}_2(x),\operatorname{tout}_2(x)).
+ (\mathrm{tin}_1(x),\mathrm{tout}_1(x),
+  \mathrm{tin}_2(x),\mathrm{tout}_2(x)).
 $$
 
 Use inclusive DFS subtree intervals. Let `P_1=T_1[a,b]` and `P_2=T_2[c,d]`, where the first endpoint of each is an ancestor of the second. A common vertex `x` belongs to both paths exactly when
 
 $$
 \begin{aligned}
- \operatorname{tin}_1(a)\leq\operatorname{tin}_1(x)&\leq\operatorname{tin}_1(b),&
- \operatorname{tout}_1(x)&\geq\operatorname{tin}_1(b),\\
- \operatorname{tin}_2(c)\leq\operatorname{tin}_2(x)&\leq\operatorname{tin}_2(d),&
- \operatorname{tout}_2(x)&\geq\operatorname{tin}_2(d).
+ \mathrm{tin}_1(a)\leq\mathrm{tin}_1(x)&\leq\mathrm{tin}_1(b),&
+ \mathrm{tout}_1(x)&\geq\mathrm{tin}_1(b),\\
+ \mathrm{tin}_2(c)\leq\mathrm{tin}_2(x)&\leq\mathrm{tin}_2(d),&
+ \mathrm{tout}_2(x)&\geq\mathrm{tin}_2(d).
 \end{aligned}
 \tag{1}
 $$
@@ -98,7 +98,7 @@ When a new shortest-path tree `T` is built, compute its DFS intervals, depths, a
 To find common vertices, iterate over the vertices of `T` and perform membership lookups in the ancestor tree. Do not scan every ancestor's entire vertex set. Thus an owner with local allowance `M` and at most `B` ancestors spends
 
 $$
-O(BM\operatorname{poly}(U))
+O(BM\mathrm{poly}(U))
 \tag{3}
 $$
 
@@ -128,8 +128,8 @@ The representation remains closed under truncation. A clipped directed ancestor 
 The final simple path can now be enumerated. A tree segment `T[a,b]` is output by following parents from `b` to `a` and reversing that list. This visits precisely the edges that will be returned. Single connector edges are output directly by their root identities. Therefore the query cost is
 
 $$
-O(t^2\operatorname{poly}(U)+k\operatorname{poly}(U))
- =O((B^2+k)\operatorname{poly}(U)).
+O(t^2\mathrm{poly}(U)+k\mathrm{poly}(U))
+ =O((B^2+k)\mathrm{poly}(U)).
 \tag{4}
 $$
 

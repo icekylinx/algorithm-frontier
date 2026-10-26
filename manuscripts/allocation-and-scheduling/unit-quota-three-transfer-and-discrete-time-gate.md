@@ -59,7 +59,7 @@ gives
 
 $$
 \Phi\ge(k-b+1)u\,w,
- \qquad w=r-|I\setminus\operatorname{owners}(Y_{<i})|.
+ \qquad w=r-|I\setminus\mathrm{owners}(Y_{<i})|.
  \tag{U2}
 $$
 
@@ -94,7 +94,7 @@ Under (U3), the existing signature algorithm returns a b-unit basis,
 or correctly certifies that no k-unit basis exists, in
 
 $$
-2^{O(r)}\operatorname{poly}(H).
+2^{O(r)}\mathrm{poly}(H).
  \tag{U4}
 $$
 
@@ -249,7 +249,7 @@ Delta/C>=eta/6. The usual growth test may use gamma=eta/24.
 This proves factor d+eta in
 
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}
  \tag{U11}
 $$
@@ -331,7 +331,7 @@ permitted. Integral aggregate decompositions recover the original
 resource allocations. This gives a (1-epsilon) value guarantee in
 
 $$
-(1+\epsilon^{-1})^{O(q)}\operatorname{poly}(H).
+(1+\epsilon^{-1})^{O(q)}\mathrm{poly}(H).
  \tag{U14}
 $$
 

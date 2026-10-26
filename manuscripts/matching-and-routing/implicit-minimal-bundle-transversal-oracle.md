@@ -81,7 +81,7 @@ The running time is
 $$
 \boxed{
  P\,(q+1)^{O(\varepsilon^{-1}\log(2+q/\varepsilon))}
-       \operatorname{poly}(b+b_\varepsilon+\log P).
+       \mathrm{poly}(b+b_\varepsilon+\log P).
  }                                                               \tag{C3}
 $$
 
@@ -227,7 +227,7 @@ is at most $|E|$.
 
 Initializing tags from all current prefix lists, finding free twin
 indices, and retaining actual candidate bundles can conservatively be
-charged to $P\operatorname{poly}(q,1/\varepsilon)$ per call. No
+charged to $P\mathrm{poly}(q,1/\varepsilon)$ per call. No
 loop ranges over all graph vertices. Fresh actual candidates are retained
 exactly as in the current-blocker proof; no unexecuted greedy rerun is
 assumed to choose the same extension.
@@ -391,7 +391,7 @@ polynomially many BuildLayer calls in $q$: there are at most $q+1$
 live layers, at most that many collapses, and at most that many inspected
 layers per SuperposedBuild. Each bundle list has length at most $|E|$.
 The per-iteration cost is therefore
-$P\operatorname{poly}(q,1/\varepsilon)$, times finite-word arithmetic.
+$P\mathrm{poly}(q,1/\varepsilon)$, times finite-word arithmetic.
 
 The current-blocker signature proof uses the number of classes, the claw
 parameter and the rational thresholds, not the number of unmaterialized
@@ -412,7 +412,7 @@ in [independent-transversal-elementary-exponential-fallback.md](independent-tran
 gives the common public fallback
 
 $$
-P\exp(O(q))\operatorname{poly}(b+\log P),
+P\exp(O(q))\mathrm{poly}(b+\log P),
 $$
 
 with the stronger failed certificate $S_0=S$ and

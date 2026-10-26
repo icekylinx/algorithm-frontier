@@ -11,7 +11,7 @@ For every fixed positive dimension d, ETH rules out exact nonnegative
 numeric-target algorithms with running time
 
 $$
-2^{o(T^{d/(d+1)})}\operatorname{poly}(H),
+2^{o(T^{d/(d+1)})}\mathrm{poly}(H),
                   \qquad T=\sum_{j=1}^d T_j,
  \tag{FE1}
 $$
@@ -28,7 +28,7 @@ schemes with running time
 
 $$
 2^{o(\varepsilon^{-1/2})}
-                         \operatorname{poly}(H_\varepsilon).
+                         \mathrm{poly}(H_\varepsilon).
  \tag{FE2}
 $$
 
@@ -123,7 +123,7 @@ Order the characteristic strings of H_alpha lexicographically with
 0<1. A candidate S in H_alpha has a zero-based index
 
 $$
-\operatorname{idx}(S)\in\{0,\ldots,L-1\}.
+\mathrm{idx}(S)\in\{0,\ldots,L-1\}.
  \tag{FE8}
 $$
 
@@ -155,7 +155,7 @@ has polynomial size as well.
 Interpret the integer
 
 $$
-a(S)=\operatorname{idx}(S)\bmod 2^N
+a(S)=\mathrm{idx}(S)\bmod 2^N
  \tag{FE10}
 $$
 

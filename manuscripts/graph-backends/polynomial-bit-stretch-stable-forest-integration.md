@@ -105,8 +105,8 @@ $$
 \begin{split}
   N_e&\leq T_{\rm occ},\\
   W&\leq T_{\rm occ}2^b,\\
-  \operatorname{bits}(w_e),\operatorname{bits}(v_e),
-  \operatorname{bits}(e_Cv_e),\operatorname{bits}(V)
+  \mathrm{bits}(w_e),\mathrm{bits}(v_e),
+  \mathrm{bits}(e_Cv_e),\mathrm{bits}(V)
        &\leq b+O(\log(T_{\rm occ}+2)+\log(e_C+2)).
  \end{split}
  \tag{7}
@@ -125,7 +125,7 @@ implies the corresponding weighted bound. The replica ceiling and
 depend on the number of weighted calls.
 
 The present backend uses the inventory bound
-$T_{\rm occ}\leq m k^{O(1)}\operatorname{poly}(U)$.
+$T_{\rm occ}\leq m k^{O(1)}\mathrm{poly}(U)$.
 Hence, under the existing polynomial-master size and lifetime
 guards, (7) is $b+O(U)$ bits. None of these operations creates a
 least common multiple.
@@ -185,7 +185,7 @@ does not depend on the low-stretch factor in (1).
 
 Its fixed stretch label has the exact integral realization
 $$
-\ell_e\widetilde{\operatorname{str}}(e)
+\ell_e\widetilde{\mathrm{str}}(e)
            =2\sum_{j=0}^{h}(\ell_e+P_j(e)),
  \tag{11}
 $$
@@ -199,7 +199,7 @@ $$
 Therefore
 $$
 1\leq
-       \ell_e\widetilde{\operatorname{str}}(e)
+       \ell_e\widetilde{\mathrm{str}}(e)
               \leq c_{\rm lab}(n+1)\log^2(n+2)L.
  \tag{12}
 $$
@@ -276,7 +276,7 @@ The logical order is as follows.
 2. Conditional only on the size guard, prove (13), hence (14).
    This step does not invoke the AN stretch/work estimate.
 3. Now the input parameter for every AN call obeys
-   $B\leq b_*+O(U)=\operatorname{poly}(U)$.
+   $B\leq b_*+O(U)=\mathrm{poly}(U)$.
    Its fixed powers in (1)--(2) are consequently fixed powers of $U$.
 4. Substitute these powers into the stable-forest and recursive-size
    recurrences. For a favorable fixed cap tuple their shrink factor
@@ -284,7 +284,7 @@ The logical order is as follows.
    fail.
 
 This is a simultaneous first-failure argument, not an equation of
-the form $b_{i+1}=\operatorname{poly}(b_i)$. No power of a bit
+the form $b_{i+1}=\mathrm{poly}(b_i)$. No power of a bit
 count is exported as a new bit count. Temporary integers inside
 the AN call may have polynomially larger bit size, but they are
 discarded after producing its original-edge tree and are charged
@@ -308,8 +308,8 @@ The existing smallest-nonbase-instance aspect guard is unchanged.
 
 The weighted fixed-label stretch supplied by the wrapper is
 $$
-\alpha_U=\operatorname{poly}(B,\log n)
-                                  =\operatorname{poly}(U),
+\alpha_U=\mathrm{poly}(B,\log n)
+                                  =\mathrm{poly}(U),
  \tag{16}
 $$
 with a fixed polynomial degree. Replica ceilings, positive
@@ -325,7 +325,7 @@ nonempty inventory walk has integer length at least one. Hence
 $$
 \lambda\leq 1+\lceil\log_2(T_{\rm occ}L+1)\rceil
                     =O(b+\log(T_{\rm occ}+2))
-                    =\operatorname{poly}(U).
+                    =\mathrm{poly}(U).
  \tag{17}
 $$
 This count is not proportional to $\alpha_U$, and it is not
@@ -381,12 +381,12 @@ $$
 \begin{split}
  \log P&=O(U/K+\log\Gamma+\log U),\\
  W&=k^{O(1)}\rho_{\rm sched}^{O(1)}
-        F^{O(1)}\Gamma^{O(K)}\operatorname{poly}(U).
+        F^{O(1)}\Gamma^{O(K)}\mathrm{poly}(U).
  \end{split}
  \tag{18}
 $$
 The stable-forest comparison quality has one additional
-$\operatorname{poly}(U)$ factor per distance level. Its
+$\mathrm{poly}(U)$ factor per distance level. Its
 full-depth contribution is already the $O(d_*\log U)$ term
 in the raw inverse-quality bound. If a presentation absorbs
 a polynomial factor into $\Gamma$ before its repair-depth
@@ -404,7 +404,7 @@ The source polynomial degrees are FIXED. They do not become
 functions of $p,r,K$, or $d_*$. Explicit products across
 repair and recursive levels are exactly the products already
 counted in (18)--(19), rather than a new implicit degree in
-$\operatorname{poly}(B)$.
+$\mathrm{poly}(B)$.
 
 The existing coupled work recurrence, including late initial
 child-update credit,

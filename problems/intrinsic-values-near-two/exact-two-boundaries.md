@@ -22,7 +22,7 @@ polymatroids f_j, common nonnegative intrinsic values, and optional
 waste. For a threshold theta, define
 
 $$
-N_\theta=\operatorname{Boolean}\!\left(\sum_{v_j\ge\theta}f_j\right),
+N_\theta=\mathrm{Boolean}\!\left(\sum_{v_j\ge\theta}f_j\right),
         \qquad K_\theta=(M^*\vee N_\theta)^*.
  \tag{X1}
 $$
@@ -100,7 +100,7 @@ selected player. Hence, if c(OPT/2)<=k, this algorithm returns an
 exact factor-two allocation in
 
 $$
-(q+1)^k\operatorname{poly}(H)
+(q+1)^k\mathrm{poly}(H)
  \tag{X5}
 $$
 

@@ -99,8 +99,8 @@ removed parent-owned edges are all published explicitly. For
 any graph $X$ and extra edges $D$,
 
 $$
-\operatorname{MSF}(X\cup D)
- \subseteq \operatorname{MSF}(X)\cup D.
+\mathrm{MSF}(X\cup D)
+ \subseteq \mathrm{MSF}(X)\cup D.
  \tag{2}
 $$
 
@@ -118,7 +118,7 @@ the compressed-cluster MSFs on which this proof depends.
 ## 4. A literal connectivity adapter for modern pruning
 
 MGS maintains $A$ with positive residual conductance, with
-$\operatorname{polylog}(N)\phi^{-2}$ worst-case work and
+$\mathrm{polylog}(N)\phi^{-2}$ worst-case work and
 vertex recourse. Conductance alone can ignore isolated vertices,
 so use the following conservative publication rule on the
 initial degree-three cluster:
@@ -147,7 +147,7 @@ algorithm.
 
 Singleton initial clusters are handled directly. Initialization
 of the MGS flow and graph structures is covered by
-$m_C\operatorname{poly}(1/\phi,U)$, a deliberately loose
+$m_C\mathrm{poly}(1/\phi,U)$, a deliberately loose
 bound sufficient for the preprocessing account.
 
 ## 5. Conservative deterministic weighted decomposition
@@ -175,8 +175,7 @@ sufficiently small fixed $c_0>0$ and a constant-size direct base
 case. Thus the source condition $r'\le c_0\log(m'+2)$
 holds even deep inside the hierarchy. The quality loss only improves.
 For a truncated parameter, $\log(m'+2)/r'=O(1)$; otherwise
-it is at most $O(U/r)$. Also $(r')^2\log\log(m'+4)
-\le O(r^2h)$. Hence each such call still costs its actual input
+it is at most $O(U/r)$. Also $(r')^2\log\log(m'+4) \le O(r^2h)$. Hence each such call still costs its actual input
 size times a fixed polynomial in $\gamma$. No tiny instance is
 padded to the master size, and no exponential-in-$m'$ solver is
 used except on a fixed constant-size base.
@@ -244,9 +243,9 @@ size bound just proved. We do not infer that conductance
 survives an arbitrary uncharged post-decomposition deletion.
 
 Each hierarchy level has disjoint actual vertex inventories.
-Its work is $n\operatorname{poly}(\gamma)$, and there are
+Its work is $n\mathrm{poly}(\gamma)$, and there are
 $O(\gamma)$ levels. Initialization of all pruning instances
-adds only $n\operatorname{poly}(\gamma)$. The larger fixed
+adds only $n\mathrm{poly}(\gamma)$. The larger fixed
 power in (5), compared with the informal $\gamma^{-3}$
 description, changes no final logarithmic exponent.
 
@@ -295,7 +294,7 @@ Proposition 9.13 retains edges retired from compressed-cluster
 MSFs. As a result, one actual deletion causes at most two
 deletions of sketch edges, while causing
 $B=O(\pi d)=O(\pi\gamma)$ insertions. Lemma 9.27 pays
-$\operatorname{poly}(\gamma)\pi$ work for these local
+$\mathrm{poly}(\gamma)\pi$ work for these local
 changes; it never recursively treats every publication as a
 deletion.
 
@@ -314,11 +313,11 @@ $$
 
 This is a worst-case interface. Preprocessing satisfies the
 source recurrence with additive
-$n\operatorname{poly}(\gamma)$; its constant branching
+$n\mathrm{poly}(\gamma)$; its constant branching
 factor after normalization gives at worst
 $\exp O(U/\log\gamma)$ extra overhead. With (6), all
 nonrecursive terms in (8) are
-$\operatorname{poly}(\gamma,U)$ times that harmless
+$\mathrm{poly}(\gamma,U)$ times that harmless
 overhead. The only recursive update multiplier is $O(\log n)$.
 
 For a global master bound $N$, use the same $\gamma$

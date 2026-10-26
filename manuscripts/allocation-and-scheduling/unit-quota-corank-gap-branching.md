@@ -71,15 +71,15 @@ rank test. Each node uses polynomially many input-oracle operations and
 polynomial-bit arithmetic. Consequently its running time is
 
 $$
-\Gamma\!\left(\frac{t}{t-b}\right)^c\operatorname{poly}(H)
-       \le\left(\frac{et}{t-b}\right)^c\operatorname{poly}(H),
+\Gamma\!\left(\frac{t}{t-b}\right)^c\mathrm{poly}(H)
+       \le\left(\frac{et}{t-b}\right)^c\mathrm{poly}(H),
  \tag{C4}
 $$
 
 and it can use polynomial workspace. For t=4 and b=2 this is
 
 $$
-4^c\operatorname{poly}(H).
+4^c\mathrm{poly}(H).
  \tag{C5}
 $$
 
@@ -324,8 +324,8 @@ and arbitrary integral recipient polymatroid has a deterministic
 factor-two algorithm in
 
 $$
-(27/4)^c\operatorname{poly}(H)
-                          =2^{O(c)}\operatorname{poly}(H)
+(27/4)^c\mathrm{poly}(H)
+                          =2^{O(c)}\mathrm{poly}(H)
  \tag{C19}
 $$
 

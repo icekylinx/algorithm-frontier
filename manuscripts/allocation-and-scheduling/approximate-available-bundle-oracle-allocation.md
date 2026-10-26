@@ -47,7 +47,7 @@ note:
 $$
 \begin{split}
  &x\in P_{\mathcal B(M)},\qquad
- y_p\in x_p\operatorname{conv}
+ y_p\in x_p\mathrm{conv}
                   \{\mathbf1_C:C\in\mathcal F_p\},\\
  &\sum_p y_{pe}\le1,\qquad
  \sum_e v_e y_{pe}\ge T x_p.
@@ -104,7 +104,7 @@ Let the current matching size be $k<r$, let
 $s=|Y_{<i}|$, and put
 
 $$
-J_0=I\setminus\operatorname{owners}(Y_{<i}),\qquad
+J_0=I\setminus\mathrm{owners}(Y_{<i}),\qquad
  w=r-|J_0|=r-k+s\ge1.
 $$
 
@@ -298,7 +298,7 @@ validates the same growth certificate. In particular ratio
 $d_{r,\lambda}+\eta$ is obtained in
 
 $$
-\operatorname{poly}(\text{input bits, oracle work})\,
+\mathrm{poly}(\text{input bits, oracle work})\,
  \min\left\{2^{O(r)},
        (r+1)^{O((1+\eta^{-1})\log(r+1))}\right\}.
  \tag{A17}

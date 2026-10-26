@@ -50,7 +50,7 @@ $$
 
 The construction supplied for (C4') is randomized polynomial in $D$ and the remaining input and accuracy parameters. It may therefore be exponential in the compact input. The compact algorithm for (C4) uses integer normal forms and does not factor $q$ or materialize a $D$-dimensional matrix.
 
-**Proof.** Treat each check as a block containing its single Weyl generator in [the arbitrary-dimensional whole-block theorem](arbitrary-dimension-whole-stabilizer-blocks.md), and set every local dimension equal to $q$. Its phase modulus becomes $2\operatorname{lcm}(q,\ldots,q)=2q=Q$; its block penalty is exactly (C2). Theorems 1 and 2 of that manuscript give (C4') and (C4), respectively, with the same original item identities and weights. This proves every claimed support, representation, probability, and running-time assertion. $\square$
+**Proof.** Treat each check as a block containing its single Weyl generator in [the arbitrary-dimensional whole-block theorem](arbitrary-dimension-whole-stabilizer-blocks.md), and set every local dimension equal to $q$. Its phase modulus becomes $2\mathrm{lcm}(q,\ldots,q)=2q=Q$; its block penalty is exactly (C2). Theorems 1 and 2 of that manuscript give (C4') and (C4), respectively, with the same original item identities and weights. This proves every claimed support, representation, probability, and running-time assertion. $\square$
 
 For clarity, the composite-dimensional algebra does not use a field basis. If $UV=\zeta VU$ and the nontrivial scalar commutator has order $t$, then
 

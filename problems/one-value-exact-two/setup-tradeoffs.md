@@ -51,10 +51,10 @@ return a genuine M-basis and an integer allocation satisfying SU1 with
 at least ceil(K*/d) units per selected player, using either
 
 $$
-A_d^c\operatorname{poly}(H)
+A_d^c\mathrm{poly}(H)
  \quad\text{or}\quad
  B_d^q\,
- 2^{O(q\log\log(q+2)/\log(q+2))}\operatorname{poly}(H)
+ 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
 \tag{SU3}
 $$
 
@@ -143,7 +143,7 @@ a gap routine of all-input time
 
 $$
 \Gamma\!\left(\frac{K}{K-b}\right)^{c-|Z|}
-                                      \operatorname{poly}(H)
+                                      \mathrm{poly}(H)
 \tag{SU8}
 $$
 

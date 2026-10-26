@@ -24,7 +24,7 @@ in this ORIGINAL fixed graph:
 
 $$
 d(v)=\deg_H(v),\qquad
- \operatorname{vol}(P)=\sum_{v\in P}d(v).
+ \mathrm{vol}(P)=\sum_{v\in P}d(v).
  \tag{1}
 $$
 
@@ -32,7 +32,7 @@ There are $M$ explicitly listed ordered token pairs. At most
 $D d(v)$ tokens start at $v$, and at most $D d(v)$
 tokens end at $v$, for a known $D\geq1$. The two bounds are
 separate, so the number of token endpoints in a set $P$ is at
-most $2D\operatorname{vol}(P)$. Multiplicities and opposite
+most $2D\mathrm{vol}(P)$. Multiplicities and opposite
 orientations are allowed. A pair with identical endpoints is returned
 immediately with its empty path; this cannot increase any load.
 
@@ -43,7 +43,7 @@ absolute constant $c_0$, after $t$ explicit deletions, within
 its permitted deletion budget,
 
 $$
-\operatorname{vol}(P)\leq c_0t/\phi.
+\mathrm{vol}(P)\leq c_0t/\phi.
  \tag{2}
 $$
 
@@ -51,14 +51,14 @@ For any two vertices outside $P$, it returns an explicit path
 in the surviving graph, of at most $\Lambda$ edges. We erase any
 repeated vertices before using a returned walk as a path. The interface
 remains valid with larger $\Lambda$. Initialization and all allowed
-updates in one oracle generation cost $mF\operatorname{poly}(U)$;
-explicit path output costs $\Lambda\operatorname{poly}(U)$ per
+updates in one oracle generation cost $mF\mathrm{poly}(U)$;
+explicit path output costs $\Lambda\mathrm{poly}(U)$ per
 query. This is the interface supplied by the linked reconstruction;
 in particular $F$ is construction work, not a path-length bound.
 
 Here $U$ bounds record sizes and logarithms of the explicit input
 and parameter ranges. If no such master parameter is fixed, all
-$\operatorname{poly}(U)$ factors below may instead include the
+$\mathrm{poly}(U)$ factors below may instead include the
 relevant input-word bit costs and $\log(M+m+2)$.
 
 ### 1.1 Extending the interface through deletion-quota exhaustion
@@ -72,7 +72,7 @@ not query that oracle again. If $t$ includes this first excessive
 request, then $t>\phi m/c_q$, and therefore
 
 $$
-\operatorname{vol}(V)=2m<2c_qt/\phi.
+\mathrm{vol}(V)=2m<2c_qt/\phi.
  \tag{3}
 $$
 
@@ -80,7 +80,7 @@ Thus, with $c=\max\{c_0,2c_q\}$, the augmented interface always
 satisfies
 
 $$
-\operatorname{vol}(P)\leq ct/\phi.
+\mathrm{vol}(P)\leq ct/\phi.
  \tag{4}
 $$
 
@@ -177,7 +177,7 @@ and (7) give
 $$
 \begin{aligned}
  R_j
- &\leq2D\operatorname{vol}(P_j)
+ &\leq2D\mathrm{vol}(P_j)
  \leq 2Dc\,t_j/\phi\\
  &\leq \frac{2Dc\Lambda}{\phi\tau}B_j
  \leq B_j/4.
@@ -215,7 +215,7 @@ token, so path extraction, loop erasure if needed, and edge-load
 increments cost
 
 $$
-O(M\Lambda)\operatorname{poly}(U).
+O(M\Lambda)\mathrm{poly}(U).
 $$
 
 An edge reaches the current threshold at most once in a round. The
@@ -224,7 +224,7 @@ generation bound. Initialization and updates across all generations
 cost
 
 $$
-O(mF\log(M+2))\operatorname{poly}(U).
+O(mF\log(M+2))\mathrm{poly}(U).
 $$
 
 Resetting the oracle and initializing its original edge IDs is charged
@@ -239,7 +239,7 @@ Consequently the total work is
 $$
 \boxed{
   O\bigl(mF\log(M+2)+M\Lambda\bigr)
-       \operatorname{poly}(U).
+       \mathrm{poly}(U).
  }
  \tag{10}
 $$
@@ -285,7 +285,7 @@ such that the token paths have length at most $\Gamma$, edge
 congestion at most $D\Gamma$, and total work
 
 $$
-\bigl(mF+M\Gamma\bigr)\operatorname{poly}(U).
+\bigl(mF+M\Gamma\bigr)\mathrm{poly}(U).
  \tag{13}
 $$
 

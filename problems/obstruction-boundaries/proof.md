@@ -20,9 +20,9 @@ F(x,t)=\sum_{uv}\lambda_{uv}(x_u\oplus x_v)
 +\left(\frac{Mn}{2}-K\right)t.
 $$
 
-For $t=0$, $F(x,0)=\operatorname{cut}(x)-M|\{v:x_v=1\}|\le0$. For $t=1$, it equals $\operatorname{cut}(x)-K$. Therefore $F\le0$ on every assignment if and only if the maximum cut is at most $K$.
+For $t=0$, $F(x,0)=\mathrm{cut}(x)-M|\{v:x_v=1\}|\le0$. For $t=1$, it equals $\mathrm{cut}(x)-K$. Therefore $F\le0$ on every assignment if and only if the maximum cut is at most $K$.
 
-Write the displayed signed sum as $\sum_ec_eb_e$, retain separate item identities, and omit zero coefficients. Set $w_e=4|c_e|$ and $z_e=(1+\operatorname{sign}c_e)/4$. Then
+Write the displayed signed sum as $\sum_ec_eb_e$, retain separate item identities, and omit zero coefficients. Set $w_e=4|c_e|$ and $z_e=(1+\mathrm{sign}c_e)/4$. Then
 
 $$
 \sum_ew_e(z_e-1/4)b_e(y)=F(y).

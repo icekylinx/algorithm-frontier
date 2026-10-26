@@ -32,7 +32,7 @@ $$
 Loop and coroutine bookkeeping introduce at most polynomial logarithmic overhead. In particular, for every fixed successful branch,
 $$
 T_{\mathrm{unif}}(q)
-\le C_t\bigl(T_t(q)+V(q)+1\bigr)\operatorname{polylog}(q+2).
+\le C_t\bigl(T_t(q)+V(q)+1\bigr)\mathrm{polylog}(q+2).
 $$
 
 Every accepted output is optimum. The fallback receives enough service to terminate on every input, so the program always terminates.

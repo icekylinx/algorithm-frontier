@@ -205,7 +205,7 @@ an infinite sequence of accuracies. In particular, an oracle algorithm
 with time
 
 $$
-2^{o(\epsilon^{-1/2})}\operatorname{poly}(H)
+2^{o(\epsilon^{-1/2})}\mathrm{poly}(H)
 $$
 
 would contradict the query bound, for each of the seven variants.

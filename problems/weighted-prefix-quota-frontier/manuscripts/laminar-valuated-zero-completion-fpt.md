@@ -30,7 +30,7 @@ Every finite target is a nonnegative integer. The scalar $c\cdot x$ has arbitrar
 **Theorem.** Exact feasibility and scalar optimization have a deterministic algorithm with running time
 
 $$
-2^{O(B^2\log(B+1))}\operatorname{poly}(H)
+2^{O(B^2\log(B+1))}\mathrm{poly}(H)
 \tag{VZ3}
 $$
 
@@ -105,7 +105,7 @@ Maintain independent sets $J_i$, initially empty, and form
 
 $$
 Y(J)=T\setminus\bigcup_{i=1}^{D}
-                                      \operatorname{cl}_{N_i}(J_i).
+                                      \mathrm{cl}_{N_i}(J_i).
 \tag{VZ9}
 $$
 
@@ -116,9 +116,9 @@ k\sum_{j=0}^{d}(kD)^j.
 \tag{VZ10}
 $$
 
-**Representative property.** Suppose $S$ is a domain basis and $e\in S\cap T$. Let $B_i$ be independent in $N_i$, with total size at most $d$, and suppose $e$ is outside all their closures. Some emitted $f$ satisfies VZ8 and lies outside every $\operatorname{cl}_{N_i}(B_i)$.
+**Representative property.** Suppose $S$ is a domain basis and $e\in S\cap T$. Let $B_i$ be independent in $N_i$, with total size at most $d$, and suppose $e$ is outside all their closures. Some emitted $f$ satisfies VZ8 and lies outside every $\mathrm{cl}_{N_i}(B_i)$.
 
-To prove it, maintain a recursion path with $J_i\subseteq\operatorname{cl}(B_i)$ and $e\in Y(J)$. The overlap replacement lemma supplies at least one emitted $f$ with VZ8. If that $f$ passes every blocker test, the proof is complete. Otherwise it lies in $\operatorname{cl}(B_i)$ for some $i$. Since it is outside $\operatorname{cl}(J_i)$, one has $|J_i|<|B_i|$. The branch inserting this particular $f$ in $J_i$ remains legitimate: closure containment persists and $e$ stays outside. A legitimate path cannot exceed the total test rank $\sum_i|B_i|\le d$. Thus it reaches a passing candidate.
+To prove it, maintain a recursion path with $J_i\subseteq\mathrm{cl}(B_i)$ and $e\in Y(J)$. The overlap replacement lemma supplies at least one emitted $f$ with VZ8. If that $f$ passes every blocker test, the proof is complete. Otherwise it lies in $\mathrm{cl}(B_i)$ for some $i$. Since it is outside $\mathrm{cl}(J_i)$, one has $|J_i|<|B_i|$. The branch inserting this particular $f$ in $J_i$ remains legitimate: closure containment persists and $e$ stays outside. A legitimate path cannot exceed the total test rank $\sum_i|B_i|\le d$. Thus it reaches a passing candidate.
 
 All emitted candidates are tried as branch choices; the algorithm need not identify which one is good for the unknown protected solution. This is the step that replaces the fixed element scores of LM. There is no assumption that $S$ is independent in the auxiliary matroids.
 
@@ -150,7 +150,7 @@ K_k\le B(B^2+1)\,k\sum_{j=0}^{k-1}(kD)^j
 \tag{VZ12}
 $$
 
-Enumerating $k$-sets from these positions, testing the numeric rows, and computing their exact completion values costs at most $(K_k+1)^k\operatorname{poly}(H)$. Summing over $k\le B$ gives VZ3. The zero-positive-cardinality case is handled separately by exact optimization on the zero ground.
+Enumerating $k$-sets from these positions, testing the numeric rows, and computing their exact completion values costs at most $(K_k+1)^k\mathrm{poly}(H)$. Summing over $k\le B$ gives VZ3. The zero-positive-cardinality case is handled separately by exact optimization on the zero ground.
 
 ## 6. Optimal zero completion is a valuated matroid
 
@@ -245,13 +245,13 @@ h_x(A)=\min_{C\subseteq P}
 \tag{VZ20}
 $$
 
-As proved in LM, this is an integral residual polymatroid and describes all compatible zero completions. Its full rank cannot exceed $R-x(P)$. A full completion exists exactly when equality holds; then minimum-cost greedy base optimization on $h_x$, using the original signed zero coefficients, gives the exact best completion. Rank evaluations are submodular minimizations with binary modular terms. Only $n$ counters, one best vector, and polynomial oracle workspace are retained. This branch costs $2^{O(B\log(B+1))}\operatorname{poly}(H)$.
+As proved in LM, this is an integral residual polymatroid and describes all compatible zero completions. Its full rank cannot exceed $R-x(P)$. A full completion exists exactly when equality holds; then minimum-cost greedy base optimization on $h_x$, using the original signed zero coefficients, gives the exact best completion. Rank evaluations are submodular minimizations with binary modular terms. Only $n$ counters, one best vector, and polynomial oracle workspace are retained. This branch costs $2^{O(B\log(B+1))}\mathrm{poly}(H)$.
 
 If $1\le B<n$, construct the at-most-$nB<n^2$ positive copies and keep all zero counts compressed. Every attempted $k$ is at most $B$, every representative recursion has depth at most $k-1<n$, and every auxiliary partition list is explicit-input size. The rank formula VZ15 and the integral intersections have polynomial-size grounds and polynomial-bit coefficients. Clearing rational denominators and the overlap reward VZ17 also use polynomially many bits. The optional canonical subset score has $O(|U|)$ bits, not $2^{|U|}$ stored bits.
 
 Do not store the representative union. An emitted position is encoded by a candidate-class index, a recursion path, and the final index of an element in the sorted set $A\cap Y$. Each path step gives an emitted-element index at most $k$ and a partition index at most $D$. Replay the path using the deterministic oracle and discard an index if a step has no such emitted element. Recompute candidates whenever required. The number of all possible encoded positions is bounded by VZ12, including invalid positions.
 
-Enumerate $k$-tuples of those indices, reject repeated copies and failed numeric rows, and evaluate exact completion on each surviving set. Every actual representative set is included. The stored indices use $O(B^2\log(B+1)+B\log(H+1))$ bits, and the current $J_i$ have total size at most $k-1$. All are polynomial in $H$ in this branch. Invalid paths, failed tuples, empty completion faces, and empty cardinality domains are counted within the same $2^{O(B^2\log(B+1))}\operatorname{poly}(H)$ bound on arbitrary inputs.
+Enumerate $k$-tuples of those indices, reject repeated copies and failed numeric rows, and evaluate exact completion on each surviving set. Every actual representative set is included. The stored indices use $O(B^2\log(B+1)+B\log(H+1))$ bits, and the current $J_i$ have total size at most $k-1$. All are polynomial in $H$ in this branch. Invalid paths, failed tuples, empty completion faces, and empty cardinality domains are counted within the same $2^{O(B^2\log(B+1))}\mathrm{poly}(H)$ bound on arbitrary inputs.
 
 The output is the positive vector together with an attaining zero vector, both in binary. For an originally optional instance, discard only the designated disposal coordinate. No real mandatory unit or scalar contribution is discarded.
 

@@ -243,7 +243,7 @@ The backend costs, returned-list raw sums including LOW answers,
 point reads, retirement transfers and dynamic-tree operations give
 
 $$
-T_{\rm price}\le(M+Q)D_*^2\operatorname{poly}(s).
+T_{\rm price}\le(M+Q)D_*^2\mathrm{poly}(s).
                                                                \tag{11}
 $$
 
@@ -258,13 +258,13 @@ Consequently
 
 $$
 J_{\rm loc}=O((P+1)B^{200}s),\qquad
- Q_{\rm loc}\le(P+1+D_*J_{\rm loc})\operatorname{poly}(s).
+ Q_{\rm loc}\le(P+1+D_*J_{\rm loc})\mathrm{poly}(s).
 $$
 
 Substitution into (8) and (11) gives numerical work
 
 $$
-(P+B)2^{2a^2}B^{230}\operatorname{poly}(s).                \tag{12}
+(P+B)2^{2a^2}B^{230}\mathrm{poly}(s).                \tag{12}
 $$
 
 The local graph, optimistic boundary capacities, locked threshold
@@ -279,7 +279,7 @@ proof-level rate derived in the quantitative flow note:
 
 $$
 Z\exp(O((\log Z)^{17/18}\log\log(Z+4)))
-       \operatorname{poly}(\text{input bits}).
+       \mathrm{poly}(\text{input bits}).
 $$
 
 Capacity-digit reduction handles `O(s)`-bit capacities on a small

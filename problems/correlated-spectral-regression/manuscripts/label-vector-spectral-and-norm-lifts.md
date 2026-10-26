@@ -34,7 +34,7 @@ The same method extends to overlapping label sets of size at most d. Its support
 Let B_1,...,B_N be real symmetric positive-semidefinite matrices. Let
 
 $$
-M=\sum_e B_e,\qquad r=\operatorname{rank}M.
+M=\sum_e B_e,\qquad r=\mathrm{rank}M.
 $$
 
 Work inside range(M), so the matrices have ambient dimension r. Each item has a label set Λ(e) of size at most d. For F⊆[L], |F|≤h, the survivors are E_F={e:Λ(e)∩F=∅}. The required output is a single subset H and nonnegative weights ω_e such that
@@ -76,7 +76,7 @@ $$
 For each F, apply the positive linear map
 
 $$
-\mathcal T_F(Z)=\operatorname{Tr}_{\rm aux}
+\mathcal T_F(Z)=\mathrm{Tr}_{\rm aux}
    \bigl((I_r\otimes Q_F)Z(I_r\otimes Q_F)\bigr).
 $$
 
@@ -341,7 +341,7 @@ The same conclusion yields strong group-deletion coresets for fixed-response ℓ
 There is also an effective-dimension version of the d=1 PSD theorem. Fix R≽0 and let
 
 $$
-\rho=\operatorname{tr}\bigl(M(R+M)^\dagger\bigr).
+\rho=\mathrm{tr}\bigl(M(R+M)^\dagger\bigr).
 $$
 
 We seek a common summary approximating R+M_F, with R kept exactly. This subsection uses the original ambient dimension n: one must not merely restrict R to range(M) when R has cross terms with its orthogonal complement. The earlier positive decoding map is applied with I_n in place of I_r. Write η for the final spectral accuracy in this subsection. Use the one-label RIP code at projection-loss accuracy O(η). Its auxiliary dimension D must additionally satisfy D≥32h/η; append zero coordinates to the label vectors if necessary. In particular, the identity-code cap cannot discard this condition. Include a permanent coordinate for unlabeled items, and use D for the resulting total auxiliary dimension.
@@ -358,7 +358,7 @@ For the fault projection P_F, partial trace sends the background to
 
 $$
 \mathcal T_F(\widetilde R)
-   =\frac{D-\operatorname{rank}V_F}{D}R.
+   =\frac{D-\mathrm{rank}V_F}{D}R.
 \tag{22}
 $$
 
@@ -373,9 +373,9 @@ $$
 For f(X)=X(I+X)^{-1}, the lifted effective dimension is tr f(A). Average conjugation of A over signed permutation matrices on the auxiliary factor. The average is C⊗I_D, since every v_e is a unit vector. The function f is operator concave; equivalently, matrix inversion is operator convex. One elementary proof of the latter averages the PSD block matrices [[X,I],[I,X^{-1}]] and applies the Schur complement. Jensen's inequality and trace invariance give
 
 $$
-\operatorname{tr}f(A)
- \le\operatorname{tr}f(C\otimes I_D)
- =D\operatorname{tr}\bigl(C(I+C)^{-1}\bigr)
+\mathrm{tr}f(A)
+ \le\mathrm{tr}f(C\otimes I_D)
+ =D\mathrm{tr}\bigl(C(I+C)^{-1}\bigr)
  =D\rho.
 \tag{23}
 $$

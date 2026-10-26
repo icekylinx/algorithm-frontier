@@ -255,14 +255,14 @@ It follows that the deterministic approximation factor against the
 residual-capacity configuration optimum is
 
 $$
-d=\tau+3-3/r\quad\text{in }2^{O(r)}\operatorname{poly}(H),
+d=\tau+3-3/r\quad\text{in }2^{O(r)}\mathrm{poly}(H),
  \tag{L12}
 $$
 
 or d+eta, for positive rational eta, in
 
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}.
  \tag{L13}
 $$
@@ -395,7 +395,7 @@ its comparator under the same quota and growth conditions as its original
 prefix theorem. This transfer does not assert polynomial-time optimization
 of the relaxation.
 
-**Proof.** Let $E=P\setminus\operatorname{cl}_M(J)$ be the eligible set.
+**Proof.** Let $E=P\setminus\mathrm{cl}_M(J)$ be the eligible set.
 Clip a configuration $n\in C_p(t)$ at the actual residual capacities
 $a_{pj}(z^j)$ from (L7). The clipped count vector remains in the player's
 downward-closed local family. A failed exact scan implies that its total

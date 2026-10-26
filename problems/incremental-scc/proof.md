@@ -48,7 +48,7 @@ Then the algorithm below maintains an explicit component label at every
 original vertex, with total time
 
 $$
-(n+m)E(N)^{O(1)}\operatorname{poly}(U).
+(n+m)E(N)^{O(1)}\mathrm{poly}(U).
 \tag{1}
 $$
 
@@ -269,7 +269,7 @@ There are at most $m$ original edge births. Equations (9)--(12)
 therefore give
 
 $$
-T=O(mU\beta^{-2})=(n+m)E(N)^{O(1)}\operatorname{poly}(U)
+T=O(mU\beta^{-2})=(n+m)E(N)^{O(1)}\mathrm{poly}(U)
 \tag{13}
 $$
 
@@ -351,7 +351,7 @@ When local graph size makes a growing-depth hierarchy inconvenient,
 [small local detector exact solver](../../manuscripts/graph-backends/small-local-detector-exact-solver.md) supplies a direct alternative.
 Its same bidirected negative-cycle test works for $g=-w$, and the
 absence of high-power barriers only simplifies its arithmetic. The
-direct branch takes $M^3\operatorname{poly}(U)$ time, within
+direct branch takes $M^3\mathrm{poly}(U)$ time, within
 $M E(N)^{O(1)}$ below a fixed-power cutoff in $E(N)$.
 
 An announced final edge bound is enough for the theorem. If it is

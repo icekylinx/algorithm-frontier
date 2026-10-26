@@ -115,11 +115,11 @@ F_x=2^{-1/2}\sum_e w_eT_{e,xL_e},
  Z_x=\sum_e w_e\xi_e\mathbf1[x\notin L_e].
  \tag{A12}
 $$
-Left translation preserves the law of $F$, so the identity is a global minimum with probability at least $1/|A|$. For each coordinate, $Y_x$ and $Z_x$ have the same variance. For two coordinates outside $L_e$, the contribution to $\operatorname{Cov}(Y_x,Y_y)$ is
+Left translation preserves the law of $F$, so the identity is a global minimum with probability at least $1/|A|$. For each coordinate, $Y_x$ and $Z_x$ have the same variance. For two coordinates outside $L_e$, the contribution to $\mathrm{Cov}(Y_x,Y_y)$ is
 $$
 \frac{w_e^2}{2}\bigl(1+\mathbf1[xL_e=yL_e]\bigr)\le w_e^2,
 $$
-and the corresponding contribution to $\operatorname{Cov}(Z_x,Z_y)$ is $w_e^2$. If either coordinate belongs to $L_e$, both contributions vanish. Slepian comparison, after normalizing nonzero coordinates, proves (A11).
+and the corresponding contribution to $\mathrm{Cov}(Z_x,Z_y)$ is $w_e^2$. If either coordinate belongs to $L_e$, both contributions vanish. Slepian comparison, after normalizing nonzero coordinates, proves (A11).
 
 Apply (A11) to $A=\widetilde G$ and $L_e=K_{C_e}$, and restrict its event to $q(G)$. The exact identity (A10) gives
 $$
@@ -199,7 +199,7 @@ This is a coset in the common assignment group $A^n$. If the preimage is empty, 
 
 **Corollary 2.** The weighted number of violated constraints
 $$
-\operatorname{Viol}(x)
+\mathrm{Viol}(x)
  =\sum_e w_e\mathbf1[\pi_e(x)\notin a_eH_e]
 $$
 has a relative-error sparsifier retaining
@@ -327,7 +327,7 @@ S_g=\{e:g\notin C_e\}.
 $$
 A nested chain of unions of the $S_g$'s can be represented by nested accumulated query sets $T\subseteq G$. The complement of such a union consists of cosets $C_e$ containing all of $T$, equivalently containing its affine hull: for nonempty $T$ and $a\in T$, this hull is
 $$
-\operatorname{aff}(T)
+\mathrm{aff}(T)
  =a\langle a^{-1}t:t\in T\rangle.
 $$
 Every strict increase of a nonempty affine hull multiplies its size by at least two. The possible initial empty hull contributes one extra step. If the violated-item union increases, its affine hull must increase as well. This proves the claimed chain bound and makes (A24) an applicable broader baseline.

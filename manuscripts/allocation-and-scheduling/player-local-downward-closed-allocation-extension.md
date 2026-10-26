@@ -34,7 +34,7 @@ For a currently available resource set $A\subseteq E$, assume
 access to an oracle returning a bundle
 
 $$
-\mathcal O_p(A)\in\arg\max\{v(C): C\subseteq A,
+\mathcal O_p(A)\in\mathrm{arg}\,\max\{v(C): C\subseteq A,
                                       C\in\mathcal F_p\}.
  \tag{D1}
 $$
@@ -57,7 +57,7 @@ Use the following relaxation, denoted $L(T)$:
 $$
 \begin{split}
  &x\in P_{\mathcal B(M)},\\
- &y_p\in x_p\operatorname{conv}
+ &y_p\in x_p\mathrm{conv}
           \{\mathbf1_C:C\in\mathcal F_p\}\quad(p\in P),\\
  &\sum_p y_{pe}\le1\quad(e\in E),\\
  &\sum_e v_e y_{pe}\ge T x_p\quad(p\in P).
@@ -113,7 +113,7 @@ $$
 
 Assume $B\le T$, as in all guarantees below. The eligible
 player mass is at least
-$w=r-|I\setminus\operatorname{owners}(Y_{<i})|>0$.
+$w=r-|I\setminus\mathrm{owners}(Y_{<i})|>0$.
 Summing (D4), using the target constraints and physical resource
 capacities, gives the same strict lower bound
 
@@ -123,7 +123,7 @@ v(F)>(T-B)w.
 $$
 
 Consequently an independent $J_0$, a physical resource set $F$,
-oracle-verified inequalities (D3) outside $\operatorname{cl}(J_0)$,
+oracle-verified inequalities (D3) outside $\mathrm{cl}(J_0)$,
 and
 
 $$

@@ -93,9 +93,9 @@ edges. The rounded original cut is some vertex set A in G.
 Since d_v>=a_v/2,
 
 $$
-\min\{\operatorname{vol}_G(A),
-               \operatorname{vol}_G(\overline A)\}
-       \geq \frac12\min\{|T|,|V(P)\T|\}
+\min\{\mathrm{vol}_G(A),
+               \mathrm{vol}_G(\overline A)\}
+       \geq \frac12\min\{|T|,|V(P)\setminus T|\}
        \geq \frac12(w-z).
  \tag{5}
 $$
@@ -189,9 +189,9 @@ query bounds remain
 $$
 \begin{aligned}
  P_{\rm work}&\leq
-       m\exp O(U/p+ph+\log\phi^{-1})\operatorname{poly}(U),\\
+       m\exp O(U/p+ph+\log\phi^{-1})\mathrm{poly}(U),\\
  Q_{\rm quality}&\leq\exp O(ph+\log\phi^{-1}),\\
- Q_{\rm work}&\leq mD Q_{\rm quality}\operatorname{poly}(U).
+ Q_{\rm work}&\leq mD Q_{\rm quality}\mathrm{poly}(U).
  \end{aligned}
  \tag{10}
 $$

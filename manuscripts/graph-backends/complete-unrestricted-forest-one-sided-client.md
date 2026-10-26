@@ -187,7 +187,7 @@ Choose A>=max_a sigma_a and put D^*(v)=A-I(v). Ordinary costs are
 nonnegative. Extending a source path across one arc and erasing
 any resulting backtrack proves
 $$
-I(v)\ge I(u)-\operatorname{length}(u,v).
+I(v)\ge I(u)-\mathrm{length}(u,v).
 $$
 Also I(d)>=sigma_d at every bin. Therefore D^* is feasible for
 the complete current conservative threshold graph.
@@ -278,7 +278,7 @@ $$
 The two dynamic trees, all path updates, guard queries, endpoint
 edits, and register notifications cost
 $$
-(m+\nu)\operatorname{polylog}S       \tag{12}
+(m+\nu)\mathrm{polylog}S       \tag{12}
 $$
 in total, including initialization and a terminal LOW query.
 Space is linear apart from ordinary dictionary overhead.
@@ -323,7 +323,7 @@ J=O((nu_0+A_s)\log S),\qquad
 $$
 and total work is
 $$
-(m_0+\nu_0+A_T+A_x+A_s)\operatorname{polylog}S. \tag{13}
+(m_0+\nu_0+A_T+A_x+A_s)\mathrm{polylog}S. \tag{13}
 $$
 
 Exact endpoint slack caches are inexpensive here: only two change

@@ -371,7 +371,7 @@ and Q extra queries, local work after the initial labels
 and forest have been supplied is
 
 $$
-(\nu+J+P+Q+R)\operatorname{polylog}S .
+(\nu+J+P+Q+R)\mathrm{polylog}S .
  \tag{13}
 $$
 

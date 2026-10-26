@@ -191,7 +191,7 @@ k^{O(1)} poly(U) 2^{b_*}. Weighted halving therefore needs
 
 $$
 O(\log(m+2)+\log(k+2)+b_*+\log(U+2))
-                       =\operatorname{poly}(U)
+                       =\mathrm{poly}(U)
  \tag{5}
 $$
 
@@ -269,7 +269,7 @@ proof yields selected degree/encoded recourse with
 $$
 \log R=O(U/K+\log\Gamma+\log U),
  \qquad
- W=k^{O(1)}\rho^{O(1)}F^{O(1)}\Gamma^{O(K)}\operatorname{poly}(U)
+ W=k^{O(1)}\rho^{O(1)}F^{O(1)}\Gamma^{O(K)}\mathrm{poly}(U)
  \tag{7}
 $$
 

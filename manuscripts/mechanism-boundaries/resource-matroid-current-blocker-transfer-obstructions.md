@@ -139,13 +139,13 @@ is feasible, so that resource has no actual matching blocker of this
 center. At resource $k$, player $b$ is its unique blocker.
 Consequently the naive resource-circuit version records
 $Y_1=\{M_b\}$. The player $x$ is eligible because
-$x\notin\operatorname{cl}(I)$.
+$x\notin\mathrm{cl}(I)$.
 
 Suppose the naive forbidden test at each resource excludes the span
 of the receiving players of selected centers and current blockers.
 This is the natural attempt to replace forbidden physical items by
 resource flats. The first layer can be completed under that test:
-its only player eligible outside $\operatorname{cl}(I)$ is
+its only player eligible outside $\mathrm{cl}(I)$ is
 $x$, and its selected resources are unavailable to another copy
 of its own candidate.
 

@@ -96,7 +96,7 @@ The forward construction in Section 3 already produces exactly k selected coordi
 The reduction maps k to B=k+1 on every nontrivial instance. Exact k-SetCover is W[2]-hard, so exact feasibility in either quota formulation is W[2]-hard parameterized by B. In particular, unless FPT=W[2], there is no algorithm with running time
 
 $$
-f(B)\operatorname{poly}(H)
+f(B)\mathrm{poly}(H)
  \tag{RW8}
 $$
 

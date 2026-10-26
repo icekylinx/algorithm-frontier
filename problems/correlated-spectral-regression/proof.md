@@ -17,7 +17,7 @@ Suppose masses $m_e(X)$ are nonnegative, increase when the containing set shrink
 
 **Proof.** Fix one maximizing failure witness $F_e$ per item. Put each label in a random pool independently with probability $\alpha=d/(h+d)$, and retain items whose entire own-label sets lie in the pool. The event that the pool contains $\Lambda(e)$ and avoids $F_e$ has probability at least $\alpha^d(1-\alpha)^h=1/\Gamma$. On that event the pool is a subset of $E_{F_e}$ containing $e$, so its mass is at least $\sigma_e$. Pointwise the sum of protected masses is at most $S$. Take expectations. $\square$
 
-For PSD items $B_e$, use $m_e(X)=\operatorname{tr}(B_eM_X^\dagger)$, $M_X=\sum_{e\in X}B_e$. The total is $\operatorname{rank}M_X\le r$. Deletion monotonicity follows from the quadratic inverse variational identity on the range containing $B_e$; it requires no global ordering of pseudoinverses.
+For PSD items $B_e$, use $m_e(X)=\mathrm{tr}(B_eM_X^\dagger)$, $M_X=\sum_{e\in X}B_e$. The total is $\mathrm{rank}M_X\le r$. Deletion monotonicity follows from the quadratic inverse variational identity on the range containing $B_e$; it requires no global ordering of pseudoinverses.
 
 For one failed label, sum the nonnegative increases over all single-label scenarios. With $t_e=m_e(E)$ and surviving ranks $r_c$, the sum of per-item maxima is at most
 $$
@@ -39,7 +39,7 @@ O\left(\min\{N,\Gamma r\epsilon^{-2}\log(2rQ/\delta)\}\right).
 $$
 The full-input gate precedes oversized work. For $h=1$, explicitly compute the $L+1$ scenarios and use trace-exponential derandomization, obtaining deterministic polynomial-bit support $O((d+1)r\epsilon^{-2}\log(2r(L+1)))$, capped by $N$.
 
-With fixed PSD background $R$, replace the rank mass by $\rho=\operatorname{tr}(M(R+M)^\dagger)$. Centered matrix Bernstein gives the corresponding regularized statement. It remains valid for every later background larger in PSD order.
+With fixed PSD background $R$, replace the rank mass by $\rho=\mathrm{tr}(M(R+M)^\dagger)$. Centered matrix Bernstein gives the corresponding regularized statement. It remains valid for every later background larger in PSD order.
 
 ## 3. Positive label-code decoder
 
@@ -93,7 +93,7 @@ These are fixed-weight spectral guarantees, separate from exact filtration-prefi
 
 ## 5. Weak convex regression
 
-Augment design $A$ by supplied response basis $B$ and fixed background $R_0=\operatorname{diag}(\lambda_0I,0)$. The effective dimension satisfies $\rho\le\operatorname{sd}_{\lambda_0}(A)+\operatorname{rank}B$. Pool sparsification at embedding accuracy $\eta$ gives support $O(\Gamma\rho\eta^{-2}\log(2(p+q)Q/\delta))$.
+Augment design $A$ by supplied response basis $B$ and fixed background $R_0=\mathrm{diag}(\lambda_0I,0)$. The effective dimension satisfies $\rho\le\mathrm{sd}_{\lambda_0}(A)+\mathrm{rank}B$. Pool sparsification at embedding accuracy $\eta$ gives support $O(\Gamma\rho\eta^{-2}\log(2(p+q)Q/\delta))$.
 
 Allow any later response in that subspace, $\lambda\ge\lambda_0$, convex feasible set, and nonnegative convex penalty $g$. Let $\widehat X$ attain the sketched minimum and $X_*$ be any feasible comparator. With regularization rows included, put $U=\bar A(\widehat X-X_*)$, $V=\bar A\widehat X-\bar Y$. Optimality along the feasible segment and the uniform bilinear error imply
 $$

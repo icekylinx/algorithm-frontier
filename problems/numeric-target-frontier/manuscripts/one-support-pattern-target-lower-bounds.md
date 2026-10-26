@@ -194,7 +194,7 @@ $$
 The full input, including the rank circuit and coefficient matrix, has size polynomial in `|phi|+nu`. By OS13, a deterministic algorithm for these encoded instances with running time
 
 $$
-2^{o(T)}\operatorname{poly}(H)
+2^{o(T)}\mathrm{poly}(H)
 \tag{OS16}
 $$
 

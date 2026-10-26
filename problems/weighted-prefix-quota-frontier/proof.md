@@ -2,7 +2,7 @@
 
 The algorithms in this family optimize one signed rational scalar exactly while preserving mixed nonnegative integer quotas, a single global integral polymatroid, and every original mandatory resource total. Their complexity parameters describe quota geometry; they are separate from numeric-target sums.
 
-| Theorem | Time apart from $\operatorname{poly}(H)$ | Complete proof |
+| Theorem | Time apart from $\mathrm{poly}(H)$ | Complete proof |
 |---|---|---|
 | One common order and common weights | $2^{O(B)}$ | [Prefix theorem](manuscripts/exact-weighted-prefix-quotas-max-target.md) |
 | Two common orders | $2^{O(B\log(B+2))}$ | [Two-order theorem](manuscripts/two-order-weighted-prefix-target-classification.md) |
@@ -28,10 +28,10 @@ The lower bounds distinguish rank queries from computation with an explicitly re
 
 ## Main theorem: the quadratic laminar exponent
 
-The arbitrary-cost laminar theorem in [laminar-valuated-zero-completion-fpt.md](manuscripts/laminar-valuated-zero-completion-fpt.md) (VZ) has time $2^{O(B^2\log(B+1))}\operatorname{poly}(H)$. This note replaces its recursive upper-blocker representatives by deterministic universal colorings. The resulting time is
+The arbitrary-cost laminar theorem in [laminar-valuated-zero-completion-fpt.md](manuscripts/laminar-valuated-zero-completion-fpt.md) (VZ) has time $2^{O(B^2\log(B+1))}\mathrm{poly}(H)$. This note replaces its recursive upper-blocker representatives by deterministic universal colorings. The resulting time is
 
 $$
-2^{O(B^2)}\operatorname{poly}(H),
+2^{O(B^2)}\mathrm{poly}(H),
 \tag{LC1}
 $$
 
@@ -57,7 +57,7 @@ A root row imposes $w\cdot x\le B$, with nonnegative integer $B$. Missing direct
 More explicitly, the construction below gives a bound of the form
 
 $$
-2^{4B^2+O(B\log(B+1))}\operatorname{poly}(H)
+2^{4B^2+O(B\log(B+1))}\mathrm{poly}(H)
                     \qquad (B\ge1).
 \tag{LC3}
 $$
@@ -234,14 +234,14 @@ For every $(\alpha,\beta)\in\mathbb F_Q^2$, color hashed position $i\in\{0,\ldot
 
 $$
 \gamma_{\alpha,\beta}(i)
-                             =\operatorname{Tr}(\alpha\beta^i)
+                             =\mathrm{Tr}(\alpha\beta^i)
                                  \in\mathbb F_2.
 \tag{LC20}
 $$
 
 Color one is green and color zero is red. The convention $\beta^0=1$ includes $\beta=0$.
 
-Here $\operatorname{Tr}(z)=\sum_{a=0}^{t-1}z^{2^a}$. This is a nonzero $\mathbb F_2$-linear map to $\mathbb F_2$: squaring leaves its value unchanged, and its defining nonzero polynomial has degree $2^{t-1}<Q$, so it cannot vanish on all of $\mathbb F_Q$. Consequently its values are equally split between zero and one. Multiplication by any nonzero field element preserves that balance.
+Here $\mathrm{Tr}(z)=\sum_{a=0}^{t-1}z^{2^a}$. This is a nonzero $\mathbb F_2$-linear map to $\mathbb F_2$: squaring leaves its value unchanged, and its defining nonzero polynomial has degree $2^{t-1}<Q$, so it cannot vanish on all of $\mathbb F_Q$. Consequently its values are equally split between zero and one. Multiplication by any nonzero field element preserves that balance.
 
 For a nonempty position set $J$, let $P_J(Y)=\sum_{i\in J}Y^i$. It is a nonzero polynomial of degree at most $q-1$. Averaging first over $\alpha$ gives
 
@@ -314,16 +314,16 @@ Its full rank is at most $R-x(P)$, and equality is necessary and sufficient for 
 
 In the remaining branch $1\le B<n$, $|U|\le nB<n^2$. Also $m$ is explicit-input size, $K\le2B-1$, $d=O(\log(B+1)+\log(L+1))$, and
 $t=O(B+\log(L+1))$.
-The hash range $q=O(B^2L)$ is polynomial in $H$. The larger field has $Q=2^{O(B)}\operatorname{poly}(B,L)$ elements, but a field element is stored in only $t$ bits. A defining irreducible polynomial can be found in $Q\operatorname{poly}(t)$ time and polynomial space, once and for all.
+The hash range $q=O(B^2L)$ is polynomial in $H$. The larger field has $Q=2^{O(B)}\mathrm{poly}(B,L)$ elements, but a field element is stored in only $t$ bits. A defining irreducible polynomial can be found in $Q\mathrm{poly}(t)$ time and polynomial space, once and for all.
 
 A representative position consists of a class index, a degree-$d$ polynomial, two degree-$t$ field elements, and an output index in $[k]$. Its deterministic oracle call can be recomputed from that description. Invalid irreducibles, empty pools and missing output indices are rejected, so counting all such position descriptions only enlarges LC24. At most $B$ descriptions are stored at once, along with the current $k$-set and one compressed recovery problem. Their total bit length is polynomial in $H$.
 
 The enumeration time is bounded on every input by
 
 $$
-\sum_{k=1}^{B}(N_k+1)^k\operatorname{poly}(H)
+\sum_{k=1}^{B}(N_k+1)^k\mathrm{poly}(H)
        \le 2^{4B^2+O(B\log(B+1))}\,L^{3B}
-                                                 \operatorname{poly}(H).
+                                                 \mathrm{poly}(H).
 \tag{LC26}
 $$
 
@@ -346,7 +346,7 @@ Naor, Schulman and Srinivasan's [*Splitters and near-optimal derandomization*](h
 
 The completed-cost valuated oracle is the accepted VZ dependency; its public weighted Rado source is Husić, Loho, Smith and Végh's [*On complete classes of valuated matroids*](https://theoretics.episciences.org/14792/pdf), Definition 1.1 and the cited induction/exchange statements. The original global resource, all mandatory units, and all signed zero costs remain unchanged in this refinement.
 
-The proved gain is the replacement of VZ's $2^{O(B\log B)}$-size recursive candidate catalogue by $2^{O(B)}\operatorname{poly}(B,\log m)$ emitted positions. Its $B$-set recovery reduces the exponent from $B^2\log B$ to $B^2$. This does not close the gap to the existing $2^{\Omega(B)}$ lower bound, nor assert an optimal exponent or publication priority.
+The proved gain is the replacement of VZ's $2^{O(B\log B)}$-size recursive candidate catalogue by $2^{O(B)}\mathrm{poly}(B,\log m)$ emitted positions. Its $B$-set recovery reduces the exponent from $B^2\log B$ to $B^2$. This does not close the gap to the existing $2^{\Omega(B)}$ lower bound, nor assert an optimal exponent or publication priority.
 
 No frozen T proof is edited. The complete new coloring, replacement, time and space arguments have undergone independent internal review. This is not formal verification or external peer review.
 

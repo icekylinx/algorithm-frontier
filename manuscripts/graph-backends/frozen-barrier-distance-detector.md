@@ -426,7 +426,7 @@ the potential are read only after the transaction is complete.
 By the same potential budget, the number of accepted steps is
 
 $$
-T=O(Mp\beta^{-2}U)=M E^{O(1)}\operatorname{poly}(U).
+T=O(Mp\beta^{-2}U)=M E^{O(1)}\mathrm{poly}(U).
 \tag{22}
 $$
 
@@ -460,7 +460,7 @@ total $O(U)$ positive logarithmic increase by (17).
 The polynomial upper/lower gap bounds imply that the total negative
 logarithmic variation is at most the total positive variation plus
 $O(U)$. Hence full gradient repricing occurs at most
-$E^{O(1)}\operatorname{poly}(U)$ times. Each such pass costs
+$E^{O(1)}\mathrm{poly}(U)$ times. Each such pass costs
 $M E^{O(1)}$, within the lifetime work bound.
 
 All remaining coordinate refreshes, exact point reads, auxiliary
@@ -468,7 +468,7 @@ retirements, and edge births are charged by the raw flow-maintenance
 interface. The detector's total time is therefore
 
 $$
-M E^{O(1)}\operatorname{poly}(U).
+M E^{O(1)}\mathrm{poly}(U).
 \tag{24}
 $$
 
@@ -502,7 +502,7 @@ Choose one price scale $H=N^{C_H}$ larger than these fixed exponents.
 After evaluating the rational weights and gradients at their anchors,
 send the raw backend
 $\ell_e=\lceil H\widehat w_e\rceil$ and
-$\gamma_e=\operatorname{round}(H\widehat g_e)$.
+$\gamma_e=\mathrm{round}(H\widehat g_e)$.
 The rounding error is at most $1/H$, which can be made less than
 $\beta w_e/10^6$ uniformly. The exported integers still have
 $O(U)$ bits. The exact evaluation of a power at exponent $p$

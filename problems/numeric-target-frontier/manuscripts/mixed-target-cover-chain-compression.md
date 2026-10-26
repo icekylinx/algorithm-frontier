@@ -50,7 +50,7 @@ $$
 Thus `C_0=C` and `C_s` is empty. Create the coordinates `(e,i)` for `e in E0` and `0<=i<=s`. Let `pr` forget the second coordinate and define
 
 $$
-F_\pi^\uparrow(Y)=F0(\operatorname{pr}(Y)).
+F_\pi^\uparrow(Y)=F0(\mathrm{pr}(Y)).
 \tag{CC5}
 $$
 
@@ -169,7 +169,7 @@ For a fixed chain there are only `(s+1)|E0|` copied coordinates and at most that
 Therefore the complete algorithm uses polynomial binary workspace uniformly in the full input. Its running time is
 
 $$
-s!\;\mathcal P(U_1,\ldots,U_{d'})\;\operatorname{poly}(H),
+s!\;\mathcal P(U_1,\ldots,U_{d'})\;\mathrm{poly}(H),
 \tag{CC14}
 $$
 
@@ -183,7 +183,7 @@ The following elementary counting bound is useful when the number of rows is not
 
 $$
 \mathcal P(U_1,\ldots,U_{d'})
-\le \operatorname{Bell}(U+1)
+\le \mathrm{Bell}(U+1)
 \le (U+1)^{U+1}.
 \tag{CC15}
 $$
@@ -199,7 +199,7 @@ The tokens are solely a counting device. In particular, CC15 does not require `U
 Using `s<=T` and `U<=2T` in CC14–CC15 gives the uniform consequence
 
 $$
-2^{O((T+1)\log(T+2))}\operatorname{poly}(H)
+2^{O((T+1)\log(T+2))}\mathrm{poly}(H)
 \tag{CC16}
 $$
 

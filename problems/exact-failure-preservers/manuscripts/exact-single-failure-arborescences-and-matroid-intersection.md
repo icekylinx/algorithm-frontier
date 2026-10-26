@@ -102,10 +102,10 @@ Thus the compressed graph has no negative directed cycle, despite possibly havin
 
 ## 4. Exact replacement value equals a shortest-cycle value
 
-For $f\in B$, let $\delta_f$ be the minimum length of a directed cycle of $D$ containing $f$, or $+\infty$ if no such cycle exists. Let $\operatorname{OPT}_{-f}(k)$ be the minimum cost of a size-$k$ common independent set avoiding $f$, with the same infinity convention. Then
+For $f\in B$, let $\delta_f$ be the minimum length of a directed cycle of $D$ containing $f$, or $+\infty$ if no such cycle exists. Let $\mathrm{OPT}_{-f}(k)$ be the minimum cost of a size-$k$ common independent set avoiding $f$, with the same infinity convention. Then
 
 $$
-\operatorname{OPT}_{-f}(k)=w(B)+\delta_f.
+\mathrm{OPT}_{-f}(k)=w(B)+\delta_f.
 \tag{D10}
 $$
 
@@ -172,7 +172,7 @@ $$
 The direction of this pair excludes a trivial zero-length split arc. A simple path from $f^+$ to $f^-$ is exactly a directed cycle through $f$ in $D$, with the split arcs inserted. Therefore
 
 $$
-\operatorname{dist}_{D^{\mathrm{split}}}(f^+,f^-)=\delta_f.
+\mathrm{dist}_{D^{\mathrm{split}}}(f^+,f^-)=\delta_f.
 \tag{D14}
 $$
 
@@ -259,7 +259,7 @@ $$
 Call the augmented graph $A$. Every cycle through $q_i$ pays its own cost-$K$ arc. A shortest original $s_i$-to-$t_i$ path is simple and costs less than $K$, so a cycle through $q_i$ of cost less than $2K$ exists. Any cycle through another query vertex pays at least $2K$. It follows that the minimum cycle through $q_i$ visits no other query vertex and has cost
 
 $$
-K+\operatorname{dist}_G(s_i,t_i).
+K+\mathrm{dist}_G(s_i,t_i).
 \tag{D17}
 $$
 
@@ -267,12 +267,12 @@ Encode $A$ as a bipartite perfect-matching instance: create a left and a right c
 
 After the diagonal at $q_i$ fails, every perfect matching includes a permutation cycle through $q_i$. Other permutation cycles have nonnegative cost and can be replaced by their zero-cost diagonals. Therefore the exact optimum after this one failure is precisely (D17). Any optimum retained by a fault-tolerant matching subgraph must contain a minimum-cost $q_i$-cycle, and that cycle contains an original $G$ shortest path for demand $(s_i,t_i)$. Consequently the original-$G$ edges represented in any such matching subgraph form a distance preserver for every demand in $P$.
 
-Let $\operatorname{DP}(N,p)$ denote worst-case directed nonnegative weighted pairwise-preserver size, and $\operatorname{MI}(k)$ denote worst-case exact one-failure retained-element size for two-matroid size-$k$ intersection. The two reductions give
+Let $\mathrm{DP}(N,p)$ denote worst-case directed nonnegative weighted pairwise-preserver size, and $\mathrm{MI}(k)$ denote worst-case exact one-failure retained-element size for two-matroid size-$k$ intersection. The two reductions give
 
 $$
-\operatorname{MI}(k)\le k+\operatorname{DP}(2k,k),
+\mathrm{MI}(k)\le k+\mathrm{DP}(2k,k),
  \qquad
- \operatorname{MI}(N+p)\ge\operatorname{DP}(N,p)
+ \mathrm{MI}(N+p)\ge\mathrm{DP}(N,p)
  \quad(p\le N).
 \tag{D18}
 $$
@@ -280,7 +280,7 @@ $$
 The lower reduction already uses two partition matroids. Thus the general weighted one-failure problem has, up to constant rescaling of rank, the same size-exponent question as $\Theta(N)$-pair directed weighted distance preservation. In particular, the classical $\Omega(N^{4/3})$ distance-preserver lower bound transfers to
 
 $$
-\operatorname{MI}(R)=\Omega(R^{4/3})
+\mathrm{MI}(R)=\Omega(R^{4/3})
 \tag{D19}
 $$
 
@@ -290,16 +290,16 @@ along an infinite family, already for nonnegative weighted bipartite perfect mat
 
 Bodwin--Grandoni--Parter--Vassilevska Williams (2017), Lemmas 4.5--4.6, already prove that exact one-failure preservation of a single directed weighted $s$-to-$t$ distance has, up to constant factors and vertex rescaling, the same worst-case size as preserving $\Theta(N)$ ordinary directed weighted demand pairs. That replacement-path equivalence is a classical antecedent to the equivalence above.
 
-There is a particularly simple transfer from their problem to arborescences. Given a nonnegative weighted directed graph $G$ and distinct vertices $s,t$, delete arcs leaving $t$ and add a zero-cost arc $t\to v$ for every $v\notin\{s,t\}$. Root this graph $A$ at $s$. Deleting the old outgoing arcs of $t$ changes no simple $s$-to-$t$ path. For any failure set $F$ of other original arcs, every rooted spanning arborescence contains an $s$-to-$t$ path, so its cost is at least $\operatorname{dist}_{G-F}(s,t)$. Conversely, a shortest simple $s$-to-$t$ path, together with the zero arcs $t\to v$ for vertices outside that path, is a spanning arborescence of exactly that cost. Consequently
+There is a particularly simple transfer from their problem to arborescences. Given a nonnegative weighted directed graph $G$ and distinct vertices $s,t$, delete arcs leaving $t$ and add a zero-cost arc $t\to v$ for every $v\notin\{s,t\}$. Root this graph $A$ at $s$. Deleting the old outgoing arcs of $t$ changes no simple $s$-to-$t$ path. For any failure set $F$ of other original arcs, every rooted spanning arborescence contains an $s$-to-$t$ path, so its cost is at least $\mathrm{dist}_{G-F}(s,t)$. Conversely, a shortest simple $s$-to-$t$ path, together with the zero arcs $t\to v$ for vertices outside that path, is a spanning arborescence of exactly that cost. Consequently
 
 $$
-\operatorname{OPT}_{A-F}(\text{arborescence})
-                  =\operatorname{dist}_{G-F}(s,t),
+\mathrm{OPT}_{A-F}(\text{arborescence})
+                  =\mathrm{dist}_{G-F}(s,t),
 $$
 
 with equality of infeasibility as well.
 
-An exact arborescence preserver must therefore retain, after every such failure, an $s$-to-$t$ path of the original optimum distance. Its root-to-$t$ tree path uses none of the added completion arcs. Thus the classical one-failure directed distance lower bound gives an $\Omega(n^{4/3})$ lower bound for exact one-failure arborescence preservers, already in simple directed graphs with nonnegative rational costs. Together with the $O(\operatorname{DP}(O(n),O(n)))$ upper reduction, the arborescence size-exponent question is equivalent to the same directed pairwise distance-preserver question. This transfers an existing distance lower bound; it does not improve that bound.
+An exact arborescence preserver must therefore retain, after every such failure, an $s$-to-$t$ path of the original optimum distance. Its root-to-$t$ tree path uses none of the added completion arcs. Thus the classical one-failure directed distance lower bound gives an $\Omega(n^{4/3})$ lower bound for exact one-failure arborescence preservers, already in simple directed graphs with nonnegative rational costs. Together with the $O(\mathrm{DP}(O(n),O(n)))$ upper reduction, the arborescence size-exponent question is equivalent to the same directed pairwise distance-preserver question. This transfers an existing distance lower bound; it does not improve that bound.
 
 ### Two failures already force quadratically many matching edges
 

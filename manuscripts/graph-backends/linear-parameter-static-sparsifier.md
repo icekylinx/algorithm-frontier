@@ -24,14 +24,14 @@ such that the output is a table Pi', a subgraph J_tilde of J, and
 endpoint-preserving routes R:J->J_tilde with
 $$
 \begin{aligned}
- |E(J_{\rm tilde})|&\leq n_J\Gamma\operatorname{poly}(U),\\
+ |E(J_{\rm tilde})|&\leq n_J\Gamma\mathrm{poly}(U),\\
  L(R)&\leq\Gamma,\quad L(\Pi'\circ R)\leq\Gamma L_0,\\
  C(\Pi'\circ R)&\leq\Gamma(C_0+\Delta).
  \end{aligned}                                               \tag{2}
 $$
 Full work, plus actual vertex bookkeeping, is
 $$
-m_JF^{O(1)}\Gamma^{O(1)}(L_0+1)\operatorname{poly}(U).
+m_JF^{O(1)}\Gamma^{O(1)}(L_0+1)\mathrm{poly}(U).
                                                                \tag{3}
 $$
 F enters neither selected size nor congestion. Loops use the local
@@ -68,7 +68,7 @@ Partition J into J_0 with at most n_J edges and band graphs J_i.
 Each nontrivial component has conductance at least phi and minimum
 degree at least rho_i=phi 2^i. Decomposition work is
 $$
-m_J\exp O(U/r+r^2h+rh)\operatorname{poly}(U).  \tag{4}
+m_J\exp O(U/r+r^2h+rh)\mathrm{poly}(U).  \tag{4}
 $$
 Its constant-conductance witness W_i has fresh edges of common
 weight rho_i and, for an absolute D_w,
@@ -146,7 +146,7 @@ Apply the deterministic sparse selection globally, keeping one P_g
 per witness edge with weight rho_i. Weighted ambient congestion is
 $$
 O(Q C_0/\phi+Q(\Delta+1)\log(N_{\rm used}+2))
-       \leq Q\phi^{-O(1)}\operatorname{poly}(U)(C_0+\Delta).   \tag{10}
+       \leq Q\phi^{-O(1)}\mathrm{poly}(U)(C_0+\Delta).   \tag{10}
 $$
 Only represented ambient vertices count; log N_used=O(U).
 Residual J_0 adds at most C_0.
@@ -162,7 +162,7 @@ Select the genuine J-edge IDs used by the P_g, plus J_0:
 $$
 |E(J_{\rm tilde})|
  \leq |E(J_0)|+Q\sum_i|E(W_i)|
-          \leq n_JQ\phi^{-O(1)}\operatorname{poly}(U).        \tag{11}
+          \leq n_JQ\phi^{-O(1)}\mathrm{poly}(U).        \tag{11}
 $$
 Reverse W_i paths have occurrence load D_{2,i}Q per witness edge.
 Relative to weight rho_i it is at most

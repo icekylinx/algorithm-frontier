@@ -46,7 +46,7 @@ $$
 in time
 
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(h)},(h+1)^{O((1+\eta^{-1})\log(h+1))}\}.
  \tag{W4}
 $$

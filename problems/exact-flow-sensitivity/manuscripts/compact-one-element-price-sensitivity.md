@@ -58,7 +58,7 @@ Define
 $$
 \delta_e^+
 =\min_{a\in A_e,\ b\in C_e}
-\bigl[w(e)-w(a)+\operatorname{dist}_D(b,a)\bigr],
+\bigl[w(e)-w(a)+\mathrm{dist}_D(b,a)\bigr],
 \tag{3}
 $$
 
@@ -108,7 +108,7 @@ with the shortest nonempty exchange-cycle cost through $f$. It can be computed f
 $$
 \delta_f^-=
 \min_{f\to b\in E(D)}
-\bigl[\ell(f,b)+\operatorname{dist}_D(b,f)\bigr].
+\bigl[\ell(f,b)+\mathrm{dist}_D(b,f)\bigr].
 \tag{6}
 $$
 
@@ -153,11 +153,11 @@ For a rooted directed spanning arborescence $T$, a new arc $e=(u,v)$ has the uni
 
 $$
 w(e)+\min_{a\in P_T(u,v)}
-\left[\operatorname{dist}_D(b_v,a)-w(a)\right].
+\left[\mathrm{dist}_D(b_v,a)-w(a)\right].
 \tag{7}
 $$
 
-For each $b$, store a range-minimum structure on a heavy-light decomposition of $T$ for the values $\operatorname{dist}_D(b,a)-w(a)$, breaking cost ties by return-path hop count. All $b$'s use $O(n^2)$ records, as do all-source return-path trees. An arbitrary new arc specified at query time is evaluated in $O(\log^2 n)$ time, and the resulting optimum arborescence is reported in $O(n+\log^2 n)$. Discard self-loops and arcs entering the root. For parallel original arcs, identities and original prices are retained as needed for price-change queries.
+For each $b$, store a range-minimum structure on a heavy-light decomposition of $T$ for the values $\mathrm{dist}_D(b,a)-w(a)$, breaking cost ties by return-path hop count. All $b$'s use $O(n^2)$ records, as do all-source return-path trees. An arbitrary new arc specified at query time is evaluated in $O(\log^2 n)$ time, and the resulting optimum arborescence is reported in $O(n+\log^2 n)$. Discard self-loops and arcs entering the root. For parallel original arcs, identities and original prices are retained as needed for price-change queries.
 
 Directed-tree reoptimization through weighted matroid intersection is established work, including Jiang–Wang 2026. This is a static reporting-data-structure consequence, not a first dynamic directed-tree or sensitivity claim. [4]
 

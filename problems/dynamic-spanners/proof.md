@@ -221,7 +221,7 @@ family at all levels, obeys
 
 $$
 Q_{\rm mark}\le n k^{O(1)}
-                                        \operatorname{poly}(U). \tag{T8}
+                                        \mathrm{poly}(U). \tag{T8}
 $$
 
 The bound counts marks separately when they occur in different flat
@@ -390,7 +390,7 @@ physical occurrences before deduplication. Hence
 
 $$
 |E(H_{\rm out})|
-                      \le n k^{O(1)}R\operatorname{poly}(U).
+                      \le n k^{O(1)}R\mathrm{poly}(U).
                                                                \tag{T12}
 $$
 
@@ -654,7 +654,7 @@ With numerical update factor `alpha=exp O(B)`, numerical query cost
 `poly(U)`, and clipped report cost `R poly(U)`, its full work is at most
 
 $$
-\operatorname{poly}(U)\left[
+\mathrm{poly}(U)\left[
    R(F+K D_0)
    +\alpha\bigl(n+(R/K)F+R D_0\bigr)\right].           \tag{F3}
 $$
@@ -793,8 +793,9 @@ bound, allowing harmless double charges at coincident replacements, is
 $$
 \begin{aligned}
  F_{i+1}&\le O_i+(D/t_{i+1})V_i\\
-        &\le O_i+DK(c_0R)^i.                            \tag{F11}
- \end{aligned}
+        &\le O_i+DK(c_0R)^i.
+\end{aligned}
+\tag{F11}
 $$
 
 No `+1` times the potentially dense capacity `M` is introduced in
@@ -821,9 +822,9 @@ $$
 \begin{split}
  T_{\rm total}
    &\le (I_*+n+DK)(c_2R)^{c_2s}
-             (\alpha+Q_{\rm path})\operatorname{poly}(U)\\
+             (\alpha+Q_{\rm path})\mathrm{poly}(U)\\
    &\le (n+m_0+I+D)K(c_2R)^{c_2s}
-             (\alpha+Q_{\rm path})\operatorname{poly}(U).
+             (\alpha+Q_{\rm path})\mathrm{poly}(U).
  \end{split}                                             \tag{F13}
 $$
 
@@ -856,7 +857,7 @@ their sizes. Repeated physical edge IDs need not actually change,
 but charging both is safe. Consequently
 
 $$
-\operatorname{recourse}(H_s)
+\mathrm{recourse}(H_s)
         \le (n+D)(c_3R)^s.                              \tag{F14}
 $$
 

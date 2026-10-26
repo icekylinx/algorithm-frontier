@@ -177,7 +177,7 @@ affected route's at most $\Lambda$ original positions, with its
 current split/deletion annotations, to recover both first anchors.
 This deliberately simple implementation costs
 $$
-O((C_0+\Delta)(\Lambda+1)\operatorname{polylog}m)
+O((C_0+\Delta)(\Lambda+1)\mathrm{polylog}m)
  \tag{5}
 $$
 per native edit, plus that edit's explicit native incidence
@@ -188,11 +188,11 @@ endpoint replacements can be reported at this cost.
 For the proposed parent period, if
 $$
 C_0\leq k\Gamma,\quad \Delta=O(k),\quad
- \Lambda\leq\Gamma,\quad q_{\rm native}\leq(m/k)\operatorname{poly}(U),
+ \Lambda\leq\Gamma,\quad q_{\rm native}\leq(m/k)\mathrm{poly}(U),
 $$
 then initialization plus all these anchor updates costs
 $$
-m\Gamma^{O(1)}\operatorname{poly}(U).
+m\Gamma^{O(1)}\mathrm{poly}(U).
  \tag{6}
 $$
 No monotone-position proof is needed for this conservative bound.
@@ -220,9 +220,9 @@ needs an additional proof.
 
 ### Total work is not prefix recourse
 
-A bound of $O(m\Lambda\operatorname{polylog}m)$ on all initial
+A bound of $O(m\Lambda\mathrm{polylog}m)$ on all initial
 anchor records over a period is compatible with amortized local
-work $k\Lambda\operatorname{polylog}m$ when that period has
+work $k\Lambda\mathrm{polylog}m$ when that period has
 $\Theta(m/k)$ parent updates. It does not imply the needed
 selected-child prefix bound
 $$

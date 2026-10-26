@@ -96,7 +96,7 @@ $\Gamma=E(N)^{O(1)}$, and point queries for $R^Tg$ after gradient
 or graph changes at the same fixed-power overhead, the stronger
 accuracy in (4) would be affordable. It would shrink the SCC client's
 per-step progress parameter by at most another fixed power of $E$,
-so its total time would remain $(n+m)E^{O(1)}\operatorname{polylog}N$.
+so its total time would remain $(n+m)E^{O(1)}\mathrm{polylog}N$.
 This would give an **implicit** order: comparison would evaluate two
 current scalar keys. Maintaining an explicit sorted list with all
 key-change notifications would require a further argument.
@@ -111,7 +111,7 @@ defines that distribution for analysis using
 $$
 p_C^{(i)}(v)=
 \max\left\{0,
- \frac{\operatorname{dist}_G(v,V\setminus C)}{D_i}
+ \frac{\mathrm{dist}_G(v,V\setminus C)}{D_i}
  -\frac1{4\gamma_{\rm HRG}}\right\},
 \qquad
 \lambda_C^{(i)}(v)=

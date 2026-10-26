@@ -5,7 +5,7 @@
 This audit checks [feedback-edge-one-sided-client.md](feedback-edge-one-sided-client.md) for the complete
 ambient ordinary allocation graph, decomposed into a spanning forest
 and at most $k$ chord incidences. It confirms the stated
-$(k+1)\operatorname{polylog}S$ per-query/update cost and the total
+$(k+1)\mathrm{polylog}S$ per-query/update cost and the total
 work bound. It does not assert that general matching ledgers have
 sublinear feedback count.
 
@@ -128,7 +128,7 @@ two endpoint states of a structural batch.
 
 The static objective width gives $J=O(\nu\log S)$, and the
 register bound above then yields
-$(m+\nu(k+1))\operatorname{polylog}S$. Substituting the explicit
+$(m+\nu(k+1))\mathrm{polylog}S$. Substituting the explicit
 $A_T,A_x,A_s$ ledger bounds gives the dynamic total stated in the
 main note. Initial core construction, chord scalar records and all
 forest initialization fit this accounting.

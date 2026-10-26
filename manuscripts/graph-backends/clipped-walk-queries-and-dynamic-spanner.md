@@ -16,7 +16,7 @@ factor `exp O(B)` and a common stretch/reporting envelope
 `Gamma = exp O(A)`, the transfer costs
 
 $$
-\operatorname{poly}(U)\bigl(m\Gamma+n\Gamma\exp O(B)\bigr),
+\mathrm{poly}(U)\bigl(m\Gamma+n\Gamma\exp O(B)\bigr),
  \qquad U=\log(N+4),\quad h=\log(U+4).                 \tag{S1}
 $$
 
@@ -113,7 +113,7 @@ given a query estimate `Dhat <= R`, the represented root walk and a
 literal simple path between the query endpoints can be reported in
 
 $$
-(R+1)\operatorname{poly}(U) . \tag{S4}
+(R+1)\mathrm{poly}(U) . \tag{S4}
 $$
 
 The simple path has length at most `Dhat`. Equal endpoints return the
@@ -322,7 +322,7 @@ gives `O(n)` eligible edges at every time. Consequently
 $$
 |H|=O(nR),\quad
  \#\text{insertions into }H=O(nR+n),\quad
- \operatorname{recourse}(H)=O(nR).                      \tag{S12}
+ \mathrm{recourse}(H)=O(nR).                      \tag{S12}
 $$
 
 Here only the at most `n` external deletions remove edges from `H`.
@@ -419,7 +419,7 @@ All native lengths are positive integers. Therefore
 
 $$
 \#\text{enumerated native records}
-       \le R\sum_{j=0}^d\sigma_j\operatorname{poly}(U)
+       \le R\sum_{j=0}^d\sigma_j\mathrm{poly}(U)
        \le R\exp O(dh).                                \tag{S15}
 $$
 

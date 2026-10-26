@@ -39,7 +39,7 @@ Its uniform running-time upper bound is
 
 $$
 P\,(n+1)^{\,O((r^2/\epsilon)\log(2+r/\epsilon))}
-       \operatorname{poly}(b_\epsilon+\log P).          \tag{2}
+       \mathrm{poly}(b_\epsilon+\log P).          \tag{2}
 $$
 
 In particular, it finds a perfect matching under the promise

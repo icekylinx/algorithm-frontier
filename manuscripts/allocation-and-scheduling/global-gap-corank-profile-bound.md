@@ -20,7 +20,7 @@ $$
 The block construction returns the same relaxed guarantee in time
 
 $$
-E(q)\,\Psi_A(q,c)\operatorname{poly}(H),
+E(q)\,\Psi_A(q,c)\mathrm{poly}(H),
  \qquad
  \Psi_A(q,c)=\inf_{x\ge0}
        \left(\frac{A}{1+x}\right)^c
@@ -79,7 +79,7 @@ cost of all Cartesian-product choices in this profile is at most
 $$
 (\ell+2)^m
  \left(\frac{A}{1+x}\right)^c
- \left(1+\frac{x}{A}\right)^q\operatorname{poly}(H).
+ \left(1+\frac{x}{A}\right)^q\mathrm{poly}(H).
 \tag{P6}
 $$
 
@@ -185,7 +185,7 @@ The available guarantees can be combined as
 
 $$
 \min\left\{A^c,\ E(q)\Psi_A(q,c),\,
-             \binom qc\right\}\operatorname{poly}(H),
+             \binom qc\right\}\mathrm{poly}(H),
 \tag{P13}
 $$
 

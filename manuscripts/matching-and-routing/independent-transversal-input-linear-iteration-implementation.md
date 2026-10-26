@@ -133,7 +133,7 @@ absolute constant. Hence the implementation yields
 $$
 \boxed{\quad
  P\,(q+1)^{O(\epsilon^{-1}\log(2+r/\epsilon))}
-       \operatorname{poly}(b_\epsilon+\log P).
+       \mathrm{poly}(b_\epsilon+\log P).
  \quad}
 $$
 

@@ -45,7 +45,7 @@ classical guarantee and is not improved by (1).
 
 Let $\gamma>1$. The conservative weighted-decomposition adapter
 in the formal audit constructs NSW's hierarchy in
-$n\operatorname{poly}(\gamma)$ time. It has depth
+$n\mathrm{poly}(\gamma)$ time. It has depth
 $O(\gamma)$, total reweighted-edge inventory $O(n/\gamma)$,
 and conductance $\phi_0=\Omega(\gamma^{-5})$ in every
 non-root cluster requiring pruning. Let $\pi$ bound worst-case
@@ -54,7 +54,7 @@ period, the resulting recurrence is
 
 $$
 T(n)\le\widetilde O\bigl(\pi(\gamma)
-                     \operatorname{poly}(\gamma)\bigr)
+                     \mathrm{poly}(\gamma)\bigr)
        +O(\log n)T\bigl(O(n/\gamma)\bigr).                \tag{2}
 $$
 
@@ -87,7 +87,7 @@ MGS Theorems 1.3 and 6.4 deterministically maintain an increasing
 vertex set $A$. During its supported deletion interval, the
 positive-volume remainder is a
 $\Omega(\phi/\log^4 m)$-expander. Each deletion costs
-$\operatorname{polylog}(m)/\phi^2$ worst-case work and adds
+$\mathrm{polylog}(m)/\phi^2$ worst-case work and adds
 at most that many vertices. Linear times a fixed polynomial in
 $1/\phi$ and $U$ suffices as its initialization allowance.
 
@@ -110,7 +110,7 @@ $P=V$, and retain any singleton. Thus the literal NSW interface
 holds even in this boundary case.
 
 The MGS deletion horizon is at least $c\phi_0m_C/Q$, for a
-fixed polynomial $Q=\operatorname{poly}(U)$. Every non-root
+fixed polynomial $Q=\mathrm{poly}(U)$. Every non-root
 large cluster has $m_C\ge n/(C\gamma)$, so its supported
 period is at least $c'n/(\gamma^6Q)$. Inflate the declared
 publication/work factor to $\pi=\gamma^{12}Q'$, and choose
@@ -121,7 +121,7 @@ T_{\rm period}(n)=
  \qquad d=\Theta(\gamma).                                \tag{3}
 $$
 
-Actual pruning costs only $\gamma^{10}\operatorname{poly}(U)$.
+Actual pruning costs only $\gamma^{10}\mathrm{poly}(U)$.
 The declared factor is still a fixed polynomial in $\gamma$,
 and (3) expires well before any local pruning horizon. No
 whole-instance publication at the end of a horizon, or gradual
@@ -154,7 +154,7 @@ $$
 
 for a sufficiently large fixed $C$. The contracted output
 expansion is then at least $\gamma^{-3}$, and (4) is
-$M\operatorname{poly}(\gamma)$. Expanding protected blocks
+$M\mathrm{poly}(\gamma)$. Expanding protected blocks
 of size $\Theta(\gamma)$ loses a further fixed power, giving
 the safe native-cluster bound $\phi_0=\Omega(\gamma^{-5})$.
 Also
@@ -179,7 +179,7 @@ baseline.
 There is no master-size padding. Stop the dynamic recursion and use
 an exact small-graph implementation once its actual size is at most
 $\gamma^{c_1}$ for a fixed constant $c_1$. Its polynomial
-cost is within $\operatorname{poly}(\gamma)$. Above this
+cost is within $\mathrm{poly}(\gamma)$. Above this
 threshold, the source restriction $r=O(\log M)$ holds with
 room to spare. Alternatively use the local cutoff
 $r_M=\min\{r,c_2\log(M+2)\}$; the same global upper bound
@@ -195,7 +195,7 @@ $O(U/\log\gamma)$ nonbase levels. Equations (2) and (3) give
 
 $$
 T(N)\le
-   \operatorname{poly}(\gamma,U)\,
+   \mathrm{poly}(\gamma,U)\,
    \exp O\left(\frac{Uh}{\log\gamma}\right).              \tag{7}
 $$
 
@@ -210,7 +210,7 @@ by weight and immutable edge identity. This selects one exact MSF
 without changing the original minimum-weight objective. The time is in a
 comparison-RAM model with constant-time weight comparisons, or with
 weights having polynomially many bits in $\log N$, whose arithmetic
-cost is absorbed in $\operatorname{poly}(U)$. Arbitrary
+cost is absorbed in $\mathrm{poly}(U)$. Arbitrary
 polynomial-in-$N$ bit lengths do not have free comparison cost.
 
 This is a **derived public-framework baseline**. It is not claimed

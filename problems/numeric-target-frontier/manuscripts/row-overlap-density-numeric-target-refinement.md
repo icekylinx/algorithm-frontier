@@ -7,7 +7,7 @@ This successor refines the support-one/support-two boundary. When each resource 
 $$
 \boxed{
 \exp\!\left(O\!\left(T\log\left(2+\frac mT\right)\right)\right)
-\operatorname{poly}(H)
+\mathrm{poly}(H)
 }
 \tag{RD1}
 $$
@@ -151,7 +151,7 @@ Use depth-first traversal with the next count bounded by the remaining rank and 
 The resulting explicit time bound is
 
 $$
-\boxed{2^U\binom{Q+U}{U}\operatorname{poly}(H).}
+\boxed{2^U\binom{Q+U}{U}\mathrm{poly}(H).}
 \tag{RD12}
 $$
 
@@ -235,7 +235,7 @@ Suppose instead every original coordinate has a positive coefficient in at most 
 Let `Q` be the number of distinct nonempty exact support patterns after this local copying. The composition proof RD7 is independent of `s`. Therefore the same explicit profile bound and time bound hold:
 
 $$
-2^U\binom{Q+U}{U}\operatorname{poly}(H)
+2^U\binom{Q+U}{U}\mathrm{poly}(H)
 \tag{RD18}
 $$
 

@@ -64,7 +64,7 @@ silently substituted for physical disjointness.
 is the perspective condition
 
 $$
-y_p\in x_p\operatorname{conv}
+y_p\in x_p\mathrm{conv}
              \{\mathbf1_C:C\in\mathcal F_p\},
  \tag{2}
 $$
@@ -106,7 +106,7 @@ bundle containing a fat item contains such a feasible singleton by
 downward closure. The forward and reverse player-matroid-union
 reductions then preserve local feasibility. In the configuration-LP
 comparison, all-small marginals lie in
-$h_p\operatorname{conv}(\mathcal F_p)$, where $h_p$ is the
+$h_p\mathrm{conv}(\mathcal F_p)$, where $h_p$ is the
 mass of small configurations. Scaling by $x'_p/h_p$, with the
 zero convention when $h_p=0$, proves the new perspective
 constraint. This does not assert a reduction from an arbitrary
@@ -142,7 +142,7 @@ the corresponding feasible-configuration LP at target $T$ is
 infeasible. Its work is
 
 $$
-\operatorname{poly}(|P|,|E|,\text{bit length},
+\mathrm{poly}(|P|,|E|,\text{bit length},
                      \text{oracle cost})\,
  (|P|+1)^{O(\varepsilon^{-1}\log(|P|+1))}.
  \tag{5}

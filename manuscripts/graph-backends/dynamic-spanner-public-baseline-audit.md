@@ -144,7 +144,7 @@ number of native edge occurrences at that level by the same quantity.
 Enumerating all levels and then erasing cycles consequently costs
 
 $$
-(Q+1)\exp O(dh)\operatorname{poly}(U).  \tag{2}
+(Q+1)\exp O(dh)\mathrm{poly}(U).  \tag{2}
 $$
 
 In the public `6/7` point, `dh=O(U^(1/7)h^(6/7))=o(a)`. Thus the

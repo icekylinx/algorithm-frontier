@@ -158,7 +158,7 @@ bins `a,b` has ratio
 
 $$
 \frac{\alpha_a-\alpha_b}
-             {\alpha_a+\alpha_b+\operatorname{dist}_x(a,b)}.
+             {\alpha_a+\alpha_b+\mathrm{dist}_x(a,b)}.
 $$
 
 Its action transfers allocation along an alternating path from `a` to `b`,
@@ -200,7 +200,7 @@ exactly the inequality
 
 $$
 \alpha_a-\alpha_b
-          >\beta(\alpha_a+\alpha_b+\operatorname{dist}_x(a,b)).
+          >\beta(\alpha_a+\alpha_b+\mathrm{dist}_x(a,b)).
 $$
 
 An ordinary static Dijkstra computation and path reconstruction therefore
@@ -323,7 +323,7 @@ $$
 \frac34H\alpha_a-\frac54H\alpha_b
        \ge\sigma_a-\tau_b
        >\sum_{e\text{ donor on path}}c_e
-       \ge\frac H4\operatorname{len}_x(a\leadsto b).
+       \ge\frac H4\mathrm{len}_x(a\leadsto b).
 $$
 
 Thus every accepted path has true one-sided ratio greater than `1/4`.

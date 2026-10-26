@@ -125,7 +125,7 @@ At D=D_k the deterministic runtime is 2^{O(k)}poly(H). At
 D=D_k+eta, for rational 0<eta<=1, it is
 
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\}.
  \tag{H8}
 $$

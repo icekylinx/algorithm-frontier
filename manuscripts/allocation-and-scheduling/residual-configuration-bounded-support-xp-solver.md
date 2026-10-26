@@ -4,7 +4,7 @@ For coordinate-box players, the residual configuration relaxation with
 reserve support at most s can be approximately optimized in
 
 $$
-(q+1)^{O(s+1)}\operatorname{poly}(H,\epsilon^{-1}).
+(q+1)^{O(s+1)}\mathrm{poly}(H,\epsilon^{-1}).
  \tag{X1}
 $$
 
@@ -460,7 +460,7 @@ the fully strengthened LP in singly exponential q time, while
 s=2(r-1) gives
 
 $$
-(q+1)^{O(r)}\operatorname{poly}(H,\epsilon^{-1})
+(q+1)^{O(r)}\mathrm{poly}(H,\epsilon^{-1})
  \tag{X20}
 $$
 

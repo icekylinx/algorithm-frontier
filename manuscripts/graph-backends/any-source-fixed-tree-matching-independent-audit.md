@@ -156,7 +156,7 @@ For each tree vertex $v$, let
 
 $$
 M_v=\max_{b\in T_v\text{ bin}}
-       [-\tau_b-\operatorname{dist}_{\bar c}(v,b)]
+       [-\tau_b-\mathrm{dist}_{\bar c}(v,b)]
 $$
 
 and let $F_v$ be the maximum of (A4)'s left side over ancestor-descendant

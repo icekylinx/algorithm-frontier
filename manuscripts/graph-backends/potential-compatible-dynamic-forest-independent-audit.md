@@ -17,7 +17,7 @@ paths of an arbitrary directed forest, rather than only paths from a
 chosen root. Its work is
 
 $$
-(\nu+J+P+Q+R)\operatorname{polylog}S,
+(\nu+J+P+Q+R)\mathrm{polylog}S,
 $$
 
 where `P` counts the supplied links and cuts and `R` counts numerical

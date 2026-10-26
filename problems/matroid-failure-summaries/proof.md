@@ -29,7 +29,7 @@ Compute $rC$ with saturation before enumerating features; if $rC\ge N$, return t
 
 **Lemma 3.1.** Give each $e\in H$ disjoint label sets $A_e,B_e$, and assume
 $$
-e\notin\operatorname{cl}\{f\in H-e:A_f\cap B_e=\varnothing\}.
+e\notin\mathrm{cl}\{f\in H-e:A_f\cap B_e=\varnothing\}.
 $$
 Then
 $$

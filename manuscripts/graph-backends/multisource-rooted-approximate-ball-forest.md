@@ -30,7 +30,7 @@ The two public sources are:
   5.13, Theorem 5.14, and Algorithm 10.
 
 KMG Definition 5.13 says that a maintained forest approximates
-$\operatorname{dist}_G(S,v)$. Taken literally, that property alone
+$\mathrm{dist}_G(S,v)$. Taken literally, that property alone
 does not forbid two vertices of $S$ from lying in the same tree.
 This extra fact must therefore come from the construction.
 
@@ -151,7 +151,7 @@ by the selected forest.
 Summing (7) along the path from $v$ to its source gives
 
 $$
-\operatorname{len}_F(v,S)\leq D(v).
+\mathrm{len}_F(v,S)\leq D(v).
  \tag{8}
 $$
 
@@ -159,7 +159,7 @@ For a regular vertex, the minimum in (5) is the approximate-ball answer
 obtained by the public recursive minimum rule, or an even smaller valid
 upper certificate if redundant candidates are retained. The public
 distance guarantee bounds it by
-$(1+\epsilon)\operatorname{dist}_G(v,S)$ wherever that approximate
+$(1+\epsilon)\mathrm{dist}_G(v,S)$ wherever that approximate
 ball promises an answer. The parent path uses actual edges of the same
 original-plus-hopset graph used in KMG Definition 5.13. Thus it is a
 forest certificate with the required cost and the additional source-root
@@ -238,7 +238,7 @@ all nodes having the same physical image.
 Consequently, after all hopset levels are flattened, every source-
 reachable distinguished vertex belongs to a tree with exactly one
 distinguished source. Its source path has the same
-$(1+\epsilon)\operatorname{dist}_G(v,S)$ cost bound, and every edge
+$(1+\epsilon)\mathrm{dist}_G(v,S)$ cost bound, and every edge
 projects to one current original edge.
 
 The construction adds no physical zero-length star, no high-degree

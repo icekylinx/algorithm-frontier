@@ -72,7 +72,7 @@ Theta_k=2a. The main guarantee is
 $$
 \boxed{\quad
  C_{\max}\le\frac53\max\{\mathrm{OPT},\Theta_k\}
- \quad\text{in }2^{O(k)}\operatorname{poly}(H).
+ \quad\text{in }2^{O(k)}\mathrm{poly}(H).
  \quad}
  \tag{D4}
 $$
@@ -387,7 +387,7 @@ Define F, delta and the fixed-budget cap with this b. The relative
 growth margin is Omega(eta), so the time becomes
 
 $$
-\operatorname{poly}(H)
+\mathrm{poly}(H)
  \min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\}.
  \tag{D21}
 $$

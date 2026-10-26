@@ -18,9 +18,9 @@ $$
 such that, for every allowed F and every cost threshold a,
 
 $$
-\operatorname{span}\{v_e:e\in H,\ c(e)\le a,\ \Lambda(e)\cap F=\varnothing\}
+\mathrm{span}\{v_e:e\in H,\ c(e)\le a,\ \Lambda(e)\cap F=\varnothing\}
  =
- \operatorname{span}\{v_e:e\in E,\ c(e)\le a,\ \Lambda(e)\cap F=\varnothing\}.
+ \mathrm{span}\{v_e:e\in E,\ c(e)\le a,\ \Lambda(e)\cap F=\varnothing\}.
  \tag{2}
 $$
 
@@ -120,7 +120,7 @@ Scan the elements in a fixed order nondecreasing in cost. Retain e precisely whe
 For every e, ordinary linear greedy supplies a relation
 
 $$
-w_e\in\operatorname{span}\{w_f:f\in H,\ f\text{ no later than }e\}.
+w_e\in\mathrm{span}\{w_f:f\in H,\ f\text{ no later than }e\}.
  \tag{11}
 $$
 
@@ -134,7 +134,7 @@ $$
 to (11). Every failed retained element maps to zero. If e survives, its image is a nonzero scalar multiple of v_e. Dividing by that scalar shows
 
 $$
-v_e\in\operatorname{span}\{v_f:f\in H,\ f\text{ no later than }e,
+v_e\in\mathrm{span}\{v_f:f\in H,\ f\text{ no later than }e,
                                       \ \Lambda(f)\cap F=\varnothing\}.
  \tag{13}
 $$

@@ -239,8 +239,8 @@ For the partial sum S_j of j chosen X_e, use
 
 $$
 \Phi_j=
- e^{-\theta k_s(1+\epsilon)}a^{k_s-j}\operatorname{tr}e^{\theta S_j}
- +e^{\theta k_s(1-\epsilon)}b^{k_s-j}\operatorname{tr}e^{-\theta S_j}.
+ e^{-\theta k_s(1+\epsilon)}a^{k_s-j}\mathrm{tr}e^{\theta S_j}
+ +e^{\theta k_s(1-\epsilon)}b^{k_s-j}\mathrm{tr}e^{-\theta S_j}.
 \tag{15}
 $$
 

@@ -38,7 +38,7 @@ length. The construction below gives
 
 $$
 \boxed{\text{factor }5-4/r\text{ in }
-                        2^{O(r)}\operatorname{poly}(H)}
+                        2^{O(r)}\mathrm{poly}(H)}
  \tag{G1}
 $$
 
@@ -93,7 +93,7 @@ $$
 In a last-layer scan, resource j is available to player p exactly when
 
 $$
-p\notin\operatorname{cl}_{R_j}(X_j\cup Y_j).
+p\notin\mathrm{cl}_{R_j}(X_j\cup Y_j).
  \tag{G5}
 $$
 
@@ -118,7 +118,7 @@ every Z subseteq X and every resource j,
 
 $$
 Q_j(Z)=
-  \bigl(M_j\setminus\operatorname{owners}(B(Z))\bigr)
+  \bigl(M_j\setminus\mathrm{owners}(B(Z))\bigr)
                  \mathbin{\dot\cup} X_j(Z)
              \quad\text{independent in }R_j.
  \tag{G6}
@@ -148,7 +148,7 @@ from current matching bundles outside Y.
 For each Z subseteq X and each resource j in c, test
 
 $$
-\left[(M_j\setminus\operatorname{owners}(B(Z)\cup D))
+\left[(M_j\setminus\mathrm{owners}(B(Z)\cup D))
                   \mathbin{\dot\cup}X_j(Z)\right]\cup\{p\}.
  \tag{G7}
 $$
@@ -354,7 +354,7 @@ the usual O((1+eta^-1)log(r+1)) layer-depth bound.
 Consequently factor d+eta has the explicit mixed running time
 
 $$
-\operatorname{poly}(H,\text{oracle work})
+\mathrm{poly}(H,\text{oracle work})
  \min\left\{2^{O(r)},
   2^{\min\{r,\kappa\}}
      (r+1)^{O((1+\eta^{-1})\log(r+1))}\right\}.

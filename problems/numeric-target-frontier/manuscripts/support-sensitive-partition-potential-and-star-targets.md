@@ -6,7 +6,7 @@ The support-pattern count can retain the entire pattern of unequal row targets, 
 
 $$
 \exp\!\left(O\!\left(k\log\left(2+\frac Bk\right)\right)\right)
- \operatorname{poly}(H).
+ \mathrm{poly}(H).
  \tag{SP1}
 $$
 
@@ -102,7 +102,7 @@ Use the componentwise-pruned depth-first profile enumeration from the preceding 
 
 $$
 \exp\!\left(\inf_{t>0}\Phi_U(t)\right)
-                  \operatorname{poly}(H)
+                  \mathrm{poly}(H)
  \tag{SP10}
 $$
 
@@ -255,7 +255,7 @@ An algorithm may inspect the supplied program and formula; the reduction does no
 Consequently deterministic ETH rules out a deterministic exact algorithm of time
 
 $$
-2^{o(\sqrt T\log(T+2))}\operatorname{poly}(H)
+2^{o(\sqrt T\log(T+2))}\mathrm{poly}(H)
  \tag{SP21}
 $$
 

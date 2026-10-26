@@ -65,7 +65,7 @@ For one vertex the second alternative is vacuous.
 
 ### 1.1 Exact rational spectral test
 
-Let $L$ be the weighted Laplacian and $W=\operatorname{diag}(w_i)$.
+Let $L$ be the weighted Laplacian and $W=\mathrm{diag}(w_i)$.
 Set
 
 $$
@@ -111,14 +111,14 @@ of a rational matrix whose dimension is $b-1$, and determinant-size
 bounds are polynomial in that dimension and its input bit size.
 
 These are TEMPORARY LOCAL rational numbers. They can have
-$\operatorname{poly}(k,\log n,\log\psi^{-1})$ bits, much more
+$\mathrm{poly}(k,\log n,\log\psi^{-1})$ bits, much more
 than the numerical backend's length/gradient-label cap. Their full
 multiword arithmetic is charged to the polynomial-block preprocessing
 work. They are not exported as edge weights, gradients, route
 coefficients, or numerical labels. The exported result of this step
 is only a block subset or a Boolean expansion certificate; graph
 edge IDs, vertex IDs, and explicit unweighted path lists retain
-$O(\operatorname{poly}(\log n+\log\psi^{-1}))$-bit records.
+$O(\mathrm{poly}(\log n+\log\psi^{-1}))$-bit records.
 
 ### 1.2 A weighted-median sweep
 
@@ -372,7 +372,7 @@ remaining internal part has at least a fixed multiple of
 $k^4\lambda_{\rm cap}^2$ vertices, so the shuffler's later
 token-error inequalities have their required slack even if $k$
 is constant. The larger fixed polynomial does not alter the allowed
-$k^{O(1)}\operatorname{polylog}n$ preprocessing envelope.
+$k^{O(1)}\mathrm{polylog}n$ preprocessing envelope.
 
 Contract each $U_i^*$ to a coarse vertex of mass $|U_i^*|$,
 keeping only actual host edges between blocks. Condition (1) holds
@@ -418,7 +418,7 @@ $$
 $$
 
 Consequently (10) multiplies the child expansion by only
-$\psi^2/\operatorname{poly}(\Delta+1)$. The source's
+$\psi^2/\mathrm{poly}(\Delta+1)$. The source's
 $2^{O(k)}$ search for a maximum coarse cut is not used. There
 are at most $k$ exact spectral sweeps on $k$-vertex graphs,
 with $O(\log N+\log\psi^{-1})$-bit input coefficients.
@@ -569,7 +569,7 @@ $$
 This is a polylogarithmic degree bound, not the literal
 $O(\log n)$ bound claimed for an induced matching subgraph.
 All subsequent uses must allow this explicit larger degree. For
-$d\leq\operatorname{polylog}n$, it changes a fixed polynomial
+$d\leq\mathrm{polylog}n$, it changes a fixed polynomial
 degree factor only by a polylogarithm. A port-splitting wrapper is
 also available if a downstream primitive needs constant degree.
 
@@ -612,7 +612,7 @@ $$
 \Psi(H_X)\geq u^{-O(d)}
  \quad\hbox{off the root},\qquad
  \Psi(H_{\rm root})\geq
-              \operatorname{poly}(\psi)\,u^{-O(d)}.
+              \mathrm{poly}(\psi)\,u^{-O(d)}.
  \tag{21}
 $$
 
@@ -628,7 +628,7 @@ union of those matching graphs embeds into the current host with
 quality
 
 $$
-B=\operatorname{poly}(\Delta,\psi_{\rm cut}^{-1},u),
+B=\mathrm{poly}(\Delta,\psi_{\rm cut}^{-1},u),
  \tag{22}
 $$
 
@@ -654,7 +654,7 @@ $$
 has quality
 
 $$
-\operatorname{poly}(\psi^{-1})\,
+\mathrm{poly}(\psi^{-1})\,
                                          u^{O(d)}.
  \tag{25}
 $$
@@ -702,10 +702,10 @@ Call exact saturation in the CURRENT virtual graph $H_X$, using
 a cutoff below its certified sparsity. Thus each shuffler matching
 has explicit virtual paths with length and congestion bounded by
 $$
-\operatorname{poly}(\Delta(H_X),\Psi(H_X)^{-1},u).
+\mathrm{poly}(\Delta(H_X),\Psi(H_X)^{-1},u).
  \tag{26}
 $$
-There are at most $\lambda_{\rm cap}=\operatorname{poly}(u)$
+There are at most $\lambda_{\rm cap}=\mathrm{poly}(u)$
 such matchings per node. Every covering-matching edge already is
 an edge of its parent virtual graph. Leaf circuit paths have the
 separately proved fixed-polynomial dependence on leaf inverse
@@ -719,7 +719,7 @@ bounds, not their number. Unioning the $O(p)$ depths and the
 polynomially many circuit/shuffler layers gives virtual congestion
 and maximum virtual path length at most
 $$
-\operatorname{poly}(\psi^{-1})u^{O(p)}.
+\mathrm{poly}(\psi^{-1})u^{O(p)}.
  \tag{27}
 $$
 The original $\psi^{-1}$ appears only at the root; all nonroot
@@ -728,7 +728,7 @@ expansion certificates use constant cut thresholds.
 Apply the ONE map $f_0$ to this union of virtual paths.
 Multiplying (27) by (25) still gives
 $$
-A=\operatorname{poly}(\psi^{-1})u^{O(p)}
+A=\mathrm{poly}(\psi^{-1})u^{O(p)}
  \tag{28}
 $$
 for both physical edge congestion and maximum physical path length.
@@ -752,7 +752,7 @@ and leaf arithmetic have the local multiword bounds already stated.
 Together with the hierarchy construction recurrence, all work fits
 $$
 n^{1+O(1/p)}
-                 \operatorname{poly}(\psi^{-1})\log^{O(p)}n.
+                 \mathrm{poly}(\psi^{-1})\log^{O(p)}n.
  \tag{29}
 $$
 For the actual-size rule (15a), $k^{O(1)}$ is
@@ -774,7 +774,7 @@ the exported object explicitly. It gives:
 * polylogarithmic virtual degrees and the expansion recurrence (21);
 * identity child and covering-matching embeddings;
 * one root embedding of quality
-  $\operatorname{poly}(\psi^{-1})\log^{O(d)}n$.
+  $\mathrm{poly}(\psi^{-1})\log^{O(d)}n$.
 
 The explicit sequential replacement for inherited short-path packing,
 and the resulting hierarchy work recurrence, are supplied in

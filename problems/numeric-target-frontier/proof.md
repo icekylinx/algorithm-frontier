@@ -43,7 +43,7 @@ Let $T$ be the sum of the row targets. Following the exact zero-target and eligi
 There is a deterministic exact algorithm, including infeasibility detection, using
 
 $$
-2^{O(f(T,Q))}\operatorname{poly}(H)
+2^{O(f(T,Q))}\mathrm{poly}(H)
  \tag{BC2}
 $$
 

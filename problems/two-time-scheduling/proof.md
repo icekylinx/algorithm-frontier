@@ -225,7 +225,7 @@ a forced seed Z. The full all-input recursion time, including failed
 children and rank/LP gates, is
 
 $$
-A_d^{\,h-k-|Z|}\operatorname{poly}(H).
+A_d^{\,h-k-|Z|}\mathrm{poly}(H).
  \tag{HT13}
 $$
 

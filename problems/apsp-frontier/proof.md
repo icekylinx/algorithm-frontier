@@ -40,7 +40,7 @@ Here `W` is initialization plus total update work, `gamma` is stretch, and `P` i
 $$
 W=M\exp O(U/t+t^3h),\qquad
 \gamma=\exp O(t^4h),\qquad
-T_{\rm query}=\operatorname{poly}(U).
+T_{\rm query}=\mathrm{poly}(U).
 \tag{3}
 $$
 

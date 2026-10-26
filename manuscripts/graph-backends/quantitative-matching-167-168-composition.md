@@ -290,7 +290,7 @@ steps, internal refreshes number `O(D_*J)`. Their complete sweeps
 cost `O(D_*^2J)`. The exact priced-client categories give
 
 $$
-T_{\rm price}\le(M+Q)D_*^2\operatorname{poly}(s).           \tag{11}
+T_{\rm price}\le(M+Q)D_*^2\mathrm{poly}(s).           \tag{11}
 $$
 
 Here `Q` excludes internal refresh/repricing transactions. Responses

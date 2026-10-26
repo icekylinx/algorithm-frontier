@@ -114,8 +114,8 @@ exactly the boundary in the cube of the corresponding port
 union, so it is at least $\min\{P_A,M-P_A\}$.
 On the other hand
 $$
-\min\{\operatorname{vol}_F(A),
-             \operatorname{vol}_F(V\setminus A)\}
+\min\{\mathrm{vol}_F(A),
+             \mathrm{vol}_F(V\setminus A)\}
                  \leq q\min\{P_A,M-P_A\}.
  \tag{9}
 $$
@@ -173,8 +173,7 @@ $$
  \tag{11a}
 $$
 For forward witness tokens the executable endpoint-load
-parameter is $D_{1,i}=\lceil2D_{w,i}/\phi\rceil
-=O(U/\phi)$. Its aggregate full-host query volume is
+parameter is $D_{1,i}=\lceil2D_{w,i}/\phi\rceil =O(U/\phi)$. Its aggregate full-host query volume is
 $O(m_JU/\phi)$. The actual forward-token count satisfies
 the same bound, by
 $\lceil\rho_i\rceil\leq\rho_i+1$ and (11a).

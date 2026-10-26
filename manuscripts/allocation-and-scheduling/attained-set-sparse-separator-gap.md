@@ -223,7 +223,7 @@ threshold, or soundly rejects original uninflated feasibility, in
 
 $$
 \left(\frac{1+\sqrt5}{2}\right)^c
-                                      \operatorname{poly}(H)
+                                      \mathrm{poly}(H)
 \tag{S8}
 $$
 

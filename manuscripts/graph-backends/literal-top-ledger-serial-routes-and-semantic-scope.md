@@ -76,7 +76,7 @@ Choose the master `S` from the final physical size, put `delta=S^(-1000)` and
 bin. The top equation
 
 $$
-s_d=L-\operatorname{load}(d)+p_d-Cw_d
+s_d=L-\mathrm{load}(d)+p_d-Cw_d
 $$
 
 holds exactly. These slacks are above the positivity-service trigger. Total

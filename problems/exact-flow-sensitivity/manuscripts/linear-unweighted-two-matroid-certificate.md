@@ -61,7 +61,7 @@ $$
 in this finite lattice. Its successive differences D_j=U_j\U_{j−1} partition S. Because every coordinate of x on S is strictly positive,
 
 $$
-0<x(D_j)=\rho(U_j)-\rho(U_{j−1})\in\mathbb Z_{>0}.
+0<x(D_j)=\rho(U_j)-\rho(U_{j-1})\in\mathbb Z_{>0}.
 $$
 
 Their total is r, so t≤r.
@@ -69,7 +69,7 @@ Their total is r, so t≤r.
 Every tight set U is a union of entire blocks D_j. Indeed, the set
 
 $$
-U_{j−1}\cup(U\cap U_j)
+U_{j-1}\cup(U\cap U_j)
 $$
 
 is tight by lattice closure and lies between two consecutive chain members. Maximality of the chain forces it to be one endpoint, so U either contains all of D_j or none of it. Consequently the incidence vectors of tight sets lie in the t-dimensional span of the block indicators, equivalently the chain indicators.

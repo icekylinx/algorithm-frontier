@@ -30,7 +30,7 @@ Without a resource, omit $v_e$. The dimension is $D$.
 Fix a later extension $M^+$, an independent context $T$, and a protected live positive item $e\in T$. Keep its background fixed. Set
 $$
 C=V_f\cup\bigcup_{a\in(T\cap E)-e}S_a,\qquad
-A=E\cap\operatorname{cl}_{M^+}(T-e).
+A=E\cap\mathrm{cl}_{M^+}(T-e).
 $$
 The set $A$ is an original-matroid flat excluding $e$. Therefore the original representation supplies a functional $L_A$ zero on $A$ and nonzero on $v_e$; no representation of $M^+$ is required.
 
