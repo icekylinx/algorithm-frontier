@@ -1,18 +1,17 @@
-# Robust unrelated allocation with common setup
+# Robust unrelated allocation with common setup costs
 
-This is a supporting robust-allocation record with a common selected basis and
-scenario-adaptive assignments.
-
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Robust additive utility at least the source's nonnegative version of `(1 - epsilon) F OPT - u`, with every scenario budget exact. |
-| **Objective and output** | Maximize common robust utility across explicit scenarios; keep one common actual player basis, allow scenario-adaptive integral assignments, and return the basis plus each scenario allocation. |
-| **Time** | The inverse-accuracy base is raised to the corank `c`, multiplied by polynomial work in the complete scenario input and paid primitives. |
-| **Space** | Polynomial binary workspace in the explicit scenarios, common-basis state, setup vector, and scenario allocations; no separate space exponent is claimed. |
-| **Parameters** | `c` is the corank/omission parameter in the source; `epsilon` is rational accuracy; `F` is the source's baseline factor; `u` is the additive term; `H` includes all scenario data and paid primitive work; `Omega` is the explicit scenario list. |
-| **Model and representation** | Common actual player basis across scenarios, scenario-adaptive integral assignments, unrelated values, a common setup vector, recipient polymatroids, and exact nonnegative budgets. |
-| **Lower-bound scope** | No universal explicit-input lower bound is claimed. The source's obstruction records remain scoped to their named oracle or promise models. |
-| **Review status** | Internal display and model review; proof and algorithm follow-up is tracked in the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). Finite audits are not formal verification. |
-| **Source** | [Robust unrelated allocation source](../../sources/checkpoint-q/robust_unrelated_common_setup_additive.md), its [proof map](proof.md), and `verify/`. |
+| **Guarantee** | Returns per-player, per-scenario utility at least $\max\{0,(1-\varepsilon)\operatorname{FOPT}-u_{\omega,p}\}$ on one common actual basis. Hence robust minimum utility is at least $\max\{0,(1-\varepsilon)\operatorname{FOPT}-u\}$. Every scenario's combined setup and assignment budget remains exact. |
+| **Objective and output** | Maximize robust common utility while choosing a single basis before the scenario and allowing integral assignments to adapt afterward. |
+| **Time** | $\Gamma(1/\varepsilon)^c\operatorname{poly}(H)$. For fixed rational $\varepsilon$, the whole-ground alternative is $\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\operatorname{poly}(H)$. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. All scenarios are explicit. |
+| **Parameters** | $c=q-r$; $0<\varepsilon<1$ is rational; $u_{\omega,p}=\max_j v_{\omega,p,j}$; $u=\max_{\omega,p}u_{\omega,p}$. $\operatorname{FOPT}$ maximizes over one actual common basis and relaxes only scenario assignment counts. $\Gamma(R)=R^R/(R-1)^{R-1}$ and $E(q)=2^{O(q\log\log(q+2)/\log(q+2))}$. |
+| **Model and representation** | Player-specific scenario values, integral recipient polymatroids, a common nonnegative setup vector, scenario-specific exact scalar budgets and assignment costs, one common actual player-matroid basis, and unused resources allowed. |
+| **Lower-bound scope** | This additive guarantee does not imply a finite multiplicative guarantee when the largest-unit loss dominates. Distinct scenario setup vectors and one common integer allocation require separate arguments. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+$\operatorname{FOPT}$ is one comparator name, not a product of an unspecified factor and integer $\operatorname{OPT}$. The proof retains all fractional coordinates needed by that comparator, including pairs whose full-unit cost exceeds a positive budget.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

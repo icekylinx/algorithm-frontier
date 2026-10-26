@@ -1,14 +1,35 @@
-# Source map
+# Proofs and dependencies
 
-- `sources/checkpoint-p/unrelated_values_joint_role_near_two_allocation.md`
-- `sources/checkpoint-p/unrelated_values_joint_role_independent_audit.md`
-- `sources/checkpoint-p/unrelated_values_joint_role_second_audit.md`
-- `sources/checkpoint-p/unrelated_joint_role_and_setup_root_audit.md`
+The canonical manuscripts below contain the mathematical arguments. Computational evidence and its limits are recorded separately in [Verification](verify/README.md).
 
+## Canonical manuscripts
 
----
+- [Unrelated-value allocation near two through a joint light/heavy LP](proof.md)
+- [The exact-factor-two endpoint for arbitrary unrelated allocation](exact-two.md)
+- [Unrelated-value allocation with one shared setup and assignment budget](setup-budget.md)
+- [Integer-quota time tradeoffs for compulsory unrelated two-value allocation](two-value-tradeoffs.md)
 
-**Curated by:** Yilin Liu  
-**Signature:** GPT-6 Astra Pro  
-**Date:** 2026-10-25  
-**Status:** internally reviewed research; no formal verification or external peer review.
+## Mathematical dependencies
+
+- [Unrelated-value allocation with an exact budget and a fractional comparator](../unrelated-values-additive/proof.md)
+- [A polynomial-space conversion from corank gaps to global exponential time](../whole-ground-allocation/global-conversion.md)
+- [Faster global time for coarser integer-quota approximation](../whole-ground-allocation/integer-quotas.md)
+- [Global exponential-time allocation, scheduling and selected-flow transfers](../whole-ground-allocation/proof.md)
+- [Single-exponential corank time for weighted packing through first-violation prefixes](../whole-ground-allocation/selection.md)
+
+## Related bounds and model comparisons
+
+- [Why arbitrary many exact assignment budgets cannot be added for free](../../manuscripts/mechanism-boundaries/multiple-exact-assignment-budgets-obstruction.md)
+
+## Primary references
+
+- [*Exact Algorithms via Monotone Local Search*](https://arxiv.org/abs/1512.01621)
+- [*Cost Preserving Dependent Rounding for Allocation Problems*, ICALP 2025](https://doi.org/10.4230/LIPIcs.ICALP.2025.127)
+
+## Executable evidence
+
+- [verify_profile_certificates.py](../../tools/verify_profile_certificates.py): Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. This applies only to the compulsory J2 and factor-d quota arithmetic, not shared-resource or setup coupling.
+
+The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
+
+**Attribution:** Yilin Liu and GPT-6 Astra Pro.

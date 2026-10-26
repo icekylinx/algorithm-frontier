@@ -1,15 +1,37 @@
-# Arbitrary processing-time scheduling
+# Scheduling with arbitrary processing times
 
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Returns a legal schedule with makespan at most `(1 + epsilon)` times the original integer optimum, or detects infeasibility even without a load bound. |
-| **Objective and output** | Minimize maximum load while preserving every original type total and the exact assignment-cost budget; output an integer schedule. |
-| **Time** | With `delta = epsilon/2`, `K = floor(1/delta)`, `B = ceil((1-delta)/delta^2)`, and `C_epsilon = binom(B+K,K)`, the direct bound is `C_epsilon^q poly(H_epsilon)`; the source also proves `exp(3q(K+1)) poly(H_epsilon) = 2^(O(q/epsilon)) poly(H_epsilon)`. |
-| **Space** | Polynomial in the complete binary input and rational accuracy encoding; neither machine slots nor job units are expanded. |
-| **Parameters** | `q` is the physical-machine count; `epsilon` is rational accuracy; `H_epsilon` includes its full encoding; `n_j=f_j(P)` are mandatory type totals; `C` is the exact assignment-cost budget; `ell_pj` and `a_pj` are arbitrary nonnegative rational processing times and assignment costs. |
-| **Model and representation** | Arbitrary nonnegative rational processing times, integral recipient polymatroids, mandatory original bases, eligibility masks, and one exact assignment-cost budget. |
-| **Lower-bound scope** | No lower bound is claimed. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [scheduling-profile review](../../reviews/backlog/scheduling-profile-records.md) and [review registry](../../reviews/README.md). |
-| **Source** | [Arbitrary-processing profile source](../../sources/checkpoint-q/arbitrary_processing_profile_approximation_scheme.md) and the verification paths in `sources.md`. |
+| **Guarantee** | Returns an integer schedule of makespan at most $(1+\varepsilon)\operatorname{OPT}$, or detects infeasibility even without a load bound. |
+| **Objective and output** | Assign every original type total while preserving one exact assignment-cost budget. |
+| **Time** | With $\delta=\varepsilon/2$, $K=\lfloor1/\delta\rfloor$, $L=\left\lceil(1-\delta)/\delta^2\right\rceil$, and $\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}$, time is $\Pi_\varepsilon^q\operatorname{poly}(H_\varepsilon)=2^{O(q/\varepsilon)}\operatorname{poly}(H_\varepsilon)$. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. The rational accuracy is never expanded into unary coordinates. |
+| **Parameters** | $q$ is the physical-machine count; $0<\varepsilon\le1$ is rational; $H_\varepsilon=H+\operatorname{size}(\varepsilon)$; all original totals $n_j=f_j(P)$ are mandatory. $H$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work. |
+| **Model and representation** | Arbitrary nonnegative rational processing times and assignment costs, integral job polymatroids, eligibility masks, and one exact budget. Every original resource base must be recovered. |
+| **Lower-bound scope** | No lower bound is claimed for this algorithm. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+## A separate slot-surplus guarantee for common type sizes
+
+The [compressed slot-surplus theorem](slot-surplus.md) handles common
+processing sizes and mandatory original job-polymatroid bases, with
+arbitrary binary multiplicities and no assignment-cost budget.
+Let $a$ be the maximum size, $h$ its mandatory total, $u$ the largest
+smaller size, and
+
+$s_p(T)=\min\{f_b(\{p\}),\lfloor T/a\rfloor\}$,  $c_{\mathrm{slot}}(T)=\sum_p s_p(T)-h$.
+
+| Guarantee | Time and condition |
+|---|---|
+| $C_{\max}\le\operatorname{OPT}+a$ | Always retained as a polynomial fallback |
+| $C_{\max}\le\min\{\operatorname{OPT}+a,(1+\varepsilon)\operatorname{OPT}+u\}$ | $\Gamma(1/\varepsilon)^k\operatorname{poly}(H)$ when $c_{\mathrm{slot}}(\operatorname{OPT})\le k$, for rational $0<\varepsilon\le1/2$ |
+| Factor $1+\eta$ | $\Gamma(2/\eta)^k\operatorname{poly}(H)$ when $u\le(\eta/2)\operatorname{OPT}$ and $c_{\mathrm{slot}}(\operatorname{OPT})\le k$, for rational $0<\eta\le1$ |
+
+Here $\Gamma(R)=R^R/(R-1)^{R-1}$. The supplied slot-surplus budget $k$
+can itself be binary encoded. A hybrid count enumeration guarantees
+polynomial workspace even when its numerical value exceeds the number
+of machines. This theorem does not impose at most one largest unit per
+machine, and its additive smaller-unit loss is explicit.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

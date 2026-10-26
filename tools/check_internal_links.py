@@ -8,11 +8,9 @@ from pathlib import Path
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-# Keep the check focused on the maintained reading layer and the low-space source
-# tree. Imported checkpoint manuscripts may contain intentional external references.
-ROOT_FILES = {"README.md", "OVERVIEW.md", "CONTENTS.md", "FORMATTING.md", "PROTOCOL.md", "MAINTENANCE.md", "HISTORY.md", "PUBLISHING.md"}
-ROOT_DIRS = ("docs", "problems", "reviews", "provenance")
-EXTRA_DIRS = (ROOT / "sources" / "subset-sum" / "low-space",)
+ROOT_FILES = {"README.md", "CONTENTS.md", "CONTRIBUTING.md", "PROTOCOL.md", "HISTORY.md"}
+ROOT_DIRS = ("docs", "problems", "manuscripts", "reviews", "provenance")
+EXTRA_DIRS = ()
 LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 
 
@@ -29,8 +27,13 @@ def markdown_files() -> list[Path]:
 
 
 def strip_code(text: str) -> str:
-    # Fenced code blocks are not Markdown links in the displayed document.
-    return re.sub(r"```.*?```", "", text, flags=re.DOTALL)
+    # Code and mathematics are not Markdown links. A coefficient extraction
+    # such as [z^r](1+2z)^k must not be read as a relative URL.
+    text = re.sub(r"```.*?```", "", text, flags=re.DOTALL)
+    text = re.sub(r"(?<!\\)\$\$.*?(?<!\\)\$\$", "", text, flags=re.DOTALL)
+    text = re.sub(r"\\\[.*?\\\]", "", text, flags=re.DOTALL)
+    text = re.sub(r"\\\(.*?\\\)", "", text, flags=re.DOTALL)
+    return re.sub(r"(?<![\\$])\$(?!\$).*?(?<!\\)\$(?!\$)", "", text)
 
 
 def target_exists(source: Path, target: str) -> bool:

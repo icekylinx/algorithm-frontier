@@ -1,10 +1,15 @@
-# Curated problems
+# Problem manuscripts
 
-The catalogue is organised by [problem family](../docs/FAMILIES.md). Each result directory is a compact record with the same core fields:
+The [results catalogue](../README.md#results) lists every problem family with
+its guarantees and complexity. The [complete proof index](../CONTENTS.md)
+includes every main and companion manuscript.
 
-- `README.md`: problem, output, model, guarantee, time, space, parameters, comparator, and claim status;
-- `proof.md`: a short proof map when the record has one;
-- `verify/`: executable or finite checks when available;
-- `sources.md`: exact source paths, checkpoint provenance, and attribution.
+Each problem has a statement in `README.md`, formal theorems and proofs in
+`proof.md`, a dependency/reference map in `sources.md`, and a focused
+evidence description in [README.md](../provenance/README.md). Longer arguments live in
+descriptively named companion files or a local `manuscripts/` directory.
 
-A numerical bound is compared only after its model, parameterisation, representation, assumptions, and comparator have been matched. The [review registry](../reviews/README.md) records which parts have received proof, algorithm, source, and finite-check review.
+Compare numerical bounds only after matching their model, parameters,
+representation, assumptions, comparator and output. The
+[verification registry](../reviews/README.md) identifies executable evidence
+and the limits of that evidence.

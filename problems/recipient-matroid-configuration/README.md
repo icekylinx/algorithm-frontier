@@ -1,18 +1,17 @@
-# Recipient-matroid configuration allocation
+# Allocation with recipient matroids and a configuration comparator
 
-This is a supporting allocation record whose comparator is a coupled
-configuration LP.
-
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Factor `4 - 3/r` against the coupled configuration LP, with the stated positive-accuracy alternative under the same recipient-matroid scope. |
-| **Objective and output** | Optimize the coupled configuration comparator while selecting a player basis and one service per player-resource pair; return the feasible integral allocation and selected basis. |
-| **Time** | `2^(O(r)) poly(H)` for factor `d=4-3/r`; the `d+eta` alternative takes `poly(H) min{2^(O(r)), (r+1)^(O((1+eta^-1) log(r+1)))}.` |
-| **Space** | Polynomial binary workspace in the explicit configuration input and paid matroid state; no separate space exponent is claimed. |
-| **Parameters** | `r` is the selected player-basis rank; `d=4-3/r`; `eta` is positive rational accuracy in the alternative; `H` is complete encoded input plus paid primitive work. |
-| **Model and representation** | Arbitrary recipient matroids, one service per player-resource pair, a selected player basis, and the explicit coupled configuration comparator. |
-| **Lower-bound scope** | No lower bound is claimed. The configuration comparator is not interchangeable with the arbitrary-polymatroid integer-optimum record. |
-| **Review status** | Internal display and model review; proof and algorithm follow-up is tracked in the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). Finite audits are not formal verification. |
-| **Source** | [Recipient-matroid configuration source](../../sources/checkpoint-o/general_resource_prefix_additivity_four_candidate.md), its [proof map](proof.md), and `verify/`. |
+| **Guarantee** | Returns value at least $T_{\mathrm{conf}}/d$ with $d=4-3/r$. With a certified local factor-$\lambda$ oracle, use $d=\lambda^{-1}+3-3/r$. Factor $d+\eta$ has the rank-quasipolynomial alternative. |
+| **Objective and output** | Select a player basis and integral resource bundles satisfying every recipient matroid and any supplied downward-closed local family. |
+| **Time** | $2^{O(r)}\operatorname{poly}(H)$ for factor $d$; $\operatorname{poly}(H)\min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}$ for $d+\eta$. |
+| **Space** | Polynomial in the original encoded matroid and resource input and paid oracle workspace. The exponentially many configurations are not input or stored. |
+| **Parameters** | $r\ge1$ is the selected player rank; $\eta>0$ and the certified $0<\lambda\le1$ are rational; $T_{\mathrm{conf}}$ is the coupled configuration optimum. $H$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work. |
+| **Model and representation** | One service per player-resource pair, common intrinsic resource values, arbitrary recipient matroids, an arbitrary player matroid, and a paid local availability oracle when local families are present. |
+| **Lower-bound scope** | No lower bound is asserted. The coupled configuration comparator uses separate recipient-matroid columns; arbitrary polymatroid aggregation need not preserve it. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+The manuscript defines the comparator explicitly and proves its reduction to the compact small-resource promise. No LP solution or configuration enumeration is required.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

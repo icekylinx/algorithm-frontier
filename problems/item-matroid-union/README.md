@@ -1,18 +1,17 @@
-# Explicit-item matroid-union allocation
+# Explicit-item allocation on a selected matroid basis
 
-This is a supporting allocation record for explicit items and a matroid-union
-resource construction.
-
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Factor `4 - 3/r` against integer optimum in the explicit-item model, with the stated positive-accuracy rank-quasipolynomial alternative and configuration-LP addendum. |
-| **Objective and output** | Maximize intrinsic item value while selecting a feasible player-matroid basis and matroid-union resource set; return the original-item allocation and basis. |
-| **Time** | Exponential in the selected rank `r`, times polynomial work in the encoded input and named matroid primitives. The rank-quasipolynomial alternative has its own source-defined dependence. |
-| **Space** | Polynomial binary workspace in the explicit input and paid matroid state; no separate space exponent is claimed. |
-| **Parameters** | `r` is the selected player-basis rank; `eta` is the positive accuracy in the alternative guarantee; `H` is the complete encoded input plus paid primitive work. |
-| **Model and representation** | Explicit items with arbitrary intrinsic values, a player matroid, the matroid-union resource construction, and the source's original-basis recovery interface. |
-| **Lower-bound scope** | No lower bound is claimed. The configuration-LP addendum is a separate comparator and is not an explicit-input hardness statement. |
-| **Review status** | Internal display and model review; proof and algorithm follow-up is tracked in the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). Finite audits are not formal verification. |
-| **Source** | [Matroid-union allocation source](../../sources/checkpoint-o/matroid_union_fat_resource_allocation.md), its [proof map](proof.md), and `verify/`. |
+| **Guarantee** | Returns value at least $T_{\mathrm{conf}}/(4-3/r)$ against the player-matroid configuration LP, hence also against integer optimum. An alternative gives factor $4-3/r+\eta$. |
+| **Objective and output** | Select an actual player-matroid basis and disjoint liked-item bundles with large minimum intrinsic value. |
+| **Time** | Factor $d=4-3/r$ takes $2^{O(r)}\operatorname{poly}(H)$. Factor $d+\eta$ takes $\operatorname{poly}(H)\min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}$. |
+| **Space** | Polynomial in the explicit item and liking-incidence input, rational encodings, and paid matroid workspace. |
+| **Parameters** | $r\ge1$ is the player-matroid rank; $\eta>0$ is rational; $T_{\mathrm{conf}}$ is the configuration optimum. All matroid-union and original-oracle costs are paid in $H$. |
+| **Model and representation** | Explicit indivisible items with intrinsic values and explicit liking incidences; an arbitrary player matroid. Configurations and an LP solution are not supplied or enumerated. |
+| **Lower-bound scope** | No lower bound is claimed for this algorithm. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+The [configuration-comparator proof](configuration-comparator.md) establishes the stronger comparator without changing the algorithm. Rank one is exact. The factor tends to four as rank grows; no fixed improvement below four for all ranks is asserted.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

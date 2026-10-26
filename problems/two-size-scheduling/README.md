@@ -1,15 +1,17 @@
-# Two-size makespan scheduling
+# Scheduling two common job sizes
 
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | The corank branch gives an exact factor three-halves schedule; the separate large-unit branch gives factor five-thirds. These are distinct parameter regimes. |
-| **Objective and output** | Minimize makespan for two positive job sizes and output integral bases for both aggregate job polymatroids, decomposed back to original assignments. |
-| **Time** | The corank branch takes `(27/4)^c poly(H) = 2^(O(c)) poly(H)`, where `c` is the unused-large-position corank. The separate large-unit branch gives factor five-thirds in `2^(O(h)) poly(H)`, where `h` is the aggregate large-job rank. These regimes are not merged. |
-| **Space** | Polynomial in the complete binary input and the selected branch state; binary job counts are not expanded. |
-| **Parameters** | `q` is the machine count; `h` and `s` are aggregate large- and small-job ranks; `r_b` is the Boolean-cap rank; `c` counts surplus eligible large-job positions; `u` and `a` are the two job sizes. |
-| **Model and representation** | Arbitrary integral job polymatroids with two positive sizes, binary-encoded ranks, and the standard integral decomposition primitive. The Boolean-rank failure case is handled separately. |
-| **Lower-bound scope** | The corank branch retains its matching strict-below-three-halves obstruction in the full value-oracle model; no broader lower bound is claimed. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [scheduling-profile review](../../reviews/backlog/scheduling-profile-records.md) and [review registry](../../reviews/README.md). |
-| **Source** | [Two-size corank source](../../sources/checkpoint-o/two_size_makespan_corank_three_halves_transfer.md) and the verification paths in `sources.md`. |
+| **Guarantee** | One branch gives exact factor $3/2$ in the surplus-large-position parameter; a separate branch gives factor $5/3$ in the number of mandatory large units. Fixed integer $d\ge2$ also gives factor $2-1/d$. |
+| **Objective and output** | Assign all large and small units and recover the original job-polymatroid bases. |
+| **Time** | Exact $3/2$ takes $(27/4)^c\operatorname{poly}(H)$ or $(50/27)^q E(q)\operatorname{poly}(H)$. Exact $5/3$ also takes $2^{O(h)}\operatorname{poly}(H)$. More generally use $A_d^c\operatorname{poly}(H)$ or $(2-1/A_d)^q E(q)\operatorname{poly}(H)$ with $A_d=\Gamma((d+1)/(d-1))$. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. |
+| **Parameters** | $h=f_b(P)$ is the mandatory large-unit total; $q$ is the number of nonloop Boolean-cap large positions when their rank is $h$; $c=q-h$; positive sizes are $u<a$; $\Gamma(R)=R^R/(R-1)^{R-1}$ and $E(q)=2^{O(q\log\log(q+2)/\log(q+2))}$. |
+| **Model and representation** | Two common positive job sizes, arbitrary integral job polymatroids, binary ranks, and mandatory original bases. This transfer has no assignment-cost budget. Boolean-rank loss and one-size cases are handled separately. |
+| **Lower-bound scope** | The [strict-below-three-halves value-oracle barrier](../allocation-lower-bounds/proof.md) applies to the named general recipient-rank model; no broader explicit-input hardness is inferred. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+The [large-unit-rank proof](rank-parameter.md) establishes the separate $h$ branch. The [integer-quota transfer](../whole-ground-allocation/integer-quotas.md) gives the full $d$ curve. For machine-specific times and exact assignment costs, see the distinct [two-time theorem](../two-time-scheduling/README.md).
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

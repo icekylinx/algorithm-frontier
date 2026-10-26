@@ -1,0 +1,1106 @@
+{
+  "receipt_schema": 1,
+  "status": "PASS",
+  "complete_X02_contact_menu": true,
+  "checker_sha256": "8315eca7e5adf97dde48866f874c8806c80c974761f3e63010d3146264fd3398",
+  "menu_sha256": "c711731cb9f3a432b2e957733f415726c11fb5d374c71729b0576d85c7f47fd8",
+  "expected_branch_count": 44,
+  "expected_choices": [
+    {
+      "rho": "1.3",
+      "gamma": ".47",
+      "tau": ".24",
+      "target": ".14310",
+      "branch": "push"
+    },
+    {
+      "rho": "1.3",
+      "gamma": ".47",
+      "tau": ".24",
+      "target": ".14310",
+      "branch": "recursive"
+    },
+    {
+      "rho": "1.3",
+      "gamma": ".47",
+      "tau": ".40",
+      "target": ".19000",
+      "branch": "push"
+    },
+    {
+      "rho": "1.3",
+      "gamma": ".47",
+      "tau": ".40",
+      "target": ".19000",
+      "branch": "recursive"
+    },
+    {
+      "rho": "1.7",
+      "gamma": ".47",
+      "tau": ".40",
+      "target": ".18545",
+      "branch": "push"
+    },
+    {
+      "rho": "1.7",
+      "gamma": ".47",
+      "tau": ".40",
+      "target": ".18545",
+      "branch": "recursive"
+    },
+    {
+      "rho": "1.7",
+      "gamma": ".47",
+      "tau": ".44",
+      "target": ".19560",
+      "branch": "push"
+    },
+    {
+      "rho": "1.7",
+      "gamma": ".47",
+      "tau": ".44",
+      "target": ".19560",
+      "branch": "recursive"
+    },
+    {
+      "rho": "2.2",
+      "gamma": ".50",
+      "tau": ".43",
+      "target": ".19229",
+      "branch": "push"
+    },
+    {
+      "rho": "2.2",
+      "gamma": ".50",
+      "tau": ".43",
+      "target": ".19229",
+      "branch": "recursive"
+    },
+    {
+      "rho": "2.2",
+      "gamma": ".50",
+      "tau": ".46",
+      "target": ".19877",
+      "branch": "push"
+    },
+    {
+      "rho": "2.2",
+      "gamma": ".50",
+      "tau": ".46",
+      "target": ".19877",
+      "branch": "recursive"
+    },
+    {
+      "rho": "2.6",
+      "gamma": ".54",
+      "tau": ".45",
+      "target": ".19669",
+      "branch": "push"
+    },
+    {
+      "rho": "2.6",
+      "gamma": ".54",
+      "tau": ".45",
+      "target": ".19669",
+      "branch": "recursive"
+    },
+    {
+      "rho": "2.6",
+      "gamma": ".54",
+      "tau": ".48",
+      "target": ".20234",
+      "branch": "push"
+    },
+    {
+      "rho": "2.6",
+      "gamma": ".54",
+      "tau": ".48",
+      "target": ".20234",
+      "branch": "recursive"
+    },
+    {
+      "rho": "2.8",
+      "gamma": ".58",
+      "tau": ".47",
+      "target": ".20032",
+      "branch": "push"
+    },
+    {
+      "rho": "2.8",
+      "gamma": ".58",
+      "tau": ".47",
+      "target": ".20032",
+      "branch": "recursive"
+    },
+    {
+      "rho": "2.8",
+      "gamma": ".58",
+      "tau": ".49",
+      "target": ".20396",
+      "branch": "push"
+    },
+    {
+      "rho": "2.8",
+      "gamma": ".58",
+      "tau": ".49",
+      "target": ".20396",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".48",
+      "target": ".20214",
+      "branch": "push"
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".48",
+      "target": ".20214",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".49",
+      "target": ".20384",
+      "branch": "push"
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".49",
+      "target": ".20384",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".50",
+      "target": ".20556",
+      "branch": "push"
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".50",
+      "target": ".20556",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".51",
+      "target": ".20730",
+      "branch": "push"
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".51",
+      "target": ".20730",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".50",
+      "target": ".20561",
+      "branch": "push"
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".50",
+      "target": ".20561",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".51",
+      "target": ".20706",
+      "branch": "push"
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".51",
+      "target": ".20706",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".54",
+      "target": ".21148",
+      "branch": "push"
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".54",
+      "target": ".21148",
+      "branch": "recursive"
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".58",
+      "target": ".21758",
+      "branch": "push"
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".58",
+      "target": ".21758",
+      "branch": "recursive"
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".55",
+      "target": ".21218",
+      "branch": "push"
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".55",
+      "target": ".21218",
+      "branch": "recursive"
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".60",
+      "target": ".21801",
+      "branch": "push"
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".60",
+      "target": ".21801",
+      "branch": "recursive"
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".65",
+      "target": ".22429",
+      "branch": "push"
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".65",
+      "target": ".22429",
+      "branch": "recursive"
+    },
+    {
+      "rho": "4",
+      "gamma": "direct",
+      "tau": ".60",
+      "target": ".21873",
+      "branch": "direct"
+    },
+    {
+      "rho": "4",
+      "gamma": "direct",
+      "tau": ".76",
+      "target": ".22760",
+      "branch": "direct"
+    }
+  ],
+  "branches": 44,
+  "leaves": 188227,
+  "arithmetic": "exact rationals; integer interval atanh logarithms",
+  "scope": "continuous profile inequalities conditional on the analytic circuit and trace lemmas",
+  "results": [
+    {
+      "rho": "1.3",
+      "gamma": ".47",
+      "tau": ".24",
+      "target": ".14310",
+      "branch": "push",
+      "leaves": 177,
+      "empty": 0,
+      "nodes": 353,
+      "depth": 14,
+      "maximum": "57239637489884724783/400000000000000000000",
+      "minimum_margin": "362510115275217/400000000000000000000",
+      "methods": {
+        "push": 177
+      },
+      "seconds": 1.487
+    },
+    {
+      "rho": "1.3",
+      "gamma": ".47",
+      "tau": ".24",
+      "target": ".14310",
+      "branch": "recursive",
+      "leaves": 0,
+      "empty": 1,
+      "nodes": 1,
+      "depth": 0,
+      "maximum": "0",
+      "minimum_margin": null,
+      "methods": {},
+      "seconds": 0.0
+    },
+    {
+      "rho": "1.3",
+      "gamma": ".47",
+      "tau": ".40",
+      "target": ".19000",
+      "branch": "push",
+      "leaves": 25,
+      "empty": 0,
+      "nodes": 49,
+      "depth": 6,
+      "maximum": "15168799149606871671/80000000000000000000",
+      "minimum_margin": "31200850393128329/80000000000000000000",
+      "methods": {
+        "push": 25
+      },
+      "seconds": 0.07
+    },
+    {
+      "rho": "1.3",
+      "gamma": ".47",
+      "tau": ".40",
+      "target": ".19000",
+      "branch": "recursive",
+      "leaves": 0,
+      "empty": 1,
+      "nodes": 1,
+      "depth": 0,
+      "maximum": "0",
+      "minimum_margin": null,
+      "methods": {},
+      "seconds": 0.0
+    },
+    {
+      "rho": "1.7",
+      "gamma": ".47",
+      "tau": ".40",
+      "target": ".18545",
+      "branch": "push",
+      "leaves": 123,
+      "empty": 0,
+      "nodes": 245,
+      "depth": 14,
+      "maximum": "23737380544786765573/128000000000000000000",
+      "minimum_margin": "219455213234427/128000000000000000000",
+      "methods": {
+        "push": 123
+      },
+      "seconds": 0.999
+    },
+    {
+      "rho": "1.7",
+      "gamma": ".47",
+      "tau": ".40",
+      "target": ".18545",
+      "branch": "recursive",
+      "leaves": 119,
+      "empty": 0,
+      "nodes": 237,
+      "depth": 16,
+      "maximum": "35657945995489817433973/192320000000000000000000",
+      "minimum_margin": "7798004510182566027/192320000000000000000000",
+      "methods": {
+        "continuous": 111,
+        "old": 3,
+        "closed": 5
+      },
+      "seconds": 2.886
+    },
+    {
+      "rho": "1.7",
+      "gamma": ".47",
+      "tau": ".44",
+      "target": ".19560",
+      "branch": "push",
+      "leaves": 120,
+      "empty": 0,
+      "nodes": 239,
+      "depth": 13,
+      "maximum": "156476472858852369867/800000000000000000000",
+      "minimum_margin": "3527141147630133/800000000000000000000",
+      "methods": {
+        "push": 120
+      },
+      "seconds": 0.887
+    },
+    {
+      "rho": "1.7",
+      "gamma": ".47",
+      "tau": ".44",
+      "target": ".19560",
+      "branch": "recursive",
+      "leaves": 210,
+      "empty": 0,
+      "nodes": 419,
+      "depth": 16,
+      "maximum": "188087852917406377565987/961600000000000000000000",
+      "minimum_margin": "1107082593622434013/961600000000000000000000",
+      "methods": {
+        "continuous": 202,
+        "closed": 6,
+        "old": 2
+      },
+      "seconds": 3.776
+    },
+    {
+      "rho": "2.2",
+      "gamma": ".50",
+      "tau": ".43",
+      "target": ".19229",
+      "branch": "push",
+      "leaves": 80,
+      "empty": 0,
+      "nodes": 159,
+      "depth": 13,
+      "maximum": "16902802829644386377/88000000000000000000",
+      "minimum_margin": "18717170355613623/88000000000000000000",
+      "methods": {
+        "push": 80
+      },
+      "seconds": 0.45
+    },
+    {
+      "rho": "2.2",
+      "gamma": ".50",
+      "tau": ".43",
+      "target": ".19229",
+      "branch": "recursive",
+      "leaves": 17319,
+      "empty": 0,
+      "nodes": 34637,
+      "depth": 29,
+      "maximum": "24613119863714610881/128000000000000000000",
+      "minimum_margin": "136285389119/128000000000000000000",
+      "methods": {
+        "old": 61,
+        "continuous": 17236,
+        "closed": 22
+      },
+      "seconds": 249.91
+    },
+    {
+      "rho": "2.2",
+      "gamma": ".50",
+      "tau": ".46",
+      "target": ".19877",
+      "branch": "push",
+      "leaves": 80,
+      "empty": 0,
+      "nodes": 159,
+      "depth": 13,
+      "maximum": "1748668496419722357/8800000000000000000",
+      "minimum_margin": "507503580277643/8800000000000000000",
+      "methods": {
+        "push": 80
+      },
+      "seconds": 0.312
+    },
+    {
+      "rho": "2.2",
+      "gamma": ".50",
+      "tau": ".46",
+      "target": ".19877",
+      "branch": "recursive",
+      "leaves": 14139,
+      "empty": 0,
+      "nodes": 28277,
+      "depth": 28,
+      "maximum": "223894464219913484543/1126400000000000000000",
+      "minimum_margin": "63780086515457/1126400000000000000000",
+      "methods": {
+        "old": 60,
+        "continuous": 14050,
+        "closed": 29
+      },
+      "seconds": 187.555
+    },
+    {
+      "rho": "2.6",
+      "gamma": ".54",
+      "tau": ".45",
+      "target": ".19669",
+      "branch": "push",
+      "leaves": 56,
+      "empty": 0,
+      "nodes": 111,
+      "depth": 11,
+      "maximum": "1253753401917576819/6400000000000000000",
+      "minimum_margin": "5062598082423181/6400000000000000000",
+      "methods": {
+        "push": 56
+      },
+      "seconds": 0.494
+    },
+    {
+      "rho": "2.6",
+      "gamma": ".54",
+      "tau": ".45",
+      "target": ".19669",
+      "branch": "recursive",
+      "leaves": 15591,
+      "empty": 0,
+      "nodes": 31181,
+      "depth": 29,
+      "maximum": "56520807233121460205151/287360000000000000000000",
+      "minimum_margin": "31166878539794849/287360000000000000000000",
+      "methods": {
+        "old": 82,
+        "continuous": 15440,
+        "closed": 69
+      },
+      "seconds": 273.96
+    },
+    {
+      "rho": "2.6",
+      "gamma": ".54",
+      "tau": ".48",
+      "target": ".20234",
+      "branch": "push",
+      "leaves": 59,
+      "empty": 0,
+      "nodes": 117,
+      "depth": 11,
+      "maximum": "250902753369263671/1250000000000000000",
+      "minimum_margin": "2022246630736329/1250000000000000000",
+      "methods": {
+        "push": 59
+      },
+      "seconds": 0.359
+    },
+    {
+      "rho": "2.6",
+      "gamma": ".54",
+      "tau": ".48",
+      "target": ".20234",
+      "branch": "recursive",
+      "leaves": 13576,
+      "empty": 0,
+      "nodes": 27151,
+      "depth": 27,
+      "maximum": "68973808986305862010722947/340880800000000000000000000",
+      "minimum_margin": "12085694137989277053/340880800000000000000000000",
+      "methods": {
+        "old": 88,
+        "continuous": 13418,
+        "closed": 70
+      },
+      "seconds": 238.503
+    },
+    {
+      "rho": "2.8",
+      "gamma": ".58",
+      "tau": ".47",
+      "target": ".20032",
+      "branch": "push",
+      "leaves": 52,
+      "empty": 0,
+      "nodes": 103,
+      "depth": 9,
+      "maximum": "79476045573281610351/400000000000000000000",
+      "minimum_margin": "651954426718389649/400000000000000000000",
+      "methods": {
+        "push": 52
+      },
+      "seconds": 0.292
+    },
+    {
+      "rho": "2.8",
+      "gamma": ".58",
+      "tau": ".47",
+      "target": ".20032",
+      "branch": "recursive",
+      "leaves": 11670,
+      "empty": 0,
+      "nodes": 23339,
+      "depth": 26,
+      "maximum": "38740407136173087249508049/193392640000000000000000000",
+      "minimum_margin": "6508626912750491951/193392640000000000000000000",
+      "methods": {
+        "old": 72,
+        "continuous": 11508,
+        "closed": 90
+      },
+      "seconds": 220.637
+    },
+    {
+      "rho": "2.8",
+      "gamma": ".58",
+      "tau": ".49",
+      "target": ".20396",
+      "branch": "push",
+      "leaves": 52,
+      "empty": 0,
+      "nodes": 103,
+      "depth": 9,
+      "maximum": "81055767518402876299/400000000000000000000",
+      "minimum_margin": "528232481597123701/400000000000000000000",
+      "methods": {
+        "push": 52
+      },
+      "seconds": 0.196
+    },
+    {
+      "rho": "2.8",
+      "gamma": ".58",
+      "tau": ".49",
+      "target": ".20396",
+      "branch": "recursive",
+      "leaves": 10663,
+      "empty": 0,
+      "nodes": 21325,
+      "depth": 26,
+      "maximum": "1232634482307334417256167/6043520000000000000000000",
+      "minimum_margin": "1856892665582743833/6043520000000000000000000",
+      "methods": {
+        "old": 71,
+        "continuous": 10502,
+        "closed": 90
+      },
+      "seconds": 148.038
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".48",
+      "target": ".20214",
+      "branch": "push",
+      "leaves": 48,
+      "empty": 0,
+      "nodes": 95,
+      "depth": 8,
+      "maximum": "3212079288371567119/16000000000000000000",
+      "minimum_margin": "22160711628432881/16000000000000000000",
+      "methods": {
+        "push": 48
+      },
+      "seconds": 0.304
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".48",
+      "target": ".20214",
+      "branch": "recursive",
+      "leaves": 10249,
+      "empty": 0,
+      "nodes": 20497,
+      "depth": 26,
+      "maximum": "355766386085135204827/1760000000000000000000",
+      "minimum_margin": "13914864795173/1760000000000000000000",
+      "methods": {
+        "old": 80,
+        "continuous": 10084,
+        "closed": 85
+      },
+      "seconds": 175.265
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".49",
+      "target": ".20384",
+      "branch": "push",
+      "leaves": 48,
+      "empty": 0,
+      "nodes": 95,
+      "depth": 8,
+      "maximum": "8110105098624959407/40000000000000000000",
+      "minimum_margin": "43494901375040593/40000000000000000000",
+      "methods": {
+        "push": 48
+      },
+      "seconds": 0.242
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".49",
+      "target": ".20384",
+      "branch": "recursive",
+      "leaves": 9932,
+      "empty": 0,
+      "nodes": 19863,
+      "depth": 26,
+      "maximum": "2870066986817379982899/14080000000000000000000",
+      "minimum_margin": "213182620017101/14080000000000000000000",
+      "methods": {
+        "old": 80,
+        "continuous": 9767,
+        "closed": 85
+      },
+      "seconds": 138.388
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".50",
+      "target": ".20556",
+      "branch": "push",
+      "leaves": 49,
+      "empty": 0,
+      "nodes": 97,
+      "depth": 8,
+      "maximum": "653024686642566767/3200000000000000000",
+      "minimum_margin": "4767313357433233/3200000000000000000",
+      "methods": {
+        "push": 49
+      },
+      "seconds": 0.206
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".50",
+      "target": ".20556",
+      "branch": "recursive",
+      "leaves": 9562,
+      "empty": 0,
+      "nodes": 19123,
+      "depth": 26,
+      "maximum": "14471411928324917287/70400000000000000000",
+      "minimum_margin": "12071675082713/70400000000000000000",
+      "methods": {
+        "old": 80,
+        "continuous": 9397,
+        "closed": 85
+      },
+      "seconds": 116.016
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".51",
+      "target": ".20730",
+      "branch": "push",
+      "leaves": 49,
+      "empty": 0,
+      "nodes": 97,
+      "depth": 8,
+      "maximum": "32963270719542949927/160000000000000000000",
+      "minimum_margin": "204729280457050073/160000000000000000000",
+      "methods": {
+        "push": 49
+      },
+      "seconds": 0.254
+    },
+    {
+      "rho": "3",
+      "gamma": ".60",
+      "tau": ".51",
+      "target": ".20730",
+      "branch": "recursive",
+      "leaves": 9402,
+      "empty": 0,
+      "nodes": 18803,
+      "depth": 26,
+      "maximum": "5107865804275476230539/24640000000000000000000",
+      "minimum_margin": "6195724523769461/24640000000000000000000",
+      "methods": {
+        "old": 81,
+        "continuous": 9238,
+        "closed": 83
+      },
+      "seconds": 167.016
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".50",
+      "target": ".20561",
+      "branch": "push",
+      "leaves": 48,
+      "empty": 0,
+      "nodes": 95,
+      "depth": 9,
+      "maximum": "6549449401073891691/32000000000000000000",
+      "minimum_margin": "30070598926108309/32000000000000000000",
+      "methods": {
+        "push": 48
+      },
+      "seconds": 0.255
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".50",
+      "target": ".20561",
+      "branch": "recursive",
+      "leaves": 9331,
+      "empty": 0,
+      "nodes": 18661,
+      "depth": 26,
+      "maximum": "2214006577376448012681/10768000000000000000000",
+      "minimum_margin": "1902623551987319/10768000000000000000000",
+      "methods": {
+        "old": 66,
+        "continuous": 9222,
+        "closed": 43
+      },
+      "seconds": 143.431
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".51",
+      "target": ".20706",
+      "branch": "push",
+      "leaves": 49,
+      "empty": 0,
+      "nodes": 97,
+      "depth": 9,
+      "maximum": "94804188021160513687423/469200000000000000000000",
+      "minimum_margin": "2348363978839486312577/469200000000000000000000",
+      "methods": {
+        "push": 49
+      },
+      "seconds": 0.262
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".51",
+      "target": ".20706",
+      "branch": "recursive",
+      "leaves": 9163,
+      "empty": 0,
+      "nodes": 18325,
+      "depth": 25,
+      "maximum": "130767218240598307266394573/631543200000000000000000000",
+      "minimum_margin": "116751401692733605427/631543200000000000000000000",
+      "methods": {
+        "old": 66,
+        "continuous": 9053,
+        "closed": 44
+      },
+      "seconds": 164.819
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".54",
+      "target": ".21148",
+      "branch": "push",
+      "leaves": 49,
+      "empty": 0,
+      "nodes": 97,
+      "depth": 9,
+      "maximum": "111772852432649683428803/539580000000000000000000",
+      "minimum_margin": "2337525967350316571197/539580000000000000000000",
+      "methods": {
+        "push": 49
+      },
+      "seconds": 0.236
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".54",
+      "target": ".21148",
+      "branch": "recursive",
+      "leaves": 9386,
+      "empty": 0,
+      "nodes": 18771,
+      "depth": 25,
+      "maximum": "3561563646950970621163121/16841152000000000000000000",
+      "minimum_margin": "3178009029378836879/16841152000000000000000000",
+      "methods": {
+        "old": 84,
+        "continuous": 9257,
+        "closed": 45
+      },
+      "seconds": 90.356
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".58",
+      "target": ".21758",
+      "branch": "push",
+      "leaves": 49,
+      "empty": 0,
+      "nodes": 97,
+      "depth": 9,
+      "maximum": "38484091855109368141607/179860000000000000000000",
+      "minimum_margin": "649846944890631858393/179860000000000000000000",
+      "methods": {
+        "push": 49
+      },
+      "seconds": 0.171
+    },
+    {
+      "rho": "3.4",
+      "gamma": ".62",
+      "tau": ".58",
+      "target": ".21758",
+      "branch": "recursive",
+      "leaves": 9580,
+      "empty": 0,
+      "nodes": 19159,
+      "depth": 25,
+      "maximum": "29286244093239807075533/134600000000000000000000",
+      "minimum_margin": "23906760192924467/134600000000000000000000",
+      "methods": {
+        "old": 100,
+        "continuous": 9433,
+        "closed": 47
+      },
+      "seconds": 131.666
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".55",
+      "target": ".21218",
+      "branch": "push",
+      "leaves": 47,
+      "empty": 0,
+      "nodes": 93,
+      "depth": 9,
+      "maximum": "6742434145394525149/32000000000000000000",
+      "minimum_margin": "47325854605474851/32000000000000000000",
+      "methods": {
+        "push": 47
+      },
+      "seconds": 0.186
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".55",
+      "target": ".21218",
+      "branch": "recursive",
+      "leaves": 8278,
+      "empty": 0,
+      "nodes": 16555,
+      "depth": 24,
+      "maximum": "86569369938631758583/408000000000000000000",
+      "minimum_margin": "70061368241417/408000000000000000000",
+      "methods": {
+        "old": 128,
+        "continuous": 8089,
+        "closed": 61
+      },
+      "seconds": 149.962
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".60",
+      "target": ".21801",
+      "branch": "push",
+      "leaves": 53,
+      "empty": 0,
+      "nodes": 105,
+      "depth": 10,
+      "maximum": "156806583956859582161/729000000000000000000",
+      "minimum_margin": "2122706043140417839/729000000000000000000",
+      "methods": {
+        "push": 53
+      },
+      "seconds": 0.283
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".60",
+      "target": ".21801",
+      "branch": "recursive",
+      "leaves": 8872,
+      "empty": 0,
+      "nodes": 17743,
+      "depth": 24,
+      "maximum": "474389264931189351629/2176000000000000000000",
+      "minimum_margin": "495068810648371/2176000000000000000000",
+      "methods": {
+        "old": 134,
+        "continuous": 8680,
+        "closed": 58
+      },
+      "seconds": 154.387
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".65",
+      "target": ".22429",
+      "branch": "push",
+      "leaves": 60,
+      "empty": 0,
+      "nodes": 119,
+      "depth": 10,
+      "maximum": "412656513225245118547/1866240000000000000000",
+      "minimum_margin": "5922456374754881453/1866240000000000000000",
+      "methods": {
+        "push": 60
+      },
+      "seconds": 0.315
+    },
+    {
+      "rho": "4",
+      "gamma": ".65",
+      "tau": ".65",
+      "target": ".22429",
+      "branch": "recursive",
+      "leaves": 9427,
+      "empty": 0,
+      "nodes": 18853,
+      "depth": 24,
+      "maximum": "97610911506137837579/435200000000000000000",
+      "minimum_margin": "96493862162421/435200000000000000000",
+      "methods": {
+        "old": 158,
+        "continuous": 9212,
+        "closed": 57
+      },
+      "seconds": 148.981
+    },
+    {
+      "rho": "4",
+      "gamma": "direct",
+      "tau": ".60",
+      "target": ".21873",
+      "branch": "direct",
+      "leaves": 161,
+      "empty": 0,
+      "nodes": 321,
+      "depth": 15,
+      "maximum": "699934931251784577/3200000000000000000",
+      "minimum_margin": "1068748215423/3200000000000000000",
+      "methods": {
+        "direct": 161
+      },
+      "seconds": 0.209
+    },
+    {
+      "rho": "4",
+      "gamma": "direct",
+      "tau": ".76",
+      "target": ".22760",
+      "branch": "direct",
+      "leaves": 224,
+      "empty": 0,
+      "nodes": 447,
+      "depth": 16,
+      "maximum": "7283191180387240487/32000000000000000000",
+      "minimum_margin": "8819612759513/32000000000000000000",
+      "methods": {
+        "direct": 224
+      },
+      "seconds": 0.267
+    }
+  ]
+}

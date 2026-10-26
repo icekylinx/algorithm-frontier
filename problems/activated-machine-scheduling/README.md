@@ -1,15 +1,17 @@
-# Activated-machine scheduling
+# Scheduling with an activated machine basis
 
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Returns a legal schedule with makespan at most `(1 + epsilon)` times the original integer optimum, or detects global infeasibility. |
-| **Objective and output** | Minimize maximum machine load while keeping every original job total mandatory and preserving the exact assignment/setup budget. Output is an integer assignment of all original job units. |
-| **Time** | With `delta = epsilon/2`, `K = floor(1/delta)`, `B = ceil((1-delta)/delta^2)`, and `C_epsilon = binom(B+K,K)`, the direct bound is `C_epsilon^q poly(H_epsilon)`; equivalently `2^(O(q/epsilon)) poly(H_epsilon)`. The bucket adapter at depth `k` takes `(k+2)^q poly(H+k)`. |
-| **Space** | Polynomial in the full binary input, including the complete rational accuracy encoding. No job identity or binary count is expanded into unit slots. |
-| **Parameters** | `q` is the physical-machine count; `epsilon` is rational accuracy; `H_epsilon` includes all input bits, rank interfaces, and the full encoding of epsilon; `n_j=f_j(P)` are mandatory type totals; `C` is the scalar assignment/setup budget; `ell_pj`, `c_pj`, and `sigma_p` are the rational processing times, assignment costs, and setup fees. |
-| **Model and representation** | Machine-dependent processing times, integral job polymatroids, an activated actual machine basis, and the initialization/assignment-cost contract in the source. |
-| **Lower-bound scope** | No lower bound is claimed. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [scheduling-profile review](../../reviews/backlog/scheduling-profile-records.md) and [review registry](../../reviews/README.md). |
-| **Source** | [Activated-machine scheduling source](../../sources/checkpoint-q/activated_machine_profile_scheduling.md) and the verification paths in `sources.md`. |
+| **Guarantee** | Returns an actual activated basis and a complete legal schedule; offers factor $1+\varepsilon$, exact factor $3/2$, and the bucket curve $\gamma_k=\frac{3\cdot2^k-1}{2^{k+1}-1}$. Detects global infeasibility. |
+| **Objective and output** | Minimize maximum load subject to all original job totals and one exact combined setup and assignment budget. |
+| **Time** | Let $\delta=\varepsilon/2$, $K=\lfloor1/\delta\rfloor$, $L=\left\lceil(1-\delta)/\delta^2\right\rceil$, and $\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}$. The three bounds are $\binom{q}{r}\Pi_\varepsilon^r\operatorname{poly}(H_\varepsilon)$, $\binom{q}{r}6^r\operatorname{poly}(H)$, and $\binom{q}{r}(k+1)^r\operatorname{poly}(H+k)$. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. The full rational accuracy encoding is charged. |
+| **Parameters** | $q$ is the physical-machine count; $r$ is the activation-matroid rank; $\varepsilon$ is rational with $0<\varepsilon\le1$; $k\ge0$ is an integer. $H_\varepsilon=H+\operatorname{size}(\varepsilon)$. Original totals are $n_j=f_j(P)$. |
+| **Model and representation** | Arbitrary nonnegative machine-type processing times, integral job polymatroids, an actual machine-matroid basis, nonnegative setup and assignment costs, eligibility masks, and one shared exact budget. |
+| **Lower-bound scope** | No lower bound is claimed for this algorithm. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+The rank-sensitive enumeration first chooses an actual activated basis, then profiles only its $r$ machines. Original job totals stay mandatory after restriction; an affordable setup basis alone does not certify scheduling feasibility.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

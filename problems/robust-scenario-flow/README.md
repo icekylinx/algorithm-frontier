@@ -1,18 +1,17 @@
-# Robust selected flow across scenarios
+# Selected flow with scenario-adaptive routing
 
-This is a supporting robust-flow record with adaptive routing after the
-scenario is revealed.
-
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Selects one common commodity set and routes it in every explicit scenario at a common rate at least `(1 - epsilon)` times the robust optimum. |
-| **Objective and output** | Maximize the common selected rate; output the selected set and a scenario-specific feasible routing for every listed scenario. Routing decisions may adapt to the revealed scenario. |
-| **Time** | Polynomial input and separation work multiplied by the inverse-accuracy selector base raised to the rejected-commodity count `c`; equivalently, the source uses Gamma of inverse accuracy raised to `c`, times polynomial work. The scenario count and routing-budget-row count are charged through the explicit input length. |
-| **Space** | Polynomial in the complete explicit scenario description, rational data, selector state, and routing witnesses; no scenario is compressed into an undocumented common flow. |
-| **Parameters** | `q` is the commodity count; `r` is the selected count; `c = q - r` is the rejected count; `epsilon` is rational accuracy; `H` includes all scenarios, capacities, demand scales, and routing budgets; `Omega` is the explicit scenario list. |
-| **Model and representation** | Common selected set, scenario-dependent networks or demands, exact capacities, explicit nonnegative routing-budget rows, and adaptive fractional flows. Exact full-rate admission hardness is separate. |
-| **Lower-bound scope** | The source includes an exact unit-admission hardness boundary without routing budgets. It does not imply hardness for every approximate or adaptive-flow model. |
-| **Review status** | Internal display and model review; proof and algorithm follow-up remains in the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). Finite audits are not formal verification. |
-| **Source** | [Adaptive selected flow](../../sources/checkpoint-o/robust_scenario_selected_flow_corank.md), its [proof map](proof.md), and `verify/`. |
+| **Guarantee** | Selects one permitted commodity set and routes it in every explicit scenario at common rate at least $(1-\varepsilon)\operatorname{OPT}$. |
+| **Objective and output** | Maximize robust selected concurrent rate; output the common set and a separate feasible splittable routing in each scenario. |
+| **Time** | $\Gamma(1/\varepsilon)^c\operatorname{poly}(H)$; for fixed rational $\varepsilon$, the whole-ground alternative is $\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\operatorname{poly}(H)$. |
+| **Space** | Polynomial in the full explicit scenario description, rational witnesses, selector state, and paid oracle workspace. |
+| **Parameters** | $q$ is the commodity count; $r$ is the selected cardinality; $c=q-r$; $0<\varepsilon<1$ is rational. $\Gamma(R)=R^R/(R-1)^{R-1}$ and $E(q)=2^{O(q\log\log(q+2)/\log(q+2))}$. Scenario count and routing-budget rows are charged in $H$. |
+| **Model and representation** | Explicit rational networks and demand scales, one common selected set, exact capacities and nonnegative routing budgets, adaptive fractional flow, and an exact permitted-set restriction selector. |
+| **Lower-bound scope** | Exact full-rate admission is W[2]-hard in the rejected count via Hitting Set, even on the stated forest instances with an unbounded explicit scenario list and no routing budgets. This does not imply the same hardness for the displayed approximate-rate output. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+Continuous scenario flows permit positive-rate approximation. The [integer robust-allocation obstruction](../robust-two-scenario-hardness/README.md) concerns a distinct positivity decision.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

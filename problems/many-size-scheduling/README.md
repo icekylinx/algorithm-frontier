@@ -1,15 +1,17 @@
-# Many-size workload scheduling
+# Scheduling many common job sizes
 
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | For every rational `0 < eta <= 1`, returns `C_max <= (2 - 1/(3+eta)) OPT + u`; combining with the polynomial two-approximation gives `min{2 OPT, (2 - 1/(3+eta)) OPT + u}`. |
-| **Objective and output** | Minimize makespan under the mandatory workload totals, the large-unit profile, and the workload-polymatroid contract; output a legal integral schedule. |
-| **Time** | `poly(H) * min{2^(O(h)), (h+1)^(O((1+eta^-1) log(h+1)))}`, where `h` is the aggregate rank of the largest-size job class. |
-| **Space** | Polynomial binary workspace in the encoded instance and paid profile/rounding state; smaller-job counts are not expanded into unit slots. |
-| **Parameters** | `q` is the machine count; `h` is the aggregate largest-job rank; `a` is the largest positive job size; `u = max{p_j : p_j < a, f_j(P)>0}` (or `0` if none); `eta` is rational accuracy; `OPT` is the integer optimum; `H` includes all binary input and paid rank/SFM/LP/decomposition/rounding work. |
-| **Model and representation** | Many smaller processing sizes, a large-unit profile, and a workload polymatroid with the source's completion and integral-rounding interfaces. |
-| **Lower-bound scope** | No lower bound is claimed. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. The proof and algorithm follow-up is tracked in the [scheduling-profile review](../../reviews/backlog/scheduling-profile-records.md). |
-| **Source** | [Many-small-sizes workload transfer](../../sources/checkpoint-o/many_small_sizes_workload_makespan_transfer.md) and the verification paths in `sources.md`. |
+| **Guarantee** | For rational $0<\eta\le1$, returns $C_{\max}\le\min\{2\operatorname{OPT},(2-1/(3+\eta))\operatorname{OPT}+u\}$. |
+| **Objective and output** | Assign all mandatory job units and recover the original job-polymatroid bases from the workload construction. |
+| **Time** | $\operatorname{poly}(H)\min\{2^{O(h)},(h+1)^{O((1+\eta^{-1})\log(h+1))}\}$. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. |
+| **Parameters** | $h$ is the total rank of the largest positive size $a$; $u=\max\{p_j:p_j<a,\ f_j(P)>0\}$, or zero if no smaller jobs exist; $\eta$ is rational. $H$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work. |
+| **Model and representation** | Integral job polymatroids with common type processing sizes, arbitrary binary multiplicities, and mandatory totals. There is no arbitrary assignment-cost budget in this transfer. |
+| **Lower-bound scope** | No lower bound is claimed for this algorithm. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+The largest smaller size contributes an explicit additive load term. The [commitment theorem](../commitment-scheduling/README.md) gives a separate computable residual-rank refinement.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

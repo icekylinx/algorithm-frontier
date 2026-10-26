@@ -1,16 +1,17 @@
-# One-value allocation with exact factor two
+# One-value allocation with exact quotas and setup costs
 
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Returns an original player-matroid basis and an integral allocation whose minimum selected utility is at least `OPT/2`. |
-| **Objective and output** | Maximize the minimum number of common-value units received by each selected player, subject to one exact assignment-cost budget; output the basis and allocation. |
-| **Time** | `(27/4)^c poly(H)`, where `c = q-r` is the player-matroid corank. |
-| **Space** | Polynomial in the complete binary input and paid rational-oracle work. |
-| **Parameters** | `q` is the nonloop player count; `r >= 1` is the player-matroid rank; `c=q-r`; `v>0` is the common unit value; `C` is the nonnegative assignment-cost budget; `H` includes binary data and paid rank, SFM, LP, and intersection primitives. |
-| **Model and representation** | Integral recipient polymatroids and an actual original player-matroid basis; counts and costs are binary encoded. |
-| **Lower-bound scope** | No new lower bound is claimed; the factor-two row is an upper bound in the stated oracle model. |
-| **Boundary** | The `c=0` fixed-basis case is solvable exactly in polynomial oracle time; rank zero is handled separately. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). |
-| **Source** | [Budgeted one-value theorem](../../sources/checkpoint-o/one_value_exact_budget_corank_two_allocation.md). |
+| **Guarantee** | Returns at least $\lceil K_\star/2\rceil$ units to every player of an actual selected basis, preserving the exact combined setup and assignment budget. More generally, fixed integer $d\ge2$ gives $\lceil K_\star/d\rceil$. |
+| **Objective and output** | Maximize the common minimum count of equal-value units; output a selected basis and integral resource counts. |
+| **Time** | For fixed integer $d\ge2$ set $R_d=(d+1)/(d-1)$, $A_d=\Gamma(R_d)$, and $B_d=2-1/A_d$. Time is $A_d^c\operatorname{poly}(H)$ or $B_d^q E(q)\operatorname{poly}(H)$. Exact factor two has $A_2=27/4$ and $B_2=50/27$; factor three has $A_3=4$ and $B_3=7/4$. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. |
+| **Parameters** | $q$ is the nonloop player count; $r\ge1$ is its matroid rank; $c=q-r$; $K_\star$ is the integer optimum count; each unit has value $v>0$. $\Gamma(R)=R^R/(R-1)^{R-1}$ and $E(q)=2^{O(q\log\log(q+2)/\log(q+2))}$. $H$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work. |
+| **Model and representation** | Arbitrary integral recipient polymatroids, an original player-matroid basis, nonnegative setup and assignment costs, one shared exact budget, and unused resources allowed. |
+| **Lower-bound scope** | The [strict-below-two oracle barrier](../allocation-lower-bounds/proof.md) applies to an included zero-cost subclass; it does not prove these exponential bases optimal. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+The [base proof](proof.md) treats assignment costs; the [setup and full quota tradeoff](setup-tradeoffs.md) proves the stronger shared-budget statement. With $c=0$, exact count optimization is polynomial after subtracting the fixed setup cost.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

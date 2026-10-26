@@ -1,42 +1,62 @@
-# Source map: weighted-prefix, laminar, and sparse-quota frontier
+# Sources and proof dependencies
 
-## Checkpoint T
+## Canonical manuscripts
 
-- `sources/checkpoint-t/README.md`
-- `sources/checkpoint-t/MANIFEST.json`
-- `sources/checkpoint-t/CHECKPOINT_T_INCREMENT.md`
-- `sources/checkpoint-t/README_INCREMENT_T.md`
-- `sources/checkpoint-t/exact_weighted_prefix_quotas_max_target.md`
-- `sources/checkpoint-t/few_weight_families_prefix_target_scheme.md`
-- `sources/checkpoint-t/few_weight_prefix_joint_lower_bounds.md`
-- `sources/checkpoint-t/incremental_primary_baselines_T.md`
-- `sources/checkpoint-t/laminar_common_weight_root_cap_fpt.md`
-- `sources/checkpoint-t/laminar_valuated_zero_completion_fpt.md`
-- `sources/checkpoint-t/row_dependent_full_prefix_target_boundary.md`
-- `sources/checkpoint-t/two_order_weighted_prefix_target_classification.md`
-- `sources/checkpoint-t/uniform_zero_scalar_laminar_extension.md`
-- `sources/checkpoint-t/weighted_prefix_support_budget_tradeoffs.md`
+- [Exact prefix, laminar and sparse quotas](proof.md)
+- [Exact sparse numeric quotas with a root cap and arbitrary completion costs](manuscripts/bounded-frequency-root-cap-valuated-fpt.md)
+- [Deterministic sunflower kernels for several coverable matroids](manuscripts/deterministic-coverable-matroid-sunflower-kernel.md)
+- [Deterministic sparse packing kernels with an oracle matroid](manuscripts/deterministic-sparse-packing-oracle-kernel.md)
+- [Deterministic kernels with explicitly represented transversal matroids](manuscripts/deterministic-transversal-matroid-kernel-transfer.md)
+- [Sharp root-target lower bounds with disjoint weighted quota rows](manuscripts/disjoint-row-root-target-sharp-lower.md)
+- [Exact weighted prefix quotas parameterized by the largest target](manuscripts/exact-weighted-prefix-quotas-max-target.md)
+- [Exact prefix quotas with a bounded number of weight families](manuscripts/few-weight-families-prefix-target-scheme.md)
+- [Joint lower bounds for prefix targets and weight-family count](manuscripts/few-weight-prefix-joint-lower-bounds.md)
+- [New primary-source comparisons for checkpoint T](manuscripts/incremental-primary-baselines-T.md)
+- [Primary baselines and method credits for increment U](manuscripts/incremental-primary-baselines-U.md)
+- [Exact common-weight laminar quotas under a root cap](manuscripts/laminar-common-weight-root-cap-fpt.md)
+- [Exact laminar quotas with arbitrary zero-weight completion costs](manuscripts/laminar-valuated-zero-completion-fpt.md)
+- [Row-dependent weights defeat the largest-prefix-target parameter](manuscripts/row-dependent-full-prefix-target-boundary.md)
+- [A direct hash-and-profile algorithm for sparse exact root-bounded quotas](manuscripts/sparse-root-quota-hash-profile-algorithm.md)
+- [Two weighted coordinate orders: a sharp largest-target classification](manuscripts/two-order-weighted-prefix-target-classification.md)
+- [Uniform scalar coefficients on optional zero-weight coordinates](manuscripts/uniform-zero-scalar-laminar-extension.md)
+- [Labeled sunflower kernels for sparse numeric quotas and valuated completion](manuscripts/valuated-sparse-quota-sunflower-kernel.md)
+- [Sharp support-budget tradeoffs for one and two weighted-prefix orders](manuscripts/weighted-prefix-support-budget-tradeoffs.md)
 
-Parent archive: `deterministic_related_problems_increment_20261025_S.zip`  
-The checkpoint manifest records the parent link and payload inventory.
+## Linked mathematical dependencies
 
-## Checkpoint U
+These manuscripts contain the interfaces, auxiliary arguments or source
+comparisons referenced by this result. Their stated hypotheses remain
+part of each use; an interface analysis does not supply an omitted backend.
 
-- `sources/checkpoint-u/README.md`
-- `sources/checkpoint-u/MANIFEST.json`
-- `sources/checkpoint-u/CHECKPOINT_U_INCREMENT.md`
-- `sources/checkpoint-u/README_INCREMENT_U.md`
-- `sources/checkpoint-u/bounded_frequency_root_cap_valuated_fpt.md`
-- `sources/checkpoint-u/deterministic_coverable_matroid_sunflower_kernel.md`
-- `sources/checkpoint-u/deterministic_sparse_packing_oracle_kernel.md`
-- `sources/checkpoint-u/deterministic_transversal_matroid_kernel_transfer.md`
-- `sources/checkpoint-u/disjoint_row_root_target_sharp_lower.md`
-- `sources/checkpoint-u/incremental_primary_baselines_U.md`
-- `sources/checkpoint-u/laminar_universal_coloring_quadratic_exponent.md`
-- `sources/checkpoint-u/sparse_root_quota_hash_profile_algorithm.md`
-- `sources/checkpoint-u/valuated_sparse_quota_sunflower_kernel.md`
+- [A sharp column-support dichotomy for exact numeric targets](../numeric-target-frontier/manuscripts/column-support-numeric-target-dichotomy.md)
+- [A total-target ETH lower bound for explicitly encoded rank matroids](../numeric-target-frontier/manuscripts/conditional-lower-bound-encoded-target-matroids.md)
+- [An encoded ETH tradeoff across row-overlap densities](../numeric-target-frontier/manuscripts/encoded-overlap-density-eth-lower-bound.md)
+- [Covering-row chain compression for exact mixed numeric targets](../numeric-target-frontier/manuscripts/mixed-target-cover-chain-compression.md)
+- [Sources, attribution and canonical paths](../../provenance/README.md)
 
-Parent archive: `deterministic_related_problems_increment_20261025_T.zip`  
-The checkpoint manifest records the parent link and payload inventory.
+## Primary references
 
-**Attribution:** Yilin Liu · GPT-6 Astra Pro
+The manuscripts identify the theorem and version used at each import.
+Direct external references appearing in this reading path are:
+
+- <https://arxiv.org/abs/2304.13984>
+- <https://arxiv.org/html/1806.11527v4>
+- <https://arxiv.org/html/2307.07773v2>
+- <https://arxiv.org/html/2412.02217v2>
+- <https://arxiv.org/html/2603.17345v1>
+- <https://courses.cs.washington.edu/courses/cse599i/24sp/papers/ImpagliazzoPaturiZane_2001_jcss.pdf>
+- <https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2017.55>
+- <https://drops.dagstuhl.de/storage/00lipics/lipics-vol294-swat2024/LIPIcs.SWAT.2024.22/LIPIcs.SWAT.2024.22.pdf>
+- <https://theoretics.episciences.org/14792/pdf>
+- <https://www.cs.tau.ac.il/~nogaa/PDFS/aghp4.pdf>
+- <https://www.di.ens.fr/~cchuang/work/matchoid.pdf>
+- <https://www.wisdom.weizmann.ac.il/~naor/PAPERS/splitters.pdf>
+
+## Evidence and provenance
+
+The [verification note](verify/README.md) states the scope of executable
+evidence and the remaining mathematical dependencies. The
+[import record](../../provenance/README.md) preserves source revisions,
+canonical paths, attribution and applicable licenses.
+
+**Attribution:** Yilin Liu · GPT-6 Astra Pro.

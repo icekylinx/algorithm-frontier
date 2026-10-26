@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Please cite the stable repository record and preserve the attribution notice."
 title: "Algorithm Frontier"
-version: "2026.10.25"
-date-released: 2026-10-25
+version: "2026.10.26"
+date-released: 2026-10-26
 authors:
   - family-names: Liu
     given-names: Yilin
@@ -17,9 +17,9 @@ keywords:
   - research proofs
   - verification notes
 abstract: >-
-  Curated algorithmic research results with one stable citation record per
-  problem, a proof statement, and independent verification notes. Claims
-  retain their exact model scope and conditional assumptions.
+  Algorithmic research manuscripts with a complete result catalogue, formal
+  theorem-and-proof exposition, and scoped executable certificates. Claims
+  retain their exact computational models and conditional assumptions.
 preferred-citation:
   type: software
   title: "Algorithm Frontier"
@@ -28,5 +28,5 @@ preferred-citation:
       given-names: Yilin
     - name: "GPT-6 Astra Pro"
   year: 2026
-  version: "2026.10.25"
+  version: "2026.10.26"
   license: Apache-2.0

@@ -1,0 +1,289 @@
+# A sharp polynomial-time restriction for overlapping label failures in represented matroids
+
+**Abstract.** A polynomial feature lift converts every bounded label-failure query into a linear projection. One cost-ordered basis of the lifted representation preserves all surviving prefixes and canonical minimum-cost bases, using at most the sharp bound of rank times a binomial coefficient. The algorithm is deterministic and uniformly polynomial for rational and explicitly represented finite-field inputs.
+
+The algebra is closely related to classical representative-family constructions. The concrete graph application removes the logarithmic factor from the polynomial-time edge-color connectivity certificate stated in the primary sources listed below. Preprocessing here is deterministic polynomial time; it is not claimed near-linear.
+
+## 1. The exact statement
+
+Let a matroid M on an explicit ground E of N elements be represented by columns v_e over the rationals or an explicitly represented finite field. Write r = rank(M). Every element has a fixed signed rational cost c(e), and a fixed set Lambda(e) of at most d failure labels. A query specifies at most h labels F and deletes every e with Lambda(e) intersecting F. Labels can overlap arbitrarily.
+
+There is a deterministic algorithm producing H contained in E with
+
+$$
+|H|\le \min\left\{N,\;r\binom{h+d}{d}\right\}
+ \tag{1}
+$$
+
+such that, for every allowed F and every cost threshold a,
+
+$$
+\operatorname{span}\{v_e:e\in H,\ c(e)\le a,\ \Lambda(e)\cap F=\varnothing\}
+ =
+ \operatorname{span}\{v_e:e\in E,\ c(e)\le a,\ \Lambda(e)\cap F=\varnothing\}.
+ \tag{2}
+$$
+
+In fact the equality holds at every prefix of a fixed total order refining cost. Consequently H contains the canonical minimum-cost basis after every allowed failure set, including queries that decrease the surviving rank. It also preserves the minimum cost of an independent set of every attainable cardinality.
+
+The algorithm is uniform polynomial time in the explicit input length, including when h and d are input parameters. The straightforward nongated implementation uses a lifted dimension
+
+$$
+D=r\binom{h+d}{d}
+ \tag{3}
+$$
+
+and O(N D^2) field operations for its Gaussian-elimination stage, in addition to feature construction and rank compression. The gate in Section 5 avoids constructing this space when D is larger than the input ground.
+
+The bound r binomial(h+d,d) is worst-case exact even for zero-cost partition matroids represented over every field. It is also exact for graphic matroids of multigraphs.
+
+**Query interface.** Store H in the fixed cost/tie order. Given a failure set F, scan H, reject an element when its at most d labels intersect F, and run ordinary greedy independence tests on the surviving original columns. This returns the canonical minimum-cost basis (or any requested prefix) using `O(|H|(d+h+r^2))` elementary word/field operations and at most `|H|` rank tests, plus the output size. This query bound is separate from the preprocessing bound and is stated only for the represented original matroid.
+
+**Scope.** This is a represented-matroid theorem. It does not assert the same construction for a matroid given only by an independence oracle, and it does not handle an arbitrary nonadditive valuation on bases. The cost is a fixed linear objective on elements. The labels, representation, and costs do not change between queries.
+
+## 2. Polynomial features that recognize label survival
+
+Let L be the number of distinct labels occurring in the input. Replace h by min(h,L), and replace d by the maximum actual number of labels on an element. The cases h=0 or d=0 are ordinary cost-ordered basis computation. Assume below that h,d are positive.
+
+Work over a field K extending the representation field and containing distinct scalars
+
+$$
+a_0,\quad a_\lambda\quad(\lambda\text{ an input label}).
+$$
+
+The extra scalar a_0 represents a dummy label that never fails. How to obtain K deterministically is explained in Section 5.
+
+For each e form the monic degree-d polynomial
+
+$$
+g_e(T)=(T-a_0)^{d-|\Lambda(e)|}
+          \prod_{\lambda\in\Lambda(e)}(T-a_\lambda)
+       =T^d+\sum_{j=0}^{d-1}b_j(e)T^j.
+ \tag{4}
+$$
+
+Padding with repeated copies of the one nonfailing dummy is legitimate: every genuine label scalar differs from a_0. For a genuine label lambda,
+
+$$
+g_e(a_\lambda)=0
+ \quad\Longleftrightarrow\quad
+ \lambda\in\Lambda(e).
+ \tag{5}
+$$
+
+Let phi(e) be the vector of all monomials of total degree at most h in the d coordinates b_0(e),...,b_{d-1}(e), including the constant monomial. Its dimension is
+
+$$
+C=\#\{\alpha\in\mathbb N^d:|\alpha|\le h\}
+   =\binom{h+d}{d}.
+ \tag{6}
+$$
+
+For a query F, define the polynomial in formal variables B_0,...,B_{d-1}
+
+$$
+Q_F(B)=\prod_{\lambda\in F}
+          \left(a_\lambda^d+\sum_{j=0}^{d-1}B_j a_\lambda^j\right).
+ \tag{7}
+$$
+
+It has total degree at most |F| at most h. Therefore its coefficients define a linear functional ell_F on the C-dimensional feature space with
+
+$$
+\ell_F(\phi(e))=Q_F(b(e))
+     =\prod_{\lambda\in F}g_e(a_\lambda).
+ \tag{8}
+$$
+
+The empty product is one. Since K is a field, (5) gives the exact predicate
+
+$$
+\ell_F(\phi(e))=0
+ \quad\Longleftrightarrow\quad
+ \Lambda(e)\cap F\ne\varnothing.
+ \tag{9}
+$$
+
+No failure sets are enumerated while constructing phi. The functionals ell_F are used only in the proof.
+
+## 3. One lifted basis proves all queries
+
+First remove dependent rows from the original representation, leaving r rows and the same column matroid. Define
+
+$$
+w_e=v_e\otimes\phi(e)\in K^{rC}.
+ \tag{10}
+$$
+
+Scan the elements in a fixed order nondecreasing in cost. Retain e precisely when w_e is outside the linear span of the previously retained lifted columns. Let H be the retained element IDs. Thus H is the canonical cost-ordered basis of the lifted column matroid and has at most rC elements.
+
+For every e, ordinary linear greedy supplies a relation
+
+$$
+w_e\in\operatorname{span}\{w_f:f\in H,\ f\text{ no later than }e\}.
+ \tag{11}
+$$
+
+Fix an arbitrary allowed query F. Apply the linear map
+
+$$
+I_r\otimes\ell_F:K^r\otimes K^C\longrightarrow K^r
+ \tag{12}
+$$
+
+to (11). Every failed retained element maps to zero. If e survives, its image is a nonzero scalar multiple of v_e. Dividing by that scalar shows
+
+$$
+v_e\in\operatorname{span}\{v_f:f\in H,\ f\text{ no later than }e,
+                                      \ \Lambda(f)\cap F=\varnothing\}.
+ \tag{13}
+$$
+
+The reverse span inclusion is automatic because H is a restriction of E. Hence (2) holds, including every position inside a cost tie when the fixed total order is used.
+
+Running ordinary greedy on the surviving original matroid accepts e exactly when e increases the span of the earlier surviving prefix. Equality (2) shows that an accepted original e cannot have been discarded from H: otherwise (13) would already span it by earlier retained survivors. Thus the entire canonical surviving minimum-cost basis is contained in H. Signed costs cause no issue for a minimum-cost basis of the full surviving rank.
+
+## 4. Sharpness and graph consequences
+
+### 4.1 Exact general lower bound
+
+Take a label universe U of size h+d. In one rank-one parallel class introduce an element e_A for each d-subset A of U, giving it label set A. Under the failure set F=U minus A, exactly e_A survives in the class. Therefore every valid restriction must keep every e_A.
+
+Taking a direct sum of r such classes forces exactly r binomial(h+d,d) retained original elements. The representation can use the r standard coordinate vectors, so the lower bound applies over every field, with all costs zero.
+
+To obtain a graphic example, take any tree with r edges and replace every tree edge by parallel copies indexed by the d-subsets A. Label each copy by A. Under F=U minus A, the surviving graph is precisely the original tree using its A-indexed copies. Each such copy is forced. This yields the same exact lower bound for multigraph connectivity certificates and for minimum-spanning-forest preservation.
+
+### 4.2 One color per graph edge
+
+For d=1 the coefficient lift is just a Vandermonde lift. Equivalently, with color scalar a_col(e), use
+
+$$
+w_e=v_e\otimes(1,a_{\mathrm{col}(e)},\ldots,a_{\mathrm{col}(e)}^h).
+ \tag{14}
+$$
+
+For a failure set F the polynomial product over lambda in F of (T-a_lambda) gives the projection functional. The retained size is at most
+
+$$
+(h+1)r.
+ \tag{15}
+$$
+
+Apply this to an oriented incidence representation of an arbitrary undirected multigraph G. Its graphic-matroid rank is r=n-kappa(G), where kappa counts connected components including isolated vertices. The result is a deterministic polynomial-time subgraph with at most
+
+$$
+(h+1)(n-\kappa(G))
+ \tag{16}
+$$
+
+edges that preserves every connected component after any h edge-color failures. With arbitrary fixed signed edge costs it simultaneously contains a minimum spanning forest of every surviving graph. The guarantee is for all allowed failure sets, not a high-probability or sampled-query guarantee.
+
+Parallel edges are not required for the asymptotic lower bound. In the simple complete bipartite graph with left side of size h+1 and right side of size n-h-1, give all edges incident to left vertex i color i. Failing all colors except i leaves the whole star of i as the only nontrivial component. Every edge of that star is therefore necessary, and varying i forces all (h+1)(n-h-1) edges. For h at most a fixed fraction of n this is Omega(h n).
+
+The graph claim in this subsection concerns **edge-color** failures. A vertex-color query can be encoded by putting both endpoint colors on an edge, but doing so gives the generic d=2 bound and need not exploit the better structure available for vertex colors. Specialized vertex and mixed-color lifts are a separate manuscript.
+
+## 5. Uniform polynomial construction and field details
+
+### 5.1 The dimension gate
+
+Compute the actual rank r first. If r=0, return the empty restriction. Compute C=binomial(h+d,d) only up to the threshold ceil(N/r), using capped integer arithmetic. If rC is at least N, return E itself. This satisfies (1) and (2), and no feature enumeration is needed.
+
+Otherwise D=rC<N. Now the number of lifted coordinates is smaller than the explicit ground. All labels and d are explicitly encoded; h has been clipped to L. The coefficients of (4) can be computed by elementary polynomial multiplication, the C monomials can be enumerated and evaluated in polynomial time, and Gaussian elimination has dimension less than N. Thus the construction is uniform polynomial time even when h and d vary. It is unnecessary and incorrect to first enumerate an exponential-dimensional lift and only then invoke the gate.
+
+The coarse arithmetic cost is the cost of original rank compression, plus
+
+$$
+O\!\left(N\,[d^2+C d\log(h+2)+D^2]\right)
+ \tag{17}
+$$
+
+field operations for one straightforward implementation. This bound is deliberately conservative. The d=1 graph specialization has feature-generation cost O(Nh) and a Gaussian stage O(N[(h+1)r]^2) when the gate does not return the input.
+
+### 5.2 Rational representation
+
+Choose a_0=0 and assign genuine labels distinct integers in {1,...,L}. All features are rational integers. Coefficient and feature bit lengths are polynomial in the explicit input parameters; for example each monomial has bit length O(hd log(L+2)+hd). Exact fraction-free elimination therefore gives polynomial bit complexity in the input length and the retained dimension. Costs only determine a sorting order and may be arbitrary signed binary rationals.
+
+### 5.3 Explicit finite fields
+
+Suppose the original field is F_q, with its usual explicit representation and field arithmetic. If q is at least L+1, choose the required distinct scalars in F_q.
+
+If q<L+1, let s be the least positive integer with q^s at least L+1. Then q^s<q(L+1)<(L+1)^2. Enumerate monic degree-s polynomials over F_q and test irreducibility until one is found. There are q^s candidates, polynomial in L, and the standard deterministic Frobenius/gcd irreducibility test uses polynomially many field operations per candidate. An irreducible polynomial exists at every positive degree. This constructs K=F_{q^s} in deterministic polynomial time. Extending scalars preserves all ranks of the original representation, since nonzero minors over F_q remain nonzero over K.
+
+This avoids invoking an unqualified deterministic polynomial-in-log(q) irreducible-polynomial construction in a regime where it would require additional assumptions. When q is large, no extension is needed; when an extension is needed, enumeration is polynomial in the explicitly present label universe.
+
+For a more general abstract arithmetic field, the theorem can be stated after providing a field extension with L+1 distinct effectively available scalars. The concrete bit-complexity claim above is limited to rational and explicit finite-field representations.
+
+### 5.4 Bit accounting and output representation
+
+Let `b_in` be the maximum bit length of a rational representation entry, a cost, or an input label identifier. Before elimination, clear denominators row by row. A conservative bound on the resulting integer matrix entry length is
+
+```text
+B_mat = O(N*b_in + h*d*log(L + 2) + h*log(d + 2) + log(N + D + 2)).
+```
+
+After the dimension gate, `D < N`. The `N*b_in` term allows for a common row denominator; it is deliberately conservative. If `M(k)` denotes the bit cost of multiplying `k`-bit integers, fraction-free elimination then uses
+
+```text
+O(N*D^2) arithmetic operations and
+\widetilde O(N*D^2*M(D*B_mat + D*log(D + 2))) bit operations,
+```
+
+plus the original rank-compression, feature-generation, and cost-sorting costs. This is a conservative bound; the theorem only needs that it is polynomial in the explicit input length and `D`. For an explicit finite field `F_{q^s}`, let `B_K = s*ceil(log_2 q)` be the bit representation length of one field element. Replacing `M(...)` by the chosen field-arithmetic cost gives `O(N*D^2*poly(B_K))` bit operations. The retained summary stores original element identifiers; the lifted matrix and elimination workspace are auxiliary and are not part of the `|H|` output bound.
+
+## 6. Universal completion and mergeability
+
+The relation (13) is a closure relation in the **original untruncated matroid** M. Therefore it transfers to every matroid extension M+ on E disjoint union Z whose restriction to E equals M, whether or not that extension is representable.
+
+Fix F, an independent context S in M+ whose positive elements survive F, and an e in S intersect E. If every live retained f with c(f) at most c(e) lay in the closure of S minus e, then (13) would put e in that closure too, a contradiction. Thus a live retained f can replace e while keeping the entire chosen background S intersect Z fixed, preserving positive cardinality and not increasing cost. Replacing discarded positive elements one by one preserves the optimum for every fixed feasible background and every positive cardinality. A specified total never changes during these exchanges.
+
+This conclusion concerns the abstract extension property. Additional numeric quotas need their own replacement-class conditions; label preservation alone does not preserve unrelated quotas.
+
+The construction is strongly mergeable when all parties use the same scalar assignment, field, and lifted feature map. A summary preserves the lifted span at every cost prefix before any query projection. Consequently the union of summaries preserves the lifted prefix spans of the union of their input grounds. Recomputing one cost-ordered lifted basis of that union again yields at most D elements with the same exact guarantee. The output dimension does not multiply by the number of parts or merge levels.
+
+An insertion stream with a fixed known ambient representation admits the usual minimum-weight linear-basis maintenance: for an arriving column, find its fundamental circuit and replace the largest element in the fixed cost/tie order if the new column is smaller; add it if it increases rank. The retained original columns remain a canonical minimum-weight lifted basis, so every stream prefix enjoys the same failure guarantee. A standard full-basis inverse with formal infinite-weight identity fillers supports the circuit calculation and replacement in O(D^2) field operations per arrival. The fillers are only algebraic workspace and are never returned as original elements. Working memory can be O(D^2) field elements even though the summary contains at most D original elements; these are different measures.
+
+For streaming and merging, scalar assignments must remain fixed. An unknown growing finite-field label universe requires a known sufficient universe bound or a separately justified representation update. No such update is silently assumed here.
+
+## 7. Why the direct W–LF witness test is not the right algorithmic target
+
+The generic witness decision asks, given a prior set A and a protected element e, whether some at-most-h label set avoiding Lambda(e) makes e lie outside span(A_F). Even for graphic matroids with at most one label per element, this subsumes parameterized Set Cover.
+
+Given a set-cover instance with universe U and sets S_1,...,S_L, construct one internally vertex-disjoint s–t path P_u for each u in U. Its edges have exactly the colors i with u in S_i, one edge of each such color. An element belonging to no input set can be handled immediately as a no-instance. Add a protected uncolored edge e=st, and let A consist of the path edges. Deleting a color set F disconnects s and t exactly when the chosen sets cover every u. In the graphic matroid, e is outside span(A_F) exactly when s and t are disconnected. This is the desired equivalence. If needed, subdivide one edge per short path into two equally colored edges to avoid parallel-path technicalities without changing the equivalence.
+
+Hence this generic witness decision is W[2]-hard parameterized by h, by the standard Set Cover baseline. This does **not** imply that constructing a valid summary is W[2]-hard, and does not imply that the actual intermediate states of the W–LF procedure realize every arbitrary A. The linear lift avoids the witness problem entirely. Minimum colored s–t cut hardness is a known antecedent, not a new hardness claim.
+
+## 8. Baselines and attribution boundaries
+
+1. **Prior project baseline W–LF.** For an arbitrary independence-oracle matroid, W–LF gives retained size at most r(h+d)^(h+d)/(h^h d^d), an exact lower bound r binomial(h+d,d), and a direct XP witness-enumeration construction. The present theorem reaches that lower bound and gives uniform polynomial preprocessing for explicitly represented matroids. The companion [rank-only theorem](arbitrary-matroid-and-submodular-failure-summaries.md) proves the same size bound for arbitrary oracle matroids, with fixed-parameter preprocessing; it does not supply the weighted-prefix guarantee or this uniform polynomial construction.
+
+2. **Color-fault graph certificates.** Petruschka, Sapir, and Tzalik, *Color Fault-Tolerant Spanners*, ITCS 2024, Theorem 3 gives O(hn) edge/vertex-color connectivity-certificate existence, while the polynomial construction obtained from Theorem 21 has O(hn log n) edges. Their later *Connectivity Labeling in Faulty Colored Graphs*, Distributed Computing 39, article 14 (published 7 April 2026), explicitly restates the polynomial O(hn log n) certificate as Theorem 4.2. Relative to that checked constructive baseline, (16) removes the log n in retained graph size and additionally preserves every fixed-weight minimum spanning forest.
+
+   Primary URLs:
+   - https://drops.dagstuhl.de/storage/00lipics/lipics-vol287-itcs2024/LIPIcs.ITCS.2024.88/LIPIcs.ITCS.2024.88.pdf
+   - https://link.springer.com/article/10.1007/s00446-026-00506-1
+
+   The journal version of *Color Fault-Tolerant Spanners* (ACM Transactions on Algorithms 22(1), Article 6, DOI 10.1145/3750728; online publication in October 2025) explicitly includes a color-lists extension. Thus overlapping label lists are an existing graph fault model, not a new model introduced by this manuscript. The publisher PDF could not be fully retrieved during this bounded check, so its exact list-size formulas still need direct comparison. Primary metadata and the publisher-indexed abstract were inspected; this is not a claim to have audited the complete journal revision.
+
+   - https://doi.org/10.1145/3750728
+   - https://weizmann.elsevierpure.com/en/publications/color-fault-tolerant-spanners-2/
+
+3. **Later local spanners.** Parter, Petruschka, Sapir, and Tzalik, *Parks and Recreation: Color Fault-Tolerant Spanners Made Local*, SODA 2025, emphasizes faster/distributed construction with bounds hiding k-dependent and polylogarithmic factors. Its stated fixed-k spanner bounds should not be substituted for an O(hn) polynomial connectivity-certificate theorem by silently setting k=Theta(log n). The inspected later *New Greedy Spanners and Applications*, ITCS 2026, concerns different stretch refinements and its quoted polynomial fault-tolerant construction still has a factor k. No exhaustive priority audit has been completed.
+
+   Primary URLs:
+   - https://arxiv.org/html/2410.07844v1
+   - https://drops.dagstuhl.de/storage/00lipics/lipics-vol362-itcs2026/html/LIPIcs.ITCS.2026.107/LIPIcs.ITCS.2026.107.html
+
+4. **Representative-family antecedents.** The method is a specialization of the broad algebraic representative-family paradigm: encode admissibility in a small vector space, then keep a weighted linear basis. Fomin, Lokshtanov, Panolan, and Saurabh give efficient weighted representative-family constructions, and van Bevern, Tsidulko, and Zschoche give representative families for matroid intersections. The construction uses that framework explicitly. The point requiring a focused priority check is the exact linear-in-rank lift for this all-label-failures query model and its sharp constructive graph certificate, not the invention of exterior algebra, tensor products, or weighted representative sets.
+
+   Primary URLs:
+   - https://sites.cs.ucsb.edu/~daniello/papers/efficientRepSetJ.pdf
+   - https://arxiv.org/html/1806.11527v4
+
+5. **Witness hardness antecedent.** The reduction in Section 7 is the usual set-cover-to-colored-cut construction. Relevant primary literature includes *The parameterized complexity of some minimum label problems* and *Refined Parameterizations for Computing Colored Cuts in Edge-Colored Graphs*. It clarifies an algorithmic boundary rather than supplying a new complexity-theoretic separation.
+
+   Primary URL checked at the abstract/result level:
+   - https://link.springer.com/article/10.1007/s00224-022-10101-z
+
+## 9. Representation boundary
+
+The polynomial lift uses the supplied linear representation and preserves a fixed additive cost order. The arbitrary-matroid rank-only theorem has a separate combinatorial proof and fixed-parameter construction. Neither result asserts the weighted-prefix lift for an independence-oracle matroid, nor preservation of arbitrary nonadditive base valuations. The dimension gate and the finite-field extension in Section 5 are part of the algorithm.

@@ -1,0 +1,26 @@
+# Sources and proof dependencies: Exact colored-graph certificates
+
+[Result statements](README.md) · [Main proof](proof.md) · [Verification and scope](verify/README.md)
+
+The main proof gives the family-level theorem composition. The following canonical manuscripts contain the detailed arguments and the hypotheses of each algorithmic interface.
+
+## Canonical manuscripts
+
+| Manuscript | Proof role |
+|---|---|
+| [Colored graph and vertex-failure certificates](manuscripts/colored-graph-and-vertex-failure-certificates.md) | Activation matrices, the sharp vertex-color envelope, mixed/list labels, canonical MSFs, and the one-color output-sensitive construction. |
+
+## Shared proof dependencies
+
+| Result | Role |
+|---|---|
+| [Represented-matroid failure features](../matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md) | The edge-color specialization and polynomial failure-annihilating features. |
+| [Exact incidence summaries](../persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md) | The incidence-lift framework and the simple-graph lower-bound antecedent. |
+
+## External inputs
+
+- Sorkin, Steger, and Zenklusen, [A Tight Bound on the Collection of Edges in MSTs of Induced Subgraphs](https://arxiv.org/pdf/0705.2439), for the induced-subgraph comparator and sharpness construction.
+- Holm, de Lichtenberg, and Thorup, [Poly-logarithmic Deterministic Fully-Dynamic Algorithms](https://www.cs.princeton.edu/courses/archive/fall09/cos521/Handouts/polylogarithmic.pdf), for the amortized dynamic-MSF interface. The local construction additionally requires reporting the exchanged forest edges.
+- The manuscript gives separate primary citations for colored connectivity, color-list spanners, and the hyperconnectivity matrix. Those comparisons do not replace the fixed-order prefix-span proof.
+
+**Attribution:** Yilin Liu and GPT-6 Astra Pro.

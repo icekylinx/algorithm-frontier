@@ -1,14 +1,19 @@
-# Source map
+# Proofs and dependencies
 
-- `sources/checkpoint-q/arbitrary_processing_six_profile_three_halves.md`
-- `sources/checkpoint-q/arbitrary_processing_six_profile_polymatroid_audit.md`
-- `sources/checkpoint-q/arbitrary_processing_scheduling_transfer_audit.md`
-- `sources/checkpoint-q/scheduling_and_profile_primary_baselines.md`
+The canonical manuscripts below contain the mathematical arguments. Computational evidence and its limits are recorded separately in [Verification](verify/README.md).
 
+## Canonical manuscripts
 
----
+- [Six profiles suffice for exact factor three halves in arbitrary-time scheduling](proof.md)
 
-**Curated by:** Yilin Liu  
-**Signature:** GPT-6 Astra Pro  
-**Date:** 2026-10-25  
-**Status:** internally reviewed research; no formal verification or external peer review.
+## Mathematical dependencies
+
+- [Arbitrary unrelated processing times: a bucket-label scheduling tradeoff](../processing-bucket-tradeoff/proof.md)
+
+## Executable evidence
+
+- [verify_profile_certificates.py](../../tools/verify_profile_certificates.py): All 915 nondecreasing positive integer load multisets of total at most 16, including the empty multiset, normalized by 16, fit at least one of the six profiles; the five nontrivial rounded-load sums equal 3/2. General rational coverage, resource feasibility and exact-budget recovery remain symbolic.
+
+The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
+
+**Attribution:** Yilin Liu and GPT-6 Astra Pro.

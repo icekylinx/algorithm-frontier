@@ -1,15 +1,17 @@
-# Processing-bucket scheduling tradeoff
+# A discrete scheduling tradeoff from processing buckets
 
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | A discrete approximation curve approaches factor three-halves: the first points are two, five-thirds, and eleven-sevenths, followed by the exact bucket sequence in the source. |
-| **Objective and output** | Minimize maximum load while keeping all original job bases mandatory and preserving the exact assignment-cost budget; output an integer schedule. |
-| **Time** | For bucket depth `k`, the state factor is `(k + 2)^q` times polynomial work in the encoded input and bucket depth. The source also gives a factor `3/2 + epsilon` curve with `q`-machine time `[O(1 + log(1 + 1/epsilon))]^q poly(H_epsilon)`. |
-| **Space** | Polynomial in the full binary input and bucket state; no unit expansion of binary counts. |
-| **Parameters** | `q` is the machine count; `k` is bucket depth; `epsilon` is optional rational accuracy for the limiting comparison; `H` is the complete encoded input plus paid optimization work; `C` is the exact assignment budget. |
-| **Model and representation** | Arbitrary nonnegative rational processing times, mandatory recipient-polymatroid bases, eligibility masks, and one exact assignment-cost budget. This tradeoff is separate from the accuracy-scheme and six-profile records. |
-| **Lower-bound scope** | No lower bound is claimed. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [scheduling-profile review](../../reviews/backlog/scheduling-profile-records.md) and [review registry](../../reviews/README.md). |
-| **Source** | [Arbitrary-processing bucket source](../../sources/checkpoint-q/arbitrary_processing_bucket_scheduling.md) and the verification paths in `sources.md`. |
+| **Guarantee** | For every integer $k\ge0$, returns makespan at most $\gamma_k\operatorname{OPT}$, where $\gamma_k=\frac{3\cdot2^k-1}{2^{k+1}-1}=\frac{3}{2}+\frac{1}{2(2^{k+1}-1)}$. |
+| **Objective and output** | Assign all original job totals with exact recipient feasibility and one exact assignment-cost budget. |
+| **Time** | $(k+1)^q\operatorname{poly}(H+k)$. Choosing $k=O(\log(1+1/\varepsilon))$ gives factor $3/2+\varepsilon$ in $[O(1+\log(1+1/\varepsilon))]^q\operatorname{poly}(H_\varepsilon)$. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. Bucket depth is charged as stated in the time bound. |
+| **Parameters** | $q$ is the physical-machine count; $k$ is an integer bucket depth. The first points are $(\text{factor},\text{base})=(2,1),(5/3,2),(11/7,3),(23/15,4)$. $H$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work. |
+| **Model and representation** | Arbitrary nonnegative rational processing times and assignment costs, integral job polymatroids, mandatory original totals, eligibility masks, and one exact scalar budget. |
+| **Lower-bound scope** | No lower bound is claimed for this algorithm. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+For an exact $3/2$ guarantee at constant base, use the separate [six-profile construction](../six-profile-three-halves/README.md).
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

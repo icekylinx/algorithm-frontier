@@ -1,14 +1,31 @@
-# Source map
+# Proofs and dependencies
 
-- `sources/checkpoint-o/general_recipient_polymatroid_prefix_four_transfer.md`
-- `sources/checkpoint-o/general_recipient_polymatroid_root_audit.md`
-- `sources/checkpoint-o/general_recipient_polymatroid_prefix_four_independent_audit.md`
-- `sources/checkpoint-o/recipient_polymatroid_aggregate_configuration_gap.md`
+The canonical manuscripts below contain the mathematical arguments. Computational evidence and its limits are recorded separately in [Verification](verify/README.md).
 
+## Canonical manuscripts
 
----
+- [Prefix normalization gives factor four for arbitrary recipient polymatroids](proof.md)
+- [Binary representation and the integer-comparator lemma](representation.md)
 
-**Curated by:** Yilin Liu  
-**Signature:** GPT-6 Astra Pro  
-**Date:** 2026-10-25  
-**Status:** internally reviewed research; no formal verification or external peer review.
+## Mathematical dependencies
+
+- [Prefix rank additivity and eager release for resource matroids](../recipient-matroid-configuration/proof.md)
+
+## Related bounds and model comparisons
+
+- [Two integrality gaps for recipient-polymatroid configuration relaxations](../allocation-lower-bounds/configuration-gaps.md)
+
+## Executable evidence
+
+No result-specific executable check is registered. The mathematical proof and the repository document checks have separate roles.
+
+The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
+
+## Strengthened comparators and their optimization
+
+- [Residual-capacity configuration relaxation](../../manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md)
+- [Scaled recipient-matroid configuration transfer](../../manuscripts/allocation-and-scheduling/scaled-recipient-matroids-binary-configuration-transfer.md)
+- [Bounded-support fractional optimizer](../../manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md)
+- [Count-box pricing and full fractional optimization](../../manuscripts/allocation-and-scheduling/residual-configuration-box-pricing-and-weak-solver.md)
+
+**Attribution:** Yilin Liu and GPT-6 Astra Pro.

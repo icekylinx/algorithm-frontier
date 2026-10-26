@@ -18,7 +18,7 @@ A citation must identify the version or commit used, say whether the curated lay
 Use these labels consistently:
 
 - **Internal review:** the repository records a complete internal mathematical review.
-- **Formal verification:** a machine-checked proof or executable checker is actually present.
+- **Formal verification:** a machine-checked derivation establishes the exact stated claim. An executable finite check alone is not a formalization of an asymptotic theorem.
 - **External peer review:** an external review or publication record is actually available.
 - **Conditional:** the result depends on a named backend, oracle, representation, or complexity assumption.
 - **Historical:** the result remains for provenance but is not the current strongest same-scope record.
@@ -29,10 +29,12 @@ Do not turn an audit note into a formal-verification claim. An output verifier p
 
 Every public result should separate guarantee, objective, time, space, parameters, representation, lower-bound type, and review status. See [`docs/COMPLEXITY.md`](docs/COMPLEXITY.md). Unconditional rank-oracle query bounds and deterministic-ETH consequences must be displayed as different statements.
 
-GitHub-facing pages use plain-text code spans. Source manuscripts may retain TeX and other original notation.
+GitHub-facing pages and canonical manuscripts use rendered mathematics with
+balanced dollar delimiters. Code spans describe code and exact encodings.
+See [the maintenance guide](CONTRIBUTING.md).
 
 ## Recommended citation
 
-> Yilin Liu and GPT-6 Astra Pro. *Algorithm Frontier*, version 2026.10.25 (2026). Apache License 2.0.
+> Yilin Liu and GPT-6 Astra Pro. *Algorithm Frontier*, version 2026.10.26 (2026). Apache License 2.0.
 
 Cite the relevant `problems/<name>/` path and commit as well. For later releases, preserve the original version in citations to an older result. A later release may add or correct material, but must not rewrite the provenance of an earlier result.

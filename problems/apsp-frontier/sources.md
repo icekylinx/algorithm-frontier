@@ -1,14 +1,24 @@
-# Source map
+# Sources and proof dependencies
 
-- `sources/checkpoint-o/fully_dynamic_apsp_time_stretch_curve.md`
-- `sources/checkpoint-o/apsp_tradeoff_independent_audit.md`
-- `sources/checkpoint-o/same_stretch_apsp_comparison_and_root_audit.md`
-- `sources/checkpoint-o/public_apsp_joint_retuning_independent_audit.md`
+## Canonical manuscripts
 
+- [Fully dynamic all-pairs distances: a time–stretch theorem](proof.md)
 
----
+## Linked mathematical dependencies
 
-**Curated by:** Yilin Liu  
-**Signature:** GPT-6 Astra Pro  
-**Date:** 2026-10-25  
-**Status:** internally reviewed research; no formal verification or external peer review.
+These manuscripts contain the interfaces, auxiliary arguments or source
+comparisons referenced by this result. Their stated hypotheses remain
+part of each use; an interface analysis does not supply an omitted backend.
+
+- [Joint retuning of the public deterministic APSP construction](../../manuscripts/graph-backends/public-apsp-joint-retuning-audit.md)
+- [A stronger public APSP comparison at exactly the same stretch scale](../../manuscripts/graph-backends/same-stretch-apsp-comparison-and-root-audit.md)
+- [Separating metric stretch, forest congestion, and work](../../manuscripts/graph-backends/separated-metric-forest-and-strong-sssp.md)
+
+## Evidence and provenance
+
+The [verification note](verify/README.md) states the scope of executable
+evidence and the remaining mathematical dependencies. The
+[import record](../../provenance/README.md) preserves source revisions,
+canonical paths, attribution and applicable licenses.
+
+**Attribution:** Yilin Liu · GPT-6 Astra Pro.

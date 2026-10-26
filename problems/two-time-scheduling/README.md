@@ -1,15 +1,17 @@
-# Per-machine two-time scheduling
+# Scheduling with two processing times per machine
 
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Returns a schedule with makespan at most three-halves of the original integer optimum for the per-machine two-time model. |
-| **Objective and output** | Minimize makespan when each machine has its own two positive processing times; output integral bases for both aggregate job polymatroids and decompose them back to original assignments. |
-| **Time** | For fixed rational `d >= 2`, let `R_d=(d+1)/(d-1)`, `A_d=Gamma(R_d)`, `B_d=2-1/A_d`, and `E(q)=2^(O(q log log(q+2)/log(q+2)))`. The construction takes `B_d^q E(q) poly(H)` time. Exact endpoints are factor `3/2` at base `50/27`, factor `5/3` at base `7/4`, and factor `7/4` at base `2-(108/3125)^(1/3)`. |
-| **Space** | Polynomial binary workspace in the input, profile state, and integral decomposition; binary job counts are not expanded. |
-| **Parameters** | `q` is the number of machines; `d` is the fixed tradeoff parameter; `R_d`, `A_d`, `B_d`, and `E(q)` are as above; each machine has at most two positive times `0<u_p<a_p`; `H` is complete encoded input plus paid rank/SFM/LP/intersection/rounding work; original job totals and assignment budget `C` remain mandatory. |
-| **Model and representation** | Per-machine two-time processing profiles with integral job polymatroids and the cost-preserving decomposition primitive. This is not a global two-value assumption. |
-| **Lower-bound scope** | No lower bound is claimed. The three-halves endpoint is scoped to the per-machine model. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. The proof and algorithm follow-up is tracked in the [scheduling-profile review](../../reviews/backlog/scheduling-profile-records.md). |
-| **Source** | [Per-machine two-time construction](../../sources/checkpoint-q/per_machine_two_time_costed_scheduling.md) and the verification paths in `sources.md`. |
+| **Guarantee** | For every fixed integer $d\ge2$, returns makespan at most $(2-1/d)\operatorname{OPT}$, including exact $3/2$ at $d=2$. |
+| **Objective and output** | Assign every original type total when each machine has at most two positive processing times, preserving the exact assignment-cost budget. |
+| **Time** | Put $R_d=(d+1)/(d-1)$, $A_d=\Gamma(R_d)$, and $B_d=2-1/A_d$. Time is $B_d^q E(q)\operatorname{poly}(H)$. Endpoints are $(\text{factor},\text{base})=(3/2,50/27),(5/3,7/4),\bigl(7/4,2-(108/3125)^{1/3}\bigr)$. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. |
+| **Parameters** | $q$ is the physical-machine count; $d\ge2$ is a fixed integer; each machine has its own at most two positive times $u_p<a_p$. $\Gamma(R)=R^R/(R-1)^{R-1}$ and $E(q)=2^{O(q\log\log(q+2)/\log(q+2))}$. $H$ includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work. |
+| **Model and representation** | Integral job polymatroids, mandatory original bases, machine-dependent two-time pairs, arbitrary nonnegative assignment costs, and one exact scalar budget. Zero-time pairs are permitted. |
+| **Lower-bound scope** | No lower bound is claimed for this algorithm. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+The positive time pair may differ from machine to machine. A rational noninteger $d$ is not included in the discrete quota proof.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

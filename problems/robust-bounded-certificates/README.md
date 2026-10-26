@@ -1,17 +1,17 @@
-# Robust allocation with bounded failure certificates
+# Robust unit allocation with bounded failure certificates
 
-This is a general robust-unit record under a bounded aggregate minimal-certificate promise.
-
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Returns at least the ceiling of `K_star / d` robust units while preserving every scenario budget exactly, under the bounded certificate-width condition. |
-| **Objective and output** | Maximize the common robust unit count across explicit scenarios; output one common actual player basis and a scenario-specific integral allocation, or a width-violation certificate when the promise fails. |
-| **Time** | Let `A=max{w, Gamma((d+1)/(d-1))}`. The corank branch takes `A^c poly(H)`; the whole-ground conversion takes `(2-1/A)^q 2^(O(q log log(q+2)/log(q+2))) poly(H)`. |
-| **Space** | Polynomial in the explicit scenario input, certificate width, and branching state; binary budgets and supplies are not expanded into unit arrays. |
-| **Parameters** | `q` is the player count; `r` is the common basis rank; `c=q-r`; `d>=2` is the requested approximation factor; `w` bounds minimal certificate width; `K_star` is the robust target; `Omega` is the explicit scenario list. |
-| **Model and representation** | One common actual player basis, scenario-specific integral recipient polymatroids, exact nonnegative assignment budgets, adaptive allocations, and explicit minimal unit-failure certificates. |
-| **Lower-bound scope** | The source retains a whole-ground oracle barrier and a width-violation outcome. It does not claim an explicit-input lower bound for every robust allocation model. |
-| **Review status** | Internal display and model review; proof and algorithm follow-up remains in the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). Finite audits are not formal verification. |
-| **Source** | [Bounded-certificate robust tradeoffs](../../sources/checkpoint-q/robust_unit_bounded_certificate_exact_tradeoffs.md), its [proof map](proof.md), and `verify/`. |
+| **Guarantee** | For fixed integer $d\ge2$, returns at least $\lceil K_\star/d\rceil$ units on one common selected basis under every scenario budget, assuming all inclusion-minimal aggregate one-unit failures have width at most $w$. |
+| **Objective and output** | Maximize robust minimum unit count with scenario-adaptive integral allocations; output a common basis and one allocation per scenario. |
+| **Time** | Let $A=\max\{w,\Gamma((d+1)/(d-1))\}$. Time is $A^c\operatorname{poly}(H)$ or $(2-1/A)^q E(q)\operatorname{poly}(H)$. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. The complete explicit scenario list is part of the input. |
+| **Parameters** | $q$ is the player count; $r$ is the common basis rank; $c=q-r$; $d\ge2$ is a fixed integer; $w$ bounds inclusion-minimal failure size; $K_\star$ is the robust optimum count. $\Gamma(R)=R^R/(R-1)^{R-1}$ and $E(q)=2^{O(q\log\log(q+2)/\log(q+2))}$. |
+| **Model and representation** | One common actual player-matroid basis, explicit scenarios, scenario-specific recipient polymatroids and nonnegative exact assignment budgets, and one unit value. The width promise concerns the aggregate budget-feasible one-unit family, at least on player-independent sets. |
+| **Lower-bound scope** | No universal corank-FPT finite-factor guarantee exists in the unrestricted two-scenario model unless $\mathrm{FPT}=\mathrm{W}[1]$; see the [hardness proof](../robust-two-scenario-hardness/README.md). The width promise is substantive. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+Outside the width promise the guarded algorithm may return a legal solution, a sound negative result, or an explicit inclusion-minimal failure wider than $w$. For $w\le6$, exact factor two retains base $27/4$; for $w\le4$, factor three retains base $4$. The [width-two gate](../robust-width-two-allocation/README.md) improves the positivity subroutine further.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

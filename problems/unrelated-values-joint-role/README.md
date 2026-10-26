@@ -1,16 +1,26 @@
-# Unrelated values with a joint role and setup budget
+# Unrelated-value allocation with shared resource roles and setup costs
 
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | For fixed rational `R>1`, returns a legal integral allocation with minimum utility at least `(1-1/R) OPT / 2`; choosing `R=(2+eta)/eta` gives factor `2+eta`. |
-| **Objective and output** | Maximize minimum player-dependent utility with optional player selection, one exact assignment/setup budget, and the joint-role selector; output selected players and allocations. |
-| **Time** | `B(R)^q * 2^(O(q log log(q+2)/log(q+2))) * poly(H)`, where `B(R)=2-1/Gamma(R)` and `Gamma(R)=R^R/(R-1)^(R-1)`. |
-| **Space** | Polynomial in the complete binary input and paid joint-role, rank, LP, and rounding state. |
-| **Parameters** | `q` is the nonloop player ground; `R>1` is the rational accuracy parameter; `Gamma(R)` and `B(R)` are as above; `H` includes values, costs, setup fees, ranks, and selector descriptions. |
-| **Model and representation** | Player-dependent rational values, integral recipient polymatroids, optional basis selection, one exact budget, and the paid joint-role selector. |
-| **Lower-bound scope** | No lower bound is claimed; the factor is an upper bound under the exact selector interface. |
-| **Scope** | The factor is whole-ground and does not assume a heavy-support or price-diversity promise. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). |
-| **Source** | [Joint-role near-two theorem](../../sources/checkpoint-p/unrelated_values_joint_role_near_two_allocation.md). |
+| **Guarantee** | For fixed rational $R>1$, returns an actual selected basis and utility at least $(1-1/R)\operatorname{OPT}/2$ under one exact combined setup and assignment budget. Arbitrary values also admit exact factor two in $2^q\operatorname{poly}(H)$. Compulsory pair values $\{0,u,a\}$ admit the sharper J2 endpoint. |
+| **Objective and output** | Maximize minimum player-specific utility while light and heavy roles share the original resource capacities; return actual integer counts and selected players. |
+| **Time** | Let $B(R)=2-1/\Gamma(R)$. The near-two theorem takes $B(R)^q E(q)\operatorname{poly}(H)$; use $R=(2+\eta)/\eta$ for factor $2+\eta$. J2 takes $(27/4)^{\nu_C}\operatorname{poly}(H)$ or $(50/27)^q E(q)\operatorname{poly}(H)$. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. |
+| **Parameters** | $q$ is the original nonloop candidate count. $R>1$ is fixed rational; $\nu_C$ is the largest affordable one-heavy-unit recipient set in the compulsory two-value model. $\Gamma(R)=R^R/(R-1)^{R-1}$ and $E(q)=2^{O(q\log\log(q+2)/\log(q+2))}$. |
+| **Model and representation** | Arbitrary integral recipient polymatroids, arbitrary player-type values, nonnegative original setup and assignment costs, and one exact budget. Near-two and $2^q$ exact-two allow an optional player-matroid basis. The J2 and discrete factor-$d$ pair-value refinements require compulsory players. |
+| **Lower-bound scope** | The arbitrary-oracle subclass has strict-below-two query barriers. Neither an optimal exponential base at factor two nor an optional-basis extension of J2 is proved. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+## Results and proofs
+
+| Guarantee | Time | Scope and proof |
+|---|---|---|
+| $2+\eta$ | $B((2+\eta)/\eta)^q E(q)\operatorname{poly}(H)$ | [Joint-resource roles](proof.md), and [shared setup budget](setup-budget.md) for optional paid selection |
+| Exact $2$ for arbitrary values | $2^q\operatorname{poly}(H)$ | [Exact endpoint](exact-two.md), including optional selection and shared setup |
+| Exact $2$ for player-specific $\{0,u,a\}$ | $(27/4)^{\nu_C}\operatorname{poly}(H)$ or $(50/27)^q E(q)\operatorname{poly}(H)$ | [J2 proof](proof.md#9-compulsory-two-valued-unrelated-instances-exact-factor-two); compulsory players, one assignment budget |
+| Fixed integer factor $d\ge2$ for $\{0,u,a\}$ | $A_d^{\nu_C}\operatorname{poly}(H)$ or $(2-1/A_d)^q E(q)\operatorname{poly}(H)$ | [Integer tradeoff](two-value-tradeoffs.md), $A_d=\Gamma((d+1)/(d-1))$ |
+
+If an optimum has at most $K$ selected heavy recipients at threshold $(1-1/R)\operatorname{OPT}/2$, the near-two proof also gives $\Gamma(R)^{q-r+K}\operatorname{poly}(H)$. This is a threshold-dependent support condition. The signed dummy used for setup accounting is an internal construction; original costs remain nonnegative.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

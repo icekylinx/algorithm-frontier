@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "counts": {
+    "association_pattern_checks": 4032,
+    "actual_image_checks": 19456,
+    "weighted_owner_cover_cases": 186,
+    "weighted_owner_pairs": 369,
+    "prefix_completion_checks": 32512,
+    "linear_cover_doublings": 354,
+    "linear_cover_sets": 255,
+    "cyclic_layout_supports": 8122,
+    "rational_parameter_checks": 17
+  },
+  "entropy_h_005_enclosure": [
+    ".28639695",
+    ".28639696"
+  ],
+  "runtime_scope": "Small exhaustive combinatorial checks and exact rational certificates; no previous profile replay."
+}

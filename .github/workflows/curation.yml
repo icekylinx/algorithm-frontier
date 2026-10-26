@@ -1,17 +1,29 @@
-name: Curation checks
+name: Repository checks
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      full_contacts:
+        description: "Recompute all 44 continuous Subset Sum contact branches"
+        type: boolean
+        required: false
+        default: false
+      contact_jobs:
+        description: "Parallel workers for continuous contact verification"
+        type: number
+        required: false
+        default: 2
 
 permissions:
   contents: read
 
 jobs:
   validate:
-    name: Validate curation
+    name: Validate manuscripts and certificates
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -22,29 +34,16 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Validate curation contract
-        run: python3 tools/validate_curation.py
-      - name: Check LaTeX delimiters
-        run: python3 tools/check_latex_delimiters.py
-      - name: Check result-card schema
-        run: python3 tools/check_card_schema.py
-      - name: Replay finite Subset Sum contract
-        run: python3 tools/verify_subset_sum_certificates.py
-      - name: Replay finite two-scenario reduction
-        run: python3 tools/verify_finite_reductions.py
-      - name: Check promoted rational constants
-        run: python3 tools/verify_rational_certificates.py
-      - name: Verify incremental source hashes
-        run: python3 tools/verify_incremental_sources.py
-      - name: Check checkpoint X rational increment
-        run: python3 tools/verify_checkpoint_x_constants.py
-      - name: Replay checkpoint X non-Fano finite obstruction
-        run: python3 tools/verify_checkpoint_x_obstruction.py
-      - name: Validate source-only draft checkpoints
-        run: python3 tools/check_draft_sources.py
+      - name: Run canonical repository checks
+        env:
+          FULL_CONTACTS: ${{ github.event_name == 'workflow_dispatch' && inputs.full_contacts || false }}
+          CONTACT_JOBS: ${{ inputs.contact_jobs || 2 }}
+        shell: bash
+        run: |
+          args=(--jobs "$CONTACT_JOBS")
+          if [[ "$FULL_CONTACTS" == "true" ]]; then
+            args+=(--full-contacts)
+          fi
+          python3 tools/check_repository.py "${args[@]}"
       - name: Check patch whitespace
         run: git diff --check HEAD^ HEAD
-      - name: Validate review registry
-        run: python3 tools/validate_reviews.py
-      - name: Check reviewed internal links
-        run: python3 tools/check_internal_links.py

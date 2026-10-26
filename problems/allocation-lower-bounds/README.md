@@ -1,18 +1,23 @@
-# Allocation and scheduling oracle barriers
+# Oracle barriers and configuration gaps
 
-This is a boundary record for value-oracle lower bounds and configuration
-obstructions.
-
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | In the stated hidden-rank value-oracle models, strictly below factor two allocation and strictly below factor three-halves two-size scheduling are blocked by the named query barriers. |
-| **Objective and output** | Distinguish what an oracle transcript can identify from what a configuration relaxation can represent; the record outputs a lower-bound or gap statement rather than an allocation algorithm. |
-| **Time** | The hidden-rank oracle barrier requires at least `binom(q,r) - 1` deterministic rank-oracle queries for any factor below two; configuration-gap rows retain their own bases. |
-| **Space** | Not an algorithmic resource claim; the record is a query lower bound and representation boundary. |
-| **Parameters** | `q` is the potential-player count; `r` is the hidden basis rank; `c=q-r` is the scheduling-transfer corank; the approximation factor and comparator are row-specific. |
-| **Model and representation** | Full rank-value-oracle models and the exact aggregate configuration relaxations named by each source. No explicit-input hardness or universal optimal-base claim is inferred. |
-| **Lower-bound scope** | This page is itself a lower-bound record. Oracle-query, configuration-gap, deterministic-ETH, and explicit-input claims remain separate and are never merged. |
-| **Review status** | Internal display and model review; proof and scope follow-up remains in the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). Finite audits are not formal verification. |
-| **Source** | [Recipient-polymatroid oracle barrier](../../sources/checkpoint-o/recipient_polymatroid_below_two_oracle_barrier.md), its [proof map](proof.md), and `verify/`. |
+| **Guarantee** | Deterministic factors strictly below $2$ for allocation and strictly below $3/2$ for two-size scheduling require $\binom{q}{r}-1$ recipient-rank queries on the hidden-set instances. Separate configuration constructions give a gap approaching $r$ for the aggregate LP and an exact gap $2$ for the full residual LP. |
+| **Objective and output** | Prove oracle-query lower bounds and exact integrality gaps; distinguish the integer optimum from each explicitly defined fractional comparator. |
+| **Time** | The query lower bound is $\binom{q}{r}-1$. On balanced instances it is $2^{q-O(\log q)}$. The refined heavy-cover parameter can equal zero throughout the allocation lower-bound family. |
+| **Space** | No running-time or workspace upper bound is asserted by a lower-bound construction. |
+| **Parameters** | $q>r\ge1$ are the hidden ground size and rank. The refined-parameter construction uses $q=2r$. The residual-LP gap uses $r\ge3$. |
+| **Model and representation** | Full rank-value oracles for the query lower bounds; explicit cardinality rank formulas for the two configuration gaps. The heavy threshold for the refined-parameter barrier is $\operatorname{OPT}/(2+\eta)$ with fixed $\eta>0$. |
+| **Lower-bound scope** | This record contains oracle-query and relaxation-gap results. It does not assert explicit-input NP-hardness, ETH lower bounds, or optimal exponential bases for the approximation upper bounds. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
+
+## Results
+
+| Boundary | Complete proof |
+|---|---|
+| Hidden-rank allocation and scheduling query barriers | [Main proof](proof.md) |
+| Strictly-below-two allocation remains hard at refined heavy parameter zero | [Refined-parameter proof](refined-parameter-barrier.md) |
+| Aggregate configuration gap approaching rank; full residual configuration gap exactly two | [Configuration-gap proofs](configuration-gaps.md) |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

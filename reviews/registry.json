@@ -1,354 +1,493 @@
 {
-  "schema_version": 1,
-  "last_updated": "2026-10-25",
-  "review_policy": {
+  "schema_version": 2,
+  "last_updated": "2026-10-26",
+  "policy": {
+    "executable_evidence_has_explicit_scope": true,
     "finite_checks_are_formal_verification": false,
-    "default_formal_verification_status": "not-claimed",
-    "required_roles": [
-      "proof_review",
-      "algorithm_review",
-      "source_review"
-    ]
+    "external_peer_review": "not-claimed"
   },
-  "draft_sources": [
-    {
-      "id": "checkpoint-x",
-      "path": "sources/checkpoint-x",
-      "status": "draft",
-      "maturity": "source-only; family-level non-promoted draft cards only",
-      "family_hints": [
-        "exact sensitivity, flow, and matching",
-        "Subset Sum",
-        "correlated spectral, regression, and seminorm summaries",
-        "matroid, packing, cuts, and whole blocks",
-        "Boolean linear compiler",
-        "finite-group, affine, and metric sparsification",
-        "quantum, Pauli, qudit, and stabilizer blocks",
-        "exact-separation and obstruction boundaries"
-      ],
-      "payloads": [
-        "sources/checkpoint-x/01_exact_single_failure_arborescences_and_matroid_intersection.md",
-        "sources/checkpoint-x/02_deterministic_subset_sum_increment.md",
-        "sources/checkpoint-x/03_correlated_fault_boundary_and_persistence_sparsifiers.md",
-        "sources/checkpoint-x/04_sharp_represented_matroid_failure_summaries.md",
-        "sources/checkpoint-x/05_colored_graph_and_vertex_failure_certificates.md",
-        "sources/checkpoint-x/06_arbitrary_matroid_and_submodular_failure_summaries.md",
-        "sources/checkpoint-x/07_represented_resource_packing_transfer.md",
-        "sources/checkpoint-x/08_boolean_linear_optimization_compiler.md",
-        "sources/checkpoint-x/09_valuated_matroid_intersection.md",
-        "sources/checkpoint-x/10_exact_min_cost_flow_and_vertex_disjoint_paths.md",
-        "sources/checkpoint-x/11_correlated_failure_spectral_and_regression_summaries.md",
-        "sources/checkpoint-x/12_linear_single_fault_general_matching.md",
-        "sources/checkpoint-x/13_linear_unweighted_two_matroid_certificate.md",
-        "sources/checkpoint-x/14_general_nonnegative_sensitivity_compiler.md",
-        "sources/checkpoint-x/15_weak_convex_regression_under_correlated_failures.md",
-        "sources/checkpoint-x/16_compact_one_element_price_sensitivity.md",
-        "sources/checkpoint-x/17_label_vector_spectral_and_norm_lifts.md",
-        "sources/checkpoint-x/18_correlated_vertex_and_edge_failure_spectral_graphs.md",
-        "sources/checkpoint-x/19_graded_incidence_and_simplicial_spectral_sparsification.md",
-        "sources/checkpoint-x/20_arbitrary_group_cayley_sparsification.md",
-        "sources/checkpoint-x/21_arbitrary_locality_pauli_sparsification.md",
-        "sources/checkpoint-x/22_arbitrary_locality_prime_qudit_checks.md",
-        "sources/checkpoint-x/23_arbitrary_locality_stabilizer_block_sparsification.md",
-        "sources/checkpoint-x/24_arbitrary_dimension_weyl_checks.md",
-        "sources/checkpoint-x/25_commuting_surrogates_and_stabilizer_energy_witnesses.md",
-        "sources/checkpoint-x/26_arbitrary_seminorms_under_correlated_failures.md",
-        "sources/checkpoint-x/27_adaptive_quotient_resparsification.md",
-        "sources/checkpoint-x/28_exact_label_cut_and_matroid_quotient_sparsification.md",
-        "sources/checkpoint-x/29_exact_label_whole_blocks_and_hyperedges.md",
-        "sources/checkpoint-x/30_optimal_whole_subgroup_constraints.md",
-        "sources/checkpoint-x/31_affine_constraints_over_arbitrary_finite_groups.md",
-        "sources/checkpoint-x/32_transitive_metrics_and_group_alignment.md",
-        "sources/checkpoint-x/33_exact_separation_for_compact_codes.md",
-        "sources/checkpoint-x/34_arbitrary_dimension_whole_stabilizer_blocks.md",
-        "sources/checkpoint-x/35_rational_quotient_ranks_from_weak_oracles.md",
-        "sources/checkpoint-x/36_affine_modular_blocks_and_sharp_modulus_dependence.md",
-        "sources/checkpoint-x/37_hilbert_metric_sums_with_few_orbits.md",
-        "sources/checkpoint-x/38_non_fano_obstruction_to_fixed_amplitude_bound.md",
-        "sources/checkpoint-x/README.md"
-      ],
-      "review_backlog": "reviews/backlog/checkpoint-x-drafts.md",
-      "open_actions": [
-        "Review every payload with separate proof, algorithm, and source notes before promotion.",
-        "Keep existential support, randomized compact construction, deterministic construction, query output, and exact bit complexity as separate fields.",
-        "Recheck all finite-group, local-dimension, field, rank, label-degree, and failure-budget parameters.",
-        "Add finite checks only for explicit rational identities or bounded examples; formal verification remains not-claimed."
-      ]
-    }
-  ],
   "records": [
     {
-      "id": "low-space-subset-sum",
-      "path": "problems/subset-sum-low-space-deterministic",
-      "tier": "A",
-      "status": "reviewed",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/headline/low-space-subset-sum.md",
-      "algorithm_review": "reviews/headline/low-space-subset-sum.md",
-      "source_review": "reviews/headline/low-space-subset-sum.md",
-      "finite_checks": [
-        "sources/subset-sum/verification/check_range_identities.py",
-        "sources/subset-sum/verification/check_resources.py",
-        "sources/subset-sum/verification/verify_proof.py",
-        "tools/verify_subset_sum_certificates.py",
-        "tools/verify_rational_certificates.py"
-      ],
+      "id": "subset-sum-fast-deterministic",
+      "path": "problems/subset-sum-fast-deterministic",
+      "evidence_note": "problems/subset-sum-fast-deterministic/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "A full formalization in a proof assistant is not part of this repository.",
-        "Recheck the exact writable-space exponent if the source theorem or machine model changes."
-      ],
-      "reports": [
-        "reviews/headline/low-space-subset-sum.md"
+      "checks": [
+        {
+          "path": "tools/verify_subset_sum_contacts.py",
+          "scope": "All 44 refined continuous contact branches, using exact rational box coverage and acceptance. The saved receipt binds checker/menu bytes; --all recomputes every branch. The circuit and trace inequalities are proved in the manuscript."
+        },
+        {
+          "path": "tools/verify_subset_sum_scalars.py",
+          "scope": "Exact entropy enclosures, 104 one-sided scalar comparisons for the reflected contact-chord profile, and the complete outer cost ledger. This is separate from continuous contact verification."
+        },
+        {
+          "path": "problems/subset-sum-fast-deterministic/verify/check_energy.py",
+          "scope": "132 rank-three energy-tensor cases and 1,056 output comparisons against independent binary endpoint enumeration in dimensions one through four; not the complete Subset Sum solver."
+        }
       ]
     },
     {
-      "id": "faster-subset-sum",
-      "path": "problems/subset-sum-fast-deterministic",
-      "tier": "A",
-      "status": "reviewed",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/headline/faster-subset-sum.md",
-      "algorithm_review": "reviews/headline/faster-subset-sum.md",
-      "source_review": "reviews/headline/faster-subset-sum.md",
-      "finite_checks": [
-        "sources/subset-sum/verification/check_fast_costs.py",
-        "sources/subset-sum/verification/check_profile.py",
-        "tools/verify_subset_sum_certificates.py",
-        "tools/verify_rational_certificates.py"
-      ],
+      "id": "subset-sum-low-space-deterministic",
+      "path": "problems/subset-sum-low-space-deterministic",
+      "evidence_note": "problems/subset-sum-low-space-deterministic/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "The headline card claims no space exponent; the source model should be revisited if a space bound is later promoted.",
-        "Recheck the rational exponent when the source checkpoint is superseded."
-      ],
-      "reports": [
-        "reviews/headline/faster-subset-sum.md"
+      "checks": [
+        {
+          "path": "problems/subset-sum-low-space-deterministic/verify/check_resources.py",
+          "scope": "Exact rational resource envelope, entropy bounds, preparation and live-state costs for time exponent 1/2 and the displayed space exponent; analytic boundary reductions are in the proof."
+        },
+        {
+          "path": "problems/subset-sum-low-space-deterministic/verify/check_structural.py",
+          "scope": "Finite association, image, ownership, cover, prefix-completion and layout identities, together with 17 rational parameter comparisons; not a general resource-bounded solver."
+        },
+        {
+          "path": "problems/subset-sum-low-space-deterministic/verify/check_range_identities.py",
+          "scope": "592 configurations, 34,808 quotient identities, 23,566 batch-incidence bounds and 340 exact packed convolutions; finite identities, not an arbitrary-input solver."
+        }
       ]
     },
     {
       "id": "numeric-target-frontier",
       "path": "problems/numeric-target-frontier",
-      "tier": "A",
-      "status": "conditional",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/headline/numeric-target-frontier.md",
-      "algorithm_review": "reviews/headline/numeric-target-frontier.md",
-      "source_review": "reviews/headline/numeric-target-frontier.md",
-      "finite_checks": [
-        "problems/numeric-target-frontier/verify/complexity_scope.md",
-        "problems/numeric-target-frontier/verify/lower_bound_scope.md"
-      ],
+      "evidence_note": "problems/numeric-target-frontier/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "Keep oracle, readable-program, and deterministic-ETH lower-bound scopes separate.",
-        "Reconcile the refined accuracy constant and the single-matroid square-root variants with every promoted source payload."
-      ],
-      "reports": [
-        "reviews/headline/numeric-target-frontier.md"
-      ]
+      "checks": []
     },
     {
       "id": "weighted-prefix-quota-frontier",
       "path": "problems/weighted-prefix-quota-frontier",
-      "tier": "A",
-      "status": "conditional",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/headline/weighted-prefix-quota-frontier.md",
-      "algorithm_review": "reviews/headline/weighted-prefix-quota-frontier.md",
-      "source_review": "reviews/headline/weighted-prefix-quota-frontier.md",
-      "finite_checks": [
-        "problems/weighted-prefix-quota-frontier/verify/kernel_scope.md",
-        "problems/weighted-prefix-quota-frontier/verify/lower_bound.md"
-      ],
+      "evidence_note": "problems/weighted-prefix-quota-frontier/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "Keep end-to-end algorithms distinct from deterministic kernel outputs.",
-        "Recheck root-cap, common-coordinate, and positive-root-charge assumptions after the next checkpoint."
-      ],
-      "reports": [
-        "reviews/headline/weighted-prefix-quota-frontier.md"
-      ]
-    },
-    {
-      "id": "dynamic-graph-frontier",
-      "path": "problems/dynamic-spanners",
-      "tier": "B",
-      "status": "conditional",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/headline/dynamic-graph-frontier.md",
-      "algorithm_review": "reviews/headline/dynamic-graph-frontier.md",
-      "source_review": "reviews/headline/dynamic-graph-frontier.md",
-      "finite_checks": [
-        "problems/dynamic-spanners/verify/tracked_terminal_flat_spanner_independent_audit.md",
-        "problems/dynamic-spanners/verify/fully_dynamic_spanner_independent_audit.md"
-      ],
-      "formal_verification": "not-claimed",
-      "open_issues": [
-        "Keep tracked-terminal and full-horizon regimes in separate rows.",
-        "Recheck update, stretch, recourse, and path-reporting parameters when the graph source is refreshed."
-      ],
-      "reports": [
-        "reviews/headline/dynamic-graph-frontier.md"
-      ]
+      "checks": []
     },
     {
       "id": "general-matching",
       "path": "problems/general-matching",
-      "tier": "A",
-      "status": "conditional",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/headline/dynamic-graph-frontier.md",
-      "algorithm_review": "reviews/headline/dynamic-graph-frontier.md",
-      "source_review": "reviews/headline/dynamic-graph-frontier.md",
-      "finite_checks": [
-        "problems/general-matching/verify/deterministic_maximum_matching_verifier.md",
-        "problems/general-matching/verify/matching_size_kernel_corollary.md"
-      ],
+      "evidence_note": "problems/general-matching/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "Keep the raw backend contract and edge-identifier reconstruction explicit.",
-        "Recheck the retained-edge parameter when the matching source is refreshed."
-      ],
-      "reports": [
-        "reviews/headline/dynamic-graph-frontier.md"
-      ]
+      "checks": []
     },
     {
-      "id": "apsp-frontier",
-      "path": "problems/apsp-frontier",
-      "tier": "A",
-      "status": "conditional",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/headline/dynamic-graph-frontier.md",
-      "algorithm_review": "reviews/headline/dynamic-graph-frontier.md",
-      "source_review": "reviews/headline/dynamic-graph-frontier.md",
-      "finite_checks": [
-        "problems/apsp-frontier/verify/apsp_tradeoff_independent_audit.md",
-        "problems/apsp-frontier/verify/same_stretch_apsp_comparison_and_root_audit.md"
-      ],
+      "id": "degree-constrained-subgraphs",
+      "path": "problems/degree-constrained-subgraphs",
+      "evidence_note": "problems/degree-constrained-subgraphs/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "Keep the two update/stretch points as incomparable rows.",
-        "Recheck the U and h hierarchy definitions when the APSP source is updated."
-      ],
-      "reports": [
-        "reviews/headline/dynamic-graph-frontier.md"
-      ]
+      "checks": []
+    },
+    {
+      "id": "min-cost-flow",
+      "path": "problems/min-cost-flow",
+      "evidence_note": "problems/min-cost-flow/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "incremental-scc",
+      "path": "problems/incremental-scc",
+      "evidence_note": "problems/incremental-scc/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
     },
     {
       "id": "incremental-sssp",
       "path": "problems/incremental-sssp",
-      "tier": "B",
-      "status": "conditional",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/headline/dynamic-graph-frontier.md",
-      "algorithm_review": "reviews/headline/dynamic-graph-frontier.md",
-      "source_review": "reviews/headline/dynamic-graph-frontier.md",
-      "finite_checks": [
-        "problems/incremental-sssp/verify/frozen_barrier_detector_independent_audit.md",
-        "problems/incremental-sssp/verify/simple_path_reporting_from_tree_segments.md"
-      ],
+      "evidence_note": "problems/incremental-sssp/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "Keep detector assumptions separate from the end-to-end path-reporting cost.",
-        "Recheck epsilon, N, U, h, and k definitions after a new SSSP checkpoint."
-      ],
-      "reports": [
-        "reviews/headline/dynamic-graph-frontier.md"
+      "checks": []
+    },
+    {
+      "id": "apsp-frontier",
+      "path": "problems/apsp-frontier",
+      "evidence_note": "problems/apsp-frontier/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "dynamic-spanners",
+      "path": "problems/dynamic-spanners",
+      "evidence_note": "problems/dynamic-spanners/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "dynamic-msf",
+      "path": "problems/dynamic-msf",
+      "evidence_note": "problems/dynamic-msf/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "decremental-strong-forest",
+      "path": "problems/decremental-strong-forest",
+      "evidence_note": "problems/decremental-strong-forest/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "exact-failure-preservers",
+      "path": "problems/exact-failure-preservers",
+      "evidence_note": "problems/exact-failure-preservers/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_sensitivity_certificates.py",
+          "scope": "direct finite mechanism: Compressed minimum-cost/minimum-hop exchange repairs versus exhaustive fixed-rank optima in two bipartite partition matroids. Excludes arbitrary matroids or valuations, sparse arborescence implementation, and asymptotic preserver size."
+        }
       ]
     },
     {
-      "id": "legacy-result-card-backlog",
-      "path": "problems",
-      "tier": "B",
-      "status": "needs-follow-up",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/backlog/legacy-result-cards.md",
-      "algorithm_review": "reviews/backlog/legacy-result-cards.md",
-      "source_review": "reviews/backlog/legacy-result-cards.md",
-      "finite_checks": [
-        "problems/incremental-scc/verify/log_barrier_scc_independent_audit.md",
-        "problems/dynamic-msf/verify/dynamic_msf_public_baseline_root_audit.md",
-        "problems/selected-flow/verify/selected_multicommodity_flow_independent_audit.md"
-      ],
+      "id": "exact-flow-sensitivity",
+      "path": "problems/exact-flow-sensitivity",
+      "evidence_note": "problems/exact-flow-sensitivity/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "Complete independent proof reviews for each migrated card.",
-        "Audit every backend composition and additive complexity term before promoting a card to a stable headline.",
-        "Reopen on any checkpoint, model, comparator, or output-interface change."
-      ],
-      "reports": [
-        "reviews/backlog/legacy-result-cards.md"
+      "checks": [
+        {
+          "path": "tools/verify_sensitivity_certificates.py",
+          "scope": "shared prerequisite only: The finite weighted exchange mechanism used by exchange-based sensitivity components. Excludes residual-flow repair, general-matching blossoms, arbitrary matroid oracles, price sweeps, and support-size theorems."
+        }
       ]
     },
     {
-      "id": "scheduling-profile-backlog",
-      "path": "problems",
-      "tier": "B",
-      "status": "needs-follow-up",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/backlog/scheduling-profile-records.md",
-      "algorithm_review": "reviews/backlog/scheduling-profile-records.md",
-      "source_review": "reviews/backlog/scheduling-profile-records.md",
-      "finite_checks": [
-        "problems/many-size-scheduling/verify/many_small_sizes_workload_independent_audit.md",
-        "problems/six-profile-three-halves/verify/arbitrary_processing_six_profile_polymatroid_audit.md",
-        "problems/two-time-scheduling/verify/per_machine_two_time_polymatroid_audit.md"
-      ],
+      "id": "matroid-failure-summaries",
+      "path": "problems/matroid-failure-summaries",
+      "evidence_note": "problems/matroid-failure-summaries/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "Complete independent proof reviews for the three profile records.",
-        "Audit every additive factor and the source-defined profile functions.",
-        "Reopen when a checkpoint changes the processing model or assignment-budget contract."
-      ],
-      "reports": [
-        "reviews/backlog/scheduling-profile-records.md"
+      "checks": []
+    },
+    {
+      "id": "graph-color-failure-certificates",
+      "path": "problems/graph-color-failure-certificates",
+      "evidence_note": "problems/graph-color-failure-certificates/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "packing-matching-summaries",
+      "path": "problems/packing-matching-summaries",
+      "evidence_note": "problems/packing-matching-summaries/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "persistence-failure-certificates",
+      "path": "problems/persistence-failure-certificates",
+      "evidence_note": "problems/persistence-failure-certificates/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "boolean-linear-compiler",
+      "path": "problems/boolean-linear-compiler",
+      "evidence_note": "problems/boolean-linear-compiler/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_sensitivity_certificates.py",
+          "scope": "direct finite mechanism: Signed recursive interval catalogue versus exhaustive Boolean evaluation, plus bounded-slack attainable sums. Excludes general backend implementation, continuous contact certificates, and asymptotic time or space exponents."
+        }
       ]
     },
     {
-      "id": "allocation-robustness-backlog",
-      "path": "problems",
-      "tier": "B",
-      "status": "needs-follow-up",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/backlog/allocation-robustness.md",
-      "algorithm_review": "reviews/backlog/allocation-robustness.md",
-      "source_review": "reviews/backlog/allocation-robustness.md",
-      "finite_checks": [
-        "problems/recipient-polymatroid/verify/general_recipient_polymatroid_prefix_four_independent_audit.md",
-        "problems/robust-scenario-flow/verify/robust_selected_flow_and_hitting_set_independent_audit.md",
-        "problems/allocation-lower-bounds/verify/recipient_polymatroid_oracle_barrier_independent_audit.md",
-        "tools/verify_finite_reductions.py"
-      ],
+      "id": "correlated-spectral-regression",
+      "path": "problems/correlated-spectral-regression",
+      "evidence_note": "problems/correlated-spectral-regression/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "Complete independent proof reviews for each record.",
-        "Keep scenario-adaptive routing separate from common selected-set assumptions.",
-        "Do not convert oracle or promise-boundary records into explicit-input algorithm claims."
-      ],
-      "reports": [
-        "reviews/backlog/allocation-robustness.md"
+      "checks": []
+    },
+    {
+      "id": "label-block-cut",
+      "path": "problems/label-block-cut",
+      "evidence_note": "problems/label-block-cut/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "group-metric-constraints",
+      "path": "problems/group-metric-constraints",
+      "evidence_note": "problems/group-metric-constraints/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "problems/group-metric-constraints/verify/check_quotient_rounding.py",
+          "scope": "direct finite arithmetic mechanism: Independent subgroup enumeration and certified rational quotient rounding for six explicit blocks in Z_6^3: normalization, monotonicity, exact zero marginals, positive gap, and submodularity. Excludes general subgroup/HNF algorithms, arbitrary-ground-set rationalization, and analytic Gaussian or universal group bounds."
+        }
       ]
     },
     {
-      "id": "matching-certificate-backlog",
-      "path": "problems",
-      "tier": "B",
-      "status": "needs-follow-up",
-      "last_reviewed": "2026-10-25",
-      "proof_review": "reviews/backlog/matching-certificate-records.md",
-      "algorithm_review": "reviews/backlog/matching-certificate-records.md",
-      "source_review": "reviews/backlog/matching-certificate-records.md",
-      "finite_checks": [],
+      "id": "quantum-stabilizer",
+      "path": "problems/quantum-stabilizer",
+      "evidence_note": "problems/quantum-stabilizer/verify/README.md",
       "formal_verification": "not-claimed",
-      "open_issues": [
-        "Check the partition-relative and strong-Haxell promises line by line against their source payloads.",
-        "Add a finite certificate replay before promoting either card to a stable headline."
-      ],
-      "reports": [
-        "reviews/backlog/matching-certificate-records.md"
+      "checks": [
+        {
+          "path": "problems/group-metric-constraints/verify/check_quotient_rounding.py",
+          "scope": "shared arithmetic component only: The same finite quotient-rounding component used by the compact rank interface. Excludes quantum operator identities, stabilizer subgroup/HNF order certification, all-state guarantees, and energy optimization."
+        }
       ]
+    },
+    {
+      "id": "obstruction-boundaries",
+      "path": "problems/obstruction-boundaries",
+      "evidence_note": "problems/obstruction-boundaries/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_non_fano.py",
+          "scope": "direct finite counterexample: All ternary row queries and all independent signs of the displayed seven-element non-Fano instance; exactly 15 of 128 signs are valid. Excludes compact-code membership reduction, arbitrary matroid sparsification, and Gaussian probability bounds."
+        }
+      ]
+    },
+    {
+      "id": "arbitrary-value-allocation-scheme",
+      "path": "problems/arbitrary-value-allocation-scheme",
+      "evidence_note": "problems/arbitrary-value-allocation-scheme/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "recipient-polymatroid",
+      "path": "problems/recipient-polymatroid",
+      "evidence_note": "problems/recipient-polymatroid/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "recipient-matroid-configuration",
+      "path": "problems/recipient-matroid-configuration",
+      "evidence_note": "problems/recipient-matroid-configuration/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "item-matroid-union",
+      "path": "problems/item-matroid-union",
+      "evidence_note": "problems/item-matroid-union/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "one-value-exact-two",
+      "path": "problems/one-value-exact-two",
+      "evidence_note": "problems/one-value-exact-two/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_profile_certificates.py",
+          "scope": "Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed."
+        }
+      ]
+    },
+    {
+      "id": "two-value-exact-two",
+      "path": "problems/two-value-exact-two",
+      "evidence_note": "problems/two-value-exact-two/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_profile_certificates.py",
+          "scope": "The d=2 quota subcheck covers K=1,...,399: the exact one-unit gate for K<=2 and K/(K-ceil(K/2))<=3 for K>2. This is arithmetic evidence only; it does not execute support selection, branching or recovery."
+        }
+      ]
+    },
+    {
+      "id": "intrinsic-values-near-two",
+      "path": "problems/intrinsic-values-near-two",
+      "evidence_note": "problems/intrinsic-values-near-two/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "unrelated-values-additive",
+      "path": "problems/unrelated-values-additive",
+      "evidence_note": "problems/unrelated-values-additive/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "unrelated-values-joint-role",
+      "path": "problems/unrelated-values-joint-role",
+      "evidence_note": "problems/unrelated-values-joint-role/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_profile_certificates.py",
+          "scope": "Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. This applies only to the compulsory J2 and factor-d quota arithmetic, not shared-resource or setup coupling."
+        }
+      ]
+    },
+    {
+      "id": "whole-ground-allocation",
+      "path": "problems/whole-ground-allocation",
+      "evidence_note": "problems/whole-ground-allocation/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_profile_certificates.py",
+          "scope": "Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. Only the integer-quotas companion is covered; no global-conversion check is claimed."
+        }
+      ]
+    },
+    {
+      "id": "selected-flow",
+      "path": "problems/selected-flow",
+      "evidence_note": "problems/selected-flow/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "shared-setup-flow",
+      "path": "problems/shared-setup-flow",
+      "evidence_note": "problems/shared-setup-flow/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "robust-scenario-flow",
+      "path": "problems/robust-scenario-flow",
+      "evidence_note": "problems/robust-scenario-flow/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "robust-unrelated-allocation",
+      "path": "problems/robust-unrelated-allocation",
+      "evidence_note": "problems/robust-unrelated-allocation/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "robust-bounded-certificates",
+      "path": "problems/robust-bounded-certificates",
+      "evidence_note": "problems/robust-bounded-certificates/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_profile_certificates.py",
+          "scope": "Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. Failure width and scenario feasibility are also outside the check."
+        }
+      ]
+    },
+    {
+      "id": "robust-width-two-allocation",
+      "path": "problems/robust-width-two-allocation",
+      "evidence_note": "problems/robust-width-two-allocation/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "robust-two-scenario-hardness",
+      "path": "problems/robust-two-scenario-hardness",
+      "evidence_note": "problems/robust-two-scenario-hardness/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_finite_reductions.py",
+          "scope": "Exhaustive reduction identity for q=2,...,7, every vector in {0,1,2,3}^q, all 1<=k<q, every omitted k-subset and every integer target from zero through the total sum. It checks equivalence of the two budget inequalities and the target subset sum, not W[1]-hardness itself."
+        }
+      ]
+    },
+    {
+      "id": "arbitrary-processing-scheduling",
+      "path": "problems/arbitrary-processing-scheduling",
+      "evidence_note": "problems/arbitrary-processing-scheduling/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "activated-machine-scheduling",
+      "path": "problems/activated-machine-scheduling",
+      "evidence_note": "problems/activated-machine-scheduling/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_profile_certificates.py",
+          "scope": "All 915 nondecreasing positive integer load multisets of total at most 16, including the empty multiset, normalized by 16, fit at least one of the six profiles; the five nontrivial rounded-load sums equal 3/2. The k=0 factor-two endpoint, ordered bucket intervals for k=1,...,13, and all 91 exact bucket load identities b_i+2(1-b_(i-1))=gamma_k. Activation and shared-cost recovery are outside this check."
+        }
+      ]
+    },
+    {
+      "id": "six-profile-three-halves",
+      "path": "problems/six-profile-three-halves",
+      "evidence_note": "problems/six-profile-three-halves/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_profile_certificates.py",
+          "scope": "All 915 nondecreasing positive integer load multisets of total at most 16, including the empty multiset, normalized by 16, fit at least one of the six profiles; the five nontrivial rounded-load sums equal 3/2. General rational coverage, resource feasibility and exact-budget recovery remain symbolic."
+        }
+      ]
+    },
+    {
+      "id": "processing-bucket-tradeoff",
+      "path": "problems/processing-bucket-tradeoff",
+      "evidence_note": "problems/processing-bucket-tradeoff/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_profile_certificates.py",
+          "scope": "The k=0 factor-two endpoint, ordered bucket intervals for k=1,...,13, and all 91 exact bucket load identities b_i+2(1-b_(i-1))=gamma_k. Arbitrary depths and exact-cost LP recovery remain symbolic."
+        }
+      ]
+    },
+    {
+      "id": "two-size-scheduling",
+      "path": "problems/two-size-scheduling",
+      "evidence_note": "problems/two-size-scheduling/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_profile_certificates.py",
+          "scope": "The d=2 quota subcheck covers K=1,...,399: the exact one-unit gate for K<=2 and K/(K-ceil(K/2))<=3 for K>2. This is arithmetic evidence only; it does not execute support selection, branching or recovery. It does not test the separate five-thirds rank algorithm."
+        }
+      ]
+    },
+    {
+      "id": "two-time-scheduling",
+      "path": "problems/two-time-scheduling",
+      "evidence_note": "problems/two-time-scheduling/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "tools/verify_profile_certificates.py",
+          "scope": "Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. Target-dependent masks and zero-time feasibility are not tested."
+        }
+      ]
+    },
+    {
+      "id": "many-size-scheduling",
+      "path": "problems/many-size-scheduling",
+      "evidence_note": "problems/many-size-scheduling/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "commitment-scheduling",
+      "path": "problems/commitment-scheduling",
+      "evidence_note": "problems/commitment-scheduling/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "strong-haxell-matching",
+      "path": "problems/strong-haxell-matching",
+      "evidence_note": "problems/strong-haxell-matching/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "independent-transversal",
+      "path": "problems/independent-transversal",
+      "evidence_note": "problems/independent-transversal/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "allocation-lower-bounds",
+      "path": "problems/allocation-lower-bounds",
+      "evidence_note": "problems/allocation-lower-bounds/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": []
     }
   ]
 }

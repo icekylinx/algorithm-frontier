@@ -1,19 +1,17 @@
 # Two-scenario robust allocation hardness
 
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Exact positive service for a common player basis is W[1]-hard when parameterized by the corank `c`, even with two scenarios and free Boolean recipient resources. |
-| **Objective and output** | Decide whether one common basis can receive one unit in both scenarios; the reduction distinguishes robust optimum `1` from `0`. |
-| **Time** | The reduction is polynomial in the explicit instance and parameter-preserving with `c=k`; an `F(c) poly(H)` finite-factor algorithm would imply `FPT=W[1]`. |
-| **Space** | Polynomial-size explicit reduction; no algorithmic workspace bound is claimed for the hardness statement. |
-| **Parameters** | `q` is the player count; `r=q-k` is the selected basis rank; `c=k` is the corank; the two scenarios use budgets `C_1=A-T` and `C_2=rL-A+T`, with `A=sum_i a_i` and `L=A+1`. |
-| **Model and representation** | Two explicit scenarios, a uniform player matroid, free Boolean recipient ranks, unit values, zero setup fees, and scenario-adaptive allocations. |
-| **Lower-bound scope** | The W[1]-hardness is conditional on the named parameterization and does not imply a whole-ground exponential lower bound. |
-| **Scope** | The reduction distinguishes robust optimum `1` from `0`; it does not claim a whole-ground exponential lower bound or hardness for relaxed budgets. |
-| **Complexity consequence** | Under `FPT != W[1]`, no algorithm with running time `F(c) poly(H)` can guarantee a finite multiplicative approximation for the exact-admission problem in this model. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. See the [allocation/robustness review](../../reviews/backlog/allocation-robustness.md). |
-| **Source** | [Two-scenario unit-budget obstruction](../../sources/checkpoint-q/two_scenario_unit_budget_corank_obstruction.md). |
+| **Guarantee** | Exact positive service on a common player basis is W[1]-hard in corank $c$, even with two scenarios and free Boolean recipient resources. |
+| **Objective and output** | Distinguish robust integer optimum one from zero, with the same selected basis in both scenarios and separate adaptive allocations. |
+| **Time** | The reduction is polynomial and preserves the parameter as $c=k$. Under $\mathrm{FPT}\ne\mathrm{W}[1]$, no $F(c)\operatorname{poly}(H)$ finite-factor algorithm exists for this exact-budget positivity model. |
+| **Space** | A polynomial-size explicit reduction; no algorithmic workspace upper bound is claimed. |
+| **Parameters** | $q$ is the player count; $r=q-k$ is the selected uniform-matroid rank; $A=\sum_i a_i$; $L=A+1$. The two budgets are $C_1=A-T$ and $C_2=rL-A+T$. |
+| **Model and representation** | Two explicit scenarios, a uniform player matroid, unit values, free Boolean recipient ranks, nonnegative assignment costs, zero setup fees, and exact scenario budgets. |
+| **Lower-bound scope** | The W[1] consequence concerns parameterized exact-budget positivity. It does not imply a whole-ground exponential lower bound or a lower bound with relaxed budgets. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
 
-**Finite reduction check.** [`tools/verify_finite_reductions.py`](../../tools/verify_finite_reductions.py) exhaustively checks the budget equivalence on small integer instances; it does not prove the hardness theorem.
+The [finite reduction check](../../tools/verify_finite_reductions.py) verifies the two budget inequalities on small integer instances. The symbolic proof establishes the reduction for arbitrary input.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

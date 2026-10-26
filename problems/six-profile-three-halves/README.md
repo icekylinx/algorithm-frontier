@@ -1,15 +1,15 @@
 # Six-profile exact three-halves scheduling
 
-| Field | Curated statement |
+| Field | Result |
 |---|---|
-| **Guarantee** | Returns a schedule with makespan at most one and one-half times the original integer optimum. |
-| **Objective and output** | Minimize makespan for arbitrary unrelated processing profiles with mandatory original job totals and the exact assignment-budget accounting; output an integral schedule. |
-| **Time** | Enumerates six target profiles per physical machine, giving an exponential factor in the machine count multiplied by polynomial work in the full encoded input. The base six is a construction bound, not an optimality claim. |
-| **Space** | Polynomial binary workspace in the input, profile state, and integral-decomposition output. |
-| **Parameters** | `q` is the number of physical machines; `H` includes all binary data and paid profile/oracle work; `T` is the target makespan used by the profile LP; mandatory job totals and the exact assignment budget remain part of the instance. |
-| **Model and representation** | Arbitrary processing profiles, integral recipient polymatroids, mandatory original totals, and the cost-preserving rounding interface stated by the source. |
-| **Lower-bound scope** | No lower bound is claimed; the six-profile base is not asserted to be optimal. |
-| **Review status** | Internally reviewed research; no formal verification or external peer review is claimed. The proof and algorithm follow-up is tracked in the [scheduling-profile review](../../reviews/backlog/scheduling-profile-records.md). |
-| **Source** | [Six-profile three-halves construction](../../sources/checkpoint-q/arbitrary_processing_six_profile_three_halves.md) and the verification paths in `sources.md`. |
+| **Guarantee** | Returns an integer schedule with makespan at most $3\operatorname{OPT}/2$ while preserving every original job total and the exact assignment-cost budget. |
+| **Objective and output** | Minimize maximum load for arbitrary machine-type processing times; output a full original schedule. |
+| **Time** | $6^q\operatorname{poly}(H)$, with six profiles per physical machine. |
+| **Space** | Polynomial in the complete binary input and paid oracle workspace; numerical resource multiplicities are not expanded into individual units. |
+| **Parameters** | $q$ is the physical-machine count. $H$ includes original processing times, costs, binary job totals, recipient-rank descriptions, and paid profile, LP, intersection, and rounding work. |
+| **Model and representation** | Arbitrary nonnegative rational processing times and assignment costs, integral job polymatroids, eligibility masks, mandatory original bases, and one exact budget. |
+| **Lower-bound scope** | No lower bound or optimality claim is made for the base six. |
+| **Review status** | The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed. |
+| **Source** | [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md). |
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

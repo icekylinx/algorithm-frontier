@@ -1,14 +1,23 @@
-# Source map
+# Sources and proof dependencies
 
-- `sources/checkpoint-o/log_barrier_incremental_scc.md`
-- `sources/checkpoint-o/log_barrier_scc_independent_audit.md`
-- `sources/checkpoint-o/transfer_public_baselines.md`
-- `sources/checkpoint-o/topological_order_transpose_interface_gap.md`
+## Canonical manuscripts
 
+- [Incremental SCCs with a one-sided logarithmic flow barrier](proof.md)
 
----
+## Linked mathematical dependencies
 
-**Curated by:** Yilin Liu  
-**Signature:** GPT-6 Astra Pro  
-**Date:** 2026-10-25  
-**Status:** internally reviewed research; no formal verification or external peer review.
+These manuscripts contain the interfaces, auxiliary arguments or source
+comparisons referenced by this result. Their stated hypotheses remain
+part of each use; an interface analysis does not supply an omitted backend.
+
+- [A direct exact solver for small local detector instances](../../manuscripts/graph-backends/small-local-detector-exact-solver.md)
+- [Topological ordering: a valid transpose reduction and its missing interface](../../manuscripts/graph-backends/topological-order-transpose-interface-gap.md)
+
+## Evidence and provenance
+
+The [verification note](verify/README.md) states the scope of executable
+evidence and the remaining mathematical dependencies. The
+[import record](../../provenance/README.md) preserves source revisions,
+canonical paths, attribution and applicable licenses.
+
+**Attribution:** Yilin Liu · GPT-6 Astra Pro.

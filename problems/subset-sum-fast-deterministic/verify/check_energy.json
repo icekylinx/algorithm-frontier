@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "cases": 132,
+  "output_patterns": 1056,
+  "scope": "Exact local rank-three identities and pruned contractions versus binary endpoint enumeration, including signed/repeated/zero weights, exact-zero exclusion and boundary offsets."
+}

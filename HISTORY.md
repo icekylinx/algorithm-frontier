@@ -1,11 +1,22 @@
 # History
 
-## 2026-10-26 — Repository consolidation
+## 2026-10-26 — Formal manuscripts and complete result catalogue
 
-- Removed the generated overview PDF and its LaTeX build files. The Markdown results catalogue is the maintained entry point.
-- Began a complete manuscript and theorem audit, including the latest 38-paper increment.
+- Removed `overview.pdf` and its obsolete build sources in [93830a3](https://github.com/icekylinx/algorithm-frontier/commit/93830a3faa8c43e235e9cbb5b76162b0960bd318).
+- Replaced proof-map placeholders with full theorem-and-proof manuscripts, promoted the former X-family drafts, and merged the faster Subset Sum refinement into its main problem record. There are now 53 canonical result families.
+- Rebuilt the README from a validated catalogue containing every family and 18 additional supporting results. The complete proof index includes all companion and shared manuscripts.
+- Consolidated the checkpoint trees into semantic manuscript paths, integrated superseded source copies, removed redundant review pointers and broken verification wrappers, and retained imported licenses and canonical provenance mappings.
+- Preserved results that were absent from the old display, including the two-short-range Subset Sum branch, slot-surplus scheduling, optional-player intrinsic allocation, safe machine contraction, eligibility/collision refinements, exact-two parameter boundaries, and expander packing.
+- Corrected allocation and scheduling scope and accounting: activated-basis enumeration, bucket bases, fixed-integer two-time parameters, exact fractional comparators, full original resource totals, and the separation between compulsory and optional players.
+- Clarified graph backend assumptions, positive-length SSSP scope, the five-point APSP tradeoff, separate spanner recourse regimes, and the derived public MSF baseline. General matching retains its explicit Contract R condition.
+- Formalized the laminar quadratic bound and the numeric-target budget classification; retained distinctions between oracle-query and explicit-input lower bounds, kernel size and construction time, and weighted versus rank-only interfaces.
+- Reconstructed a self-contained exact continuous-domain Subset Sum checker. Its full refined menu passed all 44 branches with 188,227 accepted leaves. A separate exact scalar checker verifies 104 one-sided profile comparisons and the outer exponent ledger.
+- Added scoped profile, sensitivity and quotient-rounding checks, retained the substantive low-space and energy certificates, and accelerated the exhaustive two-scenario reduction check without changing its finite coverage.
+- Unified evidence notes and the machine-readable registry across all 53 families. Added one standard-library repository check command and a manual full-contact replay mode in CI.
 
-This is an append-only curation log. It records repository organization and presentation changes; it does not replace the source manifests or the mathematical review notes.
+The entries below describe the repository at their historical commits. Earlier
+source paths and draft statuses in those entries are not the current layout.
+This log does not replace the mathematical statements or import manifests.
 
 ## 2026-10-25 — complete checkpoint X review pass
 
@@ -30,7 +41,7 @@ Review checkpoint X payloads family by family. Promote a draft only after proof,
 
 ## 2026-10-25
 
-- Reorganized the public reading path around `README.md`, `OVERVIEW.md`, and canonical `CONTENTS.md`.
+- Reorganized the public reading path around `README.md`, [README.md](README.md), and canonical `CONTENTS.md`.
 - Adopted portable plain-text complexity on GitHub-facing pages; source manuscripts retain original notation.
 - Added result priority tiers and a continuous discovery/maintenance loop.
 - Integrated the numeric-target frontier as a Tier A R/S incremental record, with parent-aware source directories and verification notes.
