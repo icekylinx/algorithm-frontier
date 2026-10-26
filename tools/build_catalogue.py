@@ -152,7 +152,7 @@ def render_readme(data: dict) -> str:
         "[Review and verification](reviews/README.md) · "
         "[Citation](CITATION.cff)", "",
         "## Selected results", "",
-        "Two deterministic algorithms and one cone sparsification theorem. The linked " 
+        "Two deterministic algorithms and one cone sparsification theorem. The linked "
         "problem pages give "
         "the full statements, proof dependencies, executable coverage and review status.", "",
     ]
