@@ -2,8 +2,8 @@
 % Compile with: python3 tools/build_papers.py --paper rank-adaptive-matroids
 \input{manuscripts/paper-style.tex}
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\hypersetup{pdftitle={A Fixed Rank-Loss Contraction for Matroid Failure Summaries},pdfauthor={Yilin Liu}}
-\title{A Fixed Rank-Loss Contraction\\for Matroid Failure Summaries}
+\hypersetup{pdftitle={Rank-Adaptive Failure Summaries in Oracle Matroids},pdfauthor={Yilin Liu}}
+\title{Rank-Adaptive Failure Summaries\\in Oracle Matroids}
 \author{Yilin Liu}
 \date{26 October 2026}
 \begin{document}
@@ -17,12 +17,21 @@ of size \(r-T\), whose contraction preserves every subsequent failure
 query after reinserting the surviving contracted items. The identity holds
 for every original order prefix, including rank drops. It reduces the
 canonical-basis tree from rank \(r\) to rank \(T\), giving
-\(O(N(r+T^h))\) independence queries when \(T\ge2\), with separate
-polynomial endpoints at \(T=0,1\). At \(T=1\), the sharp retained size
-is \(r+h\). No linear representation of the original matroid is assumed.
+\(O(N(r+T^h))\) independence queries for \(T\ge3\). We then give a
+direct rank-two algorithm with \(O(N+h^2)\) queries and a matching
+worst-case lower bound for computing the exact canonical union when
+\(N\ge h+3\). At residual rank \(T=2\), the total query count becomes
+\(O(Nr+(h+1)^2)\), with the sharp retained size \(r+2h\).
+The rank-one residual requires only one input scan. An additional
+all-label-budget endpoint uses \(N+r_U\ell\) queries at arbitrary rank.
+No linear representation of the original matroid is assumed. Oracle calls
+and ordinary computation have separate explicit bounds.
 \end{abstract}
 \setcounter{secnumdepth}{0}
+\part{A fixed contraction for every failure query}
 \input{\AFGeneratedPath/rank-loss-contraction-for-prefix-summaries.tex}
+\part{Optimal rank-two queries and residual-rank terminals}
+\input{\AFGeneratedPath/optimal-rank-two-prefix-oracle-construction.tex}
 \paragraph{Attribution and review scope.}
 Yilin Liu and GPT-6 Astra Pro. \emph{Algorithm Frontier}, 26 October 2026.
 The fixed order is part of the input contract; changing it may change the

@@ -38,6 +38,16 @@ exchange argument locally. The exchange argument and
 <em>A linear-vertex refinement of the matching-size kernel</em>, Sections
 1–3, in the direct checkpoint of 24 October; the source history below
 distinguishes that proof from the current implementation.
+The actual retained count is <code class="math">c+\nu_{\mathrm{cross}}\leq3\nu(G)</code>;
+this later refinement strengthens the original <code class="math">4\nu</code> accounting.
+The [layered failure extension](reference/fault-tolerant-cover-compression.md)
+repeats maximum crossing matchings on disjoint right grounds, proves
+universal cover-subset and context preservation, and supplies an independent
+matching/cover certificate for every layer.  Its positive-budget asymptotic
+size is already present in Banerjee, Gupta, Raman and Saurabh,
+[*Output Sensitive Fault Tolerant Maximum Matching*, CSR 2022](https://doi.org/10.1007/978-3-031-09574-0_8);
+the local proof does not assume an unspecified expansion routine from that
+paper, and makes no new priority claim for those asymptotic orders.
 A nonbipartite kernel's optional certificate
 uses one failed alternating forest when the empty barrier is insufficient.
 The

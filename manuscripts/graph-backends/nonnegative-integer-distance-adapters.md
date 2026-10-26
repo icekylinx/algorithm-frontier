@@ -212,5 +212,7 @@ The perturbation arguments use the unit gap between zero and a positive
 integer distance. They do not justify the same statements for arbitrary
 real lengths. The spanner wrapper requires a finite logarithmic number
 of positive length classes. Negative lengths are outside all three
-adapters. Existing conditional backend hypotheses, initialization
-charges and path-output obligations remain part of every application.
+adapters. Each source theorem's initialization charges, update-history
+scope, numerical range and path-output obligations remain part of its
+application. The current graph theorems use their linked realized
+algorithms; this reduction does not add a new cycle-search hypothesis.

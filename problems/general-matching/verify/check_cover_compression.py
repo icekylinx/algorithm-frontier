@@ -59,7 +59,7 @@ def check_graph(n: int, edges: list[tuple[int, int]], *, all_bases: bool) -> tup
     assert oracle(n, kernel)(full) == original_opt
     assert len(kernel) <= min(len(edges), c * (c - 1) // 2 + c * c)
     solve_vertices, solve_adjacency = _compress_cover(adjacency, covered)
-    assert len(solve_vertices) == len(set(solve_vertices)) <= 2 * c
+    assert len(solve_vertices) == len(set(solve_vertices)) <= min(2 * c, 3 * original_opt)
     retained_vertices = {compact[index] for index in solve_vertices}
     assert set(cover_vertices) <= retained_vertices
     chosen = retained_vertices - set(cover_vertices)
@@ -148,7 +148,7 @@ def main() -> None:
         raise AssertionError("compression accepted a set that is not a vertex cover")
     print(f"PASS: {graphs} exhaustive graphs in both edge orders; {args.random_cases} seeded graphs")
     print(f"PASS: {covers} covers, {bases} right bases, {subsets} left-subset rank comparisons")
-    print("PASS: general matching, 2c vertex cap, matched-edge contraction bound, and invalid-cover rejection")
+    print("PASS: general matching, min(2c,3nu) vertex cap, matched-edge contraction bound, and invalid-cover rejection")
     print("Scope: production cover compression and its certificate-cost bound; no fast research-backend claim.")
 
 

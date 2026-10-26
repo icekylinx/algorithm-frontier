@@ -57,7 +57,7 @@ the normalization, connected-component decomposition and exact edge kernel
 of Section 3.1. The earlier checkpoint's
 [outside-endpoint compression](reference/cover-compression-proof.md) preserves
 every matchable subset of the computed cover and leaves at most
-<code class="math">4\nu(G_i)</code> vertices for the final exact matching search.
+<code class="math">3\nu(G_i)</code> vertices for the final exact matching search.
 Both the crossing compression and a final bipartite solve use
 Hopcroft–Karp; other final solves use classical Edmonds blossom.
 For nonempty normalized input components <code class="math">G_i</code>, its time is
@@ -77,7 +77,7 @@ It returns the original selected edge IDs and uses <code class="math">O(n+m)</co
 with actual label bytes and comparison costs charged separately. Its
 optional certificate mode has the same bound. Certificate extraction still
 runs on the original edge kernel; with <code class="math">k_i</code> vertices and <code class="math">h_i</code>
-edges there, it costs `O(k_i+h_i)` in the bipartite case and
+edges there, it costs <code class="math">O(k_i+h_i)</code> in the bipartite case and
 <code class="math">O(h_i+k_i(\nu(G_i)+1))</code> otherwise, within the respective
 solve bounds. No matching-number estimate is supplied as input.
 A [separate verifier](reference/verify_certificate.py) checks exact kernel

@@ -157,15 +157,19 @@
         {
           "path": "problems/general-matching/verify/check_bipartite.py",
           "scope": "74,963 exhaustive bipartite graphs, 300 seeded cases in both side orientations, eight explicit rejection cases and six native/branch/deep-path cases. The phase solver is compared with independent subset matching, including a 2,400-matched-edge augmenting path, and its output uses the unchanged independent certificate verifier."
+        },
+        {
+          "path": "problems/general-matching/verify/check_failure_kernel.py",
+          "scope": "76 exhaustive graphs and 48 seeded graphs; 3,950 independently verified universal kernels, 3,295 maximum crossing layers, 16,451 charged-failure cases, 158,734 left-subset ranks and 727,954 general matching comparisons including uncharged cover/internal deletions. Exact sharp stars, huge budgets, native IDs, certificate corruption and optimized-Python CLI behavior are checked."
         }
       ],
       "review": {
         "status": "ready",
-        "scope": "The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable edge retirement, finite-bit implementation and uniform parameter search. The separate executable package includes exact matching, independent optimality certificates, the early checkpoint’s four-times-matching-number compression, and the newly implemented nonrecursive bipartite phase algorithm. Sharp cover-neighbor, mixed-failure and subcubic reductions retain their own proved scopes.",
+        "scope": "The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable retirement, finite-bit realization and uniform search. The separate executable package includes exact matching, independent optimality certificates, the refined 3nu vertex count for the earlier compression, nonrecursive bipartite phases, and universal mixed-failure kernels with all-cover-subset and context preservation. Layer matching/vertex-cover witnesses certify every permitted failure query without enumeration.",
         "date": "2026-10-26",
         "conditions": [
           "Named published deterministic primitives are explicit proof dependencies; the local realization theorem discharges the abstract cycle-search contract. The shipped reference implementation has a separate polynomial bound and does not implement the entire fast research construction.",
-          "The mixed-failure kernel concerns a fixed simple graph. Native parallel records and correlated failure labels are separate models. Readiness is a mathematical review invitation, not proof-assistant verification."
+          "Failure kernels concern a fixed simple graph and native edge/vertex faults; arbitrary cover deletions and attached cover contexts are proved separately. Correlated failure labels and native parallel records are different models. The O(nu f) positive-budget vertex order is credited to the published 2022 result. Readiness is a mathematical review invitation, not proof-assistant verification."
         ]
       }
     },
@@ -373,15 +377,24 @@
         {
           "path": "problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py",
           "scope": "Independent original-prefix rank tables and arbitrary-surviving-subset rank identities. The completed full small suite contains 86,359 ordered/labelled instances from all 92 matroids through four items; a separate 230-instance suite includes the nonrepresentable obstruction, private blocks, unlabelled coloops and sharp T=1 chains. Default CI uses the documented smaller domain; --full repeats all four-item partitions and orders."
+        },
+        {
+          "path": "problems/matroid-failure-summaries/verify/check_rank_two_prefix.py",
+          "scope": "The exact rank-two canonical union and every failure witness are compared to original-prefix rank tables. The full run has 66,301 ordered-labelled instances, 258,186 budgets and 2,391,458 prefix comparisons; 250 larger instances, 72 hidden-pair/loop oracle variants, and 102 higher-rank all-label-budget instances test the explicit query ledgers and endpoint. Default CI uses the documented smaller domain."
+        },
+        {
+          "path": "problems/persistence-failure-certificates/verify/check_feature_construction.py",
+          "scope": "Independent small monomial expansions and exact column-rank/pivot comparisons, then all allowed finite failures and original-order prefix spans over rational and prime fields. The larger run covers 2,288 module cases, 240 represented instances, 308 simplicial instances and 12,566 prefix states; large formal-dimension fixtures exercise actual-rank construction. The finite-field extension and naturality arguments remain explicit mathematical proofs."
         }
       ],
       "review": {
         "status": "ready",
-        "scope": "Main Theorems 1–7: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure endpoint; explicit weighted obstruction; faster canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima and minimality of the 13-item example. Includes the sharp singleton-replacement bound r+2t, its failed-contracted-item proof, and the profile-sensitive construction with N(1+ell_0+binom(t+1,2)) queries. The fixed rank-loss contraction theorem preserves every failure basis and original prefix, reduces the tree parameter to the total single-failure replacement count T and proves the sharp r+h endpoint at T=1.",
+        "scope": "Main Theorems 1–8 and the actual-rank represented construction: represented prefix lift; sharp oracle-rank and integral-value constructions; one-failure endpoint; weighted obstruction; canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima; singleton replacement profiles; fixed rank-loss contraction and all-prefix identities. The new rank-two exact-union algorithm has optimal Theta(N+h^2) queries in its stated range, sharp r+Th support for T<=2 after contraction, actual-residual-rank terminals and an arbitrary-rank all-label-budget endpoint.",
         "date": "2026-10-26",
         "conditions": [
           "Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification.",
-          "The rank-loss contraction in this review uses one label per item and a fixed total order. The query ledger charges the original oracle separately from explicit query-set representation; a changed cost order may require another contraction."
+          "The rank-loss contraction in this review uses one label per item and a fixed total order. The query ledger charges the original oracle separately from explicit query-set representation; a changed cost order may require another contraction.",
+          "The rank-two query lower bound requires the exact canonical union and N>=h+3; arbitrary valid supersets are outside that hardness claim. Oracle calls, ordinary work and query-set encoding are separate. The actual-rank linear construction uses explicit fields; its reference supports rationals and supplied primes, with general extension-field and bit costs proved separately."
         ]
       }
     },
@@ -404,7 +417,21 @@
       "path": "problems/persistence-failure-certificates",
       "evidence_note": "problems/persistence-failure-certificates/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/persistence-failure-certificates/verify/check_feature_construction.py",
+          "scope": "Independent small monomial expansions and exact column-rank/pivot comparisons, then all allowed finite failures and original-order prefix spans over rational and prime fields. The larger run covers 2,288 module cases, 240 represented instances, 308 simplicial instances and 12,566 prefix states; large formal-dimension fixtures exercise actual-rank construction. The finite-field extension and naturality arguments remain explicit mathematical proofs."
+        }
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "Complete actual-feature-rank construction for represented failure lifts and the vertex-label persistence specialization with no extra top-simplex labels. Includes the degree-bounded evaluation module, canonical column pivots, nonzero shifts, shared original boundary-row compression, streamed column generation, surviving prefix spans and naturality, with exact arithmetic and storage ledgers.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The reviewed persistence construction keeps the full lower skeleton and one supplied order over the stated field. Additional top labels retain the separate general incidence theorem. Top-degree homology, integral torsion, dynamic labels and a common solution for unrelated filtration/cost orders are not asserted.",
+          "Executable checks use rationals and supplied prime fields. The general finite-field extension and rational bit analysis are explicit mathematical components. Finite span checks supplement the naturality proof; they are not proof-assistant verification."
+        ]
+      }
     },
     {
       "id": "boolean-linear-compiler",

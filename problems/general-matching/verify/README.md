@@ -51,7 +51,7 @@ The dedicated compression check invokes the actual implementation on
 and 2,882,175 cover-subset ranks by independent subset dynamic programming.
 Its exhaustive scope is all simple graphs through six vertices in both
 fixed edge orders; 500 seeded graphs on seven through thirteen vertices
-follow. It also verifies the general matching optimum, the <code class="math">2c</code> vertex
+follow. It also verifies the general matching optimum, the <code class="math">\min\{2c,3\nu\}</code> vertex
 cap, the matched-edge bound on certificate contractions and explicit
 rejection of an invalid cover. The full solver check includes a connected
 420-vertex graph reduced to 40 bipartite solve vertices, with its certificate
@@ -104,6 +104,40 @@ justify discarding parallel representatives before record-level faults.
 
 The counts describe finite evidence. The displayed proofs establish the
 general reduction statements; this script does not execute the fast backend.
+
+## Universal mixed-failure compression and certificates
+
+The [complete layered proof](../reference/fault-tolerant-cover-compression.md)
+has a [constructor](../reference/failure_kernel.py) and an
+[independent universal verifier](../reference/verify_failure_kernel.py).
+The verifier checks the neighbor reduction and a matching with an equally
+large vertex cover at each residual crossing layer. Acceptance proves
+all permitted failure queries simultaneously, without enumerating those
+queries or running a matching search.
+
+```sh
+python3 problems/general-matching/verify/check_failure_kernel.py
+```
+
+The [checker](check_failure_kernel.py) uses independent subset dynamic
+programming on 76 exhaustive graphs through four vertices and 48 seeded
+larger graphs. It checks all covers, both nontrivial edge orders and
+budgets zero through two in the exhaustive domain, including every
+charged outside-vertex/crossing-edge failure and every cover subset.
+Arbitrary cover-vertex and cover-internal-edge deletions are uncharged.
+The completed run covers 3,950 certified kernels, 3,295 maximum layers,
+16,451 charged scenarios, 158,734 left-subset ranks and 727,954 general
+matching comparisons.
+
+Sixteen star instances attain the two separately scoped vertex bounds.
+Two examples use the budget <code class="math">10^{1000}</code> without allocating a budget-sized
+universe. Native integer/string IDs, omitted and explicit-null IDs,
+26 certificate corruptions, 17 constructor rejections and nine verifier
+input rejections are covered. A real constructor/verifier CLI roundtrip
+under `python -O` accepts valid output and rejects tampering and loops.
+The general theorem covers arbitrary graph attachments through the cover;
+its proof follows from the all-left-subset identity and does not require
+enumerating those contexts.
 
 ## Ready for review: the deterministic four-fifths construction
 

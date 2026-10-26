@@ -150,7 +150,7 @@ transfers both counters before invalidating old metadata. Numerical
 forests have one mutable history; integral carrier persistence is a
 separate worst-case data structure.
 
-## 6. Why the work is small, and what must still be true
+## 6. Work bounds and the supplied interfaces
 
 The factor-critical proof is [factor-critical-contractions.md](factor-critical-contractions.md). Exact
 ledger/debt/erasure identities are in [ledger-algebra-and-phase-budget.md](ledger-algebra-and-phase-budget.md).
@@ -164,8 +164,11 @@ reset changes only O(P) records and recovers the FULL residual cut.
 [deterministic-phase-cost-and-guards.md](deterministic-phase-cost-and-guards.md) proves the complete sum:
 structural volume O_a(N), objective-paid pricing, large-jump parent
 debt, all reset padding, initialization and first incomplete attempts.
-Conditional on the stated numerical interfaces, a phase costs
+With the stated numerical interfaces, a phase costs
 N^(1+O(1/a)+o_a(1)) with an absolute coefficient in O(1/a).
+The [main realization theorem](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization)
+supplies the complete dynamic cycle-search interface. Its binary-ledger
+specialization gives the stronger four-fifths envelope in the main proof.
 
 For one uniform program, interleave these finite parameter branches
 with a classical deterministic branch. Charge every instruction,
@@ -174,8 +177,9 @@ matching and perform one independent augmenting-path search before
 acceptance, as specified in
 [deterministic-uniformization-by-optimality-check.md](deterministic-uniformization-by-optimality-check.md).
 
-The fixed-exponent and uniform time conclusions follow only
-if all the named mathematical contracts hold. Independent acceptance
-guarantees correct output even if a fast branch fails; it does not
-establish the improved running time. The classical branch supplies
-termination and a fallback time bound in that case.
+The fixed-exponent and uniform time conclusions use the named
+mathematical constructions and published source results. Independent
+acceptance guarantees correct output even if a guarded branch fails;
+the construction proofs establish the improved running time on a
+favorable fixed branch. The classical branch also supplies termination
+on finite exceptional sizes.

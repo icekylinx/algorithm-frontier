@@ -1,6 +1,6 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/matroid-failure-summaries/proof.md
-% Recovered-source SHA-256: 45390a17c459921c6d66b8fc0181c30667abbfed7969aa183fea70b53e759941
+% Recovered-source SHA-256: 290fca0b40756359031b01e2e74a4a445bdba8cfcfc70b83471b06834c795862
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
 % Shared original Subset Sum preamble: manuscripts/paper-style.tex.
@@ -187,9 +187,31 @@ Every proved rank-based support bound now applies at rank \(T\), followed by rei
 
 The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md}{complete contraction proof} includes the joint-independence argument, the contraction/deletion equality, the original-prefix identity, query-set costs, the binary-budget cutoff, and the \(T=0,1\) cases. It makes no representation assumption, and it keeps the item order fixed. This proves Theorem 7.
 
+\hypertarget{af-240b5086c5-optimal-queries-at-residual-rank-at-most-two}{%
+\subsection{9. Optimal queries at residual rank at most two}\label{af-240b5086c5-optimal-queries-at-residual-rank-at-most-two}}
+
+\textbf{Theorem 8.} At rank at most two and with at most one label per item, the exact union of canonical surviving bases can be constructed using
+
+\[
+2N+\binom{k+1}{2}+(k+1)^2
+\]
+
+independence queries, where \(k\) is the failure budget clipped to the number of labels on nonloops. The output has at most \(2(k+1)\) items. For \(N\ge h+3\), computing this exact union requires \(\Omega(N+h^2)\) queries in the worst case.
+
+\textbf{Proof.} The first surviving nonloop belongs to the first \(k+1\) distinct-label first occurrences, stopping at an unlabelled nonloop. Classify these candidates into parallel classes. For each candidate class, retain the first \(k+1\) distinct-label occurrences outside the class, again stopping at an unlabelled item. Each successful pair query adds an entry to one of these bounded lists. Each input item is parallel to at most one representative, so at most \(N\) pair queries fail. Together with the singleton and classification scans, this gives the displayed bound. Exact unions of the labels preceding the first and second candidates characterize feasible witnessing failures. Lemmas 3--5 of the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md}{complete proof} prove both directions, including repeated labels and rank decreases.
+
+For the lower bound, use \(h+3\) rank-two uniform core items. Making any one pair among the first \(h+2\) items parallel changes whether the last item belongs to the summary, and only a query of that pair distinguishes it. Prepending \(N-h-3\) loops supplies independent single-loop variants, each requiring a further distinguishing query. Theorem 2 of the companion proves this oracle adversary in full. Its lower bound requires the exact minimum output, since returning the entire ground needs no oracle calls. \hfill\(\square\)
+
+Combine Theorem 8 with Theorem 7's fixed contraction. For \(T=2\) the total query count is \(O(Nr+(h'+1)^2)\), and the sharp retained size is \(r+2h\). For \(T=1\), the residual summary requires only \(N'\) singleton queries. The same direct algorithms terminate basis-tree nodes whenever their actual surviving rank drops to one or two. The companion also proves the arbitrary-rank endpoint \(N+r_U\ell\) when every label may fail. Ordinary computation, query-set encoding, and oracle calls retain their separate ledgers.
+
+\hypertarget{af-240b5086c5-building-represented-lifts-in-their-actual-rank}{%
+\subsection{10. Building represented lifts in their actual rank}\label{af-240b5086c5-building-represented-lifts-in-their-actual-rank}}
+
+Let \(\rho\) be the row rank of the formal polynomial-label lift in Theorem 1. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md}{evaluation-module construction} starts with \(r\) independent original rows and expands only accepted coordinatewise products, in nondecreasing degree. Rejected degree-\(t\) rows are combinations of accepted rows of degree at most \(t\), so all their required children lie in the span generated at the next degree. Theorem 1 of that manuscript proves equality with the full truncated module and identifies its earliest row pivots with the ordered column basis. At most \(r+d\rho\) candidate rows are considered. Thus \(O(N\rho(r+d\rho))\) field operations suffice after the explicit input row selection and coefficient generation, even when the ambient lift would be larger than the input. This construction retains exactly \(\rho\) columns and preserves every surviving prefix; it does not claim that this represented lifted basis is always the minimum original summary.
+
 \hypertarget{af-240b5086c5-complete-proofs}{%
 \subsection{Complete proofs}\label{af-240b5086c5-complete-proofs}}
 
-\href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md}{Represented lift and field construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md}{arbitrary-matroid and submodular proofs}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md}{weighted oracle FPT construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md}{weighted two-failure obstruction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure profile bounds and exact rank-four maximum}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md}{rank-loss contraction and all-budget adaptive bounds}.
+\href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md}{Represented lift and field construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md}{arbitrary-matroid and submodular proofs}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md}{weighted oracle FPT construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md}{weighted two-failure obstruction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure profile bounds and exact rank-four maximum}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md}{rank-loss contraction and all-budget adaptive bounds}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md}{optimal rank-two oracle construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md}{actual feature-rank construction}.
 
 \textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

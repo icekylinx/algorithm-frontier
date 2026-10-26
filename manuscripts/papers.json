@@ -30,9 +30,10 @@
       "sources": [
         "problems/general-matching/reference/certificate-proof.md",
         "problems/general-matching/reference/cover-compression-proof.md",
-        "problems/general-matching/reference/bipartite-proof.md"
+        "problems/general-matching/reference/bipartite-proof.md",
+        "problems/general-matching/reference/fault-tolerant-cover-compression.md"
       ],
-      "scope": "Complete polynomial reference matching certificates, cover compression and bipartite acceleration; no faster cycle-search implementation claim"
+      "scope": "Complete polynomial reference matching certificates, three-times-matching-number compression, bipartite acceleration and universally certified mixed-failure kernels; no faster cycle-search implementation claim"
     },
     {
       "id": "two-failure-matroids",
@@ -49,10 +50,11 @@
       "wrapper": "problems/matroid-failure-summaries/rank-adaptive-paper.tex",
       "output": "problems/matroid-failure-summaries/rank-adaptive-paper.pdf",
       "sources": [
-        "problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md"
+        "problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md",
+        "problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md"
       ],
       "heading_numbers": "source",
-      "scope": "Complete fixed rank-loss contraction for one-label ordered matroid failure summaries, all-prefix identities, rank-adaptive deterministic construction and sharp rank-one residual endpoint"
+      "scope": "Complete fixed rank-loss contraction and all-prefix identities, optimal rank-two exact-summary query complexity with its scoped lower bound, sharp low-residual-rank support bounds and the arbitrary-rank all-label-budget endpoint"
     }
   ],
   "source_date_epoch": 1792972800

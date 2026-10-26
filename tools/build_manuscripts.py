@@ -49,6 +49,11 @@ SOURCES = [
     'problems/degree-constrained-subgraphs/linear-selector.md',
     'problems/boolean-linear-compiler/manuscripts/cardinality-and-modal-interval-compilation.md',
     'problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md',
+    'problems/general-matching/reference/fault-tolerant-cover-compression.md',
+    'problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md',
+    'problems/persistence-failure-certificates/proof.md',
+    'problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md',
+    'problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md',
 ]
 MANIFEST = ROOT / 'manuscripts' / 'tex-exports.json'
 

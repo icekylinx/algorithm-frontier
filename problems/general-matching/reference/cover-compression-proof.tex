@@ -1,6 +1,6 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/general-matching/reference/cover-compression-proof.md
-% Recovered-source SHA-256: 7e560138fee8aa100dc6cb0c64b1447824bdddf49ed2c264f8fc87a082286ff0
+% Recovered-source SHA-256: 8efb905af69afa7fd13267065cd8c1da6ca343492232421dd180b12a2a46e400
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
 % Shared original Subset Sum preamble: manuscripts/paper-style.tex.
@@ -37,6 +37,14 @@ Now take any matching in the general graph \(H\). Keep its \(C\)--\(C\) edges. I
 
 The lemma holds for \textbf{any maximum} crossing matching. It preserves every matchable left subset simultaneously, including subsets chosen after \(T\) is fixed. A merely maximal crossing matching is insufficient.
 
+\textbf{Sharper matching-number accounting.} The retained size is exactly \(|C|+|Q|\), and \(Q\) itself is a matching of the original graph. Thus, when \(C\) consists of the endpoints of a greedy maximal matching,
+
+\[
+|V(J)|=|C|+|Q|\leq\min\{2|C|,3\nu(H)\}.
+\]
+
+This improves the earlier checkpoint's \(4\nu\) accounting for the unchanged construction. It is tight for this construction on disjoint two-leaf stars: one leaf enters the cover with its center and the other enters through the crossing matching. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/fault-tolerant-cover-compression.md}{failure extension} gives the full layered version and its exact bounds.
+
 \hypertarget{af-e51d4b9b02-apply-the-edge-kernel-before-computing-the-crossing-matching}{%
 \subsection{2. Apply the edge kernel before computing the crossing matching}\label{af-e51d4b9b02-apply-the-edge-kernel-before-computing-the-crossing-matching}}
 
@@ -49,7 +57,7 @@ k_i=|V(H_i)|\leq c_i+c_i^2,
 \qquad \nu(H_i)=\nu(G_i).
 \]
 
-Compute a maximum crossing matching in \(H_i[C_i,V(H_i)\setminus C_i]\) and apply Lemma 1. The graph \(J_i\) given to the final matching search has at most \(2c_i\leq4\nu(G_i)\) vertices. All its edges retain original native input indices and identifiers.
+Compute a maximum crossing matching in \(H_i[C_i,V(H_i)\setminus C_i]\) and apply Lemma 1. The graph \(J_i\) given to the final matching search has at most \(\min\{2c_i,3\nu(G_i)\}\) vertices. All its edges retain original native input indices and identifiers.
 
 The crossing matching uses the implemented Hopcroft--Karp phase algorithm. Each phase freezes its starting matching, finds a maximal family of vertex-disjoint shortest augmenting paths, and flips those paths. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/bipartite-proof.md\#2-the-phase-implementation}{complete phase proof} establishes correctness and the bound \texttt{O((k+h)\ sqrt(nu\_cross+1))}, including one final failed BFS. Here \texttt{nu\_cross\ \textless{}=\ c\_i}, even though the crossing graph may have quadratically many vertices. Consequently \texttt{\_compress\_cover} costs \texttt{O(c\_i\^{}(5/2))} time and \texttt{O(c\_i\^{}2)} storage.
 
@@ -86,7 +94,7 @@ The cubic sum is a uniform upper bound. More precisely, replace the term for eve
 
 The \texttt{-\/-no-kernel} option disables both stages and solves the full normalized components. A bipartite component costs \texttt{O((n\_i+m\_i)\ sqrt(nu(G\_i)+1))}; a nonbipartite component costs \texttt{O(n\_i\^{}3)}. Here \texttt{n\_i,m\_i} are the component's vertex and edge counts. The initial \texttt{O(n+m\ log(m+2))} term remains charged.
 
-This compression is for the current static graph. It is not a replacement for the separately proved simultaneous mixed-failure kernel. A right endpoint set chosen before failures need not preserve later answers: with a one-vertex cover of a star, deleting the one retained crossing edge destroys its matching while another original leaf remains usable. The fault summary must remain intact until a particular failure instance has been fixed.
+This compression is for the current static graph. It is not a replacement for the separately proved simultaneous mixed-failure kernel. A right endpoint set chosen before failures need not preserve later answers: with a one-vertex cover of a star, deleting the one retained crossing edge destroys its matching while another original leaf remains usable. The fault summary must remain intact until a particular failure instance has been fixed. The new \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/fault-tolerant-cover-compression.md}{layered construction} instead retains the right endpoints of \(f+1\) consecutive maximum crossing matchings on disjoint right grounds. It preserves every permitted failure query before any query is chosen and has at most \((f+3)\nu(G)\) vertices.
 
 \hypertarget{af-e51d4b9b02-evidence-and-a-concrete-size-reduction}{%
 \subsection{5. Evidence and a concrete size reduction}\label{af-e51d4b9b02-evidence-and-a-concrete-size-reduction}}

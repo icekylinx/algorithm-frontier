@@ -75,6 +75,47 @@ certificate and returns the verified scope on acceptance. Its
 `require_certificate=False` option only checks feasibility. Informational
 statistics supplied by the solver never serve as certificate evidence.
 
+## A fixed kernel for future native failures
+
+[failure_kernel.py](failure_kernel.py) constructs one subgraph preserving
+every matching optimum after any mixture of at most `f` native vertex or
+edge deletions.  It retains at most <code class="math">(f+3)\nu(G)</code> vertices and
+<code class="math">O(\nu(G)^2+\nu(G)f)</code> edges with its default greedy cover.  A supplied
+cover of size `c` gives the exact bound <code class="math">(f+2)c</code> instead.  Its
+[complete proof](fault-tolerant-cover-compression.md) establishes the
+stronger preservation of every matchable subset of the cover, including
+arbitrary cover deletions and graphs attached through that cover.
+
+The input must be simple and loopless; this constructor rejects parallel
+records instead of dropping native failure identities.  Run the separate
+simple example and universal certificate verifier:
+
+```bash
+python3 -B problems/general-matching/reference/failure_kernel.py \
+  problems/general-matching/reference/failure-example.json --failures 2 \
+  > /tmp/matching-failure-kernel.json
+
+python3 -B problems/general-matching/reference/verify_failure_kernel.py \
+  problems/general-matching/reference/failure-example.json \
+  /tmp/matching-failure-kernel.json
+```
+
+The callable constructor is
+`build_failure_kernel(n, edges, failure_budget, edge_ids=None, *, cover=None)`.
+Its certificate contains a sparse neighbor kernel and consecutive maximum
+crossing matchings, each paired with a vertex cover of the same size.
+The verifier checks those local witnesses and the final induced subgraph;
+it performs no matching search and enumerates no failure queries.
+An accepted result establishes all permitted queries simultaneously.
+The output gives original vertex numbers and native edge IDs.  A particular
+query is answered by deleting its failed objects and solving the retained
+graph; preprocessing alone does not return all future matchings.
+
+The order <code class="math">O(\nu f)</code> in vertices for positive budgets was already proved
+by [Banerjee, Gupta, Raman and Saurabh (2022)](https://doi.org/10.1007/978-3-031-09574-0_8).
+The new package supplies the local layered proof, exact counts, stronger
+interface guarantee and complete universal-certificate implementation.
+
 ## Running time and storage
 
 Let <code class="math">n</code> be the number of named vertices and <code class="math">m</code> the number of input edge
@@ -130,7 +171,7 @@ c_i\leq 2\nu_i.
 The second reduction computes a maximum bipartite matching between
 <code class="math">C_i</code> and the remaining vertices of <code class="math">H_i</code>. Keep only its matched
 outside endpoints <code class="math">T_i</code>, together with the entire cover. The induced
-graph <code class="math">J_i=H_i[C_i\cup T_i]</code> has at most <code class="math">2c_i\leq4\nu_i</code>
+graph <code class="math">J_i=H_i[C_i\cup T_i]</code> has at most <code class="math">\min\{2c_i,3\nu_i\}</code>
 vertices and preserves the general matching optimum. Hopcroft–Karp computes
 this crossing matching in `O(c_i^(5/2))`: its number of matched edges is at
 most `c_i`, even though its vertex count may be quadratic. If `H_i` is
@@ -141,7 +182,7 @@ accelerated; the first stage does not leave a hidden cubic cost.
 The certificate is still constructed and verified on <code class="math">H_i</code>;
 write `k_i=|V(H_i)|` and `h_i=|E(H_i)|`.
 For a bipartite kernel, one alternating reachability search produces a
-minimum vertex cover in `O(k_i+h_i)`, which supplies the existing tight
+minimum vertex cover in <code class="math">O(k_i+h_i)</code>, which supplies the existing tight
 odd-component certificate. For a nonbipartite kernel, extraction costs
 <code class="math">O(h_i+k_i(\nu_i+1))</code>. It uses one simultaneous failed alternating
 forest when an empty barrier is insufficient, with at most <code class="math">\nu_i</code>
@@ -159,6 +200,9 @@ computed covers. `hopcroft_karp_calls`, `hopcroft_karp_phases`, and
 `hopcroft_karp_bfs` include both crossing compression and final bipartite
 solves. Each call has exactly one more BFS than successful phases.
 None of these counters is trusted by the verifier.
+The sharper <code class="math">3\nu_i</code> vertex accounting follows because the number of retained
+outside endpoints equals a crossing matching's size, hence is at most <code class="math">\nu_i</code>.
+The old <code class="math">4\nu_i</code> estimate used only the weaker bound <code class="math">&#124;T_i&#124;\leq c_i</code>.
 A path on 20 cover vertices, each with 20 private leaves, has 420 vertices
 and 419 edges. With the specified greedy order, its first kernel retains
 all 420 vertices, while the second stage needs only 40 bipartite solve vertices.

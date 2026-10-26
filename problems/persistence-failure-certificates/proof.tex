@@ -1,0 +1,76 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/persistence-failure-certificates/proof.md
+% Recovered-source SHA-256: 08daba67b3991f49b543e33b58ba805283a08093cb7c21aaf33526d58aefac2f
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-ca17aac320-exact-persistent-homology-under-correlated-failures}{%
+\section{Exact persistent homology under correlated failures}\label{af-ca17aac320-exact-persistent-homology-under-correlated-failures}}
+
+\hypertarget{af-ca17aac320-theorem}{%
+\subsection{1. Theorem}\label{af-ca17aac320-theorem}}
+
+Let a finite complex have top dimension \(p\ge1\), \(N\) top simplices, and top boundary matrix \(A\) of rank \(r\) over the rationals or an explicitly represented finite field. Each vertex has at most \(a\) failure labels; each top simplex has at most \(b\) extra labels. At most \(h\) labels fail, removing their vertices and cofaces and their labeled top simplices.
+
+A deterministic uniformly polynomial construction retains at most \[
+\min\left\{N,r\binom{h+a+b}{a+b}\right\}
+\] original top simplices, together with the full original lower skeleton. For one supplied filtration, the inclusions induce isomorphisms of persistence modules in all degrees at most \(p-1\), after every allowed failure. A separate cost-ordered construction contains every canonical minimum-cost surviving boundary basis. Independent filtration and cost orders require separate constructions.
+
+\hypertarget{af-ca17aac320-incidence-lemma}{%
+\subsection{2. Incidence lemma}\label{af-ca17aac320-incidence-lemma}}
+
+Give each row \(i\) a label set \(R_i\), each column \(e\) a label set \(C_e\), and assume \[
+A_{ie}\ne0\Longrightarrow R_i\subseteq C_e,\qquad |C_e\setminus R_i|\le d.
+\] At most \(r\binom{h+d}{d}\) columns suffice to preserve every surviving span at every prefix of one specified order.
+
+\textbf{Proof.} Assign distinct nonzero field points \(x_\lambda\) and define \(g_S(T)=\prod_{\lambda\in S}(1-T/x_\lambda)\). For deficit \(\Delta=C_e\setminus R_i\), list all degree-at-most-\(h\) monomials \(\Phi(\Delta)\) in its at most \(d\) nonconstant coefficients. Failure evaluation \(\prod_{\lambda\in F}g_\Delta(x_\lambda)\) is a linear functional \(\ell_F\) of them.
+
+Select \(r\) independent original rows; their projection \(\pi\) is injective on the full column span. Lift column \(e\) to blocks \(A_{ie}\Phi(C_e\setminus R_i)\) and retain an ordered greedy basis. At a query, apply \(\ell_F\) in block \(i\), multiplied by \(\prod_{\lambda\in F}g_{R_i}(x_\lambda)\). The column image is \[
+\left(\prod_{\lambda\in F}g_{C_e}(x_\lambda)\right)\pi(A_e).
+\] It vanishes exactly on failed columns. Apply the map to prefix-span relations and use injectivity of \(\pi\). The dimension is \(r\binom{h+d}{d}\), proving the lemma. \(\square\)
+
+The dimension gate returns the input before a larger-than-input lift is enumerated. Rational and finite-field implementations use exact polynomial-bit arithmetic as specified in the complete proof.
+
+\hypertarget{af-ca17aac320-homology-and-naturality}{%
+\subsection{3. Homology and naturality}\label{af-ca17aac320-homology-and-naturality}}
+
+For a facet \(\tau\subset\sigma\), use its vertex-label union as \(R_\tau\), and all vertex and own top labels as \(C_\sigma\). The deficit contains labels of only the missing vertex and the top labels, so it has size at most \(a+b\).
+
+At each surviving filtration state, the lemma gives the same top-boundary image. All chain groups through dimension \(p-1\), lower coordinates, and lower boundary maps are literally identical. Their cycle spaces and boundary quotients therefore agree. These coordinate identifications commute with filtration inclusions, proving persistence modules rather than only Betti numbers. Compatible relative complexes and zigzag sequences of allowed inclusion states follow identically.
+
+The lower skeleton is retained, and the chosen coefficient field matters. Top-dimensional homology, integral torsion, and homotopy type are outside the claim.
+
+\hypertarget{af-ca17aac320-exterior-refinements-and-sharpness}{%
+\subsection{4. Exterior refinements and sharpness}\label{af-ca17aac320-exterior-refinements-and-sharpness}}
+
+With one color per vertex and no extra top labels, let \(\ell\) count colors and \(k=\min\{h+1,\ell\}\). Count one additional never-failing color for safe vertices. Then \[
+|H_p|\le\min\left\{N,kr,\binom n{p+1}-\binom{n-k}{p+1}\right\}.
+\] Use contractions by the covectors with values \(1,a_c,\ldots,a_c^{k-1}\) at a vertex of color \(c\). Failure-polynomial evaluation annihilates failed columns. Each contraction block is a diagonal rescaling of the boundary and has rank \(r\); stacking gives \(kr\). Their common kernel on the complete exterior universe is \(\bigwedge^{p+1}W\), where \(W\) is the common kernel of the \(k\) independent covectors. Rank-nullity gives the binomial difference.
+
+For sharpness, filter the complete top skeleton by the minimum vertex of each simplex, and fail the earlier singleton-colored vertices. Each surviving star at its birth is an independent cone basis. The union of these states forces exactly the top simplices meeting the first \(k\) vertices.
+
+For overlapping vertex labels without extra top labels, replace \(k\) by the actual coefficient-feature rank \(s\). The same contraction argument gives \(sr\) and the binomial difference at \(s\). A labeled-cone construction makes the general coefficient \(\binom{h+a+b}{a+b}\) asymptotically necessary.
+
+\hypertarget{af-ca17aac320-constructing-the-actual-feature-rank-without-expanding-the-lift}{%
+\subsection{5. Constructing the actual feature rank without expanding the lift}\label{af-ca17aac320-constructing-the-actual-feature-rank-without-expanding-the-lift}}
+
+For overlapping vertex labels and no extra top-simplex labels, the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md}{complete feature-rank construction} finds the rank \(s\) of all degree-at-most-\(h\) coefficient evaluations without enumerating the \(\binom{h+a}{a}\) monomials. A breadth-first linear-algebra procedure multiplies only accepted independent product rows by the \(a\) coefficient rows. Induction on degree proves that every rejected product and all of its needed descendants are already spanned at their corresponding degrees. At most \(1+as\) candidate rows occur.
+
+Shift each selected feature covector by a constant multiple of the all-ones covector so that it is nonzero at every vertex. This is an invertible change of feature basis. If \(A_i\) is its contraction block, then \(A_i=D_{p-1,i}^{-1}AD_{p,i}\) with invertible diagonal matrices. Consequently one fixed set of \(r\) independent original rows of \(A\) is a row basis for every block. Keeping those rows in every block preserves all dependencies of the full stack.
+
+The resulting \(sr\)-coordinate top columns are generated one at a time, and ordered elimination retains exactly the actual stack rank \(\rho\), where
+
+\[
+\rho\leq\min\left\{N,sr,
+\binom{n}{p+1}-\binom{n-s}{p+1}\right\}.
+\]
+
+After original-row selection and coefficient generation, the field work is \(O(n+ans^2+Ns(p+1)+Nsr\rho)\). The companion separately charges shift comparisons, workspace, rank discovery and exact bit arithmetic. The failure decoder applies to the same full-stack relations, hence Section 3's natural coordinate identifications and persistence-module guarantee apply without change. The construction is deterministic and still retains only original simplices. Additional top labels use the separate general incidence algorithm of Section 2.
+
+\hypertarget{af-ca17aac320-complete-proofs}{%
+\subsection{Complete proofs}\label{af-ca17aac320-complete-proofs}}
+
+\href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md}{Exact persistence, envelopes, and lower bounds}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md}{actual feature-rank construction and streamed contractions}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/correlated-spectral-regression/manuscripts/graded-incidence-and-simplicial-spectral-sparsification.md}{separate fixed-weight real spectral theorem}.
+
+\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

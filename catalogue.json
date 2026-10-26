@@ -146,9 +146,9 @@
         {
           "id": "matroid-failure-summaries",
           "title": "Matroid and submodular failure summaries",
-          "result": "Sharp failure summaries and a fixed contraction reducing the oracle construction to its replacement rank",
-          "quantity": "One-label oracle prefix construction, with $T\\ge2$; $O(N(r+T^h))$; independence queries. At $T=1$, sharp $r+h$ retained items; two failed labels: exact rank-four maximum 13",
-          "scope": "N is the ground size, r the rank, h the failed-label budget and T the sum of single-failure replacement counts. A fixed contraction removes r minus T canonical-basis items and preserves every surviving prefix. The problem page also gives sharp represented-prefix, rank and integral-value bounds, with their distinct models",
+          "result": "Exact canonical prefix summaries with optimal rank-two oracle complexity",
+          "quantity": "Rank two: $\\Theta(N+h^2)$ independence queries for $N\\ge h+3$; fixed residual rank $T=2$: $O(Nr+(h'+1)^2)$ queries",
+          "scope": "N is the number of items, h the failed-label budget and r the original rank. One fixed order and at most one label per item. The rank-two bound computes the exact minimum all-prefix summary and includes a matching oracle-information lower bound. A fixed contraction transfers it to high-rank instances with replacement rank T=2. Ordinary computation and query-set encoding are charged separately; represented, rank-only and integral-value bounds retain their distinct models",
           "randomness": "Deterministic exact constructions. Random permutations and Bernoulli failures appear only in output-size proofs; no query sampling or probability of error."
         },
         {
@@ -171,8 +171,8 @@
           "id": "persistence-failure-certificates",
           "title": "Persistent-homology failure certificates",
           "result": "All surviving boundary spaces and lower-degree persistence modules",
-          "quantity": "$\\min\\{N,r\\binom{h+a+b}{a+b}\\}$ retained top simplices",
-          "scope": "One fixed filtration over the stated field; full lower skeleton retained; homology degrees at most $p-1$",
+          "quantity": "General: $\\min\\{N,r\\binom{h+a+b}{a+b}\\}$ top simplices; no extra top labels: exact lifted rank $\\rho\\le\\min\\{N,sr,\\binom n{p+1}-\\binom{n-s}{p+1}\\}$",
+          "scope": "One fixed filtration over the stated field; full lower skeleton retained; homology degrees at most p-1. The actual feature rank s is constructed without enumerating formal monomials; original boundary and final lift columns are streamed. Field operations, comparisons, bit costs and the separate extra-top-label model are explicit",
           "randomness": "Deterministic uniformly polynomial construction for the explicit complex and supplied coefficient-field representation, valid simultaneously after every allowed failure."
         },
         {

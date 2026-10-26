@@ -52,8 +52,46 @@ For sharpness, filter the complete top skeleton by the minimum vertex of each si
 
 For overlapping vertex labels without extra top labels, replace <code class="math">k</code> by the actual coefficient-feature rank <code class="math">s</code>. The same contraction argument gives <code class="math">sr</code> and the binomial difference at <code class="math">s</code>. A labeled-cone construction makes the general coefficient <code class="math">\binom{h+a+b}{a+b}</code> asymptotically necessary.
 
+## 5. Constructing the actual feature rank without expanding the lift
+
+For overlapping vertex labels and no extra top-simplex labels, the
+[complete feature-rank construction](manuscripts/feature-rank-construction.md)
+finds the rank <code class="math">s</code> of all degree-at-most-<code class="math">h</code> coefficient evaluations
+without enumerating the <code class="math">\binom{h+a}{a}</code> monomials. A breadth-first
+linear-algebra procedure multiplies only accepted independent product
+rows by the <code class="math">a</code> coefficient rows. Induction on degree proves that every
+rejected product and all of its needed descendants are already spanned
+at their corresponding degrees. At most <code class="math">1+as</code> candidate rows occur.
+
+Shift each selected feature covector by a constant multiple of the
+all-ones covector so that it is nonzero at every vertex. This is an
+invertible change of feature basis. If <code class="math">A_i</code> is its contraction block,
+then <code class="math">A_i=D_{p-1,i}^{-1}AD_{p,i}</code> with invertible diagonal matrices.
+Consequently one fixed set of <code class="math">r</code> independent original rows of <code class="math">A</code>
+is a row basis for every block. Keeping those rows in every block
+preserves all dependencies of the full stack.
+
+The resulting <code class="math">sr</code>-coordinate top columns are generated one at a time,
+and ordered elimination retains exactly the actual stack rank <code class="math">\rho</code>,
+where
+
+<!-- math-display: 051df50785e2bf2fe7940776
+\rho\leq\min\left\{N,sr,
+\binom{n}{p+1}-\binom{n-s}{p+1}\right\}.
+-->
+![Formula](../../assets/math/051df50785e2bf2fe7940776.svg)
+
+After original-row selection and coefficient generation, the field work
+is <code class="math">O(n+ans^2+Ns(p+1)+Nsr\rho)</code>. The companion separately charges
+shift comparisons, workspace, rank discovery and exact bit arithmetic.
+The failure decoder applies to the same full-stack relations, hence
+Section 3's natural coordinate identifications and persistence-module
+guarantee apply without change. The construction is deterministic and
+still retains only original simplices. Additional top labels use the
+separate general incidence algorithm of Section 2.
+
 ## Complete proofs
 
-[Exact persistence, envelopes, and lower bounds](manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md); [separate fixed-weight real spectral theorem](../correlated-spectral-regression/manuscripts/graded-incidence-and-simplicial-spectral-sparsification.md).
+[Exact persistence, envelopes, and lower bounds](manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md); [actual feature-rank construction and streamed contractions](manuscripts/feature-rank-construction.md); [separate fixed-weight real spectral theorem](../correlated-spectral-regression/manuscripts/graded-incidence-and-simplicial-spectral-sparsification.md).
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

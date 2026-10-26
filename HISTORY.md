@@ -1,5 +1,45 @@
 # History
 
+## 2026-10-26 — Optimal oracle queries and construction in the actual feature rank
+
+- Proved an exact rank-two one-label prefix-summary construction using
+  O(N+h^2) independence queries, with an explicit capped-list algorithm,
+  original-item failure witnesses and a matching deterministic query lower
+  bound for exact minimum output when N>=h+3. Ordinary work is accounted
+  separately. Fixed contraction now gives O(Nr+(h'+1)^2) queries at T=2
+  and the sharp r+Th support bound for T<=2. Actual low-rank tree terminals
+  and an arbitrary-rank N+r_U*ell all-label-budget endpoint are explicit.
+- Made represented and persistence lifts constructive in their actual rank
+  without enumerating the formal monomial coordinates. A degree-ordered
+  evaluation module considers only r+d*rho candidate rows. Nonzero feature
+  shifts permit the same original boundary rows to compress every
+  contraction block. Both original-row discovery and final simplex
+  selection stream columns, with rational and finite-field cost ledgers.
+- Sharpened the unchanged reference matching compression from 4nu to 3nu
+  vertices by counting the actual crossing matching. Added a universally
+  certified mixed-failure kernel with at most (f+2)c vertices, or (f+3)nu
+  for the default cover, and the existing O(nu^2+nu*f) edge bound. The
+  all-cover-subset proof also permits arbitrary attached cover contexts.
+  The known positive-budget asymptotic size is credited to the 2022
+  fault-tolerant matching paper; exact counts, this local construction and
+  its independently checkable certificates have separate scopes.
+- Added independent exact checks for the three constructions and their
+  boundaries, including hidden-pair/loop oracle adversaries, all finite
+  failure/prefix spans, and universal matching-kernel certificates with
+  malformed inputs and optimized-Python CLI checks. A null-ID convention
+  mismatch was caught and fixed before publication.
+- Updated thirteen graph companions, correcting twelve stale descriptions
+  that presented the current cycle-search realization as an unresolved premise.
+  Historical cover/HRG conditions and genuinely generic conditional
+  statements retain their original scope. Completed original-edge
+  extraction in the finite-bit petal adapter by pruning every nonoriginal
+  leaf before suppressing degree-two subdivision points.
+- Expanded source-bound TeX exports from 27 to 32 manuscripts. The existing
+  matching reference paper now includes the complete mixed-failure proof;
+  the rank-adaptive matroid paper includes the optimal rank-two theorem and
+  its scoped lower bound. The remaining new feature manuscript is available
+  as complete editable source.
+
 ## 2026-10-26 — Recovered static theorems and rank-adaptive constructions
 
 - Restored nine early source notes as four complete, independently scoped

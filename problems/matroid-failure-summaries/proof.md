@@ -356,8 +356,71 @@ the original-prefix identity, query-set costs, the binary-budget cutoff,
 and the <code class="math">T=0,1</code> cases. It makes no representation assumption, and it keeps
 the item order fixed. This proves Theorem 7.
 
+## 9. Optimal queries at residual rank at most two
+
+**Theorem 8.** At rank at most two and with at most one label per item,
+the exact union of canonical surviving bases can be constructed using
+
+<!-- math-display: 8d4a43f7d6f8860a712eae5f
+2N+\binom{k+1}{2}+(k+1)^2
+-->
+![Formula](../../assets/math/8d4a43f7d6f8860a712eae5f.svg)
+
+independence queries, where <code class="math">k</code> is the failure budget clipped to the
+number of labels on nonloops. The output has at most <code class="math">2(k+1)</code> items.
+For <code class="math">N\ge h+3</code>, computing this exact union requires
+<code class="math">\Omega(N+h^2)</code> queries in the worst case.
+
+**Proof.** The first surviving nonloop belongs to the first <code class="math">k+1</code>
+distinct-label first occurrences, stopping at an unlabelled nonloop.
+Classify these candidates into parallel classes. For each candidate
+class, retain the first <code class="math">k+1</code> distinct-label occurrences outside the
+class, again stopping at an unlabelled item. Each successful pair query
+adds an entry to one of these bounded lists. Each input item is parallel
+to at most one representative, so at most <code class="math">N</code> pair queries fail.
+Together with the singleton and classification scans, this gives the
+displayed bound. Exact unions of the labels preceding the first and
+second candidates characterize feasible witnessing failures. Lemmas 3–5
+of the [complete proof](manuscripts/optimal-rank-two-prefix-oracle-construction.md)
+prove both directions, including repeated labels and rank decreases.
+
+For the lower bound, use <code class="math">h+3</code> rank-two uniform core items. Making any
+one pair among the first <code class="math">h+2</code> items parallel changes whether the last
+item belongs to the summary, and only a query of that pair distinguishes
+it. Prepending <code class="math">N-h-3</code> loops supplies independent single-loop variants,
+each requiring a further distinguishing query. Theorem 2 of the companion
+proves this oracle adversary in full. Its lower bound requires the exact
+minimum output, since returning the entire ground needs no oracle calls. ∎
+
+Combine Theorem 8 with Theorem 7's fixed contraction. For <code class="math">T=2</code> the total
+query count is <code class="math">O(Nr+(h'+1)^2)</code>, and the sharp retained size is <code class="math">r+2h</code>.
+For <code class="math">T=1</code>, the residual summary requires only <code class="math">N'</code> singleton queries.
+The same direct algorithms terminate basis-tree nodes whenever their
+actual surviving rank drops to one or two. The companion also proves
+the arbitrary-rank endpoint <code class="math">N+r_U\ell</code> when every label may fail.
+Ordinary computation, query-set encoding, and oracle calls retain their
+separate ledgers.
+
+## 10. Building represented lifts in their actual rank
+
+Let <code class="math">\rho</code> be the row rank of the formal polynomial-label lift in
+Theorem 1. The
+[evaluation-module construction](../persistence-failure-certificates/manuscripts/feature-rank-construction.md)
+starts with <code class="math">r</code> independent original rows and expands only accepted
+coordinatewise products, in nondecreasing degree. Rejected degree-<code class="math">t</code>
+rows are combinations of accepted rows of degree at most <code class="math">t</code>, so all
+their required children lie in the span generated at the next degree.
+Theorem 1 of that manuscript proves equality with the full truncated
+module and identifies its earliest row pivots with the ordered column
+basis. At most <code class="math">r+d\rho</code> candidate rows are considered. Thus
+<code class="math">O(N\rho(r+d\rho))</code> field operations suffice after the explicit input
+row selection and coefficient generation, even when the ambient lift
+would be larger than the input. This construction retains exactly
+<code class="math">\rho</code> columns and preserves every surviving prefix; it does not claim
+that this represented lifted basis is always the minimum original summary.
+
 ## Complete proofs
 
-[Represented lift and field construction](manuscripts/sharp-represented-matroid-failure-summaries.md); [arbitrary-matroid and submodular proofs](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md); [weighted oracle FPT construction](manuscripts/weighted-oracle-prefix-fpt-construction.md); [weighted two-failure obstruction](manuscripts/weighted-oracle-two-failure-obstruction.md); [two-failure profile bounds and exact rank-four maximum](manuscripts/two-failure-oracle-prefix-bounds.md); [rank-loss contraction and all-budget adaptive bounds](manuscripts/rank-loss-contraction-for-prefix-summaries.md).
+[Represented lift and field construction](manuscripts/sharp-represented-matroid-failure-summaries.md); [arbitrary-matroid and submodular proofs](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md); [weighted oracle FPT construction](manuscripts/weighted-oracle-prefix-fpt-construction.md); [weighted two-failure obstruction](manuscripts/weighted-oracle-two-failure-obstruction.md); [two-failure profile bounds and exact rank-four maximum](manuscripts/two-failure-oracle-prefix-bounds.md); [rank-loss contraction and all-budget adaptive bounds](manuscripts/rank-loss-contraction-for-prefix-summaries.md); [optimal rank-two oracle construction](manuscripts/optimal-rank-two-prefix-oracle-construction.md); [actual feature-rank construction](../persistence-failure-certificates/manuscripts/feature-rank-construction.md).
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

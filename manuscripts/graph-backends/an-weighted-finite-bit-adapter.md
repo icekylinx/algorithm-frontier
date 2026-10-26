@@ -324,12 +324,37 @@ terminal call, since such a call contains at most one original vertex.
 We do not need the optimized AN active-scale or minimal-index argument.
 
 The expanded result is a tree on original vertices and the stored portals.
-Prune artificial pendant material and then suppress nonoriginal degree-two
-points. A path between original vertices cannot enter a pendant extension;
-if it enters the interior of an original edge, it must traverse that
-edge's entire chain before reaching another original vertex. The projected
-tree is therefore an actual subgraph of G, and its original-vertex
-distances equal those used in (11).
+Repeatedly remove every leaf that is not an original vertex, then suppress
+every remaining nonoriginal degree-two point. The leaf rule includes both
+artificial pendant extensions and dangling portions of subdivided original
+edges. Removing only the explicitly added pendant extensions would not
+specify what happens to the latter portions.
+
+**Original-edge extraction lemma.** This pruning and suppression returns
+an actual spanning tree of G and preserves all distances between original
+vertices, measured in base lengths.
+
+**Proof.** Removing a nonoriginal leaf cannot change the unique tree path
+between any two original vertices. Repeated removal therefore retains the
+minimal subtree containing all original vertices; its vertices and edges
+remain connected and acyclic. Each artificial pendant extension was
+attached at only one old point. Its branch contains no original vertex,
+so the entire extension is removed. Once these extensions are gone, an
+interior point of a subdivided original edge has degree at most two in
+the expanded graph. Every retained nonoriginal point consequently has
+degree exactly two. A retained path between consecutive original vertices
+cannot stop inside an original edge, change to another edge at an interior
+point, or enter a pruned pendant extension. It must be the complete chain
+of one original edge, with that edge's original identifier and total base
+length. Suppression replaces exactly that chain by its original edge.
+It preserves connectivity, acyclicity and the lengths of all paths between
+original vertices. Parallel edge identifiers remain distinct. A singleton
+original graph is returned as its single vertex. This proves the claim. ∎
+
+A queue of nonoriginal leaves and a traversal of the surviving chains
+perform the extraction in time linear in the expanded output inventory,
+which has already been charged above. In particular the distance bound
+used in (11) survives the extraction without an additional stretch factor.
 
 ## 6. Common denominator and actual sequential work
 

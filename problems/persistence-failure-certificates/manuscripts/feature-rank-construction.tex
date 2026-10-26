@@ -1,0 +1,219 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md
+% Recovered-source SHA-256: 7a18d22eeb69ff9c769e2c8ed4eb98598c30cda2fd67e5351d0fdb8f3bacd5d3
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-4b125c3959-constructing-failure-summaries-from-their-actual-feature-rank}{%
+\section{Constructing failure summaries from their actual feature rank}\label{af-4b125c3959-constructing-failure-summaries-from-their-actual-feature-rank}}
+
+\textbf{Abstract.} Polynomial failure features can have exponentially many formal coordinates but only a small evaluation rank on the explicit input. We give a deterministic construction that finds this rank without enumerating the coordinates. For a represented matroid, it constructs the exact ordered basis of the formal failure lift using only linearly independent rows of a degree-bounded evaluation module. For simplicial persistence, it computes the actual vertex-feature rank and compresses all contraction blocks using the same original boundary rows. Both algorithms preserve every surviving prefix of one supplied order. Their arithmetic and storage costs charge the construction of the features themselves.
+
+\hypertarget{af-4b125c3959-a-finite-evaluation-module}{%
+\subsection{1. A finite evaluation module}\label{af-4b125c3959-a-finite-evaluation-module}}
+
+Let \(K\) be a field with exact arithmetic. Let \(V\) be an \(r\) by \(M\) matrix of row rank \(r\), with rows \(v_1,\ldots,v_r\). Let \(x_1,\ldots,x_d\in K^M\) be explicit coordinate rows, and let \(h\ge0\). Coordinatewise multiplication is denoted by \(\odot\). For \(t\ge0\) put
+
+\[
+\mathcal W_t=\mathrm{span}_K\left\{
+ v_i\odot x_1^{\alpha_1}\odot\cdots\odot x_d^{\alpha_d}:
+ i\in[r],\ \alpha\in\mathbb N^d,\ |\alpha|\le t\right\}.
+\tag{1}
+\]
+
+Let \(\rho=\dim\mathcal W_h\). The columns have one fixed input order; renumber them in that order. The conceptual matrix whose rows occur in (1) has \(r\binom{h+d}{d}\) rows. This matrix is used in the statement, and need not be formed.
+
+\textbf{Theorem 1 (construction in the evaluation rank).} A deterministic algorithm computes a basis of \(\mathcal W_h\) and the canonical ordered column basis of this conceptual matrix using at most
+
+\[
+r+d\dim\mathcal W_{h-1}\le r+d\rho
+\tag{2}
+\]
+
+candidate rows when \(h\ge1\). When \(h=0\), it processes the \(r\) input rows. It uses
+
+\[
+O\bigl(M\rho(r+d\rho)\bigr)
+ \quad\hbox{field operations},\qquad
+ O\bigl(M(\rho+d)\bigr)
+ \quad\hbox{stored field elements},
+\tag{3}
+\]
+
+including the coordinate rows and the independent input rows. Zero rank returns the empty set immediately. No rank oracle for an implicit matrix, polynomial-identity test, or enumeration of failure sets is used.
+
+\hypertarget{af-4b125c3959-algorithm}{%
+\subsubsection{Algorithm}\label{af-4b125c3959-algorithm}}
+
+Keep two versions of each accepted row: its actual product vector and an echelon representation used for independence tests. Keep a first-in, first-out queue of accepted product vectors, with their degrees.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Insert the independent rows of \(V\), all at degree zero.
+\item
+  Pop an accepted product vector \(u\) of degree \(t\). If \(t=h\), do not expand it. Otherwise, for each \(j\in[d]\), form \(u\odot x_j\).
+\item
+  Reduce the candidate against the current echelon rows. Discard it if the remainder is zero. Otherwise, insert the remainder into the echelon structure and append the actual product vector at degree \(t+1\).
+\item
+  Return the earliest nonzero-coordinate indices of the final echelon rows. These are original column IDs in the supplied order.
+\end{enumerate}
+
+Independent rows are never replaced by arbitrary products of their reduced remainders: the queue stores the original generated vectors. The echelon structure may be updated independently. This convention also makes the rational bit accounting below direct.
+
+\hypertarget{af-4b125c3959-proof}{%
+\subsubsection{Proof}\label{af-4b125c3959-proof}}
+
+The queue processes candidates in nondecreasing degree. Let \(B_t\) be the accepted product vectors of degree at most \(t\). We prove by induction that \(\mathrm{span}(B_t)=\mathcal W_t\) for every \(t\le h\). The claim at zero is the independence of the input rows. The spaces obey
+
+\[
+\mathcal W_t=\mathcal W_{t-1}
+       +\sum_{j=1}^d x_j\odot\mathcal W_{t-1}.
+\tag{4}
+\]
+
+Every vector in \(B_{t-1}\) is expanded unless its degree is already \(h\). Its products have degree at most \(t\) and have been considered before any candidate of degree larger than \(t\). Rejected candidates lie in the span of previously accepted vectors of no larger degree. Thus the processed candidates span the right-hand side of (4), while every accepted vector belongs to \(\mathcal W_t\). This proves the induction. It also explains why discarding a dependent vector does not require expanding its children: its products are combinations of products of accepted vectors of no larger degree.
+
+There are exactly \(\dim\mathcal W_{h-1}\) accepted vectors eligible for expansion when \(h\ge1\). Each produces \(d\) candidates once, establishing (2). Creating and reducing a candidate costs \(O(M\rho)\) field operations. The accepted product vectors and their echelon copies occupy \(O(M\rho)\) field elements; coordinates occupy \(dM\). Queue metadata has \(O(\rho)\) entries. This proves (3).
+
+Finally, order the echelon rows by their earliest nonzero coordinates. In every initial column segment, the rank is exactly the number of these pivots in that segment. A column therefore increases the prefix rank exactly when it is a pivot. The pivot IDs are the canonical ordered column basis of the full conceptual matrix, since the two matrices have the same row space. \(\square\)
+
+\textbf{Degree bound.} If \(\mathcal W_t=\mathcal W_{t-1}\), equation (4) shows that this space is closed under every coordinate multiplication, so all later spaces are equal. Starting from dimension \(r\), every nonstationary degree increases dimension by at least one. Accepted product vectors have degree at most \(\min\{h,\rho-r\}\), and every candidate has degree at most \(\min\{h,\rho-r+1\}\). In particular, a large binary-encoded \(h\) does not cause an equally long run. One may first cap \(h\) at \(M\) without changing the answer; this only decreases the candidate count. After reading the budget, queue degrees and parent/coordinate records use \(O(\rho\log(M+d+2))\) bits, and their bookkeeping takes \(O((r+d\rho)\log(M+d+2))\) elementary bit operations. Keeping a parent and coordinate index suffices: full exponent vectors need not be copied.
+
+The one-generator specialization \(v_1=(1,\ldots,1)\) computes the entire degree-at-most-\(h\) feature evaluation space on \(M\) points. If its rank is \(s\), the cost is \(O(M+aMs^2)\) for \(a\) coordinate rows. This is the finite-point linear algebra underlying Buchberger--Möller methods; the elementary module construction and its proof are included to make the failure-summary application explicit. No new claim about general polynomial-identity testing or Gröbner-basis complexity is made.
+
+\hypertarget{af-4b125c3959-represented-matroid-summaries-without-a-tensor-expansion}{%
+\subsection{2. Represented-matroid summaries without a tensor expansion}\label{af-4b125c3959-represented-matroid-summaries-without-a-tensor-expansion}}
+
+Let \(M_0\) be a matroid represented by an explicit matrix on \(N\) columns, of rank \(r\). Each column has at most \(d\) labels, and at most \(h\) labels may fail. Clip \(h\) to the number of actual labels, as in the underlying failure-summary theorem. Fix one total order, for example signed costs followed by IDs. Choose the label-polynomial coefficient rows \(b_0,\ldots,b_{d-1}\) from Section 2 of the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md}{represented-matroid proof}. They include the same nonfailing dummy padding and the same explicit field extension. Select \(r\) independent original representation rows.
+
+The formal tensor lift has rows
+
+\[
+v_i\odot b_0^{\alpha_0}\odot\cdots\odot b_{d-1}^{\alpha_{d-1}},
+ \qquad |\alpha|\le h.
+\tag{5}
+\]
+
+\textbf{Corollary 2.} Let \(\rho\) be the rank of (5). There is a deterministic construction retaining exactly \(\rho\) original columns, with
+
+\[
+\rho\le\min\left\{N,r\binom{h+d}{d}\right\},
+\tag{6}
+\]
+
+that preserves every surviving original column span at every prefix of the supplied order. It contains the canonical surviving greedy basis after every allowed failure, including rank decreases. After selecting original independent rows and constructing the \(dN\) coefficient entries, the cost is \(O(N\rho(r+d\rho))\) field operations and \(O(N(\rho+d))\) working field elements, apart from the original explicit input and original-row selection workspace. Computing the label polynomials by repeated linear-factor multiplication costs \(O(Nd^2)\) additional field operations. If the input has \(m\) representation rows, straightforward row selection costs \(O(mN(r+1))\) operations; it is charged separately. The additive one charges reading and testing an all-zero input even when \(r=0\).
+
+\textbf{Proof.} Apply Theorem 1 to (5). Its pivot columns are exactly the columns accepted by ordered greedy on the full tensor lift. For a failure set \(F\), the label-polynomial evaluation functional sends each lifted column to \(\gamma_e(F)v_e\), where \(\gamma_e(F)\) vanishes exactly on failed columns. Apply this linear map to each lifted prefix-span relation and divide by the nonzero scalar of the surviving target column. This proves all prefix spans. A surviving element omitted by the construction is spanned by earlier retained survivors, so it cannot enter the canonical surviving greedy basis. \(\square\)
+
+The earlier dimension gate returns the whole input when the ambient dimension exceeds \(N\). This construction can still find a much smaller \(\rho\) in that regime. It does not improve the worst-case retained-size lower bound, and its explicit-ground storage is not a parameter-only bit kernel. The faster choice between ordinary lifted elimination and (3) depends on the actual input dimensions.
+
+\hypertarget{af-4b125c3959-computing-the-vertex-feature-rank-for-persistence}{%
+\subsection{3. Computing the vertex-feature rank for persistence}\label{af-4b125c3959-computing-the-vertex-feature-rank-for-persistence}}
+
+Use the filtered-complex model of the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md}{complete persistence proof}: there are \(n\) vertices, \(N\) top \(p\)-simplices, and boundary matrix \(A\) of rank \(r\), with \(p\ge1\). Retain the full original lower skeleton. Here each vertex has at most \(a\) labels and \textbf{there are no additional top-simplex labels}. Again clip \(h\) to the number of actual labels. Choose distinct nonzero label points \(x_\lambda\) and write
+
+\[
+\prod_{\lambda\in\Lambda(v)}(1-T/x_\lambda)
+       =1+\sum_{j=1}^a b_j(v)T^j.
+\tag{7}
+\]
+
+Let \(s\) be the rank of all monomial evaluation rows of total degree at most \(h\) in the \(a\) rows \((b_j(v))_{v\in V}\). This is precisely the intrinsic feature rank in Section 6 of the complete proof. Theorem 1 with the all-ones initial row computes \(s\) and a monomial evaluation basis \(w_0=1,w_1,\ldots,w_{s-1}\) in
+
+\[
+O(na^2+n+ans^2)
+\tag{8}
+\]
+
+field operations, including construction of (7). It uses \(O(n(a+s))\) field elements. The formal feature count \(\binom{h+a}{a}\) is never enumerated or used as a stopping gate. An empty vertex set is trivial; the construction below assumes \(n\ge1\).
+
+\hypertarget{af-4b125c3959-the-same-original-rows-compress-every-contraction-block}{%
+\subsubsection{The same original rows compress every contraction block}\label{af-4b125c3959-the-same-original-rows-compress-every-contraction-block}}
+
+Enlarge the working field, if necessary, to contain at least \(n+1\) elements. This preserves all ranks already computed. For each \(i>0\), choose \(c_i\) avoiding the at most \(n\) values \(-w_i(v)\), and put \(u_i=w_i+c_iw_0\); keep \(u_0=w_0=1\). Testing a fixed list of \(n+1\) distinct field elements gives a deterministic choice. Equivalently, sort the forbidden values and candidates by their exact encodings. This costs \(O(ns\log(n+1))\) exact comparisons and \(O(ns)\) field operations. Every \(u_i(v)\) is nonzero, and the \(u_i\) have the same row span as the \(w_i\) by an invertible triangular change of basis.
+
+Choose an index set \(I\) of \(r\) independent \textbf{original rows} of \(A\). For a top simplex \(\sigma\) and facet \(\tau=\sigma\setminus\{v\}\), the contraction block for \(u_i\) has entry \(A_{\tau\sigma}u_i(v)\). Write this block as \(A_i\). Then
+
+\[
+A_i=D_{p-1,i}^{-1}A D_{p,i},\qquad
+ (D_{q,i})_{\eta\eta}=\prod_{v\in\eta}u_i(v).
+\tag{9}
+\]
+
+Both diagonal matrices are invertible. The rows indexed by \(I\) remain a row basis in every block \(A_i\). Consequently, retaining just those rows in each of the \(s\) blocks preserves \textbf{all column dependencies} of the stacked full contraction matrix. The compressed lift has \(D=sr\) rows. No claim that arbitrary mixed rows retain their old face labels is needed.
+
+\hypertarget{af-4b125c3959-a-streamed-top-column-construction}{%
+\subsubsection{A streamed top-column construction}\label{af-4b125c3959-a-streamed-top-column-construction}}
+
+For each top simplex in the supplied order, form only its \(D\)-coordinate compressed column and reduce it against retained columns. The generated column has at most \(s(p+1)\) nonzero entries before elimination. Retain the simplex exactly when it increases the span. Let \(\rho\) be the final rank.
+
+\textbf{Theorem 3 (constructive intrinsic-rank persistence bound).} The retained set has exactly \(\rho\) top simplices, where
+
+\[
+\rho\le\min\left\{N,sr,
+          \binom n{p+1}-\binom{n-s}{p+1}\right\}.
+\tag{10}
+\]
+
+After constructing (7) and selecting \(I\), the remaining field-operation bound is
+
+\[
+O\bigl(n+ans^2+Ns(p+1)+Nsr\rho\bigr).
+\tag{11}
+\]
+
+There are additionally \(O(ns\log(n+1))\) exact comparisons for the nonvanishing shifts, as specified above.
+
+The additional working storage is \(O(n(a+s)+sr\rho+sr)\) field elements, plus the original-row selection workspace and the explicit input/output. The final top-column pass stores only its current column and the retained echelon columns; it does not store an \(sr\) by \(N\) matrix. Original row selection can use \(O(mN(r+1))\) operations and \(O(m(r+1))\) field elements for an \(m\) by \(N\) boundary matrix by scanning original columns. This stage and the feature stage precede the final pass, so the complete algorithm is not asserted to be a single-pass streaming algorithm on the complex. The supplied face/label index and the explicit incidence input are separate combinatorial storage. The reference builds its facet index from the supplied top-simplex tuples and generates both matrix passes by columns.
+
+\textbf{Proof.} Equation (9) proves dependency equivalence with the full stack, so the streamed algorithm returns its ordered column basis. Its rank is at most \(sr\). The \(s\) vertex covectors are independent. Their simultaneous contraction map on the full exterior universe has common kernel \(\bigwedge^{p+1}W\), where \(\dim W=n-s\). The exterior rank identity proved in Section 5 of the complete proof gives the binomial-difference term in (10); restricting to the input columns cannot increase rank.
+
+For an allowed failure set \(F\), the scalar function
+
+\[
+f_F(v)=\prod_{\lambda\in F}
+       \left(1+\sum_{j=1}^a b_j(v)x_\lambda^j\right)
+\tag{12}
+\]
+
+belongs to the span of the computed feature rows, hence of the shifted rows \(u_i\). It vanishes exactly on failed vertices. Decode the full contraction stack with its coefficient vector, and multiply each facet row by the product of \(f_F\) on its vertices. The entire top column maps to \(\bigl(\prod_{v\in\sigma}f_F(v)\bigr)A_\sigma\). Compressed relations extend to full-stack relations by (9), so applying this decoder preserves every surviving boundary span at every prefix.
+
+The retained lower chain coordinates and lower boundary maps are the original ones. Equality of top-boundary images therefore gives the same homology quotients in degrees at most \(p-1\), and these coordinate identifications commute with every supplied filtration inclusion. This is the persistence-module assertion, not only equality of Betti numbers. A cost-ordered run instead contains every canonical minimum-cost surviving boundary basis. The two independent orders require separate runs.
+
+An elementary reduction of a \(D\)-coordinate column against at most \(\rho\) retained columns costs \(O(D\rho)\) operations. Generating its nonzero entries costs \(O(s(p+1))\), and initializing or clearing dense workspace costs \(O(D)\), absorbed when \(\rho\ge1\). If \(r=0\) or \(N=0\), the empty output is returned before that pass. This proves (11) and the storage ledger. \(\square\)
+
+If the vertex label sets take at most \(t\) distinct values, then \(s\le t\). Thus even when \(\binom{h+a}{a}\) exceeds the explicit input size, (8)--(11) construct the \(tr\) bound, together with the sharper actual-rank and exterior bounds. This resolves the construction cost of the existing intrinsic-rank statement; it does not assert exact worst-case sharpness for arbitrary overlapping labels.
+
+\hypertarget{af-4b125c3959-exact-representation-and-bit-costs}{%
+\subsection{4. Exact representation and bit costs}\label{af-4b125c3959-exact-representation-and-bit-costs}}
+
+The field-operation bounds include arithmetic on explicitly stored field elements. They are not bit-operation bounds over the rationals.
+
+Over \(\mathbb Q\), use label points \(1,\ldots,L\) and shifts among \(0,\ldots,n\). Label-polynomial coefficients in the two constructions have \(O(1+(a+d)\log(L+1))\) numerator/denominator bits. More generally, if the module input entries have at most \(\beta\) bits, its candidate product entries have
+
+\[
+\beta'=O\bigl((1+\min\{h,\rho-r+1\})\beta\bigr)
+\tag{13}
+\]
+
+bits. The degree bound after Theorem 1 is essential here. Stored echelon entries can be computed as ratios of minors. Clearing denominators in a minor of order at most \(\rho+1\) and applying the determinant expansion bounds all such numerator/denominator lengths by \(O((\rho+1)^2\beta'+(\rho+1)\log(\rho+2))\). The same argument applies to the feature elimination and final contraction elimination separately. Original simplicial boundary entries are \(0,1,-1\), and shifts add only \(O(\log(n+1))\) bits before the latter elimination.
+
+Consequently fraction-free elimination, or exact reduced rational elimination with these determinant bounds, gives polynomial bit complexity. For a conservative explicit conversion, let \(B_*\) bound the foregoing minor lengths for every stage, including original row selection, as well as the bit lengths of combinatorial indices. Let \(T\) be the total stated arithmetic-operation count, and let \(Q_{\mathrm{aux}}\) count the stated shift comparisons and queue/index operations. Schoolbook exact integer multiplication, division and greatest-common-divisor routines give \(O((T+Q_{\mathrm{aux}})(B_*+1)^3)\) bit operations, in addition to reading the encoded input. This deliberately loose bound charges coefficient growth; it does not treat rational operations as constant cost. All its parameters are polynomial in the explicit input length because \(\rho\le N\), \(s\le n\), and generated degrees are rank bounded.
+
+For an explicitly represented finite field \(\mathbb F_q\), choose an effective extension large enough for the genuine label points, the dummy when used, and the shift candidates. Put \(U=\max\{L+1,n+1,2\}\), omitting \(n\) for Corollary 2 when no shifts are needed. If \(q\ge U\), no extension is required. Otherwise use the least \(e\) with \(q^e\ge U\); then \(q^e<qU<U^2\). Exhaustively testing monic degree-\(e\) polynomials for irreducibility is therefore polynomial in the explicit \(U\). Exact arithmetic in the supplied polynomial basis and this extension has polynomial bit cost in \(\log q\) and \(e\); multiplying each operation count by that arithmetic cost yields the bit ledger. Enlarging a field preserves all original ranks. Span equality between original columns over the extension descends to the original field by rank invariance.
+
+The algorithms are deterministic, are valid in every characteristic, and make no generic-position assumptions. The reference implementation uses rational arithmetic and prime fields; extension-field construction is proved above and is outside its executable scope.
+
+\hypertarget{af-4b125c3959-verification-provenance-and-scope}{%
+\subsection{5. Verification, provenance and scope}\label{af-4b125c3959-verification-provenance-and-scope}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/persistence-failure-certificates/reference/feature_summary.py}{reference construction} implements the evaluation module, represented-matroid pivot selection, and shifted compressed contraction construction. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/persistence-failure-certificates/verify/check_feature_construction.py}{independent checker} compares the module against direct monomial enumeration on small inputs. It then enumerates all small allowed failures and every supplied-order prefix, comparing the original and retained column spans. It includes rational and finite-field examples, vanishing feature entries, signed boundary orientations, repeated label patterns, rank drops, and a large formal feature dimension with small actual rank. The checker tests the linear algebra identities and exact boundary-space claims; the naturality argument remains the proof given above.
+
+The feature-evaluation idea has classical antecedents. See H. M. Möller and B. Buchberger, \emph{The Construction of Multivariate Polynomials with Preassigned Zeros}, EUROCAM 1982, LNCS 144, pp.~24--31, \href{https://www.risc.jku.at/Groebner-Bases-Bibliography/gbbib_files/publication_378.pdf}{author-hosted primary paper}, and J. Abbott, A. Bigatti, M. Kreuzer and L. Robbiano, \emph{Computing Ideals of Points}, Journal of Symbolic Computation 30(4), 341--356 (2000), \href{https://doi.org/10.1006/jsco.2000.0411}{publisher version}. The present contribution is the explicit rank-dependent construction and accounting for the previously stated failure-summary lift and persistence envelope, including the shared original-row compression. Neither cited algorithm is needed as an unproved runtime oracle in Theorems 1--3.
+
+The lower skeleton is retained in full. The results concern one fixed order, fixed labels and a fixed coefficient-field representation. They preserve neither top-dimensional homology nor integral torsion, and do not supply dynamic label updates. Additional top-simplex labels retain the separate general incidence theorem; they are not covered by Theorem 3.
+
+\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

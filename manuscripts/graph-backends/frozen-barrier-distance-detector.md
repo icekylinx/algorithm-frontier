@@ -1,21 +1,24 @@
 # A distance-decrease detector with frozen auxiliary barriers
 
-**Research theorem candidate, 25 October 2026.** This note proposes a
+**Research theorem, 25 October 2026.** This note gives a
 modification of the detector in Yang P. Liu's *Incremental Shortest Paths
 in Almost Linear Time via a Modified Interior Point Method*,
-arXiv:2506.19207v1, Sections 2--3. The proposed change is to freeze an
+arXiv:2506.19207v1, Sections 2--3. The change is to freeze an
 auxiliary coordinate when it becomes dangerous, retain its flow and cost
-as constants, and delete its positive barrier. This potentially removes
+as constants, and delete its positive barrier. This removes
 the minimum-ratio oracle's approximation factor from the *cumulative
 reporting bound*. It does not remove that factor from the running time.
 
 Primary source: <https://arxiv.org/html/2506.19207v1>.
 
-The construction remains conditional on a correct raw-cycle and
-flow-maintenance interface. In particular, it must support retirement
-of a logical edge at its exact current value, not only insertion of
-zero-flow edges. All claims below concern a single detector lifetime.
-The separate outer-recursion note will account for rebuilding.
+The construction uses the raw-cycle and flow-maintenance interface
+realized in the [raw-cycle bridge](raw-cycle-to-frozen-detector-bridge.md)
+and the [matching realization theorem](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization).
+In particular, the bridge retires a logical edge at its exact current
+value while preserving its cost and divergence. All claims below concern
+a single detector lifetime. The
+[incremental SSSP proof](../../problems/incremental-sssp/proof.md)
+accounts separately for rebuilding and outer recursion.
 
 ## 1. Input, numerical scope, and required oracle
 
@@ -571,7 +574,7 @@ is paid locally and is not an exported edge-label magnitude.
 The raw backend supplies at most <code class="math">E^{O(1)}</code> **unit signed** physical-edge
 or forest-path pieces in a flat forest of at most <code class="math">M E^{O(1)}</code> records.
 Each piece contributes coefficients <code class="math">+1</code> or <code class="math">-1</code> along its traversals,
-as explicitly required by the [cycle-to-detector interface](raw-cycle-to-frozen-detector-bridge.md#1-imported-contract-and-master-sizes).
+as explicitly required by the [cycle-to-detector interface](raw-cycle-to-frozen-detector-bridge.md#1-realized-raw-cycle-interface-and-master-sizes).
 An arbitrary rational-coefficient circulation would not justify the common
 flow grid below. With polynomially bounded
 root integer prices, its complete raw integer denominator satisfies
@@ -649,11 +652,13 @@ No bounded-degree assumption and no uncharged degree-reduction
 gadget is used in (26). The normalized detector permits new demand
 units because their potential injection was paid explicitly in (17).
 
-## 9. Precise remaining review obligations
+## 9. Settlement and outer-use invariants
 
-The mathematical proposal above still requires an independent audit of
-its imported raw interface, finite-precision settlement, and its outer
-recursive use. In particular:
+The [raw-cycle bridge](raw-cycle-to-frozen-detector-bridge.md) supplies
+the exact registers, retirement and finite-precision operations used
+above; the [outer SSSP proof](../../problems/incremental-sssp/proof.md)
+supplies the recursive accounting. Their composition retains the
+following invariants:
 
 * frozen values must remain immutable constants until a full phase
   restart, and their cost must remain in (2);

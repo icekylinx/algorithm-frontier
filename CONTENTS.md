@@ -84,6 +84,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Matching-number time bound for the implemented bipartite branch](problems/general-matching/reference/bipartite-proof.md)
 - [A quadratic extraction of a matching optimality certificate](problems/general-matching/reference/certificate-proof.md)
 - [Cubic reference matching in the component matching numbers](problems/general-matching/reference/cover-compression-proof.md)
+- [Certified matching compression for mixed failures and arbitrary cover contexts](problems/general-matching/reference/fault-tolerant-cover-compression.md)
 
 ### [Degree-constrained subgraphs](problems/degree-constrained-subgraphs/)
 
@@ -143,6 +144,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/matroid-failure-summaries/README.md) · [Main proof](problems/matroid-failure-summaries/proof.md) · [Sources](problems/matroid-failure-summaries/sources.md) · [Verification](problems/matroid-failure-summaries/verify/README.md)
 
 - [Exact binomial fault summaries for arbitrary matroids](problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md)
+- [Optimal oracle construction of rank-two label-failure prefix summaries](problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md)
 - [A fixed rank-loss contraction for ordered matroid failure summaries](problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md)
 - [A sharp polynomial-time restriction for overlapping label failures in represented matroids](problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md)
 - [Two-failure weighted prefix bounds for arbitrary matroids](problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md)
@@ -166,6 +168,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/persistence-failure-certificates/README.md) · [Main proof](problems/persistence-failure-certificates/proof.md) · [Sources](problems/persistence-failure-certificates/sources.md) · [Verification](problems/persistence-failure-certificates/verify/README.md)
 
 - [Exact persistent-homology certificates under correlated failures](problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md)
+- [Constructing failure summaries from their actual feature rank](problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md)
 
 ### [Boolean linear optimization compiler](problems/boolean-linear-compiler/)
 

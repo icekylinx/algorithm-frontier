@@ -1,11 +1,11 @@
 # An exact matching-size kernel and the current time corollary
 
-**Unconditional deterministic reduction; conditional fast composition.**
+**Deterministic reduction and instantiated fast composition.**
 The kernel proof below is independent of the matching phase and the
 numerical backend. It preserves maximum matching exactly in linear
-preprocessing time. If the explicit raw-backend assumptions of the
-[main theorem](../../problems/general-matching/proof.md) hold, its solve
-time becomes
+preprocessing time. Substitution into the realized construction of
+[Theorem 11.6](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization)
+gives the solve time
 
 <!-- math-display: f5b067538b1d3f0b5246e821
 O(n+m)+(h+1)\exp\!\left[O\!\left(
@@ -15,8 +15,9 @@ O(n+m)+(h+1)\exp\!\left[O\!\left(
 ![Formula](../../assets/math/f5b067538b1d3f0b5246e821.svg)
 
 Here m_s is the number of distinct nonloop edges after cleanup. The
-kernel itself is unconditional; the improved solve time retains the
-proof status and dependencies in [Deterministic Exact General Matching through Persistent Integral Carriers and Normalized Routing](../../problems/general-matching/proof.md).
+kernel itself needs no cycle-search primitive; the improved solve time
+uses the explicit local realization and named published dependencies in
+[Deterministic Exact General Matching through Persistent Integral Carriers and Normalized Routing](../../problems/general-matching/proof.md).
 No publication-priority claim is made for this elementary reduction.
 
 ## 1. A linear-time quadratic edge kernel
@@ -91,9 +92,10 @@ universal arbitrary-choice cutoff below <code class="math">c</code> cannot prese
 Build and compact <code class="math">H</code> once. Its nonempty compact size is
 <code class="math">q_H=n_H+m_H=\Theta(m_H)</code>, and all retained edges carry original IDs.
 Apply the exact odd-path degree reduction and uniform solver in
-Sections 3.2 and 12 of the main theorem. The solver's geometric,
-lifetime, initialization and finite-arithmetic assumptions remain
-explicit premises of the displayed fast bound.
+Sections 3.2 and 12 of the main theorem. Its geometric, lifetime,
+initialization and finite-arithmetic interfaces are instantiated by
+Theorem 11.6 and the companion proofs identified there. These are explicit
+proof dependencies, rather than additional unfulfilled backend premises.
 
 Every branch of the uniform program shares the same read-only H.
 Validate a proposed matching and search for an augmenting path in H.
@@ -186,6 +188,39 @@ arbitrary independent neighbor choices in the mixed-failure model.
 This theorem is a size and exact-preservation guarantee. Computing a
 maximum matching after a query still requires a solver on the retained
 graph; the theorem does not supply a constant-time sensitivity oracle.
+
+### A simultaneous linear-vertex refinement
+
+The [layered cover compression](../../problems/general-matching/reference/fault-tolerant-cover-compression.md)
+now reduces the same fixed <code class="math">H_f</code> further before any failure query is known.
+Compute <code class="math">f+1</code> successive maximum crossing matchings, removing the right
+endpoints selected in each round before the next.  If a round has size
+<code class="math">q_i</code>, keep all their right endpoints and <code class="math">C</code>.  The induced subgraph <code class="math">K_f</code>
+has
+
+<!-- math-display: f836759241de9ba309e9a859
+|V(K_f)|=c+\sum_iq_i\leq(f+2)c,
+\qquad |E(K_f)|\leq|E(H_f)|.
+-->
+![Formula](../../assets/math/f836759241de9ba309e9a859.svg)
+
+For a cover obtained from a maximal matching this also gives
+<code class="math">&#124;V(K_f)&#124;\leq(f+3)\nu(G)</code>, and at <code class="math">f=0</code> the existing reference solver
+has the sharper bound <code class="math">3\nu(G)</code>.  The construction preserves every
+surviving matchable cover subset, so arbitrary additional cover-vertex
+deletions and arbitrary graphs attached through the cover are permitted.
+Each layer has a maximum-matching certificate checked by matching/cover
+duality.  The executable constructor and its independent universal verifier
+are linked in the proof; no failure scenarios are enumerated to validate
+the certificate.
+
+The order <code class="math">O(\nu f)</code> in vertices and <code class="math">O(\nu^2+\nu f)</code> in edges for
+positive budgets is already established by
+[Banerjee, Gupta, Raman and Saurabh, CSR 2022](https://doi.org/10.1007/978-3-031-09574-0_8).
+The local refinement supplies precise counts, the stronger subset/context
+guarantee and a complete executable certificate.  Its crossing-matching
+construction has a separate polynomial work bound; it is not charged
+as part of the linear-time neighbor kernel above.
 
 ## 5. Finite evidence
 

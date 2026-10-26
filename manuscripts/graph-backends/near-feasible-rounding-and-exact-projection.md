@@ -438,7 +438,10 @@ For the existing matching caps <code class="math">q=B^{-100}</code> and
 <code class="math">\mathcal E\le B^{O(1)}</code>, a safe bound is
 <code class="math">(M+B)B^{250}</code>. All numerical histories have their old finite
 guards and exact dyadic arithmetic. The final feasible-flow/cut
-check is linear and is separate from the conditional time proof.
+check is linear and is separate from the running-time proof. The
+[main realization theorem](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization)
+supplies the complete raw-cycle, occurrence and retirement interfaces
+used by the current matching application.
 
 More abstractly, an arbitrary-update raw-cycle backend whose
 initialization, updates, paths, occurrences and inverse quality are

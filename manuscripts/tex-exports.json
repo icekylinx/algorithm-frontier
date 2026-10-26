@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "pandoc_version": "pandoc 3.1.3",
-  "generator_sha256": "bba80152f1adec87efad87d27213f96f79bfcdcf2b981c89b33fa19f9f71406e",
+  "generator_sha256": "6cdaa408355ce2d4df9f6fe2933f24c018360d2d15c32bd9b62c5e1419c30dee",
   "exports": [
     {
       "source": "problems/general-matching/proof.md",
       "target": "problems/general-matching/proof.tex",
-      "source_sha256": "81f397508e9fcaa5e1c53c52470e6249e8aa50be4de0b76133ea22f6afb066dc",
-      "tex_sha256": "d56fa149585a2025c5836897df20dc0f10f05eae0b97cf97cd1646fed7d09da6",
-      "math_nodes": 888,
+      "source_sha256": "0863a351455f9be1481c19eb7ad25ee0bfec01dd8b986ed6e8a44a834d7fa7e6",
+      "tex_sha256": "94404b9003ed2bba145546dd3aab7c9b28313edf4b6da605d663cd9e66ea88de",
+      "math_nodes": 889,
       "pdf": "source-only"
     },
     {
@@ -22,9 +22,9 @@
     {
       "source": "problems/general-matching/reference/cover-compression-proof.md",
       "target": "problems/general-matching/reference/cover-compression-proof.tex",
-      "source_sha256": "7e560138fee8aa100dc6cb0c64b1447824bdddf49ed2c264f8fc87a082286ff0",
-      "tex_sha256": "49c34a6369e83e8b01e6d00daa54f01b870acf6e54a3cad96bf7a1f12ad76e57",
-      "math_nodes": 87,
+      "source_sha256": "8efb905af69afa7fd13267065cd8c1da6ca343492232421dd180b12a2a46e400",
+      "tex_sha256": "3111d39e261165a4b17c7e37a2540628668ba13e396e3f8e4018669b5443432a",
+      "math_nodes": 94,
       "pdf": "source-only"
     },
     {
@@ -38,9 +38,9 @@
     {
       "source": "problems/matroid-failure-summaries/proof.md",
       "target": "problems/matroid-failure-summaries/proof.tex",
-      "source_sha256": "45390a17c459921c6d66b8fc0181c30667abbfed7969aa183fea70b53e759941",
-      "tex_sha256": "b497bdbc8a641548d190a995cf17b21ade604f4f6dcdd4ee24979fc165368d14",
-      "math_nodes": 240,
+      "source_sha256": "290fca0b40756359031b01e2e74a4a445bdba8cfcfc70b83471b06834c795862",
+      "tex_sha256": "96f2f7f40ba9bffd4965380d25471b68e275a4106b924c5d59c2affe7ded0b01",
+      "math_nodes": 264,
       "pdf": "source-only"
     },
     {
@@ -217,6 +217,46 @@
       "source_sha256": "1c3ac9062e6bebd8f7cbfd0510a9f91a6275af2355edf1df79f235bb2ed8a894",
       "tex_sha256": "c8bcc8977f677eec78a36ea41103f6ca2708797945cc9a09ac391925b116fce9",
       "math_nodes": 145,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/general-matching/reference/fault-tolerant-cover-compression.md",
+      "target": "problems/general-matching/reference/fault-tolerant-cover-compression.tex",
+      "source_sha256": "44b9593ffa209b1a0f71b15d01eaaed0773724119553e5832c9292f68b3a118c",
+      "tex_sha256": "cfac98f1e4700401cafa5fe4d4ea42980e22be0599943281c7b3e92b62c51079",
+      "math_nodes": 161,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md",
+      "target": "problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.tex",
+      "source_sha256": "cc0a11ecdf455bc2446fd13e72dabe4632092821f1c78e3418b7b42e0b4eabad",
+      "tex_sha256": "31c3b4a77cb5ddfdfb36e45103666cca51083895e7ad2d4af457bfcae986bd44",
+      "math_nodes": 254,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/persistence-failure-certificates/proof.md",
+      "target": "problems/persistence-failure-certificates/proof.tex",
+      "source_sha256": "08daba67b3991f49b543e33b58ba805283a08093cb7c21aaf33526d58aefac2f",
+      "tex_sha256": "317625d21f362843375732e36df96669350e6218225239b7ec21748fb6289d2c",
+      "math_nodes": 68,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md",
+      "target": "problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.tex",
+      "source_sha256": "ebc5a8a2ab88362a202a880627c4a80de70adcac0010ee6d2d2bca78cf09cbc8",
+      "tex_sha256": "651931ff2fcaf7d0d416513701498d7ef64642a4d9f9e158d9bb2a54aa9cdad3",
+      "math_nodes": 24,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md",
+      "target": "problems/persistence-failure-certificates/manuscripts/feature-rank-construction.tex",
+      "source_sha256": "7a18d22eeb69ff9c769e2c8ed4eb98598c30cda2fd67e5351d0fdb8f3bacd5d3",
+      "tex_sha256": "9885100d4e70b305e8b88cb90f4480ab9b1d1b292a74d5c38472d597c6fbf2b6",
+      "math_nodes": 195,
       "pdf": "source-only"
     }
   ]

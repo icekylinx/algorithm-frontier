@@ -33,9 +33,11 @@ positive integral lengths and integral gradients of magnitude at most
 
 The record lifetime, signed/absolute counter, query transaction and
 real-loop interfaces remain those in the existing numerical proof.
-A ratio-only oracle does not suffice. The cap is a proved performance
-and quality hypothesis on a favorable branch, not a conclusion drawn
-from its final matching verifier.
+A ratio-only oracle does not suffice. The cap is a performance and
+quality input to this client theorem. The
+[main realization theorem](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization)
+supplies it for the four-fifths construction. Its proof, independently
+of final matching verification, provides the favorable branch bound.
 
 Define <code class="math">\mathrm{pow2ceil}(x)</code> to be the smallest power
 of two at least <code class="math">x</code>, and set
@@ -317,7 +319,7 @@ The former nominal-size condition would give only <code class="math">4S</code> w
 explicit <code class="math">M\le S^2</code> master interface, whose proof was given
 above. This distinction is necessary and is not an omitted guard.
 
-## 6. Complete conditional consequence and uniformity
+## 6. Complete consequence under the stated interface
 
 The binary-ledger proof gives total higher-reset volume
 <code class="math">O(s^3S)</code>, <code class="math">O(s)</code> global resets per phase, polynomial
@@ -333,8 +335,9 @@ T_{\rm complete}
 ![Formula](../../assets/math/2fd3d7ed351a342c1f3eacf7.svg)
 
 This includes final exact matching verification. The source-specific
-favorable branch still needs its independent primitive, recurrence
-and quality proofs. The first-failure argument retains the loose
+favorable branch uses its independent primitive, recurrence and quality
+proofs; Theorem 11.6 supplies them for the current distance construction.
+The first-failure argument retains the loose
 polynomial magnitude/history guards; with <code class="math">E=S^{o(1)}</code>, all
 sharp counts in (8)--(16) are <code class="math">S^{1+o(1)}</code> and satisfy those
 guards eventually. Polynomial floors such as <code class="math">C=s+1</code> keep

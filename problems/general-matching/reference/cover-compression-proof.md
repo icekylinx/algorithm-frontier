@@ -75,6 +75,22 @@ The lemma holds for **any maximum** crossing matching. It preserves every
 matchable left subset simultaneously, including subsets chosen after
 <code class="math">T</code> is fixed. A merely maximal crossing matching is insufficient.
 
+**Sharper matching-number accounting.** The retained size is exactly
+<code class="math">&#124;C&#124;+&#124;Q&#124;</code>, and <code class="math">Q</code> itself is a matching of the original graph.  Thus, when
+<code class="math">C</code> consists of the endpoints of a greedy maximal matching,
+
+<!-- math-display: a9175c2f589bb01193d4e4c5
+|V(J)|=|C|+|Q|\leq\min\{2|C|,3\nu(H)\}.
+-->
+![Formula](../../../assets/math/a9175c2f589bb01193d4e4c5.svg)
+
+This improves the earlier checkpoint's <code class="math">4\nu</code> accounting for the unchanged
+construction.  It is tight for this construction on disjoint two-leaf
+stars: one leaf enters the cover with its center and the other enters
+through the crossing matching.  The
+[failure extension](fault-tolerant-cover-compression.md) gives the full
+layered version and its exact bounds.
+
 ## 2. Apply the edge kernel before computing the crossing matching
 
 For a normalized component <code class="math">G_i</code>, let <code class="math">C_i</code> be the endpoints of
@@ -93,7 +109,7 @@ k_i=|V(H_i)|\leq c_i+c_i^2,
 
 Compute a maximum crossing matching in <code class="math">H_i[C_i,V(H_i)\setminus C_i]</code>
 and apply Lemma 1. The graph <code class="math">J_i</code> given to the final matching search has at most
-<code class="math">2c_i\leq4\nu(G_i)</code> vertices. All its edges retain original native
+<code class="math">\min\{2c_i,3\nu(G_i)\}</code> vertices. All its edges retain original native
 input indices and identifiers.
 
 The crossing matching uses the implemented Hopcroft–Karp phase algorithm.
@@ -189,7 +205,10 @@ endpoint set chosen before failures need not preserve later answers:
 with a one-vertex cover of a star, deleting the one retained crossing
 edge destroys its matching while another original leaf remains usable.
 The fault summary must remain intact until a particular failure instance
-has been fixed.
+has been fixed.  The new [layered construction](fault-tolerant-cover-compression.md)
+instead retains the right endpoints of <code class="math">f+1</code> consecutive maximum crossing
+matchings on disjoint right grounds.  It preserves every permitted failure
+query before any query is chosen and has at most <code class="math">(f+3)\nu(G)</code> vertices.
 
 ## 5. Evidence and a concrete size reduction
 

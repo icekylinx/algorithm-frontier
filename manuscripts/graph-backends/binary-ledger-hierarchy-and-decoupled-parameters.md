@@ -10,9 +10,12 @@ backend's cost, multiplicity, or inverse approximation quality.
 We prove the structural and allocation statements directly, with
 explicit dependence on the number of levels. We then combine them with
 the independently specified [decoupled numerical client](decoupled-numerical-client.md).
-The resulting conclusion remains conditional on the complete raw-cycle
-backend, persistent-carrier, local-pair, and physical-lifetime interfaces.
-An eventual fast-time bound is not inferred from final output verification.
+The resulting theorem is parameterized by the complete raw-cycle,
+persistent-carrier, local-pair, and physical-lifetime interfaces. The
+[main matching proof](../../problems/general-matching/proof.md), Sections
+5–6 and Theorem 11.6, supplies these interfaces for the current
+four-fifths construction. An eventual fast-time bound follows from those
+mathematical constructions, separately from final output verification.
 
 The underlying matching-state equations and local projection are from
 [OAI Sections 3--5](https://github.com/openai/math/tree/main/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026).
@@ -25,7 +28,7 @@ and [the general-graph gap driver](general-graph-gap-reduction.md).
 Their former fixed-parameter running-time conclusions are not premises
 of this calculation.
 
-## 1. Parameters and conditional numerical contract
+## 1. Parameters and numerical interface
 
 Let a subcubic physical graph have order <code class="math">N</code>, and choose the one
 master size <code class="math">S=2^s</code> with <code class="math">N\le S&lt;2N</code>, outside bounded empty
@@ -459,7 +462,10 @@ its polynomial scheduling overhead is absorbed in the polynomial of
 eventual bound <code class="math">SE_*^5</code> includes that polynomial overhead.
 The verifier ensures accepted-output correctness, while existence of
 the favorable pair and the mathematical interfaces above are what
-establish the conditional fast-time conclusion.
+establish the fast-time conclusion for the instantiated backend. The
+displayed 14/15 specialization is historical; the same binary-ledger
+calculation is used with the stronger cap in the
+[four-fifths composition](quantitative-matching-4-5-composition.md).
 
 The cover-kernel optional preprocessing from the complete composition
 is unaffected: it preserves the optimum and can replace <code class="math">m_s</code>

@@ -8,13 +8,17 @@ cycle certificate, complete occurrence lifetimes, and implicit exact flow
 registers of the previous checkpoint. It does not infer a flow-maintaining
 oracle from an approximate optimum value alone.
 
-The construction below is conditional on the previously stated raw backend.
-Its purpose is to show that the new detector needs no additional asymptotic
-oracle guarantee. In particular, a positive frozen flow is retired without
-discarding its cost or divergence, and the growing power in the barrier is
-paid in local arithmetic rather than exported label magnitude.
+The construction below takes the complete raw-cycle algorithm as an input
+interface. Its realization is supplied by the
+[matching construction, Theorem 11.6](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization),
+with the [polynomial-bit extension](polynomial-bit-raw-backend-extension.md)
+for the label bounds used here. This bridge shows that the detector needs
+no additional asymptotic oracle guarantee. In particular, a positive frozen
+flow is retired without discarding its cost or divergence, and the growing
+power in the barrier is paid in local arithmetic rather than exported
+label magnitude.
 
-## 1. Imported contract and master sizes
+## 1. Realized raw-cycle interface and master sizes
 
 Let the global graph master be a power of two `N=2^U`. A detector lifetime
 has at most `M<=N` logical ordinary-edge records, auxiliary units, and

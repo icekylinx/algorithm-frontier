@@ -424,7 +424,8 @@ def _compress_cover(
     The input is the already sparse c-neighbor kernel, with k=O(c**2)
     vertices and h=O(c**2) edges.  The crossing matching has size at most c,
     so Hopcroft--Karp costs O((k+h)*sqrt(c+1))=O(c**(5/2)).  The induced
-    output has at most 2c vertices.
+    output has c+nu_cross <= min(2c,3nu) vertices when the cover is
+    supplied by the initial maximal matching of the original component.
     """
     order = len(adjacency)
     crossing: list[list[int]] = [[] for _ in range(order)]

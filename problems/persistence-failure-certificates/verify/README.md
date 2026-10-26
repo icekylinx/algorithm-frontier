@@ -4,7 +4,43 @@
 
 ## Evidence status
 
-The exact incidence and persistence statements are established by symbolic identities and chain-complex arguments in the linked proof. No dedicated executable currently verifies all label failures and filtration states. Finite Betti-number comparisons would not establish the naturality required by the persistence-module statement.
+The exact incidence and persistence statements are established by symbolic
+identities and chain-complex arguments in the linked proof. The
+[feature-rank checker](check_feature_construction.py) now verifies all
+allowed failures and order prefixes in its finite domains, comparing full
+boundary spans. The naturality required by the persistence-module statement
+is proved separately; finite Betti-number comparisons alone would not
+establish it.
+
+## Actual-rank construction and exact finite evidence
+
+The [reference algorithm](../reference/feature_summary.py) constructs an
+evaluation module by a breadth-first frontier of independent product rows.
+The checker compares it to direct monomial enumeration on small inputs,
+including exact pivot columns, row ranks, degree bounds and candidate
+counts. Represented-matroid and simplicial cases then compare every
+surviving original prefix span against the retained one. Original boundary
+rows are selected by streaming sparse-generated columns; no dense boundary
+or complete lifted feature matrix is required by the implementation.
+
+```sh
+python3 problems/persistence-failure-certificates/verify/check_feature_construction.py
+python3 problems/persistence-failure-certificates/verify/check_feature_construction.py --full
+```
+
+The completed larger run covers 2,288 module comparisons, 240 represented
+instances, 308 simplicial instances and 12,566 surviving-prefix states.
+Rational and prime-field examples include vanishing features, shifted
+rows, repeated label patterns, original face orientations and rank drops.
+Two larger fixtures have 5,408,312 formal tensor rows but retain four
+original columns, and 2,704,156 formal vertex features but actual feature
+rank three, retaining 48 of 153 graph edges. These are exact fixtures,
+not estimates of worst-case performance.
+
+The executable supports rational and supplied prime fields. The full proof
+separately constructs finite-field extensions and bounds rational bit
+growth. No verification of integral torsion or top-degree homology is
+claimed; those objects are outside the theorem.
 
 ## Incidence decoding
 

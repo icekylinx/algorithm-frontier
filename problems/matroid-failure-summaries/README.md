@@ -11,7 +11,10 @@ For <code class="math">C=\binom{h+d}{d}</code>, represented matroids preserve ev
 For at most one label per item, a fixed contraction reduces every failure
 query to rank <code class="math">T</code>, the total number of single-failure replacement appearances.
 The original rank contributes only <code class="math">r-T</code> fixed items. In particular <code class="math">T=0</code>
-needs only the original basis, and <code class="math">T=1</code> has the sharp all-budget bound <code class="math">r+h</code>.
+needs only the original basis. For <code class="math">T\leq2</code>, the sharp all-budget bound is
+<code class="math">r+Th</code>. At original rank at most two, the exact canonical
+union takes <code class="math">O(N+h^2)</code> independence queries; this is optimal
+in the worst case for exact output when <code class="math">N\ge h+3</code>.
 
 **Objective and output**
 
@@ -25,6 +28,13 @@ Deterministic exact constructions. Random permutations and Bernoulli failures ap
 
 Represented: uniform deterministic polynomial preprocessing, with <code class="math">O(ND^2)</code> field operations for elimination at gated dimension <code class="math">D=rC</code>, plus feature construction and rank compression.
 
+An [actual-rank construction](../persistence-failure-certificates/manuscripts/feature-rank-construction.md)
+also finds the exact ordered basis of the formal lift without enumerating
+its monomials. If its actual rank is <code class="math">\rho</code>, this uses
+<code class="math">O(N\rho(r+d\rho))</code> field operations and <code class="math">O(N(\rho+d))</code> field elements,
+plus explicit original-row selection and label-polynomial generation.
+The arithmetic and rational/finite-field bit ledgers are separate.
+
 For arbitrary weighted oracles, put <code class="math">S(a,h)=\sum_{i=0}^{h}a^i</code>, with <code class="math">0^0=1</code>. The canonical-basis tree uses at most <code class="math">NS(dr,h)</code> independence queries after sorting. The one-pass retained-prefix alternative uses <code class="math">N(K+1)S(dr,h)</code>. Here <code class="math">K=\min\{N,\lfloor r\Gamma(h,d)\rfloor\}</code>, and <code class="math">\Gamma(h,d)=(h+d)^{h+d}/(h^h d^d)</code>, with <code class="math">\Gamma=1</code> when <code class="math">hd=0</code>; the stronger size bounds below may also be used for <code class="math">K</code>.
 
 A final reverse-deletion pass attains the sharp rank-only size within <code class="math">(N+K(K+1))S(dr,h)</code> queries, linear in <code class="math">N</code> for fixed parameters. One failed label takes at most <code class="math">(1+dr)N</code> queries. Two failures with one label per item take <code class="math">O(N(r+1)^2)</code> queries. Integral values have the analogous basis-tree bound <code class="math">1+NS(dR,h)</code> and the two-stage bound with rank replaced by the numerical range <code class="math">R</code>.
@@ -33,9 +43,16 @@ The [rank-loss contraction](manuscripts/rank-loss-contraction-for-prefix-summari
 by <code class="math">T\le r</code> when each item has at most one label. It uses at most
 <code class="math">(1+\ell_0)N+r+N'S(T,h')</code> independence queries for <code class="math">T&gt;0</code>, where
 <code class="math">\ell_0\le r</code> counts labels on the original basis, <code class="math">N'=N-r+T</code>, and
-<code class="math">h'</code> is clipped to the label count in the minor. For <code class="math">T\ge2</code> this is
-<code class="math">O(N(r+T^{h'}))</code> queries; for <code class="math">T=1</code> it is <code class="math">O(N(r+h'))</code>. Query-set
-encoding costs are separate from the oracle count.
+<code class="math">h'</code> is clipped to the label count in the minor. For <code class="math">T\ge3</code> this gives
+<code class="math">O(N(r+T^{h'}))</code> queries. The
+[low-residual-rank refinement](manuscripts/optimal-rank-two-prefix-oracle-construction.md)
+uses <code class="math">O(N(r+1))</code> total queries for <code class="math">T\le1</code>, and <code class="math">O(Nr+(h'+1)^2)</code> for <code class="math">T=2</code>.
+At original rank at most two, its explicit bound is
+<code class="math">2N+\binom{k+1}{2}+(k+1)^2</code>, where <code class="math">k</code> is the clipped nonloop-label budget.
+Ordinary computation is <code class="math">O(N(k+1)+(k+1)^2)</code> after label indexing;
+query-set encoding is charged separately.
+If every occurring label may fail, any rank has the additional endpoint
+<code class="math">N+r_U\ell</code> queries, where <code class="math">r_U</code> is unlabelled rank and <code class="math">\ell</code> is label count.
 
 **Space**
 
@@ -51,13 +68,18 @@ Rational or explicit finite-field columns for the general weighted-prefix theore
 
 **Lower-bound scope**
 
-The <code class="math">rC</code> and <code class="math">RC</code> retained-size bounds are exact in the worst case via labeled parallel classes or coverage functions. The weighted one-failure oracle bound is also sharp. For every <code class="math">h\ge2</code>, a rank-four one-label-per-item oracle matroid forces <code class="math">4(h+1)+1</code> items to preserve exact optimum costs, exceeding <code class="math">rC=4(h+1)</code>. For two failures, the 13-item example has minimum possible rank, label count and ground size for violating <code class="math">3r</code>, and 13 is the exact rank-four maximum. These are retained-support statements, not oracle-query hardness claims.
+The <code class="math">rC</code> and <code class="math">RC</code> retained-size bounds are exact in the worst case via labeled parallel classes or coverage functions. The weighted one-failure oracle bound is also sharp. For every <code class="math">h\ge2</code>, a rank-four one-label-per-item oracle matroid forces <code class="math">4(h+1)+1</code> items to preserve exact optimum costs, exceeding <code class="math">rC=4(h+1)</code>. For two failures, the 13-item example has minimum possible rank, label count and ground size for violating <code class="math">3r</code>, and 13 is the exact rank-four maximum.
+
+A separate oracle-information lower bound gives <code class="math">\Omega(N+h^2)</code> queries
+at rank two for <code class="math">N\ge h+3</code>. It concerns the exact canonical union, or
+equivalently the unique minimum all-prefix restriction. It does not lower
+bound returning an arbitrary valid superset, such as the whole input.
 
 **Review status**
 
-**Ready for review.** Main Theorems 1–7: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure endpoint; explicit weighted obstruction; faster canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima and minimality of the 13-item example. Includes the sharp singleton-replacement bound r+2t, its failed-contracted-item proof, and the profile-sensitive construction with N(1+ell_0+binom(t+1,2)) queries. The fixed rank-loss contraction theorem preserves every failure basis and original prefix, reduces the tree parameter to the total single-failure replacement count T and proves the sharp r+h endpoint at T=1.
+**Ready for review.** Main Theorems 1–8 and the actual-rank represented construction: represented prefix lift; sharp oracle-rank and integral-value constructions; one-failure endpoint; weighted obstruction; canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima; singleton replacement profiles; fixed rank-loss contraction and all-prefix identities. The new rank-two exact-union algorithm has optimal Theta(N+h^2) queries in its stated range, sharp r+Th support for T<=2 after contraction, actual-residual-rank terminals and an arbitrary-rank all-label-budget endpoint.
 
-**Dependencies and scope.** Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification. The rank-loss contraction in this review uses one label per item and a fixed total order. The query ledger charges the original oracle separately from explicit query-set representation; a changed cost order may require another contraction.
+**Dependencies and scope.** Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification. The rank-loss contraction in this review uses one label per item and a fixed total order. The query ledger charges the original oracle separately from explicit query-set representation; a changed cost order may require another contraction. The rank-two query lower bound requires the exact canonical union and N>=h+3; arbitrary valid supersets are outside that hardness claim. Oracle calls, ordinary work and query-set encoding are separate. The actual-rank linear construction uses explicit fields; its reference supports rationals and supplied primes, with general extension-field and bit costs proved separately.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -99,12 +121,24 @@ Use <code class="math">\Psi=1</code> when <code class="math">hd=0</code>. The al
 
 **Support bounds.** <code class="math">r+T</code> for one failure; <code class="math">r+h^hT/(h-1)^{h-1}</code> for <code class="math">h\ge2</code>.
 For two failures, <code class="math">T\le3</code> gives <code class="math">r+2T</code>, and <code class="math">T=4</code> gives <code class="math">r+9</code>.
-At <code class="math">T=1</code>, the stronger all-budget bound <code class="math">r+h</code> is sharp.
+For <code class="math">T\le2</code>, the stronger all-budget bound <code class="math">r+Th</code> is sharp.
 
 **Construction / interpretation.** At most <code class="math">(1+\ell_0)N+r</code> preprocessing
-queries, followed by a rank-<code class="math">T</code> basis tree. Unlabelled items, loops, repeated
+queries, followed by a rank-<code class="math">T</code> basis tree with direct rank-one and rank-two
+terminal algorithms. The latter uses <code class="math">O(N'+(h'+1)^2)</code> additional queries.
+Unlabelled items, loops, repeated
 labels and surviving rank drops are allowed. The fixed order and the
 one-label-per-item hypothesis are essential to the stated theorem.
+
+**Optimal rank-two exact prefix summary**
+
+**Query bound.** <code class="math">2N+\binom{k+1}{2}+(k+1)^2</code>; matching
+<code class="math">\Omega(N+h^2)</code> lower bound for <code class="math">N\ge h+3</code>.
+
+**Support and output.** At most <code class="math">2(k+1)</code> original items, with an explicit
+failed-label witness for every retained item. The output is the exact union
+of all canonical surviving bases in the supplied order. See the
+[complete query proof](manuscripts/optimal-rank-two-prefix-oracle-construction.md).
 
 **Two failed labels, arbitrary matroid and one label per item**
 

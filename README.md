@@ -36,20 +36,13 @@ For n integers of total bit length L, including an indexed witness. The finite s
 
 ### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
 
-Sharp failure summaries and a fixed contraction reducing the oracle construction to its replacement rank.
+Exact canonical prefix summaries with optimal rank-two oracle complexity.
 
-One-label oracle prefix construction, with <code class="math">T\ge2</code>.
+Rank two: <code class="math">\Theta(N+h^2)</code> independence queries for <code class="math">N\ge h+3</code>.
 
-<!-- math-display: 657b65ed93c92106e753b827
-O(N(r+T^h))
--->
-![Formula](assets/math/657b65ed93c92106e753b827.svg)
+Fixed residual rank <code class="math">T=2</code>: <code class="math">O(Nr+(h'+1)^2)</code> queries.
 
-Independence queries. At <code class="math">T=1</code>, sharp <code class="math">r+h</code> retained items.
-
-Two failed labels: exact rank-four maximum 13.
-
-N is the ground size, r the rank, h the failed-label budget and T the sum of single-failure replacement counts. A fixed contraction removes r minus T canonical-basis items and preserves every surviving prefix. The problem page also gives sharp represented-prefix, rank and integral-value bounds, with their distinct models.
+N is the number of items, h the failed-label budget and r the original rank. One fixed order and at most one label per item. The rank-two bound computes the exact minimum all-prefix summary and includes a matching oracle-information lower bound. A fixed contraction transfers it to high-rank instances with replacement rank T=2. Ordinary computation and query-set encoding are charged separately; represented, rank-only and integral-value bounds retain their distinct models.
 
 ## Results
 

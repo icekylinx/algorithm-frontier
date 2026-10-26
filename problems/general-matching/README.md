@@ -80,9 +80,9 @@ reference implementation. No new matching lower bound is claimed.
 
 **Review status**
 
-**Ready for review.** The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable edge retirement, finite-bit implementation and uniform parameter search. The separate executable package includes exact matching, independent optimality certificates, the early checkpoint’s four-times-matching-number compression, and the newly implemented nonrecursive bipartite phase algorithm. Sharp cover-neighbor, mixed-failure and subcubic reductions retain their own proved scopes.
+**Ready for review.** The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable retirement, finite-bit realization and uniform search. The separate executable package includes exact matching, independent optimality certificates, the refined 3nu vertex count for the earlier compression, nonrecursive bipartite phases, and universal mixed-failure kernels with all-cover-subset and context preservation. Layer matching/vertex-cover witnesses certify every permitted failure query without enumeration.
 
-**Dependencies and scope.** Named published deterministic primitives are explicit proof dependencies; the local realization theorem discharges the abstract cycle-search contract. The shipped reference implementation has a separate polynomial bound and does not implement the entire fast research construction. The mixed-failure kernel concerns a fixed simple graph. Native parallel records and correlated failure labels are separate models. Readiness is a mathematical review invitation, not proof-assistant verification.
+**Dependencies and scope.** Named published deterministic primitives are explicit proof dependencies; the local realization theorem discharges the abstract cycle-search contract. The shipped reference implementation has a separate polynomial bound and does not implement the entire fast research construction. Failure kernels concern a fixed simple graph and native edge/vertex faults; arbitrary cover deletions and attached cover contexts are proved separately. Correlated failure labels and native parallel records are different models. The O(nu f) positive-budget vertex order is credited to the published 2022 result. Readiness is a mathematical review invitation, not proof-assistant verification.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -116,13 +116,22 @@ component costs; no matching-size estimate is supplied as input.
 For a fixed simple graph, the [mixed-failure extension](../../manuscripts/graph-backends/matching-size-kernel-corollary.md#4-one-kernel-for-mixed-vertex-and-edge-failures)
 retains at most <code class="math">\binom c2+c(c+f)</code> edges and simultaneously preserves
 the exact matching number after every mixture of at most <code class="math">f</code> native
-vertex/edge deletions. This is an unconditional deterministic kernel;
-each query still needs a matching solver.
+vertex/edge deletions. The
+[layered vertex refinement](reference/fault-tolerant-cover-compression.md)
+retains at most <code class="math">(f+2)c</code>, and with the default cover at most
+<code class="math">(f+3)\nu(G)</code>, vertices while preserving that edge bound.
+Its [constructor](reference/failure_kernel.py) emits a universal
+certificate checked by a [separate verifier](reference/verify_failure_kernel.py)
+without a matching search or failure enumeration.  Every matchable cover
+subset is preserved, so arbitrary graphs attached through the cover are
+also supported.  Each particular query still needs a matching solver.
 
 The <code class="math">4\nu</code> vertex compression already appears in
 the 24 October direct checkpoint's
 <em>A linear-vertex refinement of the matching-size kernel</em>
-proof. The current implementation, certificate extraction and bipartite
+proof. Counting the actual crossing matching now sharpens the same
+construction to <code class="math">3\nu</code>, with no change to the solve algorithm.
+The current implementation, certificate extraction and bipartite
 refinement are documented separately in the
 [source history](sources.md#checkpoint-provenance).
 

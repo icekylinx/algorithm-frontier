@@ -1,0 +1,258 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md
+% Recovered-source SHA-256: cc0a11ecdf455bc2446fd13e72dabe4632092821f1c78e3418b7b42e0b4eabad
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-b41875cb6e-optimal-oracle-construction-of-rank-two-label-failure-prefix-summaries}{%
+\section{Optimal oracle construction of rank-two label-failure prefix summaries}\label{af-b41875cb6e-optimal-oracle-construction-of-rank-two-label-failure-prefix-summaries}}
+
+\textbf{Status: complete proof with exact finite verification.} This manuscript concerns one fixed item order and at most one failure label per item. Its oracle lower bound is for computing the exact canonical union, equivalently the unique smallest restriction preserving every surviving prefix rank. It is not a lower bound for returning an arbitrary valid restriction. No literature-priority claim is made.
+
+\hypertarget{af-b41875cb6e-statement-and-model}{%
+\subsection{1. Statement and model}\label{af-b41875cb6e-statement-and-model}}
+
+Let \(M\) be a matroid on an explicitly listed ground set \(E\) of \(N\) items, given by an independence oracle, with \(\mathrm{rank}(M)\le2\). Fix a total order on \(E\). Each item has either one label \(\lambda(e)\) or no label. For a set \(F\) of failed labels, let \(E_F\) be the surviving ground and let \(B_F\) be its canonical greedy basis in the fixed order. Rank drops are allowed. Given a nonnegative binary-encoded budget \(h\), the required output is
+
+\[
+H_h=\bigcup_{|F|\le h}B_F.
+\tag{1}
+\]
+
+This is the unique smallest original-item restriction satisfying
+
+\[
+\mathrm{rank}_M(H_h\cap P\cap E_F)
+=\mathrm{rank}_M(P\cap E_F)
+\quad\text{for every original-order prefix }P\text{ and }|F|\le h.
+\tag{2}
+\]
+
+For completeness, if an item enters a canonical basis at its own position, its earlier surviving prefix does not span it; omitting that item would therefore violate (2) at that prefix. Conversely, the portion of a canonical basis in any prefix spans that prefix. These two facts prove the assertion.
+
+Let \(\ell\) be the number of distinct labels on nonloops, and put \(k=\min\{h,\ell\}\). The algorithm discovers the nonloops before using \(k\). Failures of labels occurring only on loops never matter.
+
+\textbf{Theorem 1 (rank-two construction).} There is a deterministic algorithm that computes (1), together with one failed-label witness for each retained item, using at most
+
+\[
+2N+\binom{k+1}{2}+(k+1)^2
+\tag{3}
+\]
+
+independence queries. Every query contains at most two items. After the fixed order and label indexing have been supplied, its ordinary work is \(O(N(k+1)+(k+1)^2)\), and its storage is \(O(N+(k+1)^2)\) item/label records. Label comparison and indexing costs are separate; deterministic sorting gives \(O(N\log(N+2))\) comparisons if indexing is not supplied.
+
+The output has the sharp size bound
+
+\[
+|H_h|\le \min\{N,2(k+1)\}.
+\tag{4}
+\]
+
+If the rank is known to be at most one, \(N\) singleton queries suffice and the output has at most \(k+1\) items. The rank-zero case returns the empty set without queries when that rank is supplied as a promise.
+
+\textbf{Theorem 2 (matching exact-summary query lower bound).} For every pair of integers \(h\ge0\) and \(N\ge h+3\), some rank-two, singleton-labelled instance forces every deterministic exact algorithm to use at least
+
+\[
+\binom{h+2}{2}+N-h-3
+=\Omega(N+h^2)
+\tag{5}
+\]
+
+independence queries. This holds even when its ordinary computation is free and queries of arbitrary cardinality are permitted. Together with Theorem 1, it gives worst-case query complexity \(\Theta(N+h^2)\) in this parameter range. The restriction \(N\ge h+3\) is part of the lower-bound statement; it is not silently extrapolated to budgets covering almost all input labels.
+
+The algorithm extends the earlier \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md}{ordered-basis tree} at low residual rank. At rank two, its query bound replaces the tree bound \(N\sum_{j=0}^{k}2^j\) by \(O(N+(k+1)^2)\). The polynomial term is additive to the input-size term. The theorem counts independence calls, not the running time of a hidden implementation of that oracle.
+
+\hypertarget{af-b41875cb6e-the-possible-first-surviving-items}{%
+\subsection{2. The possible first surviving items}\label{af-b41875cb6e-the-possible-first-surviving-items}}
+
+Query every singleton to remove loops from consideration, retaining the ordered list of nonloops. Among these, scan in order and record the first item of each previously unseen label. Stop immediately after either the first unlabelled nonloop or the \((k+1)\)st recorded labelled item. If neither occurs, continue to the end. Call the resulting ordered list \(A\) and write \(a=|A|\le k+1\).
+
+\textbf{Lemma 3.} Under every allowed failure set with at least one surviving nonloop, the first surviving nonloop belongs to \(A\). Every item of \(A\) is the first survivor for some failure set of size at most \(k\).
+
+\textbf{Proof.} A labelled first survivor must be the first nonloop with its label: any earlier such item survives with it. Skipping \(k+1\) recorded distinct labels requires more than \(k\) effective failures. An unlabelled nonloop cannot be skipped. This proves the first claim, including when all recorded labelled items fail and no nonloop remains.
+
+For an item \(x\in A\), fail exactly the labels of preceding items of \(A\). These are at most \(k\) distinct labels, none is the label of \(x\), and no unlabelled item precedes \(x\). Every earlier nonloop has one of those labels. Thus \(x\) is the first survivor. \(\square\)
+
+Let \(F_x\) denote this particular witness: the labels on the earlier entries of \(A\). It is precisely the set of labels of all nonloops before \(x\).
+
+When the rank is at most one, the first surviving nonloop is the complete canonical basis. Thus \(H_h=A\), proving the rank-one part of Theorem 1.
+
+\hypertarget{af-b41875cb6e-capped-lists-outside-the-relevant-parallel-classes}{%
+\subsection{3. Capped lists outside the relevant parallel classes}\label{af-b41875cb6e-capped-lists-outside-the-relevant-parallel-classes}}
+
+Two nonloops are parallel when their pair is dependent. Parallelism is an equivalence relation: if \(x,y\) and \(y,z\) are dependent nonloop pairs, rank submodularity gives
+
+\[
+\mathrm{rank}_M(\{x,y,z\})
+\le \mathrm{rank}_M(\{x,y\})+
+\mathrm{rank}_M(\{y,z\})-\mathrm{rank}_M(\{y\})=1.
+\]
+
+Consequently \(x,z\) are parallel. A pair of nonloops from distinct classes is independent. In a matroid of rank at most two, the canonical basis consists of its first surviving nonloop and, if it exists, its first surviving item outside that nonloop's parallel class.
+
+Classify the items of \(A\) into parallel classes by testing each new item against the already chosen class representatives. This uses at most \(\binom a2\) independence queries. Let \(\mathcal C\) be the resulting set of classes, let \(c=|\mathcal C|\le a\), and choose a representative \(z_C\in A\) for each \(C\in\mathcal C\).
+
+For each class \(C\), construct an ordered list \(L_C\) as follows. Among the nonloops outside \(C\), record the first occurrence of each distinct label. Stop after the first unlabelled item outside \(C\), or after recording \(k+1\) distinct labelled items, whichever comes first. Thus \(|L_C|\le k+1\).
+
+These lists can be built in one input scan without learning all the parallel classes. Keep a touched-label set and a closed flag for each \(C\). For a nonloop \(e\) and an open list \(L_C\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If \(e\) is labelled and that label already occurs in \(L_C\), do nothing.
+\item
+  Otherwise, if \(e=z_C\), do nothing. In every other case query \(\{z_C,e\}\).
+\item
+  If the pair is independent, append \(e\) to \(L_C\). Close the list if \(e\) is unlabelled or if the list now has \(k+1\) entries.
+\end{enumerate}
+
+\textbf{Lemma 4 (query charging).} The list scan uses at most \(N+c(k+1)\) independence queries.
+
+\textbf{Proof.} Every successful independence query appends one item to one list. There are at most \(c(k+1)\) such appends. A nonloop \(e\) can be parallel to at most one of the pairwise nonparallel representatives \(z_C\). Consequently at most one of the queries involving this input item is dependent, regardless of which lists are already closed or which labels were skipped. The total number of dependent queries is therefore at most the number of nonloops, hence at most \(N\). \(\square\)
+
+This charging is about oracle calls. The ordinary scan can inspect all \(c\le k+1\) list states for each input item, even when it makes no query. That is the \(O(N(k+1))\) term in Theorem 1. In particular the proof does not replace this ordinary work by \(O(N+k^2)\).
+
+\hypertarget{af-b41875cb6e-exact-witnesses-and-extraction-of-the-minimum-summary}{%
+\subsection{4. Exact witnesses and extraction of the minimum summary}\label{af-b41875cb6e-exact-witnesses-and-extraction-of-the-minimum-summary}}
+
+For \(e\in L_C\), let \(D_C(e)\) be the labels on entries of \(L_C\) strictly before \(e\). No such earlier entry is unlabelled, because that would have closed the list. Since \(e\) occurs before truncation, \(D_C(e)\) is exactly the set of labels on all earlier nonloops outside \(C\).
+
+For \(x\in A\cap C\) and \(e\in L_C\) later than \(x\), define
+
+\[
+W(x,e)=F_x\cup D_C(e).
+\tag{6}
+\]
+
+Call the pair admissible if
+
+\[
+|W(x,e)|\le k,\qquad
+\lambda(x)\notin W(x,e),\qquad
+\lambda(e)\notin W(x,e),
+\tag{7}
+\]
+
+where a label-exclusion condition is vacuous for an unlabelled item. Return \(A\) together with every item \(e\) occurring in some admissible pair. Store \(F_x\) as the witness for \(x\in A\), and \(W(x,e)\) as the witness when an admissible pair first adds \(e\).
+
+\textbf{Lemma 5 (exact extraction).} This output is exactly \(H_h\).
+
+\textbf{Proof.} Every \(x\in A\) has the witness from Lemma 3. For an admissible pair, failing \(W(x,e)\) deletes every nonloop before \(x\) and every nonloop outside \(C\) before \(e\), while preserving both \(x\) and \(e\). Hence \(x\) is the first surviving nonloop and \(e\) is the first survivor outside its parallel class. They form the canonical basis, so \(e\in H_h\).
+
+Conversely, suppose \(e\) is the second item of a canonical basis for an allowed failure set \(F\), and let \(x\) be its first item. Lemma 3 gives \(x\in A\). Let \(C\) be the parallel class of \(x\). Every earlier nonloop outside \(C\) must fail. In particular \(e\) is the first outside-\(C\) item with its own label, if it is labelled. At most \(k\) distinct outside labels can precede it, and no unlabelled outside item can precede it. Therefore \(e\in L_C\). The same failure set contains \(F_x\) and \(D_C(e)\), so \(W(x,e)\subseteq F\); it preserves \(x,e\). Conditions (7) follow. Every canonical basis has at most two items, which proves equality. \(\square\)
+
+For ordinary-time accounting, process one \(x\in A\) at a time. Initialize an indexed set with \(F_x\), scan \(L_C\) in order, test (7) using its current size and membership flags, then insert the next list label. Touched-label lists reset those flags in \(O(k+1)\) work. This is \(O(k+1)\) work per \(x\), apart from copying the first witness for a newly retained item. There are at most \(2(k+1)\) retained items by Section 5, so explicitly storing all witnesses also takes \(O((k+1)^2)\) records and work.
+
+There are \(N\) singleton queries, at most \(\binom a2\) classification queries, and at most \(N+c(k+1)\) list queries. Using \(a,c\le k+1\) proves (3). Clipping \(h\) to \(\ell\) ensures that a very large binary budget never causes a loop of length equal to that numeric budget.
+
+\hypertarget{af-b41875cb6e-the-sharp-retained-size}{%
+\subsection{5. The sharp retained size}\label{af-b41875cb6e-the-sharp-retained-size}}
+
+The following is a size proof, not the algorithm used to construct \(H_h\). It gives a short self-contained specialization of the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md}{represented prefix lift}.
+
+Represent each nonloop parallel class by a distinct rational number \(t_C\) and represent each item in that class by \(v_e=(1,t_C)\). Loops have zero vectors. This represents every rank-at-most-two matroid, except that a one-class ground has rank one as it should. Choose distinct rational numbers \(z_\lambda\) for all labels and a distinct dummy \(z_0\) for unlabelled items. Lift each column to
+
+\[
+w_e=v_e\otimes(1,z_e,z_e^2,\ldots,z_e^k)
+\in\mathbb Q^{2(k+1)}.
+\tag{8}
+\]
+
+Take the canonical basis \(K\) of the lifted columns in the original order. It has at most \(2(k+1)\) columns. For any effective failure set \(F\) of size at most \(k\), the polynomial
+
+\[
+p_F(z)=\prod_{\lambda\in F}(z-z_\lambda)
+\]
+
+defines a linear map sending \(w_e\) to \(p_F(z_e)v_e\). This image is zero exactly for failed nonloops, and is a nonzero scalar multiple of \(v_e\) for surviving nonloops. Every original lifted prefix is spanned by its columns in \(K\), so applying this map shows that \(K\) preserves each surviving prefix span. By the necessity argument preceding Theorem 1, \(H_h\subseteq K\). This proves (4), without constructing the representation or assuming access to it.
+
+The bound is attained by two independent parallel classes, each containing \(h+1\) ordered items with pairwise distinct labels, all labels distinct across both classes. Every item is needed: fail the at most \(h\) labels of its predecessors in its own class. The unfailed earlier items of the other class cannot span it. Thus all \(2(h+1)\) items belong to \(H_h\).
+
+\hypertarget{af-b41875cb6e-independence-oracle-lower-bound}{%
+\subsection{6. Independence-oracle lower bound}\label{af-b41875cb6e-independence-oracle-lower-bound}}
+
+Let \(p=N-h-3\). Put \(p\) loop items first in the order, followed by core items \(b_1,\ldots,b_{h+2},z\). Give every item its own distinct label. The base matroid \(M_0\) is uniform of rank two on its \(h+3\) core items, with those \(p\) loops adjoined.
+
+The last item \(z\) is absent from \(H_h(M_0)\): among its \(h+2\) core predecessors at least two survive any \(h\) label failures, and these are independent. For every pair \(\{b_i,b_j\}\) among those predecessors, define \(M_{ij}\) by making this pair one parallel class and leaving all other core items singleton parallel classes. It is again a rank-two matroid. Fail the other \(h\) predecessor labels. The pair survives with rank one and \(z\) becomes the second canonical item. Hence \(z\in H_h(M_{ij})\).
+
+The independence answers of \(M_0\) and \(M_{ij}\) differ on exactly the two-element query \(\{b_i,b_j\}\). All singleton core queries are true; all sets of at least three items are dependent; every query containing a loop is dependent unless it is empty. Therefore the transcript of a correct deterministic algorithm on \(M_0\) must query every one of these \(\binom{h+2}{2}\) pairs. Otherwise it has the same transcript on a matroid whose required output differs.
+
+For each of the \(p\) initial loops \(u\), also consider the variant in which \(u\) becomes a nonloop parallel to \(b_1\), while every other item is as in \(M_0\). The rank remains two. This item is the first nonloop in the unfailed order, so it belongs to the required summary in the variant and not in \(M_0\). A query distinguishing this variant from \(M_0\) is either \(\{u\}\) or a pair containing \(u\) and a core item not parallel to it. It can distinguish at most one such loop variant. Queries containing two of the original loops remain dependent in each single-loop variant, and queries of size at least three remain dependent by rank two.
+
+The transcript on \(M_0\) therefore requires at least \(p\) further queries, disjoint from the mandatory core-pair queries. This proves (5). It is an oracle-information lower bound, not merely an input-reading cost. The exact-minimum output requirement is essential: returning all of \(E\) always preserves prefixes without learning the oracle.
+
+\hypertarget{af-b41875cb6e-fixed-contraction-and-residual-rank-consequences}{%
+\subsection{7. Fixed-contraction and residual-rank consequences}\label{af-b41875cb6e-fixed-contraction-and-residual-rank-consequences}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md}{fixed rank-loss contraction} constructs \(Q\subseteq B_0\) with \(|Q|=r-T\) and the exact identity
+
+\[
+H_h(M)=Q\ \dot\cup\ H_h(M/Q),
+\tag{9}
+\]
+
+where \(T\) is the total number of single-label replacements counted with multiplicity, and the fixed minor has rank \(T\). Its construction takes at most \((1+\ell_0)N+r\) original independence queries, where \(\ell_0\) counts the labels meeting \(B_0\). Write \(N'=N-|Q|\), and clip the remaining failure budget to the labels on nonloops of the minor.
+
+\textbf{Corollary 6.} Once that fixed contraction is computed, the exact summary uses no further queries if \(T=0\), at most \(N'\) further queries if \(T=1\), and at most
+
+\[
+2N'+\binom{k+1}{2}+(k+1)^2
+\tag{10}
+\]
+
+further queries if \(T=2\). The corresponding support bounds are
+
+\[
+|H_h(M)|\le r+Th\qquad(T\in\{0,1,2\}).
+\tag{11}
+\]
+
+For \(T=1,2\) and \(h\ge1\), equality is attained by adding \(r-T\) unlabelled coloops to \(T\) independent parallel chains of \(h+1\) items with all labels distinct. Querying a singleton or pair in \(M/Q\) means querying its union with \(Q\) in \(M\), so the number of calls is unchanged. The original query set may now contain \(r-T+2\) items; its encoding cost is not constant and is charged separately.
+
+The same terminal algorithms may be used inside the ordered-basis tree, even when the original replacement rank is larger. At a node \(v\) with failed set \(F_v\) and remaining budget \(k_v\), compute its canonical basis on the surviving ground. Stop immediately at budget zero. Otherwise, if its actual rank is at most two, call the corresponding algorithm above on that surviving restriction. Only larger-rank nodes branch on the labels of their canonical basis. The usual target-following proof remains valid: a target failure either leaves that basis untouched, or deletes a branch label; a terminal algorithm contains every target basis below its node.
+
+Let \(\mathcal V\) be the actual visited nodes of this truncated tree, \(N_v\) their surviving ground sizes, and \(\mathcal L_2\) its positive-budget rank-two terminals. Including the rank-discovery scans, one explicit query bound is
+
+\[
+3\sum_{v\in\mathcal V}N_v+
+\sum_{v\in\mathcal L_2}
+\left[\binom{k_v+1}{2}+(k_v+1)^2\right].
+\tag{12}
+\]
+
+The budget in each summand can be clipped again to that node's occurring nonloop labels. This is an actual-residual-rank bound; a tree whose surviving ranks remain large does not receive an unproved polynomial guarantee. Rank-one and rank-two terminals replace whole failure subtrees by their exact canonical unions.
+
+\hypertarget{af-b41875cb6e-a-linear-query-endpoint-when-every-label-may-fail}{%
+\subsection{8. A linear-query endpoint when every label may fail}\label{af-b41875cb6e-a-linear-query-endpoint-when-every-label-may-fail}}
+
+There is an additional endpoint when \(h\ge\ell\), where now \(\ell\) counts all occurring labels. It is valid at arbitrary matroid rank. Let \(U\) be the unlabelled ground and let \(r_U=\mathrm{rank}_M(U)\).
+
+\textbf{Proposition 7 (all-label budget).} If every subset of occurring labels is allowed to fail, the exact prefix summary can be constructed with at most
+
+\[
+N+r_U\ell
+\tag{13}
+\]
+
+independence queries. Thus it uses \(O(N)\) queries at rank at most two. The query bound is an endpoint guarantee; it is not extended to smaller failure budgets without an additional argument.
+
+\textbf{Proof.} Write \(D_\lambda\) for the items of label \(\lambda\). A labelled item \(e\in D_\lambda\) has some prefix witness if and only if it is accepted in the greedy scan restricted to \(U\cup D_\lambda\). Indeed, failing every label except \(\lambda\) leaves the smallest possible earlier surviving prefix that still preserves \(e\). Any witness on a larger surviving prefix continues to witness acceptance on this smaller prefix. The converse uses that very failure set. Similarly, an unlabelled item has a witness exactly when it is accepted in the greedy scan of \(U\).
+
+Maintain the current greedy basis \(B_U\) of the unlabelled prefix. For each label already encountered, also maintain the greedy basis \(B_\lambda\) of the prefix restricted to \(U\cup D_\lambda\). When a label first occurs, initialize its state to the present \(B_U\). A labelled input item is tested once against its label's state; retain it precisely when accepted. An unlabelled input item is first tested against \(B_U\). If rejected, it lies in the span of the preceding unlabelled prefix and therefore in the span of every \(B_\lambda\); no label state changes. If accepted, retain it and test its insertion into every active label state. Those independent tests update precisely the canonical greedy scans in the common original order. There are at most \(r_U\) accepted unlabelled items.
+
+There is one principal test per input item and at most \(r_U\ell\) extra state-update tests. Every returned item has the maximal-deletion witness identified above, and every possible prefix witness implies one of these greedy acceptances. This proves both exactness and (13). \(\square\)
+
+The stored bases use \(O((\ell+1)(r+1))\) item and state records, in addition to input and output. An original independence query has at most \(r+1\) items. With explicit query sets, ordinary basis and query-set copying has \(O((r+1)(N+r_U\ell+\ell))\) work; this factor is separate from (13). For rank two these storage and ordinary-work bounds are linear in \(N\). The endpoint explains why the quadratic lower bound is stated in the specific range of Theorem 2: a budget allowing every label to fail has a stronger direct algorithm.
+
+\hypertarget{af-b41875cb6e-evidence-and-relationship-to-prior-work}{%
+\subsection{9. Evidence and relationship to prior work}\label{af-b41875cb6e-evidence-and-relationship-to-prior-work}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/check_rank_two_prefix.py}{finite checker} implements the capped-list algorithm using only an independence callback. Its reference answer enumerates failures and computes membership from ranks of original prefixes, independently of the capped lists. It verifies every stored witness, the exact output, the query charging and the support bound. The full small suite covers every rank-at-most-two matroid through four items, every one-label partition with an optional unlabelled class, every item order and every effective budget. Additional larger partition matroids test repeated labels, long classes, late unlabelled items, rank drops, all-loop grounds, and very large binary budgets. A separate suite checks every oracle answer in the small lower-bound families. The all-label endpoint is also compared with exhaustive failure unions on higher-rank represented matroids and the nonrepresentable 13-item example. These finite checks supplement Sections 2--8; they do not prove the asymptotic results.
+
+Bentert, Fomin, Golovach and Morelle, \emph{Fault-Tolerant Matroid Bases}, ESA 2025, Theorem 4 and Corollary 12, give an \(O(N^2)\) algorithm for a different rank-at-most-two oracle optimization problem: select a minimum-weight set whose original rank survives any permitted number of individual-item deletions. The present output is the fixed-order canonical union under correlated label deletions and permits the target rank to drop. Their theorem is not used as a correctness or running-time premise here. This comparison identifies a nearby primary source, without claiming that a bounded search establishes priority for the present query bound.
+
+Primary source: \href{https://doi.org/10.4230/LIPIcs.ESA.2025.83}{ESA 2025 article and bibliographic record}.
+
+\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

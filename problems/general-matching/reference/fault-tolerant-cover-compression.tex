@@ -1,0 +1,139 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/general-matching/reference/fault-tolerant-cover-compression.md
+% Recovered-source SHA-256: 44b9593ffa209b1a0f71b15d01eaaed0773724119553e5832c9292f68b3a118c
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-321c79486f-certified-matching-compression-for-mixed-failures-and-arbitrary-cover-contexts}{%
+\section{Certified matching compression for mixed failures and arbitrary cover contexts}\label{af-321c79486f-certified-matching-compression-for-mixed-failures-and-arbitrary-cover-contexts}}
+
+\hypertarget{af-321c79486f-statement-model-and-relationship-to-earlier-work}{%
+\subsection{1. Statement, model, and relationship to earlier work}\label{af-321c79486f-statement-model-and-relationship-to-earlier-work}}
+
+Let \(G=(V,E)\) be a fixed simple loopless graph, let \(C\) be a supplied vertex cover, put \(I=V\setminus C\), and write \(c=|C|\). A native failure deletes one vertex or one edge, identified in the original input. Fix an integer \(f\geq0\) before preprocessing. All algorithms below are deterministic; all retained vertices and edges are original objects.
+
+The earlier \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/cover-compression-proof.md}{static compression} keeps the right endpoints of one maximum crossing matching. Repeating that construction on disjoint right grounds gives the following universal extension.
+
+\textbf{Theorem 1 (layered cover compression).} There is an explicit subgraph \(K\subseteq G\) with
+
+\[
+|V(K)|=c+\sum_{i=0}^{\ell-1}q_i\leq(f+2)c,
+\qquad
+|E(K)|\leq\min\left\{m,\binom c2+c(c+f)\right\},
+\qquad \ell\leq f+1,
+\]
+
+where \(q_i\) is the cardinality of the maximum crossing matching in layer \(i\). Simultaneously for every \(D\subseteq I\) and \(F\subseteq E(C,I)\) satisfying \(|D|+|F|\leq f\), and every \(S\subseteq C\), the set \(S\) is matchable into \(I\setminus D\) in \(G-F\) if and only if it is matchable into \((V(K)\cap I)\setminus D\) in \(K-F\).
+
+Consequently arbitrary additional deletions of cover vertices and cover-internal edges do not consume the budget. In particular, for all \(X\subseteq V\), \(Y\subseteq E\) with \(|X|+|Y|\leq f\),
+
+\[
+\nu(K-X-Y)=\nu(G-X-Y).
+\]
+
+When \(C\) is the endpoint set of any maximal matching, the same construction also satisfies
+
+\[
+|V(K)|\leq (f+3)\nu(G).
+\]
+
+No estimate of \(\nu(G)\) is supplied. An output certificate, checked without any matching search, establishes the simultaneous guarantee.
+
+\textbf{Literature and scope.} Banerjee, Gupta, Raman, and Saurabh, \href{https://doi.org/10.1007/978-3-031-09574-0_8}{\emph{Output Sensitive Fault Tolerant Maximum Matching}, CSR 2022, pp.~115--132}, already give the general-graph orders \(O(\nu^2+\nu f)\) edges and \(O(\nu f)\) vertices for positive failure budgets. Those asymptotic orders are not a new claim here. The present note gives a self-contained consecutive-matching proof, its precise counts, a stronger all-cover-subset statement, explicit context composition, and a native-ID implementation with an independent universal certificate. It also sharpens the repository's existing static \(4\nu\) accounting to \(3\nu\) without changing that solver.
+
+\hypertarget{af-321c79486f-a-sparse-crossing-graph-preserving-every-cover-subset}{%
+\subsection{2. A sparse crossing graph preserving every cover subset}\label{af-321c79486f-a-sparse-crossing-graph-preserving-every-cover-subset}}
+
+Form \(H\subseteq G\) by retaining every edge inside \(C\) and, at each \(u\in C\), any \(\min\{c+f,|N_G(u)\cap I|\}\) distinct outside neighbors. Use the fixed input order for a deterministic choice. This is the existing \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/matching-size-kernel-corollary.md\#4-one-kernel-for-mixed-vertex-and-edge-failures}{mixed-failure edge reduction}. Its proof strengthens directly to all subsets of the cover.
+
+\textbf{Lemma 2.} For all \(D,F,S\) in Theorem 1, \(S\) is matchable into \(I\setminus D\) in \(G-F\) if and only if it is so matchable in \(H-F\).
+
+\textbf{Proof.} Take a surviving matching \(P\) of exactly \(S\). If its edge \(uv\) was omitted, then \(u\in S\subseteq C\) originally retained \(c+f\) distinct outside neighbors. The failures destroy at most \(f\) of these choices. After removing \(uv\) from \(P\), at most \(|S|-1\leq c-1\) outside vertices are occupied. At least one of the surviving retained neighbors is free. Replace \(uv\) by its edge to that neighbor. The matched left set stays exactly \(S\), and the number of omitted edges decreases. Repeat to obtain a matching entirely in \(H-F\). The reverse direction uses \(H\subseteq G\). No deleted cover vertex occurs in \(S\); no cover-internal edge is used by this argument. \hfill\(\square\)
+
+Write \(h=|E(H)|\). Keep all \(c\) cover vertices, including any supplied isolates, and discard isolated vertices outside the cover. This gives at most \(c+h\) vertices and the edge bound in Theorem 1.
+
+\hypertarget{af-321c79486f-consecutive-right-endpoint-layers}{%
+\subsection{3. Consecutive right endpoint layers}\label{af-321c79486f-consecutive-right-endpoint-layers}}
+
+Set \(R_0=I\cap V(H)\). For \(i=0,1,\ldots,f\), while a crossing edge remains, compute any maximum matching
+
+\[
+Q_i\quad\hbox{in}\quad H[C,R_i],\qquad
+T_i=V(Q_i)\cap R_i,\qquad q_i=|Q_i|,
+\qquad R_{i+1}=R_i\setminus T_i.
+\]
+
+The notation \(H[C,R_i]\) means only the crossing edges; it omits edges inside \(C\). Keep \(T=\bigcup_iT_i\) and define \(K=H[C\cup T]\). The sets \(T_i\) are pairwise disjoint, and \(q_i\leq c\). If fewer than \(f+1\) nonempty layers were made, no crossing edge remains outside \(T\), so the conclusion is immediate. Otherwise there are exactly \(f+1\) layers.
+
+\textbf{Lemma 3 (one untouched layer suffices).} Fix \(D,F\) with \(|D|+|F|\leq f\). Every matching of a specified left set \(S\) in \(H[C,I]-D-F\) can be replaced by a matching of exactly \(S\) into \(T-D\), using only surviving edges.
+
+\textbf{Proof.} A deleted outside vertex belongs to at most one \(T_i\). A failed edge belongs to at most one \(Q_i\), because those matchings have disjoint right endpoint sets. Mark a layer if \(D\) meets its \(T_i\) or if \(F\) meets its \(Q_i\). At most \(f\) layers are marked. Select an unmarked layer \(i\).
+
+Start with a surviving matching \(P\) of exactly \(S\). Freeze every edge of \(P\) whose right endpoint lies in \(T_0\cup\cdots\cup T_{i-1}\). Remove those frozen edges temporarily, and denote the remaining matching by \(P'\). Its right endpoints all lie in \(R_i\); its left endpoints form a subset \(S'\subseteq S\). Keep \(Q_i\) on its full original left ground \(C\) when using its maximum-cardinality property.
+
+If \(P'\) uses \(x\in R_i\setminus T_i\), then \(x\) is unmatched by \(Q_i\). The component of \(P'\mathbin{\triangle}Q_i\) starting at \(x\) is an alternating path beginning with a \(P'\) edge. It cannot end at a left vertex unmatched by \(Q_i\): that would augment \(Q_i\). It therefore ends at a right vertex of \(T_i\) unmatched by \(P'\), with a final \(Q_i\) edge. Every left vertex of this path is incident to a \(P'\) edge, so it belongs to \(S'\). Every internal right vertex is incident to a \(Q_i\) edge, so it belongs to \(T_i\).
+
+All edges of \(P'\) survive. Every \(Q_i\) edge and every right vertex of \(T_i\) survives because layer \(i\) is unmarked. The path thus avoids all failures, as well as the frozen left vertices. Flip \(P'\) along it. The left set remains exactly \(S'\) and one fewer right endpoint lies outside \(T_i\). Repetition gives a matching of \(S'\) into \(T_i\). Reinserting the frozen edges yields the required matching of \(S\) into \(T-D\). This also explains why deleting cover vertices does not mark every layer: the replacement paths visit only surviving left vertices already used by \(P'\). \hfill\(\square\)
+
+Apply Lemma 2 and then Lemma 3. They prove Theorem 1's all-subset statement. For a matching in a general graph after failures, freeze its cover-internal edges. Its crossing edges match a subset of the remaining cover; replace that subset using the two lemmas. This keeps the cardinality and avoids the frozen endpoints. The opposite inequality follows from \(K\subseteq G\).
+
+\hypertarget{af-321c79486f-exact-vertex-counts-context-composition-and-sharpness}{%
+\subsection{4. Exact vertex counts, context composition, and sharpness}\label{af-321c79486f-exact-vertex-counts-context-composition-and-sharpness}}
+
+The construction keeps exactly \(c+\sum_iq_i\) vertices, with \(q_i\leq\min\{c,\nu(G)\}\). If \(C\) is the endpoint set of a maximal matching \(M_0\), then \(c=2|M_0|\leq2\nu(G)\), giving
+
+\[
+|V(K)|=c+\sum_iq_i
+\leq c+(f+1)\min\{c,\nu(G)\}
+\leq\min\{(f+2)c,(f+3)\nu(G)\}.
+\]
+
+At \(f=0\) this is the repository's original outside-endpoint reduction. Its sharper bound is
+
+\[
+|V(K)|=c+\nu(H[C,I])\leq\min\{2c,3\nu(G)\}.
+\]
+
+The earlier \(4\nu\) bound followed by separately replacing \(c\) by \(2\nu\) in both copies of \(2c\). Counting the actual crossing matching gives the stronger bound for the unchanged implementation.
+
+\textbf{Corollary 4 (arbitrary interface context).} Let \(A\) be any graph on \(C\cup W\), where \(W\cap I=\varnothing\). It may be chosen after \(K\) is built and may replace the entire graph inside \(C\). Under any permitted outside-vertex/crossing-edge failures in the original module, replace \(H[C,I]\) by \(K[C,T]\) while keeping \(A\) unchanged. The maximum matching cardinality of the union stays the same. This remains true after arbitrary deletions within the context.
+
+\textbf{Proof.} Freeze the edges of a matching that lie in \(A\). Its remaining edges match a subset of the still-free cover vertices into \(I\). Theorem 1 replaces exactly that subset. The reverse direction follows from inclusion. \hfill\(\square\)
+
+\textbf{Sharpness for an arbitrary specified cover.} Take \(c\) disjoint stars, each having \(f+1\) leaves, and let \(C\) be their centers. Every subgraph preserving all queries must retain every leaf: if a star omits a leaf, delete all its retained leaf edges, using at most \(f\) failures. That star has no surviving retained edge while the original still has the omitted edge. No other star can compensate for the missing unit. Thus \((f+2)c\) vertices can be necessary, even for matching cardinality alone. At \(f=0\) the example consists of disjoint single edges.
+
+\textbf{Sharpness of the stated greedy construction.} Take \(\nu\) disjoint stars with \(f+2\) leaves each. A greedy initial matching contributes the center and one leaf of every star to \(C\). Every subsequent crossing layer takes one remaining leaf per star. The construction retains exactly \((f+3)\nu\) vertices. This is a limitation of this specific construction, not an unrestricted lower bound of that value.
+
+\hypertarget{af-321c79486f-deterministic-implementation-and-universal-certificates}{%
+\subsection{5. Deterministic implementation and universal certificates}\label{af-321c79486f-deterministic-implementation-and-universal-certificates}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/failure_kernel.py}{constructor} accepts the same vertex and edge-ID encoding as the ordinary matching solver, but rejects loops and parallel records. An ordinary normalization that drops duplicate records is not valid before a native edge-failure query. A supplied cover is optional; otherwise fixed-order greedy matching constructs it.
+
+The initial neighbor reduction scans the input. Each crossing layer uses the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/bipartite-proof.md}{nonrecursive bipartite phase solver}, and an alternating-reachability pass returns an equally large vertex cover of that residual crossing graph. The output includes the initial edge-kernel indices, each layer's matching indices and vertex cover, and the final induced subgraph with native IDs.
+
+\textbf{Certificate proposition.} The separate \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/verify_failure_kernel.py}{verifier} checks the original cover, exact \(c+f\) neighbor counts, every layer's residual matching and same-size vertex cover, disjoint right grounds, sufficient layer count or edge exhaustion, and the final induced subgraph. Acceptance proves Theorem 1 for every permitted failure query at once.
+
+\textbf{Proof.} Neighbor counts certify Lemma 2. In any graph, a matching uses at most one vertex of a vertex cover per edge, hence its size is at most that cover's cardinality. An equally large matching and cover therefore certify maximum cardinality without a search. All accepted layers satisfy exactly the hypotheses of Lemma 3. The remaining checks certify the subgraph to which that lemma applies. Statistics are not trusted. \hfill\(\square\)
+
+Let \(k\leq c+h\) be the first kernel's vertex count and let \(\ell\) be the number of nonempty layers. The implemented word-operation cost is
+
+\[
+O\!\left(n+m\log(m+2)+
+       \sum_{i=0}^{\ell-1}(k+h)\sqrt{q_i+1}\right),
+\]
+
+with at most one additional linear failed scan, if needed. In particular it is bounded by
+
+\[
+O\!\left(n+m\log(m+2)+(f+1)(c+h)\sqrt{c+1}\right).
+\]
+
+The verifier takes \(O(n+m\log(m+2)+(\ell+1)(c+h))\) word operations and performs zero matching searches. The input, working storage, and certificate use \(O(n+m)\) records. In particular, \(\sum_iq_i=|T|\leq k\); recording every layer matching and its same-size cover does not multiply storage by \(f\). Arbitrarily long IDs and the binary budget incur their actual input, comparison, and output costs. The loop count is clipped to the number of available outside vertices, and it stops when no crossing edge remains; no array of length equal to an enormous encoded \(f\) is allocated.
+
+\hypertarget{af-321c79486f-verification-scope}{%
+\subsection{6. Verification scope}\label{af-321c79486f-verification-scope}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/verify/check_failure_kernel.py}{independent finite checker} compares original and retained graphs with subset dynamic programming, including all left-subset ranks after mixed failures on its exhaustive domain. It checks arbitrary cover choices, uncharged cover deletions, both sharp star families, native IDs, large budgets, and rejected input/certificate mutations. These finite checks support the algorithm and verifier; Lemmas 2--3 establish the all-size universal statement.
+
+This kernel supplies a retained graph and a universally checkable preservation certificate. Answering a particular query still requires solving the surviving retained graph; no constant-time query bound is claimed. Arbitrarily correlated edge labels are outside the native failure model.

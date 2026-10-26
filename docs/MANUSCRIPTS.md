@@ -8,13 +8,17 @@ recoverable TeX source. They render without GitHub's mathematical interpreter.
 
 The export set starts with the homepage's three selected families and also
 includes complete degree, quota, flow-adapter and Boolean-compiler proofs,
-the four restored static graph packages and the rank-sensitive Haxell analysis:
+the four restored static graph packages, rank-sensitive Haxell analysis,
+optimal rank-two oracle construction, universal mixed-failure matching
+compression and constructive persistence feature ranks. There are 32
+source-bound exports:
 
 | Family | Maintained proof | TeX source export | PDF status |
 |---|---|---|---|
 | Deterministic general-graph matching | [Proof](../problems/general-matching/proof.md) | [TeX](../problems/general-matching/proof.tex) | The complete research manuscript has a [PDF](../problems/general-matching/paper.pdf); its [reference implementation paper](../problems/general-matching/reference/paper.pdf) has a separate scope. |
 | Faster deterministic Subset Sum | [Proof](../problems/subset-sum-fast-deterministic/proof.md) | [TeX](../problems/subset-sum-fast-deterministic/proof.tex) | Complete Parts I–III, including the stronger third-lookup theorem, have a [PDF](../problems/subset-sum-fast-deterministic/paper.pdf). |
-| Matroid and submodular failure summaries | [Proof](../problems/matroid-failure-summaries/proof.md) | [TeX](../problems/matroid-failure-summaries/proof.tex) | Complete [two-failure](../problems/matroid-failure-summaries/two-failure-paper.pdf) and [rank-adaptive contraction](../problems/matroid-failure-summaries/rank-adaptive-paper.pdf) packages have PDFs; the wider family remains source only. |
+| Matroid and submodular failure summaries | [Proof](../problems/matroid-failure-summaries/proof.md) | [TeX](../problems/matroid-failure-summaries/proof.tex) | Complete [two-failure](../problems/matroid-failure-summaries/two-failure-paper.pdf) and [rank-adaptive contraction with optimal rank-two queries](../problems/matroid-failure-summaries/rank-adaptive-paper.pdf) packages have PDFs; the wider family remains source only. |
+| Persistent-homology failure certificates | [Proof](../problems/persistence-failure-certificates/proof.md) | [TeX](../problems/persistence-failure-certificates/proof.tex) | The complete [actual feature-rank construction](../problems/persistence-failure-certificates/manuscripts/feature-rank-construction.tex) is available as editable source. |
 
 During this transition the Markdown proof owns the text; the adjacent TeX
 file is generated from its recovered mathematical source. This avoids two
@@ -56,9 +60,9 @@ The five selected paper packages are:
 
 - **[Deterministic Exact General Matching](../problems/general-matching/paper.pdf):** the complete four-fifths research manuscript, including the local cycle-search realization, parameter balance and uniform finite program. Named companion and published proofs remain explicit dependencies. [TeX wrapper](../problems/general-matching/paper.tex).
 - **[Deterministic Subset Sum through Signed Circuits and Trace Bounds](../problems/subset-sum-fast-deterministic/paper.pdf):** the complete compiler and witness proof, preserved two-level theorem and third-lookup refinement. Historical and current numerical evidence are distinguished. [TeX wrapper](../problems/subset-sum-fast-deterministic/paper.tex).
-- **[Certificates and Cover Compression for Deterministic Matching](../problems/general-matching/reference/paper.pdf):** the independent optimality certificate, cover compression, and the complete nonrecursive bipartite phase proof. The classical general-graph blossom method is attributed to its precise source. [TeX wrapper](../problems/general-matching/reference/paper.tex).
+- **[Certificates and Cover Compression for Deterministic Matching](../problems/general-matching/reference/paper.pdf):** the independent optimality certificate, refined three-times-matching-number compression, complete nonrecursive bipartite phase proof, and universal mixed-failure kernels with matching/cover certificates. The classical blossom method and known fault-tolerant asymptotic size are attributed to their precise sources. [TeX wrapper](../problems/general-matching/reference/paper.tex).
 - **[Two-Failure Prefix Summaries in Oracle Matroids](../problems/matroid-failure-summaries/two-failure-paper.pdf):** profile bounds, the sharp singleton replacement case, exact maxima through rank four, and the explicit 13-item obstruction with its amplification. [TeX wrapper](../problems/matroid-failure-summaries/two-failure-paper.tex).
-- **[A Fixed Rank-Loss Contraction for Matroid Failure Summaries](../problems/matroid-failure-summaries/rank-adaptive-paper.pdf):** one fixed contraction for every one-label failure query, exact original-prefix identities, the rank-adaptive query ledger and the sharp rank-one residual endpoint. [TeX wrapper](../problems/matroid-failure-summaries/rank-adaptive-paper.tex).
+- **[Rank-Adaptive Failure Summaries in Oracle Matroids](../problems/matroid-failure-summaries/rank-adaptive-paper.pdf):** one fixed contraction for every one-label failure query, exact original-prefix identities, optimal rank-two oracle complexity and its exact-output lower bound, sharp residual-rank endpoints and the all-label-budget construction. [TeX wrapper](../problems/matroid-failure-summaries/rank-adaptive-paper.tex).
 
 Every PDF build uses the recovered shared style, records exact source and
 artifact hashes, and requires visual review of the actual pages. Rebuilding

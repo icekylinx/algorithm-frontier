@@ -6,12 +6,15 @@ mutually recursive Task 2, expander sorting, and Task 3 algorithms of
 [Chang--Huang--Su, arXiv:2405.03908](https://arxiv.org/pdf/2405.03908).
 No global best-leaf density parameter is used.
 
-The hierarchy and precomputed embeddings are explicit hypotheses.
-The induced-terminal issue in
+The hierarchy and precomputed embeddings are explicit hypotheses of
+this reusable query theorem. The induced-terminal issue in
 [chs-hierarchy-and-load-boundaries.md](chs-hierarchy-and-load-boundaries.md)
-is not resolved by the query proof. A virtual-root construction may
-supply these hypotheses, but must be proved separately. Neither the
-existing 6/7 nor the existing 5/6 matching composition needs this note.
+is resolved for the current application by the
+[virtual-root construction, Section 5.1](virtual-expander-hierarchy-reconstruction.md#51-provider-for-the-full-routers-flattened-family-hypothesis).
+The [sequential router, Section 6](sequential-expander-routing-tradeoff.md#6-direct-full-query-induction),
+instantiates every query hypothesis using that construction and its leaf
+circuits. The resulting router is used by the four-fifths composition;
+the older 6/7 and 5/6 compositions use different routers.
 
 ## 1. Conditional interface and result
 

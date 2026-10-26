@@ -151,4 +151,42 @@ open outside the exact low-rank cases, between the recorded upper and
 lower bounds. No unknown algorithm
 is assumed to attain the represented bound in that model.
 
+## Exact rank-two oracle construction and its lower bound
+
+The [rank-two proof](../manuscripts/optimal-rank-two-prefix-oracle-construction.md)
+has a separate [finite checker](check_rank_two_prefix.py). Its tested
+algorithm sees only independence answers, while the reference answer
+enumerates allowed failures and identifies canonical items by ranks of
+the original complete prefixes. It verifies the exact union, every
+retained item's failure witness, the capped-list query charges, the
+sharp support bound, and the hidden-pair plus loop lower-bound families.
+
+```sh
+python3 problems/matroid-failure-summaries/verify/check_rank_two_prefix.py
+python3 problems/matroid-failure-summaries/verify/check_rank_two_prefix.py --full
+```
+
+The completed full run covers 75 small matroids, 66,301 ordered-labelled
+instances, 258,186 budget cases, 2,391,458 prefix comparisons and 554,073
+retention witnesses. It also covers 250 larger instances, 72 lower-bound
+oracle variants with 7,416 answer comparisons, and 102 higher-rank
+all-label-budget instances. That last endpoint includes the nonrepresentable
+13-item example and 1,192 enumerated failure states.
+
+The exact lower bound applies for <code class="math">N\ge h+3</code> and concerns
+computing the canonical union, not returning an arbitrary valid superset.
+Query counts and ordinary running time are
+separate: the rank-two upper algorithm uses <code class="math">O(N+(h+1)^2)</code> oracle calls
+but <code class="math">O(N(h+1)+(h+1)^2)</code> ordinary work after indexing. The full proofs,
+rather than the finite enumeration, establish the asymptotic bounds.
+
+## Represented feature-rank construction
+
+The shared [feature-construction checker](../../persistence-failure-certificates/verify/check_feature_construction.py)
+compares a breadth-first row-module construction to explicit small tensor
+matrices, then checks surviving prefix spans. Its source and proof scope
+are recorded in the [persistence verification note](../../persistence-failure-certificates/verify/README.md).
+It tests rational and prime-field arithmetic; the general extension-field
+construction is proved separately.
+
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

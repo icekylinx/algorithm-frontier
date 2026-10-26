@@ -12,7 +12,7 @@
 We give a deterministic reference implementation for maximum matching in
 general graphs, with independently verifiable optimality certificates and
 original input-edge identifiers. A cover-based reduction preserves every
-matchable cover subset and reduces each blossom solve to at most four times
+matchable cover subset and reduces each blossom solve to at most three times
 the component matching number. Including certificate construction, the
 running time is \(O(n+m\log(m+2)+\sum_i\nu(G_i)^3)\), with linear
 record storage. If a retained component is bipartite, both its crossing
@@ -22,7 +22,10 @@ The certificate verifier performs no matching search. This paper proves the
 cover compression and the simultaneous failed-forest certificate extraction,
 proves the nonrecursive bipartite phase algorithm and its matching-number
 phase bound, and states the boundary to the classical blossom algorithm
-used for the other components.
+used for the other components. A separate layered construction gives one
+fixed simple-graph kernel for every mixture of at most \(f\) native vertex
+or edge failures, with at most \((f+3)\nu(G)\) vertices. Its universal
+certificate uses only equally sized matching and vertex-cover witnesses.
 \end{abstract}
 
 \paragraph{Scope and evidence.}
@@ -49,6 +52,10 @@ encoding model.
 \part{Bipartite acceleration and its certificate}
 \setcounter{section}{0}
 \input{\AFGeneratedPath/bipartite-proof.tex}
+
+\part{Universal kernels for mixed failures}
+\setcounter{section}{0}
+\input{\AFGeneratedPath/fault-tolerant-cover-compression.tex}
 
 \paragraph{Attribution and version.}
 Yilin Liu and GPT-6 Astra Pro. \emph{Algorithm Frontier}, 26 October 2026.

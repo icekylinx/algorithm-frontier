@@ -20,9 +20,23 @@ Deterministic uniformly polynomial construction for the explicit complex and sup
 
 Uniform deterministic polynomial preprocessing in the explicit complex and chosen field representation. With <code class="math">C=\binom{h+a+b}{a+b}</code> and <code class="math">rC&lt;N</code>, a direct lifted elimination uses <code class="math">O(N(rC)^2)</code> field operations plus original row selection and feature generation.
 
+With no additional top-simplex labels, the
+[actual-feature-rank construction](manuscripts/feature-rank-construction.md)
+computes the vertex-feature rank <code class="math">s</code> without enumerating formal monomials.
+After coefficient generation and original-row selection, it uses
+<code class="math">O(n+ans^2+Ns(p+1)+Nsr\rho)</code> field operations, where <code class="math">\rho</code> is the
+actual stacked contraction rank. Shift comparisons and exact bit arithmetic
+are charged separately. Both boundary-row selection and final lift reduction
+generate one column at a time.
+
 **Space**
 
 The bound counts retained top simplices, not all lower faces, total encoded bits, or elimination workspace.
+
+The actual-rank construction uses <code class="math">O(n(a+s)+sr\rho+sr)</code> additional
+field elements, plus <code class="math">O(m(r+1))</code> workspace for original-row selection
+when the boundary has <code class="math">m</code> possible nonzero rows, and the explicit
+input/output and facet index. It does not materialize an <code class="math">sr</code> by <code class="math">N</code> lift.
 
 **Parameters**
 
@@ -38,7 +52,11 @@ The one-color complete-universe envelope is exact. The general binomial coeffici
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** Complete actual-feature-rank construction for represented failure lifts and the vertex-label persistence specialization with no extra top-simplex labels. Includes the degree-bounded evaluation module, canonical column pivots, nonzero shifts, shared original boundary-row compression, streamed column generation, surviving prefix spans and naturality, with exact arithmetic and storage ledgers.
+
+**Dependencies and scope.** The reviewed persistence construction keeps the full lower skeleton and one supplied order over the stated field. Additional top labels retain the separate general incidence theorem. Top-degree homology, integral torsion, dynamic labels and a common solution for unrelated filtration/cost orders are not asserted. Executable checks use rationals and supplied prime fields. The general finite-field extension and rational bit analysis are explicit mathematical components. Finite span checks supplement the naturality proof; they are not proof-assistant verification.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
@@ -57,6 +75,12 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 **Overlapping vertex labels, no extra top labels**
 
 <code class="math">\min\left\{N,sr,\binom{n}{p+1}-\binom{n-s}{p+1}\right\}</code>, <code class="math">s=</code> rank of vertex coefficient features
+
+The [complete construction](manuscripts/feature-rank-construction.md)
+finds the exact lift rank <code class="math">\rho</code> within this bound, even when the formal
+feature count is larger than the explicit input. Its
+[reference implementation](reference/README.md) supports exact rational
+and supplied prime-field arithmetic, and preserves original simplex IDs.
 
 **Failure of labeled <code class="math">s</code>-faces and all cofaces**
 
