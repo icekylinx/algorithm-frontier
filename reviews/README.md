@@ -132,6 +132,14 @@ The explicit certifying hypergraph-matching algorithm, including build/growth/co
 
 [Proof](../problems/strong-haxell-matching/proof.md) · [Dependencies](../problems/strong-haxell-matching/sources.md) · [Evidence](../problems/strong-haxell-matching/verify/README.md) · Reviewed 2026-10-26
 
+### [Self-concordant cone sparsification](../problems/conic-barrier-sparsification/)
+
+The cone-order sparsification theorem and its boundary-sum proof have been checked against the imported geometric statements. The manuscript separates existence, dual/face/lift consequences, and a conditional randomized separation-oracle construction.
+
+**Dependencies and scope.** Reis--Rothvoss Lemma 18 and Theorems 7 and 22 are essential published inputs; the directional barrier inequality and duality are standard cited results. The two supplied research-session audits identified no substantive proof gap. They are not external peer review or formal verification. No general Turing bit-complexity bound, deterministic construction, or exhaustive historical-priority claim is made.
+
+[Proof](../problems/conic-barrier-sparsification/proof.md) · [Dependencies](../problems/conic-barrier-sparsification/sources.md) · [Evidence](../problems/conic-barrier-sparsification/verify/README.md) · Reviewed 2026-10-26
+
 ## Components ready for review
 
 ### [Prefix, laminar and sparse quotas](../problems/weighted-prefix-quota-frontier/)

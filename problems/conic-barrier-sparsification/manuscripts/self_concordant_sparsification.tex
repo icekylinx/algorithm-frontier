@@ -1,0 +1,516 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\intr}{\operatorname{int}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\one}{\mathbf 1}
+\DeclareMathOperator{\diag}{diag}
+\title{Sparsification from self-concordant barriers}
+\author{Research draft}
+\date{October 26, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $K$ be a proper convex cone admitting a $\nu$-logarithmically homogeneous
+self-concordant barrier. We prove that every finite sum of elements of $K$
+has a multiplicative $\epsilon$-approximation in the order induced by $K$
+using nonnegative weights on $O(\nu/\epsilon^2)$ of the original summands.
+The sum may lie on the boundary of $K$.
+The key observation is that the exponential of the negative barrier,
+extended by zero, is convex along every direction belonging to $K$.
+The separate-convexity method of Reis and Rothvoss then gives a cone
+positivity probability of at least $e^{-2\nu}$, uniformly over independent
+symmetric scalar coefficients. Their symmetrization and partial-coloring
+theorems convert this bound into sparse support.
+This replaces the quadratic dependence on the barrier parameter in
+Saunderson's general self-concordant-barrier sparsification theorem by
+linear dependence. It also gives the same linear bound for dual cones,
+faces, and closed cones with lifts through $K$.
+The argument admits a randomized construction in the usual separation
+oracle model; no general bit-complexity claim is made.
+\end{abstract}
+
+\section{Statement and context}
+
+A \emph{proper cone} is a closed, convex, pointed, full-dimensional cone
+in a real vector space of finite positive dimension. Write $x\preceq_K y$ when
+$y-x\in K$. A $\nu$-logarithmically homogeneous self-concordant barrier
+on $K$ is a convex $C^3$ function $\varphi:\intr K\to\R$ that tends to
+$+\infty$ at every finite boundary point, satisfies
+\begin{equation}\label{eq:sc}
+ |D^3\varphi(x)[h,h,h]|
+ \le 2\bigl(D^2\varphi(x)[h,h]\bigr)^{3/2},
+ \qquad
+ \varphi(tx)=\varphi(x)-\nu\log t
+ \quad(t>0),
+\end{equation}
+and has positive-definite Hessian. These are the standard proper-cone
+barrier conventions; see \cite{NN94,Nesterov18,Saunderson25}.
+Here $\nu$ may be a real number. Applying \eqref{eq:sc} in the radial
+direction shows that $\nu\ge1$.
+
+\begin{theorem}[Barrier-parameter sparsification]\label{thm:main}
+There is an absolute constant $C$ with the following property.
+Suppose $K$ admits a $\nu$-logarithmically homogeneous self-concordant
+barrier. For any $v_1,\ldots,v_m\in K$, any $0<\epsilon<1$, and
+$e=\sum_{i=1}^m v_i$, there are weights $w_i\ge0$ such that
+\begin{equation}\label{eq:main}
+ |\supp w|\le \min\{m,\lceil C\nu/\epsilon^2\rceil\},
+ \qquad
+ (1-\epsilon)e\preceq_K\sum_{i=1}^m w_i v_i
+ \preceq_K(1+\epsilon)e.
+\end{equation}
+No assumption that $e\in\intr K$ is required.
+\end{theorem}
+
+Saunderson \cite[Theorem~1.4]{Saunderson25} obtains support at most
+$\lceil(4\nu/\epsilon)^2\rceil$ from an arbitrary logarithmically
+homogeneous self-concordant barrier. His linear bound
+$\lceil4\nu/\epsilon^2\rceil$ assumes the additional
+\emph{pairwise-self-concordance} condition
+\cite[Theorem~1.5]{Saunderson25}. In particular it applies to
+hyperbolicity cones. Theorem~\ref{thm:main} needs only ordinary
+self-concordance. Its proof combines a barrier observation with three
+results of Reis and Rothvoss \cite{RR26}; those results are credited
+explicitly below. It does not improve the constant $4$ in the settings
+where Saunderson's stronger hypotheses apply.
+
+The dependence $O(\nu/\epsilon^2)$ is optimal in the worst case over
+cones, up to absolute constants, in the usual nontrivial parameter
+range. Indeed, the $n\times n$ positive-semidefinite cone has the
+standard barrier parameter $\nu=n$, and the graph cut-sparsifier lower
+bound $\Omega(n/\epsilon^2)$ for $\epsilon>1/\sqrt n$
+\cite{AKW14} also lower-bounds spectral sparsifiers. This observation
+does not assert a matching lower bound for each individual cone.
+
+\section{The exponential of a barrier}
+
+We first record a standard directional inequality for barriers, including
+a short proof for completeness. It appears, for example, in
+\cite[Theorem~5.1.14]{Nesterov18} and
+\cite[Lemma~2.3(ii)]{Saunderson25}.
+
+\begin{lemma}[Cone directions]\label{lem:direction}
+For $x\in\intr K$ and $u\in K$,
+\begin{equation}\label{eq:direction}
+ -D\varphi(x)[u]\ge \sqrt{D^2\varphi(x)[u,u]}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Convexity gives
+$\varphi(tv)\ge\varphi(x)+D\varphi(x)[tv-x]$ for $v\in\intr K$.
+Dividing by $t$ and using logarithmic homogeneity as $t\to\infty$
+shows that $D\varphi(x)[v]\le0$. By continuity this holds for
+$v\in K$ as well.
+
+The case $u=0$ is immediate. Otherwise let $h(t)=\varphi(x+tu)$ for
+$t\ge0$. The entire ray is in $\intr K$; thus $h'(t)\le0$ and
+$h''(t)>0$. Self-concordance implies
+$|(h''(t)^{-1/2})'|\le1$, and consequently
+\[
+ h''(t)\ge\frac{h''(0)}{(1+t\sqrt{h''(0)})^2}.
+\]
+Integration, together with $h'(T)\le0$, yields
+\[
+ -h'(0)\ge\int_0^T h''(t)\,dt
+ \ge\sqrt{h''(0)}\left(1-
+ \frac{1}{1+T\sqrt{h''(0)}}\right).
+\]
+Let $T\to\infty$.
+\end{proof}
+
+Define a finite nonnegative function on the whole ambient vector space by
+\begin{equation}\label{eq:potential}
+ H(x)=
+ \begin{cases}
+  \exp(-\varphi(x)),&x\in\intr K,\\
+  0,&x\notin\intr K.
+ \end{cases}
+\end{equation}
+
+\begin{lemma}[Directional convexity of the potential]\label{lem:potential}
+The function $H$ is continuous, satisfies $H(tx)=t^\nu H(x)$ for
+$t\ge0$, and is convex on every affine line whose direction belongs
+to $K$. In particular, for $v_i\in K$ the function
+\[
+ f(t_1,\ldots,t_m)=H\left(\sum_{i=1}^m t_i v_i\right)
+\]
+is separately convex on $\R^m$.
+\end{lemma}
+\begin{proof}
+Continuity at the boundary follows from the barrier property, and
+homogeneity follows from \eqref{eq:sc}. For $x\in\intr K$ and $u\in K$,
+\begin{align*}
+ DH(x)[u]&=-H(x)D\varphi(x)[u]\ge0,\\
+ D^2H(x)[u,u]
+ &=H(x)\bigl((D\varphi(x)[u])^2-D^2\varphi(x)[u,u]\bigr)\ge0,
+\end{align*}
+by Lemma~\ref{lem:direction}.
+
+Fix an affine line $a+tu$ with $u\in K$. If it never enters $\intr K$,
+the restriction of $H$ is identically zero. Otherwise, the set of
+parameters for which it is in $\intr K$ is an interval upward closed
+under translation by a nonnegative number. On that interval $H$ is
+nonnegative, nondecreasing, and convex. At any finite left endpoint
+its limit is zero. Extending it by zero to the left therefore preserves
+convexity. This also includes the constant-direction case $u=0$.
+\end{proof}
+
+\section{Cone positivity, including boundary sums}
+
+We use the separate-convexity positivity lemma of
+Reis and Rothvoss \cite[Lemma~18]{RR26} in the following form.
+
+\begin{lemma}[Reis--Rothvoss positivity]\label{lem:rrpositive}
+Suppose $f:[-1,1]^m\to\R_{\ge0}$ is separately convex, nonzero,
+and $f(\rho x)=\rho^d f(x)$ for $x\in\{-1,1\}^m$ and
+$0\le\rho\le1$. Then
+\[
+ \Prb_{\sigma\in\{-1,1\}^m}[f(\sigma)>0]\ge e^{-2d}.
+\]
+The assertion holds for real $d>0$.
+\end{lemma}
+
+For clarity, integrality of $d$ is unnecessary in the cited proof.
+Writing $\alpha=\Prb[f(\sigma)>0]$ and choosing
+$p=1+\rho^2$, separate convexity and Boolean hypercontractivity give
+\[
+ \rho^d\|f\|_2\le\|T_\rho f\|_2
+ \le\|f\|_p\le\alpha^{1/p-1/2}\|f\|_2.
+\]
+The vertex norm is nonzero by separate convexity.
+Thus $\alpha\ge\rho^{2(1+\rho^2)d/(1-\rho^2)}$; taking
+$\rho\uparrow1$ proves the stated real-parameter form.
+
+\begin{theorem}[Uniform cone positivity]\label{thm:positivity}
+For any $v_1,\ldots,v_m\in K$ and independent symmetric real random
+variables $X_1,\ldots,X_m$,
+\begin{equation}\label{eq:positivity}
+ \Prb\left[\sum_{i=1}^m X_i v_i\in K\right]\ge e^{-2\nu}.
+\end{equation}
+No moment, continuity, or nondegeneracy assumption on the variables
+is needed.
+\end{theorem}
+\begin{proof}
+First let the coefficients be independent uniform signs. If
+$\sum_i v_i\in\intr K$, apply Lemma~\ref{lem:rrpositive} to the
+function in Lemma~\ref{lem:potential}; it is positive at $\one$.
+This proves the stronger interior-membership event in this case.
+
+For general $v_i$, fix $a\in\intr K$ and replace every $v_i$ by
+$v_i+\eta a$, where $\eta>0$. The sign bound holds for each perturbed
+collection. For each of the finitely many sign vectors, closedness of
+$K$ implies
+\[
+ \limsup_{\eta\downarrow0}
+ \one_{\{\sum_i\sigma_i(v_i+\eta a)\in K\}}
+ \le \one_{\{\sum_i\sigma_i v_i\in K\}}.
+\]
+Averaging gives the same lower bound for the unperturbed collection.
+The empty collection has probability one and causes no exception.
+
+For general independent symmetric variables, sample their magnitudes
+$A_i=|X_i|$ first, then independent uniform signs $\sigma_i$;
+the vector $(\sigma_i A_i)_i$ has the required distribution.
+Conditionally on all magnitudes, the vectors $A_i v_i$ belong to $K$,
+so the sign bound applies. Average over the magnitudes.
+\end{proof}
+
+\begin{remark}
+The perturbation is used only in this finite sign argument. No barrier
+on a face of $K$, no limiting construction of sparse weights, and no
+assumption on the rank or span of a subcollection is needed.
+In particular \eqref{eq:positivity} applies to every coordinate
+subcollection, with the same parameter $\nu$.
+\end{remark}
+
+\section{From positivity to partial colorings}
+
+We use two further results from \cite{RR26}. If $A\subseteq\R^m$ and
+$S\subseteq[m]$, write $A_S=A\cap\R^S$, with the other coordinates
+fixed to zero, and use $|S|$-dimensional volume.
+
+\begin{theorem}[Reis--Rothvoss symmetrization]\label{thm:rrsym}
+\cite[Theorem~22]{RR26}.
+Let $p,\delta\in(0,1/2]$. If a convex body $A\subseteq[-1,1]^m$
+contains $[-\delta,\delta]^m$, each section obeys
+$\vol_S(A_S)\ge p2^{|S|}$, and
+$m\ge\log_2(1/p)/\delta^2$, then
+$\vol_m(A\cap(-A))\ge2^{-5m}$.
+\end{theorem}
+
+\begin{theorem}[Volume partial coloring]\label{thm:rrpartial}
+\cite[Theorem~7]{RR26}.
+For every fixed $c>0$ there is a constant $s=s(c)$ such that a
+symmetric convex body $Q\subseteq[-1,1]^m$ with
+$\vol_m(Q)\ge c^m$ has a point
+$x\in sQ\cap[-1,1]^m$ with at least $m/2$ coordinates in $\{-1,1\}$.
+It can be found by a randomized polynomial-time separation-oracle
+algorithm.
+\end{theorem}
+
+Put $c_0=2/\log 2$.
+
+\begin{lemma}[A large body of balanced cone updates]\label{lem:volume}
+Let $v_i\in K$, $e=\sum_i v_i$, and $0<\delta\le1/2$.
+If $m\ge c_0\nu/\delta^2$, then
+\begin{equation}\label{eq:Q}
+ Q_\delta=
+ \left\{x\in[-1,1]^m:
+       -\delta e\preceq_K\sum_i x_i v_i\preceq_K\delta e\right\}
+ \quad\text{satisfies}\quad
+ \vol_m(Q_\delta)\ge2^{-5m}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Define
+\[
+ A=\left\{x\in[-1,1]^m:
+           \delta e+\sum_i x_i v_i\in K\right\}.
+\]
+This is closed and convex. It contains $[-\delta,\delta]^m$, since
+$\delta e+\sum_i x_i v_i=\sum_i(\delta+x_i)v_i\in K$ there.
+It is therefore a convex body, even if $e$ is on the boundary of $K$.
+
+For $S\subseteq[m]$, take independent uniform $X_i\in[-1,1]$ for
+$i\in S$ and $X_i=0$ otherwise. As $\delta e\in K$,
+Theorem~\ref{thm:positivity} implies
+\[
+ \frac{\vol_S(A_S)}{2^{|S|}}
+ =\Prb\left[\delta e+\sum_iX_i v_i\in K\right]
+ \ge\Prb\left[\sum_iX_i v_i\in K\right]
+ \ge e^{-2\nu}.
+\]
+Use Theorem~\ref{thm:rrsym} with $p=e^{-2\nu}\le1/2$.
+The threshold is exactly
+$m\ge(2\nu/\log2)/\delta^2$ and $A\cap(-A)=Q_\delta$.
+\end{proof}
+
+\section{Iterating the support reduction}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix the absolute constant
+$s=\max\{1,s(2^{-5})\}$ from Theorem~\ref{thm:rrpartial}, and put
+\begin{equation}\label{eq:constant}
+ q=\sqrt{3}/2,
+ \qquad C=\frac{4c_0s^2}{(1-q)^2},
+ \qquad M=C\nu/\epsilon^2.
+\end{equation}
+If $m\le M$, take all weights equal to one. Otherwise start from
+$w^{(0)}=\one$. Let $S_t=\supp w^{(t)}$, $m_t=|S_t|$, and
+$e_t=\sum_i w_i^{(t)}v_i$. While $m_t>M$, define
+\[
+ \delta_t=\sqrt{c_0\nu/m_t}.
+\]
+Then
+$\delta_t<\sqrt{c_0/C}\,\epsilon=(1-q)\epsilon/(2s)<1/2$.
+Apply Lemma~\ref{lem:volume} to the $m_t$ active vectors
+$w_i^{(t)}v_i$. Theorem~\ref{thm:rrpartial} gives an
+$x^{(t)}\in[-1,1]^{S_t}$ with at least $m_t/2$ coordinates equal
+to $1$ or $-1$ and
+\begin{equation}\label{eq:updateerror}
+ -s\delta_t e_t\preceq_K
+ \sum_{i\in S_t}x_i^{(t)}w_i^{(t)}v_i
+ \preceq_K s\delta_t e_t.
+\end{equation}
+By replacing $x^{(t)}$ with its negative if needed, at least $m_t/4$
+coordinates equal $-1$. Set
+\[
+ w_i^{(t+1)}=(1+x_i^{(t)})w_i^{(t)}\quad(i\in S_t),
+ \qquad w_i^{(t+1)}=0\quad(i\notin S_t).
+\]
+These weights are nonnegative, $m_{t+1}\le3m_t/4$, and
+\begin{equation}\label{eq:stage}
+ (1-s\delta_t)e_t\preceq_K e_{t+1}
+ \preceq_K(1+s\delta_t)e_t.
+\end{equation}
+Let $T$ be the first index with $m_T\le M$.
+
+Whenever both stages are performed,
+$\delta_t\le q\delta_{t+1}$. Consequently
+\begin{equation}\label{eq:errorbudget}
+ \sum_{t=0}^{T-1}s\delta_t
+ \le\frac{s\delta_{T-1}}{1-q}
+ \le\frac{s}{1-q}\sqrt{\frac{c_0}{C}}\epsilon
+ =\epsilon/2.
+\end{equation}
+All factors $1-s\delta_t$ are positive, so iteration of
+\eqref{eq:stage} is legitimate in the cone order. For the lower product,
+$\prod_t(1-s\delta_t)\ge1-\sum_t s\delta_t\ge1-\epsilon/2$.
+For the upper product,
+\[
+ \prod_t(1+s\delta_t)
+ \le\exp\left(\sum_t s\delta_t\right)
+ \le e^{\epsilon/2}\le1+\epsilon,
+\]
+where the last inequality holds for $0\le\epsilon\le1$.
+This proves \eqref{eq:main} with $w=w^{(T)}$.
+The proof never uses interiority of $e_t$.
+\end{proof}
+
+\section{Consequences and the oracle model}
+
+\begin{corollary}[Dual cones]\label{cor:dual}
+If $K$ has a $\nu$-logarithmically homogeneous self-concordant barrier,
+Theorem~\ref{thm:main} applies to both $K$ and $K^*$ with the same
+support bound $O(\nu/\epsilon^2)$.
+In particular, the dual of a proper degree-$d$ hyperbolicity cone has
+sparsification support $O(d/\epsilon^2)$.
+\end{corollary}
+\begin{proof}
+The function
+$\varphi_*(y)=\sup_{x\in\intr K}\{-\langle y,x\rangle-\varphi(x)\}$
+is a $\nu$-logarithmically homogeneous self-concordant barrier on
+$\intr K^*$; see \cite[Theorem~2.4.4]{NN94} or
+\cite[Theorem~7.1]{Saunderson25}. Apply Theorem~\ref{thm:main}.
+For a degree-$d$ hyperbolicity cone the standard barrier $-\log p$
+has parameter $d$.
+\end{proof}
+
+Saunderson's general bound for dual hyperbolicity cones is quadratic
+in $d$ \cite[Corollary~7.2]{Saunderson25}; Section~7.2 of that paper
+discusses the obstacle to obtaining a linear bound through his
+pairwise-self-concordance hypothesis. The corollary above obtains a
+linear bound without requiring that hypothesis on the dual barrier.
+
+\begin{corollary}[Nuclear-norm epigraphs]\label{cor:nuclear}
+Let $n\ge k\ge1$, and put
+\[
+ N_{n,k}=\{(X,t)\in\R^{n\times k}\times\R:\|X\|_*\le t\},
+\]
+where $\|X\|_*$ is the sum of the singular values of $X$.
+Every sum of elements of $N_{n,k}$ has an $\epsilon$-sparsification
+in the order induced by $N_{n,k}$ supported on
+$O((k+1)/\epsilon^2)$ summands, independently of $n$.
+\end{corollary}
+\begin{proof}
+The dual cone is the spectral-norm epigraph, which has the
+$(k+1)$-logarithmically homogeneous self-concordant barrier
+\[
+ (X,t)\longmapsto
+ -\log\det\bigl(tI_k-X^{\mathsf T}X/t\bigr)-\log t;
+\]
+see \cite[Section~7.3]{Saunderson25}. Barrier duality gives the same
+parameter for $N_{n,k}$, so Theorem~\ref{thm:main} applies.
+\end{proof}
+
+For comparison, the bound supplied for this example in
+\cite[Section~7.3]{Saunderson25} is
+$\lceil(4(k+1)/\epsilon)^2\rceil$, whereas its ambient dimension is
+$nk+1$.
+
+\begin{corollary}[Faces and arbitrary lifts]\label{cor:lifts}
+Every face of $K$, with its own cone order, satisfies the support bound
+of Theorem~\ref{thm:main}. More generally, let $L$ be a linear subspace
+and let $\pi$ be linear. If $D=\pi(K\cap L)$ is a closed cone, every
+finite sum in $D$ has an $\epsilon$-sparsification with support
+$O(\nu/\epsilon^2)$. The lift need not meet $\intr K$.
+\end{corollary}
+\begin{proof}
+For vectors in a face $F$, both the original sum and the reweighted
+sum belong to $\spn F$. The residuals in \eqref{eq:main} therefore
+belong to $K\cap\spn F=F$. To see the equality, write any
+$z\in K\cap\spn F$ as $a-b$ with $a,b\in F$; from $a=z+b\in F$
+and the face property, $z\in F$.
+
+For the general assertion, lift each summand $d_i\in D$ to some
+$v_i\in K\cap L$ and apply Theorem~\ref{thm:main}. Both cone
+residuals belong to $K\cap L$; applying $\pi$ yields the desired
+inequalities in $D$ with the same weights. The lifted sum is allowed
+to be a boundary point, so no properness condition on the lift is used.
+\end{proof}
+
+\begin{corollary}[Conditional oracle construction]\label{cor:algorithm}
+Given a valid barrier-parameter bound $\bar\nu\ge\nu$ and an ideal
+strong separation oracle for $K$, a sparsifier with support
+$O(\bar\nu/\epsilon^2)$ can be constructed using
+$O(\log(m+1))$ randomized
+polynomial-time partial-coloring computations in the separation-oracle
+model of Theorem~\ref{thm:rrpartial}. Separating over each update body
+requires a box check and at most two separation calls for $K$.
+\end{corollary}
+\begin{proof}
+Use $\bar\nu$ in place of $\nu$ in the construction.
+At stage $t$, after the box check, membership in the body from
+\eqref{eq:Q} asks whether each of
+\[
+ \delta_t e_t+\sum_{i\in S_t}x_i w_i^{(t)}v_i,
+ \qquad
+ \delta_t e_t-\sum_{i\in S_t}x_i w_i^{(t)}v_i
+\]
+belongs to $K$. A separating linear functional for a failed cone
+condition pulls back to a separating affine inequality in the
+$x$-coordinates. Invoke Theorem~\ref{thm:rrpartial} and the geometric
+support decrease already established. The barrier itself is not
+queried by this algorithm.
+\end{proof}
+
+\begin{remark}[Scope of the computational statement]
+The oracle statement uses the precision and arithmetic conventions of
+the cited partial-coloring algorithm. It does not supply a
+bit-complexity bound for an arbitrary cone representation, a
+separation algorithm for every cone with a small barrier, or an
+efficient procedure to obtain lifts in Corollary~\ref{cor:lifts}.
+The unconditional conclusion of this paper is the support bound.
+\end{remark}
+
+\section*{Attribution and status}
+
+The probabilistic support lemma, the section-to-symmetrizer theorem,
+and the partial-coloring theorem are due to Reis and Rothvoss
+\cite{RR26}. The cone-direction inequality is standard barrier theory.
+The additional step developed here is the use of the zero-extended
+exponential of an arbitrary logarithmically homogeneous
+self-concordant barrier as the separately convex potential, together
+with its boundary-uniform application to cone sparsification.
+All new steps are proved here; the imported geometric theorems are
+stated precisely and attributed. Its novelty assessment should be
+kept distinct from correctness and requires a complete literature
+review before any submission or public priority claim.
+
+\begin{thebibliography}{9}
+
+\bibitem{AKW14}
+Alexandr Andoni, Robert Krauthgamer, and David P. Woodruff.
+\emph{The Sketching Complexity of Graph Cuts}.
+arXiv:1403.7058, 2014.
+\url{https://arxiv.org/abs/1403.7058}.
+
+\bibitem{NN94}
+Yurii Nesterov and Arkadii Nemirovskii.
+\emph{Interior-Point Polynomial Algorithms in Convex Programming}.
+SIAM, 1994. \url{https://doi.org/10.1137/1.9781611970791}.
+
+\bibitem{Nesterov18}
+Yurii Nesterov.
+\emph{Lectures on Convex Optimization}.
+Springer, 2018. \url{https://doi.org/10.1007/978-3-319-91578-4}.
+
+\bibitem{RR26}
+Victor Reis and Thomas Rothvoss.
+\emph{Linear-size $\ell_1$ sparsifiers}.
+arXiv:2606.28147v2, July 22, 2026.
+\url{https://arxiv.org/abs/2606.28147v2}.
+
+\bibitem{Saunderson25}
+James Saunderson.
+\emph{Sparsification of sums with respect to convex cones}.
+arXiv:2512.21812v1, December 26, 2025.
+\url{https://arxiv.org/abs/2512.21812v1}.
+
+\end{thebibliography}
+\end{document}

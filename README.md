@@ -4,11 +4,11 @@ Algorithms and proofs in combinatorial optimization, dynamic graphs, and sparsif
 
 [![Repository checks](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml/badge.svg)](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-**53 problem families · 22 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
+**54 problem families · 22 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
 
 ## Selected results
 
-Three deterministic constructions. The linked problem pages give the full statements, proof dependencies, executable coverage and review status.
+Two deterministic algorithms and one cone sparsification theorem. The linked problem pages give the full statements, proof dependencies, executable coverage and review status.
 
 ### [Deterministic general-graph maximum matching](problems/general-matching/)
 
@@ -34,15 +34,13 @@ Exact rational exponent on the card.
 
 For n integers of total bit length L, including an indexed witness. The finite startup constant C is input-independent. The complete compiler proof and exact continuous certificates support the improved third-lookup exponent.
 
-### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
+### [Self-concordant cone sparsification](problems/conic-barrier-sparsification/)
 
-Exact canonical prefix summaries with optimal rank-two oracle complexity.
+Cone-order multiplicative approximation by reweighting existing summands, including boundary sums.
 
-Rank two: <code class="math">\Theta(N+h^2)</code> independence queries for <code class="math">N\ge h+3</code>.
+Support O(nu/epsilon^2), compared with the cited general ordinary-barrier baseline O(nu^2/epsilon^2).
 
-Fixed residual rank <code class="math">T=2</code>: <code class="math">O(Nr+(h'+1)^2)</code> queries.
-
-N is the number of items, h the failed-label budget and r the original rank. One fixed order and at most one label per item. The rank-two bound computes the exact minimum all-prefix summary and includes a matching oracle-information lower bound. A fixed contraction transfers it to high-rank instances with replacement rank T=2. Ordinary computation and query-set encoding are charged separately; represented, rank-only and integral-value bounds retain their distinct models.
+Proper cones admitting a nu-logarithmically homogeneous self-concordant barrier. Existence is unconditional; the randomized construction assumes an ideal strong separation oracle and a supplied upper bound on nu.
 
 ## Results
 
@@ -82,6 +80,7 @@ Browse by problem. Each link opens its statement, proof and dependencies. [Compu
 
 ### Spectral, group and quantum sparsification
 
+- [Self-concordant cone sparsification](problems/conic-barrier-sparsification/)
 - [Correlated spectral, regression and seminorm summaries](problems/correlated-spectral-regression/)
 - [Label and whole-block cut sparsification](problems/label-block-cut/)
 - [Finite groups, affine constraints and metrics](problems/group-metric-constraints/)

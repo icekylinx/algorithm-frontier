@@ -190,6 +190,14 @@
       "note": "Support counts retained original items and is capped by input size. Construction models remain separate from existence. For correlated failures, $\\Gamma(h,d)=(h+d)^{h+d}/(h^hd^d)$, with $\\Gamma=1$ when hd=0; Q counts allowed label sets, K is feature dimension, and $\\rho$ is effective dimension.",
       "records": [
         {
+          "id": "conic-barrier-sparsification",
+          "title": "Self-concordant cone sparsification",
+          "result": "Cone-order multiplicative approximation by reweighting existing summands, including boundary sums",
+          "quantity": "Support O(nu/epsilon^2), compared with the cited general ordinary-barrier baseline O(nu^2/epsilon^2)",
+          "scope": "Proper cones admitting a nu-logarithmically homogeneous self-concordant barrier. Existence is unconditional; the randomized construction assumes an ideal strong separation oracle and a supplied upper bound on nu",
+          "randomness": "The sparsity conclusion is an unconditional existence theorem. Construction is randomized polynomial time only in the ideal strong separation-oracle model with a supplied valid upper bound on nu. No deterministic algorithm or general bit-complexity bound is asserted."
+        },
+        {
           "id": "correlated-spectral-regression",
           "title": "Correlated spectral, regression and seminorm summaries",
           "result": "PSD forms, norms, weak convex losses, graded incidence and simplicial spectra",
@@ -683,6 +691,6 @@
   "featured": [
     "general-matching",
     "subset-sum-fast-deterministic",
-    "matroid-failure-summaries"
+    "conic-barrier-sparsification"
   ]
 }

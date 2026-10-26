@@ -152,7 +152,8 @@ def render_readme(data: dict) -> str:
         "[Review and verification](reviews/README.md) · "
         "[Citation](CITATION.cff)", "",
         "## Selected results", "",
-        "Three deterministic constructions. The linked problem pages give "
+        "Two deterministic algorithms and one cone sparsification theorem. The linked " 
+        "problem pages give "
         "the full statements, proof dependencies, executable coverage and review status.", "",
     ]
     by_id = {r["id"]: r for g in groups for r in g["records"]}

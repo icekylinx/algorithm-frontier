@@ -1,5 +1,12 @@
 # History
 
+## 2026-10-26 — Barrier-parameter cone sparsification
+
+- Integrated the complete English LaTeX proof of O(nu/epsilon^2) cone-order sparsification for arbitrary proper cones with an ordinary nu-logarithmically homogeneous standard self-concordant barrier, including boundary sums. The corresponding prior general barrier theorem was quadratic in nu; the stronger pairwise-self-concordant bound is credited separately.
+- Distinguished the new zero-extended exponential-barrier argument from the imported Reis--Rothvoss positivity, symmetrization, and partial-coloring results. Added explicit dual, face, lift, and nuclear-norm consequences and the ideal separation-oracle model boundary.
+- Added a full problem card, primary-source ledger, proof reading map and scoped research-session audit entry. The new result is the third selected homepage highlight after deterministic general-graph matching and deterministic Subset Sum; earlier matroid results remain in the complete index.
+- No general Turing implementation, external peer review, formal proof-assistant verification, or exhaustive historical priority is claimed.
+
 ## 2026-10-26 — Optimal oracle queries and construction in the actual feature rank
 
 - Proved an exact rank-two one-label prefix-summary construction using

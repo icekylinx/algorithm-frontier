@@ -179,6 +179,10 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 ## Spectral, group and quantum sparsification
 
+### [Self-concordant cone sparsification](problems/conic-barrier-sparsification/)
+
+[Statement](problems/conic-barrier-sparsification/README.md) · [Main proof](problems/conic-barrier-sparsification/proof.md) · [Sources](problems/conic-barrier-sparsification/sources.md) · [Verification](problems/conic-barrier-sparsification/verify/README.md)
+
 ### [Correlated spectral, regression and seminorm summaries](problems/correlated-spectral-regression/)
 
 [Statement](problems/correlated-spectral-regression/README.md) · [Main proof](problems/correlated-spectral-regression/proof.md) · [Sources](problems/correlated-spectral-regression/sources.md) · [Verification](problems/correlated-spectral-regression/verify/README.md)
