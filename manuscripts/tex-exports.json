@@ -30,8 +30,8 @@
     {
       "source": "problems/subset-sum-fast-deterministic/proof.md",
       "target": "problems/subset-sum-fast-deterministic/proof.tex",
-      "source_sha256": "cc7a6dce171e873872397b90f221436b810f8a431e340d57883144279f19053a",
-      "tex_sha256": "c519fe2b3985453e335411f8b22a1b22314e1a5dabb3189e26b610a15168a15f",
+      "source_sha256": "4a00f594bc619486b3a2a8e878499e15b26e183ab1306fea7594685d49d5aebc",
+      "tex_sha256": "d9feaeef1f3775a9a505d9a738a95cd45165d903702cc7f99cd71921ae4a8bab",
       "math_nodes": 1341,
       "pdf": "source-only"
     },

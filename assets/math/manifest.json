@@ -3,7 +3,7 @@
   "renderer": {
     "name": "MathJax",
     "version": "3.2.2",
-    "source_sha256": "98eecbe806e23aadef67dbbecdeba733c9ae113e06b3f15d0b6b51683ca402a1"
+    "source_sha256": "006cf4a5b811bbab7280ad69b028f6c8f447e8fdc83b3e1d1c765eb8ed3947eb"
   },
   "equations": {
     "0012489a3562056c03dc90ee": {
@@ -5940,7 +5940,7 @@
     },
     "4024dfa36ebde85190359b6d": {
       "tex_sha256": "4024dfa36ebde85190359b6d73b185dbcbcb8fff994edac4dcbdfad1f0df7cf7",
-      "svg_sha256": "9c72ce83ffacfefa37d441312694a25f1d413a852775b4a60cda99059ff91ecb"
+      "svg_sha256": "c1f01d24097a798eb8b184e132e1c45a3ade5d45394c089803c2e89e1aee0fa3"
     },
     "40333f0872d1ce2db5122748": {
       "tex_sha256": "40333f0872d1ce2db5122748399ee8e9f8b33882cb8d47761dc86aae89f38bf9",
@@ -11474,10 +11474,6 @@
       "tex_sha256": "7a8b15b3ca2283fb7eb433b1d652f3eee0f474373642cbe06409b242092df086",
       "svg_sha256": "85eba2b6762a6ad48a45cff40ad59e0fdc30611be1ce8e5204b23922f62b080b"
     },
-    "7a9dcc5b76f4a334131a796d": {
-      "tex_sha256": "7a9dcc5b76f4a334131a796d91f24625f536f382fc96f2ea15da6c8c59f50abc",
-      "svg_sha256": "3ef13af019b9e1b01c97665d743f56e6d655c5c0cb6c783db1f2c67668a49c4d"
-    },
     "7a9f81f5675706bd9dac787f": {
       "tex_sha256": "7a9f81f5675706bd9dac787fec370a9e95c121527851cef4d4a7fc994f26a449",
       "svg_sha256": "b870e1deeb3291b3c717e7f55852890065a9faa049254baf869b8f9e1e0c22f5"
@@ -13341,6 +13337,10 @@
     "8e5c26fcc6b4680fbd0159ef": {
       "tex_sha256": "8e5c26fcc6b4680fbd0159ef56a21e84bfd3ac73f69de9343aafbc690fce0791",
       "svg_sha256": "d5542dbb5f1f6cbcfe6f05737f0a50d67ad326e95702bceb1735b7be25ab4c27"
+    },
+    "8e6756ac25f24efe1ec07fea": {
+      "tex_sha256": "8e6756ac25f24efe1ec07feab30d5515b3d53f7c84cd67ab2f76ef02daa2922c",
+      "svg_sha256": "5b2b37589e253fc0ab938a65fe7f1c14ce96b29dc364e64ec4ba437f0df96350"
     },
     "8e78aae125d97c1995a9b34d": {
       "tex_sha256": "8e78aae125d97c1995a9b34dc45a15ac1cc3154f966a9d395f185569718bab6a",

@@ -38,7 +38,10 @@ def markdown_files() -> list[Path]:
 
 def validate_svg(path: Path, tex: str) -> None:
     """Reject external assets, executable elements and clipped/missing canvases."""
-    root = ET.fromstring(path.read_bytes())
+    serialized = path.read_text(encoding='utf-8')
+    if any(line.endswith((' ', '\t')) for line in serialized.splitlines()):
+        raise ValueError(f'{path}: trailing whitespace in serialized SVG')
+    root = ET.fromstring(serialized)
     ns = '{http://www.w3.org/2000/svg}'
     if root.tag != ns + 'svg':
         raise ValueError(f'{path}: not an SVG image')

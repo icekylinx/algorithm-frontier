@@ -10,11 +10,11 @@ We give an exact deterministic algorithm for Subset Sum on arbitrary signed bina
 
 **Theorem F (refined deterministic algorithm).** On <code class="math">n</code> indexed signed integers of full binary encoding length <code class="math">L</code>, the circuit and reduction constructions proved in Part I, with the parameter changes proved in Part II, decide feasibility and return an indexed witness in
 
-<!-- math-display: 7a9dcc5b76f4a334131a796d
+<!-- math-display: 8e6756ac25f24efe1ec07fea
 C+\mathrm{poly}(n,L)2^{En},\qquad
-E=\frac{158153814247997}{318928754919134}.
+E=\frac{158153814247997}{318964058919134}.
 -->
-![Formula](../../assets/math/7a9dcc5b76f4a334131a796d.svg)
+![Formula](../../assets/math/8e6756ac25f24efe1ec07fea.svg)
 
 Here <code class="math">C</code> is the finite input-independent cost of constructing fixed circuit data, with no practical numerical bound claimed. All polynomial degrees are fixed and the complexity counts deterministic bit operations. The composition proof is Part II, Sections 2–7. The continuous-domain contact certificate in Part II, Section 4, and the scalar certificate in Section 9 discharge their separate numerical requirements. The circuit compiler and witness reduction are established by the mathematical arguments in the manuscript; the numerical programs are not a machine-checked formalization of those arguments.
 

@@ -15,7 +15,9 @@ RegisterHTMLHandler(adaptor);
 const [requestPath, outputPath] = process.argv.slice(2);
 if (!requestPath || !outputPath) throw Error('usage: render.cjs REQUEST_JSON OUTPUT_DIRECTORY');
 const requests = JSON.parse(fs.readFileSync(requestPath, 'utf8'));
-const xml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const xml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  // Preserve source whitespace exactly without serializing line-end blanks.
+  .replace(/[ \t]+(?=\r?\n)/g, blanks => blanks.replace(/ /g, '&#32;').replace(/\t/g, '&#9;'));
 function standaloneTag(source) {
   // MathJax normally positions manual equation tags in a responsive 100%-wide
   // outer SVG without a viewBox. A repository image needs a fixed canvas.

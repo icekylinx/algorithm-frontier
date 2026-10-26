@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import unittest
 from pathlib import Path
+import tempfile
 
 from math_presentation import present_markdown, restore_markdown, transform
+from build_math_assets import validate_svg
 
 ROOT = Path('/example')
 PAGE = ROOT / 'problems' / 'example' / 'proof.md'
@@ -65,6 +67,18 @@ class StaticMathematics(unittest.TestCase):
     def test_missing_image_is_rejected(self):
         with self.assertRaises(ValueError):
             self.present('<!-- math-display: missing\nx=y\n-->\n')
+
+    def test_svg_title_preserves_encoded_source_whitespace(self):
+        source = 'x ' + '\n' + 'y'
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'formula.svg'
+            template = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">'
+                        '<title>{}</title><path d="M0 0L1 1"/></svg>\n')
+            path.write_text(template.format(source))
+            with self.assertRaisesRegex(ValueError, 'trailing whitespace'):
+                validate_svg(path, source)
+            path.write_text(template.format(source.replace(' \n', '&#32;\n')))
+            validate_svg(path, source)
 
 
 if __name__ == '__main__':
