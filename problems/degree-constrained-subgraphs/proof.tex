@@ -1,6 +1,6 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/degree-constrained-subgraphs/proof.md
-% Recovered-source SHA-256: 365a92e2895c9f0d296a1b1ea1fbee9334d3826c50705472fefe9763166efac8
+% Recovered-source SHA-256: 76eb40500982d4034457ff03478231be86908425fb9c426e9bdc648e37f9144d
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
 % Shared original Subset Sum preamble: manuscripts/paper-style.tex.
@@ -20,6 +20,12 @@ The input is a loopless undirected multigraph with \texttt{n} vertices and \text
 \textbf{Theorem 1.1 (exact sparse reduction).} Given integral degree intervals \(0\leq g(v)\leq f(v)\leq d_v\) and an optional integral cardinality interval \(K_{\min}\leq |X|\leq K_{\max}\), one can construct a simple subcubic graph with \(O(m\log(m+2))\) vertices and edges such that its perfect matchings decode to exactly the feasible original edge subsets. Every feasible original subset has a perfect-matching extension. Construction and decoding take \(O(n+m\log(m+2))\) time, with one call to an exact maximum-cardinality matching solver. This reduction is unconditional and deterministic. Optimizing cardinality needs \(O(\log(m+2))\) calls to the same solver. Invalid bounds and the edgeless case are handled in the initial scan; the size statement concerns nonempty inputs. Sections 2--5 prove the theorem.
 
 \textbf{Executable corollary.} The repository's \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/degree-constrained-subgraphs/reference/README.md}{standard-library degree solver} implements these reductions using its exact matching solver. Put \texttt{H=1+m\ log(m+2)}. Its feasibility bound is \texttt{O(n+H\^{}3)}, and either cardinality optimization takes \texttt{O(n+H\^{}3\ log(m+2))}; both include checked NO certificates and native witnesses. The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/degree-constrained-subgraphs/reference/correctness.md}{implementation proof} covers decoding, the independently checkable optimality boundary and actual storage. Its ordinary polynomial cost is separate from the fast research bound.
+
+\textbf{Theorem 1.2 (linear-size selector variant).} Under the same input model, the reduction can instead be constructed in O(n+m) word operations with O(m) auxiliary vertices and edges. Its output remains simple and subcubic; all prescribed-degree, interval-degree, cardinality, native-record decoding, and extension guarantees remain valid. The one external mathematical ingredient is the exact expansion inequality in \textbf{Theorem 2} of Gabber and Galil's \emph{Explicit Constructions of Linear-Sized Superconcentrators} (1981).
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/degree-constrained-subgraphs/linear-selector.md}{complete selector proof} states that inequality and derives every further property: deterministic linear enumeration from five modular maps and a geometrically shrinking recursion; a finite Beneš base; vertex-disjoint routes from any chosen input subset to a fixed equally sized output subset; binary fans with a central bottleneck; and the final matching gadget of degree at most three. It distinguishes construction from routing and does not assume a linear-time routing algorithm. Replacing only the selector in Sections 2--5 proves the theorem.
+
+With an ordinary exact cubic matching algorithm, this theoretical variant gives O(n+(m+1)\^{}3) feasibility and O(n+(m+1)\^{}3 log(m+2)) cardinality optimization, including matching certificates and native output checks. The original vertex scan is done once; later decisions use the active graph. The explicit constants are substantial: p=31, cutoff 2\^{}26, and child size at most 63/64 of the parent. The maintained executable continues to use Theorem 1.1's local Beneš selector and its stated H bounds.
 
 After substituting the general-matching theorem and its realized cycle-search construction, the deterministic running-time bound is
 
@@ -178,18 +184,20 @@ E(x)=\exp O\!\left((\log(x+2))^{4/5}
                     (\log\log(x+4))^{1/5}\right).
 \]
 
-Every reduced matching instance has size \texttt{O(m\ log(m+2))}. Consequently its matching time, the logarithmic number of optimization calls, and all construction/decoding work fit \texttt{(m+1)\ E(m)}. The initial vertex scan is separate, proving (1).
+Theorem 1.1 produces size O(m log(m+2)), while the optional Theorem 1.2 produces size O(m). Under either choice, the matching time, the logarithmic number of optimization calls, and all construction/decoding work fit (m+1)E(m). The initial vertex scan is paid once and separately, proving (1). The linear-size variant reduces the explicit auxiliary graph size and the polynomial reference-algorithm bound; it leaves the displayed four-fifths exponent unchanged.
 
 The matching algorithm must return a checked maximum matching, not merely an unverified attempt at a perfect matching. Otherwise a failed attempt could give an incorrect NO or corrupt the binary search. The existing near-linear independent matching verifier is sufficient and is already charged in the primary matching construction. Successful decoded outputs also pass the elementary original-edge degree and cardinality checks.
 
-These are deterministic reductions. Their theorem status is therefore exactly that of the imported general matching theorem: a flaw in that theorem's fast-branch analysis would remove the proposed fast running-time guarantee, even though an independently checked answer remains correct. No new numeric optimization or unproved weighted-matching oracle is being introduced by the reductions.
+The fast corollary follows from these deterministic reductions and the proved general-matching theorem, including its named mathematical dependencies. Theorem 1.1 supplies its selector locally; Theorem 1.2 instead uses the explicitly stated published expansion inequality. An output certificate checks a particular solution, while the respective construction and matching proofs establish running time. Neither reduction introduces a weighted-matching optimization oracle.
 
 \hypertarget{af-9f2952a6d0-comparison-and-attribution}{%
 \subsection{7. Comparison and attribution}\label{af-9f2952a6d0-comparison-and-attribution}}
 
-The OpenAI preprint's Section 10 already gives the linearithmic prescribed-degree reduction and an almost-linear \textbf{randomized} factor consequence. The present note credits that reduction and obtains the deterministic exponent through the matching candidate. The explicit interval/cardinality gadgets are elementary consequences, not claimed as new standalone combinatorial structures.
+The OpenAI preprint's Section 10 already gives the linearithmic prescribed-degree reduction and an almost-linear \textbf{randomized} factor consequence. The present note credits that reduction and obtains the deterministic exponent through the proved matching construction. The explicit interval/cardinality gadgets are elementary consequences, not claimed as new standalone combinatorial structures.
 
-For a separate public benchmark, Gabow's \emph{Maximum Cardinality f-Matching in Time O(n\^{}(2/3)m)} gives a deterministic \texttt{O(n\^{}(2/3)m)} algorithm for simple graphs and an \texttt{O(min(sqrt(f(V)),n)m)} bound for multigraphs. The present transfer is an asymptotic candidate relative to these public combinatorial bounds, not an implemented performance comparison or an assertion that its large constants are practical.
+For a separate public benchmark, Gabow's \emph{Maximum Cardinality f-Matching in Time O(n\^{}(2/3)m)} gives a deterministic \texttt{O(n\^{}(2/3)m)} algorithm for simple graphs and an \texttt{O(min(sqrt(f(V)),n)m)} bound for multigraphs. The present transfer is an asymptotic mathematical result relative to these public combinatorial bounds. The reference implementation and theoretical linear selector carry their separate costs; no benchmark or practical speedup is asserted.
+
+Theorem 1.2 is an additional adaptation of the published Gabber--Galil construction, with its local enumeration and degree-adapter proof written out. The graph property does not by itself supply an implementation of the separate fast matching algorithm. The executable selector remains the local permutation network.
 
 Primary sources:
 
@@ -197,6 +205,8 @@ Primary sources:
 \tightlist
 \item
   OpenAI, \emph{Almost-Linear-Time Maximum-Cardinality Matching in General Graphs}, Section 10, source file: \url{https://github.com/openai/math/blob/main/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/10-f-factors.tex}.
+\item
+  Gabber and Galil, \emph{Explicit Constructions of Linear-Sized Superconcentrators}, Theorem 2 and the five modular maps in Section 2; the complete adaptation and source links are in \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/degree-constrained-subgraphs/linear-selector.md}{the linear selector proof}.
 \item
   Gabow, \emph{Maximum Cardinality f-Matching in Time O(n\^{}(2/3)m)}, \url{https://arxiv.org/abs/2311.14236}.
 \item

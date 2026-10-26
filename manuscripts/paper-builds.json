@@ -5,17 +5,17 @@
       "scope": "Complete polynomial reference matching certificates, cover compression and bipartite acceleration; no faster cycle-search implementation claim",
       "output": "problems/general-matching/reference/paper.pdf",
       "inputs": {
-        "manuscripts/papers.json": "3c2a6c1ee53ab1adc0c0f94b316aab304854d2bf95b2f50d5ab148f5a957bff5",
+        "manuscripts/papers.json": "94f7a31903df8d3ff9bc3f8aab9242bfddb1140a6b68d1c1f537e69730dd2424",
         "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
         "problems/general-matching/reference/paper.tex": "046c035c21f957db4a580acf45d9595d2667d0028642d340fa4c005da78ac91e",
-        "tools/build_manuscripts.py": "8662260bc756fd55c924a0d7dd3852f23f35a9e9fd3e70ad730b6275b62f8ad6",
-        "tools/build_papers.py": "33ad4a761953750fe303025df066ffdc57428ca25aa34df13c696d9d886c9088",
+        "tools/build_manuscripts.py": "bba80152f1adec87efad87d27213f96f79bfcdcf2b981c89b33fa19f9f71406e",
+        "tools/build_papers.py": "8d2f970cd6ac01132bee7af85fc4119a32976e419e84df6ee6ac486cbd8d3ad4",
         "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
         "problems/general-matching/reference/certificate-proof.md": "631e93415372ffe498383b3113212e009445a7c41e719abfa7dd8505fbb6dbad",
         "problems/general-matching/reference/cover-compression-proof.md": "6ef82fc04178e6756f7ac49daba0eb2c22873812b518379112f1f7df4f373ba4",
         "problems/general-matching/reference/bipartite-proof.md": "107778d4645abf3ad5f3c77d1e51295b9670636fd39cbd07a1440197f19a47d7"
       },
-      "pdf_sha256": "8e28c9a701f2f875935a661b21c39b9533dd208ced7045f2f6712a8fcf9591b1",
+      "pdf_sha256": "c5ec25c43b291c8142de07d2703bfee66c1094c00a46e33cce51e112b6b7f5d1",
       "engine": "xelatex",
       "source_date_epoch": 1792972800,
       "layout_warnings": [],
@@ -25,22 +25,24 @@
         "pages": 12,
         "method": "Every page inspected in rendered contact sheets; selected dense tables, references and corrected pages also inspected at full-page resolution.",
         "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. All recorded typesetting layout warnings were resolved."
-      }
+      },
+      "visual_review_basis": "Only the two 16-byte PDF trailer file identifiers changed; every other byte is identical to the previously visually reviewed artifact.",
+      "previous_reviewed_pdf_sha256": "8e28c9a701f2f875935a661b21c39b9533dd208ced7045f2f6712a8fcf9591b1"
     },
     "two-failure-matroids": {
       "scope": "Complete two-failure prefix bounds, singleton case, exact low-rank maxima and explicit obstruction",
       "output": "problems/matroid-failure-summaries/two-failure-paper.pdf",
       "inputs": {
-        "manuscripts/papers.json": "3c2a6c1ee53ab1adc0c0f94b316aab304854d2bf95b2f50d5ab148f5a957bff5",
+        "manuscripts/papers.json": "94f7a31903df8d3ff9bc3f8aab9242bfddb1140a6b68d1c1f537e69730dd2424",
         "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
         "problems/matroid-failure-summaries/two-failure-paper.tex": "5bf9398dcd0892a8834a39477591ea5c7e2674d7a2014ac0ec1c1f385d745932",
-        "tools/build_manuscripts.py": "8662260bc756fd55c924a0d7dd3852f23f35a9e9fd3e70ad730b6275b62f8ad6",
-        "tools/build_papers.py": "33ad4a761953750fe303025df066ffdc57428ca25aa34df13c696d9d886c9088",
+        "tools/build_manuscripts.py": "bba80152f1adec87efad87d27213f96f79bfcdcf2b981c89b33fa19f9f71406e",
+        "tools/build_papers.py": "8d2f970cd6ac01132bee7af85fc4119a32976e419e84df6ee6ac486cbd8d3ad4",
         "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
         "problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md": "b2d75c8548e4fe08161e4b742dd18556053bced4e066ca8db592407c591e751d",
         "problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md": "b922466bb3e418f7e8a00bb63cf83dd3f36868457fd401c3f84e4b46edcd81d4"
       },
-      "pdf_sha256": "0a6ce3570af84cd08c931f780a5483df69854d7d59bb5905e66b236ce4790908",
+      "pdf_sha256": "b18c086be3c381e1f98b851df47ac523e709e97ed0cb47b71071be191932ea35",
       "engine": "xelatex",
       "source_date_epoch": 1792972800,
       "layout_warnings": [],
@@ -50,21 +52,23 @@
         "pages": 14,
         "method": "Every page inspected in rendered contact sheets; selected dense tables, references and corrected pages also inspected at full-page resolution.",
         "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. All recorded typesetting layout warnings were resolved."
-      }
+      },
+      "visual_review_basis": "Only the two 16-byte PDF trailer file identifiers changed; every other byte is identical to the previously visually reviewed artifact.",
+      "previous_reviewed_pdf_sha256": "0a6ce3570af84cd08c931f780a5483df69854d7d59bb5905e66b236ce4790908"
     },
     "deterministic-general-matching": {
       "scope": "Complete four-fifths deterministic general-matching research manuscript with explicit local realization theorem and named companion/published proof dependencies; software coverage is stated separately",
       "output": "problems/general-matching/paper.pdf",
       "inputs": {
-        "manuscripts/papers.json": "3c2a6c1ee53ab1adc0c0f94b316aab304854d2bf95b2f50d5ab148f5a957bff5",
+        "manuscripts/papers.json": "94f7a31903df8d3ff9bc3f8aab9242bfddb1140a6b68d1c1f537e69730dd2424",
         "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
         "problems/general-matching/paper.tex": "0121685b046749488ab223496d3324a250fe529ec9dc7a692d9c265c6b1e3ac1",
-        "tools/build_manuscripts.py": "8662260bc756fd55c924a0d7dd3852f23f35a9e9fd3e70ad730b6275b62f8ad6",
-        "tools/build_papers.py": "33ad4a761953750fe303025df066ffdc57428ca25aa34df13c696d9d886c9088",
+        "tools/build_manuscripts.py": "bba80152f1adec87efad87d27213f96f79bfcdcf2b981c89b33fa19f9f71406e",
+        "tools/build_papers.py": "8d2f970cd6ac01132bee7af85fc4119a32976e419e84df6ee6ac486cbd8d3ad4",
         "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
         "problems/general-matching/proof.md": "d2df3b8f66526564a8694ee890497e07f321d8007825aeea90adaae0cab4577f"
       },
-      "pdf_sha256": "48572b77e96c4ce14ed582adbb3a39ce6cf97e3992ae0662be04f3e74872c951",
+      "pdf_sha256": "4f74ffc2ffec18f2cca9e57edd82c65ecf02953a379c91f8db97ef683c5e6804",
       "engine": "xelatex",
       "source_date_epoch": 1792972800,
       "layout_warnings": [],
@@ -74,21 +78,23 @@
         "pages": 34,
         "method": "Every page inspected in rendered contact sheets; selected dense tables, references and corrected pages also inspected at full-page resolution.",
         "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. All recorded typesetting layout warnings were resolved."
-      }
+      },
+      "visual_review_basis": "Only the two 16-byte PDF trailer file identifiers changed; every other byte is identical to the previously visually reviewed artifact.",
+      "previous_reviewed_pdf_sha256": "48572b77e96c4ce14ed582adbb3a39ce6cf97e3992ae0662be04f3e74872c951"
     },
     "deterministic-subset-sum": {
       "scope": "Complete uniform deterministic Subset Sum compiler and witness proof in Parts I–III, preserved F2 and stronger F3; the older background contact presentation has its separately stated evidence boundary",
       "output": "problems/subset-sum-fast-deterministic/paper.pdf",
       "inputs": {
-        "manuscripts/papers.json": "3c2a6c1ee53ab1adc0c0f94b316aab304854d2bf95b2f50d5ab148f5a957bff5",
+        "manuscripts/papers.json": "94f7a31903df8d3ff9bc3f8aab9242bfddb1140a6b68d1c1f537e69730dd2424",
         "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
         "problems/subset-sum-fast-deterministic/paper.tex": "7f0d95452880e9b840cc64125f9affa80b474bea2862ce641a20e753037963c5",
-        "tools/build_manuscripts.py": "8662260bc756fd55c924a0d7dd3852f23f35a9e9fd3e70ad730b6275b62f8ad6",
-        "tools/build_papers.py": "33ad4a761953750fe303025df066ffdc57428ca25aa34df13c696d9d886c9088",
+        "tools/build_manuscripts.py": "bba80152f1adec87efad87d27213f96f79bfcdcf2b981c89b33fa19f9f71406e",
+        "tools/build_papers.py": "8d2f970cd6ac01132bee7af85fc4119a32976e419e84df6ee6ac486cbd8d3ad4",
         "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
         "problems/subset-sum-fast-deterministic/proof.md": "f7d5005061ebb5f711918ad7b791fce64a2893afa6ff00c96d3afe73828e7733"
       },
-      "pdf_sha256": "38b6ea5b0fb18152cd9b64e97a5f0a36c8f4d8fcfbb9d1e48a11c84dad1ef4b0",
+      "pdf_sha256": "872c7e9fbbe79dc76c57264236f0acd11fca24916f7ecb466fd3aaefe641511b",
       "engine": "xelatex",
       "source_date_epoch": 1792972800,
       "layout_warnings": [],
@@ -98,6 +104,32 @@
         "pages": 56,
         "method": "Every page inspected in rendered contact sheets; selected dense tables, references and corrected pages also inspected at full-page resolution.",
         "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. All recorded typesetting layout warnings were resolved."
+      },
+      "visual_review_basis": "Only the two 16-byte PDF trailer file identifiers changed; every other byte is identical to the previously visually reviewed artifact.",
+      "previous_reviewed_pdf_sha256": "38b6ea5b0fb18152cd9b64e97a5f0a36c8f4d8fcfbb9d1e48a11c84dad1ef4b0"
+    },
+    "rank-adaptive-matroids": {
+      "scope": "Complete fixed rank-loss contraction for one-label ordered matroid failure summaries, all-prefix identities, rank-adaptive deterministic construction and sharp rank-one residual endpoint",
+      "output": "problems/matroid-failure-summaries/rank-adaptive-paper.pdf",
+      "inputs": {
+        "manuscripts/papers.json": "94f7a31903df8d3ff9bc3f8aab9242bfddb1140a6b68d1c1f537e69730dd2424",
+        "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
+        "problems/matroid-failure-summaries/rank-adaptive-paper.tex": "578b267388c1f97d9dab91e90e1383abfcfbd9aa2c01dceaf326b42441d97278",
+        "tools/build_manuscripts.py": "bba80152f1adec87efad87d27213f96f79bfcdcf2b981c89b33fa19f9f71406e",
+        "tools/build_papers.py": "8d2f970cd6ac01132bee7af85fc4119a32976e419e84df6ee6ac486cbd8d3ad4",
+        "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
+        "problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md": "cd75a6c98027594ef805463329435e60bbc0b65238368ff86c44db1f587cd8b9"
+      },
+      "pdf_sha256": "256b5e7ad1d96408166f6d69049110cb0651a99e13baa43ac6a548bbd4e72d37",
+      "engine": "xelatex",
+      "source_date_epoch": 1792972800,
+      "layout_warnings": [],
+      "visual_review": "passed",
+      "visual_review_details": {
+        "date": "2026-10-26",
+        "pages": 5,
+        "method": "All five rendered pages inspected in a contact sheet; title, theorem definitions and dense bound page additionally inspected at full-page resolution.",
+        "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. Repeated build in a fresh temporary directory produced identical PDF bytes."
       }
     }
   }

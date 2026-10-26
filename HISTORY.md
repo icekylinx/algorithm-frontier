@@ -1,5 +1,40 @@
 # History
 
+## 2026-10-26 — Recovered static theorems and rank-adaptive constructions
+
+- Restored nine early source notes as four complete, independently scoped
+  manuscripts: exact-demand flow trimming, transportation support balancing
+  for arbitrary row rank, static confluent rounding with three tail bounds,
+  and canonical low-state odd-crown reduction. Each restored proof identifies
+  its original checkpoint fingerprints. Static results and the separate
+  dynamic replenishment question have distinct status records.
+- Added independent finite checks for cycle cancellation, exact demand,
+  transportation margins and the strict component weight bound, including
+  loops, parallel and opposite edges, isolated columns and row rank above
+  three. A separate crown checker compares the physical matching optimum,
+  the canonical contact set and the exact removed-component offset.
+- Recovered the rank-sensitive Haxell bound from the earlier checkpoint and
+  promoted its explicit incidence parameter and small-rank improvement to
+  the result card. Added an explicit linear-size selector construction to
+  the degree-interval reduction, including bounded-degree conversion and
+  the published expander parameters; the existing executable selector
+  retains its separately documented implementation bound.
+- Refined Boolean interval compilation by conditioning on original
+  cardinality and subtracting each row's modal coefficient. The proof
+  charges signed carries, boundary intervals, slack variables and exact
+  cardinality packing separately and gives a strict dense-row example.
+- Proved a single fixed contraction for one-label failure summaries. Its
+  minor has rank equal to the total single-label replacement count T,
+  preserves every failed-label query and every original-order prefix,
+  and reduces the construction tree from rank r to rank T. The zero- and
+  one-dimensional cases have separate algorithms and the latter has the
+  sharp retained size r+h. Published a complete source-bound paper for
+  this theorem and expanded the editable TeX exports to 27 manuscripts.
+- Extended the review registry to all 22 supporting manuscripts as well as
+  all 53 problem families, with exact scopes, original sources and executable
+  evidence. Completed mathematical suppliers no longer appear as unresolved
+  implementation prerequisites in the corrected backend introductions.
+
 ## 2026-10-26 — Restored checkpoint results and a third Subset Sum lookup
 
 - Recovered all 36 supplied checkpoint archives and matched every archive

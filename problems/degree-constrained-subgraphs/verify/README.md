@@ -23,6 +23,14 @@ valid degree intervals, plus explicit parallel-edge cases. Both sides
 are compared with enumerated original edge subsets. These are finite
 checks of the specified gadgets, not a substitute for the general proof.
 
+## Ready for review: the linear-size theoretical selector
+
+[Theorem 1.2 and its complete proof](../linear-selector.md) reduce selector size to <code>O(d)</code> by a deterministic construction using the explicitly named Gabber–Galil expansion theorem. It proves the required DAG, source/sink boundary degrees, vertex-disjoint routing property, linear enumeration cost, and simple subcubic matching adaptation. The executable degree solver still uses the Beneš selector.
+
+Run <code>python3 -B problems/degree-constrained-subgraphs/verify/check_linear_selector.py</code> from the repository root. The scoped finite suite checks 1,171 networks and 9,467 terminal-set pairs, including 3,694 infeasible pairs. It compares the generic degree adapter and matching gadget with independent exact disjoint-path tests. It also checks 160 modular maps, 66,066 finite expansion subsets, 601 exact rounding/size sequences, and four rejected network descriptions. Python optimized mode is refused.
+
+These tests validate finite expander instances and local adapters. The all-size expansion inequality remains the named published theorem, and the linear enumeration bound is proved analytically. They are not a claim that the production degree solver now constructs the theoretical selector or uses the fast matching implementation.
+
 ## Ready for review: the unconditional executable solver
 
 The [reference implementation](../reference/README.md) constructs the
@@ -54,7 +62,7 @@ proved in the [certificate note](../reference/correctness.md).
 
 ## Ready for review: the fast running-time corollary
 
-The proof gives the sparse-selector and interval-degree reductions,
+The proof gives both selector variants and the interval-degree reductions,
 including parity, original-edge recovery and cardinality optimization. Its
 fast running-time corollary invokes the matching theorem, whose Section 11.6
 realizes the deterministic cycle-search interface with the linked local

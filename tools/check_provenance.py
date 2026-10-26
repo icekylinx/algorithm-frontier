@@ -34,6 +34,16 @@ def check_recovery(errors):
                 path=PurePosixPath(location['path'])
                 if location['archive'] not in ids or path.is_absolute() or '..' in path.parts or path.name!=row['name']:
                     errors.append(f"invalid archive member: {row['name']}")
+        if row.get('disposition')=='restored-complete-proof':
+            restoration=row.get('restoration',{})
+            target=restoration.get('target')
+            digest=restoration.get('source_sha256')
+            if (target not in row.get('canonical_targets',[]) or
+                    digest not in {v['sha256'] for v in row['original_versions']} or
+                    not restoration.get('date') or not restoration.get('scope')):
+                errors.append(f"incomplete proof restoration binding: {row['name']}")
+            elif not (ROOT/target).is_file() or digest not in (ROOT/target).read_text():
+                errors.append(f"restored manuscript omits original source identity: {row['name']}")
     counts={'archives':len(archives),'extracted_files':sum(row['extracted_files'] for row in archives),
             'markdown_basenames':len(names),'distinct_markdown_contents':len(contents)}
     if counts!=data['counts']:errors.append('checkpoint recovery counts disagree with inventory')

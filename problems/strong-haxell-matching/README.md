@@ -14,7 +14,7 @@ Deterministic certifying hypergraph matching. The routing and expander-packing t
 
 **Time**
 
-<code class="math">O(\lvert A\rvert+\lvert B\rvert)+p\exp\bigl(O(U\log(2+s)/s)\bigr)</code>, where <code class="math">p=\sum_e\lvert e\rvert</code>, <code class="math">U=\log(p+4)</code>, and <code class="math">s=\log\Delta</code>.
+<code class="math">O(&#124;A&#124;+&#124;B&#124;)+p\exp O(h+a\log(q+1)/s)</code>, where <code class="math">q=&#124;A&#124;</code>, <code class="math">p=\sum_e&#124;e&#124;</code> is the full listed incidence volume, <code class="math">U=\log(p+4)</code>, <code class="math">h=\log(U+4)</code>, <code class="math">s=\log\Delta</code>, and <code class="math">a=\min\{\log(2+s),\log(2+\log(r+2))\}</code>. This is the retained rank-sensitive refinement of the earlier rank-free bound.
 
 **Space**
 
@@ -34,9 +34,9 @@ No lower bound is claimed. A hitting-set certificate refutes the strong Haxell p
 
 **Review status**
 
-**Ready for review.** The explicit certifying hypergraph-matching algorithm, including build/growth/collapse and weighted finite-prefix termination; the public explicit-algorithm weighted reanalysis; certified disjoint-path routing and spanning-expander packing. The destructive-support extractor, exact-size auxiliary graph and route/conductance accounting are explicitly instantiated.
+**Ready for review.** The explicit certifying hypergraph-matching algorithm, including build/growth/collapse and weighted finite-prefix termination; the public explicit-algorithm weighted reanalysis; certified disjoint-path routing and spanning-expander packing. The destructive-support extractor, exact-size auxiliary graph and route/conductance accounting are explicitly instantiated. The retained rank-sensitive layer count, its separate root factor and the fixed-right-rank polynomial-strength consequence are included; explicit incidence input is not replaced by an implicit graph-edge count.
 
-**Conditions and remaining work.** The hitting, expansion, density, load and input-size promises remain part of their respective theorems. The companion’s separate conditional observation about the public approximate-extension algorithm is not used by these results and retains its stated assumption. Manuscript readiness does not claim a full executable implementation.
+**Dependencies and scope.** The hitting, expansion, density, load and input-size promises remain part of their respective theorems. The companion’s separate conditional observation about the public approximate-extension algorithm is not used by these results and retains its stated assumption. Manuscript readiness does not claim a full executable implementation.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -45,6 +45,19 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md).
 
 The same sharper asymptotic rate also follows from the documented weighted reanalysis of the public BHHS operation sequence. The proof does not claim an exclusive speed advantage over that reanalysis.
+
+## Constant-rank and linear-time endpoints
+
+For each fixed right rank <code class="math">r\ge2</code> and <code class="math">\Delta\ge p^{\epsilon}</code>, the [rank-sensitive theorem](../../manuscripts/matching-and-routing/rank-sensitive-layer-count.md) gives
+
+<!-- math-display: 927b5f6cd42a51f4ef148090
+O(|A|+|B|)+p\log(p+4)\exp O_r(1/\epsilon).
+-->
+![Formula](../../assets/math/927b5f6cd42a51f4ef148090.svg)
+
+The constants are uniform in <code class="math">\epsilon</code>. The logarithmic root factor is retained. A direct greedy scan is already linear when <code class="math">q\le\Delta r</code>; after the whole-left certificate test, <code class="math">\Delta^2r^3\ge&#124;B_{\rm used}&#124;</code> also suffices. Thus <code class="math">\epsilon\ge1/2</code> in the displayed regime is already covered by the elementary linear-time endpoint. Rank one is a bipartite graph and has the separate classical phase bound.
+
+These results concern an explicitly listed hypergraph. The routing application below retains its own full distance-structure, support-extraction and output costs; its path rank <code class="math">R=\lceil\Gamma h_0\rceil</code> is not assumed constant.
 
 ## Certified routing and expander packing
 

@@ -1,6 +1,16 @@
 # Exact Boolean optimization by interval and slack compilation
 
-## 1. Compiler theorem
+The strongest local refinement is the [cardinality and coefficient-normalized compiler](manuscripts/cardinality-and-modal-interval-compilation.md). For each nonconstant row, subtract a most frequent coefficient on each exact cardinality layer. If <code class="math">d_i</code> is the resulting support, put <code class="math">\bar\kappa_i=\min\{W_i+1,d_i,\lfloor n/2\rfloor\}</code> and <code class="math">\bar Q=\sum_i\lceil\log_2\bar\kappa_i\rceil</code>. For <code class="math">0\le B\le\bar Q</code>, its time is
+
+<!-- math-display: e3ef6f5197ea5deb5290743c
+\mathrm{poly}(L)P_{\rm card}
+2^{\alpha n+\bar Q-(1-\alpha)B},
+-->
+![Formula](../../assets/math/e3ef6f5197ea5deb5290743c.svg)
+
+with the same backend space bound at <code class="math">n+B</code> variables. Here <code class="math">P_{\rm card}</code> is the maximum of one and the actual catalogue product over nontrivial cardinality layers. Original variables and rows are explicit, so their counts are at most <code class="math">L</code>. The original support-sized argument below remains an independent unconditioned lemma.
+
+## 1. Unconditioned compiler theorem
 
 The input has <code class="math">n</code> Boolean variables, signed binary integer equalities, and interval rows <code class="math">\ell_i\le a_i^\top x\le u_i</code>. Let <code class="math">L</code> be its binary length, <code class="math">s_i=&#124;\mathrm{supp}(a_i)&#124;</code>, and <code class="math">W_i=u_i-\ell_i</code>. Normalize one-sided rows against their attainable ranges and handle empty intervals and zero rows directly. Put
 <!-- math-display: 972de2e59f303d81dcb6e4b2
@@ -77,10 +87,28 @@ The packed bit length is polynomial in <code class="math">L</code>. Multiplying 
 
 Binary search over the polynomial-bit objective range uses polynomially many feasibility queries. Completely enumerate the short-target catalogue for the one added threshold row; its cost is polynomial and it adds no slack variables. Fix an optimum as an exact equality before treating the next lexicographic objective.
 
-For a fixed number of interval rows, <code class="math">Q=O(\log n)</code> and <code class="math">\prod_i p_i</code> is polynomial in <code class="math">L</code>, so the backend's separate time and space interfaces transfer up to polynomial factors. A time-only backend supplies no new simultaneous space bound. The refined numerical exponent additionally inherits its full-domain analytic contact premises; scalar exponent verification alone does not prove those premises.
+For a fixed number of interval rows, <code class="math">Q=O(\log n)</code> and <code class="math">\prod_i p_i</code> is polynomial in <code class="math">L</code>, so the backend's separate time and space interfaces transfer up to polynomial factors. A time-only backend supplies no new simultaneous space bound. Numerical runtimes use the full theorem and indexed-witness scope of the chosen backend; scalar exponent checks alone do not establish that separate theorem.
 
-## Complete proof
+## 6. Cardinality and common-coefficient refinement
 
-[Interval compiler, numerical instantiations, and primary source comparison](manuscripts/boolean-linear-optimization-compiler.md). The general signed interval-rounding method is inherited from Nederlof–van Leeuwen–van der Zwaan and Bansal–Garg–Nederlof–Vyas. The manuscript gives the complete support-sized boundary refinement and the short-interval/slack interpolation; it requires no further external theorem for either local step.
+On the retained equality <code class="math">\sum_{j=1}^n x_j=k</code>, subtract a most frequent row coefficient <code class="math">c_i</code> and shift both endpoints by <code class="math">c_i k</code>. The transformed support is <code class="math">d_i=n-\max_c&#124;\{j:a_{ij}=c\}&#124;\le s_i</code>, and the interval width is unchanged. A constant row becomes the direct test <code class="math">\ell_i\le c_i k\le u_i</code>, without a logarithmic parameter.
+
+If a current row has <code class="math">t</code> odd coefficients, signed floor gives a remainder in
+
+<!-- math-display: ed191fb97c67de64773589d1
+[A,D]=[\max\{0,k+t-n\},\min\{k,t\}],
+\qquad D-A=\min\{k,n-k,t,n-t\}.
+-->
+![Formula](../../assets/math/ed191fb97c67de64773589d1.svg)
+
+The safe child is <code class="math">[\lceil(\ell-A)/2\rceil,\lfloor(u-D)/2\rfloor]</code>. Its two clipped boundary intervals have at most <code class="math">D-A</code> values. Recursing only on that child yields the cap <code class="math">\kappa_i(k)=\min\{W_i+1,d_i,k,n-k\}</code> and the same logarithmic catalogue count. The [companion proof, Sections 2–4](manuscripts/cardinality-and-modal-interval-compilation.md#2-exact-coefficient-normalization-within-a-layer), includes empty children, negative common coefficients, constant parity remainders, overlapping boundaries and polynomial bit lengths.
+
+Keep the cardinality equality on original variables, with zero slack coefficients, in the signed radix system. Set <code class="math">Q_k=\sum_i\lceil\log_2\kappa_i(k)\rceil</code> and <code class="math">B_k=\min\{B,Q_k\}</code>. Then <code class="math">Q_k-B_k\le\bar Q-B</code> and <code class="math">B_k\le B</code>, proving the displayed uniform time/space bound even when <code class="math">B&gt;Q_k</code> or <code class="math">\alpha&gt;1</code>. The layers <code class="math">k=0,n</code> and <code class="math">n\le1</code> are direct cases. Original equalities and objective values retain their original meaning; an objective threshold is centered only under the same guard and its short tests are enumerated with no additional slack variables.
+
+## Complete proofs
+
+[Unconditioned interval compiler, numerical instantiations, and primary source comparison](manuscripts/boolean-linear-optimization-compiler.md). The general signed interval-rounding method is inherited from Nederlof–van Leeuwen–van der Zwaan and Bansal–Garg–Nederlof–Vyas. The manuscript gives the complete support-sized boundary refinement and the short-interval/slack interpolation; it requires no further external theorem for either local step.
+
+[Complete guarded and normalized compiler](manuscripts/cardinality-and-modal-interval-compilation.md), including its independent exact checks.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

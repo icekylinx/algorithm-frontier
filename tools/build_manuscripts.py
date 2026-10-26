@@ -41,6 +41,14 @@ SOURCES = [
     'problems/boolean-linear-compiler/proof.md',
     'problems/boolean-linear-compiler/manuscripts/boolean-linear-optimization-compiler.md',
     'manuscripts/graph-backends/published-flow-capacity-scaling.md',
+    'manuscripts/graph-backends/exact-demand-flow-trimming.md',
+    'manuscripts/graph-backends/static-transportation-support-balancing.md',
+    'manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md',
+    'manuscripts/graph-backends/low-state-odd-crown.md',
+    'manuscripts/matching-and-routing/rank-sensitive-layer-count.md',
+    'problems/degree-constrained-subgraphs/linear-selector.md',
+    'problems/boolean-linear-compiler/manuscripts/cardinality-and-modal-interval-compilation.md',
+    'problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md',
 ]
 MANIFEST = ROOT / 'manuscripts' / 'tex-exports.json'
 

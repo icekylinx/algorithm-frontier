@@ -40,7 +40,7 @@ returns one of the following:
    intersects every hyperedge in `E_S` and satisfies
    `|C|<Delta r^2 |S|`.
 
-Its running time is
+The rank-free running time proved first below is
 
 <!-- math-display: a63b5310e9aa6582a1814a02
 O(|A|+|B|)+
@@ -48,6 +48,24 @@ O(|A|+|B|)+
  \tag{1}
 -->
 ![Formula](../../assets/math/a63b5310e9aa6582a1814a02.svg)
+
+**Retained rank-sensitive refinement.** Put <code class="math">q=&#124;A&#124;</code>, <code class="math">h=\log(U+4)</code> and
+
+<!-- math-display: 4f8e79a07afc47f2d9c89393
+a=\min\{\log(2+s),\log(2+\log(r+2))\}.
+-->
+![Formula](../../assets/math/4f8e79a07afc47f2d9c89393.svg)
+
+The same certifying construction has the stronger bound
+
+<!-- math-display: 0e80e4ad5545a73a33fb3371
+O(|A|+|B|)+p\exp O\left(h+\frac{a\log(q+1)}s\right).
+\tag{1r}
+-->
+![Formula](../../assets/math/0e80e4ad5545a73a33fb3371.svg)
+
+The sharper count in Section 5 retains the root prefactor explicitly. It is
+an existing proved refinement from the [rank-sensitive companion](../../manuscripts/matching-and-routing/rank-sensitive-layer-count.md), now stated at this main entry point. It also applies to the public explicit operation sequence through its constant number of adopted-reset epochs.
 
 The nontrivial execution only needs `4<=Delta<=p`; the
 prechecks below handle larger parameters immediately. The theorem
@@ -396,6 +414,50 @@ execution prefix has the same upper bound (13). Thus there
 cannot be infinitely many creations. Combining (13) with the
 linear build and collapse costs proves (1).
 
+### The retained rank-sensitive child cutoff
+
+A positive layer with lower-prefix size <code class="math">W</code> has at most <code class="math">r\Delta W</code> matching
+blockers. A child is born only while the parent is noncollapsible, so its
+prefix size is at least <code class="math">\kappa W</code>, where <code class="math">\kappa=1+9\Delta/100</code>. The child
+birth sizes decrease geometrically by <code class="math">\rho=.99</code>, and all lie in
+<code class="math">[\kappa W,(1+r\Delta)W]</code>. Since
+
+<!-- math-display: 56b255c86b223f1285ba1096
+\frac{1+r\Delta}{1+9\Delta/100}\le\frac{100r}{9}<12r,
+-->
+![Formula](../../assets/math/56b255c86b223f1285ba1096.svg)
+
+the number of child births is at most
+<code class="math">L_r=2+\lceil\log(12r)/(-\log\rho)\rceil=O(\log(r+2))</code>.
+The possible last living child is counted in every finite execution prefix.
+
+With <code class="math">\lambda_r=\log(2L_r)/\log\kappa</code>, the sum of child weights
+<code class="math">W_{\rm child}^{-\lambda_r}</code> is at most one half of the parent's weight.
+This gives <code class="math">\lambda_r=\Theta(\log(2+\log(r+2))/s)</code>. Taking the smaller of this
+valid exponent and the earlier rank-free exponent gives
+<code class="math">\lambda=\Theta(a/s)</code>. The root's geometrically decreasing unmatched counts
+have total weight at most
+
+<!-- math-display: f3e69f3fb63b46ac4f52e7a3
+O\left(\min\{\log(q+1),1+1/\lambda\}\right).
+-->
+![Formula](../../assets/math/f3e69f3fb63b46ac4f52e7a3.svg)
+
+Thus the number of builds is bounded by
+
+<!-- math-display: 2ec373e7f8044914139ae709
+O\left(\min\{\log(q+1),1+s/a\}\right)
+\exp O\left(\frac{a\log(q+1)}s\right).
+\tag{13r}
+-->
+![Formula](../../assets/math/2ec373e7f8044914139ae709.svg)
+
+Each build and collapse costs <code class="math">O(p)</code>, proving (1r), including its <code class="math">h</code> term.
+The root factor must remain when <code class="math">r</code> is fixed and <code class="math">s</code> is comparable to <code class="math">U</code>.
+For the reanalyzed public explicit algorithm there are at most 26 epochs;
+replace <code class="math">L_r</code> by <code class="math">26L_r</code> in the weight, leaving the displayed asymptotic
+bound unchanged. The [full companion proof](../../manuscripts/matching-and-routing/rank-sensitive-layer-count.md) proves this epoch statement and all parameter endpoints. No implicit path-hypergraph enumeration is used by the explicit theorem.
+
 ## 6. Full inventory and verification costs
 
 Each build costs `O(p)`. The combined right-coordinate size of
@@ -444,21 +506,21 @@ count in each epoch. Historical certificates from the latest
 actual attempted extension establish the necessary growth
 invariant without a stale rerun assumption. The complete proof
 is in [The same sharper rate for the existing BHHS explicit-hypergraph algorithm](../../manuscripts/matching-and-routing/public-hypergraph-algorithm-weighted-reanalysis.md).
-Thus the faster column below is a new quantitative analysis that
+Thus the weighted columns below are a quantitative analysis that
 applies to both operation sequences. It is not a strict separation
 from every algorithm already described in public sources.
 
 The following comparisons use the same explicit volume `p` and
 the same promise `tau(E_S)>=Delta r^2 |S|` throughout.
 
-| Strength parameter | BHHS displayed overhead | Sharpened overhead proved here for both implementations |
-|---|---:|---:|
-| `Delta>=p^epsilon`, fixed `0<epsilon<1` | `exp O(sqrt(U/epsilon))` | `(log p)^{O(1/epsilon)}` |
-| `Delta>=exp(U^beta)`, fixed `0<beta<1` | `exp O(U^(1-beta/2))` | `exp O(U^(1-beta) log U)` |
-| `Delta>=U^c`, fixed `c>0`, with any feasible rank `r` | `exp O(U/sqrt(log U))` | `exp O(U log log U/log U)` |
+| Strength parameter | BHHS displayed overhead | Rank-free weighted bound | Retained bound for each fixed right rank |
+|---|---:|---:|---:|
+| `Delta>=p^epsilon`, fixed `0<epsilon<1` | `exp O(sqrt(U/epsilon))` | `(log p)^{O(1/epsilon)}` | `log(p+4) exp O_r(1/epsilon)` |
+| `Delta>=exp(U^beta)`, fixed `0<beta<1` | `exp O(U^(1-beta/2))` | `exp O(U^(1-beta) log U)` | `U exp O_r(U^(1-beta))` |
+| `Delta>=U^c`, fixed `c>0` | `exp O(U/sqrt(log U))` | `exp O(U log log U/log U)` | `U exp O_r(U/log U)` |
 
 The total time includes a leading factor `p` and the one-time
-vertex-list reading cost. The first row therefore gives
+vertex-list reading cost. The rank-free column of the first row gives
 
 <!-- math-display: ff141f1857404f6574759f1f
 O(|A|+|B|)+p(\log p)^{O(1/\epsilon)}

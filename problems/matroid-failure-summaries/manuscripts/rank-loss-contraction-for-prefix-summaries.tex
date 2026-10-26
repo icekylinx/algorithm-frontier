@@ -1,0 +1,203 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md
+% Recovered-source SHA-256: 1c3ac9062e6bebd8f7cbfd0510a9f91a6275af2355edf1df79f235bb2ed8a894
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-b2bf8a6e14-a-fixed-rank-loss-contraction-for-ordered-matroid-failure-summaries}{%
+\section{A fixed rank-loss contraction for ordered matroid failure summaries}\label{af-b2bf8a6e14-a-fixed-rank-loss-contraction-for-ordered-matroid-failure-summaries}}
+
+\textbf{Status: ready for review.} The complete argument has undergone an independent internal proof review and exact finite checks. This is an oracle-matroid result for at most one label per item. It makes no representation assumption or literature-priority claim. The order is fixed throughout; a different cost order can require a different contraction.
+
+\hypertarget{af-b2bf8a6e14-setup-and-the-effective-rank}{%
+\subsection{1. Setup and the effective rank}\label{af-b2bf8a6e14-setup-and-the-effective-rank}}
+
+Let \(M\) be a matroid on a finite explicitly listed ground set \(E\) of size \(N\) and rank \(r\), with a fixed total item order. Each item has one label or is unlabelled. Distinct label classes \(D_\lambda\) are disjoint. A failed label set \(F\) leaves \(E_F=E\setminus\bigcup_{\lambda\in F}D_\lambda\). Write \(B_F\) for the canonical greedy basis of this surviving ground, including its possible rank drop. Let \(B_0\) be the unfailed basis, and set
+
+\[
+b_0=|\{e\in B_0:e\text{ is unlabelled}\}|,\qquad
+ b_\lambda=|B_0\cap D_\lambda|,\qquad
+ \delta_\lambda=r-r_M(E\setminus D_\lambda).
+\]
+
+Every surviving item of \(B_0\) remains accepted by greedy. Indeed, its surviving earlier prefix is a subset of its original earlier prefix and therefore cannot span an item that the original prefix did not span. Consequently
+
+\[
+R_\lambda=B_{\{\lambda\}}\setminus B_0,
+\qquad |R_\lambda|=b_\lambda-\delta_\lambda.
+\]
+
+In particular, labels absent from \(B_0\) have \(\delta_\lambda=0\) and \(R_\lambda=\varnothing\). Define
+
+\[
+T=\sum_\lambda |R_\lambda|
+ =r-b_0-\sum_\lambda\delta_\lambda,
+\qquad 0\le T\le r.
+\tag{1}
+\]
+
+This is the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{single-failure replacement total}, counting an item once for each single failure in whose basis it appears. The theorem below shows that it is also the rank of one fixed contraction sufficient for every failure budget.
+
+\textbf{Theorem 1 (fixed contraction).} One can construct an independent set \(Q\subseteq B_0\) of size \(r-T\) such that, for the single fixed matroid \(M'=M/Q\) on \(E\setminus Q\), every failure set \(F\) satisfies
+
+\[
+B_F=(Q\cap E_F)\ \dot\cup\ B'_F,
+\tag{2}
+\]
+
+where \(B'_F\) is the canonical basis of \(M'|((E\setminus Q)_F)\) in the inherited order. In particular \(M'\) has rank \(T\). For every original order prefix \(P\),
+
+\[
+r_M(P\cap E_F)
+ =|Q\cap P\cap E_F|
+  +r_{M'}((P\setminus Q)\cap E_F).
+\tag{3}
+\]
+
+The construction uses at most \((1+\ell_0)N+r\) independence-oracle queries, where \(\ell_0\) is the number of labels meeting \(B_0\), so \(\ell_0\le r\). It is deterministic. A query to the contracted independence oracle is one query to the original oracle on the queried set together with \(Q\); ordinary query-set representation and input bookkeeping are charged separately.
+
+\hypertarget{af-b2bf8a6e14-constructing-the-contracted-set}{%
+\subsection{2. Constructing the contracted set}\label{af-b2bf8a6e14-constructing-the-contracted-set}}
+
+Put every unlabelled item of \(B_0\) into \(Q_0\). For each label meeting \(B_0\), compute a basis \(B_\lambda\) of \(E\setminus D_\lambda\) in the fixed order. Extend this basis to a basis of \(E\) by scanning the items of \(B_0\cap D_\lambda\) in the fixed order, adding an item when independence permits it. This succeeds: \(B_\lambda\) spans \(E\setminus D_\lambda\), and that set together with \(B_0\cap D_\lambda\) spans the original basis \(B_0\) and hence all of \(E\).
+
+Let \(Q_\lambda\) be the added items. Then
+
+\[
+Q_\lambda\subseteq B_0\cap D_\lambda,\qquad
+ |Q_\lambda|=\delta_\lambda,
+\qquad
+r_M((E\setminus D_\lambda)\cup Q_\lambda)
+ =r_M(E\setminus D_\lambda)+|Q_\lambda|.
+\tag{4}
+\]
+
+Thus \(Q_\lambda\) is independent over the entire complementary ground. Define
+
+\[
+Q=Q_0\ \dot\cup\ \bigcup_\lambda Q_\lambda.
+\]
+
+All these items belong to \(B_0\), so their union is independent. Equation (1) gives \(|Q|=b_0+\sum_\lambda\delta_\lambda=r-T\).
+
+Computing \(B_0\) and the \(\ell_0\) single-failure bases takes at most \((1+\ell_0)N\) independence queries. The extension scans inspect at most \(\sum_\lambda b_\lambda\le r\) additional items. No other label needs a query. The construction need not store all bases simultaneously: each \(B_\lambda\) can be discarded after its extension has been recorded. It stores the original input, \(B_0\), \(Q\), the actual basis-label list and one temporary basis.
+
+\hypertarget{af-b2bf8a6e14-why-failed-contracted-blocks-are-jointly-independent}{%
+\subsection{3. Why failed contracted blocks are jointly independent}\label{af-b2bf8a6e14-why-failed-contracted-blocks-are-jointly-independent}}
+
+First, if a set \(I\) is independent over \(X\), meaning \(r_M(X\cup I)=r_M(X)+|I|\), it is independent over every \(Y\subseteq X\). To prove this, order the items of \(I\). Each has marginal rank one when added to \(X\) and its predecessors. By diminishing returns for matroid rank, its marginal on the subset \(Y\) and those same predecessors is at least one, hence exactly one. Sum the increments.
+
+Fix any failed label set \(F\) and write
+
+\[
+Q_s=Q\cap E_F,\qquad Q_f=Q\setminus E_F
+       =\bigcup_{\lambda\in F}Q_\lambda.
+\]
+
+Add the blocks \(Q_\lambda\) for \(\lambda\in F\) one at a time to \(E_F\). When adding \(Q_\lambda\), the ground already present consists of \(E_F\) and blocks \(Q_\mu\) with \(\mu\ne\lambda\). Every such item lies outside \(D_\lambda\) because label classes are disjoint. The present ground is therefore a subset of \(E\setminus D_\lambda\). Equation (4) and the preceding paragraph show that this addition increases rank by exactly \(|Q_\lambda|\). Thus
+
+\[
+r_M(E_F\cup Q_f)=r_M(E_F)+|Q_f|.
+\tag{5}
+\]
+
+This argument proves joint independence; separate independence of each block would not by itself be sufficient. It also proves the same equality starting from any subset of \(E_F\), including a subset together with \(Q_s\).
+
+\hypertarget{af-b2bf8a6e14-contracting-failed-blocks-commutes-with-their-deletion-here}{%
+\subsection{4. Contracting failed blocks commutes with their deletion here}\label{af-b2bf8a6e14-contracting-failed-blocks-commutes-with-their-deletion-here}}
+
+For any \(X\subseteq E_F\setminus Q\), equation (5) gives
+
+\[
+\begin{aligned}
+r_{M/Q}(X)
+ &=r_M(X\cup Q_s\cup Q_f)-|Q|\\
+ &=r_M(X\cup Q_s)+|Q_f|-|Q_s|-|Q_f|\\
+ &=r_{(M|E_F)/Q_s}(X).
+\end{aligned}
+\tag{6}
+\]
+
+Hence the fixed contraction, restricted after failures, is exactly the same matroid as restricting after failures and contracting only the surviving members of \(Q\). No general commutation of arbitrary overlapping contractions and deletions is being assumed. It is the complementary-ground independence in (4), and disjointness of the label classes, that justify (6).
+
+By greedy persistence, \(Q_s\subseteq B_F\). The canonical basis of a matroid is its lexicographically first basis in the fixed order. Bases of a contraction by an independent set \(Q_s\) correspond exactly to bases of the original matroid that contain \(Q_s\), with those common items removed. Since \(B_F\) already contains \(Q_s\) and is first among all bases, \(B_F\setminus Q_s\) is first among bases of the contraction. Removing common items preserves their lexicographic comparison. Together with (6), this proves (2).
+
+A canonical greedy basis restricted to an order prefix is a basis of that prefix. Applying this fact to (2), in both the original and the contracted order, proves (3). This handles rank drops, unlabelled items, loops and repeated label classes without additional assumptions.
+
+\hypertarget{af-b2bf8a6e14-exact-failure-summary-transfer-and-preprocessing-cost}{%
+\subsection{5. Exact failure-summary transfer and preprocessing cost}\label{af-b2bf8a6e14-exact-failure-summary-transfer-and-preprocessing-cost}}
+
+Let \(H_h(M)\) be the union of all canonical bases under at most \(h\) failed labels. The usual prefix argument shows that it is the unique smallest original-item restriction preserving every surviving prefix rank: every item in the union has a witnessing prefix rank increase and therefore must be retained, while retaining all these bases suffices for every prefix. Taking unions in (2) gives the exact identity
+
+\[
+H_h(M)=Q\ \dot\cup\ H_h(M/Q),
+\qquad
+|H_h(M)|=r-T+|H_h(M/Q)|.
+\tag{7}
+\]
+
+The unfailed query ensures that every item of \(Q\) occurs in the union. Labels that occur only in \(Q\) have no effect on the contracted ground. They may still change which fixed items are reinserted for a particular query; the original labels on \(Q\) are retained for this purpose.
+
+Let \(N'=N-|Q|\), and let \(\ell'\) be the number of labels actually occurring in the remaining ground. Replace a binary-encoded budget \(h\) by \(h'=\min\{h,\ell'\}\) for the minor construction. This is valid because failing additional absent labels does not change the minor. The algorithm therefore never loops a numeric \(h\) times solely because that integer has a long or huge binary value.
+
+Apply the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md}{ordered-basis tree} to the rank-\(T\) minor: compute its canonical basis at each node, output those items, and branch only on labels on that basis. There are at most \(T\) children and depth at most \(h'\). Each node requires at most \(N'\) original independence queries through \(M/Q\). Thus, for \(T>0\), a transparent total bound is
+
+\[
+(1+\ell_0)N+r+
+N'\sum_{j=0}^{h'}T^j.
+\tag{8}
+\]
+
+It is \(O(N(r+T^{h'}))\) queries for \(T\ge2\), and \(O(N(r+h'))\) for \(T=1\). At \(T=0\), the minor consists only of loops and its tree is unnecessary: \(H_h(M)=Q=B_0\) for every \(h\). If the requested budget is zero, computing \(B_0\) directly already takes at most \(N\) queries and no normalization is needed.
+
+The tree's correctness is independent of the size-bound proofs. For a target failure set, either its remaining failures avoid the current canonical basis, in which case that basis remains canonical, or one of those failures is a branch label. Following such branches reaches a node whose basis equals the target basis. The fixed contraction only changes the rank controlling this branch count. A depth-first implementation stores the input, the fixed set \(Q\), the output, and one rank-\(T\) basis/branch list per active depth. Each original oracle query can be represented explicitly using at most \(r+1\) items; this set-encoding work is not hidden in the count of oracle calls.
+
+\hypertarget{af-b2bf8a6e14-rank-adaptive-support-bounds-and-sharp-small-rank-endpoints}{%
+\subsection{6. Rank-adaptive support bounds and sharp small-rank endpoints}\label{af-b2bf8a6e14-rank-adaptive-support-bounds-and-sharp-small-rank-endpoints}}
+
+Every existing ordered-prefix support bound at rank \(u\) can now be applied at \(u=T\), then add \(r-T\). For example, the proved Bernoulli prefix refinement gives, for \(h\ge2\) and one label per item (see the complete \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md}{Bernoulli prefix refinement}),
+
+\[
+|H_h(M)|\le r+
+\frac{h^h}{(h-1)^{h-1}}T.
+\tag{9}
+\]
+
+The random product measure is only used in that earlier size proof; the construction here is deterministic. For one failure the sharp universal bound becomes \(r+T\).
+
+For two failures, the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{proved small-rank/profile theorem} gives
+
+\[
+|H_2(M)|\le
+\begin{cases}
+r,&T=0,\\
+r+2,&T=1,\\
+r-T+\min\{5T,\binom{T+1}{2}+3\},&T\ge2.
+\end{cases}
+\tag{10}
+\]
+
+In particular \(T\le3\) gives \(|H_2(M)|\le r+2T\), and \(T=4\) gives \(r+9\). These conclusions are insensitive to the original rank contributed by unlabelled or privately labelled directions.
+
+There is a stronger all-budget endpoint at \(T=1\):
+
+\[
+|H_h(M)|\le r+h.
+\tag{11}
+\]
+
+A rank-one minor has at most one basis item at a node and hence at most one child. Its tree has at most \(h'+1\) nodes, so its union has at most \(h'+1\) items. Use (7). The bound is sharp: take \(r-1\) unlabelled coloops and a rank-one parallel class of \(h+1\) ordered items with distinct labels, for \(h\ge1\). The only one-failure replacement is the second parallel item replacing the first, so \(T=1\). Each of the first \(h+1\) parallel items is the first survivor when its predecessors' labels fail, so all \(r+h\) original items are necessary. No representation is used by the algorithm or by the proof of the upper bound.
+
+When the fixed order is nondecreasing cost followed by a permanent item ID, these summaries preserve the canonical minimum-cost basis under every allowed failure, including rank drops. This does not assert that the same \(Q\) is valid for all possible cost orders, or that a prefix-minimal summary is minimal among sets asked to preserve only the numerical optimum cost.
+
+\hypertarget{af-b2bf8a6e14-exact-independent-finite-checks}{%
+\subsection{7. Exact independent finite checks}\label{af-b2bf8a6e14-exact-independent-finite-checks}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py}{checker} constructs \(Q\) using only independence queries. Its reference uses ranks of the \textbf{original full prefixes} to identify canonical membership; it does not reconstruct the expected answer by the algorithm's contraction. For each failure it verifies joint independence of failed blocks, the rank identity (6) on every surviving subset for the small suite, equation (3) on every prefix, equation (2), and the complete union (7) for every failure budget. It also checks the stated query caps, \(T=0,1\), rank drops, all-zero/loop instances, and the binary-large budget \(10^{100}\).
+
+The completed small suite includes all 92 matroids on at most four labelled items, all one-label partitions up to label renaming with an optional unlabelled class, and every item order: 86,359 instances, 375,093 failure queries, 1,495,618 prefix comparisons and 1,450,577 arbitrary-subset contraction-rank comparisons. It checks 250,091 budget instances and 86,359 huge-budget cases.
+
+The larger suite has 230 ordered/labelled instances from 220 matroids. These include binary represented matroids, the nonrepresentable 13-item obstruction augmented by privately labelled parallel components and unlabelled coloops, and exact \(T=1\) lower-bound families. It checks 4,680 failures, 42,512 prefixes, 196,560 additional contraction-rank comparisons and 1,051 budget instances. The larger arbitrary-subset checks use fixed-seed samples in addition to the empty and full surviving ground; only the small suite is exhaustive over all such subsets. The default command uses all matroids through three items plus the complete larger suite; \texttt{-\/-full} also runs every four-item instance. The checker writes no repository files and rejects Python \texttt{-O}. These finite checks supplement the proof rather than replace it. Reproduction commands and the scope of the other suites appear in the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/README.md}{verification note}.
+
+\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

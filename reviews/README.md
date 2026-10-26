@@ -24,7 +24,7 @@ Receipt binding establishes provenance and coverage metadata; only recomputation
 
 The complete uniform deterministic integer Subset Sum and indexed-witness construction in Parts I–III: signed circuit compilation, finite exact seed search, trace aggregation, all inherited reductions, the preserved two-level result and the third-lookup extension. The final-source 62-branch and 16-branch evidence, finite contact-cone lemma, exact reflected envelope and all nine outer cost rates are separately accounted for.
 
-**Conditions and remaining work.** The finite input-independent startup constant has no practical numerical bound. Mathematical compiler proofs and exact continuous certificates have different scopes; neither is described as proof-assistant formalization or as a practical implementation of the compiled algorithm. The historical 18-contact presentation retains its explicitly stated numerical evidence boundary. The current 62-plus-16-branch theorem uses its own complete contact evidence and does not depend on that historical receipt.
+**Dependencies and scope.** The finite input-independent startup constant has no practical numerical bound. Mathematical compiler proofs and exact continuous certificates have different scopes; neither is described as proof-assistant formalization or as a practical implementation of the compiled algorithm. The historical 18-contact presentation retains its explicitly stated numerical evidence boundary. The current 62-plus-16-branch theorem uses its own complete contact evidence and does not depend on that historical receipt.
 
 [Proof](../problems/subset-sum-fast-deterministic/proof.md) · [Dependencies](../problems/subset-sum-fast-deterministic/sources.md) · [Evidence](../problems/subset-sum-fast-deterministic/verify/README.md) · Reviewed 2026-10-26
 
@@ -32,7 +32,7 @@ The complete uniform deterministic integer Subset Sum and indexed-witness constr
 
 The complete general low-space theorem with writable-space exponent 0.18261635770550353, including the storage schedule, indexed witnesses and the one-bit deficiency-proxy charge. The separate two-short-range theorem includes signed normalization, nested residue streams and self-contained exact Boolean convolution.
 
-**Conditions and remaining work.** The stronger n/6-space result requires the supplied three-block partition and two short normalized ranges. The general theorem has no such input restriction. Executable finite checks cover their named identities and resource ledgers; they are not a full implementation or formalization of either asymptotic construction.
+**Dependencies and scope.** The stronger n/6-space result requires the supplied three-block partition and two short normalized ranges. The general theorem has no such input restriction. Executable finite checks cover their named identities and resource ledgers; they are not a full implementation or formalization of either asymptotic construction.
 
 [Proof](../problems/subset-sum-low-space-deterministic/proof.md) · [Dependencies](../problems/subset-sum-low-space-deterministic/sources.md) · [Evidence](../problems/subset-sum-low-space-deterministic/verify/README.md) · Reviewed 2026-10-26
 
@@ -40,15 +40,15 @@ The complete general low-space theorem with writable-space exponent 0.1826163577
 
 The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable edge retirement, finite-bit implementation and uniform parameter search. The separate executable package includes exact matching, independent optimality certificates, the early checkpoint’s four-times-matching-number compression, and the newly implemented nonrecursive bipartite phase algorithm. Sharp cover-neighbor, mixed-failure and subcubic reductions retain their own proved scopes.
 
-**Conditions and remaining work.** Named published deterministic primitives are explicit proof dependencies; the local realization theorem discharges the abstract cycle-search contract. The shipped reference implementation has a separate polynomial bound and does not implement the entire fast research construction. The mixed-failure kernel concerns a fixed simple graph. Native parallel records and correlated failure labels are separate models. Readiness is a mathematical review invitation, not proof-assistant verification.
+**Dependencies and scope.** Named published deterministic primitives are explicit proof dependencies; the local realization theorem discharges the abstract cycle-search contract. The shipped reference implementation has a separate polynomial bound and does not implement the entire fast research construction. The mixed-failure kernel concerns a fixed simple graph. Native parallel records and correlated failure labels are separate models. Readiness is a mathematical review invitation, not proof-assistant verification.
 
 [Proof](../problems/general-matching/proof.md) · [Dependencies](../problems/general-matching/sources.md) · [Evidence](../problems/general-matching/verify/README.md) · Reviewed 2026-10-26
 
 ### [Degree-constrained subgraphs](../problems/degree-constrained-subgraphs/)
 
-The complete sparse reductions for prescribed degrees, degree intervals and exact/ranged cardinality, with extension, native decoding and the fast matching substitution. The shipped native-record solver handles feasibility, minimum and maximum cardinality. Its independent verifier checks YES witnesses and local or matching-based NO/optimality certificates without a matching search.
+The complete sparse reductions for prescribed degrees, degree intervals and exact/ranged cardinality, with extension, native decoding and the fast matching substitution. The shipped native-record solver handles feasibility, minimum and maximum cardinality. Its independent verifier checks YES witnesses and local or matching-based NO/optimality certificates without a matching search. The separate linear-size selector imports the precise Gabber–Galil expansion inequality and proves deterministic network enumeration, degree conversion and matching adaptation.
 
-**Conditions and remaining work.** The reference implementation has its own polynomial bounds and shares the proved deterministic reduction builder with the verifier. Input is a loopless multigraph with capacity one per explicit record. Binary multiplicities and arbitrary edge-weight optimization are outside this implementation.
+**Dependencies and scope.** The reference implementation has its own polynomial bounds and shares the proved deterministic reduction builder with the verifier. Input is a loopless multigraph with capacity one per explicit record. Binary multiplicities and arbitrary edge-weight optimization are outside this implementation. The current executable retains its Beneš selector. The linear-size theoretical variant has explicit but large constants and does not claim a linear-time routing algorithm.
 
 [Proof](../problems/degree-constrained-subgraphs/proof.md) · [Dependencies](../problems/degree-constrained-subgraphs/sources.md) · [Evidence](../problems/degree-constrained-subgraphs/verify/README.md) · Reviewed 2026-10-26
 
@@ -56,7 +56,7 @@ The complete sparse reductions for prescribed degrees, degree intervals and exac
 
 The complete static and insertion-only fixed-threshold moving-box log-barrier construction, instantiated with the locally realized raw-cycle search, numerical lifetime and retirement rules. Includes affine integral recovery, artificial-edge penalties and prefix-safe deferred initialization. The published-flow capacity-bit adapter is a separately proved alternative for exact max-flow calls.
 
-**Conditions and remaining work.** The numerical cap, polynomial adaptive-history horizon and full-flow output charge remain part of the theorem. The incremental result is a fixed-threshold guarantee, not a fresh optimal flow after every update. An infeasible early prefix does not imply permanent infeasibility. The alternative capacity-bit route uses van den Brand et al., arXiv:2407.10830v1, Theorem 6.17, with polynomial capacity relative to each actual call size. Its published algorithm is an external proof dependency; local finite adapter checks do not execute it.
+**Dependencies and scope.** The numerical cap, polynomial adaptive-history horizon and full-flow output charge remain part of the theorem. The incremental result is a fixed-threshold guarantee, not a fresh optimal flow after every update. An infeasible early prefix does not imply permanent infeasibility. The alternative capacity-bit route uses van den Brand et al., arXiv:2407.10830v1, Theorem 6.17, with polynomial capacity relative to each actual call size. Its published algorithm is an external proof dependency; local finite adapter checks do not execute it.
 
 [Proof](../problems/min-cost-flow/proof.md) · [Dependencies](../problems/min-cost-flow/sources.md) · [Evidence](../problems/min-cost-flow/verify/README.md) · Reviewed 2026-10-26
 
@@ -64,7 +64,7 @@ The complete static and insertion-only fixed-threshold moving-box log-barrier co
 
 The complete incremental SCC label theorem with the raw-cycle-to-frozen-detector realization, nonzero-base handling and retirement rules. The label-history extension proves historical equality and O(1+log log(n+2)) first-coalescence queries using permanently retired identities.
 
-**Conditions and remaining work.** The theorem gives exact component labels under the stated insertion model and adaptive-history bounds. It does not include dynamic topological-order maintenance or within-component path output. The executable history checks cover that layer separately.
+**Dependencies and scope.** The theorem gives exact component labels under the stated insertion model and adaptive-history bounds. It does not include dynamic topological-order maintenance or within-component path output. The executable history checks cover that layer separately.
 
 [Proof](../problems/incremental-scc/proof.md) · [Dependencies](../problems/incremental-scc/sources.md) · [Evidence](../problems/incremental-scc/verify/README.md) · Reviewed 2026-10-26
 
@@ -72,7 +72,7 @@ The complete incremental SCC label theorem with the raw-cycle-to-frozen-detector
 
 The complete frozen-detector incremental SSSP construction, its realized numerical interface, the simple-path reporting argument and nonnegative-integer perturbation adapter. Includes exact zero distances, clipped-tree intersections, loop removal and accuracy/bit accounting.
 
-**Conditions and remaining work.** The input, accuracy and polynomial numerical-range promises remain explicit. Reporting a path with k edges costs (k+1) poly(U). Finite path tests support the reporting lemmas and do not measure the asymptotic detector update time.
+**Dependencies and scope.** The input, accuracy and polynomial numerical-range promises remain explicit. Reporting a path with k edges costs (k+1) poly(U). Finite path tests support the reporting lemmas and do not measure the asymptotic detector update time.
 
 [Proof](../problems/incremental-sssp/proof.md) · [Dependencies](../problems/incremental-sssp/sources.md) · [Evidence](../problems/incremental-sssp/verify/README.md) · Reviewed 2026-10-26
 
@@ -80,7 +80,7 @@ The complete frozen-detector incremental SSSP construction, its realized numeric
 
 The constructed fully dynamic metric hierarchy, full time/stretch curve and all five explicit parameter points, including the same-stretch 23/28 versus 6/7 comparison. The nonnegative-integer adapter supplies exact zero answers and transformed-range accounting.
 
-**Conditions and remaining work.** The tradeoff is amortized and reports numerical distances. Its general family assumes t tends to infinity and t^2 h=o(U); extending that family to zero lengths additionally needs t^4 h=o(U) and a uniform stretch bound. The five displayed points satisfy the stronger conditions.
+**Dependencies and scope.** The tradeoff is amortized and reports numerical distances. Its general family assumes t tends to infinity and t^2 h=o(U); extending that family to zero lengths additionally needs t^4 h=o(U) and a uniform stretch bound. The five displayed points satisfy the stronger conditions.
 
 [Proof](../problems/apsp-frontier/proof.md) · [Dependencies](../problems/apsp-frontier/sources.md) · [Evidence](../problems/apsp-frontier/verify/README.md) · Reviewed 2026-10-26
 
@@ -88,7 +88,7 @@ The constructed fully dynamic metric hierarchy, full time/stretch curve and all 
 
 The complete tracked-terminal four-fifths and full-horizon five-sixths constructions, including the destructive-support realization, hierarchy and strong-forest substitutions. The zero-edge class and dyadic positive-weight wrapper charge initialization, all updates and settled output recourse.
 
-**Conditions and remaining work.** The two recourse guarantees have different scopes and are retained separately. Output is measured after a complete external update, with the stated adaptive-history and numerical-range restrictions. The underlying proofs are available even though a full executable implementation is not supplied.
+**Dependencies and scope.** The two recourse guarantees have different scopes and are retained separately. Output is measured after a complete external update, with the stated adaptive-history and numerical-range restrictions. The underlying proofs are available even though a full executable implementation is not supplied.
 
 [Proof](../problems/dynamic-spanners/proof.md) · [Dependencies](../problems/dynamic-spanners/sources.md) · [Evidence](../problems/dynamic-spanners/verify/README.md) · Reviewed 2026-10-26
 
@@ -96,7 +96,7 @@ The complete tracked-terminal four-fifths and full-horizon five-sixths construct
 
 The full deterministic weighted MSF public-baseline composition: local exchange/contraction proofs, connectivity adapter, finite pruning horizons, decomposition parameters and recursive worst-case cost.
 
-**Conditions and remaining work.** The external theorems are Chuzhoy–Gao–Li–Nanongkai–Peng–Saranurak Corollary 6.1, Meierhans–Probst Gutenberg–Saranurak Theorem 6.4, and Nanongkai–Saranurak–Wulff-Nilsen Theorem 7.1 and Section 9. This is a derived public result; a full executable implementation is not supplied.
+**Dependencies and scope.** The external theorems are Chuzhoy–Gao–Li–Nanongkai–Peng–Saranurak Corollary 6.1, Meierhans–Probst Gutenberg–Saranurak Theorem 6.4, and Nanongkai–Saranurak–Wulff-Nilsen Theorem 7.1 and Section 9. This is a derived public result; a full executable implementation is not supplied.
 
 [Proof](../problems/dynamic-msf/proof.md) · [Dependencies](../problems/dynamic-msf/sources.md) · [Evidence](../problems/dynamic-msf/verify/README.md) · Reviewed 2026-10-26
 
@@ -104,31 +104,31 @@ The full deterministic weighted MSF public-baseline composition: local exchange/
 
 The complete accepted no-reset Steiner-pool strong-forest construction, with fixed pools, native identities, ghost ownership and chronological work. The six-sevenths cut-tree composition includes the locally realized fixed-k adapter and exact-flow chain. Nonnegative flat-forest and zero-capacity adapters, native input costs and actual-call inventory are explicit. The published-flow capacity-bit construction gives an additional route.
 
-**Conditions and remaining work.** The structural expansion, bounded-degree and numerical-range hypotheses remain part of the theorem. Forest routing outputs walks under its stated interface; a simple-path reporting contract is not added. The optional older ported-forest candidate is distinct from the completed no-reset construction. The alternative flow route invokes van den Brand et al., arXiv:2407.10830v1, Theorem 6.17. The earlier four-fifths local flow theorem already had its own proof chain and is not reclassified as an open assumption.
+**Dependencies and scope.** The structural expansion, bounded-degree and numerical-range hypotheses remain part of the theorem. Forest routing outputs walks under its stated interface; a simple-path reporting contract is not added. The optional older ported-forest candidate is distinct from the completed no-reset construction. The alternative flow route invokes van den Brand et al., arXiv:2407.10830v1, Theorem 6.17. The earlier four-fifths local flow theorem already had its own proof chain and is not reclassified as an open assumption.
 
 [Proof](../problems/decremental-strong-forest/proof.md) · [Dependencies](../problems/decremental-strong-forest/sources.md) · [Evidence](../problems/decremental-strong-forest/verify/README.md) · Reviewed 2026-10-26
 
 ### [Matroid and submodular failure summaries](../problems/matroid-failure-summaries/)
 
-Main Theorems 1–6: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure endpoint; explicit weighted obstruction; faster canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima and minimality of the 13-item example. Includes the sharp singleton-replacement bound r+2t, its failed-contracted-item proof, and the profile-sensitive construction with N(1+ell_0+binom(t+1,2)) queries.
+Main Theorems 1–7: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure endpoint; explicit weighted obstruction; faster canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima and minimality of the 13-item example. Includes the sharp singleton-replacement bound r+2t, its failed-contracted-item proof, and the profile-sensitive construction with N(1+ell_0+binom(t+1,2)) queries. The fixed rank-loss contraction theorem preserves every failure basis and original prefix, reduces the tree parameter to the total single-failure replacement count T and proves the sharp r+h endpoint at T=1.
 
-**Conditions and remaining work.** Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification.
+**Dependencies and scope.** Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification. The rank-loss contraction in this review uses one label per item and a fixed total order. The query ledger charges the original oracle separately from explicit query-set representation; a changed cost order may require another contraction.
 
 [Proof](../problems/matroid-failure-summaries/proof.md) · [Dependencies](../problems/matroid-failure-summaries/sources.md) · [Evidence](../problems/matroid-failure-summaries/verify/README.md) · Reviewed 2026-10-26
 
 ### [Boolean linear optimization compiler](../problems/boolean-linear-compiler/)
 
-The complete signed interval-disjunction proof, bounded-slack interpolation, signed radix packing and indexed-witness/optimization transfer. Each halving emits at most two intervals with at most the original row support many integer values; all exceptional and binary-input cases are explicit.
+The complete signed interval-disjunction proof, bounded-slack interpolation, signed radix packing and indexed-witness/optimization transfer. Each halving emits at most two intervals with at most the original row support many integer values; all exceptional and binary-input cases are explicit. Includes fixed-cardinality layers, modal-coefficient subtraction, signed parity overlap and the resulting smaller slack budget, with exact preservation of the original cardinality and optimization witnesses.
 
-**Conditions and remaining work.** The Subset Sum backend is supplied with its stated indexed-witness time contract; a space bound requires that same backend. The compiler and finite checks do not establish the backend circuit or continuous-contact proofs.
+**Dependencies and scope.** The Subset Sum backend is supplied with its stated indexed-witness time contract; a space bound requires that same backend. The compiler and finite checks do not establish the backend circuit or continuous-contact proofs. The cardinality refinement counts the original explicitly listed variables. Its strongest slack bound does not assert a universal improvement to every disjunction-product parameter.
 
 [Proof](../problems/boolean-linear-compiler/proof.md) · [Dependencies](../problems/boolean-linear-compiler/sources.md) · [Evidence](../problems/boolean-linear-compiler/verify/README.md) · Reviewed 2026-10-26
 
 ### [Hypergraph matching and expander routing](../problems/strong-haxell-matching/)
 
-The explicit certifying hypergraph-matching algorithm, including build/growth/collapse and weighted finite-prefix termination; the public explicit-algorithm weighted reanalysis; certified disjoint-path routing and spanning-expander packing. The destructive-support extractor, exact-size auxiliary graph and route/conductance accounting are explicitly instantiated.
+The explicit certifying hypergraph-matching algorithm, including build/growth/collapse and weighted finite-prefix termination; the public explicit-algorithm weighted reanalysis; certified disjoint-path routing and spanning-expander packing. The destructive-support extractor, exact-size auxiliary graph and route/conductance accounting are explicitly instantiated. The retained rank-sensitive layer count, its separate root factor and the fixed-right-rank polynomial-strength consequence are included; explicit incidence input is not replaced by an implicit graph-edge count.
 
-**Conditions and remaining work.** The hitting, expansion, density, load and input-size promises remain part of their respective theorems. The companion’s separate conditional observation about the public approximate-extension algorithm is not used by these results and retains its stated assumption. Manuscript readiness does not claim a full executable implementation.
+**Dependencies and scope.** The hitting, expansion, density, load and input-size promises remain part of their respective theorems. The companion’s separate conditional observation about the public approximate-extension algorithm is not used by these results and retains its stated assumption. Manuscript readiness does not claim a full executable implementation.
 
 [Proof](../problems/strong-haxell-matching/proof.md) · [Dependencies](../problems/strong-haxell-matching/sources.md) · [Evidence](../problems/strong-haxell-matching/verify/README.md) · Reviewed 2026-10-26
 
@@ -138,7 +138,7 @@ The explicit certifying hypergraph-matching algorithm, including build/growth/co
 
 The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most B lower rows. Exact dominant-weight completion with all signed zero-coordinate costs, a binary count-rank oracle, the one-positive-weight polynomial endpoint, the self-contained 10/9 quadratic leading exponent, the named universal-set 5/9 refinement, projected coloring identities and histogram-sensitive enumeration. The compatible-cut extension and the two-positive-weight oracle/encoded-program lower-bound models are proved separately.
 
-**Conditions and remaining work.** The general resource calls retain exact integral-polymatroid optimization and submodular-minimization dependencies named in sources.md. The 5/9 leading coefficient specifically uses Naor-Schulman-Srinivasan Theorem 7 and its locally explicit indexing guarantee; the elementary 10/9 alternative supplies a local coloring proof. Finite checkers isolate the stated mechanisms and do not implement all of these optimization algorithms. The compatible-cut one-weight polynomial endpoint requires a prescribed or forced total numeric mass. Original resource totals, all numeric constraints and signed costs remain intact. Oracle query lower bounds and ETH claims for readable rank programs are separate models.
+**Dependencies and scope.** The general resource calls retain exact integral-polymatroid optimization and submodular-minimization dependencies named in sources.md. The 5/9 leading coefficient specifically uses Naor-Schulman-Srinivasan Theorem 7 and its locally explicit indexing guarantee; the elementary 10/9 alternative supplies a local coloring proof. Finite checkers isolate the stated mechanisms and do not implement all of these optimization algorithms. The compatible-cut one-weight polynomial endpoint requires a prescribed or forced total numeric mass. Original resource totals, all numeric constraints and signed costs remain intact. Oracle query lower bounds and ETH claims for readable rank programs are separate models.
 
 [Proof](../problems/weighted-prefix-quota-frontier/proof.md) · [Dependencies](../problems/weighted-prefix-quota-frontier/sources.md) · [Evidence](../problems/weighted-prefix-quota-frontier/verify/README.md) · Reviewed 2026-10-26
 
@@ -185,11 +185,72 @@ These families have not yet received a scoped readiness entry in this registry. 
 - [Independent transversals](../problems/independent-transversal/)
 - [Allocation and scheduling barriers](../problems/allocation-lower-bounds/)
 
+## Supporting manuscripts
+
+These independent results have their own review scopes. A completed static theorem does not certify a separate dynamic application.
+
+### [Exact demand trimming without a flow oracle](../manuscripts/graph-backends/exact-demand-flow-trimming.md)
+
+**Ready for review.** Complete coordinatewise subflow construction, selected directed forest, cycle cancellation, source excess removal and near-linear operation ledger. Includes sink-outgoing preprocessing, native arc identities and finite-bit arithmetic.
+
+**Dependencies and scope.** The deterministic dynamic-forest interface is a named published data-structure dependency. A supplied feasible flow and strictly positive nonsink targets are part of the input model.
+
+[Manuscript](../manuscripts/graph-backends/exact-demand-flow-trimming.md) · [Evidence](../manuscripts/graph-backends/verify/README.md) · Reviewed 2026-10-26
+
+### [Static selected-pair forests below twice the row total](../manuscripts/graph-backends/static-transportation-support-balancing.md)
+
+**Ready for review.** Complete arbitrary-row-rank static selected-pair forest theorem, private transportation-cycle cancellation, strict component bound below twice the row total and construction of a new physical row-covering injection.
+
+**Dependencies and scope.** The old injection may change. The near-linear operation bound uses named dynamic-tree operations; dynamically maintaining the private support is a separate problem.
+
+[Manuscript](../manuscripts/graph-backends/static-transportation-support-balancing.md) · [Evidence](../manuscripts/graph-backends/verify/README.md) · Reviewed 2026-10-26
+
+### [Near-linear confluent rounding and mass-sensitive tails](../manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md)
+
+**Ready for review.** Complete near-linear simulation and Parts B–D simultaneous completed-sink moment and tail bounds, including the budget proportional to actual demand. Part E proves the scoped local warm-start lemma.
+
+**Dependencies and scope.** The precise published base-2 Conflt operations and deterministic dynamic-tree interface are identified. Reopening completed sinks needs separate dynamic replenishment accounting and is not used by the completed main matching theorem.
+
+[Manuscript](../manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md) · [Evidence](../manuscripts/graph-backends/verify/README.md) · Reviewed 2026-10-26
+
+### [Canonical odd crowns and exact matching-value preservation](../manuscripts/graph-backends/low-state-odd-crown.md)
+
+**Ready for review.** Complete canonical contact-rank/min-cut characterization, exact physical matching offset, the numerical LOW consequence and the explicit retained-mass counterexample. Independent small-instance checks validate the structural identities.
+
+**Dependencies and scope.** The input state supplies constructive factor-critical witnesses. Ordinary bipartite matching suffices; the named published almost-linear flow theorem is an optional faster construction. A bound on the remaining optimum gap does not bound the entire retained graph.
+
+[Manuscript](../manuscripts/graph-backends/low-state-odd-crown.md) · [Evidence](../manuscripts/graph-backends/verify/README.md) · Reviewed 2026-10-26
+
+### Supporting review pending
+
+- [Grouped choices under resource deletions](../manuscripts/graph-backends/decremental-choice-recourse-lemma.md)
+- [Nonuniform sparse route rounding](../manuscripts/graph-backends/nonuniform-fractional-path-selection.md)
+- [Short path inventories from a shared DAG](../manuscripts/graph-backends/compressed-fractional-path-extraction.md)
+- [Bounded-width lazy path client](../manuscripts/graph-backends/bounded-interface-witness-pattern-updates.md)
+- [Forest-support numerical client](../manuscripts/graph-backends/complete-unrestricted-forest-one-sided-client.md)
+- [Feedback-edge numerical client](../manuscripts/graph-backends/feedback-edge-one-sided-client.md)
+- [Weak-Haxell certifying matching](../manuscripts/matching-and-routing/weak-haxell-current-blocker-growth.md)
+- [Sparse-separator corank refinement](../manuscripts/allocation-and-scheduling/attained-set-sparse-separator-gap.md)
+- [Whole-ground robust allocation barrier](../manuscripts/allocation-and-scheduling/robust-unit-allocation-whole-ground-oracle-barrier.md)
+- [Implicit minimal-bundle transversals](../manuscripts/matching-and-routing/implicit-minimal-bundle-transversal-oracle.md)
+- [Global free pool at the critical quota](../manuscripts/allocation-and-scheduling/critical-unit-quota-global-free-pool.md)
+- [Jointly independent layer owners](../manuscripts/allocation-and-scheduling/joint-owner-sharp-quality-addendum.md)
+- [Explicit laminar reservation interface](../manuscripts/allocation-and-scheduling/laminar-resource-current-blocker-reservations.md)
+- [Persistent path-hitting certificates](../manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md)
+- [Fixed-potential tight-DAG repairs](../manuscripts/graph-backends/fixed-potential-tight-dag-repair-lemma.md)
+- [Slack-only directed matching reduction](../manuscripts/graph-backends/slack-only-one-sided-matching-client.md)
+- [Residual-capacity configuration comparator](../manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md)
+- [Fractional optimization of residual configuration relaxations](../manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md)
+
 ## Executable evidence
 
 Each linked program documents its checked identities or finite domain. The per-result evidence notes and registry distinguish direct evidence from a shared prerequisite; a passing finite check does not establish an arbitrary-input asymptotic theorem.
 
+- [manuscripts/graph-backends/verify/check_odd_crown.py](../manuscripts/graph-backends/verify/check_odd_crown.py)
+- [manuscripts/graph-backends/verify/check_static_allocations.py](../manuscripts/graph-backends/verify/check_static_allocations.py)
+- [problems/boolean-linear-compiler/verify/check_cardinality_compiler.py](../problems/boolean-linear-compiler/verify/check_cardinality_compiler.py)
 - [problems/boolean-linear-compiler/verify/check_interval_compiler.py](../problems/boolean-linear-compiler/verify/check_interval_compiler.py)
+- [problems/degree-constrained-subgraphs/verify/check_linear_selector.py](../problems/degree-constrained-subgraphs/verify/check_linear_selector.py)
 - [problems/degree-constrained-subgraphs/verify/check_reductions.py](../problems/degree-constrained-subgraphs/verify/check_reductions.py)
 - [problems/degree-constrained-subgraphs/verify/check_reference.py](../problems/degree-constrained-subgraphs/verify/check_reference.py)
 - [problems/general-matching/verify/check_bipartite.py](../problems/general-matching/verify/check_bipartite.py)
@@ -200,6 +261,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/group-metric-constraints/verify/check_quotient_rounding.py](../problems/group-metric-constraints/verify/check_quotient_rounding.py)
 - [problems/incremental-scc/verify/check_label_history.py](../problems/incremental-scc/verify/check_label_history.py)
 - [problems/incremental-sssp/verify/check_path_reporting.py](../problems/incremental-sssp/verify/check_path_reporting.py)
+- [problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py](../problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py)
 - [problems/matroid-failure-summaries/verify/check_single_replacement.py](../problems/matroid-failure-summaries/verify/check_single_replacement.py)
 - [problems/matroid-failure-summaries/verify/check_summaries.py](../problems/matroid-failure-summaries/verify/check_summaries.py)
 - [problems/matroid-failure-summaries/verify/check_weighted_obstruction.py](../problems/matroid-failure-summaries/verify/check_weighted_obstruction.py)
@@ -230,6 +292,6 @@ Each linked program documents its checked identities or finite domain. The per-r
 
 ## Maintaining a status
 
-Set a readiness scope only after checking the corresponding proof, algorithm, representation, randomness and source requirements. Name proved local realizations, external theorems and genuinely unresolved assumptions separately. Executable coverage is a distinct field of evidence. Update `registry.json`, then run `python3 tools/build_reviews.py`; this synchronizes these entries with the reviewed problem cards. A changed theorem or dependency requires a new scope assessment.
+Set a readiness scope only after checking the corresponding proof, algorithm, representation, randomness and source requirements. Name proved local realizations, external theorems and genuinely unresolved assumptions separately. Executable coverage is a distinct field of evidence. Update `registry.json`, then run `python3 tools/build_reviews.py`; this synchronizes these entries with the reviewed problem cards and supporting manuscripts. A changed theorem or dependency requires a new scope assessment.
 
 See [Contributing](../CONTRIBUTING.md) for the manuscript workflow and [provenance](../provenance/README.md) for imported source identities.

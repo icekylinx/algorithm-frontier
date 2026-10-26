@@ -4,7 +4,7 @@ Algorithms and proofs in combinatorial optimization, dynamic graphs, and sparsif
 
 [![Repository checks](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml/badge.svg)](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-**53 problem families · 18 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
+**53 problem families · 22 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
 
 ## Selected results
 
@@ -36,13 +36,20 @@ For n integers of total bit length L, including an indexed witness. The finite s
 
 ### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
 
-Sharp represented and rank summaries; exact two-failure rank-four oracle maximum.
+Sharp failure summaries and a fixed contraction reducing the oracle construction to its replacement rank.
 
-Represented prefixes and oracle rank: <code class="math">r\binom{h+d}{d}</code>.
+One-label oracle prefix construction, with <code class="math">T\ge2</code>.
 
-Two failed labels and one label per item: sharp <code class="math">3r</code> through rank three, exactly 13 at rank four.
+<!-- math-display: 657b65ed93c92106e753b827
+O(N(r+T^h))
+-->
+![Formula](assets/math/657b65ed93c92106e753b827.svg)
 
-Rank is r, failed-label budget is h, and each item has at most d labels. Represented preprocessing is uniform polynomial; arbitrary-oracle prefix construction uses a deterministic canonical-basis tree. The 13-item nonrepresentable example is minimal in rank, label count and ground size for exceeding 3r under two failures.
+Independence queries. At <code class="math">T=1</code>, sharp <code class="math">r+h</code> retained items.
+
+Two failed labels: exact rank-four maximum 13.
+
+N is the ground size, r the rank, h the failed-label budget and T the sum of single-failure replacement counts. A fixed contraction removes r minus T canonical-basis items and preserves every surviving prefix. The problem page also gives sharp represented-prefix, rank and integral-value bounds, with their distinct models.
 
 ## Results
 
@@ -130,7 +137,7 @@ Browse by problem. Each link opens its statement, proof and dependencies. [Compu
 
 ### Supporting results
 
-The [complete index](CONTENTS.md#supporting-results) also lists 18 supporting algorithms, structural theorems, and scoped lower bounds. [Shared manuscripts](CONTENTS.md#shared-manuscripts) collect reusable proofs and backend interfaces.
+The [complete index](CONTENTS.md#supporting-results) also lists 22 supporting algorithms, structural theorems, and scoped lower bounds. [Shared manuscripts](CONTENTS.md#shared-manuscripts) collect reusable proofs and backend interfaces.
 
 ## Reading and verification
 

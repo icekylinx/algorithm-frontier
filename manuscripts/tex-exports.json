@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "pandoc_version": "pandoc 3.1.3",
-  "generator_sha256": "8662260bc756fd55c924a0d7dd3852f23f35a9e9fd3e70ad730b6275b62f8ad6",
+  "generator_sha256": "bba80152f1adec87efad87d27213f96f79bfcdcf2b981c89b33fa19f9f71406e",
   "exports": [
     {
       "source": "problems/general-matching/proof.md",
@@ -38,9 +38,9 @@
     {
       "source": "problems/matroid-failure-summaries/proof.md",
       "target": "problems/matroid-failure-summaries/proof.tex",
-      "source_sha256": "b52bc2f74b0d2abbee67eab0613a6bfccc0703708b3f210f7ebca600252f40b1",
-      "tex_sha256": "684648df89c45c319e5f4c4dabc9e77655b6be7d9bff3ebb6420b5e03fa4e412",
-      "math_nodes": 184,
+      "source_sha256": "45390a17c459921c6d66b8fc0181c30667abbfed7969aa183fea70b53e759941",
+      "tex_sha256": "b497bdbc8a641548d190a995cf17b21ade604f4f6dcdd4ee24979fc165368d14",
+      "math_nodes": 240,
       "pdf": "source-only"
     },
     {
@@ -94,8 +94,8 @@
     {
       "source": "problems/degree-constrained-subgraphs/proof.md",
       "target": "problems/degree-constrained-subgraphs/proof.tex",
-      "source_sha256": "365a92e2895c9f0d296a1b1ea1fbee9334d3826c50705472fefe9763166efac8",
-      "tex_sha256": "7acacf167714d408d70b9363a70aeeda32469052b29b80b3d1c491591b52236f",
+      "source_sha256": "76eb40500982d4034457ff03478231be86908425fb9c426e9bdc648e37f9144d",
+      "tex_sha256": "07fe777386c3ebe7d1f9d49511417968af894b0d5bc6c3f54a8baba8ea029253",
       "math_nodes": 20,
       "pdf": "source-only"
     },
@@ -134,9 +134,9 @@
     {
       "source": "problems/boolean-linear-compiler/proof.md",
       "target": "problems/boolean-linear-compiler/proof.tex",
-      "source_sha256": "95396ed9210db5f7d3b695bd3df845579f74b5b41426af738e812cf16423cf96",
-      "tex_sha256": "4b422052c67a424d11cd02d480a7b568f0d9e42108a8427c0bf3a22be7ca1577",
-      "math_nodes": 66,
+      "source_sha256": "345b300bd0f17ec6f9ff179ba2705264cdd88c941a8c33d7ecc7c028cda57b95",
+      "tex_sha256": "256b6f07cb0178693bdc7b07730bf6ab54080cbd50dd601b1787e70d1c0419f1",
+      "math_nodes": 92,
       "pdf": "source-only"
     },
     {
@@ -153,6 +153,70 @@
       "source_sha256": "ac11fe2572318b3df58aa490c4a61f6db8f2ccebe5f480865d871cb38bbed413",
       "tex_sha256": "da5422d0df29cc1b1ef482493d33abf822c706055fae77d15af9bc27bc8001f0",
       "math_nodes": 86,
+      "pdf": "source-only"
+    },
+    {
+      "source": "manuscripts/graph-backends/exact-demand-flow-trimming.md",
+      "target": "manuscripts/graph-backends/exact-demand-flow-trimming.tex",
+      "source_sha256": "0ff46f087d42a1f5309ea9273f7c4e964a50fca73f22283f1955697940b50bd4",
+      "tex_sha256": "0e9c6c5caf2d201ee4fe645d824e088b49e7f31d2b27e0b3417c10778cc99365",
+      "math_nodes": 12,
+      "pdf": "source-only"
+    },
+    {
+      "source": "manuscripts/graph-backends/static-transportation-support-balancing.md",
+      "target": "manuscripts/graph-backends/static-transportation-support-balancing.tex",
+      "source_sha256": "0619ac1d40470c5b427defd63fd7299f55afe79c459b9ccbf7fdd3d0fc18a316",
+      "tex_sha256": "4d06770f9a219654983ec523f576c5fbc3ad10d56782afa3c992a6a91a1a6fc2",
+      "math_nodes": 21,
+      "pdf": "source-only"
+    },
+    {
+      "source": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md",
+      "target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.tex",
+      "source_sha256": "1c1173216cdf8559e67776ba21896ddca9a02cb06d06610711d0632869ed13fd",
+      "tex_sha256": "8a679617b86009b263ee753c95fa54aa549ecdbba97ad26c47dd279bf08999ed",
+      "math_nodes": 120,
+      "pdf": "source-only"
+    },
+    {
+      "source": "manuscripts/graph-backends/low-state-odd-crown.md",
+      "target": "manuscripts/graph-backends/low-state-odd-crown.tex",
+      "source_sha256": "659ef2280443569180fc53cb53a4ec7ebb96a2f21ea7f6d788c3df6a621a1a06",
+      "tex_sha256": "4a45289c8bb2464244a2881e8bb648aa5fce6d795c802bf4ab3a5144473d9a71",
+      "math_nodes": 100,
+      "pdf": "source-only"
+    },
+    {
+      "source": "manuscripts/matching-and-routing/rank-sensitive-layer-count.md",
+      "target": "manuscripts/matching-and-routing/rank-sensitive-layer-count.tex",
+      "source_sha256": "ad1ec885f88ccf5b11a826186910cfed5ab067764d7a69340f192e3a795a7aaf",
+      "tex_sha256": "7484c644093307e51261d66f4ec05b57c959a30a0e5cfdac95fff4ec94868f79",
+      "math_nodes": 49,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/degree-constrained-subgraphs/linear-selector.md",
+      "target": "problems/degree-constrained-subgraphs/linear-selector.tex",
+      "source_sha256": "45aaaf56b3c89996f8bc83a5582b521519e7017cfe8a61baf3b25fae061a4640",
+      "tex_sha256": "2f0e52fd8734b8c883685141b27a10fdc10805947ed39edfcf62fe41deaa2447",
+      "math_nodes": 6,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/boolean-linear-compiler/manuscripts/cardinality-and-modal-interval-compilation.md",
+      "target": "problems/boolean-linear-compiler/manuscripts/cardinality-and-modal-interval-compilation.tex",
+      "source_sha256": "3f9e2e64b9c7420ba5527ab828a9b89676fc0d7156b8e1ca4b02a745dde4f24d",
+      "tex_sha256": "d64859b7b26b890b3c720c21aa44964a33f09facc1f663c10d166a2a78765ae2",
+      "math_nodes": 160,
+      "pdf": "source-only"
+    },
+    {
+      "source": "problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md",
+      "target": "problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.tex",
+      "source_sha256": "1c3ac9062e6bebd8f7cbfd0510a9f91a6275af2355edf1df79f235bb2ed8a894",
+      "tex_sha256": "c8bcc8977f677eec78a36ea41103f6ca2708797945cc9a09ac391925b116fce9",
+      "math_nodes": 145,
       "pdf": "source-only"
     }
   ]

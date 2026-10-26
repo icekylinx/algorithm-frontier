@@ -3,6 +3,7 @@
 ## Canonical manuscripts
 
 - [Exact degree-constrained subgraphs from the general matching backend](proof.md)
+- [Linear-size selector from a named expander construction](linear-selector.md)
 
 ## What is proved and what is imported
 
@@ -13,6 +14,10 @@ cardinality. The permutation-network routing proof is included. No
 randomization or external numerical backend is used by these reductions.
 The [finite checker](verify/check_reductions.py) tests the actual small
 gadgets with independent exact methods.
+
+**Optional linear-size selector.** Theorem 1.2 imports one precise mathematical fact: Gabber and Galil, [*Explicit Constructions of Linear-Sized Superconcentrators*](https://doi.org/10.1016/0022-0000(81)90040-4), Section 2, Theorem 2, for the five modular permutations stated in the [selector proof](linear-selector.md). Sections 2–4 of that proof derive the concentrator, recursive superconcentrator and deterministic linear enumeration. Sections 5–6 give the binary-fan adapter and the simple subcubic matching gadget. Thus the expansion theorem supplies a quantitative neighbor-set inequality; every construction and matching-interface step is explicit locally.
+
+The finite cutoff uses the already implemented Beneš network. The constants <code>p=31</code>, cutoff <code>2^26</code> and contraction factor <code>63/64</code> are fixed; they make this an asymptotic size refinement rather than a measured practical speedup. The construction algorithm does not find the disjoint routes: their existence proves the gadget's extension direction. This respects the primary paper's separate linear-time routing question in Section 5, Problem 8. No Alon–Capalbo construction or unstated finite-ring enumeration is needed. The shipped solver continues to use Theorem 1.1.
 
 **Classical reduction provenance.** The prescribed-degree selector is
 the split-network form of Section 10 of the
@@ -64,8 +69,7 @@ supplies the formerly abstract fast-solver interface.
 
 ## Evidence and provenance
 
-The [verification note](verify/README.md) states the scope of executable
-evidence and the remaining mathematical dependencies. The
+The [verification note](verify/README.md) states the scope of executable evidence, the finite selector-adapter checks, and the exact published dependency of the linear-size variant. The
 [import record](../../provenance/README.md) preserves source revisions,
 canonical paths, attribution and applicable licenses.
 

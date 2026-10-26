@@ -40,6 +40,12 @@ NO certificates and native witnesses. The
 the independently checkable optimality boundary and actual storage.
 Its ordinary polynomial cost is separate from the fast research bound.
 
+**Theorem 1.2 (linear-size selector variant).** Under the same input model, the reduction can instead be constructed in <code>O(n+m)</code> word operations with <code>O(m)</code> auxiliary vertices and edges. Its output remains simple and subcubic; all prescribed-degree, interval-degree, cardinality, native-record decoding, and extension guarantees remain valid. The one external mathematical ingredient is the exact expansion inequality in **Theorem 2** of Gabber and Galil's *Explicit Constructions of Linear-Sized Superconcentrators* (1981).
+
+The [complete selector proof](linear-selector.md) states that inequality and derives every further property: deterministic linear enumeration from five modular maps and a geometrically shrinking recursion; a finite Beneš base; vertex-disjoint routes from any chosen input subset to a fixed equally sized output subset; binary fans with a central bottleneck; and the final matching gadget of degree at most three. It distinguishes construction from routing and does not assume a linear-time routing algorithm. Replacing only the selector in Sections 2–5 proves the theorem.
+
+With an ordinary exact cubic matching algorithm, this theoretical variant gives <code>O(n+(m+1)^3)</code> feasibility and <code>O(n+(m+1)^3 log(m+2))</code> cardinality optimization, including matching certificates and native output checks. The original vertex scan is done once; later decisions use the active graph. The explicit constants are substantial: <code>p=31</code>, cutoff <code>2^26</code>, and child size at most <code>63/64</code> of the parent. The maintained executable continues to use Theorem 1.1's local Beneš selector and its stated <code>H</code> bounds.
+
 After substituting the general-matching theorem and its realized cycle-search construction, the
 deterministic running-time bound is
 
@@ -311,10 +317,7 @@ E(x)=\exp O\!\left((\log(x+2))^{4/5}
 -->
 ![Formula](../../assets/math/ad4f3c96b5cbfefd26eaae0a.svg)
 
-Every reduced matching instance has size `O(m log(m+2))`. Consequently
-its matching time, the logarithmic number of optimization calls, and all
-construction/decoding work fit `(m+1) E(m)`. The initial vertex scan is
-separate, proving (1).
+Theorem 1.1 produces size <code>O(m log(m+2))</code>, while the optional Theorem 1.2 produces size <code>O(m)</code>. Under either choice, the matching time, the logarithmic number of optimization calls, and all construction/decoding work fit <code>(m+1)E(m)</code>. The initial vertex scan is paid once and separately, proving (1). The linear-size variant reduces the explicit auxiliary graph size and the polynomial reference-algorithm bound; it leaves the displayed four-fifths exponent unchanged.
 
 The matching algorithm must return a checked maximum matching, not merely
 an unverified attempt at a perfect matching. Otherwise a failed attempt
@@ -323,34 +326,29 @@ near-linear independent matching verifier is sufficient and is already
 charged in the primary matching construction. Successful decoded outputs
 also pass the elementary original-edge degree and cardinality checks.
 
-These are deterministic reductions. Their theorem status is therefore
-exactly that of the imported general matching theorem: a flaw in that
-theorem's fast-branch analysis would remove the proposed fast running-time
-guarantee, even though an independently checked answer remains correct.
-No new numeric optimization or unproved weighted-matching oracle is being
-introduced by the reductions.
+The fast corollary follows from these deterministic reductions and the proved general-matching theorem, including its named mathematical dependencies. Theorem 1.1 supplies its selector locally; Theorem 1.2 instead uses the explicitly stated published expansion inequality. An output certificate checks a particular solution, while the respective construction and matching proofs establish running time. Neither reduction introduces a weighted-matching optimization oracle.
 
 ## 7. Comparison and attribution
 
 The OpenAI preprint's Section 10 already gives the linearithmic
 prescribed-degree reduction and an almost-linear **randomized** factor
 consequence. The present note credits that reduction and obtains the
-deterministic exponent through the matching candidate. The explicit
+deterministic exponent through the proved matching construction. The explicit
 interval/cardinality gadgets are elementary consequences, not claimed as
 new standalone combinatorial structures.
 
 For a separate public benchmark, Gabow's *Maximum Cardinality f-Matching
 in Time O(n^(2/3)m)* gives a deterministic `O(n^(2/3)m)` algorithm for
-simple graphs and an `O(min(sqrt(f(V)),n)m)` bound for multigraphs. The
-present transfer is an asymptotic candidate relative to these public
-combinatorial bounds, not an implemented performance comparison or an
-assertion that its large constants are practical.
+simple graphs and an `O(min(sqrt(f(V)),n)m)` bound for multigraphs. The present transfer is an asymptotic mathematical result relative to these public combinatorial bounds. The reference implementation and theoretical linear selector carry their separate costs; no benchmark or practical speedup is asserted.
+
+Theorem 1.2 is an additional adaptation of the published Gabber–Galil construction, with its local enumeration and degree-adapter proof written out. The graph property does not by itself supply an implementation of the separate fast matching algorithm. The executable selector remains the local permutation network.
 
 Primary sources:
 
 * OpenAI, *Almost-Linear-Time Maximum-Cardinality Matching in General
   Graphs*, Section 10, source file:
   <https://github.com/openai/math/blob/main/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/10-f-factors.tex>.
+* Gabber and Galil, *Explicit Constructions of Linear-Sized Superconcentrators*, Theorem 2 and the five modular maps in Section 2; the complete adaptation and source links are in [the linear selector proof](linear-selector.md).
 * Gabow, *Maximum Cardinality f-Matching in Time O(n^(2/3)m)*,
   <https://arxiv.org/abs/2311.14236>.
 * The current matching assembly and its source audit:

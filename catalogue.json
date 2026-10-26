@@ -146,9 +146,9 @@
         {
           "id": "matroid-failure-summaries",
           "title": "Matroid and submodular failure summaries",
-          "result": "Sharp represented and rank summaries; exact two-failure rank-four oracle maximum",
-          "quantity": "Represented prefixes and oracle rank: $r\\binom{h+d}{d}$; two failed labels and one label per item: sharp $3r$ through rank three, exactly 13 at rank four",
-          "scope": "Rank is r, failed-label budget is h, and each item has at most d labels. Represented preprocessing is uniform polynomial; arbitrary-oracle prefix construction uses a deterministic canonical-basis tree. The 13-item nonrepresentable example is minimal in rank, label count and ground size for exceeding 3r under two failures.",
+          "result": "Sharp failure summaries and a fixed contraction reducing the oracle construction to its replacement rank",
+          "quantity": "One-label oracle prefix construction, with $T\\ge2$; $O(N(r+T^h))$; independence queries. At $T=1$, sharp $r+h$ retained items; two failed labels: exact rank-four maximum 13",
+          "scope": "N is the ground size, r the rank, h the failed-label budget and T the sum of single-failure replacement counts. A fixed contraction removes r minus T canonical-basis items and preserves every surviving prefix. The problem page also gives sharp represented-prefix, rank and integral-value bounds, with their distinct models",
           "randomness": "Deterministic exact constructions. Random permutations and Bernoulli failures appear only in output-size proofs; no query sampling or probability of error."
         },
         {
@@ -457,8 +457,8 @@
           "id": "strong-haxell-matching",
           "title": "Hypergraph matching and expander routing",
           "result": "Left-perfect matching or an explicit deficient hitting-set certificate",
-          "quantity": "$O(\\lvert A\\rvert+\\lvert B\\rvert)+p\\exp(O(U\\log(2+s)/s))$",
-          "scope": "$\\Delta\\ge4$, right-resource rank r, $U=\\log(p+4)$ and $s=\\log\\Delta$; also certified disjoint paths and density-conditioned spanning expander packing",
+          "quantity": "$O(\\lvert A\\rvert+\\lvert B\\rvert)+p\\exp(O(h+a\\log(q+1)/s))$",
+          "scope": "Explicit incidence volume p, q left vertices, right rank r and $\\Delta\\ge4$; $s=\\log\\Delta$, $h=\\log(\\log(p+4)+4)$ and $a=\\min\\{\\log(2+s),\\log(2+\\log(r+2))\\}$. The retained rank-sensitive proof includes the root factor. Routing and packing have separate expansion, load and input-volume contracts",
           "randomness": "Deterministic certifying hypergraph matching. The routing and expander-packing transfers use the locally constructed destructive-support distance interface and preserve their stated expansion, density and congestion promises."
         },
         {
@@ -642,6 +642,42 @@
       "quantity": "Full LP: $2^{O(q)}\\mathrm{poly}(H,\\epsilon^{-1})$; support-s cuts: $(q+1)^{O(s+1)}\\mathrm{poly}(H,\\epsilon^{-1})$",
       "scope": "Coordinate-box local families and binary capacities; $s=2(r-1)$ gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding",
       "randomness": "Deterministic rational ellipsoid optimization, exact-budget profit-scaling dynamic programming and finite primal LP extraction."
+    },
+    {
+      "id": "exact-demand-flow-trimming",
+      "path": "manuscripts/graph-backends/exact-demand-flow-trimming.md",
+      "title": "Exact demand trimming without a flow oracle",
+      "result": "Trim a supplied flow to exact positive nonsink demands without increasing any arc",
+      "quantity": "Exact arithmetic operations; $O((n+m)\\mathrm{polylog}(n+m+2))$",
+      "scope": "Physical arc records include loops, parallel and opposite arcs. No sink inflow target is required; integer input remains integral and bit costs are explicit",
+      "randomness": "Deterministic selected-forest construction, with named dynamic-tree operations and no maximum-flow computation."
+    },
+    {
+      "id": "static-transportation-support-balancing",
+      "path": "manuscripts/graph-backends/static-transportation-support-balancing.md",
+      "title": "Static selected-pair forests below twice the row total",
+      "result": "Choose two genuine neighbors per row and obtain a new row-covering injection with strictly bounded component weight",
+      "quantity": "Every component has weight $<2L$; Exact arithmetic operations; $O((n+I)\\mathrm{polylog}(n+I+2))$",
+      "scope": "Arbitrary finite row rank, row total L and column load at most L minus the positive bin weight; I counts all physical incidences. The supplied old injection need not be preserved",
+      "randomness": "Deterministic transportation-cycle cancellation and combinatorial pair selection. This is a static theorem."
+    },
+    {
+      "id": "static-confluent-rounding",
+      "path": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md",
+      "title": "Near-linear confluent rounding and mass-sensitive tails",
+      "result": "Round a supplied splittable flow to one outgoing route per nonsink, with a simultaneous budget covering completed sinks",
+      "quantity": "Arithmetic work; $O((n+m)\\mathrm{polylog}(n+m+2))$; $C\\sum_j(2^{W_j/C}-1)/(1+W_j/C)^3=O(W)$",
+      "scope": "Positive nonsink demands, initial node congestion at most C and total actual demand W. Dynamic replenishment after reopening completed trees requires a separate argument",
+      "randomness": "Deterministic simulation of the named Conflt operations. Exponential potentials are analysis tools and are not evaluated by the algorithm."
+    },
+    {
+      "id": "contact-rank-odd-crowns",
+      "path": "manuscripts/graph-backends/low-state-odd-crown.md",
+      "title": "Canonical odd crowns and exact matching-value preservation",
+      "result": "Compute the canonical contact envelope, a removable odd crown and its exact optimum offset",
+      "quantity": "One outside bipartite matching plus linear graph work; residual gap $\\le\\lfloor(r+b)/2\\rfloor$",
+      "scope": "Supplied constructive factor-critical bins and a row-covering injection. LOW gives an explicit bound on contact rank r, not on the total retained vertex count; b counts unmatched blockers",
+      "randomness": "Deterministic matching, alternating reachability, integral cut certificates and physical witness recovery."
     }
   ],
   "featured": [

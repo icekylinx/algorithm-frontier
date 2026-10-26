@@ -43,6 +43,16 @@
         "problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md"
       ],
       "scope": "Complete two-failure prefix bounds, singleton case, exact low-rank maxima and explicit obstruction"
+    },
+    {
+      "id": "rank-adaptive-matroids",
+      "wrapper": "problems/matroid-failure-summaries/rank-adaptive-paper.tex",
+      "output": "problems/matroid-failure-summaries/rank-adaptive-paper.pdf",
+      "sources": [
+        "problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md"
+      ],
+      "heading_numbers": "source",
+      "scope": "Complete fixed rank-loss contraction for one-label ordered matroid failure summaries, all-prefix identities, rank-adaptive deterministic construction and sharp rank-one residual endpoint"
     }
   ],
   "source_date_epoch": 1792972800

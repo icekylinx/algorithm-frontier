@@ -31,6 +31,31 @@ For each exhaustive coefficient vector, the interval endpoints range from two be
 
 The integration suite varies signed interval rows, signed equalities, all valid per-row slack budgets, infeasible systems, zero-variable systems, and signed objectives. For every branch, it independently enumerates every assignment to the packed signed Subset Sum instance, checks equivalence with the branch equations, and projects its solutions onto the original variable indices. The union of those projected sets must equal the complete feasible set obtained by directly evaluating the original system. Its minimum objective must also agree. Thus the integration check covers both existence and every original indexed witness; it does not rely only on a feasible example.
 
+## Cardinality and common-coefficient refinement
+
+Run from the repository root:
+
+~~~sh
+python3 -B problems/boolean-linear-compiler/verify/check_cardinality_compiler.py
+~~~
+
+This integrated checker uses the original Boolean system as its independent reference. It checks local conditional rounding on the same tested frames, then enumerates complete packed assignments and their original-variable projections. It reuses only elementary helpers from the unconditioned checker, uses exact standard-library arithmetic, writes no files and refuses `-O`.
+
+| Finite domain | Checked quantity |
+|---|---:|
+| Exhaustive vectors in <code class="math">\{-2,\ldots,2\}^n</code>, <code class="math">0\le n\le4</code> / additional fixtures | 781 / 255 |
+| Extra raw parity-layer fixtures without modal normalization | 24 |
+| Layer intervals / original assignment comparisons | 126,629 / 394,214 |
+| Local guarded-disjunction comparisons | 418,103 |
+| Negative common-coefficient shifts / constant-row cases | 52,936 / 2,308 |
+| Constant remainder frames / empty children | 18,598 / 11,319 |
+| Full systems / nontrivial layers / slack-budget profiles | 306 / 726 / 846 |
+| Packed instances / packed-assignment comparisons | 4,120 / 117,684 |
+| Layers with a strict total slack reduction / constant-row rejections | 172 / 309 |
+| Exact rational exponent comparisons, with all <code class="math">0\le Q_k,B\le\bar Q\le64</code> | 468,325 |
+
+The budget comparison includes a uniform budget larger than a layer's own available slack count and time exponents zero, one-third, one-half, one and three-halves. Large binary common coefficients of either sign, zero/one-variable systems, original equalities, constant rows and every cardinality are included. Every packed branch retains the cardinality equality on the original indices; the complete solution union must agree with direct original-system evaluation. The [full companion](../manuscripts/cardinality-and-modal-interval-compilation.md) proves the bounds and the objective transfer independently of these finite examples.
+
 ## Earlier interval baseline
 
 The [shared signed-interval and exchange checker](../../../tools/verify_sensitivity_certificates.py) retains the earlier <code class="math">5s+1</code>-value interval rule:
@@ -47,6 +72,6 @@ The complete proof uses signed Euclidean floor: <code class="math">a_j-2\lfloor 
 
 Every packed branch has at most <code class="math">n+B</code> variables and polynomial binary encoding length. Signed radix packing uses reduction of signed differences modulo the radix. Sequential enumeration keeps only one backend workspace live. Fully enumerating the objective-threshold row costs an additional polynomial factor and introduces no extra exponential slack parameter.
 
-The primary theorem is stated in symbolic backend exponents <code class="math">\alpha</code> and <code class="math">\sigma</code>. A time-only backend supplies no simultaneous space bound. Numerical instantiations inherit the selected backend's constructive interface and every stated analytic premise, including those in the [fast Subset Sum proof](../../subset-sum-fast-deterministic/proof.md). The executable does not run an exponential-time Subset Sum backend, verify its exponent, or certify continuous inequalities.
+The primary theorem is stated in symbolic backend exponents <code class="math">\alpha</code> and <code class="math">\sigma</code>. A time-only backend supplies no simultaneous space bound. Numerical instantiations inherit the selected backend's constructive interface and every stated analytic premise, as recorded in the [fast Subset Sum proof](../../subset-sum-fast-deterministic/proof.md). The executable does not run an exponential-time Subset Sum backend, verify its exponent, or certify continuous inequalities.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

@@ -1,0 +1,32 @@
+% Complete proof source and build bindings are listed in manuscripts/papers.json.
+% Compile with: python3 tools/build_papers.py --paper rank-adaptive-matroids
+\input{manuscripts/paper-style.tex}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\hypersetup{pdftitle={A Fixed Rank-Loss Contraction for Matroid Failure Summaries},pdfauthor={Yilin Liu}}
+\title{A Fixed Rank-Loss Contraction\\for Matroid Failure Summaries}
+\author{Yilin Liu}
+\date{26 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Fix a total order on an explicitly listed matroid of rank \(r\), with at
+most one failure label per item. Let \(T\) be the sum of the numbers of
+new canonical-basis items introduced by each individual label failure.
+We construct one independent subset of the original canonical basis,
+of size \(r-T\), whose contraction preserves every subsequent failure
+query after reinserting the surviving contracted items. The identity holds
+for every original order prefix, including rank drops. It reduces the
+canonical-basis tree from rank \(r\) to rank \(T\), giving
+\(O(N(r+T^h))\) independence queries when \(T\ge2\), with separate
+polynomial endpoints at \(T=0,1\). At \(T=1\), the sharp retained size
+is \(r+h\). No linear representation of the original matroid is assumed.
+\end{abstract}
+\setcounter{secnumdepth}{0}
+\input{\AFGeneratedPath/rank-loss-contraction-for-prefix-summaries.tex}
+\paragraph{Attribution and review scope.}
+Yilin Liu and GPT-6 Astra Pro. \emph{Algorithm Frontier}, 26 October 2026.
+The fixed order is part of the input contract; changing it may change the
+contraction. The independently computed finite rank tables supplement the
+written universal proof. No external peer review, proof-assistant
+formalization or literature-priority claim is made.
+\end{document}

@@ -11,9 +11,10 @@ python3 problems/matroid-failure-summaries/verify/check_summaries.py
 python3 problems/matroid-failure-summaries/verify/check_weighted_obstruction.py
 python3 problems/matroid-failure-summaries/verify/check_weighted_prefix.py
 python3 problems/matroid-failure-summaries/verify/check_single_replacement.py
+python3 problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py
 ```
 
-All four scripts reject optimized Python mode. They implement independent
+All five scripts reject optimized Python mode. They implement independent
 reference enumeration alongside the algorithms under test; they do not
 merely check stored output hashes.
 
@@ -23,6 +24,29 @@ merely check stored output hashes.
 | [Weighted obstruction](check_weighted_obstruction.py) | All 65 underlying bases and 8,448 basis-exchange conditions; all 386 parallel-extension bases and 405,558 exchange conditions; an independent 8,192-entry rank table; all 11 allowed failure sets; 13 exact optimum and prefix-necessity witnesses; and amplified examples for budgets two through six. |
 | [Weighted prefix constructions and refined bounds](check_weighted_prefix.py) | Both the canonical-basis tree and retained-prefix algorithms agree on 86,340 instances over all 92 small matroids, 961,888 original-prefix rank comparisons and 179,293 necessity witnesses. Another 130 cases use 26 orders on the nonrepresentable example. Each algorithm's actual oracle calls are checked against its own bound. |
 | [Sharp singleton replacement summaries](check_single_replacement.py) | 19,329 zero/single-extra algorithm instances with 191,962 actual independence calls and 53,100 scans. Includes 15,622 quotient equivalences, 2,259 potential steps, 32 sharp represented examples, and 8,366 graph-process states with 280,866 transitions through six vertices. |
+
+The [rank-loss contraction checker](check_rank_loss_contraction.py) compares
+the constructed minor against ranks of original subsets and prefixes.
+The default suite enumerates every matroid, one-label partition and order
+through three items, then runs 230 larger ordered instances. To include
+the completed exhaustive four-item domain:
+
+```bash
+python3 problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py --full
+```
+
+That full domain contains all 92 matroids through four items and 86,359
+ordered/labelled instances, with 375,093 failure queries, 1,495,618 prefix
+comparisons, 1,450,577 arbitrary-subset contraction-rank comparisons,
+250,091 budget instances and 86,359 binary-large-budget cases. The larger
+suite adds 4,680 failures, 42,512 prefixes, 196,560 contraction comparisons
+and 1,051 budgets over binary matroids, the nonrepresentable obstruction
+with private components, and sharp rank-one-minor families. Larger subset
+tests use a fixed seed plus the empty and full surviving sets. The checks
+cover loops, unlabelled items, repeated labels, rank drops, joint failed-block
+independence, every canonical basis, the entire minimum prefix union,
+actual oracle-query counts, and the <code class="math">T=0,1</code> endpoints. Both modes write no
+repository files.
 
 The prefix checker also contains independent suites for the new results:
 
@@ -97,6 +121,15 @@ repeated original-basis labels and failures of contracted items. These
 cases exercise the flat-intersection step that a naive contraction would
 leave unjustified. With no replacement item, the original basis suffices.
 
+The fixed rank-loss contraction theorem proves that single-label rank
+losses and unlabelled basis items can be removed once for all failure
+queries. The argument establishes joint independence of failed contracted
+blocks over the surviving ground, then derives the exact contraction/deletion
+identity. It preserves the canonical basis and every original prefix, not
+only the surviving total rank. Its adaptive bounds use one label per item
+and one fixed total order. The finite checker supplies independent original
+rank comparisons, while the written proof establishes the universal result.
+
 For integral submodular functions, value-spanning sets replace bases in
 the same witness search. The parameter <code class="math">R=f(E)-f(\varnothing)</code> is the
 numerical range, not its bit length. Coverage examples exercise reverse
@@ -110,7 +143,7 @@ and make no exact cardinality-summary claim.
 
 The local theorem statements, witness algorithms, one-failure endpoint,
 weighted obstruction, ordered-prefix constructions and exact low-rank
-two-failure results are ready for review
+two-failure results and fixed rank-loss contraction are ready for review
 with their explicit models and evidence. This is a repository review
 status; proof-assistant verification and external peer review are not
 claimed. The best general weighted-oracle size beyond one failure remains

@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "last_updated": "2026-10-26",
   "policy": {
     "executable_evidence_has_explicit_scope": true,
@@ -31,11 +31,11 @@
         },
         {
           "path": "tools/verify_subset_sum_third_contacts.py",
-          "scope": "All 16 third-lookup branches completed under the final source in a resumable exact traversal: 317138 accepted leaves, 634268 nodes, four empty leaves and depth at most 29. The segmented_trusted_local receipt binds source/menu/driver and complete accounting; --all is a separate clean replay. The analytic four-dimensional coverage proof is Part III."
+          "scope": "All 16 third-lookup branches completed under the frozen execution source, followed only by an explicitly checked final-newline normalization in a resumable exact traversal: 317138 accepted leaves, 634268 nodes, four empty leaves and depth at most 29. The segmented_trusted_local receipt binds source/menu/driver and complete accounting; --all is a separate clean replay. The analytic four-dimensional coverage proof is Part III."
         },
         {
           "path": "problems/subset-sum-fast-deterministic/verify/check_third_recovery.py",
-          "scope": "Actual interruption and recovery on three branches with 447 accepted leaves, two resumes, six altered-source/menu/driver rejection cases and a spawned-worker agreement check. Also rejects an invalid outer containment family and an incomplete menu. This is recovery evidence, not a replay of all 16 branches."
+          "scope": "Actual interruption and recovery on three branches with 447 accepted leaves, two resumes, six altered-source/menu/driver rejection cases and a spawned-worker agreement check. Also rejects an invalid outer containment family and an incomplete menu. This is recovery evidence, not a replay of all 16 branches. The distribution removed one final newline after execution; exact original kernel and receipt bytes are reconstructed and hash-checked, with five additional mutation rejections. No clean whole-menu replay is claimed."
         },
         {
           "path": "problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py",
@@ -182,14 +182,19 @@
         {
           "path": "problems/degree-constrained-subgraphs/verify/check_reference.py",
           "scope": "8,292 feasibility and cardinality-optimization requests against independent original-edge subset enumeration; 5,341 matching calls and 3,364 actual simple subcubic reductions. Includes parallel records, all cardinality ranges on the smallest cases, 15 malformed inputs, 15 corrupted certificates, long representations, isolates and both production CLIs under optimized Python."
+        },
+        {
+          "path": "problems/degree-constrained-subgraphs/verify/check_linear_selector.py",
+          "scope": "1,171 finite DAG networks, 9,467 terminal pairs, 66,066 small expansion subsets and 601 exact size-rounding cases. These checks cover the degree adapter, matching equivalence and explicit arithmetic; the all-size Gabber–Galil expansion theorem remains a named published dependency."
         }
       ],
       "review": {
         "status": "ready",
-        "scope": "The complete sparse reductions for prescribed degrees, degree intervals and exact/ranged cardinality, with extension, native decoding and the fast matching substitution. The shipped native-record solver handles feasibility, minimum and maximum cardinality. Its independent verifier checks YES witnesses and local or matching-based NO/optimality certificates without a matching search.",
+        "scope": "The complete sparse reductions for prescribed degrees, degree intervals and exact/ranged cardinality, with extension, native decoding and the fast matching substitution. The shipped native-record solver handles feasibility, minimum and maximum cardinality. Its independent verifier checks YES witnesses and local or matching-based NO/optimality certificates without a matching search. The separate linear-size selector imports the precise Gabber–Galil expansion inequality and proves deterministic network enumeration, degree conversion and matching adaptation.",
         "date": "2026-10-26",
         "conditions": [
-          "The reference implementation has its own polynomial bounds and shares the proved deterministic reduction builder with the verifier. Input is a loopless multigraph with capacity one per explicit record. Binary multiplicities and arbitrary edge-weight optimization are outside this implementation."
+          "The reference implementation has its own polynomial bounds and shares the proved deterministic reduction builder with the verifier. Input is a loopless multigraph with capacity one per explicit record. Binary multiplicities and arbitrary edge-weight optimization are outside this implementation.",
+          "The current executable retains its Beneš selector. The linear-size theoretical variant has explicit but large constants and does not claim a linear-time routing algorithm."
         ]
       }
     },
@@ -364,14 +369,19 @@
         {
           "path": "problems/matroid-failure-summaries/verify/check_single_replacement.py",
           "scope": "19329 zero/single-replacement algorithm instances,191962 independence calls,53100 scans;15622 quotient equivalences,2259 clique-block potential steps,32 sharp represented examples;8366 graph-process states and280866 transitions through six vertices. Finite evidence for the independently proved singleton-profile theorem."
+        },
+        {
+          "path": "problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py",
+          "scope": "Independent original-prefix rank tables and arbitrary-surviving-subset rank identities. The completed full small suite contains 86,359 ordered/labelled instances from all 92 matroids through four items; a separate 230-instance suite includes the nonrepresentable obstruction, private blocks, unlabelled coloops and sharp T=1 chains. Default CI uses the documented smaller domain; --full repeats all four-item partitions and orders."
         }
       ],
       "review": {
         "status": "ready",
-        "scope": "Main Theorems 1–6: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure endpoint; explicit weighted obstruction; faster canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima and minimality of the 13-item example. Includes the sharp singleton-replacement bound r+2t, its failed-contracted-item proof, and the profile-sensitive construction with N(1+ell_0+binom(t+1,2)) queries.",
+        "scope": "Main Theorems 1–7: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure endpoint; explicit weighted obstruction; faster canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima and minimality of the 13-item example. Includes the sharp singleton-replacement bound r+2t, its failed-contracted-item proof, and the profile-sensitive construction with N(1+ell_0+binom(t+1,2)) queries. The fixed rank-loss contraction theorem preserves every failure basis and original prefix, reduces the tree parameter to the total single-failure replacement count T and proves the sharp r+h endpoint at T=1.",
         "date": "2026-10-26",
         "conditions": [
-          "Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification."
+          "Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification.",
+          "The rank-loss contraction in this review uses one label per item and a fixed total order. The query ledger charges the original oracle separately from explicit query-set representation; a changed cost order may require another contraction."
         ]
       }
     },
@@ -409,14 +419,19 @@
         {
           "path": "problems/boolean-linear-compiler/verify/check_interval_compiler.py",
           "scope": "Exact signed interval and complete slack/radix compilation against independent Boolean enumeration, including negative floors, empty recursive children, overlapping boundaries, even rows, zero rows and binary-large depth. The local support-sized refinement is separate from the earlier 5s+1 baseline in the shared sensitivity checker; detailed current counts are recorded in the problem verification note."
+        },
+        {
+          "path": "problems/boolean-linear-compiler/verify/check_cardinality_compiler.py",
+          "scope": "Integrated independent Boolean enumeration for original-cardinality layers, modal shifts, signed local boundary catalogues, exact slack/radix compilation and rational budget inequalities. The problem evidence note distinguishes exhaustive small domains and fixed-seed larger fixtures; no backend asymptotic theorem is inferred from enumeration."
         }
       ],
       "review": {
         "status": "ready",
         "date": "2026-10-26",
-        "scope": "The complete signed interval-disjunction proof, bounded-slack interpolation, signed radix packing and indexed-witness/optimization transfer. Each halving emits at most two intervals with at most the original row support many integer values; all exceptional and binary-input cases are explicit.",
+        "scope": "The complete signed interval-disjunction proof, bounded-slack interpolation, signed radix packing and indexed-witness/optimization transfer. Each halving emits at most two intervals with at most the original row support many integer values; all exceptional and binary-input cases are explicit. Includes fixed-cardinality layers, modal-coefficient subtraction, signed parity overlap and the resulting smaller slack budget, with exact preservation of the original cardinality and optimization witnesses.",
         "conditions": [
-          "The Subset Sum backend is supplied with its stated indexed-witness time contract; a space bound requires that same backend. The compiler and finite checks do not establish the backend circuit or continuous-contact proofs."
+          "The Subset Sum backend is supplied with its stated indexed-witness time contract; a space bound requires that same backend. The compiler and finite checks do not establish the backend circuit or continuous-contact proofs.",
+          "The cardinality refinement counts the original explicitly listed variables. Its strongest slack bound does not assert a universal improvement to every disjunction-product parameter."
         ]
       }
     },
@@ -709,7 +724,7 @@
       "review": {
         "status": "ready",
         "date": "2026-10-26",
-        "scope": "The explicit certifying hypergraph-matching algorithm, including build/growth/collapse and weighted finite-prefix termination; the public explicit-algorithm weighted reanalysis; certified disjoint-path routing and spanning-expander packing. The destructive-support extractor, exact-size auxiliary graph and route/conductance accounting are explicitly instantiated.",
+        "scope": "The explicit certifying hypergraph-matching algorithm, including build/growth/collapse and weighted finite-prefix termination; the public explicit-algorithm weighted reanalysis; certified disjoint-path routing and spanning-expander packing. The destructive-support extractor, exact-size auxiliary graph and route/conductance accounting are explicitly instantiated. The retained rank-sensitive layer count, its separate root factor and the fixed-right-rank polynomial-strength consequence are included; explicit incidence input is not replaced by an implicit graph-edge count.",
         "conditions": [
           "The hitting, expansion, density, load and input-size promises remain part of their respective theorems. The companion’s separate conditional observation about the public approximate-extension algorithm is not used by these results and retains its stated assumption. Manuscript readiness does not claim a full executable implementation."
         ]
@@ -728,6 +743,209 @@
       "evidence_note": "problems/allocation-lower-bounds/verify/README.md",
       "formal_verification": "not-claimed",
       "checks": []
+    }
+  ],
+  "supporting_records": [
+    {
+      "id": "grouped-choice-recourse",
+      "path": "manuscripts/graph-backends/decremental-choice-recourse-lemma.md",
+      "evidence_note": "manuscripts/graph-backends/decremental-choice-recourse-lemma.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "nonuniform-route-rounding",
+      "path": "manuscripts/graph-backends/nonuniform-fractional-path-selection.md",
+      "evidence_note": "manuscripts/graph-backends/nonuniform-fractional-path-selection.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "short-path-inventories",
+      "path": "manuscripts/graph-backends/compressed-fractional-path-extraction.md",
+      "evidence_note": "manuscripts/graph-backends/compressed-fractional-path-extraction.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "bounded-width-path-client",
+      "path": "manuscripts/graph-backends/bounded-interface-witness-pattern-updates.md",
+      "evidence_note": "manuscripts/graph-backends/bounded-interface-witness-pattern-updates.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "forest-support-path-client",
+      "path": "manuscripts/graph-backends/complete-unrestricted-forest-one-sided-client.md",
+      "evidence_note": "manuscripts/graph-backends/complete-unrestricted-forest-one-sided-client.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "feedback-edge-path-client",
+      "path": "manuscripts/graph-backends/feedback-edge-one-sided-client.md",
+      "evidence_note": "manuscripts/graph-backends/feedback-edge-one-sided-client.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "weak-haxell-certificates",
+      "path": "manuscripts/matching-and-routing/weak-haxell-current-blocker-growth.md",
+      "evidence_note": "manuscripts/matching-and-routing/weak-haxell-current-blocker-growth.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "sparse-separator-corank",
+      "path": "manuscripts/allocation-and-scheduling/attained-set-sparse-separator-gap.md",
+      "evidence_note": "manuscripts/allocation-and-scheduling/attained-set-sparse-separator-gap.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "robust-whole-ground-barrier",
+      "path": "manuscripts/allocation-and-scheduling/robust-unit-allocation-whole-ground-oracle-barrier.md",
+      "evidence_note": "manuscripts/allocation-and-scheduling/robust-unit-allocation-whole-ground-oracle-barrier.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "implicit-minimal-bundle-transversal",
+      "path": "manuscripts/matching-and-routing/implicit-minimal-bundle-transversal-oracle.md",
+      "evidence_note": "manuscripts/matching-and-routing/implicit-minimal-bundle-transversal-oracle.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "critical-quota-free-pool",
+      "path": "manuscripts/allocation-and-scheduling/critical-unit-quota-global-free-pool.md",
+      "evidence_note": "manuscripts/allocation-and-scheduling/critical-unit-quota-global-free-pool.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "joint-layer-owner-quality",
+      "path": "manuscripts/allocation-and-scheduling/joint-owner-sharp-quality-addendum.md",
+      "evidence_note": "manuscripts/allocation-and-scheduling/joint-owner-sharp-quality-addendum.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "laminar-reservation-interface",
+      "path": "manuscripts/allocation-and-scheduling/laminar-resource-current-blocker-reservations.md",
+      "evidence_note": "manuscripts/allocation-and-scheduling/laminar-resource-current-blocker-reservations.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "persistent-path-hitting",
+      "path": "manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md",
+      "evidence_note": "manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "fixed-potential-tight-dag",
+      "path": "manuscripts/graph-backends/fixed-potential-tight-dag-repair-lemma.md",
+      "evidence_note": "manuscripts/graph-backends/fixed-potential-tight-dag-repair-lemma.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "slack-only-directed-client",
+      "path": "manuscripts/graph-backends/slack-only-one-sided-matching-client.md",
+      "evidence_note": "manuscripts/graph-backends/slack-only-one-sided-matching-client.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "residual-configuration-comparator",
+      "path": "manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md",
+      "evidence_note": "manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "residual-configuration-fractional-optimization",
+      "path": "manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md",
+      "evidence_note": "manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md",
+      "formal_verification": "not-claimed",
+      "checks": []
+    },
+    {
+      "id": "exact-demand-flow-trimming",
+      "path": "manuscripts/graph-backends/exact-demand-flow-trimming.md",
+      "evidence_note": "manuscripts/graph-backends/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "manuscripts/graph-backends/verify/check_static_allocations.py",
+          "scope": "289 exhaustive and 1,000 seeded integral-flow instances check exact native divergences, coordinatewise domination and sink-outgoing clipping; 87 exhaustive and 1,500 seeded transportation instances check original margins, acyclic support, genuine pairs, injections and strict component weights. Includes 625 rows-above-rank-three cases and 940 instances with isolated bins. Explicit polynomial routines do not implement the near-linear dynamic trees."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "Complete coordinatewise subflow construction, selected directed forest, cycle cancellation, source excess removal and near-linear operation ledger. Includes sink-outgoing preprocessing, native arc identities and finite-bit arithmetic.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The deterministic dynamic-forest interface is a named published data-structure dependency. A supplied feasible flow and strictly positive nonsink targets are part of the input model."
+        ]
+      }
+    },
+    {
+      "id": "static-transportation-support-balancing",
+      "path": "manuscripts/graph-backends/static-transportation-support-balancing.md",
+      "evidence_note": "manuscripts/graph-backends/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "manuscripts/graph-backends/verify/check_static_allocations.py",
+          "scope": "289 exhaustive and 1,000 seeded integral-flow instances check exact native divergences, coordinatewise domination and sink-outgoing clipping; 87 exhaustive and 1,500 seeded transportation instances check original margins, acyclic support, genuine pairs, injections and strict component weights. Includes 625 rows-above-rank-three cases and 940 instances with isolated bins. Explicit polynomial routines do not implement the near-linear dynamic trees."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "Complete arbitrary-row-rank static selected-pair forest theorem, private transportation-cycle cancellation, strict component bound below twice the row total and construction of a new physical row-covering injection.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The old injection may change. The near-linear operation bound uses named dynamic-tree operations; dynamically maintaining the private support is a separate problem."
+        ]
+      }
+    },
+    {
+      "id": "static-confluent-rounding",
+      "path": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md",
+      "evidence_note": "manuscripts/graph-backends/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [],
+      "review": {
+        "status": "ready",
+        "scope": "Complete near-linear simulation and Parts B–D simultaneous completed-sink moment and tail bounds, including the budget proportional to actual demand. Part E proves the scoped local warm-start lemma.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The precise published base-2 Conflt operations and deterministic dynamic-tree interface are identified. Reopening completed sinks needs separate dynamic replenishment accounting and is not used by the completed main matching theorem."
+        ]
+      }
+    },
+    {
+      "id": "contact-rank-odd-crowns",
+      "path": "manuscripts/graph-backends/low-state-odd-crown.md",
+      "evidence_note": "manuscripts/graph-backends/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "manuscripts/graph-backends/verify/check_odd_crown.py",
+          "scope": "3,677 complete small row/bin graphs, 56,249 contact sets and 138,470 optimal injections against independent enumeration; 615 physical offset comparisons using subset matching dynamic programming through 18 vertices. The numerical LOW theorem and imported fast runtime are outside this finite check."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "Complete canonical contact-rank/min-cut characterization, exact physical matching offset, the numerical LOW consequence and the explicit retained-mass counterexample. Independent small-instance checks validate the structural identities.",
+        "date": "2026-10-26",
+        "conditions": [
+          "The input state supplies constructive factor-critical witnesses. Ordinary bipartite matching suffices; the named published almost-linear flow theorem is an optional faster construction. A bound on the remaining optimum gap does not bound the entire retained graph."
+        ]
+      }
     }
   ]
 }

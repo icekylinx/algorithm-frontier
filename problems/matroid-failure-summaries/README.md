@@ -1,12 +1,17 @@
 # Sharp matroid and submodular failure summaries
 
-Exact binomial-size restrictions under correlated label failures, faster oracle constructions, and a sharp 13-item boundary at rank four.
+Exact failure summaries, rank-adaptive oracle constructions, and a sharp 13-item boundary at rank four.
 
-[Proof](proof.md) · [Sources](sources.md)
+[Proof](proof.md) · [Rank-adaptive paper](rank-adaptive-paper.pdf) · [Two-failure paper](two-failure-paper.pdf) · [Sources](sources.md)
 
 **Guarantee**
 
 For <code class="math">C=\binom{h+d}{d}</code>, represented matroids preserve every surviving fixed-cost prefix with at most <code class="math">\min\{N,rC\}</code> items. Arbitrary matroids preserve surviving rank with the same bound. For one failed label, arbitrary oracle matroids also admit the sharp weighted bound <code class="math">(d+1)r</code> in uniform polynomial time. For two or more failures, an explicit nonrepresentable family rules out the same weighted binomial bound. With two failures and at most one label per item, the largest minimum prefix summary has exactly 13 items at rank four; ranks at most three have the sharp bound <code class="math">3r</code>.
+
+For at most one label per item, a fixed contraction reduces every failure
+query to rank <code class="math">T</code>, the total number of single-failure replacement appearances.
+The original rank contributes only <code class="math">r-T</code> fixed items. In particular <code class="math">T=0</code>
+needs only the original basis, and <code class="math">T=1</code> has the sharp all-budget bound <code class="math">r+h</code>.
 
 **Objective and output**
 
@@ -23,6 +28,14 @@ Represented: uniform deterministic polynomial preprocessing, with <code class="m
 For arbitrary weighted oracles, put <code class="math">S(a,h)=\sum_{i=0}^{h}a^i</code>, with <code class="math">0^0=1</code>. The canonical-basis tree uses at most <code class="math">NS(dr,h)</code> independence queries after sorting. The one-pass retained-prefix alternative uses <code class="math">N(K+1)S(dr,h)</code>. Here <code class="math">K=\min\{N,\lfloor r\Gamma(h,d)\rfloor\}</code>, and <code class="math">\Gamma(h,d)=(h+d)^{h+d}/(h^h d^d)</code>, with <code class="math">\Gamma=1</code> when <code class="math">hd=0</code>; the stronger size bounds below may also be used for <code class="math">K</code>.
 
 A final reverse-deletion pass attains the sharp rank-only size within <code class="math">(N+K(K+1))S(dr,h)</code> queries, linear in <code class="math">N</code> for fixed parameters. One failed label takes at most <code class="math">(1+dr)N</code> queries. Two failures with one label per item take <code class="math">O(N(r+1)^2)</code> queries. Integral values have the analogous basis-tree bound <code class="math">1+NS(dR,h)</code> and the two-stage bound with rank replaced by the numerical range <code class="math">R</code>.
+
+The [rank-loss contraction](manuscripts/rank-loss-contraction-for-prefix-summaries.md) replaces the basis-tree rank
+by <code class="math">T\le r</code> when each item has at most one label. It uses at most
+<code class="math">(1+\ell_0)N+r+N'S(T,h')</code> independence queries for <code class="math">T&gt;0</code>, where
+<code class="math">\ell_0\le r</code> counts labels on the original basis, <code class="math">N'=N-r+T</code>, and
+<code class="math">h'</code> is clipped to the label count in the minor. For <code class="math">T\ge2</code> this is
+<code class="math">O(N(r+T^{h'}))</code> queries; for <code class="math">T=1</code> it is <code class="math">O(N(r+h'))</code>. Query-set
+encoding costs are separate from the oracle count.
 
 **Space**
 
@@ -42,9 +55,9 @@ The <code class="math">rC</code> and <code class="math">RC</code> retained-size 
 
 **Review status**
 
-**Ready for review.** Main Theorems 1–6: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure endpoint; explicit weighted obstruction; faster canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima and minimality of the 13-item example. Includes the sharp singleton-replacement bound r+2t, its failed-contracted-item proof, and the profile-sensitive construction with N(1+ell_0+binom(t+1,2)) queries.
+**Ready for review.** Main Theorems 1–7: represented prefix lift; sharp oracle-rank and integral-value constructions; sharp one-failure endpoint; explicit weighted obstruction; faster canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima and minimality of the 13-item example. Includes the sharp singleton-replacement bound r+2t, its failed-contracted-item proof, and the profile-sensitive construction with N(1+ell_0+binom(t+1,2)) queries. The fixed rank-loss contraction theorem preserves every failure basis and original prefix, reduces the tree parameter to the total single-failure replacement count T and proves the sharp r+h endpoint at T=1.
 
-**Conditions and remaining work.** Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification.
+**Dependencies and scope.** Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification. The rank-loss contraction in this review uses one label per item and a fixed total order. The query ledger charges the original oracle separately from explicit query-set representation; a changed cost order may require another contraction.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -78,6 +91,20 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 ![Formula](../../assets/math/5b398e55337e1c45462e1d46.svg)
 
 Use <code class="math">\Psi=1</code> when <code class="math">hd=0</code>. The algorithm does not need to compute the infimum; every fixed rational <code class="math">p</code> already proves an explicit bound.
+
+**Rank-adaptive weighted summary, one label per item**
+
+**Exact transfer.** <code class="math">H_h(M)=Q\,\dot\cup\,H_h(M/Q)</code>, where <code class="math">Q</code> is fixed,
+<code class="math">&#124;Q&#124;=r-T</code>, and the minor has rank <code class="math">T</code>.
+
+**Support bounds.** <code class="math">r+T</code> for one failure; <code class="math">r+h^hT/(h-1)^{h-1}</code> for <code class="math">h\ge2</code>.
+For two failures, <code class="math">T\le3</code> gives <code class="math">r+2T</code>, and <code class="math">T=4</code> gives <code class="math">r+9</code>.
+At <code class="math">T=1</code>, the stronger all-budget bound <code class="math">r+h</code> is sharp.
+
+**Construction / interpretation.** At most <code class="math">(1+\ell_0)N+r</code> preprocessing
+queries, followed by a rank-<code class="math">T</code> basis tree. Unlabelled items, loops, repeated
+labels and surviving rank drops are allowed. The fixed order and the
+one-label-per-item hypothesis are essential to the stated theorem.
 
 **Two failed labels, arbitrary matroid and one label per item**
 

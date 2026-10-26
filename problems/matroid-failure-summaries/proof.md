@@ -65,6 +65,37 @@ even for represented matroids. The summary can be found with
 <code class="math">\binom t2</code> in place of <code class="math">\binom{t+1}{2}</code> when <code class="math">x</code> is unlabelled.
 If the one-failure union adds no item, the original basis suffices.
 
+**Theorem 7 (fixed rank-loss contraction).** Suppose each item has at most
+one label. Let <code class="math">B_0</code> be the unfailed canonical basis, let <code class="math">b_0</code> count its
+unlabelled items, and let <code class="math">\delta_\lambda=r-r_M(E\setminus D_\lambda)</code>.
+The replacement total is
+
+<!-- math-display: 978beed2d009a2cc86ec1f2d
+T=\sum_\lambda |B_{\{\lambda\}}\setminus B_0|
+ =r-b_0-\sum_\lambda\delta_\lambda.
+-->
+![Formula](../../assets/math/978beed2d009a2cc86ec1f2d.svg)
+
+There is a fixed independent <code class="math">Q\subseteq B_0</code> with <code class="math">&#124;Q&#124;=r-T</code> such that
+<code class="math">M'=M/Q</code> has rank <code class="math">T</code> and, for every failure set <code class="math">F</code>,
+
+<!-- math-display: fe42d2d9603f218b5923ae3c
+B_F=(Q\cap E_F)\,\dot\cup\,B'_F,
+\qquad H_h(M)=Q\,\dot\cup\,H_h(M').
+-->
+![Formula](../../assets/math/fe42d2d9603f218b5923ae3c.svg)
+
+Here <code class="math">B'_F</code> is the canonical surviving basis in the inherited order, and
+<code class="math">H_h</code> is the unique smallest preserver of every surviving prefix rank.
+The identity also reconstructs every original prefix rank by adding the
+number of surviving contracted items in that prefix. Computing <code class="math">Q</code> uses
+at most <code class="math">(1+\ell_0)N+r</code> independence queries, with <code class="math">\ell_0\le r</code>.
+A basis tree on the minor then uses at most
+<code class="math">(N-r+T)\sum_{j=0}^{h'}T^j</code> further queries, where <code class="math">h'</code> is clipped to the
+minor's occurring labels. At <code class="math">T=0</code>, <code class="math">B_0</code> alone suffices for every budget.
+At <code class="math">T=1</code>, the sharp all-budget support bound is <code class="math">r+h</code>.
+Section 8 proves the reduction and records its remaining rank-adaptive bounds.
+
 ## 2. Proof of the represented theorem
 
 Choose distinct field points <code class="math">a_0,a_\lambda</code>, with <code class="math">a_0</code> never failing. For element <code class="math">e</code>, define
@@ -282,8 +313,51 @@ each new winner. It starts at <code class="math">2t-1</code> for labelled <code 
 sharp binary representations appear in Theorem 3 of the
 [two-failure companion](manuscripts/two-failure-oracle-prefix-bounds.md).
 
+## 8. Fixed contraction by single-failure rank losses
+
+For each label meeting <code class="math">B_0</code>, compute the canonical basis <code class="math">B_\lambda</code> after
+that single failure. Extend it to a full basis using items of
+<code class="math">B_0\cap D_\lambda</code>. The added set <code class="math">Q_\lambda</code> has size <code class="math">\delta_\lambda</code>
+and is independent over the entire complement <code class="math">E\setminus D_\lambda</code>.
+Let <code class="math">Q</code> consist of these disjoint sets and the unlabelled items of <code class="math">B_0</code>.
+Its size is <code class="math">r-T</code> and it is independent as a subset of <code class="math">B_0</code>.
+
+Fix a failure set <code class="math">F</code>, and put <code class="math">Q_s=Q\cap E_F</code> and <code class="math">Q_f=Q\setminus E_F</code>.
+The failed blocks are jointly independent over <code class="math">E_F</code>: when adding one
+<code class="math">Q_\lambda</code>, every previously present item lies outside <code class="math">D_\lambda</code>,
+so that block adds all of its <code class="math">&#124;Q_\lambda&#124;</code> rank. This argument also works
+over every subset of <code class="math">E_F</code>. Therefore, for <code class="math">X\subseteq E_F\setminus Q</code>,
+
+<!-- math-display: 083f89b6f6a817a6a8b8cdf3
+r_{M/Q}(X)=r_M(X\cup Q_s)-|Q_s|
+          =r_{(M|E_F)/Q_s}(X).
+-->
+![Formula](../../assets/math/083f89b6f6a817a6a8b8cdf3.svg)
+
+Greedy persistence gives <code class="math">Q_s\subseteq B_F</code>. Bases of the contraction
+correspond to original bases containing <code class="math">Q_s</code>, with those common items
+removed. Removing common items preserves lexicographic order, so the
+canonical basis decomposes exactly as in Theorem 7. Intersecting that
+identity with every original order prefix proves the corresponding rank
+identity; taking unions over failures gives the exact minimum-summary
+identity. This justifies contraction even for items whose labels fail.
+
+Every proved rank-based support bound now applies at rank <code class="math">T</code>, followed
+by reinserting the <code class="math">r-T</code> fixed items. Thus one failure has bound <code class="math">r+T</code>;
+for <code class="math">h\ge2</code> the Bernoulli prefix refinement gives
+<code class="math">r+h^hT/(h-1)^{h-1}</code>. For two failures, <code class="math">T\le3</code> gives <code class="math">r+2T</code> and <code class="math">T=4</code>
+gives <code class="math">r+9</code>. A rank-one minor has a single-child basis tree with at most
+<code class="math">h+1</code> nodes, which gives <code class="math">r+h</code>. A colored parallel chain with <code class="math">r-1</code>
+unlabelled coloops attains that endpoint.
+
+The [complete contraction proof](manuscripts/rank-loss-contraction-for-prefix-summaries.md)
+includes the joint-independence argument, the contraction/deletion equality,
+the original-prefix identity, query-set costs, the binary-budget cutoff,
+and the <code class="math">T=0,1</code> cases. It makes no representation assumption, and it keeps
+the item order fixed. This proves Theorem 7.
+
 ## Complete proofs
 
-[Represented lift and field construction](manuscripts/sharp-represented-matroid-failure-summaries.md); [arbitrary-matroid and submodular proofs](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md); [weighted oracle FPT construction](manuscripts/weighted-oracle-prefix-fpt-construction.md); [weighted two-failure obstruction](manuscripts/weighted-oracle-two-failure-obstruction.md); [two-failure profile bounds and exact rank-four maximum](manuscripts/two-failure-oracle-prefix-bounds.md).
+[Represented lift and field construction](manuscripts/sharp-represented-matroid-failure-summaries.md); [arbitrary-matroid and submodular proofs](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md); [weighted oracle FPT construction](manuscripts/weighted-oracle-prefix-fpt-construction.md); [weighted two-failure obstruction](manuscripts/weighted-oracle-two-failure-obstruction.md); [two-failure profile bounds and exact rank-four maximum](manuscripts/two-failure-oracle-prefix-bounds.md); [rank-loss contraction and all-budget adaptive bounds](manuscripts/rank-loss-contraction-for-prefix-summaries.md).
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

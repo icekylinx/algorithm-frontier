@@ -6323,7 +6323,9 @@
     },
     {
       "name": "confluent_exponential_mass.md",
-      "canonical_targets": [],
+      "canonical_targets": [
+        "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      ],
       "original_versions": [
         {
           "sha256": "e729d94faed0113e28ba0291804050f1d4c6417b2594697d64fc157e70d4cda3",
@@ -6344,7 +6346,7 @@
           ]
         }
       ],
-      "disposition": "positive-auxiliary-not-indexed",
+      "disposition": "restored-complete-proof",
       "finding": "Proves sum over final sinks of 2^(load/C) <= P(3+log2(P)/2), paying deactivated sinks with a second potential.",
       "reason": "The stronger 2F claim was withdrawn; this corrected static moment bound is valid in its stated proof and is strengthened by the later tail notes. Dynamic replenishment remains a separate unproved alternative, bypassed by carriers.",
       "related_targets": [
@@ -6357,7 +6359,12 @@
         "Completed sinks must be charged; O(F log F) final exponential moment rather than 2F."
       ],
       "current_four_fifths_missing_dependency": false,
-      "proposed_restore_target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      "restoration": {
+        "date": "2026-10-26",
+        "scope": "Complete original positive argument, with explicit computational model, source attribution and application boundary.",
+        "source_sha256": "e729d94faed0113e28ba0291804050f1d4c6417b2594697d64fc157e70d4cda3",
+        "target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      }
     },
     {
       "name": "confluent_history_repair_frontier.md",
@@ -6398,7 +6405,9 @@
     },
     {
       "name": "confluent_load_tail.md",
-      "canonical_targets": [],
+      "canonical_targets": [
+        "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      ],
       "original_versions": [
         {
           "sha256": "9e89aca010eb5f02395c60c12fde089ed3ae7b2b1a45ef77dc8a9e30fcb9fe41",
@@ -6419,7 +6428,7 @@
           ]
         }
       ],
-      "disposition": "positive-auxiliary-not-indexed",
+      "disposition": "restored-complete-proof",
       "finding": "For F initially bounded-load sinks, proves number of final loads >=tau C is at most F(tau+3)/2^(tau+1), a heavy-mass tail and weighted exponential O(F) budget.",
       "reason": "This is a substantive static strengthening and rules out the earlier whole-component obstruction being a true Conflt output. It does not prove dynamic credit replenishment and is not needed by the current carrier.",
       "related_targets": [
@@ -6432,11 +6441,18 @@
         "Capped-slope potential; all deactivated heavy sinks paid; distinction between a valid ledger forest and a Conflt output."
       ],
       "current_four_fifths_missing_dependency": false,
-      "proposed_restore_target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      "restoration": {
+        "date": "2026-10-26",
+        "scope": "Complete original positive argument, with explicit computational model, source attribution and application boundary.",
+        "source_sha256": "9e89aca010eb5f02395c60c12fde089ed3ae7b2b1a45ef77dc8a9e30fcb9fe41",
+        "target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      }
     },
     {
       "name": "confluent_mass_sensitive_tail.md",
-      "canonical_targets": [],
+      "canonical_targets": [
+        "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      ],
       "original_versions": [
         {
           "sha256": "88ff5e7a7b10ebe02f42e266f891ac590090b149b55ff5833c62e0a5eb25b151",
@@ -6457,7 +6473,7 @@
           ]
         }
       ],
-      "disposition": "positive-auxiliary-not-indexed",
+      "disposition": "restored-complete-proof",
       "finding": "Replaces free-sink count by total normalized demand p=W/C: affine-near-zero potential, maximum load and tail bounds, and an O(W) weighted credit budget.",
       "reason": "It removes the earlier invalid assumption LF=O(N) in arbitrary-gap phases. The current carrier route no longer needs a Conflt initial budget, but this is a proved positive auxiliary refinement rather than an unresolved premise.",
       "related_targets": [
@@ -6470,11 +6486,18 @@
         "Total-demand-sensitive tail; zero-load sinks add no credit; no assumption LF=O(N)."
       ],
       "current_four_fifths_missing_dependency": false,
-      "proposed_restore_target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      "restoration": {
+        "date": "2026-10-26",
+        "scope": "Complete original positive argument, with explicit computational model, source attribution and application boundary.",
+        "source_sha256": "88ff5e7a7b10ebe02f42e266f891ac590090b149b55ff5833c62e0a5eb25b151",
+        "target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      }
     },
     {
       "name": "confluent_rounding_acceleration.md",
-      "canonical_targets": [],
+      "canonical_targets": [
+        "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      ],
       "original_versions": [
         {
           "sha256": "1a7daa21a9560431438d57a21ad0bc24aedecc3f7dc46a7c53e25089c35d4f86",
@@ -6515,7 +6538,7 @@
           ]
         }
       ],
-      "disposition": "positive-auxiliary-not-indexed",
+      "disposition": "restored-complete-proof",
       "finding": "Near-linear implementation of the published deterministic Conflt operations using a mixed selected forest and a bidirectional component forest; preserves a supplied injection.",
       "reason": "The primary path moved to the stronger flexible-injection transportation construction and then actual-ledger carriers. The fixed-injection algorithm remains a useful separate result; its unproved dynamic extension is not part of its static theorem.",
       "related_targets": [
@@ -6529,7 +6552,12 @@
         "Mixed-forest simulation; linear retarget count; native parallel-edge versus self-reversal distinction; integer work bounds."
       ],
       "current_four_fifths_missing_dependency": false,
-      "proposed_restore_target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      "restoration": {
+        "date": "2026-10-26",
+        "scope": "Complete original positive argument, with explicit computational model, source attribution and application boundary.",
+        "source_sha256": "1a7daa21a9560431438d57a21ad0bc24aedecc3f7dc46a7c53e25089c35d4f86",
+        "target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      }
     },
     {
       "name": "congested_greedy_support_and_dynamic_boundary.md",
@@ -10962,7 +10990,9 @@
     },
     {
       "name": "exact_demand_flow_trimming.md",
-      "canonical_targets": [],
+      "canonical_targets": [
+        "manuscripts/graph-backends/exact-demand-flow-trimming.md"
+      ],
       "original_versions": [
         {
           "sha256": "67dbfd2b73210201b639da1f7f1fa325d8c6ed8b112ebecfe02c0b44ef84fbcd",
@@ -10983,7 +11013,7 @@
           ]
         }
       ],
-      "disposition": "positive-auxiliary-not-indexed",
+      "disposition": "restored-complete-proof",
       "finding": "A deterministic dynamic-forest algorithm trims a supplied integral flow to exact positive nonsink demands by monotone cycle cancellations and excess removal in near-linear work.",
       "reason": "This is a complete independent positive lemma, not an open implementation obligation. It supports the earlier local Conflt repair but is not called by the current carrier/exact-projection path. Preserve or restore the lemma as a standalone auxiliary result.",
       "related_targets": [
@@ -10996,7 +11026,12 @@
         "O(n+m) substantive operations; source-to-sink excess paths; enumerate all zero edges before cuts; exact integrality and native records."
       ],
       "current_four_fifths_missing_dependency": false,
-      "proposed_restore_target": "manuscripts/graph-backends/exact-demand-flow-trimming.md"
+      "restoration": {
+        "date": "2026-10-26",
+        "scope": "Complete original positive argument, with explicit computational model, source attribution and application boundary.",
+        "source_sha256": "67dbfd2b73210201b639da1f7f1fa325d8c6ed8b112ebecfe02c0b44ef84fbcd",
+        "target": "manuscripts/graph-backends/exact-demand-flow-trimming.md"
+      }
     },
     {
       "name": "exact_flow_acceptance_and_reductions.md",
@@ -18271,7 +18306,9 @@
     },
     {
       "name": "low_localization_mass_barrier.md",
-      "canonical_targets": [],
+      "canonical_targets": [
+        "manuscripts/graph-backends/low-state-odd-crown.md"
+      ],
       "original_versions": [
         {
           "sha256": "66d4e096c989b2462a66d87ee90eac246ad8444b95509ed4b9254d24b5dbc32e",
@@ -18292,7 +18329,7 @@
           ]
         }
       ],
-      "disposition": "historical-mechanism-boundary",
+      "disposition": "restored-complete-proof",
       "finding": "Constructs positive dyadic ledgers on subcubic graphs where the old fixed-parameter pricing interface must return LOW yet the canonical contact crown is empty.",
       "reason": "It excludes a total-mass kernel inference from the odd-crown theorem. It does not refute that theorem, the current arbitrary-gap driver, or every phase trajectory.",
       "related_targets": [
@@ -18306,11 +18343,18 @@
         "LOW plus small deficiency does not imply O(K) retained vertices; old numerical parameters must not be silently changed."
       ],
       "current_four_fifths_missing_dependency": false,
-      "proposed_restore_target": "manuscripts/graph-backends/low-state-odd-crown.md"
+      "restoration": {
+        "date": "2026-10-26",
+        "scope": "Complete original positive argument, with explicit computational model, source attribution and application boundary.",
+        "source_sha256": "66d4e096c989b2462a66d87ee90eac246ad8444b95509ed4b9254d24b5dbc32e",
+        "target": "manuscripts/graph-backends/low-state-odd-crown.md"
+      }
     },
     {
       "name": "low_odd_crown_localization.md",
-      "canonical_targets": [],
+      "canonical_targets": [
+        "manuscripts/graph-backends/low-state-odd-crown.md"
+      ],
       "original_versions": [
         {
           "sha256": "737e2dc3bc14c795bdd9f4fa9abab97c9a778baea247c299bdc814f23b1e39ff",
@@ -18331,7 +18375,7 @@
           ]
         }
       ],
-      "disposition": "positive-auxiliary-not-indexed",
+      "disposition": "restored-complete-proof",
       "finding": "A settled LOW state has a canonical contact-rank odd crown; deletion preserves exact matching with explicit offset and leaves O(K) unmatched vertices.",
       "reason": "This is a proved localization/deficiency certificate, not a bound of O(K) on retained total graph size. The direct arbitrary-gap driver already handles the original graph and does not require this optional crown.",
       "related_targets": [
@@ -18345,7 +18389,12 @@
         "Contact rank min_{X containing Z} h(X); unique minimal envelope; exact opt offset; explicit forward matching; at most .04335 K half-deficiency under stated constants."
       ],
       "current_four_fifths_missing_dependency": false,
-      "proposed_restore_target": "manuscripts/graph-backends/low-state-odd-crown.md"
+      "restoration": {
+        "date": "2026-10-26",
+        "scope": "Complete original positive argument, with explicit computational model, source attribution and application boundary.",
+        "source_sha256": "737e2dc3bc14c795bdd9f4fa9abab97c9a778baea247c299bdc814f23b1e39ff",
+        "target": "manuscripts/graph-backends/low-state-odd-crown.md"
+      }
     },
     {
       "name": "machine_eligibility_padding_and_collision_independent_audit.md",
@@ -29890,9 +29939,10 @@
     {
       "name": "transportation_support_balanced_forest.md",
       "canonical_targets": [
-        "manuscripts/graph-backends/persistent-integral-ledger-carrier.md",
+        "manuscripts/allocation-and-scheduling/dynamic-integral-allocation-theorem.md",
         "manuscripts/graph-backends/balanced-forest-pair-oracle.md",
-        "manuscripts/allocation-and-scheduling/dynamic-integral-allocation-theorem.md"
+        "manuscripts/graph-backends/persistent-integral-ledger-carrier.md",
+        "manuscripts/graph-backends/static-transportation-support-balancing.md"
       ],
       "original_versions": [
         {
@@ -29926,7 +29976,7 @@
           ]
         }
       ],
-      "disposition": "partly-integrated-positive-auxiliary",
+      "disposition": "restored-complete-proof",
       "finding": "Static cycle cancellation and trimming give a selected forest of weight <2L per component and a new injection; Section 7 extends this to arbitrary row rank.",
       "reason": "The rank-three accounting is retained and strengthened to zero carrier edges in the persistent actual-ledger proof. The arbitrary-rank static corollary and standalone private-support algorithm are not fully reproduced by that rank-three dynamic theorem.",
       "related_targets": [
@@ -29941,7 +29991,12 @@
         "General-rank <2L theorem; at most one exporting top row; near-linear cycle cancellation; injection may change."
       ],
       "current_four_fifths_missing_dependency": false,
-      "proposed_restore_target": "manuscripts/graph-backends/static-transportation-support-balancing.md"
+      "restoration": {
+        "date": "2026-10-26",
+        "scope": "Complete original positive argument, with explicit computational model, source attribution and application boundary.",
+        "source_sha256": "d9e9280f085258360d8c58cfd80ed978dd8b9478114a882116d4a3c0d73ffdbf",
+        "target": "manuscripts/graph-backends/static-transportation-support-balancing.md"
+      }
     },
     {
       "name": "transversal_log_rank_signature_boundary.md",
@@ -31624,7 +31679,9 @@
     },
     {
       "name": "warm_start_potential_extension.md",
-      "canonical_targets": [],
+      "canonical_targets": [
+        "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      ],
       "original_versions": [
         {
           "sha256": "53516c069d953f29d03cd6c080aa4a60dcee2aa2648b483399c22dc777c0f72e",
@@ -31645,7 +31702,7 @@
           ]
         }
       ],
-      "disposition": "mixed-positive-lemma-and-open-alternative",
+      "disposition": "restored-complete-proof",
       "finding": "Rejects the unsupported 2F final moment, proves exact dirty-demand local routing to fixed exterior anchors, and identifies missing dynamic replenishment.",
       "reason": "The exact trimming and static Conflt notes supply the local flow/rounding operations; the later moment/tail notes supply corrected static budgets. The remaining recruitment conjecture is not used by actual-ledger carriers.",
       "related_targets": [
@@ -31658,7 +31715,12 @@
         "Local dirty-region flow theorem; withdrawn simultaneous potential must remain withdrawn; no automatic dynamic replenishment."
       ],
       "current_four_fifths_missing_dependency": false,
-      "proposed_restore_target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      "restoration": {
+        "date": "2026-10-26",
+        "scope": "Complete original positive argument, with explicit computational model, source attribution and application boundary.",
+        "source_sha256": "53516c069d953f29d03cd6c080aa4a60dcee2aa2648b483399c22dc777c0f72e",
+        "target": "manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md"
+      }
     },
     {
       "name": "warm_start_whole_component_obstruction.md",

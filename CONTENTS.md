@@ -89,6 +89,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/degree-constrained-subgraphs/README.md) · [Main proof](problems/degree-constrained-subgraphs/proof.md) · [Sources](problems/degree-constrained-subgraphs/sources.md) · [Verification](problems/degree-constrained-subgraphs/verify/README.md)
 
+- [A linear-size degree selector from a named expander construction](problems/degree-constrained-subgraphs/linear-selector.md)
 - [Correctness and certificates for the executable degree solver](problems/degree-constrained-subgraphs/reference/correctness.md)
 
 ### [Static and threshold min-cost flow](problems/min-cost-flow/)
@@ -142,6 +143,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/matroid-failure-summaries/README.md) · [Main proof](problems/matroid-failure-summaries/proof.md) · [Sources](problems/matroid-failure-summaries/sources.md) · [Verification](problems/matroid-failure-summaries/verify/README.md)
 
 - [Exact binomial fault summaries for arbitrary matroids](problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md)
+- [A fixed rank-loss contraction for ordered matroid failure summaries](problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md)
 - [A sharp polynomial-time restriction for overlapping label failures in represented matroids](problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md)
 - [Two-failure weighted prefix bounds for arbitrary matroids](problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md)
 - [Deterministic FPT construction of weighted oracle failure summaries](problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md)
@@ -170,6 +172,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/boolean-linear-compiler/README.md) · [Main proof](problems/boolean-linear-compiler/proof.md) · [Sources](problems/boolean-linear-compiler/sources.md) · [Verification](problems/boolean-linear-compiler/verify/README.md)
 
 - [A support-sensitive interval compiler for exact Boolean linear optimization](problems/boolean-linear-compiler/manuscripts/boolean-linear-optimization-compiler.md)
+- [Cardinality and coefficient normalization for exact Boolean interval compilation](problems/boolean-linear-compiler/manuscripts/cardinality-and-modal-interval-compilation.md)
 
 ## Spectral, group and quantum sparsification
 
@@ -645,6 +648,78 @@ Support-s cuts:
 
 **Model and scope.** Coordinate-box local families and binary capacities; <code class="math">s=2(r-1)</code> gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding.
 
+### [Exact demand trimming without a flow oracle](manuscripts/graph-backends/exact-demand-flow-trimming.md)
+
+Trim a supplied flow to exact positive nonsink demands without increasing any arc.
+
+**Randomness.** Deterministic selected-forest construction, with named dynamic-tree operations and no maximum-flow computation.
+
+**Quantitative result.**
+
+Exact arithmetic operations.
+
+<!-- math-display: 93981ab45e81d39a07edfcfa
+O((n+m)\mathrm{polylog}(n+m+2))
+-->
+![Formula](assets/math/93981ab45e81d39a07edfcfa.svg)
+
+**Model and scope.** Physical arc records include loops, parallel and opposite arcs. No sink inflow target is required; integer input remains integral and bit costs are explicit.
+
+### [Static selected-pair forests below twice the row total](manuscripts/graph-backends/static-transportation-support-balancing.md)
+
+Choose two genuine neighbors per row and obtain a new row-covering injection with strictly bounded component weight.
+
+**Randomness.** Deterministic transportation-cycle cancellation and combinatorial pair selection. This is a static theorem.
+
+**Quantitative result.**
+
+Every component has weight <code class="math">&lt;2L</code>.
+
+Exact arithmetic operations.
+
+<!-- math-display: 46ae0859d9a85b87d4a2c20f
+O((n+I)\mathrm{polylog}(n+I+2))
+-->
+![Formula](assets/math/46ae0859d9a85b87d4a2c20f.svg)
+
+**Model and scope.** Arbitrary finite row rank, row total L and column load at most L minus the positive bin weight; I counts all physical incidences. The supplied old injection need not be preserved.
+
+### [Near-linear confluent rounding and mass-sensitive tails](manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md)
+
+Round a supplied splittable flow to one outgoing route per nonsink, with a simultaneous budget covering completed sinks.
+
+**Randomness.** Deterministic simulation of the named Conflt operations. Exponential potentials are analysis tools and are not evaluated by the algorithm.
+
+**Quantitative result.**
+
+Arithmetic work.
+
+<!-- math-display: 93981ab45e81d39a07edfcfa
+O((n+m)\mathrm{polylog}(n+m+2))
+-->
+![Formula](assets/math/93981ab45e81d39a07edfcfa.svg)
+
+<!-- math-display: 0bb6d4c425ecf1f00538b65e
+C\sum_j(2^{W_j/C}-1)/(1+W_j/C)^3=O(W)
+-->
+![Formula](assets/math/0bb6d4c425ecf1f00538b65e.svg)
+
+**Model and scope.** Positive nonsink demands, initial node congestion at most C and total actual demand W. Dynamic replenishment after reopening completed trees requires a separate argument.
+
+### [Canonical odd crowns and exact matching-value preservation](manuscripts/graph-backends/low-state-odd-crown.md)
+
+Compute the canonical contact envelope, a removable odd crown and its exact optimum offset.
+
+**Randomness.** Deterministic matching, alternating reachability, integral cut certificates and physical witness recovery.
+
+**Quantitative result.**
+
+One outside bipartite matching plus linear graph work.
+
+Residual gap <code class="math">\le\lfloor(r+b)/2\rfloor</code>.
+
+**Model and scope.** Supplied constructive factor-critical bins and a row-covering injection. LOW gives an explicit bound on contact rank r, not on the total retained vertex count; b counts unmatched blockers.
+
 ## Shared manuscripts
 
 These proofs and scoped interface analyses are used across problem records. An obstruction concerns the precise mechanism stated in its manuscript, rather than an unrestricted algorithmic lower bound.
@@ -747,6 +822,7 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Dynamic marked-forest compression and short-path unions](manuscripts/graph-backends/dynamic-marked-forest-short-path-union.md)
 - [Formal pruning substitution in the public NSW MSF framework](manuscripts/graph-backends/dynamic-msf-formal-pruning-substitution-audit.md)
 - [Deterministic dynamic spanners: current public baselines and admissible comparisons](manuscripts/graph-backends/dynamic-spanner-public-baseline-audit.md)
+- [Exact demand trimming in a supplied directed flow](manuscripts/graph-backends/exact-demand-flow-trimming.md)
 - [Exact acceptance and general-flow reductions](manuscripts/graph-backends/exact-flow-acceptance-and-reductions.md)
 - [An explicit balance wrapper for virtual-expander success](manuscripts/graph-backends/explicit-virtual-cut-balance-wrapper.md)
 - [Minimal tight contractions and explicit factor-critical witnesses](manuscripts/graph-backends/factor-critical-contractions.md)
@@ -781,6 +857,7 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Local exact projection from a priced-step interface](manuscripts/graph-backends/local-exact-projection-from-priced-steps.md)
 - [Preserving the master length aspect through the cycle recursion](manuscripts/graph-backends/local-length-aspect-preservation.md)
 - [Local metric growth without a root-forest bootstrap](manuscripts/graph-backends/local-metric-growth-without-root-pools.md)
+- [Contact-rank odd crowns and exact matching-value preservation](manuscripts/graph-backends/low-state-odd-crown.md)
 - [Dynamic compression of marked subtrees: a local root audit](manuscripts/graph-backends/marked-steiner-compression-root-audit.md)
 - [A matching algorithm from explicit backend contracts](manuscripts/graph-backends/matching-algorithm-specification.md)
 - [Continuing the arbitrary-general-matching 4/5 route](manuscripts/graph-backends/matching-optimization.md)
@@ -842,7 +919,9 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [An exact terminal solver for the cycle-ratio recursion](manuscripts/graph-backends/small-graph-ratio-solver.md)
 - [A direct exact solver for small local detector instances](manuscripts/graph-backends/small-local-detector-exact-solver.md)
 - [Reconstructing real-edge provenance from a cover's vertex map](manuscripts/graph-backends/snc-provenance-from-vertex-maps.md)
+- [Deterministic confluent rounding: implementation, moments, and load tails](manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md)
 - [Deterministic Static Joint-Freeing by Triangular Forest Exchanges](manuscripts/graph-backends/static-pair-exchange.md)
+- [A selected-pair forest of weight below twice the row total](manuscripts/graph-backends/static-transportation-support-balancing.md)
 - [Compressed Steiner cores and colored full-forest pools](manuscripts/graph-backends/steiner-colored-pool-strong-forest-candidate.md)
 - [Independent audit of the Steiner pool: metric, inventory, and recursion](manuscripts/graph-backends/steiner-pool-metric-inventory-focused-audit.md)
 - [Which mechanisms improve the strong-forest exponent?](manuscripts/graph-backends/strong-forest-mechanism-comparison.md)

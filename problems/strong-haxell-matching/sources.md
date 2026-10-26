@@ -8,6 +8,12 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 - [Edge-disjoint spanning expander packing: a direct routing corollary](expander-packing.md)
 - [Certified layers without superposition for disjoint-path routing](routing.md)
 
+## Strongest retained quantitative bound
+
+The [rank-sensitive layer count](../../manuscripts/matching-and-routing/rank-sensitive-layer-count.md), Sections 1–4, strengthens the rank-free weighted bound for the same explicit certifying algorithm. It keeps the logarithmic root factor and uses the full listed hyperedge incidence volume. Its constant-rank consequence is <code class="math">p\log(p+4)\exp O_r(1/\epsilon)</code> when <code class="math">\Delta\ge p^\epsilon</code>, plus unused vertex-list reading. Section 5 gives the separate linear greedy and classical rank-one endpoints. These existing refinements were retained in the repository and are now displayed in the main theorem and problem card; this restoration is not a new discovery claim.
+
+The same rate applies to the reanalyzed public **explicit** BHHS operation sequence, whose adopted resets form at most 26 epochs per layer. It does not assume the separate, still-conditional approximate-extension observation. An implicit routing application must retain the destructive extractor's full per-build work and its effective path rank; explicit incidence <code class="math">p</code> cannot be replaced silently by a graph edge count.
+
 ## Mathematical dependencies
 
 The routing theorem first states a generic destructive-distance

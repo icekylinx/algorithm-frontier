@@ -1,6 +1,6 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/matroid-failure-summaries/proof.md
-% Recovered-source SHA-256: b52bc2f74b0d2abbee67eab0613a6bfccc0703708b3f210f7ebca600252f40b1
+% Recovered-source SHA-256: 45390a17c459921c6d66b8fc0181c30667abbfed7969aa183fea70b53e759941
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
 % Shared original Subset Sum preamble: manuscripts/paper-style.tex.
@@ -45,6 +45,22 @@ The unique minimum restriction preserving every surviving prefix of one fixed or
 Ranks zero and one have bounds zero and three. The exact worst-case size is \(3r\) for every \(r\le3\), and \textbf{13 at rank four}. At every rank, at most three occurring labels also give \(3r\). Thus the rank-four, four-label, 13-item obstruction is minimal in all three of rank, label count and ground size for violating the represented \(3r\) bound at \(h=2,d=1\). The canonical-basis tree constructs the summary with at most \(N(1+r+r^2)\) independence queries after sorting. Section 7 gives the proof route and complete companion.
 
 If the one-failure union adds exactly one item \(x\) to the original basis, let \(t\) count the single failures whose canonical basis contains \(x\). Then the stronger bound \(r+2t\le3r\) is sharp at every \(1\le t\le r\), even for represented matroids. The summary can be found with \(N(1+\ell_0+\binom{t+1}{2})\) independence queries, or with \(\binom t2\) in place of \(\binom{t+1}{2}\) when \(x\) is unlabelled. If the one-failure union adds no item, the original basis suffices.
+
+\textbf{Theorem 7 (fixed rank-loss contraction).} Suppose each item has at most one label. Let \(B_0\) be the unfailed canonical basis, let \(b_0\) count its unlabelled items, and let \(\delta_\lambda=r-r_M(E\setminus D_\lambda)\). The replacement total is
+
+\[
+T=\sum_\lambda |B_{\{\lambda\}}\setminus B_0|
+ =r-b_0-\sum_\lambda\delta_\lambda.
+\]
+
+There is a fixed independent \(Q\subseteq B_0\) with \(|Q|=r-T\) such that \(M'=M/Q\) has rank \(T\) and, for every failure set \(F\),
+
+\[
+B_F=(Q\cap E_F)\,\dot\cup\,B'_F,
+\qquad H_h(M)=Q\,\dot\cup\,H_h(M').
+\]
+
+Here \(B'_F\) is the canonical surviving basis in the inherited order, and \(H_h\) is the unique smallest preserver of every surviving prefix rank. The identity also reconstructs every original prefix rank by adding the number of surviving contracted items in that prefix. Computing \(Q\) uses at most \((1+\ell_0)N+r\) independence queries, with \(\ell_0\le r\). A basis tree on the minor then uses at most \((N-r+T)\sum_{j=0}^{h'}T^j\) further queries, where \(h'\) is clipped to the minor's occurring labels. At \(T=0\), \(B_0\) alone suffices for every budget. At \(T=1\), the sharp all-budget support bound is \(r+h\). Section 8 proves the reduction and records its remaining rank-adaptive bounds.
 
 \hypertarget{af-240b5086c5-proof-of-the-represented-theorem}{%
 \subsection{2. Proof of the represented theorem}\label{af-240b5086c5-proof-of-the-represented-theorem}}
@@ -153,9 +169,27 @@ Three-copy partition matroids attain \(3r\). The 13-item obstruction attains the
 
 For the additional singleton case, rank-loss superadditivity confines all new winners to pairs of witness labels, together with pairs containing the label of \(x\). Contracting the other original-basis elements yields a rank-\(t\) circuit. Two explicit flat-intersection calculations preserve these tests even when contracted elements carry failed labels. In that quotient, a later item resolves the edges of a complete multipartite graph, except possibly edges incident to its own failed label. The unresolved graph has clique blocks; the potential \(\sum_B(2|B|-3)\) drops at least one for each new winner. It starts at \(2t-1\) for labelled \(x\), giving \(r+1+(2t-1)=r+2t\). The complete proof, a faster query enumeration and sharp binary representations appear in Theorem 3 of the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure companion}.
 
+\hypertarget{af-240b5086c5-fixed-contraction-by-single-failure-rank-losses}{%
+\subsection{8. Fixed contraction by single-failure rank losses}\label{af-240b5086c5-fixed-contraction-by-single-failure-rank-losses}}
+
+For each label meeting \(B_0\), compute the canonical basis \(B_\lambda\) after that single failure. Extend it to a full basis using items of \(B_0\cap D_\lambda\). The added set \(Q_\lambda\) has size \(\delta_\lambda\) and is independent over the entire complement \(E\setminus D_\lambda\). Let \(Q\) consist of these disjoint sets and the unlabelled items of \(B_0\). Its size is \(r-T\) and it is independent as a subset of \(B_0\).
+
+Fix a failure set \(F\), and put \(Q_s=Q\cap E_F\) and \(Q_f=Q\setminus E_F\). The failed blocks are jointly independent over \(E_F\): when adding one \(Q_\lambda\), every previously present item lies outside \(D_\lambda\), so that block adds all of its \(|Q_\lambda|\) rank. This argument also works over every subset of \(E_F\). Therefore, for \(X\subseteq E_F\setminus Q\),
+
+\[
+r_{M/Q}(X)=r_M(X\cup Q_s)-|Q_s|
+          =r_{(M|E_F)/Q_s}(X).
+\]
+
+Greedy persistence gives \(Q_s\subseteq B_F\). Bases of the contraction correspond to original bases containing \(Q_s\), with those common items removed. Removing common items preserves lexicographic order, so the canonical basis decomposes exactly as in Theorem 7. Intersecting that identity with every original order prefix proves the corresponding rank identity; taking unions over failures gives the exact minimum-summary identity. This justifies contraction even for items whose labels fail.
+
+Every proved rank-based support bound now applies at rank \(T\), followed by reinserting the \(r-T\) fixed items. Thus one failure has bound \(r+T\); for \(h\ge2\) the Bernoulli prefix refinement gives \(r+h^hT/(h-1)^{h-1}\). For two failures, \(T\le3\) gives \(r+2T\) and \(T=4\) gives \(r+9\). A rank-one minor has a single-child basis tree with at most \(h+1\) nodes, which gives \(r+h\). A colored parallel chain with \(r-1\) unlabelled coloops attains that endpoint.
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md}{complete contraction proof} includes the joint-independence argument, the contraction/deletion equality, the original-prefix identity, query-set costs, the binary-budget cutoff, and the \(T=0,1\) cases. It makes no representation assumption, and it keeps the item order fixed. This proves Theorem 7.
+
 \hypertarget{af-240b5086c5-complete-proofs}{%
 \subsection{Complete proofs}\label{af-240b5086c5-complete-proofs}}
 
-\href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md}{Represented lift and field construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md}{arbitrary-matroid and submodular proofs}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md}{weighted oracle FPT construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md}{weighted two-failure obstruction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure profile bounds and exact rank-four maximum}.
+\href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md}{Represented lift and field construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md}{arbitrary-matroid and submodular proofs}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md}{weighted oracle FPT construction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md}{weighted two-failure obstruction}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md}{two-failure profile bounds and exact rank-four maximum}; \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md}{rank-loss contraction and all-budget adaptive bounds}.
 
 \textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

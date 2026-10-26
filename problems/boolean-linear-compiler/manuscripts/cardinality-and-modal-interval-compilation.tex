@@ -1,0 +1,249 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: problems/boolean-linear-compiler/manuscripts/cardinality-and-modal-interval-compilation.md
+% Recovered-source SHA-256: 3f9e2e64b9c7420ba5527ab828a9b89676fc0d7156b8e1ca4b02a745dde4f24d
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-2bf1c1784c-cardinality-and-coefficient-normalization-for-exact-boolean-interval-compilation}{%
+\section{Cardinality and coefficient normalization for exact Boolean interval compilation}\label{af-2bf1c1784c-cardinality-and-coefficient-normalization-for-exact-boolean-interval-compilation}}
+
+\textbf{Status: ready for review.} The complete local proof and independent finite checks have been reviewed within this project. This companion keeps the previously proved support-sized interval lemma available as a separate unconditioned result. The present compiler is deterministic whenever its supplied Subset Sum backend is deterministic. No literature-priority claim is made.
+
+\href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/boolean-linear-compiler/README.md}{Problem statement} · \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/boolean-linear-compiler/manuscripts/boolean-linear-optimization-compiler.md}{Unconditioned interval lemma} · \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/boolean-linear-compiler/verify/README.md}{Verification}
+
+\hypertarget{af-2bf1c1784c-problem-backend-and-guarantee}{%
+\subsection{1. Problem, backend and guarantee}\label{af-2bf1c1784c-problem-backend-and-guarantee}}
+
+The original variables are \(x\in\{0,1\}^n\). The input consists of signed integer interval rows \(\ell_i\le a_i^\top x\le u_i\), any number of signed exact linear equalities, and optionally a linear objective or an explicitly listed polynomial-size sequence of lexicographic linear objectives. All coefficients, endpoints and objective data are binary encoded. Let \(L\) be the full input length. Original variables and rows are explicitly inventoried, so both \(n\) and the number of rows are at most \(L\). A sparse coefficient representation still includes this original-variable inventory. Empty intervals are immediately infeasible. Original zero rows are checked directly before logarithms or support parameters are formed.
+
+Assume a supplied indexed-witness Subset Sum algorithm runs on \(v\) indexed items in time \(\mathrm{poly}(L')2^{\alpha v}\) and, when a space guarantee is specified, space \(\mathrm{poly}(L')2^{\sigma v}\). Here \(L'\) is the complete binary length of the reduced instance, and \(\alpha,\sigma\ge0\). The compiler requires the backend to return an indexed witness, directly or through a witness-recovery reduction included in its stated bound. It does not deduce a small-space guarantee from a decision-time theorem.
+
+For each interval row, choose an integer coefficient value \(c_i\) of maximum multiplicity among its \(n\) entries and define its \textbf{modal defect}
+
+\[
+d_i=n-\max_c|\{j:a_{ij}=c\}|.
+\]
+
+A fixed tie rule, such as least absolute value and then least signed value, makes this deterministic. The empty and one-variable input cases are solved by direct evaluation, so the definitions below concern \(n\ge2\).
+
+If \(d_i=0\), the row is constant. In cardinality layer \(k\) it is exactly the scalar test \(\ell_i\le c_i k\le u_i\). It contributes no slack variables and can reject that layer immediately. Let \(I\) be the set of nonconstant interval rows. For \(i\in I\), put \(W_i=u_i-\ell_i\) and
+
+\[
+\bar\kappa_i=\min\{W_i+1,d_i,\lfloor n/2\rfloor\},\qquad
+\bar q_i=\lceil\log_2\bar\kappa_i\rceil,\qquad
+\bar Q=\sum_{i\in I}\bar q_i.
+\]
+
+For each nontrivial cardinality \(1\le k\le n-1\), the construction below produces \(p_i(k)\) short tests for row \(i\), each with at most
+
+\[
+\kappa_i(k)=\min\{W_i+1,d_i,k,n-k\}
+\]
+
+integer values. The catalogue bound is
+
+\[
+p_i(k)\le2\lceil\log_2(W_i+1)\rceil+1.
+\]
+
+It has a single member when \(W_i+1\le\min\{d_i,k,n-k\}\). Define
+
+\[
+P_{\rm card}=\max\left(\{1\}\cup
+ \left\{\prod_{i\in I}p_i(k):1\le k\le n-1\right\}\right).
+\]
+
+The explicit one covers an empty family of nontrivial calls and absorbs direct input processing. Constant-row rejections may simply skip their layers. The maximum uses the actual product in each layer; a one-test shortcut valid in one layer cannot be reused without checking another layer.
+
+\textbf{Theorem 1 (normalized cardinality compiler).} For every integer budget \(0\le B\le\bar Q\), the original feasibility and indexed-witness problem can be solved in time
+
+\[
+\mathrm{poly}(L)P_{\rm card}
+2^{\alpha n+\bar Q-(1-\alpha)B}
+\]
+
+and, when supplied by the backend, space
+
+\[
+\mathrm{poly}(L)2^{\sigma(n+B)}.
+\]
+
+The same bounds support the stated optimization tasks, up to the polynomial factor. Exact original equalities contribute no slack parameter. Constant rows are treated as above, and \(n\le1\) and \(k\in\{0,n\}\) require direct evaluation only. For a prescribed nontrivial cardinality, use that layer's sharper \(Q_k=\sum_{i\in I}\lceil\log_2\kappa_i(k)\rceil\) and catalogue product instead.
+
+If the modal normalization is omitted, every statement remains true with the original row support \(s_i\) in place of \(d_i\). Thus cardinality conditioning alone already improves the unconditioned cap \(\min\{W_i+1,s_i\}\) to \(\min\{W_i+1,s_i,k,n-k\}\). Since \(d_i\le s_i\), modal normalization never worsens this uniform slack parameter. Catalogue sizes are actual construction data; no universal comparison between the finer catalogue products is asserted.
+
+\hypertarget{af-2bf1c1784c-exact-coefficient-normalization-within-a-layer}{%
+\subsection{2. Exact coefficient normalization within a layer}\label{af-2bf1c1784c-exact-coefficient-normalization-within-a-layer}}
+
+Fix a cardinality \(k\) and preserve the exact equality
+
+\[
+\sum_{j=1}^n x_j=k.
+\]
+
+For row \(i\), put \(b_{ij}=a_{ij}-c_i\). On this layer,
+
+\[
+a_i^\top x=b_i^\top x+c_i k.
+\]
+
+Consequently the original row is equivalent to
+
+\[
+\ell_i-c_i k\le b_i^\top x\le u_i-c_i k.
+\]
+
+The new width is still \(W_i\), and the support of \(b_i\) is exactly \(d_i\). There were at least \(n-s_i\) zero entries in the original row, so its most frequent coefficient occurs at least that often, proving \(d_i\le s_i\). If \(d_i=0\), the displayed interval is a direct test of zero and no interval compiler is called for that row.
+
+The transformation is valid for positive, zero or negative \(c_i\). It changes neither the original variables nor any original exact equality. It is applied only to interval tests under the retained cardinality guard. If the largest coefficient magnitude is \(A\), centered coefficients have magnitude at most \(2A\), and shifted endpoints have magnitude at most \(\max\{|\ell_i|,|u_i|\}+nA\). Their bit lengths are polynomial in \(L\); no pseudopolynomial dependence on \(c_i k\) is introduced.
+
+\hypertarget{af-2bf1c1784c-a-signed-interval-disjunction-with-a-cardinality-guard}{%
+\subsection{3. A signed interval disjunction with a cardinality guard}\label{af-2bf1c1784c-a-signed-interval-disjunction-with-a-cardinality-guard}}
+
+Consider a current signed row \(a\) on \(n\) original Boolean variables and an interval \([\ell,u]\); set \(W=u-\ell\). Suppose its original support at the start of this row's recursion is \(d\ge1\), and \(1\le k\le n-1\). For each coordinate, write
+
+\[
+a_j=2a'_j+\epsilon_j,\qquad
+ a'_j=\lfloor a_j/2\rfloor,\qquad \epsilon_j\in\{0,1\}.
+\]
+
+This convention also holds for negative odd integers. Let \(O\) be the odd-index set and \(t=|O|\). On the retained cardinality layer,
+
+\[
+a^\top x=2(a')^\top x+\delta(x),\qquad
+\delta(x)=\sum_{j\in O}x_j\in[A,D],
+\]
+
+where
+
+\[
+A=\max\{0,k+t-n\},\qquad D=\min\{k,t\},\qquad
+ e=D-A=\min\{k,n-k,t,n-t\}.
+\]
+
+The lower bound counts the selected coordinates that cannot fit outside \(O\); the upper bound counts those that can lie inside \(O\). Splitting into \(k+t\le n\) and \(k+t>n\), then comparing \(k\) with \(t\), proves the width identity. In particular \(e\le\min\{d,k,n-k\}\), since integer flooring preserves every original zero coefficient and hence \(t\le d\) at every recursion depth.
+
+Set
+
+\[
+\ell'=\left\lceil\frac{\ell-A}{2}\right\rceil,\qquad
+ u'=\left\lfloor\frac{u-D}{2}\right\rfloor.
+\]
+
+The row is equivalent, on the cardinality layer, to the disjunction of the rounded-row test \(\ell'\le(a')^\top x\le u'\) and the following nonempty boundary tests on the current row:
+
+\[
+[\ell,\min\{u,2\ell'+D-2\}],\qquad
+[\max\{\ell,2u'+A+2\},u].
+\]
+
+Indeed the rounded-row test implies a value between \(2\ell'+A\ge\ell\) and \(2u'+D\le u\). If an original feasible assignment has rounded value below \(\ell'\), its original value is at most \(2\ell'+D-2\). If its rounded value is above \(u'\), its original value is at least \(2u'+A+2\). These cases also cover an empty child interval \(\ell'>u'\). Boundary tests are clipped to \([\ell,u]\), so each reverse implication is immediate.
+
+The lower boundary has at most
+
+\[
+2\ell'-(\ell-A)+e-1\le e
+\]
+
+integers, and the upper has at most
+
+\[
+(u-D)-2u'+e-1\le e.
+\]
+
+If \(e=0\), both are empty, including the case \(t=0\). Any nonempty child has endpoint difference at most \(\lfloor(W-e)/2\rfloor\le\lfloor W/2\rfloor\).
+
+Stop when an interval contains at most \(c=\min\{d,k,n-k\}\ge1\) values. Each rounding step emits at most two short boundary tests and recurses on only one child. Overlapping boundary tests are retained literally; their overlap creates no further recursion. Thus the catalogue contains at most \(2\lceil\log_2(W+1)\rceil+1\) tests, each with at most \(\min\{W+1,d,k,n-k\}\) integer values. If the initial interval already fits that cap, its catalogue consists of that interval alone.
+
+The recursion has at most \(\lceil\log_2(W+1)\rceil\) rounds before a single-value interval is reached. Each updated endpoint has absolute value at most one half the previous endpoint magnitude plus \(n/2+1\), while flooring never increases coefficient bit length. All catalogues are therefore computed in polynomial binary time and space, even when coefficients and endpoints have large magnitude. Reversed input intervals and zero rows were handled directly.
+
+\hypertarget{af-2bf1c1784c-slack-variables-and-exact-equation-packing}{%
+\subsection{4. Slack variables and exact equation packing}\label{af-2bf1c1784c-slack-variables-and-exact-equation-packing}}
+
+Fix a nontrivial layer, choose one catalogue interval from each nonconstant row, and put \(q_i=\lceil\log_2\kappa_i(k)\rceil\). Allocate integers \(0\le b_i\le q_i\) with total \(B_k\). Partition each selected short interval into consecutive chunks of at most \(2^{b_i}\) integer values. There are at most \(2^{q_i-b_i}\) chunks. Across all catalogue choices and chunks, the number of branches is at most
+
+\[
+\left(\prod_{i\in I}p_i(k)\right)2^{Q_k-B_k}.
+\]
+
+A chunk \([a,a+w]\) has \(0\le w\le2^{b_i}-1\). If \(w=0\), use its exact equality. Otherwise let \(q=\lceil\log_2(w+1)\rceil\le b_i\). The \(q\) positive integers
+
+\[
+1,2,\ldots,2^{q-2},\quad w-(2^{q-1}-1)
+\]
+
+have subset sums exactly \(0,\ldots,w\); for \(q=1\) the initial list is empty. The initial powers cover \([0,2^{q-1}-1]\). The final shift starts at an integer between \(1\) and \(2^{q-1}\), so its translated interval overlaps or abuts the first and ends at \(w\). Add these coins as coefficients of distinct new Boolean variables, and replace the chunk by the equality
+
+\[
+a_{\rm current}^{\top}x+\text{slack}=a+w.
+\]
+
+This gives an exact witness reduction, although different slack witnesses can represent the same value. It uses at most \(b_i\) new variables for the row and at most \(n+B_k\) variables overall. Original exact equalities and the cardinality equality remain in the equation system with coefficient zero on every slack variable. This is essential: the interval equivalences in Section 3 only hold on that original-variable cardinality layer.
+
+To pack all signed equalities \(v_r^\top z=t_r\) into one exact Subset Sum equation, choose
+
+\[
+R=1+\max_r\left(|t_r|+\sum_j|v_{rj}|\right)
+\]
+
+and use coefficients \(w_j=\sum_r v_{rj}R^r\) and target \(T=\sum_r t_rR^r\). Every residual \(v_r^\top z-t_r\) has absolute value strictly below \(R\). If the packed residual is zero, reducing modulo \(R\) forces the lowest residual to be zero, and division by \(R\) repeats the argument for every row. The reverse implication is immediate. Thus the packed equation is equivalent to every branch equality, including the retained cardinality guard.
+
+If the backend accepts only nonnegative item values, replace \(z_j\) by \(1-y_j\) whenever \(w_j<0\), make its coefficient \(|w_j|\), and replace the target by \(T-\sum_{w_j<0}w_j\). This is an indexed Boolean bijection. Zero coefficients may be discarded with their bits fixed to zero; direct residual verification then restores a valid witness. An out-of-range target is rejected directly. The radix, packed coefficients and target have polynomial bit length because there are polynomially many rows, each of polynomial bit length.
+
+\hypertarget{af-2bf1c1784c-a-uniform-budget-over-all-layers}{%
+\subsection{5. A uniform budget over all layers}\label{af-2bf1c1784c-a-uniform-budget-over-all-layers}}
+
+For \(n\le1\), evaluate the at most two original assignments. Otherwise directly evaluate the two assignments of cardinality zero and \(n\), and process the other layers sequentially. Constant rows reject inconsistent layers before any Subset Sum call. Original exact equalities are still checked in every branch.
+
+For a chosen uniform \(0\le B\le\bar Q\), set
+
+\[
+B_k=\min\{B,Q_k\}.
+\]
+
+Any integer total between zero and \(Q_k=\sum_iq_i\) can be distributed with \(0\le b_i\le q_i\), for example by filling rows in order. We have
+
+\[
+Q_k-B_k\le\bar Q-B,\qquad B_k\le B.
+\]
+
+Therefore the total backend cost in one layer is at most
+
+\[
+\mathrm{poly}(L)P_{\rm card}
+ 2^{Q_k-B_k+\alpha(n+B_k)}
+\le
+\mathrm{poly}(L)P_{\rm card}
+ 2^{\alpha n+\bar Q-(1-\alpha)B}.
+\]
+
+Both inequalities above, together with \(\alpha\ge0\), prove this even when \(B>Q_k\) or \(\alpha>1\). The reduced space is at most \(\mathrm{poly}(L)2^{\sigma(n+B)}\) for \(\sigma\ge0\). Polynomially many cardinality layers add only a polynomial time factor, and sequential processing reuses the same workspace. This proves Theorem 1 for feasibility and indexed witnesses. The quantities \(p_i(k)\) and their products can themselves be computed in polynomial time and have polynomial bit length.
+
+\hypertarget{af-2bf1c1784c-objectives-and-a-concrete-improvement}{%
+\subsection{6. Objectives and a concrete improvement}\label{af-2bf1c1784c-objectives-and-a-concrete-improvement}}
+
+For a linear objective threshold, append its signed interval row and apply the same guarded normalization and interval disjunction. Enumerate every integer target in each emitted short interval instead of assigning it slack bits. At most \(O(n\log(W_{\rm obj}+2))\) exact target tests are produced. This is a polynomial factor and adds no Boolean variables or slack contribution to \(\bar Q\). The objective still refers to the original variables: subtracting a modal coefficient only shifts a layer's threshold by the known value \(c k\). Threshold feasibility and witness values are thus interpreted in the original objective, including when \(c<0\).
+
+Binary search over the signed objective range takes polynomially many threshold queries. To optimize a listed lexicographic sequence, retain each attained value as an exact original-variable equality before considering the next objective. Directly evaluated extreme-cardinality assignments are compared by the same original objective. This completes the optimization statement of Theorem 1.
+
+For example, take eight original variables, an integer \(|M|\ge4\), and the dense row
+
+\[
+a=(M,M,M,M,M,M,M,M+3).
+\]
+
+Its ordinary support is eight. On cardinality layer \(k=3\), coefficient normalization changes it to \((0,0,0,0,0,0,0,3)\) and shifts its interval by \(3M\). If the original interval is \([3M+1,3M+4]\), the centered interval is \([1,4]\). The unnormalized cardinality cap is three and its row slack parameter is \(\lceil\log_2 3\rceil=2\). The normalized support and cap are both one, so this row's slack parameter becomes zero. The example works for either sign of \(M\), including large binary values. Other rows keep their own contributions to \(\bar Q\); this example does not assert that a general system has zero total slack.
+
+\hypertarget{af-2bf1c1784c-independent-finite-checks}{%
+\subsection{7. Independent finite checks}\label{af-2bf1c1784c-independent-finite-checks}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/boolean-linear-compiler/verify/check_cardinality_compiler.py}{integrated checker} compares the compiled catalogue directly with the unmodified original Boolean rows. It also checks the conditional disjunction on every generated rounding frame and on additional raw parity fixtures for the version without modal normalization. Negative common coefficients, constant rows, strict support reductions, reversed intervals, zero/one-variable inputs, signed floor, empty children, constant remainders and large binary shifts are explicit cases.
+
+The completed suite covers 781 exhaustive coefficient rows and 255 additional fixtures, plus 24 raw parity-layer fixtures: 126,629 layer intervals, 394,214 direct assignment comparisons and 418,103 local disjunction comparisons. It includes 52,936 negative shifts, 2,308 constant-row cases, 18,598 constant remainder frames and 11,319 empty child frames.
+
+The integration suite enumerates every packed Boolean assignment and compares the projected solution set with direct evaluation of the original system, leaving original exact equalities unchanged. It covers 306 systems, 726 nontrivial layers, 846 budget profiles, 4,120 packed instances and 117,684 packed assignments. There are 172 layers with a strict reduction in the total slack parameter and 309 directly rejected constant-row cases.
+
+A separate exact-integer check covers 468,325 rational exponent comparisons for all \(0\le Q_k,B\le\bar Q\le64\) and five nonnegative backend exponents, including one above one. The checker refuses Python \texttt{-O}. It uses only the standard library and elementary helpers from the existing unconditioned interval checker. These finite checks supplement the proof; they do not run or certify the supplied exponential-time Subset Sum backend.
+
+\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.

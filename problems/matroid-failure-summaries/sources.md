@@ -11,6 +11,7 @@
 | Sharp one-failure weighted oracle summary | [Union of the canonical basis and its relevant single-label replacements](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md#7-weighted-oracle-summaries-for-one-label-failure) | An independence oracle and one fixed item order; uniform polynomial preprocessing. |
 | Arbitrary-budget weighted oracle summary | [Canonical-basis tree, original-basis size refinement and one-pass alternative](manuscripts/weighted-oracle-prefix-fpt-construction.md) | An independence oracle, fixed order and explicit labels; no external summary implementation. |
 | Exact two-failure rank-four maximum and minimality | [Replacement profiles, the circuit missing-pair graph and few-label bound](manuscripts/two-failure-oracle-prefix-bounds.md) | An arbitrary independence oracle; two failures and at most one label per item. All arguments follow from the matroid axioms. |
+| Fixed rank-loss contraction and rank-adaptive prefix summaries | [Private rank directions, joint failed-block independence and the exact canonical-basis decomposition](manuscripts/rank-loss-contraction-for-prefix-summaries.md) | An independence oracle, one fixed order, and at most one label per item; no representation or additional external theorem. |
 | Weighted sharp-bound obstruction | [The 13-item construction, exact failure table and amplification](manuscripts/weighted-oracle-two-failure-obstruction.md) | An explicitly defined rank-four nonrepresentable matroid; no external algorithm. |
 | Integral values, real marginals and entropy | [Diminishing returns and the circuit-blocking permutation argument](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md#9-monotone-submodular-functions) | A monotone submodular value oracle for constructions; finite joint entropy for the entropy inequality. |
 
@@ -24,6 +25,14 @@ Random permutations and independent label failures are used only to bound
 the sizes of deterministic outputs. None of these constructions samples
 queries or has a probability of error. Oracle-query bounds do not supply
 a bit encoding or implementation of an arbitrary input oracle.
+
+The fixed-contraction theorem removes the directions accounted for by
+single-label rank losses and unlabelled original-basis items. Its effective
+rank is the total number of single-failure replacement appearances. The
+proof uses only the matroid rank axioms and greedy order, then invokes the
+locally proved prefix bounds on that lower-rank minor. It does not extend
+the contraction statement to overlapping label lists or to one set that
+works for all cost orders.
 
 ## Background and comparison sources
 

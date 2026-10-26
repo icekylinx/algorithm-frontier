@@ -172,8 +172,12 @@ augmenting paths. The exact derivation and driver are in
 [deterministic-phase-cost-and-guards.md](deterministic-phase-cost-and-guards.md) gives the complete phase sum:
 local positivity, objective losses, large tick jumps, all local and
 global integral resets, nominal lifetime sizes, and first-failure
-guard adequacy. The numerical primitives' own eventual prerequisites
-remain explicit dependencies of that proof.
+guard adequacy. That generic composition states the numerical interfaces
+it uses. For the four-fifths matching theorem, those interfaces are
+instantiated by the explicit local constructions in
+[Theorem 11.6](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization):
+raw cycle quality, chronological repair, occurrence retirement, finite
+bit bounds, and parameter-uniform routing all have named suppliers.
 
 ## 6. Components supplied by this checkpoint
 
@@ -183,11 +187,18 @@ event overlays, deterministic local tight discovery and pair exchange,
 the two constructive raw numerical routes, the direct optimum-gap
 reduction, and the independent-check uniformization.
 
-These changes establish the candidate fast branch only together with
-the named public primitives and the correctness of the reconstructed
-arguments. A flaw in a shared projection or priced-client proof would
-affect both numerical routes. Writing those arguments out does not
-constitute external verification. The final
-verifier would still prevent an incorrect matching from being accepted,
-but it would not preserve the improved time bound. That distinction is
-part of the theorem's stated research status.
+These constructions establish the deterministic mathematical branch using
+the named public results and the reconstructed local proofs. The full
+dependency closure and its parameter substitution are stated in
+[the matching theorem, Sections 11.6–12](../../problems/general-matching/proof.md#116-deterministic-cycle-search-realization).
+The finite first-failure interleaving obtains its improved time bound
+from that favorable proved parameter choice. Its final matching verifier
+separately guarantees that only an exact output is returned.
+
+These are research proofs available for review; external peer review and
+formal verification are separate forms of evidence. Executable coverage
+is likewise a separate question: the repository's
+[ordinary polynomial reference solver](../../problems/general-matching/reference/README.md)
+implements exact matching and independently checked certificates, while
+the fast construction is specified by the mathematical proof. Absence of
+that fast executable is not an additional hypothesis of the theorem.

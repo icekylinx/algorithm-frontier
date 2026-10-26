@@ -1,0 +1,124 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: manuscripts/graph-backends/exact-demand-flow-trimming.md
+% Recovered-source SHA-256: 0ff46f087d42a1f5309ea9273f7c4e964a50fca73f22283f1955697940b50bd4
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-32c0fc642d-exact-demand-trimming-in-a-supplied-directed-flow}{%
+\section{Exact demand trimming in a supplied directed flow}\label{af-32c0fc642d-exact-demand-trimming-in-a-supplied-directed-flow}}
+
+\textbf{Ready for review.} Complete coordinatewise subflow construction, selected directed forest, cycle cancellation, source excess removal and near-linear operation ledger. Includes sink-outgoing preprocessing, native arc identities and finite-bit arithmetic.
+
+\textbf{Dependencies and scope.} The deterministic dynamic-forest interface is a named published data-structure dependency. A supplied feasible flow and strictly positive nonsink targets are part of the input model.
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/verify/README.md}{verification note} identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
+
+\textbf{Result.} A supplied feasible flow can be trimmed to exact positive nonsink demands in deterministic near-linear arithmetic work, without increasing any arc flow. The construction supports loops, parallel records, and opposite directed records, preserves integral values, and needs no maximum-flow computation.
+
+\textbf{Theorem (exact-demand subflow).} Let a directed graph have \(n\) vertices, \(m\) arc records, designated sinks, and nonnegative supplied flow \(f\). Suppose every nonsink has divergence at least its prescribed positive target \(w_v\). After discarding any outgoing sink flows as described below, one can construct \(0 ≤ f′ ≤ f\) with exact divergence \(w_v\) at every nonsink in \(O((n+m) polylog(n+m+2))\) exact arithmetic operations. No sink inflow target is imposed. Output consists of the flow on the original arc records; isolated vertices and zero records are included in the input scan.
+
+The proof is complete below. Its data-structure dependency is the standard deterministic dynamic-forest interface: Alstrup, Holm, de Lichtenberg, and Thorup, \href{https://arxiv.org/abs/cs/0310065}{\emph{Maintaining Information in Fully-Dynamic Trees with Top Trees}}, Section 2 and the path-query applications. Path minima, lazy path additions, and extraction of a minimizing edge use constant-size cluster summaries; repeated extraction is charged to the edges removed. No unproved graph-optimization primitive is assumed.
+
+This is an independent supporting result restored from an early checkpoint. The current \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/proof.md}{four-fifths maximum-matching theorem} does not call it. Its two static applications are \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md}{confluent rounding} and local rounding of a chosen region. A proof of this subflow theorem alone makes no dynamic matching-time claim.
+
+\hypertarget{af-32c0fc642d-input-and-target}{%
+\subsection{1. Input and target}\label{af-32c0fc642d-input-and-target}}
+
+Let a directed graph have nonnegative arc flow \texttt{f}. Its designated sinks have no outgoing arcs. At every nonsink \texttt{v}, its current divergence is
+
+\[
+d_v=\mathrm{outflow}(v)-\mathrm{inflow}(v)\ge w_v>0.
+\]
+
+The task is to produce \texttt{0\textless{}=f\textquotesingle{}\textless{}=f} with divergence exactly \texttt{w\_v} at each nonsink, allowing the amounts consumed by sinks to decrease. Self-loops and distinct parallel/antiparallel arcs are permitted. Integral input data must remain integral.
+
+If the supplied representation initially has outgoing arcs from a designated sink, including sink-to-sink arcs, first set ALL such flows to zero and discard those arcs. At a nonsink this can only remove incoming flow, so its divergence increases and remains at least its target. Recompute these divergences and excesses. There is no prescribed divergence target at sinks, so this preprocessing is valid and takes linear work. In the row/bin applications sinks already have no outgoing arcs: only assigned bins in the active region supply row arcs.
+
+The construction uses \texttt{O((n+m)\ polylog\ n)} exact arithmetic operations. It need not remove every directed cycle from the final support.
+
+\hypertarget{af-32c0fc642d-selected-directed-forest}{%
+\subsection{2. Selected directed forest}\label{af-32c0fc642d-selected-directed-forest}}
+
+Maintain a subset \texttt{T} of positive-flow arcs that forms an undirected forest, directed toward each component's root. Every vertex has at most one selected outgoing arc. Initially the forest is empty.
+
+A nonsink root always has a positive outgoing arc: its divergence is strictly positive throughout. That arc cannot already be its selected outgoing arc, since the root has none.
+
+When extending a component root \texttt{r}, choose any positive outgoing arc \texttt{e=(r,u)}.
+
+\begin{itemize}
+\tightlist
+\item
+  If \texttt{r,u} lie in different selected trees, link them with \texttt{e}. The former root tree now points into the other tree.
+\item
+  If they lie in the same selected tree, \texttt{e} followed by the selected path \texttt{u} to \texttt{r} is a directed cycle. Subtract the minimum flow on that cycle, delete all zero-flow arcs, and insert \texttt{e} into the selected forest if it remains positive. At least one old selected cycle edge was then cut, so this insertion creates no undirected cycle.
+\end{itemize}
+
+For a self-loop, subtract its whole flow and delete it immediately. All changes are monotone decreases in actual flow and preserve every vertex divergence during cycle cancellation.
+
+\hypertarget{af-32c0fc642d-remove-each-excess-supply}{%
+\subsection{3. Remove each excess supply}\label{af-32c0fc642d-remove-each-excess-supply}}
+
+For every nonsink \texttt{v}, let its remaining excess be \texttt{e\_v=d\_v-w\_v}. While \texttt{e\_v\textgreater{}0}, extend the root of \texttt{v}'s selected tree by the preceding rule until that tree reaches a designated sink. The selected path from \texttt{v} to that sink is now directed and has positive flow.
+
+Subtract
+
+\[
+\delta=\min\left\{e_v,\ \min_{e\in P_{v,\mathrm{sink}}}f_e\right\}.
+\]
+
+from every arc of the path, and reduce \texttt{e\_v} by \texttt{delta}. Delete every zero-flow arc. This decreases the divergence only at \texttt{v}, by exactly \texttt{delta}; all intermediate divergences are unchanged. Therefore every nonsink divergence remains at least its positive target. In particular, the root-extension rule never gets stuck before reaching a sink.
+
+When all excesses vanish, the resulting flow has the required target divergences and is coordinatewise bounded by the input flow.
+
+\hypertarget{af-32c0fc642d-amortized-work-and-arithmetic}{%
+\subsection{4. Amortized work and arithmetic}\label{af-32c0fc642d-amortized-work-and-arithmetic}}
+
+Use a link-cut or top-tree forest supporting path minimum, path subtraction, link/cut, and enumeration of zero minima. After a path update, expose the affected path and collect every zero edge identifier before cutting any of them. The zero search therefore never assumes that the original path is still connected after its first cut. Each cycle cancellation permanently deletes at least one original arc. Every source-to-sink subtraction either deletes an arc or exhausts one source's excess. Hence there are \texttt{O(m+n)} such substantive operations.
+
+A selected link decreases the number of forest components. Components increase only after cuts of permanently deleted arcs. Thus the number of selected links is also \texttt{O(m+n)}, including links of surviving candidate edges after cycle cancellation. Outgoing adjacency lists can discard zero arcs permanently; no positive edge is reintroduced.
+
+All dynamic-tree operations have logarithmic overhead. The result is \texttt{O((m+n)\ polylog\ n)} arithmetic work. The path updates use only subtraction, minimum, and comparisons, so they preserve integrality and never increase an arc flow. Computing divergences and excesses also uses sums. If integral arc values and targets initially have at most \(b\) bits, these sums use \(O(b+log(m+2))\) bits; the theorem counts arithmetic operations and charges their actual bit cost. The same conclusion applies after clearing a supplied common denominator. Arbitrary rational input must charge the resulting denominator and sum bit lengths. Arc identities distinguish an antiparallel two-edge cycle from the forbidden use of one directed arc backward; this construction uses only genuine directed arcs.
+
+\hypertarget{af-32c0fc642d-consequences-for-rowbin-guide-flows}{%
+\subsection{5. Consequences for row/bin guide flows}\label{af-32c0fc642d-consequences-for-rowbin-guide-flows}}
+
+In the settled bottom ledger, assign each row's allocations as outgoing flow from its assigned bin. Its supply is \texttt{L-incoming(v)\textgreater{}=w\_v}. Remove self-loops and apply the construction with target \texttt{w\_v}. Every arc only decreases, so nonsink node congestion remains at most \texttt{L}. Free bins are sinks with their own fixed demands \texttt{w\_v}; their total load also remains at most \texttt{L}.
+
+Let \texttt{W=sum\_v\ w\_v}. The total sink load after trimming is exactly \texttt{W}. For \texttt{F} free sinks the initial confluent-rounding potential is consequently
+
+\[
+P=\sum_s2^{b_s/L}\le F+\frac WL.
+\]
+
+using \texttt{2\^{}x\textless{}=1+x} for \texttt{0\textless{}=x\textless{}=1}. This improves the generic upper bound \texttt{2F} when the original guide flow had substantial artificial supply.
+
+The same argument works on a dirty region \texttt{Q}: retain only arcs of rows assigned to \texttt{Q}, and make outside neighbors sink anchors. Restricted supplies are still at least \texttt{w\_v}. The graph has \texttt{O(\textbar{}Q\textbar{})} arcs because row degree is at most three. Exact dirty weights can therefore be routed to anchors in \texttt{O(\textbar{}Q\textbar{}\ polylog\ N)} work, replacing the otherwise sufficient static maximum-flow call in the local warm-start lemma.
+
+Different anchor bins of the same unchanged exterior core may then be identified as one sink for confluent rounding. Keep each incoming arc's original head as the attachment witness. Its heavy core demand affects the subsequent potential, but not the correctness or time of trimming.
+
+\hypertarget{af-32c0fc642d-finite-executable-evidence}{%
+\subsection{Finite executable evidence}\label{af-32c0fc642d-finite-executable-evidence}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/verify/check_static_allocations.py}{independent static-allocation checker} recomputes original input invariants and the output contract on small integer instances. Its \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/verify/README.md\#independent-flow-and-transportation-checks}{evidence note} states the exact domains and counts. These explicit polynomial routines do not implement or certify the near-linear dynamic-tree runtime.
+
+\hypertarget{af-32c0fc642d-source-and-restoration-record}{%
+\subsection{Source and restoration record}\label{af-32c0fc642d-source-and-restoration-record}}
+
+These results were already present in the 24 October 2026 uniform checkpoint. This page restores their full arguments in a semantic location; it does not claim that they were discovered during the repository reorganization. The original UTF-8 bytes were recovered and checked against the archive inventory. See the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/provenance/checkpoint-restoration.md}{checkpoint restoration record}.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Original note
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+SHA-256 of recovered source
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{exact\_demand\_flow\_trimming.md} & \texttt{67dbfd2b73210201b639da1f7f1fa325d8c6ed8b112ebecfe02c0b44ef84fbcd} \\
+\end{longtable}

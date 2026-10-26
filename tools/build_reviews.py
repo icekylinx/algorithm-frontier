@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from os.path import relpath
 from pathlib import Path
 import re
 import sys
@@ -17,20 +18,21 @@ from math_presentation import present_markdown
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def status_paragraph(record: dict) -> str:
+def status_paragraph(record: dict, evidence_link: str = 'verify/README.md') -> str:
     review = record['review']
     label = {'ready': 'Ready for review', 'partial': 'Ready for review in the stated scope',
              'pending': 'Review pending'}[review['status']]
     parts = [f"**{label}.** {review['scope']}"]
     if review.get('conditions'):
-        parts.append('**Conditions and remaining work.** ' + ' '.join(review['conditions']))
-    parts.append('The [verification note](verify/README.md) identifies executable coverage. '
+        parts.append('**Dependencies and scope.** ' + ' '.join(review['conditions']))
+    parts.append(f'The [verification note]({evidence_link}) identifies executable coverage. '
                  'This status does not claim external peer review or proof-assistant verification.')
     return normalize_markdown('\n\n'.join(parts))
 
 
 def render_registry(data: dict, catalogue: dict) -> str:
     titles = {r['id']: r['title'] for g in catalogue['groups'] for r in g['records']}
+    titles.update({r['id']: r['title'] for r in catalogue.get('supporting_results', [])})
     out = [
         '# Review status and verification evidence', '',
         'Readiness applies to the precise scope below. **Ready for review** means '
@@ -66,7 +68,7 @@ def render_registry(data: dict, catalogue: dict) -> str:
             out += [f"### [{titles[record['id']]}](../{record['path']}/)", '',
                     review['scope'], '']
             if review.get('conditions'):
-                out += ['**Conditions and remaining work.** ' + ' '.join(review['conditions']), '']
+                out += ['**Dependencies and scope.** ' + ' '.join(review['conditions']), '']
             out += [f"[Proof](../{record['path']}/proof.md) · "
                     f"[Dependencies](../{record['path']}/sources.md) · "
                     f"[Evidence](../{record['evidence_note']}) · "
@@ -77,12 +79,31 @@ def render_registry(data: dict, catalogue: dict) -> str:
     for record in data['records']:
         if record.get('review', {}).get('status', 'pending') == 'pending':
             out.append(f"- [{titles[record['id']]}](../{record['path']}/)")
+    supporting = data.get('supporting_records', [])
+    out += ['', '## Supporting manuscripts', '',
+            'These independent results have their own review scopes. A completed '
+            'static theorem does not certify a separate dynamic application.', '']
+    for record in supporting:
+        review = record.get('review')
+        if review is None or review['status'] == 'pending':
+            continue
+        label = 'Ready for review' if review['status'] == 'ready' else 'Components ready for review'
+        out += [f"### [{titles[record['id']]}](../{record['path']})", '',
+                f"**{label}.** {review['scope']}", '']
+        if review.get('conditions'):
+            out += ['**Dependencies and scope.** ' + ' '.join(review['conditions']), '']
+        out += [f"[Manuscript](../{record['path']}) · "
+                f"[Evidence](../{record['evidence_note']}) · Reviewed {review['date']}", '']
+    pending_support = [r for r in supporting if r.get('review', {}).get('status', 'pending') == 'pending']
+    if pending_support:
+        out += ['### Supporting review pending', '']
+        out += [f"- [{titles[r['id']]}](../{r['path']})" for r in pending_support]
     out += ['', '## Executable evidence', '',
             'Each linked program documents its checked identities or finite domain. '
             'The per-result evidence notes and registry distinguish direct evidence '
             'from a shared prerequisite; a passing finite check does not establish '
             'an arbitrary-input asymptotic theorem.', '']
-    programs = sorted({check['path'] for record in data['records'] for check in record.get('checks', [])})
+    programs = sorted({check['path'] for record in data['records'] + supporting for check in record.get('checks', [])})
     for program in programs:
         out.append(f'- [{program}](../{program})')
     out += ['', '## Maintaining a status', '',
@@ -92,7 +113,7 @@ def render_registry(data: dict, catalogue: dict) -> str:
             'assumptions separately. Executable coverage is a distinct field of '
             'evidence. Update `registry.json`, '
             'then run `python3 tools/build_reviews.py`; this synchronizes these '
-            'entries with the reviewed problem cards. A changed theorem or '
+            'entries with the reviewed problem cards and supporting manuscripts. A changed theorem or '
             'dependency requires a new scope assessment.', '',
             'See [Contributing](../CONTRIBUTING.md) for the manuscript workflow and '
             '[provenance](../provenance/README.md) for imported source identities.', '']
@@ -116,6 +137,26 @@ def main() -> int:
         if replacements != 1:
             raise ValueError(f'{name}: expected exactly one review-status field')
         outputs[name] = after
+    for record in data.get('supporting_records', []):
+        if 'review' not in record:
+            continue
+        name = record['path']
+        path = ROOT / name
+        before = path.read_text()
+        evidence_link = relpath(ROOT / record['evidence_note'], path.parent)
+        block = ('<!-- review-status:start -->\n' + status_paragraph(record, evidence_link)
+                 + '\n<!-- review-status:end -->')
+        pattern = r'(?ms)^<!-- review-status:start -->\n.*?^<!-- review-status:end -->'
+        if '<!-- review-status:start -->' in before:
+            after, replacements = re.subn(pattern, lambda _: block, before)
+            if replacements != 1:
+                raise ValueError(f'{name}: expected one supporting review block')
+        else:
+            heading, separator, rest = before.partition('\n')
+            if not separator or not heading.startswith('# '):
+                raise ValueError(f'{name}: missing manuscript heading')
+            after = heading + '\n\n' + block + '\n' + rest
+        outputs[name] = after
     stale = []
     for name, content in outputs.items():
         path = ROOT / name
@@ -128,7 +169,7 @@ def main() -> int:
     if stale:
         print('stale review surfaces: ' + ', '.join(stale), file=sys.stderr)
         return 1
-    count = sum('review' in r for r in data['records'])
+    count = sum('review' in r for r in data['records'] + data.get('supporting_records', []))
     print(f'Review surfaces {"checked" if args.check else "built"}: {count} scoped records')
     return 0
 

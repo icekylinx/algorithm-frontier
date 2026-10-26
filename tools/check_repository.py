@@ -117,6 +117,11 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check('Two-positive-weight oracle and encoded-program boundary', ('problems/weighted-prefix-quota-frontier/verify/check_two_weight_lower.py',)),
         Check('Projected quota catalogues and compatible-cut orientation', ('problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py',)),
         Check('Signed support-sized interval and slack compilation', ('problems/boolean-linear-compiler/verify/check_interval_compiler.py',)),
+        Check('Original-cardinality and modal interval compilation', ('problems/boolean-linear-compiler/verify/check_cardinality_compiler.py',)),
+        Check('Fixed rank-loss contraction and all-prefix identities', ('problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py',)),
+        Check('Linear-size selector degree conversion and matching adapter', ('problems/degree-constrained-subgraphs/verify/check_linear_selector.py',)),
+        Check('Canonical contact-rank crowns and physical optimum offsets', ('manuscripts/graph-backends/verify/check_odd_crown.py',)),
+        Check('Exact demand trimming and arbitrary-rank support forests', ('manuscripts/graph-backends/verify/check_static_allocations.py',)),
         Check("Non-Fano obstruction", ("tools/verify_non_fano.py",)),
         Check(
             "Full-contact receipt binding and coverage metadata",

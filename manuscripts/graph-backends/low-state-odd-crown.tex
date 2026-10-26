@@ -1,0 +1,438 @@
+% Generated TeX body; no PDF or document-style claim.
+% Maintained source: manuscripts/graph-backends/low-state-odd-crown.md
+% Recovered-source SHA-256: 659ef2280443569180fc53cb53a4ec7ebb96a2f21ea7f6d788c3df6a621a1a06
+% Rebuild: python3 tools/build_manuscripts.py
+% Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
+% Shared original Subset Sum preamble: manuscripts/paper-style.tex.
+
+\hypertarget{af-f687f276ee-contact-rank-odd-crowns-and-exact-matching-value-preservation}{%
+\section{Contact-rank odd crowns and exact matching-value preservation}\label{af-f687f276ee-contact-rank-odd-crowns-and-exact-matching-value-preservation}}
+
+\textbf{Ready for review.} Complete canonical contact-rank/min-cut characterization, exact physical matching offset, the numerical LOW consequence and the explicit retained-mass counterexample. Independent small-instance checks validate the structural identities.
+
+\textbf{Dependencies and scope.} The input state supplies constructive factor-critical witnesses. Ordinary bipartite matching suffices; the named published almost-linear flow theorem is an optional faster construction. A bound on the remaining optimum gap does not bound the entire retained graph.
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/verify/README.md}{verification note} identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
+
+\textbf{Structural result.} A row/bin state with constructive factor-critical odd bins admits a canonical contact envelope. The bins outside that envelope form a removable odd crown with an explicit optimum offset. This is an exact maximum-matching identity, valid before any numerical LOW assumption is added.
+
+\textbf{Theorem 1 (canonical odd crown).} Suppose the physical graph is partitioned into odd factor-critical bins \(D\), singleton rows \(A\), an explicitly paired remainder \(U\), and unmatched blockers \(B\). Every row is covered by an injection into adjacent bins, and there is no edge joining distinct bins. Let \(Z\) be the bins touching \(U∪B\). The algorithm below constructs the maximum number \(r\) of simultaneously free contact bins, the unique inclusion-minimal minimizer \[
+S=\min_{\subseteq}\mathop{\mathrm{argmin}}\limits_{X\supseteq Z}
+      \bigl(|X|-|A(X)|\bigr),
+\qquad
+r=|S|-|A(S)|,
+\] where \(A(X)\) denotes the rows whose entire bin-neighbor set lies in \(X\). With \(T=D∖S\) and \(H=N(T)\), deleting the bins of \(T\) and the rows of \(H\) gives \[
+\nu(G)=\sum_{d\in T}(w_d-1)+|H|+\nu(G[R]).
+\] It returns the row assignment, reachability set, finite integral min-cut certificate, and the physical matching contribution attaining the offset. The combinatorial work is one outside bipartite matching plus linear input work; materializing the supplied bin witnesses is charged separately.
+
+\textbf{Theorem 2 (quantitative consequence of LOW).} In the settled subcubic ledger state specified in Section 6, the same construction gives \[
+r\le\left\lfloor\frac{67CN}{L}\right\rfloor+3b,
+\qquad
+\nu(G[R])-|M_R|\le\left\lfloor\frac{r+b}{2}\right\rfloor,
+\qquad b=|B|.
+\] Thus the historical phase choices leave half-deficiency below \(0.044K\). This controls unmatched vertices and the remaining optimum gap; it does not bound the number of matched vertices retained. The appendix supplies the complete historical counterexample to that additional inference.
+
+Both results and the appendix were already proved in the 24 October 2026 checkpoint. They are restored here with their full proofs and explicit cost/dependency choices. The current \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/proof.md}{four-fifths maximum-matching theorem} does not rely on crown removal. The core contact-rank and offset proofs below are elementary; the named almost-linear flow import is only a choice for computing the one bipartite matching faster.
+
+\hypertarget{af-f687f276ee-the-state-and-the-contact-set}{%
+\subsection{1. The state and the contact set}\label{af-f687f276ee-the-state-and-the-contact-set}}
+
+First consider any state with the structural properties below. Sections 2--5 require no numerical LOW answer. Assume there is no edge joining distinct bins. Section 6 additionally assumes a settled numerical state, no eligible expansion to the paired remainder, and the precise LOW exclusion defined there.
+
+Use the notation:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{D}: factor-critical odd bins, with physical size \texttt{2w\_d-1};
+\item
+  \texttt{A}: singleton rows, covered by an injection into adjacent bins;
+\item
+  \texttt{U}: the remainder consisting of explicitly matched pairs;
+\item
+  \texttt{B}: the set of unmatched blocker vertices, with \texttt{b=\textbar{}B\textbar{}}.
+\end{itemize}
+
+Let \texttt{Z\_U} be bins with a physical neighbor in \texttt{U}, let \texttt{Z\_B} be bins with a physical neighbor in \texttt{B}, and set \texttt{Z=Z\_U\ union\ Z\_B}. In the subcubic matching-state application,
+
+\[
+|Z_B|\le3b.
+\]
+
+The current injection can be changed without altering the matching size: every assignment still chooses a physical row--bin edge, and each bin has its constructive factor-critical witness.
+
+\hypertarget{af-f687f276ee-maximize-the-number-of-free-contact-bins}{%
+\subsection{2. Maximize the number of free contact bins}\label{af-f687f276ee-maximize-the-number-of-free-contact-bins}}
+
+Choose a row-covering injection \texttt{mu*} that maximizes the number \texttt{r} of free bins in \texttt{Z}. This is a static bipartite optimization, not a general graph matching problem.
+
+There is a particularly direct construction. Compute a maximum matching \texttt{M\_out} between the rows and the bins in \texttt{D\textbackslash{}Z}. If its cardinality is \texttt{q\_out}, then
+
+\[
+r=|Z|-|A|+q_{\mathrm{out}}.\tag{1}
+\]
+
+To construct the required full injection, extend \texttt{M\_out} using the union of \texttt{M\_out} and the old row-covering injection \texttt{mu}. This union has maximum degree two. From every row unmatched by \texttt{M\_out}, follow the alternating path that starts with its \texttt{mu} edge. Because \texttt{mu} covers every row, the path ends at a bin unmatched by \texttt{M\_out}. That bin must belong to \texttt{Z}: otherwise the path would augment the matching restricted to \texttt{D\textbackslash{}Z}, contradicting maximal cardinality of \texttt{M\_out}.
+
+The paths from distinct unmatched rows are vertex-disjoint components of the union. Flip them simultaneously. The result covers every row and retains exactly \texttt{q\_out} occupied bins outside \texttt{Z}. It therefore minimizes the number of occupied bins in \texttt{Z}, proving (1), and is obtained in linear additional time.
+
+After the linear scan of the supplied physical graph, the construction uses \(O(N+I+T_bip)\) work, where \(I\) is the row/bin incidence input size and \(T_bip\) is the time for the single outside bipartite matching. The subcubic state has \(I=O(N)\). The ordinary deterministic Hopcroft--Karp algorithm gives \(O(N^(3/2))\) total time here; its \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/reference/bipartite-proof.md}{phase proof and implementation} are available locally.
+
+The stronger almost-linear version uses a named independent flow theorem. Build the unit-capacity source--row--bin--sink network and use van den Brand, Chen, Kyng, Liu, Meierhans, Probst Gutenberg, and Sachdeva, \href{https://arxiv.org/abs/2407.10830v1}{\emph{Almost-Linear Time Algorithms for Decremental Graphs: Min-Cost Flow and More via Duality}}, \textbf{Theorem 6.17}, through the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/published-flow-capacity-scaling.md}{exact maximum-flow reduction}. The result is deterministic \(N^(1+o(1))\) work, including initialization, on this linear-size network. Unit capacities need only one positive bit stage. This is a published min-cost-flow dependency, not an invocation of the four-fifths general-matching result and not a claim that the near-linear primitive is implemented in this repository. Either choice produces the same structural output.
+
+\hypertarget{af-f687f276ee-reachability-exposes-a-crown}{%
+\subsection{3. Reachability exposes a crown}\label{af-f687f276ee-reachability-exposes-a-crown}}
+
+Construct the directed escape graph on bins. For every assigned bin \texttt{d=mu*(a)}, add arcs from \texttt{d} to every bin adjacent to its unique assigned row \texttt{a}; self-arcs can be ignored. Free bins have no outgoing row. Let
+
+\[
+S=\mathrm{Reach}(Z),\qquad T=D\setminus S.
+\]
+
+This reachability computation takes \(O(N+I)\) time for an explicitly listed row/bin incidence graph. In the subcubic application, row degree is at most three and \(I=O(N)\).
+
+\textbf{Lemma 1.} Every free bin in \texttt{S} belongs to \texttt{Z}. Thus \texttt{S} contains exactly \texttt{r} free bins.
+
+\textbf{Proof.} If a free bin outside \texttt{Z} were reachable, choose a simple path from a bin in \texttt{Z} to that free bin. Its start must be assigned, since free bins have no outgoing arc. Reassign each row of the path to the next bin. The start becomes free and the final bin becomes occupied; intermediate bins remain occupied. This increases the number of free bins in \texttt{Z}, contradicting the choice of \texttt{mu*}. All \texttt{r} free bins in \texttt{Z} belong to \texttt{S} by definition, proving equality.
+
+\textbf{Lemma 2.} The rows adjacent to \texttt{T} are exactly \texttt{mu*\^{}\{-1\}(T)}.
+
+\textbf{Proof.} A row assigned into \texttt{T} is certainly adjacent to \texttt{T}. Conversely, if a row adjacent to \texttt{T} were assigned into \texttt{S}, its escape arc from that assigned bin would make the neighboring bin reachable, contradicting the definition of \texttt{T}.
+
+Write \texttt{H=N(T)=mu*\^{}\{-1\}(T)}. The bins in \texttt{T} have no physical neighbor outside their own vertices and the rows \texttt{H}:
+
+\begin{itemize}
+\tightlist
+\item
+  there is no edge joining distinct bins anywhere in the settled state;
+\item
+  no bin of \texttt{T} touches \texttt{U} or \texttt{B}, because \texttt{T} is disjoint from \texttt{Z};
+\item
+  every other possible neighbor is a row in \texttt{N(T)=H}.
+\end{itemize}
+
+Moreover, \texttt{mu*} matches all rows \texttt{H} into distinct bins of \texttt{T}. This is the required odd-crown structure.
+
+\hypertarget{af-f687f276ee-an-exact-minimum-cut-certificate}{%
+\subsection{4. An exact minimum-cut certificate}\label{af-f687f276ee-an-exact-minimum-cut-certificate}}
+
+For a bin set \texttt{X}, write \texttt{A(X)} for its captive rows (all their neighbors belong to \texttt{X}) and \texttt{h(X)=\textbar{}X\textbar{}-\textbar{}A(X)\textbar{}}. Then the contact rank has the exact characterization
+
+\[
+r=\min_{X\supseteq Z}h(X).\tag{2}
+\]
+
+For any row-covering injection, the number of its free bins in \texttt{X} is at most \texttt{h(X)}, because every captive row occupies a distinct bin of \texttt{X}. Thus its number of free contact bins is at most \texttt{h(X)} for every \texttt{X} containing \texttt{Z}, proving one inequality in (2).
+
+For the optimizing injection \texttt{mu*}, every row assigned into the reachable set \texttt{S} has all its neighbors in \texttt{S}. Conversely, every captive row of \texttt{S} is assigned inside \texttt{S}. Since \texttt{S} has exactly \texttt{r} free bins, \texttt{h(S)=r}. This proves the reverse inequality.
+
+There is a stronger canonicality statement: \textbf{\texttt{S} is the unique inclusion-minimal minimizing set in (2)}. Indeed, let \texttt{X} contain \texttt{Z} and satisfy \texttt{h(X)=r}. The \texttt{r} free contact bins of \texttt{mu*} already belong to \texttt{X}. The preceding inequality forces \texttt{X} to have exactly \texttt{r} free bins. Hence the number of rows assigned into \texttt{X} equals \texttt{\textbar{}X\textbar{}-r=\textbar{}A(X)\textbar{}}; every row assigned into \texttt{X} must be captive. Thus \texttt{X} is closed under escape arcs and contains \texttt{Reach(Z)=S}.
+
+In particular, changing the optimal injection or choosing a different minimum-cut tie-break cannot reduce this retained contact envelope. The resulting \texttt{S} is independent of those choices.
+
+For an explicit cut certificate, construct the directed network with one vertex for each row and bin, source \texttt{s}, and sink \texttt{t}:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{s\ -\textgreater{}\ a} has capacity one for each row;
+\item
+  \texttt{a\ -\textgreater{}\ d} has capacity \texttt{M} for each row--bin incidence;
+\item
+  \texttt{d\ -\textgreater{}\ t} has capacity one for each bin;
+\item
+  \texttt{s\ -\textgreater{}\ z} has capacity \texttt{M} for each contact bin \texttt{z\ in\ Z}.
+\end{itemize}
+
+Here \(M=|A|+|D|+1\). Putting every row and bin on the source side gives a cut of capacity \(|D|<M\), so no minimum cut crosses an arc of capacity \(M\). For a cut avoiding such arcs, its source-side bin set \(X\) contains \(Z\), and its optimal source-side rows are precisely the captive rows \(A(X)\). Its capacity is \(|A|+|X|-|A(X)|=|A|+h(X)\). Thus the minimum cut value is \(|A|+r\). This uses an explicit finite integer capacity, not a symbolic infinity.
+
+The optimizing injection gives an integral maximum flow directly: send one unit along each \texttt{s\ -\textgreater{}\ a\ -\textgreater{}\ mu*(a)\ -\textgreater{}\ t} path and one unit along \texttt{s\ -\textgreater{}\ z\ -\textgreater{}\ t} for each free contact bin. Residual reachability from \texttt{s} reaches exactly the bins of \texttt{S}: reverse assigned incidences and forward row incidences reproduce the escape arcs. This gives both a primal and a dual certificate for the canonical crown.
+
+\hypertarget{af-f687f276ee-exact-maximum-matching-preservation}{%
+\subsection{5. Exact maximum-matching preservation}\label{af-f687f276ee-exact-maximum-matching-preservation}}
+
+Let \texttt{X} be the union of the physical vertices in bins \texttt{T}, and let \texttt{R} be the remaining graph after deleting \texttt{X\ union\ H}. Define
+
+\[
+\mathrm{offset}(T)=\sum_{d\in T}(w_d-1)+|H|.\tag{3}
+\]
+
+Then
+
+\[
+\nu(G)=\mathrm{offset}(T)+\nu(G[R]).\tag{4}
+\]
+
+For the lower bound, match every row of \texttt{H} through its \texttt{mu*} edge to its assigned bin. Expose precisely that endpoint in each assigned bin and match all its other vertices internally. In every free bin of \texttt{T}, use its factor-critical witness and leave one exposure unmatched. These matches have total cardinality (3), and can be combined with any matching in \texttt{G{[}R{]}}.
+
+For the upper bound, take any matching of the entire graph. It has at most \texttt{w\_d-1} internal edges inside each odd bin \texttt{d}. There are no edges between different bins of \texttt{T}. Every other matching edge touching \texttt{X} uses a row in \texttt{H}, and every remaining edge touching \texttt{H} also uses a vertex of \texttt{H}. Since these matching edges are vertex-disjoint, at most \texttt{\textbar{}H\textbar{}} such edges exist altogether. The matching restricted to \texttt{R} has size at most \texttt{nu(G{[}R{]})}. Summing proves the upper bound in (4).
+
+The existing represented matching, after replacing its injection by \texttt{mu*}, attains exactly \texttt{offset(T)} inside the deleted crown. Materialize and store those actual edges. The deletion therefore preserves both an actual matching and its precise remaining optimum gap. The permanently unmatched exposures in free bins of \texttt{T} can be left out of the output.
+
+All these steps are constructive. The factor-critical witnesses are those supplied by the input matching state; their \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/factor-critical-contractions.md}{arbitrary-exposure construction and materialization} are proved separately. Permanent crown deletions across phases remove disjoint physical vertices, so their total materialization work is linear in the original physical graph size, up to existing witness bookkeeping factors.
+
+\hypertarget{af-f687f276ee-an-explicit-bound-obtained-from-low}{%
+\subsection{6. An explicit bound obtained from LOW}\label{af-f687f276ee-an-explicit-bound-obtained-from-low}}
+
+Here LOW has an exact mathematical meaning: the top priced-step answer excludes every feasible comparison direction whose signed logarithmic derivative is more than one half of the sum of its absolute individual logarithmic derivative contributions. This is the strong-direction property in the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/general-matching/proof.md}{matching proof, Section 8.2}. It is not merely a failed finite search.
+
+The top ledger has positive allocation and slack coordinates, row total \(L\), nonnegative fixed bin debts \(p_d\), and positive bin slack \[
+\sigma_d=L+p_d-Cw_d-\mathrm{load}_d.
+\] The physical state supplies \(Σ_d w_d≤N\) and at most \(4N\) top coordinates. Ineligibility for expansion supplies \(σ_d≤5C\) on bins touching the paired remainder. The source-state formulas and their reconstructed proofs are mapped in \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/oai-baseline-and-imports.md}{the matching-state source interface}, Sections 3 and 5; the following argument proves the comparison bound directly.
+
+Let \(r_U\) be the maximum number of bins in \(Z_U\) that can be made free simultaneously. Choose an injection attaining that number and put all \(L\) units of each row on its assigned bin. The target top column capacity is \(L+p_d-Cw_d\), nonnegative because the current top ledger is feasible. A used bin receives only one assigned row. Clipping its load to that capacity removes at most \(Cw_d\); thus at most \(CN\) mass is removed in total.
+
+The clipped allocation is a feasible partial flow in the ordinary bipartite network with source-to-row capacity \(L\) and bin-to-sink capacity \(L+p_d-Cw_d\). The current top ledger is a full feasible flow of value \(L|A|\). Residual augmentation can therefore restore all removed source mass. It may be chosen as simple source-to-sink paths, so no augmentation uses a reverse sink arc. Each bin's sink flow is nondecreasing during this completion, and the total newly delivered mass is at most \(CN\). This is an existence proof for the comparison allocation; the algorithm need not solve this additional flow problem.
+
+The \(r_U\) freed contact columns had zero load before completion, and afterward receive altogether at most \(CN\). Their total capacity is at least \(Lr_U-CΣw_d\), since debts are nonnegative. Their final slack is therefore at least \(Lr_U-2CN\). Summing over the larger contact set, whose other slacks are nonnegative, proves \[
+\sigma'(Z_U)\ge Lr_U-2CN.
+\] Alternative minus current allocation/slack coordinates is a circulation. For a positive coordinate \(x\) and nonnegative alternative \(x′\), its logarithmic derivative contribution is \((x′-x)/x≥-1\). There are at most \(4N\) coordinates, so the total absolute negative contribution is at most \(4N\). If an alternative coordinate is zero, take a strict convex mixture with the current positive vector; this scales every contribution by the same factor and leaves the derivative ratio unchanged.
+
+On contact slacks, \(σ_d≤5C\) and \(σ′_d≥0\). The sum of the positive parts is at least the sum of the signed contributions, which is at least \(σ′(Z_U)/(5C)-|Z_U|\). Since \(|Z_U|≤N\), the total positive contribution is at least
+
+\[
+\frac{Lr_U-2CN}{5C}-N.
+\]
+
+Write \(P\) and \(Q\) for the positive and absolute negative contributions. If \(P>3Q\), then \((P-Q)/(P+Q)>1/2\), contradicting valid LOW. Hence \(P≤3Q≤12N\). The previous lower bound on \(P\) consequently implies
+
+\[
+Lr_U\le67CN.\tag{5}
+\]
+
+Adding the blocker contacts can increase the number of free contact bins by at most their cardinality, giving
+
+\[
+r\le\left\lfloor\frac{67CN}{L}\right\rfloor+3b.\tag{6}
+\]
+
+After deleting the crown, the represented matching has only \texttt{r+b} unmatched physical vertices: one in each free bin of \texttt{S} and the \texttt{b} blockers. Hence a directly checkable stronger improvement upper bound is
+
+\[
+\nu(G[R])-|M_R|\le\left\lfloor\frac{r+b}{2}\right\rfloor.\tag{7}
+\]
+
+The phase accounting gives \texttt{b\textless{}=2C(g\_*-1)}, and \texttt{L\textgreater{}=10000\ C\ N/K}. Thus (6) and (7) are \texttt{O(K)} bounds. If no gain has occurred, \texttt{b=0} and the numerical constant in (5) makes (7) much smaller than the original attempted target \texttt{K}.
+
+More explicitly, \texttt{b\textless{}=K/50} whenever \texttt{g\_*\textgreater{}1}, and \texttt{b=0} otherwise. Consequently
+
+\[
+r+b\le\frac{67CN}{L}+4b\le0.0067K+0.08K=0.0867K.
+\]
+
+The retained matching's actual half-deficiency is therefore at most \texttt{0.04335\ K\ \textless{}\ 0.044\ K}; its true improvement gap is at most the floor of that number. This remains meaningful when the retained graph has odd order and the half-deficiency is a half-integer. When \texttt{g\_*=1}, the sharper half-deficiency bound \texttt{0.00335\ K} holds.
+
+The exact computed \texttt{r} is preferable to the conservative analytic bound. If \texttt{r+b\textless{}=1}, the retained matching is maximum immediately, and so is the reconstructed original matching after adding all stored crown edges.
+
+\hypertarget{af-f687f276ee-why-this-is-not-yet-an-exponent-improvement}{%
+\subsection{7. Why this is not yet an exponent improvement}\label{af-f687f276ee-why-this-is-not-yet-an-exponent-improvement}}
+
+The crown removal identifies vertices that can be safely separated from the remaining optimization, and it restores a bound on the \emph{number} of unmatched vertices in the remaining graph. It does not bound the entire retained graph by \texttt{O(K)} vertices.
+
+Indeed, the retained graph can have a nearly perfect matching and still contain \texttt{Theta(N)} matched vertices. Even the bottom ledger only implies that the retained bin weight is at most \texttt{L\ r}; with \texttt{L=Theta(N/K)} and \texttt{r=Theta(K)} this permits linear weight. The paired remainder can also retain linear size.
+
+The explicit family in the \protect\hyperlink{af-f687f276ee-retained-mass-example}{appendix} realizes this obstruction with valid positive ledgers on a subcubic graph: the canonical contact envelope is all bins, a LOW state exists, and no vertex is removed by this crown rule. Its actual matching gap is a small constant fraction of \texttt{K}, but the retained matched mass is the whole graph. This is a limitation of the localization rule, not a running-time lower bound or a claim about a forced driver run.
+
+There is a further worst-case limitation: on a perfect-matchable graph, when the target \texttt{K} does not exceed the true gap, the phase cannot issue LOW. Therefore a speedup that only triggers after LOW cannot by itself improve the hard perfect-matchable case underlying the current worst-case bound.
+
+What is obtained is an exact localization theorem and an implementable stronger gap certificate. A better exponent would still require a bound on the retained matched mass, a faster treatment of successful phases, or a further deterministic compression preserving the interactions of the retained contacts.
+
+\hypertarget{af-f687f276ee-appendix-b.-a-valid-historical-low-state-that-retains-the-entire-graph}{%
+\subsection{Appendix B. A valid historical LOW state that retains the entire graph}\label{af-f687f276ee-appendix-b.-a-valid-historical-low-state-that-retains-the-entire-graph}}
+
+This example uses the original fixed-parameter engine, with constant integer \(a≥1000\) and the explicit \(q\) given in Section B.4. It proves a limitation of the structural localization rule under those stated ledger/LOW hypotheses. It does not assert that every retuned engine has the same threshold, that every driver must reach this state, or that these graphs are hard to match. Equation numbers in this appendix retain their local historical numbering.
+
+\hypertarget{af-f687f276ee-b.1.-parameters}{%
+\subsubsection{B.1. Parameters}\label{af-f687f276ee-b.1.-parameters}}
+
+Fix an admissible constant \texttt{a\textgreater{}=1000} and put \texttt{C=a+1}. Let \texttt{p} be a sufficiently large power of two, put
+
+\[
+t=p^2,\qquad N=2tp=2p^3,\qquad K=20000t-1.
+\]
+
+and take the master bound \texttt{S=N}, itself a power of two. All fixed parameter guard thresholds hold when \texttt{p} is sufficiently large. In particular choose \texttt{p\textgreater{}=20000} and \texttt{Cp\textless{}20000p\^{}2-1}.
+
+The phase scale is exactly
+
+\[
+L=\left\lceil\frac{10000CN}{K}\right\rceil=\left\lceil Cp+\frac{Cp}{20000p^2-1}\right\rceil=Cp+1.\tag{1}
+\]
+
+Also \texttt{K\textless{}=N/2}. Thus \texttt{K=Theta(N\^{}(2/3))}, the scale relevant to the first middle phase of the sparse-graph warm-start composition.
+
+\hypertarget{af-f687f276ee-b.2.-a-subcubic-physical-graph-and-represented-matching}{%
+\subsubsection{B.2. A subcubic physical graph and represented matching}\label{af-f687f276ee-b.2.-a-subcubic-physical-graph-and-represented-matching}}
+
+For each \texttt{j=1,...,t}, create \texttt{p} singleton bins
+
+\[
+d_{j,1},\ldots,d_{j,p}.
+\]
+
+and \texttt{p-1} row vertices \texttt{a{[}j,1{]},...,a{[}j,p-1{]}}. Join row \texttt{a{[}j,i{]}} to exactly bins \texttt{d{[}j,i{]}} and \texttt{d{[}j,i+1{]}}. This is an alternating odd path on \texttt{2p-1} physical vertices.
+
+Pair the paths as \texttt{(2h-1,2h)}. For each pair add two vertices \texttt{u{[}h{]},v{[}h{]}} in the matched remainder \texttt{U}, and match them together. Join both endpoint bins of path \texttt{2h-1} to \texttt{u{[}h{]}}, and both endpoint bins of path \texttt{2h} to \texttt{v{[}h{]}}.
+
+Every row and every internal bin has physical degree two. Endpoint bins have degree two, while each remainder vertex has degree three. There are no edges between distinct bins and no blockers. The total number of vertices is
+
+\[
+t(2p-1)+t=2tp=N.
+\]
+
+Match each row to its bin on the right. This leaves the first bin of each odd path free. Together with the \texttt{t/2} remainder edges, the represented matching has cardinality
+
+\[
+q_0=t(p-1)+\frac t2=\frac N2-\frac t2.\tag{2}
+\]
+
+The graph has a perfect matching: in each paired component, match \texttt{u{[}h{]}} to an endpoint of the first path and \texttt{v{[}h{]}} to an endpoint of the second path; match each remaining even path internally. Therefore the actual optimum gap is exactly
+
+\[
+\nu(G)-q_0=\frac t2=\frac{K+1}{40000}.\tag{3}
+\]
+
+Every bin has weight one and a trivial factor-critical witness. The selected forest on a row/bin component is forced to be its entire path because every row has exactly two neighbors.
+
+\hypertarget{af-f687f276ee-b.3.-all-the-ledger-invariants-hold}{%
+\subsubsection{B.3. All the ledger invariants hold}\label{af-f687f276ee-b.3.-all-the-ledger-invariants-hold}}
+
+Use zero debt in every ledger. For the top ledger, write \texttt{x\_i} for row \texttt{i}'s allocation to its left bin, independently in every path. Set
+
+\[
+x_i=\frac{L(p-i)}p,\qquad x_i^{\mathrm{right}}=\frac{Li}p,\qquad s_i=\frac1p.\tag{4}
+\]
+
+The row sums are \texttt{L}. Every bin's residual is \texttt{C+1/p}, so its top slack is precisely \texttt{1/p}. All allocation coordinates are at least \texttt{L/p=C+1/p}. They are positive dyadic numbers on the engine's \texttt{epsilon=S\^{}(-3000)} grid.
+
+For every integral ledger, including the bottom ledger, use
+
+\[
+x_i=L-Ci,\qquad x_i^{\mathrm{right}}=Ci.\tag{5}
+\]
+
+Its first \texttt{p-1} bin residuals are \texttt{C} and its last residual is \texttt{C+1}. Consequently (5) satisfies every floor \texttt{c\_j\textless{}=C} with zero debt. In particular the bottom ledger is feasible and settled.
+
+Every nonempty bin set has strict Hall surplus. More concretely, on each path \texttt{h(X)=\textbar{}X\textbar{}-\textbar{}A(X)\textbar{}} is the number of nonempty connected runs of selected bins in that path. The bottom weight inequalities also follow directly from the feasible ledger (5).
+
+There is no priority bin--bin action. The only bins with neighbors in \texttt{U} are the path endpoints, whose top slacks are \texttt{1/p\textless{}4C}. With exact cached values, no expansion is eligible. Thus this is a valid state at which the driver requests top pricing.
+
+\hypertarget{af-f687f276ee-b.4.-explicitly-small-cycle-ratios-force-low}{%
+\subsubsection{B.4. Explicitly small cycle ratios force LOW}\label{af-f687f276ee-b.4.-explicitly-small-cycle-ratios-force-low}}
+
+The construction gives more than a feasible allocation. Its exact top gradients have uniformly small circulation ratios.
+
+Consider any circulation direction on the top allocation/slack graph. On one path let \texttt{z\_i} be the change to the left allocation of row \texttt{i}; its right allocation changes by \texttt{-z\_i}. Write \texttt{v\_j} for the change to slack \texttt{s\_j}. The column equations give
+
+\[
+v_1=-z_1,\qquad v_j=z_{j-1}-z_j\ (2\le j\le p-1),\qquad v_p=z_{p-1}.
+\]
+
+Hence \texttt{sum\_j\ v\_j=0} and \texttt{z\_i=-sum\_\{j\textless{}=i\}v\_j}. The slack gradients are all \texttt{p}, so their total directional contribution vanishes on each path. The remaining contribution is
+
+\[
+\sum_i z_i c_i,\qquad c_i=\frac1{x_i}-\frac1{L-x_i}=\frac pL\left(\frac1{p-i}-\frac1i\right).\tag{6}
+\]
+
+Let \texttt{H\_(p-1)} be the harmonic number. Since \texttt{p/L\textless{}=1/C},
+
+\[
+\sum_i|c_i|\le\frac{2H_{p-1}}C.
+\]
+
+Thus the absolute gradient contribution on this path is at most
+
+\[
+\frac{2H_{p-1}}C\sum_j|v_j|.
+\]
+
+The derivative-sum length of the direction is at least its slack contribution \texttt{p\ sum\_j\ \textbar{}v\_j\textbar{}}. Summing across all paths therefore proves, for every nonzero circulation \texttt{d},
+
+\[
+\frac{|g^{\mathsf T}d|}{\|\lambda d\|_1}\le\rho:=\frac{2H_{p-1}}{Cp}.\tag{7}
+\]
+
+The common auxiliary slack vertex does not change this argument: the separate row and bin conservation equations already imply \texttt{sum\_j\ v\_j=0} within each path. If all slack changes on a path are zero, its row changes are zero as well.
+
+For the original fixed-parameter engine parameters
+
+\[
+B=2^{\lceil(\log_2S)/a\rceil},\qquad q=B^{-100}.
+\]
+
+we have \texttt{q\textgreater{}=2\^{}(-100)S\^{}(-100/a)}. Since \texttt{S=2p\^{}3} and \texttt{a\textgreater{}=1000},
+
+\[
+\rho=O_C\left(\frac{\log p}{p}\right)=o(q).\tag{8}
+\]
+
+Choose \texttt{p} sufficiently large that \texttt{rho\textless{}q/10}. Every successful priced step must simultaneously obey
+
+\[
+\|\lambda h\|_1\le\frac q{100},\qquad g^{\mathsf T}h\ge\frac{q^2}{1000}.
+\]
+
+These inequalities require its ratio to be at least \texttt{q/10}, contradicting (7). Thus a complete deterministic pricing implementation satisfying the stated interface cannot take a successful step here. Its positive arguments are between \texttt{1/p} and \texttt{L}, comfortably inside the guarded numerical range, and its static size is \texttt{O(N)}. For sufficiently large parameters its adequate, failure-free branch therefore returns LOW.
+
+This argument uses the exact engine interface, not an assumption that the displayed state is the unique optimizer or an informal claim that the state is ``near a center.'' It also applies to a raw length certificate, because raw motion can only increase the denominator relative to the net circulation length used in (7).
+
+\hypertarget{af-f687f276ee-b.5.-the-canonical-minimum-cut-envelope-contains-every-bin}{%
+\subsubsection{B.5. The canonical minimum-cut envelope contains every bin}\label{af-f687f276ee-b.5.-the-canonical-minimum-cut-envelope-contains-every-bin}}
+
+The contact set \texttt{Z=Z\_U} consists of both endpoint bins of every path. There are exactly \texttt{t} free bins in every row-covering injection, one per path. Each path can expose either endpoint, so the maximum free-contact rank is
+
+\[
+r=t.\tag{9}
+\]
+
+For any \texttt{X} containing \texttt{Z}, each path contributes at least one to \texttt{h(X)}. Equality \texttt{h(X)=t} is possible only if the selected bins form one connected run in every path. Because both endpoints are selected, that run must contain all \texttt{p} bins of the path.
+
+Consequently the minimum in
+
+\[
+r=\min_{X\supseteq Z}h(X).
+\]
+
+has the unique minimizer \texttt{X=D}. The canonical reachable envelope \texttt{S} is all bins, and the removable crown \texttt{T=D\textbackslash{}S} is empty. No choice of optimal injection or minimum-cut tie-break changes this conclusion.
+
+The residual graph retains all \texttt{N} vertices, although the actual half-deficiency is only \texttt{t/2=(K+1)/40000}. In particular, a claim that LOW and the contact-rank crown always leave \texttt{O(K)} physical vertices is false: here \texttt{N/K=Theta(p)} is unbounded.
+
+\hypertarget{af-f687f276ee-b.6.-scope-of-the-obstruction}{%
+\subsubsection{B.6. Scope of the obstruction}\label{af-f687f276ee-b.6.-scope-of-the-obstruction}}
+
+This family rules out a matched-mass reduction based only on the canonical contact-rank envelope and the listed ledger/LOW invariants. It does not rule out a stronger reduction using the physical matching graph: these particular components have immediately visible perfect matchings.
+
+It also does not conflict with the strengthened static Conflt tails. Each forced row-forest component has normalized weight \texttt{p/L\textless{}1/C}; none is heavy. Tail control limits the mass of heavy components, while this family retains many light components.
+
+No claim is made that every phase initialized from the matching (2), or every deterministic pricing choice, must reach exactly the represented state (4). The statement is that the structural and numerical hypotheses of the LOW localization theorem admit this state, so a stronger retained-mass theorem needs additional hypotheses or an additional operation.
+
+\hypertarget{af-f687f276ee-finite-validation-added-during-restoration}{%
+\subsection{Finite validation added during restoration}\label{af-f687f276ee-finite-validation-added-during-restoration}}
+
+The standalone \href{https://github.com/icekylinx/algorithm-frontier/blob/main/manuscripts/graph-backends/verify/check_odd_crown.py}{independent small-instance checker} enumerates every row/bin graph with at most four bins and three rows that admits a row-covering injection. It checks 3,677 graphs, 56,249 contact sets, and 138,470 optimal injections against exhaustive captive-set minimization and an independent partial bipartite-matching enumeration. Reachability must equal the intersection of all minimum-deficit supersets of the contacts, for every optimal injection.
+
+It also expands 615 seeded cases into physical graphs with singleton or triangle bins, paired-remainder contacts, blockers, and extra edges meeting rows. A separate subset dynamic program computes both physical maximum-matching values and verifies the exact crown offset, on graphs of up to 18 vertices. These identity checks do not use the repository's blossom implementation. The extra row edges exercise the degree-independent structural identity; the quantitative LOW bound additionally uses the stated subcubic ledger hypotheses.
+
+Run python3 manuscripts/graph-backends/verify/check\_odd\_crown.py from the repository root. The script explicitly refuses optimized Python mode. This is finite validation of the structural identities, not a proof of the arbitrary-size theorem, the numerical LOW interface, or the near-linear imported flow runtime. The proofs above supply those separate arguments and dependencies.
+
+\hypertarget{af-f687f276ee-source-and-restoration-record}{%
+\subsection{Source and restoration record}\label{af-f687f276ee-source-and-restoration-record}}
+
+These results were already present in the 24 October 2026 uniform checkpoint. This page restores their full arguments in a semantic location; it does not claim that they were discovered during the repository reorganization. The original UTF-8 bytes were recovered and checked against the archive inventory. See the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/provenance/checkpoint-restoration.md}{checkpoint restoration record}.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Original note
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+SHA-256 of recovered source
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{low\_odd\_crown\_localization.md} & \texttt{737e2dc3bc14c795bdd9f4fa9abab97c9a778baea247c299bdc814f23b1e39ff} \\
+\texttt{low\_localization\_mass\_barrier.md} & \texttt{66d4e096c989b2462a66d87ee90eac246ad8444b95509ed4b9254d24b5dbc32e} \\
+\end{longtable}

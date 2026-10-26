@@ -46,6 +46,27 @@ The Subset Sum comparison also checked every numbered source formula:
 are notation normalization and whitespace. This source-preservation check
 does not independently prove the formulas.
 
+## Independent static results restored in full
+
+Nine original notes from the 24 October uniform checkpoint had no complete
+canonical destination after consolidation. Their full arguments now appear
+in four semantic manuscripts, with each recovered source hash retained.
+
+| Restored result | Complete proof and scope |
+|---|---|
+| Exact demand trimming | [Selected-forest construction](../manuscripts/graph-backends/exact-demand-flow-trimming.md) removes excess supplied flow without a maximum-flow call, preserves integral values and charges all physical arc records. |
+| General-rank selected-pair forest | [Transportation-support proof](../manuscripts/graph-backends/static-transportation-support-balancing.md) gives a new row-covering injection and component weight strictly below twice the row total. The original rank-three argument and arbitrary-rank extension are both retained. |
+| Confluent rounding, moments and tails | [Complete five-part package](../manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md) includes the near-linear simulation, completed-sink moment, two tail potentials, actual-mass budget and local warm-start lemma. Dynamic replenishment remains a separate question. |
+| Canonical contact-rank odd crown | [Structural identity and LOW consequence](../manuscripts/graph-backends/low-state-odd-crown.md) includes the integral cut certificate, exact matching-value offset and full historical counterexample to a stronger retained-mass claim. |
+
+The recovery index now marks these nine notes `restored-complete-proof`
+and records their actual canonical destinations. They are separate positive
+results, not missing premises of the current four-fifths matching theorem.
+Their [review entries](../reviews/README.md#supporting-manuscripts) and
+[finite evidence](../manuscripts/graph-backends/verify/README.md) have explicit
+scopes. These entries credit the original checkpoint; the independent finite
+checkers and clearer proof interfaces are subsequent additions.
+
 ## What was corrected
 
 The consolidation and a later implementation pass had treated the absence
