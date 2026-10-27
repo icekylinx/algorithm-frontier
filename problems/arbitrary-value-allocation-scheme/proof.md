@@ -486,6 +486,11 @@ encoding. Target-dependent capping and binning are recomputed
 exactly in polynomial space. No additional approximation loss
 is introduced by optimization.
 
+The [native exact-table realization](reference-realization.md) implements this
+original-basis/profile, scalar-cost recovery and original-grid optimization
+pipeline. Its streamed active-system LP factor is explicit and separate
+from the paid polynomial primitive costs in PA5.
+
 ## 12. Scope and related results
 
 This is the full original optional-player model with one shared

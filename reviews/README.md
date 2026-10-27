@@ -140,6 +140,14 @@ Both canonical obstruction theorems: exact compact-code membership is coNP-compl
 
 [Proof](../problems/obstruction-boundaries/proof.md) · [Dependencies](../problems/obstruction-boundaries/sources.md) · [Evidence](../problems/obstruction-boundaries/verify/README.md) · Reviewed 2026-10-27
 
+### [Arbitrary-value allocation scheme](../problems/arbitrary-value-allocation-scheme/)
+
+The complete arbitrary-value optional-player approximation scheme with a genuine original player basis, recipient polymatroids, eligibility, optional unused capacity, arbitrary nonnegative player/type values, setup fees and one shared exact setup/assignment budget: integer-target capping, occupied profiles and both state-count envelopes, original joint LP feasibility, cost-preserving disposal/complement-prefix rounding, full requested accuracy and one-sided original-grid optimization. Includes a native complete-table implementation and independent original-input/output verification with separately charged finite LP costs.
+
+**Dependencies and scope.** The mathematical time envelopes charge named polynomial exact rank/SFM, LP and weighted polymatroid-intersection primitives. The complete-table reference streams LP active systems after exact fixed-coordinate substitution, with an additional `binom(R,D)` factor for actual remaining rows and free dimension `D<=m*q`; it does not implement those fast primitive costs. Complete rank-table input, augmented disposal tables, rational arithmetic and the full binary accuracy encoding are charged. The approximation comparator is original integer optimum, not the capped fractional relaxation or a fractional selected basis. Original type capacities remain shared across all players and bins; one actual scalar cost objective preserves the single shared setup and assignment budget. Several independent exact budgets and extra coupling constraints between types are outside this scope. Internal proof review, exact finite original-input comparisons and producer-independent output verification are not proof-assistant formalization or external peer review. The cited ICALP 2025 rounding paper is a public antecedent, not a black-box proof of this full profile model.
+
+[Proof](../problems/arbitrary-value-allocation-scheme/proof.md) · [Dependencies](../problems/arbitrary-value-allocation-scheme/sources.md) · [Evidence](../problems/arbitrary-value-allocation-scheme/verify/README.md) · Reviewed 2026-10-27
+
 ### [Recipient-matroid configuration](../problems/recipient-matroid-configuration/)
 
 The complete recipient-matroid configuration-comparator theorem: universal simultaneous reservations, every ordered-prefix rank-additivity invariant, current eager release, retained-prefix exchanges, sharp rank-cover coefficient, exact and positive-slack rank bounds, fractional fat-service reduction and target-grid search. The shipped resource-state backend realizes completion, current freedom tests and safe prefix exchanges.
@@ -180,6 +188,14 @@ The complete exact-budget unrelated-value additive theorem against the fractiona
 
 [Proof](../problems/unrelated-values-additive/proof.md) · [Dependencies](../problems/unrelated-values-additive/sources.md) · [Evidence](../problems/unrelated-values-additive/verify/README.md) · Reviewed 2026-10-27
 
+### [Unrelated values with a joint role](../problems/unrelated-values-joint-role/)
+
+Complete canonical family: unrelated player-type values with genuinely shared original recipient resources; exact scalar assignment budget; optional original player matroid and persistent zero-service dual dummy for one combined selected-player setup/assignment budget; fixed positive-accuracy near-two corank-plus-support and streamed whole-ground guarantees; arbitrary-value exact-two role endpoint; compulsory two-value exact quota and fixed-integer-factor tradeoffs; all target-search, count-floor, model-boundary and inherited below-two oracle statements. Native reference executes actual shared-resource LPs, first-crossing omission, block covers, signed-cost prefix recovery, exact-two role enumeration and compulsory quota target gates, with separately charged local finite LP cost.
+
+**Dependencies and scope.** Original values, assignment costs and setup fees are nonnegative; recipient polymatroids are independent; unused units are allowed; exactly one combined scalar budget is preserved. Each original type has one shared rank system across all owner roles, and masks precede rounding. The zero-service M* dummy remains available at every omission node, including light owners. Its signed objective is internal affine setup accounting. Recovery optimizes one signed cost on the bounded integral prefix face after removing the budget halfspace, then extracts an original basis from dummy-free owners before discarding original nonnegative-cost assignments. The full mathematical fast time and polynomial workspace use paid polynomial exact rank/SFM, LP, matroid/polymatroid-intersection and streamed-cover primitives. The complete-table reference instead enumerates active LP bases and temporarily stores distinct projected support vertices, with potentially exponential local time and memory. Numerical resource counts remain binary. Exact Gamma power comparisons outside the safe rational 3R envelope have an explicit reference cost; the safe varying-accuracy branch avoids those huge powers. Compulsory two-value refinements do not extend to optional selection by a value-changing dummy. The native quota target routine loops every heavy cardinality and does not implement the mathematical affordable-support cap `nu_C`. A restricted near support budget counts original corank plus promised selected heavy recipients at the exact stated threshold. Below-two lower bounds concern arbitrary rank-value oracles through the intrinsic subclasses; no optimal base at exact factor two is asserted. Multiple independent exact assignment budgets, arbitrary negative original costs and a common robust fractional-dummy rounding are outside this theorem. Finite verification is not proof-assistant formalization or external peer review.
+
+[Proof](../problems/unrelated-values-joint-role/proof.md) · [Dependencies](../problems/unrelated-values-joint-role/sources.md) · [Evidence](../problems/unrelated-values-joint-role/verify/README.md) · Reviewed 2026-10-27
+
 ### [Whole-ground selection and transfers](../problems/whole-ground-allocation/)
 
 The complete whole-ground transfer family and all six shared components: actual weighted first-crossing omission with full unfinished/failed work accounting; attaining adaptive residual budgets; streamed logarithmic-block covers and corank-profile refinement; fixed-family rational comparator recovery; exact integer-quota endpoints/tradeoffs; every main allocation, scheduling and flow transfer; and the stated balanced deterministic rank-oracle barriers. Reference implements actual prefix recursion, block streaming, rational search, certified selectors and native fixed/adaptive flow gaps.
@@ -211,6 +227,14 @@ The complete adaptive explicit-scenario selected-flow theorem, including scenari
 **Dependencies and scope.** Exact polynomial rational LP, Farkas duality and the paid fixed-family restriction selector remain theorem dependencies. The sharp whole-ground base requires fixed rational accuracy. Scenario list and routing-budget rows are explicit and charged. Selection is common, routing is adaptive and splittable. No implicit uncertainty, oblivious or unsplittable routing guarantee. Reference uses potentially exponential finite Bland simplex and original selected-set enumeration, not the omission recursion or rational target search. Search-free certificates prove fixed-set optimality; global optimality additionally relies on enumeration and the fixed-family predicate. W[2] hardness uses the source fact recorded by Jansen 2017 and the assumption FPT differs from W[2]. It concerns exact admission with arbitrary explicit scenarios, supplies no constant approximation gap and no single-edge-failure-only lower bound.
 
 [Proof](../problems/robust-scenario-flow/proof.md) · [Dependencies](../problems/robust-scenario-flow/sources.md) · [Evidence](../problems/robust-scenario-flow/verify/README.md) · Reviewed 2026-10-27
+
+### [Robust unrelated allocation](../problems/robust-unrelated-allocation/)
+
+Complete canonical actual-common-basis fractional-comparator theorem with arbitrary scenario/player-specific values, recipient polymatroids and assignment costs; one common setup vector and exact scenario scalar budgets; attained minimum-setup restriction selection; intersected scenario nonnegative separation; same-basis protected witnesses through changing residual budgets; weighted prefix and streamed whole-ground time; full-accuracy original fixed-basis rational reoptimization; independent exact-budget scenario rounding; and role/dummy/common-setup boundary constructions. Native reference exercises this actual pipeline with original inputs and explicitly separate finite LP cost.
+
+**Dependencies and scope.** The scenario list is explicit and nonempty. One actual original player-matroid basis is selected before the scenario; only assignments adapt. FOPT relaxes resource counts on one common actual basis and does not mix or change bases by scenario. Original counts may be unused and all original costs are nonnegative. The setup vector is identical in every scenario. Each current residual budget subtracts the cost of the same attaining minimum-setup basis. Arbitrary scenario-specific setup vectors, one common integer assignment or a common heavy/light role mask require additional arguments and are not included. The guarantee retains the scenario/player-specific largest-unit additive loss, including zero when it dominates. It does not provide an unrestricted positive multiplicative guarantee on zero/one robust instances or round a shared fractional dummy into one common integer selection. The fast mathematical bounds charge exact polynomial rank/SFM, LP, weighted intersection and streamed-cover primitives. The complete-table reference enumerates active LP systems and temporarily stores projected support vertices, with potentially exponential local time and memory separate from those bounds. It never expands binary resource units; original labels including loops are retained in software. Rank zero has an explicit empty-basis convention, outside the nontrivial positive-rank theorem. Independent original-input finite checks and code/manuscript reviews do not constitute proof-assistant formalization, external peer review or an exhaustive publication-priority search.
+
+[Proof](../problems/robust-unrelated-allocation/proof.md) · [Dependencies](../problems/robust-unrelated-allocation/sources.md) · [Evidence](../problems/robust-unrelated-allocation/verify/README.md) · Reviewed 2026-10-27
 
 ### [Robust bounded-width certificates](../problems/robust-bounded-certificates/)
 
@@ -283,6 +307,22 @@ The complete fixed-integer-d heterogeneous two-positive-processing-times-per-mac
 **Dependencies and scope.** The fast mathematical algorithm uses the explicitly paid exact rank/SFM, rational LP and integral polymatroid-intersection primitives. The reference backend implements semantic interfaces on complete rank tables by enumeration; it does not realize the fast theorem's time or polynomial workspace. The sharp base is for fixed integer `d>=2` and one scalar assignment budget. Finite executable tests have their stated scope; proof-assistant formalization, external peer review and publication priority are not claimed.
 
 [Proof](../problems/two-time-scheduling/proof.md) · [Dependencies](../problems/two-time-scheduling/sources.md) · [Evidence](../problems/two-time-scheduling/verify/README.md) · Reviewed 2026-10-27
+
+### [Many-size workload scheduling](../problems/many-size-scheduling/)
+
+The complete many-common-size workload theorem: original mandatory integral job-polymatroid bases, binary workload aggregation, full-physical-machine box dual, large integer quota and rank-dependent unit-core transfer, scaled original-type decomposition, per-machine upper-prefix rounding with explicit largest-smaller-job additive term, exact one-size/easy/rank-loss branches and one-sided original-grid optimization with the public fallback. The linked private-slack exact finite-rank refinement is audited through its player-only contraction, engineered exact quota, private insertion, attained cap threshold and capped-comparator optimization. The native complete-table reference implements aggregation, binary scaled decomposition, upper rounding, original equal-largest-type recovery and both target/search variants, with weak-basis and active-system enumeration costs separate.
+
+**Dependencies and scope.** The guarantees retain the explicit additive largest-smaller-job term; a purely multiplicative near-five-thirds consequence needs the stated size-gap condition. This common-type-size transfer has no arbitrary assignment-cost budget. The private refinement compares against the larger of the original optimum and its own attained cap threshold; cap failure is not original infeasibility. The fast theorem uses the proved normalized rank-search and paid exact rank/SFM, integral decomposition/intersection and rounding primitives. The native reference instead enumerates weak selected bases and streams exact mandatory-base LP active systems, with explicit finite time costs and polynomial rational workspace in its complete-table/binary encoding. Generic intrinsic LP primitives are reused; optional allocation, disposal and lower-rounding interfaces are not transferred into this mandatory scheduling model. Binary counts, artificial workload multipliers and accuracy/rank/divisor encodings remain binary; no numerical unit expansion occurs. Finite reference evidence, complete asymptotic proof, proof-assistant formalization, external review and publication priority are distinct; the latter three are not claimed.
+
+[Proof](../problems/many-size-scheduling/proof.md) · [Dependencies](../problems/many-size-scheduling/sources.md) · [Evidence](../problems/many-size-scheduling/verify/README.md) · Reviewed 2026-10-27
+
+### [Commitment scheduling](../problems/commitment-scheduling/)
+
+All three canonical commitment manuscripts: original-optimum homogeneous-largest workload and exact two-size bottleneck commitments; full-marginal machine contraction with actual dominated residual bases, order-independent closures and the all-budget greedy profile; and local eligibility/collision padding including exact scalar optimization, its correct grid and approximation scope. The native modules realize both main original-optimum clients, safe absorption and lifting, position contractions and local structural certificates on original complete rank tables.
+
+**Dependencies and scope.** The mathematical bounds pay for rank/SFM, integral decomposition/intersection, LP and the normalized-prefix unit search. Native clients instead stream residual original subsets and exact LP active systems with separately charged finite time and polynomial binary workspace. No capacity or artificial workload multiplier is expanded into individual jobs. All models use common positive type sizes and no assignment/setup budget. Commitment bottlenecks are explicit load terms, with no implicit bound by original optimum; private-cap and original-optimum comparisons remain distinct. Exact two-size recovery admits noninteger size ratios and incurs no smaller-job additive loss. The complete heterogeneous-large padding allocator and specialized public two-size approximation are not implemented. Scalar optimization is only for the stated padding certificate, and full-marginal closure optimality applies only to its absorption rule. No external peer review or proof-assistant verification is claimed.
+
+[Proof](../problems/commitment-scheduling/proof.md) · [Dependencies](../problems/commitment-scheduling/sources.md) · [Evidence](../problems/commitment-scheduling/verify/README.md) · Reviewed 2026-10-27
 
 ### [Hypergraph matching and expander routing](../problems/strong-haxell-matching/)
 
@@ -419,11 +459,6 @@ The complete elementary certifying fallback: induced-star current-blocker invari
 These families have not yet received a scoped readiness entry in this registry. Their existing statements retain their own assumptions.
 
 - [Numeric targets and support patterns](../problems/numeric-target-frontier/)
-- [Arbitrary-value allocation scheme](../problems/arbitrary-value-allocation-scheme/)
-- [Unrelated values with a joint role](../problems/unrelated-values-joint-role/)
-- [Robust unrelated allocation](../problems/robust-unrelated-allocation/)
-- [Many-size workload scheduling](../problems/many-size-scheduling/)
-- [Commitment scheduling](../problems/commitment-scheduling/)
 
 ## Supporting manuscripts
 
@@ -508,8 +543,12 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/activated-machine-scheduling/verify/check_six_profiles.py](../problems/activated-machine-scheduling/verify/check_six_profiles.py)
 - [problems/allocation-lower-bounds/verify/check_barriers.py](../problems/allocation-lower-bounds/verify/check_barriers.py)
 - [problems/arbitrary-processing-scheduling/verify/check_profiles.py](../problems/arbitrary-processing-scheduling/verify/check_profiles.py)
+- [problems/arbitrary-value-allocation-scheme/verify/check_scheme.py](../problems/arbitrary-value-allocation-scheme/verify/check_scheme.py)
 - [problems/boolean-linear-compiler/verify/check_cardinality_compiler.py](../problems/boolean-linear-compiler/verify/check_cardinality_compiler.py)
 - [problems/boolean-linear-compiler/verify/check_interval_compiler.py](../problems/boolean-linear-compiler/verify/check_interval_compiler.py)
+- [problems/commitment-scheduling/verify/check_absorption.py](../problems/commitment-scheduling/verify/check_absorption.py)
+- [problems/commitment-scheduling/verify/check_commitment_client.py](../problems/commitment-scheduling/verify/check_commitment_client.py)
+- [problems/commitment-scheduling/verify/check_commitment_profiles.py](../problems/commitment-scheduling/verify/check_commitment_profiles.py)
 - [problems/correlated-spectral-regression/verify/check_importance_regression.py](../problems/correlated-spectral-regression/verify/check_importance_regression.py)
 - [problems/degree-constrained-subgraphs/verify/check_linear_selector.py](../problems/degree-constrained-subgraphs/verify/check_linear_selector.py)
 - [problems/degree-constrained-subgraphs/verify/check_reductions.py](../problems/degree-constrained-subgraphs/verify/check_reductions.py)
@@ -536,6 +575,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/intrinsic-values-near-two/verify/check_intrinsic.py](../problems/intrinsic-values-near-two/verify/check_intrinsic.py)
 - [problems/item-matroid-union/verify/check_union_reduction.py](../problems/item-matroid-union/verify/check_union_reduction.py)
 - [problems/label-block-cut/verify/check_whole_blocks.py](../problems/label-block-cut/verify/check_whole_blocks.py)
+- [problems/many-size-scheduling/verify/check_workload.py](../problems/many-size-scheduling/verify/check_workload.py)
 - [problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py](../problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py)
 - [problems/matroid-failure-summaries/verify/check_rank_two_prefix.py](../problems/matroid-failure-summaries/verify/check_rank_two_prefix.py)
 - [problems/matroid-failure-summaries/verify/check_single_replacement.py](../problems/matroid-failure-summaries/verify/check_single_replacement.py)
@@ -560,6 +600,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py](../problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py)
 - [problems/robust-bounded-certificates/verify/check_bounded.py](../problems/robust-bounded-certificates/verify/check_bounded.py)
 - [problems/robust-scenario-flow/verify/check_scenarios.py](../problems/robust-scenario-flow/verify/check_scenarios.py)
+- [problems/robust-unrelated-allocation/verify/check_robust.py](../problems/robust-unrelated-allocation/verify/check_robust.py)
 - [problems/robust-width-two-allocation/verify/check_width_two.py](../problems/robust-width-two-allocation/verify/check_width_two.py)
 - [problems/selected-flow/verify/check_concurrent.py](../problems/selected-flow/verify/check_concurrent.py)
 - [problems/subset-sum-fast-deterministic/verify/check_energy.py](../problems/subset-sum-fast-deterministic/verify/check_energy.py)
@@ -573,6 +614,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/subset-sum-low-space-deterministic/verify/check_structural.py](../problems/subset-sum-low-space-deterministic/verify/check_structural.py)
 - [problems/two-size-scheduling/verify/check_corank.py](../problems/two-size-scheduling/verify/check_corank.py)
 - [problems/two-time-scheduling/verify/check_scheduling.py](../problems/two-time-scheduling/verify/check_scheduling.py)
+- [problems/unrelated-values-joint-role/verify/check_joint.py](../problems/unrelated-values-joint-role/verify/check_joint.py)
 - [problems/weighted-prefix-quota-frontier/verify/check_laminar_recovery.py](../problems/weighted-prefix-quota-frontier/verify/check_laminar_recovery.py)
 - [problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py](../problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py)
 - [problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py](../problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py)

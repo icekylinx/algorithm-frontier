@@ -32,7 +32,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-<code class="math">c=q-r</code>; <code class="math">0&lt;\varepsilon&lt;1</code> is rational; <code class="math">u_{\omega,p}=\max_j v_{\omega,p,j}</code>; <code class="math">u=\max_{\omega,p}u_{\omega,p}</code>. <code class="math">\mathrm{FOPT}</code> maximizes over one actual common basis and relaxes only scenario assignment counts. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>.
+<code class="math">c=q-r</code>; <code class="math">0&lt;\varepsilon&lt;1</code> is rational; <code class="math">u_{\omega,p}=\max(\{v_{\omega,p,j}:f_{\omega,j}(\{p\})\ge1\}\cup\{0\})</code>; <code class="math">u=\max_{\omega,p}u_{\omega,p}</code>. <code class="math">\mathrm{FOPT}</code> maximizes over one actual common basis and relaxes only scenario assignment counts. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>.
 
 **Model and representation**
 
@@ -44,7 +44,11 @@ This additive guarantee does not imply a finite multiplicative guarantee when th
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** Complete canonical actual-common-basis fractional-comparator theorem with arbitrary scenario/player-specific values, recipient polymatroids and assignment costs; one common setup vector and exact scenario scalar budgets; attained minimum-setup restriction selection; intersected scenario nonnegative separation; same-basis protected witnesses through changing residual budgets; weighted prefix and streamed whole-ground time; full-accuracy original fixed-basis rational reoptimization; independent exact-budget scenario rounding; and role/dummy/common-setup boundary constructions. Native reference exercises this actual pipeline with original inputs and explicitly separate finite LP cost.
+
+**Dependencies and scope.** The scenario list is explicit and nonempty. One actual original player-matroid basis is selected before the scenario; only assignments adapt. FOPT relaxes resource counts on one common actual basis and does not mix or change bases by scenario. Original counts may be unused and all original costs are nonnegative. The setup vector is identical in every scenario. Each current residual budget subtracts the cost of the same attaining minimum-setup basis. Arbitrary scenario-specific setup vectors, one common integer assignment or a common heavy/light role mask require additional arguments and are not included. The guarantee retains the scenario/player-specific largest-unit additive loss, including zero when it dominates. It does not provide an unrestricted positive multiplicative guarantee on zero/one robust instances or round a shared fractional dummy into one common integer selection. The fast mathematical bounds charge exact polynomial rank/SFM, LP, weighted intersection and streamed-cover primitives. The complete-table reference enumerates active LP systems and temporarily stores projected support vertices, with potentially exponential local time and memory separate from those bounds. It never expands binary resource units; original labels including loops are retained in software. Rank zero has an explicit empty-basis convention, outside the nontrivial positive-rank theorem. Independent original-input finite checks and code/manuscript reviews do not constitute proof-assistant formalization, external peer review or an exhaustive publication-priority search.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

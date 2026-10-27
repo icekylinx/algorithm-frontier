@@ -663,7 +663,22 @@
       "path": "problems/arbitrary-value-allocation-scheme",
       "evidence_note": "problems/arbitrary-value-allocation-scheme/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/arbitrary-value-allocation-scheme/verify/check_scheme.py",
+          "scope": "42 original instances/accuracy choices;168 targets (78 original outputs,90 independently sound failures);42 original-grid optimizations;305 inspected profiles;26 direct simultaneous-prefix/cost recoveries;39 independently enumerated occupied profiles;18 uncompressed exact LP comparisons;2 deliberate mixed-small/shared-resource joint fractional recoveries;exact endpoint/capping/shared-budget examples;101-bit supply and121-bit accuracy;deep occupied iterator;rank-zero/empty-type/original-loop cases;producer-disabled original verifier;4 forged outputs and8 malformed inputs."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The complete arbitrary-value optional-player approximation scheme with a genuine original player basis, recipient polymatroids, eligibility, optional unused capacity, arbitrary nonnegative player/type values, setup fees and one shared exact setup/assignment budget: integer-target capping, occupied profiles and both state-count envelopes, original joint LP feasibility, cost-preserving disposal/complement-prefix rounding, full requested accuracy and one-sided original-grid optimization. Includes a native complete-table implementation and independent original-input/output verification with separately charged finite LP costs.",
+        "date": "2026-10-27",
+        "conditions": [
+          "The mathematical time envelopes charge named polynomial exact rank/SFM, LP and weighted polymatroid-intersection primitives. The complete-table reference streams LP active systems after exact fixed-coordinate substitution, with an additional `binom(R,D)` factor for actual remaining rows and free dimension `D<=m*q`; it does not implement those fast primitive costs. Complete rank-table input, augmented disposal tables, rational arithmetic and the full binary accuracy encoding are charged.",
+          "The approximation comparator is original integer optimum, not the capped fractional relaxation or a fractional selected basis. Original type capacities remain shared across all players and bins; one actual scalar cost objective preserves the single shared setup and assignment budget. Several independent exact budgets and extra coupling constraints between types are outside this scope.",
+          "Internal proof review, exact finite original-input comparisons and producer-independent output verification are not proof-assistant formalization or external peer review. The cited ICALP 2025 rounding paper is a public antecedent, not a black-box proof of this full profile model."
+        ]
+      }
     },
     {
       "id": "recipient-polymatroid",
@@ -842,8 +857,24 @@
         {
           "path": "tools/verify_profile_certificates.py",
           "scope": "Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. This applies only to the compulsory J2 and factor-d quota arithmetic, not shared-resource or setup coupling."
+        },
+        {
+          "path": "problems/unrelated-values-joint-role/verify/check_joint.py",
+          "scope": "39 independently enumerated original integer optima, 17 actual near-two calls, 5 streamed covers including the four-owner logarithmic-block branch, 12 signed all-prefix cost recoveries and 301 compulsory quota target gates. Includes opposite owner value orders on shared original resources, persistent negative setup credit inside light roles, early relaxed success retaining all current light owners, forced-role failures, loops, empty resources, rank zero, 101-bit counts, 121-bit safe cover-base validation, producer-disabled original verification, two forged outputs and six malformed inputs. Finite evidence does not certify the fast LP/intersection runtime or implement `nu_C` optimization."
         }
-      ]
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "Complete canonical family: unrelated player-type values with genuinely shared original recipient resources; exact scalar assignment budget; optional original player matroid and persistent zero-service dual dummy for one combined selected-player setup/assignment budget; fixed positive-accuracy near-two corank-plus-support and streamed whole-ground guarantees; arbitrary-value exact-two role endpoint; compulsory two-value exact quota and fixed-integer-factor tradeoffs; all target-search, count-floor, model-boundary and inherited below-two oracle statements. Native reference executes actual shared-resource LPs, first-crossing omission, block covers, signed-cost prefix recovery, exact-two role enumeration and compulsory quota target gates, with separately charged local finite LP cost.",
+        "date": "2026-10-27",
+        "conditions": [
+          "Original values, assignment costs and setup fees are nonnegative; recipient polymatroids are independent; unused units are allowed; exactly one combined scalar budget is preserved. Each original type has one shared rank system across all owner roles, and masks precede rounding.",
+          "The zero-service M* dummy remains available at every omission node, including light owners. Its signed objective is internal affine setup accounting. Recovery optimizes one signed cost on the bounded integral prefix face after removing the budget halfspace, then extracts an original basis from dummy-free owners before discarding original nonnegative-cost assignments.",
+          "The full mathematical fast time and polynomial workspace use paid polynomial exact rank/SFM, LP, matroid/polymatroid-intersection and streamed-cover primitives. The complete-table reference instead enumerates active LP bases and temporarily stores distinct projected support vertices, with potentially exponential local time and memory. Numerical resource counts remain binary. Exact Gamma power comparisons outside the safe rational 3R envelope have an explicit reference cost; the safe varying-accuracy branch avoids those huge powers.",
+          "Compulsory two-value refinements do not extend to optional selection by a value-changing dummy. The native quota target routine loops every heavy cardinality and does not implement the mathematical affordable-support cap `nu_C`. A restricted near support budget counts original corank plus promised selected heavy recipients at the exact stated threshold.",
+          "Below-two lower bounds concern arbitrary rank-value oracles through the intrinsic subclasses; no optimal base at exact factor two is asserted. Multiple independent exact assignment budgets, arbitrary negative original costs and a common robust fractional-dummy rounding are outside this theorem. Finite verification is not proof-assistant formalization or external peer review."
+        ]
+      }
     },
     {
       "id": "whole-ground-allocation",
@@ -946,7 +977,24 @@
       "path": "problems/robust-unrelated-allocation",
       "evidence_note": "problems/robust-unrelated-allocation/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/robust-unrelated-allocation/verify/check_robust.py",
+          "scope": "Eight independently rebuilt original fixed-basis fractional LPs/recoveries using a separate exact rational Gaussian solver, 45 forced/common-basis gap calls including four-owner block-cover failure, and five full-accuracy rational/global optimizations. Checks fractional use of whole-unit-expensive pairs, common setup and attained restrictions, scenario-role disagreement, six bases of the zero/one common-selection obstruction, 101-bit counts, empty/rank-zero conventions, producer-disabled original verification, two forged records and four malformed inputs. No unrestricted multiplicative robust or fast local LP runtime claim follows from these finite checks."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "Complete canonical actual-common-basis fractional-comparator theorem with arbitrary scenario/player-specific values, recipient polymatroids and assignment costs; one common setup vector and exact scenario scalar budgets; attained minimum-setup restriction selection; intersected scenario nonnegative separation; same-basis protected witnesses through changing residual budgets; weighted prefix and streamed whole-ground time; full-accuracy original fixed-basis rational reoptimization; independent exact-budget scenario rounding; and role/dummy/common-setup boundary constructions. Native reference exercises this actual pipeline with original inputs and explicitly separate finite LP cost.",
+        "date": "2026-10-27",
+        "conditions": [
+          "The scenario list is explicit and nonempty. One actual original player-matroid basis is selected before the scenario; only assignments adapt. FOPT relaxes resource counts on one common actual basis and does not mix or change bases by scenario. Original counts may be unused and all original costs are nonnegative.",
+          "The setup vector is identical in every scenario. Each current residual budget subtracts the cost of the same attaining minimum-setup basis. Arbitrary scenario-specific setup vectors, one common integer assignment or a common heavy/light role mask require additional arguments and are not included.",
+          "The guarantee retains the scenario/player-specific largest-unit additive loss, including zero when it dominates. It does not provide an unrestricted positive multiplicative guarantee on zero/one robust instances or round a shared fractional dummy into one common integer selection.",
+          "The fast mathematical bounds charge exact polynomial rank/SFM, LP, weighted intersection and streamed-cover primitives. The complete-table reference enumerates active LP systems and temporarily stores projected support vertices, with potentially exponential local time and memory separate from those bounds. It never expands binary resource units; original labels including loops are retained in software. Rank zero has an explicit empty-basis convention, outside the nontrivial positive-rank theorem.",
+          "Independent original-input finite checks and code/manuscript reviews do not constitute proof-assistant formalization, external peer review or an exhaustive publication-priority search."
+        ]
+      }
     },
     {
       "id": "robust-bounded-certificates",
@@ -1174,14 +1222,52 @@
       "path": "problems/many-size-scheduling",
       "evidence_note": "problems/many-size-scheduling/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/many-size-scheduling/verify/check_workload.py",
+          "scope": "16 original-input instances, 162 main target checks and 32 main optimizations, 486 private targets and 96 private optimizations, 144 independently checked scaled decompositions and 72 upper-prefix roundings. Four private cap rejections occur at originally feasible targets and preserve their distinct status. Four binary tests exercise 81-bit original counts/multipliers and an 81-bit accuracy denominator through actual native decomposition, fractional intermediate bases, rounding and optimization without numeric count enumeration. Independent original-base enumeration checks every original type rank/total and actual load; five malformed inputs are rejected. Reference selected-basis/active-system costs remain separate from fast rank-local-search time."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The complete many-common-size workload theorem: original mandatory integral job-polymatroid bases, binary workload aggregation, full-physical-machine box dual, large integer quota and rank-dependent unit-core transfer, scaled original-type decomposition, per-machine upper-prefix rounding with explicit largest-smaller-job additive term, exact one-size/easy/rank-loss branches and one-sided original-grid optimization with the public fallback. The linked private-slack exact finite-rank refinement is audited through its player-only contraction, engineered exact quota, private insertion, attained cap threshold and capped-comparator optimization. The native complete-table reference implements aggregation, binary scaled decomposition, upper rounding, original equal-largest-type recovery and both target/search variants, with weak-basis and active-system enumeration costs separate.",
+        "date": "2026-10-27",
+        "conditions": [
+          "The guarantees retain the explicit additive largest-smaller-job term; a purely multiplicative near-five-thirds consequence needs the stated size-gap condition. This common-type-size transfer has no arbitrary assignment-cost budget. The private refinement compares against the larger of the original optimum and its own attained cap threshold; cap failure is not original infeasibility.",
+          "The fast theorem uses the proved normalized rank-search and paid exact rank/SFM, integral decomposition/intersection and rounding primitives. The native reference instead enumerates weak selected bases and streams exact mandatory-base LP active systems, with explicit finite time costs and polynomial rational workspace in its complete-table/binary encoding. Generic intrinsic LP primitives are reused; optional allocation, disposal and lower-rounding interfaces are not transferred into this mandatory scheduling model.",
+          "Binary counts, artificial workload multipliers and accuracy/rank/divisor encodings remain binary; no numerical unit expansion occurs. Finite reference evidence, complete asymptotic proof, proof-assistant formalization, external review and publication priority are distinct; the latter three are not claimed."
+        ]
+      }
     },
     {
       "id": "commitment-scheduling",
       "path": "problems/commitment-scheduling",
       "evidence_note": "problems/commitment-scheduling/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/commitment-scheduling/verify/check_absorption.py",
+          "scope": "109 original job systems, 352 closures across 1317 reachable all-order absorption sets, 369 residual-rank budgets, 1553 dominated contracted-base recoveries, 839 original-base lifts, 109 collision thresholds and 729 Boolean-rank values. Independent original assignment enumeration; seven malformed/forged rejections, plateau/zero-load boundaries and 100-digit capacity guards."
+        },
+        {
+          "path": "problems/commitment-scheduling/verify/check_commitment_profiles.py",
+          "scope": "78 original matroids, 606 bottleneck commitments, 1419 original basis-image checks and 984 completions. Independent piecewise-affine envelope optimization on 700 padding inputs, including 18 strict improvements and an exact strict-active-set endpoint; six malformed inputs."
+        },
+        {
+          "path": "problems/commitment-scheduling/verify/check_commitment_client.py",
+          "scope": "Nine original job systems, 154 target checks, 68 original-grid optimizations, 58 actual commitment outputs and 16 two-size configurations; four invalid queries. Independent original schedule optima verify the promised bounds. Separate guards cover zero quota on a committed position where private-cap search fails, engineered positive-slack integral quotas, noninteger size ratios and a 100-digit one-size instance."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "date": "2026-10-27",
+        "scope": "All three canonical commitment manuscripts: original-optimum homogeneous-largest workload and exact two-size bottleneck commitments; full-marginal machine contraction with actual dominated residual bases, order-independent closures and the all-budget greedy profile; and local eligibility/collision padding including exact scalar optimization, its correct grid and approximation scope. The native modules realize both main original-optimum clients, safe absorption and lifting, position contractions and local structural certificates on original complete rank tables.",
+        "conditions": [
+          "The mathematical bounds pay for rank/SFM, integral decomposition/intersection, LP and the normalized-prefix unit search. Native clients instead stream residual original subsets and exact LP active systems with separately charged finite time and polynomial binary workspace. No capacity or artificial workload multiplier is expanded into individual jobs.",
+          "All models use common positive type sizes and no assignment/setup budget. Commitment bottlenecks are explicit load terms, with no implicit bound by original optimum; private-cap and original-optimum comparisons remain distinct. Exact two-size recovery admits noninteger size ratios and incurs no smaller-job additive loss.",
+          "The complete heterogeneous-large padding allocator and specialized public two-size approximation are not implemented. Scalar optimization is only for the stated padding certificate, and full-marginal closure optimality applies only to its absorption rule. No external peer review or proof-assistant verification is claimed."
+        ]
+      }
     },
     {
       "id": "strong-haxell-matching",

@@ -260,6 +260,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/arbitrary-value-allocation-scheme/README.md) · [Main proof](problems/arbitrary-value-allocation-scheme/proof.md) · [Sources](problems/arbitrary-value-allocation-scheme/sources.md) · [Verification](problems/arbitrary-value-allocation-scheme/verify/README.md)
 
+- [Native exact-budget profile realization](problems/arbitrary-value-allocation-scheme/reference-realization.md)
+
 ### [Recipient polymatroids](problems/recipient-polymatroid/)
 
 [Statement](problems/recipient-polymatroid/README.md) · [Main proof](problems/recipient-polymatroid/proof.md) · [Sources](problems/recipient-polymatroid/sources.md) · [Verification](problems/recipient-polymatroid/verify/README.md)
@@ -307,6 +309,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/unrelated-values-joint-role/README.md) · [Main proof](problems/unrelated-values-joint-role/proof.md) · [Sources](problems/unrelated-values-joint-role/sources.md) · [Verification](problems/unrelated-values-joint-role/verify/README.md)
 
 - [The exact-factor-two endpoint for arbitrary unrelated allocation](problems/unrelated-values-joint-role/exact-two.md)
+- [Exact original-input realization of shared resource roles](problems/unrelated-values-joint-role/reference-realization.md)
 - [Unrelated-value allocation with one shared setup and assignment budget](problems/unrelated-values-joint-role/setup-budget.md)
 - [Integer-quota time tradeoffs for compulsory unrelated two-value allocation](problems/unrelated-values-joint-role/two-value-tradeoffs.md)
 
@@ -342,6 +345,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 ### [Robust unrelated allocation](problems/robust-unrelated-allocation/)
 
 [Statement](problems/robust-unrelated-allocation/README.md) · [Main proof](problems/robust-unrelated-allocation/proof.md) · [Sources](problems/robust-unrelated-allocation/sources.md) · [Verification](problems/robust-unrelated-allocation/verify/README.md)
+
+- [Exact common-basis reference for robust unrelated allocation](problems/robust-unrelated-allocation/reference-realization.md)
 
 ### [Robust bounded-width certificates](problems/robust-bounded-certificates/)
 
@@ -401,12 +406,15 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/many-size-scheduling/README.md) · [Main proof](problems/many-size-scheduling/proof.md) · [Sources](problems/many-size-scheduling/sources.md) · [Verification](problems/many-size-scheduling/verify/README.md)
 
+- [Native binary workload realization and its finite solver costs](problems/many-size-scheduling/reference-realization.md)
+
 ### [Commitment scheduling](problems/commitment-scheduling/)
 
 [Statement](problems/commitment-scheduling/README.md) · [Main proof](problems/commitment-scheduling/proof.md) · [Sources](problems/commitment-scheduling/sources.md) · [Verification](problems/commitment-scheduling/verify/README.md)
 
 - [Scheduling with local eligibility widths and collision thresholds](problems/commitment-scheduling/eligibility-padding.md)
 - [Safe machine contraction and residual large-job rank](problems/commitment-scheduling/machine-contraction.md)
+- [Native commitment, contraction and eligibility interfaces](problems/commitment-scheduling/reference-realization.md)
 
 ## Matching certificates and oracle barriers
 

@@ -164,6 +164,13 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check('exact-failure-preservers check_matroid_reporting', ('problems/exact-failure-preservers/verify/check_matroid_reporting.py',)),
         Check('recipient-polymatroid check_counts', ('problems/recipient-polymatroid/verify/check_counts.py',)),
         Check('intrinsic-values-near-two check_intrinsic', ('problems/intrinsic-values-near-two/verify/check_intrinsic.py',)),
+        Check('arbitrary-value-allocation-scheme check_scheme', ('problems/arbitrary-value-allocation-scheme/verify/check_scheme.py',)),
+        Check('many-size-scheduling check_workload', ('problems/many-size-scheduling/verify/check_workload.py',)),
+        Check('unrelated-values-joint-role check_joint', ('problems/unrelated-values-joint-role/verify/check_joint.py',)),
+        Check('robust-unrelated-allocation check_robust', ('problems/robust-unrelated-allocation/verify/check_robust.py',)),
+        Check('commitment-scheduling check_absorption', ('problems/commitment-scheduling/verify/check_absorption.py',)),
+        Check('commitment-scheduling check_commitment_profiles', ('problems/commitment-scheduling/verify/check_commitment_profiles.py',)),
+        Check('commitment-scheduling check_commitment_client', ('problems/commitment-scheduling/verify/check_commitment_client.py',)),
         Check("Non-Fano obstruction", ("tools/verify_non_fano.py",)),
         Check(
             "Full-contact receipt binding and coverage metadata",

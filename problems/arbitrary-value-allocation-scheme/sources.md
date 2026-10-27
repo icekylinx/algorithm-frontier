@@ -5,6 +5,7 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 ## Canonical manuscripts
 
 - [Arbitrary-value allocation with setup fees: an exact-budget approximation scheme](proof.md)
+- [Native exact-budget profile realization](reference-realization.md)
 
 ## Mathematical dependencies
 
@@ -16,7 +17,10 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 
 ## Executable evidence
 
-No result-specific executable check is registered. The mathematical proof and the repository document checks have separate roles.
+- [Exact-table profile backend and API](reference/README.md) and [independent original-input checker](verify/check_scheme.py).
+- Reuses canonical [intrinsic rank validation and base-coordinate elimination](../intrinsic-values-near-two/reference/README.md), [occupied scheduling profile iteration](../arbitrary-processing-scheduling/reference/README.md) and exact Gaussian elimination from the [two-time reference](../two-time-scheduling/reference/README.md).
+
+The mathematical proof and repository document checks have separate roles.
 
 The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
 

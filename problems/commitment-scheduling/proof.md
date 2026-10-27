@@ -271,14 +271,13 @@ retain their polynomial-time distinction.
 
 This manuscript claims the bottleneck commitment proof and its parameterized
 consequences. Publication priority has not been exhaustively established.
-The full derivation passed the reviews in
-[Scheduling by bottleneck commitments and a reduced search rank](proof.md),
-[Scheduling by bottleneck commitments and a reduced search rank](proof.md), and
-[Scheduling by bottleneck commitments and a reduced search rank](proof.md). They cover the
-zero-extension argument, original singleton accounting, quota formulas
-and target search. A comparison sentence was qualified to distinguish
-the hard private-rank condition from the automatic easy branch. These
-are internal mathematical reviews, not formal or external verification.
+The internal proof audit covers zero extension, original singleton accounting,
+quota formulas and target search, including the distinction between the hard
+private-rank condition and the automatic easy branch. The separate
+[native realization](reference-realization.md) connects the main workload and
+two-size constructions to executable original-input clients with explicit
+reference costs. These are internal mathematical and implementation reviews,
+not formal verification or external peer review.
 
 ---
 

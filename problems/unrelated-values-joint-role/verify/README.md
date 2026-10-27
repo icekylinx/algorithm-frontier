@@ -12,8 +12,24 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 - The changing role LP retains a protected original full allocation with uniform rational descriptions.
 - The setup companion keeps one combined original budget on an actual selected basis; enumeration proves exact two in <code class="math">2^q</code> polynomial time.
 - J2 and the discrete factor-<code class="math">d</code> companion prove their exact quota recovery for compulsory player-specific values in <code class="math">\{0,u,a\}</code>.
+- The [native realization proof](../reference-realization.md) establishes the exact original resource LP, nonnegative support separator, signed lower-prefix face, persistent dual dummy and original-basis budget extraction. The canonical weighted omission, streamed cover, rational-grid and oracle lower-bound dependencies have been checked in their actual models.
 
 ## Executable evidence
+
+[check_joint.py](check_joint.py) independently enumerates original feasible
+integer allocations for 39 original inputs, comparing exact-half outputs
+and 17 near-two calls. Five calls use actual streamed covers, including the
+logarithmic-block branch on four owners. Twelve direct
+signed-cost prefix roundings check cost and every prefix at the same
+integer point; 301 compulsory quota targets compare sound failures and
+relaxed outputs with the original integer optimum. Fixtures include shared
+original capacities with opposite value orders, mixed light/heavy roles,
+persistent dummy credit inside the light ground, original loops, empty
+resources, rank zero, forced-role failures, early relaxed success retaining
+all current light owners, and a 101-bit supply. A 121-bit
+rational ratio checks the safe cover-base shortcut. The original verifier
+is tested with its producer disabled; two forged records and six malformed
+inputs are rejected.
 
 [verify_profile_certificates.py](../../../tools/verify_profile_certificates.py) checks the following finite claim:
 
@@ -23,9 +39,15 @@ Run from the repository root:
 
 ```sh
 python3 tools/verify_profile_certificates.py
+python3 problems/unrelated-values-joint-role/verify/check_joint.py
 ```
 
-These programs do not implement the full algorithm or mechanically verify its oracle, approximation and running-time arguments.
+These finite checks do not establish the asymptotic proof. The native
+backend executes the actual mask/LP/recursion/rounding construction, using
+finite active-basis LP enumeration with separately charged time and
+potentially exponential projected-support storage. It does not implement
+the fast polynomial LP/intersection primitive costs or compute the
+affordable-support cap used in the sharper compulsory theorem.
 
 ## Model and verification boundaries
 

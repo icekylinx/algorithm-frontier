@@ -8,6 +8,11 @@ unit makes the quota large enough for the quasipolynomial search. This
 does not remove the original integer-quota gate for free: the final
 schedule pays an explicit additive largest-small-job error.
 
+The [native complete-table realization](reference-realization.md) implements
+binary workload decomposition and original upper-prefix rounding, using
+streamed rational active systems. Its weak-basis enumeration has a separate
+reference bound; it does not replace the rank-dependent local-search proof.
+
 ## 1. Model and guarantee
 
 There are q machines and integral job polymatroids on those machines.

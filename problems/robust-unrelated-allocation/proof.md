@@ -444,6 +444,13 @@ bounded primary-source comparison is not an exhaustive priority
 search. This manuscript makes no claim of external review, formal
 verification, or a new general-purpose rounding theorem.
 
+The [native exact-table realization](reference-realization.md) executes the
+actual minimum-common-setup selector, weighted prefix recursion and streamed
+covers, original fixed-basis fractional reoptimization, and independent
+scenario recovery. Its finite active-basis LP cost and potentially
+exponential projected-support storage are explicitly separate from the
+fast mathematical primitive costs and workspace.
+
 ---
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

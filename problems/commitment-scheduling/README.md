@@ -53,7 +53,11 @@ No lower bound is claimed for this algorithm.
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** All three canonical commitment manuscripts: original-optimum homogeneous-largest workload and exact two-size bottleneck commitments; full-marginal machine contraction with actual dominated residual bases, order-independent closures and the all-budget greedy profile; and local eligibility/collision padding including exact scalar optimization, its correct grid and approximation scope. The native modules realize both main original-optimum clients, safe absorption and lifting, position contractions and local structural certificates on original complete rank tables.
+
+**Dependencies and scope.** The mathematical bounds pay for rank/SFM, integral decomposition/intersection, LP and the normalized-prefix unit search. Native clients instead stream residual original subsets and exact LP active systems with separately charged finite time and polynomial binary workspace. No capacity or artificial workload multiplier is expanded into individual jobs. All models use common positive type sizes and no assignment/setup budget. Commitment bottlenecks are explicit load terms, with no implicit bound by original optimum; private-cap and original-optimum comparisons remain distinct. Exact two-size recovery admits noninteger size ratios and incurs no smaller-job additive loss. The complete heterogeneous-large padding allocator and specialized public two-size approximation are not implemented. Scalar optimization is only for the stated padding certificate, and full-marginal closure optimality applies only to its absorption rule. No external peer review or proof-assistant verification is claimed.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
@@ -96,5 +100,7 @@ rank-quasipolynomial alternative as the table above. Boolean-rank loss
 is handled by the separate additive collision branch. Every bottleneck
 is a load certificate; no promise that it is small compared with <code class="math">\mathrm{OPT}</code>
 is implicit.
+
+The [native commitment and contraction backends](reference/README.md) implement both original-optimum main clients, safe machine absorption and exact structural certificates. Their [realization proof](reference-realization.md) and [original-input checks](verify/README.md) distinguish numerical-count execution from the fast theorem's paid primitives.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

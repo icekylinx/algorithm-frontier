@@ -1,5 +1,13 @@
 # History
 
+## 2026-10-27 — General allocation and native workload commitment clients
+
+- Completed the arbitrary-value allocation scheme's full proof audit and native original-resource profile pipeline. Exact setup-plus-assignment cost, disposal/complement-prefix recovery and original-grid optimization are checked independently. The streamed active-system LP cost is distinct from the theorem's polynomial primitives; large binary counts and tiny accuracy indices are retained numerically.
+- Completed unrelated joint-role and robust common-basis allocation proofs and exact reference clients. Shared resources are not duplicated between roles, signed dual dummy costs persist across omissions, and robust scenarios retain one actual selected basis and setup charge. Independent review fixed a large-accuracy envelope computation before the final tests; projected-support storage and unoptimized quota loops are explicitly charged.
+- Realized binary workload decomposition and original per-machine upper rounding for many-size scheduling, including exact recovery of all equal-largest types. The private finite-rank variant retains its attained cap threshold and separate capped comparator. Native residual basis enumeration and active-system LP time remain separate from the fast local-search theorem, with polynomial binary workspace.
+- Completed all three commitment proof audits and native original-optimum workload/two-size clients. Safe full-marginal absorption has all-order closure checks, actual dominated residual-base recovery and original-base lifting; position commitments keep zero dual lower quota, and the two-size branch handles noninteger size ratios without additive small-job loss. Exact collision and padding certificates retain their stated optimization limits.
+- Independent GPT-6.1 Sol cross-reviews cover every new package. All 109 standard repository checks passed, including serial replay of the selected continuous-contact branches. The full contact catalogue was not recomputed. External peer review and proof-assistant verification are not claimed.
+
 ## 2026-10-27 — Activated schedules and initialized failure reporting
 
 - Completed the activated-machine and exact six-profile proof packages. The activation adapter checks original job totals before compression, pays setup and assignment from one budget, uses binary greedy feasibility, and instantiates all three profile families on the actual active rank. The direct six-profile client has independent original-input checks without activation transformations.

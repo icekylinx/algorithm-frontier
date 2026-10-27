@@ -675,14 +675,14 @@ nonnegative separator for a signed joint selection projection.
 Original types may therefore serve both roles without capacity
 double spending.
 
-The root read and the separate audits
-[Unrelated-value allocation near two through a joint light/heavy LP](proof.md) and
-[Unrelated-value allocation near two through a joint light/heavy LP](proof.md) passed the empty-region
-gate, masked support LP, adaptive witness, total-count-floor
-recovery, exact-cardinality global cover with early relaxed
-success, all target-search boundaries, and the optional-M dummy
-adapter. No formal verification, external peer review or
-exhaustive publication-priority claim is asserted.
+The [native original-input realization](reference-realization.md) executes
+the empty-region gate, masked support LP, adaptive witness recursion,
+count-floor signed recovery, exact-cardinality global cover with early
+relaxed success, target-search boundaries and optional-player setup adapter.
+Its finite local LP cost and temporary support storage are stated separately
+from the theorem's polynomial LP and intersection primitives. No formal
+verification, external peer review or exhaustive publication-priority claim
+is asserted.
 
 ---
 
