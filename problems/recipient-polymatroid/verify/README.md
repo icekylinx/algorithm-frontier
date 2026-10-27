@@ -32,10 +32,39 @@ inequalities, including nonseparable shared-feature ranks. Four additional
 100-digit-capacity assertions exercise rank, availability, recovery and bulk
 minimality without unit expansion.
 
-The executable realizes these representation interfaces. It does not run
-the complete player-layer algorithm or any fractional configuration solver;
-the explicit-table enumeration costs remain separate from the theorem's
-paid oracle costs.
+The count executable realizes these representation interfaces. It does not
+run the complete player-layer algorithm. Its explicit-table enumeration
+costs remain separate from the theorem's paid oracle costs.
+
+The separate [fractional reference](../reference/fractional.py) and
+[realization proof](../fractional-realization.md) supply actual signed
+coordinate-box pricing, subset cuts, aggregate support, normalized Farkas
+generation and original-grid weak fractional optimization. Run:
+
+```sh
+python3 -B problems/recipient-polymatroid/verify/check_fractional.py
+```
+
+This checker independently enumerates original small box vectors for
+200 signed convex-price cases and 400 strict weak-price tests; it checks
+70 dependent reserve bases, 63 reserve/subset comparisons, 608 scaled
+fractional loss inequalities and 81 signed aggregate maxima. A separate
+rational Gaussian original-LP comparator covers nine instances, 36 weak
+targets and nine optimizations, retaining every original aggregate rank
+row. An additional actual generated point has genuinely fractional masses
+and multiple aggregate vertices while retaining all aggregate rows in a
+support-zero relaxation. It includes both configuration gaps, binary 101-bit supply, 121-bit
+accuracy encoding, empty/rank-zero conventions, a producer-disabled
+original fractional verifier, four forged outputs and eight malformed
+inputs. The independent comparators do not use the native pricing,
+column, aggregate-greedy, Farkas or LP producer.
+
+The native finite generation may store exponentially many configurations
+and aggregate vertices. Each local pricing call uses binary segments and
+a profit-scaled exact-budget DP; each normalized LP uses separately
+charged finite Bland pivots. This is executable evidence for the original
+interfaces, with no fast ellipsoid implementation or integer allocation
+claim attached to fractional output.
 
 ## Model and verification boundaries
 

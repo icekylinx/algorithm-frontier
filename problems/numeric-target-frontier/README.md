@@ -2,6 +2,11 @@
 
 Exact feasibility and signed-scalar optimization under one global integral polymatroid, with bounds that retain target size and support geometry.
 
+The [native CC reference](reference/README.md) supplies exact mixed-target
+decision and signed-scalar recovery on complete original tables. Its finite
+LP costs and [partial mathematical audit](reference-realization.md) are
+separate from the full refinement family and the theorem bounds below.
+
 **Objective and output**
 
 Decide nonnegative integer upper, equality and covering targets; return an attaining integer vector for the exact minimum or maximum of one rational scalar. Approximation variants specify their own direction.
@@ -39,7 +44,11 @@ For every budget pair <code class="math">t\ge512,q\ge1</code>, a rank-oracle fam
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The complete central BC budget-classification proof, including its original-support and total-target upper dependencies and calibrated bounded-error hidden-matroid query lower bound; the complete UP useful-prefix/interval construction; the complete CC mixed-target chain representation and direct bounded coefficient-profile recovery/counts. Includes a native CC exact mixed-target signed-scalar solver with original eligibility, optional versus mandatory mass, polynomial copied-ground representation, streamed occupied profiles, exact shared-resource recovery and producer-independent original verification.
+
+**Dependencies and scope.** The executable implements CC covering-row permutations, retaining its explicit factorial cover factor; it does not implement the stronger mixed-support UP interval compiler. Generic streamed exact LP recovery has a separately charged `binom(M,D)` active-system factor for actual remaining rows and free dimension. The fast mathematical bounds pay named polynomial SFM/weighted-intersection primitives. Complete original-table input, all rational work and binary ranks/targets are charged; no copied-ground subset table or resource-unit list is expanded. This partial review does not cover the seven approximation schemes and constants, every fixed-dimensional/single-objective/support-geometric refinement, all encoded ETH families or nonlinear/global/mandatory/robust compositions. Those retain their linked mathematical statements and dependencies; no whole-family readiness is claimed. The BC lower bound is worst-case under parameter upper budgets in the rank-oracle model, including its stated bounded-error scope. It is not an exact-pair or representation-independent hardness statement. Finite exact checks and internal proof review are not proof-assistant formalization, external peer review or an exhaustive priority audit.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

@@ -13,6 +13,12 @@ exact budget. The selected players form an actual basis of an
 arbitrary original matroid. No price-diversity parameter, small-unit
 hypothesis, resource-unit expansion or unpriced completion is used.
 
+The [native reference and realization proof](reference-realization.md) give
+actual complete-table count separation, exact fixed-quota recovery and
+original-input target optimization, including the shared-setup companion.
+The finite Bland-simplex LP cost is separate from this theorem's paid
+polynomial LP primitives.
+
 ## 1. Model and theorem
 
 Let M be a rank-r player matroid, with r>=1. Delete its loops and

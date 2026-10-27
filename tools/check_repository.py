@@ -171,6 +171,10 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check('commitment-scheduling check_absorption', ('problems/commitment-scheduling/verify/check_absorption.py',)),
         Check('commitment-scheduling check_commitment_profiles', ('problems/commitment-scheduling/verify/check_commitment_profiles.py',)),
         Check('commitment-scheduling check_commitment_client', ('problems/commitment-scheduling/verify/check_commitment_client.py',)),
+        Check('numeric-target-frontier check_targets', ('problems/numeric-target-frontier/verify/check_targets.py',)),
+        Check('recipient-polymatroid check_fractional', ('problems/recipient-polymatroid/verify/check_fractional.py',)),
+        Check('one-value-exact-two check_one_value', ('problems/one-value-exact-two/verify/check_one_value.py',)),
+        Check('exact-flow-sensitivity check_signed_flow', ('problems/exact-flow-sensitivity/verify/check_signed_flow.py',)),
         Check("Non-Fano obstruction", ("tools/verify_non_fano.py",)),
         Check(
             "Full-contact receipt binding and coverage metadata",

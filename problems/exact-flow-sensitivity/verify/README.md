@@ -54,8 +54,9 @@ its validations.
 This finite evidence supports the implemented residual and compact-reporting
 mechanisms. It does not prove arbitrary-size correctness or asymptotic size
 by enumeration. The local written proof establishes those guarantees under
-the exact public contract. General-balance/signed-cost initialization, blossom clients, arbitrary
-matroid clients and price sweeps remain outside these reference interfaces.
+the exact public contract. These nonnegative interfaces exclude signed initialization;
+the separate signed backend below supplies it. Blossom clients, arbitrary
+matroid clients and price sweeps remain outside the flow reference interfaces.
 
 ## Flow and support boundaries
 
@@ -134,8 +135,29 @@ supply with 101 decimal digits and a disconnected negative loop exercise
 rejection and model boundaries. A fresh interpreter checks verification
 with both solver and producer imports disabled.
 
-Finite comparisons support the written arbitrary-size arguments. No
-signed-cost minimum-cost solver, fast preprocessing, or constant-time
-certificate verification is claimed.
+Finite comparisons support the written arbitrary-size arguments. The certificate routines themselves are not a minimum-cost optimizer;
+fast preprocessing and constant-time full-input verification are not claimed.
+
+## Native signed optimization and deletion reporting
+
+The [signed backend](../reference/signed_flow.py) and its
+[proof](../manuscripts/reference-signed-balance-flow.md) add native signed
+minimum-cost initialization, arbitrary integral balances, and compact fixed
+and maximum-value deletion reporting.
+
+```sh
+python3 -B problems/exact-flow-sensitivity/verify/check_signed_flow.py
+```
+
+Independent Boolean-support enumeration checks 180 original graphs, 5,275
+balance decisions (1,898 infeasible), 672 minimum-cost maximum certificates
+and 672 maximum-value deletion reports. There are 1,014 initialized fixed
+oracles and 6,631 fixed deletion queries, including 1,226 unreachable repairs.
+Forty long hub reports exercise sparse original IDs, reverse baseline tags
+and positive insertion tags. Seven queries run with optimization disabled;
+seven malformed requests are rejected. Isolated negative cycles, loops,
+parallel records and 100-digit signed rational data are included. These
+checks support the written proof and do not extend the path interface to
+signed costs or implement the family's matching, matroid and price clients.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

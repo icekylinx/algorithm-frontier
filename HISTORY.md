@@ -1,5 +1,13 @@
 # History
 
+## 2026-10-27 — Exact numeric targets, fractional allocation and signed flow
+
+- Completed the one-value allocation family's proof audit and native exact-budget original-basis client, including setup and assignment costs, capped-service separation, weighted recovery, omission and rational covers. Native simplex costs and rational approximation envelopes remain distinct from the fast fixed-parameter theorem.
+- Completed recipient-polymatroid fractional companions: signed convex pricing, exact strict grids, subset cuts, normalized Farkas generation and coordinate-box optimization. Independent original-input checks cover generated primal and dual witnesses; finite generation costs remain separate from the ellipsoid theorem.
+- Audited the central numeric-target budget classification, useful-prefix construction and mixed-target chain representation, and added a native signed exact chain solver. Shared original resource ranks, optional versus mandatory totals and binary counts remain explicit. Broader approximation and refinement families are still outside this partial review.
+- Added native signed unit-flow initialization, including disconnected negative cycles, loops, parallel records and arbitrary integral balances. Compact fixed-balance and maximum-value deletion reporters use actual baseline support sizes and deterministic decoding, with independent full-input certificates and original-support enumeration. Faster preprocessing and the family's nonflow clients retain separate boundaries.
+- Independent GPT-6.1 Sol reviews cover all four packages. All 113 standard repository checks passed, including serial selected-contact replay; the full contact catalogue was not recomputed. The main catalogue now has 44 ready and 11 partially reviewed families, with a defined review scope for every main family. Readiness is scoped internal review, not external peer review or proof-assistant verification.
+
 ## 2026-10-27 — General allocation and native workload commitment clients
 
 - Completed the arbitrary-value allocation scheme's full proof audit and native original-resource profile pipeline. Exact setup-plus-assignment cost, disposal/complement-prefix recovery and original-grid optimization are checked independently. The streamed active-system LP cost is distinct from the theorem's polynomial primitives; large binary counts and tiny accuracy indices are retained numerically.

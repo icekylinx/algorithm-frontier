@@ -23,7 +23,11 @@ The [independent flow certificate proof](manuscripts/independent-flow-certificat
 proves reduced-cost completeness, maximum and infeasibility cut certificates,
 and a binary-input general-balance feasibility constructor. These arguments
 are self-contained. The verifier scans the full surviving original graph;
-its signed-cost scope does not extend compact minimum-cost initialization.
+the separate [signed-balance realization](manuscripts/reference-signed-balance-flow.md)
+adds native minimum-cost initialization, negative-arc complementation, global
+potentials and compact fixed-balance and maximum-value deletion reports.
+Its final records are measured by actual baseline support, including cycles;
+its polynomial preprocessing is charged separately.
 
 ## Shared proof dependencies
 

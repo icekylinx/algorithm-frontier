@@ -3,6 +3,7 @@
 ## Canonical manuscripts
 
 - [Exact numeric targets and support-sensitive algorithms](proof.md)
+- [Exact mixed-target cover-chain reference and scoped core audit](reference-realization.md)
 - [Exact aligned nonlinear numeric targets under one global polymatroid](manuscripts/aligned-nonlinear-mixed-numeric-targets.md)
 - [Overlap-density bounds for aligned nonlinear numeric rows](manuscripts/aligned-nonlinear-overlap-density-transfer.md)
 - [Exact numeric-target schemes for global-resource fairness and scheduling](manuscripts/block-global-exact-numeric-target-schemes.md)
@@ -63,6 +64,12 @@ Direct external references appearing in this reading path are:
 - <https://www.ijcai.org/Proceedings/13/Papers/030.pdf>
 - <https://www.microsoft.com/en-us/research/publication/degree-bounded-matroids-submodular-flows/>
 - <https://www.sciencedirect.com/science/article/pii/037722179190300K>
+
+## Executable evidence
+
+- [Native CC mixed-target reference](reference/README.md) and [independent original-input checker](verify/check_targets.py).
+- Reuses canonical rank-table validation through the [intrinsic reference](../intrinsic-values-near-two/reference/README.md) and the generic streamed exact LP primitive from the [arbitrary-value reference](../arbitrary-value-allocation-scheme/reference/README.md).
+- The [realization note](reference-realization.md) names exactly the BC/UP/CC mathematical scope and excludes the unreviewed refinements. The software implements CC, not UP.
 
 ## Evidence and provenance
 

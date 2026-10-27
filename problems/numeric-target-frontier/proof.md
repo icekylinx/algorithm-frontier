@@ -23,6 +23,12 @@ All algorithms use uniform polynomial binary workspace in the stated oracle or r
 
 The recovery mechanism is shared: a streamed multiplicity profile fixes the totals of coefficient classes; one partition-count polymatroid enforces those totals, and its intersection with the one shared resource rank is integral. A mandatory base keeps its original total throughout masks and lifts. Optional disposal is added only for an originally optional problem. Real zero-coefficient coordinates retain their actual scalar costs.
 
+The [scoped core audit and native CC realization](reference-realization.md)
+review the central classification and the stated UP/CC profile constructions.
+The exact-table software uses CC cover chains with separately charged finite
+active-system recovery; it does not implement the complete refinement family
+or the stronger UP interval compiler.
+
 ## Main theorem: a sharp budget classification
 
 This note combines the original-support upper bound with the total-target upper bound, and calibrates two different hidden-matroid families to every sufficiently large pair of parameter budgets. The result is a worst-case classification under upper bounds on the parameters. It does not assert a lower bound for every exactly prescribed pair of parameter values, or for every individual instance.

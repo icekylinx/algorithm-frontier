@@ -68,8 +68,9 @@ or internal-vertex failure. It restores both original vertex lists and arc
 IDs, including after zero-cost-cycle removal. It supports fixed cardinality
 and maximum cardinality on simple directed nonnegative-rational inputs.
 
-Signed-cost/general-balance **minimum-cost initialization**, matroid and
-blossom clients remain outside the compact oracle's public contract.
+The preceding `unit_flow` and path interfaces retain their nonnegative-cost
+contracts. The separate signed interface below handles general balances;
+matroid and blossom clients remain outside these flow interfaces.
 
 The separate [certificate verifier](flow_certificates.py) accepts signed
 rational costs, arbitrary integral outward balances, loops and parallel
@@ -108,5 +109,44 @@ The checker independently enumerates original Boolean arc supports. It
 compares optimal values, exact costs, differences and full outputs before
 and after each single failure. Its finite domain and exclusions are stated
 in [the verification note](../verify/README.md).
+
+## Signed costs, general balances and compact deletion queries
+
+The [signed flow backend](signed_flow.py), with its
+[self-contained proof](../manuscripts/reference-signed-balance-flow.md), accepts
+signed exact rational costs, loops and parallel original arcs. It computes its
+own optimum, including negative cycles in disconnected components.
+
+```python
+from signed_flow import minimum_balance, minimum_maximum
+from signed_flow import build_balance_oracle, MaximumBalanceOracle
+
+signed_arcs = (Arc(0, 1, -2), Arc(1, 1, -3))
+certificate, cut = minimum_balance(2, signed_arcs, (1, -1))
+assert cut is None and certificate.cost == -5
+fixed_signed, cut = build_balance_oracle(2, signed_arcs, (1, -1))
+assert fixed_signed.query(0) is None
+assert fixed_signed.value(1) == -2
+signed_maximum = MaximumBalanceOracle(2, signed_arcs, 0, 1)
+assert signed_maximum.query(0) == (0, -3, (1,))
+assert signed_maximum.query(1) == (1, -2, (0,))
+```
+
+`minimum_balance` returns an independently verified optimum certificate or an
+original violated balance cut. `minimum_maximum` returns a combined optimum
+and maximum-cut certificate. `build_balance_oracle` returns an initialized
+oracle or an infeasibility cut. Its `query` returns original selected IDs or
+`None`; `value` returns the exact cost or `None`. The maximum wrapper returns
+`(value, exact_cost, used_ids)` using two consecutive initialized levels.
+Queries are independent; absent integer IDs have no effect, while Boolean
+and noninteger IDs are rejected. Neither compact interface retains the full
+original graph. Final bounds use actual baseline support sizes, including
+negative cycles, rather than source flow value. Decoding uses deterministic
+binary search and dense removal arrays; exact rational bit work is separate.
+Native polynomial preprocessing is distinct from the fast research theorem.
+
+```sh
+python3 -B problems/exact-flow-sensitivity/verify/check_signed_flow.py
+```
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

@@ -12,6 +12,13 @@ A successful count query is paired with the basis attaining that setup
 cost. Small full targets are handled by a separate one-unit intersection
 whose pair cost pays the setup fee exactly once.
 
+The [native client](reference/README.md) implements both selection paths,
+the exact shared budget and prescribed-basis optimization. Its
+[realization proof](reference-realization.md) gives a direct dual separator
+and cost-minimizing integral recovery, with native finite LP time and the
+general-integer rational cover envelope separated from this theorem's sharp
+fixed-factor bounds.
+
 ## 1. Model, feasibility at zero, and theorem
 
 Let M have rank r>=1. Delete its loops, restrict every recipient rank to

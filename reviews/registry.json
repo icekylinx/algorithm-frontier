@@ -93,7 +93,22 @@
       "path": "problems/numeric-target-frontier",
       "evidence_note": "problems/numeric-target-frontier/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/numeric-target-frontier/verify/check_targets.py",
+          "scope": "104 original mixed-target instances; 208 exact signed min/max optimizations including 146 independently infeasible cases; 88 cover-chain compilations and 92 independently enumerated bounded profiles; 256 coefficient-vector universes with independent multiplicity/composition-bound checks; tied stopping positions, shared capacities, signed zero columns, optional/mandatory total distinctions, 101-bit rank, actual zero-row greedy, rank-loss gates, empty/rank-zero/deep DFS cases, producer-disabled original verifier, 4 forged outputs and 8 malformed inputs."
+        }
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The complete central BC budget-classification proof, including its original-support and total-target upper dependencies and calibrated bounded-error hidden-matroid query lower bound; the complete UP useful-prefix/interval construction; the complete CC mixed-target chain representation and direct bounded coefficient-profile recovery/counts. Includes a native CC exact mixed-target signed-scalar solver with original eligibility, optional versus mandatory mass, polynomial copied-ground representation, streamed occupied profiles, exact shared-resource recovery and producer-independent original verification.",
+        "date": "2026-10-27",
+        "conditions": [
+          "The executable implements CC covering-row permutations, retaining its explicit factorial cover factor; it does not implement the stronger mixed-support UP interval compiler. Generic streamed exact LP recovery has a separately charged `binom(M,D)` active-system factor for actual remaining rows and free dimension. The fast mathematical bounds pay named polynomial SFM/weighted-intersection primitives. Complete original-table input, all rational work and binary ranks/targets are charged; no copied-ground subset table or resource-unit list is expanded.",
+          "This partial review does not cover the seven approximation schemes and constants, every fixed-dimensional/single-objective/support-geometric refinement, all encoded ETH families or nonlinear/global/mandatory/robust compositions. Those retain their linked mathematical statements and dependencies; no whole-family readiness is claimed.",
+          "The BC lower bound is worst-case under parameter upper budgets in the rank-oracle model, including its stated bounded-error scope. It is not an exact-pair or representation-independent hardness statement. Finite exact checks and internal proof review are not proof-assistant formalization, external peer review or an exhaustive priority audit."
+        ]
+      }
     },
     {
       "id": "weighted-prefix-quota-frontier",
@@ -387,17 +402,21 @@
         {
           "path": "problems/exact-flow-sensitivity/verify/check_flow_certificates.py",
           "scope": "789 signed-cost graph instances; 193862 independently enumerated supports, 101364 optimum certificates, 5389 maximum certificates and 141605 general-balance decisions including 65138 violated cuts. Includes 1157 compact-oracle outputs checked on full original input, 25 hostile cases, huge binary supply and producer-blocked verification. Feasibility is cost-blind; no signed minimum-cost initialization is implemented."
+        },
+        {
+          "path": "problems/exact-flow-sensitivity/verify/check_signed_flow.py",
+          "scope": "180 signed original graphs; 5275 balance decisions (1898 infeasible), 672 minimum-cost maximum certificates and 672 maximum deletion reports; 1014 fixed oracles and 6631 deletion queries (1226 unreachable repairs); 40 long hub reports with sparse IDs and both residual tag spaces; 7 producer-disabled queries, 7 malformed cases, isolated negative cycles, loops, parallel arcs and 100-digit rational/supply guards."
         }
       ],
       "review": {
         "status": "partial",
-        "scope": "The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts. The independent original-input certificate component proves signed-cost reduced-cost optimality, maximum-value and infeasibility cuts, and a binary-input cost-blind general-balance constructor.",
+        "scope": "The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts. The independent original-input certificate component proves signed-cost reduced-cost optimality, maximum-value and infeasibility cuts, and a binary-input cost-blind general-balance constructor. The signed unit-flow realization completes native minimum-cost initialization for arbitrary integral balances, negative cycles and loops, and compact fixed-balance and maximum-value deletion reporting with deterministic decoding.",
         "date": "2026-10-27",
         "conditions": [
           "Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates.",
           "The native path wrapper requires simple directed input and one independent original-arc or internal-vertex failure. Terminal deletions and simultaneous failures are excluded. Its full packing output uses linear record work.",
-          "The references use exact fractions and Python hash tables, with operation and bit-cost conventions explicit. They do not implement the faster research preprocessing. Signed/general-balance minimum-cost initialization, general-matching, matroid and price clients are outside this reviewed component scope.",
-          "Independent certificates scan the full surviving original graph, with separately charged production and verification; these costs do not inherit the compact oracle query bound. The general-balance constructor ignores costs."
+          "The original nonnegative references use exact fractions and Python hash tables. The signed reporter uses binary search and dense removal arrays. Both charge actual rational bit work and polynomial preprocessing separately from the fast research bound. General-matching, matroid and price companions remain outside this reviewed scope.",
+          "Independent certificates scan the full surviving original graph, with separately charged production and verification; these costs do not inherit the compact oracle query bound. The general-balance constructor ignores costs. The separate signed optimizer initializes its own optimum; final signed reporting bounds use actual baseline support including negative cycles, not flow value."
         ]
       }
     },
@@ -689,16 +708,23 @@
         {
           "path": "problems/recipient-polymatroid/verify/check_counts.py",
           "scope": "87 original rank tables, 813 reserved ranks, 4075 single-coordinate availability identities, 9127 integral comparator recoveries and 438 minimal bundles, with 10 malformed inputs rejected. Independent enumeration uses original subset inequalities, including shared-feature ranks; four 100-digit-capacity assertions test rank, availability, recovery and bulk minimality without unit expansion."
+        },
+        {
+          "path": "problems/recipient-polymatroid/verify/check_fractional.py",
+          "scope": "200 independently enumerated signed convex-cost pricing cases and 400 strict weak-price tests; 70 dependent-reserve bases, 63 reserve/subset comparisons, 608 scaled fractional loss inequalities and 81 exhaustive signed aggregate maxima. A separate exact rational Gaussian original-configuration LP comparator covers nine instances, 36 weak targets and nine optimizations, including restricted cuts and player-dependent fractional profits. Includes both aggregate/full-residual configuration gaps, an additional actual genuinely fractional-mass extraction using multiple generated aggregate vertices, 101-bit supply and 121-bit accuracy encoding, empty/rank-zero conventions, producer-disabled original verification, four forged outputs and eight malformed inputs. Finite reference generation/storage and exact Bland pivot costs remain separate from the fast ellipsoid proof."
         }
       ],
       "review": {
-        "status": "partial",
+        "status": "ready",
+        "scope": "Complete canonical integer allocation and binary representation family, together with all linked fractional companions: natural ranks and whole-owner contraction, original-box integral comparator recovery and distinct records, large-unit dual-union completion, prefix additivity and current release/exchange/rank charging, exact and positive-slack signatures and quota endpoint; residual-capacity configuration comparator, dependent-reserve basis replacement, exact full and support-restricted subset-cut equivalence and fat preservation; scaled recipient-matroid component fractional loss; count-box signed convex pricing, strict cost grids, explicit-row and implicit-aggregate weak fractional optimizers with uniform finite-system interior balls and primal extraction; full and bounded-support XP runtime distinctions; and fractional-only player-dependent profits. Aggregate and full residual configuration gaps remain separate from integer-comparator guarantees. Native count and fractional references exercise original input interfaces with separately charged table, finite generation, storage and Bland pivot costs.",
         "date": "2026-10-27",
-        "scope": "The complete canonical main integer-comparator theorem and binary representation: natural ranks, whole-owner contraction and availability, original-box integral comparator recovery, distinct-record realization, large-unit dual-union completion, ordered-prefix block additivity, current strong release and atomic earliest exchange, present rank charging, integer lower cover, exact and positive-slack signatures and target search, and the equal-unit rank-exponential endpoint. The native backend realizes count, availability, recovery and minimality interfaces.",
         "conditions": [
-          "The mathematical theorem pays for exact rank/SFM, integral intersection and decomposition, and the supplied certified local-availability oracle. Binary multiplicities remain numerical. The native reference uses complete rank tables and explicit subset enumeration with separate bit costs.",
-          "The residual-capacity and scaled-copy fractional comparators, bounded-support fractional optimizer and full weak fractional optimizer remain outside this review. Full player-layer software, selected-basis recovery and arbitrary local-availability oracle implementations are not supplied by the count backend.",
-          "Independent finite original-input checks and mathematical interface proofs do not assert external peer review or proof-assistant verification."
+          "The integer allocation theorem and residual/scaled comparator transfers use common intrinsic nonnegative values, independent integral recipient polymatroids, unused capacity and an original selected player basis. Arbitrary type-symmetric downward-closed local families require the supplied certified availability oracle. This is a declared input-model primitive; the fractional pricing implementation does not supply a general local oracle or add original assignment budgets.",
+          "The fractional optimizer requires local integer coordinate boxes, with quotas at most original singleton ranks. It retains every original player-base and aggregate-resource constraint even with a restricted residual-cut family. Its output is fractional configuration mass, not an actual integer allocation or a fractionally mixed basis substituted into the integer comparator proof. The player-dependent-value extension applies only to fractional optimization.",
+          "All mathematical allocation and weak-optimizer constructions pay for the exact rank/SFM, integral intersection/decomposition, rational LP, greedy support and ellipsoid operations they use. Support-restricted fractional optimization is XP in the support/rank parameter, while the full cut family is singly exponential in the total original player count. It is not a rank-FPT or rank-quasipolynomial fractional optimizer.",
+          "The native outer implementation uses actual normalized homogeneous Farkas column/aggregate-vertex generation with exact canonical Bland certificates. At zero margin its LP dual supplies a finite primal directly. Local signed convex pricing uses binary segments, nonpositive-prefix shifting, profit scaling and exact strict-cost grids. The number of generated objects and Bland pivots can be enormous, and all generated columns/vertices are stored; these finite costs and full rational accuracy encoding are explicit and separate from the fast mathematical ellipsoid time and workspace. No numerical unit list is constructed.",
+          "Scaled matroid types remain separate supplied components; merging equal-value types can weaken the configuration comparator. The full residual relaxation itself has an exact integrality gap of two, and the unstrengthened aggregate gap approaches selected rank. Neither is a computational hardness claim against integer optimum or a below-two algorithm. The small-quota positive-growth boundary is unchanged.",
+          "Full player-layer integer-allocation software, a fast ellipsoid implementation and arbitrary local-availability oracle implementations are not supplied by these references. Independent mathematical review, original-input finite evidence and producer-independent verification do not constitute proof-assistant formalization, external peer review or an exhaustive publication-priority claim."
         ]
       }
     },
@@ -759,15 +785,20 @@
         {
           "path": "problems/one-value-exact-two/verify/check_one_unit_gate.py",
           "scope": "69 finite resource ranks, 2495 Boolean-cap augmentation pairs, 285 exact one-unit gate instances, 14901 direct assignment candidates, 32728 pair subsets and 1602 exact-budget comparisons. Covers zero capacities, loops, zero costs/budgets and infeasibility. Finite gate identities only, not a general intersection solver or full corank allocator."
+        },
+        {
+          "path": "problems/one-value-exact-two/verify/check_one_value.py",
+          "scope": "35 original-input instances, 1,072 target calls including 536 whole-ground calls, 210 optional optimizations, 60 independently checked prescribed-basis exact optima and 300 exact fixed-quota tests against 471 affordable original allocations. Independent original count enumeration validates 286 actual dual packing rows and 292 protected adaptive-setup nodes; 140 direct service queries, uniform/partition players, weighted-coverage resources, zero/loop/infeasible setup cases, changing attained setup basis and original-resource-preserving forced omissions are exercised. Four actual binary-size LP/optimization guards retain more than 330-bit supplies or quotas, an explicit unaffordable-whole-unit coordinate retains its feasible fractional half-unit, and 13 malformed inputs are rejected. Native finite LP and rational-cover costs remain separate from the sharp paid-primitive theorem."
         }
       ],
       "review": {
-        "status": "partial",
-        "scope": "The main exact factor-two theorem with one assignment-cost budget, the exact prescribed-basis endpoint and the stated strict-below-two oracle boundary. The one-unit gate now has a direct Boolean-cap augmentation proof, an exact assignment-pair matroid construction and binary-size accounting; the main proof supplies nonnegative separation, weighted omission, no-loss quota recovery and target search.",
+        "status": "ready",
+        "scope": "The full one-value allocation family: the main exact factor-two theorem with arbitrary nonnegative assignment costs, the shared setup-and-assignment budget companion, every fixed integer approximation factor `d>=2`, corank weighted omission and streamed whole-ground conversion, exact prescribed-original-basis optimization, the direct Boolean-cap/assignment-pair one-unit gate and the inherited strict-below-two recipient-value-oracle boundary. The audit covers original loop deletion and free disposal, nonnegative projected separation, attained minimum-setup restriction and protected original full witness under adaptive residual budgets, exact maximum-total cost-minimizing quota recovery and nonmonotone one-sided integer optimization. The native complete-table client implements actual original-basis allocation through a direct capped-service primal/dual separator, exact dominant scalar recovery, canonical weighted pair intersection, omission and rational containment covers.",
         "date": "2026-10-27",
         "conditions": [
-          "Exact submodular minimization, rational LP with separation, and weighted matroid or integral-polymatroid intersection remain paid polynomial primitives. The gate proof identifies their original finite grounds and does not expand binary capacities into unit copies.",
-          "The separate shared-setup, general integer-factor and whole-ground conversion results are outside this bounded main-theorem audit. Finite gate checks do not implement the full allocator or certify the unbounded runtime theorem."
+          "There is one common positive value, one original player matroid, optional original-basis selection, arbitrary integral recipient polymatroids with unused capacity allowed, nonnegative setup and assignment costs, and one exact combined scalar budget. An unaffordable setup basis is zero-service infeasibility, distinct from zero optimum; the rank-zero output has no finite minimum utility. Prescribed-basis optimization remains an exact polynomial-oracle endpoint rather than an approximation claim.",
+          "The sharp corank and fixed-integer whole-ground bounds charge the stated polynomial exact rank/SFM, rational LP and weighted matroid/polymatroid-intersection primitives. The native backend reuses exact Bland simplex with a separately charged potentially exponential finite basis bound and polynomial explicit-table/binary workspace. Its rational covers attain the sharp `d=2` and `d=3` endpoints; for other or varying binary d they use the certified rational envelope `3*(d+1)/(d-1)`, distinct from the proved sharp fixed-d algebraic comparison construction. No numerical capacity, quota or setup/assignment budget is expanded into unit copies.",
+          "The strict-below-two obstruction is a deterministic recipient-value-oracle approximation boundary for the included zero-cost optional-basis subclass. It does not prove exponential bases optimal, apply to prescribed-basis exact optimization, or establish explicit-recipient-list hardness. Finite original-input checks support the complete manuscript arguments; proof-assistant formalization, external peer review and exhaustive publication-priority claims are not made."
         ]
       }
     },
