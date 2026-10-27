@@ -46,7 +46,11 @@ No lower bound is claimed for this algorithm.
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete explicit-item player-basis theorem and configuration-comparator upgrade: fat-item union and duality, rank-sensitive exact and positive-slack current-blocker bounds, recovery by dual-basis extension, fractional union domination and rational-grid target search. The inner player-eligibility, earliest-circuit exchange, refresh and signature arguments were inspected in the shared current-blocker proof.
+
+**Dependencies and scope.** The original player matroid is supplied by an independence oracle. Polynomial matroid-union/partition and bipartite matching remain named, paid algorithmic dependencies; no unit-cost derived union oracle is assumed. The configuration LP is a proof comparator and is neither supplied nor enumerated by the algorithm. No guarantee against the unrestricted original compact LP is asserted. The new finite checker supports rank and recovery identities; it is not the polynomial union algorithm or a complete allocation implementation. The finite-rank factor tends to four, so no fixed improvement below four is claimed.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

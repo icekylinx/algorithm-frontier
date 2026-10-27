@@ -110,4 +110,32 @@ caller input is cleared and all optimization routines are disabled. The
 written proof supplies the arbitrary-size argument; these finite comparisons
 do not certify the faster research preprocessing or the other family clients.
 
+## Independent original-input certificates and general balance feasibility
+
+The [verifier](../reference/flow_certificates.py) imports no optimizer and
+checks every surviving original record. The
+[producer and balance backend](../reference/certify_flow.py) have separate
+polynomial contracts proved in the
+[certificate note](../manuscripts/independent-flow-certificates.md). Costs may
+be signed; original loops and parallel records are allowed. General-balance
+feasibility is cost-blind and never expands binary supplies into units.
+
+```sh
+python3 -B problems/exact-flow-sensitivity/verify/check_flow_certificates.py
+```
+
+Independent Boolean-support enumeration covers 789 graph/cost instances,
+193,862 supports and 101,364 optimal certificates. It checks 5,389 maximum
+certificates and 141,605 balance-feasibility decisions, including 65,138
+infeasibility cuts. Every decision is compared with the constructive balance
+backend. Another 1,157 existing compact-oracle answers are certified against
+the full original graph. Twenty-five hostile witnesses/requests, a binary
+supply with 101 decimal digits and a disconnected negative loop exercise
+rejection and model boundaries. A fresh interpreter checks verification
+with both solver and producer imports disabled.
+
+Finite comparisons support the written arbitrary-size arguments. No
+signed-cost minimum-cost solver, fast preprocessing, or constant-time
+certificate verification is claimed.
+
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

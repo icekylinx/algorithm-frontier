@@ -19,6 +19,12 @@ completes the internal unit-gate client, original-failure interpretation and
 zero-cost-cycle-safe path recovery. It uses the exact unit-flow reference
 and proves its own polynomial preprocessing bound.
 
+The [independent flow certificate proof](manuscripts/independent-flow-certificates.md)
+proves reduced-cost completeness, maximum and infeasibility cut certificates,
+and a binary-input general-balance feasibility constructor. These arguments
+are self-contained. The verifier scans the full surviving original graph;
+its signed-cost scope does not extend compact minimum-cost initialization.
+
 ## Shared proof dependencies
 
 | Result | Role |

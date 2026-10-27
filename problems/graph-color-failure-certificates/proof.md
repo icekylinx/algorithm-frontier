@@ -70,6 +70,10 @@ O\bigl((m+A)(\log^4(n+2)+\log(m+2))+ar\bigr),
 ![Formula](../../assets/math/83ab9a01fa84ff1c12b4805b.svg)
 plus input organization. The output is the exact union of canonical forests and inherits the algebraic support bounds. Indexed cost lookup is <code class="math">O(1)</code>; full output additionally scans the baseline and writes the result. Exchange reporting is an explicit backend requirement.
 
+## Executable realization
+
+The [rational vertex-color backend](reference/README.md) implements the sharp componentwise activation construction for correlated single-color vertex classes. Its [realization proof](manuscripts/reference-vertex-color-realization.md) establishes fixed-order prefix preservation, exact canonical forest queries and bit accounting. The [independent checker](verify/check_vertex_colors.py) uses graph reachability to compare all allowed small failures and prefixes. Mixed/list features and the dynamic-MSF acceleration are separate theorem variants, not claimed executable interfaces.
+
 ## Complete proof
 
 [Activation, mixed/list bounds, sharpness, and MSF implementation](manuscripts/colored-graph-and-vertex-failure-certificates.md).

@@ -2,7 +2,7 @@
 
 One fixed edge set preserves every surviving ordered prefix and its canonical minimum spanning forest.
 
-[Proof](proof.md) · [Sources](sources.md)
+[Proof](proof.md) · [Sources](sources.md) · [Reference implementation](reference/README.md)
 
 **Guarantee**
 
@@ -57,7 +57,11 @@ The vertex-only envelope is sharp via the classical individual-vertex example. L
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The complete sharp componentwise single-vertex-color theorem: activation and symmetric-matrix rank proofs, all surviving ordered-prefix connectivity partitions, exact canonical minimum spanning forests, sharp core-clique/outer-star examples and deterministic polynomial construction. The rational backend and its independent graph-reachability checker have a separate implementation review.
+
+**Dependencies and scope.** Input is an undirected multigraph with one color per vertex, signed rational weights and fixed original-ID tie breaking. All allowed color failures are covered; recosting after preprocessing is not. The backend uses static rational elimination and scans retained records at query time. Mixed edge colors, overlapping lists, symmetric-cubic refinements and the exchange-reporting dynamic-MSF acceleration remain separate mathematical variants outside this bounded readiness audit. The retained-edge bound is separate from elimination workspace and rational bit costs. Finite checks and internal review do not constitute external peer review, formal certification or exhaustive literature-priority verification.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

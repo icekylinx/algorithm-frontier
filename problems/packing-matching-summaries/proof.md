@@ -72,6 +72,10 @@ O\bigl(pt\log(|U'|+2)+p\log(p+2)\bigr)
 ![Formula](../../assets/math/6dd0475749a787e04ea2794d.svg)
 bits, in addition to resource and label-feature terms. This ambient-degree factor is essential. The output size counts original IDs, separately from tensor and elimination workspace.
 
+## Executable realization
+
+The [exact rational backend](reference/README.md) constructs this product lift and returns original item IDs. The [realization proof](manuscripts/reference-product-realization.md) supplies normalization, the pre-enumeration gate, full resource-rank compression and exact arithmetic accounting. The [independent checker](verify/check_product_summary.py) compares direct item-subset optima and protected replacements for finite failure/background queries. The universal extension guarantee is proved above; it is not inferred from those finite tests.
+
 ## Complete proof
 
 [Resource-packing theorem, bit accounting, and representative-family sources](manuscripts/represented-resource-packing-transfer.md).

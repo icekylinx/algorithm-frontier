@@ -46,11 +46,20 @@ No lower bound is asserted. The coupled configuration comparator uses separate r
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete recipient-matroid configuration-comparator theorem: universal simultaneous reservations, every ordered-prefix rank-additivity invariant, current eager release, retained-prefix exchanges, sharp rank-cover coefficient, exact and positive-slack rank bounds, fractional fat-service reduction and target-grid search. The shipped resource-state backend realizes completion, current freedom tests and safe prefix exchanges.
+
+**Dependencies and scope.** One service per player-resource pair with common intrinsic nonnegative values. Local families are downward closed; their exact or certified rational approximation oracle and all matroid union/rank work are paid. The executable component implements the resource side only. Player eligibility, earliest whole-layer retention, bundle feasibility/minimality and normalization are caller obligations; the complete player-layer allocator and fat-service union engine are not shipped. The proof uses separate recipient-matroid columns and does not automatically extend to aggregate polymatroids. Finite represented examples support the symbolic all-matroid argument; no external peer review or formal verification is claimed.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
 [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md).
+
+The [exact resource-state backend](reference/README.md) implements ordered
+reservations, dependency-filtered completion and current eager release, with
+[independent finite checks](verify/README.md). The full player search remains a
+mathematical construction.
 
 The manuscript defines the comparator explicitly and proves its reduction to the compact small-resource promise. No LP solution or configuration enumeration is required.
 

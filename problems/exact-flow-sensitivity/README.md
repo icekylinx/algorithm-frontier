@@ -71,9 +71,9 @@ General-matching certificates preserve cardinality, not every increased replacem
 
 **Review status**
 
-**Ready for review in the stated scope.** The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts.
+**Ready for review in the stated scope.** The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts. The independent original-input certificate component proves signed-cost reduced-cost optimality, maximum-value and infeasibility cuts, and a binary-input cost-blind general-balance constructor.
 
-**Dependencies and scope.** Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates. The native path wrapper requires simple directed input and one independent original-arc or internal-vertex failure. Terminal deletions and simultaneous failures are excluded. Its full packing output uses linear record work. The references use exact fractions and Python hash tables, with operation and bit-cost conventions explicit. They do not implement the faster research preprocessing. Signed/general-balance initialization, general-matching, matroid and price clients are outside this reviewed component scope.
+**Dependencies and scope.** Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates. The native path wrapper requires simple directed input and one independent original-arc or internal-vertex failure. Terminal deletions and simultaneous failures are excluded. Its full packing output uses linear record work. The references use exact fractions and Python hash tables, with operation and bit-cost conventions explicit. They do not implement the faster research preprocessing. Signed/general-balance minimum-cost initialization, general-matching, matroid and price clients are outside this reviewed component scope. Independent certificates scan the full surviving original graph, with separately charged production and verification; these costs do not inherit the compact oracle query bound. The general-balance constructor ignores costs.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -265,3 +265,12 @@ O(n+\log^2 n)
 The weighted two-matroid and arborescence single-deletion theorems have their own [preserver card](../exact-failure-preservers/). Supplied-catalog insertion in the price structure keeps rank fixed; it does not handle an insertion that increases maximum rank.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.
+
+## Independent original-input certificates
+
+A separate [exact verifier and feasibility backend](reference/flow_certificates.py),
+with a [complete local proof](manuscripts/independent-flow-certificates.md),
+checks minimum-cost, maximum-value and infeasibility certificates on the full
+surviving graph. Signed rational costs and general integral balances are
+allowed for verification; the constructive general-balance routine is
+cost-blind. This does not broaden the compact oracle's initialization model.

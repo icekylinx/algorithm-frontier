@@ -4,7 +4,17 @@
 
 ## Evidence status
 
-The support and replacement claims are proved through exterior algebra and the original resource representation. No dedicated executable currently checks this product-feature construction or its universal extension-context guarantee. The bipartite exchange replay used by other families concerns a different mechanism and is not evidence for this theorem.
+The support and replacement claims are proved through exterior algebra and the original resource representation. The [exact rational backend](../reference/README.md) now implements the product-feature construction, with a [realization proof](../manuscripts/reference-product-realization.md) covering input normalization, the dimension gate, private padding, row compression and bit accounting.
+
+```sh
+python3 problems/packing-matching-summaries/verify/check_product_summary.py
+```
+
+The independent checker passes 279 instances, including 85 nontrivial positive-feature constructions and 128 identity-gate cases. It checks 1,044 failure queries, 1,256 fixed-background contexts, 3,093 prescribed-cardinality optimum comparisons and 23,841 protected-item replacements. Eleven malformed-input cases are rejected. The remaining constructed cases are valid empty or rank-zero endpoints. A separate huge-budget fixture disables determinant computation to check that the identity gate performs no exterior work.
+
+The comparator directly enumerates original item subsets and uses a separate rank routine on original resource and background columns. Fixtures include signed rational ties, empty supports, parallel matching edges, two independent label systems, loops in the resource matroid and rank-deficient ambient representations. Backgrounds may occupy extra dimensions or interact with the original positive flat. They are represented finite examples; the proof, rather than enumeration, establishes the guarantee for arbitrary later extensions, including nonrepresented extensions.
+
+The implementation is rational only. The main manuscript's explicit finite-field construction remains a mathematical result, not an implemented field-extension API. The checker does not optimize a general later extension or establish historical priority.
 
 ## Feature dimension and bit complexity
 

@@ -1,21 +1,45 @@
 # Verification and scope
 
-The evidence for this result consists of its [mathematical proof](../proof.md).
+The [main proof](../proof.md) and shared
+[reference realization](../../selected-flow/reference-realization.md) have separate
+theorem and executable scopes.
 
-## Mathematical evidence
+## Mathematical review
 
-- The selection interface returns an attaining minimum-setup permitted set in every restriction; feasibility alone is insufficient.
-- The residual routing budget changes with setup cost while one original promised set and routing remain protected.
-- Nonnegative polynomial-bit support separation and exact reoptimization preserve the shared budget and full requested relative rate.
+The review covers the attained minimum-setup restriction oracle, fresh residual
+routing budget at every omission node, one unchanged protected full-rate set
+and routing, nonnegative finite Farkas separation, exact returned-set
+reoptimization, and the sharp fixed-accuracy whole-ground conversion.
+The weighted prefix, adaptive residual-region and rational comparator proofs
+were read as part of this dependency chain.
+
+A feasibility-only selector does not supply the required minimum-setup
+optimizer. Several fixed routing-only budgets remain valid, but unrelated
+extra selection budgets do not automatically admit the same selector.
+The original capacities and allowed family remain fixed. Exact polynomial
+rational LP and the stated exact minimum-setup oracle are paid mathematical
+dependencies. Internal review does not claim external peer review or formal
+verification.
 
 ## Executable evidence
 
-No result-specific executable check is supplied. The argument above is a mathematical proof, not an executable certificate or a complete solver.
+```sh
+python3 problems/selected-flow/verify/check_concurrent.py
+```
 
-## Model and verification boundaries
+The common [exact reference backend](../../selected-flow/reference/README.md)
+subtracts the actual selected set's setup cost before each fixed-set LP.
+The checker includes 16 setup-budget profiles with independent path-LP
+comparisons, the manuscript's optimum rate-twenty example, forbidden permitted
+sets, and completely unaffordable families. The companion
+[evidence note](../../selected-flow/verify/README.md) records the full primitive,
+flow, separator and hostile-certificate test counts.
 
-There is one combined setup-plus-routing budget, alongside the separately stated routing-only constraints. The fixed-comparator proof does not permit arbitrary unrelated selection costs or changing the permitted family across nodes. No full selected-flow implementation is supplied.
-
-The [source map](../sources.md) identifies the actual proof dependencies. Repository checks validate the registry, links, notation and generated catalogue; those checks do not establish mathematical correctness. Proof-assistant verification and external peer review are not claimed.
+A fixed-set result has a search-free primal/dual certificate against the
+actual residual budget. Exact global selected-set optimization is supplied by
+explicit enumeration and a fixed-family predicate. It does not implement the
+faster adaptive omission recursion or the polynomial-time minimum-setup
+matroid-intersection oracle. Its finite simplex and enumeration bounds are
+stated separately from the research approximation theorem.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

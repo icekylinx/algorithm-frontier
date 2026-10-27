@@ -2,7 +2,7 @@
 
 Failure-tolerant packing restrictions with exact fixed-cost replacement in the original context.
 
-[Proof](proof.md) · [Sources](sources.md)
+[Proof](proof.md) · [Sources](sources.md) · [Reference implementation](reference/README.md)
 
 **Guarantee**
 
@@ -57,7 +57,11 @@ Comparison with arbitrary-oracle packing bounds uses the stronger represented-re
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete exterior/product-feature packing transfer, including signed fixed costs, multiple label-failure systems, private padding, full original resource rank, arbitrary later extension backgrounds, multigraph matching specializations and explicit rational/finite-field construction accounting. The shipped rational backend realizes the dimension gate and weighted lifted basis, with an independent subset/context checker.
+
+**Dependencies and scope.** The original optional resource matroid must be explicitly represented. Later extensions may be unrepresented but must restrict to that original resource; the implementation constructs a restriction and does not solve arbitrary extension queries. The executable uses exact rational arithmetic only. Explicit finite-field extensions retain their separate mathematical proof and are not implemented by this backend. Fixed costs and permanent input IDs cannot be changed by a query. Finite context enumeration tests the implementation, while the original-flat and annihilating-functional proof establishes all-extension quantifiers. This internal review does not certify historical priority or formal verification.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

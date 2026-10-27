@@ -10,6 +10,8 @@ The main proof gives the family-level theorem composition. The following canonic
 |---|---|
 | [Represented-resource packing transfer](manuscripts/represented-resource-packing-transfer.md) | Exterior features, product-space replacement, matching specializations, full resource rank, and rational bit accounting. |
 
+The [rational implementation realization](manuscripts/reference-product-realization.md) proves that the shipped [backend](reference/README.md) instantiates this construction without a query-dependent resource truncation. The finite-field extension argument is supplied by Section 5.3 of the shared failure-feature manuscript, applied to a field large enough for both the padded support universe and the label codes. Published representative-family papers are credited antecedents; the local replacement proof is given in full.
+
 ## Shared proof dependencies
 
 | Result | Role |

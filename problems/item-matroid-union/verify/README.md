@@ -12,7 +12,23 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 
 ## Executable evidence
 
-No result-specific executable check is supplied. The argument above is a mathematical proof, not an executable certificate or a complete solver.
+Run the finite reduction check:
+
+```sh
+python3 problems/item-matroid-union/verify/check_union_reduction.py
+```
+
+The exact small-instance suite covers 285 matroid pairs, 2,156 union-rank
+identities, 681 dual-basis recovery extensions, 1,768 fractional points and
+13,820 fractional rank constraints. It includes loops, zero ranks and full
+ranks. Union ranks come from explicit disjoint decompositions, independently
+of the rank-minimization formula under test. Fractional sums use rational
+arithmetic throughout.
+
+The checker enumerates small binary-represented families plus the free matroid;
+it is neither an implementation of the polynomial union algorithm nor a full
+allocation solver. Base-polytope domination and configuration-row scaling
+remain supported by their written general proofs.
 
 ## Model and verification boundaries
 

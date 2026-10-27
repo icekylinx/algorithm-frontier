@@ -10,7 +10,7 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 ## Mathematical dependencies
 
 - [Sharper star charging and rank-sensitive quality for matroid allocation](../../manuscripts/allocation-and-scheduling/matroid-allocation-sharp-star-rank-quality.md)
-- [Prefix rank additivity and eager release for resource matroids](../recipient-matroid-configuration/proof.md)
+- [Current blocker growth for matroid max-min allocation](../../manuscripts/allocation-and-scheduling/matroid-allocation-current-blocker-quasipolynomial.md), Sections 2–8: individual eligibility, earliest circuit exchange, last-layer refresh and the finite signature count. The physical-item theorem does not require the more general recipient-matroid extension.
 
 ## Primary references
 
@@ -19,7 +19,10 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 
 ## Executable evidence
 
-No result-specific executable check is registered. The mathematical proof and the repository document checks have separate roles.
+The [finite union-reduction checker](verify/check_union_reduction.py)
+independently enumerates small union decompositions, rank minimizations,
+dual-basis recovery and exact rational fractional rank constraints. It is
+finite evidence, not the polynomial matroid-union algorithm or full allocator.
 
 The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
 

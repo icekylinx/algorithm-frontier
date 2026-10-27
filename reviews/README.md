@@ -116,6 +116,14 @@ Main Theorems 1–8 and the actual-rank represented construction: represented pr
 
 [Proof](../problems/matroid-failure-summaries/proof.md) · [Dependencies](../problems/matroid-failure-summaries/sources.md) · [Evidence](../problems/matroid-failure-summaries/verify/README.md) · Reviewed 2026-10-26
 
+### [Resource-constrained packing summaries](../problems/packing-matching-summaries/)
+
+The complete exterior/product-feature packing transfer, including signed fixed costs, multiple label-failure systems, private padding, full original resource rank, arbitrary later extension backgrounds, multigraph matching specializations and explicit rational/finite-field construction accounting. The shipped rational backend realizes the dimension gate and weighted lifted basis, with an independent subset/context checker.
+
+**Dependencies and scope.** The original optional resource matroid must be explicitly represented. Later extensions may be unrepresented but must restrict to that original resource; the implementation constructs a restriction and does not solve arbitrary extension queries. The executable uses exact rational arithmetic only. Explicit finite-field extensions retain their separate mathematical proof and are not implemented by this backend. Fixed costs and permanent input IDs cannot be changed by a query. Finite context enumeration tests the implementation, while the original-flat and annihilating-functional proof establishes all-extension quantifiers. This internal review does not certify historical priority or formal verification.
+
+[Proof](../problems/packing-matching-summaries/proof.md) · [Dependencies](../problems/packing-matching-summaries/sources.md) · [Evidence](../problems/packing-matching-summaries/verify/README.md) · Reviewed 2026-10-27
+
 ### [Boolean linear optimization compiler](../problems/boolean-linear-compiler/)
 
 The complete signed interval-disjunction proof, bounded-slack interpolation, signed radix packing and indexed-witness/optimization transfer. Each halving emits at most two intervals with at most the original row support many integer values; all exceptional and binary-input cases are explicit. Includes fixed-cardinality layers, modal-coefficient subtraction, signed parity overlap and the resulting smaller slack budget, with exact preservation of the original cardinality and optimization witnesses.
@@ -123,6 +131,38 @@ The complete signed interval-disjunction proof, bounded-slack interpolation, sig
 **Dependencies and scope.** The Subset Sum backend is supplied with its stated indexed-witness time contract; a space bound requires that same backend. The compiler and finite checks do not establish the backend circuit or continuous-contact proofs. The cardinality refinement counts the original explicitly listed variables. Its strongest slack bound does not assert a universal improvement to every disjunction-product parameter.
 
 [Proof](../problems/boolean-linear-compiler/proof.md) · [Dependencies](../problems/boolean-linear-compiler/sources.md) · [Evidence](../problems/boolean-linear-compiler/verify/README.md) · Reviewed 2026-10-26
+
+### [Recipient-matroid configuration](../problems/recipient-matroid-configuration/)
+
+The complete recipient-matroid configuration-comparator theorem: universal simultaneous reservations, every ordered-prefix rank-additivity invariant, current eager release, retained-prefix exchanges, sharp rank-cover coefficient, exact and positive-slack rank bounds, fractional fat-service reduction and target-grid search. The shipped resource-state backend realizes completion, current freedom tests and safe prefix exchanges.
+
+**Dependencies and scope.** One service per player-resource pair with common intrinsic nonnegative values. Local families are downward closed; their exact or certified rational approximation oracle and all matroid union/rank work are paid. The executable component implements the resource side only. Player eligibility, earliest whole-layer retention, bundle feasibility/minimality and normalization are caller obligations; the complete player-layer allocator and fat-service union engine are not shipped. The proof uses separate recipient-matroid columns and does not automatically extend to aggregate polymatroids. Finite represented examples support the symbolic all-matroid argument; no external peer review or formal verification is claimed.
+
+[Proof](../problems/recipient-matroid-configuration/proof.md) · [Dependencies](../problems/recipient-matroid-configuration/sources.md) · [Evidence](../problems/recipient-matroid-configuration/verify/README.md) · Reviewed 2026-10-27
+
+### [Explicit-item matroid union](../problems/item-matroid-union/)
+
+The complete explicit-item player-basis theorem and configuration-comparator upgrade: fat-item union and duality, rank-sensitive exact and positive-slack current-blocker bounds, recovery by dual-basis extension, fractional union domination and rational-grid target search. The inner player-eligibility, earliest-circuit exchange, refresh and signature arguments were inspected in the shared current-blocker proof.
+
+**Dependencies and scope.** The original player matroid is supplied by an independence oracle. Polynomial matroid-union/partition and bipartite matching remain named, paid algorithmic dependencies; no unit-cost derived union oracle is assumed. The configuration LP is a proof comparator and is neither supplied nor enumerated by the algorithm. No guarantee against the unrestricted original compact LP is asserted. The new finite checker supports rank and recovery identities; it is not the polynomial union algorithm or a complete allocation implementation. The finite-rank factor tends to four, so no fixed improvement below four is claimed.
+
+[Proof](../problems/item-matroid-union/proof.md) · [Dependencies](../problems/item-matroid-union/sources.md) · [Evidence](../problems/item-matroid-union/verify/README.md) · Reviewed 2026-10-27
+
+### [Selected concurrent flow](../problems/selected-flow/)
+
+The complete selected concurrent-flow theorem with exact fixed-cardinality selection and nonnegative routing budgets: finite normalized Farkas separation, weighted first-crossing omission, zero-optimum handling, exact rational comparator recovery and fixed-accuracy whole-ground conversion. The exact reference adds fixed-set primal/dual certificates, physical undirected-capacity handling and native enumeration.
+
+**Dependencies and scope.** Exact polynomial rational LP, Farkas duality and the specified paid selection oracle remain mathematical dependencies. The whole-ground sharp base is stated for fixed rational accuracy. Splittable rational flow is required; integral or unsplittable multicommodity routing is outside the model. The shipped reference uses finite Bland simplex and explicit selected-set enumeration with separate potentially exponential running times. It supplies exact fixed-set certificates and normalized separation, but not the omission recursion or rational target search. A fixed-set certificate proves that set optimal; global optimality of the enumeration baseline additionally depends on the fixed permitted-family predicate and complete enumeration.
+
+[Proof](../problems/selected-flow/proof.md) · [Dependencies](../problems/selected-flow/sources.md) · [Evidence](../problems/selected-flow/verify/README.md) · Reviewed 2026-10-27
+
+### [Flow with shared setup budget](../problems/shared-setup-flow/)
+
+The complete selected-flow theorem with one shared commodity-setup and routing budget, including attained minimum-setup restriction optimization, the protected-witness invariant under adaptive residual budgets, exact Farkas separation, rational reoptimization and fixed-accuracy whole-ground conversion. The reference recomputes the actual set residual and supplies exact primal/dual certificates.
+
+**Dependencies and scope.** Exact polynomial rational LP, Farkas duality and the specified paid selection oracle remain mathematical dependencies. The whole-ground sharp base is stated for fixed rational accuracy. Splittable rational flow is required; integral or unsplittable multicommodity routing is outside the model. The shipped reference uses finite Bland simplex and explicit selected-set enumeration with separate potentially exponential running times. It supplies exact fixed-set certificates and normalized separation, but not the omission recursion or rational target search. The minimum-setup restriction oracle must attain its minimum on the actual returned set. An existence-only selector or separately minimized unrelated setup objectives is insufficient. Fixed routing-only budgets remain allowed.
+
+[Proof](../problems/shared-setup-flow/proof.md) · [Dependencies](../problems/shared-setup-flow/sources.md) · [Evidence](../problems/shared-setup-flow/verify/README.md) · Reviewed 2026-10-27
 
 ### [Two-scenario hardness](../problems/robust-two-scenario-hardness/)
 
@@ -176,11 +216,19 @@ The sharp sparse-packing FPT restriction with improved basis-tree preprocessing,
 
 ### [Flow, matching and price sensitivity](../problems/exact-flow-sensitivity/)
 
-The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts.
+The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts. The independent original-input certificate component proves signed-cost reduced-cost optimality, maximum-value and infeasibility cuts, and a binary-input cost-blind general-balance constructor.
 
-**Dependencies and scope.** Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates. The native path wrapper requires simple directed input and one independent original-arc or internal-vertex failure. Terminal deletions and simultaneous failures are excluded. Its full packing output uses linear record work. The references use exact fractions and Python hash tables, with operation and bit-cost conventions explicit. They do not implement the faster research preprocessing. Signed/general-balance initialization, general-matching, matroid and price clients are outside this reviewed component scope.
+**Dependencies and scope.** Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates. The native path wrapper requires simple directed input and one independent original-arc or internal-vertex failure. Terminal deletions and simultaneous failures are excluded. Its full packing output uses linear record work. The references use exact fractions and Python hash tables, with operation and bit-cost conventions explicit. They do not implement the faster research preprocessing. Signed/general-balance minimum-cost initialization, general-matching, matroid and price clients are outside this reviewed component scope. Independent certificates scan the full surviving original graph, with separately charged production and verification; these costs do not inherit the compact oracle query bound. The general-balance constructor ignores costs.
 
 [Proof](../problems/exact-flow-sensitivity/proof.md) · [Dependencies](../problems/exact-flow-sensitivity/sources.md) · [Evidence](../problems/exact-flow-sensitivity/verify/README.md) · Reviewed 2026-10-27
+
+### [Colored and vertex-failure graph certificates](../problems/graph-color-failure-certificates/)
+
+The complete sharp componentwise single-vertex-color theorem: activation and symmetric-matrix rank proofs, all surviving ordered-prefix connectivity partitions, exact canonical minimum spanning forests, sharp core-clique/outer-star examples and deterministic polynomial construction. The rational backend and its independent graph-reachability checker have a separate implementation review.
+
+**Dependencies and scope.** Input is an undirected multigraph with one color per vertex, signed rational weights and fixed original-ID tie breaking. All allowed color failures are covered; recosting after preprocessing is not. The backend uses static rational elimination and scans retained records at query time. Mixed edge colors, overlapping lists, symmetric-cubic refinements and the exchange-reporting dynamic-MSF acceleration remain separate mathematical variants outside this bounded readiness audit. The retained-edge bound is separate from elimination workspace and rational bit costs. Finite checks and internal review do not constitute external peer review, formal certification or exhaustive literature-priority verification.
+
+[Proof](../problems/graph-color-failure-certificates/proof.md) · [Dependencies](../problems/graph-color-failure-certificates/sources.md) · [Evidence](../problems/graph-color-failure-certificates/verify/README.md) · Reviewed 2026-10-27
 
 ### [Persistent-homology failure certificates](../problems/persistence-failure-certificates/)
 
@@ -212,23 +260,17 @@ These families have not yet received a scoped readiness entry in this registry. 
 
 - [Numeric targets and support patterns](../problems/numeric-target-frontier/)
 - [Single-failure optimum preservers](../problems/exact-failure-preservers/)
-- [Colored and vertex-failure graph certificates](../problems/graph-color-failure-certificates/)
-- [Resource-constrained packing summaries](../problems/packing-matching-summaries/)
 - [Correlated spectral, regression and seminorm summaries](../problems/correlated-spectral-regression/)
 - [Label and whole-block cut sparsification](../problems/label-block-cut/)
 - [Finite groups, affine constraints and metrics](../problems/group-metric-constraints/)
 - [Exact-separation and non-Fano boundaries](../problems/obstruction-boundaries/)
 - [Arbitrary-value allocation scheme](../problems/arbitrary-value-allocation-scheme/)
 - [Recipient polymatroids](../problems/recipient-polymatroid/)
-- [Recipient-matroid configuration](../problems/recipient-matroid-configuration/)
-- [Explicit-item matroid union](../problems/item-matroid-union/)
 - [Intrinsic two-value allocation](../problems/two-value-exact-two/)
 - [Intrinsic values near factor two](../problems/intrinsic-values-near-two/)
 - [Unrelated-value additive allocation](../problems/unrelated-values-additive/)
 - [Unrelated values with a joint role](../problems/unrelated-values-joint-role/)
 - [Whole-ground selection and transfers](../problems/whole-ground-allocation/)
-- [Selected concurrent flow](../problems/selected-flow/)
-- [Flow with shared setup budget](../problems/shared-setup-flow/)
 - [Robust selected flow](../problems/robust-scenario-flow/)
 - [Robust unrelated allocation](../problems/robust-unrelated-allocation/)
 - [Robust bounded-width certificates](../problems/robust-bounded-certificates/)
@@ -328,6 +370,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/degree-constrained-subgraphs/verify/check_linear_selector.py](../problems/degree-constrained-subgraphs/verify/check_linear_selector.py)
 - [problems/degree-constrained-subgraphs/verify/check_reductions.py](../problems/degree-constrained-subgraphs/verify/check_reductions.py)
 - [problems/degree-constrained-subgraphs/verify/check_reference.py](../problems/degree-constrained-subgraphs/verify/check_reference.py)
+- [problems/exact-flow-sensitivity/verify/check_flow_certificates.py](../problems/exact-flow-sensitivity/verify/check_flow_certificates.py)
 - [problems/exact-flow-sensitivity/verify/check_unit_flow.py](../problems/exact-flow-sensitivity/verify/check_unit_flow.py)
 - [problems/exact-flow-sensitivity/verify/check_vertex_paths.py](../problems/exact-flow-sensitivity/verify/check_vertex_paths.py)
 - [problems/general-matching/verify/check_bipartite.py](../problems/general-matching/verify/check_bipartite.py)
@@ -338,9 +381,11 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/general-matching/verify/check_failure_query_certificate.py](../problems/general-matching/verify/check_failure_query_certificate.py)
 - [problems/general-matching/verify/check_reductions.py](../problems/general-matching/verify/check_reductions.py)
 - [problems/general-matching/verify/check_reference.py](../problems/general-matching/verify/check_reference.py)
+- [problems/graph-color-failure-certificates/verify/check_vertex_colors.py](../problems/graph-color-failure-certificates/verify/check_vertex_colors.py)
 - [problems/group-metric-constraints/verify/check_quotient_rounding.py](../problems/group-metric-constraints/verify/check_quotient_rounding.py)
 - [problems/incremental-scc/verify/check_label_history.py](../problems/incremental-scc/verify/check_label_history.py)
 - [problems/incremental-sssp/verify/check_path_reporting.py](../problems/incremental-sssp/verify/check_path_reporting.py)
+- [problems/item-matroid-union/verify/check_union_reduction.py](../problems/item-matroid-union/verify/check_union_reduction.py)
 - [problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py](../problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py)
 - [problems/matroid-failure-summaries/verify/check_rank_two_prefix.py](../problems/matroid-failure-summaries/verify/check_rank_two_prefix.py)
 - [problems/matroid-failure-summaries/verify/check_single_replacement.py](../problems/matroid-failure-summaries/verify/check_single_replacement.py)
@@ -350,7 +395,9 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/min-cost-flow/verify/check_capacity_scaling.py](../problems/min-cost-flow/verify/check_capacity_scaling.py)
 - [problems/min-cost-flow/verify/check_recovery.py](../problems/min-cost-flow/verify/check_recovery.py)
 - [problems/one-value-exact-two/verify/check_one_unit_gate.py](../problems/one-value-exact-two/verify/check_one_unit_gate.py)
+- [problems/packing-matching-summaries/verify/check_product_summary.py](../problems/packing-matching-summaries/verify/check_product_summary.py)
 - [problems/persistence-failure-certificates/verify/check_feature_construction.py](../problems/persistence-failure-certificates/verify/check_feature_construction.py)
+- [problems/recipient-matroid-configuration/verify/check_reservations.py](../problems/recipient-matroid-configuration/verify/check_reservations.py)
 - [problems/roabp-affine-pit/verify/all_rank_affine_orbit.py](../problems/roabp-affine-pit/verify/all_rank_affine_orbit.py)
 - [problems/roabp-affine-pit/verify/build_native_papers.py](../problems/roabp-affine-pit/verify/build_native_papers.py)
 - [problems/roabp-affine-pit/verify/check_artin_reset.py](../problems/roabp-affine-pit/verify/check_artin_reset.py)
@@ -358,6 +405,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/roabp-affine-pit/verify/check_quadratic_hasse.py](../problems/roabp-affine-pit/verify/check_quadratic_hasse.py)
 - [problems/roabp-affine-pit/verify/check_source_bindings.py](../problems/roabp-affine-pit/verify/check_source_bindings.py)
 - [problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py](../problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py)
+- [problems/selected-flow/verify/check_concurrent.py](../problems/selected-flow/verify/check_concurrent.py)
 - [problems/subset-sum-fast-deterministic/verify/check_energy.py](../problems/subset-sum-fast-deterministic/verify/check_energy.py)
 - [problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py](../problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py)
 - [problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py](../problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py)

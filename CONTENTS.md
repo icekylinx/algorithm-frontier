@@ -146,6 +146,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Compact reporting for one-element price changes in matroid intersection](problems/exact-flow-sensitivity/manuscripts/compact-one-element-price-sensitivity.md)
 - [Exact one-failure minimum-cost flow preservers from a sparse acyclic support](problems/exact-flow-sensitivity/manuscripts/exact-min-cost-flow-and-vertex-disjoint-paths.md)
+- [Independent certificates for unit-capacity flows and balance feasibility](problems/exact-flow-sensitivity/manuscripts/independent-flow-certificates.md)
 - [Linear single-fault certificates for maximum matching in general graphs](problems/exact-flow-sensitivity/manuscripts/linear-single-fault-general-matching.md)
 - [Linear exact single-deletion certificates for two arbitrary matroids](problems/exact-flow-sensitivity/manuscripts/linear-unweighted-two-matroid-certificate.md)
 - [A self-contained compact unit-flow reporting realization](problems/exact-flow-sensitivity/manuscripts/reference-unit-flow-realization.md)
@@ -168,11 +169,13 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/graph-color-failure-certificates/README.md) · [Main proof](problems/graph-color-failure-certificates/proof.md) · [Sources](problems/graph-color-failure-certificates/sources.md) · [Verification](problems/graph-color-failure-certificates/verify/README.md)
 
 - [Exact minimum-spanning-forest certificates under correlated color failures](problems/graph-color-failure-certificates/manuscripts/colored-graph-and-vertex-failure-certificates.md)
+- [Rational realization of the sharp vertex-color certificate](problems/graph-color-failure-certificates/manuscripts/reference-vertex-color-realization.md)
 
 ### [Resource-constrained packing summaries](problems/packing-matching-summaries/)
 
 [Statement](problems/packing-matching-summaries/README.md) · [Main proof](problems/packing-matching-summaries/proof.md) · [Sources](problems/packing-matching-summaries/sources.md) · [Verification](problems/packing-matching-summaries/verify/README.md)
 
+- [Exact rational realization of the packing product lift](problems/packing-matching-summaries/manuscripts/reference-product-realization.md)
 - [Quadratic matching summaries and a packing transfer of the failure-projection lift](problems/packing-matching-summaries/manuscripts/represented-resource-packing-transfer.md)
 
 ### [Persistent-homology failure certificates](problems/persistence-failure-certificates/)
@@ -261,6 +264,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/recipient-matroid-configuration/README.md) · [Main proof](problems/recipient-matroid-configuration/proof.md) · [Sources](problems/recipient-matroid-configuration/sources.md) · [Verification](problems/recipient-matroid-configuration/verify/README.md)
 
+- [Exact realization of ordered resource reservations](problems/recipient-matroid-configuration/resource-backend.md)
+
 ### [Explicit-item matroid union](problems/item-matroid-union/)
 
 [Statement](problems/item-matroid-union/README.md) · [Main proof](problems/item-matroid-union/proof.md) · [Sources](problems/item-matroid-union/sources.md) · [Verification](problems/item-matroid-union/verify/README.md)
@@ -312,6 +317,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 ### [Selected concurrent flow](problems/selected-flow/)
 
 [Statement](problems/selected-flow/README.md) · [Main proof](problems/selected-flow/proof.md) · [Sources](problems/selected-flow/sources.md) · [Verification](problems/selected-flow/verify/README.md)
+
+- [Exact concurrent-flow primitives and their certificates](problems/selected-flow/reference-realization.md)
 
 ### [Flow with shared setup budget](problems/shared-setup-flow/)
 

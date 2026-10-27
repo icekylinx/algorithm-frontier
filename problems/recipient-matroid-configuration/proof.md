@@ -34,7 +34,8 @@ matroid <code class="math">R_j</code>; a player receives at most one service fro
 The output selects an actual <code class="math">M</code>-basis and gives its players feasible
 resource bundles. Unused capacity is allowed.
 
-Optionally each player has a downward-closed family <code class="math">\mathcal F_p</code>
+The certified local approximation parameter is rational and satisfies
+`0 < lambda <= 1`. Optionally each player has a downward-closed family <code class="math">\mathcal F_p</code>
 of allowed resource subsets. On an available resource list, its paid
 oracle returns a feasible bundle of value at least <code class="math">\lambda</code> times
 the best available feasible bundle. Unrestricted availability has
@@ -619,6 +620,12 @@ is no allocation competition and exact optimization is possible. With
 an approximate oracle, only its lambda guarantee is claimed.
 
 ## 9. Proof dependencies and scope
+
+The [resource-backend realization](resource-backend.md) proves the exact
+contract of the shipped ordered-reservation implementation. It checks the
+resource side of completion and exchange; the full player-layer allocator,
+local optimizer and union decomposition are separate components.
+
 
 The resource proof consists of (P5) for every internal ordered prefix; strong
 freedom (P13); preservation of (P5) by every retained-prefix exchange;

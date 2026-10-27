@@ -365,16 +365,21 @@
         {
           "path": "problems/exact-flow-sensitivity/verify/check_vertex_paths.py",
           "scope": "8428 graph/profile instances; 161804 fixed and 75557 maximum internally vertex-disjoint path-packing queries against independent simple-path enumeration. Covers original-arc/internal-vertex failures, 18238 fixed infeasibilities and one-path drops, 33 malformed cases, ten queries with search disabled/input cleared and a forced zero-cost-cycle decoder case. No signed-cost, terminal-failure, parallel-original or faster-preprocessing claim."
+        },
+        {
+          "path": "problems/exact-flow-sensitivity/verify/check_flow_certificates.py",
+          "scope": "789 signed-cost graph instances; 193862 independently enumerated supports, 101364 optimum certificates, 5389 maximum certificates and 141605 general-balance decisions including 65138 violated cuts. Includes 1157 compact-oracle outputs checked on full original input, 25 hostile cases, huge binary supply and producer-blocked verification. Feasibility is cost-blind; no signed minimum-cost initialization is implemented."
         }
       ],
       "review": {
         "status": "partial",
-        "scope": "The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts.",
+        "scope": "The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts. The independent original-input certificate component proves signed-cost reduced-cost optimality, maximum-value and infeasibility cuts, and a binary-input cost-blind general-balance constructor.",
         "date": "2026-10-27",
         "conditions": [
           "Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates.",
           "The native path wrapper requires simple directed input and one independent original-arc or internal-vertex failure. Terminal deletions and simultaneous failures are excluded. Its full packing output uses linear record work.",
-          "The references use exact fractions and Python hash tables, with operation and bit-cost conventions explicit. They do not implement the faster research preprocessing. Signed/general-balance initialization, general-matching, matroid and price clients are outside this reviewed component scope."
+          "The references use exact fractions and Python hash tables, with operation and bit-cost conventions explicit. They do not implement the faster research preprocessing. Signed/general-balance minimum-cost initialization, general-matching, matroid and price clients are outside this reviewed component scope.",
+          "Independent certificates scan the full surviving original graph, with separately charged production and verification; these costs do not inherit the compact oracle query bound. The general-balance constructor ignores costs."
         ]
       }
     },
@@ -429,14 +434,44 @@
       "path": "problems/graph-color-failure-certificates",
       "evidence_note": "problems/graph-color-failure-certificates/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/graph-color-failure-certificates/verify/check_vertex_colors.py",
+          "scope": "371 graph/color/budget instances, 2,099 failure queries and 24,388 ordered-prefix connectivity comparisons using independent reachability flood fills and a separate canonical forest scan. Includes 35 sharpness fixtures and seven malformed/over-budget cases; signed rational ties, parallel records, loops, isolates, unknown colors and huge budgets. Single vertex colors only; no mixed/list or dynamic-MSF executable claim."
+        }
+      ],
+      "review": {
+        "status": "partial",
+        "date": "2026-10-27",
+        "scope": "The complete sharp componentwise single-vertex-color theorem: activation and symmetric-matrix rank proofs, all surviving ordered-prefix connectivity partitions, exact canonical minimum spanning forests, sharp core-clique/outer-star examples and deterministic polynomial construction. The rational backend and its independent graph-reachability checker have a separate implementation review.",
+        "conditions": [
+          "Input is an undirected multigraph with one color per vertex, signed rational weights and fixed original-ID tie breaking. All allowed color failures are covered; recosting after preprocessing is not.",
+          "The backend uses static rational elimination and scans retained records at query time. Mixed edge colors, overlapping lists, symmetric-cubic refinements and the exchange-reporting dynamic-MSF acceleration remain separate mathematical variants outside this bounded readiness audit.",
+          "The retained-edge bound is separate from elimination workspace and rational bit costs. Finite checks and internal review do not constitute external peer review, formal certification or exhaustive literature-priority verification."
+        ]
+      }
     },
     {
       "id": "packing-matching-summaries",
       "path": "problems/packing-matching-summaries",
       "evidence_note": "problems/packing-matching-summaries/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/packing-matching-summaries/verify/check_product_summary.py",
+          "scope": "279 exact instances, including 85 positive-feature constructions and 128 identity gates; 1,044 failure queries, 1,256 fixed backgrounds, 3,093 prescribed-cardinality optimum comparisons and 23,841 protected-item replacements against direct subset enumeration. Eleven malformed-input cases and a disabled-determinant huge-budget gate fixture. Finite represented backgrounds do not enumerate arbitrary later extensions; the theorem proves that quantifier."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "date": "2026-10-27",
+        "scope": "The complete exterior/product-feature packing transfer, including signed fixed costs, multiple label-failure systems, private padding, full original resource rank, arbitrary later extension backgrounds, multigraph matching specializations and explicit rational/finite-field construction accounting. The shipped rational backend realizes the dimension gate and weighted lifted basis, with an independent subset/context checker.",
+        "conditions": [
+          "The original optional resource matroid must be explicitly represented. Later extensions may be unrepresented but must restrict to that original resource; the implementation constructs a restriction and does not solve arbitrary extension queries.",
+          "The executable uses exact rational arithmetic only. Explicit finite-field extensions retain their separate mathematical proof and are not implemented by this backend. Fixed costs and permanent input IDs cannot be changed by a query.",
+          "Finite context enumeration tests the implementation, while the original-flat and annihilating-functional proof establishes all-extension quantifiers. This internal review does not certify historical priority or formal verification."
+        ]
+      }
     },
     {
       "id": "persistence-failure-certificates",
@@ -566,14 +601,44 @@
       "path": "problems/recipient-matroid-configuration",
       "evidence_note": "problems/recipient-matroid-configuration/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/recipient-matroid-configuration/verify/check_reservations.py",
+          "scope": "7,381 resource states, 37,525 universal subset reservations, 35,081 internal-prefix identities, 5,779 completions, 4,532 exchanges, 145 nonempty-group releases, 7,161 sharp rank covers and 430 rejection checks. Independent span enumeration and exact rational minimal bundles; no full player-basis search."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The complete recipient-matroid configuration-comparator theorem: universal simultaneous reservations, every ordered-prefix rank-additivity invariant, current eager release, retained-prefix exchanges, sharp rank-cover coefficient, exact and positive-slack rank bounds, fractional fat-service reduction and target-grid search. The shipped resource-state backend realizes completion, current freedom tests and safe prefix exchanges.",
+        "date": "2026-10-27",
+        "conditions": [
+          "One service per player-resource pair with common intrinsic nonnegative values. Local families are downward closed; their exact or certified rational approximation oracle and all matroid union/rank work are paid.",
+          "The executable component implements the resource side only. Player eligibility, earliest whole-layer retention, bundle feasibility/minimality and normalization are caller obligations; the complete player-layer allocator and fat-service union engine are not shipped.",
+          "The proof uses separate recipient-matroid columns and does not automatically extend to aggregate polymatroids. Finite represented examples support the symbolic all-matroid argument; no external peer review or formal verification is claimed."
+        ]
+      }
     },
     {
       "id": "item-matroid-union",
       "path": "problems/item-matroid-union",
       "evidence_note": "problems/item-matroid-union/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/item-matroid-union/verify/check_union_reduction.py",
+          "scope": "285 small matroid pairs, 2,156 union-rank identities, 681 dual-basis recovery extensions, 1,768 exact fractional points and 13,820 fractional rank constraints. Independent explicit decompositions support the general symbolic proof; no full allocator or polynomial union implementation."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The complete explicit-item player-basis theorem and configuration-comparator upgrade: fat-item union and duality, rank-sensitive exact and positive-slack current-blocker bounds, recovery by dual-basis extension, fractional union domination and rational-grid target search. The inner player-eligibility, earliest-circuit exchange, refresh and signature arguments were inspected in the shared current-blocker proof.",
+        "date": "2026-10-27",
+        "conditions": [
+          "The original player matroid is supplied by an independence oracle. Polynomial matroid-union/partition and bipartite matching remain named, paid algorithmic dependencies; no unit-cost derived union oracle is assumed.",
+          "The configuration LP is a proof comparator and is neither supplied nor enumerated by the algorithm. No guarantee against the unrestricted original compact LP is asserted.",
+          "The new finite checker supports rank and recovery identities; it is not the polynomial union algorithm or a complete allocation implementation. The finite-rank factor tends to four, so no fixed improvement below four is claimed."
+        ]
+      }
     },
     {
       "id": "one-value-exact-two",
@@ -655,14 +720,46 @@
       "path": "problems/selected-flow",
       "evidence_note": "problems/selected-flow/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/selected-flow/verify/check_concurrent.py",
+          "scope": "120 independently enumerated rational LP optima, 175 native simple-path LP optima, 16 shared-setup profiles, 411 normalized Farkas queries, 256 certificate mutations and 8 malformed inputs. Exact fixed-set primal/dual verification remains search-free; finite tests do not implement the corank scheme."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The complete selected concurrent-flow theorem with exact fixed-cardinality selection and nonnegative routing budgets: finite normalized Farkas separation, weighted first-crossing omission, zero-optimum handling, exact rational comparator recovery and fixed-accuracy whole-ground conversion. The exact reference adds fixed-set primal/dual certificates, physical undirected-capacity handling and native enumeration.",
+        "date": "2026-10-27",
+        "conditions": [
+          "Exact polynomial rational LP, Farkas duality and the specified paid selection oracle remain mathematical dependencies.",
+          "The whole-ground sharp base is stated for fixed rational accuracy. Splittable rational flow is required; integral or unsplittable multicommodity routing is outside the model.",
+          "The shipped reference uses finite Bland simplex and explicit selected-set enumeration with separate potentially exponential running times. It supplies exact fixed-set certificates and normalized separation, but not the omission recursion or rational target search.",
+          "A fixed-set certificate proves that set optimal; global optimality of the enumeration baseline additionally depends on the fixed permitted-family predicate and complete enumeration."
+        ]
+      }
     },
     {
       "id": "shared-setup-flow",
       "path": "problems/shared-setup-flow",
       "evidence_note": "problems/shared-setup-flow/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/selected-flow/verify/check_concurrent.py",
+          "scope": "120 independently enumerated rational LP optima, 175 native simple-path LP optima, 16 shared-setup profiles, 411 normalized Farkas queries, 256 certificate mutations and 8 malformed inputs. Exact fixed-set primal/dual verification remains search-free; finite tests do not implement the corank scheme."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The complete selected-flow theorem with one shared commodity-setup and routing budget, including attained minimum-setup restriction optimization, the protected-witness invariant under adaptive residual budgets, exact Farkas separation, rational reoptimization and fixed-accuracy whole-ground conversion. The reference recomputes the actual set residual and supplies exact primal/dual certificates.",
+        "date": "2026-10-27",
+        "conditions": [
+          "Exact polynomial rational LP, Farkas duality and the specified paid selection oracle remain mathematical dependencies.",
+          "The whole-ground sharp base is stated for fixed rational accuracy. Splittable rational flow is required; integral or unsplittable multicommodity routing is outside the model.",
+          "The shipped reference uses finite Bland simplex and explicit selected-set enumeration with separate potentially exponential running times. It supplies exact fixed-set certificates and normalized separation, but not the omission recursion or rational target search.",
+          "The minimum-setup restriction oracle must attain its minimum on the actual returned set. An existence-only selector or separately minimized unrelated setup objectives is insufficient. Fixed routing-only budgets remain allowed."
+        ]
+      }
     },
     {
       "id": "robust-scenario-flow",

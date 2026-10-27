@@ -1,5 +1,15 @@
 # History
 
+## 2026-10-27 — Proof completions and executable backend interfaces
+
+- Completed scoped internal reviews of selected concurrent flow, shared setup-budget flow, item matroid union, recipient-matroid configuration and packing-matching summaries. Their complete named mathematical packages are now ready for review. The sharp vertex-color theorem and executable backend have partial readiness; broader color models retain their separate review boundary.
+- Added exact rational concurrent-flow optimization, original-input primal/dual certificates, normalized nonnegative Farkas separation and selected-set enumeration. Shared setup fees are charged to the actual returned set. The finite Bland simplex and enumeration baseline retains its separate potentially exponential runtime; it does not implement the corank omission scheme.
+- Realized ordered recipient-resource reservations, current eager release and safe prefix exchanges, with a complete standalone invariant proof and explicit paid oracle/bit costs. Added exact matroid-union rank, dual-basis recovery and fractional domination checks. Full player-layer allocation remains outside the shipped component.
+- Added exact rational product-feature packing restrictions with original contexts and signed costs, and sharp vertex-color activation certificates with canonical surviving forests. Each package has an independent finite checker and a separate agent review.
+- Added search-free exact flow certificates on the full surviving original input, including signed costs, general balances, maximum-value cuts and strict infeasibility cuts. A polynomial cost-blind general-balance backend preserves binary supplies; the minimum-cost certificate producer accepts supplied optimal supports and does not implement general signed-cost optimization.
+- All 83 standard checks passed: the first 81 in the canonical run and the final two contact replays serially after the sandbox rejected the multiprocessing socket. The full 62-plus-16 contact replay was not requested or performed.
+- All new implementations use local standard-library code. Mathematical dependencies, finite validation and complete fast research implementations remain distinct; no external peer review or proof-assistant verification is asserted.
+
 ## 2026-10-27 — Expanded showcases and two completed local clients
 
 - Expanded graph backend envelopes and size parameters, allocation branching bases and inclusion-cover overhead, scheduling profile counts, the ROABP direction-grid minimum, and sparsification support functions. Kept precise local definitions where nested substitution would obscure comparison, and split long alternatives into readable lines. The SCC card now uses its proof's exact master-scale convention.

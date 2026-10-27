@@ -4,7 +4,15 @@
 
 ## Evidence status
 
-The family is supported by the activation identities, rank bounds, and prefix-span arguments in the proof and companion. No dedicated executable currently checks all color-failure queries or implements the dynamic-MSF construction. Runtime and support claims are mathematical bounds, not empirical measurements.
+The family is supported by the activation identities, rank bounds and prefix-span arguments in the proof and companion. The [rational vertex-color backend](../reference/README.md) now realizes the sharp componentwise theorem, with an explicit [implementation proof](../manuscripts/reference-vertex-color-realization.md).
+
+```sh
+python3 problems/graph-color-failure-certificates/verify/check_vertex_colors.py
+```
+
+The independent checker passes 371 graph/color/budget instances, 2,099 failure queries and 24,388 ordered-prefix connectivity comparisons. Thirty-five classical sharpness examples meet the bound exactly; seven malformed-input or over-budget cases are rejected. It uses independent reachability flood fills and a partition-based canonical forest scan, with exhaustive small simple graphs, seeded multigraphs, parallel records, loops, isolates and signed rational ties.
+
+The executable covers one color per vertex. Mixed edge colors, overlapping lists, finite fields and the near-linear dynamic-MSF construction remain separate mathematical constructions. No full dynamic-MSF backend is claimed. Runtime and support claims are mathematical bounds, not empirical measurements. Literature comparisons retain their stated source-check limits and are not a historical-priority certification.
 
 ## Activation and rank
 

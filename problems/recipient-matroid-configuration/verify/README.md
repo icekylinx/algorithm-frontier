@@ -10,7 +10,22 @@ The evidence for this result consists of its [mathematical proof](../proof.md).
 
 ## Executable evidence
 
-No result-specific executable check is supplied. The argument above is a mathematical proof, not an executable certificate or a complete solver.
+Run the independent resource-state check:
+
+```sh
+python3 problems/recipient-matroid-configuration/verify/check_reservations.py
+```
+
+It checks 7,381 states, 37,525 universal reservations, 35,081 internal-prefix
+identities, 5,779 completions, 4,532 exchanges, 145 nonempty-group releases and
+7,161 normalized sharp covers; 430 explicit invalid operations are rejected
+without mutation. Exact rational minimal bundles occur in the seeded traces.
+The checker enumerates binary spans independently of its Gaussian rank oracles.
+
+The [backend proof](../resource-backend.md) establishes the general invariant;
+the [API](../reference/README.md) states the caller's player-side obligations.
+This is a resource-state implementation, not a complete allocator, local
+availability optimizer or matroid-union engine.
 
 ## Model and verification boundaries
 

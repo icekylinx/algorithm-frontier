@@ -10,6 +10,8 @@ The main proof gives the family-level theorem composition. The following canonic
 |---|---|
 | [Colored graph and vertex-failure certificates](manuscripts/colored-graph-and-vertex-failure-certificates.md) | Activation matrices, the sharp vertex-color envelope, mixed/list labels, canonical MSFs, and the one-color output-sensitive construction. |
 
+The [rational vertex-color realization](manuscripts/reference-vertex-color-realization.md) connects the componentwise activation proof to the shipped [reference backend](reference/README.md). It includes the exact prefix/Kruskal argument and polynomial rational arithmetic. The mixed/list theorems and the symmetric-cubic rank saving remain proved in the canonical manuscript. The near-linear one-color bound explicitly requires an exchange-reporting dynamic-MSF interface; the reference implementation uses static elimination instead.
+
 ## Shared proof dependencies
 
 | Result | Role |

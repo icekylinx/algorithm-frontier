@@ -68,8 +68,32 @@ or internal-vertex failure. It restores both original vertex lists and arc
 IDs, including after zero-cost-cycle removal. It supports fixed cardinality
 and maximum cardinality on simple directed nonnegative-rational inputs.
 
-Arbitrary signed-cost/general-balance input,
-matroid and blossom clients are outside this executable's public contract.
+Signed-cost/general-balance **minimum-cost initialization**, matroid and
+blossom clients remain outside the compact oracle's public contract.
+
+The separate [certificate verifier](flow_certificates.py) accepts signed
+rational costs, arbitrary integral outward balances, loops and parallel
+original records. It checks original-input feasibility, exact reduced-cost
+optimality, a maximum-flow cut or a strict infeasibility cut. It imports no
+optimizer. The [certificate producer](certify_flow.py) builds potentials for
+a supplied optimal support and rejects nonoptimal supports; its
+`balance_feasibility` routine constructs a cost-blind feasible flow or a
+violated cut without expanding binary supplies. See the
+[self-contained proof](../manuscripts/independent-flow-certificates.md).
+Certificate production and full-input verification are charged separately
+from the compact oracle's query bounds.
+
+```python
+from certify_flow import balance_feasibility, certify_maximum
+from flow_certificates import verify_maximum, verify_infeasible
+
+value, cost, used = maximum.query(0)
+certificate = certify_maximum(4, arcs, 0, 3, used, failed=0)
+assert verify_maximum(4, arcs, 0, 3, certificate, failed=0)
+support, cut = balance_feasibility(4, arcs, (2, 0, 0, -2), failed=0)
+assert support is None
+assert verify_infeasible(4, arcs, (2, 0, 0, -2), cut, failed=0)
+```
 `CompactPaths` is the internal reusable reporting component for a residual
 graph with no negative cycles and a positive hop coordinate. It is exercised
 separately by the checker, including signed primary lengths and hub routes.
