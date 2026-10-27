@@ -1,5 +1,15 @@
 # History
 
+## 2026-10-27 — Weighted budget gates and exact algebraic compilation
+
+- Realized exact weighted matroid intersection through shortest cheapest exchange augmentation, independent no-negative-cycle potentials and original-rank maximum-cardinality cuts. Added complete-table Boolean-cap budget scenarios without binary unit expansion, and the guarded bounded-certificate common-basis gate. The complete bounded-certificate allocation proof chain is ready for review; high-quota and global algorithms retain their separate implementation scope.
+- Matched the newly audited bounded-certificate high-quota chain to the width-two theorem's unchanged model and fixed-parameter wrapper, promoting that mathematical scope to full readiness. The executable remains the local Fibonacci/unit component; the proof status does not assert a shipped high-quota or global algorithm.
+- Implemented the actual two-common-size corank client with full-ground box ranks/duals, guarded omission batches, zero extension and binary count-base completion, reusing the canonical two-time high-target LP. The complete scheduling family is ready for review, including its separately proved rank/private-slack branches and explicit promises. Hard-target tests disable the inherited high-target solver and retain 81-bit counts numerically.
+- Added the rational whole-block label compiler and exact common-scalar decoder with original row labels, exact rank compression and a capped full-input gate. The rational decoder and integer-rank adaptive quotient ledger have scoped partial readiness. The code does not sample sparse summaries or implement finite-field/quantum variants.
+- Added exact whole-coset compilation and coefficient verification on arbitrary explicit finite-group tables, retaining original items and supporting nonnormal subgroups, inconsistent cosets and empty predicates. Its scoped partial readiness concerns the algebraic interface, not Gaussian support or sampler implementation. Independent permutation-action checks avoid using the compiler's membership formulas as their oracle.
+- All 92 standard repository checks passed, including the selected continuous-contact branches replayed serially. The full contact catalogue was not recomputed.
+- Independent GPT-6.1 Sol cross-reviews cover the weighted core, native budget adapter, two-size client, whole-block decoder and group compiler; original attribution and Apache-2.0 licensing remain unchanged.
+
 ## 2026-10-27 — Robust selection, heterogeneous scheduling and certifying graph backends
 
 - Completed the adaptive explicit-scenario flow proof audit, with common-selection exact reference certificates, separately scaled scenario routings, scenario-tagged separation and finite Hitting Set reduction checks. The theorem is ready for review; the enumeration/Bland reference keeps its separate runtime contract.

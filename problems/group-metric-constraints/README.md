@@ -219,7 +219,11 @@ Graph-cut instances force the joint <code class="math">\log N/\varepsilon^2</cod
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The exact whole-coset algebraic compiler on validated explicit finite-group tables: generated subgroups, one common implicit wreath product, whole original-item membership and reweighting identities, empty/whole predicates, and exact original-query coefficient verification with optional total weight. The established subgroup construction is credited and the local implementation has explicit table, generator, rational-bit and hash-operation costs.
+
+**Dependencies and scope.** The original multiplication table is explicit. The construction supports nonabelian groups, nonnormal subgroups and inconsistent cosets; it does not claim polynomial time in a compact group presentation. This is an algebraic compiler and verifier, not a sparse coefficient sampler. Gaussian subgroup support, Cayley spectral constructions, compact modular rationalization and metric extensions remain outside this bounded review. Original item IDs and whole predicates are retained. The item-independent query embedding is not assumed to be a homomorphism. Finite group/permutation checks support the symbolic identities and are not formal or external peer review.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
@@ -228,3 +232,12 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 The [exact-separation and conditional-sign results](../obstruction-boundaries/) state the implementation and proof-model boundaries relevant to this family.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.
+
+## Exact whole-coset compilation
+
+The [reference compiler and coefficient verifier](reference/README.md) preserve
+original predicates through the common wreath-subgroup construction on full
+finite-group tables, including nonabelian groups and nonnormal subgroups.
+The [local proof](manuscripts/reference-coset-compilation.md) supplies exact
+membership and explicit-table costs; sparse coefficient construction remains
+a separate interface.

@@ -218,6 +218,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Adaptive resparsification removes the ambient ground-set logarithm](problems/label-block-cut/manuscripts/adaptive-quotient-resparsification.md)
 - [Exact label annihilation for fault-tolerant cuts and matroid quotients](problems/label-block-cut/manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md)
 - [Exact correlated-failure summaries for whole linear blocks, hyperedges, and commuting stabilizer checks](problems/label-block-cut/manuscripts/exact-label-whole-blocks-and-hyperedges.md)
+- [Rational whole-block decoder realization and quotient composition audit](problems/label-block-cut/manuscripts/reference-whole-block-decoder.md)
 
 ### [Finite groups, affine constraints and metrics](problems/group-metric-constraints/)
 
@@ -229,6 +230,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Sparsifying Hilbert metric sums under an action with few orbits](problems/group-metric-constraints/manuscripts/hilbert-metric-sums-with-few-orbits.md)
 - [Optimal-support sparsification of whole subgroup constraints](problems/group-metric-constraints/manuscripts/optimal-whole-subgroup-constraints.md)
 - [Rational quotient ranks from weak value oracles](problems/group-metric-constraints/manuscripts/rational-quotient-ranks-from-weak-oracles.md)
+- [Exact realization of whole-coset compilation](problems/group-metric-constraints/manuscripts/reference-coset-compilation.md)
 - [Sparsifying sums of transitive Hilbert metrics and finite-group alignment losses](problems/group-metric-constraints/manuscripts/transitive-metrics-and-group-alignment.md)
 
 ### [Pauli, qudit and stabilizer blocks](problems/quantum-stabilizer/)
@@ -339,6 +341,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/robust-bounded-certificates/README.md) · [Main proof](problems/robust-bounded-certificates/proof.md) · [Sources](problems/robust-bounded-certificates/sources.md) · [Verification](problems/robust-bounded-certificates/verify/README.md)
 
+- [Certified weighted unit intersection and the guarded robust basis gate](problems/robust-bounded-certificates/reference-realization.md)
+
 ### [Width-two robust unit allocation](problems/robust-width-two-allocation/)
 
 [Statement](problems/robust-width-two-allocation/README.md) · [Main proof](problems/robust-width-two-allocation/proof.md) · [Sources](problems/robust-width-two-allocation/sources.md) · [Verification](problems/robust-width-two-allocation/verify/README.md)
@@ -374,6 +378,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/two-size-scheduling/README.md) · [Main proof](problems/two-size-scheduling/proof.md) · [Sources](problems/two-size-scheduling/sources.md) · [Verification](problems/two-size-scheduling/verify/README.md)
 
 - [Two-size polymatroid scheduling parameterized by the number of large units](problems/two-size-scheduling/rank-parameter.md)
+- [Complete-table realization of the two-size corank construction](problems/two-size-scheduling/reference-realization.md)
 
 ### [Per-machine two-time scheduling](problems/two-time-scheduling/)
 

@@ -22,6 +22,28 @@ For every subset it computes certified rational logarithm intervals and applies 
 
 This is finite arithmetic evidence for the composite-modulus rounding mechanism and canonical-key cancellation. It is not certification of general subgroup-order computation or the arbitrary-ground-set rationalization theorem. No sampling experiment establishes the Gaussian or universal group bounds.
 
+## Exact whole-coset compiler
+
+The [reference interface](../reference/README.md) and
+[realization proof](../manuscripts/reference-coset-compilation.md) preserve
+original coset predicates, including nonnormal subgroups and empty accepting
+sets, inside one common implicit wreath group. Proposed whole-item weights
+can be checked by exact enumeration of the original explicit query universe.
+
+```sh
+python3 -B problems/group-metric-constraints/verify/check_coset_compiler.py
+```
+
+The independent checker covers nine explicit groups, 36 subgroups including
+ten nonnormal ones, and 218 original item records. It compares 18,632 ambient
+membership answers against subgroup generation by faithful permutations on
+two regular group sets, and checks 1,382 original query identities. Direct
+native coset tables check 900 rational-weight decisions, including optional
+total-weight preservation. It also checks 227 pairs witnessing that the query
+map need not be a homomorphism, and rejects 22 malformed inputs. Identity
+indices are deliberately relabeled. No sampler, Gaussian probability or
+compact-group running time is inferred from these checks.
+
 ## Analytic and combinatorial interfaces
 
 | Proof step | Required implication and scope |

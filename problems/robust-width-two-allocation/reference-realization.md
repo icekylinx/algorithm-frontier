@@ -139,16 +139,28 @@ forced omissions, guarded outcomes and whole-ground conversion. On the
 stated Boolean resource instances, every integer count is at most one,
 so the exact unit gate also completely solves optimization.
 
-The main proof's Section 8 high-quota factor tradeoffs additionally inherit
-the positive-quota packing and integral recovery chain from the bounded-
-certificate allocation theorem. That chain is outside this scoped review
-and executable backend. The mathematical claims are retained; no failure
-of the unit implementation is asserted or concealed by that exclusion.
-General polymatroid/budget unit tests remain the paid mathematical
-interface proved in the bounded-certificate manuscript. The reference's
-native finite scenarios use actual Boolean partition resources and a
-modular budget guard, rather than claiming to implement that general
-weighted-intersection backend. No external peer review or proof-assistant
+The main proof's Section 8 high-quota factor tradeoffs have also been
+checked against the complete bounded-certificate theorem. The original
+player basis/rank and the same explicit scenario resources, costs and
+budgets match exactly. Width two is used only by the exact one-time unit
+gate; targets up to the fixed tradeoff use its saved witness, and larger
+targets retain the original weighted quota gap and scenario-wise integral
+recovery. The local costs add, so the combined base is their maximum.
+Applying the global wrapper separately to the unit and positive-quota
+interfaces gives the same maximum through monotonicity of its base map.
+For fixed tradeoff, the quota constant has a fixed rational power and the
+unit constant lies in the fixed quadratic field; each wrapper's comparisons
+are exact with polynomial bit length. Comparing the constants, if needed,
+reduces to raising positive values to the fixed power and using the
+Fibonacci representation of quadratic powers. No arbitrary real oracle is
+needed. The factor-two and factor-three quota constants both exceed the
+unit constant, leaving their existing whole-ground bases unchanged.
+
+General polymatroid/budget unit tests have the [certified weighted realization](../robust-bounded-certificates/reference-realization.md).
+That native adapter can feed this local width-two gate directly, as checked
+by its integration tests. Higher-quota LPs/recovery and the streamed wrapper
+remain outside this executable backend, although their full mathematical
+composition is now within review. No external peer review or proof-assistant
 verification is claimed.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

@@ -15,12 +15,16 @@ conversion and its fixed-quadratic exact comparisons have been checked
 against that uniform extension interface. Boolean-resource exact
 optimization follows because no count can exceed one.
 
-Section 8's higher-quota factor tradeoffs retain their stated dependencies
-but are outside this scoped review. General budgeted polymatroid unit tests
-remain the paid interface proved in the bounded-certificate allocation
-manuscript. The implementation supplies the polynomial matching
-intersection algorithm, using the explicitly identified standard
-augmenting-path theorem rather than assuming a missing terminal solver.
+Section 8's complete higher-quota factor tradeoffs have now been checked
+against the bounded-certificate proof: the same original basis/ranks,
+scenario resources/budgets and unit-width promise are retained; only the
+one-time unit gate changes. The positive-quota separator and exact integral
+recovery stay unchanged. Local costs add, while global conversion is applied
+separately to each forced-seed interface; the displayed maximum base and
+fixed-tradeoff algebraic comparisons therefore follow. General budgeted
+unit tests have a proved construction and a [certified weighted reference](../../robust-bounded-certificates/reference/README.md).
+The local width-two implementation supplies polynomial matching intersection,
+using the explicitly identified standard augmenting-path theorem.
 
 ## Executable evidence
 

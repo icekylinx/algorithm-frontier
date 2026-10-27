@@ -11,6 +11,13 @@ The main proof gives the family-level theorem composition. The following canonic
 | [Adaptive quotient resparsification](manuscripts/adaptive-quotient-resparsification.md) | Repeated restriction removes the ambient item-count logarithm, with explicit error, probability, and rational bit accounting. |
 | [Exact-label cuts and matroid quotients](manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md) | The column decoder, graph-cut specialization, and direct cut lower bound. |
 | [Exact-label whole blocks](manuscripts/exact-label-whole-blocks-and-hyperedges.md) | Common-scalar block decoding, atomic hyperedges, hedge partitions, and globally commuting stabilizer blocks. |
+| [Rational decoder realization and composition audit](manuscripts/reference-whole-block-decoder.md) | Executable original-row compression, homogeneous coefficients, common-scalar maps, whole-item rank/query interface, dimension cap, and scoped integer-rank adaptive error/probability/bit audit. |
+
+The [reference API](reference/README.md) reuses the canonical exact elimination
+primitives in [the persistence feature module](../persistence-failure-certificates/reference/feature_summary.py).
+Its incidence-deficit homogeneous polynomial lift is separate from that
+module's monic evaluation-module construction. No quotient sampler or
+finite-field extension is claimed by this rational implementation.
 
 ## Shared proof dependencies
 

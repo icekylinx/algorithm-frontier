@@ -4,7 +4,57 @@
 
 ## Evidence status
 
-The decoder and lower bounds are algebraic proofs. No dedicated executable currently checks the family-wide approximation or runtime statements. Enumerating a finite list of failure scenarios would not establish their universal quantifiers.
+The [rational compiler](../reference/README.md) now implements the exact
+common-scalar whole-block decoder and the full-input dimension gate.
+The [realization and composition audit](../manuscripts/reference-whole-block-decoder.md)
+separates that executable scope from the published quotient sampler and its
+proved adaptive composition. No dedicated executable currently samples a
+family-wide sparse approximation. Enumerating a finite list of failure
+scenarios would not establish its universal quantifiers.
+
+Run the independent exact checker:
+
+```sh
+python3 problems/label-block-cut/verify/check_whole_blocks.py
+```
+
+The checker directly expands factor-index choices to compare ordinary
+polynomial coefficients, reconstructs original columns from selected
+original rows, compares exact common-scalar decoder images for whole items,
+and checks subspace objectives using a separate matrix-rank calculation.
+Original item reweightings are shared across columns. Graph cuts are checked
+against crossing edges, and atomic hyperedge partition objectives against
+original incident-label deletion and one charge per crossing item.
+
+| Finite mechanism or outcome | Count |
+|---|---:|
+| Algebraic compilation fixtures | 16 |
+| Materialized lifts in those fixtures | 11 |
+| Full-input fallbacks in those fixtures | 3 |
+| Zero-rank fixtures | 2 |
+| Ordinary coefficient blocks compared | 1,140 |
+| Original rank-compression columns | 573 |
+| Independent whole-item rank queries | 33 |
+| Algebraic failure patterns | 103 |
+| Exact common-scalar item checks | 3,281 |
+| Original subspace-complement queries | 487 |
+| Fixed original-item reweighting queries | 103 |
+| Exhaustive four-vertex graph topologies | 64 |
+| Original graph cut/failure queries | 4,096 |
+| Atomic hyperedge partition/failure queries | 567 |
+| Huge formal-dimension gate with feature routines disabled | 1 |
+| Rejected malformed input/query cases | 14 |
+
+Fixtures include dependent original rows with different original labels,
+rational entries, multi-column and empty items, zero columns, zero weights,
+zero deficit, zero failure allowance, unused failure IDs and huge encoded
+failure budgets. The large-dimension fixture has formal lift dimension
+exceeding a decimal integer with eighty digits and disables both monomial
+enumeration and polynomial multiplication before compilation.
+
+These are checks of a deterministic exact compiler. They do not constitute
+Monte Carlo success experiments, an implementation of adaptive quotient
+sampling, or a finite-field/quantum backend.
 
 ## Exact common-scalar decoder
 

@@ -69,7 +69,11 @@ The [strict-below-three-halves value-oracle barrier](../allocation-lower-bounds/
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete two-common-positive-size scheduling family: Theorem D's exact three-halves corank approximation, its Boolean-rank-failure and empty-class branches, original full-machine box/dual reconstruction, guarded omission-batch node bound and strict-below-three-halves value-oracle obstruction; the distinct five-thirds large-unit-rank theorem, its private-slack residual-rank refinement and their explicitly promised fine-small-job variants; and the fixed-integer-d corank/whole-ground quota curve. The complete-table reference client realizes the hard-target corank construction and reuses the canonical two-time high-target LP baseline with separate implementation costs.
+
+**Dependencies and scope.** All original mandatory bases, binary numerical encodings and paid exact rank/SFM, integral optimization/decomposition and additive rounding primitives retain their stated models. The distinct rank-based unit-core theorem uses the complete normalized-prefix and bounded-signature proof; a missing local-search implementation does not make that mathematical result conditional. The reference uses complete rank tables and actual guarded batch recursion. Its shared high-target solver has explicitly charged vertex and integer-count enumeration costs; it is not an implementation of the fast whole-ground wrapper or the large-unit-rank/private-slack local search. Fine-small-job and private-slack optimization promises remain explicit, and no uniform near-five-thirds rank-quasipolynomial result is inferred. The matching threshold obstruction concerns arbitrary value-oracle job polymatroids, not explicit restricted-assignment hardness or optimality of the exponential base. Finite executable tests, external review, formal verification and publication priority remain distinct.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

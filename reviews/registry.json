@@ -549,7 +549,22 @@
       "path": "problems/label-block-cut",
       "evidence_note": "problems/label-block-cut/verify/README.md",
       "formal_verification": "not-claimed",
-      "checks": []
+      "checks": [
+        {
+          "path": "problems/label-block-cut/verify/check_whole_blocks.py",
+          "scope": "16 algebraic fixtures (11 materialized lifts, three whole-input fallbacks, two zero-rank): 1140 ordinary coefficient blocks, 573 original compression columns, 33 independent whole-item rank queries, 103 algebraic failure patterns, 3281 exact common-scalar item checks, 487 subspace queries and 103 fixed original-ID reweightings. Also 64 exhaustive four-vertex graph topologies with 4096 cut/failure queries, 567 atomic hyperedge partition/failure queries, one huge formal-dimension gate with feature routines disabled, and 14 rejected malformed cases. Rational compiler/decoder evidence only; no quotient sampler or finite-field/quantum backend."
+        }
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The exact rational whole-block incidence-label compiler and decoder, original-row rank compression, common item scalar, original-ID whole-block rank and subspace-query interfaces, uniform full-input dimension gate, and mathematical composition with Quanrud quotient sparsification and the integer-rank adaptive restriction/error/probability/bit ledger.",
+        "date": "2026-10-27",
+        "conditions": [
+          "The deterministic reference retains the original input and, in `LIFT` mode, its complete compiled blocks. It is not a sampled sparse summary and implements neither the published quotient sampler nor adaptive resparsification. Those remain completed mathematical constructions through the identified published backend.",
+          "This review does not cover finite-field extension software, the rational subgroup-rank client, quantum stabilizer algebra or support lower-bound reductions. Their mathematical statements and primary dependencies remain separately recorded.",
+          "Exact rational bit work is charged; `FULL_INPUT` returns before monomial enumeration or polynomial multiplication when positive-rank formal dimension is at least item count. Finite executable checks are not proof-assistant verification or external peer review."
+        ]
+      }
     },
     {
       "id": "group-metric-constraints",
@@ -560,8 +575,22 @@
         {
           "path": "problems/group-metric-constraints/verify/check_quotient_rounding.py",
           "scope": "direct finite arithmetic mechanism: Independent subgroup enumeration and certified rational quotient rounding for six explicit blocks in Z_6^3: normalization, monotonicity, exact zero marginals, positive gap, and submodularity. Excludes general subgroup/HNF algorithms, arbitrary-ground-set rationalization, and analytic Gaussian or universal group bounds."
+        },
+        {
+          "path": "problems/group-metric-constraints/verify/check_coset_compiler.py",
+          "scope": "Nine validated groups, 36 independently enumerated subgroups including ten nonnormal ones, 218 original items, 18632 wreath memberships checked by independently generated faithful permutations, 1382 original-query identities, 900 direct native rational-weight decisions, 227 nonhomomorphic query pairs and 22 rejection cases. Includes nonzero identity IDs, empty/whole accepting predicates and optional exact total weight. No sampler or Gaussian/compact-input theorem is tested."
         }
-      ]
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The exact whole-coset algebraic compiler on validated explicit finite-group tables: generated subgroups, one common implicit wreath product, whole original-item membership and reweighting identities, empty/whole predicates, and exact original-query coefficient verification with optional total weight. The established subgroup construction is credited and the local implementation has explicit table, generator, rational-bit and hash-operation costs.",
+        "date": "2026-10-27",
+        "conditions": [
+          "The original multiplication table is explicit. The construction supports nonabelian groups, nonnormal subgroups and inconsistent cosets; it does not claim polynomial time in a compact group presentation.",
+          "This is an algebraic compiler and verifier, not a sparse coefficient sampler. Gaussian subgroup support, Cayley spectral constructions, compact modular rationalization and metric extensions remain outside this bounded review.",
+          "Original item IDs and whole predicates are retained. The item-independent query embedding is not assumed to be a homomorphism. Finite group/permutation checks support the symbolic identities and are not formal or external peer review."
+        ]
+      }
     },
     {
       "id": "quantum-stabilizer",
@@ -814,8 +843,23 @@
         {
           "path": "tools/verify_profile_certificates.py",
           "scope": "Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. Failure width and scenario feasibility are also outside the check."
+        },
+        {
+          "path": "problems/robust-bounded-certificates/verify/check_bounded.py",
+          "scope": "1,978 independent exhaustive weighted-intersection optima/max-cardinality cuts, 698 native polymatroid assignment optima, 4,492 bounded-gate cases, 63 original minimal wider certificates and 124 actual budget/resource integrations with the Fibonacci gate. Includes signed rational/tied/huge costs, original binary ranks, all small forced seeds/widths, five forged records, five malformed inputs and optimizer-disabled verification. Does not execute the higher-quota or global-wrapper algorithms."
         }
-      ]
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The complete bounded-certificate robust factor-d theorem: exact original budgeted unit tests and minimal failures, guarded common-basis extension, all-input forced-seed/node bounds, scenario-intersection support separation, exact integral high-quota recovery, one-sided target search and streamed global conversion. New reference realizes polynomial weighted matroid intersection with optimality/cut certificates, native budgeted unit scenarios and the bounded local gate.",
+        "date": "2026-10-27",
+        "conditions": [
+          "Original matroid/rank and Boolean-cap independence oracles must satisfy their declared contracts. The native complete-table adapter validates integral polymatroid tables and charges their full explicit encoding; no rank-only time bound is inferred by constructing those tables.",
+          "Weighted augmentation and exchange-cycle optimality use Barasz et al., arXiv:2407.03229v2, Definition 2.2, Algorithm 2 and Lemma 2.5. Exact rational LP, submodular minimization and integral polymatroid intersection remain named paid mathematical dependencies for higher quotas.",
+          "The software implements weighted intersection, exact unit tests/rejection certificates and bounded local extension, including actual integration with the Fibonacci client. It does not implement higher-quota LPs/recovery, integer target search or the streamed global wrapper.",
+          "Width violation is a separate structural outcome and never failed extension. Scenario allocations are adaptive, one budget per allocation is exact, and binary capacities are not expanded. Sharp global bases retain fixed tradeoff parameters; binary-variable tradeoffs retain the stated rational upper-envelope option."
+        ]
+      }
     },
     {
       "id": "robust-width-two-allocation",
@@ -829,14 +873,14 @@
         }
       ],
       "review": {
-        "status": "partial",
-        "scope": "The exact width-two robust one-unit gate, including original dual-rank forced omissions, polynomial matching matroid intersection and basis completion, complete Fibonacci branching accounting, all-input width-violation semantics and fixed-quadratic whole-ground conversion; exact optimization on Boolean resources. Section 8 high-quota factor tradeoffs and their inherited allocation chain are excluded from this scoped review.",
+        "status": "ready",
+        "scope": "The complete width-two robust theorem: exact unit gate and Boolean optimization, original dual-rank forced omissions, polynomial matching intersection/completion, Fibonacci all-input accounting and guarded outcomes, plus the Section 8 higher-quota factor-d composition and both fixed-tradeoff whole-ground conversions. The precise unchanged positive-quota packing/recovery chain has been checked against the complete bounded-certificate theorem.",
         "date": "2026-10-27",
         "conditions": [
-          "Original matroid rank and exact hereditary scenario unit tests with actual witnesses remain paid callbacks. General budgeted polymatroid unit tests retain the construction in robust-bounded-certificates.",
-          "Matching terminal is implemented by standard shortest-exchange matroid intersection, using the explicitly identified augmentation theorem in Barasz et al., arXiv:2407.03229v2, Definition 2.2 and Algorithm 1. Oracle validity itself is an input-model contract.",
-          "The reference implements the local Fibonacci gate and polynomial terminal, not general weighted polymatroid allocation, higher-quota recovery or the streamed global wrapper. A width violation is a third outcome, never failed extension.",
-          "Separate rank-oracle obstructions do not establish an optimal explicit-input exponential base; no fastest-known or publication-priority claim."
+          "Original rank and exact hereditary scenario unit tests retain their paid model contracts. General budgeted unit tests now have the certified weighted bounded-certificate realization, directly compatible with the Fibonacci client.",
+          "The unit gate changes only the one-time exact positivity cost; fixed original bases/ranks/scenario data, saved small-target witnesses, larger-quota separator and integral scenario recovery remain identical to BW. Local costs add, and global conversion is applied separately, proving the maximum base.",
+          "The sharper global expressions require fixed tradeoff parameters. Each quota comparison uses a fixed rational power, and the unit gate uses exact quadratic arithmetic; no arbitrary real-number oracle is assumed.",
+          "The width-two software implements the local unit gate and polynomial matching terminal; higher-quota LPs/recovery, target search and the streamed wrapper remain separate complete mathematical algorithms, not implemented features. Width violation remains a third structural outcome."
         ]
       }
     },
@@ -913,8 +957,22 @@
         {
           "path": "tools/verify_profile_certificates.py",
           "scope": "The d=2 quota subcheck covers K=1,...,399: the exact one-unit gate for K<=2 and K/(K-ceil(K/2))<=3 for K>2. This is arithmetic evidence only; it does not execute support selection, branching or recovery. It does not test the separate five-thirds rank algorithm."
+        },
+        {
+          "path": "problems/two-size-scheduling/verify/check_corank.py",
+          "scope": "408 finite instances, 3789 target checks, 422 optimizations, 400 independent box-rank support values, 2390 full-ground dual-complement vectors, 295 base completions and 599 augmented batch nodes across 18 candidate branches, including 78 guards and one rank-rejected child. Independent original-base enumeration verifies outputs/failures and exact algebraic node bounds. Six additional hard-target/optimization checks use an 81-bit forced count with the shared high-target routine disabled. This tests the complete-table corank client, not the distinct rank-based local search or streamed global wrapper."
         }
-      ]
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The complete two-common-positive-size scheduling family: Theorem D's exact three-halves corank approximation, its Boolean-rank-failure and empty-class branches, original full-machine box/dual reconstruction, guarded omission-batch node bound and strict-below-three-halves value-oracle obstruction; the distinct five-thirds large-unit-rank theorem, its private-slack residual-rank refinement and their explicitly promised fine-small-job variants; and the fixed-integer-d corank/whole-ground quota curve. The complete-table reference client realizes the hard-target corank construction and reuses the canonical two-time high-target LP baseline with separate implementation costs.",
+        "date": "2026-10-27",
+        "conditions": [
+          "All original mandatory bases, binary numerical encodings and paid exact rank/SFM, integral optimization/decomposition and additive rounding primitives retain their stated models. The distinct rank-based unit-core theorem uses the complete normalized-prefix and bounded-signature proof; a missing local-search implementation does not make that mathematical result conditional.",
+          "The reference uses complete rank tables and actual guarded batch recursion. Its shared high-target solver has explicitly charged vertex and integer-count enumeration costs; it is not an implementation of the fast whole-ground wrapper or the large-unit-rank/private-slack local search. Fine-small-job and private-slack optimization promises remain explicit, and no uniform near-five-thirds rank-quasipolynomial result is inferred.",
+          "The matching threshold obstruction concerns arbitrary value-oracle job polymatroids, not explicit restricted-assignment hardness or optimality of the exponential base. Finite executable tests, external review, formal verification and publication priority remain distinct."
+        ]
+      }
     },
     {
       "id": "two-time-scheduling",

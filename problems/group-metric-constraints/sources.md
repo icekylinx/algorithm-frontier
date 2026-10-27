@@ -16,6 +16,15 @@ The main proof gives the family-level theorem composition. The following canonic
 | [Affine modular blocks](manuscripts/affine-modular-blocks-and-sharp-modulus-dependence.md) | Optimal support, factorization-free compact construction, and the modulus lower bound. |
 | [Few-orbit Hilbert metrics](manuscripts/hilbert-metric-sums-with-few-orbits.md) | Metric completion, original-table implementation, and orbit-dependent lower bounds. |
 
+## Executable algebraic interface
+
+The [exact whole-coset realization](manuscripts/reference-coset-compilation.md)
+implements the common wreath-subgroup compilation, original-query decoder
+and whole-item coefficient verification on validated explicit finite-group
+tables. Its standard algebraic antecedent is identified at Proposition 3 of
+the primary Dinh--Moore--Russell manuscript. All code is local; the compiler
+does not implement the separate Gaussian sparsifier.
+
 ## Shared proof dependencies
 
 | Result | Role |

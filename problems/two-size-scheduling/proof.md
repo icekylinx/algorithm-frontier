@@ -14,6 +14,11 @@ excluded from the theorem. A matching strict-below-3/2 obstruction
 holds for this same corank parameter in the full value-oracle model.
 No first-in-the-literature claim is made.
 
+The [complete-table reference client](reference-realization.md) executes the
+hard-target Boolean/dual construction and the guarded omission-batch recursion.
+It reuses the canonical two-time backend for the high-target LP branch, with
+that backend's explicit enumeration costs preserved.
+
 ## 1. Scheduling model and parameter
 
 Let P be a set of q machines. The two positive job sizes are 0<u<a.

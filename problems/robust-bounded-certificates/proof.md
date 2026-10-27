@@ -8,6 +8,11 @@ It then restores an exact multiplicative approximation, including
 optimum one, by combining the gate with the accepted positive-quota
 algorithm.
 
+The [certified reference realization](reference-realization.md) implements
+polynomial weighted unit tests, original scenario budget certificates and
+the guarded local common-basis gate. Its software scope is distinct from
+the complete higher-quota mathematical theorem below.
+
 The condition concerns minimal infeasible sets of recipients for
 **aggregate, budget-feasible one-unit service in a scenario**. It is
 preserved under every allowed-player restriction. A width violation

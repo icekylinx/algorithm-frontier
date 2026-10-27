@@ -172,6 +172,22 @@ The complete adaptive explicit-scenario selected-flow theorem, including scenari
 
 [Proof](../problems/robust-scenario-flow/proof.md) · [Dependencies](../problems/robust-scenario-flow/sources.md) · [Evidence](../problems/robust-scenario-flow/verify/README.md) · Reviewed 2026-10-27
 
+### [Robust bounded-width certificates](../problems/robust-bounded-certificates/)
+
+The complete bounded-certificate robust factor-d theorem: exact original budgeted unit tests and minimal failures, guarded common-basis extension, all-input forced-seed/node bounds, scenario-intersection support separation, exact integral high-quota recovery, one-sided target search and streamed global conversion. New reference realizes polynomial weighted matroid intersection with optimality/cut certificates, native budgeted unit scenarios and the bounded local gate.
+
+**Dependencies and scope.** Original matroid/rank and Boolean-cap independence oracles must satisfy their declared contracts. The native complete-table adapter validates integral polymatroid tables and charges their full explicit encoding; no rank-only time bound is inferred by constructing those tables. Weighted augmentation and exchange-cycle optimality use Barasz et al., arXiv:2407.03229v2, Definition 2.2, Algorithm 2 and Lemma 2.5. Exact rational LP, submodular minimization and integral polymatroid intersection remain named paid mathematical dependencies for higher quotas. The software implements weighted intersection, exact unit tests/rejection certificates and bounded local extension, including actual integration with the Fibonacci client. It does not implement higher-quota LPs/recovery, integer target search or the streamed global wrapper. Width violation is a separate structural outcome and never failed extension. Scenario allocations are adaptive, one budget per allocation is exact, and binary capacities are not expanded. Sharp global bases retain fixed tradeoff parameters; binary-variable tradeoffs retain the stated rational upper-envelope option.
+
+[Proof](../problems/robust-bounded-certificates/proof.md) · [Dependencies](../problems/robust-bounded-certificates/sources.md) · [Evidence](../problems/robust-bounded-certificates/verify/README.md) · Reviewed 2026-10-27
+
+### [Width-two robust unit allocation](../problems/robust-width-two-allocation/)
+
+The complete width-two robust theorem: exact unit gate and Boolean optimization, original dual-rank forced omissions, polynomial matching intersection/completion, Fibonacci all-input accounting and guarded outcomes, plus the Section 8 higher-quota factor-d composition and both fixed-tradeoff whole-ground conversions. The precise unchanged positive-quota packing/recovery chain has been checked against the complete bounded-certificate theorem.
+
+**Dependencies and scope.** Original rank and exact hereditary scenario unit tests retain their paid model contracts. General budgeted unit tests now have the certified weighted bounded-certificate realization, directly compatible with the Fibonacci client. The unit gate changes only the one-time exact positivity cost; fixed original bases/ranks/scenario data, saved small-target witnesses, larger-quota separator and integral scenario recovery remain identical to BW. Local costs add, and global conversion is applied separately, proving the maximum base. The sharper global expressions require fixed tradeoff parameters. Each quota comparison uses a fixed rational power, and the unit gate uses exact quadratic arithmetic; no arbitrary real-number oracle is assumed. The width-two software implements the local unit gate and polynomial matching terminal; higher-quota LPs/recovery, target search and the streamed wrapper remain separate complete mathematical algorithms, not implemented features. Width violation remains a third structural outcome.
+
+[Proof](../problems/robust-width-two-allocation/proof.md) · [Dependencies](../problems/robust-width-two-allocation/sources.md) · [Evidence](../problems/robust-width-two-allocation/verify/README.md) · Reviewed 2026-10-27
+
 ### [Two-scenario hardness](../problems/robust-two-scenario-hardness/)
 
 The complete deterministic corank-parameterized finite-factor obstruction for optional common-basis selection under two exact scenario budgets, including positive-service equivalence to bounded nonnegative `k`-SUM, the always-feasible zero solution, binary encoding and parameter preservation.
@@ -179,6 +195,14 @@ The complete deterministic corank-parameterized finite-factor obstruction for op
 **Dependencies and scope.** Uses the deterministic `W[1]`-hardness direction of Abboud, Lewi and Williams, Losing Weight by Gaining Edges, Definition 1.1, Theorem 1.3 and Section 4, and the assumption `FPT` differs from `W[1]`. The bounded nonnegative source avoids the separate randomized arbitrary-range reduction. The conclusion requires integer service, exact budgets and an optional common basis. It does not cover randomized algorithms, fractional service or relaxed budgets, and supplies no ETH or whole-ground exponential lower bound. Finite reduction checks do not certify the external hardness theorem.
 
 [Proof](../problems/robust-two-scenario-hardness/proof.md) · [Dependencies](../problems/robust-two-scenario-hardness/sources.md) · [Evidence](../problems/robust-two-scenario-hardness/verify/README.md) · Reviewed 2026-10-27
+
+### [Two-size scheduling](../problems/two-size-scheduling/)
+
+The complete two-common-positive-size scheduling family: Theorem D's exact three-halves corank approximation, its Boolean-rank-failure and empty-class branches, original full-machine box/dual reconstruction, guarded omission-batch node bound and strict-below-three-halves value-oracle obstruction; the distinct five-thirds large-unit-rank theorem, its private-slack residual-rank refinement and their explicitly promised fine-small-job variants; and the fixed-integer-d corank/whole-ground quota curve. The complete-table reference client realizes the hard-target corank construction and reuses the canonical two-time high-target LP baseline with separate implementation costs.
+
+**Dependencies and scope.** All original mandatory bases, binary numerical encodings and paid exact rank/SFM, integral optimization/decomposition and additive rounding primitives retain their stated models. The distinct rank-based unit-core theorem uses the complete normalized-prefix and bounded-signature proof; a missing local-search implementation does not make that mathematical result conditional. The reference uses complete rank tables and actual guarded batch recursion. Its shared high-target solver has explicitly charged vertex and integer-count enumeration costs; it is not an implementation of the fast whole-ground wrapper or the large-unit-rank/private-slack local search. Fine-small-job and private-slack optimization promises remain explicit, and no uniform near-five-thirds rank-quasipolynomial result is inferred. The matching threshold obstruction concerns arbitrary value-oracle job polymatroids, not explicit restricted-assignment hardness or optimality of the exponential base. Finite executable tests, external review, formal verification and publication priority remain distinct.
+
+[Proof](../problems/two-size-scheduling/proof.md) · [Dependencies](../problems/two-size-scheduling/sources.md) · [Evidence](../problems/two-size-scheduling/verify/README.md) · Reviewed 2026-10-27
 
 ### [Per-machine two-time scheduling](../problems/two-time-scheduling/)
 
@@ -262,6 +286,22 @@ Complete actual-feature-rank construction for represented failure lifts and the 
 
 [Proof](../problems/persistence-failure-certificates/proof.md) · [Dependencies](../problems/persistence-failure-certificates/sources.md) · [Evidence](../problems/persistence-failure-certificates/verify/README.md) · Reviewed 2026-10-26
 
+### [Label and whole-block cut sparsification](../problems/label-block-cut/)
+
+The exact rational whole-block incidence-label compiler and decoder, original-row rank compression, common item scalar, original-ID whole-block rank and subspace-query interfaces, uniform full-input dimension gate, and mathematical composition with Quanrud quotient sparsification and the integer-rank adaptive restriction/error/probability/bit ledger.
+
+**Dependencies and scope.** The deterministic reference retains the original input and, in `LIFT` mode, its complete compiled blocks. It is not a sampled sparse summary and implements neither the published quotient sampler nor adaptive resparsification. Those remain completed mathematical constructions through the identified published backend. This review does not cover finite-field extension software, the rational subgroup-rank client, quantum stabilizer algebra or support lower-bound reductions. Their mathematical statements and primary dependencies remain separately recorded. Exact rational bit work is charged; `FULL_INPUT` returns before monomial enumeration or polynomial multiplication when positive-rank formal dimension is at least item count. Finite executable checks are not proof-assistant verification or external peer review.
+
+[Proof](../problems/label-block-cut/proof.md) · [Dependencies](../problems/label-block-cut/sources.md) · [Evidence](../problems/label-block-cut/verify/README.md) · Reviewed 2026-10-27
+
+### [Finite groups, affine constraints and metrics](../problems/group-metric-constraints/)
+
+The exact whole-coset algebraic compiler on validated explicit finite-group tables: generated subgroups, one common implicit wreath product, whole original-item membership and reweighting identities, empty/whole predicates, and exact original-query coefficient verification with optional total weight. The established subgroup construction is credited and the local implementation has explicit table, generator, rational-bit and hash-operation costs.
+
+**Dependencies and scope.** The original multiplication table is explicit. The construction supports nonabelian groups, nonnormal subgroups and inconsistent cosets; it does not claim polynomial time in a compact group presentation. This is an algebraic compiler and verifier, not a sparse coefficient sampler. Gaussian subgroup support, Cayley spectral constructions, compact modular rationalization and metric extensions remain outside this bounded review. Original item IDs and whole predicates are retained. The item-independent query embedding is not assumed to be a homomorphism. Finite group/permutation checks support the symbolic identities and are not formal or external peer review.
+
+[Proof](../problems/group-metric-constraints/proof.md) · [Dependencies](../problems/group-metric-constraints/sources.md) · [Evidence](../problems/group-metric-constraints/verify/README.md) · Reviewed 2026-10-27
+
 ### [Pauli, qudit and stabilizer blocks](../problems/quantum-stabilizer/)
 
 The deterministic Pauli stabilizer-basis surrogate and witness theorem (main Theorem 5 and witness Theorem 1), including exact affine-parity enumeration, and the prime-dimensional individual-check witness reduction (witness Corollary 2). Pairwise operator comparisons, complete-basis pinching, exact basis-energy equality and compact tableau output are explicit.
@@ -278,14 +318,6 @@ The main exact factor-two theorem with one assignment-cost budget, the exact pre
 
 [Proof](../problems/one-value-exact-two/proof.md) · [Dependencies](../problems/one-value-exact-two/sources.md) · [Evidence](../problems/one-value-exact-two/verify/README.md) · Reviewed 2026-10-27
 
-### [Width-two robust unit allocation](../problems/robust-width-two-allocation/)
-
-The exact width-two robust one-unit gate, including original dual-rank forced omissions, polynomial matching matroid intersection and basis completion, complete Fibonacci branching accounting, all-input width-violation semantics and fixed-quadratic whole-ground conversion; exact optimization on Boolean resources. Section 8 high-quota factor tradeoffs and their inherited allocation chain are excluded from this scoped review.
-
-**Dependencies and scope.** Original matroid rank and exact hereditary scenario unit tests with actual witnesses remain paid callbacks. General budgeted polymatroid unit tests retain the construction in robust-bounded-certificates. Matching terminal is implemented by standard shortest-exchange matroid intersection, using the explicitly identified augmentation theorem in Barasz et al., arXiv:2407.03229v2, Definition 2.2 and Algorithm 1. Oracle validity itself is an input-model contract. The reference implements the local Fibonacci gate and polynomial terminal, not general weighted polymatroid allocation, higher-quota recovery or the streamed global wrapper. A width violation is a third outcome, never failed extension. Separate rank-oracle obstructions do not establish an optimal explicit-input exponential base; no fastest-known or publication-priority claim.
-
-[Proof](../problems/robust-width-two-allocation/proof.md) · [Dependencies](../problems/robust-width-two-allocation/sources.md) · [Evidence](../problems/robust-width-two-allocation/verify/README.md) · Reviewed 2026-10-27
-
 ### [Independent transversals](../problems/independent-transversal/)
 
 The complete elementary certifying fallback: induced-star current-blocker invariants, strict earlier-star zero-blocker cascades, positive-composition signature bound, exact total-domination/constellation output and independent original-input verification. The derived public procedure has a new local executable realization and separately charged exponential-in-class-count work.
@@ -300,8 +332,6 @@ These families have not yet received a scoped readiness entry in this registry. 
 
 - [Numeric targets and support patterns](../problems/numeric-target-frontier/)
 - [Correlated spectral, regression and seminorm summaries](../problems/correlated-spectral-regression/)
-- [Label and whole-block cut sparsification](../problems/label-block-cut/)
-- [Finite groups, affine constraints and metrics](../problems/group-metric-constraints/)
 - [Exact-separation and non-Fano boundaries](../problems/obstruction-boundaries/)
 - [Arbitrary-value allocation scheme](../problems/arbitrary-value-allocation-scheme/)
 - [Recipient polymatroids](../problems/recipient-polymatroid/)
@@ -311,12 +341,10 @@ These families have not yet received a scoped readiness entry in this registry. 
 - [Unrelated values with a joint role](../problems/unrelated-values-joint-role/)
 - [Whole-ground selection and transfers](../problems/whole-ground-allocation/)
 - [Robust unrelated allocation](../problems/robust-unrelated-allocation/)
-- [Robust bounded-width certificates](../problems/robust-bounded-certificates/)
 - [Arbitrary-processing scheme](../problems/arbitrary-processing-scheduling/)
 - [Activated-machine scheduling](../problems/activated-machine-scheduling/)
 - [Six-profile scheduling](../problems/six-profile-three-halves/)
 - [Processing-bucket tradeoff](../problems/processing-bucket-tradeoff/)
-- [Two-size scheduling](../problems/two-size-scheduling/)
 - [Many-size workload scheduling](../problems/many-size-scheduling/)
 - [Commitment scheduling](../problems/commitment-scheduling/)
 
@@ -418,11 +446,13 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/general-matching/verify/check_reductions.py](../problems/general-matching/verify/check_reductions.py)
 - [problems/general-matching/verify/check_reference.py](../problems/general-matching/verify/check_reference.py)
 - [problems/graph-color-failure-certificates/verify/check_vertex_colors.py](../problems/graph-color-failure-certificates/verify/check_vertex_colors.py)
+- [problems/group-metric-constraints/verify/check_coset_compiler.py](../problems/group-metric-constraints/verify/check_coset_compiler.py)
 - [problems/group-metric-constraints/verify/check_quotient_rounding.py](../problems/group-metric-constraints/verify/check_quotient_rounding.py)
 - [problems/incremental-scc/verify/check_label_history.py](../problems/incremental-scc/verify/check_label_history.py)
 - [problems/incremental-sssp/verify/check_path_reporting.py](../problems/incremental-sssp/verify/check_path_reporting.py)
 - [problems/independent-transversal/verify/check_elementary.py](../problems/independent-transversal/verify/check_elementary.py)
 - [problems/item-matroid-union/verify/check_union_reduction.py](../problems/item-matroid-union/verify/check_union_reduction.py)
+- [problems/label-block-cut/verify/check_whole_blocks.py](../problems/label-block-cut/verify/check_whole_blocks.py)
 - [problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py](../problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py)
 - [problems/matroid-failure-summaries/verify/check_rank_two_prefix.py](../problems/matroid-failure-summaries/verify/check_rank_two_prefix.py)
 - [problems/matroid-failure-summaries/verify/check_single_replacement.py](../problems/matroid-failure-summaries/verify/check_single_replacement.py)
@@ -442,6 +472,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/roabp-affine-pit/verify/check_quadratic_hasse.py](../problems/roabp-affine-pit/verify/check_quadratic_hasse.py)
 - [problems/roabp-affine-pit/verify/check_source_bindings.py](../problems/roabp-affine-pit/verify/check_source_bindings.py)
 - [problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py](../problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py)
+- [problems/robust-bounded-certificates/verify/check_bounded.py](../problems/robust-bounded-certificates/verify/check_bounded.py)
 - [problems/robust-scenario-flow/verify/check_scenarios.py](../problems/robust-scenario-flow/verify/check_scenarios.py)
 - [problems/robust-width-two-allocation/verify/check_width_two.py](../problems/robust-width-two-allocation/verify/check_width_two.py)
 - [problems/selected-flow/verify/check_concurrent.py](../problems/selected-flow/verify/check_concurrent.py)
@@ -454,6 +485,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/subset-sum-low-space-deterministic/verify/check_range_solver.py](../problems/subset-sum-low-space-deterministic/verify/check_range_solver.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_resources.py](../problems/subset-sum-low-space-deterministic/verify/check_resources.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_structural.py](../problems/subset-sum-low-space-deterministic/verify/check_structural.py)
+- [problems/two-size-scheduling/verify/check_corank.py](../problems/two-size-scheduling/verify/check_corank.py)
 - [problems/two-time-scheduling/verify/check_scheduling.py](../problems/two-time-scheduling/verify/check_scheduling.py)
 - [problems/weighted-prefix-quota-frontier/verify/check_laminar_recovery.py](../problems/weighted-prefix-quota-frontier/verify/check_laminar_recovery.py)
 - [problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py](../problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py)
