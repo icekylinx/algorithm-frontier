@@ -149,6 +149,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Linear single-fault certificates for maximum matching in general graphs](problems/exact-flow-sensitivity/manuscripts/linear-single-fault-general-matching.md)
 - [Linear exact single-deletion certificates for two arbitrary matroids](problems/exact-flow-sensitivity/manuscripts/linear-unweighted-two-matroid-certificate.md)
 - [A self-contained compact unit-flow reporting realization](problems/exact-flow-sensitivity/manuscripts/reference-unit-flow-realization.md)
+- [Native internally disjoint paths after one failure](problems/exact-flow-sensitivity/manuscripts/reference-vertex-path-realization.md)
 
 ### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
 
@@ -270,6 +271,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/one-value-exact-two/README.md) · [Main proof](problems/one-value-exact-two/proof.md) · [Sources](problems/one-value-exact-two/sources.md) · [Verification](problems/one-value-exact-two/verify/README.md)
 
+- [A direct Boolean-cap and one-unit gate proof](problems/one-value-exact-two/one-unit-gate.md)
 - [One-value optional allocation with a shared setup and assignment budget](problems/one-value-exact-two/setup-tradeoffs.md)
 
 ### [Intrinsic two-value allocation](problems/two-value-exact-two/)

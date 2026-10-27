@@ -18,19 +18,19 @@ Deterministic fully dynamic metric construction. The source map supplies the hie
 
 Equalized choice: amortized update work
 
-<!-- math-display: a60da7ea6e447a1a7e0cbf2c
-\exp(O(U^{4/5}h^{1/5}))
+<!-- math-display: 16227039e8372d535071de76
+\exp\!\left(O\!\left((\log_2(N+4))^{4/5}(\log_2(\log_2(N+4)+4))^{1/5}\right)\right)
 -->
-![Formula](../../assets/math/a60da7ea6e447a1a7e0cbf2c.svg)
+![Formula](../../assets/math/16227039e8372d535071de76.svg)
 
 Fixed-<code class="math">C</code> choice:
 
-<!-- math-display: 41fb6a860c0079a38728a793
-\exp(O(U^{3/4}h^{(C+1)/4}))
+<!-- math-display: d5c58d31d12a1929d4f3313d
+\exp\!\left(O\!\left((\log_2(N+4))^{3/4}(\log_2(\log_2(N+4)+4))^{(C+1)/4}\right)\right)
 -->
-![Formula](../../assets/math/41fb6a860c0079a38728a793.svg)
+![Formula](../../assets/math/d5c58d31d12a1929d4f3313d.svg)
 
-Queries are polynomial in <code class="math">U</code>.
+Queries take <code class="math">\mathrm{poly}(\log_2(N+4))</code> work. The detailed frontier below retains the locally defined logarithmic scales to keep all five comparisons legible.
 
 **Space**
 

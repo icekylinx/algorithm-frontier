@@ -23,10 +23,10 @@ Exact <code class="math">3/2</code> takes
 
 Or
 
-<!-- math-display: 4d39de6454b06fa654d85472
-(50/27)^q E(q)\mathrm{poly}(H)
+<!-- math-display: f970c34ebaeec5d27646ef45
+(50/27)^q 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/4d39de6454b06fa654d85472.svg)
+![Formula](../../assets/math/f970c34ebaeec5d27646ef45.svg)
 
 Exact <code class="math">5/3</code> also takes
 
@@ -37,17 +37,17 @@ Exact <code class="math">5/3</code> also takes
 
 More generally use
 
-<!-- math-display: c6c31e6bc3da57cd70f9bee4
-A_d^c\mathrm{poly}(H)
+<!-- math-display: c3ab250532682009dc42f9b6
+\left(\frac{(d+1)^{d+1}}{4(d-1)^{d-1}}\right)^{c/(d-1)}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/c6c31e6bc3da57cd70f9bee4.svg)
+![Formula](../../assets/math/c3ab250532682009dc42f9b6.svg)
 
 Or
 
-<!-- math-display: dae9cd9e80cdc15564511c37
-(2-1/A_d)^q E(q)\mathrm{poly}(H)
+<!-- math-display: 0eac068a57d994d2b6f7d069
+(2-1/A_d)^q 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/dae9cd9e80cdc15564511c37.svg)
+![Formula](../../assets/math/0eac068a57d994d2b6f7d069.svg)
 
 With <code class="math">A_d=\Gamma((d+1)/(d-1))</code>.
 
@@ -57,7 +57,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-<code class="math">h=f_b(P)</code> is the mandatory large-unit total; <code class="math">q</code> is the number of nonloop Boolean-cap large positions when their rank is <code class="math">h</code>; <code class="math">c=q-h</code>; positive sizes are <code class="math">u&lt;a</code>; <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code> and <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>.
+<code class="math">h=f_b(P)</code> is the mandatory large-unit total; <code class="math">q</code> is the number of nonloop Boolean-cap large positions when their rank is <code class="math">h</code>; <code class="math">c=q-h</code>; positive sizes are <code class="math">u&lt;a</code>; <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>.
 
 **Model and representation**
 

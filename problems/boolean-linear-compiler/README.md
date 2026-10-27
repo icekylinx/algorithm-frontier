@@ -18,10 +18,10 @@ Deterministic compiler with a supplied deterministic indexed-witness Subset Sum 
 
 **Time**
 
-<!-- math-display: bd18733ce42a0c1f1b90c50d
-T_B\le\mathrm{poly}(L)P_{\rm card}2^{\alpha n+\bar Q-(1-\alpha)B}
+<!-- math-display: a7f02e8c1961f3a402ca841e
+T_B\le\mathrm{poly}(L)\max\!\left\{1,\max_{0\le k\le n}\prod_i p_i(k)\right\}2^{\alpha n+\bar Q-(1-\alpha)B}
 -->
-![Formula](../../assets/math/bd18733ce42a0c1f1b90c50d.svg)
+![Formula](../../assets/math/a7f02e8c1961f3a402ca841e.svg)
 
 For any integer <code class="math">0\le B\le\bar Q</code>. The polynomial factor includes processing the <code class="math">n+1</code> cardinality layers sequentially. A prescribed cardinality can use its sharper individual parameters.
 

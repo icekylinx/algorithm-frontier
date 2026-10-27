@@ -14,17 +14,17 @@ Deterministic for the explicit scenario list, with a paid exact selector. Scenar
 
 **Time**
 
-<!-- math-display: 55c29d6875d9c7670b3d4dd8
-\Gamma(1/\varepsilon)^c\mathrm{poly}(H)
+<!-- math-display: 5d5877611e1d9853318e206a
+\left(\frac{1}{\varepsilon(1-\varepsilon)^{(1-\varepsilon)/\varepsilon}}\right)^c\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/55c29d6875d9c7670b3d4dd8.svg)
+![Formula](../../assets/math/5d5877611e1d9853318e206a.svg)
 
 For fixed rational <code class="math">\varepsilon</code>, the whole-ground alternative is
 
-<!-- math-display: 23b4a2344acb655d6b5109c3
-\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)
+<!-- math-display: 9b29a55c59319e994d0659cc
+\bigl(2-\varepsilon(1-\varepsilon)^{(1-\varepsilon)/\varepsilon}\bigr)^q 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/23b4a2344acb655d6b5109c3.svg)
+![Formula](../../assets/math/9b29a55c59319e994d0659cc.svg)
 
 **Space**
 
@@ -32,7 +32,7 @@ Polynomial in the full explicit scenario description, rational witnesses, select
 
 **Parameters**
 
-<code class="math">q</code> is the commodity count; <code class="math">r</code> is the selected cardinality; <code class="math">c=q-r</code>; <code class="math">0&lt;\varepsilon&lt;1</code> is rational. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code> and <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. Scenario count and routing-budget rows are charged in <code class="math">H</code>.
+<code class="math">q</code> is the commodity count; <code class="math">r</code> is the selected cardinality; <code class="math">c=q-r</code>; <code class="math">0&lt;\varepsilon&lt;1</code> is rational. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>. Scenario count and routing-budget rows are charged in <code class="math">H</code>.
 
 **Model and representation**
 

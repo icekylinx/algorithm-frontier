@@ -102,6 +102,8 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check("Allocation oracle barriers and residual configuration gaps", ("problems/allocation-lower-bounds/verify/check_barriers.py",)),
         Check("Finite sensitivity certificates", ("tools/verify_sensitivity_certificates.py",)),
         Check("Exact unit-flow failure repair and compact reporting", ("problems/exact-flow-sensitivity/verify/check_unit_flow.py",)),
+        Check("Native internally disjoint paths after one failure", ("problems/exact-flow-sensitivity/verify/check_vertex_paths.py",)),
+        Check("Boolean-cap matroids and exact one-unit assignment gates", ("problems/one-value-exact-two/verify/check_one_unit_gate.py",)),
         Check("Matching kernels and subcubic reduction", ("problems/general-matching/verify/check_reductions.py",)),
         Check("Exact matching solver and independent certificates", ("problems/general-matching/verify/check_reference.py",)),
         Check("Simultaneous failed-search matching certificates", ("problems/general-matching/verify/check_certificate_search.py",)),

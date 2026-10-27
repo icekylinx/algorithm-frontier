@@ -87,6 +87,14 @@ entry per formula in `quantity`, in source order. The generator checks the
 annotation count and uses these reviewed roles, without a length threshold.
 Parameter definitions in other fields remain literal.
 
+Expand defined helper factors in headline bounds when the result stays
+readable. In particular, expose exponential envelopes, branching bases and
+support functions instead of requiring a reader to substitute them manually.
+Keep a named parameter when fully expanding it would obscure the comparison,
+but supply its definition nearby. Preserve domains, endpoint conventions and
+the distinction between a proved runtime and a declared oracle cost. Use
+multiple lines for long alternatives rather than shrinking a single formula.
+
 Public overviews, result cards, source maps and verification notes must not
 leave symbolic formulas as ordinary prose. Use SVGs for showcased conclusions
 and code for parameters, premises and exact data. `tools/check_public_math.py`

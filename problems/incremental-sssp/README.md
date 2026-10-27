@@ -23,17 +23,16 @@ Deterministic distance maintenance and simple-path reporting, using the realized
 
 **Time**
 
-The total work and raw-backend envelope are:
+The total work after substituting the constructed raw-backend factor is:
 
-<!-- math-display: 7fac22f3132f511b6b33f755
-\begin{aligned}
-&O(n+m)+(n+m)\exp\!\left(O(\log E(N)+\sqrt{U(h+\log(1/\epsilon))})\right),\\
-&\log E(N)=O(U^{4/5}h^{1/5}).
-\end{aligned}
+<!-- math-display: 288349a9ca474e4672ab134a
+O(n+m)+(n+m)\exp\!\left(O\!\left(
+U^{4/5}h^{1/5}+\sqrt{U(h+\log(1/\epsilon))}
+\right)\right)
 -->
-![Formula](../../assets/math/7fac22f3132f511b6b33f755.svg)
+![Formula](../../assets/math/288349a9ca474e4672ab134a.svg)
 
-The raw-backend envelope comes from the constructed detector and retirement interface.
+Here <code class="math">U=\log_2N</code> and <code class="math">h=\log(\log_2N+4)</code>. These logarithmic scales keep the accuracy-dependent sum legible; the backend itself is no longer an unexpanded factor. The bound comes from the constructed detector and retirement interface.
 
 **Space**
 
@@ -41,7 +40,7 @@ Actual root vertices, inserted edges, and auxiliary copies over their lifetimes,
 
 **Parameters**
 
-`N` is the power-of-two cap; `U=log N`; `h=log(U+4)`; <code class="math">0&lt;\epsilon\le1/2</code> with <code class="math">\log(1/\epsilon)\le c_*U</code>; <code class="math">E(N)</code> is the raw-backend factor; `k` is the number of returned path edges.
+`N` is the power-of-two cap; `U=log_2 N`; `h=log(U+4)`; <code class="math">0&lt;\epsilon\le1/2</code> with <code class="math">\log(1/\epsilon)\le c_*U</code>; `k` is the number of returned path edges.
 
 **Model and representation**
 

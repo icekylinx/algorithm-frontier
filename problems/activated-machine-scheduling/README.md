@@ -14,12 +14,12 @@ Deterministic enumeration of activation bases and profiles, followed by exact fe
 
 **Time**
 
-Let <code class="math">\delta=\varepsilon/2</code>, <code class="math">K=\lfloor1/\delta\rfloor</code>, <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>, and <code class="math">\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}</code>. The three bounds are
+Let <code class="math">\delta=\varepsilon/2</code>, <code class="math">K=\lfloor1/\delta\rfloor</code>, and <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>. The three bounds are
 
-<!-- math-display: 1ebdc3ba9ef7134a895c6dbc
-\binom{q}{r}\Pi_\varepsilon^r\mathrm{poly}(H_\varepsilon)
+<!-- math-display: b5a7ea24cf83d06b2d9e67d3
+\binom{q}{r}\min\!\left\{\binom{L+K}{K}^{r},\exp(3r(K+1))\right\}\mathrm{poly}(H_\varepsilon)
 -->
-![Formula](../../assets/math/1ebdc3ba9ef7134a895c6dbc.svg)
+![Formula](../../assets/math/b5a7ea24cf83d06b2d9e67d3.svg)
 
 <!-- math-display: 775760c026c176838605a99c
 \binom{q}{r}6^r\mathrm{poly}(H)

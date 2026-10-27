@@ -176,9 +176,9 @@ The sharp sparse-packing FPT restriction with improved basis-tree preprocessing,
 
 ### [Flow, matching and price sensitivity](../problems/exact-flow-sensitivity/)
 
-The exact nonnegative rational unit-flow single-original-arc-failure component: fixed-value and minimum-cost maximum-flow queries, the residual replacement identity, support-sensitive original-record preservers, compact difference/full-flow reports and the acyclic simple-input support specialization. The local reference realization proves its own polynomial preprocessing and bit-cost contract.
+The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts.
 
-**Dependencies and scope.** Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates. The reference uses exact fractions and Python hash tables, with their operation and bit-cost conventions explicit. It does not implement the faster preprocessing of the research theorem. Vertex-split packing execution, signed/general-balance initialization, general-matching, matroid and price clients are outside this reviewed component scope.
+**Dependencies and scope.** Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates. The native path wrapper requires simple directed input and one independent original-arc or internal-vertex failure. Terminal deletions and simultaneous failures are excluded. Its full packing output uses linear record work. The references use exact fractions and Python hash tables, with operation and bit-cost conventions explicit. They do not implement the faster research preprocessing. Signed/general-balance initialization, general-matching, matroid and price clients are outside this reviewed component scope.
 
 [Proof](../problems/exact-flow-sensitivity/proof.md) · [Dependencies](../problems/exact-flow-sensitivity/sources.md) · [Evidence](../problems/exact-flow-sensitivity/verify/README.md) · Reviewed 2026-10-27
 
@@ -198,6 +198,14 @@ The deterministic Pauli stabilizer-basis surrogate and witness theorem (main The
 
 [Proof](../problems/quantum-stabilizer/proof.md) · [Dependencies](../problems/quantum-stabilizer/sources.md) · [Evidence](../problems/quantum-stabilizer/verify/README.md) · Reviewed 2026-10-27
 
+### [One-value allocation](../problems/one-value-exact-two/)
+
+The main exact factor-two theorem with one assignment-cost budget, the exact prescribed-basis endpoint and the stated strict-below-two oracle boundary. The one-unit gate now has a direct Boolean-cap augmentation proof, an exact assignment-pair matroid construction and binary-size accounting; the main proof supplies nonnegative separation, weighted omission, no-loss quota recovery and target search.
+
+**Dependencies and scope.** Exact submodular minimization, rational LP with separation, and weighted matroid or integral-polymatroid intersection remain paid polynomial primitives. The gate proof identifies their original finite grounds and does not expand binary capacities into unit copies. The separate shared-setup, general integer-factor and whole-ground conversion results are outside this bounded main-theorem audit. Finite gate checks do not implement the full allocator or certify the unbounded runtime theorem.
+
+[Proof](../problems/one-value-exact-two/proof.md) · [Dependencies](../problems/one-value-exact-two/sources.md) · [Evidence](../problems/one-value-exact-two/verify/README.md) · Reviewed 2026-10-27
+
 ## Review pending
 
 These families have not yet received a scoped readiness entry in this registry. Their existing statements retain their own assumptions.
@@ -214,7 +222,6 @@ These families have not yet received a scoped readiness entry in this registry. 
 - [Recipient polymatroids](../problems/recipient-polymatroid/)
 - [Recipient-matroid configuration](../problems/recipient-matroid-configuration/)
 - [Explicit-item matroid union](../problems/item-matroid-union/)
-- [One-value allocation](../problems/one-value-exact-two/)
 - [Intrinsic two-value allocation](../problems/two-value-exact-two/)
 - [Intrinsic values near factor two](../problems/intrinsic-values-near-two/)
 - [Unrelated-value additive allocation](../problems/unrelated-values-additive/)
@@ -322,6 +329,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/degree-constrained-subgraphs/verify/check_reductions.py](../problems/degree-constrained-subgraphs/verify/check_reductions.py)
 - [problems/degree-constrained-subgraphs/verify/check_reference.py](../problems/degree-constrained-subgraphs/verify/check_reference.py)
 - [problems/exact-flow-sensitivity/verify/check_unit_flow.py](../problems/exact-flow-sensitivity/verify/check_unit_flow.py)
+- [problems/exact-flow-sensitivity/verify/check_vertex_paths.py](../problems/exact-flow-sensitivity/verify/check_vertex_paths.py)
 - [problems/general-matching/verify/check_bipartite.py](../problems/general-matching/verify/check_bipartite.py)
 - [problems/general-matching/verify/check_certificate_search.py](../problems/general-matching/verify/check_certificate_search.py)
 - [problems/general-matching/verify/check_cover_compression.py](../problems/general-matching/verify/check_cover_compression.py)
@@ -341,6 +349,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/matroid-failure-summaries/verify/check_weighted_prefix.py](../problems/matroid-failure-summaries/verify/check_weighted_prefix.py)
 - [problems/min-cost-flow/verify/check_capacity_scaling.py](../problems/min-cost-flow/verify/check_capacity_scaling.py)
 - [problems/min-cost-flow/verify/check_recovery.py](../problems/min-cost-flow/verify/check_recovery.py)
+- [problems/one-value-exact-two/verify/check_one_unit_gate.py](../problems/one-value-exact-two/verify/check_one_unit_gate.py)
 - [problems/persistence-failure-certificates/verify/check_feature_construction.py](../problems/persistence-failure-certificates/verify/check_feature_construction.py)
 - [problems/roabp-affine-pit/verify/all_rank_affine_orbit.py](../problems/roabp-affine-pit/verify/all_rank_affine_orbit.py)
 - [problems/roabp-affine-pit/verify/build_native_papers.py](../problems/roabp-affine-pit/verify/build_native_papers.py)

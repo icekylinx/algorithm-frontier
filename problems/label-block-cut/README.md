@@ -4,12 +4,12 @@ A polynomial label decoder turns every permitted failure and query into an ordin
 
 ## Results
 
-Write
+The common support envelope is
 
-<!-- math-display: 3d659e4d96e4f0cbcef9263c
-S(D,\varepsilon)=O\!\left(\min\left\{m,\frac{D\log(2D/\varepsilon)}{\varepsilon^2}\right\}\right).
+<!-- math-display: 2ef5c2ebdea230dcc9d9e577
+\text{Retained items}=O\!\left(\min\left\{m,\frac{D\log(2D/\varepsilon)}{\varepsilon^2}\right\}\right).
 -->
-![Formula](../../assets/math/3d659e4d96e4f0cbcef9263c.svg)
+![Formula](../../assets/math/2ef5c2ebdea230dcc9d9e577.svg)
 
 All constructions below are Monte Carlo randomized polynomial time in the explicit compact matrix/graph input and inverse accuracy. One event of probability at least <code class="math">2/3</code> covers every allowed failure and the entire query family, including queries selected after the output. The exact polynomial decoder and field-extension steps are deterministic; a failed sampling event can silently violate an approximation guarantee.
 
@@ -19,10 +19,10 @@ All constructions below are Monte Carlo randomized polynomial time in the explic
 
 **Retained support and output.** Original items:
 
-<!-- math-display: 6bc25c9dede4850a310135b8
-S(r,\varepsilon)
+<!-- math-display: 178bc41854aa772fff8b44dc
+O\!\left(\min\left\{m,\frac{r\log(2r/\varepsilon)}{\varepsilon^2}\right\}\right)
 -->
-![Formula](../../assets/math/6bc25c9dede4850a310135b8.svg)
+![Formula](../../assets/math/178bc41854aa772fff8b44dc.svg)
 
 Backend calls:
 
@@ -39,10 +39,10 @@ O(\log\log(2m))
 
 **Retained support and output.** Original columns or whole blocks preserve all subspace-complement queries. Their support bound is:
 
-<!-- math-display: 02702298cf7b5742f431f05e
-S(D,\varepsilon)
+<!-- math-display: eefbc6e79c77e55fcdb016fa
+O\!\left(\min\left\{m,\frac{D\log(2D/\varepsilon)}{\varepsilon^2}\right\}\right)
 -->
-![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
+![Formula](../../assets/math/eefbc6e79c77e55fcdb016fa.svg)
 
 **Proof.** [Column theorem](manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md), [Theorem B1](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 
@@ -52,10 +52,10 @@ S(D,\varepsilon)
 
 **Retained support and output.** Retained edges preserve every cut after every allowed failure. Their support bound is:
 
-<!-- math-display: 02702298cf7b5742f431f05e
-S(D,\varepsilon)
+<!-- math-display: eefbc6e79c77e55fcdb016fa
+O\!\left(\min\left\{m,\frac{D\log(2D/\varepsilon)}{\varepsilon^2}\right\}\right)
 -->
-![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
+![Formula](../../assets/math/eefbc6e79c77e55fcdb016fa.svg)
 
 **Proof.** [Equation EC1](manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md)
 
@@ -65,10 +65,10 @@ S(D,\varepsilon)
 
 **Retained support and output.** Retain original edges with one fixed coefficient each, with support bound:
 
-<!-- math-display: 02702298cf7b5742f431f05e
-S(D,\varepsilon)
+<!-- math-display: eefbc6e79c77e55fcdb016fa
+O\!\left(\min\left\{m,\frac{D\log(2D/\varepsilon)}{\varepsilon^2}\right\}\right)
 -->
-![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
+![Formula](../../assets/math/eefbc6e79c77e55fcdb016fa.svg)
 
 **Proof.** [Equation EC2](manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md)
 
@@ -78,10 +78,10 @@ S(D,\varepsilon)
 
 **Retained support and output.** Whole hyperedges preserve cuts and partition-crossing objectives, with support bound:
 
-<!-- math-display: 02702298cf7b5742f431f05e
-S(D,\varepsilon)
+<!-- math-display: eefbc6e79c77e55fcdb016fa
+O\!\left(\min\left\{m,\frac{D\log(2D/\varepsilon)}{\varepsilon^2}\right\}\right)
 -->
-![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
+![Formula](../../assets/math/eefbc6e79c77e55fcdb016fa.svg)
 
 **Proof.** [Equation B6](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 
@@ -91,10 +91,10 @@ S(D,\varepsilon)
 
 **Retained support and output.** Whole hedges have the following support bound, with no factor for the number of constituent edges:
 
-<!-- math-display: 02702298cf7b5742f431f05e
-S(D,\varepsilon)
+<!-- math-display: eefbc6e79c77e55fcdb016fa
+O\!\left(\min\left\{m,\frac{D\log(2D/\varepsilon)}{\varepsilon^2}\right\}\right)
 -->
-![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
+![Formula](../../assets/math/eefbc6e79c77e55fcdb016fa.svg)
 
 **Proof.** [Equation B9](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 
@@ -104,10 +104,10 @@ S(D,\varepsilon)
 
 **Retained support and output.** Whole blocks simultaneously preserve all-state energy and the kernel, with support bound:
 
-<!-- math-display: 02702298cf7b5742f431f05e
-S(D,\varepsilon)
+<!-- math-display: eefbc6e79c77e55fcdb016fa
+O\!\left(\min\left\{m,\frac{D\log(2D/\varepsilon)}{\varepsilon^2}\right\}\right)
 -->
-![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
+![Formula](../../assets/math/eefbc6e79c77e55fcdb016fa.svg)
 
 **Proof.** [Equations B10–B11](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 

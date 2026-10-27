@@ -61,7 +61,14 @@ deterministic dictionaries give the manuscript's logarithmic ID lookup
 alternative. Exact integers and fractions are charged at their actual bit
 length. Output cost also depends on encoding the returned IDs and rationals.
 
-The vertex-splitting reduction, arbitrary signed-cost/general-balance input,
+The separate [native path wrapper](vertex_paths.py), proved in its
+[realization note](../manuscripts/reference-vertex-path-realization.md), supplies
+minimum-cost internally vertex-disjoint path packings under an original-arc
+or internal-vertex failure. It restores both original vertex lists and arc
+IDs, including after zero-cost-cycle removal. It supports fixed cardinality
+and maximum cardinality on simple directed nonnegative-rational inputs.
+
+Arbitrary signed-cost/general-balance input,
 matroid and blossom clients are outside this executable's public contract.
 `CompactPaths` is the internal reusable reporting component for a residual
 graph with no negative cycles and a positive hop coordinate. It is exercised

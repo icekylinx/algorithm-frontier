@@ -19,19 +19,19 @@ Deterministic strong-forest and cut-tree constructions. The source map identifie
 
 The native decremental forest has total work
 
-<!-- math-display: a4c599ab8736bfc9981621c4
-(n+m)E_{6/7}
+<!-- math-display: 014da77a1522d7e5ec9dd03f
+(n+m)\exp\!\left(O\!\left((\log_2(N+4))^{6/7}\left\lceil\log_2(\log_2(N+4)+4)\right\rceil^{1/7}\right)\right)
 -->
-![Formula](../../assets/math/a4c599ab8736bfc9981621c4.svg)
+![Formula](../../assets/math/014da77a1522d7e5ec9dd03f.svg)
 
 The separately preprocessed exact Gomory–Hu application has total work
 
-<!-- math-display: 515d9ca505a736ed1604df94
-O(n+m)+(m+1)E_{6/7}
+<!-- math-display: 155ab6169480ca4155f0751b
+O(n+m)+(m+1)\exp\!\left(O\!\left((\log_2(N+4))^{6/7}\left\lceil\log_2(\log_2(N+4)+4)\right\rceil^{1/7}\right)\right)
 -->
-![Formula](../../assets/math/515d9ca505a736ed1604df94.svg)
+![Formula](../../assets/math/155ab6169480ca4155f0751b.svg)
 
-Under its additional interfaces, where <code class="math">E_{6/7}=\exp(O(U^{6/7}h^{1/7}))</code>.
+The cut-tree bound retains its additional application interfaces; both displays substitute the complete strong-forest envelope.
 
 **Space**
 
@@ -39,7 +39,7 @@ Polynomial in the maintained graph, forest certificates, and reduction state; no
 
 **Parameters**
 
-<code class="math">n</code> is the vertex count; <code class="math">m</code> is the lifetime edge inventory; <code class="math">k</code> is the fixed reduction parameter; <code class="math">U</code> is the master logarithmic scale; <code class="math">h</code> is the iterated logarithmic scale used by the forest envelope.
+<code class="math">n</code> is the vertex count; <code class="math">m</code> is the lifetime edge inventory; <code class="math">k</code> is the fixed reduction parameter; <code class="math">N</code> is the master history and numerical cap; <code class="math">U=\log_2(N+4)</code> and <code class="math">h=\lceil\log_2(U+4)\rceil</code> are the scales used by the forest envelope.
 
 **Model and representation**
 

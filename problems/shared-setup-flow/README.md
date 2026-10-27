@@ -16,13 +16,13 @@ Deterministic, conditional on the paid exact minimum-setup restriction optimizer
 
 The corank-parameter and fixed-accuracy whole-ground bounds are:
 
-<!-- math-display: 18bdad058acbe9e675c9f0b1
+<!-- math-display: 4ade41583a69b80a69bf3b88
 \begin{aligned}
-\text{Corank parameter:}\quad &\Gamma(1/\varepsilon)^c\mathrm{poly}(H),\\
-\text{Whole ground:}\quad &\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H).
+\text{Corank parameter:}\quad &\left(\frac{1}{\varepsilon(1-\varepsilon)^{(1-\varepsilon)/\varepsilon}}\right)^c\mathrm{poly}(H),\\
+\text{Whole ground:}\quad &\bigl(2-\varepsilon(1-\varepsilon)^{(1-\varepsilon)/\varepsilon}\bigr)^q 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H).
 \end{aligned}
 -->
-![Formula](../../assets/math/18bdad058acbe9e675c9f0b1.svg)
+![Formula](../../assets/math/4ade41583a69b80a69bf3b88.svg)
 
 For the whole-ground bound, <code class="math">\varepsilon</code> is fixed and rational.
 
@@ -32,7 +32,7 @@ Polynomial in the explicit network, selected-set state, rational flow witnesses,
 
 **Parameters**
 
-<code class="math">c=q-r</code>; <code class="math">0&lt;\varepsilon&lt;1</code> is rational; setup fees and routing charges are nonnegative; <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>; <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. <code class="math">H</code> includes the exact minimum-setup restriction optimizer.
+<code class="math">c=q-r</code>; <code class="math">0&lt;\varepsilon&lt;1</code> is rational; setup fees and routing charges are nonnegative; <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>; <code class="math">H</code> includes the exact minimum-setup restriction optimizer.
 
 **Model and representation**
 

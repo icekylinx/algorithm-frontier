@@ -1,5 +1,13 @@
 # History
 
+## 2026-10-27 — Expanded showcases and two completed local clients
+
+- Expanded graph backend envelopes and size parameters, allocation branching bases and inclusion-cover overhead, scheduling profile counts, the ROABP direction-grid minimum, and sparsification support functions. Kept precise local definitions where nested substitution would obscure comparison, and split long alternatives into readable lines. The SCC card now uses its proof's exact master-scale convention.
+- Added the native internally vertex-disjoint path wrapper, its self-contained gate/recovery proof and independent checks. It handles fixed and maximum packings after one original-arc or internal-vertex failure on simple directed nonnegative-rational inputs, preserving original IDs and discarding only zero-cost circulation components. The reference retains its separate polynomial preprocessing contract.
+- Completed a direct Boolean-cap augmentation and assignment-pair gate proof for one-value allocation, without expanding binary capacities. Marked the main exact factor-two theorem ready in its named scope; weighted intersection, submodular minimization and exact rational optimization remain paid primitives, and setup/general-factor/global extensions retain separate review scopes.
+- All 77 standard repository checks passed with serial contact replays; the final line wrapping also passed targeted presentation and source-binding checks. No full continuous-contact replay was performed.
+- Independent checks covered 237,361 path queries and 1,602 exact-budget gate comparisons; a separate agent reviewed both new proof/code components. Presentation source bindings and the existing reviewed TeX/PDF packages were retained. These checks do not claim a complete fast research implementation or proof-assistant verification.
+
 ## 2026-10-27 — Public mathematics and scoped backend reviews
 
 - Audited 184 public and auxiliary Markdown pages. Primary bounds and comparisons use complete source-bound SVGs; parameters, premises, exact values and review conditions use literal code. Updated catalogue and registry sources as well as generated pages, retaining the limited manuscript exceptions and native machine-data formats.

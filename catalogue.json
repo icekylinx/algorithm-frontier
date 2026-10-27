@@ -37,8 +37,8 @@
           "id": "roabp-affine-pit",
           "title": "Deterministic PIT for fixed-width affine ROABP orbits",
           "result": "Deterministic black-box identity testing with unknown order and unknown invertible affine coordinates, in every characteristic",
-          "quantity": "$(nD+1)((D+1)B)^{K(w)}$",
-          "scope": "Here $K(w)=2^{O(w^2)}$, and $B$ is the smaller direction grid defined on the problem card. Arbitrary local ranks and entry degrees; known scalar total degree `D` and extension-field oracle access when needed. Polynomial query count for each fixed width, with a width-dependent exponent. Complete internally reconstructed proof; external peer review and priority certification are not claimed",
+          "quantity": "$(nD+1)\\left[(D+1)\\min\\!\\left\\{(n-1)D+1,\\frac{(n-1)(n+2)(n+3)}2+1\\right\\}\\right]^{K(w)}$",
+          "scope": "Here $K(w)=2^{O(w^2)}$, the full finite direction-grid minimum is displayed. Arbitrary local ranks and entry degrees; known scalar total degree `D` and extension-field oracle access when needed. Polynomial query count for each fixed width, with a width-dependent exponent. Complete internally reconstructed proof; external peer review and priority certification are not claimed",
           "randomness": "Deterministic construction and oracle evaluation; no random seed or failure probability. The theorem uses arithmetic over a sufficiently large working field, with extension-field oracle evaluations when the base field is too small. Promise recognition and a general Turing bit-complexity implementation are not included.",
           "quantity_purposes": [
             "showcase"
@@ -98,33 +98,31 @@
           "id": "degree-constrained-subgraphs",
           "title": "Degree-constrained subgraphs",
           "result": "Exact degree intervals and cardinality optimization",
-          "quantity": "Research bound $O(n+m)+(m+1)\\mathcal E_{4/5}$; executable feasibility $O(n+H^3)$; executable optimization $O(n+H^3\\log(m+2))$; parameter $H=1+m\\log(m+2)$",
+          "quantity": "Research bound $O(n+m)+(m+1)\\exp(O((\\log(m+2))^{4/5}(\\log\\log(m+4))^{1/5}))$; executable feasibility $O(n+(1+m\\log(m+2))^3)$; executable optimization $O(n+(1+m\\log(m+2))^3\\log(m+2))$",
           "scope": "Loopless multigraphs with capacity one per explicit record. The proved sparse reduction invokes the completed matching theorem. The reference implementation returns original-ID YES witnesses, certified NO decisions and cardinality optimality certificates; its verifier performs no matching search",
           "randomness": "Deterministic reductions and exact algorithms. The faster bound invokes the proved deterministic general-matching construction and its named published dependencies; the shipped reference solver has its own polynomial cost.",
           "quantity_purposes": [
             "showcase",
             "showcase",
-            "showcase",
-            "literal"
+            "showcase"
           ]
         },
         {
           "id": "min-cost-flow",
           "title": "Static and threshold min-cost flow",
           "result": "Exact integral optimum or threshold witness",
-          "quantity": "$O((N+1)E(S)^4\\mathrm{polylog}S)$, $E(S)=\\exp(O((\\log S)^{4/5}(\\log\\log(S+4))^{1/5}))$",
+          "quantity": "$O((N+1)\\exp(O((\\log S)^{4/5}(\\log\\log(S+4))^{1/5}))\\mathrm{poly}(\\log S))$",
           "scope": "The moving-box barrier construction uses the realized deterministic cycle search, edge retirement and prefix-safe initialization. The numerical cap `S`, exact affine integral recovery and full-flow output charge are explicit. The incremental guarantee concerns a fixed threshold",
           "randomness": "Deterministic exact static and fixed-threshold constructions, with local flow-maintenance and edge-retirement proofs for the stated adaptive polynomial-length histories. Published numerical primitives are identified in the source map.",
           "quantity_purposes": [
-            "showcase",
-            "literal"
+            "showcase"
           ]
         },
         {
           "id": "incremental-scc",
           "title": "Incremental strongly connected components",
           "result": "Exact component labels",
-          "quantity": "Total $(n+m)\\mathcal E_{4/5}^{O(1)}\\mathrm{poly}(U)$",
+          "quantity": "Total $(n+m)\\exp(O((\\log_2N)^{4/5}(\\log\\log_2N)^{1/5}))\\mathrm{poly}(\\log_2N)$",
           "scope": "The realized raw-cycle detector and lifetime rules supply the fast update bound. A separate component-label history answers first-coalescence queries in `O(1+log log(n+2))` time after `O(n log(n+2))` label changes. Dynamic topological ordering and within-component path output are not part of this interface",
           "randomness": "Deterministic exact SCC maintenance and label-history construction. The source map connects the detector, flow-maintenance and edge-retirement operations to their local realizations and named published prerequisites.",
           "quantity_purposes": [
@@ -135,31 +133,35 @@
           "id": "incremental-sssp",
           "title": "Incremental directed SSSP",
           "result": "$(1+\\epsilon)$ distances and simple paths",
-          "quantity": "Total $(n+m)\\exp(O(U^{4/5}h^{1/5}+\\sqrt{U(h+\\log(1/\\epsilon))}))$",
+          "quantity": "Total $O(n+m)+(n+m)\\exp(O(U^{4/5}h^{1/5}+\\sqrt{U(h+\\log(1/\\epsilon))}))$; logarithmic scales $U=\\log_2N$ and $h=\\log(\\log_2N+4)$",
           "scope": "The frozen-detector bridge and simple-path reporting construction are proved locally; nonnegative polynomial-range integer lengths; $0<\\epsilon\\le1/2$, $\\log(1/\\epsilon)=O(U)$. A `k`-edge simple path costs $(k+1)\\mathrm{poly}(U)$ to report",
           "randomness": "Deterministic distance maintenance and simple-path reporting, using the realized detector and edge-retirement constructions. Zero-length handling and the exact numerical range are part of the proved reduction.",
           "quantity_purposes": [
-            "showcase"
+            "showcase",
+            "literal",
+            "literal"
           ]
         },
         {
           "id": "apsp-frontier",
           "title": "Fully dynamic APSP",
           "result": "A family of update/stretch tradeoffs",
-          "quantity": "Amortized factor $\\exp(O(U/t+t^3h))$; stretch $\\exp(O(t^4h))$; query $\\mathrm{poly}(U)$",
+          "quantity": "Amortized factor $\\exp(O(U/t+t^3h))$; stretch $\\exp(O(t^4h))$; query $\\mathrm{poly}(U)$; logarithmic scales $U=\\log_2(N+4)$ and $h=\\log_2(\\log_2(N+4)+4)$",
           "scope": "The metric hierarchy and uniform tradeoff are constructed locally; $t\\to\\infty$, $t^2h=o(U)$. All five explicit points allow nonnegative polynomial-range integer lengths; the general zero-length extension additionally needs $t^4h=o(U)$ and a uniform stretch bound. Queries return numerical distances",
           "randomness": "Deterministic fully dynamic metric construction. The source map supplies the hierarchy, initialization/update and numerical bounds; the parameter and output restrictions remain part of the theorem.",
           "quantity_purposes": [
             "showcase",
             "showcase",
-            "showcase"
+            "showcase",
+            "literal",
+            "literal"
           ]
         },
         {
           "id": "dynamic-spanners",
           "title": "Dynamic spanners",
           "result": "Two distinct stretch/recourse regimes",
-          "quantity": "Tracked terminals $\\mathcal E_{4/5}$; full-horizon $\\mathcal E_{5/6}$; full-horizon recourse $(n+D)\\mathcal E_{5/6}$",
+          "quantity": "Tracked-terminal stretch $\\exp(O((\\log(N+4))^{4/5}(\\log(\\log(N+4)+4))^{1/5}))$; full-horizon stretch $\\exp(O((\\log(N+4))^{5/6}(\\log(\\log(N+4)+4))^{1/6}))$; full-horizon total recourse $(n+D)\\exp(O((\\log(N+4))^{5/6}(\\log(\\log(N+4)+4))^{1/6}))$",
           "scope": "The tracked-terminal and full-horizon constructions have separate proved recourse guarantees. Their unweighted results extend to nonnegative polynomial-range integer weights using dyadic positive classes and a separate zero-edge class; initialization, insertions, deletions and settled output are charged",
           "randomness": "Both displayed spanner constructions are deterministic, with the hierarchy, strong-forest and destructive-support interfaces realized by the linked proofs. Randomized public baselines are comparisons only.",
           "quantity_purposes": [
@@ -172,7 +174,7 @@
           "id": "dynamic-msf",
           "title": "Dynamic minimum spanning forest",
           "result": "Exact fully dynamic MSF",
-          "quantity": "Worst-case update $\\mathcal E_{2/3}$",
+          "quantity": "Worst-case update $\\exp(O((\\log(N+4))^{2/3}(\\log(\\log(N+4)+4))^{1/3}))$",
           "scope": "Derived public baseline using the stated decomposition and pruning results",
           "randomness": "Deterministic derived public baseline using deterministic decomposition and pruning in the stated worst-case MSF reduction.",
           "quantity_purposes": [
@@ -183,7 +185,7 @@
           "id": "decremental-strong-forest",
           "title": "Strong forests and Gomory–Hu trees",
           "result": "Decremental strong forest; exact cut-equivalent tree",
-          "quantity": "Native forest $(n+m)\\mathcal E_{6/7}$; cut-equivalent tree $O(n+m)+(m+1)\\mathcal E_{6/7}$",
+          "quantity": "Native forest $(n+m)\\exp(O((\\log_2(N+4))^{6/7}\\lceil\\log_2(\\log_2(N+4)+4)\\rceil^{1/7}))$; cut-equivalent tree $O(n+m)+(m+1)\\exp(O((\\log_2(N+4))^{6/7}\\lceil\\log_2(\\log_2(N+4)+4)\\rceil^{1/7}))$",
           "scope": "The accepted no-reset Steiner-pool construction proves the native strong forest. The cut-tree theorem uses the locally realized fixed-`k` adapter and deterministic exact flow. A separate capacity-bit adapter also instantiates flow with the named published theorem. Nonnegative polynomial-range capacities, zero handling, actual call sizes and isolated vertices are charged",
           "randomness": "Deterministic strong-forest and cut-tree constructions. The source map identifies the completed no-reset hierarchy, fixed-`k` realization and exact-flow proof. The published-flow capacity adapter is an additional deterministic route.",
           "quantity_purposes": [
@@ -321,12 +323,11 @@
           "id": "label-block-cut",
           "title": "Label and whole-block cut sparsification",
           "result": "Exact incidence decoders, hyperedges, whole blocks and adaptive quotient resparsification",
-          "quantity": "$O(\\min\\{m,R\\log(2R/\\epsilon)/\\epsilon^2\\})$, with $R=r\\binom{h+k}{k}$ for incidence label deficit `k`",
+          "quantity": "$O\\!\\left(\\min\\left\\{m,\\frac{r\\binom{h+k}{k}\\log(2r\\binom{h+k}{k}/\\epsilon)}{\\epsilon^2}\\right\\}\\right)$ for incidence label deficit `k`",
           "scope": "Compact randomized whole-item construction; full-input gate; graph deficit `a+b`, hyperedge and commuting-block variants keep their distinct ranks",
           "randomness": "Monte Carlo randomized preprocessing, with success probability at least $2/3$ for one event covering every allowed failure and quotient/cut query. Queries and failed labels may be chosen after the summary is revealed. The exact label decoder and field-extension arithmetic are deterministic.",
           "quantity_purposes": [
-            "showcase",
-            "literal"
+            "showcase"
           ]
         },
         {
@@ -423,7 +424,7 @@
           "id": "one-value-exact-two",
           "title": "One-value allocation",
           "result": "Exact factor two with setup and assignment budget",
-          "quantity": "$(27/4)^c\\quad\\text{or}\\quad (50/27)^qE(q)$",
+          "quantity": "$(27/4)^c\\quad\\text{or}\\quad (50/27)^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$",
           "scope": "All fixed integer quota factors are included",
           "randomness": "Deterministic corank branching and exact-budget recovery; the whole-ground alternative uses deterministic inclusion covers.",
           "quantity_purposes": [
@@ -434,7 +435,7 @@
           "id": "two-value-exact-two",
           "title": "Intrinsic two-value allocation",
           "result": "Exact factor two for compulsory players",
-          "quantity": "$(27/4)^{h_C}\\quad\\text{or}\\quad (50/27)^qE(q)$",
+          "quantity": "$(27/4)^{h_C}\\quad\\text{or}\\quad (50/27)^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$",
           "scope": "Exact assignment budget; intrinsic values shared by recipients",
           "randomness": "Deterministic in the exact-two and whole-ground variants, with paid exact completion, rank, LP and decomposition primitives.",
           "quantity_purposes": [
@@ -445,33 +446,36 @@
           "id": "intrinsic-values-near-two",
           "title": "Intrinsic values near factor two",
           "result": "Factor $2+\\eta$",
-          "quantity": "Near-two: $\\Gamma(1/\\epsilon)^k$, $\\epsilon=\\eta/(2+\\eta)$; exact-two: XP $(q+1)^k$ or separated-light $\\Gamma(1/\\sigma)^k$",
+          "quantity": "Near-two: $\\left(\\frac{1}{\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon}}\\right)^k$, $\\epsilon=\\eta/(2+\\eta)$; exact-two: XP $(q+1)^k$ or separated-light $\\left(\\frac{1}{\\sigma(1-\\sigma)^{(1-\\sigma)/\\sigma}}\\right)^k$; $0<\\epsilon<1$; $0<\\sigma\\le1/2$",
           "scope": "Actual compulsory/optional bases; near-two and exact-two use their distinct threshold-derived coranks. Exact-two is polynomial at corank zero; the $\\sigma$ branch requires a quantified light-value gap. No cost budget",
           "randomness": "Deterministic split enumeration, omission branching and integral recovery, including optional-player, exact-two and constructive local-search fallback variants.",
           "quantity_purposes": [
             "showcase",
             "literal",
             "showcase",
-            "showcase"
+            "showcase",
+            "literal",
+            "literal"
           ]
         },
         {
           "id": "unrelated-values-additive",
           "title": "Unrelated-value additive allocation",
           "result": "At player $p$: $\\max\\{0,(1-\\epsilon)\\mathrm{FOPT}-u_p\\}$",
-          "quantity": "$\\Gamma(1/\\epsilon)^c$; whole-ground alternative $(2-1/\\Gamma(1/\\epsilon))^qE(q)$",
+          "quantity": "$\\left(\\frac{1}{\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon}}\\right)^c$; whole-ground alternative $(2-\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon})^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$; $0<\\epsilon<1$",
           "scope": "An actual permitted set with fractional assignments as comparator; exact assignment budget; whole-ground alternative for fixed accuracy",
           "randomness": "Deterministic selection, rational optimization and additive-loss rounding with paid exact primitives; whole-ground selection uses deterministic covers.",
           "quantity_purposes": [
             "showcase",
-            "showcase"
+            "showcase",
+            "literal"
           ]
         },
         {
           "id": "unrelated-values-joint-role",
           "title": "Unrelated values with a joint role",
           "result": "Factor $2+\\eta$ with setup; exact two in $2^q$; player-specific two-value J2 endpoint",
-          "quantity": "$(2-1/\\Gamma(R))^qE(q)$; J2 $(27/4)^{\\nu_C}\\quad\\text{or}\\quad (50/27)^qE(q)$",
+          "quantity": "$(2-\\frac{(R-1)^{R-1}}{R^R})^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$; J2 $(27/4)^{\\nu_C}\\quad\\text{or}\\quad (50/27)^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$",
           "scope": "Near-two uses fixed $R=(2+\\eta)/\\eta$ and permits an actual optional basis; J2 requires compulsory players with pair values $\\{0,u,a\\}$",
           "randomness": "Deterministic in the near-two, exhaustive exact-two, compulsory J2 and whole-ground variants, with paid exact optimization and rounding primitives.",
           "quantity_purposes": [
@@ -483,7 +487,7 @@
           "id": "whole-ground-allocation",
           "title": "Whole-ground selection and transfers",
           "result": "Converts forced-omission extensions without changing comparator or exact constraints",
-          "quantity": "$A^c\\longmapsto(2-1/A)^qE(q)$",
+          "quantity": "$A^c\\longmapsto(2-1/A)^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$",
           "scope": "Fixed `A>1`, all-input forced-seed extension and polynomial space; weighted/adaptive selection and rational optimization retained",
           "randomness": "Deterministic streamed inclusion covers and fixed-order enumeration. Bernoulli measures in the analysis count branches; the procedure draws no random bits.",
           "quantity_purposes": [
@@ -500,51 +504,58 @@
           "id": "selected-flow",
           "title": "Selected concurrent flow",
           "result": "$(1-\\epsilon)$ of optimum common splittable rate",
-          "quantity": "$\\Gamma(1/\\epsilon)^c\\quad\\text{or}\\quad (2-1/\\Gamma(1/\\epsilon))^qE(q)$",
+          "quantity": "$\\left(\\frac{1}{\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon}}\\right)^c\\quad\\text{or}\\quad (2-\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon})^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$; $0<\\epsilon<1$",
           "scope": "Paid exact restriction selector; permitted commodity set and exact routing constraints; whole-ground alternative for fixed accuracy",
           "randomness": "Deterministic branching and exact rational flow-LP optimization, conditional on the paid exact restriction selector; both time alternatives are deterministic.",
           "quantity_purposes": [
-            "showcase"
+            "showcase",
+            "literal"
           ]
         },
         {
           "id": "shared-setup-flow",
           "title": "Flow with shared setup budget",
           "result": "$(1-\\epsilon)$ of optimum common rate",
-          "quantity": "$\\Gamma(1/\\epsilon)^c$ with the whole-ground alternative",
+          "quantity": "Corank $\\left(\\frac{1}{\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon}}\\right)^c$; fixed-accuracy whole-ground $\\left(2-\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon}\\right)^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$; $0<\\epsilon<1$",
           "scope": "Paid minimum-setup restriction optimizer; one combined setup/routing budget; routing-only budgets exact",
           "randomness": "Deterministic, conditional on the paid exact minimum-setup restriction optimizer and exact rational flow-LP primitives.",
           "quantity_purposes": [
-            "showcase"
+            "showcase",
+            "showcase",
+            "literal"
           ]
         },
         {
           "id": "robust-scenario-flow",
           "title": "Robust selected flow",
           "result": "One commodity set attains $(1-\\epsilon)\\mathrm{OPT}$ in every scenario",
-          "quantity": "$\\Gamma(1/\\epsilon)^c$ with the whole-ground alternative",
+          "quantity": "Corank $\\left(\\frac{1}{\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon}}\\right)^c$; fixed-accuracy whole-ground $\\left(2-\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon}\\right)^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$; $0<\\epsilon<1$",
           "scope": "Paid exact restriction selector; separate exact scenario budgets and adaptive splittable routings",
           "randomness": "Deterministic for the explicit scenario list, with a paid exact selector. Scenario-dependent routing is recourse after selection, rather than randomized or adversarial input.",
           "quantity_purposes": [
-            "showcase"
+            "showcase",
+            "showcase",
+            "literal"
           ]
         },
         {
           "id": "robust-unrelated-allocation",
           "title": "Robust unrelated allocation",
           "result": "At $(\\omega,p)$: $\\max\\{0,(1-\\epsilon)\\mathrm{FOPT}-u_{\\omega,p}\\}$",
-          "quantity": "$\\Gamma(1/\\epsilon)^c$ with the whole-ground alternative",
+          "quantity": "Corank $\\left(\\frac{1}{\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon}}\\right)^c$; fixed-accuracy whole-ground $\\left(2-\\epsilon(1-\\epsilon)^{(1-\\epsilon)/\\epsilon}\\right)^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$; $0<\\epsilon<1$",
           "scope": "One actual basis; exact per-scenario setup/assignment budgets",
           "randomness": "Deterministic common-basis selection and exact-budget rounding in each listed scenario; whole-ground selection also uses deterministic covers.",
           "quantity_purposes": [
-            "showcase"
+            "showcase",
+            "showcase",
+            "literal"
           ]
         },
         {
           "id": "robust-bounded-certificates",
           "title": "Robust bounded-width certificates",
           "result": "Fixed integer factor $d\\ge2$ under failure width $w$",
-          "quantity": "$A^c\\quad\\text{or}\\quad (2-1/A)^qE(q)$, $A=\\max\\{w,\\Gamma((d+1)/(d-1))\\}$",
+          "quantity": "$A^c\\quad\\text{or}\\quad (2-1/A)^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$, $A=\\max\\{w,\\left(\\frac{(d+1)^{d+1}}{4(d-1)^{d-1}}\\right)^{1/(d-1)}\\}$",
           "scope": "Width is a stated promise, not automatic",
           "randomness": "Deterministic width-guarded branching and exact unit tests. A width-violation certificate reports a failed promise, rather than a probabilistic failure.",
           "quantity_purposes": [
@@ -556,7 +567,7 @@
           "id": "robust-width-two-allocation",
           "title": "Width-two robust unit allocation",
           "result": "Exact common-basis unit feasibility",
-          "quantity": "$\\varphi^c\\quad\\text{or}\\quad ((5-\\sqrt5)/2)^qE(q)$",
+          "quantity": "$\\left(\\frac{1+\\sqrt5}{2}\\right)^c\\quad\\text{or}\\quad ((5-\\sqrt5)/2)^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$",
           "scope": "$\\varphi=(1+\\sqrt5)/2$; width two bounds minimal aggregate budget-feasible one-unit failures",
           "randomness": "Deterministic conflict enumeration, graph-cover branching and exact matroid intersection; the whole-ground alternative uses deterministic covers.",
           "quantity_purposes": [
@@ -584,24 +595,28 @@
           "id": "arbitrary-processing-scheduling",
           "title": "Arbitrary-processing scheme",
           "result": "Factor $1+\\epsilon$",
-          "quantity": "$\\Pi_\\epsilon^q=2^{O(q/\\epsilon)}$",
+          "quantity": "$\\min\\!\\left\\{\\binom{L+K}{K}^{q},\\exp(3q(K+1))\\right\\}=2^{O(q/\\epsilon)}$; parameters $K=\\lfloor2/\\epsilon\\rfloor$ and $L=\\lceil4/\\epsilon^2-2/\\epsilon\\rceil$",
           "scope": "Exact assignment budget for the scheme. Separate common-type/no-budget branch: $\\min\\{\\mathrm{OPT}+a,(1+\\epsilon)\\mathrm{OPT}+u\\}$ in $\\Gamma(1/\\epsilon)^k$ when $c_{\\mathrm{slot}}(\\mathrm{OPT})\\le k$, $0<\\epsilon\\le1/2$",
           "randomness": "Deterministic profile enumeration and exact integral recovery, including the compressed-slot-surplus branch, with paid deterministic primitives.",
           "quantity_purposes": [
-            "showcase"
+            "showcase",
+            "literal",
+            "literal"
           ]
         },
         {
           "id": "activated-machine-scheduling",
           "title": "Activated-machine scheduling",
           "result": "Factors $1+\\epsilon$, $3/2$, and the bucket curve",
-          "quantity": "$\\binom qr\\Pi_\\epsilon^r$; $\\binom qr6^r$; $\\binom qr(k+1)^r$",
+          "quantity": "$\\binom qr\\min\\!\\left\\{\\binom{L+K}{K}^{r},\\exp(3r(K+1))\\right\\}$; $\\binom qr6^r$; $\\binom qr(k+1)^r$; parameters $K=\\lfloor2/\\epsilon\\rfloor$ and $L=\\lceil4/\\epsilon^2-2/\\epsilon\\rceil$",
           "scope": "Actual rank-$r$ activation bases",
           "randomness": "Deterministic enumeration of activation bases and profiles, followed by exact feasibility and recovery tests.",
           "quantity_purposes": [
             "showcase",
             "showcase",
-            "showcase"
+            "showcase",
+            "literal",
+            "literal"
           ]
         },
         {
@@ -630,7 +645,7 @@
           "id": "two-size-scheduling",
           "title": "Two-size scheduling",
           "result": "Exact $3/2$; separate $5/3$ small-large-count regime",
-          "quantity": "$(27/4)^c\\quad\\text{or}\\quad (50/27)^qE(q)$; separate $2^{O(h)}$ branch",
+          "quantity": "$(27/4)^c\\quad\\text{or}\\quad (50/27)^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$; separate $2^{O(h)}$ branch",
           "scope": "$c=q-h$ is surplus large positions; `h` is mandatory large-unit count; common type sizes and no assignment-cost budget",
           "randomness": "Deterministic rank tests, omission branching and job reconstruction; the independent large-count branch and whole-ground alternative are also deterministic.",
           "quantity_purposes": [
@@ -642,7 +657,7 @@
           "id": "two-time-scheduling",
           "title": "Per-machine two-time scheduling",
           "result": "Factor $2-1/d$ for fixed integer $d\\ge2$",
-          "quantity": "$(2-1/\\Gamma((d+1)/(d-1)))^qE(q)$",
+          "quantity": "$(2-\\left(\\frac{4(d-1)^{d-1}}{(d+1)^{d+1}}\\right)^{1/(d-1)})^q2^{O(q\\log\\log(q+2)/\\log(q+2))}$",
           "scope": "At most two positive times per machine; zero-time handling is explicit",
           "randomness": "Deterministic quota search and original-total recovery, including the fixed-factor endpoints and deterministic whole-ground conversion.",
           "quantity_purposes": [

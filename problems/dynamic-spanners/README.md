@@ -18,13 +18,13 @@ Both displayed spanner constructions are deterministic, with the hierarchy, stro
 
 The total initialization/update work bounds are:
 
-<!-- math-display: 07e34e8506975b68f80140b9
+<!-- math-display: 239d850c052c52905bdef7e9
 \begin{aligned}
-\text{Tracked-terminal:}\quad &(n+m_0+I+D)\exp(O(U^{4/5}h^{1/5})),\\
-\text{Full-horizon:}\quad &(n+m_0+I+D)\exp(O(U^{5/6}h^{1/6})).
+\text{Tracked-terminal:}\quad &(n+m_0+I+D)\exp\!\left(O\!\left((\log(N+4))^{4/5}(\log(\log(N+4)+4))^{1/5}\right)\right),\\
+\text{Full-horizon:}\quad &(n+m_0+I+D)\exp\!\left(O\!\left((\log(N+4))^{5/6}(\log(\log(N+4)+4))^{1/6}\right)\right).
 \end{aligned}
 -->
-![Formula](../../assets/math/07e34e8506975b68f80140b9.svg)
+![Formula](../../assets/math/239d850c052c52905bdef7e9.svg)
 
 **Space**
 
@@ -56,21 +56,21 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 ## Two recourse regimes
 
-Write <code class="math">M=n+m_0+I+D</code> and <code class="math">E_a=\exp(O(U^a h^{1-a}))</code>.
+For the repeated comparisons below, use <code class="math">U=\log(N+4)</code> and <code class="math">h=\log(\log(N+4)+4)</code>. Every exponential factor and actual-history multiplier is written explicitly.
 
 **Tracked original terminals.**
 
-<!-- math-display: 9dd7f96d6472e43d0fb68891
-\begin{aligned}\text{Stretch:}\quad&E_{4/5},\\\text{Current edges:}\quad&nE_{4/5},\\\text{Total work:}\quad&ME_{4/5},\\\text{Total output recourse:}\quad&ME_{4/5}.\end{aligned}
+<!-- math-display: c760d49946f142f9cfc7096e
+\begin{aligned}\text{Stretch:}\quad&\exp(O(U^{4/5}h^{1/5})),\\\text{Current edges:}\quad&n\exp(O(U^{4/5}h^{1/5})),\\\text{Total work:}\quad&(n+m_0+I+D)\exp(O(U^{4/5}h^{1/5})),\\\text{Total output recourse:}\quad&(n+m_0+I+D)\exp(O(U^{4/5}h^{1/5})).\end{aligned}
 -->
-![Formula](../../assets/math/9dd7f96d6472e43d0fb68891.svg)
+![Formula](../../assets/math/c760d49946f142f9cfc7096e.svg)
 
 **Full-horizon construction.**
 
-<!-- math-display: e69b772114d4c3eefe5e0773
-\begin{aligned}\text{Stretch:}\quad&E_{5/6},\\\text{Current edges:}\quad&nE_{5/6},\\\text{Total work:}\quad&ME_{5/6},\\\text{Total output recourse:}\quad&(n+D)E_{5/6}.\end{aligned}
+<!-- math-display: 3a0d1ddfaa696cbb5b5d5a9b
+\begin{aligned}\text{Stretch:}\quad&\exp(O(U^{5/6}h^{1/6})),\\\text{Current edges:}\quad&n\exp(O(U^{5/6}h^{1/6})),\\\text{Total work:}\quad&(n+m_0+I+D)\exp(O(U^{5/6}h^{1/6})),\\\text{Total output recourse:}\quad&(n+D)\exp(O(U^{5/6}h^{1/6})).\end{aligned}
 -->
-![Formula](../../assets/math/e69b772114d4c3eefe5e0773.svg)
+![Formula](../../assets/math/3a0d1ddfaa696cbb5b5d5a9b.svg)
 
 Both conclusions use the constructed flat-forest hierarchy. The full-horizon construction removes cumulative insertions from output recourse, so neither construction dominates the other in every displayed quantity.
 

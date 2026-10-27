@@ -14,6 +14,11 @@ The main proof gives the family-level theorem composition. The following canonic
 | [One-element price sensitivity](manuscripts/compact-one-element-price-sensitivity.md) | Forced-element identities, price-query reports, and fixed-rank insertion from a supplied catalog. |
 | [Compact unit-flow reference realization](manuscripts/reference-unit-flow-realization.md) | Self-contained exact-rational augmenting-path baseline, single-failure residual identity, phased short-path/hub construction, original-record support and query reporting; includes a separate polynomial preprocessing and bit-cost contract. |
 
+The [native vertex-path realization](manuscripts/reference-vertex-path-realization.md)
+completes the internal unit-gate client, original-failure interpretation and
+zero-cost-cycle-safe path recovery. It uses the exact unit-flow reference
+and proves its own polynomial preprocessing bound.
+
 ## Shared proof dependencies
 
 | Result | Role |

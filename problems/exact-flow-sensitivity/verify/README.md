@@ -54,9 +54,8 @@ its validations.
 This finite evidence supports the implemented residual and compact-reporting
 mechanisms. It does not prove arbitrary-size correctness or asymptotic size
 by enumeration. The local written proof establishes those guarantees under
-the exact public contract. There remains no dedicated executable realization
-here of the vertex-split packing wrapper, general-balance/signed-cost
-initialization, blossom clients, arbitrary matroid clients, or price sweeps.
+the exact public contract. General-balance/signed-cost initialization, blossom clients, arbitrary
+matroid clients and price sweeps remain outside these reference interfaces.
 
 ## Flow and support boundaries
 
@@ -85,5 +84,30 @@ The general-matching support argument retains the odd-set constraints and uses a
 The unweighted two-matroid proof uses tight-set lattice dimensions and integrality of the intersection of two matroid polytopes. No analogous three-matroid integrality is assumed.
 
 The price structure retains one starter descriptor for each original element and preserves the same lexicographic cost/hop return distance used by the exact exchange proof. Insertion from a supplied catalog is a fixed-rank statement. These scope conditions and the classical algorithmic primitives are explicit mathematical dependencies, not properties certified by the finite bipartite replay.
+
+
+## Native internally vertex-disjoint path packings
+
+The [path wrapper](../reference/vertex_paths.py) uses one unit gate per internal
+vertex and maps original arc/vertex failures back to compact flow queries.
+Its [local proof](../manuscripts/reference-vertex-path-realization.md) establishes
+exact native costs, packing recovery, linear full output and the stated
+support bound. Queries are independent single failures in a simple directed
+graph; terminal deletions, parallel original arcs and simultaneous failures
+are rejected.
+
+```sh
+python3 -B problems/exact-flow-sensitivity/verify/check_vertex_paths.py
+```
+
+The checker independently enumerates native simple paths and compatible
+internal-vertex masks. Across 8,428 graph/profile instances it compares
+161,804 fixed-value and 75,557 maximum-packing queries, including 18,238
+infeasible fixed queries and one-path maximum drops. It rejects 8,428
+infeasible original target values and 33 malformed cases. A forced zero-cost
+circulation checks cycle removal during recovery; ten queries run after the
+caller input is cleared and all optimization routines are disabled. The
+written proof supplies the arbitrary-size argument; these finite comparisons
+do not certify the faster research preprocessing or the other family clients.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

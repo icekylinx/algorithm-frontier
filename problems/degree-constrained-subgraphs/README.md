@@ -56,26 +56,26 @@ O(n+(m+1)^3\log(m+2))
 
 The shipped standard-library solver uses the Beneš selector: its actual bounds remain
 
-<!-- math-display: f7f5736b6bd66f560b05d31e
-O(n+H^3)
+<!-- math-display: ebb521672984c789bf53e8b2
+O\!\left(n+(1+m\log(m+2))^3\right)
 -->
-![Formula](../../assets/math/f7f5736b6bd66f560b05d31e.svg)
+![Formula](../../assets/math/ebb521672984c789bf53e8b2.svg)
  for feasibility and
 
-<!-- math-display: c43c29b1dbaf8f38473f6fc6
-O(n+H^3\log(m+2))
+<!-- math-display: 68b1a847af3673e74cc5eb17
+O\!\left(n+(1+m\log(m+2))^3\log(m+2)\right)
 -->
-![Formula](../../assets/math/c43c29b1dbaf8f38473f6fc6.svg)
- for optimization, where <code>H=1+m log(m+2)</code>. Certificates and native output checks are included.
+![Formula](../../assets/math/68b1a847af3673e74cc5eb17.svg)
+ for optimization. The reduction-size quantity <code>1+m log(m+2)</code> has been substituted explicitly. Certificates and native output checks are included.
 
 **Space**
 
 The reference solver uses
 
-<!-- math-display: 4e4b0765281f4bd38c6fa2fa
-O(n+H)
+<!-- math-display: afb2c1290187df487624fbfa
+O(n+1+m\log(m+2))
 -->
-![Formula](../../assets/math/4e4b0765281f4bd38c6fa2fa.svg)
+![Formula](../../assets/math/afb2c1290187df487624fbfa.svg)
  storage, including the explicit reduction and retained certificate, plus the actual label-encoding space. Oversized upper bounds are clipped before any dummy edges are allocated.
 
 **Parameters**

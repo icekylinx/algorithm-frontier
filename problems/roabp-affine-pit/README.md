@@ -27,10 +27,10 @@ B=\min\!\left\{(n-1)D+1,\;\frac{(n-1)(n+2)(n+3)}2+1\right\}.
 
 The number of oracle evaluations is at most
 
-<!-- math-display: 583f9bc52f14eb7bd8ea26bb
-(nD+1)\bigl((D+1)B\bigr)^{K(w)},\qquad K(w)=2^{O(w^2)}.
+<!-- math-display: eb01c4a74e0d46e41cc63966
+\begin{gathered}(nD+1)\left[(D+1)\min\!\left\{(n-1)D+1,\frac{(n-1)(n+2)(n+3)}2+1\right\}\right]^{K(w)},\\K(w)=2^{O(w^2)}.\end{gathered}
 -->
-![Formula](../../assets/math/583f9bc52f14eb7bd8ea26bb.svg)
+![Formula](../../assets/math/eb01c4a74e0d46e41cc63966.svg)
 
 Constructing each point has polynomial field-arithmetic overhead. This is an XP bound in width: the exponent depends on <code class="math">w</code>. It is not a bound of the form <code class="math">g(w)(nD)^{O(1)}</code> with a uniform exponent. The constants are large; the retained small-width and rank-restricted theorems give substantially smaller grids.
 

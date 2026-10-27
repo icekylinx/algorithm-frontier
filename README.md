@@ -38,12 +38,12 @@ For `n` integers of total bit length `L`, including an indexed witness. The fini
 
 Deterministic black-box identity testing with unknown order and unknown invertible affine coordinates, in every characteristic.
 
-<!-- math-display: 12a2d9dc8785be756359ee12
-(nD+1)((D+1)B)^{K(w)}
+<!-- math-display: 8b01d69bc2a007cf5102d878
+(nD+1)\left[(D+1)\min\!\left\{(n-1)D+1,\frac{(n-1)(n+2)(n+3)}2+1\right\}\right]^{K(w)}
 -->
-![Formula](assets/math/12a2d9dc8785be756359ee12.svg)
+![Formula](assets/math/8b01d69bc2a007cf5102d878.svg)
 
-Here <code class="math">K(w)=2^{O(w^2)}</code>, and <code class="math">B</code> is the smaller direction grid defined on the problem card. Arbitrary local ranks and entry degrees; known scalar total degree `D` and extension-field oracle access when needed. Polynomial query count for each fixed width, with a width-dependent exponent. Complete internally reconstructed proof; external peer review and priority certification are not claimed.
+Here <code class="math">K(w)=2^{O(w^2)}</code>, the full finite direction-grid minimum is displayed. Arbitrary local ranks and entry degrees; known scalar total degree `D` and extension-field oracle access when needed. Polynomial query count for each fixed width, with a width-dependent exponent. Complete internally reconstructed proof; external peer review and priority certification are not claimed.
 
 ## Results
 

@@ -14,12 +14,12 @@ Deterministic profile enumeration and exact integral recovery, including the com
 
 **Time**
 
-With <code class="math">\delta=\varepsilon/2</code>, <code class="math">K=\lfloor1/\delta\rfloor</code>, <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>, and <code class="math">\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}</code>, time is
+With <code class="math">\delta=\varepsilon/2</code>, <code class="math">K=\lfloor1/\delta\rfloor</code>, and <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>, time is
 
-<!-- math-display: 51861c94b2b6e60d8314738e
-\Pi_\varepsilon^q\mathrm{poly}(H_\varepsilon)=2^{O(q/\varepsilon)}\mathrm{poly}(H_\varepsilon).
+<!-- math-display: a9f560c77e88b22d1d55346f
+\min\!\left\{\binom{L+K}{K}^{q},\exp(3q(K+1))\right\}\mathrm{poly}(H_\varepsilon)=2^{O(q/\varepsilon)}\mathrm{poly}(H_\varepsilon).
 -->
-![Formula](../../assets/math/51861c94b2b6e60d8314738e.svg)
+![Formula](../../assets/math/a9f560c77e88b22d1d55346f.svg)
 
 **Space**
 

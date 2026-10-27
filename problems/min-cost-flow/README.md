@@ -14,12 +14,12 @@ Deterministic exact static and fixed-threshold constructions, with local flow-ma
 
 **Time**
 
-<!-- math-display: 4cbea398feaa772692bc264d
-O((N+1)E(S)^4\mathrm{poly}(\log S))
+<!-- math-display: ef3cbdd3ca6458cbdcbe6ec7
+O\!\left((N+1)\exp\!\left(O((\log S)^{4/5}(\log\log(S+4))^{1/5})\right)\mathrm{poly}(\log S)\right)
 -->
-![Formula](../../assets/math/4cbea398feaa772692bc264d.svg)
+![Formula](../../assets/math/ef3cbdd3ca6458cbdcbe6ec7.svg)
 
-Under the raw-cycle lifetime interface, where <code class="math">E(S)=\exp\!\left(O((\log S)^{4/5}(\log\log(S+4))^{1/5})\right)</code>; explicit output of a full flow is charged separately.
+This substitutes the constructed raw-cycle bound into the generic lifetime theorem; its fixed fourth power is absorbed into the constant in the exponential. Explicit output of a full flow is charged separately.
 
 **Space**
 

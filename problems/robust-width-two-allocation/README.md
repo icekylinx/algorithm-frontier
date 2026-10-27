@@ -14,17 +14,17 @@ Deterministic conflict enumeration, graph-cover branching and exact matroid inte
 
 **Time**
 
-<!-- math-display: 758ff5fc73aae8d391193d63
-\phi^c\mathrm{poly}(H)
+<!-- math-display: ad15afaf2a049b5476f6efd5
+\left(\frac{1+\sqrt5}{2}\right)^c\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/758ff5fc73aae8d391193d63.svg)
+![Formula](../../assets/math/ad15afaf2a049b5476f6efd5.svg)
 
 Where <code class="math">\phi=(1+\sqrt{5})/2</code>. The whole-ground bound is
 
-<!-- math-display: 9d18f22a779e826cdaa894ab
-\left(\frac{5-\sqrt{5}}{2}\right)^q E(q)\mathrm{poly}(H)
+<!-- math-display: b7d5b8a89f9d1efd6368d08b
+\left(\frac{5-\sqrt{5}}{2}\right)^q 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/9d18f22a779e826cdaa894ab.svg)
+![Formula](../../assets/math/b7d5b8a89f9d1efd6368d08b.svg)
 
 **Space**
 
@@ -32,7 +32,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-<code class="math">q</code> is the player count; <code class="math">r</code> is the common basis rank; <code class="math">c=q-r</code>. <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. All scenarios, costs, budgets, and paid one-unit intersection operations are included in <code class="math">H</code>.
+<code class="math">q</code> is the player count; <code class="math">r</code> is the common basis rank; <code class="math">c=q-r</code>. All scenarios, costs, budgets, and paid one-unit intersection operations are included in <code class="math">H</code>.
 
 **Model and representation**
 

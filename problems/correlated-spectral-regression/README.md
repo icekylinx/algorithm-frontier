@@ -70,7 +70,14 @@ O\!\left((d+1)r\epsilon^{-2}\log(2r(L+1))\right)
 
 **Fixed PSD background**
 
-**Retained support, capped by input size.** Replace <code class="math">r</code> by <code class="math">\rho</code>; ambient dimension remains in the logarithm
+**Retained support, capped by input size.**
+
+<!-- math-display: e255d43a59a2f3050a28cead
+O\!\left(\Gamma\rho\epsilon^{-2}\log(2nQ/\delta)\right)
+-->
+![Formula](../../assets/math/e255d43a59a2f3050a28cead.svg)
+
+Here <code class="math">n</code> is the ambient matrix dimension, as in the fixed-background theorem; the effective dimension <code class="math">\rho</code> controls the leading factor.
 
 **Algorithm / guarantee.** Monte Carlo pool construction with failure at most <code class="math">\delta</code>; valid for every later background <code class="math">R'\succeq R</code>
 
@@ -111,10 +118,10 @@ O_p\!\left(\Gamma r\epsilon^{-2}\left[(\log(2r))^3\log(2N)+\log(2NQ/\delta)\righ
 
 **Retained support, capped by input size.**
 
-<!-- math-display: af750f1c3b9b5fee8223235b
-O(rK/\epsilon^2)
+<!-- math-display: ebf2a189d22362811372bb3f
+O\!\left(\frac r{\epsilon^2}\left[1+\min\left\{L,\frac{(h+1)\log(eL/(h+1))+\log(1/\zeta)}{\epsilon}\right\}\right]\right)
 -->
-![Formula](../../assets/math/af750f1c3b9b5fee8223235b.svg)
+![Formula](../../assets/math/ebf2a189d22362811372bb3f.svg)
 
 Here <code class="math">K=1+\min\left\{L,O\!\left(\bigl[(h+1)\log(eL/(h+1))+\log(1/\zeta)\bigr]/\epsilon\right)\right\}</code>.
 
@@ -135,10 +142,10 @@ O\!\left(r\epsilon^{-2}\min\left\{L+1,(h^2+h/\epsilon)\log(2L)+1\right\}\right)
 
 **Retained support, capped by input size.**
 
-<!-- math-display: af750f1c3b9b5fee8223235b
-O(rK/\epsilon^2)
+<!-- math-display: 579740e87a1fff05ffcc5fc0
+O\!\left(\frac r{\epsilon^2}\sum_{j=0}^{\min\{d,D\}}\binom Dj\right)
 -->
-![Formula](../../assets/math/af750f1c3b9b5fee8223235b.svg)
+![Formula](../../assets/math/579740e87a1fff05ffcc5fc0.svg)
 
 Here <code class="math">K=\sum_{j\le\min\{d,D\}}\binom{D}{j}</code>.
 

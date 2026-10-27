@@ -14,12 +14,12 @@ Deterministic quota search and original-total recovery, including the fixed-fact
 
 **Time**
 
-Put <code class="math">R_d=(d+1)/(d-1)</code>, <code class="math">A_d=\Gamma(R_d)</code>, and <code class="math">B_d=2-1/A_d</code>. Time is
+For the fixed integer approximation parameter <code class="math">d\ge2</code>, time is
 
-<!-- math-display: 3b361f6dc64aef0359f728e2
-B_d^q E(q)\mathrm{poly}(H)
+<!-- math-display: 1978ae1bee1cb5578fcb8a30
+\left(2-\left(\frac{4(d-1)^{d-1}}{(d+1)^{d+1}}\right)^{1/(d-1)}\right)^q 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/3b361f6dc64aef0359f728e2.svg)
+![Formula](../../assets/math/1978ae1bee1cb5578fcb8a30.svg)
 
 Endpoints are
 
@@ -34,7 +34,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-<code class="math">q</code> is the physical-machine count; <code class="math">d\ge2</code> is a fixed integer; each machine has its own at most two positive times <code class="math">u_p&lt;a_p</code>. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code> and <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+<code class="math">q</code> is the physical-machine count; <code class="math">d\ge2</code> is a fixed integer; each machine has its own at most two positive times <code class="math">u_p&lt;a_p</code>. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 

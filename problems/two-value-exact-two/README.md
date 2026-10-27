@@ -23,10 +23,10 @@ Exact factor two takes
 
 Or
 
-<!-- math-display: 4d39de6454b06fa654d85472
-(50/27)^q E(q)\mathrm{poly}(H)
+<!-- math-display: f970c34ebaeec5d27646ef45
+(50/27)^q 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/4d39de6454b06fa654d85472.svg)
+![Formula](../../assets/math/f970c34ebaeec5d27646ef45.svg)
 
 For fixed integer <code class="math">d\ge2</code>, replace <code class="math">27/4</code> by <code class="math">A_d=\Gamma((d+1)/(d-1))</code> and the global base by <code class="math">2-1/A_d</code>.
 
@@ -36,7 +36,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-<code class="math">q</code> is the compulsory-player count; <code class="math">h_C</code> is the maximum number of distinct recipients affordable with one large-value unit each. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code> and <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
+<code class="math">q</code> is the compulsory-player count; <code class="math">h_C</code> is the maximum number of distinct recipients affordable with one large-value unit each. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>. <code class="math">H</code> includes the explicit ground, all rational and integer encodings, and paid rank, submodular-minimization, LP, intersection, and decomposition work.
 
 **Model and representation**
 

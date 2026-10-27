@@ -16,12 +16,12 @@ Deterministic exact SCC maintenance and label-history construction. The source m
 
 Total work
 
-<!-- math-display: cd4c314d370494ef84ef0db7
-(n+m)E(N)^{O(1)}\mathrm{poly}(U)
+<!-- math-display: 95f80374f1a65d983f052106
+(n+m)\exp\!\left(O((\log_2 N)^{4/5}(\log\log_2 N)^{1/5})\right)\mathrm{poly}(\log_2 N)
 -->
-![Formula](../../assets/math/cd4c314d370494ef84ef0db7.svg)
+![Formula](../../assets/math/95f80374f1a65d983f052106.svg)
 
-Under the raw minimum-ratio-cycle interface, with <code class="math">U=\log(N+4)</code> and <code class="math">E(N)=\exp(O(U^{4/5}(\log U)^{1/5}))</code>; this is total incremental work, not a worst-case per-insertion claim.
+This expands the constructed raw minimum-ratio-cycle factor using the proof's exact convention <code class="math">N=2^U</code>. Its fixed powers are absorbed into the exponential constant. The bound is total incremental work, not a worst-case per-insertion claim.
 
 **Space**
 
@@ -29,7 +29,7 @@ Polynomial in the maintained graph, label inventory, and raw-backend state; the 
 
 **Parameters**
 
-<code class="math">n</code> is the original vertex count; <code class="math">m</code> bounds inserted edge records; <code class="math">N</code> is the power-of-two master cap; <code class="math">U</code> is its logarithmic scale. Parallel edges and self-loops are allowed.
+<code class="math">n</code> is the original vertex count; <code class="math">m</code> bounds inserted edge records; <code class="math">N</code> is the power-of-two master cap; <code class="math">U=\log_2N</code> is its logarithmic scale. Parallel edges and self-loops are allowed.
 
 **Model and representation**
 

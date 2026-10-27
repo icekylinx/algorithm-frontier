@@ -361,15 +361,20 @@
         {
           "path": "problems/exact-flow-sensitivity/verify/check_unit_flow.py",
           "scope": "8192 exhaustive four-vertex digraph/cost-profile cases and 150 seeded multigraphs: 127254 fixed-value and 58423 maximum-flow queries against independent Boolean-support enumeration; 12994 infeasible fixed queries and 1882 reverse-arc repairs. Includes a signed 96-vertex hub fixture, 20 queries with optimization disabled and caller input cleared, and 12 rejected malformed cases. Verifies the polynomial reference, not the faster research preprocessing or other family clients."
+        },
+        {
+          "path": "problems/exact-flow-sensitivity/verify/check_vertex_paths.py",
+          "scope": "8428 graph/profile instances; 161804 fixed and 75557 maximum internally vertex-disjoint path-packing queries against independent simple-path enumeration. Covers original-arc/internal-vertex failures, 18238 fixed infeasibilities and one-path drops, 33 malformed cases, ten queries with search disabled/input cleared and a forced zero-cost-cycle decoder case. No signed-cost, terminal-failure, parallel-original or faster-preprocessing claim."
         }
       ],
       "review": {
         "status": "partial",
-        "scope": "The exact nonnegative rational unit-flow single-original-arc-failure component: fixed-value and minimum-cost maximum-flow queries, the residual replacement identity, support-sensitive original-record preservers, compact difference/full-flow reports and the acyclic simple-input support specialization. The local reference realization proves its own polynomial preprocessing and bit-cost contract.",
+        "scope": "The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts.",
         "date": "2026-10-27",
         "conditions": [
           "Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates.",
-          "The reference uses exact fractions and Python hash tables, with their operation and bit-cost conventions explicit. It does not implement the faster preprocessing of the research theorem. Vertex-split packing execution, signed/general-balance initialization, general-matching, matroid and price clients are outside this reviewed component scope."
+          "The native path wrapper requires simple directed input and one independent original-arc or internal-vertex failure. Terminal deletions and simultaneous failures are excluded. Its full packing output uses linear record work.",
+          "The references use exact fractions and Python hash tables, with operation and bit-cost conventions explicit. They do not implement the faster research preprocessing. Signed/general-balance initialization, general-matching, matroid and price clients are outside this reviewed component scope."
         ]
       }
     },
@@ -579,8 +584,21 @@
         {
           "path": "tools/verify_profile_certificates.py",
           "scope": "Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed."
+        },
+        {
+          "path": "problems/one-value-exact-two/verify/check_one_unit_gate.py",
+          "scope": "69 finite resource ranks, 2495 Boolean-cap augmentation pairs, 285 exact one-unit gate instances, 14901 direct assignment candidates, 32728 pair subsets and 1602 exact-budget comparisons. Covers zero capacities, loops, zero costs/budgets and infeasibility. Finite gate identities only, not a general intersection solver or full corank allocator."
         }
-      ]
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The main exact factor-two theorem with one assignment-cost budget, the exact prescribed-basis endpoint and the stated strict-below-two oracle boundary. The one-unit gate now has a direct Boolean-cap augmentation proof, an exact assignment-pair matroid construction and binary-size accounting; the main proof supplies nonnegative separation, weighted omission, no-loss quota recovery and target search.",
+        "date": "2026-10-27",
+        "conditions": [
+          "Exact submodular minimization, rational LP with separation, and weighted matroid or integral-polymatroid intersection remain paid polynomial primitives. The gate proof identifies their original finite grounds and does not expand binary capacities into unit copies.",
+          "The separate shared-setup, general integer-factor and whole-ground conversion results are outside this bounded main-theorem audit. Finite gate checks do not implement the full allocator or certify the unbounded runtime theorem."
+        ]
+      }
     },
     {
       "id": "two-value-exact-two",

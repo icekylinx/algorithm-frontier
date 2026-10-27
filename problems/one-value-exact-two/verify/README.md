@@ -4,6 +4,24 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 
 - [One-value optional allocation with a shared setup and assignment budget](../setup-tradeoffs.md)
 
+## Main theorem review scope
+
+The bounded audit of 2026-10-27 reconstructs the main exact factor-two theorem
+with arbitrary nonnegative assignment costs and one exact budget. It checks
+loop deletion, the fixed downward service projection and nonnegative separator,
+the weighted first-violation branch count including rejected calls, exact
+minimum-cost quota recovery, the separate one-unit gate and the nonmonotone
+one-sided integer search. It also checks the fixed-basis polynomial endpoint
+and the inherited strict-below-two value-oracle threshold.
+
+The [direct gate note](../one-unit-gate.md) supplies Boolean-cap augmentation
+and the exact pair correspondence. Submodular minimization, exact rational LP,
+and weighted matroid/polymatroid intersection remain paid mathematical
+primitives with explicit local inputs. This scoped review does not certify
+the separate shared-setup, general integer-factor or whole-ground conversion
+extensions. No executable full allocator, external peer review or
+proof-assistant verification is claimed.
+
 ## Mathematical evidence
 
 - The budgeted count projection has an exact nonnegative support separator, and one actual selected-basis witness survives omissions.
@@ -11,6 +29,19 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 - The setup companion retains an attaining cheapest basis and a protected combined-budget witness. Rational reoptimization removes target-search error.
 
 ## Executable evidence
+
+The [one-unit gate checker](check_one_unit_gate.py) verifies 69 resource ranks,
+2,495 Boolean-cap augmentation pairs and 285 gate instances. It compares
+14,901 original unit-assignment candidates with an independent enumeration
+of 32,728 pair subsets, followed by 1,602 exact rational budget comparisons.
+The families include uniform and weighted-coverage polymatroids, zero ranks,
+resource loops, uniform and partition player matroids, zero costs and budgets,
+and infeasible gates. This is finite structural evidence, not a general
+weighted matroid-intersection implementation.
+
+```sh
+python3 -B problems/one-value-exact-two/verify/check_one_unit_gate.py
+```
 
 [verify_profile_certificates.py](../../../tools/verify_profile_certificates.py) checks the following finite claim:
 

@@ -14,7 +14,7 @@ Deterministic width-guarded branching and exact unit tests. A width-violation ce
 
 **Time**
 
-Let <code class="math">A=\max\{w,\Gamma((d+1)/(d-1))\}</code>. Time is
+Let <code class="math">A=\max\left\{w,\left(\frac{(d+1)^{d+1}}{4(d-1)^{d-1}}\right)^{1/(d-1)}\right\}</code>. Time is
 
 <!-- math-display: 21e615b443c11b548e1208b5
 A^c\mathrm{poly}(H)
@@ -23,10 +23,10 @@ A^c\mathrm{poly}(H)
 
 Or
 
-<!-- math-display: f2a347003a208cf76bda7316
-(2-1/A)^q E(q)\mathrm{poly}(H)
+<!-- math-display: c4cf9644f42598656ec40bc1
+(2-1/A)^q 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/f2a347003a208cf76bda7316.svg)
+![Formula](../../assets/math/c4cf9644f42598656ec40bc1.svg)
 
 **Space**
 
@@ -34,7 +34,7 @@ Polynomial in the complete binary input and paid oracle workspace; numerical res
 
 **Parameters**
 
-<code class="math">q</code> is the player count; <code class="math">r</code> is the common basis rank; <code class="math">c=q-r</code>; <code class="math">d\ge2</code> is a fixed integer; <code class="math">w</code> bounds inclusion-minimal failure size; <code class="math">K_\star</code> is the robust optimum count. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code> and <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>.
+<code class="math">q</code> is the player count; <code class="math">r</code> is the common basis rank; <code class="math">c=q-r</code>; <code class="math">d\ge2</code> is a fixed integer; <code class="math">w</code> bounds inclusion-minimal failure size; <code class="math">K_\star</code> is the robust optimum count. <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>.
 
 **Model and representation**
 

@@ -16,10 +16,10 @@ Deterministic split enumeration, omission branching and integral recovery, inclu
 
 The running time is:
 
-<!-- math-display: e2352ce9ddad58b21cb0d25b
-\Gamma(1/\varepsilon)^k\mathrm{poly}(H)
+<!-- math-display: 01f9fb8be7120cdd933f0994
+\left(\frac{1}{\varepsilon(1-\varepsilon)^{(1-\varepsilon)/\varepsilon}}\right)^k\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/e2352ce9ddad58b21cb0d25b.svg)
+![Formula](../../assets/math/01f9fb8be7120cdd933f0994.svg)
 
 Here <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>. The simpler sufficient promise is <code class="math">\nu(\theta_\star)\le k</code>.
 

@@ -14,17 +14,17 @@ Deterministic branching and exact rational flow-LP optimization, conditional on 
 
 **Time**
 
-<!-- math-display: 55c29d6875d9c7670b3d4dd8
-\Gamma(1/\varepsilon)^c\mathrm{poly}(H)
+<!-- math-display: 5d5877611e1d9853318e206a
+\left(\frac{1}{\varepsilon(1-\varepsilon)^{(1-\varepsilon)/\varepsilon}}\right)^c\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/55c29d6875d9c7670b3d4dd8.svg)
+![Formula](../../assets/math/5d5877611e1d9853318e206a.svg)
 
 For fixed rational <code class="math">\varepsilon</code>, also
 
-<!-- math-display: 23b4a2344acb655d6b5109c3
-\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)
+<!-- math-display: 9b29a55c59319e994d0659cc
+\bigl(2-\varepsilon(1-\varepsilon)^{(1-\varepsilon)/\varepsilon}\bigr)^q 2^{O(q\log\log(q+2)/\log(q+2))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/23b4a2344acb655d6b5109c3.svg)
+![Formula](../../assets/math/9b29a55c59319e994d0659cc.svg)
 
 **Space**
 
@@ -32,7 +32,7 @@ Polynomial in the explicit network, rational flow data, selector state, and paid
 
 **Parameters**
 
-<code class="math">c=q-r</code>; <code class="math">0&lt;\varepsilon&lt;1</code> is rational; <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>; <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. <code class="math">H</code> includes all routing-budget rows and the exact restriction-selector cost.
+<code class="math">c=q-r</code>; <code class="math">0&lt;\varepsilon&lt;1</code> is rational; <code class="math">\Gamma(R)=R^R/(R-1)^{R-1}</code>; <code class="math">H</code> includes all routing-budget rows and the exact restriction-selector cost.
 
 **Model and representation**
 
