@@ -72,9 +72,9 @@ The one-color complete-universe envelope is exact. The general binomial coeffici
 
 **Review status**
 
-**Ready for review in the stated scope.** Complete actual-feature-rank construction for represented failure lifts and the vertex-label persistence specialization with no extra top-simplex labels. Includes the degree-bounded evaluation module, canonical column pivots, nonzero shifts, shared original boundary-row compression, streamed column generation, surviving prefix spans and naturality, with exact arithmetic and storage ledgers.
+**Ready for review.** The full exact persistence family: general row/column incidence-label construction, additional top-simplex labels, surviving prefix spans and canonical signed-cost boundary bases with rank drops, natural lower-homology persistence and compatible relative/zigzag identifications, sharp one-color exterior envelope and its complete-complex lower construction, actual-feature-rank refinement and labeled-cone asymptotic lower bound. The native general-incidence backend preserves original row labels while generating row-specific evaluation modules and merging actual lifted row spaces. The previous feature-rank companion completes degree-bounded closure, shared row compression, streamed contractions and exact representation costs.
 
-**Dependencies and scope.** The reviewed persistence construction keeps the full lower skeleton and one supplied order over the stated field. Additional top labels retain the separate general incidence theorem. Top-degree homology, integral torsion, dynamic labels and a common solution for unrelated filtration/cost orders are not asserted. Executable checks use rationals and supplied prime fields. The general finite-field extension and rational bit analysis are explicit mathematical components. Finite span checks supplement the naturality proof; they are not proof-assistant verification.
+**Dependencies and scope.** The full original lower skeleton is retained, with one supplied original top-column order and one chosen coefficient field. Independent filtration and cost orders require separate summaries. Top-degree homology, integral torsion, homotopy type, dynamic update bounds and optimizing unknown worst failures are not claimed. Executable arithmetic is rational or over a caller-supplied prime field large enough for the explicit nonzero label points. Finite-field extensions and scalar descent are proved mathematical components, not an implemented extension constructor. The general-incidence adapter materializes the original boundary and charges polynomial dense storage and exact elimination separately; the vertex-only adapter retains its streamed resource contract. The exact one-color envelope and asymptotic general coefficient are original-top-cell restriction lower bounds with the full lower skeleton fixed. Historical comparison and publication-priority claims are not certified by this internal proof review. Finite original-input checks supplement the arbitrary-size proofs and are neither external peer review nor proof-assistant verification.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -131,5 +131,16 @@ Same retained set; natural coordinate identifications commute with all supplied 
 Canonical minimum-cost basis for every surviving boundary matroid, including rank drops
 
 Safe vertices are represented by an extra never-failing color when using the one-color envelope. This exact prefix theorem is separate from the fixed-weight real spectral theorem in the [spectral family](../correlated-spectral-regression/).
+
+
+## Native construction with additional top labels
+
+The [general-incidence backend](reference/incidence.py) now handles arbitrary
+original row/column label sets satisfying incidence containment, and vertex
+labels together with additional top-simplex labels. It computes actual lifted
+rank without enumerating the formal monomial universe and retains original
+columns in one supplied order. The [complete local proof](incidence-realization.md)
+charges dense original boundary storage separately from the vertex-only
+streaming construction.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

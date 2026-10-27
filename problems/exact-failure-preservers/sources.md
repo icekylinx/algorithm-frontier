@@ -32,3 +32,16 @@ initialization and value-oracle model.
 - The valuated companion states the precise shortest-path and oracle prerequisites of its cited valuated-intersection algorithm. It also separates comparison results, including [Low-Cost Arborescence Under Edge Faults](https://arxiv.org/html/2605.13800v1), from inputs to the proof.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.
+
+
+## Certified valuated and ordinary rank-drop realization
+
+- [Realization and bounded audit](manuscripts/reference-valuated-and-rank-drop.md):
+  original split-price optimality certificates, the complete fixed-rank valued
+  exchange/reporting proof, and the ordinary two-consecutive-rank wrapper.
+- [Native interfaces](reference/README.md), [valuated source](reference/valuated_reporting.py)
+  and [independent original-input checker](verify/check_valuated_rank_drop.py).
+- [Iwamasa and Takazawa, arXiv:2003.02424v3](https://arxiv.org/pdf/2003.02424),
+  Lemma 7, printed page 9: the classical mathematical valuated initializer.
+  Native software validates a supplied common optimum, rather than implementing
+  that initializer or inferring a smaller-rank valuation.

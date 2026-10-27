@@ -32,4 +32,14 @@ supplied prime fields. Finite-field extension construction and the
 conservative rational bit bound remain explicit mathematical components,
 with their executable boundary stated beside the algorithm.
 
+
+## General incidence realization
+
+The [native construction and proof](incidence-realization.md) implement the
+canonical general incidence lemma, including additional top-simplex labels.
+It reuses the local degree-bounded evaluation module independently for each
+selected original row, then merges their exact row spaces. This removes the
+need to enumerate a large formal feature dimension; the native dense input
+and boundary storage have their own polynomial resource contract.
+
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

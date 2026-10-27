@@ -20,8 +20,49 @@ original oracle and weights and are not automatically parameter-only bit
 kernels or construction-time bounds. Oracle-query lower bounds and
 deterministic-ETH consequences keep their separate representations and
 assumptions; the quadratic laminar upper bound retains an explicit lower-bound
-gap. A general implementation of the numeric-target, completion, or
-coloring algorithms is not supplied.
+gap. The bounded one-order client below implements actual prefix and signed
+completion optimization. A general implementation of every numeric-target,
+laminar coloring or ground-reduction algorithm is not supplied.
+
+## Native one-common-order exact optimization
+
+The [reference client](../reference/README.md) executes the entire bounded
+one-order contract. Its [realization proof](../reference-prefix-realization.md)
+and full companion audit cover dominance and masks, mandatory original totals,
+optional disposal, shared active/passive resource ranks, one capped marking
+prefix, exact occupied-class recovery, all-input profile counting, binary
+workspace and the separate oracle/encoded-program lower bounds. One common
+weight vector and original coordinate order remain essential.
+
+The [new independent checker](check_prefix.py) enumerates original count
+vectors and literal original subset/quota inequalities. It covers 478
+mandatory/optional eligibility instances and compares 956 exact signed
+minimum/maximum solutions against 718 original feasible vectors. Every
+original feasible vector's canonical marked profile is recovered for both
+scalar directions, giving 1,436 marked-profile checks. It also compares the
+actual occupied-profile iterator with a separate Cartesian count enumeration
+on small alphabets. The executed solver streams 1,330 profiles: 814 numeric
+row rejections, 76 empty faces and 440 recovered profiles are all charged.
+
+The fixtures include empty and zero ranks, no rows, empty prefixes, duplicate
+and dominated rows, contradictory quotas, zero upper masks, large lower-only
+weights, arbitrary signed rational and real zero-weight costs, optional disposal
+and mandatory eligibility rank loss. Six binary-large guards run actual solver
+paths with more than 330-bit original counts, weights, targets or scalar
+denominators. They verify that masking cannot lower a mandatory original total,
+passive completion keeps signed cost, and a large lower-only weight does not
+cause a target-sized or unit-sized expansion. Eleven malformed cases and two
+forged outputs are rejected.
+
+```sh
+python3 -B problems/weighted-prefix-quota-frontier/verify/check_prefix.py
+```
+
+The native exact Bland simplex has a separately charged potentially exponential
+finite basis factor and polynomial complete-table/binary workspace. It is not
+the theorem's paid polynomial integral-intersection implementation. The added
+proof and executable review is bounded to one common order, and does not make
+the broader two-order, few-family or kernel proof scope complete.
 
 ## New local executable evidence
 

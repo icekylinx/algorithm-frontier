@@ -72,7 +72,16 @@ plus input organization. The output is the exact union of canonical forests and 
 
 ## Executable realization
 
-The [rational vertex-color backend](reference/README.md) implements the sharp componentwise activation construction for correlated single-color vertex classes. Its [realization proof](manuscripts/reference-vertex-color-realization.md) establishes fixed-order prefix preservation, exact canonical forest queries and bit accounting. The [independent checker](verify/check_vertex_colors.py) uses graph reachability to compare all allowed small failures and prefixes. Mixed/list features and the dynamic-MSF acceleration are separate theorem variants, not claimed executable interfaces.
+The [rational vertex-color backend](reference/README.md) implements the sharp componentwise activation construction for correlated single-color vertex classes. Its [realization proof](manuscripts/reference-vertex-color-realization.md) establishes fixed-order prefix preservation, exact canonical forest queries and bit accounting. The [independent checker](verify/check_vertex_colors.py) uses graph reachability to compare all allowed small failures and prefixes.
+
+The [mixed/list reference](reference/list_colors.py) and its
+[realization proof](manuscripts/reference-mixed-list-realization.md) compute
+actual coefficient-evaluation feature spans without formal monomial
+enumeration, preserving full activation rank and the cubic saving. They
+also supply the completed-batch one-failure exchange wrapper. Its default
+exact reference backend scans original records per update, separately from
+the published fast dynamic-MSF bound. HDT's original problem definition,
+Theorem 8 and Section 5.1 identify the required exchange-reporting interface.
 
 ## Complete proof
 

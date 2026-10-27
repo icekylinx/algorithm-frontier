@@ -168,9 +168,9 @@ Classical cut instances require <code class="math">\Omega(n/\varepsilon^2)</code
 
 **Review status**
 
-**Ready for review in the stated scope.** The deterministic Pauli stabilizer-basis surrogate and witness theorem (main Theorem 5 and witness Theorem 1), including exact affine-parity enumeration, and the prime-dimensional individual-check witness reduction (witness Corollary 2). Pairwise operator comparisons, complete-basis pinching, exact basis-energy equality and compact tableau output are explicit.
+**Ready for review in the stated scope.** The deterministic Pauli stabilizer-basis surrogate and witness theorem (main Theorem 5 and witness Theorem 1), including exact affine-parity enumeration, and the prime-dimensional individual-check witness reduction (witness Corollary 2). Pairwise operator comparisons, complete-basis pinching, exact basis-energy equality and compact tableau output are explicit. The native Pauli backend realizes original-weight balanced peeling, phase-aware maximal isotropic extension, exact original scalar/parity compilation and effective-rank enumeration. Independent verification uses a separate local multiplication table and checks complete original-input tableau energy without importing producer algebra.
 
-**Dependencies and scope.** The polynomial-time reduction produces a classical objective; exact minimization still uses `2^d poly(L)` enumeration for Pauli labels or `p^n poly(L)` for prime-dimensional checks, with polynomial workspace. This is not a polynomial-time ground-state optimizer. This review uses compact symplectic/stabilizer linear algebra and does not certify the separate whole-block sparsification, adaptive quotient, correlated-failure or joint lower-bound dependency chains. The shared finite quotient-rounding checker is not evidence for quantum operator inequalities; those are proved symbolically.
+**Dependencies and scope.** The polynomial-time reduction produces a classical objective; exact minimization still uses `2^d poly(L)` enumeration for Pauli labels or `p^n poly(L)` for prime-dimensional checks, with polynomial workspace. This is not a polynomial-time ground-state optimizer. This review uses compact symplectic/stabilizer linear algebra and does not certify the separate whole-block sparsification, adaptive quotient, correlated-failure or joint lower-bound dependency chains. The shared finite quotient-rounding checker is not evidence for quantum operator inequalities; those are proved symbolically. The executable implements Pauli witnesses only. Native minimization finds the optimum within its constructed basis using `2^d` enumeration and polynomial space; it does not optimize over every stabilizer basis. The verifier checks actual original energy, not global optimality or an arbitrary supplied approximation claim. Prime-dimensional Weyl witness construction remains a proved but unimplemented software interface.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -179,5 +179,15 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 [Proofs](proof.md), [manuscript and reference map](sources.md), [operator and algebra review](verify/README.md), [finite evidence](verify/README.md).
 
 Prime-dimensional and general-dimensional compact bounds are both retained because their parameter dependences differ. The positive identity shifts are part of the supplied Hamiltonian, and the witness factors apply to that objective.
+
+## Native compact Pauli witnesses
+
+The [reference backend](reference/README.md) constructs the commuting surrogate
+from original positive Pauli clauses, retains its exact scalar term and finds
+an optimal state in that basis by effective-parity-rank enumeration. A separate
+original-input verifier checks the complete stabilizer tableau and its exact
+energy without importing the optimizer. The [native proof](reference-realization.md)
+records phase conventions, polynomial reduction and verification, and the
+separate exponential search boundary.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

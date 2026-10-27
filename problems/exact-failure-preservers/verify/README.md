@@ -183,10 +183,74 @@ callbacks and optimization/shortest-path producers are disabled after the
 caller cost list is cleared. A requested rank with a hundred-digit encoding
 on an empty ground is rejected without a numerical rank loop.
 
-The executable ordinary scope is fixed-rank single deletion. The valuated
-extension, rank-drop client, lower-bound transfers and optimized graph
+That checker covers ordinary fixed-rank single deletion. The separately
+checked valued and rank-drop interfaces are described below. Lower-bound
+transfers and optimized graph
 preprocessing retain their separate mathematical statements and evidence.
 These exact finite checks do not assert proof-assistant verification or
 external peer review.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.
+
+
+## Certified valuated and ordinary rank-drop reports
+
+```sh
+python3 problems/exact-failure-preservers/verify/check_valuated_rank_drop.py
+```
+
+The [new realization proof](../manuscripts/reference-valuated-and-rank-drop.md)
+and [native API](../reference/README.md) cover a supplied common valued
+baseline, independent split-price optimality verification and compact
+fixed-rank reporting; and initialized ordinary maximum-cardinality reporting
+through two consecutive ranks. The full bounded valuated companion proof
+and the ordinary rank-drop corollary are audited. No native valuated baseline
+search or cross-rank valuation is assumed.
+
+The independent checker supplies:
+
+- 164 finite valuation tables validated directly through 9,754 minimization-
+  convention exchange axioms, including a genuinely nonlinear assignment
+  valuation and signed rational values. There are 82 common-domain pairs,
+  84 explicitly certified optimal supplied baselines and additional all-zero
+  tied baselines.
+- 376 original fixed-rank valued failure queries, including 27 independently
+  infeasible cases; and rejection of 276 nonoptimal common baselines. The
+  original optimum is obtained from complete common-basis enumeration,
+  independently of prices, compressed arcs or paths.
+- 33 long original partition-domain valued queries, all requiring complete
+  cycle replacement and all using actual hub-tree reports. Signed rational
+  increments and stored valued optimums are checked from their forced bases.
+- 84 ordinary maximum-cardinality instances, 294 no-failure/deletion queries
+  and 50 actual rank drops, plus a forced signed/rational lower-rank optimum.
+  Every cardinality and minimum cost is compared with exhaustive original
+  common sets.
+- A producer-disabled original price-certificate verifier, four forged
+  price/value certificates, and a 1,024-element preprocessing/query isolation
+  fixture. Its valued rank-two reporter retains three original support IDs
+  and fewer than fifty records; original valuations are disabled during
+  reporting. The maximum-cardinality wrapper also keeps a bounded final
+  record count on that ground.
+- Fixed-rank zero valuation constants and six malformed-input rejections.
+
+Assignment tables are not simply assumed to be valid valuated matroids:
+the finite checker tests their complete exchange axioms before use. Long
+partition domains have their ordinary matroid/linear-valuation proof rather
+than an infeasible exhaustive basis-table validation. Finite examples do
+not establish the general valuated theorem or asymptotic record bounds.
+
+The standalone certificate verifier evaluates the original baseline and
+its finite single exchanges; it calls neither the certificate producer,
+compressed graph nor optimizer. Its sufficiency is the valuated local-to-
+global theorem with two opposite prices. This verifies optimality conditional
+on valid input valuations, not the input oracles' global exchange axioms.
+The ordinary rank initializer likewise assumes valid independence callbacks.
+
+Original-ground prices and initializer evidence are discarded before returning
+the compact reporters. A separately retained price certificate is not counted
+as compact reporting storage. Native valued preprocessing has the stated
+exchange-table and cubic-rank arithmetic costs plus actual rational answer
+lengths; the mathematical baseline initializer is the separately named primary
+algorithm. Lower-bound transfers, multiple failures and optimized graph
+preprocessing remain outside this incremental review. No external peer review
+or proof-assistant verification is claimed.

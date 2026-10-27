@@ -77,4 +77,21 @@ The witness argument uses a complete maximal isotropic space. Pinching fixes its
 
 The ordinary theorem allows noncommuting original blocks. Its decomposition is not reused after arbitrary clause deletion. Correlated Pauli failures use a separate hereditary-importance argument, while the exact-label whole-block failure theorem requires global commutation. These are clause deletions as defined in the respective manuscripts, not physical loss of a quantum subsystem.
 
+## Original-input compact Pauli witness checks
+
+```sh
+python3 -B problems/quantum-stabilizer/verify/check_witness.py
+```
+
+The [checker](check_witness.py) covers 143 original positive-Pauli instances,
+532 complete-basis states and 292 independent dense-projector comparisons.
+It checks 203 balanced pair records, 148 forged energy/tableau claims and six malformed
+inputs. Phase-dependent commuting relations, signed identities, empty inputs
+and 100-digit exact weights are included. An 80-qubit rank-one parity objective
+uses only two assignments; its original witness verifier still passes with
+the producer, optimizer and producer algebra disabled. The independent dense
+checks use exact dyadic complex entries. The approximation factor follows
+from the [symbolic proof](../reference-realization.md), not finite numerical
+spectral experiments. No quantum sparsification backend is implied.
+
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

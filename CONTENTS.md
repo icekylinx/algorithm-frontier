@@ -85,6 +85,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Uniform scalar coefficients on optional zero-weight coordinates](problems/weighted-prefix-quota-frontier/manuscripts/uniform-zero-scalar-laminar-extension.md)
 - [Labeled sunflower kernels for sparse numeric quotas and valuated completion](problems/weighted-prefix-quota-frontier/manuscripts/valuated-sparse-quota-sunflower-kernel.md)
 - [Sharp support-budget tradeoffs for one and two weighted-prefix orders](problems/weighted-prefix-quota-frontier/manuscripts/weighted-prefix-support-budget-tradeoffs.md)
+- [Native exact one-order prefix quotas and signed recovery](problems/weighted-prefix-quota-frontier/reference-prefix-realization.md)
 
 ## Graph algorithms
 
@@ -141,6 +142,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Exact single-failure preservers and output-sensitive oracles for minimum-cost arborescences and two-matroid intersection](problems/exact-failure-preservers/manuscripts/exact-single-failure-arborescences-and-matroid-intersection.md)
 - [A supplied-baseline realization of arborescence reporting](problems/exact-failure-preservers/manuscripts/reference-arborescence-reporting.md)
 - [Initialized ordinary two-matroid failure reporting](problems/exact-failure-preservers/manuscripts/reference-ordinary-matroid-reporting.md)
+- [Certified valuated baselines and ordinary rank-drop reporting](problems/exact-failure-preservers/manuscripts/reference-valuated-and-rank-drop.md)
 - [Valuated matroid intersection: exact single-failure summaries and output-sensitive queries](problems/exact-failure-preservers/manuscripts/valuated-matroid-intersection.md)
 
 ### [Flow, matching and price sensitivity](problems/exact-flow-sensitivity/)
@@ -173,6 +175,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/graph-color-failure-certificates/README.md) · [Main proof](problems/graph-color-failure-certificates/proof.md) · [Sources](problems/graph-color-failure-certificates/sources.md) · [Verification](problems/graph-color-failure-certificates/verify/README.md)
 
 - [Exact minimum-spanning-forest certificates under correlated color failures](problems/graph-color-failure-certificates/manuscripts/colored-graph-and-vertex-failure-certificates.md)
+- [Exact mixed and list-color realization with compressed features](problems/graph-color-failure-certificates/manuscripts/reference-mixed-list-realization.md)
 - [Rational realization of the sharp vertex-color certificate](problems/graph-color-failure-certificates/manuscripts/reference-vertex-color-realization.md)
 
 ### [Resource-constrained packing summaries](problems/packing-matching-summaries/)
@@ -186,6 +189,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/persistence-failure-certificates/README.md) · [Main proof](problems/persistence-failure-certificates/proof.md) · [Sources](problems/persistence-failure-certificates/sources.md) · [Verification](problems/persistence-failure-certificates/verify/README.md)
 
+- [Native general-incidence and top-label failure construction](problems/persistence-failure-certificates/incidence-realization.md)
 - [Exact persistent-homology certificates under correlated failures](problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md)
 - [Constructing failure summaries from their actual feature rank](problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md)
 
@@ -247,6 +251,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Arbitrary-locality prime-dimensional Weyl checks](problems/quantum-stabilizer/manuscripts/arbitrary-locality-prime-qudit-checks.md)
 - [Compact and optimal-support sparsification of whole stabilizer-check blocks](problems/quantum-stabilizer/manuscripts/arbitrary-locality-stabilizer-block-sparsification.md)
 - [A commuting surrogate and a constant-factor stabilizer witness for positive Pauli Hamiltonians](problems/quantum-stabilizer/manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md)
+- [Native compact Pauli stabilizer witnesses](problems/quantum-stabilizer/reference-realization.md)
 
 ### [Exact-separation and non-Fano boundaries](problems/obstruction-boundaries/)
 

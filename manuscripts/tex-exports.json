@@ -238,8 +238,8 @@
     {
       "source": "problems/persistence-failure-certificates/proof.md",
       "target": "problems/persistence-failure-certificates/proof.tex",
-      "source_sha256": "08daba67b3991f49b543e33b58ba805283a08093cb7c21aaf33526d58aefac2f",
-      "tex_sha256": "317625d21f362843375732e36df96669350e6218225239b7ec21748fb6289d2c",
+      "source_sha256": "ca2dfd79ccc88787bbd1b621cd78f03791531bbf61858635c9a45ccf27b18060",
+      "tex_sha256": "814892d463e062005b30ef446e87ed2e566e7a8c53bc56440952d8a6ad2440c5",
       "math_nodes": 68,
       "pdf": "source-only"
     },

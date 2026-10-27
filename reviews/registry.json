@@ -135,15 +135,20 @@
         {
           "path": "problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py",
           "scope": "1,500 seeded laminar instances, 25,797 projected coloring certificates and 32,473 literal original-row replacements; 1,368,168 weighted histogram profiles. Exhausts all 2,629 cross-free families on at most four elements and 10,441 anchors, with 819,576 comparisons of original and fixed-mass oriented constraints."
+        },
+        {
+          "path": "problems/weighted-prefix-quota-frontier/verify/check_prefix.py",
+          "scope": "478 original mandatory/optional eligibility instances, 956 exact signed minimum/maximum solves against 718 original feasible count vectors, and 1,436 canonical marked-profile recovery comparisons. Independent Cartesian profile enumeration agrees with the streamed occupied iterator; 1,330 executed profiles include 814 failed numeric filters, 76 empty integral faces and 440 recoveries. Fixtures retain original resource totals and signed zero-column costs through eligibility, disposal, duplicate/dominated and zero/contradictory rows, empty prefixes, no rows and large lower-only weights. Six actual binary-size solver guards use more than 330-bit counts, targets, weights or scalar denominators without unit/count enumeration; 11 malformed cases and two separately isolated forged outputs are rejected. Finite Bland-simplex costs remain separate from the proved paid-intersection parameter bound."
         }
       ],
       "review": {
         "status": "partial",
-        "scope": "The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most `B` lower rows. Exact dominant-weight completion with all signed zero-coordinate costs, a binary count-rank oracle, the one-positive-weight polynomial endpoint, the self-contained `10/9` quadratic leading exponent, the named universal-set `5/9` refinement, projected coloring identities and histogram-sensitive enumeration. The compatible-cut extension and the two-positive-weight oracle/encoded-program lower-bound models are proved separately.",
-        "date": "2026-10-26",
+        "scope": "The complete one-common-order exact mixed-prefix companion: common nonnegative integer weights, optional independent vectors or original-total mandatory bases, arbitrary signed rational scalar optimization, original eligibility and quota dominance, safe upper masks, shared active/passive copying and capped lower credit, a single charged marked prefix, actual support colors, colored-partition profile counting, exact resource/partition recovery, all-input traversal and uniform binary workspace. The associated sparse-paving oracle-query and separately encoded deterministic-ETH lower constructions and discrepancy scope boundary are audited. Native complete-table software now implements actual original-input one-order profiles and signed optimization. The prior scope is retained: sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, aggregate laminar lower-row reduction, exact dominant-weight completion including signed zero-coordinate costs, binary count-rank recovery, one-positive-weight polynomial endpoint, elementary `10/9` and named universal-set `5/9` refinements, projected coloring and histogram-sensitive recovery; compatible cuts and two-positive-weight oracle/encoded-program boundaries remain separately proved.",
+        "date": "2026-10-27",
         "conditions": [
-          "The general resource calls retain exact integral-polymatroid optimization and submodular-minimization dependencies named in sources.md. The `5/9` leading coefficient specifically uses Naor-Schulman-Srinivasan Theorem 7 and its locally explicit indexing guarantee; the elementary `10/9` alternative supplies a local coloring proof. Finite checkers isolate the stated mechanisms and do not implement all of these optimization algorithms.",
-          "The compatible-cut one-weight polynomial endpoint requires a prescribed or forced total numeric mass. Original resource totals, all numeric constraints and signed costs remain intact. Oracle query lower bounds and ETH claims for readable rank programs are separate models."
+          "The added native and proof scope has one original order, one common nonnegative integer weight vector, one global integral polymatroid and one signed scalar. Mandatory masks retain the original required total; optional disposal is explicit and real zero-weight coordinates retain actual signed costs. The native copied resource uses original subset rows, with no copied-ground rank-table or numerical unit expansion. Two-order, bounded-family and the broader kernel/dependency chains remain outside this added bounded audit; the whole family retains partial readiness.",
+          "The one-order theorem charges paid polynomial exact integral-polymatroid intersection and optimization. The reference instead reuses canonical exact Bland simplex with a separately charged potentially exponential finite basis count and polynomial complete-table/binary workspace. Occupied profiles are streamed by the canonical explicit-stack count/mass iterator. Its parameter time depends on the largest numeric target, not merely its bit length, while resource totals, signed coefficients and all count records remain binary.",
+          "The retained laminar `5/9` coefficient specifically imports Naor-Schulman-Srinivasan Theorem 7 and its local indexing guarantee; the elementary `10/9` alternative has its local proof. Compatible-cut one-weight polynomial optimization requires prescribed or forced total numeric mass. General resource calls retain the named SFM and integral-polymatroid primitives. Oracle-query, encoded-rank-program ETH and explicit represented-resource models remain distinct. Finite checks and independent internal review are not proof-assistant verification, external peer review or exhaustive priority claims."
         ]
       }
     },
@@ -368,16 +373,21 @@
         {
           "path": "problems/exact-failure-preservers/verify/check_matroid_reporting.py",
           "scope": "8687 fixed-rank constructions including 2849 initial infeasibilities; 39311 independent ordinary no-failure/single-failure/unknown-ID queries (36949 feasible,2362 infeasible), comparing literal independence, exact cost, retained support and optimum minimum outside-label count. Covers512 bipartite topologies under3 cost profiles,160 binary represented matroid pairs,6 sparse-paving cost/client profiles with8377 fixture augmentation checks, and300-bit signed/rational costs. Also1024 initialized rooted graph profiles with416 initial infeasibilities and4441 query comparisons,2 graph boundary fixtures,33 additional forced long signed-cycle hub repairs,1024-element/rank2 storage audit,5 producer/oracle-disabled queries after input clearing,5 malformed rejections and a huge encoded impossible rank. No valuated or faster-preprocessing claim."
+        },
+        {
+          "path": "problems/exact-failure-preservers/verify/check_valuated_rank_drop.py",
+          "scope": "164 independently validated valuation tables and 9,754 full exchange axioms; 82 common-domain pairs and 84 explicitly certified optimal baselines plus zero-valued ties; 376 exact valued failure comparisons including 27 infeasible; 276 nonoptimal common baselines rejected; 33 long signed valued queries using 33 actual hub reports; 84 ordinary max-cardinality instances and 294 queries including 50 rank drops; forced signed fallback; producer-disabled original certificate verifier; 4 forged price/value certificates; 1,024-ground retained/query isolation; rank-zero valuation constants; 6 malformed inputs."
         }
       ],
       "review": {
         "status": "partial",
-        "scope": "The complete ordinary fixed-rank two-matroid single-element-deletion construction with signed rational costs: certified baseline initialization from original independence callbacks, compressed replacement-cycle value identity and minimum-hop literal update, deterministic distance/hub support and reporting, original-ID infeasibility answers and actual rational encoding costs. Also covers the automatically initialized nonnegative rooted-arborescence HLD realization and its prior supplied-baseline component.",
+        "scope": "The complete ordinary fixed-rank signed-cost two-matroid and initialized rooted-arborescence reporting scope, extended to ordinary minimum-cost maximum-cardinality reporting through two consecutive ranks; and the complete fixed-rank valuated companion proof, with a native independently certified supplied-common-baseline price interface and compact value/path reporting. Covers local-to-global and initial matroids, joint convex decomposition, valued matching and cycle identity, minimum-hop literal update, signed shortest paths, phased reporting, original-ID infeasibility and actual rational/temporary versus retained-record costs.",
         "date": "2026-10-27",
         "conditions": [
-          "The canonical ordinary weighted-intersection primitive is a paid polynomial initializer; the reference computes and checks its baseline certificate and discards the ground-sized potential/cut before returning. The ordinary callback predicates must be valid matroid independence oracles.",
-          "The generic reference uses conservative polynomial initialization and `O(Nk)` additional independence tests with `O(Nk^2+k^3)` post-initialization work. The graph wrapper retains the nonnegative graph model and does not implement the manuscript’s faster arborescence preprocessing. Final record/support and reporting bounds are separate from temporary workspace and actual rational/original-ID bit lengths.",
-          "This scope does not cover the valuated implementation, rank-drop client or lower-bound transfers. Those retain their linked mathematical statements and dependencies. Finite exact checks and independent internal review are not proof-assistant verification or external peer review."
+          "Ordinary maximum-cardinality initialization uses the canonical certified polynomial weighted-intersection primitive and separately initializes the next lower rank. The valued software requires a supplied common finite basis, certifies optimality through original split-price exchange inequalities and rejects a nonoptimal basis; it does not implement native valuated baseline search. The classical mathematical initializer and effective-domain initialization remain separately paid, as specified by Iwamasa–Takazawa v3 Lemma 7.",
+          "Valid ordinary matroids and valid fixed-rank minimization-convention valuated matroids are oracle-model assumptions. Independent tiny valuation tables check their exchange axioms in full, but native baseline certificates verify optimality conditional on those axioms. Value callbacks use exact binary rational values and None outside the domain. No smaller-rank valuation or cross-rank objective is inferred.",
+          "Valued baseline verification/compression uses `O(Nk)` evaluations and `O(Nk^2+k^3)` additional arithmetic; original answer bit lengths are charged. Original-ground price certificates, initialization certificates, exchange tables and callbacks are discarded before returning compact reporters. Separately retained price evidence is outside the `O(k^(3/2))` reporting-record bound. The graph wrapper still does not implement the optimized arborescence preprocessing.",
+          "Lower-bound transfers, simultaneous failures and later-changing costs or valuations remain outside this review. Exact finite checks, internal proof audit and independent certificate verification are not external peer review or proof-assistant formalization."
         ]
       }
     },
@@ -401,7 +411,7 @@
         },
         {
           "path": "problems/exact-flow-sensitivity/verify/check_flow_certificates.py",
-          "scope": "789 signed-cost graph instances; 193862 independently enumerated supports, 101364 optimum certificates, 5389 maximum certificates and 141605 general-balance decisions including 65138 violated cuts. Includes 1157 compact-oracle outputs checked on full original input, 25 hostile cases, huge binary supply and producer-blocked verification. Feasibility is cost-blind; no signed minimum-cost initialization is implemented."
+          "scope": "789 signed-cost graph instances; 193862 independently enumerated supports, 101364 optimum certificates, 5389 maximum certificates and 141605 general-balance decisions including 65138 violated cuts. Includes 1157 compact-oracle outputs checked on full original input, 25 hostile cases, huge binary supply and producer-blocked verification. This checker exercises cost-blind feasibility and supplied-support certification; native signed optimization is covered by the separate signed-flow checker."
         },
         {
           "path": "problems/exact-flow-sensitivity/verify/check_signed_flow.py",
@@ -475,16 +485,23 @@
         {
           "path": "problems/graph-color-failure-certificates/verify/check_vertex_colors.py",
           "scope": "371 graph/color/budget instances, 2,099 failure queries and 24,388 ordered-prefix connectivity comparisons using independent reachability flood fills and a separate canonical forest scan. Includes 35 sharpness fixtures and seven malformed/over-budget cases; signed rational ties, parallel records, loops, isolates, unknown colors and huge budgets. Single vertex colors only; no mixed/list or dynamic-MSF executable claim."
+        },
+        {
+          "path": "problems/graph-color-failure-certificates/verify/check_list_colors.py",
+          "scope": "1,664 original mixed/list graphs with 12,641 independently reconstructed failure/prefix connectivity and canonical-ID comparisons; 186 one-failure wrappers with 2,776 actual exchange updates; 30 explicit original monomial feature matrices and full activation-prefix Gaussian greedy comparisons; seven compulsory lower-bound fixtures. Includes overlapping and shared labels, loops, parallel edges, signed rational ties, empty/disconnected graphs, unknown colors, Q/F7/F2 arithmetic, huge binary failure allowance and unmaterialized formal feature dimension, preprocessing-disabled queries and 12 malformed inputs. Exact reference MSF scans and sorting costs remain separate from HDT's fast theorem."
         }
       ],
       "review": {
-        "status": "partial",
+        "status": "ready",
+        "scope": "Complete canonical graph family: sharp componentwise singleton vertex-color activation theorem; overlapping vertex lists with actual symmetric-matrix rank saving; mixed vertex/extra-edge lists and singleton mixed symmetric-cubic dependencies; all surviving fixed-order prefix connectivity partitions and exact canonical minimum spanning forests with signed rational weights/permanent IDs; ordinary sharp and all stated leading-order simple/multigraph lower examples; completed-batch one-failure replacement lists, exact indexed values, and the published dynamic-MSF composition. Native references compute actual evaluation spans without formal monomial enumeration and exercise genuine original-ID exchange reporting with separately charged exact reference updates.",
         "date": "2026-10-27",
-        "scope": "The complete sharp componentwise single-vertex-color theorem: activation and symmetric-matrix rank proofs, all surviving ordered-prefix connectivity partitions, exact canonical minimum spanning forests, sharp core-clique/outer-star examples and deterministic polynomial construction. The rational backend and its independent graph-reachability checker have a separate implementation review.",
         "conditions": [
-          "Input is an undirected multigraph with one color per vertex, signed rational weights and fixed original-ID tie breaking. All allowed color failures are covered; recosting after preprocessing is not.",
-          "The backend uses static rational elimination and scans retained records at query time. Mixed edge colors, overlapping lists, symmetric-cubic refinements and the exchange-reporting dynamic-MSF acceleration remain separate mathematical variants outside this bounded readiness audit.",
-          "The retained-edge bound is separate from elimination workspace and rational bit costs. Finite checks and internal review do not constitute external peer review, formal certification or exhaustive literature-priority verification."
+          "One original undirected multigraph, one shared color-failure palette, overlapping vertex/edge lists, signed rational edge weights and one fixed permanent-ID tie-broken order are retained. Prefix and canonical-forest guarantees hold after all allowed failures; arbitrary recosting, metric distances or a second unrelated order are not included.",
+          "The mixed/list backend computes polynomial-size actual evaluation-module rowspaces on component vertices or endpoint/edge positions. Both-direction row maps preserve the full formal activation-matrix dependencies. Vertex-mode ranks are componentwise actual vertex-feature ranks; mixed feature-rank metadata is not the vertex Vandermonde rank used by the separate cubic formula. No uncomputed global actual rank is asserted.",
+          "Native arithmetic is rational or over a caller-supplied sufficiently large prime field. Primality validation and field-extension software are not supplied. The rational construction alone realizes deterministic polynomial preprocessing; all coordinate, elimination, sorting and original rational-bit costs are charged. Retained-edge support is distinct from arithmetic workspace and full forest-report cost.",
+          "HDT JACM2001 Theorem 8 and Section5.1, together with its original page724 problem definition, realize the exchange-reporting dynamic-MSF interface. The global forest changes name their entering/leaving original edges; parallel-pair priority queues use constant-many simple-graph updates. The shipped ReferenceMSF instead scans original records and recomputes exact Kruskal per update, with its own polynomial scan/hash/set ledger. No polylogarithmic dynamic implementation is claimed.",
+          "The one-failure wrapper collects only completed deletion batches, sorts replacement lists and the retained union, and charges those sorts. Compact indexed difference/value lookup is separate from raw original-color binary search and materializing a full forest. Replacement support is bounded by destroyed baseline incidence, with no intermediate-forest accumulation.",
+          "Support lower bounds concern original retained subgraphs in their stated simple-graph or multigraph asymptotic regimes; they do not lower-bound arbitrary encodings or prove optimality of all mixed instances. The color-list model is publicly credited. Quantitative comparisons to uninspected journal refinements, exhaustive historical priority, external peer review and proof-assistant verification are outside this readiness scope."
         ]
       }
     },
@@ -519,15 +536,20 @@
         {
           "path": "problems/persistence-failure-certificates/verify/check_feature_construction.py",
           "scope": "Independent small monomial expansions and exact column-rank/pivot comparisons, then all allowed finite failures and original-order prefix spans over rational and prime fields. The larger run covers 2,288 module cases, 240 represented instances, 308 simplicial instances and 12,566 prefix states; large formal-dimension fixtures exercise actual-rank construction. The finite-field extension and naturality arguments remain explicit mathematical proofs."
+        },
+        {
+          "path": "problems/persistence-failure-certificates/verify/check_incidence.py",
+          "scope": "373 original matrices and 5503 surviving ordered prefixes checked by independent elimination over rationals and a prime field; 50 random additional-top-label simplicial inputs and 6 sharp labeled-cone retention/rank fixtures; field-specific zero incidences, dependent rows with different labels, 70 shared labels at increment one, 101-digit failure budget, empty cases and 6 malformed requests."
         }
       ],
       "review": {
-        "status": "partial",
-        "scope": "Complete actual-feature-rank construction for represented failure lifts and the vertex-label persistence specialization with no extra top-simplex labels. Includes the degree-bounded evaluation module, canonical column pivots, nonzero shifts, shared original boundary-row compression, streamed column generation, surviving prefix spans and naturality, with exact arithmetic and storage ledgers.",
-        "date": "2026-10-26",
+        "status": "ready",
+        "scope": "The full exact persistence family: general row/column incidence-label construction, additional top-simplex labels, surviving prefix spans and canonical signed-cost boundary bases with rank drops, natural lower-homology persistence and compatible relative/zigzag identifications, sharp one-color exterior envelope and its complete-complex lower construction, actual-feature-rank refinement and labeled-cone asymptotic lower bound. The native general-incidence backend preserves original row labels while generating row-specific evaluation modules and merging actual lifted row spaces. The previous feature-rank companion completes degree-bounded closure, shared row compression, streamed contractions and exact representation costs.",
+        "date": "2026-10-27",
         "conditions": [
-          "The reviewed persistence construction keeps the full lower skeleton and one supplied order over the stated field. Additional top labels retain the separate general incidence theorem. Top-degree homology, integral torsion, dynamic labels and a common solution for unrelated filtration/cost orders are not asserted.",
-          "Executable checks use rationals and supplied prime fields. The general finite-field extension and rational bit analysis are explicit mathematical components. Finite span checks supplement the naturality proof; they are not proof-assistant verification."
+          "The full original lower skeleton is retained, with one supplied original top-column order and one chosen coefficient field. Independent filtration and cost orders require separate summaries. Top-degree homology, integral torsion, homotopy type, dynamic update bounds and optimizing unknown worst failures are not claimed.",
+          "Executable arithmetic is rational or over a caller-supplied prime field large enough for the explicit nonzero label points. Finite-field extensions and scalar descent are proved mathematical components, not an implemented extension constructor. The general-incidence adapter materializes the original boundary and charges polynomial dense storage and exact elimination separately; the vertex-only adapter retains its streamed resource contract.",
+          "The exact one-color envelope and asymptotic general coefficient are original-top-cell restriction lower bounds with the full lower skeleton fixed. Historical comparison and publication-priority claims are not certified by this internal proof review. Finite original-input checks supplement the arbitrary-size proofs and are neither external peer review nor proof-assistant verification."
         ]
       }
     },
@@ -639,15 +661,20 @@
         {
           "path": "problems/group-metric-constraints/verify/check_quotient_rounding.py",
           "scope": "shared arithmetic component only: The same finite quotient-rounding component used by the compact rank interface. Excludes quantum operator identities, stabilizer subgroup/HNF order certification, all-state guarantees, and energy optimization."
+        },
+        {
+          "path": "problems/quantum-stabilizer/verify/check_witness.py",
+          "scope": "143 original positive-Pauli instances, 532 complete-basis state energies and 292 independent dense computational-projector comparisons; 203 balanced pair records, 148 forged energy/tableau claims and 6 malformed inputs; phase-dependent commuting relations, signed identities, zero qubits, empty objectives, 100-digit rational data and an 80-qubit parity-rank-one search with producer-disabled independent verification."
         }
       ],
       "review": {
         "status": "partial",
-        "scope": "The deterministic Pauli stabilizer-basis surrogate and witness theorem (main Theorem 5 and witness Theorem 1), including exact affine-parity enumeration, and the prime-dimensional individual-check witness reduction (witness Corollary 2). Pairwise operator comparisons, complete-basis pinching, exact basis-energy equality and compact tableau output are explicit.",
+        "scope": "The deterministic Pauli stabilizer-basis surrogate and witness theorem (main Theorem 5 and witness Theorem 1), including exact affine-parity enumeration, and the prime-dimensional individual-check witness reduction (witness Corollary 2). Pairwise operator comparisons, complete-basis pinching, exact basis-energy equality and compact tableau output are explicit. The native Pauli backend realizes original-weight balanced peeling, phase-aware maximal isotropic extension, exact original scalar/parity compilation and effective-rank enumeration. Independent verification uses a separate local multiplication table and checks complete original-input tableau energy without importing producer algebra.",
         "date": "2026-10-27",
         "conditions": [
           "The polynomial-time reduction produces a classical objective; exact minimization still uses `2^d poly(L)` enumeration for Pauli labels or `p^n poly(L)` for prime-dimensional checks, with polynomial workspace. This is not a polynomial-time ground-state optimizer.",
-          "This review uses compact symplectic/stabilizer linear algebra and does not certify the separate whole-block sparsification, adaptive quotient, correlated-failure or joint lower-bound dependency chains. The shared finite quotient-rounding checker is not evidence for quantum operator inequalities; those are proved symbolically."
+          "This review uses compact symplectic/stabilizer linear algebra and does not certify the separate whole-block sparsification, adaptive quotient, correlated-failure or joint lower-bound dependency chains. The shared finite quotient-rounding checker is not evidence for quantum operator inequalities; those are proved symbolically.",
+          "The executable implements Pauli witnesses only. Native minimization finds the optimum within its constructed basis using `2^d` enumeration and polynomial space; it does not optimize over every stabilizer basis. The verifier checks actual original energy, not global optimality or an arbitrary supplied approximation claim. Prime-dimensional Weyl witness construction remains a proved but unimplemented software interface."
         ]
       }
     },

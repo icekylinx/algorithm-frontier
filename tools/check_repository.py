@@ -175,6 +175,11 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check('recipient-polymatroid check_fractional', ('problems/recipient-polymatroid/verify/check_fractional.py',)),
         Check('one-value-exact-two check_one_value', ('problems/one-value-exact-two/verify/check_one_value.py',)),
         Check('exact-flow-sensitivity check_signed_flow', ('problems/exact-flow-sensitivity/verify/check_signed_flow.py',)),
+        Check('exact-failure-preservers check_valuated_rank_drop', ('problems/exact-failure-preservers/verify/check_valuated_rank_drop.py',)),
+        Check('weighted-prefix-quota-frontier check_prefix', ('problems/weighted-prefix-quota-frontier/verify/check_prefix.py',)),
+        Check('persistence-failure-certificates check_incidence', ('problems/persistence-failure-certificates/verify/check_incidence.py',)),
+        Check('quantum-stabilizer check_witness', ('problems/quantum-stabilizer/verify/check_witness.py',)),
+        Check('graph-color-failure-certificates check_list_colors', ('problems/graph-color-failure-certificates/verify/check_list_colors.py',)),
         Check("Non-Fano obstruction", ("tools/verify_non_fano.py",)),
         Check(
             "Full-contact receipt binding and coverage metadata",

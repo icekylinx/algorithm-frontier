@@ -1,5 +1,14 @@
 # History
 
+## 2026-10-27 — Mixed-color graphs, full persistence and compact witnesses
+
+- Completed the graph-color family's mixed/list activation, actual feature-rank and symmetric-cubic proofs, all stated support lower examples, and the one-failure dynamic-MSF composition. Native original-ID references avoid formal monomial expansion and collect genuine completed-batch exchange reports; their polynomial scan, sorting and workspace costs remain separate from the published fast dynamic theorem.
+- Completed the exact persistence family audit, including general incidence labels, additional top-simplex labels, exterior envelopes, natural lower-homology identifications and both lower constructions. Added native original-row evaluation modules and dense boundary recovery without formal feature enumeration. Field extensions remain a proved software boundary; the vertex-only streaming client retains its distinct resource contract. Regenerated the selected TeX export with the recorded Pandoc version.
+- Completed the fixed-rank valuated preserver proof and supplied-baseline optimality certificates, plus ordinary maximum-cardinality reporting through two initialized ranks. Original split prices are independently verified and discarded before compact reporting; native valued initialization and cross-rank valued objectives remain outside the executable interface.
+- Added the one-common-order exact mixed-prefix client with signed objectives, original mandatory totals, optional disposal, capped active marking and original-subset resource recovery. The full bounded companion and its separate oracle/encoded lower constructions passed review; broader prefix families retain partial readiness.
+- Realized the compact Pauli witness reduction, phase-aware maximal commuting basis, exact original scalar/parity objective and effective-rank enumeration. A separate multiplication-table verifier checks original tableau energy without importing producer algebra. Dense finite tests and an 80-qubit rank-one example supplement the symbolic proof; this does not implement the quantum sparsification family or a polynomial-time ground-state optimizer.
+- Independent GPT-6.1 Sol cross-reviews cover all five packages. All 118 standard repository checks passed, including serial selected-contact replay; the full contact catalogue was not recomputed. The main catalogue has 46 ready and 9 partially reviewed families. These are scoped internal reviews, not external peer review or proof-assistant verification.
+
 ## 2026-10-27 — Exact numeric targets, fractional allocation and signed flow
 
 - Completed the one-value allocation family's proof audit and native exact-budget original-basis client, including setup and assignment costs, capped-service separation, weighted recovery, omission and rational covers. Native simplex costs and rational approximation envelopes remain distinct from the fast fixed-parameter theorem.

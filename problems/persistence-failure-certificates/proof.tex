@@ -1,6 +1,6 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/persistence-failure-certificates/proof.md
-% Recovered-source SHA-256: 08daba67b3991f49b543e33b58ba805283a08093cb7c21aaf33526d58aefac2f
+% Recovered-source SHA-256: ca2dfd79ccc88787bbd1b621cd78f03791531bbf61858635c9a45ccf27b18060
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
 % Shared original Subset Sum preamble: manuscripts/paper-style.tex.
@@ -67,6 +67,11 @@ The resulting \(sr\)-coordinate top columns are generated one at a time, and ord
 \]
 
 After original-row selection and coefficient generation, the field work is \(O(n+ans^2+Ns(p+1)+Nsr\rho)\). The companion separately charges shift comparisons, workspace, rank discovery and exact bit arithmetic. The failure decoder applies to the same full-stack relations, hence Section 3's natural coordinate identifications and persistence-module guarantee apply without change. The construction is deterministic and still retains only original simplices. Additional top labels use the separate general incidence algorithm of Section 2.
+
+\hypertarget{af-ca17aac320-native-general-incidence-realization}{%
+\subsection{6. Native general-incidence realization}\label{af-ca17aac320-native-general-incidence-realization}}
+
+The \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/persistence-failure-certificates/incidence-realization.md}{general-incidence realization} implements the additional-top-label branch using separate evaluation modules for independent original rows. Merging their actual row spaces yields the canonical columns of the conceptual lift without expanding its monomial universe. The local proof establishes original-row label integrity, the common query scalar, surviving prefix spans and lower-homology naturality. Native dense boundary storage and polynomial exact elimination are charged separately from the vertex-only streaming implementation.
 
 \hypertarget{af-ca17aac320-complete-proofs}{%
 \subsection{Complete proofs}\label{af-ca17aac320-complete-proofs}}

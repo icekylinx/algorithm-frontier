@@ -122,3 +122,59 @@ def build_arborescence(n, root, arcs):
 
     baseline = _baseline(tuple(a.cost for a in arcs), n - 1, graphic, partition)
     return None if baseline is None else reporting.build(n, root, arcs, baseline)
+
+
+class MaximumOracle:
+    """Two compact fixed-rank reporters; original callbacks are not retained."""
+    def __init__(self, primary, fallback):
+        self.primary, self.fallback = primary, fallback
+        self.rank = len(primary.baseline)
+        self.support = tuple(sorted(set(primary.support) | set(() if fallback is None else fallback.support)))
+
+    @property
+    def record_count(self):
+        return (1 + len(self.support) + self.primary.record_count
+                + (0 if self.fallback is None else self.fallback.record_count))
+
+    def _oracle(self, failed):
+        return (self.primary if self.primary.optimum_cost(failed) is not None
+                else self.fallback)
+
+    def query(self, failed=None):
+        """Minimum-cost maximum-cardinality common set after one deletion."""
+        oracle = self._oracle(failed)
+        if oracle is None:
+            raise RuntimeError('one deletion dropped ordinary common rank by more than one')
+        answer = oracle.query(failed)
+        if answer is None:
+            raise RuntimeError('consecutive-rank fallback was unexpectedly infeasible')
+        return answer
+
+    def optimum_cost(self, failed=None):
+        return self._oracle(failed).optimum_cost(failed)
+
+    def rank_after(self, failed=None):
+        return len(self._oracle(failed).baseline)
+
+
+def build_maximum(costs, independent1, independent2):
+    """Initialize ordinary max cardinality, then preserve its exact signed cost.
+
+    Rank drop has a linear-cost objective on both consecutive ranks. This
+    interface does not interpret a fixed-rank valuation at any smaller rank.
+    """
+    costs = tuple(weighted.rational(x) for x in costs)
+    if not callable(independent1) or not callable(independent2):
+        raise ValueError('two ordinary independence callbacks required')
+    certificate = weighted.minimum_cost(independent1, independent2, costs, len(costs))
+    if not weighted.verify_intersection(independent1, independent2, costs, len(costs), certificate):
+        raise RuntimeError('maximum-cardinality initialization certificate failed')
+    baseline = certificate.chosen
+    rank = len(baseline)
+    arcs, minus, plus = _compressed(costs, baseline, independent1, independent2)
+    primary = reporting._finish(baseline, sum((costs[a] for a in baseline), Fraction(0)),
+                                2 * rank, arcs, minus, plus)
+    fallback = None if rank == 0 else build(costs, rank - 1, independent1, independent2)
+    if rank and fallback is None:
+        raise RuntimeError('original lower common rank was unavailable')
+    return MaximumOracle(primary, fallback)

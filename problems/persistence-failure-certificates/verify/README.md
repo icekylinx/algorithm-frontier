@@ -54,4 +54,25 @@ At every allowed state, the lower chain coordinates and lower boundary maps agre
 
 The full original lower skeleton is retained. The theorem depends on the chosen coefficient field and covers degrees at most <code class="math">p-1</code>. A supplied filtration order and an independent cost order require separate constructions unless they coincide. The [separate spectral incidence theorem](../../correlated-spectral-regression/manuscripts/graded-incidence-and-simplicial-spectral-sparsification.md) does not add a spectral guarantee at every filtration threshold.
 
+
+## General incidence and additional top labels
+
+The [native backend](../reference/incidence.py) is justified by its
+[realization proof](../incidence-realization.md).
+
+```sh
+python3 -B problems/persistence-failure-certificates/verify/check_incidence.py
+```
+
+An independently implemented original-matrix elimination checks 373 matrices
+and 5,503 surviving ordered prefixes over the rationals and a supplied prime
+field. Fifty random simplicial inputs include extra top labels; six labeled
+cone fixtures check the exact rank formula and forced retention of every top
+simplex. Tests also cover field-specific zero incidences, dependent original
+rows with different labels, 70 shared labels with incidence increment one,
+a 101-digit failure budget, empty matrices and six malformed requests.
+These finite checks supplement the full incidence, naturality and lower-bound
+proofs. The API assumes a supplied prime modulus; it implements neither field
+extension construction nor top-dimensional homology.
+
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

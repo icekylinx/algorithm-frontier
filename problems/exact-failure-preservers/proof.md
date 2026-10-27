@@ -65,3 +65,11 @@ For ordinary linear costs, the union of constructions at maximum ranks <code cla
 - Bodwin, [A Note on Distance-Preserving Graph Sparsification](https://arxiv.org/pdf/2001.07741).
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.
+
+
+The [certified-valuated and ordinary rank-drop realization](manuscripts/reference-valuated-and-rank-drop.md)
+adds a standalone original local-exchange optimality certificate for a supplied
+common valuated baseline, compact valued reporting and initialized ordinary
+maximum-cardinality reporting through two consecutive ranks. The valuated
+initializer remains a named mathematical dependency; the native reporter
+neither searches for that baseline nor infers a cross-rank valuation objective.

@@ -6,8 +6,10 @@ The [ordinary reference backend](reference/README.md) initializes the optimum
 for two ordinary independence-oracle matroids, builds the compressed exchange
 reporter and returns exact fixed-rank single-deletion answers. It also
 initializes the rooted arborescence HLD backend. Its polynomial preprocessing
-is separate from the manuscript's faster graph implementation; the valuated
-extension remains outside this software scope.
+is separate from the manuscript's faster graph implementation. The ordinary
+maximum-cardinality wrapper handles rank drops. A supplied common valuated
+baseline is independently certified and then reported at its fixed rank;
+the native valuated initializer remains outside this software scope.
 
 [Proof](proof.md) · [Sources](sources.md)
 
@@ -100,9 +102,9 @@ Inherited directed-distance constructions give
 
 **Review status**
 
-**Ready for review in the stated scope.** The complete ordinary fixed-rank two-matroid single-element-deletion construction with signed rational costs: certified baseline initialization from original independence callbacks, compressed replacement-cycle value identity and minimum-hop literal update, deterministic distance/hub support and reporting, original-ID infeasibility answers and actual rational encoding costs. Also covers the automatically initialized nonnegative rooted-arborescence HLD realization and its prior supplied-baseline component.
+**Ready for review in the stated scope.** The complete ordinary fixed-rank signed-cost two-matroid and initialized rooted-arborescence reporting scope, extended to ordinary minimum-cost maximum-cardinality reporting through two consecutive ranks; and the complete fixed-rank valuated companion proof, with a native independently certified supplied-common-baseline price interface and compact value/path reporting. Covers local-to-global and initial matroids, joint convex decomposition, valued matching and cycle identity, minimum-hop literal update, signed shortest paths, phased reporting, original-ID infeasibility and actual rational/temporary versus retained-record costs.
 
-**Dependencies and scope.** The canonical ordinary weighted-intersection primitive is a paid polynomial initializer; the reference computes and checks its baseline certificate and discards the ground-sized potential/cut before returning. The ordinary callback predicates must be valid matroid independence oracles. The generic reference uses conservative polynomial initialization and `O(Nk)` additional independence tests with `O(Nk^2+k^3)` post-initialization work. The graph wrapper retains the nonnegative graph model and does not implement the manuscript’s faster arborescence preprocessing. Final record/support and reporting bounds are separate from temporary workspace and actual rational/original-ID bit lengths. This scope does not cover the valuated implementation, rank-drop client or lower-bound transfers. Those retain their linked mathematical statements and dependencies. Finite exact checks and independent internal review are not proof-assistant verification or external peer review.
+**Dependencies and scope.** Ordinary maximum-cardinality initialization uses the canonical certified polynomial weighted-intersection primitive and separately initializes the next lower rank. The valued software requires a supplied common finite basis, certifies optimality through original split-price exchange inequalities and rejects a nonoptimal basis; it does not implement native valuated baseline search. The classical mathematical initializer and effective-domain initialization remain separately paid, as specified by Iwamasa–Takazawa v3 Lemma 7. Valid ordinary matroids and valid fixed-rank minimization-convention valuated matroids are oracle-model assumptions. Independent tiny valuation tables check their exchange axioms in full, but native baseline certificates verify optimality conditional on those axioms. Value callbacks use exact binary rational values and None outside the domain. No smaller-rank valuation or cross-rank objective is inferred. Valued baseline verification/compression uses `O(Nk)` evaluations and `O(Nk^2+k^3)` additional arithmetic; original answer bit lengths are charged. Original-ground price certificates, initialization certificates, exchange tables and callbacks are discarded before returning compact reporters. Separately retained price evidence is outside the `O(k^(3/2))` reporting-record bound. The graph wrapper still does not implement the optimized arborescence preprocessing. Lower-bound transfers, simultaneous failures and later-changing costs or valuations remain outside this review. Exact finite checks, internal proof audit and independent certificate verification are not external peer review or proof-assistant formalization.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 

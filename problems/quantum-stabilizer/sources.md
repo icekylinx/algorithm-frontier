@@ -54,4 +54,14 @@ or an optimal universal stabilizer approximation factor.
 - Kannan–Bachem integer normal forms provide exact compact subgroup orders: <https://doi.org/10.1137/0208040>.
 - Basu, Kothari, Meka, and Tudose, optimal weighted abelian Cayley support: <https://arxiv.org/html/2607.08261v1>. This supplies the alternative binary/single-check support proof.
 
+## Native witness implementation
+
+The [compact Pauli realization](reference-realization.md) instantiates the
+already audited witness theorem: balanced original-weight peeling, maximal
+isotropic extension, phase-aware diagonal parity compilation, effective-rank
+exact enumeration and independent original-tableau energy verification. It
+introduces no sparsification dependency and preserves the theorem's scalar
+identity shifts. Prime-dimensional witness software remains outside this
+Pauli-specific implementation.
+
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

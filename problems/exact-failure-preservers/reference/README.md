@@ -148,3 +148,63 @@ python3 problems/exact-failure-preservers/verify/check_arborescence_reporting.py
 ```
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.
+
+
+## Ordinary rank drops and certified valuated baselines
+
+`matroid_reporting.build_maximum(costs,independent1,independent2)` initializes
+maximum common cardinality and its exact minimum signed cost. It retains the
+fixed-rank reporter at that cardinality and, when positive, one at the next
+smaller cardinality. Its `query(failed)`, `optimum_cost(failed)` and
+`rank_after(failed)` report the actual minimum-cost maximum-cardinality result.
+A single deletion lowers ordinary common rank by at most one. Rank zero has
+the empty optimum. The original cost table and callbacks are not retained.
+
+```python
+from fractions import Fraction
+from valuated_reporting import build, certify, verify_optimality
+
+first = {frozenset((0,1)): Fraction(0),
+         frozenset((0,2)): Fraction(3),
+         frozenset((1,2)): Fraction(1)}
+second = {basis: Fraction(0) for basis in first}
+certificate = certify(3,2,first.get,second.get,(0,1))
+assert verify_optimality(3,2,first.get,second.get,certificate)
+reporter = build(3,2,first.get,second.get,(0,1))
+assert set(reporter.query(0)) == {1,2}
+assert reporter.optimum_cost(0) == 1
+```
+
+`valuated_reporting.build(N,rank,value1,value2,baseline)` accepts two valid
+fixed-rank minimization-convention valuated matroids. Value callbacks take
+frozensets of original IDs, return exact `int`/`Fraction` on effective-domain
+bases, and return `None` outside their domains. The supplied common baseline
+is independently certified optimal through split prices. Nonoptimal or
+non-common baselines raise `ValueError`; this is not original infeasibility.
+No native valuated baseline search is implemented.
+
+`certify` separately returns `BaselineCertificate(baseline,value,prices)` on
+the original ground. `verify_optimality` checks the original baseline and all
+finite single exchanges against its two opposite price inequalities, without
+any optimizer, graph or producer. Validity of the valuated-matroid axioms is
+an input-oracle promise; original tiny tables in the checker validate them
+independently. The certificate is sufficient because priced local optimality
+is global for each valuation and the prices cancel on common bases.
+
+The compact valued reporter has the same query and stored-value methods as
+the supplied-baseline ordinary reporter. Queries call no valuation or
+independence oracle. Price certificates, original callbacks and exchange
+tables are discarded during `build`; separately retaining certificate evidence
+requires original-ground storage and is outside the compact bound. Rank zero
+retains the two valuation constants on the empty basis. No objective on a
+smaller-rank set is inferred from a fixed-rank valuation.
+
+The [complete realization proof](../manuscripts/reference-valuated-and-rank-drop.md)
+proves the price construction, signed exchange reporting, ordinary rank-drop
+wrapper and costs. Valued baseline certification/compression uses `O(Nk)`
+value evaluations and `O(Nk^2+k^3)` additional arithmetic work, with actual
+rational/original-ID bit lengths charged. Ordinary maximum-cardinality
+initialization retains the earlier conservative polynomial preprocessing.
+The named polynomial valuated initializer is a mathematical dependency,
+not native software in this interface. Lower-bound transfers and multiple
+failures remain outside this incremental review.

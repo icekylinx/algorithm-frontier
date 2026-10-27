@@ -90,6 +90,17 @@ guarantee apply without change. The construction is deterministic and
 still retains only original simplices. Additional top labels use the
 separate general incidence algorithm of Section 2.
 
+## 6. Native general-incidence realization
+
+The [general-incidence realization](incidence-realization.md) implements the
+additional-top-label branch using separate evaluation modules for independent
+original rows. Merging their actual row spaces yields the canonical columns
+of the conceptual lift without expanding its monomial universe. The local
+proof establishes original-row label integrity, the common query scalar,
+surviving prefix spans and lower-homology naturality. Native dense boundary
+storage and polynomial exact elimination are charged separately from the
+vertex-only streaming implementation.
+
 ## Complete proofs
 
 [Exact persistence, envelopes, and lower bounds](manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md); [actual feature-rank construction and streamed contractions](manuscripts/feature-rank-construction.md); [separate fixed-weight real spectral theorem](../correlated-spectral-regression/manuscripts/graded-incidence-and-simplicial-spectral-sparsification.md).

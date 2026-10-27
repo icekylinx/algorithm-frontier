@@ -287,7 +287,7 @@ D_v(n-D_v)
 
 edges must be retained. Thus the leading <code class="math">nD_v</code> dependence is unavoidable on simple graphs when <code class="math">n/D_v</code> tends to infinity. This is a retained-subgraph lower bound.
 
-The color-lists model itself is already present in the January 2026 journal version of *Color Fault-Tolerant Spanners*. Its full list-model parameter comparison needs a final source check; this manuscript does not claim to introduce overlapping-color failures.
+The color-lists model itself is already present in the January 2026 journal version of *Color Fault-Tolerant Spanners*, as explicitly confirmed by its authors' institutional abstract. No numerical parameter comparison with an uninspected journal theorem is asserted; this manuscript does not claim to introduce overlapping-color failures.
 
 ## 8. Vertex lists together with edge lists
 
@@ -410,6 +410,11 @@ The comparisons above distinguish existence from polynomial construction. They d
 3. Asaf Petruschka, Shay Sapir, Elad Tzalik. *Connectivity Labeling in Faulty Colored Graphs*. Distributed Computing 39, Article 14, published 7 April 2026, Theorem 4.2. https://link.springer.com/article/10.1007/s00446-026-00506-1
 4. Asaf Petruschka, Shay Sapir, Elad Tzalik. *Color Fault-Tolerant Spanners*. ACM Transactions on Algorithms 22(1), Article 6, January 2026, DOI 10.1145/3750728. Institutional abstract explicitly records the color-lists extension: https://weizmann.elsevierpure.com/en/publications/color-fault-tolerant-spanners-2/
 5. Dániel Garamvölgyi, Bill Jackson, Tibor Jordán, Soma Villányi. *Sufficient conditions for bipartite rigidity, symmetric completability and hyperconnectivity of graphs*, arXiv:2511.00298, Section 1 and Lemma 1.1. This source credits Kalai's 1985 matrices and records the hyperconnectivity matrix and generic maximum rank. https://arxiv.org/html/2511.00298v1
-6. Jacob Holm, Kristian de Lichtenberg, Mikkel Thorup. *Poly-logarithmic deterministic fully-dynamic algorithms for connectivity, minimum spanning tree, 2-edge, and biconnectivity*. Journal of the ACM 48(4), 2001. The deterministic fully dynamic MSF bound is <code class="math">O(\log^4 n)</code> amortized per edge update. Author manuscript copy: https://www.cs.princeton.edu/courses/archive/fall09/cos521/Handouts/polylogarithmic.pdf
+6. Jacob Holm, Kristian de Lichtenberg, Mikkel Thorup. *Poly-logarithmic deterministic fully-dynamic algorithms for connectivity, minimum spanning tree, 2-edge, and biconnectivity*. Journal of the ACM 48(4), 2001, Theorem 8 and Section 5.1. The deterministic fully dynamic MSF bound is <code class="math">O(\log^4 n)</code> amortized per edge update, and the original page-724 problem definition responds with maintained forest updates. Primary full text: https://u.cs.biu.ac.il/~liamr/p723-holm.pdf
+
+The [native mixed/list realization](reference-mixed-list-realization.md)
+computes actual feature spans without formal monomial enumeration and
+supplies the completed-batch exchange wrapper. Its exact reference-update
+and sorting costs are separate from the identified published dynamic bound.
 
 The manuscript gives proofs of its algebraic specializations and does not require treating the generic hyperconnectivity matroid as efficiently recognizable.

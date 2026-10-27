@@ -2,6 +2,12 @@
 
 **25 October 2026. Complete theorem and proof; full internal mathematical reviews completed for checkpoint T.**
 
+The [native original-input client](../reference/README.md) now executes safe
+preparation, actual occupied profiles and exact signed mandatory/optional
+recovery. Its [realization proof](../reference-prefix-realization.md) gives
+the original-subset LP and binary cost accounting, with finite Bland-simplex
+time separate from the polynomial intersection primitive in this theorem.
+
 With one common coordinate order and one common nonnegative integer weight per coordinate, exact mixed prefix quotas on a single global integral polymatroid can be solved in
 
 <!-- math-display: 6451954fa8495dc2da74cdf5

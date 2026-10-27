@@ -3,6 +3,7 @@
 ## Canonical manuscripts
 
 - [Exact prefix, laminar and sparse quotas](proof.md)
+- [Native one-order prefix profiles and exact signed recovery](reference-prefix-realization.md)
 - [Exact sparse numeric quotas with a root cap and arbitrary completion costs](manuscripts/bounded-frequency-root-cap-valuated-fpt.md)
 - [Deterministic sunflower kernels for several coverable matroids](manuscripts/deterministic-coverable-matroid-sunflower-kernel.md)
 - [Deterministic sparse packing kernels with an oracle matroid](manuscripts/deterministic-sparse-packing-oracle-kernel.md)
@@ -62,6 +63,18 @@ Direct external references appearing in this reading path are:
 - Naor, Schulman and Srinivasan, [*Splitters and near-optimal derandomization*](https://www.wisdom.weizmann.ac.il/~naor/PAPERS/splitters.pdf), Theorem 7 and the local-evaluation definition in Section 1.3. This indexed construction supplies the stronger laminar coefficient <code class="math">5/9+o(1)</code> with polynomial space. The elementary coloring proof gives coefficient <code class="math">10/9</code> without this import.
 
 ## Evidence and provenance
+
+The [one-order reference](reference/README.md) implements actual original-input
+mixed prefix optimization with mandatory original totals or optional disposal.
+Its [independent checker](verify/check_prefix.py) compares 956 signed min/max
+solves on 478 mode/eligibility instances, 718 original feasible vectors and
+1,436 marked-profile recoveries. It charges 1,330 streamed profiles, including
+814 failed row filters and 76 empty faces, and exercises six binary-large
+fixtures, 11 malformed inputs and two forged outputs. The full one-order
+companion is audited separately from the two-order, bounded-family and broader
+ground-reduction chains. Native Bland pivot time remains separate from its
+paid polynomial intersection theorem; counts, target parameters and signed
+zero-coordinate costs retain their original binary scope.
 
 The [verification note](verify/README.md) states the scope of executable
 evidence and the remaining mathematical dependencies. The
