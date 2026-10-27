@@ -180,6 +180,7 @@ stronger proved query contract.
 
 ```sh
 python3 -B problems/general-matching/verify/check_failure_query.py
+python3 -B problems/general-matching/verify/check_failure_query_certificate.py
 ```
 
 The checker compares 18,030 queries with an independent subset-DP optimum on
@@ -187,7 +188,14 @@ the full residual graph: 76 exhaustive graphs, 676 kernels, and 232 additional
 compressed-star, native-ID, free-deletion and empty cases. Twelve rejection
 cases cover malformed queries and a tampered kernel. Native edge recovery,
 input immutability and the compact solver's certificate are checked separately.
+Every valid query is also passed through the independent composite verifier.
 The returned optimality certificate uses the disclosed compact subproblem's
 coordinates; original-query optimality also uses the verified universal
-kernel theorem. There is no separate composite-query verifier or fast
-end-to-end hierarchy implementation claimed by this adapter.
+kernel theorem. The [composite verifier](../reference/verify_failure_query.py)
+checks this composition without importing a producer or running a matching
+search. Its [acceptance argument](../reference/README.md#a-fixed-kernel-for-future-native-failures)
+is distinct from finite testing. The adversarial checker rejects 30 missing,
+malformed, wrong-query or tampered answers, accepts a different optimal native
+matching, and verifies an answer in a fresh interpreter that blocks all
+solver and producer imports. No fast end-to-end hierarchy implementation is
+claimed by this adapter.

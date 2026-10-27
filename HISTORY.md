@@ -1,5 +1,12 @@
 # History
 
+## 2026-10-27 — Local proof dependencies and complete query certificates
+
+- Added independent end-to-end verification of mixed-failure matching answers: universal kernel preservation, exact residual reconstruction, compact optimality and original-record feasibility are checked together without importing a solver. All 18,030 existing query comparisons use it; 30 adversarial cases, an alternative native optimum and a producer-blocked interpreter exercise its boundary.
+- Completed the allocation-lower-bounds review with direct greedy residual-capacity and explicit component-decomposition proofs, clarified the distinct matroid ranks, and added finite exact construction checks. Marked the complete family ready for review within its deterministic value-oracle models.
+- Checked the two-scenario corank hardness reduction against its bounded nonnegative k-SUM primary source, made binary encoding explicit, and marked that family ready under the stated deterministic W[1]-hardness assumption. Integer service, exact budgets and optional common-basis selection remain essential.
+- These statuses invite mathematical review; executable checks do not establish the unbounded lower bounds, and no external peer review or fast matching hierarchy implementation is claimed.
+
 ## 2026-10-27 — Complete formulas in result showcases
 
 - Kept displayed alternatives and their connectives together, supplied missing inequality operands, and included polynomial factors inside the quota runtime formulas.

@@ -124,6 +124,14 @@ The complete signed interval-disjunction proof, bounded-slack interpolation, sig
 
 [Proof](../problems/boolean-linear-compiler/proof.md) · [Dependencies](../problems/boolean-linear-compiler/sources.md) · [Evidence](../problems/boolean-linear-compiler/verify/README.md) · Reviewed 2026-10-26
 
+### [Two-scenario hardness](../problems/robust-two-scenario-hardness/)
+
+The complete deterministic corank-parameterized finite-factor obstruction for optional common-basis selection under two exact scenario budgets, including positive-service equivalence to bounded nonnegative k-SUM, the always-feasible zero solution, binary encoding and parameter preservation.
+
+**Dependencies and scope.** Uses the deterministic W[1]-hardness direction of Abboud, Lewi and Williams, Losing Weight by Gaining Edges, Definition 1.1, Theorem 1.3 and Section 4, and the assumption FPT differs from W[1]. The bounded nonnegative source avoids the separate randomized arbitrary-range reduction. The conclusion requires integer service, exact budgets and an optional common basis. It does not cover randomized algorithms, fractional service or relaxed budgets, and supplies no ETH or whole-ground exponential lower bound. Finite reduction checks do not certify the external hardness theorem.
+
+[Proof](../problems/robust-two-scenario-hardness/proof.md) · [Dependencies](../problems/robust-two-scenario-hardness/sources.md) · [Evidence](../problems/robust-two-scenario-hardness/verify/README.md) · Reviewed 2026-10-27
+
 ### [Hypergraph matching and expander routing](../problems/strong-haxell-matching/)
 
 The explicit certifying hypergraph-matching algorithm, including build/growth/collapse and weighted finite-prefix termination; the public explicit-algorithm weighted reanalysis; certified disjoint-path routing and spanning-expander packing. The destructive-support extractor, exact-size auxiliary graph and route/conductance accounting are explicitly instantiated. The retained rank-sensitive layer count, its separate root factor and the fixed-right-rank polynomial-strength consequence are included; explicit incidence input is not replaced by an implicit graph-edge count.
@@ -131,6 +139,14 @@ The explicit certifying hypergraph-matching algorithm, including build/growth/co
 **Dependencies and scope.** The hitting, expansion, density, load and input-size promises remain part of their respective theorems. The companion’s separate conditional observation about the public approximate-extension algorithm is not used by these results and retains its stated assumption. Manuscript readiness does not claim a full executable implementation.
 
 [Proof](../problems/strong-haxell-matching/proof.md) · [Dependencies](../problems/strong-haxell-matching/sources.md) · [Evidence](../problems/strong-haxell-matching/verify/README.md) · Reviewed 2026-10-26
+
+### [Allocation and scheduling barriers](../problems/allocation-lower-bounds/)
+
+The deterministic rank/corank oracle barriers below factor two for allocation and below three halves for scheduling; the refined-parameter-zero barrier at threshold OPT/(2+eta); the aggregate configuration gap approaching the selection rank and full-residual gap exactly two. The greedy residual-capacity identity and both explicit component decompositions have direct local proofs.
+
+**Dependencies and scope.** The lower bounds use arbitrary integral recipient or job polymatroids in the full value-oracle model. They do not assert randomized lower bounds or NP/ETH hardness for explicit restricted-assignment inputs. The refined compulsory parameter is zero while its unrefined heavy-cover rank grows with the ground. The four-unit promise/two-unit output problem is separate and is not settled by these examples. Finite checks support the constructions, not the unbounded transcript argument.
+
+[Proof](../problems/allocation-lower-bounds/proof.md) · [Dependencies](../problems/allocation-lower-bounds/sources.md) · [Evidence](../problems/allocation-lower-bounds/verify/README.md) · Reviewed 2026-10-27
 
 ### [Self-concordant cone sparsification](../problems/conic-barrier-sparsification/)
 
@@ -196,7 +212,6 @@ These families have not yet received a scoped readiness entry in this registry. 
 - [Robust unrelated allocation](../problems/robust-unrelated-allocation/)
 - [Robust bounded-width certificates](../problems/robust-bounded-certificates/)
 - [Width-two robust unit allocation](../problems/robust-width-two-allocation/)
-- [Two-scenario hardness](../problems/robust-two-scenario-hardness/)
 - [Arbitrary-processing scheme](../problems/arbitrary-processing-scheduling/)
 - [Activated-machine scheduling](../problems/activated-machine-scheduling/)
 - [Six-profile scheduling](../problems/six-profile-three-halves/)
@@ -206,7 +221,6 @@ These families have not yet received a scoped readiness entry in this registry. 
 - [Many-size workload scheduling](../problems/many-size-scheduling/)
 - [Commitment scheduling](../problems/commitment-scheduling/)
 - [Independent transversals](../problems/independent-transversal/)
-- [Allocation and scheduling barriers](../problems/allocation-lower-bounds/)
 
 ## Supporting manuscripts
 
@@ -287,6 +301,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 
 - [manuscripts/graph-backends/verify/check_odd_crown.py](../manuscripts/graph-backends/verify/check_odd_crown.py)
 - [manuscripts/graph-backends/verify/check_static_allocations.py](../manuscripts/graph-backends/verify/check_static_allocations.py)
+- [problems/allocation-lower-bounds/verify/check_barriers.py](../problems/allocation-lower-bounds/verify/check_barriers.py)
 - [problems/boolean-linear-compiler/verify/check_cardinality_compiler.py](../problems/boolean-linear-compiler/verify/check_cardinality_compiler.py)
 - [problems/boolean-linear-compiler/verify/check_interval_compiler.py](../problems/boolean-linear-compiler/verify/check_interval_compiler.py)
 - [problems/degree-constrained-subgraphs/verify/check_linear_selector.py](../problems/degree-constrained-subgraphs/verify/check_linear_selector.py)
@@ -297,6 +312,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/general-matching/verify/check_cover_compression.py](../problems/general-matching/verify/check_cover_compression.py)
 - [problems/general-matching/verify/check_failure_kernel.py](../problems/general-matching/verify/check_failure_kernel.py)
 - [problems/general-matching/verify/check_failure_query.py](../problems/general-matching/verify/check_failure_query.py)
+- [problems/general-matching/verify/check_failure_query_certificate.py](../problems/general-matching/verify/check_failure_query_certificate.py)
 - [problems/general-matching/verify/check_reductions.py](../problems/general-matching/verify/check_reductions.py)
 - [problems/general-matching/verify/check_reference.py](../problems/general-matching/verify/check_reference.py)
 - [problems/group-metric-constraints/verify/check_quotient_rounding.py](../problems/group-metric-constraints/verify/check_quotient_rounding.py)

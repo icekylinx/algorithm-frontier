@@ -8,11 +8,25 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 
 ## Mathematical dependencies
 
-The model-specific reductions and inequalities are proved in the canonical manuscripts. Standard rank-oracle, linear-programming and integral-intersection interfaces are stated where they are used; an internal review label is not an additional mathematical premise.
+The sole external hardness input is Abboud, Lewi and Williams,
+*Losing Weight by Gaining Edges*, Definition 1.1 and Theorem 1.3.
+Definition 1.1 uses nonnegative entries and a nonnegative target bounded
+by `q^(2k)`, selected by exactly `k` indices. Section 4 gives the
+deterministic hardness reduction. The present proof uses this bounded
+source directly, rather than the paper's separate randomized range
+reduction for arbitrary integers. Its W[1]-membership result is unnecessary.
+
+All remaining steps are local: polynomial-time preprocessing of trivial
+cardinality cases, binary encoding of the two cost lists, the identities
+TS3--TS4, and preservation of corank `c=k`. The free Boolean ranks have
+only coordinatewise unit capacities, so no rank-oracle, LP, integral
+intersection, rounding or common-basis algorithm is assumed. A zero-count
+allocation is always feasible; the reduction detects positive integer
+service rather than ordinary feasibility.
 
 ## Primary references
 
-- [Losing Weight by Gaining Edges](https://people.csail.mit.edu/rrw/ksum.pdf)
+- [Losing Weight by Gaining Edges](https://people.csail.mit.edu/rrw/ksum.pdf), author-hosted 12-page version: Definition 1.1 on page 1, Theorem 1.3 on page 2, and the deterministic hardness direction in Section 4 on page 10. Checked against the actual source on 2026-10-27.
 
 ## Executable evidence
 

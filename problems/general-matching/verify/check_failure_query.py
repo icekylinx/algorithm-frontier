@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "reference"))
 from failure_kernel import build_failure_kernel  # noqa: E402
 from failure_query import solve_failure_query  # noqa: E402
 from verify_certificate import verify_result  # noqa: E402
+from verify_failure_query import verify_failure_query  # noqa: E402
 
 
 def optimum(n, edges):
@@ -81,6 +82,9 @@ def check_query(graph, kernel, vertices, indices, counts):
     charge += sum((graph["edges"][i][0] in covered) != (graph["edges"][i][1] in covered)
                   for i in indices)
     assert result["charged_failures"] == charge
+    report = verify_failure_query(graph, kernel, result, failed_vertices=iter(vertices),
+                                  failed_edge_ids=(labels[i] for i in indices))
+    assert report["optimality_verified"] and report["cardinality"] == result["cardinality"]
     counts["oracle_queries"] += 1
 
 

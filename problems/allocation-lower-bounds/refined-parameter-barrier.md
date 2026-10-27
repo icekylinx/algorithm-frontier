@@ -94,8 +94,8 @@ also proves that its minimum value cannot exceed two. Thus OPT=2.
 
 At the fixed threshold (Z1), `theta=2/(2+eta)<1`. Every resource
 unit is heavy. Equation (Z3) makes its Boolean matroid N_theta free
-on all q players. In particular, M and N_theta have a common basis,
-and their common-independent-set maximum is r. Consequently
+on all q players. In particular, every M-basis is independent in
+N_theta, so their common-independent-set maximum is r. Consequently
 
 <!-- math-display: a7cfb5263431f7659e3ad65a
 K=(M^*\vee N_\theta)^*\text{ has rank }0,

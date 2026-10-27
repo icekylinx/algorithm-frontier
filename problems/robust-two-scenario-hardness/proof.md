@@ -18,6 +18,10 @@ Definition 1.1 and Theorem 1.3, state W[1]-completeness for the
 bounded-integer version already sufficient here. We only use its
 W[1]-hardness; no randomized reduction from arbitrary integer ranges
 or disputed membership statement for unbounded ranges is required.
+Specifically, their Definition 1.1 permits both the entries and target
+in <code class="math">[0,q^{2k}]</code>, and their Section 4 obtains hardness by a
+deterministic reduction. This source range is already nonnegative,
+so no sign conversion or random modulus is part of the present reduction.
 
 Let A=sum_i a_i. The cases k=0, k>=q, and T>A can be decided directly
 with their ordinary exact-cardinality conventions. Nontrivial source
@@ -27,6 +31,12 @@ instances may therefore be restricted to
 
 Set r=q-k>=1 and L=A+1. All constructed data have polynomial binary
 encoding in the source data.
+Indeed, if the source entries and target have at most <code class="math">b</code> bits,
+the sum <code class="math">A</code> and <code class="math">L</code> have at most
+<code class="math">b+\lceil\log_2 q\rceil+1</code> bits, and all assignment costs and
+budgets have <code class="math">O(b+\log q)</code> bits. Only two lists of
+<code class="math">q</code> costs, two budgets and the uniform rank are required;
+the construction never enumerates integer magnitudes or resource copies.
 
 ## 2. Two scenarios with modular unit costs
 

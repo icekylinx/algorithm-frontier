@@ -8,6 +8,16 @@ The evidence for this result consists of its [mathematical proof](../proof.md).
 - Both budgets hold exactly when the omitted k-set has the prescribed sum. Positive common service is the encoded decision event.
 - The proof imports the identified parameterized k-SUM hardness result and retains c=k; the whole-ground rank-oracle obstruction has a different representation and conclusion.
 
+An internal audit on 2026-10-27 read the canonical reduction and its
+actual primary source, checking Definition 1.1, Theorem 1.3 and Section 4
+of *Losing Weight by Gaining Edges*. The source already supplies
+nonnegative bounded inputs and deterministic W[1]-hardness. The audit
+reconstructed both budget identities, positivity versus feasibility,
+nonnegative budgets, the `c=k` correspondence and binary-size bounds.
+No unresolved algorithmic interface remains in this reduction. The family
+is ready for manuscript review, conditional on the named published
+source-hardness theorem and the stated complexity assumption.
+
 ## Executable evidence
 
 [verify_finite_reductions.py](../../../tools/verify_finite_reductions.py) checks the following finite claim:
@@ -20,11 +30,20 @@ Run from the repository root:
 python3 tools/verify_finite_reductions.py
 ```
 
-These programs do not implement the full algorithm or mechanically verify its oracle, approximation and running-time arguments.
+This checker implements the finite reduction identities, rather than
+an allocation algorithm or a proof of source hardness. Its comparisons
+are exact integer arithmetic. It does not establish the asymptotic
+parameterized-complexity consequence.
 
 ## Model and verification boundaries
 
 Exhaustive small instances test the exact reduction identity, not W[1]-hardness itself. The complexity conclusion depends on the cited source problem and parameter-preserving proof. No ETH bound or optimal whole-ground base follows from this finite check.
+
+The impossibility concerns deterministic finite-factor algorithms under
+`FPT != W[1]`, with exact budgets, integral service and one optional
+common basis. It does not extend this assumption to randomized algorithms,
+relaxed budgets or fractional service. The two scenario allocations may
+adapt independently; the proof uses their shared selected basis only.
 
 The [source map](../sources.md) identifies the actual proof dependencies. Repository checks validate the registry, links, notation and generated catalogue; those checks do not establish mathematical correctness. Proof-assistant verification and external peer review are not claimed.
 

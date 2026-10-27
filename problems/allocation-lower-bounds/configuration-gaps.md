@@ -54,11 +54,35 @@ by subtracting <code class="math">z(P)</code> from its left side. Each hinge equ
 -->
 ![Formula](../../assets/math/7e38941eac8a2240ad337671.svg)
 so the violation is a convex function of <code class="math">z</code>. Its maximum is attained
-at a polymatroid vertex. Every such vertex is a greedy vector on an
-ordered subset <code class="math">S</code>, has total <code class="math">f(S)</code>, and spans the full conceptual
-owner blocks of <code class="math">S</code> in the natural matroid. Therefore its residual
-capacity at <code class="math">p</code> is exactly <code class="math">m_p(S)</code>. Its reserve inequality is
-(G3). Convexity now shows that all subset cuts imply all reserve cuts.
+at a polymatroid vertex. The needed vertex description follows by
+maximizing any linear objective: set negative-weight coordinates to
+zero, order its positive-weight coordinates decreasingly, and assign
+the successive rank increments. Diminishing marginals make this
+greedy vector feasible; telescoping the objective over the ordered
+prefixes bounds every feasible objective by that greedy value.
+Thus the polytope is the convex hull of these greedy vectors.
+Every vertex is therefore a greedy vector on an
+ordered subset <code class="math">S</code>, is supported on <code class="math">S</code>, and has total
+<code class="math">z(S)=f(S)</code>. Its residual capacity can be computed directly,
+without a unit-copy representation. For any set <code class="math">A</code> containing
+<code class="math">p</code>, feasibility, support and submodularity give
+
+<!-- math-display: 0cfd3597a50994ecd9ad2d0a
+\begin{aligned}
+f(A)-z(A)
+&=f(A)-z(A\cap S)\\
+&\ge f(A)-f(A\cap S)\\
+&\ge f(A\cup S)-f(S)\\
+&\ge f(S\cup\{p\})-f(S).
+\end{aligned}
+-->
+![Formula](../../assets/math/0cfd3597a50994ecd9ad2d0a.svg)
+
+Taking <code class="math">A=S\cup\{p\}</code> attains equality because
+<code class="math">z(S\cup\{p\})=f(S)</code>. Thus its residual capacity at
+<code class="math">p</code> is exactly <code class="math">m_p(S)</code>, including the zero
+case <code class="math">p\in S</code>. Its reserve inequality is (G3).
+Convexity now shows that all subset cuts imply all reserve cuts.
 Conversely, a greedy base on any <code class="math">S</code> is an integral feasible reserve
 whose inequality is that subset cut. <code class="math">\square</code>
 
@@ -119,6 +143,11 @@ Therefore the gap is at least
 which tends to <code class="math">r</code> along <code class="math">D=rL</code>, <code class="math">L\to\infty</code>.
 No target exceeds <code class="math">D+1</code>, the singleton capacity. <code class="math">\square</code>
 
+The merged integer count vectors have the same direct decomposition:
+put one unit of each positive coordinate in the free component.
+The excess has total at most <code class="math">D</code>, by the rank inequality on
+its positive support, and can be assigned one unit per rank-one component.
+Conversely, adding component inequalities gives every merged rank row.
 Keeping the free component and the <code class="math">D</code> rank-one components separate
 excludes the displayed point: a <code class="math">D+1</code>-unit configuration must use all
 <code class="math">D</code> rank-one services, forcing expected total <code class="math">Dr&gt;D</code> from components
@@ -172,9 +201,17 @@ capacity is two, so no configuration target above two exists. Thus
 ![Formula](../../assets/math/f9383d80ff934cbfcf070237.svg)
 
 The two component resources have recipient matroids
-<code class="math">U_{r-1,2r}</code> and <code class="math">U_{r+1,2r}</code>. Integral polymatroid decomposition
-shows that their summed integer counts are exactly the integer points
-of <code class="math">P(f)</code>. In their separate-component configuration relaxation,
+<code class="math">U_{r-1,2r}</code> and <code class="math">U_{r+1,2r}</code>. Their merged integer
+counts can be decomposed directly. Every coordinate is zero, one or two.
+If <code class="math">d</code> coordinates are doubled, their own rank row implies
+<code class="math">d\le r-1</code>. Put one of each doubled coordinate in each
+component. If <code class="math">k</code> coordinates are single, the total-rank row
+gives <code class="math">k\le2r-2d</code>, exactly the sum of the remaining capacities
+<code class="math">r-1-d</code> and <code class="math">r+1-d</code>. Split those single coordinates
+between the two components within these capacities. Conversely, adding
+their rank inequalities gives the merged inequalities. Thus their summed
+integer counts are exactly the integer points of <code class="math">P(f)</code>.
+In their separate-component configuration relaxation,
 every target strictly above one requires one service from each
 component. Total player mass <code class="math">r</code> would demand <code class="math">r</code> services from
 the first component, exceeding its rank <code class="math">r-1</code>. Target one is feasible

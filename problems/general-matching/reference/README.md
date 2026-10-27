@@ -120,9 +120,12 @@ and typed edge IDs. For example, after constructing `kernel` from `graph`:
 
 ```python
 from failure_query import solve_failure_query
+from verify_failure_query import verify_failure_query
 
 answer = solve_failure_query(graph, kernel, failed_vertices=[0])
 print(answer["matching"])
+report = verify_failure_query(graph, kernel, answer, failed_vertices=[0])
+assert report["optimality_verified"]
 ```
 
 Failures refer to original vertices and edge IDs, including objects omitted
@@ -140,8 +143,29 @@ indices are local. `subproblem_vertices` maps local vertices back to the
 original graph. The top-level `matching` alone uses original input indices
 and endpoints. The universal certificate and the residual certificate
 establish optimality together, after checking the specified deletions and
-the coordinate lift. The adapter is a callable Python interface and does
-not add a CLI or a standalone composite-query verifier.
+the coordinate lift. The independent
+[composite verifier](verify_failure_query.py) performs these checks through
+`verify_failure_query(graph, kernel, answer, *, failed_vertices=(), failed_edge_ids=())`.
+The caller supplies the query separately: it must not be taken from an
+untrusted answer. No matching solver or kernel producer is imported.
+
+**Acceptance argument.** The universal verifier establishes preservation
+for every permitted query. The composite verifier independently validates
+and charges all requested original objects, reconstructs the surviving
+retained graph and its compact vertex map, and requires the disclosed graph
+to agree exactly, including types of IDs and integers. The ordinary verifier
+then proves the optimum of that reconstructed graph. Finally, the native
+answer is checked for original-record feasibility, exclusion of failed
+objects and equality to the certified optimum. Universal preservation gives
+the same optimum on the full residual input, so acceptance proves the native
+answer is maximum there. A different optimal native matching is allowed;
+it need not coincide with the producer's particular compact matching.
+
+Besides the two existing certificate verifiers, this composition uses
+comparison sorting and scans of original and retained records. It allocates
+linear original-universe arrays; encoded label and certificate lengths are
+charged as well. It makes no matching search. Both query interfaces are
+callable Python functions, with no additional CLI.
 
 Each query rechecks the full supplied kernel certificate, scans the original
 graph and retained records, sorts native IDs, and runs the ordinary solver
