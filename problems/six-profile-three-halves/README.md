@@ -14,7 +14,12 @@ Deterministic enumeration of six profiles per machine and exact cost-preserving 
 
 **Time**
 
-<code class="math">6^q\mathrm{poly}(H)</code>, with six profiles per physical machine.
+<!-- math-display: fff7e13acf3a224a277987f1
+6^q\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/fff7e13acf3a224a277987f1.svg)
+
+With six profiles per physical machine.
 
 **Space**
 

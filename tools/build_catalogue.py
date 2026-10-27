@@ -29,7 +29,7 @@ def anchor(text: str) -> str:
 
 def read_catalogue() -> dict:
     data = json.loads((ROOT / "catalogue.json").read_text(encoding="utf-8"))
-    if data.get("schema_version") != 2:
+    if data.get("schema_version") != 3:
         raise ValueError("unsupported catalogue schema")
     groups = data["groups"]
     ids = [r["id"] for g in groups for r in g["records"]]
@@ -45,11 +45,14 @@ def read_catalogue() -> dict:
         raise ValueError("featured result missing from the problem catalogue")
     for g in groups:
         for r in g["records"]:
-            if set(r) != {"id", "title", "result", "quantity", "scope", "randomness"}:
+            if set(r) != {"id", "title", "result", "quantity", "scope", "randomness", "quantity_purposes"}:
                 raise ValueError(f"invalid record fields: {r['id']}")
+            validate_quantity_purposes(r)
             if not r["randomness"].strip():
                 raise ValueError(f"missing randomness contract: {r['id']}")
             for field, text in r.items():
+                if field == "quantity_purposes":
+                    continue
                 if any(ord(c) < 32 for c in text):
                     raise ValueError(f"control byte in {r['id']}.{field}")
                 if "|" in text:
@@ -59,25 +62,41 @@ def read_catalogue() -> dict:
     if len(supporting_ids) != len(set(supporting_ids)):
         raise ValueError("a supporting result appears more than once")
     for record in supporting:
-        if set(record) != {"id", "path", "title", "result", "quantity", "scope", "randomness"}:
+        if set(record) != {"id", "path", "title", "result", "quantity", "scope", "randomness", "quantity_purposes"}:
             raise ValueError(f"invalid supporting fields: {record['id']}")
+        validate_quantity_purposes(record)
         if not (ROOT / record["path"]).is_file():
             raise ValueError(f"missing supporting manuscript: {record['path']}")
         if not record["randomness"].strip():
             raise ValueError(f"missing randomness contract: {record['id']}")
         for field, text in record.items():
+            if field == "quantity_purposes":
+                continue
             if any(ord(c) < 32 for c in text) or "|" in text:
                 raise ValueError(f"invalid summary text in {record['id']}.{field}")
     return data
 
 
-def quantity_paragraphs(text: str) -> list[str]:
-    """Give long bounds their own line without splitting a TeX expression.
+def validate_quantity_purposes(record: dict) -> None:
+    purposes = record["quantity_purposes"]
+    formulas = re.findall(r"\$([^$]+)\$", record["quantity"])
+    if (not isinstance(purposes, list) or len(purposes) != len(formulas)
+            or any(not isinstance(purpose, str) or purpose not in {"showcase", "literal"}
+                   for purpose in purposes)):
+        raise ValueError(f"invalid quantity purposes: {record['id']}")
+
+
+def quantity_paragraphs(text: str, purposes: list[str]) -> list[str]:
+    """Present each formula according to its explicitly reviewed purpose.
 
     Catalogue values stay renderer-independent Markdown. Semicolons outside
-    mathematics separate incomparable bounds; short formula fragments remain
-    inline, while substantial expressions get the full page width.
+    mathematics separate incomparable bounds. A showcased result becomes an
+    SVG even when short; a parameter or machine-readable expression stays
+    literal even when long. Delimiter placement and length do not choose roles.
     """
+    validate_quantity_purposes({"id": "quantity", "quantity": text,
+                                "quantity_purposes": purposes})
+    roles = iter(purposes)
     clauses: list[str] = []
     start = 0
     in_math = False
@@ -97,15 +116,12 @@ def quantity_paragraphs(text: str) -> list[str]:
         return fragment.rstrip(".") + "."
 
     for clause in clauses:
-        # Do not promote identifiers or tiny arithmetic expressions. Isolating
-        # only the long expressions also prevents Markdown emphasis from
-        # interfering with subscripts, stars and products in headline bounds.
         cursor = 0
         pending = ""
         for match in re.finditer(r"\$([^$]+)\$", clause):
             pending += clause[cursor:match.start()]
             formula = match[1]
-            if len(formula) >= 36 or clause == match[0]:
+            if next(roles) == "showcase":
                 lead = pending.strip().rstrip(",:")
                 if lead:
                     # A preceding complete formula is a separate definition,
@@ -131,7 +147,7 @@ def render_record(record: dict, path: str, *, level: int = 4) -> list[str]:
         record["result"].rstrip(".") + ".", "",
         "**Randomness.** " + record["randomness"], "",
         "**Quantitative result.**", "",
-        *quantity_paragraphs(record["quantity"]),
+        *quantity_paragraphs(record["quantity"], record["quantity_purposes"]),
         "**Model and scope.** " + record["scope"].rstrip(".") + ".", "",
     ]
 
@@ -161,7 +177,7 @@ def render_readme(data: dict) -> str:
         record = by_id[problem_id]
         out += [f"### [{record['title']}](problems/{problem_id}/)", "",
                 record['result'].rstrip('.') + '.', "",
-                *quantity_paragraphs(record['quantity']),
+                *quantity_paragraphs(record['quantity'], record['quantity_purposes']),
                 record['scope'].rstrip('.') + '.', ""]
     out += [
         "## Results", "",

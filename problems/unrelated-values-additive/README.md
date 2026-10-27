@@ -14,7 +14,17 @@ Deterministic selection, rational optimization and additive-loss rounding with p
 
 **Time**
 
-<code class="math">\Gamma(1/\varepsilon)^c\mathrm{poly}(H)</code> against <code class="math">\mathrm{FOPT}</code> itself. For fixed rational <code class="math">\varepsilon</code>, also <code class="math">\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)</code>.
+<!-- math-display: 55c29d6875d9c7670b3d4dd8
+\Gamma(1/\varepsilon)^c\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/55c29d6875d9c7670b3d4dd8.svg)
+
+Against <code class="math">\mathrm{FOPT}</code> itself. For fixed rational <code class="math">\varepsilon</code>, also
+
+<!-- math-display: 23b4a2344acb655d6b5109c3
+\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/23b4a2344acb655d6b5109c3.svg)
 
 **Space**
 

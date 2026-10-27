@@ -1,5 +1,11 @@
 # History
 
+## 2026-10-27 — Formula presentation by purpose
+
+- Reviewed the public result cards, generated quantitative summaries and selected verification data. Primary result bounds use source-bound SVGs; parameters, premises and certificate values remain machine-readable literal text. Formula length and inline/block placement no longer select catalogue presentation.
+- Catalogue schema 3 records explicit per-formula purposes and rejects missing or stale annotations. Short showcased bounds and long literal definitions have regression coverage; exact formula sources remain available beside images and in the machine-readable catalogue.
+- Preserved the mathematical claims, canonical proof sources, TeX exports and reviewed PDF artifacts.
+
 ## 2026-10-27 — Fixed-width affine ROABP identity testing
 
 - Added a complete deterministic black-box PIT proof for one unknown-order ROABP under an unknown invertible affine change, with arbitrary local ranks and degrees in every characteristic. The explicit query bound is polynomial in the variable count and scalar total degree for each fixed width; the width-dependent exponent is stated prominently.

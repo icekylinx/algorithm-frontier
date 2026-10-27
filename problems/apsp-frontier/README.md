@@ -16,7 +16,21 @@ Deterministic fully dynamic metric construction. The source map supplies the hie
 
 **Time**
 
-Equalized choice: amortized update work <code class="math">\exp(O(U^{4/5}h^{1/5}))</code>; fixed-<code class="math">C</code> choice: <code class="math">\exp(O(U^{3/4}h^{(C+1)/4}))</code>; queries are polynomial in <code class="math">U</code>.
+Equalized choice: amortized update work
+
+<!-- math-display: a60da7ea6e447a1a7e0cbf2c
+\exp(O(U^{4/5}h^{1/5}))
+-->
+![Formula](../../assets/math/a60da7ea6e447a1a7e0cbf2c.svg)
+
+Fixed-<code class="math">C</code> choice:
+
+<!-- math-display: 41fb6a860c0079a38728a793
+\exp(O(U^{3/4}h^{(C+1)/4}))
+-->
+![Formula](../../assets/math/41fb6a860c0079a38728a793.svg)
+
+Queries are polynomial in <code class="math">U</code>.
 
 **Space**
 

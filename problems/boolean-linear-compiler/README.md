@@ -18,7 +18,12 @@ Deterministic compiler with a supplied deterministic indexed-witness Subset Sum 
 
 **Time**
 
-<code class="math">T_B\le\mathrm{poly}(L)P_{\rm card}2^{\alpha n+\bar Q-(1-\alpha)B}</code> for any integer <code class="math">0\le B\le\bar Q</code>. The polynomial factor includes processing the <code class="math">n+1</code> cardinality layers sequentially. A prescribed cardinality can use its sharper individual parameters.
+<!-- math-display: bd18733ce42a0c1f1b90c50d
+T_B\le\mathrm{poly}(L)P_{\rm card}2^{\alpha n+\bar Q-(1-\alpha)B}
+-->
+![Formula](../../assets/math/bd18733ce42a0c1f1b90c50d.svg)
+
+For any integer <code class="math">0\le B\le\bar Q</code>. The polynomial factor includes processing the <code class="math">n+1</code> cardinality layers sequentially. A prescribed cardinality can use its sharper individual parameters.
 
 **Space**
 
@@ -52,10 +57,7 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 For a prescribed cardinality <code class="math">k</code>, each nonconstant row's cap is
 
-<!-- math-display: b50b44af5cee0742407e6117
-\kappa_i(k)=\min\{W_i+1,d_i,k,n-k\}.
--->
-![Formula](../../assets/math/b50b44af5cee0742407e6117.svg)
+<code class="math">\kappa_i(k)=\min\{W_i+1,d_i,k,n-k\}.</code>
 
 Since <code class="math">d_i</code> is at most the row's original support, the slack parameter never increases. For eight variables, a dense row <code class="math">(M,M,M,M,M,M,M,M+3)</code> with <code class="math">&#124;M&#124;\ge4</code> has normalized support one. At <code class="math">k=3</code> and interval <code class="math">[3M+1,3M+4]</code>, its slack contribution falls from two bits to zero. Other rows retain their own contributions.
 

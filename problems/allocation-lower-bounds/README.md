@@ -14,7 +14,17 @@ Lower bounds for deterministic rank-query algorithms, together with explicit int
 
 **Time**
 
-The query lower bound is <code class="math">\binom{q}{r}-1</code>. On balanced instances it is <code class="math">2^{q-O(\log q)}</code>. The refined heavy-cover parameter can equal zero throughout the allocation lower-bound family.
+The query lower bound and its balanced-instance consequence are:
+
+<!-- math-display: 16fc61b76645b2c4546d5555
+\begin{aligned}
+\text{General:}\quad &\binom{q}{r}-1,\\
+\text{Balanced instances:}\quad &2^{q-O(\log q)}.
+\end{aligned}
+-->
+![Formula](../../assets/math/16fc61b76645b2c4546d5555.svg)
+
+The refined heavy-cover parameter can equal zero throughout the allocation lower-bound family.
 
 **Space**
 

@@ -407,7 +407,12 @@ One live representative per group with bounded prefix recourse.
 
 **Quantitative result.**
 
-<code class="math">O((M\log R+Q)\log(M+2))</code> representative changes.
+<!-- math-display: 011752b29d3338d3d82c08b7
+O((M\log R+Q)\log(M+2))
+-->
+![Formula](assets/math/011752b29d3338d3d82c08b7.svg)
+
+Representative changes.
 
 **Model and scope.** M groups, R resources and Q adaptive deletions; augmenting-path discovery work is separate.
 
@@ -426,7 +431,12 @@ Load:
 -->
 ![Formula](assets/math/be3ba8600c9a74eb2648ebb9.svg)
 
-<code class="math">S\mathrm{poly}(\log S,b)</code> bit work.
+<!-- math-display: e7ae8d9ae5e92f8659d7c5ef
+S\mathrm{poly}(\log S,b)
+-->
+![Formula](assets/math/e7ae8d9ae5e92f8659d7c5ef.svg)
+
+Bit work.
 
 **Model and scope.** Explicit sparse occurrences, rational masses and weights; B bounds one weighted occurrence contribution.
 
@@ -438,9 +448,21 @@ Retain at least half of the unit commodities on short candidate routes.
 
 **Quantitative result.**
 
-<code class="math">O(Z+P)</code> arithmetic operations.
+<!-- math-display: 69400fa7c405cb959132b53d
+O(Z+P)
+-->
+![Formula](assets/math/69400fa7c405cb959132b53d.svg)
 
-Route length <code class="math">\le4H</code> and fractional load at most doubled.
+Arithmetic operations.
+
+Route length:
+
+<!-- math-display: 47423bb0be31e17aae673e36
+\le4H
+-->
+![Formula](assets/math/47423bb0be31e17aae673e36.svg)
+
+And fractional load at most doubled.
 
 **Model and scope.** Supplied DAG and rational masses with total weighted length at most MH; explicit expansion is output-charged.
 
@@ -459,7 +481,12 @@ Time:
 -->
 ![Formula](assets/math/c1dcf4696a8e716b1902343e.svg)
 
-Space <code class="math">(m+\nu)\exp(O(b^2))</code>.
+Space:
+
+<!-- math-display: b00ac230a2032f178e0420ed
+(m+\nu)\exp(O(b^2))
+-->
+![Formula](assets/math/b00ac230a2032f178e0420ed.svg)
 
 **Model and scope.** Supplied fixed edge-partition hierarchy of height h and boundary b; decomposition-input work is additional.
 
@@ -471,7 +498,12 @@ Complete threshold search with unrestricted receiving directions.
 
 **Quantitative result.**
 
-<code class="math">(m+\nu)\mathrm{polylog}S</code> total fixed-ledger work.
+<!-- math-display: 01d316c8a717e09a8532c300
+(m+\nu)\mathrm{polylog}S
+-->
+![Formula](assets/math/01d316c8a717e09a8532c300.svg)
+
+Total fixed-ledger work.
 
 **Model and scope.** The entire ambient allocation support is a forest, with the stated polynomial-range guards.
 
@@ -483,9 +515,19 @@ Complete threshold search with k nonforest incidences.
 
 **Quantitative result.**
 
-<code class="math">(m+\nu(k+1))\mathrm{polylog}S</code> total work.
+<!-- math-display: f6456f4c3fe91aa2c338e696
+(m+\nu(k+1))\mathrm{polylog}S
+-->
+![Formula](assets/math/f6456f4c3fe91aa2c338e696.svg)
 
-<code class="math">(k+1)\mathrm{polylog}S</code> per query/update plus events.
+Total work.
+
+<!-- math-display: ca78fa8f6cd59b815cefa4f5
+(k+1)\mathrm{polylog}S
+-->
+![Formula](assets/math/ca78fa8f6cd59b815cefa4f5.svg)
+
+Per query/update plus events.
 
 **Model and scope.** Fixed polynomial-range ledger; parameterized support theorem does not improve arbitrary-graph matching time.
 
@@ -517,7 +559,15 @@ Smaller extension and whole-ground bases when the returned separator is sparse.
 -->
 ![Formula](assets/math/3d4a2a8c0dc04f91cf2377ee.svg)
 
-<code class="math">\beta(2,3)=(1+\sqrt5)/2</code>, <code class="math">\beta(3,4)=1+\sqrt2</code>.
+<!-- math-display: e496334d35e6e6465f560d09
+\beta(2,3)=(1+\sqrt5)/2
+-->
+![Formula](assets/math/e496334d35e6e6465f560d09.svg)
+
+<!-- math-display: 7dbc7a982dcae1bf2e5e811e
+\beta(3,4)=1+\sqrt2
+-->
+![Formula](assets/math/7dbc7a982dcae1bf2e5e811e.svg)
 
 **Model and scope.** Actual separator width w; matching global bases <code class="math">(5-\sqrt5)/2</code> and <code class="math">3-\sqrt2</code> use the forced-omission wrapper.
 
@@ -529,9 +579,21 @@ Every finite multiplicative guarantee requires near-exhaustive rank queries.
 
 **Quantitative result.**
 
-At least <code class="math">q^{-1}\binom qr-1</code> deterministic queries.
+At least:
 
-<code class="math">2^{q-O(\log q)}</code> for balanced rank.
+<!-- math-display: db253d36a5df37e3cde68c76
+q^{-1}\binom qr-1
+-->
+![Formula](assets/math/db253d36a5df37e3cde68c76.svg)
+
+Deterministic queries.
+
+<!-- math-display: 0ea0f8f5fc95fd914b0a494c
+2^{q-O(\log q)}
+-->
+![Formula](assets/math/0ea0f8f5fc95fd914b0a494c.svg)
+
+For balanced rank.
 
 **Model and scope.** <code class="math">2\le r&lt;q</code>; q explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication.
 
@@ -558,7 +620,12 @@ Globally resource-free owners cover the current player-rank deficit.
 
 **Quantitative result.**
 
-<code class="math">r_M(F)\ge r-k</code> when the full quota is <code class="math">t=3b-2</code> and each current record has b units.
+<!-- math-display: 85aad013254ae9dc0495e88f
+r_M(F)\ge r-k
+-->
+![Formula](assets/math/85aad013254ae9dc0495e88f.svg)
+
+When the full quota is <code class="math">t=3b-2</code> and each current record has b units.
 
 **Model and scope.** Fully normalized prefix invariant; eligible free owners admit a paid exchange; no faster critical-quota runtime follows.
 
@@ -570,7 +637,14 @@ Within-layer joint independence retains the sharp availability-dependent quality
 
 **Quantitative result.**
 
-Factor <code class="math">\lambda^{-1}+3-3/r+\eta</code> with the original rank-exponential or relaxed rank-quasipolynomial time.
+Factor:
+
+<!-- math-display: 1e97261769681dcde00d0440
+\lambda^{-1}+3-3/r+\eta
+-->
+![Formula](assets/math/1e97261769681dcde00d0440.svg)
+
+With the original rank-exponential or relaxed rank-quasipolynomial time.
 
 **Model and scope.** The stated current-blocker and paid availability model; joint independence alone does not supply a polynomial batching theorem.
 
@@ -596,7 +670,12 @@ One shared update set preserves all historical path-hitting certificates.
 
 <code class="math">C\cup I</code> hits current short paths.
 
-Size at most <code class="math">\lvert C\rvert+\lvert I\rvert</code>.
+Size at most:
+
+<!-- math-display: b43cc2c492086bd5d61ed9be
+\lvert C\rvert+\lvert I\rvert
+-->
+![Formula](assets/math/b43cc2c492086bd5d61ed9be.svg)
 
 **Model and scope.** Deletions and length increases are safe; inserted/decreased edge lifetimes enter I; selected-path and layer repair are separate.
 
@@ -608,7 +687,12 @@ Maintain old-label shortest-path forests on tight-reachable vertices.
 
 **Quantitative result.**
 
-<code class="math">O(m+\nu)</code> total graph work and supplied forest edits per fixed-potential interval.
+<!-- math-display: 97ab617779f2e9ff28df7051
+O(m+\nu)
+-->
+![Formula](assets/math/97ab617779f2e9ff28df7051.svg)
+
+Total graph work and supplied forest edits per fixed-potential interval.
 
 **Model and scope.** No ledger births or label changes inside the interval; potential-refresh work is outside the bound.
 
@@ -690,7 +774,12 @@ Choose two genuine neighbors per row and obtain a new row-covering injection wit
 
 **Quantitative result.**
 
-Every component has weight <code class="math">&lt;2L</code>.
+Every component has weight:
+
+<!-- math-display: 213020bf913949b4638fbf0e
+<2L
+-->
+![Formula](assets/math/213020bf913949b4638fbf0e.svg)
 
 Exact arithmetic operations.
 
@@ -733,7 +822,12 @@ Compute the canonical contact envelope, a removable odd crown and its exact opti
 
 One outside bipartite matching plus linear graph work.
 
-Residual gap <code class="math">\le\lfloor(r+b)/2\rfloor</code>.
+Residual gap:
+
+<!-- math-display: ed14949c00266a7c3b923454
+\le\lfloor(r+b)/2\rfloor
+-->
+![Formula](assets/math/ed14949c00266a7c3b923454.svg)
 
 **Model and scope.** Supplied constructive factor-critical bins and a row-covering injection. LOW gives an explicit bound on contact rank r, not on the total retained vertex count; b counts unmatched blockers.
 
@@ -750,7 +844,12 @@ h(P)=\prod_j(p_j-p_{j-1}+1)-2
 -->
 ![Formula](assets/math/b8bb124871e11b97d3a3f6f7.svg)
 
-Full palette <code class="math">h=2^W-2</code>.
+Full palette:
+
+<!-- math-display: ebe41f48a4e3e07e21477607
+h=2^W-2
+-->
+![Formula](assets/math/ebe41f48a4e3e07e21477607.svg)
 
 **Model and scope.** Every characteristic; physical matrix-interval ranks are preserved at the curve. The endpoint-augmented scalar interval is excluded. These examples survive one SV pair and give no hitting-set or PIT-query lower bound.
 
@@ -767,12 +866,14 @@ N=w^2-1
 -->
 ![Formula](assets/math/082c7cadbc4b9b9ba230eb8f.svg)
 
-<!-- math-display: f055b506b86aa4d1f6f2a959
-n=p
--->
-![Formula](assets/math/f055b506b86aa4d1f6f2a959.svg)
+<code class="math">n=p</code>.
 
-Scalar total degree <code class="math">2p(w-1)</code>.
+Scalar total degree:
+
+<!-- math-display: dc05275ccbf90d43492e12a0
+2p(w-1)
+-->
+![Formula](assets/math/dc05275ccbf90d43492e12a0.svg)
 
 **Model and scope.** Every width w≥2 in prime characteristic p>w²+w−2; physical interval ranks survive the ordinary curve. This is a local proof-interface obstruction; one SV pair detects the examples, so no PIT lower bound is claimed.
 

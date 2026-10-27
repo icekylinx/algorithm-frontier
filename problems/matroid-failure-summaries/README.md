@@ -46,9 +46,22 @@ by <code class="math">T\le r</code> when each item has at most one label. It use
 <code class="math">h'</code> is clipped to the label count in the minor. For <code class="math">T\ge3</code> this gives
 <code class="math">O(N(r+T^{h'}))</code> queries. The
 [low-residual-rank refinement](manuscripts/optimal-rank-two-prefix-oracle-construction.md)
-uses <code class="math">O(N(r+1))</code> total queries for <code class="math">T\le1</code>, and <code class="math">O(Nr+(h'+1)^2)</code> for <code class="math">T=2</code>.
+uses <code class="math">O(N(r+1))</code> total queries for <code class="math">T\le1</code>, and
+
+<!-- math-display: a7751e543e2ffca3acbbd903
+O(Nr+(h'+1)^2)
+-->
+![Formula](../../assets/math/a7751e543e2ffca3acbbd903.svg)
+
+For <code class="math">T=2</code>.
 At original rank at most two, its explicit bound is
-<code class="math">2N+\binom{k+1}{2}+(k+1)^2</code>, where <code class="math">k</code> is the clipped nonloop-label budget.
+
+<!-- math-display: 8d4a43f7d6f8860a712eae5f
+2N+\binom{k+1}{2}+(k+1)^2
+-->
+![Formula](../../assets/math/8d4a43f7d6f8860a712eae5f.svg)
+
+Where <code class="math">k</code> is the clipped nonloop-label budget.
 Ordinary computation is <code class="math">O(N(k+1)+(k+1)^2)</code> after label indexing;
 query-set encoding is charged separately.
 If every occurring label may fail, any rank has the additional endpoint

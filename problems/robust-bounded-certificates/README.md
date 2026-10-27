@@ -14,7 +14,19 @@ Deterministic width-guarded branching and exact unit tests. A width-violation ce
 
 **Time**
 
-Let <code class="math">A=\max\{w,\Gamma((d+1)/(d-1))\}</code>. Time is <code class="math">A^c\mathrm{poly}(H)</code> or <code class="math">(2-1/A)^q E(q)\mathrm{poly}(H)</code>.
+Let <code class="math">A=\max\{w,\Gamma((d+1)/(d-1))\}</code>. Time is
+
+<!-- math-display: 21e615b443c11b548e1208b5
+A^c\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/21e615b443c11b548e1208b5.svg)
+
+Or
+
+<!-- math-display: f2a347003a208cf76bda7316
+(2-1/A)^q E(q)\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/f2a347003a208cf76bda7316.svg)
 
 **Space**
 

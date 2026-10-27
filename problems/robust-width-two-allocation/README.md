@@ -14,7 +14,17 @@ Deterministic conflict enumeration, graph-cover branching and exact matroid inte
 
 **Time**
 
-<code class="math">\phi^c\mathrm{poly}(H)</code>, where <code class="math">\phi=(1+\sqrt{5})/2</code>. The whole-ground bound is <code class="math">\left(\frac{5-\sqrt{5}}{2}\right)^q E(q)\mathrm{poly}(H)</code>.
+<!-- math-display: 758ff5fc73aae8d391193d63
+\phi^c\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/758ff5fc73aae8d391193d63.svg)
+
+Where <code class="math">\phi=(1+\sqrt{5})/2</code>. The whole-ground bound is
+
+<!-- math-display: 9d18f22a779e826cdaa894ab
+\left(\frac{5-\sqrt{5}}{2}\right)^q E(q)\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/9d18f22a779e826cdaa894ab.svg)
 
 **Space**
 

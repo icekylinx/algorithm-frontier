@@ -14,7 +14,24 @@ Deterministic enumeration of activation bases and profiles, followed by exact fe
 
 **Time**
 
-Let <code class="math">\delta=\varepsilon/2</code>, <code class="math">K=\lfloor1/\delta\rfloor</code>, <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>, and <code class="math">\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}</code>. The three bounds are <code class="math">\binom{q}{r}\Pi_\varepsilon^r\mathrm{poly}(H_\varepsilon)</code>, <code class="math">\binom{q}{r}6^r\mathrm{poly}(H)</code>, and <code class="math">\binom{q}{r}(k+1)^r\mathrm{poly}(H+k)</code>.
+Let <code class="math">\delta=\varepsilon/2</code>, <code class="math">K=\lfloor1/\delta\rfloor</code>, <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>, and <code class="math">\Pi_\varepsilon=\min\{\binom{L+K}{K},\exp(3(K+1))\}</code>. The three bounds are
+
+<!-- math-display: 1ebdc3ba9ef7134a895c6dbc
+\binom{q}{r}\Pi_\varepsilon^r\mathrm{poly}(H_\varepsilon)
+-->
+![Formula](../../assets/math/1ebdc3ba9ef7134a895c6dbc.svg)
+
+<!-- math-display: 775760c026c176838605a99c
+\binom{q}{r}6^r\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/775760c026c176838605a99c.svg)
+
+And
+
+<!-- math-display: 98a6d92cdc17f107f5795169
+\binom{q}{r}(k+1)^r\mathrm{poly}(H+k)
+-->
+![Formula](../../assets/math/98a6d92cdc17f107f5795169.svg)
 
 **Space**
 

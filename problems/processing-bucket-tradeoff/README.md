@@ -14,7 +14,17 @@ Deterministic bucket enumeration and exact minimum-cost recovery, for every stat
 
 **Time**
 
-<code class="math">(k+1)^q\mathrm{poly}(H+k)</code>. Choosing <code class="math">k=O(\log(1+1/\varepsilon))</code> gives factor <code class="math">3/2+\varepsilon</code> in <code class="math">[O(1+\log(1+1/\varepsilon))]^q\mathrm{poly}(H_\varepsilon)</code>.
+<!-- math-display: 0ec2ea6f2751405f583d3074
+(k+1)^q\mathrm{poly}(H+k)
+-->
+![Formula](../../assets/math/0ec2ea6f2751405f583d3074.svg)
+
+Choosing <code class="math">k=O(\log(1+1/\varepsilon))</code> gives factor <code class="math">3/2+\varepsilon</code> in
+
+<!-- math-display: e55ad0d26aed68993a20d89b
+[O(1+\log(1+1/\varepsilon))]^q\mathrm{poly}(H_\varepsilon)
+-->
+![Formula](../../assets/math/e55ad0d26aed68993a20d89b.svg)
 
 **Space**
 

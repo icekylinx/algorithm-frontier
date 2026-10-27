@@ -49,10 +49,7 @@ Since `ln v>=0` and `ln 2>0`, division by the opposite positive endpoint
 gives a valid enclosure for `log_2 v`. Adding `k` exactly and rounding
 outward yields integers `l,u` such that
 
-<!-- math-display: cc67e438c46030786347af9f
-l/D\le\log_2x\le u/D.
--->
-![Formula](../../../assets/math/cc67e438c46030786347af9f.svg)
+<code class="math">l/D\le\log_2x\le u/D.</code>
 
 For `0<=y<=c`, entropy lower bounds use
 
@@ -72,10 +69,7 @@ The fixed types are `a=.065`, `b=.075`, `s=.14`, `t=.45`. Write
 The original eight recursive families use `gamma_2=1/2`; the three added
 families use `gamma_2=14/25`. The direct branch begins with
 
-<!-- math-display: 6b3c4c4cf53cd44a2713c3ce
-m\in[a,s],\qquad z\in[a,\beta(s)],
--->
-![Formula](../../../assets/math/6b3c4c4cf53cd44a2713c3ce.svg)
+<code class="math">m\in[a,s],\qquad z\in[a,\beta(s)],</code>
 
 and enforces the necessary inequalities `z>=m`, `z<=beta`.
 
@@ -195,10 +189,7 @@ endpoint comparisons of F2.
 It also checks the refined type constraints, the initial difference-table
 size, the fixed compiler grid and all nine outer operation costs at
 
-<!-- math-display: 3054506b2825457cc2040494
-E_2=\frac{158153814247997}{318964058919134}<.495836.
--->
-![Formula](../../../assets/math/3054506b2825457cc2040494.svg)
+<code class="math">E_2=\frac{158153814247997}{318964058919134}&lt;.495836.</code>
 
 The preserved F2 contact budget is <code class="math">S_2=.41077126</code>. The compiler allowance is
 <code class="math">10^{-8}</code> on a fixed core-fraction grid of size <code class="math">10000</code>. All contact

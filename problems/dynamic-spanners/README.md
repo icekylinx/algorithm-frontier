@@ -16,7 +16,15 @@ Both displayed spanner constructions are deterministic, with the hierarchy, stro
 
 **Time**
 
-Tracked-terminal construction: total initialization/update work <code class="math">(n+m_0+I+D)\exp(O(U^{4/5}h^{1/5}))</code>; full-horizon construction: <code class="math">(n+m_0+I+D)\exp(O(U^{5/6}h^{1/6}))</code>.
+The total initialization/update work bounds are:
+
+<!-- math-display: 07e34e8506975b68f80140b9
+\begin{aligned}
+\text{Tracked-terminal:}\quad &(n+m_0+I+D)\exp(O(U^{4/5}h^{1/5})),\\
+\text{Full-horizon:}\quad &(n+m_0+I+D)\exp(O(U^{5/6}h^{1/6})).
+\end{aligned}
+-->
+![Formula](../../assets/math/07e34e8506975b68f80140b9.svg)
 
 **Space**
 

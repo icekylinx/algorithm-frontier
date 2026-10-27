@@ -14,7 +14,19 @@ Deterministic current-blocker search with paid exact primitives. A supplied fact
 
 **Time**
 
-Factor <code class="math">d</code> and the equal-unit core take <code class="math">2^{O(r)}\mathrm{poly}(H)</code>. Factor <code class="math">d+\eta</code> takes <code class="math">\mathrm{poly}(H)\min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}</code>.
+Factor <code class="math">d</code> and the equal-unit core take
+
+<!-- math-display: f53c232e9b6631d4d9719b29
+2^{O(r)}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/f53c232e9b6631d4d9719b29.svg)
+
+Factor <code class="math">d+\eta</code> takes
+
+<!-- math-display: 8ced10ea45fea6f141e8d448
+\mathrm{poly}(H)\min\{2^{O(r)},(r+1)^{O((1+\eta^{-1})\log(r+1))}\}
+-->
+![Formula](../../assets/math/8ced10ea45fea6f141e8d448.svg)
 
 **Space**
 

@@ -10,11 +10,23 @@ Deterministic exact algorithm in the uniform bit model, including indexed-witnes
 
 **Time**
 
-<code class="math">\mathrm{poly}(n,L)2^{n/2}</code> bit operations.
+Bit operations:
+
+<!-- math-display: 759e47987f60f902f10e7a51
+\mathrm{poly}(n,L)2^{n/2}
+-->
+![Formula](../../assets/math/759e47987f60f902f10e7a51.svg)
 
 **Space**
 
-<code class="math">\mathrm{poly}(n,L)2^{E_Sn}</code> writable bits, where <code class="math">E_S=18261635770550353/10^{17}=0.18261635770550353</code>. Read-only input storage is excluded.
+Writable bits:
+
+<!-- math-display: 1c36f87068a1397c4bfafbb6
+\mathrm{poly}(n,L)2^{E_Sn}
+-->
+![Formula](../../assets/math/1c36f87068a1397c4bfafbb6.svg)
+
+Here <code class="math">E_S=18261635770550353/10^{17}=0.18261635770550353</code>. Read-only input storage is excluded.
 
 **Parameters**
 

@@ -63,24 +63,37 @@ proofs shared across families belong in `manuscripts/`. Keep import metadata
 and license boundaries in `provenance/`, rather than maintaining copied
 checkpoint trees or separate draft versions.
 
-Published Markdown uses **literal inline code and standalone SVG equations**.
-It contains no live dollar-delimited or fenced mathematics. Images contain
-their own glyph paths and a white canvas; reading them needs no JavaScript,
-external fonts or mathematical rendering service.
+Choose the representation by **purpose**, not by inline/block position or
+formula length. A formula presented as a headline bound, theorem conclusion,
+comparison, or central derivation belongs in a source-bound SVG. A formula
+used as a parameter, premise, explanation, program contract, exact certificate
+value, or machine input remains literal, copyable text. A short headline can
+be an SVG; a long parameter definition can remain text. Layout follows the
+reading context and does not determine the role.
 
-This rule applies to human-facing presentation. TeX sources, programs, JSON
-catalogues, receipts, manifests and other machine-readable records retain
-their literal formulas and data. Do not replace those values with images,
-HTML or rendered fragments. The presentation builder reads their text and
-produces the separately checked Markdown surfaces.
+SVGs contain their own glyph paths and a white canvas; reading them needs no
+JavaScript, external fonts or mathematical rendering service. Exact TeX is
+retained in the adjacent `math-display` source comment and in the SVG title.
+Literal mathematical text uses escaped `<code class="math">` elements or
+ordinary code spans/blocks. Both retain machine-readable content. The legacy
+`math-display` name records the SVG representation, not a rule that every
+formula on a separate line must become an image.
 
-The source-preserving builder records inline TeX in an escaped
-`<code class="math">` element and display TeX in a `math-display` comment
-immediately before the image. Edit that mathematical source, not the SVG.
-The image name is a digest of the formula and its exact bytes are bound in
-`assets/math/manifest.json`. New authoring text may use conventional dollar
-delimiters or a `math` fence as input to the builder; these must be converted
-before committing. Long expressions belong in displays, not table cells.
+TeX sources, programs, JSON catalogues, receipts, manifests and other
+machine-readable records retain their literal formulas and data. Never
+replace those values with images or rendered fragments. `catalogue.json`
+records a `quantity_purposes` list for every result: one `showcase` or `literal`
+entry per formula in `quantity`, in source order. The generator checks the
+annotation count and uses these reviewed roles, without a length threshold.
+Parameter definitions in other fields remain literal.
+
+Edit the preserved mathematical source, not the SVG. Its digest determines
+the image name and `assets/math/manifest.json` binds its exact bytes. During
+authoring, select the SVG representation with a `math` fence or a display
+source comment; select literal mathematical text with a code element. Dollar
+delimiters are also accepted as legacy authoring input to the builder, but
+are not a purpose classifier or a required published format. Review the
+formula's role before choosing either representation.
 
 ```sh
 npm ci --prefix tools/math-renderer

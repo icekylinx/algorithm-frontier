@@ -8,6 +8,7 @@ import tempfile
 
 from math_presentation import present_markdown, restore_markdown, transform
 from build_math_assets import validate_svg
+from build_catalogue import quantity_paragraphs
 
 ROOT = Path('/example')
 PAGE = ROOT / 'problems' / 'example' / 'proof.md'
@@ -79,6 +80,30 @@ class StaticMathematics(unittest.TestCase):
                 validate_svg(path, source)
             path.write_text(template.format(source.replace(' \n', '&#32;\n')))
             validate_svg(path, source)
+
+    def test_quantity_purpose_overrides_expression_length(self):
+        text = r'Work $O(n)$; parameter $E(N)=\exp(O((\log(N+2))^{4/5}(\log\log(N+4))^{1/5}))$'
+        prepared = '\n'.join(quantity_paragraphs(text, ['showcase', 'literal']))
+        result = self.present(prepared)
+        self.assertEqual(result.count('![Formula]'), 1)
+        self.assertIn('\nO(n)\n', result)
+        self.assertIn('<code class="math">E(N)=', result)
+        recovered = []
+        transform(result, PAGE, source=True, records=recovered, root=ROOT)
+        self.assertEqual([r['tex'] for r in recovered], [
+            'O(n)', r'E(N)=\exp(O((\log(N+2))^{4/5}(\log\log(N+4))^{1/5}))'])
+
+    def test_quantity_roles_reject_stale_or_invalid_annotations(self):
+        for purposes in ([], ['showcase', 'literal'], ['automatic'], 'showcase'):
+            with self.assertRaises(ValueError):
+                quantity_paragraphs('$O(n)$', purposes)
+
+    def test_literal_quantity_keeps_punctuation_and_tex(self):
+        result = self.present('\n'.join(quantity_paragraphs(
+            r'Parameter $N=w^2-1$; degree $2p(w-1)$', ['literal', 'showcase'])))
+        self.assertIn('<code class="math">N=w^2-1</code>', result)
+        self.assertIn('\n2p(w-1)\n', result)
+        self.assertEqual(result.count('![Formula]'), 1)
 
 
 if __name__ == '__main__':

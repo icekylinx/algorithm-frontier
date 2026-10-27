@@ -1,8 +1,10 @@
 # Manuscript formats and publication readiness
 
-The problem pages are the reading index. Inline mathematical expressions are
-literal code; displayed equations are checked-in SVG images with exact,
-recoverable TeX source. They render without GitHub's mathematical interpreter.
+The problem pages are the reading index. Formulas whose main role is to
+showcase a result or derivation use checked-in SVGs with exact, recoverable
+TeX source. Parameters, explanations, program contracts and certificate data
+remain machine-readable literal text, regardless of line placement or length.
+The pages render without GitHub's mathematical interpreter.
 
 ## Incremental TeX migration
 

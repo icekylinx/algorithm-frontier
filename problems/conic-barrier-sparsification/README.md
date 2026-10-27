@@ -52,9 +52,17 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 Let K be a proper cone admitting a standard nu-logarithmically homogeneous self-concordant barrier. For any finite v_1,...,v_m in K, write e for their sum. For 0 < epsilon < 1 there are w_i >= 0 with
 
-`support(w) <= min(m, ceil(C nu / epsilon^2))`
+<!-- math-display: fdd4bb07a02aba58dc191657
+\lvert\mathrm{supp}(w)\rvert\le\min\{m,\lceil C\nu/\varepsilon^2\rceil\}.
+-->
+![Formula](../../assets/math/fdd4bb07a02aba58dc191657.svg)
 
-and both `(1-epsilon)e <=_K sum_i w_i v_i` and `sum_i w_i v_i <=_K (1+epsilon)e`.
+The simultaneous cone-order inequalities are:
+
+<!-- math-display: a1fcec6f55d7145af5ae4d4a
+(1-\varepsilon)e\preceq_K\sum_i w_i v_i\preceq_K(1+\varepsilon)e.
+-->
+![Formula](../../assets/math/a1fcec6f55d7145af5ae4d4a.svg)
 
 The barrier need not be pairwise-self-concordant. The bound does not require e in the interior. See [Theorem 1.1 and its complete proof](manuscripts/self_concordant_sparsification.tex).
 

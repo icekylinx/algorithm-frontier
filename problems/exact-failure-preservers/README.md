@@ -18,7 +18,40 @@ Deterministic preprocessing and reporting in the stated oracle model, including 
 
 **Time**
 
-Deterministic polynomial preprocessing. Beyond a baseline common optimum: <code class="math">O(Nk)</code> independence/value tests and <code class="math">O(Nk^2+k^3)</code> arithmetic work. Arborescences: <code class="math">\widetilde O(mn)</code> arithmetic preprocessing. Query: <code class="math">O(k)</code>, or <code class="math">O(n)</code> for arborescences.
+Deterministic polynomial preprocessing. Beyond a baseline common optimum, the independence/value-test bound is:
+
+<!-- math-display: 719e7435107ff08c8699684d
+O(Nk)
+-->
+![Formula](../../assets/math/719e7435107ff08c8699684d.svg)
+
+The additional arithmetic-work bound is:
+
+<!-- math-display: 05b182418d78dd4dd1c505cb
+O(Nk^2+k^3)
+-->
+![Formula](../../assets/math/05b182418d78dd4dd1c505cb.svg)
+
+Arborescence arithmetic preprocessing takes:
+
+<!-- math-display: b9d235996578dfc5ca86cac1
+\widetilde O(mn)
+-->
+![Formula](../../assets/math/b9d235996578dfc5ca86cac1.svg)
+
+Query work is respectively:
+
+<!-- math-display: e9540ae1ed1bf27fec33357b
+O(k)
+-->
+![Formula](../../assets/math/e9540ae1ed1bf27fec33357b.svg)
+
+or, for arborescences:
+
+<!-- math-display: 387008096a415eb2a5c95f1d
+O(n)
+-->
+![Formula](../../assets/math/387008096a415eb2a5c95f1d.svg)
 
 **Space**
 

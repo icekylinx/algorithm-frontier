@@ -14,7 +14,21 @@ Deterministic in the exact-two and whole-ground variants, with paid exact comple
 
 **Time**
 
-Exact factor two takes <code class="math">(27/4)^{h_C}\mathrm{poly}(H)</code> or <code class="math">(50/27)^q E(q)\mathrm{poly}(H)</code>. For fixed integer <code class="math">d\ge2</code>, replace <code class="math">27/4</code> by <code class="math">A_d=\Gamma((d+1)/(d-1))</code> and the global base by <code class="math">2-1/A_d</code>.
+Exact factor two takes
+
+<!-- math-display: 21639e70b8786ac9d1909eeb
+(27/4)^{h_C}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/21639e70b8786ac9d1909eeb.svg)
+
+Or
+
+<!-- math-display: 4d39de6454b06fa654d85472
+(50/27)^q E(q)\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/4d39de6454b06fa654d85472.svg)
+
+For fixed integer <code class="math">d\ge2</code>, replace <code class="math">27/4</code> by <code class="math">A_d=\Gamma((d+1)/(d-1))</code> and the global base by <code class="math">2-1/A_d</code>.
 
 **Space**
 

@@ -21,7 +21,19 @@ Deterministic greedy commitment selection, residual unit search, exact decomposi
 
 **Time**
 
-For <code class="math">D=D_k</code>, time is <code class="math">2^{O(k)}\mathrm{poly}(H)</code>. For <code class="math">D=D_k+\eta</code> with rational <code class="math">0&lt;\eta\le1</code>, time is <code class="math">\mathrm{poly}(H)\min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\}</code>.
+For <code class="math">D=D_k</code>, time is
+
+<!-- math-display: e1c54f15b9f9f90f59fbc011
+2^{O(k)}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/e1c54f15b9f9f90f59fbc011.svg)
+
+For <code class="math">D=D_k+\eta</code> with rational <code class="math">0&lt;\eta\le1</code>, time is
+
+<!-- math-display: c8150da618f60293cafc87ca
+\mathrm{poly}(H)\min\{2^{O(k)},(k+1)^{O((1+\eta^{-1})\log(k+1))}\}
+-->
+![Formula](../../assets/math/c8150da618f60293cafc87ca.svg)
 
 **Space**
 

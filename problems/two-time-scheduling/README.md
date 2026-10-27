@@ -14,7 +14,14 @@ Deterministic quota search and original-total recovery, including the fixed-fact
 
 **Time**
 
-Put <code class="math">R_d=(d+1)/(d-1)</code>, <code class="math">A_d=\Gamma(R_d)</code>, and <code class="math">B_d=2-1/A_d</code>. Time is <code class="math">B_d^q E(q)\mathrm{poly}(H)</code>. Endpoints are
+Put <code class="math">R_d=(d+1)/(d-1)</code>, <code class="math">A_d=\Gamma(R_d)</code>, and <code class="math">B_d=2-1/A_d</code>. Time is
+
+<!-- math-display: 3b361f6dc64aef0359f728e2
+B_d^q E(q)\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/3b361f6dc64aef0359f728e2.svg)
+
+Endpoints are
 
 <!-- math-display: 6801e0cf663f5fac123cbc6b
 (\text{factor},\text{base})=(3/2,50/27),(5/3,7/4),\bigl(7/4,2-(108/3125)^{1/3}\bigr).

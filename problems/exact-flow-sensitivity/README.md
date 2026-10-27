@@ -18,7 +18,26 @@ Deterministic preprocessing and queries in each stated flow, matching, matroid a
 
 **Time**
 
-Flow and vertex-disjoint paths: deterministic <code class="math">\widetilde O(mn)</code> arithmetic preprocessing. General matching and oracle matroids: deterministic polynomial preprocessing. Price sensitivity beyond a baseline optimum uses <code class="math">O(Nr)</code> independence tests and <code class="math">O(Nr^2+r^3)</code> arithmetic work. Query bounds are listed separately.
+Flow and vertex-disjoint paths have deterministic arithmetic preprocessing:
+
+<!-- math-display: b9d235996578dfc5ca86cac1
+\widetilde O(mn)
+-->
+![Formula](../../assets/math/b9d235996578dfc5ca86cac1.svg)
+
+General matching and oracle matroids have deterministic polynomial preprocessing. Price sensitivity beyond a baseline optimum uses the following independence-test and arithmetic-work bounds, respectively:
+
+<!-- math-display: a4b92db27a7c3741e7c55533
+O(Nr)
+-->
+![Formula](../../assets/math/a4b92db27a7c3741e7c55533.svg)
+
+<!-- math-display: bc7b53cdc64e0cad4c090d30
+O(Nr^2+r^3)
+-->
+![Formula](../../assets/math/bc7b53cdc64e0cad4c090d30.svg)
+
+Query bounds are listed separately.
 
 **Space**
 

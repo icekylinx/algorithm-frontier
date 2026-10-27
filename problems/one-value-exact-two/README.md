@@ -14,7 +14,17 @@ Deterministic corank branching and exact-budget recovery; the whole-ground alter
 
 **Time**
 
-For fixed integer <code class="math">d\ge2</code> set <code class="math">R_d=(d+1)/(d-1)</code>, <code class="math">A_d=\Gamma(R_d)</code>, and <code class="math">B_d=2-1/A_d</code>. Time is <code class="math">A_d^c\mathrm{poly}(H)</code> or <code class="math">B_d^q E(q)\mathrm{poly}(H)</code>. Exact factor two has <code class="math">A_2=27/4</code> and <code class="math">B_2=50/27</code>; factor three has <code class="math">A_3=4</code> and <code class="math">B_3=7/4</code>.
+For fixed integer <code class="math">d\ge2</code> set <code class="math">R_d=(d+1)/(d-1)</code>, <code class="math">A_d=\Gamma(R_d)</code>, and <code class="math">B_d=2-1/A_d</code>. The two time bounds are:
+
+<!-- math-display: 4c9147db2a6ced63ddbbd118
+\begin{aligned}
+\text{Corank parameter:}\quad &A_d^c\mathrm{poly}(H),\\
+\text{Whole ground:}\quad &B_d^q E(q)\mathrm{poly}(H).
+\end{aligned}
+-->
+![Formula](../../assets/math/4c9147db2a6ced63ddbbd118.svg)
+
+Exact factor two has <code class="math">A_2=27/4</code> and <code class="math">B_2=50/27</code>; factor three has <code class="math">A_3=4</code> and <code class="math">B_3=7/4</code>.
 
 **Space**
 

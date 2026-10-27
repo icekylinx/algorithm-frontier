@@ -14,7 +14,15 @@ Deterministic in the near-two, exhaustive exact-two, compulsory J2 and whole-gro
 
 **Time**
 
-Let <code class="math">B(R)=2-1/\Gamma(R)</code>. The near-two theorem takes <code class="math">B(R)^q E(q)\mathrm{poly}(H)</code>; use <code class="math">R=(2+\eta)/\eta</code> for factor <code class="math">2+\eta</code>. J2 takes <code class="math">(27/4)^{\nu_C}\mathrm{poly}(H)</code> or <code class="math">(50/27)^q E(q)\mathrm{poly}(H)</code>.
+Let <code class="math">B(R)=2-1/\Gamma(R)</code> and use <code class="math">R=(2+\eta)/\eta</code> for factor <code class="math">2+\eta</code>. The near-two and J2 time bounds are:
+
+<!-- math-display: b6ca8acc6b895be0c410ccaf
+\begin{aligned}
+\text{Near two:}\quad &B(R)^q E(q)\mathrm{poly}(H),\\
+\text{J2:}\quad &(27/4)^{\nu_C}\mathrm{poly}(H)\text{ or }(50/27)^q E(q)\mathrm{poly}(H).
+\end{aligned}
+-->
+![Formula](../../assets/math/b6ca8acc6b895be0c410ccaf.svg)
 
 **Space**
 

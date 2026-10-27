@@ -14,7 +14,12 @@ Deterministic streamed inclusion covers and fixed-order enumeration. Bernoulli m
 
 **Time**
 
-<code class="math">T_A(q,H)=(2-1/A)^q E(q)\mathrm{poly}(H)</code>, where fixed <code class="math">A&gt;1</code> and <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. Exact-one-half quota cases use <code class="math">A=27/4</code> and base <code class="math">50/27</code>; factor-three count cases use <code class="math">A=4</code> and base <code class="math">7/4</code>.
+<!-- math-display: 73af956c36bc6d28feb71485
+T_A(q,H)=(2-1/A)^q E(q)\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/73af956c36bc6d28feb71485.svg)
+
+Where fixed <code class="math">A&gt;1</code> and <code class="math">E(q)=2^{O(q\log\log(q+2)/\log(q+2))}</code>. Exact-one-half quota cases use <code class="math">A=27/4</code> and base <code class="math">50/27</code>; factor-three count cases use <code class="math">A=4</code> and base <code class="math">7/4</code>.
 
 **Space**
 

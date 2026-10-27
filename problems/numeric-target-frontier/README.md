@@ -12,7 +12,14 @@ Deterministic upper algorithms in the stated exact rank/optimization-oracle mode
 
 **Time**
 
-For total target <code class="math">T&gt;0</code> and <code class="math">Q&gt;0</code> distinct original nonempty eligible-column supports: <code class="math">2^{O(T\log(2+\min\{Q/T,T\}))}\mathrm{poly}(H)</code>. Cases <code class="math">T=0</code> or <code class="math">Q=0</code> are polynomial. The results below give distinct refinements.
+For total target <code class="math">T&gt;0</code> and <code class="math">Q&gt;0</code> distinct original nonempty eligible-column supports:
+
+<!-- math-display: 9d066e8a87642fb6b89ffa91
+2^{O(T\log(2+\min\{Q/T,T\}))}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/9d066e8a87642fb6b89ffa91.svg)
+
+Cases <code class="math">T=0</code> or <code class="math">Q=0</code> are polynomial. The results below give distinct refinements.
 
 **Space**
 

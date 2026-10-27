@@ -17,7 +17,21 @@ Deterministic strong-forest and cut-tree constructions. The source map identifie
 
 **Time**
 
-The native decremental forest has total work <code class="math">(n+m)E_{6/7}</code>. The separately preprocessed exact Gomory–Hu application has total work <code class="math">O(n+m)+(m+1)E_{6/7}</code> under its additional interfaces, where <code class="math">E_{6/7}=\exp(O(U^{6/7}h^{1/7}))</code>.
+The native decremental forest has total work
+
+<!-- math-display: a4c599ab8736bfc9981621c4
+(n+m)E_{6/7}
+-->
+![Formula](../../assets/math/a4c599ab8736bfc9981621c4.svg)
+
+The separately preprocessed exact Gomory–Hu application has total work
+
+<!-- math-display: 515d9ca505a736ed1604df94
+O(n+m)+(m+1)E_{6/7}
+-->
+![Formula](../../assets/math/515d9ca505a736ed1604df94.svg)
+
+Under its additional interfaces, where <code class="math">E_{6/7}=\exp(O(U^{6/7}h^{1/7}))</code>.
 
 **Space**
 

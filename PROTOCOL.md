@@ -38,9 +38,10 @@ formalization status are separate from mathematical proof readiness.
 
 Every public result should separate guarantee, objective, time, space, parameters, representation, lower-bound type, and review status. See [`docs/COMPLEXITY.md`](docs/COMPLEXITY.md). Unconditional rank-oracle query bounds and deterministic-ETH consequences must be displayed as different statements.
 
-GitHub-facing pages use literal inline mathematical code and checked-in SVG
-equations. Their exact TeX source remains recoverable; no live GitHub math
-renderer is required. TeX migration and PDF readiness are tracked separately.
+GitHub-facing pages choose formula presentation by purpose: showcased
+results use checked-in SVGs; explanatory and machine-consumed expressions
+remain literal text. Inline or block placement does not determine the choice.
+Exact TeX source remains recoverable; no live GitHub math renderer is required. TeX migration and PDF readiness are tracked separately.
 Machine-readable TeX, code, JSON and verification records retain their text;
 the static-image convention applies only to presentation surfaces.
 See [the maintenance guide](CONTRIBUTING.md).

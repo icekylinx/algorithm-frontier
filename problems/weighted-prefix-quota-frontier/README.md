@@ -12,7 +12,42 @@ Deterministic exact algorithms and deterministic original-ground reductions in t
 
 **Time**
 
-One order <code class="math">2^{O(B)}</code>; two orders <code class="math">2^{O(B\log(B+2))}</code>; <code class="math">p</code> shared weight families <code class="math">2^{O(pB\log(p+2))}</code>; common-weight laminar quotas <code class="math">2^{(5/9+o(1))B^2}</code>. Each exponential factor is multiplied by <code class="math">\mathrm{poly}(H)</code>. The laminar coefficient uses the locally explicit universal-set construction of Naor–Schulman–Srinivasan, Theorem 7; the complete elementary coloring proof gives <code class="math">2^{(10/9)B^2+O(B\log(B+1))}</code>. A laminar family with a single positive weight value gives polynomial time. Sparse and support-sensitive refinements appear below.
+One order
+
+<!-- math-display: fc058d229d9cb7b7ce14e6b1
+2^{O(B)}
+-->
+![Formula](../../assets/math/fc058d229d9cb7b7ce14e6b1.svg)
+
+Two orders
+
+<!-- math-display: 91e262828c9a668dde2068db
+2^{O(B\log(B+2))}
+-->
+![Formula](../../assets/math/91e262828c9a668dde2068db.svg)
+
+<code class="math">p</code> shared weight families
+
+<!-- math-display: eb5415956ae933c77c772bc8
+2^{O(pB\log(p+2))}
+-->
+![Formula](../../assets/math/eb5415956ae933c77c772bc8.svg)
+
+Common-weight laminar quotas
+
+<!-- math-display: 3a45f19e4233ab67c8ff537c
+2^{(5/9+o(1))B^2}
+-->
+![Formula](../../assets/math/3a45f19e4233ab67c8ff537c.svg)
+
+Each exponential factor is multiplied by <code class="math">\mathrm{poly}(H)</code>. The laminar coefficient uses the locally explicit universal-set construction of Naor–Schulman–Srinivasan, Theorem 7; the complete elementary coloring proof gives
+
+<!-- math-display: a5019403346e8905f53b8164
+2^{(10/9)B^2+O(B\log(B+1))}
+-->
+![Formula](../../assets/math/a5019403346e8905f53b8164.svg)
+
+A laminar family with a single positive weight value gives polynomial time. Sparse and support-sensitive refinements appear below.
 
 **Space**
 

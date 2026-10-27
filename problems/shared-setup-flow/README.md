@@ -14,7 +14,17 @@ Deterministic, conditional on the paid exact minimum-setup restriction optimizer
 
 **Time**
 
-<code class="math">\Gamma(1/\varepsilon)^c\mathrm{poly}(H)</code>; for fixed rational <code class="math">\varepsilon</code>, the whole-ground bound is <code class="math">\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H)</code>.
+The corank-parameter and fixed-accuracy whole-ground bounds are:
+
+<!-- math-display: 18bdad058acbe9e675c9f0b1
+\begin{aligned}
+\text{Corank parameter:}\quad &\Gamma(1/\varepsilon)^c\mathrm{poly}(H),\\
+\text{Whole ground:}\quad &\bigl(2-1/\Gamma(1/\varepsilon)\bigr)^q E(q)\mathrm{poly}(H).
+\end{aligned}
+-->
+![Formula](../../assets/math/18bdad058acbe9e675c9f0b1.svg)
+
+For the whole-ground bound, <code class="math">\varepsilon</code> is fixed and rational.
 
 **Space**
 

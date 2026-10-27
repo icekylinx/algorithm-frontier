@@ -18,7 +18,14 @@ Deterministic uniformly polynomial construction over the supplied rational or fi
 
 **Time**
 
-Uniform deterministic polynomial preprocessing, gated before feature enumeration. Gaussian elimination uses <code class="math">O(ND^2)</code> field operations; padding, determinant features, label features, and rank compression are additional polynomial work.
+Uniform deterministic polynomial preprocessing, gated before feature enumeration. Gaussian elimination uses the following number of field operations:
+
+<!-- math-display: 29265a374f330d77fecab66d
+O(ND^2)
+-->
+![Formula](../../assets/math/29265a374f330d77fecab66d.svg)
+
+Padding, determinant features, label features, and rank compression are additional polynomial work.
 
 **Space**
 

@@ -10,7 +10,14 @@ Deterministic exact algorithm in the uniform bit model, including indexed-witnes
 
 **Time**
 
-<code class="math">C+\mathrm{poly}(n,L)2^{0.495748n}</code> bit operations. The exact
+Bit operations:
+
+<!-- math-display: 45dc56e8c77bc161431d075b
+C+\mathrm{poly}(n,L)2^{0.495748n}
+-->
+![Formula](../../assets/math/45dc56e8c77bc161431d075b.svg)
+
+The exact
 exponent is `E_3=158153814247997/319021177919134`; [Theorem F3](proof.md#theorem-and-proof-structure)
 proves this bound. A
 [deterministic baseline cap](proof.md#a-deterministic-baseline-cap) also

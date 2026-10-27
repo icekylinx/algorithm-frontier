@@ -14,7 +14,19 @@ Deterministic profile and basis enumeration with paid exact rank, submodular-min
 
 **Time**
 
-Put <code class="math">\delta=\varepsilon/3</code>, <code class="math">J=\lfloor1/\delta\rfloor</code>, <code class="math">K=\lceil1/\delta\rceil</code>, <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>, and <code class="math">C_\delta=\binom{L+K}{K}</code>. Time is <code class="math">\binom{q}{r}\min\{C_\delta^r,\exp(4r(J+1))\}\mathrm{poly}(H_\varepsilon)</code>, hence <code class="math">\binom{q}{r}\exp(O(r/\varepsilon))\mathrm{poly}(H_\varepsilon)</code>.
+Put <code class="math">\delta=\varepsilon/3</code>, <code class="math">J=\lfloor1/\delta\rfloor</code>, <code class="math">K=\lceil1/\delta\rceil</code>, <code class="math">L=\left\lceil(1-\delta)/\delta^2\right\rceil</code>, and <code class="math">C_\delta=\binom{L+K}{K}</code>. Time is
+
+<!-- math-display: e9ede6a0724f2a2292ed888c
+\binom{q}{r}\min\{C_\delta^r,\exp(4r(J+1))\}\mathrm{poly}(H_\varepsilon)
+-->
+![Formula](../../assets/math/e9ede6a0724f2a2292ed888c.svg)
+
+Hence
+
+<!-- math-display: ea221737035e25693956aef6
+\binom{q}{r}\exp(O(r/\varepsilon))\mathrm{poly}(H_\varepsilon)
+-->
+![Formula](../../assets/math/ea221737035e25693956aef6.svg)
 
 **Space**
 

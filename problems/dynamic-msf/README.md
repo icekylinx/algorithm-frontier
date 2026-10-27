@@ -14,9 +14,23 @@ Deterministic derived public baseline using deterministic decomposition and prun
 
 **Time**
 
-Worst-case per-update work is <code class="math">\exp(O(U^{2/3}h^{1/3}))</code>, with <code class="math">U=\log(N+4)</code> and <code class="math">h=\log(U+4)</code>. This is a derived public baseline, not a single-source theorem statement.
+Worst-case per-update work is
 
-Initialization costs <code class="math">(n+m_0)\exp(O(U^{2/3}h^{1/3}))</code>, where <code class="math">m_0</code> is the initial edge count. Connectivity queries cost a polynomial logarithm.
+<!-- math-display: 0896e6903093b75eb8e6444e
+\exp(O(U^{2/3}h^{1/3}))
+-->
+![Formula](../../assets/math/0896e6903093b75eb8e6444e.svg)
+
+With <code class="math">U=\log(N+4)</code> and <code class="math">h=\log(U+4)</code>. This is a derived public baseline, not a single-source theorem statement.
+
+Initialization costs
+
+<!-- math-display: 84c7aef51ab536b419a6c559
+(n+m_0)\exp(O(U^{2/3}h^{1/3}))
+-->
+![Formula](../../assets/math/84c7aef51ab536b419a6c559.svg)
+
+Where <code class="math">m_0</code> is the initial edge count. Connectivity queries cost a polynomial logarithm.
 
 **Space**
 

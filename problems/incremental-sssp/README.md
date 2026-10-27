@@ -16,7 +16,17 @@ Deterministic distance maintenance and simple-path reporting, using the realized
 
 **Time**
 
-Total work <code class="math">O(n+m)+(n+m)\exp\!\left(O(\log E(N)+\sqrt{U(h+\log(1/\epsilon))})\right)</code>, with <code class="math">\log E(N)=O(U^{4/5}h^{1/5})</code> from the constructed raw detector and retirement interface.
+The total work and raw-backend envelope are:
+
+<!-- math-display: 7fac22f3132f511b6b33f755
+\begin{aligned}
+&O(n+m)+(n+m)\exp\!\left(O(\log E(N)+\sqrt{U(h+\log(1/\epsilon))})\right),\\
+&\log E(N)=O(U^{4/5}h^{1/5}).
+\end{aligned}
+-->
+![Formula](../../assets/math/7fac22f3132f511b6b33f755.svg)
+
+The raw-backend envelope comes from the constructed detector and retirement interface.
 
 **Space**
 

@@ -14,7 +14,42 @@ Deterministic rank tests, omission branching and job reconstruction; the indepen
 
 **Time**
 
-Exact <code class="math">3/2</code> takes <code class="math">(27/4)^c\mathrm{poly}(H)</code> or <code class="math">(50/27)^q E(q)\mathrm{poly}(H)</code>. Exact <code class="math">5/3</code> also takes <code class="math">2^{O(h)}\mathrm{poly}(H)</code>. More generally use <code class="math">A_d^c\mathrm{poly}(H)</code> or <code class="math">(2-1/A_d)^q E(q)\mathrm{poly}(H)</code> with <code class="math">A_d=\Gamma((d+1)/(d-1))</code>.
+Exact <code class="math">3/2</code> takes
+
+<!-- math-display: 3211a2845f6c7b89cb8295a5
+(27/4)^c\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/3211a2845f6c7b89cb8295a5.svg)
+
+Or
+
+<!-- math-display: 4d39de6454b06fa654d85472
+(50/27)^q E(q)\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/4d39de6454b06fa654d85472.svg)
+
+Exact <code class="math">5/3</code> also takes
+
+<!-- math-display: 5f7a04c2521911ad4f1510c9
+2^{O(h)}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/5f7a04c2521911ad4f1510c9.svg)
+
+More generally use
+
+<!-- math-display: c6c31e6bc3da57cd70f9bee4
+A_d^c\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/c6c31e6bc3da57cd70f9bee4.svg)
+
+Or
+
+<!-- math-display: dae9cd9e80cdc15564511c37
+(2-1/A_d)^q E(q)\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/dae9cd9e80cdc15564511c37.svg)
+
+With <code class="math">A_d=\Gamma((d+1)/(d-1))</code>.
 
 **Space**
 

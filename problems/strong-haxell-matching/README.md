@@ -14,7 +14,12 @@ Deterministic certifying hypergraph matching. The routing and expander-packing t
 
 **Time**
 
-<code class="math">O(&#124;A&#124;+&#124;B&#124;)+p\exp O(h+a\log(q+1)/s)</code>, where <code class="math">q=&#124;A&#124;</code>, <code class="math">p=\sum_e&#124;e&#124;</code> is the full listed incidence volume, <code class="math">U=\log(p+4)</code>, <code class="math">h=\log(U+4)</code>, <code class="math">s=\log\Delta</code>, and <code class="math">a=\min\{\log(2+s),\log(2+\log(r+2))\}</code>. This is the retained rank-sensitive refinement of the earlier rank-free bound.
+<!-- math-display: 043885874e660433b5e0d445
+O(|A|+|B|)+p\exp O(h+a\log(q+1)/s)
+-->
+![Formula](../../assets/math/043885874e660433b5e0d445.svg)
+
+Where <code class="math">q=&#124;A&#124;</code>, <code class="math">p=\sum_e&#124;e&#124;</code> is the full listed incidence volume, <code class="math">U=\log(p+4)</code>, <code class="math">h=\log(U+4)</code>, <code class="math">s=\log\Delta</code>, and <code class="math">a=\min\{\log(2+s),\log(2+\log(r+2))\}</code>. This is the retained rank-sensitive refinement of the earlier rank-free bound.
 
 **Space**
 

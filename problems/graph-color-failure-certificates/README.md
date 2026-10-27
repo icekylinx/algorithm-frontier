@@ -18,7 +18,14 @@ Deterministic preprocessing and exact queries. The near-linear single-color cons
 
 **Time**
 
-Uniform deterministic polynomial preprocessing. A direct activation matrix uses <code class="math">O(mR^2)</code> field operations after sorting, where <code class="math">R=\sum_Cn_Ck_C</code>. For <code class="math">h=1</code>, a separate dynamic-MSF construction has the near-linear work bound below and requires exchange reporting.
+Uniform deterministic polynomial preprocessing. After sorting, the direct activation matrix uses the following number of field operations:
+
+<!-- math-display: 8621c1d65519d977c3e4cd4f
+O(mR^2)
+-->
+![Formula](../../assets/math/8621c1d65519d977c3e4cd4f.svg)
+
+Here <code class="math">R=\sum_Cn_Ck_C</code>. For <code class="math">h=1</code>, a separate dynamic-MSF construction has the near-linear work bound below and requires exchange reporting.
 
 **Space**
 

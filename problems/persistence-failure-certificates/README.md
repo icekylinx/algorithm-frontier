@@ -18,13 +18,26 @@ Deterministic uniformly polynomial construction for the explicit complex and sup
 
 **Time**
 
-Uniform deterministic polynomial preprocessing in the explicit complex and chosen field representation. With <code class="math">C=\binom{h+a+b}{a+b}</code> and <code class="math">rC&lt;N</code>, a direct lifted elimination uses <code class="math">O(N(rC)^2)</code> field operations plus original row selection and feature generation.
+Uniform deterministic polynomial preprocessing in the explicit complex and chosen field representation. With <code class="math">C=\binom{h+a+b}{a+b}</code> and <code class="math">rC&lt;N</code>, a direct lifted elimination uses
+
+<!-- math-display: 4bc22c032272da4b4266ab06
+O(N(rC)^2)
+-->
+![Formula](../../assets/math/4bc22c032272da4b4266ab06.svg)
+
+Field operations plus original row selection and feature generation.
 
 With no additional top-simplex labels, the
 [actual-feature-rank construction](manuscripts/feature-rank-construction.md)
 computes the vertex-feature rank <code class="math">s</code> without enumerating formal monomials.
 After coefficient generation and original-row selection, it uses
-<code class="math">O(n+ans^2+Ns(p+1)+Nsr\rho)</code> field operations, where <code class="math">\rho</code> is the
+
+<!-- math-display: 6f26af69ffe6774233c0f7a6
+O(n+ans^2+Ns(p+1)+Nsr\rho)
+-->
+![Formula](../../assets/math/6f26af69ffe6774233c0f7a6.svg)
+
+Field operations, where <code class="math">\rho</code> is the
 actual stacked contraction rank. Shift comparisons and exact bit arithmetic
 are charged separately. Both boundary-row selection and final lift reduction
 generate one column at a time.

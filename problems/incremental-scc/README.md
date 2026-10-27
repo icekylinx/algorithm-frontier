@@ -14,7 +14,14 @@ Deterministic exact SCC maintenance and label-history construction. The source m
 
 **Time**
 
-Total work <code class="math">(n+m)E(N)^{O(1)}\mathrm{poly}(U)</code> under the raw minimum-ratio-cycle interface, with <code class="math">U=\log(N+4)</code> and <code class="math">E(N)=\exp(O(U^{4/5}(\log U)^{1/5}))</code>; this is total incremental work, not a worst-case per-insertion claim.
+Total work
+
+<!-- math-display: cd4c314d370494ef84ef0db7
+(n+m)E(N)^{O(1)}\mathrm{poly}(U)
+-->
+![Formula](../../assets/math/cd4c314d370494ef84ef0db7.svg)
+
+Under the raw minimum-ratio-cycle interface, with <code class="math">U=\log(N+4)</code> and <code class="math">E(N)=\exp(O(U^{4/5}(\log U)^{1/5}))</code>; this is total incremental work, not a worst-case per-insertion claim.
 
 **Space**
 

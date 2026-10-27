@@ -14,7 +14,10 @@ Deterministic workload aggregation, rank-based unit search, decomposition and ad
 
 **Time**
 
-<code class="math">\mathrm{poly}(H)\min\{2^{O(h)},(h+1)^{O((1+\eta^{-1})\log(h+1))}\}</code>.
+<!-- math-display: 7a9fe7499d686d8b7b961249
+\mathrm{poly}(H)\min\{2^{O(h)},(h+1)^{O((1+\eta^{-1})\log(h+1))}\}
+-->
+![Formula](../../assets/math/7a9fe7499d686d8b7b961249.svg)
 
 **Space**
 
