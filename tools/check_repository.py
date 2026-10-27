@@ -182,6 +182,9 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check('graph-color-failure-certificates check_list_colors', ('problems/graph-color-failure-certificates/verify/check_list_colors.py',)),
         Check('exact-flow-sensitivity check_price', ('problems/exact-flow-sensitivity/verify/check_price.py',)),
         Check('weighted-prefix-quota-frontier check_orders_families', ('problems/weighted-prefix-quota-frontier/verify/check_orders_families.py',)),
+        Check('Original factoring root moments and exact transforms', ('problems/integer-factorization/verify/check_root_moments.py',)),
+        Check('Packed square-zero factoring recovery', ('problems/integer-factorization/verify/check_packed_recovery.py',)),
+        Check('Factoring archive import identities', ('problems/integer-factorization/verify/check_import.py',)),
         Check("Non-Fano obstruction", ("tools/verify_non_fano.py",)),
         Check(
             "Full-contact receipt binding and coverage metadata",

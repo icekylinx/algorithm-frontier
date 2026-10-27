@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "import_date": "2026-10-28",
+  "scope": "Two general factoring archives; the later archive contains increments only. No intermediate archives are inferred.",
+  "language": "All curated artifacts are English. The Chinese checkpoint-10 README is integrated into the English research overview.",
+  "archives": [
+    {
+      "filename": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "bytes": 118848,
+      "sha256": "0e91dcf7cc7ce2a05e0ac3f6406212b593d384200338533b8e771a4ed5d73882"
+    },
+    {
+      "filename": "checkpoint_13_general_factoring_increment_2026-10-28.zip",
+      "bytes": 25184,
+      "sha256": "b8be177631ada5360ff19adc17e810c3f9eb745232b3ffa09c6bd1f29cd6bed9"
+    }
+  ],
+  "members": [
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "checkpoint_10_README_zh.txt",
+      "bytes": 8168,
+      "sha256": "8a90af74a0973b47e5768c6cfba04145d986e8256f68352ebae19ba921793f40",
+      "canonical_target": "manuscripts/integer-factoring-research/README.md",
+      "role": "English integrated overview; Chinese source summary is not redistributed",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "content_hyperbola_sieve_2026-10-27.txt",
+      "bytes": 19194,
+      "sha256": "b3311226d28ec6efad61b996d68dfba473cb79831c88e1609b13c68b7b1e26cf",
+      "canonical_target": "manuscripts/integer-factoring-research/content-hyperbola-sieve.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "crt_trie_hh_log_saving_2026-10-27.txt",
+      "bytes": 19222,
+      "sha256": "7152397ea3cd85a506d9c8337824274f161524b2e8397e932004ce4dbbc00027",
+      "canonical_target": "manuscripts/integer-factoring-research/crt-trie-hh-log-saving.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "deterministic_period_recovery_amortized_2026-10-27.txt",
+      "bytes": 17861,
+      "sha256": "6b81e204e8341453dede14aea2bdf2cdaa91b782e7aca629c2bccbee432561da",
+      "canonical_target": "manuscripts/integer-factoring-research/deterministic-period-recovery-amortized.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "crt_preprocessing_audit_2026-10-27.txt",
+      "bytes": 7976,
+      "sha256": "ac23bc946d5e8a8f9d4aeb3dc64c3d4fb79c3404713a2c09e6368bd1c68eb3df",
+      "canonical_target": "manuscripts/integer-factoring-research/crt-preprocessing-audit.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "aggregated_hh_log_saving_2026-10-27.txt",
+      "bytes": 11350,
+      "sha256": "e77640ee75c3aa915245333b4f99f1dd7c2f11f35005f841547eea2bd9cdf159",
+      "canonical_target": "manuscripts/integer-factoring-research/aggregated-hh-log-saving.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "content_sieve_saturation_addendum_2026-10-27.txt",
+      "bytes": 3284,
+      "sha256": "0d03e402555be51724b4c3e01cf5a27f3b4955bdce4a8d5f6af7f2259c286cdd",
+      "canonical_target": "manuscripts/integer-factoring-research/content-sieve-saturation-addendum.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "large_two_power_uncentered_cover_2026-10-27.txt",
+      "bytes": 10482,
+      "sha256": "43aa16a8120c8b5e6d9740d515718cbb358b1f22d1e1a0f6b7de5bfa3db13d2f",
+      "canonical_target": "manuscripts/integer-factoring-research/large-two-power-uncentered-cover.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "implicit_conic_kernel_gate_2026-10-27.txt",
+      "bytes": 6976,
+      "sha256": "7c788e48da0b5a4b062ddd429b0a73fe4ef02fd049d1b188bc016b6d3ccc8fba",
+      "canonical_target": "manuscripts/integer-factoring-research/implicit-conic-kernel-gate.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "factored_period_cofactor_2026-10-27.txt",
+      "bytes": 8223,
+      "sha256": "9c368a59d54c0b555247b725285625513b4dd66b17471037b9ce5d006564b5e9",
+      "canonical_target": "manuscripts/integer-factoring-research/factored-period-cofactor.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "ragged_geometric_products_2026-10-27.txt",
+      "bytes": 4082,
+      "sha256": "c30debe50bd769cfd43220939c999569ee7eecf9ef04286cfe275413a31d4364",
+      "canonical_target": "manuscripts/integer-factoring-research/ragged-geometric-products.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "conditional_tensor_fft_factoring_2026-10-27.txt",
+      "bytes": 12823,
+      "sha256": "4aef39ee9c549d6f03cbc0b9c03ac44752fa3050f0c5de73e2385ec0373d21a9",
+      "canonical_target": "problems/integer-factorization/manuscripts/conditional-tensor-fft-factoring.md",
+      "role": "conditional reduction",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "random_root_lattice_nfs_interface_2026-10-27.txt",
+      "bytes": 16917,
+      "sha256": "792ca393841c748d47647768729b3dadaa9aecafef91518cc046ce1f274677db",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "orthant_box_nfs_supply_2026-10-27.txt",
+      "bytes": 12489,
+      "sha256": "dbfcd4ea70baf735c3bd0b4ec1f0d63223427ace5275f1fe5ea69f13f8065eda",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "certified_sd_rich_leaf_saturation_2026-10-27.txt",
+      "bytes": 21051,
+      "sha256": "183acbbc8a2c8380479ff6d5671f7c798e85818be7a8b450f2114bf575b3b798",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "odd_degree_first_success_star_addendum_2026-10-27.txt",
+      "bytes": 10745,
+      "sha256": "6e76508ed42d628e0ef98979132fa0f17c41394065f6c621d3bd0b92c6e80992",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "relaxed_star_budget_optimization_audit_2026-10-27.txt",
+      "bytes": 4887,
+      "sha256": "704acb9d2574d282c8a679166755ee5986c39e10d6b93225ab47853aa1980803",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "norm_square_stark_character_encoding_2026-10-27.txt",
+      "bytes": 13308,
+      "sha256": "d8f65d3e4f0c7122968a4fc82a728b4460a660dec6a692bcbc9ed6de3b9e473f",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "dyadic_degree_one_character_sampler_2026-10-27.txt",
+      "bytes": 7901,
+      "sha256": "3ba013a56d991320d06a17647f638c02198b54d6013dbff3796935d34d680431",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "verified_square_root_extraction_2026-10-27.txt",
+      "bytes": 6919,
+      "sha256": "e128ccce0bc58a8820cd41034b7fd760d8fc65571af22362d28a92d98c7be5c1",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "biased_pool_target_span_counterexample_2026-10-27.txt",
+      "bytes": 4233,
+      "sha256": "6e012db101b3a704d5e8abfe9b2f9d9bb5ce317aaf49e327063aaa3572b45b53",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "two_point_root_lattice_projection_2026-10-27.txt",
+      "bytes": 3123,
+      "sha256": "7fce47e7a5fc789a98dc1eb51076c44cb1b64698db155a917a801cbc32f01650",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "ap_supercover_batch_obstruction_2026-10-27.txt",
+      "bytes": 8343,
+      "sha256": "40850536bd743e1900fbeaa7cc92b3ce0ef2899588ac70e0d9179f9bf513c021",
+      "canonical_target": "manuscripts/integer-factoring-research/ap-supercover-batch-obstruction.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "implicit_norm_carrier_obstruction_2026-10-27.txt",
+      "bytes": 3561,
+      "sha256": "d7fecfaeea49e820172c32ee812ae084f691fd18a5a6e0e5d40dfeb65b7845bb",
+      "canonical_target": "manuscripts/integer-factoring-research/implicit-norm-carrier-obstruction.md",
+      "role": "retained separate research branch; not part of the selected conditional theorem review",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "two_point_zero_center_geometry_2026-10-27.txt",
+      "bytes": 4637,
+      "sha256": "90b8104dbb0a8e6d23620ce25560847174e8c5a287a652eedea843a78da62f69",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_10_general_factoring_theory_2026-10-27.zip",
+      "member": "universal_finite_character_separator_2026-10-27.txt",
+      "bytes": 8391,
+      "sha256": "f6db1340160378cf7037f84fe08f6a0b4232eeb8196bdbcf18e8915227a8598b",
+      "canonical_target": null,
+      "role": "Excluded from this repository import by collection scope; metadata only, no text retained.",
+      "disposition": "excluded-route"
+    },
+    {
+      "archive": "checkpoint_13_general_factoring_increment_2026-10-28.zip",
+      "member": "checkpoint_13_README_en.txt",
+      "bytes": 6562,
+      "sha256": "73d1fdffa19122986d5d37a4530ea23ef7b22f1bb419024bc70f2f6007f94d2e",
+      "canonical_target": "manuscripts/integer-factoring-research/README.md",
+      "role": "English integrated overview; Chinese source summary is not redistributed",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_13_general_factoring_increment_2026-10-28.zip",
+      "member": "one_contraction_complete_factoring_2026-10-28.txt",
+      "bytes": 17767,
+      "sha256": "0b199f4f2eb02e6b7848f61ef7691db2aad0f0c4fcc38d48f9a9fe2fd1060ee5",
+      "canonical_target": "problems/integer-factorization/manuscripts/one-contraction-complete-factoring.md",
+      "role": "conditional reduction",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_13_general_factoring_increment_2026-10-28.zip",
+      "member": "sidon_second_moment_factoring_2026-10-28.txt",
+      "bytes": 9217,
+      "sha256": "5706b952ffef7f0850127e4512810081ec98a419c1d24b8085efeda037d92c01",
+      "canonical_target": "problems/integer-factorization/manuscripts/sidon-second-moment-factoring.md",
+      "role": "conditional reduction",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_13_general_factoring_increment_2026-10-28.zip",
+      "member": "packed_square_zero_prony_factoring_2026-10-28.txt",
+      "bytes": 14823,
+      "sha256": "c05e2e3efd4ed52c784f059242a5d24a8d2ccbc7aa626462649cef2b1e7b7696",
+      "canonical_target": "problems/integer-factorization/manuscripts/packed-square-zero-prony-factoring.md",
+      "role": "conditional reduction",
+      "disposition": "integrated"
+    },
+    {
+      "archive": "checkpoint_13_general_factoring_increment_2026-10-28.zip",
+      "member": "tensor_parameter_and_char2_obstructions_2026-10-28.txt",
+      "bytes": 8288,
+      "sha256": "16f67fc7fc3141a0d19081b1be21fd41f14f02debadf1fe69338803c0d7ae455",
+      "canonical_target": "problems/integer-factorization/manuscripts/tensor-parameter-and-char2-obstructions.md",
+      "role": "conditional reduction",
+      "disposition": "integrated"
+    }
+  ],
+  "external_snapshot": {
+    "retrieved": "2026-10-28",
+    "source": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/build/quantitative-reduction.tex",
+    "normalized_content_sha256": "0b2b136c4f37ee0583dda40ee0c0d692f4751537d3d18539a389cd467ea8359a",
+    "note": "Content digest of the retrieved final-newline-normalized text, not a pinned Git commit or a proof of the external theorem."
+  },
+  "counts": {
+    "source_archives": 2,
+    "source_members": 31,
+    "retained_members": 19,
+    "excluded_members": 12,
+    "canonical_targets": 18
+  }
+}

@@ -1,5 +1,13 @@
 # History
 
+## 2026-10-28 — Conditional deterministic complete integer factorization
+
+- Added a fourth selected result: assuming the cited succinct Boolean tensor-contraction theorem, uniform deterministic complete prime factorization with subpolynomial numerical-input time and polynomial bit space. The full statement, classical bit model and accepted external premise are displayed on the homepage and result card.
+- Reconstructed the linear-Boolean-edge root verifier and complete prime-power recovery. The basic moment, Sidon second-moment and packed square-zero constructions use at most one contraction and expose their distinct precision, truncation, preprocessing and recovery tradeoffs. They retain the same leading time exponent; no optimality or practical-speed claim is made.
+- Independently reviewed signed root-moment separation, saturated gcd refinement, exact transform carries, legal literal-ring weighting, monotone binary regular-representation paths, guarded coordinate packing and characteristic-two Hankel/trace recovery. The actual external theorem interface was checked; correctness of that theorem remains the explicit premise.
+- Recorded both supplied archives and all 31 original member identities. Nineteen retained members map to 18 canonical English texts; 12 out-of-scope members have metadata only. The direct one-fifth-exponent candidate remains a separately scoped research branch. Source-derived mathematics and current attribution were preserved without inventing intermediate increments.
+- Added exact finite checks for original roots, moments and transforms, packed recovery, and import identity replay. Verification is limited to the changed factoring arithmetic, packing and import programs, plus affected catalogue, review, notation and link surfaces. The full repository regression was stopped; no completed whole-suite pass is claimed for this import. The selected conditional family is ready for internal review; external peer review, priority certification, external-backend implementation and proof-assistant verification are not claimed.
+
 ## 2026-10-27 — Final price-query and multi-prefix implementations
 
 - Added an initialized ordinary two-matroid price reporter for independent signed cost changes and supplied-catalog insertions. Protected starters, active-only return paths and minimum-hop literal decoding handle negative insertion gaps. The native structure uses the stated quadratic all-pairs record alternative, with linear explicit reports and no retained original cost list or query-time independence calls. Cardinality remains prescribed.

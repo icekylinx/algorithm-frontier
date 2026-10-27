@@ -47,6 +47,22 @@
       ]
     },
     {
+      "title": "Number theory",
+      "records": [
+        {
+          "id": "integer-factorization",
+          "title": "Conditional deterministic integer factorization",
+          "result": "Complete prime factorization of every positive binary integer, assuming the stated Boolean tensor-contraction theorem",
+          "quantity": "$2^{O(n/\\sqrt{\\log n})}=N^{O(1/\\sqrt{\\log\\log N})}=N^{o(1)}$",
+          "scope": "`n=bit_length(N)`. The external succinct Boolean tensor-contraction theorem is an explicit accepted premise, checked against its literal ring and entry interface. Uniform deterministic bit operations and polynomial space; at most one contraction for complete recovery. Distinct precision/recovery tradeoffs are proved on the card. This is subexponential, rather than polynomial, in input bit length; no practical or priority claim",
+          "randomness": "Conditional uniform deterministic classical bit algorithm. Exact transform-field construction, root recovery and factor extraction use no randomness. Correctness of the cited external tensor-contraction theorem is assumed; local finite verification does not establish it.",
+          "quantity_purposes": [
+            "showcase"
+          ]
+        }
+      ]
+    },
+    {
       "title": "Numeric targets and quota geometry",
       "note": "Every bound includes polynomial work in the full encoded input. Binary resource counts remain compressed, and mandatory bases retain their original total.",
       "records": [
@@ -1032,6 +1048,7 @@
   "featured": [
     "general-matching",
     "subset-sum-fast-deterministic",
-    "roabp-affine-pit"
+    "roabp-affine-pit",
+    "integer-factorization"
   ]
 }

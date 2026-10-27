@@ -25,6 +25,18 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [A quadratic leading-digit obstruction at the ordinary moment curve](problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md)
 - [Stronger bounds under distinct ROABP promises](problems/roabp-affine-pit/manuscripts/special-cases.md)
 
+## Number theory
+
+### [Conditional deterministic integer factorization](problems/integer-factorization/)
+
+[Statement](problems/integer-factorization/README.md) · [Main proof](problems/integer-factorization/proof.md) · [Sources](problems/integer-factorization/sources.md) · [Verification](problems/integer-factorization/verify/README.md)
+
+- [Conditional general factoring through succinct Fourier networks](problems/integer-factorization/manuscripts/conditional-tensor-fft-factoring.md)
+- [One contraction for complete deterministic integer factorization](problems/integer-factorization/manuscripts/one-contraction-complete-factoring.md)
+- [One literal-ring contraction with subpolynomial precision](problems/integer-factorization/manuscripts/packed-square-zero-prony-factoring.md)
+- [One literal-ring contraction at square-root precision](problems/integer-factorization/manuscripts/sidon-second-moment-factoring.md)
+- [Scoped limitations of direct contraction retuning](problems/integer-factorization/manuscripts/tensor-parameter-and-char2-obstructions.md)
+
 ## Numeric targets and quota geometry
 
 ### [Numeric targets and support patterns](problems/numeric-target-frontier/)
@@ -1128,6 +1140,21 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Audit of the public-provider flat-forest spanner comparison](manuscripts/graph-backends/tracked-terminal-spanner-public-flat-comparator-audit.md)
 - [Uniform source interfaces for the `4/5` composition](manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md)
 - [A virtual-expander hierarchy with explicit terminal sets](manuscripts/graph-backends/virtual-expander-hierarchy-reconstruction.md)
+
+### Integer factoring research
+
+- [AGGREGATED GEOMETRIC COLLISIONS IN THE HARVEY--HITTMEIR SEARCH](manuscripts/integer-factoring-research/aggregated-hh-log-saving.md)
+- [AP supercovers and shared q-factorial batches for thickened quadratics](manuscripts/integer-factoring-research/ap-supercover-batch-obstruction.md)
+- [CONTENT-SENSITIVE HYPERBOLA COVER FOR GENERAL DETERMINISTIC FACTORING](manuscripts/integer-factoring-research/content-hyperbola-sieve.md)
+- [Saturation of the current small-modulus content-cover count](manuscripts/integer-factoring-research/content-sieve-saturation-addendum.md)
+- [CRT SIGN-CUBE PREPROCESSING AND ZERO-FREE AUDIT](manuscripts/integer-factoring-research/crt-preprocessing-audit.md)
+- [CRT SIGN TRIES IN THE HARVEY--HITTMEIR FACTORING SEARCH](manuscripts/integer-factoring-research/crt-trie-hh-log-saving.md)
+- [DETERMINISTIC RECOVERY FROM ONE PERIOD: AMORTIZED VERSION](manuscripts/integer-factoring-research/deterministic-period-recovery-amortized.md)
+- [FACTORING OR SHORTENING A PERIOD WITH A KNOWN FACTORED COFACTOR](manuscripts/integer-factoring-research/factored-period-cofactor.md)
+- [An explicit power-saving gate for the uncentered conic cover](manuscripts/integer-factoring-research/implicit-conic-kernel-gate.md)
+- [Stable finite algebra carriers for the quadratic phase](manuscripts/integer-factoring-research/implicit-norm-carrier-obstruction.md)
+- [Large two-power modulus: a globally uncentered coefficient cover](manuscripts/integer-factoring-research/large-two-power-uncentered-cover.md)
+- [RAGGED GEOMETRIC PREFIX PRODUCTS](manuscripts/integer-factoring-research/ragged-geometric-products.md)
 
 ### Matching and routing
 

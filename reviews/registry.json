@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "last_updated": "2026-10-27",
+  "last_updated": "2026-10-28",
   "policy": {
     "executable_evidence_has_explicit_scope": true,
     "finite_checks_are_formal_verification": false,
@@ -1454,6 +1454,37 @@
           "The promise is one unknown-order ROABP under an invertible affine map, with a known scalar total-degree bound; small base fields require extension-field oracle access.",
           "The polynomial query exponent depends on width; no FPT, unbounded-width polynomial-time, singular-projection or orbit-closure claim is made.",
           "The generic Hasse pivot criterion is standard and attributed. Internal model-assisted review, finite tests and presentation checks are not external peer review, proof-assistant verification or priority certification."
+        ]
+      }
+    },
+    {
+      "id": "integer-factorization",
+      "path": "problems/integer-factorization",
+      "evidence_note": "problems/integer-factorization/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "problems/integer-factorization/verify/check_root_moments.py",
+          "scope": "407 original odd inputs; 1620 digit-parameter cases including 605 prime-power cases, 2838 ordered prime-pair separations, 965207 saturated-gcd candidates and 363 nonempty rough residuals; 27 first-moment and 9 Sidon second-moment literal-ring evaluations, 21 root polynomials, 50 Sidon sets, 21 signed-carry/direct-grouped transform cases and perturbed-carry rejections, and 592 exhaustive tiny root/quotient carry assignments. Finite original arithmetic, not the external fast contraction or its asymptotic bound."
+        },
+        {
+          "path": "problems/integer-factorization/verify/check_packed_recovery.py",
+          "scope": "Exact small-field checks: 256 square-zero identities, 512 binary regular-representation columns, 87 monotone integer-path cases; all 2517 distinct-root subsets of the 16-element field of size at most four, 22653 guarded packing round trips and 2516 nonempty Hankel/trace recoveries; explicit unguarded carry counterexample; 32 full Cauchy half-grids of rank eight. No external contraction theorem, full network implementation, asymptotic runtime or general factoring lower bound is tested."
+        },
+        {
+          "path": "problems/integer-factorization/verify/check_import.py",
+          "scope": "Two archives, 31 original members, 19 retained members, 12 excluded members and 18 canonical English targets, source identities, attribution and language; exact original ZIP/member byte and hash replay when local archives are present. CI checks metadata/targets without the ignored ZIPs. Provenance only, not mathematical verification."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "The complete conditional classical deterministic factoring reduction and one-contraction recovery family: the original linear-edge Fourier multiplication/prefix reduction; three-forward-transform unique-extension root verifier; signed digit-moment separation and saturated unitary gcd refinement; basic, Sidon square-root-precision and packed subpolynomial-precision resource choices; deterministic characteristic-two field construction, monotone regular-representation paths, literal-ring guarded output and Hankel/trace root recovery. The actual external theorem interface and the scoped template limitations were checked.",
+        "date": "2026-10-28",
+        "conditions": [
+          "The cited OpenAI October 25, 2026 succinct Boolean tensor-contraction theorem is an explicit accepted premise. This review checks its literal applicability and proves the local reduction conditional on it; it neither re-proves the external theorem nor validates its implementation. The result is deterministically subpolynomial in numerical input and subexponential, still superpolynomial, in binary input length.",
+          "The exact theorem counts Boolean edges, has a fixed linear precision/truncation allowance and supports uniform succinct entry procedures. Internal transform-field and auxiliary square-zero algebra computations are compiled into Boolean predicates and literal-ring outputs; no broader coefficient-ring theorem is assumed. Original inputs need no balance or squarefreeness promise.",
+          "The later increment improves contraction count and precision/recovery tradeoffs without improving the leading time exponent. Full-grid and full-packet qualifications limit the characteristic-two obstruction; no optimality or general factoring lower bound is claimed. The separate direct one-fifth-exponent candidate remains outside this selected theorem scope.",
+          "Finite arithmetic programs check small instances and provenance; no complete fast contraction backend is shipped. Publication-wide priority, external peer review, practical cryptanalytic speed and proof-assistant verification are not certified."
         ]
       }
     }

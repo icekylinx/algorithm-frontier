@@ -85,3 +85,13 @@ The [evidence registry](../reviews/README.md) distinguishes manuscript
 arguments, exact computational certificates and finite regression checks.
 Historical internal-review statements do not constitute external peer review
 or proof-assistant verification.
+
+## Integer factorization imports
+
+The [factoring import record](imports/integer-factorization.json) identifies
+both supplied archives and all 31 original members. Nineteen retained members
+map to 18 canonical English targets; 12 excluded members have metadata only.
+The [selected conditional theorem](../problems/integer-factorization/) and
+[retained direct research branch](../manuscripts/integer-factoring-research/)
+have separate review scopes. Original ZIPs remain ignored. The factoring
+import checker replays their exact bytes when they are locally available.

@@ -163,7 +163,7 @@ def render_readme(data: dict) -> str:
     count = sum(len(g["records"]) for g in groups)
     out = [
         "# Algorithm Frontier", "",
-        "Algorithms and proofs in combinatorial optimization, algebraic complexity, "
+        "Algorithms and proofs in combinatorial optimization, number theory, algebraic complexity, "
         "dynamic graphs, and sparsification. Each problem page gives the theorem, complexity, "
         "randomness, dependencies, and verification evidence.", "",
         "[![Repository checks](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml/badge.svg)]"
@@ -173,7 +173,7 @@ def render_readme(data: dict) -> str:
         "[Review and verification](reviews/README.md) · "
         "[Citation](CITATION.cff)", "",
         "## Selected results", "",
-        "Three deterministic algorithmic results. The linked "
+        "Selected deterministic algorithmic results, with conditional premises stated explicitly. The linked "
         "problem pages give "
         "the full statements, proof dependencies, executable coverage and review status.", "",
     ]

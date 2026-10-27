@@ -1,14 +1,14 @@
 # Algorithm Frontier
 
-Algorithms and proofs in combinatorial optimization, algebraic complexity, dynamic graphs, and sparsification. Each problem page gives the theorem, complexity, randomness, dependencies, and verification evidence.
+Algorithms and proofs in combinatorial optimization, number theory, algebraic complexity, dynamic graphs, and sparsification. Each problem page gives the theorem, complexity, randomness, dependencies, and verification evidence.
 
 [![Repository checks](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml/badge.svg)](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-**55 problem families · 24 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
+**56 problem families · 24 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
 
 ## Selected results
 
-Three deterministic algorithmic results. The linked problem pages give the full statements, proof dependencies, executable coverage and review status.
+Selected deterministic algorithmic results, with conditional premises stated explicitly. The linked problem pages give the full statements, proof dependencies, executable coverage and review status.
 
 ### [Deterministic general-graph maximum matching](problems/general-matching/)
 
@@ -45,6 +45,17 @@ Deterministic black-box identity testing with unknown order and unknown invertib
 
 Here <code class="math">K(w)=2^{O(w^2)}</code>, the full finite direction-grid minimum is displayed. Arbitrary local ranks and entry degrees; known scalar total degree `D` and extension-field oracle access when needed. Polynomial query count for each fixed width, with a width-dependent exponent. Complete internally reconstructed proof; external peer review and priority certification are not claimed.
 
+### [Conditional deterministic integer factorization](problems/integer-factorization/)
+
+Complete prime factorization of every positive binary integer, assuming the stated Boolean tensor-contraction theorem.
+
+<!-- math-display: 7c1229e327a02a67a87a3706
+2^{O(n/\sqrt{\log n})}=N^{O(1/\sqrt{\log\log N})}=N^{o(1)}
+-->
+![Formula](assets/math/7c1229e327a02a67a87a3706.svg)
+
+`n=bit_length(N)`. The external succinct Boolean tensor-contraction theorem is an explicit accepted premise, checked against its literal ring and entry interface. Uniform deterministic bit operations and polynomial space; at most one contraction for complete recovery. Distinct precision/recovery tradeoffs are proved on the card. This is subexponential, rather than polynomial, in input bit length; no practical or priority claim.
+
 ## Results
 
 Browse by problem. Each link opens its statement, proof and dependencies. [Computational models](docs/COMPLEXITY.md) and [randomness contracts](docs/RANDOMNESS.md) explain how to compare bounds.
@@ -57,6 +68,10 @@ Browse by problem. Each link opens its statement, proof and dependencies. [Compu
 ### Algebraic complexity
 
 - [Deterministic PIT for fixed-width affine ROABP orbits](problems/roabp-affine-pit/)
+
+### Number theory
+
+- [Conditional deterministic integer factorization](problems/integer-factorization/)
 
 ### Numeric targets and quota geometry
 

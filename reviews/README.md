@@ -388,6 +388,14 @@ The complete general fixed-width affine-orbit PIT proof and direction-grid refin
 
 [Proof](../problems/roabp-affine-pit/proof.md) · [Dependencies](../problems/roabp-affine-pit/sources.md) · [Evidence](../problems/roabp-affine-pit/verify/README.md) · Reviewed 2026-10-27
 
+### [Conditional deterministic integer factorization](../problems/integer-factorization/)
+
+The complete conditional classical deterministic factoring reduction and one-contraction recovery family: the original linear-edge Fourier multiplication/prefix reduction; three-forward-transform unique-extension root verifier; signed digit-moment separation and saturated unitary gcd refinement; basic, Sidon square-root-precision and packed subpolynomial-precision resource choices; deterministic characteristic-two field construction, monotone regular-representation paths, literal-ring guarded output and Hankel/trace root recovery. The actual external theorem interface and the scoped template limitations were checked.
+
+**Dependencies and scope.** The cited OpenAI October 25, 2026 succinct Boolean tensor-contraction theorem is an explicit accepted premise. This review checks its literal applicability and proves the local reduction conditional on it; it neither re-proves the external theorem nor validates its implementation. The result is deterministically subpolynomial in numerical input and subexponential, still superpolynomial, in binary input length. The exact theorem counts Boolean edges, has a fixed linear precision/truncation allowance and supports uniform succinct entry procedures. Internal transform-field and auxiliary square-zero algebra computations are compiled into Boolean predicates and literal-ring outputs; no broader coefficient-ring theorem is assumed. Original inputs need no balance or squarefreeness promise. The later increment improves contraction count and precision/recovery tradeoffs without improving the leading time exponent. Full-grid and full-packet qualifications limit the characteristic-two obstruction; no optimality or general factoring lower bound is claimed. The separate direct one-fifth-exponent candidate remains outside this selected theorem scope. Finite arithmetic programs check small instances and provenance; no complete fast contraction backend is shipped. Publication-wide priority, external peer review, practical cryptanalytic speed and proof-assistant verification are not certified.
+
+[Proof](../problems/integer-factorization/proof.md) · [Dependencies](../problems/integer-factorization/sources.md) · [Evidence](../problems/integer-factorization/verify/README.md) · Reviewed 2026-10-28
+
 ## Components ready for review
 
 ### [Numeric targets and support patterns](../problems/numeric-target-frontier/)
@@ -583,6 +591,9 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/incremental-scc/verify/check_label_history.py](../problems/incremental-scc/verify/check_label_history.py)
 - [problems/incremental-sssp/verify/check_path_reporting.py](../problems/incremental-sssp/verify/check_path_reporting.py)
 - [problems/independent-transversal/verify/check_elementary.py](../problems/independent-transversal/verify/check_elementary.py)
+- [problems/integer-factorization/verify/check_import.py](../problems/integer-factorization/verify/check_import.py)
+- [problems/integer-factorization/verify/check_packed_recovery.py](../problems/integer-factorization/verify/check_packed_recovery.py)
+- [problems/integer-factorization/verify/check_root_moments.py](../problems/integer-factorization/verify/check_root_moments.py)
 - [problems/intrinsic-values-near-two/verify/check_intrinsic.py](../problems/intrinsic-values-near-two/verify/check_intrinsic.py)
 - [problems/item-matroid-union/verify/check_union_reduction.py](../problems/item-matroid-union/verify/check_union_reduction.py)
 - [problems/label-block-cut/verify/check_whole_blocks.py](../problems/label-block-cut/verify/check_whole_blocks.py)
