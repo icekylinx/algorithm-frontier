@@ -1,10 +1,16 @@
 # History
 
+## 2026-10-27 — Compact exact unit-flow failure queries
+
+- Added a self-contained exact-rational reference for fixed-value and minimum-cost maximum unit flow after an independent original-arc deletion. It stores original-record preservers, short demand paths and hub trees; queries report costs, changes or full flows without rerunning optimization or retaining the full input graph.
+- Proved baseline optimality, residual repair, compact reporting, conservative polynomial preprocessing and rational bit accounting. Parallel records use the support-sensitive bound; the uniform flow-value specialization requires simple input. The reference does not claim the faster research preprocessing or the other sensitivity clients.
+- Independent Boolean-support enumeration checked 8,342 graph/profile instances, 127,254 fixed-value queries and 58,423 maximum-flow queries. Signed hub paths, queries with search disabled, original-ID recovery and 12 malformed cases also passed.
+
 ## 2026-10-27 — Local proof dependencies and complete query certificates
 
 - Added independent end-to-end verification of mixed-failure matching answers: universal kernel preservation, exact residual reconstruction, compact optimality and original-record feasibility are checked together without importing a solver. All 18,030 existing query comparisons use it; 30 adversarial cases, an alternative native optimum and a producer-blocked interpreter exercise its boundary.
 - Completed the allocation-lower-bounds review with direct greedy residual-capacity and explicit component-decomposition proofs, clarified the distinct matroid ranks, and added finite exact construction checks. Marked the complete family ready for review within its deterministic value-oracle models.
-- Checked the two-scenario corank hardness reduction against its bounded nonnegative k-SUM primary source, made binary encoding explicit, and marked that family ready under the stated deterministic W[1]-hardness assumption. Integer service, exact budgets and optional common-basis selection remain essential.
+- Checked the two-scenario corank hardness reduction against its bounded nonnegative `k`-SUM primary source, made binary encoding explicit, and marked that family ready under the stated deterministic `W[1]`-hardness assumption. Integer service, exact budgets and optional common-basis selection remain essential.
 - These statuses invite mathematical review; executable checks do not establish the unbounded lower bounds, and no external peer review or fast matching hierarchy implementation is claimed.
 
 ## 2026-10-27 — Complete formulas in result showcases
@@ -31,13 +37,13 @@
 - Added a complete deterministic black-box PIT proof for one unknown-order ROABP under an unknown invertible affine change, with arbitrary local ranks and degrees in every characteristic. The explicit query bound is polynomial in the variable count and scalar total degree for each fixed width; the width-dependent exponent is stated prominently.
 - Added the finite direction-grid refinement, complete native-TeX sources and two papers in the shared repository style. The 12-page core and 5-page addendum have separate exact-source internal audits and full-page visual review. Publication changes reverse to the frozen research-session source hashes.
 - Preserved stronger small-width, good-characteristic and rank-restricted results under their exact assumptions. Added exact palette-support constructions and their degree-two actual-curve lift, with explicit physical-interval and non-PIT-lower-bound scope.
-- Added an original-field actual-curve construction attaining local Hasse digit degree w²−1, with a complete determinant proof and independent finite checks. This bounds a local proof interface; the examples are detected by one SV pair and give no PIT lower bound.
+- Added an original-field actual-curve construction attaining local Hasse digit degree `w^2-1`, with a complete determinant proof and independent finite checks. This bounds a local proof interface; the examples are detected by one SV pair and give no PIT lower bound.
 - Added separate general and rank-one/full exact-arithmetic generator prototypes, finite palette and Artin-ring checks, source bindings and scoped evidence records. The implementation uses the rationals or constructed prime-field extensions and leaves arbitrary-base-field embeddings to the theorem's oracle model. The separate review of the named rigidity preprint records concrete defects in its identified statements without using them to certify this proof.
 - Made this the third selected result after deterministic general-graph matching and deterministic Subset Sum. Cone sparsification and all earlier families remain in the complete catalogue. No external peer review, proof-assistant certification or exhaustive priority verification is claimed.
 
 ## 2026-10-26 — Barrier-parameter cone sparsification
 
-- Integrated the complete English LaTeX proof of O(nu/epsilon^2) cone-order sparsification for arbitrary proper cones with an ordinary nu-logarithmically homogeneous standard self-concordant barrier, including boundary sums. The corresponding prior general barrier theorem was quadratic in nu; the stronger pairwise-self-concordant bound is credited separately.
+- Integrated the complete English LaTeX proof of `O(nu/epsilon^2)` cone-order sparsification for arbitrary proper cones with an ordinary `nu`-logarithmically homogeneous standard self-concordant barrier, including boundary sums. The corresponding prior general barrier theorem was quadratic in `nu`; the stronger pairwise-self-concordant bound is credited separately.
 - Distinguished the new zero-extended exponential-barrier argument from the imported Reis--Rothvoss positivity, symmetrization, and partial-coloring results. Added explicit dual, face, lift, and nuclear-norm consequences and the ideal separation-oracle model boundary.
 - Added a full problem card, primary-source ledger, proof reading map and scoped research-session audit entry. The new result is the third selected homepage highlight after deterministic general-graph matching and deterministic Subset Sum; earlier matroid results remain in the complete index.
 - No general Turing implementation, external peer review, formal proof-assistant verification, or exhaustive historical priority is claimed.
@@ -45,22 +51,22 @@
 ## 2026-10-26 — Optimal oracle queries and construction in the actual feature rank
 
 - Proved an exact rank-two one-label prefix-summary construction using
-  O(N+h^2) independence queries, with an explicit capped-list algorithm,
+  `O(N+h^2)` independence queries, with an explicit capped-list algorithm,
   original-item failure witnesses and a matching deterministic query lower
-  bound for exact minimum output when N>=h+3. Ordinary work is accounted
-  separately. Fixed contraction now gives O(Nr+(h'+1)^2) queries at T=2
-  and the sharp r+Th support bound for T<=2. Actual low-rank tree terminals
-  and an arbitrary-rank N+r_U*ell all-label-budget endpoint are explicit.
+  bound for exact minimum output when `N>=h+3`. Ordinary work is accounted
+  separately. Fixed contraction now gives `O(Nr+(h'+1)^2)` queries at `T=2`
+  and the sharp `r+Th` support bound for `T<=2`. Actual low-rank tree terminals
+  and an arbitrary-rank `N+r_U*ell` all-label-budget endpoint are explicit.
 - Made represented and persistence lifts constructive in their actual rank
   without enumerating the formal monomial coordinates. A degree-ordered
-  evaluation module considers only r+d*rho candidate rows. Nonzero feature
+  evaluation module considers only `r+d*rho` candidate rows. Nonzero feature
   shifts permit the same original boundary rows to compress every
   contraction block. Both original-row discovery and final simplex
   selection stream columns, with rational and finite-field cost ledgers.
-- Sharpened the unchanged reference matching compression from 4nu to 3nu
+- Sharpened the unchanged reference matching compression from `4nu` to `3nu`
   vertices by counting the actual crossing matching. Added a universally
-  certified mixed-failure kernel with at most (f+2)c vertices, or (f+3)nu
-  for the default cover, and the existing O(nu^2+nu*f) edge bound. The
+  certified mixed-failure kernel with at most `(f+2)c` vertices, or `(f+3)nu`
+  for the default cover, and the existing `O(nu^2+nu*f)` edge bound. The
   all-cover-subset proof also permits arbitrary attached cover contexts.
   The known positive-budget asymptotic size is credited to the 2022
   fault-tolerant matching paper; exact counts, this local construction and
@@ -106,11 +112,11 @@
   charges signed carries, boundary intervals, slack variables and exact
   cardinality packing separately and gives a strict dense-row example.
 - Proved a single fixed contraction for one-label failure summaries. Its
-  minor has rank equal to the total single-label replacement count T,
+  minor has rank equal to the total single-label replacement count `T`,
   preserves every failed-label query and every original-order prefix,
-  and reduces the construction tree from rank r to rank T. The zero- and
+  and reduces the construction tree from rank `r` to rank `T`. The zero- and
   one-dimensional cases have separate algorithms and the latter has the
-  sharp retained size r+h. Published a complete source-bound paper for
+  sharp retained size `r+h`. Published a complete source-bound paper for
   this theorem and expanded the editable TeX exports to 27 manuscripts.
 - Extended the review registry to all 22 supporting manuscripts as well as
   all 53 problem families, with exact scopes, original sources and executable
@@ -128,13 +134,13 @@
 - Corrected the earlier consolidation's mistaken treatment of absent fast
   executable code as an unresolved mathematical hypothesis. Matching,
   min-cost flow, incremental SCC/SSSP, the APSP curve, both spanner regimes,
-  strong forests, fixed-k cut-tree construction and routing/packing retain
+  strong forests, fixed-`k` cut-tree construction and routing/packing retain
   their proved checkpoint results and precise input/output promises.
 - Restored the complete general low-space Subset Sum theorem and the full
   uniform fast compiler to their review scopes. The third positive-containment
   lookup adds 16 final-source branches, with 317138 accepted leaves and
   634268 visited nodes. Together with the unchanged 62-branch menu it gives
-  E3=158153814247997/319021177919134, below 0.495748. The preserved F2 ledger
+  `E3=158153814247997/319021177919134`, below 0.495748. The preserved F2 ledger
   remains independently runnable; provenance checks and clean recomputation
   are explicitly different verification modes.
 - Credited the four-times-matching-number vertex reduction to the original
@@ -149,7 +155,7 @@
 ## 2026-10-26 — Complete reference packages and sharper local reductions
 
 - Accelerated both crossing compression and final bipartite matching with
-  a nonrecursive phase algorithm. The matching-number exponent is 5/2 on
+  a nonrecursive phase algorithm. The matching-number exponent is `5/2` on
   bipartite retained components, including a linear cover certificate;
   other components retain the cubic guarantee and the same certificate format.
 - Added an executable degree-interval and cardinality solver on native
@@ -159,8 +165,8 @@
   integral min-cost-flow theorem, giving an alternative Gomory–Hu flow
   route with actual-call size bounds. The earlier local flow construction
   retains its own completed dependency chain.
-- Improved exact laminar recovery to a self-contained 10/9 quadratic
-  exponent coefficient, or 5/9 with the precisely named locally explicit
+- Improved exact laminar recovery to a self-contained `10/9` quadratic
+  exponent coefficient, or `5/9` with the precisely named locally explicit
   universal-set theorem. Added homogeneous completion, projected coloring
   identities, histogram costs, compatible-cut quotas and the two-weight
   oracle/encoded-program lower-bound distinction.
@@ -181,22 +187,22 @@
 
 - Implemented the early checkpoint’s cover-side compression in the exact
   matching solver, including its independent optimality certificate, giving
-  O(n+m log(m+2)+sum_i nu(G_i)^3). Its original preservation lemma limits
+  `O(n+m log(m+2)+sum_i nu(G_i)^3)`. Its original preservation lemma limits
   each blossom solve to at most four times the component matching number. A connected 420-vertex example
   now solves on 40 vertices while certification still checks the larger kernel.
 - Generalized the second Subset Sum lookup and replayed all 62 exact branches.
   A finite-volume cone lemma then extends every contact continuously; the
-  new exact exponent is 158153814247997/318964058919134, below 0.495836.
+  new exact exponent is `158153814247997/318964058919134`, below 0.495836.
   All 44 previous branch records agree in their stable fields. Checkpoint
   provenance and a safe resumable rational traversal are explicit.
-- Constructed canonical prefix summaries by a basis tree with N*S(dr,h)
+- Constructed canonical prefix summaries by a basis tree with `N*S(dr,h)`
   independence queries. The original-basis refinement improves the general
   weighted size factor, and the sharp rank construction has linear input
   dependence before its parameter-only deletion stage.
-- Proved the exact two-failure oracle maximum through rank four: 3r for
+- Proved the exact two-failure oracle maximum through rank four: `3r` for
   ranks at most three, and 13 at rank four. The obstruction is minimal in
   rank, label count and ground size. A singleton replacement union has the
-  sharp size r+2t and a profile-sensitive query algorithm; its quotient proof
+  sharp size `r+2t` and a profile-sensitive query algorithm; its quotient proof
   explicitly handles failed items inside the contracted set.
 
 ## 2026-10-26 — Executable matching, explicit graph dependencies and rendering
@@ -212,7 +218,7 @@
   restoration above corrects that classification. Proved the detector’s
   difference-constraints potential lemma locally.
 - Improved persistent component first-coalescence queries to
-  O(1+log log(n+2)) using the common suffix of permanently retired labels.
+  `O(1+log log(n+2))` using the common suffix of permanently retired labels.
   Added exact checks for those histories, clipped-tree path reporting,
   affine flow recovery and safe deferred prefix initialization.
 - Added nonnegative-integer distance, flat-forest and spanner adapters,
@@ -242,12 +248,12 @@
   least two. The sharp represented weighted bound cannot hold for arbitrary
   oracle matroids; rank-only and one-failure results remain valid.
 - Transferred the constructions to sparse packing: exact unweighted support
-  kappa*binomial(delta*kappa,delta), and at most exp(delta)*kappa^(delta+1)
+  `kappa*binomial(delta*kappa,delta)`, and at most `exp(delta)*kappa^(delta+1)`
   items for arbitrary signed profits, with deterministic FPT preprocessing.
   Original-context replacement, capacity-sensitive budgets, and the separate
   uniform polynomial sunflower tradeoff are explicit.
 - Reduced the necessary laminar lower rows from the previous quadratic
-  accounting to at most the root budget B by telescoping positive charges.
+  accounting to at most the root budget `B` by telescoping positive charges.
   Added five exact finite checkers and scoped review invitations.
 
 ## 2026-10-26 — Self-contained arithmetic for the short-range algorithm
@@ -265,9 +271,9 @@
 
 ## 2026-10-26 — A tighter certified deterministic Subset Sum exponent
 
-- Tightened the same proven contact envelope to S=0.4111243 and the fixed
-  compiler allowance to 10^-8, using a 10000-point core grid. The exponent
-  becomes 158153814247997/318928754919134, approximately 0.495890733616.
+- Tightened the same proven contact envelope to `S=0.4111243` and the fixed
+  compiler allowance to `10^-8`, using a 10000-point core grid. The exponent
+  becomes `158153814247997/318928754919134`, approximately 0.495890733616.
   All nine outer cost rates were independently recomputed.
 - Proved the refined initial difference-table bound against the actual
   transform exponent; the stronger old bound below one is not valid at the
@@ -284,8 +290,8 @@
   faster deterministic Subset Sum, and sharp correlated-failure summaries.
   The matching dependency scope was displayed; its incorrect conditional
   classification was later corrected by the checkpoint restoration above.
-- Tightened the matching kernel cutoff from c+1 to c neighbors and proved
-  its sharpness, componentwise cost refinement, and a c+f-neighbor kernel
+- Tightened the matching kernel cutoff from `c+1` to `c` neighbors and proved
+  its sharpness, componentwise cost refinement, and a `c+f`-neighbor kernel
   for native mixed edge/vertex failures on a fixed simple graph.
 - Isolated the unconditional sparse degree-factor reduction and added exact
   and ranged cardinality with one feasibility call. Added independent finite
