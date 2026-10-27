@@ -1,5 +1,12 @@
 # History
 
+## 2026-10-27 — Executable matching queries after native failures
+
+- Added a query adapter for a certificate-verified mixed-failure matching kernel. It validates every query against the stronger outside-vertex/crossing-edge budget, solves the compact retained residual graph, and restores original vertices, input indices and typed edge IDs.
+- Arbitrary cover deletions and cover-internal edge deletions retain their proved free-deletion scope. Objects omitted from the kernel and overlapping vertex/edge failures still consume their proper budget. The returned optimality certificate uses the disclosed compact subproblem; universal preservation uses the separately verified kernel certificate.
+- Added independent full-residual subset-DP comparisons for 18,030 queries, plus 12 rejection cases, and registered the adapter in the standard evidence suite. This is a polynomial reference implementation; no fast hierarchy or dynamic-query bound is claimed.
+- Validation covered the 71 standard check entries. The final two continuous-contact checks were completed with `--jobs 1` after sandbox restrictions prevented their multiprocessing workers from starting. No complete 62-plus-16-branch replay was requested or performed.
+
 ## 2026-10-27 — Formula presentation by purpose
 
 - Reviewed the public result cards, generated quantitative summaries and selected verification data. Primary result bounds use source-bound SVGs; parameters, premises and certificate values remain machine-readable literal text. Formula length and inline/block placement no longer select catalogue presentation.

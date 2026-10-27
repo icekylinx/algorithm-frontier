@@ -129,6 +129,7 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check('Optimal rank-two oracle summaries and exact-output lower bounds', ('problems/matroid-failure-summaries/verify/check_rank_two_prefix.py',)),
         Check('Actual-feature-rank modules and streamed persistence contractions', ('problems/persistence-failure-certificates/verify/check_feature_construction.py',)),
         Check('Universal mixed-failure matching kernels and independent certificates', ('problems/general-matching/verify/check_failure_kernel.py',)),
+        Check('Native mixed-failure matching queries and certificate lifting', ('problems/general-matching/verify/check_failure_query.py',)),
         Check('Linear-size selector degree conversion and matching adapter', ('problems/degree-constrained-subgraphs/verify/check_linear_selector.py',)),
         Check('Canonical contact-rank crowns and physical optimum offsets', ('manuscripts/graph-backends/verify/check_odd_crown.py',)),
         Check('Exact demand trimming and arbitrary-rank support forests', ('manuscripts/graph-backends/verify/check_static_allocations.py',)),

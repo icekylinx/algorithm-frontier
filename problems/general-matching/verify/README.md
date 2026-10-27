@@ -167,3 +167,27 @@ distinguishes the earlier <code class="math">4\nu</code> kernel proof from
 the current implementation and tests.
 
 Read the [main proof](../proof.md) with its [source map](../sources.md). Repository checks validate links, mathematical syntax and catalogue coverage; they do not certify the asymptotic theorem. No proof-assistant verification or external peer review is claimed.
+
+## Native mixed-failure queries
+
+The [query adapter](../reference/failure_query.py) rechecks the universal
+kernel certificate, applies a valid native failure query, solves the compact
+retained residual graph, and lifts the matching to original vertices, input
+indices and typed edge IDs. Failed outside vertices and crossing edges are
+charged separately even when absent from the kernel or incident to each
+other. Cover deletions and cover-internal edge deletions are free under the
+stronger proved query contract.
+
+```sh
+python3 -B problems/general-matching/verify/check_failure_query.py
+```
+
+The checker compares 18,030 queries with an independent subset-DP optimum on
+the full residual graph: 76 exhaustive graphs, 676 kernels, and 232 additional
+compressed-star, native-ID, free-deletion and empty cases. Twelve rejection
+cases cover malformed queries and a tampered kernel. Native edge recovery,
+input immutability and the compact solver's certificate are checked separately.
+The returned optimality certificate uses the disclosed compact subproblem's
+coordinates; original-query optimality also uses the verified universal
+kernel theorem. There is no separate composite-query verifier or fast
+end-to-end hierarchy implementation claimed by this adapter.

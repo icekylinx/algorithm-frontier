@@ -161,6 +161,10 @@
         {
           "path": "problems/general-matching/verify/check_failure_kernel.py",
           "scope": "76 exhaustive graphs and 48 seeded graphs; 3,950 independently verified universal kernels, 3,295 maximum crossing layers, 16,451 charged-failure cases, 158,734 left-subset ranks and 727,954 general matching comparisons including uncharged cover/internal deletions. Exact sharp stars, huge budgets, native IDs, certificate corruption and optimized-Python CLI behavior are checked."
+        },
+        {
+          "path": "problems/general-matching/verify/check_failure_query.py",
+          "scope": "Native mixed-failure query adapter: 18030 full-residual subset-DP comparisons over 76 simple graphs and 676 certified kernels, including 232 additional compressed-star, native-ID, free-deletion and empty cases; 12 rejection checks. Each query rechecks its universal kernel certificate, charges all outside vertices and crossing edges, solves the retained residual graph and lifts original edge records. The local optimality certificate belongs to the disclosed compact subproblem; this is not a fast hierarchy or dynamic-query bound."
         }
       ],
       "review": {

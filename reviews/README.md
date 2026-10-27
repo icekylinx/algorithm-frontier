@@ -296,6 +296,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/general-matching/verify/check_certificate_search.py](../problems/general-matching/verify/check_certificate_search.py)
 - [problems/general-matching/verify/check_cover_compression.py](../problems/general-matching/verify/check_cover_compression.py)
 - [problems/general-matching/verify/check_failure_kernel.py](../problems/general-matching/verify/check_failure_kernel.py)
+- [problems/general-matching/verify/check_failure_query.py](../problems/general-matching/verify/check_failure_query.py)
 - [problems/general-matching/verify/check_reductions.py](../problems/general-matching/verify/check_reductions.py)
 - [problems/general-matching/verify/check_reference.py](../problems/general-matching/verify/check_reference.py)
 - [problems/group-metric-constraints/verify/check_quotient_rounding.py](../problems/group-metric-constraints/verify/check_quotient_rounding.py)

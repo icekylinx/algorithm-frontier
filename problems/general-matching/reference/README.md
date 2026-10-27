@@ -111,6 +111,47 @@ The output gives original vertex numbers and native edge IDs.  A particular
 query is answered by deleting its failed objects and solving the retained
 graph; preprocessing alone does not return all future matchings.
 
+[failure_query.py](failure_query.py) supplies that query adapter through
+`solve_failure_query(graph, kernel, *, failed_vertices=(), failed_edge_ids=())`.
+It first checks the supplied universal certificate, deletes the requested
+native objects, solves the compact retained residual graph, and lifts the
+matching to original vertex numbers, input indices, endpoint orientations
+and typed edge IDs. For example, after constructing `kernel` from `graph`:
+
+```python
+from failure_query import solve_failure_query
+
+answer = solve_failure_query(graph, kernel, failed_vertices=[0])
+print(answer["matching"])
+```
+
+Failures refer to original vertices and edge IDs, including objects omitted
+from the kernel. Integer `1` and string `"1"` remain distinct IDs. Duplicate
+or unknown failures and booleans are rejected. Every listed outside vertex
+and crossing edge costs one unit, even when a failed edge touches a failed
+vertex; cover vertices and cover-internal edges are uncharged. Queries
+exceeding the certified budget are rejected. Thus the stronger theorem's
+scope, including arbitrarily many cover deletions, is available directly.
+
+The result's `subproblem` and `subproblem_result` describe the compact
+retained residual graph and its ordinary matching optimality certificate.
+They can be passed to `verify_result`; their vertex numbers and input
+indices are local. `subproblem_vertices` maps local vertices back to the
+original graph. The top-level `matching` alone uses original input indices
+and endpoints. The universal certificate and the residual certificate
+establish optimality together, after checking the specified deletions and
+the coordinate lift. The adapter is a callable Python interface and does
+not add a CLI or a standalone composite-query verifier.
+
+Each query rechecks the full supplied kernel certificate, scans the original
+graph and retained records, sorts native IDs, and runs the ordinary solver
+on the compact residual graph. It allocates original-universe vertex and
+edge arrays for validation and mapping. It claims no sublinear, dynamic,
+or fast-hierarchy query bound. The dedicated
+[query checker](../verify/check_failure_query.py) compares full residual
+optima with an independent subset dynamic program and checks the residual
+certificates and native-coordinate lifts.
+
 The order <code class="math">O(\nu f)</code> in vertices for positive budgets was already proved
 by [Banerjee, Gupta, Raman and Saurabh (2022)](https://doi.org/10.1007/978-3-031-09574-0_8).
 The new package supplies the local layered proof, exact counts, stronger
