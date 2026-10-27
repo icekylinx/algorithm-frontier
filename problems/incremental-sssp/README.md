@@ -8,7 +8,14 @@ Maintains one-source approximate distances under arbitrary online edge insertion
 
 **Objective and output**
 
-For every reachable vertex, the estimate is between the true distance and one plus epsilon times the true distance. Unreachable vertices return infinity. A reported path with **k** edges costs linear output work times a polynomial in log of the global size.
+For every reachable vertex <code class="math">v</code>, the maintained estimate satisfies:
+
+<!-- math-display: 8b83ee9124a1c3564128b6f3
+d(s,v)\leq\widetilde d(v)\leq(1+\varepsilon)d(s,v).
+-->
+![Formula](../../assets/math/8b83ee9124a1c3564128b6f3.svg)
+
+Unreachable vertices return infinity. A reported path with `k` edges costs linear output work times a polynomial in log of the global size.
 
 **Randomness**
 
@@ -34,7 +41,7 @@ Actual root vertices, inserted edges, and auxiliary copies over their lifetimes,
 
 **Parameters**
 
-**N** is the power-of-two cap; **U=log N**; **h=log(U+4)**; <code class="math">0&lt;\epsilon\le1/2</code> with <code class="math">\log(1/\epsilon)\le c_*U</code>; <code class="math">E(N)</code> is the raw-backend factor; **k** is the number of returned path edges.
+`N` is the power-of-two cap; `U=log N`; `h=log(U+4)`; <code class="math">0&lt;\epsilon\le1/2</code> with <code class="math">\log(1/\epsilon)\le c_*U</code>; <code class="math">E(N)</code> is the raw-backend factor; `k` is the number of returned path edges.
 
 **Model and representation**
 
@@ -48,7 +55,7 @@ This is a research upper bound with the explicitly identified local construction
 
 **Ready for review.** The complete frozen-detector incremental SSSP construction, its realized numerical interface, the simple-path reporting argument and nonnegative-integer perturbation adapter. Includes exact zero distances, clipped-tree intersections, loop removal and accuracy/bit accounting.
 
-**Dependencies and scope.** The input, accuracy and polynomial numerical-range promises remain explicit. Reporting a path with k edges costs (k+1) poly(U). Finite path tests support the reporting lemmas and do not measure the asymptotic detector update time.
+**Dependencies and scope.** The input, accuracy and polynomial numerical-range promises remain explicit. Reporting a path with `k` edges costs `(k+1) poly(U)`. Finite path tests support the reporting lemmas and do not measure the asymptotic detector update time.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 

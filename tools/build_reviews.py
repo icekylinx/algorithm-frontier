@@ -49,7 +49,7 @@ def render_registry(data: dict, catalogue: dict) -> str:
         'executable used by the canonical runner. For Subset Sum it validates '
         'the two-level and third-lookup receipts\' source/menu bindings, checks '
         'both scalar ledgers and the recovery paths, and freshly replays '
-        'the rho=1.7 and direct two-level branches. To cleanly replay all '
+        'the `rho=1.7` and direct two-level branches. To cleanly replay all '
         '62 two-level and 16 third-lookup branches:', '',
         '```sh', 'python3 tools/check_repository.py --full-contacts --jobs 4', '```', '',
         'Receipt binding establishes provenance and coverage metadata; only '

@@ -22,7 +22,7 @@ The main proof gives the family-level theorem composition. The following canonic
 
 - Quanrud, *Quotient Sparsification for Submodular Functions*, Theorem 1.1 and restriction Lemma 2.1: <https://kentq.s3.amazonaws.com/submodular-sparsification.pdf>. Adaptive calls are an internal consequence with an explicit error and probability proof.
 - Chandrasekaran, Chekuri, Wang, and Zhu, *Hedgegraph Polymatroids*, Theorem 7: <https://arxiv.org/html/2510.25043v1>. Ordinary hedge partition sparsification is an antecedent.
-- The support lower bounds are proved from cut inequalities and the classical L1 Khintchine inequality; no spectral lower bound is substituted for a cut lower bound.
+- The support lower bounds are proved from cut inequalities and the classical <code class="math">L_1</code> Khintchine inequality; no spectral lower bound is substituted for a cut lower bound.
 - The prime-dimensional commuting-block representation uses standard Weyl/stabilizer algebra: <https://arxiv.org/abs/quant-ph/0408190>.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

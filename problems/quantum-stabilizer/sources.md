@@ -4,6 +4,26 @@
 
 The main proof gives the family-level theorem composition. The following canonical manuscripts contain the detailed arguments and the hypotheses of each algorithmic interface.
 
+## Audited witness scope
+
+The deterministic witness results have a separate proof route from the
+sparsification theorems. [Theorem 5 of the main proof](proof.md#5-a-classical-stabilizer-witness)
+and [Theorem 1 and Corollary 2 of the witness manuscript](manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md)
+use balanced peeling, phase-aware symplectic elimination, and pinching in a
+complete stabilizer basis. Their operator comparisons follow from the
+displayed anticommuting-involution identities and Weyl projector overlap
+calculation. The exact parity or finite-field objective includes its scalar
+term, and enumeration gives the stated stabilizer tableau in polynomial
+space.
+
+This scope uses standard compact Pauli/Weyl and stabilizer linear algebra,
+with Hostens--Dehaene--De Moor as the algebraic reference below. It does not
+invoke Quanrud, rational quotient ranks, Gaussian partial coloring, adaptive
+resparsification, or correlated importance pools. Readiness for this witness
+scope therefore does not depend on certifying those separate sparsification
+backends. It also does not establish a polynomial-time ground-state optimizer
+or an optimal universal stabilizer approximation factor.
+
 ## Canonical manuscripts
 
 | Manuscript | Proof role |

@@ -16,7 +16,7 @@ No result-specific executable check is supplied. The argument above is a mathema
 
 ## Model and verification boundaries
 
-The main theorem permits arbitrary machine-type times and one assignment budget. The slot-surplus companion instead uses common type sizes, no assignment budget, an additive largest-smaller-job loss, and its stated parameter promise at OPT.
+The main theorem permits arbitrary machine-type times and one assignment budget. The slot-surplus companion instead uses common type sizes, no assignment budget, an additive largest-smaller-job loss, and its stated parameter promise at <code class="math">\mathrm{OPT}</code>.
 
 The [source map](../sources.md) identifies the actual proof dependencies. Repository checks validate the registry, links, notation and generated catalogue; those checks do not establish mathematical correctness. Proof-assistant verification and external peer review are not claimed.
 

@@ -5,8 +5,8 @@ oracle lower bound. The companion manuscripts establish fixed-dimensional,
 single-matroid, support-geometric and approximation refinements. The source
 map identifies their exact models and dependencies.
 
-T is the sum of numeric targets, Q counts distinct nonempty support patterns,
-d is fixed dimension where stated, and H charges encoded input and paid
+`T` is the sum of numeric targets, `Q` counts distinct nonempty support patterns,
+`d` is fixed dimension where stated, and `H` charges encoded input and paid
 primitive work. Zero-target preprocessing, mandatory original bases and exact
 budgets remain part of the relevant theorem.
 

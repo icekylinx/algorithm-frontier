@@ -1,9 +1,9 @@
 # A quadratic leading-digit obstruction at the ordinary moment curve
 
 <!-- review-status:start -->
-**Ready for review.** The binomial determinant formula and original-field actual-curve construction have a complete symbolic proof and a separate internal reconstruction. The first ordinary homogeneous component has digit degree exactly w²−1.
+**Ready for review.** The binomial determinant formula and original-field actual-curve construction have a complete symbolic proof and a separate internal reconstruction. The first ordinary homogeneous component has digit degree exactly `w^2-1`.
 
-**Dependencies and scope.** Width w≥2 and prime characteristic p>w²+w−2; the construction uses n=p coordinates and scalar total degree 2p(w−1). The curve is the ordinary moment curve, whose p-th coordinate has zero derivative. This is not a counterexample to a derivative-separating-curve theorem. Every physical interval preserves full rank. The endpoint-augmented scalar interval does not. One SV pair detects the example, so no PIT or generator lower bound is asserted. The audit is internal model-assisted reconstruction, not external peer review, formal certification or priority determination.
+**Dependencies and scope.** Width `w>=2` and prime characteristic `p>w^2+w-2`; the construction uses `n=p` coordinates and scalar total degree `2p(w-1)`. The curve is the ordinary moment curve, whose `p`-th coordinate has zero derivative. This is not a counterexample to a derivative-separating-curve theorem. Every physical interval preserves full rank. The endpoint-augmented scalar interval does not. One SV pair detects the example, so no PIT or generator lower bound is asserted. The audit is internal model-assisted reconstruction, not external peer review, formal certification or priority determination.
 
 The [verification note](../verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 <!-- review-status:end -->

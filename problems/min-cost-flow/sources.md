@@ -98,7 +98,7 @@ of each use.
 - [Raw-cycle quality through the 2026 distance-oracle hierarchy](../../manuscripts/graph-backends/distance-oracle-raw-lift.md)
 - [Exact acceptance and general-flow reductions](../../manuscripts/graph-backends/exact-flow-acceptance-and-reductions.md)
 - [Numerical lifetime discipline and a loop wrapper for flat cycle oracles](../../manuscripts/graph-backends/numerical-backend-lifetime-and-loops.md)
-- [A 4/5 research composition from sequential expander routing](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
+- [A `4/5` research composition from sequential expander routing](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
 
 ## Evidence and provenance
 

@@ -9,7 +9,7 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 
 - The hidden-set rank functions are proved normalized, monotone, integral and submodular; their oracle transcript distinguishes the unique hidden basis.
 - Allocation below factor two and scheduling below three halves have separate constructions. The scheduling dual is verified as an independent rank function.
-- The configuration companions distinguish the aggregate gap approaching r from the full residual gap exactly two. The refined-parameter companion specifies the threshold at which its parameter is zero.
+- The configuration companions distinguish the aggregate gap approaching <code class="math">r</code> from the full residual gap exactly two. The refined-parameter companion specifies the threshold at which its parameter is zero.
 
 An internal manuscript audit on 2026-10-27 reconstructed all three
 canonical proofs, including rank and corank quantifiers, the complementary

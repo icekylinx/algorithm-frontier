@@ -10,7 +10,7 @@ Select a player basis and integral resource bundles satisfying every recipient m
 
 **Randomness**
 
-Deterministic current-blocker search with exact paid primitives. The optional factor-lambda availability oracle requires a certified per-call guarantee.
+Deterministic current-blocker search with exact paid primitives. The optional factor-`lambda` availability oracle requires a certified per-call guarantee.
 
 **Time**
 

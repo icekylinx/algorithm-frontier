@@ -14,7 +14,7 @@ Definition 1.1 uses nonnegative entries and a nonnegative target bounded
 by `q^(2k)`, selected by exactly `k` indices. Section 4 gives the
 deterministic hardness reduction. The present proof uses this bounded
 source directly, rather than the paper's separate randomized range
-reduction for arbitrary integers. Its W[1]-membership result is unnecessary.
+reduction for arbitrary integers. Its <code class="math">\mathrm{W}[1]</code>-membership result is unnecessary.
 
 All remaining steps are local: polynomial-time preprocessing of trivial
 cardinality cases, binary encoding of the two cost lists, the identities
@@ -30,7 +30,7 @@ service rather than ordinary feasibility.
 
 ## Executable evidence
 
-- [verify_finite_reductions.py](../../tools/verify_finite_reductions.py): Exhaustive reduction identity for q=2,...,7, every vector in {0,1,2,3}^q, all 1<=k<q, every omitted k-subset and every integer target from zero through the total sum. It checks equivalence of the two budget inequalities and the target subset sum, not W[1]-hardness itself.
+- [verify_finite_reductions.py](../../tools/verify_finite_reductions.py): Exhaustive reduction identity for <code class="math">q=2,\ldots,7</code>, every vector in <code class="math">\{0,1,2,3\}^q</code>, all <code class="math">1\le k&lt;q</code>, every omitted <code class="math">k</code>-subset and every integer target from zero through the total sum. It checks equivalence of the two budget inequalities and the target subset sum, not <code class="math">\mathrm{W}[1]</code>-hardness itself.
 
 The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
 

@@ -41,7 +41,7 @@ No lower bound is claimed.
 
 **Review status**
 
-**Ready for review.** The complete incremental SCC label theorem with the raw-cycle-to-frozen-detector realization, nonzero-base handling and retirement rules. The label-history extension proves historical equality and O(1+log log(n+2)) first-coalescence queries using permanently retired identities.
+**Ready for review.** The complete incremental SCC label theorem with the raw-cycle-to-frozen-detector realization, nonzero-base handling and retirement rules. The label-history extension proves historical equality and `O(1+log log(n+2))` first-coalescence queries using permanently retired identities.
 
 **Dependencies and scope.** The theorem gives exact component labels under the stated insertion model and adaptive-history bounds. It does not include dynamic topological-order maintenance or within-component path output. The executable history checks cover that layer separately.
 
@@ -53,10 +53,24 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 ## Historical component queries
 
-The same small-to-large labels store <code class="math">O(n\log(n+2))</code> historical records.
+The same small-to-large labels store
+
+<!-- math-display: e428e7670593a88f1506f1db
+O(n\log(n+2))
+-->
+![Formula](../../assets/math/e428e7670593a88f1506f1db.svg)
+ historical records.
 They answer SCC equality at a past settled update in
-<code class="math">O(1+\log\log(n+2))</code> time and first coalescence in
-<code class="math">O(1+\log\log(n+2))</code> time. The latter binary-searches their common
+<!-- math-display: f11830ebe3dac2ffab24edf4
+O(1+\log\log(n+2))
+-->
+![Formula](../../assets/math/f11830ebe3dac2ffab24edf4.svg)
+ time and first coalescence in
+<!-- math-display: f11830ebe3dac2ffab24edf4
+O(1+\log\log(n+2))
+-->
+![Formula](../../assets/math/f11830ebe3dac2ffab24edf4.svg)
+ time. The latter binary-searches their common
 label suffix, as proved in Corollary 9.1. These representation
 bounds are unconditional once the exact merge sequence is supplied.
 

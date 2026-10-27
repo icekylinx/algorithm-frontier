@@ -22,10 +22,16 @@ End-to-end implementation of that fast hierarchy remains separate work.
 library. Its general blossom search implements the classical method
 of [Edmonds, *Paths, Trees, and Flowers* (1965), Section 4](https://doi.org/10.4153/CJM-1965-045-4).
 Its crossing compression and final bipartite solve implement John E.
-Hopcroft and Richard M. Karp's [*An n^(5/2) Algorithm for Maximum Matchings
+Hopcroft and Richard M. Karp's [*An `n^(5/2)` Algorithm for Maximum Matchings
 in Bipartite Graphs* (1973)](https://doi.org/10.1137/0202019). The
 [local bipartite proof](reference/bipartite-proof.md) establishes the exact
-phase invariants, the `O((k+h) sqrt(nu+1))` matching-number refinement, and
+phase invariants, the
+
+<!-- math-display: 8106455c3e5652644520b9d8
+O((k+h)\sqrt{\nu+1})
+-->
+![Formula](../../assets/math/8106455c3e5652644520b9d8.svg)
+ matching-number refinement, and
 the linear vertex-cover certificate; those facts are proved here rather
 than assumed from a changed parameter in the original vertex-count bound.
 The earlier checkpoint's
@@ -34,12 +40,28 @@ preserves every matchable cover subset and gives a cubic solve term in
 each component's matching number; the bipartite refinement improves that
 term to exponent `5/2`, including certificates. It derives the needed
 exchange argument locally. The exchange argument and
-<code class="math">4\nu</code> vertex bound already appear in
+<!-- math-display: 78fa8ed98cba2c8c1465ddca
+4\nu
+-->
+![Formula](../../assets/math/78fa8ed98cba2c8c1465ddca.svg)
+ vertex bound already appear in
 <em>A linear-vertex refinement of the matching-size kernel</em>, Sections
 1–3, in the direct checkpoint of 24 October; the source history below
 distinguishes that proof from the current implementation.
-The actual retained count is <code class="math">c+\nu_{\mathrm{cross}}\leq3\nu(G)</code>;
-this later refinement strengthens the original <code class="math">4\nu</code> accounting.
+The actual retained count is
+
+<!-- math-display: 9995d9eeb1f88293f7ed4275
+c+\nu_{\mathrm{cross}}\leq3\nu(G)
+-->
+![Formula](../../assets/math/9995d9eeb1f88293f7ed4275.svg)
+;
+this later refinement strengthens the original
+
+<!-- math-display: 78fa8ed98cba2c8c1465ddca
+4\nu
+-->
+![Formula](../../assets/math/78fa8ed98cba2c8c1465ddca.svg)
+ accounting.
 The [layered failure extension](reference/fault-tolerant-cover-compression.md)
 repeats maximum crossing matchings on disjoint right grounds, proves
 universal cover-subset and context preservation, and supplies an independent
@@ -100,7 +122,7 @@ that states only real-arithmetic geometry or distributed rounds.
 **Acceptance inside the faster theoretical composition.** The single augmenting-path search in
 [the verifier interface](../../manuscripts/graph-backends/deterministic-maximum-matching-verifier.md)
 is based on Kurt Mehlhorn and Romina Nobahari,
-[*Gabow's O(sqrt(n)m) Maximum Cardinality Matching Algorithm,
+[*Gabow's `O(sqrt(n)m)` Maximum Cardinality Matching Algorithm,
 Revisited*](https://arxiv.org/html/2603.22909v2), Sections 2.3 and 4.
 It certifies the optimality of an accepted output. Theorem 11.6 and the
 parameter calculation separately prove the backend and its time bound.
@@ -122,7 +144,7 @@ the inputs of each generic composition lemma.
 - [Executable exact matching and its independent certificate](reference/README.md)
 - [Outside-endpoint compression and the matching-size cubic bound](reference/cover-compression-proof.md)
 - [Bipartite matching in the matching number, with linear certificates](reference/bipartite-proof.md)
-- [A 4/5 research composition from sequential expander routing](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
+- [A `4/5` research composition from sequential expander routing](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
 - [Cycle-search realization and dependency closure](proof.md#116-deterministic-cycle-search-realization)
 - [Uniform source interfaces and their actual parameter ranges](../../manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md)
 - [Exact general-graph matching](README.md)
@@ -144,8 +166,8 @@ runtime package required by the executable reference solver.
 | Julia Chuzhoy and Thatchaphol Saranurak, [*Deterministic Algorithms for Decremental Shortest Paths via Layered Core Decomposition*](https://arxiv.org/abs/2009.08479v1), Theorem 3.7 | Deterministic expander pruning | Keep its deletion budget, conductance and work guarantees when invoking the local wrapper. |
 | Yi-Jun Chang and Thatchaphol Saranurak, [*Deterministic Distributed Expander Decomposition and Routing with Applications in Distributed Derandomization*](https://arxiv.org/abs/2007.14898v1), Sections 4.1–4.3 | Combinatorial hierarchy and routing geometry | Sequential work, finite guards and source coverage are established separately in Section 9; they are not inferred from a distributed round bound. |
 | Yi-Jun Chang, Shang-En Huang and Hsin-Hao Su, [*Deterministic Expander Routing: Faster and More Versatile*](https://arxiv.org/abs/2405.03908v1), Definition 3.7, Definitions 4.2–4.3 and Appendix A | Hierarchy and shuffler architecture | [The hierarchy/load audit](../../manuscripts/graph-backends/chs-hierarchy-and-load-boundaries.md) identifies why the headline theorem alone is insufficient. The virtual hierarchy and direct full-router induction supply the stronger coverage and full-load query interfaces used here. |
-| Li Chen, Rasmus Kyng, Yang P. Liu, Simon Meierhans and Maximilian Probst Gutenberg, [*Almost-Linear Time Algorithms for Incremental Graphs: Cycle Detection, SCCs, s–t Shortest Path, and Minimum-Cost Flow*](https://arxiv.org/abs/2311.18295v1), Section 7.2 | Touched-set scheduling template | The static-base proof supplies chronological credit and selected recourse; the lifetime proof supplies positive frozen-flow transfer and complete signed/absolute retirement. |
-| Rasmus Kyng, Simon Meierhans, Maximilian Probst Gutenberg and Aurelio Sulser, [*A Simpler and Faster Min-Cost Flow Solver via Min-Ratio Cycles from Distance Oracles*](https://arxiv.org/html/2609.23852v1), Theorems 4.4–4.5, Definition 5.1 and Lemma 5.4 | Published deterministic distance-to-cycle geometry | Its printed 20/21 scale is not substituted for the present 4/5 proof. The raw-lift argument establishes the needed physical-length upper bound, and Theorem 11.6 supplies the new parameters and lifetime operations. |
+| Li Chen, Rasmus Kyng, Yang P. Liu, Simon Meierhans and Maximilian Probst Gutenberg, [*Almost-Linear Time Algorithms for Incremental Graphs: Cycle Detection, SCCs, `s–t` Shortest Path, and Minimum-Cost Flow*](https://arxiv.org/abs/2311.18295v1), Section 7.2 | Touched-set scheduling template | The static-base proof supplies chronological credit and selected recourse; the lifetime proof supplies positive frozen-flow transfer and complete signed/absolute retirement. |
+| Rasmus Kyng, Simon Meierhans, Maximilian Probst Gutenberg and Aurelio Sulser, [*A Simpler and Faster Min-Cost Flow Solver via Min-Ratio Cycles from Distance Oracles*](https://arxiv.org/html/2609.23852v1), Theorems 4.4–4.5, Definition 5.1 and Lemma 5.4 | Published deterministic distance-to-cycle geometry | Its printed `20/21` scale is not substituted for the present `4/5` proof. The raw-lift argument establishes the needed physical-length upper bound, and Theorem 11.6 supplies the new parameters and lifetime operations. |
 | Harold N. Gabow, [*The Weighted Matching Approach to Maximum Cardinality Matching*](https://arxiv.org/abs/1703.03998v1), Sections 3 and 5; Mehlhorn–Nobahari's account above | An augmenting-path search from a supplied matching, including exhausted search | This supports theoretical acceptance of a candidate. The executable solver uses its own ordinary polynomial blossom algorithm and explicit certificate. |
 
 ## Checkpoint provenance
@@ -158,7 +180,7 @@ proof links give their maintained mathematical content.
 
 | Earlier checkpoint | Original proof and contribution | Maintained location |
 |---|---|---|
-| Direct checkpoint, 24 October 2026; identical in fixed-epsilon and uniform checkpoints | <code>linear_vertex_kernel_refinement.md</code>, Sections 1–3: a maximum crossing matching's right endpoints preserve every matchable cover subset; at most <code class="math">2c\leq4\nu</code> vertices | [Compression proof](reference/cover-compression-proof.md), Sections 1–2 |
+| Direct checkpoint, 24 October 2026; identical in fixed-`epsilon` and uniform checkpoints | <code>linear_vertex_kernel_refinement.md</code>, Sections 1–3: a maximum crossing matching's right endpoints preserve every matchable cover subset; at most twice the cover size and at most four times the matching number in vertices | [Compression proof](reference/cover-compression-proof.md), Sections 1–2 |
 | Constructive checkpoint, 24 October 2026 | <code>distance_oracle_raw_lift.md</code> and <code>numerical_backend_lifetime_and_loops.md</code>: raw traversal domination, frozen gauges, dormant records and signed/absolute retirement | [Raw lift](../../manuscripts/graph-backends/distance-oracle-raw-lift.md); [lifetime construction](../../manuscripts/graph-backends/numerical-backend-lifetime-and-loops.md) |
 | Six-sevenths and five-sixths checkpoints, 24 October 2026 | Static-base prefix accounting, local route notifications, normalized projected routes and exact cycle corrections | [Static-base repair](../../manuscripts/graph-backends/amortized-static-base-distance-sparsifier.md); [normalized routes](../../manuscripts/graph-backends/normalized-projected-route-composition.md); [cycle comparison](../../manuscripts/graph-backends/normalized-route-cycle-comparison.md) |
 | Four-fifths and revised four-fifths checkpoints, 24 October 2026 | Sequential hierarchy/router/static provider; revised coverage, actual-size and finite-bit interfaces; complete recursive quality and parameter calculation | [Sequential router](../../manuscripts/graph-backends/sequential-expander-routing-tradeoff.md); [uniform interfaces](../../manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md); [composition](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md) |
@@ -168,7 +190,13 @@ The single-file editorial manuscript of 25 October compressed the cycle
 construction into a realization hypothesis. The detailed 24 October
 checkpoint proofs supply those interfaces. The current Theorem 11.6 makes
 that dependency closure explicit; it does not attribute a newly discovered
-four-fifths algorithm or the earlier <code class="math">4\nu</code> structural
+four-fifths algorithm or the earlier
+
+<!-- math-display: 78fa8ed98cba2c8c1465ddca
+4\nu
+-->
+![Formula](../../assets/math/78fa8ed98cba2c8c1465ddca.svg)
+ structural
 lemma to the implementation pass.
 
 ## Evidence and provenance

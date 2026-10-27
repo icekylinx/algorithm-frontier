@@ -51,7 +51,7 @@ shared code, not a second independent construction. The
 against exhaustive original-edge subset enumeration.
 
 **Public comparator.** Harold N. Gabow's
-[*Maximum Cardinality f-Matching in Time O(n^(2/3)m)*](https://arxiv.org/abs/2311.14236v1)
+[*Maximum Cardinality `f`-Matching in Time `O(n^(2/3)m)`*](https://arxiv.org/abs/2311.14236v1)
 Theorem 4.1 states the separate deterministic simple-graph and multigraph bounds
 quoted in Section 7. It supplies a benchmark, not an assumption needed
 to prove the gadgets or to implement the faster cycle-search machinery.
@@ -65,7 +65,7 @@ supplies the formerly abstract fast-solver interface.
 
 - [A deterministic near-linear final maximum-matching verifier](../../manuscripts/graph-backends/deterministic-maximum-matching-verifier.md)
 - [OpenAI baseline and exact imported interfaces](../../manuscripts/graph-backends/oai-baseline-and-imports.md)
-- [A 4/5 research composition from sequential expander routing](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
+- [A `4/5` research composition from sequential expander routing](../../manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
 
 ## Evidence and provenance
 

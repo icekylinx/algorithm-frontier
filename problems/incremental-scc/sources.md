@@ -32,7 +32,7 @@ names the deterministic public inputs and their local parameter adapters.
 **Public starting point.** The contraction principle is from Li Chen,
 Rasmus Kyng, Yang P. Liu, Simon Meierhans and Maximilian Probst Gutenberg,
 [*Almost-Linear Time Algorithms for Incremental Graphs: Cycle Detection,
-SCCs, s–t Shortest Path, and Minimum-Cost Flow*](https://arxiv.org/html/2311.18295v1),
+SCCs, `s–t` Shortest Path, and Minimum-Cost Flow*](https://arxiv.org/html/2311.18295v1),
 Section 8.3 and Theorem 1.8. The public theorem supplies deterministic
 almost-linear SCC maintenance. The present client uses one logarithmic
 barrier and explicit endpoint retargeting; its sharper displayed exponent

@@ -12,7 +12,7 @@ The evidence for this result consists of its [mathematical proof](../proof.md).
 
 [verify_profile_certificates.py](../../../tools/verify_profile_certificates.py) checks the following finite claim:
 
-All 915 nondecreasing positive integer load multisets of total at most 16, including the empty multiset, normalized by 16, fit at least one of the six profiles; the five nontrivial rounded-load sums equal 3/2. General rational coverage, resource feasibility and exact-budget recovery remain symbolic.
+All 915 nondecreasing positive integer load multisets of total at most 16, including the empty multiset, normalized by 16, fit at least one of the six profiles; the five nontrivial rounded-load sums equal <code class="math">3/2</code>. General rational coverage, resource feasibility and exact-budget recovery remain symbolic.
 
 Run from the repository root:
 
@@ -24,7 +24,7 @@ These programs do not implement the full algorithm or mechanically verify its or
 
 ## Model and verification boundaries
 
-The grid check supports profile geometry. It does not replace the arbitrary-rational coverage proof, or implement rank queries, LP separation, exact-budget recovery or the 6^q profile enumeration.
+The grid check supports profile geometry. It does not replace the arbitrary-rational coverage proof, or implement rank queries, LP separation, exact-budget recovery or the <code class="math">6^q</code> profile enumeration.
 
 The [source map](../sources.md) identifies the actual proof dependencies. Repository checks validate the registry, links, notation and generated catalogue; those checks do not establish mathematical correctness. Proof-assistant verification and external peer review are not claimed.
 

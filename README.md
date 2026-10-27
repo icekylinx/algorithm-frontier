@@ -19,7 +19,7 @@ O(n+m)+(m_s+1)\exp(O((\log(m_s+2))^{4/5}(\log\log(m_s+4))^{1/5}))
 -->
 ![Formula](assets/math/959b4822078bcdb0b44c8061.svg)
 
-Here m_s counts distinct nonloop edge pairs. The proof supplies the uniform cycle-search construction and names its published prerequisites. A separate executable solver returns independently verifiable optimality certificates.
+Here `m_s` counts distinct nonloop edge pairs. The proof supplies the uniform cycle-search construction and names its published prerequisites. A separate executable solver returns independently verifiable optimality certificates.
 
 ### [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/)
 
@@ -32,7 +32,7 @@ C+\mathrm{poly}(n,L)2^{0.495748n}
 
 Exact rational exponent on the card.
 
-For n integers of total bit length L, including an indexed witness. The finite startup constant C is input-independent. The complete compiler proof and exact continuous certificates support the improved third-lookup exponent.
+For `n` integers of total bit length `L`, including an indexed witness. The finite startup constant `C` is input-independent. The complete compiler proof and exact continuous certificates support the improved third-lookup exponent.
 
 ### [Deterministic PIT for fixed-width affine ROABP orbits](problems/roabp-affine-pit/)
 
@@ -43,7 +43,7 @@ Deterministic black-box identity testing with unknown order and unknown invertib
 -->
 ![Formula](assets/math/12a2d9dc8785be756359ee12.svg)
 
-Here <code class="math">K(w)=2^{O(w^2)}</code>, and <code class="math">B</code> is the smaller direction grid defined on the problem card. Arbitrary local ranks and entry degrees; known scalar total degree D and extension-field oracle access when needed. Polynomial query count for each fixed width, with a width-dependent exponent. Complete internally reconstructed proof; external peer review and priority certification are not claimed.
+Here <code class="math">K(w)=2^{O(w^2)}</code>, and <code class="math">B</code> is the smaller direction grid defined on the problem card. Arbitrary local ranks and entry degrees; known scalar total degree `D` and extension-field oracle access when needed. Polynomial query count for each fixed width, with a width-dependent exponent. Complete internally reconstructed proof; external peer review and priority certification are not claimed.
 
 ## Results
 

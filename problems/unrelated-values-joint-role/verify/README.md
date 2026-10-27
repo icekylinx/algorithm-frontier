@@ -10,14 +10,14 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 
 - One masked polymatroid represents each original resource across light and heavy roles, preserving shared capacity.
 - The changing role LP retains a protected original full allocation with uniform rational descriptions.
-- The setup companion keeps one combined original budget on an actual selected basis; enumeration proves exact two in 2^q polynomial time.
-- J2 and the discrete factor-d companion prove their exact quota recovery for compulsory player-specific values in {0,u,a}.
+- The setup companion keeps one combined original budget on an actual selected basis; enumeration proves exact two in <code class="math">2^q</code> polynomial time.
+- J2 and the discrete factor-<code class="math">d</code> companion prove their exact quota recovery for compulsory player-specific values in <code class="math">\{0,u,a\}</code>.
 
 ## Executable evidence
 
 [verify_profile_certificates.py](../../../tools/verify_profile_certificates.py) checks the following finite claim:
 
-Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. This applies only to the compulsory J2 and factor-d quota arithmetic, not shared-resource or setup coupling.
+Integer-quota arithmetic: <code class="math">d=2,\ldots,30</code> and every <code class="math">d&lt;K\le399</code> (11,107 cases) satisfy <code class="math">K/(K-\lceil K/d\rceil)\le(d+1)/(d-1)</code>; every <code class="math">1\le K\le d</code> satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. This applies only to the compulsory J2 and factor-<code class="math">d</code> quota arithmetic, not shared-resource or setup coupling.
 
 Run from the repository root:
 
@@ -29,7 +29,7 @@ These programs do not implement the full algorithm or mechanically verify its or
 
 ## Model and verification boundaries
 
-Near-two and the 2^q exact-two endpoint allow optional player bases. The faster J2 and discrete pair-value tradeoffs require compulsory players. Adding a dummy value does not preserve the two-value premise; finite quota tests do not check shared-resource or setup constructions.
+Near-two and the <code class="math">2^q</code> exact-two endpoint allow optional player bases. The faster J2 and discrete pair-value tradeoffs require compulsory players. Adding a dummy value does not preserve the two-value premise; finite quota tests do not check shared-resource or setup constructions.
 
 The [source map](../sources.md) identifies the actual proof dependencies. Repository checks validate the registry, links, notation and generated catalogue; those checks do not establish mathematical correctness. Proof-assistant verification and external peer review are not claimed.
 

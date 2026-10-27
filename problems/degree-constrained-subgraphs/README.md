@@ -6,7 +6,7 @@ Finds an exact feasible degree-constrained edge subset, or correctly reports tha
 
 **Objective and output**
 
-Supports f-factors, interval degree bounds, exact or ranged cardinality constraints, and cardinality optimization; outputs original edge identifiers and treats each parallel edge record as a separate selectable item.
+Supports `f`-factors, interval degree bounds, exact or ranged cardinality constraints, and cardinality optimization; outputs original edge identifiers and treats each parallel edge record as a separate selectable item.
 
 **Randomness**
 
@@ -22,13 +22,61 @@ O(n+m)+(m+1)\exp O\!\left((\log(m+2))^{4/5}
 ![Formula](../../assets/math/9ee8fb503d3324f0a3729bbd.svg)
 time for feasibility and cardinality optimization, with its named local and published proof dependencies.
 
-The fully local permutation-network reduction has <code>O(m log(m+2))</code> size. An optional [linear-size theoretical selector](linear-selector.md), using the precise Gabber–Galil expansion theorem, reduces construction and auxiliary graph size to <code>O(n+m)</code> and <code>O(m)</code>. Combined with ordinary cubic exact matching, this variant gives <code>O(n+(m+1)^3)</code> feasibility and <code>O(n+(m+1)^3 log(m+2))</code> optimization. Its large fixed constants and scope are stated in that proof.
+The fully local permutation-network reduction has
 
-The shipped standard-library solver uses the Beneš selector: its actual bounds remain <code>O(n+H^3)</code> for feasibility and <code>O(n+H^3 log(m+2))</code> for optimization, where <code>H=1+m log(m+2)</code>. Certificates and native output checks are included.
+<!-- math-display: cfb0c79cc136ac14d6bab9f5
+O(m\log(m+2))
+-->
+![Formula](../../assets/math/cfb0c79cc136ac14d6bab9f5.svg)
+ size. An optional [linear-size theoretical selector](linear-selector.md), using the precise Gabber–Galil expansion theorem, reduces construction and auxiliary graph size to
+
+<!-- math-display: 0117325c4f4e755b5b40c665
+O(n+m)
+-->
+![Formula](../../assets/math/0117325c4f4e755b5b40c665.svg)
+ and
+
+<!-- math-display: 4343234bc6471c297dacb7e9
+O(m)
+-->
+![Formula](../../assets/math/4343234bc6471c297dacb7e9.svg)
+. Combined with ordinary cubic exact matching, this variant gives
+
+<!-- math-display: dcd278832dd2272f3a5035cd
+O(n+(m+1)^3)
+-->
+![Formula](../../assets/math/dcd278832dd2272f3a5035cd.svg)
+ feasibility and
+
+<!-- math-display: 534cc526f24963974168f966
+O(n+(m+1)^3\log(m+2))
+-->
+![Formula](../../assets/math/534cc526f24963974168f966.svg)
+ optimization. Its large fixed constants and scope are stated in that proof.
+
+The shipped standard-library solver uses the Beneš selector: its actual bounds remain
+
+<!-- math-display: f7f5736b6bd66f560b05d31e
+O(n+H^3)
+-->
+![Formula](../../assets/math/f7f5736b6bd66f560b05d31e.svg)
+ for feasibility and
+
+<!-- math-display: c43c29b1dbaf8f38473f6fc6
+O(n+H^3\log(m+2))
+-->
+![Formula](../../assets/math/c43c29b1dbaf8f38473f6fc6.svg)
+ for optimization, where <code>H=1+m log(m+2)</code>. Certificates and native output checks are included.
 
 **Space**
 
-The reference solver uses `O(n+H)` storage, including the explicit reduction and retained certificate, plus the actual label-encoding space. Oversized upper bounds are clipped before any dummy edges are allocated.
+The reference solver uses
+
+<!-- math-display: 4e4b0765281f4bd38c6fa2fa
+O(n+H)
+-->
+![Formula](../../assets/math/4e4b0765281f4bd38c6fa2fa.svg)
+ storage, including the explicit reduction and retained certificate, plus the actual label-encoding space. Oversized upper bounds are clipped before any dummy edges are allocated.
 
 **Parameters**
 

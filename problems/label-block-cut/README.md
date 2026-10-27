@@ -17,7 +17,19 @@ All constructions below are Monte Carlo randomized polynomial time in the explic
 
 **Lifted rank parameter <code class="math">D</code>.** <code class="math">r</code>
 
-**Retained support and output.** <code class="math">S(r,\varepsilon)</code> original items; <code class="math">O(\log\log(2m))</code> backend calls
+**Retained support and output.** Original items:
+
+<!-- math-display: 6bc25c9dede4850a310135b8
+S(r,\varepsilon)
+-->
+![Formula](../../assets/math/6bc25c9dede4850a310135b8.svg)
+
+Backend calls:
+
+<!-- math-display: 9bd553d56797a32a14b94d9d
+O(\log\log(2m))
+-->
+![Formula](../../assets/math/9bd553d56797a32a14b94d9d.svg)
 
 **Proof.** [Adaptive resparsification theorem](manuscripts/adaptive-quotient-resparsification.md)
 
@@ -25,7 +37,12 @@ All constructions below are Monte Carlo randomized polynomial time in the explic
 
 **Lifted rank parameter <code class="math">D</code>.** <code class="math">r\binom{h+k}{k}</code>
 
-**Retained support and output.** <code class="math">S(D,\varepsilon)</code> original columns or whole blocks, preserving all subspace-complement queries
+**Retained support and output.** Original columns or whole blocks preserve all subspace-complement queries. Their support bound is:
+
+<!-- math-display: 02702298cf7b5742f431f05e
+S(D,\varepsilon)
+-->
+![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
 
 **Proof.** [Column theorem](manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md), [Theorem B1](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 
@@ -33,7 +50,12 @@ All constructions below are Monte Carlo randomized polynomial time in the explic
 
 **Lifted rank parameter <code class="math">D</code>.** <code class="math">(n-c)\binom{h+a+b}{a+b}</code>
 
-**Retained support and output.** <code class="math">S(D,\varepsilon)</code> edges, preserving every cut after every allowed failure
+**Retained support and output.** Retained edges preserve every cut after every allowed failure. Their support bound is:
+
+<!-- math-display: 02702298cf7b5742f431f05e
+S(D,\varepsilon)
+-->
+![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
 
 **Proof.** [Equation EC1](manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md)
 
@@ -41,7 +63,12 @@ All constructions below are Monte Carlo randomized polynomial time in the explic
 
 **Lifted rank parameter <code class="math">D</code>.** <code class="math">(n-c)(h+1)</code>
 
-**Retained support and output.** <code class="math">S(D,\varepsilon)</code> edges with one fixed coefficient each
+**Retained support and output.** Retain original edges with one fixed coefficient each, with support bound:
+
+<!-- math-display: 02702298cf7b5742f431f05e
+S(D,\varepsilon)
+-->
+![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
 
 **Proof.** [Equation EC2](manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md)
 
@@ -49,7 +76,12 @@ All constructions below are Monte Carlo randomized polynomial time in the explic
 
 **Lifted rank parameter <code class="math">D</code>.** <code class="math">(n-c)\binom{h+a(t-1)+b}{a(t-1)+b}</code>
 
-**Retained support and output.** <code class="math">S(D,\varepsilon)</code> whole hyperedges; cuts and partition-crossing objectives
+**Retained support and output.** Whole hyperedges preserve cuts and partition-crossing objectives, with support bound:
+
+<!-- math-display: 02702298cf7b5742f431f05e
+S(D,\varepsilon)
+-->
+![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
 
 **Proof.** [Equation B6](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 
@@ -57,7 +89,12 @@ All constructions below are Monte Carlo randomized polynomial time in the explic
 
 **Lifted rank parameter <code class="math">D</code>.** At most <code class="math">(n-c)\binom{h+d}{d}</code>
 
-**Retained support and output.** <code class="math">S(D,\varepsilon)</code> whole hedges; no factor for the number of constituent edges
+**Retained support and output.** Whole hedges have the following support bound, with no factor for the number of constituent edges:
+
+<!-- math-display: 02702298cf7b5742f431f05e
+S(D,\varepsilon)
+-->
+![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
 
 **Proof.** [Equation B9](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 
@@ -65,7 +102,12 @@ All constructions below are Monte Carlo randomized polynomial time in the explic
 
 **Lifted rank parameter <code class="math">D</code>.** <code class="math">(n+1)\binom{h+d}{d}</code>
 
-**Retained support and output.** <code class="math">S(D,\varepsilon)</code> whole blocks; simultaneous all-state energy and kernel preservation
+**Retained support and output.** Whole blocks simultaneously preserve all-state energy and the kernel, with support bound:
+
+<!-- math-display: 02702298cf7b5742f431f05e
+S(D,\varepsilon)
+-->
+![Formula](../../assets/math/02702298cf7b5742f431f05e.svg)
 
 **Proof.** [Equations B10–B11](manuscripts/exact-label-whole-blocks-and-hyperedges.md)
 

@@ -2,12 +2,12 @@
 
 The main proof establishes the basic quadratic laminar catalogue. The
 [recovery companion](../manuscripts/laminar-dominant-weight-recovery.md) improves
-the elementary quadratic coefficient from 4 to 10/9, or to 5/9 plus a
+the elementary quadratic coefficient from `4` to `10/9`, or to `5/9` plus a
 vanishing term with the specifically cited local universal-set theorem,
 and proves a polynomial
 one-positive-weight endpoint. Other companion
 manuscripts establish one-order, two-order, bounded-family, sparse-row and
-ground-reduction results. B, B0, Delta and p are local parameters, not aliases
+ground-reduction results. `B`, `B0`, `Delta` and `p` are local parameters, not aliases
 for encoded input length.
 
 Common-order and bounded-family theorems do not extend to arbitrary

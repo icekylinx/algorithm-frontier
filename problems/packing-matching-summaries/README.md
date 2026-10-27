@@ -6,7 +6,13 @@ Failure-tolerant packing restrictions with exact fixed-cost replacement in the o
 
 **Guarantee**
 
-Retain at most <code class="math">\min\{N,D\}</code> items, where <code class="math">D=r\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}</code>. Omit <code class="math">r</code> without an extra resource matroid.
+Retain at most
+
+<!-- math-display: 4da1d6f0e0f5d50a0258b88d
+\min\{N,D\}
+-->
+![Formula](../../assets/math/4da1d6f0e0f5d50a0258b88d.svg)
+ items, where <code class="math">D=r\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}</code>. Omit <code class="math">r</code> without an extra resource matroid.
 
 **Objective and output**
 
@@ -29,7 +35,13 @@ Padding, determinant features, label features, and rank compression are addition
 
 **Space**
 
-At most <code class="math">\min\{N,D\}</code> original item IDs. Tensor/exterior features and elimination workspace are separate. No solver runtime for an unspecified later extension is claimed.
+At most
+
+<!-- math-display: 4da1d6f0e0f5d50a0258b88d
+\min\{N,D\}
+-->
+![Formula](../../assets/math/4da1d6f0e0f5d50a0258b88d.svg)
+ original item IDs. Tensor/exterior features and elimination workspace are separate. No solver runtime for an unspecified later extension is claimed.
 
 **Parameters**
 

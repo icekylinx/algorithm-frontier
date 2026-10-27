@@ -6,7 +6,7 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 
 ## Mathematical evidence
 
-- The current-star charge supplies the finite-rank factor 4-3/r using the strict separation condition.
+- The current-star charge supplies the finite-rank factor <code class="math">4-3/r</code> using the strict separation condition.
 - Heavy-item union supplies the small-resource promise and reconstructs an actual original basis, allowing only the justified recovery deletions.
 - The configuration companion defines the player and recipient marginals and proves the fractional forward reduction without input configurations or a supplied LP solution.
 

@@ -34,8 +34,18 @@ enumerated cuts, including parallel/reverse records and zero-bit stages.
 A separate exhaustive circulation check validates the negative return
 edge. These checks exercise the adapter, not the published fast solver.
 
-The native forest work <code class="math">(n+m)E_{6/7}</code> and the cut-tree application's
-<code class="math">O(n+m)+(m+1)E_{6/7}</code> are distinct claims. Removing zero-capacity
+The native forest work
+
+<!-- math-display: a4c599ab8736bfc9981621c4
+(n+m)E_{6/7}
+-->
+![Formula](../../../assets/math/a4c599ab8736bfc9981621c4.svg)
+ and the cut-tree application's
+<!-- math-display: 515d9ca505a736ed1604df94
+O(n+m)+(m+1)E_{6/7}
+-->
+![Formula](../../../assets/math/515d9ca505a736ed1604df94.svg)
+ are distinct claims. Removing zero-capacity
 edges preserves every cut exactly and requires only the initial input
 scan; it removes no positive-capacity requirement from the actual
 flow and skeleton calls.

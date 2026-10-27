@@ -8,7 +8,7 @@ Decide nonnegative integer upper, equality and covering targets; return an attai
 
 **Randomness**
 
-Deterministic upper algorithms in the stated exact rank/optimization-oracle model. The success-probability-2/3 randomized statement is an oracle lower bound, not a randomized upper algorithm.
+Deterministic upper algorithms in the stated exact rank/optimization-oracle model. The success-probability-`2/3` randomized statement is an oracle lower bound, not a randomized upper algorithm.
 
 **Time**
 

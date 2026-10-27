@@ -44,7 +44,7 @@ This record contains oracle-query and relaxation-gap results. It does not assert
 
 **Review status**
 
-**Ready for review.** The deterministic rank/corank oracle barriers below factor two for allocation and below three halves for scheduling; the refined-parameter-zero barrier at threshold OPT/(2+eta); the aggregate configuration gap approaching the selection rank and full-residual gap exactly two. The greedy residual-capacity identity and both explicit component decompositions have direct local proofs.
+**Ready for review.** The deterministic rank/corank oracle barriers below factor two for allocation and below three halves for scheduling; the refined-parameter-zero barrier at threshold `OPT/(2+eta)`; the aggregate configuration gap approaching the selection rank and full-residual gap exactly two. The greedy residual-capacity identity and both explicit component decompositions have direct local proofs.
 
 **Dependencies and scope.** The lower bounds use arbitrary integral recipient or job polymatroids in the full value-oracle model. They do not assert randomized lower bounds or NP/ETH hardness for explicit restricted-assignment inputs. The refined compulsory parameter is zero while its unrefined heavy-cover rank grows with the ground. The four-unit promise/two-unit output problem is separate and is not settled by these examples. Finite checks support the constructions, not the unbounded transcript argument.
 

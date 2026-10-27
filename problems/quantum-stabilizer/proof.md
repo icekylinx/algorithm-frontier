@@ -108,7 +108,7 @@ that basis are deterministic.
 
 ## 5. A classical stabilizer witness
 
-**Theorem 5.** For a positive Pauli Hamiltonian, a deterministic polynomial-time reduction gives a complete stabilizer basis and a diagonal Hamiltonian <code class="math">K</code> with
+**Theorem 5.** Let <code class="math">H=\sum_e w_e(I-P_e)</code> on <code class="math">n</code> qubits, where each <code class="math">P_e</code> is a compact Hermitian signed Pauli string and each <code class="math">w_e</code> is a nonnegative rational. Let <code class="math">L</code> count the explicit <code class="math">n</code>-qubit inventory and the full binary input description; zero-weight clauses may be discarded. A deterministic polynomial-time reduction gives a complete stabilizer basis and a diagonal Hamiltonian <code class="math">K</code> with
 
 <!-- math-display: 7befc32289f0f14635efacf6
 (1+1/\sqrt2)^{-1}H\preceq K\preceq(2+\sqrt2)H.
@@ -117,7 +117,30 @@ that basis are deterministic.
 
 Every state of that basis has the same <code class="math">H</code>- and <code class="math">K</code>-energy. Consequently a basis state minimizing <code class="math">K</code> has energy at most <code class="math">(2+\sqrt2)E_0(H)</code>.
 
-**Proof.** Peeling anticommuting Pauli pairs leaves a commuting residual family. Extend its projective span to a maximal isotropic space and pinch in the associated stabilizer basis. A Pauli is either fixed or erased; in an anticommuting pair at most one can be fixed. Thus the image of <code class="math">2I-P-Q</code> is one of <code class="math">2I</code>, <code class="math">2I-P</code>, and <code class="math">2I-Q</code>. Since <code class="math">(aP+bQ)^2=(a^2+b^2)I</code>, direct eigenvalue bounds give the two displayed operator factors for each case. Summing over the pairs and the fixed residual proves the operator inequality. Pinching preserves each diagonal matrix element in its defining basis. Evaluating the upper bound on a ground state of <code class="math">H</code> and taking a minimum over basis states proves the energy conclusion. <code class="math">\square</code>
+**Proof.** Repeatedly peel the minimum residual coefficient from an anticommuting pair. Each step removes one positive residual coefficient, so after at most <code class="math">m</code> steps the residual family commutes and the recorded weighted pair terms give an exact decomposition. Phase-aware binary symplectic elimination extends its projective span to a maximal isotropic space. Independent commuting Hermitian representatives give a complete stabilizer basis; dependent input signs need not all be simultaneously positive.
+
+Let <code class="math">K</code> be the pinching of <code class="math">H</code> in this basis. A Pauli label in the maximal isotropic space is fixed. Every other label anticommutes with a basis generator, so averaging its two conjugates erases it. At most one member of an anticommuting pair can be fixed. Thus, for <code class="math">A=2I-P-Q</code>, its pinching <code class="math">C</code> is one of <code class="math">2I</code>, <code class="math">2I-P</code>, and <code class="math">2I-Q</code>. Put <code class="math">\kappa=2+\sqrt2</code> and <code class="math">\beta=1+1/\sqrt2</code>. We show
+
+<!-- math-display: 4881dcef694450a1bf04b582
+C\preceq\kappa A,\qquad A\preceq\beta C.
+-->
+![Formula](../../assets/math/4881dcef694450a1bf04b582.svg)
+
+For <code class="math">C=2I</code>, the eigenvalues of <code class="math">P+Q</code> are bounded by <code class="math">\sqrt2</code> in magnitude, since <code class="math">(P+Q)^2=2I</code>. Both inequalities follow, using <code class="math">\kappa(2-\sqrt2)=2</code> and <code class="math">2\beta=2+\sqrt2</code>.
+
+For <code class="math">C=2I-P</code>, the two differences are
+
+<!-- math-display: bb213e250b0ddf1b310ac01c
+\begin{aligned}
+\kappa A-C&=2(\kappa-1)I-(\kappa-1)P-\kappa Q,\\
+\beta C-A&=2(\beta-1)I-(\beta-1)P+Q.
+\end{aligned}
+-->
+![Formula](../../assets/math/bb213e250b0ddf1b310ac01c.svg)
+
+Because <code class="math">(aP+bQ)^2=(a^2+b^2)I</code>, positivity of these differences follows from <code class="math">3(\kappa-1)^2-\kappa^2=3+2\sqrt2&gt;0</code> and <code class="math">3(\beta-1)^2-1=1/2&gt;0</code>, respectively. The <code class="math">C=2I-Q</code> case is symmetric. The fixed commuting remainder is positive, and <code class="math">\beta,\kappa\ge1</code>, so adding every pair inequality proves the claimed operator comparison for <code class="math">H,K</code>.
+
+Pinching preserves every diagonal matrix element in its defining basis. Hence a basis state minimizing <code class="math">K</code> has the same original energy <code class="math">E_0(K)</code>, which is at least <code class="math">E_0(H)</code>. Evaluating <code class="math">K\preceq\kappa H</code> on a ground state of <code class="math">H</code> gives <code class="math">E_0(K)\le\kappa E_0(H)</code> and proves the witness guarantee. <code class="math">\square</code>
 
 The diagonal objective is a nonnegative scalar plus weighted affine parity penalties. Enumeration on its <code class="math">d\le n</code> independent labels costs <code class="math">2^d\mathrm{poly}(L)</code> time and polynomial space, producing a stabilizer tableau. [The full witness proof](manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md) supplies the constants, prime-dimensional factor <code class="math">2(1+p^{-1/2})</code>, and basis-choice lower examples. The polynomial-time reduction does not solve its remaining classical minimization in polynomial time.
 

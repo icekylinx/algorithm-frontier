@@ -8,7 +8,12 @@ For every result, the support may be capped by the original item count <code cla
 
 **Arbitrarily weighted Cayley spectral sparsification on any finite group <code class="math">G</code>**
 
-**Support or guarantee.** <code class="math">O\!\left(\frac{\log^3(2\lvert G\rvert)}{\varepsilon^2}\right)</code> generators
+**Support or guarantee.** Generators:
+
+<!-- math-display: ce5eb689e5aa11de18ac0519
+O\!\left(\frac{\log^3(2\lvert G\rvert)}{\varepsilon^2}\right)
+-->
+![Formula](../../assets/math/ce5eb689e5aa11de18ac0519.svg)
 
 **Construction and scope.** Deterministic polynomial time in the explicit permutation-matrix input; no weight-ratio dependence. An optional group-operations bundle sampler is Monte Carlo with failure at most <code class="math">\delta</code>, with its confidence-dependent support in [Section 5.1](manuscripts/arbitrary-group-cayley-sparsification.md)
 
@@ -16,7 +21,12 @@ For every result, the support may be capped by the original item count <code cla
 
 **A supplied <code class="math">d</code>-dimensional unitary action of <code class="math">G</code>**
 
-**Support or guarantee.** <code class="math">O\!\left(\frac{\log^2(2\lvert G\rvert)\log(2d)}{\varepsilon^2}\right)</code> generator items
+**Support or guarantee.** Generator items:
+
+<!-- math-display: c8b42e7e327d63376eac6ca8
+O\!\left(\frac{\log^2(2\lvert G\rvert)\log(2d)}{\varepsilon^2}\right)
+-->
+![Formula](../../assets/math/c8b42e7e327d63376eac6ca8.svg)
 
 **Construction and scope.** Deterministic in the supplied explicit action arithmetic model; the regular-action bound also works simultaneously in every later representation. Rational polynomial-bit construction is specified for explicit permutation matrices; arbitrary implicit unitary actions have no such bit-model claim
 
@@ -42,7 +52,12 @@ O\!\left(\frac{(a+1)\log^2(2\lvert G\rvert)\log(2\lvert G\rvert(L+1))}{\varepsil
 
 **Whole subgroup-complement constraints**
 
-**Support or guarantee.** <code class="math">O\!\left(\frac{\log\!\left(2[G:\bigcap_e H_e]\right)}{\varepsilon^2}\right)</code>
+**Support or guarantee.**
+
+<!-- math-display: 7142e4cca41d933b57833003
+O\!\left(\frac{\log\!\left(2[G:\bigcap_e H_e]\right)}{\varepsilon^2}\right)
+-->
+![Formula](../../assets/math/7142e4cca41d933b57833003.svg)
 
 **Construction and scope.** Support existence, with Monte Carlo partial-coloring construction polynomial in an explicit predicate table and success at least <code class="math">2/3</code> under the backend contract in [the proof](proof.md#randomness-and-confidence). Arbitrary subgroups, including nonnormal ones
 
@@ -50,7 +65,12 @@ O\!\left(\frac{(a+1)\log^2(2\lvert G\rvert)\log(2\lvert G\rvert(L+1))}{\varepsil
 
 **Arbitrary affine coset-complement constraints**
 
-**Support or guarantee.** <code class="math">O\!\left(\frac{\log(2\lvert G\rvert)}{\varepsilon^2}\right)</code>
+**Support or guarantee.**
+
+<!-- math-display: 2a0ef9934cd66f7ffe3a6dfe
+O\!\left(\frac{\log(2\lvert G\rvert)}{\varepsilon^2}\right)
+-->
+![Formula](../../assets/math/2a0ef9934cd66f7ffe3a6dfe.svg)
 
 **Construction and scope.** Monte Carlo explicit-table partial coloring, success at least <code class="math">2/3</code> under the backend contract; no common satisfying assignment required; optional exact total input weight
 
@@ -58,7 +78,12 @@ O\!\left(\frac{(a+1)\log^2(2\lvert G\rvert)\log(2\lvert G\rvert(L+1))}{\varepsil
 
 **Arbitrary-arity group-derived Mal'tsev constraint violations over <code class="math">A^n</code>**
 
-**Support or guarantee.** <code class="math">O\!\left(\frac{1+n\log\lvert A\rvert}{\varepsilon^2}\right)</code> whole constraints
+**Support or guarantee.** Whole constraints:
+
+<!-- math-display: db57687b69d1ef00710b733d
+O\!\left(\frac{1+n\log\lvert A\rvert}{\varepsilon^2}\right)
+-->
+![Formula](../../assets/math/db57687b69d1ef00710b733d.svg)
 
 **Construction and scope.** Monte Carlo through the explicit-table coset construction; each accepting relation is a subgroup coset and the alphabet group may be nonabelian
 
@@ -66,7 +91,12 @@ O\!\left(\frac{(a+1)\log^2(2\lvert G\rvert)\log(2\lvert G\rvert(L+1))}{\varepsil
 
 **Distances to an arbitrary received word in a subgroup code <code class="math">C</code>**
 
-**Support or guarantee.** <code class="math">O\!\left(\frac{\log(2\lvert C\rvert)}{\varepsilon^2}\right)</code> original coordinates
+**Support or guarantee.** Original coordinates:
+
+<!-- math-display: 71bbc08050adea87282b1939
+O\!\left(\frac{\log(2\lvert C\rvert)}{\varepsilon^2}\right)
+-->
+![Formula](../../assets/math/71bbc08050adea87282b1939.svg)
 
 **Construction and scope.** Monte Carlo through the explicit-table coset construction; preserves every codeword's weighted distance and does not perform decoding
 
@@ -74,7 +104,12 @@ O\!\left(\frac{(a+1)\log^2(2\lvert G\rvert)\log(2\lvert G\rvert(L+1))}{\varepsil
 
 **Sums of itemwise invariant Hilbert distances on a transitive <code class="math">N</code>-point space**
 
-**Support or guarantee.** <code class="math">O\!\left(\frac{\log(2N)}{\varepsilon^2}\right)</code> whole metrics
+**Support or guarantee.** Whole metrics:
+
+<!-- math-display: 8eeb2bc633d396b7eb612e0b
+O\!\left(\frac{\log(2N)}{\varepsilon^2}\right)
+-->
+![Formula](../../assets/math/8eeb2bc633d396b7eb612e0b.svg)
 
 **Construction and scope.** Monte Carlo explicit-table partial coloring, success at least <code class="math">2/3</code> under the stated certified separation/precision contract; optional exact total weight
 
@@ -82,7 +117,12 @@ O\!\left(\frac{(a+1)\log^2(2\lvert G\rvert)\log(2\lvert G\rvert(L+1))}{\varepsil
 
 **The same metric problem with orbit sizes <code class="math">N_1,\ldots,N_k</code>**
 
-**Support or guarantee.** <code class="math">O\!\left(\frac{\min\{N,\log(2k!\prod_{j=1}^k N_j)\}}{\varepsilon^2}\right)</code>
+**Support or guarantee.**
+
+<!-- math-display: 6c0c280ea51c4edfac4a5814
+O\!\left(\frac{\min\{N,\log(2k!\prod_{j=1}^k N_j)\}}{\varepsilon^2}\right)
+-->
+![Formula](../../assets/math/6c0c280ea51c4edfac4a5814.svg)
 
 **Construction and scope.** Symmetry branch: Monte Carlo using the original distance table and its numerical-access contract. Unrestricted <code class="math">N</code> branch: existence only from the ordinary seminorm theorem
 
@@ -90,7 +130,12 @@ O\!\left(\frac{(a+1)\log^2(2\lvert G\rvert)\log(2\lvert G\rvert(L+1))}{\varepsil
 
 **Two-anchor Euclidean alignment over a finite group <code class="math">G</code>, including itemwise Bernstein transforms**
 
-**Support or guarantee.** <code class="math">O\!\left(\frac{\log(2\lvert G\rvert)}{\varepsilon^2}\right)</code> whole observations
+**Support or guarantee.** Whole observations:
+
+<!-- math-display: 2a0ef9934cd66f7ffe3a6dfe
+O\!\left(\frac{\log(2\lvert G\rvert)}{\varepsilon^2}\right)
+-->
+![Formula](../../assets/math/2a0ef9934cd66f7ffe3a6dfe.svg)
 
 **Construction and scope.** Monte Carlo through the explicit-table metric construction; preserves every group alignment and the norm losses are unsquared
 
@@ -98,7 +143,12 @@ O\!\left(\frac{(a+1)\log^2(2\lvert G\rvert)\log(2\lvert G\rvert(L+1))}{\varepsil
 
 **Coordinate-permutation alignment of vector or matrix pairs in dimension <code class="math">d</code>**
 
-**Support or guarantee.** <code class="math">O\!\left(\frac{d\log(d+1)}{\varepsilon^2}\right)</code> whole pairs
+**Support or guarantee.** Whole pairs:
+
+<!-- math-display: 4374e57fc056f24d269b673b
+O\!\left(\frac{d\log(d+1)}{\varepsilon^2}\right)
+-->
+![Formula](../../assets/math/4374e57fc056f24d269b673b.svg)
 
 **Construction and scope.** Monte Carlo through the explicit-table metric construction; specializes to <code class="math">S_d</code> and signed permutations; no optimizer is asserted
 
@@ -106,7 +156,15 @@ O\!\left(\frac{(a+1)\log^2(2\lvert G\rvert)\log(2\lvert G\rvert(L+1))}{\varepsil
 
 **Affine modular blocks over arbitrary binary-encoded <code class="math">\mathbb Z_q</code>**
 
-**Support or guarantee.** Existence <code class="math">O(r/\varepsilon^2)</code>; compact randomized construction <code class="math">O\!\left(\frac{r\log(2r/\varepsilon)}{\varepsilon^2}\right)</code>
+**Support or guarantee.**
+
+<!-- math-display: 55ee4e33430b2a54ed62033e
+\begin{aligned}
+\text{Existence:}\quad &O(r/\varepsilon^2),\\
+\text{Compact randomized:}\quad &O\!\left(\frac{r\log(2r/\varepsilon)}{\varepsilon^2}\right).
+\end{aligned}
+-->
+![Formula](../../assets/math/55ee4e33430b2a54ed62033e.svg)
 
 **Construction and scope.** Compact Monte Carlo, success at least <code class="math">2/3</code>; <code class="math">r=\log_2\lvert H\rvert</code> for the subgroup generated by augmented rows. Polynomial bit time without factoring; whole blocks remain atomic; the sharper support bound is existence only in this compact model
 
@@ -114,7 +172,14 @@ O\!\left(\frac{(a+1)\log^2(2\lvert G\rvert)\log(2\lvert G\rvert(L+1))}{\varepsil
 
 **Closure-preserving rationalization of a unit-gap submodular rank**
 
-**Support or guarantee.** Exact rational rank at most <code class="math">4R</code>, denominator <code class="math">O(R)</code>, and identical zero marginals
+**Support or guarantee.**
+
+<!-- math-display: ce4877a52231da3694806862
+\text{rational rank}\le4R,\qquad\text{denominator}=O(R).
+-->
+![Formula](../../assets/math/ce4877a52231da3694806862.svg)
+
+Zero marginals remain identical.
 
 **Construction and scope.** Deterministic, given the stated deterministic weak value oracle; <code class="math">O(m)</code> constant-precision weak evaluations plus one evaluation at precision <code class="math">1/\mathrm{poly}(R)</code> per value query
 

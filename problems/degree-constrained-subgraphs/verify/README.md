@@ -25,7 +25,13 @@ checks of the specified gadgets, not a substitute for the general proof.
 
 ## Ready for review: the linear-size theoretical selector
 
-[Theorem 1.2 and its complete proof](../linear-selector.md) reduce selector size to <code>O(d)</code> by a deterministic construction using the explicitly named Gabber–Galil expansion theorem. It proves the required DAG, source/sink boundary degrees, vertex-disjoint routing property, linear enumeration cost, and simple subcubic matching adaptation. The executable degree solver still uses the Beneš selector.
+[Theorem 1.2 and its complete proof](../linear-selector.md) reduce selector size to
+
+<!-- math-display: 08eab5cd7b88276cab54b5e1
+O(d)
+-->
+![Formula](../../../assets/math/08eab5cd7b88276cab54b5e1.svg)
+ by a deterministic construction using the explicitly named Gabber–Galil expansion theorem. It proves the required DAG, source/sink boundary degrees, vertex-disjoint routing property, linear enumeration cost, and simple subcubic matching adaptation. The executable degree solver still uses the Beneš selector.
 
 Run <code>python3 -B problems/degree-constrained-subgraphs/verify/check_linear_selector.py</code> from the repository root. The scoped finite suite checks 1,171 networks and 9,467 terminal-set pairs, including 3,694 infeasible pairs. It compares the generic degree adapter and matching gadget with independent exact disjoint-path tests. It also checks 160 modular maps, 66,066 finite expansion subsets, 601 exact rounding/size sequences, and four rejected network descriptions. Python optimized mode is refused.
 

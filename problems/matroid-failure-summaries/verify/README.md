@@ -96,7 +96,7 @@ entire surviving restriction. A cheaper-prefix witness is a different
 condition. The bounded-depth search explicitly decides both conditions
 when supplied the appropriate current ground. Reverse deletion gives the
 sharp rank summary. A canonical-basis tree gives the unique smallest
-prefix summary in at most N times the bounded tree size oracle calls;
+prefix summary in at most `N` times the bounded tree size oracle calls;
 the retained-prefix algorithm offers a separate one-pass tradeoff.
 The original-basis probability calculation strengthens the general size
 factor. Composing prefix compression and reverse deletion gives the sharp

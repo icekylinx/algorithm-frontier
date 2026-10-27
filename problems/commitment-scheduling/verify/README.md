@@ -18,7 +18,7 @@ No result-specific executable check is supplied. The argument above is a mathema
 
 ## Model and verification boundaries
 
-All companions use common type sizes and no assignment or setup budget. Bottleneck terms are loads, with no implicit comparison to OPT. The sharper eligibility bound requires OPT below the collision threshold; the unrestricted guarantee retains the easy branch and additive smaller-job loss.
+All companions use common type sizes and no assignment or setup budget. Bottleneck terms are loads, with no implicit comparison to <code class="math">\mathrm{OPT}</code>. The sharper eligibility bound requires <code class="math">\mathrm{OPT}</code> below the collision threshold; the unrestricted guarantee retains the easy branch and additive smaller-job loss.
 
 The [source map](../sources.md) identifies the actual proof dependencies. Repository checks validate the registry, links, notation and generated catalogue; those checks do not establish mathematical correctness. Proof-assistant verification and external peer review are not claimed.
 

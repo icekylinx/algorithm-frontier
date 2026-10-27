@@ -9,12 +9,38 @@ import tempfile
 from math_presentation import present_markdown, restore_markdown, transform
 from build_math_assets import validate_svg
 from build_catalogue import quantity_paragraphs
+from check_public_math import BARE_MATH, prose_lines
 
 ROOT = Path('/example')
 PAGE = ROOT / 'problems' / 'example' / 'proof.md'
 
 
 class StaticMathematics(unittest.TestCase):
+    def test_public_prose_rejects_unmarked_symbolic_expressions(self):
+        for source in ('Work O(n).', 'Assume n>=h+3.', 'Degree w²−1.',
+                       'Probability 2/3.', 'The field has size p^n.',
+                       'For x<y and y>z.', 'The function K(w).'):
+            with self.subTest(source=source):
+                self.assertTrue(any(BARE_MATH.search(line) for _, line in prose_lines(source)))
+
+    def test_public_prose_preserves_literal_and_source_containers(self):
+        source = '''The parameter `n>=h+3` and <code class="math">O(n)</code>.
+<!-- math-display: fixture
+O(n^2)
+-->
+![Formula](assets/math/fixture.svg)
+```text
+K(w)=2^w
+```
+[check_values.py](verify/check_values.py) and [Theorems 3.2/3.8](proof.md).
+'''
+        self.assertFalse(any(BARE_MATH.search(line) for _, line in prose_lines(source)))
+
+    def test_public_prose_does_not_treat_comparisons_as_html_tags(self):
+        lines = list(prose_lines('<em>Work</em> x<y and y>z.'))
+        self.assertIn('x<y and y>z', lines[0][1])
+        self.assertTrue(BARE_MATH.search(lines[0][1]))
+
     def present(self, text):
         return present_markdown(text, PAGE, root=ROOT)
 

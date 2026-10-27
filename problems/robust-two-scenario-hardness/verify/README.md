@@ -4,14 +4,14 @@ The evidence for this result consists of its [mathematical proof](../proof.md).
 
 ## Mathematical evidence
 
-- The reduction uses two explicit scenarios, the common basis rank q-k, free Boolean resources and nonnegative assignment costs.
-- Both budgets hold exactly when the omitted k-set has the prescribed sum. Positive common service is the encoded decision event.
-- The proof imports the identified parameterized k-SUM hardness result and retains c=k; the whole-ground rank-oracle obstruction has a different representation and conclusion.
+- The reduction uses two explicit scenarios, the common basis rank <code class="math">q-k</code>, free Boolean resources and nonnegative assignment costs.
+- Both budgets hold exactly when the omitted <code class="math">k</code>-set has the prescribed sum. Positive common service is the encoded decision event.
+- The proof imports the identified parameterized <code class="math">k</code>-SUM hardness result and retains <code class="math">c=k</code>; the whole-ground rank-oracle obstruction has a different representation and conclusion.
 
 An internal audit on 2026-10-27 read the canonical reduction and its
 actual primary source, checking Definition 1.1, Theorem 1.3 and Section 4
 of *Losing Weight by Gaining Edges*. The source already supplies
-nonnegative bounded inputs and deterministic W[1]-hardness. The audit
+nonnegative bounded inputs and deterministic <code class="math">\mathrm{W}[1]</code>-hardness. The audit
 reconstructed both budget identities, positivity versus feasibility,
 nonnegative budgets, the `c=k` correspondence and binary-size bounds.
 No unresolved algorithmic interface remains in this reduction. The family
@@ -22,7 +22,7 @@ source-hardness theorem and the stated complexity assumption.
 
 [verify_finite_reductions.py](../../../tools/verify_finite_reductions.py) checks the following finite claim:
 
-Exhaustive reduction identity for q=2,...,7, every vector in {0,1,2,3}^q, all 1<=k<q, every omitted k-subset and every integer target from zero through the total sum. It checks equivalence of the two budget inequalities and the target subset sum, not W[1]-hardness itself.
+Exhaustive reduction identity for <code class="math">q=2,\ldots,7</code>, every vector in <code class="math">\{0,1,2,3\}^q</code>, all <code class="math">1\le k&lt;q</code>, every omitted <code class="math">k</code>-subset and every integer target from zero through the total sum. It checks equivalence of the two budget inequalities and the target subset sum, not <code class="math">\mathrm{W}[1]</code>-hardness itself.
 
 Run from the repository root:
 
@@ -37,7 +37,7 @@ parameterized-complexity consequence.
 
 ## Model and verification boundaries
 
-Exhaustive small instances test the exact reduction identity, not W[1]-hardness itself. The complexity conclusion depends on the cited source problem and parameter-preserving proof. No ETH bound or optimal whole-ground base follows from this finite check.
+Exhaustive small instances test the exact reduction identity, not <code class="math">\mathrm{W}[1]</code>-hardness itself. The complexity conclusion depends on the cited source problem and parameter-preserving proof. No ETH bound or optimal whole-ground base follows from this finite check.
 
 The impossibility concerns deterministic finite-factor algorithms under
 `FPT != W[1]`, with exact budgets, integral service and one optional

@@ -27,7 +27,7 @@ The main proof gives the family-level theorem composition. The following canonic
 ## External inputs
 
 - Quanrud, *Quotient Sparsification for Submodular Functions*, Theorem 1.1 and the entropy application: <https://kentq.s3.amazonaws.com/submodular-sparsification.pdf>. The theorem permits real-valued normalized submodular ranks with positive marginals at least one.
-- Reis and Rothvoss, *Linear-size l1 Sparsifiers*, Theorem 7: <https://arxiv.org/html/2606.28147v2>. The partial coloring lies in a constant dilation of the error body; that dilation is charged in the proof.
+- Reis and Rothvoss, *Linear-size <code class="math">\ell_1</code> Sparsifiers*, Theorem 7: <https://arxiv.org/html/2606.28147v2>. The partial coloring lies in a constant dilation of the error body; that dilation is charged in the proof.
 - Slepian, *The One-Sided Barrier Problem for Gaussian Noise*: <https://doi.org/10.1002/j.1538-7305.1962.tb02419.x>. The comparison is used at zero after equal-variance normalization.
 - Royen, Gaussian correlation inequality: <https://arxiv.org/abs/1408.1028>. Prékopa log-concavity and matrix concentration are identified where used.
 - Basu et al., *Optimal Sparsifiers for Minkowski Sums and Sums of Seminorms*, Theorem 1.2: <https://arxiv.org/pdf/2609.20238>. This supplies only the unrestricted metric comparison branch; the symmetry proof is internal.

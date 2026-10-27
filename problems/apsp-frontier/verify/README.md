@@ -2,8 +2,8 @@
 
 Theorem 2.1 derives the full time--stretch curve from the generic local
 interface; Corollary 2.2 instantiates it with the constructed normalized
-provider and hierarchy. For U = log2(N+4) and h = log2(U+4), the range
-t tending to infinity with t²h = o(U) is part of the statement. The work is
+provider and hierarchy. For <code class="math">U=\log_2(N+4)</code> and <code class="math">h=\log_2(U+4)</code>, the range
+<code class="math">t\to\infty</code> with <code class="math">t^2h=o(U)</code> is part of the statement. The work is
 an amortized factor multiplying the charged lifetime size.
 
 All five displayed parameter choices are substitutions into that theorem.

@@ -10,7 +10,7 @@ Select an actual player basis and legal integral recipient counts, maximizing co
 
 **Randomness**
 
-Deterministic current-blocker search with paid exact primitives. A supplied factor-lambda availability oracle must satisfy its certified guarantee on every call.
+Deterministic current-blocker search with paid exact primitives. A supplied factor-`lambda` availability oracle must satisfy its certified guarantee on every call.
 
 **Time**
 

@@ -1,5 +1,12 @@
 # History
 
+## 2026-10-27 — Public mathematics and scoped backend reviews
+
+- Audited 184 public and auxiliary Markdown pages. Primary bounds and comparisons use complete source-bound SVGs; parameters, premises, exact values and review conditions use literal code. Updated catalogue and registry sources as well as generated pages, retaining the limited manuscript exceptions and native machine-data formats.
+- Added a public-prose guard and regressions for unmarked complexity, inequalities, exponents and related symbolic syntax. It supplements manual review of isolated variables and presentation purpose. APSP now displays the actual exponential work and stretch bounds for all five choices, rather than only their logarithms.
+- Marked the exact unit-flow component and the deterministic Pauli/prime-dimensional stabilizer-witness component ready for review in their named scopes. Expanded the Pauli pair comparison proof; separate sparsification and other sensitivity clients retain their own review boundaries.
+- The 75-check repository suite passed with serial contact replays. The final APSP display expansion and public-guard coverage extension also received targeted presentation checks. Canonical TeX exports and reviewed PDF bindings remain valid; no full 62-plus-16-branch Subset Sum replay or external peer review is claimed.
+
 ## 2026-10-27 — Compact exact unit-flow failure queries
 
 - Added a self-contained exact-rational reference for fixed-value and minimum-cost maximum unit flow after an independent original-arc deletion. It stores original-record preservers, short demand paths and hub trees; queries report costs, changes or full flows without rerunning optimization or retaining the full input graph.

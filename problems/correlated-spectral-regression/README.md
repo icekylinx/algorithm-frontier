@@ -48,13 +48,23 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **PSD importance pools**
 
-**Retained support, capped by input size.** <code class="math">O\!\left(\Gamma r\epsilon^{-2}\log(2rQ/\delta)\right)</code>
+**Retained support, capped by input size.**
+
+<!-- math-display: b64d4d7a4b6de09420061ad7
+O\!\left(\Gamma r\epsilon^{-2}\log(2rQ/\delta)\right)
+-->
+![Formula](../../assets/math/b64d4d7a4b6de09420061ad7.svg)
 
 **Algorithm / guarantee.** Monte Carlo, failure at most <code class="math">\delta</code> for one simultaneous all-query/all-failure event; uniform polynomial time without failure enumeration
 
 **One-label-failure PSD**
 
-**Retained support, capped by input size.** <code class="math">O\!\left((d+1)r\epsilon^{-2}\log(2r(L+1))\right)</code>
+**Retained support, capped by input size.**
+
+<!-- math-display: cace771187369d34e6eb306f
+O\!\left((d+1)r\epsilon^{-2}\log(2r(L+1))\right)
+-->
+![Formula](../../assets/math/cace771187369d34e6eb306f.svg)
 
 **Algorithm / guarantee.** Deterministic polynomial-bit construction
 
@@ -66,13 +76,23 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **General finite-query nonnegative losses, <code class="math">K_0</code> queries**
 
-**Retained support, capped by input size.** <code class="math">O\!\left(\Gamma S_0\epsilon^{-2}\log(2K_0Q/\delta)\right)</code>
+**Retained support, capped by input size.**
+
+<!-- math-display: 410782d9b18f7b13d00f13c3
+O\!\left(\Gamma S_0\epsilon^{-2}\log(2K_0Q/\delta)\right)
+-->
+![Formula](../../assets/math/410782d9b18f7b13d00f13c3.svg)
 
 **Algorithm / guarantee.** Monte Carlo, failure at most <code class="math">\delta</code>; requires hereditary ordinary sensitivity bound/routine <code class="math">S_0</code>
 
 **<code class="math">\ell_1</code> row sums, pool construction**
 
-**Retained support, capped by input size.** <code class="math">O\!\left(\Gamma r\epsilon^{-2}\log(2NQ/\delta)\right)</code>
+**Retained support, capped by input size.**
+
+<!-- math-display: 4f92f62fac40cfb760a4cafc
+O\!\left(\Gamma r\epsilon^{-2}\log(2NQ/\delta)\right)
+-->
+![Formula](../../assets/math/4f92f62fac40cfb760a4cafc.svg)
 
 **Algorithm / guarantee.** Monte Carlo pool and Lewis-weight sampling, failure at most <code class="math">\delta</code>; augmented supplied responses allowed
 
@@ -89,12 +109,14 @@ O_p\!\left(\Gamma r\epsilon^{-2}\left[(\log(2r))^3\log(2N)+\log(2NQ/\delta)\righ
 
 **One label per PSD item, code construction**
 
-**Retained support, capped by input size.** <code class="math">O(rK/\epsilon^2)</code>,
+**Retained support, capped by input size.**
 
-<!-- math-display: 60d25fe105ea455220f8e70e
-K=1+\min\left\{L,O\!\left(\bigl[(h+1)\log(eL/(h+1))+\log(1/\zeta)\bigr]/\epsilon\right)\right\}
+<!-- math-display: af750f1c3b9b5fee8223235b
+O(rK/\epsilon^2)
 -->
-![Formula](../../assets/math/60d25fe105ea455220f8e70e.svg)
+![Formula](../../assets/math/af750f1c3b9b5fee8223235b.svg)
+
+Here <code class="math">K=1+\min\left\{L,O\!\left(\bigl[(h+1)\log(eL/(h+1))+\log(1/\zeta)\bigr]/\epsilon\right)\right\}</code>.
 
 **Algorithm / guarantee.** Monte Carlo code, failure at most <code class="math">\zeta</code> in <code class="math">1\le h&lt;L</code>, followed by deterministic polynomial-arithmetic PSD sparsification; identity-code branch deterministic
 
@@ -111,13 +133,25 @@ O\!\left(r\epsilon^{-2}\min\left\{L+1,(h^2+h/\epsilon)\log(2L)+1\right\}\right)
 
 **At most <code class="math">d</code> labels per item, exterior code**
 
-**Retained support, capped by input size.** <code class="math">O(rK/\epsilon^2)</code>, <code class="math">K=\sum_{j\le\min\{d,D\}}\binom{D}{j}</code>
+**Retained support, capped by input size.**
+
+<!-- math-display: af750f1c3b9b5fee8223235b
+O(rK/\epsilon^2)
+-->
+![Formula](../../assets/math/af750f1c3b9b5fee8223235b.svg)
+
+Here <code class="math">K=\sum_{j\le\min\{d,D\}}\binom{D}{j}</code>.
 
 **Algorithm / guarantee.** Monte Carlo code with failure at most <code class="math">\zeta</code>, followed by deterministic PSD sparsification; <code class="math">D</code> as defined below, with fixed <code class="math">d</code> giving <code class="math">h^d</code> up to logarithms
 
 **Graph vertex/edge label degrees <code class="math">a,b</code>**
 
-**Retained support, capped by input size.** <code class="math">O_{a,b}\!\left(rh^{a+b}\log^{a+b}(2L)/\epsilon^{a+b+2}\right)</code>
+**Retained support, capped by input size.**
+
+<!-- math-display: 7838d4ff842725db8b848884
+O_{a,b}\!\left(rh^{a+b}\log^{a+b}(2L)/\epsilon^{a+b+2}\right)
+-->
+![Formula](../../assets/math/7838d4ff842725db8b848884.svg)
 
 **Algorithm / guarantee.** Monte Carlo code with fixed confidence, followed by deterministic PSD sparsification; fixed <code class="math">a,b</code>, <code class="math">h\ge a+b</code>; exact capped form in proof
 
@@ -134,47 +168,64 @@ O\!\left(r\epsilon^{-2}\left[1+\min\left\{L,q\bigl[s\log(eL/s)+\log(2/\zeta)\big
 
 **Weak convex regression, importance pools**
 
-**Retained support, capped by input size.** <code class="math">O\!\left(\Gamma\rho\epsilon^{-1}\log(2(p+q)Q/\delta)\right)</code>
+**Retained support, capped by input size.**
+
+<!-- math-display: 512fe283c5846e71f29f8ba6
+O\!\left(\Gamma\rho\epsilon^{-1}\log(2(p+q)Q/\delta)\right)
+-->
+![Formula](../../assets/math/512fe283c5846e71f29f8ba6.svg)
 
 **Algorithm / guarantee.** Monte Carlo, failure at most <code class="math">\delta</code> for all later responses in the supplied subspace, <code class="math">\lambda\ge\lambda_0</code>, convex constraints and nonnegative convex penalties
 
 **One-failure weak convex regression**
 
-**Retained support, capped by input size.** <code class="math">O\!\left((d+1)\rho\epsilon^{-1}\log(2(p+q)(L+1))\right)</code>
+**Retained support, capped by input size.**
+
+<!-- math-display: fc30730449efef1ffba7d9d4
+O\!\left((d+1)\rho\epsilon^{-1}\log(2(p+q)(L+1))\right)
+-->
+![Formula](../../assets/math/fc30730449efef1ffba7d9d4.svg)
 
 **Algorithm / guarantee.** Deterministic polynomial-bit construction
 
 **One-label weak regression, code route**
 
-**Retained support, capped by input size.** <code class="math">O\!\left(\rho D\epsilon^{-1}\log(2nD)\right)</code>,
+**Retained support, capped by input size.**
 
-<!-- math-display: 88d19ed6ad04d6e621bda1cf
-D=O\!\left(\bigl[(h+1)\log(eL/(h+1))+\log(1/\zeta)\bigr]/\sqrt{\epsilon}\right)
+<!-- math-display: cca7d858cc4320832f5fe90f
+O\!\left(\rho D\epsilon^{-1}\log(2nD)\right)
 -->
-![Formula](../../assets/math/88d19ed6ad04d6e621bda1cf.svg)
+![Formula](../../assets/math/cca7d858cc4320832f5fe90f.svg)
+
+Here <code class="math">D=O\!\left(\bigl[(h+1)\log(eL/(h+1))+\log(1/\zeta)\bigr]/\sqrt{\epsilon}\right)</code>.
 
 **Algorithm / guarantee.** Monte Carlo code with failure at most <code class="math">\zeta</code> when the deterministic lifted PSD routine is used; linear <code class="math">h</code>, <code class="math">\epsilon^{-3/2}</code> up to displayed logs; identity branch needs background padding
 
 **Whole seminorm blocks, existential**
 
-**Retained support, capped by input size.** <code class="math">O(rK/\epsilon^2)</code>
+**Retained support, capped by input size.**
+
+<!-- math-display: af750f1c3b9b5fee8223235b
+O(rK/\epsilon^2)
+-->
+![Formula](../../assets/math/af750f1c3b9b5fee8223235b.svg)
 
 **Algorithm / guarantee.** Existence only at this support bound; choosing deterministic label features does not supply a deterministic optimal seminorm construction
 
 **Whole seminorm blocks, constructive backend**
 
-**Retained support, capped by input size.** <code class="math">O\!\left(\epsilon^{-2}R\log(2R/\epsilon)[\log(2R)]^{5/2}\right)</code>, <code class="math">R\le rK</code>
+**Retained support, capped by input size.**
+
+<!-- math-display: 9c82468a25fac972579af7b7
+O\!\left(\epsilon^{-2}R\log(2R/\epsilon)[\log(2R)]^{5/2}\right)
+-->
+![Formula](../../assets/math/9c82468a25fac972579af7b7.svg)
+
+Here <code class="math">R\le rK</code>.
 
 **Algorithm / guarantee.** Monte Carlo with the ordinary seminorm backend's high-probability guarantee, plus code failure <code class="math">\zeta</code> if a random code is used; requires lifted-sum evaluation and roundedness access
 
-For the general exterior code, let <code class="math">s=\min\{h+d,L\}</code> and use the actual rounded dimension
-<!-- math-display: 8f4084de856e206285fce761
-D=\min\left\{L,
-\left\lceil\frac{Cd}{\epsilon}
-\left[s\log(eL/s)+\log(2/\zeta)\right]\right\rceil
-\right\}.
--->
-![Formula](../../assets/math/8f4084de856e206285fce761.svg)
+For the general exterior code, let <code class="math">s=\min\{h+d,L\}</code> and use the actual rounded dimension <code class="math">D=\min\left\{L, \left\lceil\frac{Cd}{\epsilon} \left[s\log(eL/s)+\log(2/\zeta)\right]\right\rceil \right\}</code>.
 
 If the cap chooses <code class="math">L</code>, use the identity code. Compute the final support target before materializing features; if it reaches the input size, return the original input. The exact arithmetic support bound <code class="math">O(rK/\epsilon^2)</code> has an explicit polynomial-bit implementation with an additional <code class="math">\log(2rK)</code> factor. The sample-confidence and code-confidence probabilities are separate when both stages are randomized.
 

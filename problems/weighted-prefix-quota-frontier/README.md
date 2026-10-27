@@ -63,13 +63,13 @@ One global normalized monotone integral polymatroid with exact rank access. Pref
 
 **Lower-bound scope**
 
-Oracle-query and readable-program ETH bounds are stated separately. Frequency-one disjoint weighted equalities already require <code class="math">2^{\Omega(B\log(B+2))}</code> queries. Row-dependent weights have a separate W[2] boundary. Even the common-weight laminar model with only positive values 1 and 2 needs exponential rank queries for mandatory feasibility or exact optional optimization; one positive value is polynomial. The laminar upper and lower exponents are not claimed to coincide.
+Oracle-query and readable-program ETH bounds are stated separately. Frequency-one disjoint weighted equalities already require <code class="math">2^{\Omega(B\log(B+2))}</code> queries. Row-dependent weights have a separate `W[2]` boundary. Even the common-weight laminar model with only positive values 1 and 2 needs exponential rank queries for mandatory feasibility or exact optional optimization; one positive value is polynomial. The laminar upper and lower exponents are not claimed to coincide.
 
 **Review status**
 
-**Ready for review in the stated scope.** The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most B lower rows. Exact dominant-weight completion with all signed zero-coordinate costs, a binary count-rank oracle, the one-positive-weight polynomial endpoint, the self-contained 10/9 quadratic leading exponent, the named universal-set 5/9 refinement, projected coloring identities and histogram-sensitive enumeration. The compatible-cut extension and the two-positive-weight oracle/encoded-program lower-bound models are proved separately.
+**Ready for review in the stated scope.** The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most `B` lower rows. Exact dominant-weight completion with all signed zero-coordinate costs, a binary count-rank oracle, the one-positive-weight polynomial endpoint, the self-contained `10/9` quadratic leading exponent, the named universal-set `5/9` refinement, projected coloring identities and histogram-sensitive enumeration. The compatible-cut extension and the two-positive-weight oracle/encoded-program lower-bound models are proved separately.
 
-**Dependencies and scope.** The general resource calls retain exact integral-polymatroid optimization and submodular-minimization dependencies named in sources.md. The 5/9 leading coefficient specifically uses Naor-Schulman-Srinivasan Theorem 7 and its locally explicit indexing guarantee; the elementary 10/9 alternative supplies a local coloring proof. Finite checkers isolate the stated mechanisms and do not implement all of these optimization algorithms. The compatible-cut one-weight polynomial endpoint requires a prescribed or forced total numeric mass. Original resource totals, all numeric constraints and signed costs remain intact. Oracle query lower bounds and ETH claims for readable rank programs are separate models.
+**Dependencies and scope.** The general resource calls retain exact integral-polymatroid optimization and submodular-minimization dependencies named in sources.md. The `5/9` leading coefficient specifically uses Naor-Schulman-Srinivasan Theorem 7 and its locally explicit indexing guarantee; the elementary `10/9` alternative supplies a local coloring proof. Finite checkers isolate the stated mechanisms and do not implement all of these optimization algorithms. The compatible-cut one-weight polynomial endpoint requires a prescribed or forced total numeric mass. Original resource totals, all numeric constraints and signed costs remain intact. Oracle query lower bounds and ETH claims for readable rank programs are separate models.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -248,8 +248,8 @@ The [recovery theorem](manuscripts/laminar-dominant-weight-recovery.md) then
 enumerates only the units outside a most frequent weight, at most
 <code class="math">\lfloor B/3\rfloor</code>, and completes the rest in polynomial
 time. Keeping the cardinality in the catalogue size improves the elementary
-coefficient from 4 to 10/9. The precise published locally explicit
-universal-set construction improves it further to 5/9 plus a term tending
+coefficient from `4` to `10/9`. The precise published locally explicit
+universal-set construction improves it further to `5/9` plus a term tending
 to zero. Actual depth and weights refine both bounds; a zero exception
 budget gives polynomial time. The [projected-coloring refinement](manuscripts/laminar-dominant-weight-recovery.md#84-projected-coloring-identities-and-histogram-sensitive-recovery)
 shares identical coloring identities within each candidate class and can

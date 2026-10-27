@@ -32,7 +32,7 @@ The current spanner has the fixed vertex count multiplied by the chosen stretch 
 
 **Parameters**
 
-**n** is the fixed vertex count; **m0** is the initial edge count; **I** and **D** count edge insertions and deletions; **N** is the declared polynomial history cap; **U** is log of N plus a constant; **h** is log of U plus a constant. **D** is also the deletion term in the full-horizon recourse bound.
+`n` is the fixed vertex count; `m_0` is the initial edge count; `I` and `D` count edge insertions and deletions; `N` is the declared polynomial history cap; `U` is log of `N` plus a constant; `h` is log of `U` plus a constant. `D` is also the deletion term in the full-horizon recourse bound.
 
 **Model and representation**
 
@@ -58,11 +58,19 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 Write <code class="math">M=n+m_0+I+D</code> and <code class="math">E_a=\exp(O(U^a h^{1-a}))</code>.
 
-**Tracked original terminals.** Stretch <code class="math">E_{4/5}</code>, current edges
-<code class="math">nE_{4/5}</code>, total work <code class="math">ME_{4/5}</code>, and total output recourse <code class="math">ME_{4/5}</code>.
+**Tracked original terminals.**
 
-**Full-horizon construction.** Stretch <code class="math">E_{5/6}</code>, current edges
-<code class="math">nE_{5/6}</code>, total work <code class="math">ME_{5/6}</code>, and total output recourse <code class="math">(n+D)E_{5/6}</code>.
+<!-- math-display: 9dd7f96d6472e43d0fb68891
+\begin{aligned}\text{Stretch:}\quad&E_{4/5},\\\text{Current edges:}\quad&nE_{4/5},\\\text{Total work:}\quad&ME_{4/5},\\\text{Total output recourse:}\quad&ME_{4/5}.\end{aligned}
+-->
+![Formula](../../assets/math/9dd7f96d6472e43d0fb68891.svg)
+
+**Full-horizon construction.**
+
+<!-- math-display: e69b772114d4c3eefe5e0773
+\begin{aligned}\text{Stretch:}\quad&E_{5/6},\\\text{Current edges:}\quad&nE_{5/6},\\\text{Total work:}\quad&ME_{5/6},\\\text{Total output recourse:}\quad&(n+D)E_{5/6}.\end{aligned}
+-->
+![Formula](../../assets/math/e69b772114d4c3eefe5e0773.svg)
 
 Both conclusions use the constructed flat-forest hierarchy. The full-horizon construction removes cumulative insertions from output recourse, so neither construction dominates the other in every displayed quantity.
 

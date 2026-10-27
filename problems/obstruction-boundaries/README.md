@@ -14,7 +14,12 @@ These are two proved boundary results with different meanings: a compact members
 
 **Fixed-amplitude one-sided sign-cone probability for the listed rank-three non-Fano representation over <code class="math">\mathbb F_3</code>**
 
-**Conclusion.** Exactly <code class="math">15/128&lt;2^{-3}</code>
+**Conclusion.**
+
+<!-- math-display: 06906a269dfcc45318ac9c0e
+\text{sign probability}=\frac{15}{128}<2^{-3}.
+-->
+![Formula](../../assets/math/06906a269dfcc45318ac9c0e.svg)
 
 **Exact scope.** Deterministic exact count on seven columns and amplitude vector <code class="math">(6,5,3,5,5,5,6)</code>; all ternary row-space queries. The displayed probability belongs to the mathematical random-sign model, not an algorithm's failure event
 
@@ -22,7 +27,12 @@ These are two proved boundary results with different meanings: a compact members
 
 **Direct sum of <code class="math">k</code> copies of the same representation**
 
-**Conclusion.** Rank <code class="math">3k</code>, probability <code class="math">(15/128)^k</code>
+**Conclusion.**
+
+<!-- math-display: aee17bd3d4b474955abb1a71
+\text{rank}=3k,\qquad\text{sign probability}=\left(\frac{15}{128}\right)^k.
+-->
+![Formula](../../assets/math/aee17bd3d4b474955abb1a71.svg)
 
 **Exact scope.** Independent signs and fixed amplitudes on disjoint coordinate blocks; a deterministic direct-sum construction and exact probability identity
 

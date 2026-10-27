@@ -6,7 +6,13 @@ One fixed edge set preserves every surviving ordered prefix and its canonical mi
 
 **Guarantee**
 
-For vertex colors, retain at most <code class="math">\sum_C\left[n_Ck_C-\binom{k_C+1}{2}\right]</code> edges, where <code class="math">k_C=\min\{h+1,q_C\}</code>, and preserve exact connectivity and canonical MSF after every allowed color failure.
+For vertex colors, retain at most
+
+<!-- math-display: d4147752f7020b5bc0e31bf6
+\sum_C\left[n_Ck_C-\binom{k_C+1}{2}\right]
+-->
+![Formula](../../assets/math/d4147752f7020b5bc0e31bf6.svg)
+ edges, where <code class="math">k_C=\min\{h+1,q_C\}</code>, and preserve exact connectivity and canonical MSF after every allowed color failure.
 
 **Objective and output**
 
@@ -29,7 +35,13 @@ Here <code class="math">R=\sum_Cn_Ck_C</code>. For <code class="math">h=1</code>
 
 **Space**
 
-Displayed bounds count retained original edges. Direct elimination uses <code class="math">O(R^2)</code> field elements of workspace. Query output includes scanning the surviving certificate and Kruskal work.
+Displayed bounds count retained original edges. Direct elimination uses
+
+<!-- math-display: c94f6827f2afa806b704f95a
+O(R^2)
+-->
+![Formula](../../assets/math/c94f6827f2afa806b704f95a.svg)
+ field elements of workspace. Query output includes scanning the surviving certificate and Kruskal work.
 
 **Parameters**
 
@@ -69,7 +81,13 @@ nt-\binom{t+1}{2}
 -->
 ![Formula](../../assets/math/a522ff5528b0a0b9a2fd5dd6.svg)
 
-The computed rank satisfies <code class="math">t\le\min\left\{n,\binom{h+d_v}{d_v}\right\}</code>.
+The computed rank satisfies
+
+<!-- math-display: 5a11217d7e8bb7c53df4f827
+t\le\min\left\{n,\binom{h+d_v}{d_v}\right\}
+-->
+![Formula](../../assets/math/5a11217d7e8bb7c53df4f827.svg)
+.
 
 **Vertex and extra-edge lists, degrees <code class="math">d_v,d_e</code>**
 
@@ -110,7 +128,13 @@ Input organization is additional. Here <code class="math">a=2d_v+d_e</code>, <co
 -->
 ![Formula](../../assets/math/a6393cceb749af0256fda39e.svg)
 
-Indexed cost lookup takes <code class="math">O(1)</code> time.
+Indexed cost lookup takes
+
+<!-- math-display: 4a137b861e8d266f3c1bfeb6
+O(1)
+-->
+![Formula](../../assets/math/4a137b861e8d266f3c1bfeb6.svg)
+ time.
 
 When the list-feature dimension is gated out, the algorithm claims the parameter envelope at <code class="math">t=\min\left\{n,\binom{h+d_v}{d_v}\right\}</code>; the sharper actual-rank bound requires computing that rank.
 

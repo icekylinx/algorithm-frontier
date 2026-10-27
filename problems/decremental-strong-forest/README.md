@@ -13,7 +13,7 @@ Maintain the decremental strong-forest interface and use it to output the exact 
 
 **Randomness**
 
-Deterministic strong-forest and cut-tree constructions. The source map identifies the completed no-reset hierarchy, fixed-k realization and exact-flow proof. The published-flow capacity adapter is an additional deterministic route.
+Deterministic strong-forest and cut-tree constructions. The source map identifies the completed no-reset hierarchy, fixed-`k` realization and exact-flow proof. The published-flow capacity adapter is an additional deterministic route.
 
 **Time**
 
@@ -51,7 +51,7 @@ No lower bound is claimed.
 
 **Review status**
 
-**Ready for review.** The complete accepted no-reset Steiner-pool strong-forest construction, with fixed pools, native identities, ghost ownership and chronological work. The six-sevenths cut-tree composition includes the locally realized fixed-k adapter and exact-flow chain. Nonnegative flat-forest and zero-capacity adapters, native input costs and actual-call inventory are explicit. The published-flow capacity-bit construction gives an additional route.
+**Ready for review.** The complete accepted no-reset Steiner-pool strong-forest construction, with fixed pools, native identities, ghost ownership and chronological work. The six-sevenths cut-tree composition includes the locally realized fixed-`k` adapter and exact-flow chain. Nonnegative flat-forest and zero-capacity adapters, native input costs and actual-call inventory are explicit. The published-flow capacity-bit construction gives an additional route.
 
 **Dependencies and scope.** The structural expansion, bounded-degree and numerical-range hypotheses remain part of the theorem. Forest routing outputs walks under its stated interface; a simple-path reporting contract is not added. The optional older ported-forest candidate is distinct from the completed no-reset construction. The alternative flow route invokes van den Brand et al., arXiv:2407.10830v1, Theorem 6.17. The earlier four-fifths local flow theorem already had its own proof chain and is not reclassified as an open assumption.
 

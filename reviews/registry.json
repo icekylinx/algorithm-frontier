@@ -84,7 +84,7 @@
         "scope": "The complete general low-space theorem with writable-space exponent 0.18261635770550353, including the storage schedule, indexed witnesses and the one-bit deficiency-proxy charge. The separate two-short-range theorem includes signed normalization, nested residue streams and self-contained exact Boolean convolution.",
         "date": "2026-10-26",
         "conditions": [
-          "The stronger n/6-space result requires the supplied three-block partition and two short normalized ranges. The general theorem has no such input restriction. Executable finite checks cover their named identities and resource ledgers; they are not a full implementation or formalization of either asymptotic construction."
+          "The stronger `n/6`-space result requires the supplied three-block partition and two short normalized ranges. The general theorem has no such input restriction. Executable finite checks cover their named identities and resource ledgers; they are not a full implementation or formalization of either asymptotic construction."
         ]
       }
     },
@@ -124,10 +124,10 @@
       ],
       "review": {
         "status": "partial",
-        "scope": "The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most B lower rows. Exact dominant-weight completion with all signed zero-coordinate costs, a binary count-rank oracle, the one-positive-weight polynomial endpoint, the self-contained 10/9 quadratic leading exponent, the named universal-set 5/9 refinement, projected coloring identities and histogram-sensitive enumeration. The compatible-cut extension and the two-positive-weight oracle/encoded-program lower-bound models are proved separately.",
+        "scope": "The sharp sparse-packing FPT restriction with improved basis-tree preprocessing, arbitrary signed-profit ordered extension, capacity-sensitive failure budget, exact original-context lower construction, and aggregate laminar reduction to at most `B` lower rows. Exact dominant-weight completion with all signed zero-coordinate costs, a binary count-rank oracle, the one-positive-weight polynomial endpoint, the self-contained `10/9` quadratic leading exponent, the named universal-set `5/9` refinement, projected coloring identities and histogram-sensitive enumeration. The compatible-cut extension and the two-positive-weight oracle/encoded-program lower-bound models are proved separately.",
         "date": "2026-10-26",
         "conditions": [
-          "The general resource calls retain exact integral-polymatroid optimization and submodular-minimization dependencies named in sources.md. The 5/9 leading coefficient specifically uses Naor-Schulman-Srinivasan Theorem 7 and its locally explicit indexing guarantee; the elementary 10/9 alternative supplies a local coloring proof. Finite checkers isolate the stated mechanisms and do not implement all of these optimization algorithms.",
+          "The general resource calls retain exact integral-polymatroid optimization and submodular-minimization dependencies named in sources.md. The `5/9` leading coefficient specifically uses Naor-Schulman-Srinivasan Theorem 7 and its locally explicit indexing guarantee; the elementary `10/9` alternative supplies a local coloring proof. Finite checkers isolate the stated mechanisms and do not implement all of these optimization algorithms.",
           "The compatible-cut one-weight polynomial endpoint requires a prescribed or forced total numeric mass. Original resource totals, all numeric constraints and signed costs remain intact. Oracle query lower bounds and ETH claims for readable rank programs are separate models."
         ]
       }
@@ -173,11 +173,11 @@
       ],
       "review": {
         "status": "ready",
-        "scope": "The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable retirement, finite-bit realization and uniform search. The separate executable package includes exact matching, independent optimality certificates, the refined 3nu vertex count for the earlier compression, nonrecursive bipartite phases, and universal mixed-failure kernels with all-cover-subset and context preservation. Layer matching/vertex-cover witnesses certify every permitted failure query without enumeration.",
+        "scope": "The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable retirement, finite-bit realization and uniform search. The separate executable package includes exact matching, independent optimality certificates, the refined `3nu` vertex count for the earlier compression, nonrecursive bipartite phases, and universal mixed-failure kernels with all-cover-subset and context preservation. Layer matching/vertex-cover witnesses certify every permitted failure query without enumeration.",
         "date": "2026-10-26",
         "conditions": [
           "Named published deterministic primitives are explicit proof dependencies; the local realization theorem discharges the abstract cycle-search contract. The shipped reference implementation has a separate polynomial bound and does not implement the entire fast research construction.",
-          "Failure kernels concern a fixed simple graph and native edge/vertex faults; arbitrary cover deletions and attached cover contexts are proved separately. Correlated failure labels and native parallel records are different models. The O(nu f) positive-budget vertex order is credited to the published 2022 result. Readiness is a mathematical review invitation, not proof-assistant verification."
+          "Failure kernels concern a fixed simple graph and native edge/vertex faults; arbitrary cover deletions and attached cover contexts are proved separately. Correlated failure labels and native parallel records are different models. The `O(nu f)` positive-budget vertex order is credited to the published 2022 result. Readiness is a mathematical review invitation, not proof-assistant verification."
         ]
       }
     },
@@ -248,7 +248,7 @@
       ],
       "review": {
         "status": "ready",
-        "scope": "The complete incremental SCC label theorem with the raw-cycle-to-frozen-detector realization, nonzero-base handling and retirement rules. The label-history extension proves historical equality and O(1+log log(n+2)) first-coalescence queries using permanently retired identities.",
+        "scope": "The complete incremental SCC label theorem with the raw-cycle-to-frozen-detector realization, nonzero-base handling and retirement rules. The label-history extension proves historical equality and `O(1+log log(n+2))` first-coalescence queries using permanently retired identities.",
         "date": "2026-10-26",
         "conditions": [
           "The theorem gives exact component labels under the stated insertion model and adaptive-history bounds. It does not include dynamic topological-order maintenance or within-component path output. The executable history checks cover that layer separately."
@@ -271,7 +271,7 @@
         "scope": "The complete frozen-detector incremental SSSP construction, its realized numerical interface, the simple-path reporting argument and nonnegative-integer perturbation adapter. Includes exact zero distances, clipped-tree intersections, loop removal and accuracy/bit accounting.",
         "date": "2026-10-26",
         "conditions": [
-          "The input, accuracy and polynomial numerical-range promises remain explicit. Reporting a path with k edges costs (k+1) poly(U). Finite path tests support the reporting lemmas and do not measure the asymptotic detector update time."
+          "The input, accuracy and polynomial numerical-range promises remain explicit. Reporting a path with `k` edges costs `(k+1) poly(U)`. Finite path tests support the reporting lemmas and do not measure the asymptotic detector update time."
         ]
       }
     },
@@ -283,10 +283,10 @@
       "checks": [],
       "review": {
         "status": "ready",
-        "scope": "The constructed fully dynamic metric hierarchy, full time/stretch curve and all five explicit parameter points, including the same-stretch 23/28 versus 6/7 comparison. The nonnegative-integer adapter supplies exact zero answers and transformed-range accounting.",
+        "scope": "The constructed fully dynamic metric hierarchy, full time/stretch curve and all five explicit parameter points, including the same-stretch `23/28` versus `6/7` comparison. The nonnegative-integer adapter supplies exact zero answers and transformed-range accounting.",
         "date": "2026-10-26",
         "conditions": [
-          "The tradeoff is amortized and reports numerical distances. Its general family assumes t tends to infinity and t^2 h=o(U); extending that family to zero lengths additionally needs t^4 h=o(U) and a uniform stretch bound. The five displayed points satisfy the stronger conditions."
+          "The tradeoff is amortized and reports numerical distances. Its general family assumes `t` tends to infinity and `t^2 h=o(U)`; extending that family to zero lengths additionally needs `t^4 h=o(U)` and a uniform stretch bound. The five displayed points satisfy the stronger conditions."
         ]
       }
     },
@@ -328,7 +328,7 @@
       "checks": [],
       "review": {
         "status": "ready",
-        "scope": "The complete accepted no-reset Steiner-pool strong-forest construction, with fixed pools, native identities, ghost ownership and chronological work. The six-sevenths cut-tree composition includes the locally realized fixed-k adapter and exact-flow chain. Nonnegative flat-forest and zero-capacity adapters, native input costs and actual-call inventory are explicit. The published-flow capacity-bit construction gives an additional route.",
+        "scope": "The complete accepted no-reset Steiner-pool strong-forest construction, with fixed pools, native identities, ghost ownership and chronological work. The six-sevenths cut-tree composition includes the locally realized fixed-`k` adapter and exact-flow chain. Nonnegative flat-forest and zero-capacity adapters, native input costs and actual-call inventory are explicit. The published-flow capacity-bit construction gives an additional route.",
         "date": "2026-10-26",
         "conditions": [
           "The structural expansion, bounded-degree and numerical-range hypotheses remain part of the theorem. Forest routing outputs walks under its stated interface; a simple-path reporting contract is not added. The optional older ported-forest candidate is distinct from the completed no-reset construction.",
@@ -357,8 +357,21 @@
         {
           "path": "tools/verify_sensitivity_certificates.py",
           "scope": "shared prerequisite only: The finite weighted exchange mechanism used by exchange-based sensitivity components. Excludes residual-flow repair, general-matching blossoms, arbitrary matroid oracles, price sweeps, and support-size theorems."
+        },
+        {
+          "path": "problems/exact-flow-sensitivity/verify/check_unit_flow.py",
+          "scope": "8192 exhaustive four-vertex digraph/cost-profile cases and 150 seeded multigraphs: 127254 fixed-value and 58423 maximum-flow queries against independent Boolean-support enumeration; 12994 infeasible fixed queries and 1882 reverse-arc repairs. Includes a signed 96-vertex hub fixture, 20 queries with optimization disabled and caller input cleared, and 12 rejected malformed cases. Verifies the polynomial reference, not the faster research preprocessing or other family clients."
         }
-      ]
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The exact nonnegative rational unit-flow single-original-arc-failure component: fixed-value and minimum-cost maximum-flow queries, the residual replacement identity, support-sensitive original-record preservers, compact difference/full-flow reports and the acyclic simple-input support specialization. The local reference realization proves its own polynomial preprocessing and bit-cost contract.",
+        "date": "2026-10-27",
+        "conditions": [
+          "Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates.",
+          "The reference uses exact fractions and Python hash tables, with their operation and bit-cost conventions explicit. It does not implement the faster preprocessing of the research theorem. Vertex-split packing execution, signed/general-balance initialization, general-matching, matroid and price clients are outside this reviewed component scope."
+        ]
+      }
     },
     {
       "id": "matroid-failure-summaries",
@@ -397,12 +410,12 @@
       ],
       "review": {
         "status": "ready",
-        "scope": "Main Theorems 1–8 and the actual-rank represented construction: represented prefix lift; sharp oracle-rank and integral-value constructions; one-failure endpoint; weighted obstruction; canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima; singleton replacement profiles; fixed rank-loss contraction and all-prefix identities. The new rank-two exact-union algorithm has optimal Theta(N+h^2) queries in its stated range, sharp r+Th support for T<=2 after contraction, actual-residual-rank terminals and an arbitrary-rank all-label-budget endpoint.",
+        "scope": "Main Theorems 1–8 and the actual-rank represented construction: represented prefix lift; sharp oracle-rank and integral-value constructions; one-failure endpoint; weighted obstruction; canonical-basis tree and original-basis size refinement; exact low-rank two-failure maxima; singleton replacement profiles; fixed rank-loss contraction and all-prefix identities. The new rank-two exact-union algorithm has optimal `Theta(N+h^2)` queries in its stated range, sharp `r+Th` support for `T<=2` after contraction, actual-residual-rank terminals and an arbitrary-rank all-label-budget endpoint.",
         "date": "2026-10-26",
         "conditions": [
           "Oracle results require the specified independence or value oracle and retain original items rather than encoding an arbitrary oracle. The best general weighted-oracle size remains open outside the proved low-rank cases. Finite programs support the written proofs and are not proof-assistant verification.",
           "The rank-loss contraction in this review uses one label per item and a fixed total order. The query ledger charges the original oracle separately from explicit query-set representation; a changed cost order may require another contraction.",
-          "The rank-two query lower bound requires the exact canonical union and N>=h+3; arbitrary valid supersets are outside that hardness claim. Oracle calls, ordinary work and query-set encoding are separate. The actual-rank linear construction uses explicit fields; its reference supports rationals and supplied primes, with general extension-field and bit costs proved separately."
+          "The rank-two query lower bound requires the exact canonical union and `N>=h+3`; arbitrary valid supersets are outside that hardness claim. Oracle calls, ordinary work and query-set encoding are separate. The actual-rank linear construction uses explicit fields; its reference supports rationals and supplied primes, with general extension-field and bit costs proved separately."
         ]
       }
     },
@@ -506,7 +519,16 @@
           "path": "problems/group-metric-constraints/verify/check_quotient_rounding.py",
           "scope": "shared arithmetic component only: The same finite quotient-rounding component used by the compact rank interface. Excludes quantum operator identities, stabilizer subgroup/HNF order certification, all-state guarantees, and energy optimization."
         }
-      ]
+      ],
+      "review": {
+        "status": "partial",
+        "scope": "The deterministic Pauli stabilizer-basis surrogate and witness theorem (main Theorem 5 and witness Theorem 1), including exact affine-parity enumeration, and the prime-dimensional individual-check witness reduction (witness Corollary 2). Pairwise operator comparisons, complete-basis pinching, exact basis-energy equality and compact tableau output are explicit.",
+        "date": "2026-10-27",
+        "conditions": [
+          "The polynomial-time reduction produces a classical objective; exact minimization still uses `2^d poly(L)` enumeration for Pauli labels or `p^n poly(L)` for prime-dimensional checks, with polynomial workspace. This is not a polynomial-time ground-state optimizer.",
+          "This review uses compact symplectic/stabilizer linear algebra and does not certify the separate whole-block sparsification, adaptive quotient, correlated-failure or joint lower-bound dependency chains. The shared finite quotient-rounding checker is not evidence for quantum operator inequalities; those are proved symbolically."
+        ]
+      }
     },
     {
       "id": "obstruction-boundaries",
@@ -670,10 +692,10 @@
       ],
       "review": {
         "status": "ready",
-        "scope": "The complete deterministic corank-parameterized finite-factor obstruction for optional common-basis selection under two exact scenario budgets, including positive-service equivalence to bounded nonnegative k-SUM, the always-feasible zero solution, binary encoding and parameter preservation.",
+        "scope": "The complete deterministic corank-parameterized finite-factor obstruction for optional common-basis selection under two exact scenario budgets, including positive-service equivalence to bounded nonnegative `k`-SUM, the always-feasible zero solution, binary encoding and parameter preservation.",
         "date": "2026-10-27",
         "conditions": [
-          "Uses the deterministic W[1]-hardness direction of Abboud, Lewi and Williams, Losing Weight by Gaining Edges, Definition 1.1, Theorem 1.3 and Section 4, and the assumption FPT differs from W[1]. The bounded nonnegative source avoids the separate randomized arbitrary-range reduction.",
+          "Uses the deterministic `W[1]`-hardness direction of Abboud, Lewi and Williams, Losing Weight by Gaining Edges, Definition 1.1, Theorem 1.3 and Section 4, and the assumption `FPT` differs from `W[1]`. The bounded nonnegative source avoids the separate randomized arbitrary-range reduction.",
           "The conclusion requires integer service, exact budgets and an optional common basis. It does not cover randomized algorithms, fractional service or relaxed budgets, and supplies no ETH or whole-ground exponential lower bound. Finite reduction checks do not certify the external hardness theorem."
         ]
       }
@@ -794,7 +816,7 @@
       ],
       "review": {
         "status": "ready",
-        "scope": "The deterministic rank/corank oracle barriers below factor two for allocation and below three halves for scheduling; the refined-parameter-zero barrier at threshold OPT/(2+eta); the aggregate configuration gap approaching the selection rank and full-residual gap exactly two. The greedy residual-capacity identity and both explicit component decompositions have direct local proofs.",
+        "scope": "The deterministic rank/corank oracle barriers below factor two for allocation and below three halves for scheduling; the refined-parameter-zero barrier at threshold `OPT/(2+eta)`; the aggregate configuration gap approaching the selection rank and full-residual gap exactly two. The greedy residual-capacity identity and both explicit component decompositions have direct local proofs.",
         "date": "2026-10-27",
         "conditions": [
           "The lower bounds use arbitrary integral recipient or job polymatroids in the full value-oracle model. They do not assert randomized lower bounds or NP/ETH hardness for explicit restricted-assignment inputs.",
@@ -1103,11 +1125,11 @@
       ],
       "review": {
         "status": "ready",
-        "scope": "The binomial determinant formula and original-field actual-curve construction have a complete symbolic proof and a separate internal reconstruction. The first ordinary homogeneous component has digit degree exactly w²−1.",
+        "scope": "The binomial determinant formula and original-field actual-curve construction have a complete symbolic proof and a separate internal reconstruction. The first ordinary homogeneous component has digit degree exactly `w^2-1`.",
         "date": "2026-10-27",
         "conditions": [
-          "Width w≥2 and prime characteristic p>w²+w−2; the construction uses n=p coordinates and scalar total degree 2p(w−1).",
-          "The curve is the ordinary moment curve, whose p-th coordinate has zero derivative. This is not a counterexample to a derivative-separating-curve theorem.",
+          "Width `w>=2` and prime characteristic `p>w^2+w-2`; the construction uses `n=p` coordinates and scalar total degree `2p(w-1)`.",
+          "The curve is the ordinary moment curve, whose `p`-th coordinate has zero derivative. This is not a counterexample to a derivative-separating-curve theorem.",
           "Every physical interval preserves full rank. The endpoint-augmented scalar interval does not. One SV pair detects the example, so no PIT or generator lower bound is asserted.",
           "The audit is internal model-assisted reconstruction, not external peer review, formal certification or priority determination."
         ]

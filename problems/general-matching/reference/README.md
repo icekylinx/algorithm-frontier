@@ -15,7 +15,12 @@ proved cycle-search construction, assembled in
 That hierarchy is not part of this executable; the distinction concerns
 code coverage, not an unresolved mathematical premise.
 
-The outside-endpoint exchange lemma and its at-most-<code class="math">4\nu</code>
+The outside-endpoint exchange lemma and its at-most
+
+<!-- math-display: 78fa8ed98cba2c8c1465ddca
+4\nu
+-->
+![Formula](../../../assets/math/78fa8ed98cba2c8c1465ddca.svg)
 vertex bound already appear in the direct checkpoint of 24 October 2026.
 This package adds executable compression, native-ID handling, independent
 checks and certificates, and the current bipartite phase refinement. See
@@ -79,9 +84,25 @@ statistics supplied by the solver never serve as certificate evidence.
 
 [failure_kernel.py](failure_kernel.py) constructs one subgraph preserving
 every matching optimum after any mixture of at most `f` native vertex or
-edge deletions.  It retains at most <code class="math">(f+3)\nu(G)</code> vertices and
-<code class="math">O(\nu(G)^2+\nu(G)f)</code> edges with its default greedy cover.  A supplied
-cover of size `c` gives the exact bound <code class="math">(f+2)c</code> instead.  Its
+edge deletions.  It retains at most
+
+<!-- math-display: 65f30f4b6c9f34581d50e47f
+(f+3)\nu(G)
+-->
+![Formula](../../../assets/math/65f30f4b6c9f34581d50e47f.svg)
+ vertices and
+<!-- math-display: a3ec45255613551fb49df3d7
+O(\nu(G)^2+\nu(G)f)
+-->
+![Formula](../../../assets/math/a3ec45255613551fb49df3d7.svg)
+ edges with its default greedy cover.  A supplied
+cover of size `c` gives the exact bound
+
+<!-- math-display: f2a8e26dd07a0bdb75598e3a
+(f+2)c
+-->
+![Formula](../../../assets/math/f2a8e26dd07a0bdb75598e3a.svg)
+ instead.  Its
 [complete proof](fault-tolerant-cover-compression.md) establishes the
 stronger preservation of every matchable subset of the cover, including
 arbitrary cover deletions and graphs attached through that cover.
@@ -176,7 +197,13 @@ or fast-hierarchy query bound. The dedicated
 optima with an independent subset dynamic program and checks the residual
 certificates and native-coordinate lifts.
 
-The order <code class="math">O(\nu f)</code> in vertices for positive budgets was already proved
+The order
+
+<!-- math-display: f148f8eafc9c467c3f7b1dec
+O(\nu f)
+-->
+![Formula](../../../assets/math/f148f8eafc9c467c3f7b1dec.svg)
+ in vertices for positive budgets was already proved
 by [Banerjee, Gupta, Raman and Saurabh (2022)](https://doi.org/10.1007/978-3-031-09574-0_8).
 The new package supplies the local layered proof, exact counts, stronger
 interface guarantee and complete universal-certificate implementation.
@@ -202,19 +229,57 @@ The matching sizes are not input parameters. The
 Every originally bipartite component belongs to `B`; surplus-edge deletion
 can sometimes make the retained graph bipartite as well. With `--no-kernel`,
 both reductions are disabled: a bipartite full component costs
-`O((n_i+m_i) sqrt(nu_i+1))`, and a nonbipartite full component costs `O(n_i^3)`.
+<!-- math-display: 555e7b0b5a6470c1bbe6847d
+O((n_i+m_i)\sqrt{\nu_i+1})
+-->
+![Formula](../../../assets/math/555e7b0b5a6470c1bbe6847d.svg)
+, and a nonbipartite full component costs
+
+<!-- math-display: 0cbe3d2122bd85f310951bd9
+O(n_i^3)
+-->
+![Formula](../../../assets/math/0cbe3d2122bd85f310951bd9.svg)
+.
 The normalization term remains unchanged.
 
-Working storage is <code class="math">O(n+m)</code>. The output certificate also has
-<code class="math">O(n+m)</code> records. These are word-operation bounds with vertex indices and
-record indices occupying <code class="math">O(\log(n+m+2))</code> bits. Arbitrarily long ID strings
+Working storage is
+
+<!-- math-display: 0117325c4f4e755b5b40c665
+O(n+m)
+-->
+![Formula](../../../assets/math/0117325c4f4e755b5b40c665.svg)
+. The output certificate also has
+<!-- math-display: 0117325c4f4e755b5b40c665
+O(n+m)
+-->
+![Formula](../../../assets/math/0117325c4f4e755b5b40c665.svg)
+ records. These are word-operation bounds with vertex indices and
+record indices occupying
+
+<!-- math-display: 66c55e6ebc1292f5ecc10b1b
+O(\log(n+m+2))
+-->
+![Formula](../../../assets/math/66c55e6ebc1292f5ecc10b1b.svg)
+ bits. Arbitrarily long ID strings
 or integers incur their actual comparison, storage and JSON input/output
 costs. The solver uses comparison sorting for deterministic normalization
 and ID uniqueness checks; it does not assume worst-case constant-time
 hashing or claim the manuscript's linear radix-sort preprocessing bound.
 
 The independent certificate verifier uses comparison sorting and graph
-scans in <code class="math">O(n+m\log(m+2))</code> word operations and <code class="math">O(n+m)</code> storage, plus
+scans in
+
+<!-- math-display: c1dcd78e60b27d06b9a73a98
+O(n+m\log(m+2))
+-->
+![Formula](../../../assets/math/c1dcd78e60b27d06b9a73a98.svg)
+ word operations and
+
+<!-- math-display: 0117325c4f4e755b5b40c665
+O(n+m)
+-->
+![Formula](../../../assets/math/0117325c4f4e755b5b40c665.svg)
+ storage, plus
 the actual label and certificate encoding costs. It performs no matching
 search. On invalid input, processing is also charged to the supplied
 certificate's size.
@@ -236,24 +301,63 @@ c_i\leq 2\nu_i.
 The second reduction computes a maximum bipartite matching between
 <code class="math">C_i</code> and the remaining vertices of <code class="math">H_i</code>. Keep only its matched
 outside endpoints <code class="math">T_i</code>, together with the entire cover. The induced
-graph <code class="math">J_i=H_i[C_i\cup T_i]</code> has at most <code class="math">\min\{2c_i,3\nu_i\}</code>
+graph <code class="math">J_i=H_i[C_i\cup T_i]</code> has at most
+
+<!-- math-display: bd4af69b92c0b9ee3f5547d3
+\min\{2c_i,3\nu_i\}
+-->
+![Formula](../../../assets/math/bd4af69b92c0b9ee3f5547d3.svg)
 vertices and preserves the general matching optimum. Hopcroft–Karp computes
-this crossing matching in `O(c_i^(5/2))`: its number of matched edges is at
+this crossing matching in
+
+<!-- math-display: b31451581e47482915a1f016
+O(c_i^{5/2})
+-->
+![Formula](../../../assets/math/b31451581e47482915a1f016.svg)
+: its number of matched edges is at
 most `c_i`, even though its vertex count may be quadratic. If `H_i` is
 bipartite, the solve on `J_i` has the same bound. Otherwise blossom search
-costs `O(c_i^3)`. Both the compression and final bipartite solve are
+costs
+
+<!-- math-display: ed67bf6208561fbe7f390c31
+O(c_i^3)
+-->
+![Formula](../../../assets/math/ed67bf6208561fbe7f390c31.svg)
+. Both the compression and final bipartite solve are
 accelerated; the first stage does not leave a hidden cubic cost.
 
 The certificate is still constructed and verified on <code class="math">H_i</code>;
 write `k_i=|V(H_i)|` and `h_i=|E(H_i)|`.
 For a bipartite kernel, one alternating reachability search produces a
-minimum vertex cover in <code class="math">O(k_i+h_i)</code>, which supplies the existing tight
+minimum vertex cover in
+
+<!-- math-display: 6ed6436200e2adc3f4b65dff
+O(k_i+h_i)
+-->
+![Formula](../../../assets/math/6ed6436200e2adc3f4b65dff.svg)
+, which supplies the existing tight
 odd-component certificate. For a nonbipartite kernel, extraction costs
-<code class="math">O(h_i+k_i(\nu_i+1))</code>. It uses one simultaneous failed alternating
+<!-- math-display: b6e8993af574c3c313d72b4b
+O(h_i+k_i(\nu_i+1))
+-->
+![Formula](../../../assets/math/b6e8993af574c3c313d72b4b.svg)
+. It uses one simultaneous failed alternating
 forest when an empty barrier is insufficient, with at most <code class="math">\nu_i</code>
 contractions and no vertex-deletion matching calls. Since
-<code class="math">h_i,k_i=O(c_i^2)</code>, this is <code class="math">O(c_i^3)</code> in the general
-case and `O(c_i^2)` in the bipartite case. Both extraction proofs are
+<code class="math">h_i,k_i=O(c_i^2)</code>, this is
+
+<!-- math-display: ed67bf6208561fbe7f390c31
+O(c_i^3)
+-->
+![Formula](../../../assets/math/ed67bf6208561fbe7f390c31.svg)
+ in the general
+case and
+
+<!-- math-display: 9894efa660d69a466fce6a04
+O(c_i^2)
+-->
+![Formula](../../../assets/math/9894efa660d69a466fce6a04.svg)
+ in the bipartite case. Both extraction proofs are
 self-contained: [general forests](certificate-proof.md) and
 [bipartite covers](bipartite-proof.md#5-a-linear-certificate-on-the-first-kernel).
 
@@ -265,9 +369,21 @@ computed covers. `hopcroft_karp_calls`, `hopcroft_karp_phases`, and
 `hopcroft_karp_bfs` include both crossing compression and final bipartite
 solves. Each call has exactly one more BFS than successful phases.
 None of these counters is trusted by the verifier.
-The sharper <code class="math">3\nu_i</code> vertex accounting follows because the number of retained
+The sharper
+
+<!-- math-display: 9acc5390bc76ff1c11f49ad9
+3\nu_i
+-->
+![Formula](../../../assets/math/9acc5390bc76ff1c11f49ad9.svg)
+ vertex accounting follows because the number of retained
 outside endpoints equals a crossing matching's size, hence is at most <code class="math">\nu_i</code>.
-The old <code class="math">4\nu_i</code> estimate used only the weaker bound <code class="math">&#124;T_i&#124;\leq c_i</code>.
+The old
+
+<!-- math-display: e7ffe0e0142b37ee75e74f51
+4\nu_i
+-->
+![Formula](../../../assets/math/e7ffe0e0142b37ee75e74f51.svg)
+ estimate used only the weaker bound <code class="math">&#124;T_i&#124;\leq c_i</code>.
 A path on 20 cover vertices, each with 20 private leaves, has 420 vertices
 and 419 edges. With the specified greedy order, its first kernel retains
 all 420 vertices, while the second stage needs only 40 bipartite solve vertices.
@@ -309,11 +425,17 @@ an augmenting path. Each phase freezes the starting matching and uses
 explicit DFS stacks to find a maximal family of vertex-disjoint shortest
 augmenting paths. Flipping those paths strictly increases the next shortest
 augmenting length. The symmetric difference with an optimum then bounds
-the number of phases by `O(sqrt(nu+1))`, including a final failed BFS.
+the number of phases by
+
+<!-- math-display: a06de950df6c7e8b1f6f46ad
+O(\sqrt{\nu+1})
+-->
+![Formula](../../../assets/math/a06de950df6c7e8b1f6f46ad.svg)
+, including a final failed BFS.
 The [complete local proof](bipartite-proof.md) establishes the fixed-matching
 search invariants, this matching-number bound, and the cost of both uses
 of the algorithm. Its classical source is John E. Hopcroft and Richard M.
-Karp, [*An n^(5/2) Algorithm for Maximum Matchings in Bipartite Graphs*
+Karp, [*An `n^(5/2)` Algorithm for Maximum Matchings in Bipartite Graphs*
 (1973)](https://doi.org/10.1137/0202019).
 
 **Blossom search.** The code initializes a greedy matching and searches
@@ -340,8 +462,18 @@ Write <code class="math">j_i=&#124;V(J_i)&#124;</code> for the graph supplied to
 search, every vertex becomes outer at most once and its
 adjacency is scanned once. Each nontrivial contraction merges current
 bases, so there are at most <code class="math">j_i</code> contractions. Ancestor/branch walks
-and a contraction scan each cost <code class="math">O(j_i)</code>. A search costs
-<code class="math">O(j_i^2)</code>, and at most <code class="math">j_i</code> root searches give the stated cubic
+and a contraction scan each cost
+
+<!-- math-display: 643ff527546ebd5ae2f6c5bf
+O(j_i)
+-->
+![Formula](../../../assets/math/643ff527546ebd5ae2f6c5bf.svg)
+. A search costs
+<!-- math-display: fc8d1b7a9c1b9420cdc8b7ee
+O(j_i^2)
+-->
+![Formula](../../../assets/math/fc8d1b7a9c1b9420cdc8b7ee.svg)
+, and at most <code class="math">j_i</code> root searches give the stated cubic
 bound. The implementation is iterative; it does not require a recursion
 depth proportional to the graph size.
 
@@ -392,7 +524,11 @@ blocks or from the outer set to unreached vertices. The unreached part
 has a perfect matching. Hence <code class="math">o(H-I)=&#124;I&#124;+f</code>, proving the required
 equality directly. The [full proof](certificate-proof.md) establishes the
 contraction, lifting and counting invariants, the
-<code class="math">O(h+k(\nu+1))</code> extraction bound, and the identification
+<!-- math-display: 6fb793bb3eb8756a00a733fd
+O(h+k(\nu+1))
+-->
+![Formula](../../../assets/math/6fb793bb3eb8756a00a733fd.svg)
+ extraction bound, and the identification
 <code class="math">O=\{v:\nu(H-v)=\nu(H)\}</code>. This is
 the classical Gallai–Edmonds exposable set, with the required facts proved
 locally. The code checks the equality before returning its certificate.

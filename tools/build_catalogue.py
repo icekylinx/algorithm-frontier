@@ -19,7 +19,14 @@ ROOT = Path(__file__).resolve().parents[1]
 def title(path: Path) -> str:
     for line in path.read_text(encoding="utf-8").splitlines():
         if line.startswith("# "):
-            return line[2:].strip().replace("|", r"\|")
+            # Manuscript titles may retain plain formulas, but the generated
+            # public index presents these labels as literal copyable data.
+            parts = re.split(r"(`[^`]+`|\$[^$]+\$|<code\b[^>]*>.*?</code>)", line[2:].strip())
+            for index in range(0, len(parts), 2):
+                parts[index] = parts[index].replace("fixed-k", "fixed-`k`")
+                parts[index] = re.sub(r"\bO\([^()]+\)|\b\d+/\d+\b",
+                                      lambda match: "`" + match.group() + "`", parts[index])
+            return "".join(parts)
     return path.stem.replace("-", " ")
 
 

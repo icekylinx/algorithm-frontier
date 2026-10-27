@@ -47,19 +47,27 @@ The exponent is `5/2` when the component's retained edge kernel is
 bipartite and `3` otherwise. Every bipartite input component gets the
 improved bound.
 Independent verification takes
-<code class="math">O(n+m\log(m+2))</code>.
+<!-- math-display: c1dcd78e60b27d06b9a73a98
+O(n+m\log(m+2))
+-->
+![Formula](../../assets/math/c1dcd78e60b27d06b9a73a98.svg)
+.
 
 **Space**
 
-<code class="math">O(n+m)</code> records for the reference solver and its optional certificate,
+<!-- math-display: 0117325c4f4e755b5b40c665
+O(n+m)
+-->
+![Formula](../../assets/math/0117325c4f4e755b5b40c665.svg)
+ records for the reference solver and its optional certificate,
 plus actual ID-label bytes. The research composition uses polynomial space
 in its graph and cycle-search inventory.
 
 **Parameters**
 
-**n** is the vertex count; **m** is the input edge-record count; **m_s** is
-the number of distinct nonloop edges. **ν(G_i)** is the maximum matching
-size in normalized component **i**; it is not supplied as input.
+`n` is the vertex count; `m` is the input edge-record count; `m_s` is
+the number of distinct nonloop edges. <code class="math">\nu(G_i)</code> is the maximum matching
+size in normalized component `i`; it is not supplied as input.
 The first retained edge kernel is used to choose the component exponent
 `p_i`; no bipartition is required in the input.
 
@@ -80,9 +88,9 @@ reference implementation. No new matching lower bound is claimed.
 
 **Review status**
 
-**Ready for review.** The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable retirement, finite-bit realization and uniform search. The separate executable package includes exact matching, independent optimality certificates, the refined 3nu vertex count for the earlier compression, nonrecursive bipartite phases, and universal mixed-failure kernels with all-cover-subset and context preservation. Layer matching/vertex-cover witnesses certify every permitted failure query without enumeration.
+**Ready for review.** The complete deterministic four-fifths research theorem, including the cycle-search realization, raw quality and gradient lifting, chronological work, stable retirement, finite-bit realization and uniform search. The separate executable package includes exact matching, independent optimality certificates, the refined `3nu` vertex count for the earlier compression, nonrecursive bipartite phases, and universal mixed-failure kernels with all-cover-subset and context preservation. Layer matching/vertex-cover witnesses certify every permitted failure query without enumeration.
 
-**Dependencies and scope.** Named published deterministic primitives are explicit proof dependencies; the local realization theorem discharges the abstract cycle-search contract. The shipped reference implementation has a separate polynomial bound and does not implement the entire fast research construction. Failure kernels concern a fixed simple graph and native edge/vertex faults; arbitrary cover deletions and attached cover contexts are proved separately. Correlated failure labels and native parallel records are different models. The O(nu f) positive-budget vertex order is credited to the published 2022 result. Readiness is a mathematical review invitation, not proof-assistant verification.
+**Dependencies and scope.** Named published deterministic primitives are explicit proof dependencies; the local realization theorem discharges the abstract cycle-search contract. The shipped reference implementation has a separate polynomial bound and does not implement the entire fast research construction. Failure kernels concern a fixed simple graph and native edge/vertex faults; arbitrary cover deletions and attached cover contexts are proved separately. Correlated failure labels and native parallel records are different models. The `O(nu f)` positive-budget vertex order is credited to the published 2022 result. Readiness is a mathematical review invitation, not proof-assistant verification.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -105,32 +113,74 @@ m_H\le\min\{m_s,O(\nu(G)^2)\}.
 
 The second term of the research bound may use <code class="math">m_H</code> in
 place of <code class="math">m_s</code>, while its word-RAM radix normalization costs
-<code class="math">O(n+m)</code>. The Python reference uses comparison sorting and charges its
-separate <code class="math">m\log(m+2)</code> term. Both restore original selected edge IDs.
+<!-- math-display: 0117325c4f4e755b5b40c665
+O(n+m)
+-->
+![Formula](../../assets/math/0117325c4f4e755b5b40c665.svg)
+. The Python reference uses comparison sorting and charges its
+separate
+
+<!-- math-display: feff7b949d3592cdc03862d5
+m\log(m+2)
+-->
+![Formula](../../assets/math/feff7b949d3592cdc03862d5.svg)
+ term. Both restore original selected edge IDs.
 
 For a computed vertex cover of size <code class="math">c</code>, the explicit edge bound is
-<code class="math">m_H\leq\min\{m_s,\binom c2+c^2\}</code>. Processing connected components
+<!-- math-display: 37bc1bac01d1ae94691280d9
+m_H\leq\min\{m_s,\binom c2+c^2\}
+-->
+![Formula](../../assets/math/37bc1bac01d1ae94691280d9.svg)
+. Processing connected components
 separately replaces the solve term by the sum of the corresponding
 component costs; no matching-size estimate is supplied as input.
 
 For a fixed simple graph, the [mixed-failure extension](../../manuscripts/graph-backends/matching-size-kernel-corollary.md#4-one-kernel-for-mixed-vertex-and-edge-failures)
-retains at most <code class="math">\binom c2+c(c+f)</code> edges and simultaneously preserves
+retains at most
+
+<!-- math-display: 398bcc6e56ccd2d9cc9b5b40
+\binom c2+c(c+f)
+-->
+![Formula](../../assets/math/398bcc6e56ccd2d9cc9b5b40.svg)
+ edges and simultaneously preserves
 the exact matching number after every mixture of at most <code class="math">f</code> native
 vertex/edge deletions. The
 [layered vertex refinement](reference/fault-tolerant-cover-compression.md)
-retains at most <code class="math">(f+2)c</code>, and with the default cover at most
-<code class="math">(f+3)\nu(G)</code>, vertices while preserving that edge bound.
+retains at most
+
+<!-- math-display: f2a8e26dd07a0bdb75598e3a
+(f+2)c
+-->
+![Formula](../../assets/math/f2a8e26dd07a0bdb75598e3a.svg)
+, and with the default cover at most
+<!-- math-display: 65f30f4b6c9f34581d50e47f
+(f+3)\nu(G)
+-->
+![Formula](../../assets/math/65f30f4b6c9f34581d50e47f.svg)
+, vertices while preserving that edge bound.
 Its [constructor](reference/failure_kernel.py) emits a universal
 certificate checked by a [separate verifier](reference/verify_failure_kernel.py)
 without a matching search or failure enumeration.  Every matchable cover
 subset is preserved, so arbitrary graphs attached through the cover are
 also supported.  Each particular query still needs a matching solver.
 
-The <code class="math">4\nu</code> vertex compression already appears in
+The
+
+<!-- math-display: 78fa8ed98cba2c8c1465ddca
+4\nu
+-->
+![Formula](../../assets/math/78fa8ed98cba2c8c1465ddca.svg)
+ vertex compression already appears in
 the 24 October direct checkpoint's
 <em>A linear-vertex refinement of the matching-size kernel</em>
 proof. Counting the actual crossing matching now sharpens the same
-construction to <code class="math">3\nu</code>, with no change to the solve algorithm.
+construction to
+
+<!-- math-display: d20fc3caa5e645ac23de3048
+3\nu
+-->
+![Formula](../../assets/math/d20fc3caa5e645ac23de3048.svg)
+, with no change to the solve algorithm.
 The current implementation, certificate extraction and bipartite
 refinement are documented separately in the
 [source history](sources.md#checkpoint-provenance).

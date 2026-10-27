@@ -2,6 +2,42 @@
 
 [Main proof](../proof.md) · [Source dependencies](../sources.md)
 
+## Manuscript readiness in a named scope
+
+**Partially ready for review: deterministic stabilizer witnesses.** The
+bounded manuscript audit of 2026-10-27 reconstructs the Pauli surrogate and
+witness theorem in [main-proof Theorem 5](../proof.md#5-a-classical-stabilizer-witness)
+and the prime-dimensional individual-check extension in
+[witness-manuscript Corollary 2](../manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md#6-prime-dimensional-weyl-checks).
+For the Pauli theorem it checks every pairwise PSD comparison, the commuting
+residual, complete-basis pinching, equality of original and surrogate energy
+on basis states, and the ground-energy implication. For the prime-dimensional
+extension it checks the constant-angle projector identity, both pinching
+cases, and the resulting factor calculation. In both cases it checks the
+exact scalar-plus-affine objective, phase-aware tableau output, exponential
+enumeration time, and polynomial workspace. These are manuscript arguments;
+the shared arithmetic checker below is not evidence for these quantum
+conclusions.
+
+The Pauli reduction is polynomial time and its exact objective search takes
+the stated exponential time in the number of independent diagonal labels.
+The prime-dimensional reduction is polynomial in the compact input and its
+search enumerates the complete finite-field basis assignments. Neither
+statement asserts polynomial-time minimization of the remaining classical
+objective. Standard compact symplectic linear algebra is identified in the
+[witness dependency map](../sources.md#audited-witness-scope).
+
+This audit does not mark the full sparsification family ready. The sharp
+whole-block support theorem also uses the shared subgroup/affine-group
+Gaussian construction; the compact theorem uses the subgroup-order oracle,
+rational quotient surrogate, and adaptive resparsification; the two failure
+theorems have separate importance or global-commutation dependencies. Those
+full dependency chains and the joint lower bounds were not reconstructed in
+this bounded witness audit. They retain their stated theorems and named
+dependencies; exclusion here is an audit boundary, not a finding that those
+proofs are incomplete. External peer review and proof-assistant verification
+are not claimed.
+
 ## Available finite arithmetic evidence
 
 The shared [composite-modulus quotient-rounding checker](../../group-metric-constraints/verify/check_quotient_rounding.py) can be run from the repository root:

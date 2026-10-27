@@ -4,11 +4,26 @@ The output retains whole original positive clauses or blocks and approximates ev
 
 ## Results
 
-All support bounds are capped by the original number of items <code class="math">m</code>. Let <code class="math">\rho=\log_2(2D)</code>, where <code class="math">D</code> is the total Hilbert-space dimension.
+All support bounds are capped by the original number of items <code class="math">m</code>. Let <code class="math">\rho=\log_2(2D)</code>, where <code class="math">D</code> is the total Hilbert-space dimension. For witness results, <code class="math">E_0(H)</code> is the original ground energy, <code class="math">\mathcal B</code> is the constructed complete stabilizer basis, and <code class="math">L</code> counts the explicit <code class="math">n</code>-qudit inventory and the full binary input description.
 
 **Arbitrary-locality positive Pauli Hamiltonian on <code class="math">n</code> qubits**
 
-**Guarantee or retained support.** Existence <code class="math">O((n+1)/\varepsilon^2)</code>; compact <code class="math">O\!\left(\frac{(n+1)\log((n+2)/\varepsilon)}{\varepsilon^2}\right)</code>; optional exact total coefficient
+**Guarantee or retained support.**
+
+<!-- math-display: 1e2d893b59448d3e9fd2dcc8
+\begin{aligned}
+\text{Existence:}\quad &O\!\left(\min\left\{m,\frac{n+1}{\varepsilon^2}\right\}\right),\\
+\text{Compact:}\quad &O\!\left(\min\left\{m,\frac{(n+1)\log((n+2)/\varepsilon)}{\varepsilon^2}\right\}\right).
+\end{aligned}
+-->
+![Formula](../../assets/math/1e2d893b59448d3e9fd2dcc8.svg)
+
+Optionally preserve the total coefficient after discarding zero clauses:
+
+<!-- math-display: 754f1c0e5e98e3b5e87987e7
+\sum_e\widehat w_e=\sum_e w_e.
+-->
+![Formula](../../assets/math/754f1c0e5e98e3b5e87987e7.svg)
 
 **Construction.** Sharp support is existential, with a Monte Carlo construction polynomial in <code class="math">2^n</code>, success at least <code class="math">2/3</code>; compact construction is Monte Carlo polynomial in binary input and <code class="math">\varepsilon^{-1}</code>, success at least <code class="math">2/3</code>
 
@@ -16,7 +31,15 @@ All support bounds are capped by the original number of items <code class="math"
 
 **Whole blocks of commuting checks on prime-dimensional <code class="math">p</code>-level qudits, with arbitrary noncommutation between blocks**
 
-**Guarantee or retained support.** Existence <code class="math">O\!\left(\frac{(n+1)\log p}{\varepsilon^2}\right)</code>; compact <code class="math">O\!\left(\frac{(n+1)[\log p+\log((n+2)/\varepsilon)]}{\varepsilon^2}\right)</code>
+**Guarantee or retained support.**
+
+<!-- math-display: 262579dbf9bef17f66b11aec
+\begin{aligned}
+\text{Existence:}\quad &O\!\left(\min\left\{m,\frac{(n+1)\log p}{\varepsilon^2}\right\}\right),\\
+\text{Compact:}\quad &O\!\left(\min\left\{m,\frac{(n+1)[\log p+\log((n+2)/\varepsilon)]}{\varepsilon^2}\right\}\right).
+\end{aligned}
+-->
+![Formula](../../assets/math/262579dbf9bef17f66b11aec.svg)
 
 **Construction.** Compact Monte Carlo polynomial time, success at least <code class="math">2/3</code>; sharp support has a Monte Carlo explicit-character-table construction, success at least <code class="math">2/3</code>; individual checks are included
 
@@ -24,7 +47,15 @@ All support bounds are capped by the original number of items <code class="math"
 
 **Whole stabilizer blocks in arbitrary heterogeneous local dimensions <code class="math">q_1,\ldots,q_n</code>**
 
-**Guarantee or retained support.** Existence <code class="math">O(\rho/\varepsilon^2)</code>; compact <code class="math">O\!\left(\frac{\rho\log(2\rho/\varepsilon)}{\varepsilon^2}\right)</code>
+**Guarantee or retained support.**
+
+<!-- math-display: fe9624a91196dfbd0c130ee8
+\begin{aligned}
+\text{Existence:}\quad &O\!\left(\min\left\{m,\frac{\rho}{\varepsilon^2}\right\}\right),\\
+\text{Compact:}\quad &O\!\left(\min\left\{m,\frac{\rho\log(2\rho/\varepsilon)}{\varepsilon^2}\right\}\right).
+\end{aligned}
+-->
+![Formula](../../assets/math/fe9624a91196dfbd0c130ee8.svg)
 
 **Construction.** Compact Monte Carlo polynomial bit time without factoring, success at least <code class="math">2/3</code>; sharp support has a Monte Carlo construction polynomial in <code class="math">D</code>, success at least <code class="math">2/3</code>; individual Weyl checks are included
 
@@ -32,23 +63,57 @@ All support bounds are capped by the original number of items <code class="math"
 
 **Positive Pauli ground-energy surrogate and stabilizer witness**
 
-**Guarantee or retained support.** Factor <code class="math">2+\sqrt2</code> relative to the actual ground energy; identical original/surrogate energy on every state of the constructed basis
+**Guarantee or retained support.**
 
-**Construction.** Deterministic polynomial-time reduction; exact minimization by <code class="math">2^d\mathrm{poly}(L)</code> enumeration and polynomial space, <code class="math">d\le n</code>
+<!-- math-display: 05d79654105f6591cc634b2b
+E_0(H)\le\min_{\psi\in\mathcal B}\langle\psi|H|\psi\rangle\le(2+\sqrt2)E_0(H).
+-->
+![Formula](../../assets/math/05d79654105f6591cc634b2b.svg)
+
+Every state of the constructed basis has identical original and surrogate energy.
+
+**Construction.** Deterministic polynomial-time reduction. Exact minimization enumerates the <code class="math">d\le n</code> independent diagonal labels:
+
+<!-- math-display: e3c35c4d3332bd053cbaad97
+T_{\mathrm{search}}=2^d\mathrm{poly}(L),\qquad S_{\mathrm{search}}=\mathrm{poly}(L).
+-->
+![Formula](../../assets/math/e3c35c4d3332bd053cbaad97.svg)
 
 **Proof.** [Theorem 1](manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md)
 
 **Prime-dimensional individual-check ground-energy surrogate**
 
-**Guarantee or retained support.** Factor <code class="math">2(1+p^{-1/2})</code> and a compact stabilizer witness
+**Guarantee or retained support.**
 
-**Construction.** Deterministic compact polynomial-time reduction; <code class="math">p^n\mathrm{poly}(L)</code> enumeration and polynomial space
+<!-- math-display: 0a0eb66081d980026e74ba65
+E_0(H)\le\min_{\psi\in\mathcal B}\langle\psi|H|\psi\rangle\le2(1+p^{-1/2})E_0(H).
+-->
+![Formula](../../assets/math/0a0eb66081d980026e74ba65.svg)
+
+The minimizing basis state has a compact stabilizer tableau.
+
+**Construction.** Deterministic compact polynomial-time reduction. Exact minimization enumerates the complete basis assignments:
+
+<!-- math-display: e2147ae84036ac21361add7d
+T_{\mathrm{search}}=p^n\mathrm{poly}(L),\qquad S_{\mathrm{search}}=\mathrm{poly}(L).
+-->
+![Formula](../../assets/math/e2147ae84036ac21361add7d.svg)
 
 **Proof.** [Corollary 2](manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md)
 
 **Positive Pauli clauses after all <code class="math">h</code> correlated label deletions, at most <code class="math">a</code> labels per clause**
 
-**Guarantee or retained support.** Explicit-dimension support <code class="math">O\!\left(\frac{\Gamma(h,a)(n+1)[n+\log(2Q/\delta)]}{\varepsilon^2}\right)</code>; compact support bound has an additional factor <code class="math">\log(2m)</code>
+**Guarantee or retained support.**
+
+<!-- math-display: 8db88d0087b839fddbad0614
+\begin{aligned}
+\text{Explicit dimension:}\quad
+ &O\!\left(\min\left\{m,\frac{\Gamma(h,a)(n+1)[n+\log(2Q/\delta)]}{\varepsilon^2}\right\}\right),\\
+\text{Compact:}\quad
+ &O\!\left(\min\left\{m,\frac{\Gamma(h,a)(n+1)[n+\log(2Q/\delta)]\log(2m)}{\varepsilon^2}\right\}\right).
+\end{aligned}
+-->
+![Formula](../../assets/math/8db88d0087b839fddbad0614.svg)
 
 **Construction.** Monte Carlo preprocessing; one common event of probability at least <code class="math">1-\delta</code> covers all failures and all states with fixed coefficients
 
@@ -56,7 +121,14 @@ All support bounds are capped by the original number of items <code class="math"
 
 **Globally commuting prime-dimensional whole blocks after all label failures**
 
-**Guarantee or retained support.** <code class="math">O\!\left(\frac{R\log(2R/\varepsilon)}{\varepsilon^2}\right)</code>, <code class="math">R=(n+1)\binom{h+a}{a}</code>
+**Guarantee or retained support.**
+
+<!-- math-display: 77e953e26b4db07affb34c39
+O\!\left(\min\left\{m,\frac{R\log(2R/\varepsilon)}{\varepsilon^2}\right\}\right).
+-->
+![Formula](../../assets/math/77e953e26b4db07affb34c39.svg)
+
+Here <code class="math">R=(n+1)\binom{h+a}{a}</code>.
 
 **Construction.** Compact Monte Carlo polynomial time, success at least <code class="math">2/3</code> on one all-query/all-failure event; all checks must commute across all blocks
 
@@ -96,7 +168,11 @@ Classical cut instances require <code class="math">\Omega(n/\varepsilon^2)</code
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The deterministic Pauli stabilizer-basis surrogate and witness theorem (main Theorem 5 and witness Theorem 1), including exact affine-parity enumeration, and the prime-dimensional individual-check witness reduction (witness Corollary 2). Pairwise operator comparisons, complete-basis pinching, exact basis-energy equality and compact tableau output are explicit.
+
+**Dependencies and scope.** The polynomial-time reduction produces a classical objective; exact minimization still uses `2^d poly(L)` enumeration for Pauli labels or `p^n poly(L)` for prime-dimensional checks, with polynomial workspace. This is not a polynomial-time ground-state optimizer. This review uses compact symplectic/stabilizer linear algebra and does not certify the separate whole-block sparsification, adaptive quotient, correlated-failure or joint lower-bound dependency chains. The shared finite quotient-rounding checker is not evidence for quantum operator inequalities; those are proved symbolically.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

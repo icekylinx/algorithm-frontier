@@ -12,6 +12,7 @@ The main proof gives the family-level theorem composition. The following canonic
 | [General matching certificates](manuscripts/linear-single-fault-general-matching.md) | Odd-set support argument, maximum-cardinality and fixed-size variants, and blossom-aware repair. |
 | [Unweighted two-matroid certificate](manuscripts/linear-unweighted-two-matroid-certificate.md) | Tight-set dimension argument and a linear rank-only single-failure summary. |
 | [One-element price sensitivity](manuscripts/compact-one-element-price-sensitivity.md) | Forced-element identities, price-query reports, and fixed-rank insertion from a supplied catalog. |
+| [Compact unit-flow reference realization](manuscripts/reference-unit-flow-realization.md) | Self-contained exact-rational augmenting-path baseline, single-failure residual identity, phased short-path/hub construction, original-record support and query reporting; includes a separate polynomial preprocessing and bit-cost contract. |
 
 ## Shared proof dependencies
 
@@ -21,6 +22,6 @@ The main proof gives the family-level theorem composition. The following canonic
 
 ## External inputs
 
-The companions identify the classical residual-flow, matching-polytope, blossom-augmentation, and two-matroid-intersection inputs at the point of use. The shared distance-preserver input is [Bodwin's pairwise-distance theorem](https://arxiv.org/pdf/2001.07741). These algorithmic primitives are mathematical dependencies; the finite exchange replay does not implement a general flow or blossom solver.
+The companions identify the classical residual-flow, matching-polytope, blossom-augmentation, and two-matroid-intersection inputs at the point of use. The shared distance-preserver input is [Bodwin's pairwise-distance theorem](https://arxiv.org/pdf/2001.07741). The local phased construction gives its complete elementary support/reporting argument and is implemented for the unit-flow client; the classical size theorem is not an unresolved interface. The flow reference has its own slower polynomial preprocessing bound. These primitives are mathematical dependencies; the finite exchange replay alone does not implement a general flow or blossom solver.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

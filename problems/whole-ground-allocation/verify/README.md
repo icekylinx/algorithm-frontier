@@ -19,7 +19,7 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 
 [verify_profile_certificates.py](../../../tools/verify_profile_certificates.py) checks the following finite claim:
 
-Integer-quota arithmetic: d=2,...,30 and every d<K<=399 (11,107 cases) satisfy K/(K-ceil(K/d)) <= (d+1)/(d-1); every 1<=K<=d satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. Only the integer-quotas companion is covered; no global-conversion check is claimed.
+Integer-quota arithmetic: <code class="math">d=2,\ldots,30</code> and every <code class="math">d&lt;K\le399</code> (11,107 cases) satisfy <code class="math">K/(K-\lceil K/d\rceil)\le(d+1)/(d-1)</code>; every <code class="math">1\le K\le d</code> satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. Only the integer-quotas companion is covered; no global-conversion check is claimed.
 
 Run from the repository root:
 

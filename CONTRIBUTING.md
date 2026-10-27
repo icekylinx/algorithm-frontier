@@ -87,6 +87,15 @@ entry per formula in `quantity`, in source order. The generator checks the
 annotation count and uses these reviewed roles, without a length threshold.
 Parameter definitions in other fields remain literal.
 
+Public overviews, result cards, source maps and verification notes must not
+leave symbolic formulas as ordinary prose. Use SVGs for showcased conclusions
+and code for parameters, premises and exact data. `tools/check_public_math.py`
+guards recognizable bare formulas on those surfaces; it cannot infer the role
+of every isolated letter. Canonical manuscripts retain limited prose-notation
+exceptions, and programs, TeX, JSON and other machine inputs keep their native
+formats. Review generated catalogue and review-registry text at its source so
+the next rebuild preserves the notation choices.
+
 Edit the preserved mathematical source, not the SVG. Its digest determines
 the image name and `assets/math/manifest.json` binds its exact bytes. During
 authoring, select the SVG representation with a `math` fence or a display

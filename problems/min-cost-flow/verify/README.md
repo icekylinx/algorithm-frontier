@@ -56,7 +56,7 @@ Optimized Python execution is refused so assertions cannot be disabled.
 
 The proof supplies the exact acceptance argument, finite-bit
 potential arithmetic and reductions to the stated numerical graph backend.
-The cap in its quantitative bound is the problem's numerical cap **S**;
+The cap in its quantitative bound is the problem's numerical cap `S`;
 substituting the graph-family size cap without the stated normalization would
 change the claim.
 

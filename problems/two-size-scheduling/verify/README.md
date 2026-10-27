@@ -15,7 +15,7 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 
 [verify_profile_certificates.py](../../../tools/verify_profile_certificates.py) checks the following finite claim:
 
-The d=2 quota subcheck covers K=1,...,399: the exact one-unit gate for K<=2 and K/(K-ceil(K/2))<=3 for K>2. This is arithmetic evidence only; it does not execute support selection, branching or recovery. It does not test the separate five-thirds rank algorithm.
+The <code class="math">d=2</code> quota subcheck covers <code class="math">K=1,\ldots,399</code>: the exact one-unit gate for <code class="math">K\le2</code> and <code class="math">K/(K-\lceil K/2\rceil)\le3</code> for <code class="math">K&gt;2</code>. This is arithmetic evidence only; it does not execute support selection, branching or recovery. It does not test the separate five-thirds rank algorithm.
 
 Run from the repository root:
 

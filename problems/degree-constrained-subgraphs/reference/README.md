@@ -96,14 +96,48 @@ as certificate evidence.
 ## Cost and limits
 
 Put `H=1+m log(m+2)`, where `m` counts the original explicit edge records.
-Feasibility takes `O(n+H^3)` ordinary operations; either optimization
-objective takes `O(n+H^3 log(m+2))`. Construction, matching certificates
-and native output checks are included. Space is `O(n+H)`, including the
+Feasibility takes
+
+<!-- math-display: f7f5736b6bd66f560b05d31e
+O(n+H^3)
+-->
+![Formula](../../../assets/math/f7f5736b6bd66f560b05d31e.svg)
+ ordinary operations; either optimization
+objective takes
+
+<!-- math-display: c43c29b1dbaf8f38473f6fc6
+O(n+H^3\log(m+2))
+-->
+![Formula](../../../assets/math/c43c29b1dbaf8f38473f6fc6.svg)
+. Construction, matching certificates
+and native output checks are included. Space is
+
+<!-- math-display: 4e4b0765281f4bd38c6fa2fa
+O(n+H)
+-->
+![Formula](../../../assets/math/4e4b0765281f4bd38c6fa2fa.svg)
+, including the
 retained decision certificate. The verifier takes
-`O(n+H log(H+2))` operations and `O(n+H)` space.
+<!-- math-display: b7ec696a95781fcec9383861
+O(n+H\log(H+2))
+-->
+![Formula](../../../assets/math/b7ec696a95781fcec9383861.svg)
+ operations and
+
+<!-- math-display: 4e4b0765281f4bd38c6fa2fa
+O(n+H)
+-->
+![Formula](../../../assets/math/4e4b0765281f4bd38c6fa2fa.svg)
+ space.
 
 The initial scan removes harmless isolates from all nontrivial matching
-calls. Input and output still cost `O(n+m)`. The bounds treat vertex
+calls. Input and output still cost
+
+<!-- math-display: 0117325c4f4e755b5b40c665
+O(n+m)
+-->
+![Formula](../../../assets/math/0117325c4f4e755b5b40c665.svg)
+. The bounds treat vertex
 indices and numeric degrees as ordinary input words and count ID
 comparisons; arbitrary-length numeric or string representations carry
 their actual reading, arithmetic and comparison costs. Large upper

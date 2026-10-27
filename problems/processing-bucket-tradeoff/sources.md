@@ -16,7 +16,7 @@ The model-specific reductions and inequalities are proved in the canonical manus
 
 ## Executable evidence
 
-- [verify_profile_certificates.py](../../tools/verify_profile_certificates.py): The k=0 factor-two endpoint, ordered bucket intervals for k=1,...,13, and all 91 exact bucket load identities b_i+2(1-b_(i-1))=gamma_k. Arbitrary depths and exact-cost LP recovery remain symbolic.
+- [verify_profile_certificates.py](../../tools/verify_profile_certificates.py): The <code class="math">k=0</code> factor-two endpoint, ordered bucket intervals for <code class="math">k=1,\ldots,13</code>, and all 91 exact bucket load identities <code class="math">b_i+2(1-b_{i-1})=\gamma_k</code>. Arbitrary depths and exact-cost LP recovery remain symbolic.
 
 The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
 

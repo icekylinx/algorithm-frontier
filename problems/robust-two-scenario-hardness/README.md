@@ -2,7 +2,7 @@
 
 **Guarantee**
 
-Exact positive service on a common player basis is W[1]-hard in corank <code class="math">c</code>, even with two scenarios and free Boolean recipient resources.
+Exact positive service on a common player basis is <code class="math">\mathrm{W}[1]</code>-hard in corank <code class="math">c</code>, even with two scenarios and free Boolean recipient resources.
 
 **Objective and output**
 
@@ -10,7 +10,7 @@ Distinguish robust integer optimum one from zero, with the same selected basis i
 
 **Randomness**
 
-Deterministic parameter-preserving reduction from bounded-integer k-SUM. The stated hardness consequence concerns deterministic algorithms; no randomized reduction is needed.
+Deterministic parameter-preserving reduction from bounded-integer `k`-SUM. The stated hardness consequence concerns deterministic algorithms; no randomized reduction is needed.
 
 **Time**
 
@@ -30,13 +30,13 @@ Two explicit scenarios, a uniform player matroid, unit values, free Boolean reci
 
 **Lower-bound scope**
 
-The W[1] consequence concerns parameterized exact-budget positivity. It does not imply a whole-ground exponential lower bound or a lower bound with relaxed budgets.
+The <code class="math">\mathrm{W}[1]</code> consequence concerns parameterized exact-budget positivity. It does not imply a whole-ground exponential lower bound or a lower bound with relaxed budgets.
 
 **Review status**
 
-**Ready for review.** The complete deterministic corank-parameterized finite-factor obstruction for optional common-basis selection under two exact scenario budgets, including positive-service equivalence to bounded nonnegative k-SUM, the always-feasible zero solution, binary encoding and parameter preservation.
+**Ready for review.** The complete deterministic corank-parameterized finite-factor obstruction for optional common-basis selection under two exact scenario budgets, including positive-service equivalence to bounded nonnegative `k`-SUM, the always-feasible zero solution, binary encoding and parameter preservation.
 
-**Dependencies and scope.** Uses the deterministic W[1]-hardness direction of Abboud, Lewi and Williams, Losing Weight by Gaining Edges, Definition 1.1, Theorem 1.3 and Section 4, and the assumption FPT differs from W[1]. The bounded nonnegative source avoids the separate randomized arbitrary-range reduction. The conclusion requires integer service, exact budgets and an optional common basis. It does not cover randomized algorithms, fractional service or relaxed budgets, and supplies no ETH or whole-ground exponential lower bound. Finite reduction checks do not certify the external hardness theorem.
+**Dependencies and scope.** Uses the deterministic `W[1]`-hardness direction of Abboud, Lewi and Williams, Losing Weight by Gaining Edges, Definition 1.1, Theorem 1.3 and Section 4, and the assumption `FPT` differs from `W[1]`. The bounded nonnegative source avoids the separate randomized arbitrary-range reduction. The conclusion requires integer service, exact budgets and an optional common basis. It does not cover randomized algorithms, fractional service or relaxed budgets, and supplies no ETH or whole-ground exponential lower bound. Finite reduction checks do not certify the external hardness theorem.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 

@@ -12,7 +12,7 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 
 ## Executable evidence
 
-- [verify_profile_certificates.py](../../tools/verify_profile_certificates.py): All 915 nondecreasing positive integer load multisets of total at most 16, including the empty multiset, normalized by 16, fit at least one of the six profiles; the five nontrivial rounded-load sums equal 3/2. General rational coverage, resource feasibility and exact-budget recovery remain symbolic.
+- [verify_profile_certificates.py](../../tools/verify_profile_certificates.py): All 915 nondecreasing positive integer load multisets of total at most 16, including the empty multiset, normalized by 16, fit at least one of the six profiles; the five nontrivial rounded-load sums equal <code class="math">3/2</code>. General rational coverage, resource feasibility and exact-budget recovery remain symbolic.
 
 The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
 

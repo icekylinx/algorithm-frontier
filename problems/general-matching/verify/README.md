@@ -4,7 +4,13 @@
 
 The [standard-library reference solver](../reference/README.md) returns
 an exact maximum matching and original edge IDs. Normal and certificate
-modes use `O(n+m log(m+2)+sum_i nu(G_i)^p_i)` operations, where `p_i=5/2`
+modes use
+
+<!-- math-display: ab4b5322e37fad03f891c89e
+O\!\left(n+m\log(m+2)+\sum_i\nu(G_i)^{p_i}\right)
+-->
+![Formula](../../../assets/math/ab4b5322e37fad03f891c89e.svg)
+ operations, where `p_i=5/2`
 for a bipartite first kernel and `p_i=3` otherwise. Every originally
 bipartite input component receives the improved bound. The
 [cover-compression proof](../reference/cover-compression-proof.md) derives
@@ -51,7 +57,13 @@ The dedicated compression check invokes the actual implementation on
 and 2,882,175 cover-subset ranks by independent subset dynamic programming.
 Its exhaustive scope is all simple graphs through six vertices in both
 fixed edge orders; 500 seeded graphs on seven through thirteen vertices
-follow. It also verifies the general matching optimum, the <code class="math">\min\{2c,3\nu\}</code> vertex
+follow. It also verifies the general matching optimum, the
+
+<!-- math-display: 1f0d341ff83f8a1efa3ea6ad
+\min\{2c,3\nu\}
+-->
+![Formula](../../../assets/math/1f0d341ff83f8a1efa3ea6ad.svg)
+ vertex
 cap, the matched-edge bound on certificate contractions and explicit
 rejection of an invalid cover. The full solver check includes a connected
 420-vertex graph reduced to 40 bipartite solve vertices, with its certificate
@@ -74,7 +86,11 @@ or constitute a proof-assistant formalization.
 ## Ready for review: exact preprocessing
 
 The unconditional reduction in Lemma 3.1 retains at most
-<code class="math">\binom c2+c^2</code> edges for a computed cover of size <code class="math">c</code>, with original
+<!-- math-display: 096d048dd9e290a2e83994ea
+\binom c2+c^2
+-->
+![Formula](../../../assets/math/096d048dd9e290a2e83994ea.svg)
+ edges for a computed cover of size <code class="math">c</code>, with original
 edge identifiers and exact matching preservation. Its cutoff <code class="math">c</code> is
 sharp for arbitrary local neighbor choices. Corollary 3.1a applies the
 same reduction componentwise. Lemma 3.2 gives the exact subcubic
@@ -163,7 +179,13 @@ establish a running-time bound. The theoretical portfolio similarly uses
 its independent augmenting-path check only for acceptance; the favorable
 fast branch is justified by the construction and its first-failure
 argument. The [source history](../sources.md#checkpoint-provenance) also
-distinguishes the earlier <code class="math">4\nu</code> kernel proof from
+distinguishes the earlier
+
+<!-- math-display: 78fa8ed98cba2c8c1465ddca
+4\nu
+-->
+![Formula](../../../assets/math/78fa8ed98cba2c8c1465ddca.svg)
+ kernel proof from
 the current implementation and tests.
 
 Read the [main proof](../proof.md) with its [source map](../sources.md). Repository checks validate links, mathematical syntax and catalogue coverage; they do not certify the asymptotic theorem. No proof-assistant verification or external peer review is claimed.

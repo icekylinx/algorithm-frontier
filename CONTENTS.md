@@ -148,6 +148,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Exact one-failure minimum-cost flow preservers from a sparse acyclic support](problems/exact-flow-sensitivity/manuscripts/exact-min-cost-flow-and-vertex-disjoint-paths.md)
 - [Linear single-fault certificates for maximum matching in general graphs](problems/exact-flow-sensitivity/manuscripts/linear-single-fault-general-matching.md)
 - [Linear exact single-deletion certificates for two arbitrary matroids](problems/exact-flow-sensitivity/manuscripts/linear-unweighted-two-matroid-certificate.md)
+- [A self-contained compact unit-flow reporting realization](problems/exact-flow-sensitivity/manuscripts/reference-unit-flow-realization.md)
 
 ### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
 
@@ -219,7 +220,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Optimal-support sparsification of affine constraints over arbitrary finite groups](problems/group-metric-constraints/manuscripts/affine-constraints-over-arbitrary-finite-groups.md)
 - [Optimal support and compact sparsification for affine modular blocks](problems/group-metric-constraints/manuscripts/affine-modular-blocks-and-sharp-modulus-dependence.md)
-- [Arbitrarily weighted Cayley sparsifiers with O(log³ \|G\|) generators](problems/group-metric-constraints/manuscripts/arbitrary-group-cayley-sparsification.md)
+- [Arbitrarily weighted Cayley sparsifiers with `O(log³ |G|)` generators](problems/group-metric-constraints/manuscripts/arbitrary-group-cayley-sparsification.md)
 - [Sparsifying Hilbert metric sums under an action with few orbits](problems/group-metric-constraints/manuscripts/hilbert-metric-sums-with-few-orbits.md)
 - [Optimal-support sparsification of whole subgroup constraints](problems/group-metric-constraints/manuscripts/optimal-whole-subgroup-constraints.md)
 - [Rational quotient ranks from weak value oracles](problems/group-metric-constraints/manuscripts/rational-quotient-ranks-from-weak-oracles.md)
@@ -414,7 +415,7 @@ O((M\log R+Q)\log(M+2))
 -->
 ![Formula](assets/math/011752b29d3338d3d82c08b7.svg)
 
-**Model and scope.** M groups, R resources and Q adaptive deletions; augmenting-path discovery work is separate.
+**Model and scope.** `M` groups, `R` resources and `Q` adaptive deletions; augmenting-path discovery work is separate.
 
 ### [Nonuniform sparse route rounding](manuscripts/graph-backends/nonuniform-fractional-path-selection.md)
 
@@ -436,7 +437,7 @@ S\mathrm{poly}(\log S,b)
 -->
 ![Formula](assets/math/e7ae8d9ae5e92f8659d7c5ef.svg)
 
-**Model and scope.** Explicit sparse occurrences, rational masses and weights; B bounds one weighted occurrence contribution.
+**Model and scope.** Explicit sparse occurrences, rational masses and weights; `B` bounds one weighted occurrence contribution.
 
 ### [Short path inventories from a shared DAG](manuscripts/graph-backends/compressed-fractional-path-extraction.md)
 
@@ -484,7 +485,7 @@ Space:
 -->
 ![Formula](assets/math/b00ac230a2032f178e0420ed.svg)
 
-**Model and scope.** Supplied fixed edge-partition hierarchy of height h and boundary b; decomposition-input work is additional.
+**Model and scope.** Supplied fixed edge-partition hierarchy of height `h` and boundary `b`; decomposition-input work is additional.
 
 ### [Forest-support numerical client](manuscripts/graph-backends/complete-unrestricted-forest-one-sided-client.md)
 
@@ -505,7 +506,7 @@ Total fixed-ledger work:
 
 ### [Feedback-edge numerical client](manuscripts/graph-backends/feedback-edge-one-sided-client.md)
 
-Complete threshold search with k nonforest incidences.
+Complete threshold search with `k` nonforest incidences.
 
 **Randomness.** Deterministic numerical client under the stated feedback-edge and finite-word contracts, using exact forest queries and a small Dijkstra computation.
 
@@ -565,13 +566,13 @@ Smaller extension and whole-ground bases when the returned separator is sparse.
 -->
 ![Formula](assets/math/7dbc7a982dcae1bf2e5e811e.svg)
 
-**Model and scope.** Actual separator width w; matching global bases <code class="math">(5-\sqrt5)/2</code> and <code class="math">3-\sqrt2</code> use the forced-omission wrapper.
+**Model and scope.** Actual separator width `w`; matching global bases <code class="math">(5-\sqrt5)/2</code> and <code class="math">3-\sqrt2</code> use the forced-omission wrapper.
 
 ### [Whole-ground robust allocation barrier](manuscripts/allocation-and-scheduling/robust-unit-allocation-whole-ground-oracle-barrier.md)
 
 Every finite multiplicative guarantee requires near-exhaustive rank queries.
 
-**Randomness.** Lower bounds: the self-contained q-scenario oracle proof concerns deterministic algorithms; the attributed two-scenario consequence also excludes bounded-error randomized algorithms.
+**Randomness.** Lower bounds: the self-contained `q`-scenario oracle proof concerns deterministic algorithms; the attributed two-scenario consequence also excludes bounded-error randomized algorithms.
 
 **Quantitative result.**
 
@@ -589,7 +590,7 @@ Balanced-rank deterministic queries:
 -->
 ![Formula](assets/math/8d2b7df8bda79eb755f5e03c.svg)
 
-**Model and scope.** <code class="math">2\le r&lt;q</code>; q explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication.
+**Model and scope.** <code class="math">2\le r&lt;q</code>; `q` explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication.
 
 ### [Implicit minimal-bundle transversals](manuscripts/matching-and-routing/implicit-minimal-bundle-transversal-oracle.md)
 
@@ -614,7 +615,7 @@ Globally resource-free owners cover the current player-rank deficit.
 
 **Quantitative result.**
 
-With full quota <code class="math">t=3b-2</code> and b units per current record, free-pool rank:
+With full quota <code class="math">t=3b-2</code> and `b` units per current record, free-pool rank:
 
 <!-- math-display: 85aad013254ae9dc0495e88f
 r_M(F)\ge r-k
@@ -702,7 +703,7 @@ Directed nonnegative SSSP reduction with monotone prices and a charged repricing
 
 Integral allocation with factor <code class="math">4-3/r</code> against the strengthened residual-capacity configuration LP.
 
-**Randomness.** Deterministic current-blocker allocation relative to the stronger LP. A supplied factor-lambda availability oracle must meet its certified guarantee on every call.
+**Randomness.** Deterministic current-blocker allocation relative to the stronger LP. A supplied factor-`lambda` availability oracle must meet its certified guarantee on every call.
 
 **Quantitative result.**
 
@@ -730,7 +731,7 @@ Full LP:
 -->
 ![Formula](assets/math/9b1f9181c5250245606fcb32.svg)
 
-Support-s cuts:
+Support-`s` cuts:
 
 <!-- math-display: 144209c67a147d305364932e
 (q+1)^{O(s+1)}\mathrm{poly}(H,\epsilon^{-1})
@@ -776,7 +777,7 @@ O((n+I)\mathrm{polylog}(n+I+2))
 -->
 ![Formula](assets/math/46ae0859d9a85b87d4a2c20f.svg)
 
-**Model and scope.** Arbitrary finite row rank, row total L and column load at most L minus the positive bin weight; I counts all physical incidences. The supplied old injection need not be preserved.
+**Model and scope.** Arbitrary finite row rank, row total `L` and column load at most `L` minus the positive bin weight; `I` counts all physical incidences. The supplied old injection need not be preserved.
 
 ### [Near-linear confluent rounding and mass-sensitive tails](manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md)
 
@@ -798,7 +799,7 @@ C\sum_j(2^{W_j/C}-1)/(1+W_j/C)^3=O(W)
 -->
 ![Formula](assets/math/0bb6d4c425ecf1f00538b65e.svg)
 
-**Model and scope.** Positive nonsink demands, initial node congestion at most C and total actual demand W. Dynamic replenishment after reopening completed trees requires a separate argument.
+**Model and scope.** Positive nonsink demands, initial node congestion at most `C` and total actual demand `W`. Dynamic replenishment after reopening completed trees requires a separate argument.
 
 ### [Canonical odd crowns and exact matching-value preservation](manuscripts/graph-backends/low-state-odd-crown.md)
 
@@ -815,7 +816,7 @@ One outside bipartite matching plus linear graph work.
 -->
 ![Formula](assets/math/b93d02c47492b2e3a8b9d319.svg)
 
-**Model and scope.** Supplied constructive factor-critical bins and a row-covering injection. LOW gives an explicit bound on contact rank r, not on the total retained vertex count; b counts unmatched blockers.
+**Model and scope.** Supplied constructive factor-critical bins and a row-covering injection. LOW gives an explicit bound on contact rank `r`, not on the total retained vertex count; `b` counts unmatched blockers.
 
 ### [Exact interval-rank palette support bounds](problems/roabp-affine-pit/manuscripts/palette-sharpness.md)
 
@@ -841,7 +842,7 @@ h=2^W-2
 
 ### [Quadratic local Hasse digit-degree obstruction](problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md)
 
-An original-field width-w word with invertible physical factors attains first-component digit degree w²−1 at the ordinary moment curve.
+An original-field width-`w` word with invertible physical factors attains first-component digit degree `w^2-1` at the ordinary moment curve.
 
 **Randomness.** Explicit deterministic matrix construction and symbolic determinant identity; finite checks use exact integer and prime-field arithmetic without sampling.
 
@@ -861,7 +862,7 @@ Scalar total degree:
 -->
 ![Formula](assets/math/dc05275ccbf90d43492e12a0.svg)
 
-**Model and scope.** Every width w≥2 in prime characteristic p>w²+w−2; physical interval ranks survive the ordinary curve. This is a local proof-interface obstruction; one SV pair detects the examples, so no PIT lower bound is claimed.
+**Model and scope.** Every width `w>=2` in prime characteristic `p>w^2+w-2`; physical interval ranks survive the ordinary curve. This is a local proof-interface obstruction; one SV pair detects the examples, so no PIT lower bound is claimed.
 
 ## Shared manuscripts
 
@@ -940,7 +941,7 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Extracting short path inventories from a shared representation](manuscripts/graph-backends/compressed-fractional-path-extraction.md)
 - [Independent audit of compressed cores and colored forest pools](manuscripts/graph-backends/compressed-steiner-pool-independent-audit.md)
 - [A conditional sequential full router from a shuffler hierarchy](manuscripts/graph-backends/conditional-full-router-from-shufflers.md)
-- [A 6/7 quantitative composition for deterministic general matching](manuscripts/graph-backends/conditional-matching-6-7-composition.md)
+- [A `6/7` quantitative composition for deterministic general matching](manuscripts/graph-backends/conditional-matching-6-7-composition.md)
 - [A constant-degree geometric bridge for the recursive cycle backend](manuscripts/graph-backends/constant-degree-steiner-bridge.md)
 - [Constant-depth deterministic raw-length backend](manuscripts/graph-backends/constant-depth-deterministic-backend.md)
 - [A conservative constant-depth distance-oracle backend](manuscripts/graph-backends/constant-depth-distance-oracle-backend.md)
@@ -949,7 +950,7 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [A simple-graph interface for degree-proportional token routing](manuscripts/graph-backends/degree-split-token-routing-interface.md)
 - [Demand-route notifications and local correction work](manuscripts/graph-backends/demand-route-notifications-and-local-work.md)
 - [Destructive path-support extraction from the APSP hierarchy](manuscripts/graph-backends/destructive-apsp-path-support-extractor.md)
-- [A deterministic fixed-k guide-tree mincut adapter](manuscripts/graph-backends/deterministic-fixed-k-tree-mincut-adapter.md)
+- [A deterministic fixed-`k` guide-tree mincut adapter](manuscripts/graph-backends/deterministic-fixed-k-tree-mincut-adapter.md)
 - [Deterministic local tight-set discovery from directed 1-edge-out search](manuscripts/graph-backends/deterministic-local-tight-discovery.md)
 - [A deterministic near-linear final maximum-matching verifier](manuscripts/graph-backends/deterministic-maximum-matching-verifier.md)
 - [Deterministic phase costs, reset accounting, and finite guards](manuscripts/graph-backends/deterministic-phase-cost-and-guards.md)
@@ -975,19 +976,19 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Finite arithmetic for the Steiner-packing client, and the Li skeleton dependency](manuscripts/graph-backends/finite-mwu-and-li-skeleton-independent-audit.md)
 - [Fixed path-hitting certificates under insertions and deletions](manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md)
 - [Independent audit of the global-max leaf repair](manuscripts/graph-backends/fixed-k-global-max-leaf-independent-audit.md)
-- [The fixed-k guide-tree mincut interface: what has and has not closed](manuscripts/graph-backends/fixed-k-tree-mincut-source-interface-audit.md)
+- [The fixed-`k` guide-tree mincut interface: what has and has not closed](manuscripts/graph-backends/fixed-k-tree-mincut-source-interface-audit.md)
 - [Decremental tight-arc repairs during one fixed-potential interval](manuscripts/graph-backends/fixed-potential-tight-dag-repair-lemma.md)
 - [A strong two-incidence step can force long forestification motion](manuscripts/graph-backends/forced-forestification-motion-after-strong-step.md)
 - [A distance-decrease detector with frozen auxiliary barriers](manuscripts/graph-backends/frozen-barrier-distance-detector.md)
 - [Exact degree reduction and an optimum-gap driver for general matching](manuscripts/graph-backends/general-graph-gap-reduction.md)
-- [Quantified outer Gomory--Hu factors and the fixed-k resolution](manuscripts/graph-backends/gomory-hu-external-factors-except-fixed-k.md)
+- [Quantified outer Gomory--Hu factors and the fixed-`k` resolution](manuscripts/graph-backends/gomory-hu-external-factors-except-fixed-k.md)
 - [A quantified Gomory--Hu transfer of the strong forest](manuscripts/graph-backends/gomory-hu-seven-eighths-dependency-audit.md)
 - [Grouped choices inside a fixed-base router: a precise partial bridge](manuscripts/graph-backends/grouped-choice-router-bridge.md)
 - [Growing-depth recurrence bounds with controlled numerical aspect](manuscripts/graph-backends/growing-depth-metric-recurrence.md)
 - [Growing-parameter outer cost for deterministic general matching](manuscripts/graph-backends/growing-parameter-matching-cost.md)
 - [Entropy progress for balanced cuts and half-matchings](manuscripts/graph-backends/half-matching-entropy-progress.md)
 - [Shared path records for low-step flow emulators](manuscripts/graph-backends/hhl-shared-path-dag-and-conditional-tradeoff.md)
-- [A master-controlled hierarchy with exponent 209/210](manuscripts/graph-backends/hierarchy-parameter-balances.md)
+- [A master-controlled hierarchy with exponent `209/210`](manuscripts/graph-backends/hierarchy-parameter-balances.md)
 - [Routing from covers with arbitrary original length range](manuscripts/graph-backends/hrg-routing-from-rounded-covers.md)
 - [An elementary hypercube port adapter for the sequential router](manuscripts/graph-backends/hypercube-port-adapter.md)
 - [An elementary balanced weighted witness from a hypercube](manuscripts/graph-backends/hypercube-weighted-witness.md)
@@ -995,7 +996,7 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Ledger algebra, exact exchange and the structural phase budget](manuscripts/graph-backends/ledger-algebra-and-phase-budget.md)
 - [A static subgraph sparsifier with length-free ambient congestion](manuscripts/graph-backends/length-free-ambient-static-sparsifier.md)
 - [A normalized static sparsifier with linear parameter dependence](manuscripts/graph-backends/linear-parameter-static-sparsifier.md)
-- [The 4/5 balance in the current linear-router backend model](manuscripts/graph-backends/linear-router-backend-balance.md)
+- [The `4/5` balance in the current linear-router backend model](manuscripts/graph-backends/linear-router-backend-balance.md)
 - [Literal top-ledger serial routes and the semantic scope of the obstruction](manuscripts/graph-backends/literal-top-ledger-serial-routes-and-semantic-scope.md)
 - [Local exact projection from a priced-step interface](manuscripts/graph-backends/local-exact-projection-from-priced-steps.md)
 - [Preserving the master length aspect through the cycle recursion](manuscripts/graph-backends/local-length-aspect-preservation.md)
@@ -1003,7 +1004,7 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Contact-rank odd crowns and exact matching-value preservation](manuscripts/graph-backends/low-state-odd-crown.md)
 - [Dynamic compression of marked subtrees: a local root audit](manuscripts/graph-backends/marked-steiner-compression-root-audit.md)
 - [A matching algorithm from explicit backend contracts](manuscripts/graph-backends/matching-algorithm-specification.md)
-- [Continuing the arbitrary-general-matching 4/5 route](manuscripts/graph-backends/matching-optimization.md)
+- [Continuing the arbitrary-general-matching `4/5` route](manuscripts/graph-backends/matching-optimization.md)
 - [Matching-specific numerical certificates and contact-reserve stability](manuscripts/graph-backends/matching-semantic-oracle-and-contact-reserve.md)
 - [An exact matching-size kernel and the current time corollary](manuscripts/graph-backends/matching-size-kernel-corollary.md)
 - [Multiple-resource choices: a monotone charge and a repair obstruction](manuscripts/graph-backends/multiresource-choice-majorant-and-cascade.md)
@@ -1039,11 +1040,11 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [A stronger public baseline for the strong forest and Gomory--Hu application](manuscripts/graph-backends/public-strong-forest-retuning-baseline.md)
 - [Using the published flow bound on small recursive graphs](manuscripts/graph-backends/published-flow-capacity-scaling.md)
 - [An explicit deterministic exact-flow bound for the growing-parameter construction](manuscripts/graph-backends/quantitative-exact-flow-dependency.md)
-- [A conditional 14/15 quantitative bound for deterministic general matching](manuscripts/graph-backends/quantitative-matching-14-15-composition.md)
+- [A conditional `14/15` quantitative bound for deterministic general matching](manuscripts/graph-backends/quantitative-matching-14-15-composition.md)
 - [Quantitative deterministic general matching with preserved length aspect](manuscripts/graph-backends/quantitative-matching-167-168-composition.md)
-- [Quantitative deterministic general matching from the 209/210 hierarchy](manuscripts/graph-backends/quantitative-matching-209-210-composition.md)
-- [A 4/5 research composition from sequential expander routing](manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
-- [A 5/6 quantitative composition for deterministic general matching](manuscripts/graph-backends/quantitative-matching-5-6-composition.md)
+- [Quantitative deterministic general matching from the `209/210` hierarchy](manuscripts/graph-backends/quantitative-matching-209-210-composition.md)
+- [A `4/5` research composition from sequential expander routing](manuscripts/graph-backends/quantitative-matching-4-5-composition.md)
+- [A `5/6` quantitative composition for deterministic general matching](manuscripts/graph-backends/quantitative-matching-5-6-composition.md)
 - [From the raw-cycle backend to the frozen-barrier detector](manuscripts/graph-backends/raw-cycle-to-frozen-detector-bridge.md)
 - [Repair-window depth and the cost of bypassing layers](manuscripts/graph-backends/repair-window-depth-tradeoff.md)
 - [Root audit of the old-root-only epoch obstruction](manuscripts/graph-backends/root-only-sp-tree-epoch-root-audit.md)
@@ -1072,7 +1073,7 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Independent checks of tight-arc repairs and the directed-epoch obstruction](manuscripts/graph-backends/tight-dag-and-directed-epoch-independent-audit.md)
 - [Topological ordering: a valid transpose reduction and its missing interface](manuscripts/graph-backends/topological-order-transpose-interface-gap.md)
 - [Audit of the public-provider flat-forest spanner comparison](manuscripts/graph-backends/tracked-terminal-spanner-public-flat-comparator-audit.md)
-- [Uniform source interfaces for the 4/5 composition](manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md)
+- [Uniform source interfaces for the `4/5` composition](manuscripts/graph-backends/uniform-source-interfaces-for-4-5.md)
 - [A virtual-expander hierarchy with explicit terminal sets](manuscripts/graph-backends/virtual-expander-hierarchy-reconstruction.md)
 
 ### Matching and routing

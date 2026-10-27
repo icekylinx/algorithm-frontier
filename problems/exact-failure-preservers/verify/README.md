@@ -32,8 +32,38 @@ The valuated extension requires initial finite-domain bases, or independence acc
 
 ## Arborescence implementation
 
-The sparse exchange representation has <code class="math">O(n)</code> vertices and <code class="math">O(n+m\log^2 n)</code> arcs. Heavy-light path intervals encode the graphic exchanges; the partition exchange is the unique baseline arc entering the outside arc's head. The lexicographic cost/hop lengths and feasible-potential transformation retain the shortest-path order and exclude nonpositive directed cycles.
+The sparse exchange representation has
 
-The construction uses <code class="math">\widetilde O(mn)</code> arithmetic operations. The final original-arc and reporting storage is <code class="math">O(n^{3/2})</code>, and an explicit query report has <code class="math">O(n)</code> size. Temporary workspace and rational bit complexity are distinct quantities. The finite checker above does not implement this sparse exchange graph or the classical pairwise-distance-preserver primitive; those claims rely on the linked mathematical arguments and external algorithmic interfaces.
+<!-- math-display: 387008096a415eb2a5c95f1d
+O(n)
+-->
+![Formula](../../../assets/math/387008096a415eb2a5c95f1d.svg)
+ vertices and
+
+<!-- math-display: 8349033980bbe479c40ba0e0
+O(n+m\log^2 n)
+-->
+![Formula](../../../assets/math/8349033980bbe479c40ba0e0.svg)
+ arcs. Heavy-light path intervals encode the graphic exchanges; the partition exchange is the unique baseline arc entering the outside arc's head. The lexicographic cost/hop lengths and feasible-potential transformation retain the shortest-path order and exclude nonpositive directed cycles.
+
+The construction uses
+
+<!-- math-display: b9d235996578dfc5ca86cac1
+\widetilde O(mn)
+-->
+![Formula](../../../assets/math/b9d235996578dfc5ca86cac1.svg)
+ arithmetic operations. The final original-arc and reporting storage is
+
+<!-- math-display: 975ee40c8b70041b0eef8aa8
+O(n^{3/2})
+-->
+![Formula](../../../assets/math/975ee40c8b70041b0eef8aa8.svg)
+, and an explicit query report has
+
+<!-- math-display: 387008096a415eb2a5c95f1d
+O(n)
+-->
+![Formula](../../../assets/math/387008096a415eb2a5c95f1d.svg)
+ size. Temporary workspace and rational bit complexity are distinct quantities. The finite checker above does not implement this sparse exchange graph or the classical pairwise-distance-preserver primitive; those claims rely on the linked mathematical arguments and external algorithmic interfaces.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

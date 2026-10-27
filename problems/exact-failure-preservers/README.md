@@ -55,7 +55,17 @@ O(n)
 
 **Space**
 
-<code class="math">O(k^{3/2})</code> retained original elements and reporting records; <code class="math">O(n^{3/2})</code> for arborescences. Exact values are charged by their actual bit length.
+<!-- math-display: 11c83083961424dd8796ecad
+O(k^{3/2})
+-->
+![Formula](../../assets/math/11c83083961424dd8796ecad.svg)
+ retained original elements and reporting records;
+
+<!-- math-display: 975ee40c8b70041b0eef8aa8
+O(n^{3/2})
+-->
+![Formula](../../assets/math/975ee40c8b70041b0eef8aa8.svg)
+ for arborescences. Exact values are charged by their actual bit length.
 
 **Parameters**
 
@@ -67,7 +77,19 @@ Ordinary matroids use independence oracles. Valuated matroids additionally requi
 
 **Lower-bound scope**
 
-Inherited directed-distance constructions give <code class="math">\Omega(k^{4/3})</code> for weighted two-matroid restrictions and <code class="math">\Omega(n^{4/3})</code> for arborescences. Two failures require quadratic original support; approximation lower bounds allow the stated exponential cost aspect ratio.
+Inherited directed-distance constructions give
+
+<!-- math-display: 09cd561d4fdef2940d197a7e
+\Omega(k^{4/3})
+-->
+![Formula](../../assets/math/09cd561d4fdef2940d197a7e.svg)
+ for weighted two-matroid restrictions and
+
+<!-- math-display: 2368a87d8a45a190a549c448
+\Omega(n^{4/3})
+-->
+![Formula](../../assets/math/2368a87d8a45a190a549c448.svg)
+ for arborescences. Two failures require quadratic original support; approximation lower bounds allow the stated exponential cost aspect ratio.
 
 **Review status**
 
@@ -81,39 +103,96 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **Minimum-cost common <code class="math">k</code>-set, two arbitrary matroids**
 
-**Retained support / records.** <code class="math">O(k^{3/2})</code>
+**Retained support / records.**
 
-**Query output.** <code class="math">O(k)</code>
+<!-- math-display: 11c83083961424dd8796ecad
+O(k^{3/2})
+-->
+![Formula](../../assets/math/11c83083961424dd8796ecad.svg)
+
+**Query output.**
+
+<!-- math-display: e9540ae1ed1bf27fec33357b
+O(k)
+-->
+![Formula](../../assets/math/e9540ae1ed1bf27fec33357b.svg)
 
 **Additional scope.** Fixed linear costs; one element deletion
 
 **Two fixed-rank valuated matroids**
 
-**Retained support / records.** <code class="math">O(k^{3/2})</code>
+**Retained support / records.**
 
-**Query output.** <code class="math">O(k)</code>
+<!-- math-display: 11c83083961424dd8796ecad
+O(k^{3/2})
+-->
+![Formula](../../assets/math/11c83083961424dd8796ecad.svg)
+
+**Query output.**
+
+<!-- math-display: e9540ae1ed1bf27fec33357b
+O(k)
+-->
+![Formula](../../assets/math/e9540ae1ed1bf27fec33357b.svg)
 
 **Additional scope.** Effective-domain initialization is supplied; no smaller-rank valuation is inferred
 
 **Rooted minimum-cost spanning arborescence**
 
-**Retained support / records.** <code class="math">O(n^{3/2})</code>
+**Retained support / records.**
 
-**Query output.** <code class="math">O(n)</code>
+<!-- math-display: 975ee40c8b70041b0eef8aa8
+O(n^{3/2})
+-->
+![Formula](../../assets/math/975ee40c8b70041b0eef8aa8.svg)
 
-**Additional scope.** Directed graph, one arc deletion; <code class="math">\widetilde O(mn)</code> preprocessing
+**Query output.**
+
+<!-- math-display: 387008096a415eb2a5c95f1d
+O(n)
+-->
+![Formula](../../assets/math/387008096a415eb2a5c95f1d.svg)
+
+**Additional scope.** Directed graph, one arc deletion;
+
+<!-- math-display: b9d235996578dfc5ca86cac1
+\widetilde O(mn)
+-->
+![Formula](../../assets/math/b9d235996578dfc5ca86cac1.svg)
+ preprocessing
 
 **Minimum-cost maximum-cardinality common set**
 
-**Retained support / records.** <code class="math">O(r^{3/2})</code>
+**Retained support / records.**
 
-**Query output.** <code class="math">O(r)</code>
+<!-- math-display: 8f76e5fc3815261559ccdeb2
+O(r^{3/2})
+-->
+![Formula](../../assets/math/8f76e5fc3815261559ccdeb2.svg)
+
+**Query output.**
+
+<!-- math-display: 9653abd03124a149b1bfb543
+O(r)
+-->
+![Formula](../../assets/math/9653abd03124a149b1bfb543.svg)
 
 **Additional scope.** Union of the <code class="math">r</code> and <code class="math">r-1</code> constructions; ordinary linear costs
 
 **Two-failure exact matching/arborescence obstruction**
 
-**Retained support / records.** <code class="math">\Omega(r^2)</code> / <code class="math">\Omega(n^2)</code>
+**Retained support / records.**
+
+<!-- math-display: d1c380c6224384cac00b8905
+\Omega(r^2)
+-->
+![Formula](../../assets/math/d1c380c6224384cac00b8905.svg)
+ /
+
+<!-- math-display: 9f3d25ce6928a2832032ffff
+\Omega(n^2)
+-->
+![Formula](../../assets/math/9f3d25ce6928a2832032ffff.svg)
 
 **Query output.** Lower bound
 
@@ -121,7 +200,12 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **Two-failure approximate arborescence obstruction**
 
-**Retained support / records.** <code class="math">\Omega(n^2)</code>
+**Retained support / records.**
+
+<!-- math-display: 9f3d25ce6928a2832032ffff
+\Omega(n^2)
+-->
+![Formula](../../assets/math/9f3d25ce6928a2832032ffff.svg)
 
 **Query output.** Lower bound
 

@@ -40,7 +40,7 @@ Explicit rational networks and demand scales, one common selected set, exact cap
 
 **Lower-bound scope**
 
-Exact full-rate admission is W[2]-hard in the rejected count via Hitting Set, even on the stated forest instances with an unbounded explicit scenario list and no routing budgets. This does not imply the same hardness for the displayed approximate-rate output.
+Exact full-rate admission is <code class="math">\mathrm{W}[2]</code>-hard in the rejected count via Hitting Set, even on the stated forest instances with an unbounded explicit scenario list and no routing budgets. This does not imply the same hardness for the displayed approximate-rate output.
 
 **Review status**
 

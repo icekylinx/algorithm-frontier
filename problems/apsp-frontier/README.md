@@ -38,7 +38,7 @@ Actual-size hierarchy storage and query structures, charged to the graph invento
 
 **Parameters**
 
-**n** is the fixed vertex count; **m** is the current edge count; **N** is the declared polynomial history cap; **U** is log of N plus a constant; **h** is log of U plus a constant. **C** is the fixed stretch-tuning constant in Tradeoff B. Local depth and branching parameters are rounded as specified in the source.
+`n` is the fixed vertex count; `m` is the current edge count; `N` is the declared polynomial history cap; `U` is log of `N` plus a constant; `h` is log of `U` plus a constant. `C` is the fixed stretch-tuning constant in Tradeoff B. Local depth and branching parameters are rounded as specified in the source.
 
 **Model and representation**
 
@@ -50,9 +50,9 @@ The record is an upper-bound frontier and comparison map. It does not assert tha
 
 **Review status**
 
-**Ready for review.** The constructed fully dynamic metric hierarchy, full time/stretch curve and all five explicit parameter points, including the same-stretch 23/28 versus 6/7 comparison. The nonnegative-integer adapter supplies exact zero answers and transformed-range accounting.
+**Ready for review.** The constructed fully dynamic metric hierarchy, full time/stretch curve and all five explicit parameter points, including the same-stretch `23/28` versus `6/7` comparison. The nonnegative-integer adapter supplies exact zero answers and transformed-range accounting.
 
-**Dependencies and scope.** The tradeoff is amortized and reports numerical distances. Its general family assumes t tends to infinity and t^2 h=o(U); extending that family to zero lengths additionally needs t^4 h=o(U) and a uniform stretch bound. The five displayed points satisfy the stronger conditions.
+**Dependencies and scope.** The tradeoff is amortized and reports numerical distances. Its general family assumes `t` tends to infinity and `t^2 h=o(U)`; extending that family to zero lengths additionally needs `t^4 h=o(U)` and a uniform stretch bound. The five displayed points satisfy the stronger conditions.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -62,20 +62,47 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 ## Quantitative tradeoffs
 
-Set <code class="math">U=\log_2(N+4)</code> and <code class="math">h=\log_2(U+4)</code>. The general parameter choice gives work per charged input/update record
-<code class="math">\exp(O(U/t+t^3h))</code> and stretch <code class="math">\exp(O(t^4h))</code>, where <code class="math">t\to\infty</code> and <code class="math">t^2h=o(U)</code>.
-Distance queries cost <code class="math">\mathrm{poly}(U)</code>.
+Set <code class="math">U=\log_2(N+4)</code> and <code class="math">h=\log_2(U+4)</code>. For <code class="math">t\to\infty</code> and <code class="math">t^2h=o(U)</code>, the general parameter choice gives:
 
-- **Balanced:** <code class="math">t=(U/h)^{1/5}</code> gives logarithmic work and stretch
-  both <code class="math">O(U^{4/5}h^{1/5})</code>.
-- **Smaller work exponent:** <code class="math">t=U^{3/14}</code> gives logarithmic work
-  <code class="math">O(U^{11/14})</code> and logarithmic stretch <code class="math">O(U^{6/7}h)</code>.
-- **Matched finer stretch:** <code class="math">t=(U/h)^{5/28}</code> gives logarithmic
-  work <code class="math">O(U^{23/28}h^{5/28})</code> and logarithmic stretch <code class="math">O(U^{5/7}h^{2/7})</code>.
-- **Fixed <code class="math">C&gt;0</code>:** <code class="math">t=(U/h^{C+1})^{1/4}</code> gives logarithmic work
-  <code class="math">O(U^{3/4}h^{(C+1)/4})</code> and logarithmic stretch <code class="math">O(U/h^C)</code>.
-- **Fixed <code class="math">0&lt;a&lt;1</code>:** <code class="math">t=(U^a/h)^{1/4}</code> gives logarithmic work
-  <code class="math">O(U^{1-a/4}h^{1/4})</code> and logarithmic stretch <code class="math">O(U^a)</code>.
+<!-- math-display: bdb6729da5dfda88508a2283
+\begin{aligned}\text{Work per charged record:}\quad&\exp(O(U/t+t^3h)),\\\text{Stretch:}\quad&\exp(O(t^4h)),\\\text{Distance query work:}\quad&\mathrm{poly}(U).\end{aligned}
+-->
+![Formula](../../assets/math/bdb6729da5dfda88508a2283.svg)
+
+- **Balanced:** Set <code class="math">t=(U/h)^{1/5}</code>.
+
+  <!-- math-display: 07ed938e8eb98792d68656c4
+  \begin{aligned}\text{Amortized work factor:}\quad&\exp(O(U^{4/5}h^{1/5})),\\\text{Stretch:}\quad&\exp(O(U^{4/5}h^{1/5})).\end{aligned}
+  -->
+  ![Formula](../../assets/math/07ed938e8eb98792d68656c4.svg)
+
+- **Smaller work exponent:** Set <code class="math">t=U^{3/14}</code>.
+
+  <!-- math-display: 1a8fc183ce0291c9e36bf01b
+  \begin{aligned}\text{Amortized work factor:}\quad&\exp(O(U^{11/14})),\\\text{Stretch:}\quad&\exp(O(U^{6/7}h)).\end{aligned}
+  -->
+  ![Formula](../../assets/math/1a8fc183ce0291c9e36bf01b.svg)
+
+- **Matched finer stretch:** Set <code class="math">t=(U/h)^{5/28}</code>.
+
+  <!-- math-display: 0a725058a3704254f4f094de
+  \begin{aligned}\text{Amortized work factor:}\quad&\exp(O(U^{23/28}h^{5/28})),\\\text{Stretch:}\quad&\exp(O(U^{5/7}h^{2/7})).\end{aligned}
+  -->
+  ![Formula](../../assets/math/0a725058a3704254f4f094de.svg)
+
+- **Fixed <code class="math">C&gt;0</code>:** Set <code class="math">t=(U/h^{C+1})^{1/4}</code>.
+
+  <!-- math-display: 50b3625717801b02b2e4291a
+  \begin{aligned}\text{Amortized work factor:}\quad&\exp(O(U^{3/4}h^{(C+1)/4})),\\\text{Stretch:}\quad&\exp(O(U/h^C)).\end{aligned}
+  -->
+  ![Formula](../../assets/math/50b3625717801b02b2e4291a.svg)
+
+- **Fixed <code class="math">0&lt;a&lt;1</code>:** Set <code class="math">t=(U^a/h)^{1/4}</code>.
+
+  <!-- math-display: 0752434504c17251609446a9
+  \begin{aligned}\text{Amortized work factor:}\quad&\exp(O(U^{1-a/4}h^{1/4})),\\\text{Stretch:}\quad&\exp(O(U^a)).\end{aligned}
+  -->
+  ![Formula](../../assets/math/0752434504c17251609446a9.svg)
 
 Total work multiplies the displayed factor by the actual initial vertex/edge inventory plus the number of updates. The port adapter supports arbitrary original degree and accounts for every allocated native record.
 

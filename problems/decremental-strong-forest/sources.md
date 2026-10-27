@@ -21,20 +21,30 @@ remain explicit.
 | Zero-length extension | Reweights an already valid positive-length flat output using a fixed perturbation and original integer lengths; it preserves topology and occurrence bounds. |
 | Exact Gomory–Hu transfer | The [quantified application proof](../../manuscripts/graph-backends/gomory-hu-seven-eighths-dependency-audit.md) supplies the complete composition: finite-arithmetic packing, the Li skeleton, named exact flow and the locally proved fixed-parameter guide-tree adapter. |
 
-The native forest bound is <code class="math">(n+m)E_{6/7}</code>. The exact cut-tree
+The native forest bound is
+
+<!-- math-display: a4c599ab8736bfc9981621c4
+(n+m)E_{6/7}
+-->
+![Formula](../../assets/math/a4c599ab8736bfc9981621c4.svg)
+. The exact cut-tree
 application additionally removes loops, zero-capacity edges and trivial
 positive-support components, and has the distinct
-<code class="math">O(n+m)+(m+1)E_{6/7}</code> bound. Their input/output inventories should
+<!-- math-display: 515d9ca505a736ed1604df94
+O(n+m)+(m+1)E_{6/7}
+-->
+![Formula](../../assets/math/515d9ca505a736ed1604df94.svg)
+ bound. Their input/output inventories should
 not be conflated.
 
 - [Root audit of the proposed colored core-forest pool lift](../../manuscripts/graph-backends/colored-core-pool-root-audit.md)
 - [Independent audit of compressed cores and colored forest pools](../../manuscripts/graph-backends/compressed-steiner-pool-independent-audit.md)
 - [Finite arithmetic for the Steiner-packing client, and the Li skeleton dependency](../../manuscripts/graph-backends/finite-mwu-and-li-skeleton-independent-audit.md)
 - [Independent audit of the global-max leaf repair](../../manuscripts/graph-backends/fixed-k-global-max-leaf-independent-audit.md)
-- [A deterministic fixed-k guide-tree mincut adapter](../../manuscripts/graph-backends/deterministic-fixed-k-tree-mincut-adapter.md)
-- [The fixed-k guide-tree mincut interface: what has and has not closed](../../manuscripts/graph-backends/fixed-k-tree-mincut-source-interface-audit.md)
+- [A deterministic fixed-`k` guide-tree mincut adapter](../../manuscripts/graph-backends/deterministic-fixed-k-tree-mincut-adapter.md)
+- [The fixed-`k` guide-tree mincut interface: what has and has not closed](../../manuscripts/graph-backends/fixed-k-tree-mincut-source-interface-audit.md)
 - [A quantified Gomory--Hu transfer of the strong forest](../../manuscripts/graph-backends/gomory-hu-seven-eighths-dependency-audit.md)
-- [Quantified outer Gomory--Hu factors and the fixed-k resolution](../../manuscripts/graph-backends/gomory-hu-external-factors-except-fixed-k.md)
+- [Quantified outer Gomory--Hu factors and the fixed-`k` resolution](../../manuscripts/graph-backends/gomory-hu-external-factors-except-fixed-k.md)
 - [A normalized static sparsifier with linear parameter dependence](../../manuscripts/graph-backends/linear-parameter-static-sparsifier.md)
 - [Dynamic compression of marked subtrees: a local root audit](../../manuscripts/graph-backends/marked-steiner-compression-root-audit.md)
 - [Joint public retuning for the strong forest: a conservative source audit](../../manuscripts/graph-backends/public-strong-forest-joint-retuning-audit.md)

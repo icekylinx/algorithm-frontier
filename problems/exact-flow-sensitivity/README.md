@@ -37,7 +37,21 @@ O(Nr^2+r^3)
 -->
 ![Formula](../../assets/math/bc7b53cdc64e0cad4c090d30.svg)
 
-Query bounds are listed separately.
+The [exact unit-flow reference](reference/README.md) implements a separate polynomial preprocessing bound for loopless unit-capacity multigraphs:
+
+<!-- math-display: 24c232c6e03b5febe31ca710
+O\!\left(n(m+1)(n+m+1)\right).
+-->
+![Formula](../../assets/math/24c232c6e03b5febe31ca710.svg)
+
+For simple input, its preprocessing specializes to:
+
+<!-- math-display: 596429906c9b112a27c6fe9e
+O\!\left(n^2(m+1)\right).
+-->
+![Formula](../../assets/math/596429906c9b112a27c6fe9e.svg)
+
+These counts use exact-arithmetic and hash-table operations; the reference proof accounts separately for bit length and Python dictionary behavior. Query bounds are listed separately.
 
 **Space**
 
@@ -57,7 +71,11 @@ General-matching certificates preserve cardinality, not every increased replacem
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The exact nonnegative rational unit-flow single-original-arc-failure component: fixed-value and minimum-cost maximum-flow queries, the residual replacement identity, support-sensitive original-record preservers, compact difference/full-flow reports and the acyclic simple-input support specialization. The local reference realization proves its own polynomial preprocessing and bit-cost contract.
+
+**Dependencies and scope.** Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates. The reference uses exact fractions and Python hash tables, with their operation and bit-cost conventions explicit. It does not implement the faster preprocessing of the research theorem. Vertex-split packing execution, signed/general-balance initialization, general-matching, matroid and price clients are outside this reviewed component scope.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
@@ -67,63 +85,182 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **Fixed optimal unit flow of support <code class="math">s_x</code>, general balances/signed costs**
 
-**Retained support / records.** <code class="math">O(s_x+n\sqrt{s_x})</code>
+**Retained support / records.**
 
-**Query time or report.** <code class="math">O(n)</code> difference; <code class="math">O(s_x+n)</code> full support
+<!-- math-display: 3a09f62c7a0bb75bc7183be9
+O(s_x+n\sqrt{s_x})
+-->
+![Formula](../../assets/math/3a09f62c7a0bb75bc7183be9.svg)
+
+**Query time or report.**
+
+<!-- math-display: 387008096a415eb2a5c95f1d
+O(n)
+-->
+![Formula](../../assets/math/387008096a415eb2a5c95f1d.svg)
+ difference;
+
+<!-- math-display: 88c9ddccc2cd958f07ccc845
+O(s_x+n)
+-->
+![Formula](../../assets/math/88c9ddccc2cd958f07ccc845.svg)
+ full support
 
 **Min-cost <code class="math">\lambda</code>-flow, simple nonnegative-cost digraph**
 
-**Retained support / records.** <code class="math">O(n^{3/2}\lambda^{1/4})</code>
+**Retained support / records.**
 
-**Query time or report.** <code class="math">O(n)</code> difference; <code class="math">O(n\sqrt{\lambda})</code> full support
+<!-- math-display: d82a2260a3e36bb3b398e7fd
+O(n^{3/2}\lambda^{1/4})
+-->
+![Formula](../../assets/math/d82a2260a3e36bb3b398e7fd.svg)
+
+**Query time or report.**
+
+<!-- math-display: 387008096a415eb2a5c95f1d
+O(n)
+-->
+![Formula](../../assets/math/387008096a415eb2a5c95f1d.svg)
+ difference;
+
+<!-- math-display: 58df2e79a68a8cf86014b14a
+O(n\sqrt{\lambda})
+-->
+![Formula](../../assets/math/58df2e79a68a8cf86014b14a.svg)
+ full support
 
 **Cost-only <code class="math">\lambda</code>-flow sensitivity**
 
-**Retained support / records.** <code class="math">O(n\sqrt{\lambda})</code>
+**Retained support / records.**
 
-**Query time or report.** <code class="math">O(\log(n+1))</code>
+<!-- math-display: 58df2e79a68a8cf86014b14a
+O(n\sqrt{\lambda})
+-->
+![Formula](../../assets/math/58df2e79a68a8cf86014b14a.svg)
+
+**Query time or report.**
+
+<!-- math-display: 0597cb37fc3e679e65c4032d
+O(\log(n+1))
+-->
+![Formula](../../assets/math/0597cb37fc3e679e65c4032d.svg)
 
 **Min-cost maximum flow**
 
-**Retained support / records.** <code class="math">O(n^{3/2}\lambda^{1/4})\le O(n^{7/4})</code>
+**Retained support / records.**
+
+<!-- math-display: f96afbbeaf324f6be44adfca
+O(n^{3/2}\lambda^{1/4})\le O(n^{7/4})
+-->
+![Formula](../../assets/math/f96afbbeaf324f6be44adfca.svg)
 
 **Query time or report.** Two consecutive flow-value structures
 
 **Min-cost maximum internally vertex-disjoint <code class="math">s</code>–<code class="math">t</code> paths**
 
-**Retained support / records.** <code class="math">O(n^{3/2})</code>
+**Retained support / records.**
 
-**Query time or report.** <code class="math">O(n)</code> full output; one arc or one internal vertex failure
+<!-- math-display: 975ee40c8b70041b0eef8aa8
+O(n^{3/2})
+-->
+![Formula](../../assets/math/975ee40c8b70041b0eef8aa8.svg)
+
+**Query time or report.**
+
+<!-- math-display: 387008096a415eb2a5c95f1d
+O(n)
+-->
+![Formula](../../assets/math/387008096a415eb2a5c95f1d.svg)
+ full output; one arc or one internal vertex failure
 
 **General matching, one edge failure**
 
-**Retained support / records.** At most <code class="math">4\mu+2</code> edges
+**Retained support / records.** At most
 
-**Query time or report.** <code class="math">O(\mu)</code> via one blossom-aware augmentation
+<!-- math-display: 8b090888e66c816523358c74
+4\mu+2
+-->
+![Formula](../../assets/math/8b090888e66c816523358c74.svg)
+ edges
+
+**Query time or report.**
+
+<!-- math-display: dab72c5931a0273f931fca0c
+O(\mu)
+-->
+![Formula](../../assets/math/dab72c5931a0273f931fca0c.svg)
+ via one blossom-aware augmentation
 
 **General matching, one edge or one vertex failure**
 
-**Retained support / records.** At most <code class="math">6\mu+2</code> edges
+**Retained support / records.** At most
 
-**Query time or report.** <code class="math">O(\mu)</code>; alternative single failures
+<!-- math-display: 4494dc0845f619e3a92df197
+6\mu+2
+-->
+![Formula](../../assets/math/4494dc0845f619e3a92df197.svg)
+ edges
+
+**Query time or report.**
+
+<!-- math-display: dab72c5931a0273f931fca0c
+O(\mu)
+-->
+![Formula](../../assets/math/dab72c5931a0273f931fca0c.svg)
+; alternative single failures
 
 **Two arbitrary matroids, cardinality only**
 
-**Retained support / records.** At most <code class="math">2r+k\le3r</code> elements
+**Retained support / records.** At most
+
+<!-- math-display: a101744e438eed74bc326c4d
+2r+k\le3r
+-->
+![Formula](../../assets/math/a101744e438eed74bc326c4d.svg)
+ elements
 
 **Query time or report.** Optimize on retained ground using original oracles; <code class="math">k</code> avoidable baseline elements
 
 **One-element price change, two matroids**
 
-**Retained support / records.** <code class="math">O(N+r\sqrt{\min\{N,r^2\}})</code>
+**Retained support / records.**
 
-**Query time or report.** <code class="math">O(r)</code> exact output, no query oracle calls
+<!-- math-display: 7d06dadd0a7ae0930e58445b
+O(N+r\sqrt{\min\{N,r^2\}})
+-->
+![Formula](../../assets/math/7d06dadd0a7ae0930e58445b.svg)
+
+**Query time or report.**
+
+<!-- math-display: 9653abd03124a149b1bfb543
+O(r)
+-->
+![Formula](../../assets/math/9653abd03124a149b1bfb543.svg)
+ exact output, no query oracle calls
 
 **Arbitrary new arborescence arc, prescribed spanning size**
 
-**Retained support / records.** <code class="math">O(n^2)</code> records
+**Retained support / records.**
 
-**Query time or report.** <code class="math">O(\log^2 n)</code> gap evaluation; <code class="math">O(n+\log^2 n)</code> full output
+<!-- math-display: e472ec35ce3fd8855fe02827
+O(n^2)
+-->
+![Formula](../../assets/math/e472ec35ce3fd8855fe02827.svg)
+ records
+
+**Query time or report.**
+
+<!-- math-display: 3d8ce6ecd5b8d017cf5606e0
+O(\log^2 n)
+-->
+![Formula](../../assets/math/3d8ce6ecd5b8d017cf5606e0.svg)
+ gap evaluation;
+
+<!-- math-display: 5908ab3b82a6373bc5945393
+O(n+\log^2 n)
+-->
+![Formula](../../assets/math/5908ab3b82a6373bc5945393.svg)
+ full output
 
 The weighted two-matroid and arborescence single-deletion theorems have their own [preserver card](../exact-failure-preservers/). Supplied-catalog insertion in the price structure keeps rank fixed; it does not handle an insertion that increases maximum rank.
 

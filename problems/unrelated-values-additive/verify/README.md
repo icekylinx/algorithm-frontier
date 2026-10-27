@@ -4,7 +4,7 @@ The evidence for this result consists of its [mathematical proof](../proof.md).
 
 ## Mathematical evidence
 
-- FOPT selects an actual permitted basis and then optimizes fractional assignments; selection is not fractional.
+- <code class="math">\mathrm{FOPT}</code> selects an actual permitted basis and then optimizes fractional assignments; selection is not fractional.
 - Downward utility, clipped supports and normalized separation give a nonnegative polynomial-bit packing interface, including zero values.
 - Disposal, complement duality and player-specific prefix orders give one simultaneous rounding; the maximum-total face and one actual cost objective preserve budget.
 - Denominator bounds and exact reoptimization distinguish comparator recovery from approximate target search.

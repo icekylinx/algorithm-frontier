@@ -8,7 +8,7 @@ with exact arithmetic.
 
 | Program | Scope | Saved run |
 |---|---|---|
-| [Resource certificate](check_resources.py) | Rational entropy bounds, resource envelopes, preparation and live-state costs yielding the stated space exponent and time exponent 1/2 | [Receipt](space_resources_receipt.json) |
+| [Resource certificate](check_resources.py) | Rational entropy bounds, resource envelopes, preparation and live-state costs yielding the stated space exponent and time exponent `1/2` | [Receipt](space_resources_receipt.json) |
 | [Structural identities](check_structural.py) | Finite ownership, association, image, cover, completion and layout identities, plus rational parameter checks | [Receipt](structural_receipt.json) |
 | [Range identities](check_range_identities.py) | Exact quotient/residue identities, target-batch incidence and packed convolutions | [Receipt](range_identities_receipt.json) |
 | [Short-range reference solver](check_range_solver.py) | Complete finite decisions and indexed witnesses, nested residue streams, interval queries and both scale regimes, compared with exhaustive enumeration | [Receipt](range_solver_receipt.json) |

@@ -12,7 +12,7 @@ The evidence for this result consists of its [mathematical proof](../proof.md).
 
 [verify_profile_certificates.py](../../../tools/verify_profile_certificates.py) checks the following finite claim:
 
-The k=0 factor-two endpoint, ordered bucket intervals for k=1,...,13, and all 91 exact bucket load identities b_i+2(1-b_(i-1))=gamma_k. Arbitrary depths and exact-cost LP recovery remain symbolic.
+The <code class="math">k=0</code> factor-two endpoint, ordered bucket intervals for <code class="math">k=1,\ldots,13</code>, and all 91 exact bucket load identities <code class="math">b_i+2(1-b_{i-1})=\gamma_k</code>. Arbitrary depths and exact-cost LP recovery remain symbolic.
 
 Run from the repository root:
 
@@ -24,7 +24,7 @@ These programs do not implement the full algorithm or mechanically verify its or
 
 ## Model and verification boundaries
 
-The finite checker verifies bucket identities, not general polymatroid feasibility or exact-budget rounding. The theorem retains arbitrary nonnegative machine-type times, binary multiplicities and the (k+1)^q enumeration factor.
+The finite checker verifies bucket identities, not general polymatroid feasibility or exact-budget rounding. The theorem retains arbitrary nonnegative machine-type times, binary multiplicities and the <code class="math">(k+1)^q</code> enumeration factor.
 
 The [source map](../sources.md) identifies the actual proof dependencies. Repository checks validate the registry, links, notation and generated catalogue; those checks do not establish mathematical correctness. Proof-assistant verification and external peer review are not claimed.
 

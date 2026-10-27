@@ -6,7 +6,14 @@ A retained set of original top simplices preserves lower-dimensional persistence
 
 **Guarantee**
 
-At most <code class="math">\min\left\{N,r\binom{h+a+b}{a+b}\right\}</code> top simplices preserve every surviving boundary space at every filtration threshold, hence persistence modules in degrees at most <code class="math">p-1</code>.
+The retained top-simplex count is bounded by
+
+<!-- math-display: 5c6d73e6dda51539cb6f0438
+\min\left\{N,r\binom{h+a+b}{a+b}\right\}.
+-->
+![Formula](../../assets/math/5c6d73e6dda51539cb6f0438.svg)
+
+These original simplices preserve every surviving boundary space at every filtration threshold, hence persistence modules in degrees at most <code class="math">p-1</code>.
 
 **Objective and output**
 
@@ -49,7 +56,7 @@ The bound counts retained top simplices, not all lower faces, total encoded bits
 The actual-rank construction uses <code class="math">O(n(a+s)+sr\rho+sr)</code> additional
 field elements, plus <code class="math">O(m(r+1))</code> workspace for original-row selection
 when the boundary has <code class="math">m</code> possible nonzero rows, and the explicit
-input/output and facet index. It does not materialize an <code class="math">sr</code> by <code class="math">N</code> lift.
+input/output and facet index. It does not materialize an <code class="math">sr\times N</code> lift.
 
 **Parameters**
 
@@ -79,15 +86,28 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 **General vertex and top labels**
 
-<code class="math">\min\left\{N,r\binom{h+a+b}{a+b}\right\}</code>
+<!-- math-display: daba436f50f82819ff31d39e
+\min\left\{N,r\binom{h+a+b}{a+b}\right\}
+-->
+![Formula](../../assets/math/daba436f50f82819ff31d39e.svg)
 
 **One color per vertex, no extra top labels**
 
-<code class="math">\min\left\{N,kr,\binom{n}{p+1}-\binom{n-k}{p+1}\right\}</code>, <code class="math">k=\min\{h+1,\ell\}</code>
+<!-- math-display: 5272566edae6239b7906dcda
+\min\left\{N,kr,\binom{n}{p+1}-\binom{n-k}{p+1}\right\}
+-->
+![Formula](../../assets/math/5272566edae6239b7906dcda.svg)
+
+Here <code class="math">k=\min\{h+1,\ell\}</code>.
 
 **Overlapping vertex labels, no extra top labels**
 
-<code class="math">\min\left\{N,sr,\binom{n}{p+1}-\binom{n-s}{p+1}\right\}</code>, <code class="math">s=</code> rank of vertex coefficient features
+<!-- math-display: f55c5ac135829fec0d237355
+\min\left\{N,sr,\binom{n}{p+1}-\binom{n-s}{p+1}\right\}
+-->
+![Formula](../../assets/math/f55c5ac135829fec0d237355.svg)
+
+Here <code class="math">s</code> is the rank of vertex coefficient features.
 
 The [complete construction](manuscripts/feature-rank-construction.md)
 finds the exact lift rank <code class="math">\rho</code> within this bound, even when the formal
@@ -97,7 +117,10 @@ and supplied prime-field arithmetic, and preserves original simplex IDs.
 
 **Failure of labeled <code class="math">s</code>-faces and all cofaces**
 
-<code class="math">\min\left\{N,r\binom{h+\binom{p}{s}}{\binom{p}{s}}\right\}</code>
+<!-- math-display: cd6207d3b1a3e2b03846357a
+\min\left\{N,r\binom{h+\binom{p}{s}}{\binom{p}{s}}\right\}
+-->
+![Formula](../../assets/math/cd6207d3b1a3e2b03846357a.svg)
 
 **Compatible relative homology and zigzag sequences of allowed states**
 

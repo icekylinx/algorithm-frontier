@@ -21,7 +21,7 @@ The main proof gives the family-level theorem composition. The following canonic
 ## External inputs
 
 - Nederlof, van Leeuwen, and van der Zwaan, [Reducing a Target Interval to a Few Exact Queries](https://arxiv.org/pdf/1208.4225), Theorems 1–2 and Corollary 1: the interval mechanism and Knapsack/Subset Sum transfer.
-- Bansal, Garg, Nederlof, and Vyas, [Faster Space-Efficient Algorithms for Subset Sum, k-Sum and Related Problems](https://arxiv.org/pdf/1612.02788), Lemma 4.4 and the proof of Corollary 2: signed rows and exact-target enumeration. The local manuscript proves its sharper boundary cap and the support-sensitive slack accounting directly. The cardinality and common-coefficient companion also proves its local refinements directly. These steps do not require another external theorem; the cited work supplies the historical method and comparison baseline.
+- Bansal, Garg, Nederlof, and Vyas, [Faster Space-Efficient Algorithms for Subset Sum, `k`-Sum and Related Problems](https://arxiv.org/pdf/1612.02788), Lemma 4.4 and the proof of Corollary 2: signed rows and exact-target enumeration. The local manuscript proves its sharper boundary cap and the support-sensitive slack accounting directly. The cardinality and common-coefficient companion also proves its local refinements directly. These steps do not require another external theorem; the cited work supplies the historical method and comparison baseline.
 
 ## Local executable evidence
 
