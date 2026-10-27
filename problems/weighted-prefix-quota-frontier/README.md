@@ -14,38 +14,38 @@ Deterministic exact algorithms and deterministic original-ground reductions in t
 
 One order
 
-<!-- math-display: fc058d229d9cb7b7ce14e6b1
-2^{O(B)}
+<!-- math-display: 79cfb284b062bbe17182d965
+2^{O(B)}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/fc058d229d9cb7b7ce14e6b1.svg)
+![Formula](../../assets/math/79cfb284b062bbe17182d965.svg)
 
 Two orders
 
-<!-- math-display: 91e262828c9a668dde2068db
-2^{O(B\log(B+2))}
+<!-- math-display: 1ceae624d788ccb6e3f622d2
+2^{O(B\log(B+2))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/91e262828c9a668dde2068db.svg)
+![Formula](../../assets/math/1ceae624d788ccb6e3f622d2.svg)
 
 <code class="math">p</code> shared weight families
 
-<!-- math-display: eb5415956ae933c77c772bc8
-2^{O(pB\log(p+2))}
+<!-- math-display: 8410e92a14d5b27b774e1132
+2^{O(pB\log(p+2))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/eb5415956ae933c77c772bc8.svg)
+![Formula](../../assets/math/8410e92a14d5b27b774e1132.svg)
 
 Common-weight laminar quotas
 
-<!-- math-display: 3a45f19e4233ab67c8ff537c
-2^{(5/9+o(1))B^2}
+<!-- math-display: 47246cde76546239b10fa92c
+2^{(5/9+o(1))B^2}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/3a45f19e4233ab67c8ff537c.svg)
+![Formula](../../assets/math/47246cde76546239b10fa92c.svg)
 
-Each exponential factor is multiplied by <code class="math">\mathrm{poly}(H)</code>. The laminar coefficient uses the locally explicit universal-set construction of Naor–Schulman–Srinivasan, Theorem 7; the complete elementary coloring proof gives
+The laminar coefficient uses the locally explicit universal-set construction of Naor–Schulman–Srinivasan, Theorem 7; the complete elementary coloring proof gives
 
-<!-- math-display: a5019403346e8905f53b8164
-2^{(10/9)B^2+O(B\log(B+1))}
+<!-- math-display: e489edb5e849eb6a795fc6be
+2^{(10/9)B^2+O(B\log(B+1))}\mathrm{poly}(H)
 -->
-![Formula](../../assets/math/a5019403346e8905f53b8164.svg)
+![Formula](../../assets/math/e489edb5e849eb6a795fc6be.svg)
 
 A laminar family with a single positive weight value gives polynomial time. Sparse and support-sensitive refinements appear below.
 
@@ -79,39 +79,83 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 ## Exact algorithm bounds
 
-All time bounds include <code class="math">\mathrm{poly}(H)</code>.
+The following bounds include polynomial work in the full encoded input.
 
 **One common order**
 
-<code class="math">2^{O(B)}</code>
+<!-- math-display: 79cfb284b062bbe17182d965
+2^{O(B)}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/79cfb284b062bbe17182d965.svg)
 
 **Two common orders**
 
-<code class="math">2^{O(B\log(B+2))}</code>
+<!-- math-display: 1ceae624d788ccb6e3f622d2
+2^{O(B\log(B+2))}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/1ceae624d788ccb6e3f622d2.svg)
 
 **One order, <code class="math">C</code> actual supports**
 
-<code class="math">2^{O(\sqrt{B\min\{C,B\}})}</code>
+<!-- math-display: 5c82689dbf00f078bd4f7332
+2^{O(\sqrt{B\min\{C,B\}})}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/5c82689dbf00f078bd4f7332.svg)
 
 **Two orders, <code class="math">C</code> actual supports**
 
-<code class="math">2^{O(\min\{\sqrt{BC},B\log(2+\min\{C/B,B\})\})}</code>
+<!-- math-display: 89f9c1e93e1d3d71c089fb95
+2^{O(\min\{\sqrt{BC},B\log(2+\min\{C/B,B\})\})}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/89f9c1e93e1d3d71c089fb95.svg)
 
 **<code class="math">p</code> shared weight families**
 
-<code class="math">2^{O(pB\log(p+2))}</code>
+<!-- math-display: 8410e92a14d5b27b774e1132
+2^{O(pB\log(p+2))}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/8410e92a14d5b27b774e1132.svg)
 
 **Common-weight laminar family with root cap <code class="math">B</code>**
 
-<code class="math">2^{(5/9+o(1))B^2}</code> using the explicitly cited local universal-set theorem; <code class="math">2^{(10/9)B^2+O(B\log(B+1))}</code> with the elementary coloring construction. The [complete recovery proof](manuscripts/laminar-dominant-weight-recovery.md#8-cardinality-sensitive-catalogues-and-sharper-exponents) gives a sharper exact integer maximum using the actual depth and occurring weights.
+Using the explicitly cited local universal-set theorem:
+
+<!-- math-display: 47246cde76546239b10fa92c
+2^{(5/9+o(1))B^2}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/47246cde76546239b10fa92c.svg)
+
+With the elementary coloring construction:
+
+<!-- math-display: e489edb5e849eb6a795fc6be
+2^{(10/9)B^2+O(B\log(B+1))}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/e489edb5e849eb6a795fc6be.svg)
+
+The [complete recovery proof](manuscripts/laminar-dominant-weight-recovery.md#8-cardinality-sensitive-catalogues-and-sharper-exponents) gives a sharper exact integer maximum using the actual depth and occurring weights.
 
 **Laminar family with one positive weight value**
 
-<code class="math">\mathrm{poly}(H)</code>, including binary-large root caps and nonuniform signed zero-coordinate costs
+<!-- math-display: 5a5ab874318fb4203d250c74
+\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/5a5ab874318fb4203d250c74.svg)
+
+This includes binary-large root caps and nonuniform signed zero-coordinate costs.
 
 **Root cap <code class="math">B_0</code>, maximum target <code class="math">B</code>, frequency <code class="math">\Delta</code>**
 
-<code class="math">2^{O((\Delta+1)B_0\log((\Delta+1)B_0(B+2)+2))}</code>; in particular <code class="math">2^{O(\Delta B\log(\Delta B+2))}</code> for <code class="math">\Delta\ge1</code>
+<!-- math-display: bcc71f656e8c66a1e6dae992
+2^{O((\Delta+1)B_0\log((\Delta+1)B_0(B+2)+2))}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/bcc71f656e8c66a1e6dae992.svg)
+
+In particular, for <code class="math">\Delta\ge1</code>:
+
+<!-- math-display: 8d3774961e1c2850f4d8d71f
+2^{O(\Delta B\log(\Delta B+2))}\mathrm{poly}(H)
+-->
+![Formula](../../assets/math/8d3774961e1c2850f4d8d71f.svg)
 
 ## Quotas on either side of compatible cuts
 

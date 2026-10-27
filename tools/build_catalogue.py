@@ -124,12 +124,10 @@ def quantity_paragraphs(text: str, purposes: list[str]) -> list[str]:
             if next(roles) == "showcase":
                 lead = pending.strip().rstrip(",:")
                 if lead:
-                    # A preceding complete formula is a separate definition,
-                    # rather than the label of the following display.
-                    if "$" in lead:
-                        out += [sentence(lead), ""]
-                    else:
-                        out += [sentence(lead).rstrip(".") + ":", ""]
+                    # Literal parameters can belong to the caption of a
+                    # showcased conclusion. Keep their qualification with
+                    # that conclusion instead of making a broken sentence.
+                    out += [sentence(lead).rstrip(".") + ":", ""]
                 out += ["$$", formula, "$$", ""]
                 pending = ""
             else:

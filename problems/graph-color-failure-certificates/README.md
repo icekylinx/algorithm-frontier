@@ -55,31 +55,62 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **One color per vertex**
 
-<code class="math">\sum_C\left[n_Ck_C-\binom{k_C+1}{2}\right]</code>, <code class="math">k_C=\min\{h+1,q_C\}</code>
+<!-- math-display: d4147752f7020b5bc0e31bf6
+\sum_C\left[n_Ck_C-\binom{k_C+1}{2}\right]
+-->
+![Formula](../../assets/math/d4147752f7020b5bc0e31bf6.svg)
+
+Here <code class="math">k_C=\min\{h+1,q_C\}</code>.
 
 **Vertex lists of size <code class="math">d_v</code>, computed feature rank <code class="math">t</code>**
 
-<code class="math">nt-\binom{t+1}{2}</code>, <code class="math">t\le\min\left\{n,\binom{h+d_v}{d_v}\right\}</code>
+<!-- math-display: a522ff5528b0a0b9a2fd5dd6
+nt-\binom{t+1}{2}
+-->
+![Formula](../../assets/math/a522ff5528b0a0b9a2fd5dd6.svg)
+
+The computed rank satisfies <code class="math">t\le\min\left\{n,\binom{h+d_v}{d_v}\right\}</code>.
 
 **Vertex and extra-edge lists, degrees <code class="math">d_v,d_e</code>**
 
-<code class="math">\min\left\{m,n\binom{h+d_v+d_e}{d_v+d_e}\right\}</code>
+<!-- math-display: 9427102b495e5d8ba5b0b578
+\min\left\{m,n\binom{h+d_v+d_e}{d_v+d_e}\right\}
+-->
+![Formula](../../assets/math/9427102b495e5d8ba5b0b578.svg)
 
 **One color per vertex and per edge; at least <code class="math">h+1</code> vertex colors in a component**
 
-<code class="math">n\binom{h+2}{2}-\binom{h+3}{3}</code>, componentwise
+Componentwise:
+
+<!-- math-display: b0b23d704f0ea883103beec0
+n\binom{h+2}{2}-\binom{h+3}{3}
+-->
+![Formula](../../assets/math/b0b23d704f0ea883103beec0.svg)
 
 **General mixed-color rank refinement**
 
-Subtract <code class="math">\binom{h+3}{3}-\binom{h-t+3}{3}</code> from <code class="math">n\binom{h+2}{2}</code>
+<!-- math-display: 29681171be94d6428a1df96f
+n\binom{h+2}{2}-\binom{h+3}{3}+\binom{h-t+3}{3}
+-->
+![Formula](../../assets/math/29681171be94d6428a1df96f.svg)
 
 **One failed color, near-linear construction**
 
-<code class="math">O\!\left((m+A)[\log^4(n+2)+\log(m+2)]+ar\right)</code>, plus input organization; <code class="math">a=2d_v+d_e</code>, <code class="math">A\le am</code>, <code class="math">r=</code> MSF size
+<!-- math-display: 844b7664ee4f2ab142eb93ef
+O\!\left((m+A)[\log^4(n+2)+\log(m+2)]+ar\right)
+-->
+![Formula](../../assets/math/844b7664ee4f2ab142eb93ef.svg)
+
+Input organization is additional. Here <code class="math">a=2d_v+d_e</code>, <code class="math">A\le am</code>, and <code class="math">r</code> is the MSF size.
 
 **One failed color, total difference lists**
 
-<code class="math">\sum_c\lvert R_c\rvert\le ar</code>; indexed cost lookup <code class="math">O(1)</code>
+<!-- math-display: a6393cceb749af0256fda39e
+\sum_c\lvert R_c\rvert\le ar
+-->
+![Formula](../../assets/math/a6393cceb749af0256fda39e.svg)
+
+Indexed cost lookup takes <code class="math">O(1)</code> time.
 
 When the list-feature dimension is gated out, the algorithm claims the parameter envelope at <code class="math">t=\min\left\{n,\binom{h+d_v}{d_v}\right\}</code>; the sharper actual-rank bound requires computing that rank.
 

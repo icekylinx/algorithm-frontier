@@ -1,5 +1,11 @@
 # History
 
+## 2026-10-27 — Complete formulas in result showcases
+
+- Kept displayed alternatives and their connectives together, supplied missing inequality operands, and included polynomial factors inside the quota runtime formulas.
+- Expanded the displayed resource-constrained packing bound and mixed-color rank subtraction into complete equivalent expressions. Parameter definitions remain literal and copyable.
+- Regenerated the catalogue and source-bound SVGs; checked all 79 catalogue records, presentation regressions, source round trips and rendering idempotence. Mathematical guarantees and canonical proof/PDF packages are unchanged by this presentation update.
+
 ## 2026-10-27 — Executable matching queries after native failures
 
 - Added a query adapter for a certificate-verified mixed-failure matching kernel. It validates every query against the stronger outside-vertex/crossing-edge budget, solves the compact retained residual graph, and restores original vertices, input indices and typed edge IDs.

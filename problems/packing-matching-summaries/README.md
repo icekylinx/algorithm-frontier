@@ -55,23 +55,40 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 
 **Packing with represented resource**
 
-<code class="math">\min\left\{N,r\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}\right\}</code>
+<!-- math-display: 15998acb3004922e2650e982
+\min\left\{N,r\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}\right\}
+-->
+![Formula](../../assets/math/15998acb3004922e2650e982.svg)
 
 **Packing without resource constraint**
 
-<code class="math">\min\left\{N,\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}\right\}</code>
+<!-- math-display: 4d1993b25562770da6035818
+\min\left\{N,\binom{pK+h_v}{p}\prod_j\binom{h_j+d_j}{d_j}\right\}
+-->
+![Formula](../../assets/math/4d1993b25562770da6035818.svg)
 
 **General multigraph matching, <code class="math">h_v</code> vertex and <code class="math">h_e</code> edge-ID failures**
 
-<code class="math">\min\left\{m,(h_e+1)\binom{2K+h_v}{2}\right\}</code>
+<!-- math-display: b2c954fdba19d575a223e0f7
+\min\left\{m,(h_e+1)\binom{2K+h_v}{2}\right\}
+-->
+![Formula](../../assets/math/b2c954fdba19d575a223e0f7.svg)
 
 **Matching with an additional represented resource**
 
-Multiply the preceding bound by <code class="math">r</code>, capped by <code class="math">m</code>
+<!-- math-display: b45302ea62c19ca58eefdaa4
+\min\left\{m,r(h_e+1)\binom{2K+h_v}{2}\right\}
+-->
+![Formula](../../assets/math/b45302ea62c19ca58eefdaa4.svg)
 
 **Matching with <code class="math">h_c</code> additional single-color risk groups**
 
-<code class="math">\min\left\{m,r(h_e+1)(h_c+1)\binom{2K+h_v}{2}\right\}</code>; omit <code class="math">r</code> when absent
+<!-- math-display: 0976162f38a239cd9c7c2061
+\min\left\{m,r(h_e+1)(h_c+1)\binom{2K+h_v}{2}\right\}
+-->
+![Formula](../../assets/math/0976162f38a239cd9c7c2061.svg)
+
+Omit <code class="math">r</code> when no represented resource is present.
 
 Private dummy padding keeps empty packing sets distinct. Original edge IDs remain distinct when individual failures are allowed. Rational bit accounting includes the Vandermonde ambient degree <code class="math">pK+h_v</code>.
 

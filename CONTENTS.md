@@ -407,12 +407,12 @@ One live representative per group with bounded prefix recourse.
 
 **Quantitative result.**
 
+Representative changes:
+
 <!-- math-display: 011752b29d3338d3d82c08b7
 O((M\log R+Q)\log(M+2))
 -->
 ![Formula](assets/math/011752b29d3338d3d82c08b7.svg)
-
-Representative changes.
 
 **Model and scope.** M groups, R resources and Q adaptive deletions; augmenting-path discovery work is separate.
 
@@ -424,19 +424,17 @@ Choose one supplied candidate per group while controlling every resource load.
 
 **Quantitative result.**
 
-Load:
-
-<!-- math-display: be3ba8600c9a74eb2648ebb9
-\le2\mu_x+B\log(8(\lvert X\rvert+1))
+<!-- math-display: 556046b256c21a9948123fb2
+\text{load at }x\le2\mu_x+B\log(8(\lvert X\rvert+1))
 -->
-![Formula](assets/math/be3ba8600c9a74eb2648ebb9.svg)
+![Formula](assets/math/556046b256c21a9948123fb2.svg)
+
+Bit work:
 
 <!-- math-display: e7ae8d9ae5e92f8659d7c5ef
 S\mathrm{poly}(\log S,b)
 -->
 ![Formula](assets/math/e7ae8d9ae5e92f8659d7c5ef.svg)
-
-Bit work.
 
 **Model and scope.** Explicit sparse occurrences, rational masses and weights; B bounds one weighted occurrence contribution.
 
@@ -448,21 +446,19 @@ Retain at least half of the unit commodities on short candidate routes.
 
 **Quantitative result.**
 
+Arithmetic operations:
+
 <!-- math-display: 69400fa7c405cb959132b53d
 O(Z+P)
 -->
 ![Formula](assets/math/69400fa7c405cb959132b53d.svg)
 
-Arithmetic operations.
-
-Route length:
-
-<!-- math-display: 47423bb0be31e17aae673e36
-\le4H
+<!-- math-display: 65c2262e293638a9990c22fd
+\text{route length}\le4H
 -->
-![Formula](assets/math/47423bb0be31e17aae673e36.svg)
+![Formula](assets/math/65c2262e293638a9990c22fd.svg)
 
-And fractional load at most doubled.
+Fractional load at most doubled.
 
 **Model and scope.** Supplied DAG and rational masses with total weighted length at most MH; explicit expansion is output-charged.
 
@@ -498,12 +494,12 @@ Complete threshold search with unrestricted receiving directions.
 
 **Quantitative result.**
 
+Total fixed-ledger work:
+
 <!-- math-display: 01d316c8a717e09a8532c300
 (m+\nu)\mathrm{polylog}S
 -->
 ![Formula](assets/math/01d316c8a717e09a8532c300.svg)
-
-Total fixed-ledger work.
 
 **Model and scope.** The entire ambient allocation support is a forest, with the stated polynomial-range guards.
 
@@ -515,19 +511,19 @@ Complete threshold search with k nonforest incidences.
 
 **Quantitative result.**
 
+Total work:
+
 <!-- math-display: f6456f4c3fe91aa2c338e696
 (m+\nu(k+1))\mathrm{polylog}S
 -->
 ![Formula](assets/math/f6456f4c3fe91aa2c338e696.svg)
 
-Total work.
+Work per query/update plus events:
 
 <!-- math-display: ca78fa8f6cd59b815cefa4f5
 (k+1)\mathrm{polylog}S
 -->
 ![Formula](assets/math/ca78fa8f6cd59b815cefa4f5.svg)
-
-Per query/update plus events.
 
 **Model and scope.** Fixed polynomial-range ledger; parameterized support theorem does not improve arbitrary-graph matching time.
 
@@ -579,21 +575,19 @@ Every finite multiplicative guarantee requires near-exhaustive rank queries.
 
 **Quantitative result.**
 
-At least:
+Deterministic queries:
 
-<!-- math-display: db253d36a5df37e3cde68c76
-q^{-1}\binom qr-1
+<!-- math-display: 48f0dbc9c4a021ee501ea5eb
+\text{queries}\ge q^{-1}\binom qr-1
 -->
-![Formula](assets/math/db253d36a5df37e3cde68c76.svg)
+![Formula](assets/math/48f0dbc9c4a021ee501ea5eb.svg)
 
-Deterministic queries.
+Balanced-rank deterministic queries:
 
-<!-- math-display: 0ea0f8f5fc95fd914b0a494c
-2^{q-O(\log q)}
+<!-- math-display: 8d2b7df8bda79eb755f5e03c
+\text{queries}\ge2^{q-O(\log q)}
 -->
-![Formula](assets/math/0ea0f8f5fc95fd914b0a494c.svg)
-
-For balanced rank.
+![Formula](assets/math/8d2b7df8bda79eb755f5e03c.svg)
 
 **Model and scope.** <code class="math">2\le r&lt;q</code>; q explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication.
 
@@ -620,12 +614,12 @@ Globally resource-free owners cover the current player-rank deficit.
 
 **Quantitative result.**
 
+With full quota <code class="math">t=3b-2</code> and b units per current record, free-pool rank:
+
 <!-- math-display: 85aad013254ae9dc0495e88f
 r_M(F)\ge r-k
 -->
 ![Formula](assets/math/85aad013254ae9dc0495e88f.svg)
-
-When the full quota is <code class="math">t=3b-2</code> and each current record has b units.
 
 **Model and scope.** Fully normalized prefix invariant; eligible free owners admit a paid exchange; no faster critical-quota runtime follows.
 
@@ -637,14 +631,12 @@ Within-layer joint independence retains the sharp availability-dependent quality
 
 **Quantitative result.**
 
-Factor:
+Factor with the original rank-exponential or relaxed rank-quasipolynomial time:
 
 <!-- math-display: 1e97261769681dcde00d0440
 \lambda^{-1}+3-3/r+\eta
 -->
 ![Formula](assets/math/1e97261769681dcde00d0440.svg)
-
-With the original rank-exponential or relaxed rank-quasipolynomial time.
 
 **Model and scope.** The stated current-blocker and paid availability model; joint independence alone does not supply a polynomial batching theorem.
 
@@ -670,12 +662,10 @@ One shared update set preserves all historical path-hitting certificates.
 
 <code class="math">C\cup I</code> hits current short paths.
 
-Size at most:
-
-<!-- math-display: b43cc2c492086bd5d61ed9be
-\lvert C\rvert+\lvert I\rvert
+<!-- math-display: 1d22bd5d46a116c4c9ec7c2d
+\text{size}\le\lvert C\rvert+\lvert I\rvert
 -->
-![Formula](assets/math/b43cc2c492086bd5d61ed9be.svg)
+![Formula](assets/math/1d22bd5d46a116c4c9ec7c2d.svg)
 
 **Model and scope.** Deletions and length increases are safe; inserted/decreased edge lifetimes enter I; selected-path and layer repair are separate.
 
@@ -687,12 +677,12 @@ Maintain old-label shortest-path forests on tight-reachable vertices.
 
 **Quantitative result.**
 
+Total graph work and supplied forest edits per fixed-potential interval:
+
 <!-- math-display: 97ab617779f2e9ff28df7051
 O(m+\nu)
 -->
 ![Formula](assets/math/97ab617779f2e9ff28df7051.svg)
-
-Total graph work and supplied forest edits per fixed-potential interval.
 
 **Model and scope.** No ledger births or label changes inside the interval; potential-refresh work is outside the bound.
 
@@ -757,7 +747,7 @@ Trim a supplied flow to exact positive nonsink demands without increasing any ar
 
 **Quantitative result.**
 
-Exact arithmetic operations.
+Exact arithmetic operations:
 
 <!-- math-display: 93981ab45e81d39a07edfcfa
 O((n+m)\mathrm{polylog}(n+m+2))
@@ -774,14 +764,12 @@ Choose two genuine neighbors per row and obtain a new row-covering injection wit
 
 **Quantitative result.**
 
-Every component has weight:
-
-<!-- math-display: 213020bf913949b4638fbf0e
-<2L
+<!-- math-display: 026cd5f2c182562694c3bbe5
+\text{weight of each component}<2L
 -->
-![Formula](assets/math/213020bf913949b4638fbf0e.svg)
+![Formula](assets/math/026cd5f2c182562694c3bbe5.svg)
 
-Exact arithmetic operations.
+Exact arithmetic operations:
 
 <!-- math-display: 46ae0859d9a85b87d4a2c20f
 O((n+I)\mathrm{polylog}(n+I+2))
@@ -798,7 +786,7 @@ Round a supplied splittable flow to one outgoing route per nonsink, with a simul
 
 **Quantitative result.**
 
-Arithmetic work.
+Arithmetic work:
 
 <!-- math-display: 93981ab45e81d39a07edfcfa
 O((n+m)\mathrm{polylog}(n+m+2))
@@ -822,12 +810,10 @@ Compute the canonical contact envelope, a removable odd crown and its exact opti
 
 One outside bipartite matching plus linear graph work.
 
-Residual gap:
-
-<!-- math-display: ed14949c00266a7c3b923454
-\le\lfloor(r+b)/2\rfloor
+<!-- math-display: b93d02c47492b2e3a8b9d319
+\text{residual gap}\le\lfloor(r+b)/2\rfloor
 -->
-![Formula](assets/math/ed14949c00266a7c3b923454.svg)
+![Formula](assets/math/b93d02c47492b2e3a8b9d319.svg)
 
 **Model and scope.** Supplied constructive factor-critical bins and a row-covering injection. LOW gives an explicit bound on contact rank r, not on the total retained vertex count; b counts unmatched blockers.
 
