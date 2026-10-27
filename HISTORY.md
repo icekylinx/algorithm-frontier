@@ -1,5 +1,12 @@
 # History
 
+## 2026-10-27 — Final price-query and multi-prefix implementations
+
+- Added an initialized ordinary two-matroid price reporter for independent signed cost changes and supplied-catalog insertions. Protected starters, active-only return paths and minimum-hop literal decoding handle negative insertion gaps. The native structure uses the stated quadratic all-pairs record alternative, with linear explicit reports and no retained original cost list or query-time independence calls. Cardinality remains prescribed.
+- Completed two-order common-weight and common-order variable-family prefix clients, including simultaneous marks, streamed stopping chains, exact original-total recovery and signed scalar optimization. All three prefix clients now share one original-subset resource/partition recovery routine; no copied-ground table or binary resource-unit list is expanded. The bounded companions, actual-support refinements and calibrated lower-bound distinctions are documented separately from the remaining family-wide dependencies.
+- Independent review checked both additions. Price checks compare original common sets and include a separate binary-represented-matroid audit; multi-prefix checks independently reconstruct original count vectors and canonical marked profiles. The unchanged one-order regression still passes after shared recovery extraction. Native finite-simplex cost remains distinct from the theorem's polynomial optimization primitive.
+- All 120 standard repository checks passed, including serial selected-contact replay; the full contact catalogue was not recomputed. Main-family readiness remains 46 ready and 9 partial.
+
 ## 2026-10-27 — Mixed-color graphs, full persistence and compact witnesses
 
 - Completed the graph-color family's mixed/list activation, actual feature-rank and symmetric-cubic proofs, all stated support lower examples, and the one-failure dynamic-MSF composition. Native original-ID references avoid formal monomial expansion and collect genuine completed-batch exchange reports; their polynomial scan, sorting and workspace costs remain separate from the published fast dynamic theorem.

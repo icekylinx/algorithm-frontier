@@ -71,9 +71,9 @@ General-matching certificates preserve cardinality, not every increased replacem
 
 **Review status**
 
-**Ready for review in the stated scope.** The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts. The independent original-input certificate component proves signed-cost reduced-cost optimality, maximum-value and infeasibility cuts, and a binary-input cost-blind general-balance constructor. The signed unit-flow realization completes native minimum-cost initialization for arbitrary integral balances, negative cycles and loops, and compact fixed-balance and maximum-value deletion reporting with deterministic decoding.
+**Ready for review in the stated scope.** The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts. The independent original-input certificate component proves signed-cost reduced-cost optimality, maximum-value and infeasibility cuts, and a binary-input cost-blind general-balance constructor. The signed unit-flow realization completes native minimum-cost initialization for arbitrary integral balances, negative cycles and loops, and compact fixed-balance and maximum-value deletion reporting with deterministic decoding. The complete ordinary fixed-rank price-change and supplied-catalog insertion identity, minimum-hop literal recovery and all-pairs reporting alternative are audited and implemented with native certified ordinary initialization.
 
-**Dependencies and scope.** Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates. The native path wrapper requires simple directed input and one independent original-arc or internal-vertex failure. Terminal deletions and simultaneous failures are excluded. Its full packing output uses linear record work. The original nonnegative references use exact fractions and Python hash tables. The signed reporter uses binary search and dense removal arrays. Both charge actual rational bit work and polynomial preprocessing separately from the fast research bound. General-matching, matroid and price companions remain outside this reviewed scope. Independent certificates scan the full surviving original graph, with separately charged production and verification; these costs do not inherit the compact oracle query bound. The general-balance constructor ignores costs. The separate signed optimizer initializes its own optimum; final signed reporting bounds use actual baseline support including negative cycles, not flow value.
+**Dependencies and scope.** Parallel original records are supported under the support-sensitive bound; the uniform flow-value-dependent support exponent additionally requires a simple original digraph. Queries are independent single-record deletions, not cumulative updates. The native path wrapper requires simple directed input and one independent original-arc or internal-vertex failure. Terminal deletions and simultaneous failures are excluded. Its full packing output uses linear record work. The original nonnegative flow references use exact fractions and Python hash tables. Signed-flow and ordinary price reporters use deterministic dense decoding. All charge actual rational bit work and polynomial preprocessing separately from faster research bounds. General-matching and unweighted matroid support companions, specialized arborescence price machinery and valuated price software remain outside this reviewed component scope. Independent certificates scan the full surviving original graph, with separately charged production and verification; these costs do not inherit the compact oracle query bound. The general-balance constructor ignores costs. The separate signed optimizer initializes its own optimum; final signed reporting bounds use actual baseline support including negative cycles, not flow value. The native price backend handles ordinary matroid independence oracles, one independent cost increment or one inactive supplied-catalog insertion, and a prescribed common rank. It realizes the stated `O(N+r^2)` record alternative with `O(r)` output work, not the stronger pair-preserver record bound. It does not implement valuated prices, arbitrary uncatalogued arborescence insertion or an insertion-induced rank increase.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
@@ -264,7 +264,6 @@ O(n+\log^2 n)
 
 The weighted two-matroid and arborescence single-deletion theorems have their own [preserver card](../exact-failure-preservers/). Supplied-catalog insertion in the price structure keeps rank fixed; it does not handle an insertion that increases maximum rank.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
 
 ## Independent original-input certificates
 
@@ -279,3 +278,15 @@ maximum-value deletion reports. Its [complete proof](manuscripts/reference-signe
 includes isolated negative cycles, loops, parallel arcs and deterministic
 report decoding. Storage depends on actual optimal support size; native
 polynomial preprocessing is separate from the fast theorem.
+
+## Native fixed-rank price and catalog queries
+
+The [ordinary price backend](reference/price.py) computes an exact original
+common-matroid baseline and reports minimum-cost common sets after one
+independent rational cost change or one supplied-catalog insertion. Its
+[complete proof](reference-price-realization.md) realizes the quadratic
+all-pairs storage alternative and linear reporting, without query-time
+oracle calls. Cardinality stays prescribed; rank-increasing insertion and
+uncatalogued arcs remain separate interfaces.
+
+**Attribution:** Yilin Liu and GPT-6 Astra Pro.

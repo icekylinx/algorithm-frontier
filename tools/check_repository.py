@@ -180,6 +180,8 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check('persistence-failure-certificates check_incidence', ('problems/persistence-failure-certificates/verify/check_incidence.py',)),
         Check('quantum-stabilizer check_witness', ('problems/quantum-stabilizer/verify/check_witness.py',)),
         Check('graph-color-failure-certificates check_list_colors', ('problems/graph-color-failure-certificates/verify/check_list_colors.py',)),
+        Check('exact-flow-sensitivity check_price', ('problems/exact-flow-sensitivity/verify/check_price.py',)),
+        Check('weighted-prefix-quota-frontier check_orders_families', ('problems/weighted-prefix-quota-frontier/verify/check_orders_families.py',)),
         Check("Non-Fano obstruction", ("tools/verify_non_fano.py",)),
         Check(
             "Full-contact receipt binding and coverage metadata",

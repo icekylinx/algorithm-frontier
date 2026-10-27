@@ -66,6 +66,33 @@ the broader two-order, few-family or kernel proof scope complete.
 
 ## New local executable evidence
 
+The [two-order and variable-family checker](check_orders_families.py) adds 222
+two-order and 224 family mode/eligibility instances, comparing 892 exact signed
+min/max solves against 602 independently enumerated original feasible vectors.
+It constructs 1,204 canonical marks and recovers their profile optima in both
+scalar directions. Simultaneous two-order marks use binary min/difference
+arithmetic; family marks use bulk unit positions and cut intervals, including
+tied stops and different cuts within one coordinate. No native LP or derived
+profile serves as the original optimum oracle.
+
+The executed clients traverse 612 plans and 2,058 profiles, including 1,196
+row-filter failures, 62 empty faces and 800 actual recoveries. Six binary
+guards exercise actual recovery beyond 330-bit counts/targets/weights or
+denominators, a 1,100-family zero-target table without subset expansion, and
+mandatory global rank loss caused by one family's mask. Eleven malformed
+inputs and two isolated forged outputs are rejected. The original one-order
+956-solve checker passes unchanged after sharing its resource recovery.
+
+```sh
+python3 -B problems/weighted-prefix-quota-frontier/verify/check_orders_families.py
+```
+
+The [bounded realization](../reference-orders-families-realization.md) proves
+the original-subset resource interface, differing charged masses for the two
+models, actual family layers and exact signed recovery. The complete audited
+companions retain their paid polynomial intersection cost; native Bland time
+is separately charged. The whole result family remains partially reviewed.
+
 Run the five focused deterministic checks from the repository root:
 
 ~~~sh

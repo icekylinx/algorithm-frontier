@@ -4,6 +4,7 @@
 
 - [Exact prefix, laminar and sparse quotas](proof.md)
 - [Native one-order prefix profiles and exact signed recovery](reference-prefix-realization.md)
+- [Native two-order and variable-family prefix recovery](reference-orders-families-realization.md)
 - [Exact sparse numeric quotas with a root cap and arbitrary completion costs](manuscripts/bounded-frequency-root-cap-valuated-fpt.md)
 - [Deterministic sunflower kernels for several coverable matroids](manuscripts/deterministic-coverable-matroid-sunflower-kernel.md)
 - [Deterministic sparse packing kernels with an oracle matroid](manuscripts/deterministic-sparse-packing-oracle-kernel.md)
@@ -75,6 +76,17 @@ companion is audited separately from the two-order, bounded-family and broader
 ground-reduction chains. Native Bland pivot time remains separate from its
 paid polynomial intersection theorem; counts, target parameters and signed
 zero-coordinate costs retain their original binary scope.
+
+The [two-order and family client](reference/orders_families.py) reuses that
+original-subset recovery and implements actual simultaneous marks, streamed
+covering-family chains and occupied vector profiles. The
+[bounded realization](reference-orders-families-realization.md) audits the
+full two-order and family companions, actual-support refinements and joint
+target/family lower calibration. Its
+[independent checker](verify/check_orders_families.py) compares original signed
+optima and canonical marks, including tied stops, arbitrary zero family entries,
+mandatory totals and binary-large data. Broader sparse-hash, kernel and
+laminar-coloring scope remains separate.
 
 The [verification note](verify/README.md) states the scope of executable
 evidence and the remaining mathematical dependencies. The

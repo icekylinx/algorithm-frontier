@@ -149,4 +149,48 @@ Native polynomial preprocessing is distinct from the fast research theorem.
 python3 -B problems/exact-flow-sensitivity/verify/check_signed_flow.py
 ```
 
+## Ordinary one-element prices and supplied-catalog insertion
+
+The [price backend](price.py), proved in the
+[native realization](../reference-price-realization.md), initializes an exact
+ordinary two-matroid optimum and supports independent rational cost changes.
+Its all-pairs path representation has a quadratic baseline-rank term, as
+specified by the canonical manuscript's simpler storage alternative.
+
+```python
+from fractions import Fraction
+from price import build_price
+
+at_most_one = lambda chosen: len(chosen) <= 1
+oracle = build_price((2, -7, 5), 1, at_most_one, at_most_one, active=(0, 2))
+assert oracle.query(0, 10) == (5, (2,))
+assert oracle.query(1) == (-7, (1,))
+assert oracle.query(1, Fraction(20)) == (2, (0,))
+```
+
+`build_price(costs, rank, independent1, independent2, active=None)` uses original
+catalog IDs from zero through the cost-list length minus one. With no active
+list, every catalog element is initially available. `None` means the prescribed
+rank is infeasible on the active restriction. The predicates must be valid
+ordinary matroid independence oracles on the complete catalog; they receive
+sets of original IDs. Costs are signed integers or exact `Fraction` values.
+
+`query(element, delta=0)` returns `(exact_cost, original_ids)`. For an active
+element it changes that original cost by the increment. For an inactive
+catalog element it activates only that element at its specified cost plus the
+increment. Every query is relative to the original active set and costs.
+Unknown IDs, Boolean IDs and floating-point increments are rejected. Ties
+return the original baseline. Rank-zero queries return the empty set.
+
+The final structure retains only original-ID descriptors, a baseline and its
+cost, and a first-edge path matrix. It retains no original independence oracle
+or cost list and performs no optimization, sorting or hash lookup during
+queries. Insertion that increases maximum common cardinality, arbitrary
+uncatalogued insertions, valuated price objectives and cumulative updates
+are outside this executable contract.
+
+```sh
+python3 -B problems/exact-flow-sensitivity/verify/check_price.py
+```
+
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

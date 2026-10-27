@@ -32,6 +32,38 @@ class Solution:
     cost: F
 
 
+def recover_original(rank, owners, groups, caps, costs, maximize):
+    """Internal shared-resource/partition LP on prevalidated original data.
+
+    owners equal to the original dimension denote zero-cost disposal.
+    Every copied coordinate belongs to exactly one group; caps sum to the
+    ORIGINAL rank. No copied-ground rank table or numerical units are built.
+    """
+    n, size, total = len(costs), len(owners), rank[-1]
+    if (len(groups) != len(caps) or any(type(h) is not int or h < 0 for h in caps)
+            or sum(caps) != total or any(type(e) is not int or not 0 <= e <= n for e in owners)
+            or sorted(i for group in groups for i in group) != list(range(size))):
+        raise ValueError('partition of copied coordinates with original-total caps required')
+    if any(cap and not group for group, cap in zip(groups, caps)):
+        return None
+    a, b = [], []
+    for subset, cap in enumerate(rank):
+        a.append(tuple(F(e < n and bool(subset >> e & 1)) for e in owners)); b.append(F(cap))
+    a.append((F(1),)*size); b.append(F(total))
+    for group, cap in zip(groups, caps):
+        members = set(group)
+        a.append(tuple(F(i in members) for i in range(size))); b.append(F(cap))
+    cost = tuple(costs[e] if e < n else F(0) for e in owners)
+    dominant = 2*total*max((abs(c) for c in cost), default=F(0))+1
+    objective = tuple(dominant+(c if maximize else -c) for c in cost)
+    x, y = linear.simplex(a, b, objective)
+    if not linear.verify_lp(a, b, objective, x, y):
+        raise RuntimeError('invalid shared-resource profile LP certificate')
+    if any(v.denominator != 1 for v in x):
+        raise RuntimeError('integral resource/partition intersection returned fractional counts')
+    return tuple(map(int, x)) if sum(x, F(0)) == total else None
+
+
 class Prefix:
     """Coordinates are in the supplied rank table's order, numbered from zero.
 
@@ -144,28 +176,10 @@ class Prefix:
         remainder = self.total-sum(profile)
         if remainder and not self.zero_group:
             return None
-        size = len(self.copies)
-        a, b = [], []
-        # Aggregation gives exactly the shared copied resource inequalities;
-        # no complete rank table on the copied ground is ever constructed.
-        for subset, cap in enumerate(self.rank):
-            a.append(tuple(F(e < self.n and bool(subset >> e & 1)) for e, _ in self.copies))
-            b.append(F(cap))
-        a.append((F(1),)*size); b.append(F(self.total))
-        for (_, _, group), cap in zip(self.classes, profile):
-            members = set(group)
-            a.append(tuple(F(i in members) for i in range(size))); b.append(F(cap))
-        members = set(self.zero_group)
-        a.append(tuple(F(i in members) for i in range(size))); b.append(F(remainder))
-        cost = tuple(self.costs[e] if e < self.n else F(0) for e, _ in self.copies)
-        dominant = 2*self.total*max((abs(c) for c in cost), default=F(0))+1
-        objective = tuple(dominant+(c if self.maximize else -c) for c in cost)
-        x, y = linear.simplex(a, b, objective)
-        if not linear.verify_lp(a, b, objective, x, y):
-            raise RuntimeError('invalid shared-resource profile LP certificate')
-        if any(v.denominator != 1 for v in x):
-            raise RuntimeError('integral resource/partition intersection returned fractional counts')
-        if sum(x, F(0)) != self.total:
+        x = recover_original(self.rank, tuple(e for e, _ in self.copies),
+                             tuple(group for _, _, group in self.classes)+(self.zero_group,),
+                             profile+(remainder,), self.costs, self.maximize)
+        if x is None:
             return None
         answer = [0]*self.n
         for (e, _), count in zip(self.copies, x):

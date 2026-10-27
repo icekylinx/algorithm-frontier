@@ -85,6 +85,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Uniform scalar coefficients on optional zero-weight coordinates](problems/weighted-prefix-quota-frontier/manuscripts/uniform-zero-scalar-laminar-extension.md)
 - [Labeled sunflower kernels for sparse numeric quotas and valuated completion](problems/weighted-prefix-quota-frontier/manuscripts/valuated-sparse-quota-sunflower-kernel.md)
 - [Sharp support-budget tradeoffs for one and two weighted-prefix orders](problems/weighted-prefix-quota-frontier/manuscripts/weighted-prefix-support-budget-tradeoffs.md)
+- [Exact two-order and variable-family prefix clients](problems/weighted-prefix-quota-frontier/reference-orders-families-realization.md)
 - [Native exact one-order prefix quotas and signed recovery](problems/weighted-prefix-quota-frontier/reference-prefix-realization.md)
 
 ## Graph algorithms
@@ -157,6 +158,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Native signed-cost balance optimization and deletion reporting](problems/exact-flow-sensitivity/manuscripts/reference-signed-balance-flow.md)
 - [A self-contained compact unit-flow reporting realization](problems/exact-flow-sensitivity/manuscripts/reference-unit-flow-realization.md)
 - [Native internally disjoint paths after one failure](problems/exact-flow-sensitivity/manuscripts/reference-vertex-path-realization.md)
+- [Native fixed-rank price and catalog-insertion reporting](problems/exact-flow-sensitivity/reference-price-realization.md)
 
 ### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
 

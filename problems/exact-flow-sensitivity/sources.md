@@ -39,4 +39,14 @@ its polynomial preprocessing is charged separately.
 
 The companions identify the classical residual-flow, matching-polytope, blossom-augmentation, and two-matroid-intersection inputs at the point of use. The shared distance-preserver input is [Bodwin's pairwise-distance theorem](https://arxiv.org/pdf/2001.07741). The local phased construction gives its complete elementary support/reporting argument and is implemented for the unit-flow client; the classical size theorem is not an unresolved interface. The flow reference has its own slower polynomial preprocessing bound. These primitives are mathematical dependencies; the finite exchange replay alone does not implement a general flow or blossom solver.
 
+## Ordinary price realization
+
+The [native price proof](reference-price-realization.md) instantiates the
+canonical forced-element, exclusion and minimum-hop identities for ordinary
+matroids. Original active-restriction initialization is certified before
+constructing the return graph. Inactive catalog starters may have negative
+gaps; return paths use only original active elements. The implementation
+uses the stated all-pairs storage alternative and makes no valuated-price
+or arbitrary-new-arc implementation claim.
+
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

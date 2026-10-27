@@ -2,6 +2,12 @@
 
 **25 October 2026. Complete incremental theorem and proof; full internal mathematical reviews completed for checkpoint T.**
 
+The [native one-order and two-order clients](../reference/README.md) enumerate
+the same occupied profiles analyzed here. Their
+[realization notes](../reference-orders-families-realization.md) retain actual
+original incidence, mandatory totals, optional disposal and signed scalars,
+with native finite LP time charged separately.
+
 For common-weight prefix quotas, the largest target alone does not describe the full exact complexity. The number of distinct original row-incidence patterns gives a sharper tradeoff. One order has a square-root product exponent, capped by the linear largest-target exponent. Two arbitrary orders have a second regime, reaching the largest-target-times-logarithm exponent.
 
 This note concerns one common nonnegative integer weight vector. It does not permit a different weight vector on each row. The resource is one arbitrary integral polymatroid, with optional vectors or original-total bases, and the separately optimized scalar is arbitrary signed rational.

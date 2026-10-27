@@ -160,4 +160,21 @@ parallel records and 100-digit signed rational data are included. These
 checks support the written proof and do not extend the path interface to
 signed costs or implement the family's matching, matroid and price clients.
 
+## Original price changes and catalog insertion
+
+```sh
+python3 -B problems/exact-flow-sensitivity/verify/check_price.py
+```
+
+Independent original-common-set enumeration checks 68 feasible restricted
+instances, 100 infeasible prescribed ranks and 940 signed price queries,
+including 70 inactive-catalog insertions. Additional cases cover rank zero,
+8- and 27-rank long repairs, negative insertion gaps, 101-digit costs,
+caller-input clearing and disabled optimization/path producers. Nine malformed
+original inputs and queries are rejected. A separate internal review also
+checked 2,625 queries on 140 binary-represented matroid instances, including
+490 insertions. These finite comparisons support the
+[local proof](../reference-price-realization.md); they do not certify the
+stronger pair-preserver storage bound or unimplemented price clients.
+
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

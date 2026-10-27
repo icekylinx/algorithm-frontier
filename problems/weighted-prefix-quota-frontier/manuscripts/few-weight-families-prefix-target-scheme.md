@@ -2,6 +2,11 @@
 
 **25 October 2026. Complete theorem and proof; full internal mathematical reviews completed for checkpoint T.**
 
+The [native family client](../reference/README.md) now executes the streamed
+covering-family chains, actual vector classes and shared original-resource
+recovery. Its [realization proof](../reference-orders-families-realization.md)
+keeps concrete Bland LP time separate from the paid polynomial theorem.
+
 One common coordinate order can support several different weight vectors without losing fixed-parameter tractability in the largest target. Let p be the number of supplied nonnegative integer weight vectors used by the prefix rows, and let B be the largest integer target. Exact mixed upper, equality and covering quotas on one global integral polymatroid admit
 
 <!-- math-display: 3f7d707e19e57076bfe6790f

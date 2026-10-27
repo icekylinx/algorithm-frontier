@@ -1,4 +1,4 @@
-# Exact one-order mixed-prefix reference
+# Exact mixed-prefix reference clients
 
 [prefix.py](prefix.py) implements the bounded
 [one-common-order theorem](../manuscripts/exact-weighted-prefix-quotas-max-target.md).
@@ -51,5 +51,40 @@ python3 -B problems/weighted-prefix-quota-frontier/verify/check_prefix.py
 The checker compares actual original count vectors and signed optima. Its
 small enumeration is separate from the native solver, and its binary-large
 fixtures do not enumerate counts or units.
+
+## Two orders and variable weight families
+
+[orders_families.py](orders_families.py) adds two exact original-input clients
+with a [complete local realization proof](../reference-orders-families-realization.md).
+They share `Solution`, the iterative occupied-profile enumerator and the same
+original-subset LP recovery as `Prefix`.
+
+`TwoOrders(rank, weights, costs, orders, rows=(), mandatory=True, allowed=None, maximize=False)`
+accepts exactly two explicit permutations of all original coordinate IDs and
+one common integer weight vector. Each row is
+`(order_index, prefix_length, relation, target)`, with zero-based order index.
+It uses at most four shared copies per real coordinate and one optional
+disposal. Reverse orders and original-incidence support refinements analyze
+the same actual native catalogue.
+
+`Families(rank, weights, costs, rows=(), mandatory=True, allowed=None, maximize=False)`
+accepts an explicit family table on one common original ID order. Each row is
+`(family_index, prefix_length, relation, target)`. The family count is variable;
+duplicate, unused and zero-entry families are permitted. It streams the
+covering-family permutations and uses only one more shared layer than covering
+families. It never constructs every subset of the family set. Classes are
+charged by their collapsed-vector mass, counting each contributing family
+once rather than counting its repeated prefix rows.
+
+Both provide `solve()` and `verify()` with the same exact original minimum or
+maximum scalar contract. `plans()`, `profiles(plan)` and `realize(plan, profile)`
+are internal analysis interfaces: plans must come from that same validated
+instance. They are not interfaces for hostile supplied copied ranks or
+arbitrary mixed order/family systems. `last_trace` counts plans, profiles,
+failed filters, empty faces, recoveries and peak actual copied dimensions.
+
+```sh
+python3 -B problems/weighted-prefix-quota-frontier/verify/check_orders_families.py
+```
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.

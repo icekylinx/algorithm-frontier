@@ -2,6 +2,11 @@
 
 **25 October 2026. Complete theorem and proof; full internal mathematical reviews completed for checkpoint T.**
 
+The [native client](../reference/README.md) implements the four-label copied
+profiles and exact signed original-total recovery. Its
+[realization proof](../reference-orders-families-realization.md) charges
+concrete Bland LP time separately from the paid polynomial primitive below.
+
 Two arbitrary coordinate orders with a common nonnegative integer weight vector admit exact mixed prefix-quota optimization in
 
 <!-- math-display: 5355eff1f1cb977f1e31b0dd
