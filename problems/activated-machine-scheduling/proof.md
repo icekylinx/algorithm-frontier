@@ -1,5 +1,11 @@
 # Scheduling on an activated matroid basis with one shared budget
 
+The [complete-table realization](reference-realization.md) implements the
+actual activation and original-total restriction adapter, binary greedy
+feasibility, all three profile clients and exact target search. Its inherited
+reference LP/count costs remain separate from the paid polynomial primitives
+in the theorem below.
+
 ## 1. Model and results
 
 Let <code class="math">P</code> be <code class="math">q</code> physical machines and let <code class="math">M</code> be a rank-<code class="math">r</code> matroid

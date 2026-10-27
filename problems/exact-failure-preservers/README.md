@@ -2,6 +2,13 @@
 
 Sparse original-element restrictions and output-sensitive reporting for exact weighted matroid intersection and rooted arborescences.
 
+The [ordinary reference backend](reference/README.md) initializes the optimum
+for two ordinary independence-oracle matroids, builds the compressed exchange
+reporter and returns exact fixed-rank single-deletion answers. It also
+initializes the rooted arborescence HLD backend. Its polynomial preprocessing
+is separate from the manuscript's faster graph implementation; the valuated
+extension remains outside this software scope.
+
 [Proof](proof.md) · [Sources](sources.md)
 
 **Guarantee**
@@ -93,9 +100,9 @@ Inherited directed-distance constructions give
 
 **Review status**
 
-**Ready for review in the stated scope.** The ordinary two-matroid replacement-cycle value identity and minimum-hop literal update, and the executable supplied-optimum-baseline rooted directed arborescence realization: heavy-light/segment-tree exchange transitions, exact lexicographic dense shortest paths, deterministic phased short-path/hub-tree records, original-arc support, optimum ID reporting and infeasibility flags.
+**Ready for review in the stated scope.** The complete ordinary fixed-rank two-matroid single-element-deletion construction with signed rational costs: certified baseline initialization from original independence callbacks, compressed replacement-cycle value identity and minimum-hop literal update, deterministic distance/hub support and reporting, original-ID infeasibility answers and actual rational encoding costs. Also covers the automatically initialized nonnegative rooted-arborescence HLD realization and its prior supplied-baseline component.
 
-**Dependencies and scope.** The reusable backend assumes a supplied optimum rooted spanning arborescence. Its validation and negative-cycle rejection do not substitute for the separate baseline-supply contract; independent small fixtures obtain baselines by exhaustive enumeration. The reference uses `O(M+A^3)` arithmetic preprocessing with `A=4(n-1)-1` auxiliary vertices, retaining `O(n^(3/2))` final records and `O(n)` reporting; it does not implement the manuscript’s faster preprocessing. Rational bit lengths are charged separately. This review does not cover the valuated extension, rank-drop client, or lower-bound transfers. Those retain their linked mathematical statements and dependencies. Finite checks and internal independent code review are not proof-assistant verification or external peer review.
+**Dependencies and scope.** The canonical ordinary weighted-intersection primitive is a paid polynomial initializer; the reference computes and checks its baseline certificate and discards the ground-sized potential/cut before returning. The ordinary callback predicates must be valid matroid independence oracles. The generic reference uses conservative polynomial initialization and `O(Nk)` additional independence tests with `O(Nk^2+k^3)` post-initialization work. The graph wrapper retains the nonnegative graph model and does not implement the manuscript’s faster arborescence preprocessing. Final record/support and reporting bounds are separate from temporary workspace and actual rational/original-ID bit lengths. This scope does not cover the valuated implementation, rank-drop client or lower-bound transfers. Those retain their linked mathematical statements and dependencies. Finite exact checks and independent internal review are not proof-assistant verification or external peer review.
 
 The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 

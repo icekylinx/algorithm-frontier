@@ -92,7 +92,7 @@ class Oracle:
         return tuple(prefix + suffix[::-1])
 
     def query(self, failed: int | None = None) -> tuple[int, ...] | None:
-        """Return optimum original arc IDs, or None when infeasible.
+        """Return optimum original element IDs, or None when infeasible.
 
         None means no failure; any unknown original ID has no effect. This
         method traverses stored paths and baseline IDs only.
@@ -299,14 +299,8 @@ def _sparsify(nodes, demands, first, last):
     return routes, tuple(hubs), phases
 
 
-def build(n: int, root: int, arcs, baseline) -> Oracle:
-    """Build from a promised optimal baseline; IDs are input-list positions.
-
-    Costs are nonnegative integers/Fractions. Loops and arcs entering root
-    are validated then ignored. Parallel arcs keep separate original IDs.
-    Shape validation is unconditional; optimum baseline supply is a caller
-    obligation (negative exchange cycles are defensively rejected).
-    """
+def _graph_input(n, root, arcs):
+    """Shared validation for the supplied-baseline and initialized graph APIs."""
     if type(n) is not int or n < 1 or type(root) is not int or not 0 <= root < n:
         raise ValueError("invalid graph size or root")
     checked = []
@@ -317,7 +311,18 @@ def build(n: int, root: int, arcs, baseline) -> Oracle:
                 or type(arc.cost) not in (int, Fraction) or arc.cost < 0):
             raise ValueError("invalid arc or nonnegative exact cost")
         checked.append(Arc(arc.tail, arc.head, Fraction(arc.cost)))
-    arcs = tuple(checked)
+    return tuple(checked)
+
+
+def build(n: int, root: int, arcs, baseline) -> Oracle:
+    """Build from a promised optimal baseline; IDs are input-list positions.
+
+    Costs are nonnegative integers/Fractions. Loops and arcs entering root
+    are validated then ignored. Parallel arcs keep separate original IDs.
+    Shape validation is unconditional; optimum baseline supply is a caller
+    obligation (negative exchange cycles are defensively rejected).
+    """
+    arcs = _graph_input(n, root, arcs)
     baseline = tuple(baseline)
     if (len(baseline) != n - 1 or len(set(baseline)) != len(baseline)
             or any(type(i) is not int or not 0 <= i < len(arcs) for i in baseline)):
@@ -334,6 +339,11 @@ def build(n: int, root: int, arcs, baseline) -> Oracle:
         raise ValueError("baseline is not root-spanning")
     baseline_cost = sum((arcs[i].cost for i in baseline), Fraction(0))
     nodes, auxiliary, minus, plus = _auxiliary(n, root, arcs, baseline)
+    return _finish(baseline, baseline_cost, nodes, auxiliary, minus, plus)
+
+
+def _finish(baseline, baseline_cost, nodes, auxiliary, minus, plus):
+    """Canonical final reporter for either auxiliary or compressed exchanges."""
     distance, first, last = _distances(nodes, auxiliary)
     demands = {i: (plus[i], minus[i]) for i in baseline
                if distance[plus[i]][minus[i]] is not None}

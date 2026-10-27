@@ -11,13 +11,19 @@ The main proof gives the family-level theorem composition. The following canonic
 | [Arborescence and matroid-intersection preservers](manuscripts/exact-single-failure-arborescences-and-matroid-intersection.md) | Weighted exchange-cycle identities, minimum-hop repairs, distance-preserver reporting, sparse arborescence implementation, and lower bounds. |
 | [Valuated matroid intersection](manuscripts/valuated-matroid-intersection.md) | Exchange lengths, feasible-domain initialization, exact rational oracle access, and the valuated reporting extension. |
 | [Supplied-baseline arborescence realization](manuscripts/reference-arborescence-reporting.md) | Matches the executable heavy-light auxiliary graph, exact dense shortest paths, phased greedy hubs and original-ID reports to the ordinary companion. |
+| [Initialized ordinary two-matroid realization](manuscripts/reference-ordinary-matroid-reporting.md) | Ordinary signed-cost initialization, cheapest compressed exchanges, canonical hub reporting, and the automatically initialized nonnegative rooted-arborescence wrapper. |
 
-The [reference API](reference/README.md) requires a supplied optimum rooted
-directed spanning arborescence. It implements preprocessing and queries after
-that supply; the independent checker's tiny exhaustive baseline enumeration
-is not a general baseline algorithm. General oracle-matroid and valuated
-reporting remain mathematical constructions with separate initialization
-and oracle models.
+The [reference API](reference/README.md) now supplies ordinary two-matroid
+initialization through the canonical
+[weighted-intersection primitive](../robust-bounded-certificates/reference/bounded.py).
+Its exact source is Bárász, Bérczi, Király, Oki, Yamaguchi and Yokoi,
+[*Matroid Intersection under Minimum Rank Oracle*, arXiv version two,
+Definition 2.2, Algorithm 2 and Lemma 2.5](https://arxiv.org/html/2407.03229v2#S2).
+The initialized graph wrapper uses that same optimum to discharge the
+lower-level HLD entry point's supplied-baseline promise. Tiny exhaustive
+enumeration is only an independent comparator, not the initializer.
+Valuated reporting retains its separate mathematical construction,
+initialization and value-oracle model.
 
 ## External inputs
 

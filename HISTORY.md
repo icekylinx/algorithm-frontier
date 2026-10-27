@@ -1,5 +1,13 @@
 # History
 
+## 2026-10-27 — Activated schedules and initialized failure reporting
+
+- Completed the activated-machine and exact six-profile proof packages. The activation adapter checks original job totals before compression, pays setup and assignment from one budget, uses binary greedy feasibility, and instantiates all three profile families on the actual active rank. The direct six-profile client has independent original-input checks without activation transformations.
+- Removed the supplied-baseline requirement for ordinary two-matroid single-failure reporting through certified weighted intersection. Added exact signed rational costs, original independence callbacks, compact retained reporting records and native nonnegative rooted-arborescence initialization. Dense polynomial preprocessing remains separate from the faster research bound; valuated clients remain outside this scope.
+- Completed the intrinsic-value allocation proof family and native weighted-prefix/dual-union recovery, including original light-resource fractional realization and joint lower-prefix rounding. Exact-half boundaries remain explicit, and the named public fallback stays a separate optional software dependency.
+- Added recipient-polymatroid natural ranks, whole-block availability, actual contracted integer comparator recovery and minimal-bundle reduction on numerical counts. Original-subset enumeration independently checks the interfaces, including 100-digit capacities. The complete main integer-comparator and binary-representation proofs passed independent review; broader fractional comparator/optimizer companions remain outside that partial scope. Full allocation layers remain outside this executable.
+- Independent GPT-6.1 Sol cross-reviews cover the new packages. All 102 standard repository checks passed, including serial selected-contact replay; the full contact catalogue was not recomputed. Updated review metadata also passed the registry, generated-status, catalogue and public-math gates. No external peer review or proof-assistant verification is claimed.
+
 ## 2026-10-27 — Whole-ground recovery, general scheduling and obstruction certificates
 
 - Completed whole-ground allocation prefix/omission recursion, streamed covers and rational recovery with weighted selectors and native setup-flow checks. Audited the separate unrelated-value additive and exact-two packages against their actual dependencies; all three mathematical scopes are ready for review.

@@ -164,6 +164,14 @@ The complete compulsory-player two-intrinsic-value arbitrary-assignment-cost the
 
 [Proof](../problems/two-value-exact-two/proof.md) · [Dependencies](../problems/two-value-exact-two/sources.md) · [Evidence](../problems/two-value-exact-two/verify/README.md) · Reviewed 2026-10-27
 
+### [Intrinsic values near factor two](../problems/intrinsic-values-near-two/)
+
+The complete canonical intrinsic family: compulsory and arbitrary-original-player near-two theorems with exact threshold parameters; Boolean/dual-union rank identities, spanning and completion preserving a specified light basis; original light-resource fractional realization and joint lower rounding; full-accuracy fixed-family optimization; the published fallback and explicit dummy-dual transfer; exact-half XP/zero-corank/quantified-margin endpoints and their unresolved general-FPT boundary; and the aligned refined-parameter-zero deterministic oracle obstruction. Native reference executes actual prefix selection, certified union/heavy completion and original light recovery with separately charged finite LP basis cost.
+
+**Dependencies and scope.** Values are common intrinsic values, original recipient polymatroids are independent, units may be unused, and no assignment/setup budget or coupled local type constraint is included. Original and derived loop restrictions preserve original resources; original player corank alone is not substituted for derived corank. Exact rank/SFM, LP, integral intersection and binary workload decomposition remain paid mathematical primitives. The external fixed-positive-slack fallback is Bamas et al., arXiv:2307.08453v1, Theorem 4 with its Definition 7 full-base model; the optional-player dummy M* transfer has been checked explicitly. The native backend accepts complete original rank tables and executes actual weighted prefix/rational search. Its original fractional realization and joint rounding stream active LP systems with a separate potentially exponential finite bound and polynomial rational workspace; no numeric resource expansion occurs. The default software does not implement the public fallback, although an original-feasible callback can be supplied and retained by actual value. Exact-half XP, zero-corank and quantified-margin statements use the half-optimum threshold. Unquantified strict light slack does not yield unrestricted exact-half FPT. The refined-zero lower bound concerns strictly-better-than-two deterministic black-box algorithms, not exact two, the unrefined heavy rank or explicit-table hardness.
+
+[Proof](../problems/intrinsic-values-near-two/proof.md) · [Dependencies](../problems/intrinsic-values-near-two/sources.md) · [Evidence](../problems/intrinsic-values-near-two/verify/README.md) · Reviewed 2026-10-27
+
 ### [Unrelated-value additive allocation](../problems/unrelated-values-additive/)
 
 The complete exact-budget unrelated-value additive theorem against the fractional optimum on an actual fixed-family selected set: nonnegative original service support separation, full-accuracy weighted omission, uniform denominator recovery and original fixed-set reoptimization, disposal/complement-prefix integral rounding with one exact cost objective, and fixed-accuracy whole-ground conversion.
@@ -236,6 +244,22 @@ The complete exact-budget arbitrary-processing Theorem PS: original mandatory jo
 
 [Proof](../problems/arbitrary-processing-scheduling/proof.md) · [Dependencies](../problems/arbitrary-processing-scheduling/sources.md) · [Evidence](../problems/arbitrary-processing-scheduling/verify/README.md) · Reviewed 2026-10-27
 
+### [Activated-machine scheduling](../problems/activated-machine-scheduling/)
+
+The complete activated-basis Theorem AS: genuine fixed-cardinality activation bases, original mandatory job-polymatroid totals after eligibility/activation masks, one exact combined nonnegative setup-and-assignment budget, exact global/zero feasibility, active-rank profile enumeration for the approximation scheme, bucket curve and exact three-halves six-profile endpoint, one joint minimum-cost integer recovery and nonmonotone one-sided grid optimization. The fixed-cardinality polynomial-membership extension has the same proved enumeration interface. The complete-table reference realizes activation restriction, binary greedy feasibility and all three local profile clients with their inherited solver costs separate.
+
+**Dependencies and scope.** The original theorem uses the stated paid exact matroid/rank/SFM, rational LP and integral polymatroid-intersection primitives. The reference streams actual bases and profiles and checks original totals before compressing to active coordinates, but its canonical positive-target solver retains explicitly charged LP-vertex and numeric count enumeration and potentially exponential vertex storage. The shared budget is one scalar setup-plus-assignment row; independent affordable pieces or a minimum-setup basis do not replace the joint capacity/cost test. Rank-zero and empty-job cases retain the actual activation requirement. Helper preconditions for genuine bases and already-masked ranks are documented and checked. Finite executable evidence, complete mathematical proof, formal verification, external review and publication priority remain distinct; formal verification, external peer review and exhaustive publication priority are not claimed.
+
+[Proof](../problems/activated-machine-scheduling/proof.md) · [Dependencies](../problems/activated-machine-scheduling/sources.md) · [Evidence](../problems/activated-machine-scheduling/verify/README.md) · Reviewed 2026-10-27
+
+### [Six-profile scheduling](../problems/six-profile-three-halves/)
+
+The complete exact three-halves arbitrary-processing Theorem SX with mandatory original job-polymatroid bases and one exact assignment budget: six exact disjoint profiles, exhaustive one/two-big-unit coverage, original-total LPs, one joint prefix/partition integer cost recovery, zero processing, original-grid target search and complete streamed profile/time-space accounting. The reusable direct SixBackend lives with the activation adapter but implements the original SX model without activation.
+
+**Dependencies and scope.** The theorem's polynomial per-profile exact LP/SFM and integral-intersection primitives remain explicitly paid. The reusable complete-table reference has separately charged canonical LP-vertex and numeric integer enumeration, including potentially exponential vertex storage; that implementation boundary is not an unresolved mathematical interface. The theorem permits arbitrary nonnegative machine/type times and one scalar assignment budget. No optimality of base six, general multiple-budget extension, exhaustive publication priority, proof-assistant formalization or external peer review is claimed.
+
+[Proof](../problems/six-profile-three-halves/proof.md) · [Dependencies](../problems/six-profile-three-halves/sources.md) · [Evidence](../problems/six-profile-three-halves/verify/README.md) · Reviewed 2026-10-27
+
 ### [Processing-bucket tradeoff](../problems/processing-bucket-tradeoff/)
 
 The complete arbitrary-time bucket-label Theorem AB and its depth/accuracy tradeoff: exact open-left/closed-right masks, full-target label witness, mandatory original bases and exact one-budget joint recovery, upper-prefix machine bounds, zero processing and one-sided grid optimization, complete depth-dependent enumeration accounting and optimality of the stated contiguous one-big-group analysis template. The reference bucket client instantiates the shared general-processing joint plan solver with separate finite solver costs.
@@ -304,9 +328,9 @@ The sharp sparse-packing FPT restriction with improved basis-tree preprocessing,
 
 ### [Single-failure optimum preservers](../problems/exact-failure-preservers/)
 
-The ordinary two-matroid replacement-cycle value identity and minimum-hop literal update, and the executable supplied-optimum-baseline rooted directed arborescence realization: heavy-light/segment-tree exchange transitions, exact lexicographic dense shortest paths, deterministic phased short-path/hub-tree records, original-arc support, optimum ID reporting and infeasibility flags.
+The complete ordinary fixed-rank two-matroid single-element-deletion construction with signed rational costs: certified baseline initialization from original independence callbacks, compressed replacement-cycle value identity and minimum-hop literal update, deterministic distance/hub support and reporting, original-ID infeasibility answers and actual rational encoding costs. Also covers the automatically initialized nonnegative rooted-arborescence HLD realization and its prior supplied-baseline component.
 
-**Dependencies and scope.** The reusable backend assumes a supplied optimum rooted spanning arborescence. Its validation and negative-cycle rejection do not substitute for the separate baseline-supply contract; independent small fixtures obtain baselines by exhaustive enumeration. The reference uses `O(M+A^3)` arithmetic preprocessing with `A=4(n-1)-1` auxiliary vertices, retaining `O(n^(3/2))` final records and `O(n)` reporting; it does not implement the manuscript’s faster preprocessing. Rational bit lengths are charged separately. This review does not cover the valuated extension, rank-drop client, or lower-bound transfers. Those retain their linked mathematical statements and dependencies. Finite checks and internal independent code review are not proof-assistant verification or external peer review.
+**Dependencies and scope.** The canonical ordinary weighted-intersection primitive is a paid polynomial initializer; the reference computes and checks its baseline certificate and discards the ground-sized potential/cut before returning. The ordinary callback predicates must be valid matroid independence oracles. The generic reference uses conservative polynomial initialization and `O(Nk)` additional independence tests with `O(Nk^2+k^3)` post-initialization work. The graph wrapper retains the nonnegative graph model and does not implement the manuscript’s faster arborescence preprocessing. Final record/support and reporting bounds are separate from temporary workspace and actual rational/original-ID bit lengths. This scope does not cover the valuated implementation, rank-drop client or lower-bound transfers. Those retain their linked mathematical statements and dependencies. Finite exact checks and independent internal review are not proof-assistant verification or external peer review.
 
 [Proof](../problems/exact-failure-preservers/proof.md) · [Dependencies](../problems/exact-failure-preservers/sources.md) · [Evidence](../problems/exact-failure-preservers/verify/README.md) · Reviewed 2026-10-27
 
@@ -366,6 +390,14 @@ The deterministic Pauli stabilizer-basis surrogate and witness theorem (main The
 
 [Proof](../problems/quantum-stabilizer/proof.md) · [Dependencies](../problems/quantum-stabilizer/sources.md) · [Evidence](../problems/quantum-stabilizer/verify/README.md) · Reviewed 2026-10-27
 
+### [Recipient polymatroids](../problems/recipient-polymatroid/)
+
+The complete canonical main integer-comparator theorem and binary representation: natural ranks, whole-owner contraction and availability, original-box integral comparator recovery, distinct-record realization, large-unit dual-union completion, ordered-prefix block additivity, current strong release and atomic earliest exchange, present rank charging, integer lower cover, exact and positive-slack signatures and target search, and the equal-unit rank-exponential endpoint. The native backend realizes count, availability, recovery and minimality interfaces.
+
+**Dependencies and scope.** The mathematical theorem pays for exact rank/SFM, integral intersection and decomposition, and the supplied certified local-availability oracle. Binary multiplicities remain numerical. The native reference uses complete rank tables and explicit subset enumeration with separate bit costs. The residual-capacity and scaled-copy fractional comparators, bounded-support fractional optimizer and full weak fractional optimizer remain outside this review. Full player-layer software, selected-basis recovery and arbitrary local-availability oracle implementations are not supplied by the count backend. Independent finite original-input checks and mathematical interface proofs do not assert external peer review or proof-assistant verification.
+
+[Proof](../problems/recipient-polymatroid/proof.md) · [Dependencies](../problems/recipient-polymatroid/sources.md) · [Evidence](../problems/recipient-polymatroid/verify/README.md) · Reviewed 2026-10-27
+
 ### [One-value allocation](../problems/one-value-exact-two/)
 
 The main exact factor-two theorem with one assignment-cost budget, the exact prescribed-basis endpoint and the stated strict-below-two oracle boundary. The one-unit gate now has a direct Boolean-cap augmentation proof, an exact assignment-pair matroid construction and binary-size accounting; the main proof supplies nonnegative separation, weighted omission, no-loss quota recovery and target search.
@@ -388,12 +420,8 @@ These families have not yet received a scoped readiness entry in this registry. 
 
 - [Numeric targets and support patterns](../problems/numeric-target-frontier/)
 - [Arbitrary-value allocation scheme](../problems/arbitrary-value-allocation-scheme/)
-- [Recipient polymatroids](../problems/recipient-polymatroid/)
-- [Intrinsic values near factor two](../problems/intrinsic-values-near-two/)
 - [Unrelated values with a joint role](../problems/unrelated-values-joint-role/)
 - [Robust unrelated allocation](../problems/robust-unrelated-allocation/)
-- [Activated-machine scheduling](../problems/activated-machine-scheduling/)
-- [Six-profile scheduling](../problems/six-profile-three-halves/)
 - [Many-size workload scheduling](../problems/many-size-scheduling/)
 - [Commitment scheduling](../problems/commitment-scheduling/)
 
@@ -476,6 +504,8 @@ Each linked program documents its checked identities or finite domain. The per-r
 
 - [manuscripts/graph-backends/verify/check_odd_crown.py](../manuscripts/graph-backends/verify/check_odd_crown.py)
 - [manuscripts/graph-backends/verify/check_static_allocations.py](../manuscripts/graph-backends/verify/check_static_allocations.py)
+- [problems/activated-machine-scheduling/verify/check_activation.py](../problems/activated-machine-scheduling/verify/check_activation.py)
+- [problems/activated-machine-scheduling/verify/check_six_profiles.py](../problems/activated-machine-scheduling/verify/check_six_profiles.py)
 - [problems/allocation-lower-bounds/verify/check_barriers.py](../problems/allocation-lower-bounds/verify/check_barriers.py)
 - [problems/arbitrary-processing-scheduling/verify/check_profiles.py](../problems/arbitrary-processing-scheduling/verify/check_profiles.py)
 - [problems/boolean-linear-compiler/verify/check_cardinality_compiler.py](../problems/boolean-linear-compiler/verify/check_cardinality_compiler.py)
@@ -485,6 +515,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/degree-constrained-subgraphs/verify/check_reductions.py](../problems/degree-constrained-subgraphs/verify/check_reductions.py)
 - [problems/degree-constrained-subgraphs/verify/check_reference.py](../problems/degree-constrained-subgraphs/verify/check_reference.py)
 - [problems/exact-failure-preservers/verify/check_arborescence_reporting.py](../problems/exact-failure-preservers/verify/check_arborescence_reporting.py)
+- [problems/exact-failure-preservers/verify/check_matroid_reporting.py](../problems/exact-failure-preservers/verify/check_matroid_reporting.py)
 - [problems/exact-flow-sensitivity/verify/check_flow_certificates.py](../problems/exact-flow-sensitivity/verify/check_flow_certificates.py)
 - [problems/exact-flow-sensitivity/verify/check_unit_flow.py](../problems/exact-flow-sensitivity/verify/check_unit_flow.py)
 - [problems/exact-flow-sensitivity/verify/check_vertex_paths.py](../problems/exact-flow-sensitivity/verify/check_vertex_paths.py)
@@ -502,6 +533,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/incremental-scc/verify/check_label_history.py](../problems/incremental-scc/verify/check_label_history.py)
 - [problems/incremental-sssp/verify/check_path_reporting.py](../problems/incremental-sssp/verify/check_path_reporting.py)
 - [problems/independent-transversal/verify/check_elementary.py](../problems/independent-transversal/verify/check_elementary.py)
+- [problems/intrinsic-values-near-two/verify/check_intrinsic.py](../problems/intrinsic-values-near-two/verify/check_intrinsic.py)
 - [problems/item-matroid-union/verify/check_union_reduction.py](../problems/item-matroid-union/verify/check_union_reduction.py)
 - [problems/label-block-cut/verify/check_whole_blocks.py](../problems/label-block-cut/verify/check_whole_blocks.py)
 - [problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py](../problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py)
@@ -518,6 +550,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/persistence-failure-certificates/verify/check_feature_construction.py](../problems/persistence-failure-certificates/verify/check_feature_construction.py)
 - [problems/processing-bucket-tradeoff/verify/check_buckets.py](../problems/processing-bucket-tradeoff/verify/check_buckets.py)
 - [problems/recipient-matroid-configuration/verify/check_reservations.py](../problems/recipient-matroid-configuration/verify/check_reservations.py)
+- [problems/recipient-polymatroid/verify/check_counts.py](../problems/recipient-polymatroid/verify/check_counts.py)
 - [problems/roabp-affine-pit/verify/all_rank_affine_orbit.py](../problems/roabp-affine-pit/verify/all_rank_affine_orbit.py)
 - [problems/roabp-affine-pit/verify/build_native_papers.py](../problems/roabp-affine-pit/verify/build_native_papers.py)
 - [problems/roabp-affine-pit/verify/check_artin_reset.py](../problems/roabp-affine-pit/verify/check_artin_reset.py)

@@ -118,10 +118,75 @@ all preprocessing functions before reporting.
 | Other boundary fixtures | 2 |
 | Largest auxiliary graph vertex count | 255 |
 
-The executable scope is the named supplied-baseline arborescence backend.
+The executable scope of that checker is the supplied-baseline arborescence
+component. The initialized ordinary construction is checked separately below.
 Finite graph checks do not establish arbitrary-matroid or valuated exchange
 theorems, the optimized preprocessing implementation, or lower-bound
 reductions. Those retain the linked mathematical proofs and primary
 dependencies. No proof-assistant verification is claimed.
+
+## Initialized ordinary matroid and arborescence reports
+
+```sh
+python3 problems/exact-failure-preservers/verify/check_matroid_reporting.py
+```
+
+The [ordinary reference](../reference/README.md) now computes its baseline
+using the canonical weighted-intersection primitive and verifies its
+potential/cut certificate before constructing the compressed reporter.
+The [realization proof](../manuscripts/reference-ordinary-matroid-reporting.md)
+states the full signed-cost fixed-rank contract and its polynomial
+preprocessing costs. Initializer records and original callbacks are
+discarded before returning the compact oracle. Its graph wrapper computes
+the nonnegative rooted baseline before invoking the existing HLD component.
+
+The new checker independently enumerates all common independent sets in
+each finite fixture. It compares initial feasibility, baseline cost, every
+no-failure/single-failure/unknown-ID query, literal independence, retained
+support and the minimum number of outside labels among optimum repairs.
+It covers every subgraph of the complete three-by-three bipartite graph
+under three zero/signed integer/rational cost profiles, arbitrary binary
+represented matroid pairs, and two clients of one explicit sparse-paving
+matroid whose augmentation axioms are independently checked in full.
+These finite opaque-oracle clients are distinct from the proof for
+arbitrary matroids.
+
+| Finite mechanism or outcome | Count |
+|---|---:|
+| Bipartite graph topologies | 512 |
+| Fixed-rank ordinary constructions | 8,687 |
+| Initial common-rank infeasibilities | 2,849 |
+| Ordinary query comparisons | 39,311 |
+| Feasible ordinary queries | 36,949 |
+| Failure queries becoming infeasible | 2,362 |
+| Ordinary queries using hub trees | 131 |
+| Ordinary queries using explicit paths | 5,041 |
+| Binary represented matroid pairs | 160 |
+| Sparse-paving augmentation axioms | 8,377 |
+| Sparse-paving cost/client profiles | 6 |
+| Additional hundreds-of-bits signed/rational cost profile | 1 |
+| Automatically initialized graph/profile instances | 1,024 |
+| Graph instances initially infeasible | 416 |
+| Initialized graph query comparisons | 4,441 |
+| Graph boundary fixtures | 2 |
+| Additional long signed-cycle hub queries | 33 |
+| Queries with callbacks/producers disabled and input cleared | 5 |
+| Malformed input rejections | 5 |
+
+The graph comparator enumerates original rooted directed spanning trees,
+including no-initial-tree cases. Boundary cases include arbitrary roots,
+parallel arcs, ignored loops and root-entering arcs. Long signed matching
+cycles at ranks eight and twenty-five force full-cycle literal repairs
+through stored hubs. A ground of 1,024 original elements at rank two keeps
+only three support IDs and fewer than fifty reporting records; its original
+callbacks and optimization/shortest-path producers are disabled after the
+caller cost list is cleared. A requested rank with a hundred-digit encoding
+on an empty ground is rejected without a numerical rank loop.
+
+The executable ordinary scope is fixed-rank single deletion. The valuated
+extension, rank-drop client, lower-bound transfers and optimized graph
+preprocessing retain their separate mathematical statements and evidence.
+These exact finite checks do not assert proof-assistant verification or
+external peer review.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

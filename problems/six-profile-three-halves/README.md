@@ -39,10 +39,16 @@ No lower bound or optimality claim is made for the base six.
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete exact three-halves arbitrary-processing Theorem SX with mandatory original job-polymatroid bases and one exact assignment budget: six exact disjoint profiles, exhaustive one/two-big-unit coverage, original-total LPs, one joint prefix/partition integer cost recovery, zero processing, original-grid target search and complete streamed profile/time-space accounting. The reusable direct SixBackend lives with the activation adapter but implements the original SX model without activation.
+
+**Dependencies and scope.** The theorem's polynomial per-profile exact LP/SFM and integral-intersection primitives remain explicitly paid. The reusable complete-table reference has separately charged canonical LP-vertex and numeric integer enumeration, including potentially exponential vertex storage; that implementation boundary is not an unresolved mathematical interface. The theorem permits arbitrary nonnegative machine/type times and one scalar assignment budget. No optimality of base six, general multiple-budget extension, exhaustive publication priority, proof-assistant formalization or external peer review is claimed.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
 [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md).
+
+The reusable [six-profile backend](../activated-machine-scheduling/reference/README.md) implements the profile product and exact-budget recovery. Its [direct original-input checker](../activated-machine-scheduling/verify/check_six_profiles.py) covers all six labels independently of activation; finite solver costs are stated separately from the theorem's bound.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

@@ -17,7 +17,8 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 
 ## Executable evidence
 
-No result-specific executable check is registered. The mathematical proof and the repository document checks have separate roles.
+- [Binary-count backend](reference/README.md) and [realization proof](reference-realization.md): natural rank, whole-block contraction, integral comparator recovery and threshold minimality using numerical counts.
+- [Independent original-count checker](verify/check_counts.py): exhaustive original-subset feasibility and maximum recovery on small rank tables, plus 100-digit-capacity guards. Full allocation layers and fractional optimizers remain outside this implementation.
 
 The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
 

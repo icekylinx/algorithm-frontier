@@ -377,7 +377,7 @@ recipient-polymatroid `(8+zeta)` result, for fixed zeta>0, transfers to
 the current original-M model by the following explicit construction.
 
 Let V be the total value of the original resource ranks on P. Add one
-dummy type of value V+g with recipient rank equal to the matroid rank
+dummy type of value <code class="math">V+1</code> with recipient rank equal to the matroid rank
 of M*. Make every player compulsory in this augmented instance.
 First extend every original independent resource vector of an
 optimal M-basis allocation to a full recipient base on P. This

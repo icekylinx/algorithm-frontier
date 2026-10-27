@@ -41,6 +41,14 @@ The classical directed distance-preserver theorem keeps <code class="math">O(N\s
 
 A hub concatenation has the optimum lexicographic distance and cannot repeat a vertex: removing its strictly positive cycle would improve it. Reporting takes <code class="math">O(N)</code>, and Lemma 2.3 converts it to a basis in <code class="math">O(k)</code>. Failures outside <code class="math">B</code> return <code class="math">B</code>; unreachable demands are marked infeasible.
 
+The [ordinary reference realization](manuscripts/reference-ordinary-matroid-reporting.md)
+initializes the fixed-rank optimum through the canonical certified weighted
+intersection primitive, builds this compressed graph, and reuses the exact
+distance/hub reporter. The initial potential/cut certificate and original
+callbacks are discarded before returning the compact oracle. Its polynomial
+preprocessing is separate from the faster graph construction below; it does
+not implement the valuated extension.
+
 ## 4. Arborescence and valuated specializations
 
 Arborescences are common bases of the underlying graphic matroid and the partition matroid allowing one incoming arc per nonroot vertex. For an outside arc <code class="math">u\to v</code>, the partition removal is the tree arc entering <code class="math">v</code>; graphic removals lie on the undirected tree path from <code class="math">u</code> to <code class="math">v</code>. Heavy-light path intervals and a segment tree encode these transitions in <code class="math">O(n)</code> vertices and <code class="math">O(n+m\log^2 n)</code> arcs. The same reporting construction proves the graph bounds.

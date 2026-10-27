@@ -15,7 +15,27 @@ The evidence for this result consists of its [mathematical proof](../proof.md) a
 
 ## Executable evidence
 
-No result-specific executable check is supplied. The argument above is a mathematical proof, not an executable certificate or a complete solver.
+Run the independent original-count checker:
+
+```sh
+python3 -B problems/recipient-polymatroid/verify/check_counts.py
+```
+
+The [binary-count reference](../reference/README.md) and its
+[realization proof](../reference-realization.md) cover natural ranks,
+whole-block contraction, residual availability, integral comparator recovery
+and one-pass minimal bundles. The checker covers 87 complete rank tables,
+813 reserved ranks, 4,075 coordinate-increment availability identities,
+9,127 original comparator recoveries, 438 minimal bundles and 10 malformed
+inputs. It independently enumerates allocations satisfying original subset
+inequalities, including nonseparable shared-feature ranks. Four additional
+100-digit-capacity assertions exercise rank, availability, recovery and bulk
+minimality without unit expansion.
+
+The executable realizes these representation interfaces. It does not run
+the complete player-layer algorithm or any fractional configuration solver;
+the explicit-table enumeration costs remain separate from the theorem's
+paid oracle costs.
 
 ## Model and verification boundaries
 

@@ -11,6 +11,12 @@ number types are checked; loops and root-entering arcs are discarded only
 after validation. Discarding these arcs changes no rooted arborescence.
 The empty one-vertex case is handled directly by the same API.
 
+The [initialized ordinary wrapper](reference-ordinary-matroid-reporting.md)
+now discharges this lower-level entry point's supplied-baseline promise
+through canonical weighted intersection on the graph's graphic/partition
+matroids. This note describes the HLD/reporting component after that supply;
+the wrapper's slower polynomial initialization is accounted for separately.
+
 **Realization proposition.** Under this input promise, `build` constructs
 the companion's exact one-original-arc-deletion support and reporting oracle.
 Queries return original arc IDs or a rank-infeasibility flag and use only

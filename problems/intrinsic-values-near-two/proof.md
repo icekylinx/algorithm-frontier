@@ -7,6 +7,12 @@ heavy-cover parameter. Its running time is
 `Gamma(1/epsilon)^k poly(H)`, where
 `Gamma(R)=R^R/(R-1)^(R-1)<=eR`.
 
+The [original-table reference realization](reference-realization.md) supplies
+actual derived-matroid completion, prefix selection, original light recovery
+and the exact-half candidate endpoint. Its streamed LP vertex cost is
+separate from the mathematical fast bound; the public fallback remains a
+named external algorithm rather than an implemented default.
+
 Thus factor `2+eta` is obtained with parameter dependence
 `(O(1+eta^{-1}))^k`. This is a general-value theorem, not a claim
 that the original resources have only two values. It keeps an

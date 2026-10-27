@@ -159,6 +159,11 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check('processing-bucket-tradeoff exact reference', ('problems/processing-bucket-tradeoff/verify/check_buckets.py',)),
         Check('correlated-spectral-regression exact reference', ('problems/correlated-spectral-regression/verify/check_importance_regression.py',)),
         Check('obstruction-boundaries exact reference', ('problems/obstruction-boundaries/verify/check_compact_body.py',)),
+        Check('activated-machine-scheduling check_activation', ('problems/activated-machine-scheduling/verify/check_activation.py',)),
+        Check('activated-machine-scheduling check_six_profiles', ('problems/activated-machine-scheduling/verify/check_six_profiles.py',)),
+        Check('exact-failure-preservers check_matroid_reporting', ('problems/exact-failure-preservers/verify/check_matroid_reporting.py',)),
+        Check('recipient-polymatroid check_counts', ('problems/recipient-polymatroid/verify/check_counts.py',)),
+        Check('intrinsic-values-near-two check_intrinsic', ('problems/intrinsic-values-near-two/verify/check_intrinsic.py',)),
         Check("Non-Fano obstruction", ("tools/verify_non_fano.py",)),
         Check(
             "Full-contact receipt binding and coverage metadata",

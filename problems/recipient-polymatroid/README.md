@@ -46,7 +46,11 @@ The [hidden-rank oracle barrier](../allocation-lower-bounds/proof.md) excludes d
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The complete canonical main integer-comparator theorem and binary representation: natural ranks, whole-owner contraction and availability, original-box integral comparator recovery, distinct-record realization, large-unit dual-union completion, ordered-prefix block additivity, current strong release and atomic earliest exchange, present rank charging, integer lower cover, exact and positive-slack signatures and target search, and the equal-unit rank-exponential endpoint. The native backend realizes count, availability, recovery and minimality interfaces.
+
+**Dependencies and scope.** The mathematical theorem pays for exact rank/SFM, integral intersection and decomposition, and the supplied certified local-availability oracle. Binary multiplicities remain numerical. The native reference uses complete rank tables and explicit subset enumeration with separate bit costs. The residual-capacity and scaled-copy fractional comparators, bounded-support fractional optimizer and full weak fractional optimizer remain outside this review. Full player-layer software, selected-basis recovery and arbitrary local-availability oracle implementations are not supplied by the count backend. Independent finite original-input checks and mathematical interface proofs do not assert external peer review or proof-assistant verification.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
@@ -81,5 +85,7 @@ additional results.
 The residual-cut proof also transfers the exact integer-quota comparator.
 It preserves the critical small-quota growth boundary and does not give a
 new uniform quasipolynomial factor-three theorem.
+
+The [binary-count backend](reference/README.md) implements natural ranks, residual availability and integral comparator recovery with explicit-table costs; its [proof](reference-realization.md) and [independent checks](verify/README.md) separate those interfaces from the full allocation theorem.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro

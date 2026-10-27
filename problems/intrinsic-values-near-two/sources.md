@@ -5,6 +5,7 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 ## Canonical manuscripts
 
 - [General-value allocation approaching factor two in the heavy-cover parameter](proof.md)
+- [Original-table realization of the intrinsic derived-matroid transfer](reference-realization.md)
 - [Exact factor two at the half-optimum derived corank](exact-two-boundaries.md)
 - [General-value near-two allocation with an arbitrary player matroid](player-selection.md)
 
@@ -28,7 +29,10 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 
 ## Executable evidence
 
-No result-specific executable check is registered. The mathematical proof and the repository document checks have separate roles.
+- [Native original-table backend](reference/README.md) and [independent original-input checker](verify/check_intrinsic.py).
+- The backend reuses the canonical [weighted unit intersection](../robust-bounded-certificates/reference/README.md), [actual prefix/rational search](../whole-ground-allocation/reference/README.md) and exact Gaussian primitive from the [two-time reference](../two-time-scheduling/reference/README.md).
+
+The mathematical proof and repository document checks have separate roles.
 
 The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
 

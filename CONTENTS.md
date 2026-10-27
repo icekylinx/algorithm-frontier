@@ -139,6 +139,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Exact single-failure preservers and output-sensitive oracles for minimum-cost arborescences and two-matroid intersection](problems/exact-failure-preservers/manuscripts/exact-single-failure-arborescences-and-matroid-intersection.md)
 - [A supplied-baseline realization of arborescence reporting](problems/exact-failure-preservers/manuscripts/reference-arborescence-reporting.md)
+- [Initialized ordinary two-matroid failure reporting](problems/exact-failure-preservers/manuscripts/reference-ordinary-matroid-reporting.md)
 - [Valuated matroid intersection: exact single-failure summaries and output-sensitive queries](problems/exact-failure-preservers/manuscripts/valuated-matroid-intersection.md)
 
 ### [Flow, matching and price sensitivity](problems/exact-flow-sensitivity/)
@@ -263,6 +264,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/recipient-polymatroid/README.md) · [Main proof](problems/recipient-polymatroid/proof.md) · [Sources](problems/recipient-polymatroid/sources.md) · [Verification](problems/recipient-polymatroid/verify/README.md)
 
+- [Exact binary-count representation and comparator recovery](problems/recipient-polymatroid/reference-realization.md)
 - [Binary representation and the integer-comparator lemma](problems/recipient-polymatroid/representation.md)
 
 ### [Recipient-matroid configuration](problems/recipient-matroid-configuration/)
@@ -294,6 +296,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Exact factor two at the half-optimum derived corank](problems/intrinsic-values-near-two/exact-two-boundaries.md)
 - [General-value near-two allocation with an arbitrary player matroid](problems/intrinsic-values-near-two/player-selection.md)
+- [Original-table realization of the intrinsic derived-matroid transfer](problems/intrinsic-values-near-two/reference-realization.md)
 
 ### [Unrelated-value additive allocation](problems/unrelated-values-additive/)
 
@@ -368,6 +371,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 ### [Activated-machine scheduling](problems/activated-machine-scheduling/)
 
 [Statement](problems/activated-machine-scheduling/README.md) · [Main proof](problems/activated-machine-scheduling/proof.md) · [Sources](problems/activated-machine-scheduling/sources.md) · [Verification](problems/activated-machine-scheduling/verify/README.md)
+
+- [Activation, binary feasibility and the exact six-profile realization](problems/activated-machine-scheduling/reference-realization.md)
 
 ### [Six-profile scheduling](problems/six-profile-three-halves/)
 
