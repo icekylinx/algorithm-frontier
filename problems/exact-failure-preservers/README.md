@@ -93,7 +93,11 @@ Inherited directed-distance constructions give
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The ordinary two-matroid replacement-cycle value identity and minimum-hop literal update, and the executable supplied-optimum-baseline rooted directed arborescence realization: heavy-light/segment-tree exchange transitions, exact lexicographic dense shortest paths, deterministic phased short-path/hub-tree records, original-arc support, optimum ID reporting and infeasibility flags.
+
+**Dependencies and scope.** The reusable backend assumes a supplied optimum rooted spanning arborescence. Its validation and negative-cycle rejection do not substitute for the separate baseline-supply contract; independent small fixtures obtain baselines by exhaustive enumeration. The reference uses `O(M+A^3)` arithmetic preprocessing with `A=4(n-1)-1` auxiliary vertices, retaining `O(n^(3/2))` final records and `O(n)` reporting; it does not implement the manuscript’s faster preprocessing. Rational bit lengths are charged separately. This review does not cover the valuated extension, rank-drop client, or lower-bound transfers. Those retain their linked mathematical statements and dependencies. Finite checks and internal independent code review are not proof-assistant verification or external peer review.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

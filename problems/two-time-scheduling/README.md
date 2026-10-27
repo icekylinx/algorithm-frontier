@@ -46,7 +46,11 @@ No lower bound is claimed for this algorithm.
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete fixed-integer-d heterogeneous two-positive-processing-times-per-machine Theorem HT: original mandatory job-polymatroid bases, nonnegative rational times including zero, one exact assignment budget, exact small-quota gates, heterogeneous scaled support separators, protected omission recursion, joint minimum-cost integral recovery, streamed global conversion and one-sided rational-grid optimization. The complete-table reference realization has its own explicitly charged vertex, role and integer-count enumeration bound.
+
+**Dependencies and scope.** The fast mathematical algorithm uses the explicitly paid exact rank/SFM, rational LP and integral polymatroid-intersection primitives. The reference backend implements semantic interfaces on complete rank tables by enumeration; it does not realize the fast theorem's time or polynomial workspace. The sharp base is for fixed integer `d>=2` and one scalar assignment budget. Finite executable tests have their stated scope; proof-assistant formalization, external peer review and publication priority are not claimed.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

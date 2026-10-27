@@ -17,7 +17,12 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 
 ## Executable evidence
 
-No result-specific executable check is registered. The mathematical proof and the repository document checks have separate roles.
+The [local realization proof](reference-realization.md) and
+[reference API](reference/README.md) implement the elementary fallback with
+positive blocker signatures. The code is a new local implementation of the
+credited Graf--Haxell procedure; no third-party source code is included.
+Its independent witness checker and finite execution audit are registered
+separately from the full layer theorem.
 
 The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
 

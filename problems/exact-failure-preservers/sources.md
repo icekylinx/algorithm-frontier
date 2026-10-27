@@ -10,6 +10,14 @@ The main proof gives the family-level theorem composition. The following canonic
 |---|---|
 | [Arborescence and matroid-intersection preservers](manuscripts/exact-single-failure-arborescences-and-matroid-intersection.md) | Weighted exchange-cycle identities, minimum-hop repairs, distance-preserver reporting, sparse arborescence implementation, and lower bounds. |
 | [Valuated matroid intersection](manuscripts/valuated-matroid-intersection.md) | Exchange lengths, feasible-domain initialization, exact rational oracle access, and the valuated reporting extension. |
+| [Supplied-baseline arborescence realization](manuscripts/reference-arborescence-reporting.md) | Matches the executable heavy-light auxiliary graph, exact dense shortest paths, phased greedy hubs and original-ID reports to the ordinary companion. |
+
+The [reference API](reference/README.md) requires a supplied optimum rooted
+directed spanning arborescence. It implements preprocessing and queries after
+that supply; the independent checker's tiny exhaustive baseline enumeration
+is not a general baseline algorithm. General oracle-matroid and valuated
+reporting remain mathematical constructions with separate initialization
+and oracle models.
 
 ## External inputs
 

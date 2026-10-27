@@ -138,6 +138,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/exact-failure-preservers/README.md) · [Main proof](problems/exact-failure-preservers/proof.md) · [Sources](problems/exact-failure-preservers/sources.md) · [Verification](problems/exact-failure-preservers/verify/README.md)
 
 - [Exact single-failure preservers and output-sensitive oracles for minimum-cost arborescences and two-matroid intersection](problems/exact-failure-preservers/manuscripts/exact-single-failure-arborescences-and-matroid-intersection.md)
+- [A supplied-baseline realization of arborescence reporting](problems/exact-failure-preservers/manuscripts/reference-arborescence-reporting.md)
 - [Valuated matroid intersection: exact single-failure summaries and output-sensitive queries](problems/exact-failure-preservers/manuscripts/valuated-matroid-intersection.md)
 
 ### [Flow, matching and price sensitivity](problems/exact-flow-sensitivity/)
@@ -328,6 +329,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/robust-scenario-flow/README.md) · [Main proof](problems/robust-scenario-flow/proof.md) · [Sources](problems/robust-scenario-flow/sources.md) · [Verification](problems/robust-scenario-flow/verify/README.md)
 
+- [Exact realization and review of adaptive scenario flow](problems/robust-scenario-flow/reference-realization.md)
+
 ### [Robust unrelated allocation](problems/robust-unrelated-allocation/)
 
 [Statement](problems/robust-unrelated-allocation/README.md) · [Main proof](problems/robust-unrelated-allocation/proof.md) · [Sources](problems/robust-unrelated-allocation/sources.md) · [Verification](problems/robust-unrelated-allocation/verify/README.md)
@@ -339,6 +342,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 ### [Width-two robust unit allocation](problems/robust-width-two-allocation/)
 
 [Statement](problems/robust-width-two-allocation/README.md) · [Main proof](problems/robust-width-two-allocation/proof.md) · [Sources](problems/robust-width-two-allocation/sources.md) · [Verification](problems/robust-width-two-allocation/verify/README.md)
+
+- [Realization and scoped review of the width-two unit gate](problems/robust-width-two-allocation/reference-realization.md)
 
 ### [Two-scenario hardness](problems/robust-two-scenario-hardness/)
 
@@ -374,6 +379,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/two-time-scheduling/README.md) · [Main proof](problems/two-time-scheduling/proof.md) · [Sources](problems/two-time-scheduling/sources.md) · [Verification](problems/two-time-scheduling/verify/README.md)
 
+- [An exact complete-table realization of the heterogeneous scheduling interfaces](problems/two-time-scheduling/reference-realization.md)
+
 ### [Many-size workload scheduling](problems/many-size-scheduling/)
 
 [Statement](problems/many-size-scheduling/README.md) · [Main proof](problems/many-size-scheduling/proof.md) · [Sources](problems/many-size-scheduling/sources.md) · [Verification](problems/many-size-scheduling/verify/README.md)
@@ -397,6 +404,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 ### [Independent transversals](problems/independent-transversal/)
 
 [Statement](problems/independent-transversal/README.md) · [Main proof](problems/independent-transversal/proof.md) · [Sources](problems/independent-transversal/sources.md) · [Verification](problems/independent-transversal/verify/README.md)
+
+- [Constructive elementary transversal certificates](problems/independent-transversal/reference-realization.md)
 
 ### [Allocation and scheduling barriers](problems/allocation-lower-bounds/)
 

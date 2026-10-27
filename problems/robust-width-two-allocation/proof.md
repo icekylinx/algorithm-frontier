@@ -13,7 +13,9 @@ most two, the exact robust unit gate improves from 2^c to
 varphi^c times polynomial work. The improvement uses a polynomial
 matching-case terminal solver. It respects the original player
 matroid; an ordinary unconstrained vertex-cover dominance rule is
-not needed.
+not needed. The [reference realization](reference-realization.md)
+implements this local gate, including polynomial matching intersection,
+with the original exact rank and scenario-unit tests as paid callbacks.
 
 ## 1. Model, promise and guarantees
 

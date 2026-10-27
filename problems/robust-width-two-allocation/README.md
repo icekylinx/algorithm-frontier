@@ -44,7 +44,11 @@ The width restriction is essential. The separate whole-ground rank-oracle barrie
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The exact width-two robust one-unit gate, including original dual-rank forced omissions, polynomial matching matroid intersection and basis completion, complete Fibonacci branching accounting, all-input width-violation semantics and fixed-quadratic whole-ground conversion; exact optimization on Boolean resources. Section 8 high-quota factor tradeoffs and their inherited allocation chain are excluded from this scoped review.
+
+**Dependencies and scope.** Original matroid rank and exact hereditary scenario unit tests with actual witnesses remain paid callbacks. General budgeted polymatroid unit tests retain the construction in robust-bounded-certificates. Matching terminal is implemented by standard shortest-exchange matroid intersection, using the explicitly identified augmentation theorem in Barasz et al., arXiv:2407.03229v2, Definition 2.2 and Algorithm 1. Oracle validity itself is an input-model contract. The reference implements the local Fibonacci gate and polynomial terminal, not general weighted polymatroid allocation, higher-quota recovery or the streamed global wrapper. A width violation is a third outcome, never failed extension. Separate rank-oracle obstructions do not establish an optimal explicit-input exponential base; no fastest-known or publication-priority claim.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

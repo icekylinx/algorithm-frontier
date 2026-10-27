@@ -164,6 +164,14 @@ The complete selected-flow theorem with one shared commodity-setup and routing b
 
 [Proof](../problems/shared-setup-flow/proof.md) · [Dependencies](../problems/shared-setup-flow/sources.md) · [Evidence](../problems/shared-setup-flow/verify/README.md) · Reviewed 2026-10-27
 
+### [Robust selected flow](../problems/robust-scenario-flow/)
+
+The complete adaptive explicit-scenario selected-flow theorem, including scenario-tagged nonnegative Farkas separation, original-coordinate weighted omission, fixed-family rational comparator recovery and fixed-accuracy whole-ground conversion; the parameter-preserving exact-admission Hitting Set reduction including its forest and nonconstant-gap scope. Exact reference supplies common-set certificates, separately scaled adaptive routings and scenario separation.
+
+**Dependencies and scope.** Exact polynomial rational LP, Farkas duality and the paid fixed-family restriction selector remain theorem dependencies. The sharp whole-ground base requires fixed rational accuracy. Scenario list and routing-budget rows are explicit and charged. Selection is common, routing is adaptive and splittable. No implicit uncertainty, oblivious or unsplittable routing guarantee. Reference uses potentially exponential finite Bland simplex and original selected-set enumeration, not the omission recursion or rational target search. Search-free certificates prove fixed-set optimality; global optimality additionally relies on enumeration and the fixed-family predicate. W[2] hardness uses the source fact recorded by Jansen 2017 and the assumption FPT differs from W[2]. It concerns exact admission with arbitrary explicit scenarios, supplies no constant approximation gap and no single-edge-failure-only lower bound.
+
+[Proof](../problems/robust-scenario-flow/proof.md) · [Dependencies](../problems/robust-scenario-flow/sources.md) · [Evidence](../problems/robust-scenario-flow/verify/README.md) · Reviewed 2026-10-27
+
 ### [Two-scenario hardness](../problems/robust-two-scenario-hardness/)
 
 The complete deterministic corank-parameterized finite-factor obstruction for optional common-basis selection under two exact scenario budgets, including positive-service equivalence to bounded nonnegative `k`-SUM, the always-feasible zero solution, binary encoding and parameter preservation.
@@ -171,6 +179,14 @@ The complete deterministic corank-parameterized finite-factor obstruction for op
 **Dependencies and scope.** Uses the deterministic `W[1]`-hardness direction of Abboud, Lewi and Williams, Losing Weight by Gaining Edges, Definition 1.1, Theorem 1.3 and Section 4, and the assumption `FPT` differs from `W[1]`. The bounded nonnegative source avoids the separate randomized arbitrary-range reduction. The conclusion requires integer service, exact budgets and an optional common basis. It does not cover randomized algorithms, fractional service or relaxed budgets, and supplies no ETH or whole-ground exponential lower bound. Finite reduction checks do not certify the external hardness theorem.
 
 [Proof](../problems/robust-two-scenario-hardness/proof.md) · [Dependencies](../problems/robust-two-scenario-hardness/sources.md) · [Evidence](../problems/robust-two-scenario-hardness/verify/README.md) · Reviewed 2026-10-27
+
+### [Per-machine two-time scheduling](../problems/two-time-scheduling/)
+
+The complete fixed-integer-d heterogeneous two-positive-processing-times-per-machine Theorem HT: original mandatory job-polymatroid bases, nonnegative rational times including zero, one exact assignment budget, exact small-quota gates, heterogeneous scaled support separators, protected omission recursion, joint minimum-cost integral recovery, streamed global conversion and one-sided rational-grid optimization. The complete-table reference realization has its own explicitly charged vertex, role and integer-count enumeration bound.
+
+**Dependencies and scope.** The fast mathematical algorithm uses the explicitly paid exact rank/SFM, rational LP and integral polymatroid-intersection primitives. The reference backend implements semantic interfaces on complete rank tables by enumeration; it does not realize the fast theorem's time or polynomial workspace. The sharp base is for fixed integer `d>=2` and one scalar assignment budget. Finite executable tests have their stated scope; proof-assistant formalization, external peer review and publication priority are not claimed.
+
+[Proof](../problems/two-time-scheduling/proof.md) · [Dependencies](../problems/two-time-scheduling/sources.md) · [Evidence](../problems/two-time-scheduling/verify/README.md) · Reviewed 2026-10-27
 
 ### [Hypergraph matching and expander routing](../problems/strong-haxell-matching/)
 
@@ -214,6 +230,14 @@ The sharp sparse-packing FPT restriction with improved basis-tree preprocessing,
 
 [Proof](../problems/weighted-prefix-quota-frontier/proof.md) · [Dependencies](../problems/weighted-prefix-quota-frontier/sources.md) · [Evidence](../problems/weighted-prefix-quota-frontier/verify/README.md) · Reviewed 2026-10-26
 
+### [Single-failure optimum preservers](../problems/exact-failure-preservers/)
+
+The ordinary two-matroid replacement-cycle value identity and minimum-hop literal update, and the executable supplied-optimum-baseline rooted directed arborescence realization: heavy-light/segment-tree exchange transitions, exact lexicographic dense shortest paths, deterministic phased short-path/hub-tree records, original-arc support, optimum ID reporting and infeasibility flags.
+
+**Dependencies and scope.** The reusable backend assumes a supplied optimum rooted spanning arborescence. Its validation and negative-cycle rejection do not substitute for the separate baseline-supply contract; independent small fixtures obtain baselines by exhaustive enumeration. The reference uses `O(M+A^3)` arithmetic preprocessing with `A=4(n-1)-1` auxiliary vertices, retaining `O(n^(3/2))` final records and `O(n)` reporting; it does not implement the manuscript’s faster preprocessing. Rational bit lengths are charged separately. This review does not cover the valuated extension, rank-drop client, or lower-bound transfers. Those retain their linked mathematical statements and dependencies. Finite checks and internal independent code review are not proof-assistant verification or external peer review.
+
+[Proof](../problems/exact-failure-preservers/proof.md) · [Dependencies](../problems/exact-failure-preservers/sources.md) · [Evidence](../problems/exact-failure-preservers/verify/README.md) · Reviewed 2026-10-27
+
 ### [Flow, matching and price sensitivity](../problems/exact-flow-sensitivity/)
 
 The exact nonnegative rational unit-flow and internally vertex-disjoint path components: fixed-value and minimum-cost maximum queries, residual replacement, support-sensitive original-record preservers, compact reports and simple-input support specializations. The native path wrapper proves unit-gate deletion semantics, original-ID recovery and zero-cost-cycle-safe packing output. Both local realizations prove their own polynomial preprocessing and bit-cost contracts. The independent original-input certificate component proves signed-cost reduced-cost optimality, maximum-value and infeasibility cuts, and a binary-input cost-blind general-balance constructor.
@@ -254,12 +278,27 @@ The main exact factor-two theorem with one assignment-cost budget, the exact pre
 
 [Proof](../problems/one-value-exact-two/proof.md) · [Dependencies](../problems/one-value-exact-two/sources.md) · [Evidence](../problems/one-value-exact-two/verify/README.md) · Reviewed 2026-10-27
 
+### [Width-two robust unit allocation](../problems/robust-width-two-allocation/)
+
+The exact width-two robust one-unit gate, including original dual-rank forced omissions, polynomial matching matroid intersection and basis completion, complete Fibonacci branching accounting, all-input width-violation semantics and fixed-quadratic whole-ground conversion; exact optimization on Boolean resources. Section 8 high-quota factor tradeoffs and their inherited allocation chain are excluded from this scoped review.
+
+**Dependencies and scope.** Original matroid rank and exact hereditary scenario unit tests with actual witnesses remain paid callbacks. General budgeted polymatroid unit tests retain the construction in robust-bounded-certificates. Matching terminal is implemented by standard shortest-exchange matroid intersection, using the explicitly identified augmentation theorem in Barasz et al., arXiv:2407.03229v2, Definition 2.2 and Algorithm 1. Oracle validity itself is an input-model contract. The reference implements the local Fibonacci gate and polynomial terminal, not general weighted polymatroid allocation, higher-quota recovery or the streamed global wrapper. A width violation is a third outcome, never failed extension. Separate rank-oracle obstructions do not establish an optimal explicit-input exponential base; no fastest-known or publication-priority claim.
+
+[Proof](../problems/robust-width-two-allocation/proof.md) · [Dependencies](../problems/robust-width-two-allocation/sources.md) · [Evidence](../problems/robust-width-two-allocation/verify/README.md) · Reviewed 2026-10-27
+
+### [Independent transversals](../problems/independent-transversal/)
+
+The complete elementary certifying fallback: induced-star current-blocker invariants, strict earlier-star zero-blocker cascades, positive-composition signature bound, exact total-domination/constellation output and independent original-input verification. The derived public procedure has a new local executable realization and separately charged exponential-in-class-count work.
+
+**Dependencies and scope.** The elementary procedure is credited to Graf and Haxell, arXiv:1811.02687v2, Definition 3 and Section 2. It requires no claw or slack promise. Within-class edges are removed exactly as in the source convention. A domination constellation is not a certificate that no independent transversal exists. The verifier checks the precise elementary alternative and no stronger infeasibility claim. The faster current-blocker layer theorem and its input-linear layer primitives remain outside this bounded review scope. Python hash-table operations and optional observer costs are separately charged; no fast-layer implementation or formal verification is claimed.
+
+[Proof](../problems/independent-transversal/proof.md) · [Dependencies](../problems/independent-transversal/sources.md) · [Evidence](../problems/independent-transversal/verify/README.md) · Reviewed 2026-10-27
+
 ## Review pending
 
 These families have not yet received a scoped readiness entry in this registry. Their existing statements retain their own assumptions.
 
 - [Numeric targets and support patterns](../problems/numeric-target-frontier/)
-- [Single-failure optimum preservers](../problems/exact-failure-preservers/)
 - [Correlated spectral, regression and seminorm summaries](../problems/correlated-spectral-regression/)
 - [Label and whole-block cut sparsification](../problems/label-block-cut/)
 - [Finite groups, affine constraints and metrics](../problems/group-metric-constraints/)
@@ -271,19 +310,15 @@ These families have not yet received a scoped readiness entry in this registry. 
 - [Unrelated-value additive allocation](../problems/unrelated-values-additive/)
 - [Unrelated values with a joint role](../problems/unrelated-values-joint-role/)
 - [Whole-ground selection and transfers](../problems/whole-ground-allocation/)
-- [Robust selected flow](../problems/robust-scenario-flow/)
 - [Robust unrelated allocation](../problems/robust-unrelated-allocation/)
 - [Robust bounded-width certificates](../problems/robust-bounded-certificates/)
-- [Width-two robust unit allocation](../problems/robust-width-two-allocation/)
 - [Arbitrary-processing scheme](../problems/arbitrary-processing-scheduling/)
 - [Activated-machine scheduling](../problems/activated-machine-scheduling/)
 - [Six-profile scheduling](../problems/six-profile-three-halves/)
 - [Processing-bucket tradeoff](../problems/processing-bucket-tradeoff/)
 - [Two-size scheduling](../problems/two-size-scheduling/)
-- [Per-machine two-time scheduling](../problems/two-time-scheduling/)
 - [Many-size workload scheduling](../problems/many-size-scheduling/)
 - [Commitment scheduling](../problems/commitment-scheduling/)
-- [Independent transversals](../problems/independent-transversal/)
 
 ## Supporting manuscripts
 
@@ -370,6 +405,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/degree-constrained-subgraphs/verify/check_linear_selector.py](../problems/degree-constrained-subgraphs/verify/check_linear_selector.py)
 - [problems/degree-constrained-subgraphs/verify/check_reductions.py](../problems/degree-constrained-subgraphs/verify/check_reductions.py)
 - [problems/degree-constrained-subgraphs/verify/check_reference.py](../problems/degree-constrained-subgraphs/verify/check_reference.py)
+- [problems/exact-failure-preservers/verify/check_arborescence_reporting.py](../problems/exact-failure-preservers/verify/check_arborescence_reporting.py)
 - [problems/exact-flow-sensitivity/verify/check_flow_certificates.py](../problems/exact-flow-sensitivity/verify/check_flow_certificates.py)
 - [problems/exact-flow-sensitivity/verify/check_unit_flow.py](../problems/exact-flow-sensitivity/verify/check_unit_flow.py)
 - [problems/exact-flow-sensitivity/verify/check_vertex_paths.py](../problems/exact-flow-sensitivity/verify/check_vertex_paths.py)
@@ -385,6 +421,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/group-metric-constraints/verify/check_quotient_rounding.py](../problems/group-metric-constraints/verify/check_quotient_rounding.py)
 - [problems/incremental-scc/verify/check_label_history.py](../problems/incremental-scc/verify/check_label_history.py)
 - [problems/incremental-sssp/verify/check_path_reporting.py](../problems/incremental-sssp/verify/check_path_reporting.py)
+- [problems/independent-transversal/verify/check_elementary.py](../problems/independent-transversal/verify/check_elementary.py)
 - [problems/item-matroid-union/verify/check_union_reduction.py](../problems/item-matroid-union/verify/check_union_reduction.py)
 - [problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py](../problems/matroid-failure-summaries/verify/check_rank_loss_contraction.py)
 - [problems/matroid-failure-summaries/verify/check_rank_two_prefix.py](../problems/matroid-failure-summaries/verify/check_rank_two_prefix.py)
@@ -405,6 +442,8 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/roabp-affine-pit/verify/check_quadratic_hasse.py](../problems/roabp-affine-pit/verify/check_quadratic_hasse.py)
 - [problems/roabp-affine-pit/verify/check_source_bindings.py](../problems/roabp-affine-pit/verify/check_source_bindings.py)
 - [problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py](../problems/roabp-affine-pit/verify/rank_one_full_affine_orbit.py)
+- [problems/robust-scenario-flow/verify/check_scenarios.py](../problems/robust-scenario-flow/verify/check_scenarios.py)
+- [problems/robust-width-two-allocation/verify/check_width_two.py](../problems/robust-width-two-allocation/verify/check_width_two.py)
 - [problems/selected-flow/verify/check_concurrent.py](../problems/selected-flow/verify/check_concurrent.py)
 - [problems/subset-sum-fast-deterministic/verify/check_energy.py](../problems/subset-sum-fast-deterministic/verify/check_energy.py)
 - [problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py](../problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py)
@@ -415,6 +454,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/subset-sum-low-space-deterministic/verify/check_range_solver.py](../problems/subset-sum-low-space-deterministic/verify/check_range_solver.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_resources.py](../problems/subset-sum-low-space-deterministic/verify/check_resources.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_structural.py](../problems/subset-sum-low-space-deterministic/verify/check_structural.py)
+- [problems/two-time-scheduling/verify/check_scheduling.py](../problems/two-time-scheduling/verify/check_scheduling.py)
 - [problems/weighted-prefix-quota-frontier/verify/check_laminar_recovery.py](../problems/weighted-prefix-quota-frontier/verify/check_laminar_recovery.py)
 - [problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py](../problems/weighted-prefix-quota-frontier/verify/check_laminar_reduction.py)
 - [problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py](../problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py)

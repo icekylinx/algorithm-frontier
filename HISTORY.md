@@ -1,5 +1,15 @@
 # History
 
+## 2026-10-27 — Robust selection, heterogeneous scheduling and certifying graph backends
+
+- Completed the adaptive explicit-scenario flow proof audit, with common-selection exact reference certificates, separately scaled scenario routings, scenario-tagged separation and finite Hitting Set reduction checks. The theorem is ready for review; the enumeration/Bland reference keeps its separate runtime contract.
+- Completed the heterogeneous two-positive-time scheduling proof audit and exact complete-table reference for original mandatory totals, zero-time masks, heterogeneous quotas, support separation, joint minimum-cost integral recovery and one-sided rational target search. The theorem is ready for review. The reference charges active-set, role-subset and integer-count enumeration, including potentially exponential storage.
+- Added the width-two exact unit/Boolean gate with original dual-rank contraction, shortest-exchange matroid intersection, Fibonacci branching and explicit higher-width third outcomes. Readiness covers these components and their proved wrapper, excluding the separately inherited high-quota allocation chain.
+- Realized supplied-optimum-baseline arborescence failure reports through heavy-light exchange transitions, exact dense shortest paths and phased short-path/hub records. The compact support/reporting contract is separate from slower cubic preprocessing and baseline supply. Ordinary exchange and this executable client have scoped partial readiness.
+- Implemented the credited elementary Graf--Haxell transversal fallback and a search-free original-input verifier. The zero-blocker cascade, induced-star invariants, positive-composition signatures and exact total domination have a complete local realization proof. Tests explicitly include valid domination certificates on graphs that also have a transversal; no false infeasibility claim is made. The faster layer theorem remains outside this bounded audit.
+- All 88 standard repository checks passed with serial selected continuous-contact replays. No full 62-plus-16 contact replay was performed.
+- GPT-6.1 Sol agents independently cross-reviewed the new packages; executable evidence and internal reviews do not assert external peer review or proof-assistant verification. Attribution remains Yilin Liu and GPT-6 Astra Pro under the repository policy.
+
 ## 2026-10-27 — Proof completions and executable backend interfaces
 
 - Completed scoped internal reviews of selected concurrent flow, shared setup-budget flow, item matroid union, recipient-matroid configuration and packing-matching summaries. Their complete named mathematical packages are now ready for review. The sharp vertex-color theorem and executable backend have partial readiness; broader color models retain their separate review boundary.

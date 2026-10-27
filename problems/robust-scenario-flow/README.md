@@ -44,7 +44,11 @@ Exact full-rate admission is <code class="math">\mathrm{W}[2]</code>-hard in the
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete adaptive explicit-scenario selected-flow theorem, including scenario-tagged nonnegative Farkas separation, original-coordinate weighted omission, fixed-family rational comparator recovery and fixed-accuracy whole-ground conversion; the parameter-preserving exact-admission Hitting Set reduction including its forest and nonconstant-gap scope. Exact reference supplies common-set certificates, separately scaled adaptive routings and scenario separation.
+
+**Dependencies and scope.** Exact polynomial rational LP, Farkas duality and the paid fixed-family restriction selector remain theorem dependencies. The sharp whole-ground base requires fixed rational accuracy. Scenario list and routing-budget rows are explicit and charged. Selection is common, routing is adaptive and splittable. No implicit uncertainty, oblivious or unsplittable routing guarantee. Reference uses potentially exponential finite Bland simplex and original selected-set enumeration, not the omission recursion or rational target search. Search-free certificates prove fixed-set optimality; global optimality additionally relies on enumeration and the fixed-family predicate. W[2] hardness uses the source fact recorded by Jansen 2017 and the assumption FPT differs from W[2]. It concerns exact admission with arbitrary explicit scenarios, supplies no constant approximation gap and no single-edge-failure-only lower bound.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

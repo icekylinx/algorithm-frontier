@@ -6,6 +6,11 @@ use either member at each machine. Mandatory job-polymatroid bases and
 one exact assignment budget remain intact. The weighted omission proof
 handles heterogeneous count targets by scaling separator coordinates.
 
+An [exact complete-table realization](reference-realization.md) implements the
+joint LP, heterogeneous service separator, integral recovery and target search
+with explicitly charged vertex, role and count enumeration. It is a separate
+baseline; the fast omission/global-cover bound below retains its own proof.
+
 ## 1. Model and statement
 
 Let P be q>=1 physical machines. Type j has a normalized monotone
@@ -227,6 +232,14 @@ w(Q\setminus I^*)>(1-\beta)w(Q)=w(Q)/R_d.
 ![Formula](../../assets/math/b1d5ec777979d7a1f5a508be.svg)
 
 This is precisely the weighted first-crossing omission inequality.
+The [first-violation certificate construction](../whole-ground-allocation/selection.md),
+Sections 3–6, supplies its prefix-free branch count and polynomial-space
+enumerator. Its combinatorial counting is unchanged when a fresh row is
+computed at each node: the same complete schedule in HT11 supplies the
+protected-witness invariant, as in the
+[changing-region argument](../whole-ground-allocation/adaptive-selection.md),
+Sections 5–6. No row from a previous node is reused as a description of the
+new joint region.
 The scaled weights have polynomial bit length, and their total is
 positive on a failed query. The certificate routine has a child
 avoiding I*, so the same complete schedule survives in that child.

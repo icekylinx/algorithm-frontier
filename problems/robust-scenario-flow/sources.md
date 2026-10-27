@@ -5,6 +5,7 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 ## Canonical manuscripts
 
 - [Adaptive selected flow under explicit network scenarios](proof.md)
+- [Exact realization and review of adaptive scenario flow](reference-realization.md)
 
 ## Mathematical dependencies
 
@@ -18,7 +19,10 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 
 ## Executable evidence
 
-No result-specific executable check is registered. The mathematical proof and the repository document checks have separate roles.
+- [Exact adaptive-scenario reference](reference/README.md) and [implementation](reference/scenarios.py).
+- [Independent scenario path, separator, witness and finite reduction checker](verify/check_scenarios.py).
+
+The mathematical proof and repository document checks have separate roles.
 
 The [verification note](verify/README.md) states which obligations remain symbolic. Import origins and retained notices are recorded in [provenance](../../provenance/README.md).
 

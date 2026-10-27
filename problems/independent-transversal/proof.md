@@ -535,3 +535,12 @@ verification, external review, or implementation benchmarks.
 ---
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.
+
+## Executable elementary fallback
+
+The [reference implementation and independent verifier](reference/README.md)
+realize the exact elementary alternative above. Its
+[local proof](reference-realization.md) supplies zero-blocker cascade handling,
+positive-signature termination and explicit input/output accounting. The
+faster current-blocker layer procedure remains a separate implementation
+interface.

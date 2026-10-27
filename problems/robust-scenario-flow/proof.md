@@ -18,6 +18,10 @@ with polynomial space and common service at least
 There is no exponent depending on the scenario count or the number
 of routing-budget rows.
 
+The [exact reference realization](reference-realization.md) supplies
+scenario-specific certificates, common-rate routings and separation, with
+its own potentially exponential baseline running time.
+
 After proving this corollary, the note gives a parameter-preserving
 Hitting Set reduction: exact full-demand admission is W[2]-hard in
 c even without routing budgets, with unit demands and one shared

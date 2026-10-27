@@ -37,7 +37,11 @@ No complexity lower bound is claimed. A returned certificate refutes the stated 
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The complete elementary certifying fallback: induced-star current-blocker invariants, strict earlier-star zero-blocker cascades, positive-composition signature bound, exact total-domination/constellation output and independent original-input verification. The derived public procedure has a new local executable realization and separately charged exponential-in-class-count work.
+
+**Dependencies and scope.** The elementary procedure is credited to Graf and Haxell, arXiv:1811.02687v2, Definition 3 and Section 2. It requires no claw or slack promise. Within-class edges are removed exactly as in the source convention. A domination constellation is not a certificate that no independent transversal exists. The verifier checks the precise elementary alternative and no stronger infeasibility claim. The faster current-blocker layer theorem and its input-linear layer primitives remain outside this bounded review scope. Python hash-table operations and optional observer costs are separately charged; no fast-layer implementation or formal verification is claimed.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
@@ -46,3 +50,11 @@ The [verification note](verify/README.md) records the proof scope, executable ev
 The qualitative certifying theorem and operations are due to [Graf and Haxell](https://arxiv.org/html/1811.02687v2). The proof gives the uniform parameter analysis and its certified stopping test.
 
 **Attribution.** Yilin Liu · GPT-6 Astra Pro
+
+## Executable certifying fallback
+
+The [reference backend](reference/README.md) returns either an independent
+transversal or the full induced-star total-domination witness, with an
+independent original-input validator. Its positive-signature bound is
+exponential in the number of classes. The faster layer construction retains
+its separate theoretical bound.

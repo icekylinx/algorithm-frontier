@@ -64,6 +64,64 @@ O(n^{3/2})
 O(n)
 -->
 ![Formula](../../../assets/math/387008096a415eb2a5c95f1d.svg)
- size. Temporary workspace and rational bit complexity are distinct quantities. The finite checker above does not implement this sparse exchange graph or the classical pairwise-distance-preserver primitive; those claims rely on the linked mathematical arguments and external algorithmic interfaces.
+ size. Temporary workspace and rational bit complexity are distinct quantities.
+
+## Executable supplied-baseline arborescence reporting
+
+Run the [independent arborescence checker](check_arborescence_reporting.py):
+
+```sh
+python3 problems/exact-failure-preservers/verify/check_arborescence_reporting.py
+```
+
+The [reference backend](../reference/README.md) implements the actual
+heavy-light/segment-tree auxiliary graph and deterministic phased short-path
+and hub-tree reporting from a supplied optimum directed rooted baseline.
+The [realization proposition](../manuscripts/reference-arborescence-reporting.md)
+matches its transitions, lexicographic shortest paths and literal original-ID
+updates to the companion's proved construction. It uses dense exact
+Floyd–Warshall preprocessing. It does not claim the optimized arithmetic
+preprocessing bound displayed above or compute the initial optimum baseline.
+
+The checker enumerates all root-entering-arc-free loopless directed graphs
+on four labeled vertices at a fixed root, under five nonnegative integer or
+rational cost profiles. One profile is all zero. It enumerates rooted
+directed spanning arborescences independently to supply baseline optima and
+every failure optimum. Each HLD transition row is compared against a direct
+graphic-forest exchange test; the partition endpoint is checked separately.
+Reports must be spanning directed trees, avoid the failed original ID, attain
+the independently enumerated value, use only retained support, and minimize
+the number of added outside labels among optimal repairs.
+
+Six bidirected-path fixtures on ten, twenty-five and sixty-five vertices,
+with zero or rational outside costs, exercise actual hub-tree reports.
+Their failure optima follow independently by forced root-to-failure paths;
+they are not supplied by an exponential baseline search. Boundary fixtures
+cover a single vertex, a nonzero root, parallel original arcs, ignored loops
+and root-entering arcs. Nine malformed or suboptimal-baseline inputs are
+rejected. Two additional checks delete the caller's input list and disable
+all preprocessing functions before reporting.
+
+| Finite domain or outcome | Count |
+|---|---:|
+| Four-vertex graph topologies | 512 |
+| Cost profiles | 5 |
+| Feasible four-vertex profile instances | 1,520 |
+| Profile instances without a spanning baseline | 1,040 |
+| Directly checked baseline transition rows | 4,754 |
+| Ordinary query comparisons | 11,491 |
+| Feasible ordinary queries | 9,090 |
+| Infeasible ordinary queries | 2,401 |
+| Queries using stored hub trees | 171 |
+| Queries using stored explicit paths | 2,184 |
+| Larger path fixtures | 6 |
+| Other boundary fixtures | 2 |
+| Largest auxiliary graph vertex count | 255 |
+
+The executable scope is the named supplied-baseline arborescence backend.
+Finite graph checks do not establish arbitrary-matroid or valuated exchange
+theorems, the optimized preprocessing implementation, or lower-bound
+reductions. Those retain the linked mathematical proofs and primary
+dependencies. No proof-assistant verification is claimed.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.
