@@ -1,38 +1,94 @@
 # Verification and scope
 
-The evidence for this result consists of its [mathematical proof](../proof.md) and the following companion manuscripts:
+The [main proof](../proof.md) and [reference realization](../reference-realization.md)
+cover the transfer family and its six canonical components: weighted selection,
+adaptive residual budgets, streamed global conversion, rational comparator
+recovery, integer quotas and the model-specific transfers.
 
-- [Corank omission with a changing residual budget](../adaptive-selection.md)
-- [A polynomial-space conversion from corank gaps to global exponential time](../global-conversion.md)
-- [Faster global time for coarser integer-quota approximation](../integer-quotas.md)
-- [Rational comparator recovery without splitting the approximation error](../rational-optimization.md)
-- [Single-exponential corank time for weighted packing through first-violation prefixes](../selection.md)
+## Mathematical review
 
-## Mathematical evidence
+Internal review covers the complete shared family, including exact first-
+crossing words and unfinished states, paid selector failures, unchanged
+protected completions under adaptive budgets, local cover construction,
+count profiles/product streaming, polynomial workspace, fixed-family
+rational reoptimization and every small-quota endpoint. The corank-profile
+and selector-cost companion proofs have matching oracle/grid/comparator
+interfaces. Sharp Gamma-based global displays retain fixed rational
+tradeoff parameters; variable binary inputs use the stated supplied
+rational upper-bound alternative.
 
-- Forced omissions retain one full original witness, and local extension time includes failures and restriction-selector work.
-- The deterministic block cover counts profiles and Cartesian-product choices while proving polynomial workspace.
-- Weighted selection, adaptive budgets and rational optimization have separate manuscripts, retaining each application’s family, comparator and exact constraints.
-- Scheduling keeps the physical ground in its dual, allocation retains heavy options after seeding, and integer quotas have separate one-unit endpoints.
+Actual model-specific proofs have been checked for one-value budgeted
+allocation, compulsory two-value budgeted allocation, arbitrary intrinsic
+values with residual heavy completion, two-size scheduling, splittable
+selected flow, explicit adaptive scenarios and the shared setup/routing
+budget. Their original ranks, exact scalar budgets, mandatory totals,
+resource separation and fixed benchmarks are retained. Disposal/complement-
+prefix rounding preserves one true cost objective. The balanced hidden-
+subset lower bounds preserve valid ranks and force the hidden set only
+for the stated strictly better factors in the deterministic oracle model.
+No optimal exponential base or explicit-eligibility hardness follows.
 
 ## Executable evidence
 
-[verify_profile_certificates.py](../../../tools/verify_profile_certificates.py) checks the following finite claim:
-
-Integer-quota arithmetic: <code class="math">d=2,\ldots,30</code> and every <code class="math">d&lt;K\le399</code> (11,107 cases) satisfy <code class="math">K/(K-\lceil K/d\rceil)\le(d+1)/(d-1)</code>; every <code class="math">1\le K\le d</code> satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. Only the integer-quotas companion is covered; no global-conversion check is claimed.
-
-Run from the repository root:
-
 ```sh
+python3 problems/whole-ground-allocation/verify/check_selection.py
 python3 tools/verify_profile_certificates.py
 ```
 
-These programs do not implement the full algorithm or mechanically verify its oracle, approximation and running-time arguments.
+The [reference backend](../reference/README.md) executes actual prefix-free
+omission, streamed greedy block covers and exact rational search. The
+independent checker supplies:
 
-## Model and verification boundaries
+- 180 complete first-crossing languages against all finite binary prefixes,
+  checking prefix-freeness, exact Bernoulli mass and unfinished-state bounds.
+- 240 original weighted packing gaps against exhaustive original selected
+  sets, including 120 calls with certified weighted two-matroid selectors.
+  Exact algebraic-power comparisons check node and prefix-state accounting.
+- 108 local greedy containment covers with exact minimizing seed sizes,
+  coverage and size/weighted inequalities; 78 full streamed seed families
+  covering every omitted set on grounds up to twelve elements.
+- 80 rational-comparator recoveries with deliberately nonmonotone weak
+  answers, plus zero optimum and a binary-large denominator bound.
+- 24 native shared-setup/routing-budget flow gaps, compared with independently
+  computed original set rates on private-edge networks. These use the actual
+  Farkas separator, prefix recursion and exact primal/dual recovery.
+- Explicit failed selector and zero-deficit counts, an actual two-element
+  prefix deletion, huge binary ratio counters, and seven malformed inputs.
 
-Finite quota tests support only the integer-tradeoff companion. They do not implement global covering families or establish their subexponential overhead. Approximation, rank-oracle, fixed-accuracy and bit-complexity claims retain the distinct models of each transfer.
+The checker enumerates selected sets and all finite binary words only as
+independent comparators. The backend itself uses the actual budget-pruned
+prefix DFS. It stores local covers and streams profiles/products, rather
+than storing an exponential global seed family. The native flow comparator
+uses original capacity, fee and charge data directly. These finite checks
+do not prove the asymptotic transfer or validate arbitrary external oracles.
 
-The [source map](../sources.md) identifies the actual proof dependencies. Repository checks validate the registry, links, notation and generated catalogue; those checks do not establish mathematical correctness. Proof-assistant verification and external peer review are not claimed.
+The existing profile checker separately checks integer-quota arithmetic
+for `d=2,...,30` and every `d<K<=399` (11,107 cases), including small-target
+one-unit identities. It does not execute allocation recovery or replace
+the new global-conversion checks.
+
+## Model and implementation boundaries
+
+Generic runtime claims include the declared selector, separator and
+extension work, their bit lengths and witness recovery. The native flow
+adapter uses the existing finite Bland simplex, with its separate
+potentially exponential pivot bound. It executes actual omission but does
+not supply a polynomial LP implementation. The generic wrapper accepts a
+supplied rational admissible base; arbitrary algebraic-input manipulation
+is not implemented.
+
+The reference does not implement every allocation/scheduling rounding and
+recovery algorithm. Those retain their complete mathematical constructions
+and named paid LP/SFM/intersection/decomposition dependencies. Original
+model distinctions remain essential: adaptive versus common routing,
+compulsory versus selected players, one scalar budget versus several,
+intrinsic versus unrelated value classes, binary multiplicities versus
+explicit grounds. Independent intrinsic-value family companions are not
+certified merely by their shared terminology.
+
+The [source map](../sources.md) records the dependencies and attribution.
+Repository checks validate links, notation and generated surfaces rather
+than mathematical correctness. External peer review and proof-assistant
+verification are not claimed.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

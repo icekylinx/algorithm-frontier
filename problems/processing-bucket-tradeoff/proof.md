@@ -6,6 +6,11 @@ is exact. The algorithm includes factor 5/3 in 2^q polynomial time,
 where q counts physical machines. This is an exponential-time theorem,
 not a polynomial-time improvement for general unrelated scheduling.
 
+The [complete-table bucket realization](reference-realization.md) implements
+the exact label masks and original-total joint recovery, sharing the canonical
+general-processing plan solver. Its LP/count enumeration costs are distinct
+from the paid polynomial primitives in the theorem below.
+
 ## 1. Model and theorem
 
 Let P be q>=1 machines. Each type j has a normalized monotone integral

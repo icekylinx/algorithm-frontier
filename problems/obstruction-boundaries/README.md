@@ -70,10 +70,22 @@ Exact compact separation would imply <code class="math">\mathsf{P}=\mathsf{NP}</
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** Both canonical obstruction theorems: exact compact-code membership is coNP-complete through the weighted Max-Cut reduction, including sparse certificates for binary-encoded unused dimensions; and the precise non-Fano fixed-amplitude counterexample with its direct-sum product. The exact reference constructs the reduction, verifies original-input dense or sparse violations without search, recovers violating cuts and separates by streamed enumeration of used coordinates.
+
+**Dependencies and scope.** The Max-Cut primary source uses positive integer weights and a non-strict target; the reduction explicitly shifts that target to its strict-cut threshold. Construction and certificate verification charge actual rational and coordinate bit lengths. The reference separator is exponential in used coordinates. No polynomial exact separator, approximate-separation hardness, Gaussian-amplitude counterexample or general sparsifier construction is claimed. Independent internal proof review and finite executable evidence do not assert external peer review or proof-assistant verification.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
 [Proofs](proof.md), [source map](sources.md), [model review](verify/README.md), [finite replay](verify/README.md).
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.
+
+## Executable exact reduction and certificates
+
+The [reference backend](reference/README.md) constructs the compact body from
+original weighted Max-Cut instances, verifies strict violation witnesses
+and decodes them back to original cuts. A separate streamed exact separator
+has explicitly exponential time; it does not supply the polynomial compact
+oracle excluded by the theorem.

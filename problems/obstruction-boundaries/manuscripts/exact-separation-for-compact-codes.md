@@ -95,7 +95,11 @@ z\in Q_{1/4}
 ![Formula](../../../assets/math/ad1d02d9e4c7b655fb248477.svg)
 The construction has polynomial size and rational bit complexity.
 
-This proves coNP-hardness. Nonmembership lies in NP because a violating query <code class="math">y</code>, or a violated cube coordinate, is a polynomially checkable certificate. Therefore membership is coNP-complete. <code class="math">\square</code>
+This proves coNP-hardness. Nonmembership lies in NP because a violating query <code class="math">y</code>, or a violated cube coordinate, is a polynomially checkable certificate. For sparse rows with a binary-encoded ambient dimension, the query certificate
+need only list its one-valued used coordinates: omitted coordinates can be
+zero, and at most the total row length many coordinates affect any predicate.
+Thus the certificate remains polynomial in that encoding as well.
+Therefore membership is coNP-complete. <code class="math">\square</code>
 
 ## 3. Algorithmic implications
 

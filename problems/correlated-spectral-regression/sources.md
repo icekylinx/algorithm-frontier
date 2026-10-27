@@ -15,6 +15,7 @@ The main proof gives the family-level theorem composition. The following canonic
 | [Graph incidence lifts](manuscripts/correlated-vertex-and-edge-failure-spectral-graphs.md) | Vertex/edge label geometry, graded exterior features, and graph lower bounds. |
 | [Graded and simplicial incidence lifts](manuscripts/graded-incidence-and-simplicial-spectral-sparsification.md) | Rank-sensitive incidence decoding, repeated labels, rational implementation, and simplicial applications. |
 | [Whole seminorm summaries](manuscripts/arbitrary-seminorms-under-correlated-failures.md) | The common projector theorem; separate optimal-support existence and constructive lifted-oracle interfaces. |
+| [Rational importance and ridge realization](manuscripts/reference-rational-importance-regression.md) | Exact generalized-inverse trace certificates, one-failure and supplied-pool accounting, preflight gates, scenario PSD embeddings, and the unconstrained supplied-response ridge core with explicit software boundary. |
 
 ## External inputs
 
@@ -26,5 +27,6 @@ The companion manuscripts state the exact theorem, input representation, accurac
 - Wigderson and Xiao, [Derandomizing the Ahlswede–Winter Matrix-Valued Chernoff Bound](https://theoryofcomputing.org/articles/v004a003/v004a003.pdf), for the stated deterministic finite-scenario alternatives.
 - Basu et al., [Optimal Sparsifiers for Minkowski Sums and Sums of Seminorms](https://arxiv.org/pdf/2609.20238), for the optimal ordinary seminorm existence theorem. The constructive branch separately requires the lifted sum evaluation and roundedness access stated in its manuscript.
 - Feldman and Langberg, [A Unified Framework for Approximating and Clustering Data](https://arxiv.org/abs/1106.1379), and In, Li, Woodruff, and Wu, [Robust Sparsification via Sensitivity](https://proceedings.mlr.press/v267/in25a.html), for the sensitivity framework and the ordinary separation-pool antecedent.
+- Tropp, [User-friendly tail bounds for sums of random matrices](https://arxiv.org/pdf/1004.4389), arXiv version seven, Theorem 6.1, for the centered matrix-Bernstein inequality used to quantify the reference planner's conservative count envelope.
 
 **Attribution:** Yilin Liu and GPT-6 Astra Pro.

@@ -5,6 +5,7 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 ## Canonical manuscripts
 
 - [Global exponential-time allocation, scheduling and selected-flow transfers](proof.md)
+- [Realization of weighted prefix omission, streamed covers and rational recovery](reference-realization.md)
 - [Corank omission with a changing residual budget](adaptive-selection.md)
 - [A polynomial-space conversion from corank gaps to global exponential time](global-conversion.md)
 - [Faster global time for coarser integer-quota approximation](integer-quotas.md)
@@ -35,6 +36,8 @@ The canonical manuscripts below contain the mathematical arguments. Computationa
 - [author journal manuscript](https://sites.cs.ucsb.edu/~daniello/papers/monotoneLocalSearch19.pdf)
 
 ## Executable evidence
+
+- [Actual weighted omission and streamed global reference](reference/README.md), with [independent prefix/packing/cover/search/native-flow checks](verify/check_selection.py).
 
 - [verify_profile_certificates.py](../../tools/verify_profile_certificates.py): Integer-quota arithmetic: <code class="math">d=2,\ldots,30</code> and every <code class="math">d&lt;K\le399</code> (11,107 cases) satisfy <code class="math">K/(K-\lceil K/d\rceil)\le(d+1)/(d-1)</code>; every <code class="math">1\le K\le d</code> satisfies the one-unit gate. Selection, budgets, rank oracles and rounding are not executed. Only the integer-quotas companion is covered; no global-conversion check is claimed.
 

@@ -154,6 +154,11 @@ def checks(full_contacts: bool, jobs: int) -> list[Check]:
         Check('Linear-size selector degree conversion and matching adapter', ('problems/degree-constrained-subgraphs/verify/check_linear_selector.py',)),
         Check('Canonical contact-rank crowns and physical optimum offsets', ('manuscripts/graph-backends/verify/check_odd_crown.py',)),
         Check('Exact demand trimming and arbitrary-rank support forests', ('manuscripts/graph-backends/verify/check_static_allocations.py',)),
+        Check('whole-ground-allocation exact reference', ('problems/whole-ground-allocation/verify/check_selection.py',)),
+        Check('arbitrary-processing-scheduling exact reference', ('problems/arbitrary-processing-scheduling/verify/check_profiles.py',)),
+        Check('processing-bucket-tradeoff exact reference', ('problems/processing-bucket-tradeoff/verify/check_buckets.py',)),
+        Check('correlated-spectral-regression exact reference', ('problems/correlated-spectral-regression/verify/check_importance_regression.py',)),
+        Check('obstruction-boundaries exact reference', ('problems/obstruction-boundaries/verify/check_compact_body.py',)),
         Check("Non-Fano obstruction", ("tools/verify_non_fano.py",)),
         Check(
             "Full-contact receipt binding and coverage metadata",

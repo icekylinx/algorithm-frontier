@@ -38,7 +38,11 @@ The robust importance multiplier is at least <code class="math">\binom{h+d}{d}</
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review in the stated scope.** The exact rational arbitrary-rank PSD importance core with possibly singular fixed background, deletion monotonicity and effective-dimension accounting, sharper one-label-failure maxima, supplied-pool estimator with separate deterministic mass and probabilistic domination contracts, conservative preflight gates, exact fixed-scenario all-vector embedding checks, and the supplied-response unconstrained ridge realization. Mathematical review includes the weak convex-regression bilinear lemma with its convexity, attainment and nonnegative-penalty hypotheses.
+
+**Dependencies and scope.** The reference does not generate random pools, sample a sparse summary or implement matrix-exponential derandomization. Supplied-pool certificates prove exact score/mass accounting; coverage and simultaneous domination remain separate probability events in the mathematical theorem. Nontrivial planner modes return `weights=None`. The ridge solver implements unconstrained quadratic objectives. General convex constrained/penalized minimization, RIP/coherence codes, graded incidence software, Lewis weights and whole-seminorm backends are outside this implementation and scoped readiness. Their mathematical claims remain separately stated with primary dependencies. Fixed-scenario embedding checks prove PSD inequalities for all real vectors in that scenario, without asserting all-failure sampling success. Exact rational bit lengths and explicit input/certificate matrix dimensions are charged. No external peer review or proof-assistant verification is claimed.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

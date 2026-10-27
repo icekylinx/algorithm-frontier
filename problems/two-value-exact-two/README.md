@@ -48,7 +48,11 @@ The [strict-below-two oracle obstruction](../allocation-lower-bounds/README.md) 
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete compulsory-player two-intrinsic-value arbitrary-assignment-cost theorem: polynomial affordable heavy-recipient parameter, attaining minimum original heavy completion, adaptive residual small-count region and protected pair, exact integral quota recovery, one-unit/pure-heavy/high-target boundaries, one-sided value-grid search and matching strict-below-two recipient-oracle threshold.
+
+**Dependencies and scope.** All players are compulsory, values are intrinsic to disjoint heavy/light types and there is one exact nonnegative assignment-cost budget. Original heavy pairs remain available after every forced light omission; an attaining exact completion is required. Paid exact rank/SFM/LP and weighted matroid/integral polymatroid intersection retain their explicitly proved interfaces. The large-target branch uses the fixed compulsory set and cost-preserving additive rounding; no optional-player all-target LP is inferred. Shared reference evidence realizes weighted unit coverage, adaptive prefix recursion and native scalar setup flow. It does not implement the full two-value allocation LP/quota/rounding pipeline. Mathematical completeness is distinct from that software scope. The strict-below-two lower bound is deterministic hidden-set rank-oracle complexity for the same affordable-heavy parameter with zero costs. It does not imply ordinary explicit-eligibility hardness or an optimal exponential base.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

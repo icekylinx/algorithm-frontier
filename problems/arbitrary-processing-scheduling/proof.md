@@ -22,6 +22,11 @@ the entire supplied rational accuracy, even when 1/epsilon itself
 is exponentially large.
 No individual job identity or resource-unit expansion is used.
 
+The [complete-table realization](reference-realization.md) implements occupied
+profiles and their joint original-total recovery. Its profile iterator retains
+the binary-accuracy storage contract, while the reused reference LP/count solver
+has its own explicitly charged enumeration and storage costs.
+
 ## 1. Model and precise theorem
 
 Let P consist of q>=1 machines. For every type j, the normalized

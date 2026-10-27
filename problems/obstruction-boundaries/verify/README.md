@@ -24,7 +24,22 @@ The replay concerns exactly this seven-element, rank-three ternary example. It d
 
 At homogenizing bit zero, the maximum weighted degree bounds the cut by the degree sum of the selected vertices. At bit one, the reduction's expression is the cut value minus the target. The conversion from signed coefficients uses <code class="math">w_e=4&#124;c_e&#124;</code> and <code class="math">z_e\in\{0,1/2\}</code>; the lower inequality of the body is automatic.
 
-The complexity result is coNP-completeness of exact membership. A polynomially checkable violating assignment certifies nonmembership. A compact polynomial-time exact separation oracle for the same body would decide membership and imply <code class="math">P=NP</code>. The finite non-Fano executable does not certify this reduction.
+The complexity result is coNP-completeness of exact membership. A polynomially checkable violating assignment certifies nonmembership. A compact polynomial-time exact separation oracle for the same body would decide membership and imply <code class="math">P=NP</code>. The non-Fano executable has a separate scope. The new
+[compact-body checker](check_compact_body.py) independently enumerates original
+weighted cuts and compares every constructed parity identity.
+
+```sh
+python3 -B problems/obstruction-boundaries/verify/check_compact_body.py
+```
+
+It covers 226 graphs, 1,282 thresholds and 38,290 query identities, with 632
+nonmembership witnesses decoded back to cuts above the original threshold.
+It includes zero-degree/empty graphs, equality boundaries, parallel records,
+101-digit weights, lower-side and cube violations, an empty-check dimension
+gate, a 101-digit declared dimension with one used coordinate, and 24 malformed cases. A fresh interpreter blocks the constructor and
+search during witness verification. This is finite evidence for the exact
+[reference reduction](../reference/README.md); the canonical written argument
+and the identified classical Max-Cut source establish the complexity result.
 
 ## Fixed-amplitude boundary
 

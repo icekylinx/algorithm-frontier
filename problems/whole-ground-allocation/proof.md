@@ -9,6 +9,11 @@ one-value budgeted allocation and compulsory two-value budgeted
 allocation, and exact factor three halves for two-size scheduling, have
 whole-ground base `50/27 < 2`.
 
+The [reference realization](reference-realization.md) executes actual
+weighted first-crossing omissions, streamed block covers and fixed-family
+rational search, including native fixed/adaptive flow integration. Paid
+model primitives and their software costs remain distinct.
+
 The transformation `A^c -> (2-1/A)^(q+o(q))` is established monotone
 local search. The substantive checks here are the forced-omission
 interfaces, the unchanged full-target promises, and their compatibility

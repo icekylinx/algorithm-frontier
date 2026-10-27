@@ -132,6 +132,14 @@ The complete signed interval-disjunction proof, bounded-slack interpolation, sig
 
 [Proof](../problems/boolean-linear-compiler/proof.md) · [Dependencies](../problems/boolean-linear-compiler/sources.md) · [Evidence](../problems/boolean-linear-compiler/verify/README.md) · Reviewed 2026-10-26
 
+### [Exact-separation and non-Fano boundaries](../problems/obstruction-boundaries/)
+
+Both canonical obstruction theorems: exact compact-code membership is coNP-complete through the weighted Max-Cut reduction, including sparse certificates for binary-encoded unused dimensions; and the precise non-Fano fixed-amplitude counterexample with its direct-sum product. The exact reference constructs the reduction, verifies original-input dense or sparse violations without search, recovers violating cuts and separates by streamed enumeration of used coordinates.
+
+**Dependencies and scope.** The Max-Cut primary source uses positive integer weights and a non-strict target; the reduction explicitly shifts that target to its strict-cut threshold. Construction and certificate verification charge actual rational and coordinate bit lengths. The reference separator is exponential in used coordinates. No polynomial exact separator, approximate-separation hardness, Gaussian-amplitude counterexample or general sparsifier construction is claimed. Independent internal proof review and finite executable evidence do not assert external peer review or proof-assistant verification.
+
+[Proof](../problems/obstruction-boundaries/proof.md) · [Dependencies](../problems/obstruction-boundaries/sources.md) · [Evidence](../problems/obstruction-boundaries/verify/README.md) · Reviewed 2026-10-27
+
 ### [Recipient-matroid configuration](../problems/recipient-matroid-configuration/)
 
 The complete recipient-matroid configuration-comparator theorem: universal simultaneous reservations, every ordered-prefix rank-additivity invariant, current eager release, retained-prefix exchanges, sharp rank-cover coefficient, exact and positive-slack rank bounds, fractional fat-service reduction and target-grid search. The shipped resource-state backend realizes completion, current freedom tests and safe prefix exchanges.
@@ -147,6 +155,30 @@ The complete explicit-item player-basis theorem and configuration-comparator upg
 **Dependencies and scope.** The original player matroid is supplied by an independence oracle. Polynomial matroid-union/partition and bipartite matching remain named, paid algorithmic dependencies; no unit-cost derived union oracle is assumed. The configuration LP is a proof comparator and is neither supplied nor enumerated by the algorithm. No guarantee against the unrestricted original compact LP is asserted. The new finite checker supports rank and recovery identities; it is not the polynomial union algorithm or a complete allocation implementation. The finite-rank factor tends to four, so no fixed improvement below four is claimed.
 
 [Proof](../problems/item-matroid-union/proof.md) · [Dependencies](../problems/item-matroid-union/sources.md) · [Evidence](../problems/item-matroid-union/verify/README.md) · Reviewed 2026-10-27
+
+### [Intrinsic two-value allocation](../problems/two-value-exact-two/)
+
+The complete compulsory-player two-intrinsic-value arbitrary-assignment-cost theorem: polynomial affordable heavy-recipient parameter, attaining minimum original heavy completion, adaptive residual small-count region and protected pair, exact integral quota recovery, one-unit/pure-heavy/high-target boundaries, one-sided value-grid search and matching strict-below-two recipient-oracle threshold.
+
+**Dependencies and scope.** All players are compulsory, values are intrinsic to disjoint heavy/light types and there is one exact nonnegative assignment-cost budget. Original heavy pairs remain available after every forced light omission; an attaining exact completion is required. Paid exact rank/SFM/LP and weighted matroid/integral polymatroid intersection retain their explicitly proved interfaces. The large-target branch uses the fixed compulsory set and cost-preserving additive rounding; no optional-player all-target LP is inferred. Shared reference evidence realizes weighted unit coverage, adaptive prefix recursion and native scalar setup flow. It does not implement the full two-value allocation LP/quota/rounding pipeline. Mathematical completeness is distinct from that software scope. The strict-below-two lower bound is deterministic hidden-set rank-oracle complexity for the same affordable-heavy parameter with zero costs. It does not imply ordinary explicit-eligibility hardness or an optimal exponential base.
+
+[Proof](../problems/two-value-exact-two/proof.md) · [Dependencies](../problems/two-value-exact-two/sources.md) · [Evidence](../problems/two-value-exact-two/verify/README.md) · Reviewed 2026-10-27
+
+### [Unrelated-value additive allocation](../problems/unrelated-values-additive/)
+
+The complete exact-budget unrelated-value additive theorem against the fractional optimum on an actual fixed-family selected set: nonnegative original service support separation, full-accuracy weighted omission, uniform denominator recovery and original fixed-set reoptimization, disposal/complement-prefix integral rounding with one exact cost objective, and fixed-accuracy whole-ground conversion.
+
+**Dependencies and scope.** The original fixed-cardinality restriction selector and paid exact rational LP, rank/SFM and integral polymatroid intersection primitives remain mathematical dependencies. The fractional comparator relaxes resource counts, never mixes selected bases. Prefix rounding preserves one scalar assignment cost and loses the stated original largest unit per player. It supplies no positive multiplicative factor without controlling that additive term and does not preserve several independent cost budgets. Shared executable evidence realizes weighted selection, rational recovery and global cover primitives; no native general unrelated-value allocation or rounding solver is claimed. Positive-cost coordinates exceeding the whole budget remain in the fractional model unless a zero-budget exact mask applies. The sharp global expression uses fixed rational accuracy; binary-variable accuracy retains the stated rational upper-envelope implementation.
+
+[Proof](../problems/unrelated-values-additive/proof.md) · [Dependencies](../problems/unrelated-values-additive/sources.md) · [Evidence](../problems/unrelated-values-additive/verify/README.md) · Reviewed 2026-10-27
+
+### [Whole-ground selection and transfers](../problems/whole-ground-allocation/)
+
+The complete whole-ground transfer family and all six shared components: actual weighted first-crossing omission with full unfinished/failed work accounting; attaining adaptive residual budgets; streamed logarithmic-block covers and corank-profile refinement; fixed-family rational comparator recovery; exact integer-quota endpoints/tradeoffs; every main allocation, scheduling and flow transfer; and the stated balanced deterministic rank-oracle barriers. Reference implements actual prefix recursion, block streaming, rational search, certified selectors and native fixed/adaptive flow gaps.
+
+**Dependencies and scope.** Paid restriction/completion selectors, valid polynomial-bit separators, exact LP/SFM/intersection/decomposition and actual model-specific recovery remain stated mathematical primitives. Adaptive rows require the same original protected witness; local strict violation alone cannot certify that premise. The supplied rational-base reference implements exact block comparisons. Sharp algebraic Gamma global displays require fixed rational tradeoffs; varying binary inputs retain the supplied rational upper-envelope option and its encoding cost. The native flow integration executes real omission and exact witness recovery, but uses the canonical finite Bland simplex with separately charged potentially exponential LP cost. The code does not implement every allocation/scheduling recovery or arbitrary algebraic-number input. All selected sets and original ranks, mandatory totals, scalar budgets and comparators retain their own models. Heavy/light types must be intrinsically disjoint in that transfer; omitted light candidates keep original heavy options. Balanced lower bounds are deterministic black-box rank-oracle statements for strictly better factors, not explicit-input hardness or optimality of the threshold base.
+
+[Proof](../problems/whole-ground-allocation/proof.md) · [Dependencies](../problems/whole-ground-allocation/sources.md) · [Evidence](../problems/whole-ground-allocation/verify/README.md) · Reviewed 2026-10-27
 
 ### [Selected concurrent flow](../problems/selected-flow/)
 
@@ -195,6 +227,22 @@ The complete deterministic corank-parameterized finite-factor obstruction for op
 **Dependencies and scope.** Uses the deterministic `W[1]`-hardness direction of Abboud, Lewi and Williams, Losing Weight by Gaining Edges, Definition 1.1, Theorem 1.3 and Section 4, and the assumption `FPT` differs from `W[1]`. The bounded nonnegative source avoids the separate randomized arbitrary-range reduction. The conclusion requires integer service, exact budgets and an optional common basis. It does not cover randomized algorithms, fractional service or relaxed budgets, and supplies no ETH or whole-ground exponential lower bound. Finite reduction checks do not certify the external hardness theorem.
 
 [Proof](../problems/robust-two-scenario-hardness/proof.md) · [Dependencies](../problems/robust-two-scenario-hardness/sources.md) · [Evidence](../problems/robust-two-scenario-hardness/verify/README.md) · Reviewed 2026-10-27
+
+### [Arbitrary-processing scheme](../problems/arbitrary-processing-scheduling/)
+
+The complete exact-budget arbitrary-processing Theorem PS: original mandatory job-polymatroid bases, arbitrary nonnegative rational pair times/costs, exact bin boundaries, sparse occupied-bin grouping, load-pruned profile streaming with both composition and partition count bounds, one joint minimum-cost upper-prefix recovery, zero feasibility and one-sided grid optimization. The separate common-type-size slot-surplus Theorem S is also audited, including the fixed full-machine workload dual, binary scaled decomposition, guarded compressed count recursion, large-corank enumeration for polynomial space and the supplied-surplus-budget target search. The reference implements the PS profile and shared joint recovery semantics with explicit-table solver costs.
+
+**Dependencies and scope.** The main approximation scheme uses the stated paid exact rank/SFM, rational LP and integral polymatroid-intersection primitives; its accuracy encoding and occupied-bin polynomial-space ledger remain explicit. The shipped reference shares canonical LP-vertex and numeric count enumeration, whose costs and potentially exponential vertex storage are charged separately from the fast theorem. The slot-surplus companion has common positive type sizes and no assignment budget. Its stronger bound retains the slot-surplus promise at OPT and the additive largest-smaller-job term, alongside the unconditional additive-largest-job fallback. That distinct compressed-slot algorithm is mathematically proved but not implemented by the profile reference. Finite reference tests, complete mathematical proofs, formal verification, external review and publication priority are distinct; the latter three are not claimed.
+
+[Proof](../problems/arbitrary-processing-scheduling/proof.md) · [Dependencies](../problems/arbitrary-processing-scheduling/sources.md) · [Evidence](../problems/arbitrary-processing-scheduling/verify/README.md) · Reviewed 2026-10-27
+
+### [Processing-bucket tradeoff](../problems/processing-bucket-tradeoff/)
+
+The complete arbitrary-time bucket-label Theorem AB and its depth/accuracy tradeoff: exact open-left/closed-right masks, full-target label witness, mandatory original bases and exact one-budget joint recovery, upper-prefix machine bounds, zero processing and one-sided grid optimization, complete depth-dependent enumeration accounting and optimality of the stated contiguous one-big-group analysis template. The reference bucket client instantiates the shared general-processing joint plan solver with separate finite solver costs.
+
+**Dependencies and scope.** The theorem uses paid exact rank/SFM, rational LP and integral polymatroid-intersection primitives. The reference shares the canonical general-processing/two-time LP and numeric count baseline, preserving its explicit enumeration and vertex-storage costs rather than claiming the fast per-label implementation. Depth is charged numerically in the stated H+k bounds; no polynomial-in-log-depth claim is made, and no finite depth attains exact three-halves by this one-big-group construction. Template optimality is not a general scheduling lower bound. Finite executable evidence is not proof-assistant verification or external peer review; exhaustive publication priority is not claimed.
+
+[Proof](../problems/processing-bucket-tradeoff/proof.md) · [Dependencies](../problems/processing-bucket-tradeoff/sources.md) · [Evidence](../problems/processing-bucket-tradeoff/verify/README.md) · Reviewed 2026-10-27
 
 ### [Two-size scheduling](../problems/two-size-scheduling/)
 
@@ -286,6 +334,14 @@ Complete actual-feature-rank construction for represented failure lifts and the 
 
 [Proof](../problems/persistence-failure-certificates/proof.md) · [Dependencies](../problems/persistence-failure-certificates/sources.md) · [Evidence](../problems/persistence-failure-certificates/verify/README.md) · Reviewed 2026-10-26
 
+### [Correlated spectral, regression and seminorm summaries](../problems/correlated-spectral-regression/)
+
+The exact rational arbitrary-rank PSD importance core with possibly singular fixed background, deletion monotonicity and effective-dimension accounting, sharper one-label-failure maxima, supplied-pool estimator with separate deterministic mass and probabilistic domination contracts, conservative preflight gates, exact fixed-scenario all-vector embedding checks, and the supplied-response unconstrained ridge realization. Mathematical review includes the weak convex-regression bilinear lemma with its convexity, attainment and nonnegative-penalty hypotheses.
+
+**Dependencies and scope.** The reference does not generate random pools, sample a sparse summary or implement matrix-exponential derandomization. Supplied-pool certificates prove exact score/mass accounting; coverage and simultaneous domination remain separate probability events in the mathematical theorem. Nontrivial planner modes return `weights=None`. The ridge solver implements unconstrained quadratic objectives. General convex constrained/penalized minimization, RIP/coherence codes, graded incidence software, Lewis weights and whole-seminorm backends are outside this implementation and scoped readiness. Their mathematical claims remain separately stated with primary dependencies. Fixed-scenario embedding checks prove PSD inequalities for all real vectors in that scenario, without asserting all-failure sampling success. Exact rational bit lengths and explicit input/certificate matrix dimensions are charged. No external peer review or proof-assistant verification is claimed.
+
+[Proof](../problems/correlated-spectral-regression/proof.md) · [Dependencies](../problems/correlated-spectral-regression/sources.md) · [Evidence](../problems/correlated-spectral-regression/verify/README.md) · Reviewed 2026-10-27
+
 ### [Label and whole-block cut sparsification](../problems/label-block-cut/)
 
 The exact rational whole-block incidence-label compiler and decoder, original-row rank compression, common item scalar, original-ID whole-block rank and subspace-query interfaces, uniform full-input dimension gate, and mathematical composition with Quanrud quotient sparsification and the integer-rank adaptive restriction/error/probability/bit ledger.
@@ -331,20 +387,13 @@ The complete elementary certifying fallback: induced-star current-blocker invari
 These families have not yet received a scoped readiness entry in this registry. Their existing statements retain their own assumptions.
 
 - [Numeric targets and support patterns](../problems/numeric-target-frontier/)
-- [Correlated spectral, regression and seminorm summaries](../problems/correlated-spectral-regression/)
-- [Exact-separation and non-Fano boundaries](../problems/obstruction-boundaries/)
 - [Arbitrary-value allocation scheme](../problems/arbitrary-value-allocation-scheme/)
 - [Recipient polymatroids](../problems/recipient-polymatroid/)
-- [Intrinsic two-value allocation](../problems/two-value-exact-two/)
 - [Intrinsic values near factor two](../problems/intrinsic-values-near-two/)
-- [Unrelated-value additive allocation](../problems/unrelated-values-additive/)
 - [Unrelated values with a joint role](../problems/unrelated-values-joint-role/)
-- [Whole-ground selection and transfers](../problems/whole-ground-allocation/)
 - [Robust unrelated allocation](../problems/robust-unrelated-allocation/)
-- [Arbitrary-processing scheme](../problems/arbitrary-processing-scheduling/)
 - [Activated-machine scheduling](../problems/activated-machine-scheduling/)
 - [Six-profile scheduling](../problems/six-profile-three-halves/)
-- [Processing-bucket tradeoff](../problems/processing-bucket-tradeoff/)
 - [Many-size workload scheduling](../problems/many-size-scheduling/)
 - [Commitment scheduling](../problems/commitment-scheduling/)
 
@@ -428,8 +477,10 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [manuscripts/graph-backends/verify/check_odd_crown.py](../manuscripts/graph-backends/verify/check_odd_crown.py)
 - [manuscripts/graph-backends/verify/check_static_allocations.py](../manuscripts/graph-backends/verify/check_static_allocations.py)
 - [problems/allocation-lower-bounds/verify/check_barriers.py](../problems/allocation-lower-bounds/verify/check_barriers.py)
+- [problems/arbitrary-processing-scheduling/verify/check_profiles.py](../problems/arbitrary-processing-scheduling/verify/check_profiles.py)
 - [problems/boolean-linear-compiler/verify/check_cardinality_compiler.py](../problems/boolean-linear-compiler/verify/check_cardinality_compiler.py)
 - [problems/boolean-linear-compiler/verify/check_interval_compiler.py](../problems/boolean-linear-compiler/verify/check_interval_compiler.py)
+- [problems/correlated-spectral-regression/verify/check_importance_regression.py](../problems/correlated-spectral-regression/verify/check_importance_regression.py)
 - [problems/degree-constrained-subgraphs/verify/check_linear_selector.py](../problems/degree-constrained-subgraphs/verify/check_linear_selector.py)
 - [problems/degree-constrained-subgraphs/verify/check_reductions.py](../problems/degree-constrained-subgraphs/verify/check_reductions.py)
 - [problems/degree-constrained-subgraphs/verify/check_reference.py](../problems/degree-constrained-subgraphs/verify/check_reference.py)
@@ -461,9 +512,11 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/matroid-failure-summaries/verify/check_weighted_prefix.py](../problems/matroid-failure-summaries/verify/check_weighted_prefix.py)
 - [problems/min-cost-flow/verify/check_capacity_scaling.py](../problems/min-cost-flow/verify/check_capacity_scaling.py)
 - [problems/min-cost-flow/verify/check_recovery.py](../problems/min-cost-flow/verify/check_recovery.py)
+- [problems/obstruction-boundaries/verify/check_compact_body.py](../problems/obstruction-boundaries/verify/check_compact_body.py)
 - [problems/one-value-exact-two/verify/check_one_unit_gate.py](../problems/one-value-exact-two/verify/check_one_unit_gate.py)
 - [problems/packing-matching-summaries/verify/check_product_summary.py](../problems/packing-matching-summaries/verify/check_product_summary.py)
 - [problems/persistence-failure-certificates/verify/check_feature_construction.py](../problems/persistence-failure-certificates/verify/check_feature_construction.py)
+- [problems/processing-bucket-tradeoff/verify/check_buckets.py](../problems/processing-bucket-tradeoff/verify/check_buckets.py)
 - [problems/recipient-matroid-configuration/verify/check_reservations.py](../problems/recipient-matroid-configuration/verify/check_reservations.py)
 - [problems/roabp-affine-pit/verify/all_rank_affine_orbit.py](../problems/roabp-affine-pit/verify/all_rank_affine_orbit.py)
 - [problems/roabp-affine-pit/verify/build_native_papers.py](../problems/roabp-affine-pit/verify/build_native_papers.py)
@@ -492,6 +545,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py](../problems/weighted-prefix-quota-frontier/verify/check_quota_extensions.py)
 - [problems/weighted-prefix-quota-frontier/verify/check_sharp_packing.py](../problems/weighted-prefix-quota-frontier/verify/check_sharp_packing.py)
 - [problems/weighted-prefix-quota-frontier/verify/check_two_weight_lower.py](../problems/weighted-prefix-quota-frontier/verify/check_two_weight_lower.py)
+- [problems/whole-ground-allocation/verify/check_selection.py](../problems/whole-ground-allocation/verify/check_selection.py)
 - [tools/verify_finite_reductions.py](../tools/verify_finite_reductions.py)
 - [tools/verify_non_fano.py](../tools/verify_non_fano.py)
 - [tools/verify_profile_certificates.py](../tools/verify_profile_certificates.py)

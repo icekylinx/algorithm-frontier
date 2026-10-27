@@ -11,6 +11,15 @@ The main proof gives the family-level theorem composition. The following canonic
 | [Compact-code exact membership](manuscripts/exact-separation-for-compact-codes.md) | The weighted-Max-Cut reduction, coNP-completeness of membership, and the consequence for exact separation. |
 | [Non-Fano fixed-amplitude obstruction](manuscripts/non-fano-obstruction-to-fixed-amplitude-bound.md) | The rank-three ternary representation, thirteen supports, fifteen valid signs, and direct sums. |
 
+## Executable reduction and exact verification
+
+The [local realization proof](manuscripts/reference-compact-membership.md)
+records the weighted Max-Cut source's exact threshold direction and positive
+integer convention, read at Karp's Problem 21 and Appendix I. The
+[reference API](reference/README.md) constructs the body in linear record
+work, checks strict nonmembership witnesses without search, and supplies a
+separately exponential exhaustive oracle. No third-party code is imported.
+
 ## Related results and model distinctions
 
 | Result | Role |

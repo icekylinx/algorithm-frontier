@@ -209,6 +209,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [A label-failure compiler for nonnegative sensitivity sampling](problems/correlated-spectral-regression/manuscripts/general-nonnegative-sensitivity-compiler.md)
 - [Graded exterior incidence lifts: spectral sparsification under correlated vertex failures](problems/correlated-spectral-regression/manuscripts/graded-incidence-and-simplicial-spectral-sparsification.md)
 - [Label-vector lifts for simultaneous correlated-failure spectral sparsification](problems/correlated-spectral-regression/manuscripts/label-vector-spectral-and-norm-lifts.md)
+- [Certified rational importance and supplied-response ridge realization](problems/correlated-spectral-regression/manuscripts/reference-rational-importance-regression.md)
 - [Correlated-failure coresets for convexly regularized least squares with linear inverse-accuracy dependence](problems/correlated-spectral-regression/manuscripts/weak-convex-regression-under-correlated-failures.md)
 
 ### [Label and whole-block cut sparsification](problems/label-block-cut/)
@@ -250,6 +251,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Exact separation for compact binary-code partial coloring](problems/obstruction-boundaries/manuscripts/exact-separation-for-compact-codes.md)
 - [A seven-element obstruction to an exact conditional-sign cone bound](problems/obstruction-boundaries/manuscripts/non-fano-obstruction-to-fixed-amplitude-bound.md)
+- [Exact realization of the compact membership obstruction](problems/obstruction-boundaries/manuscripts/reference-compact-membership.md)
 
 ## Allocation and resource matroids
 
@@ -313,6 +315,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [A polynomial-space conversion from corank gaps to global exponential time](problems/whole-ground-allocation/global-conversion.md)
 - [Faster global time for coarser integer-quota approximation](problems/whole-ground-allocation/integer-quotas.md)
 - [Rational comparator recovery without splitting the approximation error](problems/whole-ground-allocation/rational-optimization.md)
+- [Realization of weighted prefix omission, streamed covers and rational recovery](problems/whole-ground-allocation/reference-realization.md)
 - [Single-exponential corank time for weighted packing through first-violation prefixes](problems/whole-ground-allocation/selection.md)
 
 ## Selected flow and robust allocation
@@ -359,6 +362,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 [Statement](problems/arbitrary-processing-scheduling/README.md) · [Main proof](problems/arbitrary-processing-scheduling/proof.md) · [Sources](problems/arbitrary-processing-scheduling/sources.md) · [Verification](problems/arbitrary-processing-scheduling/verify/README.md)
 
+- [Exact occupied-profile and joint recovery realization](problems/arbitrary-processing-scheduling/reference-realization.md)
 - [Compressed large-job slots and corank scheduling with arbitrary smaller sizes](problems/arbitrary-processing-scheduling/slot-surplus.md)
 
 ### [Activated-machine scheduling](problems/activated-machine-scheduling/)
@@ -372,6 +376,8 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 ### [Processing-bucket tradeoff](problems/processing-bucket-tradeoff/)
 
 [Statement](problems/processing-bucket-tradeoff/README.md) · [Main proof](problems/processing-bucket-tradeoff/proof.md) · [Sources](problems/processing-bucket-tradeoff/sources.md) · [Verification](problems/processing-bucket-tradeoff/verify/README.md)
+
+- [Realization of the arbitrary-processing bucket client](problems/processing-bucket-tradeoff/reference-realization.md)
 
 ### [Two-size scheduling](problems/two-size-scheduling/)
 

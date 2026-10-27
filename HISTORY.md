@@ -1,5 +1,13 @@
 # History
 
+## 2026-10-27 — Whole-ground recovery, general scheduling and obstruction certificates
+
+- Completed whole-ground allocation prefix/omission recursion, streamed covers and rational recovery with weighted selectors and native setup-flow checks. Audited the separate unrelated-value additive and exact-two packages against their actual dependencies; all three mathematical scopes are ready for review.
+- Completed arbitrary-processing and bucket-tradeoff scheduling proof audits and exact reference clients with joint minimum-cost prefix recovery. Independent review found and fixed recursive iterator depth limits; explicit stacks now cover 1,100 occupied coordinates and machines. Fast solver dependencies and the separately proved slot-surplus client retain explicit implementation boundaries.
+- Added singular-background exact PSD importance certificates, supplied-pool accounting, preflight gates, all-vector fixed-scenario embedding checks and unconstrained ridge recovery. These components have partial readiness; no random sampler, general convex optimizer or whole-seminorm implementation is claimed.
+- Completed both canonical obstruction proof audits, including the primary positive-weight Max-Cut source, threshold shift, sparse binary-dimension certificates and non-Fano direct-sum counting. Added exact reduction, independent violation verification, cut recovery and active-coordinate exhaustive separation.
+- Independent GPT-6.1 Sol cross-reviews cover all new packages. All 97 standard repository checks passed, including serial replay of the selected contact branches; the full contact catalogue was not recomputed. Finite tests remain distinct from mathematical proofs, external review and formal verification.
+
 ## 2026-10-27 — Weighted budget gates and exact algebraic compilation
 
 - Realized exact weighted matroid intersection through shortest cheapest exchange augmentation, independent no-negative-cycle potentials and original-rank maximum-cardinality cuts. Added complete-table Boolean-cap budget scenarios without binary unit expansion, and the guarded bounded-certificate common-basis gate. The complete bounded-certificate allocation proof chain is ready for review; high-quota and global algorithms retain their separate implementation scope.

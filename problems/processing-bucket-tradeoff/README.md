@@ -44,7 +44,11 @@ No lower bound is claimed for this algorithm.
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete arbitrary-time bucket-label Theorem AB and its depth/accuracy tradeoff: exact open-left/closed-right masks, full-target label witness, mandatory original bases and exact one-budget joint recovery, upper-prefix machine bounds, zero processing and one-sided grid optimization, complete depth-dependent enumeration accounting and optimality of the stated contiguous one-big-group analysis template. The reference bucket client instantiates the shared general-processing joint plan solver with separate finite solver costs.
+
+**Dependencies and scope.** The theorem uses paid exact rank/SFM, rational LP and integral polymatroid-intersection primitives. The reference shares the canonical general-processing/two-time LP and numeric count baseline, preserving its explicit enumeration and vertex-storage costs rather than claiming the fast per-label implementation. Depth is charged numerically in the stated H+k bounds; no polynomial-in-log-depth claim is made, and no finite depth attains exact three-halves by this one-big-group construction. Template optimality is not a general scheduling lower bound. Finite executable evidence is not proof-assistant verification or external peer review; exhaustive publication priority is not claimed.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 

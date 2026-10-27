@@ -44,7 +44,11 @@ No multiplicative constant follows without controlling the largest-unit term. Th
 
 **Review status**
 
-The [verification note](verify/README.md) records the proof scope, executable evidence and remaining conditions. No proof-assistant verification or external peer review is claimed.
+**Ready for review.** The complete exact-budget unrelated-value additive theorem against the fractional optimum on an actual fixed-family selected set: nonnegative original service support separation, full-accuracy weighted omission, uniform denominator recovery and original fixed-set reoptimization, disposal/complement-prefix integral rounding with one exact cost objective, and fixed-accuracy whole-ground conversion.
+
+**Dependencies and scope.** The original fixed-cardinality restriction selector and paid exact rational LP, rank/SFM and integral polymatroid intersection primitives remain mathematical dependencies. The fractional comparator relaxes resource counts, never mixes selected bases. Prefix rounding preserves one scalar assignment cost and loses the stated original largest unit per player. It supplies no positive multiplicative factor without controlling that additive term and does not preserve several independent cost budgets. Shared executable evidence realizes weighted selection, rational recovery and global cover primitives; no native general unrelated-value allocation or rounding solver is claimed. Positive-cost coordinates exceeding the whole budget remain in the fractional model unless a zero-budget exact mask applies. The sharp global expression uses fixed rational accuracy; binary-variable accuracy retains the stated rational upper-envelope implementation.
+
+The [verification note](verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 
 **Source**
 
