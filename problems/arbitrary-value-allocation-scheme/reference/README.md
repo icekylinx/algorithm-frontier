@@ -77,4 +77,4 @@ Canonical rank validation, base-coordinate elimination, exact Gaussian
 elimination and occupied-profile iteration are reused rather than copied.
 The standard-library source is new Apache-2.0 code.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

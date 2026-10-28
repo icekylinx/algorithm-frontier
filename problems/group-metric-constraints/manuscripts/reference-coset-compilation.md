@@ -152,4 +152,4 @@ spectral construction, compact modular rounding and metric extensions keep
 their separate mathematical statements and are not certified by these finite
 algebraic tests.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

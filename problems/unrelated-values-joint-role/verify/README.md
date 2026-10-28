@@ -55,4 +55,4 @@ Near-two and the <code class="math">2^q</code> exact-two endpoint allow optional
 
 The [source map](../sources.md) identifies the actual proof dependencies. Repository checks validate the registry, links, notation and generated catalogue; those checks do not establish mathematical correctness. Proof-assistant verification and external peer review are not claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

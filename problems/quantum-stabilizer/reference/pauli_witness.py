@@ -1,5 +1,5 @@
 """Compact constructive Pauli stabilizer witness, with exact scalar terms.
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 The reduction is polynomial; minimization enumerates the effective parity rank.
 """
 from dataclasses import dataclass

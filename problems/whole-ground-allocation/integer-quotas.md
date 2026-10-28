@@ -472,4 +472,4 @@ arbitrary recipient or job polymatroid oracles. They do not assert
 polynomial-time constant approximation or extend the one-unit
 selection gate to unsupported intersections of additional matroids.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

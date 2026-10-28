@@ -257,4 +257,4 @@ values in F(k)poly(H) time under c(OPT/2)<=k. The XP and separated-value
 theorems above do not resolve it. Nor does the failure of these two
 specific approaches establish a hardness theorem at that exact ratio.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

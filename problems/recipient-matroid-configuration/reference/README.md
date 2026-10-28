@@ -39,4 +39,4 @@ local bundle feasibility, minimality and value thresholds. It normalizes all
 stored centers before completing a growth test. The backend deliberately
 contains neither a player-layer search nor a numerical approximation claim.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

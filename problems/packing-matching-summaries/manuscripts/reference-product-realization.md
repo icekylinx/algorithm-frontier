@@ -116,4 +116,4 @@ These finite fixtures test implementation behavior. They do not enumerate
 all matroid extensions or prove the parameter-dependent theorem; the flat
 and annihilating-functional argument above supplies that quantifier.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

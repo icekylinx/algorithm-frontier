@@ -49,7 +49,7 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The qualitative certifying theorem and operations are due to [Graf and Haxell](https://arxiv.org/html/1811.02687v2). The proof gives the uniform parameter analysis and its certified stopping test.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro
 
 ## Executable certifying fallback
 

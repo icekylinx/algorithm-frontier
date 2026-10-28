@@ -47,4 +47,4 @@ The sign assertion fixes positive amplitudes and chooses independent uniform sig
 
 Direct sums give the exact probability <code class="math">(15/128)^k</code>, refuting the proposed coefficient one in <code class="math">2^{-r}</code>. They do not refute unrestricted arbitrary-matroid sparsification or every Gaussian bound of the form <code class="math">\exp(-Cr)</code>. The compact membership obstruction likewise leaves explicit-table algorithms and model-specific rank-oracle methods available.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -268,4 +268,4 @@ it makes no change to the general-graph maximum-matching exponent.
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -13,6 +13,6 @@ identifies the current manuscripts and executable evidence. Historical paths
 inside the original NOTICE refer to the source project.
 
 The revised manuscript, reconstructed certificates and repository presentation
-include continuation work by Yilin Liu, with the AI contribution identifier
+include continuation work by icekylinx, with the AI contribution identifier
 GPT-6 Astra Pro. The retained third-party credits are not replaced by this
 acknowledgment.

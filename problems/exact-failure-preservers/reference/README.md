@@ -147,7 +147,7 @@ matches the source to the proved interfaces. Run its independent checker:
 python3 problems/exact-failure-preservers/verify/check_arborescence_reporting.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 
 ## Ordinary rank drops and certified valuated baselines

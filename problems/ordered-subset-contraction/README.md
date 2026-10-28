@@ -126,5 +126,5 @@ curated separately with its own explicit source premises; it is not a
 dependency of this bound. Its formal artifacts are not imported or certified.
 See [sources.md](sources.md) for exact attribution and dependency boundaries.
 
-Curated derivations and code: **Yilin Liu and GPT-6 Astra Pro**. Apache-2.0;
+Curated derivations and code: **icekylinx and GPT-6 Astra Pro**. Apache-2.0;
 external results retain their source attribution.

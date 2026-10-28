@@ -90,4 +90,4 @@ Run the independent checker from the repository root:
 python3 problems/label-block-cut/verify/check_whole_blocks.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -100,4 +100,4 @@ The result does not assert that every candidate is necessary, that the
 shortest-vector subset has the same count, or that factoring itself has
 an N^(1/5) lower bound.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -46,4 +46,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The [finite reduction check](../../tools/verify_finite_reductions.py) verifies the two budget inequalities on small integer instances. The symbolic proof establishes the reduction for arbitrary input.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

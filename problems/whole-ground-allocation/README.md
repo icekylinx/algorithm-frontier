@@ -77,4 +77,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The [arbitrary-value joint-role record](../unrelated-values-joint-role/README.md) adds the setup extension, J2, and the exact-factor-two enumeration endpoint. None is obtained by treating binary numerical counts as an explicit ground.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

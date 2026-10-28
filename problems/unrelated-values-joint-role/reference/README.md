@@ -35,4 +35,4 @@ by the model.
 Run `python3 problems/unrelated-values-joint-role/verify/check_joint.py`
 from the repository root.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. **License:** Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. **License:** Apache-2.0.

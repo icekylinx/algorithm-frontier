@@ -118,4 +118,4 @@ constant-time guarantee. The faster layer algorithm, its claw-sensitive
 bound and its input-linear layer primitives are separate mathematical
 results; this reference implements only the elementary fallback.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

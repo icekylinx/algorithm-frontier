@@ -1,6 +1,6 @@
 """Exact mixed/list color certificates using actual evaluation-feature spans.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 No failure family or formal monomial universe is enumerated. The optional
 single-failure wrapper uses an explicitly charged exact reference MSF update,
 not the published polylogarithmic dynamic-MSF implementation.

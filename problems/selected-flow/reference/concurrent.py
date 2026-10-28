@@ -1,4 +1,4 @@
-"""Exact selected concurrent flow baseline. Attribution: Yilin Liu and GPT-6 Astra Pro.
+"""Exact selected concurrent flow baseline. Attribution: icekylinx and GPT-6 Astra Pro.
 
 Apache-2.0. No third-party packages. Bland simplex is not a polynomial-time
 LP implementation; explicit selection enumeration is not the corank scheme.

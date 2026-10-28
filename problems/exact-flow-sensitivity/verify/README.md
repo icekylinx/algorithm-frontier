@@ -177,4 +177,4 @@ checked 2,625 queries on 140 binary-represented matroid instances, including
 [local proof](../reference-price-realization.md); they do not certify the
 stronger pair-preserver storage bound or unimplemented price clients.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

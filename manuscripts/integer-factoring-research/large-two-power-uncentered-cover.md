@@ -280,4 +280,4 @@ known local stationary-image conditions, and contain no real-floor
 function. It is intended as a cleaner starting point for a new product
 kernel.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

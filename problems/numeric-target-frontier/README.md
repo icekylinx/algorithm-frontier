@@ -127,4 +127,4 @@ Convex upper rows, concave covering rows and linear equalities inherit the linea
 
 Zero-coefficient coordinates retain their actual costs and resource contributions. Optional disposal is added only to an originally optional problem. The numeric parameter is the integer target, not its encoding length or approximation accuracy.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

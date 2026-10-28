@@ -158,4 +158,4 @@ with more than 330-bit counts, targets, weights or scalar denominators. A
 finite checks supplement the proofs; proof-assistant verification and external
 peer review are not claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

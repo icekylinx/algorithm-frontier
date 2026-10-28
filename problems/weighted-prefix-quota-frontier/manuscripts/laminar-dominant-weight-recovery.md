@@ -796,4 +796,4 @@ root equality. This includes quotas on either side of unrooted-tree cuts.
 The companion states the binary-space implementation and the narrower
 one-weight polynomial endpoint for prescribed or forced total mass.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

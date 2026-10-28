@@ -38,4 +38,4 @@ is a flat of the original matroid and excludes <code class="math">e</code>. The 
 
 The proof retains the full original resource rank and performs no context-dependent truncation. A later extension need not be represented, but its restriction to <code class="math">E</code> must equal the supplied resource matroid. Costs and their tie-breaking order are fixed at preprocessing. Original item or edge identities are retained whenever individual-identity failures are allowed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

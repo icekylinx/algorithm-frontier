@@ -1,6 +1,6 @@
 """Exact resource-side backend for ordered recipient-matroid reservations.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. SPDX-License-Identifier: Apache-2.0
+Attribution: icekylinx and GPT-6 Astra Pro. SPDX-License-Identifier: Apache-2.0
 Rank oracles are promised matroid rank functions on range(players). The caller
 owns player-matroid eligibility, layers, local bundle feasibility and thresholds.
 """

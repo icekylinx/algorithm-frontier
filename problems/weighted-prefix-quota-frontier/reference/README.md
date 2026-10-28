@@ -87,4 +87,4 @@ failed filters, empty faces, recoveries and peak actual copied dimensions.
 python3 -B problems/weighted-prefix-quota-frontier/verify/check_orders_families.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

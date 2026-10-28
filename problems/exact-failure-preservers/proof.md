@@ -64,7 +64,7 @@ For ordinary linear costs, the union of constructions at maximum ranks <code cla
 - Goemans, [Matroid Intersection](https://math.mit.edu/~goemans/18453S17/matroid-intersect-notes.pdf).
 - Bodwin, [A Note on Distance-Preserving Graph Sparsification](https://arxiv.org/pdf/2001.07741).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 
 The [certified-valuated and ordinary rank-drop realization](manuscripts/reference-valuated-and-rank-drop.md)

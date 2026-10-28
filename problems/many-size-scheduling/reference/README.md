@@ -66,4 +66,4 @@ vertices. See the [realization proof](../reference-realization.md).
 python3 problems/many-size-scheduling/verify/check_workload.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

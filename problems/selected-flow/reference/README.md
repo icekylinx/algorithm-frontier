@@ -64,4 +64,4 @@ certificate soundness, finite termination and separate resource bounds.
 The [independent checker](../verify/check_concurrent.py) compares against native
 simple-path formulations and active-set vertex enumeration.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

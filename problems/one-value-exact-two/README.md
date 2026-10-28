@@ -56,4 +56,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The [base proof](proof.md) treats assignment costs; the [setup and full quota tradeoff](setup-tradeoffs.md) proves the stronger shared-budget statement. With <code class="math">c=0</code>, exact count optimization is polynomial after subtracting the fixed setup cost.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

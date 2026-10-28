@@ -302,4 +302,4 @@ a stronger all-target aggregate primitive. Blocking only the geometric
 baby sequence yields the actual logarithmic gain above but preserves the
 same power balance n versus sqrt(nK).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

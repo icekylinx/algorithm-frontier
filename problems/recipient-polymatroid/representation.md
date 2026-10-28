@@ -243,4 +243,4 @@ primitives. The prefix invariants and progress analysis appear in the
 [main proof](proof.md); Lemmas 1–4 supply its compressed representation
 and its precise integer comparator.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

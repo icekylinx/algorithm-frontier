@@ -1,6 +1,6 @@
 % Generated TeX body; no PDF or document-style claim.
 % Maintained source: problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md
-% Recovered-source SHA-256: 1c3ac9062e6bebd8f7cbfd0510a9f91a6275af2355edf1df79f235bb2ed8a894
+% Recovered-source SHA-256: d288b550eef8d687f11d4bb07f22f55e89704bddaba28cb03fbb3f0848b07579
 % Rebuild: python3 tools/build_manuscripts.py
 % Common packages: amsmath, amssymb, hyperref, longtable, booktabs, array.
 % Shared original Subset Sum preamble: manuscripts/paper-style.tex.
@@ -200,4 +200,4 @@ The completed small suite includes all 92 matroids on at most four labelled item
 
 The larger suite has 230 ordered/labelled instances from 220 matroids. These include binary represented matroids, the nonrepresentable 13-item obstruction augmented by privately labelled parallel components and unlabelled coloops, and exact \(T=1\) lower-bound families. It checks 4,680 failures, 42,512 prefixes, 196,560 additional contraction-rank comparisons and 1,051 budget instances. The larger arbitrary-subset checks use fixed-seed samples in addition to the empty and full surviving ground; only the small suite is exhaustive over all such subsets. The default command uses all matroids through three items plus the complete larger suite; \texttt{-\/-full} also runs every four-item instance. The checker writes no repository files and rejects Python \texttt{-O}. These finite checks supplement the proof rather than replace it. Reproduction commands and the scope of the other suites appear in the \href{https://github.com/icekylinx/algorithm-frontier/blob/main/problems/matroid-failure-summaries/verify/README.md}{verification note}.
 
-\textbf{Attribution:} Yilin Liu and GPT-6 Astra Pro.
+\textbf{Attribution:} icekylinx and GPT-6 Astra Pro.

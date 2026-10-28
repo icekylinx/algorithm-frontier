@@ -32,4 +32,4 @@ weighted omission, rational target search or the streamed global wrapper.
 It is deterministic and has no third-party dependencies. Source is licensed
 under the repository Apache-2.0 license.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

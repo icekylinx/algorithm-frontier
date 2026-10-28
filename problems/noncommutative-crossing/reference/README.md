@@ -46,4 +46,4 @@ products, including noncommutative matrices over integers and composite
 residue rings. No full asymptotic circuit generator or fast matrix backend
 is claimed implemented by these finite routines.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache License 2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache License 2.0.

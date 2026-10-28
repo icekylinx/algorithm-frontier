@@ -280,4 +280,4 @@ The computational search used to discover the example is not part of
 this certificate or a premise of the theorem. The committed checker is
 deterministic and verifies only the fully specified construction.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

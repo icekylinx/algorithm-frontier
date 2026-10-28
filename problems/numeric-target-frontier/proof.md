@@ -260,4 +260,4 @@ The upper bound uses the complete UP and VT algorithms without changing their pr
 
 The upper-bound algorithms and the two lower constructions are proved in the companion manuscripts. The calibration above establishes a worst-case classification under parameter budgets; it does not assert an exact-pair or representation-independent lower bound.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

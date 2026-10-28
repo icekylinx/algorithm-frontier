@@ -62,4 +62,4 @@ positive processing times on a machine and three-machine inputs are included.
 Finite executable comparisons are distinct from the complete oracle proof;
 no formal verification or external review is claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

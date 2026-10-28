@@ -42,4 +42,4 @@ faster adaptive omission recursion or the polynomial-time minimum-setup
 matroid-intersection oracle. Its finite simplex and enumeration bounds are
 stated separately from the research approximation theorem.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -58,4 +58,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 Outside the width promise the guarded algorithm may return a legal solution, a sound negative result, or an explicit inclusion-minimal failure wider than <code class="math">w</code>. For <code class="math">w\le6</code>, exact factor two retains base <code class="math">27/4</code>; for <code class="math">w\le4</code>, factor three retains base <code class="math">4</code>. The [width-two gate](../robust-width-two-allocation/README.md) improves the positivity subroutine further.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

@@ -92,4 +92,4 @@ fractional pricing and generation. Their [count proof](reference-realization.md)
 [fractional proof](fractional-realization.md) and [independent checks](verify/README.md)
 separate finite reference costs from the complete mathematical theorems.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

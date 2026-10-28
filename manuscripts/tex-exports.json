@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "pandoc_version": "pandoc 3.1.3",
-  "generator_sha256": "6cdaa408355ce2d4df9f6fe2933f24c018360d2d15c32bd9b62c5e1419c30dee",
+  "generator_sha256": "3d7e89fa6b41bc6e102d8e93d0e7ea6c49a3c3fe0581a2d1948d58b00f3cf7e0",
   "exports": [
     {
       "source": "problems/general-matching/proof.md",
       "target": "problems/general-matching/proof.tex",
-      "source_sha256": "0863a351455f9be1481c19eb7ad25ee0bfec01dd8b986ed6e8a44a834d7fa7e6",
-      "tex_sha256": "94404b9003ed2bba145546dd3aab7c9b28313edf4b6da605d663cd9e66ea88de",
+      "source_sha256": "b0cd8f625b4c4950a19eaf0e8514df28652109655539f0117b95a8ed2aa4251d",
+      "tex_sha256": "6341a63771921192754e9de1ea22be24875aac72ac9fce57d98d3628a415087d",
       "math_nodes": 889,
       "pdf": "source-only"
     },
@@ -30,16 +30,16 @@
     {
       "source": "problems/subset-sum-fast-deterministic/proof.md",
       "target": "problems/subset-sum-fast-deterministic/proof.tex",
-      "source_sha256": "80bf9a9792b790036d73b44eb9e5a92ce01a9aae24e981d62cfc39f54cf3cf5b",
-      "tex_sha256": "6a93ed237b31693683a8ad323b7983bfad0c0609412aea8968e562808eda322d",
+      "source_sha256": "0bcae2870372ee9c8e01f7e4c57335389020673d8cf4996b2e035e51550c58f6",
+      "tex_sha256": "cd28f7d51d73e1e1b001c77b27cc15f6ca4099823105eb1e337096cf29349c38",
       "math_nodes": 1528,
       "pdf": "source-only"
     },
     {
       "source": "problems/matroid-failure-summaries/proof.md",
       "target": "problems/matroid-failure-summaries/proof.tex",
-      "source_sha256": "290fca0b40756359031b01e2e74a4a445bdba8cfcfc70b83471b06834c795862",
-      "tex_sha256": "96f2f7f40ba9bffd4965380d25471b68e275a4106b924c5d59c2affe7ded0b01",
+      "source_sha256": "cd3dafb92070db79b7364f55cbf9d802a2036be2d19a4d550036475179e57b2d",
+      "tex_sha256": "2085cf3e865830a70371c2908984c9be071d177ae3e79c79397199a3d348a601",
       "math_nodes": 264,
       "pdf": "source-only"
     },
@@ -62,24 +62,24 @@
     {
       "source": "problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md",
       "target": "problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.tex",
-      "source_sha256": "0992814ca9fa596f35a304754eeeaf7d338312ddb7d941bce9470984cf2f6341",
-      "tex_sha256": "f80e38de4e19786a9e53a22ecf6a669c2fde09501581dde6e70dd32058b08172",
+      "source_sha256": "06de29bdffa51281d5a3246ff30daa44b3cf17426646e22999ab66aebfff3cf0",
+      "tex_sha256": "ba22c59dd7f0c1a7eabef5155b7ff4c190fd9cc861094c440119c2fa79fe9fe6",
       "math_nodes": 252,
       "pdf": "source-only"
     },
     {
       "source": "problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md",
       "target": "problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.tex",
-      "source_sha256": "5d82a3c2ee05b7e4143fb7a6920d9d51583b6d6185e811967b138a295131fb7a",
-      "tex_sha256": "8c7f674b5498c78bb6b87ca8878ce4c836db756870ad95bf61f6aadb372b321d",
+      "source_sha256": "53a26e1cfd66cdb0145f9ed04c40e1b4bda0609ee4735f9edd9962448f3791af",
+      "tex_sha256": "d56156b89a6a8699e4351804e408dddb7a233217f9e04176fb46ea5531e9c990",
       "math_nodes": 83,
       "pdf": "source-only"
     },
     {
       "source": "problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md",
       "target": "problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.tex",
-      "source_sha256": "63e5a3d281dd2a5805d364015ea63afb83fc0c190b1170c37880f4ea06c7aec8",
-      "tex_sha256": "b6f99a7f257ce5b2133418923b68814baf7d26bcc3bbe0b3ca5a50e89f0a5f39",
+      "source_sha256": "2b102bd90186601804316b89f644ef8ade8be6fb820124200fcdf0afd3092c44",
+      "tex_sha256": "82397a6650c365c03daa06e4eaf8ba1db554bdfaf2200a8f7cd77098f89bcdc8",
       "math_nodes": 372,
       "pdf": "source-only"
     },
@@ -94,48 +94,48 @@
     {
       "source": "problems/degree-constrained-subgraphs/proof.md",
       "target": "problems/degree-constrained-subgraphs/proof.tex",
-      "source_sha256": "76eb40500982d4034457ff03478231be86908425fb9c426e9bdc648e37f9144d",
-      "tex_sha256": "07fe777386c3ebe7d1f9d49511417968af894b0d5bc6c3f54a8baba8ea029253",
+      "source_sha256": "edab316e0b8ea4d3a512a0e61406fb94afbb817122f8561f445a93caac79de50",
+      "tex_sha256": "478e05bdb5f1d09f0ad3d2aa22b8240138f2c1f64fe771ac8f698c2dc18e418d",
       "math_nodes": 20,
       "pdf": "source-only"
     },
     {
       "source": "problems/degree-constrained-subgraphs/reference/correctness.md",
       "target": "problems/degree-constrained-subgraphs/reference/correctness.tex",
-      "source_sha256": "c7907327aeb3f674d2b2000194c3c7c45ae8cfcf38fd885c400b751f2a6154ef",
-      "tex_sha256": "275680ce91c91767993644141674a04f978bd42cdb8ad5154084b8b131cb7633",
+      "source_sha256": "860d6cd071022f3de2558ebcd9581bc4d11b2e9e1d934bccf454bc2676816cbd",
+      "tex_sha256": "02b67a898431a5d4174c4c51827843d756de2e9e39b577cabe1ab6aedf35c7a8",
       "math_nodes": 0,
       "pdf": "source-only"
     },
     {
       "source": "problems/weighted-prefix-quota-frontier/manuscripts/laminar-dominant-weight-recovery.md",
       "target": "problems/weighted-prefix-quota-frontier/manuscripts/laminar-dominant-weight-recovery.tex",
-      "source_sha256": "aed8f8743f51b49329925843bcf08b4e662a658bb4116ac9dd308eba1c7d5379",
-      "tex_sha256": "31aaa4466bdfa75a8dfae6e532c8b05e36daa374b21d96d5424d340b4df054c0",
+      "source_sha256": "8db5ffec1c4022bee523e0192055823e5a215f806495126ae9b96a97b6d88b0f",
+      "tex_sha256": "7eeb819547a50858b3abf89c8f5c5288a69c4b5e8305047beb17b1bb6a974f2f",
       "math_nodes": 319,
       "pdf": "source-only"
     },
     {
       "source": "problems/weighted-prefix-quota-frontier/manuscripts/two-positive-weight-laminar-boundary.md",
       "target": "problems/weighted-prefix-quota-frontier/manuscripts/two-positive-weight-laminar-boundary.tex",
-      "source_sha256": "9938dc96c750dc8b2ebfab71a03892a26a9d5388e6b6f71bb00db8185df9308c",
-      "tex_sha256": "1b422e5ee1aefd2dcc3e80e308e722160fe44f57f4caa523be0747dcf1cc8dcb",
+      "source_sha256": "9704b1d1e4deb4418f0139e0d55b1b78b3160370c98aa3eccafd7cdaa5ca9fae",
+      "tex_sha256": "a699f08b4ff4863fce4c76e0fc4821aabe7aaa2e9ac0c79ebb5e8773a4c31fce",
       "math_nodes": 98,
       "pdf": "source-only"
     },
     {
       "source": "problems/weighted-prefix-quota-frontier/manuscripts/compatible-cut-quota-extension.md",
       "target": "problems/weighted-prefix-quota-frontier/manuscripts/compatible-cut-quota-extension.tex",
-      "source_sha256": "1d1ab074ce74bb2ca4e027438aa530049c994aaef4866b58d6b4fbb111c96555",
-      "tex_sha256": "6d2e06a2ac62fc7c39c633d1f8391a520d2b9d1db0159020640af495d3eee120",
+      "source_sha256": "6e5769ae66c1ad481881ecc0c7d8bb57c5f8457cfa5c024eb6a952480d1252a5",
+      "tex_sha256": "0d63758e9287c3c658659bca088af198c4cf54efe13e42d7c8791432f7a82210",
       "math_nodes": 55,
       "pdf": "source-only"
     },
     {
       "source": "problems/boolean-linear-compiler/proof.md",
       "target": "problems/boolean-linear-compiler/proof.tex",
-      "source_sha256": "345b300bd0f17ec6f9ff179ba2705264cdd88c941a8c33d7ecc7c028cda57b95",
-      "tex_sha256": "256b6f07cb0178693bdc7b07730bf6ab54080cbd50dd601b1787e70d1c0419f1",
+      "source_sha256": "00306f3d52104f0841a599c7c4ce29dc1882a6b25ae60e690aaca1e9ea9dfc17",
+      "tex_sha256": "74ab52c1c56be6352eb2bf0afe29a0862936bd87dff17743d9b1d565f0f7bd96",
       "math_nodes": 92,
       "pdf": "source-only"
     },
@@ -206,16 +206,16 @@
     {
       "source": "problems/boolean-linear-compiler/manuscripts/cardinality-and-modal-interval-compilation.md",
       "target": "problems/boolean-linear-compiler/manuscripts/cardinality-and-modal-interval-compilation.tex",
-      "source_sha256": "3f9e2e64b9c7420ba5527ab828a9b89676fc0d7156b8e1ca4b02a745dde4f24d",
-      "tex_sha256": "d64859b7b26b890b3c720c21aa44964a33f09facc1f663c10d166a2a78765ae2",
+      "source_sha256": "31154d93a292e82376871c4d54ff694a6e3e4c4618afa4248cd5c7e4be445776",
+      "tex_sha256": "25bce2abfbaa2125b6a510b4e1e74ccc6febbc56fb1e3a2880d26198a2f1240b",
       "math_nodes": 160,
       "pdf": "source-only"
     },
     {
       "source": "problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md",
       "target": "problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.tex",
-      "source_sha256": "1c3ac9062e6bebd8f7cbfd0510a9f91a6275af2355edf1df79f235bb2ed8a894",
-      "tex_sha256": "c8bcc8977f677eec78a36ea41103f6ca2708797945cc9a09ac391925b116fce9",
+      "source_sha256": "d288b550eef8d687f11d4bb07f22f55e89704bddaba28cb03fbb3f0848b07579",
+      "tex_sha256": "5349517e0f4ec150153bb88d851c113f50f1991a21c3aa1222736a60c07c8c16",
       "math_nodes": 145,
       "pdf": "source-only"
     },
@@ -230,32 +230,32 @@
     {
       "source": "problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md",
       "target": "problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.tex",
-      "source_sha256": "cc0a11ecdf455bc2446fd13e72dabe4632092821f1c78e3418b7b42e0b4eabad",
-      "tex_sha256": "31c3b4a77cb5ddfdfb36e45103666cca51083895e7ad2d4af457bfcae986bd44",
+      "source_sha256": "813c457d2a91fbb35d34f239221b70dd6ec174f21e7beb5cb09d2fb9130baebe",
+      "tex_sha256": "07875eba76f21669eb831592665299947133ea2c78bb0139bae1981f6b7959eb",
       "math_nodes": 254,
       "pdf": "source-only"
     },
     {
       "source": "problems/persistence-failure-certificates/proof.md",
       "target": "problems/persistence-failure-certificates/proof.tex",
-      "source_sha256": "ca2dfd79ccc88787bbd1b621cd78f03791531bbf61858635c9a45ccf27b18060",
-      "tex_sha256": "814892d463e062005b30ef446e87ed2e566e7a8c53bc56440952d8a6ad2440c5",
+      "source_sha256": "7d138d738626a5a537c3cbf6efd4ac8b48094449e5793af014978db3d8a47211",
+      "tex_sha256": "6e1036c3a3e53e9e44316f1e8fb4ee5513d2f712b174aec225fa2635a48dab3c",
       "math_nodes": 68,
       "pdf": "source-only"
     },
     {
       "source": "problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md",
       "target": "problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.tex",
-      "source_sha256": "ebc5a8a2ab88362a202a880627c4a80de70adcac0010ee6d2d2bca78cf09cbc8",
-      "tex_sha256": "651931ff2fcaf7d0d416513701498d7ef64642a4d9f9e158d9bb2a54aa9cdad3",
+      "source_sha256": "d5473a5cb46c7ac48bbfb62e9518e7c212d64de14ad053cdb5691e21d41e06b3",
+      "tex_sha256": "b71764230cb1368eac85b874bc47f82ee8c511197ec4b43ac6baeaeb8805e02e",
       "math_nodes": 24,
       "pdf": "source-only"
     },
     {
       "source": "problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md",
       "target": "problems/persistence-failure-certificates/manuscripts/feature-rank-construction.tex",
-      "source_sha256": "7a18d22eeb69ff9c769e2c8ed4eb98598c30cda2fd67e5351d0fdb8f3bacd5d3",
-      "tex_sha256": "9885100d4e70b305e8b88cb90f4480ab9b1d1b292a74d5c38472d597c6fbf2b6",
+      "source_sha256": "63aa047493bc0ae12fb4b2e498921462cba3606e749c6f8e49f7163c35c429f7",
+      "tex_sha256": "290884acc213666405e7c6c34d264948e88014d26cb7003daa3af0bd002c9101",
       "math_nodes": 195,
       "pdf": "source-only"
     }

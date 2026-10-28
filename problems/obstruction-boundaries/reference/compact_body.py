@@ -1,7 +1,7 @@
 """Exact Max-Cut reduction and independently checkable compact-body violations.
 
 The exhaustive separator is exponential in the number of used coordinates.
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 """
 from dataclasses import dataclass
 from fractions import Fraction as F

@@ -328,4 +328,4 @@ are not replaced by the explicit machine count in this theorem.
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

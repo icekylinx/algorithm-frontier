@@ -10,7 +10,7 @@ O is the complete baseline. P and Q contain only files whose bytes differ from t
 
 The original complete archives remain represented by SHA-256 entries in `provenance/archive-manifest.json`; their binary contents are ignored by Git. Problem source maps point to O/P/Q/R/S/T/U according to byte equality and checkpoint precedence.
 
-**Attribution:** Yilin Liu  \  \n**AI contribution identifier:** GPT-6 Astra Pro
+**Attribution:** icekylinx  \  \n**AI contribution identifier:** GPT-6 Astra Pro
 
 ## R increment
 

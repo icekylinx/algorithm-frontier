@@ -1,4 +1,4 @@
-"""Independent finite oracle checks. Attribution: Yilin Liu and GPT-6 Astra Pro.
+"""Independent finite oracle checks. Attribution: icekylinx and GPT-6 Astra Pro.
 
 Apache-2.0. Brute-force selected bases never call the dual graph solver.
 """

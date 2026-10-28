@@ -42,4 +42,4 @@ budgeted polymatroid allocation, higher-quota optimization or the streamed
 whole-ground wrapper. It uses deterministic arithmetic and no third-party
 packages. Source is licensed under the repository Apache-2.0 license.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

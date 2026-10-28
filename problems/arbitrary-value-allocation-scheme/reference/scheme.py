@@ -1,6 +1,6 @@
 """Exact complete-table arbitrary-value allocation profile scheme.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 LP recovery streams active systems; that finite cost is additional to the
 manuscript's profile factor with paid polynomial LP/intersection primitives.
 No binary supply, accuracy table, or individual resource unit is expanded.

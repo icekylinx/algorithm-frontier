@@ -182,4 +182,4 @@ hypothesis used in the period-recovery companion. This closes the
 deterministic preparation issue for the conditional gate; the new
 implicit product primitive remains unproved.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

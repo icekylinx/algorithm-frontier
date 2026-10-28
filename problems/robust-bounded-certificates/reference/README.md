@@ -65,4 +65,4 @@ not implement high-quota service LPs, integral polymatroid recovery,
 integer target search or the streamed whole-ground wrapper. Source is
 licensed under the repository Apache-2.0 license.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

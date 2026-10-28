@@ -306,4 +306,4 @@ The public search has not established exhaustive novelty. The actual
 claim is the proved parameter and oracle-model transfer, with the
 named public and elementary baselines stated separately.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

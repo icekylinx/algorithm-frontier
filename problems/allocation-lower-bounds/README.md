@@ -68,4 +68,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 [Configuration-gap proofs](configuration-gaps.md)
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

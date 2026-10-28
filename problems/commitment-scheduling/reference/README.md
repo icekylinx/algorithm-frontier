@@ -67,4 +67,4 @@ the fast rank-local unit search, the full heterogeneous-large padding allocator,
 or the separate specialized public two-size approximation. The model has no
 assignment or setup-cost budget.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

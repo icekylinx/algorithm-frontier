@@ -187,4 +187,4 @@ explicit checks; the mathematical test script itself refuses optimized
 execution. These finite results support the implementation review and
 do not replace the proofs above.
 
-**Attribution:** Yilin Liu · GPT-6 Astra Pro.
+**Attribution:** icekylinx · GPT-6 Astra Pro.

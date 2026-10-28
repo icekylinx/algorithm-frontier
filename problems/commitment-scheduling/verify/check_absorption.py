@@ -1,6 +1,6 @@
 """Original subset inequalities and all-order closure checks.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 """
 from itertools import product
 from pathlib import Path

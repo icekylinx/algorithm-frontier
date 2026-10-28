@@ -67,4 +67,4 @@ python3 problems/activated-machine-scheduling/verify/check_activation.py
 python3 problems/activated-machine-scheduling/verify/check_six_profiles.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

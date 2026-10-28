@@ -56,4 +56,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 For an exact <code class="math">3/2</code> guarantee at constant base, use the separate [six-profile construction](../six-profile-three-halves/README.md).
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

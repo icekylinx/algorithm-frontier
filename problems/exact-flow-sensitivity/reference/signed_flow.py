@@ -1,6 +1,6 @@
 """Native signed-cost unit flows, general balances and compact deletion reports.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 Original arcs may be loops or parallel records. Integral supplies remain binary.
 """
 from bisect import bisect_left

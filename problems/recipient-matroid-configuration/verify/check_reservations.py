@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Independent finite checks of ordered resource reservations, not the allocator.
-Attribution: Yilin Liu and GPT-6 Astra Pro. SPDX-License-Identifier: Apache-2.0
+Attribution: icekylinx and GPT-6 Astra Pro. SPDX-License-Identifier: Apache-2.0
 """
 from fractions import Fraction
 from itertools import combinations, product

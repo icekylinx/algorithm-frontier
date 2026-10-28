@@ -1,6 +1,6 @@
 """Exact explicit-table scheduling baseline.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 Vertex, role and integer-count enumeration do not realize Theorem HT's time.
 All numerical operations use integers or Fraction; no external LP is required.
 """

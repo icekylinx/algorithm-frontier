@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Finite Boolean-cap/gate checks, not a general matroid intersection solver.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro.
+Attribution: icekylinx and GPT-6 Astra Pro.
 """
 from itertools import product
 from fractions import Fraction

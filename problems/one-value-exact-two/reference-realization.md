@@ -216,4 +216,4 @@ not establish optimality of the exponential bases, does not apply to the
 prescribed-basis exact subproblem and is not asserted for explicit recipient
 lists. Finite native checks support these proofs without replacing them.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

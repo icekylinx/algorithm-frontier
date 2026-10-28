@@ -1,6 +1,6 @@
 """Independent original-input allocation, profile and rounding checks.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 The finite original comparator uses no backend bin/LP/rounding helper.
 """
 from dataclasses import replace

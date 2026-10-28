@@ -524,4 +524,4 @@ finite explicit label lists and the fixed item order. There is no field
 representation, randomization, separator implementation or external
 solver dependency.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

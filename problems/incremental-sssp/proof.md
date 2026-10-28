@@ -719,6 +719,6 @@ root-sized allocation for every recursive instance.
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 The proofs use their named external interfaces. Finite checks are separate from proof-assistant verification.

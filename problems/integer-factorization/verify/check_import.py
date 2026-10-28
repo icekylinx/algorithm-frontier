@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check source identities, canonical targets and optional local ZIP replay.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 Source hashes identify imported bytes, not immutable current mathematical text.
 """
 from pathlib import Path, PurePosixPath
@@ -33,7 +33,7 @@ for row in manifest['members']:
     text=path.read_text()
     assert row['sha256'] in text,(row['member'],'source identity omitted')
     assert not re.search('[\u4e00-\u9fff]',text),(path,'non-English result')
-    assert 'Yilin Liu' in text and 'GPT-6 Astra Pro' in text
+    assert 'icekylinx' in text and 'GPT-6 Astra Pro' in text
     targets.add(row['canonical_target'])
 assert len(targets)==18
 assert sum(r['disposition']=='excluded-route' for r in manifest['members'])==12

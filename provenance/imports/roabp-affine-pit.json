@@ -2,7 +2,7 @@
   "schema_version": 1,
   "import_id": "fresh-roabp-affine-pit-2026-10-27",
   "attribution": [
-    "Yilin Liu",
+    "icekylinx",
     "GPT-6 Astra Pro"
   ],
   "license": "Apache-2.0",
@@ -22,7 +22,7 @@
       "canonical_path": "problems/roabp-affine-pit/manuscripts/general-affine.tex",
       "role": "complete native-TeX proof",
       "original_sha256": "9864136e134bbc9c3f35d8d0f1fb7595cf40c397e01d0247173956795f0c695f",
-      "canonical_sha256": "c5e068c54550199922569d70d9d9c3788532ad82feb450dc31957b6078fdaca6",
+      "canonical_sha256": "ccb6d8cf2d23ed303296ff4b9528a7226c8175d81cd7a40d0a7305e183b22d43",
       "original_bytes": 37171,
       "canonical_bytes": 37135,
       "editorial_changes": [
@@ -32,7 +32,7 @@
         },
         {
           "old_text": "\\title{An Internal Candidate Proof of Constant-Width\\\\\nAffine-Orbit PIT in Every Characteristic}\n\\author{Internal research manuscript}\\date{26 October 2026}\n",
-          "new_text": "\\title{Deterministic Identity Testing for Constant-Width\\\\\nAffine ROABP Orbits in Every Characteristic}\n\\author{Yilin Liu \\and GPT-6 Astra Pro}\n\\date{27 October 2026}\n"
+          "new_text": "\\title{Deterministic Identity Testing for Constant-Width\\\\\nAffine ROABP Orbits in Every Characteristic}\n\\author{icekylinx \\and GPT-6 Astra Pro}\n\\date{27 October 2026}\n"
         }
       ],
       "origin": {
@@ -46,7 +46,7 @@
       "canonical_path": "problems/roabp-affine-pit/manuscripts/direction-grids.tex",
       "role": "complete native-TeX proof",
       "original_sha256": "229d353e00366bbb1ee78ce26e593076d636dc58fcf3499b5d01e9828e1292e7",
-      "canonical_sha256": "41c9f79004f3f4d3d6eec0cbcd4d3d23ab758c0742ff1895697fd4cb3a7f938e",
+      "canonical_sha256": "429b67d6e6b83ab525ba1c0997770d9cd7ae2b05f5b27d0101f2bf5f8bd6ec11",
       "original_bytes": 15592,
       "canonical_bytes": 15621,
       "editorial_changes": [
@@ -56,7 +56,7 @@
         },
         {
           "old_text": "\\title{Direction Grids for All-Characteristic\\\\Affine-Orbit Identity Testing}\n\\author{Internal research addendum}\n\\date{26 October 2026}\n",
-          "new_text": "\\title{Direction Grids for All-Characteristic\\\\\nAffine-Orbit Identity Testing}\n\\author{Yilin Liu \\and GPT-6 Astra Pro}\n\\date{27 October 2026}\n"
+          "new_text": "\\title{Direction Grids for All-Characteristic\\\\\nAffine-Orbit Identity Testing}\n\\author{icekylinx \\and GPT-6 Astra Pro}\n\\date{27 October 2026}\n"
         },
         {
           "old_text": "The exact frozen companion source used is\n\\url{complexity/general_affine_roabp_all_characteristics.tex},\nSHA-256\n",
@@ -304,13 +304,13 @@
       "canonical_path": "problems/roabp-affine-pit/manuscripts/interval-rank-cones.tex",
       "role": "complete special-case proof or scoped supporting evidence",
       "original_sha256": "22751a12b6369675dc9b8a97891b4a08152a485841da8402c33717b46feed589",
-      "canonical_sha256": "c2a667e1be34aa2e58e139cafaea089ec08bfb6a1945111cd27afb774dc4bfd1",
+      "canonical_sha256": "79c1c1f7dd4676847bcb04a90163746f23233851c7dd3f13e542e0ab18ae51cc",
       "original_bytes": 41727,
       "canonical_bytes": 41730,
       "editorial_changes": [
         {
           "old_text": "\\author{Working research manuscript}",
-          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+          "new_text": "\\author{icekylinx \\and GPT-6 Astra Pro}"
         }
       ],
       "origin": {
@@ -324,13 +324,13 @@
       "canonical_path": "problems/roabp-affine-pit/manuscripts/factorial-width-affine.tex",
       "role": "complete special-case proof or scoped supporting evidence",
       "original_sha256": "2a3bd4eb5e551546a4ce32cf753f04a541f696c767cc1c6821bf3d6572b4e077",
-      "canonical_sha256": "39e091153b5f24711fb6fdebba5e66a92f04231dab76348ed03040977d07f8e3",
+      "canonical_sha256": "14fb67f18d75bd744e1bcfc064c1d6c79a9734aa75697df5750540239a67bef8",
       "original_bytes": 16844,
       "canonical_bytes": 16904,
       "editorial_changes": [
         {
           "old_text": "\\author{Research checkpoint 13; conditional consequence}",
-          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+          "new_text": "\\author{icekylinx \\and GPT-6 Astra Pro}"
         },
         {
           "old_text": "[Conditional affine-orbit hitting]",
@@ -360,13 +360,13 @@
       "canonical_path": "problems/roabp-affine-pit/manuscripts/width-three-all-ranks.tex",
       "role": "complete special-case proof or scoped supporting evidence",
       "original_sha256": "e4de131b23a6f66f66e0bc91e4f16bbf0d90e546bf3f30060d659e8c5c7f94e8",
-      "canonical_sha256": "a94eb4f2705bebc7bc2835634fe9ea3de45d47c066f08cd84e5c77c0117843b1",
+      "canonical_sha256": "005d4292f12d14942f8dbbdfc6d734b16a3abd52508c4be7eca5461335f92bc5",
       "original_bytes": 29016,
       "canonical_bytes": 29018,
       "editorial_changes": [
         {
           "old_text": "\\author{Internal research manuscript}",
-          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+          "new_text": "\\author{icekylinx \\and GPT-6 Astra Pro}"
         }
       ],
       "origin": {
@@ -380,13 +380,13 @@
       "canonical_path": "problems/roabp-affine-pit/manuscripts/width-three-grids.tex",
       "role": "complete special-case proof or scoped supporting evidence",
       "original_sha256": "e31a52f025a05cac4dee27056e952a57d49d007a03f09c8ad50e66f38ad273a0",
-      "canonical_sha256": "3438cca175892e524f192c6855ecfe005904e7b575ae3811c7fef57fde8810b6",
+      "canonical_sha256": "d02254518ec98fb189651271a49ff31d009b4e0e4a2036aa4f6cf6c0a6a6c035",
       "original_bytes": 13876,
       "canonical_bytes": 13880,
       "editorial_changes": [
         {
           "old_text": "\\author{Internal research addendum}",
-          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+          "new_text": "\\author{icekylinx \\and GPT-6 Astra Pro}"
         }
       ],
       "origin": {
@@ -400,13 +400,13 @@
       "canonical_path": "problems/roabp-affine-pit/manuscripts/invertible-good-characteristic.tex",
       "role": "complete special-case proof or scoped supporting evidence",
       "original_sha256": "8f082ad69dc4accd88db4815e4660ee86d5ffdb9b48b4dc6027285d7c523ee42",
-      "canonical_sha256": "b91bd7c0fdd2531181b8ce502e0dbc2a385a394a7740ed2a33dba99ce402e897",
+      "canonical_sha256": "4400ee495895da65ddd918a8a82242bcbdff3dc8f153957accf69d97c472522d",
       "original_bytes": 12833,
       "canonical_bytes": 12841,
       "editorial_changes": [
         {
           "old_text": "\\author{Internal research note}",
-          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+          "new_text": "\\author{icekylinx \\and GPT-6 Astra Pro}"
         }
       ],
       "origin": {
@@ -420,13 +420,13 @@
       "canonical_path": "problems/roabp-affine-pit/manuscripts/invertible-good-characteristic-grids.tex",
       "role": "complete special-case proof or scoped supporting evidence",
       "original_sha256": "bb12fd419ef8d105e17a6dc2777d9322309ceb6c8ed34887583e1e12cb422268",
-      "canonical_sha256": "171180eb34f31ecd359b5da81f8be3ae9cbc4f83341c7f92e527137ab7f5a26e",
+      "canonical_sha256": "ccb5447921ab54f242f3aaf2eb328da57b45c15c7e05e90667c5f77115b93657",
       "original_bytes": 9501,
       "canonical_bytes": 9505,
       "editorial_changes": [
         {
           "old_text": "\\author{Internal research addendum}",
-          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+          "new_text": "\\author{icekylinx \\and GPT-6 Astra Pro}"
         }
       ],
       "origin": {
@@ -440,13 +440,13 @@
       "canonical_path": "problems/roabp-affine-pit/manuscripts/invertible-all-characteristics.tex",
       "role": "complete special-case proof or scoped supporting evidence",
       "original_sha256": "89571bdecf554a54fdc80e6605de6a07c6c612759106ec3abd7192bfaa222cc4",
-      "canonical_sha256": "0b391710a6255197a364101344c39c1d422eb0af9c240cc5bd00e671d67f72fa",
+      "canonical_sha256": "891f9a5e76bd965ef39f1678f45468aef5093d6b87c9ef4e11aeb2e1a66b936f",
       "original_bytes": 24664,
       "canonical_bytes": 24666,
       "editorial_changes": [
         {
           "old_text": "\\author{Internal research manuscript}",
-          "new_text": "\\author{Yilin Liu \\and GPT-6 Astra Pro}"
+          "new_text": "\\author{icekylinx \\and GPT-6 Astra Pro}"
         }
       ],
       "origin": {

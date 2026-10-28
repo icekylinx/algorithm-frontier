@@ -113,4 +113,4 @@ python3 problems/graph-color-failure-certificates/verify/check_vertex_colors.py
 python3 -B problems/graph-color-failure-certificates/verify/check_list_colors.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -94,4 +94,4 @@ checks use exact dyadic complex entries. The approximation factor follows
 from the [symbolic proof](../reference-realization.md), not finite numerical
 spectral experiments. No quantum sparsification backend is implied.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

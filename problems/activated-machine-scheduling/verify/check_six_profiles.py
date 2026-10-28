@@ -1,6 +1,6 @@
 """Independent direct original-input checks of the reusable six-profile client.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 No activation family or setup transformation is used in this checker.
 """
 from fractions import Fraction as F

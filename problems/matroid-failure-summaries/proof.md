@@ -423,4 +423,4 @@ that this represented lifted basis is always the minimum original summary.
 
 [Represented lift and field construction](manuscripts/sharp-represented-matroid-failure-summaries.md); [arbitrary-matroid and submodular proofs](manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md); [weighted oracle FPT construction](manuscripts/weighted-oracle-prefix-fpt-construction.md); [weighted two-failure obstruction](manuscripts/weighted-oracle-two-failure-obstruction.md); [two-failure profile bounds and exact rank-four maximum](manuscripts/two-failure-oracle-prefix-bounds.md); [rank-loss contraction and all-budget adaptive bounds](manuscripts/rank-loss-contraction-for-prefix-summaries.md); [optimal rank-two oracle construction](manuscripts/optimal-rank-two-prefix-oracle-construction.md); [actual feature-rank construction](../persistence-failure-certificates/manuscripts/feature-rank-construction.md).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

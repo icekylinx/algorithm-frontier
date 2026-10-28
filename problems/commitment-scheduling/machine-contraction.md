@@ -362,4 +362,4 @@ above require only integral polymatroid bases and their rank oracles.
 The result asserts neither optimality over arbitrary commitments nor a
 worst-case approximation improvement without a favorable bottleneck.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

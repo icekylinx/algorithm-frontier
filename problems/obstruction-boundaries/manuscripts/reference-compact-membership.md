@@ -143,4 +143,4 @@ The review covers both canonical obstruction proofs and the new executable
 reduction/verification interface. Sampling, compact sparsifier construction
 and approximate-separation hardness remain outside these claims.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

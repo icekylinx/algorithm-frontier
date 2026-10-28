@@ -1,6 +1,6 @@
 """Independent original-input exact mixed-target / signed scalar checks.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 Numeric count enumeration occurs only in this tiny independent comparator.
 """
 from dataclasses import replace

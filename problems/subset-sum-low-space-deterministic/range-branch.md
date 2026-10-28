@@ -1,6 +1,6 @@
 # Two short normalized ranges at arbitrary lattice scales
 
-Author: Yilin Liu. Assistance: OpenAI Codex, including GPT-6 Astra.
+Author: icekylinx. Assistance: OpenAI Codex, including GPT-6 Astra.
 
 ## Theorem
 
@@ -261,4 +261,4 @@ summation. These checks do not replace the arbitrary-length error and
 resource proofs. The [source map](sources.md#short-range-theorem-arithmetic-proof)
 records the discharged arithmetic dependency.
 
-**Curated by:** Yilin Liu and GPT-6 Astra Pro.
+**Curated by:** icekylinx and GPT-6 Astra Pro.

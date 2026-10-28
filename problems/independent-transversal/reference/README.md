@@ -47,4 +47,4 @@ implement the faster current-blocker layer construction. The algorithm is
 credited to Graf and Haxell; all source code here is a new local implementation
 under Apache-2.0, with no third-party code copied.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

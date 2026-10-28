@@ -144,4 +144,4 @@ the caller's cost list and disabling initialization and shortest-path producers.
 Finite comparisons support the symbolic argument and are not external peer
 review or formal verification.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

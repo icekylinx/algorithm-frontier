@@ -175,4 +175,4 @@ state escapes into the final reporter and disables callbacks/producers
 after clearing the caller's cost list. These finite checks do not replace
 the arbitrary-matroid initialization and literal-update proofs above.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

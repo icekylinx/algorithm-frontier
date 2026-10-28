@@ -27,4 +27,4 @@ The main proof gives the family-level theorem composition. The following canonic
 
 The [guarded compiler checker](verify/check_cardinality_compiler.py) verifies the stronger normalized construction and exact uniform-budget accounting. The [unconditioned compiler checker](verify/check_interval_compiler.py) uses exhaustive Boolean evaluation as its reference, including for the complete signed radix instances. The [verification note](verify/README.md) records exact counts and distinguishes these local checks from the separately supplied Subset Sum backend.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

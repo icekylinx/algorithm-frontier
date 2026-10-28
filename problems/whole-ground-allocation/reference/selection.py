@@ -1,6 +1,6 @@
 """Actual prefix-free weighted omission and streamed containment covers.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 Oracle costs remain paid. Native flow LPs use the canonical finite simplex,
 whose potentially exponential bound is separate from the recursion's bound.
 """

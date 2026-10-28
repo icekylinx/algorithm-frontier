@@ -97,4 +97,4 @@ The fixed and maximum nonnegative-cost sensitivity oracles already return origin
 
 The signed/general-balance statements in this note concern exact certificate verification and cost-blind feasibility. They do not claim signed/general-balance minimum-cost initialization, a signed compact sensitivity oracle, multiple simultaneous failures, or the faster research preprocessing bound.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

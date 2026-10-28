@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Original-input finite oracle, independent of masks, dummy and producers.
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 """
 from fractions import Fraction as F
 from itertools import product,combinations

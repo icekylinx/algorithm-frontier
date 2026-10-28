@@ -56,4 +56,4 @@ one fixed set; global optimality also relies on complete enumeration and the
 fixed-family predicate. The model is splittable rational flow, with no
 unsplittable or integral multicommodity guarantee.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

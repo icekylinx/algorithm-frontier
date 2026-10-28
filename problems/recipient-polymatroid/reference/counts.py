@@ -1,6 +1,6 @@
 """Exact binary-count polymatroid representation; explicit rank-table costs.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 """
 from dataclasses import dataclass
 from fractions import Fraction

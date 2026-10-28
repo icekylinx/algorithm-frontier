@@ -1,6 +1,6 @@
 """Independent finite original-base checks of the two-size corank client.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 The original-base oracle does not use box ranks, duality or the batch engine.
 """
 from fractions import Fraction as F

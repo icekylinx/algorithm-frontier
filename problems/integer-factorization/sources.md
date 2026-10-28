@@ -97,4 +97,4 @@ overview; excluded members have no retained text. Formatting and attribution wer
 silently changing mathematical arguments. The original Chinese summary is
 integrated into the English overview rather than redistributed as a result.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

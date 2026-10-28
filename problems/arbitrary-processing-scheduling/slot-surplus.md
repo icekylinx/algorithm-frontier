@@ -590,4 +590,4 @@ the numerical slot count, or the ordered-layer allocation theorem.
 
 The theorem is a conditional parameterized guarantee with a complete compressed implementation and polynomial binary workspace. The source of the additive rounding primitive is credited above; no publication-priority claim is made.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -318,4 +318,4 @@ workspace, and it does not implement the full player-layer integer
 allocation algorithm. The fast mathematical constructions and the
 finite executable realization remain separate evidence.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. **License:** Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. **License:** Apache-2.0.

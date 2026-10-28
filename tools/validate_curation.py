@@ -19,7 +19,7 @@ def main():
                 continue
             text=path.read_text(encoding="utf-8")
             if name!="verify/README.md":
-                for marker in ("Yilin Liu","GPT-6 Astra Pro"):
+                for marker in ("icekylinx","GPT-6 Astra Pro"):
                     if marker not in text:errors.append(f"{path.relative_to(ROOT)}: missing {marker}")
             if name=="proof.md":
                 if text.startswith("# Proof map") or "display-first map" in text:

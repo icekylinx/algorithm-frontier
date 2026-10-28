@@ -6,7 +6,7 @@ This file is part of the repository's stable citation surface.
 
 Every citation, quotation, redistribution, or adaptation must retain:
 
-- **Attribution:** Yilin Liu
+- **Attribution:** icekylinx
 - **AI contribution identifier:** GPT-6 Astra Pro
 - **Repository:** Algorithm Frontier (`algorithm-frontier`)
 - **License:** Apache License 2.0
@@ -48,6 +48,6 @@ See [the maintenance guide](CONTRIBUTING.md).
 
 ## Recommended citation
 
-> Yilin Liu and GPT-6 Astra Pro. *Algorithm Frontier*, version 2026.10.26 (2026). Apache License 2.0.
+> icekylinx and GPT-6 Astra Pro. *Algorithm Frontier*, version 2026.10.26 (2026). Apache License 2.0.
 
 Cite the relevant `problems/<name>/` path and commit as well. For later releases, preserve the original version in citations to an older result. A later release may add or correct material, but must not rewrite the provenance of an earlier result.

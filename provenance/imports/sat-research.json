@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "curated_date": "2026-10-28",
-  "attribution": "Yilin Liu and GPT-6 Astra Pro",
+  "attribution": "icekylinx and GPT-6 Astra Pro",
   "license": "Apache-2.0",
   "archive": {
     "filename": "sat_research_checkpoint.zip",

@@ -1,6 +1,6 @@
 # Sources, scope and attribution
 
-The curated derivations and verification adapters are attributed to **Yilin Liu and GPT-6 Astra Pro**, under the repository's Apache-2.0 license. This directory selectively imports completed results from the supplied SAT checkpoint; it excludes SAT claims, proposed square-permanent routes, failed attempts and review archives. Historical priority of the precise general subset aggregation is unresolved.
+The curated derivations and verification adapters are attributed to **icekylinx and GPT-6 Astra Pro**, under the repository's Apache-2.0 license. This directory selectively imports completed results from the supplied SAT checkpoint; it excludes SAT claims, proposed square-permanent routes, failed attempts and review archives. Historical priority of the precise general subset aggregation is unresolved.
 
 The source fragments used are `paper/subset_zeta_triple_extension.tex`, `paper/integer_subset_capacity_extension.tex`, `paper/weighted_three_block_capacity.tex`, `paper/balanced_three_block_extension.tex`, `paper/growing_degree_balanced_extension.tex`, `paper/quadratic_character_support.tex`, and the cyclic circuit construction. The uniform Bell theorem is not imported as a competing growing-degree result; only its useful fixed-degree algorithm survives. Unequal-domain position-word and nested-domain variants are omitted because the general arbitrary weighted subset theorem is the selected entry's substantive scope.
 

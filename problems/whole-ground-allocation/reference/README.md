@@ -81,4 +81,4 @@ polynomial-time simplex theorem, all allocation recovery backends, or
 Gaussian/implicit uncertainty interfaces. Source is licensed under the
 repository Apache-2.0 license.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

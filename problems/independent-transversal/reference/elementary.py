@@ -1,7 +1,7 @@
 """Elementary certifying transversal fallback with positive blocker signatures.
 
 Derived public Graf--Haxell single-vertex procedure; no fast layer algorithm.
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro.
 SPDX-License-Identifier: Apache-2.0
 """
 from transversal_certificates import Constellation, Transversal, instance

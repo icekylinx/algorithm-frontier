@@ -104,4 +104,4 @@ The [import record](../../provenance/README.md) and
 [notice](NOTICE.md) preserve revisions, source paths, attribution and
 applicable licenses.
 
-**Attribution:** Yilin Liu · GPT-6 Astra Pro.
+**Attribution:** icekylinx · GPT-6 Astra Pro.

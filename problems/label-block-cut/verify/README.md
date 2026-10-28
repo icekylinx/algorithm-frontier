@@ -86,4 +86,4 @@ A block indexed by a <code class="math">k</code>-subset of an <code class="math"
 
 That cut bound is proved directly from discrepancies, singleton degree inequalities, the <code class="math">L_1</code> Khintchine inequality, and Jensen's inequality. A spectral lower bound alone would not establish the claimed cut lower bound. The compact runtime follows from the dimension gate and explicit arithmetic interfaces, rather than an empirical timing experiment.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

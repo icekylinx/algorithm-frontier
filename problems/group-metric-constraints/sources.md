@@ -42,4 +42,4 @@ does not implement the separate Gaussian sparsifier.
 - Basu et al., *Optimal Sparsifiers for Minkowski Sums and Sums of Seminorms*, Theorem 1.2: <https://arxiv.org/pdf/2609.20238>. This supplies only the unrestricted metric comparison branch; the symmetry proof is internal.
 - Integer normal forms are the Kannan–Bachem polynomial-bit input: <https://doi.org/10.1137/0208040>. Full comparator citations are retained in each manuscript.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -82,4 +82,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 **Source**
 
-Yilin Liu and GPT-6 Astra Pro. Apache-2.0 under the repository [license](../../LICENSE). The [source map](sources.md) separates the released crossing construction, the established field-profile analysis, recent integral source ingredients and the reconstructed mathematical composition. The full curve was already known over fields; the selected construction preserves its stronger common-integer, ordered coefficient interface.
+icekylinx and GPT-6 Astra Pro. Apache-2.0 under the repository [license](../../LICENSE). The [source map](sources.md) separates the released crossing construction, the established field-profile analysis, recent integral source ingredients and the reconstructed mathematical composition. The full curve was already known over fields; the selected construction preserves its stronger common-integer, ordered coefficient interface.

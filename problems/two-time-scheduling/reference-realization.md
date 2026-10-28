@@ -142,4 +142,4 @@ These are finite executable checks of this explicit-table realization. They
 neither prove Theorem HT by enumeration nor certify its polynomial value-oracle
 implementation, fast running time, or external/formal verification.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

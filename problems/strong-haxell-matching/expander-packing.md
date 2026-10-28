@@ -312,4 +312,4 @@ instance, and (8) proves the actual degree-volume guarantee.
 This remains an expander-input corollary. It does not improve
 the unrestricted general-graph maximum-matching exponent.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

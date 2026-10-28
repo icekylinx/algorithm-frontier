@@ -105,4 +105,4 @@ states the exact proof and software boundary. Run:
 python3 problems/correlated-spectral-regression/verify/check_importance_regression.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

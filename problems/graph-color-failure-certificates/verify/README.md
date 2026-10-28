@@ -78,4 +78,4 @@ updates have their own full-scan cost. Extra-list and retained-union sorting
 are charged, and indexed value lookup is distinguished from raw original
 color lookup and materializing a whole forest.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

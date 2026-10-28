@@ -73,4 +73,4 @@ The [verification note](verify/README.md) states the scope of executable evidenc
 [import record](../../provenance/README.md) preserves source revisions,
 canonical paths, attribution and applicable licenses.
 
-**Attribution:** Yilin Liu · GPT-6 Astra Pro.
+**Attribution:** icekylinx · GPT-6 Astra Pro.

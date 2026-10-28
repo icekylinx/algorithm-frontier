@@ -209,4 +209,4 @@ classes, or a residue correction modulo v depending on t. That separate
 product-search cost must still be charged. Nor does the lemma shorten
 an arbitrary unfactored long period.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

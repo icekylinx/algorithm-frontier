@@ -527,4 +527,4 @@ unconditional improvement in logarithmic factors if the argument stands;
 it does not establish a smaller power of N, an RSA polynomial-time
 algorithm, or a general number-field-sieve fruitfulness theorem.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

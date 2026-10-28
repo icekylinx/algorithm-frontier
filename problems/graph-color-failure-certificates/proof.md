@@ -87,4 +87,4 @@ Theorem 8 and Section 5.1 identify the required exchange-reporting interface.
 
 [Activation, mixed/list bounds, sharpness, and MSF implementation](manuscripts/colored-graph-and-vertex-failure-certificates.md).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

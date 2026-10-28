@@ -7,8 +7,8 @@
       "inputs": {
         "manuscripts/papers.json": "95b16ce2e0796292edc761a5c4a3157c50640263948b511dfed3eced2e9042ff",
         "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
-        "problems/general-matching/reference/paper.tex": "a5bc743f7cb2638a60a424975979b011106abbe3c6aed7564760635f016d8c59",
-        "tools/build_manuscripts.py": "6cdaa408355ce2d4df9f6fe2933f24c018360d2d15c32bd9b62c5e1419c30dee",
+        "problems/general-matching/reference/paper.tex": "5c0e7be67173223d7c3597ebfaac7f4f5342444660fe4bf964afd6c4f0013d83",
+        "tools/build_manuscripts.py": "3d7e89fa6b41bc6e102d8e93d0e7ea6c49a3c3fe0581a2d1948d58b00f3cf7e0",
         "tools/build_papers.py": "8d2f970cd6ac01132bee7af85fc4119a32976e419e84df6ee6ac486cbd8d3ad4",
         "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
         "problems/general-matching/reference/certificate-proof.md": "631e93415372ffe498383b3113212e009445a7c41e719abfa7dd8505fbb6dbad",
@@ -16,17 +16,24 @@
         "problems/general-matching/reference/bipartite-proof.md": "107778d4645abf3ad5f3c77d1e51295b9670636fd39cbd07a1440197f19a47d7",
         "problems/general-matching/reference/fault-tolerant-cover-compression.md": "48bbf51b470236b1f834b010a65061feef9a88292e99c154f4ae927e2194daab"
       },
-      "pdf_sha256": "4f19026aac39242aa4afa522ea9a4593b9329fccacda5288a5d9ea1708ef5e73",
-      "engine": "xelatex",
+      "pdf_sha256": "76ba71a9875fa30ec341e311130c86ffc7dc6e24828cdef9820c929b3e6ab2bc",
+      "engine": "Tectonic 0.17.0 (XeTeX)",
       "source_date_epoch": 1792972800,
       "layout_warnings": [],
       "visual_review": "passed",
+      "pages": 16,
+      "build_method": "Original shared style and source-preserving paper export; Tectonic with insecure features disabled.",
+      "attribution_text_comparison": "Formula ordering or glyph encoding in extracted PDF text differs on a small set of pages. Mathematical source is unchanged; the rendered pages were inspected and no typesetting warnings remain.",
       "visual_review_details": {
-        "date": "2026-10-26",
+        "date": "2026-10-28",
+        "reviewer": "research-session root",
         "pages": 16,
-        "method": "Every page inspected at full-page 130 dpi, including all four proof parts and the newly added universal failure-kernel construction.",
-        "findings": "No clipped or overlapping content, missing formula glyphs, unintended blank pages or overfull text. Title hierarchy, equations and page transitions are readable."
-      }
+        "method": "Every page inspected in 10 contact sheets across all seven rebuilt papers, rendered at 72 dpi. Matching and PIT title pages additionally inspected at 110 dpi. Text extraction and unchanged page counts checked; mathematical source preservation checked independently.",
+        "findings": "Current author handle is legible. No clipped or overlapping content, missing formula glyphs, unintended blank pages or layout warnings found.",
+        "mathematical_certification": false
+      },
+      "visual_review_basis": "Fresh inspection of the rebuilt publication artifact after the author-handle update.",
+      "previous_reviewed_pdf_sha256": "4f19026aac39242aa4afa522ea9a4593b9329fccacda5288a5d9ea1708ef5e73"
     },
     "two-failure-matroids": {
       "scope": "Complete two-failure prefix bounds, singleton case, exact low-rank maxima and explicit obstruction",
@@ -34,26 +41,31 @@
       "inputs": {
         "manuscripts/papers.json": "95b16ce2e0796292edc761a5c4a3157c50640263948b511dfed3eced2e9042ff",
         "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
-        "problems/matroid-failure-summaries/two-failure-paper.tex": "5bf9398dcd0892a8834a39477591ea5c7e2674d7a2014ac0ec1c1f385d745932",
-        "tools/build_manuscripts.py": "6cdaa408355ce2d4df9f6fe2933f24c018360d2d15c32bd9b62c5e1419c30dee",
+        "problems/matroid-failure-summaries/two-failure-paper.tex": "255938cd3e3e2cd8670aa1757e6cc35adadc1d2e2c0b3776ed38bf504cb9efae",
+        "tools/build_manuscripts.py": "3d7e89fa6b41bc6e102d8e93d0e7ea6c49a3c3fe0581a2d1948d58b00f3cf7e0",
         "tools/build_papers.py": "8d2f970cd6ac01132bee7af85fc4119a32976e419e84df6ee6ac486cbd8d3ad4",
         "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
-        "problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md": "b2d75c8548e4fe08161e4b742dd18556053bced4e066ca8db592407c591e751d",
-        "problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md": "b922466bb3e418f7e8a00bb63cf83dd3f36868457fd401c3f84e4b46edcd81d4"
+        "problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md": "373276b366554ea83d5b5cbb6ff451b1b2432eff4e9a57a02236cca56b2dbc0a",
+        "problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md": "713f5807c5bb0c7684ae49f7a7459feffe3e6b5e7da444c487175be81c1d0959"
       },
-      "pdf_sha256": "9fe91ebef9b4eccd575fe932c6cdc7c4541880c717e25521f53d4b44da54ae88",
-      "engine": "xelatex",
+      "pdf_sha256": "8ea86a391f162670aae7a46fbdcb820d1e774e28f11cb6d09d4836e9e4109037",
+      "engine": "Tectonic 0.17.0 (XeTeX)",
       "source_date_epoch": 1792972800,
       "layout_warnings": [],
       "visual_review": "passed",
+      "pages": 14,
+      "build_method": "Original shared style and source-preserving paper export; Tectonic with insecure features disabled.",
+      "attribution_text_comparison": "Only the requested author alias changes after whitespace normalization.",
       "visual_review_details": {
-        "date": "2026-10-26",
+        "date": "2026-10-28",
+        "reviewer": "research-session root",
         "pages": 14,
-        "method": "Every page inspected in rendered contact sheets; selected dense tables, references and corrected pages also inspected at full-page resolution.",
-        "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. All recorded typesetting layout warnings were resolved."
+        "method": "Every page inspected in 10 contact sheets across all seven rebuilt papers, rendered at 72 dpi. Matching and PIT title pages additionally inspected at 110 dpi. Text extraction and unchanged page counts checked; mathematical source preservation checked independently.",
+        "findings": "Current author handle is legible. No clipped or overlapping content, missing formula glyphs, unintended blank pages or layout warnings found.",
+        "mathematical_certification": false
       },
-      "visual_review_basis": "Only the two 16-byte PDF trailer file identifiers changed; every other byte is identical to the previously visually reviewed artifact.",
-      "previous_reviewed_pdf_sha256": "b18c086be3c381e1f98b851df47ac523e709e97ed0cb47b71071be191932ea35"
+      "visual_review_basis": "Fresh inspection of the rebuilt publication artifact after the author-handle update.",
+      "previous_reviewed_pdf_sha256": "9fe91ebef9b4eccd575fe932c6cdc7c4541880c717e25521f53d4b44da54ae88"
     },
     "deterministic-general-matching": {
       "scope": "Complete four-fifths deterministic general-matching research manuscript with explicit local realization theorem and named companion/published proof dependencies; software coverage is stated separately",
@@ -61,23 +73,30 @@
       "inputs": {
         "manuscripts/papers.json": "95b16ce2e0796292edc761a5c4a3157c50640263948b511dfed3eced2e9042ff",
         "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
-        "problems/general-matching/paper.tex": "0121685b046749488ab223496d3324a250fe529ec9dc7a692d9c265c6b1e3ac1",
-        "tools/build_manuscripts.py": "6cdaa408355ce2d4df9f6fe2933f24c018360d2d15c32bd9b62c5e1419c30dee",
+        "problems/general-matching/paper.tex": "b62d87835cc2f376b962b4cf212ce0fa8daa5d8b544a5445855365c51a98f5a0",
+        "tools/build_manuscripts.py": "3d7e89fa6b41bc6e102d8e93d0e7ea6c49a3c3fe0581a2d1948d58b00f3cf7e0",
         "tools/build_papers.py": "8d2f970cd6ac01132bee7af85fc4119a32976e419e84df6ee6ac486cbd8d3ad4",
         "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
-        "problems/general-matching/proof.md": "fc080214c43c211e8dd555d0d571ab7600f017dcc20a01563bdfe5c69733684d"
+        "problems/general-matching/proof.md": "c689f299122ed2e8ec8f8d2688b540d430f1f6ba59d13c6504fafad8959e7d69"
       },
-      "pdf_sha256": "049f1efdb3f2d7c4cf2e0d263cce57d2c35ae10b13c6e20bd99ed07d330aa82b",
-      "engine": "xelatex",
+      "pdf_sha256": "a2cd5602045703f214f1cfc6a857348bc417653a6baa4ec7cdd27b996512131b",
+      "engine": "Tectonic 0.17.0 (XeTeX)",
       "source_date_epoch": 1792972800,
       "layout_warnings": [],
       "visual_review": "passed",
+      "pages": 34,
+      "build_method": "Original shared style and source-preserving paper export; Tectonic with insecure features disabled.",
+      "attribution_text_comparison": "Formula ordering or glyph encoding in extracted PDF text differs on a small set of pages. Mathematical source is unchanged; the rendered pages were inspected and no typesetting warnings remain.",
       "visual_review_details": {
-        "date": "2026-10-26",
+        "date": "2026-10-28",
+        "reviewer": "research-session root",
         "pages": 34,
-        "method": "Changed pages 2 and 3 inspected at full-page 130 dpi. All remaining 32 page PNG files are byte-identical to the corresponding renders of the previously visually reviewed PDF.",
-        "findings": "No clipped or overlapping content, missing formula glyphs, unintended blank pages or overfull text. Title hierarchy, equations and page transitions are readable."
-      }
+        "method": "Every page inspected in 10 contact sheets across all seven rebuilt papers, rendered at 72 dpi. Matching and PIT title pages additionally inspected at 110 dpi. Text extraction and unchanged page counts checked; mathematical source preservation checked independently.",
+        "findings": "Current author handle is legible. No clipped or overlapping content, missing formula glyphs, unintended blank pages or layout warnings found.",
+        "mathematical_certification": false
+      },
+      "visual_review_basis": "Fresh inspection of the rebuilt publication artifact after the author-handle update.",
+      "previous_reviewed_pdf_sha256": "049f1efdb3f2d7c4cf2e0d263cce57d2c35ae10b13c6e20bd99ed07d330aa82b"
     },
     "deterministic-subset-sum": {
       "scope": "Complete uniform deterministic Subset Sum compiler and witness proof in Parts I–III, preserved F2 and stronger F3; the older background contact presentation has its separately stated evidence boundary",
@@ -85,25 +104,30 @@
       "inputs": {
         "manuscripts/papers.json": "95b16ce2e0796292edc761a5c4a3157c50640263948b511dfed3eced2e9042ff",
         "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
-        "problems/subset-sum-fast-deterministic/paper.tex": "7f0d95452880e9b840cc64125f9affa80b474bea2862ce641a20e753037963c5",
-        "tools/build_manuscripts.py": "6cdaa408355ce2d4df9f6fe2933f24c018360d2d15c32bd9b62c5e1419c30dee",
+        "problems/subset-sum-fast-deterministic/paper.tex": "c408f662f9a02fb15b2a69d198638b24ef246845ba212c677b3c5c44f4be366f",
+        "tools/build_manuscripts.py": "3d7e89fa6b41bc6e102d8e93d0e7ea6c49a3c3fe0581a2d1948d58b00f3cf7e0",
         "tools/build_papers.py": "8d2f970cd6ac01132bee7af85fc4119a32976e419e84df6ee6ac486cbd8d3ad4",
         "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
-        "problems/subset-sum-fast-deterministic/proof.md": "f7d5005061ebb5f711918ad7b791fce64a2893afa6ff00c96d3afe73828e7733"
+        "problems/subset-sum-fast-deterministic/proof.md": "2cfc47ec8c788ef140381a5a67ade0ff6bb82f60f46c58ef06c96120b94004f5"
       },
-      "pdf_sha256": "0657a9d54caf1f796b521b9341fd6dcff76ef20a870659991a665deba186f677",
-      "engine": "xelatex",
+      "pdf_sha256": "88c404cc10ab494eb49cfb5a58894361525ae4a61fc9dfc47930587cd8a8dff5",
+      "engine": "Tectonic 0.17.0 (XeTeX)",
       "source_date_epoch": 1792972800,
       "layout_warnings": [],
       "visual_review": "passed",
+      "pages": 56,
+      "build_method": "Original shared style and source-preserving paper export; Tectonic with insecure features disabled.",
+      "attribution_text_comparison": "Formula ordering or glyph encoding in extracted PDF text differs on a small set of pages. Mathematical source is unchanged; the rendered pages were inspected and no typesetting warnings remain.",
       "visual_review_details": {
-        "date": "2026-10-26",
+        "date": "2026-10-28",
+        "reviewer": "research-session root",
         "pages": 56,
-        "method": "Every page inspected in rendered contact sheets; selected dense tables, references and corrected pages also inspected at full-page resolution.",
-        "findings": "No clipped or overlapping content, missing formula glyphs, or unintended blank pages. All recorded typesetting layout warnings were resolved."
+        "method": "Every page inspected in 10 contact sheets across all seven rebuilt papers, rendered at 72 dpi. Matching and PIT title pages additionally inspected at 110 dpi. Text extraction and unchanged page counts checked; mathematical source preservation checked independently.",
+        "findings": "Current author handle is legible. No clipped or overlapping content, missing formula glyphs, unintended blank pages or layout warnings found.",
+        "mathematical_certification": false
       },
-      "visual_review_basis": "Only the two 16-byte PDF trailer file identifiers changed; every other byte is identical to the previously visually reviewed artifact.",
-      "previous_reviewed_pdf_sha256": "872c7e9fbbe79dc76c57264236f0acd11fca24916f7ecb466fd3aaefe641511b"
+      "visual_review_basis": "Fresh inspection of the rebuilt publication artifact after the author-handle update.",
+      "previous_reviewed_pdf_sha256": "0657a9d54caf1f796b521b9341fd6dcff76ef20a870659991a665deba186f677"
     },
     "rank-adaptive-matroids": {
       "scope": "Complete fixed rank-loss contraction and all-prefix identities, optimal rank-two exact-summary query complexity with its scoped lower bound, sharp low-residual-rank support bounds and the arbitrary-rank all-label-budget endpoint",
@@ -111,24 +135,31 @@
       "inputs": {
         "manuscripts/papers.json": "95b16ce2e0796292edc761a5c4a3157c50640263948b511dfed3eced2e9042ff",
         "manuscripts/paper-style.tex": "adcdcda1b8ad43b4ed624a4c2af0b86a966ab3462de27929c0c5533a313cd24b",
-        "problems/matroid-failure-summaries/rank-adaptive-paper.tex": "8b46efb8b4bf375d4f26f1dcf5e3c8282116536003f8dfb72258c4672ac1cad2",
-        "tools/build_manuscripts.py": "6cdaa408355ce2d4df9f6fe2933f24c018360d2d15c32bd9b62c5e1419c30dee",
+        "problems/matroid-failure-summaries/rank-adaptive-paper.tex": "dcd0d90cfb447a7ca68d868ce7239dbfb8d446d7ece11cacec4a761a9af34c3e",
+        "tools/build_manuscripts.py": "3d7e89fa6b41bc6e102d8e93d0e7ea6c49a3c3fe0581a2d1948d58b00f3cf7e0",
         "tools/build_papers.py": "8d2f970cd6ac01132bee7af85fc4119a32976e419e84df6ee6ac486cbd8d3ad4",
         "tools/math_presentation.py": "5367a80554dbe77a83989b48ee5a304e52d30be0c42180f2c4c0a154ffb80285",
-        "problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md": "cd75a6c98027594ef805463329435e60bbc0b65238368ff86c44db1f587cd8b9",
-        "problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md": "1348febfb88310c27665827f21e263117a1a7a229710e427c6f26ac8b212f33b"
+        "problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md": "85fa022922c714e7340fe6efae707e8edd2b655078492033443345bacd2ca7fd",
+        "problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md": "c7e35369fff606bb47f68c659f4e7400a561a488e8ca287ee88b20d1cb4fbd6e"
       },
-      "pdf_sha256": "d3b34bd864d8155464fd4e25c2ce35d699f817da8c3f9c31df14369813a22896",
-      "engine": "xelatex",
+      "pdf_sha256": "b8d41cba622a86109d7ce98acff4a2ef211481342ec87ef9824494b70a255747",
+      "engine": "Tectonic 0.17.0 (XeTeX)",
       "source_date_epoch": 1792972800,
       "layout_warnings": [],
       "visual_review": "passed",
+      "pages": 12,
+      "build_method": "Original shared style and source-preserving paper export; Tectonic with insecure features disabled.",
+      "attribution_text_comparison": "Formula ordering or glyph encoding in extracted PDF text differs on a small set of pages. Mathematical source is unchanged; the rendered pages were inspected and no typesetting warnings remain.",
       "visual_review_details": {
-        "date": "2026-10-26",
+        "date": "2026-10-28",
+        "reviewer": "research-session root",
         "pages": 12,
-        "method": "Every page inspected at full-page 130 dpi, including the fixed contraction, rank-two algorithm, oracle lower bound and all-label-budget endpoint.",
-        "findings": "No clipped or overlapping content, missing formula glyphs, unintended blank pages or overfull text. Title hierarchy, equations and page transitions are readable."
-      }
+        "method": "Every page inspected in 10 contact sheets across all seven rebuilt papers, rendered at 72 dpi. Matching and PIT title pages additionally inspected at 110 dpi. Text extraction and unchanged page counts checked; mathematical source preservation checked independently.",
+        "findings": "Current author handle is legible. No clipped or overlapping content, missing formula glyphs, unintended blank pages or layout warnings found.",
+        "mathematical_certification": false
+      },
+      "visual_review_basis": "Fresh inspection of the rebuilt publication artifact after the author-handle update.",
+      "previous_reviewed_pdf_sha256": "d3b34bd864d8155464fd4e25c2ce35d699f817da8c3f9c31df14369813a22896"
     }
   }
 }

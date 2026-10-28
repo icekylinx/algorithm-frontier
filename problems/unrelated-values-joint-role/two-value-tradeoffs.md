@@ -212,4 +212,4 @@ is QT4 and the shared-resource interface is J6--J18 of the cited
 internal proofs. This note records their direct composition, without
 an exhaustive priority claim or external-verification claim.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

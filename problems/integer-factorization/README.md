@@ -120,4 +120,4 @@ source increments are mapped in the [import record](../../provenance/imports/int
 All curated output is English. Source-derived mathematics is preserved; no
 intermediate checkpoints or stronger exponent improvement are inferred.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

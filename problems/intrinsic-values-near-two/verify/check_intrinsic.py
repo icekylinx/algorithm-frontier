@@ -1,6 +1,6 @@
 """Independent original-table allocation and derived-basis checks.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 No native union/dual/workload/LP helper is used by the exhaustive oracle.
 """
 from dataclasses import replace

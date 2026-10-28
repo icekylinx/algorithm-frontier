@@ -614,4 +614,4 @@ used in the separately proved arbitrary-period recovery lemma.
   https://arxiv.org/pdf/1508.05035
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

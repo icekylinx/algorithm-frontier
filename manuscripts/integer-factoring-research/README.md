@@ -47,4 +47,4 @@ Original mathematics is retained with indentation converted into copyable code b
 | ONE LITERAL-RING CONTRACTION WITH SUBPOLYNOMIAL PRECISION | [Manuscript](../../problems/integer-factorization/manuscripts/packed-square-zero-prony-factoring.md) | Reviewed conditional interface or extraction |
 | THREE LIMITS OF DIRECT TENSOR-CONTRACTION RETUNING | [Manuscript](../../problems/integer-factorization/manuscripts/tensor-parameter-and-char2-obstructions.md) | Reviewed limitations of named templates |
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

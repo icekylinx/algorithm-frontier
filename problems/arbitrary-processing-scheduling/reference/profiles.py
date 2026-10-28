@@ -1,6 +1,6 @@
 """Exact occupied-profile client for arbitrary processing times.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 Reuses the canonical two-time table/LP/count primitives. Profile generation
 is streamed; the inherited vertex/count solver has separate enumeration costs.
 """

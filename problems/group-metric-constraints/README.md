@@ -231,7 +231,7 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The [exact-separation and conditional-sign results](../obstruction-boundaries/) state the implementation and proof-model boundaries relevant to this family.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 ## Exact whole-coset compilation
 

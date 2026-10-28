@@ -1,6 +1,6 @@
 """Original-optimum bottleneck commitment clients on complete rank tables.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 The residual selector enumerates bases; fast rank-local search is not claimed.
 """
 from fractions import Fraction as F

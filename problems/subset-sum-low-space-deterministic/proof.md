@@ -1,6 +1,6 @@
 # Exact deterministic Subset Sum with low writable space
 
-**Yilin Liu · GPT-6 Astra Pro**
+**icekylinx · GPT-6 Astra Pro**
 
 ## Abstract and theorem
 

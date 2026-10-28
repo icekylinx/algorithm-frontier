@@ -6,7 +6,7 @@ weights, and checks signed carries and finite-field DFTs. This is neither a
 fast factoring implementation nor a validation of the external contraction
 theorem, its asymptotic complexity, or novelty. Standard library only.
 
-Authors: Yilin Liu and GPT-6 Astra Pro.
+Authors: icekylinx and GPT-6 Astra Pro.
 SPDX-License-Identifier: Apache-2.0
 """
 from __future__ import annotations

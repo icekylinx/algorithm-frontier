@@ -3,7 +3,7 @@
 This does not optimize an arbitrary support. An invalid or nonoptimal support
 raises ValueError. The independent verifier imports none of this module.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro.
 SPDX-License-Identifier: Apache-2.0
 """
 from fractions import Fraction

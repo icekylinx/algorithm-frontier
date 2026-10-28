@@ -56,4 +56,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 <code class="math">\mathrm{FOPT}</code> is one comparator name, not a product of an unspecified factor and integer <code class="math">\mathrm{OPT}</code>. The proof retains all fractional coordinates needed by that comparator, including pairs whose full-unit cost exceeds a positive budget.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

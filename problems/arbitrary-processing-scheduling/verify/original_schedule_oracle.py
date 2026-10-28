@@ -1,6 +1,6 @@
 """Independent finite original-pair schedule enumeration for scheduling checks.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 This module imports no scheduling backend or rank/LP/contraction helpers.
 """
 from fractions import Fraction as F

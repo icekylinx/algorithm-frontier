@@ -1,6 +1,6 @@
 """Exact mixed numeric targets via occupied profiles and covering chains.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 Complete original rank tables are charged. Local LPs stream active systems,
 with an explicit cost separate from paid polynomial weighted intersection.
 No resource-unit list or copied-ground subset rank table is constructed.

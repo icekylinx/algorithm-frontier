@@ -1,7 +1,7 @@
 {
   "updated_utc": "2026-10-24T01:14:49+00:00",
   "title": "A deterministic Subset Sum bound",
-  "author": "Yilin Liu",
+  "author": "icekylinx",
   "repository_handle": "icekylinx",
   "assistance": "OpenAI Codex, including GPT-6 Astra",
   "current_round": "rounds/20261024-structural",
@@ -74,7 +74,7 @@
   },
   "paper": {
     "title": "A deterministic Subset Sum bound",
-    "author": "Yilin Liu",
+    "author": "icekylinx",
     "combined_manuscript": true,
     "pdf": "paper/subset-sum.pdf",
     "source": "paper/main.tex",

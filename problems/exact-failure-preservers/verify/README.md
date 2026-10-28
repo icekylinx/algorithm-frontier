@@ -190,7 +190,7 @@ preprocessing retain their separate mathematical statements and evidence.
 These exact finite checks do not assert proof-assistant verification or
 external peer review.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 
 ## Certified valuated and ordinary rank-drop reports

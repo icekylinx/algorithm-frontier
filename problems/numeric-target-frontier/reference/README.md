@@ -68,4 +68,4 @@ compiler. No seven-scheme, nonlinear, global or robust client is implemented
 here. Canonical exact rank validation and PA's generic rational active-system
 primitive are reused, with new standard-library Apache-2.0 source.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

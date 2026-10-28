@@ -144,7 +144,7 @@ Pinching preserves every diagonal matrix element in its defining basis. Hence a 
 
 The diagonal objective is a nonnegative scalar plus weighted affine parity penalties. Enumeration on its <code class="math">d\le n</code> independent labels costs <code class="math">2^d\mathrm{poly}(L)</code> time and polynomial space, producing a stabilizer tableau. [The full witness proof](manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md) supplies the constants, prime-dimensional factor <code class="math">2(1+p^{-1/2})</code>, and basis-choice lower examples. The polynomial-time reduction does not solve its remaining classical minimization in polynomial time.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 ## Native Pauli witness realization
 

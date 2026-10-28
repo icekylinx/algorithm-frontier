@@ -200,4 +200,4 @@ than retained support, disabled optimization producers during queries and
 100-digit signed costs, denominators and supplies. Finite evidence supplements
 the proofs above; it is not formal verification or external peer review.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

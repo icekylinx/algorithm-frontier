@@ -440,4 +440,4 @@ preserve neither top-dimensional homology nor integral torsion, and do not
 supply dynamic label updates. Additional top-simplex labels retain the
 separate general incidence theorem; they are not covered by Theorem 3.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

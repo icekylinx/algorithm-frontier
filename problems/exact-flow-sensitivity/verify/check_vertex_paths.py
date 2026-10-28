@@ -5,7 +5,7 @@ Enumerate simple native paths and compatible internal-vertex masks. This
 oracle does not split vertices or use the flow solver. Explicit exceptions
 remain active under optimized Python.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro.
+Attribution: icekylinx and GPT-6 Astra Pro.
 """
 from collections import Counter
 from fractions import Fraction

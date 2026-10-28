@@ -433,4 +433,4 @@ Existing oracle lower bounds strictly below factor two in unit allocation
 or two-value compulsory allocation remain valid within their stated
 parameters. The [refined-parameter barrier](../allocation-lower-bounds/refined-parameter-barrier.md) supplies the aligned strict-below-two construction even when c(OPT/(2+eta))=0. It does not establish optimality of the displayed exponential base or settle the exact-factor-two endpoint.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

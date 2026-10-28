@@ -88,4 +88,4 @@ not proof-assistant formalization, external peer review or an exhaustive
 public-priority audit. Repository surface checks validate syntax, links and
 catalogue consistency rather than mathematical correctness.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

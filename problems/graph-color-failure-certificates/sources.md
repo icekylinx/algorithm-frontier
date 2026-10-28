@@ -34,4 +34,4 @@ ledgers. No polylogarithmic dynamic-MSF implementation is shipped.
 - Holm, de Lichtenberg, and Thorup, [Poly-logarithmic Deterministic Fully-Dynamic Algorithms](https://u.cs.biu.ac.il/~liamr/p723-holm.pdf), JACM 2001, Theorem 8 and Section 5.1. The original page-724 definition explicitly responds with maintained forest changes; the global insertion/deletion sites realize original-ID exchange reporting with constant extra work. Parallel pairs use a separate priority-queue adapter.
 - The manuscript gives separate primary citations for colored connectivity, color-list spanners, and the hyperconnectivity matrix. Those comparisons do not replace the fixed-order prefix-span proof.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

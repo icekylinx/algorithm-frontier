@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Independent common-set and rooted-tree enumeration for initialized reports.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro.
 SPDX-License-Identifier: Apache-2.0
 """
 from fractions import Fraction as Q

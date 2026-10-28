@@ -1,6 +1,6 @@
 """Binary convex pricing and actual residual-configuration column generation.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 The native outer loop uses finite Farkas generation and exact Bland pivots,
 not the polynomial-cut ellipsoid implementation of the mathematical theorem.
 Only coordinate-box local families are supplied by this optimizer.

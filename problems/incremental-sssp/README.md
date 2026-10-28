@@ -64,4 +64,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 Read the [proof](proof.md), [source map](sources.md), and [complexity guide](../../docs/COMPLEXITY.md) for the accuracy range, constructed interfaces and public dependencies.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

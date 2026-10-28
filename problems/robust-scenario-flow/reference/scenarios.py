@@ -1,4 +1,4 @@
-"""Adaptive scenario reference. Attribution: Yilin Liu and GPT-6 Astra Pro.
+"""Adaptive scenario reference. Attribution: icekylinx and GPT-6 Astra Pro.
 
 Apache-2.0. Exact Bland LP and selected-set enumeration are potentially
 exponential; they do not implement the corank approximation scheme.

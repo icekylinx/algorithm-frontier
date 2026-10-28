@@ -46,4 +46,4 @@ The predicate family, table and numeric encoding costs are charged explicitly.
 The established algebraic construction is credited in the proof. No third-party
 code is copied, and no analytic partial-coloring implementation is included.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

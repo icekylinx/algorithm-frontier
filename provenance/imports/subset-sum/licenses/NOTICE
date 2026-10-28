@@ -1,8 +1,8 @@
 A deterministic Subset Sum bound: manuscript, certificates, and research notes
 
-Author of continuation work: Yilin Liu (repository handle: icekylinx)
+Author of continuation work: icekylinx
 Assistance: OpenAI Codex, including GPT-6 Astra
-Copyright 2026 Yilin Liu (icekylinx) for new continuation code and presentation.
+Copyright 2026 icekylinx for new continuation code and presentation.
 
 This repository includes a curated, unmodified subset of Swapnil Jain's
 subsetsum-derand repository, pinned at commit

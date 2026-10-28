@@ -890,4 +890,4 @@ credited for the alternating-layer/signature strategy and the
 expansion-to-hitting approach; none of its questioned constructive
 interfaces is needed for this modified outer algorithm.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -288,4 +288,4 @@ differences and their original retained union. It stores no discarded
 edge weights. These implementation and finite-check claims do not assert
 external peer review or proof-assistant verification.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. **License:** Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. **License:** Apache-2.0.

@@ -170,4 +170,4 @@ optimization and separation; it does not replace those paid polynomial-time
 primitives by a polynomial-time simplex theorem, implement the omission
 recursion, or establish external peer review or formal verification.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

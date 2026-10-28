@@ -158,4 +158,4 @@ with:
 python3 -B problems/degree-constrained-subgraphs/verify/check_reference.py
 ```
 
-**Attribution:** Yilin Liu · GPT-6 Astra Pro.
+**Attribution:** icekylinx · GPT-6 Astra Pro.

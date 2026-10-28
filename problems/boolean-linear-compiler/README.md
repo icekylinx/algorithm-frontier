@@ -63,4 +63,4 @@ Since <code class="math">d_i</code> is at most the row's original support, the s
 
 The [unconditioned compiler](manuscripts/boolean-linear-optimization-compiler.md) remains available without a cardinality guard, using <code class="math">\kappa_i=\min\{W_i+1,s_i\}</code> for original support <code class="math">s_i</code>. A fixed number of interval rows still transfers the selected backend up to polynomial factors. The fast-time and low-space repository instantiations are separate algorithmic points; their guarantees are not combined.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -109,4 +109,4 @@ values is not established. The companion also proves a two-unit
 coverage counterexample to matroid augmentation, explaining why a
 second heavy-cover layer cannot be imported automatically.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

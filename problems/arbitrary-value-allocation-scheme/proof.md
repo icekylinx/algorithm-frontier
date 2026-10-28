@@ -514,4 +514,4 @@ literature audit. No formal-verification claim is attached.
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -127,4 +127,4 @@ For arbitrary whole seminorm blocks, the Gaussian reduction and ordinary optimal
 
 [PSD importance](manuscripts/correlated-failure-spectral-and-regression-summaries.md); [general sensitivity](manuscripts/general-nonnegative-sensitivity-compiler.md); [convex regression](manuscripts/weak-convex-regression-under-correlated-failures.md); [label and norm lifts](manuscripts/label-vector-spectral-and-norm-lifts.md); [graph incidence](manuscripts/correlated-vertex-and-edge-failure-spectral-graphs.md); [simplicial incidence](manuscripts/graded-incidence-and-simplicial-spectral-sparsification.md); [whole seminorms](manuscripts/arbitrary-seminorms-under-correlated-failures.md).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

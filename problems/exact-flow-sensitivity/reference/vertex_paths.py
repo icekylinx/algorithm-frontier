@@ -4,7 +4,7 @@ Input is a simple directed graph with nonnegative exact rational costs.
 Native arc IDs are input positions. Queries independently delete one arc
 or one nonterminal vertex. Only retained records survive preprocessing.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro.
+Attribution: icekylinx and GPT-6 Astra Pro.
 """
 from __future__ import annotations
 

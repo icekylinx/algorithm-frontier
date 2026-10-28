@@ -131,4 +131,4 @@ Take <code class="math">s=\lceil\epsilon^{-2}\rceil</code>, and index disjoint l
 
 The [hyperedge proof](manuscripts/exact-label-whole-blocks-and-hyperedges.md) uses core vertices and a rectangle-discrepancy version of the same inequality to realize <code class="math">k=a(t-1)+b</code>. The same labeled-copy construction on commuting cut checks gives the quantum lower bound while sharing the same physical qudits.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

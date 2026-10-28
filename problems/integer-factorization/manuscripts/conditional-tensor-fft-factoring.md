@@ -294,4 +294,4 @@ https://doi.org/10.1090/S0025-5718-1965-0178586-1
 
 End of conditional reduction.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

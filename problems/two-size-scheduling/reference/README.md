@@ -41,4 +41,4 @@ local-search algorithm or the streamed global wrapper.
 python3 problems/two-size-scheduling/verify/check_corank.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

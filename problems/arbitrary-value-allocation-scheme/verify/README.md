@@ -78,4 +78,4 @@ public antecedent, not a black-box theorem for this complete profile model.
 Repository surface checks do not establish mathematical correctness;
 proof-assistant formalization and external peer review are not claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

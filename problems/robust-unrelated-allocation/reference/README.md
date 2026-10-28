@@ -26,4 +26,4 @@ vector or common integer assignment requirement.
 Run `python3 problems/robust-unrelated-allocation/verify/check_robust.py`
 from the repository root.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. **License:** Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. **License:** Apache-2.0.

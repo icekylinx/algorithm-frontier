@@ -118,4 +118,4 @@ not an exhaustive public-priority claim. The actual joint-mask,
 count-floor, signed-budget and dummy-free recovery proofs are the
 reviewed prerequisites cited above.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

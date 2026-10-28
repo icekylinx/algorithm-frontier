@@ -1,4 +1,4 @@
-"""Width-two oracle gate. Attribution: Yilin Liu and GPT-6 Astra Pro.
+"""Width-two oracle gate. Attribution: icekylinx and GPT-6 Astra Pro.
 
 Apache-2.0. Deterministic polynomial-oracle matching terminal, degree branching,
 and explicit all-input width-violation outcome. No higher-quota solver.

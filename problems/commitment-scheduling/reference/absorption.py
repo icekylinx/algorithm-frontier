@@ -1,6 +1,6 @@
 """Binary full-marginal machine absorption and certified original-base lifting.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 Complete rank tables have explicit costs; no individual job copies are built.
 """
 from dataclasses import dataclass

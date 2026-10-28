@@ -401,4 +401,4 @@ dependencies. No external peer review or publication-priority claim
 is made. The new contribution of this note is the exact affine setup
 accounting and its compatibility with the changing joint-role LP.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -1,4 +1,4 @@
-"""Independent path/vertex checks. Attribution: Yilin Liu and GPT-6 Astra Pro."""
+"""Independent path/vertex checks. Attribution: icekylinx and GPT-6 Astra Pro."""
 from dataclasses import replace
 from fractions import Fraction as F
 from itertools import combinations, product

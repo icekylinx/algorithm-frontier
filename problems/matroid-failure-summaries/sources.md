@@ -58,4 +58,4 @@ best universal weighted-oracle size remains open between the recorded
 upper and lower bounds; the constructions do not assume an algorithm
 attaining the represented binomial bound.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

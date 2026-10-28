@@ -1,6 +1,6 @@
 """Independent finite schedule oracle against the exact reference backend.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 No backend rank, row, integer-enumeration or load helper is used by the oracle.
 """
 from fractions import Fraction as F

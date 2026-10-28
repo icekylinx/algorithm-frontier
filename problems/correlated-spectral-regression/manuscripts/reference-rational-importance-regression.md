@@ -208,4 +208,4 @@ scoped readiness. Their mathematical theorems remain separately recorded
 with their primary dependencies. Finite exact checks are not sampling
 success experiments, external peer review or proof-assistant verification.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

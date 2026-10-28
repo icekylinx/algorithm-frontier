@@ -389,4 +389,4 @@ Primary comparison:
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

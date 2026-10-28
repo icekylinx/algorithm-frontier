@@ -1,6 +1,6 @@
 # Attribution and external proof dependencies
 
-The curated derivations are attributed to Yilin Liu and GPT-6 Astra Pro and
+The curated derivations are attributed to icekylinx and GPT-6 Astra Pro and
 use the repository's Apache-2.0 license.
 
 The selected result explicitly assumes the Boolean tensor-contraction theorem

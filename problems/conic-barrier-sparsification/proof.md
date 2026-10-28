@@ -1,6 +1,6 @@
 # Proof of barrier-parameter cone sparsification
 
-Yilin Liu and GPT-6 Astra Pro — research manuscript reading map, 2026-10-26.
+icekylinx and GPT-6 Astra Pro — research manuscript reading map, 2026-10-26.
 
 The complete typeset mathematical argument is the canonical [editable TeX manuscript](manuscripts/self_concordant_sparsification.tex). This page explains the proof chain and the precise scope of each external input without replacing the derivations in the manuscript. The argument proves an existence bound and supplies an oracle-randomized realization under additional computational assumptions.
 

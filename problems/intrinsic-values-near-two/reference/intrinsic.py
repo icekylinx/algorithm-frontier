@@ -1,6 +1,6 @@
 """Exact complete-table intrinsic-value reference, with actual light omission.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 Derived union/completion and prefix search use canonical exact primitives.
 Light realization/rounding streams rational LP vertices: that finite basis
 count is separate from the theorem's paid polynomial LP/intersection work.

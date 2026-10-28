@@ -218,4 +218,4 @@ is proved here in full. The extension is ready for review in the stated
 scope; it is not a claim of publication priority, external peer review
 or proof-assistant verification.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

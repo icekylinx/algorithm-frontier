@@ -78,4 +78,4 @@ conversion require their own arguments. The finite
 small instances; it neither implements general weighted matroid intersection
 nor proves the unbounded algorithm by enumeration.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

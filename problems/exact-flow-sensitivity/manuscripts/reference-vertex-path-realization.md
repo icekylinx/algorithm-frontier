@@ -215,4 +215,4 @@ exhaustion. The wrapper does not support signed original costs, simultaneous
 failures, terminal deletion, native parallel records or a fast dynamic
 update sequence.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

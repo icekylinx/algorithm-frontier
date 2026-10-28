@@ -2,7 +2,7 @@
 
 **Abstract.** We construct exact certificates for boundary spaces and persistent homology under correlated label failures. A rank-compressed polynomial incidence lift preserves all surviving prefixes of a fixed order. The construction gives sharp retained-cell bounds and an exterior-algebra refinement for one color per vertex.
 
-**Authors:** Yilin Liu and GPT-6 Astra Pro.
+**Authors:** icekylinx and GPT-6 Astra Pro.
 
 ## 1. Main result and the quantity being reduced
 

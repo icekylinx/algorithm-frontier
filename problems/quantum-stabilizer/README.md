@@ -190,4 +190,4 @@ energy without importing the optimizer. The [native proof](reference-realization
 records phase conventions, polynomial reduction and verification, and the
 separate exponential search boundary.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

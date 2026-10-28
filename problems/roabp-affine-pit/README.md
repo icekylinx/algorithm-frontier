@@ -83,7 +83,7 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 **Source**
 
-Yilin Liu and GPT-6 Astra Pro. The canonical [core TeX](manuscripts/general-affine.tex) and [grid TeX](manuscripts/direction-grids.tex) contain the complete proofs. The [import record](../../provenance/imports/roabp-affine-pit.json) binds them to the research-session sources, with reversible publication-layout changes. The [source map](sources.md) distinguishes the new argument from standard Hasse-order tools and verified published comparisons.
+icekylinx and GPT-6 Astra Pro. The canonical [core TeX](manuscripts/general-affine.tex) and [grid TeX](manuscripts/direction-grids.tex) contain the complete proofs. The [import record](../../provenance/imports/roabp-affine-pit.json) binds them to the research-session sources, with reversible publication-layout changes. The [source map](sources.md) distinguishes the new argument from standard Hasse-order tools and verified published comparisons.
 
 ## Reading the result
 

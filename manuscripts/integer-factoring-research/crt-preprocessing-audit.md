@@ -268,4 +268,4 @@ Sources for the imported pieces:
   and Chebyshev facts are standard ingredients already used in that paper.
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

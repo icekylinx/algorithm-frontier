@@ -450,4 +450,4 @@ original-context replacements with explicitly exponential preprocessing.
 They do not assert a uniform-polynomial derandomization of that paper or
 a new lower bound for ordinary optimization kernels.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

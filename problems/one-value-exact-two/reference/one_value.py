@@ -1,6 +1,6 @@
 """Binary-capacity exact-budget one-value allocation reference.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 The omission/cover and weighted intersection algorithms are canonical.
 The exact Bland-simplex LP backend has a separate finite basis bound;
 it is not the polynomial-time LP primitive charged by the theorem.

@@ -443,4 +443,4 @@ forcing examples. These finite checks do
 not certify the arbitrary-size valuated completion or coloring arguments;
 their scope is recorded in the [verification note](verify/README.md).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

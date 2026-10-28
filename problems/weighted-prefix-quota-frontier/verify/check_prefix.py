@@ -1,6 +1,6 @@
 """Original-input one-order prefix optima versus native profile recovery.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 Small integer count enumeration occurs only in this independent checker.
 """
 from fractions import Fraction as F

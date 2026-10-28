@@ -188,4 +188,4 @@ refinement are documented separately in the
 Read the [proof](proof.md), [source map](sources.md), and
 [complete index](../../CONTENTS.md) for the construction and its review scope.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

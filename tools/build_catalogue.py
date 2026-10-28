@@ -186,7 +186,7 @@ def render_readme(data: dict) -> str:
                 record['scope'].rstrip('.') + '.', ""]
     out += [
         "## Results", "",
-        "Browse by problem. Each link opens its statement, proof and dependencies. "
+        "Categories follow the selected-result topics, then related methods and applications. Selected families lead each category; other titles are alphabetized. Each link opens its statement, proof and dependencies. "
         "[Computational models](docs/COMPLEXITY.md) and "
         "[randomness contracts](docs/RANDOMNESS.md) explain how to compare bounds.", "",
     ]
@@ -210,7 +210,7 @@ def render_readme(data: dict) -> str:
         "See [Contributing](CONTRIBUTING.md) for the full verification mode and "
         "maintenance conventions. No external peer review or proof-assistant "
         "verification is claimed.", "",
-        "Yilin Liu and GPT-6 Astra Pro. *Algorithm Frontier* (2026). "
+        "icekylinx and GPT-6 Astra Pro. *Algorithm Frontier* (2026). "
         "Cite the relevant problem path and commit; the [citation protocol](PROTOCOL.md) "
         "and [import provenance](provenance/README.md) retain the applicable "
         "licenses and notices.", "",

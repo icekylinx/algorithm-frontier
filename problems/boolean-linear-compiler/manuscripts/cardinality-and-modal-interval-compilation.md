@@ -409,4 +409,4 @@ standard library and elementary helpers from the existing unconditioned
 interval checker. These finite checks supplement the proof; they do not run
 or certify the supplied exponential-time Subset Sum backend.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

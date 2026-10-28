@@ -66,7 +66,7 @@ A direct sum of <code class="math">k</code> copies has rank <code class="math">3
 
 This disproves the exact fixed-amplitude lower bound <code class="math">2^{-r}</code>. It does not disprove a lower bound with a different exponential constant or a Gaussian bound in which the amplitudes themselves are random.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 ## Executable realization and source convention
 

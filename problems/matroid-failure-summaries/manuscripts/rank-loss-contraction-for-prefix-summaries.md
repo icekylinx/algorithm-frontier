@@ -328,4 +328,4 @@ checks supplement the proof rather than replace it. Reproduction commands
 and the scope of the other suites appear in the
 [verification note](../verify/README.md).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

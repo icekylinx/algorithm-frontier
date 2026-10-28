@@ -221,4 +221,4 @@ the proof and do not establish arbitrary-size correctness or asymptotics
 on their own. No external peer review or proof-assistant verification is
 claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

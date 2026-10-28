@@ -229,4 +229,4 @@ The [recipient-polymatroid algorithm](../recipient-polymatroid/proof.md)
 uses the integral-comparator loss lemma and remains consistent with both
 constructions.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

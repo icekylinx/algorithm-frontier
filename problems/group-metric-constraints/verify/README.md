@@ -59,4 +59,4 @@ compact-group running time is inferred from these checks.
 
 The quotient backend permits real normalized submodular ranks with positive marginals at least one. The partial-coloring backend requires its stated separation interface. A construction polynomial in the full explicit query table is not thereby polynomial in a compact presentation of the group. Compact modular construction is the separate exact-rank-oracle result.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

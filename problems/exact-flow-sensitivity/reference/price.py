@@ -1,5 +1,5 @@
 """Native ordinary fixed-rank price changes and supplied-catalog insertions.
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 Final records use the proved O(N+r^2) all-pairs alternative. Queries are
 independent and use no original oracle, input cost list or optimizer.
 """

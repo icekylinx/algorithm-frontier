@@ -67,4 +67,4 @@ The returned tree uses the original vertices. For every pair, the minimum edge w
 
 The reduction charges actual-size degree expansion, finite-precision multiplicative weights, the skeleton, fixed-<code class="math">k</code> guide families, contractions, and all flow calls. Published exact flow and the skeleton have a <code class="math">5/6</code> overhead scale; expander structural quality has a <code class="math">4/5</code> scale. All are absorbed by the stated <code class="math">6/7</code> factor. The [capacity-bit adapter](../../manuscripts/graph-backends/published-flow-capacity-scaling.md) offers a route with fewer local proof dependencies while charging small recursive calls by their actual size. This remains an application of the complete strong-forest interface, including occurrence and retirement accounting.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

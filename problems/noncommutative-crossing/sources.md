@@ -46,4 +46,4 @@ The source is the supplied `sat_research_checkpoint.zip`, dated October 27, 2026
 
 The full proof chain is mathematical draft work with explicit source prerequisites. No complete local formal verification, external peer review or certified historical novelty is claimed. Older numerical substitutions, routine SAT consequences, incomplete permanent approaches and unrelated formal trees are outside the selected package.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0 under the repository [license](../../LICENSE); the mathematical sources retain their named attribution.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0 under the repository [license](../../LICENSE); the mathematical sources retain their named attribution.

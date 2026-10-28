@@ -263,4 +263,4 @@ Target-dependent selected-set families are outside RG1 unless a separate fixed b
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -227,4 +227,4 @@ claim the theorem's polynomial workspace: its temporary support list may be
 exponential. The outer weighted DFS and block-cover mechanisms retain their
 proved bounds with this separately charged local cost.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. **License:** Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. **License:** Apache-2.0.

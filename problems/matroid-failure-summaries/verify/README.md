@@ -189,4 +189,4 @@ are recorded in the [persistence verification note](../../persistence-failure-ce
 It tests rational and prime-field arithmetic; the general extension-field
 construction is proved separately.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -4,8 +4,7 @@ title: "Algorithm Frontier"
 version: "2026.10.26"
 date-released: 2026-10-26
 authors:
-  - family-names: Liu
-    given-names: Yilin
+  - name: "icekylinx"
     affiliation: "Independent research"
   - name: "GPT-6 Astra Pro"
     affiliation: "AI research contribution"
@@ -24,8 +23,7 @@ preferred-citation:
   type: software
   title: "Algorithm Frontier"
   authors:
-    - family-names: Liu
-      given-names: Yilin
+    - name: "icekylinx"
     - name: "GPT-6 Astra Pro"
   year: 2026
   version: "2026.10.26"

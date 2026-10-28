@@ -74,4 +74,4 @@ Every packed branch has at most <code class="math">n+B</code> variables and poly
 
 The primary theorem is stated in symbolic backend exponents <code class="math">\alpha</code> and <code class="math">\sigma</code>. A time-only backend supplies no simultaneous space bound. Numerical instantiations inherit the selected backend's constructive interface and every stated analytic premise, as recorded in the [fast Subset Sum proof](../../subset-sum-fast-deterministic/proof.md). The executable does not run an exponential-time Subset Sum backend, verify its exponent, or certify continuous inequalities.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

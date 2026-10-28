@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2026 Yilin Liu and GPT-6 Astra Pro
+# Copyright 2026 icekylinx and GPT-6 Astra Pro
 # SPDX-License-Identifier: Apache-2.0
 """Compile all cyclic derivatives of a shared ordered arithmetic circuit.
 

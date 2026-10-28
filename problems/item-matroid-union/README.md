@@ -58,4 +58,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The [configuration-comparator proof](configuration-comparator.md) establishes the stronger comparator without changing the algorithm. Rank one is exact. The factor tends to four as rank grows; no fixed improvement below four for all ranks is asserted.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

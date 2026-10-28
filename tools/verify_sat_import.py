@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check selective SAT source identities and optional original ZIP replay.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 This checks provenance and publication scope, not mathematical correctness.
 """
 from pathlib import Path, PurePosixPath

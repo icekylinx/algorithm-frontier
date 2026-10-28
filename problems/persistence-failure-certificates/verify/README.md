@@ -75,4 +75,4 @@ These finite checks supplement the full incidence, naturality and lower-bound
 proofs. The API assumes a supplied prime modulus; it implements neither field
 extension construction nor top-dimensional homology.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

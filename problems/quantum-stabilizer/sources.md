@@ -64,4 +64,4 @@ introduces no sparsification dependency and preserves the theorem's scalar
 identity shifts. Prime-dimensional witness software remains outside this
 Pauli-specific implementation.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

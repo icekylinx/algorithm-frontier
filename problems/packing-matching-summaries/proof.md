@@ -80,4 +80,4 @@ The [exact rational backend](reference/README.md) constructs this product lift a
 
 [Resource-packing theorem, bit accounting, and representative-family sources](manuscripts/represented-resource-packing-transfer.md).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

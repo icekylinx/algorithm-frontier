@@ -267,4 +267,4 @@ local proof and finite checks make this statement ready for review in its
 stated oracle and readable-program scopes; external peer review or
 proof-assistant verification is not claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

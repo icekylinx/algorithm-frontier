@@ -102,4 +102,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 [Reference solver and usage](reference/README.md), [certificate proof](reference/correctness.md), [complete reduction theorem](proof.md), [linear-size selector theorem](linear-selector.md), [dependencies and primary sources](sources.md).
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

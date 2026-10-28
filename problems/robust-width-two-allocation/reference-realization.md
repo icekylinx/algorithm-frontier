@@ -163,4 +163,4 @@ remain outside this executable backend, although their full mathematical
 composition is now within review. No external peer review or proof-assistant
 verification is claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -56,4 +56,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The exact returned set must attain the setup cost used to compute the residual routing budget. The proof maintains one protected full-rate witness through the changing budget.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

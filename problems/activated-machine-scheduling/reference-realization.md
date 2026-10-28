@@ -165,4 +165,4 @@ profile, and exact interval endpoints are checked. Finite tests support the
 reference connection; they do not prove the arbitrary-oracle theorem by
 enumeration, constitute formal verification or claim external peer review.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

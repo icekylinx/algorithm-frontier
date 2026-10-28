@@ -1,6 +1,6 @@
 # Stronger bounds under distinct ROABP promises
 
-Yilin Liu and GPT-6 Astra Pro. This ledger retains five nonredundant complete proof packages. All have internal mathematical review; none is represented as externally peer-reviewed or proof-assistant-certified. The [scope audit](../review/special-case-scope-audit.txt) identifies their exact research-session sources.
+icekylinx and GPT-6 Astra Pro. This ledger retains five nonredundant complete proof packages. All have internal mathematical review; none is represented as externally peer-reviewed or proof-assistant-certified. The [scope audit](../review/special-case-scope-audit.txt) identifies their exact research-session sources.
 
 ## Common model
 

@@ -128,7 +128,7 @@ Choose an integer <code class="math">R\in[r,r+1]</code> and transform by <code c
 
 Quanrud's theorem and adaptive quotient resparsification now apply to an exact polynomial-bit oracle. They preserve every original active-block query with the claimed support. The same function and denominator are retained under every restriction. Full rounding, bit-length, and lower-bound proofs appear in [the rational-rank theorem](manuscripts/rational-quotient-ranks-from-weak-oracles.md) and [the modular-block theorem](manuscripts/affine-modular-blocks-and-sharp-modulus-dependence.md). <code class="math">\square</code>
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 ## Executable algebraic realization
 

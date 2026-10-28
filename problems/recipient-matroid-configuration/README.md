@@ -63,4 +63,4 @@ mathematical construction.
 
 The manuscript defines the comparator explicitly and proves its reduction to the compact small-resource promise. No LP solution or configuration enumeration is required.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

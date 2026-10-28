@@ -60,4 +60,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The broader [J2 theorem](../unrelated-values-joint-role/proof.md#9-compulsory-two-valued-unrelated-instances-exact-factor-two) allows player-specific pair values in <code class="math">\{0,u,a\}</code>, even within one shared resource type, with the same exact-two global base. Its [full integer tradeoff](../unrelated-values-joint-role/two-value-tradeoffs.md) requires compulsory players and does not obtain optional selection from a third-value dummy.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

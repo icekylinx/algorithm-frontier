@@ -206,4 +206,4 @@ objectives are outside this incremental review. Internal mathematical review,
 finite exact checks and original certificate verification are not external
 peer review or proof-assistant formalization.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

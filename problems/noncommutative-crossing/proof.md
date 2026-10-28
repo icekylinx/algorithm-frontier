@@ -105,4 +105,4 @@ All final identities hold in the free associative algebra over the integers, so 
 
 Established integer identities also transfer this construction to the degree-four distinct-index polynomial and row-ordered four-row rectangular permanent. Their complete short identities appear at the end of the manuscript. They are inherited outputs, with a constant-factor matrix simulation, and are not presented as additional algorithmic contributions. The number of rows stays four.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

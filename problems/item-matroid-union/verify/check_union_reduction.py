@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Finite exact checks of union ranks, basis recovery and fractional domination.
-Attribution: Yilin Liu and GPT-6 Astra Pro. SPDX-License-Identifier: Apache-2.0
+Attribution: icekylinx and GPT-6 Astra Pro. SPDX-License-Identifier: Apache-2.0
 This enumerates small matroids, not the polynomial union algorithm.
 """
 from fractions import Fraction

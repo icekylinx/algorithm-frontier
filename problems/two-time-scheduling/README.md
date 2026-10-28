@@ -58,4 +58,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The positive time pair may differ from machine to machine. A rational noninteger <code class="math">d</code> is not included in the discrete quota proof.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

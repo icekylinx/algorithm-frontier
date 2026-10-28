@@ -121,4 +121,4 @@ exhaustive contracted feasible recovery. It also checks minimality and
 100-digit capacities without unit expansion. Finite evidence supplements
 the arguments above; it is not formal verification.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

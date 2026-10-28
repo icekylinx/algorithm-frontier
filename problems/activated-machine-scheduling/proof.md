@@ -169,4 +169,4 @@ argument: the integral-face step above minimizes one scalar objective.
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

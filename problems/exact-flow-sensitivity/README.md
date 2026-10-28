@@ -289,4 +289,4 @@ all-pairs storage alternative and linear reporting, without query-time
 oracle calls. Cardinality stays prescribed; rank-increasing insertion and
 uncatalogued arcs remain separate interfaces.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

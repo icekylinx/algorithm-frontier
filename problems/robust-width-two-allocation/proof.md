@@ -300,4 +300,4 @@ resource's circuit size or from a sparse input row description.
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

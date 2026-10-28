@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2026 Yilin Liu. AI contribution identifier: GPT-6 Astra Pro.
+# Copyright 2026 icekylinx. AI contribution identifier: GPT-6 Astra Pro.
 # SPDX-License-Identifier: Apache-2.0
 """Exact finite Schur-mode arithmetic for the denominator-one crossing.
 

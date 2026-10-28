@@ -121,4 +121,4 @@ rows, characteristic-specific zero entries, large shared row-label sets,
 additional top labels and huge binary failure budgets. These finite checks
 supplement the arbitrary-size argument above.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

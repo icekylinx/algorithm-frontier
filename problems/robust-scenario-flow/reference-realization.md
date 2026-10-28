@@ -105,4 +105,4 @@ part of the theorem's model. Internal proof review and finite executable
 evidence do not constitute external peer review or proof-assistant
 verification.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -233,4 +233,4 @@ input, implicit uncertainty family or an externally unproved oracle.
 Internal review and finite checks are not external peer review or proof-
 assistant verification.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

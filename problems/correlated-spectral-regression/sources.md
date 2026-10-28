@@ -29,4 +29,4 @@ The companion manuscripts state the exact theorem, input representation, accurac
 - Feldman and Langberg, [A Unified Framework for Approximating and Clustering Data](https://arxiv.org/abs/1106.1379), and In, Li, Woodruff, and Wu, [Robust Sparsification via Sensitivity](https://proceedings.mlr.press/v267/in25a.html), for the sensitivity framework and the ordinary separation-pool antecedent.
 - Tropp, [User-friendly tail bounds for sums of random matrices](https://arxiv.org/pdf/1004.4389), arXiv version seven, Theorem 6.1, for the centered matrix-Bernstein inequality used to quantify the reference planner's conservative count envelope.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

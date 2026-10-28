@@ -1,4 +1,4 @@
-# Copyright 2026 Yilin Liu and GPT-6 Astra Pro
+# Copyright 2026 icekylinx and GPT-6 Astra Pro
 # SPDX-License-Identifier: Apache-2.0
 """Exact free-word oracle, adapted from the checkpoint cyclic-derivative checks."""
 from __future__ import annotations

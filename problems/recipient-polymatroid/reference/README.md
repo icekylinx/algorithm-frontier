@@ -91,4 +91,4 @@ python3 -B problems/recipient-polymatroid/verify/check_counts.py
 python3 -B problems/recipient-polymatroid/verify/check_fractional.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

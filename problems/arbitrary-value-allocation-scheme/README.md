@@ -60,4 +60,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 [Manuscript and proof](proof.md), with [dependencies and verification sources](sources.md).
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

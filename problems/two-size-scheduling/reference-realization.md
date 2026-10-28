@@ -142,4 +142,4 @@ mathematical proofs and running-time guarantees retain their own dependency
 chains. Finite reference checks are not proof-assistant verification, external
 peer review or a numerical proof of the general oracle theorem.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

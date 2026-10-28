@@ -1,6 +1,6 @@
 # Proof of the ordered subset algorithms
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0 under the
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0 under the
 repository [license](../../LICENSE); external mathematical sources retain
 their attribution in [sources.md](sources.md).
 

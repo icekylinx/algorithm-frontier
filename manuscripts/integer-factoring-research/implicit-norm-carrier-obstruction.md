@@ -97,4 +97,4 @@ homomorphism, or another implicit norm/resultant algorithm that does
 not preserve the full scaling endomorphism inside one finite algebra.
 It is not a generic lower bound for the desired scalar product.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

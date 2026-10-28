@@ -1,6 +1,6 @@
 # Fully dynamic all-pairs distances: a time–stretch theorem
 
-**Yilin Liu · GPT-6 Astra Pro**
+**icekylinx · GPT-6 Astra Pro**
 
 ## 1. Model, generic interface and its construction
 

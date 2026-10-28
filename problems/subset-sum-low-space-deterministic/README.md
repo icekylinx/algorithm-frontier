@@ -76,4 +76,4 @@ A [complete finite reference check](verify/check_range_solver.py)
 compares both scale regimes and original indexed witnesses with exhaustive
 search.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

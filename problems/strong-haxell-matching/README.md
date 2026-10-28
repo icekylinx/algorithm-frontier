@@ -82,4 +82,4 @@ For an expander of conductance <code class="math">\phi</code> and minimum degree
 
 Each has conductance <code class="math">\Omega(\phi/(\Gamma\log N))</code>, and the total construction time is <code class="math">(n+m)\exp(O(B+U\log(2+s)/s))</code>. All copies share one routing instance, so there is no hidden leading factor <code class="math">K</code>. The corollary credits the existing auxiliary-expander reduction and states the quantitative interface substitution separately.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

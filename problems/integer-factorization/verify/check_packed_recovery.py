@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Finite checks for the packed square-zero reduction (not a fast factoring backend).
 
-Research attribution: Yilin Liu / GPT-6 Astra Pro.
+Research attribution: icekylinx / GPT-6 Astra Pro.
 SPDX-License-Identifier: Apache-2.0
 All arithmetic here is exact.  GF(16), small matrices, and exhaustive small
 root sets check the algebra/recovery interfaces; they do not test the external

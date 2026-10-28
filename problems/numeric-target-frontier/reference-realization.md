@@ -213,4 +213,4 @@ Internal proof review, exact finite checks and original-output verification
 are not proof-assistant formalization, external peer review, or a public
 priority claim for coefficient-count intersection.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

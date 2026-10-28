@@ -1,6 +1,6 @@
 # Conditional deterministic complete integer factorization
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 ## 1. Theorem and accepted external premise
 

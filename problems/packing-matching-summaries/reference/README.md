@@ -53,4 +53,4 @@ but are not implemented by this backend.
 python3 problems/packing-matching-summaries/verify/check_product_summary.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

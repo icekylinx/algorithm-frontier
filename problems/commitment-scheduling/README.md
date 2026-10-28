@@ -103,4 +103,4 @@ is implicit.
 
 The [native commitment and contraction backends](reference/README.md) implement both original-optimum main clients, safe machine absorption and exact structural certificates. Their [realization proof](reference-realization.md) and [original-input checks](verify/README.md) distinguish numerical-count execution from the fast theorem's paid primitives.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

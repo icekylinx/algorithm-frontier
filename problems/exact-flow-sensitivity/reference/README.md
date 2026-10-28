@@ -193,4 +193,4 @@ are outside this executable contract.
 python3 -B problems/exact-flow-sensitivity/verify/check_price.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

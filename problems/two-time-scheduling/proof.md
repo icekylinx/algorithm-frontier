@@ -346,4 +346,4 @@ No publication-priority or formal/external verification claim is made.
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

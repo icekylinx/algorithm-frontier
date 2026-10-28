@@ -56,4 +56,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 Exact reoptimization of the returned fixed-set LP removes the target-search loss, so the old <code class="math">\Gamma(2/\varepsilon)</code> fractional-comparator base is unnecessary. Positive-cost pairs whose full-unit cost exceeds the budget remain eligible for the fractional comparator.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

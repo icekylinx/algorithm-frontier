@@ -120,4 +120,4 @@ assignments. Verification also runs after disabling all producer routines.
 The finite matrix checks support the symbolic arbitrary-size argument; they
 are not a numerical proof of the operator approximation inequality.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

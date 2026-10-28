@@ -100,4 +100,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 If an optimum has at most <code class="math">K</code> selected heavy recipients at threshold <code class="math">(1-1/R)\mathrm{OPT}/2</code>, the near-two proof also gives <code class="math">\Gamma(R)^{q-r+K}\mathrm{poly}(H)</code>. This is a threshold-dependent support condition. The signed dummy used for setup accounting is an internal construction; original costs remain nonnegative.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

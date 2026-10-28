@@ -99,7 +99,7 @@ def export(source: str, path: Path, expected: list[dict[str, object]], *, paper:
         if ast['blocks'] and ast['blocks'][0].get('t') == 'Para':
             first = ast['blocks'][0]['c']
             if (len(first) == 1 and first[0].get('t') == 'Strong' and
-                    'Yilin' in str(first[0]) and 'GPT-6' in str(first[0])):
+                    'icekylinx' in str(first[0]) and 'GPT-6' in str(first[0])):
                 ast['blocks'].pop(0)
         if ast['blocks'] and ast['blocks'][-1].get('t') == 'Para':
             first = ast['blocks'][-1]['c'][:1]

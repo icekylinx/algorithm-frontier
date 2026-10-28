@@ -74,4 +74,4 @@ requiring the ignored binary archives. Current proofs may be edited; source
 hashes are provenance and do not freeze current text or validate mathematics.
 The Chinese summary is integrated in the English research overview.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

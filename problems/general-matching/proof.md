@@ -1,6 +1,6 @@
 # Deterministic Exact General Matching through Persistent Integral Carriers and Normalized Routing
 
-**Yilin Liu · GPT-6 Astra Pro**
+**icekylinx · GPT-6 Astra Pro**
 
 **Theorem-and-proof manuscript.** This manuscript constructs a deterministic
 exact matching algorithm with four-fifths logarithmic overhead, using the
@@ -1589,6 +1589,6 @@ Substitute <code class="math">U=2s</code> and (77) into (31). Since <code class=
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 The proofs use their named external interfaces. Finite checks are separate from proof-assistant verification.

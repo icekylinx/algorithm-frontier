@@ -1,6 +1,6 @@
 # Primary sources and attribution
 
-Yilin Liu and GPT-6 Astra Pro — curated research source map, 2026-10-26.
+icekylinx and GPT-6 Astra Pro — curated research source map, 2026-10-26.
 
 ## Canonical manuscript
 

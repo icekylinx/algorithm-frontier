@@ -224,4 +224,4 @@ checks support the proof without replacing it. The broader two-order,
 few-weight-family and ground-reduction audit scopes remain separate; no
 proof-assistant verification or external peer review is claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

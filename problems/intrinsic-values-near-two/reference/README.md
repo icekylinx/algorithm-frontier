@@ -85,4 +85,4 @@ capacity, unit count or denominator's numerical value. The source is a new
 standard-library implementation under Apache-2.0, with canonical neighboring
 primitives imported rather than copied.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

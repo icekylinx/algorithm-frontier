@@ -219,4 +219,4 @@ coupling constraints between resources and fractional basis selection are
 outside both contracts. Internal review and exact finite checks are not
 proof-assistant formalization or external peer review.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

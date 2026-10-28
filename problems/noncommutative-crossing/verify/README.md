@@ -31,4 +31,4 @@ pdflatex -interaction=nonstopmode -halt-on-error crossing.tex
 
 No generated TeX intermediates, historical formal receipts or checkpoint PDFs are needed to retain the mathematical argument. The initial curation environment lacked `pdflatex`/`latexmk`; source closure was checked, without claiming a local TeX compilation.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

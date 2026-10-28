@@ -1,5 +1,11 @@
 # History
 
+## 2026-10-28 — Author handle and result ordering
+
+- Standardized current repository attribution, copyright notices, citation records and paper author lines to icekylinx, retaining GPT-6 Astra Pro and external source credits. Original archive fingerprints remain historical identities.
+- Ordered result categories to follow the selected algorithm topics: graph algorithms, Subset Sum, algebraic complexity and number theory, followed by related methods and applications. Featured families lead each category; remaining titles and supporting entries are alphabetized.
+- Rebuilt all seven published PDFs in the original style with the current handle, inspected all 149 pages and refreshed affected source, export and paper bindings. Compared 108 changed Python ASTs and the mathematical spans of 361 changed Markdown files. Verification is restricted to attribution, presentation, source preservation and affected publication artifacts; no full algorithm regression was run.
+
 ## 2026-10-28 — Selective algebraic algorithms and result cleanup
 
 - Selected two substantive constructions from the SAT checkpoint: the common constant-free integer ordered crossing circuit with exponent 1.719516, including its full integral three-shape deduction with explicit source premises; and a uniform growing-parameter, division-free ordered subset/rectangular-permanent construction with all parameter overhead charged.
@@ -82,7 +88,7 @@
 - Realized supplied-optimum-baseline arborescence failure reports through heavy-light exchange transitions, exact dense shortest paths and phased short-path/hub records. The compact support/reporting contract is separate from slower cubic preprocessing and baseline supply. Ordinary exchange and this executable client have scoped partial readiness.
 - Implemented the credited elementary Graf--Haxell transversal fallback and a search-free original-input verifier. The zero-blocker cascade, induced-star invariants, positive-composition signatures and exact total domination have a complete local realization proof. Tests explicitly include valid domination certificates on graphs that also have a transversal; no false infeasibility claim is made. The faster layer theorem remains outside this bounded audit.
 - All 88 standard repository checks passed with serial selected continuous-contact replays. No full 62-plus-16 contact replay was performed.
-- GPT-6.1 Sol agents independently cross-reviewed the new packages; executable evidence and internal reviews do not assert external peer review or proof-assistant verification. Attribution remains Yilin Liu and GPT-6 Astra Pro under the repository policy.
+- GPT-6.1 Sol agents independently cross-reviewed the new packages; executable evidence and internal reviews do not assert external peer review or proof-assistant verification. Attribution remains icekylinx and GPT-6 Astra Pro under the repository policy.
 
 ## 2026-10-27 — Proof completions and executable backend interfaces
 

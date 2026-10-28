@@ -71,4 +71,4 @@ There is one starter/return-pair descriptor per element and at most <code class=
 
 [Flow and paths](manuscripts/exact-min-cost-flow-and-vertex-disjoint-paths.md); [matching and uncrossing](manuscripts/linear-single-fault-general-matching.md); [two-matroid cardinality](manuscripts/linear-unweighted-two-matroid-certificate.md); [price sensitivity](manuscripts/compact-one-element-price-sensitivity.md).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

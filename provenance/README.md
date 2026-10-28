@@ -71,7 +71,10 @@ The Subset Sum import retains its original
 [author record](imports/subset-sum/licenses/AUTHORS.md) and
 [source status](imports/subset-sum/licenses/STATUS.json).
 
-The retained NOTICE is a historical document from the source project.
+The retained NOTICE is a historical document from the source project, with
+the continuation author presented under the current handle, icekylinx, at
+the author's request. Original import hashes continue to identify the
+original bytes.
 References inside it to that project's baseline trees, local archives or
 checker layout describe the imported project, not files asserted to exist
 in this repository. Current proof dependencies and runnable certificates

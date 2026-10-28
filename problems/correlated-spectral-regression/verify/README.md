@@ -76,4 +76,4 @@ The weak regression conclusion assumes an attained sketched minimizer, convex fe
 
 The bilinear argument converts embedding error <code class="math">\eta</code> into relative solution error <code class="math">\eta^2/(1-\eta^2)</code>. This is a mathematical optimization statement under the listed hypotheses, not a claim that the repository implements a solver for every permitted convex objective.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

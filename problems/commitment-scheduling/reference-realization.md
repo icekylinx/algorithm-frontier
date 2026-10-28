@@ -195,4 +195,4 @@ size ratios, decreasing marginal loads, entire bottleneck plateaus, exact active
 set endpoints and 100-digit capacities. These finite checks support the explicit
 proofs; they are not proof-assistant verification or external peer review.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

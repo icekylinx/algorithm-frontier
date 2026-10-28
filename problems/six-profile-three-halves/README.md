@@ -51,4 +51,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The reusable [six-profile backend](../activated-machine-scheduling/reference/README.md) implements the profile product and exact-budget recovery. Its [direct original-input checker](../activated-machine-scheduling/verify/check_six_profiles.py) covers all six labels independently of activation; finite solver costs are stated separately from the theorem's bound.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

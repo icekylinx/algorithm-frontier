@@ -1,6 +1,6 @@
 """Exact-table activation adapter with original totals and one shared budget.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 Setup and binary greedy feasibility are exact. Positive-target recovery reuses
 canonical scheduling LP/count primitives with their finite enumeration costs.
 """

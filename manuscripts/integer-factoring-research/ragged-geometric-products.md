@@ -105,4 +105,4 @@ the optimized H saving is (a+2b)/5=(4+t/2)/5, largest at t=1.
 This is an envelope audit of this normalization template, not a lower
 bound for other algorithms.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

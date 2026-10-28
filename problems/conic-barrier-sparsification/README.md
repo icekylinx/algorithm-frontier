@@ -53,7 +53,7 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 **Source**
 
-[Complete proof in LaTeX](manuscripts/self_concordant_sparsification.tex), [proof reading map](proof.md), [attributed dependencies and comparison](sources.md). Curated by Yilin Liu and GPT-6 Astra Pro.
+[Complete proof in LaTeX](manuscripts/self_concordant_sparsification.tex), [proof reading map](proof.md), [attributed dependencies and comparison](sources.md). Curated by icekylinx and GPT-6 Astra Pro.
 
 ## Main theorem
 

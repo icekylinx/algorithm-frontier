@@ -58,7 +58,19 @@ Complete prime factorization of every positive binary integer, assuming the stat
 
 ## Results
 
-Browse by problem. Each link opens its statement, proof and dependencies. [Computational models](docs/COMPLEXITY.md) and [randomness contracts](docs/RANDOMNESS.md) explain how to compare bounds.
+Categories follow the selected-result topics, then related methods and applications. Selected families lead each category; other titles are alphabetized. Each link opens its statement, proof and dependencies. [Computational models](docs/COMPLEXITY.md) and [randomness contracts](docs/RANDOMNESS.md) explain how to compare bounds.
+
+### Graph algorithms
+
+- [Deterministic general-graph maximum matching](problems/general-matching/)
+- [Degree-constrained subgraphs](problems/degree-constrained-subgraphs/)
+- [Dynamic minimum spanning forest](problems/dynamic-msf/)
+- [Dynamic spanners](problems/dynamic-spanners/)
+- [Fully dynamic APSP](problems/apsp-frontier/)
+- [Incremental directed SSSP](problems/incremental-sssp/)
+- [Incremental strongly connected components](problems/incremental-scc/)
+- [Static and threshold min-cost flow](problems/min-cost-flow/)
+- [Strong forests and Gomory–Hu trees](problems/decremental-strong-forest/)
 
 ### Subset Sum
 
@@ -75,81 +87,69 @@ Browse by problem. Each link opens its statement, proof and dependencies. [Compu
 
 - [Conditional deterministic integer factorization](problems/integer-factorization/)
 
+### Exact failures, persistence and compilation
+
+- [Boolean linear optimization compiler](problems/boolean-linear-compiler/)
+- [Colored and vertex-failure graph certificates](problems/graph-color-failure-certificates/)
+- [Flow, matching and price sensitivity](problems/exact-flow-sensitivity/)
+- [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
+- [Persistent-homology failure certificates](problems/persistence-failure-certificates/)
+- [Resource-constrained packing summaries](problems/packing-matching-summaries/)
+- [Single-failure optimum preservers](problems/exact-failure-preservers/)
+
 ### Numeric targets and quota geometry
 
 - [Numeric targets and support patterns](problems/numeric-target-frontier/)
 - [Prefix, laminar and sparse quotas](problems/weighted-prefix-quota-frontier/)
 
-### Graph algorithms
-
-- [Deterministic general-graph maximum matching](problems/general-matching/)
-- [Degree-constrained subgraphs](problems/degree-constrained-subgraphs/)
-- [Static and threshold min-cost flow](problems/min-cost-flow/)
-- [Incremental strongly connected components](problems/incremental-scc/)
-- [Incremental directed SSSP](problems/incremental-sssp/)
-- [Fully dynamic APSP](problems/apsp-frontier/)
-- [Dynamic spanners](problems/dynamic-spanners/)
-- [Dynamic minimum spanning forest](problems/dynamic-msf/)
-- [Strong forests and Gomory–Hu trees](problems/decremental-strong-forest/)
-
-### Exact failures, persistence and compilation
-
-- [Single-failure optimum preservers](problems/exact-failure-preservers/)
-- [Flow, matching and price sensitivity](problems/exact-flow-sensitivity/)
-- [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
-- [Colored and vertex-failure graph certificates](problems/graph-color-failure-certificates/)
-- [Resource-constrained packing summaries](problems/packing-matching-summaries/)
-- [Persistent-homology failure certificates](problems/persistence-failure-certificates/)
-- [Boolean linear optimization compiler](problems/boolean-linear-compiler/)
-
 ### Spectral, group and quantum sparsification
 
-- [Self-concordant cone sparsification](problems/conic-barrier-sparsification/)
 - [Correlated spectral, regression and seminorm summaries](problems/correlated-spectral-regression/)
-- [Label and whole-block cut sparsification](problems/label-block-cut/)
-- [Finite groups, affine constraints and metrics](problems/group-metric-constraints/)
-- [Pauli, qudit and stabilizer blocks](problems/quantum-stabilizer/)
 - [Exact-separation and non-Fano boundaries](problems/obstruction-boundaries/)
+- [Finite groups, affine constraints and metrics](problems/group-metric-constraints/)
+- [Label and whole-block cut sparsification](problems/label-block-cut/)
+- [Pauli, qudit and stabilizer blocks](problems/quantum-stabilizer/)
+- [Self-concordant cone sparsification](problems/conic-barrier-sparsification/)
 
 ### Allocation and resource matroids
 
 - [Arbitrary-value allocation scheme](problems/arbitrary-value-allocation-scheme/)
-- [Recipient polymatroids](problems/recipient-polymatroid/)
-- [Recipient-matroid configuration](problems/recipient-matroid-configuration/)
 - [Explicit-item matroid union](problems/item-matroid-union/)
-- [One-value allocation](problems/one-value-exact-two/)
 - [Intrinsic two-value allocation](problems/two-value-exact-two/)
 - [Intrinsic values near factor two](problems/intrinsic-values-near-two/)
-- [Unrelated-value additive allocation](problems/unrelated-values-additive/)
+- [One-value allocation](problems/one-value-exact-two/)
+- [Recipient polymatroids](problems/recipient-polymatroid/)
+- [Recipient-matroid configuration](problems/recipient-matroid-configuration/)
 - [Unrelated values with a joint role](problems/unrelated-values-joint-role/)
+- [Unrelated-value additive allocation](problems/unrelated-values-additive/)
 - [Whole-ground selection and transfers](problems/whole-ground-allocation/)
 
 ### Selected flow and robust allocation
 
-- [Selected concurrent flow](problems/selected-flow/)
 - [Flow with shared setup budget](problems/shared-setup-flow/)
+- [Robust bounded-width certificates](problems/robust-bounded-certificates/)
 - [Robust selected flow](problems/robust-scenario-flow/)
 - [Robust unrelated allocation](problems/robust-unrelated-allocation/)
-- [Robust bounded-width certificates](problems/robust-bounded-certificates/)
-- [Width-two robust unit allocation](problems/robust-width-two-allocation/)
+- [Selected concurrent flow](problems/selected-flow/)
 - [Two-scenario hardness](problems/robust-two-scenario-hardness/)
+- [Width-two robust unit allocation](problems/robust-width-two-allocation/)
 
 ### Scheduling
 
-- [Arbitrary-processing scheme](problems/arbitrary-processing-scheduling/)
 - [Activated-machine scheduling](problems/activated-machine-scheduling/)
-- [Six-profile scheduling](problems/six-profile-three-halves/)
-- [Processing-bucket tradeoff](problems/processing-bucket-tradeoff/)
-- [Two-size scheduling](problems/two-size-scheduling/)
-- [Per-machine two-time scheduling](problems/two-time-scheduling/)
-- [Many-size workload scheduling](problems/many-size-scheduling/)
+- [Arbitrary-processing scheme](problems/arbitrary-processing-scheduling/)
 - [Commitment scheduling](problems/commitment-scheduling/)
+- [Many-size workload scheduling](problems/many-size-scheduling/)
+- [Per-machine two-time scheduling](problems/two-time-scheduling/)
+- [Processing-bucket tradeoff](problems/processing-bucket-tradeoff/)
+- [Six-profile scheduling](problems/six-profile-three-halves/)
+- [Two-size scheduling](problems/two-size-scheduling/)
 
 ### Matching certificates and oracle barriers
 
+- [Allocation and scheduling barriers](problems/allocation-lower-bounds/)
 - [Hypergraph matching and expander routing](problems/strong-haxell-matching/)
 - [Independent transversals](problems/independent-transversal/)
-- [Allocation and scheduling barriers](problems/allocation-lower-bounds/)
 
 ### Supporting results
 
@@ -165,4 +165,4 @@ python3 tools/check_repository.py
 
 See [Contributing](CONTRIBUTING.md) for the full verification mode and maintenance conventions. No external peer review or proof-assistant verification is claimed.
 
-Yilin Liu and GPT-6 Astra Pro. *Algorithm Frontier* (2026). Cite the relevant problem path and commit; the [citation protocol](PROTOCOL.md) and [import provenance](provenance/README.md) retain the applicable licenses and notices.
+icekylinx and GPT-6 Astra Pro. *Algorithm Frontier* (2026). Cite the relevant problem path and commit; the [citation protocol](PROTOCOL.md) and [import provenance](provenance/README.md) retain the applicable licenses and notices.

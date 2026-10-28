@@ -564,4 +564,4 @@ choosing an independent commitment that jointly minimizes all parameters
 is not part of the theorem. Every branch retains its explicit workload
 rounding loss and commitment load.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

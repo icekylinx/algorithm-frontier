@@ -109,4 +109,4 @@ valuated companions or certify an optimized preprocessing implementation.
 Primary references: [Goemans, Section 6.1.2](https://math.mit.edu/~goemans/18453S17/matroid-intersect-notes.pdf),
 [Bodwin, v3](https://arxiv.org/pdf/2001.07741).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -1,6 +1,6 @@
 """Exact two-order and variable-family mixed prefix quota clients.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 Both clients reuse original-subset resource recovery from prefix.py. Family
 chains and occupied profiles are streamed, without resource-unit expansion.
 """

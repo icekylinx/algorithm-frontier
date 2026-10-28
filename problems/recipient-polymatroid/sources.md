@@ -40,4 +40,4 @@ model. Classical ellipsoid containment/volume and knapsack scaling are
 identified in those companions; their model-specific strict-price,
 positive-direction and finite-primal extraction proofs are explicit.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -243,4 +243,4 @@ search or the streamed global cover. Internal mathematical review and
 finite executable checks are not external peer review or proof-assistant
 verification.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

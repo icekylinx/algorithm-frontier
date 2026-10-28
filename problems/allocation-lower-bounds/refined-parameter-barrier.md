@@ -201,4 +201,4 @@ does not assert hardness of the four-unit promise/two-unit output
 gap, which is a different problem from distinguishing the hidden
 exact two-unit basis in (Z4).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

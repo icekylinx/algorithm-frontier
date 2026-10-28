@@ -77,4 +77,4 @@ polynomial workspace even when its numerical value exceeds the number
 of machines. This theorem does not impose at most one largest unit per
 machine, and its additive smaller-unit loss is explicit.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

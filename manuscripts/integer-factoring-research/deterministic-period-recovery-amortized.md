@@ -335,4 +335,4 @@ https://math.mit.edu/~drew/sutherland-phd.pdf
 
 The reduction has also been checked independently within this research session. No claim of novelty relative to the full literature is made.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

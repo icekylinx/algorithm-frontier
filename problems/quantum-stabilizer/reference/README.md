@@ -38,4 +38,4 @@ Prime-dimensional Weyl witnesses and sparsification are not implemented here.
 python3 -B problems/quantum-stabilizer/verify/check_witness.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -1,6 +1,6 @@
 """Exact one-order mixed prefix quotas with signed scalar optimization.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 Binary original totals are retained. Occupied profiles are streamed through
 the canonical iterative count/mass iterator; exact Bland LP time is separate
 from the theorem's paid polynomial integral-intersection primitive.

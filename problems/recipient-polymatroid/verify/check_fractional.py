@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Independent original-box pricing and explicit residual-LP checks.
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 """
 from dataclasses import replace
 from fractions import Fraction as F

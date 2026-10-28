@@ -31,4 +31,4 @@ separately exponential exhaustive oracle. No third-party code is imported.
 - Karp, [Reducibility Among Combinatorial Problems](https://doi.org/10.1007/978-1-4684-2001-2_9), supplies the Max-Cut complexity input.
 - The non-Fano construction is proved directly from its displayed matrix and amplitudes, with the independent executable replay linked in [Verification and scope](verify/README.md).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

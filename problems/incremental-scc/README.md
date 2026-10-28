@@ -74,4 +74,4 @@ O(1+\log\log(n+2))
 label suffix, as proved in Corollary 9.1. These representation
 bounds are unconditional once the exact merge sequence is supplied.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

@@ -1,5 +1,5 @@
 """Independent compact original-input Pauli energy verification.
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro. Apache-2.0.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro. Apache-2.0.
 No producer or optimizer is imported. Local multiplication uses the Pauli table.
 """
 from fractions import Fraction

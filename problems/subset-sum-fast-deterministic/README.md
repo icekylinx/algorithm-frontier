@@ -74,4 +74,4 @@ on an older contact receipt.
 
 The time-focused algorithm and the [low-space algorithm](../subset-sum-low-space-deterministic/) are separate constructions with separate resource guarantees.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

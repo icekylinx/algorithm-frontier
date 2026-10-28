@@ -142,4 +142,4 @@ canonical theorem's polynomial LP/intersection implementation and workspace.
 The mathematical proof of those fast primitives and the streamed-cover
 bound is unchanged.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. **License:** Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. **License:** Apache-2.0.

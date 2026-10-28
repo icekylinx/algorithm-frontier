@@ -1,6 +1,6 @@
 """Certified budgeted unit tests and bounded hereditary gate.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 Exact weighted matroid intersection is polynomial in paid independence work.
 Complete rank tables are explicit input; capacities are not expanded.
 """

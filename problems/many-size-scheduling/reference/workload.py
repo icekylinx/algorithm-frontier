@@ -1,6 +1,6 @@
 """Native binary workload decomposition and per-machine upper rounding.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 Generic mandatory-base LP primitives are imported from the intrinsic reference;
 its allocation, disposal and lower-rounding interfaces are not used. Streamed
 active-system and selected-basis enumeration costs remain explicit.

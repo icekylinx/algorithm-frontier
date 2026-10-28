@@ -92,4 +92,4 @@ checks validate links, notation and generated surfaces rather than mathematical
 correctness. External peer review and proof-assistant verification are not
 claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

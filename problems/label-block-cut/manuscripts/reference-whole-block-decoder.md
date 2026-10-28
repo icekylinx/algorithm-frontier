@@ -185,4 +185,4 @@ outside this review. Their existing mathematical statements and primary
 dependencies remain separately recorded. No external peer review or
 proof-assistant verification is claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

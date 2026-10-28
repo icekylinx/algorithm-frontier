@@ -1,6 +1,6 @@
 """Independent original-count checks of native workload decomposition/rounding.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 The comparator imports no workload, box, dual or LP construction helper.
 """
 from fractions import Fraction as F

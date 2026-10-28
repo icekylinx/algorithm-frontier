@@ -258,4 +258,4 @@ Every original numeric constraint is retained. The [two-weight boundary](manuscr
 explains why that polynomial endpoint does not extend to arbitrary
 instances with two positive weight values.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

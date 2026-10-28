@@ -224,4 +224,4 @@ O(r)
 
 **Additional scope.** Every fixed multiplicative factor; polynomial-bit costs with exponential aspect ratio
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

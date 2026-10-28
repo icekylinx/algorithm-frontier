@@ -1,6 +1,6 @@
 # Sources, attribution and comparison
 
-Yilin Liu and GPT-6 Astra Pro. This page separates the complete internal argument from standard tools, published comparators and a review of a particular external preprint version. It does not certify historical priority or exhaustive coverage of subsequent literature.
+icekylinx and GPT-6 Astra Pro. This page separates the complete internal argument from standard tools, published comparators and a review of a particular external preprint version. It does not certify historical priority or exhaustive coverage of subsequent literature.
 
 ## Canonical internal proofs
 

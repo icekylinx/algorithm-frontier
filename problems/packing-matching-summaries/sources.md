@@ -25,4 +25,4 @@ The [rational implementation realization](manuscripts/reference-product-realizat
 
 The companion proves the combined packing, failure, and later-extension replacement statement and states exactly where a representation of the original resource matroid is required.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

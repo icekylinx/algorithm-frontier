@@ -1,6 +1,6 @@
 """Independent finite checks of actual prefix recursion and block streaming.
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 """
 from fractions import Fraction as F
 from itertools import combinations, product

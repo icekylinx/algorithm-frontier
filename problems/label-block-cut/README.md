@@ -155,4 +155,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The graph theorem concerns cuts; [spectral and seminorm summaries](../correlated-spectral-regression/) have separate guarantees and parameter bounds.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

@@ -250,4 +250,4 @@ large primes p satisfy a+1<=2^a<=p^(epsilon*a/2), while the finitely
 many smaller primes contribute at most a fixed power of log(v), which
 is eventually <=v^(epsilon/2).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

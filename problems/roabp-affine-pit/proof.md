@@ -1,6 +1,6 @@
 # Deterministic identity testing for affine ROABP orbits
 
-Yilin Liu and GPT-6 Astra Pro. Complete mathematical statements and proofs are maintained in the linked native-TeX manuscripts. This companion fixes the model, explains the dependencies, and records incomparable stronger special cases. The proof package has undergone internal mathematical reconstruction; external peer review and formal verification are not claimed.
+icekylinx and GPT-6 Astra Pro. Complete mathematical statements and proofs are maintained in the linked native-TeX manuscripts. This companion fixes the model, explains the dependencies, and records incomparable stronger special cases. The proof package has undergone internal mathematical reconstruction; external peer review and formal verification are not claimed.
 
 ## 1. General theorem
 

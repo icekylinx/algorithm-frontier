@@ -81,4 +81,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The [large-unit-rank proof](rank-parameter.md) establishes the separate <code class="math">h</code> branch. The [integer-quota transfer](../whole-ground-allocation/integer-quotas.md) gives the full <code class="math">d</code> curve. For machine-specific times and exact assignment costs, see the distinct [two-time theorem](../two-time-scheduling/README.md).
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

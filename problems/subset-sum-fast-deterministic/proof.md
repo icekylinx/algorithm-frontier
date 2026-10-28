@@ -1,6 +1,6 @@
 # Deterministic Subset Sum through signed circuits and trace bounds
 
-**Yilin Liu · GPT-6 Astra Pro**
+**icekylinx · GPT-6 Astra Pro**
 
 ## Abstract
 

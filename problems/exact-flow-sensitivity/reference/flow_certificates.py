@@ -3,7 +3,7 @@
 No optimizer or certificate producer is imported. Costs may be signed exact
 integers/Fractions; loops and parallel original records are supported.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro.
 SPDX-License-Identifier: Apache-2.0
 """
 from dataclasses import dataclass

@@ -68,5 +68,5 @@ member inventory. It does not validate mathematical correctness. Only
 changed algorithms and affected documentation/metadata are checked for this
 import; no full repository regression is claimed.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0 under the repository
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0 under the repository
 [license](../LICENSE); cited external constructions retain their attribution.

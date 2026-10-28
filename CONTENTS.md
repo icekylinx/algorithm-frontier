@@ -2,6 +2,52 @@
 
 Every current problem manuscript and shared dependency is listed below. The [README](README.md) gives selected results and a compact problem index; this page provides the complete reading path without duplicate checkpoint copies.
 
+## Graph algorithms
+
+### [Deterministic general-graph maximum matching](problems/general-matching/)
+
+[Statement](problems/general-matching/README.md) · [Main proof](problems/general-matching/proof.md) · [Sources](problems/general-matching/sources.md) · [Verification](problems/general-matching/verify/README.md)
+
+- [Matching-number time bound for the implemented bipartite branch](problems/general-matching/reference/bipartite-proof.md)
+- [A quadratic extraction of a matching optimality certificate](problems/general-matching/reference/certificate-proof.md)
+- [Cubic reference matching in the component matching numbers](problems/general-matching/reference/cover-compression-proof.md)
+- [Certified matching compression for mixed failures and arbitrary cover contexts](problems/general-matching/reference/fault-tolerant-cover-compression.md)
+
+### [Degree-constrained subgraphs](problems/degree-constrained-subgraphs/)
+
+[Statement](problems/degree-constrained-subgraphs/README.md) · [Main proof](problems/degree-constrained-subgraphs/proof.md) · [Sources](problems/degree-constrained-subgraphs/sources.md) · [Verification](problems/degree-constrained-subgraphs/verify/README.md)
+
+- [A linear-size degree selector from a named expander construction](problems/degree-constrained-subgraphs/linear-selector.md)
+- [Correctness and certificates for the executable degree solver](problems/degree-constrained-subgraphs/reference/correctness.md)
+
+### [Dynamic minimum spanning forest](problems/dynamic-msf/)
+
+[Statement](problems/dynamic-msf/README.md) · [Main proof](problems/dynamic-msf/proof.md) · [Sources](problems/dynamic-msf/sources.md) · [Verification](problems/dynamic-msf/verify/README.md)
+
+### [Dynamic spanners](problems/dynamic-spanners/)
+
+[Statement](problems/dynamic-spanners/README.md) · [Main proof](problems/dynamic-spanners/proof.md) · [Sources](problems/dynamic-spanners/sources.md) · [Verification](problems/dynamic-spanners/verify/README.md)
+
+### [Fully dynamic APSP](problems/apsp-frontier/)
+
+[Statement](problems/apsp-frontier/README.md) · [Main proof](problems/apsp-frontier/proof.md) · [Sources](problems/apsp-frontier/sources.md) · [Verification](problems/apsp-frontier/verify/README.md)
+
+### [Incremental directed SSSP](problems/incremental-sssp/)
+
+[Statement](problems/incremental-sssp/README.md) · [Main proof](problems/incremental-sssp/proof.md) · [Sources](problems/incremental-sssp/sources.md) · [Verification](problems/incremental-sssp/verify/README.md)
+
+### [Incremental strongly connected components](problems/incremental-scc/)
+
+[Statement](problems/incremental-scc/README.md) · [Main proof](problems/incremental-scc/proof.md) · [Sources](problems/incremental-scc/sources.md) · [Verification](problems/incremental-scc/verify/README.md)
+
+### [Static and threshold min-cost flow](problems/min-cost-flow/)
+
+[Statement](problems/min-cost-flow/README.md) · [Main proof](problems/min-cost-flow/proof.md) · [Sources](problems/min-cost-flow/sources.md) · [Verification](problems/min-cost-flow/verify/README.md)
+
+### [Strong forests and Gomory–Hu trees](problems/decremental-strong-forest/)
+
+[Statement](problems/decremental-strong-forest/README.md) · [Main proof](problems/decremental-strong-forest/proof.md) · [Sources](problems/decremental-strong-forest/sources.md) · [Verification](problems/decremental-strong-forest/verify/README.md)
+
 ## Subset Sum
 
 ### [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/)
@@ -44,6 +90,74 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [One literal-ring contraction with subpolynomial precision](problems/integer-factorization/manuscripts/packed-square-zero-prony-factoring.md)
 - [One literal-ring contraction at square-root precision](problems/integer-factorization/manuscripts/sidon-second-moment-factoring.md)
 - [Scoped limitations of direct contraction retuning](problems/integer-factorization/manuscripts/tensor-parameter-and-char2-obstructions.md)
+
+## Exact failures, persistence and compilation
+
+### [Boolean linear optimization compiler](problems/boolean-linear-compiler/)
+
+[Statement](problems/boolean-linear-compiler/README.md) · [Main proof](problems/boolean-linear-compiler/proof.md) · [Sources](problems/boolean-linear-compiler/sources.md) · [Verification](problems/boolean-linear-compiler/verify/README.md)
+
+- [A support-sensitive interval compiler for exact Boolean linear optimization](problems/boolean-linear-compiler/manuscripts/boolean-linear-optimization-compiler.md)
+- [Cardinality and coefficient normalization for exact Boolean interval compilation](problems/boolean-linear-compiler/manuscripts/cardinality-and-modal-interval-compilation.md)
+
+### [Colored and vertex-failure graph certificates](problems/graph-color-failure-certificates/)
+
+[Statement](problems/graph-color-failure-certificates/README.md) · [Main proof](problems/graph-color-failure-certificates/proof.md) · [Sources](problems/graph-color-failure-certificates/sources.md) · [Verification](problems/graph-color-failure-certificates/verify/README.md)
+
+- [Exact minimum-spanning-forest certificates under correlated color failures](problems/graph-color-failure-certificates/manuscripts/colored-graph-and-vertex-failure-certificates.md)
+- [Exact mixed and list-color realization with compressed features](problems/graph-color-failure-certificates/manuscripts/reference-mixed-list-realization.md)
+- [Rational realization of the sharp vertex-color certificate](problems/graph-color-failure-certificates/manuscripts/reference-vertex-color-realization.md)
+
+### [Flow, matching and price sensitivity](problems/exact-flow-sensitivity/)
+
+[Statement](problems/exact-flow-sensitivity/README.md) · [Main proof](problems/exact-flow-sensitivity/proof.md) · [Sources](problems/exact-flow-sensitivity/sources.md) · [Verification](problems/exact-flow-sensitivity/verify/README.md)
+
+- [Compact reporting for one-element price changes in matroid intersection](problems/exact-flow-sensitivity/manuscripts/compact-one-element-price-sensitivity.md)
+- [Exact one-failure minimum-cost flow preservers from a sparse acyclic support](problems/exact-flow-sensitivity/manuscripts/exact-min-cost-flow-and-vertex-disjoint-paths.md)
+- [Independent certificates for unit-capacity flows and balance feasibility](problems/exact-flow-sensitivity/manuscripts/independent-flow-certificates.md)
+- [Linear single-fault certificates for maximum matching in general graphs](problems/exact-flow-sensitivity/manuscripts/linear-single-fault-general-matching.md)
+- [Linear exact single-deletion certificates for two arbitrary matroids](problems/exact-flow-sensitivity/manuscripts/linear-unweighted-two-matroid-certificate.md)
+- [Native signed-cost balance optimization and deletion reporting](problems/exact-flow-sensitivity/manuscripts/reference-signed-balance-flow.md)
+- [A self-contained compact unit-flow reporting realization](problems/exact-flow-sensitivity/manuscripts/reference-unit-flow-realization.md)
+- [Native internally disjoint paths after one failure](problems/exact-flow-sensitivity/manuscripts/reference-vertex-path-realization.md)
+- [Native fixed-rank price and catalog-insertion reporting](problems/exact-flow-sensitivity/reference-price-realization.md)
+
+### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
+
+[Statement](problems/matroid-failure-summaries/README.md) · [Main proof](problems/matroid-failure-summaries/proof.md) · [Sources](problems/matroid-failure-summaries/sources.md) · [Verification](problems/matroid-failure-summaries/verify/README.md)
+
+- [Exact binomial fault summaries for arbitrary matroids](problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md)
+- [Optimal oracle construction of rank-two label-failure prefix summaries](problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md)
+- [A fixed rank-loss contraction for ordered matroid failure summaries](problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md)
+- [A sharp polynomial-time restriction for overlapping label failures in represented matroids](problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md)
+- [Two-failure weighted prefix bounds for arbitrary matroids](problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md)
+- [Deterministic FPT construction of weighted oracle failure summaries](problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md)
+- [Weighted oracle summaries exceed the binomial bound from two failures onward](problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md)
+
+### [Persistent-homology failure certificates](problems/persistence-failure-certificates/)
+
+[Statement](problems/persistence-failure-certificates/README.md) · [Main proof](problems/persistence-failure-certificates/proof.md) · [Sources](problems/persistence-failure-certificates/sources.md) · [Verification](problems/persistence-failure-certificates/verify/README.md)
+
+- [Native general-incidence and top-label failure construction](problems/persistence-failure-certificates/incidence-realization.md)
+- [Exact persistent-homology certificates under correlated failures](problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md)
+- [Constructing failure summaries from their actual feature rank](problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md)
+
+### [Resource-constrained packing summaries](problems/packing-matching-summaries/)
+
+[Statement](problems/packing-matching-summaries/README.md) · [Main proof](problems/packing-matching-summaries/proof.md) · [Sources](problems/packing-matching-summaries/sources.md) · [Verification](problems/packing-matching-summaries/verify/README.md)
+
+- [Exact rational realization of the packing product lift](problems/packing-matching-summaries/manuscripts/reference-product-realization.md)
+- [Quadratic matching summaries and a packing transfer of the failure-projection lift](problems/packing-matching-summaries/manuscripts/represented-resource-packing-transfer.md)
+
+### [Single-failure optimum preservers](problems/exact-failure-preservers/)
+
+[Statement](problems/exact-failure-preservers/README.md) · [Main proof](problems/exact-failure-preservers/proof.md) · [Sources](problems/exact-failure-preservers/sources.md) · [Verification](problems/exact-failure-preservers/verify/README.md)
+
+- [Exact single-failure preservers and output-sensitive oracles for minimum-cost arborescences and two-matroid intersection](problems/exact-failure-preservers/manuscripts/exact-single-failure-arborescences-and-matroid-intersection.md)
+- [A supplied-baseline realization of arborescence reporting](problems/exact-failure-preservers/manuscripts/reference-arborescence-reporting.md)
+- [Initialized ordinary two-matroid failure reporting](problems/exact-failure-preservers/manuscripts/reference-ordinary-matroid-reporting.md)
+- [Certified valuated baselines and ordinary rank-drop reporting](problems/exact-failure-preservers/manuscripts/reference-valuated-and-rank-drop.md)
+- [Valuated matroid intersection: exact single-failure summaries and output-sensitive queries](problems/exact-failure-preservers/manuscripts/valuated-matroid-intersection.md)
 
 ## Numeric targets and quota geometry
 
@@ -108,125 +222,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Exact two-order and variable-family prefix clients](problems/weighted-prefix-quota-frontier/reference-orders-families-realization.md)
 - [Native exact one-order prefix quotas and signed recovery](problems/weighted-prefix-quota-frontier/reference-prefix-realization.md)
 
-## Graph algorithms
-
-### [Deterministic general-graph maximum matching](problems/general-matching/)
-
-[Statement](problems/general-matching/README.md) · [Main proof](problems/general-matching/proof.md) · [Sources](problems/general-matching/sources.md) · [Verification](problems/general-matching/verify/README.md)
-
-- [Matching-number time bound for the implemented bipartite branch](problems/general-matching/reference/bipartite-proof.md)
-- [A quadratic extraction of a matching optimality certificate](problems/general-matching/reference/certificate-proof.md)
-- [Cubic reference matching in the component matching numbers](problems/general-matching/reference/cover-compression-proof.md)
-- [Certified matching compression for mixed failures and arbitrary cover contexts](problems/general-matching/reference/fault-tolerant-cover-compression.md)
-
-### [Degree-constrained subgraphs](problems/degree-constrained-subgraphs/)
-
-[Statement](problems/degree-constrained-subgraphs/README.md) · [Main proof](problems/degree-constrained-subgraphs/proof.md) · [Sources](problems/degree-constrained-subgraphs/sources.md) · [Verification](problems/degree-constrained-subgraphs/verify/README.md)
-
-- [A linear-size degree selector from a named expander construction](problems/degree-constrained-subgraphs/linear-selector.md)
-- [Correctness and certificates for the executable degree solver](problems/degree-constrained-subgraphs/reference/correctness.md)
-
-### [Static and threshold min-cost flow](problems/min-cost-flow/)
-
-[Statement](problems/min-cost-flow/README.md) · [Main proof](problems/min-cost-flow/proof.md) · [Sources](problems/min-cost-flow/sources.md) · [Verification](problems/min-cost-flow/verify/README.md)
-
-### [Incremental strongly connected components](problems/incremental-scc/)
-
-[Statement](problems/incremental-scc/README.md) · [Main proof](problems/incremental-scc/proof.md) · [Sources](problems/incremental-scc/sources.md) · [Verification](problems/incremental-scc/verify/README.md)
-
-### [Incremental directed SSSP](problems/incremental-sssp/)
-
-[Statement](problems/incremental-sssp/README.md) · [Main proof](problems/incremental-sssp/proof.md) · [Sources](problems/incremental-sssp/sources.md) · [Verification](problems/incremental-sssp/verify/README.md)
-
-### [Fully dynamic APSP](problems/apsp-frontier/)
-
-[Statement](problems/apsp-frontier/README.md) · [Main proof](problems/apsp-frontier/proof.md) · [Sources](problems/apsp-frontier/sources.md) · [Verification](problems/apsp-frontier/verify/README.md)
-
-### [Dynamic spanners](problems/dynamic-spanners/)
-
-[Statement](problems/dynamic-spanners/README.md) · [Main proof](problems/dynamic-spanners/proof.md) · [Sources](problems/dynamic-spanners/sources.md) · [Verification](problems/dynamic-spanners/verify/README.md)
-
-### [Dynamic minimum spanning forest](problems/dynamic-msf/)
-
-[Statement](problems/dynamic-msf/README.md) · [Main proof](problems/dynamic-msf/proof.md) · [Sources](problems/dynamic-msf/sources.md) · [Verification](problems/dynamic-msf/verify/README.md)
-
-### [Strong forests and Gomory–Hu trees](problems/decremental-strong-forest/)
-
-[Statement](problems/decremental-strong-forest/README.md) · [Main proof](problems/decremental-strong-forest/proof.md) · [Sources](problems/decremental-strong-forest/sources.md) · [Verification](problems/decremental-strong-forest/verify/README.md)
-
-## Exact failures, persistence and compilation
-
-### [Single-failure optimum preservers](problems/exact-failure-preservers/)
-
-[Statement](problems/exact-failure-preservers/README.md) · [Main proof](problems/exact-failure-preservers/proof.md) · [Sources](problems/exact-failure-preservers/sources.md) · [Verification](problems/exact-failure-preservers/verify/README.md)
-
-- [Exact single-failure preservers and output-sensitive oracles for minimum-cost arborescences and two-matroid intersection](problems/exact-failure-preservers/manuscripts/exact-single-failure-arborescences-and-matroid-intersection.md)
-- [A supplied-baseline realization of arborescence reporting](problems/exact-failure-preservers/manuscripts/reference-arborescence-reporting.md)
-- [Initialized ordinary two-matroid failure reporting](problems/exact-failure-preservers/manuscripts/reference-ordinary-matroid-reporting.md)
-- [Certified valuated baselines and ordinary rank-drop reporting](problems/exact-failure-preservers/manuscripts/reference-valuated-and-rank-drop.md)
-- [Valuated matroid intersection: exact single-failure summaries and output-sensitive queries](problems/exact-failure-preservers/manuscripts/valuated-matroid-intersection.md)
-
-### [Flow, matching and price sensitivity](problems/exact-flow-sensitivity/)
-
-[Statement](problems/exact-flow-sensitivity/README.md) · [Main proof](problems/exact-flow-sensitivity/proof.md) · [Sources](problems/exact-flow-sensitivity/sources.md) · [Verification](problems/exact-flow-sensitivity/verify/README.md)
-
-- [Compact reporting for one-element price changes in matroid intersection](problems/exact-flow-sensitivity/manuscripts/compact-one-element-price-sensitivity.md)
-- [Exact one-failure minimum-cost flow preservers from a sparse acyclic support](problems/exact-flow-sensitivity/manuscripts/exact-min-cost-flow-and-vertex-disjoint-paths.md)
-- [Independent certificates for unit-capacity flows and balance feasibility](problems/exact-flow-sensitivity/manuscripts/independent-flow-certificates.md)
-- [Linear single-fault certificates for maximum matching in general graphs](problems/exact-flow-sensitivity/manuscripts/linear-single-fault-general-matching.md)
-- [Linear exact single-deletion certificates for two arbitrary matroids](problems/exact-flow-sensitivity/manuscripts/linear-unweighted-two-matroid-certificate.md)
-- [Native signed-cost balance optimization and deletion reporting](problems/exact-flow-sensitivity/manuscripts/reference-signed-balance-flow.md)
-- [A self-contained compact unit-flow reporting realization](problems/exact-flow-sensitivity/manuscripts/reference-unit-flow-realization.md)
-- [Native internally disjoint paths after one failure](problems/exact-flow-sensitivity/manuscripts/reference-vertex-path-realization.md)
-- [Native fixed-rank price and catalog-insertion reporting](problems/exact-flow-sensitivity/reference-price-realization.md)
-
-### [Matroid and submodular failure summaries](problems/matroid-failure-summaries/)
-
-[Statement](problems/matroid-failure-summaries/README.md) · [Main proof](problems/matroid-failure-summaries/proof.md) · [Sources](problems/matroid-failure-summaries/sources.md) · [Verification](problems/matroid-failure-summaries/verify/README.md)
-
-- [Exact binomial fault summaries for arbitrary matroids](problems/matroid-failure-summaries/manuscripts/arbitrary-matroid-and-submodular-failure-summaries.md)
-- [Optimal oracle construction of rank-two label-failure prefix summaries](problems/matroid-failure-summaries/manuscripts/optimal-rank-two-prefix-oracle-construction.md)
-- [A fixed rank-loss contraction for ordered matroid failure summaries](problems/matroid-failure-summaries/manuscripts/rank-loss-contraction-for-prefix-summaries.md)
-- [A sharp polynomial-time restriction for overlapping label failures in represented matroids](problems/matroid-failure-summaries/manuscripts/sharp-represented-matroid-failure-summaries.md)
-- [Two-failure weighted prefix bounds for arbitrary matroids](problems/matroid-failure-summaries/manuscripts/two-failure-oracle-prefix-bounds.md)
-- [Deterministic FPT construction of weighted oracle failure summaries](problems/matroid-failure-summaries/manuscripts/weighted-oracle-prefix-fpt-construction.md)
-- [Weighted oracle summaries exceed the binomial bound from two failures onward](problems/matroid-failure-summaries/manuscripts/weighted-oracle-two-failure-obstruction.md)
-
-### [Colored and vertex-failure graph certificates](problems/graph-color-failure-certificates/)
-
-[Statement](problems/graph-color-failure-certificates/README.md) · [Main proof](problems/graph-color-failure-certificates/proof.md) · [Sources](problems/graph-color-failure-certificates/sources.md) · [Verification](problems/graph-color-failure-certificates/verify/README.md)
-
-- [Exact minimum-spanning-forest certificates under correlated color failures](problems/graph-color-failure-certificates/manuscripts/colored-graph-and-vertex-failure-certificates.md)
-- [Exact mixed and list-color realization with compressed features](problems/graph-color-failure-certificates/manuscripts/reference-mixed-list-realization.md)
-- [Rational realization of the sharp vertex-color certificate](problems/graph-color-failure-certificates/manuscripts/reference-vertex-color-realization.md)
-
-### [Resource-constrained packing summaries](problems/packing-matching-summaries/)
-
-[Statement](problems/packing-matching-summaries/README.md) · [Main proof](problems/packing-matching-summaries/proof.md) · [Sources](problems/packing-matching-summaries/sources.md) · [Verification](problems/packing-matching-summaries/verify/README.md)
-
-- [Exact rational realization of the packing product lift](problems/packing-matching-summaries/manuscripts/reference-product-realization.md)
-- [Quadratic matching summaries and a packing transfer of the failure-projection lift](problems/packing-matching-summaries/manuscripts/represented-resource-packing-transfer.md)
-
-### [Persistent-homology failure certificates](problems/persistence-failure-certificates/)
-
-[Statement](problems/persistence-failure-certificates/README.md) · [Main proof](problems/persistence-failure-certificates/proof.md) · [Sources](problems/persistence-failure-certificates/sources.md) · [Verification](problems/persistence-failure-certificates/verify/README.md)
-
-- [Native general-incidence and top-label failure construction](problems/persistence-failure-certificates/incidence-realization.md)
-- [Exact persistent-homology certificates under correlated failures](problems/persistence-failure-certificates/manuscripts/correlated-fault-boundary-and-persistence-sparsifiers.md)
-- [Constructing failure summaries from their actual feature rank](problems/persistence-failure-certificates/manuscripts/feature-rank-construction.md)
-
-### [Boolean linear optimization compiler](problems/boolean-linear-compiler/)
-
-[Statement](problems/boolean-linear-compiler/README.md) · [Main proof](problems/boolean-linear-compiler/proof.md) · [Sources](problems/boolean-linear-compiler/sources.md) · [Verification](problems/boolean-linear-compiler/verify/README.md)
-
-- [A support-sensitive interval compiler for exact Boolean linear optimization](problems/boolean-linear-compiler/manuscripts/boolean-linear-optimization-compiler.md)
-- [Cardinality and coefficient normalization for exact Boolean interval compilation](problems/boolean-linear-compiler/manuscripts/cardinality-and-modal-interval-compilation.md)
-
 ## Spectral, group and quantum sparsification
-
-### [Self-concordant cone sparsification](problems/conic-barrier-sparsification/)
-
-[Statement](problems/conic-barrier-sparsification/README.md) · [Main proof](problems/conic-barrier-sparsification/proof.md) · [Sources](problems/conic-barrier-sparsification/sources.md) · [Verification](problems/conic-barrier-sparsification/verify/README.md)
 
 ### [Correlated spectral, regression and seminorm summaries](problems/correlated-spectral-regression/)
 
@@ -241,14 +237,13 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Certified rational importance and supplied-response ridge realization](problems/correlated-spectral-regression/manuscripts/reference-rational-importance-regression.md)
 - [Correlated-failure coresets for convexly regularized least squares with linear inverse-accuracy dependence](problems/correlated-spectral-regression/manuscripts/weak-convex-regression-under-correlated-failures.md)
 
-### [Label and whole-block cut sparsification](problems/label-block-cut/)
+### [Exact-separation and non-Fano boundaries](problems/obstruction-boundaries/)
 
-[Statement](problems/label-block-cut/README.md) · [Main proof](problems/label-block-cut/proof.md) · [Sources](problems/label-block-cut/sources.md) · [Verification](problems/label-block-cut/verify/README.md)
+[Statement](problems/obstruction-boundaries/README.md) · [Main proof](problems/obstruction-boundaries/proof.md) · [Sources](problems/obstruction-boundaries/sources.md) · [Verification](problems/obstruction-boundaries/verify/README.md)
 
-- [Adaptive resparsification removes the ambient ground-set logarithm](problems/label-block-cut/manuscripts/adaptive-quotient-resparsification.md)
-- [Exact label annihilation for fault-tolerant cuts and matroid quotients](problems/label-block-cut/manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md)
-- [Exact correlated-failure summaries for whole linear blocks, hyperedges, and commuting stabilizer checks](problems/label-block-cut/manuscripts/exact-label-whole-blocks-and-hyperedges.md)
-- [Rational whole-block decoder realization and quotient composition audit](problems/label-block-cut/manuscripts/reference-whole-block-decoder.md)
+- [Exact separation for compact binary-code partial coloring](problems/obstruction-boundaries/manuscripts/exact-separation-for-compact-codes.md)
+- [A seven-element obstruction to an exact conditional-sign cone bound](problems/obstruction-boundaries/manuscripts/non-fano-obstruction-to-fixed-amplitude-bound.md)
+- [Exact realization of the compact membership obstruction](problems/obstruction-boundaries/manuscripts/reference-compact-membership.md)
 
 ### [Finite groups, affine constraints and metrics](problems/group-metric-constraints/)
 
@@ -263,6 +258,15 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Exact realization of whole-coset compilation](problems/group-metric-constraints/manuscripts/reference-coset-compilation.md)
 - [Sparsifying sums of transitive Hilbert metrics and finite-group alignment losses](problems/group-metric-constraints/manuscripts/transitive-metrics-and-group-alignment.md)
 
+### [Label and whole-block cut sparsification](problems/label-block-cut/)
+
+[Statement](problems/label-block-cut/README.md) · [Main proof](problems/label-block-cut/proof.md) · [Sources](problems/label-block-cut/sources.md) · [Verification](problems/label-block-cut/verify/README.md)
+
+- [Adaptive resparsification removes the ambient ground-set logarithm](problems/label-block-cut/manuscripts/adaptive-quotient-resparsification.md)
+- [Exact label annihilation for fault-tolerant cuts and matroid quotients](problems/label-block-cut/manuscripts/exact-label-cut-and-matroid-quotient-sparsification.md)
+- [Exact correlated-failure summaries for whole linear blocks, hyperedges, and commuting stabilizer checks](problems/label-block-cut/manuscripts/exact-label-whole-blocks-and-hyperedges.md)
+- [Rational whole-block decoder realization and quotient composition audit](problems/label-block-cut/manuscripts/reference-whole-block-decoder.md)
+
 ### [Pauli, qudit and stabilizer blocks](problems/quantum-stabilizer/)
 
 [Statement](problems/quantum-stabilizer/README.md) · [Main proof](problems/quantum-stabilizer/proof.md) · [Sources](problems/quantum-stabilizer/sources.md) · [Verification](problems/quantum-stabilizer/verify/README.md)
@@ -275,13 +279,9 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [A commuting surrogate and a constant-factor stabilizer witness for positive Pauli Hamiltonians](problems/quantum-stabilizer/manuscripts/commuting-surrogates-and-stabilizer-energy-witnesses.md)
 - [Native compact Pauli stabilizer witnesses](problems/quantum-stabilizer/reference-realization.md)
 
-### [Exact-separation and non-Fano boundaries](problems/obstruction-boundaries/)
+### [Self-concordant cone sparsification](problems/conic-barrier-sparsification/)
 
-[Statement](problems/obstruction-boundaries/README.md) · [Main proof](problems/obstruction-boundaries/proof.md) · [Sources](problems/obstruction-boundaries/sources.md) · [Verification](problems/obstruction-boundaries/verify/README.md)
-
-- [Exact separation for compact binary-code partial coloring](problems/obstruction-boundaries/manuscripts/exact-separation-for-compact-codes.md)
-- [A seven-element obstruction to an exact conditional-sign cone bound](problems/obstruction-boundaries/manuscripts/non-fano-obstruction-to-fixed-amplitude-bound.md)
-- [Exact realization of the compact membership obstruction](problems/obstruction-boundaries/manuscripts/reference-compact-membership.md)
+[Statement](problems/conic-barrier-sparsification/README.md) · [Main proof](problems/conic-barrier-sparsification/proof.md) · [Sources](problems/conic-barrier-sparsification/sources.md) · [Verification](problems/conic-barrier-sparsification/verify/README.md)
 
 ## Allocation and resource matroids
 
@@ -290,6 +290,32 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 [Statement](problems/arbitrary-value-allocation-scheme/README.md) · [Main proof](problems/arbitrary-value-allocation-scheme/proof.md) · [Sources](problems/arbitrary-value-allocation-scheme/sources.md) · [Verification](problems/arbitrary-value-allocation-scheme/verify/README.md)
 
 - [Native exact-budget profile realization](problems/arbitrary-value-allocation-scheme/reference-realization.md)
+
+### [Explicit-item matroid union](problems/item-matroid-union/)
+
+[Statement](problems/item-matroid-union/README.md) · [Main proof](problems/item-matroid-union/proof.md) · [Sources](problems/item-matroid-union/sources.md) · [Verification](problems/item-matroid-union/verify/README.md)
+
+- [Configuration-LP comparison for the player-matroid union reduction](problems/item-matroid-union/configuration-comparator.md)
+
+### [Intrinsic two-value allocation](problems/two-value-exact-two/)
+
+[Statement](problems/two-value-exact-two/README.md) · [Main proof](problems/two-value-exact-two/proof.md) · [Sources](problems/two-value-exact-two/sources.md) · [Verification](problems/two-value-exact-two/verify/README.md)
+
+### [Intrinsic values near factor two](problems/intrinsic-values-near-two/)
+
+[Statement](problems/intrinsic-values-near-two/README.md) · [Main proof](problems/intrinsic-values-near-two/proof.md) · [Sources](problems/intrinsic-values-near-two/sources.md) · [Verification](problems/intrinsic-values-near-two/verify/README.md)
+
+- [Exact factor two at the half-optimum derived corank](problems/intrinsic-values-near-two/exact-two-boundaries.md)
+- [General-value near-two allocation with an arbitrary player matroid](problems/intrinsic-values-near-two/player-selection.md)
+- [Original-table realization of the intrinsic derived-matroid transfer](problems/intrinsic-values-near-two/reference-realization.md)
+
+### [One-value allocation](problems/one-value-exact-two/)
+
+[Statement](problems/one-value-exact-two/README.md) · [Main proof](problems/one-value-exact-two/proof.md) · [Sources](problems/one-value-exact-two/sources.md) · [Verification](problems/one-value-exact-two/verify/README.md)
+
+- [A direct Boolean-cap and one-unit gate proof](problems/one-value-exact-two/one-unit-gate.md)
+- [Native shared-budget count allocation and exact quota recovery](problems/one-value-exact-two/reference-realization.md)
+- [One-value optional allocation with a shared setup and assignment budget](problems/one-value-exact-two/setup-tradeoffs.md)
 
 ### [Recipient polymatroids](problems/recipient-polymatroid/)
 
@@ -305,36 +331,6 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Exact realization of ordered resource reservations](problems/recipient-matroid-configuration/resource-backend.md)
 
-### [Explicit-item matroid union](problems/item-matroid-union/)
-
-[Statement](problems/item-matroid-union/README.md) · [Main proof](problems/item-matroid-union/proof.md) · [Sources](problems/item-matroid-union/sources.md) · [Verification](problems/item-matroid-union/verify/README.md)
-
-- [Configuration-LP comparison for the player-matroid union reduction](problems/item-matroid-union/configuration-comparator.md)
-
-### [One-value allocation](problems/one-value-exact-two/)
-
-[Statement](problems/one-value-exact-two/README.md) · [Main proof](problems/one-value-exact-two/proof.md) · [Sources](problems/one-value-exact-two/sources.md) · [Verification](problems/one-value-exact-two/verify/README.md)
-
-- [A direct Boolean-cap and one-unit gate proof](problems/one-value-exact-two/one-unit-gate.md)
-- [Native shared-budget count allocation and exact quota recovery](problems/one-value-exact-two/reference-realization.md)
-- [One-value optional allocation with a shared setup and assignment budget](problems/one-value-exact-two/setup-tradeoffs.md)
-
-### [Intrinsic two-value allocation](problems/two-value-exact-two/)
-
-[Statement](problems/two-value-exact-two/README.md) · [Main proof](problems/two-value-exact-two/proof.md) · [Sources](problems/two-value-exact-two/sources.md) · [Verification](problems/two-value-exact-two/verify/README.md)
-
-### [Intrinsic values near factor two](problems/intrinsic-values-near-two/)
-
-[Statement](problems/intrinsic-values-near-two/README.md) · [Main proof](problems/intrinsic-values-near-two/proof.md) · [Sources](problems/intrinsic-values-near-two/sources.md) · [Verification](problems/intrinsic-values-near-two/verify/README.md)
-
-- [Exact factor two at the half-optimum derived corank](problems/intrinsic-values-near-two/exact-two-boundaries.md)
-- [General-value near-two allocation with an arbitrary player matroid](problems/intrinsic-values-near-two/player-selection.md)
-- [Original-table realization of the intrinsic derived-matroid transfer](problems/intrinsic-values-near-two/reference-realization.md)
-
-### [Unrelated-value additive allocation](problems/unrelated-values-additive/)
-
-[Statement](problems/unrelated-values-additive/README.md) · [Main proof](problems/unrelated-values-additive/proof.md) · [Sources](problems/unrelated-values-additive/sources.md) · [Verification](problems/unrelated-values-additive/verify/README.md)
-
 ### [Unrelated values with a joint role](problems/unrelated-values-joint-role/)
 
 [Statement](problems/unrelated-values-joint-role/README.md) · [Main proof](problems/unrelated-values-joint-role/proof.md) · [Sources](problems/unrelated-values-joint-role/sources.md) · [Verification](problems/unrelated-values-joint-role/verify/README.md)
@@ -343,6 +339,10 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Exact original-input realization of shared resource roles](problems/unrelated-values-joint-role/reference-realization.md)
 - [Unrelated-value allocation with one shared setup and assignment budget](problems/unrelated-values-joint-role/setup-budget.md)
 - [Integer-quota time tradeoffs for compulsory unrelated two-value allocation](problems/unrelated-values-joint-role/two-value-tradeoffs.md)
+
+### [Unrelated-value additive allocation](problems/unrelated-values-additive/)
+
+[Statement](problems/unrelated-values-additive/README.md) · [Main proof](problems/unrelated-values-additive/proof.md) · [Sources](problems/unrelated-values-additive/sources.md) · [Verification](problems/unrelated-values-additive/verify/README.md)
 
 ### [Whole-ground selection and transfers](problems/whole-ground-allocation/)
 
@@ -357,15 +357,15 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 ## Selected flow and robust allocation
 
-### [Selected concurrent flow](problems/selected-flow/)
-
-[Statement](problems/selected-flow/README.md) · [Main proof](problems/selected-flow/proof.md) · [Sources](problems/selected-flow/sources.md) · [Verification](problems/selected-flow/verify/README.md)
-
-- [Exact concurrent-flow primitives and their certificates](problems/selected-flow/reference-realization.md)
-
 ### [Flow with shared setup budget](problems/shared-setup-flow/)
 
 [Statement](problems/shared-setup-flow/README.md) · [Main proof](problems/shared-setup-flow/proof.md) · [Sources](problems/shared-setup-flow/sources.md) · [Verification](problems/shared-setup-flow/verify/README.md)
+
+### [Robust bounded-width certificates](problems/robust-bounded-certificates/)
+
+[Statement](problems/robust-bounded-certificates/README.md) · [Main proof](problems/robust-bounded-certificates/proof.md) · [Sources](problems/robust-bounded-certificates/sources.md) · [Verification](problems/robust-bounded-certificates/verify/README.md)
+
+- [Certified weighted unit intersection and the guarded robust basis gate](problems/robust-bounded-certificates/reference-realization.md)
 
 ### [Robust selected flow](problems/robust-scenario-flow/)
 
@@ -379,11 +379,15 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Exact common-basis reference for robust unrelated allocation](problems/robust-unrelated-allocation/reference-realization.md)
 
-### [Robust bounded-width certificates](problems/robust-bounded-certificates/)
+### [Selected concurrent flow](problems/selected-flow/)
 
-[Statement](problems/robust-bounded-certificates/README.md) · [Main proof](problems/robust-bounded-certificates/proof.md) · [Sources](problems/robust-bounded-certificates/sources.md) · [Verification](problems/robust-bounded-certificates/verify/README.md)
+[Statement](problems/selected-flow/README.md) · [Main proof](problems/selected-flow/proof.md) · [Sources](problems/selected-flow/sources.md) · [Verification](problems/selected-flow/verify/README.md)
 
-- [Certified weighted unit intersection and the guarded robust basis gate](problems/robust-bounded-certificates/reference-realization.md)
+- [Exact concurrent-flow primitives and their certificates](problems/selected-flow/reference-realization.md)
+
+### [Two-scenario hardness](problems/robust-two-scenario-hardness/)
+
+[Statement](problems/robust-two-scenario-hardness/README.md) · [Main proof](problems/robust-two-scenario-hardness/proof.md) · [Sources](problems/robust-two-scenario-hardness/sources.md) · [Verification](problems/robust-two-scenario-hardness/verify/README.md)
 
 ### [Width-two robust unit allocation](problems/robust-width-two-allocation/)
 
@@ -391,18 +395,7 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Realization and scoped review of the width-two unit gate](problems/robust-width-two-allocation/reference-realization.md)
 
-### [Two-scenario hardness](problems/robust-two-scenario-hardness/)
-
-[Statement](problems/robust-two-scenario-hardness/README.md) · [Main proof](problems/robust-two-scenario-hardness/proof.md) · [Sources](problems/robust-two-scenario-hardness/sources.md) · [Verification](problems/robust-two-scenario-hardness/verify/README.md)
-
 ## Scheduling
-
-### [Arbitrary-processing scheme](problems/arbitrary-processing-scheduling/)
-
-[Statement](problems/arbitrary-processing-scheduling/README.md) · [Main proof](problems/arbitrary-processing-scheduling/proof.md) · [Sources](problems/arbitrary-processing-scheduling/sources.md) · [Verification](problems/arbitrary-processing-scheduling/verify/README.md)
-
-- [Exact occupied-profile and joint recovery realization](problems/arbitrary-processing-scheduling/reference-realization.md)
-- [Compressed large-job slots and corank scheduling with arbitrary smaller sizes](problems/arbitrary-processing-scheduling/slot-surplus.md)
 
 ### [Activated-machine scheduling](problems/activated-machine-scheduling/)
 
@@ -410,34 +403,12 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Activation, binary feasibility and the exact six-profile realization](problems/activated-machine-scheduling/reference-realization.md)
 
-### [Six-profile scheduling](problems/six-profile-three-halves/)
+### [Arbitrary-processing scheme](problems/arbitrary-processing-scheduling/)
 
-[Statement](problems/six-profile-three-halves/README.md) · [Main proof](problems/six-profile-three-halves/proof.md) · [Sources](problems/six-profile-three-halves/sources.md) · [Verification](problems/six-profile-three-halves/verify/README.md)
+[Statement](problems/arbitrary-processing-scheduling/README.md) · [Main proof](problems/arbitrary-processing-scheduling/proof.md) · [Sources](problems/arbitrary-processing-scheduling/sources.md) · [Verification](problems/arbitrary-processing-scheduling/verify/README.md)
 
-### [Processing-bucket tradeoff](problems/processing-bucket-tradeoff/)
-
-[Statement](problems/processing-bucket-tradeoff/README.md) · [Main proof](problems/processing-bucket-tradeoff/proof.md) · [Sources](problems/processing-bucket-tradeoff/sources.md) · [Verification](problems/processing-bucket-tradeoff/verify/README.md)
-
-- [Realization of the arbitrary-processing bucket client](problems/processing-bucket-tradeoff/reference-realization.md)
-
-### [Two-size scheduling](problems/two-size-scheduling/)
-
-[Statement](problems/two-size-scheduling/README.md) · [Main proof](problems/two-size-scheduling/proof.md) · [Sources](problems/two-size-scheduling/sources.md) · [Verification](problems/two-size-scheduling/verify/README.md)
-
-- [Two-size polymatroid scheduling parameterized by the number of large units](problems/two-size-scheduling/rank-parameter.md)
-- [Complete-table realization of the two-size corank construction](problems/two-size-scheduling/reference-realization.md)
-
-### [Per-machine two-time scheduling](problems/two-time-scheduling/)
-
-[Statement](problems/two-time-scheduling/README.md) · [Main proof](problems/two-time-scheduling/proof.md) · [Sources](problems/two-time-scheduling/sources.md) · [Verification](problems/two-time-scheduling/verify/README.md)
-
-- [An exact complete-table realization of the heterogeneous scheduling interfaces](problems/two-time-scheduling/reference-realization.md)
-
-### [Many-size workload scheduling](problems/many-size-scheduling/)
-
-[Statement](problems/many-size-scheduling/README.md) · [Main proof](problems/many-size-scheduling/proof.md) · [Sources](problems/many-size-scheduling/sources.md) · [Verification](problems/many-size-scheduling/verify/README.md)
-
-- [Native binary workload realization and its finite solver costs](problems/many-size-scheduling/reference-realization.md)
+- [Exact occupied-profile and joint recovery realization](problems/arbitrary-processing-scheduling/reference-realization.md)
+- [Compressed large-job slots and corank scheduling with arbitrary smaller sizes](problems/arbitrary-processing-scheduling/slot-surplus.md)
 
 ### [Commitment scheduling](problems/commitment-scheduling/)
 
@@ -447,7 +418,43 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Safe machine contraction and residual large-job rank](problems/commitment-scheduling/machine-contraction.md)
 - [Native commitment, contraction and eligibility interfaces](problems/commitment-scheduling/reference-realization.md)
 
+### [Many-size workload scheduling](problems/many-size-scheduling/)
+
+[Statement](problems/many-size-scheduling/README.md) · [Main proof](problems/many-size-scheduling/proof.md) · [Sources](problems/many-size-scheduling/sources.md) · [Verification](problems/many-size-scheduling/verify/README.md)
+
+- [Native binary workload realization and its finite solver costs](problems/many-size-scheduling/reference-realization.md)
+
+### [Per-machine two-time scheduling](problems/two-time-scheduling/)
+
+[Statement](problems/two-time-scheduling/README.md) · [Main proof](problems/two-time-scheduling/proof.md) · [Sources](problems/two-time-scheduling/sources.md) · [Verification](problems/two-time-scheduling/verify/README.md)
+
+- [An exact complete-table realization of the heterogeneous scheduling interfaces](problems/two-time-scheduling/reference-realization.md)
+
+### [Processing-bucket tradeoff](problems/processing-bucket-tradeoff/)
+
+[Statement](problems/processing-bucket-tradeoff/README.md) · [Main proof](problems/processing-bucket-tradeoff/proof.md) · [Sources](problems/processing-bucket-tradeoff/sources.md) · [Verification](problems/processing-bucket-tradeoff/verify/README.md)
+
+- [Realization of the arbitrary-processing bucket client](problems/processing-bucket-tradeoff/reference-realization.md)
+
+### [Six-profile scheduling](problems/six-profile-three-halves/)
+
+[Statement](problems/six-profile-three-halves/README.md) · [Main proof](problems/six-profile-three-halves/proof.md) · [Sources](problems/six-profile-three-halves/sources.md) · [Verification](problems/six-profile-three-halves/verify/README.md)
+
+### [Two-size scheduling](problems/two-size-scheduling/)
+
+[Statement](problems/two-size-scheduling/README.md) · [Main proof](problems/two-size-scheduling/proof.md) · [Sources](problems/two-size-scheduling/sources.md) · [Verification](problems/two-size-scheduling/verify/README.md)
+
+- [Two-size polymatroid scheduling parameterized by the number of large units](problems/two-size-scheduling/rank-parameter.md)
+- [Complete-table realization of the two-size corank construction](problems/two-size-scheduling/reference-realization.md)
+
 ## Matching certificates and oracle barriers
+
+### [Allocation and scheduling barriers](problems/allocation-lower-bounds/)
+
+[Statement](problems/allocation-lower-bounds/README.md) · [Main proof](problems/allocation-lower-bounds/proof.md) · [Sources](problems/allocation-lower-bounds/sources.md) · [Verification](problems/allocation-lower-bounds/verify/README.md)
+
+- [Two integrality gaps for recipient-polymatroid configuration relaxations](problems/allocation-lower-bounds/configuration-gaps.md)
+- [The factor-two oracle obstruction persists at refined parameter zero](problems/allocation-lower-bounds/refined-parameter-barrier.md)
 
 ### [Hypergraph matching and expander routing](problems/strong-haxell-matching/)
 
@@ -462,38 +469,9 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 - [Constructive elementary transversal certificates](problems/independent-transversal/reference-realization.md)
 
-### [Allocation and scheduling barriers](problems/allocation-lower-bounds/)
-
-[Statement](problems/allocation-lower-bounds/README.md) · [Main proof](problems/allocation-lower-bounds/proof.md) · [Sources](problems/allocation-lower-bounds/sources.md) · [Verification](problems/allocation-lower-bounds/verify/README.md)
-
-- [Two integrality gaps for recipient-polymatroid configuration relaxations](problems/allocation-lower-bounds/configuration-gaps.md)
-- [The factor-two oracle obstruction persists at refined parameter zero](problems/allocation-lower-bounds/refined-parameter-barrier.md)
-
 ## Supporting results
 
 These entries extend the problem families with additional algorithms, structural results, and scoped boundaries. Their linked manuscripts state the full models and assumptions.
-
-### [Nonuniform sparse route rounding](manuscripts/graph-backends/nonuniform-fractional-path-selection.md)
-
-Choose one supplied candidate per group while controlling every resource load.
-
-**Randomness.** Deterministic sparse rounding by conditional averaging and guarded finite arithmetic. Candidate probabilities are mathematical weights; the implementation does not sample choices.
-
-**Quantitative result.**
-
-<!-- math-display: 556046b256c21a9948123fb2
-\text{load at }x\le2\mu_x+B\log(8(\lvert X\rvert+1))
--->
-![Formula](assets/math/556046b256c21a9948123fb2.svg)
-
-Bit work:
-
-<!-- math-display: e7ae8d9ae5e92f8659d7c5ef
-S\mathrm{poly}(\log S,b)
--->
-![Formula](assets/math/e7ae8d9ae5e92f8659d7c5ef.svg)
-
-**Model and scope.** Explicit sparse occurrences, rational masses and weights; `B` bounds one weighted occurrence contribution.
 
 ### [Bounded-width lazy path client](manuscripts/graph-backends/bounded-interface-witness-pattern-updates.md)
 
@@ -518,279 +496,6 @@ Space:
 ![Formula](assets/math/b00ac230a2032f178e0420ed.svg)
 
 **Model and scope.** Supplied fixed edge-partition hierarchy of height `h` and boundary `b`; decomposition-input work is additional.
-
-### [Forest-support numerical client](manuscripts/graph-backends/complete-unrestricted-forest-one-sided-client.md)
-
-Complete threshold search with unrestricted receiving directions.
-
-**Randomness.** Deterministic numerical client under the stated ambient-support forest and finite-word contracts, using exact directed tree dynamic programming and lazy path updates.
-
-**Quantitative result.**
-
-Total fixed-ledger work:
-
-<!-- math-display: 01d316c8a717e09a8532c300
-(m+\nu)\mathrm{polylog}S
--->
-![Formula](assets/math/01d316c8a717e09a8532c300.svg)
-
-**Model and scope.** The entire ambient allocation support is a forest, with the stated polynomial-range guards.
-
-### [Feedback-edge numerical client](manuscripts/graph-backends/feedback-edge-one-sided-client.md)
-
-Complete threshold search with `k` nonforest incidences.
-
-**Randomness.** Deterministic numerical client under the stated feedback-edge and finite-word contracts, using exact forest queries and a small Dijkstra computation.
-
-**Quantitative result.**
-
-Total work:
-
-<!-- math-display: f6456f4c3fe91aa2c338e696
-(m+\nu(k+1))\mathrm{polylog}S
--->
-![Formula](assets/math/f6456f4c3fe91aa2c338e696.svg)
-
-Work per query/update plus events:
-
-<!-- math-display: ca78fa8f6cd59b815cefa4f5
-(k+1)\mathrm{polylog}S
--->
-![Formula](assets/math/ca78fa8f6cd59b815cefa4f5.svg)
-
-**Model and scope.** Fixed polynomial-range ledger; parameterized support theorem does not improve arbitrary-graph matching time.
-
-### [Weak-Haxell certifying matching](manuscripts/matching-and-routing/weak-haxell-current-blocker-growth.md)
-
-Left-perfect matching or an explicit violated hitting-set condition.
-
-**Randomness.** Deterministic certifying augmenting search on the explicit hypergraph; it returns a matching or the stated hitting-set certificate.
-
-**Quantitative result.**
-
-<!-- math-display: b911979c9ca3a46edccf06ec
-P(n+1)^{O((r/\epsilon)\log(2+r/\epsilon))}\mathrm{poly}(b_\epsilon+\log P)
--->
-![Formula](assets/math/b911979c9ca3a46edccf06ec.svg)
-
-**Model and scope.** Whole-edge rank <code class="math">r\ge2</code>, <code class="math">0&lt;\epsilon&lt;1</code>; matching under <code class="math">\tau(E_S)&gt;(2r-3+\epsilon)(\lvert S\rvert-1)</code>.
-
-### [Sparse-separator corank refinement](manuscripts/allocation-and-scheduling/attained-set-sparse-separator-gap.md)
-
-Smaller extension and whole-ground bases when the returned separator is sparse.
-
-**Randomness.** Deterministic certificate enumeration, relative to the paid exact separator, selection and recovery interfaces. Bernoulli probabilities are used only to count branches.
-
-**Quantitative result.**
-
-<!-- math-display: 3d4a2a8c0dc04f91cf2377ee
-\beta(R,w)^c
--->
-![Formula](assets/math/3d4a2a8c0dc04f91cf2377ee.svg)
-
-<!-- math-display: e496334d35e6e6465f560d09
-\beta(2,3)=(1+\sqrt5)/2
--->
-![Formula](assets/math/e496334d35e6e6465f560d09.svg)
-
-<!-- math-display: 7dbc7a982dcae1bf2e5e811e
-\beta(3,4)=1+\sqrt2
--->
-![Formula](assets/math/7dbc7a982dcae1bf2e5e811e.svg)
-
-**Model and scope.** Actual separator width `w`; matching global bases <code class="math">(5-\sqrt5)/2</code> and <code class="math">3-\sqrt2</code> use the forced-omission wrapper.
-
-### [Whole-ground robust allocation barrier](manuscripts/allocation-and-scheduling/robust-unit-allocation-whole-ground-oracle-barrier.md)
-
-Every finite multiplicative guarantee requires near-exhaustive rank queries.
-
-**Randomness.** Lower bounds: the self-contained `q`-scenario oracle proof concerns deterministic algorithms; the attributed two-scenario consequence also excludes bounded-error randomized algorithms.
-
-**Quantitative result.**
-
-Deterministic queries:
-
-<!-- math-display: 48f0dbc9c4a021ee501ea5eb
-\text{queries}\ge q^{-1}\binom qr-1
--->
-![Formula](assets/math/48f0dbc9c4a021ee501ea5eb.svg)
-
-Balanced-rank deterministic queries:
-
-<!-- math-display: 8d2b7df8bda79eb755f5e03c
-\text{queries}\ge2^{q-O(\log q)}
--->
-![Formula](assets/math/8d2b7df8bda79eb755f5e03c.svg)
-
-**Model and scope.** <code class="math">2\le r&lt;q</code>; `q` explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication.
-
-### [Implicit minimal-bundle transversals](manuscripts/matching-and-routing/implicit-minimal-bundle-transversal-oracle.md)
-
-Disjoint minimal bundles or an explicit domination/constellation certificate.
-
-**Randomness.** Deterministic implicit construction using fixed-order resource scans and the stated exact bundle operations.
-
-**Quantitative result.**
-
-<!-- math-display: b6cd84595c8ae78c1421c61c
-P(q+1)^{O(\epsilon^{-1}\log(2+q/\epsilon))}\mathrm{poly}(b+b_\epsilon+\log P)
--->
-![Formula](assets/math/b6cd84595c8ae78c1421c61c.svg)
-
-**Model and scope.** No configuration enumeration or arbitrary-neighbour oracle; certificate class sets retain their distinct meanings.
-
-### [Global free pool at the critical quota](manuscripts/allocation-and-scheduling/critical-unit-quota-global-free-pool.md)
-
-Globally resource-free owners cover the current player-rank deficit.
-
-**Randomness.** Structural rank lemma and deterministic paid search acceleration with exact availability. No improved global running-time bound is asserted.
-
-**Quantitative result.**
-
-With full quota <code class="math">t=3b-2</code> and `b` units per current record, free-pool rank:
-
-<!-- math-display: 85aad013254ae9dc0495e88f
-r_M(F)\ge r-k
--->
-![Formula](assets/math/85aad013254ae9dc0495e88f.svg)
-
-**Model and scope.** Fully normalized prefix invariant; eligible free owners admit a paid exchange; no faster critical-quota runtime follows.
-
-### [Jointly independent layer owners](manuscripts/allocation-and-scheduling/joint-owner-sharp-quality-addendum.md)
-
-Within-layer joint independence retains the sharp availability-dependent quality.
-
-**Randomness.** Structural guarantee for deterministic current-blocker search, conditional on an availability oracle satisfying its certified factor on every call.
-
-**Quantitative result.**
-
-Factor with the original rank-exponential or relaxed rank-quasipolynomial time:
-
-<!-- math-display: 1e97261769681dcde00d0440
-\lambda^{-1}+3-3/r+\eta
--->
-![Formula](assets/math/1e97261769681dcde00d0440.svg)
-
-**Model and scope.** The stated current-blocker and paid availability model; joint independence alone does not supply a polynomial batching theorem.
-
-### [Persistent path-hitting certificates](manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md)
-
-One shared update set preserves all historical path-hitting certificates.
-
-**Randomness.** Deterministic structural certificate transfer from supplied historical hitting sets; it does not establish a complete fully dynamic matching or disjoint-path algorithm.
-
-**Quantitative result.**
-
-<code class="math">C\cup I</code> hits current short paths.
-
-<!-- math-display: 1d22bd5d46a116c4c9ec7c2d
-\text{size}\le\lvert C\rvert+\lvert I\rvert
--->
-![Formula](assets/math/1d22bd5d46a116c4c9ec7c2d.svg)
-
-**Model and scope.** Deletions and length increases are safe; inserted/decreased edge lifetimes enter I; selected-path and layer repair are separate.
-
-### [Fixed-potential tight-DAG repairs](manuscripts/graph-backends/fixed-potential-tight-dag-repair-lemma.md)
-
-Maintain old-label shortest-path forests on tight-reachable vertices.
-
-**Randomness.** Deterministic reachability and parent-repair algorithm within one supplied fixed-potential interval; no global bound across potential refreshes is established.
-
-**Quantitative result.**
-
-Total graph work and supplied forest edits per fixed-potential interval:
-
-<!-- math-display: 97ab617779f2e9ff28df7051
-O(m+\nu)
--->
-![Formula](assets/math/97ab617779f2e9ff28df7051.svg)
-
-**Model and scope.** No ledger births or label changes inside the interval; potential-refresh work is outside the bound.
-
-### [Residual-capacity configuration comparator](manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md)
-
-Integral allocation with factor <code class="math">4-3/r</code> against the strengthened residual-capacity configuration LP.
-
-**Randomness.** Deterministic current-blocker allocation relative to the stronger LP. A supplied factor-`lambda` availability oracle must meet its certified guarantee on every call.
-
-**Quantitative result.**
-
-<!-- math-display: f53c232e9b6631d4d9719b29
-2^{O(r)}\mathrm{poly}(H)
--->
-![Formula](assets/math/f53c232e9b6631d4d9719b29.svg)
-
-The stated rank-quasipolynomial alternative allows additive accuracy in the factor.
-
-**Model and scope.** Arbitrary binary recipient polymatroids and exact local availability; certified factor-<code class="math">\lambda</code> availability changes the ratio to <code class="math">\lambda^{-1}+3-3/r</code>. The algorithm does not solve the LP.
-
-### [Fractional optimization of residual configuration relaxations](manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md)
-
-A feasible fractional configuration point at target at least <code class="math">(1-\epsilon)\mathrm{OPT}_{\mathrm{LP}}</code>.
-
-**Randomness.** Deterministic rational ellipsoid optimization, exact-budget profit-scaling dynamic programming and finite primal LP extraction.
-
-**Quantitative result.**
-
-Full LP:
-
-<!-- math-display: 9b1f9181c5250245606fcb32
-2^{O(q)}\mathrm{poly}(H,\epsilon^{-1})
--->
-![Formula](assets/math/9b1f9181c5250245606fcb32.svg)
-
-Support-`s` cuts:
-
-<!-- math-display: 144209c67a147d305364932e
-(q+1)^{O(s+1)}\mathrm{poly}(H,\epsilon^{-1})
--->
-![Formula](assets/math/144209c67a147d305364932e.svg)
-
-**Model and scope.** Coordinate-box local families and binary capacities; <code class="math">s=2(r-1)</code> gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding.
-
-### [Static selected-pair forests below twice the row total](manuscripts/graph-backends/static-transportation-support-balancing.md)
-
-Choose two genuine neighbors per row and obtain a new row-covering injection with strictly bounded component weight.
-
-**Randomness.** Deterministic transportation-cycle cancellation and combinatorial pair selection. This is a static theorem.
-
-**Quantitative result.**
-
-<!-- math-display: 026cd5f2c182562694c3bbe5
-\text{weight of each component}<2L
--->
-![Formula](assets/math/026cd5f2c182562694c3bbe5.svg)
-
-Exact arithmetic operations:
-
-<!-- math-display: 46ae0859d9a85b87d4a2c20f
-O((n+I)\mathrm{polylog}(n+I+2))
--->
-![Formula](assets/math/46ae0859d9a85b87d4a2c20f.svg)
-
-**Model and scope.** Arbitrary finite row rank, row total `L` and column load at most `L` minus the positive bin weight; `I` counts all physical incidences. The supplied old injection need not be preserved.
-
-### [Near-linear confluent rounding and mass-sensitive tails](manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md)
-
-Round a supplied splittable flow to one outgoing route per nonsink, with a simultaneous budget covering completed sinks.
-
-**Randomness.** Deterministic simulation of the named Conflt operations. Exponential potentials are analysis tools and are not evaluated by the algorithm.
-
-**Quantitative result.**
-
-Arithmetic work:
-
-<!-- math-display: 93981ab45e81d39a07edfcfa
-O((n+m)\mathrm{polylog}(n+m+2))
--->
-![Formula](assets/math/93981ab45e81d39a07edfcfa.svg)
-
-<!-- math-display: 0bb6d4c425ecf1f00538b65e
-C\sum_j(2^{W_j/C}-1)/(1+W_j/C)^3=O(W)
--->
-![Formula](assets/math/0bb6d4c425ecf1f00538b65e.svg)
-
-**Model and scope.** Positive nonsink demands, initial node congestion at most `C` and total actual demand `W`. Dynamic replenishment after reopening completed trees requires a separate argument.
 
 ### [Canonical odd crowns and exact matching-value preservation](manuscripts/graph-backends/low-state-odd-crown.md)
 
@@ -831,6 +536,198 @@ h=2^W-2
 
 **Model and scope.** Every characteristic; physical matrix-interval ranks are preserved at the curve. The endpoint-augmented scalar interval is excluded. These examples survive one SV pair and give no hitting-set or PIT-query lower bound.
 
+### [Feedback-edge numerical client](manuscripts/graph-backends/feedback-edge-one-sided-client.md)
+
+Complete threshold search with `k` nonforest incidences.
+
+**Randomness.** Deterministic numerical client under the stated feedback-edge and finite-word contracts, using exact forest queries and a small Dijkstra computation.
+
+**Quantitative result.**
+
+Total work:
+
+<!-- math-display: f6456f4c3fe91aa2c338e696
+(m+\nu(k+1))\mathrm{polylog}S
+-->
+![Formula](assets/math/f6456f4c3fe91aa2c338e696.svg)
+
+Work per query/update plus events:
+
+<!-- math-display: ca78fa8f6cd59b815cefa4f5
+(k+1)\mathrm{polylog}S
+-->
+![Formula](assets/math/ca78fa8f6cd59b815cefa4f5.svg)
+
+**Model and scope.** Fixed polynomial-range ledger; parameterized support theorem does not improve arbitrary-graph matching time.
+
+### [Fixed-potential tight-DAG repairs](manuscripts/graph-backends/fixed-potential-tight-dag-repair-lemma.md)
+
+Maintain old-label shortest-path forests on tight-reachable vertices.
+
+**Randomness.** Deterministic reachability and parent-repair algorithm within one supplied fixed-potential interval; no global bound across potential refreshes is established.
+
+**Quantitative result.**
+
+Total graph work and supplied forest edits per fixed-potential interval:
+
+<!-- math-display: 97ab617779f2e9ff28df7051
+O(m+\nu)
+-->
+![Formula](assets/math/97ab617779f2e9ff28df7051.svg)
+
+**Model and scope.** No ledger births or label changes inside the interval; potential-refresh work is outside the bound.
+
+### [Forest-support numerical client](manuscripts/graph-backends/complete-unrestricted-forest-one-sided-client.md)
+
+Complete threshold search with unrestricted receiving directions.
+
+**Randomness.** Deterministic numerical client under the stated ambient-support forest and finite-word contracts, using exact directed tree dynamic programming and lazy path updates.
+
+**Quantitative result.**
+
+Total fixed-ledger work:
+
+<!-- math-display: 01d316c8a717e09a8532c300
+(m+\nu)\mathrm{polylog}S
+-->
+![Formula](assets/math/01d316c8a717e09a8532c300.svg)
+
+**Model and scope.** The entire ambient allocation support is a forest, with the stated polynomial-range guards.
+
+### [Fractional optimization of residual configuration relaxations](manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md)
+
+A feasible fractional configuration point at target at least <code class="math">(1-\epsilon)\mathrm{OPT}_{\mathrm{LP}}</code>.
+
+**Randomness.** Deterministic rational ellipsoid optimization, exact-budget profit-scaling dynamic programming and finite primal LP extraction.
+
+**Quantitative result.**
+
+Full LP:
+
+<!-- math-display: 9b1f9181c5250245606fcb32
+2^{O(q)}\mathrm{poly}(H,\epsilon^{-1})
+-->
+![Formula](assets/math/9b1f9181c5250245606fcb32.svg)
+
+Support-`s` cuts:
+
+<!-- math-display: 144209c67a147d305364932e
+(q+1)^{O(s+1)}\mathrm{poly}(H,\epsilon^{-1})
+-->
+![Formula](assets/math/144209c67a147d305364932e.svg)
+
+**Model and scope.** Coordinate-box local families and binary capacities; <code class="math">s=2(r-1)</code> gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding.
+
+### [Global free pool at the critical quota](manuscripts/allocation-and-scheduling/critical-unit-quota-global-free-pool.md)
+
+Globally resource-free owners cover the current player-rank deficit.
+
+**Randomness.** Structural rank lemma and deterministic paid search acceleration with exact availability. No improved global running-time bound is asserted.
+
+**Quantitative result.**
+
+With full quota <code class="math">t=3b-2</code> and `b` units per current record, free-pool rank:
+
+<!-- math-display: 85aad013254ae9dc0495e88f
+r_M(F)\ge r-k
+-->
+![Formula](assets/math/85aad013254ae9dc0495e88f.svg)
+
+**Model and scope.** Fully normalized prefix invariant; eligible free owners admit a paid exchange; no faster critical-quota runtime follows.
+
+### [Implicit minimal-bundle transversals](manuscripts/matching-and-routing/implicit-minimal-bundle-transversal-oracle.md)
+
+Disjoint minimal bundles or an explicit domination/constellation certificate.
+
+**Randomness.** Deterministic implicit construction using fixed-order resource scans and the stated exact bundle operations.
+
+**Quantitative result.**
+
+<!-- math-display: b6cd84595c8ae78c1421c61c
+P(q+1)^{O(\epsilon^{-1}\log(2+q/\epsilon))}\mathrm{poly}(b+b_\epsilon+\log P)
+-->
+![Formula](assets/math/b6cd84595c8ae78c1421c61c.svg)
+
+**Model and scope.** No configuration enumeration or arbitrary-neighbour oracle; certificate class sets retain their distinct meanings.
+
+### [Jointly independent layer owners](manuscripts/allocation-and-scheduling/joint-owner-sharp-quality-addendum.md)
+
+Within-layer joint independence retains the sharp availability-dependent quality.
+
+**Randomness.** Structural guarantee for deterministic current-blocker search, conditional on an availability oracle satisfying its certified factor on every call.
+
+**Quantitative result.**
+
+Factor with the original rank-exponential or relaxed rank-quasipolynomial time:
+
+<!-- math-display: 1e97261769681dcde00d0440
+\lambda^{-1}+3-3/r+\eta
+-->
+![Formula](assets/math/1e97261769681dcde00d0440.svg)
+
+**Model and scope.** The stated current-blocker and paid availability model; joint independence alone does not supply a polynomial batching theorem.
+
+### [Near-linear confluent rounding and mass-sensitive tails](manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md)
+
+Round a supplied splittable flow to one outgoing route per nonsink, with a simultaneous budget covering completed sinks.
+
+**Randomness.** Deterministic simulation of the named Conflt operations. Exponential potentials are analysis tools and are not evaluated by the algorithm.
+
+**Quantitative result.**
+
+Arithmetic work:
+
+<!-- math-display: 93981ab45e81d39a07edfcfa
+O((n+m)\mathrm{polylog}(n+m+2))
+-->
+![Formula](assets/math/93981ab45e81d39a07edfcfa.svg)
+
+<!-- math-display: 0bb6d4c425ecf1f00538b65e
+C\sum_j(2^{W_j/C}-1)/(1+W_j/C)^3=O(W)
+-->
+![Formula](assets/math/0bb6d4c425ecf1f00538b65e.svg)
+
+**Model and scope.** Positive nonsink demands, initial node congestion at most `C` and total actual demand `W`. Dynamic replenishment after reopening completed trees requires a separate argument.
+
+### [Nonuniform sparse route rounding](manuscripts/graph-backends/nonuniform-fractional-path-selection.md)
+
+Choose one supplied candidate per group while controlling every resource load.
+
+**Randomness.** Deterministic sparse rounding by conditional averaging and guarded finite arithmetic. Candidate probabilities are mathematical weights; the implementation does not sample choices.
+
+**Quantitative result.**
+
+<!-- math-display: 556046b256c21a9948123fb2
+\text{load at }x\le2\mu_x+B\log(8(\lvert X\rvert+1))
+-->
+![Formula](assets/math/556046b256c21a9948123fb2.svg)
+
+Bit work:
+
+<!-- math-display: e7ae8d9ae5e92f8659d7c5ef
+S\mathrm{poly}(\log S,b)
+-->
+![Formula](assets/math/e7ae8d9ae5e92f8659d7c5ef.svg)
+
+**Model and scope.** Explicit sparse occurrences, rational masses and weights; `B` bounds one weighted occurrence contribution.
+
+### [Persistent path-hitting certificates](manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md)
+
+One shared update set preserves all historical path-hitting certificates.
+
+**Randomness.** Deterministic structural certificate transfer from supplied historical hitting sets; it does not establish a complete fully dynamic matching or disjoint-path algorithm.
+
+**Quantitative result.**
+
+<code class="math">C\cup I</code> hits current short paths.
+
+<!-- math-display: 1d22bd5d46a116c4c9ec7c2d
+\text{size}\le\lvert C\rvert+\lvert I\rvert
+-->
+![Formula](assets/math/1d22bd5d46a116c4c9ec7c2d.svg)
+
+**Model and scope.** Deletions and length increases are safe; inserted/decreased edge lifetimes enter I; selected-path and layer repair are separate.
+
 ### [Quadratic local Hasse digit-degree obstruction](problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md)
 
 An original-field width-`w` word with invertible physical factors attains first-component digit degree `w^2-1` at the ordinary moment curve.
@@ -854,6 +751,109 @@ Scalar total degree:
 ![Formula](assets/math/dc05275ccbf90d43492e12a0.svg)
 
 **Model and scope.** Every width `w>=2` in prime characteristic `p>w^2+w-2`; physical interval ranks survive the ordinary curve. This is a local proof-interface obstruction; one SV pair detects the examples, so no PIT lower bound is claimed.
+
+### [Residual-capacity configuration comparator](manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md)
+
+Integral allocation with factor <code class="math">4-3/r</code> against the strengthened residual-capacity configuration LP.
+
+**Randomness.** Deterministic current-blocker allocation relative to the stronger LP. A supplied factor-`lambda` availability oracle must meet its certified guarantee on every call.
+
+**Quantitative result.**
+
+<!-- math-display: f53c232e9b6631d4d9719b29
+2^{O(r)}\mathrm{poly}(H)
+-->
+![Formula](assets/math/f53c232e9b6631d4d9719b29.svg)
+
+The stated rank-quasipolynomial alternative allows additive accuracy in the factor.
+
+**Model and scope.** Arbitrary binary recipient polymatroids and exact local availability; certified factor-<code class="math">\lambda</code> availability changes the ratio to <code class="math">\lambda^{-1}+3-3/r</code>. The algorithm does not solve the LP.
+
+### [Sparse-separator corank refinement](manuscripts/allocation-and-scheduling/attained-set-sparse-separator-gap.md)
+
+Smaller extension and whole-ground bases when the returned separator is sparse.
+
+**Randomness.** Deterministic certificate enumeration, relative to the paid exact separator, selection and recovery interfaces. Bernoulli probabilities are used only to count branches.
+
+**Quantitative result.**
+
+<!-- math-display: 3d4a2a8c0dc04f91cf2377ee
+\beta(R,w)^c
+-->
+![Formula](assets/math/3d4a2a8c0dc04f91cf2377ee.svg)
+
+<!-- math-display: e496334d35e6e6465f560d09
+\beta(2,3)=(1+\sqrt5)/2
+-->
+![Formula](assets/math/e496334d35e6e6465f560d09.svg)
+
+<!-- math-display: 7dbc7a982dcae1bf2e5e811e
+\beta(3,4)=1+\sqrt2
+-->
+![Formula](assets/math/7dbc7a982dcae1bf2e5e811e.svg)
+
+**Model and scope.** Actual separator width `w`; matching global bases <code class="math">(5-\sqrt5)/2</code> and <code class="math">3-\sqrt2</code> use the forced-omission wrapper.
+
+### [Static selected-pair forests below twice the row total](manuscripts/graph-backends/static-transportation-support-balancing.md)
+
+Choose two genuine neighbors per row and obtain a new row-covering injection with strictly bounded component weight.
+
+**Randomness.** Deterministic transportation-cycle cancellation and combinatorial pair selection. This is a static theorem.
+
+**Quantitative result.**
+
+<!-- math-display: 026cd5f2c182562694c3bbe5
+\text{weight of each component}<2L
+-->
+![Formula](assets/math/026cd5f2c182562694c3bbe5.svg)
+
+Exact arithmetic operations:
+
+<!-- math-display: 46ae0859d9a85b87d4a2c20f
+O((n+I)\mathrm{polylog}(n+I+2))
+-->
+![Formula](assets/math/46ae0859d9a85b87d4a2c20f.svg)
+
+**Model and scope.** Arbitrary finite row rank, row total `L` and column load at most `L` minus the positive bin weight; `I` counts all physical incidences. The supplied old injection need not be preserved.
+
+### [Weak-Haxell certifying matching](manuscripts/matching-and-routing/weak-haxell-current-blocker-growth.md)
+
+Left-perfect matching or an explicit violated hitting-set condition.
+
+**Randomness.** Deterministic certifying augmenting search on the explicit hypergraph; it returns a matching or the stated hitting-set certificate.
+
+**Quantitative result.**
+
+<!-- math-display: b911979c9ca3a46edccf06ec
+P(n+1)^{O((r/\epsilon)\log(2+r/\epsilon))}\mathrm{poly}(b_\epsilon+\log P)
+-->
+![Formula](assets/math/b911979c9ca3a46edccf06ec.svg)
+
+**Model and scope.** Whole-edge rank <code class="math">r\ge2</code>, <code class="math">0&lt;\epsilon&lt;1</code>; matching under <code class="math">\tau(E_S)&gt;(2r-3+\epsilon)(\lvert S\rvert-1)</code>.
+
+### [Whole-ground robust allocation barrier](manuscripts/allocation-and-scheduling/robust-unit-allocation-whole-ground-oracle-barrier.md)
+
+Every finite multiplicative guarantee requires near-exhaustive rank queries.
+
+**Randomness.** Lower bounds: the self-contained `q`-scenario oracle proof concerns deterministic algorithms; the attributed two-scenario consequence also excludes bounded-error randomized algorithms.
+
+**Quantitative result.**
+
+Deterministic queries:
+
+<!-- math-display: 48f0dbc9c4a021ee501ea5eb
+\text{queries}\ge q^{-1}\binom qr-1
+-->
+![Formula](assets/math/48f0dbc9c4a021ee501ea5eb.svg)
+
+Balanced-rank deterministic queries:
+
+<!-- math-display: 8d2b7df8bda79eb755f5e03c
+\text{queries}\ge2^{q-O(\log q)}
+-->
+![Formula](assets/math/8d2b7df8bda79eb755f5e03c.svg)
+
+**Model and scope.** <code class="math">2\le r&lt;q</code>; `q` explicit scenarios, uniform player matroid and zero costs; separate attributed two-scenario implication.
 
 ## Shared manuscripts
 

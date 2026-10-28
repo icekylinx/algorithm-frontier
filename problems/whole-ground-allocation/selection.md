@@ -334,4 +334,4 @@ the generic weighted packing parameterization is still required.
 
 ---
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

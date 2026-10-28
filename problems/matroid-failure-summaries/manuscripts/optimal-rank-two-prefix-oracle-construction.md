@@ -482,4 +482,4 @@ present query bound.
 
 Primary source: [ESA 2025 article and bibliographic record](https://doi.org/10.4230/LIPIcs.ESA.2025.83).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

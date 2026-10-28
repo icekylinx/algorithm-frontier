@@ -143,4 +143,4 @@ columns in one supplied order. The [complete local proof](incidence-realization.
 charges dense original boundary storage separately from the vertex-only
 streaming construction.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

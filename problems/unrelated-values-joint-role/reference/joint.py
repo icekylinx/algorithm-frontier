@@ -1,6 +1,6 @@
 """Exact original-input shared-role reference (finite LP basis enumeration).
 
-Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0.
 The actual prefix recursion is canonical; local LP enumeration is not the
 polynomial oracle implementation charged in the asymptotic theorem.
 """

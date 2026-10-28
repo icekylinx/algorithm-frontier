@@ -58,4 +58,4 @@ Run the independent original-allocation comparison from the repository root:
 python3 -B problems/one-value-exact-two/verify/check_one_value.py
 ```
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

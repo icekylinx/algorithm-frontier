@@ -1,4 +1,4 @@
-"""Exact scenario tests. Attribution: Yilin Liu and GPT-6 Astra Pro. Apache-2.0."""
+"""Exact scenario tests. Attribution: icekylinx and GPT-6 Astra Pro. Apache-2.0."""
 from dataclasses import replace
 from fractions import Fraction as F
 from itertools import combinations, product

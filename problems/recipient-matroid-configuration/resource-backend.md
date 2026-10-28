@@ -112,4 +112,4 @@ resource-valid transitions that are more general than a player-layer search;
 it does not treat those traces as complete allocation executions. Finite
 examples support the symbolic proof and do not exhaust all matroids.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

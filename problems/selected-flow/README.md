@@ -56,4 +56,4 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 The [rational-comparator lemma](../whole-ground-allocation/rational-optimization.md) uses exact optimization of the returned selected-set LP to retain the full <code class="math">\Gamma(1/\varepsilon)</code> base.
 
-**Attribution.** Yilin Liu · GPT-6 Astra Pro
+**Attribution.** icekylinx · GPT-6 Astra Pro

@@ -42,4 +42,4 @@ selected original row, then merges their exact row spaces. This removes the
 need to enumerate a large formal feature dimension; the native dense input
 and boundary storage have their own polynomial resource contract.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

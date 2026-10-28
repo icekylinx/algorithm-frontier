@@ -146,4 +146,4 @@ computes componentwise actual vertex-feature ranks without enumerating that
 formal monomial universe, so its vertex-list bounds use the computed ranks. Both retained
 support bounds remain separate from arithmetic workspace.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

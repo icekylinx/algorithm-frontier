@@ -1,6 +1,6 @@
 """Exact rational supplied-response ridge core, with original row labels.
 
-Copyright 2026 Yilin Liu. Authored by GPT-6 Astra Pro.
+Copyright 2026 icekylinx. Authored by GPT-6 Astra Pro.
 SPDX-License-Identifier: Apache-2.0
 
 This solves unconstrained quadratic objectives. It is not a solver for the

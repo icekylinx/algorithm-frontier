@@ -50,4 +50,4 @@ body is not a Max-Cut certificate.
 No third-party implementation is included. The classical hardness source
 and its precise threshold convention are recorded in the realization proof.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+**Attribution:** icekylinx and GPT-6 Astra Pro. Apache-2.0.

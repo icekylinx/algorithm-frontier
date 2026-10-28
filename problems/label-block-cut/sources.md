@@ -32,4 +32,4 @@ finite-field extension is claimed by this rational implementation.
 - The support lower bounds are proved from cut inequalities and the classical <code class="math">L_1</code> Khintchine inequality; no spectral lower bound is substituted for a cut lower bound.
 - The prime-dimensional commuting-block representation uses standard Weyl/stabilizer algebra: <https://arxiv.org/abs/quant-ph/0408190>.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

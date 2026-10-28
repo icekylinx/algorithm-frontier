@@ -89,4 +89,4 @@ failure budgets. Every original edge is retained and the component bound is
 met exactly. These tests support the implementation; the general bound and
 all-query guarantee follow from the activation proof above.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

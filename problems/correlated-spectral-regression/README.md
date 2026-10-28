@@ -242,4 +242,4 @@ If the cap chooses <code class="math">L</code>, use the identity code. Compute t
 
 For regression, <code class="math">\rho\le\mathrm{sd}_{\lambda_0}(A)+q</code>, where <code class="math">q</code> is the supplied response-subspace dimension. The pool route has better inverse-accuracy dependence, while the code route has better failure-budget dependence in some regimes; neither uniformly dominates the other.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

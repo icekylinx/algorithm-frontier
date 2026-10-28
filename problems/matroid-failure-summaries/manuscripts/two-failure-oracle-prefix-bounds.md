@@ -703,4 +703,4 @@ oracle, the finite label lists and the fixed item order. The probability
 calculations are proof devices, and the code uses only exact integer
 arithmetic and Python's standard library.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.

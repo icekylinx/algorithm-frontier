@@ -80,7 +80,7 @@ The [verification note](verify/README.md) identifies executable coverage. This s
 
 [Proofs](proof.md), [source map](sources.md), [model review](verify/README.md), [finite replay](verify/README.md).
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 ## Executable exact reduction and certificates
 

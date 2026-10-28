@@ -8,7 +8,7 @@
 The [verification note](../verify/README.md) identifies executable coverage. This status does not claim external peer review or proof-assistant verification.
 <!-- review-status:end -->
 
-**Yilin Liu and GPT-6 Astra Pro**
+**icekylinx and GPT-6 Astra Pro**
 
 26 October 2026
 

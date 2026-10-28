@@ -31,7 +31,7 @@ initialization and value-oracle model.
 - Goemans, [Lecture Notes on Matroid Intersection](https://math.mit.edu/~goemans/18453S17/matroid-intersect-notes.pdf): basis-exchange matching, the common-independent-set polytope, and the graphic/partition formulation.
 - The valuated companion states the precise shortest-path and oracle prerequisites of its cited valuated-intersection algorithm. It also separates comparison results, including [Low-Cost Arborescence Under Edge Faults](https://arxiv.org/html/2605.13800v1), from inputs to the proof.
 
-**Attribution:** Yilin Liu and GPT-6 Astra Pro.
+**Attribution:** icekylinx and GPT-6 Astra Pro.
 
 
 ## Certified valuated and ordinary rank-drop realization
