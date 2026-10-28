@@ -396,6 +396,22 @@ The complete conditional classical deterministic factoring reduction and one-con
 
 [Proof](../problems/integer-factorization/proof.md) · [Dependencies](../problems/integer-factorization/sources.md) · [Evidence](../problems/integer-factorization/verify/README.md) · Reviewed 2026-10-28
 
+### [Integral ordered crossing circuits](../problems/noncommutative-crossing/)
+
+Complete mathematical deduction of the common constant-free integer crossing circuit with exponent 1.719516, including the normalization-one lattice, ordered insertion, shared products and full integral three-shape composition, assuming the explicitly named integral spectrum/convolution/sector source interfaces.
+
+**Dependencies and scope.** Recent integral tensor interfaces are cited mathematical premises recorded against the checkpoint source pin; this review does not freshly certify those source ingredients or import their formal build artifacts. The known field curve alone is not used as a universal ring theorem. The 10,825 exact finite checks cover the stated local components and rational certificate. They neither implement the asymptotic matrix/crossing engine nor formally verify the theorem. TeX cross-references were checked, but no local PDF build is claimed.
+
+[Proof](../problems/noncommutative-crossing/proof.md) · [Dependencies](../problems/noncommutative-crossing/sources.md) · [Evidence](../problems/noncommutative-crossing/verify/README.md) · Reviewed 2026-10-28
+
+### [Uniform ordered subset contraction and rectangular permanent](../problems/ordered-subset-contraction/)
+
+Uniform growing-parameter ordered subset aggregation and rectangular permanent, including nonunital ring inputs, upper transforms, integer capacity envelopes, balanced row construction and all exponential parameter overhead. The strongest displayed universal bound uses the cited square matrix endpoint; full rectangular and fixed-degree refinements retain the stated scalar-field scope.
+
+**Dependencies and scope.** The universal square theorem and the field-only full rectangular theorem are named external matrix inputs. Native reference products are naive; the 7,299 exact assertions test finite ordered identities, capacity certificates and cyclic circuit interfaces, not the external theorems or an asymptotic fast engine. The improvement is uniform in growing parameters after charging exponential overhead. No superiority for every fixed degree, all-range binomial-tail theorem, smaller-base square-permanent algorithm, external review or formal verification is claimed.
+
+[Proof](../problems/ordered-subset-contraction/proof.md) · [Dependencies](../problems/ordered-subset-contraction/sources.md) · [Evidence](../problems/ordered-subset-contraction/verify/README.md) · Reviewed 2026-10-28
+
 ## Components ready for review
 
 ### [Numeric targets and support patterns](../problems/numeric-target-frontier/)
@@ -479,14 +495,6 @@ These families have not yet received a scoped readiness entry in this registry. 
 
 These independent results have their own review scopes. A completed static theorem does not certify a separate dynamic application.
 
-### [Exact demand trimming without a flow oracle](../manuscripts/graph-backends/exact-demand-flow-trimming.md)
-
-**Ready for review.** Complete coordinatewise subflow construction, selected directed forest, cycle cancellation, source excess removal and near-linear operation ledger. Includes sink-outgoing preprocessing, native arc identities and finite-bit arithmetic.
-
-**Dependencies and scope.** The deterministic dynamic-forest interface is a named published data-structure dependency. A supplied feasible flow and strictly positive nonsink targets are part of the input model.
-
-[Manuscript](../manuscripts/graph-backends/exact-demand-flow-trimming.md) · [Evidence](../manuscripts/graph-backends/verify/README.md) · Reviewed 2026-10-26
-
 ### [Static selected-pair forests below twice the row total](../manuscripts/graph-backends/static-transportation-support-balancing.md)
 
 **Ready for review.** Complete arbitrary-row-rank static selected-pair forest theorem, private transportation-cycle cancellation, strict component bound below twice the row total and construction of a new physical row-covering injection.
@@ -529,9 +537,7 @@ These independent results have their own review scopes. A completed static theor
 
 ### Supporting review pending
 
-- [Grouped choices under resource deletions](../manuscripts/graph-backends/decremental-choice-recourse-lemma.md)
 - [Nonuniform sparse route rounding](../manuscripts/graph-backends/nonuniform-fractional-path-selection.md)
-- [Short path inventories from a shared DAG](../manuscripts/graph-backends/compressed-fractional-path-extraction.md)
 - [Bounded-width lazy path client](../manuscripts/graph-backends/bounded-interface-witness-pattern-updates.md)
 - [Forest-support numerical client](../manuscripts/graph-backends/complete-unrestricted-forest-one-sided-client.md)
 - [Feedback-edge numerical client](../manuscripts/graph-backends/feedback-edge-one-sided-client.md)
@@ -541,10 +547,8 @@ These independent results have their own review scopes. A completed static theor
 - [Implicit minimal-bundle transversals](../manuscripts/matching-and-routing/implicit-minimal-bundle-transversal-oracle.md)
 - [Global free pool at the critical quota](../manuscripts/allocation-and-scheduling/critical-unit-quota-global-free-pool.md)
 - [Jointly independent layer owners](../manuscripts/allocation-and-scheduling/joint-owner-sharp-quality-addendum.md)
-- [Explicit laminar reservation interface](../manuscripts/allocation-and-scheduling/laminar-resource-current-blocker-reservations.md)
 - [Persistent path-hitting certificates](../manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md)
 - [Fixed-potential tight-DAG repairs](../manuscripts/graph-backends/fixed-potential-tight-dag-repair-lemma.md)
-- [Slack-only directed matching reduction](../manuscripts/graph-backends/slack-only-one-sided-matching-client.md)
 - [Residual-capacity configuration comparator](../manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md)
 - [Fractional optimization of residual configuration relaxations](../manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md)
 
@@ -606,10 +610,16 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/matroid-failure-summaries/verify/check_weighted_prefix.py](../problems/matroid-failure-summaries/verify/check_weighted_prefix.py)
 - [problems/min-cost-flow/verify/check_capacity_scaling.py](../problems/min-cost-flow/verify/check_capacity_scaling.py)
 - [problems/min-cost-flow/verify/check_recovery.py](../problems/min-cost-flow/verify/check_recovery.py)
+- [problems/noncommutative-crossing/verify/check_integral_crossing.py](../problems/noncommutative-crossing/verify/check_integral_crossing.py)
+- [problems/noncommutative-crossing/verify/check_numerical_bound.py](../problems/noncommutative-crossing/verify/check_numerical_bound.py)
+- [problems/noncommutative-crossing/verify/check_schur_lattice.py](../problems/noncommutative-crossing/verify/check_schur_lattice.py)
 - [problems/numeric-target-frontier/verify/check_targets.py](../problems/numeric-target-frontier/verify/check_targets.py)
 - [problems/obstruction-boundaries/verify/check_compact_body.py](../problems/obstruction-boundaries/verify/check_compact_body.py)
 - [problems/one-value-exact-two/verify/check_one_unit_gate.py](../problems/one-value-exact-two/verify/check_one_unit_gate.py)
 - [problems/one-value-exact-two/verify/check_one_value.py](../problems/one-value-exact-two/verify/check_one_value.py)
+- [problems/ordered-subset-contraction/verify/check_cyclic_compiler.py](../problems/ordered-subset-contraction/verify/check_cyclic_compiler.py)
+- [problems/ordered-subset-contraction/verify/check_integer_capacities.py](../problems/ordered-subset-contraction/verify/check_integer_capacities.py)
+- [problems/ordered-subset-contraction/verify/check_ordered_subset.py](../problems/ordered-subset-contraction/verify/check_ordered_subset.py)
 - [problems/packing-matching-summaries/verify/check_product_summary.py](../problems/packing-matching-summaries/verify/check_product_summary.py)
 - [problems/persistence-failure-certificates/verify/check_feature_construction.py](../problems/persistence-failure-certificates/verify/check_feature_construction.py)
 - [problems/persistence-failure-certificates/verify/check_incidence.py](../problems/persistence-failure-certificates/verify/check_incidence.py)

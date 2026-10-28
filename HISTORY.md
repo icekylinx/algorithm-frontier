@@ -1,5 +1,13 @@
 # History
 
+## 2026-10-28 — Selective algebraic algorithms and result cleanup
+
+- Selected two substantive constructions from the SAT checkpoint: the common constant-free integer ordered crossing circuit with exponent 1.719516, including its full integral three-shape deduction with explicit source premises; and a uniform growing-parameter, division-free ordered subset/rectangular-permanent construction with all parameter overhead charged.
+- Excluded SAT theorem reconstruction, immediate counting consequences, modular reconstruction, open or restricted permanent routes, dominated bounds and standalone numerical exponent substitutions. Retained only necessary supporting calculations and incomparable proof context.
+- Removed five routine, subsumed or unrealized-provider interfaces from the independent supporting catalogue while preserving useful internal dependencies. Deleted the obsolete unfinished colored-pool forest candidate and relinked valid focused audits to the accepted no-reset proof.
+- Recorded all 1,069 source member identities and the 22 selected members' adaptations. Six changed algorithm suites supply 18,124 exact finite assertions; they do not implement asymptotic fast matrix engines or certify external source theorems. Import replay and affected presentation, review and provenance checks are incremental; no full repository regression or local TeX PDF build is claimed.
+- Both new mathematical scopes are ready for internal review with explicit external-dependency and implementation conditions. External peer review, historical priority and proof-assistant verification are not claimed.
+
 ## 2026-10-28 — Conditional deterministic complete integer factorization
 
 - Added a fourth selected result: assuming the cited succinct Boolean tensor-contraction theorem, uniform deterministic complete prime factorization with subpolynomial numerical-input time and polynomial bit space. The full statement, classical bit model and accepted external premise are displayed on the homepage and result card.

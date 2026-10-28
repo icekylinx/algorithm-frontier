@@ -1487,27 +1487,71 @@
           "Finite arithmetic programs check small instances and provenance; no complete fast contraction backend is shipped. Publication-wide priority, external peer review, practical cryptanalytic speed and proof-assistant verification are not certified."
         ]
       }
+    },
+    {
+      "id": "noncommutative-crossing",
+      "path": "problems/noncommutative-crossing",
+      "evidence_note": "problems/noncommutative-crossing/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "problems/noncommutative-crossing/verify/check_schur_lattice.py",
+          "scope": "10,270 exact finite checks: 210 Hall orthonormality, 91 integral T coordinates, 7,920 integral Schur mode coordinates, 1,848 mode columns, 39 normalization-one dualities, 142 integral crossing pieces and 20 complete crossing sums. Dense finite rational evaluator, not the polynomial-space coefficient theorem or asymptotic circuit engine."
+        },
+        {
+          "path": "problems/noncommutative-crossing/verify/check_integral_crossing.py",
+          "scope": "543 exact finite checks: nine normalization-one integer crossing tensors, 196 ordered word coefficients, 288 original ordered 2-by-2 matrix evaluations over integers and moduli 2,3,4,5,6,8,9, 19 per-piece row/column orientation identities, reversal guards, rank-factor count receipts and malformed inputs. No fast matrix scheme or full asymptotic generator."
+        },
+        {
+          "path": "problems/noncommutative-crossing/verify/check_numerical_bound.py",
+          "scope": "12 exact rational checks for the strongest retained exponent 1.719516: sqrt(82178) upper bound, full-U branch, two transfer shapes, exact positive gap and boundaries. Does not establish the integral full-U matrix theorem."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "Complete mathematical deduction of the common constant-free integer crossing circuit with exponent 1.719516, including the normalization-one lattice, ordered insertion, shared products and full integral three-shape composition, assuming the explicitly named integral spectrum/convolution/sector source interfaces.",
+        "date": "2026-10-28",
+        "conditions": [
+          "Recent integral tensor interfaces are cited mathematical premises recorded against the checkpoint source pin; this review does not freshly certify those source ingredients or import their formal build artifacts. The known field curve alone is not used as a universal ring theorem.",
+          "The 10,825 exact finite checks cover the stated local components and rational certificate. They neither implement the asymptotic matrix/crossing engine nor formally verify the theorem. TeX cross-references were checked, but no local PDF build is claimed."
+        ]
+      }
+    },
+    {
+      "id": "ordered-subset-contraction",
+      "path": "problems/ordered-subset-contraction",
+      "evidence_note": "problems/ordered-subset-contraction/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "problems/ordered-subset-contraction/verify/check_ordered_subset.py",
+          "scope": "Finite ordered noncommutative subset identities, arbitrary weights, ring characteristics 0/2/4/6, nonunital even-matrix ring and deliberately reversed-order counterexamples; naive matrix products."
+        },
+        {
+          "path": "problems/ordered-subset-contraction/verify/check_integer_capacities.py",
+          "scope": "729 exact rational capacity triples; 44426 profiles. U and square-tiling integer envelopes, characteristic-two refinement and g<=1 reduction."
+        },
+        {
+          "path": "problems/ordered-subset-contraction/verify/check_cyclic_compiler.py",
+          "scope": "Independent free-word oracle, shared DAGs and operands, small characteristic, row rotation, malformed-input guards, linear arithmetic ledger, CLI round trip."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "Uniform growing-parameter ordered subset aggregation and rectangular permanent, including nonunital ring inputs, upper transforms, integer capacity envelopes, balanced row construction and all exponential parameter overhead. The strongest displayed universal bound uses the cited square matrix endpoint; full rectangular and fixed-degree refinements retain the stated scalar-field scope.",
+        "date": "2026-10-28",
+        "conditions": [
+          "The universal square theorem and the field-only full rectangular theorem are named external matrix inputs. Native reference products are naive; the 7,299 exact assertions test finite ordered identities, capacity certificates and cyclic circuit interfaces, not the external theorems or an asymptotic fast engine.",
+          "The improvement is uniform in growing parameters after charging exponential overhead. No superiority for every fixed degree, all-range binomial-tail theorem, smaller-base square-permanent algorithm, external review or formal verification is claimed."
+        ]
+      }
     }
   ],
   "supporting_records": [
     {
-      "id": "grouped-choice-recourse",
-      "path": "manuscripts/graph-backends/decremental-choice-recourse-lemma.md",
-      "evidence_note": "manuscripts/graph-backends/decremental-choice-recourse-lemma.md",
-      "formal_verification": "not-claimed",
-      "checks": []
-    },
-    {
       "id": "nonuniform-route-rounding",
       "path": "manuscripts/graph-backends/nonuniform-fractional-path-selection.md",
       "evidence_note": "manuscripts/graph-backends/nonuniform-fractional-path-selection.md",
-      "formal_verification": "not-claimed",
-      "checks": []
-    },
-    {
-      "id": "short-path-inventories",
-      "path": "manuscripts/graph-backends/compressed-fractional-path-extraction.md",
-      "evidence_note": "manuscripts/graph-backends/compressed-fractional-path-extraction.md",
       "formal_verification": "not-claimed",
       "checks": []
     },
@@ -1575,13 +1619,6 @@
       "checks": []
     },
     {
-      "id": "laminar-reservation-interface",
-      "path": "manuscripts/allocation-and-scheduling/laminar-resource-current-blocker-reservations.md",
-      "evidence_note": "manuscripts/allocation-and-scheduling/laminar-resource-current-blocker-reservations.md",
-      "formal_verification": "not-claimed",
-      "checks": []
-    },
-    {
       "id": "persistent-path-hitting",
       "path": "manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md",
       "evidence_note": "manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md",
@@ -1592,13 +1629,6 @@
       "id": "fixed-potential-tight-dag",
       "path": "manuscripts/graph-backends/fixed-potential-tight-dag-repair-lemma.md",
       "evidence_note": "manuscripts/graph-backends/fixed-potential-tight-dag-repair-lemma.md",
-      "formal_verification": "not-claimed",
-      "checks": []
-    },
-    {
-      "id": "slack-only-directed-client",
-      "path": "manuscripts/graph-backends/slack-only-one-sided-matching-client.md",
-      "evidence_note": "manuscripts/graph-backends/slack-only-one-sided-matching-client.md",
       "formal_verification": "not-claimed",
       "checks": []
     },
@@ -1615,26 +1645,6 @@
       "evidence_note": "manuscripts/allocation-and-scheduling/residual-configuration-bounded-support-xp-solver.md",
       "formal_verification": "not-claimed",
       "checks": []
-    },
-    {
-      "id": "exact-demand-flow-trimming",
-      "path": "manuscripts/graph-backends/exact-demand-flow-trimming.md",
-      "evidence_note": "manuscripts/graph-backends/verify/README.md",
-      "formal_verification": "not-claimed",
-      "checks": [
-        {
-          "path": "manuscripts/graph-backends/verify/check_static_allocations.py",
-          "scope": "289 exhaustive and 1,000 seeded integral-flow instances check exact native divergences, coordinatewise domination and sink-outgoing clipping; 87 exhaustive and 1,500 seeded transportation instances check original margins, acyclic support, genuine pairs, injections and strict component weights. Includes 625 rows-above-rank-three cases and 940 instances with isolated bins. Explicit polynomial routines do not implement the near-linear dynamic trees."
-        }
-      ],
-      "review": {
-        "status": "ready",
-        "scope": "Complete coordinatewise subflow construction, selected directed forest, cycle cancellation, source excess removal and near-linear operation ledger. Includes sink-outgoing preprocessing, native arc identities and finite-bit arithmetic.",
-        "date": "2026-10-26",
-        "conditions": [
-          "The deterministic dynamic-forest interface is a named published data-structure dependency. A supplied feasible flow and strictly positive nonsink targets are part of the input model."
-        ]
-      }
     },
     {
       "id": "static-transportation-support-balancing",

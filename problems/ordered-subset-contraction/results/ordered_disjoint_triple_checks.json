@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-28T00:19:01.612722+00:00",
+  "assertions": 980,
+  "counts": {
+    "local_integer_indicator": 8,
+    "upper_zeta_against_direct_supersets": 868,
+    "ordered_block_subset_dp": 32,
+    "integer_marker_identity": 32,
+    "actual_ordered_triangle_profiles": 32,
+    "more_rows_than_columns": 4,
+    "arbitrary_noncommutative_block_weights": 1,
+    "arbitrary_block_marker_identity": 1,
+    "ordered_multiplication_guard": 1,
+    "nonunital_even_integer_matrix_ring": 1
+  },
+  "rings": "2-by-2 matrices over Z and Z/mZ for m=2,4,6; also the nonunital subring 2 M_2(Z)",
+  "row_cases": 32,
+  "reversed_order_counterexamples": 11,
+  "seed": 2026102709,
+  "elapsed_seconds": 0.427764,
+  "source_sha256": "a4b008124a838b538e3c7b1630e63818b3290ad035e0bd4bef0952db8f1050c4",
+  "scope": "Finite exact identities and actual ordered profile contraction only. Naive matrix multiplication is used; no asymptotic speed benchmark or priority certification.",
+  "statistical_trials": false
+}

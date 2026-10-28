@@ -1,10 +1,10 @@
 # Independent audit of the Steiner pool: metric, inventory, and recursion
 
-**25 October 2026.** This audits
-[steiner-colored-pool-strong-forest-candidate.md](steiner-colored-pool-strong-forest-candidate.md), particularly its
-selected-core provenance, active-root inventory, static metric domination,
-vertex multiplicity, and the distinction between local work and outer
-copy capacity. The mask connectivity proof receives a separate audit.
+**25 October 2026.** This audits the selected-core provenance, active-root
+inventory, static metric domination, vertex multiplicity and local-work
+accounting used by the accepted
+[no-reset strong-forest construction](../../problems/decremental-strong-forest/proof.md).
+The obsolete bounded-degree proposal is no longer retained.
 
 The static core transformation passes. A particularly direct complete
 native-graph interface uses the uncontracted compressed graph itself at

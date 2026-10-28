@@ -2482,9 +2482,9 @@
     {
       "original_path": "sources/checkpoint-o/steiner_colored_pool_strong_forest_candidate.md",
       "source_revision_sha256": "b0050ed225f3a09fdf8ee93eef349cfe82352d2b7306ac79c54c0f50dd65eaf2",
-      "canonical_path": "manuscripts/graph-backends/steiner-colored-pool-strong-forest-candidate.md",
-      "disposition": "moved",
-      "reason": "Canonical proof consolidation or metadata consolidation."
+      "canonical_path": null,
+      "disposition": "removed",
+      "reason": "Obsolete unaudited bounded-degree candidate removed; the completed no-reset theorem is retained separately."
     },
     {
       "original_path": "sources/checkpoint-o/full_residual_configuration_gap_two_independent_audit.md",
@@ -4466,6 +4466,7 @@
     "manuscripts/graph-backends/persistent-carrier-general-matching.md": "problems/general-matching/proof.md",
     "manuscripts/graph-backends/growing-depth-aspect-exploration.md": "manuscripts/graph-backends/growing-depth-metric-recurrence.md",
     "manuscripts/graph-backends/master-hierarchy-209-210-exploration.md": "manuscripts/graph-backends/hierarchy-parameter-balances.md",
-    "manuscripts/graph-backends/algorithm-outline-and-proof-map.md": "manuscripts/graph-backends/matching-algorithm-specification.md"
+    "manuscripts/graph-backends/algorithm-outline-and-proof-map.md": "manuscripts/graph-backends/matching-algorithm-specification.md",
+    "manuscripts/graph-backends/steiner-colored-pool-strong-forest-candidate.md": "problems/decremental-strong-forest/proof.md"
   }
 }

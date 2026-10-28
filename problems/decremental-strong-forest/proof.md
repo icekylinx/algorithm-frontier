@@ -8,8 +8,8 @@ Sections 4–13 supply the uncontracted forest lift and its complete
 occurrence and update accounting. The generic interfaces remain explicit;
 each is supplied by the named local construction or published theorem.
 
-The construction uses native child identities that are subsets of parent identities. The earlier bounded-degree variant in [steiner colored pool strong forest candidate](../../manuscripts/graph-backends/steiner-colored-pool-strong-forest-candidate.md)
-is optional; its source vertex-deletion adapter is not needed here.
+The construction uses native child identities that are subsets of parent identities.
+Its no-reset native-child implementation is the accepted construction.
 
 The resulting research bound is deterministic strong decremental
 <code class="math">(1+\varepsilon)</code>-SSSP with total work

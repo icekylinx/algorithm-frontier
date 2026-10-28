@@ -28803,9 +28803,7 @@
     },
     {
       "name": "steiner_colored_pool_strong_forest_candidate.md",
-      "canonical_targets": [
-        "manuscripts/graph-backends/steiner-colored-pool-strong-forest-candidate.md"
-      ],
+      "canonical_targets": [],
       "original_versions": [
         {
           "sha256": "b0050ed225f3a09fdf8ee93eef349cfe82352d2b7306ac79c54c0f50dd65eaf2",
@@ -28866,7 +28864,11 @@
           ]
         }
       ],
-      "disposition": "retained-or-integrated"
+      "disposition": "excluded-obsolete-candidate",
+      "related_targets": [
+        "problems/decremental-strong-forest/proof.md"
+      ],
+      "exclusion_reason": "The unfinished bounded-degree proposal is superseded in the curated collection by the completed no-reset construction."
     },
     {
       "name": "steiner_pool_metric_inventory_focused_audit.md",

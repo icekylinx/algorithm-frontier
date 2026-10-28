@@ -49,7 +49,6 @@ not be conflated.
 - [Dynamic compression of marked subtrees: a local root audit](../../manuscripts/graph-backends/marked-steiner-compression-root-audit.md)
 - [Joint public retuning for the strong forest: a conservative source audit](../../manuscripts/graph-backends/public-strong-forest-joint-retuning-audit.md)
 - [Separating metric stretch, forest congestion, and work](../../manuscripts/graph-backends/separated-metric-forest-and-strong-sssp.md)
-- [Compressed Steiner cores and colored full-forest pools](../../manuscripts/graph-backends/steiner-colored-pool-strong-forest-candidate.md)
 - [Independent audit of the Steiner pool: metric, inventory, and recursion](../../manuscripts/graph-backends/steiner-pool-metric-inventory-focused-audit.md)
 - [Which mechanisms improve the strong-forest exponent?](../../manuscripts/graph-backends/strong-forest-mechanism-comparison.md)
 - [Zero-length edges in integer distance and spanner interfaces](../../manuscripts/graph-backends/nonnegative-integer-distance-adapters.md)

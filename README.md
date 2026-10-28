@@ -4,7 +4,7 @@ Algorithms and proofs in combinatorial optimization, number theory, algebraic co
 
 [![Repository checks](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml/badge.svg)](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-**56 problem families · 24 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
+**58 problem families · 19 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
 
 ## Selected results
 
@@ -68,6 +68,8 @@ Browse by problem. Each link opens its statement, proof and dependencies. [Compu
 ### Algebraic complexity
 
 - [Deterministic PIT for fixed-width affine ROABP orbits](problems/roabp-affine-pit/)
+- [Integral ordered crossing circuits](problems/noncommutative-crossing/)
+- [Uniform ordered subset contraction and rectangular permanent](problems/ordered-subset-contraction/)
 
 ### Number theory
 
@@ -151,7 +153,7 @@ Browse by problem. Each link opens its statement, proof and dependencies. [Compu
 
 ### Supporting results
 
-The [complete index](CONTENTS.md#supporting-results) also lists 24 supporting algorithms, structural theorems, and scoped lower bounds. [Shared manuscripts](CONTENTS.md#shared-manuscripts) collect reusable proofs and backend interfaces.
+The [complete index](CONTENTS.md#supporting-results) also lists 19 supporting algorithms, structural theorems, and scoped lower bounds. [Shared manuscripts](CONTENTS.md#shared-manuscripts) collect reusable proofs and backend interfaces.
 
 ## Reading and verification
 

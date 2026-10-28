@@ -2,8 +2,7 @@
 
 **25 October 2026. Final comparison audit passed.** This audit checks
 the complete preferred construction in
-[decremental strong forest proof](../../problems/decremental-strong-forest/proof.md), following the earlier
-local proposal in [steiner-colored-pool-strong-forest-candidate.md](steiner-colored-pool-strong-forest-candidate.md).
+[decremental strong forest proof](../../problems/decremental-strong-forest/proof.md), with its no-reset native-child implementation.
 The final main note was read in full and compared with every obligation
 below. The no-reset version avoids requiring a public recursive
 provider to support ending private terminal lifetimes inside a period.

@@ -1,0 +1,199 @@
+% Copyright 2026 Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+% Curated from sat_research_checkpoint.zip: paper/integral_full_rectangular_transfer.tex
+% Complete full-U mathematical deduction retained with U expanded locally; historical formal-build claims and all weaker numerical/fallback corollaries omitted.
+\subsection{The full rectangular curve from integral character profiles}
+\label{sec:integral-full-rectangular}
+
+We combine a recent integral coefficient interface with the weighted character-profile analysis of a separate source.  Zhou and
+Wang~\cite{zhouwang2026} construct an integer tensor semiring,
+prove an integral convolution bound and shared-leg separation,
+and derive a universal circuit theorem for the symmetric
+rectangular curve.  Their public Lean endpoint covers that
+symmetric curve.  The following deduction applies the weighted
+profile argument of Amanov, van den Berg, and
+Zuiddam~\cite[Sections~4.5--4.6]{amanov2026} to the integral
+ingredients, before the optional pairing of characters in
+Zhou and Wang's numerical analysis. Their mathematical note also gives a weaker, unformalized bound for
+three arbitrary sorted dimensions: $A+B$ when $B\ge2C$, and
+$A+B+(2C-B)^2/(4(A+C-B))$ otherwise. The deduction here
+strengthens that existing universal three-shape bound to the full
+curve $U$; it is not a claim to be the first universal-ring treatment
+of arbitrary rectangular shapes.
+
+\begin{theorem}[Additional-source universal integer rectangular curve]
+\label{thm:integral-full-rectangular}
+Retain the integral spectrum, convolution, separation, and
+sector constructions of~\cite{zhouwang2026}.  For every fixed
+$A\ge B\ge C\ge0$ and $\epsilon>0$, there is one family of
+ordered integer bilinear circuits of size
+\[
+ O\bigl(n^{U(A,B,C)+\epsilon}\bigr)
+\]
+for the corresponding rectangular matrix product, valid in
+every associative unital ring.  The family and its bound are
+chosen before the ring.  The function is explicitly
+\[
+ U(A,B,C)=\begin{cases}
+ A+B,&C(A+B)\le AB,\\[2pt]
+ \dfrac{(AB+BC+CA)^2}{4ABC},&C(A+B)>AB,
+ \end{cases}
+\]
+where the first branch includes $C=0$, including $A=B=C=0$.  Integer scalar operations can be
+implemented using $0,1,-1$ with the same slackened exponent.
+\end{theorem}
+
+\begin{proof}
+We spell out the exact interface needed from the integral
+source.  Let $\mathcal S_{\mathbb Z}$ contain zero and the
+integer three-tensors that restrict to the unit tensor by
+integer linear maps, modulo mutual restriction.  Direct sum
+and tensor product give its semiring operations.  Its integer
+restriction preorder satisfies the Strassen hypotheses, and
+the source proves the duality
+\[
+ \widetilde R_{\mathbb Z}(T)
+   =\sup_{\lambda\in\Delta(\mathcal S_{\mathbb Z})}\lambda(T)
+ \qquad(T\in\mathcal S_{\mathbb Z}).
+\]
+All tensors used below have a unit restriction.  In particular,
+polynomial convolution, oriented dot products, the sector sums,
+and the coefficient-extraction tensors lie in this semiring.
+There is no assertion that every nonzero integer tensor lies
+in it: a scalar multiple such as $2xyz$ need not do so.
+
+For a character $\lambda$, let $p_i\in[0,1]$ be the exponent
+of the oriented dot product whose singleton leg is $i$.
+The usual integer reindexings give
+$\lambda(B_i(q))=q^{p_i}$ and factor the matrix tensor into
+its three oriented dot products.  Write
+\[
+ C(r,s)=\sum_{0\le i<r,\,0\le j<s}x_i y_j z_{i+j}.
+\]
+The integral source supplies the following statements for
+each individual character, without first averaging it with a
+permuted character:
+\begin{enumerate}
+\item $1\le\lambda(C(r,s))\le r+s-1$, and the same for
+every permutation of its legs.  The upper bound comes from
+the integral asymptotic-rank convolution lemma, using
+Vandermonde adjugates, algebra norms, and a finite B\'ezout
+combination after tensor powering.  It is not interpolation
+with divisions in the target ring.
+\item Character values are monotone under integer coordinate
+restrictions and under the displayed integral degenerations.
+For the latter, coefficient extraction after tensor powering
+has only polynomial rank overhead.
+\item If a matched-sector tensor $T$ shares leg $i$ and has
+sectors $T_j$, then
+\[
+ \log\lambda(T)\ge p_i H(q)+\sum_jq_j\log\lambda(T_j)
+\]
+for each probability vector $q$.  For $p_i>0$, optimization
+over $q$ gives
+\[
+ \lambda(T)^{1/p_i}\ge\sum_j\lambda(T_j)^{1/p_i}.
+\]
+\item The unimodular determinant filtration degenerates
+$C(r,s)\otimes B_1(2)$ into the matched sectors
+$C(r,s+1)$ and $C(r,s-1)$, for $s\ge2$.
+The factor $B_1(2)$ has value $2^{p_1}$, so the preceding
+inequality yields exactly
+\[
+ \lambda(C(r,s+1))^{1/p_1}
+ +\lambda(C(r,s-1))^{1/p_1}
+ \le2\lambda(C(r,s))^{1/p_1}.
+\]
+The factor two is therefore the required discrete-concavity
+constant, not a loss that needs to be removed.
+\item The integer three-sector construction degenerates
+$C(r,3s+r-1)$ into two copies of $C(r,s)$ and one copy with
+the last two legs exchanged, all sharing the first leg.
+Its middle-branch first-index reversal is an integer
+permutation.  Applying the preceding entropy inequality gives
+the two coupled tripling inequalities.  Every leg permutation
+has the same properties.
+\end{enumerate}
+
+These are precisely the character-profile hypotheses used in
+Lemma~4.10 and Sections~4.5--4.6 of~\cite{amanov2026}.
+To make their field independence explicit, fix a first
+coordinate and two corresponding positive row profiles
+$g,h$, raised to the power $1/p_i$ when $p_i>0$.
+They are discretely concave and satisfy
+\[
+ 2g(s)+h(s)\le g(3s+r-1),\qquad
+ 2h(s)+g(s)\le h(3s+r-1).
+\]
+The weighted increment inequality of
+\cite[Lemma~4.13]{amanov2026} is a real-variable consequence
+of these two facts.  For positive integers $u,v,d,e$ it says
+\[
+ \left(\frac{g(u+d)}{g(u)}\right)^e
+ \left(\frac{h(v+e)}{h(v)}\right)^d
+ \ge
+ \left(\frac{D}{D-4de/(d+e)}\right)^{d+e},
+ \qquad D=u+v+d+e+r-1.
+\]
+It follows by bounding both increments below by a common
+future secant slope and applying weighted AM--GM; no operation
+on the coefficient ring occurs.
+
+For positive integers $x_1,x_2,x_3$, put
+$S=x_1+x_2+x_3$ and
+$Q=p_1x_2x_3+p_2x_1x_3+p_3x_1x_2$.
+Apply the weighted inequality to the six permuted convolution
+profiles on the integer ray $(nx_1,nx_2,nx_3)$, pairing the
+permutations that fix a first leg.  With
+$\lambda^\pi(T)=\lambda(\pi\cdot T)$, their weighted product is
+\[
+ G_n=\prod_{\pi\in S_3}
+ \lambda^\pi\!\left(C(nx_{\pi(1)},nx_{\pi(2)})\right)^{x_{\pi(3)}}.
+\]
+It obeys
+\[
+ \left(\frac{n+1}{2}\right)^{8Q/S}
+       \le G_n\le(nS)^{2S}.
+\]
+The lower bound is the telescoping product of the six
+increment bounds; the upper bound uses only the first
+interface item.  When a parameter $p_i$ is zero, monotonicity
+supplies the corresponding factor one, exactly as in
+\cite[Proposition~4.14]{amanov2026}.
+Letting $n$ grow, then using homogeneity and continuity, proves
+\begin{equation}\label{eq:integral-character-quadratic}
+ 4(p_1x_2x_3+p_2x_1x_3+p_3x_1x_2)
+       \le(x_1+x_2+x_3)^2
+ \quad\text{for all }x_i\ge0.
+\end{equation}
+
+The weighted matrix character exponent is
+$Ap_2+Bp_3+Cp_1$ under a consistent leg labeling.
+If $C(A+B)\le AB$, substitute
+$(x_1,x_2,x_3)=(A+B,B,A)$ into
+\eqref{eq:integral-character-quadratic}, and use $p_1\ge0$;
+the result is $Ap_2+Bp_3+Cp_1\le A+B$.
+In the other branch, substitute $(AB,BC,CA)$ to obtain
+\[
+ Ap_2+Bp_3+Cp_1
+       \le\frac{(AB+BC+CA)^2}{4ABC}=U(A,B,C).
+\]
+Thus every integer character satisfies the full three-shape
+bound.  Integral spectral duality supplies the same
+asymptotic integer-rank bound.
+
+Finally fix positive slack before selecting one finite integer
+rank witness.  For rational shape exponents choose a common
+base so that all three dimensions are integer powers, then
+take a sufficiently large fixed tensor block.  Recursing on
+this ordered bilinear integer scheme costs
+$O((t+1)\rho^t)$ at depth $t$: the rank $\rho$ is at least
+each of the three input/output coordinate dimensions by
+flattening over $\mathbb Q$, and all scalar-linear operations
+are charged.  Integer coefficients in this fixed scheme are
+implemented by addition and negation.  Padding and rational
+approximation from above cover real exponents; continuity of
+$U$ and the reserved slack pay for these steps and the
+logarithmic recursion factor.  The resulting integer circuit
+is chosen before its coefficient ring and preserves the
+left-before-right order of each multiplication.
+\end{proof}

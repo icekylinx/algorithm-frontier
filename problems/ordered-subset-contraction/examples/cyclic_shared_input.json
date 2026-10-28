@@ -1,0 +1,12 @@
+{
+  "description": "The ordered polynomial (xy)(xy)-x, with a shared product and a repeated input name.",
+  "nodes": [
+    {"op": "var", "name": "x"},
+    {"op": "var", "name": "y"},
+    {"op": "mul", "args": [0, 1]},
+    {"op": "mul", "args": [2, 2]},
+    {"op": "var", "name": "x"},
+    {"op": "sub", "args": [3, 4]}
+  ],
+  "output": 5
+}

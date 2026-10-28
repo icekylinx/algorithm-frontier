@@ -25,6 +25,14 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [A quadratic leading-digit obstruction at the ordinary moment curve](problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md)
 - [Stronger bounds under distinct ROABP promises](problems/roabp-affine-pit/manuscripts/special-cases.md)
 
+### [Integral ordered crossing circuits](problems/noncommutative-crossing/)
+
+[Statement](problems/noncommutative-crossing/README.md) · [Main proof](problems/noncommutative-crossing/proof.md) · [Sources](problems/noncommutative-crossing/sources.md) · [Verification](problems/noncommutative-crossing/verify/README.md)
+
+### [Uniform ordered subset contraction and rectangular permanent](problems/ordered-subset-contraction/)
+
+[Statement](problems/ordered-subset-contraction/README.md) · [Main proof](problems/ordered-subset-contraction/proof.md) · [Sources](problems/ordered-subset-contraction/sources.md) · [Verification](problems/ordered-subset-contraction/verify/README.md)
+
 ## Number theory
 
 ### [Conditional deterministic integer factorization](problems/integer-factorization/)
@@ -465,23 +473,6 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 
 These entries extend the problem families with additional algorithms, structural results, and scoped boundaries. Their linked manuscripts state the full models and assumptions.
 
-### [Grouped choices under resource deletions](manuscripts/graph-backends/decremental-choice-recourse-lemma.md)
-
-One live representative per group with bounded prefix recourse.
-
-**Randomness.** Deterministic representative-maintenance rule, valid against an adaptive deletion order; the recourse bound does not assert near-linear total augmenting-path search time.
-
-**Quantitative result.**
-
-Representative changes:
-
-<!-- math-display: 011752b29d3338d3d82c08b7
-O((M\log R+Q)\log(M+2))
--->
-![Formula](assets/math/011752b29d3338d3d82c08b7.svg)
-
-**Model and scope.** `M` groups, `R` resources and `Q` adaptive deletions; augmenting-path discovery work is separate.
-
 ### [Nonuniform sparse route rounding](manuscripts/graph-backends/nonuniform-fractional-path-selection.md)
 
 Choose one supplied candidate per group while controlling every resource load.
@@ -503,30 +494,6 @@ S\mathrm{poly}(\log S,b)
 ![Formula](assets/math/e7ae8d9ae5e92f8659d7c5ef.svg)
 
 **Model and scope.** Explicit sparse occurrences, rational masses and weights; `B` bounds one weighted occurrence contribution.
-
-### [Short path inventories from a shared DAG](manuscripts/graph-backends/compressed-fractional-path-extraction.md)
-
-Retain at least half of the unit commodities on short candidate routes.
-
-**Randomness.** Deterministic extraction from a supplied exact shared DAG and rational flow records. The upstream flow-oracle construction and its randomness are outside this lemma.
-
-**Quantitative result.**
-
-Arithmetic operations:
-
-<!-- math-display: 69400fa7c405cb959132b53d
-O(Z+P)
--->
-![Formula](assets/math/69400fa7c405cb959132b53d.svg)
-
-<!-- math-display: 65c2262e293638a9990c22fd
-\text{route length}\le4H
--->
-![Formula](assets/math/65c2262e293638a9990c22fd.svg)
-
-Fractional load at most doubled.
-
-**Model and scope.** Supplied DAG and rational masses with total weighted length at most MH; explicit expansion is output-charged.
 
 ### [Bounded-width lazy path client](manuscripts/graph-backends/bounded-interface-witness-pattern-updates.md)
 
@@ -706,18 +673,6 @@ Factor with the original rank-exponential or relaxed rank-quasipolynomial time:
 
 **Model and scope.** The stated current-blocker and paid availability model; joint independence alone does not supply a polynomial batching theorem.
 
-### [Explicit laminar reservation interface](manuscripts/allocation-and-scheduling/laminar-resource-current-blocker-reservations.md)
-
-Token reservations and antichain compact certificates for recipient constraints.
-
-**Randomness.** Deterministic explicit-token reservations and fixed-order current-blocker search for the supplied laminar matroids.
-
-**Quantitative result.**
-
-No laminar-depth factor in the resource value certificate.
-
-**Model and scope.** Includes the stated local-family interfaces; its older base-model approximation is subsumed by the main recipient-polymatroid theorem.
-
 ### [Persistent path-hitting certificates](manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md)
 
 One shared update set preserves all historical path-hitting certificates.
@@ -751,18 +706,6 @@ O(m+\nu)
 ![Formula](assets/math/97ab617779f2e9ff28df7051.svg)
 
 **Model and scope.** No ledger births or label changes inside the interval; potential-refresh work is outside the bound.
-
-### [Slack-only directed matching reduction](manuscripts/graph-backends/slack-only-one-sided-matching-client.md)
-
-Constant-ratio comparison and a finite-word static threshold oracle.
-
-**Randomness.** Deterministic mathematical reduction and exact static threshold oracle. The required fast dynamic interface has not been constructed, so no complete faster dynamic algorithm is classified.
-
-**Quantitative result.**
-
-Directed nonnegative SSSP reduction with monotone prices and a charged repricing budget.
-
-**Model and scope.** The dynamic path-reporting/update provider remains a separate unproved interface; no improved general-matching exponent.
 
 ### [Residual-capacity configuration comparator](manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md)
 
@@ -804,23 +747,6 @@ Support-`s` cuts:
 ![Formula](assets/math/144209c67a147d305364932e.svg)
 
 **Model and scope.** Coordinate-box local families and binary capacities; <code class="math">s=2(r-1)</code> gives an XP rank bound. This is optimization of the stated fractional comparator, with separate integer rounding.
-
-### [Exact demand trimming without a flow oracle](manuscripts/graph-backends/exact-demand-flow-trimming.md)
-
-Trim a supplied flow to exact positive nonsink demands without increasing any arc.
-
-**Randomness.** Deterministic selected-forest construction, with named dynamic-tree operations and no maximum-flow computation.
-
-**Quantitative result.**
-
-Exact arithmetic operations:
-
-<!-- math-display: 93981ab45e81d39a07edfcfa
-O((n+m)\mathrm{polylog}(n+m+2))
--->
-![Formula](assets/math/93981ab45e81d39a07edfcfa.svg)
-
-**Model and scope.** Physical arc records include loops, parallel and opposite arcs. No sink inflow target is required; integer input remains integral and bit costs are explicit.
 
 ### [Static selected-pair forests below twice the row total](manuscripts/graph-backends/static-transportation-support-balancing.md)
 
@@ -1131,7 +1057,6 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [Deterministic confluent rounding: implementation, moments, and load tails](manuscripts/graph-backends/static-confluent-rounding-and-tail-bounds.md)
 - [Deterministic Static Joint-Freeing by Triangular Forest Exchanges](manuscripts/graph-backends/static-pair-exchange.md)
 - [A selected-pair forest of weight below twice the row total](manuscripts/graph-backends/static-transportation-support-balancing.md)
-- [Compressed Steiner cores and colored full-forest pools](manuscripts/graph-backends/steiner-colored-pool-strong-forest-candidate.md)
 - [Independent audit of the Steiner pool: metric, inventory, and recursion](manuscripts/graph-backends/steiner-pool-metric-inventory-focused-audit.md)
 - [Which mechanisms improve the strong-forest exponent?](manuscripts/graph-backends/strong-forest-mechanism-comparison.md)
 - [Tight blocks through witness-forest pruning](manuscripts/graph-backends/tight-blocks-via-forest-pruning.md)

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-28T00:19:01.354265+00:00",
+  "scope": "Reusable JSON compiler checked against independent free-word cyclic derivatives, repeated names/operands, characteristic-two cancellation, row-order semantics, input guards and an actual CLI round trip. No asymptotic fast-crossing implementation.",
+  "assertions": 465,
+  "counts": {
+    "forward_output": 32,
+    "actual_ordered_derivative": 95,
+    "small_characteristic_derivative": 285,
+    "charged_gate_bound": 32,
+    "shared_repeated_input_formula": 1,
+    "shared_repeated_operand_formula": 1,
+    "mod_two_multiplicity_guard": 1,
+    "literal_row_occurrence": 1,
+    "literal_word_rotation": 1,
+    "noncommutative_rotation_direction": 1,
+    "malformed_input_rejection": 10,
+    "invalid_row_claim_rejection": 3,
+    "actual_cli_execution": 1,
+    "cli_serialization_roundtrip": 1
+  },
+  "compiler_sha256": "2756b0a60803bed4346d2cd0965d8a28919a2884db0ca0022e3fb241dc47a9d2",
+  "checker_sha256": "b82a9055ac98018b6fe517c4c1d6751f44b3ac6801872a4c93938d935b856757",
+  "statistical_trials": false
+}

@@ -1,0 +1,141 @@
+% Copyright 2026 Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+% Curated from sat_research_checkpoint.zip: paper/integral_schur_extension.tex
+% Complete integral crossing theorem and proof retained; unrelated downstream corollaries and duplicate streaming implementation omitted.
+\subsection{An integral Schur basis removes the factorial normalization}
+\label{sec:integral-schur}
+
+The factorial $h!$ in the source's monomial-basis construction is
+not intrinsic to its rank bound. A change to an integral Schur
+basis removes it. Integral forms of Heisenberg and lattice vertex
+operators are established theory~\cite{huangjing2022}; the proof
+below gives the specific finite coefficient statement needed here.
+The required source operator identities are independently proved
+in Lemmas~\ref{lem:elementary-crossing-operator}
+and~\ref{lem:elementary-crossing-duality}. This algebraic result
+does not depend on the source SAT algorithm.
+
+\begin{theorem}[Integral crossing pieces]
+\label{thm:integral-crossing}
+For the modes defined in Section~\ref{sec:elementary-crossing-operator}
+and all integers $h,E\ge1$, there are
+integer crossing pieces indexed by $-E-h\le s\le E+h$ satisfying
+\[
+ \sum_s A_s(x,y,u,v)=[x=v][y=u],
+\]
+where $x,v$ range over the partitions of $h$ and $y,u$ over those
+of $E$. Both factorizations of every piece have integer entries,
+and their ranks are at most
+\[
+ R_s^{\rm row}=\sum_{i=0}^{2h}p(E+s-h+i),\qquad
+ R_s^{\rm col}=\sum_{i=0}^{2h}p(E+h-s-i).
+\]
+Here $p(j)=0$ for $j<0$. Thus the normalizing scalar is $1$, and
+the identities and rank bounds specialize to every commutative
+ring. The integers are explicitly constructible with bit lengths
+polynomial in $h+E$.
+\end{theorem}
+
+\begin{proof}
+Identify the source variables $t_j$ with power-sum symmetric
+functions $p_j$. Put
+\[
+ H(u)=\sum_{n\ge0}h_nu^n
+     =\exp\!\left(\sum_{n\ge1}p_nu^n/n\right),
+ \qquad E(u)=H(-u)^{-1}.
+\]
+The integral lattice is the symmetric-function ring
+$\Lambda_{\mathbb Z}=\mathbb Z[h_1,h_2,\ldots]$. Products
+$h_\lambda$ and Schur functions $s_\lambda$ are integral bases.
+The Hall pairing has
+\[
+ \langle p_\lambda,p_\mu\rangle
+   =z_\lambda[\lambda=\mu],\qquad
+ \langle s_\lambda,s_\mu\rangle=[\lambda=\mu].
+\]
+
+First, every source mode of an element of $\Lambda_{\mathbb Z}$
+preserves $\Lambda_{\mathbb Z}$. For a homogeneous state $a$ of
+weight $w$, write $Y(a,z)=\sum_r a[r]z^{r-w}$ and extend the
+state variable linearly. The source's normal ordering places all
+multiplications before all differentiations. Direct summation of
+its binomial coefficients gives
+\[
+ Y(H(u),z)f
+ =\frac{H(z+u)}{H(z)}\,
+ f\left[p_k\mapsto p_k+z^{-k}-(z+u)^{-k}\right].
+\]
+Indeed the creation coefficient of $p_l$ is
+\[
+ \sum_{n\ge1}\frac{u^n}{n}\binom{l-1}{n-1}z^{l-n}
+ =\frac{(z+u)^l-z^l}{l},
+\]
+and the coefficient of $\partial_{p_k}$ in the annihilation
+exponential is
+\[
+ k\sum_{n\ge1}\frac{u^n}{n}\binom{-k-1}{n-1}z^{-k-n}
+ =z^{-k}-(z+u)^{-k}.
+\]
+More generally, normal ordering once across all factors yields
+\begin{equation}
+\label{eq:integral-mode-generating}
+ Y\!\left(\prod_{j=1}^qH(u_j),z\right)f
+ =\frac{\prod_{j=1}^qH(z+u_j)}{H(z)^q}\,
+ f\left[p_k\mapsto p_k+qz^{-k}
+                       -\sum_{j=1}^q(z+u_j)^{-k}\right].
+\end{equation}
+The substitution adds $q$ copies of the letter $z^{-1}$ and
+subtracts the letters $(z+u_j)^{-1}$ in the symmetric-function
+alphabet. It is integral: on the complete-function generating
+series it multiplies by
+\[
+ \frac{\prod_j(1-(z+u_j)^{-1}t)}{(1-z^{-1}t)^q}.
+\]
+The prefactor in~\eqref{eq:integral-mode-generating} is integral
+because $H(z)^{-1}=E(-z)$. Fixing the multidegree in the $u_j$ and
+the weight of $f$ gives a lower Laurent bound in $z$; every
+requested coefficient is a finite sum. Extracting a monomial in
+the $u_j$ therefore proves mode integrality for $h_\lambda$, and
+hence for every integral symmetric function. In particular, all
+mode matrices in the Schur basis are integer matrices.
+
+Next define the source's triangular transform
+\[
+ T(p_n)=(-1)^{n-1}\sum_{j=1}^n\binom njp_j.
+\]
+It obeys
+\[
+ T(H(u))=E\!\left(\frac{u}{1+u}\right),\qquad
+ T(h_n)=\sum_{j=1}^n(-1)^{n-j}\binom{n-1}{j-1}e_j.
+\]
+Thus $T$ preserves the integral weight filtration, including
+integrality of each homogeneous component. The finite Vandermonde
+calculation in Lemma~\ref{lem:elementary-crossing-duality} gives
+\[
+ (T p_\lambda)[-h]p_\mu=z_\lambda[\lambda=\mu]
+ \quad (|\lambda|=|\mu|=h).
+\]
+Extending over $\mathbb Q$ identifies this pairing with the Hall
+pairing. Consequently
+\[
+ a_\lambda=T(s_\lambda),\quad b_\nu=s_\nu
+ \quad\Longrightarrow\quad
+ a_\lambda[-h]b_\nu=[\lambda=\nu].
+\]
+
+Use these $a_\lambda,b_\nu$ in the source's $Q_s$ and take matrix
+entries in the Schur basis of $V_E$. The state
+\[
+ a_\lambda^{\langle i\rangle}
+ =\sum_{w=0}^h\binom{h+w}{i}(a_\lambda)_w
+\]
+is integral componentwise. The mode-integrality argument therefore
+makes every entry of both factorizations an integer.
+Lemma~\ref{lem:elementary-crossing-operator} gives
+the stated crossing identity with scalar $1$. The two intermediate
+weights are $E+s-h+i$ and $E+h-s-i$, so the dimensions give exactly
+the asserted ranks. Standard finite symmetric-function basis
+conversion, or the generating identities above, constructs all
+entries; factorial denominators in an intermediate power-sum
+calculation cancel in the final integer coordinates, and all
+intermediate weights are $O(h+E)$, giving polynomial bit height.
+\end{proof}

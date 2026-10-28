@@ -1,0 +1,162 @@
+% Copyright 2026 Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+% Curated connective exposition of the checkpoint's rectangular extraction,
+% direct mixed-crossing transfer, and integral full-curve numerical consequence.
+\section{Integral rectangular extraction and shared evaluation}
+\label{sec:rectangular-hurwitz}
+For integer dimensions $p,q\ge2$, choose the least $h,E$ with
+$p(h)\ge p$ and $p(E)\ge q$, where $p(t)$ denotes the partition
+function in this paragraph only. Use any $p$ partitions of $h$ and $q$
+partitions of $E$ in Theorem~\ref{thm:integral-crossing}. Restriction to
+these coordinates preserves its integer crossing identity. For each
+piece select its smaller rank factorization. The number of resulting
+rank-one terms is at most
+\[
+ (2(E+h)+1)(2h+1)p(E+h).
+\]
+The partition estimate
+$\log p(t)=\pi\sqrt{2t/3}+O(\log(t+2))$
+\cite{hardyramanujan1918} therefore gives
+\[
+ P\le\exp\!\left(\sqrt{(\log p)^2+(\log q)^2}\right)
+      (\log(pq+2))^{O(1)}.
+\]
+Here logarithms are natural. The rank-one terms have the two orientations
+of \eqref{eq:direct-mixed-crossing}; the selected factorizations are
+integer, with normalization one. No conversion to squares or division
+by two is made. Their entries have polynomial logarithmic bit length
+and are explicitly computable by
+Lemma~\ref{lem:algebraic-coefficient-computation}.
+
+Fix $a,b>0$ and $L\ge\max\{a,b\}$, and set
+$s=\sqrt{a^2+b^2}$. Choose base dimensions
+$p=n^{a+o(1)}$, $q=n^{b+o(1)}$. Then
+$P=n^{s+o(1)}$. Partition each target variable list into
+$U=n^{L-a+o(1)}$ and $V=n^{L-b+o(1)}$ blocks, respectively.
+Replicate the same integer crossing decomposition for every block pair,
+using the same pair at both repeated occurrences. This yields an exact
+mixed crossing for $ID_{n^{L+o(1)}}$; padding adds zero coordinates.
+
+For a factor family with coefficient matrices $A_j\in\mathbb Z^{p\times q}$,
+all forms
+\[
+ (X^{(r)})^{\mathsf T}A_jY^{(t)},
+ \quad j\in[P],\ r\in[U],\ t\in[V],
+\]
+are computed by two shared matrix products. Stack the $A_j$ into an
+$(Pp)\times q$ constant matrix and multiply by the $q\times V$ matrix
+of $Y$ blocks. Reshape the result to $p\times(PV)$, then multiply on
+the left by the $U\times p$ matrix of $X$ blocks. Both factor families
+require only a constant number of such calls. If their integer matrix
+schemes have full arithmetic exponents $W_1,W_2$, the two shapes are
+\[
+ (s+a,b,L-b),\qquad (L-a,a,s+L-b),
+\]
+and Lemma~\ref{lem:direct-mixed-crossing} gives exponent
+$\max\{W_1,W_2\}/L$ for the ordered identity. All $PUV$ output forms
+are charged by the matrix schemes' output dimension, so insertion's
+linear overhead is absorbed. Matrix products are used first as
+commutative bilinear circuits in formal variables; ordered insertion
+then preserves the required word order. The integer scheme, including
+all scalar-linear operations, is fixed before evaluating any target
+associative ring.
+
+When $a+b=L$, the shapes are permutations of
+$(s+a,b,a)$. Tensor-leg permutations of an integer bilinear matrix
+identity give valid ordered schemes: interpret the first chosen leg
+as the left input and the second as the right input, without commuting
+target-ring values. This is the specialization used below.
+
+\section{The selected constant-free ordered circuit bound}
+\begin{theorem}[One integer circuit family with exponent $1.719516$]
+\label{thm:selected-crossing}
+Using the integral source constructions and weighted-profile theorem
+specified in Theorem~\ref{thm:integral-full-rectangular}, there is one
+family of noncommutative arithmetic circuits over $\mathbb Z$ computing
+\[
+ ID_N=\sum_{i,j=1}^{N}X_iY_jX_iY_j
+\]
+with $O(N^{1.719516})$ gates and only scalar constants $0,1,-1$.
+The same chosen circuit evaluates correctly in every associative
+unital ring, including characteristic two and rings with zero divisors.
+The bound counts arithmetic gates; it does not bound the bit cost of
+arbitrary ring-element evaluations or give a circuit-generation time
+matching this gate exponent.
+\end{theorem}
+\begin{proof}
+Set
+\[
+ a=\frac{167}{400},\qquad b=\frac{233}{400},\qquad L=1,
+ \qquad s=\frac{\sqrt{82178}}{400}.
+\]
+Both shared matrix shapes are permutations of $(s+a,b,a)$. Put
+\[
+ R=\frac{286667054264}{10^9},\qquad A=a+R/400.
+\]
+Integer squaring gives $R^2>82178$. Padding the largest dimension
+therefore permits the rational shape $(A,b,a)$, with $A>b>a>0$.
+It lies in the curved region $a(A+b)>Ab$, and exact rational
+substitution gives
+\[
+ \frac{1719516}{10^6}
+ -\frac{(Ab+ba+aA)^2}{4Aba}
+ =\frac{358038466018273}{1379112402223945625000}>0.
+\]
+Theorem~\ref{thm:integral-full-rectangular} supplies one integer
+ordered matrix scheme at this rational shape, with any fixed
+positive exponent slack. Reserve part of the strict displayed gap
+for that slack. The shared-products construction and
+Lemma~\ref{lem:direct-mixed-crossing} supply the ordered $ID_N$
+circuit with the same exponent, apart from the partition factors,
+rounding and padding. Their polynomial-logarithmic overhead fits
+another part of the same gap.
+
+There are two kinds of scalar constants. Crossing entries use
+$h,E=O((\log(N+2))^2)$ and have bit length
+$(\log(N+2))^{O(1)}$ by
+Lemma~\ref{lem:algebraic-coefficient-computation}. For the matrix
+scheme, fix the finite integer witness after fixing the positive
+slack. Its finite collection of integer constants is independent of
+$N$. Recursive evaluation, bihomogenization, scalar-linear
+transposition and insertion use only these constants and $0,1,-1$.
+If a scalar-only subcircuit appears, retain it instead of replacing
+it by a new unanalyzed scalar leaf.
+
+An integer of bit length $d$ is built by $O(d+1)$ doublings, additions
+and a possible negation from $0,1,-1$. Replacing every scalar leaf
+therefore costs only a polynomial-logarithmic factor. Reserve the
+remaining strict gap for this cost. All constructions are identities
+in the free associative algebra over $\mathbb Z$. Under evaluation in
+any associative unital ring integer scalars map to central elements,
+so the exact same circuit remains valid. No target-ring inverse or
+field-extension constant is used.
+\end{proof}
+
+\paragraph{Inherited output reductions.}
+The degree-four distinct-index polynomial
+$S_{4,N}=\sum_{i_1,i_2,i_3,i_4\text{ distinct}}X_{i_1}X_{i_2}X_{i_3}X_{i_4}$
+and the row-ordered rectangular polynomial
+$\operatorname{perm}_{4,N}=\sum_{i_1,i_2,i_3,i_4\text{ distinct}}
+ X_{1,i_1}X_{2,i_2}X_{3,i_3}X_{4,i_4}$
+have the same bound by the established integer identities of
+Hrube\v{s}~\cite[Proposition~26]{hrubes2026}. These are output transfers
+of the same construction, not separate algorithmic contributions.
+For completeness put $p_j=\sum_i X_i^j$, $ID^*=ID_N(X,X)$, and
+\[
+ S_2=p_1^2-p_2,\qquad
+ S_3=p_1S_2-p_2p_1-\sum_i X_i p_1 X_i+2p_3.
+\]
+Then $S_4=p_1S_3-A_0-B_0-C_0$, where
+\begin{align*}
+ A_0&=p_2S_2-p_3p_1-\sum_iX_i^2p_1X_i+2p_4,\\
+ B_0&=\sum_i X_i p_1X_i p_1-ID^*
+       -\sum_iX_i p_1X_i^2-p_3p_1+2p_4,\\
+ C_0&=\sum_iX_iS_2X_i-\sum_iX_i^2p_1X_i
+       -\sum_iX_i p_1X_i^2+2p_4.
+\end{align*}
+Every sum outside $ID^*$ has linear circuit size, with integer
+coefficients. Finally substitute for each $X_j$ the strictly
+upper-shift $5\times5$ matrix whose $(r,r+1)$ entry is $X_{r,j}$.
+The $(1,5)$ entry is exactly $\operatorname{perm}_{4,N}$.
+Matrix simulation costs a constant factor per gate and needs no
+division. This concerns four rows; it is not the ordinary growing-order
+square permanent.

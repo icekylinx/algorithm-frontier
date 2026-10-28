@@ -95,3 +95,18 @@ The [selected conditional theorem](../problems/integer-factorization/) and
 [retained direct research branch](../manuscripts/integer-factoring-research/)
 have separate review scopes. Original ZIPs remain ignored. The factoring
 import checker replays their exact bytes when they are locally available.
+
+## Selective SAT research import
+
+The [SAT import manifest](imports/sat-research.json) records all 1,069 original
+member identities, with 22 selected members adapted into 20 proof and code
+targets. The [selection summary](../docs/SAT-RESEARCH.md) identifies the two
+substantive algorithm families and explains the exclusion of incomplete
+routes, dominated results, theorem reconstruction and direct corollaries.
+Reader guides and wrappers are current curation work. Excluded payloads are
+not copied into the repository.
+
+`python3 tools/verify_sat_import.py` checks selected targets and cleanup
+metadata, and replays original member bytes when the ignored ZIP is locally
+available. Historical source hashes do not freeze edited manuscripts. This
+is provenance evidence, not mathematical or proof-assistant certification.

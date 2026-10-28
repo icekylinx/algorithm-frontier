@@ -1,0 +1,11 @@
+{
+  "description": "The ordered word a*z*b; selecting row z produces b*a*z.",
+  "nodes": [
+    {"op": "var", "name": "a"},
+    {"op": "var", "name": "z"},
+    {"op": "var", "name": "b"},
+    {"op": "mul", "args": [0, 1]},
+    {"op": "mul", "args": [3, 2]}
+  ],
+  "output": 4
+}

@@ -1,0 +1,94 @@
+% Copyright 2026 Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+% Curated from sat_research_checkpoint.zip: paper/direct_mixed_crossing_transfer.tex
+% Complete simultaneous-insertion and ordered-crossing lemmas retained; downstream field/older numerical branches omitted.
+\subsection{A direct noncommutative transfer in every characteristic}
+\label{sec:direct-mixed-crossing}
+
+The full crossing identity contains more information than its
+commutative sum-of-squares contraction. Keeping that identity permits a
+direct transfer with no division by two. In particular, the integral
+Schur construction also gives noncommutative circuit bounds in
+characteristic two.
+
+\begin{lemma}[Simultaneous insertion without division]
+\label{lem:simultaneous-insertion}
+Let $R$ be a commutative unital ring. Suppose a division-free
+commutative circuit of size $C$ simultaneously computes bilinear forms
+$F_i(X,Y)$, and a division-free noncommutative circuit of size $D$
+computes polynomials $G_i$. If
+$F_i=\sum_{a,b}f_{i,a,b}X_aY_b$, then
+\[
+ \sum_i\sum_{a,b}f_{i,a,b}X_aG_iY_b
+\]
+has a division-free noncommutative circuit of size $O(C+D+t)$, where
+$t$ is the number of forms. The statement is valid over $R$, including
+in characteristic two and in the presence of zero divisors.
+\end{lemma}
+
+\begin{proof}
+Keep the four bidegree components $(0,0),(1,0),(0,1),(1,1)$ of the
+first circuit; this costs a constant factor and uses no division.
+Its bilinear multiplication gates can be written
+$A_\ell(X)B_\ell(Y)$, where both factors are linear. Regard each such
+product as a new input $W_\ell$. The remaining bilinear computation is
+a scalar-linear circuit
+\[
+ F_i=\sum_\ell c_{i,\ell}W_\ell.
+\]
+Transpose only this scalar-linear circuit to compute
+$H_\ell=\sum_i c_{i,\ell}Z_i$. Explicitly, initialize the adjoints of
+the output gates by $Z_i$, propagate an adjoint to both inputs of an
+addition gate, and multiply by the same scalar when traversing a scalar
+multiplication gate backwards. Sum the contributions arriving at each
+gate. The number of operations is linear in the original number of
+edges and the output count, hence $O(C+t)$.
+
+Substitute $Z_i=G_i$ and output
+$\sum_\ell A_\ell(X)H_\ell B_\ell(Y)$. Since every $c_{i,\ell}$
+is central, this is the desired ordered insertion. The linear forms
+and the transposed circuit remain shared. All identities use only
+addition and multiplication, so the argument is characteristic-free.
+\end{proof}
+
+\begin{lemma}[Mixed crossing to an ordered identity polynomial]
+\label{lem:direct-mixed-crossing}
+Suppose arrays over $R$ satisfy
+\begin{equation}
+\label{eq:direct-mixed-crossing}
+ [x=v][y=u]
+ =\sum_{j\in J} f_{j,x,y}g_{j,v,u}
+  +\sum_{j\in K} h_{j,x,u}k_{j,v,y}.
+\end{equation}
+If all associated bilinear forms are simultaneously computable by
+division-free commutative circuits of total size $C$, then
+\[
+ \operatorname{ID}_{p,q}(X,Y)
+   =\sum_{x\in[p],\,y\in[q]}X_xY_yX_xY_y
+\]
+has a division-free noncommutative circuit of size
+$O(C+|J|+|K|)$.
+\end{lemma}
+
+\begin{proof}
+Contract~\eqref{eq:direct-mixed-crossing} against the ordered word
+$X_xY_yX_vY_u$. A row-oriented term is the product
+\[
+ \left(\sum_{x,y}f_{j,x,y}X_xY_y\right)
+ \left(\sum_{v,u}g_{j,v,u}X_vY_u\right).
+\]
+A column-oriented term is
+\[
+ \sum_{x,u}h_{j,x,u}X_x
+   \left(\sum_{v,y}k_{j,v,y}Y_yX_v\right)Y_u.
+\]
+Bihomogenization turns a commutative bilinear circuit into either
+ordered bilinear circuit with constant overhead. When one shared
+factor circuit has both row-oriented $XY$ outputs and column-oriented
+$YX$ outputs, make two ordered copies and select the required outputs
+from each. This costs a constant factor; no shared product is flipped
+independently for different outputs. All column insertions
+together are handled by Lemma~\ref{lem:simultaneous-insertion}; row
+products and their sums add only the number of terms. The right side
+therefore contracts to $\operatorname{ID}_{p,q}$ with the stated cost.
+No polarization, square root of $-1$, or inversion of two is used.
+\end{proof}

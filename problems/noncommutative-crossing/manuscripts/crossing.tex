@@ -1,0 +1,43 @@
+% Copyright 2026 Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\poly}{\operatorname{poly}}
+\newcommand{\polylog}{\operatorname{polylog}}
+\title{Integral Character Profiles and Ordered Crossing Circuits}
+\author{Yilin Liu and GPT-6 Astra Pro}
+\date{28 October 2026}
+\begin{document}
+\maketitle
+The selected result combines a normalization-one integral crossing,
+simultaneous ordered insertion and shared matrix products with a full
+three-shape integer matrix bound. The recent integral spectrum,
+convolution, separation and sector theorems retain their explicit source
+attribution. The weighted field-profile analysis is also prior work;
+the composition here preserves one integer scheme chosen before every
+associative unital coefficient ring. This manuscript retains the completed
+mathematical argument from the supplied checkpoint, without claiming
+external peer review, historical priority or a complete local formal
+verification. No satisfiability algorithm is a premise. We give one
+selected $O(N^{1.719516})$ arithmetic circuit bound rather than a list
+of numerically weaker substitutions or direct SAT applications.
+\tableofcontents
+\section{Finite crossing and the integral lattice}
+\input{finite-crossing}
+\input{integral-pieces}
+\input{coefficient-computation}
+\section{Ordered insertion}
+\input{ordered-insertion}
+\section{The full three-shape integral matrix theorem}
+\input{integral-three-shape}
+\input{shared-products}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

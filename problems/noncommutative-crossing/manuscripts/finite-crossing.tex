@@ -1,0 +1,197 @@
+% Copyright 2026 Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+% Curated from sat_research_checkpoint.zip: paper/elementary_crossing_operator_lemma.tex
+% Complete finite proof retained; no SAT dependency or formal receipts imported.
+\subsection{An elementary proof of the crossing operator identity}
+\label{sec:elementary-crossing-operator}
+
+We give a self-contained proof of the finite operator identity used in
+the integral crossing construction. This isolates the algebraic
+consequence from the satisfiability algorithm: no claim about that
+algorithm is needed in this subsection. The identity is the one in
+Appendix~B, Lemma~9 of~\cite{anthropic2026}; the proof below uses only
+normal ordering and a finite matching expansion.
+
+Let $V=\mathbb Q[p_1,p_2,\ldots]$, graded by $\deg p_j=j$, and let
+$V_E$ denote the homogeneous component of weight $E$; set $V_E=0$
+for $E<0$. For $k\ge1$ define
+\[
+ D_{-k}f=p_kf,\qquad D_kf=k\frac{\partial f}{\partial p_k}.
+\]
+Thus $[D_k,D_{-l}]=k[k=l]\operatorname{Id}$, while creation
+operators commute with one another, as do annihilation operators.
+For $m\ge1$ write
+\begin{align*}
+ J_m^+(z)&=\sum_{l\ge1}\binom{l-1}{m-1}D_{-l}z^{l-m},\\
+ J_m^-(z)&=\sum_{k\ge1}\binom{-k-1}{m-1}D_kz^{-k-m}.
+\end{align*}
+The first sum actually starts at $l=m$. For a partition
+$\mu=(\mu_1,\ldots,\mu_t)$, define
+\[
+ Y(p_\mu,z)=:\!\prod_{i=1}^t
+       (J_{\mu_i}^+(z)+J_{\mu_i}^-(z))\!:
+       =\sum_{r\in\mathbb Z}p_\mu[r]z^{r-|\mu|}.
+\]
+The colons mean that in each term all creation operators are placed
+to the left of all annihilation operators, without adding commutator
+terms. Extend the modes linearly to $V$. Every $a[r]$ maps
+$V_E$ to $V_{E+r}$. Its action on a polynomial is well-defined:
+the positive oscillator indices in a nonzero term have sum at most
+the input weight, and the prescribed mode then bounds the negative
+indices as well.
+
+\begin{lemma}[Finite crossing operator identity]
+\label{lem:elementary-crossing-operator}
+Let $h\ge1$, $b\in V_h$, and $a=\sum_{h'=0}^h a_{h'}$ with
+$a_{h'}\in V_{h'}$. Set
+\[
+ a^{\langle i\rangle}=\sum_{h'=0}^h\binom{h+h'}i a_{h'},\qquad
+ Q_s(a,b)=\sum_{i=0}^{2h}(-1)^i
+    a^{\langle i\rangle}[s-h+i]b[h-s-i].
+\]
+On every $V_E$ the following statements hold:
+\begin{enumerate}
+\item Every product in the definition of $Q_s$ can be reversed
+simultaneously without changing $Q_s$.
+\item $Q_s=0$ if $|s|>E+h$.
+\item $\sum_{|s|\le E+h}Q_s=(a[-h]b)\operatorname{Id}_{V_E}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Linearity reduces the claim to $a=p_\mu$ of weight $h'\le h$
+and $b=p_\nu$ of weight $h$. Put $H=h+h'$. Let $\iota_+$
+mean expansion in nonnegative powers of $w/z$, and $\iota_-$
+expansion in nonnegative powers of $z/w$. Directly from the
+commutation relations,
+\begin{equation}
+\label{eq:elementary-contraction}
+ [J_m^-(z),J_n^+(w)]
+ =\iota_+\frac{\gamma_{m,n}}{(z-w)^{m+n}},\qquad
+ \gamma_{m,n}=(-1)^{m-1}
+       \frac{(m+n-1)!}{(m-1)!(n-1)!}.
+\end{equation}
+Indeed, for $m=n=1$ the contraction is
+$\sum_{k\ge1}kz^{-k-1}w^{k-1}=\iota_+(z-w)^{-2}$.
+Applying the divided derivatives
+$\partial_z^{m-1}\partial_w^{n-1}/((m-1)!(n-1)!)$
+gives~\eqref{eq:elementary-contraction}. Reversing the fields gives
+the expansion $\iota_-$ of the same rational function, since
+$(w-z)^{-2}=(z-w)^{-2}$ before differentiation.
+
+Label equal parts of $\mu$ and $\nu$ separately. Commuting
+annihilation operators of the first field past creation operators
+of the second gives a sum over partial matchings between these two
+lists of parts. A matched pair $(m,n)$ contributes the scalar
+in~\eqref{eq:elementary-contraction}; all unmatched operators form
+one completely normally ordered product. This assertion follows by
+repeatedly using $AB=BA+[A,B]$: every commutator is scalar, so it
+creates no further noncentral terms, and each labelled operator can
+be contracted at most once.
+
+Fix an input and an output monomial of weight $E$. The matrix
+coefficient of any completely normally ordered product of the
+unmatched operators is a Laurent polynomial in $z,w$. Its
+annihilation indices sum to at most $E$. Since input and output
+weights agree, its creation indices have that same sum. Hence all
+indices are bounded by $E$, and only finitely many terms occur.
+The original two ordered products have well-defined matrix
+coefficients in the corresponding iterated Laurent-series rings:
+the rightmost field has powers bounded below, and fixing one such
+power bounds its intermediate weight. The preceding commutations
+may therefore also be justified coefficientwise by truncating
+oscillator indices and then taking stabilized coefficients.
+
+For a partial matching let $D$ be the sum of the weights of all
+matched parts, so $D\le H$. Multiplying its contraction factors
+by $(z-w)^H$ leaves $(z-w)^{H-D}$ times an ordinary Laurent
+polynomial. Consequently
+\[
+ (z-w)^H [u]Y(a,z)Y(b,w)v
+ \quad\hbox{and}\quad
+ (z-w)^H [u]Y(b,w)Y(a,z)v
+\]
+are the two expansions of one and the same Laurent polynomial
+$F_{u,v}(z,w)$. Here $u,v$ are the chosen weight-$E$ monomials,
+and $[u]$ extracts a coefficient. This polynomial is homogeneous
+of total degree zero, hence has the form
+$\sum_s F_s z^s w^{-s}$ with finite support.
+
+Reading the coefficient $z^sw^{-s}$ in the first order gives
+\[
+ F_s=\sum_{i=0}^H(-1)^i\binom Hi
+       [u]a[s-h+i]b[h-s-i]v=[u]Q_s(a,b)v.
+\]
+Reading it in the other order reverses every product. This proves
+the first assertion. In the first order the rightmost mode is
+$b[-r]$ with $r=s-h+i$, so it vanishes on $V_E$ when $r>E$.
+Thus every term vanishes for $s>E+h$. In the reverse order the
+rightmost mode is $a[r]$, which vanishes when $r<-E$. Since
+$r\le s+h'\le s+h$, every term vanishes for $s<-E-h$.
+This proves the second assertion.
+
+At $z=w=1$, every partial matching with an unmatched part vanishes,
+because then $H-D>0$. Fully matched terms leave only a scalar
+times the identity. Denote the sum of their scalar coefficients by
+$c(a,b)$. It is independent of $E$, so
+\[
+ \sum_s Q_s(a,b)=c(a,b)\operatorname{Id}_{V_E}.
+\]
+To identify the scalar, use the vacuum vector $1\in V_0$.
+Its two-field matrix coefficient contains only fully matched terms,
+and is therefore $\iota_+c(a,b)(z-w)^{-H}$. On the other hand,
+$Y(b,w)1=b+O(w)$: each creation summand starts with its own
+$p_n$ at power zero. Taking the coefficient of $w^0$ and then
+the constant polynomial coefficient gives
+$a[-h]b\,z^{-H}=c(a,b)z^{-H}$. Hence $c(a,b)=a[-h]b$,
+which proves the third assertion. Summing homogeneous components
+of $a$ gives the stated generality.
+\end{proof}
+
+\begin{lemma}[The finite binomial duality]
+\label{lem:elementary-crossing-duality}
+Define the multiplicative linear transform $T:V\to V$ by
+\[
+ T(p_n)=(-1)^{n-1}\sum_{j=1}^n\binom njp_j.
+\]
+For partitions $\mu,\nu$ of $h$, let
+$z_\mu=\prod_{k\ge1}k^{m_\mu(k)}m_\mu(k)!$. Then
+\[
+ T(p_\mu)[-h]p_\nu=z_\mu[\mu=\nu].
+\]
+\end{lemma}
+
+\begin{proof}
+This is the unscaled duality in the source's Lemma~10, which we
+rederive to make the dependency explicit. Vandermonde's identity,
+including negative upper binomial arguments, gives
+\[
+ \sum_{j=1}^n\binom nj\binom{-k-1}{j-1}
+   =\binom{n-k-1}{n-1}.
+\]
+It is the coefficient of degree $n-1$ in
+$(1+t)^n(1+t)^{-k-1}$. The result is zero for $1\le k<n$
+and equals $(-1)^{n-1}$ for $k=n$. The sign in $T(p_n)$
+therefore makes its surviving coefficient at $k=n$ equal to one.
+
+In a mode of total shift $-h$ acting on $V_h$, any creation
+operator would require total differentiation weight greater than
+$h$, so it vanishes. In the remaining all-annihilation terms of
+$T(p_\mu)[-h]$, each index $k_i$ is at least $\mu_i$, and their
+sum is $h=\sum_i\mu_i$. Hence every $k_i=\mu_i$, and
+\[
+ T(p_\mu)[-h]p_\nu
+   =\left(\prod_i D_{\mu_i}\right)p_\nu
+   =z_\mu[\mu=\nu].
+\]
+If all derivative multiplicities fit those of $p_\nu$, equality
+of the total weights forces the two partitions to be identical;
+otherwise a derivative annihilates the monomial.
+\end{proof}
+
+The argument is first carried out over $\mathbb Q$ to define the
+displayed operators without changing bases. When an integral lattice
+is preserved by their modes, the resulting equality of integral
+matrices specializes to every commutative coefficient ring. The
+Schur-lattice construction below provides exactly
+that lattice and a dual family with scalar $a[-h]b$ equal to a
+Kronecker delta.

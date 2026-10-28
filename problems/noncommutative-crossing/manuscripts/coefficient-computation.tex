@@ -1,0 +1,186 @@
+% Copyright 2026 Yilin Liu and GPT-6 Astra Pro. Apache-2.0.
+% Curated from sat_research_checkpoint.zip: paper/algebraic_streaming_coefficients.tex
+% Complete finite proof retained; no SAT dependency or formal receipts imported.
+\subsection{Computing the integral crossing coefficients without large tables}
+\label{sec:algebraic-streaming-coefficients}
+
+The following finite algorithm supplies the construction cost needed
+by the algebraic circuit consequences.  It uses only the modes and
+the integral Schur family already defined above; it has no
+tensor-network or satisfiability-algorithm premise.
+
+\begin{lemma}[Explicit computation of integral crossing coefficients]
+\label{lem:algebraic-coefficient-computation}
+For the weight parameters $h,E\ge1$ of
+Theorem~\ref{thm:integral-crossing}, any entry of a crossing piece
+or of either of its displayed factorizations can be computed in
+$2^{O(\sqrt{h+E})}$ bit operations and
+$\operatorname{poly}(h+E)$ space.  All rational intermediates and
+the final integer have bit length polynomial in $h+E$.
+The implied constants are absolute.
+\end{lemma}
+
+\begin{proof}
+Every state, input, output, or intermediate partition in the
+crossing has weight $O(h+E)$: in particular, the intermediate
+weights $E+s-h+i$ and $E+h-s-i$ are at most $2E+2h$ when
+$|s|\le E+h$ and $0\le i\le2h$.  Put $W=4(h+E+1)$ to bound
+all these weights.  Partitions of weight at most $W$ can be
+enumerated in polynomial space, and their number is
+$2^{O(\sqrt W)}$.  The latter bound follows directly from Euler's
+product evaluated at $\exp(-1/\sqrt W)$.
+
+\paragraph{A power-sum mode entry.}
+Write $m_\sigma(j)$ for the multiplicity of part $j$ in a
+partition $\sigma$.  Consider first
+\[
+ [p_\tau]a[r]p_\sigma.
+\]
+Return zero unless $r=|\tau|-|\sigma|$.  Normal ordering means
+that differentiations act before creations.  Enumerate derivative
+multiplicities $0\le d_j\le m_\sigma(j)$.  The required creation
+multiplicities are forced to be
+\[
+ c_j=m_\tau(j)-m_\sigma(j)+d_j.
+\]
+Discard a vector with a negative $c_j$; otherwise
+$0\le c_j\le m_\tau(j)$.  The total mode-shift condition is then
+automatic.  The differentiation contributes the integer
+\[
+ D(d)=\prod_{j\ge1}j^{d_j}(m_\sigma(j))_{d_j},
+\]
+where $(m)_d=m(m-1)\cdots(m-d+1)$.
+
+For a monomial state $a=p_\mu=p_{\mu_1}\cdots p_{\mu_\ell}$,
+form the ordinary homogeneous polynomial
+\[
+ H_\mu(Y)=\prod_{t=1}^{\ell}
+       \left(\sum_{k\ne0}\binom{-k-1}{\mu_t-1}Y_k\right).
+\]
+In this expression retain only positive $k$ in
+$\operatorname{supp}(\sigma)$ and negative $k$ with
+$-k\in\operatorname{supp}(\tau)$.  No other differentiations can
+survive, and no other creations can occur in the requested output.
+The contribution of $(d,c)$ is $D(d)$ times the coefficient of
+\[
+ \prod_jY_j^{d_j}Y_{-j}^{c_j}
+\]
+in $H_\mu$.  It is zero unless $\sum_j(d_j+c_j)=\ell$.
+
+For an ordinary homogeneous polynomial $H$ of degree $|e|$,
+rectangular finite differences extract precisely this coefficient:
+\begin{equation}
+\label{eq:algebraic-rectangular-differences}
+ [Y^e]H
+ =\frac1{\prod_k e_k!}
+   \sum_{0\le z_k\le e_k}
+       (-1)^{|e|-|z|}\prod_k\binom{e_k}{z_k}H(z).
+\end{equation}
+Indeed every other monomial of degree $|e|$ has an exponent below
+its target in at least one coordinate, and is annihilated by that
+coordinate's finite difference.  The same identity works with
+coefficients in a univariate polynomial ring.
+
+A derivative vector is a subpartition of $\sigma$, so the number
+of such vectors is at most
+\[
+ \prod_j(m_\sigma(j)+1)\le\sum_{v=0}^W p(v)
+ =2^{O(\sqrt W)}.
+\]
+For each vector, the finite-difference grid has at most
+\[
+ \prod_j(d_j+1)(c_j+1)
+ \le\prod_j(m_\sigma(j)+1)(m_\tau(j)+1)
+ =2^{O(\sqrt W)}
+\]
+points.  A fixed product of these bounds remains
+$2^{O(\sqrt W)}$.  At a grid point the displayed product of
+$\ell\le W$ short linear forms is evaluated directly.
+
+\paragraph{The transformed state and its weight marker.}
+For $a=T(p_\mu)$, use instead
+\[
+ H_\mu(Y,Z)=
+ \prod_{t=1}^{\ell}(-1)^{\mu_t-1}
+ \left(\sum_{j=1}^{\mu_t}\binom{\mu_t}{j}Z^j
+       \sum_{k\ne0}\binom{-k-1}{j-1}Y_k\right).
+\]
+The global product of signs is retained.  This polynomial is still
+homogeneous of degree $\ell$ in $Y$, and the marker $Z$ records
+the weight of each homogeneous state component.  Apply
+\eqref{eq:algebraic-rectangular-differences} while storing a
+univariate array of degree at most $h$.  For
+$a^{\langle i\rangle}$, apply after coefficient extraction the
+linear functional
+\[
+ Z^w\longmapsto\binom{h+w}{i}.
+\]
+For $a$ itself, sum the marker coefficients.  This avoids expanding
+$T(p_\mu)$ into all of its monomials.  It also handles the
+inhomogeneous transform without confusing state weight with the
+mode shift $r$.
+
+All generalized binomial coefficients have arguments of magnitude
+$O(W)$ and bit length $O(W)$.  Products contain at most $W$
+factors, and the factorials and falling factorials above have
+polynomial bit length.  The univariate arrays have polynomial
+rank.  Thus every evaluation, accumulation, and exact division in
+this part uses polynomial space and polynomial-bit integers.
+
+\paragraph{Streaming the Schur basis changes.}
+For partitions $\lambda,\mu$ of weight $w\le W$, put
+$e_j=m_\mu(j)$ and set power sums outside
+$\operatorname{supp}(\mu)$ to zero.  Then
+\[
+ [p_\mu]s_\lambda
+ =\frac1{\prod_j e_j!}
+   \sum_{0\le z_j\le e_j}
+   (-1)^{\sum_j(e_j-z_j)}
+   \prod_j\binom{e_j}{z_j}\,s_\lambda(p_j=z_j).
+\]
+Here weighted homogeneity suffices: a different monomial of
+weight $w$ cannot be componentwise at least the target, because
+any strict increase would have weight greater than $w$.
+Therefore it has a below-target coordinate and vanishes under
+that finite difference.  The grid has
+$\prod_j(e_j+1)=2^{O(\sqrt W)}$ points.
+
+At each grid point compute the complete functions by
+\[
+ m h_m=\sum_{j=1}^m p_jh_{m-j},\qquad h_0=1,
+\]
+and evaluate the Jacobi--Trudi determinant for $s_\lambda$ using
+polynomial-time rational arithmetic.  Factorial common
+denominators bound the bit lengths polynomially.  Hall
+orthogonality gives the reverse coefficient
+\[
+ [s_\lambda]p_\mu=z_\mu[p_\mu]s_\lambda,
+ \qquad z_\mu=\prod_jj^{m_\mu(j)}m_\mu(j)!.
+\]
+
+To compute a Schur mode entry, stream over the power-sum
+partitions for its state, input, and output, multiply the three
+basis-conversion coefficients by the power-sum mode entry just
+computed, and accumulate.  For a transformed Schur state use
+linearity, $T(s_\lambda)=\sum_\mu[p_\mu]s_\lambda\,T(p_\mu)$,
+and the marker procedure.  Each of the three partition sets has
+size $2^{O(\sqrt W)}$, so this fixed number of nested enumerations
+and coefficient computations still takes $2^{O(\sqrt W)}$ time.
+The rational basis coefficients have common denominators dividing
+weight factorials; during their finite-difference computation a
+fixed power of $W!$ is a sufficient common denominator.  Thus
+accumulating exponentially many terms does not create
+exponential bit lengths.
+
+Finally, obtain a factorization entry from its indicated mode
+entry and sign.  To obtain an entry of a full crossing piece,
+stream its polynomially many $i$ values and the intermediate
+partitions.  This is only a further fixed number of the same
+enumerations.  Theorem~\ref{thm:integral-crossing} proves that
+the final coordinates are integers.  Any final exact division
+is performed over the integers before specialization to a target
+ring.  No large table is materialized: partition indices, the
+derivative vector, one finite-difference point, polynomial-size
+univariate arrays, and accumulators suffice.  This proves all
+three stated bounds.
+\end{proof}

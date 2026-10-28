@@ -43,6 +43,28 @@
           "quantity_purposes": [
             "showcase"
           ]
+        },
+        {
+          "id": "noncommutative-crossing",
+          "title": "Integral ordered crossing circuits",
+          "result": "One constant-free integer circuit family for the noncommutative identity polynomial, valid in every associative unital ring",
+          "quantity": "$O(N^{1.719516})$ arithmetic gates; constants `0,1,-1`",
+          "scope": "Normalization-one integral Schur crossing, full integer three-shape composition, ordered insertion and shared products. One circuit is chosen before its associative unital coefficient ring, including characteristic two and zero divisors. Complete draft deduction assuming explicitly listed integral tensor source interfaces; no full local formal or external review claim.",
+          "randomness": "Exact deterministic arithmetic circuits; circuit-description generation and arbitrary ring-element bit costs are separate from gate count.",
+          "quantity_purposes": [
+            "showcase"
+          ]
+        },
+        {
+          "id": "ordered-subset-contraction",
+          "title": "Uniform ordered subset contraction and rectangular permanent",
+          "result": "Uniform division-free evaluation of arbitrary weighted disjoint triples and row-ordered rectangular permanent for growing subset sizes and row counts",
+          "quantity": "$2^{O_\\epsilon(k)}(N/k)^{3k/8+1/2+\\epsilon k}$",
+          "scope": "Uniform growing `2<=k<=N` for row-ordered rectangular permanent and balanced arbitrary weighted subset triples. Unequal table sizes use the proved integer capacity envelope. Division-free ordered arithmetic over arbitrary associative rings, including nonunital rings; input tables and exponential parameter overhead are charged. Uses the cited universal square matrix exponent `9/4`; this substitution is not a separate contribution. No square-permanent exponential-base improvement.",
+          "randomness": "Deterministic arithmetic circuit construction and exact evaluation, with no probability of error. Matrix engines are named source dependencies; finite checks establish identities and cost certificates, not those external theorems.",
+          "quantity_purposes": [
+            "showcase"
+          ]
         }
       ]
     },
@@ -746,18 +768,6 @@
   ],
   "supporting_results": [
     {
-      "id": "grouped-choice-recourse",
-      "path": "manuscripts/graph-backends/decremental-choice-recourse-lemma.md",
-      "title": "Grouped choices under resource deletions",
-      "result": "One live representative per group with bounded prefix recourse",
-      "quantity": "Representative changes $O((M\\log R+Q)\\log(M+2))$",
-      "scope": "`M` groups, `R` resources and `Q` adaptive deletions; augmenting-path discovery work is separate",
-      "randomness": "Deterministic representative-maintenance rule, valid against an adaptive deletion order; the recourse bound does not assert near-linear total augmenting-path search time.",
-      "quantity_purposes": [
-        "showcase"
-      ]
-    },
-    {
       "id": "nonuniform-route-rounding",
       "path": "manuscripts/graph-backends/nonuniform-fractional-path-selection.md",
       "title": "Nonuniform sparse route rounding",
@@ -765,19 +775,6 @@
       "quantity": "$\\text{load at }x\\le2\\mu_x+B\\log(8(\\lvert X\\rvert+1))$; bit work $S\\mathrm{poly}(\\log S,b)$",
       "scope": "Explicit sparse occurrences, rational masses and weights; `B` bounds one weighted occurrence contribution",
       "randomness": "Deterministic sparse rounding by conditional averaging and guarded finite arithmetic. Candidate probabilities are mathematical weights; the implementation does not sample choices.",
-      "quantity_purposes": [
-        "showcase",
-        "showcase"
-      ]
-    },
-    {
-      "id": "short-path-inventories",
-      "path": "manuscripts/graph-backends/compressed-fractional-path-extraction.md",
-      "title": "Short path inventories from a shared DAG",
-      "result": "Retain at least half of the unit commodities on short candidate routes",
-      "quantity": "Arithmetic operations $O(Z+P)$; $\\text{route length}\\le4H$; fractional load at most doubled",
-      "scope": "Supplied DAG and rational masses with total weighted length at most MH; explicit expansion is output-charged",
-      "randomness": "Deterministic extraction from a supplied exact shared DAG and rational flow records. The upstream flow-oracle construction and its randomness are outside this lemma.",
       "quantity_purposes": [
         "showcase",
         "showcase"
@@ -898,16 +895,6 @@
       ]
     },
     {
-      "id": "laminar-reservation-interface",
-      "path": "manuscripts/allocation-and-scheduling/laminar-resource-current-blocker-reservations.md",
-      "title": "Explicit laminar reservation interface",
-      "result": "Token reservations and antichain compact certificates for recipient constraints",
-      "quantity": "No laminar-depth factor in the resource value certificate",
-      "scope": "Includes the stated local-family interfaces; its older base-model approximation is subsumed by the main recipient-polymatroid theorem",
-      "randomness": "Deterministic explicit-token reservations and fixed-order current-blocker search for the supplied laminar matroids.",
-      "quantity_purposes": []
-    },
-    {
       "id": "persistent-path-hitting",
       "path": "manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md",
       "title": "Persistent path-hitting certificates",
@@ -933,16 +920,6 @@
       ]
     },
     {
-      "id": "slack-only-directed-client",
-      "path": "manuscripts/graph-backends/slack-only-one-sided-matching-client.md",
-      "title": "Slack-only directed matching reduction",
-      "result": "Constant-ratio comparison and a finite-word static threshold oracle",
-      "quantity": "Directed nonnegative SSSP reduction with monotone prices and a charged repricing budget",
-      "scope": "The dynamic path-reporting/update provider remains a separate unproved interface; no improved general-matching exponent",
-      "randomness": "Deterministic mathematical reduction and exact static threshold oracle. The required fast dynamic interface has not been constructed, so no complete faster dynamic algorithm is classified.",
-      "quantity_purposes": []
-    },
-    {
       "id": "residual-configuration-comparator",
       "path": "manuscripts/allocation-and-scheduling/recipient-polymatroid-residual-configuration-relaxation.md",
       "title": "Residual-capacity configuration comparator",
@@ -964,18 +941,6 @@
       "randomness": "Deterministic rational ellipsoid optimization, exact-budget profit-scaling dynamic programming and finite primal LP extraction.",
       "quantity_purposes": [
         "showcase",
-        "showcase"
-      ]
-    },
-    {
-      "id": "exact-demand-flow-trimming",
-      "path": "manuscripts/graph-backends/exact-demand-flow-trimming.md",
-      "title": "Exact demand trimming without a flow oracle",
-      "result": "Trim a supplied flow to exact positive nonsink demands without increasing any arc",
-      "quantity": "Exact arithmetic operations $O((n+m)\\mathrm{polylog}(n+m+2))$",
-      "scope": "Physical arc records include loops, parallel and opposite arcs. No sink inflow target is required; integer input remains integral and bit costs are explicit",
-      "randomness": "Deterministic selected-forest construction, with named dynamic-tree operations and no maximum-flow computation.",
-      "quantity_purposes": [
         "showcase"
       ]
     },
