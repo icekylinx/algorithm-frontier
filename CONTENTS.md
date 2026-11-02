@@ -61,6 +61,12 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [Exact Boolean convolution with elementary bit arithmetic](problems/subset-sum-low-space-deterministic/convolution.md)
 - [Two short normalized ranges at arbitrary lattice scales](problems/subset-sum-low-space-deterministic/range-branch.md)
 
+### [Randomized exact Subset Sum counting](problems/subset-sum-exact-counting/)
+
+[Statement](problems/subset-sum-exact-counting/README.md) · [Main proof](problems/subset-sum-exact-counting/proof.md) · [Sources](problems/subset-sum-exact-counting/sources.md) · [Verification](problems/subset-sum-exact-counting/verify/README.md)
+
+- [A certified parameter refinement for exact counting](problems/subset-sum-exact-counting/parameter-certificate.md)
+
 ## Algebraic complexity
 
 ### [Deterministic PIT for fixed-width affine ROABP orbits](problems/roabp-affine-pit/)
@@ -71,9 +77,21 @@ Every current problem manuscript and shared dependency is listed below. The [REA
 - [A quadratic leading-digit obstruction at the ordinary moment curve](problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md)
 - [Stronger bounds under distinct ROABP promises](problems/roabp-affine-pit/manuscripts/special-cases.md)
 
+### [Exterior endpoint counting for triangular low-rank updates](problems/triangular-low-rank-counting/)
+
+[Statement](problems/triangular-low-rank-counting/README.md) · [Main proof](problems/triangular-low-rank-counting/proof.md) · [Sources](problems/triangular-low-rank-counting/sources.md) · [Verification](problems/triangular-low-rank-counting/verify/README.md)
+
 ### [Integral ordered crossing circuits](problems/noncommutative-crossing/)
 
 [Statement](problems/noncommutative-crossing/README.md) · [Main proof](problems/noncommutative-crossing/proof.md) · [Sources](problems/noncommutative-crossing/sources.md) · [Verification](problems/noncommutative-crossing/verify/README.md)
+
+### [Sparse corrections and supplied low-rank exact counting](problems/sparse-low-rank-counting/)
+
+[Statement](problems/sparse-low-rank-counting/README.md) · [Main proof](problems/sparse-low-rank-counting/proof.md) · [Sources](problems/sparse-low-rank-counting/sources.md) · [Verification](problems/sparse-low-rank-counting/verify/README.md)
+
+- [Exact structured hypermatching beyond matrices](problems/sparse-low-rank-counting/manuscripts/hypermatching.md)
+- [Audit of the normalization-one integral crossing prerequisite](problems/sparse-low-rank-counting/manuscripts/integral-dependency-audit.md)
+- [Universal ring contraction and sparse weighted counting](problems/sparse-low-rank-counting/manuscripts/ring-contraction.md)
 
 ### [Uniform ordered subset contraction and rectangular permanent](problems/ordered-subset-contraction/)
 
@@ -711,6 +729,21 @@ S\mathrm{poly}(\log S,b)
 
 **Model and scope.** Explicit sparse occurrences, rational masses and weights; `B` bounds one weighted occurrence contribution.
 
+### [Paired coefficient matrices of ordinary arithmetic circuits](manuscripts/partial-transpose-circuits/proof.md)
+
+Supplied partial-transpose decompositions from ordinary division-free circuits in every characteristic.
+
+**Randomness.** Exact deterministic structural theorem and uniform factor construction. Finite validators use fixed seeds and exact arithmetic.
+
+**Quantitative result.**
+
+<!-- math-display: c681e735e14595a86c18ba9b
+2^{O(d)}(2nsd)^{O(\sqrt d)}
+-->
+![Formula](assets/math/c681e735e14595a86c18ba9b.svg)
+
+**Model and scope.** An ordinary division-free commutative circuit of size `s`, with `d` prescribed blocks of `n`-by-`n` variables; `n>=2,d>=1,s>=2`. Over fields this is PT-rank; over commutative unital rings it is supplied outer-product length. The geometric border version uses an algebraic closure. Compact factor circuits and entry queries have the same arithmetic envelope; arbitrary coefficient contraction time is not bounded.
+
 ### [Persistent path-hitting certificates](manuscripts/graph-backends/fixed-hitting-certificates-under-graph-updates.md)
 
 One shared update set preserves all historical path-hitting certificates.
@@ -1122,6 +1155,11 @@ These proofs and scoped interface analyses are used across problem records. An o
 - [The logarithmic claw factor in the current transversal analysis](manuscripts/mechanism-boundaries/transversal-log-rank-signature-boundary.md)
 - [Concentrated boundary vertices can force a degree loss in a virtual merge](manuscripts/mechanism-boundaries/virtual-merge-expansion-obstruction.md)
 - [Weighted distance spanners: a packing implication and its width boundary](manuscripts/mechanism-boundaries/weighted-spanner-packing-width-boundary.md)
+
+### Partial transpose circuits
+
+- [Circuit size controls paired partial-transpose length](manuscripts/partial-transpose-circuits/proof.md)
+- [Sources and contribution boundary](manuscripts/partial-transpose-circuits/sources.md)
 
 ## Evidence and provenance
 

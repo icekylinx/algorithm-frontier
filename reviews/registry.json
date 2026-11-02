@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "last_updated": "2026-10-28",
+  "last_updated": "2026-11-02",
   "policy": {
     "executable_evidence_has_explicit_scope": true,
     "finite_checks_are_formal_verification": false,
@@ -1545,6 +1545,90 @@
           "The improvement is uniform in growing parameters after charging exponential overhead. No superiority for every fixed degree, all-range binomial-tail theorem, smaller-base square-permanent algorithm, external review or formal verification is claimed."
         ]
       }
+    },
+    {
+      "id": "sparse-low-rank-counting",
+      "path": "problems/sparse-low-rank-counting",
+      "evidence_note": "problems/sparse-low-rank-counting/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "problems/sparse-low-rank-counting/verify/check_core.py",
+          "scope": "2,148 exact assertions: permanent/hafnian/monomer identities over integers and moduli 2,3,4,6,101; prime truncation; state-chain gadget enumeration; signed recovery and 39 independent rational power-of-two lifts. Small exact reference recurrences, not the asymptotic contraction backend."
+        },
+        {
+          "path": "problems/sparse-low-rank-counting/verify/check_hypermatching.py",
+          "scope": "1,368 exact symmetric-core and partite hypermatching identities, modular reductions and prime truncations, with repeated colors, empty inputs and zero width. Supporting generalization only; no fast contraction backend."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "date": "2026-11-02",
+        "scope": "Complete sparse matching/moment-algebra composition for permanent, hafnian and fixed monomers; entropy-sized truncation, all-ring arithmetic specialization, explicit integer/rational bit recovery, and supporting fixed-uniformity symmetric/partite hypermatching proofs. Actual primary contraction interface and existing integral prerequisite audited; no circularity found.",
+        "conditions": [
+          "Anthropic Appendix A Definition 7/Lemma 8/Theorem A, part (b) is a cited mathematical ingredient; local ring lift removes the normalizer division via existing finite Schur pieces. No independent proof or fast implementation of that external recursion is claimed.",
+          "Only existing finite-crossing, integral-pieces and coefficient-computation proofs are dependencies. The prior package's matrix exponent/SAT branches and the separate literal truncated-2-adic integer-factorization theorem are not used.",
+          "Explicit finite coefficient-vector costs and all Boolean state wires are charged. Native tests validate finite reductions and numeric lifting, not asymptotic exponents, source theorem correctness, historical priority or formal verification.",
+          "Finding the supplied factorization, unrestricted dense permanent/hafnian, and arbitrary constant-circuit numeric inputs without output-size accounting are excluded."
+        ]
+      }
+    },
+    {
+      "id": "triangular-low-rank-counting",
+      "path": "problems/triangular-low-rank-counting",
+      "evidence_note": "problems/triangular-low-rank-counting/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "problems/triangular-low-rank-counting/verify/check.py",
+          "scope": "1,901,265 actual exterior DP transitions, checked against independent permutation/determinant-partition/Murnaghan--Nakayama oracles. Negative-alpha, marked characters, rooted and prime-power Hamiltonian outputs; exact rational, composite-modulus and nonreduced-ring cases. Finite original-input evaluation, not asymptotic runtime or formal verification."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "date": "2026-11-02",
+        "scope": "Complete explicit exterior endpoint algorithm, changing-order wedge-sign invariant, all-ring correctness, uniform division-free circuit construction, entropy bound, integral prime-power HC extraction and exact integer/rational realization; marked DP and integral constant-width immanant extraction included within the family.",
+        "conditions": [
+          "Input supplies the simultaneous triangular order and B,U,V factors; decomposition discovery/minimum rank is outside scope.",
+          "Subexponential conclusion fixes q (or annihilator M/partition width k) and assumes supplied `r=o(n)`. Uniform precision dependence is charged through pt; there is no growing-modulus exact-integer Hamiltonian inference.",
+          "Ring-operation theorem requires no identity test. The sparse Python reference uses equality-based zero omission as an implementation optimization; structurally retained states unroll without it.",
+          "Exact finite verification checks implemented instances, not asymptotic runtime, external peer review, formal proof, or publication-level priority. Bounded primary-source search only.",
+          "Classical Crane, Knezevic/Cohen, Cauchy--Binet, Goulden/Jackson, dual Cauchy and alternant identities are credited antecedents, not new claims."
+        ]
+      }
+    },
+    {
+      "id": "subset-sum-exact-counting",
+      "path": "problems/subset-sum-exact-counting",
+      "evidence_note": "problems/subset-sum-exact-counting/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "problems/subset-sum-exact-counting/verify/check_trace_and_threshold.py",
+          "scope": "Finite cyclotomic trace, noisy rounding controls, CRT, deterministic tags and per-subset disjoint interval identities against exact enumeration. Small noisy controls use floating point; not an interval proof of the analytic estimator."
+        },
+        {
+          "path": "problems/subset-sum-exact-counting/verify/check_weighted_trace.py",
+          "scope": "Exact signed trace identities, finite-color extraction and exhaustive second moments. Small complex-valued controls use floating point. Excludes unrelated positive-moment optimization certificates."
+        },
+        {
+          "path": "problems/subset-sum-exact-counting/verify/check_activity_lifting.py",
+          "scope": "2,800 prime-residue activity reductions and 400 signed weighted CRT reconstructions against original subset enumeration; does not implement the asymptotic counting oracle."
+        },
+        {
+          "path": "problems/subset-sum-exact-counting/verify/check_improved_filter_certificate.py",
+          "scope": "Exact Fraction enclosures with rational Taylor tails for the strongest0.48986 parameter ledger; imports the pinned analytic strip and inner-quadrature bounds and does not implement the external estimator."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "scope": "Complete exact indexed Subset Sum counting extension, changed polynomial-order phase law, cyclotomic/CRT recovery, original all-sparse-support alias coverage rechecked at the selected parameters and strongest rationally certified parameter choice, assuming the explicitly named pinned filtering/alias source lemmas.",
+        "date": "2026-11-02",
+        "conditions": [
+          "The pinned external filtering, deficiency, alias and finite-arithmetic results remain accepted mathematical inputs; the local extension checks rather than assumes the modified phase distribution.",
+          "Finite checks and exact numerical certificates have their stated scopes. No full exponential-time estimator implementation, proof-assistant verification, external review, historical priority or decision-exponent record is claimed."
+        ]
+      }
     }
   ],
   "supporting_records": [
@@ -1743,6 +1827,37 @@
           "The curve is the ordinary moment curve, whose `p`-th coordinate has zero derivative. This is not a counterexample to a derivative-separating-curve theorem.",
           "Every physical interval preserves full rank. The endpoint-augmented scalar interval does not. One SV pair detects the example, so no PIT or generator lower bound is asserted.",
           "The audit is internal model-assisted reconstruction, not external peer review, formal certification or priority determination."
+        ]
+      }
+    },
+    {
+      "id": "partial-transpose-circuits",
+      "path": "manuscripts/partial-transpose-circuits/proof.md",
+      "evidence_note": "manuscripts/partial-transpose-circuits/verify/README.md",
+      "formal_verification": "not-claimed",
+      "checks": [
+        {
+          "path": "manuscripts/partial-transpose-circuits/verify/check_circuit_frontier.py",
+          "scope": "160 shared DAGs;576 frontier calls;2304 exact ring identities;24 differing-partition orientation cases;negative doubling control over Z and F2."
+        },
+        {
+          "path": "manuscripts/partial-transpose-circuits/verify/check_homogeneous_projection.py",
+          "scope": "160 ordinary homogeneous DAGs;128 recursive restriction calls;1152 frontier identities;1832 product-projection identities;403 repeated-block products;shared-square and positive-formal-degree zero controls."
+        },
+        {
+          "path": "manuscripts/partial-transpose-circuits/verify/check_interleaved_composition.py",
+          "scope": "24 matrix-factor certificates;14848 exact integer entry comparisons;144 modular whole matrices including composite characteristics;24 covariance-swap negative controls."
+        }
+      ],
+      "review": {
+        "status": "ready",
+        "date": "2026-11-02",
+        "scope": "Complete focused mathematical deduction of ordinary circuit paired-coefficient PT length, all-field rank, ring-uniform supplied factors, geometric border consequence and arithmetic factor-entry/compact-circuit construction from the existing normalization-one integral crossing primitive.",
+        "conditions": [
+          "Canonical integral crossing/finite duality manuscripts at pin2658b60c9d032611492792718bd9d39f721de09f are proved repository dependencies;no rectangular matrix or SAT result is used.",
+          "Effective factor queries additionally use the canonical explicit crossing-coefficient algorithm. Ring-operation costs and integral crossing generation are charged separately;arbitrary ring-value bit lengths and dense printing are separate.",
+          "Border closure over algebraic closure bounds geometric border PT-rank only;ordinary PT-rank at a limit and finite limiting factors are not asserted.",
+          "Finite DAG/projection/orientation suites do not prove the asymptotic theorem or certify publication priority;no PDF build,external peer review or proof-assistant verification is claimed."
         ]
       }
     }

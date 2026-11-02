@@ -1,0 +1,852 @@
+% Copyright 2026 icekylinx and GPT-6 Astra Pro. Apache-2.0.
+% Focused curation of tcs_research_checkpoint.zip: manuscripts/partial_transpose.tex.
+% Retains the circuit, orientation, local projection, border and factor-entry proofs.
+% Existing integral primitive remains a cited canonical repository dependency.
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{url}
+\setlist{itemsep=2pt,topsep=4pt}
+\allowdisplaybreaks
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\PT}{\operatorname{PT\!\text{-}rank}}
+\newcommand{\rk}{\operatorname{rank}}
+\newcommand{\I}{\operatorname{Id}}
+\newcommand{\Bnd}{\mathcal B}
+\newcommand{\Ori}{\mathcal O}
+\newcommand{\cross}{\mathsf P}
+\newcommand{\trsp}{\mathsf T}
+\newcommand{\polylog}{\operatorname{polylog}}
+
+
+\title{Partial-Transpose Decompositions of Ordinary Arithmetic Circuits}
+\author{icekylinx and GPT-6 Astra Pro}
+\date{November 2, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A division-free arithmetic circuit of size $s$ in $d$ blocks of
+$n$-by-$n$ variables has paired squarefree coefficient matrix of
+partial-transpose rank at most $2^{O(d)}(2nsd)^{O(\sqrt d)}$
+over every field. Over every commutative unital ring, the same bound holds
+for supplied partial transposes of outer products. The proof combines
+the existing normalization-one integral crossing primitive with shared
+circuit contexts, canonical orientations and lazy squarefree projection.
+The geometric border version and uniform factor-entry construction are
+retained. This is a structural upper bound and a compact-factor
+construction, not an algorithm for arbitrary coefficient evaluation.
+\end{abstract}
+\paragraph{Scope and dependency.}
+Assume $n\ge2$, $d\ge1$ and $s\ge2$; constants may be arbitrary
+specified elements of the coefficient ring. Size counts all binary
+arithmetic gates and inputs. The sole nonclassical imported algebraic
+primitive is Proposition~\ref{prop:primitive}, proved in the existing
+repository's finite and integral crossing manuscripts. No rectangular
+matrix multiplication theorem, SAT result, or unproved counting
+interface is used. The retained set-multilinear theorem is an intermediate
+lemma, rather than a separate catalogue result. The reference to
+Rossman--Zhu's shifted tensor only distinguishes encodings.
+\section{Partial transpose rank and the integral input}
+
+\subsection{Definitions and factorization conventions}
+
+\begin{definition}
+Let $M$ be indexed by $(\mathbf i,\mathbf j)\in[n]^d\times[n]^d$.
+For $\kappa\subseteq[d]$, the partial transpose
+$M^{\Gamma_\kappa}$ exchanges $i_t$ and $j_t$ for every
+$t\in\kappa$. A matrix is \emph{PT-basic} if some partial transpose
+has ordinary rank one. Its partial transpose rank is the least
+number of PT-basic matrices whose sum is $M$.
+\end{definition}
+
+For a field $\F$, write $\overline{\PT}_{\F}(M)$ for its
+\emph{geometric border PT-rank}: the least $r$ for which $M$ lies
+in the Zariski closure, over an algebraic closure of $\F$, of the
+set of matrices of PT-rank at most $r$.  The ambient paired
+coordinate spaces are held fixed.  This geometric convention
+avoids interpreting Zariski closure only on the finite set of
+rational points when $\F$ is finite.  Border statements below
+concern this measure, not ordinary PT-rank.
+
+The permitted coordinate pairs are part of the definition. If
+several pairs are grouped into one larger pair, only whole-block
+transposes are available. Every such transpose is still available
+in the finer pairing, so refining a grouping cannot increase
+PT-rank.
+
+Over a commutative unital ring, we use a supplied factorization
+$A=UV^{\trsp}$ through a free module of a stated dimension. This
+avoids field-dependent uses of rank. Over fields, such a
+factorization immediately implies the usual rank bound. All
+ring-uniform statements below retain the factorizations themselves.
+
+For $a,b\ge1$, write $\cross_{\F}(a,b)$ for the PT-rank of
+$I_a\boxtimes I_b$ with its two indicated coordinate blocks.
+Equivalently, it is the minimum number of rank-one terms needed to
+write the crossing
+\[
+ \delta_{x,v}\delta_{y,u},\qquad
+ x,v\in[a],\quad y,u\in[b],
+\]
+using the two flattenings
+\[
+ (x,y)\mid(v,u)
+ \qquad\text{and}\qquad
+ (x,u)\mid(v,y).
+\]
+The exchange of $u,v$ within a displayed column index is only a
+permutation of the columns and does not affect the rank.
+
+\subsection{The supplied normalization-one crossing theorem}
+
+Let $p(j)$ be the partition function, with $p(j)=0$ for $j<0$.
+We use the following exact result from the user's repository
+\cite{integralcrossing}.
+
+\begin{proposition}[Integral crossing primitive]
+\label{prop:primitive}
+For every $h,E\ge1$, there are integer tensors
+$A_s(x,y,u,v)$, indexed by $-h-E\le s\le h+E$, such that $x,v$
+range over the partitions of $h$, $y,u$ range over the partitions
+of $E$, and
+\begin{equation}
+\label{eq:primitive}
+ \sum_{s=-h-E}^{h+E}A_s(x,y,u,v)
+ =\delta_{x,v}\delta_{y,u}.
+\end{equation}
+Both flattenings of each piece have explicit integer
+factorizations. Their dimensions are at most
+\begin{align}
+ R_s^{\rm row}&=\sum_{i=0}^{2h}p(E+s-h+i),\label{eq:rowrank}\\
+ R_s^{\rm col}&=\sum_{i=0}^{2h}p(E+h-s-i).
+ \label{eq:colrank}
+\end{align}
+The normalizing scalar in \eqref{eq:primitive} is one. The identity
+and the supplied factorizations therefore specialize to every
+commutative unital ring.
+\end{proposition}
+
+The source constructs these pieces by using the integral
+symmetric-function lattice, the Schur basis, and its unimodular
+Hall pairing in a finite coefficient formulation of the Heisenberg
+mode identities. The source also gives an explicit algorithm for
+the coefficients. We use the finite identity and the factorization
+dimensions, rather than a SAT algorithm or an unconstructed
+coefficient oracle.
+
+The pinned source is the following commit of
+\texttt{icekylinx/algorithm-frontier}:
+\begin{center}
+\texttt{2658b60c9d032611492792718bd9d39f721de09f}.
+\end{center}
+The theorem appears in
+\nolinkurl{problems/noncommutative-crossing/manuscripts/integral-pieces.tex}.
+The neighboring files \texttt{finite-crossing.tex} and
+\texttt{coefficient-computation.tex} supply the finite operator
+identities and coefficient computation. The underlying crossing
+construction is credited there to the Anthropic manuscript
+\cite{anthropic}; the normalization-one integral extension is
+credited to the repository authors.
+
+\subsection{A finite profile with a logarithmic estimate}
+
+For $a\ge1$, define
+\[
+ h(a)=\min\{h\ge1:p(h)\ge a\}.
+\]
+For $H\ge0$, put
+\begin{equation}
+\label{eq:Bdef}
+ \Bnd(H)=\sum_{j=0}^{H}\bigl(2(H-j)+1\bigr)p(j).
+\end{equation}
+
+\begin{lemma}[Finite two-block profile]
+\label{lem:finite-profile}
+For all $a,b\ge1$, the identity on $[a]\times[b]$ has an integer
+decomposition
+\begin{equation}
+\label{eq:two-group}
+ I_a\boxtimes I_b=C_0+C_1^{\Gamma_B},
+\end{equation}
+where $C_0,C_1$ have explicit integer factorizations whose
+dimensions sum to at most
+\[
+ W(a,b):=\Bnd(h(a)+h(b)).
+\]
+In particular, each dimension is at most $W(a,b)$, and
+$\cross_{\F}(a,b)\le W(a,b)$ over every field.
+\end{lemma}
+
+\begin{proof}
+Use Proposition~\ref{prop:primitive} with $h=h(a)$ and $E=h(b)$,
+and restrict the two label sets to $a$ and $b$ labels. Write
+$H=h+E$. For $s\le0$, use the row factorization; for $s>0$, use
+the column factorization. The selected dimension is at most
+\[
+ \sum_{j=0}^{H-|s|}p(j).
+\]
+Expanding these factorizations into coordinate products and
+grouping them by their two orientations gives
+\eqref{eq:two-group}. Their total dimension is at most
+\[
+ \sum_{s=-H}^{H}\sum_{j=0}^{H-|s|}p(j)
+ =\sum_{j=0}^{H}\bigl(2(H-j)+1\bigr)p(j)=\Bnd(H).
+\]
+All factors are integer factors before specialization.
+\end{proof}
+
+\begin{lemma}[Summing the partition profile]
+\label{lem:B-asymptotic}
+There is an absolute constant $C$ such that, for all $H\ge2$,
+\begin{equation}
+\label{eq:B-upper}
+ \Bnd(H)\le CHp(H)
+ \le C\exp\!\left(\pi\sqrt{2H/3}\right).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The Hardy--Ramanujan asymptotic \cite{dlmf} states
+\[
+ p(m)\sim\frac{\exp(c\sqrt m)}{4\sqrt3\,m},
+ \qquad c=\pi\sqrt{2/3}.
+\]
+After adjusting an absolute constant to cover small values, for
+$H/2\le j\le H$ this implies
+\[
+ \frac{p(j)}{p(H)}
+ \le C\exp\!\left(-\frac{c(H-j)}{2\sqrt H}\right).
+\]
+The sum of $(2t+1)\exp(-ct/(2\sqrt H))$ over $t\ge0$ is $O(H)$.
+The remaining part of \eqref{eq:Bdef} is at most
+$O(H^2)p(\lfloor H/2\rfloor)$, which is $O(Hp(H))$ by the same
+asymptotic. This proves the first inequality. The second follows
+again from the partition asymptotic.
+\end{proof}
+
+\begin{lemma}[Euclidean logarithmic profile]
+\label{lem:euclidean}
+The finite quantity $W(a,b)$ itself, not only the minimum
+two-block PT-rank, satisfies
+\begin{equation}
+\label{eq:W-upper}
+ W(a,b)\le
+ C(1+\log a+\log b)^3
+ 2^{\sqrt{(\log a)^2+(\log b)^2}}.
+\end{equation}
+The constant is independent of $a,b$ and of the coefficient field
+or ring.
+\end{lemma}
+
+\begin{proof}
+Set $\kappa=\pi\sqrt{2/3}/\log_e2$. The partition asymptotic first
+gives $h(a)=O((1+\log a)^2)$. Minimality of $h(a)$, using
+$p(h(a)-1)<a$ when $h(a)>1$, then gives
+\begin{equation}
+\label{eq:h-invert}
+ \kappa\sqrt{h(a)}
+ \le\log a+2\log(1+\log a)+C_0.
+\end{equation}
+The case $a=1$ is absorbed into the constant. Apply the same bound
+to $h(b)$. If $x=\log a$ and $y=\log b$, the Euclidean triangle
+inequality yields
+\[
+ \kappa\sqrt{h(a)+h(b)}
+ \le\sqrt{x^2+y^2}
+ +2\sqrt2\log(1+x+y)+O(1).
+\]
+Combine this with Lemma~\ref{lem:B-asymptotic}. The result has
+power $2\sqrt2$ in the logarithmic prefactor; replacing it by three
+gives \eqref{eq:W-upper}.
+\end{proof}
+
+\section{Orientation-preserving composition}
+
+\subsection{Canonical orientations}
+
+For $m\ge1$, let $\Ori_m$ consist of the subsets of $[m]$ that do
+not contain the first coordinate. It has size $2^{m-1}$. Every
+orientation is equivalent to one in $\Ori_m$ up to a full
+transpose, which preserves rank.
+
+\begin{definition}
+A matrix on $m$ coordinate pairs has \emph{orientation bound $R$}
+if it admits a decomposition
+\begin{equation}
+\label{eq:orientation-bound}
+ M=\sum_{\alpha\in\Ori_m}A_\alpha^{\Gamma_\alpha},
+ \qquad A_\alpha=U_\alpha V_\alpha^{\trsp},
+\end{equation}
+where every supplied factorization has inner dimension at most
+$R$. Over a field this implies
+$\PT(M)\le2^{m-1}R$.
+\end{definition}
+
+Keeping a matrix for each orientation is essential. Individual
+rank-one summands from different orientations do not have
+interchangeable row and column coordinates.
+
+\subsection{Covariance under rectangular substitutions}
+
+\begin{lemma}[Rectangular partial-transpose covariance]
+\label{lem:covariance}
+Let $U_A,V_A$ have the same number of rows and $a$ columns, and
+let $U_B,V_B$ have the same number of rows and $b$ columns. For a
+matrix $C$ on $[a]\times[b]$,
+\begin{equation}
+\label{eq:covariance}
+ (U_A\otimes U_B)C^{\Gamma_B}(V_A\otimes V_B)^{\trsp}
+ =\left[(U_A\otimes V_B)C(V_A\otimes U_B)^{\trsp}\right]^{\Gamma_B}.
+\end{equation}
+On the right, $\Gamma_B$ exchanges the entire physical $B$ block.
+The identity is valid over every commutative unital ring.
+\end{lemma}
+
+\begin{proof}
+The entry of either side at $(i_A,i_B;j_A,j_B)$ is
+\[
+ \sum_{p,q,r,s}
+ U_A(i_A,p)U_B(i_B,q)
+ C_{(p,s),(r,q)}
+ V_A(j_A,r)V_B(j_B,s).
+\]
+Only commutative scalar arithmetic is used.
+\end{proof}
+
+\begin{lemma}[Generic orientation composition]
+\label{lem:composition}
+Suppose identities on $[a]\times[b]$ admit decompositions
+$I_a\boxtimes I_b=C_0+C_1^{\Gamma_B}$ with supplied factorization
+dimensions at most $W(a,b)$ for each $C_\epsilon$.
+If matrices $A$ and $B$ on disjoint nonempty blocks of $k$ and
+$\ell$ coordinate pairs have orientation bounds $R_A,R_B$, then
+$A\boxtimes B$ has orientation bound at most $W(R_A,R_B)$.
+A sum of at most $r$ such products has orientation bound at most
+$rW(R_A,R_B)$.
+\end{lemma}
+
+\begin{proof}
+Fix $\alpha\in\Ori_k$ and $\beta\in\Ori_\ell$. Pad the
+factorizations of their matrices with zero columns so that
+\[
+ A_\alpha=U_AV_A^{\trsp},\qquad
+ B_\beta=U_BV_B^{\trsp}
+\]
+have inner dimensions $R_A,R_B$. Insert
+\[
+ I_{R_A}\boxtimes I_{R_B}=C_0+C_1^{\Gamma_B}
+\]
+between these rectangular factors. The first term has a
+factorization of dimension at most $W(R_A,R_B)$. By
+Lemma~\ref{lem:covariance}, the second has such a factorization
+after transposing the entire physical $B$ block.
+
+After composing with the child orientations, the parent
+orientations are
+\begin{equation}
+\label{eq:parent-orientations}
+ \alpha\cup\beta
+ \qquad\text{and}\qquad
+ \alpha\cup\overline\beta,
+\end{equation}
+where the complement is taken inside the $B$ block. Every
+canonical parent orientation identifies a unique child pair and
+choice in \eqref{eq:parent-orientations}. Its restriction to $A$
+is $\alpha$. Its first bit on $B$ says whether complementation
+was used; undoing that complementation determines the canonical
+$\beta$. Thus no two distinct child pairs contribute to the same
+parent orientation within this one product.
+
+For a sum of $r$ products, each parent orientation receives at
+most one matrix from each product. Concatenating their
+factorizations gives dimension at most $rW(R_A,R_B)$.
+\end{proof}
+
+\begin{remark}[What the uniqueness statement prevents]
+The total number of orientations grows from
+$2^{k-1}2^{\ell-1}$ to $2^{k+\ell-1}$. It does not multiply the
+factorization dimension within an orientation. Losing this
+distinction would replace the useful recurrence by one with an
+unnecessary exponential factor at every level.
+\end{remark}
+
+\section{Paired coefficient tensors of arithmetic circuits}
+\label{sec:circuits}
+
+This section concerns a different polynomial encoding from the shifted
+tensor used by Rossman and Zhu.  For an $n^d\times n^d$ matrix $M$, define
+its \emph{paired coefficient polynomial}
+\begin{equation}
+\label{eq:paired-polynomial}
+ F_M(Z)=\sum_{\mathbf i,\mathbf j\in[n]^d}
+ M_{\mathbf i,\mathbf j}\prod_{t=1}^d Z_t(i_t,j_t),
+\end{equation}
+where the $d$ variable blocks $Z_t=\{Z_t(a,b):a,b\in[n]\}$
+have size $n^2$.  All circuit bounds in this section apply to
+\eqref{eq:paired-polynomial}, or to a specified squarefree
+block component of a polynomial.  They do not identify
+$F_M$ with $\operatorname{ShiftedTensor}(M)$.
+
+Circuits are division-free commutative arithmetic circuits with binary
+addition and multiplication gates; field or ring constants are allowed.
+Their size counts all gates. In a homogeneous circuit we retain
+syntactic degree labels: addition preserves the declared degree and
+multiplication adds degrees. A zero polynomial may carry any declared
+degree. The total-degree homogenization used below supplies these
+labels, and restrictions preserve them. A syntactically set-multilinear circuit
+assigns each gate a block scope $U\subseteq[d]$: constants have scope
+$\varnothing$, a variable from $Z_t$ has scope $\{t\}$, addition
+preserves scope, and a product combines disjoint scopes.  Known zero
+components can be omitted; a zero output causes no difficulty.
+
+\subsection{A balanced frontier with shared circuit contexts}
+
+\begin{lemma}[Balanced circuit frontier]
+\label{lem:circuit-frontier}
+There is an absolute constant $C_0$ with the following property.
+Let $f$ be the output of a homogeneous circuit of size $s$ and
+degree $m\ge2$.  It has a decomposition
+\begin{equation}
+\label{eq:circuit-frontier}
+ f=\sum_{u\in\mathcal F}g_u h_u,
+ \qquad |\mathcal F|\le s,
+\end{equation}
+where both factors are homogeneous, their degrees sum to $m$,
+each degree lies in $[m/3,2m/3]$, and each factor has a homogeneous
+circuit of size at most $C_0s$.
+
+If the given circuit is syntactically set-multilinear on a scope $U$,
+the factor circuits may also be chosen syntactically set-multilinear.
+For each summand their scopes form a partition of $U$, though this
+partition may differ between summands.
+\end{lemma}
+
+\begin{proof}
+Prune gates not used by the output.  Mark the gates of degree greater
+than $2m/3$.  A marked addition gate has marked children.  A marked
+multiplication gate has at most one marked child, because every gate
+on a path to the output has degree at most $m$.
+
+Starting with a context $q_{\rm out}=1$, process marked gates in
+reverse topological order.  At a marked sum $v=v_0+v_1$, send
+$q_v$ to each child.  At a marked product $v=v_0v_1$ with one
+marked child, send $q_vf_{v_1}$ to $v_0$ if $v_0$ is marked,
+or the symmetric expression if $v_1$ is marked.  Add all context
+contributions arriving at one marked gate.  Stop at marked products
+whose two children are unmarked; these gates form $\mathcal F$.
+Nonzero input gates have degree at most one and are unmarked when
+$m\ge2$.  An explicitly zero homogeneous input assigned a positive
+formal degree contributes zero and may be discarded.
+
+Successively substituting the marked-gate equations gives the exact
+identity
+\[
+ f=\sum_{u\in\mathcal F}q_u f_{u_0}f_{u_1}.
+\]
+This is an identity in the coefficient ring.  It does not divide by
+a path count, and shared paths are combined by addition in $q_u$.
+Each $q_u$ is homogeneous of degree $m-\deg u$.
+
+The circuit has at most $2s$ input wires.  Every propagated product
+uses one new multiplication gate, and all context accumulations use
+$O(s)$ new addition gates in total.  The original circuit together
+with all contexts therefore has size $O(s)$.  In particular, a
+context is not expanded into its possibly many paths.
+
+For a frontier gate $u$, both children have degree at most $2m/3$,
+while their degrees sum to more than $2m/3$.  Choose a child of
+degree at least $m/3$ as $g_u$, and let $h_u$ be the other child
+multiplied by $q_u$.  Both resulting degrees lie in $[m/3,2m/3]$,
+and their circuits have size at most $C_0s$ for an absolute $C_0$.
+
+In the set-multilinear case, induction on the reverse propagation
+shows that every context arriving at a gate $v$ has scope
+$U\setminus U_v$.  At a product, the sibling scope is disjoint
+from this context scope; at an addition, incoming contexts have
+the same scope.  Thus the context circuits and final factors
+remain syntactically set-multilinear with the asserted complementary
+scopes.
+\end{proof}
+
+\subsection{Varying partitions preserve the orientation bound}
+
+The uniqueness in Lemma~\ref{lem:composition} is a statement for
+each individual product.  It does not require different summands
+to use the same partition of the physical pairs.  For one product
+on disjoint scopes $A,B$, designate as $A$ the side containing the
+first coordinate of the current scope.  A canonical parent
+orientation restricts to a canonical orientation on $A$; its first
+bit on $B$ determines whether the canonical orientation on $B$
+was complemented.  Hence one product still contributes exactly
+one coefficient matrix to each parent orientation.  A sum of $t$
+such products has orientation width at most
+\[
+ t\max W(R_A,R_B),
+\]
+even when the partitions $A\mid B$ vary with the summand.
+
+\begin{theorem}[Set-multilinear circuit bound]
+\label{thm:setmultilinear-circuit}
+Suppose $F_M$ has a syntactically set-multilinear arithmetic circuit
+of size $s$.  There is an absolute constant $C$ such that, over
+every field,
+\begin{equation}
+\label{eq:setmultilinear-circuit}
+ \PT(M)\le2^{d-1}(2nsd)^{C\sqrt d}.
+\end{equation}
+Over every commutative unital ring the same bound holds for the number of
+partial transposes of outer products in a supplied decomposition.
+\end{theorem}
+
+\begin{proof}
+Apply Lemma~\ref{lem:circuit-frontier} recursively until each
+factor has a singleton block scope.  The degree decreases by at
+least a factor $2/3$ at every step, so the depth is $O(\log d)$.
+The size of an individual descendant circuit increases by at most
+$C_0$ per step.  Consequently every descendant has size at most
+\[
+ S_* = s d^{C_1}
+\]
+for an absolute $C_1$, after adjusting a constant for the bounded
+small values of $d$.  This bounds the size of each circuit used
+at a node; it does not claim that all recursively produced circuits
+together have polynomial total size.
+
+At a singleton scope, the coefficient matrix is an arbitrary
+$n\times n$ matrix and has supplied factor width at most $n$.
+At an internal node, each frontier term has two balanced scopes,
+and the preceding varying-partition observation applies.  By
+Lemma~\ref{lem:euclidean}, the logarithmic width satisfies a
+numerical bound of the form
+\begin{equation}
+\label{eq:circuit-width-recurrence}
+ L_v\le\sqrt{L_{v_0}^2+L_{v_1}^2}
+       +\log S_*+C_2\log(2+L_{v_0}+L_{v_1}),
+\end{equation}
+where each child size is between one third and two thirds of the
+parent size.  When several terms have different child sizes, choose
+one attaining the largest numerical bound.  Repeating this choice
+produces a balanced numerical tree with exactly $d$ singleton
+leaves.  This tree bounds the maximum; the factor $S_*$ in the
+recurrence retains all algebraic summands.
+
+For completeness, put $\lambda=1+\log n+\log S_*$.  A coarse
+induction gives $L_v\le K m_v\lambda$.  Indeed
+$\sqrt{m_{v_0}^2+m_{v_1}^2}\le(\sqrt5/3)m_v$, so a sufficiently
+large absolute $K$ absorbs the logarithmic errors.  Substituting
+this coarse bound only into the final logarithm of
+\eqref{eq:circuit-width-recurrence} bounds its additive error by
+\[
+ O\bigl(\log S_*+\log(m_v+1)+\log(2+\lambda)\bigr).
+\]
+In a band $2^j\le m_v<2^{j+1}$, balance gives $O(1)$ antichains,
+each with at most $d/2^j$ nodes.  The Euclidean norm of one band's
+error is therefore at most
+\[
+ O\!\left(\sqrt{d/2^j}
+       [\log S_*+j+1+\log(2+\lambda)]\right).
+\]
+Summing the convergent geometric series, and adding the leaf norm
+$\sqrt d\log n$, proves
+$L_{\rm root}=O(\sqrt d\log(2nsd))$.  Sum the widths over the
+$2^{d-1}$ canonical orientations.  All constructions use supplied
+factorizations over the coefficient ring.
+\end{proof}
+
+\subsection{Lazy squarefree projection of ordinary circuits}
+
+For a block set $U$, let $\mathsf{SF}_U(f)$ denote the component of
+$f$ that has degree one in every block in $U$ and degree zero in
+all other blocks.  If homogeneous polynomials $g,h$ have degrees
+$k$ and $m-k$, respectively, then
+\begin{equation}
+\label{eq:lazy-squarefree}
+ \mathsf{SF}_U(gh)
+ =\sum_{\substack{A\subseteq U\\|A|=k}}
+       \mathsf{SF}_A(g|_A)\,
+       \mathsf{SF}_{U\setminus A}(h|_{U\setminus A}),
+ \qquad |U|=m.
+\end{equation}
+Here $g|_A$ sets all variables outside the indicated blocks to zero.
+The identity follows by assigning the $k$ block variables of a
+contributing monomial to its factor $g$.  Homogeneity forces exactly
+$k$ blocks on that side.  Terms with a repeated block, or a variable
+outside $U$, cannot contribute.  This distribution of homogeneous
+components is standard; see, for example, the component-distribution
+argument in \cite[Lemma~9]{brandkaskiwang}.  The contribution here is
+its balanced recursive use with canonical PT orientations and the
+Euclidean crossing profile, which charges the total subset loss by
+$O(d)$.
+
+The essential point is that the child circuits in
+\eqref{eq:lazy-squarefree} are just ordinary homogeneous circuits
+with some inputs set to zero.  Their squarefree components are
+tracked recursively; they are not first expanded into large
+set-multilinear circuits.
+
+\begin{theorem}[Ordinary circuit bound]
+\label{thm:ordinary-circuit}
+Let $f$ have a division-free arithmetic circuit of size $s$, and let
+$M$ be its paired coefficient matrix, defined by
+\[
+ M_{\mathbf i,\mathbf j}
+ =\left[\prod_{t=1}^d Z_t(i_t,j_t)\right]f.
+\]
+There is an absolute constant $C$ such that, over every field,
+\begin{equation}
+\label{eq:ordinary-circuit}
+ \PT(M)\le 2^{Cd}(2nsd)^{C\sqrt d}.
+\end{equation}
+In particular this applies to any circuit computing $F_M$.
+The corresponding supplied outer-product-length bound holds over
+every commutative unital ring.
+\end{theorem}
+
+\begin{proof}
+First retain homogeneous components of total degrees $0,\ldots,d$
+at every gate.  At a product, component $k$ is the sum of the
+products of components $a$ and $k-a$.  This constructs a
+homogeneous circuit for the degree-$d$ component using
+$O(s(d+1)^2)$ gates.  It is a formal coefficient calculation over
+the ring; no interpolation or division is required.
+
+For a current pair $(U,F)$ with $|U|=m$ and $F$ homogeneous of
+degree $m$, apply Lemma~\ref{lem:circuit-frontier} to $F$ and
+then apply \eqref{eq:lazy-squarefree} to every frontier product.
+The resulting paired coefficient matrix is a sum of at most
+$S_*2^m$ products on complementary scopes of sizes in
+$[m/3,2m/3]$.  Each child is represented by an ordinary homogeneous
+circuit, restricted to its scope, whose size has grown by at most
+a fixed constant.  As before, all descendant sizes are bounded by
+$S_*=s d^{O(1)}$.
+
+The logarithmic orientation-width recurrence now becomes
+\begin{equation}
+\label{eq:ordinary-width-recurrence}
+ L_v\le\sqrt{L_{v_0}^2+L_{v_1}^2}
+       +m_v+\log S_*+C_3\log(2+L_{v_0}+L_{v_1}).
+\end{equation}
+The previous coarse linear induction still applies.  The only
+new error is $m_v$.  Its Euclidean contribution from the band
+$2^j\le m_v<2^{j+1}$ is at most
+\[
+ O\!\left(\sqrt{d/2^j}\,2^j\right)
+ =O(\sqrt d\,2^{j/2}).
+\]
+Summing through $j\le\lceil\log d\rceil$ gives $O(d)$.
+The other errors contribute $O(\sqrt d\log(2nsd))$, exactly
+as in Theorem~\ref{thm:setmultilinear-circuit}.  Thus
+\[
+ L_{\rm root}=O\bigl(d+\sqrt d\log(2nsd)\bigr).
+\]
+The $2^{d-1}$ orientations add another $O(d)$ to the logarithm,
+which proves \eqref{eq:ordinary-circuit}.
+\end{proof}
+
+\begin{remark}[A simpler, weaker cross-check]
+Projecting every original gate onto every squarefree block scope
+would instead give a syntactically set-multilinear circuit of size
+$O(s3^d)$: a product component on $U$ sums over disjoint
+$A,B$ with $A\cup B=U$, and the total number of such ordered
+pairs is $3^d$.  Theorem~\ref{thm:setmultilinear-circuit} would
+then give an additional $O(d\sqrt d)$ in the logarithm.  The
+lazy projection in \eqref{eq:lazy-squarefree} improves this to
+$O(d)$ by charging the subset choices at their own recursion size.
+\end{remark}
+
+\subsection{Border circuits and geometric border PT-rank}
+
+\begin{proposition}[Border-circuit bound]
+\label{prop:border-circuit}
+Suppose $f$ lies in the coefficientwise Zariski closure, over an
+algebraic closure of $\F$, of polynomials computed by division-free
+circuits of size at most $s$.  Let $M$ be the matrix of its
+coefficients with exactly one variable from every paired block.
+Then
+\[
+ \overline{\PT}_{\F}(M)
+ \le 2^{Cd}(2nsd)^{C\sqrt d}
+\]
+for an absolute constant $C$.
+\end{proposition}
+
+\begin{proof}
+For fixed $s$, all circuit outputs have bounded total degree,
+so they lie in a finite-dimensional coefficient space.  The map
+that retains the specified paired coefficients is linear and
+therefore Zariski-continuous.  By
+Theorem~\ref{thm:ordinary-circuit}, its image on every size-$s$
+circuit output belongs to the set of matrices with PT-rank at
+most the displayed uniform bound.  Taking closures proves the
+claim.  The theorem's raw-coefficient formulation is useful here:
+the approximating outputs need not themselves be set-multilinear.
+\end{proof}
+
+\section{Uniform factors and their computational boundary}
+The additional source input here is Lemma ``Explicit computation of
+integral crossing coefficients'' in the canonical
+\texttt{coefficient-computation.tex} of \cite{integralcrossing}.
+For $h,E\ge1$, any entry of either supplied crossing factor is computable
+in $2^{O(\sqrt{h+E})}$ bit operations and polynomial space in $h+E$;
+the integer output and rational intermediates have polynomial bit length.
+Generate the integer before specializing it to the target ring.
+\subsection{Uniform factors from an ordinary circuit}
+
+The coefficient-access lemma also makes the general circuit
+bound constructive in the arithmetic model.  In this
+subsection an effective coefficient ring means that its
+addition and multiplication operations are supplied; their
+cost is counted separately from integer constants generated
+by the imported crossing algorithm.
+
+\begin{theorem}[Constructive circuit factorization]
+\label{thm:constructive-circuit}
+Let $M$ be the paired squarefree-block coefficient matrix
+of a division-free arithmetic circuit of size $s$, and put
+\[
+ H=d+\sqrt d\log(2nsd).
+\]
+Over every effective commutative unital ring, the decomposition
+in Theorem~\ref{thm:ordinary-circuit} can be supplied with
+at most $2^{O(H)}$ PT-basic terms such that each factor
+entry is uniformly computable in $2^{O(H)}$ ring operations
+and $2^{O(H)}$ bit operations for generating the integral
+crossing constants.  A family of arithmetic circuits
+representing all factor vectors can be generated with
+total size and construction cost $2^{O(H)}$ in the same
+model, using coordinate-indicator variables at the leaves.
+\end{theorem}
+
+\begin{proof}
+Use the homogeneous circuit and balanced frontier of
+Theorem~\ref{thm:ordinary-circuit}.  Every descendant
+circuit has size at most $S_*=s d^{C_0}$.  Common deterministic
+padding widths can be chosen by
+\[
+ R_1=n,\qquad
+ R_m=S_*2^m
+      \max_{m/3\le a\le2m/3}W(R_a,R_{m-a}),
+\]
+with integer rounding.  The earlier numerical-tree proof
+gives
+$\log R_m=O(m+\sqrt m\log(2nsd))$.
+These widths and their partition-number parameters are
+computable from the numerical recursion, independently of
+circuit values.
+
+A factor label records one frontier product, one subset
+assigning blocks to its first factor, and one column in
+the local crossing factor.  An orientation determines
+the child orientations and whether the second child's
+left and right factors are interchanged.  Invalid padded
+labels denote zero columns.  These tests use circuit
+syntax and integer labels, not polynomial identity testing.
+
+For a fixed parent factor entry, its label fixes the
+frontier term and the subset.  If its child widths are
+$R_a,R_b$, the entry is a sum over $R_aR_b$ latent pairs
+of products of two child entries and one explicit local
+crossing coefficient.  The imported coefficient algorithm
+computes that local coefficient in
+$2^{O(\log R_a+\log R_b)}$ bit operations.  At a singleton,
+factor the coefficient matrix as $A I$; an entry of $A$
+is obtained by evaluating the degree-one child circuit at
+the corresponding unit coordinate.
+
+Writing $\lambda=\log(2nsd)$, a deliberately loose
+worst-case cost therefore satisfies
+\[
+ T(m)\le 2^{O(m+\sqrt m\lambda)}
+                   \bigl(T(a)+T(b)+1\bigr),
+ \qquad a,b\in[m/3,2m/3].
+\]
+After taking logarithms, follow a larger-cost child.
+Both $m$ and $\sqrt m$ decay geometrically on that path,
+so $\log T(d)=O(H)$.  This estimate already charges all
+latent-coordinate summations and requires no sharing
+between descendant circuits on different block scopes.
+
+Replacing a fixed physical coordinate at a leaf by its
+indicator variables gives a circuit for the factor's
+set-multilinear form.  Enumerating the $2^{d-1}$ orientations
+and all $2^{O(H)}$ factor columns multiplies costs by at
+most another $2^{O(H)}$, proving the total bound.
+\end{proof}
+
+The statement does not assume a polynomial bit overhead
+for arbitrary integer input circuits.  Even a constant-only
+circuit can repeatedly square $2$ and generate an integer
+with exponentially many bits.  For a fixed finite field,
+ordinary field-operation costs give a direct bit bound;
+for other rings a bit-complexity assertion requires the
+corresponding representation and value-size bounds.
+
+
+\begin{thebibliography}{9}
+\bibitem{integralcrossing}
+icekylinx and GPT-6 Astra Pro.
+\emph{Algorithm Frontier: Noncommutative Crossing}.
+Repository snapshot
+\texttt{2658b60c9d032611492792718bd9d39f721de09f},
+October 28, 2026.
+The relevant files are
+\texttt{integral-pieces.tex},
+\texttt{finite-crossing.tex}, and
+\texttt{coefficient-computation.tex} under
+\texttt{problems/noncommutative-crossing/manuscripts/}.
+\url{https://github.com/icekylinx/algorithm-frontier/tree/2658b60c9d032611492792718bd9d39f721de09f/problems/noncommutative-crossing}.
+
+\bibitem{rossmanzhu}
+Benjamin Rossman and Davidson Zhu.
+\emph{Multiquadratic Sum-of-Squares Lower Bounds Imply
+$\mathrm{VNC}^1\ne\mathrm{VNP}$}.
+ITCS 2026, LIPIcs 362, Article 113.
+DOI: \href{https://doi.org/10.4230/LIPIcs.ITCS.2026.113}
+{10.4230/LIPIcs.ITCS.2026.113}.
+Full version:
+\url{https://arxiv.org/html/2512.01227v1}.
+The full proof of the ordered-ABP upper bound is in
+Section 6.2.
+
+\bibitem{anthropic}
+Claude / Anthropic.
+\emph{A $2^{o(n)}$ Time Algorithm for 3-SAT}.
+October 26, 2026.
+Repository snapshot
+\texttt{16a5ce41304fcdaea4e0be7c132e1c361dc26da5},
+file \texttt{eth/paper.pdf}; PDF blob
+\texttt{77f4a8f043f65cecf0ee8e4024bf026aff1066e8}.
+Appendix B supplies the underlying finite crossing-mode
+construction credited by the integral extension.
+\url{https://github.com/anthropics/formal-math/tree/16a5ce41304fcdaea4e0be7c132e1c361dc26da5/eth}.
+
+\bibitem{dlmf}
+NIST Digital Library of Mathematical Functions.
+Section 27.14(iii), Equation 27.14.8: the
+Hardy--Ramanujan asymptotic for the partition function.
+\url{https://dlmf.nist.gov/27.14.E8}.
+
+
+\bibitem{brandkaskiwang}
+Cornelius Brand, Petteri Kaski, and Jiaheng Wang.
+\emph{Partition Rank and Algebraic Circuit Lower Bounds}.
+ESA 2026, LIPIcs 388, Article 63, pp.\ 63:1--63:13.
+\url{https://doi.org/10.4230/LIPIcs.ESA.2026.63}.
+
+\end{thebibliography}
+\end{document}

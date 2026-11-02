@@ -143,6 +143,17 @@
             "showcase",
             "showcase"
           ]
+        },
+        {
+          "id": "subset-sum-exact-counting",
+          "title": "Randomized exact Subset Sum counting",
+          "result": "Exact indexed solution count for arbitrary signed binary integer inputs, with bounded error",
+          "quantity": "$\\mathrm{poly}(n,L)2^{0.48986n}$ bit operations",
+          "scope": "All indexed binary integer inputs; full input length `L`, exact-answer probability at least `2/3`, and a capped running-time bound on every random execution. Uses the explicitly pinned filtering, alias and finite-arithmetic source lemmas with a proved changed phase law. No deterministic counting or improved simultaneous space claim.",
+          "randomness": "Randomized exact-answer algorithm with success probability at least `2/3`; time is bounded on every history, with polynomial overhead for confidence amplification. The cited source lemmas are accepted external mathematical inputs.",
+          "quantity_purposes": [
+            "showcase"
+          ]
         }
       ]
     },
@@ -161,6 +172,17 @@
           ]
         },
         {
+          "id": "triangular-low-rank-counting",
+          "title": "Exterior endpoint counting for triangular low-rank updates",
+          "result": "Division-free exterior endpoint algorithm for negative-integer alpha-permanents, with fixed-characteristic Hamiltonian evaluation",
+          "quantity": "$\\mathrm{poly}_q(n,r)\\,2^{O_q(r\\log(1+n/r))}$ ring operations",
+          "scope": "Dense upper-triangular `B` and supplied factorization `A=B+UV^T`, with every sublinear factor width `r=o(n)` for fixed color parameter `q`. Every commutative unital ring; exact integer/rational negative-alpha and fixed-width immanant outputs have polynomial bit overhead. Fixed-characteristic Hamiltonian output uses the annihilator as its color count; prime-power precision is charged through `p*t`. No unrestricted integer permanent or Hamiltonian claim.",
+          "randomness": "Deterministic exact uniform division-free circuit construction; no random weights or identity test. The constructive endpoint recurrence is independent of the recent contraction and filtering theorems.",
+          "quantity_purposes": [
+            "showcase"
+          ]
+        },
+        {
           "id": "noncommutative-crossing",
           "title": "Integral ordered crossing circuits",
           "result": "One constant-free integer circuit family for the noncommutative identity polynomial, valid in every associative unital ring",
@@ -168,6 +190,19 @@
           "scope": "Normalization-one integral Schur crossing, full integer three-shape composition, ordered insertion and shared products. One circuit is chosen before its associative unital coefficient ring, including characteristic two and zero divisors. Complete draft deduction assuming explicitly listed integral tensor source interfaces; no full local formal or external review claim.",
           "randomness": "Exact deterministic arithmetic circuits; circuit-description generation and arbitrary ring-element bit costs are separate from gate count.",
           "quantity_purposes": [
+            "showcase"
+          ]
+        },
+        {
+          "id": "sparse-low-rank-counting",
+          "title": "Sparse corrections and supplied low-rank exact counting",
+          "result": "Division-free permanent and hafnian with exact integer/rational recovery",
+          "quantity": "Permanent $\\mathrm{poly}(n,r,m)2^{O(m/\\sqrt{\\log(2+m)})}\\binom{n+r}{r}^{4}$; hafnian $\\mathrm{poly}(n,r,m)2^{O(m/\\sqrt{\\log(2+m)})}\\binom{2n+r}{r}^{2}$; fixed-prime-characteristic permanent $\\mathrm{poly}(n,r,m)2^{O_p(m/\\sqrt{\\log(2+m)}+r)}$",
+          "scope": "Every commutative unital ring with supplied sparse-plus-factorized input, including zero divisors and signed data. Subexponential for `m=O(n)`, every `r=o(n)`, although the full matrix may be dense and full rank. Explicit integer/rational inputs retain the exponential bounds with polynomial bit overhead. Fixed original monomers and fixed-uniformity hypermatching are supporting extensions; finding a decomposition is excluded.",
+          "randomness": "Deterministic exact division-free construction, using the cited quantitative crossing recursion and the existing normalization-one integral Schur primitive; finite check selection uses a fixed seed only.",
+          "quantity_purposes": [
+            "showcase",
+            "showcase",
             "showcase"
           ]
         },
@@ -917,6 +952,18 @@
         "showcase",
         "showcase"
       ]
+    },
+    {
+      "id": "partial-transpose-circuits",
+      "path": "manuscripts/partial-transpose-circuits/proof.md",
+      "title": "Paired coefficient matrices of ordinary arithmetic circuits",
+      "result": "Supplied partial-transpose decompositions from ordinary division-free circuits in every characteristic",
+      "quantity": "$2^{O(d)}(2nsd)^{O(\\sqrt d)}$",
+      "quantity_purposes": [
+        "showcase"
+      ],
+      "scope": "An ordinary division-free commutative circuit of size `s`, with `d` prescribed blocks of `n`-by-`n` variables; `n>=2,d>=1,s>=2`. Over fields this is PT-rank; over commutative unital rings it is supplied outer-product length. The geometric border version uses an algebraic closure. Compact factor circuits and entry queries have the same arithmetic envelope; arbitrary coefficient contraction time is not bounded.",
+      "randomness": "Exact deterministic structural theorem and uniform factor construction. Finite validators use fixed seeds and exact arithmetic."
     },
     {
       "id": "persistent-path-hitting",

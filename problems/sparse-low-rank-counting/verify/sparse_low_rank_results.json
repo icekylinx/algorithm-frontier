@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "seed": 20261102,
+  "checks": {
+    "integer_permanent_identities": 112,
+    "modular_permanent_identities": 560,
+    "frobenius_truncation_identities": 224,
+    "signed_modular_reconstructions": 112,
+    "integer_hafnian_or_loop_identities": 120,
+    "modular_hafnian_or_loop_identities": 600,
+    "chain_tensor_identities": 381,
+    "rational_permanent_modular_lifts": 15,
+    "rational_hafnian_modular_lifts": 12,
+    "rational_monomer_modular_lifts": 12
+  },
+  "total_checks": 2148,
+  "scope": "Exact algebraic reductions over integers and rings of moduli 2,3,4,6,101; not an implementation or benchmark of the asymptotic contraction engine."
+}

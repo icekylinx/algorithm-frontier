@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "seed": 20261102537,
+  "counts": {
+    "complete_marked_polynomials": 30,
+    "determinant_controls": 18,
+    "diagonal_independence_controls": 105,
+    "end_to_end_integer_immanants": 78,
+    "exact_integer_negative_alpha": 54,
+    "exact_rooted_cycle_polynomials": 135,
+    "modular_extraction_controls": 390,
+    "modular_hamiltonian": 126,
+    "nonreduced_hamiltonian": 12,
+    "nonreduced_ring": 72,
+    "nonzero_modular_hamiltonian": 54,
+    "nonzero_pure_rank_boundary_controls": 6,
+    "prime_power_component_evaluations": 60,
+    "prime_power_hamiltonian": 25,
+    "rational_ring": 72,
+    "zero_width_controls": 18
+  },
+  "tested_moduli": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9
+  ],
+  "actual_dp_transitions": 1901265,
+  "largest_observed_endpoint_state_count": 167027,
+  "largest_observed_coefficient_entry_count": 1007413,
+  "scope": "Finite exact checks of the implemented algorithm against permutation, determinant-partition, and Murnaghan--Nakayama oracles; not asymptotic or formal verification."
+}

@@ -1,0 +1,1720 @@
+{
+  "schema_version": 1,
+  "curated_date": "2026-11-02",
+  "attribution": [
+    "icekylinx",
+    "GPT-6 Astra Pro"
+  ],
+  "license": "Apache-2.0",
+  "archive": {
+    "filename": "tcs_research_checkpoint.zip",
+    "local_directory": ".local/checkpoints",
+    "bytes": 479715,
+    "sha256": "8dcf8c145197bc965618693d770a2ae5015e3f5f02d884e2c82936f6e1f02ddc",
+    "publication_policy": "Original ZIP and duplicate extracted tree are local inputs only and must not be committed or pushed."
+  },
+  "baseline_commit": "2658b60c9d032611492792718bd9d39f721de09f",
+  "selected_results": [
+    "triangular-low-rank-counting",
+    "sparse-low-rank-counting",
+    "subset-sum-exact-counting"
+  ],
+  "supporting_results": [
+    "partial-transpose-circuits"
+  ],
+  "summary": "docs/TCS-RESEARCH-20261102.md",
+  "selection_policy": "Only complete substantive results in declared models; retain strongest comparable bounds. No raw checkpoint tree, failed/open route, dominated version, direct paper corollary, standalone numeric substitution or broad priority/formal claim is promoted.",
+  "members": [
+    {
+      "member": "tcs_research_checkpoint/CHECKPOINT.md",
+      "bytes": 3989,
+      "sha256": "f7d82e26aa7cdb4756e01f8b405ac31278e11c4da6d8c657c8bd51b766956b32",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/README.md",
+      "bytes": 11180,
+      "sha256": "b74dfc96e9bdea558004c3c83f48c1d352d0f495537e833c43d69455e3bee6ce",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/audits/border_pt_audit.md",
+      "bytes": 7033,
+      "sha256": "238057ccf9c03b646677914b7826e54d95c72d67fbc6d7b361abd8c9846f80ed",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "manuscripts/partial-transpose-circuits/proof.md",
+        "manuscripts/partial-transpose-circuits/sources.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/audits/flattening_profile_novelty.md",
+      "bytes": 6197,
+      "sha256": "5fe5f7c77c9d8c412db009deb1dbef9f1002884b70e5a2065d86c8b702e7e7e2",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/audits/integral_fock_dependency_audit.md",
+      "bytes": 9825,
+      "sha256": "39583fc813f3e5c7b8dd521ed96b2b49ba747788a3f96b85c3def12ad9217207",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/sparse-low-rank-counting/manuscripts/integral-dependency-audit.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/audits/joint_jet_obstruction.md",
+      "bytes": 9407,
+      "sha256": "0977e43afbeb7cc66bce9a5f623111efec3cb6761fa6f9e5f57d1c4bb64d3b48",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/audits/joint_trace_variance.md",
+      "bytes": 4827,
+      "sha256": "64315fbef9bda01bb35b62dc903e6a2fa2eeff233eba43ca2dab269b7e919a37",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/audits/lazy_projection_bilinear_obstruction.md",
+      "bytes": 3297,
+      "sha256": "e6ab18ad34b4bf28faa6a9def8440a36b39c1725712243efc0eba6909b7c2ee2",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/audits/positive_moment_obstruction.md",
+      "bytes": 10173,
+      "sha256": "ee01b4aec4114a308dd2fb19439a207f55ee034ac51d7f99fcd74832ede5eb42",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/audits/sampled_block_alias_coverage.md",
+      "bytes": 9839,
+      "sha256": "3442db9666a0a48c2aa774e12ebb715c851b0eb904f4ff471996c388a2cee58c",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/audits/termwise_hermite_precision.md",
+      "bytes": 8819,
+      "sha256": "c9cbb533907f278499e3178b20ef0ba4e5746991056861a2543c5b5761e5aca3",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/manuscripts/exact_counting.md",
+      "bytes": 47590,
+      "sha256": "c3388ef2969ccbb276ac2ac72dc95dbaed203fea5026f856a5110ab0aaec4913",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/subset-sum-exact-counting/proof.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/manuscripts/exact_counting_refinement.md",
+      "bytes": 14298,
+      "sha256": "6c73476424957be4d8f37b416810c0942ddfd25e07a7041bd0b5d01af7afea8b",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/subset-sum-exact-counting/parameter-certificate.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/manuscripts/exterior_endpoint_algorithms.md",
+      "bytes": 13424,
+      "sha256": "f2704e2540abfa62a0783cc23e7ea71a93f20b6e61a673ce65afc72fce158882",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/triangular-low-rank-counting/README.md",
+        "problems/triangular-low-rank-counting/proof.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/manuscripts/partial_transpose.tex",
+      "bytes": 194097,
+      "sha256": "7c0124bad675ec11ebdfc5950e582b7a331037edc586504e3429a63b20811955",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "manuscripts/partial-transpose-circuits/README.md",
+        "manuscripts/partial-transpose-circuits/circuits.tex",
+        "manuscripts/partial-transpose-circuits/proof.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/manuscripts/pt_coarsening.md",
+      "bytes": 6999,
+      "sha256": "3ed8715ed51febee34957a38022f85fc1f0e7cf700b575276d45763b9fa52605",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/manuscripts/structured_exact_counting.md",
+      "bytes": 60078,
+      "sha256": "8f43f657420f0e54e0c6d0371650ba8aae10c5b1bd914bdc1d464a96617052b7",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/sparse-low-rank-counting/README.md",
+        "problems/sparse-low-rank-counting/proof.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/manuscripts/structured_hypermatching.md",
+      "bytes": 9590,
+      "sha256": "c739b52d2b4b90af2a4444fdcd1a565bdaa7347bc22309dead6e658b6d0088f0",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/sparse-low-rank-counting/manuscripts/hypermatching.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/manuscripts/triangular_immanants.md",
+      "bytes": 8025,
+      "sha256": "d5c4ca062c84b6076e8119ee7e1f51d7861c54a64c320a585b1f169d768c7f78",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/triangular-low-rank-counting/proof.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/manuscripts/triangular_modular_counting.md",
+      "bytes": 12502,
+      "sha256": "28019c36dd456855add69371a64c5d1494cfc4ae25132e026ce7de5a59f56063",
+      "disposition": "excluded-dominated-route",
+      "reason": "Older factorial endpoint route superseded by the selected explicit exterior endpoint algorithm.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/cauchy_code_candidate.md",
+      "bytes": 8359,
+      "sha256": "2c89fee5140ab49a2f05e4763c20884a7c437aec8a206d8c9b93dccc77261faa",
+      "disposition": "excluded-unselected-target-or-branch",
+      "reason": "Outside the selected complete algorithm families; no unresolved target or standalone routine extension is promoted.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/circuit_schur_literature_audit.md",
+      "bytes": 7911,
+      "sha256": "92a15f65a1a43090b96201aa88bdb1cc68b5e7b59f607fbf4c04fbbbf07d613a",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "manuscripts/partial-transpose-circuits/sources.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/constructive_circuit_factors.md",
+      "bytes": 6960,
+      "sha256": "c192d71c2a420116c7ad068f8029329715375b371246f96d66311c7c262c50ef",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "manuscripts/partial-transpose-circuits/proof.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/constructive_pt_factors.md",
+      "bytes": 8494,
+      "sha256": "3d274903860e25b9600e1129fc7253f0ef291135dd06dbabac7c46c524b23b1e",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/constructive_separator_factors.md",
+      "bytes": 10833,
+      "sha256": "ee0f2c5e3b15ed32fce7e8bc8122d9f0fba2fb03f9cd41697269346f5d990246",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/dag_cycle_polynomial.md",
+      "bytes": 5335,
+      "sha256": "71ca05f71eab106634cfa33c78c82bcf2552d48d6f24f9e439ec0bdff850682f",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/dag_low_rank_hamiltonian.md",
+      "bytes": 9715,
+      "sha256": "ce814f6b30110014316ffa3b251f669f538d37ce5080deb23ea3f43d7905cf69",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/dense_dag_modular_counting.md",
+      "bytes": 12502,
+      "sha256": "28019c36dd456855add69371a64c5d1494cfc4ae25132e026ce7de5a59f56063",
+      "disposition": "excluded-dominated-route",
+      "reason": "Older factorial endpoint route superseded by the selected explicit exterior endpoint algorithm.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/exceptional_rows_low_rank.md",
+      "bytes": 4342,
+      "sha256": "aabe493a5388b143f705810b01218b0a264a433f3a30afe22fba39c0d7560468",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/explicit_vnp_flattening_barrier.md",
+      "bytes": 6569,
+      "sha256": "7e4e8525de7350e3264b5ea573caff97b97d802989ca5e7ff2fb2310a722c9d6",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/finite_field_flattening_barrier.md",
+      "bytes": 6287,
+      "sha256": "ef5110ee131f9127358472d4035923131a663bf7ffa22c6a74c7237ecd1e1cb4",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/fock_aggregate_commutator.md",
+      "bytes": 4335,
+      "sha256": "ff0803fdadba99dc7d675c0f3e86ce7f56543bcf78eddf388de80c964b086a3c",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/gram_determinant_audit.md",
+      "bytes": 10035,
+      "sha256": "570b8d1ea5ada2ddf3268ae2f803cb7d7dcd8b027d0b65f7f23ca68bdbb68f60",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/hamiltonian_polynomial_content.md",
+      "bytes": 5033,
+      "sha256": "afedfd1d3ac82e070949cf5e705f7b7a587736a7673d9f4b56571822effd0cf8",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/hybrid_hub_counting.md",
+      "bytes": 4639,
+      "sha256": "d3490923f372170ca628750556aac402e33e218050a459c564e9bf859563496b",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/low_rank_class_immanants.md",
+      "bytes": 14476,
+      "sha256": "c082d1d592a478dbd05add692e4772838a76c9ca627c47e852099253d5e1c015",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/orientation_mpo_audit.md",
+      "bytes": 9715,
+      "sha256": "0e83f338ca83f8d67f227e6736abbf9a61783108a1074f9c7d727234a8035081",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/partial_matching_operators.md",
+      "bytes": 5291,
+      "sha256": "c9c6b0f58449effd23e6260c27ef02442d5cb1ee23a3cb94c07e41eed356f4d4",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/positive_target_rank_one_triangular.md",
+      "bytes": 4458,
+      "sha256": "ba7acb40610f81c51b72e6b8717f305db30c7cd12880d9f5dd2f169951d17466",
+      "disposition": "excluded-unselected-target-or-branch",
+      "reason": "Outside the selected complete algorithm families; no unresolved target or standalone routine extension is promoted.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/pt_circuit_coarsening.md",
+      "bytes": 4051,
+      "sha256": "00f826a8b91a28dcf0d707b771d49fc5736e3cbe8a735fe2a0865f84955b9ae8",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/pt_novelty_audit.md",
+      "bytes": 5776,
+      "sha256": "d3a1be7e6b440d1db29de3a0df76f2933c19b2fe8277297cf00db29e4263fac0",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "manuscripts/partial-transpose-circuits/sources.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/pt_separator_extension.md",
+      "bytes": 14473,
+      "sha256": "3f95d09be27ec735228b9218a6c8142e7819c651012780a40df9ff3f6cb1aea0",
+      "disposition": "excluded-unselected-target-or-branch",
+      "reason": "Outside the selected complete algorithm families; no unresolved target or standalone routine extension is promoted.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/pt_tree_extension.md",
+      "bytes": 9646,
+      "sha256": "d9b895053f77f70f431780c5b0f53dc0845557a5a606e366681008dbb3661e4a",
+      "disposition": "excluded-unselected-target-or-branch",
+      "reason": "Outside the selected complete algorithm families; no unresolved target or standalone routine extension is promoted.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/pt_wick_section.tex",
+      "bytes": 6148,
+      "sha256": "0405d9cee2d7823d92e763ccfb731af14a93e0d4e59e5d34cf4b1635cc18edf1",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/robust_mds_flattening_barrier.md",
+      "bytes": 11614,
+      "sha256": "eed0b2655c15ab8f1d7fcfbcc4a7c9ad24fb79e367944c830cd67766300777a3",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/sparse_low_rank_hamiltonian.md",
+      "bytes": 16226,
+      "sha256": "dbaa6226767eb6085fea84d1b4c1e49e48a2739c9ea6c5cbfe46e063ed936593",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/three_pair_exact_optimum.md",
+      "bytes": 9980,
+      "sha256": "499f3e31322ecc214697094e60674452bc80d6a8026bb6746a35498597eaa9d4",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/triangular_immanants.md",
+      "bytes": 8025,
+      "sha256": "d5c4ca062c84b6076e8119ee7e1f51d7861c54a64c320a585b1f169d768c7f78",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/universal_ring_contraction.md",
+      "bytes": 10711,
+      "sha256": "0b098a54c3385ac582e07c39b56346f2e8581f46304b64b2d3d798dba002b25d",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/sparse-low-rank-counting/manuscripts/ring-contraction.md"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/research_notes/weighted_matching_operators.md",
+      "bytes": 6815,
+      "sha256": "5c71b758aee3b17ee1f755c76df651c20faaf0c7bf3111437bcc6d93a0981c1f",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/cancellation/README.md",
+      "bytes": 1038,
+      "sha256": "224eedb1a04f1386cc02e4dafe7c2331b6c1fa6195040fd6a100dc89181f343e",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/cancellation/check_graph_diagonals.py",
+      "bytes": 7434,
+      "sha256": "00dc7cd81d2bd613175235af804dc6c8dd9ee57f7d8508bd6c84854e14471d8e",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/cancellation/graph_diagonal_results.json",
+      "bytes": 2622,
+      "sha256": "5b080e19fd76311c0774e060238d0d05086428420ecb39f7fb23850ad5346049",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/cauchy_code/README.md",
+      "bytes": 1211,
+      "sha256": "15fbec2777bd7dc841ca626ba9b89f09b4609d11c0063ff47463fd8071d01444",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/cauchy_code/check_cauchy_code.py",
+      "bytes": 7780,
+      "sha256": "4d19b932dcb51191051426caf28c791d7a200334f6fb2430fcd84bd158a979f8",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/cauchy_code/results.json",
+      "bytes": 4503,
+      "sha256": "d80ef4c2c1bc7ece9497ad070e49f185fdda17c45d955b59c9492c18495a24be",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/README.md",
+      "bytes": 5498,
+      "sha256": "474180b316e58331d62ca1a988cd26062c41a9552c28e250b23f0626b3127553",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/antisymmetrizer_results.json",
+      "bytes": 876,
+      "sha256": "df4422ece0c2dd82bba8023df5c712a2ed1f9c7784f8624016df629844c0c59c",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/check_antisymmetrizer.py",
+      "bytes": 7091,
+      "sha256": "6285490364e6b9b866cf623760d969b741a71f3baef6c1ca7743246f468c34d0",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/check_circuit_frontier.py",
+      "bytes": 12532,
+      "sha256": "16c40bc8924a876fd27c7d65863bf2a1672232387aade581c75d722b110f3562",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "manuscripts/partial-transpose-circuits/verify/check_circuit_frontier.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/check_cycle_class_operators.py",
+      "bytes": 11339,
+      "sha256": "79ff5179ab6ca12dc65e85ef5e6428592f45f108e12eaa0eff4c4b6b0256173d",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/check_homogeneous_projection.py",
+      "bytes": 12931,
+      "sha256": "95748ff9dc7cb4082b41babbf1170f599e5bfaabf9288a28296091d8e563f6a7",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "manuscripts/partial-transpose-circuits/verify/check_homogeneous_projection.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/check_interleaved_composition.py",
+      "bytes": 7173,
+      "sha256": "22ad1ad00f6e3ba4c79ceb01c18fb7ea0f5624bb31d912daa04768bb77eb0a5c",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "manuscripts/partial-transpose-circuits/verify/check_interleaved_composition.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/check_schur_character_operator.py",
+      "bytes": 7168,
+      "sha256": "8ee1af163600770e55655394f64e5a18a7c9f536b604efd7c899e6db51e60d4e",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/check_schur_characters.py",
+      "bytes": 9853,
+      "sha256": "2a14e6f0f6ea060981ed4ea969f88fc632550dee9474115c1d93f2d8c98b08f8",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/cycle_class_operators_results.json",
+      "bytes": 524,
+      "sha256": "4721985b2daf5fe4389d951f4aff948618638bedf8aa5753a5be054325d604ce",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/interleaved_composition_results.json",
+      "bytes": 11255,
+      "sha256": "e6655c41836402e11ee8278e5df3a2cfc531ed519582f075a431f59a64279e29",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/projection_results.json",
+      "bytes": 936,
+      "sha256": "3d14f4d9fdaf1d492c37ce9fee2de782ef94cee7f484b80ae8ac8fa3c23956ae",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/results.json",
+      "bytes": 846,
+      "sha256": "a444c5d15556b5812f6cac1008437b389b2d4023308dba4e518394656f856e55",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/schur_character_operator_results.json",
+      "bytes": 6896,
+      "sha256": "8b1185c16b7e581610832a6da15b256c929e510829e4c035db223cfdc3f05296",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/circuit_frontier/schur_character_results.json",
+      "bytes": 1718,
+      "sha256": "a84d847f9500ff2782995e9120514688236d448e125cc10ebdce88dc6709517b",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/counting/README.md",
+      "bytes": 2940,
+      "sha256": "ff0f74f38bae13c392e9e44ef8ae34d7b22718b283d564fad24a1b8bb8720be7",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/counting/check_activity_lifting.py",
+      "bytes": 3765,
+      "sha256": "545377f56e33a4bc8085e7ff9c8c36c6e852b247505dc3a133190d75ceaf853c",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/subset-sum-exact-counting/verify/check_activity_lifting.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/counting/check_improved_filter_certificate.py",
+      "bytes": 9426,
+      "sha256": "006c8602131db83821ad462318fbe97985241a342251878445598e200d6facda",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/subset-sum-exact-counting/verify/check_improved_filter_certificate.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/counting/check_trace_and_threshold.py",
+      "bytes": 10971,
+      "sha256": "a74a93f1b12b1e319a81388b116372bda3941cecaf2c04a50d1305565b0f08bb",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/subset-sum-exact-counting/verify/check_trace_and_threshold.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/counting/check_weighted_trace.py",
+      "bytes": 5630,
+      "sha256": "a1bcd5e9a834727d082e57d5e423892842c1d8a84660400c39486eaed564af59",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/subset-sum-exact-counting/verify/check_weighted_trace.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/counting/improved_filter_results.json",
+      "bytes": 1267,
+      "sha256": "dc284b9b2c1fee59c4239eb0fe58e776f44419d196afa759ec860fcfd3112b67",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/counting/results.json",
+      "bytes": 1740,
+      "sha256": "b9db35824da459ad65be37347f1d4026fddfe4ed218db89eaa962d478e768067",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/counting/run_checks.py",
+      "bytes": 1689,
+      "sha256": "3fc916b7bad828673c88dd9e1fdd456ce2a9bac6c790e89240f59b83a25182d3",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/README.md",
+      "bytes": 5492,
+      "sha256": "3b393a33382100fa0574768dac38ad99a549eae92c36a4a84173eb485a0e457d",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/check_finite_field_seed.py",
+      "bytes": 7445,
+      "sha256": "bbbb4e5af7fe8b084bf8e898ca424ac998acd2ad3563e0eda89a58c89f4fe994",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/check_flattening_obstruction.py",
+      "bytes": 10485,
+      "sha256": "78525d858444cfb441b11977781319a2194e4a47b059c2921a300b2872220667",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/check_odd_prefix_seed.py",
+      "bytes": 5035,
+      "sha256": "eb025344a4960f2d91466c6c59a2bc180bc1296fdb4f3e6a4828624cc02cd26b",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/check_robust_mds_profile.py",
+      "bytes": 5717,
+      "sha256": "3af887cb97930b2e346d6556e028098911ae858f64bf0ba8e75e3a0097726f0e",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/check_three_pair_optimum.py",
+      "bytes": 3382,
+      "sha256": "0ab67afab38aa2549d74d5ed392b96325f113c7b0c1c254cb1215393b88c9d3d",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/finite_field_results.json",
+      "bytes": 1826,
+      "sha256": "96d2567793bd5a49f9085e09fdda4cb23d93a02891cc0c46619eb97d3270202e",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/odd_prefix_results.json",
+      "bytes": 1543,
+      "sha256": "969bc21b82f20fa7ea5e5e40e714ad9d6bb48f2db7d8df5b0afd9500253a5eba",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/results.json",
+      "bytes": 6743,
+      "sha256": "969f0a93d4f365ae89f49777d4a2f76e426df7b6f307d75290c029e333a70e82",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/robust_mds_README.md",
+      "bytes": 747,
+      "sha256": "9513310645dd53c95e54ce991d27045e2959ef1e709e2a51f8323b739d8eea86",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/robust_mds_profile_results.json",
+      "bytes": 1530,
+      "sha256": "e98b0028d0e4e5f458f2abe74f775cb43a225dd1f5a0741b43c85c88357c9935",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/flattening_obstruction/three_pair_optimum_results.json",
+      "bytes": 2360,
+      "sha256": "8623709929e03fe4f1e60f652a25c59c3eb5858cc9349372bc1bf7f0770033b7",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/README.md",
+      "bytes": 2126,
+      "sha256": "ce0010d0506b111d916821fb9cad05ae7c4feb50336c49cade3749dd71c6ee3d",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/check_fock_composition.py",
+      "bytes": 7526,
+      "sha256": "f26a79e55920b986027317fc48887c1eaab71041f28c4eb19a431095fe8c5480",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/check_fock_mixed_states.py",
+      "bytes": 4345,
+      "sha256": "9b753914425c992db2cad0f670245b06823bb172ea3c987050b238bdc775d5d7",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/fock_audit_source/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "disposition": "excluded-duplicate-existing-source",
+      "reason": "Existing canonical repository integral primitive is cited directly; do not copy the archived source snapshot or its duplicate license tree.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/fock_audit_source/NOTICE",
+      "bytes": 497,
+      "sha256": "dee1eb4da9e6c64d6749c1e73321cdd679c57d2e50cfb6cdc26d17069a24381d",
+      "disposition": "excluded-duplicate-existing-source",
+      "reason": "Existing canonical repository integral primitive is cited directly; do not copy the archived source snapshot or its duplicate license tree.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/fock_audit_source/manuscripts/coefficient-computation.tex",
+      "bytes": 7578,
+      "sha256": "66692a5e690fc96eaded6d3e41e7b9c90280016433af312d6bb54a70789a065b",
+      "disposition": "excluded-duplicate-existing-source",
+      "reason": "Existing canonical repository integral primitive is cited directly; do not copy the archived source snapshot or its duplicate license tree.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/fock_audit_source/manuscripts/finite-crossing.tex",
+      "bytes": 8310,
+      "sha256": "5b6b53ac9292595a36aecdaef91d258a47433b3012960d62227121ff225d54d4",
+      "disposition": "excluded-duplicate-existing-source",
+      "reason": "Existing canonical repository integral primitive is cited directly; do not copy the archived source snapshot or its duplicate license tree.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/fock_audit_source/manuscripts/integral-pieces.tex",
+      "bytes": 5440,
+      "sha256": "679152214b7d6aacdd687b7489a36b73585d0aac5edb583646b2db9c52e8823d",
+      "disposition": "excluded-duplicate-existing-source",
+      "reason": "Existing canonical repository integral primitive is cited directly; do not copy the archived source snapshot or its duplicate license tree.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/fock_audit_source/reference/integral_crossing.py",
+      "bytes": 5468,
+      "sha256": "a37f1f9a9bd42774f35b2410939373c77fd7ac14f49b7032d6ba221283c12ff1",
+      "disposition": "excluded-duplicate-existing-source",
+      "reason": "Existing canonical repository integral primitive is cited directly; do not copy the archived source snapshot or its duplicate license tree.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/fock_audit_source/reference/schur_modes.py",
+      "bytes": 5945,
+      "sha256": "e03b91cec64402da56dff16686873eeeb423a6effb0247b4f486b6a3d54a1ec4",
+      "disposition": "excluded-duplicate-existing-source",
+      "reason": "Existing canonical repository integral primitive is cited directly; do not copy the archived source snapshot or its duplicate license tree.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/fock_audit_source/verify/check_integral_crossing.py",
+      "bytes": 6127,
+      "sha256": "deedd94ae9d8bafdf3ea84499a52ebf24e9f38bf438b9d851ed862bdeb6e98df",
+      "disposition": "excluded-duplicate-existing-source",
+      "reason": "Existing canonical repository integral primitive is cited directly; do not copy the archived source snapshot or its duplicate license tree.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/fock_audit_source/verify/check_schur_lattice.py",
+      "bytes": 5066,
+      "sha256": "a220d1e4f38c5509172610658ae4c253faa17387c96fe01740b4472033de8e17",
+      "disposition": "excluded-duplicate-existing-source",
+      "reason": "Existing canonical repository integral primitive is cited directly; do not copy the archived source snapshot or its duplicate license tree.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/provenance.json",
+      "bytes": 3562,
+      "sha256": "246d280d2ff564cabf5b44775c590670925e4a8519042397ae0b3c830fcd2b9b",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/results.json",
+      "bytes": 7306,
+      "sha256": "2b34898142bcf0c59141eae149eb13c7c37bc153adc31e485137a2e65ca33b06",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock/run_checks.py",
+      "bytes": 2421,
+      "sha256": "44a878e699b8c0a982bca6718a44ad2416cbb203e5bac4ff43d201b44bc23515",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock_aggregation/README.md",
+      "bytes": 626,
+      "sha256": "e8fc27b8c03810618f60dc6022218b172f1f563e2cdadf276f30aeaba45f08a6",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock_aggregation/fast_schur.py",
+      "bytes": 1695,
+      "sha256": "28e3989b6cd7ac526f26cba224cfe3e5d65fe8449b484551213a54516545287d",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock_aggregation/fock_aggregated_commutator.py",
+      "bytes": 5057,
+      "sha256": "208094e3b422f5a2dc45bca87857fa6c54ac5c01a8e4a963e38810d1f826223b",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock_aggregation/fock_aggregated_commutator_results.json",
+      "bytes": 1709,
+      "sha256": "0697c428740162a640384a6154760de5a413a32de7fc31d335db5a37bb0973f2",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock_aggregation/fock_aggregated_large_results.json",
+      "bytes": 873,
+      "sha256": "75e576c001ab58d5fd8f1422c2b8a24c2fcc4e14463798af2f567676ac713fd6",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/fock_aggregation/fock_rank_profiles.py",
+      "bytes": 4630,
+      "sha256": "1465458918030fd281bc1796a5577d93c5f7da7eb122f96707259092e593c9a2",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/low_rank_cycles/README.md",
+      "bytes": 471,
+      "sha256": "7dcd3cd1ea87948d480784b258fed71952acf5644321f38b9858f26c36e6f18e",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/low_rank_cycles/check_low_rank_cycle_dp.py",
+      "bytes": 5995,
+      "sha256": "7f03a32fd85b3a720cb50eb23d35755b3b0be54c61fa4cbb2aecde60608becf5",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/low_rank_cycles/check_low_rank_modular_immanants.py",
+      "bytes": 5939,
+      "sha256": "1d2b53adc145a535d1a934e0cd9c2d53df10e23f056cef0d8ad6e43b2ae0a664",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/triangular-low-rank-counting/verify/check.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/low_rank_cycles/low_rank_cycle_dp_results.json",
+      "bytes": 2669,
+      "sha256": "e478b5c9195d00ee912b3d9d6404f5c4607313b9a240f48844e488f2bb28f7ff",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/low_rank_cycles/low_rank_modular_immanants_results.json",
+      "bytes": 1623,
+      "sha256": "d6e2cb5075ec3000887c0df24ac92c06955fb38788ac4cf41b2c23796fbd4643",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/obstructions/README.md",
+      "bytes": 1010,
+      "sha256": "5f3bff3a849392aaf484051e58ea221dd3292536dd8574ae16e9ec870c55d710",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/obstructions/check_joint_jets.py",
+      "bytes": 5072,
+      "sha256": "cd0cdc2cfacc8d250febf7a2aa089ba5f3c33e2c73090e116acb2f88f746183b",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/obstructions/results.json",
+      "bytes": 615,
+      "sha256": "4d3b99414ff3fa7c0cd313f2e4270f2bcfc11c54b8560a0c3c9f0f48b48123aa",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/partial_transpose/README.md",
+      "bytes": 1030,
+      "sha256": "e340d5d27b84e1097bb0372d5490694eff87e6942739d7a0951718c9ceb4e092",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/partial_transpose/check_orientation_composition.py",
+      "bytes": 4083,
+      "sha256": "efa160b744240749641dc1cd9b670931fa09fe3ecd1c503ee75230a8fb6fcc55",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/partial_transpose/mpo_orientation_certificate.py",
+      "bytes": 6194,
+      "sha256": "65784a8f79a09dc9290e77bda280dbdc5ccfd4a82a655c0e64a77d1ad3b458a4",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/partial_transpose/mpo_orientation_results.json",
+      "bytes": 10632,
+      "sha256": "384f49a9f3b2ca53ec0bc39678af9664dccb2f61c2c6b18b38347d64dc3a7edc",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/partial_transpose/partial_transpose_composition.py",
+      "bytes": 5096,
+      "sha256": "639536a95b18504935301b60e426a5a14b264c348a7b4d6426b746d620c2fe66",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/partial_transpose/partial_transpose_results.json",
+      "bytes": 2819,
+      "sha256": "9c9378c29e49c118e0a4a947e535f1036a016c6a246a3a0c96757611a6bf59a0",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/partial_transpose/pt_factor_oracle.py",
+      "bytes": 6422,
+      "sha256": "711ca996d0663105b8942c3a1d5be70283d08fb46c62d7e38d73c12a776edaef",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/partial_transpose/pt_factor_oracle_results.json",
+      "bytes": 5412,
+      "sha256": "1d9f02ec36727bad1447c9f6706b06d6fc2bdd4ec6dbfa7b0375221fedda9363",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/partial_transpose/pt_graph_factor_oracle.py",
+      "bytes": 7478,
+      "sha256": "33b6e852e2383ee409f093c0f521515071eec7422a1578130777b49623981c12",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/partial_transpose/pt_graph_factor_oracle_results.json",
+      "bytes": 3524,
+      "sha256": "ee2ec4fff0c25a85fd46f86ef1750d5e9eaddf7ca79b8c7cd57815f634ea5ed4",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/README.md",
+      "bytes": 5295,
+      "sha256": "bcf393afe238083a672bff310f59c2f2038bd8322c643b3da50409cc5e137179",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_dag_cycle_polynomial.py",
+      "bytes": 4396,
+      "sha256": "1cd4861d1e06691ad4d27d7a199feb0c8557ae7d67d3fd11442e0a2abf6f145c",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_dag_endpoint_set_dp.py",
+      "bytes": 21169,
+      "sha256": "7ad9838097bfb5406f929c0e443ef7a8890c645cd8d3f810d29efce52cefc526",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/triangular-low-rank-counting/reference/exterior.py",
+        "problems/triangular-low-rank-counting/verify/check.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_dag_endpoint_sets.py",
+      "bytes": 6490,
+      "sha256": "f207d13af49df8f823123520b219dc419ede11cd82e8a9984ff92e69f6f32c40",
+      "disposition": "excluded-dominated-route",
+      "reason": "Older factorial endpoint route superseded by the selected explicit exterior endpoint algorithm.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_dag_hamiltonian.py",
+      "bytes": 7036,
+      "sha256": "556c943dd3182397ce576c45dc14a78b5eaf9b37f5c657b1a04eccbb50b6db40",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_exceptional_rows_low_rank.py",
+      "bytes": 3595,
+      "sha256": "8653f0ad580917b78dcc60e9bc0f0bc056b6c538df752e4d5d5684a4b6073d00",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_hamiltonian_content.py",
+      "bytes": 2547,
+      "sha256": "6d2b26790cbd1e555d6b48b59a31eaeea4a093ba4e475c9ba21af5278183129c",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_hamiltonian_divisibility.py",
+      "bytes": 3091,
+      "sha256": "b1ab6f4309186e18568b1b759b049106ca3cbf299e9d71f82fb6acbe59e2f042",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_hypermatching.py",
+      "bytes": 9061,
+      "sha256": "80d53b4141f80e79c0d0698074848ea1b0195b6d6864431fd0a6ed19495017e0",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/sparse-low-rank-counting/reference/hypermatching.py",
+        "problems/sparse-low-rank-counting/verify/check_hypermatching.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_rank_one_target.py",
+      "bytes": 2622,
+      "sha256": "d88711667755a6e1211eef22264377e6dd3bf6f4182f69e4d57f36913f43d96c",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_sparse_low_rank.py",
+      "bytes": 10570,
+      "sha256": "7c036ba3567e8691cec54d9761ccd77f783ec1c28847d8151af519488ccb93ca",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/sparse-low-rank-counting/reference/reductions.py",
+        "problems/sparse-low-rank-counting/verify/check_core.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_sparse_low_rank_hamiltonian.py",
+      "bytes": 8539,
+      "sha256": "7922c2a235fcbfc718114a949c2bf4ddb43f3e7dfb84d61bea08f7a10d6fd2a8",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/check_triangular_immanant_extraction.py",
+      "bytes": 3524,
+      "sha256": "b17fb61ddc591d10495ffaf1897b968391ee7eb5bb783815c60b942186b76658",
+      "disposition": "integrated",
+      "reason": "Substantive completed construction, its necessary mathematical dependencies or finite verification component; see target transformations.",
+      "canonical_targets": [
+        "problems/triangular-low-rank-counting/reference/exterior.py",
+        "problems/triangular-low-rank-counting/verify/check.py"
+      ]
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/dag_cycle_polynomial_results.json",
+      "bytes": 408,
+      "sha256": "f6154c425d7e856a82f9171d3d3d4c0f87c4bdb3da1cab441504eac0f5101fb1",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/dag_endpoint_set_dp_results.json",
+      "bytes": 37750,
+      "sha256": "4223ef927a686de68c1be178ec8c683131787d70c467c1bb02c6bd593737c2f8",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/dag_endpoint_sets_results.json",
+      "bytes": 603,
+      "sha256": "27c8e5f183758fc3a9dbd8b3866a0d3fba6a9fe5936b890755e326af571a5426",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/dag_hamiltonian_results.json",
+      "bytes": 498,
+      "sha256": "12385c78913299fc9df719f70059e0a48be565af2c279f5265fb9f250f98ad9a",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/exceptional_rows_low_rank_results.json",
+      "bytes": 253,
+      "sha256": "77d7c25334655159d667fe2618f25a2c9939a99217708bf8ef97f1161b5637ad",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/hamiltonian_content_results.json",
+      "bytes": 345,
+      "sha256": "e076f83b4e6a386beae38c7e1c6e9ae8eb7dff019f38588662a41051c72244e2",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/hamiltonian_divisibility_results.json",
+      "bytes": 1095,
+      "sha256": "f9867b1d62a97ff0bf627242c7a9afc0cdc8c7e479638b14db36e5bffb3bbc09",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/hypermatching_results.json",
+      "bytes": 807,
+      "sha256": "74368bfb39420e14884ca70aecd896dac203965b868cb2987d6bc1f6241e00a4",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/rank_one_target_results.json",
+      "bytes": 306,
+      "sha256": "4a36dc28d4f93c4166e3541440259b340b1ba07a31dd87e0b95f76995b959675",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/sparse_low_rank_hamiltonian_results.json",
+      "bytes": 6051,
+      "sha256": "6752fe176e27bd9e29fc0a89ff73be906bd03bf0746a476330b98ea21cbdbdb0",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/sparse_low_rank_results.json",
+      "bytes": 590,
+      "sha256": "4b0691f4bed80ae45a5896903cecc98be3c61a9ef473ed795066e8f28de61381",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/structured_counting/triangular_immanant_extraction_results.json",
+      "bytes": 365,
+      "sha256": "74ab7e57bf19e7fa6913f5b2fe0ce0d50da4581f8a8b2251df857a7adf3daef1",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/wick/README.md",
+      "bytes": 1202,
+      "sha256": "01b319fd6223ac8b3c84c7ce2ff1e3ecfad710d7db90bb4036ce8e5bf128c3f4",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/wick/check_partial_matching_operators.py",
+      "bytes": 9315,
+      "sha256": "4572c4f2d8b384080d3c8b14fa417e48acc97a3192c01e9ed2782705059d2699",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/wick/check_wick_matching_operators.py",
+      "bytes": 7296,
+      "sha256": "b71c46e5d16d661e2e97390f63320b761a0760adc72bcce3313477697194303f",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/wick/partial_matching_operator_results.json",
+      "bytes": 704,
+      "sha256": "5028f78cc40cef0c05751b74cee46660df41f845192ce6717125e51632e42e2b",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/verification/wick/results.json",
+      "bytes": 753,
+      "sha256": "b81b172bced7dee5bc7b78cea7428d03b78d90acd2a1573930c6bdd2d6ab56f6",
+      "disposition": "excluded-from-selection",
+      "reason": "Auxiliary reports, exploratory notes, direct consequences, separate structural obstructions or unrelated branches are not selected. No blanket invalidity claim for excluded mathematics.",
+      "canonical_targets": []
+    },
+    {
+      "member": "tcs_research_checkpoint/MANIFEST.json",
+      "bytes": 29725,
+      "sha256": "56162bdfd08b0a281b5833f0f618df688b6ea35ba74f47a3484932614ec08e07",
+      "disposition": "excluded-source-metadata",
+      "reason": "Original overview or process inventory is not a curated result; member identity retained here.",
+      "canonical_targets": []
+    }
+  ],
+  "transformations": [
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/exterior_endpoint_algorithms.md",
+      "source_sha256": "f2704e2540abfa62a0783cc23e7ea71a93f20b6e61a673ce65afc72fce158882",
+      "target": "problems/triangular-low-rank-counting/proof.md",
+      "transformation": "Focused exterior endpoint proof and exact generic-ring implementation; strongest algorithm retained; classical immanant extraction included only within this family."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/exterior_endpoint_algorithms.md",
+      "source_sha256": "f2704e2540abfa62a0783cc23e7ea71a93f20b6e61a673ce65afc72fce158882",
+      "target": "problems/triangular-low-rank-counting/README.md",
+      "transformation": "Focused exterior endpoint proof and exact generic-ring implementation; strongest algorithm retained; classical immanant extraction included only within this family."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/triangular_immanants.md",
+      "source_sha256": "d5c4ca062c84b6076e8119ee7e1f51d7861c54a64c320a585b1f169d768c7f78",
+      "target": "problems/triangular-low-rank-counting/proof.md",
+      "transformation": "Focused exterior endpoint proof and exact generic-ring implementation; strongest algorithm retained; classical immanant extraction included only within this family."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/structured_counting/check_dag_endpoint_set_dp.py",
+      "source_sha256": "7ad9838097bfb5406f929c0e443ef7a8890c645cd8d3f810d29efce52cefc526",
+      "target": "problems/triangular-low-rank-counting/reference/exterior.py",
+      "transformation": "Focused exterior endpoint proof and exact generic-ring implementation; strongest algorithm retained; classical immanant extraction included only within this family."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/structured_counting/check_dag_endpoint_set_dp.py",
+      "source_sha256": "7ad9838097bfb5406f929c0e443ef7a8890c645cd8d3f810d29efce52cefc526",
+      "target": "problems/triangular-low-rank-counting/verify/check.py",
+      "transformation": "Focused exterior endpoint proof and exact generic-ring implementation; strongest algorithm retained; classical immanant extraction included only within this family."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/structured_counting/check_triangular_immanant_extraction.py",
+      "source_sha256": "b17fb61ddc591d10495ffaf1897b968391ee7eb5bb783815c60b942186b76658",
+      "target": "problems/triangular-low-rank-counting/reference/exterior.py",
+      "transformation": "Focused exterior endpoint proof and exact generic-ring implementation; strongest algorithm retained; classical immanant extraction included only within this family."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/structured_counting/check_triangular_immanant_extraction.py",
+      "source_sha256": "b17fb61ddc591d10495ffaf1897b968391ee7eb5bb783815c60b942186b76658",
+      "target": "problems/triangular-low-rank-counting/verify/check.py",
+      "transformation": "Focused exterior endpoint proof and exact generic-ring implementation; strongest algorithm retained; classical immanant extraction included only within this family."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/low_rank_cycles/check_low_rank_modular_immanants.py",
+      "source_sha256": "1d2b53adc145a535d1a934e0cd9c2d53df10e23f056cef0d8ad6e43b2ae0a664",
+      "target": "problems/triangular-low-rank-counting/verify/check.py",
+      "transformation": "Focused exterior endpoint proof and exact generic-ring implementation; strongest algorithm retained; classical immanant extraction included only within this family."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/structured_exact_counting.md",
+      "source_sha256": "8f43f657420f0e54e0c6d0371650ba8aae10c5b1bd914bdc1d464a96617052b7",
+      "target": "problems/sparse-low-rank-counting/proof.md",
+      "transformation": "Retain complete Part I sparse-plus-low-rank proof; omit overview/Part II/acyclic/content branches; normalize local links, display delimiters and attribution; explicitly supply numeric bounds and rational scaling for its already proved fixed-monomer extension."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/structured_exact_counting.md",
+      "source_sha256": "8f43f657420f0e54e0c6d0371650ba8aae10c5b1bd914bdc1d464a96617052b7",
+      "target": "problems/sparse-low-rank-counting/README.md",
+      "transformation": "Retain complete Part I sparse-plus-low-rank proof; omit overview/Part II/acyclic/content branches; normalize local links, display delimiters and attribution; explicitly supply numeric bounds and rational scaling for its already proved fixed-monomer extension."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/research_notes/universal_ring_contraction.md",
+      "source_sha256": "0b098a54c3385ac582e07c39b56346f2e8581f46304b64b2d3d798dba002b25d",
+      "target": "problems/sparse-low-rank-counting/manuscripts/ring-contraction.md",
+      "transformation": "Retain full general contraction theorem and proof. Omit routine sparse corollaries and dense-bottleneck discussion; add exact Definition 7 Schur dimension/Boolean-padding/finite coefficient interface and acyclic dependency boundary."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/structured_hypermatching.md",
+      "source_sha256": "c739b52d2b4b90af2a4444fdcd1a565bdaa7347bc22309dead6e658b6d0088f0",
+      "target": "problems/sparse-low-rank-counting/manuscripts/hypermatching.md",
+      "transformation": "Retain full symmetric-core and partite fixed-uniformity proofs as supporting context only; normalize links, display delimiters and attribution."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/audits/integral_fock_dependency_audit.md",
+      "source_sha256": "39583fc813f3e5c7b8dd521ed96b2b49ba747788a3f96b85c3def12ad9217207",
+      "target": "problems/sparse-low-rank-counting/manuscripts/integral-dependency-audit.md",
+      "transformation": "Retain algebraic audit sections 1–6; replace historical execution section with explicit evidence boundary and links to existing package checkers; no new historical run claim."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/structured_counting/check_sparse_low_rank.py",
+      "source_sha256": "7c036ba3567e8691cec54d9761ccd77f783ec1c28847d8151af519488ccb93ca",
+      "target": "problems/sparse-low-rank-counting/reference/reductions.py",
+      "transformation": "Split finite reference definitions from checker, remove unrelated exceptional-vertex branch, preserve core arithmetic and add independent explicit-rational modular lifts for permanent, hafnian and fixed monomers."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/structured_counting/check_sparse_low_rank.py",
+      "source_sha256": "7c036ba3567e8691cec54d9761ccd77f783ec1c28847d8151af519488ccb93ca",
+      "target": "problems/sparse-low-rank-counting/verify/check_core.py",
+      "transformation": "Split finite reference definitions from checker, remove unrelated exceptional-vertex branch, preserve core arithmetic and add independent explicit-rational modular lifts for permanent, hafnian and fixed monomers."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/structured_counting/check_hypermatching.py",
+      "source_sha256": "80d53b4141f80e79c0d0698074848ea1b0195b6d6864431fd0a6ed19495017e0",
+      "target": "problems/sparse-low-rank-counting/reference/hypermatching.py",
+      "transformation": "Split finite reference definitions from checker; preserve arithmetic and finite checks. No archive runtime dependency."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/structured_counting/check_hypermatching.py",
+      "source_sha256": "80d53b4141f80e79c0d0698074848ea1b0195b6d6864431fd0a6ed19495017e0",
+      "target": "problems/sparse-low-rank-counting/verify/check_hypermatching.py",
+      "transformation": "Split finite reference definitions from checker; preserve arithmetic and finite checks. No archive runtime dependency."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/partial_transpose.tex",
+      "source_sha256": "7c0124bad675ec11ebdfc5950e582b7a331037edc586504e3429a63b20811955",
+      "target": "manuscripts/partial-transpose-circuits/circuits.tex",
+      "transformation": "Focused section extraction preserving complete proofs: integral profile, orientation composition, balanced shared DAG frontier, intermediate set-multilinear theorem, lazy ordinary projection, border proposition and constructive circuit factors. Broad abstract/title replaced; only relevant bibliography retained; explicit unital-ring and coefficient-interface scope added. Other network/counting/lower-bound sections omitted."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/partial_transpose.tex",
+      "source_sha256": "7c0124bad675ec11ebdfc5950e582b7a331037edc586504e3429a63b20811955",
+      "target": "manuscripts/partial-transpose-circuits/proof.md",
+      "transformation": "Focused section extraction preserving complete proofs: integral profile, orientation composition, balanced shared DAG frontier, intermediate set-multilinear theorem, lazy ordinary projection, border proposition and constructive circuit factors. Broad abstract/title replaced; only relevant bibliography retained; explicit unital-ring and coefficient-interface scope added. Other network/counting/lower-bound sections omitted."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/partial_transpose.tex",
+      "source_sha256": "7c0124bad675ec11ebdfc5950e582b7a331037edc586504e3429a63b20811955",
+      "target": "manuscripts/partial-transpose-circuits/README.md",
+      "transformation": "Focused section extraction preserving complete proofs: integral profile, orientation composition, balanced shared DAG frontier, intermediate set-multilinear theorem, lazy ordinary projection, border proposition and constructive circuit factors. Broad abstract/title replaced; only relevant bibliography retained; explicit unital-ring and coefficient-interface scope added. Other network/counting/lower-bound sections omitted."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/research_notes/constructive_circuit_factors.md",
+      "source_sha256": "c192d71c2a420116c7ad068f8029329715375b371246f96d66311c7c262c50ef",
+      "target": "manuscripts/partial-transpose-circuits/proof.md",
+      "transformation": "Reconcile deterministic padding, factor labels, latent contraction recurrence and arithmetic-versus-bit/output boundaries into connected proof."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/audits/border_pt_audit.md",
+      "source_sha256": "238057ccf9c03b646677914b7826e54d95c72d67fbc6d7b361abd8c9846f80ed",
+      "target": "manuscripts/partial-transpose-circuits/proof.md",
+      "transformation": "Use only algebraic-closure convention and uniform continuous-map upper-bound argument; no border lower-bound/profile appendices imported."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/audits/border_pt_audit.md",
+      "source_sha256": "238057ccf9c03b646677914b7826e54d95c72d67fbc6d7b361abd8c9846f80ed",
+      "target": "manuscripts/partial-transpose-circuits/sources.md",
+      "transformation": "Use only algebraic-closure convention and uniform continuous-map upper-bound argument; no border lower-bound/profile appendices imported."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/research_notes/pt_novelty_audit.md",
+      "source_sha256": "d3a1be7e6b440d1db29de3a0df76f2933c19b2fe8277297cf00db29e4263fac0",
+      "target": "manuscripts/partial-transpose-circuits/sources.md",
+      "transformation": "Review source pins and precise prior-work comparison, refreshed against primary full text; no audit copied."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/research_notes/circuit_schur_literature_audit.md",
+      "source_sha256": "92a15f65a1a43090b96201aa88bdb1cc68b5e7b59f607fbf4c04fbbbf07d613a",
+      "target": "manuscripts/partial-transpose-circuits/sources.md",
+      "transformation": "Use attribution boundary for established frontier/projection methods; freshly verify publisher Lemma9 versus arXivv2 Lemma6 numbering; no Schur application imported."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/circuit_frontier/check_circuit_frontier.py",
+      "source_sha256": "16c40bc8924a876fd27c7d65863bf2a1672232387aade581c75d722b110f3562",
+      "target": "manuscripts/partial-transpose-circuits/verify/check_circuit_frontier.py",
+      "transformation": "Native path adaptation and attribution; frontier receipt renamed frontier_results.json; exact finite suite executed locally."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/circuit_frontier/check_homogeneous_projection.py",
+      "source_sha256": "95748ff9dc7cb4082b41babbf1170f599e5bfaabf9288a28296091d8e563f6a7",
+      "target": "manuscripts/partial-transpose-circuits/verify/check_homogeneous_projection.py",
+      "transformation": "Native path adaptation and attribution; frontier receipt renamed frontier_results.json; exact finite suite executed locally."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/circuit_frontier/check_interleaved_composition.py",
+      "source_sha256": "22ad1ad00f6e3ba4c79ceb01c18fb7ea0f5624bb31d912daa04768bb77eb0a5c",
+      "target": "manuscripts/partial-transpose-circuits/verify/check_interleaved_composition.py",
+      "transformation": "Native path adaptation and attribution; frontier receipt renamed frontier_results.json; exact finite suite executed locally."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/exact_counting.md",
+      "source_sha256": "c3388ef2969ccbb276ac2ac72dc95dbaed203fea5026f856a5110ab0aaec4913",
+      "target": "problems/subset-sum-exact-counting/proof.md",
+      "transformation": "Focused English curation with current attribution and canonical links; exact-counting construction and source-premise boundaries preserved."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/manuscripts/exact_counting_refinement.md",
+      "source_sha256": "6c73476424957be4d8f37b416810c0942ddfd25e07a7041bd0b5d01af7afea8b",
+      "target": "problems/subset-sum-exact-counting/parameter-certificate.md",
+      "transformation": "Focused English curation with current attribution and canonical links; exact-counting construction and source-premise boundaries preserved."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/counting/check_trace_and_threshold.py",
+      "source_sha256": "a74a93f1b12b1e319a81388b116372bda3941cecaf2c04a50d1305565b0f08bb",
+      "target": "problems/subset-sum-exact-counting/verify/check_trace_and_threshold.py",
+      "transformation": "Focused English curation with current attribution and canonical links; exact-counting construction and source-premise boundaries preserved."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/counting/check_activity_lifting.py",
+      "source_sha256": "545377f56e33a4bc8085e7ff9c8c36c6e852b247505dc3a133190d75ceaf853c",
+      "target": "problems/subset-sum-exact-counting/verify/check_activity_lifting.py",
+      "transformation": "Focused English curation with current attribution and canonical links; exact-counting construction and source-premise boundaries preserved."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/counting/check_improved_filter_certificate.py",
+      "source_sha256": "006c8602131db83821ad462318fbe97985241a342251878445598e200d6facda",
+      "target": "problems/subset-sum-exact-counting/verify/check_improved_filter_certificate.py",
+      "transformation": "Focused English curation with current attribution and canonical links; exact-counting construction and source-premise boundaries preserved. Recheck the source all-sparse-support entropy bound at mu=0.0574; omit the unnecessary sampled-block strengthening."
+    },
+    {
+      "source_member": "tcs_research_checkpoint/verification/counting/check_weighted_trace.py",
+      "source_sha256": "a1bcd5e9a834727d082e57d5e423892842c1d8a84660400c39486eaed564af59",
+      "target": "problems/subset-sum-exact-counting/verify/check_weighted_trace.py",
+      "transformation": "Focused English curation with current attribution and canonical links; exact-counting construction and source-premise boundaries preserved."
+    }
+  ],
+  "external_primary_sources": [
+    {
+      "section": "setup.tex",
+      "bytes": 10736,
+      "sha256": "7a5681c2a0ec43838737d517978a49d6b2d68125f6419526a00d053a283c00ba",
+      "url": "https://raw.githubusercontent.com/openai/math/4eaee87548250b2682affda7d05d947c05554bae/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/setup.tex"
+    },
+    {
+      "section": "aliases.tex",
+      "bytes": 19836,
+      "sha256": "828e8ef5b3173a4e0a9818679ad658e291ef7f2a3cbe56334a12a271f88b2e5f",
+      "url": "https://raw.githubusercontent.com/openai/math/4eaee87548250b2682affda7d05d947c05554bae/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/aliases.tex"
+    },
+    {
+      "section": "filtering.tex",
+      "bytes": 7995,
+      "sha256": "17443991a51fa09b86c8523ec4cada86cb32833d37b9e9fef0b38b56eb814b8e",
+      "url": "https://raw.githubusercontent.com/openai/math/4eaee87548250b2682affda7d05d947c05554bae/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/filtering.tex"
+    },
+    {
+      "section": "checksum.tex",
+      "bytes": 24436,
+      "sha256": "3c0d8f4ae1810e420c4a1e2ee098e4878e9ad39c152c5395eb7ab273078d9818",
+      "url": "https://raw.githubusercontent.com/openai/math/4eaee87548250b2682affda7d05d947c05554bae/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/checksum.tex"
+    },
+    {
+      "section": "implementation.tex",
+      "bytes": 18224,
+      "sha256": "ef78713f1e782ccb8c0360aa2ff68e0145cef9105371423e2617215d0d6e3aea",
+      "url": "https://raw.githubusercontent.com/openai/math/4eaee87548250b2682affda7d05d947c05554bae/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/implementation.tex"
+    },
+    {
+      "section": "numerical.tex",
+      "bytes": 13885,
+      "sha256": "a4cc12248568d90368197466f562944f119b8f68535f72c576dd2f342b33b6dd",
+      "url": "https://raw.githubusercontent.com/openai/math/4eaee87548250b2682affda7d05d947c05554bae/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/numerical.tex"
+    }
+  ],
+  "source_reviews": {
+    "triangular": "Source-independent endpoint recurrence with explicit sign/state invariants; classical color/Schur identities credited.",
+    "sparse": {
+      "url": "https://hexagonmath.org/pdf/2610.00577v1",
+      "scope": "Actual pages 27–29: Definition 7, Lemma 8, Theorem A and equations 40–44 inspected. d=1 removes only ring division; widths/control independent of ring values; source admits succinct queries. Barvinok/Arvind primary publication records checked. Contextual ICALP2026 DOI was unavailable; no conclusion depends on it."
+    },
+    "partial_transpose": [
+      {
+        "url": "https://arxiv.org/html/2512.01227v1",
+        "date": "2026-11-02",
+        "scope": "PT definition and shifted-encoding boundary;Section6 primary comparison;not a novelty certificate."
+      },
+      {
+        "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol388-esa2026/LIPIcs.ESA.2026.63/LIPIcs.ESA.2026.63.pdf",
+        "date": "2026-11-02",
+        "scope": "Publisher Theorem2 and Lemma9 set-multilinearization background;arXiv2607.02241v2 numbers component lemma6."
+      },
+      {
+        "url": "https://dlmf.nist.gov/27.14.E8",
+        "date": "2026-11-02",
+        "scope": "Partition asymptotic only."
+      }
+    ],
+    "counting": "Pinned six-section source interfaces fetched and read; independent focused cross-review of changed phase law, trace recovery, alias coverage, exact certificate and all-history caps found no blocker. Unused sampled-block strengthening omitted."
+  },
+  "excluded_route_notes": [
+    {
+      "members": [
+        "manuscripts/triangular_modular_counting.md",
+        "research_notes/dense_dag_modular_counting.md",
+        "verification/structured_counting/check_dag_endpoint_sets.py"
+      ],
+      "reason": "Older factorial coefficient-algebra HC route is dominated by the exterior endpoint algorithm; omit its native code and result dumps instead of keeping parallel weaker packages. Its permanent statements are not separately retained."
+    },
+    {
+      "members": [
+        "research_notes/positive_target_rank_one_triangular.md"
+      ],
+      "reason": "Positive-target rank-one and direct-paper corollaries do not form an additional substantive complete result family."
+    },
+    {
+      "scope": "Unrestricted dense permanent/HC and exact integer Hamiltonian recovery",
+      "reason": "Supplied structural decomposition and color parameter are essential; arbitrary edge weighting/growing modulus need not preserve the subexponential regime."
+    },
+    {
+      "scope": "Constant-width immanants as a separate catalogue entry",
+      "reason": "Classical Schur extraction of this same marked algorithm; preserve proof and end-to-end checks only."
+    },
+    {
+      "source": "manuscripts/structured_exact_counting.md Part II and later branches",
+      "reason": "Exceptional-set and acyclic/content branches omitted to keep substantive sparse-plus-low-rank composition central; not promoted as separate routine corollaries."
+    },
+    {
+      "source": "research_notes/sparse_low_rank_hamiltonian.md",
+      "reason": "Complete fixed-characteristic candidate audited at scope level but omitted from this selected package by parent scope decision; no characteristic-zero reconstruction is inferred."
+    },
+    {
+      "source": "research_notes/universal_ring_contraction.md routine sparse permanent/hafnian/CSP corollaries",
+      "reason": "Direct corollaries of the cited recursion plus existing integral primitive; retained only as dependency machinery, not separate results."
+    },
+    {
+      "members": [
+        "manuscripts/partial_transpose.tex: coarsening, tensor trains, trees, separators, ordered ABPs"
+      ],
+      "reason": "Distinct structural specializations;ordinary-circuit family is selected once in its strongest general scope;no additional catalogue proliferation."
+    },
+    {
+      "members": [
+        "manuscripts/partial_transpose.tex: Schur-character, central and matching operators, Gram immanants"
+      ],
+      "reason": "Applications of the selected structural theorem and classical coefficient identities;not curated as separate algorithms."
+    },
+    {
+      "members": [
+        "manuscripts/partial_transpose.tex: conditional lower-bound criteria and maximal-profile constructions",
+        "audits/border_pt_audit.md: lower-bound and optimum sections"
+      ],
+      "reason": "Conditional criteria and obstruction/profile results are not the selected algorithmic contribution;no unresolved separation target imported."
+    },
+    {
+      "members": [
+        "verification/fock/fock_audit_source/"
+      ],
+      "reason": "Duplicate existing primitive snapshot;refer to canonical repository finite/integral/coefficient proof sources instead."
+    },
+    {
+      "members": [
+        "verification/partial_transpose/: MPO and graph factor oracles"
+      ],
+      "reason": "Checks target omitted network families;actual interleaved factor certificate retained for the selected generic composition."
+    }
+  ],
+  "counts": {
+    "source_members": 161,
+    "source_bytes": 1270649,
+    "integrated_members": 25,
+    "excluded_members": 136,
+    "canonical_targets": 26
+  },
+  "verification_boundary": "Historical member hashes identify source bytes, not immutable edited current targets. Selection/ZIP checks are provenance only; finite algorithms and exact rational certificates have separately stated scopes. No full regression or proof-assistant certification."
+}

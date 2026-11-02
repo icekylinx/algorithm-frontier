@@ -412,6 +412,30 @@ Uniform growing-parameter ordered subset aggregation and rectangular permanent, 
 
 [Proof](../problems/ordered-subset-contraction/proof.md) · [Dependencies](../problems/ordered-subset-contraction/sources.md) · [Evidence](../problems/ordered-subset-contraction/verify/README.md) · Reviewed 2026-10-28
 
+### [Sparse corrections and supplied low-rank exact counting](../problems/sparse-low-rank-counting/)
+
+Complete sparse matching/moment-algebra composition for permanent, hafnian and fixed monomers; entropy-sized truncation, all-ring arithmetic specialization, explicit integer/rational bit recovery, and supporting fixed-uniformity symmetric/partite hypermatching proofs. Actual primary contraction interface and existing integral prerequisite audited; no circularity found.
+
+**Dependencies and scope.** Anthropic Appendix A Definition 7/Lemma 8/Theorem A, part (b) is a cited mathematical ingredient; local ring lift removes the normalizer division via existing finite Schur pieces. No independent proof or fast implementation of that external recursion is claimed. Only existing finite-crossing, integral-pieces and coefficient-computation proofs are dependencies. The prior package's matrix exponent/SAT branches and the separate literal truncated-2-adic integer-factorization theorem are not used. Explicit finite coefficient-vector costs and all Boolean state wires are charged. Native tests validate finite reductions and numeric lifting, not asymptotic exponents, source theorem correctness, historical priority or formal verification. Finding the supplied factorization, unrestricted dense permanent/hafnian, and arbitrary constant-circuit numeric inputs without output-size accounting are excluded.
+
+[Proof](../problems/sparse-low-rank-counting/proof.md) · [Dependencies](../problems/sparse-low-rank-counting/sources.md) · [Evidence](../problems/sparse-low-rank-counting/verify/README.md) · Reviewed 2026-11-02
+
+### [Exterior endpoint counting for triangular low-rank updates](../problems/triangular-low-rank-counting/)
+
+Complete explicit exterior endpoint algorithm, changing-order wedge-sign invariant, all-ring correctness, uniform division-free circuit construction, entropy bound, integral prime-power HC extraction and exact integer/rational realization; marked DP and integral constant-width immanant extraction included within the family.
+
+**Dependencies and scope.** Input supplies the simultaneous triangular order and B,U,V factors; decomposition discovery/minimum rank is outside scope. Subexponential conclusion fixes q (or annihilator M/partition width k) and assumes supplied `r=o(n)`. Uniform precision dependence is charged through pt; there is no growing-modulus exact-integer Hamiltonian inference. Ring-operation theorem requires no identity test. The sparse Python reference uses equality-based zero omission as an implementation optimization; structurally retained states unroll without it. Exact finite verification checks implemented instances, not asymptotic runtime, external peer review, formal proof, or publication-level priority. Bounded primary-source search only. Classical Crane, Knezevic/Cohen, Cauchy--Binet, Goulden/Jackson, dual Cauchy and alternant identities are credited antecedents, not new claims.
+
+[Proof](../problems/triangular-low-rank-counting/proof.md) · [Dependencies](../problems/triangular-low-rank-counting/sources.md) · [Evidence](../problems/triangular-low-rank-counting/verify/README.md) · Reviewed 2026-11-02
+
+### [Randomized exact Subset Sum counting](../problems/subset-sum-exact-counting/)
+
+Complete exact indexed Subset Sum counting extension, changed polynomial-order phase law, cyclotomic/CRT recovery, original all-sparse-support alias coverage rechecked at the selected parameters and strongest rationally certified parameter choice, assuming the explicitly named pinned filtering/alias source lemmas.
+
+**Dependencies and scope.** The pinned external filtering, deficiency, alias and finite-arithmetic results remain accepted mathematical inputs; the local extension checks rather than assumes the modified phase distribution. Finite checks and exact numerical certificates have their stated scopes. No full exponential-time estimator implementation, proof-assistant verification, external review, historical priority or decision-exponent record is claimed.
+
+[Proof](../problems/subset-sum-exact-counting/proof.md) · [Dependencies](../problems/subset-sum-exact-counting/sources.md) · [Evidence](../problems/subset-sum-exact-counting/verify/README.md) · Reviewed 2026-11-02
+
 ## Components ready for review
 
 ### [Numeric targets and support patterns](../problems/numeric-target-frontier/)
@@ -535,6 +559,14 @@ These independent results have their own review scopes. A completed static theor
 
 [Manuscript](../problems/roabp-affine-pit/manuscripts/quadratic-hasse-obstruction.md) · [Evidence](../problems/roabp-affine-pit/verify/README.md) · Reviewed 2026-10-27
 
+### [Paired coefficient matrices of ordinary arithmetic circuits](../manuscripts/partial-transpose-circuits/proof.md)
+
+**Ready for review.** Complete focused mathematical deduction of ordinary circuit paired-coefficient PT length, all-field rank, ring-uniform supplied factors, geometric border consequence and arithmetic factor-entry/compact-circuit construction from the existing normalization-one integral crossing primitive.
+
+**Dependencies and scope.** Canonical integral crossing/finite duality manuscripts at pin2658b60c9d032611492792718bd9d39f721de09f are proved repository dependencies;no rectangular matrix or SAT result is used. Effective factor queries additionally use the canonical explicit crossing-coefficient algorithm. Ring-operation costs and integral crossing generation are charged separately;arbitrary ring-value bit lengths and dense printing are separate. Border closure over algebraic closure bounds geometric border PT-rank only;ordinary PT-rank at a limit and finite limiting factors are not asserted. Finite DAG/projection/orientation suites do not prove the asymptotic theorem or certify publication priority;no PDF build,external peer review or proof-assistant verification is claimed.
+
+[Manuscript](../manuscripts/partial-transpose-circuits/proof.md) · [Evidence](../manuscripts/partial-transpose-circuits/verify/README.md) · Reviewed 2026-11-02
+
 ### Supporting review pending
 
 - [Nonuniform sparse route rounding](../manuscripts/graph-backends/nonuniform-fractional-path-selection.md)
@@ -558,6 +590,9 @@ Each linked program documents its checked identities or finite domain. The per-r
 
 - [manuscripts/graph-backends/verify/check_odd_crown.py](../manuscripts/graph-backends/verify/check_odd_crown.py)
 - [manuscripts/graph-backends/verify/check_static_allocations.py](../manuscripts/graph-backends/verify/check_static_allocations.py)
+- [manuscripts/partial-transpose-circuits/verify/check_circuit_frontier.py](../manuscripts/partial-transpose-circuits/verify/check_circuit_frontier.py)
+- [manuscripts/partial-transpose-circuits/verify/check_homogeneous_projection.py](../manuscripts/partial-transpose-circuits/verify/check_homogeneous_projection.py)
+- [manuscripts/partial-transpose-circuits/verify/check_interleaved_composition.py](../manuscripts/partial-transpose-circuits/verify/check_interleaved_composition.py)
 - [problems/activated-machine-scheduling/verify/check_activation.py](../problems/activated-machine-scheduling/verify/check_activation.py)
 - [problems/activated-machine-scheduling/verify/check_six_profiles.py](../problems/activated-machine-scheduling/verify/check_six_profiles.py)
 - [problems/allocation-lower-bounds/verify/check_barriers.py](../problems/allocation-lower-bounds/verify/check_barriers.py)
@@ -640,6 +675,12 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/robust-unrelated-allocation/verify/check_robust.py](../problems/robust-unrelated-allocation/verify/check_robust.py)
 - [problems/robust-width-two-allocation/verify/check_width_two.py](../problems/robust-width-two-allocation/verify/check_width_two.py)
 - [problems/selected-flow/verify/check_concurrent.py](../problems/selected-flow/verify/check_concurrent.py)
+- [problems/sparse-low-rank-counting/verify/check_core.py](../problems/sparse-low-rank-counting/verify/check_core.py)
+- [problems/sparse-low-rank-counting/verify/check_hypermatching.py](../problems/sparse-low-rank-counting/verify/check_hypermatching.py)
+- [problems/subset-sum-exact-counting/verify/check_activity_lifting.py](../problems/subset-sum-exact-counting/verify/check_activity_lifting.py)
+- [problems/subset-sum-exact-counting/verify/check_improved_filter_certificate.py](../problems/subset-sum-exact-counting/verify/check_improved_filter_certificate.py)
+- [problems/subset-sum-exact-counting/verify/check_trace_and_threshold.py](../problems/subset-sum-exact-counting/verify/check_trace_and_threshold.py)
+- [problems/subset-sum-exact-counting/verify/check_weighted_trace.py](../problems/subset-sum-exact-counting/verify/check_weighted_trace.py)
 - [problems/subset-sum-fast-deterministic/verify/check_energy.py](../problems/subset-sum-fast-deterministic/verify/check_energy.py)
 - [problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py](../problems/subset-sum-fast-deterministic/verify/check_headline_ledger.py)
 - [problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py](../problems/subset-sum-fast-deterministic/verify/check_replay_recovery.py)
@@ -649,6 +690,7 @@ Each linked program documents its checked identities or finite domain. The per-r
 - [problems/subset-sum-low-space-deterministic/verify/check_range_solver.py](../problems/subset-sum-low-space-deterministic/verify/check_range_solver.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_resources.py](../problems/subset-sum-low-space-deterministic/verify/check_resources.py)
 - [problems/subset-sum-low-space-deterministic/verify/check_structural.py](../problems/subset-sum-low-space-deterministic/verify/check_structural.py)
+- [problems/triangular-low-rank-counting/verify/check.py](../problems/triangular-low-rank-counting/verify/check.py)
 - [problems/two-size-scheduling/verify/check_corank.py](../problems/two-size-scheduling/verify/check_corank.py)
 - [problems/two-time-scheduling/verify/check_scheduling.py](../problems/two-time-scheduling/verify/check_scheduling.py)
 - [problems/unrelated-values-joint-role/verify/check_joint.py](../problems/unrelated-values-joint-role/verify/check_joint.py)

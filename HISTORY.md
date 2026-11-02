@@ -1,5 +1,13 @@
 # History
 
+## 2026-11-02 — Constructive counting and ordinary circuit structure
+
+- Added source-independent exterior endpoint counting for dense triangular-plus-low-rank updates: an explicit sign/state invariant, the full sublinear-width entropy regime, modular Hamiltonian and prime-power precision, and classical marked-immanant completion within one family.
+- Added sparse-plus-low-rank permanent/hafnian composition over every commutative unital ring, explicit finite moment algebras, Boolean edge accounting and exact integer/rational recovery. The quantitative contraction recursion and existing normalization-one crossing primitive retain their precise dependency boundaries; supporting hypermatching is not a separate headline.
+- Added general randomized exact indexed Subset Sum counting with the strongest certified exponent 0.48986, changed polynomial-order phase law, trace/CRT recovery, nonisolating aliases and all-history caps. Six pinned primary-source sections were fetched and checked. The unused sampled-block strengthening was omitted because the original all-sparse-support argument still closes with an exact entropy certificate.
+- Added ordinary arithmetic-circuit partial-transpose decomposition as structural support, including all-characteristic supplied factors and compact entry queries. No fast arbitrary-coefficient evaluation or complexity-class separation follows from this result alone.
+- Recorded all 161 checkpoint member identities, with 25 selected source members and 26 adapted targets. Dominated endpoint algorithms, direct classical consequences, numerical-only headlines, unresolved targets, duplicate primitive snapshots and original archives are excluded from publication. Ten focused algorithm suites and affected source/presentation metadata are checked; no full algorithm regression, new PDF build or formal certification is claimed.
+
 ## 2026-11-02 — Local checkpoint organization
 
 - Moved 35 original checkpoint ZIPs from the repository root to the ignored `.local/checkpoints/` directory, preserving all 44,172,311 archive bytes and recording a local SHA-256 inventory. No historical archive was discarded.

@@ -1,0 +1,701 @@
+{
+  "status": "passed",
+  "seed": 202611020413,
+  "certificates": 24,
+  "integer_entry_checks": 14848,
+  "modular_matrix_checks": 144,
+  "negative_controls_rejected": 24,
+  "arithmetic": "exact integers; reductions modulo 2, 3, 4, 6, 8, 101",
+  "scope": "Finite matrix-factor checks; not an asymptotic rank proof.",
+  "elapsed_seconds": 0.271902,
+  "records": [
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 256,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        3,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 576,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0
+        ]
+      ],
+      "orientations": 16,
+      "columns_per_orientation": 4,
+      "integer_entry_checks": 1024,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 256,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        3,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 576,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0
+        ]
+      ],
+      "orientations": 16,
+      "columns_per_orientation": 4,
+      "integer_entry_checks": 1024,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 256,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        3,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 576,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0
+        ]
+      ],
+      "orientations": 16,
+      "columns_per_orientation": 4,
+      "integer_entry_checks": 1024,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 256,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        3,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 576,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0
+        ]
+      ],
+      "orientations": 16,
+      "columns_per_orientation": 4,
+      "integer_entry_checks": 1024,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 256,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        3,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 576,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0
+        ]
+      ],
+      "orientations": 16,
+      "columns_per_orientation": 4,
+      "integer_entry_checks": 1024,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 256,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        3,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 576,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0
+        ]
+      ],
+      "orientations": 16,
+      "columns_per_orientation": 4,
+      "integer_entry_checks": 1024,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 256,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        3,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 576,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0
+        ]
+      ],
+      "orientations": 16,
+      "columns_per_orientation": 4,
+      "integer_entry_checks": 1024,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 256,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        3,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "orientations": 8,
+      "columns_per_orientation": 3,
+      "integer_entry_checks": 576,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    },
+    {
+      "dimensions": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "first_scopes": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0
+        ]
+      ],
+      "orientations": 16,
+      "columns_per_orientation": 4,
+      "integer_entry_checks": 1024,
+      "modular_matrix_checks": 6,
+      "missing_covariance_swap_rejected": true
+    }
+  ]
+}

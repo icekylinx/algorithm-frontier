@@ -117,3 +117,16 @@ not copied into the repository.
 metadata, and replays original member bytes when the ignored ZIP is locally
 available. Historical source hashes do not freeze edited manuscripts. This
 is provenance evidence, not mathematical or proof-assistant certification.
+
+## November constructive counting import
+
+The [November import manifest](imports/tcs-research-20261102.json) identifies
+all 161 original members and records 25 selected source members adapted into
+26 canonical proof/code targets. Three algorithm families and one structural
+supporting theorem are retained; the [selection summary](../docs/TCS-RESEARCH-20261102.md)
+states their complete input models, source premises and exclusions.
+
+`python3 tools/verify_tcs_import.py` checks selection and current target
+metadata, replays the original ZIP when locally available and rejects tracked
+original archives. The ZIP and duplicate checkpoint tree are not publication
+artifacts. Source identities do not freeze subsequent edited manuscript bytes.

@@ -4,7 +4,7 @@ Algorithms and proofs in combinatorial optimization, number theory, algebraic co
 
 [![Repository checks](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml/badge.svg)](https://github.com/icekylinx/algorithm-frontier/actions/workflows/curation.yml) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-**58 problem families · 19 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
+**61 problem families · 20 supporting results** · [Proof index](CONTENTS.md) · [Review and verification](reviews/README.md) · [Citation](CITATION.cff)
 
 ## Selected results
 
@@ -76,11 +76,14 @@ Categories follow the selected-result topics, then related methods and applicati
 
 - [Faster deterministic Subset Sum](problems/subset-sum-fast-deterministic/)
 - [Low-space deterministic Subset Sum](problems/subset-sum-low-space-deterministic/)
+- [Randomized exact Subset Sum counting](problems/subset-sum-exact-counting/)
 
 ### Algebraic complexity
 
 - [Deterministic PIT for fixed-width affine ROABP orbits](problems/roabp-affine-pit/)
+- [Exterior endpoint counting for triangular low-rank updates](problems/triangular-low-rank-counting/)
 - [Integral ordered crossing circuits](problems/noncommutative-crossing/)
+- [Sparse corrections and supplied low-rank exact counting](problems/sparse-low-rank-counting/)
 - [Uniform ordered subset contraction and rectangular permanent](problems/ordered-subset-contraction/)
 
 ### Number theory
@@ -153,7 +156,7 @@ Categories follow the selected-result topics, then related methods and applicati
 
 ### Supporting results
 
-The [complete index](CONTENTS.md#supporting-results) also lists 19 supporting algorithms, structural theorems, and scoped lower bounds. [Shared manuscripts](CONTENTS.md#shared-manuscripts) collect reusable proofs and backend interfaces.
+The [complete index](CONTENTS.md#supporting-results) also lists 20 supporting algorithms, structural theorems, and scoped lower bounds. [Shared manuscripts](CONTENTS.md#shared-manuscripts) collect reusable proofs and backend interfaces.
 
 ## Reading and verification
 

@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "run_utc": "2026-11-02T06:17:36.283520+00:00",
+  "elapsed_seconds": 0.278439,
+  "shared_dag_instances": 160,
+  "frontier_calls": 576,
+  "coefficient_rings_per_call": [
+    "integers",
+    "F2",
+    "F3",
+    "F101"
+  ],
+  "exact_ring_identities": 2304,
+  "zero_root_checks": 185,
+  "nonzero_root_checks": 295,
+  "maximum_original_gate_count": 142,
+  "maximum_frontier_size": 4,
+  "created_context_gates_in_primary_checks": 4411,
+  "different_partition_orientation_cases": 24,
+  "negative_control": "Naively taking both balanced product children gives 2f, not f; detected over integers and F2.",
+  "scope": "Exact finite frontier identities, context scope invariants, O(S) context-size bound, and differing-partition orientation uniqueness. Does not establish the asymptotic crossing theorem or any circuit lower bound."
+}

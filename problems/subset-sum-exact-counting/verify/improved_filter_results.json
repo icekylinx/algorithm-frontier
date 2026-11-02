@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "arithmetic": "Exact Fraction interval arithmetic, rounded outward to 160 binary fractional bits",
+  "parameters": {
+    "tau": "24491/50000",
+    "eta": "10357/20000",
+    "mu": "287/5000",
+    "gamma": "979/2000",
+    "delta": "1019/100000",
+    "alpha": "523/50000",
+    "preliminary_cap": "48983/100000"
+  },
+  "continuous_integral_upper_bounds": [
+    "1.43131509437785",
+    "1.43134541010277"
+  ],
+  "continuous_rate": "207/400",
+  "threshold_lower_bound_numerator": "2092099467789415613109760754766106561093970010251",
+  "threshold_lower_bound_denominator": "1461501637330902918203684832716283019655932542976",
+  "strip_exponent_upper_bounds": [
+    "17.46960282608696",
+    "16.97515916071394"
+  ],
+  "outer_quadrature_error_upper": "0.00005748944409",
+  "list_rate_upper": "122442543/250000000",
+  "pair_rate_upper_including_bit_guard": "122449411/250000000",
+  "generation_rate": "1537/5000",
+  "all_sparse_support_rate_upper": "0.37443623599421",
+  "prime_distinction_rate_upper_including_bit_guard": "0.37444623599421",
+  "scope": "Validates the new fixed numerical certificate and exponent ledger; imports the named source analytic strip/inner error bounds and the general algorithm proofs, not their implementation.",
+  "source_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+  "source_numerical_blob_sha": "d9b2531441fcd7ac10b434746088de7d6d4e7576"
+}

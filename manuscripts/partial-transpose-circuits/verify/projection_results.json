@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "run_utc": "2026-11-02T06:17:36.354069+00:00",
+  "elapsed_seconds": 0.3187,
+  "homogeneous_shared_dag_instances": 160,
+  "frontier_calls": 288,
+  "recursive_restricted_factor_calls": 128,
+  "coefficient_rings": [
+    "integers",
+    "F2",
+    "F3",
+    "F101"
+  ],
+  "exact_frontier_identities": 1152,
+  "exact_product_projection_identities": 1832,
+  "products_with_repeated_blocks_checked": 403,
+  "nonzero_squarefree_roots": 129,
+  "zero_squarefree_roots": 31,
+  "maximum_original_gate_count": 106,
+  "maximum_frontier_size": 4,
+  "controls": [
+    "Shared square (x+y)^2 has squarefree coefficient 2 over integers and 0 over F2.",
+    "Positive-degree zero leaves are skipped correctly."
+  ],
+  "scope": "Finite homogeneous DAG frontier, context-degree, lazy squarefree projection, restriction and characteristic-two identities. Does not certify any asymptotic rank bound or complexity-class separation."
+}

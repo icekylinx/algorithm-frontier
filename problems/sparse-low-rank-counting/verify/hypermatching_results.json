@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "arithmetic": "Exact integer arithmetic and modular reductions",
+  "scope": "Finite validation of the new hypermatching reductions; not the asymptotic contraction engine",
+  "counts": {
+    "integer_symmetric_hypermatching_identities": 108,
+    "modular_symmetric_hypermatching_identities": 540,
+    "integer_partite_identities": 90,
+    "modular_partite_identities": 450,
+    "prime_truncation_partite_identities": 180
+  },
+  "total_checks": 1368,
+  "parameters": {
+    "symmetric_k": [
+      2,
+      3,
+      4
+    ],
+    "symmetric_N": "0,k,2k",
+    "symmetric_r": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "partite_k": [
+      2,
+      3
+    ],
+    "partite_n": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "partite_r": [
+      0,
+      1,
+      2
+    ]
+  }
+}
