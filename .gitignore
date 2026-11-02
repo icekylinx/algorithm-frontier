@@ -1,5 +1,7 @@
 # Original binary checkpoints remain outside the curated text tree.
 *.zip
+# Local source archives and their inventory are never publication artifacts.
+.local/
 .DS_Store
 __pycache__/
 node_modules

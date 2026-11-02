@@ -89,6 +89,10 @@ arguments, exact computational certificates and finite regression checks.
 Historical internal-review statements do not constitute external peer review
 or proof-assistant verification.
 
+Local original ZIPs are organized under the ignored `.local/checkpoints/`
+directory. The [local-input guide](../docs/LOCAL-INPUTS.md) explains the
+inventory, retained archive bytes and optional source-replay policy.
+
 ## Integer factorization imports
 
 The [factoring import record](imports/integer-factorization.json) identifies

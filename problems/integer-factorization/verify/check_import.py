@@ -40,6 +40,7 @@ assert sum(r['disposition']=='excluded-route' for r in manifest['members'])==12
 assert manifest['counts']=={'source_archives':2,'source_members':31,'retained_members':19,'excluded_members':12,'canonical_targets':18}
 for name,row in archives.items():
     path=ROOT/name
+    if not path.exists():path=ROOT/'.local/checkpoints'/name
     if not path.exists():continue  # Binary source archives are not shipped in CI.
     data=path.read_bytes()
     assert len(data)==row['bytes'] and hashlib.sha256(data).hexdigest()==row['sha256']

@@ -68,6 +68,8 @@ def main():
     replayed = 0
     archive = record['archive']
     path = ROOT / safe_path(archive['filename'])
+    if not path.exists():
+        path = ROOT / '.local/checkpoints' / safe_path(archive['filename'])
     if path.exists():
         payload = path.read_bytes()
         assert len(payload) == archive['bytes']

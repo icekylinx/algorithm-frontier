@@ -1,5 +1,11 @@
 # History
 
+## 2026-11-02 — Local checkpoint organization
+
+- Moved 35 original checkpoint ZIPs from the repository root to the ignored `.local/checkpoints/` directory, preserving all 44,172,311 archive bytes and recording a local SHA-256 inventory. No historical archive was discarded.
+- Updated optional SAT and factorization source replay to accept the organized location and the earlier root location. Both replay checks passed against the original 1,100 members.
+- Documented selective imports and changed-scope validation. This maintenance step does not change mathematical results or run the full algorithm suite.
+
 ## 2026-10-28 — Author handle and result ordering
 
 - Standardized current repository attribution, copyright notices, citation records and paper author lines to icekylinx, retaining GPT-6 Astra Pro and external source credits. Original archive fingerprints remain historical identities.

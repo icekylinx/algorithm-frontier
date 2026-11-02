@@ -22,8 +22,12 @@ contain longer derivations and shared interfaces.
    ready for review, record its exact scope, date and remaining conditions in
    `reviews/registry.json`, then run `python3 tools/build_reviews.py`. Use
    partial readiness when only named components of a family have been checked.
-5. Run `python3 tools/build_math_assets.py` after changing formulas, then
-   `python3 tools/check_repository.py`. Run the full continuous-domain
+5. Run `python3 tools/build_math_assets.py` after changing formulas. Validate
+   the changed algorithms and their direct dependencies, together with affected
+   source, catalogue, review and presentation bindings. Do not run an unrelated
+   whole-repository regression for a local import or documentation change.
+   `python3 tools/check_repository.py` remains available for an explicitly
+   requested full standard suite. Run the full continuous-domain
    Subset Sum certificate separately when changing its acceptance kernel,
    contact menu or circuit parameters.
 
@@ -62,6 +66,13 @@ Use descriptive semantic paths. Current manuscripts belong with their problem;
 proofs shared across families belong in `manuscripts/`. Keep import metadata
 and license boundaries in `provenance/`, rather than maintaining copied
 checkpoint trees or separate draft versions.
+
+Keep local original ZIPs under `.local/checkpoints/`, outside version control.
+The optional local inventory records each filename, byte count and SHA-256;
+the committed import manifests remain the historical source authority.
+See [local inputs](docs/LOCAL-INPUTS.md). Archive replay accepts this location
+and the earlier repository-root location. Moving an original ZIP does not
+change its recorded member identities or edited canonical manuscripts.
 
 Choose the representation by **purpose**, not by inline/block position or
 formula length. A formula presented as a headline bound, theorem conclusion,
