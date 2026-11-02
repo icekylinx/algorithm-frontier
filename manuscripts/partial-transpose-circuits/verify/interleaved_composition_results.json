@@ -7,7 +7,7 @@
   "negative_controls_rejected": 24,
   "arithmetic": "exact integers; reductions modulo 2, 3, 4, 6, 8, 101",
   "scope": "Finite matrix-factor checks; not an asymptotic rank proof.",
-  "elapsed_seconds": 0.271902,
+  "elapsed_seconds": 1.104052,
   "records": [
     {
       "dimensions": [

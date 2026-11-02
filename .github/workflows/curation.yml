@@ -24,14 +24,14 @@ permissions:
 jobs:
   validate:
     name: Validate manuscripts and certificates
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 2
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.1.0
         with:
           python-version: "3.11"
       - name: Run canonical repository checks

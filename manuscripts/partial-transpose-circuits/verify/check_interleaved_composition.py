@@ -6,7 +6,7 @@
 This closes the gap between checking the canonical-orientation bijection
 and checking the actual matrix factors when product partitions vary.
 The small integral I_4 crossing identity is used, not the asymptotic
-Schur construction. NumPy object arrays retain exact integer arithmetic.
+Schur construction. Standard-library lists retain exact integer arithmetic.
 """
 
 from itertools import product
@@ -16,38 +16,75 @@ import math
 import random
 import time
 
-import numpy as np
+def zeros(rows, columns):
+    return [[0] * columns for _ in range(rows)]
+
+
+def add_to(target, matrix):
+    for row, values in zip(target, matrix):
+        for column, value in enumerate(values):
+            row[column] += value
+
+
+def transpose(matrix):
+    return list(map(list, zip(*matrix)))
+
+
+def multiply(left, right):
+    columns = list(zip(*right))
+    return [[sum(a * b for a, b in zip(row, column)) for column in columns]
+            for row in left]
+
+
+def matvec(matrix, vector):
+    return [sum(a * b for a, b in zip(row, vector)) for row in matrix]
+
+
+def outer(left, right):
+    return [[a * b for b in right] for a in left]
+
+
+def kronecker(left, right):
+    return [[a * b for a in row_left for b in row_right]
+            for row_left in left for row_right in right]
+
+
+def index(coordinates, dimensions):
+    result = 0
+    for coordinate, dimension in zip(coordinates, dimensions):
+        result = result * dimension + coordinate
+    return result
+
+
+def embedding_indices(dimensions, first, second):
+    order = tuple(first) + tuple(second)
+    shape = [dimensions[site] for site in order]
+    return [index([point[site] for site in order], shape)
+            for point in product(*(range(d) for d in dimensions))]
 
 
 def partial_transpose(matrix, dimensions, mask):
-    size = math.prod(dimensions)
-    count = len(dimensions)
-    axes = list(range(2 * count))
-    for site in range(count):
-        if mask >> site & 1:
-            axes[site], axes[count + site] = axes[count + site], axes[site]
-    return matrix.reshape(tuple(dimensions) * 2).transpose(axes).reshape(size, size)
+    points = list(product(*(range(d) for d in dimensions)))
+    positions = {point: position for position, point in enumerate(points)}
+    return [[matrix[positions[tuple(b if mask >> site & 1 else a
+                                    for site, (a, b) in enumerate(zip(row, column)))]]
+                   [positions[tuple(a if mask >> site & 1 else b
+                                    for site, (a, b) in enumerate(zip(row, column)))]]
+             for column in points] for row in points]
 
 
 def random_matrix(generator, rows, columns):
-    return np.array([[generator.randrange(-2, 3) for _ in range(columns)]
-                     for _ in range(rows)], dtype=object)
+    return [[generator.randrange(-2, 3) for _ in range(columns)]
+            for _ in range(rows)]
 
 
 def embed_vector(vector, dimensions, first, second):
-    order = tuple(first) + tuple(second)
-    axes = [order.index(site) for site in range(len(dimensions))]
-    return vector.reshape(tuple(dimensions[site] for site in order)).transpose(axes).reshape(-1)
+    return [vector[position] for position in embedding_indices(dimensions, first, second)]
 
 
 def embed_matrix(matrix, dimensions, first, second):
-    order = tuple(first) + tuple(second)
-    count = len(dimensions)
-    axes = [order.index(site) for site in range(count)]
-    axes += [axis + count for axis in axes]
-    shape = tuple(dimensions[site] for site in order) * 2
-    size = math.prod(dimensions)
-    return matrix.reshape(shape).transpose(axes).reshape(size, size)
+    positions = embedding_indices(dimensions, first, second)
+    return [[matrix[row][column] for column in positions] for row in positions]
 
 
 def lift_mask(mask, scope):
@@ -59,9 +96,9 @@ def child_factors(generator, dimensions):
     factors = {mask: (random_matrix(generator, size, 2),
                       random_matrix(generator, size, 2))
                for mask in range(0, 1 << len(dimensions), 2)}
-    matrix = np.zeros((size, size), dtype=object)
+    matrix = zeros(size, size)
     for mask, (left, right) in factors.items():
-        matrix += partial_transpose(left @ right.T, dimensions, mask)
+        add_to(matrix, partial_transpose(multiply(left, transpose(right)), dimensions, mask))
     return matrix, factors
 
 
@@ -69,12 +106,12 @@ def certificate(generator, dimensions, scopes):
     size = math.prod(dimensions)
     count = len(dimensions)
     masks = list(range(0, 1 << count, 2))
-    direct = np.zeros((size, size), dtype=object)
+    direct = zeros(size, size)
     factors = {mask: [] for mask in masks}
-    left_identity = np.array([1, 0, 0, 1], dtype=object)
-    right_identity = np.array([0, 1, -1, 0], dtype=object)
+    left_identity = [1, 0, 0, 1]
+    right_identity = [0, 1, -1, 0]
     local = (left_identity, right_identity)
-    wrong = {mask: np.zeros((size, size), dtype=object) for mask in masks}
+    wrong = {mask: zeros(size, size) for mask in masks}
 
     for first in scopes:
         first = tuple(sorted(first))
@@ -85,8 +122,8 @@ def certificate(generator, dimensions, scopes):
         dim_second = [dimensions[site] for site in second]
         matrix_first, factors_first = child_factors(generator, dim_first)
         matrix_second, factors_second = child_factors(generator, dim_second)
-        direct += embed_matrix(np.kron(matrix_first, matrix_second), dimensions,
-                               first, second)
+        add_to(direct, embed_matrix(kronecker(matrix_first, matrix_second),
+                                    dimensions, first, second))
         seen = set()
         for alpha, beta, epsilon in product(factors_first, factors_second, [0, 1]):
             ua, va = factors_first[alpha]
@@ -97,34 +134,35 @@ def certificate(generator, dimensions, scopes):
             assert global_mask in factors and global_mask not in seen
             seen.add(global_mask)
             right_child_left, right_child_right = ((ub, vb) if epsilon == 0 else (vb, ub))
-            left = embed_vector(np.kron(ua, right_child_left) @ local[epsilon],
+            left = embed_vector(matvec(kronecker(ua, right_child_left), local[epsilon]),
                                 dimensions, first, second)
-            right = embed_vector(np.kron(va, right_child_right) @ local[epsilon],
+            right = embed_vector(matvec(kronecker(va, right_child_right), local[epsilon]),
                                  dimensions, first, second)
             factors[global_mask].append((left, right))
 
             # Negative control: omit the required left/right interchange
             # on the second child when the whole second scope is transposed.
-            bad_left = embed_vector(np.kron(ua, ub) @ local[epsilon],
+            bad_left = embed_vector(matvec(kronecker(ua, ub), local[epsilon]),
                                     dimensions, first, second)
-            bad_right = embed_vector(np.kron(va, vb) @ local[epsilon],
+            bad_right = embed_vector(matvec(kronecker(va, vb), local[epsilon]),
                                      dimensions, first, second)
-            wrong[global_mask] += np.outer(bad_left, bad_right)
+            add_to(wrong[global_mask], outer(bad_left, bad_right))
         assert seen == set(masks)
 
-    reconstructed = np.zeros((size, size), dtype=object)
-    wrong_reconstruction = np.zeros_like(reconstructed)
+    reconstructed = zeros(size, size)
+    wrong_reconstruction = zeros(size, size)
     for mask in masks:
         assert len(factors[mask]) == len(scopes)
-        left = np.column_stack([entry[0] for entry in factors[mask]])
-        right = np.column_stack([entry[1] for entry in factors[mask]])
-        reconstructed += partial_transpose(left @ right.T, dimensions, mask)
-        wrong_reconstruction += partial_transpose(wrong[mask], dimensions, mask)
-    assert np.array_equal(direct, reconstructed)
-    assert not np.array_equal(direct, wrong_reconstruction)
+        left = transpose([entry[0] for entry in factors[mask]])
+        right = transpose([entry[1] for entry in factors[mask]])
+        add_to(reconstructed, partial_transpose(multiply(left, transpose(right)), dimensions, mask))
+        add_to(wrong_reconstruction, partial_transpose(wrong[mask], dimensions, mask))
+    assert direct == reconstructed
+    assert direct != wrong_reconstruction
     modular_checks = 0
     for modulus in [2, 3, 4, 6, 8, 101]:
-        assert np.array_equal(direct % modulus, reconstructed % modulus)
+        assert [[value % modulus for value in row] for row in direct] == [
+            [value % modulus for value in row] for row in reconstructed]
         modular_checks += 1
     return {"dimensions": dimensions,
             "first_scopes": [list(sorted(scope)) for scope in scopes],

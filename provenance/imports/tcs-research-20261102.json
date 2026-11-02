@@ -1540,7 +1540,7 @@
       "source_member": "tcs_research_checkpoint/verification/circuit_frontier/check_interleaved_composition.py",
       "source_sha256": "22ad1ad00f6e3ba4c79ceb01c18fb7ea0f5624bb31d912daa04768bb77eb0a5c",
       "target": "manuscripts/partial-transpose-circuits/verify/check_interleaved_composition.py",
-      "transformation": "Native path adaptation and attribution; frontier receipt renamed frontier_results.json; exact finite suite executed locally."
+      "transformation": "Native path adaptation and attribution; frontier receipt renamed frontier_results.json; exact finite suite executed locally. Subsequent CI portability fix replaces NumPy object arrays with exact standard-library integer matrices and explicit coordinate reindexing; certificate seeds, cases and checked identities are unchanged."
     },
     {
       "source_member": "tcs_research_checkpoint/manuscripts/exact_counting.md",

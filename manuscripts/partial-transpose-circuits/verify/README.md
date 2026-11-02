@@ -10,7 +10,7 @@ python3 -B manuscripts/partial-transpose-circuits/verify/check_homogeneous_proje
 python3 -B manuscripts/partial-transpose-circuits/verify/check_interleaved_composition.py
 ```
 
-The first two use only the standard library. The third requires NumPy and uses object arrays for exact integer arithmetic. All three were executed successfully on November 2, 2026. Each regenerates its adjacent JSON receipt; timestamps and elapsed times are informational, while counts and fixed seeds describe the reproducible finite workload.
+All three use only the Python standard library. The composition checker uses explicit coordinate permutations and integer-list matrices, including for unequal local dimensions. It can run with `python3 -I -S -B` to exclude installed third-party packages. All three were executed successfully on November 2, 2026. Each regenerates its adjacent JSON receipt; timestamps and elapsed times are informational, while counts and fixed seeds describe the reproducible finite workload.
 
 | Native check | Executed scope |
 |---|---|

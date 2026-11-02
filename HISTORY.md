@@ -1,5 +1,11 @@
 # History
 
+## 2026-11-02 — CI dependency and runtime fixes
+
+- Replaced the interleaved-composition checker's NumPy object arrays with standard-library integer matrices and explicit coordinate permutations. The isolated `python3 -I -S -B` run retains all 24 certificates, 14,848 exact entry checks, 144 modular matrix checks and 24 negative controls. Ninety-seven comparisons against the previous exact-object implementation cover every transpose mask and partition in the tested unequal dimensions.
+- Updated checkout and Python setup to their inspected Node.js 24 releases, and fixed the runner image to Ubuntu 24.04. This addresses the deprecated Node.js 20 Actions and moving `ubuntu-latest` annotations without suppressing diagnostic output.
+- Validation is limited locally to the changed verifier, equivalence checks and affected metadata. The mathematical theorem and verification workload are unchanged; original archives remain untracked.
+
 ## 2026-11-02 — Constructive counting and ordinary circuit structure
 
 - Added source-independent exterior endpoint counting for dense triangular-plus-low-rank updates: an explicit sign/state invariant, the full sublinear-width entropy regime, modular Hamiltonian and prime-power precision, and classical marked-immanant completion within one family.
