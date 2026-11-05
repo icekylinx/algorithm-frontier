@@ -1,4 +1,4 @@
-# Algorithm Frontier
+# Algorithm Frontier: Algorithms, Proofs, and Verification
 
 Algorithms and proofs in combinatorial optimization, number theory, algebraic complexity, dynamic graphs, and sparsification. Each problem page gives the theorem, complexity, randomness, dependencies, and verification evidence.
 
