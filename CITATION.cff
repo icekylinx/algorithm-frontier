@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Please cite the stable repository record and preserve the attribution notice."
-title: "Algorithm Frontier: Algorithms, Proofs, and Verification"
+title: "Algorithm Frontier"
 version: "2026.10.26"
 date-released: 2026-10-26
 authors:
@@ -21,7 +21,7 @@ abstract: >-
   retain their exact computational models and conditional assumptions.
 preferred-citation:
   type: software
-  title: "Algorithm Frontier: Algorithms, Proofs, and Verification"
+  title: "Algorithm Frontier"
   authors:
     - name: "icekylinx"
     - name: "GPT-6 Astra Pro"

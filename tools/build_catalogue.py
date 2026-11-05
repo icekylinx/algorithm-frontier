@@ -162,7 +162,7 @@ def render_readme(data: dict) -> str:
     supporting = data.get("supporting_results", [])
     count = sum(len(g["records"]) for g in groups)
     out = [
-        "# Algorithm Frontier: Algorithms, Proofs, and Verification", "",
+        "# Algorithm Frontier", "",
         "Algorithms and proofs in combinatorial optimization, number theory, algebraic complexity, "
         "dynamic graphs, and sparsification. Each problem page gives the theorem, complexity, "
         "randomness, dependencies, and verification evidence.", "",

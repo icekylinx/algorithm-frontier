@@ -1,11 +1,5 @@
 # History
 
-## 2026-11-05 — Descriptive project title and Subset Sum consolidation check
-
-- Set the public title to *Algorithm Frontier: Algorithms, Proofs, and Verification* in the homepage generator and citation metadata. The repository path remains `algorithm-frontier`.
-- Confirmed that the local Subset Sum source HEAD is the imported commit `1ecb2e2eb43963a6ca9a4a5f4c6a208990c3b22b`, with a clean source worktree. Its two main algorithms, proofs, verification and attribution are represented by the canonical fast-time and low-space families; the fast-time family has since advanced to the stronger third-lookup bound.
-- Preserved a complete ignored local backup of the old repository, including Git history, and verified all 967 archived file payloads against the source. The backup is not committed or pushed. No source repository was deleted, and this check makes no claim about an unverified remote copy.
-
 ## 2026-11-02 — CI dependency and runtime fixes
 
 - Replaced the interleaved-composition checker's NumPy object arrays with standard-library integer matrices and explicit coordinate permutations. The isolated `python3 -I -S -B` run retains all 24 certificates, 14,848 exact entry checks, 144 modular matrix checks and 24 negative controls. Ninety-seven comparisons against the previous exact-object implementation cover every transpose mask and partition in the tested unequal dimensions.
